@@ -9661,7 +9661,7 @@
     {
       "key": "vaporize",
       "name": "Évaporation",
-      "effect": "Multiplie par 1.5 les DGT Pyro de la réaction lorsqu’une attaque Pyro déclenche la réaction.",
+      "effect": "Multiplie par 2 les DGT Pyro de la réaction lorsqu’une attaque Pyro déclenche la réaction.",
       "description": null
     },
     {
@@ -9685,7 +9685,7 @@
     {
       "key": "vaporize-reverse",
       "name": "Évaporation (Inversée)",
-      "effect": "Multiplie par 2 les DGT Hydro de la réaction lorsqu’une attaque Hydro déclenche la réaction.",
+      "effect": "Multiplie par 1.5 les DGT Hydro de la réaction lorsqu’une attaque Hydro déclenche la réaction.",
       "description": null
     },
     {

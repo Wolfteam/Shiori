@@ -6602,13 +6602,13 @@
     {
       "key": "cinnabar-spindle",
       "name": "Cinnabar Spindle",
-      "description": "A sword made from materials that do not belong in this world. The power within might even be able to withstand the corruption of a venom that could corrode a mighty dragon.",
+      "description": "Una spada realizzata con materiali che non appartengono a questo mondo. Il potere che si cela al suo interno potrebbe persino resistere alla corruzione di un veleno capace di corrodere un potente drago.",
       "refinements": [
-        "Elemental Skill DMG is increased by {color}40{/color}% of DEF. The effect will be triggered no more than once every 1.5s and will be cleared 0.1s after the Elemental Skill deals DMG.",
-        "Elemental Skill DMG is increased by {color}50{/color}% of DEF. The effect will be triggered no more than once every 1.5s and will be cleared 0.1s after the Elemental Skill deals DMG.",
-        "Elemental Skill DMG is increased by {color}60{/color}% of DEF. The effect will be triggered no more than once every 1.5s and will be cleared 0.1s after the Elemental Skill deals DMG.",
-        "Elemental Skill DMG is increased by {color}70{/color}% of DEF. The effect will be triggered no more than once every 1.5s and will be cleared 0.1s after the Elemental Skill deals DMG.",
-        "Elemental Skill DMG is increased by {color}80{/color}% of DEF. The effect will be triggered no more than once every 1.5s and will be cleared 0.1s after the Elemental Skill deals DMG."
+        "L’ Elemental Skill DMG aumenta di un valore pari al {color}40{/color}% della DEF. L’effetto può avvenire solo una volta ogni 1.5s e termina 0.1s dopo aver inferto un Elemental Skill DMG.",
+        "L’ Elemental Skill DMG aumenta di un valore pari al {color}50{/color}% della DEF. L’effetto può avvenire solo una volta ogni 1.5s e termina 0.1s dopo aver inferto un Elemental Skill DMG.",
+        "L’ Elemental Skill DMG aumenta di un valore pari al {color}60{/color}% della DEF. L’effetto può avvenire solo una volta ogni 1.5s e termina 0.1s dopo aver inferto un Elemental Skill DMG.",
+        "L’ Elemental Skill DMG aumenta di un valore pari al {color}70{/color}% della DEF. L’effetto può avvenire solo una volta ogni 1.5s e termina 0.1s dopo aver inferto un Elemental Skill DMG.",
+        "L’ Elemental Skill DMG aumenta di un valore pari al {color}80{/color}% della DEF. L’effetto può avvenire solo una volta ogni 1.5s e termina 0.1s dopo aver inferto un Elemental Skill DMG."
       ]
     },
     {
@@ -7993,6 +7993,14 @@
       ]
     },
     {
+      "key": "husk-of-opulent-dreams",
+      "name": "Husk of Opulent Dreams",
+      "bonus": [
+        "DEF +30%",
+        "Un personaggio che equipaggia questo Set di Artefatti otterrà l’effetto \"Curiosity\" nelle seguenti condizioni: quando è in uso, il personaggio ottiene 1 stack dopo aver colpito con un attacco Geo, per un massimo di 1 ogni 0.3s. Quando è nel party ma non è in uso, il personaggio ottiene 1 stack ogni 3s. Curiosity è sommabile 4 volte, ciascuno conferisce DEF +6% e Geo DMG Bonus +6%. Ogni 6s, se non viene rinnovato da ulteriori stacks, si perderà 1 stack di Curiosity."
+      ]
+    },
+    {
       "key": "instructor",
       "name": "Instructor",
       "bonus": [
@@ -8046,6 +8054,14 @@
       "bonus": [
         "Physical DMG +25%.",
         "Quando un'Elemental Skill colpisce un nemico, si ottiene ATK +9% per 7s. Si può attivare solo una volta ogni 0.3s. Max 2 stacks raggiunti i quali il Physical DMG bonus del Set-2 pezzi aumenta del 100%."
+      ]
+    },
+    {
+      "key": "ocean-hued-clam",
+      "name": "Ocean-Hued Clam",
+      "bonus": [
+        "Healing Bonus +15%.",
+        "Quando un personaggio che equipaggia questo Set di Artefatti cura un personaggio del party, una \"Sea-Dyed Foam\" apparirà per 3s, per accumulare la quantità di HP ripristinati dalla cura (eccessi compresi). Dopo 3s, la Sea-Dyed Foam esploderà infliggendo DMG pari al 90% degli HP che ha accumulato. (Questo DMG è calcolato in modo simile al DMG delle Reazioni di tipo Electro-Charged e Superconduct, ma non è condizionabile da Elemental Mastery, Livello del Personaggio o DMG Bonus per le Reazioni). Si può produrre un solo Sea-Dyed Foam ogni 3.5s. Ciascun Sea-Dyed Foam può accumulare massimo 30,000 HP (cure in eccesso comprese). Può essere attivo un solo Sea-Dyed Foam per volta. Questo effetto può avvenire anche se il personaggio che lo equipaggia non è in uso ma è presente nel party."
       ]
     },
     {
@@ -9662,7 +9678,7 @@
     {
       "key": "vaporize",
       "name": "vaporize",
-      "effect": "Infligge Pyro DMG x1.5 se innescato da un Attacco Pyro.",
+      "effect": "Infligge Pyro DMG x2 se innescato da un Attacco Pyro.",
       "description": null
     },
     {
@@ -9686,7 +9702,7 @@
     {
       "key": "vaporize-reverse",
       "name": "Vaporize (Reverse)",
-      "effect": "Infligge Hydro DMG x2 se innescato da un Attacco Hydro.",
+      "effect": "Infligge Hydro DMG x1.5 se innescato da un Attacco Hydro.",
       "description": null
     },
     {

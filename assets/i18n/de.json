@@ -9676,7 +9676,7 @@
     {
       "key": "vaporize",
       "name": "Verdampfen",
-      "effect": "Verursacht 1,5-fachen Pyro-Schaden, wenn eine Pyro-Attacke die Reaktion auslöst.",
+      "effect": "Verursacht 2-fachen Pyro-Schaden, wenn eine Pyro-Attacke die Reaktion auslöst.",
       "description": null
     },
     {
@@ -9700,7 +9700,7 @@
     {
       "key": "vaporize-reverse",
       "name": "Verdampfen (umgekehrt)",
-      "effect": "Verursacht doppelten Hydro-Schaden, wenn eine Hydro-Attacke die Reaktion auslöst.",
+      "effect": "Verursacht 1,5-fachen Hydro-Schaden, wenn eine Hydro-Attacke die Reaktion auslöst.",
       "description": null
     },
     {

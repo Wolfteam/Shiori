@@ -9648,7 +9648,7 @@
     {
       "key": "vaporize",
       "name": "Vaporizar",
-      "effect": "Inflige x1.5 daño Pyro cuando un ataque Pyro ocasiona la reacción.",
+      "effect": "Inflige x2 daño Pyro cuando un ataque Pyro ocasiona la reacción.",
       "description": null
     },
     {
@@ -9672,7 +9672,7 @@
     {
       "key": "vaporize-reverse",
       "name": "Vaporizar (Inverso)",
-      "effect": "Ocasiona x2 daño Hydro cuando un ataque Hydro ocasiona la reacción.",
+      "effect": "Ocasiona x1.5 daño Hydro cuando un ataque Hydro ocasiona la reacción.",
       "description": null
     },
     {

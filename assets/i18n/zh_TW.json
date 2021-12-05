@@ -9637,7 +9637,7 @@
     {
       "key": "vaporize",
       "name": "Vaporize",
-      "effect": "Deals ×1.5 Pyro DMG when a Pyro attack triggers the reaction.",
+      "effect": "Deals ×2 Pyro DMG when a Pyro attack triggers the reaction.",
       "description": null
     },
     {
@@ -9661,7 +9661,7 @@
     {
       "key": "vaporize-reverse",
       "name": "Vaporize (Reverse)",
-      "effect": "Deals ×2 Hydro DMG when a Hydro attack triggers the reaction.",
+      "effect": "Deals ×1.5 Hydro DMG when a Hydro attack triggers the reaction.",
       "description": null
     },
     {
