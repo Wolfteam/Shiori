@@ -424,81 +424,152 @@
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Héroe del combate",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Ataque Normal",
+              "description": "Realiza hasta 4 tajos de espada consecutivos.\r\nAl golpear a un enemigo con el segundo y el cuarto tajo, crea respectivamente 1 y 2 cargas del efecto “fuerza sobrenatural”, el cual puede acumularse un máximo de 5 veces. Al activar este efecto, se reiniciará la duración de las cargas existentes.\r\nAdemás, durante un breve periodo de tiempo después de usar la Habilidad Elemental, “Exterminio del mal: ¡Embestida taurina!”, o de esprintar, la secuencia de los Ataques Normales de Arataki Itto no se reiniciará.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Ataque Cargado",
+              "description": "Cuando Arataki Itto posee la fuerza sobrenatural, mantén pulsado para hacer Ataques Cargados que ejecutan golpes de espada kesagiri, los cuales no consumen Aguante. Cada ataque de este movimiento consumirá una carga de fuerza sobrenatural. Al consumir la última carga, se libera un golpe final aún más poderoso.\r\nSi Arataki Itto no posee ninguna carga de fuerza sobrenatural, consumirá Aguante y realizará un violento tajo horizontal.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Ataque Descendente",
+              "description": "Se lanza desde el aire para golpear el suelo, dañando a los enemigos cercanos e infligiendo Daño en el AdE en el momento del impacto.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "Daño de 1er golpe|{param1}%",
+            "Daño de 2.º golpe|{param2}%",
+            "Daño de 3er golpe|{param3}%",
+            "Daño de 4.º golpe|{param4}%",
+            "Daño de golpe de espada kesagiri|{param5}%",
+            "Daño del último golpe de espada kesagiri|{param6}%",
+            "Duración de fuerza sobrenatural|{param7}s",
+            "Daño del tajo horizontal|{param8}%",
+            "Coste de Aguante del tajo horizontal|{param9}",
+            "Daño de Caída|{param10}%",
+            "Daño de impacto de caída baja/alta|{param11}% / {param12}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Exterminio del mal: ¡Embestida taurina!",
+          "description": "Lanza a Ushi, el toro akaushi ayudante de la Banda de Arataki, para infligir Daño Geo. Al golpear a un enemigo, otorga a Arataki Itto una carga de fuerza sobrenatural.\r\nUshi se quedará en el campo de batalla para ayudar:",
+          "abilities": [
+            {
+              "name": "",
+              "description": "",
+              "descriptions": [
+                "Provoca continuamente a los enemigos cercanos para que lo ataquen.",
+                "Hereda cierto porcentaje de Vida en función de la Vida Máx. de Arataki Itto.",
+                "Al recibir daño, otorga a Itto una carga de fuerza sobrenatural. Como máximo, solo puede otorgar una carga cada 2 s de esta manera.",
+                "Tras quedarse sin Vida o al terminar su duración, Ushi huirá y otorgará a Arataki Itto una carga de fuerza sobrenatural."
+              ]
+            },
+            {
+              "name": "Mantener pulsado",
+              "description": "Ajusta la dirección en la que se lanza a Ushi.\r\nUshi es considerado una creación Geo, y Arataki Itto no puede crear más de uno a la vez.\r\n",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "Daño de habilidad|{param1}%",
+            "Vida heredada|{param2}%",
+            "Duración|{param3}s",
+            "TdE|{param4}s"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Rey oni maligno: ¡Itto contra todos!",
+          "description": "¡Hora de mostrar el gran poder del líder de la Banda de Arataki! Itto se transforma en un rey oni enfurecido durante cierto tiempo y combate usando una gran maza.\r\n",
+          "abilities": [
+            {
+              "name": "",
+              "description": "Además, adquiere las siguientes características:\r\n",
+              "descriptions": [
+                "El daño infligido con los Ataques Normales, Cargados y Descendentes se transforma en Daño Geo, el cual no puede sustituirse imbuyéndose de otro elemento.",
+                "Aumenta la Vel. de Ataque Normal de Arataki Itto y, en proporción a su DEF, aumenta su ATQ.",
+                "El primer y el tercer tajo del Ataque Normal de Arataki Itto crean cada uno una carga de fuerza sobrenatural al golpear a un enemigo.",
+                "Todas sus RES Elementales y su RES Física se reducen en un 20%.",
+                "El estado de rey oni enfurecido desaparecerá una vez que Arataki Itto sea retirado de combate."
+              ]
+            }
+          ],
+          "stats": [
+            "Aumento de ATQ|{param1}% DEF",
+            "Aumento de Vel. de Ataque|{param2}%",
+            "Duración|{param3}s",
+            "TdE|{param4}s",
+            "Energía Elemental|{param5}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "Itto el leñador",
+          "description": "Tus personajes tienen un 25% de probabilidad de obtener un trozo de madera adicional al talar árboles con sus ataques.\r\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
+          "title": "Itto, el ónico e inimitable",
+          "description": "Cuando Arataki Itto realiza ataques de espada kesagiri continuos, obtiene los siguientes efectos:\r\n",
+          "descriptions": [
+            "Cada golpe aumenta en un 10% la Vel. de Ataque del siguiente hasta un máximo del 30%.",
+            "Aumenta la RES a interrupción.",
+            "Estos efectos desaparecen cuando Arataki Itto deja de ejecutar golpes continuos."
+          ]
         },
         {
           "key": "p3",
-          "title": "NA",
-          "description": "",
+          "title": "Linaje de oni escarlata",
+          "description": "Aumenta el daño de los golpes de espada kesagiri de Arataki Itto en proporción al 35% de su DEF.\r\n",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "Calla y escucha",
+          "description": "Al realizar Rey oni maligno: ¡Itto contra todos!, Arataki Itto obtiene 2 cargas de fuerza sobrenatural. 1 s después, obtiene una carga cada 0.5 s durante 1.5 s.\r\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "¡Todos contra todos!",
+          "description": "Tras realizar Rey oni maligno: ¡Itto contra todos!, por cada personaje Geo que haya en el equipo, el TdE de dicha habilidad se reduce en 1.5 s y se regeneran 6 pts. de Energía Elemental para Arataki Itto.\r\nComo máximo, este TdE se puede reducir en 4.5 s y se pueden regenerar 18 pts. de Energía de esta manera.\r\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "¡El toro por los cuernos!",
+          "description": "Aumenta el nivel de habilidad de Exterminio del mal: ¡Embestida taurina! +3.\r\nPuede ser aumentado hasta Niv. 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "La cárcel es mi casa",
+          "description": "Al terminar la duración del estado de rey oni enfurecido de Rey oni maligno: ¡Itto contra todos!, la DEF y el ATQ de todos los miembros del equipo cercanos aumentan en un 20% durante 10 s.\r\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "Los envidiosos dirán que no soy famoso",
+          "description": "Aumenta el nivel de habilidad de Rey oni maligno: ¡Itto contra todos! +3.\r\nPuede ser aumentado hasta Niv. 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
+          "title": "Ante ustedes, ¡Arataki Itto!",
+          "description": "Aumenta en un 70% el Daño CRIT del Ataque Cargado de Arataki Itto. Además, al ejecutar golpes de espada kesagiri, hay un 50% de probabilidad de no consumir cargas de fuerza sobrenatural.\r\n",
           "descriptions": []
         }
       ]
@@ -1773,82 +1844,155 @@
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Flecha resquebrajadora",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Ataque Normal",
+              "description": "Realiza hasta 4 disparos consecutivos con arco.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Ataque Cargado",
+              "description": "Realiza un Disparo Preciso que inflige mayor daño y tiene mayor precisión.\r\nAl apuntar, se acumularán fragmentos de roca en la punta de flecha. Una flecha rocosa totalmente cargada infligirá Daño Geo.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Ataque Descendente",
+              "description": "Dispara una lluvia de flechas desde el aire mientras desciende rápidamente, infligiendo Daño en el AdE al impactar contra el suelo.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "Daño de 1er golpe|{param1}%",
+            "Daño de 2.º golpe|{param2}%",
+            "Daño de 3er golpe|{param3}%",
+            "Daño de 4.º golpe|{param4}%",
+            "Disparo Preciso|{param5}%",
+            "Disparo Preciso (carga completa)|{param6}%",
+            "Daño de Caída|{param7}%",
+            "Daño de impacto de caída baja/alta|{param8}% / {param9}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Defensa integral canina",
+          "description": "Inflige Daño Geo en el AdE e iza el estandarte del general.\r\n",
+          "abilities": [
+            {
+              "name": "Estandarte del general",
+              "description": "Teniendo en cuenta el número de personajes Geo que hay en el equipo al lanzar esta habilidad, otorga los siguientes efectos a los personajes en uso dentro de la zona del estandarte:\r\n",
+              "descriptions": [
+                "1 personaje - Robustez: aumenta la DEF.",
+                "2 personajes - Inquebrantabilidad: además del efecto anterior, aumenta la RES a interrupción.",
+                "3 personajes - Fragmentación: además de los anteriores efectos, otorga un Bono de Daño Geo.",
+                "Solo puede existir al mismo tiempo un estandarte del general creado por Gorou, y los demás personajes solo podrán beneficiarse de los efectos de un único estandarte. Cuando el personaje sale de la zona, los efectos de esta seguirán activos durante 2 s."
+              ]
+            },
+            {
+              "name": "Mantener pulsado",
+              "description": "Ajusta la ubicación en la que se activa la habilidad.\r\n",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "Daño de habilidad|{param1}%",
+            "Aumento de DEF|{param2}",
+            "Bono de Daño Geo|{param3}%",
+            "Duración|{param4}s",
+            "TdE|{param5}s"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Colmillo de la victoria",
+          "description": "Haciendo una muestra de su poder, inflige Daño Geo en el AdE y crea un área llamada “gloria del general” para animar a sus aliados.\r\n",
+          "abilities": [
+            {
+              "name": "Gloria del general",
+              "description": "Posee las siguientes características:\r\n",
+              "descriptions": [
+                "Tiene los mismos efectos que el estandarte del general creado con la Habilidad Elemental, “Defensa integral canina”, es decir, según el número de personajes Geo que hay en el equipo, otorga ciertos efectos al personaje en uso dentro de la zona del estandarte, el cual se va moviendo junto a dicho personaje.",
+                "Cada 1.5 s, provoca un derrumbamiento rocoso que inflige Daño Geo en el AdE contra un enemigo situado en la zona.",
+                "Cada 1.5 s, atrae hasta la ubicación del personaje en uso un fragmento creado por la reacción de Cristalización dentro de la zona.",
+                "Si al lanzar esta habilidad ya existe un estandarte del general creado por Gorou, dicho estandarte se destruirá. Además, mientras la zona de gloria del general esté activa, cuando Gorou realice su Habilidad Elemental, “Defensa integral canina”, no creará otro estandarte del general.",
+                "Si Gorou es derrotado, los efectos de gloria del general desaparecerán."
+              ]
+            }
+          ],
+          "stats": [
+            "Daño de habilidad|{param1}% DEF",
+            "Daño de cada derrumbamiento rocoso|{param2}% DEF",
+            "Duración|{param3}s",
+            "TdE|{param4}s",
+            "Energía Elemental|{param5}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "Perro rastreador",
+          "description": "Muestra la ubicación de los objetos típicos de Inazuma cercanos en el minimapa.\r\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
+          "title": "Contra viento y marea",
+          "description": "Al realizar Colmillo de la victoria, la DEF de todos los miembros del equipo cercanos aumenta en un 25% durante 12 s.\r\n",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
+          "title": "Favor recíproco",
+          "description": "Aumenta el daño de los siguientes ataques de Gorou en proporción a su DEF:\r\n",
+          "descriptions": [
+            "El daño de habilidad de Defensa integral canina aumenta en un 156% de su DEF.",
+            "El daño de habilidad de Colmillo de la victoria y de los derrumbamientos rocosos aumenta en un 15.6% de su DEF."
+          ]
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "Velocidad de sabueso: Raudo como el viento",
+          "description": "Cuando el personaje en uso (a excepción de Gorou) inflige Daño Geo contra un enemigo mientras está dentro de las áreas del estandarte del general o de gloria del general, el TdE de Defensa integral canina de Gorou se reduce en 2 s.\r\nEste efecto solo puede ocurrir una vez cada 10 s.\r\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "Tranquilidad de sabueso: Firme como la roca",
+          "description": "Cuando un personaje en uso cercano obtiene un fragmento creado con Cristalización mientras gloria del general está activa, la duración de sus efectos se prolonga en 1 s.\r\nEsto solo puede ocurrir una vez cada 0.1 s y solo se puede prolongar un máximo de 3 s de esta manera.\r\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "Zarpas de sabueso: Feroz como el fuego",
+          "description": "Aumenta el nivel de habilidad de Defensa integral canina +3.\r\nPuede ser aumentado hasta Niv. 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "Lametón de sabueso: Cálido como el agua",
+          "description": "Cuando el área de gloria del general posee los efectos de Inquebrantabilidad o Fragmentación, los personajes en uso que se encuentren dentro de ella recuperan Vida cada 1.5 s en una cantidad equivalente al 50% de la DEF de Gorou.\r\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "Arremetida de sabueso: Potente como el rayo",
+          "description": "Aumenta el nivel de habilidad de Colmillo de la victoria +3.\r\nPuede ser aumentado hasta Niv. 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
+          "title": "Valentía de sabueso: Fiel como un perro",
+          "description": "Tras usar Defensa integral canina o Colmillo de la victoria, aumenta el Daño CRIT Geo de todos los miembros del equipo cercanos durante 12 s según el nivel del área creada.\r\n",
+          "descriptions": [
+            "Robustez: aumenta en un 10%.",
+            "Inquebrantabilidad: aumenta en un 20%.",
+            "Fragmentación: aumenta en un 40%.",
+            "Este efecto no se puede acumular, sino que será determinado en función de la última bonificación que surtió efecto."
+          ]
         }
       ]
     },
@@ -7476,6 +7620,18 @@
         "Restaura un {color}12{/color}% de Vida tras derrotar a un enemigo.",
         "Restaura un {color}14{/color}% de Vida tras derrotar a un enemigo.",
         "Restaura un {color}16{/color}% de Vida tras derrotar a un enemigo."
+      ]
+    },
+    {
+      "key": "redhorn-stonethresher",
+      "name": "Espadón Cornirrojo",
+      "description": "Según su dueño anterior, este gran espadón es el “Heroico, Poderoso, Cornirrojo, Dorado y Destrozapiedras Señor de los Leones”, capaz de hacer que cualquier monstruo ponga pies en polvorosa al verlo.",
+      "refinements": [
+        "La DEF aumenta en un {color}28{/color}%. El daño de los Ataques Normales y Cargados aumenta en una cantidad equivalente al {color}40{/color}% de la DEF.",
+        "La DEF aumenta en un {color}35{/color}%. El daño de los Ataques Normales y Cargados aumenta en una cantidad equivalente al {color}50{/color}% de la DEF.",
+        "La DEF aumenta en un {color}42{/color}%. El daño de los Ataques Normales y Cargados aumenta en una cantidad equivalente al {color}60{/color}% de la DEF.",
+        "La DEF aumenta en un {color}49{/color}%. El daño de los Ataques Normales y Cargados aumenta en una cantidad equivalente al {color}70{/color}% de la DEF.",
+        "La DEF aumenta en un {color}56{/color}%. El daño de los Ataques Normales y Cargados aumenta en una cantidad equivalente al {color}80{/color}% de la DEF."
       ]
     },
     {

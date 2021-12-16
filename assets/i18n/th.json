@@ -415,81 +415,142 @@
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "โจมตีปกติ - Fight Club Legend",
+          "description": "โจมตีปกติ\r\nฟาดฟันต่อเนื่องมากสุดสี่ครั้ง\r\nเมื่อการโจมตีครั้งที่สองและครั้งที่สี่ถูกศัตรู จะทำให้เกิดเอฟเฟกต์ \"Superlative Superstrength\" 1 ชั้น และ 2 ชั้น ตามลำดับ\r\nจะสามารถครอบครองได้มากสุด 5 ชั้น ซึ่งทุกครั้งที่เกิดเอฟเฟกต์นี้ จะรีเฟรชช่วงเวลาต่อเนื่องของ Superlative Superstrength ที่มีอยู่\r\nนอกจากนี้ ภายในช่วงเวลาสั้น ๆ หลังจากปล่อยสกิลธาตุ \"Masatsu Zetsugi: Akaushi Burst!\" หรือทำการวิ่ง จำนวนครั้งการโจมตีต่อเนื่องของการโจมตีปกติจะไม่รีเซ็ต\r\n",
+          "abilities": [
+            {
+              "name": "ชาร์จโจมตี",
+              "description": "เมื่อNAเพื่อใช้ชาร์จโจมตี หากครอบครอง Superlative Superstrength อยู่ จะเป็นการใช้ Arataki Kesagiri ที่ไม่ใช้พลังกาย โดยการโจมตีของ Arataki Kesagiri แต่ละครั้ง จะใช้ Superlative Superstrength หนึ่งชั้น; เมื่อใช้ Superlative Superstrength ชั้นสุดท้าย จะปิดท้ายด้วยการโจมตีที่มีความรุนแรงเป็นพิเศษ\r\nในตอนที่ไม่มี Superlative Superstrength จะใช้พลังกายเพื่อปลดปล่อย Saichimonji Slash ที่มีความรุนแรงออกมาหนึ่งครั้ง",
+              "descriptions": []
+            },
+            {
+              "name": "โจมตีพุ่งลงจากอากาศ",
+              "description": "กระโจนจากกลางอากาศลงมายังพื้นดิน เพื่อโจมตีศัตรูที่อยู่ในเส้นทางการโจมตี โดยจะสร้างความเสียหายวงกว้างเมื่อลงถึงพื้น",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "ความเสียหายขั้น 1|{param1}%",
+            "ความเสียหายขั้น 2|{param2}%",
+            "ความเสียหายขั้น 3|{param3}%",
+            "ความเสียหายขั้น 4|{param4}%",
+            "ความเสียหายการฟันต่อเนื่องของ Arataki Kesagiri|{param5}%",
+            "ความเสียหายการฟันครั้งสุดท้ายของ Arataki Kesagiri|{param6}%",
+            "ระยะเวลาของ Superlative Superstrength|{param7}s",
+            "ความเสียหายของ Saichimonji Slash|{param8}%",
+            "Saichimonji ใช้พลังกาย|{param9}",
+            "ความเสียหายพุ่งลง|{param10}%",
+            "ความเสียหายพุ่งถึงพื้นจากที่ต่ำ/สูง|{param11}% / {param12}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
+          "title": "Masatsu Zetsugi: Akaushi Burst!",
           "description": null,
-          "abilities": [],
-          "stats": []
+          "abilities": [
+            {
+              "name": "",
+              "description": "ขว้าง \"Ushi\" กระทิง Akaushi ตัวน้อยผู้เป็นสมาชิกเสริมของแก๊ง Arataki ออกไปด้วยความเร็วสูง เพื่อสร้างความเสียหายหินแก่ศัตรูที่ถูกโจมตี! เมื่อ Ushi ถูกศัตรู จะมอบเอฟเฟกต์ Superlative Superstrength 1 ชั้น ให้แก่ Arataki Itto\r\nUshi จะยังคงอยู่ในการต่อสู้เพื่อให้การสนับสนุน:\r\n",
+              "descriptions": [
+                "หลอกล่อศัตรูที่อยู่โดยรอบเพื่อดึงดูดการโจมตี;",
+                "ระดับความทนทานจะขึ้นอยู่กับสัดส่วนของพลังชีวิตสูงสุดที่ได้รับสืบทอดมาจาก Arataki Itto;",
+                "เมื่อได้รับความเสียหาย จะมอบเอฟเฟกต์ Superlative Superstrength ให้แก่ Arataki Itto 1 ชั้น โดยทุก 2 วินาที จะมอบเอฟเฟกต์ด้วยวิธีนี้ได้มากสุด 1 ชั้น;",
+                "จะหนีไปเมื่อระดับความทนทานหมดลง หรือสิ้นสุดช่วงระยะเวลาต่อเนื่อง และจะมอบเอฟเฟกต์ Superlative Superstrength ให้แก่ Arataki Itto 1 ชั้น ในตอนที่จากไป"
+              ]
+            }
+          ],
+          "stats": [
+            "ความเสียหายสกิล|{param1}%",
+            "สืบทอดพลังชีวิต|{param2}%",
+            "ระยะเวลาต่อเนื่อง|{param3}s",
+            "คูลดาวน์|{param4}s"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Royal Descent: Behold, Itto the Evil!",
+          "description": "ได้เวลาประกาศความยิ่งใหญ่ของ Itto แห่งแก๊ง Arataki แล้ว! แปลงกายเป็น \"Raging Oni King\" ชั่วระยะเวลาหนึ่ง โดยจะใช้ Oni King's Kanabou ในการต่อสู้\r\n",
+          "abilities": [
+            {
+              "name": "",
+              "description": "มีคุณลักษณะพิเศษดังต่อไปนี้:\r\n",
+              "descriptions": [
+                "ความเสียหายของการโจมตีปกติ, ชาร์จโจมตี และโจมตีพุ่งลงจากอากาศ จะเปลี่ยนเป็นความเสียหายหินที่ไม่สามารถซ้อนทับได้ด้วยธาตุอื่น;",
+                "เพิ่มความเร็วในการโจมตีปกติของ Arataki Itto และเพิ่มพลังโจมตี โดยขึ้นกับพลังป้องกันของเขา;",
+                "เมื่อการโจมตีครั้งแรกและครั้งที่สามถูกศัตรู ในแต่ละครั้งจะมอบเอฟเฟกต์ Superlative Superstrength 1 ชั้น ให้แก่ตัวของ Arataki Itto เอง;",
+                "ความต้านทานธาตุทั้งหมดและความต้านทานกายภาพของ Arataki Itto จะลดลง 20%",
+                "สภาวะ \"Raging Oni King\" จะหายไปเมื่อ Arataki Itto ออกจากการต่อสู้"
+              ]
+            }
+          ],
+          "stats": [
+            "เพิ่มพลังโจมตี|{param1}% DEF",
+            "เพิ่มความเร็วการโจมตี|{param2}%",
+            "ระยะเวลาต่อเนื่อง|{param3}s",
+            "คูลดาวน์|{param4}s",
+            "พลังงานธาตุ|{param5}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "Woodchuck Chucked",
+          "description": "เมื่อตัวละครในทีมของตัวเองได้รับไม้จากการโจมตีต้นไม้ จะมีโอกาส 25% ที่จะได้รับไม้เพิ่ม\r\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
+          "title": "Arataki Ichiban",
+          "description": "เมื่อ Arataki Itto ใช้ Arataki Kesagiri อย่างต่อเนื่อง จะได้รับเอฟเฟกต์ดังต่อไปนี้:\r\n",
+          "descriptions": [
+            "การฟันแต่ละครั้งจะทำให้การฟันในครั้งต่อไป มีความเร็วในการโจมตีเพิ่มขึ้น 10% โดยจะสามารถเพิ่มด้วยวิธีนี้ได้มากสุด 30%;",
+            "เพิ่มความสามารถในการต้านทานการหยุดชะงัก",
+            "เอฟเฟกต์เหล่านี้จะหายไปเมื่อการฟันต่อเนื่องสิ้นสุดลง"
+          ]
         },
         {
           "key": "p3",
-          "title": "NA",
-          "description": "",
+          "title": "Bloodline of the Crimson Oni",
+          "description": "Arataki Kesagiri สร้างความเสียหายเพิ่มขึ้น โดยปริมาณที่เพิ่มจะเป็น 35% ของพลังป้องกันของ Arataki Itto\r\n",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "Stay a While and Listen Up",
+          "description": "หลังจากใช้ Royal Descent: Behold, Itto the Evil! Arataki Itto จะได้รับเอฟเฟกต์ \"Superlative Superstrength\" 2 ชั้น และ 1 วินาที หลังจากนั้น ในทุก 0.5 วินาที Arataki Itto จะได้รับเอฟเฟกต์ \"Superlative Superstrength\" อีก 1 ชั้น เป็นเวลา 1.5 วินาที\r\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "Gather 'Round, It's a Brawl!",
+          "description": "หลังจากใช้ Royal Descent: Behold, Itto the Evil! ตัวละครแต่ละตัวในทีมที่มีชนิดของธาตุเป็นธาตุหิน จะทำให้ช่วงเวลาคูลดาวน์ของมันลดลง 1.5 วินาที และฟื้นฟูพลังงานธาตุของ Arataki Itto ขึ้น 6 หน่วย\r\nด้วยวิธีนี้ จะสามารถลดเวลาคูลดาวน์ได้มากสุด 4.5 วินาที และฟื้นฟูพลังงานธาตุได้มากสุด 18 หน่วย\r\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "Horns Lowered, Coming Through",
+          "description": "เพิ่มเลเวลสกิลของ Masatsu Zetsugi: Akaushi Burst! ขึ้น 3 ระดับ\r\nเพิ่มได้มากสุด 15 ระดับ\r\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "Jailhouse Bread and Butter",
+          "description": "หลังจากสถานะ \"Raging Oni King\" ที่เกิดจาก Royal Descent: Behold, Itto the Evil! สิ้นสุดลง ตัวละครทั้งหมดในทีม ที่อยู่ในบริเวณใกล้เคียง จะมีพลังป้องกันเพิ่มขึ้น 20% พลังโจมตีเพิ่มขึ้น 20% เป็นเวลา 10 วินาที\r\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "10 Years of Hanamizaka Fame",
+          "description": "เพิ่มเลเวลสกิลของ Royal Descent: Behold, Itto the Evil! ขึ้น 3 ระดับ\r\nเพิ่มได้มากสุด 15 ระดับ\r\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
+          "title": "Arataki Itto, Present!",
+          "description": "ความแรงคริของชาร์จโจมตีของ Arataki Itto เพิ่มขึ้น 70%; นอกจากนี้เมื่อใช้ \"Arataki Kesagiri\" จะมีโอกาส 50% ที่จะไม่ใช้ Superlative Superstrength\r\n",
           "descriptions": []
         }
       ]
@@ -1741,82 +1802,150 @@
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "โจมตีปกติ - Ripping Fang Fletching",
+          "description": "",
+          "abilities": [
+            {
+              "name": "โจมตีปกติ",
+              "description": "ยิงธนูโจมตีอย่างต่อเนื่องมากสุดสี่ครั้ง\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "ชาร์จโจมตี",
+              "description": "การเล็งโจมตีสร้างความเสียหายเพิ่มขึ้น และแม่นยำยิ่งขึ้น\r\nเมื่อเล็งโจมตีจะทำการรวบรวมธาตุหินไว้บนหัวลูกศรอย่างต่อเนื่อง ซึ่งลูกศรที่ชาร์จพลังงานธาตุหินจนเต็มแล้ว จะทำให้เกิดความเสียหายหิน\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "โจมตีพุ่งลงจากอากาศ",
+              "description": "ปล่อยฝนธนูจากกลางอากาศ และพุ่งลงมายังพื้นดินอย่างรวดเร็ว โดยจะสร้างความเสียหายวงกว้างเมื่อลงถึงพื้น",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "ความเสียหายขั้น 1|{param1}%",
+            "ความเสียหายขั้น 2|{param2}%",
+            "ความเสียหายขั้น 3|{param3}%",
+            "ความเสียหายขั้น 4|{param4}%",
+            "เล็งโจมตี|{param5}%",
+            "เล็งโจมตีเมื่อชาร์จเต็ม|{param6}%",
+            "ความเสียหายพุ่งลง|{param7}%",
+            "ความเสียหายพุ่งถึงพื้นจากที่ต่ำ/สูง|{param8}% / {param9}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Inuzaka All-Round Defense",
+          "description": "สร้างความเสียหายหินวงกว้าง และตั้ง General's War-Banner ขึ้น\r\n",
+          "abilities": [
+            {
+              "name": "General's War-Banner",
+              "description": "มอบเอฟเฟกต์ดังต่อไปนี้ ให้แก่ตัวละครที่อยู่ในพื้นที่ของมันในขณะนั้น โดยขึ้นอยู่กับจำนวนตัวละครในทีมที่มีชนิดของธาตุเป็นธาตุหินในตอนที่ปล่อย:\r\n",
+              "descriptions": [
+                "เมื่อมีตัวละคร 1 ตัว - \"Standing Firm\": พลังป้องกันเพิ่มขึ้น;",
+                "เมื่อมีตัวละคร 2 ตัว - \"Impregnable\": นอกเหนือจากเอฟเฟกต์ที่กล่าวข้างต้นแล้ว จะเพิ่มความสามารถในการต้านทานการหยุดชะงัก;",
+                "เมื่อมีตัวละคร 3 ตัว - \"Crunch\": นอกเหนือจากเอฟเฟกต์ที่กล่าวข้างต้นแล้ว จะได้รับโบนัสความเสียหายหิน",
+                "ภายในช่วงเวลาเดียวกัน จะสามารถมี General's War-Banner ที่ตัวของ Gorou เองสร้างขึ้นได้เพียงอันเดียวเท่านั้น; ตัวละครจะสามารถรับเอฟเฟกต์จาก General's War-Banner ได้เพียงอันเดียวเท่านั้น และหลังจากที่ตัวละครออกนอกพื้นที่ เอฟเฟกต์ของพื้นที่จะยังคงอยู่เป็นเวลา 2 วินาที"
+              ]
+            }
+          ],
+          "stats": [
+            "ความเสียหายสกิล|{param1}%",
+            "เพิ่มพลังป้องกัน|{param2}",
+            "โบนัสความเสียหายหิน|{param3}%",
+            "ระยะเวลาต่อเนื่อง|{param4}s",
+            "คูลดาวน์|{param5}s"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Juuga: Forward Unto Victory",
+          "description": "แสดงพลังอันน่าเกรงขามของพลเอกออกมา โดยสร้างความเสียหายหินวงกว้าง และสร้างพื้นที่ General's Glory ขึ้นมา เพื่อกระตุ้นเหล่าสหายร่วมรบ ที่อยู่ในบริเวณใกล้เคียง\r\n",
+          "abilities": [
+            {
+              "name": "General's Glory",
+              "description": "มีคุณลักษณะพิเศษดังต่อไปนี้:\r\n",
+              "descriptions": [
+                "พื้นที่นี้จะมีเอฟเฟกต์เช่นเดียวกันกับ General's War-Banner ที่สร้างขึ้นโดย \"Inuzaka All-Round Defense\" โดยจะมอบเอฟเฟกต์ให้แก่ตัวละครที่อยู่ในพื้นที่ของมันในขณะนั้น โดยขึ้นอยู่กับจำนวนตัวละครในทีม ที่มีชนิดของธาตุเป็นธาตุหินในตอนที่ปล่อย และจะเคลื่อนที่ไปด้วยกันกับตัวละครที่เข้าร่วมการต่อสู้ในขณะนั้น;",
+                "ในทุก 1.5 วินาที จะสร้าง Crystal Collapse ออกมาหนึ่งครั้ง เพื่อสร้างความเสียหายหินวงกว้างให้แก่ศัตรูที่อยู่ในพื้นที่หนึ่งตัว;",
+                "ในทุก 1.5 วินาที จะดึงดูดเศษเสี้ยวที่เกิดจากปฏิกิริยาการตกผลึกที่อยู่ในพื้นที่ ให้เข้ามายังตำแหน่งที่ตัวละครอยู่ในขณะนั้น 1 อัน",
+                "ในขณะที่ปล่อยสกิล หากมี General's War-Banner ที่ตัวของ Gorou เองสร้างขึ้นด้วย มันจะถูกทำลาย นอกจากนี้ในระหว่างช่วงเวลาต่อเนื่องของ General's Glory เมื่อตัวของ Gorou เองใช้สกิลธาตุ \"Inuzaka All-Round Defense\" จะไม่ทำให้เกิด General's War-Banner",
+                "เอฟเฟกต์ General's Glory ของตัว Gorou เองจะหายไป เมื่อเขาหมดสติ"
+              ]
+            }
+          ],
+          "stats": [
+            "ความเสียหายสกิล|{param1}% DEF",
+            "ความเสียหาย Crystal Collapse|{param2}% DEF",
+            "ระยะเวลาต่อเนื่อง|{param3}s",
+            "คูลดาวน์|{param4}s",
+            "พลังงานธาตุ|{param5}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "Seeker of Shinies",
+          "description": "แสดงตำแหน่งของของพิเศษเฉพาะใน Inazuma ในมินิแมป\r\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
+          "title": "Heedless of the Wind and Weather",
+          "description": "ภายใน 12 วินาที หลังจากใช้ Juuga: Forward Unto Victory พลังป้องกันของตัวละครทั้งหมดในทีม ที่อยู่ในบริเวณใกล้เคียงจะเพิ่มขึ้น 25%\r\n",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
+          "title": "A Favor Repaid",
+          "description": "ความเสียหายของการโจมตีต่อไปนี้ของ Gorou จะเพิ่มขึ้น โดยขึ้นกับพลังป้องกันของเขาเอง:\r\n",
+          "descriptions": [
+            "ความเสียหายของสกิล Inuzaka All-Round Defense เพิ่มขึ้น 156% ของพลังป้องกัน",
+            "ความเสียหายของสกิล Juuga: Forward Unto Victory และความเสียหายของ Crystal Collapse เพิ่มขึ้น 15.6% ของพลังป้องกัน"
+          ]
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "Rushing Hound: Swift as the Wind",
+          "description": "หลังจากที่ตัวละคร (นอกจากตัวของ Gorou เอง) ที่อยู่ในพื้นที่ของ General's War-Banner หรือ General's Glory ของตัวของ Gorou เอง สร้างความเสียหายหินแก่ศัตรู ช่วงเวลาคูลดาวน์ของ Inuzaka All-Round Defense ของตัวของ Gorou เอง จะลดลง 2 วินาที\r\nเอฟเฟกต์นี้จะเกิดขึ้นได้มากสุดหนึ่งครั้ง ในทุก 10 วินาที\r\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "Sitting Hound: Steady as a Clock",
+          "description": "ภายในระยะเวลาต่อเนื่องของ General's Glory หลังจากที่ตัวละครที่เข้าร่วมการต่อสู้ในขณะนั้นและอยู่ในบริเวณใกล้เคียง ได้รับเศษเสี้ยวที่เกิดจากปฏิกิริยาการตกผลึก ช่วงเวลาต่อเนื่องของ General's Glory ของตัวของ Gorou เองจะยาวนานขึ้น 1 วินาที\r\nเอฟเฟกต์นี้จะเกิดขึ้นได้มากสุดหนึ่งครั้ง ในทุก 0.1 วินาที และจะสามารถยืดระยะเวลาของช่วงเวลาต่อเนื่องด้วยวิธีนี้ได้มากสุด 3 วินาที\r\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "Mauling Hound: Fierce as Fire",
+          "description": "เพิ่มเลเวลสกิลของ Inuzaka All-Round Defense ขึ้น 3 ระดับ\r\nเพิ่มได้มากสุด 15 ระดับ\r\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "Lapping Hound: Warm as Water",
+          "description": "เมื่อ General's Glory มีเอฟเฟกต์ \"Impregnable\" หรือ \"Crunch\" อยู่ ในทุก 1.5 วินาที จะทำการฟื้นฟูพลังชีวิตให้แก่ตัวละครที่อยู่ในพื้นที่ โดยที่ปริมาณการฟื้นฟู จะเป็น 50% ของพลังป้องกันของ Gorou เอง\r\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "Striking Hound: Thunderous Force",
+          "description": "เพิ่มเลเวลสกิลของ Juuga: Forward Unto Victory ขึ้น 3 ระดับ\r\nเพิ่มได้มากสุด 15 ระดับ\r\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
+          "title": "Valiant Hound: Mountainous Fealty",
+          "description": "ภายใน 12 วินาที หลังจากปล่อย Inuzaka All-Round Defense หรือ Juuga: Forward Unto Victory จะเพิ่มความแรงคริของความเสียหายหิน ของตัวละครทั้งหมดในทีมที่อยู่ในบริเวณใกล้เคียง โดยขึ้นกับเลเวลของพื้นที่ในตอนที่ปล่อย:\r\n",
+          "descriptions": [
+            "\"Standing Firm\": เพิ่ม 10%;",
+            "\"Impregnable\": เพิ่ม 20%;",
+            "\"Crunch\": เพิ่ม 40%",
+            "เอฟเฟกต์นี้ไม่สามารถซ้อนทับกันได้ โดยจะอ้างอิงจากเอฟเฟกต์ที่เกิดขึ้นล่าสุดเป็นหลัก"
+          ]
         }
       ]
     },
@@ -7406,6 +7535,18 @@
         "เมื่อกำจัดศัตรูได้จะฟื้นฟูพลังชีวิตขึ้น {color}12{/color}",
         "เมื่อกำจัดศัตรูได้จะฟื้นฟูพลังชีวิตขึ้น {color}14{/color}",
         "เมื่อกำจัดศัตรูได้จะฟื้นฟูพลังชีวิตขึ้น {color}16{/color}"
+      ]
+    },
+    {
+      "key": "redhorn-stonethresher",
+      "name": "Redhorn Stonethresher",
+      "description": "ตามที่เจ้าของคนก่อนบอก ดาบนี้คือ \"ลอร์ดสิงโตเขาแดงเคลือบทองทะลวงหินทลายศิลา\" ที่สามารถขับไล่เหล่าปีศาจและมอนสเตอร์ให้หนีกระเจิงได้",
+      "refinements": [
+        "เพิ่มพลังป้องกัน {color}28{/color}%; การโจมตีปกติและชาร์จโจมตีสร้างความเสียหายเพิ่มขึ้น โดยปริมาณที่เพิ่มจะเท่ากับ {color}40{/color}% ของพลังป้องกัน",
+        "เพิ่มพลังป้องกัน {color}35{/color}%; การโจมตีปกติและชาร์จโจมตีสร้างความเสียหายเพิ่มขึ้น โดยปริมาณที่เพิ่มจะเท่ากับ {color}50{/color}% ของพลังป้องกัน",
+        "เพิ่มพลังป้องกัน {color}42{/color}%; การโจมตีปกติและชาร์จโจมตีสร้างความเสียหายเพิ่มขึ้น โดยปริมาณที่เพิ่มจะเท่ากับ {color}60{/color}% ของพลังป้องกัน",
+        "เพิ่มพลังป้องกัน {color}49{/color}%; การโจมตีปกติและชาร์จโจมตีสร้างความเสียหายเพิ่มขึ้น โดยปริมาณที่เพิ่มจะเท่ากับ {color}70{/color}% ของพลังป้องกัน",
+        "เพิ่มพลังป้องกัน {color}56{/color}%; การโจมตีปกติและชาร์จโจมตีสร้างความเสียหายเพิ่มขึ้น โดยปริมาณที่เพิ่มจะเท่ากับ {color}80{/color}% ของพลังป้องกัน"
       ]
     },
     {

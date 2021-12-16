@@ -421,81 +421,152 @@
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Fight Club Legend",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Normal Attack",
+              "description": "Melancarkan hingga 4 serangan berturut-turut.\r\nSerangan ke-2 dan ke-4 yang mengenai musuh masing-masing akan menghasilkan 1 lapis dan 2 lapis efek Superlative Superstrength.\r\nMaksimum dapat ditumpuk hingga 5 lapis. Setiap kali memicu efek ini akan memperbarui durasi Superlative Superstrength yang sudah dimiliki.\r\nSelain itu, selama beberapa saat setelah melancarkan Elemental Skill Masatsu Zetsugi: Akaushi Burst! atau berlari, kombo Normal Attack Itto tidak akan di-reset.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Charged Attack",
+              "description": "Bila Itto memiliki Superlative Superstrength saat menahan tombol serang untuk melancarkan Charged Attack, Itto akan melancarkan serangan Arataki Kesagiri tanpa mengonsumsi Stamina. Setiap serangan Arataki Kesagiri akan mengonsumsi 1 lapis Superlative Superstrength. Dan saat mengonsumsi lapisan terakhir, Itto akan melancarkan 1 tebasan akhir dengan DMG yang lebih kuat.\r\nBila tidak memiliki Superlative Superstrength, Itto akan mengonsumsi Stamina untuk melancarkan 1 tebasan Saichimonji yang kuat.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Plunging Attack",
+              "description": "Menerjang dari udara untuk menghantam tanah, menyerang semua musuh di jalurnya dan mengakibatkan DMG Area saat mendarat.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "DMG Tahap 1|{param1}%",
+            "DMG Tahap 2|{param2}%",
+            "DMG Tahap 3|{param3}%",
+            "DMG Tahap 4|{param4}%",
+            "DMG Kombo Tebasan Arataki Kesagiri|{param5}%",
+            "DMG Tebasan Akhir Arataki Kesagiri|{param6}%",
+            "Durasi Superlative Superstrength|{param7}s",
+            "DMG Tebasan Saichimonji|{param8}%",
+            "Konsumsi Stamina Saichimonji|{param9}",
+            "DMG Selama Plunging|{param10}%",
+            "DMG Plunging Attack Min./Maks.|{param11}% / {param12}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Masatsu Zetsugi: Akaushi Burst!",
+          "description": "Melempar Ushi — seekor banteng akaushi muda yang juga adalah anggota tambahan dari Geng Arataki, untuk mengakibatkan Geo DMG pada musuh! Saat Ushi mengenai musuh, Arataki Itto akan memperoleh 1 lapis Superlative Superstrength.\r\nUshi akan tetap tinggal di medan pertempuran untuk memberikan bantuan:",
+          "abilities": [
+            {
+              "name": "",
+              "description": "",
+              "descriptions": [
+                "Terus menerus mengejek musuh di sekitar untuk menarik perhatiannya.",
+                "HP Ushi mewarisi Max HP Arataki Itto berdasarkan persentase tertentu.",
+                "Saat Ushi terkena DMG, Ushi akan memberikan 1 lapis Superlative Superstrength pada Arataki Itto sendiri. Itto hanya bisa mendapatkan 1 lapis Superlative Superstrength setiap 2 detik dengan cara ini.",
+                "Saat HP-nya mencapai 0 atau durasinya berakhir, Ushi akan pergi meninggalkan medan pertempuran dan memberikan 1 lapis Superlative Superstrength kepada Itto sendiri."
+              ]
+            },
+            {
+              "name": "Mode Tahan",
+              "description": "Mengatur arah lemparan.\r\nUshi dianggap sebagai sebuah Geo Construct dan hanya bisa ada 1 Ushi ciptaan Itto sendiri saja di medan pertempuran pada saat bersamaan.\r\n",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "DMG Skill|{param1}%",
+            "HP Terwariskan|{param2}%",
+            "Durasi|{param3}s",
+            "Cooldown|{param4}s"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Royal Descent: Behold, Itto the Evil!",
+          "description": "Waktunya untuk menunjukkan wibawa Geng Arataki! Selama beberapa saat, Itto akan berubah menjadi Raging Oni King dan menggunakan Oni King's Kanabou untuk bertarung.\r\n",
+          "abilities": [
+            {
+              "name": "",
+              "description": "Skill ini memiliki karakteristik berikut:\r\n",
+              "descriptions": [
+                "DMG yang diakibatkan Normal, Charged, dan Plunging Attack dikonversi menjadi Geo DMG yang tidak bisa ditimpa Elemental Infusion lainnya.",
+                "Meningkatkan Normal Attack SPD Itto, dan meningkatkan ATK Itto berdasarkan DEF miliknya.",
+                "Akan memberikan Itto sendiri 1 lapis Superlative Superstrength saat serangan tahap ke-1 dan ke-3 mengenai musuh.",
+                "Mengurangi 20% seluruh Elemental RES dan Physical RES Itto.",
+                "Status Raging Oni King akan lenyap saat Arataki Itto meninggalkan medan pertempuran."
+              ]
+            }
+          ],
+          "stats": [
+            "Peningkatan ATK|{param1}% DEF",
+            "Peningkatan Normal Attack SPD|{param2}%",
+            "Durasi|{param3}s",
+            "Cooldown|{param4}s",
+            "Konsumsi Energy|{param5}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "Woodchuck Chucked",
+          "description": "Saat anggota party sendiri memperoleh kayu dengan menyerang pohon, ada 25% kemungkinan untuk memperoleh kayu tambahan.\r\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
+          "title": "Arataki Ichiban",
+          "description": "Saat melancarkan Arataki Kesagiri secara beruntun, Arataki Itto akan memperoleh efek-efek berikut:\r\n",
+          "descriptions": [
+            "Setiap tebasan akan meningkatkan 10% ATK SPD untuk tebasan berikutnya. Dengan cara ini, ATK SPD dapat meningkat hingga 30%.",
+            "Meningkatkan ketahanan terhadap interupsi.",
+            "Efek-efek ini akan menghilang saat Itto berhenti melancarkan tebasan beruntun."
+          ]
         },
         {
           "key": "p3",
-          "title": "NA",
-          "description": "",
+          "title": "Bloodline of the Crimson Oni",
+          "description": "Meningkatkan DMG Arataki Kesagiri sebesar 35% DEF Arataki Itto.\r\n",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "Stay a While and Listen Up",
+          "description": "Setelah melancarkan Royal Descent: Behold, Itto the Evil!, Arataki Itto akan mendapatkan 2 lapis efek Superlative Superstrength. Setelah 1 detik, Itto akan mendapatkan 1 lapis Superlative Superstrength setiap 0,5 detik, dan berlangsung selama 1,5 detik.\r\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "Gather 'Round, It's a Brawl!",
+          "description": "Setelah melancarkan Royal Descent: Behold, Itto the Evil!, CD skill ini akan berkurang 1,5 detik untuk setiap Karakter Geo yang ada di dalam party, dan akan memulihkan 6 Energy Arataki Itto.\r\nDengan cara ini, CD dapat berkurang maksimum hingga 4,5 detik, dan Energy dapat pulih maksimum hingga 18 Energy.\r\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "Horns Lowered, Coming Through",
+          "description": "Meningkatkan 3 level Masatsu Zetsugi: Akaushi Burst!.\r\nMaksimum: Lv. 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "Jailhouse Bread and Butter",
+          "description": "Setelah status Raging Oni King yang didapatkan dari Royal Descent: Behold, Itto the Evil! berakhir, DEF dan ATK seluruh anggota party di sekitar meningkat 20% selama 10 detik.\r\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "10 Years of Hanamizaka Fame",
+          "description": "Meningkatkan 3 level Royal Descent: Behold, Itto the Evil!.\r\nMaksimum: Lv. 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
+          "title": "Arataki Itto, Present!",
+          "description": "Meningkatkan 70% Crit DMG untuk Charged Attack Arataki Itto. Selain itu, saat melancarkan Arataki Kesagiri, Itto memiliki 50% kemungkinan untuk tidak mengonsumsi lapisan Superlative Superstrength.\r\n",
           "descriptions": []
         }
       ]
@@ -1774,82 +1845,155 @@
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Ripping Fang Fletching",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Normal Attack",
+              "description": "Melancarkan hingga 4 serangan berturut-turut menggunakan busur.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Charged Attack",
+              "description": "Melancarkan sebuah Serangan Membidik yang lebih akurat untuk mengakibatkan DMG lebih besar.\r\nSaat membidik, kristal batu akan berkumpul di ujung anak panah. Setelah terkumpul penuh, anak panah yang diluncurkan akan mengakibatkan Geo DMG.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Plunging Attack",
+              "description": "Melancarkan hujan panah dari udara dan menerjang tanah dengan kecepatan tinggi, mengakibatkan DMG Area saat mendarat.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "DMG Tahap 1|{param1}%",
+            "DMG Tahap 2|{param2}%",
+            "DMG Tahap 3|{param3}%",
+            "DMG Tahap 4|{param4}%",
+            "DMG Membidik|{param5}%",
+            "DMG Membidik Penuh|{param6}%",
+            "DMG Selama Plunging|{param7}%",
+            "DMG Plunging Attack Min./Maks.|{param8}% / {param9}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Inuzaka All-Round Defense",
+          "description": "Mengakibatkan Geo DMG Area dan mendirikan General's War-Banner.\r\n",
+          "abilities": [
+            {
+              "name": "General's War-Banner",
+              "description": "Memberikan buff berikut kepada Karakter aktif di dalam area skill, berdasarkan jumlah Karakter Geo di dalam party saat Banner didirikan:\r\n",
+              "descriptions": [
+                "Satu Karakter — memberikan efek \"Standing Firm\": Bonus DEF.",
+                "Dua Karakter — memberikan efek \"Impregnable\": Bonus DEF dan meningkatkan pertahanan terhadap interupsi.",
+                "Tiga Karakter — memberikan efek \"Crunch\": Bonus DEF, peningkatan pertahanan terhadap interupsi, dan memberikan Bonus Geo DMG.",
+                "Hanya bisa ada 1 General's War-Banner ciptaan Gorou yang ada di medan pertempuran dalam waktu bersamaan. Karakter hanya dapat memperoleh buff dari 1 General's War-Banner. Setelah Karakter meninggalkan medan pertempuran, efek dalam medan tersebut akan berlanjut selama 2 detik."
+              ]
+            },
+            {
+              "name": "Mode Tahan",
+              "description": "Dapat menyesuaikan posisi skill.\r\n",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "DMG Skill|{param1}%",
+            "Peningkatan DEF|{param2}",
+            "Bonus Geo DMG|{param3}%",
+            "Durasi|{param4}s",
+            "Cooldown|{param5}s"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Juuga: Forward Unto Victory",
+          "description": "Dengan menunjukkan kewibawaan sebagai jenderal, Gorou mengakibatkan Geo DMG Area dan menciptakan area General's Glory untuk menyalakan semangat rekan-rekannya.\r\n",
+          "abilities": [
+            {
+              "name": "General's Glory",
+              "description": "Memiliki karakteristik berikut:\r\n",
+              "descriptions": [
+                "Area ini memiliki efek yang persis seperti efek General's War Banner dari Elemental Skill Gorou, Inuzaka All-Round Defense, yang memberikan buff pada Karakter aktif di dalam area skill sesuai dengan jumlah Karakter Geo dalam party. Area ini juga akan mengikuti pergerakan Karakter aktif.",
+                "Menciptakan 1 Crystal Collapse setiap 1,5 detik yang mengakibatkan Geo DMG Area pada 1 musuh di lingkup area.",
+                "Crystal Collapse juga akan menarik 1 Elemental Shard yang terbentuk dari Reaksi Crystallize dalam area tersebut ke posisi Karakter aktif setiap 1,5 detik.",
+                "Bila General's War-Banner ciptaan Gorou sendiri berada di medan pertempuran saat melancarkan skill ini, maka General's War-Banner tersebut akan hancur. Selain itu, selama durasi General's Glory berlangsung, tidak akan muncul General's War-Banner saat Gorou sendiri melancarkan Elemental skill Inuzaka All-Round Defense.",
+                "Efek General's Glory milik Gorou sendiri akan hilang ketika Gorou gugur."
+              ]
+            }
+          ],
+          "stats": [
+            "DMG Skill|{param1}% DEF",
+            "DMG Crystal Collapse|{param2}% DEF",
+            "Durasi|{param3}s",
+            "Cooldown|{param4}s",
+            "Konsumsi Energy|{param5}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "Seeker of Shinies",
+          "description": "Memperlihatkan lokasi produk khas Inazuma di sekitar pada peta kecil.\r\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
+          "title": "Heedless of the Wind and Weather",
+          "description": "Meningkatkan 25% DEF seluruh anggota party di sekitar selama 12 detik setelah melancarkan Juuga: Forward Unto Victory.\r\n",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
+          "title": "A Favor Repaid",
+          "description": "Berdasarkan DEF-nya, Gorou memperoleh Bonus DMG berikut:\r\n",
+          "descriptions": [
+            "Meningkatkan DMG skill Inuzaka All-Round Defense sebesar 156% DEF Gorou.",
+            "Meningkatkan DMG skill Juuga: Forward Unto Victory dan DMG Crystal Collapse sebesar 15,6% DEF Gorou."
+          ]
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "Rushing Hound: Swift as the Wind",
+          "description": "Setelah Karakter aktif (selain Gorou sendiri) mengakibatkan Geo DMG saat berada dalam Area General's War-Banner atau General's Glory ciptaan Gorou sendiri, durasi CD Inuzaka All-Round Defense milik Gorou akan berkurang 2 detik.\r\nEfek ini dapat terpicu setiap 10 detik.\r\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "Sitting Hound: Steady as a Clock",
+          "description": "Selama durasi General's Glory berlangsung, setelah Karakter aktif di sekitar memperoleh Elemental Shard dari reaksi Crystallize, maka durasi General's Glory milik Gorou sendiri akan bertambah 1 detik.\r\nEfek ini dapat terpicu setiap 0,1 detik dan durasi General's Glory dapat bertambah hingga 3 detik dengan cara ini.\r\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "Mauling Hound: Fierce as Fire",
+          "description": "Meningkatkan 3 level Inuzaka All-Round Defense.\r\nMaksimum: Lv.15.\r\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "Lapping Hound: Warm as Water",
+          "description": "Saat General's Glory berada dalam status \"Impregnable\" atau \"Crunch\", HP Karakter aktif yang berada di dalam area General's Glory akan dipulihkan sebesar 50% DEF Gorou sendiri setiap 1,5 detik.\r\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "Striking Hound: Thunderous Force",
+          "description": "Meningkatkan 3 level Juuga: Forward Unto Victory.\r\nMaksimum: Lv. 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
+          "title": "Valiant Hound: Mountainous Fealty",
+          "description": "Dalam 12 detik setelah menggunakan Inuzaka All-Round Defense atau Juuga: Forward Unto Victory, Gorou akan meningkatkan CRIT DMG untuk Geo DMG milik seluruh anggota party di sekitar sesuai dengan level area Gorou saat skill ini dilancarkan:\r\n",
+          "descriptions": [
+            "Standing Firm: Meningkatkan 10%.",
+            "Impregnable: Meningkatkan 20%.",
+            "Crunch: Meningkatkan 40%.",
+            "Efek ini tidak bisa ditumpuk, yang terhitung adalah yang terakhir kali aktif."
+          ]
         }
       ]
     },
@@ -7482,6 +7626,18 @@
         "Memulihkan {color}12{/color}% HP saat mengalahkan satu musuh.",
         "Memulihkan {color}14{/color}% HP saat mengalahkan satu musuh.",
         "Memulihkan {color}16{/color}% HP saat mengalahkan satu musuh."
+      ]
+    },
+    {
+      "key": "redhorn-stonethresher",
+      "name": "Redhorn Stonethresher",
+      "description": "Berdasarkan penuturan pemiliknya yang terdahulu, pedang ini adalah pedang \"Bertanduk Merah Penghancur Batu Pelumat Emas Penakluk Singa\" yang dapat membuat monster mana pun lari terbirit-birit.",
+      "refinements": [
+        "Meningkatkan {color}28{/color}% DEF. DMG dari Normal dan Charged Attack akan meningkat sebesar {color}40{/color}% DEF.",
+        "Meningkatkan {color}35{/color}% DEF. DMG dari Normal dan Charged Attack akan meningkat sebesar {color}50{/color}% DEF.",
+        "Meningkatkan {color}42{/color}% DEF. DMG dari Normal dan Charged Attack akan meningkat sebesar {color}60{/color}% DEF.",
+        "Meningkatkan {color}49{/color}% DEF. DMG dari Normal dan Charged Attack akan meningkat sebesar {color}70{/color}% DEF.",
+        "Meningkatkan {color}56{/color}% DEF. DMG dari Normal dan Charged Attack akan meningkat sebesar {color}80{/color}% DEF."
       ]
     },
     {

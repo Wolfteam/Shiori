@@ -425,81 +425,152 @@
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Tấn Công Thường - Huyền Thoại Đấm Nhau",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Tấn Công Thường",
+              "description": "Thực hiện tối đa 4 lần chém liên tiếp.\r\nLần chém thứ 2 và thứ 4 trúng địch sẽ lần lượt nhận 1 tầng và 2 tầng \"Quỷ Lực Vô Song\".\r\nTối đa sở hữu 5 tầng \"Quỷ Lực Vô Song\", mỗi lần kích hoạt đều sẽ làm mới thời gian duy trì của Quỷ Lực Vô Song đã có.\r\nNgoài ra, trong một thời gian ngắn sau khi xung kích hoặc thi triển kỹ năng nguyên tố \"Tuyệt Kỹ Masatsu - Akaushi Công Phá!\", số lần liên kích đánh thường sẽ không bị tái lập.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Trọng Kích",
+              "description": "Khi nhấn giữ để thực hiện trọng kích, nếu có Quỷ Lực Vô Song sẽ thi triển \"Arataki Kesagiri\" không tiêu tốn thể lực. Arataki Kesagiri mỗi lần tấn công sẽ tiêu hao một tầng Quỷ Lực Vô Song; Khi tiêu hao đến tầng cuối cùng sẽ thi triển thêm đòn kết liễu mạnh mẽ.\r\nKhi không có Quỷ Lực Vô Song sẽ tiêu hao thể lực để thi triển một lần Nhát Chém Saichimonji cực mạnh.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Tấn Công Khi Đáp",
+              "description": "Đáp xuống đất từ trên không, tấn công kẻ địch trên đường, đồng thời gây sát thương phạm vi khi chạm đất.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "Sát Thương Lần 1|{param1}%",
+            "Sát Thương Lần 2|{param2}%",
+            "Sát Thương Lần 3|{param3}%",
+            "Sát Thương Lần 4|{param4}%",
+            "Sát Thương Liên Trảm Arataki Kesagiri|{param5}%",
+            "Sát Thương Kết Liễu Arataki Kesagiri|{param6}%",
+            "Thời Gian Duy Trì Quỷ Lực Vô Song|{param7}s",
+            "Sát Thương Nhát Chém Saichimonji|{param8}%",
+            "Thể lực Nhát Chém Saichimonji tiêu hao|{param9}",
+            "Sát Thương Khi Đáp|{param10}%",
+            "Sát Thương Khi Rơi Từ Độ Cao Thấp/Cao|{param11}% / {param12}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Tuyệt Kỹ Masatsu - Akaushi Công Phá!",
+          "description": "Ném bò con \"Ushi\" - thành viên ngoài biên chế của Bang Arataki, gây Sát Thương Nguyên Tố Nham cho kẻ địch trúng phải! Khi \"Ushi\" trúng kẻ địch sẽ cung cấp cho Arataki Itto 1 tầng \"Quỷ Lực Vô Song\".\r\n\"Ushi\" sẽ ở lại trong trận để chi viện:",
+          "abilities": [
+            {
+              "name": "",
+              "description": "",
+              "descriptions": [
+                "Liên tục khiêu khích kẻ địch xung quanh, thu hút hỏa lực;",
+                "Độ bền sẽ dựa vào tỷ lệ giới hạn HP của Arataki Itto;",
+                "Khi chịu sát thương sẽ cung cấp cho Arataki Itto 1 tầng \"Quỷ Lực Vô Song\". Mỗi 2 giây tối đa chỉ có thể nhận được 1 tầng thông qua cách này;",
+                "Khi hết độ bền hoặc thời gian tồn tại, \"Ushi\" sẽ để lại cho Arataki Itto 1 tầng \"Quỷ Lực Vô Song\" rồi chạy mất."
+              ]
+            },
+            {
+              "name": "Nhấn giữ",
+              "description": "Điều chỉnh hướng ném.\r\n\"Ushi\" sẽ được tính là tạo vật Nguyên Tố Nham; Cùng lúc chỉ có thể tồn tại một \"Ushi\" do bản thân Arataki Itto ném ra.\r\n",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "Sát Thương Kỹ Năng|{param1}%",
+            "HP Thừa Kế|{param2}%",
+            "Thời Gian Kéo Dài|{param3}s",
+            "CD|{param4}s"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Siêu Cấp Quỷ Vương - Itto Giáng Lâm!",
+          "description": "Đã đến lúc thể hiện bản thân! Trong khoảng thời gian tiếp theo, Itto hóa thân thành \"Nộ Mục Quỷ Vương\", sử dụng Quỷ Vương Kim Toái Bổng để chiến đấu.\r\n",
+          "abilities": [
+            {
+              "name": "",
+              "description": "Đặc tính cụ thể như sau:\r\n",
+              "descriptions": [
+                "Sát thương của tấn công thường, trọng kích, tấn công khi đáp sẽ chuyển hóa thành Sát Thương Nguyên Tố Nham không thể bị đính kèm thay thế;",
+                "Tăng tốc độ đánh thường của Arataki Itto, đồng thời tăng sức tấn công dựa theo phòng ngự;",
+                "Tấn công lần thứ 1 và 3 trúng kẻ địch sẽ cung cấp cho Arataki Itto 1 tầng \"Quỷ Lực Vô Song\";",
+                "Kháng tất cả nguyên tố và kháng vật lý của Arataki Itto giảm 20%.",
+                "Trạng thái \"Nộ Mục Quỷ Vương\" sẽ bị hủy khi Arataki Itto rời trận."
+              ]
+            }
+          ],
+          "stats": [
+            "Tấn Công Tăng|{param1}% DEF",
+            "Tốc Độ Tấn Công Tăng|{param2}%",
+            "Thời Gian Kéo Dài|{param3}s",
+            "CD|{param4}s",
+            "Năng Lượng Nguyên Tố|{param5}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "Bổ Củi",
+          "description": "Khi nhân vật của bản thân trong đội đốn gỗ bằng cách tấn công cây cối, có 25% xác suất nhận được thêm gỗ.\r\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
+          "title": "Arataki Đệ Nhất",
+          "description": "Arataki Itto khi thi triển \"Arataki Kesagiri\" liên tục sẽ có hiệu quả sau:\r\n",
+          "descriptions": [
+            "Mỗi lần trảm kích đều sẽ khiến tốc độ tấn công của trảm kích lần sau tăng 10%, tối đa tăng 30% bằng cách này;",
+            "Tăng khả năng kháng gián đoạn.",
+            "Hiệu quả sẽ biến mất khi kết thúc thi triển liên tục."
+          ]
         },
         {
           "key": "p3",
-          "title": "NA",
-          "description": "",
+          "title": "Huyết Mạch Xích Quỷ",
+          "description": "Tăng sát thương gây ra từ \"Arataki Kesagiri\", lượng tăng thêm sát thương sẽ dựa vào 35% phòng ngự của Arataki Itto.\r\n",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "Đứng Lại, Ta Nói Cho Nghe",
+          "description": "Sau khi thi triển Siêu Cấp Quỷ Vương - Itto Giáng Lâm!, Arataki Itto nhận 2 tầng hiệu ứng \"Quỷ Lực Vô Song\". Sau 1s, Arataki Itto mỗi 0.5s sẽ nhận thêm 1 tầng \"Quỷ Lực Vô Song\", duy trì 1.5s.\r\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "Gọi Anh Em, Đánh Hội Đồng",
+          "description": "Sau khi thi triển Siêu Cấp Quỷ Vương - Itto Giáng Lâm!, CD kỹ năng của mỗi nhân vật Nguyên Tố Nham trong đội sẽ giảm đi 1.5s và khiến Arataki Itto hồi phục 6 điểm năng lượng nguyên tố.\r\nThông qua cách này, tối đa giảm 4.5s CD và hồi phục 18 điểm năng lượng nguyên tố.\r\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "Có Ta Ở Đây, Đừng Sợ",
+          "description": "Cấp kỹ năng Tuyệt Kỹ Masatsu - Akaushi Công Phá! +3.\r\nTăng tối đa đến cấp 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "Cơm Nước Trại Giam Ngon Thật!",
+          "description": "Sau khi kết thúc trạng thái \"Nộ Mục Quỷ Vương\" của kỹ năng Siêu Cấp Quỷ Vương - Itto Giáng Lâm!, sức phòng ngự của tất cả nhân vật trong đội gần đó tăng 20%, sức tấn công tăng 20%, duy trì 10s.\r\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "Mười Năm Vang Danh Hanamizaka",
+          "description": "Cấp kỹ năng Siêu Cấp Quỷ Vương - Itto Giáng Lâm! +3.\r\nTăng tối đa đến cấp 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
+          "title": "Bổn Đại Gia Là Arataki Itto",
+          "description": "Tăng 70% sát thương bạo kích của trọng kích của Arataki Itto; Ngoài ra, khi thi triển \"Arataki Kesagiri\" sẽ có 50% xác suất không tiêu hao \"Quỷ Lực Vô Song\".\r\n",
           "descriptions": []
         }
       ]
@@ -1769,87 +1840,160 @@
     {
       "key": "gorou",
       "name": "Gorou",
-      "title": "Chiến Khuyển Nanh Nhọn",
-      "description": "Đại tướng đảo Watatsumi, rất được thuộc hạ tin tưởng.",
+      "title": "Canine Warrior",
+      "description": "The great general of Watatsumi Island's forces. He is deeply trusted by his subordinates.",
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Ripping Fang Fletching",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Normal Attack",
+              "description": "Perform up to 4 consecutive shots with a bow.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Charged Attack",
+              "description": "Perform a more precise Aimed Shot with increased DMG.\r\nWhile aiming, stone crystals will accumulate on the arrowhead. A fully charged crystalline arrow will deal Geo DMG.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Plunging Attack",
+              "description": "Fires off a shower of arrows in mid-air before falling and striking the ground, dealing AoE DMG upon impact.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "1-Hit DMG|{param1}%",
+            "2-Hit DMG|{param2}%",
+            "3-Hit DMG|{param3}%",
+            "4-Hit DMG|{param4}%",
+            "Aimed Shot|{param5}%",
+            "Fully-Charged Aimed Shot|{param6}%",
+            "Plunge DMG|{param7}%",
+            "Low/High Plunge DMG|{param8}% / {param9}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Inuzaka All-Round Defense",
+          "description": "Deals AoE Geo DMG and sets up a General's War Banner.\r\n",
+          "abilities": [
+            {
+              "name": "General's War Banner",
+              "description": "Provides up to 3 buffs to active characters within the skill's AoE based on the number of Geo characters in the party at the time of casting:\r\n",
+              "descriptions": [
+                "1 Geo character: Adds \"Standing Firm\" - DEF Bonus.",
+                "2 Geo characters: Adds \"Impregnable\" - Increased resistance to interruption.",
+                "3 Geo characters: Adds \"Crunch\" - Geo DMG Bonus.",
+                "Gorou can deploy only 1 General's War Banner on the field at any one time. Characters can only benefit from 1 General's War Banner at a time. When a party member leaves the field, the active buff will last for 2s."
+              ]
+            },
+            {
+              "name": "Hold",
+              "description": "Adjust the location of the skill.\r\n",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "Skill DMG|{param1}%",
+            "DEF Increase|{param2}",
+            "Geo DMG Bonus|{param3}%",
+            "Duration|{param4}s",
+            "CD|{param5}s"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Juuga: Forward Unto Victory",
+          "description": "Displaying his valor as a general, Gorou deals AoE Geo DMG and creates a field known as General's Glory to embolden his comrades.\r\n",
+          "abilities": [
+            {
+              "name": "General's Glory",
+              "description": "This field has the following properties:\r\n",
+              "descriptions": [
+                "Like the General's War Banner created by Inuzaka All-Round Defense, provides buffs to active characters within the skill's AoE based on the number of Geo characters in the party. Also moves together with your active character.",
+                "Generates 1 Crystal Collapse every 1.5s that deals AoE Geo DMG to 1 opponent within the skill's AoE.",
+                "Pulls 1 elemental shard in the skill's AoE to your active character's position every 1.5s (elemental shards are created by Crystallize reactions).",
+                "If a General's War Banner created by Gorou currently exists on the field when this ability is used, it will be destroyed. In addition, for the duration of General's Glory, Gorou's Elemental Skill \"Inuzaka All-Round Defense\" will not create the General's War Banner.",
+                "If Gorou falls, the effects of General's Glory will be cleared."
+              ]
+            }
+          ],
+          "stats": [
+            "Skill DMG|{param1}% DEF",
+            "Crystal Collapse DMG|{param2}% DEF",
+            "Duration|{param3}s",
+            "CD|{param4}s",
+            "Energy Cost|{param5}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "Seeker of Shinies",
+          "description": "Displays the location of nearby resources unique to Inazuma on the mini-map.\r\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
+          "title": "Heedless of the Wind and Weather",
+          "description": "After using Juuga: Forward Unto Victory, all nearby party members' DEF is increased by 25% for 12s.\r\n",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
+          "title": "A Favor Repaid",
+          "description": "Gorou receives the following DMG Bonuses to his attacks based on his DEF:\r\n",
+          "descriptions": [
+            "Inuzaka All-Round Defense: Skill DMG increased by 156% of DEF",
+            "Juuga: Forward Unto Victory: Skill DMG and Crystal Collapse DMG increased by 15.6% of DEF"
+          ]
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "Rushing Hound: Swift as the Wind",
+          "description": "When characters (other than Gorou) within the AoE of Gorou's General's War Banner or General's Glory deal Geo DMG to opponents, the CD of Gorou's Inuzaka All-Round Defense is decreased by 2s.\r\nThis effect can occur once every 10s.\r\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "Sitting Hound: Steady as a Clock",
+          "description": "While General's Glory is in effect, its duration is extended by 1s when a nearby active character obtains an Elemental Shard from a Crystallize reaction. \r\nThis effect can occur once every 0.1s. Max extension is 3s.\r\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "Mauling Hound: Fierce as Fire",
+          "description": "Increases the Level of Inuzaka All-Round Defense by 3.\r\nMaximum upgrade level is 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "Lapping Hound: Warm as Water",
+          "description": "When General's Glory is in the \"Impregnable\" or \"Crunch\" states, it will also heal active characters within its AoE by 50% of Gorou's own DEF every 1.5s.\r\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "Striking Hound: Thunderous Force",
+          "description": "Increases the Level of Juuga: Forward Unto Victory by 3.\r\nMaximum upgrade level is 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
+          "title": "Valiant Hound: Mountainous Fealty",
+          "description": "For 12s after using Inuzaka All-Round Defense or Juuga: Forward Unto Victory, increases the CRIT DMG of all nearby party members' Geo DMG based on the buff level of the skill's field at the time of use:\r\n",
+          "descriptions": [
+            "\"Standing Firm\": +10%",
+            "\"Impregnable\": +20%",
+            "\"Crunch\": +40%",
+            "This effect cannot stack and will take reference from the last instance of the effect that is triggered."
+          ]
         }
       ]
     },
@@ -7476,6 +7620,18 @@
         "Khi đánh bại kẻ địch, hồi {color}12{/color}%HP",
         "Khi đánh bại kẻ địch, hồi {color}14{/color}%HP",
         "Khi đánh bại kẻ địch, hồi {color}16{/color}%HP"
+      ]
+    },
+    {
+      "key": "redhorn-stonethresher",
+      "name": "Xích Giác Phá Thạch Đao",
+      "description": "Theo cách nói của chủ nhân xưa kia, với thanh \"Xích Giác Thạch Kiến Thạch Hội Kim Đồ Kim Niết Ngự Sư Tử\" này thì bất cứ loại yêu tinh quỷ quái nào cũng sẽ bị đánh đuổi.",
+      "refinements": [
+        "Phòng ngự tăng {color}28{/color}%; Tăng sát thương tấn công thường và trọng kích, lượng tăng thêm tương đương {color}40{/color}% phòng ngự.",
+        "Phòng ngự tăng {color}35{/color}%; Tăng sát thương tấn công thường và trọng kích, lượng tăng thêm tương đương {color}50{/color}% phòng ngự.",
+        "Phòng ngự tăng {color}42{/color}%; Tăng sát thương tấn công thường và trọng kích, lượng tăng thêm tương đương {color}60{/color}% phòng ngự.",
+        "Phòng ngự tăng {color}49{/color}%; Tăng sát thương tấn công thường và trọng kích, lượng tăng thêm tương đương {color}70{/color}% phòng ngự.",
+        "Phòng ngự tăng {color}56{/color}%; Tăng sát thương tấn công thường và trọng kích, lượng tăng thêm tương đương {color}80{/color}% phòng ngự."
       ]
     },
     {

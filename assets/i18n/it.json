@@ -420,81 +420,152 @@
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Fight Club Legend",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Normal Attack",
+              "description": "Perform up to 4 consecutive strikes.\r\nWhen the 2nd and 4th strikes hit opponents, Itto will gain 1 or 2 stacks of Superlative Superstrength, respectively.\r\nMax 5 stacks. Triggering this effect will refresh the current duration of any existing stacks.\r\nAdditionally, Itto's Normal Attack combo does not immediately reset after sprinting or using his Elemental Skill, \"Masatsu Zetsugi: Akaushi Burst!\"\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Charged Attack",
+              "description": "When holding to perform a Charged Attack, Itto unleashes a series of Arataki Kesagiri slashes without consuming Stamina. Instead, each Arataki Kesagiri slash consumes 1 stack of Superlative Superstrength. When the final stack is consumed, Itto delivers a powerful final slash.\r\nIf no stacks of Superlative Superstrength are available, Itto will perform a single Saichimonji Slash.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Plunging Attack",
+              "description": "Plunges from mid-air to strike the ground, damaging opponents along the path and dealing AoE DMG upon impact.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "1-Hit DMG|{param1}%",
+            "2-Hit DMG|{param2}%",
+            "3-Hit DMG|{param3}%",
+            "4-Hit DMG|{param4}%",
+            "Arataki Kesagiri Combo Slash DMG|{param5}%",
+            "Arataki Kesagiri Final Slash DMG|{param6}%",
+            "Superlative Superstrength Duration|{param7}s",
+            "Saichimonji Slash DMG|{param8}%",
+            "Saichimonji Slash Stamina Cost|{param9}",
+            "Plunge DMG|{param10}%",
+            "Low/High Plunge DMG|{param11}% / {param12}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Masatsu Zetsugi: Akaushi Burst!",
+          "description": "Hurls Ushi, the young akaushi bull and auxiliary member of the Arataki Gang, dealing Geo DMG to opponents on hit. When Ushi hits opponents, Arataki Itto gains 1 stack of Superlative Superstrength.\r\nUshi will remain on the field and provide support in the following ways:",
+          "abilities": [
+            {
+              "name": "",
+              "description": "",
+              "descriptions": [
+                "Taunts surrounding opponents and draws their attacks.",
+                "Inherits HP based on a percentage of Arataki Itto's Max HP.",
+                "When Ushi takes DMG, Arataki Itto gains 1 stack of Superlative Superstrength. Only 1 stack can be gained in this way every 2s.",
+                "Ushi will flee when its HP reaches 0 or its duration ends. It will grant Arataki Itto 1 stack of Superlative Superstrength when it leaves."
+              ]
+            },
+            {
+              "name": "Hold",
+              "description": "Adjust throwing angle.\r\nUshi is considered a Geo construct. Arataki Itto can only deploy 1 Ushi on the field at any one time.\r\n",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "Skill DMG|{param1}%",
+            "Inherited HP|{param2}%",
+            "Duration|{param3}s",
+            "CD|{param4}s"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Royal Descent: Behold, Itto the Evil!",
+          "description": "Time to show 'em the might of the Arataki Gang! For a time, Itto lets out his inner Raging Oni King, wielding his Oni King's Kanabou in battle.\r\n",
+          "abilities": [
+            {
+              "name": "",
+              "description": "This state has the following special properties:\r\n",
+              "descriptions": [
+                "Converts Itto's Normal, Charged, and Plunging Attacks to Geo DMG. This cannot be overridden.",
+                "Increases Itto's Normal Attack SPD. Also increases his ATK based on his DEF.",
+                "On hit, the 1st and 3rd strikes of his attack combo will each grant Arataki Itto 1 stack of Superlative Superstrength.",
+                "Decreases Itto's Elemental and Physical RES by 20%.",
+                "The Raging Oni King state will be cleared when Itto leaves the field."
+              ]
+            }
+          ],
+          "stats": [
+            "ATK Bonus|{param1}% DEF",
+            "ATK SPD Bonus|{param2}%",
+            "Duration|{param3}s",
+            "CD|{param4}s",
+            "Energy Cost|{param5}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "Woodchuck Chucked",
+          "description": "When a party member uses attacks to obtain wood from a tree, they have a 25% chance to get an additional log of wood.\r\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
+          "title": "Arataki Ichiban",
+          "description": "When Arataki Itto uses consecutive Arataki Kesagiri, he obtains the following effects:\r\n",
+          "descriptions": [
+            "Each slash increases the ATK SPD of the next slash by 10%. Max ATK SPD increase is 30%.",
+            "Increases his resistance to interruption.",
+            "These effects will be cleared once he stops performing consecutive slashes."
+          ]
         },
         {
           "key": "p3",
-          "title": "NA",
-          "description": "",
+          "title": "Bloodline of the Crimson Oni",
+          "description": "Arataki Kesagiri DMG is increased by 35% of Arataki Itto's DEF.\r\n",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "Stay a While and Listen Up",
+          "description": "After using Royal Descent: Behold, Itto the Evil!, Arataki Itto gains 2 stacks of Superlative Superstrength. After 1s, Itto will gain 1 stack of Superlative Superstrength every 0.5s for 1.5s.\r\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "Gather 'Round, It's a Brawl!",
+          "description": "After using Royal Descent: Behold, Itto the Evil!, each party member whose Element is Geo will decrease that skill's CD by 1.5s and restore 6 Energy to Arataki Itto.\r\nCD can be decreased by up to 4.5s in this manner. Max 18 Energy can be restored in this manner.\r\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "Horns Lowered, Coming Through",
+          "description": "Increases the Level of Masatsu Zetsugi: Akaushi Burst! by 3.\r\nMaximum upgrade level is 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "Jailhouse Bread and Butter",
+          "description": "When the Raging Oni King state caused by Royal Descent: Behold, Itto the Evil! ends, all nearby party members gain 20% DEF and 20% ATK for 10s.\r\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "10 Years of Hanamizaka Fame",
+          "description": "Increases the Level of Royal Descent: Behold, Itto the Evil! by 3.\r\nMaximum upgrade level is 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
+          "title": "Arataki Itto, Present!",
+          "description": "Arataki Itto's Charged Attacks deal +70% Crit DMG. Additionally, when he uses Arataki Kesagiri, he has a 50% chance to not consume stacks of Superlative Superstrength.\r\n",
           "descriptions": []
         }
       ]
@@ -1773,82 +1844,155 @@
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Ripping Fang Fletching",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Normal Attack",
+              "description": "Perform up to 4 consecutive shots with a bow.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Charged Attack",
+              "description": "Perform a more precise Aimed Shot with increased DMG.\r\nWhile aiming, stone crystals will accumulate on the arrowhead. A fully charged crystalline arrow will deal Geo DMG.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Plunging Attack",
+              "description": "Fires off a shower of arrows in mid-air before falling and striking the ground, dealing AoE DMG upon impact.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "1-Hit DMG|{param1}%",
+            "2-Hit DMG|{param2}%",
+            "3-Hit DMG|{param3}%",
+            "4-Hit DMG|{param4}%",
+            "Aimed Shot|{param5}%",
+            "Fully-Charged Aimed Shot|{param6}%",
+            "Plunge DMG|{param7}%",
+            "Low/High Plunge DMG|{param8}% / {param9}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Inuzaka All-Round Defense",
+          "description": "Deals AoE Geo DMG and sets up a General's War Banner.\r\n",
+          "abilities": [
+            {
+              "name": "General's War Banner",
+              "description": "Provides up to 3 buffs to active characters within the skill's AoE based on the number of Geo characters in the party at the time of casting:\r\n",
+              "descriptions": [
+                "1 Geo character: Adds \"Standing Firm\" - DEF Bonus.",
+                "2 Geo characters: Adds \"Impregnable\" - Increased resistance to interruption.",
+                "3 Geo characters: Adds \"Crunch\" - Geo DMG Bonus.",
+                "Gorou can deploy only 1 General's War Banner on the field at any one time. Characters can only benefit from 1 General's War Banner at a time. When a party member leaves the field, the active buff will last for 2s."
+              ]
+            },
+            {
+              "name": "Hold",
+              "description": "Adjust the location of the skill.\r\n",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "Skill DMG|{param1}%",
+            "DEF Increase|{param2}",
+            "Geo DMG Bonus|{param3}%",
+            "Duration|{param4}s",
+            "CD|{param5}s"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Juuga: Forward Unto Victory",
+          "description": "Displaying his valor as a general, Gorou deals AoE Geo DMG and creates a field known as General's Glory to embolden his comrades.\r\n",
+          "abilities": [
+            {
+              "name": "General's Glory",
+              "description": "This field has the following properties:\r\n",
+              "descriptions": [
+                "Like the General's War Banner created by Inuzaka All-Round Defense, provides buffs to active characters within the skill's AoE based on the number of Geo characters in the party. Also moves together with your active character.",
+                "Generates 1 Crystal Collapse every 1.5s that deals AoE Geo DMG to 1 opponent within the skill's AoE.",
+                "Pulls 1 elemental shard in the skill's AoE to your active character's position every 1.5s (elemental shards are created by Crystallize reactions).",
+                "If a General's War Banner created by Gorou currently exists on the field when this ability is used, it will be destroyed. In addition, for the duration of General's Glory, Gorou's Elemental Skill \"Inuzaka All-Round Defense\" will not create the General's War Banner.",
+                "If Gorou falls, the effects of General's Glory will be cleared."
+              ]
+            }
+          ],
+          "stats": [
+            "Skill DMG|{param1}% DEF",
+            "Crystal Collapse DMG|{param2}% DEF",
+            "Duration|{param3}s",
+            "CD|{param4}s",
+            "Energy Cost|{param5}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "Seeker of Shinies",
+          "description": "Displays the location of nearby resources unique to Inazuma on the mini-map.\r\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
+          "title": "Heedless of the Wind and Weather",
+          "description": "After using Juuga: Forward Unto Victory, all nearby party members' DEF is increased by 25% for 12s.\r\n",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
+          "title": "A Favor Repaid",
+          "description": "Gorou receives the following DMG Bonuses to his attacks based on his DEF:\r\n",
+          "descriptions": [
+            "Inuzaka All-Round Defense: Skill DMG increased by 156% of DEF",
+            "Juuga: Forward Unto Victory: Skill DMG and Crystal Collapse DMG increased by 15.6% of DEF"
+          ]
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "Rushing Hound: Swift as the Wind",
+          "description": "When characters (other than Gorou) within the AoE of Gorou's General's War Banner or General's Glory deal Geo DMG to opponents, the CD of Gorou's Inuzaka All-Round Defense is decreased by 2s.\r\nThis effect can occur once every 10s.\r\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "Sitting Hound: Steady as a Clock",
+          "description": "While General's Glory is in effect, its duration is extended by 1s when a nearby active character obtains an Elemental Shard from a Crystallize reaction. \r\nThis effect can occur once every 0.1s. Max extension is 3s.\r\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "Mauling Hound: Fierce as Fire",
+          "description": "Increases the Level of Inuzaka All-Round Defense by 3.\r\nMaximum upgrade level is 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "Lapping Hound: Warm as Water",
+          "description": "When General's Glory is in the \"Impregnable\" or \"Crunch\" states, it will also heal active characters within its AoE by 50% of Gorou's own DEF every 1.5s.\r\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "Striking Hound: Thunderous Force",
+          "description": "Increases the Level of Juuga: Forward Unto Victory by 3.\r\nMaximum upgrade level is 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
+          "title": "Valiant Hound: Mountainous Fealty",
+          "description": "For 12s after using Inuzaka All-Round Defense or Juuga: Forward Unto Victory, increases the CRIT DMG of all nearby party members' Geo DMG based on the buff level of the skill's field at the time of use:\r\n",
+          "descriptions": [
+            "\"Standing Firm\": +10%",
+            "\"Impregnable\": +20%",
+            "\"Crunch\": +40%",
+            "This effect cannot stack and will take reference from the last instance of the effect that is triggered."
+          ]
         }
       ]
     },
@@ -7475,6 +7619,18 @@
         "Sconfiggere un nemico rigenera il {color}12{/color}% di HP.",
         "Sconfiggere un nemico rigenera il {color}14{/color}% di HP.",
         "Sconfiggere un nemico rigenera il {color}16{/color}% di HP."
+      ]
+    },
+    {
+      "key": "redhorn-stonethresher",
+      "name": "Redhorn Stonethresher",
+      "description": "According to its previous owner, this weapon is the \"Mighty Redhorn Stoic Stonethreshing Gilded Goldcrushing Lion Lord\" that can send any monster packing with its tail between its legs.",
+      "refinements": [
+        "DEF is increased by {color}28{/color}%. Normal and Charged Attack DMG is increased by {color}40{/color}% of DEF.",
+        "DEF is increased by {color}35{/color}%. Normal and Charged Attack DMG is increased by {color}50{/color}% of DEF.",
+        "DEF is increased by {color}42{/color}%. Normal and Charged Attack DMG is increased by {color}60{/color}% of DEF.",
+        "DEF is increased by {color}49{/color}%. Normal and Charged Attack DMG is increased by {color}70{/color}% of DEF.",
+        "DEF is increased by {color}56{/color}%. Normal and Charged Attack DMG is increased by {color}80{/color}% of DEF."
       ]
     },
     {

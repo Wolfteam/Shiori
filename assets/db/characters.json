@@ -3163,8 +3163,8 @@
       "image": "arataki-itto.png",
       "fullImage": "arataki-itto.png",
       "secondFullImage": null,
-      "isComingSoon": true,
-      "isNew": false,
+      "isComingSoon": false,
+      "isNew": true,
       "isFemale": false,
       "region": "inazuma",
       "role": "dps",
@@ -4006,18 +4006,18 @@
       ],
       "passives": [
         {
-          "key": "p3",
-          "image": "arataki-itto_p3.png",
-          "unlockedAt": -1
-        },
-        {
           "key": "p1",
           "image": "arataki-itto_p1.png",
-          "unlockedAt": 1
+          "unlockedAt": -1
         },
         {
           "key": "p2",
           "image": "arataki-itto_p2.png",
+          "unlockedAt": 1
+        },
+        {
+          "key": "p3",
+          "image": "arataki-itto_p3.png",
           "unlockedAt": 4
         }
       ],
@@ -4053,7 +4053,42 @@
           "image": "arataki-itto_c6.png"
         }
       ],
-      "builds": [],
+      "builds": [
+        {
+          "isRecommended": true,
+          "type": "dps",
+          "subType": "none",
+          "skillPriorities": [
+            "normalAttack",
+            "elementalBurst",
+            "elementalSkill"
+          ],
+          "weaponKeys": [
+            "redhorn-stonethresher",
+            "serpent-spine",
+            "whiteblind"
+          ],
+          "artifacts": [
+            {
+              "oneKey": "husk-of-opulent-dreams",
+              "multiples": [],
+              "stats": [
+                "hp",
+                "atk",
+                "defPercentage",
+                "geoDmgBonusPercentage",
+                "critRatePercentage"
+              ]
+            }
+          ],
+          "subStatsToFocus": [
+            "critRatePercentage",
+            "critDmgPercentage",
+            "defPercentage",
+            "energyRechargePercentage"
+          ]
+        }
+      ],
       "stats": [
         {
           "level": 1,
@@ -13950,6 +13985,17 @@
                 "cryoDmgBonusPercentage",
                 "critRatePercentage"
               ]
+            },
+            {
+              "oneKey": "wanderers-troupe",
+              "multiples": [],
+              "stats": [
+                "hp",
+                "atk",
+                "atkPercentage",
+                "cryoDmgBonusPercentage",
+                "critRatePercentage"
+              ]
             }
           ],
           "subStatsToFocus": [
@@ -14163,8 +14209,8 @@
       "image": "gorou.png",
       "fullImage": "gorou.png",
       "secondFullImage": null,
-      "isComingSoon": true,
-      "isNew": false,
+      "isComingSoon": false,
+      "isNew": true,
       "isFemale": false,
       "region": "inazuma",
       "role": "support",
@@ -14611,7 +14657,7 @@
               "key": "param3",
               "values": [
                 49.45,
-                53.48,
+                53.47,
                 57.5,
                 63.25,
                 67.28,
@@ -15013,7 +15059,61 @@
           "image": "gorou_c6.png"
         }
       ],
-      "builds": [],
+      "builds": [
+        {
+          "isRecommended": true,
+          "type": "burstSupport",
+          "subType": "none",
+          "skillPriorities": [
+            "elementalSkill",
+            "elementalBurst"
+          ],
+          "weaponKeys": [
+            "favonius-warbow",
+            "elegy-for-the-end",
+            "sacrificial-bow"
+          ],
+          "artifacts": [
+            {
+              "oneKey": null,
+              "multiples": [
+                {
+                  "key": "husk-of-opulent-dreams",
+                  "quantity": 2
+                },
+                {
+                  "key": "emblem-of-severed-fate",
+                  "quantity": 2
+                }
+              ],
+              "stats": [
+                "hp",
+                "atk",
+                "defPercentage",
+                "defPercentage",
+                "critRatePercentage"
+              ]
+            },
+            {
+              "oneKey": "noblesse-oblige",
+              "multiples": [],
+              "stats": [
+                "hp",
+                "atk",
+                "defPercentage",
+                "defPercentage",
+                "critRatePercentage"
+              ]
+            }
+          ],
+          "subStatsToFocus": [
+            "critRatePercentage",
+            "critDmgPercentage",
+            "energyRechargePercentage",
+            "defPercentage"
+          ]
+        }
+      ],
       "stats": [
         {
           "level": 1,
@@ -17169,8 +17269,8 @@
             "elementalBurst"
           ],
           "weaponKeys": [
-            "aquila-favonia",
             "primordial-jade-cutter",
+            "aquila-favonia",
             "prototype-rancour"
           ],
           "artifacts": [
@@ -17214,6 +17314,7 @@
             "primordial-jade-cutter",
             "amenoma-kageuchi",
             "festering-desire",
+            "freedom-sworn",
             "the-flute"
           ],
           "artifacts": [
@@ -19266,8 +19367,8 @@
           "type": "dps",
           "subType": "cryo",
           "skillPriorities": [
-            "normalAttack",
             "elementalBurst",
+            "normalAttack",
             "elementalSkill"
           ],
           "weaponKeys": [
@@ -19358,7 +19459,7 @@
           ],
           "artifacts": [
             {
-              "oneKey": "noblesse-oblige",
+              "oneKey": "emblem-of-severed-fate",
               "multiples": [],
               "stats": [
                 "hp",
@@ -27803,6 +27904,7 @@
             "elementalSkill"
           ],
           "weaponKeys": [
+            "redhorn-stonethresher",
             "serpent-spine",
             "whiteblind",
             "skyward-pride",
@@ -29045,6 +29147,17 @@
           "artifacts": [
             {
               "oneKey": "tenacity-of-the-millelith",
+              "multiples": [],
+              "stats": [
+                "hp",
+                "atk",
+                "energyRechargePercentage",
+                "atkPercentage",
+                "atkPercentage"
+              ]
+            },
+            {
+              "oneKey": "ocean-hued-clam",
               "multiples": [],
               "stats": [
                 "hp",
@@ -38040,7 +38153,7 @@
       "fullImage": "thoma.png",
       "secondFullImage": null,
       "isComingSoon": false,
-      "isNew": true,
+      "isNew": false,
       "isFemale": false,
       "region": "inazuma",
       "role": "support",
@@ -39871,11 +39984,9 @@
             "elementalBurst"
           ],
           "weaponKeys": [
+            "freedom-sworn",
             "primordial-jade-cutter",
-            "aquila-favonia",
-            "festering-desire",
-            "the-flute",
-            "harbinger-of-dawn"
+            "iron-sting"
           ],
           "artifacts": [
             {
@@ -39895,6 +40006,41 @@
             "critRatePercentage",
             "atkPercentage",
             "energyRechargePercentage"
+          ]
+        },
+        {
+          "isRecommended": false,
+          "type": "dps",
+          "subType": "physical",
+          "skillPriorities": [
+            "normalAttack",
+            "elementalSkill",
+            "elementalBurst"
+          ],
+          "weaponKeys": [
+            "aquila-favonia",
+            "primordial-jade-cutter",
+            "the-black-sword",
+            "prototype-rancour"
+          ],
+          "artifacts": [
+            {
+              "oneKey": "pale-flame",
+              "multiples": [],
+              "stats": [
+                "hp",
+                "atk",
+                "atkPercentage",
+                "physDmgPercentage",
+                "critRatePercentage"
+              ]
+            }
+          ],
+          "subStatsToFocus": [
+            "critDmgPercentage",
+            "critRatePercentage",
+            "atkPercentage",
+            "atk"
           ]
         }
       ],
@@ -44473,11 +44619,11 @@
             "elementalSkill"
           ],
           "weaponKeys": [
+            "elegy-for-the-end",
             "the-stringless",
             "windblume-ode",
-            "elegy-for-the-end",
-            "skyward-harp",
-            "raven-bow"
+            "raven-bow",
+            "skyward-harp"
           ],
           "artifacts": [
             {
@@ -48934,7 +49080,7 @@
         },
         {
           "isRecommended": false,
-          "type": "support",
+          "type": "subDps",
           "subType": "none",
           "skillPriorities": [
             "elementalSkill",
@@ -48954,6 +49100,38 @@
                 "atk",
                 "defPercentage",
                 "physDmgPercentage",
+                "defPercentage"
+              ]
+            }
+          ],
+          "subStatsToFocus": [
+            "defPercentage",
+            "critRatePercentage",
+            "energyRechargePercentage"
+          ]
+        },
+        {
+          "isRecommended": false,
+          "type": "support",
+          "subType": "shield",
+          "skillPriorities": [
+            "elementalSkill",
+            "elementalBurst"
+          ],
+          "weaponKeys": [
+            "sacrificial-greatsword",
+            "luxurious-sea-lord",
+            "prototype-archaic"
+          ],
+          "artifacts": [
+            {
+              "oneKey": "tenacity-of-the-millelith",
+              "multiples": [],
+              "stats": [
+                "hp",
+                "atk",
+                "defPercentage",
+                "defPercentage",
                 "defPercentage"
               ]
             }

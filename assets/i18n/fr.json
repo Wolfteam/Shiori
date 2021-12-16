@@ -425,81 +425,152 @@
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Légende de la baston",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Attaque normale",
+              "description": "Enchaîne jusqu'à 4 coups d'épée.\r\nLorsque son 2e et 4e coup touchent un ennemi, Itto gagne respectivement 1 et 2 cumuls de Mégaforce superlative.\r\nItto peut détenir un maximum de 5 cumuls de Mégaforce superlative, et chaque fois que cet effet se déclenche, la durée des cumuls en sa possession est réinitialisée.\r\nDe plus, l'enchaînement d'attaques normales d'Itto ne sera pas réinitialisé pendant une courte période après Zetsugi anti-démon : Catapultage d'akaushi ou l'initiation d'un sprint.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Attaque chargée",
+              "description": "Lorsque vous maintenez appuyé pour lancer une attaque chargée tout en possédant des cumuls de Mégaforce superlative, vous pouvez effectuer des kesa giri d'Arataki sans consommer d'endurance. Chaque kesa giri consommera à la place un cumul de Mégaforce superlative. Lorsque le dernier cumul de Mégaforce est consommé, Itto libère une attaque finale très puissante.\r\nSi aucun cumul de Mégaforce superlative n'est disponible, Itto consommera de l'endurance pour effectuer une simple entaille de Saichimonji.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Attaque plongeante",
+              "description": "Plonge depuis les airs pour frapper le sol, infligeant des DGT aux ennemis sur la route et des DGT de zone à l'impact.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "DGT 1er coup|{param1}%",
+            "DGT 2e coup|{param2}%",
+            "DGT 3e coup|{param3}%",
+            "DGT 4e coup|{param4}%",
+            "DGT kesa giri d'Arataki|{param5}%",
+            "DGT kesa giri final d'Arataki|{param6}%",
+            "Durée Mégaforce superlative|{param7}s",
+            "DGT entaille de Saichimonji|{param8}%",
+            "Coût d'endurance entaille de Saichimonji|{param9}",
+            "DGT durant la chute|{param10}%",
+            "DGT chute basse/élevée|{param11}% / {param12}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Zetsugi anti-démon : Catapultage d'akaushi",
+          "description": "Projette Ushi, le jeune taureau akaushi et membre auxiliaire du gang Arataki, pour infliger des DGT Géo ! Lorsqu'Ushi touche un ennemi, il accorde à Arataki Itto 1 cumul de Mégaforce superlative.\r\nUshi reste ensuite sur le terrain et apporte son aide des façons suivantes:",
+          "abilities": [
+            {
+              "name": "",
+              "description": "",
+              "descriptions": [
+                "Il nargue les ennemis proches et attire leur attention.",
+                "Il hérite d'un pourcentage des PV max d'Arataki Itto.",
+                "Lorsqu'il subit des DGT, il accorde à Arataki Itto 1 cumul de Mégaforce superlative. Un cumul peut être obtenu une fois toutes les 2 s de cette manière.",
+                "Si ses PV sont épuisés ou si la durée arrive à terme, il s'enfuit tout en accordant à Arataki Itto 1 cumul de Mégaforce superlative."
+              ]
+            },
+            {
+              "name": "Appui long",
+              "description": "Ajuste la direction du jet.\r\nUshi est considéré comme une construction Géo, et Arataki Itto ne peut générer qu'un seul Ushi à la fois.\r\n",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "DGT compétence|{param1}%",
+            "PV hérités|{param2}%",
+            "Durée|{param3}s",
+            "Temps de recharge|{param4}s"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Roi oni maléfique : Avènement d'Itto",
+          "description": "Il est temps de montrer la puissance du gang Arataki ! Itto laisse émerger son Roi oni courroucé intérieur pendant un certain temps, utilisant son kanabo de Roi oni au combat.\r\n",
+          "abilities": [
+            {
+              "name": "",
+              "description": "Les caractéristiques suivantes s'appliquent :\r\n",
+              "descriptions": [
+                "Les attaques normales, chargées et plongeantes sont imprégnées de DGT Géo ne pouvant pas être enchantés.",
+                "La VIT d'attaque des attaques normales d'Itto augmente, et son ATQ sera augmentée en fonction de sa DÉF.",
+                "Lorsque le 1er ou 3e coup de son attaque normale touche un ennemi, Arataki Itto obtient 1 cumul de Mégaforce superlative.",
+                "Les RÉS élémentaires et physique d'Arataki Itto diminuent de 20 %.",
+                "Les effets du Roi oni courroucé prennent fin lorsqu'Arataki Itto quitte le champ de bataille."
+              ]
+            }
+          ],
+          "stats": [
+            "Bonus ATQ|{param1}% DEF",
+            "Bonus VIT d'attaque|{param2}%",
+            "Durée|{param3}s",
+            "Temps de recharge|{param4}s",
+            "Énergie élémentaire|{param5}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "Castor au rapport",
+          "description": "Lorsqu'un personnage de l'équipe utilise des attaques pour obtenir du bois d'un arbre, il a 25 % de chances d'obtenir un morceau de bois supplémentaire.\r\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
+          "title": "Arataki au top",
+          "description": "Lorsqu'Arataki Itto effectue une série de kesa giri d'Arataki, il obtient les effets suivants:\r\n",
+          "descriptions": [
+            "Chaque frappe augmente la VIT d'attaque de la prochaine de 10%. La VIT d'attaque peut être augmentée de 30% max de cette manière.",
+            "Sa RÉS à l'interruption augmente.",
+            "Ces effets prennent fin lorsqu'Arataki Itto arrête d'utiliser cette série d'attaques."
+          ]
         },
         {
           "key": "p3",
-          "title": "NA",
-          "description": "",
+          "title": "Lignée de l'Oni cramoisi",
+          "description": "Les DGT infligés par les kesa giri d'Arataki augmentent d'une valeur équivalant à 35 % de la DÉF d'Arataki Itto.\r\n",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "Du calme et on écoute !",
+          "description": "Après avoir utilisé Roi oni maléfique : Avènement d'Itto, Arataki Itto gagne 2 cumuls de Mégaforce superlative. Après 1 s, Itto gagne 1 cumul de Mégaforce superlative toutes les 0,5 s pendant 1,5 s.\r\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "Baston générale !",
+          "description": "Après avoir utilisé Roi oni maléfique : Avènement d'Itto, chaque personnage de l'équipe de type Géo permet de diminuer le TdR de cette aptitude de 1,5 s et de restaurer l'énergie élémentaire d'Arataki Itto de 6 pts.\r\nLe TdR peut être diminué d'un maximum de 4,5 s et l'énergie élémentaire peut être restaurée d'un maximum de 18 pts de cette manière.\r\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "Le taureau par les cornes!",
+          "description": "Niveau d'aptitude Zetsugi anti-démon : Catapultage d'akaushi +3.\r\nNiveau max : 15\r\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "Au pain sec et à l'eau !",
+          "description": "Lorsque l'état de Roi oni courroucé accordé par Roi oni maléfique : Avènement d'Itto prend fin, la DÉF et l'ATQ de tous les personnages de l'équipe à proximité augmentent de 20% pendant 10s.\r\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "Une décennie de renommée à Hanamizaka",
+          "description": "Niveau d'aptitude Roi oni maléfique : Avènement d'Itto +3.\r\nNiveau max : 15\r\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
+          "title": "Arataki Itto, présent!",
+          "description": "Les DGT CRIT des attaques chargées d'Arataki Itto augmentent de 70 %. De plus, lorsqu'il utilise une série de kesa giri d'Arataki, il a 50 % de chances de ne pas consommer de Mégaforce superlative.\r\n",
           "descriptions": []
         }
       ]
@@ -1785,82 +1856,155 @@
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Empenne aux crocs acérés",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Attaque normale",
+              "description": "Enchaîne jusqu'à 4 tirs consécutifs.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Attaque chargée",
+              "description": "Effectue un tir visé plus précis infligeant davantage de DGT.\r\nLors de la visée, la flèche se charge de cristaux de pierre, infligeant des DGT Géo quand elle est complètement chargée.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Attaque plongeante",
+              "description": "Tire une pluie de flèches depuis les airs et plonge au sol, infligeant des DGT de zone à l'impact.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "DGT 1er coup|{param1}%",
+            "DGT 2e coup|{param2}%",
+            "DGT 3e coup|{param3}%",
+            "DGT 4e coup|{param4}%",
+            "DGT tir visé|{param5}%",
+            "DGT tir visé (pleine charge)|{param6}%",
+            "DGT durant la chute|{param7}%",
+            "DGT chute basse/élevée|{param8}% / {param9}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Défense intégrale d'Inuzaka",
+          "description": "Inflige des DGT Géo de zone et érige une bannière de général.\r\n",
+          "abilities": [
+            {
+              "name": "Bannière de général",
+              "description": "Accorde les effets suivants aux personnages déployés dans la zone d'effet en fonction de la quantité de personnages de type Géo dans l'équipe au moment de l'utilisation :\r\n",
+              "descriptions": [
+                "Avoir 1 personnage Géo accorde un effet de pied ferme : bonus de DÉF.",
+                "Avoir 2 personnages Géo accorde un effet d'imprenabilité : effet précédent + bonus de RÉS à l'interruption.",
+                "Avoir 3 personnages Géo accorde un effet de fracas : effets précédents + bonus de DGT Géo.",
+                "Gorou ne peut générer qu'une bannière de général à la fois, et les personnages ne peuvent bénéficier des effets que d'une seule bannière de général à la fois. Lorsque le personnage quitte la zone, les effets continuent pendant 2 s."
+              ]
+            },
+            {
+              "name": "Appui long",
+              "description": "Ajuste la zone où la compétence sera lancée.\r\n",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "DGT compétence|{param1}%",
+            "Bonus de DÉF|{param2}",
+            "Bonus de DGT Géo|{param3}%",
+            "Durée|{param4}s",
+            "Temps de recharge|{param5}s"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Crocs bestiaux : Vers la victoire",
+          "description": "Affichant sa bravoure de général, Gorou inflige des DGT Géo de zone et crée un champ de prestige de général pour enhardir ses compagnons.\r\n",
+          "abilities": [
+            {
+              "name": "Prestige de général",
+              "description": "Les caractéristiques suivantes s'appliquent :\r\n",
+              "descriptions": [
+                "Ce champ possède des effets identiques à ceux de la bannière de général créée par la compétence élémentaire « Défense intégrale d'Inuzaka », accordant des bonus aux personnages déployés dans la zone d'effet en fonction du nombre de personnages de type Géo dans l'équipe. Le champ se déplace en suivant le personnage déployé.",
+                "Déclenche un effondrement cristallin toutes les 1,5 s qui inflige des DGT Géo de zone à 1 ennemi dans la zone d'effet.",
+                "Attire 1 fragment élémentaire créé par une réaction de Cristallisation dans la zone d'effet vers l'emplacement du personnage déployé toutes les 1,5 s.",
+                "Si une bannière de général créée par Gorou est présente lors de l'utilisation, elle sera détruite. De plus, si Gorou utilise sa compétence élémentaire « Défense intégrale d'Inuzaka » alors qu'un prestige de général est actif, il ne crée pas de bannière de général.",
+                "Si Gorou est vaincu, les effets du prestige de général sont annulés."
+              ]
+            }
+          ],
+          "stats": [
+            "DGT compétence|{param1}% DEF",
+            "DGT effondrement cristallin|{param2}% DEF",
+            "Durée|{param3}s",
+            "Temps de recharge|{param4}s",
+            "Énergie élémentaire|{param5}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "Chien renifleur",
+          "description": "Affiche l'emplacement des produits d'Inazuma sur la mini-carte.\r\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
+          "title": "Nonchalance du vent et de la pluie",
+          "description": "Pendant 12 s après Crocs bestiaux : Vers la victoire, la DÉF de tous les personnages de l'équipe à proximité augmente de 25 %.\r\n",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
+          "title": "Faveur rendue",
+          "description": "Les DGT des attaques suivantes de Gorou augmentent en fonction de sa DÉF :\r\n",
+          "descriptions": [
+            "Les DGT de compétence de Défense intégrale d'Inuzaka augmentent à hauteur de 156 % de sa DÉF.",
+            "Les DGT de compétence et les DGT de l'effondrement cristallin de Crocs bestiaux : Vers la victoire augmentent à hauteur de 15,6 % de sa DÉF."
+          ]
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "Vivacité canine : Célérité du vent",
+          "description": "Lorsqu'un personnage déployé (autre que Gorou) dans la zone d'effet de la bannière de général ou du champ de prestige de général créés par Gorou inflige des DGT Géo à un ennemi, le TdR de Défense intégrale d'Inuzaka de Gorou diminue de 2 s.\r\nCet effet peut être déclenché une fois toutes les 10 s.\r\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "Repos canin : Aplomb du temps",
+          "description": "Lorsqu'un personnage déployé à proximité obtient un fragment élémentaire généré par une réaction de Cristallisation alors qu'un prestige de général est actif, la durée du prestige de général de Gorou augmente de 1 s.\r\nCet effet peut être déclenché une fois toutes les 0,1 s, et sa durée peut être prolongée de 3 s max de cette manière.\r\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "Griffe canine : Frénésie du feu",
+          "description": "Niveau d'aptitude Défense intégrale d'Inuzaka +3.\r\nNiveau max : 15\r\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "Léchouille canine : Bonté de l'eau",
+          "description": "Lorsque le prestige de général est en état d'imprenabilité ou de fracas, il restaure également les PV du personnage déployé dans la zone d'effet toutes les 1,5s d'une valeur équivalant à 50% de la DÉF de Gorou.\r\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "Frappe canine : Élan du tonnerre",
+          "description": "Niveau d'aptitude Crocs bestiaux : Vers la victoire +3.\r\nNiveau max : 15\r\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
+          "title": "Vaillance canine : Fidélité de la terre",
+          "description": "Pendant 12 s après Défense intégrale d'Inuzaka ou Crocs bestiaux : Vers la victoire, les DGT CRIT des DGT Géo de tous les personnages de l'équipe à proximité augmentent en fonction du niveau du champ au moment de l'utilisation de la compétence:\r\n",
+          "descriptions": [
+            "Pied ferme : +10 %.",
+            "Imprenabilité : +20 %.",
+            "Fracas : +40 %.",
+            "Cet effet ne se cumule pas, et la dernière augmentation déclenchée sera la référence pour l'effet."
+          ]
         }
       ]
     },
@@ -7489,6 +7633,18 @@
         "Restaure {color}12{/color} % des PV après la défaite d'un ennemi.",
         "Restaure {color}14{/color} % des PV après la défaite d'un ennemi.",
         "Restaure {color}16{/color} % des PV après la défaite d'un ennemi."
+      ]
+    },
+    {
+      "key": "redhorn-stonethresher",
+      "name": "Brise-pierre de corne rouge",
+      "description": "D'après son ancien propriétaire, cette arme serait le «puissant seigneur lion doré écraseur d'or et briseur de pierres en corne rouge » pouvant faire déguerpir n'importe quel monstre sur le champ...",
+      "refinements": [
+        "Augmente la DÉF de {color}28{/color}%, et augmente les DGT des attaques normales et chargées d'une valeur équivalant à {color}40{/color} % de la DÉF.",
+        "Augmente la DÉF de {color}35{/color}%, et augmente les DGT des attaques normales et chargées d'une valeur équivalant à {color}50{/color} % de la DÉF.",
+        "Augmente la DÉF de {color}42{/color}%, et augmente les DGT des attaques normales et chargées d'une valeur équivalant à {color}60{/color} % de la DÉF.",
+        "Augmente la DÉF de {color}49{/color}%, et augmente les DGT des attaques normales et chargées d'une valeur équivalant à {color}70{/color} % de la DÉF.",
+        "Augmente la DÉF de {color}56{/color}%, et augmente les DGT des attaques normales et chargées d'une valeur équivalant à {color}80{/color} % de la DÉF."
       ]
     },
     {
