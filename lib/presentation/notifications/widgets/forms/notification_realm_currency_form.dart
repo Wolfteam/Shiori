@@ -77,7 +77,11 @@ class NotificationRealmCurrency extends StatelessWidget {
               child: DropdownButtonWithTitle<RealmRankType>(
                 title: s.realmRank,
                 currentValue: currentRankType,
-                items: EnumUtils.getTranslatedAndSortedEnum(RealmRankType.values, (val, index) => '# ${index + 1} - ${s.translateRealRankType(val)}'),
+                items: EnumUtils.getTranslatedAndSortedEnum(
+                  RealmRankType.values,
+                  (val, index) => '# ${index + 1} - ${s.translateRealRankType(val)}',
+                  sort: false,
+                ),
                 onChanged: (v) => context.read<NotificationBloc>().add(NotificationEvent.realmRankTypeChanged(newValue: v)),
               ),
             ),

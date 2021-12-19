@@ -46,15 +46,15 @@ class CommonDropdownButton<T> extends StatelessWidget {
               value: lang.enumValue,
               child: Row(
                 children: [
-                  Expanded(
-                    flex: 16,
-                    child: lang.enumValue != currentValue ? const SizedBox() : const Center(child: Icon(Icons.check)),
+                  Container(
+                    margin: const EdgeInsets.symmetric(horizontal: 20),
+                    child: lang.enumValue != currentValue ? const SizedBox(width: 20) : const Center(child: Icon(Icons.check)),
                   ),
                   Expanded(
-                    flex: 74,
                     child: Text(
                       lang.translation,
                       overflow: TextOverflow.ellipsis,
+                      maxLines: 2,
                     ),
                   ),
                 ],

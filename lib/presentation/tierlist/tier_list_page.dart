@@ -7,6 +7,7 @@ import 'package:shiori/application/bloc.dart';
 import 'package:shiori/domain/extensions/iterable_extensions.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/generated/l10n.dart';
+import 'package:shiori/injection.dart';
 import 'package:shiori/presentation/shared/utils/toast_utils.dart';
 import 'package:shiori/presentation/tierlist/widgets/tierlist_fab.dart';
 import 'package:shiori/presentation/tierlist/widgets/tierlist_row.dart';
@@ -21,70 +22,23 @@ class _TierListPageState extends State<TierListPage> {
 
   @override
   Widget build(BuildContext context) {
-    final s = S.of(context);
-    return Scaffold(
-      appBar: PreferredSize(
-        preferredSize: const Size(double.infinity, kToolbarHeight),
-        child: BlocBuilder<TierListBloc, TierListState>(
-          builder: (ctx, state) => AppBar(
-            title: Text(s.tierListBuilder),
-            actions: [
-              if (!state.readyToSave)
-                Tooltip(
-                  message: s.confirm,
-                  child: IconButton(
-                    icon: const Icon(Icons.check),
-                    onPressed: () => ctx.read<TierListBloc>().add(const TierListEvent.readyToSave(ready: true)),
+    return BlocProvider<TierListBloc>(
+      create: (ctx) => Injection.tierListBloc..add(const TierListEvent.init()),
+      child: Scaffold(
+        appBar: _AppBar(screenshotController: screenshotController),
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+        floatingActionButton: TierListFab(),
+        body: SafeArea(
+          child: SingleChildScrollView(
+            child: Container(
+              margin: const EdgeInsets.symmetric(horizontal: 5, vertical: 16),
+              child: Screenshot(
+                controller: screenshotController,
+                child: BlocBuilder<TierListBloc, TierListState>(
+                  builder: (ctx, state) => Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: state.rows.mapIndex((e, index) => _buildTierRow(index, state.rows.length, state.readyToSave, e)).toList(),
                   ),
-                ),
-              if (!state.readyToSave)
-                Tooltip(
-                  message: s.clearAll,
-                  child: IconButton(
-                    icon: const Icon(Icons.clear_all),
-                    onPressed: () => context.read<TierListBloc>().add(const TierListEvent.clearAllRows()),
-                  ),
-                ),
-              if (!state.readyToSave)
-                Tooltip(
-                  message: s.restore,
-                  child: IconButton(
-                    icon: const Icon(Icons.settings_backup_restore_sharp),
-                    onPressed: () => context.read<TierListBloc>().add(const TierListEvent.init(reset: true)),
-                  ),
-                ),
-              if (state.readyToSave)
-                Tooltip(
-                  message: s.save,
-                  child: IconButton(
-                    icon: const Icon(Icons.save),
-                    onPressed: () => _takeScreenshot(),
-                  ),
-                ),
-              if (state.readyToSave)
-                Tooltip(
-                  message: s.cancel,
-                  child: IconButton(
-                    icon: const Icon(Icons.undo),
-                    onPressed: () => context.read<TierListBloc>().add(const TierListEvent.readyToSave(ready: false)),
-                  ),
-                ),
-            ],
-          ),
-        ),
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      floatingActionButton: TierListFab(),
-      body: SafeArea(
-        child: SingleChildScrollView(
-          child: Container(
-            margin: const EdgeInsets.symmetric(horizontal: 5, vertical: 16),
-            child: Screenshot(
-              controller: screenshotController,
-              child: BlocBuilder<TierListBloc, TierListState>(
-                builder: (ctx, state) => Column(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: state.rows.mapIndex((e, index) => _buildTierRow(index, state.rows.length, state.readyToSave, e)).toList(),
                 ),
               ),
             ),
@@ -107,8 +61,65 @@ class _TierListPageState extends State<TierListPage> {
       isTheLastRow: totalNumberOfItems == 1,
     );
   }
+}
 
-  Future<void> _takeScreenshot() async {
+class _AppBar extends StatelessWidget implements PreferredSizeWidget {
+  final ScreenshotController screenshotController;
+  const _AppBar({Key? key, required this.screenshotController}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    final s = S.of(context);
+    return BlocBuilder<TierListBloc, TierListState>(
+      builder: (ctx, state) => AppBar(
+        title: Text(s.tierListBuilder),
+        actions: [
+          if (!state.readyToSave)
+            Tooltip(
+              message: s.confirm,
+              child: IconButton(
+                icon: const Icon(Icons.check),
+                onPressed: () => ctx.read<TierListBloc>().add(const TierListEvent.readyToSave(ready: true)),
+              ),
+            ),
+          if (!state.readyToSave)
+            Tooltip(
+              message: s.clearAll,
+              child: IconButton(
+                icon: const Icon(Icons.clear_all),
+                onPressed: () => context.read<TierListBloc>().add(const TierListEvent.clearAllRows()),
+              ),
+            ),
+          if (!state.readyToSave)
+            Tooltip(
+              message: s.restore,
+              child: IconButton(
+                icon: const Icon(Icons.settings_backup_restore_sharp),
+                onPressed: () => context.read<TierListBloc>().add(const TierListEvent.init(reset: true)),
+              ),
+            ),
+          if (state.readyToSave)
+            Tooltip(
+              message: s.save,
+              child: IconButton(
+                icon: const Icon(Icons.save),
+                onPressed: () => _takeScreenshot(context),
+              ),
+            ),
+          if (state.readyToSave)
+            Tooltip(
+              message: s.cancel,
+              child: IconButton(
+                icon: const Icon(Icons.undo),
+                onPressed: () => context.read<TierListBloc>().add(const TierListEvent.readyToSave(ready: false)),
+              ),
+            ),
+        ],
+      ),
+    );
+  }
+
+  Future<void> _takeScreenshot(BuildContext context) async {
     final s = S.of(context);
     final fToast = ToastUtils.of(context);
     final bloc = context.read<TierListBloc>();
@@ -127,4 +138,7 @@ class _TierListPageState extends State<TierListPage> {
       bloc.add(TierListEvent.screenshotTaken(succeed: false, ex: e, trace: trace));
     }
   }
+
+  @override
+  Size get preferredSize => const Size.fromHeight(kToolbarHeight);
 }

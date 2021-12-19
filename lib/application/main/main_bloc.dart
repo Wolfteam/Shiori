@@ -29,7 +29,6 @@ class MainBloc extends Bloc<MainEvent, MainState> {
   final WeaponsBloc _weaponsBloc;
   final HomeBloc _homeBloc;
   final ArtifactsBloc _artifactsBloc;
-  final ElementsBloc _elementsBloc;
 
   MainBloc(
     this._logger,
@@ -42,7 +41,6 @@ class MainBloc extends Bloc<MainEvent, MainState> {
     this._weaponsBloc,
     this._homeBloc,
     this._artifactsBloc,
-    this._elementsBloc,
   ) : super(const MainState.loading());
 
   _MainLoadedState get currentState => state as _MainLoadedState;
@@ -68,7 +66,6 @@ class MainBloc extends Bloc<MainEvent, MainState> {
       _weaponsBloc.add(const WeaponsEvent.init());
       _homeBloc.add(const HomeEvent.init());
       _artifactsBloc.add(const ArtifactsEvent.init());
-      _elementsBloc.add(const ElementsEvent.init());
     }
 
     final settings = _settingsService.appSettings;

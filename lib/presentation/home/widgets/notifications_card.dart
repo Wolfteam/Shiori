@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:shiori/application/bloc.dart';
 import 'package:shiori/generated/l10n.dart';
 import 'package:shiori/presentation/home/widgets/card_description.dart';
 import 'package:shiori/presentation/home/widgets/card_item.dart';
@@ -22,7 +20,7 @@ class NotificationsCard extends StatelessWidget {
       title: s.notifications,
       onClick: (context) => _goToNotificationsPage(context),
       iconToTheLeft: iconToTheLeft,
-      icon: Icon(Icons.notifications, color: theme.accentColor, size: 60),
+      icon: Icon(Icons.notifications, color: theme.colorScheme.secondary, size: 60),
       children: [
         CardDescription(text: s.createYourCustomNotifications),
       ],
@@ -30,10 +28,8 @@ class NotificationsCard extends StatelessWidget {
   }
 
   Future<void> _goToNotificationsPage(BuildContext context) async {
-    context.read<NotificationsBloc>().add(const NotificationsEvent.init());
     final route = MaterialPageRoute(builder: (c) => NotificationsPage());
     await Navigator.push(context, route);
     await route.completed;
-    context.read<NotificationsBloc>().add(const NotificationsEvent.close());
   }
 }

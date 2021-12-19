@@ -2,10 +2,7 @@ import 'package:bloc_test/bloc_test.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:shiori/application/bloc.dart';
-import 'package:shiori/domain/enums/app_language_type.dart';
-import 'package:shiori/domain/enums/app_server_reset_time_type.dart';
 import 'package:shiori/domain/enums/enums.dart';
-import 'package:shiori/domain/enums/expedition_time_type.dart';
 import 'package:shiori/domain/services/data_service.dart';
 import 'package:shiori/domain/services/genshin_service.dart';
 import 'package:shiori/domain/services/locale_service.dart';
@@ -28,6 +25,7 @@ void main() {
   late final LocaleService _localeService;
   late final GenshinService _genshinService;
   late final DataService _dataService;
+  late final NotificationsBloc _notificationsBloc;
 
   const _defaultTitle = 'Notification title';
   const _defaultBody = 'Notification body';
@@ -51,6 +49,7 @@ void main() {
     _localeService = LocaleServiceImpl(_settingsService);
     _genshinService = GenshinServiceImpl(_localeService);
     _dataService = DataServiceImpl(_genshinService, CalculatorServiceImpl(_genshinService));
+    _notificationsBloc = NotificationsBloc(_dataService, _notificationService, _settingsService, _telemetryService);
 
     return Future(() async {
       await _genshinService.init(_settingsService.language);
@@ -110,36 +109,21 @@ void main() {
       _loggingService,
       _telemetryService,
       _settingsService,
+      _notificationsBloc,
     );
   }
 
   test(
     'Initial state',
     () => expect(
-      NotificationBloc(
-        _dataService,
-        _notificationService,
-        _genshinService,
-        _localeService,
-        _loggingService,
-        _telemetryService,
-        _settingsService,
-      ).state,
+      _buildBloc().state,
       const NotificationState.resin(currentResin: 0),
     ),
   );
 
   blocTest<NotificationBloc, NotificationState>(
     'Add should generated a default resin state',
-    build: () => NotificationBloc(
-      _dataService,
-      _notificationService,
-      _genshinService,
-      _localeService,
-      _loggingService,
-      _telemetryService,
-      _settingsService,
-    ),
+    build: () => _buildBloc(),
     act: (bloc) => bloc.add(const NotificationEvent.add(defaultTitle: _defaultTitle, defaultBody: _defaultBody)),
     verify: (bloc) => bloc.state.maybeMap(
       resin: (state) {
@@ -161,15 +145,7 @@ void main() {
       tearDown: () async {
         await _dataService.deleteThemAll();
       },
-      build: () => NotificationBloc(
-        _dataService,
-        _notificationService,
-        _genshinService,
-        _localeService,
-        _loggingService,
-        _telemetryService,
-        _settingsService,
-      ),
+      build: () => _buildBloc(),
       act: (bloc) {
         final notification = _dataService.getAllNotifications().first;
         return bloc.add(NotificationEvent.edit(key: notification.key, type: AppNotificationType.resin));
@@ -200,15 +176,7 @@ void main() {
       tearDown: () async {
         await _dataService.deleteThemAll();
       },
-      build: () => NotificationBloc(
-        _dataService,
-        _notificationService,
-        _genshinService,
-        _localeService,
-        _loggingService,
-        _telemetryService,
-        _settingsService,
-      ),
+      build: () => _buildBloc(),
       act: (bloc) {
         final notification = _dataService.getAllNotifications().first;
         return bloc.add(NotificationEvent.edit(key: notification.key, type: AppNotificationType.expedition));
@@ -239,15 +207,7 @@ void main() {
       tearDown: () async {
         await _dataService.deleteThemAll();
       },
-      build: () => NotificationBloc(
-        _dataService,
-        _notificationService,
-        _genshinService,
-        _localeService,
-        _loggingService,
-        _telemetryService,
-        _settingsService,
-      ),
+      build: () => _buildBloc(),
       act: (bloc) {
         final notification = _dataService.getAllNotifications().first;
         return bloc.add(NotificationEvent.edit(key: notification.key, type: AppNotificationType.farmingArtifacts));
@@ -271,15 +231,7 @@ void main() {
       tearDown: () async {
         await _dataService.deleteThemAll();
       },
-      build: () => NotificationBloc(
-        _dataService,
-        _notificationService,
-        _genshinService,
-        _localeService,
-        _loggingService,
-        _telemetryService,
-        _settingsService,
-      ),
+      build: () => _buildBloc(),
       act: (bloc) {
         final notification = _dataService.getAllNotifications().first;
         return bloc.add(NotificationEvent.edit(key: notification.key, type: AppNotificationType.farmingMaterials));
@@ -302,15 +254,7 @@ void main() {
       tearDown: () async {
         await _dataService.deleteThemAll();
       },
-      build: () => NotificationBloc(
-        _dataService,
-        _notificationService,
-        _genshinService,
-        _localeService,
-        _loggingService,
-        _telemetryService,
-        _settingsService,
-      ),
+      build: () => _buildBloc(),
       act: (bloc) {
         final notification = _dataService.getAllNotifications().first;
         return bloc.add(NotificationEvent.edit(key: notification.key, type: AppNotificationType.gadget));
@@ -339,15 +283,7 @@ void main() {
       tearDown: () async {
         await _dataService.deleteThemAll();
       },
-      build: () => NotificationBloc(
-        _dataService,
-        _notificationService,
-        _genshinService,
-        _localeService,
-        _loggingService,
-        _telemetryService,
-        _settingsService,
-      ),
+      build: () => _buildBloc(),
       act: (bloc) {
         final notification = _dataService.getAllNotifications().first;
         return bloc.add(NotificationEvent.edit(key: notification.key, type: AppNotificationType.furniture));
@@ -378,15 +314,7 @@ void main() {
       tearDown: () async {
         await _dataService.deleteThemAll();
       },
-      build: () => NotificationBloc(
-        _dataService,
-        _notificationService,
-        _genshinService,
-        _localeService,
-        _loggingService,
-        _telemetryService,
-        _settingsService,
-      ),
+      build: () => _buildBloc(),
       act: (bloc) {
         final notification = _dataService.getAllNotifications().first;
         return bloc.add(NotificationEvent.edit(key: notification.key, type: AppNotificationType.realmCurrency));
@@ -418,15 +346,7 @@ void main() {
       tearDown: () async {
         await _dataService.deleteThemAll();
       },
-      build: () => NotificationBloc(
-        _dataService,
-        _notificationService,
-        _genshinService,
-        _localeService,
-        _loggingService,
-        _telemetryService,
-        _settingsService,
-      ),
+      build: () => _buildBloc(),
       act: (bloc) {
         final notification = _dataService.getAllNotifications().first;
         return bloc.add(NotificationEvent.edit(key: notification.key, type: AppNotificationType.weeklyBoss));
@@ -448,15 +368,7 @@ void main() {
       tearDown: () async {
         await _dataService.deleteThemAll();
       },
-      build: () => NotificationBloc(
-        _dataService,
-        _notificationService,
-        _genshinService,
-        _localeService,
-        _loggingService,
-        _telemetryService,
-        _settingsService,
-      ),
+      build: () => _buildBloc(),
       act: (bloc) {
         final notification = _dataService.getAllNotifications().first;
         return bloc.add(NotificationEvent.edit(key: notification.key, type: AppNotificationType.dailyCheckIn));
@@ -502,15 +414,7 @@ void main() {
         tearDown: () async {
           await _dataService.deleteThemAll();
         },
-        build: () => NotificationBloc(
-          _dataService,
-          _notificationService,
-          _genshinService,
-          _localeService,
-          _loggingService,
-          _telemetryService,
-          _settingsService,
-        ),
+        build: () => _buildBloc(),
         act: (bloc) {
           final notification = _dataService.getAllNotifications().first;
           return bloc.add(NotificationEvent.edit(key: notification.key, type: AppNotificationType.custom));
@@ -548,15 +452,7 @@ void main() {
 
     blocTest<NotificationBloc, NotificationState>(
       'on an existing notification',
-      build: () => NotificationBloc(
-        _dataService,
-        _notificationService,
-        _genshinService,
-        _localeService,
-        _loggingService,
-        _telemetryService,
-        _settingsService,
-      ),
+      build: () => _buildBloc(),
       setUp: () async {
         await _dataService.saveResinNotification(_fragileResinKey, _defaultTitle, _defaultBody, 60, note: _defaultNote);
       },

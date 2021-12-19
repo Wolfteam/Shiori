@@ -420,92 +420,157 @@
     {
       "key": "arataki-itto",
       "name": "Arataki Itto",
-      "title": "",
-      "description": "",
+      "title": "Héros de Hanamizaka",
+      "description": "Le premier et plus grand chef du gang Arataki, célèbre dans tout Hanamizaka, à la Cité d'Inazuma... Hein, quoi ? Jamais entendu parler d'eux ? Sérieux?",
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Légende de la baston",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Attaque normale",
+              "description": "Enchaîne jusqu'à 4 coups d'épée.\r\nLorsque son 2e et 4e coup touchent un ennemi, Itto gagne respectivement 1 et 2 cumuls de Mégaforce superlative.\r\nItto peut détenir un maximum de 5 cumuls de Mégaforce superlative, et chaque fois que cet effet se déclenche, la durée des cumuls en sa possession est réinitialisée.\r\nDe plus, l'enchaînement d'attaques normales d'Itto ne sera pas réinitialisé pendant une courte période après Zetsugi anti-démon : Catapultage d'akaushi ou l'initiation d'un sprint.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Attaque chargée",
+              "description": "Lorsque vous maintenez appuyé pour lancer une attaque chargée tout en possédant des cumuls de Mégaforce superlative, vous pouvez effectuer des kesa giri d'Arataki sans consommer d'endurance. Chaque kesa giri consommera à la place un cumul de Mégaforce superlative. Lorsque le dernier cumul de Mégaforce est consommé, Itto libère une attaque finale très puissante.\r\nSi aucun cumul de Mégaforce superlative n'est disponible, Itto consommera de l'endurance pour effectuer une simple entaille de Saichimonji.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Attaque plongeante",
+              "description": "Plonge depuis les airs pour frapper le sol, infligeant des DGT aux ennemis sur la route et des DGT de zone à l'impact.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "DGT 1er coup|{param1}%",
+            "DGT 2e coup|{param2}%",
+            "DGT 3e coup|{param3}%",
+            "DGT 4e coup|{param4}%",
+            "DGT kesa giri d'Arataki|{param5}%",
+            "DGT kesa giri final d'Arataki|{param6}%",
+            "Durée Mégaforce superlative|{param7}s",
+            "DGT entaille de Saichimonji|{param8}%",
+            "Coût d'endurance entaille de Saichimonji|{param9}",
+            "DGT durant la chute|{param10}%",
+            "DGT chute basse/élevée|{param11}% / {param12}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Zetsugi anti-démon : Catapultage d'akaushi",
+          "description": "Projette Ushi, le jeune taureau akaushi et membre auxiliaire du gang Arataki, pour infliger des DGT Géo ! Lorsqu'Ushi touche un ennemi, il accorde à Arataki Itto 1 cumul de Mégaforce superlative.\r\nUshi reste ensuite sur le terrain et apporte son aide des façons suivantes:",
+          "abilities": [
+            {
+              "name": "",
+              "description": "",
+              "descriptions": [
+                "Il nargue les ennemis proches et attire leur attention.",
+                "Il hérite d'un pourcentage des PV max d'Arataki Itto.",
+                "Lorsqu'il subit des DGT, il accorde à Arataki Itto 1 cumul de Mégaforce superlative. Un cumul peut être obtenu une fois toutes les 2 s de cette manière.",
+                "Si ses PV sont épuisés ou si la durée arrive à terme, il s'enfuit tout en accordant à Arataki Itto 1 cumul de Mégaforce superlative."
+              ]
+            },
+            {
+              "name": "Appui long",
+              "description": "Ajuste la direction du jet.\r\nUshi est considéré comme une construction Géo, et Arataki Itto ne peut générer qu'un seul Ushi à la fois.\r\n",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "DGT compétence|{param1}%",
+            "PV hérités|{param2}%",
+            "Durée|{param3}s",
+            "Temps de recharge|{param4}s"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Roi oni maléfique : Avènement d'Itto",
+          "description": "Il est temps de montrer la puissance du gang Arataki ! Itto laisse émerger son Roi oni courroucé intérieur pendant un certain temps, utilisant son kanabo de Roi oni au combat.\r\n",
+          "abilities": [
+            {
+              "name": "",
+              "description": "Les caractéristiques suivantes s'appliquent :\r\n",
+              "descriptions": [
+                "Les attaques normales, chargées et plongeantes sont imprégnées de DGT Géo ne pouvant pas être enchantés.",
+                "La VIT d'attaque des attaques normales d'Itto augmente, et son ATQ sera augmentée en fonction de sa DÉF.",
+                "Lorsque le 1er ou 3e coup de son attaque normale touche un ennemi, Arataki Itto obtient 1 cumul de Mégaforce superlative.",
+                "Les RÉS élémentaires et physique d'Arataki Itto diminuent de 20 %.",
+                "Les effets du Roi oni courroucé prennent fin lorsqu'Arataki Itto quitte le champ de bataille."
+              ]
+            }
+          ],
+          "stats": [
+            "Bonus ATQ|{param1}% DEF",
+            "Bonus VIT d'attaque|{param2}%",
+            "Durée|{param3}s",
+            "Temps de recharge|{param4}s",
+            "Énergie élémentaire|{param5}"
+          ]
         }
       ],
       "passives": [
         {
-          "key": "p3",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
-        },
-        {
-          "key": "p4",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
-        },
-        {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "Castor au rapport",
+          "description": "Lorsqu'un personnage de l'équipe utilise des attaques pour obtenir du bois d'un arbre, il a 25 % de chances d'obtenir un morceau de bois supplémentaire.\r\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
+          "title": "Arataki au top",
+          "description": "Lorsqu'Arataki Itto effectue une série de kesa giri d'Arataki, il obtient les effets suivants:\r\n",
+          "descriptions": [
+            "Chaque frappe augmente la VIT d'attaque de la prochaine de 10%. La VIT d'attaque peut être augmentée de 30% max de cette manière.",
+            "Sa RÉS à l'interruption augmente.",
+            "Ces effets prennent fin lorsqu'Arataki Itto arrête d'utiliser cette série d'attaques."
+          ]
+        },
+        {
+          "key": "p3",
+          "title": "Lignée de l'Oni cramoisi",
+          "description": "Les DGT infligés par les kesa giri d'Arataki augmentent d'une valeur équivalant à 35 % de la DÉF d'Arataki Itto.\r\n",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "Du calme et on écoute !",
+          "description": "Après avoir utilisé Roi oni maléfique : Avènement d'Itto, Arataki Itto gagne 2 cumuls de Mégaforce superlative. Après 1 s, Itto gagne 1 cumul de Mégaforce superlative toutes les 0,5 s pendant 1,5 s.\r\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "Baston générale !",
+          "description": "Après avoir utilisé Roi oni maléfique : Avènement d'Itto, chaque personnage de l'équipe de type Géo permet de diminuer le TdR de cette aptitude de 1,5 s et de restaurer l'énergie élémentaire d'Arataki Itto de 6 pts.\r\nLe TdR peut être diminué d'un maximum de 4,5 s et l'énergie élémentaire peut être restaurée d'un maximum de 18 pts de cette manière.\r\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "Le taureau par les cornes!",
+          "description": "Niveau d'aptitude Zetsugi anti-démon : Catapultage d'akaushi +3.\r\nNiveau max : 15\r\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "Au pain sec et à l'eau !",
+          "description": "Lorsque l'état de Roi oni courroucé accordé par Roi oni maléfique : Avènement d'Itto prend fin, la DÉF et l'ATQ de tous les personnages de l'équipe à proximité augmentent de 20% pendant 10s.\r\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "Une décennie de renommée à Hanamizaka",
+          "description": "Niveau d'aptitude Roi oni maléfique : Avènement d'Itto +3.\r\nNiveau max : 15\r\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
+          "title": "Arataki Itto, présent!",
+          "description": "Les DGT CRIT des attaques chargées d'Arataki Itto augmentent de 70 %. De plus, lorsqu'il utilise une série de kesa giri d'Arataki, il a 50 % de chances de ne pas consommer de Mégaforce superlative.\r\n",
           "descriptions": []
         }
       ]
@@ -1786,87 +1851,160 @@
     {
       "key": "gorou",
       "name": "Gorou",
-      "title": "",
-      "description": "",
+      "title": "Guerrier canin",
+      "description": "Le grand général des forces de l'Île de Watatsumi, en qui ses subordonnés ont profondément confiance.",
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Empenne aux crocs acérés",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Attaque normale",
+              "description": "Enchaîne jusqu'à 4 tirs consécutifs.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Attaque chargée",
+              "description": "Effectue un tir visé plus précis infligeant davantage de DGT.\r\nLors de la visée, la flèche se charge de cristaux de pierre, infligeant des DGT Géo quand elle est complètement chargée.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Attaque plongeante",
+              "description": "Tire une pluie de flèches depuis les airs et plonge au sol, infligeant des DGT de zone à l'impact.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "DGT 1er coup|{param1}%",
+            "DGT 2e coup|{param2}%",
+            "DGT 3e coup|{param3}%",
+            "DGT 4e coup|{param4}%",
+            "DGT tir visé|{param5}%",
+            "DGT tir visé (pleine charge)|{param6}%",
+            "DGT durant la chute|{param7}%",
+            "DGT chute basse/élevée|{param8}% / {param9}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Défense intégrale d'Inuzaka",
+          "description": "Inflige des DGT Géo de zone et érige une bannière de général.\r\n",
+          "abilities": [
+            {
+              "name": "Bannière de général",
+              "description": "Accorde les effets suivants aux personnages déployés dans la zone d'effet en fonction de la quantité de personnages de type Géo dans l'équipe au moment de l'utilisation :\r\n",
+              "descriptions": [
+                "Avoir 1 personnage Géo accorde un effet de pied ferme : bonus de DÉF.",
+                "Avoir 2 personnages Géo accorde un effet d'imprenabilité : effet précédent + bonus de RÉS à l'interruption.",
+                "Avoir 3 personnages Géo accorde un effet de fracas : effets précédents + bonus de DGT Géo.",
+                "Gorou ne peut générer qu'une bannière de général à la fois, et les personnages ne peuvent bénéficier des effets que d'une seule bannière de général à la fois. Lorsque le personnage quitte la zone, les effets continuent pendant 2 s."
+              ]
+            },
+            {
+              "name": "Appui long",
+              "description": "Ajuste la zone où la compétence sera lancée.\r\n",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "DGT compétence|{param1}%",
+            "Bonus de DÉF|{param2}",
+            "Bonus de DGT Géo|{param3}%",
+            "Durée|{param4}s",
+            "Temps de recharge|{param5}s"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Crocs bestiaux : Vers la victoire",
+          "description": "Affichant sa bravoure de général, Gorou inflige des DGT Géo de zone et crée un champ de prestige de général pour enhardir ses compagnons.\r\n",
+          "abilities": [
+            {
+              "name": "Prestige de général",
+              "description": "Les caractéristiques suivantes s'appliquent :\r\n",
+              "descriptions": [
+                "Ce champ possède des effets identiques à ceux de la bannière de général créée par la compétence élémentaire « Défense intégrale d'Inuzaka », accordant des bonus aux personnages déployés dans la zone d'effet en fonction du nombre de personnages de type Géo dans l'équipe. Le champ se déplace en suivant le personnage déployé.",
+                "Déclenche un effondrement cristallin toutes les 1,5 s qui inflige des DGT Géo de zone à 1 ennemi dans la zone d'effet.",
+                "Attire 1 fragment élémentaire créé par une réaction de Cristallisation dans la zone d'effet vers l'emplacement du personnage déployé toutes les 1,5 s.",
+                "Si une bannière de général créée par Gorou est présente lors de l'utilisation, elle sera détruite. De plus, si Gorou utilise sa compétence élémentaire « Défense intégrale d'Inuzaka » alors qu'un prestige de général est actif, il ne crée pas de bannière de général.",
+                "Si Gorou est vaincu, les effets du prestige de général sont annulés."
+              ]
+            }
+          ],
+          "stats": [
+            "DGT compétence|{param1}% DEF",
+            "DGT effondrement cristallin|{param2}% DEF",
+            "Durée|{param3}s",
+            "Temps de recharge|{param4}s",
+            "Énergie élémentaire|{param5}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "Chien renifleur",
+          "description": "Affiche l'emplacement des produits d'Inazuma sur la mini-carte.\r\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
+          "title": "Nonchalance du vent et de la pluie",
+          "description": "Pendant 12 s après Crocs bestiaux : Vers la victoire, la DÉF de tous les personnages de l'équipe à proximité augmente de 25 %.\r\n",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
+          "title": "Faveur rendue",
+          "description": "Les DGT des attaques suivantes de Gorou augmentent en fonction de sa DÉF :\r\n",
+          "descriptions": [
+            "Les DGT de compétence de Défense intégrale d'Inuzaka augmentent à hauteur de 156 % de sa DÉF.",
+            "Les DGT de compétence et les DGT de l'effondrement cristallin de Crocs bestiaux : Vers la victoire augmentent à hauteur de 15,6 % de sa DÉF."
+          ]
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "Vivacité canine : Célérité du vent",
+          "description": "Lorsqu'un personnage déployé (autre que Gorou) dans la zone d'effet de la bannière de général ou du champ de prestige de général créés par Gorou inflige des DGT Géo à un ennemi, le TdR de Défense intégrale d'Inuzaka de Gorou diminue de 2 s.\r\nCet effet peut être déclenché une fois toutes les 10 s.\r\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "Repos canin : Aplomb du temps",
+          "description": "Lorsqu'un personnage déployé à proximité obtient un fragment élémentaire généré par une réaction de Cristallisation alors qu'un prestige de général est actif, la durée du prestige de général de Gorou augmente de 1 s.\r\nCet effet peut être déclenché une fois toutes les 0,1 s, et sa durée peut être prolongée de 3 s max de cette manière.\r\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "Griffe canine : Frénésie du feu",
+          "description": "Niveau d'aptitude Défense intégrale d'Inuzaka +3.\r\nNiveau max : 15\r\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "Léchouille canine : Bonté de l'eau",
+          "description": "Lorsque le prestige de général est en état d'imprenabilité ou de fracas, il restaure également les PV du personnage déployé dans la zone d'effet toutes les 1,5s d'une valeur équivalant à 50% de la DÉF de Gorou.\r\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "Frappe canine : Élan du tonnerre",
+          "description": "Niveau d'aptitude Crocs bestiaux : Vers la victoire +3.\r\nNiveau max : 15\r\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
+          "title": "Vaillance canine : Fidélité de la terre",
+          "description": "Pendant 12 s après Défense intégrale d'Inuzaka ou Crocs bestiaux : Vers la victoire, les DGT CRIT des DGT Géo de tous les personnages de l'équipe à proximité augmentent en fonction du niveau du champ au moment de l'utilisation de la compétence:\r\n",
+          "descriptions": [
+            "Pied ferme : +10 %.",
+            "Imprenabilité : +20 %.",
+            "Fracas : +40 %.",
+            "Cet effet ne se cumule pas, et la dernière augmentation déclenchée sera la référence pour l'effet."
+          ]
         }
       ]
     },
@@ -3809,8 +3947,8 @@
       "passives": [
         {
           "key": "p1",
-          "title": "Souhaits innombrables",
-          "description": "Lorsque les personnages de l'équipe à proximité obtiennent un orbe ou une particule élémentaire, le Chakra Desiderata accumule 2 charges de résolution.\r\nCet effet peut être déclenché une fois toutes les 3 s.\r\n",
+          "title": "Préservation suprême",
+          "description": "Les moras utilisés lors de l'élévation d'épées à une main et d'armes d'hast sont réduits de 50 %.\r\n",
           "descriptions": []
         },
         {
@@ -3824,8 +3962,8 @@
         },
         {
           "key": "p3",
-          "title": "Préservation suprême",
-          "description": "Les moras utilisés lors de l'élévation d'épées à une main et d'armes d'hast sont réduits de 50 %.\r\n",
+          "title": "Souhaits innombrables",
+          "description": "Lorsque les personnages de l'équipe à proximité obtiennent un orbe ou une particule élémentaire, le Chakra Desiderata accumule 2 charges de résolution.\r\nCet effet peut être déclenché une fois toutes les 3 s.\r\n",
           "descriptions": []
         }
       ],
@@ -4461,6 +4599,93 @@
       ]
     },
     {
+      "key": "shenhe",
+      "name": "Shenhe",
+      "title": "？？？",
+      "description": "",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ]
+    },
+    {
       "key": "sucrose",
       "name": "Sucrose",
       "title": "Alchimiste 100 % naturelle",
@@ -4785,81 +5010,141 @@
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Lance célère",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Attaque normale",
+              "description": "Enchaîne jusqu'à 4 coups de lance.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Attaque chargée",
+              "description": "Charge en ligne droite et inflige des DGT aux ennemis sur sa route ; cette attaque consomme de l'endurance.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Attaque plongeante",
+              "description": "Plonge depuis les airs pour frapper le sol, infligeant des DGT aux ennemis sur la route et des DGT de zone à l'impact.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "DGT 1er coup|{param1}%",
+            "DGT 2e coup|{param2}%",
+            "DGT 3e coup|{param3}% ×{param4}",
+            "DGT 4e coup|{param5}%",
+            "DGT attaque chargée|{param6}%",
+            "Coût d'endurance attaque chargée|{param7} pts",
+            "DGT durant la chute|{param8}%",
+            "DGT chute basse/élevée|{param9}% / {param10}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Bénédiction flamboyante",
+          "description": "Thomas utilise la pointe de sa lance comme point d'appui pour canaliser les flammes et effectuer un coup de pied qui inflige des DGT Pyro de zone et libère une barrière défensive brûlante. Au moment où elle se déclenche, la barrière applique l'élément Pyro à Thomas.\r\nL'absorption des DGT de la barrière est fonction des PV max de Thomas.\r\n",
+          "abilities": [
+            {
+              "name": "",
+              "description": "La barrière brûlante possède les caractéristiques suivantes :\r\n",
+              "descriptions": [
+                "Elle absorbe les DGT Pyro avec 250 % d'efficacité.",
+                "L'absorption de DGT restante d'une barrière brûlante existante se cumulera si une autre barrière brûlante est obtenue en même temps, tandis que sa durée sera actualisée.",
+                "L'absorption maximale de DGT de la barrière ne dépassera pas un certain pourcentage des PV max de Thomas."
+              ]
+            }
+          ],
+          "stats": [
+            "DGT compétence|{param1}%",
+            "PV du bouclier|{param2}% PV max + {param3} PV",
+            "Durée du bouclier|{param4} s",
+            "PV max du bouclier|{param5}% PV max + {param6}",
+            "Temps de recharge|{param7} s"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "O-yoroi écarlate",
+          "description": "Thomas fait tournoyer sa lance, tranchant ses ennemis avec des flammes rugissantes qui infligent des DGT Pyro de zone et se transforment en un o-yoroi embrasé.\r\n",
+          "abilities": [
+            {
+              "name": "O-yoroi embrasé",
+              "description": "L'attaque normale d'un personnage déployé affecté par un o-yoroi embrasé déclenchera un effondrement ardent qui inflige des DGT Pyro de zone et crée une barrière brûlante.\r\nUn effondrement ardent peut être déclenché une fois toutes les secondes.\r\nUne barrière brûlante créée de cette manière est identique à celle créée grâce à la compétence élémentaire « Bénédiction flamboyante » de Thomas, à l'exception de la quantité de DGT qu'elle peut absorber.\r\n",
+              "descriptions": [
+                "Elle absorbe les DGT Pyro avec 250 % d'efficacité.",
+                "L'absorption de DGT restante d'une barrière brûlante existante se cumulera si une autre barrière brûlante est obtenue en même temps, tandis que sa durée sera actualisée.",
+                "L'absorption maximale de DGT de la barrière ne dépassera pas un certain pourcentage des PV max de Thomas.",
+                "Si Thomas est vaincu, les effets de l'o-yoroi embrasé se dissiperont."
+              ]
+            }
+          ],
+          "stats": [
+            "DGT compétence|{param1}%",
+            "DGT effondrement ardent|{param2}%",
+            "PV du bouclier|{param3}% PV max + {param4} PV",
+            "Durée du bouclier|{param5} s",
+            "Durée O-yoroi embrasé|{param6} s",
+            "Temps de recharge|{param7} s",
+            "Énergie élémentaire|{param8}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "Passion pêche",
+          "description": "Lorsque le voyageur réussit une pêche à Inazuma, l'aide de Thomas accorde 20 % de chances d'obtenir le double de prises.",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
+          "title": "Superposition d'armures",
+          "description": "Lorsque le personnage déployé obtient ou actualise une barrière brûlante, la force de son bouclier augmente de 5 % pendant 6 s.\r\nCet effet peut être déclenché une fois toutes les 0,3 s et cumulé jusqu'à 5 fois.\r\n",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "NA",
-          "description": "",
+          "title": "Assaut enflammé",
+          "description": "Les DGT infligés par l'effondrement ardent d'O-yoroi écarlate augmentent d'une valeur équivalant à 2,2 % des PV max de Thomas.\r\n",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "Devoir de camarade",
+          "description": "Lorsqu'un personnage protégé par la barrière brûlante de Thomas subit une attaque (Thomas excepté), les TdR de Bénédiction flamboyante et d'O-yoroi écarlate de Thomas diminuent de 3 s.\r\nCet effet peut être déclenché une fois toutes les 20 s.\r\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "Compétences de subordonné",
+          "description": "Prolonge la durée d'O-yoroi écarlate de 3 s.\r\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "Résolution à toute épreuve",
+          "description": "Niveau d'aptitude Bénédiction flamboyante +3.\r\nNiveau max : 15\r\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "Planification à long terme",
+          "description": "Après avoir utilisé O-yoroi écarlate, Thomas récupère 15 pts d'énergie élémentaire.\r\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "Feu incontrôlable",
+          "description": "Niveau d'aptitude O-yoroi écarlate +3.\r\nNiveau max : 15\r\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
+          "title": "Cœur brûlant",
+          "description": "Lorsqu'une barrière brûlante est obtenue ou actualisée, les DGT des attaques normales, chargées et plongeantes de tous les personnages de l'équipe augmentent de 15 % pendant 6 s.\r\n",
           "descriptions": []
         }
       ]
@@ -6020,11 +6305,11 @@
           ],
           "stats": [
             "DGT compétence|{param1}%",
-            "Intervalle entre les sceaux écarlates|{param2}%",
-            "Bonus ATQ chargée|{param3}s",
-            "Durée|{param4}%",
+            "Intervalle entre les sceaux écarlates|{param2}s",
+            "Bonus ATQ chargée|{param3}%",
+            "Durée|{param4}s",
             "Temps de recharge|{param5}s",
-            "Énergie élémentaire|{param6}s"
+            "Énergie élémentaire|{param6}"
           ]
         }
       ],
@@ -6225,6 +6510,93 @@
           "key": "c6",
           "title": "Pluie de météores de Nagonahara",
           "description": "Tant que Danse du feu « Niwabi » est active, les attaques normales de Yoimiya ont 50 % de chances de libérer une flèche enflammée supplémentaire qui inflige 60 % des DGT d'origine. Ces DGT sont considérés comme des DGT d'attaque normale.\r\n",
+          "descriptions": []
+        }
+      ]
+    },
+    {
+      "key": "yun-jin",
+      "name": "Yun Jin",
+      "title": "？？？",
+      "description": "",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
           "descriptions": []
         }
       ]
@@ -6551,6 +6923,18 @@
         "Augmente les DGT infligés aux ennemis affectés par les éléments Pyro ou Électro de {color}18{/color} %.",
         "Augmente les DGT infligés aux ennemis affectés par les éléments Pyro ou Électro de {color}21{/color} %.",
         "Augmente les DGT infligés aux ennemis affectés par les éléments Pyro ou Électro de {color}24{/color} %."
+      ]
+    },
+    {
+      "key": "cinnabar-spindle",
+      "name": "Fuseau de cinabre",
+      "description": "Une lame faite de matériaux qui n'appartiennent pas à ce monde. Le pouvoir à l'intérieur peut même résister à une corruption venimeuse ayant pourtant atteint un puissant dragon.",
+      "refinements": [
+        "Augmente les dégâts infligés par la compétence élémentaire d'une valeur équivalant à {color}40{/color} % de la DÉF. Cet effet peut être déclenché une fois toutes les 1,5 s, et est annulé 0,1 s après que la compétence élémentaire inflige des DGT.",
+        "Augmente les dégâts infligés par la compétence élémentaire d'une valeur équivalant à {color}50{/color} % de la DÉF. Cet effet peut être déclenché une fois toutes les 1,5 s, et est annulé 0,1 s après que la compétence élémentaire inflige des DGT.",
+        "Augmente les dégâts infligés par la compétence élémentaire d'une valeur équivalant à {color}60{/color} % de la DÉF. Cet effet peut être déclenché une fois toutes les 1,5 s, et est annulé 0,1 s après que la compétence élémentaire inflige des DGT.",
+        "Augmente les dégâts infligés par la compétence élémentaire d'une valeur équivalant à {color}70{/color} % de la DÉF. Cet effet peut être déclenché une fois toutes les 1,5 s, et est annulé 0,1 s après que la compétence élémentaire inflige des DGT.",
+        "Augmente les dégâts infligés par la compétence élémentaire d'une valeur équivalant à {color}80{/color} % de la DÉF. Cet effet peut être déclenché une fois toutes les 1,5 s, et est annulé 0,1 s après que la compétence élémentaire inflige des DGT."
       ]
     },
     {
@@ -7076,6 +7460,18 @@
       ]
     },
     {
+      "key": "mouuns-moon",
+      "name": "Lune de Mouun",
+      "description": "Un élégant arc de guerre fait de coquillages et de corail. Un éclat mélancolique se répand le long de ses branches couleur clair de lune.",
+      "refinements": [
+        "Pour chaque point de l'énergie élémentaire combinée de l'ensemble de l'équipe, les DGT du déchaînement élémentaire du personnage équipé de cette arme augmentent de {color}0{/color},12 %. Les DGT du déchaînement élémentaire peuvent être augmentés jusqu'à {color}40{/color} % de cette manière.",
+        "Pour chaque point de l'énergie élémentaire combinée de l'ensemble de l'équipe, les DGT du déchaînement élémentaire du personnage équipé de cette arme augmentent de {color}0{/color},15 %. Les DGT du déchaînement élémentaire peuvent être augmentés jusqu'à {color}50{/color} % de cette manière.",
+        "Pour chaque point de l'énergie élémentaire combinée de l'ensemble de l'équipe, les DGT du déchaînement élémentaire du personnage équipé de cette arme augmentent de {color}0{/color},18 %. Les DGT du déchaînement élémentaire peuvent être augmentés jusqu'à {color}60{/color} % de cette manière.",
+        "Pour chaque point de l'énergie élémentaire combinée de l'ensemble de l'équipe, les DGT du déchaînement élémentaire du personnage équipé de cette arme augmentent de {color}0{/color},21 %. Les DGT du déchaînement élémentaire peuvent être augmentés jusqu'à {color}70{/color} % de cette manière.",
+        "Pour chaque point de l'énergie élémentaire combinée de l'ensemble de l'équipe, les DGT du déchaînement élémentaire du personnage équipé de cette arme augmentent de {color}0{/color},24 %. Les DGT du déchaînement élémentaire peuvent être augmentés jusqu'à {color}80{/color} % de cette manière."
+      ]
+    },
+    {
       "key": "old-mercs-pal",
       "name": "Lame du mercenaire",
       "description": "Un espadon qui a fait des ravages sur bien des champs de bataille. Il a vu des jours meilleurs, mais aussi bien pires.",
@@ -7237,6 +7633,18 @@
         "Restaure {color}12{/color} % des PV après la défaite d'un ennemi.",
         "Restaure {color}14{/color} % des PV après la défaite d'un ennemi.",
         "Restaure {color}16{/color} % des PV après la défaite d'un ennemi."
+      ]
+    },
+    {
+      "key": "redhorn-stonethresher",
+      "name": "Brise-pierre de corne rouge",
+      "description": "D'après son ancien propriétaire, cette arme serait le «puissant seigneur lion doré écraseur d'or et briseur de pierres en corne rouge » pouvant faire déguerpir n'importe quel monstre sur le champ...",
+      "refinements": [
+        "Augmente la DÉF de {color}28{/color}%, et augmente les DGT des attaques normales et chargées d'une valeur équivalant à {color}40{/color} % de la DÉF.",
+        "Augmente la DÉF de {color}35{/color}%, et augmente les DGT des attaques normales et chargées d'une valeur équivalant à {color}50{/color} % de la DÉF.",
+        "Augmente la DÉF de {color}42{/color}%, et augmente les DGT des attaques normales et chargées d'une valeur équivalant à {color}60{/color} % de la DÉF.",
+        "Augmente la DÉF de {color}49{/color}%, et augmente les DGT des attaques normales et chargées d'une valeur équivalant à {color}70{/color} % de la DÉF.",
+        "Augmente la DÉF de {color}56{/color}%, et augmente les DGT des attaques normales et chargées d'une valeur équivalant à {color}80{/color} % de la DÉF."
       ]
     },
     {
@@ -7734,6 +8142,18 @@
       "refinements": []
     },
     {
+      "key": "wavebreakers-fin",
+      "name": "Aileron de brise-vagues",
+      "description": "Une naginata forgée à partir d'un matériau luminescent provenant du fond des océans. Elle était autrefois la possession des Tengu.",
+      "refinements": [
+        "Pour chaque point de l'énergie élémentaire combinée de l'ensemble de l'équipe, les DGT du déchaînement élémentaire du personnage équipé de cette arme augmentent de {color}0{/color},12 %. Les DGT du déchaînement élémentaire peuvent être augmentés jusqu'à {color}40{/color} % de cette manière.",
+        "Pour chaque point de l'énergie élémentaire combinée de l'ensemble de l'équipe, les DGT du déchaînement élémentaire du personnage équipé de cette arme augmentent de {color}0{/color},15 %. Les DGT du déchaînement élémentaire peuvent être augmentés jusqu'à {color}50{/color} % de cette manière.",
+        "Pour chaque point de l'énergie élémentaire combinée de l'ensemble de l'équipe, les DGT du déchaînement élémentaire du personnage équipé de cette arme augmentent de {color}0{/color},18 %. Les DGT du déchaînement élémentaire peuvent être augmentés jusqu'à {color}60{/color} % de cette manière.",
+        "Pour chaque point de l'énergie élémentaire combinée de l'ensemble de l'équipe, les DGT du déchaînement élémentaire du personnage équipé de cette arme augmentent de {color}0{/color},21 %. Les DGT du déchaînement élémentaire peuvent être augmentés jusqu'à {color}70{/color} % de cette manière.",
+        "Pour chaque point de l'énergie élémentaire combinée de l'ensemble de l'équipe, les DGT du déchaînement élémentaire du personnage équipé de cette arme augmentent de {color}0{/color},24 %. Les DGT du déchaînement élémentaire peuvent être augmentés jusqu'à {color}80{/color} % de cette manière."
+      ]
+    },
+    {
       "key": "white-iron-greatsword",
       "name": "Grande épée en fer blanc",
       "description": "Une épée à deux mains fabriquée dans du fer blanc, ce qui ajoute à la puissance à l'arme tout en réduisant son poids. Elle peut être maniée par tous, mais sa force reflète celle de la personne qui l'utilise.",
@@ -7851,7 +8271,7 @@
       "name": "Cœur du Brave",
       "bonus": [
         "Augmente l'ATQ de 18 %.",
-        "Augmente les DGT infligés aux ennemis ayant plus de 50 % de PV de 30 %."
+        "Augmente les DGT infligés aux ennemis dont les PV sont supérieurs à 50 % de 30 %."
       ]
     },
     {
@@ -7875,7 +8295,7 @@
       "name": "Emblème du destin brisé",
       "bonus": [
         "Augmente la recharge d'énergie de 20 %.",
-        "Augmente les DGT infligés par le déchaînement élémentaire d'une valeur équivalant à 25 % de la recharge d'énergie. Les DGT peuvent être augmentés de cette manière jusqu'à 75 %."
+        "Augmente les DGT infligés par le déchaînement élémentaire d'une valeur équivalant à 25 % de la recharge d'énergie. Les DGT peuvent être augmentés de 75 % max de cette manière."
       ]
     },
     {
@@ -7896,10 +8316,18 @@
     },
     {
       "key": "heart-of-depth",
-      "name": "Âme du naufragé",
+      "name": "Âme des profondeurs",
       "bonus": [
         "Confère un bonus de DGT Hydro de 15 %.",
         "Augmente les DGT infligés par les attaques normales et chargées de 30 % pendant 15 s après l'utilisation d'une compétence élémentaire."
+      ]
+    },
+    {
+      "key": "husk-of-opulent-dreams",
+      "name": "Coquille des rêves opulents",
+      "bonus": [
+        "Augmente la DÉF de 30 %.",
+        "Un personnage équipé de ce set d'artéfacts obtiendra 1 cumul de Curiosité des façons suivantes  sur le champ de bataille, il gagne 1 cumul en touchant un ennemi avec une attaque Géo, ceci pouvant être déclenché une fois toutes les 0,3 s ; en faisant partie de l'équipe mais en n'étant pas déployé, il gagne 1 cumul toutes les 3 s. La Curiosité peut être cumulée 4 fois maximum, chaque cumul accordant 6 % de bonus de DÉF et 6 % de Bonus de DGT Géo. Si 6 s s'écoulent sans gagner de cumul de Curiosité, 1 cumul sera perdu."
       ]
     },
     {
@@ -7948,6 +8376,14 @@
       "bonus": [
         "Augmente les DGT infligés par le déchaînement élémentaire de 20 %.",
         "Augmente l'ATQ de tous les personnages de l'équipe de 20 % pendant 12 s après un déchaînement élémentaire. Cet effet est non cumulable."
+      ]
+    },
+    {
+      "key": "ocean-hued-clam",
+      "name": "Palourde aux teintes océaniques",
+      "bonus": [
+        "Augmente le bonus de soins de 15 %.",
+        "Lorsqu'un personnage équipé de ce set d'artéfacts soigne un personnage de l'équipe, une mousse marine apparaîtra pendant 3 s, accumulant la quantité de PV récupérée grâce au soin (y compris tout surplus au-dessus de 100 %). À la fin de la durée, la mousse marine explosera, infligeant des DGT aux ennemis proches d'une valeur équivalant à 90 % du soin accumulé (Ces DGT sont calculés de la même manière que les réactions d'Électrocution et de Supraconduction, mais ne sont pas affectés par la maîtrise élémentaire, les niveaux des personnages ou les bonus de DGT de réactions élémentaires). Une mousse marine peut être générée toutes les 3,5 s, et chaque mousse marine peut accumuler jusqu'à 30 000 PV, incluant tout surplus au-dessus de 100 %. Il ne peut exister qu'une seule mousse marine à la fois. Cet effet peut être déclenché même si le personnage équipé de ce set d'artéfacts fait partie de l'équipe mais n'est pas déployé."
       ]
     },
     {
@@ -8039,7 +8475,7 @@
       "name": "Colère de tonnerre",
       "bonus": [
         "Confère un bonus de DGT Électro de 15 %.",
-        "Augmente les DGT infligés par Surcharge, Décharge électrique et Supraconductivité de 40 %. Lorsque vous déclenchez ces réactions élémentaires, le TdR de compétence élémentaire est réduit de 1 s. Cet effet peut être déclenché une fois toutes les 0,8 s."
+        "Augmente les DGT infligés par Surcharge, Électrocution et Supraconduction de 40 %. Lorsque vous déclenchez ces réactions élémentaires, le TdR de la compétence élémentaire est réduit de 1 s. Cet effet peut être déclenché une fois toutes les 0,8 s."
       ]
     },
     {
@@ -9135,6 +9571,11 @@
       "description": "Une céréale commune en Teyvat. Son goût et sa texture sont appréciés des masses."
     },
     {
+      "key": "riftborn-regalia",
+      "name": "Régalia de faille",
+      "description": "Un corne brisée obtenue après avoir vaincu le loup alpha. Cela dit, il n'aurait dû rien rester après votre chasse.\r\nMême un seigneur des failles n'est rien en comparaison avec des monstres plus puissants.\r\nL'« Or » a produit en masse ce genre de meutes de canidés malformés comme par accident, un peu comme des gribouillis ratés sur des vieux morceaux de papier, et les cornes de ce dernier représentent son autorité à commander sa sombre meute à dissoudre l'espace lui-même."
+    },
+    {
       "key": "ring-of-boreas",
       "name": "Vertèbre de Borée",
       "description": "Un peu de glace provenant du corps du Grand Roi Loup du Nord.\r\nIl déclenchait des blizzards et des tempêtes de neige à la grêle si acérée qu'elle pouvait couper la chair. Ses pouvoirs ne sont plus ceux d'antan, mais il possède encore la puissance de recouvrir ses terres de neige."
@@ -9537,128 +9978,140 @@
   ],
   "debuffs": [
     {
-      "key": "Engulfing Storm",
-      "name": "Engulfing Storm",
-      "effect": "Continuously drains Energy Recharge.",
+      "key": "engulfing-storm",
+      "name": "Tempête dévastatrice",
+      "effect": "Draine l’énergie élémentaire jusqu’à ce que l’attribut Électro soit ôté.",
       "description": null
     },
     {
-      "key": "Slowing Water",
-      "name": "Slowing Water",
-      "effect": "Increases skill CD durations.",
+      "key": "slowing-water",
+      "name": "Eau ralentissante",
+      "effect": "Augmente le TdR des compétences jusqu’à ce que l’attribut Hydro soit ôté.",
       "description": null
     },
     {
-      "key": "Smoldering Flames",
-      "name": "Smoldering Flames",
-      "effect": "Continuously inflicts damage over time.",
+      "key": "smoldering-flames",
+      "name": "Flammes dévoreuses",
+      "effect": "Inflige des DGT Pyro continus jusqu’à ce que l’attribut Pyro soit ôté.",
       "description": null
     },
     {
-      "key": "Condensed Ice",
-      "name": "Condensed Ice",
-      "effect": "Increases stamina consumption.",
+      "key": "condensed-ice",
+      "name": "Glace condensée",
+      "effect": "Augmente la consommation d’endurance et empêche sa régénération, jusqu’à ce que l’attribut Cryo soit ôté.",
       "description": null
     }
   ],
   "reactions": [
     {
-      "key": "Burning",
-      "name": "Burning",
-      "effect": "Deals Pyro DMG over time.",
+      "key": "vaporize",
+      "name": "Évaporation",
+      "effect": "Multiplie par 2 les DGT Pyro de la réaction lorsqu’une attaque Pyro déclenche la réaction.",
       "description": null
     },
     {
-      "key": "Crystalize",
-      "name": "Crystalize",
-      "effect": "Creates a crystal that will provide a shield when picked up.",
+      "key": "burning",
+      "name": "Brûlure",
+      "effect": "Inflige d’importants DGT Pyro en continu. L’herbe est considérée comme une entité Dendro et répandra l’effet autour de sa zone.",
       "description": null
     },
     {
-      "key": "Electro-Charged",
-      "name": "Electro-Charged",
-      "effect": "Deals Electro DMG over time.",
+      "key": "overloaded",
+      "name": "Surcharge",
+      "effect": "Génère une explosion qui inflige des DGT Pyro de zone. L’explosion générée est considérée comme un coup puissant, pouvant réduire considérablement la solidité des objets en pierre du jeu (Exemple : boucliers en pierre, gisements...).",
       "description": null
     },
     {
-      "key": "Frozen",
-      "name": "Frozen",
-      "effect": "Freezes the target.",
+      "key": "melt",
+      "name": "Fonte",
+      "effect": "Multiplie par 2 les DGT Pyro de la réaction lorsqu’une attaque Pyro déclenche la réaction.",
       "description": null
     },
     {
-      "key": "Melt",
-      "name": "Melt",
-      "effect": "Deals extra damage.",
+      "key": "vaporize-reverse",
+      "name": "Évaporation (Inversée)",
+      "effect": "Multiplie par 1.5 les DGT Hydro de la réaction lorsqu’une attaque Hydro déclenche la réaction.",
       "description": null
     },
     {
-      "key": "Overloaded",
-      "name": "Overloaded",
-      "effect": "Deals AoE Pyro DMG.",
+      "key": "electro-charged",
+      "name": "Électrocution",
+      "effect": "Inflige des DGT Électro continus tant que l’effet est actif. Chaque décharge électrocute et interrompt l’action du personnage. La décharge rebondit également de façon intermittente sur les ennemis affectés par l’élément Hydro pour leur infliger des DGT Électro.",
       "description": null
     },
     {
-      "key": "Superconduct",
-      "name": "Superconduct",
-      "effect": "Deals AoE Cryo DMG and reduces the target's Physical RES by 50%.",
+      "key": "frozen",
+      "name": "Gel",
+      "effect": "Gèle la cible. Si la créature gelée est touchée par une attaque d’épée à deux mains, une attaque plongeante ou des DGT Géo (excepté les attaques plongeantes des manieurs de catalyseur), ceux-ci déclencheront l’effet Brise-glace. Cet effet inflige des DGT Physiques à l’ennemi.",
       "description": null
     },
     {
-      "key": "Swirl",
-      "name": "Swirl",
-      "effect": "Deals extra elemental damage and spreads the effect.",
+      "key": "swirl",
+      "name": "Dispersion",
+      "effect": "Lorsque l’élément Anémo entre en contact avec d’autres éléments, une Dispersion peut être déclenchée. Cette réaction inflige des DGT de zone selon l’élément infusé tout en appliquant l’attribut infusé aux créatures proches. Elle n’inflige pas de DGT Anémo (puisque l’attaque Anémo utilisée a été infusée avec un autre élément). Un seul élément à la fois peut être infusé par l’élément Anémo.",
       "description": null
     },
     {
-      "key": "Vaporize",
-      "name": "Vaporize",
-      "effect": "Deals extra damage.",
+      "key": "superconduct",
+      "name": "Supraconduction",
+      "effect": "Inflige des DGT Cryo de zone et réduit de 40% la RES Physique de la cible pendant 12 secondes. Chaque Supraconduction inflige une seule fois des DGT aux ennemis autour de la cible dans la zone d’effet de la réaction. Cela signifie que s’il y a 3 Supraconductions déclenchées simultanément (une réaction par ennemi), chaque ennemi présent dans la zone d’effet subira 3 fois les DGT de la réaction.",
+      "description": null
+    },
+    {
+      "key": "melt-reverse",
+      "name": "Fonte (Inversée)",
+      "effect": "Multiplie par 1.5 les DGT Cryo de la réaction lorsqu’une attaque Cryo déclenche la réaction.",
+      "description": null
+    },
+    {
+      "key": "crystallize",
+      "name": "Cristallisation",
+      "effect": "Génère des fragments élémentaires et protège le personnage qui récupère le fragment à l’aide de différents types de boucliers élémentaires. La Cristallisation absorbe les deux éléments mis en réaction. Le bouclier élémentaire protège de tous types de DGT mais absorbe plus efficacement les DGT infligés par le même élément que celui du fragment cristallisé (Exemple : un bouclier Électro protège mieux des DGT Électro).",
       "description": null
     }
   ],
   "resonance": [
     {
-      "key": "Enduring Rock",
-      "name": "Enduring Rock",
-      "effect": "Increases shield strength by 15%. Aditionally, characters protected by a shield will have the following special characterists: DMG dealt increased by 15%, dealing DMG to enemies will decrease their Geo RES by 20% for 15s.",
+      "key": "enduring-rock",
+      "name": "Roc inamovible",
+      "effect": "Augmente la force du bouclier de 15%. De plus, lorsqu’un personnage est sous la protection d’un bouclier, il obtient les caractéristiques suivantes : tout les DGT infligés par le personnage sont augmentés de 15%, la RES Géo de l’ennemi est diminuée de 20% pendant 15s lorsqu’il subit des DGT de la part du personnage.",
       "description": null
     },
     {
-      "key": "Fervent Flames",
-      "name": "Fervent Flames",
-      "effect": "Affected by Cryo for 40% less time. Increases ATK by 25%.",
+      "key": "fervent-flames",
+      "name": "Flammes de la ferveur",
+      "effect": "Réduit de 40% la durée d’application de l’ élément Cryo sur l’ équipe. Augmente l’ ATQ de toute l’ équipe de 25%.",
       "description": null
     },
     {
-      "key": "Soothing Waters",
-      "name": "Soothing Waters",
-      "effect": "Affected by Pyro for 40% less time. Increases incoming healing by 30%.",
+      "key": "soothing-waters",
+      "name": "Eau salvatrice",
+      "effect": "Réduit de 40% la durée d’application de l’élément Pyro sur toute l’équipe. Augmente de 30% le bonus de soins reçus.",
       "description": null
     },
     {
-      "key": "Impetuous Winds",
-      "name": "Impetuous Winds",
-      "effect": "Decreases Stamina Consumption by 15%. Increases Movement SPD by 10%. Shortens Skill CD by 5%.",
+      "key": "impetuous-winds",
+      "name": "Vents de la célérité",
+      "effect": "Réduit la consommation d’ endurance de 15%. Augmente la VIT de déplacement de 10% et réduit le TdR des compétences élémentaires de 5%.",
       "description": null
     },
     {
-      "key": "High Voltage",
-      "name": "High Voltage",
-      "effect": "Affected by Hydro for 40% less time. Superconduct, Overloaded, and Electro-Charged have a 100% chance to generate an Electro Elemental Particle (CD: 5s).",
+      "key": "high-voltage",
+      "name": "Tonnerre puissant",
+      "effect": "Réduit de 40% la durée d’application de l’effet Hydro sur toute l’équipe. Les réactions Supraconduction, Surcharge ou Électrocution génèrent une particule élémentaire lorsqu’elles sont déclenchées. TdR : 5s.",
       "description": null
     },
     {
-      "key": "Shattering Ice",
-      "name": "Shattering Ice",
-      "effect": "Affected by Electro for 40% less time. Increases CRIT Rate against enemies that are Frozen or affected by Cryo by 15%.",
+      "key": "shattering-ice",
+      "name": "Gel pulvérisateur",
+      "effect": "Réduit de 40% la durée d’application de l’attribut Électro sur toute l’équipe. Augmente le taux CRIT de 15% lorsque vous attaquez des ennemis gelés ou affectés par Cryo.",
       "description": null
     },
     {
-      "key": "Protective Canopy",
-      "name": "Protective Canopy",
-      "effect": "All Elemental RES by 15%. Physical RES + 15%",
-      "description": "Any 4 Unique Elements"
+      "key": "protective-canopy",
+      "name": "Lianes protectrices",
+      "effect": "Augmente toutes les RES élémentaires et la RES physique de 15%",
+      "description": "4 éléments différents"
     }
   ],
   "monsters": [

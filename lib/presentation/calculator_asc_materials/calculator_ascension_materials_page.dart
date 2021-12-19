@@ -8,6 +8,7 @@ import 'package:shiori/domain/extensions/iterable_extensions.dart';
 import 'package:shiori/domain/extensions/string_extensions.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/generated/l10n.dart';
+import 'package:shiori/injection.dart';
 import 'package:shiori/presentation/characters/characters_page.dart';
 import 'package:shiori/presentation/shared/dialogs/confirm_dialog.dart';
 import 'package:shiori/presentation/shared/extensions/i18n_extensions.dart';
@@ -34,39 +35,59 @@ class CalculatorAscensionMaterialsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final s = S.of(context);
+    return BlocProvider(
+      create: (ctx) => Injection.getCalculatorAscMaterialsBloc(ctx.read<CalculatorAscMaterialsSessionsBloc>())
+        ..add(CalculatorAscMaterialsEvent.init(sessionKey: sessionKey)),
+      child: Scaffold(
+        appBar: _AppBar(sessionKey: sessionKey),
+        body: SafeArea(
+          child: _FabMenu(sessionKey: sessionKey),
+        ),
+      ),
+    );
+  }
+}
 
-    return Scaffold(
-      appBar: AppBar(
+class _AppBar extends StatelessWidget implements PreferredSizeWidget {
+  final int sessionKey;
+
+  const _AppBar({Key? key, required this.sessionKey}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    final s = S.of(context);
+    return BlocBuilder<CalculatorAscMaterialsBloc, CalculatorAscMaterialsState>(
+      builder: (ctx, state) => AppBar(
         title: Text(s.ascensionMaterials),
         actions: [
-          BlocBuilder<CalculatorAscMaterialsBloc, CalculatorAscMaterialsState>(
-            builder: (context, state) => state.items.length > 1
-                ? IconButton(
-                    icon: const Icon(Icons.unfold_more),
-                    onPressed: () => _showReorderDialog(state.items, context),
-                  )
-                : Container(),
-          ),
-          BlocBuilder<CalculatorAscMaterialsBloc, CalculatorAscMaterialsState>(
-            builder: (context, state) => state.items.isNotEmpty
-                ? IconButton(
-                    icon: const Icon(Icons.clear_all),
-                    onPressed: () => _showDeleteAllDialog(context),
-                  )
-                : Container(),
-          ),
+          if (state.items.length > 1)
+            IconButton(
+              icon: const Icon(Icons.unfold_more),
+              splashRadius: Styles.mediumButtonSplashRadius,
+              onPressed: () => _showReorderDialog(state.items, context),
+            ),
+          if (state.items.isNotEmpty)
+            IconButton(
+              icon: const Icon(Icons.clear_all),
+              splashRadius: Styles.mediumButtonSplashRadius,
+              onPressed: () => _showDeleteAllDialog(context),
+            )
         ],
-      ),
-      body: SafeArea(
-        child: _FabMenu(sessionKey: sessionKey),
       ),
     );
   }
 
+  @override
+  Size get preferredSize => const Size.fromHeight(kToolbarHeight);
+
   Future<void> _showReorderDialog(List<ItemAscensionMaterials> items, BuildContext context) async {
-    context.read<CalculatorAscMaterialsOrderBloc>().add(CalculatorAscMaterialsOrderEvent.init(sessionKey: sessionKey, items: items));
-    await showDialog(context: context, builder: (_) => ReorderItemsDialog());
+    await showDialog(
+      context: context,
+      builder: (_) => BlocProvider.value(
+        value: context.read<CalculatorAscMaterialsBloc>(),
+        child: ReorderItemsDialog(sessionKey: sessionKey, items: items),
+      ),
+    );
   }
 
   Future<void> _showDeleteAllDialog(BuildContext context) async {
@@ -95,22 +116,21 @@ class _FabMenu extends StatelessWidget {
     final size = getDeviceType(MediaQuery.of(context).size);
     return HawkFabMenu(
       icon: AnimatedIcons.menu_arrow,
-      fabColor: theme.accentColor,
-      iconColor: Colors.white,
+      fabColor: theme.colorScheme.secondary,
       items: [
         HawkFabMenuItem(
           label: s.addCharacter,
           ontap: () => _openCharacterPage(context),
           icon: const Icon(Icons.people),
-          color: theme.accentColor,
-          labelColor: theme.accentColor,
+          color: theme.colorScheme.secondary,
+          labelColor: theme.colorScheme.secondary,
         ),
         HawkFabMenuItem(
           label: s.addWeapon,
           ontap: () => _openWeaponPage(context),
           icon: const Icon(Shiori.crossed_swords),
-          color: theme.accentColor,
-          labelColor: theme.accentColor,
+          color: theme.colorScheme.secondary,
+          labelColor: theme.colorScheme.secondary,
         ),
       ],
       body: BlocBuilder<CalculatorAscMaterialsBloc, CalculatorAscMaterialsState>(
@@ -209,7 +229,7 @@ class _PortraitLayout extends StatelessWidget {
           sliver: SliverToBoxAdapter(
             child: ItemDescriptionDetail(
               title: '${s.characters} / ${s.weapons}',
-              textColor: theme.accentColor,
+              textColor: theme.colorScheme.secondary,
             ),
           ),
         ),
@@ -247,7 +267,7 @@ class _PortraitLayout extends StatelessWidget {
           SliverToBoxAdapter(
             child: ItemDescriptionDetail(
               title: s.summary,
-              textColor: theme.accentColor,
+              textColor: theme.colorScheme.secondary,
               body: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: summary,
@@ -259,7 +279,7 @@ class _PortraitLayout extends StatelessWidget {
   }
 }
 
-class _LandscapeLayout extends StatelessWidget {
+class _LandscapeLayout extends StatefulWidget {
   final int sessionKey;
   final List<ItemAscensionMaterials> items;
   final List<Widget> summary;
@@ -272,6 +292,21 @@ class _LandscapeLayout extends StatelessWidget {
   }) : super(key: key);
 
   @override
+  State<_LandscapeLayout> createState() => _LandscapeLayoutState();
+}
+
+class _LandscapeLayoutState extends State<_LandscapeLayout> {
+  late final ScrollController _controllerRight;
+  late final ScrollController _controllerLeft;
+
+  @override
+  void initState() {
+    super.initState();
+    _controllerRight = ScrollController();
+    _controllerLeft = ScrollController();
+  }
+
+  @override
   Widget build(BuildContext context) {
     final s = S.of(context);
     final theme = Theme.of(context);
@@ -281,13 +316,14 @@ class _LandscapeLayout extends StatelessWidget {
           flex: 60,
           fit: FlexFit.tight,
           child: CustomScrollView(
+            controller: _controllerLeft,
             slivers: [
               SliverPadding(
                 padding: const EdgeInsets.only(top: 10),
                 sliver: SliverToBoxAdapter(
                   child: ItemDescriptionDetail(
                     title: '${s.characters} / ${s.weapons}',
-                    textColor: theme.accentColor,
+                    textColor: theme.colorScheme.secondary,
                   ),
                 ),
               ),
@@ -295,7 +331,7 @@ class _LandscapeLayout extends StatelessWidget {
                 padding: Styles.edgeInsetHorizontal16,
                 sliver: SliverToBoxAdapter(
                   child: ResponsiveGridRow(
-                    children: items
+                    children: widget.items
                         .mapIndex(
                           (e, index) => ResponsiveGridCol(
                             sm: 6,
@@ -303,7 +339,7 @@ class _LandscapeLayout extends StatelessWidget {
                             lg: 3,
                             xl: 3,
                             child: ItemCard(
-                              sessionKey: sessionKey,
+                              sessionKey: widget.sessionKey,
                               isActive: e.isActive,
                               index: index,
                               itemKey: e.key,
@@ -327,16 +363,17 @@ class _LandscapeLayout extends StatelessWidget {
           flex: 40,
           fit: FlexFit.tight,
           child: CustomScrollView(
+            controller: _controllerRight,
             slivers: [
               SliverPadding(
                 padding: const EdgeInsets.only(top: 10),
                 sliver: SliverToBoxAdapter(
                   child: ItemDescriptionDetail(
                     title: s.summary,
-                    textColor: theme.accentColor,
+                    textColor: theme.colorScheme.secondary,
                     body: Column(
                       crossAxisAlignment: CrossAxisAlignment.stretch,
-                      children: summary,
+                      children: widget.summary,
                     ),
                   ),
                 ),

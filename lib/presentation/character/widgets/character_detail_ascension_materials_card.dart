@@ -55,12 +55,12 @@ class CharacterDetailAscensionMaterialsCard extends StatelessWidget {
 
   TableRow _buildAscensionRow(CharacterAscensionModel model) {
     final materials = model.materials.map((m) => WrappedAscensionMaterial(itemKey: m.key, image: m.image, quantity: m.quantity)).toList();
-    return TableRow(children: [
-      CommonTableCell(text: '${model.rank}', padding: Styles.edgeInsetAll10),
-      CommonTableCell(text: '${model.level}', padding: Styles.edgeInsetAll10),
-      CommonTableCell.child(
-        child: Wrap(alignment: WrapAlignment.center, children: materials),
-      ),
-    ]);
+    return TableRow(
+      children: [
+        CommonTableCell(text: '${model.rank}', padding: Styles.edgeInsetAll10),
+        CommonTableCell(text: '${model.level}', padding: Styles.edgeInsetAll10),
+        CommonTableCell.child(child: Wrap(alignment: WrapAlignment.center, children: materials)),
+      ],
+    );
   }
 }

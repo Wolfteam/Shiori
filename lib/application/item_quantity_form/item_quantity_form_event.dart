@@ -5,6 +5,4 @@ class ItemQuantityFormEvent with _$ItemQuantityFormEvent {
   const factory ItemQuantityFormEvent.quantityChanged({
     required int quantity,
   }) = _QuantityChange;
-
-  const factory ItemQuantityFormEvent.close() = _Close;
 }

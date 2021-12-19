@@ -18,21 +18,13 @@ void main() {
     blocTest<TierListFormBloc, TierListFormState>(
       'invalid value',
       build: () => TierListFormBloc(),
-      act: (bloc) => bloc..add(const TierListFormEvent.nameChanged(name: 'SSS'))..add(const TierListFormEvent.nameChanged(name: '')),
+      act: (bloc) => bloc
+        ..add(const TierListFormEvent.nameChanged(name: 'SSS'))
+        ..add(const TierListFormEvent.nameChanged(name: '')),
       skip: 1,
       expect: () => const [
         TierListFormState.loaded(name: '', isNameDirty: true, isNameValid: false),
       ],
     );
   });
-
-  blocTest<TierListFormBloc, TierListFormState>(
-    'Close',
-    build: () => TierListFormBloc(),
-    act: (bloc) => bloc..add(const TierListFormEvent.nameChanged(name: 'SSS'))..add(const TierListFormEvent.close()),
-    skip: 1,
-    expect: () => const [
-      TierListFormState.loaded(name: '', isNameDirty: false, isNameValid: false),
-    ],
-  );
 }

@@ -10,13 +10,13 @@ abstract class ItemCommonBase {
 
 @freezed
 class ItemCommon with _$ItemCommon {
-  @Implements(ItemCommonBase)
+  @Implements<ItemCommonBase>()
   const factory ItemCommon(String key, String image) = _ItemCommon;
 }
 
 @freezed
 class ItemCommonWithQuantity with _$ItemCommonWithQuantity {
-  @Implements(ItemCommonBase)
+  @Implements<ItemCommonBase>()
   const factory ItemCommonWithQuantity(String key, String image, int quantity) = _ItemCommonWithQuantity;
 }
 

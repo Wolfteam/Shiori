@@ -1,16 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:shiori/application/bloc.dart';
+import 'package:shiori/injection.dart';
 import 'package:shiori/presentation/shared/scaffold_with_fab.dart';
 
 import 'widgets/character_detail.dart';
 import 'widgets/character_detail_top.dart';
 
 class CharacterPage extends StatelessWidget {
-  const CharacterPage({Key? key}) : super(key: key);
+  final String itemKey;
+
+  const CharacterPage({Key? key, required this.itemKey}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     final isPortrait = MediaQuery.of(context).orientation == Orientation.portrait;
-    return isPortrait ? const _PortraitLayout() : const _LandscapeLayout();
+    return BlocProvider<CharacterBloc>(
+      create: (context) => Injection.characterBloc..add(CharacterEvent.loadFromKey(key: itemKey)),
+      child: isPortrait ? const _PortraitLayout() : const _LandscapeLayout(),
+    );
   }
 }
 

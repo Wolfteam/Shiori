@@ -41,13 +41,14 @@ class NotificationCircleItem extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        Center(
-          child: CircleItem(
-            radius: 40,
-            image: selected.image,
-            onTap: (_) => _onMainIconTap(context),
+        if (images.isNotEmpty)
+          Center(
+            child: CircleItem(
+              radius: 40,
+              image: selected.image,
+              onTap: (_) => _onMainIconTap(context),
+            ),
           ),
-        ),
         if (showOtherImages && !ignored.contains(type))
           SizedBox(
             height: 70,

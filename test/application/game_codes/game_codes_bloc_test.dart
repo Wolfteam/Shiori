@@ -106,12 +106,14 @@ void main() {
     act: (bloc) => bloc.add(const GameCodesEvent.refresh()),
     skip: 1,
     verify: (bloc) {
-      bloc.state.map(loaded: (state) {
-        expect(state.isInternetAvailable, isNull);
-        expect(state.isBusy, isFalse);
-        expect(state.workingGameCodes.length, 1);
-        expect(state.expiredGameCodes.length, 1);
-      });
+      bloc.state.map(
+        loaded: (state) {
+          expect(state.isInternetAvailable, isNull);
+          expect(state.isBusy, isFalse);
+          expect(state.workingGameCodes.length, 1);
+          expect(state.expiredGameCodes.length, 1);
+        },
+      );
     },
   );
 
@@ -131,12 +133,5 @@ void main() {
         expiredGameCodes: [_defaultGameCodes.first.copyWith.call(isUsed: true)],
       ),
     ],
-  );
-
-  blocTest<GameCodesBloc, GameCodesState>(
-    'Close',
-    build: () => GameCodesBloc(_dataService, _telemetryService, _gameCodeService, _networkService),
-    act: (bloc) => bloc.add(const GameCodesEvent.close()),
-    expect: () => [_defaultState],
   );
 }

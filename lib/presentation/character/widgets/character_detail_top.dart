@@ -8,6 +8,7 @@ import 'package:shiori/presentation/shared/details/detail_top_layout.dart';
 import 'package:shiori/presentation/shared/extensions/element_type_extensions.dart';
 import 'package:shiori/presentation/shared/extensions/i18n_extensions.dart';
 import 'package:shiori/presentation/shared/loading.dart';
+import 'package:shiori/presentation/shared/styles.dart';
 
 class CharacterDetailTop extends StatelessWidget {
   const CharacterDetailTop({
@@ -40,11 +41,12 @@ class CharacterDetailTop extends StatelessWidget {
             elevation: 0.0,
             actions: [
               BlocBuilder<CharacterBloc, CharacterState>(
-                builder: (ctx, state) => state.map(
+                builder: (context, state) => state.map(
                   loading: (_) => const Loading(useScaffold: false),
                   loaded: (state) => IconButton(
                     icon: Icon(state.isInInventory ? Icons.favorite : Icons.favorite_border),
                     color: Colors.red,
+                    splashRadius: Styles.mediumButtonSplashRadius,
                     onPressed: () => _favoriteCharacter(state.key, state.isInInventory, context),
                   ),
                 ),
@@ -57,7 +59,7 @@ class CharacterDetailTop extends StatelessWidget {
   }
 
   void _favoriteCharacter(String key, bool isInInventory, BuildContext context) {
-    final event = !isInInventory ? InventoryEvent.addCharacter(key: key) : InventoryEvent.deleteCharacter(key: key);
-    context.read<InventoryBloc>().add(event);
+    final event = !isInInventory ? CharacterEvent.addToInventory(key: key) : CharacterEvent.deleteFromInventory(key: key);
+    context.read<CharacterBloc>().add(event);
   }
 }

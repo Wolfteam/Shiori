@@ -12,7 +12,7 @@ import 'package:shiori/presentation/shared/styles.dart';
 import 'package:shiori/presentation/weapons/widgets/weapon_bottom_sheet.dart' as weapons;
 
 class ModalBottomSheetUtils {
-  static Widget getBottomSheetFromEndDrawerItemType(EndDrawerItemType? type, {Map<String, dynamic>? args}) {
+  static Widget getBottomSheetFromEndDrawerItemType(BuildContext context, EndDrawerItemType? type, {Map<String, dynamic>? args}) {
     switch (type) {
       case EndDrawerItemType.characters:
         return const characters.CharacterBottomSheet();
@@ -21,16 +21,16 @@ class ModalBottomSheetUtils {
       case EndDrawerItemType.artifacts:
         return const artifacts.ArtifactBottomSheet();
       case EndDrawerItemType.materials:
-        return const materials.MaterialBottomSheet();
+        return materials.MaterialBottomSheet.route(context);
       case EndDrawerItemType.monsters:
-        return const monsters.MonsterBottomSheet();
+        return monsters.MonsterBottomSheet.route(context);
       case EndDrawerItemType.calculatorAscMaterialsAdd:
       case EndDrawerItemType.calculatorAscMaterialsEdit:
         assert(args != null);
-        return calc_asc_mat.AddEditItemBottomSheet.getWidgetFromArgs(args!);
+        return calc_asc_mat.AddEditItemBottomSheet.getWidgetFromArgs(context, args!);
       case EndDrawerItemType.notifications:
         assert(args != null);
-        return notifications.AddEditNotificationBottomSheet.getWidgetFromArgs(args!);
+        return notifications.AddEditNotificationBottomSheet.getWidgetFromArgs(context, args!);
     }
     return Container();
   }
@@ -45,14 +45,14 @@ class ModalBottomSheetUtils {
         shape: Styles.modalBottomSheetShape,
         isDismissible: true,
         isScrollControlled: true,
-        builder: (ctx) => getBottomSheetFromEndDrawerItemType(type, args: args),
+        builder: (ctx) => getBottomSheetFromEndDrawerItemType(context, type, args: args),
       );
       return;
     }
 
     await showCustomModalBottomSheet(
       context: context,
-      builder: (ctx) => getBottomSheetFromEndDrawerItemType(type, args: args),
+      builder: (ctx) => getBottomSheetFromEndDrawerItemType(context, type, args: args),
     );
   }
 }

@@ -29,7 +29,6 @@ void main() {
   late final DeviceInfoService _deviceInfoService;
   late final MainBloc _mainBloc;
   late final HomeBloc _homeBloc;
-  late final UrlPageBloc _urlPageBloc;
 
   final _defaultSettings = AppSettings(
     appTheme: AppThemeType.dark,
@@ -65,23 +64,24 @@ void main() {
 
     _mainBloc = FakeMainBloc();
     _homeBloc = FakeHomeBloc();
-    _urlPageBloc = FakeUrlPageBloc();
   });
 
   test(
     'Initial state',
-    () => expect(SettingsBloc(_settingsService, _deviceInfoService, _mainBloc, _homeBloc, _urlPageBloc).state, const SettingsState.loading()),
+    () => expect(SettingsBloc(_settingsService, _deviceInfoService, _mainBloc, _homeBloc).state, const SettingsState.loading()),
   );
 
   test(
     'Double back to close returns valid value',
-    () => expect(SettingsBloc(_settingsService, _deviceInfoService, _mainBloc, _homeBloc, _urlPageBloc).doubleBackToClose(),
-        _defaultSettings.doubleBackToClose),
+    () => expect(
+      SettingsBloc(_settingsService, _deviceInfoService, _mainBloc, _homeBloc).doubleBackToClose(),
+      _defaultSettings.doubleBackToClose,
+    ),
   );
 
   blocTest<SettingsBloc, SettingsState>(
     'Init',
-    build: () => SettingsBloc(_settingsService, _deviceInfoService, _mainBloc, _homeBloc, _urlPageBloc),
+    build: () => SettingsBloc(_settingsService, _deviceInfoService, _mainBloc, _homeBloc),
     act: (bloc) => bloc.add(const SettingsEvent.init()),
     expect: () => [
       SettingsState.loaded(
@@ -101,7 +101,7 @@ void main() {
 
   blocTest<SettingsBloc, SettingsState>(
     'Settings changed',
-    build: () => SettingsBloc(_settingsService, _deviceInfoService, _mainBloc, _homeBloc, _urlPageBloc),
+    build: () => SettingsBloc(_settingsService, _deviceInfoService, _mainBloc, _homeBloc),
     act: (bloc) => bloc
       ..add(const SettingsEvent.init())
       ..add(const SettingsEvent.themeChanged(newValue: AppThemeType.light))

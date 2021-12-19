@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shiori/generated/l10n.dart';
-import 'package:numberpicker/numberpicker.dart';
+import 'package:shiori/presentation/shared/number_picker.dart';
 
 typedef ItemBuilder = String Function(String);
 

@@ -401,92 +401,152 @@
     {
       "key": "arataki-itto",
       "name": "Arataki Itto",
-      "title": "Hanamizaka Heroics",
-      "description": "The first and greatest head of the Arataki Gang, famed throughout Hanamizaka in Inazuma City... Wait, what? Never heard of them? Seriously?",
+      "title": "Heroísmo de Hanamizaka",
+      "description": "O primeiro e maior chefe da Gangue Arataki, famosa em Hanamizaka, na cidade de Inazuma... Espere, o quê? Nunca ouviu falar deles? Sério?",
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Lenda do Combate",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Ataque Normal",
+              "description": "Realiza até 4 golpes consecutivos.\r\nQuando seu 2º e 4º ataque atingirem os oponentes, Itto vai gerar 1 e 2 cargas de Superforça Superlativa respectivamente. \r\nMáximo de 5 cargas. O acionamento deste efeito reiniciará a duração atual de qualquer acúmulo existente.\r\nAlém disso, mesmo quando usar a Habilidade Elemental \"Masatsu Zetsugi: Explosão Akaushi!\" ou depois de correr por um curto período de tempo, o combo do Ataque Normal de Itto não será redefinido. \r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Ataque Carregado",
+              "description": "Ao manter pressionado para iniciar um Ataque Carregado, poderá usar cortes de Arataki Kesagiri sem usar qualquer Stamina. Cada corte de Arataki Kesagiri consumirá 1 carga de Superforça Superlativa. Quando a carga final for consumida, Itto irá desencadear um ataque especialmente poderoso.\r\nQuando não houver cargas de Superforça Superlativa disponíveis, Itto executará um único corte Saichimonji.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Ataque Imersivo",
+              "description": "Mergulha em pleno ar para golpear o chão, danificando inimigos em seu caminho e infligindo dano em uma AdE durante o impacto.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "Dano do 1° Golpe|{param1}%",
+            "Dano do 2° Golpe|{param2}%",
+            "Dano do 3° Golpe|{param3}%",
+            "Dano do 4° Golpe|{param4}%",
+            "Dano de Corte do Combo Arataki Kesagiri|{param5}%",
+            "Dano do Último Corte do Arataki Kesagiri|{param6}%",
+            "Duração da Superforça Superlativa|{param7}s",
+            "Dano de Corte do Saichimonji|{param8}%",
+            "Consumo de Stamina de Saichimonji|{param9}",
+            "Dano Durante a Queda|{param10}%",
+            "Dano de Queda de Baixa/Alta Altitude|{param11}% / {param12}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Masatsu Zetsugi: Explosão Akaushi!",
+          "description": "Lança Ushi, o jovem touro de akaushi e membro auxiliar da Gangue Arataki, causando Dano Geo nos oponentes! Quando Ushi atingir os oponentes, concederá a Arataki Itto 1 acúmulo de Superforça Superlativa.\r\nUshi permanecerá no campo e fornecerá apoio das seguintes formas:",
+          "abilities": [
+            {
+              "name": "",
+              "description": "Chama a atenção dos oponentes ao redor e atrai seus ataques.\r\nHerda certa porcentagem de Vida baseada na Vida Máxima de Arataki Itto.\r\nQuando atacado, ele fornecerá a Arataki Itto 1 acúmulo de Superforça Superlativa. 1 acúmulo pode ser obtido desta forma uma vez a cada 2s.\r\nEle fugirá quando sua Vida chegar a 0 ou sua duração terminar. Ele concederá a Arataki Itto 1 acúmulo de Superforça Superlativa quando ele sair de campo.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Manter Pressionado",
+              "description": "Ajusta o ângulo de lançamento.\r\nUshi é considerado uma Construção Geo e Arataki Itto só pode ter 1 Ushi que ele mesmo tenha colocado em campo por vez.\r\n",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "Dano de Habilidade|{param1}%",
+            "Vida Recebida|{param2}%",
+            "Duração|{param3}s",
+            "Tempo de Recarga|{param4}s"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Descendência Real: Contemplem, Itto o Maligno!",
+          "description": "É hora de mostrar a eles o poder da Gangue Arataki! Por um tempo, Itto deixa seu Rei Oni Furioso interior emergir, usando seu Rei Oni Kanabou em batalha.\r\n",
+          "abilities": [
+            {
+              "name": "",
+              "description": "Este estado tem as seguintes propriedades especiais:\r\n",
+              "descriptions": [
+                "Ataques Normais, Carregados e Imersivos serão convertidos em Dano Geo que não pode ser substituído.",
+                "A velocidade do Ataque Normal de Itto será aumentada, e o ATQ será aumentado com base em sua DEF.",
+                "O primeiro e terceiro ataque concederão cada um a Arataki Itto 1 carga de Superforça Superlativa quando eles atingirem os adversários.",
+                "Itto ganha 20% de RES Elemental e Física.",
+                "O estado de Rei Oni Furioso será removido quando Itto deixa o campo."
+              ]
+            }
+          ],
+          "stats": [
+            "Bônus de ATQ|{param1}% DEF",
+            "Bônus de Vel de Ataque|{param2}%",
+            "Duração|{param3}s",
+            "Tempo de Recarga|{param4}s",
+            "Energia Elemental|{param5}"
+          ]
         }
       ],
       "passives": [
         {
-          "key": "p3",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
-        },
-        {
-          "key": "p4",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
-        },
-        {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "Itto o Lenhador",
+          "description": "Quando um membro da equipe usa ataques para obter madeira de uma árvore, ele tem 25% de chance de conseguir madeira adicional.\r\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
+          "title": "Arataki Ichiban",
+          "description": "Quando Arataki Itto usa consecutivos Arataki Kesagiri, ele obtém os seguintes efeitos:\r\n",
+          "descriptions": [
+            "Cada corte faz com que os cortes subsequentes tenham 10% a mais de Vel. de ATQ. Vel. de ATQ máxima é aumentada em 30%.",
+            "Aumenta sua resistência à interrupção.",
+            "Estes efeitos serão dissipados quando ele parar de executar cortes consecutivos."
+          ]
+        },
+        {
+          "key": "p3",
+          "title": "Linhagem do Oni Carmesim",
+          "description": "Dano do Arataki Kesagiri é aumentado em 35% da DEF de Arataki Itto.\r\n",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "Fique um Tempo e Escute",
+          "description": "Ao lançar Descendência Real: Contemplem, Itto o Maligno!!, Arataki Itto obtém 2 cargas de Superforça Superlativa. Após 1s, Arataki Itto obtém outra carga de Superforça Superlativa a cada 0,5s, durante 1,5s.\r\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "Juntem-se Hora da Briga!",
+          "description": "Após usar Descendência Real: Contemplem, Itto o Maligno!, cada membro da equipe cujo elemento seja Geo irá diminuir o Tempo de Recarga desta habilidade em 1.5s e restaurar 6 de Energia Elemental para Arataki Itto.\r\nUm máximo de 4.5s do Tempo de Recarga pode ser reduzido e 18 de Energia restaurada desta maneira.\r\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "Lá Vem o Touro!",
+          "description": "Aumenta o nível da Masatsu Zetsugi: Explosão Akaushi! em 3.\r\nO nível máximo de elevação é 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "Cárcere Privado",
+          "description": "Depois que o \"Rei Oni Furioso\" aplicado pela Descendência Real: Contemplem, Itto o Maligno!! terminar, a DEF e o ATQ dos personagens da equipe que se encontrarem próximos aumentará em 20% durante 10 segundos.\r\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "10 Anos de Fama de Hanamizaka",
+          "description": "Aumenta o nível da Descendência Real: Contemplem, Itto o Maligno! em 3.\r\nO nível máximo de elevação é 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
+          "title": "Arataki Itto, Presente!",
+          "description": "Os Ataques Carregados de Arataki Itto causam 50% a mais de Dano CRIT. Além disso, quando ele usa Arataki Kesagiri, ele tem 70% de chance de não consumir cargas de Superforça Superlativa.\r\n",
           "descriptions": []
         }
       ]
@@ -1734,87 +1794,157 @@
     {
       "key": "gorou",
       "name": "Gorou",
-      "title": "Canine Warrior",
-      "description": "The great general of Watatsumi Island's forces. He is deeply trusted by his subordinates.",
+      "title": "Guerreiro Canino",
+      "description": "O grande general das tropas da Ilha Watatsumi. Ele é extremamente confiado por seus subordinados.",
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Flechas de Garras Dilacerantes",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Ataque Normal",
+              "description": "Realiza até 4 tiros consecutivos com um arco.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Ataque Carregado",
+              "description": "Dispara um Tiro com Mira mais preciso e com Dano aumentado.\r\nAo mirar, Pedras Cristalizadas irão se acumular na ponta da flecha. Uma flecha em Pedras Cristalizadas completamente carregada inflinge Dano Geo.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Ataque Imersivo",
+              "description": "Dispara uma chuva de flechas em pleno ar antes de atingir o chão, infligindo Dano em uma AdE durante o impacto.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "Dano do 1° Golpe|{param1}%",
+            "Dano do 2° Golpe|{param2}%",
+            "Dano do 3° Golpe|{param3}%",
+            "Dano do 4° Golpe|{param4}%",
+            "Disparo com Mira|{param5}%",
+            "Disparo com Mira com Energização Completa|{param6}%",
+            "Dano Durante a Queda|{param7}%",
+            "Dano de Queda de Baixa/Alta Altitude|{param8}% / {param9}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Defesa Concentrada Inuzaka",
+          "description": "Causa Dano Geo em uma AdE e levanta o Estandarte do General.\r\n",
+          "abilities": [
+            {
+              "name": "Estandarte do General",
+              "description": "Fornece os seguintes bônus com base no número de membros da equipe que são do Elemento Geo:\r\n",
+              "descriptions": [
+                "Ter 1 membro da equipe do Elemento Geo concede o efeito \"Robusto\": Bônus de DEF.",
+                "Ter 2 membros da equipe do Elemento Geo concede o efeito \"Inquebrável\": Resistência a interrupção.",
+                "Ter 3 membros da equipe do Elemento Geo concede o efeito \"Destruidor\": concede um Bônus de Dano GEO.",
+                "Apenas 1 Estandarte do General que Gorou criou pode existir no campo a qualquer momento. Os personagens só podem se beneficiar de 1 Estandarte do General por vez. Quando os membros da equipe deixam o campo, os efeitos do campo duram por 2s."
+              ]
+            },
+            {
+              "name": "Manter Pressionado",
+              "description": "Mantenha Pressionado para designar o local que ficará a habilidade.\r\n",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "Dano de Habilidade|{param1}%",
+            "Aumento da DEF|{param2}",
+            "Taxa de Bônus de Dano Geo|{param3}%",
+            "Duração|{param4}s",
+            "Tempo de Recarga|{param5}s"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Juuga: Para a Vitória",
+          "description": "Demonstrando seu valor como general, Gorou causa Dano Geo em uma AdE e cria um campo conhecido como a Glória do General para animar seus companheiros.\r\n",
+          "abilities": [
+            {
+              "name": "Glória do General",
+              "description": "Este campo tem as seguintes propriedades:\r\n",
+              "descriptions": [
+                "Este campo tem efeitos idênticos aos do Estandarte do General criado por sua Habilidade Elemental, Defesa Concentrada Inuzaka, concedendo bônus baseado no número de membros da equipe cujo elemento seja Geo, e também se moverá junto com seu personagem ativo atual.",
+                "Cria 1 Colapso Cristalino a cada 1.5s que causa Dano Geo em uma AdE a 1 oponente dentro de sua AdE.",
+                "Ele puxará 1 fragmento elemental pela Reação de Cristalização dentro de sua área de ação para a posição do seu personagem ativo a cada 1.5 s.",
+                "Se um Estandarte do General criado pelo próprio Gorou existir atualmente em campo quando esta habilidade for utilizada, ele será destruído."
+              ]
+            }
+          ],
+          "stats": [
+            "Dano de Habilidade|{param1}% DEF",
+            "Dano do Colapso Cristalino|{param2}% DEF",
+            "Duração|{param3}s",
+            "Tempo de Recarga|{param4}s",
+            "Energia Elemental|{param5}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "Cãozinho Farejador",
+          "description": "Mostra a localização de recursos únicos de Inazuma próximos no mapa.\r\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
+          "title": "Contra o Vento e a Maré",
+          "description": "Nos 12 segundos seguintes de lançar Juuga: Para a Vitória, a DEF de todos os membros da equipe ao redor será aumentada em 25%.\r\n",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
+          "title": "Um Favor Recíproco",
+          "description": "Gorou recebe os seguintes Bônus de Dano aos seus ataques baseado em sua DEF:\r\n",
+          "descriptions": [
+            "Defesa Concentrada Inuzaka aumenta o Dano da habilidade em 156% da sua DEF.",
+            "Juuga: Para a Vitória aumenta o Dano da habilidade e do Colapso Cristalino em 15.6% da DEF."
+          ]
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "Pegureiro Veloz: Rápido como o Vento",
+          "description": "Quando um personagem (que não seja o Gorou) causar dano dentro da AdE do Estandarte do General ou da Glória do General criado por Gorou, causa Dano Geo aos oponentes e o Tempo de Recarga da Defesa Concentrada Inuzaka de Gorou é reduzido em 2s.\r\nEste efeito pode ocorrer uma vez a cada 10s.\r\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "Pegureiro Sentado: Firme Feito a Rocha",
+          "description": "Quando um personagem próximo ganha um Fragmento de Cristal da Reação de Cristalização criado enquanto a Glória do General está ativa, a duração da Glória do General do próprio Gorou é aumentada em 1s.\r\nIsso só pode ocorrer uma vez a cada 0.1s e sua duração só pode ser prolongada por um máximo de 3s.\r\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "Pegureiro Feroz: Feroz como o Fogo",
+          "description": "Aumenta o nível da Defesa Concentrada Inuzaka em 3.\r\nO nível máximo de elevação é 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "Pegureiro Bebedor: Quente como a àgua",
+          "description": "Quando Glória do General está nos estados de \"Robusto\" ou \"Inquebrável\", ela também curará o personagem ativo dentro de sua AdE a cada 1,5s por 50% da DEF de Gorou.\r\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "Pegureiro Atacante: Força Trovejante",
+          "description": "Aumenta o nível do Juuga: Para a Vitória em 3.\r\nO nível máximo de elevação é 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
+          "title": "Pegureiro Valente: Lealdade Montanhosa",
+          "description": "Dentro de 12 segundos após lançar a Defesa Concentrada Inuzaka ou Juuga: Para a Vitória, de acordo com o nível da área no momento do lançamento, o CRIT de Dano Geo de todos os personagens da equipe que se encontrarem próximos, será aumentado: \r\n",
+          "descriptions": [
+            "Robusto: aumentado em 10%; Inquebrável: aumentado em 20%; Destruidor: aumentado em 40%.",
+            "Esse efeito não pode ser acumulado, mas será determinado com base no último efeito desencadeado."
+          ]
         }
       ]
     },
@@ -3740,8 +3870,8 @@
       "passives": [
         {
           "key": "p1",
-          "title": "Desejos Incontados",
-          "description": "Quando Personagens próximos ganham Orbes Elementais ou Partículas Elementais, Shogan Byakugen no Rin ganha 2 cargas de Determinação.\r\nEsse efeito pode ocorrer uma vez a cada 3s.\r\n",
+          "title": "Preservação Suprema",
+          "description": "Ao ascender Espadas e Lanças, Mora gasta é reduzida em 50%.\r\n",
           "descriptions": []
         },
         {
@@ -3755,8 +3885,8 @@
         },
         {
           "key": "p3",
-          "title": "Preservação Suprema",
-          "description": "Ao ascender Espadas e Lanças, Mora gasta é reduzida em 50%.\r\n",
+          "title": "Desejos Incontados",
+          "description": "Quando Personagens próximos ganham Orbes Elementais ou Partículas Elementais, Shogan Byakugen no Rin ganha 2 cargas de Determinação.\r\nEsse efeito pode ocorrer uma vez a cada 3s.\r\n",
           "descriptions": []
         }
       ],
@@ -4379,6 +4509,93 @@
       ]
     },
     {
+      "key": "shenhe",
+      "name": "Shenhe",
+      "title": "？？？",
+      "description": "",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ]
+    },
+    {
       "key": "sucrose",
       "name": "Sucrose",
       "title": "Doçura Inofensiva",
@@ -4725,9 +4942,9 @@
             "Dano do 3° Golpe|{param3}% *{param4}",
             "Dano do 4° Golpe|{param5}%",
             "Dano de Ataque Carregado|{param6}%",
-            "Consumo de Stamina de Ataque Carregado|{param7}",
+            "Consumo de Stamina do Ataque Carregado|{param7}",
             "Dano Durante a Queda|{param8}%",
-            "Dano de Queda de Alta/Baixa Altitude|{param9}% / {param10}%"
+            "Dano de Queda de Baixa/Alta Altitude|{param9}% / {param10}%"
           ]
         },
         {
@@ -4747,7 +4964,7 @@
           ],
           "stats": [
             "Dano de Habilidade|{param1}%",
-            "Absorção de Escudo|{param2}% Limite da Vida + {param3}",
+            "Absorção de Escudo|{param2}% do Limite da Vida Máxima + {param3}",
             "Duração do Escudo|{param4} s",
             "Limite Máximo de Absorção de Dano do Escudo|{param5}% da Vida Máxima + {param6}",
             "Tempo de Recarga|{param7} s"
@@ -4767,7 +4984,7 @@
           "stats": [
             "Dano de Habilidade|{param1}%",
             "Dano do Colapso Ardente|{param2}%",
-            "Absorção de Escudo|{param3}% Limite da Vida + {param4}",
+            "Absorção de Escudo|{param3}% do Limite da Vida + {param4}",
             "Duração do Escudo|{param5} s",
             "Duração da Armadura Flamejante|{param6} s",
             "Tempo de Recarga|{param7} s",
@@ -4779,7 +4996,7 @@
         {
           "key": "p1",
           "title": "Apaixonado Pela Pesca",
-          "description": "Ao Pescar com sucesso em Inazuma, possui 20% de chance de obter o dobro de peixe.\r\n",
+          "description": "Quando você pescar com sucesso em Inazuma, possui 20% de chance de obter o dobro de peixe graças a ajuda do Thoma.\r\n",
           "descriptions": []
         },
         {
@@ -5978,11 +6195,11 @@
           ],
           "stats": [
             "Dano de Habilidade|{param1}%",
-            "Intervalo de Obtenção de Insígnia de Chamas|{param2}%",
-            "Aumenta Dano de Ataque Carregado|{param3}s",
-            "Duração|{param4}%",
+            "Intervalo de Obtenção de Insígnia de Chamas|{param2}s",
+            "Aumenta Dano de Ataque Carregado|{param3}%",
+            "Duração|{param4}s",
             "Tempo de Recarga|{param5}s",
-            "Energia Elemental|{param6}s"
+            "Energia Elemental|{param6}"
           ]
         }
       ],
@@ -6183,6 +6400,93 @@
           "key": "c6",
           "title": "Chuva de Meteoros de Nagonahara",
           "description": "Durante a Dança de Fogo Niwabi, os Ataques Normais de Yoimiya têm 50% de chance de disparar uma Flecha Ardente extra que causa 60% de seu Dano original. Este Dano é considerado Dano de Ataque Normal.\r\n",
+          "descriptions": []
+        }
+      ]
+    },
+    {
+      "key": "yun-jin",
+      "name": "Yun Jin",
+      "title": "？？？",
+      "description": "",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
           "descriptions": []
         }
       ]
@@ -6503,6 +6807,18 @@
         "Aumenta o Dano contra inimigos afetados por Pyro ou Electro em {color}18{/color}%.",
         "Aumenta o Dano contra inimigos afetados por Pyro ou Electro em {color}21{/color}%.",
         "Aumenta o Dano contra inimigos afetados por Pyro ou Electro em {color}24{/color}%."
+      ]
+    },
+    {
+      "key": "cinnabar-spindle",
+      "name": "Haste de Cinábrio",
+      "description": "Uma espada feita de materiais que não pertencem a este mundo. O poder dentro dela pode até mesmo ser capaz de resistir à corrupção de um veneno que poderia corroer um poderoso dragão.",
+      "refinements": [
+        "Dano da Habilidade Elemental do personagem é aumentado em {color}40{/color}% da DEF. Este efeito só pode ser ativado uma vez a cada 1,5s e é redefinido 0,1s após a habilidade elemental causar dano.",
+        "Dano da Habilidade Elemental do personagem é aumentado em {color}50{/color}% da DEF. Este efeito só pode ser ativado uma vez a cada 1,5s e é redefinido 0,1s após a habilidade elemental causar dano.",
+        "Dano da Habilidade Elemental do personagem é aumentada em {color}60{/color}% da DEF. Este efeito só pode ser ativado uma vez a cada 1,5s e é redefinido 0,1s após a habilidade elemental causar dano.",
+        "Dano da Habilidade Elemental do personagem é aumentado em {color}70{/color}% da DEF. Este efeito só pode ser ativado uma vez a cada 1,5s e é redefinido 0,1s após a habilidade elemental causar dano.",
+        "Dano da Habilidade Elemental do personagem é aumentada em {color}80{/color}% da DEF. Este efeito só pode ser ativado uma vez a cada 1,5s e é redefinido 0,1s após a habilidade elemental causar dano."
       ]
     },
     {
@@ -7028,6 +7344,18 @@
       ]
     },
     {
+      "key": "mouuns-moon",
+      "name": "Lua de Mouun",
+      "description": "Um arco de guerra adorável feito de conchas e coral. Um brilho lúgubre flui ao longo de seus braços coloridos à luz da lua.",
+      "refinements": [
+        "O Personagem que usar esta arma terá um aumento do Dano do Supremo de {color}0.12{/color}% por cada 1 ponto da soma do máximo da Energia Elemental de todos os membros da equipe. O aumento de Dano do Supremo máximo obtível dessa maneira é de {color}40{/color}%.",
+        "O Personagem que usar esta arma terá um aumento do Dano do Supremo de {color}0.15{/color}% por cada 1 ponto da soma do máximo da Energia Elemental de todos os membros da equipe. O aumento de Dano do Supremo máximo obtível dessa maneira é de {color}50{/color}%.",
+        "O Personagem que usar esta arma terá um aumento do Dano do Supremo de {color}0.18{/color}% por cada 1 ponto da soma do máximo da Energia Elemental de todos os membros da equipe. O aumento de Dano do Supremo máximo obtível dessa maneira é de {color}60{/color}%.",
+        "O Personagem que usar esta arma terá um aumento do Dano do Supremo de {color}0.21{/color}% por cada 1 ponto da soma do máximo da Energia Elemental de todos os membros da equipe. O aumento de Dano do Supremo máximo obtível dessa maneira é de {color}70{/color}%.",
+        "O Personagem que usar esta arma terá um aumento do Dano do Supremo de {color}0.24{/color}% por cada 1 ponto da soma do máximo da Energia Elemental de todos os membros da equipe. O aumento de Dano do Supremo máximo obtível dessa maneira é de {color}80{/color}%."
+      ]
+    },
+    {
       "key": "old-mercs-pal",
       "name": "Espada do Mercenário",
       "description": "Uma grande espada testada em batalhas, passou por muitos momentos árduos.",
@@ -7189,6 +7517,18 @@
         "Derrotar um oponente recupera {color}12{/color}% da Vida.",
         "Derrotar um oponente recupera {color}14{/color}% da Vida.",
         "Derrotar um oponente recupera {color}16{/color}% da Vida."
+      ]
+    },
+    {
+      "key": "redhorn-stonethresher",
+      "name": "Chifres Vermelhos Destruidores de Pedras",
+      "description": "De acordo com seu dono anterior, esta arma é o \"Leão Heroico, Poderoso e de Chifres Vermelhos Destruidores de Pedras\" que pode fazer com que qualquer monstro saia correndo com sua cauda entre suas pernas.",
+      "refinements": [
+        "DEF é aumentada em {color}28{/color}%. Dano do Ataque Normal e Carregado é aumentado em {color}40{/color}% da DEF.",
+        "DEF é aumentada em {color}35{/color}%. Dano do Ataque Normal e Carregado é aumentado em {color}50{/color}% da DEF.",
+        "DEF é aumentada em {color}42{/color}%. Dano do Ataque Normal e Carregado é aumentado em {color}60{/color}% da DEF.",
+        "DEF é aumentada em {color}49{/color}%. Dano do Ataque Normal e Carregado é aumentado em {color}70{/color}% da DEF.",
+        "DEF é aumentada em {color}56{/color}%. Dano do Ataque Normal e Carregado é aumentado em {color}80{/color}% da DEF."
       ]
     },
     {
@@ -7686,6 +8026,18 @@
       "refinements": []
     },
     {
+      "key": "wavebreakers-fin",
+      "name": "Barbatana do Quebra Ondas",
+      "description": "Uma naginata forjada a partir de um material luminescente das profundezas do oceano. No passado pertenceu ao povo tengu.",
+      "refinements": [
+        "O Personagem que usar esta arma terá um aumento do Dano do Supremo de {color}0.12{/color}% por cada 1 ponto da soma do máximo da Energia Elemental de todos os membros da equipe. O aumento de Dano do Supremo máximo obtível dessa maneira é de {color}40{/color}%.",
+        "O Personagem que usar esta arma terá um aumento do Dano do Supremo de {color}0.15{/color}% por cada 1 ponto da soma do máximo da Energia Elemental de todos os membros da equipe. O aumento de Dano do Supremo máximo obtível dessa maneira é de {color}50{/color}%.",
+        "O Personagem que usar esta arma terá um aumento do Dano do Supremo de {color}0.18{/color}% por cada 1 ponto da soma do máximo da Energia Elemental de todos os membros da equipe. O aumento de Dano do Supremo máximo obtível dessa maneira é de {color}60{/color}%.",
+        "O Personagem que usar esta arma terá um aumento do Dano do Supremo de {color}0.21{/color}% por cada 1 ponto da soma do máximo da Energia Elemental de todos os membros da equipe. O aumento de Dano do Supremo máximo obtível dessa maneira é de {color}70{/color}%.",
+        "O Personagem que usar esta arma terá um aumento do Dano do Supremo de {color}0.24{/color}% por cada 1 ponto da soma do máximo da Energia Elemental de todos os membros da equipe. O aumento de Dano do Supremo máximo obtível dessa maneira é de {color}80{/color}%."
+      ]
+    },
+    {
       "key": "white-iron-greatsword",
       "name": "Espadão de Ferro Branco",
       "description": "Um espadão feito com ferro branco que aumenta o poder durante o corte. Adequado até mesmo para as pessoas com forças normais, mas seu poder pode aumentar exponencialmente com a força do seu manejador.",
@@ -7855,6 +8207,14 @@
       ]
     },
     {
+      "key": "husk-of-opulent-dreams",
+      "name": "Casca de Sonhos Opulentos",
+      "bonus": [
+        "DEF +30%",
+        "Um personagem com este conjunto de artefatos equipado obterá o efeito de Curiosidade nas seguintes condições Quando estiver no campo de batalha, o personagem ganha 1 carga após atingir um adversário com um ataque Geo, isso pode ser desencadeado uma vez a cada 0.3s. Quando fora do campo de batalha, o personagem ganha 1 carga a cada 3s. A Curiosidade pode acumular em até 4 vezes, cada uma fornecendo 6% de DEF e um Bônus de Dano Geo de também 6%. Quando 6 segundos passam sem ganhar um acúmulo de Curiosidade, 1 acúmulo é perdido."
+      ]
+    },
+    {
       "key": "instructor",
       "name": "Instrutor",
       "bonus": [
@@ -7900,6 +8260,14 @@
       "bonus": [
         "Dano do Supremo +20%",
         "Usar o Supremo aumenta o ATQ de todos os membros da equipe em 20% por 12s. Este efeito não pode ser acumulado."
+      ]
+    },
+    {
+      "key": "ocean-hued-clam",
+      "name": "Concha Tingida Pelo Mar",
+      "bonus": [
+        "Bônus de Cura +15%",
+        "Quando o personagem que equipa este conjunto de artefatos cura outro personagem da sua equipe, ele cria o efeito de \"Bolha de Espuma do Mar\" durante 3s, que registra a quantidade de vida regenerada (incluindo a regenerada acima de 100%). No final da duração do efeito, a Bolha de Espuma do Mar explode, causando dano aos inimigos ao redor com base em 90% da vida regenerada. (Esse Dano é calculado de forma semelhante a reações como Eletricamente Carregado e Supercondutor, mas não é afetado pela Proficiência Elemental, níveis de personagens ou dano bônus de reações.) Apenas se pode criar uma Bolha de Espuma do Mar a cada 3.5s, e esta poderá registrar no máximo 30.000 pontos de vida, incluindo aqueles regenerados acima de 100%. Além disso, apenas uma Bolha de Espuma do Mar pode existir em sua equipe de cada vez. Quando o personagem equipando este conjunto de artefatos está na equipe, mas não em combate, poderá ainda assim ativar este efeito."
       ]
     },
     {
@@ -9087,6 +9455,11 @@
       "description": "Uma colheita de grãos comumente encontrada em Teyvat. Pessoas de todas as esferas da vida desfrutam de sua textura granulada distinta. Como diz o ditado, \"O mesmo tipo de arroz pode alimentar cem tipos de pessoas\"."
     },
     {
+      "key": "riftborn-regalia",
+      "name": "Chifre do Rei Canino",
+      "description": "Um chifre quebrado que você obteve ao derrotar o Rei Canino, mas que na verdade não deveria ter sido deixado para trás após sua derrota.\r\nMesmo que seja o líder da sua matilha, ele não é nada comparado a outros monstros da mesma genealogia.\r\n\"Ouro\" produziu em massa essas matilhas defeituosas quase como por acidente, como se fossem protótipos desenhados em papel e descartados. Os chifres deste Rei Canino representam sua autoridade para comandar sua matilha."
+    },
+    {
       "key": "ring-of-boreas",
       "name": "Cálice do Vento Norte",
       "description": "Condensado de gelo vindo do corpo do Grande Lobo do Vento do Norte.\r\nNeste pedaço de terra, soprou-se o vento do norte congelante. O gelo e a neve rasgam a pele, deixando o sangue se condensar. Embora a força do Grande Lobo do Vento do Norte não seja tão boa quanto costumava ser, ele ainda possui o poder de congelar a terra."
@@ -9489,25 +9862,25 @@
   ],
   "debuffs": [
     {
-      "key": "Engulfing Storm",
+      "key": "engulfing-storm",
       "name": "Engulfing Storm",
       "effect": "Drena continuamente a recarga de energía.",
       "description": null
     },
     {
-      "key": "Slowing Water",
+      "key": "slowing-water",
       "name": "Slowing Water",
       "effect": "Aumenta a duração do CD de habilidade.",
       "description": null
     },
     {
-      "key": "Smoldering Flames",
+      "key": "smoldering-flames",
       "name": "Smoldering Flames",
       "effect": "Inflige danos continuamente ao longo do tempo.",
       "description": null
     },
     {
-      "key": "Condensed Ice",
+      "key": "condensed-ice",
       "name": "Condensed Ice",
       "effect": "Aumenta o consumo da stamina.",
       "description": null
@@ -9515,99 +9888,111 @@
   ],
   "reactions": [
     {
-      "key": "Burning",
-      "name": "Queimando",
-      "effect": "Causa dano de Pyro ao longo do tempo.",
-      "description": null
-    },
-    {
-      "key": "Crystalize",
-      "name": "Cristalizar",
-      "effect": "Cria um cristal que fornecerá um escudo quando for recolhido.",
-      "description": null
-    },
-    {
-      "key": "Electro-Charged",
-      "name": "Electro-Charged",
-      "effect": "Deals Electro DMG over time.",
-      "description": null
-    },
-    {
-      "key": "Frozen",
-      "name": "Frozen",
-      "effect": "Freezes the target.",
-      "description": null
-    },
-    {
-      "key": "Melt",
-      "name": "Melt",
-      "effect": "Deals extra damage.",
-      "description": null
-    },
-    {
-      "key": "Overloaded",
-      "name": "Overloaded",
-      "effect": "Deals AoE Pyro DMG.",
-      "description": null
-    },
-    {
-      "key": "Superconduct",
-      "name": "Superconduct",
-      "effect": "Deals AoE Cryo DMG and reduces the target's Physical RES by 50%.",
-      "description": null
-    },
-    {
-      "key": "Swirl",
-      "name": "Swirl",
-      "effect": "Deals extra elemental damage and spreads the effect.",
-      "description": null
-    },
-    {
-      "key": "Vaporize",
+      "key": "vaporize",
       "name": "Vaporize",
-      "effect": "Deals extra damage.",
+      "effect": "Deals ×2 Pyro DMG when a Pyro attack triggers the reaction.",
+      "description": null
+    },
+    {
+      "key": "burning",
+      "name": "Burning",
+      "effect": "Deals large Pyro DMG over time. Grass is considered a Dendro object and will spread the burn effect around the area.",
+      "description": null
+    },
+    {
+      "key": "overloaded",
+      "name": "Overloaded",
+      "effect": "Deals AoE Pyro DMG and causes an explosion. The explosion generated is considered as a Heavy Attack.",
+      "description": null
+    },
+    {
+      "key": "melt",
+      "name": "Melt",
+      "effect": "Deals ×2 Pyro DMG when a Pyro attack triggers the reaction.",
+      "description": null
+    },
+    {
+      "key": "vaporize-reverse",
+      "name": "Vaporize (Reverse)",
+      "effect": "Deals ×1.5 Hydro DMG when a Hydro attack triggers the reaction.",
+      "description": null
+    },
+    {
+      "key": "electro-charged",
+      "name": "Electro Charged",
+      "effect": "Deals Electro DMG over time until the effect wears off, every tick shocks and interrupts any action. It also creates a lightning bolt that jumps to one nearby Wet target, dealing Electro DMG.",
+      "description": null
+    },
+    {
+      "key": "frozen",
+      "name": "Frozen",
+      "effect": "Freezes the target. If the frozen target is hit by a Claymore, a Sword Plunge Attack, or Geo DMG (excluding Catalyst user's Plunge), it will cause Shattered. Shattering a frozen target will deal additional Physical damage.",
+      "description": null
+    },
+    {
+      "key": "swirl",
+      "name": "Swirl",
+      "effect": "Infuses an element and deals that elemental damage while spreading the effect to nearby enemies. It does not deal Anemo damage (as that elemental damage seen comes from the talent that is dealing the Anemo element). Only one element at a time can be infused with Anemo.",
+      "description": null
+    },
+    {
+      "key": "superconduct",
+      "name": "Superconduct",
+      "effect": "Deals AoE Cryo DMG and reduces the target's Physical DMG Resistance by -40% for 12 seconds. Each Superconduct reaction deals DMG to targets within its range once, meaning if there are 3 Superconduct reactions, given all 3 targets are within the reactions' AoE, each target will take DMG 3 times.",
+      "description": null
+    },
+    {
+      "key": "melt-reverse",
+      "name": "Melt (Reverse)",
+      "effect": "Deals ×1.5 Cryo DMG when a Cryo attack triggers the reaction.",
+      "description": null
+    },
+    {
+      "key": "crystallize",
+      "name": "Crystallize",
+      "effect": "Absorbs the element and drops a crystal of that same element. The crystal will give an elemental shield. The shield absorbs all types of damage, but it protects more efficiently against the shield's element.",
       "description": null
     }
   ],
   "resonance": [
     {
-      "key": "Enduring Rock",
+      "key": "enduring-rock",
       "name": "Enduring Rock",
-      "effect": "Increases shield strength by 15%. Aditionally, characters protected by a shield will have the following special characterists: DMG dealt increased by 15%, dealing DMG to enemeies will decrease their Geo RES by 20% for 15s.",
+      "effect": "Increases shield strength by 15%. Aditionally, characters protected by a shield will have the following special characterists: DMG dealt increased by 15%, dealing DMG to enemies will decrease their Geo RES by 20% for 15s.",
       "description": null
     },
     {
-      "key": "Fervent Flames",
+      "key": "fervent-flames",
       "name": "Fervent Flames",
       "effect": "Affected by Cryo for 40% less time. Increases ATK by 25%.",
       "description": null
     },
     {
-      "key": "Soothing Waters",
+      "key": "soothing-waters",
       "name": "Soothing Waters",
       "effect": "Affected by Pyro for 40% less time. Increases incoming healing by 30%.",
       "description": null
     },
     {
-      "key": "Impetuous Winds",
+      "key": "impetuous-winds",
       "name": "Impetuous Winds",
       "effect": "Decreases Stamina Consumption by 15%. Increases Movement SPD by 10%. Shortens Skill CD by 5%.",
       "description": null
     },
     {
-      "key": "High Voltage",
+      "key": "high-voltage",
       "name": "High Voltage",
       "effect": "Affected by Hydro for 40% less time. Superconduct, Overloaded, and Electro-Charged have a 100% chance to generate an Electro Elemental Particle (CD: 5s).",
       "description": null
     },
     {
-      "key": "Shattering Ice",
+      "key": "shattering-ice",
       "name": "Shattering Ice",
       "effect": "Affected by Electro for 40% less time. Increases CRIT Rate against enemies that are Frozen or affected by Cryo by 15%.",
       "description": null
     },
     {
-      "key": "Protective Canopy",
+      "key": "protective-canopy",
       "name": "Protective Canopy",
       "effect": "All Elemental RES by 15%. Physical RES + 15%",
       "description": "Any 4 Unique Elements"

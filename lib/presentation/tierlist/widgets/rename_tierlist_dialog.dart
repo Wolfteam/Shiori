@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shiori/application/bloc.dart';
 import 'package:shiori/generated/l10n.dart';
+import 'package:shiori/injection.dart';
 
-class RenameTierListRowDialog extends StatefulWidget {
+class RenameTierListRowDialog extends StatelessWidget {
   final int index;
   final String title;
 
@@ -14,10 +16,25 @@ class RenameTierListRowDialog extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  _RenameTierListRowDialogState createState() => _RenameTierListRowDialogState();
+  Widget build(BuildContext context) {
+    return BlocProvider<TierListFormBloc>(
+      create: (ctx) => Injection.tierListFormBloc..add(TierListFormEvent.nameChanged(name: title)),
+      child: _Body(index: index, title: title),
+    );
+  }
 }
 
-class _RenameTierListRowDialogState extends State<RenameTierListRowDialog> {
+class _Body extends StatefulWidget {
+  final int index;
+  final String title;
+
+  const _Body({Key? key, required this.index, required this.title}) : super(key: key);
+
+  @override
+  _BodyState createState() => _BodyState();
+}
+
+class _BodyState extends State<_Body> {
   late TextEditingController _textController;
   late String _currentValue;
 
@@ -52,6 +69,7 @@ class _RenameTierListRowDialogState extends State<RenameTierListRowDialog> {
           keyboardType: TextInputType.text,
           minLines: 1,
           maxLength: TierListFormBloc.nameMaxLength,
+          maxLengthEnforcement: MaxLengthEnforcement.enforced,
           autofocus: true,
           textInputAction: TextInputAction.next,
           decoration: InputDecoration(

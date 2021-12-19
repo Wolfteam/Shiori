@@ -26,15 +26,9 @@ class CharacterDetailConstellationsCard extends StatelessWidget {
       body: ResponsiveGridRow(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: constellations
-            .map((e) => ResponsiveGridCol(
-                  md: 6,
-                  lg: 6,
-                  xl: 6,
-                  child: _ConstellationCard(
-                    model: e,
-                    elementType: elementType,
-                  ),
-                ))
+            .map(
+              (e) => ResponsiveGridCol(md: 6, lg: 6, xl: 6, child: _ConstellationCard(model: e, elementType: elementType)),
+            )
             .toList(),
       ),
       textColor: elementType.getElementColorFromContext(context),

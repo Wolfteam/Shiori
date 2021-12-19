@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:collection/collection.dart' show IterableExtension;
 import 'package:darq/darq.dart';
 import 'package:hive/hive.dart';
@@ -40,6 +42,15 @@ class DataServiceImpl implements DataService {
 
   final _initLock = Lock();
   final _deleteAllLock = Lock();
+
+  @override
+  final StreamController<ItemType> itemAddedToInventory = StreamController.broadcast();
+
+  @override
+  final StreamController<ItemType> itemUpdatedInInventory = StreamController.broadcast();
+
+  @override
+  final StreamController<ItemType> itemDeletedFromInventory = StreamController.broadcast();
 
   DataServiceImpl(this._genshinService, this._calculatorService);
 
@@ -98,6 +109,12 @@ class DataServiceImpl implements DataService {
     await _deleteAllLock.synchronized(() async {
       await Hive.close();
     });
+
+    await Future.wait([
+      itemAddedToInventory.close(),
+      itemUpdatedInInventory.close(),
+      itemDeletedFromInventory.close(),
+    ]);
   }
 
   @override
@@ -290,24 +307,43 @@ class DataServiceImpl implements DataService {
   }
 
   @override
-  Future<void> addItemToInventory(String key, ItemType type, int quantity) {
+  Future<void> addCharacterToInventory(String key, {bool raiseEvent = true}) => addItemToInventory(key, ItemType.character, 1);
+
+  @override
+  Future<void> deleteCharacterFromInventory(String key, {bool raiseEvent = true}) => deleteItemFromInventory(key, ItemType.character);
+
+  @override
+  Future<void> addWeaponToInventory(String key, {bool raiseEvent = true}) => addItemToInventory(key, ItemType.weapon, 1);
+
+  @override
+  Future<void> deleteWeaponFromInventory(String key, {bool raiseEvent = true}) => deleteItemFromInventory(key, ItemType.weapon);
+
+  @override
+  Future<void> addItemToInventory(String key, ItemType type, int quantity, {bool raiseEvent = true}) async {
     if (isItemInInventory(key, type)) {
       return Future.value();
     }
-    return _inventoryBox.add(InventoryItem(key, quantity, type.index));
+    await _inventoryBox.add(InventoryItem(key, quantity, type.index));
+    if (raiseEvent) {
+      itemAddedToInventory.add(type);
+    }
   }
 
   @override
-  Future<void> deleteItemFromInventory(String key, ItemType type) async {
+  Future<void> deleteItemFromInventory(String key, ItemType type, {bool raiseEvent = true}) async {
     final item = _getItemFromInventory(key, type);
 
     if (item != null) {
       await _inventoryBox.delete(item.key);
     }
+
+    if (raiseEvent) {
+      itemDeletedFromInventory.add(type);
+    }
   }
 
   @override
-  Future<void> deleteItemsFromInventory(ItemType type) async {
+  Future<void> deleteItemsFromInventory(ItemType type, {bool raiseEvent = true}) async {
     switch (type) {
       case ItemType.character:
       case ItemType.weapon:
@@ -317,6 +353,10 @@ class DataServiceImpl implements DataService {
       case ItemType.material:
         deleteAllUsedMaterialItems();
         break;
+    }
+
+    if (raiseEvent) {
+      itemDeletedFromInventory.add(type);
     }
   }
 
@@ -407,7 +447,7 @@ class DataServiceImpl implements DataService {
   }
 
   @override
-  Future<void> updateItemInInventory(String key, ItemType type, int quantity) async {
+  Future<void> updateItemInInventory(String key, ItemType type, int quantity, {bool raiseEvent = true}) async {
     var item = _getItemFromInventory(key, type);
     if (item == null) {
       item = InventoryItem(key, quantity, type.index);
@@ -421,6 +461,9 @@ class DataServiceImpl implements DataService {
       await item.save();
     }
     await redistributeInventoryMaterial(key, quantity);
+    if (raiseEvent) {
+      itemUpdatedInInventory.add(type);
+    }
   }
 
   @override
@@ -925,11 +968,9 @@ class DataServiceImpl implements DataService {
       case AppNotificationType.realmCurrency:
         final item = _getNotification<NotificationRealmCurrency>(key, type);
         item.realmCurrency = 0;
-        item.completesAt = DateTime.now().add(getRealmCurrencyDuration(
-          item.realmCurrency,
-          item.realmTrustRank,
-          RealmRankType.values[item.realmRankType],
-        ));
+        item.completesAt = DateTime.now().add(
+          getRealmCurrencyDuration(item.realmCurrency, item.realmTrustRank, RealmRankType.values[item.realmRankType]),
+        );
         await item.save();
         return _mapToNotificationItem(item);
       case AppNotificationType.weeklyBoss:

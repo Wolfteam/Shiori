@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:shiori/application/bloc.dart';
 import 'package:shiori/generated/l10n.dart';
 import 'package:shiori/presentation/calculator_asc_materials/calculator_sessions_page.dart';
 import 'package:shiori/presentation/home/widgets/card_description.dart';
@@ -23,7 +21,7 @@ class CalculatorsCard extends StatelessWidget {
       title: s.calculators,
       onClick: _gotoSessionsPage,
       iconToTheLeft: iconToTheLeft,
-      icon: Icon(Icons.calculate, size: 60, color: theme.accentColor),
+      icon: Icon(Icons.calculate, size: 60, color: theme.colorScheme.secondary),
       children: [
         CardDescription(text: s.ascensionMaterialsCalculatorMsg),
       ],
@@ -31,11 +29,8 @@ class CalculatorsCard extends StatelessWidget {
   }
 
   Future<void> _gotoSessionsPage(BuildContext context) async {
-    context.read<CalculatorAscMaterialsSessionsBloc>().add(const CalculatorAscMaterialsSessionsEvent.init());
-    final route = MaterialPageRoute(builder: (c) => CalculatorSessionsPage());
+    final route = MaterialPageRoute(builder: (c) => const CalculatorSessionsPage());
     await Navigator.push(context, route);
     await route.completed;
-    context.read<CalculatorAscMaterialsSessionsBloc>().add(const CalculatorAscMaterialsSessionsEvent.close());
-    context.read<CalculatorAscMaterialsSessionsOrderBloc>().add(const CalculatorAscMaterialsSessionsOrderEvent.discardChanges());
   }
 }

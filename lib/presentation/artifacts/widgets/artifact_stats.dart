@@ -5,11 +5,13 @@ import 'package:shiori/generated/l10n.dart';
 class ArtifactStats extends StatelessWidget {
   final List<ArtifactCardBonusModel> bonus;
   final Color? textColor;
+  final int? maxLines;
 
   const ArtifactStats({
     Key? key,
     required this.bonus,
     this.textColor,
+    this.maxLines,
   }) : super(key: key);
 
   @override
@@ -28,11 +30,15 @@ class ArtifactStats extends StatelessWidget {
                   Text(
                     s.xPieces(b.pieces),
                     textAlign: TextAlign.center,
+                    maxLines: maxLines,
+                    overflow: maxLines != null ? TextOverflow.ellipsis : null,
                     style: theme.textTheme.subtitle2!.copyWith(fontSize: 14, color: textColor),
                   ),
                   Text(
                     b.bonus,
                     textAlign: TextAlign.center,
+                    maxLines: maxLines,
+                    overflow: maxLines != null ? TextOverflow.ellipsis : null,
                     style: theme.textTheme.bodyText2!.copyWith(fontSize: 12, color: textColor),
                   ),
                 ],

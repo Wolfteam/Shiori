@@ -15,6 +15,13 @@ import 'package:shiori/presentation/shared/loading.dart';
 import 'ascension_level.dart';
 import 'skill_item.dart';
 
+const _sessionKey = 'sessionKey';
+const _isAWeaponKey = 'isAWeapon';
+const _editKey = 'edit';
+const _keyNameKey = 'keyName';
+const _indexKey = 'index';
+const _isActiveKey = 'isActive';
+
 class AddEditItemBottomSheet extends StatelessWidget {
   final int sessionKey;
   final int? index;
@@ -44,29 +51,32 @@ class AddEditItemBottomSheet extends StatelessWidget {
         super(key: key);
 
   static Map<String, dynamic> buildNavigationArgsToAddItem(int sessionKey, String keyName, {bool isAWeapon = false}) =>
-      <String, dynamic>{'sessionKey': sessionKey, 'keyName': keyName, 'isAWeapon': isAWeapon, 'edit': false};
+      <String, dynamic>{_sessionKey: sessionKey, _keyNameKey: keyName, _isAWeaponKey: isAWeapon, _editKey: false};
 
   static Map<String, dynamic> buildNavigationArgsToEditItem(int sessionKey, int index, bool isActive, {bool isAWeapon = false}) =>
-      <String, dynamic>{'sessionKey': sessionKey, 'index': index, 'isActive': isActive, 'isAWeapon': isAWeapon, 'edit': true};
+      <String, dynamic>{_sessionKey: sessionKey, _indexKey: index, _isActiveKey: isActive, _isAWeaponKey: isAWeapon, _editKey: true};
 
-  static AddEditItemBottomSheet getWidgetFromArgs(Map<String, dynamic> args) {
+  static Widget getWidgetFromArgs(BuildContext context, Map<String, dynamic> args) {
     assert(args.isNotEmpty);
+    final sessionKey = args[_sessionKey] as int;
+    final isAWeapon = args[_isAWeaponKey] as bool;
+    final toEdit = args[_editKey] as bool;
 
-    final sessionKey = args['sessionKey'] as int;
-    final isAWeapon = args['isAWeapon'] as bool;
-    if (args['edit'] as bool) {
-      return AddEditItemBottomSheet.toEditItem(
-        sessionKey: sessionKey,
-        isAWeapon: isAWeapon,
-        index: args['index'] as int,
-        isActive: args['isActive'] as bool,
-      );
-    }
-
-    return AddEditItemBottomSheet.toAddItem(
-      sessionKey: sessionKey,
-      isAWeapon: isAWeapon,
-      keyName: args['keyName'] as String,
+    //TODO: FIGURE OUT HOW CAN I USE THE BLOCPROVIDER<CalculatorAscMaterialsItemBloc>
+    return BlocProvider.value(
+      value: context.read<CalculatorAscMaterialsBloc>(),
+      child: toEdit
+          ? AddEditItemBottomSheet.toEditItem(
+              sessionKey: sessionKey,
+              isAWeapon: isAWeapon,
+              index: args[_indexKey] as int,
+              isActive: args[_isActiveKey] as bool,
+            )
+          : AddEditItemBottomSheet.toAddItem(
+              sessionKey: sessionKey,
+              isAWeapon: isAWeapon,
+              keyName: args[_keyNameKey] as String,
+            ),
     );
   }
 
@@ -115,16 +125,18 @@ class AddEditItemBottomSheet extends StatelessWidget {
                 Text(s.desiredAscension, textAlign: TextAlign.center, style: theme.textTheme.subtitle2),
                 AscensionLevel(isCurrentLevel: false, level: state.desiredAscensionLevel),
                 ...state.skills
-                    .mapIndex((e, index) => SkillItem(
-                          index: index,
-                          name: e.name,
-                          currentLevel: e.currentLevel,
-                          desiredLevel: e.desiredLevel,
-                          isCurrentDecEnabled: e.isCurrentDecEnabled,
-                          isCurrentIncEnabled: e.isCurrentIncEnabled,
-                          isDesiredDecEnabled: e.isDesiredDecEnabled,
-                          isDesiredIncEnabled: e.isDesiredIncEnabled,
-                        ))
+                    .mapIndex(
+                      (e, index) => SkillItem(
+                        index: index,
+                        name: e.name,
+                        currentLevel: e.currentLevel,
+                        desiredLevel: e.desiredLevel,
+                        isCurrentDecEnabled: e.isCurrentDecEnabled,
+                        isCurrentIncEnabled: e.isCurrentIncEnabled,
+                        isDesiredDecEnabled: e.isDesiredDecEnabled,
+                        isDesiredIncEnabled: e.isDesiredIncEnabled,
+                      ),
+                    )
                     .toList(),
                 _UseMaterialsFromInventoryToggleButton(useMaterialsFromInventory: state.useMaterialsFromInventory),
                 _ButtonBar(
@@ -193,16 +205,18 @@ class AddEditItemBottomSheet extends StatelessWidget {
             Text(s.desiredAscension, textAlign: TextAlign.center, style: theme.textTheme.subtitle2),
             AscensionLevel(isCurrentLevel: false, level: state.desiredAscensionLevel),
             ...state.skills
-                .mapIndex((e, index) => SkillItem(
-                      index: index,
-                      name: e.name,
-                      currentLevel: e.currentLevel,
-                      desiredLevel: e.desiredLevel,
-                      isCurrentDecEnabled: e.isCurrentDecEnabled,
-                      isCurrentIncEnabled: e.isCurrentIncEnabled,
-                      isDesiredDecEnabled: e.isDesiredDecEnabled,
-                      isDesiredIncEnabled: e.isDesiredIncEnabled,
-                    ))
+                .mapIndex(
+                  (e, index) => SkillItem(
+                    index: index,
+                    name: e.name,
+                    currentLevel: e.currentLevel,
+                    desiredLevel: e.desiredLevel,
+                    isCurrentDecEnabled: e.isCurrentDecEnabled,
+                    isCurrentIncEnabled: e.isCurrentIncEnabled,
+                    isDesiredDecEnabled: e.isDesiredDecEnabled,
+                    isDesiredIncEnabled: e.isDesiredIncEnabled,
+                  ),
+                )
                 .toList(),
             _UseMaterialsFromInventoryToggleButton(useMaterialsFromInventory: state.useMaterialsFromInventory),
           ],

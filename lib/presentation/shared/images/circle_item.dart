@@ -5,6 +5,7 @@ class CircleItem extends StatelessWidget {
   final String image;
   final double radius;
   final bool forDrag;
+  final bool imageSizeTimesTwo;
   final Function(String)? onTap;
 
   const CircleItem({
@@ -12,12 +13,14 @@ class CircleItem extends StatelessWidget {
     required this.image,
     this.radius = 35,
     this.forDrag = false,
+    this.imageSizeTimesTwo = true,
     this.onTap,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     //TODO: TRY ADDING A BACKGROUND WITH THE MATERIAL WIDGET
+    final size = imageSizeTimesTwo ? radius * 2 : radius;
     final avatar = CircleAvatar(
       radius: radius,
       backgroundColor: Colors.transparent,
@@ -27,8 +30,8 @@ class CircleItem extends StatelessWidget {
           image: AssetImage(image),
           fit: BoxFit.cover,
           alignment: Alignment.topCenter,
-          height: radius * 2,
-          width: radius * 2,
+          height: size,
+          width: size,
         ),
       ),
     );

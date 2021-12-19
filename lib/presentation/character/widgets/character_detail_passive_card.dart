@@ -25,12 +25,14 @@ class CharacterDetailPassiveCard extends StatelessWidget {
       title: s.passives,
       body: ResponsiveGridRow(
         children: passives
-            .map((e) => ResponsiveGridCol(
-                  md: 6,
-                  lg: 6,
-                  xl: 6,
-                  child: _PassiveCard(model: e, elementType: elementType),
-                ))
+            .map(
+              (e) => ResponsiveGridCol(
+                md: 6,
+                lg: 6,
+                xl: 6,
+                child: _PassiveCard(model: e, elementType: elementType),
+              ),
+            )
             .toList(),
       ),
       textColor: elementType.getElementColorFromContext(context),

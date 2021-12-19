@@ -1,4 +1,4 @@
-{
+﻿{
   "characters": [
     {
       "key": "albedo",
@@ -868,10 +868,22 @@
             "elementalBurst"
           ],
           "weaponKeys": [
-            "harbinger-of-dawn",
-            "primordial-jade-cutter"
+            "primordial-jade-cutter",
+            "cinnabar-spindle",
+            "harbinger-of-dawn"
           ],
           "artifacts": [
+            {
+              "oneKey": "husk-of-opulent-dreams",
+              "multiples": [],
+              "stats": [
+                "hp",
+                "atk",
+                "defPercentage",
+                "geoDmgBonusPercentage",
+                "critRatePercentage"
+              ]
+            },
             {
               "oneKey": null,
               "multiples": [
@@ -880,7 +892,7 @@
                   "quantity": 2
                 },
                 {
-                  "key": "noblesse-oblige",
+                  "key": "husk-of-opulent-dreams",
                   "quantity": 2
                 }
               ],
@@ -2950,7 +2962,7 @@
       ],
       "builds": [
         {
-          "isRecommended": true,
+          "isRecommended": false,
           "type": "dps",
           "subType": "none",
           "skillPriorities": [
@@ -2995,7 +3007,7 @@
           ]
         },
         {
-          "isRecommended": false,
+          "isRecommended": true,
           "type": "support",
           "subType": "none",
           "skillPriorities": [
@@ -3151,8 +3163,8 @@
       "image": "arataki-itto.png",
       "fullImage": "arataki-itto.png",
       "secondFullImage": null,
-      "isComingSoon": true,
-      "isNew": false,
+      "isComingSoon": false,
+      "isNew": true,
       "isFemale": false,
       "region": "inazuma",
       "role": "dps",
@@ -3196,6 +3208,11 @@
               "type": "jewels"
             },
             {
+              "key": "riftborn-regalia",
+              "quantity": 2,
+              "type": "elementalStone"
+            },
+            {
               "key": "onikabuto",
               "quantity": 10,
               "type": "local"
@@ -3220,6 +3237,11 @@
               "key": "prithiva-topaz-fragment",
               "quantity": 6,
               "type": "jewels"
+            },
+            {
+              "key": "riftborn-regalia",
+              "quantity": 4,
+              "type": "elementalStone"
             },
             {
               "key": "onikabuto",
@@ -3248,6 +3270,11 @@
               "type": "jewels"
             },
             {
+              "key": "riftborn-regalia",
+              "quantity": 8,
+              "type": "elementalStone"
+            },
+            {
               "key": "onikabuto",
               "quantity": 30,
               "type": "local"
@@ -3274,6 +3301,11 @@
               "type": "jewels"
             },
             {
+              "key": "riftborn-regalia",
+              "quantity": 12,
+              "type": "elementalStone"
+            },
+            {
               "key": "onikabuto",
               "quantity": 45,
               "type": "local"
@@ -3298,6 +3330,11 @@
               "key": "prithiva-topaz-gemstone",
               "quantity": 6,
               "type": "jewels"
+            },
+            {
+              "key": "riftborn-regalia",
+              "quantity": 20,
+              "type": "elementalStone"
             },
             {
               "key": "onikabuto",
@@ -3533,81 +3570,81 @@
             {
               "key": "param1",
               "values": [
-                63.96,
-                69.16,
-                74.37,
-                81.81,
-                87.01,
-                92.96,
-                101.14,
-                109.32,
-                117.5,
-                126.43,
-                136.65,
-                148.68,
-                160.71,
-                172.73,
-                185.85
+                79.23,
+                85.68,
+                92.13,
+                101.34,
+                107.79,
+                115.16,
+                125.3,
+                135.43,
+                145.57,
+                156.62,
+                169.29,
+                184.19,
+                199.08,
+                213.98,
+                230.23
               ]
             },
             {
               "key": "param2",
               "values": [
-                61.09,
-                66.07,
-                71.04,
-                78.14,
-                83.12,
+                76.37,
+                82.58,
                 88.8,
-                96.61,
-                104.43,
-                112.24,
+                97.68,
+                103.9,
+                111.0,
                 120.77,
                 130.54,
-                142.02,
-                153.51,
-                165.0,
-                177.53
+                140.3,
+                150.96,
+                163.17,
+                177.53,
+                191.89,
+                206.25,
+                221.91
               ]
             },
             {
               "key": "param3",
               "values": [
-                73.5,
-                79.49,
-                85.47,
-                94.02,
-                100.0,
-                106.84,
-                116.24,
-                125.64,
-                135.04,
-                145.3,
-                157.05,
-                170.87,
-                184.69,
-                198.51,
-                213.59
+                91.64,
+                99.1,
+                106.56,
+                117.22,
+                124.68,
+                133.2,
+                144.92,
+                156.64,
+                168.36,
+                181.15,
+                195.8,
+                213.03,
+                230.27,
+                247.5,
+                266.29
               ]
             },
             {
               "key": "param4",
               "values": [
-                93.07,
-                100.65,
-                108.23,
-                119.05,
-                126.62,
-                135.28,
-                147.19,
-                159.09,
-                171.0,
-                183.98,
-                198.86,
-                216.36,
-                233.86,
-                251.36,
-                270.45
+                117.22,
+                126.77,
+                136.31,
+                149.94,
+                159.48,
+                170.39,
+                185.38,
+                200.37,
+                215.37,
+                231.72,
+                250.47,
+                272.51,
+                294.55,
+                316.59,
+                340.63
               ]
             },
             {
@@ -3927,41 +3964,41 @@
             {
               "key": "param4",
               "values": [
-                20.0,
-                20.0,
-                20.0,
-                20.0,
-                20.0,
-                20.0,
-                20.0,
-                20.0,
-                20.0,
-                20.0,
-                20.0,
-                20.0,
-                20.0,
-                20.0,
-                20.0
+                18.0,
+                18.0,
+                18.0,
+                18.0,
+                18.0,
+                18.0,
+                18.0,
+                18.0,
+                18.0,
+                18.0,
+                18.0,
+                18.0,
+                18.0,
+                18.0,
+                18.0
               ]
             },
             {
               "key": "param5",
               "values": [
-                80.0,
-                80.0,
-                80.0,
-                80.0,
-                80.0,
-                80.0,
-                80.0,
-                80.0,
-                80.0,
-                80.0,
-                80.0,
-                80.0,
-                80.0,
-                80.0,
-                80.0
+                70.0,
+                70.0,
+                70.0,
+                70.0,
+                70.0,
+                70.0,
+                70.0,
+                70.0,
+                70.0,
+                70.0,
+                70.0,
+                70.0,
+                70.0,
+                70.0,
+                70.0
               ]
             }
           ]
@@ -3969,23 +4006,18 @@
       ],
       "passives": [
         {
-          "key": "p3",
-          "image": "arataki-itto_p3.png",
-          "unlockedAt": -1
-        },
-        {
-          "key": "p4",
-          "image": "arataki-itto_p4.png",
-          "unlockedAt": -1
-        },
-        {
           "key": "p1",
           "image": "arataki-itto_p1.png",
-          "unlockedAt": 1
+          "unlockedAt": -1
         },
         {
           "key": "p2",
           "image": "arataki-itto_p2.png",
+          "unlockedAt": 1
+        },
+        {
+          "key": "p3",
+          "image": "arataki-itto_p3.png",
           "unlockedAt": 4
         }
       ],
@@ -4021,117 +4053,152 @@
           "image": "arataki-itto_c6.png"
         }
       ],
-      "builds": [],
+      "builds": [
+        {
+          "isRecommended": true,
+          "type": "dps",
+          "subType": "none",
+          "skillPriorities": [
+            "normalAttack",
+            "elementalBurst",
+            "elementalSkill"
+          ],
+          "weaponKeys": [
+            "redhorn-stonethresher",
+            "serpent-spine",
+            "whiteblind"
+          ],
+          "artifacts": [
+            {
+              "oneKey": "husk-of-opulent-dreams",
+              "multiples": [],
+              "stats": [
+                "hp",
+                "atk",
+                "defPercentage",
+                "geoDmgBonusPercentage",
+                "critRatePercentage"
+              ]
+            }
+          ],
+          "subStatsToFocus": [
+            "critRatePercentage",
+            "critDmgPercentage",
+            "defPercentage",
+            "energyRechargePercentage"
+          ]
+        }
+      ],
       "stats": [
         {
           "level": 1,
-          "baseHp": 1067.0,
-          "baseAtk": 15.0,
-          "baseDef": 72.0,
+          "baseHp": 1001.0,
+          "baseAtk": 18.0,
+          "baseDef": 75.0,
           "isAnAscension": false,
           "statValue": 5.0
         },
         {
           "level": 20,
-          "baseHp": 2767.0,
-          "baseAtk": 39.0,
-          "baseDef": 188.0,
+          "baseHp": 2597.0,
+          "baseAtk": 46.0,
+          "baseDef": 194.0,
           "isAnAscension": false,
           "statValue": 5.0
         },
         {
           "level": 20,
-          "baseHp": 3682.0,
-          "baseAtk": 51.0,
-          "baseDef": 250.0,
+          "baseHp": 3455.0,
+          "baseAtk": 61.0,
+          "baseDef": 258.0,
           "isAnAscension": true,
           "statValue": 5.0
         },
         {
           "level": 40,
-          "baseHp": 5509.0,
-          "baseAtk": 77.0,
-          "baseDef": 374.0,
+          "baseHp": 5170.0,
+          "baseAtk": 91.0,
+          "baseDef": 386.0,
           "isAnAscension": false,
           "statValue": 5.0
         },
         {
           "level": 40,
-          "baseHp": 6159.0,
-          "baseAtk": 86.0,
-          "baseDef": 418.0,
+          "baseHp": 5779.0,
+          "baseAtk": 102.0,
+          "baseDef": 431.0,
           "isAnAscension": true,
           "statValue": 9.8
         },
         {
           "level": 50,
-          "baseHp": 7086.0,
-          "baseAtk": 99.0,
-          "baseDef": 481.0,
+          "baseHp": 6649.0,
+          "baseAtk": 117.0,
+          "baseDef": 496.0,
           "isAnAscension": false,
           "statValue": 9.8
         },
         {
           "level": 50,
-          "baseHp": 7953.0,
-          "baseAtk": 111.0,
-          "baseDef": 540.0,
+          "baseHp": 7462.0,
+          "baseAtk": 132.0,
+          "baseDef": 557.0,
           "isAnAscension": true,
           "statValue": 14.6
         },
         {
           "level": 60,
-          "baseHp": 8889.0,
-          "baseAtk": 124.0,
-          "baseDef": 603.0,
+          "baseHp": 8341.0,
+          "baseAtk": 147.0,
+          "baseDef": 622.0,
           "isAnAscension": false,
           "statValue": 14.6
         },
         {
           "level": 60,
-          "baseHp": 9539.0,
-          "baseAtk": 133.0,
-          "baseDef": 647.0,
+          "baseHp": 8951.0,
+          "baseAtk": 158.0,
+          "baseDef": 668.0,
           "isAnAscension": true,
           "statValue": 14.6
         },
         {
           "level": 70,
-          "baseHp": 10484.0,
-          "baseAtk": 146.0,
-          "baseDef": 712.0,
+          "baseHp": 9838.0,
+          "baseAtk": 174.0,
+          "baseDef": 734.0,
           "isAnAscension": false,
           "statValue": 14.6
         },
         {
           "level": 70,
-          "baseHp": 11134.0,
-          "baseAtk": 155.0,
-          "baseDef": 756.0,
+          "baseHp": 10448.0,
+          "baseAtk": 185.0,
+          "baseDef": 779.0,
           "isAnAscension": true,
           "statValue": 19.4
         },
         {
           "level": 80,
-          "baseHp": 12090.0,
-          "baseAtk": 169.0,
-          "baseDef": 820.0,
+          "baseHp": 11345.0,
+          "baseAtk": 200.0,
+          "baseDef": 846.0,
           "isAnAscension": false,
           "statValue": 19.4
         },
         {
           "level": 80,
-          "baseHp": 12740.0,
-          "baseAtk": 178.0,
-          "baseDef": 865.0,
+          "baseHp": 11954.0,
+          "baseAtk": 211.0,
+          "baseDef": 892.0,
           "isAnAscension": true,
           "statValue": 24.2
         },
         {
           "level": 90,
-          "baseHp": 13703.0,
-          "baseAtk": 191.0,
-          "baseDef": 930.0,
+          "baseHp": 12858.0,
+          "baseAtk": 227.0,
+          "baseDef": 959.0,
           "isAnAscension": false,
           "statValue": 24.2
         }
@@ -13918,6 +13985,17 @@
                 "cryoDmgBonusPercentage",
                 "critRatePercentage"
               ]
+            },
+            {
+              "oneKey": "wanderers-troupe",
+              "multiples": [],
+              "stats": [
+                "hp",
+                "atk",
+                "atkPercentage",
+                "cryoDmgBonusPercentage",
+                "critRatePercentage"
+              ]
             }
           ],
           "subStatsToFocus": [
@@ -14131,8 +14209,8 @@
       "image": "gorou.png",
       "fullImage": "gorou.png",
       "secondFullImage": null,
-      "isComingSoon": true,
-      "isNew": false,
+      "isComingSoon": false,
+      "isNew": true,
       "isFemale": false,
       "region": "inazuma",
       "role": "support",
@@ -14579,7 +14657,7 @@
               "key": "param3",
               "values": [
                 49.45,
-                53.48,
+                53.47,
                 57.5,
                 63.25,
                 67.28,
@@ -14981,7 +15059,61 @@
           "image": "gorou_c6.png"
         }
       ],
-      "builds": [],
+      "builds": [
+        {
+          "isRecommended": true,
+          "type": "burstSupport",
+          "subType": "none",
+          "skillPriorities": [
+            "elementalSkill",
+            "elementalBurst"
+          ],
+          "weaponKeys": [
+            "favonius-warbow",
+            "elegy-for-the-end",
+            "sacrificial-bow"
+          ],
+          "artifacts": [
+            {
+              "oneKey": null,
+              "multiples": [
+                {
+                  "key": "husk-of-opulent-dreams",
+                  "quantity": 2
+                },
+                {
+                  "key": "emblem-of-severed-fate",
+                  "quantity": 2
+                }
+              ],
+              "stats": [
+                "hp",
+                "atk",
+                "defPercentage",
+                "defPercentage",
+                "critRatePercentage"
+              ]
+            },
+            {
+              "oneKey": "noblesse-oblige",
+              "multiples": [],
+              "stats": [
+                "hp",
+                "atk",
+                "defPercentage",
+                "defPercentage",
+                "critRatePercentage"
+              ]
+            }
+          ],
+          "subStatsToFocus": [
+            "critRatePercentage",
+            "critDmgPercentage",
+            "energyRechargePercentage",
+            "defPercentage"
+          ]
+        }
+      ],
       "stats": [
         {
           "level": 1,
@@ -17137,8 +17269,8 @@
             "elementalBurst"
           ],
           "weaponKeys": [
-            "aquila-favonia",
             "primordial-jade-cutter",
+            "aquila-favonia",
             "prototype-rancour"
           ],
           "artifacts": [
@@ -17182,6 +17314,7 @@
             "primordial-jade-cutter",
             "amenoma-kageuchi",
             "festering-desire",
+            "freedom-sworn",
             "the-flute"
           ],
           "artifacts": [
@@ -19234,8 +19367,8 @@
           "type": "dps",
           "subType": "cryo",
           "skillPriorities": [
-            "normalAttack",
             "elementalBurst",
+            "normalAttack",
             "elementalSkill"
           ],
           "weaponKeys": [
@@ -19326,7 +19459,7 @@
           ],
           "artifacts": [
             {
-              "oneKey": "noblesse-oblige",
+              "oneKey": "emblem-of-severed-fate",
               "multiples": [],
               "stats": [
                 "hp",
@@ -21506,7 +21639,7 @@
             "aquila-favonia",
             "lions-roar",
             "the-flute",
-            "prototype-rancour"
+            "amenoma-kageuchi"
           ],
           "artifacts": [
             {
@@ -23503,7 +23636,7 @@
           "weaponKeys": [
             "skyward-harp",
             "elegy-for-the-end",
-            "alley-hunter",
+            "mouuns-moon",
             "prototype-crescent"
           ],
           "artifacts": [
@@ -27771,12 +27904,24 @@
             "elementalSkill"
           ],
           "weaponKeys": [
+            "redhorn-stonethresher",
             "serpent-spine",
             "whiteblind",
             "skyward-pride",
             "favonius-greatsword"
           ],
           "artifacts": [
+            {
+              "oneKey": "husk-of-opulent-dreams",
+              "multiples": [],
+              "stats": [
+                "hp",
+                "atk",
+                "defPercentage",
+                "geoDmgBonusPercentage",
+                "critRatePercentage"
+              ]
+            },
             {
               "oneKey": "retracing-bolide",
               "multiples": [],
@@ -27812,14 +27957,25 @@
           ],
           "artifacts": [
             {
+              "oneKey": "husk-of-opulent-dreams",
+              "multiples": [],
+              "stats": [
+                "hp",
+                "atk",
+                "defPercentage",
+                "defPercentage",
+                "defPercentage"
+              ]
+            },
+            {
               "oneKey": null,
               "multiples": [
                 {
-                  "key": "maiden-beloved",
+                  "key": "husk-of-opulent-dreams",
                   "quantity": 2
                 },
                 {
-                  "key": "defenders-will",
+                  "key": "maiden-beloved",
                   "quantity": 2
                 }
               ],
@@ -28991,6 +29147,17 @@
           "artifacts": [
             {
               "oneKey": "tenacity-of-the-millelith",
+              "multiples": [],
+              "stats": [
+                "hp",
+                "atk",
+                "energyRechargePercentage",
+                "atkPercentage",
+                "atkPercentage"
+              ]
+            },
+            {
+              "oneKey": "ocean-hued-clam",
               "multiples": [],
               "stats": [
                 "hp",
@@ -32543,11 +32710,12 @@
             "elementalSkill"
           ],
           "weaponKeys": [
-            "primordial-jade-winged-spear",
             "staff-of-homa",
+            "primordial-jade-winged-spear",
+            "wavebreakers-fin",
             "skyward-spine",
-            "blackcliff-pole",
-            "white-tassel"
+            "the-catch",
+            "blackcliff-pole"
           ],
           "artifacts": [
             {
@@ -32622,9 +32790,9 @@
           ],
           "weaponKeys": [
             "staff-of-homa",
-            "the-catch",
             "primordial-jade-winged-spear",
             "skyward-spine",
+            "the-catch",
             "deathmatch",
             "prototype-starglitter"
           ],
@@ -33704,6 +33872,17 @@
             "thrilling-tales-of-dragon-slayers"
           ],
           "artifacts": [
+            {
+              "oneKey": "ocean-hued-clam",
+              "multiples": [],
+              "stats": [
+                "hp",
+                "atk",
+                "hpPercentage",
+                "hydroDmgBonusPercentage",
+                "healingBonusPercentage"
+              ]
+            },
             {
               "oneKey": "heart-of-depth",
               "multiples": [],
@@ -35080,6 +35259,572 @@
       ]
     },
     {
+      "key": "shenhe",
+      "rarity": 5,
+      "weaponType": "polearm",
+      "elementType": "cryo",
+      "image": "shenhe.png",
+      "fullImage": "shenhe.png",
+      "secondFullImage": null,
+      "isComingSoon": true,
+      "isNew": false,
+      "isFemale": true,
+      "region": "liyue",
+      "role": "na",
+      "tier": "a",
+      "birthday": "01/01",
+      "subStatType": "atkPercentage",
+      "ascensionMaterials": [
+        {
+          "rank": 1,
+          "level": 20,
+          "materials": [
+            {
+              "key": "shivada-jade-sliver",
+              "quantity": 1,
+              "type": "jewels"
+            },
+            {
+              "key": "qingxin",
+              "quantity": 3,
+              "type": "local"
+            },
+            {
+              "key": "whopperflower-nectar",
+              "quantity": 3,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 20000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "rank": 2,
+          "level": 40,
+          "materials": [
+            {
+              "key": "shivada-jade-fragment",
+              "quantity": 3,
+              "type": "jewels"
+            },
+            {
+              "key": "qingxin",
+              "quantity": 10,
+              "type": "local"
+            },
+            {
+              "key": "whopperflower-nectar",
+              "quantity": 15,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 40000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "rank": 3,
+          "level": 50,
+          "materials": [
+            {
+              "key": "shivada-jade-fragment",
+              "quantity": 6,
+              "type": "jewels"
+            },
+            {
+              "key": "qingxin",
+              "quantity": 20,
+              "type": "local"
+            },
+            {
+              "key": "shimmering-nectar",
+              "quantity": 12,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 60000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "rank": 4,
+          "level": 60,
+          "materials": [
+            {
+              "key": "shivada-jade-chunk",
+              "quantity": 3,
+              "type": "jewels"
+            },
+            {
+              "key": "qingxin",
+              "quantity": 30,
+              "type": "local"
+            },
+            {
+              "key": "shimmering-nectar",
+              "quantity": 18,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 80000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "rank": 5,
+          "level": 70,
+          "materials": [
+            {
+              "key": "shivada-jade-chunk",
+              "quantity": 6,
+              "type": "jewels"
+            },
+            {
+              "key": "qingxin",
+              "quantity": 45,
+              "type": "local"
+            },
+            {
+              "key": "energy-nectar",
+              "quantity": 12,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 100000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "rank": 6,
+          "level": 80,
+          "materials": [
+            {
+              "key": "shivada-jade-gemstone",
+              "quantity": 6,
+              "type": "jewels"
+            },
+            {
+              "key": "qingxin",
+              "quantity": 60,
+              "type": "local"
+            },
+            {
+              "key": "energy-nectar",
+              "quantity": 24,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 120000,
+              "type": "currency"
+            }
+          ]
+        }
+      ],
+      "talentAscensionMaterials": [
+        {
+          "level": 2,
+          "materials": [
+            {
+              "key": "teachings-of-prosperity",
+              "quantity": 3,
+              "type": "talents"
+            },
+            {
+              "key": "whopperflower-nectar",
+              "quantity": 6,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 12500,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "level": 3,
+          "materials": [
+            {
+              "key": "guide-to-prosperity",
+              "quantity": 2,
+              "type": "talents"
+            },
+            {
+              "key": "shimmering-nectar",
+              "quantity": 3,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 17500,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "materials": [
+            {
+              "key": "guide-to-prosperity",
+              "quantity": 4,
+              "type": "talents"
+            },
+            {
+              "key": "shimmering-nectar",
+              "quantity": 4,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 25000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "materials": [
+            {
+              "key": "guide-to-prosperity",
+              "quantity": 6,
+              "type": "talents"
+            },
+            {
+              "key": "shimmering-nectar",
+              "quantity": 6,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 30000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "level": 6,
+          "materials": [
+            {
+              "key": "guide-to-prosperity",
+              "quantity": 9,
+              "type": "talents"
+            },
+            {
+              "key": "shimmering-nectar",
+              "quantity": 9,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 37500,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "level": 7,
+          "materials": [
+            {
+              "key": "philosophies-of-prosperity",
+              "quantity": 4,
+              "type": "talents"
+            },
+            {
+              "key": "energy-nectar",
+              "quantity": 4,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 120000,
+              "type": "currency"
+            },
+            {
+              "key": "hellfire-butterfly",
+              "quantity": 1,
+              "type": "talents"
+            }
+          ]
+        },
+        {
+          "level": 8,
+          "materials": [
+            {
+              "key": "philosophies-of-prosperity",
+              "quantity": 6,
+              "type": "talents"
+            },
+            {
+              "key": "energy-nectar",
+              "quantity": 6,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 260000,
+              "type": "currency"
+            },
+            {
+              "key": "hellfire-butterfly",
+              "quantity": 1,
+              "type": "talents"
+            }
+          ]
+        },
+        {
+          "level": 9,
+          "materials": [
+            {
+              "key": "philosophies-of-prosperity",
+              "quantity": 12,
+              "type": "talents"
+            },
+            {
+              "key": "energy-nectar",
+              "quantity": 9,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 450000,
+              "type": "currency"
+            },
+            {
+              "key": "hellfire-butterfly",
+              "quantity": 2,
+              "type": "talents"
+            }
+          ]
+        },
+        {
+          "level": 10,
+          "materials": [
+            {
+              "key": "philosophies-of-prosperity",
+              "quantity": 16,
+              "type": "talents"
+            },
+            {
+              "key": "energy-nectar",
+              "quantity": 12,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 700000,
+              "type": "currency"
+            },
+            {
+              "key": "hellfire-butterfly",
+              "quantity": 2,
+              "type": "talents"
+            },
+            {
+              "key": "crown-of-insight",
+              "quantity": 1,
+              "type": "talents"
+            }
+          ]
+        }
+      ],
+      "skills": [
+        {
+          "key": "s1",
+          "image": null,
+          "type": "normalAttack",
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "image": null,
+          "type": "elementalSkill",
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "image": null,
+          "type": "elementalBurst",
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "image": "shenhe_p1.png",
+          "unlockedAt": -1
+        },
+        {
+          "key": "p2",
+          "image": "shenhe_p2.png",
+          "unlockedAt": 1
+        },
+        {
+          "key": "p3",
+          "image": "shenhe_p3.png",
+          "unlockedAt": 4
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "number": 1,
+          "image": "shenhe_c1.png"
+        },
+        {
+          "key": "c2",
+          "number": 2,
+          "image": "shenhe_c2.png"
+        },
+        {
+          "key": "c3",
+          "number": 3,
+          "image": "shenhe_c3.png"
+        },
+        {
+          "key": "c4",
+          "number": 4,
+          "image": "shenhe_c4.png"
+        },
+        {
+          "key": "c5",
+          "number": 5,
+          "image": "shenhe_c5.png"
+        },
+        {
+          "key": "c6",
+          "number": 6,
+          "image": "shenhe_c6.png"
+        }
+      ],
+      "builds": [],
+      "stats": [
+        {
+          "level": 1,
+          "baseHp": 1011.0,
+          "baseAtk": 24.0,
+          "baseDef": 65.0,
+          "isAnAscension": false,
+          "statValue": 0.0
+        },
+        {
+          "level": 20,
+          "baseHp": 2624.0,
+          "baseAtk": 61.0,
+          "baseDef": 168.0,
+          "isAnAscension": false,
+          "statValue": 0.0
+        },
+        {
+          "level": 20,
+          "baseHp": 3491.0,
+          "baseAtk": 82.0,
+          "baseDef": 223.0,
+          "isAnAscension": true,
+          "statValue": 0.0
+        },
+        {
+          "level": 40,
+          "baseHp": 5224.0,
+          "baseAtk": 122.0,
+          "baseDef": 334.0,
+          "isAnAscension": false,
+          "statValue": 0.0
+        },
+        {
+          "level": 40,
+          "baseHp": 5840.0,
+          "baseAtk": 137.0,
+          "baseDef": 373.0,
+          "isAnAscension": true,
+          "statValue": 7.2
+        },
+        {
+          "level": 50,
+          "baseHp": 6719.0,
+          "baseAtk": 157.0,
+          "baseDef": 429.0,
+          "isAnAscension": false,
+          "statValue": 7.2
+        },
+        {
+          "level": 50,
+          "baseHp": 7540.0,
+          "baseAtk": 176.0,
+          "baseDef": 482.0,
+          "isAnAscension": true,
+          "statValue": 14.4
+        },
+        {
+          "level": 60,
+          "baseHp": 8429.0,
+          "baseAtk": 197.0,
+          "baseDef": 538.0,
+          "isAnAscension": false,
+          "statValue": 14.4
+        },
+        {
+          "level": 60,
+          "baseHp": 9045.0,
+          "baseAtk": 211.0,
+          "baseDef": 578.0,
+          "isAnAscension": true,
+          "statValue": 14.4
+        },
+        {
+          "level": 70,
+          "baseHp": 9941.0,
+          "baseAtk": 232.0,
+          "baseDef": 635.0,
+          "isAnAscension": false,
+          "statValue": 14.4
+        },
+        {
+          "level": 70,
+          "baseHp": 10557.0,
+          "baseAtk": 247.0,
+          "baseDef": 674.0,
+          "isAnAscension": true,
+          "statValue": 21.6
+        },
+        {
+          "level": 80,
+          "baseHp": 11463.0,
+          "baseAtk": 268.0,
+          "baseDef": 732.0,
+          "isAnAscension": false,
+          "statValue": 21.6
+        },
+        {
+          "level": 80,
+          "baseHp": 12080.0,
+          "baseAtk": 282.0,
+          "baseDef": 772.0,
+          "isAnAscension": true,
+          "statValue": 28.8
+        },
+        {
+          "level": 90,
+          "baseHp": 12993.0,
+          "baseAtk": 304.0,
+          "baseDef": 830.0,
+          "isAnAscension": false,
+          "statValue": 28.8
+        }
+      ]
+    },
+    {
       "key": "sucrose",
       "rarity": 4,
       "weaponType": "catalyst",
@@ -35888,10 +36633,9 @@
           ],
           "weaponKeys": [
             "sacrificial-fragments",
+            "thrilling-tales-of-dragon-slayers",
             "magic-guide",
-            "mappa-mare",
-            "the-widsith",
-            "thrilling-tales-of-dragon-slayers"
+            "the-widsith"
           ],
           "artifacts": [
             {
@@ -37408,11 +38152,11 @@
       "image": "thoma.png",
       "fullImage": "thoma.png",
       "secondFullImage": null,
-      "isComingSoon": true,
+      "isComingSoon": false,
       "isNew": false,
       "isFemale": false,
       "region": "inazuma",
-      "role": "na",
+      "role": "support",
       "tier": "a",
       "birthday": "01/09",
       "subStatType": "atkPercentage",
@@ -38378,7 +39122,61 @@
           "image": "thoma_c6.png"
         }
       ],
-      "builds": [],
+      "builds": [
+        {
+          "isRecommended": true,
+          "type": "support",
+          "subType": "none",
+          "skillPriorities": [
+            "elementalSkill",
+            "elementalBurst"
+          ],
+          "weaponKeys": [
+            "favonius-lance",
+            "engulfing-lightning",
+            "the-catch",
+            "prototype-starglitter"
+          ],
+          "artifacts": [
+            {
+              "oneKey": "noblesse-oblige",
+              "multiples": [],
+              "stats": [
+                "hp",
+                "atk",
+                "hpPercentage",
+                "hpPercentage",
+                "hpPercentage"
+              ]
+            },
+            {
+              "oneKey": null,
+              "multiples": [
+                {
+                  "key": "emblem-of-severed-fate",
+                  "quantity": 2
+                },
+                {
+                  "key": "tenacity-of-the-millelith",
+                  "quantity": 2
+                }
+              ],
+              "stats": [
+                "hp",
+                "atk",
+                "hpPercentage",
+                "hpPercentage",
+                "hpPercentage"
+              ]
+            }
+          ],
+          "subStatsToFocus": [
+            "energyRechargePercentage",
+            "hpPercentage",
+            "hp"
+          ]
+        }
+      ],
       "stats": [
         {
           "level": 1,
@@ -39186,11 +39984,9 @@
             "elementalBurst"
           ],
           "weaponKeys": [
+            "freedom-sworn",
             "primordial-jade-cutter",
-            "aquila-favonia",
-            "festering-desire",
-            "the-flute",
-            "harbinger-of-dawn"
+            "iron-sting"
           ],
           "artifacts": [
             {
@@ -39210,6 +40006,41 @@
             "critRatePercentage",
             "atkPercentage",
             "energyRechargePercentage"
+          ]
+        },
+        {
+          "isRecommended": false,
+          "type": "dps",
+          "subType": "physical",
+          "skillPriorities": [
+            "normalAttack",
+            "elementalSkill",
+            "elementalBurst"
+          ],
+          "weaponKeys": [
+            "aquila-favonia",
+            "primordial-jade-cutter",
+            "the-black-sword",
+            "prototype-rancour"
+          ],
+          "artifacts": [
+            {
+              "oneKey": "pale-flame",
+              "multiples": [],
+              "stats": [
+                "hp",
+                "atk",
+                "atkPercentage",
+                "physDmgPercentage",
+                "critRatePercentage"
+              ]
+            }
+          ],
+          "subStatsToFocus": [
+            "critDmgPercentage",
+            "critRatePercentage",
+            "atkPercentage",
+            "atk"
           ]
         }
       ],
@@ -43788,11 +44619,11 @@
             "elementalSkill"
           ],
           "weaponKeys": [
+            "elegy-for-the-end",
             "the-stringless",
             "windblume-ode",
-            "elegy-for-the-end",
-            "skyward-harp",
-            "raven-bow"
+            "raven-bow",
+            "skyward-harp"
           ],
           "artifacts": [
             {
@@ -48249,7 +49080,7 @@
         },
         {
           "isRecommended": false,
-          "type": "support",
+          "type": "subDps",
           "subType": "none",
           "skillPriorities": [
             "elementalSkill",
@@ -48269,6 +49100,38 @@
                 "atk",
                 "defPercentage",
                 "physDmgPercentage",
+                "defPercentage"
+              ]
+            }
+          ],
+          "subStatsToFocus": [
+            "defPercentage",
+            "critRatePercentage",
+            "energyRechargePercentage"
+          ]
+        },
+        {
+          "isRecommended": false,
+          "type": "support",
+          "subType": "shield",
+          "skillPriorities": [
+            "elementalSkill",
+            "elementalBurst"
+          ],
+          "weaponKeys": [
+            "sacrificial-greatsword",
+            "luxurious-sea-lord",
+            "prototype-archaic"
+          ],
+          "artifacts": [
+            {
+              "oneKey": "tenacity-of-the-millelith",
+              "multiples": [],
+              "stats": [
+                "hp",
+                "atk",
+                "defPercentage",
+                "defPercentage",
                 "defPercentage"
               ]
             }
@@ -49164,26 +50027,6 @@
             {
               "key": "param2",
               "values": [
-                33.4,
-                35.4,
-                37.4,
-                40.0,
-                42.0,
-                44.0,
-                46.6,
-                49.2,
-                51.8,
-                54.4,
-                57.0,
-                59.6,
-                62.2,
-                64.8,
-                67.4
-              ]
-            },
-            {
-              "key": "param3",
-              "values": [
                 1.0,
                 1.0,
                 1.0,
@@ -49202,7 +50045,7 @@
               ]
             },
             {
-              "key": "param4",
+              "key": "param3",
               "values": [
                 33.4,
                 35.4,
@@ -49222,7 +50065,7 @@
               ]
             },
             {
-              "key": "param5",
+              "key": "param4",
               "values": [
                 15.0,
                 15.0,
@@ -49242,7 +50085,7 @@
               ]
             },
             {
-              "key": "param6",
+              "key": "param5",
               "values": [
                 20.0,
                 20.0,
@@ -49259,6 +50102,26 @@
                 20.0,
                 20.0,
                 20.0
+              ]
+            },
+            {
+              "key": "param6",
+              "values": [
+                80.0,
+                80.0,
+                80.0,
+                80.0,
+                80.0,
+                80.0,
+                80.0,
+                80.0,
+                80.0,
+                80.0,
+                80.0,
+                80.0,
+                80.0,
+                80.0,
+                80.0
               ]
             }
           ]
@@ -50376,7 +51239,7 @@
           ],
           "weaponKeys": [
             "thundering-pulse",
-            "amos-bow",
+            "polar-star",
             "skyward-harp",
             "rust",
             "prototype-crescent"
@@ -50543,6 +51406,597 @@
           "baseDef": 615.0,
           "isAnAscension": false,
           "statValue": 24.2
+        }
+      ]
+    },
+    {
+      "key": "yun-jin",
+      "rarity": 4,
+      "weaponType": "polearm",
+      "elementType": "geo",
+      "image": "yun-jin.png",
+      "fullImage": "yun-jin.png",
+      "secondFullImage": null,
+      "isComingSoon": true,
+      "isNew": false,
+      "isFemale": true,
+      "region": "liyue",
+      "role": "na",
+      "tier": "a",
+      "birthday": "01/01",
+      "subStatType": "energyRechargePercentage",
+      "ascensionMaterials": [
+        {
+          "rank": 1,
+          "level": 20,
+          "materials": [
+            {
+              "key": "prithiva-topaz-sliver",
+              "quantity": 1,
+              "type": "jewels"
+            },
+            {
+              "key": "glaze-lily",
+              "quantity": 3,
+              "type": "local"
+            },
+            {
+              "key": "damaged-mask",
+              "quantity": 3,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 20000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "rank": 2,
+          "level": 40,
+          "materials": [
+            {
+              "key": "prithiva-topaz-fragment",
+              "quantity": 3,
+              "type": "jewels"
+            },
+            {
+              "key": "riftborn-regalia",
+              "quantity": 2,
+              "type": "elementalStone"
+            },
+            {
+              "key": "glaze-lily",
+              "quantity": 10,
+              "type": "local"
+            },
+            {
+              "key": "damaged-mask",
+              "quantity": 15,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 40000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "rank": 3,
+          "level": 50,
+          "materials": [
+            {
+              "key": "prithiva-topaz-fragment",
+              "quantity": 6,
+              "type": "jewels"
+            },
+            {
+              "key": "riftborn-regalia",
+              "quantity": 4,
+              "type": "elementalStone"
+            },
+            {
+              "key": "glaze-lily",
+              "quantity": 20,
+              "type": "local"
+            },
+            {
+              "key": "stained-mask",
+              "quantity": 12,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 60000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "rank": 4,
+          "level": 60,
+          "materials": [
+            {
+              "key": "prithiva-topaz-chunk",
+              "quantity": 3,
+              "type": "jewels"
+            },
+            {
+              "key": "riftborn-regalia",
+              "quantity": 8,
+              "type": "elementalStone"
+            },
+            {
+              "key": "glaze-lily",
+              "quantity": 30,
+              "type": "local"
+            },
+            {
+              "key": "stained-mask",
+              "quantity": 18,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 80000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "rank": 5,
+          "level": 70,
+          "materials": [
+            {
+              "key": "prithiva-topaz-chunk",
+              "quantity": 6,
+              "type": "jewels"
+            },
+            {
+              "key": "riftborn-regalia",
+              "quantity": 12,
+              "type": "elementalStone"
+            },
+            {
+              "key": "glaze-lily",
+              "quantity": 45,
+              "type": "local"
+            },
+            {
+              "key": "ominous-mask",
+              "quantity": 12,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 100000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "rank": 6,
+          "level": 80,
+          "materials": [
+            {
+              "key": "prithiva-topaz-gemstone",
+              "quantity": 6,
+              "type": "jewels"
+            },
+            {
+              "key": "riftborn-regalia",
+              "quantity": 20,
+              "type": "elementalStone"
+            },
+            {
+              "key": "glaze-lily",
+              "quantity": 60,
+              "type": "local"
+            },
+            {
+              "key": "ominous-mask",
+              "quantity": 24,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 120000,
+              "type": "currency"
+            }
+          ]
+        }
+      ],
+      "talentAscensionMaterials": [
+        {
+          "level": 2,
+          "materials": [
+            {
+              "key": "teachings-of-diligence",
+              "quantity": 3,
+              "type": "talents"
+            },
+            {
+              "key": "damaged-mask",
+              "quantity": 6,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 12500,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "level": 3,
+          "materials": [
+            {
+              "key": "guide-to-diligence",
+              "quantity": 2,
+              "type": "talents"
+            },
+            {
+              "key": "stained-mask",
+              "quantity": 3,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 17500,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "materials": [
+            {
+              "key": "guide-to-diligence",
+              "quantity": 4,
+              "type": "talents"
+            },
+            {
+              "key": "stained-mask",
+              "quantity": 4,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 25000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "materials": [
+            {
+              "key": "guide-to-diligence",
+              "quantity": 6,
+              "type": "talents"
+            },
+            {
+              "key": "stained-mask",
+              "quantity": 6,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 30000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "level": 6,
+          "materials": [
+            {
+              "key": "guide-to-diligence",
+              "quantity": 9,
+              "type": "talents"
+            },
+            {
+              "key": "stained-mask",
+              "quantity": 9,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 37500,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "level": 7,
+          "materials": [
+            {
+              "key": "philosophies-of-diligence",
+              "quantity": 4,
+              "type": "talents"
+            },
+            {
+              "key": "ominous-mask",
+              "quantity": 4,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 120000,
+              "type": "currency"
+            },
+            {
+              "key": "ashen-heart",
+              "quantity": 1,
+              "type": "talents"
+            }
+          ]
+        },
+        {
+          "level": 8,
+          "materials": [
+            {
+              "key": "philosophies-of-diligence",
+              "quantity": 6,
+              "type": "talents"
+            },
+            {
+              "key": "ominous-mask",
+              "quantity": 6,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 260000,
+              "type": "currency"
+            },
+            {
+              "key": "ashen-heart",
+              "quantity": 1,
+              "type": "talents"
+            }
+          ]
+        },
+        {
+          "level": 9,
+          "materials": [
+            {
+              "key": "philosophies-of-diligence",
+              "quantity": 12,
+              "type": "talents"
+            },
+            {
+              "key": "ominous-mask",
+              "quantity": 9,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 450000,
+              "type": "currency"
+            },
+            {
+              "key": "ashen-heart",
+              "quantity": 2,
+              "type": "talents"
+            }
+          ]
+        },
+        {
+          "level": 10,
+          "materials": [
+            {
+              "key": "philosophies-of-diligence",
+              "quantity": 16,
+              "type": "talents"
+            },
+            {
+              "key": "ominous-mask",
+              "quantity": 12,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 700000,
+              "type": "currency"
+            },
+            {
+              "key": "ashen-heart",
+              "quantity": 2,
+              "type": "talents"
+            },
+            {
+              "key": "crown-of-insight",
+              "quantity": 1,
+              "type": "talents"
+            }
+          ]
+        }
+      ],
+      "skills": [
+        {
+          "key": "s1",
+          "image": null,
+          "type": "normalAttack",
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "image": null,
+          "type": "elementalSkill",
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "image": null,
+          "type": "elementalBurst",
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "image": "yun-jin_p1.png",
+          "unlockedAt": -1
+        },
+        {
+          "key": "p2",
+          "image": "yun-jin_p2.png",
+          "unlockedAt": 1
+        },
+        {
+          "key": "p3",
+          "image": "yun-jin_p3.png",
+          "unlockedAt": 4
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "number": 1,
+          "image": "yun-jin_c1.png"
+        },
+        {
+          "key": "c2",
+          "number": 2,
+          "image": "yun-jin_c2.png"
+        },
+        {
+          "key": "c3",
+          "number": 3,
+          "image": "yun-jin_c3.png"
+        },
+        {
+          "key": "c4",
+          "number": 4,
+          "image": "yun-jin_c4.png"
+        },
+        {
+          "key": "c5",
+          "number": 5,
+          "image": "yun-jin_c5.png"
+        },
+        {
+          "key": "c6",
+          "number": 6,
+          "image": "yun-jin_c6.png"
+        }
+      ],
+      "builds": [],
+      "stats": [
+        {
+          "level": 1,
+          "baseHp": 894.0,
+          "baseAtk": 16.0,
+          "baseDef": 62.0,
+          "isAnAscension": false,
+          "statValue": 0.0
+        },
+        {
+          "level": 20,
+          "baseHp": 2296.0,
+          "baseAtk": 41.0,
+          "baseDef": 158.0,
+          "isAnAscension": false,
+          "statValue": 0.0
+        },
+        {
+          "level": 20,
+          "baseHp": 2963.0,
+          "baseAtk": 53.0,
+          "baseDef": 204.0,
+          "isAnAscension": true,
+          "statValue": 0.0
+        },
+        {
+          "level": 40,
+          "baseHp": 4438.0,
+          "baseAtk": 80.0,
+          "baseDef": 306.0,
+          "isAnAscension": false,
+          "statValue": 0.0
+        },
+        {
+          "level": 40,
+          "baseHp": 4913.0,
+          "baseAtk": 88.0,
+          "baseDef": 339.0,
+          "isAnAscension": true,
+          "statValue": 6.7
+        },
+        {
+          "level": 50,
+          "baseHp": 5651.0,
+          "baseAtk": 101.0,
+          "baseDef": 389.0,
+          "isAnAscension": false,
+          "statValue": 6.7
+        },
+        {
+          "level": 50,
+          "baseHp": 6283.0,
+          "baseAtk": 113.0,
+          "baseDef": 433.0,
+          "isAnAscension": true,
+          "statValue": 13.3
+        },
+        {
+          "level": 60,
+          "baseHp": 7021.0,
+          "baseAtk": 126.0,
+          "baseDef": 484.0,
+          "isAnAscension": false,
+          "statValue": 13.3
+        },
+        {
+          "level": 60,
+          "baseHp": 7495.0,
+          "baseAtk": 134.0,
+          "baseDef": 517.0,
+          "isAnAscension": true,
+          "statValue": 13.3
+        },
+        {
+          "level": 70,
+          "baseHp": 8233.0,
+          "baseAtk": 148.0,
+          "baseDef": 567.0,
+          "isAnAscension": false,
+          "statValue": 13.3
+        },
+        {
+          "level": 70,
+          "baseHp": 8707.0,
+          "baseAtk": 156.0,
+          "baseDef": 600.0,
+          "isAnAscension": true,
+          "statValue": 20.0
+        },
+        {
+          "level": 80,
+          "baseHp": 9445.0,
+          "baseAtk": 169.0,
+          "baseDef": 651.0,
+          "isAnAscension": false,
+          "statValue": 20.0
+        },
+        {
+          "level": 80,
+          "baseHp": 9919.0,
+          "baseAtk": 178.0,
+          "baseDef": 684.0,
+          "isAnAscension": true,
+          "statValue": 26.7
+        },
+        {
+          "level": 90,
+          "baseHp": 10657.0,
+          "baseAtk": 191.0,
+          "baseDef": 734.0,
+          "isAnAscension": false,
+          "statValue": 26.7
         }
       ]
     },

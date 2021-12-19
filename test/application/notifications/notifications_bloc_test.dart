@@ -58,8 +58,10 @@ void main() {
 
   test(
     'Initial state',
-    () => expect(NotificationsBloc(_dataService, _notificationService, _settingsService, _telemetryService).state,
-        const NotificationsState.initial(notifications: [], ticks: 0)),
+    () => expect(
+      NotificationsBloc(_dataService, _notificationService, _settingsService, _telemetryService).state,
+      const NotificationsState.initial(notifications: []),
+    ),
   );
 
   blocTest<NotificationsBloc, NotificationsState>(
@@ -82,7 +84,6 @@ void main() {
     verify: (bloc) {
       expect(bloc.state.notifications.length, 1);
       expect(bloc.state.useTwentyFourHoursFormat, _settingsService.useTwentyFourHoursFormat);
-      expect(bloc.state.ticks, 0);
 
       final notif = bloc.state.notifications.first;
       expect(notif.key, 0);
@@ -129,7 +130,9 @@ void main() {
       await _dataService.deleteThemAll();
     },
     build: () => NotificationsBloc(_dataService, _notificationService, _settingsService, _telemetryService),
-    act: (bloc) => bloc..add(const NotificationsEvent.init())..add(const NotificationsEvent.reset(id: 0, type: AppNotificationType.resin)),
+    act: (bloc) => bloc
+      ..add(const NotificationsEvent.init())
+      ..add(const NotificationsEvent.reset(id: 0, type: AppNotificationType.resin)),
     verify: (bloc) {
       verify(_notificationService.cancelNotification(0, AppNotificationType.resin)).called(1);
       verify(_notificationService.scheduleNotification(any, any, any, any, any)).called(1);
@@ -156,7 +159,9 @@ void main() {
       await _dataService.deleteThemAll();
     },
     build: () => NotificationsBloc(_dataService, _notificationService, _settingsService, _telemetryService),
-    act: (bloc) => bloc..add(const NotificationsEvent.init())..add(const NotificationsEvent.stop(id: 0, type: AppNotificationType.resin)),
+    act: (bloc) => bloc
+      ..add(const NotificationsEvent.init())
+      ..add(const NotificationsEvent.stop(id: 0, type: AppNotificationType.resin)),
     verify: (bloc) {
       verify(_notificationService.cancelNotification(0, AppNotificationType.resin)).called(1);
       expect(bloc.state.notifications.length, 1);
@@ -171,32 +176,6 @@ void main() {
       expect(notif.type, AppNotificationType.resin);
       expect(notif.currentResinValue, 100);
       expect(notif.completesAt.difference(DateTime.now()).inSeconds, lessThanOrEqualTo(10));
-    },
-  );
-
-  blocTest<NotificationsBloc, NotificationsState>(
-    'Refresh',
-    setUp: () async {
-      await _dataService.saveResinNotification(_fragileResinKey, _defaultTitle, _defaultBody, 100, note: _defaultNote);
-    },
-    tearDown: () async {
-      await _dataService.deleteThemAll();
-    },
-    build: () => NotificationsBloc(_dataService, _notificationService, _settingsService, _telemetryService),
-    act: (bloc) => bloc..add(const NotificationsEvent.init())..add(const NotificationsEvent.refresh(ticks: 5)),
-    verify: (bloc) {
-      expect(bloc.state.notifications.length, 1);
-      expect(bloc.state.ticks, 5);
-
-      final notif = bloc.state.notifications.first;
-      expect(notif.key, 0);
-      expect(notif.itemKey, _fragileResinKey);
-      expect(notif.title, _defaultTitle);
-      expect(notif.body, _defaultBody);
-      expect(notif.note, _defaultNote);
-      checkAsset(notif.image);
-      expect(notif.type, AppNotificationType.resin);
-      expect(notif.currentResinValue, 100);
     },
   );
 
@@ -235,12 +214,5 @@ void main() {
       expect(notif.notificationItemType, AppNotificationItemType.character);
       expect(notif.completesAt, lessThanOrEqualTo(_now.add(const Duration(hours: 1))));
     },
-  );
-
-  blocTest<NotificationsBloc, NotificationsState>(
-    'Close',
-    build: () => NotificationsBloc(_dataService, _notificationService, _settingsService, _telemetryService),
-    act: (bloc) => bloc..add(const NotificationsEvent.init())..add(const NotificationsEvent.close()),
-    expect: () => const [NotificationsState.initial(notifications: [], ticks: 0)],
   );
 }

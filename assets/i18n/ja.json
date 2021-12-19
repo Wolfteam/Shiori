@@ -8,7 +8,7 @@
       "skills": [
         {
           "key": "s1",
-          "title": "通常攻撃·西風剣術·白",
+          "title": "西風剣術·白",
           "description": "",
           "abilities": [
             {
@@ -151,7 +151,7 @@
       "skills": [
         {
           "key": "s1",
-          "title": "通常攻撃·ラピッドファイア",
+          "title": "ラピッドファイア",
           "description": "",
           "abilities": [
             {
@@ -287,7 +287,7 @@
       "skills": [
         {
           "key": "s1",
-          "title": "通常攻撃·一流射手",
+          "title": "一流射手",
           "description": "",
           "abilities": [
             {
@@ -419,93 +419,159 @@
     },
     {
       "key": "arataki-itto",
-      "name": "Arataki Itto",
-      "title": "Hanamizaka Heroics",
-      "description": "The first and greatest head of the Arataki Gang, famed throughout Hanamizaka in Inazuma City... Wait, what? Never heard of them? Seriously?",
+      "name": "荒瀧一斗",
+      "title": "花坂豪快",
+      "description": "稲妻城の花見坂で活動する「荒瀧派」の初代親分。なにっ！？荒瀧派なんて聞いたこともないだと？喧嘩売ってんのか、コラァ！？",
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "通常攻撃·喧嘩屋伝説",
+          "description": "",
+          "abilities": [
+            {
+              "name": "通常攻撃",
+              "description": "最大4段の連続攻撃を行う。\r\n2段目と4段目の攻撃が敵に命中すると、それぞれ1層分と2層分の「乱神の怪力」効果を獲得する。\r\n所有できる乱神の怪力は最大5層までとなり、獲得するたびに既存の乱神の怪力の継続時間を更新する。\r\n",
+              "descriptions": [
+                "元素スキル「魔殺絶技  岩牛発破！」を発動またはダッシュした後の一定時間、通常攻撃の連撃段数がリセットされない。"
+              ]
+            },
+            {
+              "name": "重撃",
+              "description": "長押しで重撃を発動する時、乱神の怪力を所有していると、スタミナを消費しない「荒瀧逆袈裟」斬撃を発動できる。荒瀧逆袈裟を発動するたびに乱神の怪力が1層消費される。最後の1層を消費すると、強力なとどめの一撃を繰り出す。\r\n乱神の怪力を所有していない時、スタミナを消費し、力強い左一文字斬りを繰り出す。\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "落下攻撃",
+              "description": "空中から落下し地面に衝撃を与える。経路上の敵を攻撃し、落下時に範囲ダメージを与える。",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "1段ダメージ|{param1}%",
+            "2段ダメージ|{param2}%",
+            "3段ダメージ|{param3}%",
+            "4段ダメージ|{param4}%",
+            "荒瀧逆袈裟連斬ダメージ|{param5}%",
+            "荒瀧逆袈裟とどめダメージ|{param6}%",
+            "乱神の怪力継続時間|{param7}s",
+            "左一文字斬りダメージ|{param8}%",
+            "左一文字斬りスタミナ消費|{param9}",
+            "落下期間のダメージ|{param10}%",
+            "低空/高空落下攻撃ダメージ|{param11}% / {param12}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "魔殺絶技·岩牛発破！",
+          "description": "荒瀧派の隠れた構成員である岩べこ「丑雄」を素早く投げつけ、命中した敵に岩元素ダメージを与える。「丑雄」が敵に命中すると、荒瀧一斗に「乱神の怪力」効果を1層与える。\r\n「丑雄」はフィールドに残って戦闘のサポートを行う。\r\n• 持続的に周囲の敵を挑発し、攻撃を引き付ける。",
+          "abilities": [
+            {
+              "name": "",
+              "description": "",
+              "descriptions": [
+                "耐久度は荒瀧一斗のHP上限によって決まる。",
+                "ダメージを受けると、荒瀧一斗自身に「乱神の怪力」効果を1層付与する。この方式での獲得は2秒毎に1回のみ可能。",
+                "耐久度が尽きる、または継続時間が終了すると撤退し、荒瀧一斗自身に「乱神の怪力」を1層付与する。"
+              ]
+            },
+            {
+              "name": "長押し",
+              "description": "投擲方向を調整できる。\r\n「丑雄」は岩元素創造物とみなされる。荒瀧一斗自身が召喚した「丑雄」は、同時に1体しか存在できない。\r\n",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "スキルダメージ|{param1}%",
+            "HP継承|{param2}%",
+            "継続時間|{param3}s",
+            "クールタイム|{param4}s"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "最凶鬼王·一斗轟臨！！",
+          "description": "荒瀧派 • 一斗の威名を轟かせる時が来た！発動後、一斗は一定時間「憤怒の鬼王」と化し、鬼王金砕棒で戦うようになる。\r\n鬼王金砕棒は下記の特徴を持つ。\r\n",
+          "abilities": [
+            {
+              "name": "",
+              "description": "",
+              "descriptions": [
+                "通常攻撃、重撃、落下攻撃ダメージは、元素付与によって他の元素に変化しない岩元素ダメージへと変わる。",
+                "荒瀧一斗の通常攻撃の攻撃速度がアップし、そして防御力を基準に攻撃力がアップする。",
+                "1段目、3段目の攻撃が敵に命中すると、荒瀧一斗自身に「乱神の怪力」を1層付与する。",
+                "荒瀧一斗の全元素耐性と物理耐性-20%。",
+                "「憤怒の鬼王」状態は、荒瀧一斗が退場する時に解除される。"
+              ]
+            }
+          ],
+          "stats": [
+            "攻撃力アップ|{param1}% DEF",
+            "攻撃速度アップ|{param2}%",
+            "継続時間|{param3}s",
+            "クールタイム|{param4}s",
+            "元素エネルギー|{param5}"
+          ]
         }
       ],
       "passives": [
         {
-          "key": "p3",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
-        },
-        {
-          "key": "p4",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
-        },
-        {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "乾裂枝砕き",
+          "description": "チーム中自身のキャラクターが木を攻撃し木材を獲得する時、25%の確率で木材を追加で獲得できる。\r\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
+          "title": "荒瀧第一",
+          "description": "荒瀧一斗が連続で「荒瀧逆袈裟」を発動した時、下記効果を獲得する。\r\n",
+          "descriptions": [
+            "斬撃を繰り出すたびに、その後の斬撃の攻撃速度+10%。この方式でアップできる攻撃速度は30%まで。",
+            "中断耐性がアップ。",
+            "これらの効果は連続斬撃が終了した時にクリアされる。"
+          ]
+        },
+        {
+          "key": "p3",
+          "title": "赤鬼の血",
+          "description": "「荒瀧逆袈裟」のダメージが荒瀧一斗の防御力35%分アップする。\r\n",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "知らぬなら、聞かせてやろう",
+          "description": "最凶鬼王 • 一斗轟臨！！発動後、荒瀧一斗は「乱神の怪力」効果を2層獲得する。発動1秒後、1.5秒の間、荒瀧一斗は0.5秒毎に「乱神の怪力」効果をさらに1層獲得する。\r\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "衆よ集いて、山岳倒し",
+          "description": "最凶鬼王 • 一斗轟臨！！を発動した後、チーム内に岩元素タイプキャラクターが1人いる毎に、クールタイム-1.5秒、荒瀧一斗の元素エネルギーを6ポイント回復する。\r\nこの方式で短縮できるクールタイムは4.5秒までとなり、回復できる元素エネルギーは18ポイントまでとなる。\r\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "牛王跨げば、水陸自在",
+          "description": "魔殺絶技 • 岩牛発破！のスキルLv.+3。\r\n最大Lv.15まで。\r\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "奉行牢獄、御食事処",
+          "description": "最凶鬼王 • 一斗轟臨！！による「憤怒の鬼王」状態が終了すると、周囲チーム全員の防御力+20%、攻撃力+20%、継続時間10秒。\r\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "花坂十年、轟く我が名",
+          "description": "最凶鬼王 • 一斗轟臨！！のスキルLv.+3。\r\n最大Lv.15まで。\r\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
+          "title": "傾奇の張本、荒瀧一斗",
+          "description": "荒瀧一斗の重撃の会心ダメージ+70%。また、「荒瀧逆袈裟」を発動する時、50%の確率で「乱神の怪力」が消費されなくなる。\r\n",
           "descriptions": []
         }
       ]
@@ -518,7 +584,7 @@
       "skills": [
         {
           "key": "s1",
-          "title": "通常攻撃·水の囁き",
+          "title": "水の囁き",
           "description": "",
           "abilities": [
             {
@@ -655,7 +721,7 @@
       "skills": [
         {
           "key": "s1",
-          "title": "通常攻撃·征浪",
+          "title": "征浪",
           "description": "",
           "abilities": [
             {
@@ -809,7 +875,7 @@
       "skills": [
         {
           "key": "s1",
-          "title": "通常攻撃·好運の剣",
+          "title": "好運の剣",
           "description": "",
           "abilities": [
             {
@@ -962,7 +1028,7 @@
       "skills": [
         {
           "key": "s1",
-          "title": "通常攻撃·滅邪四式",
+          "title": "滅邪四式",
           "description": "",
           "abilities": [
             {
@@ -1085,7 +1151,7 @@
       "skills": [
         {
           "key": "s1",
-          "title": "通常攻撃·百煉の剣",
+          "title": "百煉の剣",
           "description": "",
           "abilities": [
             {
@@ -1211,7 +1277,7 @@
       "skills": [
         {
           "key": "s1",
-          "title": "通常攻撃·狩人の射術",
+          "title": "狩人の射術",
           "description": "",
           "abilities": [
             {
@@ -1360,7 +1426,7 @@
       "skills": [
         {
           "key": "s1",
-          "title": "通常攻撃·西風剣術·旧貴族",
+          "title": "西風剣術·旧貴族",
           "description": "",
           "abilities": [
             {
@@ -1509,7 +1575,7 @@
       "skills": [
         {
           "key": "s1",
-          "title": "通常攻撃·罪滅ぼしの矢",
+          "title": "罪滅ぼしの矢",
           "description": "",
           "abilities": [
             {
@@ -1641,7 +1707,7 @@
       "skills": [
         {
           "key": "s1",
-          "title": "通常攻撃·流天射術",
+          "title": "流天射術",
           "description": "",
           "abilities": [
             {
@@ -1774,88 +1840,166 @@
     },
     {
       "key": "gorou",
-      "name": "Gorou",
-      "title": "Canine Warrior",
-      "description": "The great general of Watatsumi Island's forces. He is deeply trusted by his subordinates.",
+      "name": "ゴロー",
+      "title": "雄々しき戎犬",
+      "description": "海祇島軍隊の大将で、部下から厚く信頼されている。",
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "通常攻撃·獣牙裂扇矢",
+          "description": "",
+          "abilities": [
+            {
+              "name": "通常攻撃",
+              "description": "最大4段の連続射撃を行う。\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "重撃",
+              "description": "ダメージがより高く、より精確な狙い撃ちを発動する。\r\n照準時、岩晶を矢先に凝集させ、岩晶に満ちた矢で敵に岩元素ダメージを与える。\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "落下攻撃",
+              "description": "空中から矢の雨を放ち、凄まじいスピードで落下し地面に衝撃を与え、落下時に範囲ダメージを与える。",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "1段ダメージ|{param1}%",
+            "2段ダメージ|{param2}%",
+            "3段ダメージ|{param3}%",
+            "4段ダメージ|{param4}%",
+            "狙い撃ち|{param5}%",
+            "フルチャージ狙い撃ち|{param6}%",
+            "落下期間のダメージ|{param7}%",
+            "低空/高空落下攻撃ダメージ|{param8}% / {param9}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "犬坂の遠吠え方円陣",
+          "description": "",
+          "abilities": [
+            {
+              "name": "",
+              "description": "岩元素範囲ダメージを与え、大将の旗指物を掲げる。\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "大将の旗指物",
+              "description": "発動時、チームにいる岩元素タイプキャラクターの人数に応じて、領域内のフィールド上キャラクターに下記効果を与える。\r\n",
+              "descriptions": [
+                "1人の時  「堅牢」：防御力がアップ。",
+                "2人の時  「破耐」：上記効果に加え、中断耐性がアップ。",
+                "3人の時  「粉砕」：上記効果に加え、岩元素ダメージがアップ。",
+                "ゴロー自身が創造した大将の旗指物は、同時に最大1つまで存在可能。キャラクターが獲得できる大将の旗指物の効果は1種のみ。キャラクターが領域を出た後、領域による効果は2秒続く。"
+              ]
+            },
+            {
+              "name": "長押し",
+              "description": "スキルの発動位置を調整できる。\r\n",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "スキルダメージ|{param1}%",
+            "防御力アップ|{param2}",
+            "岩元素ダメージアップ|{param3}%",
+            "継続時間|{param4}s",
+            "クールタイム|{param5}s"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "獣牙突撃陣形戦法",
+          "description": "大将の威厳を示し、岩元素範囲ダメージを与え、大将威儀の領域を展開して周囲の戦友を鼓舞する。\r\n",
+          "abilities": [
+            {
+              "name": "大将威儀",
+              "description": "下記特性を持つ。\r\n",
+              "descriptions": [
+                "領域は元素スキル「犬坂の遠吠え方円陣」が創造した大将の旗指物と同じ効果を持つ。発動時、チームにいる岩元素タイプキャラクターの人数に応じて、領域内のフィールド上キャラクターに効果を与える。また、領域はフィールド上キャラクターと共に移動する。",
+                "1.5秒毎に岩晶崩滅を発動し、領域内の敵1体に岩元素範囲ダメージを与える。",
+                "1.5秒毎に領域内の結晶反応で生成した結晶の欠片を1つ、キャラクターの位置に引き寄せる。",
+                "発動時、ゴロー自身の大将の旗指物が存在する場合、それは破壊される。また、大将威儀の継続時間内、ゴロー自身が元素スキル「犬坂の遠吠え方円陣」を発動しても、大将の旗指物は創造されない。",
+                "ゴローが戦闘不能になった時、ゴロー自身の大将威儀効果はクリアされる。"
+              ]
+            }
+          ],
+          "stats": [
+            "スキルダメージ|{param1}% DEF",
+            "岩晶崩滅ダメージ|{param2}% DEF",
+            "継続時間|{param3}s",
+            "クールタイム|{param4}s",
+            "元素エネルギー|{param5}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "キラキラ発見術",
+          "description": "ミニマップで周囲の稲妻地域の特産の位置を表示する。\r\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
+          "title": "風雨を恐れず",
+          "description": "獣牙突撃陣形戦法を発動した後の12秒間、近くのチーム全員の防御力+25%。\r\n",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
+          "title": "報恩の守護",
+          "description": "防御力を基にゴローの以下攻撃のダメージが増加する。\r\n",
+          "descriptions": [
+            "犬坂の遠吠え方円陣のスキルダメージが防御力156%分アップする。",
+            "獣牙突撃陣形戦法のスキルダメージと岩晶崩滅のダメージが防御力15.6%分アップする。"
+          ]
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "犬瞬·疾きこと風の如く",
+          "description": "ゴロー自身による大将の旗指物または大将威儀の領域にいるフィールド上キャラクター（ゴロー自身を除く）が敵に岩元素ダメージを与えると、ゴロー自身の犬坂の遠吠え方円陣のクールタイム-2秒。\r\nこの効果は10秒毎に1回のみ発動可能。\r\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "犬座·確固たること鐘の如く",
+          "description": "大将威儀の持続時間内、近くのフィールド上キャラクターが結晶反応による結晶の欠片を獲得すると、ゴロー自身の大将威儀の継続時間+1秒。\r\n0.1秒毎に1回のみ発動可能、この方式で最大3秒まで延長できる。\r\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "犬爪·圧すること火の如く",
+          "description": "犬坂の遠吠え方円陣のスキルLv.+3。\r\n最大Lv.15まで。\r\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "犬舌·優しきこと水の如く",
+          "description": "大将威儀が「破耐」または「粉砕」効果を持つ時、1.5秒毎に領域内のフィールド上キャラクターのHPを回復する。回復量はゴロー自身の防御力50%分に相当する。\r\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "犬突·動くこと雷の如く",
+          "description": "獣牙突撃陣形戦法のスキルLv.+3。\r\n最大Lv.15まで。\r\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
+          "title": "犬勇·忠に厚きこと山の如く",
+          "description": "犬坂の遠吠え方円陣または獣牙突撃陣形戦法発動後の12秒間、発動時の領域状態に基づき、周囲チーム全員の岩元素ダメージの会心ダメージをアップする。\r\n",
+          "descriptions": [
+            "「堅牢」：10%アップ。",
+            "「破耐」：20%アップ。",
+            "「粉砕」：40%アップ。",
+            "この効果は重ね掛けできず、最後に発動したものが反映される。"
+          ]
         }
       ]
     },
@@ -1867,7 +2011,7 @@
       "skills": [
         {
           "key": "s1",
-          "title": "通常攻撃·往生秘伝槍法",
+          "title": "往生秘伝槍法",
           "description": "",
           "abilities": [
             {
@@ -2011,7 +2155,7 @@
       "skills": [
         {
           "key": "s1",
-          "title": "通常攻撃·西風剣術",
+          "title": "西風剣術",
           "description": "",
           "abilities": [
             {
@@ -2152,7 +2296,7 @@
       "skills": [
         {
           "key": "s1",
-          "title": "通常攻撃·我流剣術",
+          "title": "我流剣術",
           "description": "",
           "abilities": [
             {
@@ -2316,7 +2460,7 @@
       "skills": [
         {
           "key": "s1",
-          "title": "通常攻撃·儀典の剣術",
+          "title": "儀典の剣術",
           "description": "",
           "abilities": [
             {
@@ -2437,7 +2581,7 @@
       "skills": [
         {
           "key": "s1",
-          "title": "通常攻撃·神里流·傾き",
+          "title": "神里流·傾き",
           "description": "",
           "abilities": [
             {
@@ -2591,7 +2735,7 @@
       "skills": [
         {
           "key": "s1",
-          "title": "通常攻撃·雲来剣法",
+          "title": "雲来剣法",
           "description": "",
           "abilities": [
             {
@@ -2729,7 +2873,7 @@
       "skills": [
         {
           "key": "s1",
-          "title": "通常攻撃·バンバン",
+          "title": "バンバン",
           "description": "",
           "abilities": [
             {
@@ -2850,7 +2994,7 @@
       "skills": [
         {
           "key": "s1",
-          "title": "通常攻撃·天狗伝弓術",
+          "title": "天狗伝弓術",
           "description": "",
           "abilities": [
             {
@@ -2975,7 +3119,7 @@
       "skills": [
         {
           "key": "s1",
-          "title": "通常攻撃·指先の雷",
+          "title": "指先の雷",
           "description": "",
           "abilities": [
             {
@@ -3114,7 +3258,7 @@
       "skills": [
         {
           "key": "s1",
-          "title": "通常攻撃·因果点破",
+          "title": "因果点破",
           "description": "",
           "abilities": [
             {
@@ -3285,7 +3429,7 @@
       "skills": [
         {
           "key": "s1",
-          "title": "通常攻撃·千金擲",
+          "title": "千金擲",
           "description": "",
           "abilities": [
             {
@@ -3413,7 +3557,7 @@
       "skills": [
         {
           "key": "s1",
-          "title": "通常攻撃·西風剣術·メイド",
+          "title": "西風剣術·メイド",
           "description": "",
           "abilities": [
             {
@@ -3564,7 +3708,7 @@
       "skills": [
         {
           "key": "s1",
-          "title": "通常攻撃·雲来古剣法",
+          "title": "雲来古剣法",
           "description": "",
           "abilities": [
             {
@@ -3706,7 +3850,7 @@
       "skills": [
         {
           "key": "s1",
-          "title": "通常攻撃·源流",
+          "title": "源流",
           "description": "",
           "abilities": [
             {
@@ -3800,8 +3944,8 @@
       "passives": [
         {
           "key": "p1",
-          "title": "千万の願望",
-          "description": "周囲にいるチーム中キャラクターが元素オーブまたは元素粒子を獲得した時、諸願百目の輪に願力を2層蓄積する。\r\nこの効果は3秒毎に1回のみ発動可能。\r\n",
+          "title": "天下名物狩り",
+          "description": "片手剣と長柄武器を突破する時、消費するモラ-50%。\r\n",
           "descriptions": []
         },
         {
@@ -3815,8 +3959,8 @@
         },
         {
           "key": "p3",
-          "title": "天下名物狩り",
-          "description": "片手剣と長柄武器を突破する時、消費するモラ-50%。\r\n",
+          "title": "千万の願望",
+          "description": "周囲にいるチーム中キャラクターが元素オーブまたは元素粒子を獲得した時、諸願百目の輪に願力を2層蓄積する。\r\nこの効果は3秒毎に1回のみ発動可能。\r\n",
           "descriptions": []
         }
       ],
@@ -3867,7 +4011,7 @@
       "skills": [
         {
           "key": "s1",
-          "title": "通常攻撃·鋼の脊",
+          "title": "鋼の脊",
           "description": "",
           "abilities": [
             {
@@ -4022,7 +4166,7 @@
       "skills": [
         {
           "key": "s1",
-          "title": "通常攻撃·教会槍術",
+          "title": "教会槍術",
           "description": "",
           "abilities": [
             {
@@ -4144,7 +4288,7 @@
       "skills": [
         {
           "key": "s1",
-          "title": "通常攻撃·水の常形",
+          "title": "水の常形",
           "description": "",
           "abilities": [
             {
@@ -4295,7 +4439,7 @@
       "skills": [
         {
           "key": "s1",
-          "title": "通常攻撃·忍刀·終末番",
+          "title": "忍刀·終末番",
           "description": "",
           "abilities": [
             {
@@ -4458,6 +4602,93 @@
       ]
     },
     {
+      "key": "shenhe",
+      "name": "Shenhe",
+      "title": "？？？",
+      "description": "",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ]
+    },
+    {
       "key": "sucrose",
       "name": "スクロース",
       "title": "無害の甘味",
@@ -4465,7 +4696,7 @@
       "skills": [
         {
           "key": "s1",
-          "title": "通常攻撃·簡式風霊作成",
+          "title": "簡式風霊作成",
           "description": "",
           "abilities": [
             {
@@ -4596,12 +4827,12 @@
           "description": "",
           "abilities": [
             {
-              "name": "Normal Attack",
+              "name": "通常攻撃",
               "description": "最大6段の連続射撃を行う。\r\n",
               "descriptions": []
             },
             {
-              "name": "Charged Attack",
+              "name": "重撃",
               "description": "ダメージがより高く、より精確な狙い撃ちを発動する。\r\n照準時、水元素の力が矢先に集まる。激流を込めた矢が敵に命中する時に水元素ダメージを与え、断流効果を付与する。\r\n",
               "descriptions": []
             },
@@ -4775,7 +5006,7 @@
       "skills": [
         {
           "key": "s1",
-          "title": "通常攻撃·瞬破槍勢",
+          "title": "瞬破槍勢",
           "description": "",
           "abilities": [
             {
@@ -4808,14 +5039,14 @@
         {
           "key": "s2",
           "title": "烈炎侍立",
-          "description": "地に刺した槍を支点とし、烈炎の力を注いで素早く蹴りを繰り出す。炎元素範囲ダメージを与え、身を守る烈炎侍立シールドを召喚する。そして同時に、トーマ自身に炎元素付着を与える。\r\nシールドのダメージ吸収量はトーマのHP上限によって決まる。\r\n烈炎侍立シールドは以下の特性を持つ。\r\n",
+          "description": "地に刺した槍を支点とし、烈炎の力を注いで素早く蹴りを繰り出す。炎元素範囲ダメージを与え、身を守る烈炎侍立シールドを召喚する。スキル発動の瞬間、トーマ自身に炎元素付着を与える。\r\nシールドのダメージ吸収量はトーマのHP上限によって決まる。\r\n烈炎侍立シールドは以下の特性を持つ。\r\n",
           "abilities": [
             {
               "name": "",
               "description": "",
               "descriptions": [
                 "炎元素ダメージに対して250%の吸収効果がある。",
-                "シールドの残りダメージ吸収量は、新しく烈炎侍立シールドを獲得した時に重ね掛けされ、持続時間が更新される。",
+                "シールドの残りダメージ吸収量は、新しく烈炎侍立シールドを獲得した時に重ね掛けされ、継続時間が更新される。",
                 "シールドのダメージ吸収量は、トーマのHP上限の一定割合を超えることはできない。"
               ]
             }
@@ -4835,10 +5066,10 @@
           "abilities": [
             {
               "name": "熾炎の大鎧",
-              "description": "熾炎の大鎧効果にあるフィールド上でキャラクターが通常攻撃を行う時、熾炎崩滅を発動し、炎元素範囲ダメージを与え、身を守る烈炎侍立シールドを生成する。\r\n熾炎崩滅は1秒毎に1回のみ発動可能。\r\n生成したシールドはダメージ吸収量以外、元素スキル「烈炎侍立」のシールドと同じ特性を持つ。\r\n",
+              "description": "熾炎の大鎧効果にあるフィールド上キャラクターが通常攻撃を行う時、熾炎崩滅を発動し、炎元素範囲ダメージを与え、身を守る烈炎侍立シールドを生成する。\r\n熾炎崩滅は1秒毎に1回のみ発動可能。\r\n生成したシールドはダメージ吸収量以外、元素スキル「烈炎侍立」のシールドと同じ特性を持つ。\r\n",
               "descriptions": [
                 "炎元素ダメージに対して250%の吸収効果がある。",
-                "シールドの残りダメージ吸収量は、新しく烈炎侍立シールドを獲得した時に重ね掛けされ、持続時間が更新される。",
+                "シールドの残りダメージ吸収量は、新しく烈炎侍立シールドを獲得した時に重ね掛けされ、継続時間が更新される。",
                 "シールドのダメージ吸収量は、トーマのHP上限の一定割合を超えることはできない。",
                 "トーマが戦闘不能になった時、熾炎の大鎧の効果がクリアされる。"
               ]
@@ -4846,7 +5077,7 @@
           ],
           "stats": [
             "スキルダメージ|{param1}%",
-            "熾炎崩壊ダメージ|{param2}%",
+            "熾炎崩滅ダメージ|{param2}%",
             "シールド吸収量|{param3}% HP上限+ {param4}",
             "シールド継続時間|{param5} 秒",
             "熾炎の大鎧継続時間|{param6} 秒",
@@ -4859,27 +5090,27 @@
         {
           "key": "p1",
           "title": "懸鯛狩り",
-          "description": "稲妻地域で釣りをする時、20%の確率で魚を2倍獲得する。\r\n",
+          "description": "旅人が稲妻地域で釣りに成功した時、トーマの協力によって20%の確率で魚を2倍獲得する。\r\n",
           "descriptions": []
         },
         {
           "key": "p2",
           "title": "重装甲胄",
-          "description": "フィールド上キャラクターが烈炎侍立のシールドを獲得または更新した時、シールド強化+5%、継続時間6秒。\r\nこの効果は0.3秒毎に1回のみ発動可能、最大5重まで。\r\n",
+          "description": "フィールド上キャラクターが烈炎侍立シールドを獲得または更新した時、シールド強化+5%、継続時間6秒。\r\nこの効果は0.3秒毎に1回のみ発動可能、最大5重まで。\r\n",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "進撃の烈火",
-          "description": "真紅熾炎の大鎧熾炎崩壊によるダメージがトーマのHP上限2.2%分アップする。\r\n",
+          "title": "進撃の烈炎",
+          "description": "真紅熾炎の大鎧の熾炎崩滅によるダメージがトーマのHP上限2.2%分アップする。\r\n",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "同胞の義理",
-          "description": "烈炎侍立のシールドがトーマ以外のキャラクターの代わりにダメージを受けた時、トーマ自身の烈炎侍立のクールタイム-3秒、真紅熾炎の大鎧のクールタイム-3秒。\r\nこの効果は20秒毎に1回のみ発動可能。\r\n",
+          "title": "同袍の義理",
+          "description": "トーマ自身の烈炎侍立シールドに守られたキャラクター（トーマ自身を除く）が攻撃を受けた時、トーマ自身の烈炎侍立のクールタイム-3秒、真紅熾炎の大鎧のクールタイム-3秒。\r\nこの効果は20秒毎に1回のみ発動可能。\r\n",
           "descriptions": []
         },
         {
@@ -4909,7 +5140,7 @@
         {
           "key": "c6",
           "title": "燃え立つ誠心",
-          "description": "烈炎侍立のシールドを獲得または更新した時、チーム全員の通常攻撃、重撃及び落下攻撃ダメージ+15%、継続時間6秒。\r\n",
+          "description": "烈炎侍立シールドを獲得または更新した時、チーム全員の通常攻撃、重撃及び落下攻撃ダメージ+15%、継続時間6秒。\r\n",
           "descriptions": []
         }
       ]
@@ -4922,7 +5153,7 @@
       "skills": [
         {
           "key": "s1",
-          "title": "通常攻撃·異邦の鉄風",
+          "title": "異邦の鉄風",
           "description": "",
           "abilities": [
             {
@@ -5059,7 +5290,7 @@
       "skills": [
         {
           "key": "s1",
-          "title": "通常攻撃·異邦の驚雷",
+          "title": "異邦の驚雷",
           "description": "",
           "abilities": [
             {
@@ -5195,7 +5426,7 @@
       "skills": [
         {
           "key": "s1",
-          "title": "通常攻撃·異邦の岩峰",
+          "title": "異邦の岩峰",
           "description": "",
           "abilities": [
             {
@@ -5317,7 +5548,7 @@
       "skills": [
         {
           "key": "s1",
-          "title": "通常攻撃·神代の射術",
+          "title": "神代の射術",
           "description": "",
           "abilities": [
             {
@@ -5459,7 +5690,7 @@
       "skills": [
         {
           "key": "s1",
-          "title": "通常攻撃·料理技法",
+          "title": "料理技法",
           "description": "",
           "abilities": [
             {
@@ -5583,7 +5814,7 @@
       "skills": [
         {
           "key": "s1",
-          "title": "通常攻撃·微塵突進",
+          "title": "微塵突進",
           "description": "",
           "abilities": [
             {
@@ -5718,7 +5949,7 @@
       "skills": [
         {
           "key": "s1",
-          "title": "通常攻撃·古華剣法",
+          "title": "古華剣法",
           "description": "",
           "abilities": [
             {
@@ -5863,7 +6094,7 @@
       "skills": [
         {
           "key": "s1",
-          "title": "通常攻撃·炎舞",
+          "title": "炎舞",
           "description": "",
           "abilities": [
             {
@@ -6003,7 +6234,7 @@
       "skills": [
         {
           "key": "s1",
-          "title": "通常攻撃·封蝋の印",
+          "title": "封蝋の印",
           "description": "",
           "abilities": [
             {
@@ -6061,11 +6292,11 @@
           ],
           "stats": [
             "スキルダメージ|{param1}%",
-            "丹火の印付与間隔|{param2}%",
-            "重撃ダメージアップ|{param3}s",
-            "継続時間|{param4}%",
+            "丹火の印付与間隔|{param2}s",
+            "重撃ダメージアップ|{param3}%",
+            "継続時間|{param4}s",
             "クールタイム|{param5}s",
-            "元素エネルギー|{param6}s"
+            "元素エネルギー|{param6}"
           ]
         }
       ],
@@ -6136,7 +6367,7 @@
       "skills": [
         {
           "key": "s1",
-          "title": "通常攻撃·打ち上げ花火",
+          "title": "打ち上げ花火",
           "description": "",
           "abilities": [
             {
@@ -6268,6 +6499,93 @@
       ]
     },
     {
+      "key": "yun-jin",
+      "name": "Yun Jin",
+      "title": "？？？",
+      "description": "",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ]
+    },
+    {
       "key": "zhongli",
       "name": "鍾離",
       "title": "浮世閑歩",
@@ -6275,7 +6593,7 @@
       "skills": [
         {
           "key": "s1",
-          "title": "通常攻撃·岩雨",
+          "title": "岩雨",
           "description": "",
           "abilities": [
             {
@@ -6586,6 +6904,18 @@
         "炎元素または雷元素の影響を受けた敵に対するダメージ+{color}18{/color}%。",
         "炎元素または雷元素の影響を受けた敵に対するダメージ+{color}21{/color}%。",
         "炎元素または雷元素の影響を受けた敵に対するダメージ+{color}24{/color}%。"
+      ]
+    },
+    {
+      "key": "cinnabar-spindle",
+      "name": "シナバースピンドル",
+      "description": "この世のものとは思えない物質で作られた剣。これに宿る力は、龍さえも侵食する腐植の毒にも対抗できるだろう。",
+      "refinements": [
+        "元素スキルダメージが防御力{color}40{/color}%分アップする。この効果は1.5秒毎に1回のみ発動可能で、元素スキルがダメージを与えた0.1秒後にクリアされる。",
+        "元素スキルダメージが防御力{color}50{/color}%分アップする。この効果は1.5秒毎に1回のみ発動可能で、元素スキルがダメージを与えた0.1秒後にクリアされる。",
+        "元素スキルダメージが防御力{color}60{/color}%分アップする。この効果は1.5秒毎に1回のみ発動可能で、元素スキルがダメージを与えた0.1秒後にクリアされる。",
+        "元素スキルダメージが防御力{color}70{/color}%分アップする。この効果は1.5秒毎に1回のみ発動可能で、元素スキルがダメージを与えた0.1秒後にクリアされる。",
+        "元素スキルダメージが防御力{color}80{/color}%分アップする。この効果は1.5秒毎に1回のみ発動可能で、元素スキルがダメージを与えた0.1秒後にクリアされる。"
       ]
     },
     {
@@ -7111,6 +7441,18 @@
       ]
     },
     {
+      "key": "mouuns-moon",
+      "name": "曚雲の月",
+      "description": "螺鈿と珊瑚でできた精巧な弓。月色の弓幹には凄然たる光沢を放っている。",
+      "refinements": [
+        "チーム全員の元素エネルギー上限の合計を基に、元素爆発ダメージをアップさせる。1ポイントにつき、装備したキャラクターの元素爆発ダメージ+{color}0.12{/color}%。この方式でアップできる元素爆発ダメージは最大{color}40{/color}%まで。",
+        "チーム全員の元素エネルギー上限の合計を基に、元素爆発ダメージをアップさせる。1ポイントにつき、装備したキャラクターの元素爆発ダメージ+{color}0.15{/color}%。この方式でアップできる元素爆発ダメージは最大{color}50{/color}%まで。",
+        "チーム全員の元素エネルギー上限の合計を基に、元素爆発ダメージをアップさせる。1ポイントにつき、装備したキャラクターの元素爆発ダメージ+{color}0.18{/color}%。この方式でアップできる元素爆発ダメージは最大{color}60{/color}%まで。",
+        "チーム全員の元素エネルギー上限の合計を基に、元素爆発ダメージをアップさせる。1ポイントにつき、装備したキャラクターの元素爆発ダメージ+{color}0.21{/color}%。この方式でアップできる元素爆発ダメージは最大{color}70{/color}%まで。",
+        "チーム全員の元素エネルギー上限の合計を基に、元素爆発ダメージをアップさせる。1ポイントにつき、装備したキャラクターの元素爆発ダメージ+{color}0.24{/color}%。この方式でアップできる元素爆発ダメージは最大{color}80{/color}%まで。"
+      ]
+    },
+    {
       "key": "old-mercs-pal",
       "name": "傭兵の重剣",
       "description": "重くてしっかりしている古い大剣、戦火と歳月の洗練を経た優れもの。",
@@ -7272,6 +7614,18 @@
         "敵を倒したとき、HPを{color}12{/color}%回復する。",
         "敵を倒したとき、HPを{color}14{/color}%回復する。",
         "敵を倒したとき、HPを{color}16{/color}%回復する。"
+      ]
+    },
+    {
+      "key": "redhorn-stonethresher",
+      "name": "赤角石塵滅砕",
+      "description": "かつての持ち主によると、これはあらゆる魑魅魍魎を打ち払うことのできる金剛杵——「赤角石塵滅砕金塗金嚼獅子」だそうだ。",
+      "refinements": [
+        "防御力+{color}28{/color}%。通常攻撃と重撃ダメージが防御力{color}40{/color}%分アップする。",
+        "防御力+{color}35{/color}%。通常攻撃と重撃ダメージが防御力{color}50{/color}%分アップする。",
+        "防御力+{color}42{/color}%。通常攻撃と重撃ダメージが防御力{color}60{/color}%分アップする。",
+        "防御力+{color}49{/color}%。通常攻撃と重撃ダメージが防御力{color}70{/color}%分アップする。",
+        "防御力+{color}56{/color}%。通常攻撃と重撃ダメージが防御力{color}80{/color}%分アップする。"
       ]
     },
     {
@@ -7769,6 +8123,18 @@
       "refinements": []
     },
     {
+      "key": "wavebreakers-fin",
+      "name": "斬波のひれ長",
+      "description": "海淵の底にある光り輝く素材によって作り上げられた薙刀。かつては天狗一族が所有していた。",
+      "refinements": [
+        "チーム全員の元素エネルギー上限の合計を基に、元素爆発ダメージをアップさせる。1ポイントにつき、装備したキャラクターの元素爆発ダメージ+{color}0.12{/color}%。この方式でアップできる元素爆発ダメージは最大{color}40{/color}%まで。",
+        "チーム全員の元素エネルギー上限の合計を基に、元素爆発ダメージをアップさせる。1ポイントにつき、装備したキャラクターの元素爆発ダメージ+{color}0.15{/color}%。この方式でアップできる元素爆発ダメージは最大{color}50{/color}%まで。",
+        "チーム全員の元素エネルギー上限の合計を基に、元素爆発ダメージをアップさせる。1ポイントにつき、装備したキャラクターの元素爆発ダメージ+{color}0.18{/color}%。この方式でアップできる元素爆発ダメージは最大{color}60{/color}%まで。",
+        "チーム全員の元素エネルギー上限の合計を基に、元素爆発ダメージをアップさせる。1ポイントにつき、装備したキャラクターの元素爆発ダメージ+{color}0.21{/color}%。この方式でアップできる元素爆発ダメージは最大{color}70{/color}%まで。",
+        "チーム全員の元素エネルギー上限の合計を基に、元素爆発ダメージをアップさせる。1ポイントにつき、装備したキャラクターの元素爆発ダメージ+{color}0.24{/color}%。この方式でアップできる元素爆発ダメージは最大{color}80{/color}%まで。"
+      ]
+    },
+    {
       "key": "white-iron-greatsword",
       "name": "白鉄の大剣",
       "description": "白鉄でできた両手剣、重量と強度を兼ね備えている。普通の腕力でも簡単に振ることができ、力の強い人が持つと威力が更に倍増する。",
@@ -7939,6 +8305,14 @@
       ]
     },
     {
+      "key": "husk-of-opulent-dreams",
+      "name": "華館夢醒形骸記",
+      "bonus": [
+        "防御力+30%。",
+        "この聖遺物セットを装備したキャラクターは、以下の状況において「問答」効果を獲得する。「問答」効果：フィールドで岩元素攻撃が敵に命中すると、0.3秒毎に1層のみ獲得できる。待機中の場合、3秒毎に1層獲得する。重ね掛けできる「問答」は最大4層までとなり、1層につき防御力+6%、岩元素ダメージ+6%。6秒毎に「問答」効果を獲得していない場合は、1層失う。"
+      ]
+    },
+    {
       "key": "instructor",
       "name": "教官",
       "bonus": [
@@ -7984,6 +8358,14 @@
       "bonus": [
         "元素爆発のダメージ+20%。",
         "元素爆発を発動すると、チーム全員の攻撃力+20%、継続時間12秒、重ねがけ不可。"
+      ]
+    },
+    {
+      "key": "ocean-hued-clam",
+      "name": "海染硨磲",
+      "bonus": [
+        "与える治療効果+15%。",
+        "この聖遺物セットを装備したキャラクターがチーム内のキャラクターに治療を行うと、治療によるHP回復量（HP上限を超えた回復量も含む）を記録する海染の泡を生成する。海染の泡は3秒継続する。継続時間終了時、海染の泡は破裂し、周囲の敵に記録した回復量の90%分のダメージを与える（このダメージは感電や超電導などの元素反応と同じように計算されるが、元素熟知、キャラクターLv、または元素反応のダメージアップ効果の影響は受けない）。海染の泡は3.5秒毎に1回のみ生成可能。海染の泡が記録できる回復量は最大30000までとなり、HP上限超過分の回復量を含む。チーム内で、海染の泡は同時に最大1つまで存在できる。この聖遺物セットを装備したキャラクターは待機中でも、この効果を発動できる。"
       ]
     },
     {
@@ -9171,6 +9553,11 @@
       "description": "テイワットで特に見られる作物。何度食べても飽きない、空腹を満たしてくれる最高の食材。"
     },
     {
+      "key": "riftborn-regalia",
+      "name": "獣域王器",
+      "description": "王獣を倒すと入手した折れた角。追放された後、この世に存在すべきではないもの。\r\n獣域ウルブズの中で帝王と呼ばれていても、魔獣たちの系譜では、その兄たちの万分の一にも満たないだろう。\r\n「黄金」は無数の獣域ウルブズを捨て紙のように圧縮して偶然にできた異形の魔獣。その角には、黒いウルブズを命じて自分のために空間を溶かす権威が秘めている。"
+    },
+    {
       "key": "ring-of-boreas",
       "name": "北風のリング",
       "description": "北風の王狼の体から取ったごくわずかな氷。\r\nこの大地はかつて北風に吹かれ、氷霜に包まれていた。砂利のような氷と雪は寒風の中で叫び、肌を裂き、血を固まらせる。今の北風の王狼の力は昔より劣るが、大地を凍らせるほどの力はまだある。"
@@ -9573,25 +9960,25 @@
   ],
   "debuffs": [
     {
-      "key": "Engulfing Storm",
+      "key": "engulfing-storm",
       "name": "嗜欲の雷",
       "effect": "持続的に、元素エネルギーが減少する。",
       "description": null
     },
     {
-      "key": "Slowing Water",
+      "key": "slowing-water",
       "name": "停滞の水",
       "effect": "スキルクールタイムが大幅に延長する。",
       "description": null
     },
     {
-      "key": "Smoldering Flames",
+      "key": "smoldering-flames",
       "name": "陰燃の炎",
       "effect": "継続的に炎ダメージを受ける。",
       "description": null
     },
     {
-      "key": "Condensed Ice",
+      "key": "condensed-ice",
       "name": "凝結の氷",
       "effect": "スタミナの消費が大幅に増加。",
       "description": null
@@ -9599,99 +9986,111 @@
   ],
   "reactions": [
     {
-      "key": "Burning",
-      "name": "燃焼",
-      "effect": "継続的な炎ダメージを与える。",
-      "description": null
-    },
-    {
-      "key": "Crystalize",
-      "name": "結晶化",
-      "effect": "対応の元素シールドを一定時間付与する。",
-      "description": null
-    },
-    {
-      "key": "Electro-Charged",
-      "name": "感電",
-      "effect": "継続的な雷ダメージを与える。",
-      "description": null
-    },
-    {
-      "key": "Frozen",
-      "name": "凍結",
-      "effect": "一定時間行動不能にする。",
-      "description": null
-    },
-    {
-      "key": "Melt",
-      "name": "溶解",
-      "effect": "反応による追加ダメージを与える。",
-      "description": null
-    },
-    {
-      "key": "Overloaded",
-      "name": "過負荷",
-      "effect": "爆発による炎の範囲ダメージを与える。",
-      "description": null
-    },
-    {
-      "key": "Superconduct",
-      "name": "超電導",
-      "effect": "氷の範囲ダメージを与え、一定時間防御力を下げる。",
-      "description": null
-    },
-    {
-      "key": "Swirl",
-      "name": "拡散",
-      "effect": "対象の元素によるダメージを与え、周りに元素の効果を発生させる。",
-      "description": null
-    },
-    {
-      "key": "Vaporize",
+      "key": "vaporize",
       "name": "蒸発",
-      "effect": "反応による追加ダメージを与える。",
+      "effect": "「炎元素」と「水元素」が接触すると、「蒸発」反応が発生します。蒸発反応が発生した後、元にあった水元素または炎元素は蒸気と共に気化します…",
+      "description": null
+    },
+    {
+      "key": "burning",
+      "name": "燃焼",
+      "effect": "「炎元素」と「草元素」が接触すると、「燃焼」反応が発生します…燃焼反応は持続的に炎元素ダメージを与えます。",
+      "description": null
+    },
+    {
+      "key": "overloaded",
+      "name": "過負荷",
+      "effect": "「炎元素」と「雷元素」が接触すると、「過負荷」反応が発生します。過負荷反応は激しい爆発を起こし、炎元素範囲ダメージを与えます。また爆発は堅い物体を簡単に壊すことができるようです…",
+      "description": null
+    },
+    {
+      "key": "melt",
+      "name": "溶解",
+      "effect": "「氷元素」と「炎元素」が接触すると、「溶解」反応が発生します。溶解反応が発生した後、元にあった氷元素または炎元素は反応と共に消えていきます…",
+      "description": null
+    },
+    {
+      "key": "vaporize-reverse",
+      "name": "蒸発 (Reverse)",
+      "effect": "「蒸発」反応自体ダメージはありませんが、「炎元素」または「水元素」の攻撃によって蒸発が発生すると、一定の比率で該当攻撃の与えるダメージがアップします…",
+      "description": null
+    },
+    {
+      "key": "electro-charged",
+      "name": "感電",
+      "effect": "「雷元素」と「水元素」が接触すると、「感電」反応が発生し、発生期間中は雷元素ダメージを持続的に与えます。",
+      "description": null
+    },
+    {
+      "key": "frozen",
+      "name": "凍結",
+      "effect": "「氷元素」と「水元素」が接触すると、「凍結」反応が発生します。生物が凍結状態になると行動不能になり、硬くなります…",
+      "description": null
+    },
+    {
+      "key": "swirl",
+      "name": "拡散",
+      "effect": "「風元素」が一部の元素と接触すると、「拡散」が発生する可能性があります。拡散は元素ダメージを与え、付着または他の反応を起こすことができます。",
+      "description": null
+    },
+    {
+      "key": "superconduct",
+      "name": "超電導",
+      "effect": "「氷元素」と「雷元素」が接触すると、「超電導」反応が発生します…超電導反応は氷元素範囲ダメージを与え、影響を受けた生物の物理耐性を大幅に減少させます。",
+      "description": null
+    },
+    {
+      "key": "melt-reverse",
+      "name": "溶解 (Reverse)",
+      "effect": "「溶解」反応自体ダメージはありませんが、「炎元素」または「氷元素」攻撃によって溶解が発生すると、一定の比率で該当攻撃の与えるダメージがアップします…",
+      "description": null
+    },
+    {
+      "key": "crystallize",
+      "name": "結晶化",
+      "effect": "「岩元素」が水/炎/氷/雷元素と接触する時、「結晶」反応が起こります！",
       "description": null
     }
   ],
   "resonance": [
     {
-      "key": "Enduring Rock",
+      "key": "enduring-rock",
       "name": "不動の岩",
       "effect": "シールド強化+15%。また、キャラクターがシールド状態の時、以下の効果を得る。与えるダメージ+15%。敵にダメージを与えた時、敵の岩元素耐性-20%、継続時間15秒。",
       "description": null
     },
     {
-      "key": "Fervent Flames",
+      "key": "fervent-flames",
       "name": "誠意の炎",
       "effect": "氷元素付着の効果継続時間-40%。攻撃力+25%。",
       "description": null
     },
     {
-      "key": "Soothing Waters",
+      "key": "soothing-waters",
       "name": "治癒の水",
       "effect": "炎元素付着の継続時間-40%。被回復量+30%。",
       "description": null
     },
     {
-      "key": "Impetuous Winds",
+      "key": "impetuous-winds",
       "name": "迅速の風",
       "effect": "スタミナ消費-15%、移動速度+10%、元素スキルのクールタイム-5%。",
       "description": null
     },
     {
-      "key": "High Voltage",
+      "key": "high-voltage",
       "name": "強権の雷",
       "effect": "水元素付着の継続時間-40%。超電導、過負荷または感電反応を起こした時、100%の確率で雷元素粒子を生成する、クールタイム5秒。",
       "description": null
     },
     {
-      "key": "Shattering Ice",
+      "key": "shattering-ice",
       "name": "粉砕の氷",
       "effect": "雷元素付着の継続時間-40%。氷元素付着または凍結状態の敵を攻撃する時、会心率+15%。",
       "description": null
     },
     {
-      "key": "Protective Canopy",
+      "key": "protective-canopy",
       "name": "交錯の護り",
       "effect": "全元素耐性+15%。物理的耐性+15%",
       "description": "任意の異なる4種類の元素"

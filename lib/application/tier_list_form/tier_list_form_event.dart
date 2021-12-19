@@ -5,6 +5,4 @@ class TierListFormEvent with _$TierListFormEvent {
   const factory TierListFormEvent.nameChanged({
     required String name,
   }) = _NameChanged;
-
-  const factory TierListFormEvent.close() = _Close;
 }

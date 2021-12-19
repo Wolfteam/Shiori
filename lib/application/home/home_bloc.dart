@@ -38,10 +38,9 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     final weaponMaterials = _genshinService.getWeaponAscensionMaterials(day);
     final charsForBirthday = _genshinService
         .getCharactersForBirthday(DateTime.now())
-        .map((e) => ItemCommon(
-              e.key,
-              Assets.getCharacterPath(e.image),
-            ))
+        .map(
+          (e) => ItemCommon(e.key, Assets.getCharacterPath(e.image)),
+        )
         .toList();
     final dayName = _localeService.getDayNameFromDay(day);
 

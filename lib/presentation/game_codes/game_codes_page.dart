@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:pull_to_refresh/pull_to_refresh.dart';
 import 'package:shiori/application/bloc.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/generated/l10n.dart';
+import 'package:shiori/injection.dart';
 import 'package:shiori/presentation/shared/dialogs/info_dialog.dart';
 import 'package:shiori/presentation/shared/item_description_detail.dart';
 import 'package:shiori/presentation/shared/loading.dart';
 import 'package:shiori/presentation/shared/mixins/app_fab_mixin.dart';
 import 'package:shiori/presentation/shared/nothing_found_column.dart';
+import 'package:shiori/presentation/shared/styles.dart';
 import 'package:shiori/presentation/shared/utils/toast_utils.dart';
-import 'package:pull_to_refresh/pull_to_refresh.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import 'widgets/game_code_list_item.dart';
@@ -27,39 +29,45 @@ class _GameCodesPageState extends State<GameCodesPage> with SingleTickerProvider
   @override
   Widget build(BuildContext context) {
     final s = S.of(context);
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(s.gameCodes),
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.open_in_new),
-            onPressed: () => _launchUrl('https://genshin.mihoyo.com/en/gift'),
-          ),
-          BlocBuilder<GameCodesBloc, GameCodesState>(
-            builder: (ctx, state) => IconButton(
-              icon: const Icon(Icons.refresh),
-              onPressed: state.isBusy ? null : () => context.read<GameCodesBloc>().add(const GameCodesEvent.refresh()),
+    return BlocProvider<GameCodesBloc>(
+      create: (ctx) => Injection.gameCodesBloc..add(const GameCodesEvent.init()),
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text(s.gameCodes),
+          actions: [
+            IconButton(
+              icon: const Icon(Icons.open_in_new),
+              splashRadius: Styles.mediumButtonSplashRadius,
+              onPressed: () => _launchUrl('https://genshin.mihoyo.com/en/gift'),
             ),
-          ),
-          IconButton(
-            icon: const Icon(Icons.info),
-            onPressed: () => _showInfoDialog(context),
-          ),
-        ],
-      ),
-      floatingActionButton: getAppFab(),
-      body: SafeArea(
-        child: BlocConsumer<GameCodesBloc, GameCodesState>(
-          listener: (ctx, state) {
-            if (state.isInternetAvailable == false) {
-              ToastUtils.showWarningToast(ToastUtils.of(context), s.noInternetConnection);
-            }
-          },
-          builder: (ctx, state) => _Layout(
-            working: state.workingGameCodes,
-            expired: state.expiredGameCodes,
-            isBusy: state.isBusy,
-            scrollController: scrollController,
+            BlocBuilder<GameCodesBloc, GameCodesState>(
+              builder: (ctx, state) => IconButton(
+                icon: const Icon(Icons.refresh),
+                splashRadius: Styles.mediumButtonSplashRadius,
+                onPressed: state.isBusy ? null : () => ctx.read<GameCodesBloc>().add(const GameCodesEvent.refresh()),
+              ),
+            ),
+            IconButton(
+              icon: const Icon(Icons.info),
+              splashRadius: Styles.mediumButtonSplashRadius,
+              onPressed: () => _showInfoDialog(context),
+            ),
+          ],
+        ),
+        floatingActionButton: getAppFab(),
+        body: SafeArea(
+          child: BlocConsumer<GameCodesBloc, GameCodesState>(
+            listener: (ctx, state) {
+              if (state.isInternetAvailable == false) {
+                ToastUtils.showWarningToast(ToastUtils.of(ctx), s.noInternetConnection);
+              }
+            },
+            builder: (ctx, state) => _Layout(
+              working: state.workingGameCodes,
+              expired: state.expiredGameCodes,
+              isBusy: state.isBusy,
+              scrollController: scrollController,
+            ),
           ),
         ),
       ),
@@ -193,7 +201,7 @@ class __PortraitLayoutState extends State<_PortraitLayout> {
                   margin: const EdgeInsets.only(top: 10),
                   child: ItemDescriptionDetail(
                     title: s.workingCodes,
-                    textColor: Theme.of(context).accentColor,
+                    textColor: Theme.of(context).colorScheme.secondary,
                     body: Container(),
                   ),
                 ),
@@ -208,7 +216,7 @@ class __PortraitLayoutState extends State<_PortraitLayout> {
               SliverToBoxAdapter(
                 child: ItemDescriptionDetail(
                   title: s.expiredCodes,
-                  textColor: Theme.of(context).accentColor,
+                  textColor: Theme.of(context).colorScheme.secondary,
                   body: Container(),
                 ),
               ),
@@ -282,7 +290,7 @@ class __LandScapeLayoutState extends State<_LandScapeLayout> {
                       margin: const EdgeInsets.only(top: 10),
                       child: ItemDescriptionDetail(
                         title: s.workingCodes,
-                        textColor: Theme.of(context).accentColor,
+                        textColor: Theme.of(context).colorScheme.secondary,
                         body: Container(),
                       ),
                     ),
@@ -310,7 +318,7 @@ class __LandScapeLayoutState extends State<_LandScapeLayout> {
                       margin: const EdgeInsets.only(top: 10),
                       child: ItemDescriptionDetail(
                         title: s.expiredCodes,
-                        textColor: Theme.of(context).accentColor,
+                        textColor: Theme.of(context).colorScheme.secondary,
                         body: Container(),
                       ),
                     ),

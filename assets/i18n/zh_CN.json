@@ -419,93 +419,159 @@
     },
     {
       "key": "arataki-itto",
-      "name": "Arataki Itto",
-      "title": "Hanamizaka Heroics",
-      "description": "The first and greatest head of the Arataki Gang, famed throughout Hanamizaka in Inazuma City... Wait, what? Never heard of them? Seriously?",
+      "name": "荒泷一斗",
+      "title": "花坂豪快",
+      "description": "活跃在稻妻城花见坂的「荒泷派」初代目头领。什么，从没听说过荒泷派？你是想找茬吗？",
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "普通攻击· 喧哗屋传说",
+          "description": "",
+          "abilities": [
+            {
+              "name": "普通攻击",
+              "description": "进行至多四段的连续挥砍。\r\n在第二段与第四段攻击命中敌人时，会分别产生1层与2层「乱神之怪力」效果。\r\n最多拥有5层乱神之怪力，每次触发都会刷新已有的乱神之怪力持续时间。\r\n",
+              "descriptions": [
+                "此外，施放元素战技「魔杀绝技  赤牛发破！」或进行冲刺后的一小段时间内，普通攻击连击段数不会重置。"
+              ]
+            },
+            {
+              "name": "重击",
+              "description": "长按进行重击时，若拥有乱神之怪力，将进行不消耗体力的「荒泷逆袈裟」斩击。荒泷逆袈裟的每次攻击都将消耗一层乱神之怪力；消耗最后一层时，将施展格外强力的终结一击。\r\n没有乱神之怪力时，将消耗体力，进行一次猛烈的左一文字斩。\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "下落攻击",
+              "description": "从空中下坠冲击地面，攻击下落路径上的敌人，并在落地时造成范围伤害。",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "一段伤害|{param1}%",
+            "二段伤害|{param2}%",
+            "三段伤害|{param3}%",
+            "四段伤害|{param4}%",
+            "荒泷逆袈裟连斩伤害|{param5}%",
+            "荒泷逆袈裟终结伤害|{param6}%",
+            "乱神之怪力持续时间|{param7}s",
+            "左一文字斩伤害|{param8}%",
+            "左一文字斩体力消耗|{param9}",
+            "下坠期间伤害|{param10}%",
+            "低空/高空坠地冲击伤害|{param11}% / {param12}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "魔杀绝技·赤牛发破！",
+          "description": "将荒泷派编外成员小赤牛「阿丑」高速投掷出去，对命中的敌人造成岩元素伤害！「阿丑」命中敌人时，会为荒泷一斗提供1层「乱神之怪力」效果。\r\n「阿丑」会留在场上提供支援：\r\n• 持续嘲讽周围的敌人，吸引火力；",
+          "abilities": [
+            {
+              "name": "",
+              "description": "",
+              "descriptions": [
+                "耐久度按比例继承荒泷一斗的生命值上限；",
+                "受到伤害时，会为荒泷一斗自己提供1层「乱神之怪力」效果。每2秒至多通过这种方式提供1层；",
+                "耐久度耗尽或持续时间结束时会逃走，并在离开时为荒泷一斗自己提供1层「乱神之怪力」效果。"
+              ]
+            },
+            {
+              "name": "长按",
+              "description": "调整投掷方向。\r\n「阿丑」被视为岩元素创造物；同时只能存在一个由荒泷一斗自己召唤的「阿丑」。\r\n",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "技能伤害|{param1}%",
+            "继承生命|{param2}%",
+            "持续时间|{param3}s",
+            "冷却时间|{param4}s"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "最恶鬼王·一斗轰临！！",
+          "description": "是时候展现荒泷派的一斗之威名了！在接下来的一段时间内化身「怒目鬼王」，使用鬼王金碎棒战斗。\r\n具有如下特性：\r\n",
+          "abilities": [
+            {
+              "name": "",
+              "description": "",
+              "descriptions": [
+                "普通攻击、重击与下落攻击造成的伤害转为无法被附魔覆盖的岩元素伤害；",
+                "提高荒泷一斗普通攻击的攻击速度，并基于其防御力，提高攻击力；",
+                "第一与第三段攻击在命中敌人时，将为荒泷一斗自己提供1层「乱神之怪力」效果；",
+                "荒泷一斗的所有元素抗性与物理抗性降低20%。",
+                "「怒目鬼王」状态将在荒泷一斗退场时解除。"
+              ]
+            }
+          ],
+          "stats": [
+            "攻击力提高|{param1}% DEF",
+            "攻击速度提高|{param2}%",
+            "持续时间|{param3}s",
+            "冷却时间|{param4}s",
+            "元素能量|{param5}"
+          ]
         }
       ],
       "passives": [
         {
-          "key": "p3",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
-        },
-        {
-          "key": "p4",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
-        },
-        {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "干裂枝碎",
+          "description": "队伍中自己的角色通过攻击树木获取木材时，有25%的几率获得额外的木材。\r\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
+          "title": "荒泷第一",
+          "description": "荒泷一斗施展连续的「荒泷逆袈裟」时，获得以下效果：\r\n",
+          "descriptions": [
+            "每次斩击都将使接下来的斩击攻击速度提升10%，通过这种方法至多提升30%；",
+            "提升抗打断能力。",
+            "这些效果将在连续施展结束时消失。"
+          ]
+        },
+        {
+          "key": "p3",
+          "title": "赤鬼之血",
+          "description": "「荒泷逆袈裟」造成的伤害提高，伤害提高值基于荒泷一斗防御力的35%。\r\n",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "倘若不知，我讲你听",
+          "description": "施放最恶鬼王 • 一斗轰临！！后，荒泷一斗获得2层「乱神之怪力」效果。1秒后，荒泷一斗每0.5秒再获得1层「乱神之怪力」效果，持续1.5秒。\r\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "纠集众人，斗倒御岳",
+          "description": "施放最恶鬼王 • 一斗轰临！！后，队伍中每个元素类型为岩元素的角色，都将使其冷却时间减少1.5秒，使荒泷一斗的元素能量恢复6点。\r\n通过这种方式，至多减少4.5秒冷却时间，恢复18点元素能量。\r\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "水陆自在，牛王同行",
+          "description": "魔杀绝技 • 赤牛发破！的技能等级提高3级。\r\n至多提升至15级。\r\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "奉行牢狱，茶饭之所",
+          "description": "最恶鬼王 • 一斗轰临！！施加的「怒目鬼王」状态结束后，附近的队伍中所有角色的防御力提升20%，攻击力提升20%，持续10秒。\r\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "十年花坂，皆知我名",
+          "description": "最恶鬼王 • 一斗轰临！！的技能等级提高3级。\r\n至多提升至15级。\r\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
+          "title": "在下荒泷一斗是也",
+          "description": "荒泷一斗的重击的暴击伤害提高70%；此外，施展「荒泷逆袈裟」时，有50%的几率不消耗「乱神之怪力」。\r\n",
           "descriptions": []
         }
       ]
@@ -1774,88 +1840,161 @@
     },
     {
       "key": "gorou",
-      "name": "Gorou",
-      "title": "Canine Warrior",
-      "description": "The great general of Watatsumi Island's forces. He is deeply trusted by his subordinates.",
+      "name": "五郎",
+      "title": "戎犬锵锵",
+      "description": "海祇岛军的大将，深受部下信赖。",
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "普通攻击·呲牙裂扇箭",
+          "description": "",
+          "abilities": [
+            {
+              "name": "普通攻击",
+              "description": "进行至多四段的连续弓箭射击。\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "重击",
+              "description": "进行伤害更高、更为精准的瞄准射击。\r\n瞄准时，岩晶会在箭矢上持续积聚。聚满了晶岩的箭矢会造成岩元素伤害。\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "下落攻击",
+              "description": "从空中射出箭雨，并迅速下坠冲击地面，在落地时造成范围伤害。",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "一段伤害|{param1}%",
+            "二段伤害|{param2}%",
+            "三段伤害|{param3}%",
+            "四段伤害|{param4}%",
+            "瞄准射击|{param5}%",
+            "满蓄力瞄准射击|{param6}%",
+            "下坠期间伤害|{param7}%",
+            "低空/高空坠地冲击伤害|{param8}% / {param9}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "犬坂吠吠方圆阵",
+          "description": "造成岩元素范围伤害，并立起大将旗指物。\r\n",
+          "abilities": [
+            {
+              "name": "大将旗指物",
+              "description": "依据施放时队伍中元素类型为岩元素的角色数量，为其领域内的当前场上角色赋予如下效果：\r\n",
+              "descriptions": [
+                "一名角色时：「坚牢」：防御力提升；",
+                "二名角色时：「难破」：除上述效果外，提升抗打断能力；",
+                "三名角色时：「摧碎」：除上述效果外，获得岩元素伤害加成。",
+                "同时只能存在一个由五郎自己创造的大将旗指物；角色只能获得一个大将旗指物提供的效果。角色离开领域后，领域的效果将持续2秒。"
+              ]
+            },
+            {
+              "name": "长按",
+              "description": "可以调整技能生效位置。\r\n",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "技能伤害|{param1}%",
+            "防御力提升|{param2}",
+            "岩元素伤害加成|{param3}%",
+            "持续时间|{param4}s",
+            "冷却时间|{param5}s"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "兽牙逐突形胜战法",
+          "description": "展现大将之威，造成岩元素范围伤害，并展开大将威仪之领域，鼓舞身边的战友。\r\n",
+          "abilities": [
+            {
+              "name": "大将威仪",
+              "description": "具有如下特性：\r\n",
+              "descriptions": [
+                "领域拥有等同于元素战技「犬坂吠吠方圆阵」创造的大将旗指物的效果，依据施放时队伍中元素类型为岩元素的角色数量，为其领域内的当前场上角色赋予效果，并且会随着当前场上角色移动；",
+                "每1.5秒，会产生一次岩晶崩破，对领域内一名敌人造成岩元素范围伤害；",
+                "每1.5秒，将领域内1枚结晶反应产生的晶片吸引至当前角色的位置。",
+                "施放时，若场上存在五郎自己的大将旗指物，会将其破坏。此外，在大将威仪的持续期间，五郎自己施放元素战技「犬坂吠吠方圆阵」时，将不会产生大将旗指物。",
+                "五郎倒下时将解除五郎自己的大将威仪效果。"
+              ]
+            }
+          ],
+          "stats": [
+            "技能伤害|{param1}% DEF",
+            "岩晶崩破伤害|{param2}% DEF",
+            "持续时间|{param3}s",
+            "冷却时间|{param4}s",
+            "元素能量|{param5}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "亮晶晶发现术",
+          "description": "在小地图上显示周围的稻妻区域特产的位置。\r\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
+          "title": "不畏风雨",
+          "description": "施放兽牙逐突形胜战法后的12秒内，附近的队伍中所有角色的防御力提升25%。\r\n",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
+          "title": "报恩之守",
+          "description": "基于防御力，五郎的以下攻击造成的伤害提高：\r\n",
+          "descriptions": [
+            "犬坂吠吠方圆阵的技能伤害提高值：防御力的156%；",
+            "兽牙逐突形胜战法的技能伤害与岩晶崩破伤害提高值：防御力的15.6%。"
+          ]
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "犬奔·疾如风",
+          "description": "处于五郎自己的大将旗指物或大将威仪领域中的当前场上角色（除了五郎自己）对敌人造成岩元素伤害后，五郎自己的犬坂吠吠方圆阵冷却时间减少2秒。\r\n该效果每10秒至多触发一次。\r\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "犬坐·稳如钟",
+          "description": "在大将威仪的持续期间，附近的当前场上角色获取结晶反应产生的晶片后，五郎自己的大将威仪的持续时间延长1秒。\r\n该效果每0.1秒至多触发一次，至多通过这种方式延长3秒持续时间。\r\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "犬爪·势如火",
+          "description": "犬坂吠吠方圆阵的技能等级提高3级。\r\n至多提升至15级。\r\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "犬舐·温如水",
+          "description": "大将威仪在具有「难破」或「摧碎」的效果时，每1.5秒，为领域内的当前场上角色恢复生命值，回复量相当于五郎自己防御力的50%。\r\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "犬突·动如雷",
+          "description": "兽牙逐突形胜战法的技能等级提高3级。\r\n至多提升至15级。\r\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
+          "title": "犬勇·忠如山",
+          "description": "施放犬坂吠吠方圆阵或兽牙逐突形胜战法后的12秒内，依据施放时的领域等级，提高附近的队伍中所有角色岩元素伤害的暴击伤害：\r\n",
+          "descriptions": [
+            "「坚牢」：提高10%；",
+            "「难破」：提高20%；",
+            "「摧碎」：提高40%。",
+            "该效果无法叠加，以后生效的为准。"
+          ]
         }
       ]
     },
@@ -3800,8 +3939,8 @@
       "passives": [
         {
           "key": "p1",
-          "title": "万千的愿望",
-          "description": "队伍中附近的角色获得元素晶球或元素微粒时，会为诸愿百眼之轮积攒2层愿力。\r\n该效果每3秒至多触发一次。\r\n",
+          "title": "天下名物狩",
+          "description": "突破单手剑和长柄武器时，消耗的摩拉数量减少50%。\r\n",
           "descriptions": []
         },
         {
@@ -3815,8 +3954,8 @@
         },
         {
           "key": "p3",
-          "title": "天下名物狩",
-          "description": "突破单手剑和长柄武器时，消耗的摩拉数量减少50%。\r\n",
+          "title": "万千的愿望",
+          "description": "队伍中附近的角色获得元素晶球或元素微粒时，会为诸愿百眼之轮积攒2层愿力。\r\n该效果每3秒至多触发一次。\r\n",
           "descriptions": []
         }
       ],
@@ -4452,6 +4591,93 @@
       ]
     },
     {
+      "key": "shenhe",
+      "name": "Shenhe",
+      "title": "？？？",
+      "description": "测试角色",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ]
+    },
+    {
       "key": "sucrose",
       "name": "砂糖",
       "title": "无害甜度",
@@ -4764,7 +4990,7 @@
     },
     {
       "key": "thoma",
-      "name": "测试角色_50",
+      "name": "托马",
       "title": "渡来介者",
       "description": "神里家的家政官，活跃在稻妻的「地头蛇」。",
       "skills": [
@@ -6058,11 +6284,11 @@
           ],
           "stats": [
             "技能伤害|{param1}%",
-            "丹火印赋予间隔|{param2}%",
-            "重击伤害提升|{param3}s",
-            "持续时间|{param4}%",
+            "丹火印赋予间隔|{param2}s",
+            "重击伤害提升|{param3}%",
+            "持续时间|{param4}s",
             "冷却时间|{param5}s",
-            "元素能量|{param6}s"
+            "元素能量|{param6}"
           ]
         }
       ],
@@ -6260,6 +6486,93 @@
           "key": "c6",
           "title": "长野原龙势流星群",
           "description": "在焰硝庭火舞的持续期间内，宵宫主动进行普通攻击时，有50%几率发射一枚额外的炽焰箭，造成原本60%的伤害。该伤害视为普通攻击伤害。\r\n",
+          "descriptions": []
+        }
+      ]
+    },
+    {
+      "key": "yun-jin",
+      "name": "Yun Jin",
+      "title": "？？？",
+      "description": "测试角色",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
           "descriptions": []
         }
       ]
@@ -6586,6 +6899,18 @@
         "对处于火元素或雷元素影响下的敌人，造成的伤害提高{color}18{/color}%。",
         "对处于火元素或雷元素影响下的敌人，造成的伤害提高{color}21{/color}%。",
         "对处于火元素或雷元素影响下的敌人，造成的伤害提高{color}24{/color}%。"
+      ]
+    },
+    {
+      "key": "cinnabar-spindle",
+      "name": "辰砂之纺锤",
+      "description": "由不似这个世界的物质制成的剑，其中的力量就连侵蚀龙的腐殖之毒也能抵御住吧。",
+      "refinements": [
+        "元素战技造成的伤害值提高，提高数值相当于防御力的{color}40{/color}%。该效果每1.5秒最多触发一次，并将在元素战技造成伤害后的0.1秒后清除效果。",
+        "元素战技造成的伤害值提高，提高数值相当于防御力的{color}50{/color}%。该效果每1.5秒最多触发一次，并将在元素战技造成伤害后的0.1秒后清除效果。",
+        "元素战技造成的伤害值提高，提高数值相当于防御力的{color}60{/color}%。该效果每1.5秒最多触发一次，并将在元素战技造成伤害后的0.1秒后清除效果。",
+        "元素战技造成的伤害值提高，提高数值相当于防御力的{color}70{/color}%。该效果每1.5秒最多触发一次，并将在元素战技造成伤害后的0.1秒后清除效果。",
+        "元素战技造成的伤害值提高，提高数值相当于防御力的{color}80{/color}%。该效果每1.5秒最多触发一次，并将在元素战技造成伤害后的0.1秒后清除效果。"
       ]
     },
     {
@@ -7111,6 +7436,18 @@
       ]
     },
     {
+      "key": "mouuns-moon",
+      "name": "曚云之月",
+      "description": "出自螺钿与珊瑚的精美战弓，月色的弓臂上流动着凄然的光彩。",
+      "refinements": [
+        "队伍中所有角色的元素能量上限的总和，每1点能使装备此武器的角色的元素爆发造成的伤害提高{color}0.12{/color}%，通过这种方式，元素爆发造成的伤害至多提高{color}40{/color}%。",
+        "队伍中所有角色的元素能量上限的总和，每1点能使装备此武器的角色的元素爆发造成的伤害提高{color}0.15{/color}%，通过这种方式，元素爆发造成的伤害至多提高{color}50{/color}%。",
+        "队伍中所有角色的元素能量上限的总和，每1点能使装备此武器的角色的元素爆发造成的伤害提高{color}0.18{/color}%，通过这种方式，元素爆发造成的伤害至多提高{color}60{/color}%。",
+        "队伍中所有角色的元素能量上限的总和，每1点能使装备此武器的角色的元素爆发造成的伤害提高{color}0.21{/color}%，通过这种方式，元素爆发造成的伤害至多提高{color}70{/color}%。",
+        "队伍中所有角色的元素能量上限的总和，每1点能使装备此武器的角色的元素爆发造成的伤害提高{color}0.24{/color}%，通过这种方式，元素爆发造成的伤害至多提高{color}80{/color}%。"
+      ]
+    },
+    {
       "key": "old-mercs-pal",
       "name": "佣兵重剑",
       "description": "沉重坚实的古旧大剑，饱经战火与岁月的洗练。",
@@ -7272,6 +7609,18 @@
         "击败敌人时，恢复{color}12{/color}%生命值。",
         "击败敌人时，恢复{color}14{/color}%生命值。",
         "击败敌人时，恢复{color}16{/color}%生命值。"
+      ]
+    },
+    {
+      "key": "redhorn-stonethresher",
+      "name": "赤角石溃杵",
+      "description": "依据过去的主人的说法，这是何等鬼怪精妖都能打跑的大杵「赤角石见石溃金涂金啮御狮子」。",
+      "refinements": [
+        "防御力提高{color}28{/color}%；普通攻击与重击造成的伤害值提高，提高数值相当于防御力的{color}40{/color}%。",
+        "防御力提高{color}35{/color}%；普通攻击与重击造成的伤害值提高，提高数值相当于防御力的{color}50{/color}%。",
+        "防御力提高{color}42{/color}%；普通攻击与重击造成的伤害值提高，提高数值相当于防御力的{color}60{/color}%。",
+        "防御力提高{color}49{/color}%；普通攻击与重击造成的伤害值提高，提高数值相当于防御力的{color}70{/color}%。",
+        "防御力提高{color}56{/color}%；普通攻击与重击造成的伤害值提高，提高数值相当于防御力的{color}80{/color}%。"
       ]
     },
     {
@@ -7769,6 +8118,18 @@
       "refinements": []
     },
     {
+      "key": "wavebreakers-fin",
+      "name": "断浪长鳍",
+      "description": "以海渊之下的闪亮材质打造而成的薙刀，一度曾为天狗一族所有。",
+      "refinements": [
+        "队伍中所有角色的元素能量上限的总和，每1点能使装备此武器的角色的元素爆发造成的伤害提高{color}0.12{/color}%，通过这种方式，元素爆发造成的伤害至多提高{color}40{/color}%。",
+        "队伍中所有角色的元素能量上限的总和，每1点能使装备此武器的角色的元素爆发造成的伤害提高{color}0.15{/color}%，通过这种方式，元素爆发造成的伤害至多提高{color}50{/color}%。",
+        "队伍中所有角色的元素能量上限的总和，每1点能使装备此武器的角色的元素爆发造成的伤害提高{color}0.18{/color}%，通过这种方式，元素爆发造成的伤害至多提高{color}60{/color}%。",
+        "队伍中所有角色的元素能量上限的总和，每1点能使装备此武器的角色的元素爆发造成的伤害提高{color}0.21{/color}%，通过这种方式，元素爆发造成的伤害至多提高{color}70{/color}%。",
+        "队伍中所有角色的元素能量上限的总和，每1点能使装备此武器的角色的元素爆发造成的伤害提高{color}0.24{/color}%，通过这种方式，元素爆发造成的伤害至多提高{color}80{/color}%。"
+      ]
+    },
+    {
       "key": "white-iron-greatsword",
       "name": "白铁大剑",
       "description": "白铁锻成的双手剑，兼顾了重量与强度。即使臂力一般的人也能舞得生风，在力量强大者手中更是威力无穷。",
@@ -7947,6 +8308,14 @@
       ]
     },
     {
+      "key": "husk-of-opulent-dreams",
+      "name": "华馆梦醒形骸记",
+      "bonus": [
+        "防御力提高30%。",
+        "装备此圣遗物套装的角色在以下情况下，将获得「问答」效果：在场上用岩元素攻击命中敌人后获得一层，每0.3秒至多触发一次；在队伍后台中，每3秒获得一层。问答至多叠加4层，每层能提供6%防御力与6%岩元素伤害加成。每6秒，若未获得问答效果，将损失一层。"
+      ]
+    },
+    {
       "key": "instructor",
       "name": "教官",
       "bonus": [
@@ -7992,6 +8361,14 @@
       "bonus": [
         "元素爆发造成的伤害提升20%。",
         "施放元素爆发后，队伍中所有角色攻击力提升20%，持续12秒。该效果不可叠加。"
+      ]
+    },
+    {
+      "key": "ocean-hued-clam",
+      "name": "海染砗磲",
+      "bonus": [
+        "治疗加成提高15%。",
+        "装备此圣遗物套装的角色对队伍中的角色进行治疗时，将产生持续3秒的海染泡沫，记录治疗的生命值回复量（包括溢出值）。持续时间结束时，海染泡沫将会爆炸，对周围的敌人造成90%累计回复量的伤害（该伤害结算方式同感电、超导等元素反应，但不受元素精通、等级或反应伤害加成效果影响）。每3.5秒至多产生一个海染泡沫；海染泡沫至多记录30000点回复量，含溢出部分的治疗量；自己的队伍中同时至多存在一个海染泡沫。装备此圣遗物套装的角色处于队伍后台时，依然能触发该效果。"
       ]
     },
     {
@@ -9186,6 +9563,11 @@
       "description": "提瓦特常见的禾本作物。无论是什么样的人，都能欣赏这种颗粒分明的饱满口感，正所谓「一样米养百样人」。"
     },
     {
+      "key": "riftborn-regalia",
+      "name": "兽境王器",
+      "description": "战胜王兽后，得到的折断犄角。在它遭到驱逐后，不应残留在此世才对。\r\n即使在兽境群狼中贵为王兽，在魔兽的系谱中也不及其兄长们的万分之一吧。\r\n「黄金」将无数兽境的群狼如同将弃置的画纸一般压缩后而意外产生的畸形魔兽，而寄寓在其犄角中的是足以号令黑色的狼群为它溶解空间的权威。"
+    },
+    {
       "key": "ring-of-boreas",
       "name": "北风之环",
       "description": "从北风的伟大王狼身上，取来的些许凝冰。\r\n这片大地曾经北风呼啸，呼气凝霜。如砂砾的冰与雪在寒风中嚣叫，飞舞着将肌肤撕裂，让血液凝结。如今的北风王狼力量虽然不如往昔，却仍有能将大地冰封的力量。"
@@ -9588,25 +9970,25 @@
   ],
   "debuffs": [
     {
-      "key": "Engulfing Storm",
+      "key": "engulfing-storm",
       "name": "噬能之雷",
       "effect": "处于该元素状态下的角色，不断减少元素充能。",
       "description": null
     },
     {
-      "key": "Slowing Water",
+      "key": "slowing-water",
       "name": "迟滞之水",
       "effect": "处于迟滞之水状态下的角色，技能冷却时间会被延长。",
       "description": null
     },
     {
-      "key": "Smoldering Flames",
+      "key": "smoldering-flames",
       "name": "阴燃之火",
       "effect": "处于阴燃之火状态下的角色，会受到火元素持续伤害。",
       "description": null
     },
     {
-      "key": "Condensed Ice",
+      "key": "condensed-ice",
       "name": "凝结之冰",
       "effect": "处于凝结之冰状态下的角色，消耗的体力会增加。",
       "description": null
@@ -9614,99 +9996,111 @@
   ],
   "reactions": [
     {
-      "key": "Burning",
-      "name": "燃烧",
-      "effect": "持续造成火元素伤害，并毁坏草元素的装备、物体。",
+      "key": "vaporize",
+      "name": "Vaporize",
+      "effect": "Deals ×2 Pyro DMG when a Pyro attack triggers the reaction.",
       "description": null
     },
     {
-      "key": "Crystalize",
-      "name": "结晶",
-      "effect": "产生对应元素的晶片，为角色提供各种元素护盾。",
+      "key": "burning",
+      "name": "Burning",
+      "effect": "Deals large Pyro DMG over time. Grass is considered a Dendro object and will spread the burn effect around the area.",
       "description": null
     },
     {
-      "key": "Electro-Charged",
-      "name": "感电",
-      "effect": "持续造成雷元素伤害。",
+      "key": "overloaded",
+      "name": "Overloaded",
+      "effect": "Deals AoE Pyro DMG and causes an explosion. The explosion generated is considered as a Heavy Attack.",
       "description": null
     },
     {
-      "key": "Frozen",
-      "name": "冻结",
-      "effect": "冻结目标。",
+      "key": "melt",
+      "name": "Melt",
+      "effect": "Deals ×2 Pyro DMG when a Pyro attack triggers the reaction.",
       "description": null
     },
     {
-      "key": "Melt",
-      "name": "融化",
-      "effect": "通过火元素或冰元素攻击导致融化时，会按照一定的比例提高该次攻击造成的伤害。",
+      "key": "vaporize-reverse",
+      "name": "Vaporize (Reverse)",
+      "effect": "Deals ×1.5 Hydro DMG when a Hydro attack triggers the reaction.",
       "description": null
     },
     {
-      "key": "Overloaded",
-      "name": "超载",
-      "effect": "超载反应会引发剧烈的爆炸，造成火元素的爆炸范围伤害。",
+      "key": "electro-charged",
+      "name": "Electro Charged",
+      "effect": "Deals Electro DMG over time until the effect wears off, every tick shocks and interrupts any action. It also creates a lightning bolt that jumps to one nearby Wet target, dealing Electro DMG.",
       "description": null
     },
     {
-      "key": "Superconduct",
-      "name": "超导",
-      "effect": "超导会造成冰元素的范围伤害，并降低受到超导影响的生物50%的防御力。",
+      "key": "frozen",
+      "name": "Frozen",
+      "effect": "Freezes the target. If the frozen target is hit by a Claymore, a Sword Plunge Attack, or Geo DMG (excluding Catalyst user's Plunge), it will cause Shattered. Shattering a frozen target will deal additional Physical damage.",
       "description": null
     },
     {
-      "key": "Swirl",
-      "name": "扩散",
-      "effect": "扩散能造成对应元素的伤害，产生附着，或进一步引发其他反应。",
+      "key": "swirl",
+      "name": "Swirl",
+      "effect": "Infuses an element and deals that elemental damage while spreading the effect to nearby enemies. It does not deal Anemo damage (as that elemental damage seen comes from the talent that is dealing the Anemo element). Only one element at a time can be infused with Anemo.",
       "description": null
     },
     {
-      "key": "Vaporize",
-      "name": "蒸发",
-      "effect": "通过火元素或水元素攻击导致蒸发时，会按照一定的比例提高该次攻击造成的伤害。",
+      "key": "superconduct",
+      "name": "Superconduct",
+      "effect": "Deals AoE Cryo DMG and reduces the target's Physical DMG Resistance by -40% for 12 seconds. Each Superconduct reaction deals DMG to targets within its range once, meaning if there are 3 Superconduct reactions, given all 3 targets are within the reactions' AoE, each target will take DMG 3 times.",
+      "description": null
+    },
+    {
+      "key": "melt-reverse",
+      "name": "Melt (Reverse)",
+      "effect": "Deals ×1.5 Cryo DMG when a Cryo attack triggers the reaction.",
+      "description": null
+    },
+    {
+      "key": "crystallize",
+      "name": "Crystallize",
+      "effect": "Absorbs the element and drops a crystal of that same element. The crystal will give an elemental shield. The shield absorbs all types of damage, but it protects more efficiently against the shield's element.",
       "description": null
     }
   ],
   "resonance": [
     {
-      "key": "Enduring Rock",
+      "key": "enduring-rock",
       "name": "坚定之岩",
       "effect": "护盾强效提升15%。角色处于护盾保护状态时，造成的伤害提升15%，对敌人造成伤害时会使敌人的的岩元素抗性降低20%，持续15秒。",
       "description": null
     },
     {
-      "key": "Fervent Flames",
+      "key": "fervent-flames",
       "name": "热诚之火",
       "effect": "冰元素附着的持续时间下降40%。攻击力提升25%。",
       "description": null
     },
     {
-      "key": "Soothing Waters",
+      "key": "soothing-waters",
       "name": "愈疗之水",
       "effect": "火元素附着的持续时间下降40%。受治疗效果提升30%。",
       "description": null
     },
     {
-      "key": "Impetuous Winds",
+      "key": "impetuous-winds",
       "name": "迅捷之风",
       "effect": "体力消耗降低15%，移动速度提升10%，技能冷却时间缩短5%。",
       "description": null
     },
     {
-      "key": "High Voltage",
+      "key": "high-voltage",
       "name": "强能之雷",
       "effect": "水元素附着持续时间下降40%。触发超导、超载和感电反应时，有100%概率掉落1个雷元素微粒，冷却时间5秒。",
       "description": null
     },
     {
-      "key": "Shattering Ice",
+      "key": "shattering-ice",
       "name": "粉碎之冰",
       "effect": "雷元素附着持续时间下降40%。攻击冰元素附着或冻结状态下的敌人时，暴击率提高15%。",
       "description": null
     },
     {
-      "key": "Protective Canopy",
+      "key": "protective-canopy",
       "name": "交织之护",
       "effect": "所有元素抗性提升15%，物理抗性提升15%。",
       "description": "任意四种不同元素"

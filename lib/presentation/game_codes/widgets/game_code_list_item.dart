@@ -42,7 +42,11 @@ class GameCodeListItem extends StatelessWidget {
     final theme = Theme.of(context);
     final textCodeStyle = !isUsed
         ? theme.textTheme.subtitle1
-        : theme.textTheme.subtitle1!.copyWith(decoration: TextDecoration.lineThrough, decorationColor: theme.accentColor, decorationThickness: 2);
+        : theme.textTheme.subtitle1!.copyWith(
+            decoration: TextDecoration.lineThrough,
+            decorationColor: theme.colorScheme.secondary,
+            decorationThickness: 3,
+          );
 
     return Slidable(
       actionPane: const SlidableDrawerActionPane(),
@@ -84,12 +88,14 @@ class GameCodeListItem extends StatelessWidget {
                       alignment: WrapAlignment.center,
                       crossAxisAlignment: WrapCrossAlignment.center,
                       children: rewards
-                          .map((m) => WrappedAscensionMaterial(
-                                itemKey: m.key,
-                                image: m.image,
-                                quantity: m.quantity,
-                                size: SizeUtils.getSizeForCircleImages(context) * 0.6,
-                              ))
+                          .map(
+                            (m) => WrappedAscensionMaterial(
+                              itemKey: m.key,
+                              image: m.image,
+                              quantity: m.quantity,
+                              size: SizeUtils.getSizeForCircleImages(context) * 0.6,
+                            ),
+                          )
                           .toList(),
                     ),
                     if (region != null)
@@ -99,7 +105,7 @@ class GameCodeListItem extends StatelessWidget {
                         children: [
                           Icon(
                             Icons.lock_outlined,
-                            color: theme.accentColor,
+                            color: theme.colorScheme.secondary,
                             size: SizeUtils.getSizeForCircleImages(context) * 0.45,
                           ),
                           Text(

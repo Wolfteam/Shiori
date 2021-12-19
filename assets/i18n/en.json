@@ -416,91 +416,156 @@
       "key": "arataki-itto",
       "name": "Arataki Itto",
       "title": "Hanamizaka Heroics",
-      "description": "The first and greatest head of the Arataki Gang, famed throughout Hanamizaka in Inazuma City... Wait, what? Never heard of them? Seriously?",
+      "description": "The first and greatest head of the Arataki Gang, famed throughout Inazuma City's Hanamizaka... Wait, what? You've never heard of them? Are you trying to be funny here?",
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Fight Club Legend",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Normal Attack",
+              "description": "Perform up to 4 consecutive strikes.\r\nWhen the 2nd and 4th strikes hit opponents, Itto will gain 1 or 2 stacks of Superlative Superstrength, respectively.\r\nMax 5 stacks. Triggering this effect will refresh the current duration of any existing stacks.\r\nAdditionally, Itto's Normal Attack combo does not immediately reset after sprinting or using his Elemental Skill, \"Masatsu Zetsugi: Akaushi Burst!\"\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Charged Attack",
+              "description": "When holding to perform a Charged Attack, Itto unleashes a series of Arataki Kesagiri slashes without consuming Stamina. Instead, each Arataki Kesagiri slash consumes 1 stack of Superlative Superstrength. When the final stack is consumed, Itto delivers a powerful final slash.\r\nIf no stacks of Superlative Superstrength are available, Itto will perform a single Saichimonji Slash.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Plunging Attack",
+              "description": "Plunges from mid-air to strike the ground, damaging opponents along the path and dealing AoE DMG upon impact.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "1-Hit DMG|{param1}%",
+            "2-Hit DMG|{param2}%",
+            "3-Hit DMG|{param3}%",
+            "4-Hit DMG|{param4}%",
+            "Arataki Kesagiri Combo Slash DMG|{param5}%",
+            "Arataki Kesagiri Final Slash DMG|{param6}%",
+            "Superlative Superstrength Duration|{param7}s",
+            "Saichimonji Slash DMG|{param8}%",
+            "Saichimonji Slash Stamina Cost|{param9}",
+            "Plunge DMG|{param10}%",
+            "Low/High Plunge DMG|{param11}% / {param12}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Masatsu Zetsugi: Akaushi Burst!",
+          "description": "Hurls Ushi, the young akaushi bull and auxiliary member of the Arataki Gang, dealing Geo DMG to opponents on hit. When Ushi hits opponents, Arataki Itto gains 1 stack of Superlative Superstrength.\r\nUshi will remain on the field and provide support in the following ways:",
+          "abilities": [
+            {
+              "name": "",
+              "description": "",
+              "descriptions": [
+                "Taunts surrounding opponents and draws their attacks.",
+                "Inherits HP based on a percentage of Arataki Itto's Max HP.",
+                "When Ushi takes DMG, Arataki Itto gains 1 stack of Superlative Superstrength. Only 1 stack can be gained in this way every 2s.",
+                "Ushi will flee when its HP reaches 0 or its duration ends. It will grant Arataki Itto 1 stack of Superlative Superstrength when it leaves."
+              ]
+            },
+            {
+              "name": "Hold",
+              "description": "Adjust throwing angle.\r\nUshi is considered a Geo construct. Arataki Itto can only deploy 1 Ushi on the field at any one time.\r\n",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "Skill DMG|{param1}%",
+            "Inherited HP|{param2}%",
+            "Duration|{param3}s",
+            "CD|{param4}s"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Royal Descent: Behold, Itto the Evil!",
+          "description": "Time to show 'em the might of the Arataki Gang! For a time, Itto lets out his inner Raging Oni King, wielding his Oni King's Kanabou in battle.\r\n",
+          "abilities": [
+            {
+              "name": "",
+              "description": "This state has the following special properties:\r\n",
+              "descriptions": [
+                "Converts Itto's Normal, Charged, and Plunging Attacks to Geo DMG. This cannot be overridden.",
+                "Increases Itto's Normal Attack SPD. Also increases his ATK based on his DEF.",
+                "On hit, the 1st and 3rd strikes of his attack combo will each grant Arataki Itto 1 stack of Superlative Superstrength.",
+                "Decreases Itto's Elemental and Physical RES by 20%.",
+                "The Raging Oni King state will be cleared when Itto leaves the field."
+              ]
+            }
+          ],
+          "stats": [
+            "ATK Bonus|{param1}% DEF",
+            "ATK SPD Bonus|{param2}%",
+            "Duration|{param3}s",
+            "CD|{param4}s",
+            "Energy Cost|{param5}"
+          ]
         }
       ],
       "passives": [
         {
-          "key": "p3",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
-        },
-        {
-          "key": "p4",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
-        },
-        {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "Woodchuck Chucked",
+          "description": "When a party member uses attacks to obtain wood from a tree, they have a 25% chance to get an additional log of wood.\r\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
+          "title": "Arataki Ichiban",
+          "description": "When Arataki Itto uses consecutive Arataki Kesagiri, he obtains the following effects:\r\n",
+          "descriptions": [
+            "Each slash increases the ATK SPD of the next slash by 10%. Max ATK SPD increase is 30%.",
+            "Increases his resistance to interruption.",
+            "These effects will be cleared once he stops performing consecutive slashes."
+          ]
+        },
+        {
+          "key": "p3",
+          "title": "Bloodline of the Crimson Oni",
+          "description": "Arataki Kesagiri DMG is increased by 35% of Arataki Itto's DEF.\r\n",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "Stay a While and Listen Up",
+          "description": "After using Royal Descent: Behold, Itto the Evil!, Arataki Itto gains 2 stacks of Superlative Superstrength. After 1s, Itto will gain 1 stack of Superlative Superstrength every 0.5s for 1.5s.\r\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "Gather 'Round, It's a Brawl!",
+          "description": "After using Royal Descent: Behold, Itto the Evil!, each party member whose Element is Geo will decrease that skill's CD by 1.5s and restore 6 Energy to Arataki Itto.\r\nCD can be decreased by up to 4.5s in this manner. Max 18 Energy can be restored in this manner.\r\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "Horns Lowered, Coming Through",
+          "description": "Increases the Level of Masatsu Zetsugi: Akaushi Burst! by 3.\r\nMaximum upgrade level is 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "Jailhouse Bread and Butter",
+          "description": "When the Raging Oni King state caused by Royal Descent: Behold, Itto the Evil! ends, all nearby party members gain 20% DEF and 20% ATK for 10s.\r\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "10 Years of Hanamizaka Fame",
+          "description": "Increases the Level of Royal Descent: Behold, Itto the Evil! by 3.\r\nMaximum upgrade level is 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
+          "title": "Arataki Itto, Present!",
+          "description": "Arataki Itto's Charged Attacks deal +70% Crit DMG. Additionally, when he uses Arataki Kesagiri, he has a 50% chance to not consume stacks of Superlative Superstrength.\r\n",
           "descriptions": []
         }
       ]
@@ -1779,82 +1844,155 @@
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Ripping Fang Fletching",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Normal Attack",
+              "description": "Perform up to 4 consecutive shots with a bow.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Charged Attack",
+              "description": "Perform a more precise Aimed Shot with increased DMG.\r\nWhile aiming, stone crystals will accumulate on the arrowhead. A fully charged crystalline arrow will deal Geo DMG.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Plunging Attack",
+              "description": "Fires off a shower of arrows in mid-air before falling and striking the ground, dealing AoE DMG upon impact.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "1-Hit DMG|{param1}%",
+            "2-Hit DMG|{param2}%",
+            "3-Hit DMG|{param3}%",
+            "4-Hit DMG|{param4}%",
+            "Aimed Shot|{param5}%",
+            "Fully-Charged Aimed Shot|{param6}%",
+            "Plunge DMG|{param7}%",
+            "Low/High Plunge DMG|{param8}% / {param9}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Inuzaka All-Round Defense",
+          "description": "Deals AoE Geo DMG and sets up a General's War Banner.\r\n",
+          "abilities": [
+            {
+              "name": "General's War Banner",
+              "description": "Provides up to 3 buffs to active characters within the skill's AoE based on the number of Geo characters in the party at the time of casting:\r\n",
+              "descriptions": [
+                "1 Geo character: Adds \"Standing Firm\" - DEF Bonus.",
+                "2 Geo characters: Adds \"Impregnable\" - Increased resistance to interruption.",
+                "3 Geo characters: Adds \"Crunch\" - Geo DMG Bonus.",
+                "Gorou can deploy only 1 General's War Banner on the field at any one time. Characters can only benefit from 1 General's War Banner at a time. When a party member leaves the field, the active buff will last for 2s."
+              ]
+            },
+            {
+              "name": "Hold",
+              "description": "Adjust the location of the skill.\r\n",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "Skill DMG|{param1}%",
+            "DEF Increase|{param2}",
+            "Geo DMG Bonus|{param3}%",
+            "Duration|{param4}s",
+            "CD|{param5}s"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Juuga: Forward Unto Victory",
+          "description": "Displaying his valor as a general, Gorou deals AoE Geo DMG and creates a field known as General's Glory to embolden his comrades.\r\n",
+          "abilities": [
+            {
+              "name": "General's Glory",
+              "description": "This field has the following properties:\r\n",
+              "descriptions": [
+                "Like the General's War Banner created by Inuzaka All-Round Defense, provides buffs to active characters within the skill's AoE based on the number of Geo characters in the party. Also moves together with your active character.",
+                "Generates 1 Crystal Collapse every 1.5s that deals AoE Geo DMG to 1 opponent within the skill's AoE.",
+                "Pulls 1 elemental shard in the skill's AoE to your active character's position every 1.5s (elemental shards are created by Crystallize reactions).",
+                "If a General's War Banner created by Gorou currently exists on the field when this ability is used, it will be destroyed. In addition, for the duration of General's Glory, Gorou's Elemental Skill \"Inuzaka All-Round Defense\" will not create the General's War Banner.",
+                "If Gorou falls, the effects of General's Glory will be cleared."
+              ]
+            }
+          ],
+          "stats": [
+            "Skill DMG|{param1}% DEF",
+            "Crystal Collapse DMG|{param2}% DEF",
+            "Duration|{param3}s",
+            "CD|{param4}s",
+            "Energy Cost|{param5}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "Seeker of Shinies",
+          "description": "Displays the location of nearby resources unique to Inazuma on the mini-map.\r\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
+          "title": "Heedless of the Wind and Weather",
+          "description": "After using Juuga: Forward Unto Victory, all nearby party members' DEF is increased by 25% for 12s.\r\n",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
+          "title": "A Favor Repaid",
+          "description": "Gorou receives the following DMG Bonuses to his attacks based on his DEF:\r\n",
+          "descriptions": [
+            "Inuzaka All-Round Defense: Skill DMG increased by 156% of DEF",
+            "Juuga: Forward Unto Victory: Skill DMG and Crystal Collapse DMG increased by 15.6% of DEF"
+          ]
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "Rushing Hound: Swift as the Wind",
+          "description": "When characters (other than Gorou) within the AoE of Gorou's General's War Banner or General's Glory deal Geo DMG to opponents, the CD of Gorou's Inuzaka All-Round Defense is decreased by 2s.\r\nThis effect can occur once every 10s.\r\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "Sitting Hound: Steady as a Clock",
+          "description": "While General's Glory is in effect, its duration is extended by 1s when a nearby active character obtains an Elemental Shard from a Crystallize reaction. \r\nThis effect can occur once every 0.1s. Max extension is 3s.\r\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "Mauling Hound: Fierce as Fire",
+          "description": "Increases the Level of Inuzaka All-Round Defense by 3.\r\nMaximum upgrade level is 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "Lapping Hound: Warm as Water",
+          "description": "When General's Glory is in the \"Impregnable\" or \"Crunch\" states, it will also heal active characters within its AoE by 50% of Gorou's own DEF every 1.5s.\r\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "Striking Hound: Thunderous Force",
+          "description": "Increases the Level of Juuga: Forward Unto Victory by 3.\r\nMaximum upgrade level is 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
+          "title": "Valiant Hound: Mountainous Fealty",
+          "description": "For 12s after using Inuzaka All-Round Defense or Juuga: Forward Unto Victory, increases the CRIT DMG of all nearby party members' Geo DMG based on the buff level of the skill's field at the time of use:\r\n",
+          "descriptions": [
+            "\"Standing Firm\": +10%",
+            "\"Impregnable\": +20%",
+            "\"Crunch\": +40%",
+            "This effect cannot stack and will take reference from the last instance of the effect that is triggered."
+          ]
         }
       ]
     },
@@ -3802,8 +3940,8 @@
       "passives": [
         {
           "key": "p1",
-          "title": "Wishes Unnumbered",
-          "description": "When nearby party members gain Elemental Orbs or Particles, Chakra Desiderata gains 2 Resolve stacks.\r\nThis effect can occur once every 3s.\r\n",
+          "title": "All-Preserver",
+          "description": "Mora expended when ascending Swords and Polearms is decreased by 50%.\r\n",
           "descriptions": []
         },
         {
@@ -3817,8 +3955,8 @@
         },
         {
           "key": "p3",
-          "title": "All-Preserver",
-          "description": "Mora expended when ascending Swords and Polearms is decreased by 50%.\r\n",
+          "title": "Wishes Unnumbered",
+          "description": "When nearby party members gain Elemental Orbs or Particles, Chakra Desiderata gains 2 Resolve stacks.\r\nThis effect can occur once every 3s.\r\n",
           "descriptions": []
         }
       ],
@@ -4454,6 +4592,93 @@
       ]
     },
     {
+      "key": "shenhe",
+      "name": "Shenhe",
+      "title": "？？？",
+      "description": "",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ]
+    },
+    {
       "key": "sucrose",
       "name": "Sucrose",
       "title": "Harmless Sweetie",
@@ -4804,15 +5029,15 @@
         {
           "key": "s2",
           "title": "Blazing Blessing",
-          "description": "Thoma uses the tip of his spear as a pivot to channel flames and perform a kick that deals AoE Pyro DMG and unleashes a defensive Blazing Barrier. At the moment it is unleashed, the Elemental Burst will apply Pyro to Thoma.\r\nThe DMG Absorption of the Barrier is based on Thoma's Max HP.\r\n",
+          "description": "Thoma vaults forward with his polearm and delivers a flame-filled flying kick that deals AoE Pyro DMG, while also summoning a defensive Blazing Barrier. At the moment of casting, Thoma's Elemental Skill applies Pyro to himself.\r\nThe DMG Absorption of the Blazing Barrier scales off Thoma's Max HP.\r\n",
           "abilities": [
             {
               "name": "",
               "description": "The Blazing Barrier has the following traits:\r\n",
               "descriptions": [
                 "Absorbs Pyro DMG 250% more effectively.",
-                "The remaining DMG Absorption of an existing Blazing Barrier will stack and its duration will be refreshed if another Blazing Barrier is obtained during this time.",
-                "The maximum DMG Absorption of the Barrier will not exceed a certain percentage of Thoma's Max HP."
+                "When a new Blazing Barrier is obtained, the remaining DMG Absorption of an existing Blazing Barrier will stack and its duration will be refreshed.",
+                "The maximum DMG Absorption of the Blazing Barrier will not exceed a certain percentage of Thoma's Max HP."
               ]
             }
           ],
@@ -4827,16 +5052,16 @@
         {
           "key": "s3",
           "title": "Crimson Ooyoroi",
-          "description": "Thoma spins his spear, slicing through his foes with roaring fires that deal AoE Pyro DMG and weave themselves into a Scorching Ooyoroi.\r\n",
+          "description": "Thoma spins his polearm, slicing at his foes with roaring flames that deal AoE Pyro DMG and weave themselves into a Scorching Ooyoroi.\r\n",
           "abilities": [
             {
               "name": "Scorching Ooyoroi",
-              "description": "The Normal Attacks of active characters affected by the Scorching Ooyoroi will trigger Fiery Collapses that deal AoE Pyro DMG and summon Blazing Barriers.\r\n1 Fiery Collapse can be triggered every 1s.\r\nThe Blazing Barriers created in this way are identical to those created by Thoma's Elemental Skill, Blazing Blessing, except in the amount of DMG they can absorb.\r\n",
+              "description": "While Scorching Ooyoroi is in effect, the active character's Normal Attacks will trigger Fiery Collapse, dealing AoE Pyro DMG and summoning a Blazing Barrier.\r\nFiery Collapse can be triggered once every 1s.\r\nExcept for the amount of DMG they can absorb, the Blazing Barriers created in this way are identical to those created by Thoma's Elemental Skill, Blazing Blessing:\r\n",
               "descriptions": [
-                "They absorb Pyro DMG 250% more effectively.",
-                "The remaining DMG Absorption of an existing Blazing Barrier will stack and its duration will be refreshed if another Blazing Barrier is obtained during this time.",
-                "The maximum DMG Absorption of the Barrier will not exceed a certain percentage of Thoma's Max HP.",
-                "If Thoma falls, the effects of Scorching Ooyoroi will dissipate."
+                "Absorbs Pyro DMG 250% more effectively.",
+                "When a new Blazing Barrier is obtained, the remaining DMG Absorption of an existing Blazing Barrier will stack and its duration will be refreshed.",
+                "The maximum DMG Absorption of the Blazing Barrier will not exceed a certain percentage of Thoma's Max HP.",
+                "If Thoma falls, the effects of Scorching Ooyoroi will be cleared."
               ]
             }
           ],
@@ -4855,7 +5080,7 @@
         {
           "key": "p1",
           "title": "Snap and Swing",
-          "description": "Successful fishing attempts in Inazuma have a 20% chance of scoring a double catch.\r\n",
+          "description": "When you fish successfully in Inazuma, Thoma's help grants a 20% chance of scoring a double catch.\r\n",
           "descriptions": []
         },
         {
@@ -4867,7 +5092,7 @@
         {
           "key": "p3",
           "title": "Flaming Assault",
-          "description": "The DMG dealt by Crimson Ooyoroi's Fiery Collapses are increased by 2.2% of Thoma's Max HP.\r\n",
+          "description": "DMG dealt by Crimson Ooyoroi's Fiery Collapse is increased by 2.2% of Thoma's Max HP.\r\n",
           "descriptions": []
         }
       ],
@@ -4875,7 +5100,7 @@
         {
           "key": "c1",
           "title": "A Comrade's Duty",
-          "description": "When a Blazing Barrier takes DMG for any character other than Thoma, Thoma's own Blazing Blessing CD is decreased by 3s, while his own Crimson Ooyoroi's CD is decreased by 3s.\r\nThis effect can be triggered once every 20s.\r\n",
+          "description": "When a character protected by Thoma's own Blazing Barrier (Thoma excluded) is attacked, Thoma's own Blazing Blessing CD is decreased by 3s, while his own Crimson Ooyoroi's CD is decreased by 3s.\r\nThis effect can be triggered once every 20s.\r\n",
           "descriptions": []
         },
         {
@@ -4905,7 +5130,7 @@
         {
           "key": "c6",
           "title": "Burning Heart",
-          "description": "When a Blazing Barrier is obtained or stacked, the DMG dealt by the Normal, Charged, and Plunging Attacks of all party members is increased by 15% for 6s.\r\n",
+          "description": "When a Blazing Barrier is obtained or refreshed, the DMG dealt by all party members' Normal, Charged, and Plunging Attacks is increased by 15% for 6s.\r\n",
           "descriptions": []
         }
       ]
@@ -6066,11 +6291,11 @@
           ],
           "stats": [
             "Skill DMG|{param1}%",
-            "Scarlet Seal Grant Interval|{param2}%",
-            "Charged Attack DMG Bonus|{param3}s",
-            "Duration|{param4}%",
+            "Scarlet Seal Grant Interval|{param2}s",
+            "Charged Attack DMG Bonus|{param3}%",
+            "Duration|{param4}s",
             "CD|{param5}s",
-            "Energy Cost|{param6}s"
+            "Energy Cost|{param6}"
           ]
         }
       ],
@@ -6271,6 +6496,93 @@
           "key": "c6",
           "title": "Naganohara Meteor Swarm",
           "description": "During Niwabi Fire-Dance, Yoimiya's Normal Attacks have a 50% chance of firing an extra Kindling Arrow that deals 60% of its original DMG. This DMG is considered Normal Attack DMG.\r\n",
+          "descriptions": []
+        }
+      ]
+    },
+    {
+      "key": "yun-jin",
+      "name": "Yun Jin",
+      "title": "？？？",
+      "description": "",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
           "descriptions": []
         }
       ]
@@ -6597,6 +6909,18 @@
         "Increases DMG dealt against opponents affected by Pyro or Electro by {color}18{/color}%.",
         "Increases DMG dealt against opponents affected by Pyro or Electro by {color}21{/color}%.",
         "Increases DMG against opponents affected by Pyro or Electro by {color}24{/color}%."
+      ]
+    },
+    {
+      "key": "cinnabar-spindle",
+      "name": "Cinnabar Spindle",
+      "description": "A sword made from materials that do not belong in this world. The power within might even be able to withstand the corruption of a venom that could corrode a mighty dragon.",
+      "refinements": [
+        "Elemental Skill DMG is increased by {color}40{/color}% of DEF. The effect will be triggered no more than once every 1.5s and will be cleared 0.1s after the Elemental Skill deals DMG.",
+        "Elemental Skill DMG is increased by {color}50{/color}% of DEF. The effect will be triggered no more than once every 1.5s and will be cleared 0.1s after the Elemental Skill deals DMG.",
+        "Elemental Skill DMG is increased by {color}60{/color}% of DEF. The effect will be triggered no more than once every 1.5s and will be cleared 0.1s after the Elemental Skill deals DMG.",
+        "Elemental Skill DMG is increased by {color}70{/color}% of DEF. The effect will be triggered no more than once every 1.5s and will be cleared 0.1s after the Elemental Skill deals DMG.",
+        "Elemental Skill DMG is increased by {color}80{/color}% of DEF. The effect will be triggered no more than once every 1.5s and will be cleared 0.1s after the Elemental Skill deals DMG."
       ]
     },
     {
@@ -7122,6 +7446,18 @@
       ]
     },
     {
+      "key": "mouuns-moon",
+      "name": "Mouun's Moon",
+      "description": "A lovely warbow made from seashells and coral. A mournful brilliance flows along its moonlight-colored arms.",
+      "refinements": [
+        "For every point of the entire party's combined maximum Energy capacity, the Elemental Burst DMG of the character equipping this weapon is increased by {color}0.12{/color}%. A maximum of {color}40{/color}% increased Elemental Burst DMG can be achieved this way.",
+        "For every point of the entire party's combined maximum Energy capacity, the Elemental Burst DMG of the character equipping this weapon is increased by {color}0.15{/color}%. A maximum of {color}50{/color}% increased Elemental Burst DMG can be achieved this way.",
+        "For every point of the entire party's combined maximum Energy capacity, the Elemental Burst DMG of the character equipping this weapon is increased by {color}0.18{/color}%. A maximum of {color}60{/color}% increased Elemental Burst DMG can be achieved this way.",
+        "For every point of the entire party's combined maximum Energy capacity, the Elemental Burst DMG of the character equipping this weapon is increased by {color}0.21{/color}%. A maximum of {color}70{/color}% increased Elemental Burst DMG can be achieved this way.",
+        "For every point of the entire party's combined maximum Energy capacity, the Elemental Burst DMG of the character equipping this weapon is increased by {color}0.24{/color}%. A maximum of {color}80{/color}% increased Elemental Burst DMG can be achieved this way."
+      ]
+    },
+    {
       "key": "old-mercs-pal",
       "name": "Old Merc's Pal",
       "description": "A battle-tested greatsword that has seen better days and worse.",
@@ -7283,6 +7619,18 @@
         "Defeating an opponent restores {color}12{/color}% HP.",
         "Defeating an opponent restores {color}14{/color}% HP.",
         "Defeating an opponent restores {color}16{/color}% HP."
+      ]
+    },
+    {
+      "key": "redhorn-stonethresher",
+      "name": "Redhorn Stonethresher",
+      "description": "According to its previous owner, this weapon is the \"Mighty Redhorn Stoic Stonethreshing Gilded Goldcrushing Lion Lord\" that can send any monster packing with its tail between its legs.",
+      "refinements": [
+        "DEF is increased by {color}28{/color}%. Normal and Charged Attack DMG is increased by {color}40{/color}% of DEF.",
+        "DEF is increased by {color}35{/color}%. Normal and Charged Attack DMG is increased by {color}50{/color}% of DEF.",
+        "DEF is increased by {color}42{/color}%. Normal and Charged Attack DMG is increased by {color}60{/color}% of DEF.",
+        "DEF is increased by {color}49{/color}%. Normal and Charged Attack DMG is increased by {color}70{/color}% of DEF.",
+        "DEF is increased by {color}56{/color}%. Normal and Charged Attack DMG is increased by {color}80{/color}% of DEF."
       ]
     },
     {
@@ -7780,6 +8128,18 @@
       "refinements": []
     },
     {
+      "key": "wavebreakers-fin",
+      "name": "Wavebreaker's Fin",
+      "description": "A naginata forged from luminescent material deep in the ocean depths. It was once the possession of the tengu race.",
+      "refinements": [
+        "For every point of the entire party's combined maximum Energy capacity, the Elemental Burst DMG of the character equipping this weapon is increased by {color}0.12{/color}%. A maximum of {color}40{/color}% increased Elemental Burst DMG can be achieved this way.",
+        "For every point of the entire party's combined maximum Energy capacity, the Elemental Burst DMG of the character equipping this weapon is increased by {color}0.15{/color}%. A maximum of {color}50{/color}% increased Elemental Burst DMG can be achieved this way.",
+        "For every point of the entire party's combined maximum Energy capacity, the Elemental Burst DMG of the character equipping this weapon is increased by {color}0.18{/color}%. A maximum of {color}60{/color}% increased Elemental Burst DMG can be achieved this way.",
+        "For every point of the entire party's combined maximum Energy capacity, the Elemental Burst DMG of the character equipping this weapon is increased by {color}0.21{/color}%. A maximum of {color}70{/color}% increased Elemental Burst DMG can be achieved this way.",
+        "For every point of the entire party's combined maximum Energy capacity, the Elemental Burst DMG of the character equipping this weapon is increased by {color}0.24{/color}%. A maximum of {color}80{/color}% increased Elemental Burst DMG can be achieved this way."
+      ]
+    },
+    {
       "key": "white-iron-greatsword",
       "name": "White Iron Greatsword",
       "description": "A claymore made from white iron. Lightweight without compromising on power. Effective even when wielded by one of average strength, it is extremely deadly in the hands of a physically stronger wielder.",
@@ -7957,6 +8317,14 @@
       ]
     },
     {
+      "key": "husk-of-opulent-dreams",
+      "name": "Husk of Opulent Dreams",
+      "bonus": [
+        "DEF +30%",
+        "A character equipped with this Artifact set will obtain the Curiosity effect in the following conditions When on the field, the character gains 1 stack after hitting an opponent with a Geo attack, triggering a maximum of once every 0.3s. When off the field, the character gains 1 stack every 3s. Curiosity can stack up to 4 times, each providing 6% DEF and a 6% Geo DMG Bonus. When 6 seconds pass without gaining a Curiosity stack, 1 stack is lost."
+      ]
+    },
+    {
       "key": "instructor",
       "name": "Instructor",
       "bonus": [
@@ -8002,6 +8370,14 @@
       "bonus": [
         "Elemental Burst DMG +20%",
         "Using an Elemental Burst increases all party members' ATK by 20% for 12s. This effect cannot stack."
+      ]
+    },
+    {
+      "key": "ocean-hued-clam",
+      "name": "Ocean-Hued Clam",
+      "bonus": [
+        "Healing Bonus +15%.",
+        "When the character equipping this artifact set heals a character in the party, a Sea-Dyed Foam will appear for 3 seconds, accumulating the amount of HP recovered from healing (including overflow healing). At the end of the duration, the Sea-Dyed Foam will explode, dealing DMG to nearby opponents based on 90% of the accumulated healing. (This DMG is calculated similarly to Reactions such as Electro-Charged, and Superconduct, but is not affected by Elemental Mastery, Character Levels, or Reaction DMG Bonuses). Only one Sea-Dyed Foam can be produced every 3.5 seconds. Each Sea-Dyed Foam can accumulate up to 30,000 HP (including overflow healing). There can be no more than one Sea-Dyed Foam active at any given time. This effect can still be triggered even when the character who is using this artifact set is not on the field."
       ]
     },
     {
@@ -8076,7 +8452,7 @@
       "name": "Shimenawa's Reminiscence",
       "bonus": [
         "ATK +18%.",
-        "When casting an Elemental Skill, if the character has 15 or more Energy, they lose 15 Energy and Normal/Charged/ Plunging Attack DMG is increased by 50% for 10s. This effect will not trigger again during that duration."
+        "When casting an Elemental Skill, if the character has 15 or more Energy, they lose 15 Energy and Normal/Charged/Plunging Attack DMG is increased by 50% for 10s. This effect will not trigger again during that duration."
       ]
     },
     {
@@ -9196,6 +9572,11 @@
       "description": "A grain crop commonly found in Teyvat. People of all walks of life enjoy its distinct grainy texture. As the saying goes, \"The same kind of rice can feed one hundred kinds of people.\""
     },
     {
+      "key": "riftborn-regalia",
+      "name": "Riftborn Regalia",
+      "description": "A broken horn that you obtained from defeating the Wolflord. That said, it should not have left anything behind after your hunt.\r\nEven a lord among the Riftwolves is nothing before monsters of a higher pedigree.\r\n\"Gold\" mass-produced these malformed wolf packs almost as if by accident, like shrunken drawings on discarded sheets of paper, and the horns on this one represent its authority to command its dark brood to dissolve space itself."
+    },
+    {
       "key": "ring-of-boreas",
       "name": "Ring of Boreas",
       "description": "A bit of crystallized ice from the Great Wolf King of the North.\r\nThis land was once a realm of freezing-cold blizzards and ice storms filled with razor-sharp ice shards, all at the command of Boreas. Though his power may have diminished, he could still freeze the land in an instant."
@@ -9598,25 +9979,25 @@
   ],
   "debuffs": [
     {
-      "key": "Engulfing Storm",
+      "key": "engulfing-storm",
       "name": "Engulfing Storm",
       "effect": "Continuously drains Energy Recharge.",
       "description": null
     },
     {
-      "key": "Slowing Water",
+      "key": "slowing-water",
       "name": "Slowing Water",
       "effect": "Increases skill CD durations.",
       "description": null
     },
     {
-      "key": "Smoldering Flames",
+      "key": "smoldering-flames",
       "name": "Smoldering Flames",
       "effect": "Continuously inflicts damage over time.",
       "description": null
     },
     {
-      "key": "Condensed Ice",
+      "key": "condensed-ice",
       "name": "Condensed Ice",
       "effect": "Increases stamina consumption.",
       "description": null
@@ -9624,99 +10005,111 @@
   ],
   "reactions": [
     {
-      "key": "Burning",
-      "name": "Burning",
-      "effect": "Deals Pyro DMG over time.",
-      "description": null
-    },
-    {
-      "key": "Crystalize",
-      "name": "Crystalize",
-      "effect": "Creates a crystal that will provide a shield when picked up.",
-      "description": null
-    },
-    {
-      "key": "Electro-Charged",
-      "name": "Electro-Charged",
-      "effect": "Deals Electro DMG over time.",
-      "description": null
-    },
-    {
-      "key": "Frozen",
-      "name": "Frozen",
-      "effect": "Freezes the target.",
-      "description": null
-    },
-    {
-      "key": "Melt",
-      "name": "Melt",
-      "effect": "Deals extra damage.",
-      "description": null
-    },
-    {
-      "key": "Overloaded",
-      "name": "Overloaded",
-      "effect": "Deals AoE Pyro DMG.",
-      "description": null
-    },
-    {
-      "key": "Superconduct",
-      "name": "Superconduct",
-      "effect": "Deals AoE Cryo DMG and reduces the target's Physical RES by 50%.",
-      "description": null
-    },
-    {
-      "key": "Swirl",
-      "name": "Swirl",
-      "effect": "Deals extra elemental damage and spreads the effect.",
-      "description": null
-    },
-    {
-      "key": "Vaporize",
+      "key": "vaporize",
       "name": "Vaporize",
-      "effect": "Deals extra damage.",
+      "effect": "Deals ×2 Pyro DMG when a Pyro attack triggers the reaction.",
+      "description": null
+    },
+    {
+      "key": "burning",
+      "name": "Burning",
+      "effect": "Deals large Pyro DMG over time. Grass is considered a Dendro object and will spread the burn effect around the area.",
+      "description": null
+    },
+    {
+      "key": "overloaded",
+      "name": "Overloaded",
+      "effect": "Deals AoE Pyro DMG and causes an explosion. The explosion generated is considered as a Heavy Attack.",
+      "description": null
+    },
+    {
+      "key": "melt",
+      "name": "Melt",
+      "effect": "Deals ×2 Pyro DMG when a Pyro attack triggers the reaction.",
+      "description": null
+    },
+    {
+      "key": "vaporize-reverse",
+      "name": "Vaporize (Reverse)",
+      "effect": "Deals ×1.5 Hydro DMG when a Hydro attack triggers the reaction.",
+      "description": null
+    },
+    {
+      "key": "electro-charged",
+      "name": "Electro Charged",
+      "effect": "Deals Electro DMG over time until the effect wears off, every tick shocks and interrupts any action. It also creates a lightning bolt that jumps to one nearby Wet target, dealing Electro DMG.",
+      "description": null
+    },
+    {
+      "key": "frozen",
+      "name": "Frozen",
+      "effect": "Freezes the target. If the frozen target is hit by a Claymore, a Sword Plunge Attack, or Geo DMG (excluding Catalyst user's Plunge), it will cause Shattered. Shattering a frozen target will deal additional Physical damage.",
+      "description": null
+    },
+    {
+      "key": "swirl",
+      "name": "Swirl",
+      "effect": "Infuses an element and deals that elemental damage while spreading the effect to nearby enemies. It does not deal Anemo damage (as that elemental damage seen comes from the talent that is dealing the Anemo element). Only one element at a time can be infused with Anemo.",
+      "description": null
+    },
+    {
+      "key": "superconduct",
+      "name": "Superconduct",
+      "effect": "Deals AoE Cryo DMG and reduces the target's Physical DMG Resistance by -40% for 12 seconds. Each Superconduct reaction deals DMG to targets within its range once, meaning if there are 3 Superconduct reactions, given all 3 targets are within the reactions' AoE, each target will take DMG 3 times.",
+      "description": null
+    },
+    {
+      "key": "melt-reverse",
+      "name": "Melt (Reverse)",
+      "effect": "Deals ×1.5 Cryo DMG when a Cryo attack triggers the reaction.",
+      "description": null
+    },
+    {
+      "key": "crystallize",
+      "name": "Crystallize",
+      "effect": "Absorbs the element and drops a crystal of that same element. The crystal will give an elemental shield. The shield absorbs all types of damage, but it protects more efficiently against the shield's element.",
       "description": null
     }
   ],
   "resonance": [
     {
-      "key": "Enduring Rock",
+      "key": "enduring-rock",
       "name": "Enduring Rock",
       "effect": "Increases shield strength by 15%. Aditionally, characters protected by a shield will have the following special characterists: DMG dealt increased by 15%, dealing DMG to enemies will decrease their Geo RES by 20% for 15s.",
       "description": null
     },
     {
-      "key": "Fervent Flames",
+      "key": "fervent-flames",
       "name": "Fervent Flames",
       "effect": "Affected by Cryo for 40% less time. Increases ATK by 25%.",
       "description": null
     },
     {
-      "key": "Soothing Waters",
+      "key": "soothing-waters",
       "name": "Soothing Waters",
       "effect": "Affected by Pyro for 40% less time. Increases incoming healing by 30%.",
       "description": null
     },
     {
-      "key": "Impetuous Winds",
+      "key": "impetuous-winds",
       "name": "Impetuous Winds",
       "effect": "Decreases Stamina Consumption by 15%. Increases Movement SPD by 10%. Shortens Skill CD by 5%.",
       "description": null
     },
     {
-      "key": "High Voltage",
+      "key": "high-voltage",
       "name": "High Voltage",
       "effect": "Affected by Hydro for 40% less time. Superconduct, Overloaded, and Electro-Charged have a 100% chance to generate an Electro Elemental Particle (CD: 5s).",
       "description": null
     },
     {
-      "key": "Shattering Ice",
+      "key": "shattering-ice",
       "name": "Shattering Ice",
       "effect": "Affected by Electro for 40% less time. Increases CRIT Rate against enemies that are Frozen or affected by Cryo by 15%.",
       "description": null
     },
     {
-      "key": "Protective Canopy",
+      "key": "protective-canopy",
       "name": "Protective Canopy",
       "effect": "All Elemental RES by 15%. Physical RES + 15%",
       "description": "Any 4 Unique Elements"

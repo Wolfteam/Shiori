@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:shiori/application/bloc.dart';
 import 'package:shiori/generated/l10n.dart';
 import 'package:shiori/presentation/game_codes/game_codes_page.dart';
 import 'package:shiori/presentation/home/widgets/card_description.dart';
@@ -23,7 +21,7 @@ class GameCodesCard extends StatelessWidget {
       title: s.gameCodes,
       iconToTheLeft: iconToTheLeft,
       onClick: _showGameCodesDialog,
-      icon: Icon(Icons.code, size: 60, color: theme.accentColor),
+      icon: Icon(Icons.code, size: 60, color: theme.colorScheme.secondary),
       children: [
         CardDescription(text: s.seeAllInGameGameCodes),
       ],
@@ -31,10 +29,8 @@ class GameCodesCard extends StatelessWidget {
   }
 
   Future<void> _showGameCodesDialog(BuildContext context) async {
-    context.read<GameCodesBloc>().add(const GameCodesEvent.init());
     final route = MaterialPageRoute(fullscreenDialog: true, builder: (ctx) => const GameCodesPage());
     await Navigator.push(context, route);
     await route.completed;
-    context.read<GameCodesBloc>().add(const GameCodesEvent.close());
   }
 }

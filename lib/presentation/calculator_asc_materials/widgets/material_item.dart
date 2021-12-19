@@ -34,15 +34,16 @@ class MaterialItem extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         InkWell(
-            onLongPress: () => _showQuantityPickerDialog(context),
-            borderRadius: BorderRadius.circular(30),
-            child: IconButton(
-              icon: Image.asset(image),
-              iconSize: 45,
-              splashRadius: 30,
-              constraints: const BoxConstraints(),
-              onPressed: () => _gotoMaterialPage(context),
-            )),
+          onLongPress: () => _showQuantityPickerDialog(context),
+          borderRadius: BorderRadius.circular(30),
+          child: IconButton(
+            icon: Image.asset(image),
+            iconSize: 45,
+            splashRadius: 30,
+            constraints: const BoxConstraints(),
+            onPressed: () => _gotoMaterialPage(context),
+          ),
+        ),
         if (quantity > 0)
           Text(
             type == app.MaterialType.currency ? CurrencyUtils.formatNumber(quantity) : '$quantity',
@@ -55,18 +56,17 @@ class MaterialItem extends StatelessWidget {
   }
 
   Future<void> _showQuantityPickerDialog(BuildContext context) async {
-    context.read<CalculatorAscMaterialsItemUpdateQuantityBloc>().add(CalculatorAscMaterialsItemUpdateQuantityEvent.load(key: itemKey));
     await showDialog<int>(
       context: context,
-      builder: (_) => ChangeMaterialQuantityDialog(sessionKey: sessionKey),
+      builder: (_) => BlocProvider.value(
+        value: context.read<CalculatorAscMaterialsBloc>(),
+        child: ChangeMaterialQuantityDialog(sessionKey: sessionKey, itemKey: itemKey),
+      ),
     );
   }
 
   Future<void> _gotoMaterialPage(BuildContext context) async {
-    final bloc = context.read<MaterialBloc>();
-    bloc.add(MaterialEvent.loadFromKey(key: itemKey));
-    final route = MaterialPageRoute(builder: (c) => mp.MaterialPage());
+    final route = MaterialPageRoute(builder: (c) => mp.MaterialPage(itemKey: itemKey));
     await Navigator.push(context, route);
-    bloc.pop();
   }
 }

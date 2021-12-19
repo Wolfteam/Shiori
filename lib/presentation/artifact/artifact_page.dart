@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shiori/application/bloc.dart';
 import 'package:shiori/generated/l10n.dart';
+import 'package:shiori/injection.dart';
 import 'package:shiori/presentation/artifacts/widgets/artifact_stats.dart';
 import 'package:shiori/presentation/shared/details/detail_appbar.dart';
 import 'package:shiori/presentation/shared/details/detail_bottom_portrait_layout.dart';
@@ -18,12 +19,17 @@ import 'package:shiori/presentation/shared/styles.dart';
 import 'package:shiori/presentation/shared/utils/size_utils.dart';
 
 class ArtifactPage extends StatelessWidget {
-  final double imgHeight = 350;
+  final String itemKey;
+
+  const ArtifactPage({Key? key, required this.itemKey}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     final isPortrait = MediaQuery.of(context).orientation == Orientation.portrait;
-    return isPortrait ? const _PortraitLayout() : const _LandscapeLayout();
+    return BlocProvider(
+      create: (context) => Injection.artifactBloc..add(ArtifactEvent.loadFromKey(key: itemKey)),
+      child: isPortrait ? const _PortraitLayout() : const _LandscapeLayout(),
+    );
   }
 }
 
@@ -76,10 +82,12 @@ class _PortraitLayout extends StatelessWidget {
                         body: Wrap(
                           alignment: WrapAlignment.center,
                           children: state.images
-                              .map((e) => Container(
-                                    margin: Styles.edgeInsetAll5,
-                                    child: Image.asset(e, width: size * 2, height: size * 2),
-                                  ))
+                              .map(
+                                (e) => Container(
+                                  margin: Styles.edgeInsetAll5,
+                                  child: Image.asset(e, width: size * 2, height: size * 2),
+                                ),
+                              )
                               .toList(),
                         ),
                         textColor: rarityColor,
@@ -182,8 +190,12 @@ class _LandscapeLayout extends StatelessWidget {
                                 body: Wrap(
                                   alignment: WrapAlignment.center,
                                   children: state.images
-                                      .map((e) =>
-                                          Container(margin: Styles.edgeInsetAll5, child: Image.asset(e, width: imgSize * 2, height: imgSize * 2)))
+                                      .map(
+                                        (e) => Container(
+                                          margin: Styles.edgeInsetAll5,
+                                          child: Image.asset(e, width: imgSize * 2, height: imgSize * 2),
+                                        ),
+                                      )
                                       .toList(),
                                 ),
                                 textColor: rarityColor,

@@ -235,13 +235,14 @@ void main() {
           checkKey(skill.key);
           if (!detail.isComingSoon) {
             checkAsset(skill.fullImagePath);
+            expect(skill.stats, isNotEmpty);
+            final statKeys = skill.stats.map((e) => e.key).toList();
+            expect(statKeys.toSet().length, equals(statKeys.length));
+            //check that all the values in the stats have the same length
+            final statCount = skill.stats.map((e) => e.values.length).toSet().length;
+            expect(statCount, equals(1));
           }
-          expect(skill.stats, isNotEmpty);
-          final statKeys = skill.stats.map((e) => e.key).toList();
-          expect(statKeys.toSet().length, equals(statKeys.length));
-          //check that all the values in the stats have the same length
-          final statCount = skill.stats.map((e) => e.values.length).toSet().length;
-          expect(statCount, equals(1));
+
           for (final stat in skill.stats) {
             expect(stat.values, isNotEmpty);
           }
@@ -686,7 +687,7 @@ void main() {
       for (final lang in languages) {
         await service.init(lang);
         final reactions = service.getElementReactions();
-        expect(reactions.length, equals(9));
+        expect(reactions.length, equals(11));
         for (final reaction in reactions) {
           expect(reaction.name, allOf([isNotNull, isNotEmpty]));
           expect(reaction.effect, allOf([isNotNull, isNotEmpty]));

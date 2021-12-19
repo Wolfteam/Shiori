@@ -1,16 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shiori/application/bloc.dart';
+import 'package:shiori/injection.dart';
 import 'package:shiori/presentation/shared/app_webview.dart';
 import 'package:shiori/presentation/shared/loading.dart';
 
-class MapPage extends StatefulWidget {
-  @override
-  _MapPageState createState() => _MapPageState();
-}
-
-class _MapPageState extends State<MapPage> {
-  final String script = '''
+const _script = '''
     let wasRemoved = false;
     function removeAds(){
       //console.log("Removing ads..");
@@ -55,26 +50,22 @@ class _MapPageState extends State<MapPage> {
     setTimeout(removeAds, 3500);
     ''';
 
-  @override
-  void didChangeDependencies() {
-    super.didChangeDependencies();
-    context.read<UrlPageBloc>().add(const UrlPageEvent.init(loadMap: true, loadWishSimulator: false, loadDailyCheckIn: false));
-  }
-
+class MapPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<UrlPageBloc, UrlPageState>(
-      builder: (context, state) {
-        return state.map(
+    return BlocProvider<UrlPageBloc>(
+      create: (ctx) => Injection.urlPageBloc..add(const UrlPageEvent.init(loadMap: true, loadWishSimulator: false, loadDailyCheckIn: false)),
+      child: BlocBuilder<UrlPageBloc, UrlPageState>(
+        builder: (context, state) => state.map(
           loading: (_) => const Loading(),
           loaded: (state) => AppWebView(
             url: state.mapUrl,
             userAgent: state.userAgent,
             hasInternetConnection: state.hasInternetConnection,
-            script: script,
+            script: _script,
           ),
-        );
-      },
+        ),
+      ),
     );
   }
 }

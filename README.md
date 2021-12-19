@@ -6,6 +6,8 @@
 > A Genshin Impact database kinda app
 
 > This app is not affiliated with or endorsed by miHoYo. Shiori is just a database app for the Genshin Impact game
+
+![Tests](https://github.com/Wolfteam/Shiori/actions/workflows/tests.yml/badge.svg)
 <p align="center">
   <img src="images/banner.png">
 </p>

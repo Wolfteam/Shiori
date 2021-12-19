@@ -419,92 +419,157 @@
     {
       "key": "arataki-itto",
       "name": "Arataki Itto",
-      "title": "Hanamizaka Heroics",
-      "description": "The first and greatest head of the Arataki Gang, famed throughout Hanamizaka in Inazuma City... Wait, what? Never heard of them? Seriously?",
+      "title": "El Héroe de Hanamizaka",
+      "description": "El primer gran líder de la Banda de Arataki, muy activo en la zona de Hanamizaka de la Ciudad de Inazuma. ¿Nunca habías oído hablar de la Banda de Arataki? ¿En serio?",
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Héroe del combate",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Ataque Normal",
+              "description": "Realiza hasta 4 tajos de espada consecutivos.\r\nAl golpear a un enemigo con el segundo y el cuarto tajo, crea respectivamente 1 y 2 cargas del efecto “fuerza sobrenatural”, el cual puede acumularse un máximo de 5 veces. Al activar este efecto, se reiniciará la duración de las cargas existentes.\r\nAdemás, durante un breve periodo de tiempo después de usar la Habilidad Elemental, “Exterminio del mal: ¡Embestida taurina!”, o de esprintar, la secuencia de los Ataques Normales de Arataki Itto no se reiniciará.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Ataque Cargado",
+              "description": "Cuando Arataki Itto posee la fuerza sobrenatural, mantén pulsado para hacer Ataques Cargados que ejecutan golpes de espada kesagiri, los cuales no consumen Aguante. Cada ataque de este movimiento consumirá una carga de fuerza sobrenatural. Al consumir la última carga, se libera un golpe final aún más poderoso.\r\nSi Arataki Itto no posee ninguna carga de fuerza sobrenatural, consumirá Aguante y realizará un violento tajo horizontal.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Ataque Descendente",
+              "description": "Se lanza desde el aire para golpear el suelo, dañando a los enemigos cercanos e infligiendo Daño en el AdE en el momento del impacto.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "Daño de 1er golpe|{param1}%",
+            "Daño de 2.º golpe|{param2}%",
+            "Daño de 3er golpe|{param3}%",
+            "Daño de 4.º golpe|{param4}%",
+            "Daño de golpe de espada kesagiri|{param5}%",
+            "Daño del último golpe de espada kesagiri|{param6}%",
+            "Duración de fuerza sobrenatural|{param7}s",
+            "Daño del tajo horizontal|{param8}%",
+            "Coste de Aguante del tajo horizontal|{param9}",
+            "Daño de Caída|{param10}%",
+            "Daño de impacto de caída baja/alta|{param11}% / {param12}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Exterminio del mal: ¡Embestida taurina!",
+          "description": "Lanza a Ushi, el toro akaushi ayudante de la Banda de Arataki, para infligir Daño Geo. Al golpear a un enemigo, otorga a Arataki Itto una carga de fuerza sobrenatural.\r\nUshi se quedará en el campo de batalla para ayudar:",
+          "abilities": [
+            {
+              "name": "",
+              "description": "",
+              "descriptions": [
+                "Provoca continuamente a los enemigos cercanos para que lo ataquen.",
+                "Hereda cierto porcentaje de Vida en función de la Vida Máx. de Arataki Itto.",
+                "Al recibir daño, otorga a Itto una carga de fuerza sobrenatural. Como máximo, solo puede otorgar una carga cada 2 s de esta manera.",
+                "Tras quedarse sin Vida o al terminar su duración, Ushi huirá y otorgará a Arataki Itto una carga de fuerza sobrenatural."
+              ]
+            },
+            {
+              "name": "Mantener pulsado",
+              "description": "Ajusta la dirección en la que se lanza a Ushi.\r\nUshi es considerado una creación Geo, y Arataki Itto no puede crear más de uno a la vez.\r\n",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "Daño de habilidad|{param1}%",
+            "Vida heredada|{param2}%",
+            "Duración|{param3}s",
+            "TdE|{param4}s"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Rey oni maligno: ¡Itto contra todos!",
+          "description": "¡Hora de mostrar el gran poder del líder de la Banda de Arataki! Itto se transforma en un rey oni enfurecido durante cierto tiempo y combate usando una gran maza.\r\n",
+          "abilities": [
+            {
+              "name": "",
+              "description": "Además, adquiere las siguientes características:\r\n",
+              "descriptions": [
+                "El daño infligido con los Ataques Normales, Cargados y Descendentes se transforma en Daño Geo, el cual no puede sustituirse imbuyéndose de otro elemento.",
+                "Aumenta la Vel. de Ataque Normal de Arataki Itto y, en proporción a su DEF, aumenta su ATQ.",
+                "El primer y el tercer tajo del Ataque Normal de Arataki Itto crean cada uno una carga de fuerza sobrenatural al golpear a un enemigo.",
+                "Todas sus RES Elementales y su RES Física se reducen en un 20%.",
+                "El estado de rey oni enfurecido desaparecerá una vez que Arataki Itto sea retirado de combate."
+              ]
+            }
+          ],
+          "stats": [
+            "Aumento de ATQ|{param1}% DEF",
+            "Aumento de Vel. de Ataque|{param2}%",
+            "Duración|{param3}s",
+            "TdE|{param4}s",
+            "Energía Elemental|{param5}"
+          ]
         }
       ],
       "passives": [
         {
-          "key": "p3",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
-        },
-        {
-          "key": "p4",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
-        },
-        {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "Itto el leñador",
+          "description": "Tus personajes tienen un 25% de probabilidad de obtener un trozo de madera adicional al talar árboles con sus ataques.\r\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
+          "title": "Itto, el ónico e inimitable",
+          "description": "Cuando Arataki Itto realiza ataques de espada kesagiri continuos, obtiene los siguientes efectos:\r\n",
+          "descriptions": [
+            "Cada golpe aumenta en un 10% la Vel. de Ataque del siguiente hasta un máximo del 30%.",
+            "Aumenta la RES a interrupción.",
+            "Estos efectos desaparecen cuando Arataki Itto deja de ejecutar golpes continuos."
+          ]
+        },
+        {
+          "key": "p3",
+          "title": "Linaje de oni escarlata",
+          "description": "Aumenta el daño de los golpes de espada kesagiri de Arataki Itto en proporción al 35% de su DEF.\r\n",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "Calla y escucha",
+          "description": "Al realizar Rey oni maligno: ¡Itto contra todos!, Arataki Itto obtiene 2 cargas de fuerza sobrenatural. 1 s después, obtiene una carga cada 0.5 s durante 1.5 s.\r\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "¡Todos contra todos!",
+          "description": "Tras realizar Rey oni maligno: ¡Itto contra todos!, por cada personaje Geo que haya en el equipo, el TdE de dicha habilidad se reduce en 1.5 s y se regeneran 6 pts. de Energía Elemental para Arataki Itto.\r\nComo máximo, este TdE se puede reducir en 4.5 s y se pueden regenerar 18 pts. de Energía de esta manera.\r\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "¡El toro por los cuernos!",
+          "description": "Aumenta el nivel de habilidad de Exterminio del mal: ¡Embestida taurina! +3.\r\nPuede ser aumentado hasta Niv. 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "La cárcel es mi casa",
+          "description": "Al terminar la duración del estado de rey oni enfurecido de Rey oni maligno: ¡Itto contra todos!, la DEF y el ATQ de todos los miembros del equipo cercanos aumentan en un 20% durante 10 s.\r\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "Los envidiosos dirán que no soy famoso",
+          "description": "Aumenta el nivel de habilidad de Rey oni maligno: ¡Itto contra todos! +3.\r\nPuede ser aumentado hasta Niv. 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
+          "title": "Ante ustedes, ¡Arataki Itto!",
+          "description": "Aumenta en un 70% el Daño CRIT del Ataque Cargado de Arataki Itto. Además, al ejecutar golpes de espada kesagiri, hay un 50% de probabilidad de no consumir cargas de fuerza sobrenatural.\r\n",
           "descriptions": []
         }
       ]
@@ -1774,87 +1839,160 @@
     {
       "key": "gorou",
       "name": "Gorou",
-      "title": "Canine Warrior",
-      "description": "The great general of Watatsumi Island's forces. He is deeply trusted by his subordinates.",
+      "title": "El General Canino",
+      "description": "El gran general de las tropas de Watatsumi. Sus subordinados confían plenamente en él.",
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Flecha resquebrajadora",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Ataque Normal",
+              "description": "Realiza hasta 4 disparos consecutivos con arco.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Ataque Cargado",
+              "description": "Realiza un Disparo Preciso que inflige mayor daño y tiene mayor precisión.\r\nAl apuntar, se acumularán fragmentos de roca en la punta de flecha. Una flecha rocosa totalmente cargada infligirá Daño Geo.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Ataque Descendente",
+              "description": "Dispara una lluvia de flechas desde el aire mientras desciende rápidamente, infligiendo Daño en el AdE al impactar contra el suelo.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "Daño de 1er golpe|{param1}%",
+            "Daño de 2.º golpe|{param2}%",
+            "Daño de 3er golpe|{param3}%",
+            "Daño de 4.º golpe|{param4}%",
+            "Disparo Preciso|{param5}%",
+            "Disparo Preciso (carga completa)|{param6}%",
+            "Daño de Caída|{param7}%",
+            "Daño de impacto de caída baja/alta|{param8}% / {param9}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Defensa integral canina",
+          "description": "Inflige Daño Geo en el AdE e iza el estandarte del general.\r\n",
+          "abilities": [
+            {
+              "name": "Estandarte del general",
+              "description": "Teniendo en cuenta el número de personajes Geo que hay en el equipo al lanzar esta habilidad, otorga los siguientes efectos a los personajes en uso dentro de la zona del estandarte:\r\n",
+              "descriptions": [
+                "1 personaje - Robustez: aumenta la DEF.",
+                "2 personajes - Inquebrantabilidad: además del efecto anterior, aumenta la RES a interrupción.",
+                "3 personajes - Fragmentación: además de los anteriores efectos, otorga un Bono de Daño Geo.",
+                "Solo puede existir al mismo tiempo un estandarte del general creado por Gorou, y los demás personajes solo podrán beneficiarse de los efectos de un único estandarte. Cuando el personaje sale de la zona, los efectos de esta seguirán activos durante 2 s."
+              ]
+            },
+            {
+              "name": "Mantener pulsado",
+              "description": "Ajusta la ubicación en la que se activa la habilidad.\r\n",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "Daño de habilidad|{param1}%",
+            "Aumento de DEF|{param2}",
+            "Bono de Daño Geo|{param3}%",
+            "Duración|{param4}s",
+            "TdE|{param5}s"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Colmillo de la victoria",
+          "description": "Haciendo una muestra de su poder, inflige Daño Geo en el AdE y crea un área llamada “gloria del general” para animar a sus aliados.\r\n",
+          "abilities": [
+            {
+              "name": "Gloria del general",
+              "description": "Posee las siguientes características:\r\n",
+              "descriptions": [
+                "Tiene los mismos efectos que el estandarte del general creado con la Habilidad Elemental, “Defensa integral canina”, es decir, según el número de personajes Geo que hay en el equipo, otorga ciertos efectos al personaje en uso dentro de la zona del estandarte, el cual se va moviendo junto a dicho personaje.",
+                "Cada 1.5 s, provoca un derrumbamiento rocoso que inflige Daño Geo en el AdE contra un enemigo situado en la zona.",
+                "Cada 1.5 s, atrae hasta la ubicación del personaje en uso un fragmento creado por la reacción de Cristalización dentro de la zona.",
+                "Si al lanzar esta habilidad ya existe un estandarte del general creado por Gorou, dicho estandarte se destruirá. Además, mientras la zona de gloria del general esté activa, cuando Gorou realice su Habilidad Elemental, “Defensa integral canina”, no creará otro estandarte del general.",
+                "Si Gorou es derrotado, los efectos de gloria del general desaparecerán."
+              ]
+            }
+          ],
+          "stats": [
+            "Daño de habilidad|{param1}% DEF",
+            "Daño de cada derrumbamiento rocoso|{param2}% DEF",
+            "Duración|{param3}s",
+            "TdE|{param4}s",
+            "Energía Elemental|{param5}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "Perro rastreador",
+          "description": "Muestra la ubicación de los objetos típicos de Inazuma cercanos en el minimapa.\r\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
+          "title": "Contra viento y marea",
+          "description": "Al realizar Colmillo de la victoria, la DEF de todos los miembros del equipo cercanos aumenta en un 25% durante 12 s.\r\n",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
+          "title": "Favor recíproco",
+          "description": "Aumenta el daño de los siguientes ataques de Gorou en proporción a su DEF:\r\n",
+          "descriptions": [
+            "El daño de habilidad de Defensa integral canina aumenta en un 156% de su DEF.",
+            "El daño de habilidad de Colmillo de la victoria y de los derrumbamientos rocosos aumenta en un 15.6% de su DEF."
+          ]
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "Velocidad de sabueso: Raudo como el viento",
+          "description": "Cuando el personaje en uso (a excepción de Gorou) inflige Daño Geo contra un enemigo mientras está dentro de las áreas del estandarte del general o de gloria del general, el TdE de Defensa integral canina de Gorou se reduce en 2 s.\r\nEste efecto solo puede ocurrir una vez cada 10 s.\r\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "Tranquilidad de sabueso: Firme como la roca",
+          "description": "Cuando un personaje en uso cercano obtiene un fragmento creado con Cristalización mientras gloria del general está activa, la duración de sus efectos se prolonga en 1 s.\r\nEsto solo puede ocurrir una vez cada 0.1 s y solo se puede prolongar un máximo de 3 s de esta manera.\r\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "Zarpas de sabueso: Feroz como el fuego",
+          "description": "Aumenta el nivel de habilidad de Defensa integral canina +3.\r\nPuede ser aumentado hasta Niv. 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "Lametón de sabueso: Cálido como el agua",
+          "description": "Cuando el área de gloria del general posee los efectos de Inquebrantabilidad o Fragmentación, los personajes en uso que se encuentren dentro de ella recuperan Vida cada 1.5 s en una cantidad equivalente al 50% de la DEF de Gorou.\r\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "Arremetida de sabueso: Potente como el rayo",
+          "description": "Aumenta el nivel de habilidad de Colmillo de la victoria +3.\r\nPuede ser aumentado hasta Niv. 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
+          "title": "Valentía de sabueso: Fiel como un perro",
+          "description": "Tras usar Defensa integral canina o Colmillo de la victoria, aumenta el Daño CRIT Geo de todos los miembros del equipo cercanos durante 12 s según el nivel del área creada.\r\n",
+          "descriptions": [
+            "Robustez: aumenta en un 10%.",
+            "Inquebrantabilidad: aumenta en un 20%.",
+            "Fragmentación: aumenta en un 40%.",
+            "Este efecto no se puede acumular, sino que será determinado en función de la última bonificación que surtió efecto."
+          ]
         }
       ]
     },
@@ -3800,8 +3938,8 @@
       "passives": [
         {
           "key": "p1",
-          "title": "Aspiración infinita",
-          "description": "Los orbes o partículas elementales obtenidos por los personajes cercanos del equipo otorgan 2 cargas de ambición a rueda de la ambición.\r\nEste efecto solo puede ocurrir una vez cada 3 s.\r\n",
+          "title": "La protectora",
+          "description": "Reduce en un 50% el Mora necesario para ascender espadas ligeras y lanzas.\r\n",
           "descriptions": []
         },
         {
@@ -3815,8 +3953,8 @@
         },
         {
           "key": "p3",
-          "title": "La protectora",
-          "description": "Reduce en un 50% el Mora necesario para ascender espadas ligeras y lanzas.\r\n",
+          "title": "Aspiración infinita",
+          "description": "Los orbes o partículas elementales obtenidos por los personajes cercanos del equipo otorgan 2 cargas de ambición a rueda de la ambición.\r\nEste efecto solo puede ocurrir una vez cada 3 s.\r\n",
           "descriptions": []
         }
       ],
@@ -4454,6 +4592,93 @@
       ]
     },
     {
+      "key": "shenhe",
+      "name": "Shenhe",
+      "title": "？？？",
+      "description": "",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ]
+    },
+    {
       "key": "sucrose",
       "name": "Sacarosa",
       "title": "la Dulzura Inofensiva",
@@ -4860,7 +5085,7 @@
         {
           "key": "p1",
           "title": "Apasionado de la pesca",
-          "description": "Al pescar en Inazuma, hay un 20% de probabilidad de obtener el doble de peces.\r\n",
+          "description": "Cuando el viajero pesca en Inazuma, hay un 20% de probabilidad de obtener el doble de peces gracias a la ayuda de Thoma.",
           "descriptions": []
         },
         {
@@ -4880,7 +5105,7 @@
         {
           "key": "c1",
           "title": "El deber de un compañero",
-          "description": "Cuando el escudo llameante de un personaje distinto a Thoma recibe daño, tanto el TdE de Bendición incandescente como el de Armadura calcinante se reducen en 3 s.\r\nEste efecto solo puede ocurrir una vez cada 20 s.\r\n",
+          "description": "Cuando los personajes que estén bajo la protección de un escudo llameante (a excepción de Thoma) reciben un ataque, tanto el TdE de Bendición incandescente como el de Armadura calcinante se reducen en 3 s.\r\nEste efecto solo puede ocurrir una vez cada 20 s.\r\n",
           "descriptions": []
         },
         {
@@ -6070,11 +6295,11 @@
           ],
           "stats": [
             "Daño de habilidad|{param1}%",
-            "Intervalo de obtención de sellos escarlatas|{param2}%",
-            "Aumento de daño de ATQ Cargado|{param3}s",
-            "Duración|{param4}%",
+            "Intervalo de obtención de sellos escarlatas|{param2}s",
+            "Aumento de daño de ATQ Cargado|{param3}%",
+            "Duración|{param4}s",
             "TdE|{param5}s",
-            "Energía Elemental|{param6}s"
+            "Energía Elemental|{param6}"
           ]
         }
       ],
@@ -6272,6 +6497,93 @@
           "key": "c6",
           "title": "Lluvia de meteoros Naganohara",
           "description": "Cuando Yoimiya realiza un Ataque Normal mientras Danza de la pólvora está activa, hay una probabilidad del 50% de disparar una flecha flamígera adicional, la cual inflige un 60% del daño original. Este daño se considera daño de Ataque Normal.\r\n",
+          "descriptions": []
+        }
+      ]
+    },
+    {
+      "key": "yun-jin",
+      "name": "Yun Jin",
+      "title": "？？？",
+      "description": "",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
           "descriptions": []
         }
       ]
@@ -6598,6 +6910,18 @@
         "Aumenta en un {color}18{/color}% el daño contra los enemigos afectados por Pyro o Electro.",
         "Aumenta en un {color}21{/color}% el daño contra los enemigos afectados por Pyro o Electro.",
         "Aumenta en un {color}24{/color}% el daño contra los enemigos afectados por Pyro o Electro."
+      ]
+    },
+    {
+      "key": "cinnabar-spindle",
+      "name": "Huso de Cinabrio",
+      "description": "Una espada forjada con materiales que no son de este mundo. El poder que contiene podría incluso resistir la corrupción de un veneno capaz de derribar a un poderoso dragón.",
+      "refinements": [
+        "El daño infligido por la Habilidad Elemental aumenta en una cantidad equivalente al {color}40{/color}% de la DEF. Este efecto solo puede activarse una vez cada 1.5 s y se anula 0.1 s después de que la Habilidad Elemental inflija daño.",
+        "El daño infligido por la Habilidad Elemental aumenta en una cantidad equivalente al {color}50{/color}% de la DEF. Este efecto solo puede activarse una vez cada 1.5 s y se anula 0.1 s después de que la Habilidad Elemental inflija daño.",
+        "El daño infligido por la Habilidad Elemental aumenta en una cantidad equivalente al {color}60{/color}% de la DEF. Este efecto solo puede activarse una vez cada 1.5 s y se anula 0.1 s después de que la Habilidad Elemental inflija daño.",
+        "El daño infligido por la Habilidad Elemental aumenta en una cantidad equivalente al {color}70{/color}% de la DEF. Este efecto solo puede activarse una vez cada 1.5 s y se anula 0.1 s después de que la Habilidad Elemental inflija daño.",
+        "El daño infligido por la Habilidad Elemental aumenta en una cantidad equivalente al {color}80{/color}% de la DEF. Este efecto solo puede activarse una vez cada 1.5 s y se anula 0.1 s después de que la Habilidad Elemental inflija daño."
       ]
     },
     {
@@ -7123,6 +7447,18 @@
       ]
     },
     {
+      "key": "mouuns-moon",
+      "name": "Luna de Mouun",
+      "description": "Un elegante arco hecho con caracolas de mar y corales. Una melancólica luz lunar fluye por él.",
+      "refinements": [
+        "El daño infligido por la Habilidad Definitiva del portador de esta arma aumenta en un {color}0.12{/color}% por cada punto de la Energía Elemental máxima total de todos los miembros del equipo. El daño puede aumentar hasta un {color}40{/color}% de esta forma.",
+        "El daño infligido por la Habilidad Definitiva del portador de esta arma aumenta en un {color}0.15{/color}% por cada punto de la Energía Elemental máxima total de todos los miembros del equipo. El daño puede aumentar hasta un {color}50{/color}% de esta forma.",
+        "El daño infligido por la Habilidad Definitiva del portador de esta arma aumenta en un {color}0.18{/color}% por cada punto de la Energía Elemental máxima total de todos los miembros del equipo. El daño puede aumentar hasta un {color}60{/color}% de esta forma.",
+        "El daño infligido por la Habilidad Definitiva del portador de esta arma aumenta en un {color}0.21{/color}% por cada punto de la Energía Elemental máxima total de todos los miembros del equipo. El daño puede aumentar hasta un {color}70{/color}% de esta forma.",
+        "El daño infligido por la Habilidad Definitiva del portador de esta arma aumenta en un {color}0.24{/color}% por cada punto de la Energía Elemental máxima total de todos los miembros del equipo. El daño puede aumentar hasta un {color}80{/color}% de esta forma."
+      ]
+    },
+    {
       "key": "old-mercs-pal",
       "name": "Espada del Mercenario",
       "description": "Una gran espada antigua y pesada que ha vivo innumerables batallas.",
@@ -7284,6 +7620,18 @@
         "Restaura un {color}12{/color}% de Vida tras derrotar a un enemigo.",
         "Restaura un {color}14{/color}% de Vida tras derrotar a un enemigo.",
         "Restaura un {color}16{/color}% de Vida tras derrotar a un enemigo."
+      ]
+    },
+    {
+      "key": "redhorn-stonethresher",
+      "name": "Espadón Cornirrojo",
+      "description": "Según su dueño anterior, este gran espadón es el “Heroico, Poderoso, Cornirrojo, Dorado y Destrozapiedras Señor de los Leones”, capaz de hacer que cualquier monstruo ponga pies en polvorosa al verlo.",
+      "refinements": [
+        "La DEF aumenta en un {color}28{/color}%. El daño de los Ataques Normales y Cargados aumenta en una cantidad equivalente al {color}40{/color}% de la DEF.",
+        "La DEF aumenta en un {color}35{/color}%. El daño de los Ataques Normales y Cargados aumenta en una cantidad equivalente al {color}50{/color}% de la DEF.",
+        "La DEF aumenta en un {color}42{/color}%. El daño de los Ataques Normales y Cargados aumenta en una cantidad equivalente al {color}60{/color}% de la DEF.",
+        "La DEF aumenta en un {color}49{/color}%. El daño de los Ataques Normales y Cargados aumenta en una cantidad equivalente al {color}70{/color}% de la DEF.",
+        "La DEF aumenta en un {color}56{/color}%. El daño de los Ataques Normales y Cargados aumenta en una cantidad equivalente al {color}80{/color}% de la DEF."
       ]
     },
     {
@@ -7781,6 +8129,18 @@
       "refinements": []
     },
     {
+      "key": "wavebreakers-fin",
+      "name": "Aleta Cortaolas",
+      "description": "Una naginata fabricada a partir de un brillante material de las profundidades del océano. En el pasado, perteneció a la raza de los tengu.",
+      "refinements": [
+        "El daño infligido por la Habilidad Definitiva del portador de esta arma aumenta en un {color}0.12{/color}% por cada punto de la Energía Elemental máxima total de todos los miembros del equipo. El daño puede aumentar hasta un {color}40{/color}% de esta forma.",
+        "El daño infligido por la Habilidad Definitiva del portador de esta arma aumenta en un {color}0.15{/color}% por cada punto de la Energía Elemental máxima total de todos los miembros del equipo. El daño puede aumentar hasta un {color}50{/color}% de esta forma.",
+        "El daño infligido por la Habilidad Definitiva del portador de esta arma aumenta en un {color}0.18{/color}% por cada punto de la Energía Elemental máxima total de todos los miembros del equipo. El daño puede aumentar hasta un {color}60{/color}% de esta forma.",
+        "El daño infligido por la Habilidad Definitiva del portador de esta arma aumenta en un {color}0.21{/color}% por cada punto de la Energía Elemental máxima total de todos los miembros del equipo. El daño puede aumentar hasta un {color}70{/color}% de esta forma.",
+        "El daño infligido por la Habilidad Definitiva del portador de esta arma aumenta en un {color}0.24{/color}% por cada punto de la Energía Elemental máxima total de todos los miembros del equipo. El daño puede aumentar hasta un {color}80{/color}% de esta forma."
+      ]
+    },
+    {
       "key": "white-iron-greatsword",
       "name": "Espada de Hierro Blanco",
       "description": "Un mandoble fabricado con hierro blanco que aumenta su potencia al tiempo que tiene un peso relativamente ligero. Puede ser manejada por personas con fuerza normal en los brazos, pero su manejo es mucho mejor cuando es empuñada por grandes guerreros.",
@@ -7914,7 +8274,7 @@
       "name": "Corazón del Guardián",
       "bonus": [
         "DEF +30%.",
-        "Por cada miembro de tu equipo con un Tipo Elemental distinto, La RES Elemental del personaje que lleve este conjunto aumenta en un 30% contra dicho elemento."
+        "Por cada miembro de tu equipo con un tipo elemental distinto, La RES Elemental del personaje que lleve este conjunto aumenta en un 30% contra dicho elemento."
       ]
     },
     {
@@ -7947,6 +8307,14 @@
       "bonus": [
         "Bono de Daño Hydro +15%.",
         "Tras usar la Habilidad Elemental, aumenta el daño de Ataque Normal y Ataque Cargado en un 30% durante 15 s."
+      ]
+    },
+    {
+      "key": "husk-of-opulent-dreams",
+      "name": "Cáscara de Sueños Opulentos",
+      "bonus": [
+        "DEF +30%.",
+        "El personaje que equipe este conjunto de artefactos obtendrá el efecto de “curiosidad” en las siguientes circunstancias al golpear a un enemigo con un ataque Geo, obtiene una carga, lo cual solo puede ocurrir una vez cada 0.3 s; mientras está en tu equipo pero no en combate, obtiene una carga cada 3 s. Este efecto puede acumularse hasta 4 veces, y cada carga aumenta en un 6% la DEF y otorga un 6% de Bono de Daño Geo. Si el personaje no obtiene una carga de curiosidad en 6 s, perderá una acumulación."
       ]
     },
     {
@@ -7995,6 +8363,14 @@
       "bonus": [
         "Daño de Habilidad Definitiva +20%.",
         "Después de lanzar una Habilidad Definitiva, aumenta el ATQ de todos los miembros del equipo en un 20% durante 12 s. Este efecto no puede acumularse."
+      ]
+    },
+    {
+      "key": "ocean-hued-clam",
+      "name": "Perla Oceánica",
+      "bonus": [
+        "Bono de Curación +15%.",
+        "Cuando el personaje que equipa este conjunto de artefactos cura a otro, crea el efecto de “burbuja marina” durante 3 s, el cual registra la cantidad de Vida regenerada (incluida la regenerada por encima del 100%). Tras ello, la burbuja marina estalla e inflige contra los enemigos cercanos un daño basado en el 90% de la cantidad regenerada. Este daño se calcula de manera similar al de las reacciones de Electrocargado, Superconductor, etc., pero no varía en función de la Maestría Elemental, el nivel del personaje o el bono de daño de las reacciones. Solo se puede crear una burbuja marina cada 3.5 s, la cual solo puede registrar un máximo de 30 000 pts. de Vida regenerada, incluyendo la regenerada por encima del 100%. Además, solo puede existir una burbuja marina en tu equipo al mismo tiempo. Cuando el personaje que equipa este conjunto de artefactos está en el equipo pero no en combate, también podrá activar este efecto."
       ]
     },
     {
@@ -9182,6 +9558,11 @@
       "description": "Un tipo de cereal muy común en Teyvat. A todo el mundo le agrada su distintiva textura. Como dice el dicho: “El mismo tipo de arroz puede alimentar a cien tipos de personas”."
     },
     {
+      "key": "riftborn-regalia",
+      "name": "Cuerno del Rey Acechador",
+      "description": "Un cuerno roto obtenido del Rey Acechador Dorado, quien en realidad no debería haber dejado nada tras ser derrotado.\r\nAunque sea el rey de su jauría, no es nada comparado con otros monstruos de su misma genealogía.\r\nOro creó en masa a estos Acechadores deformes casi por accidente, como si fueran dibujos no deseados y pintados en hojas de papel. Los cuernos de este Acechador representan su autoridad para ordenar a su jauría que disuelva el espacio en sí mismo."
+    },
+    {
       "key": "ring-of-boreas",
       "name": "Anillo de Boreas",
       "description": "Un poco de hielo cristalizado del gran Rey Lobo del Norte.\r\nEsta tierra fue una vez un reino de ventiscas gélidas y tormentas de hielo llenas de fragmentos de hielo afilados como cuchillas, todo a las órdenes de Boreas. Aunque sus poderes hayan disminuido, puede congelar la tierra fácilmente."
@@ -9584,25 +9965,25 @@
   ],
   "debuffs": [
     {
-      "key": "Engulfing Storm",
+      "key": "engulfing-storm",
       "name": "Tormenta Envolvente",
       "effect": "Drena continuamente la recarga de energía del personaje.",
       "description": null
     },
     {
-      "key": "Slowing Water",
+      "key": "slowing-water",
       "name": "Agua Ralentizadora",
       "effect": "Aumenta la duración del CD de habilidades del personaje.",
       "description": null
     },
     {
-      "key": "Smoldering Flames",
+      "key": "smoldering-flames",
       "name": "Llamas Humeantes",
       "effect": "Continuamente inflige daño Pyro al personaje.",
       "description": null
     },
     {
-      "key": "Condensed Ice",
+      "key": "condensed-ice",
       "name": "Hielo Condensado",
       "effect": "Aumenta el consumo de «Estamina | Resistencia» del personaje.",
       "description": null
@@ -9610,99 +9991,111 @@
   ],
   "reactions": [
     {
-      "key": "Burning",
-      "name": "Quemadura",
-      "effect": "Inflige daño Pyro continuo durante un tiempo.",
-      "description": null
-    },
-    {
-      "key": "Crystalize",
-      "name": "Cristalizar",
-      "effect": "Genera fragmentos elementales correspondientes, que proporcionan escudos elementales.",
-      "description": null
-    },
-    {
-      "key": "Electro-Charged",
-      "name": "Electrocargado",
-      "effect": "Inflige daño Electro continuo durante un periodo tiempo.",
-      "description": null
-    },
-    {
-      "key": "Frozen",
-      "name": "Congelado",
-      "effect": "Congela el objetivo.",
-      "description": null
-    },
-    {
-      "key": "Melt",
-      "name": "Derretir",
-      "effect": "Inflige daño extra.",
-      "description": null
-    },
-    {
-      "key": "Overloaded",
-      "name": "Sobrecargado",
-      "effect": "Crea una explosión que inflige daño Pyro en área.",
-      "description": null
-    },
-    {
-      "key": "Superconduct",
-      "name": "Superconductor",
-      "effect": "Inflige daño Cryo en area y reduce la defensa del objetivo en un 50%",
-      "description": null
-    },
-    {
-      "key": "Swirl",
-      "name": "Torbellino",
-      "effect": "Absorbe el primer elemento con el cual entra en contacto y inflige daño extra elemental y genera mas reacciones elementales.",
-      "description": null
-    },
-    {
-      "key": "Vaporize",
+      "key": "vaporize",
       "name": "Vaporizar",
-      "effect": "Inflige daño elemental adicional.",
+      "effect": "Inflige x2 daño Pyro cuando un ataque Pyro ocasiona la reacción.",
+      "description": null
+    },
+    {
+      "key": "burning",
+      "name": "Quemadura",
+      "effect": "Inflige una gran cantidad de daño Pyro con el paso del tiempo. La hierba es considerada un objeto Dendro y esparcirá el efecto quemadura alrededor del área.",
+      "description": null
+    },
+    {
+      "key": "overloaded",
+      "name": "Sobrecargado",
+      "effect": "Inflige daño Pyro en área y ocasiona una explosión. La explosión generada es considerada como un Ataque Cargado.",
+      "description": null
+    },
+    {
+      "key": "melt",
+      "name": "Derretido",
+      "effect": "Inflige x2 daño Pyro cuando un ataque Pyro ocasiona la reacción.",
+      "description": null
+    },
+    {
+      "key": "vaporize-reverse",
+      "name": "Vaporizar (Inverso)",
+      "effect": "Ocasiona x1.5 daño Hydro cuando un ataque Hydro ocasiona la reacción.",
+      "description": null
+    },
+    {
+      "key": "electro-charged",
+      "name": "Electrocargado",
+      "effect": "Ocasiona daño Electro en el tiempo hasta que los efectos desaparecen, cada tick paraliza e interrumpe cualquier acción. Crea un rayo que rebota hacia el objetivo mojado más cercano, ocasionando daño Electro.",
+      "description": null
+    },
+    {
+      "key": "frozen",
+      "name": "Congelado",
+      "effect": "Congela el objetivo. Si el objetivo congelado es golpeado por un Mandoble, un Golpe en Caida de Espada, o daño Geo (excluyendo el daño en caída de los usuarios de Catalizador), ocasionará una Rotura. Al romper el hielo de un objectivo le ocasionará daño físico adicional.",
+      "description": null
+    },
+    {
+      "key": "swirl",
+      "name": "Torbellino",
+      "effect": "Imbuye un elemento y ocasiona daño elemental mientras esparce el efecto a enemigos cercanos. No inflige daño Anemo (ya que ese daño elemental viene del talento que esta ocasionando el elemento Anemo). Solo un elemento puede ser imbuido con Anemo a la vez.",
+      "description": null
+    },
+    {
+      "key": "superconduct",
+      "name": "Superconductor",
+      "effect": "Inflige daño Cryo y reduce la resistencia al daño Físico del objetivo en -40% durante 12 segundos. Cada reacción de Superconductor ocasiona daño a los objetivos dentro de su área una vez, lo que significa que si hay 3 reacciones de Superconductor y 3 objectivos se encuentran dentro del AdE, cada objetivo recibirá daño 3 veces.",
+      "description": null
+    },
+    {
+      "key": "melt-reverse",
+      "name": "Derretido (Inverso)",
+      "effect": "Inflige x1.5 daño Cryo cuando un ataque cryo ocasiona la reación.",
+      "description": null
+    },
+    {
+      "key": "crystallize",
+      "name": "Cristalizar",
+      "effect": "Absorbe el elemento y arroja un cristal del el mismo elemento. El cristal otorgará un escudo elemental. El escudo absorbe todo tipo de daños, pero es más efectivo contra daño del mismo elemento.",
       "description": null
     }
   ],
   "resonance": [
     {
-      "key": "Enduring Rock",
+      "key": "enduring-rock",
       "name": "Roca Resistente",
       "effect": "La Protección de Escudo aumenta en un 15%. Cuando un personaje está protegido por un escudo, inflige un 15% mas de daño. Al causar daño contra un enemigo, la RES Geo de dicho enemigo se reduce en un 20% durante 15s.",
       "description": null
     },
     {
-      "key": "Fervent Flames",
+      "key": "fervent-flames",
       "name": "Llamas Fervientes",
       "effect": "Reduce la duración de efectos con Cryo en 40%. Aumenta ATQ en 25%.",
       "description": null
     },
     {
-      "key": "Soothing Waters",
+      "key": "soothing-waters",
       "name": "Agua Medicinal",
       "effect": "Reduce en un 40% la duración de los efectos Pyro sobre ti. Aumenta en un 30% la curación recibida.",
       "description": null
     },
     {
-      "key": "Impetuous Winds",
+      "key": "impetuous-winds",
       "name": "Vientos Impetuosos",
       "effect": "Disminuye el Coste de Aguante en 15%. Aumenta Vel. de Movimiento en 10%. Reduce el TdE en 5%.",
       "description": null
     },
     {
-      "key": "High Voltage",
+      "key": "high-voltage",
       "name": "Alto Voltaje",
       "effect": "Reduce la duración de efectos con Hydro en 40%. Superconductor, Sobrecarga y Electrocargado tienen 100% de generar una Particula Elemental Electro (TdE 5 s.).",
       "description": null
     },
     {
-      "key": "Shattering Ice",
+      "key": "shattering-ice",
       "name": "Hielo Fragmentado",
       "effect": "Reduce la duración de efectos con Electro en 40%. Aumenta la Prob. CRIT contra oponentes afectados por Cryo o enemigos congelados en un 15%.",
       "description": null
     },
     {
-      "key": "Protective Canopy",
+      "key": "protective-canopy",
       "name": "Cubierta Protectora",
       "effect": "Todas las RES elementales + 15%, RES Física + 15%.",
       "description": "Cualquiera de los 4 elementos únicos"

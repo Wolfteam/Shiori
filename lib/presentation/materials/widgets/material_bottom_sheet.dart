@@ -25,6 +25,13 @@ final _ignoredSubStats = [
 class MaterialBottomSheet extends StatelessWidget {
   const MaterialBottomSheet({Key? key}) : super(key: key);
 
+  static Widget route(BuildContext context) {
+    return BlocProvider.value(
+      value: context.read<MaterialsBloc>(),
+      child: const MaterialBottomSheet(),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     final s = S.of(context);

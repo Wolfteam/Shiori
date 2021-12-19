@@ -4,6 +4,8 @@ linter:
   rules:
     prefer_single_quotes: true
     avoid_classes_with_only_static_members: false
+    depend_on_referenced_packages: false
+    avoid_positional_boolean_parameters: false
 
 analyzer:
   exclude: 
@@ -11,5 +13,7 @@ analyzer:
     - '**/*.g.dart'
     - lib/**/*.*.dart
     - lib/generated/intl/*
+    - '**/mocks.mocks.dart'
+    - '**/shiori_icons.dart'
   errors:
     missing_return: error

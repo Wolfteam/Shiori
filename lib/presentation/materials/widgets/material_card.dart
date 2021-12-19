@@ -133,7 +133,7 @@ class MaterialCard extends StatelessWidget {
                           padding: const EdgeInsets.all(3),
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(10),
-                            color: theme.accentColor.withOpacity(0.8),
+                            color: theme.colorScheme.secondary.withOpacity(0.8),
                           ),
                           child: Text(
                             ' - ${CurrencyUtils.formatNumber(usedQuantity)} ',
@@ -181,11 +181,8 @@ class MaterialCard extends StatelessWidget {
       return;
     }
 
-    final bloc = context.read<MaterialBloc>();
-    bloc.add(MaterialEvent.loadFromKey(key: keyName));
-    final route = MaterialPageRoute(builder: (c) => mp.MaterialPage());
+    final route = MaterialPageRoute(builder: (c) => mp.MaterialPage(itemKey: keyName));
     await Navigator.push(context, route);
-    bloc.pop();
   }
 
   Future<void> _showQuantityPickerDialog(BuildContext context) async {
@@ -194,7 +191,6 @@ class MaterialCard extends StatelessWidget {
       builder: (_) => ItemQuantityDialog(quantity: quantity),
     );
 
-    context.read<ItemQuantityFormBloc>().add(const ItemQuantityFormEvent.close());
     if (newValue == null) {
       return;
     }

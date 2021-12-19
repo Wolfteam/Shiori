@@ -2,16 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shiori/application/bloc.dart';
 import 'package:shiori/generated/l10n.dart';
+import 'package:shiori/injection.dart';
 import 'package:shiori/presentation/shared/app_webview.dart';
 import 'package:shiori/presentation/shared/loading.dart';
 
-class WishSimulatorPage extends StatefulWidget {
-  @override
-  _WishSimulatorPageState createState() => _WishSimulatorPageState();
-}
-
-class _WishSimulatorPageState extends State<WishSimulatorPage> {
-  final script = '''
+const _script = '''
     function closeModal(){
       if (document.getElementsByClassName("modal-container").length === 0)
         return;
@@ -31,28 +26,26 @@ class _WishSimulatorPageState extends State<WishSimulatorPage> {
     setTimeout(closeModal, 6000);
    ''';
 
-  @override
-  void didChangeDependencies() {
-    super.didChangeDependencies();
-    context.read<UrlPageBloc>().add(const UrlPageEvent.init(loadMap: false, loadWishSimulator: true, loadDailyCheckIn: false));
-  }
-
+class WishSimulatorPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final s = S.of(context);
-    return SafeArea(child: BlocBuilder<UrlPageBloc, UrlPageState>(
-      builder: (context, state) {
-        return state.map(
-          loading: (_) => const Loading(),
-          loaded: (state) => AppWebView(
-            appBar: AppBar(title: Text(s.wishSimulator)),
-            url: state.wishSimulatorUrl,
-            userAgent: state.userAgent,
-            hasInternetConnection: state.hasInternetConnection,
-            script: script,
+    return SafeArea(
+      child: BlocProvider(
+        create: (ctx) => Injection.urlPageBloc..add(const UrlPageEvent.init(loadMap: false, loadWishSimulator: true, loadDailyCheckIn: false)),
+        child: BlocBuilder<UrlPageBloc, UrlPageState>(
+          builder: (context, state) => state.map(
+            loading: (_) => const Loading(),
+            loaded: (state) => AppWebView(
+              appBar: AppBar(title: Text(s.wishSimulator)),
+              url: state.wishSimulatorUrl,
+              userAgent: state.userAgent,
+              hasInternetConnection: state.hasInternetConnection,
+              script: _script,
+            ),
           ),
-        );
-      },
-    ));
+        ),
+      ),
+    );
   }
 }

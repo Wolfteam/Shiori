@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:shiori/application/bloc.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/generated/l10n.dart';
@@ -79,6 +77,7 @@ class CharacterCard extends StatelessWidget {
         shape: Styles.mainCardShape,
         elevation: Styles.cardTenElevation,
         color: elementType.getElementColorFromContext(context),
+        shadowColor: Colors.transparent,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           mainAxisAlignment: MainAxisAlignment.center,
@@ -157,11 +156,8 @@ class CharacterCard extends StatelessWidget {
       return;
     }
 
-    final bloc = context.read<CharacterBloc>();
-    bloc.add(CharacterEvent.loadFromKey(key: keyName));
-    final route = MaterialPageRoute(builder: (c) => const CharacterPage());
+    final route = MaterialPageRoute(builder: (c) => CharacterPage(itemKey: keyName));
     await Navigator.push(context, route);
     await route.completed;
-    bloc.pop();
   }
 }

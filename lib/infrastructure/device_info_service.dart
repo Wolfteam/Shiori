@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:device_info_plus/device_info_plus.dart';
+import 'package:device_info_plus_windows/device_info_plus_windows.dart' as device_info_plus_windows;
 import 'package:flutter_user_agentx/flutter_user_agent.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 import 'package:shiori/domain/services/device_info_service.dart';
@@ -35,10 +36,9 @@ class DeviceInfoServiceImpl implements DeviceInfoService {
       //TODO: VERSION DOES NOT MATCH THE ONE ON THE PUBSPEC
       final packageInfo = await PackageInfo.fromPlatform();
       _appName = packageInfo.appName;
-      _version = '${packageInfo.version}+${packageInfo.buildNumber}';
-      final vt = VersionTracker();
-      await vt.track();
-      _versionChanged = vt.isFirstLaunchForCurrentBuild ?? vt.isFirstLaunchForCurrentVersion ?? vt.isFirstLaunchEver ?? false;
+      _version = Platform.isWindows ? packageInfo.version : '${packageInfo.version}+${packageInfo.buildNumber}';
+
+      await _initVersionTracker();
 
       if (Platform.isAndroid) {
         await _initForAndroid();
@@ -62,10 +62,12 @@ class DeviceInfoServiceImpl implements DeviceInfoService {
   }
 
   Future<void> _initForWindows() async {
-    final deviceInfo = DeviceInfoPlugin();
-    final info = await deviceInfo.windowsInfo;
+    final deviceInfo = device_info_plus_windows.DeviceInfoWindows();
+    //TODO: DeviceInfoPlugin CRASHES ON WINDOWS
+    final info = await deviceInfo.windowsInfo();
+    final model = info != null ? info.computerName : 'N/A';
     _deviceInfo = {
-      'Model': info.computerName,
+      'Model': model,
       'OsVersion': 'N/A',
       'AppVersion': _version,
     };
@@ -79,5 +81,11 @@ class DeviceInfoServiceImpl implements DeviceInfoService {
       'OsVersion': '${info.version.sdkInt}',
       'AppVersion': _version,
     };
+  }
+
+  Future<void> _initVersionTracker() async {
+    final vt = VersionTracker();
+    await vt.track();
+    _versionChanged = vt.isFirstLaunchForCurrentBuild ?? vt.isFirstLaunchForCurrentVersion ?? vt.isFirstLaunchEver ?? false;
   }
 }
