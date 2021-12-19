@@ -425,81 +425,153 @@
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "일반 공격·싸움꾼 전설",
+          "description": "",
+          "abilities": [
+            {
+              "name": "일반 공격",
+              "description": "검으로 최대 4번 공격한다.\r\n2번째와 4번째 공격이 적을 명중하면, 「난신의 괴력」 효과를 각각 1스택과 2스택 획득한다.\r\n난신의 괴력은 최대 5스택 중첩 가능하고, 발동할 때마다 난신의 괴력 지속 시간을 갱신한다.\r\n",
+              "descriptions": [
+                "또한 원소전투 스킬 「마살 절기  적우발파!」 발동 혹은 대시 후 짧은 시간 동안 일반 공격 콤보수가 초기화되지 않는다."
+              ]
+            },
+            {
+              "name": "강공격",
+              "description": "홀드하여 강공격 발동 시, 난신의 괴력 효과가 있으면 스태미나를 소모하지 않는 「아라타키 케사기리」를 발동한다. 아라타키 케사기리를 발동할 때마다 난신의 괴력을 1스택 소모한다. 마지막 스택을 소모하면, 강력한 마지막 일격을 발동한다.\r\n난신의 괴력 효과가 존재하지 않으면, 스태미나를 소모해 맹렬한 사이치몬지 참격을 발동한다.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "낙하 공격",
+              "description": "공중에서 땅을 내리찍어 경로상의 적을 공격하고 착지 시 범위 피해를 준다",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "1단 공격 피해|{param1}%",
+            "2단 공격 피해|{param2}%",
+            "3단 공격 피해|{param3}%",
+            "4단 공격 피해|{param4}%",
+            "아라타키 케사기리 연속 참격 피해|{param5}%",
+            "아라타키 케사기리 종결 피해|{param6}%",
+            "난신의 괴력 지속 시간|{param7}s",
+            "사이치몬지 참격 피해|{param8}%",
+            "사이치몬지 참격 스태미나 소모|{param9}",
+            "낙하 기간 피해|{param10}%",
+            "저공/고공 추락 충격 피해|{param11}% / {param12}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "마살 절기·적우발파!",
+          "description": "아라타키파의 숨겨진 멤버 어린 붉은 소 「우시」를 던져 명중한 적에게 바위 원소 피해를 준다! 「우시」가 적 명중 시, 아라타키 이토에게 「난신의 괴력」 효과를 1스택 제공한다.\r\n「우시」는 필드에 남아 지원한다.\r\n• 주변의 적을 도발하여 공격을 유도한다.",
+          "abilities": [
+            {
+              "name": "",
+              "description": "",
+              "descriptions": [
+                "내구도는 아라타키 이토의 HP 최대치를 일정 비율 계승한다.",
+                "피해를 입을 때, 아라타키 이토 자신에게 「난신의 괴력」 효과를 1스택 제공한다. 2초마다 해당 방식으로 최대 1스택 획득할 수 있다.",
+                "내구도가 바닥나거나 지속 시간 종료 시 도망가며 아라타키 이토에게 「난신의 괴력」 효과를 1스택 제공한다."
+              ]
+            },
+            {
+              "name": "홀드",
+              "description": "투척 방향을 조정한다.\r\n「우시」는 바위 원소 속성 창조물로 간주한다. 아라타키 이토가 소환한 「우시」는 동시에 1마리만 존재할 수 있다.\r\n",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "스킬 피해|{param1}%",
+            "HP 계승|{param2}%",
+            "지속 시간|{param3}s",
+            "재사용 대기시간|{param4}s"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "최흉의 귀왕·이토 강림!!",
+          "description": "아라타키파의 이토의 위엄을 드러낼 시간이다! 일정 시간 동안 「분노의 귀왕」이 되어 귀왕의 금쇄봉을 사용하며 싸운다.\r\n",
+          "abilities": [
+            {
+              "name": "",
+              "description": "아래의 특성을 가진다:\r\n",
+              "descriptions": [
+                "일반 공격, 강공격과 낙하 공격이 다른 원소 효과로 대체될 수 없는 바위 원소 피해로 전환된다.",
+                "아라타키 이토의 일반 공격의 공격 속도가 증가하고 방어력에 기반해 공격력이 증가한다.",
+                "첫 번째와 세 번째 공격이 적 명중 시 아라타키 이토 자신에게 「난신의 괴력」 효과를 1스택 부여한다.",
+                "아라타키 이토의 모든 원소 내성과 물리 내성이 20% 감소한다.",
+                "「분노의 귀왕」 상태는 아라타키 이토가 퇴장하면 사라진다."
+              ]
+            }
+          ],
+          "stats": [
+            "공격력 상승|{param1}% DEF",
+            "공격 속도 증가|{param2}%",
+            "지속 시간|{param3}s",
+            "재사용 대기시간|{param4}s",
+            "원소 에너지|{param5}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "갈라진 나뭇가지 부스러기",
+          "description": "파티 내 자신의 캐릭터가 나무를 공격해 목재를 획득할 시, 25% 확률로 목재를 추가로 획득한다\r\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
+          "title": "아라타키 제일",
+          "description": "아라타키 이토가 「아라타키 케사기리」 연속 발동 시, 아래 효과를 얻는다.\r\n",
+          "descriptions": [
+            "참격을 발동할 때마다 참격의 공격 속도가 10% 증가하고, 해당 방식으로 최대 30% 증가한다.",
+            "경직 저항력이 상승한다.",
+            "해당 효과들은 연속 참격 종료 시 사라진다"
+          ]
         },
         {
           "key": "p3",
-          "title": "NA",
-          "description": "",
+          "title": "붉은 오니의 피",
+          "description": "「아라타키 케사기리」로 가하는 피해가 아라타키 이토 방어력의 35%만큼 증가한다\r\n",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "모른다면 내가 들려주지",
+          "description": "최흉의 귀왕 • 이토 강림!! 발동 후 아라타키 이토는 「난신의 괴력」 효과를 2스택 획득한다. 1초 후 아라타키 이토는 0.5초마다 「난신의 괴력」 효과를 1스택 획득한다. 지속 시간: 1.5초\r\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "모두의 힘을 모아, 산을 무너뜨려라",
+          "description": "최흉의 귀왕 • 이토 강림!! 발동 후, 파티 내 원소 타입이 바위 원소인 캐릭터가 1명 존재할 때마다 해당 스킬의 재사용 대기시간이 1.5초씩 감소하며, 아라타키 이토의 원소 에너지를 6pt씩 회복한다.\r\n해당 방식으로 재사용 대기시간을 최대 4.5초 감소시킬 수 있고, 원소 에너지를 최대 18pt 회복할 수 있다\r\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "우왕과 함께라면 땅과 물에서도 자유롭다",
+          "description": "마살 절기 • 적우발파!의 스킬 레벨+3\r\n최대 Lv.15까지 상승\r\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "봉행 감옥은 식사하는 곳",
+          "description": "최흉의 귀왕 • 이토 강림!!으로 부여된 「분노의 귀왕」 상태가 끝나면 주변의 파티 내 모든 캐릭터의 방어력이 20%, 공격력이 20% 증가한다. 지속 시간: 10초\r\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "하나자카에서 10년, 모두가 내 이름을 알지",
+          "description": "최흉의 귀왕 • 이토 강림!!의 스킬 레벨+3\r\n최대 Lv.15까지 상승\r\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
+          "title": "이 몸이 바로 아라타키 이토다",
+          "description": "아라타키 이토의 강공격 치명타 피해가 70% 증가한다. 또한, 「아라타키 케사기리」 발동 시 50% 확률로 「난신의 괴력」을 소모하지 않는다\r\n",
           "descriptions": []
         }
       ]
@@ -1777,82 +1849,160 @@
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "일반 공격·야수 이빨 화살",
+          "description": "",
+          "abilities": [
+            {
+              "name": "일반 공격",
+              "description": "활로 최대 4번 공격한다.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "강공격",
+              "description": "피해가 더 크고 정확한 조준 사격을 한다.\r\n조준 시 바위 결정이 화살 촉에 모이고, 바위 결정이 가득 찬 화살은 바위 원소 피해를 준다.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "낙하 공격",
+              "description": "공중에서 화살비를 쏜 후 빠른 속도로 땅에 착지한다. 착지 시 범위 피해를 준다",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "1단 공격 피해|{param1}%",
+            "2단 공격 피해|{param2}%",
+            "3단 공격 피해|{param3}%",
+            "4단 공격 피해|{param4}%",
+            "조준 사격|{param5}%",
+            "풀차지 조준 사격|{param6}%",
+            "낙하 기간 피해|{param7}%",
+            "저공/고공 추락 충격 피해|{param8}% / {param9}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "이누자카 멍멍 방원진",
+          "description": "",
+          "abilities": [
+            {
+              "name": "",
+              "description": "바위 원소 범위 피해를 주고, 대장의 깃발을 세운다.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "대장의 깃발",
+              "description": "발동 시 파티 내 원소 타입이 바위 원소인 캐릭터 수에 따라 해당 영역 안에 있는 필드 위 캐릭터에게 아래의 효과를 부여한다:\r\n",
+              "descriptions": [
+                "1명일 경우, 「견고」: 방어력 상승.",
+                "2명일 경우, 「불락」: 위 효과에서 추가로 경직 저항력 상승.",
+                "3명일 경우, 「분쇄」: 위 효과에서 추가로 바위 원소 피해 보너스 획득.",
+                "고로가 생성한 대장의 깃발은 필드 위에 하나만 존재할 수 있다. 캐릭터는 대장의 깃발 하나가 제공하는 효과만 획득할 수 있다. 캐릭터가 영역을 벗어난 후, 영역의 효과는 2초간 지속된다."
+              ]
+            },
+            {
+              "name": "홀드",
+              "description": "스킬이 발동되는 위치를 조절할 수 있다.\r\n",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "스킬 피해|{param1}%",
+            "방어력 증가|{param2}",
+            "바위 원소 피해 보너스|{param3}%",
+            "지속 시간|{param4}s",
+            "재사용 대기시간|{param5}s"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "야수 이빨 돌격형 승전법",
+          "description": "대장의 위엄을 보여주며 바위 원소 범위 피해를 주고, 대장의 위용 영역을 펼쳐 주변 전우를 격려한다.\r\n",
+          "abilities": [
+            {
+              "name": "대장의 위용",
+              "description": "대장의 위용은 아래의 특성을 지닌다:\r\n",
+              "descriptions": [
+                "영역은 원소전투 스킬 「이누자카 멍멍 방원진」으로 생성된 대장의 깃발과 같은 효과를 지니고, 발동 시 파티 내에 원소 타입이 바위 원소인 캐릭터 수에 따라 영역 내 필드 위 캐릭터에게 효과를 부여하며, 필드 위 캐릭터의 움직임을 따라간다.",
+                "1.5초마다 바위 결정 붕괴가 일어나 영역 내 적 1기에게 바위 원소 범위 피해를 준다.",
+                "1.5초마다 영역 내 1개의 결정이 반응해 생긴 결정 조각을 현재 캐릭터의 위치로 끌어당긴다.",
+                "발동 시, 필드 위에 존재하는 고로 자신의 대장의 깃발은 파괴된다. 대장의 위용 지속 시간 동안 고로가 원소전투 스킬 「이누자카 멍멍 방원진」을 발동하면 대장의 깃발이 생성되지 않는다.",
+                "고로가 전투 불능 상태에 빠지면 고로 자신의 대장의 위용 효과가 해제된다."
+              ]
+            }
+          ],
+          "stats": [
+            "스킬 피해|{param1}% DEF",
+            "바위 결정 붕괴 피해|{param2}% DEF",
+            "지속 시간|{param3}s",
+            "재사용 대기시간|{param4}s",
+            "원소 에너지|{param5}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "반짝반짝 발견술",
+          "description": "미니맵에 주위의 이나즈마 지역 특산물 위치가 나타난다\r\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
+          "title": "두렵지 않은 비바람",
+          "description": "야수 이빨 돌격형 승전법 시전 후 12초 동안 주변의 파티 내 모든 캐릭터의 방어력이 25% 증가한다\r\n",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
+          "title": "보은의 수호",
+          "description": "방어력에 기반해 고로가 가하는 아래 공격의 피해가 증가한다.\r\n",
+          "descriptions": [
+            "이누자카 멍멍 방원진의 스킬 피해 증가치: 방어력의 156%",
+            "야수 이빨 돌격형 승전법의 스킬 피해와 바위 결정 붕괴 피해 증가치: 방어력의 15.6%"
+          ]
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "달리는 강아지·바람처럼 빠르게",
+          "description": "고로가 생성한 대장의 깃발 혹은 대장의 위용 영역 안에 있는 필드 위 캐릭터(고로 자신을 제외)가 적에게 바위 원소 피해를 가하면, 고로의 이누자카 멍멍 방원진 재사용 대기시간이 2초 감소한다.\r\n해당 효과는 10초마다 최대 1번 발동된다\r\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "앉은 강아지·종처럼 굳건하게",
+          "description": "대장의 위용 지속 시간 동안, 주변 필드 위 캐릭터가 결정 반응으로 생성된 결정 조각을 획득하면 고로가 펼친 대장의 위용 스킬의 지속 시간이 1초 증가한다.\r\n해당 효과는 0.1초마다 최대 1회 발동 가능하며, 해당 방식으로 지속 시간을 최대 3초 늘릴 수 있다\r\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "강아지 발·불길처럼 맹렬하게",
+          "description": "이누자카 멍멍 방원진의 스킬 레벨+3\r\n최대 Lv.15까지 상승\r\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "강아지 핥기·물처럼 부드럽게",
+          "description": "대장의 위용 스킬이 「불락」 혹은 「분쇄」 효과를 지닐 시, 1.5초마다 영역 안에 있는 필드 위 캐릭터의 HP를 고로 방어력의 50%만큼 회복한다\r\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "강아지 돌진·움직임은 번개처럼",
+          "description": "야수 이빨 돌격형 승전법의 스킬 레벨+3\r\n최대 Lv.15까지 상승\r\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
+          "title": "용맹한 강아지·산처럼 충성스럽게",
+          "description": "이누자카 멍멍 방원진 혹은 야수 이빨 돌격형 승전법 발동 후 12초간 발동한 영역의 레벨에 따라 주변 파티 내 모든 캐릭터의 바위 원소 피해 치명타 피해를 증가시킨다:\r\n",
+          "descriptions": [
+            "「견고」: 10% 증가",
+            "「불락」: 20% 증가",
+            "「분쇄」: 40% 증가",
+            "해당 효과는 중첩되지 않으며 나중에 발동한 것을 기준으로 한다"
+          ]
         }
       ]
     },
@@ -7498,6 +7648,18 @@
       ]
     },
     {
+      "key": "redhorn-stonethresher",
+      "name": "쇄석의 붉은 뿔",
+      "description": "이전 검 주인의 말을 따르면, 어떤 요괴든 물리칠 수 있는 거대한 방망이라고 한다. 이름하여 「돌을 부수고 금을 씹어먹는 붉은 뿔의 사자」",
+      "refinements": [
+        "방어력이 {color}28{/color}% 증가한다. 일반 공격과 강공격의 피해량이 방어력의 {color}40{/color}%만큼 증가한다",
+        "방어력이 {color}35{/color}% 증가한다. 일반 공격과 강공격의 피해량이 방어력의 {color}50{/color}%만큼 증가한다",
+        "방어력이 {color}42{/color}% 증가한다. 일반 공격과 강공격의 피해량이 방어력의 {color}60{/color}%만큼 증가한다",
+        "방어력이 {color}49{/color}% 증가한다. 일반 공격과 강공격의 피해량이 방어력의 {color}70{/color}%만큼 증가한다",
+        "방어력이 {color}56{/color}% 증가한다. 일반 공격과 강공격의 피해량이 방어력의 {color}80{/color}%만큼 증가한다"
+      ]
+    },
+    {
       "key": "royal-bow",
       "name": "왕실의 장궁",
       "description": "몬드를 지배했던 옛 귀족의 활. 수많은 세대를 거쳤어도 활시위는 여전히 힘차고 위력이 강하다",
@@ -9856,7 +10018,7 @@
     {
       "key": "vaporize",
       "name": "Vaporize",
-      "effect": "Deals ×1.5 Pyro DMG when a Pyro attack triggers the reaction.",
+      "effect": "Deals ×2 Pyro DMG when a Pyro attack triggers the reaction.",
       "description": null
     },
     {
@@ -9880,7 +10042,7 @@
     {
       "key": "vaporize-reverse",
       "name": "Vaporize (Reverse)",
-      "effect": "Deals ×2 Hydro DMG when a Hydro attack triggers the reaction.",
+      "effect": "Deals ×1.5 Hydro DMG when a Hydro attack triggers the reaction.",
       "description": null
     },
     {
