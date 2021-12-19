@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.2.6+37 (15/12/2021)
+- Itto and Gorou are here
+
 
 ## 1.2.6+31 (23/11/2021)
 - Bug fixes

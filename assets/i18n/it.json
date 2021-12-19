@@ -416,85 +416,156 @@
       "key": "arataki-itto",
       "name": "Arataki Itto",
       "title": "Hanamizaka Heroics",
-      "description": "The first and greatest head of the Arataki Gang, famed throughout Inazuma City's Hanamizaka... Wait, what? You've never heard of them? Are you trying to be funny here?",
+      "description": "Il primo e il più grande capo dell’ Arataki Gang, famoso in tutta Hanamizaka della Città di Inazuma... Aspetta, cosa!? Non ne hai mai sentito parlare? Stai cercando di essere spiritoso?",
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Fight Club Legend",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Attacco Normale",
+              "description": "Esegue 4 attacchi rapidi.\r\nQuando il 2º e il 4º attacco colpisce nemici, Itto ottiene rispettivamente 1 o 2 stacks di \"Superlative Superstrength\".\r\nMax 5 stacks. Attivare questo effetto aggiorna la durata di ciascuno stack in possesso.\r\nInoltre, correre o usare l’Elemental Skill \"Masatsu Zetsugi: Akaushi Burst!\" durante una combo di Attacchi Normali non la resetta immediatamente, la combo può continuare subito dopo.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Attacco Caricato",
+              "description": "Quando si tiene premuto per eseguire un Attacco Caricato, Itto scatena una serie di \"Arataki Kesagiri slashes\", non consuma Stamina ma ciascun colpo consuma 1 stack di Superlative Superstrength. All’ultimo stack consumato, Itto esegue un potente colpo finale.\r\nSe non ci sono stacks, consumando Stamina Itto esegue un solo \"Saichimonji Slash\".\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Attacco in Picchiata",
+              "description": "Si lancia in picchiata da mezz'aria per colpire il terreno sottostante e infliggere AoE DMG all'impatto.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "DMG 1º Colpo|{param1}%",
+            "DMG 2º Colpo|{param2}%",
+            "DMG 3º Colpo|{param3}%",
+            "DMG 4º Colpo|{param4}%",
+            "DMG Combo di Arataki Kesagiri Slash|{param5}%",
+            "DMG Colpo Finale della combo  Arataki Kesagiri|{param6}%",
+            "Durata di Superlative Superstrength|{param7}s",
+            "DMG singolo Saichimonji Slash|{param8}%",
+            "Costo Stamina di Saichimonji Slash|{param9}",
+            "DMG Attacco in Picchiata|{param10}%",
+            "DMG Att. in Picchiata per altezze Basse/Elevate|{param11}% / {param12}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Masatsu Zetsugi: Akaushi Burst!",
+          "description": "Scaglia Ushi, il giovane toro akaushi e membro ausiliario dell’Arataki Gang, infliggendo Geo DMG ai nemici colpiti. Quando Ushi colpisce nemici, Arataki Itto ottiene 1 stack di Superlative Superstrength.\r\nUshi rimarrà nel campo dando supporto nei seguenti modi:",
+          "abilities": [
+            {
+              "name": "",
+              "description": "",
+              "descriptions": [
+                "Attira continuamente gli attacchi nemici.",
+                "I suoi HP scalano sui Max HP di Arataki Itto.",
+                "Arataki Itto ottiene 1 stack di Superlative Superstrength ogni volta che Ushi subisce danno (solo 1 stack ogni  2s).",
+                "Ushi scompare quando i suoi HP scendono a 0 o la durata termina. Alla scomparsa fa ottenere a Itto 1 stack di Superlative Superstrength."
+              ]
+            },
+            {
+              "name": "Tieni Premuto",
+              "description": "Aggiusta l’angolo di lancio.\r\nUshi è considerato una \"struttura\" Geo. Arataki Itto può schierare un solo Ushi per volta.\r\n",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "Skill DMG|{param1}%",
+            "HP Ushi ereditati dai Max HP|{param2}%",
+            "Durata|{param3}s",
+            "CD|{param4}s"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Royal Descent: Behold, Itto the Evil!",
+          "description": "È ora di mostrare loro la forza dell’Arataki Gang! Per un po’, Itto scatena il suo Raging Oni King interiore, impugnando in battaglia il Kanabou dell’Oni King.\r\n",
+          "abilities": [
+            {
+              "name": "",
+              "description": "Questo stato presenta le seguenti proprietà:\r\n",
+              "descriptions": [
+                "Converte gli Attacchi Normali, Caricati e in Picchiata di Itto  in Geo DMG. Non si possono sovrascrivere da altri elementi.",
+                "Aumenta l’ATK SPD degli Attacchi Normali di Itto. In base alla sua DEF aumenta anche il suo ATK.",
+                "Quando una combo di attacchi colpisce nemici, il 1º e il 3º colpo genereranno ciascuno 1 stack di Superlative Superstrength.",
+                "Riduce del 20% l’Elemental e il Physical RES di Itto.",
+                "Lo stato Raging Oni King state termina quando Itto scompare/si cambia personaggio."
+              ]
+            }
+          ],
+          "stats": [
+            "ATK Bonus|{param1}% DEF",
+            "ATK SPD Bonus|{param2}%",
+            "Durata|{param3}s",
+            "CD|{param4}s",
+            "Costo Energy|{param5}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "Woodchuck Chucked",
+          "description": "Quando un membro del party colpisce un albero per raccogliere legna, c’è il 25% di probabilità di ottenere legna aggiuntiva.\r\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
+          "title": "Arataki Ichiban",
+          "description": "Se Arataki Itto esegue Arataki Kesagiri in sequenza, ottiene i seguenti effetti:\r\n",
+          "descriptions": [
+            "Ciascun colpo aumenta del 10% l’ATK SPD del colpo successivo. L’aumento massimo è del 30%.",
+            "Aumenta la RES ai Contraccolpi di Itto.",
+            "Gli effetti terminano quando smette di eseguire questi colpi in sequenza."
+          ]
         },
         {
           "key": "p3",
-          "title": "NA",
-          "description": "",
+          "title": "Bloodline of the Crimson Oni",
+          "description": "Il danno dell’Arataki Kesagiri aumenta di un valore pari al 35% della DEF di Arataki Itto.\r\n",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "Stay a While and Listen Up",
+          "description": "Dopo aver usato \"Royal Descent: Behold, Itto the Evil!\", Arataki Itto ottiene subito 2 stacks di Superlative Superstrength. Dopo 1s, Itto otterrà un ulteriore stack di Superlative Superstrength ogni 0.5s per 1.5s.\r\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "Gather 'Round, It's a Brawl!",
+          "description": "Dopo aver usato \"Royal Descent: Behold, Itto the Evil!\", ciascun personaggio Geo del party ridurrà di 1.5s il CD della Skill e rigenererà 6 Energy per Arataki Itto.\r\nIn questo modo, il CD può essere ridotto fino a 4.5s e la massima Energy rigenerabile è 18.\r\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "Horns Lowered, Coming Through",
+          "description": "Aumenta di 3 il livello di Masatsu Zetsugi: Akaushi Burst!.\r\nOra il livello massimo di upgrade è 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "Jailhouse Bread and Butter",
+          "description": "Quando lo stato Raging Oni King termina, tutti i membri vicini del party ottengono DEF +20% e ATK +20% per 10s.\r\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "10 Years of Hanamizaka Fame",
+          "description": "Aumenta di 3 il livello di Royal Descent: Behold, Itto the Evil!.\r\nOra il livello massimo di upgrade è 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
+          "title": "Arataki Itto, Present!",
+          "description": "Gli Attacchi Caricati di Arataki Itto infliggono Crit DMG +70%. Inoltre, quando esegue un Arataki Kesagiri, ha il 50% di probabilità di non consumare stacks di Superlative Superstrength.\r\n",
           "descriptions": []
         }
       ]
@@ -1769,86 +1840,159 @@
       "key": "gorou",
       "name": "Gorou",
       "title": "Canine Warrior",
-      "description": "The great general of Watatsumi Island's forces. He is deeply trusted by his subordinates.",
+      "description": "Il grande generale delle forze di Watatsumi Island. I suoi subordinati si fidano ciecamente di lui.",
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Ripping Fang Fletching",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Attacco Normale",
+              "description": "Scocca fino a 4 frecce consecutive con l’arco.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Attacco Caricato",
+              "description": "Esegue un Colpo Mirato più preciso con danni aumentati.\r\nMentre si mira, cristalli Geo avvolgono la punta della freccia. Una freccia cristallizzata caricata al massimo infligge Geo DMG.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Attacco in Picchiata",
+              "description": "A mezz'aria scatena una pioggia di frecce che infliggono AoE DMG all'impatto con il terreno.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "DMG 1° Freccia|{param1}%",
+            "DMG 2° Freccia|{param2}%",
+            "DMG 3° Freccia|{param3}%",
+            "DMG 4° Freccia|{param4}%",
+            "Colpo Mirato|{param5}%",
+            "Colpo Mirato caricato al massimo|{param6}%",
+            "DMG Attacco in Picchiata|{param7}%",
+            "DMG Att. in Picchiata per altezze Basse/Elevate|{param8}% / {param9}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Inuzaka All-Round Defense",
+          "description": "Infligge AoE Geo DMG e pianta un \"General's War Banner\".\r\n",
+          "abilities": [
+            {
+              "name": "General's War Banner",
+              "description": "In base al numero di personaggi Geo presenti nel party quando la Skill viene attivata, conferisce fino a 3 buffs ai personaggi attivi nell’AoE della Skill:\r\n",
+              "descriptions": [
+                "1 personaggio Geo: Conferisce \"Standing Firm\" - DEF Bonus.",
+                "2 personaggi Geo: Conferisce \"Impregnable\" - Aumenta la RES ai Contraccolpi.",
+                "3 personaggi Geo: Conferisce \"Crunch\" - Geo DMG Bonus.",
+                "Gorou può piazzare un solo General's War Banner per volta. I personaggi possono servirsi di uno solo General's War Banner per volta. Quando un membro del party abbandona l’AoE, i buff attivi termineranno dopo 2s."
+              ]
+            },
+            {
+              "name": "Tieni Premuto",
+              "description": "Aggiusta la posizione della Skill.\r\n",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "Skill DMG|{param1}%",
+            "DEF Bonus|{param2}",
+            "Geo DMG Bonus|{param3}%",
+            "Durata|{param4}s",
+            "CD|{param5}s"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Juuga: Forward Unto Victory",
+          "description": "Mostrando il suo valore da generale, Gorou infligge AoE Geo DMG e crea un campo noto come \"General's Glory\" per incoraggiare i suoi compagni.\r\n",
+          "abilities": [
+            {
+              "name": "General's Glory",
+              "description": "Questo campo possiede le seguenti proprietà:\r\n",
+              "descriptions": [
+                "In base al numero di personaggi Geo presenti nel party, conferisce gli stessi buffs di General's War Banner ai personaggi attivi nell’AoE della Skill. Inoltre, il campo si muove assieme al tuo personaggio in uso.",
+                "Genera1 Crystal Collapse ogni 1.5s che infligge AoE Geo DMG a 1 nemico che si trova nell’AoE.",
+                "Nell’AoE fa apparire 1 elemental shard (solitamente creati attraverso Reazioni Crystallize) nella posizione del tuo personaggio ogni 1.5s.",
+                "Attivare questa Skill distruggerà qualsiasi General's War Banner presente e inoltre, per l’intera durata di General's Glory, l’Elemental Skill \"Inuzaka All-Round Defense\" non genererà alcun General's War Banner.",
+                "Se Gorou cade in battaglia, gli effetti di General's Glory svaniscono immediatamente."
+              ]
+            }
+          ],
+          "stats": [
+            "Skill DMG|{param1}% della DEF",
+            "DMG Crystal Collapse|{param2}% della DEF",
+            "Durata|{param3}s",
+            "CD|{param4}s",
+            "Costo Energy|{param5}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "Seeker of Shinies",
+          "description": "Mostra nella minimappa la posizione delle vicinie local specialties di Inazuma.\r\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
+          "title": "Heedless of the Wind and Weather",
+          "description": "Dopo aver usato Juuga: Forward Unto Victory, tutti i membri vicini del party ottengono DEF +25% for 12s.\r\n",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
+          "title": "A Favor Repaid",
+          "description": "In base alla sua DEF, gli attacchi di Gorou ricevono i seguenti DMG Bonus:\r\n",
+          "descriptions": [
+            "Inuzaka All-Round Defense: Skill DMG aumenta del 156% della DEF",
+            "Juuga: Forward Unto Victory: Skill DMG e Crystal Collapse DMG aumentano del 15.6% della DEF"
+          ]
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "Rushing Hound: Swift as the Wind",
+          "description": "Quando General’s Glory o i personaggi attivi nell’AoE di General's War Banner (tranne Gorou) infliggono Geo DMG ai nemici, il CD di Gorou's Inuzaka All-Round Defense si riduce di 2s.\r\nQuesto effetto può avvenire solo una volta ogni 10s.\r\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "Sitting Hound: Steady as a Clock",
+          "description": "La durata di General's Glory aumenta di 1s se un personaggio attivo vicino ottiene un Elemental Shard attraverso Reazione Crystallize. \r\nQuesto effetto può avvenire una volta ogni  0.1s. L’aumento massimo è di 3s.\r\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "Mauling Hound: Fierce as Fire",
+          "description": "Aumenta di 3 il livello Inuzaka All-Round Defense.\r\nOra il massimo livello di upgrade è 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "Lapping Hound: Warm as Water",
+          "description": "Quando General's Glory raggiunge lo stato \"Impregnable\" o \"Crunch\", inizierà a curare i personaggi attivi nell’AoE di una quantità di HP pari al 50% della DEF di Gorou ogni 1.5s.\r\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "Striking Hound: Thunderous Force",
+          "description": "Aumenta di 3 il livello di Juuga: Forward Unto Victory.\r\nOra il livello massimo di upgrade è 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
+          "title": "Valiant Hound: Mountainous Fealty",
+          "description": "Per 12s dopo aver usato Inuzaka All-Round Defense o Juuga: Forward Unto Victory, aumenta il CRIT DMG degli Attacchi Geo DMG di tutti i membri vicini del party in base al livello di buff raggiunto dal campo della skill:\r\n",
+          "descriptions": [
+            "\"Standing Firm\": CRIT DMG (solo Geo DMG) +10%",
+            "\"Impregnable\": CRIT DMG (solo Geo DMG)  +20%",
+            "\"Crunch\": CRIT DMG (solo Geo DMG)  +40%",
+            "Ciascun aumento non è cumulabile con le altre due."
+          ]
         }
       ]
     },
@@ -3796,8 +3940,8 @@
       "passives": [
         {
           "key": "p1",
-          "title": "All-Preserver",
-          "description": "Potenziare Spade e Polearms costa il 50% di Mora in meno.\r\n",
+          "title": "Wishes Unnumbered",
+          "description": "Quando i membri vicini del party ottengono Elemental Orbs/Particles, Chakra Desiderata riceve 2 stacks di Resolve.\r\nL'effetto può avvenire una volta ogni 3s.\r\n",
           "descriptions": []
         },
         {
@@ -3811,8 +3955,8 @@
         },
         {
           "key": "p3",
-          "title": "Wishes Unnumbered",
-          "description": "Quando i membri vicini del party ottengono Elemental Orbs/Particles, Chakra Desiderata riceve 2 stacks di Resolve.\r\nL'effetto può avvenire una volta ogni 3s.\r\n",
+          "title": "All-Preserver",
+          "description": "Potenziare Spade e Polearms costa il 50% di Mora in meno.\r\n",
           "descriptions": []
         }
       ],
@@ -6147,11 +6291,11 @@
           ],
           "stats": [
             "Skill DMG|{param1}%",
-            "Intervallo di ottenimento di un Scarlet Seal|{param2}s",
-            "DMG Bonus Attacco Caricato|{param3}%",
-            "Durata|{param4}s",
+            "Intervallo di ottenimento di un Scarlet Seal|{param2}%",
+            "DMG Bonus Attacco Caricato|{param3}s",
+            "Durata|{param4}%",
             "CD (Tempo Ricarica)|{param5}s",
-            "Costo Energy|{param6}"
+            "Costo Energy|{param6}s"
           ]
         }
       ],
@@ -6770,13 +6914,13 @@
     {
       "key": "cinnabar-spindle",
       "name": "Cinnabar Spindle",
-      "description": "A sword made from materials that do not belong in this world. The power within might even be able to withstand the corruption of a venom that could corrode a mighty dragon.",
+      "description": "Una spada realizzata con materiali che non appartengono a questo mondo. Il potere che si cela al suo interno potrebbe persino resistere alla corruzione di un veleno capace di corrodere un potente drago.",
       "refinements": [
-        "Elemental Skill DMG is increased by {color}40{/color}% of DEF. The effect will be triggered no more than once every 1.5s and will be cleared 0.1s after the Elemental Skill deals DMG.",
-        "Elemental Skill DMG is increased by {color}50{/color}% of DEF. The effect will be triggered no more than once every 1.5s and will be cleared 0.1s after the Elemental Skill deals DMG.",
-        "Elemental Skill DMG is increased by {color}60{/color}% of DEF. The effect will be triggered no more than once every 1.5s and will be cleared 0.1s after the Elemental Skill deals DMG.",
-        "Elemental Skill DMG is increased by {color}70{/color}% of DEF. The effect will be triggered no more than once every 1.5s and will be cleared 0.1s after the Elemental Skill deals DMG.",
-        "Elemental Skill DMG is increased by {color}80{/color}% of DEF. The effect will be triggered no more than once every 1.5s and will be cleared 0.1s after the Elemental Skill deals DMG."
+        "L’ Elemental Skill DMG aumenta di un valore pari al {color}40{/color}% della DEF. L’effetto può avvenire solo una volta ogni 1.5s e termina 0.1s dopo aver inferto un Elemental Skill DMG.",
+        "L’ Elemental Skill DMG aumenta di un valore pari al {color}50{/color}% della DEF. L’effetto può avvenire solo una volta ogni 1.5s e termina 0.1s dopo aver inferto un Elemental Skill DMG.",
+        "L’ Elemental Skill DMG aumenta di un valore pari al {color}60{/color}% della DEF. L’effetto può avvenire solo una volta ogni 1.5s e termina 0.1s dopo aver inferto un Elemental Skill DMG.",
+        "L’ Elemental Skill DMG aumenta di un valore pari al {color}70{/color}% della DEF. L’effetto può avvenire solo una volta ogni 1.5s e termina 0.1s dopo aver inferto un Elemental Skill DMG.",
+        "L’ Elemental Skill DMG aumenta di un valore pari al {color}80{/color}% della DEF. L’effetto può avvenire solo una volta ogni 1.5s e termina 0.1s dopo aver inferto un Elemental Skill DMG."
       ]
     },
     {
@@ -7478,6 +7622,18 @@
       ]
     },
     {
+      "key": "redhorn-stonethresher",
+      "name": "Redhorn Stonethresher",
+      "description": "Secondo il suo precedente proprietario, quest’arma è il \"Mighty Redhorn Stoic Stonethreshing Gilded Goldcrushing Lion Lord\" che può far scappare qualsiasi mostro con la coda fra le gambe.",
+      "refinements": [
+        "DEF +{color}28{/color}%. Il DMG dell’Attacco Normale e Caricato aumenta del {color}40{/color}% della DEF.",
+        "DEF +{color}35{/color}%. Il DMG dell’Attacco Normale e Caricato aumenta del {color}50{/color}% della DEF.",
+        "DEF +{color}42{/color}%. Il DMG dell’Attacco Normale e Caricato aumenta del {color}60{/color}% della DEF.",
+        "DEF +{color}49{/color}%. Il DMG dell’Attacco Normale e Caricato aumenta del {color}70{/color}% della DEF.",
+        "DEF +{color}56{/color}%. Il DMG dell’Attacco Normale e Caricato aumenta del {color}80{/color}% della DEF."
+      ]
+    },
+    {
       "key": "royal-bow",
       "name": "Royal Bow",
       "description": "Un vecchio arco lungo reale che apparteneva ai passati governatori di Mondstadt. Innumerevoli generazioni dopo, la corda dell’arco è ancora tesa e può ancora scoccare frecce con grande forza.",
@@ -8165,7 +8321,7 @@
       "name": "Husk of Opulent Dreams",
       "bonus": [
         "DEF +30%",
-        "A character equipped with this Artifact set will obtain the Curiosity effect in the following conditions When on the field, the character gains 1 stack after hitting an opponent with a Geo attack, triggering a maximum of once every 0.3s. When off the field, the character gains 1 stack every 3s. Curiosity can stack up to 4 times, each providing 6% DEF and a 6% Geo DMG Bonus. When 6 seconds pass without gaining a Curiosity stack, 1 stack is lost."
+        "Un personaggio che equipaggia questo Set di Artefatti otterrà l’effetto \"Curiosity\" nelle seguenti condizioni: quando è in uso, il personaggio ottiene 1 stack dopo aver colpito con un attacco Geo, per un massimo di 1 ogni 0.3s. Quando è nel party ma non è in uso, il personaggio ottiene 1 stack ogni 3s. Curiosity è sommabile 4 volte, ciascuno conferisce DEF +6% e Geo DMG Bonus +6%. Ogni 6s, se non viene rinnovato da ulteriori stacks, si perderà 1 stack di Curiosity."
       ]
     },
     {
@@ -8230,6 +8386,14 @@
       "bonus": [
         "Physical DMG +25%.",
         "Quando un'Elemental Skill colpisce un nemico, si ottiene ATK +9% per 7s. Si può attivare solo una volta ogni 0.3s. Max 2 stacks raggiunti i quali il Physical DMG bonus del Set-2 pezzi aumenta del 100%."
+      ]
+    },
+    {
+      "key": "ocean-hued-clam",
+      "name": "Ocean-Hued Clam",
+      "bonus": [
+        "Healing Bonus +15%.",
+        "Quando un personaggio che equipaggia questo Set di Artefatti cura un personaggio del party, una \"Sea-Dyed Foam\" apparirà per 3s, per accumulare la quantità di HP ripristinati dalla cura (eccessi compresi). Dopo 3s, la Sea-Dyed Foam esploderà infliggendo DMG pari al 90% degli HP che ha accumulato. (Questo DMG è calcolato in modo simile al DMG delle Reazioni di tipo Electro-Charged e Superconduct, ma non è condizionabile da Elemental Mastery, Livello del Personaggio o DMG Bonus per le Reazioni). Si può produrre un solo Sea-Dyed Foam ogni 3.5s. Ciascun Sea-Dyed Foam può accumulare massimo 30,000 HP (cure in eccesso comprese). Può essere attivo un solo Sea-Dyed Foam per volta. Questo effetto può avvenire anche se il personaggio che lo equipaggia non è in uso ma è presente nel party."
       ]
     },
     {
@@ -9851,7 +10015,7 @@
     {
       "key": "vaporize",
       "name": "vaporize",
-      "effect": "Infligge Pyro DMG x1.5 se innescato da un Attacco Pyro.",
+      "effect": "Infligge Pyro DMG x2 se innescato da un Attacco Pyro.",
       "description": null
     },
     {
@@ -9875,7 +10039,7 @@
     {
       "key": "vaporize-reverse",
       "name": "Vaporize (Reverse)",
-      "effect": "Infligge Hydro DMG x2 se innescato da un Attacco Hydro.",
+      "effect": "Infligge Hydro DMG x1.5 se innescato da un Attacco Hydro.",
       "description": null
     },
     {

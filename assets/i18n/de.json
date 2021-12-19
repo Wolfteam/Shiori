@@ -425,81 +425,152 @@
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Lärmende Legende",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Standardangriff",
+              "description": "Führt bis zu 4 Schwünge mit dem Schwert hintereinander aus.\r\nGibt Itto beim Treffen von Gegnern mit den Angriffen Phase 2 und Phase 4 1 bzw. 2 Stapelungen des Effekts „superstarke Superkraft“.\r\n5-fach stapelbar. Erneuert die Wirkungsdauer der superstarken Superkraft bei jedem Auslösen.\r\nSetzt die Kombozahl des Standardangriffs darüber hinaus kurze Zeit nach Anwendung der Elementarfähigkeit „Masatsu Zetsugi – Akaushi-Wurf!“ oder nach dem Rennen nicht zurück.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Heftiger Schlag",
+              "description": "Führt, wenn „superstarke Superkraft“ vorhanden ist, nach dem Gedrückthalten zum Ausführen eines heftiges Schlags „Arataki Kesagiri“ aus, wofür keine Ausdauer verbraucht wird. Bei jedem Angriff mit Arataki Kesagiri wird eine Stapelung superstarke Superkraft verbraucht. Beim Verbrauchen der letzten Stapelung wird ein besonders starker Schlag ausgelöst.\r\nOhne superstarke Superkraft wird Ausdauer verbraucht, um einen einzelnen Saichimonji-Hieb auszulösen.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Angriff aus dem Fall",
+              "description": "Schlägt beim Fallen aus der Luft auf den Boden, greift alle Gegner in der Bahn an und verursacht beim Aufkommen Flächenschaden.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "SCH Phase 1|{param1}%",
+            "SCH Phase 2|{param2}%",
+            "SCH Phase 3|{param3}%",
+            "SCH Phase 4|{param4}%",
+            "Kombo-SCH von Arataki Kesagiri|{param5}%",
+            "End-SCH von Arataki Kesagiri|{param6}%",
+            "Dauer der superstarken Superkraft|{param7}s",
+            "SCH des Saichimonji-Hiebs|{param8}%",
+            "Ausdauerverbrauch für Saichimonji-Hiebe|{param9}",
+            "SCH beim Fallen|{param10}%",
+            "SCH beim Fallen aus niedriger/großer Höhe|{param11}% / {param12}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Masatsu Zetsugi – Akaushi-Wurf!",
+          "description": "Schleudert Ushi, einen jungen Akaushi-Bullen und ein loses Mitglied der Arataki-Bande, mit hoher Geschwindigkeit auf Gegner und fügt getroffenen Gegnern Geo-Schaden zu! Verleiht Arataki Itto, wenn Ushi Gegner trifft, 1 Stapelung des Effekts „superstarke Superkraft“.\r\nUshi bleibt nach dem Wurf auf dem Feld und bietet folgende Unterstützung:",
+          "abilities": [
+            {
+              "name": "",
+              "description": "",
+              "descriptions": [
+                "Verspottet Gegner in der Umgebung fortlaufend und zieht ihre Angriffe auf sich.",
+                "Beständigkeit hängt von Arataki Ittos max. LP ab.",
+                "Gibt Arataki Itto beim Erleiden von Schaden 1 Stapelung des Effekts „superstarke Superkraft“. Alle 2 s 1 Stapelung auf diese Weise möglich.",
+                "Flieht bei aufgebrauchter Beständigkeit oder nach Ablaufen der Wirkungsdauer und gibt Arataki Itto dabei 1 Stapelung des Effekts „superstarke Superkraft“."
+              ]
+            },
+            {
+              "name": "Gedrückt halten",
+              "description": "Anpassung der Wurfrichtung.\r\nUshi gilt als Geo-Objekt. Zu einem Zeitpunkt kann nur ein von Arataki Itto selbst beschworener Ushi existieren.\r\n",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "Fähigkeits-SCH|{param1}%",
+            "Erhaltene LP|{param2}%",
+            "Dauer|{param3}s",
+            "Abklingzeit|{param4}s"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Schrecklicher Oni-König – Itto bricht vor!",
+          "description": "Es wird Zeit, die Macht der Arataki-Bande zur Schau zu stellen! Bringt Ittos inneren „wütenden Oni-König“ hervor und verwendet dessen Kanabou zum Kampf.\r\n",
+          "abilities": [
+            {
+              "name": "",
+              "description": "Merkmale:\r\n",
+              "descriptions": [
+                "Verursacht mit Standardangriffen, heftigen Schlägen und Angriffen aus dem Fall Geo-Schaden, wobei diese Elementarumwandlung nicht von anderen Elementen überdeckt werden kann.",
+                "Erhöht die Angriffs-GSW von Arataki Ittos Standardangriff und erhöht seinen ANG basierend auf seiner VTD.",
+                "Verleiht Arataki Itto selbst beim Treffen von Gegnern mit den Angriffen von Phase 1 und Phase 3 1 Stapelung des Effekts „superstarke Superkraft“.",
+                "Verringert Arataki Ittos WDS gegen alle Elemente sowie seinen physischen WDS um 20 %.",
+                "Der Zustand „wütender Oni-König“ erlischt, wenn Arataki Itto ausgewechselt wird."
+              ]
+            }
+          ],
+          "stats": [
+            "ANG-Bonus|{param1}% DEF",
+            "Angriffs-GSW-Bonus|{param2}%",
+            "Dauer|{param3}s",
+            "Abklingzeit|{param4}s",
+            "Elementarenergie|{param5}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "Holzspalter",
+          "description": "Erhält beim Sammeln von Holz durch Angriffe auf Bäume mit eigenen Figuren in der Truppe mit einer Wahrscheinlichkeit von 25 % zusätzliches Holz.\r\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
+          "title": "Arataki Ichiban",
+          "description": "Verleiht Arataki Itto bei Anwendung aufeinanderfolgender Angriffe mit „Arataki Kesagiri“ folgende Effekte:\r\n",
+          "descriptions": [
+            "Jeder Hieb erhöht die Angriffs-GSW des nächsten Hiebs um 10 %, insgesamt auf diese Weise um bis zu 30 %.",
+            "Erhöht den Unterbrechungs-WDS.",
+            "Diese Effekte erlöschen beim Ende der aufeinanderfolgenden Angriffe."
+          ]
         },
         {
           "key": "p3",
-          "title": "NA",
-          "description": "",
+          "title": "Blut des roten Oni",
+          "description": "Erhöht den mit „Arataki Kesagiri“ verursachten Schaden basierend auf 35 % von Arataki Ittos VTD.\r\n",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "Hör gut zu!",
+          "description": "Verleiht Arataki Itto nach Anwendung von Schrecklicher Oni-König – Itto bricht vor! 2 Stapelungen des Effekts „superstarke Superkraft“. Verleiht Arataki Itto 1 s später 1,5 s lang alle 0,5 s jeweils 1 Stapelung des Effekts „superstarke Superkraft“.\r\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "Sieh gut her!",
+          "description": "Verkürzt die Abklingzeit von Schrecklicher Oni-König – Itto bricht vor! nach dem Auslösen dieser Fähigkeit für jede Figur in der Truppe, die die Geo-Kraft beherrscht, um 1,5 s und stellt Arataki Itto 6 Punkte Elementarenergie wieder her.\r\nVerkürzt die Abklingzeit auf diese Weise um bis zu 4,5 s und stellt bis zu 18 Punkte Elementarenergie wieder her.\r\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "Bulle im Anmarsch",
+          "description": "Erhöht die Stufe der Fähigkeit Masatsu Zetsugi – Akaushi-Wurf! um 3.\r\nHöchststufe 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "Brot und Wasser",
+          "description": "Erhöht nach dem Ende des durch Schrecklicher Oni-König – Itto bricht vor! entstandenen Zustands „wütender Oni-König“ die VTD aller Truppenmitglieder in der Nähe 10 s lang um 20 % und ihren ANG um 20 %.\r\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "Jahrzente des Ruhms in Hanamizaka",
+          "description": "Erhöht die Stufe der Fähigkeit Schrecklicher Oni-König – Itto bricht vor! um 3.\r\nHöchststufe 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
+          "title": "Arataki Itto, höchstpersönlich!",
+          "description": "Erhöht den KSCH von heftigen Schlägen von Arataki Itto um 70 %. Verbraucht außerdem bei Anwendung von „Arataki Kesagiri“ mit einer Wahrscheinlichkeit von 50 % keine „superstarke Superkraft“.\r\n",
           "descriptions": []
         }
       ]
@@ -1777,82 +1848,155 @@
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Gefletschte Zähne",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Standardangriff",
+              "description": "Führt bis zu 4 Pfeilschüsse hintereinander aus.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Heftiger Schlag",
+              "description": "Führt einen gezielten Schuss mit höherem Schaden und höherer Genauigkeit aus.\r\nKonzentriert die Steinkristalle während des Zielens an der Pfeilspitze, die voll aufgeladen Geo-Schaden verursacht.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Angriff aus dem Fall",
+              "description": "Schießt in der Luft einen Pfeilregen ab, trifft schnell auf dem Boden auf und verursacht dort Flächenschaden.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "SCH Phase 1|{param1}%",
+            "SCH Phase 2|{param2}%",
+            "SCH Phase 3|{param3}%",
+            "SCH Phase 4|{param4}%",
+            "Gezielte Schüsse|{param5}%",
+            "Voll aufgeladene gezielte Schüsse|{param6}%",
+            "SCH beim Fallen|{param7}%",
+            "SCH beim Fallen aus niedriger/großer Höhe|{param8}% / {param9}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Inuzuka-Allzweckaufstellung",
+          "description": "Verursacht Geo-Flächenschaden und stellt ein Generalbanner auf.\r\n",
+          "abilities": [
+            {
+              "name": "Generalbanner",
+              "description": "Verleiht den aktuellen Figuren im Wirkungsbereich gemäß der Anzahl an Figuren in der Truppe mit dem Geo-Element zum Zeitpunkt der Anwendung folgende Effekte:\r\n",
+              "descriptions": [
+                "1 Figur: „Zähigkeit“, erhöht die VTD.",
+                "2 Figuren: „Unbeirrbarkeit“, verleiht den obigen Effekt und erhöht den Unterbrechungs-WDS.",
+                "3 Figuren: „Trümmer“, verleiht die obigen Effekte und erhöht den Geo-Schaden.",
+                "Zu einem Zeitpunkt kann nur ein von Gorou selbst erschaffenes Generalbanner existieren. Figuren können nur die Boni eines einzigen Generalbanners erhalten. Der Effekt innerhalb des Wirkungsbereichs bleibt für Figuren bis 2 s nach dem Verlassen des Wirkungsbereichs bestehen."
+              ]
+            },
+            {
+              "name": "Gedrückt halten",
+              "description": "Wirkungsbereich der Fähigkeit kann angepasst werden.\r\n",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "Fähigkeits-SCH|{param1}%",
+            "VTD-Bonus|{param2}",
+            "Geo-SCH-Bonus|{param3}%",
+            "Dauer|{param4}s",
+            "Abklingzeit|{param5}s"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Juuga – Vorwärts zum Sieg",
+          "description": "Gorou zeigt seine Macht als General, verursacht Geo-Flächenschaden und erstellt ein Feld der „Würde des Generals“, um seine Kameraden zu ermuntern.\r\n",
+          "abilities": [
+            {
+              "name": "Würde des Generals",
+              "description": "Merkmale:\r\n",
+              "descriptions": [
+                "Das Feld verleiht aktuellen Figuren im Wirkungsbereich gemäß der Anzahl an Figuren in der Truppe mit dem Geo-Element die gleichen Effekte wie das Generalbanner der Elementarfähigkeit „Inuzuka-Allzweckaufstellung“ und folgt den Bewegungen der aktuellen Figur.",
+                "Erschafft alle 1,5 s einen Kristallzusammenbruch, der einem Gegner im Wirkungsbereich Geo-Flächenschaden zufügt.",
+                "Zieht alle 1,5 s 1 durch Kristallisationsreaktionen entstehenden Splitter im Wirkungsbereich zur Position der aktuellen Figur.",
+                "Zerstört, wenn ein von Gorou selbst erschaffenes Generalbanner bei der Anwendung dieser Fähigkeit vorhanden ist, dieses Generalbanner. Erschafft kein Generalbanner, wenn Gorou selbst während der Wirkungsdauer von Würde des Generals seine Elementarfähigkeit „Inuzuka-Allzweckaufstellung“ anwendet.",
+                "Der Effekt von Würde des Generals, den Gorou selbst geschaffen hat, erlischt, wenn Gorou ohnmächtig wird."
+              ]
+            }
+          ],
+          "stats": [
+            "Fähigkeits-SCH|{param1}% DEF",
+            "Kristallzusammenbruch-SCH|{param2}% DEF",
+            "Dauer|{param3}s",
+            "Abklingzeit|{param4}s",
+            "Elementarenergie|{param5}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "Gespür für Geglitzer",
+          "description": "Zeigt alle Besonderheiten Inazumas in der Nähe auf der Minikarte an.\r\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
+          "title": "Bei Wind und Regen",
+          "description": "Erhöht bei Anwendung von Juuga – Vorwärts zum Sieg die VTD aller Truppenmitglieder in der Nähe 12 s lang um 25 %.\r\n",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
+          "title": "Unvergessene Dankbarkeit",
+          "description": "Erhöht den mit folgenden Angriffen von Gorou verursachten Schaden basierend auf seiner VTD:\r\n",
+          "descriptions": [
+            "Erhöht den Schaden der Fähigkeit Inuzuka-Allzweckaufstellung um 156 % der VTD.",
+            "Erhöht den Schaden der Fähigkeit Juuga – Vorwärts zum Sieg sowie den Schaden von Kristallzusammenbruch um 15,6 % der VTD."
+          ]
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "Laufender Hund – Schnell wie der Wind",
+          "description": "Verkürzt, wenn aktuelle Figuren (außer Gorou selbst) im Wirkungsbereich von Gorous Generalbanner oder Würde des Generals Gegnern Geo-Schaden zufügen, die Abklingzeit von Gorous Inuzuka-Allzweckaufstellung um 2 s.\r\n10 s Abklingzeit.\r\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "Sitzender Hund – Verlässlich wie eine Uhr",
+          "description": "Verlängert die Wirkungsdauer von Gorous Würde des Generals beim Erhalten von durch Kristallisationsreaktionen entstehenden Splittern durch aktuelle Figuren in der Nähe während der Wirkungsdauer von Würde des Generals um 1 s.\r\n0,1 s Abklingzeit, verlängert die Wirkungsdauer auf diese Weise um bis zu 3 s.\r\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "Bellender Hund – Fauchend wie Feuer",
+          "description": "Erhöht die Stufe der Fähigkeit Inuzuka-Allzweckaufstellung um 3.\r\nHöchststufe 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "Schleckender Hund – Warm wie Wasser",
+          "description": "Stellt, wenn die Effekte „Unbeirrbarkeit“ oder „Trümmer“ für Würde des Generals aktiv sind, allen aktuellen Figuren im Wirkungsbereich alle 1,5 s LP in Höhe von 50 % von Gorous VTD wieder her.\r\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "Aufspringender Hund – Aufgebracht wie Donner",
+          "description": "Erhöht die Stufe der Fähigkeit Juuga – Vorwärts zum Sieg um 3.\r\nHöchststufe 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
+          "title": "Mutiger Hund – Treu wie Berg",
+          "description": "Erhöht bei Anwendung von Inuzuka-Allzweckaufstellung oder Juuga – Vorwärts zum Sieg den KSCH des Geo-Schadens aller Truppenmitglieder in der Nähe gemäß der Stufe des Wirkungsbereichs zur Zeit der Anwendung 12 s lang:\r\n",
+          "descriptions": [
+            "„Zähigkeit“: 10 % Bonus",
+            "„Unbeirrbarkeit“: 20 % Bonus",
+            "„Trümmer“: 40 % Bonus",
+            "Dieser Effekt ist nicht stapelbar und richtet sich nach dem zuletzt in Kraft getretenen Effekt."
+          ]
         }
       ]
     },
@@ -4453,8 +4597,8 @@
     {
       "key": "shenhe",
       "name": "Shenhe",
-      "title": "？？？",
-      "description": "",
+      "title": "Einsame Abgeschiedenheit",
+      "description": "Eine adeptische Schülerin mit einer übernatürlichen Aura, die ihr das langjährige eremitenhafte Leben in den Bergen von Liyue verleiht. Ihr Charakter ist von dem Gleichmut und der Distanzierung der Adepten zutiefst geprägt.",
       "skills": [
         {
           "key": "s1",
@@ -6367,8 +6511,8 @@
     {
       "key": "yun-jin",
       "name": "Yun Jin",
-      "title": "？？？",
-      "description": "",
+      "title": "Bühnenschönheit",
+      "description": "Eine berühmte Opernsängerin in Liyue, die sowohl im Schreiben als auch im Gesang erfahren ist. Ihr Stil ist einzigartig, exquisit und sanft, genauso wie sie selbst.",
       "skills": [
         {
           "key": "s1",
@@ -7483,6 +7627,18 @@
         "Stellt beim Besiegen eines Gegners {color}12{/color} % LP wieder her.",
         "Stellt beim Besiegen eines Gegners {color}14{/color} % LP wieder her.",
         "Stellt beim Besiegen eines Gegners {color}16{/color} % LP wieder her."
+      ]
+    },
+    {
+      "key": "redhorn-stonethresher",
+      "name": "Rothorn-Steinbrecher",
+      "description": "Seinem Vorbesitzer zufolge ist dies die Waffe des „mächtigen Rothorn-Löwenfürsten, der Stein und Gold brechen kann“ und jedes Monster in die Flucht schlägt.",
+      "refinements": [
+        "Erhöht die VTD um {color}28{/color} %. Erhöht den mit Standardangriffen und heftigen Schlägen verursachten Schaden um {color}40{/color} % VTD.",
+        "Erhöht die VTD um {color}35{/color} %. Erhöht den mit Standardangriffen und heftigen Schlägen verursachten Schaden um {color}50{/color} % VTD.",
+        "Erhöht die VTD um {color}42{/color} %. Erhöht den mit Standardangriffen und heftigen Schlägen verursachten Schaden um {color}60{/color} % VTD.",
+        "Erhöht die VTD um {color}49{/color} %. Erhöht den mit Standardangriffen und heftigen Schlägen verursachten Schaden um {color}70{/color} % VTD.",
+        "Erhöht die VTD um {color}56{/color} %. Erhöht den mit Standardangriffen und heftigen Schlägen verursachten Schaden um {color}80{/color} % VTD."
       ]
     },
     {
@@ -9860,7 +10016,7 @@
     {
       "key": "vaporize",
       "name": "Verdampfen",
-      "effect": "Verursacht 1,5-fachen Pyro-Schaden, wenn eine Pyro-Attacke die Reaktion auslöst.",
+      "effect": "Verursacht 2-fachen Pyro-Schaden, wenn eine Pyro-Attacke die Reaktion auslöst.",
       "description": null
     },
     {
@@ -9884,7 +10040,7 @@
     {
       "key": "vaporize-reverse",
       "name": "Verdampfen (umgekehrt)",
-      "effect": "Verursacht doppelten Hydro-Schaden, wenn eine Hydro-Attacke die Reaktion auslöst.",
+      "effect": "Verursacht 1,5-fachen Hydro-Schaden, wenn eine Hydro-Attacke die Reaktion auslöst.",
       "description": null
     },
     {
