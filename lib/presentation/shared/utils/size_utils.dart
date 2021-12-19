@@ -78,4 +78,17 @@ class SizeUtils {
         return defaultValue ?? 35;
     }
   }
+
+  static double getExtentRatioForSlidablePane(BuildContext context) {
+    if (Platform.isWindows) {
+      return 0.2;
+    }
+    final size = MediaQuery.of(context).size;
+    final deviceType = getDeviceType(size);
+    if (deviceType == DeviceScreenType.tablet) {
+      return 0.35;
+    }
+
+    return 0.5;
+  }
 }
