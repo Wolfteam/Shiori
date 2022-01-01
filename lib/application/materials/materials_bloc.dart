@@ -48,7 +48,6 @@ class MaterialsBloc extends Bloc<MaterialsEvent, MaterialsState> {
         tempSortDirectionType: currentState.sortDirectionType,
         tempType: currentState.type,
       ),
-      close: (e) => currentState.copyWith.call(materials: []),
       resetFilters: (_) => _buildInitialState(
         excludeKeys: state.maybeMap(loaded: (state) => state.excludeKeys, orElse: () => []),
       ),

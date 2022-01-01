@@ -2,9 +2,9 @@ import 'dart:async';
 
 import 'package:darq/darq.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:meta/meta.dart';
-import 'package:shiori/application/common/pop_bloc.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/genshin_service.dart';
@@ -14,15 +14,13 @@ part 'material_bloc.freezed.dart';
 part 'material_event.dart';
 part 'material_state.dart';
 
-class MaterialBloc extends PopBloc<MaterialEvent, MaterialState> {
+class MaterialBloc extends Bloc<MaterialEvent, MaterialState> {
   final GenshinService _genshinService;
   final TelemetryService _telemetryService;
 
   MaterialBloc(this._genshinService, this._telemetryService) : super(const MaterialState.loading());
 
   @override
-  MaterialEvent getEventForPop(String? key) => MaterialEvent.loadFromKey(key: key!, addToQueue: false);
-
   @override
   Stream<MaterialState> mapEventToState(MaterialEvent event) async* {
     final s = await event.map(
@@ -30,7 +28,6 @@ class MaterialBloc extends PopBloc<MaterialEvent, MaterialState> {
         final material = _genshinService.getMaterial(e.key);
         if (e.addToQueue) {
           await _telemetryService.trackMaterialLoaded(e.key);
-          currentItemsInStack.add(material.key);
         }
         return _buildInitialState(material);
       },

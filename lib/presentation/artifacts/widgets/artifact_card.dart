@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:shiori/application/bloc.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/presentation/artifact/artifact_page.dart';
 import 'package:shiori/presentation/shared/extensions/rarity_extensions.dart';
@@ -124,10 +122,7 @@ class ArtifactCard extends StatelessWidget {
       return;
     }
 
-    final bloc = context.read<ArtifactBloc>();
-    bloc.add(ArtifactEvent.loadFromKey(key: keyName));
-    final route = MaterialPageRoute(builder: (ctx) => ArtifactPage());
+    final route = MaterialPageRoute(builder: (ctx) => ArtifactPage(itemKey: keyName));
     await Navigator.of(context).push(route);
-    bloc.pop();
   }
 }

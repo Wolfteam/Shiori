@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:shiori/application/bloc.dart';
 import 'package:shiori/presentation/material/material_page.dart' as mp;
 
 class MaterialItemButton extends StatelessWidget {
@@ -28,10 +26,7 @@ class MaterialItemButton extends StatelessWidget {
   }
 
   Future<void> _gotoMaterialPage(BuildContext context) async {
-    final bloc = context.read<MaterialBloc>();
-    bloc.add(MaterialEvent.loadFromKey(key: itemKey));
-    final route = MaterialPageRoute(builder: (c) => mp.MaterialPage());
+    final route = MaterialPageRoute(builder: (c) => mp.MaterialPage(itemKey: itemKey));
     await Navigator.push(context, route);
-    bloc.pop();
   }
 }

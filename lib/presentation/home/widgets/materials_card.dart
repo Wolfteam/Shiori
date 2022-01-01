@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:shiori/application/bloc.dart';
 import 'package:shiori/domain/assets.dart';
 import 'package:shiori/generated/l10n.dart';
 import 'package:shiori/presentation/home/widgets/card_description.dart';
@@ -32,10 +30,8 @@ class MaterialsCard extends StatelessWidget {
   }
 
   Future<void> _gotoMaterialsPage(BuildContext context) async {
-    context.read<MaterialsBloc>().add(const MaterialsEvent.init());
     final route = MaterialPageRoute(builder: (_) => const MaterialsPage());
     await Navigator.push(context, route);
     await route.completed;
-    context.read<MaterialsBloc>().add(const MaterialsEvent.close());
   }
 }
