@@ -663,6 +663,19 @@ void main() {
         expect(birthday.month, equals(2));
       }
     });
+
+    test('upcoming characters are not shown', () async {
+      final service = _getService();
+      await service.init(AppLanguageType.english);
+      final localeService = _getLocaleService(AppLanguageType.english);
+      final upcoming = service.getUpcomingCharactersKeys();
+      for (final key in upcoming) {
+        final char = service.getCharacter(key);
+        final date = localeService.getCharBirthDate(char.birthday);
+        final chars = service.getCharactersForBirthday(date);
+        expect(chars.any((el) => el.key == key), false);
+      }
+    });
   });
 
   group('Elements', () {
