@@ -104,36 +104,42 @@ class WeaponCard extends StatelessWidget {
           padding: Styles.edgeInsetAll5,
           child: Column(
             children: [
-              Stack(
-                alignment: AlignmentDirectional.topCenter,
-                fit: StackFit.passthrough,
-                children: [
-                  FadeInImage(
-                    width: imgWidth,
-                    height: imgHeight,
-                    placeholder: MemoryImage(kTransparentImage),
-                    image: AssetImage(image),
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      ComingSoonNewAvatar(
-                        isNew: false,
-                        isComingSoon: isComingSoon,
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-              if (!withoutDetails)
-                Center(
-                  child: Tooltip(
-                    message: name,
-                    child: Text(
-                      name,
-                      overflow: TextOverflow.ellipsis,
-                      style: theme.textTheme.subtitle1!.copyWith(fontWeight: FontWeight.bold, color: Colors.white),
+              if (withoutDetails)
+                FadeInImage(
+                  width: imgWidth,
+                  height: imgHeight,
+                  placeholder: MemoryImage(kTransparentImage),
+                  image: AssetImage(image),
+                )
+              else
+                Stack(
+                  alignment: AlignmentDirectional.topCenter,
+                  fit: StackFit.passthrough,
+                  children: [
+                    FadeInImage(
+                      width: imgWidth,
+                      height: imgHeight,
+                      placeholder: MemoryImage(kTransparentImage),
+                      image: AssetImage(image),
                     ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        ComingSoonNewAvatar(
+                          isNew: false,
+                          isComingSoon: isComingSoon,
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              if (!withoutDetails)
+                Tooltip(
+                  message: name,
+                  child: Text(
+                    name,
+                    overflow: TextOverflow.ellipsis,
+                    style: theme.textTheme.subtitle1!.copyWith(fontWeight: FontWeight.bold, color: Colors.white),
                   ),
                 ),
               Rarity(stars: rarity),

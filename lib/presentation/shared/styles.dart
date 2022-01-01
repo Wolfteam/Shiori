@@ -4,8 +4,8 @@ class Styles {
   static const String appIconPath = 'assets/icon/icon.png';
 
   static const BorderRadius mainCardBorderRadius = BorderRadius.only(
-    bottomLeft: Radius.circular(35),
-    bottomRight: Radius.circular(35),
+    bottomLeft: Radius.circular(30),
+    bottomRight: Radius.circular(30),
     topLeft: Radius.circular(10),
     topRight: Radius.circular(10),
   );
@@ -59,6 +59,7 @@ class Styles {
 
   static const double smallButtonSplashRadius = 18;
   static const double mediumButtonSplashRadius = 25;
+  static const double mediumBigButtonSplashRadius = mediumButtonSplashRadius * 1.3;
 
   static double getIconSizeForItemPopupMenuFilter(bool forEndDrawer, bool forDefaultIcons) {
     if (forDefaultIcons) {

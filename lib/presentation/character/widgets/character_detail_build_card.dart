@@ -7,6 +7,7 @@ import 'package:shiori/generated/l10n.dart';
 import 'package:shiori/presentation/artifacts/widgets/artifact_card.dart';
 import 'package:shiori/presentation/shared/extensions/element_type_extensions.dart';
 import 'package:shiori/presentation/shared/extensions/i18n_extensions.dart';
+import 'package:shiori/presentation/shared/row_column_item_or.dart';
 import 'package:shiori/presentation/shared/styles.dart';
 import 'package:shiori/presentation/weapons/widgets/weapon_card.dart';
 
@@ -91,7 +92,7 @@ class CharacterDetailBuildCard extends StatelessWidget {
             ...artifacts.mapIndex((e, index) {
               final showOr = index < artifacts.length - 1;
               if (showOr) {
-                return _ItemWithOr(widget: _ArtifactRow(item: e), color: color, useColumn: true);
+                return RowColumnItemOr(widget: _ArtifactRow(item: e), color: color, useColumn: true);
               }
               return _ArtifactRow(item: e);
             }).toList(),
@@ -131,38 +132,11 @@ class _Weapons extends StatelessWidget {
           );
           final withOr = index < weapons.length - 1;
           if (withOr) {
-            return _ItemWithOr(widget: child, color: color);
+            return RowColumnItemOr(widget: child, color: color);
           }
           return child;
         },
       ),
-    );
-  }
-}
-
-class _ItemWithOr extends StatelessWidget {
-  final Widget widget;
-  final Color color;
-  final bool useColumn;
-
-  const _ItemWithOr({
-    Key? key,
-    required this.widget,
-    required this.color,
-    this.useColumn = false,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    if (useColumn) {
-      return Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [widget, _OrWidget(color: color)],
-      );
-    }
-    return Row(
-      mainAxisSize: MainAxisSize.min,
-      children: [widget, _OrWidget(color: color)],
     );
   }
 }
@@ -218,36 +192,6 @@ class _ArtifactRow extends StatelessWidget {
             keyName: multi.key,
           );
         },
-      ),
-    );
-  }
-}
-
-class _OrWidget extends StatelessWidget {
-  final Color color;
-
-  const _OrWidget({
-    Key? key,
-    required this.color,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    final s = S.of(context);
-    final theme = Theme.of(context);
-    return Container(
-      margin: Styles.edgeInsetAll5,
-      padding: Styles.edgeInsetAll5,
-      decoration: BoxDecoration(
-        color: color,
-        shape: BoxShape.circle,
-      ),
-      child: Center(
-        child: Text(
-          s.or,
-          textAlign: TextAlign.center,
-          style: theme.textTheme.subtitle2!.copyWith(fontWeight: FontWeight.bold, color: Colors.white),
-        ),
       ),
     );
   }

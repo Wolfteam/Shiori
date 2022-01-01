@@ -131,6 +131,18 @@ class Injection {
     return WeaponBloc(genshinService, telemetryService, dataService);
   }
 
+  static CustomBuildsBloc get customBuildsBloc {
+    final genshinService = getIt<GenshinService>();
+    final dataService = getIt<DataService>();
+    return CustomBuildsBloc(genshinService, dataService);
+  }
+
+  static CustomBuildBloc get customBuildBloc {
+    final genshinService = getIt<GenshinService>();
+    final dataService = getIt<DataService>();
+    return CustomBuildBloc(genshinService, dataService);
+  }
+
   //TODO: USE THIS PROP
   // static CalculatorAscMaterialsItemBloc get calculatorAscMaterialsItemBloc {
   //   final genshinService = getIt<GenshinService>();

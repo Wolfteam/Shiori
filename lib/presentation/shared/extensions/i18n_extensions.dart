@@ -605,4 +605,19 @@ extension I18nExtensions on S {
         return shield;
     }
   }
+
+  String translateArtifactType(ArtifactType type) {
+    switch (type) {
+      case ArtifactType.flower:
+        return flower;
+      case ArtifactType.plume:
+        return plume;
+      case ArtifactType.clock:
+        return clock;
+      case ArtifactType.goblet:
+        return goblet;
+      case ArtifactType.crown:
+        return crown;
+    }
+  }
 }

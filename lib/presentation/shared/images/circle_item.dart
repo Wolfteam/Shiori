@@ -7,6 +7,8 @@ class CircleItem extends StatelessWidget {
   final bool forDrag;
   final bool imageSizeTimesTwo;
   final Function(String)? onTap;
+  final BoxFit fit;
+  final Alignment alignment;
 
   const CircleItem({
     Key? key,
@@ -15,6 +17,8 @@ class CircleItem extends StatelessWidget {
     this.forDrag = false,
     this.imageSizeTimesTwo = true,
     this.onTap,
+    this.fit = BoxFit.cover,
+    this.alignment = Alignment.topCenter,
   }) : super(key: key);
 
   @override
@@ -28,8 +32,8 @@ class CircleItem extends StatelessWidget {
         child: FadeInImage(
           placeholder: MemoryImage(kTransparentImage),
           image: AssetImage(image),
-          fit: BoxFit.cover,
-          alignment: Alignment.topCenter,
+          fit: fit,
+          alignment: alignment,
           height: size,
           width: size,
         ),
