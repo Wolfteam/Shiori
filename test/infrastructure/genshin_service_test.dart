@@ -30,11 +30,11 @@ void main() {
     return service;
   }
 
-  test('Initialize all languages', () {
+  test('Initialize all languages', () async {
     final service = _getService();
 
     for (final lang in languages) {
-      expect(service.init(lang), completes);
+      await expectLater(service.init(lang), completes);
     }
   });
 
