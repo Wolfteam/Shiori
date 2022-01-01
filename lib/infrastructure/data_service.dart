@@ -29,6 +29,7 @@ class DataServiceImpl implements DataService {
   late Box<GameCode> _gameCodesBox;
   late Box<GameCodeReward> _gameCodeRewardsBox;
   late Box<TierListItem> _tierListBox;
+  late Box<CustomBuild> _customBuildsBox;
 
   late Box<NotificationCustom> _notificationsCustomBox;
   late Box<NotificationExpedition> _notificationsExpeditionBox;
@@ -67,6 +68,7 @@ class DataServiceImpl implements DataService {
       _gameCodesBox = await Hive.openBox<GameCode>('gameCodes');
       _gameCodeRewardsBox = await Hive.openBox<GameCodeReward>('gameCodeRewards');
       _tierListBox = await Hive.openBox<TierListItem>('tierList');
+      _customBuildsBox = await Hive.openBox<CustomBuild>('customBuilds');
 
       _notificationsCustomBox = await Hive.openBox('notificationsCustom');
       _notificationsExpeditionBox = await Hive.openBox('notificationsExpedition');
@@ -1237,6 +1239,71 @@ class DataServiceImpl implements DataService {
     return _updateNotification(item, item.title, item.body, item.note, item.showNotification);
   }
 
+  @override
+  List<CustomBuildModel> getAllCustomBuilds() {
+    return _customBuildsBox.values.map(_mapToCustomBuildModel).toList()..sort((x, y) => x.character.name.compareTo(y.character.name));
+  }
+
+  @override
+  CustomBuildModel getCustomBuild(int key) {
+    final build = _customBuildsBox.values.firstWhere((e) => e.key == key);
+    return _mapToCustomBuildModel(build);
+  }
+
+  @override
+  Future<CustomBuildModel> saveCustomBuild(
+    String charKey,
+    String title,
+    CharacterRoleType type,
+    CharacterRoleSubType subType,
+    bool showOnCharacterDetail,
+    List<String> weaponKeys,
+    Map<String, int> artifacts,
+    List<CharacterSkillType> talentPriority,
+  ) async {
+    final build = CustomBuild(
+      charKey,
+      showOnCharacterDetail,
+      title,
+      type.index,
+      subType.index,
+      weaponKeys,
+      artifacts,
+      talentPriority.map((e) => e.index).toList(),
+    );
+    await _customBuildsBox.add(build);
+    return _mapToCustomBuildModel(build);
+  }
+
+  @override
+  Future<CustomBuildModel> updateCustomBuild(
+    int key,
+    String title,
+    CharacterRoleType type,
+    CharacterRoleSubType subType,
+    bool showOnCharacterDetail,
+    List<String> weaponKeys,
+    Map<String, int> artifacts,
+    List<CharacterSkillType> talentPriority,
+  ) async {
+    final build = _customBuildsBox.get(key)!;
+    build.title = title;
+    build.roleType = type.index;
+    build.roleSubType = subType.index;
+    build.showOnCharacterDetail = showOnCharacterDetail;
+    build.weaponKeys = weaponKeys;
+    build.artifacts = artifacts;
+    build.talentPriority = talentPriority.map((e) => e.index).toList();
+
+    await build.save();
+    return _mapToCustomBuildModel(build);
+  }
+
+  @override
+  Future<void> deleteCustomBuild(int key) async {
+    await _customBuildsBox.delete(key);
+  }
+
   void _registerAdapters() {
     Hive.registerAdapter(CalculatorCharacterSkillAdapter());
     Hive.registerAdapter(CalculatorItemAdapter());
@@ -1255,6 +1322,7 @@ class DataServiceImpl implements DataService {
     Hive.registerAdapter(NotificationRealmCurrencyAdapter());
     Hive.registerAdapter(NotificationResinAdapter());
     Hive.registerAdapter(NotificationWeeklyBossAdapter());
+    Hive.registerAdapter(CustomBuildAdapter());
   }
 
   ItemAscensionMaterials _buildForCharacter(CalculatorItem item, {int? calculatorItemKey, bool includeInventory = false}) {
@@ -1565,5 +1633,21 @@ class DataServiceImpl implements DataService {
     final hiveObject = notification as HiveObject;
     await hiveObject.save();
     return getNotification(hiveObject.key as int, AppNotificationType.values[notification.type]);
+  }
+
+  CustomBuildModel _mapToCustomBuildModel(CustomBuild build) {
+    final character = _genshinService.getCharacterForCard(build.characterKey);
+    final weapons = build.weaponKeys.map((e) => _genshinService.getWeaponForCard(e)).toList();
+    // final artifacts = build.artifactKeys.map((e) => _genshinService.getArtifactForCard(e)).toList();
+    return CustomBuildModel(
+      key: build.key as int,
+      title: build.title,
+      type: CharacterRoleType.values[build.roleType],
+      subType: CharacterRoleSubType.values[build.roleSubType],
+      showOnCharacterDetail: build.showOnCharacterDetail,
+      character: character,
+      weapons: weapons,
+      artifacts: [],
+    );
   }
 }

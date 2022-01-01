@@ -204,8 +204,14 @@ class GenshinServiceImpl implements GenshinService {
   }
 
   @override
-  List<ArtifactCardModel> getArtifactsForCard() {
-    return _artifactsFile.artifacts.map((e) => _toArtifactForCard(e)).toList();
+  List<ArtifactCardModel> getArtifactsForCard({ArtifactType? type}) {
+    return _artifactsFile.artifacts.map((e) => _toArtifactForCard(e, type: type)).where((e) {
+      //if a type was provided and it is different that crown, then return only the ones with more than 1 bonus
+      if (type != null && type != ArtifactType.crown) {
+        return e.bonus.length > 1;
+      }
+      return true;
+    }).toList();
   }
 
   @override
@@ -757,6 +763,21 @@ class GenshinServiceImpl implements GenshinService {
     return bonus == 1 ? [fullImagePath] : artifactOrder.map((e) => Assets.getArtifactPath('$imageWithoutExt$e.png')).toList();
   }
 
+  @override
+  String getArtifactRelatedPart(String fullImagePath, String image, int bonus, ArtifactType type) {
+    if (bonus == 1 && type != ArtifactType.crown) {
+      throw Exception('Invalid artifact type');
+    }
+
+    if (bonus == 1) {
+      return fullImagePath;
+    }
+
+    final imgs = getArtifactRelatedParts(fullImagePath, image, bonus);
+    final order = getArtifactOrder(type);
+    return imgs.firstWhere((el) => el.endsWith('$order.png'));
+  }
+
   CharacterCardModel _toCharacterForCard(CharacterFileModel character) {
     final translation = getCharacterTranslation(character.key);
 
@@ -809,16 +830,24 @@ class GenshinServiceImpl implements GenshinService {
     );
   }
 
-  ArtifactCardModel _toArtifactForCard(ArtifactFileModel artifact) {
+  ArtifactCardModel _toArtifactForCard(ArtifactFileModel artifact, {ArtifactType? type}) {
     final translation = _translationFile.artifacts.firstWhere((t) => t.key == artifact.key);
     final bonus = getArtifactBonus(translation);
-    return ArtifactCardModel(
+    final mapped = ArtifactCardModel(
       key: artifact.key,
       name: translation.name,
       image: artifact.fullImagePath,
       rarity: artifact.maxRarity,
       bonus: bonus,
     );
+
+    //only search for other images if the artifact has more than 1 bonus effect
+    if (type != null && bonus.length > 1) {
+      final img = getArtifactRelatedPart(artifact.fullImagePath, artifact.image, bonus.length, type);
+      return mapped.copyWith.call(image: img);
+    }
+
+    return mapped;
   }
 
   MaterialCardModel _toMaterialForCard(MaterialFileModel material) {
