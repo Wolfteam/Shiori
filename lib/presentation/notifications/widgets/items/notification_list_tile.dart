@@ -12,6 +12,7 @@ import 'package:shiori/presentation/shared/dialogs/number_picker_dialog.dart';
 import 'package:shiori/presentation/shared/images/circle_item.dart';
 import 'package:shiori/presentation/shared/styles.dart';
 import 'package:shiori/presentation/shared/utils/modal_bottom_sheet_utils.dart';
+import 'package:shiori/presentation/shared/utils/size_utils.dart';
 
 import '../add_edit_notification_bottom_sheet.dart';
 
@@ -46,55 +47,64 @@ class NotificationListTitle extends StatelessWidget {
     final theme = Theme.of(context);
     final s = S.of(context);
     final typeIsValidForReduction = type != AppNotificationType.resin && type != AppNotificationType.realmCurrency;
+    final extentRatio = SizeUtils.getExtentRatioForSlidablePane(context);
     return BlocProvider<NotificationTimerBloc>(
       create: (ctx) => Injection.notificationTimerBloc..add(NotificationTimerEvent.init(completesAt: completesAt)),
       child: Slidable(
-        actionPane: const SlidableDrawerActionPane(),
-        actions: [
-          IconSlideAction(
-            caption: s.stop,
-            color: Colors.deepOrange,
-            icon: Icons.stop,
-            foregroundColor: Colors.white,
-            onTap: () => context.read<NotificationsBloc>().add(NotificationsEvent.stop(id: itemKey, type: type)),
-          ),
-          IconSlideAction(
-            caption: s.delete,
-            color: Colors.red,
-            icon: Icons.delete,
-            onTap: () => context.read<NotificationsBloc>().add(NotificationsEvent.delete(id: itemKey, type: type)),
-          ),
-        ],
-        secondaryActions: [
-          IconSlideAction(
-            caption: s.edit,
-            color: Colors.orange,
-            icon: Icons.edit,
-            foregroundColor: Colors.white,
-            onTap: () => _showEditModal(context),
-          ),
-          if (type != AppNotificationType.custom)
-            IconSlideAction(
-              caption: s.reset,
-              color: Colors.green,
-              icon: Icons.restore,
+        key: ValueKey('$itemKey-$type'),
+        startActionPane: ActionPane(
+          extentRatio: extentRatio,
+          motion: const ScrollMotion(),
+          children: [
+            SlidableAction(
+              label: s.stop,
+              backgroundColor: Colors.deepOrange,
+              icon: Icons.stop,
               foregroundColor: Colors.white,
-              onTap: () => context.read<NotificationsBloc>().add(NotificationsEvent.reset(id: itemKey, type: type)),
+              onPressed: (_) => context.read<NotificationsBloc>().add(NotificationsEvent.stop(id: itemKey, type: type)),
             ),
-          if (initialRemaining.inHours > 1 && typeIsValidForReduction)
-            BlocBuilder<NotificationTimerBloc, NotificationTimerState>(
-              builder: (ctx, state) {
-                final canBeUsed = state.remaining.inHours > 1 && typeIsValidForReduction;
-                return IconSlideAction(
-                  caption: s.reduceTime,
-                  color: canBeUsed ? Colors.purpleAccent : Colors.grey,
-                  icon: Icons.timelapse,
-                  foregroundColor: Colors.white,
-                  onTap: canBeUsed ? () => _showReduceTimeModal(context, state.remaining) : null,
-                );
-              },
+            SlidableAction(
+              label: s.delete,
+              backgroundColor: Colors.red,
+              icon: Icons.delete,
+              onPressed: (_) => context.read<NotificationsBloc>().add(NotificationsEvent.delete(id: itemKey, type: type)),
             ),
-        ],
+          ],
+        ),
+        endActionPane: ActionPane(
+          extentRatio: extentRatio,
+          motion: const ScrollMotion(),
+          children: [
+            SlidableAction(
+              label: s.edit,
+              backgroundColor: Colors.orange,
+              icon: Icons.edit,
+              foregroundColor: Colors.white,
+              onPressed: (_) => _showEditModal(context),
+            ),
+            if (type != AppNotificationType.custom)
+              SlidableAction(
+                label: s.reset,
+                backgroundColor: Colors.green,
+                icon: Icons.restore,
+                foregroundColor: Colors.white,
+                onPressed: (_) => context.read<NotificationsBloc>().add(NotificationsEvent.reset(id: itemKey, type: type)),
+              ),
+            if (initialRemaining.inHours > 1 && typeIsValidForReduction)
+              BlocBuilder<NotificationTimerBloc, NotificationTimerState>(
+                builder: (ctx, state) {
+                  final canBeUsed = state.remaining.inHours > 1 && typeIsValidForReduction;
+                  return SlidableAction(
+                    label: s.reduceTime,
+                    backgroundColor: canBeUsed ? Colors.purpleAccent : Colors.grey,
+                    icon: Icons.timelapse,
+                    foregroundColor: Colors.white,
+                    onPressed: canBeUsed ? (_) => _showReduceTimeModal(context, state.remaining) : null,
+                  );
+                },
+              ),
+          ],
+        ),
         child: ListTile(
           contentPadding: Styles.edgeInsetAll5,
           horizontalTitleGap: 10,
