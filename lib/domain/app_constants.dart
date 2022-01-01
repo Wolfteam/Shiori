@@ -8,6 +8,51 @@ const githubPage = 'https://github.com/Wolfteam/Shiori';
 //This order matches the one in the game, and the numbers represent each image
 const artifactOrder = [4, 2, 5, 1, 3];
 
+int getArtifactOrder(ArtifactType type) {
+  return artifactOrder[type.index];
+}
+
+List<StatType> getArtifactPossibleMainStats(ArtifactType type) {
+  switch (type) {
+    case ArtifactType.flower:
+      return [StatType.hp];
+    case ArtifactType.plume:
+      return [StatType.atk];
+    case ArtifactType.clock:
+      return [
+        StatType.atkPercentage,
+        StatType.defPercentage,
+        StatType.hpPercentage,
+        StatType.energyRechargePercentage,
+        StatType.elementalMastery,
+      ];
+    case ArtifactType.goblet:
+      return [
+        StatType.atkPercentage,
+        StatType.defPercentage,
+        StatType.hpPercentage,
+        StatType.elementalMastery,
+        StatType.physDmgPercentage,
+        StatType.hydroDmgBonusPercentage,
+        StatType.pyroDmgBonusPercentage,
+        StatType.cryoDmgBonusPercentage,
+        StatType.electroDmgBonusPercentage,
+        StatType.anemoDmgBonusPercentage,
+        StatType.geoDmgBonusPercentage,
+      ];
+    case ArtifactType.crown:
+      return [
+        StatType.atkPercentage,
+        StatType.defPercentage,
+        StatType.hpPercentage,
+        StatType.critRatePercentage,
+        StatType.critDmgPercentage,
+        StatType.elementalMastery,
+        StatType.healingBonusPercentage,
+      ];
+  }
+}
+
 const languagesMap = {
   AppLanguageType.english: LanguageModel('en', 'US'),
   AppLanguageType.spanish: LanguageModel('es', 'ES'),

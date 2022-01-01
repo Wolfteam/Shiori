@@ -26,7 +26,7 @@ abstract class GenshinService {
   WeaponFileModel getWeapon(String key);
   List<String> getUpcomingWeaponsKeys();
 
-  List<ArtifactCardModel> getArtifactsForCard();
+  List<ArtifactCardModel> getArtifactsForCard({ArtifactType? type});
   ArtifactCardModel getArtifactForCard(String key);
   ArtifactFileModel getArtifact(String key);
 
@@ -84,4 +84,5 @@ abstract class GenshinService {
 
   List<ArtifactCardBonusModel> getArtifactBonus(TranslationArtifactFile translation);
   List<String> getArtifactRelatedParts(String fullImagePath, String image, int bonus);
+  String getArtifactRelatedPart(String fullImagePath, String image, int bonus, ArtifactType type);
 }

@@ -315,4 +315,32 @@ abstract class DataService {
   });
 
   Future<NotificationItem> reduceNotificationHours(int key, AppNotificationType type, int hours);
+
+  List<CustomBuildModel> getAllCustomBuilds();
+
+  CustomBuildModel getCustomBuild(int key);
+
+  Future<CustomBuildModel> saveCustomBuild(
+    String charKey,
+    String title,
+    CharacterRoleType type,
+    CharacterRoleSubType subType,
+    bool showOnCharacterDetail,
+    List<String> weaponKeys,
+    Map<String, int> artifacts,
+    List<CharacterSkillType> talentPriority,
+  );
+
+  Future<CustomBuildModel> updateCustomBuild(
+    int key,
+    String title,
+    CharacterRoleType type,
+    CharacterRoleSubType subType,
+    bool showOnCharacterDetail,
+    List<String> weaponKeys,
+    Map<String, int> artifacts,
+    List<CharacterSkillType> talentPriority,
+  );
+
+  Future<void> deleteCustomBuild(int key);
 }
