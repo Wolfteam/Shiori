@@ -4592,87 +4592,150 @@
     },
     {
       "key": "shenhe",
-      "name": "Shenhe",
-      "title": "？？？",
-      "description": "测试角色",
+      "name": "申鹤",
+      "title": "孤辰茕怀",
+      "description": "气质出尘的仙家子弟。隐修在璃月群山之间，个性也如仙人般淡漠疏离。",
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "普通攻击·踏辰摄斗",
+          "description": "",
+          "abilities": [
+            {
+              "name": "普通攻击",
+              "description": "进行至多五段的连续枪击。\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "重击",
+              "description": "消耗一定体力，向前方突进，对路径上的敌人造成伤害。\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "下落攻击",
+              "description": "从空中下坠冲击地面，攻击下落路径上的敌人，并在落地时造成范围伤害。",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "一段伤害|{param1}%",
+            "二段伤害|{param2}%",
+            "三段伤害|{param3}%",
+            "四段伤害|{param4}% + {param5}%",
+            "五段伤害|{param6}%",
+            "重击伤害|{param7}%",
+            "重击体力消耗|{param8} 点",
+            "下坠期间伤害|{param9}%",
+            "低空/高空坠地冲击伤害|{param10}% / {param11}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "仰灵威召将役咒",
+          "description": "凝叠银之霜露，摒退一切邪魔。\r\n为队伍中附近的所有角色施加「冰翎」效果，并依据点按、长按，以不同的方式造成冰元素伤害。\r\n",
+          "abilities": [
+            {
+              "name": "点按",
+              "description": "与「箓灵」一同向前突进，对路径上的敌人造成冰元素伤害。\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "长按",
+              "description": "律令「箓灵」，造成冰元素范围伤害。\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "冰翎",
+              "description": "普通攻击、重击、下落攻击、元素战技和元素爆发伤害对敌人造成冰元素伤害时，基于申鹤自己当前的攻击力，提高造成的伤害。\r\n「冰翎」效果会在持续时间结束或生效一定次数后消失。长按施加的「冰翎」相比点按，拥有更长的持续时间与更多的生效次数。\r\n一次冰元素伤害同时命中多名敌人时，会依据命中敌人的数量消耗生效次数；队伍中具有「冰翎」的角色，其生效次数单独计算。\r\n",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "点按技能伤害|{param1}%",
+            "长按技能伤害|{param2}%",
+            "伤害值提升|{param3}% 攻击力",
+            "点按/长按持续时间|{param4} 秒/ {param5} 秒",
+            "点按/长按生效次数|{param6} 次/ {param7} 次",
+            "点按冷却时间|{param8} 秒",
+            "长按冷却时间|{param9} 秒"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
+          "title": "神女遣灵真诀",
+          "description": "解放「箓灵」的力量，驱使其驰骋世间，造成冰元素范围伤害。\r\n「箓灵」将结成领域，使其中敌人的冰元素抗性与物理抗性降低，并持续对其中的敌人造成冰元素伤害。\r\n",
           "abilities": [],
-          "stats": []
+          "stats": [
+            "技能伤害|{param1}%",
+            "抗性降低|{param2}%",
+            "持续伤害|{param3}%",
+            "持续时间|{param4} 秒",
+            "冷却时间|{param5} 秒",
+            "元素能量|{param6}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "来复知时",
+          "description": "在璃月执行时长为20小时的探索派遣任务时，获得的奖励增加25%。\r\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
+          "title": "大洞弥罗尊法",
+          "description": "处于神女遣灵真诀的领域中的当前场上角色，冰元素伤害加成提高15%。\r\n",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
+          "title": "缚灵通真法印",
+          "description": "申鹤施放仰灵威召将役咒后，将使附近的队伍中所有角色获得如下效果：\r\n",
+          "descriptions": [
+            "点按：元素战技和元素爆发造成的伤害提高15%，持续10秒；",
+            "长按：普通攻击、重击和下落攻击造成的伤害提高15%，持续15秒。"
+          ]
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "心斋",
+          "description": "仰灵威召将役咒的可使用次数增加1次。\r\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "定蒙",
+          "description": "神女遣灵真诀的持续时间延长6秒。领域中的当前场上角色，冰元素伤害的暴击伤害提高15%。\r\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "潜虚",
+          "description": "仰灵威召将役咒的技能等级提高3级。\r\n至多提升至15级。\r\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
+          "title": "洞观",
+          "description": "处于申鹤自己施加的「冰翎」状态下的角色，触发「冰翎」的伤害增加时，申鹤将获得一层「霜霄诀」：\r\n",
+          "descriptions": [
+            "申鹤施放仰灵威召将役咒时，将清除所有「霜霄诀」，并根据清除的层数，每层使本次仰灵威召将役咒造成的伤害提高5%；",
+            "该效果至多叠加50次，持续60秒。"
+          ]
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "化神",
+          "description": "神女遣灵真诀的技能等级提高3级。\r\n至多提升至15级。\r\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
+          "title": "忘玄",
+          "description": "角色通过普通攻击伤害与重击伤害触发「冰翎」的效果时，将不再会减少「冰翎」的生效次数。\r\n",
           "descriptions": []
         }
       ]
@@ -6492,87 +6555,143 @@
     },
     {
       "key": "yun-jin",
-      "name": "Yun Jin",
-      "title": "？？？",
-      "description": "测试角色",
+      "name": "云堇",
+      "title": "红毹婵娟",
+      "description": "集剧作与演唱能力于一身的璃月戏曲名角。风格自成一派，雅致柔美，恰如其人。",
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "普通攻击·拂云出手",
+          "description": "",
+          "abilities": [
+            {
+              "name": "普通攻击",
+              "description": "进行至多五段的连续枪击。\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "重击",
+              "description": "消耗一定体力，向前方突进，对路径上的敌人造成伤害。\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "下落攻击",
+              "description": "从空中下坠冲击地面，攻击下落路径上的敌人，并在落地时造成范围伤害。",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "一段伤害|{param1}%",
+            "二段伤害|{param2}%",
+            "三段伤害|{param3}% + {param4}%",
+            "四段伤害|{param5}% + {param6}%",
+            "五段伤害|{param7}%",
+            "重击伤害|{param8}%",
+            "重击体力消耗|{param9} 点",
+            "下坠期间伤害|{param10}%",
+            "低空/高空坠地冲击伤害|{param11}% / {param12}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "旋云开相",
+          "description": "云先生的武戏架势，是真能御敌的。\r\n",
+          "abilities": [
+            {
+              "name": "点按",
+              "description": "以拨云之势旋舞长枪，造成岩元素伤害。\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "长按",
+              "description": "摆出旋云开相之架势蓄力，形成护盾，伤害吸收量受益于云堇的生命值上限，对所有元素伤害与物理伤害有150%的吸收效果。护盾持续至元素战技施放完毕。\r\n松开技能、持续时间结束时，或护盾被破坏时，会挥舞长枪释放积攒的力量进行攻击，造成岩元素伤害。\r\n依据蓄力的时间，释放时的状态将分为一段蓄力与二段蓄力。\r\n",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "点按伤害|{param1}% 防御力",
+            "一段蓄力伤害|{param2}% 防御力",
+            "二段蓄力伤害|{param3}% 防御力",
+            "护盾吸收量|{param4}% 生命值上限+ {param5}",
+            "冷却时间|{param6} 秒"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "破嶂见旌仪",
+          "description": "造成岩元素范围伤害，并为附近的队伍中所有角色赋予「飞云旗阵」。\r\n",
+          "abilities": [
+            {
+              "name": "飞云旗阵",
+              "description": "对敌人造成普通攻击伤害时，基于云堇自己当前的防御力，提高造成的伤害。\r\n「飞云旗阵」效果会在持续时间结束或生效一定次数后消失。\r\n一次普通攻击同时命中多名敌人时，会依据命中敌人的数量消耗生效次数；队伍中具有「飞云旗阵」的角色，其生效次数单独计算。\r\n",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "技能伤害|{param1}%",
+            "伤害值提升|{param2}% 防御力",
+            "持续时间|{param3} 秒",
+            "生效次数|{param4} 次",
+            "冷却时间|{param5} 秒",
+            "元素能量|{param6}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "清食养性",
+          "description": "完美烹饪冒险类食物时，有12%概率获得2倍产出。\r\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
+          "title": "务守本真",
+          "description": "在被攻击瞬间施放的旋云开相，会以长按二段蓄力的形式施放。\r\n",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "NA",
-          "description": "",
+          "title": "莫从恒蹊",
+          "description": "「飞云旗阵」提供的普通攻击伤害提高，当队伍中存在1/2/3/4种元素类型的角色时，数值上进一步追加云堇防御力的2.5%/5%/7.5%/11.5%。\r\n",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "飞身趟马",
+          "description": "旋云开相的冷却时间减少18%。\r\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "诸般切末",
+          "description": "施放破嶂见旌仪后，附近队伍中所有角色普通攻击造成的伤害提升15%，持续12秒。\r\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "牙纛探海",
+          "description": "破嶂见旌仪的技能等级提高3级。\r\n至多提升至15级。\r\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "昇堂吊云",
+          "description": "云堇触发结晶反应后，防御力提升20%，持续12秒。\r\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "翘楚名坤",
+          "description": "旋云开相的技能等级提高3级。\r\n至多提升至15级。\r\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
+          "title": "庄谐并举",
+          "description": "处于「飞云旗阵」状态下的角色，普通攻击的攻击速度提升12%。\r\n",
           "descriptions": []
         }
       ]
@@ -6899,6 +7018,18 @@
         "对处于火元素或雷元素影响下的敌人，造成的伤害提高{color}18{/color}%。",
         "对处于火元素或雷元素影响下的敌人，造成的伤害提高{color}21{/color}%。",
         "对处于火元素或雷元素影响下的敌人，造成的伤害提高{color}24{/color}%。"
+      ]
+    },
+    {
+      "key": "calamity-queller",
+      "name": "息灾",
+      "description": "由奇异晶石打造成的锋锐利器。幽幽蓝光似乎诉说着无尽往事。",
+      "refinements": [
+        "获得{color}12{/color}%所有元素伤害加成；施放元素战技后，获得持续20秒的「圆顿」，攻击力每1秒提升{color}3.2{/color}%，该攻击力提升效果至多叠加6次。当装备此武器的角色处于队伍后台时，「圆顿」的攻击力提升效果翻倍。",
+        "获得{color}15{/color}%所有元素伤害加成；施放元素战技后，获得持续20秒的「圆顿」，攻击力每1秒提升{color}4{/color}%，该攻击力提升效果至多叠加6次。当装备此武器的角色处于队伍后台时，「圆顿」的攻击力提升效果翻倍。",
+        "获得{color}18{/color}%所有元素伤害加成；施放元素战技后，获得持续20秒的「圆顿」，攻击力每1秒提升{color}4.8{/color}%，该攻击力提升效果至多叠加6次。当装备此武器的角色处于队伍后台时，「圆顿」的攻击力提升效果翻倍。",
+        "获得{color}21{/color}%所有元素伤害加成；施放元素战技后，获得持续20秒的「圆顿」，攻击力每1秒提升{color}5.6{/color}%，该攻击力提升效果至多叠加6次。当装备此武器的角色处于队伍后台时，「圆顿」的攻击力提升效果翻倍。",
+        "获得{color}24{/color}%所有元素伤害加成；施放元素战技后，获得持续20秒的「圆顿」，攻击力每1秒提升{color}6.4{/color}%，该攻击力提升效果至多叠加6次。当装备此武器的角色处于队伍后台时，「圆顿」的攻击力提升效果翻倍。"
       ]
     },
     {
@@ -8876,6 +9007,11 @@
       "key": "dragon-lords-crown",
       "name": "龙王之冕",
       "description": "千年刚玉凝成的结晶之角，乃是「龙王」的天生冠冕。\r\n注之以精魄，塑之以顽岩。它自山涧而生，在群岩的国土彰示天地的威权，而黄金般的长角则是它在过去与某位君王分庭抗礼的标志。\r\n曾一度裂折失色，如今却在你的手中闪烁着冰冷的黄金光泽。"
+    },
+    {
+      "key": "dragonheirs-false-fin",
+      "name": "龙嗣伪鳍",
+      "description": "击败深海龙蜥之后，可以拾取到的一截生物组织。\r\n虽然看起来像是鲨鳍，但其实并不发挥什么作用。\r\n曾经的白夜国之民对深海龙蜥有深入的研究。它们最为不同的一点就是可以靠意志决定自身特征的去留与遗传。因为厌恶人造光源，龙蜥成年就会失去视觉上的大部分细节；同时为了战斗，它们进化出了其他元素的行为多型性。"
     },
     {
       "key": "dream-of-the-dandelion-gladiator",

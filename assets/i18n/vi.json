@@ -4590,86 +4590,149 @@
     {
       "key": "shenhe",
       "name": "Shenhe",
-      "title": "？？？",
-      "description": "",
+      "title": "Thiên Thể Cô Độc",
+      "description": "Đệ tử tiên gia, khí chất thoát tục, ẩn cư tại núi rừng Liyue, tính cách lãnh đạm như tiên nhân.",
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Tấn Công Thường - Đạp Thần Nhiếp Đấu",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Tấn Công Thường",
+              "description": "Thực hiện tối đa 5 lần đánh liên tiếp.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Trọng Kích",
+              "description": "Tiêu hao thể lực nhất định, xông về phía trước, gây sát thương cho địch trên đường đi.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Tấn Công Khi Đáp",
+              "description": "Đáp xuống đất từ trên không, tấn công kẻ địch trên đường và gây sát thương phạm vi khi chạm đất.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "Sát Thương Lần 1|{param1}%",
+            "Sát Thương Lần 2|{param2}%",
+            "Sát Thương Lần 3|{param3}%",
+            "Sát Thương Lần 4|{param4}% + {param5}%",
+            "Sát Thương Lần 5|{param6}%",
+            "Sát Thương Trọng Kích|{param7}%",
+            "Thể lực Trọng Kích tiêu hao|{param8} điểm",
+            "Sát Thương Khi Đáp|{param9}%",
+            "Sát Thương Khi Rơi Từ Độ Cao Thấp/Cao|{param10}% / {param11}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Triệu Tướng Dịch Chú",
+          "description": "Ngưng tụ sương lộ, đẩy lui tà ma.\r\nThêm hiệu quả \"Băng Linh\" cho tất cả nhân vật trong đội gần đó, đồng thời gây Sát Thương Nguyên Tố Băng khác nhau dựa theo cơ chế nhấn, nhấn giữ.\r\n",
+          "abilities": [
+            {
+              "name": "Nhấn",
+              "description": "Đột kích về phía trước cùng \"Lục Linh\", gây Sát Thương Nguyên Tố Băng cho kẻ địch trên đường.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Nhấn giữ",
+              "description": "Hiệu lệnh \"Lục Linh\", gây Sát Thương Phạm Vi Nguyên Tố Băng.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Băng Linh",
+              "description": "Khi sát thương tấn công thường, trọng kích, tấn công khi đáp, kỹ năng nguyên tố và kỹ năng nộ gây Sát Thương Nguyên Tố Băng cho kẻ địch, sẽ tăng sát thương dựa vào sức tấn công hiện tại của Shenhe.\r\nHiệu quả \"Băng Linh\" sẽ biến mất khi hết thời gian duy trì hoặc đạt số lần kích hoạt nhất định. \"Băng Linh\" khi nhấn giữ sẽ có thời gian duy trì và số lần hiệu lực nhiều hơn so với nhấn.\r\nKhi trong 1 lần Sát Thương Nguyên Tố Băng trúng cùng lúc nhiều kẻ địch, sẽ căn cứ vào số lượng kẻ địch trúng đòn để tiêu hao số lần hiệu lực; Số lần hiệu lực \"Băng Linh\" của mỗi nhân vật trong đội sẽ tính độc lập với nhau.\r\n",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "Sát Thương Nhấn Kỹ Năng|{param1}%",
+            "Sát Thương Nhấn Giữ Kỹ Năng|{param2}%",
+            "Tăng Sát Thương|{param3}% tấn công",
+            "Thời gian duy trì nhấn/nhấn giữ|{param4} s/ {param5} s",
+            "Số lần hiệu lực nhấn/nhấn giữ|{param6} lần/ {param7} lần",
+            "CD Nhấn|{param8} s",
+            "CD Nhấn Giữ|{param9} s"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
+          "title": "Thần Nữ Khiển Linh Quyết",
+          "description": "Giải phóng sức mạnh \"Lục Linh\", hiệu lệnh rong ruổi thế gian, gây Sát Thương Phạm Vi Nguyên Tố Băng.\r\n\"Lục Linh\" sẽ ngưng kết thành vùng hiệu ứng, giảm Kháng Vật Lý và Kháng Nguyên Tố Băng của kẻ địch bên trong, đồng thời gây Sát Thương Nguyên Tố Băng liên tục cho kẻ địch trong vùng ảnh hưởng.\r\n",
           "abilities": [],
-          "stats": []
+          "stats": [
+            "Sát Thương Kỹ Năng|{param1}%",
+            "Giảm Kháng|{param2}%",
+            "Sát Thương Kéo Dài|{param3}%",
+            "Thời Gian Kéo Dài|{param4} s",
+            "CD|{param5} s",
+            "Năng Lượng Nguyên Tố|{param6}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "Lai Phục Tri Thời",
+          "description": "Khi làm nhiệm vụ Phái Đi Thám Hiểm có thời gian là 20 giờ ở Liyue, phần thưởng nhận được tăng 25%.\r\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
+          "title": "Đại Động Di La Tôn Pháp",
+          "description": "Nhân vật trong trận hiện tại đang trong vùng hiệu ứng của Thần Nữ Khiển Linh Quyết, sẽ tăng 15% BUFF Sát Thương Nguyên Tố Băng.\r\n",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
+          "title": "Phược Linh Thông Chân Pháp Ấn",
+          "description": "Shenhe sau khi thi triển Triệu Tướng Dịch Chú, tất cả nhân vật trong đội gần đó sẽ nhận hiệu ứng sau:\r\n",
+          "descriptions": [
+            "Nhấn: Sát thương Kỹ Năng Nguyên Tố và Kỹ Năng Nộ tăng 15%, duy trì 10s;",
+            "Nhấn giữ: Sát thương tấn công thường, trọng kích, tấn công khi đáp tăng 15%, duy trì 15s."
+          ]
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "Tâm Trai",
+          "description": "Số lần sử dụng của Triệu Tướng Dịch Chú tăng thêm 1\r\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "Định Mông",
+          "description": "Thời gian duy trì của Thần Nữ Khiển Linh Quyết kéo dài thêm 6s. Nhân vật trong trận hiện tại đang trong vùng ảnh hưởng sẽ tăng 15% sát thương bạo kích của Sát Thương Nguyên Tố Băng.\r\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "Tiềm Hư",
+          "description": "Cấp kỹ năng Triệu Tướng Dịch Chú +3.\r\nTăng tối đa đến cấp 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
+          "title": "Quan Sát",
+          "description": "Nhân vật trong trạng thái \"Băng Linh\" của Shenhe, khi kích hoạt tăng sát thương từ \"Băng Linh\" sẽ khiến Shenhe nhận 1 tầng \"Sương Tiêu Quyết\":\r\n",
+          "descriptions": [
+            "Shenhe khi thi triển Triệu Tướng Dịch Chú sẽ xóa bỏ tất cả \"Sương Tiêu Quyết\", đồng thời căn cứ vào số tầng xóa bỏ, mỗi tầng tăng 5% sát thương cho Triệu Tướng Dịch Chú lần này;",
+            "Hiệu quả này tối đa cộng dồn 50 lần, duy trì 60s."
+          ]
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "Hóa Thần",
+          "description": "Cấp kỹ năng Thần Nữ Khiển Linh Quyết +3.\r\nTăng tối đa đến cấp 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
+          "title": "Vong Huyền",
+          "description": "Khi nhân vật kích hoạt hiệu quả \"Băng Linh\" bằng sát thương tấn công thường và sát thương trọng kích, sẽ không còn giảm số lần kích hoạt \"Băng Linh\" nữa.\r\n",
           "descriptions": []
         }
       ]
@@ -6504,86 +6567,142 @@
     {
       "key": "yun-jin",
       "name": "Yun Jin",
-      "title": "？？？",
-      "description": "",
+      "title": "Mỹ Nhân Trên Sân Khấu",
+      "description": "Diễn viên hát kịch nổi tiếng Liyue, hội tụ cả tài viết kịch và ca xướng. Phong cách riêng biệt, thanh lịch xinh đẹp, thần thái ngút trời.",
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Tấn Công Thường - Phất Vân Xuất Thủ",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Tấn Công Thường",
+              "description": "Thực hiện tối đa 5 lần đánh liên tiếp.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Trọng Kích",
+              "description": "Tiêu hao thể lực nhất định, xông về phía trước, gây sát thương cho địch trên đường đi.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Tấn Công Khi Đáp",
+              "description": "Đáp xuống đất từ trên không, tấn công kẻ địch trên đường và gây sát thương phạm vi khi chạm đất.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "Sát Thương Lần 1|{param1}%",
+            "Sát Thương Lần 2|{param2}%",
+            "Sát Thương Lần 3|{param3}% + {param4}%",
+            "Sát Thương Lần 4|{param5}% + {param6}%",
+            "Sát Thương Lần 5|{param7}%",
+            "Sát Thương Trọng Kích|{param8}%",
+            "Trọng Kích tiêu hao thể lực|{param9} điểm",
+            "Sát Thương Khi Rơi|{param10}%",
+            "Sát Thương Khi Rơi Từ Độ Cao Thấp/Cao|{param11}% / {param12}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Toàn Vân Khai Tương",
+          "description": "Tư thế múa võ trên sân khấu của Yun tiên sinh thực sự có thể đánh địch đấy.\r\n",
+          "abilities": [
+            {
+              "name": "Nhấn",
+              "description": "Xoay thương xua tan mây mù, gây Sát Thương Nguyên Tố Nham.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Nhấn giữ",
+              "description": "Tụ lực từ tư thế Toàn Vân Khai Tương, tạo ra lá chắn, lượng hấp thụ sát thương căn cứ vào giới hạn HP của Yun Jin, có 150% hiệu quả hấp thụ sát thương vật lý và sát thương toàn bộ nguyên tố. Khiên duy trì đến khi thi triển xong Kỹ Năng Nguyên Tố.\r\nKhi buông kỹ năng, kết thúc thời gian duy trì hoặc khiên bị phá hủy, sẽ múa thương giải phóng sức mạnh tích tụ, gây Sát Thương Nguyên Tố Nham.\r\nCăn cứ vào thời gian tụ lực, trạng thái khi giải phóng sẽ chia thành tụ lực lần 1 và tụ lực lần 2.\r\n",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "Sát Thương Nhấn|{param1}% phòng ngự",
+            "Sát Thương Tụ Lực Lần 1|{param2}% phòng ngự",
+            "Sát Thương Tụ Lực Lần 2|{param3}% phòng ngự",
+            "Khiên hấp thụ|{param4}% HP tối đa + {param5}",
+            "CD|{param6} s"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Phá Chướng Kiến Tinh Nghi",
+          "description": "Gây Sát Thương Phạm Vi Nguyên Tố Nham, đồng thời cung cấp \"Phi Vân Kỳ Trận\" cho tất cả nhân vật trong đội gần đó.\r\n",
+          "abilities": [
+            {
+              "name": "Phi Vân Kỳ Trận",
+              "description": "Khi gây sát thương tấn công thường cho kẻ địch, sẽ căn cứ vào sức phòng ngự của Yun Jin để tăng thêm sát thương gây ra.\r\nHiệu quả \"Phi Vân Kỳ Trận\" sẽ biến mất khi kết thúc thời gian duy trì hoặc đạt số lần hiệu lực nhất định.\r\nKhi trong một lần tấn công thường trúng nhiều kẻ địch, thì sẽ căn cứ vào số lượng kẻ địch trúng đòn để tiêu hao số lần hiệu lực; Số lần hiệu lực \"Phi Vân Kỳ Trận\" của mỗi nhân vật trong đội sẽ tính độc lập với nhau.\r\n",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "Sát Thương Kỹ Năng|{param1}%",
+            "Tăng Sát Thương|{param2}% phòng ngự",
+            "Thời Gian Kéo Dài|{param3} s",
+            "Số lần hiệu lực|{param4} lần",
+            "CD|{param5} s",
+            "Năng Lượng Nguyên Tố|{param6}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "Thanh Thực Dưỡng Tính",
+          "description": "Khi nấu ăn hoàn mỹ các món thuộc loại thám hiểm, có tỷ lệ 12% được x2 thành phẩm.\r\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
+          "title": "Vụ Thủ Bản Chân",
+          "description": "Khi bị tấn công, Toàn Vân Khai Tương sẽ được thi triển bằng hình thức nhấn giữ tụ lực lần 2.\r\n",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "NA",
-          "description": "",
+          "title": "Mạc Tùng Hằng Khê",
+          "description": "Sát thương đánh thường được buff từ Phi Vân Kỳ Trận sẽ tăng thêm dựa vào 2.5%/5%/7.5%/11.5% phòng ngự của Yun Jin khi trong đội có 1/2/3/4 loại nguyên tố.\r\n",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "Phi Thân Thang Mã",
+          "description": "Toàn Vân Khai Tương giảm 18% thời gian CD.\r\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "Chư Bàn Thiết Mạt",
+          "description": "Sau khi thi triển Phá Chướng Kiến Tinh Nghi, sát thương đánh thường tạo ra từ tất cả nhân vật trong đội gần đó tăng 15%, duy trì 12s.\r\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "Nha Đạo Thám Hải",
+          "description": "Cấp kỹ năng Phá Chướng Kiến Tinh Nghi +3.\r\nTăng tối đa đến cấp 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "Thăng Đường Điếu Vân",
+          "description": "Sau khi Yun Jin kích hoạt phản ứng kết tinh, sức phòng ngự tăng 20%, duy trì 12s.\r\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "Kiều Sở Danh Khôn",
+          "description": "Cấp kỹ năng Toàn Vân Khai Tương +3.\r\nTăng tối đa đến cấp 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
+          "title": "Trang Hài Tịnh Cử",
+          "description": "Nhân vật trong trạng thái \"Phi Vân Kỳ Trận\" sẽ tăng 12% tốc độ tấn công thường.\r\n",
           "descriptions": []
         }
       ]
@@ -6910,6 +7029,18 @@
         "Sát thương tạo ra cho kẻ địch bị ảnh hưởng bởi Nguyên Tố Hỏa hoặc Lôi tăng {color}18{/color}%.",
         "Sát thương tạo ra cho kẻ địch bị ảnh hưởng bởi nguyên tố Hỏa hoặc Lôi tăng {color}21{/color}%.",
         "Sát thương tạo ra cho kẻ địch bị ảnh hưởng bởi nguyên tố Hỏa hoặc Lôi tăng {color}24{/color}%."
+      ]
+    },
+    {
+      "key": "calamity-queller",
+      "name": "Hủy Diệt",
+      "description": "Vũ khí sắc bén được chế tạo từ Tinh Thạch kỳ lạ. Ánh sáng xanh u tối dường như đang kể lại vô vàn những chuyện đã qua.",
+      "refinements": [
+        "Tăng {color}12{/color}% sát thương tất cả nguyên tố; Sau khi thi triển Kỹ Năng Nguyên Tố sẽ nhận được hiệu quả \"Viên Đột\", duy trì 20s, sức tấn công mỗi giây tăng {color}3.2{/color}%, hiệu quả tăng tấn công này tối đa cộng dồn 6 lần. Khi nhân vật trang bị vũ khí này không xuất hiện trong trận, hiệu quả tăng tấn công của \"Viên Đột\" tăng gấp đôi.",
+        "Tăng {color}15{/color}% sát thương tất cả nguyên tố; Sau khi thi triển Kỹ Năng Nguyên Tố sẽ nhận được hiệu quả \"Viên Đột\", duy trì 20s, sức tấn công mỗi giây tăng {color}4{/color}%, hiệu quả tăng tấn công này tối đa cộng dồn 6 lần. Khi nhân vật trang bị vũ khí này không xuất hiện trong trận, hiệu quả tăng tấn công của \"Viên Đột\" tăng gấp đôi.",
+        "Tăng {color}18{/color}% sát thương tất cả nguyên tố; Sau khi thi triển Kỹ Năng Nguyên Tố sẽ nhận được hiệu quả \"Viên Đột\", duy trì 20s, sức tấn công mỗi giây tăng {color}4.8{/color}%, hiệu quả tăng tấn công này tối đa cộng dồn 6 lần. Khi nhân vật trang bị vũ khí này không xuất hiện trong trận, hiệu quả tăng tấn công của \"Viên Đột\" tăng gấp đôi.",
+        "Tăng {color}21{/color}% sát thương tất cả nguyên tố; Sau khi thi triển Kỹ Năng Nguyên Tố sẽ nhận được hiệu quả \"Viên Đột\", duy trì 20s, sức tấn công mỗi giây tăng {color}5.6{/color}%, hiệu quả tăng tấn công này tối đa cộng dồn 6 lần. Khi nhân vật trang bị vũ khí này không xuất hiện trong trận, hiệu quả tăng tấn công của \"Viên Đột\" tăng gấp đôi.",
+        "Tăng {color}24{/color}% sát thương tất cả nguyên tố; Sau khi thi triển Kỹ Năng Nguyên Tố sẽ nhận được hiệu quả \"Viên Đột\", duy trì 20s, sức tấn công mỗi giây tăng {color}6.4{/color}%, hiệu quả tăng tấn công này tối đa cộng dồn 6 lần. Khi nhân vật trang bị vũ khí này không xuất hiện trong trận, hiệu quả tăng tấn công của \"Viên Đột\" tăng gấp đôi."
       ]
     },
     {
@@ -8871,6 +9002,11 @@
       "key": "dragon-lords-crown",
       "name": "Vương Miện Vua Rồng",
       "description": "Sừng kết tinh ngưng tụ từ ngọc ngàn năm, là vương miện thiên sinh của \"Long Vương\".\r\nĐược rót Tinh Phách, nặn từ thạch nham tạo thành, xuất hiện ở khe núi, là tượng trưng cho sự uy quyền quốc thổ, chiếc sừng dài lấp lánh như vàng là minh chứng cho sự phục vụ bậc quân vương nào đó trong quá khứ.\r\nĐã từng một lần đổi màu, hiện giờ là màu ánh vàng sáng lấp lánh trong tay bạn."
+    },
+    {
+      "key": "dragonheirs-false-fin",
+      "name": "Vảy Giả Tộc Rồng",
+      "description": "Loại mô sinh học nhận được khi tiêu diệt Rồng Biển Sâu.\r\nTuy trông như vảy cá, nhưng thực ra lại không có công dụng gì.\r\nCư dân Vương Quốc Đêm Trắng cũng từng có nghiên cứu chuyên sâu về Rồng Biển Sâu. Điểm đặc biệt nhất của chúng là khả năng lựa chọn đặc điểm mà nó muốn truyền lại cho con cái. Vì căm ghét ánh sáng của loài người nên Rồng Biển Sâu khi trưởng thành sẽ mất đi phần lớn thị lực, đồng thời chúng cũng sẽ tiến hóa thành các loại nguyên tố khác nhau để thích nghi với chiến đấu."
     },
     {
       "key": "dream-of-the-dandelion-gladiator",

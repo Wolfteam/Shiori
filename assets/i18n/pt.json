@@ -4511,86 +4511,149 @@
     {
       "key": "shenhe",
       "name": "Shenhe",
-      "title": "？？？",
-      "description": "",
+      "title": "Transcendência Solitária",
+      "description": "Uma discípula adepti com um ar muito incomum sobre ela. Tendo passado muito tempo vivendo em isolamento nas montanhas de Liyue, ela se tornou tão fria e distante quanto os próprios adepti.",
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Perfuradora do Amanhecer",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Ataque Normal",
+              "description": "Realiza até 5 golpes com a lança.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Ataque Carregado",
+              "description": "Consome uma certa quantidade de Stamina para se lançar para frente, infligindo Dano em seu trajeto.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Ataque Imersivo",
+              "description": "Mergulha em pleno ar para golpear o chão, causando dano aos inimigos ao longo do caminho e infligindo Dano em uma AdE durante o impacto.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "Dano do 1° Golpe|{param1}%",
+            "Dano do 2° Golpe|{param2}%",
+            "Dano do 3° Golpe|{param3}%",
+            "Dano do 4° Golpe|{param4}% + {param5}%",
+            "Dano do 5° Golpe|{param6}%",
+            "Dano de Ataque Carregado|{param7}%",
+            "Consumo de Stamina de Ataque Carregado|{param8}",
+            "Dano Durante a Queda|{param9}%",
+            "Dano de Queda de Baixa/Alta Altitude|{param10}% / {param11}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Invocação Espiritual",
+          "description": "O orvalho gelado, prateado e denso, exorcizará todos os demônios.\r\nConcede a todos os personagens próximos o efeito de Pena Gelada, e de acordo com Pressionar ou Manter Pressionado, inflige Dano Cryo de maneiras diferentes.\r\n",
+          "abilities": [
+            {
+              "name": "Pressionar",
+              "description": "Avança para frente com um Talismã de Espírito, infligindo Dano Cryo aos inimigos que estão no caminho.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Manter Pressionado",
+              "description": "Ordena o Talismã de Espírito, infligindo Dano Cryo em uma AdE.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Pena Gelada",
+              "description": "Quando Dano Cryo é infligido com Ataque Normal, Ataque Carregado, Ataque Imersivo, Habilidade Elemental ou Supremo, é obtido um aumento de Dano com base no ATQ de Shenhe.\r\nOs efeitos de Pena Gelada desaparecerão quando sua duração acabar ou depois de terem sido desencadeados um certo número de vezes. Manter Pressionado ao invés de Pressionar concede uma maior duração do efeito, bem como um número maior de cargas que pode ser ativado.\r\nQuando o Ataque com Dano Cryo atingir múltiplos inimigos, as cargas serão consumidas com base no número de inimigos atingidos. Os efeitos de Pena Gelada, bem com seu número em cada membro da equipe são contados independentemente.\r\n",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "Dano de Habilidade de Pressionar|{param1}%",
+            "Dano de Habilidade ao Manter Pressionado|{param2}%",
+            "Aumento de Dano|{param3}% de ATQ",
+            "Duração de Pressionar/Manter Pressionado|{param4} s/ {param5} s",
+            "Cargas de Pressionar/Manter Pressionado|{param6} / {param7}",
+            "Recarga de Pressionar|{param8} s",
+            "Recarga de Manter Pressionado|{param9} s"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
+          "title": "Encantamento da Donzela Divina",
+          "description": "Libera o poder do Talismã de Espírito, permitindo que ande livremente nesta terra, infligindo Dano Cryo em uma AdE.\r\nO Talismã de Espírito formará uma AdE em que a RES Cryo e RES Física dos inimigos serão reduzidas, e também infligirá Dano Cryo continuamente contra os inimigos dentro da AdE.\r\n",
           "abilities": [],
-          "stats": []
+          "stats": [
+            "Dano de Habilidade|{param1}%",
+            "Redução de RES|{param2}%",
+            "Dano Contínuo|{param3}%",
+            "Duração|{param4} s",
+            "Tempo de Recarga|{param5} s",
+            "Energia Elemental|{param6}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "Chegada Pontual",
+          "description": "Ganha 25% mais recompensas quando enviada numa Expedição em Liyue por 20 horas.\r\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
+          "title": "Preceito Divino",
+          "description": "Personagens ativos no campo de Encantamento da Donzela Divina terão um aumento de Bônus de Dano Cryo de 15%.\r\n",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
+          "title": "Selo da Comunhão Espiritual",
+          "description": "Após Shenhe utilizar Invocação Espiritual, ela concederá a todos os membros próximos da equipe os seguintes efeitos:\r\n",
+          "descriptions": [
+            "Pressionar: Aumento de Dano da Habilidade Elemental e do Supremo em 15% por 10s;",
+            "Manter Pressionado: o Dano do Ataque Normal, Ataque Carregado e Ataque Imersivo aumenta em 15% por 15s."
+          ]
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "Clareza do Coração",
+          "description": "Invocação Espiritual pode ser utilizada mais uma vez.\r\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "Espírito Centrado",
+          "description": "Prolonga a duração de Encantamento da Donzela Divina em 6s. Personagens ativos na AdE da Habilidade infligem 15% a mais de Dano Cryo CRIT.\r\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "Reclusão",
+          "description": "Aumenta o nível de Invocação Espiritual em 3.\r\nNível máximo é 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
+          "title": "Clarividência",
+          "description": "Personagens que estejam sob o efeito de Pena Gelada de Shenhe farão com que, ao desencadearem o Dano Bônus de Pena Gelada, Shenhe obtenha uma carga de Firmamento Gelado:\r\n",
+          "descriptions": [
+            "Quando Shenhe lançar Invocação Espiritual, ela consumirá todos os Firmamentos Gelados, e de acordo com as cargas elimnadas, aumentará o Dano de Invocação Espiritual em 5% por cada carga consumida;",
+            "Esse efeito pode ser acumulado em até 50 vezes por 60s."
+          ]
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "Divinização",
+          "description": "Aumenta o nível de Encantamento da Donzela Divina em 3.\r\nNível máximo de elevação é 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
+          "title": "Abandono Místico",
+          "description": "Quando personagens desencadeiam os efeitos de Pena Gelada com Ataques Normais e Ataques Carregados, as cargas de Pena Gelada não serão consumidas.\r\n",
           "descriptions": []
         }
       ]
@@ -6406,87 +6469,143 @@
     },
     {
       "key": "yun-jin",
-      "name": "Yun Jin",
-      "title": "？？？",
-      "description": "",
+      "name": "Yunjin",
+      "title": "Palco Lúcida",
+      "description": "Uma renomada cantora de ópera de Liyue, hábil tanto em dramaturgia quanto em canto. Seu estilo é único, requintado e delicado, exatamente como ela.",
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Golpe das Nuvens",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Ataque Normal",
+              "description": "Realiza até 5 golpes com a lança.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Ataque Carregado",
+              "description": "Consome uma certa quantidade de Stamina para se lançar para frente, infligindo Dano em seu trajeto.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Ataque Imersivo",
+              "description": "Mergulha em pleno ar para golpear o chão, causando dano aos inimigos ao longo do caminho e infligindo Dano em uma AdE durante o impacto.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "Dano do 1° Golpe|{param1}%",
+            "Dano do 2° Golpe|{param2}%",
+            "Dano do 3° Golpe|{param3}% + {param4}%",
+            "Dano do 4° Golpe|{param5}% + {param6}%",
+            "Dano do 5° Golpe|{param7}%",
+            "Dano de Ataque Carregado|{param8}%",
+            "Consumo de Stamina de Ataque Carregado|{param9}",
+            "Dano Durante a Queda|{param10}%",
+            "Dano de Queda de Baixa/Alta Altitude|{param11}% / {param12}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Abertura Deslumbrante",
+          "description": "A Srta. Yun apenas atua no palco, mas realmente sabe usar uma lança.\r\n",
+          "abilities": [
+            {
+              "name": "Pressionar",
+              "description": "Brande sua lança na Forma de Corte das Nuvens, infligindo Dano Geo.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Manter Pressionado",
+              "description": "Assume a posição de Abertura Deslumbrante e inicia um carregamento, formando um escudo. A absorção de Dano do Escudo é baseado na Vida Máxima de Yunjin, e é 150% eficaz contra Dano de todos os elementos e Dano Físico. O escudo dura até o final da Habilidade.\r\nQuando a Habilidade é lançada, sua duração encerrar ou o escudo for destruído, Yunjin brande a lança, lançando seu poder acumulado, infligindo Dano Geo.\r\nDe acordo com o tempo de carregamento, a Habilidade ao ser lançada pode ser dividida em Carga Nível 1 e Carga Nível 2.\r\n",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "Dano ao Pressionar|{param1}% da DEF",
+            "Dano de 1 Carga|{param2}% da DEF",
+            "Dano de 2 Cargas|{param3}% da DEF",
+            "Absorção de Dano de Escudo|{param4}% da Vida Máxima + {param5}",
+            "Tempo de Recarga|{param6} s"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Bandeira Quebra-Rochas",
+          "description": "Causa Dano Geo em uma AdE e dá a todos os personagens da equipe a \"Formação da Bandeira das Nuvens\".\r\n",
+          "abilities": [
+            {
+              "name": "Formação da Bandeira das Nuvens",
+              "description": "Quando causa Dano de Ataque Normal, aumenta o Dano causado com base na DEF da própria Yunjin.\r\nO efeito \"Formação da Bandeira das Nuvens\" desaparece após o fim da sua duração ou após ser ativado um determinado número de vezes.\r\nQuando um Ataque Normal atinge vários inimigos simultaneamente, irá consumir vezes de ativação de acordo com o número de inimigos atingidos; as vezes de ativação de \"Formação de Bandeira das Nuvens\" é contada separadamente entre os personagens que a possuem.\r\n",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "Dano de Habilidade|{param1}%",
+            "Aumento de Dano|{param2}% DEF",
+            "Duração|{param3} s",
+            "Cargas|{param4}",
+            "Tempo de Recarga|{param5} s",
+            "Energia Elemental|{param6}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "Alimentação Leve",
+          "description": "Ao fazer uma comida Perfeita relacionada a efeitos de Aventura, há 12% de chance de se obter o dobro de produção.\r\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
+          "title": "Fiel a si mesma",
+          "description": "Usar Abertura Deslumbrante no momento correto em que estiver sendo atacada fará com que a Carga Nível 2 de Manter Pressionado seja lançada.\r\n",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "NA",
-          "description": "",
+          "title": "Quebradora de Convenções",
+          "description": "Quando a equipe contém personagens de 1/2/3/4 Tipos Elementais diferentes, o Bônus de Dano do Ataque Normal de Formação da Bandeira das Nuvens é aumentado em 2.5%/5%/7.5%/11.5% com base na DEF de Yunjin.\r\n",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "Galope Veloz",
+          "description": "O Tempo de Recarga de Abertura Deslumbrante é reduzido em 18%.\r\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "Miríade de Adereços",
+          "description": "Quando a Bandeira Quebra-Rochas é usada, o Dano do Ataque Normal de todos os membros da equipe próximos é aumentado em 15% por 12s.\r\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "Bandeira Marítima",
+          "description": "Aumenta o nível de Bandeira Quebra-rochas em 3.\r\nNível máximo de elevação é 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "Flor e Lutadora",
+          "description": "Quando Yunjin desencadeia Cristalização, sua DEF aumenta 20% por 12s.\r\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "Fama Mundial",
+          "description": "Aumenta o nível de Abertura Deslumbrante em 3.\r\nNível máximo de elevação é 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
+          "title": "Harmonia e Decoro",
+          "description": "Personagens sob o efeito de Formação da Bandeira das Nuvens terão a Vel. de ATQ de seus Ataques Normais aumentada em 12%.\r\n",
           "descriptions": []
         }
       ]
@@ -6807,6 +6926,18 @@
         "Aumenta o Dano contra inimigos afetados por Pyro ou Electro em {color}18{/color}%.",
         "Aumenta o Dano contra inimigos afetados por Pyro ou Electro em {color}21{/color}%.",
         "Aumenta o Dano contra inimigos afetados por Pyro ou Electro em {color}24{/color}%."
+      ]
+    },
+    {
+      "key": "calamity-queller",
+      "name": "Subjugadora de Calamidades",
+      "description": "Uma arma afiada forjada de algum cristal estranho. Sua luz azul tênue parece murmurar incontáveis histórias do passado.",
+      "refinements": [
+        "Obtém um Bônus de Dano Elemental para todos os Elementos de {color}12{/color}%; após lançar uma Habilidade Elemental, obtém Consumação por 20s, fazendo com que o Ataque aumente {color}3.2{/color}% por segundo. Este efeito pode ser acumulado em até 6 vezes. Quando o personagem da equipe que estiver com esta arma equipada não for o ativo no campo de batalha, o aumento do Ataque de Consumação será duplicado.",
+        "Obtém um Bônus de Dano Elemental para todos os Elementos de {color}15{/color}%; após lançar uma Habilidade Elemental, obtém Consumação por 20s, fazendo com que o Ataque aumente {color}4{/color}% por segundo. Este efeito pode ser acumulado em até 6 vezes. Quando o personagem da equipe que estiver com esta arma equipada não for o ativo no campo de batalha, o aumento do Ataque de Consumação será duplicado.",
+        "Obtém um Bônus de Dano Elemental para todos os Elementos de {color}18{/color}%; após lançar uma Habilidade Elemental, obtém Consumação por 20s, fazendo com que o Ataque aumente {color}4.8{/color}% por segundo. Este efeito pode ser acumulado em até 6 vezes. Quando o personagem da equipe que estiver com esta arma equipada não for o ativo no campo de batalha, o aumento do Ataque de Consumação será duplicado.",
+        "Obtém um Bônus de Dano Elemental para todos os Elementos de {color}21{/color}%; após lançar uma Habilidade Elemental, obtém Consumação por 20s, fazendo com que o Ataque aumente {color}5.6{/color}% por segundo. Este efeito pode ser acumulado em até 6 vezes. Quando o personagem da equipe que estiver com esta arma equipada não for o ativo no campo de batalha, o aumento do Ataque de Consumação será duplicado.",
+        "Obtém um Bônus de Dano Elemental para todos os Elementos de {color}24{/color}%; após lançar uma Habilidade Elemental, obtém Consumação por 20s, fazendo com que o Ataque aumente {color}6.4{/color}% por segundo. Este efeito pode ser acumulado em até 6 vezes. Quando o personagem da equipe que estiver com esta arma equipada não for o ativo no campo de batalha, o aumento do Ataque de Consumação será duplicado."
       ]
     },
     {
@@ -8768,6 +8899,11 @@
       "key": "dragon-lords-crown",
       "name": "Coroa do Senhor dos Dragões",
       "description": "Chifres criados a partir da jade endurecida cristalizada durante mil anos são a coroa natural do rei dragão.\r\nInfuso de espírito e esculpido da rocha-mãe, nasceu do coração da montanha para mostrar a força da terra para a região em meio aos monólitos, e seus longos chifres dourados são a marca de sua antiga luta com um antigo lorde.\r\nPor um tempo, este chifre foi quebrado e perdeu seu brilho, mas agora brilha gelado e dourado enquanto está na palma de sua mão."
+    },
+    {
+      "key": "dragonheirs-false-fin",
+      "name": "Barbatana Falsa do Dragão Herdeiro das Profundezas",
+      "description": "Um pedaço de tecido biológico que você encontrou após derrotar os Dragartos das Profundezas.\r\nEmbora pareça uma barbatana de algum tipo, na verdade não tem nenhuma função.\r\nO povo do Reino de Byakuya investigou profundamente os Dragartos das Profundezas. Sua habilidade mais distinta foi a capacidade de escolher quais características desejava transmitir à sua prole. Por causa do seu grande ódio pela humanidade, estes talvez percam qualquer acuidade visual no momento em que atingirem a maturidade. Ao mesmo tempo, eles também desenvolveram um certo grau de polimorfismo elemental para fins de combate."
     },
     {
       "key": "dream-of-the-dandelion-gladiator",
