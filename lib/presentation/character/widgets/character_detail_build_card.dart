@@ -9,6 +9,7 @@ import 'package:shiori/presentation/shared/extensions/element_type_extensions.da
 import 'package:shiori/presentation/shared/extensions/i18n_extensions.dart';
 import 'package:shiori/presentation/shared/row_column_item_or.dart';
 import 'package:shiori/presentation/shared/styles.dart';
+import 'package:shiori/presentation/shared/sub_stats_to_focus.dart';
 import 'package:shiori/presentation/weapons/widgets/weapon_card.dart';
 
 final _replaceDigitRegex = RegExp(r'\d{1}');
@@ -85,7 +86,7 @@ class CharacterDetailBuildCard extends StatelessWidget {
                 style: theme.textTheme.subtitle2!.copyWith(fontWeight: FontWeight.bold),
               ),
             ),
-            _SubStatToFocus(
+            SubStatToFocus(
               subStatsToFocus: subStatsToFocus,
               color: color,
             ),
@@ -192,35 +193,6 @@ class _ArtifactRow extends StatelessWidget {
             keyName: multi.key,
           );
         },
-      ),
-    );
-  }
-}
-
-class _SubStatToFocus extends StatelessWidget {
-  final List<StatType> subStatsToFocus;
-  final Color color;
-
-  const _SubStatToFocus({
-    Key? key,
-    required this.subStatsToFocus,
-    required this.color,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    final s = S.of(context);
-    final theme = Theme.of(context);
-    final text = subStatsToFocus.map((e) => s.translateStatTypeWithoutValue(e)).join(' > ');
-    return Container(
-      margin: Styles.edgeInsetHorizontal5,
-      child: Text(
-        '${s.subStats}: $text',
-        style: theme.textTheme.subtitle2!.copyWith(
-          fontWeight: FontWeight.bold,
-          color: color,
-          fontSize: 12,
-        ),
       ),
     );
   }

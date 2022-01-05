@@ -42,9 +42,9 @@ class ArtifactCard extends StatelessWidget {
     required this.image,
     required this.rarity,
     this.isInSelectionMode = false,
-  })  : imgWidth = 70,
-        imgHeight = 60,
-        bonus = const [],
+    this.imgWidth = 70,
+    this.imgHeight = 60,
+  })  : bonus = const [],
         withoutDetails = true,
         withElevation = false,
         super(key: key);
@@ -85,21 +85,12 @@ class ArtifactCard extends StatelessWidget {
                 placeholder: MemoryImage(kTransparentImage),
                 image: AssetImage(image),
               ),
-              Center(
-                child: Tooltip(
-                  message: name,
-                  child: !withoutDetails
-                      ? Text(
-                          name,
-                          textAlign: TextAlign.center,
-                          style: theme.textTheme.subtitle1!.copyWith(fontWeight: FontWeight.bold, color: Colors.white),
-                        )
-                      : Text(
-                          name,
-                          textAlign: TextAlign.center,
-                          style: theme.textTheme.subtitle1!.copyWith(fontWeight: FontWeight.bold, color: Colors.white),
-                          overflow: TextOverflow.ellipsis,
-                        ),
+              Tooltip(
+                message: name,
+                child: Text(
+                  name,
+                  textAlign: TextAlign.center,
+                  style: theme.textTheme.subtitle1!.copyWith(fontWeight: FontWeight.bold, color: Colors.white),
                 ),
               ),
               Rarity(stars: rarity),

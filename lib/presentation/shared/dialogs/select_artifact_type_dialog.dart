@@ -7,10 +7,12 @@ import 'package:shiori/presentation/shared/images/artifact_image_type.dart';
 
 class SelectArtifactTypeDialog extends StatefulWidget {
   final List<ArtifactType> excluded;
+  final List<ArtifactType> selectedValues;
 
   const SelectArtifactTypeDialog({
     Key? key,
     this.excluded = const <ArtifactType>[],
+    this.selectedValues = const <ArtifactType>[],
   }) : super(key: key);
 
   @override
@@ -49,6 +51,13 @@ class _SelectArtifactTypeDialogState extends State<SelectArtifactTypeDialog> {
                 title: Text(
                   s.translateArtifactType(type),
                   overflow: TextOverflow.ellipsis,
+                  style: widget.selectedValues.contains(type)
+                      ? TextStyle(
+                          decoration: TextDecoration.lineThrough,
+                          decorationColor: theme.colorScheme.secondary,
+                          decorationThickness: 2,
+                        )
+                      : null,
                 ),
                 selected: currentSelectedType == type,
                 selectedTileColor: theme.colorScheme.secondary.withOpacity(0.2),

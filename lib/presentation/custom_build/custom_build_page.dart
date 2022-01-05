@@ -19,6 +19,7 @@ import 'package:shiori/presentation/shared/extensions/element_type_extensions.da
 import 'package:shiori/presentation/shared/extensions/i18n_extensions.dart';
 import 'package:shiori/presentation/shared/loading.dart';
 import 'package:shiori/presentation/shared/styles.dart';
+import 'package:shiori/presentation/shared/sub_stats_to_focus.dart';
 import 'package:shiori/presentation/shared/utils/enum_utils.dart';
 import 'package:shiori/presentation/weapons/weapons_page.dart';
 import 'package:shiori/presentation/weapons/widgets/weapon_card.dart';
@@ -229,7 +230,7 @@ class _Weapons extends StatelessWidget {
       children: [
         Container(
           padding: Styles.edgeInsetVertical10,
-          margin: const EdgeInsets.only(bottom: 10),
+          // margin: const EdgeInsets.only(bottom: 10),
           decoration: BoxDecoration(
             color: color,
             border: Border(top: BorderSide(color: Colors.white)),
@@ -239,6 +240,39 @@ class _Weapons extends StatelessWidget {
             textAlign: TextAlign.center,
             style: theme.textTheme.subtitle1!.copyWith(fontWeight: FontWeight.bold),
           ),
+        ),
+        ButtonBar(
+          buttonPadding: EdgeInsets.zero,
+          children: [
+            IconButton(
+              iconSize: 20,
+              padding: EdgeInsets.zero,
+              splashRadius: Styles.smallButtonSplashRadius,
+              onPressed: () {},
+              icon: Icon(Icons.add),
+            ),
+            IconButton(
+              iconSize: 20,
+              padding: EdgeInsets.zero,
+              splashRadius: Styles.smallButtonSplashRadius,
+              onPressed: () {},
+              icon: Icon(Icons.sort),
+            ),
+            IconButton(
+              iconSize: 20,
+              padding: EdgeInsets.zero,
+              splashRadius: Styles.smallButtonSplashRadius,
+              onPressed: () {},
+              icon: Icon(Icons.clear_all),
+            ),
+            IconButton(
+              iconSize: 20,
+              padding: EdgeInsets.zero,
+              splashRadius: Styles.smallButtonSplashRadius,
+              onPressed: () {},
+              icon: Icon(Icons.delete),
+            ),
+          ],
         ),
         Wrap(
           alignment: WrapAlignment.center,
@@ -252,8 +286,8 @@ class _Weapons extends StatelessWidget {
                     rarity: e.rarity,
                     image: e.image,
                     isComingSoon: e.isComingSoon,
-                    imgHeight: 60,
-                    imgWidth: 70,
+                    // imgHeight: 60,
+                    // imgWidth: 70,
                   ),
                 )
                 .toList(),
@@ -281,7 +315,7 @@ class _Weapons extends StatelessWidget {
 }
 
 class _Artifacts extends StatelessWidget {
-  final List<ArtifactCardModel> artifacts;
+  final List<CustomBuildArtifactModel> artifacts;
   final Color color;
 
   const _Artifacts({
@@ -294,13 +328,14 @@ class _Artifacts extends StatelessWidget {
   Widget build(BuildContext context) {
     final s = S.of(context);
     final theme = Theme.of(context);
+    final possibleSubStats = getArtifactPossibleSubStats();
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Container(
           padding: Styles.edgeInsetVertical10,
-          margin: const EdgeInsets.only(bottom: 10),
+          // margin: const EdgeInsets.only(bottom: 10),
           decoration: BoxDecoration(
             color: color,
             border: Border(top: BorderSide(color: Colors.white)),
@@ -311,6 +346,32 @@ class _Artifacts extends StatelessWidget {
             style: theme.textTheme.subtitle1!.copyWith(fontWeight: FontWeight.bold),
           ),
         ),
+        ButtonBar(
+          buttonPadding: EdgeInsets.zero,
+          children: [
+            IconButton(
+              iconSize: 20,
+              padding: EdgeInsets.zero,
+              splashRadius: Styles.smallButtonSplashRadius,
+              onPressed: () {},
+              icon: Icon(Icons.add),
+            ),
+            IconButton(
+              iconSize: 20,
+              padding: EdgeInsets.zero,
+              splashRadius: Styles.smallButtonSplashRadius,
+              onPressed: () {},
+              icon: Icon(Icons.clear_all),
+            ),
+            IconButton(
+              iconSize: 20,
+              padding: EdgeInsets.zero,
+              splashRadius: Styles.smallButtonSplashRadius,
+              onPressed: () {},
+              icon: Icon(Icons.delete),
+            ),
+          ],
+        ),
         Wrap(
           alignment: WrapAlignment.center,
           crossAxisAlignment: WrapCrossAlignment.center,
@@ -319,7 +380,7 @@ class _Artifacts extends StatelessWidget {
                 .map(
                   (e) => ArtifactCard.withoutDetails(
                     keyName: e.key,
-                    name: e.name,
+                    name: s.translateStatTypeWithoutValue(e.statType),
                     image: e.image,
                     rarity: e.rarity,
                   ),
@@ -334,13 +395,21 @@ class _Artifacts extends StatelessWidget {
                 onPressed: () => _addArtifact(context),
               ),
           ],
-        )
+        ),
+        SubStatToFocus(subStatsToFocus: [StatType.atk, StatType.critDmgPercentage, StatType.critRatePercentage], color: color),
+        Divider(),
       ],
     );
   }
 
   Future<void> _addArtifact(BuildContext context) async {
-    final selectedType = await showDialog<ArtifactType>(context: context, builder: (ctx) => const SelectArtifactTypeDialog());
+    final bloc = context.read<CustomBuildBloc>();
+    final selectedType = await showDialog<ArtifactType>(
+      context: context,
+      builder: (ctx) => SelectArtifactTypeDialog(
+        selectedValues: artifacts.map((e) => e.type).toList(),
+      ),
+    );
     if (selectedType == null) {
       return;
     }
@@ -367,16 +436,11 @@ class _Artifacts extends StatelessWidget {
       return;
     }
 
-    await _openArtifactsPage(context, selectedType);
-  }
-
-  Future<void> _openArtifactsPage(BuildContext context, ArtifactType type) async {
     //TODO: REMOVE THE CROWNS AND MAYBE ONLY SHOW THE SPECIFIC TYPE
-    final bloc = context.read<CustomBuildBloc>();
-    final selectedKey = await ArtifactsPage.forSelection(context, type: type);
+    final selectedKey = await ArtifactsPage.forSelection(context, type: selectedType);
     if (selectedKey.isNullEmptyOrWhitespace) {
       return;
     }
-    bloc.add(CustomBuildEvent.addArtifact(key: selectedKey!, type: type));
+    bloc.add(CustomBuildEvent.addArtifact(key: selectedKey!, type: selectedType, statType: statType));
   }
 }
