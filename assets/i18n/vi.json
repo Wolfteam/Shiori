@@ -1840,159 +1840,159 @@
     {
       "key": "gorou",
       "name": "Gorou",
-      "title": "Canine Warrior",
-      "description": "The great general of Watatsumi Island's forces. He is deeply trusted by his subordinates.",
+      "title": "Chiến Khuyển Nanh Nhọn",
+      "description": "Đại tướng đảo Watatsumi, rất được thuộc hạ tin tưởng.",
       "skills": [
         {
           "key": "s1",
-          "title": "Ripping Fang Fletching",
+          "title": "Tấn Công Thường - Mũi Tên Cào Xé",
           "description": "",
           "abilities": [
             {
-              "name": "Normal Attack",
-              "description": "Perform up to 4 consecutive shots with a bow.\r\n",
+              "name": "Tấn Công Thường",
+              "description": "Thực hiện tối đa 4 lần bắn tên liên tiếp.\r\n",
               "descriptions": []
             },
             {
-              "name": "Charged Attack",
-              "description": "Perform a more precise Aimed Shot with increased DMG.\r\nWhile aiming, stone crystals will accumulate on the arrowhead. A fully charged crystalline arrow will deal Geo DMG.\r\n",
+              "name": "Trọng Kích",
+              "description": "Ngắm bắn gây sát thương cao hơn và chính xác hơn.\r\nKhi ngắm bắn, nham thạch sẽ tích tụ liên tục trên mũi tên. Mũi tên tích đầy nham thạch sẽ gây Sát Thương Nguyên Tố Nham.\r\n",
               "descriptions": []
             },
             {
-              "name": "Plunging Attack",
-              "description": "Fires off a shower of arrows in mid-air before falling and striking the ground, dealing AoE DMG upon impact.",
+              "name": "Tấn Công Khi Đáp",
+              "description": "Bắn mưa tên liên tiếp xuống mặt đất, đồng thời lao nhanh xuống đất và gây sát thương phạm vi khi chạm đất.",
               "descriptions": []
             }
           ],
           "stats": [
-            "1-Hit DMG|{param1}%",
-            "2-Hit DMG|{param2}%",
-            "3-Hit DMG|{param3}%",
-            "4-Hit DMG|{param4}%",
-            "Aimed Shot|{param5}%",
-            "Fully-Charged Aimed Shot|{param6}%",
-            "Plunge DMG|{param7}%",
-            "Low/High Plunge DMG|{param8}% / {param9}%"
+            "Sát Thương Lần 1|{param1}%",
+            "Sát Thương Lần 2|{param2}%",
+            "Sát Thương Lần 3|{param3}%",
+            "Sát Thương Lần 4|{param4}%",
+            "Ngắm Bắn|{param5}%",
+            "Tụ Lực Ngắm Bắn|{param6}%",
+            "Sát Thương Khi Rơi|{param7}%",
+            "Sát Thương Khi Rơi Từ Độ Cao Thấp/Cao|{param8}% / {param9}%"
           ]
         },
         {
           "key": "s2",
-          "title": "Inuzaka All-Round Defense",
-          "description": "Deals AoE Geo DMG and sets up a General's War Banner.\r\n",
+          "title": "Trận Hình Phòng Thủ - Inuzaka",
+          "description": "Gây Sát Thương Phạm Vi Nguyên Tố Nham, đồng thời cắm Đại Tướng Chiến Kỳ.\r\n",
           "abilities": [
             {
-              "name": "General's War Banner",
-              "description": "Provides up to 3 buffs to active characters within the skill's AoE based on the number of Geo characters in the party at the time of casting:\r\n",
+              "name": "Đại Tướng Chiến Kỳ",
+              "description": "Căn cứ vào số lượng nhân vật Nguyên Tố Nham trong đội khi thi triển để cung cấp hiệu quả cho nhân vật đứng trong phạm vi Đại Tướng Chiến Kỳ như sau:\r\n",
               "descriptions": [
-                "1 Geo character: Adds \"Standing Firm\" - DEF Bonus.",
-                "2 Geo characters: Adds \"Impregnable\" - Increased resistance to interruption.",
-                "3 Geo characters: Adds \"Crunch\" - Geo DMG Bonus.",
-                "Gorou can deploy only 1 General's War Banner on the field at any one time. Characters can only benefit from 1 General's War Banner at a time. When a party member leaves the field, the active buff will last for 2s."
+                "Một nhân vật - \"Kiên Cố\": Tăng phòng ngự;",
+                "Hai nhân vật - \"Trụ Vững\": Ngoài hiệu quả trên, tăng thêm kháng gián đoạn;",
+                "Ba nhân vật - \"Phá Hủy\": Ngoài hiệu quả trên, tăng Sát Thương Nguyên Tố Nham.",
+                "Cùng lúc chỉ có thể tồn tại một Đại Tướng Chiến Kỳ do bản thân Gorou tạo ra; Nhân vật chỉ có thể nhận được hiệu quả của một Đại Tướng Chiến Kỳ. Sau khi nhân vật rời khỏi khu vực, hiệu quả của khu vực sẽ kéo dài 2s."
               ]
             },
             {
-              "name": "Hold",
-              "description": "Adjust the location of the skill.\r\n",
+              "name": "Nhấn Giữ",
+              "description": "Có thể điều chỉnh vị trí hiệu lực của kỹ năng.\r\n",
               "descriptions": []
             }
           ],
           "stats": [
-            "Skill DMG|{param1}%",
-            "DEF Increase|{param2}",
-            "Geo DMG Bonus|{param3}%",
-            "Duration|{param4}s",
+            "Sát Thương Kỹ Năng|{param1}%",
+            "Tăng Phòng Ngự|{param2}",
+            "Tăng Sát Thương Nguyên Tố Nham|{param3}%",
+            "Thời Gian Kéo Dài|{param4}s",
             "CD|{param5}s"
           ]
         },
         {
           "key": "s3",
-          "title": "Juuga: Forward Unto Victory",
-          "description": "Displaying his valor as a general, Gorou deals AoE Geo DMG and creates a field known as General's Glory to embolden his comrades.\r\n",
+          "title": "Chiến Pháp Đột Kích - Juuga",
+          "description": "Đại tướng xung trận, gây Sát Thương Phạm Vi Nguyên Tố Nham, đồng thời thiết lập khu vực Uy Nghi Đại Tướng để cổ vũ chiến hữu bên cạnh.\r\n",
           "abilities": [
             {
-              "name": "General's Glory",
-              "description": "This field has the following properties:\r\n",
+              "name": "Uy Nghi Đại Tướng",
+              "description": "Đặc tính cụ thể như sau:\r\n",
               "descriptions": [
-                "Like the General's War Banner created by Inuzaka All-Round Defense, provides buffs to active characters within the skill's AoE based on the number of Geo characters in the party. Also moves together with your active character.",
-                "Generates 1 Crystal Collapse every 1.5s that deals AoE Geo DMG to 1 opponent within the skill's AoE.",
-                "Pulls 1 elemental shard in the skill's AoE to your active character's position every 1.5s (elemental shards are created by Crystallize reactions).",
-                "If a General's War Banner created by Gorou currently exists on the field when this ability is used, it will be destroyed. In addition, for the duration of General's Glory, Gorou's Elemental Skill \"Inuzaka All-Round Defense\" will not create the General's War Banner.",
-                "If Gorou falls, the effects of General's Glory will be cleared."
+                "Khu vực có hiệu quả giống với Đại Tướng Chiến Kỳ tạo ra từ kỹ năng nguyên tố \"Trận Hình Phòng Thủ - Inuzaka\", căn cứ vào số lượng nhân vật Nguyên Tố Nham trong đội khi thi triển để cung cấp hiệu quả cho nhân vật đứng trong khu vực hiệu ứng, đồng thời sẽ di chuyển theo nhân vật trong trận;",
+                "Mỗi 1.5s sẽ sản sinh một lần Kết Tinh Tan Vỡ, gây Sát Thương Phạm Vi Nguyên Tố Nham cho một kẻ địch trong khu vực hiệu ứng;",
+                "Mỗi 1.5s sẽ thu hút 1 Mảnh sinh ra từ phản ứng Kết Tinh trong khu vực đến vị trí của nhân vật hiện tại.",
+                "Khi thi triển, nếu trong trận có Đại Tướng Chiến Kỳ của Gorou tạo ra, sẽ phá hủy nó. Ngoài ra, trong thời gian duy trì Uy Nghi Đại Tướng, kỹ năng nguyên tố \"Trận Hình Phòng Thủ - Inuzaka\" mà Gorou thi triển sẽ không tạo ra Đại Tướng Chiến Kỳ.",
+                "Khi Gorou ngã xuống sẽ xóa bỏ hiệu quả Uy Nghi Đại Tướng của bản thân Gorou."
               ]
             }
           ],
           "stats": [
-            "Skill DMG|{param1}% DEF",
-            "Crystal Collapse DMG|{param2}% DEF",
-            "Duration|{param3}s",
+            "Sát Thương Kỹ Năng|{param1}% DEF",
+            "Sát Thương Kết Tinh Tan Vỡ|{param2}% DEF",
+            "Thời Gian Kéo Dài|{param3}s",
             "CD|{param4}s",
-            "Energy Cost|{param5}"
+            "Năng Lượng Nguyên Tố|{param5}"
           ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "Seeker of Shinies",
-          "description": "Displays the location of nearby resources unique to Inazuma on the mini-map.\r\n",
+          "title": "Phát Hiện Lấp Lánh",
+          "description": "Hiển thị vị trí đặc sản khu vực Inazuma trên bản đồ nhỏ.\r\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "Heedless of the Wind and Weather",
-          "description": "After using Juuga: Forward Unto Victory, all nearby party members' DEF is increased by 25% for 12s.\r\n",
+          "title": "Không Ngại Mưa Gió",
+          "description": "Trong 12s sau khi thi triển Chiến Pháp Đột Kích - Juuga, mức phòng ngự của tất cả thành viên trong đội gần đó tăng 25%.\r\n",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "A Favor Repaid",
-          "description": "Gorou receives the following DMG Bonuses to his attacks based on his DEF:\r\n",
+          "title": "Lòng Báo Ơn",
+          "description": "Dựa theo sức phòng ngự, sẽ tăng sát thương của các loại tấn công sau đây cho Gorou:\r\n",
           "descriptions": [
-            "Inuzaka All-Round Defense: Skill DMG increased by 156% of DEF",
-            "Juuga: Forward Unto Victory: Skill DMG and Crystal Collapse DMG increased by 15.6% of DEF"
+            "Sát thương kỹ năng Trận Hình Phòng Thủ - Inuzaka tăng tương đương 156% phòng ngự;",
+            "Sát thương Kết Tinh Tan Vỡ và kỹ năng Chiến Pháp Đột Kích - Juuga tăng tương đương 15.6% phòng ngự."
           ]
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "Rushing Hound: Swift as the Wind",
-          "description": "When characters (other than Gorou) within the AoE of Gorou's General's War Banner or General's Glory deal Geo DMG to opponents, the CD of Gorou's Inuzaka All-Round Defense is decreased by 2s.\r\nThis effect can occur once every 10s.\r\n",
+          "title": "Chạy: Nhanh Nhẹn Như Gió",
+          "description": "Khi nhân vật trong trận hiện tại (trừ Gorou) đứng trong khu vực Đại Tướng Chiến Kỳ hoặc Uy Nghi Đại Tướng gây Sát Thương Nguyên Tố Nham cho kẻ địch, sẽ giảm 2s CD kỹ năng Trận Hình Phòng Thủ - Inuzaka của Gorou.\r\nHiệu quả này mỗi 10s tối đa kích hoạt 1 lần.\r\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "Sitting Hound: Steady as a Clock",
-          "description": "While General's Glory is in effect, its duration is extended by 1s when a nearby active character obtains an Elemental Shard from a Crystallize reaction. \r\nThis effect can occur once every 0.1s. Max extension is 3s.\r\n",
+          "title": "Ngồi: Vững Vàng Như Chuông",
+          "description": "Trong thời gian duy trì Uy Nghi Đại Tướng, sau khi nhân vật trong trận gần đó nhận mảnh kết tinh tạo ra từ phản ứng kết tinh, thì Uy Nghi Đại Tướng của Gorou sẽ kéo dài thêm 1s.\r\nHiệu quả này mỗi 0.1s tối đa kích hoạt 1 lần, tối đa kéo dài thêm 3s bằng cách này.\r\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "Mauling Hound: Fierce as Fire",
-          "description": "Increases the Level of Inuzaka All-Round Defense by 3.\r\nMaximum upgrade level is 15.\r\n",
+          "title": "Cào: Dữ Dội Như Lửa",
+          "description": "Cấp kỹ năng Trận Hình Phòng Thủ - Inuzaka +3.\r\nTăng tối đa đến cấp 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "Lapping Hound: Warm as Water",
-          "description": "When General's Glory is in the \"Impregnable\" or \"Crunch\" states, it will also heal active characters within its AoE by 50% of Gorou's own DEF every 1.5s.\r\n",
+          "title": "Liếm: Ấm Áp Như Nước",
+          "description": "Uy Nghi Đại Tướng khi có hiệu quả \"Trụ Vững\" hoặc \"Phá Hủy\", mỗi 1.5s sẽ hồi phục HP cho nhân vật trong khu vực, lượng hồi phục tương đương 50% phòng ngự của bản thân Gorou.\r\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "Striking Hound: Thunderous Force",
-          "description": "Increases the Level of Juuga: Forward Unto Victory by 3.\r\nMaximum upgrade level is 15.\r\n",
+          "title": "Cắn: Kinh Động Như Sấm",
+          "description": "Cấp kỹ năng Chiến Pháp Đột Kích - Juuga +3.\r\nTăng tối đa đến cấp 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "Valiant Hound: Mountainous Fealty",
-          "description": "For 12s after using Inuzaka All-Round Defense or Juuga: Forward Unto Victory, increases the CRIT DMG of all nearby party members' Geo DMG based on the buff level of the skill's field at the time of use:\r\n",
+          "title": "Dũng: Trung Nghĩa Như Núi",
+          "description": "Trong 12s sau khi thi triển Trận Hình Phòng Thủ - Inuzaka hoặc Chiến Pháp Đột Kích - Juuga, dựa vào cấp độ khu vực lúc thi triển để tăng Sát Thương Bạo Kích Nguyên Tố Nham cho toàn bộ nhân vật trong đội ở gần:\r\n",
           "descriptions": [
-            "\"Standing Firm\": +10%",
-            "\"Impregnable\": +20%",
-            "\"Crunch\": +40%",
-            "This effect cannot stack and will take reference from the last instance of the effect that is triggered."
+            "\"Kiên Cố\": Tăng 10%;",
+            "\"Trụ Vững\": Tăng 20%;",
+            "\"Phá Hủy\": Tăng 40%.",
+            "Hiệu quả này không thể cộng dồn, lấy hiệu ứng sau cùng làm chuẩn."
           ]
         }
       ]
@@ -6285,6 +6285,93 @@
           "key": "c6",
           "title": "Khuấy Động Từ Địa Ngục",
           "description": "Xinyan giảm 30% tiêu hao thể lực khi dùng trọng kích; Đồng thời khi thi triển, tăng sức tấn công bằng 50% phòng ngự.\r\n",
+          "descriptions": []
+        }
+      ]
+    },
+    {
+      "key": "yae-miko",
+      "name": "Yae Miko",
+      "title": "",
+      "description": "",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
           "descriptions": []
         }
       ]
