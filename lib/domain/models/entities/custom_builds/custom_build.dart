@@ -23,10 +23,6 @@ class CustomBuild extends HiveObject {
   List<String> weaponKeys;
 
   @HiveField(7)
-  //artifact key : subStat enum
-  Map<String, int> artifacts;
-
-  @HiveField(8)
   List<int> talentPriority;
 
   CustomBuild(
@@ -36,7 +32,6 @@ class CustomBuild extends HiveObject {
     this.roleType,
     this.roleSubType,
     this.weaponKeys,
-    this.artifacts,
     this.talentPriority,
   );
 }

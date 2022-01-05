@@ -20,11 +20,15 @@ class CustomBuildEvent with _$CustomBuildEvent {
 
   const factory CustomBuildEvent.weaponOrderChanged({required String key, required int newIndex}) = _WeaponOrderChanged;
 
-  const factory CustomBuildEvent.addArtifact({required String key, required ArtifactType type}) = _AddArtifact;
+  const factory CustomBuildEvent.addArtifact({
+    required String key,
+    required ArtifactType type,
+    required StatType statType,
+  }) = _AddArtifact;
 
   const factory CustomBuildEvent.saveChanges() = _SaveChanges;
 
   const factory CustomBuildEvent.reset() = _Reset;
 
-  //TODO: SHARE, SBUSTATS, TALENETS, ARTIFACT'S PIECE BONUS
+//TODO: SHARE, SBUSTATS, TALENETS, ARTIFACT'S PIECE BONUS
 }

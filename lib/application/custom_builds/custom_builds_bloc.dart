@@ -72,7 +72,7 @@ class CustomBuildsBloc extends Bloc<CustomBuildsEvent, CustomBuildsState> {
         //   ..add(dummyB);
         // return state.copyWith.call(builds: builds);
 
-        final builds = _dataService.getAllCustomBuilds();
+        final builds = _dataService.customBuilds.getAllCustomBuilds();
 
         return state.copyWith.call(builds: builds);
       },

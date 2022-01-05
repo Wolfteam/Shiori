@@ -12,6 +12,6 @@ class CustomBuildState with _$CustomBuildState {
     required bool showOnCharacterDetail,
     required CharacterCardModel character,
     required List<WeaponCardModel> weapons,
-    required List<ArtifactCardModel> artifacts,
+    required List<CustomBuildArtifactModel> artifacts,
   }) = _LoadedState;
 }

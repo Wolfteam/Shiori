@@ -1,26 +1,19 @@
+import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/models/models.dart';
 
-class CustomBuildModel {
-  final int key;
-  final String title;
+part 'custom_build_model.freezed.dart';
 
-  final CharacterRoleType type;
-  final CharacterRoleSubType subType;
-  final bool showOnCharacterDetail;
-
-  final CharacterCardModel character;
-  final List<WeaponCardModel> weapons;
-  final List<ArtifactCardModel> artifacts;
-
-  CustomBuildModel({
-    required this.key,
-    required this.title,
-    required this.type,
-    required this.subType,
-    required this.showOnCharacterDetail,
-    required this.character,
-    required this.weapons,
-    required this.artifacts,
-  });
+@freezed
+class CustomBuildModel with _$CustomBuildModel {
+  const factory CustomBuildModel({
+    required int key,
+    required String title,
+    required CharacterRoleType type,
+    required CharacterRoleSubType subType,
+    required bool showOnCharacterDetail,
+    required CharacterCardModel character,
+    required List<WeaponCardModel> weapons,
+    required List<CustomBuildArtifactModel> artifacts,
+  }) = _CustomBuildModel;
 }

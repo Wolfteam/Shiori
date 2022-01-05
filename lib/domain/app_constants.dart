@@ -53,6 +53,21 @@ List<StatType> getArtifactPossibleMainStats(ArtifactType type) {
   }
 }
 
+List<StatType> getArtifactPossibleSubStats() {
+  return [
+    StatType.hp,
+    StatType.atk,
+    StatType.def,
+    StatType.hpPercentage,
+    StatType.atkPercentage,
+    StatType.defPercentage,
+    StatType.elementalMastery,
+    StatType.energyRechargePercentage,
+    StatType.critRatePercentage,
+    StatType.critDmgPercentage,
+  ];
+}
+
 const languagesMap = {
   AppLanguageType.english: LanguageModel('en', 'US'),
   AppLanguageType.spanish: LanguageModel('es', 'ES'),

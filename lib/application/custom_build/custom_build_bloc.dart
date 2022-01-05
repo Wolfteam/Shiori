@@ -46,6 +46,9 @@ class CustomBuildBloc extends Bloc<CustomBuildEvent, CustomBuildState> {
       addWeapon: (e) async => state.maybeMap(
         loaded: (state) {
           //TODO: CHECK FOR REPEATED
+          if (state.weapons.any((el) => el.key == e.key)) {
+            throw Exception('Weapons cannot be repeated');
+          }
           final weapon = _genshinService.getWeaponForCard(e.key);
           final weapons = [...state.weapons, weapon];
           return state.copyWith.call(weapons: weapons);
@@ -57,11 +60,16 @@ class CustomBuildBloc extends Bloc<CustomBuildEvent, CustomBuildState> {
       addArtifact: (e) async => state.maybeMap(
         loaded: (state) {
           //TODO: CHECK FOR REPEATED
+          if (state.artifacts.any((el) => el.key == e.key && el.type == e.type)) {
+            throw Exception('Artifact types cannot be repeated');
+          }
           final fullArtifact = _genshinService.getArtifact(e.key);
           final translation = _genshinService.getArtifactTranslation(e.key);
           final img = _genshinService.getArtifactRelatedPart(fullArtifact.fullImagePath, fullArtifact.image, translation.bonus.length, e.type);
-          final artifact = _genshinService.getArtifactForCard(e.key).copyWith.call(image: img);
-          final artifacts = [...state.artifacts, artifact];
+          final artifacts = [
+            ...state.artifacts,
+            CustomBuildArtifactModel(type: e.type, image: img, key: e.key, rarity: fullArtifact.maxRarity, statType: e.statType),
+          ]..sort((x, y) => x.type.index.compareTo(y.type.index));
           return state.copyWith.call(artifacts: artifacts);
         },
         orElse: () => state,
@@ -78,7 +86,7 @@ class CustomBuildBloc extends Bloc<CustomBuildEvent, CustomBuildState> {
 
   CustomBuildState _init(int? key) {
     if (key != null) {
-      final build = _dataService.getCustomBuild(key);
+      final build = _dataService.customBuilds.getCustomBuild(key);
       return CustomBuildState.loaded(
         key: key,
         title: build.title,
@@ -87,7 +95,7 @@ class CustomBuildBloc extends Bloc<CustomBuildEvent, CustomBuildState> {
         showOnCharacterDetail: build.showOnCharacterDetail,
         character: build.character,
         weapons: build.weapons,
-        artifacts: build.artifacts,
+        artifacts: build.artifacts..sort((x, y) => x.type.index.compareTo(y.type.index)),
       );
     }
 
@@ -99,33 +107,34 @@ class CustomBuildBloc extends Bloc<CustomBuildEvent, CustomBuildState> {
       showOnCharacterDetail: true,
       character: character,
       weapons: [],
-      artifacts: [],
+      artifacts: []..sort((x, y) => x.type.index.compareTo(y.type.index)),
     );
   }
 
   Future<CustomBuildState> _saveChanges(_LoadedState state) async {
     if (state.key != null) {
-      await _dataService.updateCustomBuild(
+      await _dataService.customBuilds.updateCustomBuild(
         state.key!,
         state.title,
         state.type,
         state.subType,
         state.showOnCharacterDetail,
         state.weapons.map((e) => e.key).toList(),
-        {},
+        [],
         [],
       );
 
       return _init(state.key);
     }
-    final build = await _dataService.saveCustomBuild(
+    final build = await _dataService.customBuilds.saveCustomBuild(
       state.character.key,
       state.title,
       state.type,
       state.subType,
       state.showOnCharacterDetail,
       state.weapons.map((e) => e.key).toList(),
-      {},
+      //TODO: THIS
+      [],
       [],
     );
 

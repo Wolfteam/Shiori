@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/models/entities.dart';
 import 'package:shiori/domain/models/models.dart';
+import 'package:shiori/domain/services/persistence/custom_builds_data_service.dart';
 
 abstract class DataService {
   StreamController<ItemType> get itemAddedToInventory;
@@ -10,6 +11,8 @@ abstract class DataService {
   StreamController<ItemType> get itemUpdatedInInventory;
 
   StreamController<ItemType> get itemDeletedFromInventory;
+
+  CustomBuildsDataService get customBuilds;
 
   Future<void> init({String dir = 'shiori_data'});
 
@@ -315,32 +318,4 @@ abstract class DataService {
   });
 
   Future<NotificationItem> reduceNotificationHours(int key, AppNotificationType type, int hours);
-
-  List<CustomBuildModel> getAllCustomBuilds();
-
-  CustomBuildModel getCustomBuild(int key);
-
-  Future<CustomBuildModel> saveCustomBuild(
-    String charKey,
-    String title,
-    CharacterRoleType type,
-    CharacterRoleSubType subType,
-    bool showOnCharacterDetail,
-    List<String> weaponKeys,
-    Map<String, int> artifacts,
-    List<CharacterSkillType> talentPriority,
-  );
-
-  Future<CustomBuildModel> updateCustomBuild(
-    int key,
-    String title,
-    CharacterRoleType type,
-    CharacterRoleSubType subType,
-    bool showOnCharacterDetail,
-    List<String> weaponKeys,
-    Map<String, int> artifacts,
-    List<CharacterSkillType> talentPriority,
-  );
-
-  Future<void> deleteCustomBuild(int key);
 }
