@@ -4,6 +4,7 @@ import 'package:shiori/application/bloc.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/generated/l10n.dart';
 import 'package:shiori/presentation/shared/images/circle_character.dart';
+import 'package:shiori/presentation/shared/styles.dart';
 import 'package:shiori/presentation/shared/utils/size_utils.dart';
 
 import 'rename_tierlist_dialog.dart';
@@ -45,6 +46,16 @@ class TierListRow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final s = S.of(context);
+    final width = MediaQuery.of(context).size.width;
+    var flexA = 25;
+    var flexB = showButtons ? 65 : 75;
+    var flexC = 10;
+    if (width > 1200) {
+      flexA = 20;
+      flexB = showButtons ? 70 : 80;
+      flexC = 10;
+    }
+
     return DragTarget<ItemCommon>(
       builder: (BuildContext context, List<ItemCommon?> incoming, List<dynamic> rejected) => Column(
         children: [
@@ -54,9 +65,8 @@ class TierListRow extends StatelessWidget {
               children: [
                 Flexible(
                   fit: FlexFit.tight,
-                  flex: 15,
+                  flex: flexA,
                   child: Container(
-                    constraints: const BoxConstraints(minHeight: 120),
                     color: color,
                     child: Center(
                       child: Text(
@@ -69,7 +79,7 @@ class TierListRow extends StatelessWidget {
                 ),
                 Flexible(
                   fit: FlexFit.tight,
-                  flex: showButtons ? 75 : 85,
+                  flex: flexB,
                   child: Wrap(
                     crossAxisAlignment: WrapCrossAlignment.center,
                     alignment: WrapAlignment.center,
@@ -88,12 +98,13 @@ class TierListRow extends StatelessWidget {
                 if (showButtons)
                   Flexible(
                     fit: FlexFit.tight,
-                    flex: 10,
+                    flex: flexC,
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         IconButton(
                           icon: const Icon(Icons.keyboard_arrow_up),
+                          splashRadius: Styles.smallButtonSplashRadius,
                           onPressed: isUpButtonEnabled
                               ? () => context.read<TierListBloc>().add(TierListEvent.rowPositionChanged(index: index, newIndex: index - 1))
                               : null,
@@ -133,6 +144,7 @@ class TierListRow extends StatelessWidget {
                         ),
                         IconButton(
                           icon: const Icon(Icons.keyboard_arrow_down),
+                          splashRadius: Styles.smallButtonSplashRadius,
                           onPressed: isDownButtonEnabled
                               ? () => context.read<TierListBloc>().add(TierListEvent.rowPositionChanged(index: index, newIndex: index + 1))
                               : null,
@@ -143,7 +155,7 @@ class TierListRow extends StatelessWidget {
               ],
             ),
           ),
-          const Divider(),
+          const Divider(height: 1),
         ],
       ),
       onAccept: (item) => context.read<TierListBloc>().add(TierListEvent.addCharacterToRow(index: index, item: item)),
