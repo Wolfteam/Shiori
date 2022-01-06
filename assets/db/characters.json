@@ -3164,7 +3164,7 @@
       "fullImage": "arataki-itto.png",
       "secondFullImage": null,
       "isComingSoon": false,
-      "isNew": true,
+      "isNew": false,
       "isFemale": false,
       "region": "inazuma",
       "role": "dps",
@@ -4066,6 +4066,7 @@
           "weaponKeys": [
             "redhorn-stonethresher",
             "serpent-spine",
+            "skyward-pride",
             "whiteblind"
           ],
           "artifacts": [
@@ -14210,7 +14211,7 @@
       "fullImage": "gorou.png",
       "secondFullImage": null,
       "isComingSoon": false,
-      "isNew": true,
+      "isNew": false,
       "isFemale": false,
       "region": "inazuma",
       "role": "support",
@@ -15062,7 +15063,7 @@
       "builds": [
         {
           "isRecommended": true,
-          "type": "burstSupport",
+          "type": "support",
           "subType": "none",
           "skillPriorities": [
             "elementalSkill",
@@ -15070,10 +15071,21 @@
           ],
           "weaponKeys": [
             "favonius-warbow",
-            "elegy-for-the-end",
-            "sacrificial-bow"
+            "sacrificial-bow",
+            "elegy-for-the-end"
           ],
           "artifacts": [
+            {
+              "oneKey": "noblesse-oblige",
+              "multiples": [],
+              "stats": [
+                "hp",
+                "atk",
+                "energyRechargePercentage",
+                "geoDmgBonusPercentage",
+                "critRatePercentage"
+              ]
+            },
             {
               "oneKey": null,
               "multiples": [
@@ -15093,24 +15105,12 @@
                 "defPercentage",
                 "critRatePercentage"
               ]
-            },
-            {
-              "oneKey": "noblesse-oblige",
-              "multiples": [],
-              "stats": [
-                "hp",
-                "atk",
-                "defPercentage",
-                "defPercentage",
-                "critRatePercentage"
-              ]
             }
           ],
           "subStatsToFocus": [
-            "critRatePercentage",
-            "critDmgPercentage",
             "energyRechargePercentage",
-            "defPercentage"
+            "defPercentage",
+            "critRatePercentage"
           ]
         }
       ],
@@ -26698,8 +26698,9 @@
             "elementalSkill"
           ],
           "weaponKeys": [
-            "memory-of-dust",
             "skyward-atlas",
+            "memory-of-dust",
+            "the-widsith",
             "dodoco-tales",
             "eye-of-perception",
             "frostbearer"
@@ -26755,7 +26756,7 @@
         },
         {
           "isRecommended": false,
-          "type": "subDps",
+          "type": "burstSupport",
           "subType": "none",
           "skillPriorities": [
             "elementalBurst",
@@ -26765,10 +26766,9 @@
           "weaponKeys": [
             "skyward-atlas",
             "memory-of-dust",
-            "lost-prayer-to-the-sacred-winds",
-            "solar-pearl",
-            "eye-of-perception",
-            "dodoco-tales"
+            "the-widsith",
+            "dodoco-tales",
+            "eye-of-perception"
           ],
           "artifacts": [
             {
@@ -35266,13 +35266,13 @@
       "image": "shenhe.png",
       "fullImage": "shenhe.png",
       "secondFullImage": null,
-      "isComingSoon": true,
-      "isNew": false,
+      "isComingSoon": false,
+      "isNew": true,
       "isFemale": true,
       "region": "liyue",
-      "role": "na",
-      "tier": "a",
-      "birthday": "01/01",
+      "role": "support",
+      "tier": "s",
+      "birthday": "03/10",
       "subStatType": "atkPercentage",
       "ascensionMaterials": [
         {
@@ -35311,6 +35311,11 @@
               "type": "jewels"
             },
             {
+              "key": "dragonheirs-false-fin",
+              "quantity": 2,
+              "type": "elementalStone"
+            },
+            {
               "key": "qingxin",
               "quantity": 10,
               "type": "local"
@@ -35335,6 +35340,11 @@
               "key": "shivada-jade-fragment",
               "quantity": 6,
               "type": "jewels"
+            },
+            {
+              "key": "dragonheirs-false-fin",
+              "quantity": 4,
+              "type": "elementalStone"
             },
             {
               "key": "qingxin",
@@ -35363,6 +35373,11 @@
               "type": "jewels"
             },
             {
+              "key": "dragonheirs-false-fin",
+              "quantity": 8,
+              "type": "elementalStone"
+            },
+            {
               "key": "qingxin",
               "quantity": 30,
               "type": "local"
@@ -35389,6 +35404,11 @@
               "type": "jewels"
             },
             {
+              "key": "dragonheirs-false-fin",
+              "quantity": 12,
+              "type": "elementalStone"
+            },
+            {
               "key": "qingxin",
               "quantity": 45,
               "type": "local"
@@ -35413,6 +35433,11 @@
               "key": "shivada-jade-gemstone",
               "quantity": 6,
               "type": "jewels"
+            },
+            {
+              "key": "dragonheirs-false-fin",
+              "quantity": 20,
+              "type": "elementalStone"
             },
             {
               "key": "qingxin",
@@ -35642,21 +35667,544 @@
       "skills": [
         {
           "key": "s1",
-          "image": null,
+          "image": "shenhe_s1.png",
           "type": "normalAttack",
-          "stats": []
+          "stats": [
+            {
+              "key": "param1",
+              "values": [
+                43.26,
+                46.78,
+                50.3,
+                55.33,
+                58.85,
+                62.88,
+                68.41,
+                73.94,
+                79.47,
+                85.51,
+                91.55,
+                97.58,
+                103.62,
+                109.65,
+                115.69
+              ]
+            },
+            {
+              "key": "param2",
+              "values": [
+                40.25,
+                43.52,
+                46.8,
+                51.48,
+                54.76,
+                58.5,
+                63.65,
+                68.8,
+                73.94,
+                79.56,
+                85.18,
+                90.79,
+                96.41,
+                102.02,
+                107.64
+              ]
+            },
+            {
+              "key": "param3",
+              "values": [
+                53.32,
+                57.66,
+                62.0,
+                68.2,
+                72.54,
+                77.5,
+                84.32,
+                91.14,
+                97.96,
+                105.4,
+                112.84,
+                120.28,
+                127.72,
+                135.16,
+                142.6
+              ]
+            },
+            {
+              "key": "param4",
+              "values": [
+                26.32,
+                28.46,
+                30.6,
+                33.66,
+                35.8,
+                38.25,
+                41.62,
+                44.98,
+                48.35,
+                52.02,
+                55.69,
+                59.36,
+                63.04,
+                66.71,
+                70.38
+              ]
+            },
+            {
+              "key": "param5",
+              "values": [
+                26.32,
+                28.46,
+                30.6,
+                33.66,
+                35.8,
+                38.25,
+                41.62,
+                44.98,
+                48.35,
+                52.02,
+                55.69,
+                59.36,
+                63.04,
+                66.71,
+                70.38
+              ]
+            },
+            {
+              "key": "param6",
+              "values": [
+                65.62,
+                70.96,
+                76.3,
+                83.93,
+                89.27,
+                95.38,
+                103.77,
+                112.16,
+                120.55,
+                129.71,
+                138.87,
+                148.02,
+                157.18,
+                166.33,
+                175.49
+              ]
+            },
+            {
+              "key": "param7",
+              "values": [
+                110.67,
+                119.68,
+                128.69,
+                141.56,
+                150.57,
+                160.86,
+                175.02,
+                189.17,
+                203.33,
+                218.77,
+                234.22,
+                249.66,
+                265.1,
+                280.54,
+                295.99
+              ]
+            },
+            {
+              "key": "param8",
+              "values": [
+                25.0,
+                25.0,
+                25.0,
+                25.0,
+                25.0,
+                25.0,
+                25.0,
+                25.0,
+                25.0,
+                25.0,
+                25.0,
+                25.0,
+                25.0,
+                25.0,
+                25.0
+              ]
+            },
+            {
+              "key": "param9",
+              "values": [
+                63.93,
+                69.14,
+                74.34,
+                81.77,
+                86.98,
+                92.93,
+                101.1,
+                109.28,
+                117.46,
+                126.38,
+                135.3,
+                144.22,
+                153.14,
+                162.06,
+                170.98
+              ]
+            },
+            {
+              "key": "param10",
+              "values": [
+                127.84,
+                138.24,
+                148.65,
+                163.51,
+                173.92,
+                185.81,
+                202.16,
+                218.51,
+                234.86,
+                252.7,
+                270.54,
+                288.38,
+                306.22,
+                324.05,
+                341.89
+              ]
+            },
+            {
+              "key": "param11",
+              "values": [
+                159.68,
+                172.67,
+                185.67,
+                204.24,
+                217.23,
+                232.09,
+                252.51,
+                272.93,
+                293.36,
+                315.64,
+                337.92,
+                360.2,
+                382.48,
+                404.76,
+                427.04
+              ]
+            }
+          ]
         },
         {
           "key": "s2",
-          "image": null,
+          "image": "shenhe_s2.png",
           "type": "elementalSkill",
-          "stats": []
+          "stats": [
+            {
+              "key": "param1",
+              "values": [
+                139.2,
+                149.64,
+                160.08,
+                174.0,
+                184.44,
+                194.88,
+                208.8,
+                222.72,
+                236.64,
+                250.56,
+                264.48,
+                278.4,
+                295.8,
+                313.2,
+                330.6
+              ]
+            },
+            {
+              "key": "param2",
+              "values": [
+                188.8,
+                202.96,
+                217.12,
+                236.0,
+                250.16,
+                264.32,
+                283.2,
+                302.08,
+                320.96,
+                339.84,
+                358.72,
+                377.6,
+                401.2,
+                424.8,
+                448.4
+              ]
+            },
+            {
+              "key": "param3",
+              "values": [
+                45.66,
+                49.08,
+                52.5,
+                57.07,
+                60.49,
+                63.92,
+                68.48,
+                73.05,
+                77.62,
+                82.18,
+                86.75,
+                91.31,
+                97.02,
+                102.73,
+                108.43
+              ]
+            },
+            {
+              "key": "param4",
+              "values": [
+                10.0,
+                10.0,
+                10.0,
+                10.0,
+                10.0,
+                10.0,
+                10.0,
+                10.0,
+                10.0,
+                10.0,
+                10.0,
+                10.0,
+                10.0,
+                10.0,
+                10.0
+              ]
+            },
+            {
+              "key": "param5",
+              "values": [
+                15.0,
+                15.0,
+                15.0,
+                15.0,
+                15.0,
+                15.0,
+                15.0,
+                15.0,
+                15.0,
+                15.0,
+                15.0,
+                15.0,
+                15.0,
+                15.0,
+                15.0
+              ]
+            },
+            {
+              "key": "param6",
+              "values": [
+                5.0,
+                5.0,
+                5.0,
+                5.0,
+                5.0,
+                5.0,
+                5.0,
+                5.0,
+                5.0,
+                5.0,
+                5.0,
+                5.0,
+                5.0,
+                5.0,
+                5.0
+              ]
+            },
+            {
+              "key": "param7",
+              "values": [
+                7.0,
+                7.0,
+                7.0,
+                7.0,
+                7.0,
+                7.0,
+                7.0,
+                7.0,
+                7.0,
+                7.0,
+                7.0,
+                7.0,
+                7.0,
+                7.0,
+                7.0
+              ]
+            },
+            {
+              "key": "param8",
+              "values": [
+                10.0,
+                10.0,
+                10.0,
+                10.0,
+                10.0,
+                10.0,
+                10.0,
+                10.0,
+                10.0,
+                10.0,
+                10.0,
+                10.0,
+                10.0,
+                10.0,
+                10.0
+              ]
+            },
+            {
+              "key": "param9",
+              "values": [
+                15.0,
+                15.0,
+                15.0,
+                15.0,
+                15.0,
+                15.0,
+                15.0,
+                15.0,
+                15.0,
+                15.0,
+                15.0,
+                15.0,
+                15.0,
+                15.0,
+                15.0
+              ]
+            }
+          ]
         },
         {
           "key": "s3",
-          "image": null,
+          "image": "shenhe_s3.png",
           "type": "elementalBurst",
-          "stats": []
+          "stats": [
+            {
+              "key": "param1",
+              "values": [
+                100.8,
+                108.36,
+                115.92,
+                126.0,
+                133.56,
+                141.12,
+                151.2,
+                161.28,
+                171.36,
+                181.44,
+                191.52,
+                201.6,
+                214.2,
+                226.8,
+                239.4
+              ]
+            },
+            {
+              "key": "param2",
+              "values": [
+                6.0,
+                7.0,
+                8.0,
+                9.0,
+                10.0,
+                11.0,
+                12.0,
+                13.0,
+                14.0,
+                15.0,
+                15.0,
+                15.0,
+                15.0,
+                15.0,
+                15.0
+              ]
+            },
+            {
+              "key": "param3",
+              "values": [
+                33.12,
+                35.6,
+                38.09,
+                41.4,
+                43.88,
+                46.37,
+                49.68,
+                52.99,
+                56.3,
+                59.62,
+                62.93,
+                66.24,
+                70.38,
+                74.52,
+                78.66
+              ]
+            },
+            {
+              "key": "param4",
+              "values": [
+                12.0,
+                12.0,
+                12.0,
+                12.0,
+                12.0,
+                12.0,
+                12.0,
+                12.0,
+                12.0,
+                12.0,
+                12.0,
+                12.0,
+                12.0,
+                12.0,
+                12.0
+              ]
+            },
+            {
+              "key": "param5",
+              "values": [
+                20.0,
+                20.0,
+                20.0,
+                20.0,
+                20.0,
+                20.0,
+                20.0,
+                20.0,
+                20.0,
+                20.0,
+                20.0,
+                20.0,
+                20.0,
+                20.0,
+                20.0
+              ]
+            },
+            {
+              "key": "param6",
+              "values": [
+                80.0,
+                80.0,
+                80.0,
+                80.0,
+                80.0,
+                80.0,
+                80.0,
+                80.0,
+                80.0,
+                80.0,
+                80.0,
+                80.0,
+                80.0,
+                80.0,
+                80.0
+              ]
+            }
+          ]
         }
       ],
       "passives": [
@@ -35708,7 +36256,49 @@
           "image": "shenhe_c6.png"
         }
       ],
-      "builds": [],
+      "builds": [
+        {
+          "isRecommended": true,
+          "type": "support",
+          "subType": "none",
+          "skillPriorities": [
+            "elementalSkill",
+            "elementalBurst"
+          ],
+          "weaponKeys": [
+            "calamity-queller",
+            "staff-of-homa",
+            "favonius-lance"
+          ],
+          "artifacts": [
+            {
+              "oneKey": null,
+              "multiples": [
+                {
+                  "key": "shimenawas-reminiscence",
+                  "quantity": 2
+                },
+                {
+                  "key": "gladiators-finale",
+                  "quantity": 2
+                }
+              ],
+              "stats": [
+                "hp",
+                "atk",
+                "energyRechargePercentage",
+                "atkPercentage",
+                "atkPercentage"
+              ]
+            }
+          ],
+          "subStatsToFocus": [
+            "atkPercentage",
+            "atk",
+            "energyRechargePercentage"
+          ]
+        }
+      ],
       "stats": [
         {
           "level": 1,
@@ -38005,8 +38595,9 @@
             "thundering-pulse",
             "polar-star",
             "amos-bow",
-            "rust",
-            "prototype-crescent"
+            "mouuns-moon",
+            "prototype-crescent",
+            "rust"
           ],
           "artifacts": [
             {
@@ -49259,6 +49850,940 @@
       ]
     },
     {
+      "key": "yae-miko",
+      "rarity": 5,
+      "weaponType": "catalyst",
+      "elementType": "electro",
+      "image": "yae-miko.png",
+      "fullImage": "yae-miko.png",
+      "secondFullImage": null,
+      "isComingSoon": true,
+      "isNew": false,
+      "isFemale": true,
+      "region": "inazuma",
+      "role": "support",
+      "tier": "s",
+      "birthday": "06/27",
+      "subStatType": "critRatePercentage",
+      "ascensionMaterials": [
+        {
+          "rank": 1,
+          "level": 20,
+          "materials": [
+            {
+              "key": "vajrada-amethyst-sliver",
+              "quantity": 1,
+              "type": "jewels"
+            },
+            {
+              "key": "sea-ganoderma",
+              "quantity": 3,
+              "type": "local"
+            },
+            {
+              "key": "old-handguard",
+              "quantity": 3,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 20000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "rank": 2,
+          "level": 40,
+          "materials": [
+            {
+              "key": "vajrada-amethyst-fragment",
+              "quantity": 3,
+              "type": "jewels"
+            },
+            {
+              "key": "dragonheirs-false-fin",
+              "quantity": 2,
+              "type": "elementalStone"
+            },
+            {
+              "key": "sea-ganoderma",
+              "quantity": 10,
+              "type": "local"
+            },
+            {
+              "key": "old-handguard",
+              "quantity": 15,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 40000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "rank": 3,
+          "level": 50,
+          "materials": [
+            {
+              "key": "vajrada-amethyst-fragment",
+              "quantity": 6,
+              "type": "jewels"
+            },
+            {
+              "key": "dragonheirs-false-fin",
+              "quantity": 4,
+              "type": "elementalStone"
+            },
+            {
+              "key": "sea-ganoderma",
+              "quantity": 20,
+              "type": "local"
+            },
+            {
+              "key": "kageuchi-handguard",
+              "quantity": 12,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 60000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "rank": 4,
+          "level": 60,
+          "materials": [
+            {
+              "key": "vajrada-amethyst-chunk",
+              "quantity": 3,
+              "type": "jewels"
+            },
+            {
+              "key": "dragonheirs-false-fin",
+              "quantity": 8,
+              "type": "elementalStone"
+            },
+            {
+              "key": "sea-ganoderma",
+              "quantity": 30,
+              "type": "local"
+            },
+            {
+              "key": "kageuchi-handguard",
+              "quantity": 18,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 80000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "rank": 5,
+          "level": 70,
+          "materials": [
+            {
+              "key": "vajrada-amethyst-chunk",
+              "quantity": 6,
+              "type": "jewels"
+            },
+            {
+              "key": "dragonheirs-false-fin",
+              "quantity": 12,
+              "type": "elementalStone"
+            },
+            {
+              "key": "sea-ganoderma",
+              "quantity": 45,
+              "type": "local"
+            },
+            {
+              "key": "famed-handguard",
+              "quantity": 12,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 100000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "rank": 6,
+          "level": 80,
+          "materials": [
+            {
+              "key": "vajrada-amethyst-gemstone",
+              "quantity": 6,
+              "type": "jewels"
+            },
+            {
+              "key": "dragonheirs-false-fin",
+              "quantity": 20,
+              "type": "elementalStone"
+            },
+            {
+              "key": "sea-ganoderma",
+              "quantity": 60,
+              "type": "local"
+            },
+            {
+              "key": "famed-handguard",
+              "quantity": 24,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 120000,
+              "type": "currency"
+            }
+          ]
+        }
+      ],
+      "talentAscensionMaterials": [
+        {
+          "level": 2,
+          "materials": [
+            {
+              "key": "teachings-of-light",
+              "quantity": 3,
+              "type": "talents"
+            },
+            {
+              "key": "old-handguard",
+              "quantity": 6,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 12500,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "level": 3,
+          "materials": [
+            {
+              "key": "guide-to-light",
+              "quantity": 2,
+              "type": "talents"
+            },
+            {
+              "key": "kageuchi-handguard",
+              "quantity": 3,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 17500,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "materials": [
+            {
+              "key": "guide-to-light",
+              "quantity": 4,
+              "type": "talents"
+            },
+            {
+              "key": "kageuchi-handguard",
+              "quantity": 4,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 25000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "materials": [
+            {
+              "key": "guide-to-light",
+              "quantity": 6,
+              "type": "talents"
+            },
+            {
+              "key": "kageuchi-handguard",
+              "quantity": 6,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 30000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "level": 6,
+          "materials": [
+            {
+              "key": "guide-to-light",
+              "quantity": 9,
+              "type": "talents"
+            },
+            {
+              "key": "kageuchi-handguard",
+              "quantity": 9,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 37500,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "level": 7,
+          "materials": [
+            {
+              "key": "philosophies-of-light",
+              "quantity": 4,
+              "type": "talents"
+            },
+            {
+              "key": "famed-handguard",
+              "quantity": 4,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 120000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "level": 8,
+          "materials": [
+            {
+              "key": "philosophies-of-light",
+              "quantity": 6,
+              "type": "talents"
+            },
+            {
+              "key": "famed-handguard",
+              "quantity": 6,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 260000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "level": 9,
+          "materials": [
+            {
+              "key": "philosophies-of-light",
+              "quantity": 12,
+              "type": "talents"
+            },
+            {
+              "key": "famed-handguard",
+              "quantity": 9,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 450000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "level": 10,
+          "materials": [
+            {
+              "key": "philosophies-of-light",
+              "quantity": 16,
+              "type": "talents"
+            },
+            {
+              "key": "famed-handguard",
+              "quantity": 12,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 700000,
+              "type": "currency"
+            },
+            {
+              "key": "crown-of-insight",
+              "quantity": 1,
+              "type": "talents"
+            }
+          ]
+        }
+      ],
+      "skills": [
+        {
+          "key": "s1",
+          "image": "yae-miko_s1.png",
+          "type": "normalAttack",
+          "stats": [
+            {
+              "key": "param1",
+              "values": [
+                39.66,
+                42.63,
+                45.61,
+                49.57,
+                52.55,
+                55.52,
+                59.49,
+                63.45,
+                67.42,
+                71.39,
+                75.35,
+                79.32,
+                84.27,
+                89.23,
+                94.19
+              ]
+            },
+            {
+              "key": "param2",
+              "values": [
+                38.52,
+                41.41,
+                44.3,
+                48.15,
+                51.04,
+                53.93,
+                57.78,
+                61.63,
+                65.48,
+                69.33,
+                73.19,
+                77.04,
+                81.85,
+                86.67,
+                91.48
+              ]
+            },
+            {
+              "key": "param3",
+              "values": [
+                56.89,
+                61.16,
+                65.42,
+                71.11,
+                75.38,
+                79.64,
+                85.33,
+                91.02,
+                96.71,
+                102.4,
+                108.09,
+                113.78,
+                120.89,
+                128.0,
+                135.11
+              ]
+            },
+            {
+              "key": "param4",
+              "values": [
+                142.89,
+                153.61,
+                164.33,
+                178.62,
+                189.34,
+                200.05,
+                214.34,
+                228.63,
+                242.92,
+                257.21,
+                271.5,
+                285.79,
+                303.65,
+                321.51,
+                339.38
+              ]
+            },
+            {
+              "key": "param5",
+              "values": [
+                50.0,
+                50.0,
+                50.0,
+                50.0,
+                50.0,
+                50.0,
+                50.0,
+                50.0,
+                50.0,
+                50.0,
+                50.0,
+                50.0,
+                50.0,
+                50.0,
+                50.0
+              ]
+            },
+            {
+              "key": "param6",
+              "values": [
+                56.83,
+                61.45,
+                66.08,
+                72.69,
+                77.31,
+                82.6,
+                89.87,
+                97.14,
+                104.41,
+                112.34,
+                120.27,
+                128.2,
+                136.12,
+                144.05,
+                151.98
+              ]
+            },
+            {
+              "key": "param7",
+              "values": [
+                113.63,
+                122.88,
+                132.13,
+                145.35,
+                154.59,
+                165.17,
+                179.7,
+                194.23,
+                208.77,
+                224.62,
+                240.48,
+                256.34,
+                272.19,
+                288.05,
+                303.9
+              ]
+            },
+            {
+              "key": "param8",
+              "values": [
+                141.93,
+                153.49,
+                165.04,
+                181.54,
+                193.1,
+                206.3,
+                224.45,
+                242.61,
+                260.76,
+                280.57,
+                300.37,
+                320.18,
+                339.98,
+                359.79,
+                379.59
+              ]
+            }
+          ]
+        },
+        {
+          "key": "s2",
+          "image": "yae-miko_s2.png",
+          "type": "elementalSkill",
+          "stats": [
+            {
+              "key": "param1",
+              "values": [
+                60.67,
+                65.22,
+                69.77,
+                75.84,
+                80.39,
+                84.94,
+                91.01,
+                97.08,
+                103.14,
+                109.21,
+                115.28,
+                121.34,
+                128.93,
+                136.51,
+                144.1
+              ]
+            },
+            {
+              "key": "param2",
+              "values": [
+                75.84,
+                81.53,
+                87.22,
+                94.8,
+                100.49,
+                106.18,
+                113.76,
+                121.34,
+                128.93,
+                136.51,
+                144.1,
+                151.68,
+                161.16,
+                170.64,
+                180.12
+              ]
+            },
+            {
+              "key": "param3",
+              "values": [
+                94.8,
+                101.91,
+                109.02,
+                118.5,
+                125.61,
+                132.72,
+                142.2,
+                151.68,
+                161.16,
+                170.64,
+                180.12,
+                189.6,
+                201.45,
+                213.3,
+                225.15
+              ]
+            },
+            {
+              "key": "param4",
+              "values": [
+                118.5,
+                127.39,
+                136.28,
+                148.13,
+                157.01,
+                165.9,
+                177.75,
+                189.6,
+                201.45,
+                213.3,
+                225.15,
+                237.0,
+                251.81,
+                266.63,
+                281.44
+              ]
+            },
+            {
+              "key": "param5",
+              "values": [
+                14.0,
+                14.0,
+                14.0,
+                14.0,
+                14.0,
+                14.0,
+                14.0,
+                14.0,
+                14.0,
+                14.0,
+                14.0,
+                14.0,
+                14.0,
+                14.0,
+                14.0
+              ]
+            },
+            {
+              "key": "param6",
+              "values": [
+                9.0,
+                9.0,
+                9.0,
+                9.0,
+                9.0,
+                9.0,
+                9.0,
+                9.0,
+                9.0,
+                9.0,
+                9.0,
+                9.0,
+                9.0,
+                9.0,
+                9.0
+              ]
+            }
+          ]
+        },
+        {
+          "key": "s3",
+          "image": "yae-miko_s3.png",
+          "type": "elementalBurst",
+          "stats": [
+            {
+              "key": "param1",
+              "values": [
+                260.0,
+                279.5,
+                299.0,
+                325.0,
+                344.5,
+                364.0,
+                390.0,
+                416.0,
+                442.0,
+                468.0,
+                494.0,
+                520.0,
+                552.5,
+                585.0,
+                617.5
+              ]
+            },
+            {
+              "key": "param2",
+              "values": [
+                293.76,
+                315.79,
+                337.82,
+                367.2,
+                389.23,
+                411.26,
+                440.64,
+                470.02,
+                499.39,
+                528.77,
+                558.14,
+                587.52,
+                624.24,
+                660.96,
+                697.68
+              ]
+            },
+            {
+              "key": "param3",
+              "values": [
+                22.0,
+                22.0,
+                22.0,
+                22.0,
+                22.0,
+                22.0,
+                22.0,
+                22.0,
+                22.0,
+                22.0,
+                22.0,
+                22.0,
+                22.0,
+                22.0,
+                22.0
+              ]
+            },
+            {
+              "key": "param4",
+              "values": [
+                90.0,
+                90.0,
+                90.0,
+                90.0,
+                90.0,
+                90.0,
+                90.0,
+                90.0,
+                90.0,
+                90.0,
+                90.0,
+                90.0,
+                90.0,
+                90.0,
+                90.0
+              ]
+            }
+          ]
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "image": "yae-miko_p1.png",
+          "unlockedAt": -1
+        },
+        {
+          "key": "p2",
+          "image": "yae-miko_p2.png",
+          "unlockedAt": 1
+        },
+        {
+          "key": "p3",
+          "image": "yae-miko_p3.png",
+          "unlockedAt": 4
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "number": 1,
+          "image": "yae-miko_c1.png"
+        },
+        {
+          "key": "c2",
+          "number": 2,
+          "image": "yae-miko_c2.png"
+        },
+        {
+          "key": "c3",
+          "number": 3,
+          "image": "yae-miko_c3.png"
+        },
+        {
+          "key": "c4",
+          "number": 4,
+          "image": "yae-miko_c4.png"
+        },
+        {
+          "key": "c5",
+          "number": 5,
+          "image": "yae-miko_c5.png"
+        },
+        {
+          "key": "c6",
+          "number": 6,
+          "image": "yae-miko_c6.png"
+        }
+      ],
+      "builds": [],
+      "stats": [
+        {
+          "level": 1,
+          "baseHp": 912.0,
+          "baseAtk": 18.0,
+          "baseDef": 57.0,
+          "isAnAscension": false,
+          "statValue": 5.0
+        },
+        {
+          "level": 20,
+          "baseHp": 2365.0,
+          "baseAtk": 46.0,
+          "baseDef": 148.0,
+          "isAnAscension": false,
+          "statValue": 5.0
+        },
+        {
+          "level": 20,
+          "baseHp": 3058.0,
+          "baseAtk": 69.0,
+          "baseDef": 186.0,
+          "isAnAscension": true,
+          "statValue": 5.0
+        },
+        {
+          "level": 40,
+          "baseHp": 4619.0,
+          "baseAtk": 99.0,
+          "baseDef": 284.0,
+          "isAnAscension": false,
+          "statValue": 5.0
+        },
+        {
+          "level": 40,
+          "baseHp": 5111.0,
+          "baseAtk": 115.0,
+          "baseDef": 311.0,
+          "isAnAscension": true,
+          "statValue": 9.8
+        },
+        {
+          "level": 50,
+          "baseHp": 5904.0,
+          "baseAtk": 131.0,
+          "baseDef": 361.0,
+          "isAnAscension": false,
+          "statValue": 9.8
+        },
+        {
+          "level": 50,
+          "baseHp": 6560.0,
+          "baseAtk": 152.0,
+          "baseDef": 397.0,
+          "isAnAscension": true,
+          "statValue": 14.6
+        },
+        {
+          "level": 60,
+          "baseHp": 7360.0,
+          "baseAtk": 168.0,
+          "baseDef": 447.0,
+          "isAnAscension": false,
+          "statValue": 14.6
+        },
+        {
+          "level": 60,
+          "baseHp": 7852.0,
+          "baseAtk": 184.0,
+          "baseDef": 474.0,
+          "isAnAscension": true,
+          "statValue": 14.6
+        },
+        {
+          "level": 70,
+          "baseHp": 8660.0,
+          "baseAtk": 200.0,
+          "baseDef": 525.0,
+          "isAnAscension": false,
+          "statValue": 14.6
+        },
+        {
+          "level": 70,
+          "baseHp": 9152.0,
+          "baseAtk": 216.0,
+          "baseDef": 552.0,
+          "isAnAscension": true,
+          "statValue": 19.4
+        },
+        {
+          "level": 80,
+          "baseHp": 9969.0,
+          "baseAtk": 232.0,
+          "baseDef": 603.0,
+          "isAnAscension": false,
+          "statValue": 19.4
+        },
+        {
+          "level": 80,
+          "baseHp": 10461.0,
+          "baseAtk": 248.0,
+          "baseDef": 630.0,
+          "isAnAscension": true,
+          "statValue": 24.2
+        },
+        {
+          "level": 90,
+          "baseHp": 11284.0,
+          "baseAtk": 264.0,
+          "baseDef": 682.0,
+          "isAnAscension": false,
+          "statValue": 24.2
+        }
+      ]
+    },
+    {
       "key": "yanfei",
       "rarity": 4,
       "weaponType": "catalyst",
@@ -51417,13 +52942,13 @@
       "image": "yun-jin.png",
       "fullImage": "yun-jin.png",
       "secondFullImage": null,
-      "isComingSoon": true,
+      "isComingSoon": false,
       "isNew": false,
       "isFemale": true,
       "region": "liyue",
-      "role": "na",
+      "role": "support",
       "tier": "a",
-      "birthday": "01/01",
+      "birthday": "05/21",
       "subStatType": "energyRechargePercentage",
       "ascensionMaterials": [
         {
@@ -51818,21 +53343,504 @@
       "skills": [
         {
           "key": "s1",
-          "image": null,
+          "image": "yun-jin_s1.png",
           "type": "normalAttack",
-          "stats": []
+          "stats": [
+            {
+              "key": "param1",
+              "values": [
+                40.51,
+                43.8,
+                47.1,
+                51.81,
+                55.11,
+                58.88,
+                64.06,
+                69.24,
+                74.42,
+                80.07,
+                85.72,
+                91.37,
+                97.03,
+                102.68,
+                108.33
+              ]
+            },
+            {
+              "key": "param2",
+              "values": [
+                40.25,
+                43.52,
+                46.8,
+                51.48,
+                54.76,
+                58.5,
+                63.65,
+                68.8,
+                73.94,
+                79.56,
+                85.18,
+                90.79,
+                96.41,
+                102.02,
+                107.64
+              ]
+            },
+            {
+              "key": "param3",
+              "values": [
+                22.96,
+                24.83,
+                26.7,
+                29.37,
+                31.24,
+                33.38,
+                36.31,
+                39.25,
+                42.19,
+                45.39,
+                48.59,
+                51.8,
+                55.0,
+                58.21,
+                61.41
+              ]
+            },
+            {
+              "key": "param4",
+              "values": [
+                27.52,
+                29.76,
+                32.0,
+                35.2,
+                37.44,
+                40.0,
+                43.52,
+                47.04,
+                50.56,
+                54.4,
+                58.24,
+                62.08,
+                65.92,
+                69.76,
+                73.6
+              ]
+            },
+            {
+              "key": "param5",
+              "values": [
+                23.99,
+                25.95,
+                27.9,
+                30.69,
+                32.64,
+                34.88,
+                37.94,
+                41.01,
+                44.08,
+                47.43,
+                50.78,
+                54.13,
+                57.47,
+                60.82,
+                64.17
+              ]
+            },
+            {
+              "key": "param6",
+              "values": [
+                28.81,
+                31.16,
+                33.5,
+                36.85,
+                39.2,
+                41.88,
+                45.56,
+                49.25,
+                52.93,
+                56.95,
+                60.97,
+                64.99,
+                69.01,
+                73.03,
+                77.05
+              ]
+            },
+            {
+              "key": "param7",
+              "values": [
+                67.34,
+                72.82,
+                78.3,
+                86.13,
+                91.61,
+                97.88,
+                106.49,
+                115.1,
+                123.71,
+                133.11,
+                142.51,
+                151.9,
+                161.3,
+                170.69,
+                180.09
+              ]
+            },
+            {
+              "key": "param8",
+              "values": [
+                121.69,
+                131.6,
+                141.5,
+                155.65,
+                165.56,
+                176.88,
+                192.44,
+                208.01,
+                223.57,
+                240.55,
+                260.01,
+                282.89,
+                305.77,
+                328.65,
+                353.61
+              ]
+            },
+            {
+              "key": "param9",
+              "values": [
+                25.0,
+                25.0,
+                25.0,
+                25.0,
+                25.0,
+                25.0,
+                25.0,
+                25.0,
+                25.0,
+                25.0,
+                25.0,
+                25.0,
+                25.0,
+                25.0,
+                25.0
+              ]
+            },
+            {
+              "key": "param10",
+              "values": [
+                63.93,
+                69.14,
+                74.34,
+                81.77,
+                86.98,
+                92.93,
+                101.1,
+                109.28,
+                117.46,
+                126.38,
+                135.3,
+                144.22,
+                153.14,
+                162.06,
+                170.98
+              ]
+            },
+            {
+              "key": "param11",
+              "values": [
+                127.84,
+                138.24,
+                148.65,
+                163.51,
+                173.92,
+                185.81,
+                202.16,
+                218.51,
+                234.86,
+                252.7,
+                270.54,
+                288.38,
+                306.22,
+                324.05,
+                341.89
+              ]
+            },
+            {
+              "key": "param12",
+              "values": [
+                159.68,
+                172.67,
+                185.67,
+                204.24,
+                217.23,
+                232.09,
+                252.51,
+                272.93,
+                293.36,
+                315.64,
+                337.92,
+                360.2,
+                382.48,
+                404.76,
+                427.04
+              ]
+            }
+          ]
         },
         {
           "key": "s2",
-          "image": null,
+          "image": "yun-jin_s2.png",
           "type": "elementalSkill",
-          "stats": []
+          "stats": [
+            {
+              "key": "param1",
+              "values": [
+                149.12,
+                160.3,
+                171.49,
+                186.4,
+                197.58,
+                208.77,
+                223.68,
+                238.59,
+                253.5,
+                268.42,
+                283.33,
+                298.24,
+                316.88,
+                335.52,
+                354.16
+              ]
+            },
+            {
+              "key": "param2",
+              "values": [
+                260.96,
+                280.53,
+                300.1,
+                326.2,
+                345.77,
+                365.34,
+                391.44,
+                417.54,
+                443.63,
+                469.73,
+                495.82,
+                521.92,
+                554.54,
+                587.16,
+                619.78
+              ]
+            },
+            {
+              "key": "param3",
+              "values": [
+                372.8,
+                400.76,
+                428.72,
+                466.0,
+                493.96,
+                521.92,
+                559.2,
+                596.48,
+                633.76,
+                671.04,
+                708.32,
+                745.6,
+                792.2,
+                838.8,
+                885.4
+              ]
+            },
+            {
+              "key": "param4",
+              "values": [
+                12.0,
+                12.9,
+                13.8,
+                15.0,
+                15.9,
+                16.8,
+                18.0,
+                19.2,
+                20.4,
+                21.6,
+                22.8,
+                24.0,
+                25.5,
+                27.0,
+                28.5
+              ]
+            },
+            {
+              "key": "param5",
+              "values": [
+                1155.0,
+                1271.0,
+                1396.0,
+                1531.0,
+                1675.0,
+                1830.0,
+                1993.0,
+                2167.0,
+                2350.0,
+                2542.0,
+                2744.0,
+                2956.0,
+                3178.0,
+                3409.0,
+                3650.0
+              ]
+            },
+            {
+              "key": "param6",
+              "values": [
+                9.0,
+                9.0,
+                9.0,
+                9.0,
+                9.0,
+                9.0,
+                9.0,
+                9.0,
+                9.0,
+                9.0,
+                9.0,
+                9.0,
+                9.0,
+                9.0,
+                9.0
+              ]
+            }
+          ]
         },
         {
           "key": "s3",
-          "image": null,
+          "image": "yun-jin_s3.png",
           "type": "elementalBurst",
-          "stats": []
+          "stats": [
+            {
+              "key": "param1",
+              "values": [
+                244.0,
+                262.3,
+                280.6,
+                305.0,
+                323.3,
+                341.6,
+                366.0,
+                390.4,
+                414.8,
+                439.2,
+                463.6,
+                488.0,
+                518.5,
+                549.0,
+                579.5
+              ]
+            },
+            {
+              "key": "param2",
+              "values": [
+                32.16,
+                34.57,
+                36.98,
+                40.2,
+                42.61,
+                45.02,
+                48.24,
+                51.46,
+                54.67,
+                57.89,
+                61.1,
+                64.32,
+                68.34,
+                72.36,
+                76.38
+              ]
+            },
+            {
+              "key": "param3",
+              "values": [
+                12.0,
+                12.0,
+                12.0,
+                12.0,
+                12.0,
+                12.0,
+                12.0,
+                12.0,
+                12.0,
+                12.0,
+                12.0,
+                12.0,
+                12.0,
+                12.0,
+                12.0
+              ]
+            },
+            {
+              "key": "param4",
+              "values": [
+                30.0,
+                30.0,
+                30.0,
+                30.0,
+                30.0,
+                30.0,
+                30.0,
+                30.0,
+                30.0,
+                30.0,
+                30.0,
+                30.0,
+                30.0,
+                30.0,
+                30.0
+              ]
+            },
+            {
+              "key": "param5",
+              "values": [
+                15.0,
+                15.0,
+                15.0,
+                15.0,
+                15.0,
+                15.0,
+                15.0,
+                15.0,
+                15.0,
+                15.0,
+                15.0,
+                15.0,
+                15.0,
+                15.0,
+                15.0
+              ]
+            },
+            {
+              "key": "param6",
+              "values": [
+                60.0,
+                60.0,
+                60.0,
+                60.0,
+                60.0,
+                60.0,
+                60.0,
+                60.0,
+                60.0,
+                60.0,
+                60.0,
+                60.0,
+                60.0,
+                60.0,
+                60.0
+              ]
+            }
+          ]
         }
       ],
       "passives": [
@@ -51884,7 +53892,60 @@
           "image": "yun-jin_c6.png"
         }
       ],
-      "builds": [],
+      "builds": [
+        {
+          "isRecommended": true,
+          "type": "support",
+          "subType": "none",
+          "skillPriorities": [
+            "elementalBurst",
+            "elementalSkill"
+          ],
+          "weaponKeys": [
+            "favonius-lance",
+            "prototype-starglitter",
+            "engulfing-lightning"
+          ],
+          "artifacts": [
+            {
+              "oneKey": "husk-of-opulent-dreams",
+              "multiples": [],
+              "stats": [
+                "hp",
+                "atk",
+                "energyRechargePercentage",
+                "defPercentage",
+                "defPercentage"
+              ]
+            },
+            {
+              "oneKey": null,
+              "multiples": [
+                {
+                  "key": "husk-of-opulent-dreams",
+                  "quantity": 2
+                },
+                {
+                  "key": "emblem-of-severed-fate",
+                  "quantity": 2
+                }
+              ],
+              "stats": [
+                "hp",
+                "atk",
+                "energyRechargePercentage",
+                "defPercentage",
+                "defPercentage"
+              ]
+            }
+          ],
+          "subStatsToFocus": [
+            "energyRechargePercentage",
+            "critRatePercentage",
+            "defPercentage"
+          ]
+        }
+      ],
       "stats": [
         {
           "level": 1,

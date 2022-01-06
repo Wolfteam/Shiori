@@ -4602,81 +4602,144 @@
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Morgensternstachel",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Standardangriff",
+              "description": "Führt bis zu 5 Lanzenstiche hintereinander aus.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Heftiger Schlag",
+              "description": "Verbraucht eine gewisse Menge Ausdauer, sticht geschwind nach vorn und fügt den Gegnern in der Bahn Schaden zu.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Angriff aus dem Fall",
+              "description": "Schlägt beim Fallen aus der Luft auf den Boden, greift alle Gegner in der Bahn an und verursacht beim Aufkommen Flächenschaden.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "SCH Phase 1|{param1}%",
+            "SCH Phase 2|{param2}%",
+            "SCH Phase 3|{param3}%",
+            "SCH Phase 4|{param4}% + {param5}%",
+            "SCH Phase 5|{param6}%",
+            "SCH heftiger Schläge|{param7}%",
+            "Ausdauerverbrauch heftiger Schläge|{param8} Punkte",
+            "SCH beim Fallen|{param9}%",
+            "SCH beim Fallen aus niedriger/großer Höhe|{param10}% / {param11}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Mantra der Geisterbeschwörung",
+          "description": "Fester und silberner eisiger Tau möge das Böse vertreiben.\r\nVerleiht allen Truppenmitgliedern in der Nähe den Effekt „Eisfeder“ und verursacht je nachdem, ob gedrückt oder gedrückt gehalten wird, auf unterschiedliche Weise Kryo-Schaden.\r\n",
+          "abilities": [
+            {
+              "name": "Drücken",
+              "description": "Stößt gemeinsam mit einem „Talismangeist“ vor und fügt Gegnern in der Bahn Kryo-Schaden zu.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Gedrückt halten",
+              "description": "Befielt dem Talismangeist, Kryo-Flächenschaden zu verursachen.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Eisfeder",
+              "description": "Erhöht den Gegnern mit Standardangriffen, heftigen Schlägen, Angriffen aus dem Fall, Elementarfähigkeiten und Spezialfähigkeiten zugefügten Kryo-Schaden basierend auf Shenhes eigenem aktuellen ANG.\r\nDer Effekt „Eisfeder“ erlischt nach dem Ende der Wirkungsdauer oder nach dem Inkrafttreten einer bestimmten Menge an Stapelungen. Eisfeder hält beim Gedrückthalten länger und verleiht mehr Stapelungen als beim Drücken.\r\nVerbraucht beim Treffen mehrerer Gegner mit einem einzelnen Kryo-Schaden eine der Anzahl der getroffenen Gegner entsprechende Menge an wirksamen Stapelungen. Die wirksamen Stapelungen jedes Truppenmitglieds mit dem Effekt Eisfeder werden unabhängig voneinander berechnet.\r\n",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "SCH bei Drücken|{param1}%",
+            "SCH bei Gedrückthalten|{param2}%",
+            "SCH-Bonus|{param3}% ANG",
+            "Dauer bei Drücken/Gedrückthalten|{param4} / {param5} s",
+            "Wirksame Stapelungen bei Drücken/Gedrückthalten|{param6} / {param7}",
+            "Abklingzeit für Drücken|{param8} s",
+            "Abklingzeit für Gedrückthalten|{param9} s"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
+          "title": "Geisterbefehligung der göttlichen Jungfrau",
+          "description": "Entfesselt die Kraft des „Talismangeists“, lässt ihn auf die Welt los und verursacht Kryo-Flächenschaden.\r\nDer Talismangeist erschafft ein Feld, das den Kryo-WDS sowie den physischen WDS von Gegnern darin verringert und ihnen fortlaufend Kryo-Schaden zufügt.\r\n",
           "abilities": [],
-          "stats": []
+          "stats": [
+            "Fähigkeits-SCH|{param1}%",
+            "WDS-Malus|{param2}%",
+            "Fortlaufender SCH|{param3}%",
+            "Dauer|{param4} s",
+            "Abklingzeit|{param5} s",
+            "Elementarenergie|{param6}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "Kenntnisse von der Umgebung",
+          "description": "Bringt bei 20-stündigen Erkundungsentsendungen in Liyue 25 % mehr Belohnungen.\r\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
+          "title": "Göttliche Umarmung",
+          "description": "Erhöht den Kryo-Schadensbonus aktueller Figuren im Wirkungsbereich von Geisterbefehligung der göttlichen Jungfrau um 15 %.\r\n",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
+          "title": "Siegel der Geisterbindung",
+          "description": "Verleiht nach Anwendung von Mantra der Geisterbeschwörung durch Shenhe allen Truppenmitgliedern in der Nähe folgende Effekte:\r\n",
+          "descriptions": [
+            "Drücken: Erhöht den mit Elementarfähigkeiten und Spezialfähigkeiten verursachten Schaden 10 s lang um 15 %.",
+            "Gedrückt halten: Erhöht den mit Standardangriffen, heftigen Schlägen und Angriffen aus dem Fall verursachten Schaden 15 s lang um 15 %."
+          ]
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "Klarheiten im Herzen",
+          "description": "Ermöglicht 1 weitere Anwendung von Mantra der Geisterbeschwörung.\r\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "Fixierung des Geistes",
+          "description": "Verlängert die Wirkungsdauer von Geisterbefehligung der göttlichen Jungfrau um 6 s. Erhöht KSCH des Kryo-Schadens aktueller Figuren im Wirkungsbereich um 15 %.\r\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "Zurückgezogenheit",
+          "description": "Erhöht die Stufe der Fähigkeit Mantra der Geisterbeschwörung um 3.\r\nHöchststufe 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
+          "title": "Durchdringender Blick",
+          "description": "Verleiht Shenhe beim Auslösen des Schadensbonus von „Eisfeder“ durch Figuren im von Shenhe selbst verliehenen Zustand Eisfeder eine Stapelung „Frosthimmelmantra“:\r\n",
+          "descriptions": [
+            "Entfernt beim Auslösen von Mantra der Geisterbeschwörung durch Shenhe alle Stapelungen von Frosthimmelmantra und erhöht den mit diesem Mantra der Geisterbeschwörung verursachten Schaden je nach der Menge an entfernten Stapelungen um 5 %.",
+            "Dieser Effekt ist 50-fach stapelbar und hält 60 s."
+          ]
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "Erlangung von Göttlichkeit",
+          "description": "Erhöht die Stufe der Fähigkeit Geisterbefehligung der göttlichen Jungfrau um 3.\r\nHöchststufe 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
+          "title": "Mystische Verlassenheit",
+          "description": "Verringert beim Auslösen von Eisfeder mit dem Schaden von Standardangriffen und heftigen Schlägen von Figuren keine Stapelungen von Eisfeder mehr.\r\n",
           "descriptions": []
         }
       ]
@@ -6234,6 +6297,93 @@
       ]
     },
     {
+      "key": "yae-miko",
+      "name": "Yae Miko",
+      "title": "???",
+      "description": "",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ]
+    },
+    {
       "key": "yanfei",
       "name": "Yanfei",
       "title": "Naive Weisheit",
@@ -6516,81 +6666,137 @@
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Wolkenfetzer",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Standardangriff",
+              "description": "Führt bis zu 5 Lanzenstiche hintereinander aus.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Heftiger Schlag",
+              "description": "Verbraucht eine gewisse Menge Ausdauer, sticht geschwind nach vorn und fügt den Gegnern in der Bahn Schaden zu.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Angriff aus dem Fall",
+              "description": "Schlägt beim Fallen aus der Luft auf den Boden, greift alle Gegner in der Bahn an und verursacht beim Aufkommen Flächenschaden.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "SCH Phase 1|{param1}%",
+            "SCH Phase 2|{param2}%",
+            "SCH Phase 3|{param3}% + {param4}%",
+            "SCH Phase 4|{param5}% + {param6}%",
+            "SCH Phase 5|{param7}%",
+            "SCH heftiger Schläge|{param8}%",
+            "Ausdauerverbrauch heftiger Schläge|{param9} Punkte",
+            "SCH beim Fallen|{param10}%",
+            "SCH beim Fallen aus niedriger/großer Höhe|{param11}% / {param12}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Wolkenöffnung",
+          "description": "Mit den theatralischen Aufführungen ihrer Kampfkünste kommt Fräulein Yun sogar gegen ihre Feinde an.\r\n",
+          "abilities": [
+            {
+              "name": "Drücken",
+              "description": "Verursacht mit dem Speertanz des Wolkenzupfens Geo-Schaden.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Gedrückt halten",
+              "description": "Nimmt die Stellung der Wolkenöffnung ein, lädt auf und erschafft einen Schutzschild, der Schaden basierend auf Yun Jins max. LP und bei elementarem sowie physischem Schaden 150 % abhält. Der Schutzschild hält bis zum Ende der Elementarfähigkeit.\r\nYun Jin wirbelt beim Loslassen der Taste, beim Ende der Wirkungsdauer oder dann, wenn der Schild zerstört wird, ihre Stangenwaffe mit der aufgeladenen Kraft und verursacht Geo-Schaden.\r\nErhält beim Auslösen je nach Zeit der Aufladung den Zustand von Aufladung Phase 1 oder Phase 2.\r\n",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "SCH bei Drücken|{param1}% VTD",
+            "SCH bei Aufladung (Phase 1)|{param2}% VTD",
+            "SCH bei Aufladung (Phase 2)|{param3}% VTD",
+            "Schildstärke|{param4}% der max. LP + {param5}",
+            "Abklingzeit|{param6} s"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Banner der brechenden Klippen",
+          "description": "Verursacht Geo-Flächenschaden und verleiht allen Truppenmitgliedern in der Nähe die „Formation der Fliegenden Wolken“\r\n",
+          "abilities": [
+            {
+              "name": "Formation der fliegenden Wolken",
+              "description": "Erhöht, wenn Gegnern mit Standardangriffen Schaden zugefügt wird, den verursachten Schaden basierend auf Yun Jins eigener aktueller VTD.\r\nDer Effekt „Formation der fliegenden Wolken“ erlischt am Ende der Wirkungszeit oder nach dem Inkrafttreten einer bestimmten Menge an Stapelungen.\r\nVerbraucht beim Treffen mehrerer Gegner mit einem einzelnen Standardangriff eine der Anzahl der getroffenen Gegner entsprechende Menge an wirksamen Stapelungen. Die wirksamen Stapelungen jedes Truppenmitglieds mit dem Effekt Formation der fliegenden Wolken werden unabhängig voneinander berechnet.\r\n",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "Fähigkeits-SCH|{param1}%",
+            "SCH-Bonus|{param2}% VTD",
+            "Dauer|{param3} s",
+            "Wirksame Stapelungen|{param4}",
+            "Abklingzeit|{param5} s",
+            "Elementarenergie|{param6}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "Leichte Nahrung",
+          "description": "Stellt bei der perfekten Zubereitung eines Gerichts mit Abenteuer-Funktion mit einer Wahrscheinlichkeit von 12 % den 2-fachen Ertrag her.\r\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
+          "title": "Selbstsicherheit",
+          "description": "Löst Wolkenöffnung bei Anwendung im Augenblick des Erleidens eines Angriffs wie beim Gedrückthalten für Aufladung Phase 2 aus.\r\n",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "NA",
-          "description": "",
+          "title": "Nieder mit den alten Werten",
+          "description": "Erhöht den Schadensbonus für Standardangriffe von Formation der Fliegenden Wolken bei Truppenmitgliedern mit 1/2/3/4 verschiedenen Elementartypen zusätzlich um 2,5/5/7,5/11,5 % von Yun Jins VTD.\r\n",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "Fliegender Gallopp",
+          "description": "Verkürzt die Abklingzeit von Wolkenöffnung um 18 %.\r\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "Unzählige Requisiten",
+          "description": "Erhöht nach dem Auslösen von Banner der brechenden Klippen den mit Standardangriffen aller Truppenmitglieder verursachten Schaden 12 s lang um 15 %.\r\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "Flagge auf dem Mast",
+          "description": "Erhöht die Stufe der Fähigkeit Banner der brechenden Klippen um 3.\r\nHöchststufe 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "Auf in die Wolken",
+          "description": "Erhöht nach dem Auslösen der Reaktion Kristallisation durch Yun Jin die VTD 12 s lang um 20 %.\r\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "Überall bekannt",
+          "description": "Erhöht die Stufe der Fähigkeit Wolkenöffnung um 3.\r\nHöchststufe 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
+          "title": "Gemeinsame Unternehmung",
+          "description": "Erhöht die Angriffs-GSW mit Standardangriffen von Figuren im Zustand Formation der Fliegenden Wolken um 12 %.\r\n",
           "descriptions": []
         }
       ]
@@ -6917,6 +7123,18 @@
         "Erhöht den von Pyro- oder Elektro-Effekten betroffenen Gegnern zugefügten Schaden um {color}18{/color} %.",
         "Erhöht den von Pyro- oder Elektro-Effekten betroffenen Gegnern zugefügten Schaden um {color}21{/color} %.",
         "Erhöht den von Pyro- oder Elektro-Effekten betroffenen Gegnern zugefügten Schaden um {color}24{/color} %."
+      ]
+    },
+    {
+      "key": "calamity-queller",
+      "name": "Ende des Unheils",
+      "description": "Eine sehr scharfe Waffe, hergestellt aus sonderbaren Kristallen. Die ganze Waffe überzieht ein kalter, blauer Schimmer, der Geschichten aus der endlosen Vergangenheit zu erzählen scheint.",
+      "refinements": [
+        "Erhöht den Schaden aller Elemente um {color}12{/color} %. Verleiht beim Auslösen einer Elementarfähigkeit den Effekt „Vollkommenheit“, der 20 s hält, den ANG pro Sekunde um {color}3,2{/color} % erhöht und 6-fach stapelbar ist. Wenn die mit dieser Waffe ausgerüstete Figur inaktiv ist, wird der ANG-Bonus verdoppelt.",
+        "Erhöht den Schaden aller Elemente um {color}15{/color} %. Verleiht beim Auslösen einer Elementarfähigkeit den Effekt „Vollkommenheit“, der 20 s hält, den ANG pro Sekunde um {color}4{/color} % erhöht und 6-fach stapelbar ist. Wenn die mit dieser Waffe ausgerüstete Figur inaktiv ist, wird der ANG-Bonus verdoppelt.",
+        "Erhöht den Schaden aller Elemente um {color}18{/color} %. Verleiht beim Auslösen einer Elementarfähigkeit den Effekt „Vollkommenheit“, der 20 s hält, den ANG pro Sekunde um {color}4,8{/color} % erhöht und 6-fach stapelbar ist. Wenn die mit dieser Waffe ausgerüstete Figur inaktiv ist, wird der ANG-Bonus verdoppelt.",
+        "Erhöht den Schaden aller Elemente um {color}21{/color} %. Verleiht beim Auslösen einer Elementarfähigkeit den Effekt „Vollkommenheit“, der 20 s hält, den ANG pro Sekunde um {color}5,6{/color} % erhöht und 6-fach stapelbar ist. Wenn die mit dieser Waffe ausgerüstete Figur inaktiv ist, wird der ANG-Bonus verdoppelt.",
+        "Erhöht den Schaden aller Elemente um {color}24{/color} %. Verleiht beim Auslösen einer Elementarfähigkeit den Effekt „Vollkommenheit“, der 20 s hält, den ANG pro Sekunde um {color}6,4{/color} % erhöht und 6-fach stapelbar ist. Wenn die mit dieser Waffe ausgerüstete Figur inaktiv ist, wird der ANG-Bonus verdoppelt."
       ]
     },
     {
@@ -8896,6 +9114,11 @@
       "description": "Hörner, die aus gehärteter, über tausend Jahre kristallisierter Jade erschaffen wurden, sind die natürliche Krone des Drachenkönigs.\r\nDurchdrungen von Geist und aus dem Fels gehauen, wurde er aus dem Herzen des Berges geboren, um dem Land inmitten von Monolithen die Kraft der Erde zu zeigen, und seine langen goldenen Hörner sind das Zeichen seines alten Streits mit einem alten König.\r\nEine Zeit lang war dieses Horn zerbrochen und verlor seinen Glanz, aber jetzt schimmert es kalt und golden, wenn es in deiner Handfläche liegt."
     },
     {
+      "key": "dragonheirs-false-fin",
+      "name": "Falsche Flosse der Drachennachfahren",
+      "description": "Ein Stück biologisches Gewebe, das du gefunden hast, nachdem du die Tiefsee-Drachenechsen besiegt hattest. Obwohl es wie eine Art Flosse aussieht, hat es eigentlich gar keine Funktion.\r\nDas Volk von Byakuyakoku hat die Tiefsee-Drachenechsen einst sehr gründlich untersucht. Ihr auffälligstes Merkmal war die Fähigkeit zu wählen, welche Eigenschaften sie an ihre Nachkommen weitergeben wollten. Wegen ihres großen Hasses auf die Menschheit verlieren diese Drachenechsen jede Sehkraft, wenn sie ausgewachsen sind. Gleichzeitig haben sie zu Kampfzwecken einen gewissen Polymorphismus der Elemente entwickelt."
+    },
+    {
       "key": "dream-of-the-dandelion-gladiator",
       "name": "Ideal des Löwenzahnkriegers",
       "description": "Material mit der Kraft, Waffen aufsteigen zu lassen.\r\nVennessa wurde aus der Sklaverei befreit und doch wurde sie von etwas noch Größerem gebunden. Einst war es ihr Volk, so kümmerte sie sich nun um ganz Mondstadt. Ihr Ziel war es, Freiheit in die Welt zu bringen.\r\nIhr innigster Wunsch war es, dass die Welt etwas stärker würde."
@@ -10158,6 +10381,14 @@
       "name": "Mitachurl mit Feueraxt"
     },
     {
+      "key": "bolteater-bathysmal-vishap",
+      "name": "Tiefsee-Drachenechse – Donnerverschlinger"
+    },
+    {
+      "key": "bolteater-bathysmal-vishap-hatchling",
+      "name": "Junge Tiefsee-Drachenechse – Donnerverschlinger"
+    },
+    {
       "key": "childe",
       "name": "„Der Graf“"
     },
@@ -10198,6 +10429,10 @@
       "name": "Kryo-Schleim"
     },
     {
+      "key": "cryo-specter",
+      "name": "Kryo-Gespenst"
+    },
+    {
       "key": "cryo-whopperflower",
       "name": "Gigantische Kryo-Vaniloqua"
     },
@@ -10236,6 +10471,10 @@
     {
       "key": "electro-slime",
       "name": "Elektro-Schleim"
+    },
+    {
+      "key": "electro-specter",
+      "name": "Elektro-Gespenst"
     },
     {
       "key": "electro-whopperflower",
@@ -10308,6 +10547,10 @@
     {
       "key": "geovishap-hatchling",
       "name": "Junge Geo-Drachenechse"
+    },
+    {
+      "key": "golden-wolflord",
+      "name": "Goldener Garmfürst"
     },
     {
       "key": "hilichurl",
@@ -10442,6 +10685,18 @@
       "name": "Maguu Kenki"
     },
     {
+      "key": "maguu-kenki-galloping-frost",
+      "name": "Maguu Kenki – Galoppierender Frost"
+    },
+    {
+      "key": "maguu-kenki-lone-gale",
+      "name": "Maguu Kenki – Einsamer Sturm"
+    },
+    {
+      "key": "maguu-kenki-mask-of-terror",
+      "name": "Maguu Kenki – Maske des Schreckens"
+    },
+    {
       "key": "millelith-sergeant",
       "name": "Millelithenausbilder"
     },
@@ -10490,6 +10745,14 @@
       "name": "Alte Geo-Drachenechse"
     },
     {
+      "key": "primordial-bathysmal-vishap",
+      "name": "Tiefsee-Drachenechse – Urtyp"
+    },
+    {
+      "key": "primordial-bathysmal-vishap-hatchling",
+      "name": "Junge Tiefsee-Drachenechse – Urtyp"
+    },
+    {
       "key": "pyro-abyss-mage",
       "name": "Pyro-Abgrundmagier"
     },
@@ -10510,12 +10773,24 @@
       "name": "Pyro-Schleim"
     },
     {
+      "key": "pyro-specter",
+      "name": "Pyro-Gespenst"
+    },
+    {
       "key": "pyro-whopperflower",
       "name": "Gigantische Pyro-Vaniloqua"
     },
     {
       "key": "raiden-shogun",
       "name": "Shougun Raiden"
+    },
+    {
+      "key": "rimebiter-bathysmal-vishap",
+      "name": "Tiefsee-Drachenechse – Eisbeißer"
+    },
+    {
+      "key": "rimebiter-bathysmal-vishap-hatchling",
+      "name": "Junge Tiefsee-Drachenechse – Eisbeißer"
     },
     {
       "key": "rock-shield-hilichurl-guard",
@@ -10596,6 +10871,10 @@
     {
       "key": "thunderhelm-lawachurl",
       "name": "Blitzhelm-Lawachurl"
+    },
+    {
+      "key": "treasure-hoarder-wallenstein",
+      "name": "Schatzräuber Wallenstein"
     },
     {
       "key": "treasure-hoarders-boss",

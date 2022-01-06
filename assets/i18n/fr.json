@@ -4601,86 +4601,149 @@
     {
       "key": "shenhe",
       "name": "Shenhe",
-      "title": "？？？",
-      "description": "",
+      "title": "Transcendance solitaire",
+      "description": "Une disciple Adepte avec un air des plus inhabituels. Après avoir passé beaucoup de temps à s'instruire en isolement dans les montagnes de Liyue, elle est devenue tout aussi froide et distante que les Adeptes eux-mêmes.",
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Percée des étoiles",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Attaque normale",
+              "description": "Enchaîne jusqu'à 5 coups de lance.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Attaque chargée",
+              "description": "Consomme de l'endurance pour charger en ligne droite et infliger des DGT aux ennemis sur la route.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Attaque plongeante",
+              "description": "Plonge depuis les airs pour frapper le sol, infligeant des DGT aux ennemis sur la route et des DGT de zone à l'impact.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "DGT 1er coup|{param1}%",
+            "DGT 2e coup|{param2}%",
+            "DGT 3e coup|{param3}%",
+            "DGT 4e coup|{param4}% + {param5}%",
+            "DGT 5e coup|{param6}%",
+            "DGT attaque chargée|{param7}%",
+            "Coût d'endurance attaque chargée|{param8} pts",
+            "DGT durant la chute|{param9}%",
+            "DGT chute basse/élevée|{param10}% / {param11}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Invocation d'esprit printanier",
+          "description": "La rosée givrée et argentée exorcisera tous les démons.\r\nAccorde un effet de pennage glacé à tous les membres de l'équipe à proximité, et inflige des DGT Cryo de différentes manières selon que la capacité a été activée avec un appui simple ou long.\r\n",
+          "abilities": [
+            {
+              "name": "Appui simple",
+              "description": "Se précipite vers l'avant avec un esprit talismanique, infligeant des DGT Cryo aux ennemis en chemin.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Appui long",
+              "description": "Ordonne à l'esprit talismanique d'infliger des DGT Cryo de zone.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Pennage glacé",
+              "description": "Lorsqu'une attaque normale, chargée ou plongeante, une compétence ou un déchaînement élémentaire inflige des DGT Cryo à un ennemi, les DGT infligés augmentent en fonction de l'ATQ actuelle de Shenhe.\r\nLes effets du pennage glacé disparaissent à la fin de sa durée ou après avoir activé un certain nombre de cumuls. En utilisant un pennage glacé avec un appui long à la place d'un appui simple, sa durée et le nombre de cumuls générés augmentent.\r\nLorsqu'une attaque de DGT Cryo touche plusieurs ennemis en même temps, les cumuls sont consommés selon le nombre d'ennemis touchés. Les cumuls de pennage glacé sont calculés indépendamment pour tous les personnages de l'équipe.\r\n",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "DGT appui simple|{param1}%",
+            "DGT appui long|{param2}%",
+            "Bonus de DGT|{param3}% ATQ",
+            "Durée d'appui simple/long|{param4} s/ {param5} s",
+            "Cumuls d'appui simple/long|{param6} / {param7}",
+            "TdR appui simple|{param8} s",
+            "TdR appui long|{param9} s"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
+          "title": "Délivrance de la demoiselle divine",
+          "description": "Libère la puissance de l'esprit talismanique, lui permettant de se déplacer librement dans ce plan d'existence pour infliger des DGT Cryo de zone.\r\nL'esprit talismanique crée alors un champ qui diminue les RÉS Cryo et physique des ennemis, et inflige des DGT Cryo de façon continue aux ennemis à l'intérieur.\r\n",
           "abilities": [],
-          "stats": []
+          "stats": [
+            "DGT compétence|{param1}%",
+            "Baisse RÉS|{param2}%",
+            "DGT continus|{param3}%",
+            "Durée|{param4} s",
+            "Temps de recharge|{param5} s",
+            "Énergie élémentaire|{param6}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "Arrivée opportune",
+          "description": "Augmente les récompenses d'une expédition de 20 h à Liyue de 25 %.\r\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
+          "title": "Étreinte divine",
+          "description": "Lorsque le personnage déployé est dans le champ généré par Délivrance de la demoiselle divine, son bonus de DGT Cryo augmente de 15 %.\r\n",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
+          "title": "Sceau de communion spirituelle",
+          "description": "Lorsque Shenhe utilise Invocation d'esprit printanier, tous les personnages de l'équipe à proximité bénéficient des effets suivants :\r\n",
+          "descriptions": [
+            "Appui simple : les DGT infligés par les compétences et les déchaînements élémentaires augmentent de 15 % pendant 10 s.",
+            "Appui long : les DGT infligés par les attaques normales, chargées et plongeantes augmentent de 15 % pendant 15 s."
+          ]
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "Clarté du cœur",
+          "description": "Confère une charge supplémentaire pour Invocation d'esprit printanier.\r\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "Esprit centré",
+          "description": "Prolonge la durée de Délivrance de la demoiselle divine de 6 s. De plus, les DGT CRIT des DGT Cryo du personnage déployé dans le champ augmentent de 15 %.\r\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "Isolement",
+          "description": "Niveau d'aptitude Invocation d'esprit printanier +3.\r\nNiveau max : 15\r\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
+          "title": "Clairvoyance",
+          "description": "Lorsqu'un personnage affecté par le pennage glacé de Shenhe déclenche l'effet de bonus de DGT de la flèche, Shenhe obtient 1 cumul de Mantra de givre :\r\n",
+          "descriptions": [
+            "Lorsque Shenhe utilise Invocation d'esprit printanier, tous les cumuls de Mantra de givre sont consommés pour augmenter les DGT infligés par cette invocation d'esprit printanier de 5 % pour chaque cumul consommé.",
+            "Cet effet peut être cumulé 50 fois, et dure 60 s."
+          ]
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "Divinisation",
+          "description": "Niveau d'aptitude Délivrance de la demoiselle divine +3.\r\nNiveau max : 15\r\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
+          "title": "Abandon mystique",
+          "description": "Lorsqu'un personnage déclenche les effets d'un pennage glacé avec les DGT d'une attaque normale ou chargée, aucun cumul n'est consommé.\r\n",
           "descriptions": []
         }
       ]
@@ -6240,6 +6303,93 @@
       ]
     },
     {
+      "key": "yae-miko",
+      "name": "Yae Miko",
+      "title": "???",
+      "description": "",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ]
+    },
+    {
       "key": "yanfei",
       "name": "Yanfei",
       "title": "Sage innocence",
@@ -6517,86 +6667,142 @@
     {
       "key": "yun-jin",
       "name": "Yun Jin",
-      "title": "？？？",
-      "description": "",
+      "title": "Nova de scène",
+      "description": "Une talentueuse chanteuse d'opéra et une dramaturge très célèbre à Liyue. Son style unique, doux et élégant, lui ressemble beaucoup.",
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Caresse des nuages",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Attaque normale",
+              "description": "Enchaîne jusqu'à 5 coups de lance.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Attaque chargée",
+              "description": "Consomme de l'endurance pour charger en ligne droite et infliger des DGT aux ennemis sur la route.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Attaque plongeante",
+              "description": "Plonge depuis les airs pour frapper le sol, infligeant des DGT aux ennemis sur la route et des DGT de zone à l'impact.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "DGT 1er coup|{param1}%",
+            "DGT 2e coup|{param2}%",
+            "DGT 3e coup|{param3}% + {param4}%",
+            "DGT 4e coup|{param5}% + {param6}%",
+            "DGT 5e coup|{param7}%",
+            "DGT attaque chargée|{param8}%",
+            "Coût d'endurance attaque chargée|{param9} pts",
+            "DGT durant la chute|{param10}%",
+            "DGT chute basse/élevée|{param11}% / {param12}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Épanouissement ouvert",
+          "description": "Bien que maître Yun ne fasse que jouer la comédie lors de ses combats sur scène, ses talents avec une lance sont bien réels.\r\n",
+          "abilities": [
+            {
+              "name": "Appui simple",
+              "description": "Brandit sa lance pour caresser les nuages, infligeant des DGT Géo.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Appui long",
+              "description": "Adopte la posture de l'épanouissement ouvert pour se charger, formant ainsi un bouclier. L'absorption de DGT du bouclier est fonction des PV max de Yun Jin, et il est efficace à 150 % contre les DGT élémentaires et physiques. Le bouclier dure jusqu'à ce qu'elle finisse de libérer sa compétence élémentaire.\r\nLorsque vous relâchez la compétence, que la durée prend fin ou que le bouclier est détruit, Yun Jin libère l'énergie stockée sous forme d'attaque, infligeant des DGT Géo.\r\nEn fonction du temps passé à charger, une attaque de 1e ou 2e charge sera déclenchée.\r\n",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "DGT appui simple|{param1}% DÉF",
+            "DGT 1e charge|{param2}% DÉF",
+            "DGT 2e charge|{param3}% DÉF",
+            "PV du bouclier|{param4}% PV max + {param5} PV",
+            "Temps de recharge|{param6} s"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Bannière de rupture des falaises",
+          "description": "Inflige des DGT Géo de zone et accorde une formation de bannière de nuagerie à tous les personnages de l'équipe à proximité.\r\n",
+          "abilities": [
+            {
+              "name": "Formation de bannière de nuagerie",
+              "description": "Lorsque le personnage inflige des DGT d'attaque normale à un ennemi, les DGT infligés augmentent en fonction de la DÉF actuelle de Yun Jin.\r\nLes effets de la formation de bannière de nuagerie disparaissent à la fin de sa durée ou après avoir activé un certain nombre de cumuls.\r\nLorsqu'une attaque normale touche plusieurs ennemis en même temps, les cumuls sont consommés selon le nombre d'ennemis touchés. Les cumuls de formation de bannière de nuagerie sont calculés indépendamment pour tous les personnages de l'équipe.\r\n",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "DGT compétence|{param1}%",
+            "Augmentation de DGT|{param2}% DÉF",
+            "Durée|{param3} s",
+            "Cumuls|{param4}",
+            "Temps de recharge|{param5} s",
+            "Énergie élémentaire|{param6}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "Nutrition optimisée",
+          "description": "12 % de chances d'obtenir un plat supplémentaire lorsque vous cuisinez un plat parfait qui a des effets sur l'exploration.\r\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
+          "title": "Fidèle à soi-même",
+          "description": "Lorsque Yun Jin utilise Épanouissement ouvert au moment exact où elle est attaquée, elle déclenche sa 2e charge.\r\n",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "NA",
-          "description": "",
+          "title": "Rejet des conventions",
+          "description": "Lorsque l'équipe comprend des personnages de 1/2/3/4 types élémentaires, le bonus de DGT d'attaque normale accordé par une formation de bannière de nuagerie augmente davantage d'une valeur équivalant à 2,5 %/5 %/7,5 %/11,5 % de la DÉF de Yun Jin.\r\n",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "Galop vaudevillesque",
+          "description": "Réduit le TdR d'Épanouissement ouvert de 18 %.\r\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "Myriade d'accessoires",
+          "description": "Après avoir utilisé Bannière de rupture des falaises, les DGT des attaques normales de tous les personnages de l'équipe à proximité augmentent de 15 % pendant 12 s.\r\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "Drapeau maritime",
+          "description": "Niveau d'aptitude Bannière de rupture des falaises +3.\r\nNiveau max : 15\r\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "Le tranchant d'une fleur",
+          "description": "Lorsque Yun Jin déclenche une réaction de Cristallisation, sa DÉF augmente de 20 % pendant 12s.\r\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "Célébrité à travers les terres",
+          "description": "Niveau d'aptitude Épanouissement ouvert +3.\r\nNiveau max : 15\r\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
+          "title": "Harmonie esthétique",
+          "description": "Lorsqu'un personnage est affecté par une formation de bannière de nuagerie, la VIT d'attaque de ses attaques normales augmente de 12 %.\r\n",
           "descriptions": []
         }
       ]
@@ -6923,6 +7129,18 @@
         "Augmente les DGT infligés aux ennemis affectés par les éléments Pyro ou Électro de {color}18{/color} %.",
         "Augmente les DGT infligés aux ennemis affectés par les éléments Pyro ou Électro de {color}21{/color} %.",
         "Augmente les DGT infligés aux ennemis affectés par les éléments Pyro ou Électro de {color}24{/color} %."
+      ]
+    },
+    {
+      "key": "calamity-queller",
+      "name": "Étouffeur de calamités",
+      "description": "Une arme finement affûtée forgée à partir d'un cristal étrange. Sa faible lumière bleue semble chuchoter d'innombrables choses du passé.",
+      "refinements": [
+        "Accorde un bonus de DGT élémentaires de {color}12{/color} %. Après l'utilisation d'une compétence élémentaire, accorde 20 s d'Achèvement, augmentant l'ATQ de {color}3,2{/color} % toutes les secondes. Ce bonus d'ATQ peut être cumulé 6 fois. Lorsque le personnage équipé de cette arme fait partie de l'équipe mais n'est pas déployé, le bonus d'ATQ de l'Achèvement est doublé.",
+        "Accorde un bonus de DGT élémentaires de {color}15{/color} %. Après l'utilisation d'une compétence élémentaire, accorde 20 s d'Achèvement, augmentant l'ATQ de {color}4{/color} % toutes les secondes. Ce bonus d'ATQ peut être cumulé 6 fois. Lorsque le personnage équipé de cette arme fait partie de l'équipe mais n'est pas déployé, le bonus d'ATQ de l'Achèvement est doublé.",
+        "Accorde un bonus de DGT élémentaires de {color}18{/color} %. Après l'utilisation d'une compétence élémentaire, accorde 20 s d'Achèvement, augmentant l'ATQ de {color}4,8{/color} % toutes les secondes. Ce bonus d'ATQ peut être cumulé 6 fois. Lorsque le personnage équipé de cette arme fait partie de l'équipe mais n'est pas déployé, le bonus d'ATQ de l'Achèvement est doublé.",
+        "Accorde un bonus de DGT élémentaires de {color}21{/color} %. Après l'utilisation d'une compétence élémentaire, accorde 20 s d'Achèvement, augmentant l'ATQ de {color}5,6{/color} % toutes les secondes. Ce bonus d'ATQ peut être cumulé 6 fois. Lorsque le personnage équipé de cette arme fait partie de l'équipe mais n'est pas déployé, le bonus d'ATQ de l'Achèvement est doublé.",
+        "Accorde un bonus de DGT élémentaires de {color}24{/color} %. Après l'utilisation d'une compétence élémentaire, accorde 20 s d'Achèvement, augmentant l'ATQ de {color}6,4{/color} % toutes les secondes. Ce bonus d'ATQ peut être cumulé 6 fois. Lorsque le personnage équipé de cette arme fait partie de l'équipe mais n'est pas déployé, le bonus d'ATQ de l'Achèvement est doublé."
       ]
     },
     {
@@ -8886,6 +9104,11 @@
       "description": "Ces cornes créées à partir de jade durci et cristallisé pendant des milliers d'années forment la couronne du roi dragon.\r\nInfusé par les esprits et sculpté dans la roche, il est né au cœur de la montagne pour montrer la force de la terre face aux étendues de monolithes, et ses longues cornes dorées sont la marque de sa lutte contre un roi du passé.\r\nCette corne avait, pendant un temps, été brisée et avait perdu de son éclat, mais désormais, elle brille d'une lueur froide et dorée, pendant que vous la tenez dans la paume de votre main."
     },
     {
+      "key": "dragonheirs-false-fin",
+      "name": "Fausse nageoire de l'héritier du dragon",
+      "description": "Un morceau de tissu biologique que vous avez trouvé après avoir vaincu un Élémentosaure abyssal.\r\nBien qu'il ressemble à une sorte de nageoire, il n'a en fait aucune fonction.\r\nLes habitants de Byakuyakoku ont déjà mené des études approfondies sur les Élémentosaures abyssaux. Leur caractéristique la plus distinctive est la possibilité de choisir les traits qu'ils souhaitent transmettre à leur progéniture. En raison de leur grande haine envers l'humanité, ces Élémentosaures perdent toute acuité visuelle quand ils atteignent l'âge adulte. Dans le même temps, ils ont également développé un certain degré de polymorphisme élémentaire à des fins de combat."
+    },
+    {
       "key": "dream-of-the-dandelion-gladiator",
       "name": "Idéaux du Chevalier du Croc de Lion",
       "description": "Matériau d'élévation d'arme.\r\nLorsque Vennessa fut affranchie, ses responsabilités ne furent que plus grandes au fil du temps. Incarnation de la liberté, elle tint successivement sur ses épaules le bien-être de tribu, puis celui de Mondstadt tout entière et enfin du monde entier.\r\nSon vœu le plus cher était celui d'un monde plus fort et indépendant."
@@ -10148,6 +10371,14 @@
       "name": "Brutoviandu avec hache Pyro"
     },
     {
+      "key": "bolteater-bathysmal-vishap",
+      "name": "Élémentosaure abyssal mangéclair"
+    },
+    {
+      "key": "bolteater-bathysmal-vishap-hatchling",
+      "name": "Élémentosaure abyssal mangéclair : nouveau-né"
+    },
+    {
       "key": "childe",
       "name": "Tartaglia"
     },
@@ -10165,7 +10396,7 @@
     },
     {
       "key": "cryo-hilichurl-grenadier",
-      "name": "Brutocollinus givré"
+      "name": "Grenadier Brutocollinus Cryo"
     },
     {
       "key": "cryo-hilichurl-shooter",
@@ -10186,6 +10417,10 @@
     {
       "key": "cryo-slime",
       "name": "Cryoblob"
+    },
+    {
+      "key": "cryo-specter",
+      "name": "Spectre Cryo"
     },
     {
       "key": "cryo-whopperflower",
@@ -10226,6 +10461,10 @@
     {
       "key": "electro-slime",
       "name": "Électroblob"
+    },
+    {
+      "key": "electro-specter",
+      "name": "Spectre Électro"
     },
     {
       "key": "electro-whopperflower",
@@ -10300,6 +10539,10 @@
       "name": "Jeune Géosaure"
     },
     {
+      "key": "golden-wolflord",
+      "name": "Loup alpha doré"
+    },
+    {
       "key": "hilichurl",
       "name": "Brutocollinus"
     },
@@ -10313,7 +10556,7 @@
     },
     {
       "key": "hilichurl-grenadier",
-      "name": "Grenadier Brutocollinus"
+      "name": "Grenadier Brutocollinus Pyro"
     },
     {
       "key": "hilichurl-shooter",
@@ -10432,6 +10675,18 @@
       "name": "Lame oni"
     },
     {
+      "key": "maguu-kenki-galloping-frost",
+      "name": "Lame oni : Givre"
+    },
+    {
+      "key": "maguu-kenki-lone-gale",
+      "name": "Lame oni : Brise"
+    },
+    {
+      "key": "maguu-kenki-mask-of-terror",
+      "name": "Lame oni : Masque d'effroi"
+    },
+    {
       "key": "millelith-sergeant",
       "name": "Instructeur des Millelithes"
     },
@@ -10480,6 +10735,14 @@
       "name": "Géosaure antique"
     },
     {
+      "key": "primordial-bathysmal-vishap",
+      "name": "Élémentosaure abyssal primordial"
+    },
+    {
+      "key": "primordial-bathysmal-vishap-hatchling",
+      "name": "Élémentosaure abyssal primordial : nouveau-né"
+    },
+    {
       "key": "pyro-abyss-mage",
       "name": "Pyromage de l'Abîme"
     },
@@ -10500,12 +10763,24 @@
       "name": "Pyroblob"
     },
     {
+      "key": "pyro-specter",
+      "name": "Spectre Pyro"
+    },
+    {
       "key": "pyro-whopperflower",
       "name": "Fleur mensongère Pyro"
     },
     {
       "key": "raiden-shogun",
       "name": "Shogun Raiden"
+    },
+    {
+      "key": "rimebiter-bathysmal-vishap",
+      "name": "Élémentosaure abyssal morgivre"
+    },
+    {
+      "key": "rimebiter-bathysmal-vishap-hatchling",
+      "name": "Élémentosaure abyssal morgivre : nouveau-né"
     },
     {
       "key": "rock-shield-hilichurl-guard",
@@ -10585,11 +10860,15 @@
     },
     {
       "key": "thunderhelm-lawachurl",
-      "name": "Chef Brutolectrique"
+      "name": "Chef Brutoélectrique"
+    },
+    {
+      "key": "treasure-hoarder-wallenstein",
+      "name": "Wallenstein (Pilleur de trésors)"
     },
     {
       "key": "treasure-hoarders-boss",
-      "name": "Cheffe des Pilleurs de trésors"
+      "name": "Cheffe (Pilleur de trésors)"
     },
     {
       "key": "treasure-hoarders-carmen",
@@ -10621,7 +10900,7 @@
     },
     {
       "key": "treasure-hoarders-liuliu",
-      "name": "Liuliu le Pilleur de trésors"
+      "name": "Liuliu (Pilleur de trésors)"
     },
     {
       "key": "treasure-hoarders-marksman",
@@ -10637,7 +10916,7 @@
     },
     {
       "key": "treasure-hoarders-raptor",
-      "name": "Rapace"
+      "name": "Rapace (Pilleur de trésors)"
     },
     {
       "key": "treasure-hoarders-scout",

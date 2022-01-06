@@ -4596,86 +4596,149 @@
     {
       "key": "shenhe",
       "name": "Shenhe",
-      "title": "？？？",
-      "description": "",
+      "title": "Lonesome Transcendence",
+      "description": "Seorang murid Adeptus dengan temperamen yang sedikit unik. Karena sudah lama hidup terisolasi di pegunungan Liyue, sifatnya juga menjadi acuh tak acuh dan menjaga jarak seperti para Adeptus.",
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Dawnstar Piercer",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Normal Attack",
+              "description": "Melancarkan hingga 5 serangan tombak berturut-turut.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Charged Attack",
+              "description": "Mengonsumsi sejumlah Stamina untuk menerjang ke depan, mengakibatkan DMG pada musuh di jalurnya.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Plunging Attack",
+              "description": "Menerjang dari udara untuk menghantam tanah, mengakibatkan DMG pada musuh di jalur terjangan dan mengakibatkan DMG area saat mendarat.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "DMG Tahap 1|{param1}%",
+            "DMG Tahap 2|{param2}%",
+            "DMG Tahap 3|{param3}%",
+            "DMG Tahap 4|{param4}% + {param5}%",
+            "DMG Tahap 5|{param6}%",
+            "DMG Charged Attack|{param7}%",
+            "Konsumsi Stamina Charged Attack|{param8}",
+            "DMG Selama Plunging|{param9}%",
+            "DMG Plunging Attack Min./Maks.|{param10}% / {param11}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Spring Spirit Summoning",
+          "description": "Memadatkan embun beku perak untuk mengusir semua iblis.\r\nMemberikan efek \"Icy Quill\" pada seluruh anggota party di sekitar dan mengakibatkan Cryo DMG berdasarkan cara skill dilancarkan, yaitu ditekan atau ditahan.\r\n",
+          "abilities": [
+            {
+              "name": "Mode Tekan",
+              "description": "Menerjang ke arah depan bersama \"Talisman Spirit\" dan mengakibatkan Cryo DMG pada musuh yang berada di jalur serangan.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Mode Tahan",
+              "description": "Memerintahkan Talisman Spirit untuk mengakibatkan Cryo DMG Area.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Icy Quill",
+              "description": "Saat Normal Attack, Charged Attack, Plunging Attack, Elemental Skill, dan Elemental Burst mengakibatkan Cryo DMG kepada musuh, DMG yang diakibatkan akan meningkat sesuai dengan ATK Shenhe saat ini.\r\nEfek Icy Quill akan hilang setelah durasinya berakhir atau lapisannya terkonsumsi dalam jumlah tertentu. Icy Quill yang dilancarkan dengan Mode Tahan akan memiliki durasi lebih lama dan jumlah lapisan lebih banyak.\r\nSaat satu serangan Cryo DMG mengenai beberapa musuh secara bersamaan, jumlah lapisan Icy Quill yang dikonsumsi akan disesuaikan dengan jumlah musuh yang terkena serangan. Efek dan jumlah lapisan Icy Quill untuk setiap Karakter dalam party akan dihitung secara terpisah.\r\n",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "DMG Skill (Mode Tekan)|{param1}%",
+            "DMG Skill (Mode Tahan)|{param2}%",
+            "Peningkatan DMG|{param3}% ATK",
+            "Durasi Mode Tekan/Tahan|{param4} detik / {param5} detik",
+            "Jumlah Lapisan Mode Tekan/Tahan|{param6} lapis/ {param7} lapis",
+            "Cooldown (Mode Tekan)|{param8} detik",
+            "Cooldown (Mode Tahan)|{param9} detik"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
+          "title": "Divine Maiden's Deliverance",
+          "description": "Melepaskan kekuatan Talisman Spirit, membiarkannya bergerak bebas di dunia ini, dan mengakibatkan Cryo DMG Area.\r\nTalisman Spirit akan menciptakan sebuah area yang mengurangi Cryo RES dan Physical RES musuh yang berada di dalamnya. Selama durasinya, area ini terus mengakibatkan Cryo DMG kepada musuh yang berada di dalamnya.\r\n",
           "abilities": [],
-          "stats": []
+          "stats": [
+            "DMG Skill|{param1}%",
+            "Penurunan RES|{param2}%",
+            "DMG Berkelanjutan|{param3}%",
+            "Durasi|{param4} detik",
+            "Cooldown|{param5} detik",
+            "Konsumsi Energy|{param6}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "Precise Comings and Goings",
+          "description": "Ketika dikirim untuk melakukan ekspedisi di Liyue selama 20 jam, hadiah yang didapatkan akan bertambah 25%.\r\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
+          "title": "Deific Embrace",
+          "description": "Karakter aktif yang berada di dalam area Divine Maiden's Deliverance akan mendapatkan 15% Cryo DMG Bonus.\r\n",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
+          "title": "Spirit Communion Seal",
+          "description": "Setelah Shenhe melancarkan Spring Spirit Summoning, anggota party di sekitar akan mendapatkan efek berikut:\r\n",
+          "descriptions": [
+            "Mode Tekan: Meningkatkan 15% DMG Elemental Skill dan Elemental Burst selama 10 detik.",
+            "Mode Tahan: Meningkatkan 15% DMG Normal Attack, Charged Attack, dan Plunging Attack selama 15 detik."
+          ]
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "Clarity of Heart",
+          "description": "Jumlah penggunaan Spring Spirit Summoning bertambah 1 kali.\r\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "Centered Spirit",
+          "description": "Durasi Divine Maiden's Deliverance diperpanjang 6 detik. CRIT DMG dari Cryo DMG untuk Karakter aktif yang berada di dalam area meningkat 15%.\r\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "Seclusion",
+          "description": "Meningkatkan 3 level Spring Spirit Summoning.\r\nMaksimum: Lv. 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
+          "title": "Insight",
+          "description": "Saat Karakter yang berada dalam status Icy Quill dari Shenhe sendiri memicu Bonus DMG dari Icy Quill, Shenhe akan mendapatkan 1 lapis Skyfrost Mantra:\r\n",
+          "descriptions": [
+            "Saat Shenhe melancarkan Spring Spirit Summoning, dia akan mengonsumsi semua lapisan Skyfrost Mantra dan meningkatkan DMG yang diakibatkan oleh Spring Spirit Summoning sebesar 5% untuk setiap lapisan yang dikonsumsi.",
+            "Efek ini dapat ditumpuk hingga 50 lapis dan berlangsung selama 60 detik."
+          ]
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "Divine Attainment",
+          "description": "Meningkatkan 3 level Divine Maiden's Deliverance.\r\nMaksimum: Lv. 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
+          "title": "Mystical Abandon",
+          "description": "Saat Karakter memicu efek Icy Quill melalui DMG Normal Attack dan Charged Attack, jumlah lapisan Icy Quill tidak akan berkurang.\r\n",
           "descriptions": []
         }
       ]
@@ -6233,6 +6296,93 @@
       ]
     },
     {
+      "key": "yae-miko",
+      "name": "Yae Miko",
+      "title": "???",
+      "description": "",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ]
+    },
+    {
       "key": "yanfei",
       "name": "Yanfei",
       "title": "Wise Innocence",
@@ -6510,86 +6660,142 @@
     {
       "key": "yun-jin",
       "name": "Yun Jin",
-      "title": "？？？",
-      "description": "",
+      "title": "Stage Lucida",
+      "description": "Seorang penyanyi opera Liyue yang mahir bernyanyi dan pintar menulis sandiwara. Gayanya lain dari yang lain — elegan dan lembut, persis seperti karakternya.",
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Cloud-Grazing Strike",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Normal Attack",
+              "description": "Melancarkan hingga 5 serangan tombak berturut-turut.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Charged Attack",
+              "description": "Mengonsumsi sejumlah Stamina untuk menerjang ke depan, mengakibatkan DMG pada musuh di jalurnya.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Plunging Attack",
+              "description": "Menerjang dari udara untuk menghantam tanah, mengakibatkan DMG pada musuh di jalur terjangan dan mengakibatkan DMG area saat mendarat.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "DMG Tahap 1|{param1}%",
+            "DMG Tahap 2|{param2}%",
+            "DMG Tahap 3|{param3}% + {param4}%",
+            "DMG Tahap 4|{param5}% + {param6}%",
+            "DMG Tahap 5|{param7}%",
+            "DMG Charged Attack|{param8}%",
+            "Konsumsi Stamina Charged Attack|{param9}",
+            "DMG Selama Plunging|{param10}%",
+            "DMG Plunging Attack Min./Maks.|{param11}% / {param12}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Opening Flourish",
+          "description": "Yun Jin dapat menggunakan kuda-kuda bela dirinya untuk melawan para musuh.\r\n",
+          "abilities": [
+            {
+              "name": "Mode Tekan",
+              "description": "Memutar tombak dengan kuda-kuda pembelah awan dan mengakibatkan Geo DMG.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Mode Tahan",
+              "description": "Memasang kuda-kuda Opening Flourish dan melakukan charge untuk menciptakan sebuah perisai. Jumlah DMG yang dapat ditahan perisai didasarkan pada Max HP Yun Jin dan memiliki 150% efek penahanan terhadap semua Elemental DMG dan Physical DMG. Perisai akan berakhir saat Elemental Skill selesai dilancarkan.\r\nSaat melancarkan skill dengan melepas tombol, durasinya berakhir, atau perisainya hancur, Yun Jin akan menyerang dengan ayunan tombaknya dan melepaskan energi yang tersimpan untuk mengakibatkan Geo DMG.\r\nYun Jin akan melancarkan serangan Charge Tahap 1 atau Charge Tahap 2 berdasarkan durasi charge-nya.\r\n",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "DMG Mode Tekan|{param1}% DEF",
+            "DMG Charge Tahap 1|{param2}% DEF",
+            "DMG Charge Tahap 2|{param3}% DEF",
+            "Pertahanan Perisai|{param4}% Max HP+ {param5}",
+            "Cooldown|{param6} detik"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Cliffbreaker's Banner",
+          "description": "Mengakibatkan Geo DMG Area dan memberikan efek Flying Cloud Flag Formation kepada seluruh anggota party di sekitar.\r\n",
+          "abilities": [
+            {
+              "name": "Flying Cloud Flag Formation",
+              "description": "Saat mengakibatkan DMG kepada musuh dengan Normal Attack, DMG yang diakibatkan akan meningkat sesuai dengan DEF Yun Jin saat ini.\r\nEfek Flying Cloud Flag Formation akan hilang setelah durasinya berakhir atau lapisannya terkonsumsi dalam jumlah tertentu.\r\nSaat satu Normal Attack mengenai beberapa musuh secara bersamaan, jumlah lapisan Cloud Flag Formation yang dikonsumsi akan disesuaikan dengan jumlah musuh yang terkena serangan. Efek dan jumlah lapisan Cloud Flag Formation untuk setiap Karakter dalam party akan dihitung secara terpisah.\r\n",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "DMG Skill|{param1}%",
+            "Peningkatan DMG|{param2}% DEF",
+            "Durasi|{param3} detik",
+            "Jumlah Lapisan|{param4} lapis",
+            "Cooldown|{param5} detik",
+            "Konsumsi Energy|{param6}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "Light Nourishment",
+          "description": "Saat masakan jenis petualangan dimasak dengan sempurna, terdapat 12% kemungkinan mendapatkan hasil 2 kali lipat.\r\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
+          "title": "True to Oneself",
+          "description": "Menggunakan Opening Flourish tepat saat Yun Jin terkena serang akan melancarkan bentuk Charge Tahap 2 (Mode Tahan)-nya.\r\n",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "NA",
-          "description": "",
+          "title": "Breaking Conventions",
+          "description": "Bonus DMG Normal Attack dari Flying Cloud Flag Formation akan meningkat lagi sebesar 2,5%/5%/7,5%/11,5% dari DEF Yun Jin saat party berisi Karakter dengan 1/2/3/4 jenis elemen berbeda.\r\n",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "Thespian Gallop",
+          "description": "Mengurangi 18% CD Opening Flourish.\r\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "Myriad Mise-En-Scène",
+          "description": "Setelah melancarkan Cliffbreaker's Banner, DMG Normal Attack seluruh anggota party di sekitar meningkat 15% selama 12 detik.\r\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "Seafaring General",
+          "description": "Meningkatkan 3 level Cliffbreaker's Banner.\r\nMaksimum: Lv. 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "Flower and a Fighter",
+          "description": "Setelah Yun Jin memicu reaksi Crystallize, DEF Yun Jin meningkat 20% selama 12 detik.\r\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "Famed Throughout the Land",
+          "description": "Meningkatkan 3 level Opening Flourish.\r\nMaksimum: Lv. 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
+          "title": "Decorous Harmony",
+          "description": "Meningkatkan 12% Normal ATK SPD Karakter yang berada dalam status Flying Cloud Flag Formation.\r\n",
           "descriptions": []
         }
       ]
@@ -6916,6 +7122,18 @@
         "Meningkatkan {color}18{/color}% DMG terhadap musuh yang terpengaruh Pyro atau Electro.",
         "Meningkatkan {color}21{/color}% DMG terhadap musuh yang terpengaruh Pyro atau Electro.",
         "Meningkatkan {color}24{/color}% DMG terhadap musuh yang terpengaruh Pyro atau Electro."
+      ]
+    },
+    {
+      "key": "calamity-queller",
+      "name": "Calamity Queller",
+      "description": "Sebuah senjata tajam yang diciptakan dari kristal aneh. Cahaya birunya yang remang-remang seakan membisikkan cerita masa lalu yang tiada berujung.",
+      "refinements": [
+        "Mendapatkan {color}12{/color}% Elemental DMG Bonus untuk semua elemen. Setelah melancarkan Elemental Skill, akan mendapatkan efek Consummation yang berlangsung selama 20 detik. Efek ini akan meningkatkan {color}3,2{/color}% ATK setiap detik dan dapat ditumpuk hingga 6 kali. Saat Karakter yang mengenakan Senjata ini berada dalam party tapi tidak di medan pertempuran, maka peningkatan ATK Consummation akan menjadi dua kali lipat.",
+        "Mendapatkan {color}15{/color}% Elemental DMG Bonus untuk semua elemen. Setelah melancarkan Elemental Skill, akan mendapatkan efek Consummation yang berlangsung selama 20 detik. Efek ini akan meningkatkan {color}4{/color}% ATK setiap detik dan dapat ditumpuk hingga 6 kali. Saat Karakter yang mengenakan Senjata ini berada dalam party tapi tidak di medan pertempuran, maka peningkatan ATK Consummation akan menjadi dua kali lipat.",
+        "Mendapatkan {color}18{/color}% Elemental DMG Bonus untuk semua elemen. Setelah melancarkan Elemental Skill, akan mendapatkan efek Consummation yang berlangsung selama 20 detik. Efek ini akan meningkatkan {color}4,8{/color}% ATK setiap detik dan dapat ditumpuk hingga 6 kali. Saat Karakter yang mengenakan Senjata ini berada dalam party tapi tidak di medan pertempuran, maka peningkatan ATK Consummation akan menjadi dua kali lipat.",
+        "Mendapatkan {color}21{/color}% Elemental DMG Bonus untuk semua elemen. Setelah melancarkan Elemental Skill, akan mendapatkan efek Consummation yang berlangsung selama 20 detik. Efek ini akan meningkatkan {color}5,6{/color}% ATK setiap detik dan dapat ditumpuk hingga 6 kali. Saat Karakter yang mengenakan Senjata ini berada dalam party tapi tidak di medan pertempuran, maka peningkatan ATK Consummation akan menjadi dua kali lipat.",
+        "Mendapatkan {color}24{/color}% Elemental DMG Bonus untuk semua elemen. Setelah melancarkan Elemental Skill, akan mendapatkan efek Consummation yang berlangsung selama 20 detik. Efek ini akan meningkatkan {color}6,4{/color}% ATK setiap detik dan dapat ditumpuk hingga 6 kali. Saat Karakter yang mengenakan Senjata ini berada dalam party tapi tidak di medan pertempuran, maka peningkatan ATK Consummation akan menjadi dua kali lipat."
       ]
     },
     {
@@ -8879,6 +9097,11 @@
       "description": "Tanduk yang terbuat dari kristalisasi giok selama ribuan tahun, berada di kepala sang raja naga layaknya sebuah mahkota.\r\nDipenuhi jiwa-jiwa dan diukir dari batu paling kokoh, tanduk ini lahir dari jantung gunung yang terdalam untuk menunjukkan kekuatan bumi pada bangsa ribuan bebatuan ini, dan tanduk berwarna emasnya melambangkan pertentangan masa lalu terhadap raja kuno.\r\nSelama beberapa waktu, tanduk ini telah hancur dan kehilangan keindahannya, tapi kini dia berkilau kembali di dalam genggaman tanganmu."
     },
     {
+      "key": "dragonheirs-false-fin",
+      "name": "Dragonheir's False Fin",
+      "description": "Sepotong jaringan biologis yang kamu temukan setelah mengalahkan Bathysmal Vishap.\r\nMeskipun terlihat seperti semacam sirip, namun sebenarnya ia tidak punya fungsi apa pun.\r\nOrang-orang Byakuyakoku pernah melakukan penelitian yang mendalam terhadap Bathysmal Vishap. Ciri paling khas yang mereka miliki adalah kemampuan untuk memilih sifat genetis apa yang ingin diturunkan oleh mereka kepada keturunannya. Karena kebencian mereka yang besar terhadap umat manusia, para vishap ini akan kehilangan ketajaman visualnya pada saat mereka mencapai usia dewasa. Pada saat yang sama, mereka juga telah mengembangkan tingkat keberagaman struktur atom dalam unsur tertentu untuk tujuan pertempuran."
+    },
+    {
       "key": "dream-of-the-dandelion-gladiator",
       "name": "Dream of the Dandelion Gladiator",
       "description": "Material Ascension Senjata.\r\nVennessa bebas dari perbudakan, tetapi hal yang mengekang dirinya tumbuh lebih besar, dari sukunya ke seluruh Mondstadt, dan bahkan sampai ke konsep kebebasan itu sendiri, menyebar sampai ke seluruh dunia.\r\nApa yang dia harapkan adalah, sebenarnya, agar dunia ini menjadi lebih kuat."
@@ -10141,6 +10364,14 @@
       "name": "Blazing Axe Mitachurl"
     },
     {
+      "key": "bolteater-bathysmal-vishap",
+      "name": "Bolteater Bathysmal Vishap"
+    },
+    {
+      "key": "bolteater-bathysmal-vishap-hatchling",
+      "name": "Bolteater Bathysmal Vishap Hatchling"
+    },
+    {
       "key": "childe",
       "name": "Childe"
     },
@@ -10181,6 +10412,10 @@
       "name": "Cryo Slime"
     },
     {
+      "key": "cryo-specter",
+      "name": "Cryo Specter"
+    },
+    {
       "key": "cryo-whopperflower",
       "name": "Cryo Whopperflower"
     },
@@ -10219,6 +10454,10 @@
     {
       "key": "electro-slime",
       "name": "Electro Slime"
+    },
+    {
+      "key": "electro-specter",
+      "name": "Electro Specter"
     },
     {
       "key": "electro-whopperflower",
@@ -10291,6 +10530,10 @@
     {
       "key": "geovishap-hatchling",
       "name": "Geovishap Hatchling"
+    },
+    {
+      "key": "golden-wolflord",
+      "name": "Golden Wolflord"
     },
     {
       "key": "hilichurl",
@@ -10425,6 +10668,18 @@
       "name": "Maguu Kenki"
     },
     {
+      "key": "maguu-kenki-galloping-frost",
+      "name": "Maguu Kenki: Galloping Frost"
+    },
+    {
+      "key": "maguu-kenki-lone-gale",
+      "name": "Maguu Kenki: Lone Gale"
+    },
+    {
+      "key": "maguu-kenki-mask-of-terror",
+      "name": "Makai Kenki: Mask of Terror"
+    },
+    {
       "key": "millelith-sergeant",
       "name": "Millelith Sergeant"
     },
@@ -10473,6 +10728,14 @@
       "name": "Primo Geovishap"
     },
     {
+      "key": "primordial-bathysmal-vishap",
+      "name": "Primordial Bathysmal Vishap"
+    },
+    {
+      "key": "primordial-bathysmal-vishap-hatchling",
+      "name": "Primordial Bathysmal Vishap Hatchling"
+    },
+    {
       "key": "pyro-abyss-mage",
       "name": "Pyro Abyss Mage"
     },
@@ -10493,12 +10756,24 @@
       "name": "Pyro Slime"
     },
     {
+      "key": "pyro-specter",
+      "name": "Pyro Specter"
+    },
+    {
       "key": "pyro-whopperflower",
       "name": "Pyro Whopperflower"
     },
     {
       "key": "raiden-shogun",
       "name": "Raiden Shogun"
+    },
+    {
+      "key": "rimebiter-bathysmal-vishap",
+      "name": "Rimebiter Bathysmal Vishap"
+    },
+    {
+      "key": "rimebiter-bathysmal-vishap-hatchling",
+      "name": "Rimebiter Bathysmal Vishap Hatchling"
     },
     {
       "key": "rock-shield-hilichurl-guard",
@@ -10579,6 +10854,10 @@
     {
       "key": "thunderhelm-lawachurl",
       "name": "Thunderhelm Lawachurl"
+    },
+    {
+      "key": "treasure-hoarder-wallenstein",
+      "name": "Treasure Hoarder: Wallenstein"
     },
     {
       "key": "treasure-hoarders-boss",
