@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.2.8+41 (06/01/2022)
+- Shenhe and Yun Jin are here
+
+
 ## 1.2.6+37 (15/12/2021)
 - Itto and Gorou are here
 
