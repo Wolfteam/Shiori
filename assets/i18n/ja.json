@@ -10355,6 +10355,14 @@
       "name": "ヒルチャール暴徒·炎斧"
     },
     {
+      "key": "bolteater-bathysmal-vishap",
+      "name": "アビサルヴィシャップ·吞雷"
+    },
+    {
+      "key": "bolteater-bathysmal-vishap-hatchling",
+      "name": "アビサルヴィシャップの幼体·吞雷"
+    },
+    {
       "key": "childe",
       "name": "「公子」"
     },
@@ -10395,6 +10403,10 @@
       "name": "氷スライム"
     },
     {
+      "key": "cryo-specter",
+      "name": "氷フライム"
+    },
+    {
       "key": "cryo-whopperflower",
       "name": "トリックフラワー·氷"
     },
@@ -10433,6 +10445,10 @@
     {
       "key": "electro-slime",
       "name": "雷スライム"
+    },
+    {
+      "key": "electro-specter",
+      "name": "雷フライム"
     },
     {
       "key": "electro-whopperflower",
@@ -10505,6 +10521,10 @@
     {
       "key": "geovishap-hatchling",
       "name": "ベビーヴィシャップ·岩"
+    },
+    {
+      "key": "golden-wolflord",
+      "name": "黄金王獣"
     },
     {
       "key": "hilichurl",
@@ -10639,6 +10659,18 @@
       "name": "魔偶剣鬼"
     },
     {
+      "key": "maguu-kenki-galloping-frost",
+      "name": "魔偶剣鬼·霜馳"
+    },
+    {
+      "key": "maguu-kenki-lone-gale",
+      "name": "魔偶剣鬼·孤風"
+    },
+    {
+      "key": "maguu-kenki-mask-of-terror",
+      "name": "魔偶剣鬼·凶面"
+    },
+    {
       "key": "millelith-sergeant",
       "name": "千岩軍隊長"
     },
@@ -10652,7 +10684,7 @@
     },
     {
       "key": "mutant-electro-slime",
-      "name": "異変雷スライム"
+      "name": "変異雷スライム"
     },
     {
       "key": "nobushi-hitsukeban",
@@ -10687,6 +10719,14 @@
       "name": "エンシェントヴィシャップ·岩"
     },
     {
+      "key": "primordial-bathysmal-vishap",
+      "name": "アビサルヴィシャップ·原種"
+    },
+    {
+      "key": "primordial-bathysmal-vishap-hatchling",
+      "name": "アビサルヴィシャップの幼体·原種"
+    },
+    {
       "key": "pyro-abyss-mage",
       "name": "アビスの魔術師·炎"
     },
@@ -10707,12 +10747,24 @@
       "name": "炎スライム"
     },
     {
+      "key": "pyro-specter",
+      "name": "炎フライム"
+    },
+    {
       "key": "pyro-whopperflower",
       "name": "トリックフラワー·炎"
     },
     {
       "key": "raiden-shogun",
       "name": "雷電将軍"
+    },
+    {
+      "key": "rimebiter-bathysmal-vishap",
+      "name": "アビサルヴィシャップ·噛氷"
+    },
+    {
+      "key": "rimebiter-bathysmal-vishap-hatchling",
+      "name": "アビサルヴィシャップの幼体·噛氷"
     },
     {
       "key": "rock-shield-hilichurl-guard",
@@ -10795,6 +10847,10 @@
       "name": "ヒルチャール·雷兜の王"
     },
     {
+      "key": "treasure-hoarder-wallenstein",
+      "name": "宝盗団·「ヴァレンシュタイン」"
+    },
+    {
       "key": "treasure-hoarders-boss",
       "name": "宝盗団·「姉貴」"
     },
@@ -10828,7 +10884,7 @@
     },
     {
       "key": "treasure-hoarders-liuliu",
-      "name": "宝盗団·「ぐるぐる」"
+      "name": "宝盗団·「トンズラ」"
     },
     {
       "key": "treasure-hoarders-marksman",

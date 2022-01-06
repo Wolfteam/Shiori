@@ -10353,6 +10353,14 @@
       "name": "Mitachurl con Hacha de Fuego"
     },
     {
+      "key": "bolteater-bathysmal-vishap",
+      "name": "Dragarto de las Profundidades - Engulletruenos"
+    },
+    {
+      "key": "bolteater-bathysmal-vishap-hatchling",
+      "name": "Cría de Dragarto de las Profundidades - Engulletruenos"
+    },
+    {
       "key": "childe",
       "name": "Nobile"
     },
@@ -10393,6 +10401,10 @@
       "name": "Slime Cryo"
     },
     {
+      "key": "cryo-specter",
+      "name": "Espectro Cryo"
+    },
+    {
       "key": "cryo-whopperflower",
       "name": "Megaflora Cryo"
     },
@@ -10431,6 +10443,10 @@
     {
       "key": "electro-slime",
       "name": "Slime Electro"
+    },
+    {
+      "key": "electro-specter",
+      "name": "Espectro Electro"
     },
     {
       "key": "electro-whopperflower",
@@ -10503,6 +10519,10 @@
     {
       "key": "geovishap-hatchling",
       "name": "Cría de Dragarto Geo"
+    },
+    {
+      "key": "golden-wolflord",
+      "name": "Rey Acechador Dorado"
     },
     {
       "key": "hilichurl",
@@ -10637,6 +10657,18 @@
       "name": "Oni Espadachín"
     },
     {
+      "key": "maguu-kenki-galloping-frost",
+      "name": "Oni Espadachín - Escarcha veloz"
+    },
+    {
+      "key": "maguu-kenki-lone-gale",
+      "name": "Oni Espadachín - Viento solitario"
+    },
+    {
+      "key": "maguu-kenki-mask-of-terror",
+      "name": "Oni Espadachín - Máscara malévola"
+    },
+    {
       "key": "millelith-sergeant",
       "name": "Sargento de la Geoarmada"
     },
@@ -10685,6 +10717,14 @@
       "name": "Protodragarto Geo"
     },
     {
+      "key": "primordial-bathysmal-vishap",
+      "name": "Dragarto de las Profundidades Primordial"
+    },
+    {
+      "key": "primordial-bathysmal-vishap-hatchling",
+      "name": "Cría de Dragarto de las Profundidades Primordial"
+    },
+    {
       "key": "pyro-abyss-mage",
       "name": "Mago del Abismo Pyro"
     },
@@ -10705,12 +10745,24 @@
       "name": "Slime Pyro"
     },
     {
+      "key": "pyro-specter",
+      "name": "Espectro Pyro"
+    },
+    {
       "key": "pyro-whopperflower",
       "name": "Megaflora Pyro"
     },
     {
       "key": "raiden-shogun",
       "name": "Shogun Raiden"
+    },
+    {
+      "key": "rimebiter-bathysmal-vishap",
+      "name": "Dragarto de las Profundidades - Hielo mordaz"
+    },
+    {
+      "key": "rimebiter-bathysmal-vishap-hatchling",
+      "name": "Cría de Dragarto de las Profundidades - Hielo mordaz"
     },
     {
       "key": "rock-shield-hilichurl-guard",
@@ -10778,7 +10830,7 @@
     },
     {
       "key": "thunder-manifestation",
-      "name": "Manifestación del trueno"
+      "name": "Manifestación del Trueno"
     },
     {
       "key": "thundercraven-rifthound",
@@ -10791,6 +10843,10 @@
     {
       "key": "thunderhelm-lawachurl",
       "name": "Lawachurl Electroyelmo"
+    },
+    {
+      "key": "treasure-hoarder-wallenstein",
+      "name": "Ladrón de Tesoros - Wallenstein"
     },
     {
       "key": "treasure-hoarders-boss",

@@ -10367,6 +10367,14 @@
       "name": "Blazing Axe Mitachurl"
     },
     {
+      "key": "bolteater-bathysmal-vishap",
+      "name": "Bolteater Bathysmal Vishap"
+    },
+    {
+      "key": "bolteater-bathysmal-vishap-hatchling",
+      "name": "Bolteater Bathysmal Vishap Hatchling"
+    },
+    {
       "key": "childe",
       "name": "Childe"
     },
@@ -10407,6 +10415,10 @@
       "name": "Cryo Slime"
     },
     {
+      "key": "cryo-specter",
+      "name": "Cryo Specter"
+    },
+    {
       "key": "cryo-whopperflower",
       "name": "Cryo Whopperflower"
     },
@@ -10445,6 +10457,10 @@
     {
       "key": "electro-slime",
       "name": "Electro Slime"
+    },
+    {
+      "key": "electro-specter",
+      "name": "Electro Specter"
     },
     {
       "key": "electro-whopperflower",
@@ -10517,6 +10533,10 @@
     {
       "key": "geovishap-hatchling",
       "name": "Geovishap Hatchling"
+    },
+    {
+      "key": "golden-wolflord",
+      "name": "Golden Wolflord"
     },
     {
       "key": "hilichurl",
@@ -10651,6 +10671,18 @@
       "name": "Maguu Kenki"
     },
     {
+      "key": "maguu-kenki-galloping-frost",
+      "name": "Maguu Kenki: Galloping Frost"
+    },
+    {
+      "key": "maguu-kenki-lone-gale",
+      "name": "Maguu Kenki: Lone Gale"
+    },
+    {
+      "key": "maguu-kenki-mask-of-terror",
+      "name": "Maguu Kenki: Mask of Terror"
+    },
+    {
       "key": "millelith-sergeant",
       "name": "Millelith Sergeant"
     },
@@ -10699,6 +10731,14 @@
       "name": "Primo Geovishap"
     },
     {
+      "key": "primordial-bathysmal-vishap",
+      "name": "Primordial Bathysmal Vishap"
+    },
+    {
+      "key": "primordial-bathysmal-vishap-hatchling",
+      "name": "Primordial Bathysmal Vishap Hatchling"
+    },
+    {
       "key": "pyro-abyss-mage",
       "name": "Pyro Abyss Mage"
     },
@@ -10719,12 +10759,24 @@
       "name": "Pyro Slime"
     },
     {
+      "key": "pyro-specter",
+      "name": "Pyro Specter"
+    },
+    {
       "key": "pyro-whopperflower",
       "name": "Pyro Whopperflower"
     },
     {
       "key": "raiden-shogun",
       "name": "Raiden Shogun"
+    },
+    {
+      "key": "rimebiter-bathysmal-vishap",
+      "name": "Rimebiter Bathysmal Vishap"
+    },
+    {
+      "key": "rimebiter-bathysmal-vishap-hatchling",
+      "name": "Rimebiter Bathysmal Vishap Hatchling"
     },
     {
       "key": "rock-shield-hilichurl-guard",
@@ -10805,6 +10857,10 @@
     {
       "key": "thunderhelm-lawachurl",
       "name": "Thunderhelm Lawachurl"
+    },
+    {
+      "key": "treasure-hoarder-wallenstein",
+      "name": "Treasure Hoarder: Wallenstein"
     },
     {
       "key": "treasure-hoarders-boss",

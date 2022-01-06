@@ -10371,6 +10371,14 @@
       "name": "Brutoviandu avec hache Pyro"
     },
     {
+      "key": "bolteater-bathysmal-vishap",
+      "name": "Élémentosaure abyssal mangéclair"
+    },
+    {
+      "key": "bolteater-bathysmal-vishap-hatchling",
+      "name": "Élémentosaure abyssal mangéclair : nouveau-né"
+    },
+    {
       "key": "childe",
       "name": "Tartaglia"
     },
@@ -10388,7 +10396,7 @@
     },
     {
       "key": "cryo-hilichurl-grenadier",
-      "name": "Brutocollinus givré"
+      "name": "Grenadier Brutocollinus Cryo"
     },
     {
       "key": "cryo-hilichurl-shooter",
@@ -10409,6 +10417,10 @@
     {
       "key": "cryo-slime",
       "name": "Cryoblob"
+    },
+    {
+      "key": "cryo-specter",
+      "name": "Spectre Cryo"
     },
     {
       "key": "cryo-whopperflower",
@@ -10449,6 +10461,10 @@
     {
       "key": "electro-slime",
       "name": "Électroblob"
+    },
+    {
+      "key": "electro-specter",
+      "name": "Spectre Électro"
     },
     {
       "key": "electro-whopperflower",
@@ -10523,6 +10539,10 @@
       "name": "Jeune Géosaure"
     },
     {
+      "key": "golden-wolflord",
+      "name": "Loup alpha doré"
+    },
+    {
       "key": "hilichurl",
       "name": "Brutocollinus"
     },
@@ -10536,7 +10556,7 @@
     },
     {
       "key": "hilichurl-grenadier",
-      "name": "Grenadier Brutocollinus"
+      "name": "Grenadier Brutocollinus Pyro"
     },
     {
       "key": "hilichurl-shooter",
@@ -10655,6 +10675,18 @@
       "name": "Lame oni"
     },
     {
+      "key": "maguu-kenki-galloping-frost",
+      "name": "Lame oni : Givre"
+    },
+    {
+      "key": "maguu-kenki-lone-gale",
+      "name": "Lame oni : Brise"
+    },
+    {
+      "key": "maguu-kenki-mask-of-terror",
+      "name": "Lame oni : Masque d'effroi"
+    },
+    {
       "key": "millelith-sergeant",
       "name": "Instructeur des Millelithes"
     },
@@ -10703,6 +10735,14 @@
       "name": "Géosaure antique"
     },
     {
+      "key": "primordial-bathysmal-vishap",
+      "name": "Élémentosaure abyssal primordial"
+    },
+    {
+      "key": "primordial-bathysmal-vishap-hatchling",
+      "name": "Élémentosaure abyssal primordial : nouveau-né"
+    },
+    {
       "key": "pyro-abyss-mage",
       "name": "Pyromage de l'Abîme"
     },
@@ -10723,12 +10763,24 @@
       "name": "Pyroblob"
     },
     {
+      "key": "pyro-specter",
+      "name": "Spectre Pyro"
+    },
+    {
       "key": "pyro-whopperflower",
       "name": "Fleur mensongère Pyro"
     },
     {
       "key": "raiden-shogun",
       "name": "Shogun Raiden"
+    },
+    {
+      "key": "rimebiter-bathysmal-vishap",
+      "name": "Élémentosaure abyssal morgivre"
+    },
+    {
+      "key": "rimebiter-bathysmal-vishap-hatchling",
+      "name": "Élémentosaure abyssal morgivre : nouveau-né"
     },
     {
       "key": "rock-shield-hilichurl-guard",
@@ -10808,11 +10860,15 @@
     },
     {
       "key": "thunderhelm-lawachurl",
-      "name": "Chef Brutolectrique"
+      "name": "Chef Brutoélectrique"
+    },
+    {
+      "key": "treasure-hoarder-wallenstein",
+      "name": "Wallenstein (Pilleur de trésors)"
     },
     {
       "key": "treasure-hoarders-boss",
-      "name": "Cheffe des Pilleurs de trésors"
+      "name": "Cheffe (Pilleur de trésors)"
     },
     {
       "key": "treasure-hoarders-carmen",
@@ -10844,7 +10900,7 @@
     },
     {
       "key": "treasure-hoarders-liuliu",
-      "name": "Liuliu le Pilleur de trésors"
+      "name": "Liuliu (Pilleur de trésors)"
     },
     {
       "key": "treasure-hoarders-marksman",
@@ -10860,7 +10916,7 @@
     },
     {
       "key": "treasure-hoarders-raptor",
-      "name": "Rapace"
+      "name": "Rapace (Pilleur de trésors)"
     },
     {
       "key": "treasure-hoarders-scout",

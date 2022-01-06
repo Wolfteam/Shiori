@@ -10358,6 +10358,14 @@
       "name": "Bạo Đồ Hilichurl Búa Lửa"
     },
     {
+      "key": "bolteater-bathysmal-vishap",
+      "name": "Rồng Biển Sâu - Thôn Lôi"
+    },
+    {
+      "key": "bolteater-bathysmal-vishap-hatchling",
+      "name": "Rồng Biển Sâu Con - Thôn Lôi"
+    },
+    {
       "key": "childe",
       "name": "Childe"
     },
@@ -10396,6 +10404,10 @@
     {
       "key": "cryo-slime",
       "name": "Slime Băng"
+    },
+    {
+      "key": "cryo-specter",
+      "name": "Bóng Ma - Băng"
     },
     {
       "key": "cryo-whopperflower",
@@ -10438,6 +10450,10 @@
       "name": "Slime Lôi"
     },
     {
+      "key": "electro-specter",
+      "name": "Bóng Ma - Lôi"
+    },
+    {
       "key": "electro-whopperflower",
       "name": "Hoa Lừa Dối - Lôi"
     },
@@ -10459,7 +10475,7 @@
     },
     {
       "key": "fatui-skirmisher-anemoboxer-vanguard",
-      "name": "Đội tiên phong Fatui - Quân tiên phong tay đấm Phong"
+      "name": "Đội Tiên Phong Fatui - Quân Tiên Phong Tay Đấm Phong"
     },
     {
       "key": "fatui-skirmisher-cryogunner-legionnaire",
@@ -10508,6 +10524,10 @@
     {
       "key": "geovishap-hatchling",
       "name": "Rồng Đất Nhỏ Nham"
+    },
+    {
+      "key": "golden-wolflord",
+      "name": "Vua Thú Hoàng Kim"
     },
     {
       "key": "hilichurl",
@@ -10642,6 +10662,18 @@
       "name": "Maguu Kenki"
     },
     {
+      "key": "maguu-kenki-galloping-frost",
+      "name": "Maguu Kenki: Sương Phủ"
+    },
+    {
+      "key": "maguu-kenki-lone-gale",
+      "name": "Maguu Kenki: Gió Độc"
+    },
+    {
+      "key": "maguu-kenki-mask-of-terror",
+      "name": "Maguu Kenki: Mặt Quỷ"
+    },
+    {
       "key": "millelith-sergeant",
       "name": "Giáo Đầu Thiên Nham Quân"
     },
@@ -10690,6 +10722,14 @@
       "name": "Rồng Đất Cổ - Nham"
     },
     {
+      "key": "primordial-bathysmal-vishap",
+      "name": "Rồng Biển Sâu - Nguyên Thủy"
+    },
+    {
+      "key": "primordial-bathysmal-vishap-hatchling",
+      "name": "Rồng Biển Sâu Con - Nguyên Thủy"
+    },
+    {
       "key": "pyro-abyss-mage",
       "name": "Pháp Sư Vực Sâu Hỏa"
     },
@@ -10710,12 +10750,24 @@
       "name": "Slime Hỏa"
     },
     {
+      "key": "pyro-specter",
+      "name": "Bóng Ma - Hỏa"
+    },
+    {
       "key": "pyro-whopperflower",
       "name": "Hoa Lừa Dối Rực Lửa"
     },
     {
       "key": "raiden-shogun",
       "name": "Raiden Shogun"
+    },
+    {
+      "key": "rimebiter-bathysmal-vishap",
+      "name": "Rồng Biển Sâu - Nanh Băng"
+    },
+    {
+      "key": "rimebiter-bathysmal-vishap-hatchling",
+      "name": "Rồng Biển Sâu Con - Nanh Băng"
     },
     {
       "key": "rock-shield-hilichurl-guard",
@@ -10743,7 +10795,7 @@
     },
     {
       "key": "ruin-destroyer",
-      "name": "Tiên Phong Di tích"
+      "name": "Tiên Phong Di Tích"
     },
     {
       "key": "ruin-grader",
@@ -10796,6 +10848,10 @@
     {
       "key": "thunderhelm-lawachurl",
       "name": "Vua Giáp Lôi Hilichurl"
+    },
+    {
+      "key": "treasure-hoarder-wallenstein",
+      "name": "Đạo Bảo Đoàn - Wallenstein"
     },
     {
       "key": "treasure-hoarders-boss",

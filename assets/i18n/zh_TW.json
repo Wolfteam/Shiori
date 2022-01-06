@@ -10348,6 +10348,14 @@
       "name": "火斧丘丘暴徒"
     },
     {
+      "key": "bolteater-bathysmal-vishap",
+      "name": "深海龍蜥·吞雷"
+    },
+    {
+      "key": "bolteater-bathysmal-vishap-hatchling",
+      "name": "深海龍蜥幼體·吞雷"
+    },
+    {
       "key": "childe",
       "name": "「公子」"
     },
@@ -10388,6 +10396,10 @@
       "name": "冰史萊姆"
     },
     {
+      "key": "cryo-specter",
+      "name": "冰飄浮靈"
+    },
+    {
       "key": "cryo-whopperflower",
       "name": "冰霜騙騙花"
     },
@@ -10426,6 +10438,10 @@
     {
       "key": "electro-slime",
       "name": "雷史萊姆"
+    },
+    {
+      "key": "electro-specter",
+      "name": "雷飄浮靈"
     },
     {
       "key": "electro-whopperflower",
@@ -10498,6 +10514,10 @@
     {
       "key": "geovishap-hatchling",
       "name": "幼岩龍蜥"
+    },
+    {
+      "key": "golden-wolflord",
+      "name": "黃金王獸"
     },
     {
       "key": "hilichurl",
@@ -10632,6 +10652,18 @@
       "name": "魔偶劍鬼"
     },
     {
+      "key": "maguu-kenki-galloping-frost",
+      "name": "魔偶劍鬼·霜馳"
+    },
+    {
+      "key": "maguu-kenki-lone-gale",
+      "name": "魔偶劍鬼·孤風"
+    },
+    {
+      "key": "maguu-kenki-mask-of-terror",
+      "name": "魔偶劍鬼·兇面"
+    },
+    {
       "key": "millelith-sergeant",
       "name": "千岩軍教頭"
     },
@@ -10680,6 +10712,14 @@
       "name": "古岩龍蜥"
     },
     {
+      "key": "primordial-bathysmal-vishap",
+      "name": "深海龍蜥·原種"
+    },
+    {
+      "key": "primordial-bathysmal-vishap-hatchling",
+      "name": "深海龍蜥幼體·原種"
+    },
+    {
       "key": "pyro-abyss-mage",
       "name": "火深淵法師"
     },
@@ -10700,12 +10740,24 @@
       "name": "火史萊姆"
     },
     {
+      "key": "pyro-specter",
+      "name": "火飄浮靈"
+    },
+    {
       "key": "pyro-whopperflower",
       "name": "熾熱騙騙花"
     },
     {
       "key": "raiden-shogun",
       "name": "雷電將軍"
+    },
+    {
+      "key": "rimebiter-bathysmal-vishap",
+      "name": "深海龍蜥·囓冰"
+    },
+    {
+      "key": "rimebiter-bathysmal-vishap-hatchling",
+      "name": "深海龍蜥幼體·囓冰"
     },
     {
       "key": "rock-shield-hilichurl-guard",
@@ -10786,6 +10838,10 @@
     {
       "key": "thunderhelm-lawachurl",
       "name": "丘丘雷兜王"
+    },
+    {
+      "key": "treasure-hoarder-wallenstein",
+      "name": "盜寶團·「瓦倫斯坦」"
     },
     {
       "key": "treasure-hoarders-boss",

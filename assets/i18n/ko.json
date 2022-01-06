@@ -10388,8 +10388,16 @@
       "name": "불도끼 츄츄 폭도"
     },
     {
+      "key": "bolteater-bathysmal-vishap",
+      "name": "번개를 삼키는 심해 용 도마뱀"
+    },
+    {
+      "key": "bolteater-bathysmal-vishap-hatchling",
+      "name": "번개를 삼키는 심해 용 도마뱀 유체"
+    },
+    {
       "key": "childe",
-      "name": "「타르탈리아」"
+      "name": "타르탈리아"
     },
     {
       "key": "crackling-axe-mitachurl",
@@ -10426,6 +10434,10 @@
     {
       "key": "cryo-slime",
       "name": "얼음 슬라임"
+    },
+    {
+      "key": "cryo-specter",
+      "name": "떠도는 얼음의 정령"
     },
     {
       "key": "cryo-whopperflower",
@@ -10466,6 +10478,10 @@
     {
       "key": "electro-slime",
       "name": "번개 슬라임"
+    },
+    {
+      "key": "electro-specter",
+      "name": "떠도는 번개의 정령"
     },
     {
       "key": "electro-whopperflower",
@@ -10538,6 +10554,10 @@
     {
       "key": "geovishap-hatchling",
       "name": "새끼 바위 용 도마뱀"
+    },
+    {
+      "key": "golden-wolflord",
+      "name": "황금 늑대왕"
     },
     {
       "key": "hilichurl",
@@ -10672,6 +10692,18 @@
       "name": "꼭두각시 검귀"
     },
     {
+      "key": "maguu-kenki-galloping-frost",
+      "name": "꼭두각시 검귀·흩날리는 서리"
+    },
+    {
+      "key": "maguu-kenki-lone-gale",
+      "name": "꼭두각시 검귀·고독한 바람"
+    },
+    {
+      "key": "maguu-kenki-mask-of-terror",
+      "name": "꼭두각시 검귀·흉악한 가면"
+    },
+    {
       "key": "millelith-sergeant",
       "name": "천암군 교관"
     },
@@ -10720,6 +10752,14 @@
       "name": "고대 바위 용 도마뱀"
     },
     {
+      "key": "primordial-bathysmal-vishap",
+      "name": "심해 용 도마뱀·원종"
+    },
+    {
+      "key": "primordial-bathysmal-vishap-hatchling",
+      "name": "심해 용 도마뱀 유체·원종"
+    },
+    {
       "key": "pyro-abyss-mage",
       "name": "화염의 심연 메이지"
     },
@@ -10740,12 +10780,24 @@
       "name": "화염 슬라임"
     },
     {
+      "key": "pyro-specter",
+      "name": "떠도는 불의 정령"
+    },
+    {
       "key": "pyro-whopperflower",
       "name": "뜨거운 구라구라꽃"
     },
     {
       "key": "raiden-shogun",
       "name": "라이덴 쇼군"
+    },
+    {
+      "key": "rimebiter-bathysmal-vishap",
+      "name": "얼음을 짓씹는 심해 용 도마뱀"
+    },
+    {
+      "key": "rimebiter-bathysmal-vishap-hatchling",
+      "name": "얼음을 짓씹는 심해 용 도마뱀 유체"
     },
     {
       "key": "rock-shield-hilichurl-guard",
@@ -10826,6 +10878,10 @@
     {
       "key": "thunderhelm-lawachurl",
       "name": "츄츄 번개왕"
+    },
+    {
+      "key": "treasure-hoarder-wallenstein",
+      "name": "보물 사냥단·발렌슈타인"
     },
     {
       "key": "treasure-hoarders-boss",

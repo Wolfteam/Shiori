@@ -10353,6 +10353,14 @@
       "name": "Митачурл с огненным топором"
     },
     {
+      "key": "bolteater-bathysmal-vishap",
+      "name": "Вишап глубин: Громоглот"
+    },
+    {
+      "key": "bolteater-bathysmal-vishap-hatchling",
+      "name": "Молодой вишап глубин: Громоглот"
+    },
+    {
       "key": "childe",
       "name": "Чайльд"
     },
@@ -10370,11 +10378,11 @@
     },
     {
       "key": "cryo-hilichurl-grenadier",
-      "name": "Крио хиличурл гренадёр"
+      "name": "Крио хиличурл-гренадёр"
     },
     {
       "key": "cryo-hilichurl-shooter",
-      "name": "Хиличурл с крио стрелами"
+      "name": "Крио хиличурл-стрелок"
     },
     {
       "key": "cryo-hypostasis",
@@ -10391,6 +10399,10 @@
     {
       "key": "cryo-slime",
       "name": "Крио слайм"
+    },
+    {
+      "key": "cryo-specter",
+      "name": "Крио призрак"
     },
     {
       "key": "cryo-whopperflower",
@@ -10414,11 +10426,11 @@
     },
     {
       "key": "electro-hilichurl-grenadier",
-      "name": "Электро хиличурл гренадёр"
+      "name": "Электро хиличурл-гренадёр"
     },
     {
       "key": "electro-hilichurl-shooter",
-      "name": "Электро хиличурл стрелок"
+      "name": "Электро хиличурл-стрелок"
     },
     {
       "key": "electro-hypostasis",
@@ -10431,6 +10443,10 @@
     {
       "key": "electro-slime",
       "name": "Электро слайм"
+    },
+    {
+      "key": "electro-specter",
+      "name": "Электро призрак"
     },
     {
       "key": "electro-whopperflower",
@@ -10505,16 +10521,20 @@
       "name": "Детёныш геовишапа"
     },
     {
+      "key": "golden-wolflord",
+      "name": "Золотой волчий вожак"
+    },
+    {
       "key": "hilichurl",
       "name": "Хиличурл"
     },
     {
       "key": "hilichurl-berserker",
-      "name": "Хиличурл берсерк"
+      "name": "Хиличурл-берсерк"
     },
     {
       "key": "hilichurl-fighter",
-      "name": "Хиличурл боец"
+      "name": "Хиличурл-боец"
     },
     {
       "key": "hilichurl-grenadier",
@@ -10522,7 +10542,7 @@
     },
     {
       "key": "hilichurl-shooter",
-      "name": "Хиличурл стрелок"
+      "name": "Хиличурл-стрелок"
     },
     {
       "key": "hydro-abyss-mage",
@@ -10538,35 +10558,35 @@
     },
     {
       "key": "hydro-mimic-boar",
-      "name": "Мимик-кабан: Гидро"
+      "name": "Гидро мимик: Кабан"
     },
     {
       "key": "hydro-mimic-crab",
-      "name": "Мимик-краб: Гидро"
+      "name": "Гидро мимик: Краб"
     },
     {
       "key": "hydro-mimic-crane",
-      "name": "Мимик-журавль: Гидро"
+      "name": "Гидро мимик: Журавль"
     },
     {
       "key": "hydro-mimic-ferret",
-      "name": "Мимик-хорёк: Гидро"
+      "name": "Гидро мимик: Белка"
     },
     {
       "key": "hydro-mimic-finch",
-      "name": "Мимик-воробей: Гидро"
+      "name": "Гидро мимик: Воробей"
     },
     {
       "key": "hydro-mimic-frog",
-      "name": "Мимик-лягушка: Гидро"
+      "name": "Гидро мимик: Лягушка"
     },
     {
       "key": "hydro-mimic-mallard",
-      "name": "Мимик-утка: Гидро"
+      "name": "Гидро мимик: Утка"
     },
     {
       "key": "hydro-mimic-raptor",
-      "name": "Мимик-коршун: Гидро"
+      "name": "Гидро мимик: Коршун"
     },
     {
       "key": "hydro-samachurl",
@@ -10602,15 +10622,15 @@
     },
     {
       "key": "large-anemo-slime",
-      "name": "Большой анемо слайм"
+      "name": "Большой Анемо слайм"
     },
     {
       "key": "large-cryo-slime",
-      "name": "Большой крио слайм"
+      "name": "Большой Крио слайм"
     },
     {
       "key": "large-dendro-slime",
-      "name": "Большой дендро слайм"
+      "name": "Большой Дендро слайм"
     },
     {
       "key": "large-electro-slime",
@@ -10618,15 +10638,15 @@
     },
     {
       "key": "large-geo-slime",
-      "name": "Большой гео слайм"
+      "name": "Большой Гео слайм"
     },
     {
       "key": "large-hydro-slime",
-      "name": "Большой гидро слайм"
+      "name": "Большой Гидро слайм"
     },
     {
       "key": "large-pyro-slime",
-      "name": "Большой пиро слайм"
+      "name": "Большой Пиро слайм"
     },
     {
       "key": "lupus-boreas-dominator-of-wolves",
@@ -10635,6 +10655,18 @@
     {
       "key": "maguu-kenki",
       "name": "Магу кэнки"
+    },
+    {
+      "key": "maguu-kenki-galloping-frost",
+      "name": "Магу кэнки: Бегущий иней"
+    },
+    {
+      "key": "maguu-kenki-lone-gale",
+      "name": "Магу кэнки: Одинокий ветер"
+    },
+    {
+      "key": "maguu-kenki-mask-of-terror",
+      "name": "Магу кэнки: Маска ужаса"
     },
     {
       "key": "millelith-sergeant",
@@ -10685,12 +10717,20 @@
       "name": "Древний геовишап"
     },
     {
+      "key": "primordial-bathysmal-vishap",
+      "name": "Вишап глубин: Исток"
+    },
+    {
+      "key": "primordial-bathysmal-vishap-hatchling",
+      "name": "Молодой вишап глубин: Исток"
+    },
+    {
       "key": "pyro-abyss-mage",
       "name": "Пиро маг Бездны"
     },
     {
       "key": "pyro-hilichurl-shooter",
-      "name": "Пиро хиличурл стрелок"
+      "name": "Пиро хиличурл-стрелок"
     },
     {
       "key": "pyro-hypostasis",
@@ -10705,12 +10745,24 @@
       "name": "Пиро слайм"
     },
     {
+      "key": "pyro-specter",
+      "name": "Пиро призрак"
+    },
+    {
       "key": "pyro-whopperflower",
       "name": "Пиро попрыгунья"
     },
     {
       "key": "raiden-shogun",
       "name": "Сёгун Райдэн"
+    },
+    {
+      "key": "rimebiter-bathysmal-vishap",
+      "name": "Вишап глубин: Ледогрыз"
+    },
+    {
+      "key": "rimebiter-bathysmal-vishap-hatchling",
+      "name": "Молодой вишап глубин: Ледогрыз"
     },
     {
       "key": "rock-shield-hilichurl-guard",
@@ -10774,7 +10826,7 @@
     },
     {
       "key": "stormterror",
-      "name": "Ужас бури"
+      "name": "Ужас Бури"
     },
     {
       "key": "thunder-manifestation",
@@ -10791,6 +10843,10 @@
     {
       "key": "thunderhelm-lawachurl",
       "name": "Лавачурл с громовым шлемом"
+    },
+    {
+      "key": "treasure-hoarder-wallenstein",
+      "name": "Похититель сокровищ Валленштейн"
     },
     {
       "key": "treasure-hoarders-boss",

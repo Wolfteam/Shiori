@@ -10381,6 +10381,14 @@
       "name": "Mitachurl mit Feueraxt"
     },
     {
+      "key": "bolteater-bathysmal-vishap",
+      "name": "Tiefsee-Drachenechse – Donnerverschlinger"
+    },
+    {
+      "key": "bolteater-bathysmal-vishap-hatchling",
+      "name": "Junge Tiefsee-Drachenechse – Donnerverschlinger"
+    },
+    {
       "key": "childe",
       "name": "„Der Graf“"
     },
@@ -10421,6 +10429,10 @@
       "name": "Kryo-Schleim"
     },
     {
+      "key": "cryo-specter",
+      "name": "Kryo-Gespenst"
+    },
+    {
       "key": "cryo-whopperflower",
       "name": "Gigantische Kryo-Vaniloqua"
     },
@@ -10459,6 +10471,10 @@
     {
       "key": "electro-slime",
       "name": "Elektro-Schleim"
+    },
+    {
+      "key": "electro-specter",
+      "name": "Elektro-Gespenst"
     },
     {
       "key": "electro-whopperflower",
@@ -10531,6 +10547,10 @@
     {
       "key": "geovishap-hatchling",
       "name": "Junge Geo-Drachenechse"
+    },
+    {
+      "key": "golden-wolflord",
+      "name": "Goldener Garmfürst"
     },
     {
       "key": "hilichurl",
@@ -10665,6 +10685,18 @@
       "name": "Maguu Kenki"
     },
     {
+      "key": "maguu-kenki-galloping-frost",
+      "name": "Maguu Kenki – Galoppierender Frost"
+    },
+    {
+      "key": "maguu-kenki-lone-gale",
+      "name": "Maguu Kenki – Einsamer Sturm"
+    },
+    {
+      "key": "maguu-kenki-mask-of-terror",
+      "name": "Maguu Kenki – Maske des Schreckens"
+    },
+    {
       "key": "millelith-sergeant",
       "name": "Millelithenausbilder"
     },
@@ -10713,6 +10745,14 @@
       "name": "Alte Geo-Drachenechse"
     },
     {
+      "key": "primordial-bathysmal-vishap",
+      "name": "Tiefsee-Drachenechse – Urtyp"
+    },
+    {
+      "key": "primordial-bathysmal-vishap-hatchling",
+      "name": "Junge Tiefsee-Drachenechse – Urtyp"
+    },
+    {
       "key": "pyro-abyss-mage",
       "name": "Pyro-Abgrundmagier"
     },
@@ -10733,12 +10773,24 @@
       "name": "Pyro-Schleim"
     },
     {
+      "key": "pyro-specter",
+      "name": "Pyro-Gespenst"
+    },
+    {
       "key": "pyro-whopperflower",
       "name": "Gigantische Pyro-Vaniloqua"
     },
     {
       "key": "raiden-shogun",
       "name": "Shougun Raiden"
+    },
+    {
+      "key": "rimebiter-bathysmal-vishap",
+      "name": "Tiefsee-Drachenechse – Eisbeißer"
+    },
+    {
+      "key": "rimebiter-bathysmal-vishap-hatchling",
+      "name": "Junge Tiefsee-Drachenechse – Eisbeißer"
     },
     {
       "key": "rock-shield-hilichurl-guard",
@@ -10819,6 +10871,10 @@
     {
       "key": "thunderhelm-lawachurl",
       "name": "Blitzhelm-Lawachurl"
+    },
+    {
+      "key": "treasure-hoarder-wallenstein",
+      "name": "Schatzräuber Wallenstein"
     },
     {
       "key": "treasure-hoarders-boss",
