@@ -4595,7 +4595,7 @@
       "key": "shenhe",
       "name": "Shenhe",
       "title": "Lonesome Transcendence",
-      "description": "An adepti disciple with a most unusual air about her. Having spent much time cultivating in isolation in Liyue's mountains, she has become every bit as cool and distant as the adepti themselves.",
+      "description": "Un'adepta discepola con una aria molto inusuale attorno a sè. Avendo speso molto tempo a migliorarsi nell'isolamento delle montagne di Liyue, è diventata altrettanto fredda e distante come gli adepti stessi.",
       "skills": [
         {
           "key": "s1",
@@ -4603,76 +4603,76 @@
           "description": "",
           "abilities": [
             {
-              "name": "Normal Attack",
-              "description": "Performs up to five consecutive spear strikes.\r\n",
+              "name": "Attacco Normale",
+              "description": "Esegue fino a 5 attacchi rapidi con la lancia.\r\n",
               "descriptions": []
             },
             {
-              "name": "Charged Attack",
-              "description": "Consumes a certain amount of Stamina to lunge forward, dealing damage to opponents along the way.\r\n",
+              "name": "Attacco Caricato",
+              "description": "Consuma una certa quantità di Stamina per eseguire un affondo lungo che infligge danni ai nemici che incontra lungo il percorso.\r\n",
               "descriptions": []
             },
             {
-              "name": "Plunging Attack",
-              "description": "Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
+              "name": "Attacco in Picchiata",
+              "description": "Si lancia in picchiata da mezz'aria per colpire il terreno sottostante e infliggere AoE DMG all'impatto.",
               "descriptions": []
             }
           ],
           "stats": [
-            "1-Hit DMG|{param1}%",
-            "2-Hit DMG|{param2}%",
-            "3-Hit DMG|{param3}%",
-            "4-Hit DMG|{param4}% + {param5}%",
-            "5-Hit DMG|{param6}%",
-            "Charged Attack DMG|{param7}%",
-            "Charged Attack Stamina Cost|{param8}",
-            "Plunge DMG|{param9}%",
-            "Low/High Plunge DMG|{param10}% / {param11}%"
+            "DMG 1° Colpo|{param1}%",
+            "DMG 2° Colpo|{param2}%",
+            "DMG 3° Colpo|{param3}%",
+            "DMG 4° Colpo|{param4}% + {param5}%",
+            "DMG 5° Colpo|{param6}%",
+            "DMG Attacco Caricato|{param7}%",
+            "Costo Stamina Attacco Caricato|{param8}",
+            "DMG Attacco in Picchiata|{param9}%",
+            "DMG Attacco in Picchiata per altezze Basse/Elevate|{param10}% / {param11}%"
           ]
         },
         {
           "key": "s2",
           "title": "Spring Spirit Summoning",
-          "description": "The frosted dew, silvery and dense, shall exorcise all demons.\r\nGrants all nearby party members the Icy Quill effect and deals Cryo DMG in different ways based on whether it is pressed or held.",
+          "description": "La rugiada ghiacciata, argentea e densa, esorcizzerà tutti i demoni.\r\nConcede a tutti i membri vicini del party l'effetto Icy Quill  e infligge Cryo DMG in maniera differente a seconda che sia un Attacco Caricato o Attacco Normale.",
           "abilities": [
             {
-              "name": "Press",
-              "description": "Rushes forward together with a Talisman Spirit, dealing Cryo DMG to opponents along the path.\r\n",
+              "name": "Premi",
+              "description": "Si precipita in avanti con un Talismano Spirito, infliggendo Cryo DMG ai nemici lungo il percorso.\r\n",
               "descriptions": []
             },
             {
-              "name": "Hold",
-              "description": "Commands the Talisman Spirit to deal AoE Cryo DMG.\r\n",
+              "name": "Tieni Premuto",
+              "description": "Ordina al Talismano Spirito di infliggere AoE Cryo DMG.\r\n",
               "descriptions": []
             },
             {
               "name": "Icy Quill",
-              "description": "When Normal, Charged, and Plunging Attacks, Elemental Skills, and Elemental Bursts deal Cryo DMG to opponents, the DMG dealt is increased based on Shenhe's current ATK.\r\nThe Icy Quill's effects will be cleared once its duration ends or after being triggered a certain number of times. When held rather than pressed, the Icy Quill's effect lasts longer and can be triggered more times.\r\nWhen one Cryo DMG instance strikes multiple opponents, the effect is triggered multiple times based on the number of opponents hit. The number of times the effect is triggered is calculated independently for each party member with the Icy Quill.",
+              "description": "Quando Attacchi Normali, Caricati, in Picchiata, Elemental Skills ed Elemental Bursts infliggono Cryo DMG ai nemici, il DMG inflitto è aumentato in base all’ATK corrente di Shenhe.\r\nGli effetti di Icy Quill termineranno quando la sua durata finirà o dopo esser stati attivati un certo numero di volte. Quando Tieni Premuto invece di Premere, gli effetti di Icy Quill dureranno più a lungo e potranno essere attivati più volte.\r\nQuando un colpo infligge Cryo DMG a più nemici, l’effetto è attivato più volte in base al numero di nemici colpiti. Il numero di volte in cui l'effetto viene attivato è calcolato indipendentemente per ogni membro del party con Icy Quill.",
               "descriptions": []
             }
           ],
           "stats": [
-            "Press Skill DMG|{param1}%",
-            "Hold Skill DMG|{param2}%",
+            "Skill DMG|(Premi){param1}%",
+            "Skill DMG|(Tieni Premuto){param2}%",
             "DMG Bonus|{param3}% ATK",
-            "Press/Hold Duration|{param4}s / {param5}s",
-            "Press/Hold Trigger Quota|{param6} / {param7}",
-            "Press CD|{param8}s",
-            "Hold CD|{param9}s"
+            "Durata Premi/Tieni Premuto|{param4} s/ {param5} s",
+            "Trigger Quota Premi/Tieni Premuto|{param6} / {param7}",
+            "Premi CD|{param8} s",
+            "Tieni Premuto CD|{param9} s"
           ]
         },
         {
           "key": "s3",
           "title": "Divine Maiden's Deliverance",
-          "description": "Unleashes the power of the Talisman Spirit, allowing it to roam free in this plane, dealing AoE Cryo DMG.\r\nThe Talisman Spirit then creates a field that decreases the Cryo RES and Physical RES of opponents within it. It also deals periodic Cryo DMG to opponents within the field.\r\n",
+          "description": "Rilascia il potere del Talismano Spirito, permettendogli di vagare liberamente in questo piano, infliggendo AoE Cryo DMG.\r\nIl Talismano Spirito poi crea un campo che diminuisce la Cryo RES e Physical RES dei nemici al suo interno. Infligge anche periodici Cryo DMG ai nemici nel campo.\r\n",
           "abilities": [],
           "stats": [
             "Skill DMG|{param1}%",
             "RES Decrease|{param2}%",
             "DoT|{param3}%",
-            "Duration|{param4}s",
-            "CD|{param5}s",
-            "Energy Cost|{param6}"
+            "Durata|{param4} s",
+            "CD|{param5} s",
+            "Costo Energy|{param6}"
           ]
         }
       ],
@@ -4680,22 +4680,22 @@
         {
           "key": "p1",
           "title": "Precise Comings and Goings",
-          "description": "Gains 25% more rewards when dispatched on a Liyue Expedition for 20 hours.\r\n",
+          "description": "Ottiene il 25% in più di ricompense quando viene mandata in una Liyue Expedition per 20 ore.\r\n",
           "descriptions": []
         },
         {
           "key": "p2",
           "title": "Deific Embrace",
-          "description": "An active character within the field created by Divine Maiden's Deliverance gains 15% Cryo DMG Bonus.\r\n",
+          "description": "Un personaggio attivo nel campo creato da Divine Maiden's Deliverance ottiene il 15% Cryo DMG Bonus.\r\n",
           "descriptions": []
         },
         {
           "key": "p3",
           "title": "Spirit Communion Seal",
-          "description": "After Shenhe uses Spring Spirit Summoning, she will grant all nearby party members the following effects:\r\n",
+          "description": "Dopo che Shenhe ha usato Spring Spirit Summoning, lei garantirà a tutti i membri vicini del party i seguenti effetti:\r\n",
           "descriptions": [
-            "Press: Elemental Skill and Elemental Burst DMG increased by 15% for 10s.",
-            "Hold: Normal, Charged, and Plunging Attack DMG increased by 15% for 15s."
+            "Premi: Elemental Skill e Elemental Burst DMG aumenta del 15% per 10s.",
+            "Tieni Premuto:Il DMG dell'Attacco Normale, Caricato e In Picchiata aumenta del 15% per 15s."
           ]
         }
       ],
@@ -4703,40 +4703,40 @@
         {
           "key": "c1",
           "title": "Clarity of Heart",
-          "description": "Spring Spirit Summoning can be used 1 more time.\r\n",
+          "description": "Spring Spirit Summoning può essere usata 1 volta in più.\r\n",
           "descriptions": []
         },
         {
           "key": "c2",
           "title": "Centered Spirit",
-          "description": "Divine Maiden's Deliverance lasts for 6 seconds longer. Active characters within the skill's field deals 15% increased Cryo CRIT DMG.\r\n",
+          "description": "Divine Maiden's Deliverance dura per 6 secondi in più. Personaggi attivi all'interno del campo della skill infliggono 15% del Cryo CRIT DMG in più.\r\n",
           "descriptions": []
         },
         {
           "key": "c3",
           "title": "Seclusion",
-          "description": "Increases the Level of Spring Spirit Summoning by 3.\r\nMaximum upgrade level is 15.\r\n",
+          "description": "Aumenta di 3 il livello di Spring Spirit Summoning.\r\nOra il livello massimo di upgrade è 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c4",
           "title": "Insight",
-          "description": "When characters under the effect of Icy Quill applied by Shenhe trigger its DMG Bonus effects, Shenhe will gain a Skyfrost Mantra stack:\r\n",
+          "description": "Quando i personaggi sotto l'effetto di Icy Quill applicato da Shenhe innescano i loro DMG Bonus effects, Shenhe garantirà loro uno Skyfrost Mantra stack:\r\n",
           "descriptions": [
-            "When Shenhe uses Spring Spirit Summoning, she will consume all stacks of Skyfrost Mantra, increasing the DMG of that Spring Spirit Summoning by 5% for each stack consumed.",
-            "Max 50 stacks. Stacks last for 60s."
+            "Quando Shenhe usa Spring Spirit Summoning, consumerà stutti gli stack di Skyfrost Mantra, aumentando il DMG di quel Spring Spirit Summoning del 5% per ogni stack consumato.",
+            "Massimo 50 stacks. Gli Stack durano per 60s."
           ]
         },
         {
           "key": "c5",
           "title": "Divine Attainment",
-          "description": "Increases the Level of Divine Maiden's Deliverance by 3.\r\nMaximum upgrade level is 15.\r\n",
+          "description": "Aumenta di 3 il livello di Divine Maiden's Deliverance.\r\nOra il livello massimo di upgrade è 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c6",
           "title": "Mystical Abandon",
-          "description": "When characters trigger Icy Quill's effects using Normal and Charged Attack DMG, it does not count toward the Trigger Quota.\r\n",
+          "description": "Quando dei personaggi attivano gli effetti di Icy Quill usando DMG di Attacchi Normali e Caricati, questi non contano per il Trigger Quota.\r\n",
           "descriptions": []
         }
       ]
@@ -6654,7 +6654,7 @@
       "key": "yun-jin",
       "name": "Yun Jin",
       "title": "Stage Lucida",
-      "description": "A renowned Liyue opera singer who is skilled in both playwriting and singing. Her style is one-of-a-kind, exquisite and delicate, much like the person herself.",
+      "description": "Una rinomata cantante di opera di Liyue che è abile sia nella drammaturgia che nel canto. Il suo stile è unico nel suo genere, squisito e delicato, proprio come la persona stessa.",
       "skills": [
         {
           "key": "s1",
@@ -6662,75 +6662,75 @@
           "description": "",
           "abilities": [
             {
-              "name": "Normal Attack",
-              "description": "Performs up to five consecutive spear strikes.\r\n",
+              "name": "Attacco Normale",
+              "description": "Esegue fino a 5 attacchi rapidi con la lancia.\r\n",
               "descriptions": []
             },
             {
-              "name": "Charged Attack",
-              "description": "Consumes a certain amount of Stamina to lunge forward, dealing damage to opponents along the way.\r\n",
+              "name": "Attacco Caricato",
+              "description": "Consuma una certa quantità di Stamina per eseguire un affondo lungo che infligge danni ai nemici che incontra lungo il percorso.\r\n",
               "descriptions": []
             },
             {
-              "name": "Plunging Attack",
-              "description": "Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
+              "name": "Attacco in Picchiata",
+              "description": "Si lancia in picchiata da mezz'aria per colpire il terreno sottostante e infliggere AoE DMG all'impatto.",
               "descriptions": []
             }
           ],
           "stats": [
-            "1-Hit DMG|{param1}%",
-            "2-Hit DMG|{param2}%",
-            "3-Hit DMG|{param3}% + {param4}%",
-            "4-Hit DMG|{param5}% + {param6}%",
-            "5-Hit DMG|{param7}%",
-            "Charged Attack|{param8}%",
-            "Charged Attack Stamina Cost|{param9}",
-            "Plunge DMG|{param10}%",
-            "Low/High Plunge DMG|{param11}% / {param12}%"
+            "DMG 1° Colpo|{param1}%",
+            "DMG 2° Colpo|{param2}%",
+            "DMG 3° Colpo|{param3}% + {param4}%",
+            "DMG 4° Colpo|{param5}% + {param6}%",
+            "DMG 5° Colpo|{param7}%",
+            "Attacco Caricato|{param8}%",
+            "Costo Stamina Attacco Caricato|{param9}",
+            "DMG Attacco in Picchiata|{param10}%",
+            "DMG Attacco in Picchiata per altezze Basse/Elevate|{param11}% / {param12}%"
           ]
         },
         {
           "key": "s2",
           "title": "Opening Flourish",
-          "description": "Ms. Yun may just be acting out fights on stage, but her skills with the spear are real enough to defend against her foes.\r\n",
+          "description": "Ms. Yun può anche solo simulare dei combattimenti sul palco, ma le sue abilità con la lancia sono reali quanto basta per difendersi contro i suoi nemici.\r\n",
           "abilities": [
             {
-              "name": "Press",
-              "description": "Flourishes her polearm in a cloud-grasping stance, dealing Geo DMG.\r\n",
+              "name": "Premi",
+              "description": "Volteggia la sua lancia nella posizione di Cloud-Grasping, infliggendo Geo DMG.\r\n",
               "descriptions": []
             },
             {
-              "name": "Hold",
-              "description": "Takes up the Opening Flourish stance and charges up, forming a shield. DMG Absorption is based on Yun Jin's Max HP and has 150% effectiveness against all Elemental DMG and Physical DMG. The shield lasts until she finishes unleashing her Elemental Skill.\r\nWhen the skill is released, when its duration ends, or when the shield breaks, Yun Jin will unleash the charged energy as an attack, dealing Geo DMG.\r\nBased on the time spent charging, it will either unleash an attack at Charge Level 1 or Level 2.\r\n",
+              "name": "Tieni Premuto",
+              "description": "Prende la posizione di Opening Flourish e si carica, formando uno scudo. Il DMG Absorption è basato sui Max HP di Yun Jin e ha un'efficacia del 150% contro tutti i DMG Elementali e DMG Fisici. Lo scudo dura finchè lei finisce di rilasciare la sua Elemental Skill.\r\nQuando la skill viene rilasciata, quando la durata finisce, o quando lo scudo si rompe, Yun Jin rilascerà l'energia caricata come come attacco, infliggendo Geo DMG.\r\nBasato sul tempo speso a caricarsi, rilascerà un attacco o di Livello di Carica 1 o di Livello di Carica 2.\r\n",
               "descriptions": []
             }
           ],
           "stats": [
-            "Press DMG|{param1}% DEF",
-            "Charge Level 1 DMG|{param2}% DEF",
-            "Charge Level 2 DMG|{param3}% DEF",
-            "Shield DMG Absorption|{param4}% Max HP+ {param5}",
+            "DMG(Premi)|{param1}% DEF",
+            "DMG del Livello di Carica 1|{param2}% DEF",
+            "DMG del Livello di Carica 2|{param3}% DEF",
+            "DMG Absorption dello scudo|{param4}% Max HP+ {param5}",
             "CD|{param6} s"
           ]
         },
         {
           "key": "s3",
           "title": "Cliffbreaker's Banner",
-          "description": "Deals AoE Geo DMG and grants all nearby party members a Flying Cloud Flag Formation.\r\n",
+          "description": "infligge AoE Geo DMG e concede a tutti i membri vicini del party una Flying Cloud Flag Formation.\r\n",
           "abilities": [
             {
               "name": "Flying Cloud Flag Formation",
-              "description": "When Normal Attack DMG is dealt to opponents, Bonus DMG will be dealt based on Yun Jin's current DEF.\r\nThe effects of this skill will be cleared after a set duration or after being triggered a specific number of times.\r\nWhen one Normal Attack hits multiple opponents, the effect is triggered multiple times according to the number of opponents hit. The number of times that the effect is triggered is counted independently for each member of the party with Flying Cloud Flag Formation.\r\n",
+              "description": "Quando il DMG di un Attacco Normale è inferto ai nemici, un Bonus DMG sarà attivato in base alla DEF attuale di Yun Jin.\r\nGli effetti di questa skill saranno cancellati dopo una determinata durata o dopo esser stata attivata uno specifico numero di volte.\r\nQuando un Attacco Normale colpisce più nemici, gli effetti si attivano più volte secondo il numero di nemici colpiti. Il numero di volte che l'effetto è attivato è contato indipendentemente per ogni membro del party con Flying Cloud Flag Formation.\r\n",
               "descriptions": []
             }
           ],
           "stats": [
             "Skill DMG|{param1}%",
-            "DMG Increase|{param2}% DEF",
-            "Duration|{param3} s",
+            "Aumento del DMG|{param2}% DEF",
+            "Durata|{param3} s",
             "Trigger Quota|{param4}",
             "CD|{param5} s",
-            "Energy Cost|{param6}"
+            "Costo Energy|{param6}"
           ]
         }
       ],
@@ -6738,19 +6738,19 @@
         {
           "key": "p1",
           "title": "Light Nourishment",
-          "description": "When Perfect Cooking is achieved on Food with Adventure-related effects, there is a 12% chance to obtain double the product.\r\n",
+          "description": "Quando si ottiene Perfect Cooking su del Cibo con effetti connessi con l'Avventura, c'è una possibilità del 12% di ottenere il doppio del prodotto.\r\n",
           "descriptions": []
         },
         {
           "key": "p2",
           "title": "True to Oneself",
-          "description": "Using Opening Flourish at the precise moment when Yun Jin is attacked will unleash its Level 2 Charged (Hold) form.\r\n",
+          "description": "Usare Opening Flourish al momento preciso quando Yun Jin è attaccata rilascerà la sua forma di Livello di Carica 2 (Tieni Premuto).\r\n",
           "descriptions": []
         },
         {
           "key": "p3",
           "title": "Breaking Conventions",
-          "description": "The Normal Attack DMG Bonus granted by Flying Cloud Flag Formation is further increased by 2.5%/5%/7.5%/11.5% of Yun Jin's DEF when the party contains characters of 1/2/3/4 Elemental Types, respectively.\r\n",
+          "description": "Il Bonus DMG dell'Attacco Normale garantito dal Flying Cloud Flag Formation è aumentato ulteriormente del 2.5%/5%/7.5%/11.5% della DEF di Yun Jin quando il party ha rispettivamente personaggi di 1/2/3/4 Tipi Elementali.\r\n",
           "descriptions": []
         }
       ],
@@ -6758,37 +6758,37 @@
         {
           "key": "c1",
           "title": "Thespian Gallop",
-          "description": "Opening Flourish's CD is decreased by 18%.\r\n",
+          "description": "La CD di Opening Flourishè diminuita del 18%.\r\n",
           "descriptions": []
         },
         {
           "key": "c2",
           "title": "Myriad Mise-En-Scène",
-          "description": "After Cliffbreaker's Banner is unleashed, all nearby party members' Normal Attack DMG is increased by 15% for 12s.\r\n",
+          "description": "Dopo che Cliffbreaker's Banner è attivata, il DMG dell'Attacco Normale dei membri vicini del party è aumentato del 15% per 12s.\r\n",
           "descriptions": []
         },
         {
           "key": "c3",
           "title": "Seafaring General",
-          "description": "Increases the Level of Cliffbreaker's Banner by 3.\r\nMaximum upgrade level is 15.\r\n",
+          "description": "Aumenta di 3 il livello di Cliffbreaker's Banner.\r\nOra il livello massimo di upgrade è 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c4",
           "title": "Flower and a Fighter",
-          "description": "When Yun Jin triggers the Crystallize Reaction, her DEF is increased by 20% for 12s.\r\n",
+          "description": "Quando Yun Jin attiva la Crystallize Reaction, la sua DEF è aumentata del 20% per 12s.\r\n",
           "descriptions": []
         },
         {
           "key": "c5",
           "title": "Famed Throughout the Land",
-          "description": "Increases the Level of Opening Flourish by 3.\r\nMaximum upgrade level is 15.\r\n",
+          "description": "Aumenta di 3 il livello di Opening Flourish.\r\nOra il livello massimo di upgrade è 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c6",
           "title": "Decorous Harmony",
-          "description": "Characters under the effects of the Flying Cloud Flag Formation have their Normal ATK SPD increased by 12%.\r\n",
+          "description": "I personaggi sotto l'effetto della Flying Cloud Flag Formation hanno la loro Normal ATK SPD aumentata del 12%.\r\n",
           "descriptions": []
         }
       ]
@@ -7120,13 +7120,13 @@
     {
       "key": "calamity-queller",
       "name": "Calamity Queller",
-      "description": "A keenly honed weapon forged from some strange crystal. Its faint blue light seems to whisper of countless matters now past.",
+      "description": "Un’arma accuratamente affilata forgiata da uno strano cristallo. La sua debole luce blu sembra sussurrare innumerevoli storie ormai passate...",
       "refinements": [
-        "Gain {color}12{/color}% All Elemental DMG Bonus. Obtain Consummation for 20s after using an Elemental Skill, causing ATK to increase by {color}3.2{/color}% per second. This ATK increase has a maximum of 6 stacks. When the character equipped with this weapon is not on the field, Consummation's ATK increase is doubled.",
-        "Gain {color}15{/color}% All Elemental DMG Bonus. Obtain Consummation for 20s after using an Elemental Skill, causing ATK to increase by {color}4{/color}% per second. This ATK increase has a maximum of 6 stacks. When the character equipped with this weapon is not on the field, Consummation's ATK increase is doubled.",
-        "Gain {color}18{/color}% All Elemental DMG Bonus. Obtain Consummation for 20s after using an Elemental Skill, causing ATK to increase by {color}4.8{/color}% per second. This ATK increase has a maximum of 6 stacks. When the character equipped with this weapon is not on the field, Consummation's ATK increase is doubled.",
-        "Gain {color}21{/color}% All Elemental DMG Bonus. Obtain Consummation for 20s after using an Elemental Skill, causing ATK to increase by {color}5.6{/color}% per second. This ATK increase has a maximum of 6 stacks. When the character equipped with this weapon is not on the field, Consummation's ATK increase is doubled.",
-        "Gain {color}24{/color}% All Elemental DMG Bonus. Obtain Consummation for 20s after using an Elemental Skill, causing ATK to increase by {color}6.4{/color}% per second. This ATK increase has a maximum of 6 stacks. When the character equipped with this weapon is not on the field, Consummation's ATK increase is doubled."
+        "Ottieni il {color}12{/color}% di Elemental DMG Bonus per tutti gli elementi. Dopo aver usato una Elemental Skill ottieni \"Consummation\" per 20s e l’ ATK aumenta del {color}3.2{/color}% al secondo. Massimo 6 stacks. Se il personaggio che equipaggia quest’arma non è presente sul campo, questo aumento di ATK (Consummation) raddoppia.",
+        "Ottieni il {color}15{/color}% di Elemental DMG Bonus per tutti gli elementi. Dopo aver usato una Elemental Skill ottieni \"Consummation\" per 20s e l’ ATK aumenta del {color}4{/color}% al secondo. Massimo 6 stacks. Se il personaggio che equipaggia quest’arma non è presente sul campo, questo aumento di ATK (Consummation) raddoppia.",
+        "Ottieni il {color}18{/color}% di Elemental DMG Bonus per tutti gli elementi. Dopo aver usato una Elemental Skill ottieni \"Consummation\" per 20s e l’ ATK aumenta del {color}4.8{/color}% al secondo. Massimo 6 stacks. Se il personaggio che equipaggia quest’arma non è presente sul campo, questo aumento di ATK (Consummation) raddoppia.",
+        "Ottieni il {color}21{/color}% di Elemental DMG Bonus per tutti gli elementi. Dopo aver usato una Elemental Skill ottieni \"Consummation\" per 20s e l’ ATK aumenta del {color}5.6{/color}% al secondo. Massimo 6 stacks. Se il personaggio che equipaggia quest’arma non è presente sul campo, questo aumento di ATK (Consummation) raddoppia.",
+        "Ottieni il {color}24{/color}% di Elemental DMG Bonus per tutti gli elementi. Dopo aver usato una Elemental Skill ottieni \"Consummation\" per 20s e l’ ATK aumenta del {color}6.4{/color}% al secondo. Massimo 6 stacks. Se il personaggio che equipaggia quest’arma non è presente sul campo, questo aumento di ATK (Consummation) raddoppia."
       ]
     },
     {
@@ -9115,7 +9115,7 @@
     {
       "key": "dragonheirs-false-fin",
       "name": "Dragonheir's False Fin",
-      "description": "A piece of biological tissue that you found after defeating the Bathysmal Vishaps.\r\nAlthough it looks like a fin of some kind, it does not actually have any function at all.\r\nThe people of Byakuyakoku once investigated the Bathysmal Vishaps quite deeply. Their most distinctive feature was the ability to choose what traits it wished to pass on to its offspring. Because of their great hatred for humanity, these vishaps will lose any visual acuity by the time they reach maturity. At the same time, they have also evolved a certain degree of elemental polymorphism for combat purposes."
+      "description": "Un pezzo di tessuto biologico che hai trovato sconfiggendo i Bathysmal Vishaps.\r\nAnche se sembra una pinna di qualche tipo, in realtà non ha alcuna funzione.\r\nGli abitanti del Byakuyakoku un tempo studiavano a fondo i Bathysmal Vishaps. La loro caratteristica più distintiva era la capacità di decidere quali tratti trasmettere alla prole. A causa del loro grande rancore per l’umanità, raggiunta la maturità, questi Vishaps perdevano ogni capacità visiva. Allo stesso tempo, hanno anche sviluppato un certo grado di polimorfismo elementale per combattere."
     },
     {
       "key": "dream-of-the-dandelion-gladiator",
