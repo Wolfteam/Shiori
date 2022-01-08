@@ -20,6 +20,8 @@ class ArtifactCard extends StatelessWidget {
   final bool withoutDetails;
   final bool withElevation;
   final bool isInSelectionMode;
+  final bool withShape;
+  final bool withTextOverflow;
 
   const ArtifactCard({
     Key? key,
@@ -32,6 +34,8 @@ class ArtifactCard extends StatelessWidget {
     this.imgHeight = 120,
     this.withElevation = true,
     this.isInSelectionMode = false,
+    this.withShape = true,
+    this.withTextOverflow = false,
   })  : withoutDetails = false,
         super(key: key);
 
@@ -44,6 +48,8 @@ class ArtifactCard extends StatelessWidget {
     this.isInSelectionMode = false,
     this.imgWidth = 70,
     this.imgHeight = 60,
+    this.withShape = true,
+    this.withTextOverflow = false,
   })  : bonus = const [],
         withoutDetails = true,
         withElevation = false,
@@ -57,6 +63,8 @@ class ArtifactCard extends StatelessWidget {
     this.withElevation = true,
     this.withoutDetails = false,
     this.isInSelectionMode = false,
+    this.withShape = true,
+    this.withTextOverflow = false,
   })  : keyName = item.key,
         name = item.name,
         image = item.image,
@@ -72,7 +80,7 @@ class ArtifactCard extends StatelessWidget {
       onTap: () => _gotoDetailPage(context),
       child: GradientCard(
         clipBehavior: Clip.hardEdge,
-        shape: Styles.mainCardShape,
+        shape: withShape ? Styles.mainCardShape : null,
         elevation: withElevation ? Styles.cardTenElevation : 0,
         gradient: rarity.getRarityGradient(),
         child: Padding(
@@ -90,6 +98,7 @@ class ArtifactCard extends StatelessWidget {
                 child: Text(
                   name,
                   textAlign: TextAlign.center,
+                  overflow: withTextOverflow ? TextOverflow.ellipsis : null,
                   style: theme.textTheme.subtitle1!.copyWith(fontWeight: FontWeight.bold, color: Colors.white),
                 ),
               ),

@@ -81,7 +81,7 @@ class _CustomBuildsPageState extends State<CustomBuildsPage> with SingleTickerPr
     //     child: CustomBuildPage(),
     //   ),
     // );
-    final route = MaterialPageRoute(builder: (ctx) => CustomBuildPage());
+    final route = MaterialPageRoute(builder: (ctx) => const CustomBuildPage());
     await Navigator.push(context, route);
   }
 }

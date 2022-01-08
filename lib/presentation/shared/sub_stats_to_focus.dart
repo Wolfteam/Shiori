@@ -7,11 +7,15 @@ import 'package:shiori/presentation/shared/styles.dart';
 class SubStatToFocus extends StatelessWidget {
   final List<StatType> subStatsToFocus;
   final Color color;
+  final EdgeInsetsGeometry margin;
+  final double fontSize;
 
   const SubStatToFocus({
     Key? key,
     required this.subStatsToFocus,
     required this.color,
+    this.margin = Styles.edgeInsetHorizontal5,
+    this.fontSize = 12,
   }) : super(key: key);
 
   @override
@@ -20,13 +24,13 @@ class SubStatToFocus extends StatelessWidget {
     final theme = Theme.of(context);
     final text = subStatsToFocus.map((e) => s.translateStatTypeWithoutValue(e)).join(' > ');
     return Container(
-      margin: Styles.edgeInsetHorizontal5,
+      margin: margin,
       child: Text(
         '${s.subStats}: $text',
         style: theme.textTheme.subtitle2!.copyWith(
           fontWeight: FontWeight.bold,
           color: color,
-          fontSize: 12,
+          fontSize: fontSize,
         ),
       ),
     );
