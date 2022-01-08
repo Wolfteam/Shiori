@@ -4625,7 +4625,7 @@
             "Daño de 4.º golpe|{param4}% + {param5}%",
             "Daño de 5.º golpe|{param6}%",
             "Daño de ATQ Cargado|{param7}%",
-            "Coste de Aguante de ATQ Cargado|{param8} pts.",
+            "Coste de Aguante de ATQ Cargado|{param8}",
             "Daño de Caída|{param9}%",
             "Daño de impacto de caída baja/alta|{param10}% / {param11}%"
           ]
@@ -4644,16 +4644,21 @@
               "name": "Mantener pulsado",
               "description": "Ordena al espíritu hechizado que inflija Daño Cryo en el AdE.\r\n",
               "descriptions": []
+            },
+            {
+              "name": "Pluma glacial",
+              "description": "Cuando los Ataques Normales, Cargados o Descendentes o la Habilidad Elemental o Definitiva infligen Daño Cryo contra un enemigo, el daño que infligen aumenta en proporción al ATQ actual de Shenhe.\r\nLos efectos de la pluma glacial desaparecerán cuando termine su duración o cuando se haya activado un número determinado de cargas. La pluma glacial activada manteniendo pulsado tiene una mayor duración y un mayor número de cargas que la activada Pulsar una vez.\r\nAl golpear a varios enemigos a la vez con un golpe de Daño Cryo, se consumirán cargas en función del número de enemigos golpeados. Los efectos y las cargas de la pluma glacial se calculan de manera independiente para cada personaje.",
+              "descriptions": []
             }
           ],
           "stats": [
-            "al pulsar una vezDaño de habilidad|{param1}%",
+            "Daño de habilidad al pulsar una vez|{param1}%",
             "Daño de habilidad al mantener pulsado|{param2}%",
-            "Aumento de daño|{param3}% de ATQ",
-            "pulsar una vezDuración de /mantener pulsado|{param4} s/ {param5} s",
-            "pulsar una vezCargas al /mantener pulsado|{param6} / {param7}",
-            "al pulsar una vezTdE|{param8} s",
-            "TdE de mantener pulsado|{param9} s"
+            "Aumento de daño|{param3}% ATK",
+            "Duración de pulsar una vez/mantener pulsado|{param4}s / {param5}s",
+            "Cargas al pulsar una vez/mantener pulsado|{param6} / {param7}s",
+            "TdE al pulsar una vez|{param8}s",
+            "TdE de mantener pulsado|{param9}s"
           ]
         },
         {
@@ -4665,8 +4670,8 @@
             "Daño de habilidad|{param1}%",
             "Reducción de RES|{param2}%",
             "Daño continuo|{param3}%",
-            "Duración|{param4} s",
-            "TdE|{param5} s",
+            "Duración|{param4}s",
+            "TdE|{param5}s",
             "Energía Elemental|{param6}"
           ]
         }

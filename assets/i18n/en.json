@@ -4633,7 +4633,7 @@
         {
           "key": "s2",
           "title": "Spring Spirit Summoning",
-          "description": "The frosted dew, silvery and dense, shall exorcise all demons.\r\nGrants all nearby party members the Icy Quill effect and deals Cryo DMG in different ways based on whether it is NA or held.",
+          "description": "The frosted dew, silvery and dense, shall exorcise all demons.\r\nGrants all nearby party members the Icy Quill effect and deals Cryo DMG in different ways based on whether it is pressed or held.",
           "abilities": [
             {
               "name": "Press",
@@ -4644,16 +4644,21 @@
               "name": "Hold",
               "description": "Commands the Talisman Spirit to deal AoE Cryo DMG.\r\n",
               "descriptions": []
+            },
+            {
+              "name": "Icy Quill",
+              "description": "When Normal, Charged, and Plunging Attacks, Elemental Skills, and Elemental Bursts deal Cryo DMG to opponents, the DMG dealt is increased based on Shenhe's current ATK.\r\nThe Icy Quill's effects will be cleared once its duration ends or after being triggered a certain number of times. When held rather than pressed, the Icy Quill's effect lasts longer and can be triggered more times.\r\nWhen one Cryo DMG instance strikes multiple opponents, the effect is triggered multiple times based on the number of opponents hit. The number of times the effect is triggered is calculated independently for each party member with the Icy Quill.",
+              "descriptions": []
             }
           ],
           "stats": [
             "Press Skill DMG|{param1}%",
             "Hold Skill DMG|{param2}%",
             "DMG Bonus|{param3}% ATK",
-            "Press/Hold Duration|{param4} s/ {param5} s",
-            "Press/Hold Trigger Quota|{param6} / {param7}",
-            "Press CD|{param8} s",
-            "Hold CD|{param9} s"
+            "Press/Hold Duration|{param4}s / {param5}s",
+            "Press/Hold Trigger Quota|{param6} / {param7}s",
+            "Press CD|{param8}s",
+            "Hold CD|{param9}s"
           ]
         },
         {
@@ -4665,8 +4670,8 @@
             "Skill DMG|{param1}%",
             "RES Decrease|{param2}%",
             "DoT|{param3}%",
-            "Duration|{param4} s",
-            "CD|{param5} s",
+            "Duration|{param4}s",
+            "CD|{param5}s",
             "Energy Cost|{param6}"
           ]
         }

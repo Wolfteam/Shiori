@@ -4662,10 +4662,10 @@
             "DGT appui simple|{param1}%",
             "DGT appui long|{param2}%",
             "Bonus de DGT|{param3}% ATQ",
-            "Durée d'appui simple/long|{param4} s/ {param5} s",
-            "Cumuls d'appui simple/long|{param6} / {param7}",
-            "TdR appui simple|{param8} s",
-            "TdR appui long|{param9} s"
+            "Durée d'appui simple/long|{param4}s / {param5}s",
+            "Cumuls d'appui simple/long|{param6} / {param7}s",
+            "TdR appui simple|{param8}s",
+            "TdR appui long|{param9}s"
           ]
         },
         {
@@ -4677,8 +4677,8 @@
             "DGT compétence|{param1}%",
             "Baisse RÉS|{param2}%",
             "DGT continus|{param3}%",
-            "Durée|{param4} s",
-            "Temps de recharge|{param5} s",
+            "Durée|{param4}s",
+            "Temps de recharge|{param5}s",
             "Énergie élémentaire|{param6}"
           ]
         }

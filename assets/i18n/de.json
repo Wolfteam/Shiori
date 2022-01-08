@@ -4658,10 +4658,10 @@
             "SCH bei Drücken|{param1}%",
             "SCH bei Gedrückthalten|{param2}%",
             "SCH-Bonus|{param3}% ANG",
-            "Dauer bei Drücken/Gedrückthalten|{param4} / {param5} s",
-            "Wirksame Stapelungen bei Drücken/Gedrückthalten|{param6} / {param7}",
-            "Abklingzeit für Drücken|{param8} s",
-            "Abklingzeit für Gedrückthalten|{param9} s"
+            "Dauer bei Drücken/Gedrückthalten|{param4}s / {param5}s",
+            "Wirksame Stapelungen bei Drücken/Gedrückthalten|{param6} / {param7}s",
+            "Abklingzeit für Drücken|{param8}s",
+            "Abklingzeit für Gedrückthalten|{param9}s"
           ]
         },
         {
@@ -4673,8 +4673,8 @@
             "Fähigkeits-SCH|{param1}%",
             "WDS-Malus|{param2}%",
             "Fortlaufender SCH|{param3}%",
-            "Dauer|{param4} s",
-            "Abklingzeit|{param5} s",
+            "Dauer|{param4}s",
+            "Abklingzeit|{param5}s",
             "Elementarenergie|{param6}"
           ]
         }
