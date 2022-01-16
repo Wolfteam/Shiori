@@ -17,5 +17,8 @@ class CustomBuildArtifact extends HiveObject {
   @HiveField(3)
   StatType statType;
 
-  CustomBuildArtifact(this.buildItemKey, this.itemKey, this.type, this.statType);
+  @HiveField(4)
+  List<StatType> subStats;
+
+  CustomBuildArtifact(this.buildItemKey, this.itemKey, this.type, this.statType, this.subStats);
 }

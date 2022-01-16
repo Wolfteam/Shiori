@@ -53,8 +53,8 @@ List<StatType> getArtifactPossibleMainStats(ArtifactType type) {
   }
 }
 
-List<StatType> getArtifactPossibleSubStats() {
-  return [
+List<StatType> getArtifactPossibleSubStats(StatType mainStat) {
+  final possibleValues = [
     StatType.hp,
     StatType.atk,
     StatType.def,
@@ -66,6 +66,25 @@ List<StatType> getArtifactPossibleSubStats() {
     StatType.critRatePercentage,
     StatType.critDmgPercentage,
   ];
+  //The main stat cannot be repeated
+  return possibleValues.except([mainStat]).toList();
+}
+
+int getArtifactMaxNumberOfSubStats(int rarity) {
+  switch (rarity) {
+    case 1:
+      return 0;
+    case 2:
+      return 1;
+    case 3:
+      return 2;
+    case 4:
+      return 3;
+    case 5:
+      return 4;
+    default:
+      throw Exception('The provided rarity is not valid for an artifact');
+  }
 }
 
 const languagesMap = {

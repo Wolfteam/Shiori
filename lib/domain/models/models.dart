@@ -13,6 +13,7 @@ export 'characters/character_skill_card_model.dart';
 export 'characters/character_talent_ascension_model.dart';
 export 'custom_builds/custom_build_artifact_model.dart';
 export 'custom_builds/custom_build_model.dart';
+export 'custom_builds/custom_build_note_model.dart';
 export 'db/artifacts/artifact_file_model.dart';
 export 'db/artifacts/artifacts_file.dart';
 export 'db/characters/character_file_model.dart';

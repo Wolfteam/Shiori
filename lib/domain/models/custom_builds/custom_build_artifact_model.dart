@@ -11,5 +11,6 @@ class CustomBuildArtifactModel with _$CustomBuildArtifactModel {
     required StatType statType,
     required String image,
     required int rarity,
+    required List<StatType> subStats,
   }) = _CustomBuildArtifactModel;
 }
