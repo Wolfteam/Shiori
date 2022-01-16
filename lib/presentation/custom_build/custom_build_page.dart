@@ -6,29 +6,18 @@ import 'package:permission_handler/permission_handler.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import 'package:screenshot/screenshot.dart';
 import 'package:shiori/application/bloc.dart';
-import 'package:shiori/domain/app_constants.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/extensions/string_extensions.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/generated/l10n.dart';
 import 'package:shiori/injection.dart';
-import 'package:shiori/presentation/artifacts/artifacts_page.dart';
-import 'package:shiori/presentation/artifacts/widgets/artifact_card.dart';
-import 'package:shiori/presentation/characters/characters_page.dart';
-import 'package:shiori/presentation/shared/character_stack_image.dart';
-import 'package:shiori/presentation/shared/dialogs/select_artifact_type_dialog.dart';
-import 'package:shiori/presentation/shared/dialogs/select_stat_type_dialog.dart';
-import 'package:shiori/presentation/shared/dropdown_button_with_title.dart';
+import 'package:shiori/presentation/custom_build/widgets/artifact_section.dart';
+import 'package:shiori/presentation/custom_build/widgets/character_section.dart';
+import 'package:shiori/presentation/custom_build/widgets/weapon_section.dart';
 import 'package:shiori/presentation/shared/extensions/element_type_extensions.dart';
-import 'package:shiori/presentation/shared/extensions/i18n_extensions.dart';
 import 'package:shiori/presentation/shared/loading.dart';
-import 'package:shiori/presentation/shared/nothing_found.dart';
 import 'package:shiori/presentation/shared/styles.dart';
-import 'package:shiori/presentation/shared/sub_stats_to_focus.dart';
-import 'package:shiori/presentation/shared/utils/enum_utils.dart';
 import 'package:shiori/presentation/shared/utils/toast_utils.dart';
-import 'package:shiori/presentation/weapons/weapons_page.dart';
-import 'package:shiori/presentation/weapons/widgets/weapon_card.dart';
 
 const double _maxItemImageWidth = 130;
 
@@ -85,9 +74,13 @@ class _PageState extends State<_Page> {
                   roleType: state.type,
                   roleSubType: state.subType,
                   showOnCharacterDetail: state.showOnCharacterDetail,
+                  isRecommended: state.isRecommended,
                   character: state.character,
                   weapons: state.weapons,
                   artifacts: state.artifacts,
+                  notes: state.notes,
+                  skillPriorities: state.skillPriorities,
+                  subStatsSummary: state.subStatsSummary,
                 ),
                 landscape: (context) => width > 700
                     ? _LandscapeLayout(
@@ -95,18 +88,26 @@ class _PageState extends State<_Page> {
                         roleType: state.type,
                         roleSubType: state.subType,
                         showOnCharacterDetail: state.showOnCharacterDetail,
+                        isRecommended: state.isRecommended,
                         character: state.character,
                         weapons: state.weapons,
                         artifacts: state.artifacts,
+                        notes: state.notes,
+                        skillPriorities: state.skillPriorities,
+                        subStatsSummary: state.subStatsSummary,
                       )
                     : _PortraitLayout(
                         title: state.title.isNullEmptyOrWhitespace ? s.dps : state.title,
                         roleType: state.type,
                         roleSubType: state.subType,
                         showOnCharacterDetail: state.showOnCharacterDetail,
+                        isRecommended: state.isRecommended,
                         character: state.character,
                         weapons: state.weapons,
                         artifacts: state.artifacts,
+                        notes: state.notes,
+                        skillPriorities: state.skillPriorities,
+                        subStatsSummary: state.subStatsSummary,
                       ),
               ),
             ),
@@ -132,7 +133,7 @@ class _AppBar extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     final s = S.of(context);
     return AppBar(
-      title: Text(newBuild ? 'Add' : s.edit),
+      title: Text(newBuild ? s.add : s.edit),
       actions: [
         IconButton(
           onPressed: () {},
@@ -183,9 +184,13 @@ class _PortraitLayout extends StatelessWidget {
   final CharacterRoleType roleType;
   final CharacterRoleSubType roleSubType;
   final bool showOnCharacterDetail;
+  final bool isRecommended;
   final CharacterCardModel character;
   final List<WeaponCardModel> weapons;
   final List<CustomBuildArtifactModel> artifacts;
+  final List<CustomBuildNoteModel> notes;
+  final List<CharacterSkillType> skillPriorities;
+  final List<StatType> subStatsSummary;
 
   const _PortraitLayout({
     Key? key,
@@ -193,9 +198,13 @@ class _PortraitLayout extends StatelessWidget {
     required this.roleType,
     required this.roleSubType,
     required this.showOnCharacterDetail,
+    required this.isRecommended,
     required this.character,
     required this.weapons,
     required this.artifacts,
+    required this.notes,
+    required this.skillPriorities,
+    required this.subStatsSummary,
   }) : super(key: key);
 
   @override
@@ -204,29 +213,35 @@ class _PortraitLayout extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        _MainCard(
+        CharacterSection(
           title: title,
           type: roleType,
           subType: roleSubType,
           showOnCharacterDetail: showOnCharacterDetail,
+          isRecommended: isRecommended,
           character: character,
+          notes: notes,
+          skillPriorities: skillPriorities,
         ),
         ScreenTypeLayout.builder(
           desktop: (context) => _WeaponsAndArtifacts(
             elementType: character.elementType,
             weapons: weapons,
             artifacts: artifacts,
+            subStatsSummary: subStatsSummary,
           ),
           tablet: (context) => _WeaponsAndArtifacts(
             elementType: character.elementType,
             weapons: weapons,
             artifacts: artifacts,
+            subStatsSummary: subStatsSummary,
           ),
           mobile: (context) => _WeaponsAndArtifacts(
             useColumn: isPortrait,
             elementType: character.elementType,
             weapons: weapons,
             artifacts: artifacts,
+            subStatsSummary: subStatsSummary,
           ),
         ),
       ],
@@ -239,9 +254,13 @@ class _LandscapeLayout extends StatelessWidget {
   final CharacterRoleType roleType;
   final CharacterRoleSubType roleSubType;
   final bool showOnCharacterDetail;
+  final bool isRecommended;
   final CharacterCardModel character;
   final List<WeaponCardModel> weapons;
   final List<CustomBuildArtifactModel> artifacts;
+  final List<CustomBuildNoteModel> notes;
+  final List<CharacterSkillType> skillPriorities;
+  final List<StatType> subStatsSummary;
 
   const _LandscapeLayout({
     Key? key,
@@ -249,9 +268,13 @@ class _LandscapeLayout extends StatelessWidget {
     required this.roleType,
     required this.roleSubType,
     required this.showOnCharacterDetail,
+    required this.isRecommended,
     required this.character,
     required this.weapons,
     required this.artifacts,
+    required this.notes,
+    required this.skillPriorities,
+    required this.subStatsSummary,
   }) : super(key: key);
 
   @override
@@ -262,26 +285,32 @@ class _LandscapeLayout extends StatelessWidget {
       children: [
         Expanded(
           flex: 40,
-          child: _MainCard(
+          child: CharacterSection(
             title: title,
             type: roleType,
             subType: roleSubType,
             showOnCharacterDetail: showOnCharacterDetail,
+            isRecommended: isRecommended,
             character: character,
+            notes: notes,
+            skillPriorities: skillPriorities,
           ),
         ),
         Expanded(
           flex: 30,
-          child: _Weapons(
+          child: WeaponSection(
             weapons: weapons,
             color: character.elementType.getElementColorFromContext(context),
+            maxItemImageWidth: _maxItemImageWidth,
           ),
         ),
         Expanded(
           flex: 30,
-          child: _Artifacts(
+          child: ArtifactSection(
             artifacts: artifacts,
             color: character.elementType.getElementColorFromContext(context),
+            maxItemImageWidth: _maxItemImageWidth,
+            subStatsSummary: subStatsSummary,
           ),
         ),
       ],
@@ -294,22 +323,32 @@ class _WeaponsAndArtifacts extends StatelessWidget {
   final List<WeaponCardModel> weapons;
   final List<CustomBuildArtifactModel> artifacts;
   final bool useColumn;
+  final List<StatType> subStatsSummary;
 
-  const _WeaponsAndArtifacts({Key? key, required this.elementType, required this.weapons, required this.artifacts, this.useColumn = false})
-      : super(key: key);
+  const _WeaponsAndArtifacts({
+    Key? key,
+    required this.elementType,
+    required this.weapons,
+    required this.artifacts,
+    this.useColumn = false,
+    required this.subStatsSummary,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     if (useColumn) {
       return Column(
         children: [
-          _Weapons(
+          WeaponSection(
             weapons: weapons,
             color: elementType.getElementColorFromContext(context),
+            maxItemImageWidth: _maxItemImageWidth,
           ),
-          _Artifacts(
+          ArtifactSection(
             artifacts: artifacts,
             color: elementType.getElementColorFromContext(context),
+            maxItemImageWidth: _maxItemImageWidth,
+            subStatsSummary: subStatsSummary,
           ),
         ],
       );
@@ -319,477 +358,21 @@ class _WeaponsAndArtifacts extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Expanded(
-          child: _Weapons(
+          child: WeaponSection(
             weapons: weapons,
             color: elementType.getElementColorFromContext(context),
+            maxItemImageWidth: _maxItemImageWidth,
           ),
         ),
         Expanded(
-          child: _Artifacts(
+          child: ArtifactSection(
             artifacts: artifacts,
             color: elementType.getElementColorFromContext(context),
+            maxItemImageWidth: _maxItemImageWidth,
+            subStatsSummary: subStatsSummary,
           ),
         ),
       ],
     );
-  }
-}
-
-class _MainCard extends StatelessWidget {
-  final String title;
-  final CharacterRoleType type;
-  final CharacterRoleSubType subType;
-  final bool showOnCharacterDetail;
-  final CharacterCardModel character;
-
-  const _MainCard({
-    Key? key,
-    required this.title,
-    required this.type,
-    required this.subType,
-    required this.showOnCharacterDetail,
-    required this.character,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    final s = S.of(context);
-    final theme = Theme.of(context);
-    final isPortrait = MediaQuery.of(context).orientation == Orientation.portrait;
-    final height = MediaQuery.of(context).size.height;
-    final width = MediaQuery.of(context).size.width;
-    double imgHeight = height * (isPortrait ? 0.5 : 0.8);
-    if (imgHeight > 700) {
-      imgHeight = 700;
-    }
-    final flexA = width < 400 ? 55 : 60;
-    final flexB = width < 400 ? 45 : 40;
-    return Container(
-      color: character.elementType.getElementColorFromContext(context),
-      child: Row(
-        children: [
-          Expanded(
-            flex: flexA,
-            child: CharacterStackImage(
-              name: character.name,
-              image: character.image,
-              rarity: character.stars,
-              height: imgHeight,
-              onTap: () => _openCharacterPage(context),
-            ),
-          ),
-          Expanded(
-            flex: flexB,
-            child: Padding(
-              padding: Styles.edgeInsetHorizontal5,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  Row(
-                    children: [
-                      Expanded(
-                        child: Text(
-                          title,
-                          maxLines: 2,
-                          overflow: TextOverflow.ellipsis,
-                          style: theme.textTheme.headline5!.copyWith(fontWeight: FontWeight.bold),
-                        ),
-                      ),
-                      IconButton(
-                        onPressed: () {},
-                        splashRadius: Styles.smallButtonSplashRadius,
-                        icon: const Icon(Icons.edit),
-                      )
-                    ],
-                  ),
-                  DropdownButtonWithTitle<CharacterRoleType>(
-                    margin: EdgeInsets.zero,
-                    title: s.role,
-                    currentValue: type,
-                    items: EnumUtils.getTranslatedAndSortedEnum<CharacterRoleType>(
-                      CharacterRoleType.values.where((el) => el != CharacterRoleType.na).toList(),
-                      (val, _) => s.translateCharacterRoleType(val),
-                    ),
-                    onChanged: (v) => context.read<CustomBuildBloc>().add(CustomBuildEvent.roleChanged(newValue: v)),
-                  ),
-                  DropdownButtonWithTitle<CharacterRoleSubType>(
-                    margin: EdgeInsets.zero,
-                    title: 'Sub type',
-                    currentValue: subType,
-                    items: EnumUtils.getTranslatedAndSortedEnum<CharacterRoleSubType>(
-                      CharacterRoleSubType.values,
-                      (val, _) => s.translateCharacterRoleSubType(val),
-                    ),
-                    onChanged: (v) => context.read<CustomBuildBloc>().add(CustomBuildEvent.subRoleChanged(newValue: v)),
-                  ),
-                  SwitchListTile(
-                    activeColor: theme.colorScheme.secondary,
-                    contentPadding: EdgeInsets.zero,
-                    title: Text('Show on character detail'),
-                    value: showOnCharacterDetail,
-                    onChanged: (v) => context.read<CustomBuildBloc>().add(CustomBuildEvent.showOnCharacterDetailChanged(newValue: v)),
-                  ),
-                ],
-              ),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-
-  Future<void> _openCharacterPage(BuildContext context) async {
-    //TODO: EXCLUDE UPCOMING CHARACTERS ?
-    final bloc = context.read<CustomBuildBloc>();
-    final selectedKey = await CharactersPage.forSelection(context, excludeKeys: [character.key]);
-    if (selectedKey.isNullEmptyOrWhitespace) {
-      return;
-    }
-
-    bloc.add(CustomBuildEvent.characterChanged(newKey: selectedKey!));
-  }
-}
-
-class _Weapons extends StatelessWidget {
-  final List<WeaponCardModel> weapons;
-  final Color color;
-
-  const _Weapons({
-    Key? key,
-    required this.weapons,
-    required this.color,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    final s = S.of(context);
-    final theme = Theme.of(context);
-    //TODO: WEAPON REFINEMENTS
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Container(
-          padding: Styles.edgeInsetVertical10,
-          // margin: const EdgeInsets.only(bottom: 10),
-          decoration: BoxDecoration(
-            color: color,
-            border: Border(top: BorderSide(color: Colors.white)),
-          ),
-          child: Text(
-            s.weapons,
-            textAlign: TextAlign.center,
-            style: theme.textTheme.subtitle1!.copyWith(fontWeight: FontWeight.bold),
-          ),
-        ),
-        ButtonBar(
-          buttonPadding: EdgeInsets.zero,
-          children: [
-            IconButton(
-              padding: EdgeInsets.zero,
-              splashRadius: Styles.smallButtonSplashRadius,
-              onPressed: () => _openWeaponsPage(context),
-              icon: Icon(Icons.add),
-            ),
-            IconButton(
-              padding: EdgeInsets.zero,
-              splashRadius: Styles.smallButtonSplashRadius,
-              onPressed: () {},
-              icon: Icon(Icons.clear_all),
-            ),
-          ],
-        ),
-        if (weapons.isEmpty) NothingFound(msg: 'Start by adding some weapons'),
-        ...weapons
-            .map(
-              (e) => Row(
-                children: [
-                  SizedBox(
-                    width: _maxItemImageWidth,
-                    child: WeaponCard.withoutDetails(
-                      keyName: e.key,
-                      name: e.name,
-                      rarity: e.rarity,
-                      image: e.image,
-                      isComingSoon: e.isComingSoon,
-                      withShape: false,
-                      imgWidth: 94,
-                      imgHeight: 84,
-                    ),
-                  ),
-                  Expanded(
-                    child: Padding(
-                      padding: Styles.edgeInsetHorizontal16,
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text(
-                            'Serpent Spine',
-                            style: theme.textTheme.subtitle1!.copyWith(fontWeight: FontWeight.bold),
-                          ),
-                          Text(
-                            'Base Atk: 41',
-                            style: theme.textTheme.subtitle2!.copyWith(
-                              fontWeight: FontWeight.bold,
-                              color: color,
-                            ),
-                          ),
-                          Text(
-                            'Secondary Stat: 12.0 ATK%',
-                            style: theme.textTheme.subtitle2!.copyWith(
-                              fontWeight: FontWeight.bold,
-                              color: color,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                  IconButton(
-                    onPressed: () {},
-                    splashRadius: Styles.smallButtonSplashRadius,
-                    icon: Icon(Icons.more_vert),
-                  ),
-                ],
-              ),
-            )
-            .toList(),
-        // Wrap(
-        //   alignment: WrapAlignment.center,
-        //   crossAxisAlignment: WrapCrossAlignment.center,
-        //   children: [
-        //     ...weapons
-        //         .map(
-        //           (e) => WeaponCard.withoutDetails(
-        //             keyName: e.key,
-        //             name: e.name,
-        //             rarity: e.rarity,
-        //             image: e.image,
-        //             isComingSoon: e.isComingSoon,
-        //             // imgHeight: 60,
-        //             // imgWidth: 70,
-        //           ),
-        //         )
-        //         .toList(),
-        //     IconButton(
-        //       color: theme.colorScheme.secondary,
-        //       iconSize: 60,
-        //       splashRadius: Styles.mediumBigButtonSplashRadius,
-        //       icon: const Icon(Icons.add),
-        //       onPressed: () => _openWeaponsPage(context),
-        //     )
-        //   ],
-        // ),
-      ],
-    );
-  }
-
-  Future<void> _openWeaponsPage(BuildContext context) async {
-    final bloc = context.read<CustomBuildBloc>();
-    final selectedKey = await WeaponsPage.forSelection(context, excludeKeys: weapons.map((e) => e.key).toList());
-    if (selectedKey.isNullEmptyOrWhitespace) {
-      return;
-    }
-    bloc.add(CustomBuildEvent.addWeapon(key: selectedKey!));
-  }
-}
-
-class _Artifacts extends StatelessWidget {
-  final List<CustomBuildArtifactModel> artifacts;
-  final Color color;
-
-  const _Artifacts({
-    Key? key,
-    required this.artifacts,
-    required this.color,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    final s = S.of(context);
-    final theme = Theme.of(context);
-    final possibleSubStats = getArtifactPossibleSubStats();
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Container(
-          padding: Styles.edgeInsetVertical10,
-          // margin: const EdgeInsets.only(bottom: 10),
-          decoration: BoxDecoration(
-            color: color,
-            border: Border(top: BorderSide(color: Colors.white)),
-          ),
-          child: Text(
-            s.artifacts,
-            textAlign: TextAlign.center,
-            style: theme.textTheme.subtitle1!.copyWith(fontWeight: FontWeight.bold),
-          ),
-        ),
-        ButtonBar(
-          buttonPadding: EdgeInsets.zero,
-          children: [
-            IconButton(
-              padding: EdgeInsets.zero,
-              splashRadius: Styles.smallButtonSplashRadius,
-              onPressed: artifacts.length < ArtifactType.values.length ? () => _addArtifact(context) : null,
-              icon: Icon(Icons.add),
-            ),
-            IconButton(
-              padding: EdgeInsets.zero,
-              splashRadius: Styles.smallButtonSplashRadius,
-              onPressed: () {},
-              icon: Icon(Icons.clear_all),
-            ),
-          ],
-        ),
-        if (artifacts.isEmpty) NothingFound(msg: 'Start by adding some artifacts'),
-        ...artifacts.map(
-          (e) => Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              SizedBox(
-                width: _maxItemImageWidth,
-                child: ArtifactCard.withoutDetails(
-                  keyName: e.key,
-                  name: s.translateStatTypeWithoutValue(e.statType),
-                  image: e.image,
-                  rarity: e.rarity,
-                  withShape: false,
-                  withTextOverflow: true,
-                ),
-              ),
-              Expanded(
-                child: Padding(
-                  padding: Styles.edgeInsetHorizontal16,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        s.translateArtifactType(e.type),
-                        style: theme.textTheme.subtitle1!.copyWith(fontWeight: FontWeight.bold),
-                      ),
-                      Text(
-                        'Archaic Petra',
-                        style: theme.textTheme.subtitle1,
-                      ),
-                      // Text('Substats', style: theme.textTheme.subtitle2),
-                      SubStatToFocus(
-                        subStatsToFocus: [StatType.atk, StatType.critDmgPercentage, StatType.critRatePercentage],
-                        color: color,
-                        margin: EdgeInsets.zero,
-                        fontSize: 13,
-                      ),
-                      // Wrap(
-                      //   runSpacing: 2,
-                      //   spacing: 10,
-                      //   children: [
-                      //     Text(
-                      //       s.translateStatTypeWithoutValue(StatType.atk),
-                      //       style: theme.textTheme.subtitle2!.copyWith(color: color),
-                      //     ),
-                      //     Text(
-                      //       s.translateStatTypeWithoutValue(StatType.defPercentage),
-                      //       style: theme.textTheme.subtitle2!.copyWith(color: color),
-                      //     ),
-                      //     Text(
-                      //       s.translateStatTypeWithoutValue(StatType.hp),
-                      //       style: theme.textTheme.subtitle2!.copyWith(color: color),
-                      //     ),
-                      //     Text(
-                      //       s.translateStatTypeWithoutValue(StatType.geoDmgBonusPercentage),
-                      //       style: theme.textTheme.subtitle2!.copyWith(color: color),
-                      //     ),
-                      //   ],
-                      // )
-                    ],
-                  ),
-                ),
-              ),
-              IconButton(
-                onPressed: () {},
-                splashRadius: Styles.smallButtonSplashRadius,
-                icon: Icon(Icons.more_vert),
-              ),
-            ],
-          ),
-        ),
-        // Wrap(
-        //   alignment: WrapAlignment.center,
-        //   crossAxisAlignment: WrapCrossAlignment.center,
-        //   children: [
-        //     ...artifacts
-        //         .map(
-        //           (e) => ArtifactCard.withoutDetails(
-        //             keyName: e.key,
-        //             name: s.translateStatTypeWithoutValue(e.statType),
-        //             image: e.image,
-        //             rarity: e.rarity,
-        //           ),
-        //         )
-        //         .toList(),
-        //     if (artifacts.length < ArtifactType.values.length)
-        //       IconButton(
-        //         color: theme.colorScheme.secondary,
-        //         iconSize: 60,
-        //         splashRadius: Styles.mediumBigButtonSplashRadius,
-        //         icon: const Icon(Icons.add),
-        //         onPressed: () => _addArtifact(context),
-        //       ),
-        //   ],
-        // ),
-        //TODO: IF HERE
-        SubStatToFocus(
-          subStatsToFocus: [StatType.atk, StatType.critDmgPercentage, StatType.critRatePercentage],
-          color: color,
-          fontSize: 14,
-        ),
-      ],
-    );
-  }
-
-  Future<void> _addArtifact(BuildContext context) async {
-    final bloc = context.read<CustomBuildBloc>();
-    final selectedType = await showDialog<ArtifactType>(
-      context: context,
-      builder: (ctx) => SelectArtifactTypeDialog(
-        selectedValues: artifacts.map((e) => e.type).toList(),
-      ),
-    );
-    if (selectedType == null) {
-      return;
-    }
-
-    StatType? statType;
-    switch (selectedType) {
-      case ArtifactType.flower:
-        statType = StatType.hp;
-        break;
-      case ArtifactType.plume:
-        statType = StatType.atk;
-        break;
-      default:
-        statType = await showDialog<StatType>(
-          context: context,
-          builder: (ctx) => SelectStatTypeDialog(
-            values: getArtifactPossibleMainStats(selectedType),
-          ),
-        );
-        break;
-    }
-
-    if (statType == null) {
-      return;
-    }
-
-    //TODO: REMOVE THE CROWNS AND MAYBE ONLY SHOW THE SPECIFIC TYPE
-    final selectedKey = await ArtifactsPage.forSelection(context, type: selectedType);
-    if (selectedKey.isNullEmptyOrWhitespace) {
-      return;
-    }
-    bloc.add(CustomBuildEvent.addArtifact(key: selectedKey!, type: selectedType, statType: statType));
   }
 }
