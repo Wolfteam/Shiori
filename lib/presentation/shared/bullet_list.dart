@@ -5,16 +5,20 @@ import 'styles.dart';
 
 class BulletList extends StatelessWidget {
   final List<String> items;
-  final Widget icon;
+  final IconData icon;
+  final double iconSize;
   final Widget Function(int)? iconResolver;
   final double fontSize;
+  final Function(int)? onDelete;
 
   const BulletList({
     Key? key,
     required this.items,
-    this.icon = const Icon(Icons.fiber_manual_record, size: 15),
+    this.icon = Icons.fiber_manual_record,
+    this.iconSize = 15,
     this.iconResolver,
     this.fontSize = 11,
+    this.onDelete,
   }) : super(key: key);
 
   @override
@@ -24,7 +28,7 @@ class BulletList extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: items.mapIndex(
         (e, index) {
-          var leading = icon;
+          Widget leading = Icon(icon, size: iconSize);
           if (iconResolver != null) {
             leading = iconResolver!(index);
           }
@@ -38,6 +42,14 @@ class BulletList extends StatelessWidget {
               offset: Styles.listItemWithIconOffset,
               child: Tooltip(message: e, child: Text(e, style: theme.textTheme.bodyText2!.copyWith(fontSize: fontSize))),
             ),
+            trailing: onDelete != null
+                ? IconButton(
+                    icon: const Icon(Icons.delete),
+                    onPressed: () => onDelete!(index),
+                    iconSize: iconSize,
+                    splashRadius: Styles.smallButtonSplashRadius,
+                  )
+                : null,
           );
         },
       ).toList(),
