@@ -14,6 +14,8 @@ class CustomBuildEvent with _$CustomBuildEvent {
 
   const factory CustomBuildEvent.showOnCharacterDetailChanged({required bool newValue}) = _ShowOnCharacterDetailChanged;
 
+  const factory CustomBuildEvent.isRecommendedChanged({required bool newValue}) = _IsRecommendedChanged;
+
   const factory CustomBuildEvent.addWeapon({required String key}) = _AddWeapon;
 
   const factory CustomBuildEvent.deleteWeapon({required String key}) = _DeleteWeapon;
@@ -26,8 +28,28 @@ class CustomBuildEvent with _$CustomBuildEvent {
     required StatType statType,
   }) = _AddArtifact;
 
+  const factory CustomBuildEvent.addArtifactSubStats({
+    required ArtifactType type,
+    required List<StatType> subStats,
+  }) = _AddArtifactSubStats;
+
+  const factory CustomBuildEvent.deleteArtifact({required ArtifactType type}) = _DeleteArtifact;
+
+  const factory CustomBuildEvent.addNote({required String note}) = _AddNote;
+
+  const factory CustomBuildEvent.deleteNote({required int index}) = _DeleteNote;
+
+  const factory CustomBuildEvent.deleteWeapons() = _DeleteWeapons;
+
+  const factory CustomBuildEvent.deleteArtifacts() = _DeleteArtifacts;
+
+  const factory CustomBuildEvent.addSkillPriority({required CharacterSkillType type}) = _AddSkillPriority;
+
+  const factory CustomBuildEvent.deleteSkillPriority({required int index}) = _DeleteSkillPriority;
+
   const factory CustomBuildEvent.saveChanges() = _SaveChanges;
 
+  //TODO: DELETE THIS?
   const factory CustomBuildEvent.reset() = _Reset;
 
 //TODO: SHARE, SBUSTATS, TALENETS, ARTIFACT'S PIECE BONUS
