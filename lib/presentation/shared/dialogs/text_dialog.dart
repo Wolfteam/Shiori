@@ -58,7 +58,9 @@ class _TextDialogState extends State<TextDialog> {
     final theme = Theme.of(context);
     final s = S.of(context);
     final mq = MediaQuery.of(context);
+
     return AlertDialog(
+      scrollable: true,
       title: Text(widget.isInEditMode ? s.edit : s.add),
       content: SizedBox(
         width: mq.getWidthForDialogs(),
