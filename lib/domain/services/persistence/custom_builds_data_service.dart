@@ -2,6 +2,7 @@ import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/models/models.dart';
 
 abstract class CustomBuildsDataService {
+  //TODO: THESE 2 METHODS ARE COMMON IN ALL THE SERVICES
   Future<void> init();
 
   Future<void> deleteThemAll();
@@ -18,8 +19,9 @@ abstract class CustomBuildsDataService {
     bool showOnCharacterDetail,
     bool isRecommended,
     List<CustomBuildNoteModel> notes,
-    List<String> weaponKeys,
+    List<CustomBuildWeaponModel> weapons,
     List<CustomBuildArtifactModel> artifacts,
+    List<CustomBuildTeamCharacterModel> teamCharacters,
     List<CharacterSkillType> talentPriority,
   );
 
@@ -31,8 +33,9 @@ abstract class CustomBuildsDataService {
     bool showOnCharacterDetail,
     bool isRecommended,
     List<CustomBuildNoteModel> notes,
-    List<String> weaponKeys,
+    List<CustomBuildWeaponModel> weapons,
     List<CustomBuildArtifactModel> artifacts,
+    List<CustomBuildTeamCharacterModel> teamCharacters,
     List<CharacterSkillType> talentPriority,
   );
 
