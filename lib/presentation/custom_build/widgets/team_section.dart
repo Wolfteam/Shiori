@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shiori/application/bloc.dart';
@@ -6,24 +5,24 @@ import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/extensions/string_extensions.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/generated/l10n.dart';
-import 'package:shiori/presentation/custom_build/widgets/weapon_row.dart';
+import 'package:shiori/presentation/characters/characters_page.dart';
+import 'package:shiori/presentation/custom_build/widgets/team_character_row.dart';
+import 'package:shiori/presentation/shared/dialogs/select_character_role_sub_type_dialog.dart';
+import 'package:shiori/presentation/shared/dialogs/select_character_role_type_dialog.dart';
 import 'package:shiori/presentation/shared/dialogs/sort_items_dialog.dart';
 import 'package:shiori/presentation/shared/nothing_found.dart';
 import 'package:shiori/presentation/shared/styles.dart';
-import 'package:shiori/presentation/weapons/weapons_page.dart';
 
-class WeaponSection extends StatelessWidget {
-  final List<CustomBuildWeaponModel> weapons;
-  final WeaponType weaponType;
+class TeamSection extends StatelessWidget {
+  final String mainCharKey;
+  final List<CustomBuildTeamCharacterModel> teamCharacters;
   final Color color;
-  final double maxItemImageWidth;
 
-  const WeaponSection({
+  const TeamSection({
     Key? key,
-    required this.weapons,
-    required this.weaponType,
+    required this.mainCharKey,
     required this.color,
-    required this.maxItemImageWidth,
+    required this.teamCharacters,
   }) : super(key: key);
 
   @override
@@ -43,7 +42,7 @@ class WeaponSection extends StatelessWidget {
             border: isPortrait ? const Border(top: BorderSide(color: Colors.white)) : null,
           ),
           child: Text(
-            '${s.weapons} (${weapons.length} / ${CustomBuildBloc.maxNumberOfWeapons})',
+            '${s.teamComposition} (${teamCharacters.length} / ${CustomBuildBloc.maxNumberOfTeamCharacters})',
             textAlign: TextAlign.center,
             style: theme.textTheme.subtitle1!.copyWith(fontWeight: FontWeight.bold),
           ),
@@ -57,7 +56,7 @@ class WeaponSection extends StatelessWidget {
                 padding: EdgeInsets.zero,
                 splashRadius: Styles.smallButtonSplashRadius,
                 icon: const Icon(Icons.add),
-                onPressed: () => _openWeaponsPage(context),
+                onPressed: teamCharacters.length <= CustomBuildBloc.maxNumberOfTeamCharacters ? () => _addTeamCharacter(context) : null,
               ),
             ),
             Tooltip(
@@ -66,18 +65,18 @@ class WeaponSection extends StatelessWidget {
                 padding: EdgeInsets.zero,
                 splashRadius: Styles.smallButtonSplashRadius,
                 icon: const Icon(Icons.sort),
-                onPressed: weapons.length < 2
+                onPressed: teamCharacters.length < 2
                     ? null
                     : () => showDialog(
                           context: context,
                           builder: (_) => SortItemsDialog(
-                            items: weapons.map((e) => SortableItem(e.key, e.name)).toList(),
+                            items: teamCharacters.map((e) => SortableItem(e.key, e.name)).toList(),
                             onSave: (result) {
                               if (!result.somethingChanged) {
                                 return;
                               }
 
-                              context.read<CustomBuildBloc>().add(CustomBuildEvent.weaponsOrderChanged(weapons: result.items));
+                              context.read<CustomBuildBloc>().add(CustomBuildEvent.teamCharactersOrderChanged(characters: result.items));
                             },
                           ),
                         ),
@@ -89,39 +88,42 @@ class WeaponSection extends StatelessWidget {
                 padding: EdgeInsets.zero,
                 splashRadius: Styles.smallButtonSplashRadius,
                 icon: const Icon(Icons.clear_all),
-                onPressed: weapons.isEmpty ? null : () => context.read<CustomBuildBloc>().add(const CustomBuildEvent.deleteWeapons()),
+                onPressed: teamCharacters.isEmpty ? null : () => context.read<CustomBuildBloc>().add(const CustomBuildEvent.deleteTeamCharacters()),
               ),
             ),
           ],
         ),
-        if (weapons.isEmpty)
-          NothingFound(msg: s.startByAddingWeapons)
+        if (teamCharacters.isEmpty)
+          NothingFound(msg: s.startByAddingCharacters)
         else
-          ...weapons
-              .map(
-                (e) => WeaponRow(
-                  weapon: e,
-                  color: color,
-                  maxImageWidth: maxItemImageWidth,
-                  weaponCount: weapons.length,
-                ),
-              )
-              .toList(),
+          ...teamCharacters.map((e) => TeamCharacterRow(character: e, teamCount: teamCharacters.length, color: color)).toList(),
       ],
     );
   }
 
-  Future<void> _openWeaponsPage(BuildContext context) async {
+  Future<void> _addTeamCharacter(BuildContext context) async {
     final bloc = context.read<CustomBuildBloc>();
-    final selectedKey = await WeaponsPage.forSelection(
-      context,
-      excludeKeys: weapons.map((e) => e.key).toList(),
-      weaponTypes: [weaponType],
-      areWeaponTypesEnabled: false,
-    );
-    if (selectedKey.isNullEmptyOrWhitespace) {
+    final exclude = [...teamCharacters.map((e) => e.key), mainCharKey];
+    final key = await CharactersPage.forSelection(context, excludeKeys: exclude);
+    if (key.isNullEmptyOrWhitespace) {
       return;
     }
-    bloc.add(CustomBuildEvent.addWeapon(key: selectedKey!));
+
+    final roleType = await showDialog<CharacterRoleType>(
+      context: context,
+      builder: (_) => const SelectCharacterRoleTypeDialog(
+        excluded: [CharacterRoleType.na],
+      ),
+    );
+    if (roleType == null) {
+      return;
+    }
+
+    final subType = await showDialog<CharacterRoleSubType>(context: context, builder: (_) => const SelectCharacterRoleSubTypeDialog());
+    if (subType == null) {
+      return;
+    }
+
+    bloc.add(CustomBuildEvent.addTeamCharacter(key: key!, roleType: roleType, subType: subType));
   }
 }

@@ -13,6 +13,7 @@ import 'package:shiori/generated/l10n.dart';
 import 'package:shiori/injection.dart';
 import 'package:shiori/presentation/custom_build/widgets/artifact_section.dart';
 import 'package:shiori/presentation/custom_build/widgets/character_section.dart';
+import 'package:shiori/presentation/custom_build/widgets/team_section.dart';
 import 'package:shiori/presentation/custom_build/widgets/weapon_section.dart';
 import 'package:shiori/presentation/shared/extensions/element_type_extensions.dart';
 import 'package:shiori/presentation/shared/loading.dart';
@@ -78,11 +79,12 @@ class _PageState extends State<_Page> {
                   character: state.character,
                   weapons: state.weapons,
                   artifacts: state.artifacts,
+                  teamCharacters: state.teamCharacters,
                   notes: state.notes,
                   skillPriorities: state.skillPriorities,
                   subStatsSummary: state.subStatsSummary,
                 ),
-                landscape: (context) => width > 700
+                landscape: (context) => width > 1280
                     ? _LandscapeLayout(
                         title: state.title.isNullEmptyOrWhitespace ? s.dps : state.title,
                         roleType: state.type,
@@ -92,6 +94,7 @@ class _PageState extends State<_Page> {
                         character: state.character,
                         weapons: state.weapons,
                         artifacts: state.artifacts,
+                        teamCharacters: state.teamCharacters,
                         notes: state.notes,
                         skillPriorities: state.skillPriorities,
                         subStatsSummary: state.subStatsSummary,
@@ -105,6 +108,7 @@ class _PageState extends State<_Page> {
                         character: state.character,
                         weapons: state.weapons,
                         artifacts: state.artifacts,
+                        teamCharacters: state.teamCharacters,
                         notes: state.notes,
                         skillPriorities: state.skillPriorities,
                         subStatsSummary: state.subStatsSummary,
@@ -186,8 +190,9 @@ class _PortraitLayout extends StatelessWidget {
   final bool showOnCharacterDetail;
   final bool isRecommended;
   final CharacterCardModel character;
-  final List<WeaponCardModel> weapons;
+  final List<CustomBuildWeaponModel> weapons;
   final List<CustomBuildArtifactModel> artifacts;
+  final List<CustomBuildTeamCharacterModel> teamCharacters;
   final List<CustomBuildNoteModel> notes;
   final List<CharacterSkillType> skillPriorities;
   final List<StatType> subStatsSummary;
@@ -202,6 +207,7 @@ class _PortraitLayout extends StatelessWidget {
     required this.character,
     required this.weapons,
     required this.artifacts,
+    required this.teamCharacters,
     required this.notes,
     required this.skillPriorities,
     required this.subStatsSummary,
@@ -225,22 +231,31 @@ class _PortraitLayout extends StatelessWidget {
         ),
         ScreenTypeLayout.builder(
           desktop: (context) => _WeaponsAndArtifacts(
-            elementType: character.elementType,
+            mainCharKey: character.key,
+            weaponType: character.weaponType,
+            color: character.elementType.getElementColorFromContext(context),
             weapons: weapons,
             artifacts: artifacts,
+            teamCharacters: teamCharacters,
             subStatsSummary: subStatsSummary,
           ),
           tablet: (context) => _WeaponsAndArtifacts(
-            elementType: character.elementType,
+            mainCharKey: character.key,
+            weaponType: character.weaponType,
+            color: character.elementType.getElementColorFromContext(context),
             weapons: weapons,
             artifacts: artifacts,
+            teamCharacters: teamCharacters,
             subStatsSummary: subStatsSummary,
           ),
           mobile: (context) => _WeaponsAndArtifacts(
             useColumn: isPortrait,
-            elementType: character.elementType,
+            mainCharKey: character.key,
+            weaponType: character.weaponType,
+            color: character.elementType.getElementColorFromContext(context),
             weapons: weapons,
             artifacts: artifacts,
+            teamCharacters: teamCharacters,
             subStatsSummary: subStatsSummary,
           ),
         ),
@@ -256,8 +271,9 @@ class _LandscapeLayout extends StatelessWidget {
   final bool showOnCharacterDetail;
   final bool isRecommended;
   final CharacterCardModel character;
-  final List<WeaponCardModel> weapons;
+  final List<CustomBuildWeaponModel> weapons;
   final List<CustomBuildArtifactModel> artifacts;
+  final List<CustomBuildTeamCharacterModel> teamCharacters;
   final List<CustomBuildNoteModel> notes;
   final List<CharacterSkillType> skillPriorities;
   final List<StatType> subStatsSummary;
@@ -272,6 +288,7 @@ class _LandscapeLayout extends StatelessWidget {
     required this.character,
     required this.weapons,
     required this.artifacts,
+    required this.teamCharacters,
     required this.notes,
     required this.skillPriorities,
     required this.subStatsSummary,
@@ -297,20 +314,35 @@ class _LandscapeLayout extends StatelessWidget {
           ),
         ),
         Expanded(
-          flex: 30,
-          child: WeaponSection(
-            weapons: weapons,
-            color: character.elementType.getElementColorFromContext(context),
-            maxItemImageWidth: _maxItemImageWidth,
-          ),
-        ),
-        Expanded(
-          flex: 30,
-          child: ArtifactSection(
-            artifacts: artifacts,
-            color: character.elementType.getElementColorFromContext(context),
-            maxItemImageWidth: _maxItemImageWidth,
-            subStatsSummary: subStatsSummary,
+          flex: 60,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Expanded(
+                child: WeaponSection(
+                  weapons: weapons,
+                  weaponType: character.weaponType,
+                  color: character.elementType.getElementColorFromContext(context),
+                  maxItemImageWidth: _maxItemImageWidth,
+                ),
+              ),
+              Expanded(
+                child: ArtifactSection(
+                  artifacts: artifacts,
+                  color: character.elementType.getElementColorFromContext(context),
+                  maxItemImageWidth: _maxItemImageWidth,
+                  subStatsSummary: subStatsSummary,
+                ),
+              ),
+              Expanded(
+                child: TeamSection(
+                  mainCharKey: character.key,
+                  teamCharacters: teamCharacters,
+                  color: character.elementType.getElementColorFromContext(context),
+                ),
+              ),
+            ],
           ),
         ),
       ],
@@ -319,19 +351,25 @@ class _LandscapeLayout extends StatelessWidget {
 }
 
 class _WeaponsAndArtifacts extends StatelessWidget {
-  final ElementType elementType;
-  final List<WeaponCardModel> weapons;
+  final String mainCharKey;
+  final WeaponType weaponType;
+  final List<CustomBuildWeaponModel> weapons;
   final List<CustomBuildArtifactModel> artifacts;
+  final List<CustomBuildTeamCharacterModel> teamCharacters;
   final bool useColumn;
   final List<StatType> subStatsSummary;
+  final Color color;
 
   const _WeaponsAndArtifacts({
     Key? key,
-    required this.elementType,
+    required this.mainCharKey,
+    required this.weaponType,
     required this.weapons,
     required this.artifacts,
+    required this.teamCharacters,
     this.useColumn = false,
     required this.subStatsSummary,
+    required this.color,
   }) : super(key: key);
 
   @override
@@ -341,36 +379,53 @@ class _WeaponsAndArtifacts extends StatelessWidget {
         children: [
           WeaponSection(
             weapons: weapons,
-            color: elementType.getElementColorFromContext(context),
+            weaponType: weaponType,
+            color: color,
             maxItemImageWidth: _maxItemImageWidth,
           ),
           ArtifactSection(
             artifacts: artifacts,
-            color: elementType.getElementColorFromContext(context),
+            color: color,
             maxItemImageWidth: _maxItemImageWidth,
             subStatsSummary: subStatsSummary,
+          ),
+          TeamSection(
+            mainCharKey: mainCharKey,
+            teamCharacters: teamCharacters,
+            color: color,
           ),
         ],
       );
     }
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      crossAxisAlignment: CrossAxisAlignment.start,
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        Expanded(
-          child: WeaponSection(
-            weapons: weapons,
-            color: elementType.getElementColorFromContext(context),
-            maxItemImageWidth: _maxItemImageWidth,
-          ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Expanded(
+              child: WeaponSection(
+                weapons: weapons,
+                weaponType: weaponType,
+                color: color,
+                maxItemImageWidth: _maxItemImageWidth,
+              ),
+            ),
+            Expanded(
+              child: ArtifactSection(
+                artifacts: artifacts,
+                color: color,
+                maxItemImageWidth: _maxItemImageWidth,
+                subStatsSummary: subStatsSummary,
+              ),
+            ),
+          ],
         ),
-        Expanded(
-          child: ArtifactSection(
-            artifacts: artifacts,
-            color: elementType.getElementColorFromContext(context),
-            maxItemImageWidth: _maxItemImageWidth,
-            subStatsSummary: subStatsSummary,
-          ),
+        TeamSection(
+          mainCharKey: mainCharKey,
+          teamCharacters: teamCharacters,
+          color: color,
         ),
       ],
     );

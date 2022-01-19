@@ -40,6 +40,7 @@ class CharacterSection extends StatelessWidget {
     required this.skillPriorities,
   }) : super(key: key);
 
+  //TODO: FIGURE OUT A WAY TO SHOW THE IMAGE PROPERLY
   @override
   Widget build(BuildContext context) {
     final s = S.of(context);
@@ -47,12 +48,12 @@ class CharacterSection extends StatelessWidget {
     final isPortrait = MediaQuery.of(context).orientation == Orientation.portrait;
     final height = MediaQuery.of(context).size.height;
     final width = MediaQuery.of(context).size.width;
-    double imgHeight = height * (isPortrait ? 0.5 : 0.8);
-    if (imgHeight > 700) {
-      imgHeight = 700;
+    double imgHeight = height * 0.85;
+    if (imgHeight > 1000) {
+      imgHeight = 1000;
     }
-    final flexA = width < 400 ? 55 : 60;
-    final flexB = width < 400 ? 45 : 40;
+    final flexA = width < 400 ? 55 : 45;
+    final flexB = width < 400 ? 45 : 55;
     final canAddNotes = notes.map((e) => e.note.length).sum < 300 && notes.length < CustomBuildBloc.maxNumberOfNotes;
     final canAddSkillPriorities = CustomBuildBloc.validSkillTypes.length == skillPriorities.length;
     return Container(
@@ -171,9 +172,11 @@ class CharacterSection extends StatelessWidget {
                     ],
                   ),
                   BulletList(
-                    iconSize: 12,
+                    iconSize: 14,
                     items: skillPriorities.map((e) => s.translateCharacterSkillType(e)).toList(),
-                    iconResolver: (index) => Text('#${index + 1}'),
+                    iconResolver: (index) => Text('#${index + 1}', style: theme.textTheme.subtitle2!.copyWith(fontSize: 12)),
+                    fontSize: 10,
+                    padding: const EdgeInsets.only(right: 16, left: 5, bottom: 5, top: 5),
                     onDelete: (index) => context.read<CustomBuildBloc>().add(CustomBuildEvent.deleteSkillPriority(index: index)),
                   ),
                   Row(
@@ -201,8 +204,10 @@ class CharacterSection extends StatelessWidget {
                     ],
                   ),
                   BulletList(
-                    iconSize: 12,
+                    iconSize: 14,
                     items: notes.map((e) => e.note).toList(),
+                    fontSize: 10,
+                    padding: const EdgeInsets.only(right: 16, left: 5, bottom: 5, top: 5),
                     onDelete: (index) => context.read<CustomBuildBloc>().add(CustomBuildEvent.deleteNote(index: index)),
                   ),
                 ],

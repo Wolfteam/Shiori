@@ -69,7 +69,7 @@ class CustomBuildCard extends StatelessWidget {
                             name: weapon.name,
                             rarity: weapon.rarity,
                             image: weapon.image,
-                            isComingSoon: weapon.isComingSoon,
+                            isComingSoon: false,
                             imgHeight: 50,
                             imgWidth: 60,
                           );

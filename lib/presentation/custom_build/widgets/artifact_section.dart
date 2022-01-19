@@ -46,7 +46,7 @@ class ArtifactSection extends StatelessWidget {
             border: isPortrait ? Border(top: BorderSide(color: Colors.white)) : null,
           ),
           child: Text(
-            s.artifacts,
+            '${s.artifacts} (${artifacts.length} / ${ArtifactType.values.length})',
             textAlign: TextAlign.center,
             style: theme.textTheme.subtitle1!.copyWith(fontWeight: FontWeight.bold),
           ),
@@ -74,8 +74,10 @@ class ArtifactSection extends StatelessWidget {
             ),
           ],
         ),
-        if (artifacts.isEmpty) NothingFound(msg: s.startByAddingArtifacts),
-        ...artifacts.map((e) => ArtifactRow(artifact: e, color: color, maxImageWidth: maxItemImageWidth)),
+        if (artifacts.isEmpty)
+          NothingFound(msg: s.startByAddingArtifacts)
+        else
+          ...artifacts.map((e) => ArtifactRow(artifact: e, color: color, maxImageWidth: maxItemImageWidth)),
         if (subStatsSummary.isNotEmpty)
           SubStatToFocus(
             subStatsToFocus: subStatsSummary,

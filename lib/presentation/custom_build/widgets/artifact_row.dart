@@ -15,7 +15,7 @@ import 'package:shiori/presentation/shared/item_popupmenu_filter.dart';
 import 'package:shiori/presentation/shared/styles.dart';
 import 'package:shiori/presentation/shared/sub_stats_to_focus.dart';
 
-enum _ArtifactOptions {
+enum _Options {
   subStats,
   delete,
   update,
@@ -79,21 +79,21 @@ class ArtifactRow extends StatelessWidget {
             ),
           ),
         ),
-        ItemPopupMenuFilter<_ArtifactOptions>.withoutSelectedValue(
-          values: _ArtifactOptions.values,
+        ItemPopupMenuFilter<_Options>.withoutSelectedValue(
+          values: _Options.values,
           tooltipText: s.options,
           icon: const Icon(Icons.more_vert),
           onSelected: (type) => _handleOptionSelected(context, type),
           childBuilder: (e) {
             Widget icon;
             switch (e.enumValue) {
-              case _ArtifactOptions.subStats:
+              case _Options.subStats:
                 icon = const Icon(Icons.menu);
                 break;
-              case _ArtifactOptions.delete:
+              case _Options.delete:
                 icon = const Icon(Icons.delete);
                 break;
-              case _ArtifactOptions.update:
+              case _Options.update:
                 icon = const Icon(Icons.edit);
                 break;
               default:
@@ -112,11 +112,11 @@ class ArtifactRow extends StatelessWidget {
           },
           itemText: (type, _) {
             switch (type) {
-              case _ArtifactOptions.subStats:
+              case _Options.subStats:
                 return s.subStats;
-              case _ArtifactOptions.delete:
+              case _Options.delete:
                 return s.delete;
-              case _ArtifactOptions.update:
+              case _Options.update:
                 return s.update;
               default:
                 throw Exception('The provided artifact option type = $type is not valid');
@@ -127,10 +127,10 @@ class ArtifactRow extends StatelessWidget {
     );
   }
 
-  Future<void> _handleOptionSelected(BuildContext context, _ArtifactOptions option) async {
+  Future<void> _handleOptionSelected(BuildContext context, _Options option) async {
     final bloc = context.read<CustomBuildBloc>();
     switch (option) {
-      case _ArtifactOptions.subStats:
+      case _Options.subStats:
         await showDialog(
           context: context,
           builder: (_) => BlocProvider.value(
@@ -144,10 +144,10 @@ class ArtifactRow extends StatelessWidget {
           ),
         );
         break;
-      case _ArtifactOptions.delete:
+      case _Options.delete:
         bloc.add(CustomBuildEvent.deleteArtifact(type: artifact.type));
         break;
-      case _ArtifactOptions.update:
+      case _Options.update:
         StatType? statType;
         switch (artifact.type) {
           case ArtifactType.flower:
