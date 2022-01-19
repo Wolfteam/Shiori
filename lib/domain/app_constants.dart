@@ -860,3 +860,24 @@ int getCurrentRealmCurrency(int initialRealmCurrency, int currentTrustRank, Real
 int getRealmMaxCurrency(int currentTrustRank) => realmTrustRank.entries.firstWhere((kvp) => kvp.key == currentTrustRank).value;
 
 int getRealmIncreaseRatio(RealmRankType type) => realmIncreasingRatio.entries.firstWhere((kvp) => kvp.key == type).value;
+
+int minWeaponRefinementLevel = 1;
+
+bool canWeaponBeRefined(int rarity) {
+  final maxRefinement = getWeaponMaxRefinementLevel(rarity);
+  return maxRefinement > 0;
+}
+
+int getWeaponMaxRefinementLevel(int rarity) {
+  switch (rarity) {
+    case 5:
+    case 4:
+    case 3:
+      return 5;
+    case 2:
+    case 1:
+      return 0;
+    default:
+      throw Exception('Invalid weapon rarity');
+  }
+}

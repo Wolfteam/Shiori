@@ -4,6 +4,8 @@ export 'entities/calculator/calculator_session.dart';
 export 'entities/custom_builds/custom_build.dart';
 export 'entities/custom_builds/custom_build_artifact.dart';
 export 'entities/custom_builds/custom_build_note.dart';
+export 'entities/custom_builds/custom_build_team_character.dart';
+export 'entities/custom_builds/custom_build_weapon.dart';
 export 'entities/game_code/game_code.dart';
 export 'entities/game_code/game_code_reward.dart';
 export 'entities/inventory/inventory_item.dart';

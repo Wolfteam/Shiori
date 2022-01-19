@@ -20,12 +20,9 @@ class CustomBuild extends HiveObject {
   bool showOnCharacterDetail;
 
   @HiveField(6)
-  List<String> weaponKeys;
-
-  @HiveField(7)
   List<int> skillPriorities;
 
-  @HiveField(8)
+  @HiveField(7)
   bool isRecommended;
 
   CustomBuild(
@@ -34,7 +31,6 @@ class CustomBuild extends HiveObject {
     this.title,
     this.roleType,
     this.roleSubType,
-    this.weaponKeys,
     this.skillPriorities,
     this.isRecommended,
   );

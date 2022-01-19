@@ -14,8 +14,9 @@ class CustomBuildModel with _$CustomBuildModel {
     required bool showOnCharacterDetail,
     required bool isRecommended,
     required CharacterCardModel character,
-    required List<WeaponCardModel> weapons,
+    required List<CustomBuildWeaponModel> weapons,
     required List<CustomBuildArtifactModel> artifacts,
+    required List<CustomBuildTeamCharacterModel> teamCharacters,
     required List<CustomBuildNoteModel> notes,
     required List<CharacterSkillType> skillPriorities,
   }) = _CustomBuildModel;
