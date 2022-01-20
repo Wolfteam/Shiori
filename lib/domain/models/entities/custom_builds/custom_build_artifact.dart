@@ -12,13 +12,13 @@ class CustomBuildArtifact extends HiveObject {
   String itemKey;
 
   @HiveField(2)
-  ArtifactType type;
+  int type;
 
   @HiveField(3)
-  StatType statType;
+  int statType;
 
   @HiveField(4)
-  List<StatType> subStats;
+  List<int> subStats;
 
   CustomBuildArtifact(this.buildItemKey, this.itemKey, this.type, this.statType, this.subStats);
 }

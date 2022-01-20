@@ -1262,7 +1262,6 @@ class DataServiceImpl implements DataService {
     Hive.registerAdapter(NotificationRealmCurrencyAdapter());
     Hive.registerAdapter(NotificationResinAdapter());
     Hive.registerAdapter(NotificationWeeklyBossAdapter());
-    Hive.registerAdapter(CustomBuildAdapter());
   }
 
   ItemAscensionMaterials _buildForCharacter(CalculatorItem item, {int? calculatorItemKey, bool includeInventory = false}) {

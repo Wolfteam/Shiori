@@ -2,7 +2,10 @@ part of 'custom_build_bloc.dart';
 
 @freezed
 class CustomBuildEvent with _$CustomBuildEvent {
-  const factory CustomBuildEvent.load({int? key}) = _Init;
+  const factory CustomBuildEvent.load({
+    int? key,
+    required String initialTitle,
+  }) = _Init;
 
   const factory CustomBuildEvent.characterChanged({required String newKey}) = _CharacterChanged;
 
@@ -65,9 +68,6 @@ class CustomBuildEvent with _$CustomBuildEvent {
   const factory CustomBuildEvent.deleteTeamCharacters() = _DeleteTeamCharacters;
 
   const factory CustomBuildEvent.saveChanges() = _SaveChanges;
-
-  //TODO: DELETE THIS?
-  const factory CustomBuildEvent.reset() = _Reset;
 
 //TODO: SHARE, SBUSTATS, TALENETS, ARTIFACT'S PIECE BONUS
 }

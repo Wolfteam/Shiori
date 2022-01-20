@@ -137,12 +137,6 @@ class Injection {
     return CustomBuildsBloc(genshinService, dataService);
   }
 
-  static CustomBuildBloc get customBuildBloc {
-    final genshinService = getIt<GenshinService>();
-    final dataService = getIt<DataService>();
-    return CustomBuildBloc(genshinService, dataService);
-  }
-
   //TODO: USE THIS PROP
   // static CalculatorAscMaterialsItemBloc get calculatorAscMaterialsItemBloc {
   //   final genshinService = getIt<GenshinService>();
@@ -177,6 +171,12 @@ class Injection {
   static CalculatorAscMaterialsSessionsOrderBloc getCalculatorAscMaterialsSessionsOrderBloc(CalculatorAscMaterialsSessionsBloc bloc) {
     final dataService = getIt<DataService>();
     return CalculatorAscMaterialsSessionsOrderBloc(dataService, bloc);
+  }
+
+  static CustomBuildBloc getCustomBuildBloc(CustomBuildsBloc bloc) {
+    final genshinService = getIt<GenshinService>();
+    final dataService = getIt<DataService>();
+    return CustomBuildBloc(genshinService, dataService, bloc);
   }
 
   static Future<void> init() async {

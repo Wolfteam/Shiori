@@ -1,5 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:shiori/application/bloc.dart';
 import 'package:shiori/domain/app_constants.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/extensions/string_extensions.dart';
@@ -14,6 +15,7 @@ part 'custom_build_state.dart';
 class CustomBuildBloc extends Bloc<CustomBuildEvent, CustomBuildState> {
   final GenshinService _genshinService;
   final DataService _dataService;
+  final CustomBuildsBloc _customBuildsBloc;
 
   static int maxTitleLength = 40;
   static int maxNoteLength = 100;
@@ -27,7 +29,7 @@ class CustomBuildBloc extends Bloc<CustomBuildEvent, CustomBuildState> {
   static int maxNumberOfWeapons = 10;
   static int maxNumberOfTeamCharacters = 10;
 
-  CustomBuildBloc(this._genshinService, this._dataService) : super(const CustomBuildState.loading()) {
+  CustomBuildBloc(this._genshinService, this._dataService, this._customBuildsBloc) : super(const CustomBuildState.loading()) {
     on<CustomBuildEvent>(_handleEvent);
   }
 
@@ -40,7 +42,7 @@ class CustomBuildBloc extends Bloc<CustomBuildEvent, CustomBuildState> {
     // }
     // WHICH SHOULD NOT HAPPEN BUT MAYBE I SHOULD THROW AN EXCEPTION IN THERE
     final s = await event.map(
-      load: (e) async => _init(e.key),
+      load: (e) async => _init(e.key, e.initialTitle),
       characterChanged: (e) async => state.maybeMap(
         loaded: (state) => _characterChanged(e, state),
         orElse: () => state,
@@ -81,11 +83,6 @@ class CustomBuildBloc extends Bloc<CustomBuildEvent, CustomBuildState> {
         loaded: (state) => _addArtifact(e, state),
         orElse: () => state,
       ),
-      saveChanges: (e) async => state.maybeMap(
-        loaded: (state) => _saveChanges(state),
-        orElse: () async => state,
-      ),
-      reset: (e) async => state,
       addNote: (e) async => state.maybeMap(
         loaded: (state) => _addNote(e, state),
         orElse: () => state,
@@ -138,12 +135,16 @@ class CustomBuildBloc extends Bloc<CustomBuildEvent, CustomBuildState> {
         loaded: (state) => state.copyWith.call(teamCharacters: []),
         orElse: () => state,
       ),
+      saveChanges: (e) async => state.maybeMap(
+        loaded: (state) => _saveChanges(state),
+        orElse: () async => state,
+      ),
     );
 
     emit(s);
   }
 
-  CustomBuildState _init(int? key) {
+  CustomBuildState _init(int? key, String initialTitle) {
     if (key != null) {
       final build = _dataService.customBuilds.getCustomBuild(key);
       return CustomBuildState.loaded(
@@ -165,7 +166,7 @@ class CustomBuildBloc extends Bloc<CustomBuildEvent, CustomBuildState> {
 
     final character = _genshinService.getCharactersForCard().first;
     return CustomBuildState.loaded(
-      title: '',
+      title: initialTitle,
       type: CharacterRoleType.dps,
       subType: CharacterRoleSubType.none,
       showOnCharacterDetail: true,
@@ -421,12 +422,13 @@ class CustomBuildBloc extends Bloc<CustomBuildEvent, CustomBuildState> {
         state.isRecommended,
         state.notes,
         state.weapons,
-        [],
+        state.artifacts,
         state.teamCharacters,
-        [],
+        state.skillPriorities,
       );
 
-      return _init(state.key);
+      _customBuildsBloc.add(const CustomBuildsEvent.load());
+      return _init(state.key, state.title);
     }
     final build = await _dataService.customBuilds.saveCustomBuild(
       state.character.key,
@@ -437,13 +439,13 @@ class CustomBuildBloc extends Bloc<CustomBuildEvent, CustomBuildState> {
       state.isRecommended,
       state.notes,
       state.weapons,
-      //TODO: THIS
-      [],
+      state.artifacts,
       state.teamCharacters,
-      [],
+      state.skillPriorities,
     );
 
-    return _init(build.key);
+    _customBuildsBloc.add(const CustomBuildsEvent.load());
+    return _init(build.key, state.title);
   }
 
   List<StatType> _generateSubStatSummary(List<CustomBuildArtifactModel> artifacts) {

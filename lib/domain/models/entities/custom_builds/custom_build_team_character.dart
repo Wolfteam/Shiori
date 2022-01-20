@@ -15,10 +15,10 @@ class CustomBuildTeamCharacter extends HiveObject {
   String characterKey;
 
   @HiveField(3)
-  CharacterRoleType roleType;
+  int roleType;
 
   @HiveField(4)
-  CharacterRoleSubType subType;
+  int subType;
 
   CustomBuildTeamCharacter(this.buildItemKey, this.index, this.characterKey, this.roleType, this.subType);
 }

@@ -18,11 +18,20 @@ class CustomBuildsDataServiceImpl implements CustomBuildsDataService {
 
   @override
   Future<void> init() async {
+    _registerAdapters();
     _buildsBox = await Hive.openBox<CustomBuild>('customBuilds');
     _weaponsBox = await Hive.openBox<CustomBuildWeapon>('customBuildWeapons');
     _artifactsBox = await Hive.openBox<CustomBuildArtifact>('customBuildArtifacts');
     _notesBox = await Hive.openBox<CustomBuildNote>('customBuildNotes');
     _teamCharactersBox = await Hive.openBox<CustomBuildTeamCharacter>('customBuildTeamCharacters');
+  }
+
+  void _registerAdapters() {
+    Hive.registerAdapter(CustomBuildAdapter());
+    Hive.registerAdapter(CustomBuildWeaponAdapter());
+    Hive.registerAdapter(CustomBuildArtifactAdapter());
+    Hive.registerAdapter(CustomBuildNoteAdapter());
+    Hive.registerAdapter(CustomBuildTeamCharacterAdapter());
   }
 
   @override
@@ -108,12 +117,7 @@ class CustomBuildsDataServiceImpl implements CustomBuildsDataService {
 
     await build.save();
 
-    await Future.wait([
-      _deleteWeapons(key),
-      _deleteArtifacts(key),
-      _deleteNotes(key),
-      _deleteTeamCharacters(key),
-    ]);
+    await _deleteCustomBuildRelatedParts(key);
 
     final buildNotes = await _saveNotes(key, notes);
     final buildWeapons = await _saveWeapons(key, weapons);
@@ -126,8 +130,16 @@ class CustomBuildsDataServiceImpl implements CustomBuildsDataService {
   Future<void> deleteCustomBuild(int key) {
     return Future.wait([
       _buildsBox.delete(key),
-      _deleteNotes(key),
+      _deleteCustomBuildRelatedParts(key),
+    ]);
+  }
+
+  Future<void> _deleteCustomBuildRelatedParts(int key) {
+    return Future.wait([
+      _deleteWeapons(key),
       _deleteArtifacts(key),
+      _deleteNotes(key),
+      _deleteTeamCharacters(key),
     ]);
   }
 
@@ -144,13 +156,21 @@ class CustomBuildsDataServiceImpl implements CustomBuildsDataService {
   }
 
   Future<List<CustomBuildArtifact>> _saveArtifacts(int buildKey, List<CustomBuildArtifactModel> artifacts) async {
-    final buildArtifacts = artifacts.map((e) => CustomBuildArtifact(buildKey, e.key, e.type, e.statType, e.subStats)).toList();
+    final buildArtifacts = artifacts
+        .map(
+          (e) => CustomBuildArtifact(buildKey, e.key, e.type.index, e.statType.index, e.subStats.map((e) => e.index).toList()),
+        )
+        .toList();
     await _artifactsBox.addAll(buildArtifacts);
     return buildArtifacts;
   }
 
   Future<List<CustomBuildTeamCharacter>> _saveTeamCharacters(int buildKey, List<CustomBuildTeamCharacterModel> teamCharacters) async {
-    final buildTeamCharacters = teamCharacters.map((e) => CustomBuildTeamCharacter(buildKey, e.index, e.key, e.roleType, e.subType)).toList();
+    final buildTeamCharacters = teamCharacters
+        .map(
+          (e) => CustomBuildTeamCharacter(buildKey, e.index, e.key, e.roleType.index, e.subType.index),
+        )
+        .toList();
     await _teamCharactersBox.addAll(buildTeamCharacters);
     return buildTeamCharacters;
   }
@@ -191,7 +211,6 @@ class CustomBuildsDataServiceImpl implements CustomBuildsDataService {
     List<CustomBuildTeamCharacter> teamCharacters,
   ) {
     final character = _genshinService.getCharacterForCard(build.characterKey);
-    // final artifacts = build.artifactKeys.map((e) => _genshinService.getArtifactForCard(e)).toList();
     return CustomBuildModel(
       key: build.key as int,
       title: build.title,
@@ -214,8 +233,24 @@ class CustomBuildsDataServiceImpl implements CustomBuildsDataService {
           subStatValue: weapon.subStatValue,
         );
       }).toList(),
-      //TODO: THIS
-      artifacts: [],
+      artifacts: artifacts.map((e) {
+        final fullArtifact = _genshinService.getArtifact(e.itemKey);
+        final translation = _genshinService.getArtifactTranslation(e.itemKey);
+        final image = _genshinService.getArtifactRelatedPart(
+          fullArtifact.fullImagePath,
+          fullArtifact.image,
+          translation.bonus.length,
+          ArtifactType.values[e.type],
+        );
+        return CustomBuildArtifactModel(
+          key: e.itemKey,
+          type: ArtifactType.values[e.type],
+          statType: StatType.values[e.statType],
+          image: image,
+          rarity: fullArtifact.maxRarity,
+          subStats: e.subStats.map((e) => StatType.values[e]).toList(),
+        );
+      }).toList(),
       skillPriorities: build.skillPriorities.map((e) => CharacterSkillType.values[e]).toList(),
       notes: notes.map((e) => CustomBuildNoteModel(index: e.index, note: e.note)).toList()..sort((x, y) => x.index.compareTo(y.index)),
       teamCharacters: teamCharacters.map((e) {
@@ -225,8 +260,8 @@ class CustomBuildsDataServiceImpl implements CustomBuildsDataService {
           index: e.index,
           name: char.name,
           image: char.image,
-          roleType: e.roleType,
-          subType: e.subType,
+          roleType: CharacterRoleType.values[e.roleType],
+          subType: CharacterRoleSubType.values[e.subType],
         );
       }).toList()
         ..sort((x, y) => x.index.compareTo(y.index)),

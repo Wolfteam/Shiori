@@ -17,67 +17,16 @@ class CustomBuildsBloc extends Bloc<CustomBuildsEvent, CustomBuildsState> {
   }
 
   Future<void> _handleEvent(CustomBuildsEvent event, Emitter<CustomBuildsState> emit) async {
-    final newState = event.map(
-      load: (_) {
-        // final dummyA = CustomBuildModel(
-        //   key: 1,
-        //   position: 1,
-        //   title: 'Physical Dps',
-        //   type: CharacterRoleType.dps,
-        //   subType: CharacterRoleSubType.electro,
-        //   showOnCharacterDetail: true,
-        //   character: _genshinService.getCharacterForCard('keqing'),
-        //   weapons: [
-        //     _genshinService.getWeaponForCard('blackcliff-longsword'),
-        //     _genshinService.getWeaponForCard('sword-of-descension'),
-        //     _genshinService.getWeaponForCard('iron-sting'),
-        //     _genshinService.getWeaponForCard('mistsplitter-reforged'),
-        //     _genshinService.getWeaponForCard('prototype-rancour'),
-        //     _genshinService.getWeaponForCard('sword-of-descension'),
-        //     _genshinService.getWeaponForCard('blackcliff-longsword'),
-        //     _genshinService.getWeaponForCard('sword-of-descension'),
-        //   ],
-        //   artifacts: [
-        //     _genshinService.getArtifactForCard('shimenawas-reminiscence'),
-        //     _genshinService.getArtifactForCard('thundersoother'),
-        //   ],
-        // );
-        // final dummyB = CustomBuildModel(
-        //   key: 1,
-        //   position: 2,
-        //   title: 'Physical Dps',
-        //   type: CharacterRoleType.dps,
-        //   subType: CharacterRoleSubType.electro,
-        //   showOnCharacterDetail: true,
-        //   character: _genshinService.getCharacterForCard('ganyu'),
-        //   weapons: [
-        //     _genshinService.getWeaponForCard('blackcliff-longsword'),
-        //     _genshinService.getWeaponForCard('sword-of-descension'),
-        //     _genshinService.getWeaponForCard('iron-sting'),
-        //     _genshinService.getWeaponForCard('mistsplitter-reforged'),
-        //     _genshinService.getWeaponForCard('prototype-rancour'),
-        //     _genshinService.getWeaponForCard('sword-of-descension'),
-        //     _genshinService.getWeaponForCard('blackcliff-longsword'),
-        //     _genshinService.getWeaponForCard('sword-of-descension'),
-        //   ],
-        //   artifacts: [
-        //     _genshinService.getArtifactForCard('shimenawas-reminiscence'),
-        //     _genshinService.getArtifactForCard('thundersoother'),
-        //   ],
-        // );
-        // final builds = _dataService.getAllCustomBuilds()
-        //   ..add(dummyA)
-        //   ..add(dummyB)
-        //   ..add(dummyA)
-        //   ..add(dummyB);
-        // return state.copyWith.call(builds: builds);
-
+    final newState = await event.map(
+      load: (_) async {
         final builds = _dataService.customBuilds.getAllCustomBuilds();
-
         return state.copyWith.call(builds: builds);
       },
-      delete: (e) {
-        return state;
+      delete: (e) async {
+        await _dataService.customBuilds.deleteCustomBuild(e.key);
+        final builds = [...state.builds];
+        builds.removeWhere((el) => el.key == e.key);
+        return state.copyWith.call(builds: builds);
       },
     );
 

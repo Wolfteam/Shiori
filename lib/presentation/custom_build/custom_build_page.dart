@@ -35,9 +35,10 @@ class CustomBuildPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     //TODO: SHOW THE TALENTS AND CONSTELLATIONS LIKE THIS
+    final s = S.of(context);
     //https://genshin-impact-card-generator.herokuapp.com/
     return BlocProvider(
-      create: (ctx) => Injection.customBuildBloc..add(CustomBuildEvent.load(key: itemKey)),
+      create: (ctx) => Injection.getCustomBuildBloc(context.read<CustomBuildsBloc>())..add(CustomBuildEvent.load(key: itemKey, initialTitle: s.dps)),
       child: _Page(
         newBuild: newBuild,
       ),
@@ -61,17 +62,21 @@ class _PageState extends State<_Page> {
   Widget build(BuildContext context) {
     final s = S.of(context);
     final width = MediaQuery.of(context).size.width;
-    return Scaffold(
-      appBar: _AppBar(newBuild: widget.newBuild, screenshotController: _screenshotController),
-      body: BlocBuilder<CustomBuildBloc, CustomBuildState>(
-        builder: (ctx, state) => state.maybeMap(
-          loaded: (state) => SingleChildScrollView(
+    return BlocBuilder<CustomBuildBloc, CustomBuildState>(
+      builder: (ctx, state) => state.maybeMap(
+        loaded: (state) => Scaffold(
+          appBar: _AppBar(
+            newBuild: widget.newBuild,
+            canSave: state.artifacts.length == ArtifactType.values.length && state.weapons.isNotEmpty,
+            screenshotController: _screenshotController,
+          ),
+          body: SingleChildScrollView(
             padding: const EdgeInsets.only(bottom: 10),
             child: Screenshot(
               controller: _screenshotController,
               child: OrientationLayoutBuilder(
                 portrait: (context) => _PortraitLayout(
-                  title: state.title.isNullEmptyOrWhitespace ? s.dps : state.title,
+                  title: state.title,
                   roleType: state.type,
                   roleSubType: state.subType,
                   showOnCharacterDetail: state.showOnCharacterDetail,
@@ -86,7 +91,7 @@ class _PageState extends State<_Page> {
                 ),
                 landscape: (context) => width > 1280
                     ? _LandscapeLayout(
-                        title: state.title.isNullEmptyOrWhitespace ? s.dps : state.title,
+                        title: state.title,
                         roleType: state.type,
                         roleSubType: state.subType,
                         showOnCharacterDetail: state.showOnCharacterDetail,
@@ -116,8 +121,8 @@ class _PageState extends State<_Page> {
               ),
             ),
           ),
-          orElse: () => const Loading(useScaffold: false),
         ),
+        orElse: () => const Loading(),
       ),
     );
   }
@@ -125,11 +130,13 @@ class _PageState extends State<_Page> {
 
 class _AppBar extends StatelessWidget implements PreferredSizeWidget {
   final bool newBuild;
+  final bool canSave;
   final ScreenshotController screenshotController;
 
   const _AppBar({
     Key? key,
     required this.newBuild,
+    required this.canSave,
     required this.screenshotController,
   }) : super(key: key);
 
@@ -140,20 +147,14 @@ class _AppBar extends StatelessWidget implements PreferredSizeWidget {
       title: Text(newBuild ? s.add : s.edit),
       actions: [
         IconButton(
-          onPressed: () {},
           splashRadius: Styles.mediumButtonSplashRadius,
           icon: const Icon(Icons.save),
+          onPressed: !canSave ? null : () => context.read<CustomBuildBloc>().add(const CustomBuildEvent.saveChanges()),
         ),
-        if (!newBuild)
-          IconButton(
-            onPressed: () {},
-            splashRadius: Styles.mediumButtonSplashRadius,
-            icon: const Icon(Icons.delete),
-          ),
         IconButton(
-          onPressed: () => _takeScreenshot(context),
           splashRadius: Styles.mediumButtonSplashRadius,
           icon: const Icon(Icons.share),
+          onPressed: () => _takeScreenshot(context),
         ),
       ],
     );
