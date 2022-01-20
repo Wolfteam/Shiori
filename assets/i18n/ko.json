@@ -4609,87 +4609,150 @@
     },
     {
       "key": "shenhe",
-      "name": "Shenhe",
-      "title": "？？？",
-      "description": "",
+      "name": "신학",
+      "title": "고독한 액신",
+      "description": "우아한 자태를 갖춘 선인의 제자. 리월의 산속에 은거한 채 수행하는지라 성격도 선인처럼 냉담하고 소외적이다",
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "일반 공격·별의 포획자",
+          "description": "",
+          "abilities": [
+            {
+              "name": "일반 공격",
+              "description": "창으로 최대 5번 공격한다.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "강공격",
+              "description": "일정 스태미나를 소모해 전방으로 돌진하며 경로상의 적에게 피해를 준다.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "낙하 공격",
+              "description": "공중에서 땅을 내려찍어 경로상의 적을 공격하고 착지 시 범위 피해를 준다",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "1단 공격 피해|{param1}%",
+            "2단 공격 피해|{param2}%",
+            "3단 공격 피해|{param3}%",
+            "4단 공격 피해|{param4}% + {param5}%",
+            "5단 공격 피해|{param6}%",
+            "강공격 피해|{param7}%",
+            "강공격 스태미나 소모|{param8} pt",
+            "낙하 기간 피해|{param9}%",
+            "저공/고공 추락 충격 피해|{param10}% / {param11}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "위령 소환 구사술",
+          "description": "겹겹이 응결된 은빛 서리가 모든 요마를 퇴치하리.\r\n근처 파티 내 모든 캐릭터에게 「얼음의 깃」 효과를 부여하고 짧은 터치, 홀드에 따라 각기 다른 방식으로 얼음 원소 피해를 준다.\r\n",
+          "abilities": [
+            {
+              "name": "짧은 터치",
+              "description": "「녹령」과 함께 앞으로 돌진해 경로상의 적에게 얼음 원소 피해를 준다.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "홀드",
+              "description": "「녹령」에게 율령을 내려 얼음 원소 범위 피해를 준다.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "얼음의 깃",
+              "description": "일반 공격, 강공격, 낙하 공격, 원소전투 스킬과 원소폭발 피해가 적에게 얼음 원소 피해를 주면, 신학의 공격력을 기반으로 가하는 피해가 증가한다.\r\n「얼음의 깃」 효과는 지속 시간 종료 또는 일정 횟수 발동 후 사라진다. 홀드로 부여한 「얼음의 깃」은 짧은 터치보다 지속 시간이 길고 발동 횟수가 많다.\r\n1회의 얼음 원소 피해로 동시에 다수의 적 명중 시, 명중한 적의 수에 따라 발동 횟수를 소모한다. 파티 내에 「얼음의 깃」을 보유한 캐릭터의 발동 횟수는 따로 계산된다.\r\n",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "짧은 터치 스킬 피해|{param1}%",
+            "차지 스킬 피해|{param2}%",
+            "피해량 증가|공격력의 {param3}%",
+            "짧은 터치/홀드 지속 시간|{param4} 초/ {param5} 초",
+            "짧은 터치/홀드 발동 횟수|{param6} 회/ {param7} 회",
+            "짧은 터치 재사용 대기시간|{param8} 초",
+            "홀드 재사용 대기시간|{param9} 초"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
+          "title": "신녀 강령 비결",
+          "description": "「녹령」이 속세를 누비도록 그 힘을 개방해 얼음 원소 범위 피해를 준다.\r\n「녹령」이 영역을 만들어 영역 내 적의 얼음 원소 내성과 물리 내성을 감소시키고, 적에게 지속적으로 얼음 원소 피해를 준다.\r\n",
           "abilities": [],
-          "stats": []
+          "stats": [
+            "스킬 피해|{param1}%",
+            "내성 감소|{param2}%",
+            "지속 피해|{param3}%",
+            "지속 시간|{param4} 초",
+            "재사용 대기시간|{param5} 초",
+            "원소 에너지|{param6}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "정확 깔끔한 행동",
+          "description": "리월에서 20시간의 탐사 파견 임무 수행 시 획득하는 보상이 25% 증가한다\r\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
+          "title": "대동미라존법",
+          "description": "신녀 강령 비결 영역 내에 있는 필드 위 캐릭터의 얼음 원소 피해 보너스가 15% 증가한다\r\n",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
+          "title": "박령통진법인",
+          "description": "신학이 위령 소환 구사술 발동 시, 주변의 파티 내 모든 캐릭터가 아래의 효과를 획득한다.\r\n",
+          "descriptions": [
+            "짧은 터치: 원소전투 스킬과 원소폭발로 가하는 피해가 15% 증가한다. 지속 시간: 10초.",
+            "홀드: 일반 공격, 강공격, 낙하 공격으로 가하는 피해가 15% 증가한다. 지속 시간: 15초"
+          ]
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "심재",
+          "description": "위령 소환 구사술의 사용 가능 횟수가 1회 증가한다\r\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "정몽",
+          "description": "신녀 강령 비결의 지속 시간이 6초 증가한다. 영역 내에 있는 필드 위 캐릭터의 얼음 원소 피해의 치명타 피해가 15% 증가한다\r\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "잠허",
+          "description": "위령 소환 구사술의 스킬 레벨+3\r\n최대 Lv.15까지 상승\r\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
+          "title": "통관",
+          "description": "신학이 부여한 「얼음의 깃」 상태인 캐릭터가 「얼음의 깃」의 피해 증가 효과 발동 시, 신학이 「서리의 주문」을 1스택 획득한다.\r\n",
+          "descriptions": [
+            "신학이 위령 소환 구사술 발동 시 모든 「서리의 주문」이 사라지고, 사라진 스택에 따라 1스택당 위령 소환 구사술이 가하는 피해가 5% 증가한다.",
+            "최대 중첩수: 50회. 지속 시간: 60초"
+          ]
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "화신",
+          "description": "신녀 강령 비결의 스킬 레벨+3\r\n최대 Lv.15까지 상승\r\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
+          "title": "망현",
+          "description": "캐릭터가 일반 공격 피해와 강공격 피해로 「얼음의 깃」 효과를 발동하면, 「얼음의 깃」의 효과 발동 횟수가 차감되지 않는다\r\n",
           "descriptions": []
         }
       ]
@@ -6253,6 +6316,93 @@
       ]
     },
     {
+      "key": "yae-miko",
+      "name": "Yae Miko",
+      "title": "",
+      "description": "",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ]
+    },
+    {
       "key": "yanfei",
       "name": "연비",
       "title": "순수한 지혜",
@@ -6528,87 +6678,148 @@
     },
     {
       "key": "yun-jin",
-      "name": "Yun Jin",
-      "title": "？？？",
-      "description": "",
+      "name": "운근",
+      "title": "무대를 빛내는 가인",
+      "description": "극작과 연기, 노래 실력을 모두 갖춘 리월극의 명배우. 그녀의 독보적인 스타일은 마치 그녀 본인처럼 우아하고도 부드럽다",
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "일반 공격·구름을 스치는 격투",
+          "description": "",
+          "abilities": [
+            {
+              "name": "일반 공격",
+              "description": "창으로 최대 5번 공격한다.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "강공격",
+              "description": "일정 스태미나를 소모해 전방으로 돌진하며 경로상의 적에게 피해를 준다.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "낙하 공격",
+              "description": "공중에서 땅을 내려찍어 경로상의 적을 공격하고 착지 시 범위 피해를 준다",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "1단 공격 피해|{param1}%",
+            "2단 공격 피해|{param2}%",
+            "3단 공격 피해|{param3}% + {param4}%",
+            "4단 공격 피해|{param5}% + {param6}%",
+            "5단 공격 피해|{param7}%",
+            "강공격 피해|{param8}%",
+            "강공격 스태미나 소모|{param9} pt",
+            "낙하 기간 피해|{param10}%",
+            "저공/고공 추락 충격 피해|{param11}% / {param12}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "선운개상",
+          "description": "운 선생의 무술극 자세는 실제로 적을 막을 수 있다.\r\n",
+          "abilities": [
+            {
+              "name": "짧은 터치",
+              "description": "구름을 가르는 기세로 장창을 휘둘러 바위 원소 피해를 준다.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "홀드",
+              "description": "선회하는 구름의 기세로 차지한 후 보호막을 생성한다. 피해 흡수량은 운근 HP 최대치의 영향을 받으며, 모든 원소 피해와 물리 피해에 대해 150%의 흡수 효과가 있다. 보호막은 원소전투 스킬이 종료될 때까지 지속된다.\r\n스킬 버튼에서 손을 떼거나 지속 시간 종료 또는 보호막이 파괴되면, 장창을 휘둘러 축적한 힘을 방출해 공격하고 바위 원소 피해를 준다.\r\n차지 시간에 따라 발동 상태가 1단 차지와 2단 차지로 나뉜다.\r\n",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "짧은 터치 피해|방어력의 {param1}%",
+            "1단 차지 피해|방어력의 {param2}%",
+            "2단 차지 피해|방어력의 {param3}%",
+            "보호막 흡수량|HP 최대치의 {param4}% + {param5}",
+            "재사용 대기시간|{param6} 초"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "절벽을 깎는 깃발",
+          "description": "",
+          "abilities": [
+            {
+              "name": "",
+              "description": "바위 원소 범위 피해를 주고, 근처 파티 내 모든 캐릭터에게 「비운의 깃발」을 부여한다.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "비운의 깃발",
+              "description": "적에게 일반 공격 피해를 주면 운근의 방어력을 기반으로 가하는 피해가 증가한다.\r\n「비운의 깃발」 효과는 지속 시간 종료 또는 일정 횟수 발동 후 사라진다.\r\n일반 공격 1회로 동시에 다수의 적 명중 시, 명중한 적의 수에 따라 발동 횟수를 소모한다. 파티 내에 「비운의 깃발」을 보유한 캐릭터의 발동 횟수는 따로 계산된다.\r\n",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "스킬 피해|{param1}%",
+            "피해량 증가|방어력의 {param2}%",
+            "지속 시간|{param3} 초",
+            "적용 횟수|{param4} 회",
+            "재사용 대기시간|{param5} 초",
+            "원소 에너지|{param6}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "담백한 식단",
+          "description": "모험류 요리를 완벽 요리하면 12%의 확률로 생산량의 2배를 획득한다\r\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
+          "title": "본심 유지",
+          "description": "피격 시 발동하는 선운개상이 홀드 2단 차지 형식으로 발동된다\r\n",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "NA",
-          "description": "",
+          "title": "전통 타파",
+          "description": "파티 내에 1/2/3/4가지 원소 타입의 캐릭터 존재 시, 「비운의 깃발」이 제공하는 일반 공격 피해 증가 효과의 수치가 각각 운근 방어력의 2.5%/5%/7.5%/11.5%만큼 추가된다\r\n",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "노련한 승마술",
+          "description": "선운개상의 재사용 대기시간이 18% 감소한다\r\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "다양한 소품",
+          "description": "「절벽을 깎는 깃발」 발동 후, 주변의 파티 내 모든 캐릭터가 일반 공격으로 가하는 피해가 15% 증가한다. 지속 시간: 12초\r\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "장군의 몸동작",
+          "description": "절벽을 깎는 깃발의 스킬 레벨+3\r\n최대 Lv.15까지 상승\r\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "승당의 경지",
+          "description": "운근이 결정 반응을 발동하면 방어력이 20% 증가한다. 지속 시간: 12초\r\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "걸출한 명배우",
+          "description": "선운개상의 스킬 레벨+3\r\n최대 Lv.15까지 상승\r\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
+          "title": "장엄하고 익살스러운 노랫소리",
+          "description": "「비운의 깃발」 상태에 있는 캐릭터의 일반 공격 공격 속도가 12% 증가한다\r\n",
           "descriptions": []
         }
       ]
@@ -6935,6 +7146,18 @@
         "불 원소 또는 번개 원소의 영향을 받은 적에게 가하는 피해가 {color}18{/color}% 증가한다",
         "불 원소 또는 번개 원소의 영향을 받은 적에게 가하는 피해가 {color}21{/color}% 증가한다",
         "불 원소 또는 번개 원소의 영향을 받은 적에게 가하는 피해가 {color}24{/color}% 증가한다"
+      ]
+    },
+    {
+      "key": "calamity-queller",
+      "name": "식재",
+      "description": "기이한 수정석으로 만든 날카로운 무기. 푸르스름한 빛이 끝없는 과거를 들려주는 것만 같다",
+      "refinements": [
+        "모든 원소의 피해 보너스를 {color}12{/color}% 획득한다. 원소전투 스킬 발동 시, 20초 동안 지속되는 「원돈」을 획득하고 공격력이 1초마다 {color}3.2{/color}% 증가한다. 해당 공격력 증가 효과는 최대 6회 중첩된다. 해당 무기를 장착한 캐릭터가 대기 상태일 때 「원돈」의 공격력 증가 효과는 2배가 된다",
+        "모든 원소의 피해 보너스를 {color}15{/color}% 획득한다. 원소전투 스킬 발동 시, 20초 동안 지속되는 「원돈」을 획득하고 공격력이 1초마다 {color}4{/color}% 증가한다. 해당 공격력 증가 효과는 최대 6회 중첩된다. 해당 무기를 장착한 캐릭터가 대기 상태일 때 「원돈」의 공격력 증가 효과는 2배가 된다",
+        "모든 원소의 피해 보너스를 {color}18{/color}% 획득한다. 원소전투 스킬 발동 시, 20초 동안 지속되는 「원돈」을 획득하고 공격력이 1초마다 {color}4.8{/color}% 증가한다. 해당 공격력 증가 효과는 최대 6회 중첩된다. 해당 무기를 장착한 캐릭터가 대기 상태일 때 「원돈」의 공격력 증가 효과는 2배가 된다",
+        "모든 원소의 피해 보너스를 {color}21{/color}% 획득한다. 원소전투 스킬 발동 시, 20초 동안 지속되는 「원돈」을 획득하고 공격력이 1초마다 {color}5.6{/color}% 증가한다. 해당 공격력 증가 효과는 최대 6회 중첩된다. 해당 무기를 장착한 캐릭터가 대기 상태일 때 「원돈」의 공격력 증가 효과는 2배가 된다",
+        "모든 원소의 피해 보너스를 {color}24{/color}% 획득한다. 원소전투 스킬 발동 시, 20초 동안 지속되는 「원돈」을 획득하고 공격력이 1초마다 {color}6.4{/color}% 증가한다. 해당 공격력 증가 효과는 최대 6회 중첩된다. 해당 무기를 장착한 캐릭터가 대기 상태일 때 「원돈」의 공격력 증가 효과는 2배가 된다"
       ]
     },
     {
@@ -8898,6 +9121,11 @@
       "description": "천년 강옥으로 응결된 결정체의 뿔. 「용왕」의 면류관이다.\r\n정백으로 주입하고 단단한 암석으로 만들어졌다. 산과 계곡에서 생성되어 군암의 땅에서 천지의 위엄을 떨쳤다. 황금 같은 긴 뿔은 과거 어느 왕과 맞서 싸운 증거이다.\r\n한 때는 빛이 바랬지만 지금은 당신의 손에 차가운 황금빛을 뿜어내고 있다"
     },
     {
+      "key": "dragonheirs-false-fin",
+      "name": "용 자손의 가짜 지느러미",
+      "description": "심해 용 도마뱀을 처치하면 얻을 수 있는 생체조직의 일부이다.\r\n보기에는 상어 지느러미 같지만 아무런 실용성이 없다.\r\n백야국의 주민들이 심해 용 도마뱀에 대해 깊이 연구했다. 그들의 가장 다른 점은 바로 자신의 의지로 특징과 유전을 결정할 수 있다는 것이다. 인조적인 빛을 싫어하여 용 도마뱀은 성체가 되면 시각을 대부분 잃고 전투를 위해 다양한 다른 원소로 진화했다"
+    },
+    {
       "key": "dream-of-the-dandelion-gladiator",
       "name": "라이언 투사의 이념",
       "description": "무기에 돌파의 힘을 부여하는 재료.\r\n바네사는 노역을 하다 자유를 얻었다. 결과는 그녀를 구속하는 게 점점 더 많아졌다: 부족민에서 몬드 전체, 그러다 「자유」, 그리고 세계로 확장됐다.\r\n그녀는 진심으로 이 세계가 더 강인해지길 바랐다"
@@ -10160,8 +10388,16 @@
       "name": "불도끼 츄츄 폭도"
     },
     {
+      "key": "bolteater-bathysmal-vishap",
+      "name": "번개를 삼키는 심해 용 도마뱀"
+    },
+    {
+      "key": "bolteater-bathysmal-vishap-hatchling",
+      "name": "번개를 삼키는 심해 용 도마뱀 유체"
+    },
+    {
       "key": "childe",
-      "name": "「타르탈리아」"
+      "name": "타르탈리아"
     },
     {
       "key": "crackling-axe-mitachurl",
@@ -10198,6 +10434,10 @@
     {
       "key": "cryo-slime",
       "name": "얼음 슬라임"
+    },
+    {
+      "key": "cryo-specter",
+      "name": "떠도는 얼음의 정령"
     },
     {
       "key": "cryo-whopperflower",
@@ -10238,6 +10478,10 @@
     {
       "key": "electro-slime",
       "name": "번개 슬라임"
+    },
+    {
+      "key": "electro-specter",
+      "name": "떠도는 번개의 정령"
     },
     {
       "key": "electro-whopperflower",
@@ -10310,6 +10554,10 @@
     {
       "key": "geovishap-hatchling",
       "name": "새끼 바위 용 도마뱀"
+    },
+    {
+      "key": "golden-wolflord",
+      "name": "황금 늑대왕"
     },
     {
       "key": "hilichurl",
@@ -10444,6 +10692,18 @@
       "name": "꼭두각시 검귀"
     },
     {
+      "key": "maguu-kenki-galloping-frost",
+      "name": "꼭두각시 검귀·흩날리는 서리"
+    },
+    {
+      "key": "maguu-kenki-lone-gale",
+      "name": "꼭두각시 검귀·고독한 바람"
+    },
+    {
+      "key": "maguu-kenki-mask-of-terror",
+      "name": "꼭두각시 검귀·흉악한 가면"
+    },
+    {
       "key": "millelith-sergeant",
       "name": "천암군 교관"
     },
@@ -10492,6 +10752,14 @@
       "name": "고대 바위 용 도마뱀"
     },
     {
+      "key": "primordial-bathysmal-vishap",
+      "name": "심해 용 도마뱀·원종"
+    },
+    {
+      "key": "primordial-bathysmal-vishap-hatchling",
+      "name": "심해 용 도마뱀 유체·원종"
+    },
+    {
       "key": "pyro-abyss-mage",
       "name": "화염의 심연 메이지"
     },
@@ -10512,12 +10780,24 @@
       "name": "화염 슬라임"
     },
     {
+      "key": "pyro-specter",
+      "name": "떠도는 불의 정령"
+    },
+    {
       "key": "pyro-whopperflower",
       "name": "뜨거운 구라구라꽃"
     },
     {
       "key": "raiden-shogun",
       "name": "라이덴 쇼군"
+    },
+    {
+      "key": "rimebiter-bathysmal-vishap",
+      "name": "얼음을 짓씹는 심해 용 도마뱀"
+    },
+    {
+      "key": "rimebiter-bathysmal-vishap-hatchling",
+      "name": "얼음을 짓씹는 심해 용 도마뱀 유체"
     },
     {
       "key": "rock-shield-hilichurl-guard",
@@ -10598,6 +10878,10 @@
     {
       "key": "thunderhelm-lawachurl",
       "name": "츄츄 번개왕"
+    },
+    {
+      "key": "treasure-hoarder-wallenstein",
+      "name": "보물 사냥단·발렌슈타인"
     },
     {
       "key": "treasure-hoarders-boss",

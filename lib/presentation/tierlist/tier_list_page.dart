@@ -5,7 +5,6 @@ import 'package:permission_handler/permission_handler.dart';
 import 'package:screenshot/screenshot.dart';
 import 'package:shiori/application/bloc.dart';
 import 'package:shiori/domain/extensions/iterable_extensions.dart';
-import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/generated/l10n.dart';
 import 'package:shiori/injection.dart';
 import 'package:shiori/presentation/shared/utils/toast_utils.dart';
@@ -30,15 +29,26 @@ class _TierListPageState extends State<TierListPage> {
         floatingActionButton: TierListFab(),
         body: SafeArea(
           child: SingleChildScrollView(
-            child: Container(
-              margin: const EdgeInsets.symmetric(horizontal: 5, vertical: 16),
-              child: Screenshot(
-                controller: screenshotController,
-                child: BlocBuilder<TierListBloc, TierListState>(
-                  builder: (ctx, state) => Column(
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
-                    children: state.rows.mapIndex((e, index) => _buildTierRow(index, state.rows.length, state.readyToSave, e)).toList(),
-                  ),
+            child: Screenshot(
+              controller: screenshotController,
+              child: BlocBuilder<TierListBloc, TierListState>(
+                builder: (ctx, state) => Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: state.rows
+                      .mapIndex(
+                        (e, index) => TierListRow(
+                          index: index,
+                          title: e.tierText,
+                          color: Color(e.tierColor),
+                          items: e.items,
+                          isUpButtonEnabled: index != 0,
+                          isDownButtonEnabled: index != state.rows.length - 1,
+                          numberOfRows: state.rows.length,
+                          showButtons: !state.readyToSave,
+                          isTheLastRow: state.rows.length == 1,
+                        ),
+                      )
+                      .toList(),
                 ),
               ),
             ),
@@ -47,24 +57,11 @@ class _TierListPageState extends State<TierListPage> {
       ),
     );
   }
-
-  Widget _buildTierRow(int index, int totalNumberOfItems, bool readyToSave, TierListRowModel item) {
-    return TierListRow(
-      index: index,
-      title: item.tierText,
-      color: Color(item.tierColor),
-      items: item.items,
-      isUpButtonEnabled: index != 0,
-      isDownButtonEnabled: index != totalNumberOfItems - 1,
-      numberOfRows: totalNumberOfItems,
-      showButtons: !readyToSave,
-      isTheLastRow: totalNumberOfItems == 1,
-    );
-  }
 }
 
 class _AppBar extends StatelessWidget implements PreferredSizeWidget {
   final ScreenshotController screenshotController;
+
   const _AppBar({Key? key, required this.screenshotController}) : super(key: key);
 
   @override

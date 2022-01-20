@@ -4633,6 +4633,19 @@
       "attributes": null
     },
     {
+      "key": "dragonheirs-false-fin",
+      "image": "dragonheirs-false-fin.png",
+      "rarity": 4,
+      "position": 46,
+      "level": 0,
+      "type": "elementalStone",
+      "hasSiblings": false,
+      "days": [],
+      "recipes": [],
+      "obtainedFrom": [],
+      "attributes": null
+    },
+    {
       "key": "dream-solvent",
       "image": "dream-solvent.png",
       "rarity": 4,

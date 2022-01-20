@@ -124,6 +124,10 @@ class GenshinServiceImpl implements GenshinService {
   @override
   List<CharacterFileModel> getCharactersForBirthday(DateTime date) {
     return _charactersFile.characters.where((char) {
+      if (char.isComingSoon) {
+        return false;
+      }
+
       if (char.birthday.isNullEmptyOrWhitespace) {
         return false;
       }

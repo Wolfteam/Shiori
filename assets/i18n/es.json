@@ -4594,86 +4594,149 @@
     {
       "key": "shenhe",
       "name": "Shenhe",
-      "title": "？？？",
-      "description": "",
+      "title": "La Ermitaña Sobrehumana",
+      "description": "Una discípula de los Adeptus con una mirada perdida. Al haber vivido recluida en las montañas de Liyue, su carácter es tan frío y distante como el de los Adeptus.",
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Perforaestrellas",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Ataque Normal",
+              "description": "Realiza hasta 5 ataques rápidos con lanza.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Ataque Cargado",
+              "description": "Consume una cierta cantidad de Aguante para lanzarse al frente, infligiendo daño a los enemigos en el camino.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Ataque Descendente",
+              "description": "Se lanza desde el aire para golpear el suelo, dañando a los enemigos cercanos e infligiendo Daño en el AdE en el momento del impacto.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "Daño de 1er golpe|{param1}%",
+            "Daño de 2.º golpe|{param2}%",
+            "Daño de 3er golpe|{param3}%",
+            "Daño de 4.º golpe|{param4}% + {param5}%",
+            "Daño de 5.º golpe|{param6}%",
+            "Daño de ATQ Cargado|{param7}%",
+            "Coste de Aguante de ATQ Cargado|{param8}",
+            "Daño de Caída|{param9}%",
+            "Daño de impacto de caída baja/alta|{param10}% / {param11}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Espíritu exorcizador",
+          "description": "Invoca una escarcha plateada para exorcizar el mal.\r\nAplica el efecto de “pluma glacial” sobre todos los personajes del equipo cercanos e inflige Daño Cryo de maneras distintas dependiendo de si la habilidad se activó Pulsar una vez o manteniendo pulsado.",
+          "abilities": [
+            {
+              "name": "Pulsar una vez",
+              "description": "Se lanza al frente junto a un espíritu hechizado para infligir Daño Cryo contra los enemigos en su camino.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Mantener pulsado",
+              "description": "Ordena al espíritu hechizado que inflija Daño Cryo en el AdE.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Pluma glacial",
+              "description": "Cuando los Ataques Normales, Cargados o Descendentes o la Habilidad Elemental o Definitiva infligen Daño Cryo contra un enemigo, el daño que infligen aumenta en proporción al ATQ actual de Shenhe.\r\nLos efectos de la pluma glacial desaparecerán cuando termine su duración o cuando se haya activado un número determinado de cargas. La pluma glacial activada manteniendo pulsado tiene una mayor duración y un mayor número de cargas que la activada Pulsar una vez.\r\nAl golpear a varios enemigos a la vez con un golpe de Daño Cryo, se consumirán cargas en función del número de enemigos golpeados. Los efectos y las cargas de la pluma glacial se calculan de manera independiente para cada personaje.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "Daño de habilidad al pulsar una vez|{param1}%",
+            "Daño de habilidad al mantener pulsado|{param2}%",
+            "Aumento de daño|{param3}% ATK",
+            "Duración de pulsar una vez/mantener pulsado|{param4}s / {param5}s",
+            "Cargas al pulsar una vez/mantener pulsado|{param6} / {param7}s",
+            "TdE al pulsar una vez|{param8}s",
+            "TdE de mantener pulsado|{param9}s"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
+          "title": "Encantamiento de la damisela divina",
+          "description": "Libera el poder del espíritu hechizado para que deambule por el mundo e inflija Daño Cryo en el AdE.\r\nEl espíritu creará un área que reduce la RES Cryo y la RES Física de los enemigos que haya dentro de ella, e inflige Daño Cryo continuo contra dichos enemigos.\r\n",
           "abilities": [],
-          "stats": []
+          "stats": [
+            "Daño de habilidad|{param1}%",
+            "Reducción de RES|{param2}%",
+            "Daño continuo|{param3}%",
+            "Duración|{param4}s",
+            "TdE|{param5}s",
+            "Energía Elemental|{param6}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "Llegada oportuna",
+          "description": "Aumenta en un 25% las recompensas de las expediciones de 20 h en Liyue.\r\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
+          "title": "Precepto divino",
+          "description": "Aumenta en un 15% el Bono de Daño Cryo de los personajes en uso situados en el área de Encantamiento de la damisela divina.\r\n",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
+          "title": "Sello de la convergencia espiritual",
+          "description": "Tras lanzar Espíritu exorcizador, Shenhe otorga los siguientes efectos a todos los miembros del equipo cercanos:\r\n",
+          "descriptions": [
+            "Pulsar una vez: el daño de las Habilidades Elementales y Definitivas aumenta en un 15% durante 10 s.",
+            "Mantener pulsado: el daño de los Ataques Normales, Cargados y Descendentes aumenta en un 15% durante 15 s."
+          ]
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "Corazón puro",
+          "description": "Espíritu exorcizador se puede usar una vez más.\r\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "Concentración espiritual",
+          "description": "Aumenta en 6 s la duración de Encantamiento de la damisela divina. Además, cuando un personaje en uso está en el área de la habilidad, el Daño CRIT de los ataques que infligen Daño Cryo aumenta en un 15%.\r\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "Reclusión",
+          "description": "Aumenta el nivel de habilidad de Espíritu exorcizador +3.\r\nPuede ser aumentado hasta Niv. 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
+          "title": "Clarividencia",
+          "description": "Cuando un personaje afectado por la pluma glacial de Shenhe activa el aumento de daño de la pluma, Shenhe obtiene una carga de “mantra de la escarcha”.\r\n",
+          "descriptions": [
+            "Al lanzar Espíritu exorcizador, se consumirán todas las cargas del mantra de la escarcha y el daño infligido con Espíritu exorcizador aumentará en un 5% por cada carga consumida.",
+            "Este efecto puede acumularse hasta 50 veces y su duración es de 60 s."
+          ]
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "Divinización",
+          "description": "Aumenta el nivel de habilidad de Encantamiento de la damisela divina +3.\r\nPuede ser aumentado hasta Niv. 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
+          "title": "Abandono místico",
+          "description": "Cuando un personaje activa los efectos de la pluma glacial infligiendo daño con un Ataque Normal o Cargado, no se consumirán cargas de la pluma.\r\n",
           "descriptions": []
         }
       ]
@@ -6230,6 +6293,93 @@
       ]
     },
     {
+      "key": "yae-miko",
+      "name": "Yae Miko",
+      "title": "¿?",
+      "description": "",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ]
+    },
+    {
       "key": "yanfei",
       "name": "Yanfei",
       "title": "la Letrada Inocente",
@@ -6504,86 +6654,142 @@
     {
       "key": "yun-jin",
       "name": "Yun Jin",
-      "title": "？？？",
-      "description": "",
+      "title": "La Prima Donna del Escenario",
+      "description": "Una renombrada cantante de ópera de Liyue que es experta tanto en la composición de obras como en el canto. Su estilo es único, exquisito y delicado, como su propia persona.",
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Caricia de las nubes",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Ataque Normal",
+              "description": "Realiza hasta 5 ataques rápidos con lanza.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Ataque Cargado",
+              "description": "Consume una cierta cantidad de Aguante para lanzarse al frente, infligiendo daño a los enemigos en el camino.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Ataque Descendente",
+              "description": "Se lanza desde el aire para golpear el suelo, dañando a los enemigos cercanos e infligiendo Daño en el AdE en el momento del impacto.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "Daño de 1er golpe|{param1}%",
+            "Daño de 2.º golpe|{param2}%",
+            "Daño de 3er golpe|{param3}% + {param4}%",
+            "Daño de 4.º golpe|{param5}% + {param6}%",
+            "Daño de 5.º golpe|{param7}%",
+            "Daño de ATQ Cargado|{param8}%",
+            "Coste de Aguante de ATQ Cargado|{param9} pts.",
+            "Daño de Caída|{param10}%",
+            "Daño de impacto de caída baja/alta|{param11}% / {param12}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Disipadora de nimbos",
+          "description": "A pesar de que la maestra Yun maneja la lanza para coreografías en escena, sus habilidades de combate son muy reales.\r\n",
+          "abilities": [
+            {
+              "name": "Pulsar una vez",
+              "description": "Empuña su lanza para disipar las nubes e infligir Daño Geo.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Mantener pulsado",
+              "description": "Entra en su posición de disipadora de nimbos para acumular fuerza y crear un escudo que absorbe daño en proporción a la Vida Máx. de Yun Jin. El escudo tiene un 150% de efectividad de absorción de Daño Elemental y Físico, y dura hasta que Yun Jin termine de lanzar la Habilidad Elemental.\r\nAl dejar de pulsar la habilidad, cuando termine su duración o cuando el escudo se rompa, libera un ataque con todo el poder acumulado que inflige Daño Geo.\r\nSegún el tiempo de carga, el poder acumulado podrá ser de una o dos cargas.\r\n",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "al pulsar una vezDaño|{param1}% de DEF",
+            "Daño de 1 carga|{param2}% de DEF",
+            "Daño de 2 cargas|{param3}% de DEF",
+            "Absorción de daño del escudo|{param4}% de Vida Máx. + {param5}",
+            "TdE|{param6} s"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Estandarte romperrocas",
+          "description": "Inflige Daño Geo en el AdE y otorga a todos los miembros del equipo cercanos los banderines de las nubes.\r\n",
+          "abilities": [
+            {
+              "name": "Banderines de las nubes",
+              "description": "El daño que infligen los miembros del equipo con sus Ataques Normales aumenta en proporción a la DEF actual de Yun Jin.\r\nLos efectos de los banderines desaparecerán cuando termine su duración o tras activar un número determinado de cargas.\r\nAl golpear a varios enemigos a la vez con un Ataque Normal, se consumirán cargas en función del número de enemigos golpeados. Los efectos y las cargas de los banderines de las nubes se calculan de manera independiente para cada personaje.\r\n",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "Daño de habilidad|{param1}%",
+            "Aumento de daño|{param2}% de DEF",
+            "Duración|{param3} s",
+            "Cargas|{param4}",
+            "TdE|{param5} s",
+            "Energía Elemental|{param6}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "Alimentación ligera",
+          "description": "Al lograr un “Perfecto” en un plato con efectos de ayuda a la aventura, hay una probabilidad del 12% de obtener el doble.\r\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
+          "title": "Fiel a sí misma",
+          "description": "Si Yun Jin usa Disipadora de nimbos en el momento justo en el que recibe un ataque, la habilidad se liberará con la fuerza de dos cargas.\r\n",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "NA",
-          "description": "",
+          "title": "Rechazo de la convención",
+          "description": "Cuando en el equipo hay 1/2/3/4 personajes con tipos elementales distintos, el aumento de daño de Ataque Normal otorgado por los banderines de las nubes incrementa en un 2.5/5/7.5/11.5% adicional en proporción a la DEF de Yun Jin.\r\n",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "Galope dramático",
+          "description": "El TdE de Disipadora de nimbos se reduce en un 18%.\r\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "Atrezo",
+          "description": "Después de usar Estandarte romperrocas, el daño de los Ataques Normales de todos los miembros del equipo cercanos aumenta en un 15% durante 12 s.\r\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "Bandera marítima",
+          "description": "Aumenta el nivel de habilidad de Estandarte romperrocas +3.\r\nPuede ser aumentado hasta Niv. 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "Pose bélica",
+          "description": "Cuando Yun Jin causa una reacción de Cristalización, su DEF aumenta en un 20% durante 12 s.\r\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "Fama internacional",
+          "description": "Aumenta el nivel de habilidad de Disipadora de nimbos +3.\r\nPuede ser aumentado hasta Niv. 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
+          "title": "Armonía y decoro",
+          "description": "Aumenta en un 12% la Vel. de Ataque Normal de los personajes bajo los efectos de los banderines de las nubes.\r\n",
           "descriptions": []
         }
       ]
@@ -6910,6 +7116,18 @@
         "Aumenta en un {color}18{/color}% el daño contra los enemigos afectados por Pyro o Electro.",
         "Aumenta en un {color}21{/color}% el daño contra los enemigos afectados por Pyro o Electro.",
         "Aumenta en un {color}24{/color}% el daño contra los enemigos afectados por Pyro o Electro."
+      ]
+    },
+    {
+      "key": "calamity-queller",
+      "name": "Pacificadora del Desastre",
+      "description": "Una afilada arma forjada con extraños minerales. Su tenue brillo azul parece estar contando incontables historias del pasado.",
+      "refinements": [
+        "Otorga un {color}12{/color}% a todos los Bonos de Daño Elemental. Al lanzar la Habilidad Elemental, se obtiene el efecto “consumación” durante 20 s, el cual aumenta el ATQ en un {color}3.2{/color}% por segundo. Este efecto puede acumularse hasta 6 veces. Cuando el personaje que equipa esta arma está en tu equipo pero no en combate, el aumento de ataque otorgado por consumación se dobla.",
+        "Otorga un {color}15{/color}% a todos los Bonos de Daño Elemental. Al lanzar la Habilidad Elemental, se obtiene el efecto “consumación” durante 20 s, el cual aumenta el ATQ en un {color}4{/color}% por segundo. Este efecto puede acumularse hasta 6 veces. Cuando el personaje que equipa esta arma está en tu equipo pero no en combate, el aumento de ataque otorgado por consumación se dobla.",
+        "Otorga un {color}18{/color}% a todos los Bonos de Daño Elemental. Al lanzar la Habilidad Elemental, se obtiene el efecto “consumación” durante 20 s, el cual aumenta el ATQ en un {color}4.8{/color}% por segundo. Este efecto puede acumularse hasta 6 veces. Cuando el personaje que equipa esta arma está en tu equipo pero no en combate, el aumento de ataque otorgado por consumación se dobla.",
+        "Otorga un {color}21{/color}% a todos los Bonos de Daño Elemental. Al lanzar la Habilidad Elemental, se obtiene el efecto “consumación” durante 20 s, el cual aumenta el ATQ en un {color}5.6{/color}% por segundo. Este efecto puede acumularse hasta 6 veces. Cuando el personaje que equipa esta arma está en tu equipo pero no en combate, el aumento de ataque otorgado por consumación se dobla.",
+        "Otorga un {color}24{/color}% a todos los Bonos de Daño Elemental. Al lanzar la Habilidad Elemental, se obtiene el efecto “consumación” durante 20 s, el cual aumenta el ATQ en un {color}6.4{/color}% por segundo. Este efecto puede acumularse hasta 6 veces. Cuando el personaje que equipa esta arma está en tu equipo pero no en combate, el aumento de ataque otorgado por consumación se dobla."
       ]
     },
     {
@@ -8873,6 +9091,11 @@
       "description": "Los cuernos formados durante mil años a partir de jade cristalizado son la corona del rey dragón.\r\nEl dragón nació de la montaña, por eso está imbuido de su espíritu y su cuerpo es de piedra. El deseo de la montaña era mostrar la fuerza de la tierra al país entre monolitos, y los cuernos dorados del dragón son la marca de su conflicto ancestral con un antiguo rey.\r\nDurante un tiempo, este cuerno estuvo agrietado y perdió su brillo, pero ahora reluce con una luz dorada y fría en la palma de tu mano."
     },
     {
+      "key": "dragonheirs-false-fin",
+      "name": "Pseudoaleta de dragón de las profundidades",
+      "description": "Una parte del cuerpo del Dragarto de las Profundidades recogida tras derrotarlo.\r\nAunque parece una aleta, en realidad no sirve para nada.\r\nLos antiguos habitantes del reino de Byakuya estudiaron en profundidad a los Dragartos de las Profundidades, cuya mayor particularidad es que pueden decidir qué características conservar y transmitir a sus crías según ellos mismos deseen. Como detestan la luz artificial, estos Dragartos pierden una gran parte de su sentido de la vista durante la adultez. Además, para poder luchar, han evolucionado hasta ser capaces de cambiar de elemento."
+    },
+    {
       "key": "dream-of-the-dandelion-gladiator",
       "name": "Ideales de Diente de León",
       "description": "Material de ascensión de arma.\r\nVennessa fue liberada de su esclavitud, pero sus anhelos eran aún más grandes: lo que realmente deseaba era un mundo más justo y libre."
@@ -10135,6 +10358,14 @@
       "name": "Mitachurl con Hacha de Fuego"
     },
     {
+      "key": "bolteater-bathysmal-vishap",
+      "name": "Dragarto de las Profundidades - Engulletruenos"
+    },
+    {
+      "key": "bolteater-bathysmal-vishap-hatchling",
+      "name": "Cría de Dragarto de las Profundidades - Engulletruenos"
+    },
+    {
       "key": "childe",
       "name": "Nobile"
     },
@@ -10175,6 +10406,10 @@
       "name": "Slime Cryo"
     },
     {
+      "key": "cryo-specter",
+      "name": "Espectro Cryo"
+    },
+    {
       "key": "cryo-whopperflower",
       "name": "Megaflora Cryo"
     },
@@ -10213,6 +10448,10 @@
     {
       "key": "electro-slime",
       "name": "Slime Electro"
+    },
+    {
+      "key": "electro-specter",
+      "name": "Espectro Electro"
     },
     {
       "key": "electro-whopperflower",
@@ -10285,6 +10524,10 @@
     {
       "key": "geovishap-hatchling",
       "name": "Cría de Dragarto Geo"
+    },
+    {
+      "key": "golden-wolflord",
+      "name": "Rey Acechador Dorado"
     },
     {
       "key": "hilichurl",
@@ -10419,6 +10662,18 @@
       "name": "Oni Espadachín"
     },
     {
+      "key": "maguu-kenki-galloping-frost",
+      "name": "Oni Espadachín - Escarcha veloz"
+    },
+    {
+      "key": "maguu-kenki-lone-gale",
+      "name": "Oni Espadachín - Viento solitario"
+    },
+    {
+      "key": "maguu-kenki-mask-of-terror",
+      "name": "Oni Espadachín - Máscara malévola"
+    },
+    {
       "key": "millelith-sergeant",
       "name": "Sargento de la Geoarmada"
     },
@@ -10467,6 +10722,14 @@
       "name": "Protodragarto Geo"
     },
     {
+      "key": "primordial-bathysmal-vishap",
+      "name": "Dragarto de las Profundidades Primordial"
+    },
+    {
+      "key": "primordial-bathysmal-vishap-hatchling",
+      "name": "Cría de Dragarto de las Profundidades Primordial"
+    },
+    {
       "key": "pyro-abyss-mage",
       "name": "Mago del Abismo Pyro"
     },
@@ -10487,12 +10750,24 @@
       "name": "Slime Pyro"
     },
     {
+      "key": "pyro-specter",
+      "name": "Espectro Pyro"
+    },
+    {
       "key": "pyro-whopperflower",
       "name": "Megaflora Pyro"
     },
     {
       "key": "raiden-shogun",
       "name": "Shogun Raiden"
+    },
+    {
+      "key": "rimebiter-bathysmal-vishap",
+      "name": "Dragarto de las Profundidades - Hielo mordaz"
+    },
+    {
+      "key": "rimebiter-bathysmal-vishap-hatchling",
+      "name": "Cría de Dragarto de las Profundidades - Hielo mordaz"
     },
     {
       "key": "rock-shield-hilichurl-guard",
@@ -10560,7 +10835,7 @@
     },
     {
       "key": "thunder-manifestation",
-      "name": "Manifestación del trueno"
+      "name": "Manifestación del Trueno"
     },
     {
       "key": "thundercraven-rifthound",
@@ -10573,6 +10848,10 @@
     {
       "key": "thunderhelm-lawachurl",
       "name": "Lawachurl Electroyelmo"
+    },
+    {
+      "key": "treasure-hoarder-wallenstein",
+      "name": "Ladrón de Tesoros - Wallenstein"
     },
     {
       "key": "treasure-hoarders-boss",

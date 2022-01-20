@@ -4594,86 +4594,149 @@
     {
       "key": "shenhe",
       "name": "Shenhe",
-      "title": "？？？",
-      "description": "",
+      "title": "Lonesome Transcendence",
+      "description": "Un'adepta discepola con una aria molto inusuale attorno a sè. Avendo speso molto tempo a migliorarsi nell'isolamento delle montagne di Liyue, è diventata altrettanto fredda e distante come gli adepti stessi.",
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Dawnstar Piercer",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Attacco Normale",
+              "description": "Esegue fino a 5 attacchi rapidi con la lancia.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Attacco Caricato",
+              "description": "Consuma una certa quantità di Stamina per eseguire un affondo lungo che infligge danni ai nemici che incontra lungo il percorso.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Attacco in Picchiata",
+              "description": "Si lancia in picchiata da mezz'aria per colpire il terreno sottostante e infliggere AoE DMG all'impatto.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "DMG 1° Colpo|{param1}%",
+            "DMG 2° Colpo|{param2}%",
+            "DMG 3° Colpo|{param3}%",
+            "DMG 4° Colpo|{param4}% + {param5}%",
+            "DMG 5° Colpo|{param6}%",
+            "DMG Attacco Caricato|{param7}%",
+            "Costo Stamina Attacco Caricato|{param8}",
+            "DMG Attacco in Picchiata|{param9}%",
+            "DMG Attacco in Picchiata per altezze Basse/Elevate|{param10}% / {param11}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Spring Spirit Summoning",
+          "description": "La rugiada ghiacciata, argentea e densa, esorcizzerà tutti i demoni.\r\nConcede a tutti i membri vicini del party l'effetto Icy Quill  e infligge Cryo DMG in maniera differente a seconda che sia un Attacco Caricato o Attacco Normale.",
+          "abilities": [
+            {
+              "name": "Premi",
+              "description": "Si precipita in avanti con un Talismano Spirito, infliggendo Cryo DMG ai nemici lungo il percorso.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Tieni Premuto",
+              "description": "Ordina al Talismano Spirito di infliggere AoE Cryo DMG.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Icy Quill",
+              "description": "Quando Attacchi Normali, Caricati, in Picchiata, Elemental Skills ed Elemental Bursts infliggono Cryo DMG ai nemici, il DMG inflitto è aumentato in base all’ATK corrente di Shenhe.\r\nGli effetti di Icy Quill termineranno quando la sua durata finirà o dopo esser stati attivati un certo numero di volte. Quando Tieni Premuto invece di Premere, gli effetti di Icy Quill dureranno più a lungo e potranno essere attivati più volte.\r\nQuando un colpo infligge Cryo DMG a più nemici, l’effetto è attivato più volte in base al numero di nemici colpiti. Il numero di volte in cui l'effetto viene attivato è calcolato indipendentemente per ogni membro del party con Icy Quill.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "Skill DMG|(Premi){param1}%",
+            "Skill DMG|(Tieni Premuto){param2}%",
+            "DMG Bonus|{param3}% ATK",
+            "Durata Premi/Tieni Premuto|{param4} s/ {param5} s",
+            "Trigger Quota Premi/Tieni Premuto|{param6} / {param7}",
+            "Premi CD|{param8} s",
+            "Tieni Premuto CD|{param9} s"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
+          "title": "Divine Maiden's Deliverance",
+          "description": "Rilascia il potere del Talismano Spirito, permettendogli di vagare liberamente in questo piano, infliggendo AoE Cryo DMG.\r\nIl Talismano Spirito poi crea un campo che diminuisce la Cryo RES e Physical RES dei nemici al suo interno. Infligge anche periodici Cryo DMG ai nemici nel campo.\r\n",
           "abilities": [],
-          "stats": []
+          "stats": [
+            "Skill DMG|{param1}%",
+            "RES Decrease|{param2}%",
+            "DoT|{param3}%",
+            "Durata|{param4} s",
+            "CD|{param5} s",
+            "Costo Energy|{param6}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "Precise Comings and Goings",
+          "description": "Ottiene il 25% in più di ricompense quando viene mandata in una Liyue Expedition per 20 ore.\r\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
+          "title": "Deific Embrace",
+          "description": "Un personaggio attivo nel campo creato da Divine Maiden's Deliverance ottiene il 15% Cryo DMG Bonus.\r\n",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
+          "title": "Spirit Communion Seal",
+          "description": "Dopo che Shenhe ha usato Spring Spirit Summoning, lei garantirà a tutti i membri vicini del party i seguenti effetti:\r\n",
+          "descriptions": [
+            "Premi: Elemental Skill e Elemental Burst DMG aumenta del 15% per 10s.",
+            "Tieni Premuto:Il DMG dell'Attacco Normale, Caricato e In Picchiata aumenta del 15% per 15s."
+          ]
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "Clarity of Heart",
+          "description": "Spring Spirit Summoning può essere usata 1 volta in più.\r\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "Centered Spirit",
+          "description": "Divine Maiden's Deliverance dura per 6 secondi in più. Personaggi attivi all'interno del campo della skill infliggono 15% del Cryo CRIT DMG in più.\r\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "Seclusion",
+          "description": "Aumenta di 3 il livello di Spring Spirit Summoning.\r\nOra il livello massimo di upgrade è 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
+          "title": "Insight",
+          "description": "Quando i personaggi sotto l'effetto di Icy Quill applicato da Shenhe innescano i loro DMG Bonus effects, Shenhe garantirà loro uno Skyfrost Mantra stack:\r\n",
+          "descriptions": [
+            "Quando Shenhe usa Spring Spirit Summoning, consumerà stutti gli stack di Skyfrost Mantra, aumentando il DMG di quel Spring Spirit Summoning del 5% per ogni stack consumato.",
+            "Massimo 50 stacks. Gli Stack durano per 60s."
+          ]
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "Divine Attainment",
+          "description": "Aumenta di 3 il livello di Divine Maiden's Deliverance.\r\nOra il livello massimo di upgrade è 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
+          "title": "Mystical Abandon",
+          "description": "Quando dei personaggi attivano gli effetti di Icy Quill usando DMG di Attacchi Normali e Caricati, questi non contano per il Trigger Quota.\r\n",
           "descriptions": []
         }
       ]
@@ -6226,6 +6289,93 @@
       ]
     },
     {
+      "key": "yae-miko",
+      "name": "Yae Miko",
+      "title": "",
+      "description": "",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ]
+    },
+    {
       "key": "yanfei",
       "name": "Yanfei",
       "title": "Wise Innocence",
@@ -6503,86 +6653,142 @@
     {
       "key": "yun-jin",
       "name": "Yun Jin",
-      "title": "？？？",
-      "description": "",
+      "title": "Stage Lucida",
+      "description": "Una rinomata cantante di opera di Liyue che è abile sia nella drammaturgia che nel canto. Il suo stile è unico nel suo genere, squisito e delicato, proprio come la persona stessa.",
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Cloud-Grazing Strike",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Attacco Normale",
+              "description": "Esegue fino a 5 attacchi rapidi con la lancia.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Attacco Caricato",
+              "description": "Consuma una certa quantità di Stamina per eseguire un affondo lungo che infligge danni ai nemici che incontra lungo il percorso.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Attacco in Picchiata",
+              "description": "Si lancia in picchiata da mezz'aria per colpire il terreno sottostante e infliggere AoE DMG all'impatto.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "DMG 1° Colpo|{param1}%",
+            "DMG 2° Colpo|{param2}%",
+            "DMG 3° Colpo|{param3}% + {param4}%",
+            "DMG 4° Colpo|{param5}% + {param6}%",
+            "DMG 5° Colpo|{param7}%",
+            "Attacco Caricato|{param8}%",
+            "Costo Stamina Attacco Caricato|{param9}",
+            "DMG Attacco in Picchiata|{param10}%",
+            "DMG Attacco in Picchiata per altezze Basse/Elevate|{param11}% / {param12}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Opening Flourish",
+          "description": "Ms. Yun può anche solo simulare dei combattimenti sul palco, ma le sue abilità con la lancia sono reali quanto basta per difendersi contro i suoi nemici.\r\n",
+          "abilities": [
+            {
+              "name": "Premi",
+              "description": "Volteggia la sua lancia nella posizione di Cloud-Grasping, infliggendo Geo DMG.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Tieni Premuto",
+              "description": "Prende la posizione di Opening Flourish e si carica, formando uno scudo. Il DMG Absorption è basato sui Max HP di Yun Jin e ha un'efficacia del 150% contro tutti i DMG Elementali e DMG Fisici. Lo scudo dura finchè lei finisce di rilasciare la sua Elemental Skill.\r\nQuando la skill viene rilasciata, quando la durata finisce, o quando lo scudo si rompe, Yun Jin rilascerà l'energia caricata come come attacco, infliggendo Geo DMG.\r\nBasato sul tempo speso a caricarsi, rilascerà un attacco o di Livello di Carica 1 o di Livello di Carica 2.\r\n",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "DMG(Premi)|{param1}% DEF",
+            "DMG del Livello di Carica 1|{param2}% DEF",
+            "DMG del Livello di Carica 2|{param3}% DEF",
+            "DMG Absorption dello scudo|{param4}% Max HP+ {param5}",
+            "CD|{param6} s"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Cliffbreaker's Banner",
+          "description": "infligge AoE Geo DMG e concede a tutti i membri vicini del party una Flying Cloud Flag Formation.\r\n",
+          "abilities": [
+            {
+              "name": "Flying Cloud Flag Formation",
+              "description": "Quando il DMG di un Attacco Normale è inferto ai nemici, un Bonus DMG sarà attivato in base alla DEF attuale di Yun Jin.\r\nGli effetti di questa skill saranno cancellati dopo una determinata durata o dopo esser stata attivata uno specifico numero di volte.\r\nQuando un Attacco Normale colpisce più nemici, gli effetti si attivano più volte secondo il numero di nemici colpiti. Il numero di volte che l'effetto è attivato è contato indipendentemente per ogni membro del party con Flying Cloud Flag Formation.\r\n",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "Skill DMG|{param1}%",
+            "Aumento del DMG|{param2}% DEF",
+            "Durata|{param3} s",
+            "Trigger Quota|{param4}",
+            "CD|{param5} s",
+            "Costo Energy|{param6}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "Light Nourishment",
+          "description": "Quando si ottiene Perfect Cooking su del Cibo con effetti connessi con l'Avventura, c'è una possibilità del 12% di ottenere il doppio del prodotto.\r\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
+          "title": "True to Oneself",
+          "description": "Usare Opening Flourish al momento preciso quando Yun Jin è attaccata rilascerà la sua forma di Livello di Carica 2 (Tieni Premuto).\r\n",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "NA",
-          "description": "",
+          "title": "Breaking Conventions",
+          "description": "Il Bonus DMG dell'Attacco Normale garantito dal Flying Cloud Flag Formation è aumentato ulteriormente del 2.5%/5%/7.5%/11.5% della DEF di Yun Jin quando il party ha rispettivamente personaggi di 1/2/3/4 Tipi Elementali.\r\n",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "Thespian Gallop",
+          "description": "La CD di Opening Flourishè diminuita del 18%.\r\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "Myriad Mise-En-Scène",
+          "description": "Dopo che Cliffbreaker's Banner è attivata, il DMG dell'Attacco Normale dei membri vicini del party è aumentato del 15% per 12s.\r\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "Seafaring General",
+          "description": "Aumenta di 3 il livello di Cliffbreaker's Banner.\r\nOra il livello massimo di upgrade è 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "Flower and a Fighter",
+          "description": "Quando Yun Jin attiva la Crystallize Reaction, la sua DEF è aumentata del 20% per 12s.\r\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "Famed Throughout the Land",
+          "description": "Aumenta di 3 il livello di Opening Flourish.\r\nOra il livello massimo di upgrade è 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
+          "title": "Decorous Harmony",
+          "description": "I personaggi sotto l'effetto della Flying Cloud Flag Formation hanno la loro Normal ATK SPD aumentata del 12%.\r\n",
           "descriptions": []
         }
       ]
@@ -6909,6 +7115,18 @@
         "Aumenta del {color}18{/color}% i DMG contro nemici affetti da Pyro o Electro.",
         "Aumenta del {color}21{/color}% i DMG contro nemici affetti da Pyro o Electro.",
         "Aumenta del {color}24{/color}% i DMG contro nemici affetti da Pyro o Electro."
+      ]
+    },
+    {
+      "key": "calamity-queller",
+      "name": "Calamity Queller",
+      "description": "Un’arma accuratamente affilata forgiata da uno strano cristallo. La sua debole luce blu sembra sussurrare innumerevoli storie ormai passate...",
+      "refinements": [
+        "Ottieni il {color}12{/color}% di Elemental DMG Bonus per tutti gli elementi. Dopo aver usato una Elemental Skill ottieni \"Consummation\" per 20s e l’ ATK aumenta del {color}3.2{/color}% al secondo. Massimo 6 stacks. Se il personaggio che equipaggia quest’arma non è presente sul campo, questo aumento di ATK (Consummation) raddoppia.",
+        "Ottieni il {color}15{/color}% di Elemental DMG Bonus per tutti gli elementi. Dopo aver usato una Elemental Skill ottieni \"Consummation\" per 20s e l’ ATK aumenta del {color}4{/color}% al secondo. Massimo 6 stacks. Se il personaggio che equipaggia quest’arma non è presente sul campo, questo aumento di ATK (Consummation) raddoppia.",
+        "Ottieni il {color}18{/color}% di Elemental DMG Bonus per tutti gli elementi. Dopo aver usato una Elemental Skill ottieni \"Consummation\" per 20s e l’ ATK aumenta del {color}4.8{/color}% al secondo. Massimo 6 stacks. Se il personaggio che equipaggia quest’arma non è presente sul campo, questo aumento di ATK (Consummation) raddoppia.",
+        "Ottieni il {color}21{/color}% di Elemental DMG Bonus per tutti gli elementi. Dopo aver usato una Elemental Skill ottieni \"Consummation\" per 20s e l’ ATK aumenta del {color}5.6{/color}% al secondo. Massimo 6 stacks. Se il personaggio che equipaggia quest’arma non è presente sul campo, questo aumento di ATK (Consummation) raddoppia.",
+        "Ottieni il {color}24{/color}% di Elemental DMG Bonus per tutti gli elementi. Dopo aver usato una Elemental Skill ottieni \"Consummation\" per 20s e l’ ATK aumenta del {color}6.4{/color}% al secondo. Massimo 6 stacks. Se il personaggio che equipaggia quest’arma non è presente sul campo, questo aumento di ATK (Consummation) raddoppia."
       ]
     },
     {
@@ -8895,6 +9113,11 @@
       "description": "Corna create da duro Jade cristallizzato per mille anni, sono la corona naturale del Re Drago.\r\nInfusa di spirito e intagliata dalla roccia, è nata dal cuore della montagna per mostrare alla landa in mezzo ai monoliti la forza della terra; le sue lunga corna dorate sono il simbolo di un’antica diatriba con un'antica divinità.\r\nPer un po', questo corno è rimasto frantumato perdendo così il suo splendore, ma ora che risiede sul tuo palmo risplende di freddo e d’oro."
     },
     {
+      "key": "dragonheirs-false-fin",
+      "name": "Dragonheir's False Fin",
+      "description": "Un pezzo di tessuto biologico che hai trovato sconfiggendo i Bathysmal Vishaps.\r\nAnche se sembra una pinna di qualche tipo, in realtà non ha alcuna funzione.\r\nGli abitanti del Byakuyakoku un tempo studiavano a fondo i Bathysmal Vishaps. La loro caratteristica più distintiva era la capacità di decidere quali tratti trasmettere alla prole. A causa del loro grande rancore per l’umanità, raggiunta la maturità, questi Vishaps perdevano ogni capacità visiva. Allo stesso tempo, hanno anche sviluppato un certo grado di polimorfismo elementale per combattere."
+    },
+    {
       "key": "dream-of-the-dandelion-gladiator",
       "name": "Dream of the Dandelion Gladiator",
       "description": "Materiale per l'Ascensione di armi.\r\nAnche se fosse stata libera dalla schiavitù, Vennessa si sarebbe ritrovata soggetta a molte altre e peggiori forme di prigionia. Ciò che iniziò come un dovere verso la propria tribù si estese a tutta Mondstadt, poi al concetto stesso di libertà e, alla fine, anche al mondo intero.\r\nIl suo desiderio più grande, in verità, era che il mondo potesse diventare più forte."
@@ -10157,6 +10380,14 @@
       "name": "Blazing Axe Mitachurl"
     },
     {
+      "key": "bolteater-bathysmal-vishap",
+      "name": "Bolteater Bathysmal Vishap"
+    },
+    {
+      "key": "bolteater-bathysmal-vishap-hatchling",
+      "name": "Bolteater Bathysmal Vishap Hatchling"
+    },
+    {
       "key": "childe",
       "name": "Childe"
     },
@@ -10197,6 +10428,10 @@
       "name": "Cryo Slime"
     },
     {
+      "key": "cryo-specter",
+      "name": "Cryo Specter"
+    },
+    {
       "key": "cryo-whopperflower",
       "name": "Cryo Whopperflower"
     },
@@ -10235,6 +10470,10 @@
     {
       "key": "electro-slime",
       "name": "Electro Slime"
+    },
+    {
+      "key": "electro-specter",
+      "name": "Electro Specter"
     },
     {
       "key": "electro-whopperflower",
@@ -10307,6 +10546,10 @@
     {
       "key": "geovishap-hatchling",
       "name": "Geovishap Hatchling"
+    },
+    {
+      "key": "golden-wolflord",
+      "name": "Golden Wolflord"
     },
     {
       "key": "hilichurl",
@@ -10441,6 +10684,18 @@
       "name": "Maguu Kenki"
     },
     {
+      "key": "maguu-kenki-galloping-frost",
+      "name": "Maguu Kenki: Galloping Frost"
+    },
+    {
+      "key": "maguu-kenki-lone-gale",
+      "name": "Maguu Kenki: Lone Gale"
+    },
+    {
+      "key": "maguu-kenki-mask-of-terror",
+      "name": "Maguu Kenki: Mask of Terror"
+    },
+    {
       "key": "millelith-sergeant",
       "name": "Millelith Sergeant"
     },
@@ -10489,6 +10744,14 @@
       "name": "Primo Geovishap"
     },
     {
+      "key": "primordial-bathysmal-vishap",
+      "name": "Primordial Bathysmal Vishap"
+    },
+    {
+      "key": "primordial-bathysmal-vishap-hatchling",
+      "name": "Primordial Bathysmal Vishap Hatchling"
+    },
+    {
       "key": "pyro-abyss-mage",
       "name": "Pyro Abyss Mage"
     },
@@ -10509,12 +10772,24 @@
       "name": "Pyro Slime"
     },
     {
+      "key": "pyro-specter",
+      "name": "Pyro Specter"
+    },
+    {
       "key": "pyro-whopperflower",
       "name": "Pyro Whopperflower"
     },
     {
       "key": "raiden-shogun",
       "name": "Raiden Shogun"
+    },
+    {
+      "key": "rimebiter-bathysmal-vishap",
+      "name": "Rimebiter Bathysmal Vishap"
+    },
+    {
+      "key": "rimebiter-bathysmal-vishap-hatchling",
+      "name": "Rimebiter Bathysmal Vishap Hatchling"
     },
     {
       "key": "rock-shield-hilichurl-guard",
@@ -10595,6 +10870,10 @@
     {
       "key": "thunderhelm-lawachurl",
       "name": "Thunderhelm Lawachurl"
+    },
+    {
+      "key": "treasure-hoarder-wallenstein",
+      "name": "Treasure Hoarder: Wallenstein"
     },
     {
       "key": "treasure-hoarders-boss",

@@ -33587,6 +33587,322 @@
       ]
     },
     {
+      "key": "calamity-queller",
+      "image": "calamity-queller.png",
+      "type": "polearm",
+      "atk": 49.0,
+      "rarity": 5,
+      "secondaryStat": "atkPercentage",
+      "secondaryStatValue": 3.6,
+      "location": "gacha",
+      "isComingSoon": false,
+      "ascensionMaterials": [
+        {
+          "level": 20,
+          "materials": [
+            {
+              "key": "mist-veiled-lead-elixir",
+              "quantity": 5,
+              "type": "weaponPrimary"
+            },
+            {
+              "key": "mist-grass-pollen",
+              "quantity": 5,
+              "type": "weapon"
+            },
+            {
+              "key": "whopperflower-nectar",
+              "quantity": 3,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 10000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "level": 40,
+          "materials": [
+            {
+              "key": "mist-veiled-mercury-elixir",
+              "quantity": 5,
+              "type": "weaponPrimary"
+            },
+            {
+              "key": "mist-grass-pollen",
+              "quantity": 18,
+              "type": "weapon"
+            },
+            {
+              "key": "whopperflower-nectar",
+              "quantity": 12,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 20000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "level": 50,
+          "materials": [
+            {
+              "key": "mist-veiled-mercury-elixir",
+              "quantity": 9,
+              "type": "weaponPrimary"
+            },
+            {
+              "key": "mist-grass",
+              "quantity": 9,
+              "type": "weapon"
+            },
+            {
+              "key": "shimmering-nectar",
+              "quantity": 9,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 30000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "level": 60,
+          "materials": [
+            {
+              "key": "mist-veiled-gold-elixir",
+              "quantity": 5,
+              "type": "weaponPrimary"
+            },
+            {
+              "key": "mist-grass",
+              "quantity": 18,
+              "type": "weapon"
+            },
+            {
+              "key": "shimmering-nectar",
+              "quantity": 14,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 45000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "level": 70,
+          "materials": [
+            {
+              "key": "mist-veiled-gold-elixir",
+              "quantity": 9,
+              "type": "weaponPrimary"
+            },
+            {
+              "key": "mist-grass-wick",
+              "quantity": 14,
+              "type": "weapon"
+            },
+            {
+              "key": "energy-nectar",
+              "quantity": 9,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 55000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "level": 80,
+          "materials": [
+            {
+              "key": "mist-veiled-primo-elixir",
+              "quantity": 6,
+              "type": "weaponPrimary"
+            },
+            {
+              "key": "mist-grass-wick",
+              "quantity": 27,
+              "type": "weapon"
+            },
+            {
+              "key": "energy-nectar",
+              "quantity": 18,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 65000,
+              "type": "currency"
+            }
+          ]
+        }
+      ],
+      "craftingMaterials": [],
+      "stats": [
+        {
+          "level": 1,
+          "baseAtk": 49.0,
+          "statValue": 3.6,
+          "isAnAscension": false
+        },
+        {
+          "level": 5,
+          "baseAtk": 68.0,
+          "statValue": 4.2,
+          "isAnAscension": false
+        },
+        {
+          "level": 10,
+          "baseAtk": 93.0,
+          "statValue": 4.9,
+          "isAnAscension": false
+        },
+        {
+          "level": 15,
+          "baseAtk": 119.0,
+          "statValue": 5.6,
+          "isAnAscension": false
+        },
+        {
+          "level": 20,
+          "baseAtk": 145.0,
+          "statValue": 6.4,
+          "isAnAscension": false
+        },
+        {
+          "level": 20,
+          "baseAtk": 176.0,
+          "statValue": 6.4,
+          "isAnAscension": true
+        },
+        {
+          "level": 25,
+          "baseAtk": 203.0,
+          "statValue": 7.1,
+          "isAnAscension": false
+        },
+        {
+          "level": 30,
+          "baseAtk": 230.0,
+          "statValue": 7.8,
+          "isAnAscension": false
+        },
+        {
+          "level": 35,
+          "baseAtk": 258.0,
+          "statValue": 8.5,
+          "isAnAscension": false
+        },
+        {
+          "level": 40,
+          "baseAtk": 286.0,
+          "statValue": 9.3,
+          "isAnAscension": false
+        },
+        {
+          "level": 40,
+          "baseAtk": 317.0,
+          "statValue": 9.3,
+          "isAnAscension": true
+        },
+        {
+          "level": 45,
+          "baseAtk": 346.0,
+          "statValue": 10.0,
+          "isAnAscension": false
+        },
+        {
+          "level": 50,
+          "baseAtk": 374.0,
+          "statValue": 10.7,
+          "isAnAscension": false
+        },
+        {
+          "level": 50,
+          "baseAtk": 406.0,
+          "statValue": 10.7,
+          "isAnAscension": true
+        },
+        {
+          "level": 55,
+          "baseAtk": 435.0,
+          "statValue": 11.5,
+          "isAnAscension": false
+        },
+        {
+          "level": 60,
+          "baseAtk": 464.0,
+          "statValue": 12.2,
+          "isAnAscension": false
+        },
+        {
+          "level": 60,
+          "baseAtk": 495.0,
+          "statValue": 12.2,
+          "isAnAscension": true
+        },
+        {
+          "level": 65,
+          "baseAtk": 525.0,
+          "statValue": 12.9,
+          "isAnAscension": false
+        },
+        {
+          "level": 70,
+          "baseAtk": 555.0,
+          "statValue": 13.6,
+          "isAnAscension": false
+        },
+        {
+          "level": 70,
+          "baseAtk": 586.0,
+          "statValue": 13.6,
+          "isAnAscension": true
+        },
+        {
+          "level": 75,
+          "baseAtk": 617.0,
+          "statValue": 14.4,
+          "isAnAscension": false
+        },
+        {
+          "level": 80,
+          "baseAtk": 648.0,
+          "statValue": 15.1,
+          "isAnAscension": false
+        },
+        {
+          "level": 80,
+          "baseAtk": 679.0,
+          "statValue": 15.1,
+          "isAnAscension": true
+        },
+        {
+          "level": 85,
+          "baseAtk": 709.0,
+          "statValue": 15.8,
+          "isAnAscension": false
+        },
+        {
+          "level": 90,
+          "baseAtk": 741.0,
+          "statValue": 16.5,
+          "isAnAscension": false
+        }
+      ]
+    },
+    {
       "key": "crescent-pike",
       "image": "crescent-pike.png",
       "type": "polearm",
