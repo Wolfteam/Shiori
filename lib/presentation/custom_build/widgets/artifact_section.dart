@@ -83,6 +83,7 @@ class ArtifactSection extends StatelessWidget {
                   subStatsToFocus: state.subStatsSummary,
                   color: color,
                   fontSize: 14,
+                  margin: Styles.edgeInsetAll5,
                 ),
             ],
           );
