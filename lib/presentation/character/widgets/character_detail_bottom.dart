@@ -59,6 +59,7 @@ class _PortraitLayout extends StatelessWidget {
                           weapons: build.weapons,
                           artifacts: build.artifacts,
                           subStatsToFocus: build.subStatsToFocus,
+                          isCustomBuild: build.isCustomBuild,
                         ),
                       )
                       .toList(),
@@ -179,6 +180,7 @@ class _LandscapeLayout extends StatelessWidget {
                           weapons: build.weapons,
                           artifacts: build.artifacts,
                           subStatsToFocus: build.subStatsToFocus,
+                          isCustomBuild: build.isCustomBuild,
                         ),
                       )
                       .toList(),

@@ -5,6 +5,7 @@ import 'package:shiori/domain/extensions/iterable_extensions.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/generated/l10n.dart';
 import 'package:shiori/presentation/artifacts/widgets/artifact_card.dart';
+import 'package:shiori/presentation/shared/character_skill_priority.dart';
 import 'package:shiori/presentation/shared/extensions/element_type_extensions.dart';
 import 'package:shiori/presentation/shared/extensions/i18n_extensions.dart';
 import 'package:shiori/presentation/shared/row_column_item_or.dart';
@@ -12,7 +13,6 @@ import 'package:shiori/presentation/shared/styles.dart';
 import 'package:shiori/presentation/shared/sub_stats_to_focus.dart';
 import 'package:shiori/presentation/weapons/widgets/weapon_card.dart';
 
-final _replaceDigitRegex = RegExp(r'\d{1}');
 const double _imgHeight = 125;
 
 class CharacterDetailBuildCard extends StatelessWidget {
@@ -24,6 +24,7 @@ class CharacterDetailBuildCard extends StatelessWidget {
   final List<WeaponCardModel> weapons;
   final List<CharacterBuildArtifactModel> artifacts;
   final List<StatType> subStatsToFocus;
+  final bool isCustomBuild;
 
   const CharacterDetailBuildCard({
     Key? key,
@@ -35,6 +36,7 @@ class CharacterDetailBuildCard extends StatelessWidget {
     required this.weapons,
     required this.artifacts,
     required this.subStatsToFocus,
+    required this.isCustomBuild,
   }) : super(key: key);
 
   @override
@@ -46,6 +48,7 @@ class CharacterDetailBuildCard extends StatelessWidget {
     if (subType != CharacterRoleSubType.none) {
       title += ' (${s.translateCharacterRoleSubType(subType)}) ';
     }
+
     return Card(
       elevation: Styles.cardTenElevation,
       margin: Styles.edgeInsetAll5,
@@ -55,22 +58,12 @@ class CharacterDetailBuildCard extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            if (isRecommended)
-              Row(
-                children: [
-                  Icon(Icons.star, color: color),
-                  Text(
-                    title,
-                    style: theme.textTheme.headline6!.copyWith(color: color),
-                  ),
-                ],
-              )
-            else
-              Text(
-                title,
-                style: theme.textTheme.headline6!.copyWith(color: color),
+            _Title(title: title, isRecommended: isRecommended, isCustomBuild: isCustomBuild, color: color),
+            if (skillPriorities.isNotEmpty)
+              CharacterSkillPriority(
+                skillPriorities: skillPriorities,
+                color: color,
               ),
-            _SkillPriority(skillPriorities: skillPriorities, color: color),
             Container(
               margin: Styles.edgeInsetAll5,
               child: Text(
@@ -86,10 +79,11 @@ class CharacterDetailBuildCard extends StatelessWidget {
                 style: theme.textTheme.subtitle2!.copyWith(fontWeight: FontWeight.bold),
               ),
             ),
-            SubStatToFocus(
-              subStatsToFocus: subStatsToFocus,
-              color: color,
-            ),
+            if (subStatsToFocus.isNotEmpty)
+              SubStatToFocus(
+                subStatsToFocus: subStatsToFocus,
+                color: color,
+              ),
             ...artifacts.mapIndex((e, index) {
               final showOr = index < artifacts.length - 1;
               if (showOr) {
@@ -101,6 +95,60 @@ class CharacterDetailBuildCard extends StatelessWidget {
         ),
       ),
     );
+  }
+}
+
+class _Title extends StatelessWidget {
+  final String title;
+  final bool isRecommended;
+  final bool isCustomBuild;
+  final Color color;
+
+  const _Title({
+    Key? key,
+    required this.title,
+    required this.isRecommended,
+    required this.isCustomBuild,
+    required this.color,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final text = Text(
+      title,
+      style: theme.textTheme.headline6!.copyWith(color: color),
+    );
+
+    if (isRecommended && isCustomBuild) {
+      return Row(
+        children: [
+          Icon(Icons.dashboard_customize, color: color),
+          Icon(Icons.star, color: color),
+          text,
+        ],
+      );
+    }
+
+    if (isRecommended) {
+      return Row(
+        children: [
+          Icon(Icons.star, color: color),
+          text,
+        ],
+      );
+    }
+
+    if (isCustomBuild) {
+      return Row(
+        children: [
+          Icon(Icons.dashboard_customize, color: color),
+          text,
+        ],
+      );
+    }
+
+    return text;
   }
 }
 
@@ -163,7 +211,7 @@ class _ArtifactRow extends StatelessWidget {
           itemBuilder: (ctx, index) {
             final digit = artifactOrder[index];
             final stat = item.stats[index];
-            final path = item.one!.image.replaceFirst(_replaceDigitRegex, '$digit');
+            final path = item.one!.image.replaceFirst(replaceDigitRegex, '$digit');
             return ArtifactCard.withoutDetails(
               name: s.translateStatTypeWithoutValue(stat),
               image: path,
@@ -185,7 +233,7 @@ class _ArtifactRow extends StatelessWidget {
           final multi = item.multiples[index];
           final digit = artifactOrder[index];
           final stat = item.stats[index];
-          final path = multi.image.replaceFirst(_replaceDigitRegex, '$digit');
+          final path = multi.image.replaceFirst(replaceDigitRegex, '$digit');
           return ArtifactCard.withoutDetails(
             name: s.translateStatTypeWithoutValue(stat),
             image: path,
@@ -193,35 +241,6 @@ class _ArtifactRow extends StatelessWidget {
             keyName: multi.key,
           );
         },
-      ),
-    );
-  }
-}
-
-class _SkillPriority extends StatelessWidget {
-  final List<CharacterSkillType> skillPriorities;
-  final Color color;
-
-  const _SkillPriority({
-    Key? key,
-    required this.skillPriorities,
-    required this.color,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    final s = S.of(context);
-    final theme = Theme.of(context);
-    final text = skillPriorities.map((e) => s.translateCharacterSkillType(e)).join(' > ');
-    return Container(
-      margin: Styles.edgeInsetHorizontal5,
-      child: Text(
-        '${s.talentsAscension}: $text',
-        style: theme.textTheme.subtitle2!.copyWith(
-          fontWeight: FontWeight.bold,
-          color: color,
-          fontSize: 12,
-        ),
       ),
     );
   }

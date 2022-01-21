@@ -19,5 +19,6 @@ class CustomBuildModel with _$CustomBuildModel {
     required List<CustomBuildTeamCharacterModel> teamCharacters,
     required List<CustomBuildNoteModel> notes,
     required List<CharacterSkillType> skillPriorities,
+    required List<StatType> subStatsSummary,
   }) = _CustomBuildModel;
 }

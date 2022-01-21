@@ -33,7 +33,6 @@ class CustomBuildBloc extends Bloc<CustomBuildEvent, CustomBuildState> {
     on<CustomBuildEvent>(_handleEvent);
   }
 
-//TODO: REMOVE UPCOMING CHARACTERS ?
   Future<void> _handleEvent(CustomBuildEvent event, Emitter<CustomBuildState> emit) async {
     //TODO: SHOULD I TRHOW ON INVALID REQUEST ?
     //IN MOST CASES THERE ARE SOME VALIDATIONS FOR THINGS LIKE
@@ -160,7 +159,7 @@ class CustomBuildBloc extends Bloc<CustomBuildEvent, CustomBuildState> {
         skillPriorities: build.skillPriorities,
         artifacts: build.artifacts..sort((x, y) => x.type.index.compareTo(y.type.index)),
         teamCharacters: build.teamCharacters,
-        subStatsSummary: _generateSubStatSummary(build.artifacts),
+        subStatsSummary: _genshinService.generateSubStatSummary(build.artifacts),
       );
     }
 
@@ -221,7 +220,16 @@ class CustomBuildBloc extends Bloc<CustomBuildEvent, CustomBuildState> {
       return state;
     }
     final newCharacter = _genshinService.getCharacterForCard(e.newKey);
-    return state.copyWith.call(character: newCharacter);
+    _LoadedState updatedState = state.copyWith.call(character: newCharacter);
+    if (newCharacter.weaponType != state.character.weaponType) {
+      updatedState = updatedState.copyWith.call(weapons: []);
+    }
+
+    if (updatedState.teamCharacters.any((el) => el.key == e.newKey)) {
+      updatedState.teamCharacters.removeWhere((el) => el.key == e.newKey);
+    }
+
+    return updatedState;
   }
 
   CustomBuildState _addWeapon(_AddWeapon e, _LoadedState state) {
@@ -304,6 +312,7 @@ class CustomBuildBloc extends Bloc<CustomBuildEvent, CustomBuildState> {
       final updatedSubStats = [...old.subStats]..removeWhere((el) => el == e.statType);
       final updated = old.copyWith.call(
         type: e.type,
+        name: translation.name,
         image: img,
         key: e.key,
         rarity: fullArtifact.maxRarity,
@@ -314,6 +323,7 @@ class CustomBuildBloc extends Bloc<CustomBuildEvent, CustomBuildState> {
     } else {
       final newOne = CustomBuildArtifactModel(
         type: e.type,
+        name: translation.name,
         image: img,
         key: e.key,
         rarity: fullArtifact.maxRarity,
@@ -341,7 +351,7 @@ class CustomBuildBloc extends Bloc<CustomBuildEvent, CustomBuildState> {
     final artifacts = [...state.artifacts];
     artifacts.removeAt(index);
     artifacts.insert(index, updated);
-    return state.copyWith.call(artifacts: artifacts, subStatsSummary: _generateSubStatSummary(artifacts));
+    return state.copyWith.call(artifacts: artifacts, subStatsSummary: _genshinService.generateSubStatSummary(artifacts));
   }
 
   CustomBuildState _deleteArtifact(_DeleteArtifact e, _LoadedState state) {
@@ -351,7 +361,7 @@ class CustomBuildBloc extends Bloc<CustomBuildEvent, CustomBuildState> {
 
     final updated = [...state.artifacts];
     updated.removeWhere((el) => el.type == e.type);
-    return state.copyWith.call(artifacts: updated, subStatsSummary: _generateSubStatSummary(updated));
+    return state.copyWith.call(artifacts: updated, subStatsSummary: _genshinService.generateSubStatSummary(updated));
   }
 
   CustomBuildState _addTeamCharacter(_AddTeamCharacter e, _LoadedState state) {
@@ -446,22 +456,5 @@ class CustomBuildBloc extends Bloc<CustomBuildEvent, CustomBuildState> {
 
     _customBuildsBloc.add(const CustomBuildsEvent.load());
     return _init(build.key, state.title);
-  }
-
-  List<StatType> _generateSubStatSummary(List<CustomBuildArtifactModel> artifacts) {
-    final weightMap = <StatType, int>{};
-
-    for (final artifact in artifacts) {
-      int weight = artifact.subStats.length;
-      for (var i = 0; i < artifact.subStats.length; i++) {
-        final subStat = artifact.subStats[i];
-        final ifAbsent = weightMap.containsKey(subStat) ? i : weight;
-        weightMap.update(subStat, (value) => value + weight, ifAbsent: () => ifAbsent);
-        weight--;
-      }
-    }
-
-    final sorted = weightMap.entries.sorted((a, b) => b.value.compareTo(a.value));
-    return sorted.map((e) => e.key).toList();
   }
 }

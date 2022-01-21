@@ -122,7 +122,6 @@ class ArtifactSection extends StatelessWidget {
       return;
     }
 
-    //TODO: REMOVE THE CROWNS AND MAYBE ONLY SHOW THE SPECIFIC TYPE
     final selectedKey = await ArtifactsPage.forSelection(context, type: selectedType);
     if (selectedKey.isNullEmptyOrWhitespace) {
       return;

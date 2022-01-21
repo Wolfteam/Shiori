@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:image_gallery_saver/image_gallery_saver.dart';
@@ -15,6 +14,7 @@ import 'package:shiori/presentation/custom_build/widgets/artifact_section.dart';
 import 'package:shiori/presentation/custom_build/widgets/character_section.dart';
 import 'package:shiori/presentation/custom_build/widgets/team_section.dart';
 import 'package:shiori/presentation/custom_build/widgets/weapon_section.dart';
+import 'package:shiori/presentation/shared/dialogs/confirm_dialog.dart';
 import 'package:shiori/presentation/shared/extensions/element_type_extensions.dart';
 import 'package:shiori/presentation/shared/loading.dart';
 import 'package:shiori/presentation/shared/styles.dart';
@@ -34,9 +34,7 @@ class CustomBuildPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    //TODO: SHOW THE TALENTS AND CONSTELLATIONS LIKE THIS
     final s = S.of(context);
-    //https://genshin-impact-card-generator.herokuapp.com/
     return BlocProvider(
       create: (ctx) => Injection.getCustomBuildBloc(context.read<CustomBuildsBloc>())..add(CustomBuildEvent.load(key: itemKey, initialTitle: s.dps)),
       child: _Page(
@@ -66,6 +64,7 @@ class _PageState extends State<_Page> {
       builder: (ctx, state) => state.maybeMap(
         loaded: (state) => Scaffold(
           appBar: _AppBar(
+            buildKey: state.key,
             newBuild: widget.newBuild,
             canSave: state.artifacts.length == ArtifactType.values.length && state.weapons.isNotEmpty,
             screenshotController: _screenshotController,
@@ -129,12 +128,14 @@ class _PageState extends State<_Page> {
 }
 
 class _AppBar extends StatelessWidget implements PreferredSizeWidget {
+  final int? buildKey;
   final bool newBuild;
   final bool canSave;
   final ScreenshotController screenshotController;
 
   const _AppBar({
     Key? key,
+    required this.buildKey,
     required this.newBuild,
     required this.canSave,
     required this.screenshotController,
@@ -146,18 +147,39 @@ class _AppBar extends StatelessWidget implements PreferredSizeWidget {
     return AppBar(
       title: Text(newBuild ? s.add : s.edit),
       actions: [
-        IconButton(
-          splashRadius: Styles.mediumButtonSplashRadius,
-          icon: const Icon(Icons.save),
-          onPressed: !canSave ? null : () => context.read<CustomBuildBloc>().add(const CustomBuildEvent.saveChanges()),
+        Tooltip(
+          message: s.save,
+          child: IconButton(
+            splashRadius: Styles.mediumButtonSplashRadius,
+            icon: const Icon(Icons.save),
+            onPressed: !canSave ? null : () => _saveChanges(context),
+          ),
         ),
-        IconButton(
-          splashRadius: Styles.mediumButtonSplashRadius,
-          icon: const Icon(Icons.share),
-          onPressed: () => _takeScreenshot(context),
+        if (!newBuild && buildKey != null)
+          Tooltip(
+            message: s.delete,
+            child: IconButton(
+              splashRadius: Styles.mediumButtonSplashRadius,
+              icon: const Icon(Icons.delete),
+              onPressed: () => _showDeleteDialog(context),
+            ),
+          ),
+        Tooltip(
+          message: s.share,
+          child: IconButton(
+            splashRadius: Styles.mediumButtonSplashRadius,
+            icon: const Icon(Icons.share),
+            onPressed: () => _takeScreenshot(context),
+          ),
         ),
       ],
     );
+  }
+
+  void _saveChanges(BuildContext context) {
+    final s = S.of(context);
+    context.read<CustomBuildBloc>().add(const CustomBuildEvent.saveChanges());
+    ToastUtils.showSucceedToast(ToastUtils.of(context), s.changeWereSuccessfullySaved);
   }
 
   Future<void> _takeScreenshot(BuildContext context) async {
@@ -178,6 +200,24 @@ class _AppBar extends StatelessWidget implements PreferredSizeWidget {
       ToastUtils.showErrorToast(fToast, s.unknownError);
       // bloc.add(TierListEvent.screenshotTaken(succeed: false, ex: e, trace: trace));
     }
+  }
+
+  Future<void> _showDeleteDialog(BuildContext context) {
+    final s = S.of(context);
+    return showDialog<bool>(
+      context: context,
+      builder: (_) => ConfirmDialog(
+        title: s.delete,
+        content: s.confirmQuestion,
+        onOk: () {
+          context.read<CustomBuildsBloc>().add(CustomBuildsEvent.delete(key: buildKey!));
+        },
+      ),
+    ).then((confirmed) {
+      if (confirmed == true) {
+        Navigator.pop(context);
+      }
+    });
   }
 
   @override

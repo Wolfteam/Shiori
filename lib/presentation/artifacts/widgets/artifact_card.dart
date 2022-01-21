@@ -9,6 +9,8 @@ import 'package:transparent_image/transparent_image.dart';
 
 import 'artifact_stats.dart';
 
+final replaceDigitRegex = RegExp(r'\d{1}');
+
 class ArtifactCard extends StatelessWidget {
   final String keyName;
   final String name;
@@ -92,6 +94,15 @@ class ArtifactCard extends StatelessWidget {
                 height: imgHeight,
                 placeholder: MemoryImage(kTransparentImage),
                 image: AssetImage(image),
+                imageErrorBuilder: (context, error, stack) {
+                  //This can happen when trying to load sets like 'Prayer to xxx'
+                  final path = image.replaceFirst(replaceDigitRegex, '4');
+                  return Image.asset(
+                    path,
+                    width: imgWidth,
+                    height: imgHeight,
+                  );
+                },
               ),
               Tooltip(
                 message: name,

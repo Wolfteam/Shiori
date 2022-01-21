@@ -18,6 +18,7 @@ class TwoColumnEnumSelectorDialog<TEnum> extends StatefulWidget {
   final List<TranslatedEnum<TEnum>> selectedStats;
   final int maxNumberOfSelections;
   final _OnOk<TEnum> onOk;
+  final bool showMaxNumberOfSelectionsOnTitle;
 
   const TwoColumnEnumSelectorDialog({
     Key? key,
@@ -29,6 +30,7 @@ class TwoColumnEnumSelectorDialog<TEnum> extends StatefulWidget {
     required this.selectedStats,
     required this.maxNumberOfSelections,
     required this.onOk,
+    this.showMaxNumberOfSelectionsOnTitle = true,
   })  : assert(all.length > 0),
         assert(maxNumberOfSelections > 0),
         super(key: key);
@@ -37,7 +39,6 @@ class TwoColumnEnumSelectorDialog<TEnum> extends StatefulWidget {
   State<TwoColumnEnumSelectorDialog> createState() => _TwoColumnEnumSelectorDialogState<TEnum>();
 }
 
-//TODO: IF YOU UPDATE THE MAIN STAT, YOU SHOULD REMOVE IT FROM THE SUBSTATS
 class _TwoColumnEnumSelectorDialogState<TEnum> extends State<TwoColumnEnumSelectorDialog<TEnum>> {
   late ScrollController _rightController;
   late ScrollController _leftController;
@@ -86,7 +87,7 @@ class _TwoColumnEnumSelectorDialogState<TEnum> extends State<TwoColumnEnumSelect
                       style: theme.textTheme.subtitle1,
                     ),
                     Text(
-                      widget.rightTitle,
+                      '${widget.rightTitle} (${_selected.length} / ${widget.maxNumberOfSelections})',
                       style: theme.textTheme.subtitle1,
                     ),
                   ],
@@ -195,7 +196,7 @@ class _TwoColumnEnumSelectorDialogState<TEnum> extends State<TwoColumnEnumSelect
                     onRightTap: _selectedLeft == null || canAddMoreItems ? null : () => _handleRightButtonClick(),
                   ),
                   Text(
-                    widget.rightTitle,
+                    '${widget.rightTitle} (${_selected.length} / ${widget.maxNumberOfSelections})',
                     style: theme.textTheme.subtitle1,
                   ),
                   if (_selected.isNotEmpty)

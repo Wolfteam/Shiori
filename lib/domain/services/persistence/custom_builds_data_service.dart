@@ -40,4 +40,6 @@ abstract class CustomBuildsDataService {
   );
 
   Future<void> deleteCustomBuild(int key);
+
+  List<CharacterBuildCardModel> getCustomBuildsForCharacter(String charKey);
 }

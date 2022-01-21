@@ -69,5 +69,5 @@ class CustomBuildEvent with _$CustomBuildEvent {
 
   const factory CustomBuildEvent.saveChanges() = _SaveChanges;
 
-//TODO: SHARE, SBUSTATS, TALENETS, ARTIFACT'S PIECE BONUS
+//TODO: SHARE
 }

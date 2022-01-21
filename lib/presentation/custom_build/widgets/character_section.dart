@@ -45,7 +45,6 @@ class CharacterSection extends StatelessWidget {
   Widget build(BuildContext context) {
     final s = S.of(context);
     final theme = Theme.of(context);
-    final isPortrait = MediaQuery.of(context).orientation == Orientation.portrait;
     final height = MediaQuery.of(context).size.height;
     final width = MediaQuery.of(context).size.width;
     double imgHeight = height * 0.85;
@@ -220,7 +219,6 @@ class CharacterSection extends StatelessWidget {
   }
 
   Future<void> _openCharacterPage(BuildContext context) async {
-    //TODO: EXCLUDE UPCOMING CHARACTERS ?
     final bloc = context.read<CustomBuildBloc>();
     final selectedKey = await CharactersPage.forSelection(context, excludeKeys: [character.key]);
     if (selectedKey.isNullEmptyOrWhitespace) {

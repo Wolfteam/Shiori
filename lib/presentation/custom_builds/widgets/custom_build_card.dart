@@ -12,6 +12,7 @@ import 'package:shiori/presentation/shared/dialogs/confirm_dialog.dart';
 import 'package:shiori/presentation/shared/extensions/element_type_extensions.dart';
 import 'package:shiori/presentation/shared/extensions/i18n_extensions.dart';
 import 'package:shiori/presentation/shared/styles.dart';
+import 'package:shiori/presentation/shared/sub_stats_to_focus.dart';
 import 'package:shiori/presentation/weapons/widgets/weapon_card.dart';
 
 class CustomBuildCard extends StatelessWidget {
@@ -31,17 +32,15 @@ class CustomBuildCard extends StatelessWidget {
     if (item.subType != CharacterRoleSubType.none) {
       subtitle += ' - ${s.translateCharacterRoleSubType(item.subType)}';
     }
+    final color = item.character.elementType.getElementColorFromContext(context);
     return InkWell(
       onTap: () => _goToDetailsPage(context),
       child: Card(
         clipBehavior: Clip.hardEdge,
-        // shape: Styles.mainCardShape,
         elevation: Styles.cardTenElevation,
-        color: item.character.elementType.getElementColorFromContext(context),
+        color: color,
         shadowColor: Colors.transparent,
-        // margin: Styles.edgeInsetVertical5,
         child: Row(
-          // crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Expanded(
               flex: device == DeviceScreenType.tablet ? 40 : 35,
@@ -49,7 +48,7 @@ class CustomBuildCard extends StatelessWidget {
                 name: item.character.name,
                 image: item.character.image,
                 rarity: item.character.stars,
-                height: 300,
+                height: 360,
               ),
             ),
             Expanded(
@@ -62,26 +61,28 @@ class CustomBuildCard extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              item.title,
-                              maxLines: 2,
-                              overflow: TextOverflow.ellipsis,
-                              style: theme.textTheme.headline5!.copyWith(fontWeight: FontWeight.bold),
-                            ),
-                            Text(
-                              subtitle,
-                              overflow: TextOverflow.ellipsis,
-                              style: const TextStyle(fontWeight: FontWeight.bold),
-                            ),
-                          ],
+                        Expanded(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                item.title,
+                                maxLines: 2,
+                                overflow: TextOverflow.ellipsis,
+                                style: theme.textTheme.headline5!.copyWith(fontWeight: FontWeight.bold),
+                              ),
+                              Text(
+                                subtitle,
+                                overflow: TextOverflow.ellipsis,
+                                style: const TextStyle(fontWeight: FontWeight.bold),
+                              ),
+                            ],
+                          ),
                         ),
                         IconButton(
-                          onPressed: () => showDeleteDialog(context),
                           splashRadius: Styles.smallButtonSplashRadius,
                           icon: const Icon(Icons.delete),
+                          onPressed: () => _showDeleteDialog(context),
                         ),
                       ],
                     ),
@@ -108,6 +109,12 @@ class CustomBuildCard extends StatelessWidget {
                       ),
                     ),
                     Text(s.artifacts, style: const TextStyle(fontWeight: FontWeight.bold)),
+                    if (item.subStatsSummary.isNotEmpty)
+                      SubStatToFocus(
+                        subStatsToFocus: item.subStatsSummary,
+                        color: Colors.white,
+                        fontSize: 10,
+                      ),
                     SizedBox(
                       height: 110,
                       child: ListView.builder(
@@ -126,7 +133,7 @@ class CustomBuildCard extends StatelessWidget {
                           );
                         },
                       ),
-                    )
+                    ),
                   ],
                 ),
               ),
@@ -147,7 +154,7 @@ class CustomBuildCard extends StatelessWidget {
     await Navigator.push(context, route);
   }
 
-  Future<void> showDeleteDialog(BuildContext context) {
+  Future<void> _showDeleteDialog(BuildContext context) {
     final s = S.of(context);
     return showDialog(
       context: context,

@@ -63,7 +63,7 @@ class ArtifactRow extends StatelessWidget {
                   style: theme.textTheme.subtitle1!.copyWith(fontWeight: FontWeight.bold),
                 ),
                 Text(
-                  'Archaic Petra',
+                  artifact.name,
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,
                   style: theme.textTheme.subtitle1,
@@ -170,7 +170,6 @@ class ArtifactRow extends StatelessWidget {
           return;
         }
 
-        //TODO: REMOVE THE CROWNS AND MAYBE ONLY SHOW THE SPECIFIC TYPE
         final selectedKey = await ArtifactsPage.forSelection(context, type: artifact.type);
         if (selectedKey.isNullEmptyOrWhitespace) {
           return;

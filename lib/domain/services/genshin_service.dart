@@ -85,4 +85,5 @@ abstract class GenshinService {
   List<ArtifactCardBonusModel> getArtifactBonus(TranslationArtifactFile translation);
   List<String> getArtifactRelatedParts(String fullImagePath, String image, int bonus);
   String getArtifactRelatedPart(String fullImagePath, String image, int bonus, ArtifactType type);
+  List<StatType> generateSubStatSummary(List<CustomBuildArtifactModel> artifacts);
 }

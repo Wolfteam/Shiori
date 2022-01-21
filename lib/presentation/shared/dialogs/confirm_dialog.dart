@@ -22,13 +22,13 @@ class ConfirmDialog extends StatelessWidget {
       content: Text(content),
       actions: [
         OutlinedButton(
-          onPressed: () => Navigator.pop(context),
+          onPressed: () => Navigator.pop(context, false),
           child: Text(s.cancel, style: TextStyle(color: theme.primaryColor)),
         ),
         ElevatedButton(
           onPressed: () {
             onOk();
-            Navigator.pop(context);
+            Navigator.pop(context, true);
           },
           child: Text(s.ok),
         )

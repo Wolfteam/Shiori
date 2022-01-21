@@ -782,6 +782,24 @@ class GenshinServiceImpl implements GenshinService {
     return imgs.firstWhere((el) => el.endsWith('$order.png'));
   }
 
+  @override
+  List<StatType> generateSubStatSummary(List<CustomBuildArtifactModel> artifacts) {
+    final weightMap = <StatType, int>{};
+
+    for (final artifact in artifacts) {
+      int weight = artifact.subStats.length;
+      for (var i = 0; i < artifact.subStats.length; i++) {
+        final subStat = artifact.subStats[i];
+        final ifAbsent = weightMap.containsKey(subStat) ? i : weight;
+        weightMap.update(subStat, (value) => value + weight, ifAbsent: () => ifAbsent);
+        weight--;
+      }
+    }
+
+    final sorted = weightMap.entries.sorted((a, b) => b.value.compareTo(a.value));
+    return sorted.map((e) => e.key).toList();
+  }
+
   CharacterCardModel _toCharacterForCard(CharacterFileModel character) {
     final translation = getCharacterTranslation(character.key);
 

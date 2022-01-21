@@ -17,8 +17,6 @@ enum _Options {
   refinements,
 }
 
-//TODO: LIMIT THE NUMBER OF ROWS TO 10
-//TODO: ADD TEAMS
 class WeaponRow extends StatelessWidget {
   final CustomBuildWeaponModel weapon;
   final Color color;

@@ -8,6 +8,7 @@ class CustomBuildArtifactModel with _$CustomBuildArtifactModel {
   const factory CustomBuildArtifactModel({
     required String key,
     required ArtifactType type,
+    required String name,
     required StatType statType,
     required String image,
     required int rarity,
