@@ -30,11 +30,11 @@ void main() {
     return service;
   }
 
-  test('Initialize all languages', () {
+  test('Initialize all languages', () async {
     final service = _getService();
 
     for (final lang in languages) {
-      expect(service.init(lang), completes);
+      await expectLater(service.init(lang), completes);
     }
   });
 
@@ -661,6 +661,19 @@ void main() {
         final birthday = service.getCharBirthDate('02/29');
         expect(birthday.day, equals(29));
         expect(birthday.month, equals(2));
+      }
+    });
+
+    test('upcoming characters are not shown', () async {
+      final service = _getService();
+      await service.init(AppLanguageType.english);
+      final localeService = _getLocaleService(AppLanguageType.english);
+      final upcoming = service.getUpcomingCharactersKeys();
+      for (final key in upcoming) {
+        final char = service.getCharacter(key);
+        final date = localeService.getCharBirthDate(char.birthday);
+        final chars = service.getCharactersForBirthday(date);
+        expect(chars.any((el) => el.key == key), false);
       }
     });
   });

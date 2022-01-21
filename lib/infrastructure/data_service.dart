@@ -2,12 +2,10 @@ import 'dart:async';
 
 import 'package:collection/collection.dart' show IterableExtension;
 import 'package:darq/darq.dart';
-import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:shiori/domain/app_constants.dart';
 import 'package:shiori/domain/assets.dart';
 import 'package:shiori/domain/enums/enums.dart';
-import 'package:shiori/domain/enums/item_type.dart';
 import 'package:shiori/domain/extensions/iterable_extensions.dart';
 import 'package:shiori/domain/extensions/string_extensions.dart';
 import 'package:shiori/domain/models/entities.dart';
@@ -15,11 +13,14 @@ import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/calculator_service.dart';
 import 'package:shiori/domain/services/data_service.dart';
 import 'package:shiori/domain/services/genshin_service.dart';
+import 'package:shiori/domain/services/persistence/custom_builds_data_service.dart';
+import 'package:shiori/infrastructure/infrastructure.dart';
 import 'package:synchronized/synchronized.dart';
 
 class DataServiceImpl implements DataService {
   final GenshinService _genshinService;
   final CalculatorService _calculatorService;
+  final CustomBuildsDataService _builds;
 
   late Box<CalculatorSession> _sessionBox;
   late Box<CalculatorItem> _calcItemBox;
@@ -52,7 +53,11 @@ class DataServiceImpl implements DataService {
   @override
   final StreamController<ItemType> itemDeletedFromInventory = StreamController.broadcast();
 
-  DataServiceImpl(this._genshinService, this._calculatorService);
+  @override
+  CustomBuildsDataService get customBuilds => _builds;
+
+  //TODO: REMOVE THIS INITIALIZATIONS
+  DataServiceImpl(this._genshinService, this._calculatorService) : _builds = CustomBuildsDataServiceImpl(_genshinService);
 
   @override
   Future<void> init({String dir = 'shiori_data'}) async {
@@ -67,6 +72,7 @@ class DataServiceImpl implements DataService {
       _gameCodesBox = await Hive.openBox<GameCode>('gameCodes');
       _gameCodeRewardsBox = await Hive.openBox<GameCodeReward>('gameCodeRewards');
       _tierListBox = await Hive.openBox<TierListItem>('tierList');
+      await _builds.init();
 
       _notificationsCustomBox = await Hive.openBox('notificationsCustom');
       _notificationsExpeditionBox = await Hive.openBox('notificationsExpedition');
@@ -91,6 +97,7 @@ class DataServiceImpl implements DataService {
       await _gameCodesBox.clear();
       await _gameCodeRewardsBox.clear();
       await _tierListBox.clear();
+      await _builds.deleteThemAll();
 
       await _notificationsCustomBox.clear();
       await _notificationsExpeditionBox.clear();

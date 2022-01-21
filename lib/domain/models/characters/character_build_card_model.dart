@@ -10,6 +10,7 @@ class CharacterBuildCardModel {
   final List<WeaponCardModel> weapons;
   final List<CharacterBuildArtifactModel> artifacts;
   final List<StatType> subStatsToFocus;
+  final bool isCustomBuild;
 
   CharacterBuildCardModel({
     required this.isRecommended,
@@ -19,6 +20,7 @@ class CharacterBuildCardModel {
     required this.weapons,
     required this.artifacts,
     required this.subStatsToFocus,
+    this.isCustomBuild = false,
   });
 }
 

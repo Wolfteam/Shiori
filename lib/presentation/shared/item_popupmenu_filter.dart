@@ -4,15 +4,19 @@ import 'package:shiori/generated/l10n.dart';
 import 'utils/enum_utils.dart';
 
 typedef PopupMenuItemText<T> = String Function(T value, int index);
+typedef ChildBuilder<T> = Widget Function(TranslatedEnum<T> value);
+typedef ItemEnabled<T> = bool Function(T value);
 
 class ItemPopupMenuFilter<TEnum> extends StatelessWidget {
   final String tooltipText;
-  final TEnum selectedValue;
+  final TEnum? selectedValue;
   final Function(TEnum)? onSelected;
   final List<TEnum> values;
   final List<TEnum> exclude;
   final Icon icon;
   final PopupMenuItemText<TEnum> itemText;
+  final ChildBuilder<TEnum>? childBuilder;
+  final ItemEnabled<TEnum>? isItemEnabled;
 
   const ItemPopupMenuFilter({
     Key? key,
@@ -23,7 +27,22 @@ class ItemPopupMenuFilter<TEnum> extends StatelessWidget {
     required this.itemText,
     this.exclude = const [],
     this.icon = const Icon(Icons.filter_list),
+    this.childBuilder,
+    this.isItemEnabled,
   }) : super(key: key);
+
+  const ItemPopupMenuFilter.withoutSelectedValue({
+    Key? key,
+    required this.tooltipText,
+    required this.values,
+    this.onSelected,
+    required this.itemText,
+    this.exclude = const [],
+    this.icon = const Icon(Icons.filter_list),
+    this.childBuilder,
+    this.isItemEnabled,
+  })  : selectedValue = null,
+        super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -44,16 +63,25 @@ class ItemPopupMenuFilter<TEnum> extends StatelessWidget {
     return EnumUtils.getTranslatedAndSortedEnum<TEnum>(values, itemText, exclude: exclude);
   }
 
-  List<CheckedPopupMenuItem<TEnum>> getValuesToUse(List<TranslatedEnum<TEnum>> translatedValues) {
-    return translatedValues
-        .map(
-          (e) => CheckedPopupMenuItem<TEnum>(
+  List<PopupMenuEntry<TEnum>> getValuesToUse(List<TranslatedEnum<TEnum>> translatedValues) {
+    return translatedValues.map(
+      (e) {
+        if (selectedValue != null) {
+          return CheckedPopupMenuItem<TEnum>(
             checked: selectedValue == e.enumValue,
             value: e.enumValue,
-            child: Text(e.translation),
-          ),
-        )
-        .toList();
+            enabled: isItemEnabled?.call(e.enumValue) ?? true,
+            child: childBuilder != null ? childBuilder!(e) : Text(e.translation),
+          );
+        }
+
+        return PopupMenuItem<TEnum>(
+          value: e.enumValue,
+          enabled: isItemEnabled?.call(e.enumValue) ?? true,
+          child: childBuilder != null ? childBuilder!(e) : Text(e.translation),
+        );
+      },
+    ).toList();
   }
 
   void handleItemSelected(TEnum value) {

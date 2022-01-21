@@ -1,4 +1,4 @@
-{
+﻿{
   "monsters": [
     {
       "key": "abyss-herald-wicked-torrents",
@@ -389,6 +389,20 @@
           "type": "artifact"
         }
       ]
+    },
+    {
+      "key": "bolteater-bathysmal-vishap",
+      "image": "bolteater-bathysmal-vishap.png",
+      "type": "magicalBeast",
+      "isComingSoon": false,
+      "drops": []
+    },
+    {
+      "key": "bolteater-bathysmal-vishap-hatchling",
+      "image": "bolteater-bathysmal-vishap-hatchling.png",
+      "type": "na",
+      "isComingSoon": false,
+      "drops": []
     },
     {
       "key": "childe",
@@ -922,6 +936,13 @@
       ]
     },
     {
+      "key": "cryo-specter",
+      "image": "cryo-specter.png",
+      "type": "elementalLifeForm",
+      "isComingSoon": false,
+      "drops": []
+    },
+    {
       "key": "cryo-whopperflower",
       "image": "cryo-whopperflower.png",
       "type": "magicalBeast",
@@ -1247,6 +1268,13 @@
           "type": "material"
         }
       ]
+    },
+    {
+      "key": "electro-specter",
+      "image": "electro-specter.png",
+      "type": "elementalLifeForm",
+      "isComingSoon": false,
+      "drops": []
     },
     {
       "key": "electro-whopperflower",
@@ -1907,6 +1935,13 @@
           "type": "artifact"
         }
       ]
+    },
+    {
+      "key": "golden-wolflord",
+      "image": "golden-wolflord.png",
+      "type": "abyssOrder",
+      "isComingSoon": false,
+      "drops": []
     },
     {
       "key": "hilichurl",
@@ -2834,10 +2869,6 @@
           "type": "material"
         },
         {
-          "key": "maguu-kishin",
-          "type": "material"
-        },
-        {
           "key": "berserker",
           "type": "artifact"
         },
@@ -2894,6 +2925,27 @@
           "type": "material"
         }
       ]
+    },
+    {
+      "key": "maguu-kenki-galloping-frost",
+      "image": "maguu-kenki-galloping-frost.png",
+      "type": "na",
+      "isComingSoon": false,
+      "drops": []
+    },
+    {
+      "key": "maguu-kenki-lone-gale",
+      "image": "maguu-kenki-lone-gale.png",
+      "type": "na",
+      "isComingSoon": false,
+      "drops": []
+    },
+    {
+      "key": "maguu-kenki-mask-of-terror",
+      "image": "maguu-kenki-mask-of-terror.png",
+      "type": "na",
+      "isComingSoon": false,
+      "drops": []
     },
     {
       "key": "millelith-sergeant",
@@ -3422,6 +3474,20 @@
       ]
     },
     {
+      "key": "primordial-bathysmal-vishap",
+      "image": "primordial-bathysmal-vishap.png",
+      "type": "magicalBeast",
+      "isComingSoon": false,
+      "drops": []
+    },
+    {
+      "key": "primordial-bathysmal-vishap-hatchling",
+      "image": "primordial-bathysmal-vishap-hatchling.png",
+      "type": "na",
+      "isComingSoon": false,
+      "drops": []
+    },
+    {
       "key": "pyro-abyss-mage",
       "image": "pyro-abyss-mage.png",
       "type": "abyssOrder",
@@ -3698,6 +3764,13 @@
       ]
     },
     {
+      "key": "pyro-specter",
+      "image": "pyro-specter.png",
+      "type": "elementalLifeForm",
+      "isComingSoon": false,
+      "drops": []
+    },
+    {
       "key": "pyro-whopperflower",
       "image": "pyro-whopperflower.png",
       "type": "magicalBeast",
@@ -3721,6 +3794,20 @@
       "key": "raiden-shogun",
       "image": "raiden-shogun.png",
       "type": "boss",
+      "isComingSoon": false,
+      "drops": []
+    },
+    {
+      "key": "rimebiter-bathysmal-vishap",
+      "image": "rimebiter-bathysmal-vishap.png",
+      "type": "magicalBeast",
+      "isComingSoon": false,
+      "drops": []
+    },
+    {
+      "key": "rimebiter-bathysmal-vishap-hatchling",
+      "image": "rimebiter-bathysmal-vishap-hatchling.png",
+      "type": "na",
       "isComingSoon": false,
       "drops": []
     },
@@ -4576,6 +4663,13 @@
           "type": "artifact"
         }
       ]
+    },
+    {
+      "key": "treasure-hoarder-wallenstein",
+      "image": "treasure-hoarder-wallenstein.png",
+      "type": "na",
+      "isComingSoon": false,
+      "drops": []
     },
     {
       "key": "treasure-hoarders-boss",

@@ -17,7 +17,8 @@ class ModalBottomSheetUtils {
       case EndDrawerItemType.characters:
         return const characters.CharacterBottomSheet();
       case EndDrawerItemType.weapons:
-        return const weapons.WeaponBottomSheet();
+        assert(args != null);
+        return weapons.WeaponBottomSheet.getWidgetFromArgs(context, args!);
       case EndDrawerItemType.artifacts:
         return const artifacts.ArtifactBottomSheet();
       case EndDrawerItemType.materials:

@@ -5,42 +5,98 @@ import 'styles.dart';
 
 class BulletList extends StatelessWidget {
   final List<String> items;
-  final Widget icon;
+  final IconData icon;
+  final double iconSize;
   final Widget Function(int)? iconResolver;
   final double fontSize;
+  final Function(int)? onDelete;
+  final EdgeInsets padding;
 
   const BulletList({
     Key? key,
     required this.items,
-    this.icon = const Icon(Icons.fiber_manual_record, size: 15),
+    this.icon = Icons.fiber_manual_record,
+    this.iconSize = 15,
     this.iconResolver,
     this.fontSize = 11,
+    this.onDelete,
+    this.padding = Styles.edgeInsetAll5,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: items
+          .mapIndex(
+            (e, index) => _ListItem(
+              index: index,
+              title: e,
+              icon: icon,
+              fontSize: fontSize,
+              iconSize: iconSize,
+              iconResolver: iconResolver,
+              onDelete: onDelete,
+              padding: padding,
+            ),
+          )
+          .toList(),
+    );
+  }
+}
+
+class _ListItem extends StatelessWidget {
+  final int index;
+  final String title;
+  final IconData icon;
+  final double iconSize;
+  final Widget Function(int)? iconResolver;
+  final double fontSize;
+  final Function(int)? onDelete;
+  final EdgeInsets padding;
+
+  const _ListItem({
+    Key? key,
+    required this.index,
+    required this.title,
+    required this.icon,
+    required this.iconSize,
+    this.iconResolver,
+    required this.fontSize,
+    this.onDelete,
+    required this.padding,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: items.mapIndex(
-        (e, index) {
-          var leading = icon;
-          if (iconResolver != null) {
-            leading = iconResolver!(index);
-          }
 
-          return ListTile(
-            dense: true,
-            contentPadding: const EdgeInsets.only(left: 10),
-            visualDensity: const VisualDensity(vertical: -4),
-            leading: leading,
-            title: Transform.translate(
-              offset: Styles.listItemWithIconOffset,
-              child: Tooltip(message: e, child: Text(e, style: theme.textTheme.bodyText2!.copyWith(fontSize: fontSize))),
+    return Padding(
+      padding: padding,
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          if (iconResolver != null) iconResolver!(index) else Icon(icon, size: iconSize),
+          Expanded(
+            child: Tooltip(
+              message: title,
+              child: Container(
+                margin: const EdgeInsets.only(left: 5),
+                child: Text(
+                  title,
+                  style: theme.textTheme.bodyText2!.copyWith(fontSize: fontSize),
+                ),
+              ),
             ),
-          );
-        },
-      ).toList(),
+          ),
+          if (onDelete != null)
+            InkWell(
+              customBorder: const CircleBorder(),
+              child: Icon(Icons.delete, size: iconSize),
+              onTap: () => onDelete!(index),
+            ),
+        ],
+      ),
     );
   }
 }

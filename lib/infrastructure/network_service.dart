@@ -20,7 +20,17 @@ class NetworkServiceImpl implements NetworkService {
   }
 
   @override
-  Future<bool> isInternetAvailable() {
+  Future<bool> isInternetAvailable() async {
+    try {
+      //we use this address since it should be available on most of the world (including china)
+      const lookUpAddress = 'www.example.com';
+      final result = await InternetAddress.lookup(lookUpAddress).timeout(const Duration(seconds: 5));
+      if (result.isNotEmpty && result[0].rawAddress.isNotEmpty) {
+        return true;
+      }
+    } catch (_) {
+      //ignore
+    }
     final checker = CustomInternetConnectionChecker();
     return checker.hasConnection;
   }

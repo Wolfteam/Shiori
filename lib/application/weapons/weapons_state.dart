@@ -20,5 +20,6 @@ class WeaponsState with _$WeaponsState {
     ItemLocationType? weaponLocationType,
     ItemLocationType? tempWeaponLocationType,
     @Default(<String>[]) List<String> excludeKeys,
+    @Default(true) bool areWeaponTypesEnabled,
   }) = _LoadedState;
 }
