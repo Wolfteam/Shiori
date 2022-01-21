@@ -6,8 +6,6 @@ import 'package:responsive_builder/responsive_builder.dart';
 import 'package:screenshot/screenshot.dart';
 import 'package:shiori/application/bloc.dart';
 import 'package:shiori/domain/enums/enums.dart';
-import 'package:shiori/domain/extensions/string_extensions.dart';
-import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/generated/l10n.dart';
 import 'package:shiori/injection.dart';
 import 'package:shiori/presentation/custom_build/widgets/artifact_section.dart';
@@ -15,17 +13,13 @@ import 'package:shiori/presentation/custom_build/widgets/character_section.dart'
 import 'package:shiori/presentation/custom_build/widgets/team_section.dart';
 import 'package:shiori/presentation/custom_build/widgets/weapon_section.dart';
 import 'package:shiori/presentation/shared/dialogs/confirm_dialog.dart';
-import 'package:shiori/presentation/shared/extensions/element_type_extensions.dart';
-import 'package:shiori/presentation/shared/loading.dart';
 import 'package:shiori/presentation/shared/styles.dart';
 import 'package:shiori/presentation/shared/utils/toast_utils.dart';
 
 const double _maxItemImageWidth = 130;
 
-class CustomBuildPage extends StatelessWidget {
+class CustomBuildPage extends StatefulWidget {
   final int? itemKey;
-
-  bool get newBuild => itemKey == null;
 
   const CustomBuildPage({
     Key? key,
@@ -33,146 +27,92 @@ class CustomBuildPage extends StatelessWidget {
   }) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    final s = S.of(context);
-    return BlocProvider(
-      create: (ctx) => Injection.getCustomBuildBloc(context.read<CustomBuildsBloc>())..add(CustomBuildEvent.load(key: itemKey, initialTitle: s.dps)),
-      child: _Page(
-        newBuild: newBuild,
-      ),
-    );
-  }
+  State<CustomBuildPage> createState() => _CustomBuildPageState();
 }
 
-class _Page extends StatefulWidget {
-  final bool newBuild;
-
-  const _Page({Key? key, required this.newBuild}) : super(key: key);
-
-  @override
-  State<_Page> createState() => _PageState();
-}
-
-class _PageState extends State<_Page> {
+class _CustomBuildPageState extends State<CustomBuildPage> {
   final _screenshotController = ScreenshotController();
+
+  bool get newBuild => widget.itemKey == null;
 
   @override
   Widget build(BuildContext context) {
     final s = S.of(context);
     final width = MediaQuery.of(context).size.width;
-    return BlocBuilder<CustomBuildBloc, CustomBuildState>(
-      builder: (ctx, state) => state.maybeMap(
-        loaded: (state) => Scaffold(
-          appBar: _AppBar(
-            buildKey: state.key,
-            newBuild: widget.newBuild,
-            canSave: state.artifacts.length == ArtifactType.values.length && state.weapons.isNotEmpty,
-            screenshotController: _screenshotController,
-          ),
-          body: SingleChildScrollView(
-            padding: const EdgeInsets.only(bottom: 10),
-            child: Screenshot(
-              controller: _screenshotController,
-              child: OrientationLayoutBuilder(
-                portrait: (context) => _PortraitLayout(
-                  title: state.title,
-                  roleType: state.type,
-                  roleSubType: state.subType,
-                  showOnCharacterDetail: state.showOnCharacterDetail,
-                  isRecommended: state.isRecommended,
-                  character: state.character,
-                  weapons: state.weapons,
-                  artifacts: state.artifacts,
-                  teamCharacters: state.teamCharacters,
-                  notes: state.notes,
-                  skillPriorities: state.skillPriorities,
-                  subStatsSummary: state.subStatsSummary,
-                ),
-                landscape: (context) => width > 1280
-                    ? _LandscapeLayout(
-                        title: state.title,
-                        roleType: state.type,
-                        roleSubType: state.subType,
-                        showOnCharacterDetail: state.showOnCharacterDetail,
-                        isRecommended: state.isRecommended,
-                        character: state.character,
-                        weapons: state.weapons,
-                        artifacts: state.artifacts,
-                        teamCharacters: state.teamCharacters,
-                        notes: state.notes,
-                        skillPriorities: state.skillPriorities,
-                        subStatsSummary: state.subStatsSummary,
-                      )
-                    : _PortraitLayout(
-                        title: state.title.isNullEmptyOrWhitespace ? s.dps : state.title,
-                        roleType: state.type,
-                        roleSubType: state.subType,
-                        showOnCharacterDetail: state.showOnCharacterDetail,
-                        isRecommended: state.isRecommended,
-                        character: state.character,
-                        weapons: state.weapons,
-                        artifacts: state.artifacts,
-                        teamCharacters: state.teamCharacters,
-                        notes: state.notes,
-                        skillPriorities: state.skillPriorities,
-                        subStatsSummary: state.subStatsSummary,
-                      ),
-              ),
+    return BlocProvider(
+      create: (ctx) => Injection.getCustomBuildBloc(context.read<CustomBuildsBloc>())
+        ..add(
+          CustomBuildEvent.load(key: widget.itemKey, initialTitle: s.dps),
+        ),
+      child: Scaffold(
+        appBar: _AppBar(
+          newBuild: newBuild,
+          screenshotController: _screenshotController,
+        ),
+        body: SingleChildScrollView(
+          padding: const EdgeInsets.only(bottom: 10),
+          child: Screenshot(
+            controller: _screenshotController,
+            child: OrientationLayoutBuilder(
+              portrait: (context) => const _PortraitLayout(),
+              landscape: (context) => width > 1280 ? const _LandscapeLayout() : const _PortraitLayout(),
             ),
           ),
         ),
-        orElse: () => const Loading(),
       ),
     );
   }
 }
 
 class _AppBar extends StatelessWidget implements PreferredSizeWidget {
-  final int? buildKey;
   final bool newBuild;
-  final bool canSave;
   final ScreenshotController screenshotController;
 
   const _AppBar({
     Key? key,
-    required this.buildKey,
     required this.newBuild,
-    required this.canSave,
     required this.screenshotController,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     final s = S.of(context);
-    return AppBar(
-      title: Text(newBuild ? s.add : s.edit),
-      actions: [
-        Tooltip(
-          message: s.save,
-          child: IconButton(
-            splashRadius: Styles.mediumButtonSplashRadius,
-            icon: const Icon(Icons.save),
-            onPressed: !canSave ? null : () => _saveChanges(context),
-          ),
-        ),
-        if (!newBuild && buildKey != null)
-          Tooltip(
-            message: s.delete,
-            child: IconButton(
-              splashRadius: Styles.mediumButtonSplashRadius,
-              icon: const Icon(Icons.delete),
-              onPressed: () => _showDeleteDialog(context),
+    return BlocBuilder<CustomBuildBloc, CustomBuildState>(
+      builder: (ctx, state) => state.maybeMap(
+        loaded: (state) => AppBar(
+          title: Text(newBuild ? s.add : s.edit),
+          actions: [
+            Tooltip(
+              message: s.save,
+              child: IconButton(
+                splashRadius: Styles.mediumButtonSplashRadius,
+                icon: const Icon(Icons.save),
+                onPressed: !(state.artifacts.length == ArtifactType.values.length && state.weapons.isNotEmpty) ? null : () => _saveChanges(context),
+              ),
             ),
-          ),
-        Tooltip(
-          message: s.share,
-          child: IconButton(
-            splashRadius: Styles.mediumButtonSplashRadius,
-            icon: const Icon(Icons.share),
-            onPressed: () => _takeScreenshot(context),
-          ),
+            if (!newBuild && state.key != null)
+              Tooltip(
+                message: s.delete,
+                child: IconButton(
+                  splashRadius: Styles.mediumButtonSplashRadius,
+                  icon: const Icon(Icons.delete),
+                  onPressed: () => _showDeleteDialog(context, state.key),
+                ),
+              ),
+            Tooltip(
+              message: s.share,
+              child: IconButton(
+                splashRadius: Styles.mediumButtonSplashRadius,
+                icon: const Icon(Icons.share),
+                onPressed: () => _takeScreenshot(context),
+              ),
+            ),
+          ],
         ),
-      ],
+        orElse: () => AppBar(
+          title: Text(newBuild ? s.add : s.edit),
+        ),
+      ),
     );
   }
 
@@ -202,7 +142,7 @@ class _AppBar extends StatelessWidget implements PreferredSizeWidget {
     }
   }
 
-  Future<void> _showDeleteDialog(BuildContext context) {
+  Future<void> _showDeleteDialog(BuildContext context, int? buildKey) {
     final s = S.of(context);
     return showDialog<bool>(
       context: context,
@@ -225,34 +165,7 @@ class _AppBar extends StatelessWidget implements PreferredSizeWidget {
 }
 
 class _PortraitLayout extends StatelessWidget {
-  final String title;
-  final CharacterRoleType roleType;
-  final CharacterRoleSubType roleSubType;
-  final bool showOnCharacterDetail;
-  final bool isRecommended;
-  final CharacterCardModel character;
-  final List<CustomBuildWeaponModel> weapons;
-  final List<CustomBuildArtifactModel> artifacts;
-  final List<CustomBuildTeamCharacterModel> teamCharacters;
-  final List<CustomBuildNoteModel> notes;
-  final List<CharacterSkillType> skillPriorities;
-  final List<StatType> subStatsSummary;
-
-  const _PortraitLayout({
-    Key? key,
-    required this.title,
-    required this.roleType,
-    required this.roleSubType,
-    required this.showOnCharacterDetail,
-    required this.isRecommended,
-    required this.character,
-    required this.weapons,
-    required this.artifacts,
-    required this.teamCharacters,
-    required this.notes,
-    required this.skillPriorities,
-    required this.subStatsSummary,
-  }) : super(key: key);
+  const _PortraitLayout({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -260,44 +173,12 @@ class _PortraitLayout extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        CharacterSection(
-          title: title,
-          type: roleType,
-          subType: roleSubType,
-          showOnCharacterDetail: showOnCharacterDetail,
-          isRecommended: isRecommended,
-          character: character,
-          notes: notes,
-          skillPriorities: skillPriorities,
-        ),
+        const CharacterSection(),
         ScreenTypeLayout.builder(
-          desktop: (context) => _WeaponsAndArtifacts(
-            mainCharKey: character.key,
-            weaponType: character.weaponType,
-            color: character.elementType.getElementColorFromContext(context),
-            weapons: weapons,
-            artifacts: artifacts,
-            teamCharacters: teamCharacters,
-            subStatsSummary: subStatsSummary,
-          ),
-          tablet: (context) => _WeaponsAndArtifacts(
-            mainCharKey: character.key,
-            weaponType: character.weaponType,
-            color: character.elementType.getElementColorFromContext(context),
-            weapons: weapons,
-            artifacts: artifacts,
-            teamCharacters: teamCharacters,
-            subStatsSummary: subStatsSummary,
-          ),
+          desktop: (context) => const _WeaponsAndArtifacts(),
+          tablet: (context) => const _WeaponsAndArtifacts(),
           mobile: (context) => _WeaponsAndArtifacts(
             useColumn: isPortrait,
-            mainCharKey: character.key,
-            weaponType: character.weaponType,
-            color: character.elementType.getElementColorFromContext(context),
-            weapons: weapons,
-            artifacts: artifacts,
-            teamCharacters: teamCharacters,
-            subStatsSummary: subStatsSummary,
           ),
         ),
       ],
@@ -306,34 +187,7 @@ class _PortraitLayout extends StatelessWidget {
 }
 
 class _LandscapeLayout extends StatelessWidget {
-  final String title;
-  final CharacterRoleType roleType;
-  final CharacterRoleSubType roleSubType;
-  final bool showOnCharacterDetail;
-  final bool isRecommended;
-  final CharacterCardModel character;
-  final List<CustomBuildWeaponModel> weapons;
-  final List<CustomBuildArtifactModel> artifacts;
-  final List<CustomBuildTeamCharacterModel> teamCharacters;
-  final List<CustomBuildNoteModel> notes;
-  final List<CharacterSkillType> skillPriorities;
-  final List<StatType> subStatsSummary;
-
-  const _LandscapeLayout({
-    Key? key,
-    required this.title,
-    required this.roleType,
-    required this.roleSubType,
-    required this.showOnCharacterDetail,
-    required this.isRecommended,
-    required this.character,
-    required this.weapons,
-    required this.artifacts,
-    required this.teamCharacters,
-    required this.notes,
-    required this.skillPriorities,
-    required this.subStatsSummary,
-  }) : super(key: key);
+  const _LandscapeLayout({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -341,47 +195,28 @@ class _LandscapeLayout extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Expanded(
+        const Expanded(
           flex: 40,
-          child: CharacterSection(
-            title: title,
-            type: roleType,
-            subType: roleSubType,
-            showOnCharacterDetail: showOnCharacterDetail,
-            isRecommended: isRecommended,
-            character: character,
-            notes: notes,
-            skillPriorities: skillPriorities,
-          ),
+          child: CharacterSection(),
         ),
         Expanded(
           flex: 60,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
+            children: const [
               Expanded(
                 child: WeaponSection(
-                  weapons: weapons,
-                  weaponType: character.weaponType,
-                  color: character.elementType.getElementColorFromContext(context),
                   maxItemImageWidth: _maxItemImageWidth,
                 ),
               ),
               Expanded(
                 child: ArtifactSection(
-                  artifacts: artifacts,
-                  color: character.elementType.getElementColorFromContext(context),
                   maxItemImageWidth: _maxItemImageWidth,
-                  subStatsSummary: subStatsSummary,
                 ),
               ),
               Expanded(
-                child: TeamSection(
-                  mainCharKey: character.key,
-                  teamCharacters: teamCharacters,
-                  color: character.elementType.getElementColorFromContext(context),
-                ),
+                child: TeamSection(),
               ),
             ],
           ),
@@ -392,49 +227,25 @@ class _LandscapeLayout extends StatelessWidget {
 }
 
 class _WeaponsAndArtifacts extends StatelessWidget {
-  final String mainCharKey;
-  final WeaponType weaponType;
-  final List<CustomBuildWeaponModel> weapons;
-  final List<CustomBuildArtifactModel> artifacts;
-  final List<CustomBuildTeamCharacterModel> teamCharacters;
   final bool useColumn;
-  final List<StatType> subStatsSummary;
-  final Color color;
 
   const _WeaponsAndArtifacts({
     Key? key,
-    required this.mainCharKey,
-    required this.weaponType,
-    required this.weapons,
-    required this.artifacts,
-    required this.teamCharacters,
     this.useColumn = false,
-    required this.subStatsSummary,
-    required this.color,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     if (useColumn) {
       return Column(
-        children: [
+        children: const [
           WeaponSection(
-            weapons: weapons,
-            weaponType: weaponType,
-            color: color,
             maxItemImageWidth: _maxItemImageWidth,
           ),
           ArtifactSection(
-            artifacts: artifacts,
-            color: color,
             maxItemImageWidth: _maxItemImageWidth,
-            subStatsSummary: subStatsSummary,
           ),
-          TeamSection(
-            mainCharKey: mainCharKey,
-            teamCharacters: teamCharacters,
-            color: color,
-          ),
+          TeamSection(),
         ],
       );
     }
@@ -444,30 +255,20 @@ class _WeaponsAndArtifacts extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
+          children: const [
             Expanded(
               child: WeaponSection(
-                weapons: weapons,
-                weaponType: weaponType,
-                color: color,
                 maxItemImageWidth: _maxItemImageWidth,
               ),
             ),
             Expanded(
               child: ArtifactSection(
-                artifacts: artifacts,
-                color: color,
                 maxItemImageWidth: _maxItemImageWidth,
-                subStatsSummary: subStatsSummary,
               ),
             ),
           ],
         ),
-        TeamSection(
-          mainCharKey: mainCharKey,
-          teamCharacters: teamCharacters,
-          color: color,
-        ),
+        const TeamSection(),
       ],
     );
   }
