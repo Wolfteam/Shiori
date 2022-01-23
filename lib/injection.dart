@@ -132,9 +132,8 @@ class Injection {
   }
 
   static CustomBuildsBloc get customBuildsBloc {
-    final genshinService = getIt<GenshinService>();
     final dataService = getIt<DataService>();
-    return CustomBuildsBloc(genshinService, dataService);
+    return CustomBuildsBloc(dataService);
   }
 
   //TODO: USE THIS PROP

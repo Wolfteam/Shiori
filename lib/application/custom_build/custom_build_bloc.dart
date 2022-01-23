@@ -29,11 +29,10 @@ class CustomBuildBloc extends Bloc<CustomBuildEvent, CustomBuildState> {
   static int maxNumberOfWeapons = 10;
   static int maxNumberOfTeamCharacters = 10;
 
-  CustomBuildBloc(this._genshinService, this._dataService, this._customBuildsBloc) : super(const CustomBuildState.loading()) {
-    on<CustomBuildEvent>(_handleEvent);
-  }
+  CustomBuildBloc(this._genshinService, this._dataService, this._customBuildsBloc) : super(const CustomBuildState.loading());
 
-  Future<void> _handleEvent(CustomBuildEvent event, Emitter<CustomBuildState> emit) async {
+  @override
+  Stream<CustomBuildState> mapEventToState(CustomBuildEvent event) async* {
     //TODO: SHOULD I TRHOW ON INVALID REQUEST ?
     //IN MOST CASES THERE ARE SOME VALIDATIONS FOR THINGS LIKE
     // if (!state.weapons.any((el) => el.key == e.key)) {
@@ -62,6 +61,26 @@ class CustomBuildBloc extends Bloc<CustomBuildEvent, CustomBuildState> {
         loaded: (state) => state.copyWith.call(showOnCharacterDetail: e.newValue),
         orElse: () => state,
       ),
+      isRecommendedChanged: (e) async => state.maybeMap(
+        loaded: (state) => state.copyWith.call(isRecommended: e.newValue),
+        orElse: () => state,
+      ),
+      addNote: (e) async => state.maybeMap(
+        loaded: (state) => _addNote(e, state),
+        orElse: () => state,
+      ),
+      deleteNote: (e) async => state.maybeMap(
+        loaded: (state) => _deleteNote(e, state),
+        orElse: () => state,
+      ),
+      addSkillPriority: (e) async => state.maybeMap(
+        loaded: (state) => _addSkillPriority(e, state),
+        orElse: () => state,
+      ),
+      deleteSkillPriority: (e) async => state.maybeMap(
+        loaded: (state) => _deleteSkillPriority(e, state),
+        orElse: () => state,
+      ),
       addWeapon: (e) async => state.maybeMap(
         loaded: (state) => _addWeapon(e, state),
         orElse: () => state,
@@ -78,36 +97,12 @@ class CustomBuildBloc extends Bloc<CustomBuildEvent, CustomBuildState> {
         loaded: (state) => _deleteWeapon(e, state),
         orElse: () => state,
       ),
-      addArtifact: (e) async => state.maybeMap(
-        loaded: (state) => _addArtifact(e, state),
-        orElse: () => state,
-      ),
-      addNote: (e) async => state.maybeMap(
-        loaded: (state) => _addNote(e, state),
-        orElse: () => state,
-      ),
-      deleteNote: (e) async => state.maybeMap(
-        loaded: (state) => _deleteNote(e, state),
-        orElse: () => state,
-      ),
       deleteWeapons: (e) async => state.maybeMap(
         loaded: (state) => state.copyWith.call(weapons: []),
         orElse: () => state,
       ),
-      deleteArtifacts: (e) async => state.maybeMap(
-        loaded: (state) => state.copyWith.call(artifacts: [], subStatsSummary: []),
-        orElse: () => state,
-      ),
-      deleteSkillPriority: (e) async => state.maybeMap(
-        loaded: (state) => _deleteSkillPriority(e, state),
-        orElse: () => state,
-      ),
-      addSkillPriority: (e) async => state.maybeMap(
-        loaded: (state) => _addSkillPriority(e, state),
-        orElse: () => state,
-      ),
-      isRecommendedChanged: (e) async => state.maybeMap(
-        loaded: (state) => state.copyWith.call(isRecommended: e.newValue),
+      addArtifact: (e) async => state.maybeMap(
+        loaded: (state) => _addArtifact(e, state),
         orElse: () => state,
       ),
       addArtifactSubStats: (e) async => state.maybeMap(
@@ -116,6 +111,10 @@ class CustomBuildBloc extends Bloc<CustomBuildEvent, CustomBuildState> {
       ),
       deleteArtifact: (e) async => state.maybeMap(
         loaded: (state) => _deleteArtifact(e, state),
+        orElse: () => state,
+      ),
+      deleteArtifacts: (e) async => state.maybeMap(
+        loaded: (state) => state.copyWith.call(artifacts: [], subStatsSummary: []),
         orElse: () => state,
       ),
       addTeamCharacter: (e) async => state.maybeMap(
@@ -140,7 +139,7 @@ class CustomBuildBloc extends Bloc<CustomBuildEvent, CustomBuildState> {
       ),
     );
 
-    emit(s);
+    yield s;
   }
 
   CustomBuildState _init(int? key, String initialTitle) {
@@ -182,7 +181,7 @@ class CustomBuildBloc extends Bloc<CustomBuildEvent, CustomBuildState> {
 
   CustomBuildState _addNote(_AddNote e, _LoadedState state) {
     if (e.note.isNullEmptyOrWhitespace || state.notes.length >= maxNumberOfNotes) {
-      return state;
+      throw Exception('Note is not valid');
     }
     final newNote = CustomBuildNoteModel(index: state.notes.length, note: e.note);
     return state.copyWith.call(notes: [...state.notes, newNote]);
@@ -190,7 +189,7 @@ class CustomBuildBloc extends Bloc<CustomBuildEvent, CustomBuildState> {
 
   CustomBuildState _deleteNote(_DeleteNote e, _LoadedState state) {
     if (e.index < 0 || e.index >= state.notes.length) {
-      return state;
+      throw Exception('The provided note index = ${e.index} is not valid');
     }
 
     final notes = [...state.notes];
@@ -199,15 +198,18 @@ class CustomBuildBloc extends Bloc<CustomBuildEvent, CustomBuildState> {
   }
 
   CustomBuildState _addSkillPriority(_AddSkillPriority e, _LoadedState state) {
-    if (state.skillPriorities.contains(e.type) || !validSkillTypes.contains(e.type)) {
+    if (state.skillPriorities.contains(e.type)) {
       return state;
+    }
+    if (!validSkillTypes.contains(e.type)) {
+      throw Exception('Skill type = ${e.type} is not valid');
     }
     return state.copyWith.call(skillPriorities: [...state.skillPriorities, e.type]);
   }
 
   CustomBuildState _deleteSkillPriority(_DeleteSkillPriority e, _LoadedState state) {
     if (e.index < 0 || e.index >= state.skillPriorities.length) {
-      return state;
+      throw Exception('The provided skill index = ${e.index} is not valid');
     }
 
     final skillPriorities = [...state.skillPriorities];
@@ -234,9 +236,18 @@ class CustomBuildBloc extends Bloc<CustomBuildEvent, CustomBuildState> {
 
   CustomBuildState _addWeapon(_AddWeapon e, _LoadedState state) {
     if (state.weapons.any((el) => el.key == e.key)) {
-      throw Exception('Weapons cannot be repeated');
+      throw Exception('Weapons cannot be repeated in the state');
     }
+
+    if (state.weapons.length + 1 > maxNumberOfWeapons) {
+      throw Exception('Cannot add more than = $maxNumberOfWeapons weapons to the state');
+    }
+
     final weapon = _genshinService.getWeaponForCard(e.key);
+    if (state.character.weaponType != weapon.type) {
+      throw Exception('Type = ${weapon.type} is not valid for character = ${state.character.key}');
+    }
+
     final newOne = CustomBuildWeaponModel(
       key: e.key,
       index: state.weapons.length,
@@ -269,7 +280,7 @@ class CustomBuildBloc extends Bloc<CustomBuildEvent, CustomBuildState> {
   CustomBuildState _weaponRefinementChanged(_WeaponRefinementChanged e, _LoadedState state) {
     final current = state.weapons.firstWhereOrNull((el) => el.key == e.key);
     if (current == null) {
-      return state;
+      throw Exception('Weapon = ${e.key} does not exist in the state');
     }
 
     if (current.refinement == e.newValue) {
@@ -292,7 +303,7 @@ class CustomBuildBloc extends Bloc<CustomBuildEvent, CustomBuildState> {
 
   CustomBuildState _deleteWeapon(_DeleteWeapon e, _LoadedState state) {
     if (!state.weapons.any((el) => el.key == e.key)) {
-      return state;
+      throw Exception('Weapon = ${e.key} does not exist');
     }
 
     final updated = [...state.weapons];
@@ -301,6 +312,10 @@ class CustomBuildBloc extends Bloc<CustomBuildEvent, CustomBuildState> {
   }
 
   CustomBuildState _addArtifact(_AddArtifact e, _LoadedState state) {
+    if (state.artifacts.length + 1 > ArtifactType.values.length) {
+      throw Exception('Cannot add more than = ${ArtifactType.values.length} artifacts to the state');
+    }
+
     final fullArtifact = _genshinService.getArtifact(e.key);
     final translation = _genshinService.getArtifactTranslation(e.key);
     final img = _genshinService.getArtifactRelatedPart(fullArtifact.fullImagePath, fullArtifact.image, translation.bonus.length, e.type);
@@ -338,7 +353,7 @@ class CustomBuildBloc extends Bloc<CustomBuildEvent, CustomBuildState> {
   CustomBuildState _addArtifactSubStats(_AddArtifactSubStats e, _LoadedState state) {
     final artifact = state.artifacts.firstWhereOrNull((el) => el.type == e.type);
     if (artifact == null) {
-      return state;
+      throw Exception('Artifact type = ${e.type} is not in the state');
     }
 
     final possibleSubStats = getArtifactPossibleSubStats(artifact.statType);
@@ -356,7 +371,7 @@ class CustomBuildBloc extends Bloc<CustomBuildEvent, CustomBuildState> {
 
   CustomBuildState _deleteArtifact(_DeleteArtifact e, _LoadedState state) {
     if (!state.artifacts.any((el) => el.type == e.type)) {
-      return state;
+      throw Exception('Artifact type = ${e.type} is not in the state');
     }
 
     final updated = [...state.artifacts];
@@ -366,7 +381,11 @@ class CustomBuildBloc extends Bloc<CustomBuildEvent, CustomBuildState> {
 
   CustomBuildState _addTeamCharacter(_AddTeamCharacter e, _LoadedState state) {
     if (state.teamCharacters.length + 1 == maxNumberOfTeamCharacters) {
-      return state;
+      throw Exception('Cannot add more than = $maxNumberOfTeamCharacters team characters to the state');
+    }
+
+    if (e.key == state.character.key) {
+      throw Exception('The selected character cannot be in the team characters');
     }
 
     final char = _genshinService.getCharacterForCard(e.key);
@@ -413,7 +432,7 @@ class CustomBuildBloc extends Bloc<CustomBuildEvent, CustomBuildState> {
 
   CustomBuildState _deleteTeamCharacter(_DeleteTeamCharacter e, _LoadedState state) {
     if (!state.teamCharacters.any((el) => el.key == e.key)) {
-      return state;
+      throw Exception('Team character = ${e.key} is not in the state');
     }
 
     final updated = [...state.teamCharacters];
