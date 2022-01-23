@@ -36,7 +36,7 @@ class CommonTableCell extends StatelessWidget {
                 padding: padding,
                 child: Center(
                   child: Tooltip(
-                    message: text!,
+                    message: text,
                     child: Text(
                       text!,
                       textAlign: textAlign,

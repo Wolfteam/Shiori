@@ -1,7 +1,6 @@
 // https://github.com/bluemix/Gradient-Widgets/blob/master/lib/src/gradient_card.dart
 
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class GradientCard extends StatelessWidget {
   final ShapeBorder? shape;

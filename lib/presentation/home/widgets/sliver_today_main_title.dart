@@ -43,19 +43,19 @@ class SliverTodayMainTitle extends StatelessWidget {
   }
 
   Future<void> _openDayWeekDialog(int currentSelectedDay, BuildContext context) async {
-    final selectedDay = await showDialog<int>(
+    await showDialog<int>(
       context: context,
       builder: (_) => ChangeCurrentDayDialog(currentSelectedDay: currentSelectedDay),
-    );
+    ).then((selectedDay) {
+      if (selectedDay == null) {
+        return;
+      }
 
-    if (selectedDay == null) {
-      return;
-    }
-
-    if (selectedDay < 0) {
-      context.read<HomeBloc>().add(const HomeEvent.init());
-    } else {
-      context.read<HomeBloc>().add(HomeEvent.dayChanged(newDay: selectedDay));
-    }
+      if (selectedDay < 0) {
+        context.read<HomeBloc>().add(const HomeEvent.init());
+      } else {
+        context.read<HomeBloc>().add(HomeEvent.dayChanged(newDay: selectedDay));
+      }
+    });
   }
 }

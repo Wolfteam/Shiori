@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shiori/application/bloc.dart';
 import 'package:shiori/generated/l10n.dart';
 import 'package:shiori/presentation/character/widgets/character_detail.dart';
-import 'package:shiori/presentation/character/widgets/character_detail_skills_card.dart';
 import 'package:shiori/presentation/shared/details/detail_bottom_portrait_layout.dart';
 import 'package:shiori/presentation/shared/details/detail_tab_landscape_layout.dart';
 import 'package:shiori/presentation/shared/extensions/element_type_extensions.dart';

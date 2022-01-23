@@ -2,9 +2,6 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:shiori/domain/enums/enums.dart';
 
 import '../../../assets.dart';
-import '../../../enums/item_location_type.dart';
-import '../../../enums/stat_type.dart';
-import '../../../enums/weapon_type.dart';
 import '../../models.dart';
 
 part 'weapon_file_model.freezed.dart';

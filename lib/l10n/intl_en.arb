@@ -378,6 +378,7 @@
   "shield": "Shield",
   "unofficial": "Unofficial",
   "customBuilds": "Custom Builds",
+  "createCustomBuilds": "Don't like the current builds ? Create your custom ones!",
   "talentPriority": "Talent Priority",
   "add": "Add",
   "update": "Update",

@@ -132,28 +132,23 @@ class NotificationCircleItem extends StatelessWidget {
   }
 
   Future<void> _openCharactersPage(BuildContext context) async {
-    final keyName = await CharactersPage.forSelection(context, excludeKeys: [selected.itemKey]);
-    _onItemSelected(keyName, context);
+    await CharactersPage.forSelection(context, excludeKeys: [selected.itemKey]).then((keyName) => _onItemSelected(keyName, context));
   }
 
   Future<void> _openWeaponsPage(BuildContext context) async {
-    final keyName = await WeaponsPage.forSelection(context, excludeKeys: [selected.itemKey]);
-    _onItemSelected(keyName, context);
+    await WeaponsPage.forSelection(context, excludeKeys: [selected.itemKey]).then((keyName) => _onItemSelected(keyName, context));
   }
 
   Future<void> _openMonstersPage(BuildContext context) async {
-    final keyName = await MonstersPage.forSelection(context, excludeKeys: [selected.itemKey]);
-    _onItemSelected(keyName, context);
+    await MonstersPage.forSelection(context, excludeKeys: [selected.itemKey]).then((keyName) => _onItemSelected(keyName, context));
   }
 
   Future<void> _openArtifactsPage(BuildContext context) async {
-    final keyName = await ArtifactsPage.forSelection(context, excludeKeys: [selected.itemKey]);
-    _onItemSelected(keyName, context);
+    await ArtifactsPage.forSelection(context, excludeKeys: [selected.itemKey]).then((keyName) => _onItemSelected(keyName, context));
   }
 
   Future<void> _openMaterialsPage(BuildContext context) async {
-    final keyName = await MaterialsPage.forSelection(context, excludeKeys: [selected.itemKey]);
-    _onItemSelected(keyName, context);
+    await MaterialsPage.forSelection(context, excludeKeys: [selected.itemKey]).then((keyName) => _onItemSelected(keyName, context));
   }
 
   void _onItemSelected(String? keyName, BuildContext context) {
