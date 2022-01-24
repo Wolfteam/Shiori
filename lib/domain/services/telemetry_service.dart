@@ -53,4 +53,6 @@ abstract class TelemetryService {
   Future<void> trackNotificationRestarted(AppNotificationType type);
 
   Future<void> trackNotificationStopped(AppNotificationType type);
+
+  Future<void> trackCustomBuildSaved(String charKey, CharacterRoleType roleType, CharacterRoleSubType subType);
 }

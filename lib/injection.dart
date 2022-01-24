@@ -175,7 +175,8 @@ class Injection {
   static CustomBuildBloc getCustomBuildBloc(CustomBuildsBloc bloc) {
     final genshinService = getIt<GenshinService>();
     final dataService = getIt<DataService>();
-    return CustomBuildBloc(genshinService, dataService, bloc);
+    final telemetryService = getIt<TelemetryService>();
+    return CustomBuildBloc(genshinService, dataService, telemetryService, bloc);
   }
 
   static Future<void> init() async {

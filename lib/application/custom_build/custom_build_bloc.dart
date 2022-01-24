@@ -7,6 +7,7 @@ import 'package:shiori/domain/extensions/string_extensions.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/data_service.dart';
 import 'package:shiori/domain/services/genshin_service.dart';
+import 'package:shiori/domain/services/telemetry_service.dart';
 
 part 'custom_build_bloc.freezed.dart';
 part 'custom_build_event.dart';
@@ -15,6 +16,7 @@ part 'custom_build_state.dart';
 class CustomBuildBloc extends Bloc<CustomBuildEvent, CustomBuildState> {
   final GenshinService _genshinService;
   final DataService _dataService;
+  final TelemetryService _telemetryService;
   final CustomBuildsBloc _customBuildsBloc;
 
   static int maxTitleLength = 40;
@@ -29,7 +31,7 @@ class CustomBuildBloc extends Bloc<CustomBuildEvent, CustomBuildState> {
   static int maxNumberOfWeapons = 10;
   static int maxNumberOfTeamCharacters = 10;
 
-  CustomBuildBloc(this._genshinService, this._dataService, this._customBuildsBloc) : super(const CustomBuildState.loading());
+  CustomBuildBloc(this._genshinService, this._dataService, this._telemetryService, this._customBuildsBloc) : super(const CustomBuildState.loading());
 
   @override
   Stream<CustomBuildState> mapEventToState(CustomBuildEvent event) async* {
@@ -456,6 +458,7 @@ class CustomBuildBloc extends Bloc<CustomBuildEvent, CustomBuildState> {
         state.skillPriorities,
       );
 
+      await _telemetryService.trackCustomBuildSaved(state.character.key, state.type, state.subType);
       _customBuildsBloc.add(const CustomBuildsEvent.load());
       return _init(state.key, state.title);
     }
@@ -473,6 +476,7 @@ class CustomBuildBloc extends Bloc<CustomBuildEvent, CustomBuildState> {
       state.skillPriorities,
     );
 
+    await _telemetryService.trackCustomBuildSaved(state.character.key, state.type, state.subType);
     _customBuildsBloc.add(const CustomBuildsEvent.load());
     return _init(build.key, state.title);
   }
