@@ -47,23 +47,27 @@ class GameCodeListItem extends StatelessWidget {
             decorationColor: theme.colorScheme.secondary,
             decorationThickness: 3,
           );
-
+    final extentRatio = SizeUtils.getExtentRatioForSlidablePane(context);
     return Slidable(
-      actionPane: const SlidableDrawerActionPane(),
-      secondaryActions: [
-        IconSlideAction(
-          caption: !isUsed ? s.markAsUsed : s.markAsUnused,
-          color: !isUsed ? Colors.green : Colors.red,
-          iconWidget: Icon(!isUsed ? Icons.check : Icons.close, color: Colors.white),
-          onTap: () => context.read<GameCodesBloc>().add(GameCodesEvent.markAsUsed(code: code, wasUsed: !isUsed)),
-        ),
-        IconSlideAction(
-          caption: s.copy,
-          icon: Icons.copy,
-          color: Colors.blueAccent,
-          onTap: () => _copyToClipboard(context),
-        ),
-      ],
+      key: ValueKey(code),
+      endActionPane: ActionPane(
+        extentRatio: extentRatio,
+        motion: const ScrollMotion(),
+        children: [
+          SlidableAction(
+            label: !isUsed ? s.markAsUsed : s.markAsUnused,
+            backgroundColor: !isUsed ? Colors.green : Colors.red,
+            icon: !isUsed ? Icons.check : Icons.close,
+            onPressed: (_) => context.read<GameCodesBloc>().add(GameCodesEvent.markAsUsed(code: code, wasUsed: !isUsed)),
+          ),
+          SlidableAction(
+            label: s.copy,
+            icon: Icons.copy,
+            backgroundColor: Colors.blueAccent,
+            onPressed: (_) => _copyToClipboard(context),
+          ),
+        ],
+      ),
       child: InkWell(
         onTap: () => _copyToClipboard(context),
         child: Container(

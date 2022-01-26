@@ -41,7 +41,7 @@ class CharacterDetailTop extends StatelessWidget {
             elevation: 0.0,
             actions: [
               BlocBuilder<CharacterBloc, CharacterState>(
-                builder: (ctx, state) => state.map(
+                builder: (context, state) => state.map(
                   loading: (_) => const Loading(useScaffold: false),
                   loaded: (state) => IconButton(
                     icon: Icon(state.isInInventory ? Icons.favorite : Icons.favorite_border),
@@ -59,7 +59,7 @@ class CharacterDetailTop extends StatelessWidget {
   }
 
   void _favoriteCharacter(String key, bool isInInventory, BuildContext context) {
-    final event = !isInInventory ? InventoryEvent.addCharacter(key: key) : InventoryEvent.deleteCharacter(key: key);
-    context.read<InventoryBloc>().add(event);
+    final event = !isInInventory ? CharacterEvent.addToInventory(key: key) : CharacterEvent.deleteFromInventory(key: key);
+    context.read<CharacterBloc>().add(event);
   }
 }

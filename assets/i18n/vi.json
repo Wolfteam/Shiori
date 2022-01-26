@@ -420,92 +420,157 @@
     {
       "key": "arataki-itto",
       "name": "Arataki Itto",
-      "title": "Hanamizaka Heroics",
-      "description": "The first and greatest head of the Arataki Gang, famed throughout Hanamizaka in Inazuma City... Wait, what? Never heard of them? Seriously?",
+      "title": "Quái Kiệt Hanamizaka",
+      "description": "Thủ lĩnh đời đầu của \"Bang Arataki\" địa bàn Hanamizaka. Sao, chưa nghe qua Bang Arataki à, đùa ta sao?",
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Tấn Công Thường - Huyền Thoại Đấm Nhau",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Tấn Công Thường",
+              "description": "Thực hiện tối đa 4 lần chém liên tiếp.\r\nLần chém thứ 2 và thứ 4 trúng địch sẽ lần lượt nhận 1 tầng và 2 tầng \"Quỷ Lực Vô Song\".\r\nTối đa sở hữu 5 tầng \"Quỷ Lực Vô Song\", mỗi lần kích hoạt đều sẽ làm mới thời gian duy trì của Quỷ Lực Vô Song đã có.\r\nNgoài ra, trong một thời gian ngắn sau khi xung kích hoặc thi triển kỹ năng nguyên tố \"Tuyệt Kỹ Masatsu - Akaushi Công Phá!\", số lần liên kích đánh thường sẽ không bị tái lập.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Trọng Kích",
+              "description": "Khi nhấn giữ để thực hiện trọng kích, nếu có Quỷ Lực Vô Song sẽ thi triển \"Arataki Kesagiri\" không tiêu tốn thể lực. Arataki Kesagiri mỗi lần tấn công sẽ tiêu hao một tầng Quỷ Lực Vô Song; Khi tiêu hao đến tầng cuối cùng sẽ thi triển thêm đòn kết liễu mạnh mẽ.\r\nKhi không có Quỷ Lực Vô Song sẽ tiêu hao thể lực để thi triển một lần Nhát Chém Saichimonji cực mạnh.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Tấn Công Khi Đáp",
+              "description": "Đáp xuống đất từ trên không, tấn công kẻ địch trên đường, đồng thời gây sát thương phạm vi khi chạm đất.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "Sát Thương Lần 1|{param1}%",
+            "Sát Thương Lần 2|{param2}%",
+            "Sát Thương Lần 3|{param3}%",
+            "Sát Thương Lần 4|{param4}%",
+            "Sát Thương Liên Trảm Arataki Kesagiri|{param5}%",
+            "Sát Thương Kết Liễu Arataki Kesagiri|{param6}%",
+            "Thời Gian Duy Trì Quỷ Lực Vô Song|{param7}s",
+            "Sát Thương Nhát Chém Saichimonji|{param8}%",
+            "Thể lực Nhát Chém Saichimonji tiêu hao|{param9}",
+            "Sát Thương Khi Đáp|{param10}%",
+            "Sát Thương Khi Rơi Từ Độ Cao Thấp/Cao|{param11}% / {param12}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Tuyệt Kỹ Masatsu - Akaushi Công Phá!",
+          "description": "Ném bò con \"Ushi\" - thành viên ngoài biên chế của Bang Arataki, gây Sát Thương Nguyên Tố Nham cho kẻ địch trúng phải! Khi \"Ushi\" trúng kẻ địch sẽ cung cấp cho Arataki Itto 1 tầng \"Quỷ Lực Vô Song\".\r\n\"Ushi\" sẽ ở lại trong trận để chi viện:",
+          "abilities": [
+            {
+              "name": "",
+              "description": "",
+              "descriptions": [
+                "Liên tục khiêu khích kẻ địch xung quanh, thu hút hỏa lực;",
+                "Độ bền sẽ dựa vào tỷ lệ giới hạn HP của Arataki Itto;",
+                "Khi chịu sát thương sẽ cung cấp cho Arataki Itto 1 tầng \"Quỷ Lực Vô Song\". Mỗi 2 giây tối đa chỉ có thể nhận được 1 tầng thông qua cách này;",
+                "Khi hết độ bền hoặc thời gian tồn tại, \"Ushi\" sẽ để lại cho Arataki Itto 1 tầng \"Quỷ Lực Vô Song\" rồi chạy mất."
+              ]
+            },
+            {
+              "name": "Nhấn giữ",
+              "description": "Điều chỉnh hướng ném.\r\n\"Ushi\" sẽ được tính là tạo vật Nguyên Tố Nham; Cùng lúc chỉ có thể tồn tại một \"Ushi\" do bản thân Arataki Itto ném ra.\r\n",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "Sát Thương Kỹ Năng|{param1}%",
+            "HP Thừa Kế|{param2}%",
+            "Thời Gian Kéo Dài|{param3}s",
+            "CD|{param4}s"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Siêu Cấp Quỷ Vương - Itto Giáng Lâm!",
+          "description": "Đã đến lúc thể hiện bản thân! Trong khoảng thời gian tiếp theo, Itto hóa thân thành \"Nộ Mục Quỷ Vương\", sử dụng Quỷ Vương Kim Toái Bổng để chiến đấu.\r\n",
+          "abilities": [
+            {
+              "name": "",
+              "description": "Đặc tính cụ thể như sau:\r\n",
+              "descriptions": [
+                "Sát thương của tấn công thường, trọng kích, tấn công khi đáp sẽ chuyển hóa thành Sát Thương Nguyên Tố Nham không thể bị đính kèm thay thế;",
+                "Tăng tốc độ đánh thường của Arataki Itto, đồng thời tăng sức tấn công dựa theo phòng ngự;",
+                "Tấn công lần thứ 1 và 3 trúng kẻ địch sẽ cung cấp cho Arataki Itto 1 tầng \"Quỷ Lực Vô Song\";",
+                "Kháng tất cả nguyên tố và kháng vật lý của Arataki Itto giảm 20%.",
+                "Trạng thái \"Nộ Mục Quỷ Vương\" sẽ bị hủy khi Arataki Itto rời trận."
+              ]
+            }
+          ],
+          "stats": [
+            "Tấn Công Tăng|{param1}% DEF",
+            "Tốc Độ Tấn Công Tăng|{param2}%",
+            "Thời Gian Kéo Dài|{param3}s",
+            "CD|{param4}s",
+            "Năng Lượng Nguyên Tố|{param5}"
+          ]
         }
       ],
       "passives": [
         {
-          "key": "p3",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
-        },
-        {
-          "key": "p4",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
-        },
-        {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "Bổ Củi",
+          "description": "Khi nhân vật của bản thân trong đội đốn gỗ bằng cách tấn công cây cối, có 25% xác suất nhận được thêm gỗ.\r\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
+          "title": "Arataki Đệ Nhất",
+          "description": "Arataki Itto khi thi triển \"Arataki Kesagiri\" liên tục sẽ có hiệu quả sau:\r\n",
+          "descriptions": [
+            "Mỗi lần trảm kích đều sẽ khiến tốc độ tấn công của trảm kích lần sau tăng 10%, tối đa tăng 30% bằng cách này;",
+            "Tăng khả năng kháng gián đoạn.",
+            "Hiệu quả sẽ biến mất khi kết thúc thi triển liên tục."
+          ]
+        },
+        {
+          "key": "p3",
+          "title": "Huyết Mạch Xích Quỷ",
+          "description": "Tăng sát thương gây ra từ \"Arataki Kesagiri\", lượng tăng thêm sát thương sẽ dựa vào 35% phòng ngự của Arataki Itto.\r\n",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "Đứng Lại, Ta Nói Cho Nghe",
+          "description": "Sau khi thi triển Siêu Cấp Quỷ Vương - Itto Giáng Lâm!, Arataki Itto nhận 2 tầng hiệu ứng \"Quỷ Lực Vô Song\". Sau 1s, Arataki Itto mỗi 0.5s sẽ nhận thêm 1 tầng \"Quỷ Lực Vô Song\", duy trì 1.5s.\r\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "Gọi Anh Em, Đánh Hội Đồng",
+          "description": "Sau khi thi triển Siêu Cấp Quỷ Vương - Itto Giáng Lâm!, CD kỹ năng của mỗi nhân vật Nguyên Tố Nham trong đội sẽ giảm đi 1.5s và khiến Arataki Itto hồi phục 6 điểm năng lượng nguyên tố.\r\nThông qua cách này, tối đa giảm 4.5s CD và hồi phục 18 điểm năng lượng nguyên tố.\r\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "Có Ta Ở Đây, Đừng Sợ",
+          "description": "Cấp kỹ năng Tuyệt Kỹ Masatsu - Akaushi Công Phá! +3.\r\nTăng tối đa đến cấp 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "Cơm Nước Trại Giam Ngon Thật!",
+          "description": "Sau khi kết thúc trạng thái \"Nộ Mục Quỷ Vương\" của kỹ năng Siêu Cấp Quỷ Vương - Itto Giáng Lâm!, sức phòng ngự của tất cả nhân vật trong đội gần đó tăng 20%, sức tấn công tăng 20%, duy trì 10s.\r\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "Mười Năm Vang Danh Hanamizaka",
+          "description": "Cấp kỹ năng Siêu Cấp Quỷ Vương - Itto Giáng Lâm! +3.\r\nTăng tối đa đến cấp 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
+          "title": "Bổn Đại Gia Là Arataki Itto",
+          "description": "Tăng 70% sát thương bạo kích của trọng kích của Arataki Itto; Ngoài ra, khi thi triển \"Arataki Kesagiri\" sẽ có 50% xác suất không tiêu hao \"Quỷ Lực Vô Song\".\r\n",
           "descriptions": []
         }
       ]
@@ -1775,87 +1840,160 @@
     {
       "key": "gorou",
       "name": "Gorou",
-      "title": "Canine Warrior",
-      "description": "The great general of Watatsumi Island's forces. He is deeply trusted by his subordinates.",
+      "title": "Chiến Khuyển Nanh Nhọn",
+      "description": "Đại tướng đảo Watatsumi, rất được thuộc hạ tin tưởng.",
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Tấn Công Thường - Mũi Tên Cào Xé",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Tấn Công Thường",
+              "description": "Thực hiện tối đa 4 lần bắn tên liên tiếp.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Trọng Kích",
+              "description": "Ngắm bắn gây sát thương cao hơn và chính xác hơn.\r\nKhi ngắm bắn, nham thạch sẽ tích tụ liên tục trên mũi tên. Mũi tên tích đầy nham thạch sẽ gây Sát Thương Nguyên Tố Nham.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Tấn Công Khi Đáp",
+              "description": "Bắn mưa tên liên tiếp xuống mặt đất, đồng thời lao nhanh xuống đất và gây sát thương phạm vi khi chạm đất.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "Sát Thương Lần 1|{param1}%",
+            "Sát Thương Lần 2|{param2}%",
+            "Sát Thương Lần 3|{param3}%",
+            "Sát Thương Lần 4|{param4}%",
+            "Ngắm Bắn|{param5}%",
+            "Tụ Lực Ngắm Bắn|{param6}%",
+            "Sát Thương Khi Rơi|{param7}%",
+            "Sát Thương Khi Rơi Từ Độ Cao Thấp/Cao|{param8}% / {param9}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Trận Hình Phòng Thủ - Inuzaka",
+          "description": "Gây Sát Thương Phạm Vi Nguyên Tố Nham, đồng thời cắm Đại Tướng Chiến Kỳ.\r\n",
+          "abilities": [
+            {
+              "name": "Đại Tướng Chiến Kỳ",
+              "description": "Căn cứ vào số lượng nhân vật Nguyên Tố Nham trong đội khi thi triển để cung cấp hiệu quả cho nhân vật đứng trong phạm vi Đại Tướng Chiến Kỳ như sau:\r\n",
+              "descriptions": [
+                "Một nhân vật - \"Kiên Cố\": Tăng phòng ngự;",
+                "Hai nhân vật - \"Trụ Vững\": Ngoài hiệu quả trên, tăng thêm kháng gián đoạn;",
+                "Ba nhân vật - \"Phá Hủy\": Ngoài hiệu quả trên, tăng Sát Thương Nguyên Tố Nham.",
+                "Cùng lúc chỉ có thể tồn tại một Đại Tướng Chiến Kỳ do bản thân Gorou tạo ra; Nhân vật chỉ có thể nhận được hiệu quả của một Đại Tướng Chiến Kỳ. Sau khi nhân vật rời khỏi khu vực, hiệu quả của khu vực sẽ kéo dài 2s."
+              ]
+            },
+            {
+              "name": "Nhấn Giữ",
+              "description": "Có thể điều chỉnh vị trí hiệu lực của kỹ năng.\r\n",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "Sát Thương Kỹ Năng|{param1}%",
+            "Tăng Phòng Ngự|{param2}",
+            "Tăng Sát Thương Nguyên Tố Nham|{param3}%",
+            "Thời Gian Kéo Dài|{param4}s",
+            "CD|{param5}s"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Chiến Pháp Đột Kích - Juuga",
+          "description": "Đại tướng xung trận, gây Sát Thương Phạm Vi Nguyên Tố Nham, đồng thời thiết lập khu vực Uy Nghi Đại Tướng để cổ vũ chiến hữu bên cạnh.\r\n",
+          "abilities": [
+            {
+              "name": "Uy Nghi Đại Tướng",
+              "description": "Đặc tính cụ thể như sau:\r\n",
+              "descriptions": [
+                "Khu vực có hiệu quả giống với Đại Tướng Chiến Kỳ tạo ra từ kỹ năng nguyên tố \"Trận Hình Phòng Thủ - Inuzaka\", căn cứ vào số lượng nhân vật Nguyên Tố Nham trong đội khi thi triển để cung cấp hiệu quả cho nhân vật đứng trong khu vực hiệu ứng, đồng thời sẽ di chuyển theo nhân vật trong trận;",
+                "Mỗi 1.5s sẽ sản sinh một lần Kết Tinh Tan Vỡ, gây Sát Thương Phạm Vi Nguyên Tố Nham cho một kẻ địch trong khu vực hiệu ứng;",
+                "Mỗi 1.5s sẽ thu hút 1 Mảnh sinh ra từ phản ứng Kết Tinh trong khu vực đến vị trí của nhân vật hiện tại.",
+                "Khi thi triển, nếu trong trận có Đại Tướng Chiến Kỳ của Gorou tạo ra, sẽ phá hủy nó. Ngoài ra, trong thời gian duy trì Uy Nghi Đại Tướng, kỹ năng nguyên tố \"Trận Hình Phòng Thủ - Inuzaka\" mà Gorou thi triển sẽ không tạo ra Đại Tướng Chiến Kỳ.",
+                "Khi Gorou ngã xuống sẽ xóa bỏ hiệu quả Uy Nghi Đại Tướng của bản thân Gorou."
+              ]
+            }
+          ],
+          "stats": [
+            "Sát Thương Kỹ Năng|{param1}% DEF",
+            "Sát Thương Kết Tinh Tan Vỡ|{param2}% DEF",
+            "Thời Gian Kéo Dài|{param3}s",
+            "CD|{param4}s",
+            "Năng Lượng Nguyên Tố|{param5}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "Phát Hiện Lấp Lánh",
+          "description": "Hiển thị vị trí đặc sản khu vực Inazuma trên bản đồ nhỏ.\r\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
+          "title": "Không Ngại Mưa Gió",
+          "description": "Trong 12s sau khi thi triển Chiến Pháp Đột Kích - Juuga, mức phòng ngự của tất cả thành viên trong đội gần đó tăng 25%.\r\n",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
+          "title": "Lòng Báo Ơn",
+          "description": "Dựa theo sức phòng ngự, sẽ tăng sát thương của các loại tấn công sau đây cho Gorou:\r\n",
+          "descriptions": [
+            "Sát thương kỹ năng Trận Hình Phòng Thủ - Inuzaka tăng tương đương 156% phòng ngự;",
+            "Sát thương Kết Tinh Tan Vỡ và kỹ năng Chiến Pháp Đột Kích - Juuga tăng tương đương 15.6% phòng ngự."
+          ]
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "Chạy: Nhanh Nhẹn Như Gió",
+          "description": "Khi nhân vật trong trận hiện tại (trừ Gorou) đứng trong khu vực Đại Tướng Chiến Kỳ hoặc Uy Nghi Đại Tướng gây Sát Thương Nguyên Tố Nham cho kẻ địch, sẽ giảm 2s CD kỹ năng Trận Hình Phòng Thủ - Inuzaka của Gorou.\r\nHiệu quả này mỗi 10s tối đa kích hoạt 1 lần.\r\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "Ngồi: Vững Vàng Như Chuông",
+          "description": "Trong thời gian duy trì Uy Nghi Đại Tướng, sau khi nhân vật trong trận gần đó nhận mảnh kết tinh tạo ra từ phản ứng kết tinh, thì Uy Nghi Đại Tướng của Gorou sẽ kéo dài thêm 1s.\r\nHiệu quả này mỗi 0.1s tối đa kích hoạt 1 lần, tối đa kéo dài thêm 3s bằng cách này.\r\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "Cào: Dữ Dội Như Lửa",
+          "description": "Cấp kỹ năng Trận Hình Phòng Thủ - Inuzaka +3.\r\nTăng tối đa đến cấp 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "Liếm: Ấm Áp Như Nước",
+          "description": "Uy Nghi Đại Tướng khi có hiệu quả \"Trụ Vững\" hoặc \"Phá Hủy\", mỗi 1.5s sẽ hồi phục HP cho nhân vật trong khu vực, lượng hồi phục tương đương 50% phòng ngự của bản thân Gorou.\r\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "Cắn: Kinh Động Như Sấm",
+          "description": "Cấp kỹ năng Chiến Pháp Đột Kích - Juuga +3.\r\nTăng tối đa đến cấp 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
+          "title": "Dũng: Trung Nghĩa Như Núi",
+          "description": "Trong 12s sau khi thi triển Trận Hình Phòng Thủ - Inuzaka hoặc Chiến Pháp Đột Kích - Juuga, dựa vào cấp độ khu vực lúc thi triển để tăng Sát Thương Bạo Kích Nguyên Tố Nham cho toàn bộ nhân vật trong đội ở gần:\r\n",
+          "descriptions": [
+            "\"Kiên Cố\": Tăng 10%;",
+            "\"Trụ Vững\": Tăng 20%;",
+            "\"Phá Hủy\": Tăng 40%.",
+            "Hiệu quả này không thể cộng dồn, lấy hiệu ứng sau cùng làm chuẩn."
+          ]
         }
       ]
     },
@@ -4450,6 +4588,156 @@
       ]
     },
     {
+      "key": "shenhe",
+      "name": "Shenhe",
+      "title": "Thiên Thể Cô Độc",
+      "description": "Đệ tử tiên gia, khí chất thoát tục, ẩn cư tại núi rừng Liyue, tính cách lãnh đạm như tiên nhân.",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "Tấn Công Thường - Đạp Thần Nhiếp Đấu",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Tấn Công Thường",
+              "description": "Thực hiện tối đa 5 lần đánh liên tiếp.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Trọng Kích",
+              "description": "Tiêu hao thể lực nhất định, xông về phía trước, gây sát thương cho địch trên đường đi.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Tấn Công Khi Đáp",
+              "description": "Đáp xuống đất từ trên không, tấn công kẻ địch trên đường và gây sát thương phạm vi khi chạm đất.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "Sát Thương Lần 1|{param1}%",
+            "Sát Thương Lần 2|{param2}%",
+            "Sát Thương Lần 3|{param3}%",
+            "Sát Thương Lần 4|{param4}% + {param5}%",
+            "Sát Thương Lần 5|{param6}%",
+            "Sát Thương Trọng Kích|{param7}%",
+            "Thể lực Trọng Kích tiêu hao|{param8} điểm",
+            "Sát Thương Khi Đáp|{param9}%",
+            "Sát Thương Khi Rơi Từ Độ Cao Thấp/Cao|{param10}% / {param11}%"
+          ]
+        },
+        {
+          "key": "s2",
+          "title": "Triệu Tướng Dịch Chú",
+          "description": "Ngưng tụ sương lộ, đẩy lui tà ma.\r\nThêm hiệu quả \"Băng Linh\" cho tất cả nhân vật trong đội gần đó, đồng thời gây Sát Thương Nguyên Tố Băng khác nhau dựa theo cơ chế nhấn, nhấn giữ.\r\n",
+          "abilities": [
+            {
+              "name": "Nhấn",
+              "description": "Đột kích về phía trước cùng \"Lục Linh\", gây Sát Thương Nguyên Tố Băng cho kẻ địch trên đường.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Nhấn giữ",
+              "description": "Hiệu lệnh \"Lục Linh\", gây Sát Thương Phạm Vi Nguyên Tố Băng.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Băng Linh",
+              "description": "Khi sát thương tấn công thường, trọng kích, tấn công khi đáp, kỹ năng nguyên tố và kỹ năng nộ gây Sát Thương Nguyên Tố Băng cho kẻ địch, sẽ tăng sát thương dựa vào sức tấn công hiện tại của Shenhe.\r\nHiệu quả \"Băng Linh\" sẽ biến mất khi hết thời gian duy trì hoặc đạt số lần kích hoạt nhất định. \"Băng Linh\" khi nhấn giữ sẽ có thời gian duy trì và số lần hiệu lực nhiều hơn so với nhấn.\r\nKhi trong 1 lần Sát Thương Nguyên Tố Băng trúng cùng lúc nhiều kẻ địch, sẽ căn cứ vào số lượng kẻ địch trúng đòn để tiêu hao số lần hiệu lực; Số lần hiệu lực \"Băng Linh\" của mỗi nhân vật trong đội sẽ tính độc lập với nhau.\r\n",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "Sát Thương Nhấn Kỹ Năng|{param1}%",
+            "Sát Thương Nhấn Giữ Kỹ Năng|{param2}%",
+            "Tăng Sát Thương|{param3}% tấn công",
+            "Thời gian duy trì nhấn/nhấn giữ|{param4} s/ {param5} s",
+            "Số lần hiệu lực nhấn/nhấn giữ|{param6} lần/ {param7} lần",
+            "CD Nhấn|{param8} s",
+            "CD Nhấn Giữ|{param9} s"
+          ]
+        },
+        {
+          "key": "s3",
+          "title": "Thần Nữ Khiển Linh Quyết",
+          "description": "Giải phóng sức mạnh \"Lục Linh\", hiệu lệnh rong ruổi thế gian, gây Sát Thương Phạm Vi Nguyên Tố Băng.\r\n\"Lục Linh\" sẽ ngưng kết thành vùng hiệu ứng, giảm Kháng Vật Lý và Kháng Nguyên Tố Băng của kẻ địch bên trong, đồng thời gây Sát Thương Nguyên Tố Băng liên tục cho kẻ địch trong vùng ảnh hưởng.\r\n",
+          "abilities": [],
+          "stats": [
+            "Sát Thương Kỹ Năng|{param1}%",
+            "Giảm Kháng|{param2}%",
+            "Sát Thương Kéo Dài|{param3}%",
+            "Thời Gian Kéo Dài|{param4} s",
+            "CD|{param5} s",
+            "Năng Lượng Nguyên Tố|{param6}"
+          ]
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "Lai Phục Tri Thời",
+          "description": "Khi làm nhiệm vụ Phái Đi Thám Hiểm có thời gian là 20 giờ ở Liyue, phần thưởng nhận được tăng 25%.\r\n",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "Đại Động Di La Tôn Pháp",
+          "description": "Nhân vật trong trận hiện tại đang trong vùng hiệu ứng của Thần Nữ Khiển Linh Quyết, sẽ tăng 15% BUFF Sát Thương Nguyên Tố Băng.\r\n",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "Phược Linh Thông Chân Pháp Ấn",
+          "description": "Shenhe sau khi thi triển Triệu Tướng Dịch Chú, tất cả nhân vật trong đội gần đó sẽ nhận hiệu ứng sau:\r\n",
+          "descriptions": [
+            "Nhấn: Sát thương Kỹ Năng Nguyên Tố và Kỹ Năng Nộ tăng 15%, duy trì 10s;",
+            "Nhấn giữ: Sát thương tấn công thường, trọng kích, tấn công khi đáp tăng 15%, duy trì 15s."
+          ]
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "Tâm Trai",
+          "description": "Số lần sử dụng của Triệu Tướng Dịch Chú tăng thêm 1\r\n",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "Định Mông",
+          "description": "Thời gian duy trì của Thần Nữ Khiển Linh Quyết kéo dài thêm 6s. Nhân vật trong trận hiện tại đang trong vùng ảnh hưởng sẽ tăng 15% sát thương bạo kích của Sát Thương Nguyên Tố Băng.\r\n",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "Tiềm Hư",
+          "description": "Cấp kỹ năng Triệu Tướng Dịch Chú +3.\r\nTăng tối đa đến cấp 15.\r\n",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "Quan Sát",
+          "description": "Nhân vật trong trạng thái \"Băng Linh\" của Shenhe, khi kích hoạt tăng sát thương từ \"Băng Linh\" sẽ khiến Shenhe nhận 1 tầng \"Sương Tiêu Quyết\":\r\n",
+          "descriptions": [
+            "Shenhe khi thi triển Triệu Tướng Dịch Chú sẽ xóa bỏ tất cả \"Sương Tiêu Quyết\", đồng thời căn cứ vào số tầng xóa bỏ, mỗi tầng tăng 5% sát thương cho Triệu Tướng Dịch Chú lần này;",
+            "Hiệu quả này tối đa cộng dồn 50 lần, duy trì 60s."
+          ]
+        },
+        {
+          "key": "c5",
+          "title": "Hóa Thần",
+          "description": "Cấp kỹ năng Thần Nữ Khiển Linh Quyết +3.\r\nTăng tối đa đến cấp 15.\r\n",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "Vong Huyền",
+          "description": "Khi nhân vật kích hoạt hiệu quả \"Băng Linh\" bằng sát thương tấn công thường và sát thương trọng kích, sẽ không còn giảm số lần kích hoạt \"Băng Linh\" nữa.\r\n",
+          "descriptions": []
+        }
+      ]
+    },
+    {
       "key": "sucrose",
       "name": "Sucrose",
       "title": "Độ Ngọt Vô Hại",
@@ -6002,6 +6290,93 @@
       ]
     },
     {
+      "key": "yae-miko",
+      "name": "Yae Miko",
+      "title": "",
+      "description": "",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ]
+    },
+    {
       "key": "yanfei",
       "name": "Yanfei",
       "title": "Cơ trí ngây thơ",
@@ -6272,6 +6647,149 @@
           "key": "c6",
           "title": "Chòm Sao Băng Naganohara",
           "description": "Trong thời gian duy trì của Điệu Nhảy Niwabi Cháy Bỏng, khi Yoimiya chủ động thực hiện tấn công thường sẽ có 50% tỷ lệ bắn thêm 1 mũi tên lửa, gây sát thương bằng 60% sát thương ban đầu. Sát thương này xem như sát thương tấn công thường.\r\n",
+          "descriptions": []
+        }
+      ]
+    },
+    {
+      "key": "yun-jin",
+      "name": "Yun Jin",
+      "title": "Mỹ Nhân Trên Sân Khấu",
+      "description": "Diễn viên hát kịch nổi tiếng Liyue, hội tụ cả tài viết kịch và ca xướng. Phong cách riêng biệt, thanh lịch xinh đẹp, thần thái ngút trời.",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "Tấn Công Thường - Phất Vân Xuất Thủ",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Tấn Công Thường",
+              "description": "Thực hiện tối đa 5 lần đánh liên tiếp.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Trọng Kích",
+              "description": "Tiêu hao thể lực nhất định, xông về phía trước, gây sát thương cho địch trên đường đi.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Tấn Công Khi Đáp",
+              "description": "Đáp xuống đất từ trên không, tấn công kẻ địch trên đường và gây sát thương phạm vi khi chạm đất.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "Sát Thương Lần 1|{param1}%",
+            "Sát Thương Lần 2|{param2}%",
+            "Sát Thương Lần 3|{param3}% + {param4}%",
+            "Sát Thương Lần 4|{param5}% + {param6}%",
+            "Sát Thương Lần 5|{param7}%",
+            "Sát Thương Trọng Kích|{param8}%",
+            "Trọng Kích tiêu hao thể lực|{param9} điểm",
+            "Sát Thương Khi Rơi|{param10}%",
+            "Sát Thương Khi Rơi Từ Độ Cao Thấp/Cao|{param11}% / {param12}%"
+          ]
+        },
+        {
+          "key": "s2",
+          "title": "Toàn Vân Khai Tương",
+          "description": "Tư thế múa võ trên sân khấu của Yun tiên sinh thực sự có thể đánh địch đấy.\r\n",
+          "abilities": [
+            {
+              "name": "Nhấn",
+              "description": "Xoay thương xua tan mây mù, gây Sát Thương Nguyên Tố Nham.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Nhấn giữ",
+              "description": "Tụ lực từ tư thế Toàn Vân Khai Tương, tạo ra lá chắn, lượng hấp thụ sát thương căn cứ vào giới hạn HP của Yun Jin, có 150% hiệu quả hấp thụ sát thương vật lý và sát thương toàn bộ nguyên tố. Khiên duy trì đến khi thi triển xong Kỹ Năng Nguyên Tố.\r\nKhi buông kỹ năng, kết thúc thời gian duy trì hoặc khiên bị phá hủy, sẽ múa thương giải phóng sức mạnh tích tụ, gây Sát Thương Nguyên Tố Nham.\r\nCăn cứ vào thời gian tụ lực, trạng thái khi giải phóng sẽ chia thành tụ lực lần 1 và tụ lực lần 2.\r\n",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "Sát Thương Nhấn|{param1}% phòng ngự",
+            "Sát Thương Tụ Lực Lần 1|{param2}% phòng ngự",
+            "Sát Thương Tụ Lực Lần 2|{param3}% phòng ngự",
+            "Khiên hấp thụ|{param4}% HP tối đa + {param5}",
+            "CD|{param6} s"
+          ]
+        },
+        {
+          "key": "s3",
+          "title": "Phá Chướng Kiến Tinh Nghi",
+          "description": "Gây Sát Thương Phạm Vi Nguyên Tố Nham, đồng thời cung cấp \"Phi Vân Kỳ Trận\" cho tất cả nhân vật trong đội gần đó.\r\n",
+          "abilities": [
+            {
+              "name": "Phi Vân Kỳ Trận",
+              "description": "Khi gây sát thương tấn công thường cho kẻ địch, sẽ căn cứ vào sức phòng ngự của Yun Jin để tăng thêm sát thương gây ra.\r\nHiệu quả \"Phi Vân Kỳ Trận\" sẽ biến mất khi kết thúc thời gian duy trì hoặc đạt số lần hiệu lực nhất định.\r\nKhi trong một lần tấn công thường trúng nhiều kẻ địch, thì sẽ căn cứ vào số lượng kẻ địch trúng đòn để tiêu hao số lần hiệu lực; Số lần hiệu lực \"Phi Vân Kỳ Trận\" của mỗi nhân vật trong đội sẽ tính độc lập với nhau.\r\n",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "Sát Thương Kỹ Năng|{param1}%",
+            "Tăng Sát Thương|{param2}% phòng ngự",
+            "Thời Gian Kéo Dài|{param3} s",
+            "Số lần hiệu lực|{param4} lần",
+            "CD|{param5} s",
+            "Năng Lượng Nguyên Tố|{param6}"
+          ]
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "Thanh Thực Dưỡng Tính",
+          "description": "Khi nấu ăn hoàn mỹ các món thuộc loại thám hiểm, có tỷ lệ 12% được x2 thành phẩm.\r\n",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "Vụ Thủ Bản Chân",
+          "description": "Khi bị tấn công, Toàn Vân Khai Tương sẽ được thi triển bằng hình thức nhấn giữ tụ lực lần 2.\r\n",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "Mạc Tùng Hằng Khê",
+          "description": "Sát thương đánh thường được buff từ Phi Vân Kỳ Trận sẽ tăng thêm dựa vào 2.5%/5%/7.5%/11.5% phòng ngự của Yun Jin khi trong đội có 1/2/3/4 loại nguyên tố.\r\n",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "Phi Thân Thang Mã",
+          "description": "Toàn Vân Khai Tương giảm 18% thời gian CD.\r\n",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "Chư Bàn Thiết Mạt",
+          "description": "Sau khi thi triển Phá Chướng Kiến Tinh Nghi, sát thương đánh thường tạo ra từ tất cả nhân vật trong đội gần đó tăng 15%, duy trì 12s.\r\n",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "Nha Đạo Thám Hải",
+          "description": "Cấp kỹ năng Phá Chướng Kiến Tinh Nghi +3.\r\nTăng tối đa đến cấp 15.\r\n",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "Thăng Đường Điếu Vân",
+          "description": "Sau khi Yun Jin kích hoạt phản ứng kết tinh, sức phòng ngự tăng 20%, duy trì 12s.\r\n",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "Kiều Sở Danh Khôn",
+          "description": "Cấp kỹ năng Toàn Vân Khai Tương +3.\r\nTăng tối đa đến cấp 15.\r\n",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "Trang Hài Tịnh Cử",
+          "description": "Nhân vật trong trạng thái \"Phi Vân Kỳ Trận\" sẽ tăng 12% tốc độ tấn công thường.\r\n",
           "descriptions": []
         }
       ]
@@ -6598,6 +7116,18 @@
         "Sát thương tạo ra cho kẻ địch bị ảnh hưởng bởi Nguyên Tố Hỏa hoặc Lôi tăng {color}18{/color}%.",
         "Sát thương tạo ra cho kẻ địch bị ảnh hưởng bởi nguyên tố Hỏa hoặc Lôi tăng {color}21{/color}%.",
         "Sát thương tạo ra cho kẻ địch bị ảnh hưởng bởi nguyên tố Hỏa hoặc Lôi tăng {color}24{/color}%."
+      ]
+    },
+    {
+      "key": "calamity-queller",
+      "name": "Hủy Diệt",
+      "description": "Vũ khí sắc bén được chế tạo từ Tinh Thạch kỳ lạ. Ánh sáng xanh u tối dường như đang kể lại vô vàn những chuyện đã qua.",
+      "refinements": [
+        "Tăng {color}12{/color}% sát thương tất cả nguyên tố; Sau khi thi triển Kỹ Năng Nguyên Tố sẽ nhận được hiệu quả \"Viên Đột\", duy trì 20s, sức tấn công mỗi giây tăng {color}3.2{/color}%, hiệu quả tăng tấn công này tối đa cộng dồn 6 lần. Khi nhân vật trang bị vũ khí này không xuất hiện trong trận, hiệu quả tăng tấn công của \"Viên Đột\" tăng gấp đôi.",
+        "Tăng {color}15{/color}% sát thương tất cả nguyên tố; Sau khi thi triển Kỹ Năng Nguyên Tố sẽ nhận được hiệu quả \"Viên Đột\", duy trì 20s, sức tấn công mỗi giây tăng {color}4{/color}%, hiệu quả tăng tấn công này tối đa cộng dồn 6 lần. Khi nhân vật trang bị vũ khí này không xuất hiện trong trận, hiệu quả tăng tấn công của \"Viên Đột\" tăng gấp đôi.",
+        "Tăng {color}18{/color}% sát thương tất cả nguyên tố; Sau khi thi triển Kỹ Năng Nguyên Tố sẽ nhận được hiệu quả \"Viên Đột\", duy trì 20s, sức tấn công mỗi giây tăng {color}4.8{/color}%, hiệu quả tăng tấn công này tối đa cộng dồn 6 lần. Khi nhân vật trang bị vũ khí này không xuất hiện trong trận, hiệu quả tăng tấn công của \"Viên Đột\" tăng gấp đôi.",
+        "Tăng {color}21{/color}% sát thương tất cả nguyên tố; Sau khi thi triển Kỹ Năng Nguyên Tố sẽ nhận được hiệu quả \"Viên Đột\", duy trì 20s, sức tấn công mỗi giây tăng {color}5.6{/color}%, hiệu quả tăng tấn công này tối đa cộng dồn 6 lần. Khi nhân vật trang bị vũ khí này không xuất hiện trong trận, hiệu quả tăng tấn công của \"Viên Đột\" tăng gấp đôi.",
+        "Tăng {color}24{/color}% sát thương tất cả nguyên tố; Sau khi thi triển Kỹ Năng Nguyên Tố sẽ nhận được hiệu quả \"Viên Đột\", duy trì 20s, sức tấn công mỗi giây tăng {color}6.4{/color}%, hiệu quả tăng tấn công này tối đa cộng dồn 6 lần. Khi nhân vật trang bị vũ khí này không xuất hiện trong trận, hiệu quả tăng tấn công của \"Viên Đột\" tăng gấp đôi."
       ]
     },
     {
@@ -7311,6 +7841,18 @@
       ]
     },
     {
+      "key": "redhorn-stonethresher",
+      "name": "Xích Giác Phá Thạch Đao",
+      "description": "Theo cách nói của chủ nhân xưa kia, với thanh \"Xích Giác Thạch Kiến Thạch Hội Kim Đồ Kim Niết Ngự Sư Tử\" này thì bất cứ loại yêu tinh quỷ quái nào cũng sẽ bị đánh đuổi.",
+      "refinements": [
+        "Phòng ngự tăng {color}28{/color}%; Tăng sát thương tấn công thường và trọng kích, lượng tăng thêm tương đương {color}40{/color}% phòng ngự.",
+        "Phòng ngự tăng {color}35{/color}%; Tăng sát thương tấn công thường và trọng kích, lượng tăng thêm tương đương {color}50{/color}% phòng ngự.",
+        "Phòng ngự tăng {color}42{/color}%; Tăng sát thương tấn công thường và trọng kích, lượng tăng thêm tương đương {color}60{/color}% phòng ngự.",
+        "Phòng ngự tăng {color}49{/color}%; Tăng sát thương tấn công thường và trọng kích, lượng tăng thêm tương đương {color}70{/color}% phòng ngự.",
+        "Phòng ngự tăng {color}56{/color}%; Tăng sát thương tấn công thường và trọng kích, lượng tăng thêm tương đương {color}80{/color}% phòng ngự."
+      ]
+    },
+    {
       "key": "royal-bow",
       "name": "Trường Cung Tông Thất",
       "description": "Cung dài từng thuộc về quý tộc Monstadt cũ. Trải qua nhiều đời, dây cung vẫn rất mạnh mẽ.",
@@ -7986,6 +8528,14 @@
       ]
     },
     {
+      "key": "husk-of-opulent-dreams",
+      "name": "Giấc Mộng Phù Hoa",
+      "bonus": [
+        "Phòng ngự tăng 30%.",
+        "Nhân vật trang bị bộ Thánh Di Vật này sẽ nhận hiệu quả \"Vấn Đáp\" trong các trường hợp sau đây Sau khi nhân vật trong trận sử dụng tấn công Nguyên Tố Nham đánh trúng kẻ địch sẽ nhận 1 tầng, mỗi 0.3s tối đa kích hoạt 1 lần; trong đội chờ, mỗi 3s nhận 1 tầng. Vấn Đáp cộng dồn tối đa 4 tầng, mỗi tầng sẽ tăng 6% phòng ngự và 6% buff sát thương Nguyên Tố Nham. Mỗi 6s, nếu chưa nhận hiệu quả Vấn Đáp sẽ mất đi 1 tầng."
+      ]
+    },
+    {
       "key": "instructor",
       "name": "Giáo Quan",
       "bonus": [
@@ -8034,11 +8584,19 @@
       ]
     },
     {
+      "key": "ocean-hued-clam",
+      "name": "Xà Cừ Đại Dương",
+      "bonus": [
+        "Tăng Trị Liệu lên 15%.",
+        "Khi nhân vật trang bị bộ Thánh Di Vật này thực hiện trị liệu cho nhân vật trong đội, sẽ tạo ra Bọt Biển kéo dài 3s, ghi lại lượng HP hồi phục của việc trị liệu (Bao gồm cả lượng vượt mức). Khi kết thúc thời gian duy trì, Bọt Biển sẽ nổ tung, gây cho kẻ địch xung quanh sát thương bằng 90% lượng hồi phục tích lũy (Cách tính sát thương này giống với các phản ứng nguyên tố như Điện Cảm, Siêu Dẫn...nhưng không bị ảnh hưởng bởi Tinh Thông Nguyên Tố, cấp hoặc buff sát thương phản ứng). Mỗi 3.5s tối đa tạo 1 Bọt Biển; Bọt Biển tối đa ghi lại 30,000 điểm hồi phục, bao gồm cả lượng trị liệu vượt mức; đội của bản thân cùng lúc chỉ được tồn tại tối đa 1 Bọt Biển. Khi nhân vật trang bị bộ Thánh Di Vật này ở trong đội chờ, vẫn có thể kích hoạt hiệu quả này."
+      ]
+    },
+    {
       "key": "pale-flame",
       "name": "Lửa Trắng Xám",
       "bonus": [
         "Sát thương vật lý tạo thành tăng 25%.",
-        "Sau khi kỹ năng nguyên tố đánh trúng kẻ địch, tấn công tăng 9%, kéo dài 7s, tối đa cộng dồn 2 tầng. Mỗi 0.3s tối đa kích hoạt 1 lần, sau khi tích đầy 2 tầng, hiệu quả 2 bộ tăng 100%"
+        "Sau khi kỹ năng nguyên tố đánh trúng kẻ địch, tấn công tăng 9%, kéo dài 7s, tối đa cộng dồn 2 tầng. Mỗi 0.3s tối đa kích hoạt 1 lần, sau khi tích đầy 2 tầng, hiệu quả bộ 2 món tăng 100%."
       ]
     },
     {
@@ -8531,6 +9089,11 @@
       "key": "dragon-lords-crown",
       "name": "Vương Miện Vua Rồng",
       "description": "Sừng kết tinh ngưng tụ từ ngọc ngàn năm, là vương miện thiên sinh của \"Long Vương\".\r\nĐược rót Tinh Phách, nặn từ thạch nham tạo thành, xuất hiện ở khe núi, là tượng trưng cho sự uy quyền quốc thổ, chiếc sừng dài lấp lánh như vàng là minh chứng cho sự phục vụ bậc quân vương nào đó trong quá khứ.\r\nĐã từng một lần đổi màu, hiện giờ là màu ánh vàng sáng lấp lánh trong tay bạn."
+    },
+    {
+      "key": "dragonheirs-false-fin",
+      "name": "Vảy Giả Tộc Rồng",
+      "description": "Loại mô sinh học nhận được khi tiêu diệt Rồng Biển Sâu.\r\nTuy trông như vảy cá, nhưng thực ra lại không có công dụng gì.\r\nCư dân Vương Quốc Đêm Trắng cũng từng có nghiên cứu chuyên sâu về Rồng Biển Sâu. Điểm đặc biệt nhất của chúng là khả năng lựa chọn đặc điểm mà nó muốn truyền lại cho con cái. Vì căm ghét ánh sáng của loài người nên Rồng Biển Sâu khi trưởng thành sẽ mất đi phần lớn thị lực, đồng thời chúng cũng sẽ tiến hóa thành các loại nguyên tố khác nhau để thích nghi với chiến đấu."
     },
     {
       "key": "dream-of-the-dandelion-gladiator",
@@ -9218,6 +9781,11 @@
       "description": "Loài cây thân lúa thường được trồng trên đại lục Teyvat. Bất kỳ ai cũng yêu thích hương vị thơm ngon của chúng, cái tên \"hạt gạo nuôi trăm dân\" cũng từ đó mà ra."
     },
     {
+      "key": "riftborn-regalia",
+      "name": "Sừng Vua Quái Cảnh",
+      "description": "Một chiếc sừng gãy có được sau khi chiến thắng Vua Thú. Đáng lẽ nó không nên để lại bất kỳ tàn dư gì sau khi bị trục xuất mới đúng.\r\nNgay cả một vua thú giữa bầy sói trong Quái Cảnh cũng chẳng là gì trước những ma thú thuộc hệ cao hơn.\r\n\"Gold\" sau khi dồn nén vô số bầy sói ma vật giống như nén mớ tranh bỏ đi, đã vô tình sản sinh ra ma thú với hình thù kỳ lạ, và thứ chất chứa bên trong chiếc sừng của nó chính là quyền năng hiệu lệnh cho bầy sói đen làm xói mòn không gian cho nó."
+    },
+    {
       "key": "ring-of-boreas",
       "name": "Móng Vuốt Bắc Phong",
       "description": "Một chút băng lấy từ trên người Vua Sói Bắc Phong.\r\nNơi này từng có gió bắc lạnh giá thổi qua, khiến cho người ta lạnh buốt da khi bay. Hiện nay sức mạnh Vua Sói tuy không được như trước, nhưng vẫn đủ để khiến nơi này đóng băng."
@@ -9648,7 +10216,7 @@
     {
       "key": "vaporize",
       "name": "Vaporize",
-      "effect": "Deals ×1.5 Pyro DMG when a Pyro attack triggers the reaction.",
+      "effect": "Deals ×2 Pyro DMG when a Pyro attack triggers the reaction.",
       "description": null
     },
     {
@@ -9672,7 +10240,7 @@
     {
       "key": "vaporize-reverse",
       "name": "Vaporize (Reverse)",
-      "effect": "Deals ×2 Hydro DMG when a Hydro attack triggers the reaction.",
+      "effect": "Deals ×1.5 Hydro DMG when a Hydro attack triggers the reaction.",
       "description": null
     },
     {
@@ -9790,6 +10358,14 @@
       "name": "Bạo Đồ Hilichurl Búa Lửa"
     },
     {
+      "key": "bolteater-bathysmal-vishap",
+      "name": "Rồng Biển Sâu - Thôn Lôi"
+    },
+    {
+      "key": "bolteater-bathysmal-vishap-hatchling",
+      "name": "Rồng Biển Sâu Con - Thôn Lôi"
+    },
+    {
       "key": "childe",
       "name": "Childe"
     },
@@ -9828,6 +10404,10 @@
     {
       "key": "cryo-slime",
       "name": "Slime Băng"
+    },
+    {
+      "key": "cryo-specter",
+      "name": "Bóng Ma - Băng"
     },
     {
       "key": "cryo-whopperflower",
@@ -9870,6 +10450,10 @@
       "name": "Slime Lôi"
     },
     {
+      "key": "electro-specter",
+      "name": "Bóng Ma - Lôi"
+    },
+    {
       "key": "electro-whopperflower",
       "name": "Hoa Lừa Dối - Lôi"
     },
@@ -9891,7 +10475,7 @@
     },
     {
       "key": "fatui-skirmisher-anemoboxer-vanguard",
-      "name": "Đội tiên phong Fatui - Quân tiên phong tay đấm Phong"
+      "name": "Đội Tiên Phong Fatui - Quân Tiên Phong Tay Đấm Phong"
     },
     {
       "key": "fatui-skirmisher-cryogunner-legionnaire",
@@ -9940,6 +10524,10 @@
     {
       "key": "geovishap-hatchling",
       "name": "Rồng Đất Nhỏ Nham"
+    },
+    {
+      "key": "golden-wolflord",
+      "name": "Vua Thú Hoàng Kim"
     },
     {
       "key": "hilichurl",
@@ -10074,6 +10662,18 @@
       "name": "Maguu Kenki"
     },
     {
+      "key": "maguu-kenki-galloping-frost",
+      "name": "Maguu Kenki: Sương Phủ"
+    },
+    {
+      "key": "maguu-kenki-lone-gale",
+      "name": "Maguu Kenki: Gió Độc"
+    },
+    {
+      "key": "maguu-kenki-mask-of-terror",
+      "name": "Maguu Kenki: Mặt Quỷ"
+    },
+    {
       "key": "millelith-sergeant",
       "name": "Giáo Đầu Thiên Nham Quân"
     },
@@ -10122,6 +10722,14 @@
       "name": "Rồng Đất Cổ - Nham"
     },
     {
+      "key": "primordial-bathysmal-vishap",
+      "name": "Rồng Biển Sâu - Nguyên Thủy"
+    },
+    {
+      "key": "primordial-bathysmal-vishap-hatchling",
+      "name": "Rồng Biển Sâu Con - Nguyên Thủy"
+    },
+    {
       "key": "pyro-abyss-mage",
       "name": "Pháp Sư Vực Sâu Hỏa"
     },
@@ -10142,12 +10750,24 @@
       "name": "Slime Hỏa"
     },
     {
+      "key": "pyro-specter",
+      "name": "Bóng Ma - Hỏa"
+    },
+    {
       "key": "pyro-whopperflower",
       "name": "Hoa Lừa Dối Rực Lửa"
     },
     {
       "key": "raiden-shogun",
       "name": "Raiden Shogun"
+    },
+    {
+      "key": "rimebiter-bathysmal-vishap",
+      "name": "Rồng Biển Sâu - Nanh Băng"
+    },
+    {
+      "key": "rimebiter-bathysmal-vishap-hatchling",
+      "name": "Rồng Biển Sâu Con - Nanh Băng"
     },
     {
       "key": "rock-shield-hilichurl-guard",
@@ -10175,7 +10795,7 @@
     },
     {
       "key": "ruin-destroyer",
-      "name": "Tiên Phong Di tích"
+      "name": "Tiên Phong Di Tích"
     },
     {
       "key": "ruin-grader",
@@ -10228,6 +10848,10 @@
     {
       "key": "thunderhelm-lawachurl",
       "name": "Vua Giáp Lôi Hilichurl"
+    },
+    {
+      "key": "treasure-hoarder-wallenstein",
+      "name": "Đạo Bảo Đoàn - Wallenstein"
     },
     {
       "key": "treasure-hoarders-boss",

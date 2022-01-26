@@ -81,6 +81,56 @@ class Injection {
     return UrlPageBloc(networkService, telemetryService, deviceInfoService, settingsService);
   }
 
+  static CalculatorAscMaterialsItemUpdateQuantityBloc get calculatorAscMaterialsItemUpdateQuantityBloc {
+    final dataService = getIt<DataService>();
+    final telemetryService = getIt<TelemetryService>();
+    return CalculatorAscMaterialsItemUpdateQuantityBloc(dataService, telemetryService);
+  }
+
+  static MonstersBloc get monstersBloc {
+    final genshinService = getIt<GenshinService>();
+    return MonstersBloc(genshinService);
+  }
+
+  static ArtifactBloc get artifactBloc {
+    final genshinService = getIt<GenshinService>();
+    final telemetryService = getIt<TelemetryService>();
+    return ArtifactBloc(genshinService, telemetryService);
+  }
+
+  static MaterialsBloc get materialsBloc {
+    final genshinService = getIt<GenshinService>();
+    return MaterialsBloc(genshinService);
+  }
+
+  static MaterialBloc get materialBloc {
+    final genshinService = getIt<GenshinService>();
+    final telemetryService = getIt<TelemetryService>();
+    return MaterialBloc(genshinService, telemetryService);
+  }
+
+  static CharacterBloc get characterBloc {
+    final genshinService = getIt<GenshinService>();
+    final telemetryService = getIt<TelemetryService>();
+    final localeService = getIt<LocaleService>();
+    final dataService = getIt<DataService>();
+    return CharacterBloc(genshinService, telemetryService, localeService, dataService);
+  }
+
+  static InventoryBloc get inventoryBloc {
+    final genshinService = getIt<GenshinService>();
+    final telemetryService = getIt<TelemetryService>();
+    final dataService = getIt<DataService>();
+    return InventoryBloc(genshinService, dataService, telemetryService);
+  }
+
+  static WeaponBloc get weaponBloc {
+    final genshinService = getIt<GenshinService>();
+    final telemetryService = getIt<TelemetryService>();
+    final dataService = getIt<DataService>();
+    return WeaponBloc(genshinService, telemetryService, dataService);
+  }
+
   //TODO: USE THIS PROP
   // static CalculatorAscMaterialsItemBloc get calculatorAscMaterialsItemBloc {
   //   final genshinService = getIt<GenshinService>();

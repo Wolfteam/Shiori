@@ -188,11 +188,8 @@ class WeaponCard extends StatelessWidget {
       return;
     }
 
-    final bloc = context.read<WeaponBloc>();
-    bloc.add(WeaponEvent.loadFromKey(key: keyName));
-    final route = MaterialPageRoute(builder: (c) => WeaponPage());
+    final route = MaterialPageRoute(builder: (c) => WeaponPage(itemKey: keyName));
     await Navigator.push(context, route);
     await route.completed;
-    bloc.pop();
   }
 }

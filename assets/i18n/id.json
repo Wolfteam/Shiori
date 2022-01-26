@@ -417,91 +417,156 @@
       "key": "arataki-itto",
       "name": "Arataki Itto",
       "title": "Hanamizaka Heroics",
-      "description": "The first and greatest head of the Arataki Gang, famed throughout Hanamizaka in Inazuma City... Wait, what? Never heard of them? Seriously?",
+      "description": "Ketua Geng Arataki yang Pertama dan yang Terhebat, dan terkenal di Hanamizaka, Kota Inazuma ... Apa katamu? Belum pernah dengar? Mau cari ribut ya?",
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Fight Club Legend",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Normal Attack",
+              "description": "Melancarkan hingga 4 serangan berturut-turut.\r\nSerangan ke-2 dan ke-4 yang mengenai musuh masing-masing akan menghasilkan 1 lapis dan 2 lapis efek Superlative Superstrength.\r\nMaksimum dapat ditumpuk hingga 5 lapis. Setiap kali memicu efek ini akan memperbarui durasi Superlative Superstrength yang sudah dimiliki.\r\nSelain itu, selama beberapa saat setelah melancarkan Elemental Skill Masatsu Zetsugi: Akaushi Burst! atau berlari, kombo Normal Attack Itto tidak akan di-reset.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Charged Attack",
+              "description": "Bila Itto memiliki Superlative Superstrength saat menahan tombol serang untuk melancarkan Charged Attack, Itto akan melancarkan serangan Arataki Kesagiri tanpa mengonsumsi Stamina. Setiap serangan Arataki Kesagiri akan mengonsumsi 1 lapis Superlative Superstrength. Dan saat mengonsumsi lapisan terakhir, Itto akan melancarkan 1 tebasan akhir dengan DMG yang lebih kuat.\r\nBila tidak memiliki Superlative Superstrength, Itto akan mengonsumsi Stamina untuk melancarkan 1 tebasan Saichimonji yang kuat.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Plunging Attack",
+              "description": "Menerjang dari udara untuk menghantam tanah, menyerang semua musuh di jalurnya dan mengakibatkan DMG Area saat mendarat.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "DMG Tahap 1|{param1}%",
+            "DMG Tahap 2|{param2}%",
+            "DMG Tahap 3|{param3}%",
+            "DMG Tahap 4|{param4}%",
+            "DMG Kombo Tebasan Arataki Kesagiri|{param5}%",
+            "DMG Tebasan Akhir Arataki Kesagiri|{param6}%",
+            "Durasi Superlative Superstrength|{param7}s",
+            "DMG Tebasan Saichimonji|{param8}%",
+            "Konsumsi Stamina Saichimonji|{param9}",
+            "DMG Selama Plunging|{param10}%",
+            "DMG Plunging Attack Min./Maks.|{param11}% / {param12}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Masatsu Zetsugi: Akaushi Burst!",
+          "description": "Melempar Ushi — seekor banteng akaushi muda yang juga adalah anggota tambahan dari Geng Arataki, untuk mengakibatkan Geo DMG pada musuh! Saat Ushi mengenai musuh, Arataki Itto akan memperoleh 1 lapis Superlative Superstrength.\r\nUshi akan tetap tinggal di medan pertempuran untuk memberikan bantuan:",
+          "abilities": [
+            {
+              "name": "",
+              "description": "",
+              "descriptions": [
+                "Terus menerus mengejek musuh di sekitar untuk menarik perhatiannya.",
+                "HP Ushi mewarisi Max HP Arataki Itto berdasarkan persentase tertentu.",
+                "Saat Ushi terkena DMG, Ushi akan memberikan 1 lapis Superlative Superstrength pada Arataki Itto sendiri. Itto hanya bisa mendapatkan 1 lapis Superlative Superstrength setiap 2 detik dengan cara ini.",
+                "Saat HP-nya mencapai 0 atau durasinya berakhir, Ushi akan pergi meninggalkan medan pertempuran dan memberikan 1 lapis Superlative Superstrength kepada Itto sendiri."
+              ]
+            },
+            {
+              "name": "Mode Tahan",
+              "description": "Mengatur arah lemparan.\r\nUshi dianggap sebagai sebuah Geo Construct dan hanya bisa ada 1 Ushi ciptaan Itto sendiri saja di medan pertempuran pada saat bersamaan.\r\n",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "DMG Skill|{param1}%",
+            "HP Terwariskan|{param2}%",
+            "Durasi|{param3}s",
+            "Cooldown|{param4}s"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Royal Descent: Behold, Itto the Evil!",
+          "description": "Waktunya untuk menunjukkan wibawa Geng Arataki! Selama beberapa saat, Itto akan berubah menjadi Raging Oni King dan menggunakan Oni King's Kanabou untuk bertarung.\r\n",
+          "abilities": [
+            {
+              "name": "",
+              "description": "Skill ini memiliki karakteristik berikut:\r\n",
+              "descriptions": [
+                "DMG yang diakibatkan Normal, Charged, dan Plunging Attack dikonversi menjadi Geo DMG yang tidak bisa ditimpa Elemental Infusion lainnya.",
+                "Meningkatkan Normal Attack SPD Itto, dan meningkatkan ATK Itto berdasarkan DEF miliknya.",
+                "Akan memberikan Itto sendiri 1 lapis Superlative Superstrength saat serangan tahap ke-1 dan ke-3 mengenai musuh.",
+                "Mengurangi 20% seluruh Elemental RES dan Physical RES Itto.",
+                "Status Raging Oni King akan lenyap saat Arataki Itto meninggalkan medan pertempuran."
+              ]
+            }
+          ],
+          "stats": [
+            "Peningkatan ATK|{param1}% DEF",
+            "Peningkatan Normal Attack SPD|{param2}%",
+            "Durasi|{param3}s",
+            "Cooldown|{param4}s",
+            "Konsumsi Energy|{param5}"
+          ]
         }
       ],
       "passives": [
         {
-          "key": "p3",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
-        },
-        {
-          "key": "p4",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
-        },
-        {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "Woodchuck Chucked",
+          "description": "Saat anggota party sendiri memperoleh kayu dengan menyerang pohon, ada 25% kemungkinan untuk memperoleh kayu tambahan.\r\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
+          "title": "Arataki Ichiban",
+          "description": "Saat melancarkan Arataki Kesagiri secara beruntun, Arataki Itto akan memperoleh efek-efek berikut:\r\n",
+          "descriptions": [
+            "Setiap tebasan akan meningkatkan 10% ATK SPD untuk tebasan berikutnya. Dengan cara ini, ATK SPD dapat meningkat hingga 30%.",
+            "Meningkatkan ketahanan terhadap interupsi.",
+            "Efek-efek ini akan menghilang saat Itto berhenti melancarkan tebasan beruntun."
+          ]
+        },
+        {
+          "key": "p3",
+          "title": "Bloodline of the Crimson Oni",
+          "description": "Meningkatkan DMG Arataki Kesagiri sebesar 35% DEF Arataki Itto.\r\n",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "Stay a While and Listen Up",
+          "description": "Setelah melancarkan Royal Descent: Behold, Itto the Evil!, Arataki Itto akan mendapatkan 2 lapis efek Superlative Superstrength. Setelah 1 detik, Itto akan mendapatkan 1 lapis Superlative Superstrength setiap 0,5 detik, dan berlangsung selama 1,5 detik.\r\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "Gather 'Round, It's a Brawl!",
+          "description": "Setelah melancarkan Royal Descent: Behold, Itto the Evil!, CD skill ini akan berkurang 1,5 detik untuk setiap Karakter Geo yang ada di dalam party, dan akan memulihkan 6 Energy Arataki Itto.\r\nDengan cara ini, CD dapat berkurang maksimum hingga 4,5 detik, dan Energy dapat pulih maksimum hingga 18 Energy.\r\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "Horns Lowered, Coming Through",
+          "description": "Meningkatkan 3 level Masatsu Zetsugi: Akaushi Burst!.\r\nMaksimum: Lv. 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "Jailhouse Bread and Butter",
+          "description": "Setelah status Raging Oni King yang didapatkan dari Royal Descent: Behold, Itto the Evil! berakhir, DEF dan ATK seluruh anggota party di sekitar meningkat 20% selama 10 detik.\r\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "10 Years of Hanamizaka Fame",
+          "description": "Meningkatkan 3 level Royal Descent: Behold, Itto the Evil!.\r\nMaksimum: Lv. 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
+          "title": "Arataki Itto, Present!",
+          "description": "Meningkatkan 70% Crit DMG untuk Charged Attack Arataki Itto. Selain itu, saat melancarkan Arataki Kesagiri, Itto memiliki 50% kemungkinan untuk tidak mengonsumsi lapisan Superlative Superstrength.\r\n",
           "descriptions": []
         }
       ]
@@ -1776,86 +1841,159 @@
       "key": "gorou",
       "name": "Gorou",
       "title": "Canine Warrior",
-      "description": "The great general of Watatsumi Island's forces. He is deeply trusted by his subordinates.",
+      "description": "Jenderal pasukan di Pulau Watatsumi. Dia sangat dipercaya anak buahnya.",
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Ripping Fang Fletching",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Normal Attack",
+              "description": "Melancarkan hingga 4 serangan berturut-turut menggunakan busur.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Charged Attack",
+              "description": "Melancarkan sebuah Serangan Membidik yang lebih akurat untuk mengakibatkan DMG lebih besar.\r\nSaat membidik, kristal batu akan berkumpul di ujung anak panah. Setelah terkumpul penuh, anak panah yang diluncurkan akan mengakibatkan Geo DMG.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Plunging Attack",
+              "description": "Melancarkan hujan panah dari udara dan menerjang tanah dengan kecepatan tinggi, mengakibatkan DMG Area saat mendarat.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "DMG Tahap 1|{param1}%",
+            "DMG Tahap 2|{param2}%",
+            "DMG Tahap 3|{param3}%",
+            "DMG Tahap 4|{param4}%",
+            "DMG Membidik|{param5}%",
+            "DMG Membidik Penuh|{param6}%",
+            "DMG Selama Plunging|{param7}%",
+            "DMG Plunging Attack Min./Maks.|{param8}% / {param9}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Inuzaka All-Round Defense",
+          "description": "Mengakibatkan Geo DMG Area dan mendirikan General's War-Banner.\r\n",
+          "abilities": [
+            {
+              "name": "General's War-Banner",
+              "description": "Memberikan buff berikut kepada Karakter aktif di dalam area skill, berdasarkan jumlah Karakter Geo di dalam party saat Banner didirikan:\r\n",
+              "descriptions": [
+                "Satu Karakter — memberikan efek \"Standing Firm\": Bonus DEF.",
+                "Dua Karakter — memberikan efek \"Impregnable\": Bonus DEF dan meningkatkan pertahanan terhadap interupsi.",
+                "Tiga Karakter — memberikan efek \"Crunch\": Bonus DEF, peningkatan pertahanan terhadap interupsi, dan memberikan Bonus Geo DMG.",
+                "Hanya bisa ada 1 General's War-Banner ciptaan Gorou yang ada di medan pertempuran dalam waktu bersamaan. Karakter hanya dapat memperoleh buff dari 1 General's War-Banner. Setelah Karakter meninggalkan medan pertempuran, efek dalam medan tersebut akan berlanjut selama 2 detik."
+              ]
+            },
+            {
+              "name": "Mode Tahan",
+              "description": "Dapat menyesuaikan posisi skill.\r\n",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "DMG Skill|{param1}%",
+            "Peningkatan DEF|{param2}",
+            "Bonus Geo DMG|{param3}%",
+            "Durasi|{param4}s",
+            "Cooldown|{param5}s"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Juuga: Forward Unto Victory",
+          "description": "Dengan menunjukkan kewibawaan sebagai jenderal, Gorou mengakibatkan Geo DMG Area dan menciptakan area General's Glory untuk menyalakan semangat rekan-rekannya.\r\n",
+          "abilities": [
+            {
+              "name": "General's Glory",
+              "description": "Memiliki karakteristik berikut:\r\n",
+              "descriptions": [
+                "Area ini memiliki efek yang persis seperti efek General's War Banner dari Elemental Skill Gorou, Inuzaka All-Round Defense, yang memberikan buff pada Karakter aktif di dalam area skill sesuai dengan jumlah Karakter Geo dalam party. Area ini juga akan mengikuti pergerakan Karakter aktif.",
+                "Menciptakan 1 Crystal Collapse setiap 1,5 detik yang mengakibatkan Geo DMG Area pada 1 musuh di lingkup area.",
+                "Crystal Collapse juga akan menarik 1 Elemental Shard yang terbentuk dari Reaksi Crystallize dalam area tersebut ke posisi Karakter aktif setiap 1,5 detik.",
+                "Bila General's War-Banner ciptaan Gorou sendiri berada di medan pertempuran saat melancarkan skill ini, maka General's War-Banner tersebut akan hancur. Selain itu, selama durasi General's Glory berlangsung, tidak akan muncul General's War-Banner saat Gorou sendiri melancarkan Elemental skill Inuzaka All-Round Defense.",
+                "Efek General's Glory milik Gorou sendiri akan hilang ketika Gorou gugur."
+              ]
+            }
+          ],
+          "stats": [
+            "DMG Skill|{param1}% DEF",
+            "DMG Crystal Collapse|{param2}% DEF",
+            "Durasi|{param3}s",
+            "Cooldown|{param4}s",
+            "Konsumsi Energy|{param5}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "Seeker of Shinies",
+          "description": "Memperlihatkan lokasi produk khas Inazuma di sekitar pada peta kecil.\r\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
+          "title": "Heedless of the Wind and Weather",
+          "description": "Meningkatkan 25% DEF seluruh anggota party di sekitar selama 12 detik setelah melancarkan Juuga: Forward Unto Victory.\r\n",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
+          "title": "A Favor Repaid",
+          "description": "Berdasarkan DEF-nya, Gorou memperoleh Bonus DMG berikut:\r\n",
+          "descriptions": [
+            "Meningkatkan DMG skill Inuzaka All-Round Defense sebesar 156% DEF Gorou.",
+            "Meningkatkan DMG skill Juuga: Forward Unto Victory dan DMG Crystal Collapse sebesar 15,6% DEF Gorou."
+          ]
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "Rushing Hound: Swift as the Wind",
+          "description": "Setelah Karakter aktif (selain Gorou sendiri) mengakibatkan Geo DMG saat berada dalam Area General's War-Banner atau General's Glory ciptaan Gorou sendiri, durasi CD Inuzaka All-Round Defense milik Gorou akan berkurang 2 detik.\r\nEfek ini dapat terpicu setiap 10 detik.\r\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "Sitting Hound: Steady as a Clock",
+          "description": "Selama durasi General's Glory berlangsung, setelah Karakter aktif di sekitar memperoleh Elemental Shard dari reaksi Crystallize, maka durasi General's Glory milik Gorou sendiri akan bertambah 1 detik.\r\nEfek ini dapat terpicu setiap 0,1 detik dan durasi General's Glory dapat bertambah hingga 3 detik dengan cara ini.\r\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "Mauling Hound: Fierce as Fire",
+          "description": "Meningkatkan 3 level Inuzaka All-Round Defense.\r\nMaksimum: Lv.15.\r\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "Lapping Hound: Warm as Water",
+          "description": "Saat General's Glory berada dalam status \"Impregnable\" atau \"Crunch\", HP Karakter aktif yang berada di dalam area General's Glory akan dipulihkan sebesar 50% DEF Gorou sendiri setiap 1,5 detik.\r\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "Striking Hound: Thunderous Force",
+          "description": "Meningkatkan 3 level Juuga: Forward Unto Victory.\r\nMaksimum: Lv. 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
+          "title": "Valiant Hound: Mountainous Fealty",
+          "description": "Dalam 12 detik setelah menggunakan Inuzaka All-Round Defense atau Juuga: Forward Unto Victory, Gorou akan meningkatkan CRIT DMG untuk Geo DMG milik seluruh anggota party di sekitar sesuai dengan level area Gorou saat skill ini dilancarkan:\r\n",
+          "descriptions": [
+            "Standing Firm: Meningkatkan 10%.",
+            "Impregnable: Meningkatkan 20%.",
+            "Crunch: Meningkatkan 40%.",
+            "Efek ini tidak bisa ditumpuk, yang terhitung adalah yang terakhir kali aktif."
+          ]
         }
       ]
     },
@@ -4456,6 +4594,156 @@
       ]
     },
     {
+      "key": "shenhe",
+      "name": "Shenhe",
+      "title": "Lonesome Transcendence",
+      "description": "Seorang murid Adeptus dengan temperamen yang sedikit unik. Karena sudah lama hidup terisolasi di pegunungan Liyue, sifatnya juga menjadi acuh tak acuh dan menjaga jarak seperti para Adeptus.",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "Dawnstar Piercer",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Normal Attack",
+              "description": "Melancarkan hingga 5 serangan tombak berturut-turut.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Charged Attack",
+              "description": "Mengonsumsi sejumlah Stamina untuk menerjang ke depan, mengakibatkan DMG pada musuh di jalurnya.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Plunging Attack",
+              "description": "Menerjang dari udara untuk menghantam tanah, mengakibatkan DMG pada musuh di jalur terjangan dan mengakibatkan DMG area saat mendarat.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "DMG Tahap 1|{param1}%",
+            "DMG Tahap 2|{param2}%",
+            "DMG Tahap 3|{param3}%",
+            "DMG Tahap 4|{param4}% + {param5}%",
+            "DMG Tahap 5|{param6}%",
+            "DMG Charged Attack|{param7}%",
+            "Konsumsi Stamina Charged Attack|{param8}",
+            "DMG Selama Plunging|{param9}%",
+            "DMG Plunging Attack Min./Maks.|{param10}% / {param11}%"
+          ]
+        },
+        {
+          "key": "s2",
+          "title": "Spring Spirit Summoning",
+          "description": "Memadatkan embun beku perak untuk mengusir semua iblis.\r\nMemberikan efek \"Icy Quill\" pada seluruh anggota party di sekitar dan mengakibatkan Cryo DMG berdasarkan cara skill dilancarkan, yaitu ditekan atau ditahan.\r\n",
+          "abilities": [
+            {
+              "name": "Mode Tekan",
+              "description": "Menerjang ke arah depan bersama \"Talisman Spirit\" dan mengakibatkan Cryo DMG pada musuh yang berada di jalur serangan.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Mode Tahan",
+              "description": "Memerintahkan Talisman Spirit untuk mengakibatkan Cryo DMG Area.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Icy Quill",
+              "description": "Saat Normal Attack, Charged Attack, Plunging Attack, Elemental Skill, dan Elemental Burst mengakibatkan Cryo DMG kepada musuh, DMG yang diakibatkan akan meningkat sesuai dengan ATK Shenhe saat ini.\r\nEfek Icy Quill akan hilang setelah durasinya berakhir atau lapisannya terkonsumsi dalam jumlah tertentu. Icy Quill yang dilancarkan dengan Mode Tahan akan memiliki durasi lebih lama dan jumlah lapisan lebih banyak.\r\nSaat satu serangan Cryo DMG mengenai beberapa musuh secara bersamaan, jumlah lapisan Icy Quill yang dikonsumsi akan disesuaikan dengan jumlah musuh yang terkena serangan. Efek dan jumlah lapisan Icy Quill untuk setiap Karakter dalam party akan dihitung secara terpisah.\r\n",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "DMG Skill (Mode Tekan)|{param1}%",
+            "DMG Skill (Mode Tahan)|{param2}%",
+            "Peningkatan DMG|{param3}% ATK",
+            "Durasi Mode Tekan/Tahan|{param4} detik / {param5} detik",
+            "Jumlah Lapisan Mode Tekan/Tahan|{param6} lapis/ {param7} lapis",
+            "Cooldown (Mode Tekan)|{param8} detik",
+            "Cooldown (Mode Tahan)|{param9} detik"
+          ]
+        },
+        {
+          "key": "s3",
+          "title": "Divine Maiden's Deliverance",
+          "description": "Melepaskan kekuatan Talisman Spirit, membiarkannya bergerak bebas di dunia ini, dan mengakibatkan Cryo DMG Area.\r\nTalisman Spirit akan menciptakan sebuah area yang mengurangi Cryo RES dan Physical RES musuh yang berada di dalamnya. Selama durasinya, area ini terus mengakibatkan Cryo DMG kepada musuh yang berada di dalamnya.\r\n",
+          "abilities": [],
+          "stats": [
+            "DMG Skill|{param1}%",
+            "Penurunan RES|{param2}%",
+            "DMG Berkelanjutan|{param3}%",
+            "Durasi|{param4} detik",
+            "Cooldown|{param5} detik",
+            "Konsumsi Energy|{param6}"
+          ]
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "Precise Comings and Goings",
+          "description": "Ketika dikirim untuk melakukan ekspedisi di Liyue selama 20 jam, hadiah yang didapatkan akan bertambah 25%.\r\n",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "Deific Embrace",
+          "description": "Karakter aktif yang berada di dalam area Divine Maiden's Deliverance akan mendapatkan 15% Cryo DMG Bonus.\r\n",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "Spirit Communion Seal",
+          "description": "Setelah Shenhe melancarkan Spring Spirit Summoning, anggota party di sekitar akan mendapatkan efek berikut:\r\n",
+          "descriptions": [
+            "Mode Tekan: Meningkatkan 15% DMG Elemental Skill dan Elemental Burst selama 10 detik.",
+            "Mode Tahan: Meningkatkan 15% DMG Normal Attack, Charged Attack, dan Plunging Attack selama 15 detik."
+          ]
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "Clarity of Heart",
+          "description": "Jumlah penggunaan Spring Spirit Summoning bertambah 1 kali.\r\n",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "Centered Spirit",
+          "description": "Durasi Divine Maiden's Deliverance diperpanjang 6 detik. CRIT DMG dari Cryo DMG untuk Karakter aktif yang berada di dalam area meningkat 15%.\r\n",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "Seclusion",
+          "description": "Meningkatkan 3 level Spring Spirit Summoning.\r\nMaksimum: Lv. 15.\r\n",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "Insight",
+          "description": "Saat Karakter yang berada dalam status Icy Quill dari Shenhe sendiri memicu Bonus DMG dari Icy Quill, Shenhe akan mendapatkan 1 lapis Skyfrost Mantra:\r\n",
+          "descriptions": [
+            "Saat Shenhe melancarkan Spring Spirit Summoning, dia akan mengonsumsi semua lapisan Skyfrost Mantra dan meningkatkan DMG yang diakibatkan oleh Spring Spirit Summoning sebesar 5% untuk setiap lapisan yang dikonsumsi.",
+            "Efek ini dapat ditumpuk hingga 50 lapis dan berlangsung selama 60 detik."
+          ]
+        },
+        {
+          "key": "c5",
+          "title": "Divine Attainment",
+          "description": "Meningkatkan 3 level Divine Maiden's Deliverance.\r\nMaksimum: Lv. 15.\r\n",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "Mystical Abandon",
+          "description": "Saat Karakter memicu efek Icy Quill melalui DMG Normal Attack dan Charged Attack, jumlah lapisan Icy Quill tidak akan berkurang.\r\n",
+          "descriptions": []
+        }
+      ]
+    },
+    {
       "key": "sucrose",
       "name": "Sucrose",
       "title": "Harmless Sweetie",
@@ -6008,6 +6296,93 @@
       ]
     },
     {
+      "key": "yae-miko",
+      "name": "Yae Miko",
+      "title": "???",
+      "description": "",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ]
+    },
+    {
       "key": "yanfei",
       "name": "Yanfei",
       "title": "Wise Innocence",
@@ -6278,6 +6653,149 @@
           "key": "c6",
           "title": "Naganohara Meteor Swarm",
           "description": "Selama durasi Niwabi Fire-Dance, Normal Attack Yoimiya memiliki 50% kemungkinan menembakkan Blazing Arrow tambahan yang mengakibatkan 60% DMG aslinya. DMG ini terhitung sebagai Normal Attack DMG.\r\n",
+          "descriptions": []
+        }
+      ]
+    },
+    {
+      "key": "yun-jin",
+      "name": "Yun Jin",
+      "title": "Stage Lucida",
+      "description": "Seorang penyanyi opera Liyue yang mahir bernyanyi dan pintar menulis sandiwara. Gayanya lain dari yang lain — elegan dan lembut, persis seperti karakternya.",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "Cloud-Grazing Strike",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Normal Attack",
+              "description": "Melancarkan hingga 5 serangan tombak berturut-turut.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Charged Attack",
+              "description": "Mengonsumsi sejumlah Stamina untuk menerjang ke depan, mengakibatkan DMG pada musuh di jalurnya.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Plunging Attack",
+              "description": "Menerjang dari udara untuk menghantam tanah, mengakibatkan DMG pada musuh di jalur terjangan dan mengakibatkan DMG area saat mendarat.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "DMG Tahap 1|{param1}%",
+            "DMG Tahap 2|{param2}%",
+            "DMG Tahap 3|{param3}% + {param4}%",
+            "DMG Tahap 4|{param5}% + {param6}%",
+            "DMG Tahap 5|{param7}%",
+            "DMG Charged Attack|{param8}%",
+            "Konsumsi Stamina Charged Attack|{param9}",
+            "DMG Selama Plunging|{param10}%",
+            "DMG Plunging Attack Min./Maks.|{param11}% / {param12}%"
+          ]
+        },
+        {
+          "key": "s2",
+          "title": "Opening Flourish",
+          "description": "Yun Jin dapat menggunakan kuda-kuda bela dirinya untuk melawan para musuh.\r\n",
+          "abilities": [
+            {
+              "name": "Mode Tekan",
+              "description": "Memutar tombak dengan kuda-kuda pembelah awan dan mengakibatkan Geo DMG.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Mode Tahan",
+              "description": "Memasang kuda-kuda Opening Flourish dan melakukan charge untuk menciptakan sebuah perisai. Jumlah DMG yang dapat ditahan perisai didasarkan pada Max HP Yun Jin dan memiliki 150% efek penahanan terhadap semua Elemental DMG dan Physical DMG. Perisai akan berakhir saat Elemental Skill selesai dilancarkan.\r\nSaat melancarkan skill dengan melepas tombol, durasinya berakhir, atau perisainya hancur, Yun Jin akan menyerang dengan ayunan tombaknya dan melepaskan energi yang tersimpan untuk mengakibatkan Geo DMG.\r\nYun Jin akan melancarkan serangan Charge Tahap 1 atau Charge Tahap 2 berdasarkan durasi charge-nya.\r\n",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "DMG Mode Tekan|{param1}% DEF",
+            "DMG Charge Tahap 1|{param2}% DEF",
+            "DMG Charge Tahap 2|{param3}% DEF",
+            "Pertahanan Perisai|{param4}% Max HP+ {param5}",
+            "Cooldown|{param6} detik"
+          ]
+        },
+        {
+          "key": "s3",
+          "title": "Cliffbreaker's Banner",
+          "description": "Mengakibatkan Geo DMG Area dan memberikan efek Flying Cloud Flag Formation kepada seluruh anggota party di sekitar.\r\n",
+          "abilities": [
+            {
+              "name": "Flying Cloud Flag Formation",
+              "description": "Saat mengakibatkan DMG kepada musuh dengan Normal Attack, DMG yang diakibatkan akan meningkat sesuai dengan DEF Yun Jin saat ini.\r\nEfek Flying Cloud Flag Formation akan hilang setelah durasinya berakhir atau lapisannya terkonsumsi dalam jumlah tertentu.\r\nSaat satu Normal Attack mengenai beberapa musuh secara bersamaan, jumlah lapisan Cloud Flag Formation yang dikonsumsi akan disesuaikan dengan jumlah musuh yang terkena serangan. Efek dan jumlah lapisan Cloud Flag Formation untuk setiap Karakter dalam party akan dihitung secara terpisah.\r\n",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "DMG Skill|{param1}%",
+            "Peningkatan DMG|{param2}% DEF",
+            "Durasi|{param3} detik",
+            "Jumlah Lapisan|{param4} lapis",
+            "Cooldown|{param5} detik",
+            "Konsumsi Energy|{param6}"
+          ]
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "Light Nourishment",
+          "description": "Saat masakan jenis petualangan dimasak dengan sempurna, terdapat 12% kemungkinan mendapatkan hasil 2 kali lipat.\r\n",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "True to Oneself",
+          "description": "Menggunakan Opening Flourish tepat saat Yun Jin terkena serang akan melancarkan bentuk Charge Tahap 2 (Mode Tahan)-nya.\r\n",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "Breaking Conventions",
+          "description": "Bonus DMG Normal Attack dari Flying Cloud Flag Formation akan meningkat lagi sebesar 2,5%/5%/7,5%/11,5% dari DEF Yun Jin saat party berisi Karakter dengan 1/2/3/4 jenis elemen berbeda.\r\n",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "Thespian Gallop",
+          "description": "Mengurangi 18% CD Opening Flourish.\r\n",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "Myriad Mise-En-Scène",
+          "description": "Setelah melancarkan Cliffbreaker's Banner, DMG Normal Attack seluruh anggota party di sekitar meningkat 15% selama 12 detik.\r\n",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "Seafaring General",
+          "description": "Meningkatkan 3 level Cliffbreaker's Banner.\r\nMaksimum: Lv. 15.\r\n",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "Flower and a Fighter",
+          "description": "Setelah Yun Jin memicu reaksi Crystallize, DEF Yun Jin meningkat 20% selama 12 detik.\r\n",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "Famed Throughout the Land",
+          "description": "Meningkatkan 3 level Opening Flourish.\r\nMaksimum: Lv. 15.\r\n",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "Decorous Harmony",
+          "description": "Meningkatkan 12% Normal ATK SPD Karakter yang berada dalam status Flying Cloud Flag Formation.\r\n",
           "descriptions": []
         }
       ]
@@ -6604,6 +7122,18 @@
         "Meningkatkan {color}18{/color}% DMG terhadap musuh yang terpengaruh Pyro atau Electro.",
         "Meningkatkan {color}21{/color}% DMG terhadap musuh yang terpengaruh Pyro atau Electro.",
         "Meningkatkan {color}24{/color}% DMG terhadap musuh yang terpengaruh Pyro atau Electro."
+      ]
+    },
+    {
+      "key": "calamity-queller",
+      "name": "Calamity Queller",
+      "description": "Sebuah senjata tajam yang diciptakan dari kristal aneh. Cahaya birunya yang remang-remang seakan membisikkan cerita masa lalu yang tiada berujung.",
+      "refinements": [
+        "Mendapatkan {color}12{/color}% Elemental DMG Bonus untuk semua elemen. Setelah melancarkan Elemental Skill, akan mendapatkan efek Consummation yang berlangsung selama 20 detik. Efek ini akan meningkatkan {color}3,2{/color}% ATK setiap detik dan dapat ditumpuk hingga 6 kali. Saat Karakter yang mengenakan Senjata ini berada dalam party tapi tidak di medan pertempuran, maka peningkatan ATK Consummation akan menjadi dua kali lipat.",
+        "Mendapatkan {color}15{/color}% Elemental DMG Bonus untuk semua elemen. Setelah melancarkan Elemental Skill, akan mendapatkan efek Consummation yang berlangsung selama 20 detik. Efek ini akan meningkatkan {color}4{/color}% ATK setiap detik dan dapat ditumpuk hingga 6 kali. Saat Karakter yang mengenakan Senjata ini berada dalam party tapi tidak di medan pertempuran, maka peningkatan ATK Consummation akan menjadi dua kali lipat.",
+        "Mendapatkan {color}18{/color}% Elemental DMG Bonus untuk semua elemen. Setelah melancarkan Elemental Skill, akan mendapatkan efek Consummation yang berlangsung selama 20 detik. Efek ini akan meningkatkan {color}4,8{/color}% ATK setiap detik dan dapat ditumpuk hingga 6 kali. Saat Karakter yang mengenakan Senjata ini berada dalam party tapi tidak di medan pertempuran, maka peningkatan ATK Consummation akan menjadi dua kali lipat.",
+        "Mendapatkan {color}21{/color}% Elemental DMG Bonus untuk semua elemen. Setelah melancarkan Elemental Skill, akan mendapatkan efek Consummation yang berlangsung selama 20 detik. Efek ini akan meningkatkan {color}5,6{/color}% ATK setiap detik dan dapat ditumpuk hingga 6 kali. Saat Karakter yang mengenakan Senjata ini berada dalam party tapi tidak di medan pertempuran, maka peningkatan ATK Consummation akan menjadi dua kali lipat.",
+        "Mendapatkan {color}24{/color}% Elemental DMG Bonus untuk semua elemen. Setelah melancarkan Elemental Skill, akan mendapatkan efek Consummation yang berlangsung selama 20 detik. Efek ini akan meningkatkan {color}6,4{/color}% ATK setiap detik dan dapat ditumpuk hingga 6 kali. Saat Karakter yang mengenakan Senjata ini berada dalam party tapi tidak di medan pertempuran, maka peningkatan ATK Consummation akan menjadi dua kali lipat."
       ]
     },
     {
@@ -7317,6 +7847,18 @@
       ]
     },
     {
+      "key": "redhorn-stonethresher",
+      "name": "Redhorn Stonethresher",
+      "description": "Berdasarkan penuturan pemiliknya yang terdahulu, pedang ini adalah pedang \"Bertanduk Merah Penghancur Batu Pelumat Emas Penakluk Singa\" yang dapat membuat monster mana pun lari terbirit-birit.",
+      "refinements": [
+        "Meningkatkan {color}28{/color}% DEF. DMG dari Normal dan Charged Attack akan meningkat sebesar {color}40{/color}% DEF.",
+        "Meningkatkan {color}35{/color}% DEF. DMG dari Normal dan Charged Attack akan meningkat sebesar {color}50{/color}% DEF.",
+        "Meningkatkan {color}42{/color}% DEF. DMG dari Normal dan Charged Attack akan meningkat sebesar {color}60{/color}% DEF.",
+        "Meningkatkan {color}49{/color}% DEF. DMG dari Normal dan Charged Attack akan meningkat sebesar {color}70{/color}% DEF.",
+        "Meningkatkan {color}56{/color}% DEF. DMG dari Normal dan Charged Attack akan meningkat sebesar {color}80{/color}% DEF."
+      ]
+    },
+    {
       "key": "royal-bow",
       "name": "Royal Bow",
       "description": "Busur tua yang pernah digunakan oleh para bangsawan penguasa Mondstadt di zaman dahulu. Setelah generasi demi generasi berlalu, busur ini masih dapat menembakkan panah dengan sangat cepat.",
@@ -7964,7 +8506,7 @@
       "name": "Emblem of Severed Fate",
       "bonus": [
         "Energy Recharge +20%.",
-        "Meningkatkan Elemental Burst DMG sebesar 25% dari Energy Recharge. Dengan cara ini Karakter bisa mendapatkan peningkatan DMG maksimal hingga 75%."
+        "Meningkatkan DMG Elemental Burst sebesar 25% dari Energy Recharge. Peningkatan DMG Elemental Burst maksimum yang bisa didapatkan dengan cara ini adalah 75%."
       ]
     },
     {
@@ -7989,6 +8531,14 @@
       "bonus": [
         "Hydro DMG Bonus +15%.",
         "Setelah melancarkan Elemental Skill, meningkatkan 30% DMG Normal dan Charged Attack selama 15 detik."
+      ]
+    },
+    {
+      "key": "husk-of-opulent-dreams",
+      "name": "Husk of Opulent Dreams",
+      "bonus": [
+        "DEF +30%.",
+        "Karakter yang mengenakan set Artefak ini akan mendapatkan efek Curiosity dalam kondisi berikut Karakter aktif akan mendapatkan 1 lapis setelah serangan Geo-nya mengenai musuh, dapat terpicu setiap 0,3 detik. Karakter bisa mendapatkan 1 lapis setiap 3 detik jika tidak berada di medan pertempuran. Efek Curiosity dapat ditumpuk hingga 4 lapis, setiap lapis meningkatkan 6% DEF dan 6% Geo DMG Bonus. Karakter akan kehilangan 1 lapis setiap 6 detik jika tidak mendapatkan efek Curiosity baru."
       ]
     },
     {
@@ -8036,7 +8586,15 @@
       "name": "Noblesse Oblige",
       "bonus": [
         "Meningkatkan 20% DMG Elemental Burst.",
-        "Setelah melancarkan Elemental Burst, meningkatkan ATK 20% semua anggota party selama 12 detik. Efek ini tidak dapat ditumpuk."
+        "Setelah melancarkan Elemental Burst, meningkatkan 20% ATK semua anggota party selama 12 detik. Efek ini tidak dapat ditumpuk."
+      ]
+    },
+    {
+      "key": "ocean-hued-clam",
+      "name": "Ocean-Hued Clam",
+      "bonus": [
+        "Bonus pemulihan +15%.",
+        "Jika Karakter yang mengenakan set Artefak ini memulihkan HP salah satu Karakter dalam party, akan muncul Sea-Dyed Foam yang berlangsung selama 3 detik yang mencatat dan mengakumulasi jumlah pemulihan yang dilakukan (termasuk pemulihan yang berlebih). Setelah durasinya berakhir, Sea-Dyed Foam akan meledak dan mengakibatkan DMG sebesar 90% dari jumlah pemulihan yang tercatat (Perhitungan DMG ini mirip dengan Reaksi Elemental seperti Electro-Charged, Superconduct, dan lainnya, tetapi tidak dipengaruhi oleh Elemental Mastery, Level Karakter, atau Bonus DMG Reaksi Elemental). Sea-Dyed Foam hanya bisa muncul setiap 3,5 detik. Setiap Sea-Dyed Foam dapat mengakumulasi pemulihan hingga 30.000 HP (termasuk pemulihan yang berlebih). Dalam party sendiri, hanya bisa ada satu Sea-Dyed Foam yang muncul dalam waktu bersamaan. Efek dari set Artefak ini tetap dapat terpicu meskipun Karakter party yang mengenakannya tidak berada di medan pertempuran."
       ]
     },
     {
@@ -8537,6 +9095,11 @@
       "key": "dragon-lords-crown",
       "name": "Dragon Lord's Crown",
       "description": "Tanduk yang terbuat dari kristalisasi giok selama ribuan tahun, berada di kepala sang raja naga layaknya sebuah mahkota.\r\nDipenuhi jiwa-jiwa dan diukir dari batu paling kokoh, tanduk ini lahir dari jantung gunung yang terdalam untuk menunjukkan kekuatan bumi pada bangsa ribuan bebatuan ini, dan tanduk berwarna emasnya melambangkan pertentangan masa lalu terhadap raja kuno.\r\nSelama beberapa waktu, tanduk ini telah hancur dan kehilangan keindahannya, tapi kini dia berkilau kembali di dalam genggaman tanganmu."
+    },
+    {
+      "key": "dragonheirs-false-fin",
+      "name": "Dragonheir's False Fin",
+      "description": "Sepotong jaringan biologis yang kamu temukan setelah mengalahkan Bathysmal Vishap.\r\nMeskipun terlihat seperti semacam sirip, namun sebenarnya ia tidak punya fungsi apa pun.\r\nOrang-orang Byakuyakoku pernah melakukan penelitian yang mendalam terhadap Bathysmal Vishap. Ciri paling khas yang mereka miliki adalah kemampuan untuk memilih sifat genetis apa yang ingin diturunkan oleh mereka kepada keturunannya. Karena kebencian mereka yang besar terhadap umat manusia, para vishap ini akan kehilangan ketajaman visualnya pada saat mereka mencapai usia dewasa. Pada saat yang sama, mereka juga telah mengembangkan tingkat keberagaman struktur atom dalam unsur tertentu untuk tujuan pertempuran."
     },
     {
       "key": "dream-of-the-dandelion-gladiator",
@@ -9224,6 +9787,11 @@
       "description": "Sebuah tanaman biji-bijian yang biasa ditemukan di Teyvat. Orang-orang dari semua lapisan masyarakat menikmati tekstur butirannya yang berbeda, seperti kata pepatah \"Jenis beras yang sama dapat memberi makan 100 jenis orang.\""
     },
     {
+      "key": "riftborn-regalia",
+      "name": "Riftborn Regalia",
+      "description": "Tanduk patah yang kamu peroleh dari mengalahkan Wolflord. Meskipun begitu, benda ini seharusnya sudah tidak ada jejaknya lagi setelah dia diusir dari dunia ini.\r\nBahkan sesosok penguasa di antara Riftwolves bukanlah lawan yang berarti bagi monster dari silsilah yang lebih tinggi.\r\n\"Emas\" memproduksi massal gerombolan serigala yang cacat ini seolah-olah secara tidak sengaja, bagaikan menuliskan sesuatu di atas kertas yang penuh tulisan, dan menjadikan tanduk yang satu ini mewakili otoritasnya untuk memerintahkan induk gelapnya untuk membubarkan ruang itu sendiri."
+    },
+    {
       "key": "ring-of-boreas",
       "name": "Ring of Boreas",
       "description": "Sebongkah es kristal dari Great Wolf King of the North.\r\nDaratan ini sebelumnya merupakan tempat yang selalu dilanda badai salju dan dipenuhi potongan es yang tajam, semuanya bergerak atas kehendak Boreas. Meskipun kekuatannya sudah meredup, tetapi angin dingin masih berhembus di daratan ini."
@@ -9654,7 +10222,7 @@
     {
       "key": "vaporize",
       "name": "Vaporize",
-      "effect": "Deals ×1.5 Pyro DMG when a Pyro attack triggers the reaction.",
+      "effect": "Deals ×2 Pyro DMG when a Pyro attack triggers the reaction.",
       "description": null
     },
     {
@@ -9678,7 +10246,7 @@
     {
       "key": "vaporize-reverse",
       "name": "Vaporize (Reverse)",
-      "effect": "Deals ×2 Hydro DMG when a Hydro attack triggers the reaction.",
+      "effect": "Deals ×1.5 Hydro DMG when a Hydro attack triggers the reaction.",
       "description": null
     },
     {
@@ -9796,6 +10364,14 @@
       "name": "Blazing Axe Mitachurl"
     },
     {
+      "key": "bolteater-bathysmal-vishap",
+      "name": "Bolteater Bathysmal Vishap"
+    },
+    {
+      "key": "bolteater-bathysmal-vishap-hatchling",
+      "name": "Bolteater Bathysmal Vishap Hatchling"
+    },
+    {
       "key": "childe",
       "name": "Childe"
     },
@@ -9836,6 +10412,10 @@
       "name": "Cryo Slime"
     },
     {
+      "key": "cryo-specter",
+      "name": "Cryo Specter"
+    },
+    {
       "key": "cryo-whopperflower",
       "name": "Cryo Whopperflower"
     },
@@ -9874,6 +10454,10 @@
     {
       "key": "electro-slime",
       "name": "Electro Slime"
+    },
+    {
+      "key": "electro-specter",
+      "name": "Electro Specter"
     },
     {
       "key": "electro-whopperflower",
@@ -9946,6 +10530,10 @@
     {
       "key": "geovishap-hatchling",
       "name": "Geovishap Hatchling"
+    },
+    {
+      "key": "golden-wolflord",
+      "name": "Golden Wolflord"
     },
     {
       "key": "hilichurl",
@@ -10080,6 +10668,18 @@
       "name": "Maguu Kenki"
     },
     {
+      "key": "maguu-kenki-galloping-frost",
+      "name": "Maguu Kenki: Galloping Frost"
+    },
+    {
+      "key": "maguu-kenki-lone-gale",
+      "name": "Maguu Kenki: Lone Gale"
+    },
+    {
+      "key": "maguu-kenki-mask-of-terror",
+      "name": "Makai Kenki: Mask of Terror"
+    },
+    {
       "key": "millelith-sergeant",
       "name": "Millelith Sergeant"
     },
@@ -10128,6 +10728,14 @@
       "name": "Primo Geovishap"
     },
     {
+      "key": "primordial-bathysmal-vishap",
+      "name": "Primordial Bathysmal Vishap"
+    },
+    {
+      "key": "primordial-bathysmal-vishap-hatchling",
+      "name": "Primordial Bathysmal Vishap Hatchling"
+    },
+    {
       "key": "pyro-abyss-mage",
       "name": "Pyro Abyss Mage"
     },
@@ -10148,12 +10756,24 @@
       "name": "Pyro Slime"
     },
     {
+      "key": "pyro-specter",
+      "name": "Pyro Specter"
+    },
+    {
       "key": "pyro-whopperflower",
       "name": "Pyro Whopperflower"
     },
     {
       "key": "raiden-shogun",
       "name": "Raiden Shogun"
+    },
+    {
+      "key": "rimebiter-bathysmal-vishap",
+      "name": "Rimebiter Bathysmal Vishap"
+    },
+    {
+      "key": "rimebiter-bathysmal-vishap-hatchling",
+      "name": "Rimebiter Bathysmal Vishap Hatchling"
     },
     {
       "key": "rock-shield-hilichurl-guard",
@@ -10234,6 +10854,10 @@
     {
       "key": "thunderhelm-lawachurl",
       "name": "Thunderhelm Lawachurl"
+    },
+    {
+      "key": "treasure-hoarder-wallenstein",
+      "name": "Treasure Hoarder: Wallenstein"
     },
     {
       "key": "treasure-hoarders-boss",

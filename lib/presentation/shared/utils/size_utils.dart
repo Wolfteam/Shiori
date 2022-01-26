@@ -78,4 +78,17 @@ class SizeUtils {
         return defaultValue ?? 35;
     }
   }
+
+  static double getExtentRatioForSlidablePane(BuildContext context) {
+    final size = MediaQuery.of(context).size;
+    if (size.width < 700) {
+      return 0.6;
+    }
+
+    if (size.width < 1000) {
+      return 0.4;
+    }
+
+    return 0.2;
+  }
 }

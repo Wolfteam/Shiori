@@ -28353,6 +28353,322 @@
       ]
     },
     {
+      "key": "redhorn-stonethresher",
+      "image": "redhorn-stonethresher.png",
+      "type": "claymore",
+      "atk": 44.0,
+      "rarity": 5,
+      "secondaryStat": "critDmgPercentage",
+      "secondaryStatValue": 19.2,
+      "location": "gacha",
+      "isComingSoon": false,
+      "ascensionMaterials": [
+        {
+          "level": 20,
+          "materials": [
+            {
+              "key": "narukamis-wisdom",
+              "quantity": 5,
+              "type": "weaponPrimary"
+            },
+            {
+              "key": "concealed-claw",
+              "quantity": 5,
+              "type": "weapon"
+            },
+            {
+              "key": "old-handguard",
+              "quantity": 3,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 10000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "level": 40,
+          "materials": [
+            {
+              "key": "narukamis-joy",
+              "quantity": 5,
+              "type": "weaponPrimary"
+            },
+            {
+              "key": "concealed-claw",
+              "quantity": 18,
+              "type": "weapon"
+            },
+            {
+              "key": "old-handguard",
+              "quantity": 12,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 20000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "level": 50,
+          "materials": [
+            {
+              "key": "narukamis-joy",
+              "quantity": 9,
+              "type": "weaponPrimary"
+            },
+            {
+              "key": "concealed-unguis",
+              "quantity": 9,
+              "type": "weapon"
+            },
+            {
+              "key": "kageuchi-handguard",
+              "quantity": 9,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 30000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "level": 60,
+          "materials": [
+            {
+              "key": "narukamis-affection",
+              "quantity": 5,
+              "type": "weaponPrimary"
+            },
+            {
+              "key": "concealed-unguis",
+              "quantity": 18,
+              "type": "weapon"
+            },
+            {
+              "key": "kageuchi-handguard",
+              "quantity": 14,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 45000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "level": 70,
+          "materials": [
+            {
+              "key": "narukamis-affection",
+              "quantity": 9,
+              "type": "weaponPrimary"
+            },
+            {
+              "key": "concealed-talon",
+              "quantity": 14,
+              "type": "weapon"
+            },
+            {
+              "key": "famed-handguard",
+              "quantity": 9,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 55000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "level": 80,
+          "materials": [
+            {
+              "key": "narukamis-valor",
+              "quantity": 6,
+              "type": "weaponPrimary"
+            },
+            {
+              "key": "concealed-talon",
+              "quantity": 27,
+              "type": "weapon"
+            },
+            {
+              "key": "famed-handguard",
+              "quantity": 18,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 65000,
+              "type": "currency"
+            }
+          ]
+        }
+      ],
+      "craftingMaterials": [],
+      "stats": [
+        {
+          "level": 1,
+          "baseAtk": 44.0,
+          "statValue": 19.2,
+          "isAnAscension": false
+        },
+        {
+          "level": 5,
+          "baseAtk": 58.0,
+          "statValue": 22.3,
+          "isAnAscension": false
+        },
+        {
+          "level": 10,
+          "baseAtk": 76.0,
+          "statValue": 26.2,
+          "isAnAscension": false
+        },
+        {
+          "level": 15,
+          "baseAtk": 93.0,
+          "statValue": 30.0,
+          "isAnAscension": false
+        },
+        {
+          "level": 20,
+          "baseAtk": 110.0,
+          "statValue": 33.9,
+          "isAnAscension": false
+        },
+        {
+          "level": 20,
+          "baseAtk": 141.0,
+          "statValue": 33.9,
+          "isAnAscension": true
+        },
+        {
+          "level": 25,
+          "baseAtk": 158.0,
+          "statValue": 37.8,
+          "isAnAscension": false
+        },
+        {
+          "level": 30,
+          "baseAtk": 176.0,
+          "statValue": 41.7,
+          "isAnAscension": false
+        },
+        {
+          "level": 35,
+          "baseAtk": 193.0,
+          "statValue": 45.6,
+          "isAnAscension": false
+        },
+        {
+          "level": 40,
+          "baseAtk": 210.0,
+          "statValue": 49.4,
+          "isAnAscension": false
+        },
+        {
+          "level": 40,
+          "baseAtk": 241.0,
+          "statValue": 49.4,
+          "isAnAscension": true
+        },
+        {
+          "level": 45,
+          "baseAtk": 258.0,
+          "statValue": 53.3,
+          "isAnAscension": false
+        },
+        {
+          "level": 50,
+          "baseAtk": 275.0,
+          "statValue": 57.2,
+          "isAnAscension": false
+        },
+        {
+          "level": 50,
+          "baseAtk": 307.0,
+          "statValue": 57.2,
+          "isAnAscension": true
+        },
+        {
+          "level": 55,
+          "baseAtk": 324.0,
+          "statValue": 61.1,
+          "isAnAscension": false
+        },
+        {
+          "level": 60,
+          "baseAtk": 341.0,
+          "statValue": 65.0,
+          "isAnAscension": false
+        },
+        {
+          "level": 60,
+          "baseAtk": 373.0,
+          "statValue": 65.0,
+          "isAnAscension": true
+        },
+        {
+          "level": 65,
+          "baseAtk": 390.0,
+          "statValue": 68.8,
+          "isAnAscension": false
+        },
+        {
+          "level": 70,
+          "baseAtk": 408.0,
+          "statValue": 72.7,
+          "isAnAscension": false
+        },
+        {
+          "level": 70,
+          "baseAtk": 439.0,
+          "statValue": 72.7,
+          "isAnAscension": true
+        },
+        {
+          "level": 75,
+          "baseAtk": 457.0,
+          "statValue": 76.6,
+          "isAnAscension": false
+        },
+        {
+          "level": 80,
+          "baseAtk": 475.0,
+          "statValue": 80.4,
+          "isAnAscension": false
+        },
+        {
+          "level": 80,
+          "baseAtk": 506.0,
+          "statValue": 80.4,
+          "isAnAscension": true
+        },
+        {
+          "level": 85,
+          "baseAtk": 524.0,
+          "statValue": 84.3,
+          "isAnAscension": false
+        },
+        {
+          "level": 90,
+          "baseAtk": 542.0,
+          "statValue": 88.2,
+          "isAnAscension": false
+        }
+      ]
+    },
+    {
       "key": "royal-greatsword",
       "image": "royal-greatsword.png",
       "type": "claymore",
@@ -33266,6 +33582,322 @@
           "level": 90,
           "baseAtk": 510.0,
           "statValue": 55.1,
+          "isAnAscension": false
+        }
+      ]
+    },
+    {
+      "key": "calamity-queller",
+      "image": "calamity-queller.png",
+      "type": "polearm",
+      "atk": 49.0,
+      "rarity": 5,
+      "secondaryStat": "atkPercentage",
+      "secondaryStatValue": 3.6,
+      "location": "gacha",
+      "isComingSoon": false,
+      "ascensionMaterials": [
+        {
+          "level": 20,
+          "materials": [
+            {
+              "key": "mist-veiled-lead-elixir",
+              "quantity": 5,
+              "type": "weaponPrimary"
+            },
+            {
+              "key": "mist-grass-pollen",
+              "quantity": 5,
+              "type": "weapon"
+            },
+            {
+              "key": "whopperflower-nectar",
+              "quantity": 3,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 10000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "level": 40,
+          "materials": [
+            {
+              "key": "mist-veiled-mercury-elixir",
+              "quantity": 5,
+              "type": "weaponPrimary"
+            },
+            {
+              "key": "mist-grass-pollen",
+              "quantity": 18,
+              "type": "weapon"
+            },
+            {
+              "key": "whopperflower-nectar",
+              "quantity": 12,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 20000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "level": 50,
+          "materials": [
+            {
+              "key": "mist-veiled-mercury-elixir",
+              "quantity": 9,
+              "type": "weaponPrimary"
+            },
+            {
+              "key": "mist-grass",
+              "quantity": 9,
+              "type": "weapon"
+            },
+            {
+              "key": "shimmering-nectar",
+              "quantity": 9,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 30000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "level": 60,
+          "materials": [
+            {
+              "key": "mist-veiled-gold-elixir",
+              "quantity": 5,
+              "type": "weaponPrimary"
+            },
+            {
+              "key": "mist-grass",
+              "quantity": 18,
+              "type": "weapon"
+            },
+            {
+              "key": "shimmering-nectar",
+              "quantity": 14,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 45000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "level": 70,
+          "materials": [
+            {
+              "key": "mist-veiled-gold-elixir",
+              "quantity": 9,
+              "type": "weaponPrimary"
+            },
+            {
+              "key": "mist-grass-wick",
+              "quantity": 14,
+              "type": "weapon"
+            },
+            {
+              "key": "energy-nectar",
+              "quantity": 9,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 55000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "level": 80,
+          "materials": [
+            {
+              "key": "mist-veiled-primo-elixir",
+              "quantity": 6,
+              "type": "weaponPrimary"
+            },
+            {
+              "key": "mist-grass-wick",
+              "quantity": 27,
+              "type": "weapon"
+            },
+            {
+              "key": "energy-nectar",
+              "quantity": 18,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 65000,
+              "type": "currency"
+            }
+          ]
+        }
+      ],
+      "craftingMaterials": [],
+      "stats": [
+        {
+          "level": 1,
+          "baseAtk": 49.0,
+          "statValue": 3.6,
+          "isAnAscension": false
+        },
+        {
+          "level": 5,
+          "baseAtk": 68.0,
+          "statValue": 4.2,
+          "isAnAscension": false
+        },
+        {
+          "level": 10,
+          "baseAtk": 93.0,
+          "statValue": 4.9,
+          "isAnAscension": false
+        },
+        {
+          "level": 15,
+          "baseAtk": 119.0,
+          "statValue": 5.6,
+          "isAnAscension": false
+        },
+        {
+          "level": 20,
+          "baseAtk": 145.0,
+          "statValue": 6.4,
+          "isAnAscension": false
+        },
+        {
+          "level": 20,
+          "baseAtk": 176.0,
+          "statValue": 6.4,
+          "isAnAscension": true
+        },
+        {
+          "level": 25,
+          "baseAtk": 203.0,
+          "statValue": 7.1,
+          "isAnAscension": false
+        },
+        {
+          "level": 30,
+          "baseAtk": 230.0,
+          "statValue": 7.8,
+          "isAnAscension": false
+        },
+        {
+          "level": 35,
+          "baseAtk": 258.0,
+          "statValue": 8.5,
+          "isAnAscension": false
+        },
+        {
+          "level": 40,
+          "baseAtk": 286.0,
+          "statValue": 9.3,
+          "isAnAscension": false
+        },
+        {
+          "level": 40,
+          "baseAtk": 317.0,
+          "statValue": 9.3,
+          "isAnAscension": true
+        },
+        {
+          "level": 45,
+          "baseAtk": 346.0,
+          "statValue": 10.0,
+          "isAnAscension": false
+        },
+        {
+          "level": 50,
+          "baseAtk": 374.0,
+          "statValue": 10.7,
+          "isAnAscension": false
+        },
+        {
+          "level": 50,
+          "baseAtk": 406.0,
+          "statValue": 10.7,
+          "isAnAscension": true
+        },
+        {
+          "level": 55,
+          "baseAtk": 435.0,
+          "statValue": 11.5,
+          "isAnAscension": false
+        },
+        {
+          "level": 60,
+          "baseAtk": 464.0,
+          "statValue": 12.2,
+          "isAnAscension": false
+        },
+        {
+          "level": 60,
+          "baseAtk": 495.0,
+          "statValue": 12.2,
+          "isAnAscension": true
+        },
+        {
+          "level": 65,
+          "baseAtk": 525.0,
+          "statValue": 12.9,
+          "isAnAscension": false
+        },
+        {
+          "level": 70,
+          "baseAtk": 555.0,
+          "statValue": 13.6,
+          "isAnAscension": false
+        },
+        {
+          "level": 70,
+          "baseAtk": 586.0,
+          "statValue": 13.6,
+          "isAnAscension": true
+        },
+        {
+          "level": 75,
+          "baseAtk": 617.0,
+          "statValue": 14.4,
+          "isAnAscension": false
+        },
+        {
+          "level": 80,
+          "baseAtk": 648.0,
+          "statValue": 15.1,
+          "isAnAscension": false
+        },
+        {
+          "level": 80,
+          "baseAtk": 679.0,
+          "statValue": 15.1,
+          "isAnAscension": true
+        },
+        {
+          "level": 85,
+          "baseAtk": 709.0,
+          "statValue": 15.8,
+          "isAnAscension": false
+        },
+        {
+          "level": 90,
+          "baseAtk": 741.0,
+          "statValue": 16.5,
           "isAnAscension": false
         }
       ]

@@ -1,16 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shiori/application/bloc.dart';
+import 'package:shiori/injection.dart';
 import 'package:shiori/presentation/shared/loading.dart';
 import 'package:shiori/presentation/shared/scaffold_with_fab.dart';
 import 'package:shiori/presentation/weapon/widgets/weapon_detail_bottom.dart';
 import 'package:shiori/presentation/weapon/widgets/weapon_detail_top.dart';
 
 class WeaponPage extends StatelessWidget {
+  final String itemKey;
+
+  const WeaponPage({Key? key, required this.itemKey}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     final isPortrait = MediaQuery.of(context).orientation == Orientation.portrait;
-    return isPortrait ? const _PortraitLayout() : const _LandscapeLayout();
+    return BlocProvider(
+      create: (context) => Injection.weaponBloc..add(WeaponEvent.loadFromKey(key: itemKey)),
+      child: isPortrait ? const _PortraitLayout() : const _LandscapeLayout(),
+    );
   }
 }
 

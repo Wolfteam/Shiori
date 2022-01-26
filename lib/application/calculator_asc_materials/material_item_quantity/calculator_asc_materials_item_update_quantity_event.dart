@@ -10,6 +10,4 @@ class CalculatorAscMaterialsItemUpdateQuantityEvent with _$CalculatorAscMaterial
     required String key,
     required int quantity,
   }) = _Update;
-
-  const factory CalculatorAscMaterialsItemUpdateQuantityEvent.close() = _Close;
 }

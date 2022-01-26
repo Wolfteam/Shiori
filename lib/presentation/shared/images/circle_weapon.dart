@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:shiori/application/bloc.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/presentation/weapon/weapon_page.dart';
 
@@ -43,11 +41,8 @@ class CircleWeapon extends StatelessWidget {
   }
 
   Future<void> _gotoWeaponPage(BuildContext context) async {
-    final bloc = context.read<WeaponBloc>();
-    bloc.add(WeaponEvent.loadFromKey(key: itemKey));
-    final route = MaterialPageRoute(builder: (c) => WeaponPage());
+    final route = MaterialPageRoute(builder: (c) => WeaponPage(itemKey: itemKey));
     await Navigator.push(context, route);
     await route.completed;
-    bloc.pop();
   }
 }

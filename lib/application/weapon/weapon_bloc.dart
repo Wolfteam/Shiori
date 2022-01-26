@@ -1,7 +1,7 @@
 import 'dart:async';
 
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:shiori/application/common/pop_bloc.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/data_service.dart';
@@ -12,7 +12,7 @@ part 'weapon_bloc.freezed.dart';
 part 'weapon_event.dart';
 part 'weapon_state.dart';
 
-class WeaponBloc extends PopBloc<WeaponEvent, WeaponState> {
+class WeaponBloc extends Bloc<WeaponEvent, WeaponState> {
   final GenshinService _genshinService;
   final TelemetryService _telemetryService;
   final DataService _dataService;
@@ -20,37 +20,30 @@ class WeaponBloc extends PopBloc<WeaponEvent, WeaponState> {
   WeaponBloc(this._genshinService, this._telemetryService, this._dataService) : super(const WeaponState.loading());
 
   @override
-  WeaponEvent getEventForPop(String? key) => WeaponEvent.loadFromKey(key: key!, addToQueue: false);
-
-  @override
   Stream<WeaponState> mapEventToState(WeaponEvent event) async* {
-    if (event is! _AddedToInventory) {
-      yield const WeaponState.loading();
-    }
-
     final s = await event.when(
-      loadFromKey: (key, addToQueue) async {
+      loadFromKey: (key) async {
         final weapon = _genshinService.getWeapon(key);
         final translation = _genshinService.getWeaponTranslation(weapon.key);
-
-        if (addToQueue) {
-          await _telemetryService.trackWeaponLoaded(key);
-          currentItemsInStack.add(weapon.key);
-        }
+        await _telemetryService.trackWeaponLoaded(key);
         return _buildInitialState(weapon, translation);
       },
-      addedToInventory: (key, wasAdded) async {
-        if (state is! _LoadedState) {
-          return state;
-        }
-
-        final currentState = state as _LoadedState;
-        if (currentState.key != key) {
-          return state;
-        }
-
-        return currentState.copyWith.call(isInInventory: wasAdded);
-      },
+      addToInventory: (key) async => state.map(
+        loading: (state) async => state,
+        loaded: (state) async {
+          await _telemetryService.trackItemAddedToInventory(key, 1);
+          await _dataService.addWeaponToInventory(key);
+          return state.copyWith.call(isInInventory: true);
+        },
+      ),
+      deleteFromInventory: (key) async => state.map(
+        loading: (state) async => state,
+        loaded: (state) async {
+          await _telemetryService.trackItemDeletedFromInventory(key);
+          await _dataService.deleteWeaponFromInventory(key);
+          return state.copyWith.call(isInInventory: false);
+        },
+      ),
     );
 
     yield s;

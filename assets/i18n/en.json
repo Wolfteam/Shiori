@@ -416,91 +416,156 @@
       "key": "arataki-itto",
       "name": "Arataki Itto",
       "title": "Hanamizaka Heroics",
-      "description": "The first and greatest head of the Arataki Gang, famed throughout Hanamizaka in Inazuma City... Wait, what? Never heard of them? Seriously?",
+      "description": "The first and greatest head of the Arataki Gang, famed throughout Inazuma City's Hanamizaka... Wait, what? You've never heard of them? Are you trying to be funny here?",
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Fight Club Legend",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Normal Attack",
+              "description": "Perform up to 4 consecutive strikes.\r\nWhen the 2nd and 4th strikes hit opponents, Itto will gain 1 or 2 stacks of Superlative Superstrength, respectively.\r\nMax 5 stacks. Triggering this effect will refresh the current duration of any existing stacks.\r\nAdditionally, Itto's Normal Attack combo does not immediately reset after sprinting or using his Elemental Skill, \"Masatsu Zetsugi: Akaushi Burst!\"\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Charged Attack",
+              "description": "When holding to perform a Charged Attack, Itto unleashes a series of Arataki Kesagiri slashes without consuming Stamina. Instead, each Arataki Kesagiri slash consumes 1 stack of Superlative Superstrength. When the final stack is consumed, Itto delivers a powerful final slash.\r\nIf no stacks of Superlative Superstrength are available, Itto will perform a single Saichimonji Slash.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Plunging Attack",
+              "description": "Plunges from mid-air to strike the ground, damaging opponents along the path and dealing AoE DMG upon impact.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "1-Hit DMG|{param1}%",
+            "2-Hit DMG|{param2}%",
+            "3-Hit DMG|{param3}%",
+            "4-Hit DMG|{param4}%",
+            "Arataki Kesagiri Combo Slash DMG|{param5}%",
+            "Arataki Kesagiri Final Slash DMG|{param6}%",
+            "Superlative Superstrength Duration|{param7}s",
+            "Saichimonji Slash DMG|{param8}%",
+            "Saichimonji Slash Stamina Cost|{param9}",
+            "Plunge DMG|{param10}%",
+            "Low/High Plunge DMG|{param11}% / {param12}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Masatsu Zetsugi: Akaushi Burst!",
+          "description": "Hurls Ushi, the young akaushi bull and auxiliary member of the Arataki Gang, dealing Geo DMG to opponents on hit. When Ushi hits opponents, Arataki Itto gains 1 stack of Superlative Superstrength.\r\nUshi will remain on the field and provide support in the following ways:",
+          "abilities": [
+            {
+              "name": "",
+              "description": "",
+              "descriptions": [
+                "Taunts surrounding opponents and draws their attacks.",
+                "Inherits HP based on a percentage of Arataki Itto's Max HP.",
+                "When Ushi takes DMG, Arataki Itto gains 1 stack of Superlative Superstrength. Only 1 stack can be gained in this way every 2s.",
+                "Ushi will flee when its HP reaches 0 or its duration ends. It will grant Arataki Itto 1 stack of Superlative Superstrength when it leaves."
+              ]
+            },
+            {
+              "name": "Hold",
+              "description": "Adjust throwing angle.\r\nUshi is considered a Geo construct. Arataki Itto can only deploy 1 Ushi on the field at any one time.\r\n",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "Skill DMG|{param1}%",
+            "Inherited HP|{param2}%",
+            "Duration|{param3}s",
+            "CD|{param4}s"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Royal Descent: Behold, Itto the Evil!",
+          "description": "Time to show 'em the might of the Arataki Gang! For a time, Itto lets out his inner Raging Oni King, wielding his Oni King's Kanabou in battle.\r\n",
+          "abilities": [
+            {
+              "name": "",
+              "description": "This state has the following special properties:\r\n",
+              "descriptions": [
+                "Converts Itto's Normal, Charged, and Plunging Attacks to Geo DMG. This cannot be overridden.",
+                "Increases Itto's Normal Attack SPD. Also increases his ATK based on his DEF.",
+                "On hit, the 1st and 3rd strikes of his attack combo will each grant Arataki Itto 1 stack of Superlative Superstrength.",
+                "Decreases Itto's Elemental and Physical RES by 20%.",
+                "The Raging Oni King state will be cleared when Itto leaves the field."
+              ]
+            }
+          ],
+          "stats": [
+            "ATK Bonus|{param1}% DEF",
+            "ATK SPD Bonus|{param2}%",
+            "Duration|{param3}s",
+            "CD|{param4}s",
+            "Energy Cost|{param5}"
+          ]
         }
       ],
       "passives": [
         {
-          "key": "p3",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
-        },
-        {
-          "key": "p4",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
-        },
-        {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "Woodchuck Chucked",
+          "description": "When a party member uses attacks to obtain wood from a tree, they have a 25% chance to get an additional log of wood.\r\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
+          "title": "Arataki Ichiban",
+          "description": "When Arataki Itto uses consecutive Arataki Kesagiri, he obtains the following effects:\r\n",
+          "descriptions": [
+            "Each slash increases the ATK SPD of the next slash by 10%. Max ATK SPD increase is 30%.",
+            "Increases his resistance to interruption.",
+            "These effects will be cleared once he stops performing consecutive slashes."
+          ]
+        },
+        {
+          "key": "p3",
+          "title": "Bloodline of the Crimson Oni",
+          "description": "Arataki Kesagiri DMG is increased by 35% of Arataki Itto's DEF.\r\n",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "Stay a While and Listen Up",
+          "description": "After using Royal Descent: Behold, Itto the Evil!, Arataki Itto gains 2 stacks of Superlative Superstrength. After 1s, Itto will gain 1 stack of Superlative Superstrength every 0.5s for 1.5s.\r\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "Gather 'Round, It's a Brawl!",
+          "description": "After using Royal Descent: Behold, Itto the Evil!, each party member whose Element is Geo will decrease that skill's CD by 1.5s and restore 6 Energy to Arataki Itto.\r\nCD can be decreased by up to 4.5s in this manner. Max 18 Energy can be restored in this manner.\r\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "Horns Lowered, Coming Through",
+          "description": "Increases the Level of Masatsu Zetsugi: Akaushi Burst! by 3.\r\nMaximum upgrade level is 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "Jailhouse Bread and Butter",
+          "description": "When the Raging Oni King state caused by Royal Descent: Behold, Itto the Evil! ends, all nearby party members gain 20% DEF and 20% ATK for 10s.\r\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "10 Years of Hanamizaka Fame",
+          "description": "Increases the Level of Royal Descent: Behold, Itto the Evil! by 3.\r\nMaximum upgrade level is 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
+          "title": "Arataki Itto, Present!",
+          "description": "Arataki Itto's Charged Attacks deal +70% Crit DMG. Additionally, when he uses Arataki Kesagiri, he has a 50% chance to not consume stacks of Superlative Superstrength.\r\n",
           "descriptions": []
         }
       ]
@@ -1779,82 +1844,155 @@
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Ripping Fang Fletching",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Normal Attack",
+              "description": "Perform up to 4 consecutive shots with a bow.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Charged Attack",
+              "description": "Perform a more precise Aimed Shot with increased DMG.\r\nWhile aiming, stone crystals will accumulate on the arrowhead. A fully charged crystalline arrow will deal Geo DMG.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Plunging Attack",
+              "description": "Fires off a shower of arrows in mid-air before falling and striking the ground, dealing AoE DMG upon impact.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "1-Hit DMG|{param1}%",
+            "2-Hit DMG|{param2}%",
+            "3-Hit DMG|{param3}%",
+            "4-Hit DMG|{param4}%",
+            "Aimed Shot|{param5}%",
+            "Fully-Charged Aimed Shot|{param6}%",
+            "Plunge DMG|{param7}%",
+            "Low/High Plunge DMG|{param8}% / {param9}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Inuzaka All-Round Defense",
+          "description": "Deals AoE Geo DMG and sets up a General's War Banner.\r\n",
+          "abilities": [
+            {
+              "name": "General's War Banner",
+              "description": "Provides up to 3 buffs to active characters within the skill's AoE based on the number of Geo characters in the party at the time of casting:\r\n",
+              "descriptions": [
+                "1 Geo character: Adds \"Standing Firm\" - DEF Bonus.",
+                "2 Geo characters: Adds \"Impregnable\" - Increased resistance to interruption.",
+                "3 Geo characters: Adds \"Crunch\" - Geo DMG Bonus.",
+                "Gorou can deploy only 1 General's War Banner on the field at any one time. Characters can only benefit from 1 General's War Banner at a time. When a party member leaves the field, the active buff will last for 2s."
+              ]
+            },
+            {
+              "name": "Hold",
+              "description": "Adjust the location of the skill.\r\n",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "Skill DMG|{param1}%",
+            "DEF Increase|{param2}",
+            "Geo DMG Bonus|{param3}%",
+            "Duration|{param4}s",
+            "CD|{param5}s"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Juuga: Forward Unto Victory",
+          "description": "Displaying his valor as a general, Gorou deals AoE Geo DMG and creates a field known as General's Glory to embolden his comrades.\r\n",
+          "abilities": [
+            {
+              "name": "General's Glory",
+              "description": "This field has the following properties:\r\n",
+              "descriptions": [
+                "Like the General's War Banner created by Inuzaka All-Round Defense, provides buffs to active characters within the skill's AoE based on the number of Geo characters in the party. Also moves together with your active character.",
+                "Generates 1 Crystal Collapse every 1.5s that deals AoE Geo DMG to 1 opponent within the skill's AoE.",
+                "Pulls 1 elemental shard in the skill's AoE to your active character's position every 1.5s (elemental shards are created by Crystallize reactions).",
+                "If a General's War Banner created by Gorou currently exists on the field when this ability is used, it will be destroyed. In addition, for the duration of General's Glory, Gorou's Elemental Skill \"Inuzaka All-Round Defense\" will not create the General's War Banner.",
+                "If Gorou falls, the effects of General's Glory will be cleared."
+              ]
+            }
+          ],
+          "stats": [
+            "Skill DMG|{param1}% DEF",
+            "Crystal Collapse DMG|{param2}% DEF",
+            "Duration|{param3}s",
+            "CD|{param4}s",
+            "Energy Cost|{param5}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "Seeker of Shinies",
+          "description": "Displays the location of nearby resources unique to Inazuma on the mini-map.\r\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
+          "title": "Heedless of the Wind and Weather",
+          "description": "After using Juuga: Forward Unto Victory, all nearby party members' DEF is increased by 25% for 12s.\r\n",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
+          "title": "A Favor Repaid",
+          "description": "Gorou receives the following DMG Bonuses to his attacks based on his DEF:\r\n",
+          "descriptions": [
+            "Inuzaka All-Round Defense: Skill DMG increased by 156% of DEF",
+            "Juuga: Forward Unto Victory: Skill DMG and Crystal Collapse DMG increased by 15.6% of DEF"
+          ]
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "Rushing Hound: Swift as the Wind",
+          "description": "When characters (other than Gorou) within the AoE of Gorou's General's War Banner or General's Glory deal Geo DMG to opponents, the CD of Gorou's Inuzaka All-Round Defense is decreased by 2s.\r\nThis effect can occur once every 10s.\r\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "Sitting Hound: Steady as a Clock",
+          "description": "While General's Glory is in effect, its duration is extended by 1s when a nearby active character obtains an Elemental Shard from a Crystallize reaction. \r\nThis effect can occur once every 0.1s. Max extension is 3s.\r\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "Mauling Hound: Fierce as Fire",
+          "description": "Increases the Level of Inuzaka All-Round Defense by 3.\r\nMaximum upgrade level is 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "Lapping Hound: Warm as Water",
+          "description": "When General's Glory is in the \"Impregnable\" or \"Crunch\" states, it will also heal active characters within its AoE by 50% of Gorou's own DEF every 1.5s.\r\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "Striking Hound: Thunderous Force",
+          "description": "Increases the Level of Juuga: Forward Unto Victory by 3.\r\nMaximum upgrade level is 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
+          "title": "Valiant Hound: Mountainous Fealty",
+          "description": "For 12s after using Inuzaka All-Round Defense or Juuga: Forward Unto Victory, increases the CRIT DMG of all nearby party members' Geo DMG based on the buff level of the skill's field at the time of use:\r\n",
+          "descriptions": [
+            "\"Standing Firm\": +10%",
+            "\"Impregnable\": +20%",
+            "\"Crunch\": +40%",
+            "This effect cannot stack and will take reference from the last instance of the effect that is triggered."
+          ]
         }
       ]
     },
@@ -4454,6 +4592,156 @@
       ]
     },
     {
+      "key": "shenhe",
+      "name": "Shenhe",
+      "title": "Lonesome Transcendence",
+      "description": "An adepti disciple with a most unusual air about her. Having spent much time cultivating in isolation in Liyue's mountains, she has become every bit as cool and distant as the adepti themselves.",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "Dawnstar Piercer",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Normal Attack",
+              "description": "Performs up to five consecutive spear strikes.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Charged Attack",
+              "description": "Consumes a certain amount of Stamina to lunge forward, dealing damage to opponents along the way.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Plunging Attack",
+              "description": "Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "1-Hit DMG|{param1}%",
+            "2-Hit DMG|{param2}%",
+            "3-Hit DMG|{param3}%",
+            "4-Hit DMG|{param4}% + {param5}%",
+            "5-Hit DMG|{param6}%",
+            "Charged Attack DMG|{param7}%",
+            "Charged Attack Stamina Cost|{param8}",
+            "Plunge DMG|{param9}%",
+            "Low/High Plunge DMG|{param10}% / {param11}%"
+          ]
+        },
+        {
+          "key": "s2",
+          "title": "Spring Spirit Summoning",
+          "description": "The frosted dew, silvery and dense, shall exorcise all demons.\r\nGrants all nearby party members the Icy Quill effect and deals Cryo DMG in different ways based on whether it is pressed or held.",
+          "abilities": [
+            {
+              "name": "Press",
+              "description": "Rushes forward together with a Talisman Spirit, dealing Cryo DMG to opponents along the path.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Hold",
+              "description": "Commands the Talisman Spirit to deal AoE Cryo DMG.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Icy Quill",
+              "description": "When Normal, Charged, and Plunging Attacks, Elemental Skills, and Elemental Bursts deal Cryo DMG to opponents, the DMG dealt is increased based on Shenhe's current ATK.\r\nThe Icy Quill's effects will be cleared once its duration ends or after being triggered a certain number of times. When held rather than pressed, the Icy Quill's effect lasts longer and can be triggered more times.\r\nWhen one Cryo DMG instance strikes multiple opponents, the effect is triggered multiple times based on the number of opponents hit. The number of times the effect is triggered is calculated independently for each party member with the Icy Quill.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "Press Skill DMG|{param1}%",
+            "Hold Skill DMG|{param2}%",
+            "DMG Bonus|{param3}% ATK",
+            "Press/Hold Duration|{param4}s / {param5}s",
+            "Press/Hold Trigger Quota|{param6} / {param7}s",
+            "Press CD|{param8}s",
+            "Hold CD|{param9}s"
+          ]
+        },
+        {
+          "key": "s3",
+          "title": "Divine Maiden's Deliverance",
+          "description": "Unleashes the power of the Talisman Spirit, allowing it to roam free in this plane, dealing AoE Cryo DMG.\r\nThe Talisman Spirit then creates a field that decreases the Cryo RES and Physical RES of opponents within it. It also deals periodic Cryo DMG to opponents within the field.\r\n",
+          "abilities": [],
+          "stats": [
+            "Skill DMG|{param1}%",
+            "RES Decrease|{param2}%",
+            "DoT|{param3}%",
+            "Duration|{param4}s",
+            "CD|{param5}s",
+            "Energy Cost|{param6}"
+          ]
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "Precise Comings and Goings",
+          "description": "Gains 25% more rewards when dispatched on a Liyue Expedition for 20 hours.\r\n",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "Deific Embrace",
+          "description": "An active character within the field created by Divine Maiden's Deliverance gains 15% Cryo DMG Bonus.\r\n",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "Spirit Communion Seal",
+          "description": "After Shenhe uses Spring Spirit Summoning, she will grant all nearby party members the following effects:\r\n",
+          "descriptions": [
+            "Press: Elemental Skill and Elemental Burst DMG increased by 15% for 10s.",
+            "Hold: Normal, Charged, and Plunging Attack DMG increased by 15% for 15s."
+          ]
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "Clarity of Heart",
+          "description": "Spring Spirit Summoning can be used 1 more time.\r\n",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "Centered Spirit",
+          "description": "Divine Maiden's Deliverance lasts for 6 seconds longer. Active characters within the skill's field deals 15% increased Cryo CRIT DMG.\r\n",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "Seclusion",
+          "description": "Increases the Level of Spring Spirit Summoning by 3.\r\nMaximum upgrade level is 15.\r\n",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "Insight",
+          "description": "When characters under the effect of Icy Quill applied by Shenhe trigger its DMG Bonus effects, Shenhe will gain a Skyfrost Mantra stack:\r\n",
+          "descriptions": [
+            "When Shenhe uses Spring Spirit Summoning, she will consume all stacks of Skyfrost Mantra, increasing the DMG of that Spring Spirit Summoning by 5% for each stack consumed.",
+            "Max 50 stacks. Stacks last for 60s."
+          ]
+        },
+        {
+          "key": "c5",
+          "title": "Divine Attainment",
+          "description": "Increases the Level of Divine Maiden's Deliverance by 3.\r\nMaximum upgrade level is 15.\r\n",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "Mystical Abandon",
+          "description": "When characters trigger Icy Quill's effects using Normal and Charged Attack DMG, it does not count toward the Trigger Quota.\r\n",
+          "descriptions": []
+        }
+      ]
+    },
+    {
       "key": "sucrose",
       "name": "Sucrose",
       "title": "Harmless Sweetie",
@@ -6001,6 +6289,93 @@
       ]
     },
     {
+      "key": "yae-miko",
+      "name": "Yae Miko",
+      "title": "",
+      "description": "",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ]
+    },
+    {
       "key": "yanfei",
       "name": "Yanfei",
       "title": "Wise Innocence",
@@ -6271,6 +6646,149 @@
           "key": "c6",
           "title": "Naganohara Meteor Swarm",
           "description": "During Niwabi Fire-Dance, Yoimiya's Normal Attacks have a 50% chance of firing an extra Kindling Arrow that deals 60% of its original DMG. This DMG is considered Normal Attack DMG.\r\n",
+          "descriptions": []
+        }
+      ]
+    },
+    {
+      "key": "yun-jin",
+      "name": "Yun Jin",
+      "title": "Stage Lucida",
+      "description": "A renowned Liyue opera singer who is skilled in both playwriting and singing. Her style is one-of-a-kind, exquisite and delicate, much like the person herself.",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "Cloud-Grazing Strike",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Normal Attack",
+              "description": "Performs up to five consecutive spear strikes.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Charged Attack",
+              "description": "Consumes a certain amount of Stamina to lunge forward, dealing damage to opponents along the way.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Plunging Attack",
+              "description": "Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "1-Hit DMG|{param1}%",
+            "2-Hit DMG|{param2}%",
+            "3-Hit DMG|{param3}% + {param4}%",
+            "4-Hit DMG|{param5}% + {param6}%",
+            "5-Hit DMG|{param7}%",
+            "Charged Attack|{param8}%",
+            "Charged Attack Stamina Cost|{param9}",
+            "Plunge DMG|{param10}%",
+            "Low/High Plunge DMG|{param11}% / {param12}%"
+          ]
+        },
+        {
+          "key": "s2",
+          "title": "Opening Flourish",
+          "description": "Ms. Yun may just be acting out fights on stage, but her skills with the spear are real enough to defend against her foes.\r\n",
+          "abilities": [
+            {
+              "name": "Press",
+              "description": "Flourishes her polearm in a cloud-grasping stance, dealing Geo DMG.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Hold",
+              "description": "Takes up the Opening Flourish stance and charges up, forming a shield. DMG Absorption is based on Yun Jin's Max HP and has 150% effectiveness against all Elemental DMG and Physical DMG. The shield lasts until she finishes unleashing her Elemental Skill.\r\nWhen the skill is released, when its duration ends, or when the shield breaks, Yun Jin will unleash the charged energy as an attack, dealing Geo DMG.\r\nBased on the time spent charging, it will either unleash an attack at Charge Level 1 or Level 2.\r\n",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "Press DMG|{param1}% DEF",
+            "Charge Level 1 DMG|{param2}% DEF",
+            "Charge Level 2 DMG|{param3}% DEF",
+            "Shield DMG Absorption|{param4}% Max HP+ {param5}",
+            "CD|{param6} s"
+          ]
+        },
+        {
+          "key": "s3",
+          "title": "Cliffbreaker's Banner",
+          "description": "Deals AoE Geo DMG and grants all nearby party members a Flying Cloud Flag Formation.\r\n",
+          "abilities": [
+            {
+              "name": "Flying Cloud Flag Formation",
+              "description": "When Normal Attack DMG is dealt to opponents, Bonus DMG will be dealt based on Yun Jin's current DEF.\r\nThe effects of this skill will be cleared after a set duration or after being triggered a specific number of times.\r\nWhen one Normal Attack hits multiple opponents, the effect is triggered multiple times according to the number of opponents hit. The number of times that the effect is triggered is counted independently for each member of the party with Flying Cloud Flag Formation.\r\n",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "Skill DMG|{param1}%",
+            "DMG Increase|{param2}% DEF",
+            "Duration|{param3} s",
+            "Trigger Quota|{param4}",
+            "CD|{param5} s",
+            "Energy Cost|{param6}"
+          ]
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "Light Nourishment",
+          "description": "When Perfect Cooking is achieved on Food with Adventure-related effects, there is a 12% chance to obtain double the product.\r\n",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "True to Oneself",
+          "description": "Using Opening Flourish at the precise moment when Yun Jin is attacked will unleash its Level 2 Charged (Hold) form.\r\n",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "Breaking Conventions",
+          "description": "The Normal Attack DMG Bonus granted by Flying Cloud Flag Formation is further increased by 2.5%/5%/7.5%/11.5% of Yun Jin's DEF when the party contains characters of 1/2/3/4 Elemental Types, respectively.\r\n",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "Thespian Gallop",
+          "description": "Opening Flourish's CD is decreased by 18%.\r\n",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "Myriad Mise-En-Scène",
+          "description": "After Cliffbreaker's Banner is unleashed, all nearby party members' Normal Attack DMG is increased by 15% for 12s.\r\n",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "Seafaring General",
+          "description": "Increases the Level of Cliffbreaker's Banner by 3.\r\nMaximum upgrade level is 15.\r\n",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "Flower and a Fighter",
+          "description": "When Yun Jin triggers the Crystallize Reaction, her DEF is increased by 20% for 12s.\r\n",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "Famed Throughout the Land",
+          "description": "Increases the Level of Opening Flourish by 3.\r\nMaximum upgrade level is 15.\r\n",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "Decorous Harmony",
+          "description": "Characters under the effects of the Flying Cloud Flag Formation have their Normal ATK SPD increased by 12%.\r\n",
           "descriptions": []
         }
       ]
@@ -6597,6 +7115,18 @@
         "Increases DMG dealt against opponents affected by Pyro or Electro by {color}18{/color}%.",
         "Increases DMG dealt against opponents affected by Pyro or Electro by {color}21{/color}%.",
         "Increases DMG against opponents affected by Pyro or Electro by {color}24{/color}%."
+      ]
+    },
+    {
+      "key": "calamity-queller",
+      "name": "Calamity Queller",
+      "description": "A keenly honed weapon forged from some strange crystal. Its faint blue light seems to whisper of countless matters now past.",
+      "refinements": [
+        "Gain {color}12{/color}% All Elemental DMG Bonus. Obtain Consummation for 20s after using an Elemental Skill, causing ATK to increase by {color}3.2{/color}% per second. This ATK increase has a maximum of 6 stacks. When the character equipped with this weapon is not on the field, Consummation's ATK increase is doubled.",
+        "Gain {color}15{/color}% All Elemental DMG Bonus. Obtain Consummation for 20s after using an Elemental Skill, causing ATK to increase by {color}4{/color}% per second. This ATK increase has a maximum of 6 stacks. When the character equipped with this weapon is not on the field, Consummation's ATK increase is doubled.",
+        "Gain {color}18{/color}% All Elemental DMG Bonus. Obtain Consummation for 20s after using an Elemental Skill, causing ATK to increase by {color}4.8{/color}% per second. This ATK increase has a maximum of 6 stacks. When the character equipped with this weapon is not on the field, Consummation's ATK increase is doubled.",
+        "Gain {color}21{/color}% All Elemental DMG Bonus. Obtain Consummation for 20s after using an Elemental Skill, causing ATK to increase by {color}5.6{/color}% per second. This ATK increase has a maximum of 6 stacks. When the character equipped with this weapon is not on the field, Consummation's ATK increase is doubled.",
+        "Gain {color}24{/color}% All Elemental DMG Bonus. Obtain Consummation for 20s after using an Elemental Skill, causing ATK to increase by {color}6.4{/color}% per second. This ATK increase has a maximum of 6 stacks. When the character equipped with this weapon is not on the field, Consummation's ATK increase is doubled."
       ]
     },
     {
@@ -7310,6 +7840,18 @@
       ]
     },
     {
+      "key": "redhorn-stonethresher",
+      "name": "Redhorn Stonethresher",
+      "description": "According to its previous owner, this weapon is the \"Mighty Redhorn Stoic Stonethreshing Gilded Goldcrushing Lion Lord\" that can send any monster packing with its tail between its legs.",
+      "refinements": [
+        "DEF is increased by {color}28{/color}%. Normal and Charged Attack DMG is increased by {color}40{/color}% of DEF.",
+        "DEF is increased by {color}35{/color}%. Normal and Charged Attack DMG is increased by {color}50{/color}% of DEF.",
+        "DEF is increased by {color}42{/color}%. Normal and Charged Attack DMG is increased by {color}60{/color}% of DEF.",
+        "DEF is increased by {color}49{/color}%. Normal and Charged Attack DMG is increased by {color}70{/color}% of DEF.",
+        "DEF is increased by {color}56{/color}%. Normal and Charged Attack DMG is increased by {color}80{/color}% of DEF."
+      ]
+    },
+    {
       "key": "royal-bow",
       "name": "Royal Bow",
       "description": "An old royal longbow that belonged to the erstwhile rulers of Mondstadt. Countless generations later, the bowstring is still tight and can still fire arrows with great force.",
@@ -7993,6 +8535,14 @@
       ]
     },
     {
+      "key": "husk-of-opulent-dreams",
+      "name": "Husk of Opulent Dreams",
+      "bonus": [
+        "DEF +30%",
+        "A character equipped with this Artifact set will obtain the Curiosity effect in the following conditions When on the field, the character gains 1 stack after hitting an opponent with a Geo attack, triggering a maximum of once every 0.3s. When off the field, the character gains 1 stack every 3s. Curiosity can stack up to 4 times, each providing 6% DEF and a 6% Geo DMG Bonus. When 6 seconds pass without gaining a Curiosity stack, 1 stack is lost."
+      ]
+    },
+    {
       "key": "instructor",
       "name": "Instructor",
       "bonus": [
@@ -8038,6 +8588,14 @@
       "bonus": [
         "Elemental Burst DMG +20%",
         "Using an Elemental Burst increases all party members' ATK by 20% for 12s. This effect cannot stack."
+      ]
+    },
+    {
+      "key": "ocean-hued-clam",
+      "name": "Ocean-Hued Clam",
+      "bonus": [
+        "Healing Bonus +15%.",
+        "When the character equipping this artifact set heals a character in the party, a Sea-Dyed Foam will appear for 3 seconds, accumulating the amount of HP recovered from healing (including overflow healing). At the end of the duration, the Sea-Dyed Foam will explode, dealing DMG to nearby opponents based on 90% of the accumulated healing. (This DMG is calculated similarly to Reactions such as Electro-Charged, and Superconduct, but is not affected by Elemental Mastery, Character Levels, or Reaction DMG Bonuses). Only one Sea-Dyed Foam can be produced every 3.5 seconds. Each Sea-Dyed Foam can accumulate up to 30,000 HP (including overflow healing). There can be no more than one Sea-Dyed Foam active at any given time. This effect can still be triggered even when the character who is using this artifact set is not on the field."
       ]
     },
     {
@@ -8112,7 +8670,7 @@
       "name": "Shimenawa's Reminiscence",
       "bonus": [
         "ATK +18%.",
-        "When casting an Elemental Skill, if the character has 15 or more Energy, they lose 15 Energy and Normal/Charged/ Plunging Attack DMG is increased by 50% for 10s. This effect will not trigger again during that duration."
+        "When casting an Elemental Skill, if the character has 15 or more Energy, they lose 15 Energy and Normal/Charged/Plunging Attack DMG is increased by 50% for 10s. This effect will not trigger again during that duration."
       ]
     },
     {
@@ -8545,6 +9103,11 @@
       "key": "dragon-lords-crown",
       "name": "Dragon Lord's Crown",
       "description": "Horns created from hardened jade crystallized over a thousand years are the natural crown of the dragon king.\r\nInfused with spirit and carved from bedrock, it was born from the mountain's heart to show the strength of the earth to the land amidst monoliths, and its long golden horns are the mark of its ancient strife with an ancient lord.\r\nFor a time, this horn was shattered and lost its luster, but now it gleams cold and gold as it sits in your palm."
+    },
+    {
+      "key": "dragonheirs-false-fin",
+      "name": "Dragonheir's False Fin",
+      "description": "A piece of biological tissue that you found after defeating the Bathysmal Vishaps.\r\nAlthough it looks like a fin of some kind, it does not actually have any function at all.\r\nThe people of Byakuyakoku once investigated the Bathysmal Vishaps quite deeply. Their most distinctive feature was the ability to choose what traits it wished to pass on to its offspring. Because of their great hatred for humanity, these vishaps will lose any visual acuity by the time they reach maturity. At the same time, they have also evolved a certain degree of elemental polymorphism for combat purposes."
     },
     {
       "key": "dream-of-the-dandelion-gladiator",
@@ -9232,6 +9795,11 @@
       "description": "A grain crop commonly found in Teyvat. People of all walks of life enjoy its distinct grainy texture. As the saying goes, \"The same kind of rice can feed one hundred kinds of people.\""
     },
     {
+      "key": "riftborn-regalia",
+      "name": "Riftborn Regalia",
+      "description": "A broken horn that you obtained from defeating the Wolflord. That said, it should not have left anything behind after your hunt.\r\nEven a lord among the Riftwolves is nothing before monsters of a higher pedigree.\r\n\"Gold\" mass-produced these malformed wolf packs almost as if by accident, like shrunken drawings on discarded sheets of paper, and the horns on this one represent its authority to command its dark brood to dissolve space itself."
+    },
+    {
       "key": "ring-of-boreas",
       "name": "Ring of Boreas",
       "description": "A bit of crystallized ice from the Great Wolf King of the North.\r\nThis land was once a realm of freezing-cold blizzards and ice storms filled with razor-sharp ice shards, all at the command of Boreas. Though his power may have diminished, he could still freeze the land in an instant."
@@ -9662,7 +10230,7 @@
     {
       "key": "vaporize",
       "name": "Vaporize",
-      "effect": "Deals ×1.5 Pyro DMG when a Pyro attack triggers the reaction.",
+      "effect": "Deals ×2 Pyro DMG when a Pyro attack triggers the reaction.",
       "description": null
     },
     {
@@ -9686,7 +10254,7 @@
     {
       "key": "vaporize-reverse",
       "name": "Vaporize (Reverse)",
-      "effect": "Deals ×2 Hydro DMG when a Hydro attack triggers the reaction.",
+      "effect": "Deals ×1.5 Hydro DMG when a Hydro attack triggers the reaction.",
       "description": null
     },
     {
@@ -9804,6 +10372,14 @@
       "name": "Blazing Axe Mitachurl"
     },
     {
+      "key": "bolteater-bathysmal-vishap",
+      "name": "Bolteater Bathysmal Vishap"
+    },
+    {
+      "key": "bolteater-bathysmal-vishap-hatchling",
+      "name": "Bolteater Bathysmal Vishap Hatchling"
+    },
+    {
       "key": "childe",
       "name": "Childe"
     },
@@ -9844,6 +10420,10 @@
       "name": "Cryo Slime"
     },
     {
+      "key": "cryo-specter",
+      "name": "Cryo Specter"
+    },
+    {
       "key": "cryo-whopperflower",
       "name": "Cryo Whopperflower"
     },
@@ -9882,6 +10462,10 @@
     {
       "key": "electro-slime",
       "name": "Electro Slime"
+    },
+    {
+      "key": "electro-specter",
+      "name": "Electro Specter"
     },
     {
       "key": "electro-whopperflower",
@@ -9954,6 +10538,10 @@
     {
       "key": "geovishap-hatchling",
       "name": "Geovishap Hatchling"
+    },
+    {
+      "key": "golden-wolflord",
+      "name": "Golden Wolflord"
     },
     {
       "key": "hilichurl",
@@ -10088,6 +10676,18 @@
       "name": "Maguu Kenki"
     },
     {
+      "key": "maguu-kenki-galloping-frost",
+      "name": "Maguu Kenki: Galloping Frost"
+    },
+    {
+      "key": "maguu-kenki-lone-gale",
+      "name": "Maguu Kenki: Lone Gale"
+    },
+    {
+      "key": "maguu-kenki-mask-of-terror",
+      "name": "Maguu Kenki: Mask of Terror"
+    },
+    {
       "key": "millelith-sergeant",
       "name": "Millelith Sergeant"
     },
@@ -10136,6 +10736,14 @@
       "name": "Primo Geovishap"
     },
     {
+      "key": "primordial-bathysmal-vishap",
+      "name": "Primordial Bathysmal Vishap"
+    },
+    {
+      "key": "primordial-bathysmal-vishap-hatchling",
+      "name": "Primordial Bathysmal Vishap Hatchling"
+    },
+    {
       "key": "pyro-abyss-mage",
       "name": "Pyro Abyss Mage"
     },
@@ -10156,12 +10764,24 @@
       "name": "Pyro Slime"
     },
     {
+      "key": "pyro-specter",
+      "name": "Pyro Specter"
+    },
+    {
       "key": "pyro-whopperflower",
       "name": "Pyro Whopperflower"
     },
     {
       "key": "raiden-shogun",
       "name": "Raiden Shogun"
+    },
+    {
+      "key": "rimebiter-bathysmal-vishap",
+      "name": "Rimebiter Bathysmal Vishap"
+    },
+    {
+      "key": "rimebiter-bathysmal-vishap-hatchling",
+      "name": "Rimebiter Bathysmal Vishap Hatchling"
     },
     {
       "key": "rock-shield-hilichurl-guard",
@@ -10242,6 +10862,10 @@
     {
       "key": "thunderhelm-lawachurl",
       "name": "Thunderhelm Lawachurl"
+    },
+    {
+      "key": "treasure-hoarder-wallenstein",
+      "name": "Treasure Hoarder: Wallenstein"
     },
     {
       "key": "treasure-hoarders-boss",

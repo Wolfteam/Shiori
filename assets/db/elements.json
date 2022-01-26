@@ -48,10 +48,10 @@
     {
       "key": "melt",
       "principal": [
-        "pyro"
+        "cryo"
       ],
       "secondary": [
-        "cryo"
+        "pyro"
       ]
     },
     {
@@ -105,10 +105,10 @@
     {
       "key": "melt-reverse",
       "principal": [
-        "cryo"
+        "pyro"
       ],
       "secondary": [
-        "pyro"
+        "cryo"
       ]
     },
     {

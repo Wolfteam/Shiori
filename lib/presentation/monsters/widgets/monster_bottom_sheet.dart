@@ -17,6 +17,13 @@ import 'package:shiori/presentation/shared/styles.dart';
 class MonsterBottomSheet extends StatelessWidget {
   const MonsterBottomSheet({Key? key}) : super(key: key);
 
+  static Widget route(BuildContext context) {
+    return BlocProvider.value(
+      value: context.read<MonstersBloc>(),
+      child: const MonsterBottomSheet(),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     final s = S.of(context);

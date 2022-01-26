@@ -43,7 +43,6 @@ class MonstersBloc extends Bloc<MonstersEvent, MonstersState> {
         tempSortDirectionType: currentState.sortDirectionType,
         tempType: currentState.type,
       ),
-      close: (e) => currentState.copyWith.call(monsters: []),
       resetFilters: (_) => _buildInitialState(
         excludeKeys: state.maybeMap(loaded: (state) => state.excludeKeys, orElse: () => []),
       ),

@@ -30,11 +30,11 @@ void main() {
     return service;
   }
 
-  test('Initialize all languages', () {
+  test('Initialize all languages', () async {
     final service = _getService();
 
     for (final lang in languages) {
-      expect(service.init(lang), completes);
+      await expectLater(service.init(lang), completes);
     }
   });
 
@@ -235,13 +235,14 @@ void main() {
           checkKey(skill.key);
           if (!detail.isComingSoon) {
             checkAsset(skill.fullImagePath);
+            expect(skill.stats, isNotEmpty);
+            final statKeys = skill.stats.map((e) => e.key).toList();
+            expect(statKeys.toSet().length, equals(statKeys.length));
+            //check that all the values in the stats have the same length
+            final statCount = skill.stats.map((e) => e.values.length).toSet().length;
+            expect(statCount, equals(1));
           }
-          expect(skill.stats, isNotEmpty);
-          final statKeys = skill.stats.map((e) => e.key).toList();
-          expect(statKeys.toSet().length, equals(statKeys.length));
-          //check that all the values in the stats have the same length
-          final statCount = skill.stats.map((e) => e.values.length).toSet().length;
-          expect(statCount, equals(1));
+
           for (final stat in skill.stats) {
             expect(stat.values, isNotEmpty);
           }
@@ -660,6 +661,19 @@ void main() {
         final birthday = service.getCharBirthDate('02/29');
         expect(birthday.day, equals(29));
         expect(birthday.month, equals(2));
+      }
+    });
+
+    test('upcoming characters are not shown', () async {
+      final service = _getService();
+      await service.init(AppLanguageType.english);
+      final localeService = _getLocaleService(AppLanguageType.english);
+      final upcoming = service.getUpcomingCharactersKeys();
+      for (final key in upcoming) {
+        final char = service.getCharacter(key);
+        final date = localeService.getCharBirthDate(char.birthday);
+        final chars = service.getCharactersForBirthday(date);
+        expect(chars.any((el) => el.key == key), false);
       }
     });
   });

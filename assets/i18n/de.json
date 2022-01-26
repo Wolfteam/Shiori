@@ -420,92 +420,157 @@
     {
       "key": "arataki-itto",
       "name": "Arataki Itto",
-      "title": "Hanamizaka Heroics",
-      "description": "The first and greatest head of the Arataki Gang, famed throughout Hanamizaka in Inazuma City... Wait, what? Never heard of them? Seriously?",
+      "title": "Held von Hanamizaka",
+      "description": "Der erste und größte Anführer der Arataki-Bande, berühmt in ganz Hanamizaka im Gebiet von Inazuma ... Wie bitte? Du hast noch nie von der Arataki-Bande gehört? Ernsthaft?",
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Lärmende Legende",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Standardangriff",
+              "description": "Führt bis zu 4 Schwünge mit dem Schwert hintereinander aus.\r\nGibt Itto beim Treffen von Gegnern mit den Angriffen Phase 2 und Phase 4 1 bzw. 2 Stapelungen des Effekts „superstarke Superkraft“.\r\n5-fach stapelbar. Erneuert die Wirkungsdauer der superstarken Superkraft bei jedem Auslösen.\r\nSetzt die Kombozahl des Standardangriffs darüber hinaus kurze Zeit nach Anwendung der Elementarfähigkeit „Masatsu Zetsugi – Akaushi-Wurf!“ oder nach dem Rennen nicht zurück.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Heftiger Schlag",
+              "description": "Führt, wenn „superstarke Superkraft“ vorhanden ist, nach dem Gedrückthalten zum Ausführen eines heftiges Schlags „Arataki Kesagiri“ aus, wofür keine Ausdauer verbraucht wird. Bei jedem Angriff mit Arataki Kesagiri wird eine Stapelung superstarke Superkraft verbraucht. Beim Verbrauchen der letzten Stapelung wird ein besonders starker Schlag ausgelöst.\r\nOhne superstarke Superkraft wird Ausdauer verbraucht, um einen einzelnen Saichimonji-Hieb auszulösen.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Angriff aus dem Fall",
+              "description": "Schlägt beim Fallen aus der Luft auf den Boden, greift alle Gegner in der Bahn an und verursacht beim Aufkommen Flächenschaden.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "SCH Phase 1|{param1}%",
+            "SCH Phase 2|{param2}%",
+            "SCH Phase 3|{param3}%",
+            "SCH Phase 4|{param4}%",
+            "Kombo-SCH von Arataki Kesagiri|{param5}%",
+            "End-SCH von Arataki Kesagiri|{param6}%",
+            "Dauer der superstarken Superkraft|{param7}s",
+            "SCH des Saichimonji-Hiebs|{param8}%",
+            "Ausdauerverbrauch für Saichimonji-Hiebe|{param9}",
+            "SCH beim Fallen|{param10}%",
+            "SCH beim Fallen aus niedriger/großer Höhe|{param11}% / {param12}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Masatsu Zetsugi – Akaushi-Wurf!",
+          "description": "Schleudert Ushi, einen jungen Akaushi-Bullen und ein loses Mitglied der Arataki-Bande, mit hoher Geschwindigkeit auf Gegner und fügt getroffenen Gegnern Geo-Schaden zu! Verleiht Arataki Itto, wenn Ushi Gegner trifft, 1 Stapelung des Effekts „superstarke Superkraft“.\r\nUshi bleibt nach dem Wurf auf dem Feld und bietet folgende Unterstützung:",
+          "abilities": [
+            {
+              "name": "",
+              "description": "",
+              "descriptions": [
+                "Verspottet Gegner in der Umgebung fortlaufend und zieht ihre Angriffe auf sich.",
+                "Beständigkeit hängt von Arataki Ittos max. LP ab.",
+                "Gibt Arataki Itto beim Erleiden von Schaden 1 Stapelung des Effekts „superstarke Superkraft“. Alle 2 s 1 Stapelung auf diese Weise möglich.",
+                "Flieht bei aufgebrauchter Beständigkeit oder nach Ablaufen der Wirkungsdauer und gibt Arataki Itto dabei 1 Stapelung des Effekts „superstarke Superkraft“."
+              ]
+            },
+            {
+              "name": "Gedrückt halten",
+              "description": "Anpassung der Wurfrichtung.\r\nUshi gilt als Geo-Objekt. Zu einem Zeitpunkt kann nur ein von Arataki Itto selbst beschworener Ushi existieren.\r\n",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "Fähigkeits-SCH|{param1}%",
+            "Erhaltene LP|{param2}%",
+            "Dauer|{param3}s",
+            "Abklingzeit|{param4}s"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Schrecklicher Oni-König – Itto bricht vor!",
+          "description": "Es wird Zeit, die Macht der Arataki-Bande zur Schau zu stellen! Bringt Ittos inneren „wütenden Oni-König“ hervor und verwendet dessen Kanabou zum Kampf.\r\n",
+          "abilities": [
+            {
+              "name": "",
+              "description": "Merkmale:\r\n",
+              "descriptions": [
+                "Verursacht mit Standardangriffen, heftigen Schlägen und Angriffen aus dem Fall Geo-Schaden, wobei diese Elementarumwandlung nicht von anderen Elementen überdeckt werden kann.",
+                "Erhöht die Angriffs-GSW von Arataki Ittos Standardangriff und erhöht seinen ANG basierend auf seiner VTD.",
+                "Verleiht Arataki Itto selbst beim Treffen von Gegnern mit den Angriffen von Phase 1 und Phase 3 1 Stapelung des Effekts „superstarke Superkraft“.",
+                "Verringert Arataki Ittos WDS gegen alle Elemente sowie seinen physischen WDS um 20 %.",
+                "Der Zustand „wütender Oni-König“ erlischt, wenn Arataki Itto ausgewechselt wird."
+              ]
+            }
+          ],
+          "stats": [
+            "ANG-Bonus|{param1}% DEF",
+            "Angriffs-GSW-Bonus|{param2}%",
+            "Dauer|{param3}s",
+            "Abklingzeit|{param4}s",
+            "Elementarenergie|{param5}"
+          ]
         }
       ],
       "passives": [
         {
-          "key": "p3",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
-        },
-        {
-          "key": "p4",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
-        },
-        {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "Holzspalter",
+          "description": "Erhält beim Sammeln von Holz durch Angriffe auf Bäume mit eigenen Figuren in der Truppe mit einer Wahrscheinlichkeit von 25 % zusätzliches Holz.\r\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
+          "title": "Arataki Ichiban",
+          "description": "Verleiht Arataki Itto bei Anwendung aufeinanderfolgender Angriffe mit „Arataki Kesagiri“ folgende Effekte:\r\n",
+          "descriptions": [
+            "Jeder Hieb erhöht die Angriffs-GSW des nächsten Hiebs um 10 %, insgesamt auf diese Weise um bis zu 30 %.",
+            "Erhöht den Unterbrechungs-WDS.",
+            "Diese Effekte erlöschen beim Ende der aufeinanderfolgenden Angriffe."
+          ]
+        },
+        {
+          "key": "p3",
+          "title": "Blut des roten Oni",
+          "description": "Erhöht den mit „Arataki Kesagiri“ verursachten Schaden basierend auf 35 % von Arataki Ittos VTD.\r\n",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "Hör gut zu!",
+          "description": "Verleiht Arataki Itto nach Anwendung von Schrecklicher Oni-König – Itto bricht vor! 2 Stapelungen des Effekts „superstarke Superkraft“. Verleiht Arataki Itto 1 s später 1,5 s lang alle 0,5 s jeweils 1 Stapelung des Effekts „superstarke Superkraft“.\r\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "Sieh gut her!",
+          "description": "Verkürzt die Abklingzeit von Schrecklicher Oni-König – Itto bricht vor! nach dem Auslösen dieser Fähigkeit für jede Figur in der Truppe, die die Geo-Kraft beherrscht, um 1,5 s und stellt Arataki Itto 6 Punkte Elementarenergie wieder her.\r\nVerkürzt die Abklingzeit auf diese Weise um bis zu 4,5 s und stellt bis zu 18 Punkte Elementarenergie wieder her.\r\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "Bulle im Anmarsch",
+          "description": "Erhöht die Stufe der Fähigkeit Masatsu Zetsugi – Akaushi-Wurf! um 3.\r\nHöchststufe 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "Brot und Wasser",
+          "description": "Erhöht nach dem Ende des durch Schrecklicher Oni-König – Itto bricht vor! entstandenen Zustands „wütender Oni-König“ die VTD aller Truppenmitglieder in der Nähe 10 s lang um 20 % und ihren ANG um 20 %.\r\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "Jahrzente des Ruhms in Hanamizaka",
+          "description": "Erhöht die Stufe der Fähigkeit Schrecklicher Oni-König – Itto bricht vor! um 3.\r\nHöchststufe 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
+          "title": "Arataki Itto, höchstpersönlich!",
+          "description": "Erhöht den KSCH von heftigen Schlägen von Arataki Itto um 70 %. Verbraucht außerdem bei Anwendung von „Arataki Kesagiri“ mit einer Wahrscheinlichkeit von 50 % keine „superstarke Superkraft“.\r\n",
           "descriptions": []
         }
       ]
@@ -1778,87 +1843,160 @@
     {
       "key": "gorou",
       "name": "Gorou",
-      "title": "Canine Warrior",
-      "description": "The great general of Watatsumi Island's forces. He is deeply trusted by his subordinates.",
+      "title": "Hundekrieger",
+      "description": "Der große General der Streitkräfte von Watatsumi, dessen Untergebene ihm voll und ganz vertrauen.",
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Gefletschte Zähne",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Standardangriff",
+              "description": "Führt bis zu 4 Pfeilschüsse hintereinander aus.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Heftiger Schlag",
+              "description": "Führt einen gezielten Schuss mit höherem Schaden und höherer Genauigkeit aus.\r\nKonzentriert die Steinkristalle während des Zielens an der Pfeilspitze, die voll aufgeladen Geo-Schaden verursacht.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Angriff aus dem Fall",
+              "description": "Schießt in der Luft einen Pfeilregen ab, trifft schnell auf dem Boden auf und verursacht dort Flächenschaden.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "SCH Phase 1|{param1}%",
+            "SCH Phase 2|{param2}%",
+            "SCH Phase 3|{param3}%",
+            "SCH Phase 4|{param4}%",
+            "Gezielte Schüsse|{param5}%",
+            "Voll aufgeladene gezielte Schüsse|{param6}%",
+            "SCH beim Fallen|{param7}%",
+            "SCH beim Fallen aus niedriger/großer Höhe|{param8}% / {param9}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Inuzuka-Allzweckaufstellung",
+          "description": "Verursacht Geo-Flächenschaden und stellt ein Generalbanner auf.\r\n",
+          "abilities": [
+            {
+              "name": "Generalbanner",
+              "description": "Verleiht den aktuellen Figuren im Wirkungsbereich gemäß der Anzahl an Figuren in der Truppe mit dem Geo-Element zum Zeitpunkt der Anwendung folgende Effekte:\r\n",
+              "descriptions": [
+                "1 Figur: „Zähigkeit“, erhöht die VTD.",
+                "2 Figuren: „Unbeirrbarkeit“, verleiht den obigen Effekt und erhöht den Unterbrechungs-WDS.",
+                "3 Figuren: „Trümmer“, verleiht die obigen Effekte und erhöht den Geo-Schaden.",
+                "Zu einem Zeitpunkt kann nur ein von Gorou selbst erschaffenes Generalbanner existieren. Figuren können nur die Boni eines einzigen Generalbanners erhalten. Der Effekt innerhalb des Wirkungsbereichs bleibt für Figuren bis 2 s nach dem Verlassen des Wirkungsbereichs bestehen."
+              ]
+            },
+            {
+              "name": "Gedrückt halten",
+              "description": "Wirkungsbereich der Fähigkeit kann angepasst werden.\r\n",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "Fähigkeits-SCH|{param1}%",
+            "VTD-Bonus|{param2}",
+            "Geo-SCH-Bonus|{param3}%",
+            "Dauer|{param4}s",
+            "Abklingzeit|{param5}s"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Juuga – Vorwärts zum Sieg",
+          "description": "Gorou zeigt seine Macht als General, verursacht Geo-Flächenschaden und erstellt ein Feld der „Würde des Generals“, um seine Kameraden zu ermuntern.\r\n",
+          "abilities": [
+            {
+              "name": "Würde des Generals",
+              "description": "Merkmale:\r\n",
+              "descriptions": [
+                "Das Feld verleiht aktuellen Figuren im Wirkungsbereich gemäß der Anzahl an Figuren in der Truppe mit dem Geo-Element die gleichen Effekte wie das Generalbanner der Elementarfähigkeit „Inuzuka-Allzweckaufstellung“ und folgt den Bewegungen der aktuellen Figur.",
+                "Erschafft alle 1,5 s einen Kristallzusammenbruch, der einem Gegner im Wirkungsbereich Geo-Flächenschaden zufügt.",
+                "Zieht alle 1,5 s 1 durch Kristallisationsreaktionen entstehenden Splitter im Wirkungsbereich zur Position der aktuellen Figur.",
+                "Zerstört, wenn ein von Gorou selbst erschaffenes Generalbanner bei der Anwendung dieser Fähigkeit vorhanden ist, dieses Generalbanner. Erschafft kein Generalbanner, wenn Gorou selbst während der Wirkungsdauer von Würde des Generals seine Elementarfähigkeit „Inuzuka-Allzweckaufstellung“ anwendet.",
+                "Der Effekt von Würde des Generals, den Gorou selbst geschaffen hat, erlischt, wenn Gorou ohnmächtig wird."
+              ]
+            }
+          ],
+          "stats": [
+            "Fähigkeits-SCH|{param1}% DEF",
+            "Kristallzusammenbruch-SCH|{param2}% DEF",
+            "Dauer|{param3}s",
+            "Abklingzeit|{param4}s",
+            "Elementarenergie|{param5}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "Gespür für Geglitzer",
+          "description": "Zeigt alle Besonderheiten Inazumas in der Nähe auf der Minikarte an.\r\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
+          "title": "Bei Wind und Regen",
+          "description": "Erhöht bei Anwendung von Juuga – Vorwärts zum Sieg die VTD aller Truppenmitglieder in der Nähe 12 s lang um 25 %.\r\n",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
+          "title": "Unvergessene Dankbarkeit",
+          "description": "Erhöht den mit folgenden Angriffen von Gorou verursachten Schaden basierend auf seiner VTD:\r\n",
+          "descriptions": [
+            "Erhöht den Schaden der Fähigkeit Inuzuka-Allzweckaufstellung um 156 % der VTD.",
+            "Erhöht den Schaden der Fähigkeit Juuga – Vorwärts zum Sieg sowie den Schaden von Kristallzusammenbruch um 15,6 % der VTD."
+          ]
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "Laufender Hund – Schnell wie der Wind",
+          "description": "Verkürzt, wenn aktuelle Figuren (außer Gorou selbst) im Wirkungsbereich von Gorous Generalbanner oder Würde des Generals Gegnern Geo-Schaden zufügen, die Abklingzeit von Gorous Inuzuka-Allzweckaufstellung um 2 s.\r\n10 s Abklingzeit.\r\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "Sitzender Hund – Verlässlich wie eine Uhr",
+          "description": "Verlängert die Wirkungsdauer von Gorous Würde des Generals beim Erhalten von durch Kristallisationsreaktionen entstehenden Splittern durch aktuelle Figuren in der Nähe während der Wirkungsdauer von Würde des Generals um 1 s.\r\n0,1 s Abklingzeit, verlängert die Wirkungsdauer auf diese Weise um bis zu 3 s.\r\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "Bellender Hund – Fauchend wie Feuer",
+          "description": "Erhöht die Stufe der Fähigkeit Inuzuka-Allzweckaufstellung um 3.\r\nHöchststufe 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "Schleckender Hund – Warm wie Wasser",
+          "description": "Stellt, wenn die Effekte „Unbeirrbarkeit“ oder „Trümmer“ für Würde des Generals aktiv sind, allen aktuellen Figuren im Wirkungsbereich alle 1,5 s LP in Höhe von 50 % von Gorous VTD wieder her.\r\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "Aufspringender Hund – Aufgebracht wie Donner",
+          "description": "Erhöht die Stufe der Fähigkeit Juuga – Vorwärts zum Sieg um 3.\r\nHöchststufe 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
+          "title": "Mutiger Hund – Treu wie Berg",
+          "description": "Erhöht bei Anwendung von Inuzuka-Allzweckaufstellung oder Juuga – Vorwärts zum Sieg den KSCH des Geo-Schadens aller Truppenmitglieder in der Nähe gemäß der Stufe des Wirkungsbereichs zur Zeit der Anwendung 12 s lang:\r\n",
+          "descriptions": [
+            "„Zähigkeit“: 10 % Bonus",
+            "„Unbeirrbarkeit“: 20 % Bonus",
+            "„Trümmer“: 40 % Bonus",
+            "Dieser Effekt ist nicht stapelbar und richtet sich nach dem zuletzt in Kraft getretenen Effekt."
+          ]
         }
       ]
     },
@@ -4457,6 +4595,156 @@
       ]
     },
     {
+      "key": "shenhe",
+      "name": "Shenhe",
+      "title": "Einsame Abgeschiedenheit",
+      "description": "Eine adeptische Schülerin mit einer übernatürlichen Aura, die ihr das langjährige eremitenhafte Leben in den Bergen von Liyue verleiht. Ihr Charakter ist von dem Gleichmut und der Distanzierung der Adepten zutiefst geprägt.",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "Morgensternstachel",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Standardangriff",
+              "description": "Führt bis zu 5 Lanzenstiche hintereinander aus.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Heftiger Schlag",
+              "description": "Verbraucht eine gewisse Menge Ausdauer, sticht geschwind nach vorn und fügt den Gegnern in der Bahn Schaden zu.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Angriff aus dem Fall",
+              "description": "Schlägt beim Fallen aus der Luft auf den Boden, greift alle Gegner in der Bahn an und verursacht beim Aufkommen Flächenschaden.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "SCH Phase 1|{param1}%",
+            "SCH Phase 2|{param2}%",
+            "SCH Phase 3|{param3}%",
+            "SCH Phase 4|{param4}% + {param5}%",
+            "SCH Phase 5|{param6}%",
+            "SCH heftiger Schläge|{param7}%",
+            "Ausdauerverbrauch heftiger Schläge|{param8} Punkte",
+            "SCH beim Fallen|{param9}%",
+            "SCH beim Fallen aus niedriger/großer Höhe|{param10}% / {param11}%"
+          ]
+        },
+        {
+          "key": "s2",
+          "title": "Mantra der Geisterbeschwörung",
+          "description": "Fester und silberner eisiger Tau möge das Böse vertreiben.\r\nVerleiht allen Truppenmitgliedern in der Nähe den Effekt „Eisfeder“ und verursacht je nachdem, ob gedrückt oder gedrückt gehalten wird, auf unterschiedliche Weise Kryo-Schaden.\r\n",
+          "abilities": [
+            {
+              "name": "Drücken",
+              "description": "Stößt gemeinsam mit einem „Talismangeist“ vor und fügt Gegnern in der Bahn Kryo-Schaden zu.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Gedrückt halten",
+              "description": "Befielt dem Talismangeist, Kryo-Flächenschaden zu verursachen.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Eisfeder",
+              "description": "Erhöht den Gegnern mit Standardangriffen, heftigen Schlägen, Angriffen aus dem Fall, Elementarfähigkeiten und Spezialfähigkeiten zugefügten Kryo-Schaden basierend auf Shenhes eigenem aktuellen ANG.\r\nDer Effekt „Eisfeder“ erlischt nach dem Ende der Wirkungsdauer oder nach dem Inkrafttreten einer bestimmten Menge an Stapelungen. Eisfeder hält beim Gedrückthalten länger und verleiht mehr Stapelungen als beim Drücken.\r\nVerbraucht beim Treffen mehrerer Gegner mit einem einzelnen Kryo-Schaden eine der Anzahl der getroffenen Gegner entsprechende Menge an wirksamen Stapelungen. Die wirksamen Stapelungen jedes Truppenmitglieds mit dem Effekt Eisfeder werden unabhängig voneinander berechnet.\r\n",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "SCH bei Drücken|{param1}%",
+            "SCH bei Gedrückthalten|{param2}%",
+            "SCH-Bonus|{param3}% ANG",
+            "Dauer bei Drücken/Gedrückthalten|{param4}s / {param5}s",
+            "Wirksame Stapelungen bei Drücken/Gedrückthalten|{param6} / {param7}s",
+            "Abklingzeit für Drücken|{param8}s",
+            "Abklingzeit für Gedrückthalten|{param9}s"
+          ]
+        },
+        {
+          "key": "s3",
+          "title": "Geisterbefehligung der göttlichen Jungfrau",
+          "description": "Entfesselt die Kraft des „Talismangeists“, lässt ihn auf die Welt los und verursacht Kryo-Flächenschaden.\r\nDer Talismangeist erschafft ein Feld, das den Kryo-WDS sowie den physischen WDS von Gegnern darin verringert und ihnen fortlaufend Kryo-Schaden zufügt.\r\n",
+          "abilities": [],
+          "stats": [
+            "Fähigkeits-SCH|{param1}%",
+            "WDS-Malus|{param2}%",
+            "Fortlaufender SCH|{param3}%",
+            "Dauer|{param4}s",
+            "Abklingzeit|{param5}s",
+            "Elementarenergie|{param6}"
+          ]
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "Kenntnisse von der Umgebung",
+          "description": "Bringt bei 20-stündigen Erkundungsentsendungen in Liyue 25 % mehr Belohnungen.\r\n",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "Göttliche Umarmung",
+          "description": "Erhöht den Kryo-Schadensbonus aktueller Figuren im Wirkungsbereich von Geisterbefehligung der göttlichen Jungfrau um 15 %.\r\n",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "Siegel der Geisterbindung",
+          "description": "Verleiht nach Anwendung von Mantra der Geisterbeschwörung durch Shenhe allen Truppenmitgliedern in der Nähe folgende Effekte:\r\n",
+          "descriptions": [
+            "Drücken: Erhöht den mit Elementarfähigkeiten und Spezialfähigkeiten verursachten Schaden 10 s lang um 15 %.",
+            "Gedrückt halten: Erhöht den mit Standardangriffen, heftigen Schlägen und Angriffen aus dem Fall verursachten Schaden 15 s lang um 15 %."
+          ]
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "Klarheiten im Herzen",
+          "description": "Ermöglicht 1 weitere Anwendung von Mantra der Geisterbeschwörung.\r\n",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "Fixierung des Geistes",
+          "description": "Verlängert die Wirkungsdauer von Geisterbefehligung der göttlichen Jungfrau um 6 s. Erhöht KSCH des Kryo-Schadens aktueller Figuren im Wirkungsbereich um 15 %.\r\n",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "Zurückgezogenheit",
+          "description": "Erhöht die Stufe der Fähigkeit Mantra der Geisterbeschwörung um 3.\r\nHöchststufe 15.\r\n",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "Durchdringender Blick",
+          "description": "Verleiht Shenhe beim Auslösen des Schadensbonus von „Eisfeder“ durch Figuren im von Shenhe selbst verliehenen Zustand Eisfeder eine Stapelung „Frosthimmelmantra“:\r\n",
+          "descriptions": [
+            "Entfernt beim Auslösen von Mantra der Geisterbeschwörung durch Shenhe alle Stapelungen von Frosthimmelmantra und erhöht den mit diesem Mantra der Geisterbeschwörung verursachten Schaden je nach der Menge an entfernten Stapelungen um 5 %.",
+            "Dieser Effekt ist 50-fach stapelbar und hält 60 s."
+          ]
+        },
+        {
+          "key": "c5",
+          "title": "Erlangung von Göttlichkeit",
+          "description": "Erhöht die Stufe der Fähigkeit Geisterbefehligung der göttlichen Jungfrau um 3.\r\nHöchststufe 15.\r\n",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "Mystische Verlassenheit",
+          "description": "Verringert beim Auslösen von Eisfeder mit dem Schaden von Standardangriffen und heftigen Schlägen von Figuren keine Stapelungen von Eisfeder mehr.\r\n",
+          "descriptions": []
+        }
+      ]
+    },
+    {
       "key": "sucrose",
       "name": "Saccharose",
       "title": "Harmlos und süß",
@@ -6009,6 +6297,93 @@
       ]
     },
     {
+      "key": "yae-miko",
+      "name": "Yae Miko",
+      "title": "???",
+      "description": "",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ]
+    },
+    {
       "key": "yanfei",
       "name": "Yanfei",
       "title": "Naive Weisheit",
@@ -6279,6 +6654,149 @@
           "key": "c6",
           "title": "Naganohara-Meteorstrom",
           "description": "Schießt bei aktiver Anwendung von Yoimiyas Standardangriffen während der Wirkungsdauer von Niwabi-Feuertanz mit einer Wahrscheinlichkeit von 50 % einen zusätzlichen entzündeten Pfeil ab und verursacht damit 60 % des eigentlichen Schadens. Dieser Schaden gilt als Standardangriffsschaden.\r\n",
+          "descriptions": []
+        }
+      ]
+    },
+    {
+      "key": "yun-jin",
+      "name": "Yun Jin",
+      "title": "Bühnenschönheit",
+      "description": "Eine berühmte Opernsängerin in Liyue, die sowohl im Schreiben als auch im Gesang erfahren ist. Ihr Stil ist einzigartig, exquisit und sanft, genauso wie sie selbst.",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "Wolkenfetzer",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Standardangriff",
+              "description": "Führt bis zu 5 Lanzenstiche hintereinander aus.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Heftiger Schlag",
+              "description": "Verbraucht eine gewisse Menge Ausdauer, sticht geschwind nach vorn und fügt den Gegnern in der Bahn Schaden zu.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Angriff aus dem Fall",
+              "description": "Schlägt beim Fallen aus der Luft auf den Boden, greift alle Gegner in der Bahn an und verursacht beim Aufkommen Flächenschaden.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "SCH Phase 1|{param1}%",
+            "SCH Phase 2|{param2}%",
+            "SCH Phase 3|{param3}% + {param4}%",
+            "SCH Phase 4|{param5}% + {param6}%",
+            "SCH Phase 5|{param7}%",
+            "SCH heftiger Schläge|{param8}%",
+            "Ausdauerverbrauch heftiger Schläge|{param9} Punkte",
+            "SCH beim Fallen|{param10}%",
+            "SCH beim Fallen aus niedriger/großer Höhe|{param11}% / {param12}%"
+          ]
+        },
+        {
+          "key": "s2",
+          "title": "Wolkenöffnung",
+          "description": "Mit den theatralischen Aufführungen ihrer Kampfkünste kommt Fräulein Yun sogar gegen ihre Feinde an.\r\n",
+          "abilities": [
+            {
+              "name": "Drücken",
+              "description": "Verursacht mit dem Speertanz des Wolkenzupfens Geo-Schaden.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Gedrückt halten",
+              "description": "Nimmt die Stellung der Wolkenöffnung ein, lädt auf und erschafft einen Schutzschild, der Schaden basierend auf Yun Jins max. LP und bei elementarem sowie physischem Schaden 150 % abhält. Der Schutzschild hält bis zum Ende der Elementarfähigkeit.\r\nYun Jin wirbelt beim Loslassen der Taste, beim Ende der Wirkungsdauer oder dann, wenn der Schild zerstört wird, ihre Stangenwaffe mit der aufgeladenen Kraft und verursacht Geo-Schaden.\r\nErhält beim Auslösen je nach Zeit der Aufladung den Zustand von Aufladung Phase 1 oder Phase 2.\r\n",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "SCH bei Drücken|{param1}% VTD",
+            "SCH bei Aufladung (Phase 1)|{param2}% VTD",
+            "SCH bei Aufladung (Phase 2)|{param3}% VTD",
+            "Schildstärke|{param4}% der max. LP + {param5}",
+            "Abklingzeit|{param6} s"
+          ]
+        },
+        {
+          "key": "s3",
+          "title": "Banner der brechenden Klippen",
+          "description": "Verursacht Geo-Flächenschaden und verleiht allen Truppenmitgliedern in der Nähe die „Formation der Fliegenden Wolken“\r\n",
+          "abilities": [
+            {
+              "name": "Formation der fliegenden Wolken",
+              "description": "Erhöht, wenn Gegnern mit Standardangriffen Schaden zugefügt wird, den verursachten Schaden basierend auf Yun Jins eigener aktueller VTD.\r\nDer Effekt „Formation der fliegenden Wolken“ erlischt am Ende der Wirkungszeit oder nach dem Inkrafttreten einer bestimmten Menge an Stapelungen.\r\nVerbraucht beim Treffen mehrerer Gegner mit einem einzelnen Standardangriff eine der Anzahl der getroffenen Gegner entsprechende Menge an wirksamen Stapelungen. Die wirksamen Stapelungen jedes Truppenmitglieds mit dem Effekt Formation der fliegenden Wolken werden unabhängig voneinander berechnet.\r\n",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "Fähigkeits-SCH|{param1}%",
+            "SCH-Bonus|{param2}% VTD",
+            "Dauer|{param3} s",
+            "Wirksame Stapelungen|{param4}",
+            "Abklingzeit|{param5} s",
+            "Elementarenergie|{param6}"
+          ]
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "Leichte Nahrung",
+          "description": "Stellt bei der perfekten Zubereitung eines Gerichts mit Abenteuer-Funktion mit einer Wahrscheinlichkeit von 12 % den 2-fachen Ertrag her.\r\n",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "Selbstsicherheit",
+          "description": "Löst Wolkenöffnung bei Anwendung im Augenblick des Erleidens eines Angriffs wie beim Gedrückthalten für Aufladung Phase 2 aus.\r\n",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "Nieder mit den alten Werten",
+          "description": "Erhöht den Schadensbonus für Standardangriffe von Formation der Fliegenden Wolken bei Truppenmitgliedern mit 1/2/3/4 verschiedenen Elementartypen zusätzlich um 2,5/5/7,5/11,5 % von Yun Jins VTD.\r\n",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "Fliegender Gallopp",
+          "description": "Verkürzt die Abklingzeit von Wolkenöffnung um 18 %.\r\n",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "Unzählige Requisiten",
+          "description": "Erhöht nach dem Auslösen von Banner der brechenden Klippen den mit Standardangriffen aller Truppenmitglieder verursachten Schaden 12 s lang um 15 %.\r\n",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "Flagge auf dem Mast",
+          "description": "Erhöht die Stufe der Fähigkeit Banner der brechenden Klippen um 3.\r\nHöchststufe 15.\r\n",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "Auf in die Wolken",
+          "description": "Erhöht nach dem Auslösen der Reaktion Kristallisation durch Yun Jin die VTD 12 s lang um 20 %.\r\n",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "Überall bekannt",
+          "description": "Erhöht die Stufe der Fähigkeit Wolkenöffnung um 3.\r\nHöchststufe 15.\r\n",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "Gemeinsame Unternehmung",
+          "description": "Erhöht die Angriffs-GSW mit Standardangriffen von Figuren im Zustand Formation der Fliegenden Wolken um 12 %.\r\n",
           "descriptions": []
         }
       ]
@@ -6605,6 +7123,18 @@
         "Erhöht den von Pyro- oder Elektro-Effekten betroffenen Gegnern zugefügten Schaden um {color}18{/color} %.",
         "Erhöht den von Pyro- oder Elektro-Effekten betroffenen Gegnern zugefügten Schaden um {color}21{/color} %.",
         "Erhöht den von Pyro- oder Elektro-Effekten betroffenen Gegnern zugefügten Schaden um {color}24{/color} %."
+      ]
+    },
+    {
+      "key": "calamity-queller",
+      "name": "Ende des Unheils",
+      "description": "Eine sehr scharfe Waffe, hergestellt aus sonderbaren Kristallen. Die ganze Waffe überzieht ein kalter, blauer Schimmer, der Geschichten aus der endlosen Vergangenheit zu erzählen scheint.",
+      "refinements": [
+        "Erhöht den Schaden aller Elemente um {color}12{/color} %. Verleiht beim Auslösen einer Elementarfähigkeit den Effekt „Vollkommenheit“, der 20 s hält, den ANG pro Sekunde um {color}3,2{/color} % erhöht und 6-fach stapelbar ist. Wenn die mit dieser Waffe ausgerüstete Figur inaktiv ist, wird der ANG-Bonus verdoppelt.",
+        "Erhöht den Schaden aller Elemente um {color}15{/color} %. Verleiht beim Auslösen einer Elementarfähigkeit den Effekt „Vollkommenheit“, der 20 s hält, den ANG pro Sekunde um {color}4{/color} % erhöht und 6-fach stapelbar ist. Wenn die mit dieser Waffe ausgerüstete Figur inaktiv ist, wird der ANG-Bonus verdoppelt.",
+        "Erhöht den Schaden aller Elemente um {color}18{/color} %. Verleiht beim Auslösen einer Elementarfähigkeit den Effekt „Vollkommenheit“, der 20 s hält, den ANG pro Sekunde um {color}4,8{/color} % erhöht und 6-fach stapelbar ist. Wenn die mit dieser Waffe ausgerüstete Figur inaktiv ist, wird der ANG-Bonus verdoppelt.",
+        "Erhöht den Schaden aller Elemente um {color}21{/color} %. Verleiht beim Auslösen einer Elementarfähigkeit den Effekt „Vollkommenheit“, der 20 s hält, den ANG pro Sekunde um {color}5,6{/color} % erhöht und 6-fach stapelbar ist. Wenn die mit dieser Waffe ausgerüstete Figur inaktiv ist, wird der ANG-Bonus verdoppelt.",
+        "Erhöht den Schaden aller Elemente um {color}24{/color} %. Verleiht beim Auslösen einer Elementarfähigkeit den Effekt „Vollkommenheit“, der 20 s hält, den ANG pro Sekunde um {color}6,4{/color} % erhöht und 6-fach stapelbar ist. Wenn die mit dieser Waffe ausgerüstete Figur inaktiv ist, wird der ANG-Bonus verdoppelt."
       ]
     },
     {
@@ -7318,6 +7848,18 @@
       ]
     },
     {
+      "key": "redhorn-stonethresher",
+      "name": "Rothorn-Steinbrecher",
+      "description": "Seinem Vorbesitzer zufolge ist dies die Waffe des „mächtigen Rothorn-Löwenfürsten, der Stein und Gold brechen kann“ und jedes Monster in die Flucht schlägt.",
+      "refinements": [
+        "Erhöht die VTD um {color}28{/color} %. Erhöht den mit Standardangriffen und heftigen Schlägen verursachten Schaden um {color}40{/color} % VTD.",
+        "Erhöht die VTD um {color}35{/color} %. Erhöht den mit Standardangriffen und heftigen Schlägen verursachten Schaden um {color}50{/color} % VTD.",
+        "Erhöht die VTD um {color}42{/color} %. Erhöht den mit Standardangriffen und heftigen Schlägen verursachten Schaden um {color}60{/color} % VTD.",
+        "Erhöht die VTD um {color}49{/color} %. Erhöht den mit Standardangriffen und heftigen Schlägen verursachten Schaden um {color}70{/color} % VTD.",
+        "Erhöht die VTD um {color}56{/color} %. Erhöht den mit Standardangriffen und heftigen Schlägen verursachten Schaden um {color}80{/color} % VTD."
+      ]
+    },
+    {
       "key": "royal-bow",
       "name": "Königlicher Langbogen",
       "description": "Ein Langbogen der Aristokraten, die einst über Mondstadt herrschten. Obwohl er aus einem längst vergangenen Zeitalter stammt, ist die Sehne noch vollständig intakt und die Pfeile schießen ungehemmt davon.",
@@ -8002,6 +8544,14 @@
       ]
     },
     {
+      "key": "husk-of-opulent-dreams",
+      "name": "Schale der üppigen Träume",
+      "bonus": [
+        "Erhöht die VTD um 30 %.",
+        "Die mit diesem Artefaktset ausgerüsteten Figuren erhalten unter den folgenden Umständen den Effekt „Neugier“ Aktuelle Figuren erhalten mit 0,3 s Abklingzeit eine Stapelung beim Treffen von Gegnern mit Geo-Angriffen, während die inaktiven Figuren in der Truppe alle 3 s eine Stapelung erhalten. 4-fach stapelbar. Jede Stapelung verleiht einen VTD-Bonus von 6 % und einen Geo-Schadens-Bonus von 6 %. Wenn kein neuer Effekt der „Neugier“ hinzukommt, erlischt alle 6 s eine Stapelung dieses Effekts."
+      ]
+    },
+    {
       "key": "instructor",
       "name": "Ausbilder",
       "bonus": [
@@ -8030,7 +8580,7 @@
       "name": "Ins Herz geschlossenes Mädchen",
       "bonus": [
         "Erhöht den aktiven Heileffekt der Figur um 15 %.",
-        "Erhöht den passiven Heileffekt aller Truppenmitglieder nach Anwendung von Elementarfähigkeiten oder Spezialfähigkeiten 10 s lang um 20 %."
+        "Erhöht den passiven Heilungseffekt aller Truppenmitglieder nach Anwendung von Elementarfähigkeiten oder Spezialfähigkeiten 10 s lang um 20 %."
       ]
     },
     {
@@ -8047,6 +8597,14 @@
       "bonus": [
         "Erhöht den mit Spezialfähigkeiten verursachten Schaden um 20 %.",
         "Erhöht den ANG aller Truppenmitglieder nach Anwendung von Spezialfähigkeiten 12 s lang um 20 %, nicht stapelbar."
+      ]
+    },
+    {
+      "key": "ocean-hued-clam",
+      "name": "Meeresmuschel",
+      "bonus": [
+        "Erhöht den Heilungsbonus um 15 %.",
+        "Wenn die mit diesem Artefaktset ausgerüsteten Figuren die Figuren in der Truppe heilen, entsteht eine Meeresblase, die 3 s hält und die wiederhergestellten Lebenspunkte beim Heilen (einschließlich des überschüssigen Heilungswerts) aufzeichnet. Wenn ihre Dauer endet, explodiert die Meeresblase, was Gegnern in der Umgebung Schaden, der 90 % der insgesamt wiederhergestellten LP entspricht, zufügt (Diese SCH-Berechnungsweise gleicht der der Elementarreaktionen Unter Strom und Supraleiter, ist jedoch von der Elementarkunde, der Stufe oder dem Reaktion-SCH-Bonus unabhängig). Alle 3,5 s kann höchstens eine Meeresblase entstehen. Jede Meeresblase kann bis zu 30.000 wiederhergestellte Lebenspunkte (einschließlich des überschüssigen Heilungswerts) aufzeichnen. In der eigenen Truppe kann gleichzeitig höchstens eine Meeresblase bestehen. Wenn die mit diesem Artefaktset ausgerüsteten Figuren inaktiv in der Truppe sind, kann dieser Effekt auch ausgelöst werden."
       ]
     },
     {
@@ -8554,6 +9112,11 @@
       "key": "dragon-lords-crown",
       "name": "Horn des Drachenkönigs",
       "description": "Hörner, die aus gehärteter, über tausend Jahre kristallisierter Jade erschaffen wurden, sind die natürliche Krone des Drachenkönigs.\r\nDurchdrungen von Geist und aus dem Fels gehauen, wurde er aus dem Herzen des Berges geboren, um dem Land inmitten von Monolithen die Kraft der Erde zu zeigen, und seine langen goldenen Hörner sind das Zeichen seines alten Streits mit einem alten König.\r\nEine Zeit lang war dieses Horn zerbrochen und verlor seinen Glanz, aber jetzt schimmert es kalt und golden, wenn es in deiner Handfläche liegt."
+    },
+    {
+      "key": "dragonheirs-false-fin",
+      "name": "Falsche Flosse der Drachennachfahren",
+      "description": "Ein Stück biologisches Gewebe, das du gefunden hast, nachdem du die Tiefsee-Drachenechsen besiegt hattest. Obwohl es wie eine Art Flosse aussieht, hat es eigentlich gar keine Funktion.\r\nDas Volk von Byakuyakoku hat die Tiefsee-Drachenechsen einst sehr gründlich untersucht. Ihr auffälligstes Merkmal war die Fähigkeit zu wählen, welche Eigenschaften sie an ihre Nachkommen weitergeben wollten. Wegen ihres großen Hasses auf die Menschheit verlieren diese Drachenechsen jede Sehkraft, wenn sie ausgewachsen sind. Gleichzeitig haben sie zu Kampfzwecken einen gewissen Polymorphismus der Elemente entwickelt."
     },
     {
       "key": "dream-of-the-dandelion-gladiator",
@@ -9242,8 +9805,8 @@
     },
     {
       "key": "riftborn-regalia",
-      "name": "",
-      "description": ""
+      "name": "Gehörn des Wolfskönigs",
+      "description": "Ein zerbrochenes Horn, das du beim Besiegen des Garmfürsten erhalten hast. Allerdings sollte es nach deiner Jagd eigentlich überhaupt nicht weiter auf der Welt existieren.\r\nSelbst ein Fürst unter den Garmwölfen ist nichts vor Monstern mit höherem Stammbaum.\r\n„Gold“ entwarf diese missgebildeten Wolfsrudel schon fast zufällig in Massen. Sie waren damals nichts mehr als Gekritzel auf ein paar weggeworfenen, geschrumpften Papierbögen. Die Hörner auf diesem hier repräsentieren seine Autorität, seiner dunklen Brut zu befehlen, den Raum aufzulösen."
     },
     {
       "key": "ring-of-boreas",
@@ -9676,7 +10239,7 @@
     {
       "key": "vaporize",
       "name": "Verdampfen",
-      "effect": "Verursacht 1,5-fachen Pyro-Schaden, wenn eine Pyro-Attacke die Reaktion auslöst.",
+      "effect": "Verursacht 2-fachen Pyro-Schaden, wenn eine Pyro-Attacke die Reaktion auslöst.",
       "description": null
     },
     {
@@ -9700,7 +10263,7 @@
     {
       "key": "vaporize-reverse",
       "name": "Verdampfen (umgekehrt)",
-      "effect": "Verursacht doppelten Hydro-Schaden, wenn eine Hydro-Attacke die Reaktion auslöst.",
+      "effect": "Verursacht 1,5-fachen Hydro-Schaden, wenn eine Hydro-Attacke die Reaktion auslöst.",
       "description": null
     },
     {
@@ -9818,6 +10381,14 @@
       "name": "Mitachurl mit Feueraxt"
     },
     {
+      "key": "bolteater-bathysmal-vishap",
+      "name": "Tiefsee-Drachenechse – Donnerverschlinger"
+    },
+    {
+      "key": "bolteater-bathysmal-vishap-hatchling",
+      "name": "Junge Tiefsee-Drachenechse – Donnerverschlinger"
+    },
+    {
       "key": "childe",
       "name": "„Der Graf“"
     },
@@ -9858,6 +10429,10 @@
       "name": "Kryo-Schleim"
     },
     {
+      "key": "cryo-specter",
+      "name": "Kryo-Gespenst"
+    },
+    {
       "key": "cryo-whopperflower",
       "name": "Gigantische Kryo-Vaniloqua"
     },
@@ -9896,6 +10471,10 @@
     {
       "key": "electro-slime",
       "name": "Elektro-Schleim"
+    },
+    {
+      "key": "electro-specter",
+      "name": "Elektro-Gespenst"
     },
     {
       "key": "electro-whopperflower",
@@ -9968,6 +10547,10 @@
     {
       "key": "geovishap-hatchling",
       "name": "Junge Geo-Drachenechse"
+    },
+    {
+      "key": "golden-wolflord",
+      "name": "Goldener Garmfürst"
     },
     {
       "key": "hilichurl",
@@ -10102,6 +10685,18 @@
       "name": "Maguu Kenki"
     },
     {
+      "key": "maguu-kenki-galloping-frost",
+      "name": "Maguu Kenki – Galoppierender Frost"
+    },
+    {
+      "key": "maguu-kenki-lone-gale",
+      "name": "Maguu Kenki – Einsamer Sturm"
+    },
+    {
+      "key": "maguu-kenki-mask-of-terror",
+      "name": "Maguu Kenki – Maske des Schreckens"
+    },
+    {
       "key": "millelith-sergeant",
       "name": "Millelithenausbilder"
     },
@@ -10150,6 +10745,14 @@
       "name": "Alte Geo-Drachenechse"
     },
     {
+      "key": "primordial-bathysmal-vishap",
+      "name": "Tiefsee-Drachenechse – Urtyp"
+    },
+    {
+      "key": "primordial-bathysmal-vishap-hatchling",
+      "name": "Junge Tiefsee-Drachenechse – Urtyp"
+    },
+    {
       "key": "pyro-abyss-mage",
       "name": "Pyro-Abgrundmagier"
     },
@@ -10170,12 +10773,24 @@
       "name": "Pyro-Schleim"
     },
     {
+      "key": "pyro-specter",
+      "name": "Pyro-Gespenst"
+    },
+    {
       "key": "pyro-whopperflower",
       "name": "Gigantische Pyro-Vaniloqua"
     },
     {
       "key": "raiden-shogun",
       "name": "Shougun Raiden"
+    },
+    {
+      "key": "rimebiter-bathysmal-vishap",
+      "name": "Tiefsee-Drachenechse – Eisbeißer"
+    },
+    {
+      "key": "rimebiter-bathysmal-vishap-hatchling",
+      "name": "Junge Tiefsee-Drachenechse – Eisbeißer"
     },
     {
       "key": "rock-shield-hilichurl-guard",
@@ -10256,6 +10871,10 @@
     {
       "key": "thunderhelm-lawachurl",
       "name": "Blitzhelm-Lawachurl"
+    },
+    {
+      "key": "treasure-hoarder-wallenstein",
+      "name": "Schatzräuber Wallenstein"
     },
     {
       "key": "treasure-hoarders-boss",

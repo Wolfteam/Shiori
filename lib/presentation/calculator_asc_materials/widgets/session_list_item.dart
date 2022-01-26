@@ -5,6 +5,7 @@ import 'package:shiori/application/bloc.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/generated/l10n.dart';
 import 'package:shiori/presentation/calculator_asc_materials/calculator_ascension_materials_page.dart';
+import 'package:shiori/presentation/shared/utils/size_utils.dart';
 
 import 'add_edit_session_dialog.dart';
 
@@ -21,24 +22,33 @@ class SessionListItem extends StatelessWidget {
     final s = S.of(context);
     final numberOfChars = session.items.where((e) => e.isCharacter).length;
     final numberOfWeapons = session.items.where((e) => !e.isCharacter).length;
+    final extentRatio = SizeUtils.getExtentRatioForSlidablePane(context);
     return Slidable(
-      actionPane: const SlidableDrawerActionPane(),
-      actions: [
-        IconSlideAction(
-          caption: s.delete,
-          color: Colors.red,
-          icon: Icons.delete,
-          onTap: () => _showDeleteSessionDialog(session.key, session.name, context),
-        ),
-      ],
-      secondaryActions: [
-        IconSlideAction(
-          caption: s.edit,
-          color: Colors.lightBlueAccent,
-          icon: Icons.edit,
-          onTap: () => _showEditSessionDialog(session.key, session.name, context),
-        ),
-      ],
+      key: ValueKey(session.key),
+      startActionPane: ActionPane(
+        extentRatio: extentRatio,
+        motion: const ScrollMotion(),
+        children: [
+          SlidableAction(
+            label: s.delete,
+            backgroundColor: Colors.red,
+            icon: Icons.delete,
+            onPressed: (_) => _showDeleteSessionDialog(session.key, session.name, context),
+          ),
+        ],
+      ),
+      endActionPane: ActionPane(
+        extentRatio: extentRatio,
+        motion: const ScrollMotion(),
+        children: [
+          SlidableAction(
+            label: s.edit,
+            backgroundColor: Colors.lightBlueAccent,
+            icon: Icons.edit,
+            onPressed: (_) => _showEditSessionDialog(session.key, session.name, context),
+          ),
+        ],
+      ),
       child: ListTile(
         onLongPress: () => _showEditSessionDialog(session.key, session.name, context),
         title: Text(session.name),

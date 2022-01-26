@@ -1,7 +1,7 @@
 import 'dart:async';
 
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:shiori/application/common/pop_bloc.dart';
 import 'package:shiori/domain/app_constants.dart';
 import 'package:shiori/domain/assets.dart';
 import 'package:shiori/domain/enums/enums.dart';
@@ -15,7 +15,7 @@ part 'character_bloc.freezed.dart';
 part 'character_event.dart';
 part 'character_state.dart';
 
-class CharacterBloc extends PopBloc<CharacterEvent, CharacterState> {
+class CharacterBloc extends Bloc<CharacterEvent, CharacterState> {
   final GenshinService _genshinService;
   final TelemetryService _telemetryService;
   final LocaleService _localeService;
@@ -29,39 +29,31 @@ class CharacterBloc extends PopBloc<CharacterEvent, CharacterState> {
   ) : super(const CharacterState.loading());
 
   @override
-  CharacterEvent getEventForPop(String? key) => CharacterEvent.loadFromKey(key: key!, addToQueue: false);
-
-  @override
-  Stream<CharacterState> mapEventToState(
-    CharacterEvent event,
-  ) async* {
-    if (event is! _AddedToInventory) {
-      yield const CharacterState.loading();
-    }
-
+  Stream<CharacterState> mapEventToState(CharacterEvent event) async* {
     final s = await event.when(
-      loadFromKey: (key, addToQueue) async {
+      loadFromKey: (key) async {
         final char = _genshinService.getCharacter(key);
         final translation = _genshinService.getCharacterTranslation(key);
 
-        if (addToQueue) {
-          await _telemetryService.trackCharacterLoaded(key);
-          currentItemsInStack.add(char.key);
-        }
+        await _telemetryService.trackCharacterLoaded(key);
         return _buildInitialState(char, translation);
       },
-      addedToInventory: (key, wasAdded) async {
-        if (state is! _LoadedState) {
-          return state;
-        }
-
-        final currentState = state as _LoadedState;
-        if (currentState.key != key) {
-          return state;
-        }
-
-        return currentState.copyWith.call(isInInventory: wasAdded);
-      },
+      addToInventory: (key) async => state.map(
+        loading: (state) async => state,
+        loaded: (state) async {
+          await _telemetryService.trackItemAddedToInventory(key, 1);
+          await _dataService.addCharacterToInventory(key);
+          return state.copyWith.call(isInInventory: true);
+        },
+      ),
+      deleteFromInventory: (key) async => state.map(
+        loading: (state) async => state,
+        loaded: (state) async {
+          await _telemetryService.trackItemDeletedFromInventory(key);
+          await _dataService.deleteCharacterFromInventory(key);
+          return state.copyWith.call(isInInventory: false);
+        },
+      ),
     );
 
     yield s;
