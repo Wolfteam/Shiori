@@ -150,4 +150,14 @@ class TelemetryServiceImpl implements TelemetryService {
           'SubType': EnumToString.convertToString(subType),
         },
       );
+
+  @override
+  Future<void> trackCustomBuildScreenShootTaken(String charKey, CharacterRoleType roleType, CharacterRoleSubType subType) => trackEventAsync(
+        'Custom-Build-ScreenShootTaken',
+        {
+          'CharKey': charKey,
+          'RoleType': EnumToString.convertToString(roleType),
+          'SubType': EnumToString.convertToString(subType),
+        },
+      );
 }

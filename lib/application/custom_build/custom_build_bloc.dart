@@ -7,6 +7,7 @@ import 'package:shiori/domain/extensions/string_extensions.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/data_service.dart';
 import 'package:shiori/domain/services/genshin_service.dart';
+import 'package:shiori/domain/services/logging_service.dart';
 import 'package:shiori/domain/services/telemetry_service.dart';
 
 part 'custom_build_bloc.freezed.dart';
@@ -18,9 +19,10 @@ class CustomBuildBloc extends Bloc<CustomBuildEvent, CustomBuildState> {
   final DataService _dataService;
   final TelemetryService _telemetryService;
   final CustomBuildsBloc _customBuildsBloc;
+  final LoggingService _loggingService;
 
   static int maxTitleLength = 40;
-  static int maxNoteLength = 100;
+  static int maxNoteLength = 300;
   static int maxNumberOfNotes = 5;
   static List<CharacterSkillType> validSkillTypes = [
     CharacterSkillType.normalAttack,
@@ -31,16 +33,16 @@ class CustomBuildBloc extends Bloc<CustomBuildEvent, CustomBuildState> {
   static int maxNumberOfWeapons = 10;
   static int maxNumberOfTeamCharacters = 10;
 
-  CustomBuildBloc(this._genshinService, this._dataService, this._telemetryService, this._customBuildsBloc) : super(const CustomBuildState.loading());
+  CustomBuildBloc(
+    this._genshinService,
+    this._dataService,
+    this._telemetryService,
+    this._loggingService,
+    this._customBuildsBloc,
+  ) : super(const CustomBuildState.loading());
 
   @override
   Stream<CustomBuildState> mapEventToState(CustomBuildEvent event) async* {
-    //TODO: SHOULD I TRHOW ON INVALID REQUEST ?
-    //IN MOST CASES THERE ARE SOME VALIDATIONS FOR THINGS LIKE
-    // if (!state.weapons.any((el) => el.key == e.key)) {
-    //   return state;
-    // }
-    // WHICH SHOULD NOT HAPPEN BUT MAYBE I SHOULD THROW AN EXCEPTION IN THERE
     final s = await event.map(
       load: (e) async => _init(e.key, e.initialTitle),
       characterChanged: (e) async => state.maybeMap(
@@ -48,23 +50,23 @@ class CustomBuildBloc extends Bloc<CustomBuildEvent, CustomBuildState> {
         orElse: () => state,
       ),
       titleChanged: (e) async => state.maybeMap(
-        loaded: (state) => state.copyWith.call(title: e.newValue),
+        loaded: (state) => state.copyWith.call(title: e.newValue, readyForScreenshot: false),
         orElse: () => state,
       ),
       roleChanged: (e) async => state.maybeMap(
-        loaded: (state) => state.copyWith.call(type: e.newValue),
+        loaded: (state) => state.copyWith.call(type: e.newValue, readyForScreenshot: false),
         orElse: () => state,
       ),
       subRoleChanged: (e) async => state.maybeMap(
-        loaded: (state) => state.copyWith.call(subType: e.newValue),
+        loaded: (state) => state.copyWith.call(subType: e.newValue, readyForScreenshot: false),
         orElse: () => state,
       ),
       showOnCharacterDetailChanged: (e) async => state.maybeMap(
-        loaded: (state) => state.copyWith.call(showOnCharacterDetail: e.newValue),
+        loaded: (state) => state.copyWith.call(showOnCharacterDetail: e.newValue, readyForScreenshot: false),
         orElse: () => state,
       ),
       isRecommendedChanged: (e) async => state.maybeMap(
-        loaded: (state) => state.copyWith.call(isRecommended: e.newValue),
+        loaded: (state) => state.copyWith.call(isRecommended: e.newValue, readyForScreenshot: false),
         orElse: () => state,
       ),
       addNote: (e) async => state.maybeMap(
@@ -100,7 +102,7 @@ class CustomBuildBloc extends Bloc<CustomBuildEvent, CustomBuildState> {
         orElse: () => state,
       ),
       deleteWeapons: (e) async => state.maybeMap(
-        loaded: (state) => state.copyWith.call(weapons: []),
+        loaded: (state) => state.copyWith.call(weapons: [], readyForScreenshot: false),
         orElse: () => state,
       ),
       addArtifact: (e) async => state.maybeMap(
@@ -116,7 +118,7 @@ class CustomBuildBloc extends Bloc<CustomBuildEvent, CustomBuildState> {
         orElse: () => state,
       ),
       deleteArtifacts: (e) async => state.maybeMap(
-        loaded: (state) => state.copyWith.call(artifacts: [], subStatsSummary: []),
+        loaded: (state) => state.copyWith.call(artifacts: [], subStatsSummary: [], readyForScreenshot: false),
         orElse: () => state,
       ),
       addTeamCharacter: (e) async => state.maybeMap(
@@ -132,11 +134,19 @@ class CustomBuildBloc extends Bloc<CustomBuildEvent, CustomBuildState> {
         orElse: () => state,
       ),
       deleteTeamCharacters: (e) async => state.maybeMap(
-        loaded: (state) => state.copyWith.call(teamCharacters: []),
+        loaded: (state) => state.copyWith.call(teamCharacters: [], readyForScreenshot: false),
+        orElse: () => state,
+      ),
+      readyForScreenshot: (e) async => state.maybeMap(
+        loaded: (state) => state.copyWith.call(readyForScreenshot: e.ready),
         orElse: () => state,
       ),
       saveChanges: (e) async => state.maybeMap(
         loaded: (state) => _saveChanges(state),
+        orElse: () async => state,
+      ),
+      screenshotWasTaken: (e) async => state.maybeMap(
+        loaded: (state) => _onScreenShootTaken(e, state),
         orElse: () async => state,
       ),
     );
@@ -161,6 +171,7 @@ class CustomBuildBloc extends Bloc<CustomBuildEvent, CustomBuildState> {
         artifacts: build.artifacts..sort((x, y) => x.type.index.compareTo(y.type.index)),
         teamCharacters: build.teamCharacters,
         subStatsSummary: _genshinService.generateSubStatSummary(build.artifacts),
+        readyForScreenshot: false,
       );
     }
 
@@ -178,6 +189,7 @@ class CustomBuildBloc extends Bloc<CustomBuildEvent, CustomBuildState> {
       teamCharacters: [],
       skillPriorities: [],
       subStatsSummary: [],
+      readyForScreenshot: false,
     );
   }
 
@@ -186,7 +198,7 @@ class CustomBuildBloc extends Bloc<CustomBuildEvent, CustomBuildState> {
       throw Exception('Note is not valid');
     }
     final newNote = CustomBuildNoteModel(index: state.notes.length, note: e.note);
-    return state.copyWith.call(notes: [...state.notes, newNote]);
+    return state.copyWith.call(notes: [...state.notes, newNote], readyForScreenshot: false);
   }
 
   CustomBuildState _deleteNote(_DeleteNote e, _LoadedState state) {
@@ -196,7 +208,7 @@ class CustomBuildBloc extends Bloc<CustomBuildEvent, CustomBuildState> {
 
     final notes = [...state.notes];
     notes.removeAt(e.index);
-    return state.copyWith.call(notes: notes);
+    return state.copyWith.call(notes: notes, readyForScreenshot: false);
   }
 
   CustomBuildState _addSkillPriority(_AddSkillPriority e, _LoadedState state) {
@@ -206,7 +218,7 @@ class CustomBuildBloc extends Bloc<CustomBuildEvent, CustomBuildState> {
     if (!validSkillTypes.contains(e.type)) {
       throw Exception('Skill type = ${e.type} is not valid');
     }
-    return state.copyWith.call(skillPriorities: [...state.skillPriorities, e.type]);
+    return state.copyWith.call(skillPriorities: [...state.skillPriorities, e.type], readyForScreenshot: false);
   }
 
   CustomBuildState _deleteSkillPriority(_DeleteSkillPriority e, _LoadedState state) {
@@ -216,7 +228,7 @@ class CustomBuildBloc extends Bloc<CustomBuildEvent, CustomBuildState> {
 
     final skillPriorities = [...state.skillPriorities];
     skillPriorities.removeAt(e.index);
-    return state.copyWith.call(skillPriorities: skillPriorities);
+    return state.copyWith.call(skillPriorities: skillPriorities, readyForScreenshot: false);
   }
 
   CustomBuildState _characterChanged(_CharacterChanged e, _LoadedState state) {
@@ -224,7 +236,7 @@ class CustomBuildBloc extends Bloc<CustomBuildEvent, CustomBuildState> {
       return state;
     }
     final newCharacter = _genshinService.getCharacterForCard(e.newKey);
-    _LoadedState updatedState = state.copyWith.call(character: newCharacter);
+    _LoadedState updatedState = state.copyWith.call(character: newCharacter, readyForScreenshot: false);
     if (newCharacter.weaponType != state.character.weaponType) {
       updatedState = updatedState.copyWith.call(weapons: []);
     }
@@ -262,7 +274,7 @@ class CustomBuildBloc extends Bloc<CustomBuildEvent, CustomBuildState> {
       subStatValue: weapon.subStatValue,
     );
     final weapons = [...state.weapons, newOne];
-    return state.copyWith.call(weapons: weapons);
+    return state.copyWith.call(weapons: weapons, readyForScreenshot: false);
   }
 
   CustomBuildState _weaponsOrderChanged(_WeaponsOrderChanged e, _LoadedState state) {
@@ -276,7 +288,7 @@ class CustomBuildBloc extends Bloc<CustomBuildEvent, CustomBuildState> {
       weapons.add(current.copyWith.call(index: i));
     }
 
-    return state.copyWith.call(weapons: weapons);
+    return state.copyWith.call(weapons: weapons, readyForScreenshot: false);
   }
 
   CustomBuildState _weaponRefinementChanged(_WeaponRefinementChanged e, _LoadedState state) {
@@ -300,7 +312,7 @@ class CustomBuildBloc extends Bloc<CustomBuildEvent, CustomBuildState> {
     final updated = current.copyWith.call(refinement: e.newValue);
     weapons.insert(index, updated);
 
-    return state.copyWith.call(weapons: weapons);
+    return state.copyWith.call(weapons: weapons, readyForScreenshot: false);
   }
 
   CustomBuildState _deleteWeapon(_DeleteWeapon e, _LoadedState state) {
@@ -310,7 +322,7 @@ class CustomBuildBloc extends Bloc<CustomBuildEvent, CustomBuildState> {
 
     final updated = [...state.weapons];
     updated.removeWhere((el) => el.key == e.key);
-    return state.copyWith.call(weapons: updated);
+    return state.copyWith.call(weapons: updated, readyForScreenshot: false);
   }
 
   CustomBuildState _addArtifact(_AddArtifact e, _LoadedState state) {
@@ -349,7 +361,7 @@ class CustomBuildBloc extends Bloc<CustomBuildEvent, CustomBuildState> {
       );
       updatedArtifacts.add(newOne);
     }
-    return state.copyWith.call(artifacts: updatedArtifacts..sort((x, y) => x.type.index.compareTo(y.type.index)));
+    return state.copyWith.call(artifacts: updatedArtifacts..sort((x, y) => x.type.index.compareTo(y.type.index)), readyForScreenshot: false);
   }
 
   CustomBuildState _addArtifactSubStats(_AddArtifactSubStats e, _LoadedState state) {
@@ -368,7 +380,7 @@ class CustomBuildBloc extends Bloc<CustomBuildEvent, CustomBuildState> {
     final artifacts = [...state.artifacts];
     artifacts.removeAt(index);
     artifacts.insert(index, updated);
-    return state.copyWith.call(artifacts: artifacts, subStatsSummary: _genshinService.generateSubStatSummary(artifacts));
+    return state.copyWith.call(artifacts: artifacts, subStatsSummary: _genshinService.generateSubStatSummary(artifacts), readyForScreenshot: false);
   }
 
   CustomBuildState _deleteArtifact(_DeleteArtifact e, _LoadedState state) {
@@ -378,7 +390,7 @@ class CustomBuildBloc extends Bloc<CustomBuildEvent, CustomBuildState> {
 
     final updated = [...state.artifacts];
     updated.removeWhere((el) => el.type == e.type);
-    return state.copyWith.call(artifacts: updated, subStatsSummary: _genshinService.generateSubStatSummary(updated));
+    return state.copyWith.call(artifacts: updated, subStatsSummary: _genshinService.generateSubStatSummary(updated), readyForScreenshot: false);
   }
 
   CustomBuildState _addTeamCharacter(_AddTeamCharacter e, _LoadedState state) {
@@ -415,7 +427,7 @@ class CustomBuildBloc extends Bloc<CustomBuildEvent, CustomBuildState> {
       );
       updatedTeamCharacters.add(newOne);
     }
-    return state.copyWith.call(teamCharacters: updatedTeamCharacters);
+    return state.copyWith.call(teamCharacters: updatedTeamCharacters, readyForScreenshot: false);
   }
 
   CustomBuildState _teamCharactersOrderChanged(_TeamCharactersOrderChanged e, _LoadedState state) {
@@ -429,7 +441,7 @@ class CustomBuildBloc extends Bloc<CustomBuildEvent, CustomBuildState> {
       teamCharacters.add(current.copyWith.call(index: i));
     }
 
-    return state.copyWith.call(teamCharacters: teamCharacters);
+    return state.copyWith.call(teamCharacters: teamCharacters, readyForScreenshot: false);
   }
 
   CustomBuildState _deleteTeamCharacter(_DeleteTeamCharacter e, _LoadedState state) {
@@ -439,10 +451,11 @@ class CustomBuildBloc extends Bloc<CustomBuildEvent, CustomBuildState> {
 
     final updated = [...state.teamCharacters];
     updated.removeWhere((el) => el.key == e.key);
-    return state.copyWith.call(teamCharacters: updated);
+    return state.copyWith.call(teamCharacters: updated, readyForScreenshot: false);
   }
 
   Future<CustomBuildState> _saveChanges(_LoadedState state) async {
+    _LoadedState updatedState;
     if (state.key != null) {
       await _dataService.customBuilds.updateCustomBuild(
         state.key!,
@@ -457,27 +470,37 @@ class CustomBuildBloc extends Bloc<CustomBuildEvent, CustomBuildState> {
         state.teamCharacters,
         state.skillPriorities,
       );
-
-      await _telemetryService.trackCustomBuildSaved(state.character.key, state.type, state.subType);
-      _customBuildsBloc.add(const CustomBuildsEvent.load());
-      return _init(state.key, state.title);
+      updatedState = _init(state.key, state.title) as _LoadedState;
+    } else {
+      final build = await _dataService.customBuilds.saveCustomBuild(
+        state.character.key,
+        state.title,
+        state.type,
+        state.subType,
+        state.showOnCharacterDetail,
+        state.isRecommended,
+        state.notes,
+        state.weapons,
+        state.artifacts,
+        state.teamCharacters,
+        state.skillPriorities,
+      );
+      updatedState = _init(build.key, state.title) as _LoadedState;
     }
-    final build = await _dataService.customBuilds.saveCustomBuild(
-      state.character.key,
-      state.title,
-      state.type,
-      state.subType,
-      state.showOnCharacterDetail,
-      state.isRecommended,
-      state.notes,
-      state.weapons,
-      state.artifacts,
-      state.teamCharacters,
-      state.skillPriorities,
-    );
 
     await _telemetryService.trackCustomBuildSaved(state.character.key, state.type, state.subType);
     _customBuildsBloc.add(const CustomBuildsEvent.load());
-    return _init(build.key, state.title);
+    return updatedState.copyWith.call(readyForScreenshot: true);
+  }
+
+  Future<CustomBuildState> _onScreenShootTaken(_ScreenshotWasTaken e, _LoadedState state) async {
+    if (e.succeed) {
+      await _telemetryService.trackCustomBuildScreenShootTaken(state.character.key, state.type, state.subType);
+      return state.copyWith.call(readyForScreenshot: false);
+    } else {
+      _loggingService.error(runtimeType, 'Something went wrong while taking the tier list builder screenshot', e.ex, e.trace);
+    }
+
+    return state;
   }
 }

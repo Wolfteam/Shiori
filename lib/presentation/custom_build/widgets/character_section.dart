@@ -1,6 +1,7 @@
 import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:responsive_builder/responsive_builder.dart';
 import 'package:shiori/application/bloc.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/extensions/string_extensions.dart';
@@ -25,61 +26,69 @@ class CharacterSection extends StatelessWidget {
   Widget build(BuildContext context) {
     final s = S.of(context);
     final theme = Theme.of(context);
+    final size = MediaQuery.of(context).size;
     final height = MediaQuery.of(context).size.height;
     final width = MediaQuery.of(context).size.width;
+    final isPortrait = MediaQuery.of(context).orientation == Orientation.portrait;
     double imgHeight = height * 0.85;
     if (imgHeight > 1000) {
       imgHeight = 1000;
     }
+
+    if (!isPortrait && imgHeight < 350) {
+      imgHeight = 600;
+    }
     final flexA = width < 400 ? 55 : 45;
     final flexB = width < 400 ? 45 : 55;
+
+    final deviceType = getDeviceType(size);
+    final useRowOnTalentsAndNotes = deviceType != DeviceScreenType.mobile && !isPortrait;
+
     return BlocBuilder<CustomBuildBloc, CustomBuildState>(
       builder: (context, state) => state.maybeMap(
-        loaded: (state) {
-          final canAddNotes = state.notes.map((e) => e.note.length).sum < 300 && state.notes.length < CustomBuildBloc.maxNumberOfNotes;
-          final canAddSkillPriorities = CustomBuildBloc.validSkillTypes.length == state.skillPriorities.length;
-          return Container(
-            color: state.character.elementType.getElementColorFromContext(context),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Expanded(
-                  flex: flexA,
-                  child: CharacterStackImage(
-                    name: state.character.name,
-                    image: state.character.image,
-                    rarity: state.character.stars,
-                    height: imgHeight,
-                    onTap: () => _openCharacterPage(context, state.character.key),
-                  ),
+        loaded: (state) => Container(
+          color: state.character.elementType.getElementColorFromContext(context),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Expanded(
+                flex: flexA,
+                child: CharacterStackImage(
+                  name: state.character.name,
+                  image: state.character.image,
+                  rarity: state.character.stars,
+                  height: imgHeight,
+                  onTap: () => _openCharacterPage(context, state.character.key),
                 ),
-                Expanded(
-                  flex: flexB,
-                  child: Padding(
-                    padding: Styles.edgeInsetHorizontal5,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.stretch,
-                      children: [
-                        Row(
-                          children: [
-                            Expanded(
-                              child: Text(
-                                state.title,
-                                maxLines: 3,
-                                overflow: TextOverflow.ellipsis,
-                                style: theme.textTheme.headline5!.copyWith(fontWeight: FontWeight.bold),
-                              ),
+              ),
+              Expanded(
+                flex: flexB,
+                child: Padding(
+                  padding: Styles.edgeInsetHorizontal5,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [
+                      Row(
+                        children: [
+                          Expanded(
+                            child: Text(
+                              state.title,
+                              maxLines: 3,
+                              overflow: TextOverflow.ellipsis,
+                              style: theme.textTheme.headline5!.copyWith(fontWeight: FontWeight.bold),
                             ),
-                            Tooltip(
-                              message: s.recommended,
-                              child: IconButton(
-                                splashRadius: Styles.smallButtonSplashRadius,
-                                icon: Icon(state.isRecommended ? Icons.star : Icons.star_border_outlined),
-                                onPressed: () => context.read<CustomBuildBloc>().add(
-                                      CustomBuildEvent.isRecommendedChanged(newValue: !state.isRecommended),
-                                    ),
-                              ),
+                          ),
+                          Tooltip(
+                            message: s.recommended,
+                            child: IconButton(
+                              splashRadius: Styles.smallButtonSplashRadius,
+                              icon: Icon(state.isRecommended ? Icons.star : Icons.star_border_outlined),
+                              onPressed: () => context.read<CustomBuildBloc>().add(
+                                    CustomBuildEvent.isRecommendedChanged(newValue: !state.isRecommended),
+                                  ),
                             ),
+                          ),
+                          if (!state.readyForScreenshot)
                             Tooltip(
                               message: s.edit,
                               child: IconButton(
@@ -96,8 +105,41 @@ class CharacterSection extends StatelessWidget {
                                 ),
                               ),
                             )
+                        ],
+                      ),
+                      if (!isPortrait)
+                        Row(
+                          children: [
+                            Expanded(
+                              flex: 48,
+                              child: DropdownButtonWithTitle<CharacterRoleType>(
+                                margin: EdgeInsets.zero,
+                                title: s.role,
+                                currentValue: state.type,
+                                items: EnumUtils.getTranslatedAndSortedEnum<CharacterRoleType>(
+                                  CharacterRoleType.values.where((el) => el != CharacterRoleType.na).toList(),
+                                  (val, _) => s.translateCharacterRoleType(val),
+                                ),
+                                onChanged: (v) => context.read<CustomBuildBloc>().add(CustomBuildEvent.roleChanged(newValue: v)),
+                              ),
+                            ),
+                            const Spacer(flex: 4),
+                            Expanded(
+                              flex: 48,
+                              child: DropdownButtonWithTitle<CharacterRoleSubType>(
+                                margin: EdgeInsets.zero,
+                                title: s.subType,
+                                currentValue: state.subType,
+                                items: EnumUtils.getTranslatedAndSortedEnum<CharacterRoleSubType>(
+                                  CharacterRoleSubType.values,
+                                  (val, _) => s.translateCharacterRoleSubType(val),
+                                ),
+                                onChanged: (v) => context.read<CustomBuildBloc>().add(CustomBuildEvent.subRoleChanged(newValue: v)),
+                              ),
+                            ),
                           ],
-                        ),
+                        )
+                      else ...[
                         DropdownButtonWithTitle<CharacterRoleType>(
                           margin: EdgeInsets.zero,
                           title: s.role,
@@ -118,90 +160,31 @@ class CharacterSection extends StatelessWidget {
                           ),
                           onChanged: (v) => context.read<CustomBuildBloc>().add(CustomBuildEvent.subRoleChanged(newValue: v)),
                         ),
-                        SwitchListTile(
-                          activeColor: theme.colorScheme.secondary,
-                          contentPadding: EdgeInsets.zero,
-                          title: Text(s.showOnCharacterDetail),
-                          value: state.showOnCharacterDetail,
-                          onChanged: (v) => context.read<CustomBuildBloc>().add(CustomBuildEvent.showOnCharacterDetailChanged(newValue: v)),
-                        ),
-                        Row(
-                          children: [
-                            Expanded(
-                              child: Text(
-                                s.talentPriority,
-                                style: theme.textTheme.subtitle1,
-                              ),
-                            ),
-                            IconButton(
-                              splashRadius: Styles.smallButtonSplashRadius,
-                              icon: const Icon(Icons.add),
-                              onPressed: canAddSkillPriorities
-                                  ? null
-                                  : () => showDialog(
-                                        context: context,
-                                        builder: (_) => SelectCharacterSkillTypeDialog(
-                                          excluded: CustomBuildBloc.excludedSkillTypes,
-                                          selectedValues: state.skillPriorities,
-                                          onSave: (type) {
-                                            if (type == null) {
-                                              return;
-                                            }
-
-                                            context.read<CustomBuildBloc>().add(CustomBuildEvent.addSkillPriority(type: type));
-                                          },
-                                        ),
-                                      ),
-                            ),
-                          ],
-                        ),
-                        BulletList(
-                          iconSize: 14,
-                          items: state.skillPriorities.map((e) => s.translateCharacterSkillType(e)).toList(),
-                          iconResolver: (index) => Text('#${index + 1}', style: theme.textTheme.subtitle2!.copyWith(fontSize: 12)),
-                          fontSize: 10,
-                          padding: const EdgeInsets.only(right: 16, left: 5, bottom: 5, top: 5),
-                          onDelete: (index) => context.read<CustomBuildBloc>().add(CustomBuildEvent.deleteSkillPriority(index: index)),
-                        ),
-                        Row(
-                          children: [
-                            Expanded(
-                              child: Text(
-                                s.notes,
-                                style: theme.textTheme.subtitle1,
-                              ),
-                            ),
-                            IconButton(
-                              splashRadius: Styles.smallButtonSplashRadius,
-                              icon: const Icon(Icons.add),
-                              onPressed: !canAddNotes
-                                  ? null
-                                  : () => showDialog(
-                                        context: context,
-                                        builder: (_) => TextDialog.create(
-                                          title: s.note,
-                                          onSave: (note) => context.read<CustomBuildBloc>().add(CustomBuildEvent.addNote(note: note)),
-                                          maxLength: CustomBuildBloc.maxNoteLength,
-                                        ),
-                                      ),
-                            ),
-                          ],
-                        ),
-                        BulletList(
-                          iconSize: 14,
-                          items: state.notes.map((e) => e.note).toList(),
-                          fontSize: 10,
-                          padding: const EdgeInsets.only(right: 16, left: 5, bottom: 5, top: 5),
-                          onDelete: (index) => context.read<CustomBuildBloc>().add(CustomBuildEvent.deleteNote(index: index)),
-                        ),
                       ],
-                    ),
+                      if (useRowOnTalentsAndNotes)
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Expanded(
+                              child: _TalentPriorityRow(skillPriorities: state.skillPriorities, readyToShare: state.readyForScreenshot),
+                            ),
+                            Expanded(
+                              child: _NoteRow(notes: state.notes.map((e) => e.note).toList(), readyToShare: state.readyForScreenshot),
+                            ),
+                          ],
+                        )
+                      else ...[
+                        _TalentPriorityRow(skillPriorities: state.skillPriorities, readyToShare: state.readyForScreenshot),
+                        _NoteRow(notes: state.notes.map((e) => e.note).toList(), readyToShare: state.readyForScreenshot),
+                      ]
+                    ],
                   ),
                 ),
-              ],
-            ),
-          );
-        },
+              ),
+            ],
+          ),
+        ),
         orElse: () => const Loading(useScaffold: false),
       ),
     );
@@ -215,5 +198,123 @@ class CharacterSection extends StatelessWidget {
     }
 
     bloc.add(CustomBuildEvent.characterChanged(newKey: selectedKey!));
+  }
+}
+
+class _TalentPriorityRow extends StatelessWidget {
+  final List<CharacterSkillType> skillPriorities;
+  final bool readyToShare;
+
+  const _TalentPriorityRow({
+    Key? key,
+    required this.skillPriorities,
+    required this.readyToShare,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    final s = S.of(context);
+    final theme = Theme.of(context);
+    final canAddSkillPriorities = CustomBuildBloc.validSkillTypes.length == skillPriorities.length;
+    return Column(
+      children: [
+        Row(
+          children: [
+            Expanded(
+              child: Text(
+                s.talentPriority,
+                style: theme.textTheme.subtitle1,
+              ),
+            ),
+            if (!readyToShare)
+              IconButton(
+                splashRadius: Styles.smallButtonSplashRadius,
+                icon: const Icon(Icons.add),
+                onPressed: canAddSkillPriorities
+                    ? null
+                    : () => showDialog(
+                          context: context,
+                          builder: (_) => SelectCharacterSkillTypeDialog(
+                            excluded: CustomBuildBloc.excludedSkillTypes,
+                            selectedValues: skillPriorities,
+                            onSave: (type) {
+                              if (type == null) {
+                                return;
+                              }
+
+                              context.read<CustomBuildBloc>().add(CustomBuildEvent.addSkillPriority(type: type));
+                            },
+                          ),
+                        ),
+              ),
+          ],
+        ),
+        BulletList(
+          iconSize: 14,
+          items: skillPriorities.map((e) => s.translateCharacterSkillType(e)).toList(),
+          iconResolver: (index) => Text('#${index + 1}', style: theme.textTheme.subtitle2!.copyWith(fontSize: 12)),
+          fontSize: 10,
+          addTooltip: false,
+          padding: const EdgeInsets.only(right: 16, left: 5, bottom: 5, top: 5),
+          onDelete: readyToShare ? null : (index) => context.read<CustomBuildBloc>().add(CustomBuildEvent.deleteSkillPriority(index: index)),
+        ),
+      ],
+    );
+  }
+}
+
+class _NoteRow extends StatelessWidget {
+  final List<String> notes;
+  final bool readyToShare;
+
+  const _NoteRow({
+    Key? key,
+    required this.notes,
+    required this.readyToShare,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    final s = S.of(context);
+    final theme = Theme.of(context);
+    final canAddNotes = notes.map((e) => e.length).sum < (CustomBuildBloc.maxNumberOfNotes * CustomBuildBloc.maxNoteLength) &&
+        notes.length < CustomBuildBloc.maxNumberOfNotes;
+    return Column(
+      children: [
+        Row(
+          children: [
+            Expanded(
+              child: Text(
+                s.notes,
+                style: theme.textTheme.subtitle1,
+              ),
+            ),
+            if (!readyToShare)
+              IconButton(
+                splashRadius: Styles.smallButtonSplashRadius,
+                icon: const Icon(Icons.add),
+                onPressed: !canAddNotes
+                    ? null
+                    : () => showDialog(
+                          context: context,
+                          builder: (_) => TextDialog.create(
+                            title: s.note,
+                            onSave: (note) => context.read<CustomBuildBloc>().add(CustomBuildEvent.addNote(note: note)),
+                            maxLength: CustomBuildBloc.maxNoteLength,
+                          ),
+                        ),
+              ),
+          ],
+        ),
+        BulletList(
+          iconSize: 14,
+          items: notes,
+          fontSize: 10,
+          addTooltip: false,
+          padding: const EdgeInsets.only(right: 16, left: 5, bottom: 5, top: 5),
+          onDelete: readyToShare ? null : (index) => context.read<CustomBuildBloc>().add(CustomBuildEvent.deleteNote(index: index)),
+        ),
+      ],
+    );
   }
 }

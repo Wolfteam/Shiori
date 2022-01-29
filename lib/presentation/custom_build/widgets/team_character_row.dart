@@ -20,12 +20,14 @@ class TeamCharacterRow extends StatelessWidget {
   final CustomBuildTeamCharacterModel character;
   final int teamCount;
   final Color color;
+  final bool readyToShare;
 
   const TeamCharacterRow({
     Key? key,
     required this.character,
     required this.teamCount,
     required this.color,
+    required this.readyToShare,
   }) : super(key: key);
 
   @override
@@ -68,45 +70,46 @@ class TeamCharacterRow extends StatelessWidget {
             ),
           ),
         ),
-        ItemPopupMenuFilter<_Options>.withoutSelectedValue(
-          values: _Options.values,
-          tooltipText: s.options,
-          icon: const Icon(Icons.more_vert),
-          onSelected: (type) => _handleOptionSelected(context, type),
-          childBuilder: (e) {
-            Widget icon;
-            switch (e.enumValue) {
-              case _Options.delete:
-                icon = const Icon(Icons.delete);
-                break;
-              case _Options.update:
-                icon = const Icon(Icons.edit);
-                break;
-              default:
-                throw Exception('The provided team character option type = ${e.enumValue} is not valid');
-            }
+        if (!readyToShare)
+          ItemPopupMenuFilter<_Options>.withoutSelectedValue(
+            values: _Options.values,
+            tooltipText: s.options,
+            icon: const Icon(Icons.more_vert),
+            onSelected: (type) => _handleOptionSelected(context, type),
+            childBuilder: (e) {
+              Widget icon;
+              switch (e.enumValue) {
+                case _Options.delete:
+                  icon = const Icon(Icons.delete);
+                  break;
+                case _Options.update:
+                  icon = const Icon(Icons.edit);
+                  break;
+                default:
+                  throw Exception('The provided team character option type = ${e.enumValue} is not valid');
+              }
 
-            return Row(
-              children: [
-                icon,
-                Container(
-                  margin: const EdgeInsets.only(left: 10),
-                  child: Text(e.translation, overflow: TextOverflow.ellipsis),
-                ),
-              ],
-            );
-          },
-          itemText: (type, _) {
-            switch (type) {
-              case _Options.delete:
-                return s.delete;
-              case _Options.update:
-                return s.update;
-              default:
-                throw Exception('The provided team character option type = $type is not valid');
-            }
-          },
-        ),
+              return Row(
+                children: [
+                  icon,
+                  Container(
+                    margin: const EdgeInsets.only(left: 10),
+                    child: Text(e.translation, overflow: TextOverflow.ellipsis),
+                  ),
+                ],
+              );
+            },
+            itemText: (type, _) {
+              switch (type) {
+                case _Options.delete:
+                  return s.delete;
+                case _Options.update:
+                  return s.update;
+                default:
+                  throw Exception('The provided team character option type = $type is not valid');
+              }
+            },
+          ),
       ],
     );
   }

@@ -6,6 +6,7 @@ import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/data_service.dart';
 import 'package:shiori/domain/services/genshin_service.dart';
+import 'package:shiori/domain/services/logging_service.dart';
 import 'package:shiori/domain/services/telemetry_service.dart';
 import 'package:shiori/infrastructure/infrastructure.dart';
 
@@ -18,6 +19,7 @@ void main() {
   late GenshinService _genshinService;
   late DataService _dataService;
   late TelemetryService _telemetryService;
+  late LoggingService _loggingService;
   late CustomBuildsBloc _customBuildsBloc;
 
   const _keqingKey = 'keqing';
@@ -32,6 +34,7 @@ void main() {
     _genshinService = GenshinServiceImpl(localeService);
     _dataService = DataServiceImpl(_genshinService, CalculatorServiceImpl(_genshinService));
     _telemetryService = MockTelemetryService();
+    _loggingService = MockLoggingService();
     _customBuildsBloc = CustomBuildsBloc(_dataService);
 
     return Future(() async {
@@ -46,6 +49,8 @@ void main() {
       await deleteDbFolder(_dbFolder);
     });
   });
+
+  CustomBuildBloc _getBloc() => CustomBuildBloc(_genshinService, _dataService, _telemetryService, _loggingService, _customBuildsBloc);
 
   Future<CustomBuildModel> _saveCustomBuild(String charKey) async {
     final artifact = _genshinService.getArtifactForCard(_thunderingFuryKey);
@@ -171,13 +176,13 @@ void main() {
 
   test(
     'Initial state',
-    () => expect(CustomBuildBloc(_genshinService, _dataService, _telemetryService, _customBuildsBloc).state, const CustomBuildState.loading()),
+    () => expect(_getBloc().state, const CustomBuildState.loading()),
   );
 
   group('Load', () {
     blocTest<CustomBuildBloc, CustomBuildState>(
       'create',
-      build: () => CustomBuildBloc(_genshinService, _dataService, _telemetryService, _customBuildsBloc),
+      build: () => _getBloc(),
       act: (bloc) => bloc.add(const CustomBuildEvent.load(initialTitle: 'DPS PRO')),
       verify: (bloc) => bloc.state.maybeMap(
         loaded: (state) {
@@ -206,7 +211,7 @@ void main() {
         final build = await _saveCustomBuild(_keqingKey);
         _buildKey = build.key;
       },
-      build: () => CustomBuildBloc(_genshinService, _dataService, _telemetryService, _customBuildsBloc),
+      build: () => _getBloc(),
       act: (bloc) => bloc.add(CustomBuildEvent.load(initialTitle: 'XXX', key: _buildKey)),
       verify: (bloc) => bloc.state.maybeMap(
         loaded: (state) {
@@ -231,7 +236,7 @@ void main() {
   group('General', () {
     blocTest<CustomBuildBloc, CustomBuildState>(
       'character changed',
-      build: () => CustomBuildBloc(_genshinService, _dataService, _telemetryService, _customBuildsBloc),
+      build: () => _getBloc(),
       act: (bloc) => bloc
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
         ..add(const CustomBuildEvent.characterChanged(newKey: _ganyuKey)),
@@ -245,7 +250,7 @@ void main() {
 
     blocTest<CustomBuildBloc, CustomBuildState>(
       'title changed',
-      build: () => CustomBuildBloc(_genshinService, _dataService, _telemetryService, _customBuildsBloc),
+      build: () => _getBloc(),
       act: (bloc) => bloc
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
         ..add(const CustomBuildEvent.titleChanged(newValue: 'KEQING PRO')),
@@ -259,7 +264,7 @@ void main() {
 
     blocTest<CustomBuildBloc, CustomBuildState>(
       'role changed',
-      build: () => CustomBuildBloc(_genshinService, _dataService, _telemetryService, _customBuildsBloc),
+      build: () => _getBloc(),
       act: (bloc) => bloc
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
         ..add(const CustomBuildEvent.roleChanged(newValue: CharacterRoleType.offFieldDps)),
@@ -273,7 +278,7 @@ void main() {
 
     blocTest<CustomBuildBloc, CustomBuildState>(
       'sub role changed',
-      build: () => CustomBuildBloc(_genshinService, _dataService, _telemetryService, _customBuildsBloc),
+      build: () => _getBloc(),
       act: (bloc) => bloc
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
         ..add(const CustomBuildEvent.subRoleChanged(newValue: CharacterRoleSubType.cryo)),
@@ -287,7 +292,7 @@ void main() {
 
     blocTest<CustomBuildBloc, CustomBuildState>(
       'show on character detail changed',
-      build: () => CustomBuildBloc(_genshinService, _dataService, _telemetryService, _customBuildsBloc),
+      build: () => _getBloc(),
       act: (bloc) => bloc
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
         ..add(const CustomBuildEvent.showOnCharacterDetailChanged(newValue: false)),
@@ -301,7 +306,7 @@ void main() {
 
     blocTest<CustomBuildBloc, CustomBuildState>(
       'is recommended changed',
-      build: () => CustomBuildBloc(_genshinService, _dataService, _telemetryService, _customBuildsBloc),
+      build: () => _getBloc(),
       act: (bloc) => bloc
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
         ..add(const CustomBuildEvent.isRecommendedChanged(newValue: true)),
@@ -317,7 +322,7 @@ void main() {
   group('Notes', () {
     blocTest<CustomBuildBloc, CustomBuildState>(
       'add',
-      build: () => CustomBuildBloc(_genshinService, _dataService, _telemetryService, _customBuildsBloc),
+      build: () => _getBloc(),
       act: (bloc) => bloc
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
         ..add(const CustomBuildEvent.addNote(note: 'This build needs 200 ER'))
@@ -332,7 +337,7 @@ void main() {
 
     blocTest<CustomBuildBloc, CustomBuildState>(
       'add, note is not valid',
-      build: () => CustomBuildBloc(_genshinService, _dataService, _telemetryService, _customBuildsBloc),
+      build: () => _getBloc(),
       act: (bloc) => bloc
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
         ..add(const CustomBuildEvent.addNote(note: 'This build needs 200 ER'))
@@ -342,7 +347,7 @@ void main() {
 
     blocTest<CustomBuildBloc, CustomBuildState>(
       'delete',
-      build: () => CustomBuildBloc(_genshinService, _dataService, _telemetryService, _customBuildsBloc),
+      build: () => _getBloc(),
       act: (bloc) => bloc
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
         ..add(const CustomBuildEvent.addNote(note: 'This build needs 200 ER'))
@@ -357,7 +362,7 @@ void main() {
 
     blocTest<CustomBuildBloc, CustomBuildState>(
       'delete, index is not valid',
-      build: () => CustomBuildBloc(_genshinService, _dataService, _telemetryService, _customBuildsBloc),
+      build: () => _getBloc(),
       act: (bloc) => bloc
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
         ..add(const CustomBuildEvent.addNote(note: 'This build needs 200 ER'))
@@ -369,7 +374,7 @@ void main() {
   group('Skill priorities', () {
     blocTest<CustomBuildBloc, CustomBuildState>(
       'add',
-      build: () => CustomBuildBloc(_genshinService, _dataService, _telemetryService, _customBuildsBloc),
+      build: () => _getBloc(),
       act: (bloc) => bloc
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
         ..add(const CustomBuildEvent.addSkillPriority(type: CharacterSkillType.elementalBurst))
@@ -384,7 +389,7 @@ void main() {
 
     blocTest<CustomBuildBloc, CustomBuildState>(
       'add, skill already exist',
-      build: () => CustomBuildBloc(_genshinService, _dataService, _telemetryService, _customBuildsBloc),
+      build: () => _getBloc(),
       act: (bloc) => bloc
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
         ..add(const CustomBuildEvent.addSkillPriority(type: CharacterSkillType.elementalBurst))
@@ -400,7 +405,7 @@ void main() {
 
     blocTest<CustomBuildBloc, CustomBuildState>(
       'add, skill is not valid',
-      build: () => CustomBuildBloc(_genshinService, _dataService, _telemetryService, _customBuildsBloc),
+      build: () => _getBloc(),
       act: (bloc) => bloc
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
         ..add(const CustomBuildEvent.addSkillPriority(type: CharacterSkillType.elementalBurst))
@@ -410,7 +415,7 @@ void main() {
 
     blocTest<CustomBuildBloc, CustomBuildState>(
       'delete',
-      build: () => CustomBuildBloc(_genshinService, _dataService, _telemetryService, _customBuildsBloc),
+      build: () => _getBloc(),
       act: (bloc) => bloc
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
         ..add(const CustomBuildEvent.addSkillPriority(type: CharacterSkillType.elementalBurst))
@@ -426,7 +431,7 @@ void main() {
 
     blocTest<CustomBuildBloc, CustomBuildState>(
       'delete, index is not valid',
-      build: () => CustomBuildBloc(_genshinService, _dataService, _telemetryService, _customBuildsBloc),
+      build: () => _getBloc(),
       act: (bloc) => bloc
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
         ..add(const CustomBuildEvent.addSkillPriority(type: CharacterSkillType.elementalBurst))
@@ -439,7 +444,7 @@ void main() {
   group('Weapons', () {
     blocTest<CustomBuildBloc, CustomBuildState>(
       'add',
-      build: () => CustomBuildBloc(_genshinService, _dataService, _telemetryService, _customBuildsBloc),
+      build: () => _getBloc(),
       act: (bloc) => bloc
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
         ..add(const CustomBuildEvent.addWeapon(key: _aquilaFavoniaKey)),
@@ -454,7 +459,7 @@ void main() {
 
     blocTest<CustomBuildBloc, CustomBuildState>(
       'add, weapon already exists',
-      build: () => CustomBuildBloc(_genshinService, _dataService, _telemetryService, _customBuildsBloc),
+      build: () => _getBloc(),
       act: (bloc) => bloc
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
         ..add(const CustomBuildEvent.addWeapon(key: _aquilaFavoniaKey))
@@ -464,7 +469,7 @@ void main() {
 
     blocTest<CustomBuildBloc, CustomBuildState>(
       'add, weapon is not valid for current character',
-      build: () => CustomBuildBloc(_genshinService, _dataService, _telemetryService, _customBuildsBloc),
+      build: () => _getBloc(),
       act: (bloc) => bloc
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
         ..add(const CustomBuildEvent.characterChanged(newKey: _ganyuKey))
@@ -474,7 +479,7 @@ void main() {
 
     blocTest<CustomBuildBloc, CustomBuildState>(
       'refinement changed',
-      build: () => CustomBuildBloc(_genshinService, _dataService, _telemetryService, _customBuildsBloc),
+      build: () => _getBloc(),
       act: (bloc) => bloc
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
         ..add(const CustomBuildEvent.addWeapon(key: _aquilaFavoniaKey))
@@ -489,7 +494,7 @@ void main() {
 
     blocTest<CustomBuildBloc, CustomBuildState>(
       'refinement changed, weapon does not exist',
-      build: () => CustomBuildBloc(_genshinService, _dataService, _telemetryService, _customBuildsBloc),
+      build: () => _getBloc(),
       act: (bloc) => bloc
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
         ..add(const CustomBuildEvent.weaponRefinementChanged(key: _aquilaFavoniaKey, newValue: 5)),
@@ -498,7 +503,7 @@ void main() {
 
     blocTest<CustomBuildBloc, CustomBuildState>(
       'refinement changed, refinement has not changed',
-      build: () => CustomBuildBloc(_genshinService, _dataService, _telemetryService, _customBuildsBloc),
+      build: () => _getBloc(),
       act: (bloc) => bloc
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
         ..add(const CustomBuildEvent.addWeapon(key: _aquilaFavoniaKey))
@@ -514,7 +519,7 @@ void main() {
 
     blocTest<CustomBuildBloc, CustomBuildState>(
       'refinement changed, invalid value',
-      build: () => CustomBuildBloc(_genshinService, _dataService, _telemetryService, _customBuildsBloc),
+      build: () => _getBloc(),
       act: (bloc) => bloc
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
         ..add(const CustomBuildEvent.weaponRefinementChanged(key: _aquilaFavoniaKey, newValue: 6)),
@@ -523,7 +528,7 @@ void main() {
 
     blocTest<CustomBuildBloc, CustomBuildState>(
       'delete',
-      build: () => CustomBuildBloc(_genshinService, _dataService, _telemetryService, _customBuildsBloc),
+      build: () => _getBloc(),
       act: (bloc) => bloc
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
         ..add(const CustomBuildEvent.weaponRefinementChanged(key: _aquilaFavoniaKey, newValue: 5))
@@ -538,7 +543,7 @@ void main() {
 
     blocTest<CustomBuildBloc, CustomBuildState>(
       'delete, weapon does not exist',
-      build: () => CustomBuildBloc(_genshinService, _dataService, _telemetryService, _customBuildsBloc),
+      build: () => _getBloc(),
       act: (bloc) => bloc
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
         ..add(const CustomBuildEvent.addWeapon(key: _aquilaFavoniaKey))
@@ -550,7 +555,7 @@ void main() {
 
     blocTest<CustomBuildBloc, CustomBuildState>(
       'delete all weapons',
-      build: () => CustomBuildBloc(_genshinService, _dataService, _telemetryService, _customBuildsBloc),
+      build: () => _getBloc(),
       act: (bloc) => bloc
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
         ..add(const CustomBuildEvent.addWeapon(key: _aquilaFavoniaKey))
@@ -565,7 +570,7 @@ void main() {
 
     blocTest<CustomBuildBloc, CustomBuildState>(
       'order changed',
-      build: () => CustomBuildBloc(_genshinService, _dataService, _telemetryService, _customBuildsBloc),
+      build: () => _getBloc(),
       act: (bloc) => bloc
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
         ..add(const CustomBuildEvent.characterChanged(newKey: _keqingKey))
@@ -593,7 +598,7 @@ void main() {
   group('Artifacts', () {
     blocTest<CustomBuildBloc, CustomBuildState>(
       'add',
-      build: () => CustomBuildBloc(_genshinService, _dataService, _telemetryService, _customBuildsBloc),
+      build: () => _getBloc(),
       act: (bloc) => bloc
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
         ..add(const CustomBuildEvent.addArtifact(key: _thunderingFuryKey, type: ArtifactType.flower, statType: StatType.hp)),
@@ -612,7 +617,7 @@ void main() {
 
     blocTest<CustomBuildBloc, CustomBuildState>(
       'add, type already exists',
-      build: () => CustomBuildBloc(_genshinService, _dataService, _telemetryService, _customBuildsBloc),
+      build: () => _getBloc(),
       act: (bloc) => bloc
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
         ..add(const CustomBuildEvent.addArtifact(key: _thunderingFuryKey, type: ArtifactType.crown, statType: StatType.hp))
@@ -632,7 +637,7 @@ void main() {
 
     blocTest<CustomBuildBloc, CustomBuildState>(
       'add sub stats',
-      build: () => CustomBuildBloc(_genshinService, _dataService, _telemetryService, _customBuildsBloc),
+      build: () => _getBloc(),
       act: (bloc) => bloc
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
         ..add(const CustomBuildEvent.addArtifact(key: _thunderingFuryKey, type: ArtifactType.flower, statType: StatType.hp))
@@ -668,7 +673,7 @@ void main() {
 
     blocTest<CustomBuildBloc, CustomBuildState>(
       'add sub stats, artifact does not exist',
-      build: () => CustomBuildBloc(_genshinService, _dataService, _telemetryService, _customBuildsBloc),
+      build: () => _getBloc(),
       act: (bloc) => bloc
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
         ..add(
@@ -679,7 +684,7 @@ void main() {
 
     blocTest<CustomBuildBloc, CustomBuildState>(
       'add sub-stats, sub-stat is not valid',
-      build: () => CustomBuildBloc(_genshinService, _dataService, _telemetryService, _customBuildsBloc),
+      build: () => _getBloc(),
       act: (bloc) => bloc
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
         ..add(
@@ -690,7 +695,7 @@ void main() {
 
     blocTest<CustomBuildBloc, CustomBuildState>(
       'add sub-stats, sub-stat is not valid',
-      build: () => CustomBuildBloc(_genshinService, _dataService, _telemetryService, _customBuildsBloc),
+      build: () => _getBloc(),
       act: (bloc) => bloc
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
         ..add(
@@ -701,7 +706,7 @@ void main() {
 
     blocTest<CustomBuildBloc, CustomBuildState>(
       'delete',
-      build: () => CustomBuildBloc(_genshinService, _dataService, _telemetryService, _customBuildsBloc),
+      build: () => _getBloc(),
       act: (bloc) => bloc
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
         ..add(const CustomBuildEvent.addArtifact(key: _thunderingFuryKey, type: ArtifactType.flower, statType: StatType.hp))
@@ -717,7 +722,7 @@ void main() {
 
     blocTest<CustomBuildBloc, CustomBuildState>(
       'delete, type does not exist',
-      build: () => CustomBuildBloc(_genshinService, _dataService, _telemetryService, _customBuildsBloc),
+      build: () => _getBloc(),
       act: (bloc) => bloc
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
         ..add(const CustomBuildEvent.addArtifact(key: _thunderingFuryKey, type: ArtifactType.flower, statType: StatType.hp))
@@ -727,7 +732,7 @@ void main() {
 
     blocTest<CustomBuildBloc, CustomBuildState>(
       'delete all artifacts',
-      build: () => CustomBuildBloc(_genshinService, _dataService, _telemetryService, _customBuildsBloc),
+      build: () => _getBloc(),
       act: (bloc) => bloc
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
         ..add(const CustomBuildEvent.addArtifact(key: _thunderingFuryKey, type: ArtifactType.flower, statType: StatType.hp))
@@ -745,7 +750,7 @@ void main() {
   group('Team characters', () {
     blocTest<CustomBuildBloc, CustomBuildState>(
       'add',
-      build: () => CustomBuildBloc(_genshinService, _dataService, _telemetryService, _customBuildsBloc),
+      build: () => _getBloc(),
       act: (bloc) => bloc
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
         ..add(
@@ -764,7 +769,7 @@ void main() {
 
     blocTest<CustomBuildBloc, CustomBuildState>(
       'add, team character is the same as the main one',
-      build: () => CustomBuildBloc(_genshinService, _dataService, _telemetryService, _customBuildsBloc),
+      build: () => _getBloc(),
       act: (bloc) => bloc
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
         ..add(const CustomBuildEvent.characterChanged(newKey: _ganyuKey))
@@ -776,7 +781,7 @@ void main() {
 
     blocTest<CustomBuildBloc, CustomBuildState>(
       'add the same character multiple times',
-      build: () => CustomBuildBloc(_genshinService, _dataService, _telemetryService, _customBuildsBloc),
+      build: () => _getBloc(),
       act: (bloc) => bloc
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
         ..add(
@@ -795,7 +800,7 @@ void main() {
 
     blocTest<CustomBuildBloc, CustomBuildState>(
       'order changed',
-      build: () => CustomBuildBloc(_genshinService, _dataService, _telemetryService, _customBuildsBloc),
+      build: () => _getBloc(),
       act: (bloc) => bloc
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
         ..add(
@@ -829,7 +834,7 @@ void main() {
 
     blocTest<CustomBuildBloc, CustomBuildState>(
       'delete',
-      build: () => CustomBuildBloc(_genshinService, _dataService, _telemetryService, _customBuildsBloc),
+      build: () => _getBloc(),
       act: (bloc) => bloc
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
         ..add(
@@ -846,7 +851,7 @@ void main() {
 
     blocTest<CustomBuildBloc, CustomBuildState>(
       'delete, team character does not exist',
-      build: () => CustomBuildBloc(_genshinService, _dataService, _telemetryService, _customBuildsBloc),
+      build: () => _getBloc(),
       act: (bloc) => bloc
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
         ..add(const CustomBuildEvent.deleteTeamCharacter(key: _ganyuKey)),
@@ -857,7 +862,7 @@ void main() {
   group('Save', () {
     blocTest<CustomBuildBloc, CustomBuildState>(
       'all stuff was set',
-      build: () => CustomBuildBloc(_genshinService, _dataService, _telemetryService, _customBuildsBloc),
+      build: () => _getBloc(),
       act: (bloc) => bloc
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
         ..add(const CustomBuildEvent.characterChanged(newKey: _keqingKey))
@@ -903,7 +908,7 @@ void main() {
 
     blocTest<CustomBuildBloc, CustomBuildState>(
       'nothing was set',
-      build: () => CustomBuildBloc(_genshinService, _dataService, _telemetryService, _customBuildsBloc),
+      build: () => _getBloc(),
       act: (bloc) => bloc
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
         ..add(const CustomBuildEvent.characterChanged(newKey: _keqingKey))

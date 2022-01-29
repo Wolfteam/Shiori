@@ -82,15 +82,34 @@ class _AppBar extends StatelessWidget implements PreferredSizeWidget {
         loaded: (state) => AppBar(
           title: Text(newBuild ? s.add : s.edit),
           actions: [
-            Tooltip(
-              message: s.save,
-              child: IconButton(
-                splashRadius: Styles.mediumButtonSplashRadius,
-                icon: const Icon(Icons.save),
-                onPressed: !(state.artifacts.length == ArtifactType.values.length && state.weapons.isNotEmpty) ? null : () => _saveChanges(context),
+            if (!state.readyForScreenshot)
+              Tooltip(
+                message: s.save,
+                child: IconButton(
+                  splashRadius: Styles.mediumButtonSplashRadius,
+                  icon: const Icon(Icons.save),
+                  onPressed: !(state.artifacts.length == ArtifactType.values.length && state.weapons.isNotEmpty) ? null : () => _saveChanges(context),
+                ),
               ),
-            ),
-            if (!newBuild && state.key != null)
+            if (state.readyForScreenshot)
+              Tooltip(
+                message: s.save,
+                child: IconButton(
+                  splashRadius: Styles.mediumButtonSplashRadius,
+                  icon: const Icon(Icons.save_alt),
+                  onPressed: () => _takeScreenshot(context),
+                ),
+              ),
+            if (state.readyForScreenshot)
+              Tooltip(
+                message: s.cancel,
+                child: IconButton(
+                  splashRadius: Styles.mediumButtonSplashRadius,
+                  icon: const Icon(Icons.undo),
+                  onPressed: () => context.read<CustomBuildBloc>().add(const CustomBuildEvent.readyForScreenshot(ready: false)),
+                ),
+              ),
+            if (!newBuild && state.key != null && !state.readyForScreenshot)
               Tooltip(
                 message: s.delete,
                 child: IconButton(
@@ -99,14 +118,35 @@ class _AppBar extends StatelessWidget implements PreferredSizeWidget {
                   onPressed: () => _showDeleteDialog(context, state.key),
                 ),
               ),
-            Tooltip(
-              message: s.share,
-              child: IconButton(
-                splashRadius: Styles.mediumButtonSplashRadius,
-                icon: const Icon(Icons.share),
-                onPressed: () => _takeScreenshot(context),
+            if (!state.readyForScreenshot)
+              PopupMenuButton<int>(
+                onSelected: (e) {
+                  switch (e) {
+                    case 0:
+                      context.read<CustomBuildBloc>().add(CustomBuildEvent.showOnCharacterDetailChanged(newValue: !state.showOnCharacterDetail));
+                      break;
+                    default:
+                      throw Exception('Invalid option');
+                  }
+                },
+                tooltip: s.options,
+                itemBuilder: (BuildContext context) {
+                  return [0].map((int choice) {
+                    switch (choice) {
+                      case 0:
+                        return PopupMenuItem<int>(
+                          value: choice,
+                          child: ListTile(
+                            title: Text(s.showOnCharacterDetail),
+                            leading: Icon(state.showOnCharacterDetail ? Icons.check_box : Icons.check_box_outline_blank),
+                          ),
+                        );
+                      default:
+                        throw Exception('Invalid option');
+                    }
+                  }).toList();
+                },
               ),
-            ),
           ],
         ),
         orElse: () => AppBar(
@@ -125,7 +165,7 @@ class _AppBar extends StatelessWidget implements PreferredSizeWidget {
   Future<void> _takeScreenshot(BuildContext context) async {
     final s = S.of(context);
     final fToast = ToastUtils.of(context);
-    // final bloc = context.read<TierListBloc>();
+    final bloc = context.read<CustomBuildBloc>();
     try {
       if (!await Permission.storage.request().isGranted) {
         ToastUtils.showInfoToast(fToast, s.acceptToSaveImg);
@@ -135,10 +175,10 @@ class _AppBar extends StatelessWidget implements PreferredSizeWidget {
       final bytes = await screenshotController.capture(pixelRatio: 1.5);
       await ImageGallerySaver.saveImage(bytes!, quality: 100);
       ToastUtils.showSucceedToast(fToast, s.imgSavedSuccessfully);
-      // bloc.add(const TierListEvent.screenshotTaken(succeed: true));
+      bloc.add(const CustomBuildEvent.screenshotWasTaken(succeed: true));
     } catch (e, trace) {
       ToastUtils.showErrorToast(fToast, s.unknownError);
-      // bloc.add(TierListEvent.screenshotTaken(succeed: false, ex: e, trace: trace));
+      bloc.add(CustomBuildEvent.screenshotWasTaken(succeed: false, ex: e, trace: trace));
     }
   }
 
@@ -208,15 +248,17 @@ class _LandscapeLayout extends StatelessWidget {
               Expanded(
                 child: WeaponSection(
                   maxItemImageWidth: _maxItemImageWidth,
+                  useBoxDecoration: false,
                 ),
               ),
               Expanded(
                 child: ArtifactSection(
                   maxItemImageWidth: _maxItemImageWidth,
+                  useBoxDecoration: false,
                 ),
               ),
               Expanded(
-                child: TeamSection(),
+                child: TeamSection(useBoxDecoration: false),
               ),
             ],
           ),
@@ -241,11 +283,13 @@ class _WeaponsAndArtifacts extends StatelessWidget {
         children: const [
           WeaponSection(
             maxItemImageWidth: _maxItemImageWidth,
+            useBoxDecoration: true,
           ),
           ArtifactSection(
             maxItemImageWidth: _maxItemImageWidth,
+            useBoxDecoration: true,
           ),
-          TeamSection(),
+          TeamSection(useBoxDecoration: true),
         ],
       );
     }
@@ -259,16 +303,18 @@ class _WeaponsAndArtifacts extends StatelessWidget {
             Expanded(
               child: WeaponSection(
                 maxItemImageWidth: _maxItemImageWidth,
+                useBoxDecoration: true,
               ),
             ),
             Expanded(
               child: ArtifactSection(
                 maxItemImageWidth: _maxItemImageWidth,
+                useBoxDecoration: true,
               ),
             ),
           ],
         ),
-        const TeamSection(),
+        const TeamSection(useBoxDecoration: true),
       ],
     );
   }
