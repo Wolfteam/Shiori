@@ -7,6 +7,7 @@ import 'package:shiori/application/bloc.dart';
 import 'package:shiori/domain/extensions/iterable_extensions.dart';
 import 'package:shiori/generated/l10n.dart';
 import 'package:shiori/injection.dart';
+import 'package:shiori/presentation/shared/styles.dart';
 import 'package:shiori/presentation/shared/utils/toast_utils.dart';
 import 'package:shiori/presentation/tierlist/widgets/tierlist_fab.dart';
 import 'package:shiori/presentation/tierlist/widgets/tierlist_row.dart';
@@ -75,6 +76,7 @@ class _AppBar extends StatelessWidget implements PreferredSizeWidget {
             Tooltip(
               message: s.confirm,
               child: IconButton(
+                splashRadius: Styles.mediumButtonSplashRadius,
                 icon: const Icon(Icons.check),
                 onPressed: () => ctx.read<TierListBloc>().add(const TierListEvent.readyToSave(ready: true)),
               ),
@@ -83,6 +85,7 @@ class _AppBar extends StatelessWidget implements PreferredSizeWidget {
             Tooltip(
               message: s.clearAll,
               child: IconButton(
+                splashRadius: Styles.mediumButtonSplashRadius,
                 icon: const Icon(Icons.clear_all),
                 onPressed: () => context.read<TierListBloc>().add(const TierListEvent.clearAllRows()),
               ),
@@ -91,6 +94,7 @@ class _AppBar extends StatelessWidget implements PreferredSizeWidget {
             Tooltip(
               message: s.restore,
               child: IconButton(
+                splashRadius: Styles.mediumButtonSplashRadius,
                 icon: const Icon(Icons.settings_backup_restore_sharp),
                 onPressed: () => context.read<TierListBloc>().add(const TierListEvent.init(reset: true)),
               ),
@@ -99,7 +103,8 @@ class _AppBar extends StatelessWidget implements PreferredSizeWidget {
             Tooltip(
               message: s.save,
               child: IconButton(
-                icon: const Icon(Icons.save),
+                splashRadius: Styles.mediumButtonSplashRadius,
+                icon: const Icon(Icons.save_alt),
                 onPressed: () => _takeScreenshot(context),
               ),
             ),
@@ -107,6 +112,7 @@ class _AppBar extends StatelessWidget implements PreferredSizeWidget {
             Tooltip(
               message: s.cancel,
               child: IconButton(
+                splashRadius: Styles.mediumButtonSplashRadius,
                 icon: const Icon(Icons.undo),
                 onPressed: () => context.read<TierListBloc>().add(const TierListEvent.readyToSave(ready: false)),
               ),
