@@ -9,6 +9,7 @@ class CharacterStackImage extends StatelessWidget {
   final int rarity;
   final double height;
   final Function? onTap;
+  final BoxFit fit;
 
   const CharacterStackImage({
     Key? key,
@@ -17,6 +18,7 @@ class CharacterStackImage extends StatelessWidget {
     required this.rarity,
     this.onTap,
     this.height = 280,
+    this.fit = BoxFit.fitHeight,
   }) : super(key: key);
 
   @override
@@ -31,7 +33,7 @@ class CharacterStackImage extends StatelessWidget {
           FadeInImage(
             placeholder: MemoryImage(kTransparentImage),
             height: height,
-            fit: BoxFit.fitHeight,
+            fit: fit,
             image: AssetImage(image),
           ),
           Container(

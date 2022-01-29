@@ -18,12 +18,12 @@ class CustomBuildsCard extends StatelessWidget {
     final theme = Theme.of(context);
     final s = S.of(context);
     return CardItem(
-      title: 'Custom Builds',
+      title: s.customBuilds,
       iconToTheLeft: iconToTheLeft,
       onClick: _gotoMaterialsPage,
       icon: Icon(Icons.dashboard_customize, size: 60, color: theme.colorScheme.secondary),
       children: [
-        CardDescription(text: "Don't like the provided builds ? Create your custom ones!"),
+        CardDescription(text: s.createCustomBuilds),
       ],
     );
   }

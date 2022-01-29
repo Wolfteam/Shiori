@@ -17,17 +17,18 @@ import 'package:shiori/presentation/shared/sub_stats_to_focus.dart';
 
 class ArtifactSection extends StatelessWidget {
   final double maxItemImageWidth;
+  final bool useBoxDecoration;
 
   const ArtifactSection({
     Key? key,
     required this.maxItemImageWidth,
+    required this.useBoxDecoration,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     final s = S.of(context);
     final theme = Theme.of(context);
-    final isPortrait = MediaQuery.of(context).orientation == Orientation.portrait;
     return BlocBuilder<CustomBuildBloc, CustomBuildState>(
       builder: (context, state) => state.maybeMap(
         loaded: (state) {
@@ -38,46 +39,54 @@ class ArtifactSection extends StatelessWidget {
             children: [
               Container(
                 padding: Styles.edgeInsetVertical10,
-                // margin: const EdgeInsets.only(bottom: 10),
                 decoration: BoxDecoration(
                   color: color,
-                  border: isPortrait ? const Border(top: BorderSide(color: Colors.white)) : null,
+                  border: useBoxDecoration ? const Border(top: BorderSide(color: Colors.white)) : null,
                 ),
                 child: Text(
-                  '${s.artifacts} (${state.artifacts.length} / ${ArtifactType.values.length})',
+                  state.readyForScreenshot ? s.artifacts : '${s.artifacts} (${state.artifacts.length} / ${ArtifactType.values.length})',
                   textAlign: TextAlign.center,
                   style: theme.textTheme.subtitle1!.copyWith(fontWeight: FontWeight.bold),
                 ),
               ),
-              ButtonBar(
-                buttonPadding: EdgeInsets.zero,
-                children: [
-                  Tooltip(
-                    message: s.add,
-                    child: IconButton(
-                      padding: EdgeInsets.zero,
-                      splashRadius: Styles.smallButtonSplashRadius,
-                      icon: const Icon(Icons.add),
-                      onPressed: state.artifacts.length < ArtifactType.values.length
-                          ? () => _addArtifact(context, state.artifacts.map((e) => e.type).toList())
-                          : null,
+              if (!state.readyForScreenshot)
+                ButtonBar(
+                  buttonPadding: EdgeInsets.zero,
+                  children: [
+                    Tooltip(
+                      message: s.add,
+                      child: IconButton(
+                        padding: EdgeInsets.zero,
+                        splashRadius: Styles.smallButtonSplashRadius,
+                        icon: const Icon(Icons.add),
+                        onPressed: state.artifacts.length < ArtifactType.values.length
+                            ? () => _addArtifact(context, state.artifacts.map((e) => e.type).toList())
+                            : null,
+                      ),
                     ),
-                  ),
-                  Tooltip(
-                    message: s.clearAll,
-                    child: IconButton(
-                      padding: EdgeInsets.zero,
-                      splashRadius: Styles.smallButtonSplashRadius,
-                      icon: const Icon(Icons.clear_all),
-                      onPressed: state.artifacts.isEmpty ? null : () => context.read<CustomBuildBloc>().add(const CustomBuildEvent.deleteArtifacts()),
+                    Tooltip(
+                      message: s.clearAll,
+                      child: IconButton(
+                        padding: EdgeInsets.zero,
+                        splashRadius: Styles.smallButtonSplashRadius,
+                        icon: const Icon(Icons.clear_all),
+                        onPressed:
+                            state.artifacts.isEmpty ? null : () => context.read<CustomBuildBloc>().add(const CustomBuildEvent.deleteArtifacts()),
+                      ),
                     ),
-                  ),
-                ],
-              ),
+                  ],
+                ),
               if (state.artifacts.isEmpty)
                 NothingFound(msg: s.startByAddingArtifacts)
               else
-                ...state.artifacts.map((e) => ArtifactRow(artifact: e, color: color, maxImageWidth: maxItemImageWidth)),
+                ...state.artifacts.map(
+                  (e) => ArtifactRow(
+                    artifact: e,
+                    color: color,
+                    maxImageWidth: maxItemImageWidth,
+                    readyForScreenshot: state.readyForScreenshot,
+                  ),
+                ),
               if (state.subStatsSummary.isNotEmpty)
                 SubStatToFocus(
                   subStatsToFocus: state.subStatsSummary,

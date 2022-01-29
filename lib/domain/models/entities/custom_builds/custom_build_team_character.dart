@@ -1,5 +1,4 @@
 import 'package:hive/hive.dart';
-import 'package:shiori/domain/enums/enums.dart';
 
 part 'custom_build_team_character.g.dart';
 

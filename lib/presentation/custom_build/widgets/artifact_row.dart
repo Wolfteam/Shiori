@@ -25,12 +25,14 @@ class ArtifactRow extends StatelessWidget {
   final CustomBuildArtifactModel artifact;
   final Color color;
   final double maxImageWidth;
+  final bool readyForScreenshot;
 
   const ArtifactRow({
     Key? key,
     required this.artifact,
     required this.color,
     required this.maxImageWidth,
+    required this.readyForScreenshot,
   }) : super(key: key);
 
   @override
@@ -79,50 +81,51 @@ class ArtifactRow extends StatelessWidget {
             ),
           ),
         ),
-        ItemPopupMenuFilter<_Options>.withoutSelectedValue(
-          values: _Options.values,
-          tooltipText: s.options,
-          icon: const Icon(Icons.more_vert),
-          onSelected: (type) => _handleOptionSelected(context, type),
-          childBuilder: (e) {
-            Widget icon;
-            switch (e.enumValue) {
-              case _Options.subStats:
-                icon = const Icon(Icons.menu);
-                break;
-              case _Options.delete:
-                icon = const Icon(Icons.delete);
-                break;
-              case _Options.update:
-                icon = const Icon(Icons.edit);
-                break;
-              default:
-                throw Exception('The provided artifact option type = ${e.enumValue} is not valid');
-            }
+        if (!readyForScreenshot)
+          ItemPopupMenuFilter<_Options>.withoutSelectedValue(
+            values: _Options.values,
+            tooltipText: s.options,
+            icon: const Icon(Icons.more_vert),
+            onSelected: (type) => _handleOptionSelected(context, type),
+            childBuilder: (e) {
+              Widget icon;
+              switch (e.enumValue) {
+                case _Options.subStats:
+                  icon = const Icon(Icons.menu);
+                  break;
+                case _Options.delete:
+                  icon = const Icon(Icons.delete);
+                  break;
+                case _Options.update:
+                  icon = const Icon(Icons.edit);
+                  break;
+                default:
+                  throw Exception('The provided artifact option type = ${e.enumValue} is not valid');
+              }
 
-            return Row(
-              children: [
-                icon,
-                Container(
-                  margin: const EdgeInsets.only(left: 10),
-                  child: Text(e.translation, overflow: TextOverflow.ellipsis),
-                ),
-              ],
-            );
-          },
-          itemText: (type, _) {
-            switch (type) {
-              case _Options.subStats:
-                return s.subStats;
-              case _Options.delete:
-                return s.delete;
-              case _Options.update:
-                return s.update;
-              default:
-                throw Exception('The provided artifact option type = $type is not valid');
-            }
-          },
-        ),
+              return Row(
+                children: [
+                  icon,
+                  Container(
+                    margin: const EdgeInsets.only(left: 10),
+                    child: Text(e.translation, overflow: TextOverflow.ellipsis),
+                  ),
+                ],
+              );
+            },
+            itemText: (type, _) {
+              switch (type) {
+                case _Options.subStats:
+                  return s.subStats;
+                case _Options.delete:
+                  return s.delete;
+                case _Options.update:
+                  return s.update;
+                default:
+                  throw Exception('The provided artifact option type = $type is not valid');
+              }
+            },
+          ),
       ],
     );
   }

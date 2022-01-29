@@ -18,5 +18,6 @@ class CustomBuildState with _$CustomBuildState {
     required List<CustomBuildNoteModel> notes,
     required List<CharacterSkillType> skillPriorities,
     required List<StatType> subStatsSummary,
+    required bool readyForScreenshot,
   }) = _LoadedState;
 }

@@ -80,15 +80,20 @@ class _TwoColumnEnumSelectorDialogState<TEnum> extends State<TwoColumnEnumSelect
               children: [
                 Text(widget.title),
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    Text(
-                      widget.leftTitle,
-                      style: theme.textTheme.subtitle1,
+                    Expanded(
+                      child: Text(
+                        widget.leftTitle,
+                        textAlign: TextAlign.center,
+                        style: theme.textTheme.subtitle1!.copyWith(fontWeight: FontWeight.bold),
+                      ),
                     ),
-                    Text(
-                      '${widget.rightTitle} (${_selected.length} / ${widget.maxNumberOfSelections})',
-                      style: theme.textTheme.subtitle1,
+                    Expanded(
+                      child: Text(
+                        '${widget.rightTitle} (${_selected.length} / ${widget.maxNumberOfSelections})',
+                        textAlign: TextAlign.center,
+                        style: theme.textTheme.subtitle1!.copyWith(fontWeight: FontWeight.bold),
+                      ),
                     ),
                   ],
                 ),
@@ -165,7 +170,8 @@ class _TwoColumnEnumSelectorDialogState<TEnum> extends State<TwoColumnEnumSelect
                 children: [
                   Text(
                     widget.leftTitle,
-                    style: theme.textTheme.subtitle1,
+                    textAlign: TextAlign.center,
+                    style: theme.textTheme.subtitle1!.copyWith(fontWeight: FontWeight.bold),
                   ),
                   Container(
                     height: dialogHeight / 3,
@@ -197,7 +203,8 @@ class _TwoColumnEnumSelectorDialogState<TEnum> extends State<TwoColumnEnumSelect
                   ),
                   Text(
                     '${widget.rightTitle} (${_selected.length} / ${widget.maxNumberOfSelections})',
-                    style: theme.textTheme.subtitle1,
+                    textAlign: TextAlign.center,
+                    style: theme.textTheme.subtitle1!.copyWith(fontWeight: FontWeight.bold),
                   ),
                   if (_selected.isNotEmpty)
                     Container(
@@ -248,7 +255,7 @@ class _TwoColumnEnumSelectorDialogState<TEnum> extends State<TwoColumnEnumSelect
   void _onReorder(int oldIndex, int newIndex) {
     final item = _selected.elementAt(oldIndex);
     int updatedNewIndex = newIndex;
-    if (updatedNewIndex >= _selected.length) {
+    if (updatedNewIndex >= _selected.length || updatedNewIndex > 0) {
       updatedNewIndex--;
     }
     if (updatedNewIndex < 0) {

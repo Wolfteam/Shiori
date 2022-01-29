@@ -67,7 +67,13 @@ class CustomBuildEvent with _$CustomBuildEvent {
 
   const factory CustomBuildEvent.deleteTeamCharacters() = _DeleteTeamCharacters;
 
-  const factory CustomBuildEvent.saveChanges() = _SaveChanges;
+  const factory CustomBuildEvent.readyForScreenshot({required bool ready}) = _ReadyForScreenshot;
 
-//TODO: SHARE
+  const factory CustomBuildEvent.screenshotWasTaken({
+    required bool succeed,
+    Object? ex,
+    StackTrace? trace,
+  }) = _ScreenshotWasTaken;
+
+  const factory CustomBuildEvent.saveChanges() = _SaveChanges;
 }

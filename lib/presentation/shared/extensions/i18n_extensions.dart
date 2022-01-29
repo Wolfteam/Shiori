@@ -603,6 +603,8 @@ extension I18nExtensions on S {
         return freeze;
       case CharacterRoleSubType.shield:
         return shield;
+      case CharacterRoleSubType.healer:
+        return healer;
     }
   }
 

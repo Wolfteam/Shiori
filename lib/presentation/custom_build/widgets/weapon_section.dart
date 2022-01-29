@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shiori/application/bloc.dart';
@@ -16,17 +15,18 @@ import 'package:shiori/presentation/weapons/weapons_page.dart';
 
 class WeaponSection extends StatelessWidget {
   final double maxItemImageWidth;
+  final bool useBoxDecoration;
 
   const WeaponSection({
     Key? key,
     required this.maxItemImageWidth,
+    required this.useBoxDecoration,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     final s = S.of(context);
     final theme = Theme.of(context);
-    final isPortrait = MediaQuery.of(context).orientation == Orientation.portrait;
     return BlocBuilder<CustomBuildBloc, CustomBuildState>(
       builder: (context, state) => state.maybeMap(
         loaded: (state) {
@@ -37,63 +37,63 @@ class WeaponSection extends StatelessWidget {
             children: [
               Container(
                 padding: Styles.edgeInsetVertical10,
-                // margin: const EdgeInsets.only(bottom: 10),
                 decoration: BoxDecoration(
                   color: color,
-                  border: isPortrait ? const Border(top: BorderSide(color: Colors.white)) : null,
+                  border: useBoxDecoration ? const Border(top: BorderSide(color: Colors.white)) : null,
                 ),
                 child: Text(
-                  '${s.weapons} (${state.weapons.length} / ${CustomBuildBloc.maxNumberOfWeapons})',
+                  state.readyForScreenshot ? s.weapons : '${s.weapons} (${state.weapons.length} / ${CustomBuildBloc.maxNumberOfWeapons})',
                   textAlign: TextAlign.center,
                   style: theme.textTheme.subtitle1!.copyWith(fontWeight: FontWeight.bold),
                 ),
               ),
-              ButtonBar(
-                buttonPadding: EdgeInsets.zero,
-                children: [
-                  Tooltip(
-                    message: s.add,
-                    child: IconButton(
-                      padding: EdgeInsets.zero,
-                      splashRadius: Styles.smallButtonSplashRadius,
-                      icon: const Icon(Icons.add),
-                      onPressed: () => _openWeaponsPage(context, state.weapons.map((e) => e.key).toList(), state.character.weaponType),
+              if (!state.readyForScreenshot)
+                ButtonBar(
+                  buttonPadding: EdgeInsets.zero,
+                  children: [
+                    Tooltip(
+                      message: s.add,
+                      child: IconButton(
+                        padding: EdgeInsets.zero,
+                        splashRadius: Styles.smallButtonSplashRadius,
+                        icon: const Icon(Icons.add),
+                        onPressed: () => _openWeaponsPage(context, state.weapons.map((e) => e.key).toList(), state.character.weaponType),
+                      ),
                     ),
-                  ),
-                  Tooltip(
-                    message: s.sort,
-                    child: IconButton(
-                      padding: EdgeInsets.zero,
-                      splashRadius: Styles.smallButtonSplashRadius,
-                      icon: const Icon(Icons.sort),
-                      onPressed: state.weapons.length < 2
-                          ? null
-                          : () => showDialog(
-                                context: context,
-                                builder: (_) => SortItemsDialog(
-                                  items: state.weapons.map((e) => SortableItem(e.key, e.name)).toList(),
-                                  onSave: (result) {
-                                    if (!result.somethingChanged) {
-                                      return;
-                                    }
+                    Tooltip(
+                      message: s.sort,
+                      child: IconButton(
+                        padding: EdgeInsets.zero,
+                        splashRadius: Styles.smallButtonSplashRadius,
+                        icon: const Icon(Icons.sort),
+                        onPressed: state.weapons.length < 2
+                            ? null
+                            : () => showDialog(
+                                  context: context,
+                                  builder: (_) => SortItemsDialog(
+                                    items: state.weapons.map((e) => SortableItem(e.key, e.name)).toList(),
+                                    onSave: (result) {
+                                      if (!result.somethingChanged) {
+                                        return;
+                                      }
 
-                                    context.read<CustomBuildBloc>().add(CustomBuildEvent.weaponsOrderChanged(weapons: result.items));
-                                  },
+                                      context.read<CustomBuildBloc>().add(CustomBuildEvent.weaponsOrderChanged(weapons: result.items));
+                                    },
+                                  ),
                                 ),
-                              ),
+                      ),
                     ),
-                  ),
-                  Tooltip(
-                    message: s.clearAll,
-                    child: IconButton(
-                      padding: EdgeInsets.zero,
-                      splashRadius: Styles.smallButtonSplashRadius,
-                      icon: const Icon(Icons.clear_all),
-                      onPressed: state.weapons.isEmpty ? null : () => context.read<CustomBuildBloc>().add(const CustomBuildEvent.deleteWeapons()),
+                    Tooltip(
+                      message: s.clearAll,
+                      child: IconButton(
+                        padding: EdgeInsets.zero,
+                        splashRadius: Styles.smallButtonSplashRadius,
+                        icon: const Icon(Icons.clear_all),
+                        onPressed: state.weapons.isEmpty ? null : () => context.read<CustomBuildBloc>().add(const CustomBuildEvent.deleteWeapons()),
+                      ),
                     ),
-                  ),
-                ],
-              ),
+                  ],
+                ),
               if (state.weapons.isEmpty)
                 NothingFound(msg: s.startByAddingWeapons)
               else
@@ -104,6 +104,7 @@ class WeaponSection extends StatelessWidget {
                         color: color,
                         maxImageWidth: maxItemImageWidth,
                         weaponCount: state.weapons.length,
+                        readyForScreenshot: state.readyForScreenshot,
                       ),
                     )
                     .toList(),

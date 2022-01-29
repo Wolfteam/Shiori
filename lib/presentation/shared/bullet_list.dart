@@ -11,6 +11,7 @@ class BulletList extends StatelessWidget {
   final double fontSize;
   final Function(int)? onDelete;
   final EdgeInsets padding;
+  final bool addTooltip;
 
   const BulletList({
     Key? key,
@@ -21,6 +22,7 @@ class BulletList extends StatelessWidget {
     this.fontSize = 11,
     this.onDelete,
     this.padding = Styles.edgeInsetAll5,
+    this.addTooltip = true,
   }) : super(key: key);
 
   @override
@@ -38,6 +40,7 @@ class BulletList extends StatelessWidget {
               iconResolver: iconResolver,
               onDelete: onDelete,
               padding: padding,
+              addTooltip: addTooltip,
             ),
           )
           .toList(),
@@ -54,6 +57,7 @@ class _ListItem extends StatelessWidget {
   final double fontSize;
   final Function(int)? onDelete;
   final EdgeInsets padding;
+  final bool addTooltip;
 
   const _ListItem({
     Key? key,
@@ -65,6 +69,7 @@ class _ListItem extends StatelessWidget {
     required this.fontSize,
     this.onDelete,
     required this.padding,
+    required this.addTooltip,
   }) : super(key: key);
 
   @override
@@ -78,16 +83,24 @@ class _ListItem extends StatelessWidget {
         children: [
           if (iconResolver != null) iconResolver!(index) else Icon(icon, size: iconSize),
           Expanded(
-            child: Tooltip(
-              message: title,
-              child: Container(
-                margin: const EdgeInsets.only(left: 5),
-                child: Text(
-                  title,
-                  style: theme.textTheme.bodyText2!.copyWith(fontSize: fontSize),
-                ),
-              ),
-            ),
+            child: addTooltip
+                ? Tooltip(
+                    message: title,
+                    child: Container(
+                      margin: const EdgeInsets.only(left: 5),
+                      child: Text(
+                        title,
+                        style: theme.textTheme.bodyText2!.copyWith(fontSize: fontSize),
+                      ),
+                    ),
+                  )
+                : Container(
+                    margin: const EdgeInsets.only(left: 5),
+                    child: Text(
+                      title,
+                      style: theme.textTheme.bodyText2!.copyWith(fontSize: fontSize),
+                    ),
+                  ),
           ),
           if (onDelete != null)
             InkWell(

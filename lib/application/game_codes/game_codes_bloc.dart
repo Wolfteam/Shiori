@@ -2,7 +2,6 @@ import 'dart:async';
 
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:meta/meta.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/data_service.dart';
 import 'package:shiori/domain/services/game_code_service.dart';

@@ -22,6 +22,7 @@ class WeaponRow extends StatelessWidget {
   final Color color;
   final double maxImageWidth;
   final int weaponCount;
+  final bool readyForScreenshot;
 
   const WeaponRow({
     Key? key,
@@ -29,6 +30,7 @@ class WeaponRow extends StatelessWidget {
     required this.color,
     required this.maxImageWidth,
     required this.weaponCount,
+    required this.readyForScreenshot,
   }) : super(key: key);
 
   @override
@@ -107,51 +109,52 @@ class WeaponRow extends StatelessWidget {
             ),
           ),
         ),
-        ItemPopupMenuFilter<_Options>.withoutSelectedValue(
-          values: _Options.values,
-          tooltipText: s.options,
-          icon: const Icon(Icons.more_vert),
-          onSelected: (type) => _handleOptionSelected(context, type),
-          isItemEnabled: (type) {
-            if (type == _Options.refinements && !canWeaponBeRefined(weapon.rarity)) {
-              return false;
-            }
-            return true;
-          },
-          childBuilder: (e) {
-            Widget icon;
-            switch (e.enumValue) {
-              case _Options.delete:
-                icon = const Icon(Icons.delete);
-                break;
-              case _Options.refinements:
-                icon = const Icon(Icons.notes);
-                break;
-              default:
-                throw Exception('The provided weapon option type = ${e.enumValue} is not valid');
-            }
+        if (!readyForScreenshot)
+          ItemPopupMenuFilter<_Options>.withoutSelectedValue(
+            values: _Options.values,
+            tooltipText: s.options,
+            icon: const Icon(Icons.more_vert),
+            onSelected: (type) => _handleOptionSelected(context, type),
+            isItemEnabled: (type) {
+              if (type == _Options.refinements && !canWeaponBeRefined(weapon.rarity)) {
+                return false;
+              }
+              return true;
+            },
+            childBuilder: (e) {
+              Widget icon;
+              switch (e.enumValue) {
+                case _Options.delete:
+                  icon = const Icon(Icons.delete);
+                  break;
+                case _Options.refinements:
+                  icon = const Icon(Icons.notes);
+                  break;
+                default:
+                  throw Exception('The provided weapon option type = ${e.enumValue} is not valid');
+              }
 
-            return Row(
-              children: [
-                icon,
-                Container(
-                  margin: const EdgeInsets.only(left: 10),
-                  child: Text(e.translation, overflow: TextOverflow.ellipsis),
-                ),
-              ],
-            );
-          },
-          itemText: (type, _) {
-            switch (type) {
-              case _Options.delete:
-                return s.delete;
-              case _Options.refinements:
-                return s.refinements;
-              default:
-                throw Exception('The provided weapon option type = $type is not valid');
-            }
-          },
-        ),
+              return Row(
+                children: [
+                  icon,
+                  Container(
+                    margin: const EdgeInsets.only(left: 10),
+                    child: Text(e.translation, overflow: TextOverflow.ellipsis),
+                  ),
+                ],
+              );
+            },
+            itemText: (type, _) {
+              switch (type) {
+                case _Options.delete:
+                  return s.delete;
+                case _Options.refinements:
+                  return s.refinements;
+                default:
+                  throw Exception('The provided weapon option type = $type is not valid');
+              }
+            },
+          ),
       ],
     );
   }
