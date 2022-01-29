@@ -396,5 +396,6 @@
   "startByAddingWeapons": "Start by adding some weapons",
   "startByAddingArtifacts": "Start by adding some artifacts",
   "teamComposition": "Team Composition",
-  "changeWereSuccessfullySaved": "Changes were successfully saved"
+  "changeWereSuccessfullySaved": "Changes were successfully saved",
+  "healer": "Healer"
 }
