@@ -12,7 +12,6 @@ import 'package:shiori/presentation/shared/dialogs/confirm_dialog.dart';
 import 'package:shiori/presentation/shared/extensions/element_type_extensions.dart';
 import 'package:shiori/presentation/shared/extensions/i18n_extensions.dart';
 import 'package:shiori/presentation/shared/styles.dart';
-import 'package:shiori/presentation/shared/sub_stats_to_focus.dart';
 import 'package:shiori/presentation/weapons/widgets/weapon_card.dart';
 
 class CustomBuildCard extends StatelessWidget {
@@ -48,7 +47,7 @@ class CustomBuildCard extends StatelessWidget {
                 name: item.character.name,
                 image: item.character.image,
                 rarity: item.character.stars,
-                height: 360,
+                height: 350,
               ),
             ),
             Expanded(
@@ -65,28 +64,34 @@ class CustomBuildCard extends StatelessWidget {
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text(
-                                item.title,
-                                maxLines: 2,
-                                overflow: TextOverflow.ellipsis,
-                                style: theme.textTheme.headline5!.copyWith(fontWeight: FontWeight.bold),
+                              Tooltip(
+                                message: item.title,
+                                child: Text(
+                                  item.title,
+                                  maxLines: 2,
+                                  overflow: TextOverflow.ellipsis,
+                                  style: theme.textTheme.headline5!.copyWith(fontWeight: FontWeight.bold, color: Colors.white),
+                                ),
                               ),
                               Text(
                                 subtitle,
                                 overflow: TextOverflow.ellipsis,
-                                style: const TextStyle(fontWeight: FontWeight.bold),
+                                style: const TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
                               ),
                             ],
                           ),
                         ),
-                        IconButton(
-                          splashRadius: Styles.smallButtonSplashRadius,
-                          icon: const Icon(Icons.delete),
-                          onPressed: () => _showDeleteDialog(context),
+                        Tooltip(
+                          message: s.delete,
+                          child: IconButton(
+                            splashRadius: Styles.smallButtonSplashRadius,
+                            icon: const Icon(Icons.delete, color: Colors.white),
+                            onPressed: () => _showDeleteDialog(context),
+                          ),
                         ),
                       ],
                     ),
-                    Text(s.weapons, style: const TextStyle(fontWeight: FontWeight.bold)),
+                    Text(s.weapons, style: const TextStyle(fontWeight: FontWeight.bold, color: Colors.white)),
                     SizedBox(
                       height: 100,
                       child: ListView.builder(
@@ -108,13 +113,7 @@ class CustomBuildCard extends StatelessWidget {
                         },
                       ),
                     ),
-                    Text(s.artifacts, style: const TextStyle(fontWeight: FontWeight.bold)),
-                    if (item.subStatsSummary.isNotEmpty)
-                      SubStatToFocus(
-                        subStatsToFocus: item.subStatsSummary,
-                        color: Colors.white,
-                        fontSize: 10,
-                      ),
+                    Text(s.artifacts, style: const TextStyle(fontWeight: FontWeight.bold, color: Colors.white)),
                     SizedBox(
                       height: 110,
                       child: ListView.builder(

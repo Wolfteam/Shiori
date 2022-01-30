@@ -32,7 +32,11 @@ class ArtifactSection extends StatelessWidget {
     return BlocBuilder<CustomBuildBloc, CustomBuildState>(
       builder: (context, state) => state.maybeMap(
         loaded: (state) {
-          final color = state.character.elementType.getElementColorFromContext(context);
+          final color = theme.brightness == Brightness.dark
+              ? state.character.elementType.getElementColorFromContext(
+                  context,
+                )
+              : theme.colorScheme.secondary;
           return Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             mainAxisAlignment: MainAxisAlignment.center,

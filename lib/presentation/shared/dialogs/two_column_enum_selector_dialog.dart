@@ -71,7 +71,7 @@ class _TwoColumnEnumSelectorDialogState<TEnum> extends State<TwoColumnEnumSelect
     }
     final dialogHeight = mq.getHeightForDialogs(_all.length + _selected.length, maxHeight: 400);
     final dialogWidth = mq.getWidthForDialogs();
-    final bgColor = theme.backgroundColor.withOpacity(0.5);
+    final bgColor = theme.brightness == Brightness.dark ? theme.backgroundColor.withOpacity(0.8) : theme.dividerColor;
     final canAddMoreItems = _selected.length == widget.maxNumberOfSelections;
     return AlertDialog(
       title: useRow
@@ -306,6 +306,7 @@ class _TwoColumnEnumSelectorDialogState<TEnum> extends State<TwoColumnEnumSelect
     setState(() {
       if (leftWasClicked) {
         _selectedRight = null;
+        addTo.sort((x, y) => x.translation.compareTo(y.translation));
       } else {
         _selectedLeft = null;
       }

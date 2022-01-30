@@ -8,6 +8,7 @@ import 'package:shiori/presentation/custom_builds/widgets/custom_build_card.dart
 import 'package:shiori/presentation/shared/app_fab.dart';
 import 'package:shiori/presentation/shared/mixins/app_fab_mixin.dart';
 import 'package:shiori/presentation/shared/nothing_found_column.dart';
+import 'package:shiori/presentation/shared/styles.dart';
 import 'package:waterfall_flow/waterfall_flow.dart';
 
 class CustomBuildsPage extends StatelessWidget {
@@ -64,8 +65,11 @@ class _PageState extends State<_Page> with SingleTickerProviderStateMixin, AppFa
               ? NothingFoundColumn(msg: s.startByCreatingBuild)
               : WaterfallFlow.builder(
                   itemCount: state.builds.length,
+                  padding: Styles.edgeInsetAll5,
                   gridDelegate: SliverWaterfallFlowDelegateWithFixedCrossAxisCount(
                     crossAxisCount: crossAxisCount,
+                    crossAxisSpacing: 10,
+                    mainAxisSpacing: 10,
                   ),
                   itemBuilder: (context, index) => CustomBuildCard(item: state.builds[index]),
                 ),

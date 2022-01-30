@@ -13,6 +13,7 @@ import 'package:shiori/presentation/custom_build/widgets/character_section.dart'
 import 'package:shiori/presentation/custom_build/widgets/team_section.dart';
 import 'package:shiori/presentation/custom_build/widgets/weapon_section.dart';
 import 'package:shiori/presentation/shared/dialogs/confirm_dialog.dart';
+import 'package:shiori/presentation/shared/extensions/element_type_extensions.dart';
 import 'package:shiori/presentation/shared/styles.dart';
 import 'package:shiori/presentation/shared/utils/toast_utils.dart';
 
@@ -77,6 +78,7 @@ class _AppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     final s = S.of(context);
+    final theme = Theme.of(context);
     return BlocBuilder<CustomBuildBloc, CustomBuildState>(
       builder: (ctx, state) => state.maybeMap(
         loaded: (state) => AppBar(
@@ -138,7 +140,12 @@ class _AppBar extends StatelessWidget implements PreferredSizeWidget {
                           value: choice,
                           child: ListTile(
                             title: Text(s.showOnCharacterDetail),
-                            leading: Icon(state.showOnCharacterDetail ? Icons.check_box : Icons.check_box_outline_blank),
+                            leading: Icon(
+                              state.showOnCharacterDetail ? Icons.check_box : Icons.check_box_outline_blank,
+                              color: theme.brightness == Brightness.dark
+                                  ? state.character.elementType.getElementColorFromContext(context)
+                                  : theme.colorScheme.secondary,
+                            ),
                           ),
                         );
                       default:
