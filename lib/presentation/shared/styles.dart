@@ -3,17 +3,20 @@ import 'package:flutter/material.dart';
 class Styles {
   static const String appIconPath = 'assets/icon/icon.png';
 
-  static const BorderRadius mainCardBorderRadius = BorderRadius.only(
-    bottomLeft: Radius.circular(30),
-    bottomRight: Radius.circular(30),
-    topLeft: Radius.circular(10),
-    topRight: Radius.circular(10),
+  static double cardBottomRadius = 30;
+  static double cardTopRadius = 10;
+
+  static BorderRadius mainCardBorderRadius = BorderRadius.only(
+    bottomLeft: Radius.circular(cardBottomRadius),
+    bottomRight: Radius.circular(cardBottomRadius),
+    topLeft: Radius.circular(cardTopRadius),
+    topRight: Radius.circular(cardTopRadius),
   );
 
   static BorderRadius homeCardItemBorderRadius = BorderRadius.circular(40);
 
   static final RoundedRectangleBorder cardShape = RoundedRectangleBorder(borderRadius: BorderRadius.circular(10));
-  static const RoundedRectangleBorder mainCardShape = RoundedRectangleBorder(borderRadius: mainCardBorderRadius);
+  static final RoundedRectangleBorder mainCardShape = RoundedRectangleBorder(borderRadius: mainCardBorderRadius);
   static final RoundedRectangleBorder floatingCardShape = RoundedRectangleBorder(borderRadius: BorderRadius.circular(20));
 
   static const double cardThreeElevation = 3;
@@ -41,10 +44,10 @@ class Styles {
 
   static const listItemWithIconOffset = Offset(-20, 0);
 
-  static const cardItemDetailShape = RoundedRectangleBorder(
+  static final cardItemDetailShape = RoundedRectangleBorder(
     borderRadius: BorderRadius.only(
-      topRight: Radius.circular(30),
-      topLeft: Radius.circular(30),
+      topRight: Radius.circular(cardBottomRadius),
+      topLeft: Radius.circular(cardBottomRadius),
     ),
   );
 
