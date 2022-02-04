@@ -81,7 +81,7 @@ class ArtifactSection extends StatelessWidget {
                   ],
                 ),
               if (state.artifacts.isEmpty)
-                NothingFound(msg: s.startByAddingArtifacts)
+                NothingFound(msg: s.startByAddingArtifacts, padding: Styles.edgeInsetVertical10)
               else
                 ...state.artifacts.map(
                   (e) => ArtifactRow(
