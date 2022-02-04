@@ -1,3 +1,4 @@
+import 'package:flex_color_scheme/flex_color_scheme.dart';
 import 'package:flutter/material.dart';
 import 'package:shiori/domain/enums/enums.dart';
 
@@ -39,22 +40,16 @@ extension AppThemeTypeExtensions on AppAccentColorType {
     }
   }
 
-  ThemeData getThemeData(AppThemeType theme) {
+  ThemeData getThemeData(AppThemeType theme, bool useDarkAmoledTheme) {
     final color = getAccentColor();
+    final colors = FlexSchemeColor.from(primary: color, secondary: color, primaryVariant: color, secondaryVariant: color);
     switch (theme) {
       case AppThemeType.dark:
-        return ThemeData.dark().copyWith(
-          primaryColor: color,
-          primaryColorLight: color.withOpacity(0.5),
-          primaryColorDark: color,
-          colorScheme: ColorScheme.dark(primary: color, secondary: color, primaryVariant: color, secondaryVariant: color),
-        );
+        return FlexThemeData.dark(colors: colors, darkIsTrueBlack: useDarkAmoledTheme);
       case AppThemeType.light:
-        return ThemeData.light().copyWith(
-          primaryColor: color,
-          primaryColorLight: color.withOpacity(0.8),
-          primaryColorDark: color,
-          colorScheme: ColorScheme.light(primary: color, secondary: color),
+        return FlexThemeData.light(
+          colors: colors,
+          appBarElevation: 10,
         );
       default:
         throw Exception('The provided theme  = $theme is not valid ');

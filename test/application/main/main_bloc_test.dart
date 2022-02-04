@@ -104,6 +104,7 @@ void main() {
   setUp(() {
     when(_settingsService.language).thenReturn(_defaultLang);
     when(_settingsService.appTheme).thenReturn(_defaultTheme);
+    when(_settingsService.useDarkAmoledTheme).thenReturn(false);
     when(_settingsService.accentColor).thenReturn(_defaultAccentColor);
     when(_settingsService.isFirstInstall).thenReturn(_defaultAppSettings.isFirstInstall);
     when(_settingsService.appSettings).thenReturn(_defaultAppSettings);
@@ -112,26 +113,7 @@ void main() {
     when(_deviceInfoService.versionChanged).thenReturn(false);
   });
 
-  test('Initial state', () {
-    final bloc = MainBloc(
-      _logger,
-      _genshinService,
-      _settingsService,
-      _localeService,
-      _telemetryService,
-      _deviceInfoService,
-      _charactersBloc,
-      _weaponsBloc,
-      _homeBloc,
-      _artifactsBloc,
-    );
-    expect(bloc.state, const MainState.loading());
-  });
-
-  group('Init', () {
-    blocTest<MainBloc, MainState>(
-      'emits init state',
-      build: () => MainBloc(
+  MainBloc _getBloc() => MainBloc(
         _logger,
         _genshinService,
         _settingsService,
@@ -142,12 +124,20 @@ void main() {
         _weaponsBloc,
         _homeBloc,
         _artifactsBloc,
-      ),
+      );
+
+  test('Initial state', () => expect(_getBloc().state, const MainState.loading()));
+
+  group('Init', () {
+    blocTest<MainBloc, MainState>(
+      'emits init state',
+      build: () => _getBloc(),
       act: (bloc) => bloc.add(const MainEvent.init()),
       expect: () => [
         MainState.loaded(
           appTitle: _defaultAppName,
           theme: _defaultTheme,
+          useDarkAmoledTheme: false,
           accentColor: _defaultAccentColor,
           language: _localeService.getLocale(_defaultLang),
           initialized: true,
@@ -161,18 +151,7 @@ void main() {
   group('Theme changed', () {
     blocTest<MainBloc, MainState>(
       'updates the theme in the state',
-      build: () => MainBloc(
-        _logger,
-        _genshinService,
-        _settingsService,
-        _localeService,
-        _telemetryService,
-        _deviceInfoService,
-        _charactersBloc,
-        _weaponsBloc,
-        _homeBloc,
-        _artifactsBloc,
-      ),
+      build: () => _getBloc(),
       act: (bloc) => bloc
         ..add(const MainEvent.init())
         ..add(const MainEvent.themeChanged(newValue: AppThemeType.light)),
@@ -181,6 +160,7 @@ void main() {
         MainState.loaded(
           appTitle: _defaultAppName,
           theme: AppThemeType.light,
+          useDarkAmoledTheme: false,
           accentColor: _defaultAppSettings.accentColor,
           language: _localeService.getLocale(_defaultLang),
           initialized: true,
@@ -192,18 +172,7 @@ void main() {
 
     blocTest<MainBloc, MainState>(
       'updates the accent color in the state',
-      build: () => MainBloc(
-        _logger,
-        _genshinService,
-        _settingsService,
-        _localeService,
-        _telemetryService,
-        _deviceInfoService,
-        _charactersBloc,
-        _weaponsBloc,
-        _homeBloc,
-        _artifactsBloc,
-      ),
+      build: () => _getBloc(),
       act: (bloc) => bloc
         ..add(const MainEvent.init())
         ..add(const MainEvent.accentColorChanged(newValue: AppAccentColorType.blueGrey)),
@@ -212,7 +181,29 @@ void main() {
         MainState.loaded(
           appTitle: _defaultAppName,
           theme: _defaultAppSettings.appTheme,
+          useDarkAmoledTheme: false,
           accentColor: AppAccentColorType.blueGrey,
+          language: _localeService.getLocale(_defaultLang),
+          initialized: true,
+          firstInstall: _defaultAppSettings.isFirstInstall,
+          versionChanged: _deviceInfoService.versionChanged,
+        ),
+      ],
+    );
+
+    blocTest<MainBloc, MainState>(
+      'uses dark amoled',
+      build: () => _getBloc(),
+      act: (bloc) => bloc
+        ..add(const MainEvent.init())
+        ..add(const MainEvent.useDarkAmoledThemeChanged(newValue: true)),
+      skip: 1,
+      expect: () => [
+        MainState.loaded(
+          appTitle: _defaultAppName,
+          theme: _defaultAppSettings.appTheme,
+          useDarkAmoledTheme: true,
+          accentColor: _defaultAccentColor,
           language: _localeService.getLocale(_defaultLang),
           initialized: true,
           firstInstall: _defaultAppSettings.isFirstInstall,
@@ -225,18 +216,7 @@ void main() {
   group('Language changed', () {
     blocTest<MainBloc, MainState>(
       'updates the language in the state',
-      build: () => MainBloc(
-        _logger,
-        _genshinService,
-        _settingsService,
-        _localeService,
-        _telemetryService,
-        _deviceInfoService,
-        _charactersBloc,
-        _weaponsBloc,
-        _homeBloc,
-        _artifactsBloc,
-      ),
+      build: () => _getBloc(),
       setUp: () {
         when(_settingsService.language).thenReturn(AppLanguageType.russian);
       },
@@ -247,6 +227,7 @@ void main() {
         MainState.loaded(
           appTitle: _defaultAppName,
           theme: _defaultAppSettings.appTheme,
+          useDarkAmoledTheme: false,
           accentColor: _defaultAppSettings.accentColor,
           language: _localeService.getLocale(AppLanguageType.russian),
           initialized: true,

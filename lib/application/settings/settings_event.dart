@@ -8,6 +8,10 @@ class SettingsEvent with _$SettingsEvent {
     required AppThemeType newValue,
   }) = _ThemeChanged;
 
+  const factory SettingsEvent.useDarkAmoledTheme({
+    required bool newValue,
+  }) = _UseDarkAmoledTheme;
+
   const factory SettingsEvent.accentColorChanged({
     required AppAccentColorType newValue,
   }) = _AccentColorChanged;

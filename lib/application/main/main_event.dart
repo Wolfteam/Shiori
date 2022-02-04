@@ -8,6 +8,10 @@ class MainEvent with _$MainEvent {
     required AppThemeType newValue,
   }) = _ThemeChanged;
 
+  const factory MainEvent.useDarkAmoledThemeChanged({
+    required bool newValue,
+  }) = _UseDarkAmoledThemeChanged;
+
   const factory MainEvent.accentColorChanged({
     required AppAccentColorType newValue,
   }) = _AccentColorChanged;

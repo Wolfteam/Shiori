@@ -32,7 +32,7 @@ void main() {
 
   final _defaultSettings = AppSettings(
     appTheme: AppThemeType.dark,
-    useDarkAmoled: false,
+    useDarkAmoled: true,
     accentColor: AppAccentColorType.blue,
     appLanguage: AppLanguageType.spanish,
     showCharacterDetails: true,
@@ -86,6 +86,7 @@ void main() {
     expect: () => [
       SettingsState.loaded(
         currentTheme: _defaultSettings.appTheme,
+        useDarkAmoledTheme: _defaultSettings.useDarkAmoled,
         currentAccentColor: _defaultSettings.accentColor,
         currentLanguage: _defaultSettings.appLanguage,
         appVersion: _deviceInfoService.version,
@@ -105,6 +106,7 @@ void main() {
     act: (bloc) => bloc
       ..add(const SettingsEvent.init())
       ..add(const SettingsEvent.themeChanged(newValue: AppThemeType.light))
+      ..add(const SettingsEvent.useDarkAmoledTheme(newValue: false))
       ..add(const SettingsEvent.accentColorChanged(newValue: AppAccentColorType.cyan))
       ..add(const SettingsEvent.languageChanged(newValue: AppLanguageType.russian))
       ..add(SettingsEvent.showCharacterDetailsChanged(newValue: !_defaultSettings.showCharacterDetails))
@@ -117,6 +119,7 @@ void main() {
     expect: () => [
       SettingsState.loaded(
         currentTheme: AppThemeType.light,
+        useDarkAmoledTheme: false,
         currentAccentColor: AppAccentColorType.cyan,
         currentLanguage: AppLanguageType.russian,
         appVersion: _deviceInfoService.version,

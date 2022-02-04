@@ -5,6 +5,7 @@ class SettingsState with _$SettingsState {
   const factory SettingsState.loading() = _LoadingState;
   const factory SettingsState.loaded({
     required AppThemeType currentTheme,
+    required bool useDarkAmoledTheme,
     required AppAccentColorType currentAccentColor,
     required AppLanguageType currentLanguage,
     required String appVersion,
