@@ -30,7 +30,11 @@ class WeaponSection extends StatelessWidget {
     return BlocBuilder<CustomBuildBloc, CustomBuildState>(
       builder: (context, state) => state.maybeMap(
         loaded: (state) {
-          final color = state.character.elementType.getElementColorFromContext(context);
+          final color = theme.brightness == Brightness.dark
+              ? state.character.elementType.getElementColorFromContext(
+                  context,
+                )
+              : theme.colorScheme.secondary;
           return Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             mainAxisAlignment: MainAxisAlignment.center,
@@ -95,7 +99,7 @@ class WeaponSection extends StatelessWidget {
                   ],
                 ),
               if (state.weapons.isEmpty)
-                NothingFound(msg: s.startByAddingWeapons)
+                NothingFound(msg: s.startByAddingWeapons, padding: Styles.edgeInsetVertical10)
               else
                 ...state.weapons
                     .map(

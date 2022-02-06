@@ -1,23 +1,24 @@
 package com.miraisoft.shiori
 
-import android.os.Bundle
 import android.util.Log
 import androidx.annotation.NonNull
 import com.microsoft.appcenter.AppCenter
 import com.microsoft.appcenter.analytics.Analytics
 import com.microsoft.appcenter.crashes.Crashes
 import io.flutter.embedding.android.FlutterActivity
+import io.flutter.embedding.engine.FlutterEngine
 import io.flutter.plugin.common.MethodCall
 import io.flutter.plugin.common.MethodChannel
+import io.flutter.plugins.GeneratedPluginRegistrant
 
 class MainActivity : FlutterActivity() {
     companion object {
         const val methodChannelName = "com.github.wolfteam.shiori"
     }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        MethodChannel(flutterEngine!!.dartExecutor.binaryMessenger, methodChannelName).setMethodCallHandler(::onMethodCall)
+    override fun configureFlutterEngine(flutterEngine: FlutterEngine) {
+        GeneratedPluginRegistrant.registerWith(flutterEngine);
+        MethodChannel(flutterEngine.dartExecutor.binaryMessenger, methodChannelName).setMethodCallHandler(::onMethodCall)
     }
 
     private fun onMethodCall(@NonNull call: MethodCall, @NonNull result: MethodChannel.Result) {

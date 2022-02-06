@@ -46,7 +46,7 @@ class CharacterStackImage extends StatelessWidget {
                   child: Text(
                     name,
                     overflow: TextOverflow.ellipsis,
-                    style: theme.textTheme.subtitle1!.copyWith(fontWeight: FontWeight.bold),
+                    style: theme.textTheme.subtitle1!.copyWith(fontWeight: FontWeight.bold, color: Colors.white),
                   ),
                 ),
                 Rarity(stars: rarity),

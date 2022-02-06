@@ -81,11 +81,9 @@ class ItemCard extends StatelessWidget {
               ),
               Container(
                 decoration: BoxDecoration(
-                  borderRadius: const BorderRadius.only(
-                    bottomLeft: Radius.circular(35),
-                    bottomRight: Radius.circular(35),
-                    // topLeft: Radius.circular(20),
-                    // topRight: Radius.circular(20),
+                  borderRadius: BorderRadius.only(
+                    bottomLeft: Radius.circular(Styles.cardBottomRadius),
+                    bottomRight: Radius.circular(Styles.cardBottomRadius),
                   ),
                   color: Colors.black.withOpacity(0.5),
                 ),
