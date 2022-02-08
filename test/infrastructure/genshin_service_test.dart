@@ -236,6 +236,19 @@ void main() {
           if (!detail.isComingSoon) {
             checkAsset(skill.fullImagePath);
             expect(skill.stats, isNotEmpty);
+            for (final stat in skill.stats) {
+              switch (skill.type) {
+                case CharacterSkillType.normalAttack:
+                case CharacterSkillType.elementalSkill:
+                case CharacterSkillType.elementalBurst:
+                  expect(stat.values.length, 15);
+                  break;
+                case CharacterSkillType.others:
+                  break;
+                default:
+                  throw Exception('Skill is not mapped');
+              }
+            }
             final statKeys = skill.stats.map((e) => e.key).toList();
             expect(statKeys.toSet().length, equals(statKeys.length));
             //check that all the values in the stats have the same length
