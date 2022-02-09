@@ -29,6 +29,7 @@ final _ignoredSubStats = [
   StatType.geoDmgBonusPercentage,
   StatType.anemoDmgBonusPercentage,
   StatType.healingBonusPercentage,
+  StatType.def,
 ];
 
 const _areWeaponTypesEnabledKey = 'areWeaponTypesEnabled';
