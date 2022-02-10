@@ -144,9 +144,10 @@ class CustomBuildCard extends StatelessWidget {
   }
 
   Future<void> _goToDetailsPage(BuildContext context) async {
+    final bloc = context.read<CustomBuildsBloc>();
     final route = MaterialPageRoute(
       builder: (ctx) => BlocProvider.value(
-        value: context.read<CustomBuildsBloc>(),
+        value: bloc,
         child: CustomBuildPage(itemKey: item.key),
       ),
     );

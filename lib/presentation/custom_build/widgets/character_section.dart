@@ -253,15 +253,16 @@ class _TalentPriorityRow extends StatelessWidget {
               ),
           ],
         ),
-        BulletList(
-          iconSize: 14,
-          items: skillPriorities.map((e) => s.translateCharacterSkillType(e)).toList(),
-          iconResolver: (index) => Text('#${index + 1}', style: theme.textTheme.subtitle2!.copyWith(fontSize: 12)),
-          fontSize: 10,
-          addTooltip: false,
-          padding: const EdgeInsets.only(right: 16, left: 5, bottom: 5, top: 5),
-          onDelete: readyToShare ? null : (index) => context.read<CustomBuildBloc>().add(CustomBuildEvent.deleteSkillPriority(index: index)),
-        ),
+        if (skillPriorities.isNotEmpty)
+          BulletList(
+            iconSize: 14,
+            items: skillPriorities.map((e) => s.translateCharacterSkillType(e)).toList(),
+            iconResolver: (index) => Text('#${index + 1}', style: theme.textTheme.subtitle2!.copyWith(fontSize: 12)),
+            fontSize: 10,
+            addTooltip: false,
+            padding: const EdgeInsets.only(right: 16, left: 5, bottom: 5, top: 5),
+            onDelete: readyToShare ? null : (index) => context.read<CustomBuildBloc>().add(CustomBuildEvent.deleteSkillPriority(index: index)),
+          )
       ],
     );
   }
@@ -310,14 +311,15 @@ class _NoteRow extends StatelessWidget {
               ),
           ],
         ),
-        BulletList(
-          iconSize: 14,
-          items: notes,
-          fontSize: 10,
-          addTooltip: false,
-          padding: const EdgeInsets.only(right: 16, left: 5, bottom: 5, top: 5),
-          onDelete: readyToShare ? null : (index) => context.read<CustomBuildBloc>().add(CustomBuildEvent.deleteNote(index: index)),
-        ),
+        if (notes.isNotEmpty)
+          BulletList(
+            iconSize: 14,
+            items: notes,
+            fontSize: 10,
+            addTooltip: false,
+            padding: const EdgeInsets.only(right: 16, left: 5, bottom: 5, top: 5),
+            onDelete: readyToShare ? null : (index) => context.read<CustomBuildBloc>().add(CustomBuildEvent.deleteNote(index: index)),
+          ),
       ],
     );
   }

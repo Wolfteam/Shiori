@@ -105,7 +105,7 @@ class TeamSection extends StatelessWidget {
                   ],
                 ),
               if (state.teamCharacters.isEmpty)
-                NothingFound(msg: s.startByAddingCharacters)
+                NothingFound(msg: s.startByAddingCharacters, padding: Styles.edgeInsetVertical10)
               else
                 ...state.teamCharacters
                     .map(

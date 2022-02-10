@@ -99,7 +99,7 @@ class WeaponSection extends StatelessWidget {
                   ],
                 ),
               if (state.weapons.isEmpty)
-                NothingFound(msg: s.startByAddingWeapons)
+                NothingFound(msg: s.startByAddingWeapons, padding: Styles.edgeInsetVertical10)
               else
                 ...state.weapons
                     .map(
