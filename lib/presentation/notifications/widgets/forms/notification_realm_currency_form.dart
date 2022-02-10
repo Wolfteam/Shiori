@@ -107,7 +107,7 @@ class NotificationRealmCurrency extends StatelessWidget {
   Future<void> _showRealmRankLevelPickerDialog(BuildContext context) async {
     final s = S.of(context);
     final max = getRealmMaxCurrency(currentTrustRank);
-    final newValue = await showDialog<int>(
+    await showDialog<int>(
       context: context,
       builder: (_) => NumberPickerDialog(
         maxItemLevel: max - 1,
@@ -115,12 +115,12 @@ class NotificationRealmCurrency extends StatelessWidget {
         value: currentRealmCurrency,
         title: s.realmCurrency,
       ),
-    );
+    ).then((newValue) {
+      if (newValue == null) {
+        return;
+      }
 
-    if (newValue == null) {
-      return;
-    }
-
-    context.read<NotificationBloc>().add(NotificationEvent.realmCurrencyChanged(newValue: newValue));
+      context.read<NotificationBloc>().add(NotificationEvent.realmCurrencyChanged(newValue: newValue));
+    });
   }
 }

@@ -603,6 +603,23 @@ extension I18nExtensions on S {
         return freeze;
       case CharacterRoleSubType.shield:
         return shield;
+      case CharacterRoleSubType.healer:
+        return healer;
+    }
+  }
+
+  String translateArtifactType(ArtifactType type) {
+    switch (type) {
+      case ArtifactType.flower:
+        return flower;
+      case ArtifactType.plume:
+        return plume;
+      case ArtifactType.clock:
+        return clock;
+      case ArtifactType.goblet:
+        return goblet;
+      case ArtifactType.crown:
+        return crown;
     }
   }
 }

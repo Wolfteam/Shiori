@@ -3,11 +3,6 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:shiori/domain/enums/enums.dart';
 
 import '../../../assets.dart';
-import '../../../enums/character_role_type.dart';
-import '../../../enums/character_skill_type.dart';
-import '../../../enums/element_type.dart';
-import '../../../enums/region_type.dart';
-import '../../../enums/weapon_type.dart';
 import '../../models.dart';
 
 part 'character_file_model.freezed.dart';

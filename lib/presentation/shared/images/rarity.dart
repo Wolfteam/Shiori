@@ -19,6 +19,10 @@ class Rarity extends StatelessWidget {
       widgets.add(Icon(Icons.star_sharp, color: Colors.yellow, size: starSize));
     }
 
-    return Row(mainAxisAlignment: alignment, children: widgets);
+    return Row(
+      mainAxisAlignment: alignment,
+      mainAxisSize: MainAxisSize.min,
+      children: widgets,
+    );
   }
 }

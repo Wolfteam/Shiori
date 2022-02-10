@@ -10,18 +10,25 @@ import 'package:shiori/presentation/shared/sliver_page_filter.dart';
 import 'package:shiori/presentation/shared/sliver_scaffold_with_fab.dart';
 import 'package:shiori/presentation/shared/utils/modal_bottom_sheet_utils.dart';
 import 'package:shiori/presentation/shared/utils/size_utils.dart';
+import 'package:shiori/presentation/weapons/widgets/weapon_bottom_sheet.dart';
 import 'package:waterfall_flow/waterfall_flow.dart';
 
 import 'widgets/weapon_card.dart';
 
 class WeaponsPage extends StatefulWidget {
   final bool isInSelectionMode;
+  final bool areWeaponTypesEnabled;
 
-  static Future<String?> forSelection(BuildContext context, {List<String> excludeKeys = const []}) async {
+  static Future<String?> forSelection(
+    BuildContext context, {
+    List<String> excludeKeys = const [],
+    List<WeaponType> weaponTypes = const [],
+    bool areWeaponTypesEnabled = true,
+  }) async {
     final bloc = context.read<WeaponsBloc>();
-    bloc.add(WeaponsEvent.init(excludeKeys: excludeKeys));
+    bloc.add(WeaponsEvent.init(excludeKeys: excludeKeys, weaponTypes: weaponTypes, areWeaponTypesEnabled: areWeaponTypesEnabled));
 
-    final route = MaterialPageRoute<String>(builder: (ctx) => const WeaponsPage(isInSelectionMode: true));
+    final route = MaterialPageRoute<String>(builder: (ctx) => WeaponsPage(isInSelectionMode: true, areWeaponTypesEnabled: areWeaponTypesEnabled));
     final keyName = await Navigator.of(context).push(route);
     await route.completed;
 
@@ -33,6 +40,7 @@ class WeaponsPage extends StatefulWidget {
   const WeaponsPage({
     Key? key,
     this.isInSelectionMode = false,
+    this.areWeaponTypesEnabled = true,
   }) : super(key: key);
 
   @override
@@ -56,7 +64,10 @@ class _WeaponsPageState extends State<WeaponsPage> with AutomaticKeepAliveClient
             SliverPageFilter(
               search: state.search,
               title: s.weapons,
-              onPressed: () => ModalBottomSheetUtils.showAppModalBottomSheet(context, EndDrawerItemType.weapons),
+              onPressed: () async {
+                final args = WeaponBottomSheet.buildNavigationArgs(areWeaponTypesEnabled: widget.areWeaponTypesEnabled);
+                await ModalBottomSheetUtils.showAppModalBottomSheet(context, EndDrawerItemType.weapons, args: args);
+              },
               searchChanged: (v) => context.read<WeaponsBloc>().add(WeaponsEvent.searchChanged(search: v)),
             ),
             if (state.weapons.isNotEmpty) _buildGrid(context, state.weapons) else const SliverNothingFound(),

@@ -29,10 +29,27 @@ final _ignoredSubStats = [
   StatType.geoDmgBonusPercentage,
   StatType.anemoDmgBonusPercentage,
   StatType.healingBonusPercentage,
+  StatType.def,
 ];
 
+const _areWeaponTypesEnabledKey = 'areWeaponTypesEnabled';
+
 class WeaponBottomSheet extends StatelessWidget {
-  const WeaponBottomSheet({Key? key}) : super(key: key);
+  final bool areWeaponTypesEnabled;
+
+  const WeaponBottomSheet({
+    Key? key,
+    required this.areWeaponTypesEnabled,
+  }) : super(key: key);
+
+  static Map<String, dynamic> buildNavigationArgs({bool areWeaponTypesEnabled = true}) =>
+      <String, dynamic>{_areWeaponTypesEnabledKey: areWeaponTypesEnabled};
+
+  static Widget getWidgetFromArgs(BuildContext context, Map<String, dynamic> args) {
+    assert(args.isNotEmpty);
+    final areWeaponTypesEnabled = args[_areWeaponTypesEnabledKey] as bool;
+    return WeaponBottomSheet(areWeaponTypesEnabled: areWeaponTypesEnabled);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -54,6 +71,7 @@ class WeaponBottomSheet extends StatelessWidget {
                 Text(s.type),
                 WeaponsButtonBar(
                   selectedValues: state.tempWeaponTypes,
+                  enabled: areWeaponTypesEnabled,
                   onClick: (v) => context.read<WeaponsBloc>().add(WeaponsEvent.weaponTypeChanged(v)),
                 ),
                 Text(s.rarity),
@@ -68,7 +86,7 @@ class WeaponBottomSheet extends StatelessWidget {
                   tempWeaponSubStatType: state.tempWeaponSubStatType,
                   tempSortDirectionType: state.tempSortDirectionType,
                 ),
-                const _ButtonBar(),
+                _ButtonBar(isResetEnabled: areWeaponTypesEnabled),
               ],
             ),
           ),
@@ -80,12 +98,13 @@ class WeaponBottomSheet extends StatelessWidget {
       builder: (ctx, state) => state.map(
         loading: (_) => const Loading(useScaffold: false),
         loaded: (state) => RightBottomSheet(
-          bottom: const _ButtonBar(),
+          bottom: _ButtonBar(isResetEnabled: areWeaponTypesEnabled),
           children: [
             Container(margin: Styles.endDrawerFilterItemMargin, child: Text(s.type)),
             WeaponsButtonBar(
               selectedValues: state.tempWeaponTypes,
               iconSize: 40,
+              enabled: areWeaponTypesEnabled,
               onClick: (v) => context.read<WeaponsBloc>().add(WeaponsEvent.weaponTypeChanged(v)),
             ),
             Container(margin: Styles.endDrawerFilterItemMargin, child: Text(s.rarity)),
@@ -167,7 +186,12 @@ class _OtherFilters extends StatelessWidget {
 }
 
 class _ButtonBar extends StatelessWidget {
-  const _ButtonBar({Key? key}) : super(key: key);
+  final bool isResetEnabled;
+
+  const _ButtonBar({
+    Key? key,
+    required this.isResetEnabled,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -183,10 +207,12 @@ class _ButtonBar extends StatelessWidget {
           child: Text(s.cancel, style: TextStyle(color: theme.primaryColor)),
         ),
         OutlinedButton(
-          onPressed: () {
-            context.read<WeaponsBloc>().add(const WeaponsEvent.resetFilters());
-            Navigator.pop(context);
-          },
+          onPressed: !isResetEnabled
+              ? null
+              : () {
+                  context.read<WeaponsBloc>().add(const WeaponsEvent.resetFilters());
+                  Navigator.pop(context);
+                },
           child: Text(s.reset, style: TextStyle(color: theme.primaryColor)),
         ),
         ElevatedButton(

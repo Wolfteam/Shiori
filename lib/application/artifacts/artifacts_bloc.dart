@@ -20,7 +20,7 @@ class ArtifactsBloc extends Bloc<ArtifactsEvent, ArtifactsState> {
   @override
   Stream<ArtifactsState> mapEventToState(ArtifactsEvent event) async* {
     final s = event.map(
-      init: (e) => _buildInitialState(excludeKeys: e.excludeKeys),
+      init: (e) => _buildInitialState(excludeKeys: e.excludeKeys, type: e.type),
       artifactFilterTypeChanged: (e) => currentState.copyWith.call(tempArtifactFilterType: e.artifactFilterType),
       rarityChanged: (e) => currentState.copyWith.call(tempRarity: e.rarity),
       sortDirectionTypeChanged: (e) => currentState.copyWith.call(tempSortDirectionType: e.sortDirectionType),
@@ -29,20 +29,29 @@ class ArtifactsBloc extends Bloc<ArtifactsEvent, ArtifactsState> {
         artifactFilterType: currentState.artifactFilterType,
         rarity: currentState.rarity,
         sortDirectionType: currentState.sortDirectionType,
+        excludeKeys: currentState.excludeKeys,
+        type: currentState.type,
       ),
       applyFilterChanges: (_) => _buildInitialState(
         search: currentState.search,
         artifactFilterType: currentState.tempArtifactFilterType,
         rarity: currentState.tempRarity,
         sortDirectionType: currentState.tempSortDirectionType,
+        excludeKeys: currentState.excludeKeys,
+        type: currentState.type,
       ),
       cancelChanges: (_) => currentState.copyWith.call(
         tempArtifactFilterType: currentState.artifactFilterType,
         tempRarity: currentState.rarity,
         tempSortDirectionType: currentState.sortDirectionType,
+        excludeKeys: currentState.excludeKeys,
+        type: currentState.type,
       ),
       collapseNotes: (e) => currentState.copyWith.call(collapseNotes: e.collapse),
-      resetFilters: (_) => _buildInitialState(excludeKeys: state.maybeMap(loaded: (state) => state.excludeKeys, orElse: () => [])),
+      resetFilters: (_) => _buildInitialState(
+        excludeKeys: currentState.excludeKeys,
+        type: currentState.type,
+      ),
     );
 
     yield s;
@@ -54,9 +63,10 @@ class ArtifactsBloc extends Bloc<ArtifactsEvent, ArtifactsState> {
     int rarity = 0,
     ArtifactFilterType artifactFilterType = ArtifactFilterType.name,
     SortDirectionType sortDirectionType = SortDirectionType.asc,
+    ArtifactType? type,
   }) {
     final isLoaded = state is _LoadedState;
-    var data = _genshinService.getArtifactsForCard();
+    var data = _genshinService.getArtifactsForCard(type: type);
     if (excludeKeys.isNotEmpty) {
       data = data.where((el) => !excludeKeys.contains(el.key)).toList();
     }
@@ -74,6 +84,7 @@ class ArtifactsBloc extends Bloc<ArtifactsEvent, ArtifactsState> {
         sortDirectionType: sortDirectionType,
         tempSortDirectionType: sortDirectionType,
         excludeKeys: excludeKeys,
+        type: type,
       );
     }
 
@@ -87,7 +98,7 @@ class ArtifactsBloc extends Bloc<ArtifactsEvent, ArtifactsState> {
 
     _sortData(data, artifactFilterType, sortDirectionType);
 
-    final s = currentState.copyWith.call(
+    return currentState.copyWith.call(
       artifacts: data,
       search: search,
       rarity: rarity,
@@ -97,8 +108,8 @@ class ArtifactsBloc extends Bloc<ArtifactsEvent, ArtifactsState> {
       sortDirectionType: sortDirectionType,
       tempSortDirectionType: sortDirectionType,
       excludeKeys: excludeKeys,
+      type: type,
     );
-    return s;
   }
 
   void _sortData(List<ArtifactCardModel> data, ArtifactFilterType artifactFilterType, SortDirectionType sortDirectionType) {

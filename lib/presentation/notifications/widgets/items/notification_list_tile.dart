@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:shiori/application/bloc.dart';
-import 'package:shiori/application/notifications/notifications_bloc.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/extensions/duration_extensions.dart';
 import 'package:shiori/domain/models/models.dart' as models;

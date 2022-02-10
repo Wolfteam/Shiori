@@ -9,6 +9,8 @@ import 'package:transparent_image/transparent_image.dart';
 
 import 'artifact_stats.dart';
 
+final replaceDigitRegex = RegExp(r'\d{1}');
+
 class ArtifactCard extends StatelessWidget {
   final String keyName;
   final String name;
@@ -20,6 +22,8 @@ class ArtifactCard extends StatelessWidget {
   final bool withoutDetails;
   final bool withElevation;
   final bool isInSelectionMode;
+  final bool withShape;
+  final bool withTextOverflow;
 
   const ArtifactCard({
     Key? key,
@@ -32,6 +36,8 @@ class ArtifactCard extends StatelessWidget {
     this.imgHeight = 120,
     this.withElevation = true,
     this.isInSelectionMode = false,
+    this.withShape = true,
+    this.withTextOverflow = false,
   })  : withoutDetails = false,
         super(key: key);
 
@@ -42,9 +48,11 @@ class ArtifactCard extends StatelessWidget {
     required this.image,
     required this.rarity,
     this.isInSelectionMode = false,
-  })  : imgWidth = 70,
-        imgHeight = 60,
-        bonus = const [],
+    this.imgWidth = 70,
+    this.imgHeight = 60,
+    this.withShape = true,
+    this.withTextOverflow = false,
+  })  : bonus = const [],
         withoutDetails = true,
         withElevation = false,
         super(key: key);
@@ -57,6 +65,8 @@ class ArtifactCard extends StatelessWidget {
     this.withElevation = true,
     this.withoutDetails = false,
     this.isInSelectionMode = false,
+    this.withShape = true,
+    this.withTextOverflow = false,
   })  : keyName = item.key,
         name = item.name,
         image = item.image,
@@ -72,7 +82,7 @@ class ArtifactCard extends StatelessWidget {
       onTap: () => _gotoDetailPage(context),
       child: GradientCard(
         clipBehavior: Clip.hardEdge,
-        shape: Styles.mainCardShape,
+        shape: withShape ? Styles.mainCardShape : null,
         elevation: withElevation ? Styles.cardTenElevation : 0,
         gradient: rarity.getRarityGradient(),
         child: Padding(
@@ -84,22 +94,23 @@ class ArtifactCard extends StatelessWidget {
                 height: imgHeight,
                 placeholder: MemoryImage(kTransparentImage),
                 image: AssetImage(image),
+                imageErrorBuilder: (context, error, stack) {
+                  //This can happen when trying to load sets like 'Prayer to xxx'
+                  final path = image.replaceFirst(replaceDigitRegex, '4');
+                  return Image.asset(
+                    path,
+                    width: imgWidth,
+                    height: imgHeight,
+                  );
+                },
               ),
-              Center(
-                child: Tooltip(
-                  message: name,
-                  child: !withoutDetails
-                      ? Text(
-                          name,
-                          textAlign: TextAlign.center,
-                          style: theme.textTheme.subtitle1!.copyWith(fontWeight: FontWeight.bold, color: Colors.white),
-                        )
-                      : Text(
-                          name,
-                          textAlign: TextAlign.center,
-                          style: theme.textTheme.subtitle1!.copyWith(fontWeight: FontWeight.bold, color: Colors.white),
-                          overflow: TextOverflow.ellipsis,
-                        ),
+              Tooltip(
+                message: name,
+                child: Text(
+                  name,
+                  textAlign: TextAlign.center,
+                  overflow: withTextOverflow ? TextOverflow.ellipsis : null,
+                  style: theme.textTheme.subtitle1!.copyWith(fontWeight: FontWeight.bold, color: Colors.white),
                 ),
               ),
               Rarity(stars: rarity),

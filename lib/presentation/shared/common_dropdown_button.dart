@@ -3,7 +3,7 @@ import 'package:shiori/presentation/shared/utils/enum_utils.dart';
 
 class CommonDropdownButton<T> extends StatelessWidget {
   final String hint;
-  final T currentValue;
+  final T? currentValue;
   final List<TranslatedEnum<T>> values;
   final Function(T, BuildContext)? onChanged;
   final bool isExpanded;
@@ -12,7 +12,7 @@ class CommonDropdownButton<T> extends StatelessWidget {
   const CommonDropdownButton({
     Key? key,
     required this.hint,
-    required this.currentValue,
+    this.currentValue,
     required this.values,
     this.onChanged,
     this.isExpanded = true,

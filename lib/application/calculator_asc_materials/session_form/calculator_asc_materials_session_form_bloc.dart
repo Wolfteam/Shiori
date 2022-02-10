@@ -2,7 +2,6 @@ import 'dart:async';
 
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:meta/meta.dart';
 import 'package:shiori/domain/extensions/string_extensions.dart';
 
 part 'calculator_asc_materials_session_form_bloc.freezed.dart';

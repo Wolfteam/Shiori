@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:shiori/domain/assets.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/generated/l10n.dart';
 import 'package:shiori/presentation/shared/bullet_list.dart';
 import 'package:shiori/presentation/shared/extensions/i18n_extensions.dart';
+import 'package:shiori/presentation/shared/images/artifact_image_type.dart';
 import 'package:shiori/presentation/shared/item_expansion_panel.dart';
 
 class ArtifactInfoCard extends StatelessWidget {
@@ -19,7 +19,6 @@ class ArtifactInfoCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final s = S.of(context);
-    final theme = Theme.of(context);
     final considerations = <String>[];
 
     final hp = s.translateStatTypeWithoutValue(StatType.hp, removeExtraSigns: true);
@@ -43,22 +42,17 @@ class ArtifactInfoCard extends StatelessWidget {
     considerations.add(
       '${s.crown}: $atkPercentage / $defPercentage / $hpPercentage / $critRate / $critDmg / $elementaryMastery / ${s.healingBonus}',
     );
-
-    final panel = ItemExpansionPanel(
-      title: s.note,
-      body: BulletList(
-        items: considerations,
-        iconResolver: (index) => Image.asset(
-          Assets.getArtifactPathFromType(ArtifactType.values[index]),
-          width: 24,
-          height: 24,
-          color: theme.brightness == Brightness.dark ? Colors.white : Colors.black,
+    return SliverToBoxAdapter(
+      child: ItemExpansionPanel(
+        title: s.note,
+        body: BulletList(
+          items: considerations,
+          iconResolver: (index) => ArtifactImageType(index: index),
         ),
+        icon: const Icon(Icons.info_outline),
+        isCollapsed: isCollapsed,
+        expansionCallback: expansionCallback,
       ),
-      icon: const Icon(Icons.info_outline),
-      isCollapsed: isCollapsed,
-      expansionCallback: expansionCallback,
     );
-    return SliverToBoxAdapter(child: panel);
   }
 }

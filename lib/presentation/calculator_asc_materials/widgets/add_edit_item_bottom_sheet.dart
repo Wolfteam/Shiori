@@ -227,7 +227,7 @@ class AddEditItemBottomSheet extends StatelessWidget {
 
   Future<void> _showLevelPickerDialog(BuildContext context, int value, bool forCurrentLevel) async {
     final s = S.of(context);
-    final newValue = await showDialog<int>(
+    await showDialog<int>(
       context: context,
       builder: (_) => NumberPickerDialog(
         minItemLevel: minItemLevel,
@@ -235,16 +235,16 @@ class AddEditItemBottomSheet extends StatelessWidget {
         value: value,
         title: s.chooseALevel,
       ),
-    );
+    ).then((newValue) {
+      if (newValue == null) {
+        return;
+      }
 
-    if (newValue == null) {
-      return;
-    }
-
-    final event = forCurrentLevel
-        ? CalculatorAscMaterialsItemEvent.currentLevelChanged(newValue: newValue)
-        : CalculatorAscMaterialsItemEvent.desiredLevelChanged(newValue: newValue);
-    context.read<CalculatorAscMaterialsItemBloc>().add(event);
+      final event = forCurrentLevel
+          ? CalculatorAscMaterialsItemEvent.currentLevelChanged(newValue: newValue)
+          : CalculatorAscMaterialsItemEvent.desiredLevelChanged(newValue: newValue);
+      context.read<CalculatorAscMaterialsItemBloc>().add(event);
+    });
   }
 }
 

@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/models/entities.dart';
 import 'package:shiori/domain/models/models.dart';
+import 'package:shiori/domain/services/persistence/custom_builds_data_service.dart';
 
 abstract class DataService {
   StreamController<ItemType> get itemAddedToInventory;
@@ -10,6 +11,8 @@ abstract class DataService {
   StreamController<ItemType> get itemUpdatedInInventory;
 
   StreamController<ItemType> get itemDeletedFromInventory;
+
+  CustomBuildsDataService get customBuilds;
 
   Future<void> init({String dir = 'shiori_data'});
 

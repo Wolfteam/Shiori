@@ -6,7 +6,6 @@ import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/services/data_service.dart';
 import 'package:shiori/domain/services/settings_service.dart';
 import 'package:shiori/domain/services/telemetry_service.dart';
-import 'package:shiori/infrastructure/calculator_service.dart';
 import 'package:shiori/infrastructure/infrastructure.dart';
 
 import '../../common.dart';
