@@ -18,9 +18,9 @@ import 'widgets/artifact_info_card.dart';
 class ArtifactsPage extends StatefulWidget {
   final bool isInSelectionMode;
 
-  static Future<String?> forSelection(BuildContext context, {List<String> excludeKeys = const []}) async {
+  static Future<String?> forSelection(BuildContext context, {List<String> excludeKeys = const [], ArtifactType? type}) async {
     final bloc = context.read<ArtifactsBloc>();
-    bloc.add(ArtifactsEvent.init(excludeKeys: excludeKeys));
+    bloc.add(ArtifactsEvent.init(excludeKeys: excludeKeys, type: type));
 
     final route = MaterialPageRoute<String>(builder: (ctx) => const ArtifactsPage(isInSelectionMode: true));
     final keyName = await Navigator.of(context).push(route);

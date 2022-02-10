@@ -4,6 +4,8 @@ part of 'weapons_bloc.dart';
 class WeaponsEvent with _$WeaponsEvent {
   const factory WeaponsEvent.init({
     @Default(<String>[]) List<String> excludeKeys,
+    @Default(<WeaponType>[]) List<WeaponType> weaponTypes,
+    @Default(true) bool areWeaponTypesEnabled,
   }) = _Init;
 
   const factory WeaponsEvent.searchChanged({

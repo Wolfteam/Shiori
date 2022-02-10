@@ -2,7 +2,6 @@ import 'package:bloc_test/bloc_test.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:shiori/application/bloc.dart';
-import 'package:shiori/domain/enums/app_language_type.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/services/genshin_service.dart';
 import 'package:shiori/domain/services/locale_service.dart';
@@ -89,7 +88,9 @@ void main() {
     blocTest<CharactersBloc, CharactersState>(
       'should return only one item',
       build: () => CharactersBloc(_genshinService, _settingsService),
-      act: (bloc) => bloc..add(const CharactersEvent.init())..add(const CharactersEvent.searchChanged(search: keqingSearch)),
+      act: (bloc) => bloc
+        ..add(const CharactersEvent.init())
+        ..add(const CharactersEvent.searchChanged(search: keqingSearch)),
       skip: 1,
       expect: () {
         final characters = _genshinService.getCharactersForCard().where((el) => el.key == keqingKey).toList();
@@ -116,7 +117,9 @@ void main() {
     blocTest<CharactersBloc, CharactersState>(
       'should not return any item',
       build: () => CharactersBloc(_genshinService, _settingsService),
-      act: (bloc) => bloc..add(const CharactersEvent.init())..add(const CharactersEvent.searchChanged(search: 'Wanderer')),
+      act: (bloc) => bloc
+        ..add(const CharactersEvent.init())
+        ..add(const CharactersEvent.searchChanged(search: 'Wanderer')),
       skip: 1,
       expect: () => [
         CharactersState.loaded(

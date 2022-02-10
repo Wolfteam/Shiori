@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shiori/application/bloc.dart';
@@ -32,6 +30,7 @@ class WeaponCard extends StatelessWidget {
   final bool withoutDetails;
   final bool isInSelectionMode;
   final bool withElevation;
+  final bool withShape;
 
   const WeaponCard({
     Key? key,
@@ -48,6 +47,7 @@ class WeaponCard extends StatelessWidget {
     this.imgHeight = 140,
     this.isInSelectionMode = false,
     this.withElevation = true,
+    this.withShape = true,
   })  : withoutDetails = false,
         super(key: key);
 
@@ -60,6 +60,7 @@ class WeaponCard extends StatelessWidget {
     required this.isComingSoon,
     this.imgWidth = 80,
     this.imgHeight = 70,
+    this.withShape = true,
   })  : type = null,
         baseAtk = null,
         subStatType = null,
@@ -76,6 +77,7 @@ class WeaponCard extends StatelessWidget {
     this.imgHeight = 140,
     this.isInSelectionMode = false,
     this.withElevation = true,
+    this.withShape = true,
   })  : keyName = weapon.key,
         baseAtk = weapon.baseAtk,
         image = weapon.image,
@@ -97,43 +99,49 @@ class WeaponCard extends StatelessWidget {
       onTap: () => _gotoWeaponPage(context),
       child: GradientCard(
         clipBehavior: Clip.hardEdge,
-        shape: Styles.mainCardShape,
+        shape: withShape ? Styles.mainCardShape : null,
         elevation: withElevation ? Styles.cardTenElevation : 0,
         gradient: rarity.getRarityGradient(),
         child: Padding(
           padding: Styles.edgeInsetAll5,
           child: Column(
             children: [
-              Stack(
-                alignment: AlignmentDirectional.topCenter,
-                fit: StackFit.passthrough,
-                children: [
-                  FadeInImage(
-                    width: imgWidth,
-                    height: imgHeight,
-                    placeholder: MemoryImage(kTransparentImage),
-                    image: AssetImage(image),
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      ComingSoonNewAvatar(
-                        isNew: false,
-                        isComingSoon: isComingSoon,
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-              if (!withoutDetails)
-                Center(
-                  child: Tooltip(
-                    message: name,
-                    child: Text(
-                      name,
-                      overflow: TextOverflow.ellipsis,
-                      style: theme.textTheme.subtitle1!.copyWith(fontWeight: FontWeight.bold, color: Colors.white),
+              if (withoutDetails)
+                FadeInImage(
+                  width: imgWidth,
+                  height: imgHeight,
+                  placeholder: MemoryImage(kTransparentImage),
+                  image: AssetImage(image),
+                )
+              else
+                Stack(
+                  alignment: AlignmentDirectional.topCenter,
+                  fit: StackFit.passthrough,
+                  children: [
+                    FadeInImage(
+                      width: imgWidth,
+                      height: imgHeight,
+                      placeholder: MemoryImage(kTransparentImage),
+                      image: AssetImage(image),
                     ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        ComingSoonNewAvatar(
+                          isNew: false,
+                          isComingSoon: isComingSoon,
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              if (!withoutDetails)
+                Tooltip(
+                  message: name,
+                  child: Text(
+                    name,
+                    overflow: TextOverflow.ellipsis,
+                    style: theme.textTheme.subtitle1!.copyWith(fontWeight: FontWeight.bold, color: Colors.white),
                   ),
                 ),
               Rarity(stars: rarity),

@@ -86,6 +86,41 @@ class CharacterBloc extends Bloc<CharacterEvent, CharacterState> {
 
     final birthday = _localeService.formatCharBirthDate(char.birthday);
     final isInInventory = _dataService.isItemInInventory(char.key, ItemType.character);
+    final builds = char.builds.map((build) {
+      return CharacterBuildCardModel(
+        isRecommended: build.isRecommended,
+        type: build.type,
+        subType: build.subType,
+        skillPriorities: build.skillPriorities,
+        subStatsToFocus: build.subStatsToFocus,
+        weapons: build.weaponKeys.map((e) => _genshinService.getWeaponForCard(e)).toList(),
+        artifacts: build.artifacts.map(
+          (e) {
+            final one = e.oneKey != null ? _genshinService.getArtifactForCard(e.oneKey!) : null;
+            final multiples = e.multiples
+                .map(
+                  (m) => CharacterBuildMultipleArtifactModel(
+                    quantity: m.quantity,
+                    artifact: _genshinService.getArtifactForCard(m.key),
+                  ),
+                )
+                .toList();
+
+            if (multiples.isNotEmpty) {
+              final count = multiples.map((e) => e.quantity).fold(0, (int p, int c) => p + c);
+              final diff = artifactOrder.length - count;
+              if (diff >= 1) {
+                multiples.add(CharacterBuildMultipleArtifactModel(quantity: diff, artifact: multiples.last.artifact));
+              }
+            }
+            return CharacterBuildArtifactModel(one: one, multiples: _flatMultiBuild(multiples), stats: e.stats);
+          },
+        ).toList(),
+      );
+    }).toList();
+
+    builds.addAll(_dataService.customBuilds.getCustomBuildsForCharacter(char.key));
+    builds.sort((x, y) => x.isRecommended ? -1 : 1);
 
     return CharacterState.loaded(
       key: char.key,
@@ -145,39 +180,7 @@ class CharacterBloc extends Bloc<CharacterEvent, CharacterState> {
         );
       }).toList(),
       multiTalentAscensionMaterials: multiTalents,
-      builds: char.builds.map((build) {
-        return CharacterBuildCardModel(
-          isRecommended: build.isRecommended,
-          type: build.type,
-          subType: build.subType,
-          skillPriorities: build.skillPriorities,
-          subStatsToFocus: build.subStatsToFocus,
-          weapons: build.weaponKeys.map((e) => _genshinService.getWeaponForCard(e)).toList(),
-          artifacts: build.artifacts.map(
-            (e) {
-              final one = e.oneKey != null ? _genshinService.getArtifactForCard(e.oneKey!) : null;
-              final multiples = e.multiples
-                  .map(
-                    (m) => CharacterBuildMultipleArtifactModel(
-                      quantity: m.quantity,
-                      artifact: _genshinService.getArtifactForCard(m.key),
-                    ),
-                  )
-                  .toList();
-
-              if (multiples.isNotEmpty) {
-                final count = multiples.map((e) => e.quantity).fold(0, (int p, int c) => p + c);
-                final diff = artifactOrder.length - count;
-                if (diff >= 1) {
-                  multiples.add(CharacterBuildMultipleArtifactModel(quantity: diff, artifact: multiples.last.artifact));
-                }
-              }
-              return CharacterBuildArtifactModel(one: one, multiples: _flatMultiBuild(multiples), stats: e.stats);
-            },
-          ).toList(),
-        );
-      }).toList()
-        ..sort((x, y) => x.isRecommended ? -1 : 1),
+      builds: builds,
       subStatType: char.subStatType,
       stats: char.stats,
     );

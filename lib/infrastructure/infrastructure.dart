@@ -8,5 +8,6 @@ export 'package:shiori/infrastructure/locale_service.dart';
 export 'package:shiori/infrastructure/logging_service.dart';
 export 'package:shiori/infrastructure/network_service.dart';
 export 'package:shiori/infrastructure/notification_service.dart';
+export 'package:shiori/infrastructure/persistence/custom_builds_data_service.dart';
 export 'package:shiori/infrastructure/settings_service.dart';
 export 'package:shiori/infrastructure/telemetry/telemetry_service.dart';

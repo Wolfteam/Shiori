@@ -12,4 +12,5 @@ enum CharacterRoleSubType {
   melt,
   freeze,
   shield,
+  healer,
 }

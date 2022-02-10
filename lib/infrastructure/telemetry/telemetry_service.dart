@@ -140,4 +140,24 @@ class TelemetryServiceImpl implements TelemetryService {
   @override
   Future<void> trackNotificationUpdated(AppNotificationType type) =>
       trackEventAsync('Notification-Updated', {'Type': EnumToString.convertToString(type)});
+
+  @override
+  Future<void> trackCustomBuildSaved(String charKey, CharacterRoleType roleType, CharacterRoleSubType subType) => trackEventAsync(
+        'Custom-Build-Saved',
+        {
+          'CharKey': charKey,
+          'RoleType': EnumToString.convertToString(roleType),
+          'SubType': EnumToString.convertToString(subType),
+        },
+      );
+
+  @override
+  Future<void> trackCustomBuildScreenShootTaken(String charKey, CharacterRoleType roleType, CharacterRoleSubType subType) => trackEventAsync(
+        'Custom-Build-ScreenShootTaken',
+        {
+          'CharKey': charKey,
+          'RoleType': EnumToString.convertToString(roleType),
+          'SubType': EnumToString.convertToString(subType),
+        },
+      );
 }

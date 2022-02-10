@@ -7,7 +7,6 @@ import 'package:shiori/domain/services/data_service.dart';
 import 'package:shiori/domain/services/genshin_service.dart';
 import 'package:shiori/domain/services/logging_service.dart';
 import 'package:shiori/domain/services/telemetry_service.dart';
-import 'package:shiori/infrastructure/genshin_service.dart';
 import 'package:shiori/infrastructure/infrastructure.dart';
 
 import '../../common.dart';

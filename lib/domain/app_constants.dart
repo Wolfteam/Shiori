@@ -8,6 +8,85 @@ const githubPage = 'https://github.com/Wolfteam/Shiori';
 //This order matches the one in the game, and the numbers represent each image
 const artifactOrder = [4, 2, 5, 1, 3];
 
+int getArtifactOrder(ArtifactType type) {
+  return artifactOrder[type.index];
+}
+
+List<StatType> getArtifactPossibleMainStats(ArtifactType type) {
+  switch (type) {
+    case ArtifactType.flower:
+      return [StatType.hp];
+    case ArtifactType.plume:
+      return [StatType.atk];
+    case ArtifactType.clock:
+      return [
+        StatType.atkPercentage,
+        StatType.defPercentage,
+        StatType.hpPercentage,
+        StatType.energyRechargePercentage,
+        StatType.elementalMastery,
+      ];
+    case ArtifactType.goblet:
+      return [
+        StatType.atkPercentage,
+        StatType.defPercentage,
+        StatType.hpPercentage,
+        StatType.elementalMastery,
+        StatType.physDmgPercentage,
+        StatType.hydroDmgBonusPercentage,
+        StatType.pyroDmgBonusPercentage,
+        StatType.cryoDmgBonusPercentage,
+        StatType.electroDmgBonusPercentage,
+        StatType.anemoDmgBonusPercentage,
+        StatType.geoDmgBonusPercentage,
+      ];
+    case ArtifactType.crown:
+      return [
+        StatType.atkPercentage,
+        StatType.defPercentage,
+        StatType.hpPercentage,
+        StatType.critRatePercentage,
+        StatType.critDmgPercentage,
+        StatType.elementalMastery,
+        StatType.healingBonusPercentage,
+      ];
+  }
+}
+
+List<StatType> getArtifactPossibleSubStats(StatType mainStat) {
+  final possibleValues = [
+    StatType.hp,
+    StatType.atk,
+    StatType.def,
+    StatType.hpPercentage,
+    StatType.atkPercentage,
+    StatType.defPercentage,
+    StatType.elementalMastery,
+    StatType.energyRechargePercentage,
+    StatType.critRatePercentage,
+    StatType.critDmgPercentage,
+  ];
+  //The main stat cannot be repeated
+  return possibleValues.except([mainStat]).toList();
+}
+
+int getArtifactMaxNumberOfSubStats(int rarity) {
+  switch (rarity) {
+    case 1:
+      return 0;
+    case 2:
+      return 1;
+    case 3:
+      return 2;
+    case 4:
+      return 3;
+    case 5:
+      return 4;
+    default:
+      throw Exception('The provided rarity is not valid for an artifact');
+  }
+}
+
 const languagesMap = {
   AppLanguageType.english: LanguageModel('en', 'US'),
   AppLanguageType.spanish: LanguageModel('es', 'ES'),
@@ -781,3 +860,24 @@ int getCurrentRealmCurrency(int initialRealmCurrency, int currentTrustRank, Real
 int getRealmMaxCurrency(int currentTrustRank) => realmTrustRank.entries.firstWhere((kvp) => kvp.key == currentTrustRank).value;
 
 int getRealmIncreaseRatio(RealmRankType type) => realmIncreasingRatio.entries.firstWhere((kvp) => kvp.key == type).value;
+
+int minWeaponRefinementLevel = 1;
+
+bool canWeaponBeRefined(int rarity) {
+  final maxRefinement = getWeaponMaxRefinementLevel(rarity);
+  return maxRefinement > 0;
+}
+
+int getWeaponMaxRefinementLevel(int rarity) {
+  switch (rarity) {
+    case 5:
+    case 4:
+    case 3:
+      return 5;
+    case 2:
+    case 1:
+      return 0;
+    default:
+      throw Exception('Invalid weapon rarity');
+  }
+}

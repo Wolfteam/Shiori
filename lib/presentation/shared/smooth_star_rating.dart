@@ -64,7 +64,10 @@ class _SmoothStarRatingState extends State<SmoothStarRating> {
     return Material(
       color: Colors.transparent,
       child: Wrap(
-          alignment: WrapAlignment.start, spacing: widget.spacing, children: List.generate(widget.starCount, (index) => buildStar(context, index))),
+        alignment: WrapAlignment.start,
+        spacing: widget.spacing,
+        children: List.generate(widget.starCount, (index) => buildStar(context, index)),
+      ),
     );
   }
 

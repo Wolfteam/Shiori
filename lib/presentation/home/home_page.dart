@@ -4,6 +4,7 @@ import 'package:responsive_builder/responsive_builder.dart';
 import 'package:shiori/application/bloc.dart';
 import 'package:shiori/generated/l10n.dart';
 import 'package:shiori/presentation/home/widgets/calculators_card.dart';
+import 'package:shiori/presentation/home/widgets/custom_builds_card.dart';
 import 'package:shiori/presentation/home/widgets/daily_check_in_card.dart';
 import 'package:shiori/presentation/home/widgets/elements_card.dart';
 import 'package:shiori/presentation/home/widgets/game_codes_card.dart';
@@ -66,7 +67,7 @@ class _HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin<
               child: ListView.builder(
                 physics: const BouncingScrollPhysics(),
                 scrollDirection: Axis.horizontal,
-                itemCount: 4,
+                itemCount: 5,
                 itemBuilder: (context, index) => _buildToolsSectionMenu(index),
               ),
             ),
@@ -123,6 +124,8 @@ class _HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin<
       case 2:
         return const NotificationsCard(iconToTheLeft: true);
       case 3:
+        return const CustomBuildsCard(iconToTheLeft: true);
+      case 4:
         return const TierListCard(iconToTheLeft: true);
       default:
         throw Exception('Invalid tool section');
