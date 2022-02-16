@@ -965,6 +965,10 @@
             {
               "key": "mudra-of-the-malefic-general",
               "quantity": 1
+            },
+            {
+              "key": "dream-solvent",
+              "quantity": 1
             }
           ]
         },
@@ -973,6 +977,10 @@
           "needs": [
             {
               "key": "mudra-of-the-malefic-general",
+              "quantity": 1
+            },
+            {
+              "key": "dream-solvent",
               "quantity": 1
             }
           ]
@@ -985,6 +993,10 @@
             {
               "key": "tears-of-the-calamitous-god",
               "quantity": 1
+            },
+            {
+              "key": "dream-solvent",
+              "quantity": 1
             }
           ]
         },
@@ -993,6 +1005,10 @@
           "needs": [
             {
               "key": "the-meaning-of-aeons",
+              "quantity": 1
+            },
+            {
+              "key": "dream-solvent",
               "quantity": 1
             }
           ]
@@ -1837,6 +1853,10 @@
             {
               "key": "tears-of-the-calamitous-god",
               "quantity": 1
+            },
+            {
+              "key": "dream-solvent",
+              "quantity": 1
             }
           ]
         },
@@ -1845,6 +1865,10 @@
           "needs": [
             {
               "key": "tears-of-the-calamitous-god",
+              "quantity": 1
+            },
+            {
+              "key": "dream-solvent",
               "quantity": 1
             }
           ]
@@ -1857,6 +1881,10 @@
             {
               "key": "mudra-of-the-malefic-general",
               "quantity": 1
+            },
+            {
+              "key": "dream-solvent",
+              "quantity": 1
             }
           ]
         },
@@ -1865,6 +1893,10 @@
           "needs": [
             {
               "key": "the-meaning-of-aeons",
+              "quantity": 1
+            },
+            {
+              "key": "dream-solvent",
               "quantity": 1
             }
           ]
@@ -1888,6 +1920,10 @@
             {
               "key": "the-meaning-of-aeons",
               "quantity": 1
+            },
+            {
+              "key": "dream-solvent",
+              "quantity": 1
             }
           ]
         },
@@ -1896,6 +1932,10 @@
           "needs": [
             {
               "key": "the-meaning-of-aeons",
+              "quantity": 1
+            },
+            {
+              "key": "dream-solvent",
               "quantity": 1
             }
           ]
@@ -1908,6 +1948,10 @@
             {
               "key": "mudra-of-the-malefic-general",
               "quantity": 1
+            },
+            {
+              "key": "dream-solvent",
+              "quantity": 1
             }
           ]
         },
@@ -1916,6 +1960,10 @@
           "needs": [
             {
               "key": "tears-of-the-calamitous-god",
+              "quantity": 1
+            },
+            {
+              "key": "dream-solvent",
               "quantity": 1
             }
           ]
