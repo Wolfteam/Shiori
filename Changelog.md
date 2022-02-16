@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.3.0+47 (15/12/2021)
+- Yae Miko is here
+- Custom Builds
+
+
 ## 1.2.6+37 (15/12/2021)
 - Itto and Gorou are here
 
