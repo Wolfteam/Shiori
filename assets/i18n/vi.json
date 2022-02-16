@@ -6292,86 +6292,133 @@
     {
       "key": "yae-miko",
       "name": "Yae Miko",
-      "title": "",
-      "description": "",
+      "title": "Tiếu Ngạo Thế Gian",
+      "description": "Đại nhân Guuji của Đền Narukami, kiêm tổng biên tập của Nhà Xuất Bản Yae. Phía sau vẻ ngoài xinh đẹp kiều diễm là sự thông minh và xảo quyệt mà khó ai ngờ đến.",
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Tấn Công Thường - Hồ Linh Thực Tội Thức",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Tấn Công Thường",
+              "description": "Triệu hồi linh hồn hồ ly, thực hiện tối đa 3 lần tấn công, gây Sát Thương Nguyên Tố Lôi.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Trọng Kích",
+              "description": "Tiêu hao thể lực nhất định, tụ lực và gây Sát Thương Phạm Vi Nguyên Tố Lôi.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Tấn Công Khi Đáp",
+              "description": "Ngưng tụ sức mạnh lôi đình, từ trên không lao xuống mặt đất, tấn công kẻ địch trên đường, gây Sát Thương Phạm Vi Nguyên Tố Lôi khi chạm đất.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "Sát Thương Lần 1|{param1}%",
+            "Sát Thương Lần 2|{param2}%",
+            "Sát Thương Lần 3|{param3}%",
+            "Sát Thương Trọng Kích|{param4}%",
+            "Thể lực Trọng Kích tiêu hao|{param5} điểm",
+            "Sát Thương Khi Rơi|{param6}%",
+            "Sát Thương Khi Rơi Từ Độ Cao Thấp/Cao|{param7}% / {param8}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Thần Chú Yakan - Sesshou Sakura",
+          "description": "Đối với Yae mà nói, những phiền phức mà chỉ cần triệu hồi tinh linh là đã giải quyết được, thì đương nhiên sẽ không cần tự mình nhúng tay vào.\r\nDi chuyển nhanh và để lại một \"Sesshou Sakura\".\r\n",
+          "abilities": [
+            {
+              "name": "Sesshou Sakura",
+              "description": "Có đặc tính sau:\r\n",
+              "descriptions": [
+                "Cứ cách một thời gian sẽ giáng sét xuống 1 kẻ địch ở xung quanh, gây Sát Thương Nguyên Tố Lôi;",
+                "Khi gần đó có Sesshou Sakura khác, sẽ tăng bậc cho chúng để tăng sát thương của đòn tấn công nêu trên.",
+                "Có thể sử dụng 3 lần.",
+                "Tối đa tồn tại cùng lúc 3 Sesshou Sakura, Sesshou Sakura khi vừa khởi tạo sẽ có bậc 1, tối đa tăng đến bậc 3. Nếu vị trí khởi tạo có cự ly quá gần với Sesshou Sakura đã có, sẽ tiêu hủy Sesshou Sakura đã có."
+              ]
+            }
+          ],
+          "stats": [
+            "Sát Thương Sesshou Sakura Bậc 1|{param1}%",
+            "Sát Thương Sesshou Sakura Bậc 2|{param2}%",
+            "Sát Thương Sesshou Sakura Bậc 3|{param3}%",
+            "Sát Thương Sesshou Sakura Bậc 4|{param4}%",
+            "Thời Gian Kéo Dài|{param5} s",
+            "CD|{param6} s"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
+          "title": "Đại Bí Pháp - Tenko Kenshin",
+          "description": "Trong dân gian Inazuma có nhắc đến khái niệm \"kitsunetsuki\", hay có thể hiểu là chứng nhận của hồ ly. Trong đó, của \"Thiên Hồ\" là tương đối đặc biệt, có thể dùng lôi đình để giáng xuống người kẻ địch của Đền Narukami. Giáng sấm sét xuống, gây Sát Thương Phạm Vi Nguyên Tố Lôi.\r\nKhi thi triển, Yae Miko sẽ giải phóng Sesshou Sakura ở gần đó, phá hủy hình thái của chúng và hóa thành Thiên Hồ Lôi Đình giáng xuống, gây Sát Thương Phạm Vi Nguyên Tố Lôi. Mỗi lần phá hủy 1 Sesshou Sakura bằng cách này sẽ giáng xuống 1 tia Thiên Hồ Lôi Đình.\r\n",
           "abilities": [],
-          "stats": []
+          "stats": [
+            "Sát Thương Kỹ Năng|{param1}%",
+            "Sát Thương Thiên Hồ Lôi Đình|{param2}%",
+            "CD|{param3} s",
+            "Năng Lượng Nguyên Tố|{param4}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "Hồ Ly Thiền Định",
+          "description": "Khi ghép nguyên liệu thiên phú nhân vật, có tỷ lệ 25% sản sinh thêm 1 nguyên liệu thiên phú ngẫu nhiên khác của cùng khu vực, cấp bậc giống với nguyên liệu khi ghép.\r\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
+          "title": "Bóng Râm Đền Thần",
+          "description": "Khi thi triển Đại Bí Pháp - Tenko Kenshin, mỗi lần phá hủy một Sesshou Sakura sẽ làm mới một lần CD kỹ năng Thần Chú Yakan - Sesshou Sakura.\r\n",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "NA",
-          "description": "",
+          "title": "Lời Cầu Phúc Giác Ngộ",
+          "description": "Mỗi 1 điểm Tinh Thông Nguyên Tố của Yae Miko có thể tăng 0.15% sát thương do Sesshou Sakura gây ra.\r\n",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "Biên Niên Sử Hồ Ly",
+          "description": "Đại Bí Pháp - Tenko Kenshin mỗi khi kích hoạt 1 lần Thiên Hồ Lôi Đình, đều sẽ hồi 8 điểm năng lượng nguyên tố cho bản thân Yae Miko.\r\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "Tiếng Gọi Đêm Trăng",
+          "description": "Cấp bậc ban đầu của Sesshou Sakura khi vừa được tạo ra sẽ tăng ngay đến bậc 2, tối đa có thể tăng đến bậc 4, phạm vi tấn công tăng 60%.\r\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "Thất Diệu Biến Hóa",
+          "description": "Cấp kỹ năng Thần Chú Yakan - Sesshou Sakura +3.\r\nTăng tối đa đến cấp 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "Anh Đào Dẫn Lôi Chương",
+          "description": "Sau khi sấm sét của Sesshou Sakura đánh trúng kẻ địch, tất cả nhân vật trong đội ở gần sẽ nhận được 20% Buff Sát Thương Nguyên Tố Lôi, duy trì 5s.\r\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "Giễu Cợt Nham Hiểm",
+          "description": "Cấp kỹ năng Đại Bí Pháp - Tenko Kenshin +3.\r\nTăng tối đa đến cấp 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
+          "title": "Cấm Thuật Daisesshou",
+          "description": "Sesshou Sakura khi tấn công sẽ bỏ qua 60% phòng ngự của kẻ địch.\r\n",
           "descriptions": []
         }
       ]
@@ -7509,6 +7556,18 @@
       ]
     },
     {
+      "key": "kaguras-verity",
+      "name": "Chân Ý Của Kagura",
+      "description": "Chuông thần được dùng khi biểu diễn Vũ Điệu Kagura, đã được Guuji chúc phúc. Hương thơm của Anh Đào Thần thoang thoảng trên đó.",
+      "refinements": [
+        "Khi thi triển kỹ năng nguyên tố sẽ nhận được hiệu quả \"Vũ Điệu Kagura\", giúp nhân vật trang bị vũ khí này tăng {color}12{/color}% sát thương do kỹ năng nguyên tố gây ra, hiệu quả này duy trì 16s, tối đa dồn 3 tầng. Khi có 3 tầng, nhân vật này sẽ nhận được {color}12{/color}% buff sát thương tất cả nguyên tố.",
+        "Khi thi triển kỹ năng nguyên tố sẽ nhận được hiệu quả \"Vũ Điệu Kagura\", giúp nhân vật trang bị vũ khí này tăng {color}15{/color}% sát thương do kỹ năng nguyên tố gây ra, hiệu quả này duy trì 16s, tối đa dồn 3 tầng. Khi có 3 tầng, nhân vật này sẽ nhận được {color}15{/color}% buff sát thương tất cả nguyên tố.",
+        "Khi thi triển kỹ năng nguyên tố sẽ nhận được hiệu quả \"Vũ Điệu Kagura\", giúp nhân vật trang bị vũ khí này tăng {color}18{/color}% sát thương do kỹ năng nguyên tố gây ra, hiệu quả này duy trì 16s, tối đa dồn 3 tầng. Khi có 3 tầng, nhân vật này sẽ nhận được {color}18{/color}% buff sát thương tất cả nguyên tố.",
+        "Khi thi triển kỹ năng nguyên tố sẽ nhận được hiệu quả \"Vũ Điệu Kagura\", giúp nhân vật trang bị vũ khí này tăng {color}21{/color}% sát thương do kỹ năng nguyên tố gây ra, hiệu quả này duy trì 16s, tối đa dồn 3 tầng. Khi có 3 tầng, nhân vật này sẽ nhận được {color}21{/color}% buff sát thương tất cả nguyên tố.",
+        "Khi thi triển kỹ năng nguyên tố sẽ nhận được hiệu quả \"Vũ Điệu Kagura\", giúp nhân vật trang bị vũ khí này tăng {color}24{/color}% sát thương do kỹ năng nguyên tố gây ra, hiệu quả này duy trì 16s, tối đa dồn 3 tầng. Khi có 3 tầng, nhân vật này sẽ nhận được {color}24{/color}% buff sát thương tất cả nguyên tố."
+      ]
+    },
+    {
       "key": "katsuragikiri-nagamasa",
       "name": "Trường Đao Katsuragi",
       "description": "Thanh kiếm được Tatarasuna rèn, tuy nặng nề nhưng vô cùng sắc bén.",
@@ -7674,6 +7733,18 @@
         "Tổng giới hạn Năng Lượng Nguyên Tố của tất cả nhân vật trong đội, mỗi 1 điểm sẽ tăng {color}0.18{/color}% sát thương Kỹ Năng Nộ của nhân vật trang bị vũ khí này. Thông qua cách này, sát thương Kỹ Năng Nộ có thể tăng tối đa {color}60{/color}%.",
         "Tổng giới hạn Năng Lượng Nguyên Tố của tất cả nhân vật trong đội, mỗi 1 điểm sẽ tăng {color}0.21{/color}% sát thương Kỹ Năng Nộ của nhân vật trang bị vũ khí này. Thông qua cách này, sát thương Kỹ Năng Nộ có thể tăng tối đa {color}70{/color}%.",
         "Tổng giới hạn Năng Lượng Nguyên Tố của tất cả nhân vật trong đội, mỗi 1 điểm sẽ tăng {color}0.24{/color}% sát thương Kỹ Năng Nộ của nhân vật trang bị vũ khí này. Thông qua cách này, sát thương Kỹ Năng Nộ có thể tăng tối đa {color}80{/color}%."
+      ]
+    },
+    {
+      "key": "oathsworn-eye",
+      "name": "Con Ngươi Tuyên Thệ",
+      "description": "Báu vật của Vương Quốc Đêm Trắng được cất giữ ở Dainichi Mikoshi. Sau khi Thần Rắn đến, Enkanomiya dùng vật này để chứng nhận cho những lời hứa lớn lao và nguyện vọng to lớn.",
+      "refinements": [
+        "Sau khi thi triển Kỹ Năng Nguyên Tố, Hiệu Quả Nạp Nguyên Tố tăng {color}24{/color}%, duy trì 10s.",
+        "Sau khi thi triển Kỹ Năng Nguyên Tố, Hiệu Quả Nạp Nguyên Tố tăng {color}30{/color}%, duy trì 10s.",
+        "Sau khi thi triển Kỹ Năng Nguyên Tố, Hiệu Quả Nạp Nguyên Tố tăng {color}36{/color}%, duy trì 10s.",
+        "Sau khi thi triển Kỹ Năng Nguyên Tố, Hiệu Quả Nạp Nguyên Tố tăng {color}42{/color}%, duy trì 10s.",
+        "Sau khi thi triển Kỹ Năng Nguyên Tố, Hiệu Quả Nạp Nguyên Tố tăng {color}48{/color}%, duy trì 10s."
       ]
     },
     {
@@ -9531,6 +9602,11 @@
       "description": "Tiền lưu hành trong đại lục. Là ngôn ngữ chung của thế giới."
     },
     {
+      "key": "mudra-of-the-malefic-general",
+      "name": "Thủ Ấn Hung Tướng",
+      "description": "Bộ phận của con rối mang về từ Tịnh Thổ, phần này là hình bàn tay và mắt tượng trưng cho \"mắt thấy tay làm\".\r\nNgay cả khi đã biến thành vị thần tai ương, \"cô ấy\" vẫn có thể cưỡi trên đôi bàn tay này. Khoảnh khắc đôi mắt nhìn thấy, đã vung ra một nhát đao.\r\nThế nhưng vạn kiếp quá dài, cốt tủy của hung tướng cũng đã mang bộ dạng mới."
+    },
+    {
       "key": "mushroom",
       "name": "Nấm Rơm",
       "description": "Loại nấm thường thấy, chỉ cần đủ nước và bóng mát thì có thể sinh trưởng mạnh mẽ."
@@ -10044,6 +10120,16 @@
       "key": "teachings-of-transience",
       "name": "Bài Giảng Của \"Vĩnh Hằng\"",
       "description": "Nguyên liệu bồi dưỡng thiên phú.\r\nƯớc mơ của Lôi Quốc là sự vĩnh hằng.\r\nVĩnh hằng chính là nét đẹp hoàn mỹ nhất của con người, cũng giống như sấm sét vậy! Thật mong muốn lưu lại khoảnh khắc vĩnh hằng tuyệt vời này như trong giấc mộng và bầu trời đầy pháo hoa."
+    },
+    {
+      "key": "tears-of-the-calamitous-god",
+      "name": "Nước Mắt Tai Ương",
+      "description": "Bộ phận của con rối mang về từ Tịnh Thổ, phần này có hình dạng \"Con Mắt Ác Ma\".\r\nChỉ cần dựa vào ánh mắt cũng có thể giáng xuống tai họa và lời nguyền, vì vậy khi cuộc sống không được suôn sẻ, việc đổ lỗi cho \"vị thần tai ương\" là lẽ đương nhiên. Nhưng hãy nghĩ kỹ lại xem, nếu ý chí đủ kiên định và niềm tin đủ mạnh...\r\nVạn kiếp quá dài, ngay cả hung tinh tà ác cũng có thể tự rửa sạch mình bằng nước mắt."
+    },
+    {
+      "key": "the-meaning-of-aeons",
+      "name": "Chân Ý Vạn Kiếp",
+      "description": "Trang sức được mang về từ Tịnh Thổ sau khi mọi chuyện đã lắng xuống.\r\nNhất niệm vạn kiếp tận, sẽ luôn có những suy nghĩ có thể vượt qua thời gian.\r\nMuôn vạn kiếp nạn, liệu ý nghĩ thực sự của Makoto đã được truyền đạt thành công hay chưa."
     },
     {
       "key": "tile-of-decarabians-tower",
@@ -10656,6 +10742,10 @@
     {
       "key": "lupus-boreas-dominator-of-wolves",
       "name": "Vua sói bắc phong, lãnh chúa Lang Lãnh"
+    },
+    {
+      "key": "magatsu-mitake-narukami-no-mikoto",
+      "name": "Magatsu Mitake Narukami no Mikoto"
     },
     {
       "key": "maguu-kenki",

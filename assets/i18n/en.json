@@ -6291,86 +6291,133 @@
     {
       "key": "yae-miko",
       "name": "Yae Miko",
-      "title": "",
-      "description": "",
+      "title": "Astute Amusement",
+      "description": "Lady Guuji of the Grand Narukami Shrine also serves as the editor-in-chief of Yae Publishing House. Unimaginable intelligence and cunning are hidden under her beautiful appearance.",
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Spiritfox Sin-Eater",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Normal Attack",
+              "description": "Summons forth kitsune spirits, initiating a maximum of 3 attacks that deal Electro DMG.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Charged Attack",
+              "description": "Consumes a certain amount of Stamina to deal AoE Electro DMG after a short casting time.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Plunging Attack",
+              "description": "Plunges towards the ground from mid-air, damaging all opponents in her path with thunderous might. Deals AoE Electro DMG upon impact with the ground.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "1-Hit DMG|{param1}%",
+            "2-Hit DMG|{param2}%",
+            "3-Hit DMG|{param3}%",
+            "Charged Attack DMG|{param4}%",
+            "Charged Attack Stamina Cost|{param5}",
+            "Plunge DMG|{param6}%",
+            "Low/High Plunge DMG|{param7}% / {param8}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Yakan Evocation: Sesshou Sakura",
+          "description": "To Yae, such dull tasks as can be accomplished by driving spirits out need not be done personally.\r\nMoves swiftly, leaving a Sesshou Sakura behind.\r\n",
+          "abilities": [
+            {
+              "name": "Sesshou Sakura",
+              "description": "Has the following properties:\r\n",
+              "descriptions": [
+                "Periodically strikes one nearby opponent with lightning, dealing Electro DMG",
+                "When there are other Sesshou Sakura nearby, their level will increase, boosting the DMG dealt by these lightning strikes.",
+                "This skill has three charges.",
+                "A maximum of 3 Sesshou Sakura can exist simultaneously. The initial level of each Sesshou Sakura is 1, and the initial highest level each sakura can reach is 3. If a new Sesshou Sakura is created too close to an existing one, the existing one will be destroyed."
+              ]
+            }
+          ],
+          "stats": [
+            "Sesshou Sakura DMG: Level 1|{param1}%",
+            "Sesshou Sakura DMG: Level 2|{param2}%",
+            "Sesshou Sakura DMG: Level 3|{param3}%",
+            "Sesshou Sakura DMG: Level 4|{param4}%",
+            "Duration|{param5} s",
+            "CD|{param6} s"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
+          "title": "Great Secret Art: Tenko Kenshin",
+          "description": "Legends of \"kitsunetsuki,\" or the manifestation of a kitsune's might, are common in Inazuma's folktales. One that particularly captures the imagination is that of the Sky Kitsune, said to cause lightning to fall down upon the foes of the Grand Narukami Shrine. Summons a lightning strike, dealing AoE Electro DMG.\r\nWhen she uses this skill, Yae Miko will unseal nearby Sesshou Sakura, destroying their outer forms and transforming them into Tenko Thunderbolts that descend from the skies, dealing AoE Electro DMG. Each Sesshou Sakura destroyed in this way will create one Tenko Thunderbolt.\r\n",
           "abilities": [],
-          "stats": []
+          "stats": [
+            "Skill DMG|{param1}%",
+            "Tenko Thunderbolt DMG|{param2}%",
+            "CD|{param3} s",
+            "Energy Cost|{param4}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "Meditations of a Yako",
+          "description": "Has a 25% chance to get 1 regional Character Talent Material (base material excluded) when crafting. The rarity is that of the base material.\r\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
+          "title": "The Shrine's Sacred Shade",
+          "description": "When casting Great Secret Art: Tenko Kenshin, each Sesshou Sakura destroyed resets the cooldown for 1 charge of Yakan Evocation: Sesshou Sakura.\r\n",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "NA",
-          "description": "",
+          "title": "Enlightened Blessing",
+          "description": "Every point of Elemental Mastery Yae Miko possesses will increase Sesshou Sakura DMG by 0.15%.\r\n",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "Yakan Offering",
+          "description": "Each time Great Secret Art: Tenko Kenshin activates a Tenko Thunderbolt, Yae Miko will restore 8 Elemental Energy for herself.\r\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "Fox's Mooncall",
+          "description": "Sesshou Sakura start at Level 2 when created, their max level is increased to 4, and their attack range is increased by 60%.\r\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "The Seven Glamours",
+          "description": "Increases the Level of Yakan Evocation: Sesshou Sakura by 3.\r\nMaximum upgrade level is 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "Sakura Channeling",
+          "description": "When Sesshou Sakura lightning hits opponents, the Electro DMG Bonus of all nearby party members is increased by 20% for 5s.\r\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "Mischievous Teasing",
+          "description": "Increases the Level of Great Secret Art: Tenko Kenshin by 3.\r\nMaximum upgrade level is 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
+          "title": "Forbidden Art: Daisesshou",
+          "description": "The Sesshou Sakura's attacks will ignore 60% of the opponents' DEF.\r\n",
           "descriptions": []
         }
       ]
@@ -7508,6 +7555,18 @@
       ]
     },
     {
+      "key": "kaguras-verity",
+      "name": "Kagura's Verity",
+      "description": "The bells used when performing the Kagura Dance, blessed by the Guuji herself. The scent of the Sacred Sakura tree lingers on it.",
+      "refinements": [
+        "Gains the Kagura Dance effect when using an Elemental Skill, causing the Elemental Skill DMG of the character wielding this weapon to increase by {color}12{/color}% for 16s. Max 3 stacks. This character will gain {color}12{/color}% All Elemental DMG Bonus when they possess 3 stacks.",
+        "Gains the Kagura Dance effect when using an Elemental Skill, causing the Elemental Skill DMG of the character wielding this weapon to increase by {color}15{/color}% for 16s. Max 3 stacks. This character will gain {color}15{/color}% All Elemental DMG Bonus when they possess 3 stacks.",
+        "Gains the Kagura Dance effect when using an Elemental Skill, causing the Elemental Skill DMG of the character wielding this weapon to increase by {color}18{/color}% for 16s. Max 3 stacks. This character will gain {color}18{/color}% All Elemental DMG Bonus when they possess 3 stacks.",
+        "Gains the Kagura Dance effect when using an Elemental Skill, causing the Elemental Skill DMG of the character wielding this weapon to increase by {color}21{/color}% for 16s. Max 3 stacks. This character will gain {color}21{/color}% All Elemental DMG Bonus when they possess 3 stacks.",
+        "Gains the Kagura Dance effect when using an Elemental Skill, causing the Elemental Skill DMG of the character wielding this weapon to increase by {color}24{/color}% for 16s. Max 3 stacks. This character will gain {color}24{/color}% All Elemental DMG Bonus when they possess 3 stacks."
+      ]
+    },
+    {
       "key": "katsuragikiri-nagamasa",
       "name": "Katsuragikiri Nagamasa",
       "description": "A blade that was once made in Tatarasuna. Heavy and tough.",
@@ -7673,6 +7732,18 @@
         "For every point of the entire party's combined maximum Energy capacity, the Elemental Burst DMG of the character equipping this weapon is increased by {color}0.18{/color}%. A maximum of {color}60{/color}% increased Elemental Burst DMG can be achieved this way.",
         "For every point of the entire party's combined maximum Energy capacity, the Elemental Burst DMG of the character equipping this weapon is increased by {color}0.21{/color}%. A maximum of {color}70{/color}% increased Elemental Burst DMG can be achieved this way.",
         "For every point of the entire party's combined maximum Energy capacity, the Elemental Burst DMG of the character equipping this weapon is increased by {color}0.24{/color}%. A maximum of {color}80{/color}% increased Elemental Burst DMG can be achieved this way."
+      ]
+    },
+    {
+      "key": "oathsworn-eye",
+      "name": "Oathsworn Eye",
+      "description": "A national treasure of Byakuyakoku stored in the Dainichi Mikoshi. With the coming of the Serpent God, this item was used to notarize great oaths and wishes.",
+      "refinements": [
+        "Increases Energy Recharge by {color}24{/color}% for 10s after using an Elemental Skill.",
+        "Increases Energy Recharge by {color}30{/color}% for 10s after using an Elemental Skill.",
+        "Increases Energy Recharge by {color}36{/color}% for 10s after using an Elemental Skill.",
+        "Increases Energy Recharge by {color}42{/color}% for 10s after using an Elemental Skill.",
+        "Increases Energy Recharge by {color}48{/color}% for 10s after using an Elemental Skill."
       ]
     },
     {
@@ -9545,6 +9616,11 @@
       "description": "Common currency. The one language everybody speaks."
     },
     {
+      "key": "mudra-of-the-malefic-general",
+      "name": "Mudra of the Malefic General",
+      "description": "A puppet joint obtained from the Plane of Euthymia. The gesture here symbolizes the concept that \"one sees and one does.\"\r\nEven now that \"she\" has become a calamitous deity, she can still utilize such transcendent gestures, her sword flashing forth as swiftly as her eyes may see.\r\nAnd yet, as the countless disasters ground on for far too long, the fierce general's shell had to embrace a new spring."
+    },
+    {
       "key": "mushroom",
       "name": "Mushroom",
       "description": "Hardy common fungi. Can grow anywhere with the right amount of shade and moisture."
@@ -10058,6 +10134,16 @@
       "key": "teachings-of-transience",
       "name": "Teachings of Transience",
       "description": "Talent Level-Up material.\r\nTransience is the dream of the nation of thunder.\r\nFleeting glories are the highest expression of mortal beauty, for are we mortals not like the flashing lightning itself? Like a lovely dream or blossoming spark, we shall leave a gorgeous mark on the eternal night sky."
+    },
+    {
+      "key": "tears-of-the-calamitous-god",
+      "name": "Tears of the Calamitous God",
+      "description": "A puppet joint obtained from the Plane of Euthymia. The gesture here is in the shape of the baleful Eye of Stormy Judgment.\r\nSince they are able to bring down curse and catastrophe alike with a mere gaze, it might seem natural to blame life's misfortunes on calamitous deities. However, if you think about it a little harder, if your will is strong enough, and if your convictions are firm enough...\r\nThe catastrophes go on for too long. Even a baleful gaze must wash itself with tears."
+    },
+    {
+      "key": "the-meaning-of-aeons",
+      "name": "The Meaning of Aeons",
+      "description": "A small piece of headgear obtained once the dust settled in the Plane of Euthymia.\r\nOne thought may end all calamity, and there will always be thoughts that may transcend time.\r\nAmid all this, one wonders if Makoto's true meaning was successfully communicated or not."
     },
     {
       "key": "tile-of-decarabians-tower",
@@ -10670,6 +10756,10 @@
     {
       "key": "lupus-boreas-dominator-of-wolves",
       "name": "Lupus Boreas, Dominator of Wolves"
+    },
+    {
+      "key": "magatsu-mitake-narukami-no-mikoto",
+      "name": "Magatsu Mitake Narukami no Mikoto"
     },
     {
       "key": "maguu-kenki",

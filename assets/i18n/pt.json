@@ -6195,86 +6195,133 @@
     {
       "key": "yae-miko",
       "name": "Yae Miko",
-      "title": "???",
-      "description": "",
+      "title": "Diversão Astuta",
+      "description": "A Senhorita Guuji do Grande Santuário Narukami, e também a Editora-Chefe da Editora Yae. Por trás de sua bela aparência escondem-se sabedoria e astúcia inimagináveis.",
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Kitsune Devora-pecados",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Ataque Normal",
+              "description": "Evoca espíritos kitsune que realizam até 3 ataques que infligem Dano Electro.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Ataque Carregado",
+              "description": "Consome uma certa quantidade de Stamina que inflige Dano Electro em uma AdE após um curto período de canalização.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Ataque Imersivo",
+              "description": "Reunindo o poder do relâmpago, Yae Miko mergulha ao chão em pleno ar, infligindo dano a todos os inimigos em seu caminho. Inflige Dano Electro em uma AdE durante o impacto com o chão.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "Dano do 1° Golpe|{param1}%",
+            "Dano do 2° Golpe|{param2}%",
+            "Dano do 3° Golpe|{param3}%",
+            "Dano de Ataque Carregado|{param4}%",
+            "Consumo de Stamina de Ataque Carregado|{param5}",
+            "Dano Durante a Queda|{param6}%",
+            "Dano de Queda de Baixa/Alta Altitude|{param7}% / {param8}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Evocação Yakan: Sesshou Sakura",
+          "description": "Para Yae, as coisas que podem ser resolvidas ao invocar os espíritos não precisam ser feitas pessoalmente.\r\nEla se move rapidamente, deixando uma Sesshou Sakura para trás.\r\n",
+          "abilities": [
+            {
+              "name": "Sesshou Sakura",
+              "description": "Tem as seguintes propriedades:\r\n",
+              "descriptions": [
+                "Ataca um inimigo ao redor periodicamente com um relâmpago, causando Dano Electro;",
+                "Quando há outras Sesshou Sakura por perto, seu nível aumenta, aumentando o Dano causado por seus ataques.",
+                "O número de Sesshou Sakura disponíveis para uso é 3.",
+                "Um máximo de 3 Sesshou Sakura podem existir simultaneamente. Ao ser criada, a Sesshou Sakura iniciará no nível 1, o nível mais alto que cada Sesshou Sakura pode atingir é 3. Criar uma Sesshou Sakura muito próxima de outra já existente fará com que a Sesshou Sakura existente seja destruída."
+              ]
+            }
+          ],
+          "stats": [
+            "Dano da Sesshou Sakura — Nível 1|{param1}%",
+            "Dano da Sesshou Sakura — Nível 2|{param2}%",
+            "Dano da Sesshou Sakura — Nível 3|{param3}%",
+            "Dano da Sesshou Sakura — Nível 4|{param4}%",
+            "Duração|{param5} s",
+            "Tempo de Recarga|{param6} s"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
+          "title": "Grande Arte Secreta: Tenko Kenshin",
+          "description": "A lenda da \"kitsunetsuki\", ou a manifestação do poder kitsune, é uma das lendas de Inazuma. Dentre elas, a da Kitsune Celestial é considerada especial, caindo sobre os inimigos do Grande Santuário Narukami sob a forma de relâmpagos, causando Dano Electro em uma AdE.\r\nQuando ela usa esta habilidade, Yae Miko irá retirar os selos das Sesshou Sakura próximas, destruindo suas formas externas e transformando-as em Relâmpagos de Kitsunes Celestiais que caem dos céus, causando Dano Electro em uma AdE. Cada Sesshou Sakura destruída desta forma irá criar um Relâmpago.\r\n",
           "abilities": [],
-          "stats": []
+          "stats": [
+            "Dano de Habilidade|{param1}%",
+            "Dano do Relâmpago de Kitsune Celestial|{param2}%",
+            "Recarga|{param3} s",
+            "Energia Elemental|{param4}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "Meditações de uma Yako",
+          "description": "Há 25% de chance de obter um Material de Talento extra aleatório da mesma região. A raridade será a mesma dos materiais consumidos ao fabricar.\r\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
+          "title": "Sombra Sagrada",
+          "description": "Ao lançar Grande Arte Secreta: Tenko Kenshin, cada Sesshou Sakura destruída redefinirá o Tempo de Recarga uma vez de Evocação Yakan: Sesshou Sakura.\r\n",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "NA",
-          "description": "",
+          "title": "Bênção Iluminada",
+          "description": "Cada ponto de Proficiência Elemental que Yae Miko possui aumenta o Dano infligido por Sesshou Sakura em 0.15%.\r\n",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "Oferenda Yakan",
+          "description": "Cada vez que Grande Arte Secreta: Tenko Kenshin desencadeia Relâmpago de Kitsune Celestial, Yae Miko regenera para ela mesma 8 pontos de Energia Elemental.\r\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "Uivos ao Luar",
+          "description": "Sesshou Sakura inicia no Nível 2 quando é criada. O nível máximo é aumentado para 4, e a AdE de seu ataque aumenta em 60%.\r\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "Sete Transformações",
+          "description": "Aumenta o nível de Evocação Yakan: Sesshou Sakura em 3.\r\nNível máximo é 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "Canalização da Sakura",
+          "description": "Depois de o raio de Sesshou Sakura atingir os inimigos, todos os personagens próximos da equipe obterão 20% de Bônus de Dano Electro por 5s.\r\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "Escárnio Implacável",
+          "description": "Aumenta o nível de Grande Arte Secreta: Tenko Kenshin em 3.\r\nNível máximo é 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
+          "title": "Técnica Proibida: Massacre",
+          "description": "Quando a Sesshou Sakura ataca os inimigos, ignora 60% de sua DEF.\r\n",
           "descriptions": []
         }
       ]
@@ -7406,6 +7453,18 @@
       ]
     },
     {
+      "key": "kaguras-verity",
+      "name": "Prova de Kagura",
+      "description": "Sinos usados para a execução da Dança Kagura, abençoados pela própria Guuji. O cheiro da Sakura Sagrada ainda permanece neles.",
+      "refinements": [
+        "Ao usar a Habilidade Elemental, obtém o efeito de \"Dança Kagura\", o qual aumenta o Dano da Habilidade Elemental em {color}12{/color}% do personagem que tiver esta arma equipada. Este efeito dura 16s e pode ser acumulado em até 3 vezes. Ao obter 3 acúmulos, o personagem obtém {color}12{/color}% de Bônus de Dano de todos os Elementos.",
+        "Ao usar a Habilidade Elemental, obtém o efeito de \"Dança Kagura\", o qual aumenta o Dano da Habilidade Elemental em {color}15{/color}% do personagem que tiver esta arma equipada. Este efeito dura 16s e pode ser acumulado em até 3 vezes. Ao obter 3 acúmulos, o personagem obtém {color}15{/color}% de Bônus de Dano de todos os Elementos.",
+        "Ao usar a Habilidade Elemental, obtém o efeito de \"Dança Kagura\", o qual aumenta o Dano da Habilidade Elemental em {color}18{/color}% do personagem que tiver esta arma equipada. Este efeito dura 16s e pode ser acumulado em até 3 vezes. Ao obter 3 acúmulos, o personagem obtém {color}18{/color}% de Bônus de Dano de todos os Elementos.",
+        "Ao usar a Habilidade Elemental, obtém o efeito de \"Dança Kagura\", o qual aumenta o Dano da Habilidade Elemental em {color}21{/color}% do personagem que tiver esta arma equipada. Este efeito dura 16s e pode ser acumulado em até 3 vezes. Ao obter 3 acúmulos, o personagem obtém {color}21{/color}% de Bônus de Dano de todos os Elementos.",
+        "Ao usar a Habilidade Elemental, obtém o efeito de \"Dança Kagura\", o qual aumenta o Dano da Habilidade Elemental em {color}24{/color}% do personagem que tiver esta arma equipada. Este efeito dura 16s e pode ser acumulado em até 3 vezes. Ao obter 3 acúmulos, o personagem obtém {color}24{/color}% de Bônus de Dano de todos os Elementos."
+      ]
+    },
+    {
       "key": "katsuragikiri-nagamasa",
       "name": "Espada Grande de Katsuragi",
       "description": "Uma espada forjada em Tatarasuna. Pesada e resistente.",
@@ -7571,6 +7630,18 @@
         "O Personagem que usar esta arma terá um aumento do Dano do Supremo de {color}0.18{/color}% por cada 1 ponto da soma do máximo da Energia Elemental de todos os membros da equipe. O aumento de Dano do Supremo máximo obtível dessa maneira é de {color}60{/color}%.",
         "O Personagem que usar esta arma terá um aumento do Dano do Supremo de {color}0.21{/color}% por cada 1 ponto da soma do máximo da Energia Elemental de todos os membros da equipe. O aumento de Dano do Supremo máximo obtível dessa maneira é de {color}70{/color}%.",
         "O Personagem que usar esta arma terá um aumento do Dano do Supremo de {color}0.24{/color}% por cada 1 ponto da soma do máximo da Energia Elemental de todos os membros da equipe. O aumento de Dano do Supremo máximo obtível dessa maneira é de {color}80{/color}%."
+      ]
+    },
+    {
+      "key": "oathsworn-eye",
+      "name": "Olho do Juramento",
+      "description": "Um tesouro nacional do Reino de Byakuya guardado no Dainichi Mikoshi. Com a chegada do Deus Serpente, este item foi usado para autenticar grandes juramentos e desejos.",
+      "refinements": [
+        "Após usar a Habilidade Elemental, a Recarga de Energia aumenta em {color}24{/color}% por 10s.",
+        "Após usar a Habilidade Elemental, a Recarga de Energia aumenta em {color}30{/color}% por 10s.",
+        "Após usar a Habilidade Elemental, a Recarga de Energia aumenta em {color}36{/color}% por 10s.",
+        "Após usar a Habilidade Elemental, a Recarga de Energia aumenta em {color}42{/color}% por 10s.",
+        "Após usar a Habilidade Elemental, a Recarga de Energia aumenta em {color}48{/color}% por 10s."
       ]
     },
     {
@@ -9428,6 +9499,11 @@
       "description": "Moeda comum. A língua que todos entendem."
     },
     {
+      "key": "mudra-of-the-malefic-general",
+      "name": "Mudra da Shogun Maléfica",
+      "description": "Uma parte do corpo de uma marionete obtida no Plano da Eutimia. O gesto aqui simboliza o conceito de \"um vê e um faz\".\r\nMesmo tendo \"ela\" se tornado a Deusa do Desastre, ainda pode utilizar tais gestos transcendentais, e sua espada pode brilhar assim como seus olhos podem ver.\r\nAinda assim, os incontáveis desastres se prolongaram por muito tempo, e a carcaça da feroz general teve que abraçar uma nova primavera."
+    },
+    {
       "key": "mushroom",
       "name": "Cogumelo",
       "description": "Um fungo muito comum com consistência dura. Pode crescer em qualquer lugar com a certa quantidade de sombra e umidade."
@@ -9943,6 +10019,16 @@
       "description": "Material de Elevação de Talento.\r\nOs sonhos do país de raios são o mundo mortal.\r\nA glória do mundo mortal é a maior encarnação da beleza humana. A vida humana neste mundo não é similar como raios? Um instante como um brilhante sonho ou o estouro esplendoroso de um fogo de artifício, que deixa na noite eterna sua marca deslumbrante."
     },
     {
+      "key": "tears-of-the-calamitous-god",
+      "name": "Lágrima da Deusa do Desastre",
+      "description": "Uma articulação de marionete obtida do Plano da Eutimia. Sua aparência é semelhante ao formato do Olho do Julgamento Tempestuoso.\r\nComo eles são capazes de acabar com a maldição com um simples olhar, parece ser nada além do que natural culpar os infortúnios da vida na Deusa do Desastre. Porém, se você pensar bem nisso, se a sua vontade for forte o suficiente, e se suas convicções forem firmes e definidas... você ainda continuaria pensando nisso?\r\nAs catástrofes continuam por muito tempo. Até mesmo um olhar maléfico deve se acabar em lágrimas."
+    },
+    {
+      "key": "the-meaning-of-aeons",
+      "name": "Significado de Éons",
+      "description": "Um pequeno acessório de cabeça obtido uma vez que a poeira abaixou no Plano da Eutimia.\r\nApenas um único pensamento pode acabar com a calamidade, e sempre haverá pensamentos que transcendem o tempo.\r\nEm meio a tudo isso, é possível se perguntar se a verdadeira mensagem de Makoto foi transmitida ou não."
+    },
+    {
       "key": "tile-of-decarabians-tower",
       "name": "Fragmento de Azulejo de Decarabia",
       "description": "Material de Ascensão de Armas.\r\nO local atualmente conhecido como Covil do Caçador de Tempestades já foi a capital construída por Decarabian, o Arconte Anemo. Desde que esse sonho próspero foi criado pelo seu poder, os pedaços partidos deixados para trás quando o sonho foi destruído ainda possuem grandes poderes."
@@ -10272,7 +10358,7 @@
     },
     {
       "key": "cryo-abyss-mage",
-      "name": "Mago do Abismo Cryo"
+      "name": "Feiticeiro do Abismo Cryo"
     },
     {
       "key": "cryo-cicin",
@@ -10484,7 +10570,7 @@
     },
     {
       "key": "hydro-mimic-mallard",
-      "name": "Pato-real Fantasma - Hydro"
+      "name": "Pato-real Ilusório - Hydro"
     },
     {
       "key": "hydro-mimic-raptor",
@@ -10553,6 +10639,10 @@
     {
       "key": "lupus-boreas-dominator-of-wolves",
       "name": "Lupus Boreas, Dominador dos Lobos"
+    },
+    {
+      "key": "magatsu-mitake-narukami-no-mikoto",
+      "name": "Narukami, Comandante da Catástrofe"
     },
     {
       "key": "maguu-kenki",
