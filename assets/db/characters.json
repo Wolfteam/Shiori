@@ -35264,7 +35264,7 @@
       "fullImage": "shenhe.png",
       "secondFullImage": null,
       "isComingSoon": false,
-      "isNew": true,
+      "isNew": false,
       "isFemale": true,
       "region": "liyue",
       "role": "support",
@@ -49854,11 +49854,11 @@
       "image": "yae-miko.png",
       "fullImage": "yae-miko.png",
       "secondFullImage": null,
-      "isComingSoon": true,
+      "isComingSoon": false,
       "isNew": false,
       "isFemale": true,
       "region": "inazuma",
-      "role": "support",
+      "role": "offFieldDps",
       "tier": "s",
       "birthday": "06/27",
       "subStatType": "critRatePercentage",
@@ -50163,6 +50163,11 @@
               "key": "mora",
               "quantity": 120000,
               "type": "currency"
+            },
+            {
+              "key": "the-meaning-of-aeons",
+              "quantity": 1,
+              "type": "talents"
             }
           ]
         },
@@ -50183,6 +50188,11 @@
               "key": "mora",
               "quantity": 260000,
               "type": "currency"
+            },
+            {
+              "key": "the-meaning-of-aeons",
+              "quantity": 1,
+              "type": "talents"
             }
           ]
         },
@@ -50203,6 +50213,11 @@
               "key": "mora",
               "quantity": 450000,
               "type": "currency"
+            },
+            {
+              "key": "the-meaning-of-aeons",
+              "quantity": 2,
+              "type": "talents"
             }
           ]
         },
@@ -50223,6 +50238,11 @@
               "key": "mora",
               "quantity": 700000,
               "type": "currency"
+            },
+            {
+              "key": "the-meaning-of-aeons",
+              "quantity": 2,
+              "type": "talents"
             },
             {
               "key": "crown-of-insight",
@@ -50508,21 +50528,21 @@
             {
               "key": "param6",
               "values": [
-                9.0,
-                9.0,
-                9.0,
-                9.0,
-                9.0,
-                9.0,
-                9.0,
-                9.0,
-                9.0,
-                9.0,
-                9.0,
-                9.0,
-                9.0,
-                9.0,
-                9.0
+                4.0,
+                4.0,
+                4.0,
+                4.0,
+                4.0,
+                4.0,
+                4.0,
+                4.0,
+                4.0,
+                4.0,
+                4.0,
+                4.0,
+                4.0,
+                4.0,
+                4.0
               ]
             }
           ]
@@ -50555,21 +50575,21 @@
             {
               "key": "param2",
               "values": [
-                293.76,
-                315.79,
-                337.82,
-                367.2,
-                389.23,
-                411.26,
-                440.64,
-                470.02,
-                499.39,
-                528.77,
-                558.14,
-                587.52,
-                624.24,
-                660.96,
-                697.68
+                333.82,
+                358.85,
+                383.89,
+                417.27,
+                442.31,
+                467.34,
+                500.72,
+                534.11,
+                567.49,
+                600.87,
+                634.25,
+                667.63,
+                709.36,
+                751.09,
+                792.81
               ]
             },
             {
@@ -50664,117 +50684,173 @@
           "image": "yae-miko_c6.png"
         }
       ],
-      "builds": [],
+      "builds": [
+        {
+          "isRecommended": true,
+          "type": "offFieldDps",
+          "subType": "electro",
+          "skillPriorities": [
+            "elementalSkill",
+            "elementalBurst"
+          ],
+          "weaponKeys": [
+            "kaguras-verity",
+            "solar-pearl",
+            "the-widsith",
+            "oathsworn-eye",
+            "mappa-mare"
+          ],
+          "artifacts": [
+            {
+              "oneKey": null,
+              "multiples": [
+                {
+                  "key": "emblem-of-severed-fate",
+                  "quantity": 2
+                },
+                {
+                  "key": "thundering-fury",
+                  "quantity": 2
+                }
+              ],
+              "stats": [
+                "hp",
+                "atk",
+                "atkPercentage",
+                "electroDmgBonusPercentage",
+                "critRatePercentage"
+              ]
+            },
+            {
+              "oneKey": "thundersoother",
+              "multiples": [],
+              "stats": [
+                "hp",
+                "atk",
+                "atkPercentage",
+                "electroDmgBonusPercentage",
+                "critRatePercentage"
+              ]
+            }
+          ],
+          "subStatsToFocus": [
+            "energyRechargePercentage",
+            "critDmgPercentage",
+            "critRatePercentage",
+            "atkPercentage"
+          ]
+        }
+      ],
       "stats": [
         {
           "level": 1,
-          "baseHp": 912.0,
-          "baseAtk": 18.0,
-          "baseDef": 57.0,
+          "baseHp": 807.0,
+          "baseAtk": 26.0,
+          "baseDef": 44.0,
           "isAnAscension": false,
           "statValue": 5.0
         },
         {
           "level": 20,
-          "baseHp": 2365.0,
-          "baseAtk": 46.0,
-          "baseDef": 148.0,
-          "isAnAscension": false,
-          "statValue": 5.0
-        },
-        {
-          "level": 20,
-          "baseHp": 3058.0,
+          "baseHp": 2095.0,
           "baseAtk": 69.0,
-          "baseDef": 186.0,
+          "baseDef": 115.0,
+          "isAnAscension": false,
+          "statValue": 5.0
+        },
+        {
+          "level": 20,
+          "baseHp": 2787.0,
+          "baseAtk": 91.0,
+          "baseDef": 153.0,
           "isAnAscension": true,
           "statValue": 5.0
         },
         {
           "level": 40,
-          "baseHp": 4619.0,
-          "baseAtk": 99.0,
-          "baseDef": 284.0,
+          "baseHp": 4170.0,
+          "baseAtk": 137.0,
+          "baseDef": 229.0,
           "isAnAscension": false,
           "statValue": 5.0
         },
         {
           "level": 40,
-          "baseHp": 5111.0,
-          "baseAtk": 115.0,
-          "baseDef": 311.0,
+          "baseHp": 4662.0,
+          "baseAtk": 153.0,
+          "baseDef": 256.0,
           "isAnAscension": true,
           "statValue": 9.8
         },
         {
           "level": 50,
-          "baseHp": 5904.0,
-          "baseAtk": 131.0,
-          "baseDef": 361.0,
+          "baseHp": 5364.0,
+          "baseAtk": 176.0,
+          "baseDef": 294.0,
           "isAnAscension": false,
           "statValue": 9.8
         },
         {
           "level": 50,
-          "baseHp": 6560.0,
-          "baseAtk": 152.0,
-          "baseDef": 397.0,
+          "baseHp": 6020.0,
+          "baseAtk": 197.0,
+          "baseDef": 330.0,
           "isAnAscension": true,
           "statValue": 14.6
         },
         {
           "level": 60,
-          "baseHp": 7360.0,
-          "baseAtk": 168.0,
-          "baseDef": 447.0,
+          "baseHp": 6729.0,
+          "baseAtk": 220.0,
+          "baseDef": 369.0,
           "isAnAscension": false,
           "statValue": 14.6
         },
         {
           "level": 60,
-          "baseHp": 7852.0,
-          "baseAtk": 184.0,
-          "baseDef": 474.0,
+          "baseHp": 7220.0,
+          "baseAtk": 236.0,
+          "baseDef": 396.0,
           "isAnAscension": true,
           "statValue": 14.6
         },
         {
           "level": 70,
-          "baseHp": 8660.0,
-          "baseAtk": 200.0,
-          "baseDef": 525.0,
+          "baseHp": 7936.0,
+          "baseAtk": 260.0,
+          "baseDef": 435.0,
           "isAnAscension": false,
           "statValue": 14.6
         },
         {
           "level": 70,
-          "baseHp": 9152.0,
-          "baseAtk": 216.0,
-          "baseDef": 552.0,
+          "baseHp": 8428.0,
+          "baseAtk": 276.0,
+          "baseDef": 462.0,
           "isAnAscension": true,
           "statValue": 19.4
         },
         {
           "level": 80,
-          "baseHp": 9969.0,
-          "baseAtk": 232.0,
-          "baseDef": 603.0,
+          "baseHp": 9151.0,
+          "baseAtk": 300.0,
+          "baseDef": 502.0,
           "isAnAscension": false,
           "statValue": 19.4
         },
         {
           "level": 80,
-          "baseHp": 10461.0,
-          "baseAtk": 248.0,
-          "baseDef": 630.0,
+          "baseHp": 9643.0,
+          "baseAtk": 316.0,
+          "baseDef": 529.0,
           "isAnAscension": true,
           "statValue": 24.2
         },
         {
           "level": 90,
-          "baseHp": 11284.0,
-          "baseAtk": 264.0,
-          "baseDef": 682.0,
+          "baseHp": 10372.0,
+          "baseAtk": 340.0,
+          "baseDef": 569.0,
           "isAnAscension": false,
           "statValue": 24.2
         }
@@ -52940,7 +53016,7 @@
       "fullImage": "yun-jin.png",
       "secondFullImage": null,
       "isComingSoon": false,
-      "isNew": true,
+      "isNew": false,
       "isFemale": true,
       "region": "liyue",
       "role": "support",
