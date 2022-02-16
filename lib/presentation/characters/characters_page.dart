@@ -19,6 +19,7 @@ class CharactersPage extends StatefulWidget {
 
   static Future<String?> forSelection(BuildContext context, {List<String> excludeKeys = const []}) async {
     final bloc = context.read<CharactersBloc>();
+    //TODO: RECEIVE THE EXCLUDEKEYS IN THE CONSTRUCTOR AND REMOVE THIS BLOC FROM HERE
     bloc.add(CharactersEvent.init(excludeKeys: excludeKeys));
 
     final route = MaterialPageRoute<String>(builder: (ctx) => const CharactersPage(isInSelectionMode: true));

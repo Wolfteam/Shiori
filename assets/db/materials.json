@@ -950,6 +950,73 @@
       "attributes": null
     },
     {
+      "key": "mudra-of-the-malefic-general",
+      "image": "mudra-of-the-malefic-general.png",
+      "rarity": 5,
+      "position": 144,
+      "level": 0,
+      "type": "talents",
+      "hasSiblings": false,
+      "days": [],
+      "recipes": [
+        {
+          "createsMaterialKey": "tears-of-the-calamitous-god",
+          "needs": [
+            {
+              "key": "mudra-of-the-malefic-general",
+              "quantity": 1
+            },
+            {
+              "key": "dream-solvent",
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "createsMaterialKey": "the-meaning-of-aeons",
+          "needs": [
+            {
+              "key": "mudra-of-the-malefic-general",
+              "quantity": 1
+            },
+            {
+              "key": "dream-solvent",
+              "quantity": 1
+            }
+          ]
+        }
+      ],
+      "obtainedFrom": [
+        {
+          "createsMaterialKey": "mudra-of-the-malefic-general",
+          "needs": [
+            {
+              "key": "tears-of-the-calamitous-god",
+              "quantity": 1
+            },
+            {
+              "key": "dream-solvent",
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "createsMaterialKey": "mudra-of-the-malefic-general",
+          "needs": [
+            {
+              "key": "the-meaning-of-aeons",
+              "quantity": 1
+            },
+            {
+              "key": "dream-solvent",
+              "quantity": 1
+            }
+          ]
+        }
+      ],
+      "attributes": null
+    },
+    {
       "key": "philosophies-of-ballad",
       "image": "philosophies-of-ballad.png",
       "rarity": 4,
@@ -1768,6 +1835,140 @@
         }
       ],
       "obtainedFrom": [],
+      "attributes": null
+    },
+    {
+      "key": "tears-of-the-calamitous-god",
+      "image": "tears-of-the-calamitous-god.png",
+      "rarity": 5,
+      "position": 145,
+      "level": 0,
+      "type": "talents",
+      "hasSiblings": false,
+      "days": [],
+      "recipes": [
+        {
+          "createsMaterialKey": "mudra-of-the-malefic-general",
+          "needs": [
+            {
+              "key": "tears-of-the-calamitous-god",
+              "quantity": 1
+            },
+            {
+              "key": "dream-solvent",
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "createsMaterialKey": "the-meaning-of-aeons",
+          "needs": [
+            {
+              "key": "tears-of-the-calamitous-god",
+              "quantity": 1
+            },
+            {
+              "key": "dream-solvent",
+              "quantity": 1
+            }
+          ]
+        }
+      ],
+      "obtainedFrom": [
+        {
+          "createsMaterialKey": "tears-of-the-calamitous-god",
+          "needs": [
+            {
+              "key": "mudra-of-the-malefic-general",
+              "quantity": 1
+            },
+            {
+              "key": "dream-solvent",
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "createsMaterialKey": "tears-of-the-calamitous-god",
+          "needs": [
+            {
+              "key": "the-meaning-of-aeons",
+              "quantity": 1
+            },
+            {
+              "key": "dream-solvent",
+              "quantity": 1
+            }
+          ]
+        }
+      ],
+      "attributes": null
+    },
+    {
+      "key": "the-meaning-of-aeons",
+      "image": "the-meaning-of-aeons.png",
+      "rarity": 5,
+      "position": 146,
+      "level": 0,
+      "type": "talents",
+      "hasSiblings": false,
+      "days": [],
+      "recipes": [
+        {
+          "createsMaterialKey": "mudra-of-the-malefic-general",
+          "needs": [
+            {
+              "key": "the-meaning-of-aeons",
+              "quantity": 1
+            },
+            {
+              "key": "dream-solvent",
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "createsMaterialKey": "tears-of-the-calamitous-god",
+          "needs": [
+            {
+              "key": "the-meaning-of-aeons",
+              "quantity": 1
+            },
+            {
+              "key": "dream-solvent",
+              "quantity": 1
+            }
+          ]
+        }
+      ],
+      "obtainedFrom": [
+        {
+          "createsMaterialKey": "the-meaning-of-aeons",
+          "needs": [
+            {
+              "key": "mudra-of-the-malefic-general",
+              "quantity": 1
+            },
+            {
+              "key": "dream-solvent",
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "createsMaterialKey": "the-meaning-of-aeons",
+          "needs": [
+            {
+              "key": "tears-of-the-calamitous-god",
+              "quantity": 1
+            },
+            {
+              "key": "dream-solvent",
+              "quantity": 1
+            }
+          ]
+        }
+      ],
       "attributes": null
     },
     {

@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.3.0+47 (16/02/2022)
+- Yae Miko is here
+- Custom Builds
+
+
 ## 1.2.8+41 (06/01/2022)
 - Shenhe and Yun Jin are here
 

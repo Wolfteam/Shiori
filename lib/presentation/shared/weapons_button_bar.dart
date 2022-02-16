@@ -9,12 +9,14 @@ class WeaponsButtonBar extends StatelessWidget {
   final List<WeaponType> selectedValues;
   final Function(WeaponType) onClick;
   final double iconSize;
+  final bool enabled;
 
   const WeaponsButtonBar({
     Key? key,
     required this.onClick,
     this.selectedValues = const [],
     this.iconSize = 24,
+    this.enabled = true,
   }) : super(key: key);
 
   @override
@@ -37,7 +39,7 @@ class WeaponsButtonBar extends StatelessWidget {
         opacity: !isSelected ? 1 : 0.2,
         child: Image.asset(value.getWeaponAssetPath()),
       ),
-      onPressed: () => onClick(value),
+      onPressed: !enabled ? null : () => onClick(value),
       tooltip: tooltip,
     );
   }

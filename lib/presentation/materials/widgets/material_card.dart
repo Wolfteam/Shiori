@@ -155,7 +155,7 @@ class MaterialCard extends StatelessWidget {
               if (!withoutDetails && !isInQuantityMode)
                 Center(
                   child: Tooltip(
-                    message: name!,
+                    message: name,
                     child: Text(
                       name!,
                       textAlign: TextAlign.center,
@@ -186,16 +186,16 @@ class MaterialCard extends StatelessWidget {
   }
 
   Future<void> _showQuantityPickerDialog(BuildContext context) async {
-    final newValue = await showDialog<int>(
+    await showDialog<int>(
       context: context,
       builder: (_) => ItemQuantityDialog(quantity: quantity),
-    );
+    ).then((newValue) {
+      if (newValue == null) {
+        return;
+      }
 
-    if (newValue == null) {
-      return;
-    }
-
-    context.read<InventoryBloc>().add(InventoryEvent.updateMaterial(key: keyName, quantity: newValue));
+      context.read<InventoryBloc>().add(InventoryEvent.updateMaterial(key: keyName, quantity: newValue));
+    });
   }
 
   Future<void> _showUsedItemsDialog(BuildContext context) async {

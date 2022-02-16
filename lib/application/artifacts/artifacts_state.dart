@@ -14,5 +14,6 @@ class ArtifactsState with _$ArtifactsState {
     required SortDirectionType sortDirectionType,
     required SortDirectionType tempSortDirectionType,
     @Default(<String>[]) List<String> excludeKeys,
+    ArtifactType? type,
   }) = _LoadedState;
 }

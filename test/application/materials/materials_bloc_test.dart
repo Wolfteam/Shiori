@@ -5,7 +5,6 @@ import 'package:shiori/application/bloc.dart';
 import 'package:shiori/domain/app_constants.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/services/genshin_service.dart';
-import 'package:shiori/infrastructure/genshin_service.dart';
 import 'package:shiori/infrastructure/infrastructure.dart';
 
 import '../../mocks.mocks.dart';
@@ -80,7 +79,9 @@ void main() {
     blocTest<MaterialsBloc, MaterialsState>(
       'should return only one item',
       build: () => MaterialsBloc(_genshinService),
-      act: (bloc) => bloc..add(const MaterialsEvent.init())..add(const MaterialsEvent.searchChanged(search: _search)),
+      act: (bloc) => bloc
+        ..add(const MaterialsEvent.init())
+        ..add(const MaterialsEvent.searchChanged(search: _search)),
       skip: 1,
       expect: () {
         final material = _genshinService.getMaterialForCard(_key);
@@ -102,7 +103,9 @@ void main() {
     blocTest<MaterialsBloc, MaterialsState>(
       'should not return any item',
       build: () => MaterialsBloc(_genshinService),
-      act: (bloc) => bloc..add(const MaterialsEvent.init())..add(const MaterialsEvent.searchChanged(search: 'Keqing')),
+      act: (bloc) => bloc
+        ..add(const MaterialsEvent.init())
+        ..add(const MaterialsEvent.searchChanged(search: 'Keqing')),
       skip: 1,
       expect: () => const [
         MaterialsState.loaded(

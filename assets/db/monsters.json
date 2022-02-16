@@ -395,7 +395,48 @@
       "image": "bolteater-bathysmal-vishap.png",
       "type": "magicalBeast",
       "isComingSoon": false,
-      "drops": []
+      "drops": [
+        {
+          "key": "fragile-bone-shard",
+          "type": "material"
+        },
+        {
+          "key": "sturdy-bone-shard",
+          "type": "material"
+        },
+        {
+          "key": "fossilized-bone-shard",
+          "type": "material"
+        },
+        {
+          "key": "berserker",
+          "type": "artifact"
+        },
+        {
+          "key": "instructor",
+          "type": "artifact"
+        },
+        {
+          "key": "the-exile",
+          "type": "artifact"
+        },
+        {
+          "key": "traveling-doctor",
+          "type": "artifact"
+        },
+        {
+          "key": "berserker",
+          "type": "artifact"
+        },
+        {
+          "key": "instructor",
+          "type": "artifact"
+        },
+        {
+          "key": "traveling-doctor",
+          "type": "artifact"
+        }
+      ]
     },
     {
       "key": "bolteater-bathysmal-vishap-hatchling",
@@ -940,7 +981,20 @@
       "image": "cryo-specter.png",
       "type": "elementalLifeForm",
       "isComingSoon": false,
-      "drops": []
+      "drops": [
+        {
+          "key": "spectral-husk",
+          "type": "material"
+        },
+        {
+          "key": "spectral-heart",
+          "type": "material"
+        },
+        {
+          "key": "spectral-nucleus",
+          "type": "material"
+        }
+      ]
     },
     {
       "key": "cryo-whopperflower",
@@ -1274,7 +1328,20 @@
       "image": "electro-specter.png",
       "type": "elementalLifeForm",
       "isComingSoon": false,
-      "drops": []
+      "drops": [
+        {
+          "key": "spectral-husk",
+          "type": "material"
+        },
+        {
+          "key": "spectral-heart",
+          "type": "material"
+        },
+        {
+          "key": "spectral-nucleus",
+          "type": "material"
+        }
+      ]
     },
     {
       "key": "electro-whopperflower",
@@ -1941,7 +2008,80 @@
       "image": "golden-wolflord.png",
       "type": "abyssOrder",
       "isComingSoon": false,
-      "drops": []
+      "drops": [
+        {
+          "key": "prithiva-topaz-sliver",
+          "type": "material"
+        },
+        {
+          "key": "prithiva-topaz-fragment",
+          "type": "material"
+        },
+        {
+          "key": "prithiva-topaz-chunk",
+          "type": "material"
+        },
+        {
+          "key": "prithiva-topaz-gemstone",
+          "type": "material"
+        },
+        {
+          "key": "riftborn-regalia",
+          "type": "material"
+        },
+        {
+          "key": "traveling-doctor",
+          "type": "artifact"
+        },
+        {
+          "key": "traveling-doctor",
+          "type": "artifact"
+        },
+        {
+          "key": "instructor",
+          "type": "artifact"
+        },
+        {
+          "key": "the-exile",
+          "type": "artifact"
+        },
+        {
+          "key": "prayers-for-wisdom",
+          "type": "artifact"
+        },
+        {
+          "key": "instructor",
+          "type": "artifact"
+        },
+        {
+          "key": "the-exile",
+          "type": "artifact"
+        },
+        {
+          "key": "prayers-for-wisdom",
+          "type": "artifact"
+        },
+        {
+          "key": "gladiators-finale",
+          "type": "artifact"
+        },
+        {
+          "key": "wanderers-troupe",
+          "type": "artifact"
+        },
+        {
+          "key": "gladiators-finale",
+          "type": "artifact"
+        },
+        {
+          "key": "wanderers-troupe",
+          "type": "artifact"
+        },
+        {
+          "key": "mora",
+          "type": "material"
+        }
+      ]
     },
     {
       "key": "hilichurl",
@@ -2847,6 +2987,13 @@
       ]
     },
     {
+      "key": "magatsu-mitake-narukami-no-mikoto",
+      "image": "magatsu-mitake-narukami-no-mikoto.png",
+      "type": "boss",
+      "isComingSoon": false,
+      "drops": []
+    },
+    {
       "key": "maguu-kenki",
       "image": "maguu-kenki.png",
       "type": "automaton",
@@ -2866,6 +3013,10 @@
         },
         {
           "key": "vayuda-turquoise-gemstone",
+          "type": "material"
+        },
+        {
+          "key": "maguu-kishin",
           "type": "material"
         },
         {
@@ -3478,7 +3629,48 @@
       "image": "primordial-bathysmal-vishap.png",
       "type": "magicalBeast",
       "isComingSoon": false,
-      "drops": []
+      "drops": [
+        {
+          "key": "fragile-bone-shard",
+          "type": "material"
+        },
+        {
+          "key": "sturdy-bone-shard",
+          "type": "material"
+        },
+        {
+          "key": "fossilized-bone-shard",
+          "type": "material"
+        },
+        {
+          "key": "berserker",
+          "type": "artifact"
+        },
+        {
+          "key": "instructor",
+          "type": "artifact"
+        },
+        {
+          "key": "the-exile",
+          "type": "artifact"
+        },
+        {
+          "key": "traveling-doctor",
+          "type": "artifact"
+        },
+        {
+          "key": "berserker",
+          "type": "artifact"
+        },
+        {
+          "key": "instructor",
+          "type": "artifact"
+        },
+        {
+          "key": "traveling-doctor",
+          "type": "artifact"
+        }
+      ]
     },
     {
       "key": "primordial-bathysmal-vishap-hatchling",
@@ -3768,7 +3960,20 @@
       "image": "pyro-specter.png",
       "type": "elementalLifeForm",
       "isComingSoon": false,
-      "drops": []
+      "drops": [
+        {
+          "key": "spectral-husk",
+          "type": "material"
+        },
+        {
+          "key": "spectral-heart",
+          "type": "material"
+        },
+        {
+          "key": "spectral-nucleus",
+          "type": "material"
+        }
+      ]
     },
     {
       "key": "pyro-whopperflower",
@@ -3802,7 +4007,48 @@
       "image": "rimebiter-bathysmal-vishap.png",
       "type": "magicalBeast",
       "isComingSoon": false,
-      "drops": []
+      "drops": [
+        {
+          "key": "fragile-bone-shard",
+          "type": "material"
+        },
+        {
+          "key": "sturdy-bone-shard",
+          "type": "material"
+        },
+        {
+          "key": "fossilized-bone-shard",
+          "type": "material"
+        },
+        {
+          "key": "berserker",
+          "type": "artifact"
+        },
+        {
+          "key": "instructor",
+          "type": "artifact"
+        },
+        {
+          "key": "the-exile",
+          "type": "artifact"
+        },
+        {
+          "key": "traveling-doctor",
+          "type": "artifact"
+        },
+        {
+          "key": "berserker",
+          "type": "artifact"
+        },
+        {
+          "key": "instructor",
+          "type": "artifact"
+        },
+        {
+          "key": "traveling-doctor",
+          "type": "artifact"
+        }
+      ]
     },
     {
       "key": "rimebiter-bathysmal-vishap-hatchling",
@@ -3908,6 +4154,34 @@
         {
           "key": "concealed-talon",
           "type": "material"
+        },
+        {
+          "key": "berserker",
+          "type": "artifact"
+        },
+        {
+          "key": "instructor",
+          "type": "artifact"
+        },
+        {
+          "key": "the-exile",
+          "type": "artifact"
+        },
+        {
+          "key": "traveling-doctor",
+          "type": "artifact"
+        },
+        {
+          "key": "berserker",
+          "type": "artifact"
+        },
+        {
+          "key": "instructor",
+          "type": "artifact"
+        },
+        {
+          "key": "traveling-doctor",
+          "type": "artifact"
         }
       ]
     },
@@ -3928,6 +4202,34 @@
         {
           "key": "concealed-talon",
           "type": "material"
+        },
+        {
+          "key": "berserker",
+          "type": "artifact"
+        },
+        {
+          "key": "instructor",
+          "type": "artifact"
+        },
+        {
+          "key": "the-exile",
+          "type": "artifact"
+        },
+        {
+          "key": "traveling-doctor",
+          "type": "artifact"
+        },
+        {
+          "key": "berserker",
+          "type": "artifact"
+        },
+        {
+          "key": "instructor",
+          "type": "artifact"
+        },
+        {
+          "key": "traveling-doctor",
+          "type": "artifact"
         }
       ]
     },
@@ -4581,6 +4883,34 @@
         {
           "key": "concealed-talon",
           "type": "material"
+        },
+        {
+          "key": "berserker",
+          "type": "artifact"
+        },
+        {
+          "key": "instructor",
+          "type": "artifact"
+        },
+        {
+          "key": "the-exile",
+          "type": "artifact"
+        },
+        {
+          "key": "traveling-doctor",
+          "type": "artifact"
+        },
+        {
+          "key": "berserker",
+          "type": "artifact"
+        },
+        {
+          "key": "instructor",
+          "type": "artifact"
+        },
+        {
+          "key": "traveling-doctor",
+          "type": "artifact"
         }
       ]
     },
@@ -4601,6 +4931,34 @@
         {
           "key": "concealed-talon",
           "type": "material"
+        },
+        {
+          "key": "berserker",
+          "type": "artifact"
+        },
+        {
+          "key": "instructor",
+          "type": "artifact"
+        },
+        {
+          "key": "the-exile",
+          "type": "artifact"
+        },
+        {
+          "key": "traveling-doctor",
+          "type": "artifact"
+        },
+        {
+          "key": "berserker",
+          "type": "artifact"
+        },
+        {
+          "key": "instructor",
+          "type": "artifact"
+        },
+        {
+          "key": "traveling-doctor",
+          "type": "artifact"
         }
       ]
     },

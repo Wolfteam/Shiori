@@ -5,7 +5,6 @@ import 'package:shiori/injection.dart';
 import 'package:shiori/presentation/shared/scaffold_with_fab.dart';
 
 import 'widgets/character_detail.dart';
-import 'widgets/character_detail_top.dart';
 
 class CharacterPage extends StatelessWidget {
   final String itemKey;

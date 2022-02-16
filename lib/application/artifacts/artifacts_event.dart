@@ -2,7 +2,10 @@ part of 'artifacts_bloc.dart';
 
 @freezed
 class ArtifactsEvent with _$ArtifactsEvent {
-  const factory ArtifactsEvent.init({@Default(<String>[]) List<String> excludeKeys}) = _Init;
+  const factory ArtifactsEvent.init({
+    @Default(<String>[]) List<String> excludeKeys,
+    ArtifactType? type,
+  }) = _Init;
 
   const factory ArtifactsEvent.collapseNotes({required bool collapse}) = _CollapseNotesChanged;
 

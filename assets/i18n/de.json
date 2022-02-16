@@ -2728,6 +2728,93 @@
       ]
     },
     {
+      "key": "kamisato-ayato",
+      "name": "Kamisato Ayato",
+      "title": "Säule der Stärke",
+      "description": "Das junge und talentierte derzeitige Oberhaupt der Familie Kamisato der Yashiro-Verwaltung ist ein sanfter und höflicher Mann, der seine eigenen Mittel und Wege hat.",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ]
+    },
+    {
       "key": "keqing",
       "name": "Keqing",
       "title": "Donnerwetter",
@@ -4658,10 +4745,10 @@
             "SCH bei Drücken|{param1}%",
             "SCH bei Gedrückthalten|{param2}%",
             "SCH-Bonus|{param3}% ANG",
-            "Dauer bei Drücken/Gedrückthalten|{param4} / {param5} s",
-            "Wirksame Stapelungen bei Drücken/Gedrückthalten|{param6} / {param7}",
-            "Abklingzeit für Drücken|{param8} s",
-            "Abklingzeit für Gedrückthalten|{param9} s"
+            "Dauer bei Drücken/Gedrückthalten|{param4}s / {param5}s",
+            "Wirksame Stapelungen bei Drücken/Gedrückthalten|{param6} / {param7}s",
+            "Abklingzeit für Drücken|{param8}s",
+            "Abklingzeit für Gedrückthalten|{param9}s"
           ]
         },
         {
@@ -4673,8 +4760,8 @@
             "Fähigkeits-SCH|{param1}%",
             "WDS-Malus|{param2}%",
             "Fortlaufender SCH|{param3}%",
-            "Dauer|{param4} s",
-            "Abklingzeit|{param5} s",
+            "Dauer|{param4}s",
+            "Abklingzeit|{param5}s",
             "Elementarenergie|{param6}"
           ]
         }
@@ -6299,86 +6386,133 @@
     {
       "key": "yae-miko",
       "name": "Yae Miko",
-      "title": "???",
-      "description": "",
+      "title": "Verhöhnung der Sterblichen",
+      "description": "Die Guuji des Großen Narukami-Schreins und Chefredakteurin des „Verlagshauses Yae“. Hinter ihrem schönen Aussehen verbergen sich unerwartete Intelligenz und Gerissenheit.",
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Sündenverschlinger",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Standardangriff",
+              "description": "Beschwört Kitsune-Geister hervor, führt bis zu 3 Angriffe aus und verursacht Elektro-Schaden.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Heftiger Schlag",
+              "description": "Verbraucht eine gewisse Menge Ausdauer und verursacht nach kurzer Aufladezeit Elektro-Flächenschaden.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Angriff aus dem Fall",
+              "description": "Konzentriert die Kraft des Donners, schlägt beim Fallen aus der Luft auf den Boden, greift alle Gegner in der Bahn an und verursacht beim Aufkommen Elektro-Flächenschaden.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "SCH Phase 1|{param1}%",
+            "SCH Phase 2|{param2}%",
+            "SCH Phase 3|{param3}%",
+            "SCH heftiger Schläge|{param4}%",
+            "Ausdauerverbrauch heftiger Schläge|{param5} Punkte",
+            "SCH beim Fallen|{param6}%",
+            "SCH beim Fallen aus niedriger/großer Höhe|{param7}% / {param8}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Yakan-Kriegszauber – Sesshou-Sakura",
+          "description": "Für Yae ist es nicht nötig, selbst tätig zu werden, wenn Geister ausgetrieben werden müssen.\r\nBewegt sich mit hoher Geschwindigkeit und hinterlässt eine „Sesshou-Sakura“.\r\n",
+          "abilities": [
+            {
+              "name": "Sesshou-Sakura",
+              "description": "Merkmale:\r\n",
+              "descriptions": [
+                "Schlägt in gewissen zeitlichen Abständen einen Gegner in der Umgebung mit einem Blitz und fügt ihm Elektro-Schaden zu.",
+                "Erhöht bei Anwesenheit weiterer Sesshou-Sakura in der Nähe die Stufe und erhöht damit den mit dem oben beschriebenen Angriff verursachten Schaden.",
+                "Diese Fähigkeit kann 3-mal eingesetzt werden.",
+                "Zu einem Zeitpunkt können bis zu 3 Sesshou-Sakura existieren. Die anfängliche Stufe für Sesshou-Sakura ist 1, während die anfängliche Höchststufe 3 beträgt. Sollte sich eine neu erzeugte Sesshou-Sakura zu nah an einer vorhandenen befinden, wird die Letztere zerstört."
+              ]
+            }
+          ],
+          "stats": [
+            "Sesshou-Sakura-SCH Phase 1|{param1}%",
+            "Sesshou-Sakura-SCH Phase 2|{param2}%",
+            "Sesshou-Sakura-SCH Phase 3|{param3}%",
+            "Sesshou-Sakura-SCH Phase 4|{param4}%",
+            "Dauer|{param5} s",
+            "Abklingzeit|{param6} s"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
+          "title": "Große Geheimkunst – Tenko Kenshin",
+          "description": "Die Legende des „Kitsunetsuki“, der Heimsuchung durch eine Kitsune, gehört zu den Volksmärchen von Inazuma. Unter ihnen gilt die der Himmelsfüchse als etwas Besonderes, die in Form eines Blitzes auf die Feinde des Großen Narukami-Schreins herabfallen, wobei Elektro-Flächenschaden verursacht wird.\r\nYae Miko aktiviert die Sesshou-Sakura in der Nähe beim Auslösen der Fähigkeit, zerstört ihre äußere Form und verwandelt sie in Tenko-Blitzschläge, die herunterprasseln und Elektro-Flächenschaden verursachen. Für jede zerstörte Sesshou-Sakura wird ein Tenko-Blitzschlag erzeugt.\r\n",
           "abilities": [],
-          "stats": []
+          "stats": [
+            "Fähigkeits-SCH|{param1}%",
+            "Tenko-Blitzschlag-SCH|{param2}%",
+            "Abklingzeit|{param3} s",
+            "Elementarenergie|{param4}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "Yako-Meditation",
+          "description": "Erschafft mit einer Wahrscheinlichkeit von 25 % extra ein anderes zufälliges Material für Talente aus demselben Gebiet mit einer dem verbrauchten Material entsprechenden Stufe.\r\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
+          "title": "Heiliger Schatten des Schreins",
+          "description": "Überspringt beim Auslösen von Große Geheimkunst – Tenko Kenshin für jede zerstörte Sesshou-Sakura einmal die Abklingzeit von Yakan-Kriegszauber – Sesshou-Sakura.\r\n",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "NA",
-          "description": "",
+          "title": "Segnung der Erleuchtung",
+          "description": "Erhöht den mit Sesshou-Sakura verursachten Schaden für jeden Punkt Elementarkunde um 0,15 %.\r\n",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "Yakan-Opfer",
+          "description": "Stellt Yae Miko selbst bei jedem Tenko-Blitzschlag von Große Geheimkunst – Tenko Kenshin 8 Punkte Elementarenergie wieder her.\r\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "Mondgesang der Kitsune",
+          "description": "Sesshou-Sakura haben bei der Entstehung anfänglich Stufe 2 und können höchstens Stufe 4 erreichen. Außerdem wird ihr Angriffsradius um 60 % erhöht.\r\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "Sieben wunderbare Variationen",
+          "description": "Erhöht die Stufe der Fähigkeit Yakan-Kriegszauber – Sesshou-Sakura um 3.\r\nHöchststufe 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "Rosarote Blitzleiter",
+          "description": "Erhöht beim Treffen von Gegnern mit den Blitzschlägen von Sesshou-Sakura den Elektro-Schaden aller Truppenmitglieder in der Nähe 5 s lang um 20 %.\r\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "Unerbitterlicher Spott",
+          "description": "Erhöht die Stufe der Fähigkeit Große Geheimkunst – Tenko Kenshin um 3.\r\nHöchststufe 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
+          "title": "Daisesshou-Fluch",
+          "description": "Sesshou-Sakura ignorieren beim Angriff 60 % der VTD des Gegners.\r\n",
           "descriptions": []
         }
       ]
@@ -7516,6 +7650,18 @@
       ]
     },
     {
+      "key": "kaguras-verity",
+      "name": "Kaguras Wahrheit",
+      "description": "Die Glocke, die bei der Aufführung des Kagura-Tanzes verwendet wird, wurde von der Guuji selbst gesegnet. Der Duft der heiligen Sakura hält noch immer an.",
+      "refinements": [
+        "Verleiht bei Anwendung von Elementarfähigkeiten den Effekt „Kagura-Tanz“, der den mit Elementarfähigkeiten der mit dieser Waffe ausgerüsteten Figur verursachten Schaden 16 s lang um {color}12{/color} % erhöht, 3-fach stapelbar. Erhöht bei 3 Stapelungen den Schaden aller Elemente dieser Figur um {color}12{/color} %.",
+        "Verleiht bei Anwendung von Elementarfähigkeiten den Effekt „Kagura-Tanz“, der den mit Elementarfähigkeiten der mit dieser Waffe ausgerüsteten Figur verursachten Schaden 16 s lang um {color}15{/color} % erhöht, 3-fach stapelbar. Erhöht bei 3 Stapelungen den Schaden aller Elemente dieser Figur um {color}15{/color} %.",
+        "Verleiht bei Anwendung von Elementarfähigkeiten den Effekt „Kagura-Tanz“, der den mit Elementarfähigkeiten der mit dieser Waffe ausgerüsteten Figur verursachten Schaden 16 s lang um {color}18{/color} % erhöht, 3-fach stapelbar. Erhöht bei 3 Stapelungen den Schaden aller Elemente dieser Figur um {color}18{/color} %.",
+        "Verleiht bei Anwendung von Elementarfähigkeiten den Effekt „Kagura-Tanz“, der den mit Elementarfähigkeiten der mit dieser Waffe ausgerüsteten Figur verursachten Schaden 16 s lang um {color}21{/color} % erhöht, 3-fach stapelbar. Erhöht bei 3 Stapelungen den Schaden aller Elemente dieser Figur um {color}21{/color} %.",
+        "Verleiht bei Anwendung von Elementarfähigkeiten den Effekt „Kagura-Tanz“, der den mit Elementarfähigkeiten der mit dieser Waffe ausgerüsteten Figur verursachten Schaden 16 s lang um {color}24{/color} % erhöht, 3-fach stapelbar. Erhöht bei 3 Stapelungen den Schaden aller Elemente dieser Figur um {color}24{/color} %."
+      ]
+    },
+    {
       "key": "katsuragikiri-nagamasa",
       "name": "Katsuragikiri Nagamasa",
       "description": "Ein Schwert, das in Tatarasuna hergestellt wurde. Schwer und zäh.",
@@ -7681,6 +7827,18 @@
         "Erhöht den mit Spezialfähigkeiten der mit dieser Waffe ausgerüsteten Figur verursachten Schaden für jeden Punkt aus der Summe der max. Elementarenergie aller Truppenmitglieder zusammengerechnet um {color}0,18{/color} %. Erhöht den mit Spezialfähigkeit verursachten Schaden auf diese Weise um bis zu {color}60{/color} %.",
         "Erhöht den mit Spezialfähigkeiten der mit dieser Waffe ausgerüsteten Figur verursachten Schaden für jeden Punkt aus der Summe der max. Elementarenergie aller Truppenmitglieder zusammengerechnet um {color}0,21{/color} %. Erhöht den mit Spezialfähigkeit verursachten Schaden auf diese Weise um bis zu {color}70{/color} %.",
         "Erhöht den mit Spezialfähigkeiten der mit dieser Waffe ausgerüsteten Figur verursachten Schaden für jeden Punkt aus der Summe der max. Elementarenergie aller Truppenmitglieder zusammengerechnet um {color}0,24{/color} %. Erhöht den mit Spezialfähigkeit verursachten Schaden auf diese Weise um bis zu {color}80{/color} %."
+      ]
+    },
+    {
+      "key": "oathsworn-eye",
+      "name": "Auge des Gelöbnisses",
+      "description": "Ein Nationalschatz von Byakuyakoku, der im Dainichi Mikoshi aufbewahrt wird. Mit dem Erscheinen des Schlangengottes wurde dieser Gegenstand verwendet, um große Eide und Wünsche zu beglaubigen.",
+      "refinements": [
+        "Erhöht bei Anwendung von Elementarfähigkeiten die Aufladerate 10 s lang um {color}24{/color} %.",
+        "Erhöht bei Anwendung von Elementarfähigkeiten die Aufladerate 10 s lang um {color}30{/color} %.",
+        "Erhöht bei Anwendung von Elementarfähigkeiten die Aufladerate 10 s lang um {color}36{/color} %.",
+        "Erhöht bei Anwendung von Elementarfähigkeiten die Aufladerate 10 s lang um {color}42{/color} %.",
+        "Erhöht bei Anwendung von Elementarfähigkeiten die Aufladerate 10 s lang um {color}48{/color} %."
       ]
     },
     {
@@ -9465,7 +9623,7 @@
     },
     {
       "key": "maguu-kishin",
-      "name": "Maguu Kishin",
+      "name": "Marionettenkern",
       "description": "Dieser Kern kann die anorganischen Maguu Kenki mit Energie versorgen und sie dazu bringen, dass sie ihre Klingen wie ein lebendes Wesen führen.\r\nFleisch vergeht und so auch Kampffähigkeiten und Erinnerung, egal wie meisterhaft oder wunderbar.\r\nVielleicht kann man nur durch das Ersetzen aller vier Gliedmaßen und des Rumpfes durch robuste mechanische Teile und durch das Austauschen des eigenen Herzens mit einem ausgeklügelten mechanischen Gegenstück wirklich die Vergänglichkeit des Fleisches hinter sich lassen und sich der Ewigkeit nähern ..."
     },
     {
@@ -9552,6 +9710,11 @@
       "key": "mora",
       "name": "Mora",
       "description": "Überall in der Welt verwendetes Geld und damit die Sprache, die jeder unabhängig von seiner Herkunft spricht."
+    },
+    {
+      "key": "mudra-of-the-malefic-general",
+      "name": "Mudra des grimmigen Generals",
+      "description": "Ein Puppengelenk, das du in den utopischen Gefilden erhalten hast. Die Geste symbolisiert das Konzept „man sieht und man handelt“.\r\nSelbst jetzt, da „sie“ eine Gottheit des Unheils geworden ist, kann sie immer noch solche transzendenten Gesten einsetzen. Und ihr Schwert blitzt so schnell auf, wie ihre Augen sehen können.\r\nJedoch, als die zahllosen Katastrophen viel zu lange andauerten, konnte die Hülle des grimmigen Generals nicht anders, als einen neuen Frühling zu umarmen."
     },
     {
       "key": "mushroom",
@@ -10067,6 +10230,16 @@
       "key": "teachings-of-transience",
       "name": "Lehren der „Vergänglichkeit“",
       "description": "Material zur Verbesserung von Talenten.\r\nVergänglichkeit ist der Traum des Reichs des Blitzes.\r\nFlüchtige Herrlichkeit ist der höchste Ausdruck sterblicher Schönheit, denn sind wir Sterblichen nicht wie der blitzende Blitz selbst? Wie ein lieblicher Traum oder ein blühender Funke werden wir ein prächtiges Zeichen am ewigen Nachthimmel hinterlassen."
+    },
+    {
+      "key": "tears-of-the-calamitous-god",
+      "name": "Tränen des unheilvollen Gottes",
+      "description": "Ein Puppengelenk in Form des unheilvollen Auges der Blitzstrafe, das du in den utopischen Gefilden erhalten hast.\r\nDa sie in der Lage sind, mit einem bloßen Blick Fluch und Katastrophe gleichermaßen herbeizuführen, mag es natürlich erscheinen, das Unglück des Lebens auf die Gottheit des Unheils zu schieben. Aber denk mal etwas genauer darüber nach: Wenn dein Wille stark genug und deine Überzeugungen fest genug sind ...\r\nDie Katastrophen dauern zu lange an. Selbst ein unheilvoller Blick muss sich mit Tränen waschen."
+    },
+    {
+      "key": "the-meaning-of-aeons",
+      "name": "Sinn der Äonen",
+      "description": "Ein kleines Stück Kopfbedeckung, das du erhalten hast, als sich der Staub in den utopischen Gefilden gelegt hatte.\r\nEin einziger Gedanke kann alles Unheil beenden und es wird immer Gedanken geben, die die Zeit überstehen können.\r\nInmitten all dieser Katastrophen fragt man sich, ob Makotos wahre Absicht erfolgreich herübergebracht wurde oder nicht."
     },
     {
       "key": "tile-of-decarabians-tower",
@@ -10679,6 +10852,10 @@
     {
       "key": "lupus-boreas-dominator-of-wolves",
       "name": "Großer Wolfskönig des Nordens, Herr von Wolfenlauf"
+    },
+    {
+      "key": "magatsu-mitake-narukami-no-mikoto",
+      "name": "Magatsu Mitake Narukami no Mikoto"
     },
     {
       "key": "maguu-kenki",

@@ -19927,6 +19927,322 @@
       ]
     },
     {
+      "key": "kaguras-verity",
+      "image": "kaguras-verity.png",
+      "type": "catalyst",
+      "atk": 46.0,
+      "rarity": 5,
+      "secondaryStat": "critDmgPercentage",
+      "secondaryStatValue": 14.4,
+      "location": "gacha",
+      "isComingSoon": false,
+      "ascensionMaterials": [
+        {
+          "level": 20,
+          "materials": [
+            {
+              "key": "mask-of-the-wicked-lieutenant",
+              "quantity": 5,
+              "type": "weaponPrimary"
+            },
+            {
+              "key": "concealed-claw",
+              "quantity": 5,
+              "type": "weapon"
+            },
+            {
+              "key": "spectral-husk",
+              "quantity": 3,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 10000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "level": 40,
+          "materials": [
+            {
+              "key": "mask-of-the-tigers-bite",
+              "quantity": 5,
+              "type": "weaponPrimary"
+            },
+            {
+              "key": "concealed-claw",
+              "quantity": 18,
+              "type": "weapon"
+            },
+            {
+              "key": "spectral-husk",
+              "quantity": 12,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 20000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "level": 50,
+          "materials": [
+            {
+              "key": "mask-of-the-tigers-bite",
+              "quantity": 9,
+              "type": "weaponPrimary"
+            },
+            {
+              "key": "concealed-unguis",
+              "quantity": 9,
+              "type": "weapon"
+            },
+            {
+              "key": "spectral-heart",
+              "quantity": 9,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 30000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "level": 60,
+          "materials": [
+            {
+              "key": "mask-of-the-one-horned",
+              "quantity": 5,
+              "type": "weaponPrimary"
+            },
+            {
+              "key": "concealed-unguis",
+              "quantity": 18,
+              "type": "weapon"
+            },
+            {
+              "key": "spectral-heart",
+              "quantity": 14,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 45000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "level": 70,
+          "materials": [
+            {
+              "key": "mask-of-the-one-horned",
+              "quantity": 9,
+              "type": "weaponPrimary"
+            },
+            {
+              "key": "concealed-talon",
+              "quantity": 14,
+              "type": "weapon"
+            },
+            {
+              "key": "spectral-nucleus",
+              "quantity": 9,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 55000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "level": 80,
+          "materials": [
+            {
+              "key": "mask-of-the-kijin",
+              "quantity": 6,
+              "type": "weaponPrimary"
+            },
+            {
+              "key": "concealed-talon",
+              "quantity": 27,
+              "type": "weapon"
+            },
+            {
+              "key": "spectral-nucleus",
+              "quantity": 18,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 65000,
+              "type": "currency"
+            }
+          ]
+        }
+      ],
+      "craftingMaterials": [],
+      "stats": [
+        {
+          "level": 1,
+          "baseAtk": 46.0,
+          "statValue": 14.4,
+          "isAnAscension": false
+        },
+        {
+          "level": 5,
+          "baseAtk": 62.0,
+          "statValue": 16.7,
+          "isAnAscension": false
+        },
+        {
+          "level": 10,
+          "baseAtk": 82.0,
+          "statValue": 19.6,
+          "isAnAscension": false
+        },
+        {
+          "level": 15,
+          "baseAtk": 102.0,
+          "statValue": 22.5,
+          "isAnAscension": false
+        },
+        {
+          "level": 20,
+          "baseAtk": 122.0,
+          "statValue": 25.4,
+          "isAnAscension": false
+        },
+        {
+          "level": 20,
+          "baseAtk": 153.0,
+          "statValue": 25.4,
+          "isAnAscension": true
+        },
+        {
+          "level": 25,
+          "baseAtk": 173.0,
+          "statValue": 28.4,
+          "isAnAscension": false
+        },
+        {
+          "level": 30,
+          "baseAtk": 194.0,
+          "statValue": 31.3,
+          "isAnAscension": false
+        },
+        {
+          "level": 35,
+          "baseAtk": 214.0,
+          "statValue": 34.2,
+          "isAnAscension": false
+        },
+        {
+          "level": 40,
+          "baseAtk": 235.0,
+          "statValue": 37.1,
+          "isAnAscension": false
+        },
+        {
+          "level": 40,
+          "baseAtk": 266.0,
+          "statValue": 37.1,
+          "isAnAscension": true
+        },
+        {
+          "level": 45,
+          "baseAtk": 287.0,
+          "statValue": 40.0,
+          "isAnAscension": false
+        },
+        {
+          "level": 50,
+          "baseAtk": 308.0,
+          "statValue": 42.9,
+          "isAnAscension": false
+        },
+        {
+          "level": 50,
+          "baseAtk": 340.0,
+          "statValue": 42.9,
+          "isAnAscension": true
+        },
+        {
+          "level": 55,
+          "baseAtk": 361.0,
+          "statValue": 45.8,
+          "isAnAscension": false
+        },
+        {
+          "level": 60,
+          "baseAtk": 382.0,
+          "statValue": 48.7,
+          "isAnAscension": false
+        },
+        {
+          "level": 60,
+          "baseAtk": 414.0,
+          "statValue": 48.7,
+          "isAnAscension": true
+        },
+        {
+          "level": 65,
+          "baseAtk": 435.0,
+          "statValue": 51.6,
+          "isAnAscension": false
+        },
+        {
+          "level": 70,
+          "baseAtk": 457.0,
+          "statValue": 54.5,
+          "isAnAscension": false
+        },
+        {
+          "level": 70,
+          "baseAtk": 488.0,
+          "statValue": 54.5,
+          "isAnAscension": true
+        },
+        {
+          "level": 75,
+          "baseAtk": 510.0,
+          "statValue": 57.4,
+          "isAnAscension": false
+        },
+        {
+          "level": 80,
+          "baseAtk": 532.0,
+          "statValue": 60.3,
+          "isAnAscension": false
+        },
+        {
+          "level": 80,
+          "baseAtk": 563.0,
+          "statValue": 60.3,
+          "isAnAscension": true
+        },
+        {
+          "level": 85,
+          "baseAtk": 586.0,
+          "statValue": 63.2,
+          "isAnAscension": false
+        },
+        {
+          "level": 90,
+          "baseAtk": 608.0,
+          "statValue": 66.2,
+          "isAnAscension": false
+        }
+      ]
+    },
+    {
       "key": "lost-prayer-to-the-sacred-winds",
       "image": "lost-prayer-to-the-sacred-winds.png",
       "type": "catalyst",
@@ -21202,6 +21518,322 @@
           "level": 90,
           "baseAtk": 608.0,
           "statValue": 49.6,
+          "isAnAscension": false
+        }
+      ]
+    },
+    {
+      "key": "oathsworn-eye",
+      "image": "oathsworn-eye.png",
+      "type": "catalyst",
+      "atk": 44.0,
+      "rarity": 4,
+      "secondaryStat": "atkPercentage",
+      "secondaryStatValue": 6.0,
+      "location": "quest",
+      "isComingSoon": false,
+      "ascensionMaterials": [
+        {
+          "level": 20,
+          "materials": [
+            {
+              "key": "coral-branch-of-a-distant-sea",
+              "quantity": 3,
+              "type": "weaponPrimary"
+            },
+            {
+              "key": "concealed-claw",
+              "quantity": 3,
+              "type": "weapon"
+            },
+            {
+              "key": "spectral-husk",
+              "quantity": 2,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 5000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "level": 40,
+          "materials": [
+            {
+              "key": "jeweled-branch-of-a-distant-sea",
+              "quantity": 3,
+              "type": "weaponPrimary"
+            },
+            {
+              "key": "concealed-claw",
+              "quantity": 12,
+              "type": "weapon"
+            },
+            {
+              "key": "spectral-husk",
+              "quantity": 8,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 15000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "level": 50,
+          "materials": [
+            {
+              "key": "jeweled-branch-of-a-distant-sea",
+              "quantity": 6,
+              "type": "weaponPrimary"
+            },
+            {
+              "key": "concealed-unguis",
+              "quantity": 6,
+              "type": "weapon"
+            },
+            {
+              "key": "spectral-heart",
+              "quantity": 6,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 20000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "level": 60,
+          "materials": [
+            {
+              "key": "jade-branch-of-a-distant-sea",
+              "quantity": 3,
+              "type": "weaponPrimary"
+            },
+            {
+              "key": "concealed-unguis",
+              "quantity": 12,
+              "type": "weapon"
+            },
+            {
+              "key": "spectral-heart",
+              "quantity": 9,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 30000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "level": 70,
+          "materials": [
+            {
+              "key": "jade-branch-of-a-distant-sea",
+              "quantity": 6,
+              "type": "weaponPrimary"
+            },
+            {
+              "key": "concealed-talon",
+              "quantity": 9,
+              "type": "weapon"
+            },
+            {
+              "key": "spectral-nucleus",
+              "quantity": 6,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 35000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "level": 80,
+          "materials": [
+            {
+              "key": "golden-branch-of-a-distant-sea",
+              "quantity": 4,
+              "type": "weaponPrimary"
+            },
+            {
+              "key": "concealed-talon",
+              "quantity": 18,
+              "type": "weapon"
+            },
+            {
+              "key": "spectral-nucleus",
+              "quantity": 12,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 45000,
+              "type": "currency"
+            }
+          ]
+        }
+      ],
+      "craftingMaterials": [],
+      "stats": [
+        {
+          "level": 1,
+          "baseAtk": 44.0,
+          "statValue": 6.0,
+          "isAnAscension": false
+        },
+        {
+          "level": 5,
+          "baseAtk": 59.0,
+          "statValue": 7.0,
+          "isAnAscension": false
+        },
+        {
+          "level": 10,
+          "baseAtk": 79.0,
+          "statValue": 8.2,
+          "isAnAscension": false
+        },
+        {
+          "level": 15,
+          "baseAtk": 99.0,
+          "statValue": 9.4,
+          "isAnAscension": false
+        },
+        {
+          "level": 20,
+          "baseAtk": 119.0,
+          "statValue": 10.6,
+          "isAnAscension": false
+        },
+        {
+          "level": 20,
+          "baseAtk": 144.0,
+          "statValue": 10.6,
+          "isAnAscension": true
+        },
+        {
+          "level": 25,
+          "baseAtk": 165.0,
+          "statValue": 11.8,
+          "isAnAscension": false
+        },
+        {
+          "level": 30,
+          "baseAtk": 185.0,
+          "statValue": 13.0,
+          "isAnAscension": false
+        },
+        {
+          "level": 35,
+          "baseAtk": 205.0,
+          "statValue": 14.2,
+          "isAnAscension": false
+        },
+        {
+          "level": 40,
+          "baseAtk": 226.0,
+          "statValue": 15.5,
+          "isAnAscension": false
+        },
+        {
+          "level": 40,
+          "baseAtk": 252.0,
+          "statValue": 15.5,
+          "isAnAscension": true
+        },
+        {
+          "level": 45,
+          "baseAtk": 273.0,
+          "statValue": 16.7,
+          "isAnAscension": false
+        },
+        {
+          "level": 50,
+          "baseAtk": 293.0,
+          "statValue": 17.9,
+          "isAnAscension": false
+        },
+        {
+          "level": 50,
+          "baseAtk": 319.0,
+          "statValue": 17.9,
+          "isAnAscension": true
+        },
+        {
+          "level": 55,
+          "baseAtk": 340.0,
+          "statValue": 19.1,
+          "isAnAscension": false
+        },
+        {
+          "level": 60,
+          "baseAtk": 361.0,
+          "statValue": 20.3,
+          "isAnAscension": false
+        },
+        {
+          "level": 60,
+          "baseAtk": 387.0,
+          "statValue": 20.3,
+          "isAnAscension": true
+        },
+        {
+          "level": 65,
+          "baseAtk": 408.0,
+          "statValue": 21.5,
+          "isAnAscension": false
+        },
+        {
+          "level": 70,
+          "baseAtk": 429.0,
+          "statValue": 22.7,
+          "isAnAscension": false
+        },
+        {
+          "level": 70,
+          "baseAtk": 455.0,
+          "statValue": 22.7,
+          "isAnAscension": true
+        },
+        {
+          "level": 75,
+          "baseAtk": 476.0,
+          "statValue": 23.9,
+          "isAnAscension": false
+        },
+        {
+          "level": 80,
+          "baseAtk": 497.0,
+          "statValue": 25.1,
+          "isAnAscension": false
+        },
+        {
+          "level": 80,
+          "baseAtk": 523.0,
+          "statValue": 25.1,
+          "isAnAscension": true
+        },
+        {
+          "level": 85,
+          "baseAtk": 544.0,
+          "statValue": 26.4,
+          "isAnAscension": false
+        },
+        {
+          "level": 90,
+          "baseAtk": 565.0,
+          "statValue": 27.6,
           "isAnAscension": false
         }
       ]

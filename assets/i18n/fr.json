@@ -2732,6 +2732,93 @@
       ]
     },
     {
+      "key": "kamisato-ayato",
+      "name": "Kamisato Ayato",
+      "title": "Pilier de vaillance",
+      "description": "Le jeune, mais néanmoins très talentueux, chef du Clan Kamisato de la Commission culturelle. Cultivé et poli, c'est un homme aux multiples facettes.",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ]
+    },
+    {
       "key": "keqing",
       "name": "Keqing",
       "title": "Ardeur du tonnerre",
@@ -4662,10 +4749,10 @@
             "DGT appui simple|{param1}%",
             "DGT appui long|{param2}%",
             "Bonus de DGT|{param3}% ATQ",
-            "Durée d'appui simple/long|{param4} s/ {param5} s",
-            "Cumuls d'appui simple/long|{param6} / {param7}",
-            "TdR appui simple|{param8} s",
-            "TdR appui long|{param9} s"
+            "Durée d'appui simple/long|{param4}s / {param5}s",
+            "Cumuls d'appui simple/long|{param6} / {param7}s",
+            "TdR appui simple|{param8}s",
+            "TdR appui long|{param9}s"
           ]
         },
         {
@@ -4677,8 +4764,8 @@
             "DGT compétence|{param1}%",
             "Baisse RÉS|{param2}%",
             "DGT continus|{param3}%",
-            "Durée|{param4} s",
-            "Temps de recharge|{param5} s",
+            "Durée|{param4}s",
+            "Temps de recharge|{param5}s",
             "Énergie élémentaire|{param6}"
           ]
         }
@@ -6305,86 +6392,133 @@
     {
       "key": "yae-miko",
       "name": "Yae Miko",
-      "title": "???",
-      "description": "",
+      "title": "Frivolité ingénieuse",
+      "description": "La Guuji Yae du Sanctuaire de Narukami est également responsable éditoriale de la Chambre Yae. Une intelligence et une ruse inimaginables sont cachées sous son apparence gracieuse.",
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Vulpes mangeur de péchés",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Attaque normale",
+              "description": "Invoque des esprits Kitsunes, enchaînant jusqu'à 3 attaques qui infligent des DGT Électro.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Attaque chargée",
+              "description": "Consomme de l'endurance pour infliger des DGT Électro de zone après un court délai.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Attaque plongeante",
+              "description": "Plonge depuis les airs en concentrant la puissance du tonnerre, infligeant des DGT aux ennemis en chemin et des DGT Électro de zone à l'impact.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "DGT 1er coup|{param1}%",
+            "DGT 2e coup|{param2}%",
+            "DGT 3e coup|{param3}%",
+            "DGT attaque chargée|{param4}%",
+            "Coût d'endurance attaque chargée|{param5} pts",
+            "DGT durant la chute|{param6}%",
+            "DGT chute basse/élevée|{param7}% / {param8}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Évocation des yakan : Sakura dévastateur",
+          "description": "Pour Yae, les tâches ennuyeuses qui peuvent être réglées en chassant les esprits n'ont pas besoin d'être accomplies personnellement.\r\nSe déplace rapidement, en laissant derrière elle un sakura dévastateur.\r\n",
+          "abilities": [
+            {
+              "name": "Sakura dévastateur",
+              "description": "Les caractéristiques suivantes s'appliquent :\r\n",
+              "descriptions": [
+                "Frappe un ennemi proche d'un éclair de façon intermittente, infligeant des DGT Électro.",
+                "Lorsqu'il y a d'autres sakura dévastateurs à proximité, leur niveau augmente, améliorant les DGT qu'ils infligent.",
+                "Cette capacité peut être utilisée 3 fois.",
+                "Un maximum de 3 sakura dévastateurs peut exister en même temps. Le niveau initial d'un sakura dévastateur est 1, et le niveau le plus élevé qu'un sakura peut atteindre est 3. Si un sakura dévastateur est créé trop près d'un autre sakura, l'ancien sakura est détruit."
+              ]
+            }
+          ],
+          "stats": [
+            "DGT sakura dévastateur Niv.1|{param1}%",
+            "DGT sakura dévastateur Niv.2|{param2}%",
+            "DGT sakura dévastateur Niv.3|{param3}%",
+            "DGT sakura dévastateur Niv.4|{param4}%",
+            "Durée|{param5} s",
+            "Temps de recharge|{param6} s"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
+          "title": "Technique secrète : Incarnation de tenko",
+          "description": "La légende du « kitsunetsuki », ou la possession par un Kitsune, est l'un des contes populaires d'Inazuma. Parmi eux, celui du Kitsune céleste est considéré comme spécial, accablant les ennemis du Sanctuaire de Narukami sous la forme d'un éclair qui s'abat, infligeant des DGT Électro de zone.\r\nEn utilisant cette compétence, Yae Miko descelle les sakura dévastateurs à proximité pour détruire leurs formes extérieures et les transformer en éclairs de tenko descendant du ciel, infligeant des DGT Électro de zone. Chaque sakura dévastateur détruit de cette manière déclenche un éclair.\r\n",
           "abilities": [],
-          "stats": []
+          "stats": [
+            "DGT compétence|{param1}%",
+            "DGT éclair de tenko|{param2}%",
+            "Temps de recharge|{param3} s",
+            "Énergie élémentaire|{param4}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "Méditation d'une yako",
+          "description": "25 % de chances de synthétiser un matériau d'aptitude aléatoire supplémentaire (même rareté et région que les matériaux consommés).\r\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
+          "title": "Ombre sacrée du sanctuaire",
+          "description": "Lors de l'utilisation de Technique secrète : Incarnation de tenko, le TdR d'Évocation des yakan : Sakura dévastateur se réinitialise une fois pour chaque sakura dévastateur détruit.\r\n",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "NA",
-          "description": "",
+          "title": "Bénédiction éveillée",
+          "description": "Chaque point de maîtrise élémentaire que Yae Miko possède augmente les DGT des sakura dévastateurs de 0,15%.\r\n",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "Offrande des yakan",
+          "description": "Lorsque Technique secrète : Incarnation céleste déclenche un éclair de tenko, Yae Miko récupère 8 pts d'énergie élémentaire.\r\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "Glapissement sous la lune",
+          "description": "Les sakura dévastateurs commencent au Niv.2 et peuvent monter jusqu'au Niv.4, et leur portée d'attaque augmente de 60 %.\r\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "Les sept glamours",
+          "description": "Niveau d'aptitude Évocation des yakan : Sakura dévastateur +3.\r\nNiveau max : 15\r\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "Canalisation de sakura",
+          "description": "Lorsque l'éclair d'un sakura dévastateur touche un ennemi, tous les membres de l'équipe à proximité obtiennent un bonus de DGT Électro de 20 % pendant 5 s.\r\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "Moquerie implacable",
+          "description": "Niveau d'aptitude Technique secrète : Incarnation de tenko +3.\r\nNiveau max : 15\r\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
+          "title": "Art tabou : Daisesshou",
+          "description": "Les attaques des sakura dévastateurs ignorent 60 % de la DÉF de l'ennemi.\r\n",
           "descriptions": []
         }
       ]
@@ -7522,6 +7656,18 @@
       ]
     },
     {
+      "key": "kaguras-verity",
+      "name": "Vérité de Kagura",
+      "description": "Les cloches utilisées lors de l'exécution de la danse Kagura, bénies par la guuji elle-même. L'odeur du cerisier sacré s'en dégage.",
+      "refinements": [
+        "Libérer une compétence élémentaire confère l'effet de Danse Kagura, permettant d'augmenter les DGT infligés par les compétences élémentaires du personnage équipé de l'arme de {color}12{/color}% pendant 16 s. Cet effet peut être cumulé 3 fois maximum. Avec 3 cumuls, le personnage obtient un bonus de DGT élémentaires de {color}12{/color}%.",
+        "Libérer une compétence élémentaire confère l'effet de Danse Kagura, permettant d'augmenter les DGT infligés par les compétences élémentaires du personnage équipé de l'arme de {color}15{/color}% pendant 16 s. Cet effet peut être cumulé 3 fois maximum. Avec 3 cumuls, le personnage obtient un bonus de DGT élémentaires de {color}15{/color}%.",
+        "Libérer une compétence élémentaire confère l'effet de Danse Kagura, permettant d'augmenter les DGT infligés par les compétences élémentaires du personnage équipé de l'arme de {color}18{/color}% pendant 16 s. Cet effet peut être cumulé 3 fois maximum. Avec 3 cumuls, le personnage obtient un bonus de DGT élémentaires de {color}18{/color}%.",
+        "Libérer une compétence élémentaire confère l'effet de Danse Kagura, permettant d'augmenter les DGT infligés par les compétences élémentaires du personnage équipé de l'arme de {color}21{/color}% pendant 16 s. Cet effet peut être cumulé 3 fois maximum. Avec 3 cumuls, le personnage obtient un bonus de DGT élémentaires de {color}21{/color}%.",
+        "Libérer une compétence élémentaire confère l'effet de Danse Kagura, permettant d'augmenter les DGT infligés par les compétences élémentaires du personnage équipé de l'arme de {color}24{/color}% pendant 16 s. Cet effet peut être cumulé 3 fois maximum. Avec 3 cumuls, le personnage obtient un bonus de DGT élémentaires de {color}24{/color}%."
+      ]
+    },
+    {
       "key": "katsuragikiri-nagamasa",
       "name": "Espadon de Nagamasa",
       "description": "Une lame qui était autrefois fabriquée à Tatarasuna. Lourde et résistante.",
@@ -7687,6 +7833,18 @@
         "Pour chaque point de l'énergie élémentaire combinée de l'ensemble de l'équipe, les DGT du déchaînement élémentaire du personnage équipé de cette arme augmentent de {color}0{/color},18 %. Les DGT du déchaînement élémentaire peuvent être augmentés jusqu'à {color}60{/color} % de cette manière.",
         "Pour chaque point de l'énergie élémentaire combinée de l'ensemble de l'équipe, les DGT du déchaînement élémentaire du personnage équipé de cette arme augmentent de {color}0{/color},21 %. Les DGT du déchaînement élémentaire peuvent être augmentés jusqu'à {color}70{/color} % de cette manière.",
         "Pour chaque point de l'énergie élémentaire combinée de l'ensemble de l'équipe, les DGT du déchaînement élémentaire du personnage équipé de cette arme augmentent de {color}0{/color},24 %. Les DGT du déchaînement élémentaire peuvent être augmentés jusqu'à {color}80{/color} % de cette manière."
+      ]
+    },
+    {
+      "key": "oathsworn-eye",
+      "name": "Œil d'assermentation",
+      "description": "Un trésor national de Byakuyakoku conservé dans le Dainichi Mikoshi. Après la venue de la divinité serpent, cet objet a été utilisé pour certifier nombre de grands serments et souhaits.",
+      "refinements": [
+        "Augmente la recharge d'énergie de {color}24{/color}% pendant 10 s après l'utilisation d'une compétence élémentaire.",
+        "Augmente la recharge d'énergie de {color}30{/color}% pendant 10 s après l'utilisation d'une compétence élémentaire.",
+        "Augmente la recharge d'énergie de {color}36{/color}% pendant 10 s après l'utilisation d'une compétence élémentaire.",
+        "Augmente la recharge d'énergie de {color}42{/color}% pendant 10 s après l'utilisation d'une compétence élémentaire.",
+        "Augmente la recharge d'énergie de {color}48{/color}% pendant 10 s après l'utilisation d'une compétence élémentaire."
       ]
     },
     {
@@ -9544,6 +9702,11 @@
       "description": "La devise commune de Teyvat. S'il y a bien un mot que tout le monde comprend, c'est celui-là."
     },
     {
+      "key": "mudra-of-the-malefic-general",
+      "name": "Mudra du général maléfique",
+      "description": "Une articulation de marionnette obtenue dans le plan euthymique. Son geste représente le concept de ce que l'on voit et de ce que l'on fait.\r\nMême maintenant qu'« elle » est devenue une divinité calamiteuse, elle peut toujours utiliser des gestes aussi transcendants, son épée jaillissant à la vitesse du regard.\r\nEt pourtant, alors que d'innombrables désastres faisaient rage depuis bien trop longtemps, la carapace du général féroce dut embrasser un nouveau printemps."
+    },
+    {
       "key": "mushroom",
       "name": "Champignon",
       "description": "Un mycète qui pousse dans tous les endroits humides et à l'abri du soleil."
@@ -10057,6 +10220,16 @@
       "key": "teachings-of-transience",
       "name": "Enseignement de l'éphémère",
       "description": "Matériau d'amélioration d'aptitude.\r\nL'éphémère est ce dont rêve la Nation du Tonnerre.\r\nLes gloires éphémères sont la plus haute expression de la beauté mortelle, car nous autres, mortels, sommes tels des éclairs dans la nuit. Comme un beau rêve ou une étincelle qui s'embrase, nous laissons une empreinte magnifique sur le ciel nocturne éternel."
+    },
+    {
+      "key": "tears-of-the-calamitous-god",
+      "name": "Larmes de la divinité calamiteuse",
+      "description": "Une articulation de marionnette obtenue dans le plan euthymique. Le geste ici a la forme du funeste œil de jugement orageux.\r\nÉtant donné qu'elles sont capables d'abattre la malédiction et de faire pleuvoir les catastrophes d'un simple regard, il peut paraître naturel d'attribuer les malheurs de la vie aux divinités calamiteuses. Cependant, si on y réfléchit d'un peu plus prêt, quand notre volonté est assez forte et nos convictions suffisamment fermes...\r\nPeu importe les catastrophes, même un œil maléfique peut se laver de ses larmes."
+    },
+    {
+      "key": "the-meaning-of-aeons",
+      "name": "Signification d'une éternité",
+      "description": "Un petit couvre-chef que vous avez récupéré quand le calme est revenu dans le plan euthymique.\r\nUne seule pensée peut mettre fin à toutes les calamités, et il y aura toujours des pensées pour transcender le temps.\r\nMais au milieu de toutes ces catastrophes, on peut se demander si le véritable message de Makoto a pu faire son chemin."
     },
     {
       "key": "tile-of-decarabians-tower",
@@ -10669,6 +10842,10 @@
     {
       "key": "lupus-boreas-dominator-of-wolves",
       "name": "Loup du Nord, Seigneur du Territoire des loups"
+    },
+    {
+      "key": "magatsu-mitake-narukami-no-mikoto",
+      "name": "Narukami no Mikoto la destructrice"
     },
     {
       "key": "maguu-kenki",

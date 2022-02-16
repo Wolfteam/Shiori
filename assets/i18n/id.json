@@ -2725,6 +2725,93 @@
       ]
     },
     {
+      "key": "kamisato-ayato",
+      "name": "Kamisato Ayato",
+      "title": "",
+      "description": "Kepala Klan Kamisato dari Yashiro Commission yang masih muda namun sangat berprestasi. Sangat berbudaya dan sopan, dia adalah seorang pria yang berbudi luhur dan mempunyai banyak cara.",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ]
+    },
+    {
       "key": "keqing",
       "name": "Keqing",
       "title": "Driving Thunder",
@@ -6298,86 +6385,133 @@
     {
       "key": "yae-miko",
       "name": "Yae Miko",
-      "title": "???",
-      "description": "",
+      "title": "Astute Amusement",
+      "description": "Lady Guuji dari Kuil Agung Narukami juga menjabat sebagai pemimpin redaksi Yae Publishing House. Kecerdasan dan kelicikan yang tidak dapat dibayangkan tersembunyi di balik penampilannya yang cantik.",
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Spiritfox Sin-Eater",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Normal Attack",
+              "description": "Memanggil roh kitsune untuk melancarkan hingga 3 serangan yang mengakibatkan Electro DMG.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Charged Attack",
+              "description": "Mengonsumsi sejumlah Stamina dan mengakibatkan Electro DMG area setelah jeda singkat.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Plunging Attack",
+              "description": "Mengumpulkan kekuatan gemuruh dan menerjang tanah, mengakibatkan DMG pada musuh di jalur terjangan dan mengakibatkan Electro DMG area saat mendarat.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "DMG Tahap 1|{param1}%",
+            "DMG Tahap 2|{param2}%",
+            "DMG Tahap 3|{param3}%",
+            "DMG Charged Attack|{param4}%",
+            "Konsumsi Stamina Charged Attack|{param5}",
+            "DMG Selama Plunging|{param6}%",
+            "DMG Plunging Attack Min./Maks.|{param7}% / {param8}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Yakan Evocation: Sesshou Sakura",
+          "description": "Bagi Yae, urusan yang tidak penting bisa diselesaikan dengan menggunakan roh kitsune, sehingga dia sendiri tidak perlu turun tangan.\r\nBergerak cepat dan meninggalkan sebuah Sesshou Sakura.\r\n",
+          "abilities": [
+            {
+              "name": "Sesshou Sakura",
+              "description": "Memiliki karakteristik sebagai berikut:\r\n",
+              "descriptions": [
+                "Menyerang musuh yang ada di sekitar dengan sambaran petir secara berkala, mengakibatkan Electro DMG.",
+                "Ketika ada Sesshou Sakura lain yang berdekatan, levelnya akan meningkat dan DMG yang diakibatkan juga turut meningkat.",
+                "Memiliki jumlah penggunaan 3 kali.",
+                "Maksimum dapat meninggalkan 3 Sesshou Sakura di waktu yang sama. Level awal dari setiap Sesshou Sakura adalah 1, dan levelnya dapat ditingkatkan hingga level 3. Jika ada dua Sesshou Sakura yang diciptakan terlalu berdekatan, maka Sesshou Sakura yang diciptakan lebih dulu akan hancur."
+              ]
+            }
+          ],
+          "stats": [
+            "DMG Sesshou Sakura: Level 1|{param1}%",
+            "DMG Sesshou Sakura: Level 2|{param2}%",
+            "DMG Sesshou Sakura: Level 3|{param3}%",
+            "DMG Sesshou Sakura: Level 4|{param4}%",
+            "Durasi|{param5} detik",
+            "Cooldown|{param6} detik"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
+          "title": "Great Secret Art: Tenko Kenshin",
+          "description": "Salah satu cerita rakyat Inazuma disebut \"kitsunetsuki\", dan yang paling spesial di antaranya adalah kisah tentang Sky Kitsune yang turun menghanguskan musuh-musuh Kuil Agung Narukami dalam bentuk sambaran petir, mengakibatkan Electro DMG area.\r\nSaat melancarkan skill ini, Yae Miko akan membuka Sesshou Sakura yang ada di dekatnya, menghancurkan wujud luarnya, dan mengubahnya menjadi Tenko Thunderbolt yang turun dari langit, dan mengakibatkan Electro DMG area. Setiap Sesshou Sakura yang dihancurkan dengan cara ini akan membuat satu Tenko Thunderbolt.\r\n",
           "abilities": [],
-          "stats": []
+          "stats": [
+            "DMG Skill|{param1}%",
+            "DMG Tenko Thunderbolt|{param2}%",
+            "Cooldown|{param3} detik",
+            "Konsumsi Energy|{param4}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "Meditations of a Yako",
+          "description": "Memberikan 25% peluang mendapat 1 tambahan Material Talenta acak yang sewilayah saat craft. Level dan material yang dibutuhkannya sama.\r\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
+          "title": "The Shrine's Sacred Shade",
+          "description": "Saat melancarkan Great Secret Art: Tenko Kenshin, setiap kali menghancurkan sebuah Sesshou Sakura akan me-reset cooldown Yakan Evocation: Sesshou Sakura satu kali.\r\n",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "NA",
-          "description": "",
+          "title": "Enlightened Blessing",
+          "description": "Setiap poin Elemental Mastery yang dimiliki Yae Miko akan meningkatkan DMG yang diakibatkan Sesshou Sakura sebanyak 0,15%.\r\n",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "Yakan Offering",
+          "description": "Setiap kali Great Secret Art: Tenko Kenshin mengaktifkan Tenko Thunderbolt, Yae Miko akan memulihkan 8 Energy untuk dirinya sendiri.\r\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "Fox's Mooncall",
+          "description": "Level awal Sesshou Sakura yang tercipta meningkat menjadi level 2. Level tertinggi yang bisa dicapai menjadi level 4 dan jangkauan serangan meningkat 60%.\r\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "The Seven Glamours",
+          "description": "Meningkatkan 3 level Yakan Evocation: Sesshou Sakura.\r\nMaksimum: Lv. 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "Sakura Channeling",
+          "description": "Setelah sambaran petir Sesshou Sakura mengenai musuh, Electro DMG Bonus seluruh anggota party di sekitar meningkat 20% selama 5 detik.\r\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "Mischievous Teasing",
+          "description": "Meningkatkan 3 level Great Secret Art: Tenko Kenshin.\r\nMaksimum: Lv. 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
+          "title": "Forbidden Art: Daisesshou",
+          "description": "Serangan Sesshou Sakura mengabaikan 60% DEF musuh.\r\n",
           "descriptions": []
         }
       ]
@@ -7515,6 +7649,18 @@
       ]
     },
     {
+      "key": "kaguras-verity",
+      "name": "Kagura's Verity",
+      "description": "Lonceng yang digunakan saat melakukan Kagura Dance dan diberkati oleh Guuji sendiri. Aroma pohon Sacred Sakura masih ada di atasnya.",
+      "refinements": [
+        "Saat melancarkan Elemental Skill, akan memperoleh efek Kagura Dance yang akan meningkatkan {color}12{/color}% DMG Elemental Skill dari Karakter pengguna senjata ini selama 16 detik. Maksimum 3 lapis. Saat memiliki 3 lapis, Karakter tersebut akan memperoleh {color}12{/color}% DMG Bonus untuk semua elemen.",
+        "Saat melancarkan Elemental Skill, akan memperoleh efek Kagura Dance yang akan meningkatkan {color}15{/color}% DMG Elemental Skill dari Karakter pengguna senjata ini selama 16 detik. Maksimum 3 lapis. Saat memiliki 3 lapis, Karakter tersebut akan memperoleh {color}15{/color}% DMG Bonus untuk semua elemen.",
+        "Saat melancarkan Elemental Skill, akan memperoleh efek Kagura Dance yang akan meningkatkan {color}18{/color}% DMG Elemental Skill dari Karakter pengguna senjata ini selama 16 detik. Maksimum 3 lapis. Saat memiliki 3 lapis, Karakter tersebut akan memperoleh {color}18{/color}% DMG Bonus untuk semua elemen.",
+        "Saat melancarkan Elemental Skill, akan memperoleh efek Kagura Dance yang akan meningkatkan {color}21{/color}% DMG Elemental Skill dari Karakter pengguna senjata ini selama 16 detik. Maksimum 3 lapis. Saat memiliki 3 lapis, Karakter tersebut akan memperoleh {color}21{/color}% DMG Bonus untuk semua elemen.",
+        "Saat melancarkan Elemental Skill, akan memperoleh efek Kagura Dance yang akan meningkatkan {color}24{/color}% DMG Elemental Skill dari Karakter pengguna senjata ini selama 16 detik. Maksimum 3 lapis. Saat memiliki 3 lapis, Karakter tersebut akan memperoleh {color}24{/color}% DMG Bonus untuk semua elemen."
+      ]
+    },
+    {
       "key": "katsuragikiri-nagamasa",
       "name": "Katsuragikiri Nagamasa",
       "description": "Pedang yang dibuat di Tatarasuna. Bobotnya berat dan bodinya kasar.",
@@ -7680,6 +7826,18 @@
         "Setiap 1 poin dari gabungan jumlah Energy maksimum seluruh anggota party akan meningkatkan {color}0{/color},18% DMG Elemental Burst milik Karakter yang mengenakan senjata ini. Peningkatan DMG Elemental Burst maksimum yang bisa didapatkan dengan cara ini adalah {color}60{/color}%.",
         "Setiap 1 poin dari gabungan jumlah Energy maksimum seluruh anggota party akan meningkatkan {color}0{/color},21% DMG Elemental Burst milik Karakter yang mengenakan senjata ini. Peningkatan DMG Elemental Burst maksimum yang bisa didapatkan dengan cara ini adalah {color}70{/color}%.",
         "Setiap 1 poin dari gabungan jumlah Energy maksimum seluruh anggota party akan meningkatkan {color}0{/color},24% DMG Elemental Burst milik Karakter yang mengenakan senjata ini. Peningkatan DMG Elemental Burst maksimum yang bisa didapatkan dengan cara ini adalah {color}80{/color}%."
+      ]
+    },
+    {
+      "key": "oathsworn-eye",
+      "name": "Oathsworn Eye",
+      "description": "Harta nasional Byakuyakoku yang disimpan di Dainichi Mikoshi. Setelah kedatangan Dewa Ular, benda berharga ini digunakan Enkanomiya untuk menyatakan sumpah dan harapan yang besar.",
+      "refinements": [
+        "Setelah melancarkan Elemental Skill, Energy Recharge akan meningkat sebesar {color}24{/color}% selama 10 detik.",
+        "Setelah melancarkan Elemental Skill, Energy Recharge akan meningkat sebesar {color}30{/color}% selama 10 detik.",
+        "Setelah melancarkan Elemental Skill, Energy Recharge akan meningkat sebesar {color}36{/color}% selama 10 detik.",
+        "Setelah melancarkan Elemental Skill, Energy Recharge akan meningkat sebesar {color}42{/color}% selama 10 detik.",
+        "Setelah melancarkan Elemental Skill, Energy Recharge akan meningkat sebesar {color}48{/color}% selama 10 detik."
       ]
     },
     {
@@ -9448,7 +9606,7 @@
     },
     {
       "key": "maguu-kishin",
-      "name": "Maguu Kishin",
+      "name": "Marionette Core",
       "description": "Inti ini bisa memberikan tenaga pada Maguu Kenki yang terbuat dari materi anorganik dan membuatnya bisa menggunakan pedang seperti makhluk hidup.\r\nTubuh manusia akan menua, dan segala ilmu bela diri dan ingatan dalam tubuh itu perlahan akan menghilang, tidak peduli seberapa hebat atau indahnya.\r\nMungkin kita hanya bisa mendekati keabadian dengan cara mengubah anggota tubuh kita menjadi bagian mesin yang kokoh, dan mengorbankan jantung kita menjadi sebuah jantung dari mesin..."
     },
     {
@@ -9535,6 +9693,11 @@
       "key": "mora",
       "name": "Mora",
       "description": "Mata uang biasa, semua orang di seluruh penjuru dunia mengakui nilai mata uang ini."
+    },
+    {
+      "key": "mudra-of-the-malefic-general",
+      "name": "Mudra of the Malefic General",
+      "description": "Sendi boneka yang didapatkan dari Plane of Euthymia. Bagian ini menggambarkan konsep \"melakukan apa yang dilihat\".\r\nBahkan saat \"dia\" telah menjadi dewa kehancuran, dia tetap bisa menggunakan gerakan seperti itu, dengan pedang yang melesat secepat mata berkedip.\r\nNamun karena bencana yang berlangsung terus menerus, cangkang sang jenderal yang ganas pun harus bersemi kembali."
     },
     {
       "key": "mushroom",
@@ -10050,6 +10213,16 @@
       "key": "teachings-of-transience",
       "name": "Teachings of Transience",
       "description": "Material Penguatan Talenta.\r\n\"Transience\" adalah impian bangsa petir.\r\nKemuliaan dunia fana adalah perwujudan tertinggi dari keelokan manusia. Bukankah kehidupan manusia di dunia yang fana ini juga layaknya kilat? Sesaat seperti mimpi atau ledakan kembang api yang indah, yang kemudian meninggalkan pesona jejaknya di malam yang abadi."
+    },
+    {
+      "key": "tears-of-the-calamitous-god",
+      "name": "Tears of the Calamitous God",
+      "description": "Sendi boneka yang didapatkan dari Plane of Euthymia. Bagian ini berbentuk Eye of Stormy Judgment.\r\nKarena dapat menjatuhkan kutukan dan bencana hanya dengan tatapannya, tidak heran kalau orang menyalahkan kesialan hidupnya pada dewa kehancuran. Tapi kalau kamu pikir baik-baik, kalau tekadmu cukup kuat, dan imanmu cukup kuat ...\r\nKehancurannya sudah berlangsung terlalu lama. Bahkan tatapan paling keji sekalipun harus membasuh dirinya dengan air mata."
+    },
+    {
+      "key": "the-meaning-of-aeons",
+      "name": "The Meaning of Aeons",
+      "description": "Hiasan kepala kecil yang didapatkan dari Plane of Euthymia setelah semuanya mereda.\r\nSebuah pikiran dapat mengakhiri segala bencana, dan akan selalu ada pikiran yang melampaui waktu.\r\nDi tengah semua ini, entah arti sebenarnya yang ingin Makoto sampaikan sudah tersampaikan atau belum."
     },
     {
       "key": "tile-of-decarabians-tower",
@@ -10662,6 +10835,10 @@
     {
       "key": "lupus-boreas-dominator-of-wolves",
       "name": "Lupus Boreas, Dominator of Wolves"
+    },
+    {
+      "key": "magatsu-mitake-narukami-no-mikoto",
+      "name": "Magatsu Mitake Narukami no Mikoto"
     },
     {
       "key": "maguu-kenki",
