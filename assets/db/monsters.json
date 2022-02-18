@@ -8,6 +8,13 @@
       "drops": []
     },
     {
+      "key": "abyss-lector-fathomless-flames",
+      "image": "abyss-lector-fathomless-flames.png",
+      "type": "abyssOrder",
+      "isComingSoon": false,
+      "drops": []
+    },
+    {
       "key": "abyss-lector-violet-lightning",
       "image": "abyss-lector-violet-lightning.png",
       "type": "abyssOrder",
@@ -4573,6 +4580,27 @@
       "key": "sangonomiya-cohort",
       "image": "sangonomiya-cohort.png",
       "type": "na",
+      "isComingSoon": false,
+      "drops": []
+    },
+    {
+      "key": "shadowy-husk-defender",
+      "image": "shadowy-husk-defender.png",
+      "type": "abyssOrder",
+      "isComingSoon": false,
+      "drops": []
+    },
+    {
+      "key": "shadowy-husk-line-breaker",
+      "image": "shadowy-husk-line-breaker.png",
+      "type": "abyssOrder",
+      "isComingSoon": false,
+      "drops": []
+    },
+    {
+      "key": "shadowy-husk-standard-bearer",
+      "image": "shadowy-husk-standard-bearer.png",
+      "type": "abyssOrder",
       "isComingSoon": false,
       "drops": []
     },
