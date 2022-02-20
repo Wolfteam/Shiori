@@ -6379,7 +6379,7 @@
       "key": "yae-miko",
       "name": "Yae Miko",
       "title": "Astute Amusement",
-      "description": "Lady Guuji of the Grand Narukami Shrine also serves as the editor-in-chief of Yae Publishing House. Unimaginable intelligence and cunning are hidden under her beautiful appearance.",
+      "description": "Lady Guuji del Grand Narukami Shrine e caporedattrice del Yae Publishing House. Intelligenza e astuzia inimmaginabili si celano sotto il suo grazioso aspetto.",
       "skills": [
         {
           "key": "s1",
@@ -6387,66 +6387,66 @@
           "description": "",
           "abilities": [
             {
-              "name": "Normal Attack",
-              "description": "Summons forth kitsune spirits, initiating a maximum of 3 attacks that deal Electro DMG.\r\n",
+              "name": "Attacco Normale",
+              "description": "Evocando spiriti kitsune esegue 3 attacchi che infliggono Electro DMG.\r\n",
               "descriptions": []
             },
             {
-              "name": "Charged Attack",
-              "description": "Consumes a certain amount of Stamina to deal AoE Electro DMG after a short casting time.\r\n",
+              "name": "Attacco Caricato",
+              "description": "Consuma una certa quantità di Stamina per infliggere AoE Electro DMG.\r\n",
               "descriptions": []
             },
             {
               "name": "Plunging Attack",
-              "description": "Plunges towards the ground from mid-air, damaging all opponents in her path with thunderous might. Deals AoE Electro DMG upon impact with the ground.",
+              "description": "Concentrando il potere Electro, Lisa si lancia in picchiata da mezz'aria verso il terreno e assesta AoE Electro DMG all'impatto.",
               "descriptions": []
             }
           ],
           "stats": [
-            "1-Hit DMG|{param1}%",
-            "2-Hit DMG|{param2}%",
-            "3-Hit DMG|{param3}%",
-            "Charged Attack DMG|{param4}%",
-            "Charged Attack Stamina Cost|{param5}",
-            "Plunge DMG|{param6}%",
-            "Low/High Plunge DMG|{param7}% / {param8}%"
+            "DMG 1° Colpo|{param1}%",
+            "DMG 1° Colpo|{param2}%",
+            "DMG 1° Colpo|{param3}%",
+            "DMG Attacco Caricato|{param4}%",
+            "Costo in Stamina Attacco Caricato|{param5}",
+            "DMG Attacco in Picchiata|{param6}%",
+            "DMG Att. in Picchiata per altezze Basse/Elevate|{param7}% / {param8}%"
           ]
         },
         {
           "key": "s2",
           "title": "Yakan Evocation: Sesshou Sakura",
-          "description": "To Yae, such dull tasks as can be accomplished by driving spirits out need not be done personally.\r\nMoves swiftly, leaving a Sesshou Sakura behind.\r\n",
+          "description": "Per Yae, noiosi incarichi che si possono risolvere scacciando via gli spiriti non vanno svolti personalmente.\r\nIndietreggia velocemente lasciando un Sesshou Sakura.\r\n",
           "abilities": [
             {
               "name": "Sesshou Sakura",
-              "description": "Has the following properties:\r\n",
+              "description": "Possiede le seguenti proprietà:\r\n",
               "descriptions": [
-                "Periodically strikes one nearby opponent with lightning, dealing Electro DMG",
-                "When there are other Sesshou Sakura nearby, their level will increase, boosting the DMG dealt by these lightning strikes.",
-                "This skill has three charges.",
-                "A maximum of 3 Sesshou Sakura can exist simultaneously. The initial level of each Sesshou Sakura is 1, and the initial highest level each sakura can reach is 3. If a new Sesshou Sakura is created too close to an existing one, the existing one will be destroyed."
+                "Colpisce periodicamente un nemico vicino con un fulmine, infliggendo Electro DMG",
+                "Quando ci sono altri Sesshou Sakura vicini, il loro livello aumenta e ciascun fulmine infligge danni maggiori.",
+                "La skilla inizia con 3 cariche.",
+                "Massimo 3 Sesshou Sakura possono esistere contemporaneamente. Ciascun Sesshou Sakura parte dal livello 1 e può aumentare fino al livello 3. Se si fa apparire un Sesshou Sakura sopra o troppo vicino a un altro, quello presente sarà automaticamente distrutto."
               ]
             }
           ],
           "stats": [
-            "Sesshou Sakura DMG: Level 1|{param1}%",
-            "Sesshou Sakura DMG: Level 2|{param2}%",
-            "Sesshou Sakura DMG: Level 3|{param3}%",
-            "Sesshou Sakura DMG: Level 4|{param4}%",
-            "Duration|{param5} s",
-            "CD|{param6} s"
+            "Sesshou Sakura DMG: Livello 1|{param1}%",
+            "Sesshou Sakura DMG: Livello 2|{param2}%",
+            "Sesshou Sakura DMG: Livello 3|{param3}%",
+            "Sesshou Sakura DMG: Livello 4|{param4}%",
+            "Durata|{param5} s",
+            "CD (Tempo Ricarica)|{param6} s"
           ]
         },
         {
           "key": "s3",
           "title": "Great Secret Art: Tenko Kenshin",
-          "description": "Legends of \"kitsunetsuki,\" or the manifestation of a kitsune's might, are common in Inazuma's folktales. One that particularly captures the imagination is that of the Sky Kitsune, said to cause lightning to fall down upon the foes of the Grand Narukami Shrine. Summons a lightning strike, dealing AoE Electro DMG.\r\nWhen she uses this skill, Yae Miko will unseal nearby Sesshou Sakura, destroying their outer forms and transforming them into Tenko Thunderbolts that descend from the skies, dealing AoE Electro DMG. Each Sesshou Sakura destroyed in this way will create one Tenko Thunderbolt.\r\n",
+          "description": "Leggende sul \"kitsunetsuki,\" o manifestazione della potenza del kitsune, sono comuni nei racconti folkloristici di Inazuma. Un racconto che cattura particolarmente l’immaginazione è quello della Sky Kitsune, che si dice faccia cadere fulmini sulle minacce al Grand Narukami Shrine. Evoca un fulmine che infligge AoE Electro DMG.\r\nQuando usa questa skill, Yae Miko libera i vicini Sesshou Sakura dalle loro forme esterne e li trasforma nei Tenko Thunderbolts che discendono dai cieli causando AoE Electro DMG. Ciascun Sesshou Sakura liberato con questo modo genera Tenko Thunderbolt.\r\n",
           "abilities": [],
           "stats": [
             "Skill DMG|{param1}%",
             "Tenko Thunderbolt DMG|{param2}%",
-            "CD|{param3} s",
-            "Energy Cost|{param4}"
+            "CD (Tempo Ricarica)|{param3} s",
+            "Costo Energy|{param4}"
           ]
         }
       ],
@@ -6454,19 +6454,19 @@
         {
           "key": "p1",
           "title": "Meditations of a Yako",
-          "description": "Has a 25% chance to get 1 regional Character Talent Material (base material excluded) when crafting. The rarity is that of the base material.\r\n",
+          "description": "Durante il crafting di materiali per potenziare i Talenti, Yae Miko ha il 25% di probabilità di ottenere 1 materiale extra diverso ma della stessa regione (materiali comuni esclusi). La rarità di tale materiale è di 1 livello inferiore o base.\r\n",
           "descriptions": []
         },
         {
           "key": "p2",
           "title": "The Shrine's Sacred Shade",
-          "description": "When casting Great Secret Art: Tenko Kenshin, each Sesshou Sakura destroyed resets the cooldown for 1 charge of Yakan Evocation: Sesshou Sakura.\r\n",
+          "description": "Quando si esegue Great Secret Art: Tenko Kenshin, ciascun Sesshou Sakura liberato ripristina 1 carica di Yakan Evocation: Sesshou Sakura.\r\n",
           "descriptions": []
         },
         {
           "key": "p3",
           "title": "Enlightened Blessing",
-          "description": "Every point of Elemental Mastery Yae Miko possesses will increase Sesshou Sakura DMG by 0.15%.\r\n",
+          "description": "Per ogni punto dell’ Elemental Mastery di Yae Miko, il danno del Sesshou Sakura aumenta del 0.15%.\r\n",
           "descriptions": []
         }
       ],
@@ -6474,37 +6474,37 @@
         {
           "key": "c1",
           "title": "Yakan Offering",
-          "description": "Each time Great Secret Art: Tenko Kenshin activates a Tenko Thunderbolt, Yae Miko will restore 8 Elemental Energy for herself.\r\n",
+          "description": "Ogni volta che Great Secret Art: Tenko Kenshin attiva un Tenko Thunderbolt, Yae Miko ripristina 8 Elemental Energy per sé stessa.\r\n",
           "descriptions": []
         },
         {
           "key": "c2",
           "title": "Fox's Mooncall",
-          "description": "Sesshou Sakura start at Level 2 when created, their max level is increased to 4, and their attack range is increased by 60%.\r\n",
+          "description": "Sesshou Sakura parte dal Livello 2, il livello massimo che possono raggiungere è 4 e il loro raggio di azione aumenta del 60%.\r\n",
           "descriptions": []
         },
         {
           "key": "c3",
           "title": "The Seven Glamours",
-          "description": "Increases the Level of Yakan Evocation: Sesshou Sakura by 3.\r\nMaximum upgrade level is 15.\r\n",
+          "description": "Aumenta di 3 il livello di Yakan Evocation: Sesshou Sakura.\r\nOra il livello massimo di upgrade è 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c4",
           "title": "Sakura Channeling",
-          "description": "When Sesshou Sakura lightning hits opponents, the Electro DMG Bonus of all nearby party members is increased by 20% for 5s.\r\n",
+          "description": "Quando il fulmine di un Sesshou Sakura colpisce nemici, tutti i membri vicini del party ottengono Electro DMG Bonus +20% per 5s.\r\n",
           "descriptions": []
         },
         {
           "key": "c5",
           "title": "Mischievous Teasing",
-          "description": "Increases the Level of Great Secret Art: Tenko Kenshin by 3.\r\nMaximum upgrade level is 15.\r\n",
+          "description": "Aumenta di 3 il livello di Great Secret Art: Tenko Kenshin.\r\nOra il massimo livello di upgrade è 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c6",
           "title": "Forbidden Art: Daisesshou",
-          "description": "The Sesshou Sakura's attacks will ignore 60% of the opponents' DEF.\r\n",
+          "description": "Gli attacchi del Sesshou Sakura ignorano il 60% della DEF dei nemici.\r\n",
           "descriptions": []
         }
       ]
@@ -7644,13 +7644,13 @@
     {
       "key": "kaguras-verity",
       "name": "Kagura's Verity",
-      "description": "The bells used when performing the Kagura Dance, blessed by the Guuji herself. The scent of the Sacred Sakura tree lingers on it.",
+      "description": "Le campane usate per eseguire la Kagura Dance, benedette dalla stessa Guuji. L’odore del Sacred Sakura permane su di esso.",
       "refinements": [
-        "Gains the Kagura Dance effect when using an Elemental Skill, causing the Elemental Skill DMG of the character wielding this weapon to increase by {color}12{/color}% for 16s. Max 3 stacks. This character will gain {color}12{/color}% All Elemental DMG Bonus when they possess 3 stacks.",
-        "Gains the Kagura Dance effect when using an Elemental Skill, causing the Elemental Skill DMG of the character wielding this weapon to increase by {color}15{/color}% for 16s. Max 3 stacks. This character will gain {color}15{/color}% All Elemental DMG Bonus when they possess 3 stacks.",
-        "Gains the Kagura Dance effect when using an Elemental Skill, causing the Elemental Skill DMG of the character wielding this weapon to increase by {color}18{/color}% for 16s. Max 3 stacks. This character will gain {color}18{/color}% All Elemental DMG Bonus when they possess 3 stacks.",
-        "Gains the Kagura Dance effect when using an Elemental Skill, causing the Elemental Skill DMG of the character wielding this weapon to increase by {color}21{/color}% for 16s. Max 3 stacks. This character will gain {color}21{/color}% All Elemental DMG Bonus when they possess 3 stacks.",
-        "Gains the Kagura Dance effect when using an Elemental Skill, causing the Elemental Skill DMG of the character wielding this weapon to increase by {color}24{/color}% for 16s. Max 3 stacks. This character will gain {color}24{/color}% All Elemental DMG Bonus when they possess 3 stacks."
+        "Guadagna l’effetto Kagura Dance quando si usa una Elemental Skill, causando l’aumento dell’Elemental Skill DMG del personaggio che detiene l’arma del {color}12{/color}% per 16s. Massimo 3 stacks. Questo personaggio guadagnerà {color}12{/color}% di tutti gli Elemental DMG Bonus quando possiede 3 stacks.",
+        "Guadagna l’effetto Kagura Dance quando si usa una Elemental Skill, causando l’aumento dell’Elemental Skill DMG del personaggio che detiene l’arma del {color}15{/color}% per 16s. Massimo 3 stacks. Questo personaggio guadagnerà {color}15{/color}%  di tutti gli Elemental DMG Bonus quando possiede 3 stacks.",
+        "Guadagna l’effetto Kagura Dance quando si usa una Elemental Skill, causando l’aumento dell’Elemental Skill DMG del personaggio che detiene l’arma del {color}18{/color}% per 16s. Massimo 3 stacks. Questo personaggio guadagnerà {color}18{/color}%  di tutti gli Elemental DMG Bonus quando possiede 3 stacks.",
+        "Guadagna l’effetto Kagura Dance quando si usa una Elemental Skill, causando l’aumento dell’Elemental Skill DMG del personaggio che detiene l’arma del {color}21{/color}% per 16s. Massimo 3 stacks. Questo personaggio guadagnerà {color}21{/color}%  di tutti gli Elemental DMG Bonus quando possiede 3 stacks.",
+        "Guadagna l’effetto Kagura Dance quando si usa una Elemental Skill, causando l’aumento dell’Elemental Skill DMG del personaggio che detiene l’arma del {color}24{/color}% per 16s. Massimo 3 stacks. Questo personaggio guadagnerà {color}24{/color}% di tutti gli Elemental DMG Bonus quando possiede 3 stacks."
       ]
     },
     {
@@ -7824,13 +7824,13 @@
     {
       "key": "oathsworn-eye",
       "name": "Oathsworn Eye",
-      "description": "A national treasure of Byakuyakoku stored in the Dainichi Mikoshi. With the coming of the Serpent God, this item was used to notarize great oaths and wishes.",
+      "description": "Un tesoro nazionale di Byakuyakoku conservato nel Dainichi Mikoshi. Con l’arrivo del Serpent God, questo oggetto fu usato per autenticare grandi giuramenti e desideri.",
       "refinements": [
-        "Increases Energy Recharge by {color}24{/color}% for 10s after using an Elemental Skill.",
-        "Increases Energy Recharge by {color}30{/color}% for 10s after using an Elemental Skill.",
-        "Increases Energy Recharge by {color}36{/color}% for 10s after using an Elemental Skill.",
-        "Increases Energy Recharge by {color}42{/color}% for 10s after using an Elemental Skill.",
-        "Increases Energy Recharge by {color}48{/color}% for 10s after using an Elemental Skill."
+        "Aumenta l’Energy Recharge del {color}24{/color}% per 10s dopo aver usato un’Elemental Skill.",
+        "Aumenta l’Energy Recharge del {color}30{/color}% per 10s dopo aver usato un’Elemental Skill.",
+        "Aumenta l’Energy Recharge del {color}36{/color}% per 10s dopo aver usato un’Elemental Skill.",
+        "Aumenta l’Energy Recharge del {color}42{/color}% per 10s dopo aver usato un’Elemental Skill.",
+        "Aumenta l’Energy Recharge del {color}48{/color}% per 10s dopo aver usato un’Elemental Skill."
       ]
     },
     {
@@ -9123,7 +9123,7 @@
     {
       "key": "chilled-meat",
       "name": "Chilled Meat",
-      "description": "Carne rara, ma fresca.\r\nQuesta specie di cinghiale si pensava che si fosse estinta diverse centinaia di anni fa, eppure, è stata preservata dalla temperature estreme di Dragonspine. Per i buongustai di Teyvat è un ingrediente di indiscutibile sacralità."
+      "description": "Carne rara, ma fresca.\r\nQuesta specie di cinghiale si pensava che si fosse estinta diverse centinaia di anni fa, eppure, è stata preservata dalle temperature estreme di Dragonspine. Per i buongustai di Teyvat è un ingrediente di indiscutibile sacralità."
     },
     {
       "key": "chunk-of-aerosiderite",
@@ -9198,7 +9198,7 @@
     {
       "key": "crystal-prism",
       "name": "Crystal Prism",
-      "description": "Un prisma che può deviare la luce.\r\nSi possono realizzare immagini illusorie grazie a questi prismi, dando a tali dispositivi — per così dire — il potere di influenzare i cuoi umani."
+      "description": "Un prisma che può deviare la luce.\r\nSi possono realizzare immagini illusorie grazie a questi prismi, dando a tali dispositivi — per così dire — il potere di influenzare i cuori umani."
     },
     {
       "key": "crystalline-bloom",
@@ -9248,7 +9248,7 @@
     {
       "key": "dew-of-repudiation",
       "name": "Dew of Repudiation",
-      "description": "Una stana goccia d'acqua lasciata dalla sconfitta di una Hydro Hypostasis.\r\nHa forti proprietà di rigetto che costituiscono anche la base di uno dei pattern d'attacco della Hydro Hypostasis. Dicono che l'acqua contenga ricordi e forza di volontà, e che queste possano potenziarsi quando corpi d'acqua diversi si fondono insieme. Tuttavia, le onde evocate dalla Hydro Hypostasis sono incompatibili con le correnti che fluiscono sopra e sottoterra. Anche se dovesse fluire nelle acque straordinariamente pure di Petrichor (città), probabilmente questa goccia d'acqua resisterebbe all'assimilazione tanto quanto farebbe il mercurio."
+      "description": "Una strana goccia d'acqua lasciata dalla sconfitta di una Hydro Hypostasis.\r\nHa forti proprietà di rigetto che costituiscono anche la base di uno dei pattern d'attacco della Hydro Hypostasis. Dicono che l'acqua contenga ricordi e forza di volontà, e che queste possano potenziarsi quando corpi d'acqua diversi si fondono insieme. Tuttavia, le onde evocate dalla Hydro Hypostasis sono incompatibili con le correnti che fluiscono sopra e sottoterra. Anche se dovesse fluire nelle acque straordinariamente pure di Petrichor (città), probabilmente questa goccia d'acqua resisterebbe all'assimilazione tanto quanto farebbe il mercurio."
     },
     {
       "key": "dismal-prism",
@@ -9268,7 +9268,7 @@
     {
       "key": "dragon-lords-crown",
       "name": "Dragon Lord's Crown",
-      "description": "Corna create da duro Jade cristallizzato per mille anni, sono la corona naturale del Re Drago.\r\nInfusa di spirito e intagliata dalla roccia, è nata dal cuore della montagna per mostrare alla landa in mezzo ai monoliti la forza della terra; le sue lunga corna dorate sono il simbolo di un’antica diatriba con un'antica divinità.\r\nPer un po', questo corno è rimasto frantumato perdendo così il suo splendore, ma ora che risiede sul tuo palmo risplende di freddo e d’oro."
+      "description": "Corna create da duro Jade cristallizzato per mille anni, sono la corona naturale del Re Drago.\r\nInfusa di spirito e intagliata nella roccia, è nata dal cuore della montagna per mostrare alla landa in mezzo ai monoliti la forza della terra; le sue lunghe corna dorate sono il simbolo di un’antica diatriba con un'antica divinità.\r\nPer un po', questo corno è rimasto frantumato perdendo così il suo splendore, ma ora che risiede sul tuo palmo risplende di freddo e d’oro."
     },
     {
       "key": "dragonheirs-false-fin",
@@ -9328,7 +9328,7 @@
     {
       "key": "famed-handguard",
       "name": "Famed Handguard",
-      "description": "Una guardia intricata che è stata montato su un'arma famosa.\r\nAlcuni credono che le spade abbiano un'anima e una vita propria, e quindi meritino un nome proprio. Coloro che amano le loro lame saranno riconosciuti da esse a loro volta. Ma coloro che vedono le loro spade come amici o addirittura amanti dovrebbero essere avvertiti che questa relazione è costruita sulla morte e lo spargimento di sangue. Le passioni di coloro che danzano con la loro lama in mezzo a piogge cremisi devono essere sicuramente fermate."
+      "description": "Una guardia intricata che è stata montata su un'arma famosa.\r\nAlcuni credono che le spade abbiano un'anima e una vita propria, e quindi meritino un nome proprio. Coloro che amano le loro lame saranno riconosciuti da esse a loro volta. Ma coloro che vedono le loro spade come amici o addirittura amanti dovrebbero essere avvertiti che questa relazione è costruita sulla morte e lo spargimento di sangue. Le passioni di coloro che danzano con la loro lama in mezzo a piogge cremisi devono essere sicuramente fermate."
     },
     {
       "key": "fetters-of-the-dandelion-gladiator",
@@ -9713,7 +9713,7 @@
     {
       "key": "mudra-of-the-malefic-general",
       "name": "Mudra of the Malefic General",
-      "description": "A puppet joint obtained from the Plane of Euthymia. The gesture here symbolizes the concept that \"one sees and one does.\"\r\nEven now that \"she\" has become a calamitous deity, she can still utilize such transcendent gestures, her sword flashing forth as swiftly as her eyes may see.\r\nAnd yet, as the countless disasters ground on for far too long, the fierce general's shell had to embrace a new spring."
+      "description": "La giuntura di una bambola ottenuta dal Plane of Euthymia. La gestualità qui simboleggia il concetto che \"uno vede e uno fa.\"\r\nAnche ora che \"lei\" è diventata una dea calamitosa, può ancora usare queste gestualità trascendentali, la sua spada lampeggia con la rapidità con cui i suoi occhi riescono a vederla.\r\nE ancora, mentre gli innumerevoli disastri hanno messo radici troppo a lungo, lo scudo del fiero generale ha dovuto abbracciare un nuovo inizio."
     },
     {
       "key": "mushroom",
@@ -9823,7 +9823,7 @@
     {
       "key": "original-resin",
       "name": "Original Resin",
-      "description": "Usato per dare vitalità a Petrified Trees e Ley Line Blossoms, concede anche l'accesso ai tesori che nascondono. La loro Energia si rigenera nel tempo.\r\nSi dice che le radici di tutti gli Irminsul trees e blossoms del mondo si intreccino nel punto più profondo e nascosto della terra e che le combinazioni delle radici definiscano i Ley Lines del mondo."
+      "description": "Usato per dare vitalità a Petrified Trees e Ley Line Blossoms, concede anche l'accesso ai tesori che nascondono. La loro Energia si rigenera nel tempo.\r\nSi dice che le radici di tutti gli Irminsul trees e blossoms del mondo si intrecciano nel punto più profondo e nascosto della terra e che le combinazioni delle radici definiscono i Ley Lines del mondo."
     },
     {
       "key": "pepper",
@@ -10233,12 +10233,12 @@
     {
       "key": "tears-of-the-calamitous-god",
       "name": "Tears of the Calamitous God",
-      "description": "A puppet joint obtained from the Plane of Euthymia. The gesture here is in the shape of the baleful Eye of Stormy Judgment.\r\nSince they are able to bring down curse and catastrophe alike with a mere gaze, it might seem natural to blame life's misfortunes on calamitous deities. However, if you think about it a little harder, if your will is strong enough, and if your convictions are firm enough...\r\nThe catastrophes go on for too long. Even a baleful gaze must wash itself with tears."
+      "description": "La giuntura di una bambola ottenuta dal Plane of Euthymia. La gestualità qui prende la forma del nefasto Eye of Stormy Judgment.\r\nVisto che sono in grado di abbattere maledizioni e catastrofi simili con un mero sguardo, potrebbe sembrare naturale incolpare le disgrazie della vita su divinità calamitose. Comunque, se ci pensi un po’ più intensamente, se la tua volontà è forte abbastanza, e le tue convinzioni sono abbastanza solide…\r\nLe catastrofi durano troppo a lungo. Anche uno sguardo nefasto deve lavarsi via con le lacrime."
     },
     {
       "key": "the-meaning-of-aeons",
       "name": "The Meaning of Aeons",
-      "description": "A small piece of headgear obtained once the dust settled in the Plane of Euthymia.\r\nOne thought may end all calamity, and there will always be thoughts that may transcend time.\r\nAmid all this, one wonders if Makoto's true meaning was successfully communicated or not."
+      "description": "Un piccolo pezzo di un copricapo ottenuto quando si son calmatte le acque nel Plane of Euthymia.\r\nUn pensiero potrebbe terminare tutte le calamità, e ci saranno sempre dei pensieri in grado di trascendere il tempo.\r\nTra tutto questo, uno si chiede se il vero significato di Makoto sia stato comunicato con successo o meno."
     },
     {
       "key": "tile-of-decarabians-tower",
