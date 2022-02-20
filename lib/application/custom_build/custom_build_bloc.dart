@@ -93,6 +93,10 @@ class CustomBuildBloc extends Bloc<CustomBuildEvent, CustomBuildState> {
         loaded: (state) => _weaponRefinementChanged(e, state),
         orElse: () => state,
       ),
+      weaponStatChanged: (e) async => state.maybeMap(
+        loaded: (state) => _weaponStatChanged(e, state),
+        orElse: () => state,
+      ),
       weaponsOrderChanged: (e) async => state.maybeMap(
         loaded: (state) => _weaponsOrderChanged(e, state),
         orElse: () => state,
@@ -257,21 +261,27 @@ class CustomBuildBloc extends Bloc<CustomBuildEvent, CustomBuildState> {
       throw Exception('Cannot add more than = $maxNumberOfWeapons weapons to the state');
     }
 
-    final weapon = _genshinService.getWeaponForCard(e.key);
+    final weapon = _genshinService.getWeapon(e.key);
+    final translation = _genshinService.getWeaponTranslation(e.key);
     if (state.character.weaponType != weapon.type) {
       throw Exception('Type = ${weapon.type} is not valid for character = ${state.character.key}');
     }
 
+    if (weapon.stats.isEmpty) {
+      throw Exception('Weapon = ${e.key} does not have any stat');
+    }
+
+    final stat = weapon.stats.last;
     final newOne = CustomBuildWeaponModel(
       key: e.key,
       index: state.weapons.length,
       refinement: getWeaponMaxRefinementLevel(weapon.rarity) <= 0 ? 0 : 1,
-      name: weapon.name,
-      image: weapon.image,
+      name: translation.name,
+      image: weapon.fullImagePath,
       rarity: weapon.rarity,
-      baseAtk: weapon.baseAtk,
-      subStatType: weapon.subStatType,
-      subStatValue: weapon.subStatValue,
+      subStatType: weapon.secondaryStat,
+      stat: stat,
+      stats: weapon.stats,
     );
     final weapons = [...state.weapons, newOne];
     return state.copyWith.call(weapons: weapons, readyForScreenshot: false);
@@ -312,6 +322,25 @@ class CustomBuildBloc extends Bloc<CustomBuildEvent, CustomBuildState> {
     final updated = current.copyWith.call(refinement: e.newValue);
     weapons.insert(index, updated);
 
+    return state.copyWith.call(weapons: weapons, readyForScreenshot: false);
+  }
+
+  CustomBuildState _weaponStatChanged(_WeaponStatChanged e, _LoadedState state) {
+    final current = state.weapons.firstWhereOrNull((el) => el.key == e.key);
+    if (current == null) {
+      throw Exception('Weapon = ${e.key} does not exist in the state');
+    }
+
+    if (current.stat == e.newValue) {
+      return state;
+    }
+
+    final index = state.weapons.indexOf(current);
+    final weapons = [...state.weapons];
+    weapons.removeAt(index);
+
+    final updated = current.copyWith.call(stat: e.newValue);
+    weapons.insert(index, updated);
     return state.copyWith.call(weapons: weapons, readyForScreenshot: false);
   }
 

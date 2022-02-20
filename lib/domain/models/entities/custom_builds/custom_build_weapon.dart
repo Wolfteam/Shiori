@@ -16,5 +16,18 @@ class CustomBuildWeapon extends HiveObject {
   @HiveField(3)
   int refinement;
 
-  CustomBuildWeapon(this.buildItemKey, this.weaponKey, this.index, this.refinement);
+  @HiveField(4, defaultValue: -1)
+  int level;
+
+  @HiveField(5, defaultValue: false)
+  bool isAnAscension;
+
+  CustomBuildWeapon(
+    this.buildItemKey,
+    this.weaponKey,
+    this.index,
+    this.refinement,
+    this.level,
+    this.isAnAscension,
+  );
 }
