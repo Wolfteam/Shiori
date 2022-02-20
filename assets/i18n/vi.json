@@ -10503,6 +10503,10 @@
       "name": "Sứ Đồ Vực Sâu - Kích Lưu"
     },
     {
+      "key": "abyss-lector-fathomless-flames",
+      "name": "Học Sĩ Vực Sâu - Uyên Hỏa"
+    },
+    {
       "key": "abyss-lector-violet-lightning",
       "name": "Học Sĩ Vực Sâu - Tử Điện"
     },
@@ -10993,6 +10997,18 @@
     {
       "key": "sangonomiya-cohort",
       "name": "Quân Sangonomiya"
+    },
+    {
+      "key": "shadowy-husk-defender",
+      "name": "Vỏ Rỗng Ảm Đạm - Cận Vệ"
+    },
+    {
+      "key": "shadowy-husk-line-breaker",
+      "name": "Vỏ Rỗng Ảm Đạm - Phá Trận"
+    },
+    {
+      "key": "shadowy-husk-standard-bearer",
+      "name": "Vỏ Rỗng Ảm Đạm - Cờ Lệnh"
     },
     {
       "key": "shogunate-infantry",

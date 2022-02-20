@@ -10400,6 +10400,10 @@
       "name": "Apóstolo do Abismo - Corrente Torrencial"
     },
     {
+      "key": "abyss-lector-fathomless-flames",
+      "name": "Bardo do Abismo - Chamas Abismais"
+    },
+    {
       "key": "abyss-lector-violet-lightning",
       "name": "Bardo do Abismo - Trovão Violeta"
     },
@@ -10445,7 +10449,7 @@
     },
     {
       "key": "cryo-abyss-mage",
-      "name": "Feiticeiro do Abismo Cryo"
+      "name": "Mago do Abismo Cryo"
     },
     {
       "key": "cryo-cicin",
@@ -10657,7 +10661,7 @@
     },
     {
       "key": "hydro-mimic-mallard",
-      "name": "Pato-real Ilusório - Hydro"
+      "name": "Pato-real Fantasma - Hydro"
     },
     {
       "key": "hydro-mimic-raptor",
@@ -10890,6 +10894,18 @@
     {
       "key": "sangonomiya-cohort",
       "name": "Coorte de Sangonomiya"
+    },
+    {
+      "key": "shadowy-husk-defender",
+      "name": "Armadura do Vazio: Defensor"
+    },
+    {
+      "key": "shadowy-husk-line-breaker",
+      "name": "Armadura do Vazio: Demolidor de Linhas"
+    },
+    {
+      "key": "shadowy-husk-standard-bearer",
+      "name": "Armadura do Vazio: Porta-estandarte"
     },
     {
       "key": "shogunate-infantry",

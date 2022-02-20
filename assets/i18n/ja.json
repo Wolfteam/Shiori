@@ -10500,6 +10500,10 @@
       "name": "アビスの使徒·激流"
     },
     {
+      "key": "abyss-lector-fathomless-flames",
+      "name": "アビスの詠唱者·淵炎"
+    },
+    {
       "key": "abyss-lector-violet-lightning",
       "name": "アビスの詠唱者·紫電"
     },
@@ -10990,6 +10994,18 @@
     {
       "key": "sangonomiya-cohort",
       "name": "珊瑚宮衆"
+    },
+    {
+      "key": "shadowy-husk-defender",
+      "name": "シャドウハスク·守衛"
+    },
+    {
+      "key": "shadowy-husk-line-breaker",
+      "name": "シャドウハスク·破陣"
+    },
+    {
+      "key": "shadowy-husk-standard-bearer",
+      "name": "シャドウハスク·旗令"
     },
     {
       "key": "shogunate-infantry",

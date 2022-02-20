@@ -10498,6 +10498,10 @@
       "name": "Вестник Бездны: Злые течения"
     },
     {
+      "key": "abyss-lector-fathomless-flames",
+      "name": "Чтец Бездны: Пламя бездны"
+    },
+    {
       "key": "abyss-lector-violet-lightning",
       "name": "Чтец Бездны: Пурпурная молния"
     },
@@ -10988,6 +10992,18 @@
     {
       "key": "sangonomiya-cohort",
       "name": "Сторонник Сангономии"
+    },
+    {
+      "key": "shadowy-husk-defender",
+      "name": "Чёрный доспех: Гвардеец"
+    },
+    {
+      "key": "shadowy-husk-line-breaker",
+      "name": "Чёрный доспех: Штурмовик"
+    },
+    {
+      "key": "shadowy-husk-standard-bearer",
+      "name": "Чёрный доспех: Знаменосец"
     },
     {
       "key": "shogunate-infantry",

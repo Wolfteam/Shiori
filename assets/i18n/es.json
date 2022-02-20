@@ -10503,6 +10503,10 @@
       "name": "Emisario del Abismo - Rápidos malignos"
     },
     {
+      "key": "abyss-lector-fathomless-flames",
+      "name": "Bardo del Abismo - Llamas abismales"
+    },
+    {
       "key": "abyss-lector-violet-lightning",
       "name": "Bardo del Abismo - Trueno púrpura"
     },
@@ -10993,6 +10997,18 @@
     {
       "key": "sangonomiya-cohort",
       "name": "Secuaz de Sangonomiya"
+    },
+    {
+      "key": "shadowy-husk-defender",
+      "name": "Soldado del Vacío - Defensor"
+    },
+    {
+      "key": "shadowy-husk-line-breaker",
+      "name": "Soldado del Vacío - Rompefilas"
+    },
+    {
+      "key": "shadowy-husk-standard-bearer",
+      "name": "Soldado del Vacío - Abanderado"
     },
     {
       "key": "shogunate-infantry",

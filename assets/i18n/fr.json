@@ -10516,6 +10516,10 @@
       "name": "Apôtre de l'Abîme - Torrent"
     },
     {
+      "key": "abyss-lector-fathomless-flames",
+      "name": "Chantre de l'Abîme - Flamme abyssale"
+    },
+    {
       "key": "abyss-lector-violet-lightning",
       "name": "Chantre de l'Abîme - Foudre pourpre"
     },
@@ -11006,6 +11010,18 @@
     {
       "key": "sangonomiya-cohort",
       "name": "Partisan de Sangonomiya"
+    },
+    {
+      "key": "shadowy-husk-defender",
+      "name": "Carapace sombre : Défenseur"
+    },
+    {
+      "key": "shadowy-husk-line-breaker",
+      "name": "Carapace sombre : Brise-formation"
+    },
+    {
+      "key": "shadowy-husk-standard-bearer",
+      "name": "Carapace sombre : Porte-étendard"
     },
     {
       "key": "shogunate-infantry",

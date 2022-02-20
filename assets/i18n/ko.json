@@ -10533,6 +10533,10 @@
       "name": "심연 사도·격류"
     },
     {
+      "key": "abyss-lector-fathomless-flames",
+      "name": "심연 봉독자·심연의 불꽃"
+    },
+    {
       "key": "abyss-lector-violet-lightning",
       "name": "심연 봉독자·자색 뇌전"
     },
@@ -10566,7 +10570,7 @@
     },
     {
       "key": "bolteater-bathysmal-vishap-hatchling",
-      "name": "번개를 삼키는 새끼 심해 용 도마뱀"
+      "name": "번개를 삼키는 심해 용 도마뱀 유체"
     },
     {
       "key": "childe",
@@ -10934,7 +10938,7 @@
     },
     {
       "key": "primordial-bathysmal-vishap-hatchling",
-      "name": "새끼 심해 용 도마뱀·원종"
+      "name": "심해 용 도마뱀 유체·원종"
     },
     {
       "key": "pyro-abyss-mage",
@@ -10974,7 +10978,7 @@
     },
     {
       "key": "rimebiter-bathysmal-vishap-hatchling",
-      "name": "얼음을 짓씹는 새끼 심해 용 도마뱀"
+      "name": "얼음을 짓씹는 심해 용 도마뱀 유체"
     },
     {
       "key": "rock-shield-hilichurl-guard",
@@ -11023,6 +11027,18 @@
     {
       "key": "sangonomiya-cohort",
       "name": "산호궁 사람들"
+    },
+    {
+      "key": "shadowy-husk-defender",
+      "name": "암흑의 빈 갑주·근위"
+    },
+    {
+      "key": "shadowy-husk-line-breaker",
+      "name": "암흑의 빈 갑주·파진"
+    },
+    {
+      "key": "shadowy-husk-standard-bearer",
+      "name": "암흑의 빈 갑주·기수"
     },
     {
       "key": "shogunate-infantry",

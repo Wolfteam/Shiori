@@ -10525,6 +10525,10 @@
       "name": "Abyss Herald: Wicked Torrents"
     },
     {
+      "key": "abyss-lector-fathomless-flames",
+      "name": "Abyss Lector: Fathomless Flames"
+    },
+    {
       "key": "abyss-lector-violet-lightning",
       "name": "Abyss Lector: Violet Lightning"
     },
@@ -11015,6 +11019,18 @@
     {
       "key": "sangonomiya-cohort",
       "name": "Sangonomiya Cohort"
+    },
+    {
+      "key": "shadowy-husk-defender",
+      "name": "Shadowy Husk: Defender"
+    },
+    {
+      "key": "shadowy-husk-line-breaker",
+      "name": "Shadowy Husk: Line Breaker"
+    },
+    {
+      "key": "shadowy-husk-standard-bearer",
+      "name": "Shadowy Husk: Standard Bearer"
     },
     {
       "key": "shogunate-infantry",

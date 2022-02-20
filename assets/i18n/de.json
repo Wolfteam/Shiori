@@ -10526,6 +10526,10 @@
       "name": "Abgrundbote – Reißender Strom"
     },
     {
+      "key": "abyss-lector-fathomless-flames",
+      "name": "Abgrundsänger – Abgrundflammen"
+    },
+    {
       "key": "abyss-lector-violet-lightning",
       "name": "Abgrundsänger – Lila Blitze"
     },
@@ -11016,6 +11020,18 @@
     {
       "key": "sangonomiya-cohort",
       "name": "Sangonomiya-Kohorte"
+    },
+    {
+      "key": "shadowy-husk-defender",
+      "name": "Hülle der Finsternis – Garde"
+    },
+    {
+      "key": "shadowy-husk-line-breaker",
+      "name": "Hülle der Finsternis – Formationszerstörer"
+    },
+    {
+      "key": "shadowy-husk-standard-bearer",
+      "name": "Hülle der Finsternis – Standarte"
     },
     {
       "key": "shogunate-infantry",
