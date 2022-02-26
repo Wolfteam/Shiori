@@ -55,6 +55,7 @@ dependencies:
   path_provider: ^2.0.8
   permission_handler: ^8.3.0
   pull_to_refresh: ^2.0.0
+  purchases_flutter: ^3.9.5
   rate_my_app: ^1.1.1+1
   responsive_builder: ^0.4.1
   responsive_grid: ^2.0.0
