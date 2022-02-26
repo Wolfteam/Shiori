@@ -54,7 +54,7 @@ void main() {
 
   Future<CustomBuildModel> _saveCustomBuild(String charKey) async {
     final artifact = _genshinService.getArtifactForCard(_thunderingFuryKey);
-    final weapon = _genshinService.getWeaponForCard(_aquilaFavoniaKey);
+    final weapon = _genshinService.getWeapon(_aquilaFavoniaKey);
     return _dataService.customBuilds.saveCustomBuild(
       charKey,
       '$charKey pro DPS',
@@ -69,11 +69,11 @@ void main() {
           index: 0,
           rarity: weapon.rarity,
           refinement: 5,
-          baseAtk: weapon.baseAtk,
-          subStatType: weapon.subStatType,
-          subStatValue: weapon.subStatValue,
-          name: weapon.name,
+          subStatType: weapon.secondaryStat,
+          name: 'Aquila Favonia',
           image: weapon.image,
+          stat: weapon.stats.last,
+          stats: weapon.stats,
         ),
       ],
       [
@@ -593,6 +593,28 @@ void main() {
         orElse: () => throw Exception('Invalid custom build state'),
       ),
     );
+
+    blocTest<CustomBuildBloc, CustomBuildState>(
+      'stat changed',
+      build: () => _getBloc(),
+      act: (bloc) {
+        final weapon = _genshinService.getWeapon(_aquilaFavoniaKey);
+        return bloc
+          ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
+          ..add(const CustomBuildEvent.characterChanged(newKey: _keqingKey))
+          ..add(const CustomBuildEvent.addWeapon(key: _aquilaFavoniaKey))
+          ..add(CustomBuildEvent.weaponStatChanged(key: _aquilaFavoniaKey, newValue: weapon.stats[3]));
+      },
+      verify: (bloc) => bloc.state.maybeMap(
+        loaded: (state) {
+          final stat = _genshinService.getWeapon(_aquilaFavoniaKey).stats[3];
+          expect(state.weapons.length == 1, true);
+          expect(state.weapons.first.key == _aquilaFavoniaKey, true);
+          expect(state.weapons.first.stat == stat, true);
+        },
+        orElse: () => throw Exception('Invalid custom build state'),
+      ),
+    );
   });
 
   group('Artifacts', () {
@@ -863,41 +885,48 @@ void main() {
     blocTest<CustomBuildBloc, CustomBuildState>(
       'all stuff was set',
       build: () => _getBloc(),
-      act: (bloc) => bloc
-        ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
-        ..add(const CustomBuildEvent.characterChanged(newKey: _keqingKey))
-        ..add(const CustomBuildEvent.isRecommendedChanged(newValue: true))
-        ..add(const CustomBuildEvent.showOnCharacterDetailChanged(newValue: false))
-        ..add(const CustomBuildEvent.addNote(note: 'You need C6'))
-        ..add(const CustomBuildEvent.addSkillPriority(type: CharacterSkillType.elementalBurst))
-        ..add(const CustomBuildEvent.addArtifact(key: _thunderingFuryKey, type: ArtifactType.flower, statType: StatType.hp))
-        ..add(const CustomBuildEvent.addArtifact(key: _thunderingFuryKey, type: ArtifactType.plume, statType: StatType.atk))
-        ..add(const CustomBuildEvent.addArtifact(key: _thunderingFuryKey, type: ArtifactType.clock, statType: StatType.atkPercentage))
-        ..add(const CustomBuildEvent.addArtifact(key: _thunderingFuryKey, type: ArtifactType.goblet, statType: StatType.electroDmgBonusPercentage))
-        ..add(const CustomBuildEvent.addArtifact(key: _thunderingFuryKey, type: ArtifactType.crown, statType: StatType.critDmgPercentage))
-        ..add(
-          const CustomBuildEvent.addArtifactSubStats(
-            type: ArtifactType.crown,
-            subStats: [
-              StatType.critRatePercentage,
-              StatType.atkPercentage,
-              StatType.atk,
-            ],
-          ),
-        )
-        ..add(const CustomBuildEvent.addWeapon(key: _aquilaFavoniaKey))
-        ..add(
-          const CustomBuildEvent.addTeamCharacter(key: _ganyuKey, roleType: CharacterRoleType.offFieldDps, subType: CharacterRoleSubType.cryo),
-        )
-        ..add(const CustomBuildEvent.saveChanges()),
+      act: (bloc) {
+        final weapon = _genshinService.getWeapon(_aquilaFavoniaKey);
+        return bloc
+          ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
+          ..add(const CustomBuildEvent.characterChanged(newKey: _keqingKey))
+          ..add(const CustomBuildEvent.isRecommendedChanged(newValue: true))
+          ..add(const CustomBuildEvent.showOnCharacterDetailChanged(newValue: false))
+          ..add(const CustomBuildEvent.addNote(note: 'You need C6'))
+          ..add(const CustomBuildEvent.addSkillPriority(type: CharacterSkillType.elementalBurst))
+          ..add(const CustomBuildEvent.addArtifact(key: _thunderingFuryKey, type: ArtifactType.flower, statType: StatType.hp))
+          ..add(const CustomBuildEvent.addArtifact(key: _thunderingFuryKey, type: ArtifactType.plume, statType: StatType.atk))
+          ..add(const CustomBuildEvent.addArtifact(key: _thunderingFuryKey, type: ArtifactType.clock, statType: StatType.atkPercentage))
+          ..add(const CustomBuildEvent.addArtifact(key: _thunderingFuryKey, type: ArtifactType.goblet, statType: StatType.electroDmgBonusPercentage))
+          ..add(const CustomBuildEvent.addArtifact(key: _thunderingFuryKey, type: ArtifactType.crown, statType: StatType.critDmgPercentage))
+          ..add(
+            const CustomBuildEvent.addArtifactSubStats(
+              type: ArtifactType.crown,
+              subStats: [
+                StatType.critRatePercentage,
+                StatType.atkPercentage,
+                StatType.atk,
+              ],
+            ),
+          )
+          ..add(const CustomBuildEvent.addWeapon(key: _aquilaFavoniaKey))
+          ..add(CustomBuildEvent.weaponStatChanged(key: _aquilaFavoniaKey, newValue: weapon.stats.first))
+          ..add(
+            const CustomBuildEvent.addTeamCharacter(key: _ganyuKey, roleType: CharacterRoleType.offFieldDps, subType: CharacterRoleSubType.cryo),
+          )
+          ..add(const CustomBuildEvent.saveChanges());
+      },
       verify: (bloc) => bloc.state.maybeMap(
         loaded: (state) {
+          final stat = _genshinService.getWeapon(_aquilaFavoniaKey).stats.first;
           expect(state.character.key, _keqingKey);
           expect(state.isRecommended, true);
           expect(state.showOnCharacterDetail, false);
           expect(state.skillPriorities.length == 1, true);
           expect(state.notes.length == 1, true);
           expect(state.weapons.length == 1, true);
+          expect(state.weapons.first.stat.level, stat.level);
+          expect(state.weapons.first.stat.isAnAscension, stat.isAnAscension);
           expect(state.artifacts.length == 5, true);
           expect(state.subStatsSummary.isNotEmpty, true);
           expect(state.teamCharacters.length == 1, true);

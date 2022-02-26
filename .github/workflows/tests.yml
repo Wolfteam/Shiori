@@ -17,9 +17,9 @@ jobs:
           echo "class Secrets { static String appCenterKey = '1234'; }" > lib/infrastructure/telemetry/secrets.dart
 
       - name: Install and set flutter version
-        uses: subosito/flutter-action@v2.0.4
+        uses: subosito/flutter-action@v2.3.0
         with:
-          flutter-version: '2.8.1'
+          flutter-version: '2.10.2'
           
       - name: Generate localization files
         run: |

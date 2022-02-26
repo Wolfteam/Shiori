@@ -174,7 +174,7 @@ class CustomBuildsDataServiceImpl implements CustomBuildsDataService {
   }
 
   Future<List<CustomBuildWeapon>> _saveWeapons(int buildKey, List<CustomBuildWeaponModel> weapons) async {
-    final buildWeapons = weapons.map((e) => CustomBuildWeapon(buildKey, e.key, e.index, e.refinement)).toList();
+    final buildWeapons = weapons.map((e) => CustomBuildWeapon(buildKey, e.key, e.index, e.refinement, e.stat.level, e.stat.isAnAscension)).toList();
     await _weaponsBox.addAll(buildWeapons);
     return buildWeapons;
   }
@@ -264,17 +264,19 @@ class CustomBuildsDataServiceImpl implements CustomBuildsDataService {
       isRecommended: build.isRecommended,
       character: character,
       weapons: buildWeapons.map((e) {
-        final weapon = _genshinService.getWeaponForCard(e.weaponKey);
+        final weapon = _genshinService.getWeapon(e.weaponKey);
+        final translation = _genshinService.getWeaponTranslation(e.weaponKey);
+        final stat = e.level <= 0 ? weapon.stats.last : weapon.stats.firstWhere((el) => el.level == e.level && el.isAnAscension == e.isAnAscension);
         return CustomBuildWeaponModel(
           key: e.weaponKey,
           index: e.index,
           refinement: e.refinement,
-          name: weapon.name,
-          image: weapon.image,
+          name: translation.name,
+          image: weapon.fullImagePath,
           rarity: weapon.rarity,
-          baseAtk: weapon.baseAtk,
-          subStatType: weapon.subStatType,
-          subStatValue: weapon.subStatValue,
+          subStatType: weapon.secondaryStat,
+          stat: stat,
+          stats: weapon.stats,
         );
       }).toList()
         ..sort((x, y) => x.index.compareTo(y.index)),

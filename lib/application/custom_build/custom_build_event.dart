@@ -34,6 +34,11 @@ class CustomBuildEvent with _$CustomBuildEvent {
     required int newValue,
   }) = _WeaponRefinementChanged;
 
+  const factory CustomBuildEvent.weaponStatChanged({
+    required String key,
+    required WeaponFileStatModel newValue,
+  }) = _WeaponStatChanged;
+
   const factory CustomBuildEvent.weaponsOrderChanged({required List<SortableItem> weapons}) = _WeaponsOrderChanged;
 
   const factory CustomBuildEvent.deleteWeapon({required String key}) = _DeleteWeapon;

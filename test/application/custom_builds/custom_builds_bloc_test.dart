@@ -43,7 +43,7 @@ void main() {
 
   Future<CustomBuildModel> _saveCustomBuild(String charKey) async {
     final artifact = _genshinService.getArtifactForCard(_thunderingFuryKey);
-    final weapon = _genshinService.getWeaponForCard(_aquilaFavoniaKey);
+    final weapon = _genshinService.getWeapon(_aquilaFavoniaKey);
     return _dataService.customBuilds.saveCustomBuild(
       charKey,
       '$charKey pro DPS',
@@ -58,11 +58,11 @@ void main() {
           index: 0,
           rarity: weapon.rarity,
           refinement: 5,
-          baseAtk: weapon.baseAtk,
-          subStatType: weapon.subStatType,
-          subStatValue: weapon.subStatValue,
-          name: weapon.name,
+          subStatType: weapon.secondaryStat,
+          name: 'Aquila Favonia',
           image: weapon.image,
+          stat: weapon.stats.last,
+          stats: weapon.stats,
         ),
       ],
       [

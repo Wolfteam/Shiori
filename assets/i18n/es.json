@@ -2723,6 +2723,93 @@
       ]
     },
     {
+      "key": "kamisato-ayato",
+      "name": "Kamisato Ayato",
+      "title": "El Vigoroso Estratega",
+      "description": "Joven promesa y actual líder del clan Kamisato de la Comisión Yashiro. Refinado y educado, siempre tiene una forma de hacer las cosas.",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ]
+    },
+    {
       "key": "keqing",
       "name": "Keching",
       "title": "la Conductora del Trueno",
@@ -6295,86 +6382,133 @@
     {
       "key": "yae-miko",
       "name": "Yae Miko",
-      "title": "¿?",
-      "description": "",
+      "title": "La Kitsune Taimada",
+      "description": "La Suma Sacerdotisa del Gran Santuario Narukami y editora en jefe de la Editorial Yae. Bajo su increíble encanto esconde una inteligencia y una astucia inimaginables.",
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Kitsune devorapecados",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Ataque Normal",
+              "description": "Invoca espíritus kitsune para realizar hasta 3 ataques que infligen Daño Electro.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Ataque Cargado",
+              "description": "Consume una cierta cantidad de Aguante para infligir Daño Electro en el AdE después de un corto tiempo de invocación.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Ataque Descendente",
+              "description": "Concentra el poder del trueno y desciende hacia el suelo, dañando a todos los enemigos cercanos e infligiendo Daño Electro en el AdE en el momento del impacto.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "Daño de 1er golpe|{param1}%",
+            "Daño de 2.º golpe|{param2}%",
+            "Daño de 3er golpe|{param3}%",
+            "Daño de ATQ Cargado|{param4}%",
+            "Coste de Aguante de ATQ Cargado|{param5} pts.",
+            "Daño de Caída|{param6}%",
+            "Daño de impacto de caída baja/alta|{param7}% / {param8}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Maleficio yako: Cerezo kitsune aniquilador",
+          "description": "Yae Miko no necesita hacer personalmente las tareas más triviales mientras pueda usar los espíritus de otros seres.\r\nHace un rápido movimiento e invoca un cerezo kitsune.\r\n",
+          "abilities": [
+            {
+              "name": "Cerezo kitsune",
+              "description": "Tiene las siguientes características:\r\n",
+              "descriptions": [
+                "Cada cierto tiempo, hace descender un rayo sobre un enemigo cercano para infligirle Daño Electro.",
+                "Si se invoca un cerezo kitsune cuando ya existen otros, los ya existentes subirán de nivel y el daño que infligen con sus ataques aumentará.",
+                "Esta habilidad puede usarse tres veces.",
+                "Solo pueden existir 3 cerezos kitsune al mismo tiempo. Cuando se crea uno, su nivel inicial es 1 y solo podrá aumentar a nivel 3 como máximo. Si se crea un cerezo kitsune en una ubicación que esté excesivamente cerca de otro, el ya existente se destruirá."
+              ]
+            }
+          ],
+          "stats": [
+            "Daño de cerezo kitsune niv. 1|{param1}%",
+            "Daño de cerezo kitsune niv. 2|{param2}%",
+            "Daño de cerezo kitsune niv. 3|{param3}%",
+            "Daño de cerezo kitsune niv. 4|{param4}%",
+            "Duración|{param5} s",
+            "TdE|{param6} s"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
+          "title": "Técnica secreta suprema: Encarnación de Kitsune Celestial",
+          "description": "En Inazuma existen leyendas sobre posesiones kitsune. Una de las más particulares es la de la posesión por Kitsune Celestiales que caen con forma de relámpago sobre los intrusos que se infiltran en el Gran Santuario Narukami. Cuando el relámpago desciende, inflige Daño Electro en el AdE.\r\nAl lanzar la habilidad, Yae Miko destruye los cerezos kitsune cercanos, los cuales se transforman en relámpagos de Kitsune Celestiales que infligen Daño Electro en el AdE. Un relámpago de Kitsune Celestial caerá por cada cerezo kitsune que se destruya de esta forma.\r\n",
           "abilities": [],
-          "stats": []
+          "stats": [
+            "Daño de habilidad|{param1}%",
+            "Daño de relámpago de Kitsune Celestial|{param2}%",
+            "TdE|{param3} s",
+            "Energía Elemental|{param4}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "Meditación de yako",
+          "description": "Al fabricar materiales de talento, hay una probabilidad del 25% de obtener otro aleatorio de la misma región y tipo que los materiales usados.\r\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
+          "title": "Sombra sagrada",
+          "description": "Al usar Técnica secreta suprema: Encarnación de Kitsune Celestial, el TdE de Maleficio yako: Cerezo kitsune aniquilador se reiniciará una vez por cada cerezo kitsune destruido.\r\n",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "NA",
-          "description": "",
+          "title": "Bendición del despertar",
+          "description": "Aumenta en un 0.15% el daño que infligen los cerezos kitsune por cada punto de Maestría Elemental de Yae Miko.\r\n",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "Ofrenda de los yako",
+          "description": "Yae Miko recupera 8 pts. de Energía elemental por cada relámpago de Kitsune Celestial desencadenado con Técnica secreta suprema: Encarnación de Kitsune Celestial.\r\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "Aullido lunar",
+          "description": "Al ser creados, los cerezos aniquiladores comienzan con nivel 2, pueden aumentarse hasta nivel 4 y su alcance de ataque aumenta en un 60%.\r\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "Heptatransformación",
+          "description": "Aumenta el nivel de habilidad de Maleficio yako: Cerezo kitsune aniquilador +3.\r\nPuede ser aumentado hasta Niv. 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "Cerezo de la tormenta",
+          "description": "Cuando el rayo de un cerezo kitsune golpea a un enemigo, todos los miembros del equipo cercanos obtienen un 20% de Bono de Daño Electro durante 5 s.\r\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "Burla despiadada",
+          "description": "Aumenta el nivel de habilidad de Técnica secreta suprema: Encarnación de Kitsune Celestial +3.\r\nPuede ser aumentado hasta Niv. 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
+          "title": "Técnica prohibida: Masacre",
+          "description": "Los ataques de los cerezos kitsune ignoran un 60% de la DEF del enemigo.\r\n",
           "descriptions": []
         }
       ]
@@ -7509,6 +7643,18 @@
       ]
     },
     {
+      "key": "kaguras-verity",
+      "name": "Axioma de la Kagura",
+      "description": "Una campana divina bendecida por la Suma Sacerdotisa y usada en las actuaciones de danza kagura. De ella emana la fragancia del Cerezo Sagrado.",
+      "refinements": [
+        "Al usar la Habilidad Elemental, obtienes el efecto de “danza kagura”, el cual aumenta en un {color}12{/color}% el daño de la Habilidad Elemental del personaje que equipa esta arma. Este efecto dura 16 s y puede acumularse hasta 3 veces. Al tener 3 acumulaciones, dicho personaje obtiene un {color}12{/color}% de todos los Bonos de Daño Elemental.",
+        "Al usar la Habilidad Elemental, obtienes el efecto de “danza kagura”, el cual aumenta en un {color}15{/color}% el daño de la Habilidad Elemental del personaje que equipa esta arma. Este efecto dura 16 s y puede acumularse hasta 3 veces. Al tener 3 acumulaciones, dicho personaje obtiene un {color}15{/color}% de todos los Bonos de Daño Elemental.",
+        "Al usar la Habilidad Elemental, obtienes el efecto de “danza kagura”, el cual aumenta en un {color}18{/color}% el daño de la Habilidad Elemental del personaje que equipa esta arma. Este efecto dura 16 s y puede acumularse hasta 3 veces. Al tener 3 acumulaciones, dicho personaje obtiene un {color}18{/color}% de todos los Bonos de Daño Elemental.",
+        "Al usar la Habilidad Elemental, obtienes el efecto de “danza kagura”, el cual aumenta en un {color}21{/color}% el daño de la Habilidad Elemental del personaje que equipa esta arma. Este efecto dura 16 s y puede acumularse hasta 3 veces. Al tener 3 acumulaciones, dicho personaje obtiene un {color}21{/color}% de todos los Bonos de Daño Elemental.",
+        "Al usar la Habilidad Elemental, obtienes el efecto de “danza kagura”, el cual aumenta en un {color}24{/color}% el daño de la Habilidad Elemental del personaje que equipa esta arma. Este efecto dura 16 s y puede acumularse hasta 3 veces. Al tener 3 acumulaciones, dicho personaje obtiene un {color}24{/color}% de todos los Bonos de Daño Elemental."
+      ]
+    },
+    {
       "key": "katsuragikiri-nagamasa",
       "name": "Asesinato de Katsuragi",
       "description": "Una pesada y tenaz espada forjada en Tatarasuna.",
@@ -7674,6 +7820,18 @@
         "El daño infligido por la Habilidad Definitiva del portador de esta arma aumenta en un {color}0.18{/color}% por cada punto de la Energía Elemental máxima total de todos los miembros del equipo. El daño puede aumentar hasta un {color}60{/color}% de esta forma.",
         "El daño infligido por la Habilidad Definitiva del portador de esta arma aumenta en un {color}0.21{/color}% por cada punto de la Energía Elemental máxima total de todos los miembros del equipo. El daño puede aumentar hasta un {color}70{/color}% de esta forma.",
         "El daño infligido por la Habilidad Definitiva del portador de esta arma aumenta en un {color}0.24{/color}% por cada punto de la Energía Elemental máxima total de todos los miembros del equipo. El daño puede aumentar hasta un {color}80{/color}% de esta forma."
+      ]
+    },
+    {
+      "key": "oathsworn-eye",
+      "name": "Ojo del Juramento",
+      "description": "Un tesoro del reino de Byakuya guardado en el Dainichi Mikoshi. Tras la llegada del dios serpiente, se usó en Enkanomiya como testigo de grandes juramentos y deseos.",
+      "refinements": [
+        "Tras usar la Habilidad Elemental, la Recarga de Energía aumenta en un {color}24{/color}% durante 10 s.",
+        "Tras usar la Habilidad Elemental, la Recarga de Energía aumenta en un {color}30{/color}% durante 10 s.",
+        "Tras usar la Habilidad Elemental, la Recarga de Energía aumenta en un {color}36{/color}% durante 10 s.",
+        "Tras usar la Habilidad Elemental, la Recarga de Energía aumenta en un {color}42{/color}% durante 10 s.",
+        "Tras usar la Habilidad Elemental, la Recarga de Energía aumenta en un {color}48{/color}% durante 10 s."
       ]
     },
     {
@@ -9443,7 +9601,7 @@
     {
       "key": "maguu-kishin",
       "name": "Engranaje Oni",
-      "description": "El núcleo que permite al Oni Espadachín, una máquina sin vida propia, moverse y blandir su espada como alguien vivo.\r\nPor muy diestro que sea en las artes marciales o por muchos bellos recuerdos que conserve, este núcleo siempre acabará deteriorándose, igual que cualquier cuerpo humano.\r\nSolo será posible estar más cerca de la eternidad si las cuatro extremidades y el cuerpo se convirtien en una resistente máquina y el corazón en un preciso engranaje."
+      "description": "El núcleo que permite al Oni Espadachín, una máquina sin vida propia, moverse y blandir su espada como alguien vivo.\r\nPor muy diestro que sea en las artes marciales o por muchos bellos recuerdos que conserve, este núcleo siempre acabará deteriorándose, igual que cualquier cuerpo humano.\r\nSolo será posible estar más cerca de la eternidad si las cuatro extremidades y el cuerpo se convierten en una resistente máquina y el corazón en un preciso engranaje."
     },
     {
       "key": "mask-of-the-kijin",
@@ -9529,6 +9687,11 @@
       "key": "mora",
       "name": "Mora",
       "description": "Moneda común. El lenguaje que todo el mundo entiende."
+    },
+    {
+      "key": "mudra-of-the-malefic-general",
+      "name": "Mudra de la Shogun implacable",
+      "description": "Una parte del cuerpo de una marioneta obtenida en el plano de la eutimia. El gesto que tiene simboliza el concepto de “lo que uno ve y hace”.\r\nElla puede seguir usando estos gestos trascendentales incluso ahora que se ha convertido en una diosa del desastre. En cuanto divisa algo, ejecuta un rápido tajo con su espada.\r\nY, aun así, tras muchos desastres ocurridos a lo largo del tiempo, la carcasa de la implacable Shogun tuvo que volver a renacer."
     },
     {
       "key": "mushroom",
@@ -10046,6 +10209,16 @@
       "description": "Material de mejora de talento.\r\nLa transitoriedad es el mayor sueño del Reino del Trueno.\r\nLa fugacidad de la gloria y el esplendor es la mayor expresión de la belleza mortal. ¿O acaso no es la vida humana breve y fugaz como un relámpago? Igual que un hermoso sueño o unos fuegos artificiales, nosotros también dejamos una maravillosa huella en el eterno cielo de la noche."
     },
     {
+      "key": "tears-of-the-calamitous-god",
+      "name": "Lágrima de la diosa del desastre",
+      "description": "Una parte del cuerpo de una marioneta obtenida en el plano de la eutimia. Tiene la forma del ojo del castigo atronador.\r\nPuesto que un dios del desastre es capaz de provocar catástrofes y maldiciones con solo una mirada, la gente suele echarles la culpa de sus propias desgracias. Sin embargo, piénsalo: ¿te seguiría pasando lo mismo si tuvieras la suficiente determinación y tus ideales fueran lo suficientemente firmes?\r\nPor muchos desastres que ocurran, incluso un ojo maligno puede purificarse con sus propias lágrimas."
+    },
+    {
+      "key": "the-meaning-of-aeons",
+      "name": "Máxima de la catástrofe",
+      "description": "Un accesorio para la cabeza que te llevaste del plano de la eutimia una vez que todo volvió a la calma.\r\nUn solo pensamiento puede acabar con todos los desastres, y siempre habrá pensamientos que trasciendan las barreras del tiempo.\r\nEntre tantas calamidades, ¿se habrá transmitido realmente el mensaje de Makoto?"
+    },
+    {
       "key": "tile-of-decarabians-tower",
       "name": "Fragmento de azulejo de Decarabian",
       "description": "Material de ascensión de arma.\r\nEn el pasado, el lugar actualmente conocido como la Guarida de Stormterror fue la capital construida por Decarabian, el Arconte de la Tempestad. Dado que este próspero sueño fue creado por su poder, las piezas rotas que quedaron cuando el sueño se hizo añicos todavía poseen un gran poder."
@@ -10328,6 +10501,10 @@
     {
       "key": "abyss-herald-wicked-torrents",
       "name": "Emisario del Abismo - Rápidos malignos"
+    },
+    {
+      "key": "abyss-lector-fathomless-flames",
+      "name": "Bardo del Abismo - Llamas abismales"
     },
     {
       "key": "abyss-lector-violet-lightning",
@@ -10658,6 +10835,10 @@
       "name": "Rey Lobo del Norte, Señor de los Lobos"
     },
     {
+      "key": "magatsu-mitake-narukami-no-mikoto",
+      "name": "Todopoderosa Narukami de la catástrofe"
+    },
+    {
       "key": "maguu-kenki",
       "name": "Oni Espadachín"
     },
@@ -10816,6 +10997,18 @@
     {
       "key": "sangonomiya-cohort",
       "name": "Secuaz de Sangonomiya"
+    },
+    {
+      "key": "shadowy-husk-defender",
+      "name": "Soldado del Vacío - Defensor"
+    },
+    {
+      "key": "shadowy-husk-line-breaker",
+      "name": "Soldado del Vacío - Rompefilas"
+    },
+    {
+      "key": "shadowy-husk-standard-bearer",
+      "name": "Soldado del Vacío - Abanderado"
     },
     {
       "key": "shogunate-infantry",
