@@ -10,6 +10,7 @@ import 'package:shiori/domain/services/locale_service.dart';
 import 'package:shiori/domain/services/logging_service.dart';
 import 'package:shiori/domain/services/network_service.dart';
 import 'package:shiori/domain/services/notification_service.dart';
+import 'package:shiori/domain/services/purchase_service.dart';
 import 'package:shiori/domain/services/settings_service.dart';
 import 'package:shiori/domain/services/telemetry_service.dart';
 import 'package:shiori/infrastructure/infrastructure.dart';
@@ -136,6 +137,12 @@ class Injection {
     return CustomBuildsBloc(dataService);
   }
 
+  static DonationsBloc get donationsBloc {
+    final purchaseService = getIt<PurchaseService>();
+    final networkService = getIt<NetworkService>();
+    return DonationsBloc(purchaseService, networkService);
+  }
+
   //TODO: USE THIS PROP
   // static CalculatorAscMaterialsItemBloc get calculatorAscMaterialsItemBloc {
   //   final genshinService = getIt<GenshinService>();
@@ -215,5 +222,9 @@ class Injection {
 
     final changelogProvider = ChangelogProviderImpl(loggingService, networkService);
     getIt.registerSingleton<ChangelogProvider>(changelogProvider);
+
+    final purchaseService = PurchaseServiceImpl(loggingService);
+    await purchaseService.init();
+    getIt.registerSingleton<PurchaseService>(purchaseService);
   }
 }
