@@ -8,6 +8,7 @@ class DonationsState with _$DonationsState {
     required List<PackageItemModel> packages,
     required bool isInitialized,
     required bool noInternetConnection,
+    required bool canMakePurchases,
   }) = _InitialState;
 
   const factory DonationsState.purchaseCompleted({

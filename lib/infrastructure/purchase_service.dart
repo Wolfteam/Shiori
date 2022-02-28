@@ -4,6 +4,8 @@ import 'package:collection/collection.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:purchases_flutter/purchases_flutter.dart';
+import 'package:shiori/domain/enums/enums.dart';
+import 'package:shiori/domain/extensions/string_extensions.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/logging_service.dart';
 import 'package:shiori/domain/services/purchase_service.dart';
@@ -56,6 +58,16 @@ class PurchaseServiceImpl implements PurchaseService {
     }
 
     return Future.value(false);
+  }
+
+  @override
+  Future<bool> canMakePurchases() async {
+    try {
+      return await Purchases.canMakePayments();
+    } catch (e, s) {
+      _handleError('canMakePurchases', e, s);
+      return false;
+    }
   }
 
   @override
@@ -117,16 +129,45 @@ class PurchaseServiceImpl implements PurchaseService {
     }
 
     try {
-      final transactions = await Purchases.restoreTransactions();
-      if (entitlementIdentifier == null) {
-        return transactions.entitlements.active.isNotEmpty;
-      }
-
-      final entitlement = transactions.entitlements.active.values.firstWhereOrNull((el) => el.identifier == entitlementIdentifier);
-      return entitlement != null;
+      final features = await _getUnlockedFeatures(entitlementIdentifier: entitlementIdentifier);
+      return features.isNotEmpty;
     } catch (e, s) {
       _handleError('restorePurchases', e, s);
       return false;
+    }
+  }
+
+  @override
+  Future<List<AppUnlockedFeature>> getUnlockedFeatures() async {
+    try {
+      if (!await isPlatformSupported()) {
+        return [];
+      }
+
+      if (await Purchases.isAnonymous) {
+        return [];
+      }
+
+      final features = await _getUnlockedFeatures();
+      return features;
+    } catch (e, s) {
+      _handleError('getUnlockedFeatures', e, s);
+      return [];
+    }
+  }
+
+  Future<List<AppUnlockedFeature>> _getUnlockedFeatures({String? entitlementIdentifier}) async {
+    try {
+      final transactions = await Purchases.restoreTransactions();
+      if (entitlementIdentifier.isNotNullEmptyOrWhitespace) {
+        final activeEntitlements = transactions.entitlements.active.values.any((el) => el.isActive);
+        return activeEntitlements ? AppUnlockedFeature.values : [];
+      }
+
+      final entitlement = transactions.entitlements.active.values.firstWhereOrNull((el) => el.identifier == entitlementIdentifier && el.isActive);
+      return entitlement != null ? AppUnlockedFeature.values : [];
+    } catch (e) {
+      rethrow;
     }
   }
 

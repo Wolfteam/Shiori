@@ -1,3 +1,4 @@
+import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/models/models.dart';
 
 abstract class PurchaseService {
@@ -7,6 +8,8 @@ abstract class PurchaseService {
 
   Future<bool> isPlatformSupported();
 
+  Future<bool> canMakePurchases();
+
   Future<bool> logIn(String userId);
 
   Future<List<PackageItemModel>> getInAppPurchases();
@@ -14,4 +17,6 @@ abstract class PurchaseService {
   Future<bool> purchase(String userId, String identifier, String offeringIdentifier);
 
   Future<bool> restorePurchases(String userId, {String? entitlementIdentifier});
+
+  Future<List<AppUnlockedFeature>> getUnlockedFeatures();
 }

@@ -10,6 +10,7 @@ import 'package:shiori/presentation/shared/bullet_list.dart';
 import 'package:shiori/presentation/shared/dialogs/text_dialog.dart';
 import 'package:shiori/presentation/shared/loading.dart';
 import 'package:shiori/presentation/shared/nothing_found_column.dart';
+import 'package:shiori/presentation/shared/shiori_icons.dart';
 import 'package:shiori/presentation/shared/styles.dart';
 import 'package:shiori/presentation/shared/utils/toast_utils.dart';
 
@@ -22,7 +23,7 @@ class DonationsBottomSheet extends StatelessWidget {
     return BlocProvider(
       create: (ctx) => Injection.donationsBloc..add(const DonationsEvent.init()),
       child: CommonBottomSheet(
-        titleIcon: Icons.heart_broken,
+        titleIcon: Shiori.heart,
         title: s.donations,
         showCancelButton: false,
         showOkButton: false,
@@ -49,67 +50,58 @@ class _BodyState extends State<_Body> {
     return BlocConsumer<DonationsBloc, DonationsState>(
       listener: (ctx, state) {
         state.maybeMap(
-          purchaseCompleted: (state) {
-            final toast = ToastUtils.of(context);
-            if (!state.error) {
-              ToastUtils.showSucceedToast(toast, s.paymentSucceed);
-              Navigator.pop(context);
-            } else {
-              ToastUtils.showWarningToast(toast, s.paymentError);
-            }
-          },
+          purchaseCompleted: (state) => _handlePurchaseOrRestoreCompleted(true, state.error, context),
+          restoreCompleted: (state) => _handlePurchaseOrRestoreCompleted(false, state.error, context),
           orElse: () {},
         );
       },
       builder: (ctx, state) => state.maybeMap(
-        initial: (state) => state.noInternetConnection
-            ? NothingFoundColumn(msg: s.noInternetConnection)
-            : !state.isInitialized
-                ? NothingFoundColumn(msg: s.unknownError)
-                : Column(
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      Text(
-                        s.donationMsg,
-                        textAlign: TextAlign.justify,
-                        style: Theme.of(context).textTheme.subtitle1!.copyWith(fontWeight: FontWeight.bold),
-                      ),
-                      ...state.packages.map(
-                        (e) => _DonationItem(
-                          item: e,
-                          isSelected: _selected == e,
-                          onTap: () => setState(() => _selected = e),
-                        ),
-                      ),
-                      BulletList(
-                        iconSize: 16,
-                        addTooltip: false,
-                        items: [
-                          s.donationMsgA,
-                          s.donationMsgB,
-                        ],
-                      ),
-                      CommonButtonBar(
-                        children: <Widget>[
-                          OutlinedButton(
-                            onPressed: () => Navigator.pop(context),
-                            child: Text(s.cancel, style: TextStyle(color: theme.primaryColor)),
-                          ),
-                          if (state.isInitialized)
-                            OutlinedButton(
-                              onPressed: () => _handleRestore(context),
-                              child: Text(s.restorePurchases, style: TextStyle(color: theme.primaryColor)),
-                            ),
-                          if (state.isInitialized && _selected != null)
-                            ElevatedButton(
-                              onPressed: () => _handleConfirm(context),
-                              child: Text(s.confirm),
-                            )
-                        ],
-                      ),
+        initial: (state) => state.noInternetConnection || !state.isInitialized || !state.canMakePurchases
+            ? _Error(noInternetConnection: state.noInternetConnection, isInitialized: state.isInitialized, canMakePurchases: state.canMakePurchases)
+            : Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Text(
+                    s.donationMsg,
+                    textAlign: TextAlign.center,
+                    style: Theme.of(context).textTheme.subtitle1!.copyWith(fontWeight: FontWeight.bold),
+                  ),
+                  ...state.packages.map(
+                    (e) => _DonationItem(
+                      item: e,
+                      isSelected: _selected == e,
+                      onTap: () => setState(() => _selected = e),
+                    ),
+                  ),
+                  BulletList(
+                    iconSize: 16,
+                    addTooltip: false,
+                    items: [
+                      s.donationMsgA,
+                      s.donationMsgB,
                     ],
                   ),
+                  CommonButtonBar(
+                    children: <Widget>[
+                      OutlinedButton(
+                        onPressed: () => Navigator.pop(context),
+                        child: Text(s.cancel, style: TextStyle(color: theme.primaryColor)),
+                      ),
+                      if (state.packages.isNotEmpty && state.isInitialized)
+                        OutlinedButton(
+                          onPressed: () => _handleRestore(context),
+                          child: Text(s.restorePurchases, style: TextStyle(color: theme.primaryColor)),
+                        ),
+                      if (state.packages.isNotEmpty && state.isInitialized && _selected != null)
+                        ElevatedButton(
+                          onPressed: () => _handleConfirm(context),
+                          child: Text(s.confirm),
+                        )
+                    ],
+                  ),
+                ],
+              ),
         orElse: () => const Loading(useScaffold: false),
       ),
     );
@@ -120,9 +112,10 @@ class _BodyState extends State<_Body> {
     return showDialog(
       context: context,
       builder: (_) => TextDialog.create(
-        title: s.uid,
+        title: s.purchase,
         hintText: s.uid,
         maxLength: DonationsBloc.maxUserIdLength,
+        regexPattern: DonationsBloc.appUserIdRegex,
         child: BulletList(
           iconSize: 16,
           addTooltip: false,
@@ -140,9 +133,10 @@ class _BodyState extends State<_Body> {
     return showDialog(
       context: context,
       builder: (_) => TextDialog.create(
-        title: s.uid,
+        title: s.restorePurchases,
         hintText: s.uid,
         maxLength: DonationsBloc.maxUserIdLength,
+        regexPattern: DonationsBloc.appUserIdRegex,
         child: BulletList(
           iconSize: 16,
           addTooltip: false,
@@ -151,6 +145,24 @@ class _BodyState extends State<_Body> {
         onSave: (val) => context.read<DonationsBloc>().add(DonationsEvent.restorePurchases(userId: val)),
       ),
     );
+  }
+
+  void _handlePurchaseOrRestoreCompleted(bool isPurchase, bool error, BuildContext context) {
+    final s = S.of(context);
+    final toast = ToastUtils.of(context);
+    String msg = '';
+    if (isPurchase) {
+      msg = error ? s.paymentError : s.paymentSucceed;
+    } else {
+      msg = error ? s.restorePurchaseError : s.restorePurchaseSucceed;
+    }
+
+    if (!error) {
+      ToastUtils.showSucceedToast(toast, msg);
+      Navigator.pop(context);
+    } else {
+      ToastUtils.showWarningToast(toast, msg);
+    }
   }
 }
 
@@ -185,5 +197,29 @@ class _DonationItem extends StatelessWidget {
         ),
       ),
     );
+  }
+}
+
+class _Error extends StatelessWidget {
+  final bool noInternetConnection;
+  final bool isInitialized;
+  final bool canMakePurchases;
+
+  const _Error({
+    Key? key,
+    required this.noInternetConnection,
+    required this.isInitialized,
+    required this.canMakePurchases,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    final s = S.of(context);
+    final msg = noInternetConnection
+        ? s.noInternetConnection
+        : !canMakePurchases
+            ? 'Device cannot make purchases'
+            : s.unknownError;
+    return NothingFoundColumn(msg: msg);
   }
 }
