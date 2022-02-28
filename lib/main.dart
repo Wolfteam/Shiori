@@ -12,6 +12,7 @@ import 'domain/services/genshin_service.dart';
 import 'domain/services/locale_service.dart';
 import 'domain/services/logging_service.dart';
 import 'domain/services/notification_service.dart';
+import 'domain/services/purchase_service.dart';
 import 'domain/services/settings_service.dart';
 import 'domain/services/telemetry_service.dart';
 import 'injection.dart';
@@ -86,6 +87,7 @@ class MyApp extends StatelessWidget {
             final localeService = getIt<LocaleService>();
             final telemetryService = getIt<TelemetryService>();
             final deviceInfoService = getIt<DeviceInfoService>();
+            final purchaseService = getIt<PurchaseService>();
             return MainBloc(
               loggingService,
               genshinService,
@@ -93,6 +95,7 @@ class MyApp extends StatelessWidget {
               localeService,
               telemetryService,
               deviceInfoService,
+              purchaseService,
               ctx.read<CharactersBloc>(),
               ctx.read<WeaponsBloc>(),
               ctx.read<HomeBloc>(),
@@ -104,7 +107,8 @@ class MyApp extends StatelessWidget {
           create: (ctx) {
             final settingsService = getIt<SettingsService>();
             final deviceInfoService = getIt<DeviceInfoService>();
-            return SettingsBloc(settingsService, deviceInfoService, ctx.read<MainBloc>(), ctx.read<HomeBloc>());
+            final purchaseService = getIt<PurchaseService>();
+            return SettingsBloc(settingsService, deviceInfoService, purchaseService, ctx.read<MainBloc>(), ctx.read<HomeBloc>());
           },
         ),
         BlocProvider(
