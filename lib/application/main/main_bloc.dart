@@ -77,7 +77,7 @@ class MainBloc extends Bloc<MainEvent, MainState> {
     final state = _loadThemeData(settings.appTheme, settings.accentColor);
 
     if (init) {
-      await Future.delayed(const Duration(milliseconds: 600));
+      await Future.delayed(const Duration(milliseconds: 250));
     }
 
     return state;

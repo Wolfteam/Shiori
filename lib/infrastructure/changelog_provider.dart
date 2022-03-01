@@ -14,6 +14,9 @@ class ChangelogProviderImpl implements ChangelogProvider {
   final LoggingService _loggingService;
   final NetworkService _networkService;
 
+  @override
+  String get defaultChangelog => _defaultChangelog;
+
   ChangelogProviderImpl(this._loggingService, this._networkService);
 
   @override

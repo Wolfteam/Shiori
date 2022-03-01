@@ -159,7 +159,7 @@ class PurchaseServiceImpl implements PurchaseService {
   Future<List<AppUnlockedFeature>> _getUnlockedFeatures({String? entitlementIdentifier}) async {
     try {
       final transactions = await Purchases.restoreTransactions();
-      if (entitlementIdentifier.isNotNullEmptyOrWhitespace) {
+      if (entitlementIdentifier.isNullEmptyOrWhitespace) {
         final activeEntitlements = transactions.entitlements.active.values.any((el) => el.isActive);
         return activeEntitlements ? AppUnlockedFeature.values : [];
       }
