@@ -409,7 +409,6 @@
   "paymentSucceed": "Payment succeed. Thank you for your support.",
   "paymentError": "Payment could not be completed.",
   "donationMsgA": "Your UID will be used to make / restore your purchases.",
-  "donationMsgB": "By donating you will unlock the dark amoled theme.",
   "purchaseMsgA": "Make sure to add a custom suffix to your UID (e.g: 12345678_suffix).",
   "purchaseMsgB": "Make sure to remember the used suffix, you will need it later in case you need to restore your purchases.",
   "purchaseMsgC": "The custom suffix is recommended for security reasons.",

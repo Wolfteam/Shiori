@@ -79,7 +79,6 @@ class _BodyState extends State<_Body> {
                     addTooltip: false,
                     items: [
                       s.donationMsgA,
-                      s.donationMsgB,
                     ],
                   ),
                   CommonButtonBar(
