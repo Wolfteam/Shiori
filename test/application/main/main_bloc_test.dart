@@ -9,6 +9,7 @@ import 'package:shiori/domain/services/device_info_service.dart';
 import 'package:shiori/domain/services/genshin_service.dart';
 import 'package:shiori/domain/services/locale_service.dart';
 import 'package:shiori/domain/services/logging_service.dart';
+import 'package:shiori/domain/services/purchase_service.dart';
 import 'package:shiori/domain/services/settings_service.dart';
 import 'package:shiori/domain/services/telemetry_service.dart';
 import 'package:shiori/infrastructure/infrastructure.dart';
@@ -70,6 +71,7 @@ void main() {
   late final LocaleService _localeService;
   late final TelemetryService _telemetryService;
   late final DeviceInfoService _deviceInfoService;
+  late final PurchaseService _purchaseService;
 
   late final CharactersBloc _charactersBloc;
   late final WeaponsBloc _weaponsBloc;
@@ -94,6 +96,8 @@ void main() {
     _deviceInfoService = MockDeviceInfoService();
     _localeService = LocaleServiceImpl(_settingsService);
     _genshinService = GenshinServiceImpl(_localeService);
+    _purchaseService = MockPurchaseService();
+    when(_purchaseService.getUnlockedFeatures()).thenAnswer((_) => Future.value(AppUnlockedFeature.values));
 
     _charactersBloc = MockCharactersBloc();
     _weaponsBloc = MockWeaponsBloc();
@@ -112,37 +116,29 @@ void main() {
     when(_deviceInfoService.versionChanged).thenReturn(false);
   });
 
-  test('Initial state', () {
-    final bloc = MainBloc(
-      _logger,
-      _genshinService,
-      _settingsService,
-      _localeService,
-      _telemetryService,
-      _deviceInfoService,
-      _charactersBloc,
-      _weaponsBloc,
-      _homeBloc,
-      _artifactsBloc,
-    );
-    expect(bloc.state, const MainState.loading());
-  });
-
-  group('Init', () {
-    blocTest<MainBloc, MainState>(
-      'emits init state',
-      build: () => MainBloc(
+  MainBloc _getBloc() => MainBloc(
         _logger,
         _genshinService,
         _settingsService,
         _localeService,
         _telemetryService,
         _deviceInfoService,
+        _purchaseService,
         _charactersBloc,
         _weaponsBloc,
         _homeBloc,
         _artifactsBloc,
-      ),
+      );
+
+  test('Initial state', () {
+    final bloc = _getBloc();
+    expect(bloc.state, const MainState.loading());
+  });
+
+  group('Init', () {
+    blocTest<MainBloc, MainState>(
+      'emits init state',
+      build: () => _getBloc(),
       act: (bloc) => bloc.add(const MainEvent.init()),
       expect: () => [
         MainState.loaded(
@@ -161,18 +157,7 @@ void main() {
   group('Theme changed', () {
     blocTest<MainBloc, MainState>(
       'updates the theme in the state',
-      build: () => MainBloc(
-        _logger,
-        _genshinService,
-        _settingsService,
-        _localeService,
-        _telemetryService,
-        _deviceInfoService,
-        _charactersBloc,
-        _weaponsBloc,
-        _homeBloc,
-        _artifactsBloc,
-      ),
+      build: () => _getBloc(),
       act: (bloc) => bloc
         ..add(const MainEvent.init())
         ..add(const MainEvent.themeChanged(newValue: AppThemeType.light)),
@@ -192,18 +177,7 @@ void main() {
 
     blocTest<MainBloc, MainState>(
       'updates the accent color in the state',
-      build: () => MainBloc(
-        _logger,
-        _genshinService,
-        _settingsService,
-        _localeService,
-        _telemetryService,
-        _deviceInfoService,
-        _charactersBloc,
-        _weaponsBloc,
-        _homeBloc,
-        _artifactsBloc,
-      ),
+      build: () => _getBloc(),
       act: (bloc) => bloc
         ..add(const MainEvent.init())
         ..add(const MainEvent.accentColorChanged(newValue: AppAccentColorType.blueGrey)),
@@ -225,18 +199,7 @@ void main() {
   group('Language changed', () {
     blocTest<MainBloc, MainState>(
       'updates the language in the state',
-      build: () => MainBloc(
-        _logger,
-        _genshinService,
-        _settingsService,
-        _localeService,
-        _telemetryService,
-        _deviceInfoService,
-        _charactersBloc,
-        _weaponsBloc,
-        _homeBloc,
-        _artifactsBloc,
-      ),
+      build: () => _getBloc(),
       setUp: () {
         when(_settingsService.language).thenReturn(AppLanguageType.russian);
       },
