@@ -1,13 +1,13 @@
-class PackageItemModel {
-  final String identifier;
-  final String offeringIdentifier;
-  final String productIdentifier;
-  final String priceString;
+import 'package:freezed_annotation/freezed_annotation.dart';
 
-  PackageItemModel({
-    required this.identifier,
-    required this.offeringIdentifier,
-    required this.productIdentifier,
-    required this.priceString,
-  });
+part 'package_item_model.freezed.dart';
+
+@freezed
+class PackageItemModel with _$PackageItemModel {
+  const factory PackageItemModel({
+    required String identifier,
+    required String offeringIdentifier,
+    required String productIdentifier,
+    required String priceString,
+  }) = _PackageItemModel;
 }

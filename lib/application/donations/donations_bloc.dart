@@ -22,6 +22,8 @@ class DonationsBloc extends Bloc<DonationsEvent, DonationsState> {
 
   @override
   Stream<DonationsState> mapEventToState(DonationsEvent event) async* {
+    yield const DonationsState.loading();
+
     if (!await _networkService.isInternetAvailable()) {
       yield const DonationsState.initial(packages: [], isInitialized: false, noInternetConnection: true, canMakePurchases: false);
       return;
@@ -32,11 +34,20 @@ class DonationsBloc extends Bloc<DonationsEvent, DonationsState> {
       return;
     }
 
+    final canMakePurchases = await _purchaseService.canMakePurchases();
+    if (!canMakePurchases) {
+      yield DonationsState.initial(
+        packages: [],
+        isInitialized: _purchaseService.isInitialized,
+        noInternetConnection: false,
+        canMakePurchases: false,
+      );
+      return;
+    }
+
     if (!_purchaseService.isInitialized) {
       await _purchaseService.init();
     }
-
-    yield const DonationsState.loading();
 
     final s = await event.map(
       init: (_) => _init(),
@@ -63,21 +74,12 @@ class DonationsBloc extends Bloc<DonationsEvent, DonationsState> {
   }
 
   Future<DonationsState> _init() async {
-    final canMakePurchases = await _purchaseService.canMakePurchases();
-    if (!canMakePurchases) {
-      return DonationsState.initial(
-        packages: [],
-        isInitialized: _purchaseService.isInitialized,
-        noInternetConnection: false,
-        canMakePurchases: false,
-      );
-    }
     final packages = await _purchaseService.getInAppPurchases();
     return DonationsState.initial(
       packages: packages,
       isInitialized: _purchaseService.isInitialized,
       noInternetConnection: false,
-      canMakePurchases: canMakePurchases,
+      canMakePurchases: true,
     );
   }
 
