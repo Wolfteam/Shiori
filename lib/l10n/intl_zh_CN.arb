@@ -394,6 +394,6 @@
   "startByAddingWeapons": "开始添加武器",
   "startByAddingArtifacts": "开始添加圣遗物",
   "teamComposition": "队伍组成",
-  "changeWereSuccessfullySaved": "成功保存更改"
-
+  "changeWereSuccessfullySaved": "成功保存更改",
+  "healer": "Healer"
 }

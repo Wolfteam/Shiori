@@ -6,13 +6,13 @@ import 'package:shiori/domain/app_constants.dart';
 import 'package:shiori/domain/extensions/iterable_extensions.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/generated/l10n.dart';
+import 'package:shiori/presentation/shared/ascension_level.dart';
 import 'package:shiori/presentation/shared/bottom_sheets/common_bottom_sheet.dart';
 import 'package:shiori/presentation/shared/bottom_sheets/common_button_bar.dart';
 import 'package:shiori/presentation/shared/bottom_sheets/right_bottom_sheet.dart';
 import 'package:shiori/presentation/shared/dialogs/number_picker_dialog.dart';
 import 'package:shiori/presentation/shared/loading.dart';
 
-import 'ascension_level.dart';
 import 'skill_item.dart';
 
 const _sessionKey = 'sessionKey';
@@ -121,9 +121,15 @@ class AddEditItemBottomSheet extends StatelessWidget {
                   ),
                 ),
                 Text(s.currentAscension, textAlign: TextAlign.center, style: theme.textTheme.subtitle2),
-                AscensionLevel(isCurrentLevel: true, level: state.currentAscensionLevel),
+                AscensionLevel(
+                  level: state.currentAscensionLevel,
+                  onSave: (newValue) => _ascensionLevelChanged(newValue, true, context),
+                ),
                 Text(s.desiredAscension, textAlign: TextAlign.center, style: theme.textTheme.subtitle2),
-                AscensionLevel(isCurrentLevel: false, level: state.desiredAscensionLevel),
+                AscensionLevel(
+                  level: state.desiredAscensionLevel,
+                  onSave: (newValue) => _ascensionLevelChanged(newValue, false, context),
+                ),
                 ...state.skills
                     .mapIndex(
                       (e, index) => SkillItem(
@@ -201,9 +207,15 @@ class AddEditItemBottomSheet extends StatelessWidget {
               ),
             ),
             Text(s.currentAscension, textAlign: TextAlign.center, style: theme.textTheme.subtitle2),
-            AscensionLevel(isCurrentLevel: true, level: state.currentAscensionLevel),
+            AscensionLevel(
+              level: state.currentAscensionLevel,
+              onSave: (newValue) => _ascensionLevelChanged(newValue, true, context),
+            ),
             Text(s.desiredAscension, textAlign: TextAlign.center, style: theme.textTheme.subtitle2),
-            AscensionLevel(isCurrentLevel: false, level: state.desiredAscensionLevel),
+            AscensionLevel(
+              level: state.desiredAscensionLevel,
+              onSave: (newValue) => _ascensionLevelChanged(newValue, false, context),
+            ),
             ...state.skills
                 .mapIndex(
                   (e, index) => SkillItem(
@@ -245,6 +257,13 @@ class AddEditItemBottomSheet extends StatelessWidget {
           : CalculatorAscMaterialsItemEvent.desiredLevelChanged(newValue: newValue);
       context.read<CalculatorAscMaterialsItemBloc>().add(event);
     });
+  }
+
+  void _ascensionLevelChanged(int newValue, bool isCurrentLevel, BuildContext context) {
+    final event = isCurrentLevel
+        ? CalculatorAscMaterialsItemEvent.currentAscensionLevelChanged(newValue: newValue)
+        : CalculatorAscMaterialsItemEvent.desiredAscensionLevelChanged(newValue: newValue);
+    context.read<CalculatorAscMaterialsItemBloc>().add(event);
   }
 }
 
