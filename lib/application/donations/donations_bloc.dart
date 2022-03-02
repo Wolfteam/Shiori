@@ -16,7 +16,7 @@ class DonationsBloc extends Bloc<DonationsEvent, DonationsState> {
   static int maxUserIdLength = 20;
 
   //The user id must be something like 12345_xyz
-  static String appUserIdRegex = '([0-9]{5,10}[_][A-Za-z])';
+  static String appUserIdRegex = '([a-zA-Z0-9]{5,20})';
 
   DonationsBloc(this._purchaseService, this._networkService) : super(const DonationsState.loading());
 
