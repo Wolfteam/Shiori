@@ -727,7 +727,7 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
   }
 
   List<NotificationItemImage> _getImagesForWeeklyBossNotifications({String? selectedImage}) {
-    final monsters = _genshinService.getMonsters(MonsterType.boss).where((el) => el.drops.isNotEmpty).toList();
+    final monsters = _genshinService.getMonsters(MonsterType.boss).toList();
     if (selectedImage.isNotNullEmptyOrWhitespace) {
       return monsters
           .map((e) => NotificationItemImage(itemKey: e.key, image: e.fullImagePath, isSelected: e.fullImagePath == selectedImage))
