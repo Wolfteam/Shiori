@@ -74,13 +74,6 @@ class _BodyState extends State<_Body> {
                       onTap: () => setState(() => _selected = e),
                     ),
                   ),
-                  BulletList(
-                    iconSize: 16,
-                    addTooltip: false,
-                    items: [
-                      s.donationMsgA,
-                    ],
-                  ),
                   CommonButtonBar(
                     children: <Widget>[
                       OutlinedButton(
@@ -112,13 +105,13 @@ class _BodyState extends State<_Body> {
       context: context,
       builder: (_) => TextDialog.create(
         title: s.purchase,
-        hintText: s.uid,
+        hintText: s.userId,
         maxLength: DonationsBloc.maxUserIdLength,
         regexPattern: DonationsBloc.appUserIdRegex,
         child: BulletList(
           iconSize: 16,
           addTooltip: false,
-          items: [s.purchaseMsgA, s.purchaseMsgB, s.purchaseMsgC],
+          items: [s.purchaseMsgA, s.purchaseMsgB],
         ),
         onSave: (val) => context
             .read<DonationsBloc>()
@@ -133,13 +126,13 @@ class _BodyState extends State<_Body> {
       context: context,
       builder: (_) => TextDialog.create(
         title: s.restorePurchases,
-        hintText: s.uid,
+        hintText: s.userId,
         maxLength: DonationsBloc.maxUserIdLength,
         regexPattern: DonationsBloc.appUserIdRegex,
         child: BulletList(
           iconSize: 16,
           addTooltip: false,
-          items: [s.restorePurchaseMsgA, s.restorePurchaseMsgB],
+          items: [s.restorePurchaseMsgA],
         ),
         onSave: (val) => context.read<DonationsBloc>().add(DonationsEvent.restorePurchases(userId: val)),
       ),
