@@ -413,4 +413,5 @@
   "restorePurchaseMsgA": "Type the User ID that you previously used.",
   "restorePurchaseSucceed": "Purchases were successfully restored",
   "restorePurchaseError": "Purchases could not be restored"
+  "collapse": "Collapse"
 }
