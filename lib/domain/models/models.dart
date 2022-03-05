@@ -41,6 +41,7 @@ export 'db/translations/translation_monster_file.dart';
 export 'db/translations/translation_weapon_file.dart';
 export 'db/weapons/weapon_file_model.dart';
 export 'db/weapons/weapons_file.dart';
+export 'donations/package_item_model.dart';
 export 'elements/element_card_model.dart';
 export 'elements/element_reaction_card_model.dart';
 export 'game_codes/game_code_model.dart';

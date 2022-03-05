@@ -1,5 +1,5 @@
 #Secrets
-/lib/infrastructure/telemetry/secrets.dart
+/lib/infrastructure/secrets.dart
 /android/key.properties
 *.g.dart
 *.freezed.dart

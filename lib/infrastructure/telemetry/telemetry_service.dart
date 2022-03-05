@@ -3,8 +3,8 @@ import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/device_info_service.dart';
 import 'package:shiori/domain/services/telemetry_service.dart';
+import 'package:shiori/infrastructure/secrets.dart';
 import 'package:shiori/infrastructure/telemetry/flutter_appcenter_bundle.dart';
-import 'package:shiori/infrastructure/telemetry/secrets.dart';
 
 class TelemetryServiceImpl implements TelemetryService {
   final DeviceInfoService _deviceInfoService;

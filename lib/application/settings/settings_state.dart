@@ -14,5 +14,6 @@ class SettingsState with _$SettingsState {
     required bool doubleBackToClose,
     required bool useOfficialMap,
     required bool useTwentyFourHoursFormat,
+    required List<AppUnlockedFeature> unlockedFeatures,
   }) = _LoadedState;
 }
