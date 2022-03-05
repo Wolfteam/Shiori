@@ -83,6 +83,30 @@
       "css": "level_three_advanced",
       "code": 59941,
       "src": "rpgawesome"
+    },
+    {
+      "uid": "f5eca4c36e1b5ea2faf3c33e06db275a",
+      "css": "heart",
+      "code": 61444,
+      "src": "fontawesome5"
+    },
+    {
+      "uid": "990fedfbfce973e093d7885b3f771d21",
+      "css": "discord",
+      "code": 62354,
+      "src": "fontawesome5"
+    },
+    {
+      "uid": "0f6a2573a7b6df911ed199bb63717e27",
+      "css": "github-circled",
+      "code": 61595,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "12fdd8d92fdf793bc7cd3d679b0fe1fd",
+      "css": "globe-1",
+      "code": 61612,
+      "src": "fontawesome5"
     }
   ]
 }

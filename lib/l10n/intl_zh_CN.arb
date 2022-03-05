@@ -132,7 +132,7 @@
   "aboutSummary": "一个原神数据库",
   "appInfo": "App 信息",
   "support": "支持",
-  "supportMsg": "我用闲暇时间开发了这款 App，同时也把它开源了。无论你是想提供帮助、提交 issue、有个想法、需要一个功能等等，都可以在我的 Github 上提交一个 issue：",
+  "supportMsg": "我用闲暇时间开发了这款 App，同时也把它开源了。无论你是想提供帮助、提交 issue、有个想法、需要一个功能等等，都可以在我的 Github 上提交一个 issue。",
   "issues": "Issues",
   "disclaimer": "免责声明",
   "disclaimerMsg": "该 App 不属于 miHoYo 且并未获得其认可。Shiori 仅是一个「原神」游戏的数据软件。",
@@ -394,6 +394,22 @@
   "startByAddingWeapons": "开始添加武器",
   "startByAddingArtifacts": "开始添加圣遗物",
   "teamComposition": "队伍组成",
-  "changeWereSuccessfullySaved": "成功保存更改"
-
+  "changeWereSuccessfullySaved": "成功保存更改",
+  "healer": "Healer",
+  "donations": "Donations",
+  "changelog": "Changelog",
+  "email": "Email",
+  "donationMsg": "If you would like to support the development, you can help by donating a small amount",
+  "donateXAmount": "Donate {amount}",
+  "purchase": "Purchase",
+  "restorePurchases": "Restore Purchases",
+  "userId": "User ID",
+  "paymentSucceed": "Payment succeed. Thank you for your support.",
+  "paymentError": "Payment could not be completed.",
+  "purchaseMsgA": "Please enter a custom user id, use letters and numbers. Do not use passwords, secret codes, pins, etc.",
+  "purchaseMsgB": "You may need it later in case you need to restore your purchases.",
+  "restorePurchaseMsgA": "Type the User ID that you previously used.",
+  "restorePurchaseSucceed": "Purchases were successfully restored",
+  "restorePurchaseError": "Purchases could not be restored",
+  "collapse": "Collapse"
 }

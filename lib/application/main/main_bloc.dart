@@ -8,6 +8,7 @@ import 'package:shiori/domain/services/device_info_service.dart';
 import 'package:shiori/domain/services/genshin_service.dart';
 import 'package:shiori/domain/services/locale_service.dart';
 import 'package:shiori/domain/services/logging_service.dart';
+import 'package:shiori/domain/services/purchase_service.dart';
 import 'package:shiori/domain/services/settings_service.dart';
 import 'package:shiori/domain/services/telemetry_service.dart';
 
@@ -24,6 +25,7 @@ class MainBloc extends Bloc<MainEvent, MainState> {
   final LocaleService _localeService;
   final TelemetryService _telemetryService;
   final DeviceInfoService _deviceInfoService;
+  final PurchaseService _purchaseService;
 
   final CharactersBloc _charactersBloc;
   final WeaponsBloc _weaponsBloc;
@@ -37,6 +39,7 @@ class MainBloc extends Bloc<MainEvent, MainState> {
     this._localeService,
     this._telemetryService,
     this._deviceInfoService,
+    this._purchaseService,
     this._charactersBloc,
     this._weaponsBloc,
     this._homeBloc,
@@ -75,7 +78,7 @@ class MainBloc extends Bloc<MainEvent, MainState> {
     final state = _loadThemeData(settings.appTheme, settings.useDarkAmoled, settings.accentColor);
 
     if (init) {
-      await Future.delayed(const Duration(milliseconds: 600));
+      await Future.delayed(const Duration(milliseconds: 250));
     }
 
     return state;
@@ -91,6 +94,9 @@ class MainBloc extends Bloc<MainEvent, MainState> {
       runtimeType,
       '_init: Is first install = ${_settingsService.isFirstInstall} ' + '-- versionChanged = ${_deviceInfoService.versionChanged}',
     );
+
+    final features = await _purchaseService.getUnlockedFeatures();
+    final useDarkAmoledTheme = true && features.contains(AppUnlockedFeature.darkAmoledTheme);
 
     return MainState.loaded(
       appTitle: _deviceInfoService.appName,

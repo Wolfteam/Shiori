@@ -5,6 +5,7 @@ import 'package:shiori/application/bloc.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/device_info_service.dart';
+import 'package:shiori/domain/services/purchase_service.dart';
 import 'package:shiori/domain/services/settings_service.dart';
 
 import '../../mocks.mocks.dart';
@@ -27,6 +28,7 @@ class FakeUrlPageBloc extends Fake implements UrlPageBloc {
 void main() {
   late final SettingsService _settingsService;
   late final DeviceInfoService _deviceInfoService;
+  late final PurchaseService _purchaseService;
   late final MainBloc _mainBloc;
   late final HomeBloc _homeBloc;
 
@@ -62,26 +64,31 @@ void main() {
     when(_deviceInfoService.version).thenReturn('1.0.0');
     when(_deviceInfoService.appName).thenReturn('Shiori');
 
+    _purchaseService = MockPurchaseService();
+    when(_purchaseService.getUnlockedFeatures()).thenAnswer((_) => Future.value(AppUnlockedFeature.values));
+
     _mainBloc = FakeMainBloc();
     _homeBloc = FakeHomeBloc();
   });
 
+  SettingsBloc _getBloc() => SettingsBloc(_settingsService, _deviceInfoService, _purchaseService, _mainBloc, _homeBloc);
+
   test(
     'Initial state',
-    () => expect(SettingsBloc(_settingsService, _deviceInfoService, _mainBloc, _homeBloc).state, const SettingsState.loading()),
+    () => expect(_getBloc().state, const SettingsState.loading()),
   );
 
   test(
     'Double back to close returns valid value',
     () => expect(
-      SettingsBloc(_settingsService, _deviceInfoService, _mainBloc, _homeBloc).doubleBackToClose(),
+      _getBloc().doubleBackToClose(),
       _defaultSettings.doubleBackToClose,
     ),
   );
 
   blocTest<SettingsBloc, SettingsState>(
     'Init',
-    build: () => SettingsBloc(_settingsService, _deviceInfoService, _mainBloc, _homeBloc),
+    build: () => _getBloc(),
     act: (bloc) => bloc.add(const SettingsEvent.init()),
     expect: () => [
       SettingsState.loaded(
@@ -96,13 +103,14 @@ void main() {
         doubleBackToClose: _defaultSettings.doubleBackToClose,
         useOfficialMap: _defaultSettings.useOfficialMap,
         useTwentyFourHoursFormat: _defaultSettings.useTwentyFourHoursFormat,
+        unlockedFeatures: AppUnlockedFeature.values,
       ),
     ],
   );
 
   blocTest<SettingsBloc, SettingsState>(
     'Settings changed',
-    build: () => SettingsBloc(_settingsService, _deviceInfoService, _mainBloc, _homeBloc),
+    build: () => _getBloc(),
     act: (bloc) => bloc
       ..add(const SettingsEvent.init())
       ..add(const SettingsEvent.themeChanged(newValue: AppThemeType.light))
@@ -129,6 +137,7 @@ void main() {
         doubleBackToClose: !_defaultSettings.doubleBackToClose,
         useOfficialMap: !_defaultSettings.useOfficialMap,
         useTwentyFourHoursFormat: !_defaultSettings.useTwentyFourHoursFormat,
+        unlockedFeatures: AppUnlockedFeature.values,
       ),
     ],
   );

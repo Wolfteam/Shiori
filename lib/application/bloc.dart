@@ -12,6 +12,7 @@ export 'character/character_bloc.dart';
 export 'characters/characters_bloc.dart';
 export 'custom_build/custom_build_bloc.dart';
 export 'custom_builds/custom_builds_bloc.dart';
+export 'donations/donations_bloc.dart';
 export 'elements/elements_bloc.dart';
 export 'game_codes/game_codes_bloc.dart';
 export 'home/home_bloc.dart';

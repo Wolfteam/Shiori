@@ -101,7 +101,7 @@ class CharacterSection extends StatelessWidget {
                                 onPressed: () => showDialog(
                                   context: context,
                                   builder: (_) => TextDialog.update(
-                                    title: s.title,
+                                    hintText: s.title,
                                     value: state.title,
                                     maxLength: CustomBuildBloc.maxTitleLength,
                                     onSave: (newTitle) => context.read<CustomBuildBloc>().add(CustomBuildEvent.titleChanged(newValue: newTitle)),
@@ -303,7 +303,7 @@ class _NoteRow extends StatelessWidget {
                     : () => showDialog(
                           context: context,
                           builder: (_) => TextDialog.create(
-                            title: s.note,
+                            hintText: s.note,
                             onSave: (note) => context.read<CustomBuildBloc>().add(CustomBuildEvent.addNote(note: note)),
                             maxLength: CustomBuildBloc.maxNoteLength,
                           ),

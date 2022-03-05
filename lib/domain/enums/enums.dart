@@ -4,6 +4,7 @@ export 'app_notification_item_type.dart';
 export 'app_notification_type.dart';
 export 'app_server_reset_time_type.dart';
 export 'app_theme_type.dart';
+export 'app_unlocked_feature.dart';
 export 'artifact_farming_time_type.dart';
 export 'artifact_filter_type.dart';
 export 'artifact_type.dart';

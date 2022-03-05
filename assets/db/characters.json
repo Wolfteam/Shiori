@@ -20627,6 +20627,1120 @@
       ]
     },
     {
+      "key": "kamisato-ayato",
+      "rarity": 5,
+      "weaponType": "sword",
+      "elementType": "hydro",
+      "image": "kamisato-ayato.png",
+      "fullImage": "kamisato-ayato.png",
+      "secondFullImage": null,
+      "isComingSoon": true,
+      "isNew": false,
+      "isFemale": false,
+      "region": "inazuma",
+      "role": "dps",
+      "tier": "s",
+      "birthday": "03/26",
+      "subStatType": "critDmgPercentage",
+      "ascensionMaterials": [
+        {
+          "rank": 1,
+          "level": 20,
+          "materials": [
+            {
+              "key": "varunada-lazurite-sliver",
+              "quantity": 1,
+              "type": "jewels"
+            },
+            {
+              "key": "sakura-bloom",
+              "quantity": 3,
+              "type": "local"
+            },
+            {
+              "key": "old-handguard",
+              "quantity": 3,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 20000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "rank": 2,
+          "level": 40,
+          "materials": [
+            {
+              "key": "varunada-lazurite-fragment",
+              "quantity": 3,
+              "type": "jewels"
+            },
+            {
+              "key": "dew-of-repudiation",
+              "quantity": 2,
+              "type": "elementalStone"
+            },
+            {
+              "key": "sakura-bloom",
+              "quantity": 10,
+              "type": "local"
+            },
+            {
+              "key": "old-handguard",
+              "quantity": 15,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 40000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "rank": 3,
+          "level": 50,
+          "materials": [
+            {
+              "key": "varunada-lazurite-fragment",
+              "quantity": 6,
+              "type": "jewels"
+            },
+            {
+              "key": "dew-of-repudiation",
+              "quantity": 4,
+              "type": "elementalStone"
+            },
+            {
+              "key": "sakura-bloom",
+              "quantity": 20,
+              "type": "local"
+            },
+            {
+              "key": "kageuchi-handguard",
+              "quantity": 12,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 60000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "rank": 4,
+          "level": 60,
+          "materials": [
+            {
+              "key": "varunada-lazurite-chunk",
+              "quantity": 3,
+              "type": "jewels"
+            },
+            {
+              "key": "dew-of-repudiation",
+              "quantity": 8,
+              "type": "elementalStone"
+            },
+            {
+              "key": "sakura-bloom",
+              "quantity": 30,
+              "type": "local"
+            },
+            {
+              "key": "kageuchi-handguard",
+              "quantity": 18,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 80000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "rank": 5,
+          "level": 70,
+          "materials": [
+            {
+              "key": "varunada-lazurite-chunk",
+              "quantity": 6,
+              "type": "jewels"
+            },
+            {
+              "key": "dew-of-repudiation",
+              "quantity": 12,
+              "type": "elementalStone"
+            },
+            {
+              "key": "sakura-bloom",
+              "quantity": 45,
+              "type": "local"
+            },
+            {
+              "key": "famed-handguard",
+              "quantity": 12,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 100000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "rank": 6,
+          "level": 80,
+          "materials": [
+            {
+              "key": "varunada-lazurite-gemstone",
+              "quantity": 6,
+              "type": "jewels"
+            },
+            {
+              "key": "dew-of-repudiation",
+              "quantity": 20,
+              "type": "elementalStone"
+            },
+            {
+              "key": "sakura-bloom",
+              "quantity": 60,
+              "type": "local"
+            },
+            {
+              "key": "famed-handguard",
+              "quantity": 24,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 120000,
+              "type": "currency"
+            }
+          ]
+        }
+      ],
+      "talentAscensionMaterials": [
+        {
+          "level": 2,
+          "materials": [
+            {
+              "key": "teachings-of-elegance",
+              "quantity": 3,
+              "type": "talents"
+            },
+            {
+              "key": "old-handguard",
+              "quantity": 6,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 12500,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "level": 3,
+          "materials": [
+            {
+              "key": "guide-to-elegance",
+              "quantity": 2,
+              "type": "talents"
+            },
+            {
+              "key": "kageuchi-handguard",
+              "quantity": 3,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 17500,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "materials": [
+            {
+              "key": "guide-to-elegance",
+              "quantity": 4,
+              "type": "talents"
+            },
+            {
+              "key": "kageuchi-handguard",
+              "quantity": 4,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 25000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "materials": [
+            {
+              "key": "guide-to-elegance",
+              "quantity": 6,
+              "type": "talents"
+            },
+            {
+              "key": "kageuchi-handguard",
+              "quantity": 6,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 30000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "level": 6,
+          "materials": [
+            {
+              "key": "guide-to-elegance",
+              "quantity": 9,
+              "type": "talents"
+            },
+            {
+              "key": "kageuchi-handguard",
+              "quantity": 9,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 37500,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "level": 7,
+          "materials": [
+            {
+              "key": "philosophies-of-elegance",
+              "quantity": 4,
+              "type": "talents"
+            },
+            {
+              "key": "famed-handguard",
+              "quantity": 4,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 120000,
+              "type": "currency"
+            },
+            {
+              "key": "mudra-of-the-malefic-general",
+              "quantity": 1,
+              "type": "talents"
+            }
+          ]
+        },
+        {
+          "level": 8,
+          "materials": [
+            {
+              "key": "philosophies-of-elegance",
+              "quantity": 6,
+              "type": "talents"
+            },
+            {
+              "key": "famed-handguard",
+              "quantity": 6,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 260000,
+              "type": "currency"
+            },
+            {
+              "key": "mudra-of-the-malefic-general",
+              "quantity": 1,
+              "type": "talents"
+            }
+          ]
+        },
+        {
+          "level": 9,
+          "materials": [
+            {
+              "key": "philosophies-of-elegance",
+              "quantity": 12,
+              "type": "talents"
+            },
+            {
+              "key": "famed-handguard",
+              "quantity": 9,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 450000,
+              "type": "currency"
+            },
+            {
+              "key": "mudra-of-the-malefic-general",
+              "quantity": 2,
+              "type": "talents"
+            }
+          ]
+        },
+        {
+          "level": 10,
+          "materials": [
+            {
+              "key": "philosophies-of-elegance",
+              "quantity": 16,
+              "type": "talents"
+            },
+            {
+              "key": "famed-handguard",
+              "quantity": 12,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 700000,
+              "type": "currency"
+            },
+            {
+              "key": "mudra-of-the-malefic-general",
+              "quantity": 2,
+              "type": "talents"
+            },
+            {
+              "key": "crown-of-insight",
+              "quantity": 1,
+              "type": "talents"
+            }
+          ]
+        }
+      ],
+      "skills": [
+        {
+          "key": "s1",
+          "image": "kamisato-ayato_s1.png",
+          "type": "normalAttack",
+          "stats": [
+            {
+              "key": "param1",
+              "values": [
+                44.96,
+                48.62,
+                52.28,
+                57.51,
+                61.17,
+                65.35,
+                71.1,
+                76.85,
+                82.6,
+                88.88,
+                95.15,
+                101.43,
+                107.7,
+                113.97,
+                120.25
+              ]
+            },
+            {
+              "key": "param2",
+              "values": [
+                47.16,
+                51.0,
+                54.83,
+                60.32,
+                64.16,
+                68.54,
+                74.57,
+                80.61,
+                86.64,
+                93.22,
+                99.8,
+                106.38,
+                112.96,
+                119.54,
+                126.12
+              ]
+            },
+            {
+              "key": "param3",
+              "values": [
+                58.61,
+                63.38,
+                68.15,
+                74.97,
+                79.74,
+                85.19,
+                92.69,
+                100.19,
+                107.68,
+                115.86,
+                124.04,
+                132.22,
+                140.4,
+                148.58,
+                156.75
+              ]
+            },
+            {
+              "key": "param4",
+              "values": [
+                29.45,
+                31.85,
+                34.24,
+                37.67,
+                40.06,
+                42.8,
+                46.57,
+                50.34,
+                54.1,
+                58.21,
+                62.32,
+                66.43,
+                70.54,
+                74.65,
+                78.76
+              ]
+            },
+            {
+              "key": "param5",
+              "values": [
+                2.0,
+                2.0,
+                2.0,
+                2.0,
+                2.0,
+                2.0,
+                2.0,
+                2.0,
+                2.0,
+                2.0,
+                2.0,
+                2.0,
+                2.0,
+                2.0,
+                2.0
+              ]
+            },
+            {
+              "key": "param6",
+              "values": [
+                75.6,
+                81.76,
+                87.91,
+                96.7,
+                102.86,
+                109.89,
+                119.56,
+                129.23,
+                138.9,
+                149.45,
+                160.0,
+                170.55,
+                181.1,
+                191.65,
+                202.2
+              ]
+            },
+            {
+              "key": "param7",
+              "values": [
+                129.53,
+                140.07,
+                150.62,
+                165.68,
+                176.22,
+                188.27,
+                204.84,
+                221.41,
+                237.97,
+                256.05,
+                274.12,
+                292.19,
+                310.27,
+                328.34,
+                346.42
+              ]
+            },
+            {
+              "key": "param8",
+              "values": [
+                20.0,
+                20.0,
+                20.0,
+                20.0,
+                20.0,
+                20.0,
+                20.0,
+                20.0,
+                20.0,
+                20.0,
+                20.0,
+                20.0,
+                20.0,
+                20.0,
+                20.0
+              ]
+            },
+            {
+              "key": "param9",
+              "values": [
+                63.93,
+                69.14,
+                74.34,
+                81.77,
+                86.98,
+                92.93,
+                101.1,
+                109.28,
+                117.46,
+                126.38,
+                135.3,
+                144.22,
+                153.14,
+                162.06,
+                170.98
+              ]
+            },
+            {
+              "key": "param10",
+              "values": [
+                127.84,
+                138.24,
+                148.65,
+                163.51,
+                173.92,
+                185.81,
+                202.16,
+                218.51,
+                234.86,
+                252.7,
+                270.54,
+                288.38,
+                306.22,
+                324.05,
+                341.89
+              ]
+            },
+            {
+              "key": "param11",
+              "values": [
+                159.68,
+                172.67,
+                185.67,
+                204.24,
+                217.23,
+                232.09,
+                252.51,
+                272.93,
+                293.36,
+                315.64,
+                337.92,
+                360.2,
+                382.48,
+                404.76,
+                427.04
+              ]
+            }
+          ]
+        },
+        {
+          "key": "s2",
+          "image": "kamisato-ayato_s2.png",
+          "type": "elementalSkill",
+          "stats": [
+            {
+              "key": "param1",
+              "values": [
+                43.52,
+                47.06,
+                50.6,
+                55.66,
+                59.2,
+                63.25,
+                68.82,
+                74.38,
+                79.95,
+                86.02,
+                92.09,
+                98.16,
+                104.24,
+                110.31,
+                116.38
+              ]
+            },
+            {
+              "key": "param2",
+              "values": [
+                46.1,
+                49.85,
+                53.6,
+                58.96,
+                62.71,
+                67.0,
+                72.9,
+                78.79,
+                84.69,
+                91.12,
+                97.55,
+                103.98,
+                110.42,
+                116.85,
+                123.28
+              ]
+            },
+            {
+              "key": "param3",
+              "values": [
+                48.68,
+                52.64,
+                56.6,
+                62.26,
+                66.22,
+                70.75,
+                76.98,
+                83.2,
+                89.43,
+                96.22,
+                103.01,
+                109.8,
+                116.6,
+                123.39,
+                130.18
+              ]
+            },
+            {
+              "key": "param4",
+              "values": [
+                6.0,
+                6.0,
+                6.0,
+                6.0,
+                6.0,
+                6.0,
+                6.0,
+                6.0,
+                6.0,
+                6.0,
+                6.0,
+                6.0,
+                6.0,
+                6.0,
+                6.0
+              ]
+            },
+            {
+              "key": "param5",
+              "values": [
+                0.44,
+                0.47,
+                0.51,
+                0.56,
+                0.6,
+                0.64,
+                0.69,
+                0.75,
+                0.81,
+                0.87,
+                0.93,
+                0.99,
+                1.05,
+                1.11,
+                1.17
+              ]
+            },
+            {
+              "key": "param6",
+              "values": [
+                101.48,
+                109.74,
+                118.0,
+                129.8,
+                138.06,
+                147.5,
+                160.48,
+                173.46,
+                186.44,
+                200.6,
+                214.76,
+                228.92,
+                243.08,
+                257.24,
+                271.4
+              ]
+            },
+            {
+              "key": "param7",
+              "values": [
+                6.0,
+                6.0,
+                6.0,
+                6.0,
+                6.0,
+                6.0,
+                6.0,
+                6.0,
+                6.0,
+                6.0,
+                6.0,
+                6.0,
+                6.0,
+                6.0,
+                6.0
+              ]
+            },
+            {
+              "key": "param8",
+              "values": [
+                2.0,
+                2.0,
+                2.0,
+                2.0,
+                2.0,
+                2.0,
+                2.0,
+                2.0,
+                2.0,
+                2.0,
+                2.0,
+                2.0,
+                2.0,
+                2.0,
+                2.0
+              ]
+            },
+            {
+              "key": "param9",
+              "values": [
+                2.0,
+                2.0,
+                2.0,
+                2.0,
+                2.0,
+                2.0,
+                2.0,
+                2.0,
+                2.0,
+                2.0,
+                2.0,
+                2.0,
+                2.0,
+                2.0,
+                2.0
+              ]
+            },
+            {
+              "key": "param10",
+              "values": [
+                20.0,
+                20.0,
+                20.0,
+                20.0,
+                20.0,
+                20.0,
+                20.0,
+                20.0,
+                20.0,
+                20.0,
+                20.0,
+                20.0,
+                20.0,
+                20.0,
+                20.0
+              ]
+            }
+          ]
+        },
+        {
+          "key": "s3",
+          "image": "kamisato-ayato_s3.png",
+          "type": "elementalBurst",
+          "stats": [
+            {
+              "key": "param1",
+              "values": [
+                55.02,
+                59.14,
+                63.27,
+                68.77,
+                72.9,
+                77.02,
+                82.53,
+                88.03,
+                93.53,
+                99.03,
+                104.53,
+                110.04,
+                116.91,
+                123.79,
+                130.67
+              ]
+            },
+            {
+              "key": "param2",
+              "values": [
+                7.5,
+                8.0,
+                8.5,
+                9.0,
+                9.5,
+                10.0,
+                10.5,
+                11.0,
+                11.5,
+                12.0,
+                12.0,
+                12.0,
+                12.0,
+                12.0,
+                12.0
+              ]
+            },
+            {
+              "key": "param3",
+              "values": [
+                15.0,
+                15.0,
+                15.0,
+                15.0,
+                15.0,
+                15.0,
+                15.0,
+                15.0,
+                15.0,
+                15.0,
+                15.0,
+                15.0,
+                15.0,
+                15.0,
+                15.0
+              ]
+            },
+            {
+              "key": "param4",
+              "values": [
+                20.0,
+                20.0,
+                20.0,
+                20.0,
+                20.0,
+                20.0,
+                20.0,
+                20.0,
+                20.0,
+                20.0,
+                20.0,
+                20.0,
+                20.0,
+                20.0,
+                20.0
+              ]
+            },
+            {
+              "key": "param5",
+              "values": [
+                80.0,
+                80.0,
+                80.0,
+                80.0,
+                80.0,
+                80.0,
+                80.0,
+                80.0,
+                80.0,
+                80.0,
+                80.0,
+                80.0,
+                80.0,
+                80.0,
+                80.0
+              ]
+            }
+          ]
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "image": "kamisato-ayato_p1.png",
+          "unlockedAt": -1
+        },
+        {
+          "key": "p2",
+          "image": "kamisato-ayato_p2.png",
+          "unlockedAt": 1
+        },
+        {
+          "key": "p3",
+          "image": "kamisato-ayato_p3.png",
+          "unlockedAt": 4
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "number": 1,
+          "image": "kamisato-ayato_c1.png"
+        },
+        {
+          "key": "c2",
+          "number": 2,
+          "image": "kamisato-ayato_c2.png"
+        },
+        {
+          "key": "c3",
+          "number": 3,
+          "image": "kamisato-ayato_c3.png"
+        },
+        {
+          "key": "c4",
+          "number": 4,
+          "image": "kamisato-ayato_c4.png"
+        },
+        {
+          "key": "c5",
+          "number": 5,
+          "image": "kamisato-ayato_c5.png"
+        },
+        {
+          "key": "c6",
+          "number": 6,
+          "image": "kamisato-ayato_c6.png"
+        }
+      ],
+      "builds": [],
+      "stats": [
+        {
+          "level": 1,
+          "baseHp": 1047.0,
+          "baseAtk": 22.0,
+          "baseDef": 63.0,
+          "isAnAscension": false,
+          "statValue": 50.0
+        },
+        {
+          "level": 20,
+          "baseHp": 2715.0,
+          "baseAtk": 57.0,
+          "baseDef": 165.0,
+          "isAnAscension": false,
+          "statValue": 50.0
+        },
+        {
+          "level": 20,
+          "baseHp": 3613.0,
+          "baseAtk": 76.0,
+          "baseDef": 219.0,
+          "isAnAscension": true,
+          "statValue": 50.0
+        },
+        {
+          "level": 40,
+          "baseHp": 5406.0,
+          "baseAtk": 114.0,
+          "baseDef": 328.0,
+          "isAnAscension": false,
+          "statValue": 50.0
+        },
+        {
+          "level": 40,
+          "baseHp": 6044.0,
+          "baseAtk": 128.0,
+          "baseDef": 366.0,
+          "isAnAscension": true,
+          "statValue": 59.6
+        },
+        {
+          "level": 50,
+          "baseHp": 6953.0,
+          "baseAtk": 147.0,
+          "baseDef": 421.0,
+          "isAnAscension": false,
+          "statValue": 59.6
+        },
+        {
+          "level": 50,
+          "baseHp": 7803.0,
+          "baseAtk": 165.0,
+          "baseDef": 473.0,
+          "isAnAscension": true,
+          "statValue": 69.2
+        },
+        {
+          "level": 60,
+          "baseHp": 8722.0,
+          "baseAtk": 185.0,
+          "baseDef": 528.0,
+          "isAnAscension": false,
+          "statValue": 69.2
+        },
+        {
+          "level": 60,
+          "baseHp": 9360.0,
+          "baseAtk": 198.0,
+          "baseDef": 567.0,
+          "isAnAscension": true,
+          "statValue": 69.2
+        },
+        {
+          "level": 70,
+          "baseHp": 10288.0,
+          "baseAtk": 218.0,
+          "baseDef": 623.0,
+          "isAnAscension": false,
+          "statValue": 69.2
+        },
+        {
+          "level": 70,
+          "baseHp": 10925.0,
+          "baseAtk": 231.0,
+          "baseDef": 662.0,
+          "isAnAscension": true,
+          "statValue": 78.8
+        },
+        {
+          "level": 80,
+          "baseHp": 11863.0,
+          "baseAtk": 251.0,
+          "baseDef": 719.0,
+          "isAnAscension": false,
+          "statValue": 78.8
+        },
+        {
+          "level": 80,
+          "baseHp": 12501.0,
+          "baseAtk": 265.0,
+          "baseDef": 757.0,
+          "isAnAscension": true,
+          "statValue": 88.4
+        },
+        {
+          "level": 90,
+          "baseHp": 13446.0,
+          "baseAtk": 285.0,
+          "baseDef": 815.0,
+          "isAnAscension": false,
+          "statValue": 88.4
+        }
+      ]
+    },
+    {
       "key": "keqing",
       "rarity": 5,
       "weaponType": "sword",
@@ -35264,7 +36378,7 @@
       "fullImage": "shenhe.png",
       "secondFullImage": null,
       "isComingSoon": false,
-      "isNew": true,
+      "isNew": false,
       "isFemale": true,
       "region": "liyue",
       "role": "support",
@@ -49854,11 +50968,11 @@
       "image": "yae-miko.png",
       "fullImage": "yae-miko.png",
       "secondFullImage": null,
-      "isComingSoon": true,
-      "isNew": false,
+      "isComingSoon": false,
+      "isNew": true,
       "isFemale": true,
       "region": "inazuma",
-      "role": "support",
+      "role": "offFieldDps",
       "tier": "s",
       "birthday": "06/27",
       "subStatType": "critRatePercentage",
@@ -50163,6 +51277,11 @@
               "key": "mora",
               "quantity": 120000,
               "type": "currency"
+            },
+            {
+              "key": "the-meaning-of-aeons",
+              "quantity": 1,
+              "type": "talents"
             }
           ]
         },
@@ -50183,6 +51302,11 @@
               "key": "mora",
               "quantity": 260000,
               "type": "currency"
+            },
+            {
+              "key": "the-meaning-of-aeons",
+              "quantity": 1,
+              "type": "talents"
             }
           ]
         },
@@ -50203,6 +51327,11 @@
               "key": "mora",
               "quantity": 450000,
               "type": "currency"
+            },
+            {
+              "key": "the-meaning-of-aeons",
+              "quantity": 2,
+              "type": "talents"
             }
           ]
         },
@@ -50223,6 +51352,11 @@
               "key": "mora",
               "quantity": 700000,
               "type": "currency"
+            },
+            {
+              "key": "the-meaning-of-aeons",
+              "quantity": 2,
+              "type": "talents"
             },
             {
               "key": "crown-of-insight",
@@ -50508,21 +51642,21 @@
             {
               "key": "param6",
               "values": [
-                9.0,
-                9.0,
-                9.0,
-                9.0,
-                9.0,
-                9.0,
-                9.0,
-                9.0,
-                9.0,
-                9.0,
-                9.0,
-                9.0,
-                9.0,
-                9.0,
-                9.0
+                4.0,
+                4.0,
+                4.0,
+                4.0,
+                4.0,
+                4.0,
+                4.0,
+                4.0,
+                4.0,
+                4.0,
+                4.0,
+                4.0,
+                4.0,
+                4.0,
+                4.0
               ]
             }
           ]
@@ -50555,21 +51689,21 @@
             {
               "key": "param2",
               "values": [
-                293.76,
-                315.79,
-                337.82,
-                367.2,
-                389.23,
-                411.26,
-                440.64,
-                470.02,
-                499.39,
-                528.77,
-                558.14,
-                587.52,
-                624.24,
-                660.96,
-                697.68
+                333.82,
+                358.85,
+                383.89,
+                417.27,
+                442.31,
+                467.34,
+                500.72,
+                534.11,
+                567.49,
+                600.87,
+                634.25,
+                667.63,
+                709.36,
+                751.09,
+                792.81
               ]
             },
             {
@@ -50664,117 +51798,173 @@
           "image": "yae-miko_c6.png"
         }
       ],
-      "builds": [],
+      "builds": [
+        {
+          "isRecommended": true,
+          "type": "offFieldDps",
+          "subType": "electro",
+          "skillPriorities": [
+            "elementalSkill",
+            "elementalBurst"
+          ],
+          "weaponKeys": [
+            "kaguras-verity",
+            "solar-pearl",
+            "the-widsith",
+            "oathsworn-eye",
+            "mappa-mare"
+          ],
+          "artifacts": [
+            {
+              "oneKey": null,
+              "multiples": [
+                {
+                  "key": "emblem-of-severed-fate",
+                  "quantity": 2
+                },
+                {
+                  "key": "thundering-fury",
+                  "quantity": 2
+                }
+              ],
+              "stats": [
+                "hp",
+                "atk",
+                "atkPercentage",
+                "electroDmgBonusPercentage",
+                "critRatePercentage"
+              ]
+            },
+            {
+              "oneKey": "thundersoother",
+              "multiples": [],
+              "stats": [
+                "hp",
+                "atk",
+                "atkPercentage",
+                "electroDmgBonusPercentage",
+                "critRatePercentage"
+              ]
+            }
+          ],
+          "subStatsToFocus": [
+            "energyRechargePercentage",
+            "critDmgPercentage",
+            "critRatePercentage",
+            "atkPercentage"
+          ]
+        }
+      ],
       "stats": [
         {
           "level": 1,
-          "baseHp": 912.0,
-          "baseAtk": 18.0,
-          "baseDef": 57.0,
+          "baseHp": 807.0,
+          "baseAtk": 26.0,
+          "baseDef": 44.0,
           "isAnAscension": false,
           "statValue": 5.0
         },
         {
           "level": 20,
-          "baseHp": 2365.0,
-          "baseAtk": 46.0,
-          "baseDef": 148.0,
-          "isAnAscension": false,
-          "statValue": 5.0
-        },
-        {
-          "level": 20,
-          "baseHp": 3058.0,
+          "baseHp": 2095.0,
           "baseAtk": 69.0,
-          "baseDef": 186.0,
+          "baseDef": 115.0,
+          "isAnAscension": false,
+          "statValue": 5.0
+        },
+        {
+          "level": 20,
+          "baseHp": 2787.0,
+          "baseAtk": 91.0,
+          "baseDef": 153.0,
           "isAnAscension": true,
           "statValue": 5.0
         },
         {
           "level": 40,
-          "baseHp": 4619.0,
-          "baseAtk": 99.0,
-          "baseDef": 284.0,
+          "baseHp": 4170.0,
+          "baseAtk": 137.0,
+          "baseDef": 229.0,
           "isAnAscension": false,
           "statValue": 5.0
         },
         {
           "level": 40,
-          "baseHp": 5111.0,
-          "baseAtk": 115.0,
-          "baseDef": 311.0,
+          "baseHp": 4662.0,
+          "baseAtk": 153.0,
+          "baseDef": 256.0,
           "isAnAscension": true,
           "statValue": 9.8
         },
         {
           "level": 50,
-          "baseHp": 5904.0,
-          "baseAtk": 131.0,
-          "baseDef": 361.0,
+          "baseHp": 5364.0,
+          "baseAtk": 176.0,
+          "baseDef": 294.0,
           "isAnAscension": false,
           "statValue": 9.8
         },
         {
           "level": 50,
-          "baseHp": 6560.0,
-          "baseAtk": 152.0,
-          "baseDef": 397.0,
+          "baseHp": 6020.0,
+          "baseAtk": 197.0,
+          "baseDef": 330.0,
           "isAnAscension": true,
           "statValue": 14.6
         },
         {
           "level": 60,
-          "baseHp": 7360.0,
-          "baseAtk": 168.0,
-          "baseDef": 447.0,
+          "baseHp": 6729.0,
+          "baseAtk": 220.0,
+          "baseDef": 369.0,
           "isAnAscension": false,
           "statValue": 14.6
         },
         {
           "level": 60,
-          "baseHp": 7852.0,
-          "baseAtk": 184.0,
-          "baseDef": 474.0,
+          "baseHp": 7220.0,
+          "baseAtk": 236.0,
+          "baseDef": 396.0,
           "isAnAscension": true,
           "statValue": 14.6
         },
         {
           "level": 70,
-          "baseHp": 8660.0,
-          "baseAtk": 200.0,
-          "baseDef": 525.0,
+          "baseHp": 7936.0,
+          "baseAtk": 260.0,
+          "baseDef": 435.0,
           "isAnAscension": false,
           "statValue": 14.6
         },
         {
           "level": 70,
-          "baseHp": 9152.0,
-          "baseAtk": 216.0,
-          "baseDef": 552.0,
+          "baseHp": 8428.0,
+          "baseAtk": 276.0,
+          "baseDef": 462.0,
           "isAnAscension": true,
           "statValue": 19.4
         },
         {
           "level": 80,
-          "baseHp": 9969.0,
-          "baseAtk": 232.0,
-          "baseDef": 603.0,
+          "baseHp": 9151.0,
+          "baseAtk": 300.0,
+          "baseDef": 502.0,
           "isAnAscension": false,
           "statValue": 19.4
         },
         {
           "level": 80,
-          "baseHp": 10461.0,
-          "baseAtk": 248.0,
-          "baseDef": 630.0,
+          "baseHp": 9643.0,
+          "baseAtk": 316.0,
+          "baseDef": 529.0,
           "isAnAscension": true,
           "statValue": 24.2
         },
         {
           "level": 90,
-          "baseHp": 11284.0,
-          "baseAtk": 264.0,
-          "baseDef": 682.0,
+          "baseHp": 10372.0,
+          "baseAtk": 340.0,
+          "baseDef": 569.0,
           "isAnAscension": false,
           "statValue": 24.2
         }
@@ -52940,7 +54130,7 @@
       "fullImage": "yun-jin.png",
       "secondFullImage": null,
       "isComingSoon": false,
-      "isNew": true,
+      "isNew": false,
       "isFemale": true,
       "region": "liyue",
       "role": "support",

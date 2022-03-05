@@ -2728,6 +2728,93 @@
       ]
     },
     {
+      "key": "kamisato-ayato",
+      "name": "Kamisato Ayato",
+      "title": "",
+      "description": "社奉行神里家若くて有能な現当主。穏やかで礼儀正しく、要領よく物事を捌ける。",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ]
+    },
+    {
       "key": "keqing",
       "name": "刻晴",
       "title": "疾雷快雨",
@@ -6288,87 +6375,134 @@
     },
     {
       "key": "yae-miko",
-      "name": "Yae Miko",
-      "title": "",
-      "description": "",
+      "name": "八重神子",
+      "title": "浮世笑百姿",
+      "description": "鳴神大社の宮司様であり、「八重堂」の編集長。華やかな見た目の裏には、思いもよらぬ知性と奸智が隠されている。",
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "通常攻撃·狐霊罪喰い式",
+          "description": "",
+          "abilities": [
+            {
+              "name": "通常攻撃",
+              "description": "狐霊を駆役し、最大3段の連続攻撃を行い、雷元素ダメージを与える。\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "重撃",
+              "description": "一定のスタミナを消費し、短い詠唱をした後、敵に雷元素範囲ダメージを与える。\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "落下攻撃",
+              "description": "雷霆の力を凝集し、空中から落下し地面に衝撃を与える。経路上の敵を攻撃し、落下時に雷元素範囲ダメージを与える。",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "1段ダメージ|{param1}%",
+            "2段ダメージ|{param2}%",
+            "3段ダメージ|{param3}%",
+            "重撃ダメージ|{param4}%",
+            "重撃スタミナ消費|{param5}",
+            "落下期間のダメージ|{param6}%",
+            "低空/高空落下攻撃ダメージ|{param7}% / {param8}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "野干役呪·殺生櫻",
+          "description": "八重にとって、妖怪を駆役して解決できるような問題ならば、自ら手を下す必要などない。\r\n素早く移動し、「殺生櫻」を1株残す。\r\n",
+          "abilities": [
+            {
+              "name": "殺生櫻",
+              "description": "殺生櫻は以下の特性を持つ。\r\n",
+              "descriptions": [
+                "一定間隔で、周囲の敵1体に雷を落とし、雷元素ダメージを与える。",
+                "近くに他の殺生櫻が存在する場合、その階位をアップさせ、上記の攻撃によるダメージをアップさせる。",
+                "使用可能回数は3回。",
+                "殺生櫻は同時に最大3株まで存在できる。また初期状態では、創造時の階位は壱で、最大階位は参までアップできる。創造位置が既存の殺生櫻に近すぎる場合、既存の殺生櫻を破壊する。"
+              ]
+            }
+          ],
+          "stats": [
+            "殺生櫻ダメージ·階位壱|{param1}%",
+            "殺生櫻ダメージ·階位弐|{param2}%",
+            "殺生櫻ダメージ·階位参|{param3}%",
+            "殺生櫻ダメージ·階位肆|{param4}%",
+            "継続時間|{param5} 秒",
+            "クールタイム|{param6} 秒"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
+          "title": "大密法·天狐顕現",
+          "description": "稲妻の民話には、「狐憑」なるものが存在する。その中でも特殊な「天狐の憑」は、雷霆の形を成して、鳴神大社に仇なす者へと落とされる。雷を落とし、雷元素範囲ダメージを与える。\r\n発動時、八重神子は周囲の殺生櫻を解放し破壊する。その後、天狐雷霆を形成して落とし、雷元素範囲ダメージを与える。この方法で破壊された殺生櫻1株につき、天狐雷霆を1つ落とす。\r\n",
           "abilities": [],
-          "stats": []
+          "stats": [
+            "スキルダメージ|{param1}%",
+            "天狐雷霆ダメージ|{param2}%",
+            "クールタイム|{param3} 秒",
+            "元素エネルギー|{param4}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "野狐説禅",
+          "description": "キャラクター天賦素材を合成する時、25%の確率で同じ地域の異なる天賦素材をランダムで1個獲得できる。追加獲得素材は、消費素材と同ランクになる。\r\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
+          "title": "神籬之御蔭",
+          "description": "大密法 • 天狐顕現発動時、殺生櫻を1株破壊する毎に、野干役呪 • 殺生櫻のクールタイムを1回分リセットする。\r\n",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "NA",
-          "description": "",
+          "title": "啓蟄之祝詞",
+          "description": "八重神子の元素熟知の数値が1につき、殺生櫻によるダメージ+0.15%。\r\n",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "野狐供真編",
+          "description": "大密法 • 天狐顕現で天狐雷霆を1回発生させるたびに、八重神子自身の元素エネルギーを8ポイント回復する。\r\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "望月之吼噦",
+          "description": "殺生櫻の創造時の初期階位を弐、最大階位を肆にアップ、攻撃範囲+60%。\r\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "七化けの段",
+          "description": "野干役呪 • 殺生櫻のスキルLv.+3。\r\n最大Lv.15まで。\r\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "緋櫻誘雷章",
+          "description": "殺生櫻の落雷が敵に命中すると、周囲のチーム全員の雷元素ダメージ+20%、継続時間5秒。\r\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "暴悪嗤笑面",
+          "description": "大密法 • 天狐顕現のスキルLv.+3。\r\n最大Lv.15まで。\r\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
+          "title": "大殺生呪禁",
+          "description": "殺生櫻が攻撃する際、敵の防御力の60%を無視する。\r\n",
           "descriptions": []
         }
       ]
@@ -7505,6 +7639,18 @@
       ]
     },
     {
+      "key": "kaguras-verity",
+      "name": "神楽の真意",
+      "description": "神楽舞を披露する際に使われ、宮司の祝福を受けた神鈴。神櫻の香りが漂っている。",
+      "refinements": [
+        "元素スキルを発動すると、「神楽舞」の効果を獲得する。この武器を装備したキャラクターの元素スキルによるダメージ+{color}12{/color}%、継続時間16秒、最大3層まで。3層の効果を持つ時、該当キャラクターの全元素ダメージ+{color}12{/color}%。",
+        "元素スキルを発動すると、「神楽舞」の効果を獲得する。この武器を装備したキャラクターの元素スキルによるダメージ+{color}15{/color}%、継続時間16秒、最大3層まで。3層の効果を持つ時、該当キャラクターの全元素ダメージ+{color}15{/color}%。",
+        "元素スキルを発動すると、「神楽舞」の効果を獲得する。この武器を装備したキャラクターの元素スキルによるダメージ+{color}18{/color}%、継続時間16秒、最大3層まで。3層の効果を持つ時、該当キャラクターの全元素ダメージ+{color}18{/color}%。",
+        "元素スキルを発動すると、「神楽舞」の効果を獲得する。この武器を装備したキャラクターの元素スキルによるダメージ+{color}21{/color}%、継続時間16秒、最大3層まで。3層の効果を持つ時、該当キャラクターの全元素ダメージ+{color}21{/color}%。",
+        "元素スキルを発動すると、「神楽舞」の効果を獲得する。この武器を装備したキャラクターの元素スキルによるダメージ+{color}24{/color}%、継続時間16秒、最大3層まで。3層の効果を持つ時、該当キャラクターの全元素ダメージ+{color}24{/color}%。"
+      ]
+    },
+    {
       "key": "katsuragikiri-nagamasa",
       "name": "桂木斬長正",
       "description": "たたら砂で鍛えられた刀。重くて強靭である。",
@@ -7670,6 +7816,18 @@
         "チーム全員の元素エネルギー上限の合計を基に、元素爆発ダメージをアップさせる。1ポイントにつき、装備したキャラクターの元素爆発ダメージ+{color}0.18{/color}%。この方式でアップできる元素爆発ダメージは最大{color}60{/color}%まで。",
         "チーム全員の元素エネルギー上限の合計を基に、元素爆発ダメージをアップさせる。1ポイントにつき、装備したキャラクターの元素爆発ダメージ+{color}0.21{/color}%。この方式でアップできる元素爆発ダメージは最大{color}70{/color}%まで。",
         "チーム全員の元素エネルギー上限の合計を基に、元素爆発ダメージをアップさせる。1ポイントにつき、装備したキャラクターの元素爆発ダメージ+{color}0.24{/color}%。この方式でアップできる元素爆発ダメージは最大{color}80{/color}%まで。"
+      ]
+    },
+    {
+      "key": "oathsworn-eye",
+      "name": "誓いの明瞳",
+      "description": "大日御輿に収蔵されている白夜国の宝。蛇神が訪れた後、淵下宮の大いなる誓いと願いの公証として使われていた。",
+      "refinements": [
+        "元素スキルを発動すると、元素チャージ効率+{color}24{/color}%、継続時間10秒。",
+        "元素スキルを発動すると、元素チャージ効率+{color}30{/color}%、継続時間10秒。",
+        "元素スキルを発動すると、元素チャージ効率+{color}36{/color}%、継続時間10秒。",
+        "元素スキルを発動すると、元素チャージ効率+{color}42{/color}%、継続時間10秒。",
+        "元素スキルを発動すると、元素チャージ効率+{color}48{/color}%、継続時間10秒。"
       ]
     },
     {
@@ -9528,6 +9686,11 @@
       "description": "大陸で流通しているお金。世界で通用する共通言語、誰でも理解できる貴金属。"
     },
     {
+      "key": "mudra-of-the-malefic-general",
+      "name": "凶将の手眼",
+      "description": "浄土から取り出した人形の関節。「見たままを形にする」という概念を象徴している。\r\n禍神となった今も「彼女」はこの手眼を操ることができ、視界が捉えた一瞬の間に、一太刀を放つ。\r\nしかし万劫はあまりに遠く、凶将の骸も春を迎えねばならなかった。"
+    },
+    {
       "key": "mushroom",
       "name": "キノコ",
       "description": "生命力旺盛なよく見かけるキノコ類。適切な木陰と水分さえあれば、どこでも元気に育つ。"
@@ -10043,6 +10206,16 @@
       "description": "天賦育成素材。\r\n雷の国が抱く夢は浮世である。\r\n浮世の栄華は人生の美しさを表す最高の表現。人の一生、この世にとっては迅雷の如く。夢や花火のように、瞬く間に消えてしまうが、永遠なる夜空に、その輝かしい痕跡を残すことができる。"
     },
     {
+      "key": "tears-of-the-calamitous-god",
+      "name": "禍神の禊涙",
+      "description": "浄土から取り出した人形の関節。「悪曜の眼」の形をしている。\r\nこの眼で眺めるだけで災いや呪いを下せるため、人生の不幸を「禍神」のせいにするのも無理はない。だが、よくよく考えると、もし自分の意志が強く、信念が固かったならどうだろうか…\r\n万劫はあまりに遠いが、凶星悪曜ですら涙で身を清めることができるのだ。"
+    },
+    {
+      "key": "the-meaning-of-aeons",
+      "name": "万劫の真意",
+      "description": "すべてが落ち着いた後、浄土から取り出した小さな髪飾り。\r\n一念は万劫の終わりであり、時間を超えた想いと言うのはは必ず存在する。\r\n百千万劫に渡る眞の想いは、ちゃんと届いただろうか。"
+    },
+    {
       "key": "tile-of-decarabians-tower",
       "name": "高塔の王の瓦",
       "description": "武器に突破の力を付与する材料。\r\n最近風龍廃墟と呼ばれた場所は、かつての烈風の魔神「デカラビアン」が作った王都だった。繁華な夢はすべて魔神の力によって作られたため、夢が破った瞬間の瓦でも強い力がある。"
@@ -10325,6 +10498,10 @@
     {
       "key": "abyss-herald-wicked-torrents",
       "name": "アビスの使徒·激流"
+    },
+    {
+      "key": "abyss-lector-fathomless-flames",
+      "name": "アビスの詠唱者·淵炎"
     },
     {
       "key": "abyss-lector-violet-lightning",
@@ -10655,6 +10832,10 @@
       "name": "北風の王狼、奔狼の領主"
     },
     {
+      "key": "magatsu-mitake-narukami-no-mikoto",
+      "name": "禍津御建鳴神命"
+    },
+    {
       "key": "maguu-kenki",
       "name": "魔偶剣鬼"
     },
@@ -10813,6 +10994,18 @@
     {
       "key": "sangonomiya-cohort",
       "name": "珊瑚宮衆"
+    },
+    {
+      "key": "shadowy-husk-defender",
+      "name": "シャドウハスク·守衛"
+    },
+    {
+      "key": "shadowy-husk-line-breaker",
+      "name": "シャドウハスク·破陣"
+    },
+    {
+      "key": "shadowy-husk-standard-bearer",
+      "name": "シャドウハスク·旗令"
     },
     {
       "key": "shogunate-infantry",
