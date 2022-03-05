@@ -395,5 +395,21 @@
   "startByAddingArtifacts": "Start by adding some artifacts",
   "teamComposition": "Team Composition",
   "changeWereSuccessfullySaved": "Changes were successfully saved",
-  "healer": "Healer"
+  "healer": "Healer",
+  "donations": "Donations",
+  "changelog": "Changelog",
+  "email": "Email",
+  "donationMsg": "If you would like to support the development, you can help by donating a small amount",
+  "donateXAmount": "Donate {amount}",
+  "purchase": "Purchase",
+  "restorePurchases": "Restore Purchases",
+  "userId": "User ID",
+  "paymentSucceed": "Payment succeed. Thank you for your support.",
+  "paymentError": "Payment could not be completed.",
+  "purchaseMsgA": "Please enter a custom user id, use letters and numbers. Do not use passwords, secret codes, pins, etc.",
+  "purchaseMsgB": "You may need it later in case you need to restore your purchases.",
+  "restorePurchaseMsgA": "Type the User ID that you previously used.",
+  "restorePurchaseSucceed": "Purchases were successfully restored",
+  "restorePurchaseError": "Purchases could not be restored",
+  "collapse": "Collapse"
 }
