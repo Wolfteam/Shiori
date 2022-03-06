@@ -12,9 +12,10 @@ import 'package:shiori/domain/services/purchase_service.dart';
 import 'package:shiori/infrastructure/secrets.dart';
 
 class PurchaseServiceImpl implements PurchaseService {
-  bool _initialized = false;
-
   final LoggingService _loggingService;
+
+  bool _initialized = false;
+  List<AppUnlockedFeature>? _unlockedFeatures;
 
   @override
   bool get isInitialized => _initialized;
@@ -129,6 +130,7 @@ class PurchaseServiceImpl implements PurchaseService {
     }
 
     try {
+      _unlockedFeatures = null;
       final features = await _getUnlockedFeatures(entitlementIdentifier: entitlementIdentifier);
       return features.isNotEmpty;
     } catch (e, s) {
@@ -156,6 +158,10 @@ class PurchaseServiceImpl implements PurchaseService {
 
   Future<List<AppUnlockedFeature>> _getUnlockedFeatures({String? entitlementIdentifier}) async {
     try {
+      if (_unlockedFeatures != null){
+        return _unlockedFeatures!;
+      }
+
       if (!await isPlatformSupported()) {
         return [];
       }
@@ -167,11 +173,13 @@ class PurchaseServiceImpl implements PurchaseService {
       final transactions = await Purchases.restoreTransactions();
       if (entitlementIdentifier.isNullEmptyOrWhitespace) {
         final activeEntitlements = transactions.entitlements.active.values.any((el) => el.isActive);
-        return activeEntitlements ? AppUnlockedFeature.values : [];
+        _unlockedFeatures = activeEntitlements ? AppUnlockedFeature.values : [];
+        return _unlockedFeatures!;
       }
 
       final entitlement = transactions.entitlements.active.values.firstWhereOrNull((el) => el.identifier == entitlementIdentifier && el.isActive);
-      return entitlement != null ? AppUnlockedFeature.values : [];
+      _unlockedFeatures = entitlement != null ? AppUnlockedFeature.values : [];
+      return _unlockedFeatures!;
     } catch (e) {
       rethrow;
     }
