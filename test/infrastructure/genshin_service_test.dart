@@ -338,6 +338,7 @@ void main() {
             expect(ascensionNumber == 6, isTrue);
             break;
         }
+
         var repetitionCount = 0;
         for (var i = 0; i < detail.stats.length; i++) {
           final stat = detail.stats[i];
@@ -609,7 +610,14 @@ void main() {
           checkTranslation(translation.name, canBeNull: false);
           checkTranslation(translation.description, canBeNull: false);
           if (detail.rarity > 2) {
-            expect(translation.refinements, isNotEmpty);
+            //all weapons with a rarity > 2 have 5 refinements except the following
+            //the ps4 sword, the aloy weapon
+            final ignore = ['sword-of-descension', 'predator'];
+            if (!ignore.contains(detail.key)){
+              expect(translation.refinements.length, 5);
+            } else {
+              expect(translation.refinements, isNotEmpty);
+            }
           } else {
             expect(translation.refinements, isEmpty);
           }
