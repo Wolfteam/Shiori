@@ -140,14 +140,6 @@ class PurchaseServiceImpl implements PurchaseService {
   @override
   Future<List<AppUnlockedFeature>> getUnlockedFeatures() async {
     try {
-      if (!await isPlatformSupported()) {
-        return [];
-      }
-
-      if (await Purchases.isAnonymous) {
-        return [];
-      }
-
       final features = await _getUnlockedFeatures();
       return features;
     } catch (e, s) {
@@ -156,8 +148,22 @@ class PurchaseServiceImpl implements PurchaseService {
     }
   }
 
+  @override
+  Future<bool> isFeatureUnlocked(AppUnlockedFeature feature) async {
+    final features = await getUnlockedFeatures();
+    return features.contains(feature);
+  }
+
   Future<List<AppUnlockedFeature>> _getUnlockedFeatures({String? entitlementIdentifier}) async {
     try {
+      if (!await isPlatformSupported()) {
+        return [];
+      }
+
+      if (await Purchases.isAnonymous) {
+        return [];
+      }
+
       final transactions = await Purchases.restoreTransactions();
       if (entitlementIdentifier.isNullEmptyOrWhitespace) {
         final activeEntitlements = transactions.entitlements.active.values.any((el) => el.isActive);
