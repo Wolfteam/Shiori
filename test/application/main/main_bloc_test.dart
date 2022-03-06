@@ -108,6 +108,7 @@ void main() {
   setUp(() {
     when(_settingsService.language).thenReturn(_defaultLang);
     when(_settingsService.appTheme).thenReturn(_defaultTheme);
+    when(_settingsService.useDarkAmoledTheme).thenReturn(false);
     when(_settingsService.accentColor).thenReturn(_defaultAccentColor);
     when(_settingsService.isFirstInstall).thenReturn(_defaultAppSettings.isFirstInstall);
     when(_settingsService.appSettings).thenReturn(_defaultAppSettings);
@@ -144,6 +145,7 @@ void main() {
         MainState.loaded(
           appTitle: _defaultAppName,
           theme: _defaultTheme,
+          useDarkAmoledTheme: false,
           accentColor: _defaultAccentColor,
           language: _localeService.getLocale(_defaultLang),
           initialized: true,
@@ -166,6 +168,7 @@ void main() {
         MainState.loaded(
           appTitle: _defaultAppName,
           theme: AppThemeType.light,
+          useDarkAmoledTheme: false,
           accentColor: _defaultAppSettings.accentColor,
           language: _localeService.getLocale(_defaultLang),
           initialized: true,
@@ -186,7 +189,29 @@ void main() {
         MainState.loaded(
           appTitle: _defaultAppName,
           theme: _defaultAppSettings.appTheme,
+          useDarkAmoledTheme: false,
           accentColor: AppAccentColorType.blueGrey,
+          language: _localeService.getLocale(_defaultLang),
+          initialized: true,
+          firstInstall: _defaultAppSettings.isFirstInstall,
+          versionChanged: _deviceInfoService.versionChanged,
+        ),
+      ],
+    );
+
+    blocTest<MainBloc, MainState>(
+      'uses dark amoled',
+      build: () => _getBloc(),
+      act: (bloc) => bloc
+        ..add(const MainEvent.init())
+        ..add(const MainEvent.useDarkAmoledThemeChanged(newValue: true)),
+      skip: 1,
+      expect: () => [
+        MainState.loaded(
+          appTitle: _defaultAppName,
+          theme: _defaultAppSettings.appTheme,
+          useDarkAmoledTheme: true,
+          accentColor: _defaultAccentColor,
           language: _localeService.getLocale(_defaultLang),
           initialized: true,
           firstInstall: _defaultAppSettings.isFirstInstall,
@@ -210,6 +235,7 @@ void main() {
         MainState.loaded(
           appTitle: _defaultAppName,
           theme: _defaultAppSettings.appTheme,
+          useDarkAmoledTheme: false,
           accentColor: _defaultAppSettings.accentColor,
           language: _localeService.getLocale(AppLanguageType.russian),
           initialized: true,

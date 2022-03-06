@@ -52,9 +52,10 @@ class MainBloc extends Bloc<MainEvent, MainState> {
   Stream<MainState> mapEventToState(MainEvent event) async* {
     final s = await event.when(
       init: () async => _init(init: true),
-      themeChanged: (theme) async => _loadThemeData(theme, _settingsService.accentColor),
-      accentColorChanged: (accentColor) async => _loadThemeData(_settingsService.appTheme, accentColor),
+      themeChanged: (theme) async => _loadThemeData(theme, _settingsService.useDarkAmoledTheme, _settingsService.accentColor),
+      accentColorChanged: (accentColor) async => _loadThemeData(_settingsService.appTheme, _settingsService.useDarkAmoledTheme, accentColor),
       languageChanged: (language) async => _init(languageChanged: true),
+      useDarkAmoledThemeChanged: (use) async => _loadThemeData(_settingsService.appTheme, use, _settingsService.accentColor),
     );
     yield s;
   }
@@ -74,7 +75,7 @@ class MainBloc extends Bloc<MainEvent, MainState> {
     final settings = _settingsService.appSettings;
     await _telemetryService.trackInit(settings);
 
-    final state = _loadThemeData(settings.appTheme, settings.accentColor);
+    final state = _loadThemeData(settings.appTheme, settings.useDarkAmoled, settings.accentColor);
 
     if (init) {
       await Future.delayed(const Duration(milliseconds: 250));
@@ -85,6 +86,7 @@ class MainBloc extends Bloc<MainEvent, MainState> {
 
   Future<MainState> _loadThemeData(
     AppThemeType theme,
+    bool useDarkAmoledTheme,
     AppAccentColorType accentColor, {
     bool isInitialized = true,
   }) async {
@@ -93,15 +95,14 @@ class MainBloc extends Bloc<MainEvent, MainState> {
       '_init: Is first install = ${_settingsService.isFirstInstall} ' + '-- versionChanged = ${_deviceInfoService.versionChanged}',
     );
 
-    final features = await _purchaseService.getUnlockedFeatures();
-    final useDarkAmoledTheme = true && features.contains(AppUnlockedFeature.darkAmoledTheme);
-
+    final useDarkAmoledTheme = _settingsService.useDarkAmoledTheme && await _purchaseService.isFeatureUnlocked(AppUnlockedFeature.darkAmoledTheme);
     return MainState.loaded(
       appTitle: _deviceInfoService.appName,
       accentColor: accentColor,
       language: _localeService.getLocaleWithoutLang(),
       initialized: isInitialized,
       theme: theme,
+      useDarkAmoledTheme: useDarkAmoledTheme,
       firstInstall: _settingsService.isFirstInstall,
       versionChanged: _deviceInfoService.versionChanged,
     );

@@ -9,6 +9,7 @@ import 'package:shiori/domain/services/settings_service.dart';
 
 class SettingsServiceImpl extends SettingsService {
   final _appThemeKey = 'AppTheme';
+  final _useDarkAmoledThemeKey = 'UseDarkAmoledTheme';
   final _accentColorKey = 'AccentColor';
   final _appLanguageKey = 'AppLanguage';
   final _firstInstallKey = 'FirstInstall';
@@ -29,6 +30,12 @@ class SettingsServiceImpl extends SettingsService {
 
   @override
   set appTheme(AppThemeType theme) => _prefs.setInt(_appThemeKey, theme.index);
+
+  @override
+  bool get useDarkAmoledTheme => _prefs.getBool(_useDarkAmoledThemeKey)!;
+
+  @override
+  set useDarkAmoledTheme(bool use) => _prefs.setBool(_useDarkAmoledThemeKey, use);
 
   @override
   AppAccentColorType get accentColor => AppAccentColorType.values[_prefs.getInt(_accentColorKey)!];
@@ -87,7 +94,7 @@ class SettingsServiceImpl extends SettingsService {
   @override
   AppSettings get appSettings => AppSettings(
         appTheme: appTheme,
-        useDarkAmoled: false,
+        useDarkAmoled: useDarkAmoledTheme,
         accentColor: accentColor,
         appLanguage: language,
         showCharacterDetails: showCharacterDetails,
@@ -118,12 +125,16 @@ class SettingsServiceImpl extends SettingsService {
     }
 
     if (_prefs.get(_appThemeKey) == null) {
-      _logger.info(runtimeType, 'Setting default dark theme');
-      appTheme = AppThemeType.dark;
+      _logger.info(runtimeType, 'Setting default light theme');
+      appTheme = AppThemeType.light;
+    }
+
+    if (_prefs.get(_useDarkAmoledThemeKey) == null) {
+      useDarkAmoledTheme = false;
     }
 
     if (_prefs.get(_accentColorKey) == null) {
-      _logger.info(runtimeType, 'Setting default blue accent color');
+      _logger.info(runtimeType, 'Setting default red accent color');
       accentColor = AppAccentColorType.red;
     }
 

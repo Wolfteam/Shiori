@@ -398,7 +398,6 @@
   "teamComposition": "Team Composition",
   "changeWereSuccessfullySaved": "Changes were successfully saved",
   "healer": "Healer",
-  "collapse": "Collapse",
   "donations": "Donations",
   "changelog": "Changelog",
   "email": "Email",
@@ -413,5 +412,8 @@
   "purchaseMsgB": "You may need it later in case you need to restore your purchases.",
   "restorePurchaseMsgA": "Type the User ID that you previously used.",
   "restorePurchaseSucceed": "Purchases were successfully restored",
-  "restorePurchaseError": "Purchases could not be restored"
+  "restorePurchaseError": "Purchases could not be restored",
+  "collapse": "Collapse",
+  "useDarkAmoledTheme": "Use dark amoled theme",
+  "unlockedWithDonation": "Unlocked with a donation"
 }

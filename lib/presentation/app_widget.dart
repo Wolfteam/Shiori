@@ -26,7 +26,7 @@ class AppWidget extends StatelessWidget {
           final locale = Locale(s.language.code, s.language.countryCode);
           return MaterialApp(
             title: s.appTitle,
-            theme: s.accentColor.getThemeData(s.theme),
+            theme: s.accentColor.getThemeData(s.theme, s.useDarkAmoledTheme),
             home: MainTabPage(showChangelog: s.versionChanged),
             themeMode: ThemeMode.dark,
             //Without this, the lang won't be reloaded

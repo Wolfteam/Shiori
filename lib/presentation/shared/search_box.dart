@@ -53,12 +53,12 @@ class _SearchBoxState extends State<SearchBox> {
       child: Card(
         elevation: 3,
         margin: Styles.edgeInsetAll10,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
         child: Row(
           children: <Widget>[
-            Container(
-              margin: const EdgeInsets.only(left: 10),
-              child: const Icon(Icons.search),
+            IconButton(
+              splashRadius: Styles.smallButtonSplashRadius,
+              onPressed: () => _searchFocusNode.requestFocus(),
+              icon: const Icon(Icons.search),
             ),
             Expanded(
               child: TextField(

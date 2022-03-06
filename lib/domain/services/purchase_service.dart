@@ -19,4 +19,6 @@ abstract class PurchaseService {
   Future<bool> restorePurchases(String userId, {String? entitlementIdentifier});
 
   Future<List<AppUnlockedFeature>> getUnlockedFeatures();
+
+  Future<bool> isFeatureUnlocked(AppUnlockedFeature feature);
 }
