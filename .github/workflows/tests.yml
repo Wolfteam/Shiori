@@ -14,7 +14,7 @@ jobs:
 
       - name: Create secrets file
         run: |
-          echo "class Secrets { static String appCenterKey = '1234'; static String androidPurchasesKey = '1234' }" > lib/infrastructure/secrets.dart
+          echo "class Secrets { static String appCenterKey = '1234'; static String androidPurchasesKey = '1234'; }" > lib/infrastructure/secrets.dart
 
       - name: Install and set flutter version
         uses: subosito/flutter-action@v2.3.0
