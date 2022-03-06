@@ -414,5 +414,6 @@
   "restorePurchaseSucceed": "Purchases were successfully restored",
   "restorePurchaseError": "Purchases could not be restored",
   "collapse": "Collapse",
-  "useDarkAmoledTheme": "Use dark amoled theme"
+  "useDarkAmoledTheme": "Use dark amoled theme",
+  "unlockedWithDonation": "Unlocked with a donation"
 }
