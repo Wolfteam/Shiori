@@ -57,4 +57,8 @@ abstract class TelemetryService {
   Future<void> trackCustomBuildSaved(String charKey, CharacterRoleType roleType, CharacterRoleSubType subType);
 
   Future<void> trackCustomBuildScreenShootTaken(String charKey, CharacterRoleType roleType, CharacterRoleSubType subType);
+
+  Future<void> trackRestore(String userId, bool succeed);
+
+  Future<void> trackPurchase(String userId, String identifier, bool succeed);
 }

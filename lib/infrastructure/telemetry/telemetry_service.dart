@@ -144,20 +144,19 @@ class TelemetryServiceImpl implements TelemetryService {
   @override
   Future<void> trackCustomBuildSaved(String charKey, CharacterRoleType roleType, CharacterRoleSubType subType) => trackEventAsync(
         'Custom-Build-Saved',
-        {
-          'CharKey': charKey,
-          'RoleType': EnumToString.convertToString(roleType),
-          'SubType': EnumToString.convertToString(subType),
-        },
+        {'Char_RoleType_SubType': '${charKey}_${EnumToString.convertToString(roleType)}_${EnumToString.convertToString(subType)}'},
       );
 
   @override
   Future<void> trackCustomBuildScreenShootTaken(String charKey, CharacterRoleType roleType, CharacterRoleSubType subType) => trackEventAsync(
         'Custom-Build-ScreenShootTaken',
-        {
-          'CharKey': charKey,
-          'RoleType': EnumToString.convertToString(roleType),
-          'SubType': EnumToString.convertToString(subType),
-        },
+        {'Char_RoleType_SubType': '${charKey}_${EnumToString.convertToString(roleType)}_${EnumToString.convertToString(subType)}'},
       );
+
+  @override
+  Future<void> trackPurchase(String userId, String identifier, bool succeed) =>
+      trackEventAsync('Donations-Purchase', {'UserId_Identifier_Succeed': '${userId}_${identifier}_$succeed'});
+
+  @override
+  Future<void> trackRestore(String userId, bool succeed) => trackEventAsync('Donations-Restore', {'UserId_Succeed': '${userId}_$succeed'});
 }

@@ -140,7 +140,8 @@ class Injection {
   static DonationsBloc get donationsBloc {
     final purchaseService = getIt<PurchaseService>();
     final networkService = getIt<NetworkService>();
-    return DonationsBloc(purchaseService, networkService);
+    final telemetryService = getIt<TelemetryService>();
+    return DonationsBloc(purchaseService, networkService, telemetryService);
   }
 
   //TODO: USE THIS PROP
