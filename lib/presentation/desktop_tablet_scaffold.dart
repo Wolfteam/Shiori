@@ -30,7 +30,7 @@ class DesktopTabletScaffold extends StatelessWidget {
       body: SafeArea(
         child: Row(
           children: [
-            _NavigationRail(defaultIndex: defaultIndex, extended: extended, tabController: tabController),
+            _NavigationRail(defaultIndex: defaultIndex + 1, extended: extended, tabController: tabController),
             const VerticalDivider(thickness: 1, width: 1),
             // This is the main content.
             Expanded(
