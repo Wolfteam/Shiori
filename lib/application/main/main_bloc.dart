@@ -95,9 +95,7 @@ class MainBloc extends Bloc<MainEvent, MainState> {
       '_init: Is first install = ${_settingsService.isFirstInstall} ' + '-- versionChanged = ${_deviceInfoService.versionChanged}',
     );
 
-    final features = await _purchaseService.getUnlockedFeatures();
-    final useDarkAmoledTheme = true && features.contains(AppUnlockedFeature.darkAmoledTheme);
-
+    final useDarkAmoledTheme = _settingsService.useDarkAmoledTheme && await _purchaseService.isFeatureUnlocked(AppUnlockedFeature.darkAmoledTheme);
     return MainState.loaded(
       appTitle: _deviceInfoService.appName,
       accentColor: accentColor,

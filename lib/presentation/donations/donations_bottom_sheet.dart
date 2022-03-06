@@ -144,9 +144,9 @@ class _BodyState extends State<_Body> {
     final toast = ToastUtils.of(context);
     String msg = '';
     if (isPurchase) {
-      msg = error ? s.paymentError : s.paymentSucceed;
+      msg = error ? s.paymentError : '${s.paymentSucceed}\n${s.restartMayBeNeeded}';
     } else {
-      msg = error ? s.restorePurchaseError : s.restorePurchaseSucceed;
+      msg = error ? s.restorePurchaseError : '${s.restorePurchaseSucceed}\n${s.restartMayBeNeeded}';
     }
 
     if (!error) {

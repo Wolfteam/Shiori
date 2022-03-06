@@ -208,6 +208,7 @@ class _ModalBottomSheetState<T> extends State<_ModalBottomSheet<T>> {
         onHorizontalDragEnd: handleDragEnd,
         child: SafeArea(
           child: Material(
+            color: widget.backgroundColor,
             child: Container(
               margin: const EdgeInsets.only(top: 10, left: 16, right: 16),
               child: widget.route!.builder!(context),

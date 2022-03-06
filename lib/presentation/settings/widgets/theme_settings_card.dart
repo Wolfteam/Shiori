@@ -1,3 +1,6 @@
+import 'dart:io';
+
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shiori/application/bloc.dart';
@@ -18,6 +21,7 @@ class ThemeSettingsCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final s = S.of(context);
     final theme = Theme.of(context);
+    final darkAmoledThemeIsSupported = !kIsWeb && (Platform.isAndroid || Platform.isIOS);
     return SettingsCard(
       child: BlocBuilder<SettingsBloc, SettingsState>(
         builder: (context, state) => state.maybeMap(
@@ -52,12 +56,19 @@ class ThemeSettingsCard extends StatelessWidget {
                   onChanged: _appThemeChanged,
                 ),
               ),
-              if (state.currentTheme == AppThemeType.dark)
+              if (darkAmoledThemeIsSupported && state.currentTheme == AppThemeType.dark)
                 SwitchListTile(
                   activeColor: theme.colorScheme.secondary,
                   title: Text(s.useDarkAmoledTheme),
                   value: state.useDarkAmoledTheme,
-                  onChanged: (newVal) => context.read<SettingsBloc>().add(SettingsEvent.useDarkAmoledTheme(newValue: newVal)),
+                  subtitle: state.unlockedFeatures.contains(AppUnlockedFeature.darkAmoledTheme) ? null : Text(
+                    s.unlockedWithDonation,
+                    overflow: TextOverflow.ellipsis,
+                    style: theme.textTheme.caption!.copyWith(color: theme.primaryColor, fontStyle: FontStyle.italic),
+                  ),
+                  onChanged: !state.unlockedFeatures.contains(AppUnlockedFeature.darkAmoledTheme)
+                      ? null
+                      : (newVal) => context.read<SettingsBloc>().add(SettingsEvent.useDarkAmoledTheme(newValue: newVal)),
                 ),
             ],
           ),

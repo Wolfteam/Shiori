@@ -1,4 +1,3 @@
-import 'package:flex_color_scheme/flex_color_scheme.dart';
 import 'package:flutter/material.dart';
 import 'package:shiori/domain/enums/enums.dart';
 
@@ -42,14 +41,38 @@ extension AppThemeTypeExtensions on AppAccentColorType {
 
   ThemeData getThemeData(AppThemeType theme, bool useDarkAmoledTheme) {
     final color = getAccentColor();
-    final colors = FlexSchemeColor.from(primary: color, secondary: color, primaryVariant: color, secondaryVariant: color);
     switch (theme) {
       case AppThemeType.dark:
-        return FlexThemeData.dark(colors: colors, darkIsTrueBlack: useDarkAmoledTheme);
+        final colorScheme = ColorScheme.dark(primary: color, secondary: color, primaryVariant: color, secondaryVariant: color);
+        final dark = ThemeData.dark().copyWith(
+          primaryColor: color,
+          primaryColorLight: color.withOpacity(0.5),
+          primaryColorDark: color,
+          useMaterial3: true,
+          colorScheme: colorScheme,
+        );
+
+        if (!useDarkAmoledTheme) {
+          return dark;
+        }
+
+        const almostBlackColor =  Color.fromARGB(255, 16, 16, 16);
+        return dark.copyWith(
+          scaffoldBackgroundColor: Colors.black,
+          popupMenuTheme: const PopupMenuThemeData(color: almostBlackColor),
+          bottomSheetTheme: const BottomSheetThemeData(backgroundColor: almostBlackColor),
+          bottomNavigationBarTheme: const BottomNavigationBarThemeData(backgroundColor: almostBlackColor),
+          cardColor: almostBlackColor,
+          dialogBackgroundColor: almostBlackColor,
+          colorScheme: colorScheme.copyWith(surface: almostBlackColor),
+        );
       case AppThemeType.light:
-        return FlexThemeData.light(
-          colors: colors,
-          appBarElevation: 10,
+        return ThemeData.light().copyWith(
+          primaryColor: color,
+          primaryColorLight: color.withOpacity(0.8),
+          primaryColorDark: color,
+          useMaterial3: true,
+          colorScheme: ColorScheme.light(primary: color, secondary: color),
         );
       default:
         throw Exception('The provided theme  = $theme is not valid ');

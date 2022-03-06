@@ -32,8 +32,9 @@ class ModalBottomSheetUtils {
       case EndDrawerItemType.notifications:
         assert(args != null);
         return notifications.AddEditNotificationBottomSheet.getWidgetFromArgs(context, args!);
+      default:
+        throw Exception('Type = $type is not mapped');
     }
-    return Container();
   }
 
   static Future<void> showAppModalBottomSheet(BuildContext context, EndDrawerItemType type, {Map<String, dynamic>? args}) async {
