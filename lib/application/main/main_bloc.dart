@@ -52,10 +52,10 @@ class MainBloc extends Bloc<MainEvent, MainState> {
   Stream<MainState> mapEventToState(MainEvent event) async* {
     final s = await event.when(
       init: () async => _init(init: true),
-      themeChanged: (theme) async => _loadThemeData(theme, _settingsService.useDarkAmoledTheme, _settingsService.accentColor),
-      accentColorChanged: (accentColor) async => _loadThemeData(_settingsService.appTheme, _settingsService.useDarkAmoledTheme, accentColor),
+      themeChanged: (theme) async => _loadThemeData(theme, _settingsService.accentColor),
+      accentColorChanged: (accentColor) async => _loadThemeData(_settingsService.appTheme, accentColor),
       languageChanged: (language) async => _init(languageChanged: true),
-      useDarkAmoledThemeChanged: (use) async => _loadThemeData(_settingsService.appTheme, use, _settingsService.accentColor),
+      useDarkAmoledThemeChanged: (use) async => _loadThemeData(_settingsService.appTheme, _settingsService.accentColor),
     );
     yield s;
   }
@@ -75,7 +75,7 @@ class MainBloc extends Bloc<MainEvent, MainState> {
     final settings = _settingsService.appSettings;
     await _telemetryService.trackInit(settings);
 
-    final state = _loadThemeData(settings.appTheme, settings.useDarkAmoled, settings.accentColor);
+    final state = _loadThemeData(settings.appTheme, settings.accentColor);
 
     if (init) {
       await Future.delayed(const Duration(milliseconds: 250));
@@ -86,7 +86,6 @@ class MainBloc extends Bloc<MainEvent, MainState> {
 
   Future<MainState> _loadThemeData(
     AppThemeType theme,
-    bool useDarkAmoledTheme,
     AppAccentColorType accentColor, {
     bool isInitialized = true,
   }) async {
