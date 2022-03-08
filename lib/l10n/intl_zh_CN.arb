@@ -411,7 +411,7 @@
   "restorePurchaseMsgA": "输入您之前设置的用户ID",
   "restorePurchaseSucceed": "已恢复支付",
   "restorePurchaseError": "无法恢复支付",
-  "collapse": "Collapse",
-  "useDarkAmoledTheme": "Use dark amoled theme",
-  "unlockedWithDonation": "Unlocked with a donation"
+  "collapse": "崩溃",
+  "useDarkAmoledTheme": "使用纯黑背景",
+  "unlockedWithDonation": "使用捐赠解锁"
 }
