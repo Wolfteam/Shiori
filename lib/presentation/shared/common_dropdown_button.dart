@@ -23,6 +23,7 @@ class CommonDropdownButton<T> extends StatelessWidget {
   Widget build(BuildContext context) {
     return DropdownButton<T>(
       isExpanded: isExpanded,
+      dropdownColor: Theme.of(context).cardColor,
       hint: Text(hint),
       value: currentValue,
       underline: withoutUnderLine

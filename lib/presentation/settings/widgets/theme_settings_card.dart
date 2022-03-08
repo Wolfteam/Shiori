@@ -1,3 +1,6 @@
+import 'dart:io';
+
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shiori/application/bloc.dart';
@@ -17,33 +20,34 @@ class ThemeSettingsCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final s = S.of(context);
+    final theme = Theme.of(context);
+    final darkAmoledThemeIsSupported = !kIsWeb && (Platform.isAndroid || Platform.isIOS);
     return SettingsCard(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: <Widget>[
-          Row(
+      child: BlocBuilder<SettingsBloc, SettingsState>(
+        builder: (context, state) => state.maybeMap(
+          loaded: (state) => Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
-              const Icon(Icons.color_lens),
-              Container(
-                margin: const EdgeInsets.only(left: 5),
+              Row(
+                children: <Widget>[
+                  const Icon(Icons.color_lens),
+                  Container(
+                    margin: const EdgeInsets.only(left: 5),
+                    child: Text(
+                      s.theme,
+                      style: Theme.of(context).textTheme.headline6,
+                    ),
+                  ),
+                ],
+              ),
+              Padding(
+                padding: const EdgeInsets.only(top: 5),
                 child: Text(
-                  s.theme,
-                  style: Theme.of(context).textTheme.headline6,
+                  s.chooseBaseAppTheme,
+                  style: const TextStyle(color: Colors.grey),
                 ),
               ),
-            ],
-          ),
-          Padding(
-            padding: const EdgeInsets.only(top: 5),
-            child: Text(
-              s.chooseBaseAppTheme,
-              style: const TextStyle(color: Colors.grey),
-            ),
-          ),
-          BlocBuilder<SettingsBloc, SettingsState>(
-            builder: (context, state) => state.map(
-              loading: (_) => const Loading(useScaffold: false),
-              loaded: (state) => Padding(
+              Padding(
                 padding: Styles.edgeInsetHorizontal16,
                 child: CommonDropdownButton<AppThemeType>(
                   hint: s.chooseBaseAppTheme,
@@ -52,9 +56,24 @@ class ThemeSettingsCard extends StatelessWidget {
                   onChanged: _appThemeChanged,
                 ),
               ),
-            ),
+              if (darkAmoledThemeIsSupported && state.currentTheme == AppThemeType.dark)
+                SwitchListTile(
+                  activeColor: theme.colorScheme.secondary,
+                  title: Text(s.useDarkAmoledTheme),
+                  value: state.useDarkAmoledTheme,
+                  subtitle: state.unlockedFeatures.contains(AppUnlockedFeature.darkAmoledTheme) ? null : Text(
+                    s.unlockedWithDonation,
+                    overflow: TextOverflow.ellipsis,
+                    style: theme.textTheme.caption!.copyWith(color: theme.primaryColor, fontStyle: FontStyle.italic),
+                  ),
+                  onChanged: !state.unlockedFeatures.contains(AppUnlockedFeature.darkAmoledTheme)
+                      ? null
+                      : (newVal) => context.read<SettingsBloc>().add(SettingsEvent.useDarkAmoledTheme(newValue: newVal)),
+                ),
+            ],
           ),
-        ],
+          orElse: () => const Loading(useScaffold: false),
+        ),
       ),
     );
   }

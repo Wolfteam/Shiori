@@ -144,9 +144,9 @@ class _BodyState extends State<_Body> {
     final toast = ToastUtils.of(context);
     String msg = '';
     if (isPurchase) {
-      msg = error ? s.paymentError : s.paymentSucceed;
+      msg = error ? s.paymentError : '${s.paymentSucceed}\n${s.restartMayBeNeeded}';
     } else {
-      msg = error ? s.restorePurchaseError : s.restorePurchaseSucceed;
+      msg = error ? s.restorePurchaseError : '${s.restorePurchaseSucceed}\n${s.restartMayBeNeeded}';
     }
 
     if (!error) {
@@ -177,7 +177,11 @@ class _DonationItem extends StatelessWidget {
     return InkWell(
       onTap: onTap,
       child: Card(
-        color: isSelected ? theme.colorScheme.primary.withOpacity(0.5) : null,
+        color: isSelected
+            ? theme.colorScheme.primary.withOpacity(0.5)
+            : theme.scaffoldBackgroundColor == Colors.black
+              ? theme.cardColor.withOpacity(0.5)
+              : theme.cardColor,
         margin: Styles.edgeInsetAll10,
         child: Padding(
           padding: Styles.edgeInsetAll10,

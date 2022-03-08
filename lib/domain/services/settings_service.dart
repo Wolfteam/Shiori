@@ -7,6 +7,9 @@ abstract class SettingsService {
   AppThemeType get appTheme;
   set appTheme(AppThemeType theme);
 
+  bool get useDarkAmoledTheme;
+  set useDarkAmoledTheme(bool use);
+
   AppAccentColorType get accentColor;
   set accentColor(AppAccentColorType accentColor);
 

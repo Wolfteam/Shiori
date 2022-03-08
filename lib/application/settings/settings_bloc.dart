@@ -40,6 +40,7 @@ class SettingsBloc extends Bloc<SettingsEvent, SettingsState> {
         final features = await _purchaseService.getUnlockedFeatures();
         return SettingsState.loaded(
           currentTheme: settings.appTheme,
+          useDarkAmoledTheme: settings.useDarkAmoled,
           currentAccentColor: settings.accentColor,
           currentLanguage: settings.appLanguage,
           appVersion: _deviceInfoService.version,
@@ -59,6 +60,14 @@ class SettingsBloc extends Bloc<SettingsEvent, SettingsState> {
         _settingsService.appTheme = event.newValue;
         _mainBloc.add(MainEvent.themeChanged(newValue: event.newValue));
         return currentState.copyWith.call(currentTheme: event.newValue);
+      },
+      useDarkAmoledTheme: (event) async {
+        if (event.newValue == _settingsService.useDarkAmoledTheme) {
+          return currentState;
+        }
+        _settingsService.useDarkAmoledTheme = event.newValue;
+        _mainBloc.add(MainEvent.useDarkAmoledThemeChanged(newValue: event.newValue));
+        return currentState.copyWith.call(useDarkAmoledTheme: event.newValue);
       },
       accentColorChanged: (event) async {
         if (event.newValue == _settingsService.accentColor) {
