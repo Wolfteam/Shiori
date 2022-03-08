@@ -4,9 +4,6 @@ import 'package:mockito/mockito.dart';
 import 'package:shiori/application/bloc.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/models/models.dart';
-import 'package:shiori/domain/services/device_info_service.dart';
-import 'package:shiori/domain/services/purchase_service.dart';
-import 'package:shiori/domain/services/settings_service.dart';
 
 import '../../mocks.mocks.dart';
 
@@ -26,12 +23,7 @@ class FakeUrlPageBloc extends Fake implements UrlPageBloc {
 }
 
 void main() {
-  late final SettingsService _settingsService;
-  late final DeviceInfoService _deviceInfoService;
-  late final PurchaseService _purchaseService;
-  late final MainBloc _mainBloc;
-  late final HomeBloc _homeBloc;
-
+  const String _appVersion = '1.0.0';
   final _defaultSettings = AppSettings(
     appTheme: AppThemeType.dark,
     useDarkAmoled: true,
@@ -46,32 +38,33 @@ void main() {
     useTwentyFourHoursFormat: true,
   );
 
-  setUpAll(() {
-    _settingsService = MockSettingsService();
-    when(_settingsService.appSettings).thenReturn(_defaultSettings);
-    when(_settingsService.appTheme).thenReturn(_defaultSettings.appTheme);
-    when(_settingsService.accentColor).thenReturn(_defaultSettings.accentColor);
-    when(_settingsService.language).thenReturn(_defaultSettings.appLanguage);
-    when(_settingsService.showCharacterDetails).thenReturn(_defaultSettings.showCharacterDetails);
-    when(_settingsService.showWeaponDetails).thenReturn(_defaultSettings.showWeaponDetails);
-    when(_settingsService.isFirstInstall).thenReturn(_defaultSettings.isFirstInstall);
-    when(_settingsService.serverResetTime).thenReturn(_defaultSettings.serverResetTime);
-    when(_settingsService.doubleBackToClose).thenReturn(_defaultSettings.doubleBackToClose);
-    when(_settingsService.useOfficialMap).thenReturn(_defaultSettings.useOfficialMap);
-    when(_settingsService.useTwentyFourHoursFormat).thenReturn(_defaultSettings.useTwentyFourHoursFormat);
+  SettingsBloc _getBloc({AppSettings? appSettings}) {
+    final settings = appSettings ?? _defaultSettings;
+    final settingsService = MockSettingsService();
+    when(settingsService.appSettings).thenReturn(settings);
+    when(settingsService.appTheme).thenReturn(settings.appTheme);
+    when(settingsService.accentColor).thenReturn(settings.accentColor);
+    when(settingsService.useDarkAmoledTheme).thenReturn(settings.useDarkAmoled);
+    when(settingsService.language).thenReturn(settings.appLanguage);
+    when(settingsService.showCharacterDetails).thenReturn(settings.showCharacterDetails);
+    when(settingsService.showWeaponDetails).thenReturn(settings.showWeaponDetails);
+    when(settingsService.isFirstInstall).thenReturn(settings.isFirstInstall);
+    when(settingsService.serverResetTime).thenReturn(settings.serverResetTime);
+    when(settingsService.doubleBackToClose).thenReturn(settings.doubleBackToClose);
+    when(settingsService.useOfficialMap).thenReturn(settings.useOfficialMap);
+    when(settingsService.useTwentyFourHoursFormat).thenReturn(settings.useTwentyFourHoursFormat);
 
-    _deviceInfoService = MockDeviceInfoService();
-    when(_deviceInfoService.version).thenReturn('1.0.0');
-    when(_deviceInfoService.appName).thenReturn('Shiori');
+    final deviceInfoService = MockDeviceInfoService();
+    when(deviceInfoService.version).thenReturn(_appVersion);
+    when(deviceInfoService.appName).thenReturn('Shiori');
 
-    _purchaseService = MockPurchaseService();
-    when(_purchaseService.getUnlockedFeatures()).thenAnswer((_) => Future.value(AppUnlockedFeature.values));
+    final purchaseService = MockPurchaseService();
+    when(purchaseService.getUnlockedFeatures()).thenAnswer((_) => Future.value(AppUnlockedFeature.values));
 
-    _mainBloc = FakeMainBloc();
-    _homeBloc = FakeHomeBloc();
-  });
-
-  SettingsBloc _getBloc() => SettingsBloc(_settingsService, _deviceInfoService, _purchaseService, _mainBloc, _homeBloc);
+    final mainBloc = FakeMainBloc();
+    final homeBloc = FakeHomeBloc();
+    return SettingsBloc(settingsService, deviceInfoService, purchaseService, mainBloc, homeBloc);
+  }
 
   test(
     'Initial state',
@@ -96,7 +89,7 @@ void main() {
         useDarkAmoledTheme: _defaultSettings.useDarkAmoled,
         currentAccentColor: _defaultSettings.accentColor,
         currentLanguage: _defaultSettings.appLanguage,
-        appVersion: _deviceInfoService.version,
+        appVersion: _appVersion,
         showCharacterDetails: _defaultSettings.showCharacterDetails,
         showWeaponDetails: _defaultSettings.showWeaponDetails,
         serverResetTime: _defaultSettings.serverResetTime,
@@ -123,14 +116,14 @@ void main() {
       ..add(SettingsEvent.doubleBackToCloseChanged(newValue: !_defaultSettings.doubleBackToClose))
       ..add(SettingsEvent.useOfficialMapChanged(newValue: !_defaultSettings.useOfficialMap))
       ..add(SettingsEvent.useTwentyFourHoursFormat(newValue: !_defaultSettings.useTwentyFourHoursFormat)),
-    skip: 9,
+    skip: 10,
     expect: () => [
       SettingsState.loaded(
         currentTheme: AppThemeType.light,
         useDarkAmoledTheme: false,
         currentAccentColor: AppAccentColorType.cyan,
         currentLanguage: AppLanguageType.russian,
-        appVersion: _deviceInfoService.version,
+        appVersion: _appVersion,
         showCharacterDetails: !_defaultSettings.showCharacterDetails,
         showWeaponDetails: !_defaultSettings.showWeaponDetails,
         serverResetTime: AppServerResetTimeType.northAmerica,
