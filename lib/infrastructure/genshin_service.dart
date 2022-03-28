@@ -22,6 +22,7 @@ class GenshinServiceImpl implements GenshinService {
   late MonstersFile _monstersFile;
   late GadgetsFile _gadgetsFile;
   late FurnitureFile _furnitureFile;
+  late BannerHistoryFile _bannerHistoryFile;
 
   GenshinServiceImpl(this._localeService);
 
@@ -36,6 +37,7 @@ class GenshinServiceImpl implements GenshinService {
       initMonsters(),
       initGadgets(),
       initFurniture(),
+      initBannerHistory(),
       initTranslations(languageType),
     ]);
   }
@@ -102,6 +104,13 @@ class GenshinServiceImpl implements GenshinService {
       _furnitureFile.furniture.map((e) => e.key).toSet().length == _furnitureFile.furniture.length,
       'All the furniture keys must be unique',
     );
+  }
+
+  @override
+  Future<void> initBannerHistory() async {
+    final jsonStr = await rootBundle.loadString(Assets.bannerHistoryDbPath);
+    final json = jsonDecode(jsonStr) as Map<String, dynamic>;
+    _bannerHistoryFile = BannerHistoryFile.fromJson(json);
   }
 
   @override
@@ -800,6 +809,55 @@ class GenshinServiceImpl implements GenshinService {
     return sorted.map((e) => e.key).toList();
   }
 
+  @override
+  List<double> getBannerHistoryVersions() => _bannerHistoryFile.banners.map((el) => el.version).toSet().toList()..sort((x, y) => x.compareTo(y));
+
+  @override
+  List<BannerHistoryItemModel> getBannerHistory(BannerHistoryItemType type) {
+    final banners = <BannerHistoryItemModel>[];
+    final itemVersionsMap = <String, List<double>>{};
+    final allVersions = getBannerHistoryVersions();
+    final filteredBanners = _bannerHistoryFile.banners.where((el) => el.type == type).toList();
+
+    for (final banner in filteredBanners) {
+      for (final key in banner.itemKeys) {
+        final alreadyAdded = banners.any((el) => el.key == key);
+        switch (banner.type) {
+          case BannerHistoryItemType.character:
+            if (!alreadyAdded) {
+              final char = getCharacterForCard(key);
+              banners.add(BannerHistoryItemModel(versions: [], image: char.image, name: char.name, key: key, type: banner.type));
+            }
+            break;
+          case BannerHistoryItemType.weapon:
+            if (!alreadyAdded) {
+              final weapon = getWeaponForCard(key);
+              banners.add(BannerHistoryItemModel(versions: [], image: weapon.image, name: weapon.name, key: key, type: banner.type));
+            }
+            break;
+          default:
+            throw Exception('The provided banner type = ${banner.type} is not mapped');
+        }
+
+        if (!alreadyAdded) {
+          itemVersionsMap[key] = [banner.version];
+        } else {
+          itemVersionsMap.update(key, (value) => [...value, banner.version]);
+        }
+      }
+    }
+
+    for (var i = 0; i < banners.length; i++) {
+      final current = banners[i];
+      final values = itemVersionsMap.entries.firstWhere((el) => el.key == current.key).value;
+      final updated = current.copyWith.call(versions: getBannerVersionsForItem(allVersions, values));
+      banners.removeAt(i);
+      banners.insert(i, updated);
+    }
+
+    return banners;
+  }
+
   CharacterCardModel _toCharacterForCard(CharacterFileModel character) {
     final translation = getCharacterTranslation(character.key);
 
@@ -895,5 +953,25 @@ class GenshinServiceImpl implements GenshinService {
       type: monster.type,
       isComingSoon: monster.isComingSoon,
     );
+  }
+
+  List<BannerHistoryItemVersionModel> getBannerVersionsForItem(List<double> allVersions, List<double> releasedOn) {
+    final history = <BannerHistoryItemVersionModel>[];
+    int number = 0;
+    for (var i = 0; i < allVersions.length; i++) {
+      final current = allVersions[i];
+      final released = releasedOn.contains(current);
+      final notReleasedYet = releasedOn.every((e) => current < e);
+      if (notReleasedYet) {
+        history.add(BannerHistoryItemVersionModel(version: current, number: 0, released: false));
+      } else if (!released) {
+        number++;
+        history.add(BannerHistoryItemVersionModel(version: current, number: number, released: false));
+      } else {
+        history.add(BannerHistoryItemVersionModel(version: current, released: true));
+        number = 0;
+      }
+    }
+    return history;
   }
 }

@@ -144,6 +144,11 @@ class Injection {
     return DonationsBloc(purchaseService, networkService, telemetryService);
   }
 
+  static BannerHistoryBloc get bannerHistoryBloc {
+    final genshinService = getIt<GenshinService>();
+    return BannerHistoryBloc(genshinService);
+  }
+
   //TODO: USE THIS PROP
   // static CalculatorAscMaterialsItemBloc get calculatorAscMaterialsItemBloc {
   //   final genshinService = getIt<GenshinService>();
