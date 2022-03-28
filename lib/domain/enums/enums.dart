@@ -9,6 +9,7 @@ export 'artifact_farming_time_type.dart';
 export 'artifact_filter_type.dart';
 export 'artifact_type.dart';
 export 'ascension_material_summary_type.dart';
+export 'banner_history_item_type.dart';
 export 'character_filter_type.dart';
 export 'character_role_subtype.dart';
 export 'character_role_type.dart';
