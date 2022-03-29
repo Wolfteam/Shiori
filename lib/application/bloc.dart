@@ -1,6 +1,7 @@
 export 'artifact/artifact_bloc.dart';
 export 'artifacts/artifacts_bloc.dart';
-export 'banner_history/banner_history_bloc.dart';
+export 'banner_history/charts/banner_history_charts_bloc.dart';
+export 'banner_history/versions/banner_history_versions_bloc.dart';
 export 'calculator_asc_materials/material_item/calculator_asc_materials_item_bloc.dart';
 export 'calculator_asc_materials/material_item_quantity/calculator_asc_materials_item_update_quantity_bloc.dart';
 export 'calculator_asc_materials/materials/calculator_asc_materials_bloc.dart';
