@@ -10512,6 +10512,10 @@
       "name": "Azhdaha"
     },
     {
+      "key": "black-serpent-knight-windcutter",
+      "name": "Cavaleiro da Serpente Negra - Quebra-Vento"
+    },
+    {
       "key": "blazing-axe-mitachurl",
       "name": "Mitachurl do Machado Ardente"
     },
@@ -10533,7 +10537,7 @@
     },
     {
       "key": "cryo-abyss-mage",
-      "name": "Mago do Abismo Cryo"
+      "name": "Feiticeiro do Abismo Cryo"
     },
     {
       "key": "cryo-cicin",
@@ -10656,6 +10660,10 @@
       "name": "Soldado dos Fatui - Guerrilheiro de Canhão Pyro"
     },
     {
+      "key": "floating-hydro-fungus",
+      "name": "Cogumelo Flutuante Hydro"
+    },
+    {
       "key": "frostarm-lawachurl",
       "name": "Lawachurl dos Braços Congelantes"
     },
@@ -10745,7 +10753,7 @@
     },
     {
       "key": "hydro-mimic-mallard",
-      "name": "Pato-real Fantasma - Hydro"
+      "name": "Pato-real Ilusório - Hydro"
     },
     {
       "key": "hydro-mimic-raptor",
@@ -10974,6 +10982,10 @@
     {
       "key": "ruin-scout",
       "name": "Batedor das Ruínas"
+    },
+    {
+      "key": "ruin-serpent",
+      "name": "Serpente das Ruínas"
     },
     {
       "key": "sangonomiya-cohort",

@@ -338,6 +338,13 @@
       ]
     },
     {
+      "key": "black-serpent-knight-windcutter",
+      "image": "black-serpent-knight-windcutter.png",
+      "type": "abyssOrder",
+      "isComingSoon": false,
+      "drops": []
+    },
+    {
       "key": "blazing-axe-mitachurl",
       "image": "blazing-axe-mitachurl.png",
       "type": "hilichurl",
@@ -1705,6 +1712,13 @@
           "type": "material"
         }
       ]
+    },
+    {
+      "key": "floating-hydro-fungus",
+      "image": "floating-hydro-fungus.png",
+      "type": "magicalBeast",
+      "isComingSoon": false,
+      "drops": []
     },
     {
       "key": "frostarm-lawachurl",
@@ -4575,6 +4589,13 @@
           "type": "artifact"
         }
       ]
+    },
+    {
+      "key": "ruin-serpent",
+      "image": "ruin-serpent.png",
+      "type": "automaton",
+      "isComingSoon": false,
+      "drops": []
     },
     {
       "key": "sangonomiya-cohort",

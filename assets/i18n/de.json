@@ -10637,6 +10637,10 @@
       "name": "Azhdaha"
     },
     {
+      "key": "black-serpent-knight-windcutter",
+      "name": "Schwarzer Schlangenreiter – Wind schneidendes Schwert"
+    },
+    {
       "key": "blazing-axe-mitachurl",
       "name": "Mitachurl mit Feueraxt"
     },
@@ -10779,6 +10783,10 @@
     {
       "key": "fatui-skirmisher-pyroslinger-bracer",
       "name": "Fatui-Plänkler – Pyro-Kanonen-Freischärler"
+    },
+    {
+      "key": "floating-hydro-fungus",
+      "name": "Schwebende Hydro-Pilzbestie"
     },
     {
       "key": "frostarm-lawachurl",
@@ -11099,6 +11107,10 @@
     {
       "key": "ruin-scout",
       "name": "Ruinenspäher"
+    },
+    {
+      "key": "ruin-serpent",
+      "name": "Ruinenschlange"
     },
     {
       "key": "sangonomiya-cohort",

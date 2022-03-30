@@ -10611,6 +10611,10 @@
       "name": "若陀龍王"
     },
     {
+      "key": "black-serpent-knight-windcutter",
+      "name": "黒蛇騎士·斬風の剣"
+    },
+    {
       "key": "blazing-axe-mitachurl",
       "name": "ヒルチャール暴徒·炎斧"
     },
@@ -10753,6 +10757,10 @@
     {
       "key": "fatui-skirmisher-pyroslinger-bracer",
       "name": "ファデュイ先遣隊·遊撃兵·炎銃"
+    },
+    {
+      "key": "floating-hydro-fungus",
+      "name": "プカプカ水キノコン"
     },
     {
       "key": "frostarm-lawachurl",
@@ -11073,6 +11081,10 @@
     {
       "key": "ruin-scout",
       "name": "遺跡偵察者"
+    },
+    {
+      "key": "ruin-serpent",
+      "name": "遺跡サーペント"
     },
     {
       "key": "sangonomiya-cohort",

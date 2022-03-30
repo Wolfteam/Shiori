@@ -10628,6 +10628,10 @@
       "name": "Azhdaha"
     },
     {
+      "key": "black-serpent-knight-windcutter",
+      "name": "Chevalier des Serpents noirs - Fendeur de vent"
+    },
+    {
       "key": "blazing-axe-mitachurl",
       "name": "Brutoviandu avec hache Pyro"
     },
@@ -10770,6 +10774,10 @@
     {
       "key": "fatui-skirmisher-pyroslinger-bracer",
       "name": "Tirailleur Fatui - Mercenaire Pyro"
+    },
+    {
+      "key": "floating-hydro-fungus",
+      "name": "Fongus Hydro flottant"
     },
     {
       "key": "frostarm-lawachurl",
@@ -11092,20 +11100,24 @@
       "name": "Éclaireur des ruines"
     },
     {
+      "key": "ruin-serpent",
+      "name": "Serpent des ruines"
+    },
+    {
       "key": "sangonomiya-cohort",
       "name": "Partisan de Sangonomiya"
     },
     {
       "key": "shadowy-husk-defender",
-      "name": "Carapace sombre : Défenseur"
+      "name": "Carapace sombre - Défenseur"
     },
     {
       "key": "shadowy-husk-line-breaker",
-      "name": "Carapace sombre : Brise-formation"
+      "name": "Carapace sombre - Brise-formation"
     },
     {
       "key": "shadowy-husk-standard-bearer",
-      "name": "Carapace sombre : Porte-étendard"
+      "name": "Carapace sombre - Porte-étendard"
     },
     {
       "key": "shogunate-infantry",

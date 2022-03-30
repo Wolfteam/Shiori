@@ -10645,6 +10645,10 @@
       "name": "야타용왕"
     },
     {
+      "key": "black-serpent-knight-windcutter",
+      "name": "흑 뱀 기사·바람을 가르는 검"
+    },
+    {
       "key": "blazing-axe-mitachurl",
       "name": "불도끼 츄츄 폭도"
     },
@@ -10654,7 +10658,7 @@
     },
     {
       "key": "bolteater-bathysmal-vishap-hatchling",
-      "name": "번개를 삼키는 심해 용 도마뱀 유체"
+      "name": "번개를 삼키는 새끼 심해 용 도마뱀"
     },
     {
       "key": "childe",
@@ -10787,6 +10791,10 @@
     {
       "key": "fatui-skirmisher-pyroslinger-bracer",
       "name": "우인단 선발대·화승총 유격대"
+    },
+    {
+      "key": "floating-hydro-fungus",
+      "name": "둥실 물 버섯"
     },
     {
       "key": "frostarm-lawachurl",
@@ -11022,7 +11030,7 @@
     },
     {
       "key": "primordial-bathysmal-vishap-hatchling",
-      "name": "심해 용 도마뱀 유체·원종"
+      "name": "새끼 심해 용 도마뱀·원종"
     },
     {
       "key": "pyro-abyss-mage",
@@ -11062,7 +11070,7 @@
     },
     {
       "key": "rimebiter-bathysmal-vishap-hatchling",
-      "name": "얼음을 짓씹는 심해 용 도마뱀 유체"
+      "name": "얼음을 짓씹는 새끼 심해 용 도마뱀"
     },
     {
       "key": "rock-shield-hilichurl-guard",
@@ -11107,6 +11115,10 @@
     {
       "key": "ruin-scout",
       "name": "유적 정찰자"
+    },
+    {
+      "key": "ruin-serpent",
+      "name": "유적의 뱀"
     },
     {
       "key": "sangonomiya-cohort",

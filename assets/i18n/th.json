@@ -10525,6 +10525,10 @@
       "name": "Azhdaha"
     },
     {
+      "key": "black-serpent-knight-windcutter",
+      "name": "Black Serpent Knight: Windcutter"
+    },
+    {
       "key": "blazing-axe-mitachurl",
       "name": "Blazing Axe Mitachurl"
     },
@@ -10667,6 +10671,10 @@
     {
       "key": "fatui-skirmisher-pyroslinger-bracer",
       "name": "Fatui Skirmisher - Pyroslinger Bracer"
+    },
+    {
+      "key": "floating-hydro-fungus",
+      "name": "Floating Hydro Fungus"
     },
     {
       "key": "frostarm-lawachurl",
@@ -10987,6 +10995,10 @@
     {
       "key": "ruin-scout",
       "name": "Ruin Scout"
+    },
+    {
+      "key": "ruin-serpent",
+      "name": "Ruin Serpent"
     },
     {
       "key": "sangonomiya-cohort",

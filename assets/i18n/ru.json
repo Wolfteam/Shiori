@@ -10610,6 +10610,10 @@
       "name": "Аждаха"
     },
     {
+      "key": "black-serpent-knight-windcutter",
+      "name": "Рыцарь Чёрного Змея: Разрезающий ветер"
+    },
+    {
       "key": "blazing-axe-mitachurl",
       "name": "Митачурл с огненным топором"
     },
@@ -10752,6 +10756,10 @@
     {
       "key": "fatui-skirmisher-pyroslinger-bracer",
       "name": "Застрельщик Фатуи: Пиро мушкетёр"
+    },
+    {
+      "key": "floating-hydro-fungus",
+      "name": "Плавучий Гидро плесенник"
     },
     {
       "key": "frostarm-lawachurl",
@@ -11072,6 +11080,10 @@
     {
       "key": "ruin-scout",
       "name": "Руинный шпион"
+    },
+    {
+      "key": "ruin-serpent",
+      "name": "Змей руин"
     },
     {
       "key": "sangonomiya-cohort",

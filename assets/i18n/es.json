@@ -10615,6 +10615,10 @@
       "name": "Azhdaha"
     },
     {
+      "key": "black-serpent-knight-windcutter",
+      "name": "Caballero Serpiente Negra - Aire afilado"
+    },
+    {
       "key": "blazing-axe-mitachurl",
       "name": "Mitachurl con Hacha de Fuego"
     },
@@ -10757,6 +10761,10 @@
     {
       "key": "fatui-skirmisher-pyroslinger-bracer",
       "name": "Soldado Fatui - Guerrillero con Cañón Pyro"
+    },
+    {
+      "key": "floating-hydro-fungus",
+      "name": "Flotihongo Hydro"
     },
     {
       "key": "frostarm-lawachurl",
@@ -11079,6 +11087,10 @@
       "name": "Explorador de las Ruinas"
     },
     {
+      "key": "ruin-serpent",
+      "name": "Serpiente de las Ruinas"
+    },
+    {
       "key": "sangonomiya-cohort",
       "name": "Secuaz de Sangonomiya"
     },
@@ -11136,7 +11148,7 @@
     },
     {
       "key": "treasure-hoarders-carmen",
-      "name": "Ladrón de Tesoros - Carmen"
+      "name": "Ladrón de Tesoros - Carmelo"
     },
     {
       "key": "treasure-hoarders-crusher",

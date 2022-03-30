@@ -10615,6 +10615,10 @@
       "name": "Azhdaha"
     },
     {
+      "key": "black-serpent-knight-windcutter",
+      "name": "Kỵ Sĩ Hắc Xà - Trảm Phong Kiếm"
+    },
+    {
       "key": "blazing-axe-mitachurl",
       "name": "Bạo Đồ Hilichurl Búa Lửa"
     },
@@ -10757,6 +10761,10 @@
     {
       "key": "fatui-skirmisher-pyroslinger-bracer",
       "name": "Đội tiên phong Fatui - Quân du kích Hỏa"
+    },
+    {
+      "key": "floating-hydro-fungus",
+      "name": "Nấm Quỷ Phù Du - Thủy"
     },
     {
       "key": "frostarm-lawachurl",
@@ -11077,6 +11085,10 @@
     {
       "key": "ruin-scout",
       "name": "Trinh Sát Di Tích"
+    },
+    {
+      "key": "ruin-serpent",
+      "name": "Mãng Xà Di Tích"
     },
     {
       "key": "sangonomiya-cohort",

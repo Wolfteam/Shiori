@@ -10588,35 +10588,39 @@
   "monsters": [
     {
       "key": "abyss-herald-wicked-torrents",
-      "name": "深淵使徒·激流"
+      "name": "深渊使徒·激流"
     },
     {
       "key": "abyss-lector-fathomless-flames",
-      "name": "深淵詠者·淵火"
+      "name": "深渊咏者·渊火"
     },
     {
       "key": "abyss-lector-violet-lightning",
-      "name": "深淵詠者·紫電"
+      "name": "深渊咏者·紫电"
     },
     {
       "key": "anemo-hypostasis",
-      "name": "無相之風"
+      "name": "无相之风"
     },
     {
       "key": "anemo-samachurl",
-      "name": "風丘丘薩滿"
+      "name": "风丘丘萨满"
     },
     {
       "key": "anemo-slime",
-      "name": "風史萊姆"
+      "name": "风史莱姆"
     },
     {
       "key": "anemo-specter",
-      "name": "風飄浮靈"
+      "name": "风飘浮灵"
     },
     {
       "key": "azhdaha",
-      "name": "若陀龍王"
+      "name": "若陀龙王"
+    },
+    {
+      "key": "black-serpent-knight-windcutter",
+      "name": "黑蛇骑士·斩风之剑"
     },
     {
       "key": "blazing-axe-mitachurl",
@@ -10624,11 +10628,11 @@
     },
     {
       "key": "bolteater-bathysmal-vishap",
-      "name": "深海龍蜥·吞雷"
+      "name": "深海龙蜥·吞雷"
     },
     {
       "key": "bolteater-bathysmal-vishap-hatchling",
-      "name": "深海龍蜥幼體·吞雷"
+      "name": "深海龙蜥幼体·吞雷"
     },
     {
       "key": "childe",
@@ -10640,15 +10644,15 @@
     },
     {
       "key": "cryo-abyss-mage",
-      "name": "冰深淵法師"
+      "name": "冰深渊法师"
     },
     {
       "key": "cryo-cicin",
-      "name": "冰螢"
+      "name": "冰萤"
     },
     {
       "key": "cryo-hilichurl-grenadier",
-      "name": "冰彈丘丘人"
+      "name": "冰弹丘丘人"
     },
     {
       "key": "cryo-hilichurl-shooter",
@@ -10656,47 +10660,47 @@
     },
     {
       "key": "cryo-hypostasis",
-      "name": "無相之冰"
+      "name": "无相之冰"
     },
     {
       "key": "cryo-regisvine",
-      "name": "急凍樹"
+      "name": "急冻树"
     },
     {
       "key": "cryo-samachurl",
-      "name": "冰丘丘薩滿"
+      "name": "冰丘丘萨满"
     },
     {
       "key": "cryo-slime",
-      "name": "冰史萊姆"
+      "name": "冰史莱姆"
     },
     {
       "key": "cryo-specter",
-      "name": "冰飄浮靈"
+      "name": "冰飘浮灵"
     },
     {
       "key": "cryo-whopperflower",
-      "name": "冰霜騙騙花"
+      "name": "冰霜骗骗花"
     },
     {
       "key": "dendro-samachurl",
-      "name": "草丘丘薩滿"
+      "name": "草丘丘萨满"
     },
     {
       "key": "dendro-slime",
-      "name": "草史萊姆"
+      "name": "草史莱姆"
     },
     {
       "key": "electro-abyss-mage",
-      "name": "雷深淵法師"
+      "name": "雷深渊法师"
     },
     {
       "key": "electro-cicin",
-      "name": "雷螢"
+      "name": "雷萤"
     },
     {
       "key": "electro-hilichurl-grenadier",
-      "name": "雷彈丘丘人"
+      "name": "雷弹丘丘人"
     },
     {
       "key": "electro-hilichurl-shooter",
@@ -10704,95 +10708,99 @@
     },
     {
       "key": "electro-hypostasis",
-      "name": "無相之雷"
+      "name": "无相之雷"
     },
     {
       "key": "electro-samachurl",
-      "name": "雷丘丘薩滿"
+      "name": "雷丘丘萨满"
     },
     {
       "key": "electro-slime",
-      "name": "雷史萊姆"
+      "name": "雷史莱姆"
     },
     {
       "key": "electro-specter",
-      "name": "雷飄浮靈"
+      "name": "雷飘浮灵"
     },
     {
       "key": "electro-whopperflower",
-      "name": "電氣騙騙花"
+      "name": "电气骗骗花"
     },
     {
       "key": "eye-of-the-storm",
-      "name": "狂風之核"
+      "name": "狂风之核"
     },
     {
       "key": "fatui-cryo-cicin-mage",
-      "name": "愚人眾·冰螢術士"
+      "name": "愚人众·冰萤术士"
     },
     {
       "key": "fatui-electro-cicin-mage",
-      "name": "愚人眾·雷螢術士"
+      "name": "愚人众·雷萤术士"
     },
     {
       "key": "fatui-pyro-agent",
-      "name": "愚人眾·火之債務處理人"
+      "name": "愚人众·火之债务处理人"
     },
     {
       "key": "fatui-skirmisher-anemoboxer-vanguard",
-      "name": "愚人眾先遣隊·風拳前鋒軍"
+      "name": "愚人众先遣队·风拳前锋军"
     },
     {
       "key": "fatui-skirmisher-cryogunner-legionnaire",
-      "name": "愚人眾先遣隊·冰銃重衛士"
+      "name": "愚人众先遣队·冰铳重卫士"
     },
     {
       "key": "fatui-skirmisher-electrohammer-vanguard",
-      "name": "愚人眾先遣隊·雷錘前鋒軍"
+      "name": "愚人众先遣队·雷锤前锋军"
     },
     {
       "key": "fatui-skirmisher-geochanter-bracer",
-      "name": "愚人眾先遣隊·岩使游擊兵"
+      "name": "愚人众先遣队·岩使游击兵"
     },
     {
       "key": "fatui-skirmisher-hydrogunner-legionnaire",
-      "name": "愚人眾先遣隊·水銃重衛士"
+      "name": "愚人众先遣队·水铳重卫士"
     },
     {
       "key": "fatui-skirmisher-pyroslinger-bracer",
-      "name": "愚人眾先遣隊·火銃游擊兵"
+      "name": "愚人众先遣队·火铳游击兵"
+    },
+    {
+      "key": "floating-hydro-fungus",
+      "name": "浮游水蕈兽"
     },
     {
       "key": "frostarm-lawachurl",
-      "name": "丘丘霜鎧王"
+      "name": "丘丘霜铠王"
     },
     {
       "key": "geo-hypostasis",
-      "name": "無相之岩"
+      "name": "无相之岩"
     },
     {
       "key": "geo-samachurl",
-      "name": "岩丘丘薩滿"
+      "name": "岩丘丘萨满"
     },
     {
       "key": "geo-slime",
-      "name": "岩史萊姆"
+      "name": "岩史莱姆"
     },
     {
       "key": "geo-specter",
-      "name": "岩飄浮靈"
+      "name": "岩飘浮灵"
     },
     {
       "key": "geovishap",
-      "name": "岩龍蜥"
+      "name": "岩龙蜥"
     },
     {
       "key": "geovishap-hatchling",
-      "name": "幼岩龍蜥"
+      "name": "幼岩龙蜥"
     },
     {
       "key": "golden-wolflord",
-      "name": "黃金王獸"
+      "name": "黄金王兽"
     },
     {
       "key": "hilichurl",
@@ -10800,7 +10808,7 @@
     },
     {
       "key": "hilichurl-berserker",
-      "name": "衝鋒丘丘人"
+      "name": "冲锋丘丘人"
     },
     {
       "key": "hilichurl-fighter",
@@ -10808,7 +10816,7 @@
     },
     {
       "key": "hilichurl-grenadier",
-      "name": "爆彈丘丘人"
+      "name": "爆弹丘丘人"
     },
     {
       "key": "hilichurl-shooter",
@@ -10816,19 +10824,19 @@
     },
     {
       "key": "hydro-abyss-mage",
-      "name": "水深淵法師"
+      "name": "水深渊法师"
     },
     {
       "key": "hydro-cicin",
-      "name": "水螢"
+      "name": "水萤"
     },
     {
       "key": "hydro-hypostasis",
-      "name": "無相之水"
+      "name": "无相之水"
     },
     {
       "key": "hydro-mimic-boar",
-      "name": "幻形豕獸·水"
+      "name": "幻形豕兽·水"
     },
     {
       "key": "hydro-mimic-crab",
@@ -10836,7 +10844,7 @@
     },
     {
       "key": "hydro-mimic-crane",
-      "name": "幻形鶴·水"
+      "name": "幻形鹤·水"
     },
     {
       "key": "hydro-mimic-ferret",
@@ -10856,19 +10864,19 @@
     },
     {
       "key": "hydro-mimic-raptor",
-      "name": "幻形飛鳶·水"
+      "name": "幻形飞鸢·水"
     },
     {
       "key": "hydro-samachurl",
-      "name": "水丘丘薩滿"
+      "name": "水丘丘萨满"
     },
     {
       "key": "hydro-slime",
-      "name": "水史萊姆"
+      "name": "水史莱姆"
     },
     {
       "key": "hydro-specter",
-      "name": "水飄浮靈"
+      "name": "水飘浮灵"
     },
     {
       "key": "ice-shield-hilichurl-guard",
@@ -10880,11 +10888,11 @@
     },
     {
       "key": "kairagi-dancing-thunder",
-      "name": "海亂鬼·雷騰"
+      "name": "海乱鬼·雷腾"
     },
     {
       "key": "kairagi-fiery-might",
-      "name": "海亂鬼·炎威"
+      "name": "海乱鬼·炎威"
     },
     {
       "key": "la-signora",
@@ -10892,71 +10900,71 @@
     },
     {
       "key": "large-anemo-slime",
-      "name": "大型風史萊姆"
+      "name": "大型风史莱姆"
     },
     {
       "key": "large-cryo-slime",
-      "name": "大型冰史萊姆"
+      "name": "大型冰史莱姆"
     },
     {
       "key": "large-dendro-slime",
-      "name": "大型草史萊姆"
+      "name": "大型草史莱姆"
     },
     {
       "key": "large-electro-slime",
-      "name": "大型雷史萊姆"
+      "name": "大型雷史莱姆"
     },
     {
       "key": "large-geo-slime",
-      "name": "大型岩史萊姆"
+      "name": "大型岩史莱姆"
     },
     {
       "key": "large-hydro-slime",
-      "name": "大型水史萊姆"
+      "name": "大型水史莱姆"
     },
     {
       "key": "large-pyro-slime",
-      "name": "大型火史萊姆"
+      "name": "大型火史莱姆"
     },
     {
       "key": "lupus-boreas-dominator-of-wolves",
-      "name": "北風的王狼，奔狼的領主"
+      "name": "北风的王狼，奔狼的领主"
     },
     {
       "key": "magatsu-mitake-narukami-no-mikoto",
-      "name": "禍津御建鳴神命"
+      "name": "祸津御建鸣神命"
     },
     {
       "key": "maguu-kenki",
-      "name": "魔偶劍鬼"
+      "name": "魔偶剑鬼"
     },
     {
       "key": "maguu-kenki-galloping-frost",
-      "name": "魔偶劍鬼·霜馳"
+      "name": "魔偶剑鬼·霜驰"
     },
     {
       "key": "maguu-kenki-lone-gale",
-      "name": "魔偶劍鬼·孤風"
+      "name": "魔偶剑鬼·孤风"
     },
     {
       "key": "maguu-kenki-mask-of-terror",
-      "name": "魔偶劍鬼·兇面"
+      "name": "魔偶剑鬼·凶面"
     },
     {
       "key": "millelith-sergeant",
-      "name": "千岩軍教頭"
+      "name": "千岩军教头"
     },
     {
       "key": "millelith-soldier",
-      "name": "千岩軍士兵"
+      "name": "千岩军士兵"
     },
     {
       "key": "mirror-maiden",
-      "name": "愚人眾·藏鏡仕女"
+      "name": "愚人众·藏镜仕女"
     },
     {
       "key": "mutant-electro-slime",
-      "name": "變異雷史萊姆"
+      "name": "变异雷史莱姆"
     },
     {
       "key": "nobushi-hitsukeban",
@@ -10964,15 +10972,15 @@
     },
     {
       "key": "nobushi-jintouban",
-      "name": "野伏·陣刀番"
+      "name": "野伏·阵刀番"
     },
     {
       "key": "nobushi-kikouban",
-      "name": "野伏·機巧番"
+      "name": "野伏·机巧番"
     },
     {
       "key": "oceanid",
-      "name": "純水精靈"
+      "name": "纯水精灵"
     },
     {
       "key": "ochimusha-cankered-flame",
@@ -10984,23 +10992,23 @@
     },
     {
       "key": "perpetual-mechanical-array",
-      "name": "恒常機關陣列"
+      "name": "恒常机关阵列"
     },
     {
       "key": "primo-geovishap",
-      "name": "古岩龍蜥"
+      "name": "古岩龙蜥"
     },
     {
       "key": "primordial-bathysmal-vishap",
-      "name": "深海龍蜥·原種"
+      "name": "深海龙蜥·原种"
     },
     {
       "key": "primordial-bathysmal-vishap-hatchling",
-      "name": "深海龍蜥幼體·原種"
+      "name": "深海龙蜥幼体·原种"
     },
     {
       "key": "pyro-abyss-mage",
-      "name": "火深淵法師"
+      "name": "火深渊法师"
     },
     {
       "key": "pyro-hilichurl-shooter",
@@ -11008,35 +11016,35 @@
     },
     {
       "key": "pyro-hypostasis",
-      "name": "無相之火"
+      "name": "无相之火"
     },
     {
       "key": "pyro-regisvine",
-      "name": "爆炎樹"
+      "name": "爆炎树"
     },
     {
       "key": "pyro-slime",
-      "name": "火史萊姆"
+      "name": "火史莱姆"
     },
     {
       "key": "pyro-specter",
-      "name": "火飄浮靈"
+      "name": "火飘浮灵"
     },
     {
       "key": "pyro-whopperflower",
-      "name": "熾熱騙騙花"
+      "name": "炽热骗骗花"
     },
     {
       "key": "raiden-shogun",
-      "name": "雷電將軍"
+      "name": "雷电将军"
     },
     {
       "key": "rimebiter-bathysmal-vishap",
-      "name": "深海龍蜥·囓冰"
+      "name": "深海龙蜥·啮冰"
     },
     {
       "key": "rimebiter-bathysmal-vishap-hatchling",
-      "name": "深海龍蜥幼體·囓冰"
+      "name": "深海龙蜥幼体·啮冰"
     },
     {
       "key": "rock-shield-hilichurl-guard",
@@ -11048,63 +11056,67 @@
     },
     {
       "key": "rockfond-rifthound",
-      "name": "嗜岩·獸境獵犬"
+      "name": "嗜岩·兽境猎犬"
     },
     {
       "key": "rockfond-rifthound-whelp",
-      "name": "嗜岩·獸境幼獸"
+      "name": "嗜岩·兽境幼兽"
     },
     {
       "key": "ruin-cruiser",
-      "name": "遺蹟巡弋者"
+      "name": "遗迹巡弋者"
     },
     {
       "key": "ruin-defender",
-      "name": "遺蹟防衛者"
+      "name": "遗迹防卫者"
     },
     {
       "key": "ruin-destroyer",
-      "name": "遺蹟殲擊者"
+      "name": "遗迹歼击者"
     },
     {
       "key": "ruin-grader",
-      "name": "遺蹟重機"
+      "name": "遗迹重机"
     },
     {
       "key": "ruin-guard",
-      "name": "遺蹟守衛"
+      "name": "遗迹守卫"
     },
     {
       "key": "ruin-hunter",
-      "name": "遺蹟獵者"
+      "name": "遗迹猎者"
     },
     {
       "key": "ruin-scout",
-      "name": "遺蹟偵察者"
+      "name": "遗迹侦察者"
+    },
+    {
+      "key": "ruin-serpent",
+      "name": "遗迹巨蛇"
     },
     {
       "key": "sangonomiya-cohort",
-      "name": "珊瑚宮眾"
+      "name": "珊瑚宫众"
     },
     {
       "key": "shadowy-husk-defender",
-      "name": "黯色空殼·近衛"
+      "name": "黯色空壳·近卫"
     },
     {
       "key": "shadowy-husk-line-breaker",
-      "name": "黯色空殼·破陣"
+      "name": "黯色空壳·破阵"
     },
     {
       "key": "shadowy-husk-standard-bearer",
-      "name": "黯色空殼·旗令"
+      "name": "黯色空壳·旗令"
     },
     {
       "key": "shogunate-infantry",
-      "name": "幕府足輕"
+      "name": "幕府足轻"
     },
     {
       "key": "shogunate-infantry-captain",
-      "name": "幕府足輕頭"
+      "name": "幕府足轻头"
     },
     {
       "key": "stonehide-lawachurl",
@@ -11112,19 +11124,19 @@
     },
     {
       "key": "stormterror",
-      "name": "裂空的魔龍"
+      "name": "裂空的魔龙"
     },
     {
       "key": "thunder-manifestation",
-      "name": "雷音權現"
+      "name": "雷音权现"
     },
     {
       "key": "thundercraven-rifthound",
-      "name": "嗜雷·獸境獵犬"
+      "name": "嗜雷·兽境猎犬"
     },
     {
       "key": "thundercraven-rifthound-whelp",
-      "name": "嗜雷·獸境幼獸"
+      "name": "嗜雷·兽境幼兽"
     },
     {
       "key": "thunderhelm-lawachurl",
@@ -11132,67 +11144,67 @@
     },
     {
       "key": "treasure-hoarder-wallenstein",
-      "name": "盜寶團·「瓦倫斯坦」"
+      "name": "盗宝团·「瓦伦斯坦」"
     },
     {
       "key": "treasure-hoarders-boss",
-      "name": "盜寶團·「大姐頭」"
+      "name": "盗宝团·「大姐头」"
     },
     {
       "key": "treasure-hoarders-carmen",
-      "name": "盜寶團·「卡門」"
+      "name": "盗宝团·「卡门」"
     },
     {
       "key": "treasure-hoarders-crusher",
-      "name": "盜寶團·粉碎者"
+      "name": "盗宝团·粉碎者"
     },
     {
       "key": "treasure-hoarders-cryo-potioneer",
-      "name": "盜寶團·冰之藥劑師"
+      "name": "盗宝团·冰之药剂师"
     },
     {
       "key": "treasure-hoarders-electro-potioneer",
-      "name": "盜寶團·雷之藥劑師"
+      "name": "盗宝团·雷之药剂师"
     },
     {
       "key": "treasure-hoarders-gravedigger",
-      "name": "盜寶團·掘墓者"
+      "name": "盗宝团·掘墓者"
     },
     {
       "key": "treasure-hoarders-handyman",
-      "name": "盜寶團·雜工"
+      "name": "盗宝团·杂工"
     },
     {
       "key": "treasure-hoarders-hydro-potioneer",
-      "name": "盜寶團·水之藥劑師"
+      "name": "盗宝团·水之药剂师"
     },
     {
       "key": "treasure-hoarders-liuliu",
-      "name": "盜寶團·「溜溜」"
+      "name": "盗宝团·「溜溜」"
     },
     {
       "key": "treasure-hoarders-marksman",
-      "name": "盜寶團·神射手"
+      "name": "盗宝团·神射手"
     },
     {
       "key": "treasure-hoarders-pugilist",
-      "name": "盜寶團·拳術家"
+      "name": "盗宝团·拳术家"
     },
     {
       "key": "treasure-hoarders-pyro-potioneer",
-      "name": "盜寶團·火之藥劑師"
+      "name": "盗宝团·火之药剂师"
     },
     {
       "key": "treasure-hoarders-raptor",
-      "name": "盜寶團·「怪鳥」"
+      "name": "盗宝团·「怪鸟」"
     },
     {
       "key": "treasure-hoarders-scout",
-      "name": "盜寶團·斥候"
+      "name": "盗宝团·斥候"
     },
     {
       "key": "treasure-hoarders-seaman",
-      "name": "盜寶團·海上男兒"
+      "name": "盗宝团·海上男儿"
     },
     {
       "key": "unusual-hilichurl",
@@ -11208,7 +11220,7 @@
     },
     {
       "key": "yoriki-samurai",
-      "name": "寄騎武士"
+      "name": "寄骑武士"
     }
   ]
 }
