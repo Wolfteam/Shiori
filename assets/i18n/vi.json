@@ -2728,81 +2728,136 @@
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Marobashi",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Tấn Công Thường",
+              "description": "Thực hiện tối đa 5 lần đánh kiếm liên tiếp.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Trọng Kích",
+              "description": "Tiêu hao thể lực nhất định, xung kích về phía trước và thi triển đòn Iai.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Tấn Công Khi Đáp",
+              "description": "Đáp xuống đất từ trên không, tấn công kẻ địch trên đường và gây sát thương phạm vi khi chạm đất.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "Sát Thương Lần 1|{param1}%",
+            "Sát Thương Lần 2|{param2}%",
+            "Sát Thương Lần 3|{param3}%",
+            "Sát Thương Lần 4|{param4}%×{param5}",
+            "Sát Thương Lần 5|{param6}%",
+            "Sát Thương Trọng Kích|{param7}%",
+            "Thể lực Trọng Kích tiêu hao|{param8}",
+            "Sát Thương Khi Rơi|{param9}%",
+            "Sát Thương Khi Rơi Từ Độ Cao Thấp/Cao|{param10}% / {param11}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Trường Phái Kamisato - Kyouka",
+          "description": "Kamisato Ayato thay đổi vị trí và vào trạng thái \"Takimeguri Kanka\".\r\nSau khi di chuyển, Ayato sẽ để lại Thủy Ảnh ở vị trí ban đầu. Thủy Ảnh sau khi hình thành sẽ phát nổ khi có kẻ địch đến gần hoặc kết thúc thời gian duy trì, gây Sát Thương Phạm Vi Nguyên Tố Thủy.\r\n",
+          "abilities": [
+            {
+              "name": "Takimeguri Kanka",
+              "description": "Trong trạng thái này, Kamisato Ayato sẽ sử dụng Shunsuiken để tấn công nhanh, chuyển hóa sát thương đòn đánh thường thành Sát Thương Phạm Vi Nguyên Tố Thủy không thể bị thay thế.\r\nNgoài ra, còn có những hiệu quả sau:\r\n",
+              "descriptions": [
+                "Shunsuiken sau khi đánh trúng kẻ địch sẽ cung cấp cho Kamisato Ayato hiệu quả \"Namisen\", tăng sát thương của Shunsuiken gây ra dựa vào HP tối đa ở hiện tại của Kamisato Ayato. Ban đầu Namisen có thể cộng dồn tối đa 4 tầng, mỗi 0.1s tối đa nhận 1 tầng từ Shunsuiken, trạng thái sẽ biến mất khi Takimeguri Kanka kết thúc.",
+                "Tăng khả năng kháng gián đoạn của Kamisato Ayato;",
+                "Không thể sử dụng trọng kích và tấn công khi đáp.",
+                "Trạng thái Takimeguri Kanka sẽ biến mất khi Kamisato Ayato rời trận; Khi dùng lại Trường Phái Kamisato - Kyouka trong trạng thái Takimeguri Kanka, sẽ xóa bỏ trạng thái Takimeguri Kanka đã có."
+              ]
+            }
+          ],
+          "stats": [
+            "Sát Thương Shunsuiken Lần 1|{param1}%",
+            "Sát Thương Shunsuiken Lần 2|{param2}%",
+            "Sát Thương Shunsuiken Lần 3|{param3}%",
+            "Thời Gian Duy Trì Takimeguri Kanka|{param4}s",
+            "Tăng Sát Thương Namisen|{param5}%Max HP / Stack",
+            "Sát Thương Thủy Ảnh|{param6}%",
+            "Thời Gian Thủy Ảnh Duy Trì|{param7}s",
+            "CD|{param8}s"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
+          "title": "Trường Phái Kamisato - Suiyuu",
+          "description": "Dựng lên khu vườn thanh tịnh, dập tắt mọi sự ồn ào.\r\nTrong thời gian tồn tại sẽ liên tục giáng xuống Thủy Hoa Kiếm tấn công kẻ địch trong phạm vi, gây Sát Thương Nguyên Tố Thủy, đồng thời tăng sát thương tấn công thường cho nhân vật trong đó.\r\n",
           "abilities": [],
-          "stats": []
+          "stats": [
+            "Sát Thương Thủy Hoa Kiếm|{param1}%",
+            "Sát Thương Tấn Công Thường Tăng|{param2}%",
+            "Thời Gian Kéo Dài|{param3}s",
+            "CD|{param4}s",
+            "Năng Lượng Nguyên Tố|{param5}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "Trường Phái Kamisato - Cơm Nước Thường Ngày",
+          "description": "Khi nấu hoàn mỹ món ăn, có 18% cơ hội nhận thêm 1 món cùng loại với phẩm chất \"kỳ lạ\".\r\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
+          "title": "Trường Phái Kamisato - Mine Wo Matoishi Kiyotaki",
+          "description": "Trường Phái Kamisato - Kyouka có hiệu quả sau:\r\n",
+          "descriptions": [
+            "Sau khi thi triển, Kamisato Ayato sẽ nhận 2 tầng hiệu quả Namisen;",
+            "Khi Thủy Ảnh phát nổ, Kamisato Ayato sẽ nhận được tối đa số tầng hiệu quả Namisen có thể đạt được."
+          ]
         },
         {
           "key": "p3",
-          "title": "NA",
-          "description": "",
+          "title": "Trường Phái Kamisato: Michiyuku Hagetsu",
+          "description": "Khi Ayato không ra trận, nếu Năng Lượng Nguyên Tố thấp hơn 40 điểm, mỗi 1 giây sẽ hồi phục 2 điểm Năng Lượng Nguyên Tố.\r\n",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "Kyouka Fuushi",
+          "description": "Tăng 40% sát thương của Shunsuiken gây ra khi HP của kẻ địch thấp hơn hoặc bằng 50%.\r\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "Suối Nguồn Thế Giới",
+          "description": "Hiệu quả Namisen tối đa cộng dồn đến 5 tầng. Khi Kamisato Ayato có được ít nhất 3 tầng Namisen sẽ tăng 50% giới hạn HP.\r\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "Vô Ý Thưởng Hoa",
+          "description": "Cấp kỹ năng Trường Phái Kamisato - Kyouka +3.\r\nTăng tối đa đến cấp 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "Dòng Chảy Vô Hạn",
+          "description": "Sau khi thi triển Trường Phái Kamisato - Suiyuu, tốc độ tấn công thường của nhân vật trong đội gần đó tăng 15%, duy trì 15s.\r\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "Vạn Thủy Nhất Lộ",
+          "description": "Cấp kỹ năng Trường Phái Kamisato - Suiyuu +3.\r\nTăng tối đa đến cấp 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
+          "title": "Ngọn Nguồn Bất Tận",
+          "description": "Sau khi thi triển Trường Phái Kamisato - Kyouka, lần tiếp theo Kamisato Ayato dùng Shunsuiken đánh trúng kẻ địch, sẽ tiến hành thêm 2 lần tấn công Shunsuiken, mỗi lần sẽ gây ra sát thương bằng 450% tấn công của Kamisato Ayato.\r\nHai lần tấn công Shunsuiken này sẽ không nhận được hiệu quả Namisen.\r\n",
           "descriptions": []
         }
       ]
@@ -7604,6 +7659,18 @@
         "Tăng {color}24{/color}% sát thương tấn công thường, tăng {color}18{/color}% sát thương trọng kích. Khi Năng Lượng Nguyên Tố đạt 100%, tăng 100% hiệu quả cho nhân vật trang bị vũ khí này.",
         "Tăng {color}28{/color}% sát thương tấn công thường, tăng {color}21{/color}% sát thương trọng kích. Khi Năng Lượng Nguyên Tố đạt 100%, tăng 100% hiệu quả cho nhân vật trang bị vũ khí này.",
         "Tăng {color}32{/color}% sát thương tấn công thường, tăng {color}24{/color}% sát thương trọng kích. Khi Năng Lượng Nguyên Tố đạt 100%, tăng 100% hiệu quả cho nhân vật trang bị vũ khí này."
+      ]
+    },
+    {
+      "key": "haran-geppaku-futsu",
+      "name": "Haran Geppaku Futsu",
+      "description": "Tác phẩm nổi tiếng do Futsu phụng mệnh chế tạo. Do nó sở hữu khí thế tựa những cơn sóng cuộn trào, nên được đặt tên là \"Haran\".",
+      "refinements": [
+        "Nhận được {color}12{/color}% buff sát thương tất cả nguyên tố; nhân vật khác trong đội ở gần khi thi triển Kỹ Năng Nguyên Tố, sẽ tạo ra 1 tầng \"Mũi Sóng\" cho nhân vật trang bị vũ khí này, tối đa cộng dồn 2 tầng, mỗi 0.3s tối đa kích hoạt 1 lần. Khi nhân vật trang bị vũ khí này thi triển Kỹ Năng Nguyên Tố, nếu có hiệu ứng \"Mũi Sóng\" sẽ tiêu hao \"Mũi Sóng\" đã có, và nhận được \"Sóng Loạn\": Căn cứ số tầng tiêu hao, mỗi tầng tăng {color}20{/color}% sát thương tấn công thường, duy trì 8s.",
+        "Nhận được {color}15{/color}% buff sát thương tất cả nguyên tố; nhân vật khác trong đội ở gần khi thi triển Kỹ Năng Nguyên Tố, sẽ tạo ra 1 tầng \"Mũi Sóng\" cho nhân vật trang bị vũ khí này, tối đa cộng dồn 2 tầng, mỗi 0.3s tối đa kích hoạt 1 lần. Khi nhân vật trang bị vũ khí này thi triển Kỹ Năng Nguyên Tố, nếu có hiệu ứng \"Mũi Sóng\" sẽ tiêu hao \"Mũi Sóng\" đã có, và nhận được \"Sóng Loạn\": Căn cứ số tầng tiêu hao, mỗi tầng tăng {color}25{/color}% sát thương tấn công thường, duy trì 8s.",
+        "Nhận được {color}18{/color}% buff sát thương tất cả nguyên tố; nhân vật khác trong đội ở gần khi thi triển Kỹ Năng Nguyên Tố, sẽ tạo ra 1 tầng \"Mũi Sóng\" cho nhân vật trang bị vũ khí này, tối đa cộng dồn 2 tầng, mỗi 0.3s tối đa kích hoạt 1 lần. Khi nhân vật trang bị vũ khí này thi triển Kỹ Năng Nguyên Tố, nếu có hiệu ứng \"Mũi Sóng\" sẽ tiêu hao \"Mũi Sóng\" đã có, và nhận được \"Sóng Loạn\": Căn cứ số tầng tiêu hao, mỗi tầng tăng {color}30{/color}% sát thương tấn công thường, duy trì 8s.",
+        "Nhận được {color}21{/color}% buff sát thương tất cả nguyên tố; nhân vật khác trong đội ở gần khi thi triển Kỹ Năng Nguyên Tố, sẽ tạo ra 1 tầng \"Mũi Sóng\" cho nhân vật trang bị vũ khí này, tối đa cộng dồn 2 tầng, mỗi 0.3s tối đa kích hoạt 1 lần. Khi nhân vật trang bị vũ khí này thi triển Kỹ Năng Nguyên Tố, nếu có hiệu ứng \"Mũi Sóng\" sẽ tiêu hao \"Mũi Sóng\" đã có, và nhận được \"Sóng Loạn\": Căn cứ số tầng tiêu hao, mỗi tầng tăng {color}35{/color}% sát thương tấn công thường, duy trì 8s.",
+        "Nhận được {color}24{/color}% buff sát thương tất cả nguyên tố; nhân vật khác trong đội ở gần khi thi triển Kỹ Năng Nguyên Tố, sẽ tạo ra 1 tầng \"Mũi Sóng\" cho nhân vật trang bị vũ khí này, tối đa cộng dồn 2 tầng, mỗi 0.3s tối đa kích hoạt 1 lần. Khi nhân vật trang bị vũ khí này thi triển Kỹ Năng Nguyên Tố, nếu có hiệu ứng \"Mũi Sóng\" sẽ tiêu hao \"Mũi Sóng\" đã có, và nhận được \"Sóng Loạn\": Căn cứ số tầng tiêu hao, mỗi tầng tăng {color}40{/color}% sát thương tấn công thường, duy trì 8s."
       ]
     },
     {

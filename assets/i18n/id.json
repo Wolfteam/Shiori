@@ -2727,86 +2727,141 @@
     {
       "key": "kamisato-ayato",
       "name": "Kamisato Ayato",
-      "title": "",
+      "title": "Pillar of Fortitude",
       "description": "Kepala Klan Kamisato dari Yashiro Commission yang masih muda namun sangat berprestasi. Sangat berbudaya dan sopan, dia adalah seorang pria yang berbudi luhur dan mempunyai banyak cara.",
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Kamisato Art - Marobashi",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Normal Attack",
+              "description": "Melancarkan hingga 5 serangan berturut-turut.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Charged Attack",
+              "description": "Mengonsumsi sejumlah Stamina untuk bergerak ke depan dan melancarkan tebasan iai.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Plunging Attack",
+              "description": "Menerjang dari udara untuk menghantam tanah, mengakibatkan DMG pada musuh di jalur terjangan dan mengakibatkan DMG area saat mendarat.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "DMG Tahap 1|{param1}%",
+            "DMG Tahap 2|{param2}%",
+            "DMG Tahap 3|{param3}%",
+            "DMG Tahap 4|{param4}%×{param5}",
+            "DMG Tahap 5|{param6}%",
+            "DMG Charged Attack|{param7}%",
+            "Konsumsi Stamina Charged Attack|{param8}",
+            "DMG Selama Plunging|{param9}%",
+            "DMG Plunging Attack Min./Maks.|{param10}% / {param11}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Kamisato Art: Kyouka",
+          "description": "Kamisato Ayato menggeser posisinya dan memasuki kondisi Takimeguri Kanka.\r\nSetelah berpindah posisi, Ayato akan meninggalkan ilusi air di posisi sebelumnya. Setelah terbentuk, ilusi air akan meledak saat ada musuh di sekitar atau setelah durasinya habis, mengakibatkan Hydro DMG Area.\r\n",
+          "abilities": [
+            {
+              "name": "Takimeguri Kanka",
+              "description": "Dalam kondisi ini, Kamisato Ayato menggunakan Shunsuiken miliknya untuk melakukan serangan yang sangat cepat, mengakibatkan DMG Normal Attack berubah menjadi Hydro DMG Area yang tidak bisa ditimpa Elemental Infusion lainnya.\r\nLalu juga mempunyai efek berikut:\r\n",
+              "descriptions": [
+                "Setelah serangan Shunsuiken mengenai musuh, Ayato akan mendapatkan efek Namisen, yang meningkatkan DMG yang diakibatkan oleh Shunsuiken berdasarkan dari Max HP Ayato saat ini. Namisen dapat ditumpuk hingga 4 lapis, dan setiap 0,1 detik bisa mendapatkan 1 lapis dari serangan Shunsuiken. Efek ini akan hilang saat Takimeguri Kanka berakhir.",
+                "Meningkatkan ketahanan Kamisato Ayato terhadap interupsi.",
+                "Tidak bisa melancarkan Charged dan Plunging Attack.",
+                "Takimeguri Kanka akan selesai saat Ayato meninggalkan medan pertempuran. Jika Kamisato Art: Kyouka dilancarkan lagi saat masih dalam kondisi Takimeguri Kanka, maka kondisi Takimeguri Kanka tersebut akan berakhir dan diganti dengan yang baru.."
+              ]
+            }
+          ],
+          "stats": [
+            "DMG Tahap 1 Shunsuiken|{param1}%",
+            "DMG Tahap 2 Shunsuiken|{param2}%",
+            "DMG Tahap 3 Shunsuiken|{param3}%",
+            "Durasi Takimeguri Kanka|{param4}s",
+            "Bonus DMG Namisen|{param5}%Max HP / Stack",
+            "DMG Water Illusion|{param6}%",
+            "Durasi Water Illusion|{param7}s",
+            "Cooldown|{param8}s"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
+          "title": "Kamisato Art: Suiyuu",
+          "description": "Mengungkap sebuah taman penyucian yang menyingkirkan segala hiruk pikuk di dalamnya.\r\nSaat taman tersebut ada, Bloomwater Blade akan terus menghujani dan menyerang musuh di dalam areanya, mengakibatkan Hydro DMG dan meningkatkan DMG Normal Attack Karakter di dalamnya.\r\n",
           "abilities": [],
-          "stats": []
+          "stats": [
+            "DMG Bloomwater Blade|{param1}%",
+            "Bonus DMG Normal Attack|{param2}%",
+            "Durasi|{param3}s",
+            "Cooldown|{param4}s",
+            "Konsumsi Energy|{param5}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "Kamisato Art: Daily Cooking",
+          "description": "Saat Ayato memasak makanan dengan sempurna, terdapat 18% kemungkinan mendapatkan hasil tambahan makanan \"Suspicious\" dari jenis makanan yang sama.\r\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
+          "title": "Kamisato Art: Mine Wo Matoishi Kiyotaki",
+          "description": "Kamisato Art: Kyouka memiliki karakteristik berikut:\r\n",
+          "descriptions": [
+            "Kamisato Ayato akan mendapatkan 2 lapis Namisen saat melancarkan skill ini.",
+            "Setelah ilusi air meledak, Kamisato Ayato akan mendapatkan efek Namisen setara dengan jumlah tumpukan maksimum lapisan."
+          ]
         },
         {
           "key": "p3",
-          "title": "NA",
-          "description": "",
+          "title": "Kamisato Art: Michiyuku Hagetsu",
+          "description": "Saat Kamisato Ayato ada di dalam party tapi tidak sedang aktif di medan pertempuran, dan jika jumlah Energy-nya kurang dari 40 poin, maka dia akan memulihkan 2 Energy-nya sendiri setiap detik.\r\n",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "Kyouka Fuushi",
+          "description": "Meningkatkan 40% DMG Shunsuiken pada musuh dengan HP 50% atau kurang.\r\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "World Source",
+          "description": "Tumpukan maksimum Namisen bertambah menjadi 5 lapis. Max HP Kamisato Ayato akan bertambah 50% saat memiliki setidaknya 3 lapis Namisen.\r\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "To Admire the Flowers",
+          "description": "Meningkatkan 3 level Kamisato Art: Kyouka.\r\nMaksimum: Lv. 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "Endless Flow",
+          "description": "Setelah melancarkan Kamisato Art: Suiyuu, ATK SPD Normal Attack anggota party di sekitar akan meningkat 15% selama 15 detik.\r\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "Bansui Ichiro",
+          "description": "Meningkatkan 3 level Kamisato Art: Suiyuu.\r\nMaksimum: Lv. 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
+          "title": "Boundless Origin",
+          "description": "Setelah menggunakan Kamisato Art: Kyouka, Serangan Shunsuiken milik Ayato selanjutnya akan membuat 2 serangan Shunsuiken tambahan saat mengenai musuh, setiap serangannya mengakibatkan DMG sebesar 450% ATK Ayato.\r\nKedua serangan Shunsuiken ini tidak akan terpengaruh oleh Namisen.\r\n",
           "descriptions": []
         }
       ]
@@ -7610,6 +7665,18 @@
         "Meningkatkan {color}24{/color}% Normal Attack DMG dan {color}18{/color}% Charged ATK DMG. Saat Energy dari Karakter yang menggunakan senjata ini mencapai 100%, efek meningkat 100%.",
         "Meningkatkan {color}28{/color}% Normal Attack DMG dan {color}21{/color}% Charged ATK DMG. Saat Energy dari Karakter yang menggunakan senjata ini mencapai 100%, efek meningkat 100%.",
         "Meningkatkan {color}32{/color}% Normal Attack DMG dan {color}24{/color}% Charged ATK DMG. Saat Energy dari Karakter yang menggunakan senjata ini mencapai 100%, efek meningkat 100%."
+      ]
+    },
+    {
+      "key": "haran-geppaku-futsu",
+      "name": "Haran Geppaku Futsu",
+      "description": "Sebuah karya terkenal dari keturunan pandai besi Futsu. Nama \"Haran\" berasal dari bentuknya yang menyerupai ombak yang ganas dan bergejolak.",
+      "refinements": [
+        "Mendapatkan {color}12{/color}% Elemental DMG Bonus untuk semua elemen. Saat anggota party lain menggunakan Elemental Skill, Karakter yang mengenakan senjata ini akan mendapatkan satu lapis Wavespike. Maksimal 2 lapis. Efek ini terpicu setiap 0,3 detik. Jika ada efek Wavespike yang telah terakumulasi saat Karakter yang mengenakan senjata ini melancarkan Elemental Skill-nya, maka semua lapisan Wavespike akan terkonsumsi dan Karakter akan mendapatkan Ripping Upheaval. Berdasarkan jumlah lapisan yang dikonsumsinya, setiap lapis Wavespike akan meningkatkan {color}20{/color}% DMG Normal Attack selama 8 detik.",
+        "Mendapatkan {color}15{/color}% Elemental DMG Bonus untuk semua elemen. Saat anggota party lain menggunakan Elemental Skill, Karakter yang mengenakan senjata ini akan mendapatkan satu lapis Wavespike. Maksimal 2 lapis. Efek ini terpicu setiap 0,3 detik. Jika ada efek Wavespike yang telah terakumulasi saat Karakter yang mengenakan senjata ini melancarkan Elemental Skill-nya, maka semua lapisan Wavespike akan terkonsumsi dan Karakter akan mendapatkan Ripping Upheaval. Berdasarkan jumlah lapisan yang dikonsumsinya, setiap lapis Wavespike akan meningkatkan {color}25{/color}% DMG Normal Attack selama 8 detik.",
+        "Mendapatkan {color}18{/color}% Elemental DMG Bonus untuk semua elemen. Saat anggota party lain menggunakan Elemental Skill, Karakter yang mengenakan senjata ini akan mendapatkan satu lapis Wavespike. Maksimal 2 lapis. Efek ini terpicu setiap 0,3 detik. Jika ada efek Wavespike yang telah terakumulasi saat Karakter yang mengenakan senjata ini melancarkan Elemental Skill-nya, maka semua lapisan Wavespike akan terkonsumsi dan Karakter akan mendapatkan Ripping Upheaval. Berdasarkan jumlah lapisan yang dikonsumsinya, setiap lapis Wavespike akan meningkatkan {color}30{/color}% DMG Normal Attack selama 8 detik.",
+        "Mendapatkan {color}21{/color}% Elemental DMG Bonus untuk semua elemen. Saat anggota party lain menggunakan Elemental Skill, Karakter yang mengenakan senjata ini akan mendapatkan satu lapis Wavespike. Maksimal 2 lapis. Efek ini terpicu setiap 0,3 detik. Jika ada efek Wavespike yang telah terakumulasi saat Karakter yang mengenakan senjata ini melancarkan Elemental Skill-nya, maka semua lapisan Wavespike akan terkonsumsi dan Karakter akan mendapatkan Ripping Upheaval. Berdasarkan jumlah lapisan yang dikonsumsinya, setiap lapis Wavespike akan meningkatkan {color}35{/color}% DMG Normal Attack selama 8 detik.",
+        "Mendapatkan {color}24{/color}% Elemental DMG Bonus untuk semua elemen. Saat anggota party lain menggunakan Elemental Skill, Karakter yang mengenakan senjata ini akan mendapatkan satu lapis Wavespike. Maksimal 2 lapis. Efek ini terpicu setiap 0,3 detik. Jika ada efek Wavespike yang telah terakumulasi saat Karakter yang mengenakan senjata ini melancarkan Elemental Skill-nya, maka semua lapisan Wavespike akan terkonsumsi dan Karakter akan mendapatkan Ripping Upheaval. Berdasarkan jumlah lapisan yang dikonsumsinya, setiap lapis Wavespike akan meningkatkan {color}40{/color}% DMG Normal Attack selama 8 detik."
       ]
     },
     {

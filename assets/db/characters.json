@@ -20634,7 +20634,7 @@
       "image": "kamisato-ayato.png",
       "fullImage": "kamisato-ayato.png",
       "secondFullImage": null,
-      "isComingSoon": true,
+      "isComingSoon": false,
       "isNew": false,
       "isFemale": false,
       "region": "inazuma",
@@ -21268,61 +21268,61 @@
             {
               "key": "param1",
               "values": [
-                43.52,
-                47.06,
-                50.6,
-                55.66,
-                59.2,
-                63.25,
-                68.82,
-                74.38,
-                79.95,
-                86.02,
-                92.09,
-                98.16,
-                104.24,
-                110.31,
-                116.38
+                52.89,
+                57.2,
+                61.5,
+                67.65,
+                71.96,
+                76.88,
+                83.64,
+                90.41,
+                97.17,
+                104.55,
+                111.93,
+                119.31,
+                126.69,
+                134.07,
+                141.45
               ]
             },
             {
               "key": "param2",
               "values": [
-                46.1,
-                49.85,
-                53.6,
-                58.96,
-                62.71,
-                67.0,
-                72.9,
-                78.79,
-                84.69,
-                91.12,
-                97.55,
-                103.98,
-                110.42,
-                116.85,
-                123.28
+                58.91,
+                63.71,
+                68.5,
+                75.35,
+                80.15,
+                85.63,
+                93.16,
+                100.7,
+                108.23,
+                116.45,
+                124.67,
+                132.89,
+                141.11,
+                149.33,
+                157.55
               ]
             },
             {
               "key": "param3",
               "values": [
-                48.68,
-                52.64,
-                56.6,
-                62.26,
-                66.22,
-                70.75,
-                76.98,
-                83.2,
-                89.43,
-                96.22,
-                103.01,
-                109.8,
-                116.6,
-                123.39,
-                130.18
+                64.93,
+                70.22,
+                75.5,
+                83.05,
+                88.34,
+                94.38,
+                102.68,
+                110.99,
+                119.29,
+                128.35,
+                137.41,
+                146.47,
+                155.53,
+                164.59,
+                173.65
               ]
             },
             {
@@ -21348,21 +21348,21 @@
             {
               "key": "param5",
               "values": [
-                0.44,
-                0.47,
-                0.51,
                 0.56,
-                0.6,
-                0.64,
-                0.69,
-                0.75,
-                0.81,
-                0.87,
-                0.93,
-                0.99,
-                1.05,
+                0.61,
+                0.65,
+                0.72,
+                0.76,
+                0.82,
+                0.89,
+                0.96,
+                1.03,
                 1.11,
-                1.17
+                1.19,
+                1.27,
+                1.34,
+                1.42,
+                1.5
               ]
             },
             {
@@ -21408,61 +21408,21 @@
             {
               "key": "param8",
               "values": [
-                2.0,
-                2.0,
-                2.0,
-                2.0,
-                2.0,
-                2.0,
-                2.0,
-                2.0,
-                2.0,
-                2.0,
-                2.0,
-                2.0,
-                2.0,
-                2.0,
-                2.0
-              ]
-            },
-            {
-              "key": "param9",
-              "values": [
-                2.0,
-                2.0,
-                2.0,
-                2.0,
-                2.0,
-                2.0,
-                2.0,
-                2.0,
-                2.0,
-                2.0,
-                2.0,
-                2.0,
-                2.0,
-                2.0,
-                2.0
-              ]
-            },
-            {
-              "key": "param10",
-              "values": [
-                20.0,
-                20.0,
-                20.0,
-                20.0,
-                20.0,
-                20.0,
-                20.0,
-                20.0,
-                20.0,
-                20.0,
-                20.0,
-                20.0,
-                20.0,
-                20.0,
-                20.0
+                12.0,
+                12.0,
+                12.0,
+                12.0,
+                12.0,
+                12.0,
+                12.0,
+                12.0,
+                12.0,
+                12.0,
+                12.0,
+                12.0,
+                12.0,
+                12.0,
+                12.0
               ]
             }
           ]
@@ -21475,61 +21435,61 @@
             {
               "key": "param1",
               "values": [
-                55.02,
-                59.14,
-                63.27,
-                68.77,
-                72.9,
-                77.02,
-                82.53,
-                88.03,
-                93.53,
-                99.03,
-                104.53,
-                110.04,
-                116.91,
-                123.79,
-                130.67
+                66.46,
+                71.44,
+                76.42,
+                83.07,
+                88.05,
+                93.04,
+                99.68,
+                106.33,
+                112.98,
+                119.62,
+                126.27,
+                132.91,
+                141.22,
+                149.53,
+                157.83
               ]
             },
             {
               "key": "param2",
               "values": [
-                7.5,
-                8.0,
-                8.5,
-                9.0,
-                9.5,
-                10.0,
-                10.5,
                 11.0,
-                11.5,
                 12.0,
-                12.0,
-                12.0,
-                12.0,
-                12.0,
-                12.0
+                13.0,
+                14.0,
+                15.0,
+                16.0,
+                17.0,
+                18.0,
+                19.0,
+                20.0,
+                20.0,
+                20.0,
+                20.0,
+                20.0,
+                20.0
               ]
             },
             {
               "key": "param3",
               "values": [
-                15.0,
-                15.0,
-                15.0,
-                15.0,
-                15.0,
-                15.0,
-                15.0,
-                15.0,
-                15.0,
-                15.0,
-                15.0,
-                15.0,
-                15.0,
-                15.0,
-                15.0
+                18.0,
+                18.0,
+                18.0,
+                18.0,
+                18.0,
+                18.0,
+                18.0,
+                18.0,
+                18.0,
+                18.0,
+                18.0,
+                18.0,
+                18.0,
+                18.0,
+                18.0
               ]
             },
             {
@@ -21624,117 +21584,212 @@
           "image": "kamisato-ayato_c6.png"
         }
       ],
-      "builds": [],
+      "builds": [
+        {
+          "isRecommended": true,
+          "type": "dps",
+          "subType": "none",
+          "skillPriorities": [
+            "elementalSkill",
+            "elementalBurst",
+            "normalAttack"
+          ],
+          "weaponKeys": [
+            "haran-geppaku-futsu",
+            "primordial-jade-cutter",
+            "mistsplitter-reforged",
+            "the-black-sword",
+            "amenoma-kageuchi"
+          ],
+          "artifacts": [
+            {
+              "oneKey": "heart-of-depth",
+              "multiples": [],
+              "stats": [
+                "hp",
+                "atk",
+                "atkPercentage",
+                "hydroDmgBonusPercentage",
+                "critRatePercentage"
+              ]
+            },
+            {
+              "oneKey": "gladiators-finale",
+              "multiples": [],
+              "stats": [
+                "hp",
+                "atk",
+                "atkPercentage",
+                "hydroDmgBonusPercentage",
+                "critRatePercentage"
+              ]
+            },
+            {
+              "oneKey": "echoes-of-an-offering",
+              "multiples": [],
+              "stats": [
+                "hp",
+                "atk",
+                "atkPercentage",
+                "hydroDmgBonusPercentage",
+                "critRatePercentage"
+              ]
+            }
+          ],
+          "subStatsToFocus": [
+            "energyRechargePercentage",
+            "critDmgPercentage",
+            "critRatePercentage",
+            "atkPercentage"
+          ]
+        },
+        {
+          "isRecommended": false,
+          "type": "dps",
+          "subType": "freeze",
+          "skillPriorities": [
+            "elementalSkill",
+            "elementalBurst",
+            "normalAttack"
+          ],
+          "weaponKeys": [
+            "haran-geppaku-futsu",
+            "primordial-jade-cutter",
+            "mistsplitter-reforged",
+            "the-black-sword",
+            "amenoma-kageuchi"
+          ],
+          "artifacts": [
+            {
+              "oneKey": "blizzard-strayer",
+              "multiples": [],
+              "stats": [
+                "hp",
+                "atk",
+                "atkPercentage",
+                "hydroDmgBonusPercentage",
+                "critDmgPercentage"
+              ]
+            }
+          ],
+          "subStatsToFocus": [
+            "energyRechargePercentage",
+            "critDmgPercentage",
+            "critRatePercentage",
+            "atkPercentage"
+          ]
+        }
+      ],
       "stats": [
         {
           "level": 1,
-          "baseHp": 1047.0,
-          "baseAtk": 22.0,
-          "baseDef": 63.0,
+          "baseHp": 1068.0,
+          "baseAtk": 23.0,
+          "baseDef": 60.0,
           "isAnAscension": false,
           "statValue": 50.0
         },
         {
           "level": 20,
-          "baseHp": 2715.0,
-          "baseAtk": 57.0,
-          "baseDef": 165.0,
+          "baseHp": 2770.0,
+          "baseAtk": 60.0,
+          "baseDef": 155.0,
           "isAnAscension": false,
           "statValue": 50.0
         },
         {
           "level": 20,
-          "baseHp": 3613.0,
-          "baseAtk": 76.0,
-          "baseDef": 219.0,
+          "baseHp": 3685.0,
+          "baseAtk": 80.0,
+          "baseDef": 206.0,
           "isAnAscension": true,
           "statValue": 50.0
         },
         {
           "level": 40,
-          "baseHp": 5406.0,
-          "baseAtk": 114.0,
-          "baseDef": 328.0,
+          "baseHp": 5514.0,
+          "baseAtk": 120.0,
+          "baseDef": 309.0,
           "isAnAscension": false,
           "statValue": 50.0
         },
         {
           "level": 40,
-          "baseHp": 6044.0,
-          "baseAtk": 128.0,
-          "baseDef": 366.0,
+          "baseHp": 6165.0,
+          "baseAtk": 134.0,
+          "baseDef": 345.0,
           "isAnAscension": true,
           "statValue": 59.6
         },
         {
           "level": 50,
-          "baseHp": 6953.0,
-          "baseAtk": 147.0,
-          "baseDef": 421.0,
+          "baseHp": 7092.0,
+          "baseAtk": 155.0,
+          "baseDef": 397.0,
           "isAnAscension": false,
           "statValue": 59.6
         },
         {
           "level": 50,
-          "baseHp": 7803.0,
-          "baseAtk": 165.0,
-          "baseDef": 473.0,
+          "baseHp": 7960.0,
+          "baseAtk": 174.0,
+          "baseDef": 446.0,
           "isAnAscension": true,
           "statValue": 69.2
         },
         {
           "level": 60,
-          "baseHp": 8722.0,
-          "baseAtk": 185.0,
-          "baseDef": 528.0,
+          "baseHp": 8897.0,
+          "baseAtk": 194.0,
+          "baseDef": 499.0,
           "isAnAscension": false,
           "statValue": 69.2
         },
         {
           "level": 60,
-          "baseHp": 9360.0,
-          "baseAtk": 198.0,
-          "baseDef": 567.0,
+          "baseHp": 9548.0,
+          "baseAtk": 208.0,
+          "baseDef": 535.0,
           "isAnAscension": true,
           "statValue": 69.2
         },
         {
           "level": 70,
-          "baseHp": 10288.0,
-          "baseAtk": 218.0,
-          "baseDef": 623.0,
+          "baseHp": 10494.0,
+          "baseAtk": 229.0,
+          "baseDef": 588.0,
           "isAnAscension": false,
           "statValue": 69.2
         },
         {
           "level": 70,
-          "baseHp": 10925.0,
-          "baseAtk": 231.0,
-          "baseDef": 662.0,
+          "baseHp": 11144.0,
+          "baseAtk": 243.0,
+          "baseDef": 624.0,
           "isAnAscension": true,
           "statValue": 78.8
         },
         {
           "level": 80,
-          "baseHp": 11863.0,
-          "baseAtk": 251.0,
-          "baseDef": 719.0,
+          "baseHp": 12101.0,
+          "baseAtk": 264.0,
+          "baseDef": 678.0,
           "isAnAscension": false,
           "statValue": 78.8
         },
         {
           "level": 80,
-          "baseHp": 12501.0,
-          "baseAtk": 265.0,
-          "baseDef": 757.0,
+          "baseHp": 12751.0,
+          "baseAtk": 278.0,
+          "baseDef": 715.0,
           "isAnAscension": true,
           "statValue": 88.4
         },
         {
           "level": 90,
-          "baseHp": 13446.0,
-          "baseAtk": 285.0,
-          "baseDef": 815.0,
+          "baseHp": 13715.0,
+          "baseAtk": 299.0,
+          "baseDef": 769.0,
           "isAnAscension": false,
           "statValue": 88.4
         }
@@ -50969,7 +51024,7 @@
       "fullImage": "yae-miko.png",
       "secondFullImage": null,
       "isComingSoon": false,
-      "isNew": true,
+      "isNew": false,
       "isFemale": true,
       "region": "inazuma",
       "role": "offFieldDps",

@@ -2739,81 +2739,136 @@
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "École Kamisato - Transition",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Attaque normale",
+              "description": "Enchaîne jusqu'à 5 coups d'épée.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Attaque chargée",
+              "description": "Consomme de l'endurance pour se propulser en avant et déclencher un iai.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Attaque plongeante",
+              "description": "Plonge depuis les airs pour frapper le sol, infligeant des DGT aux ennemis en chemin et des DGT de zone à l'impact.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "DGT 1er coup|{param1}%",
+            "DGT 2e coup|{param2}%",
+            "DGT 3e coup|{param3}%",
+            "DGT 4e coup|{param4}%×{param5}",
+            "DGT 5e coup|{param6}%",
+            "DGT attaque chargée|{param7}%",
+            "Coût d'endurance attaque chargée|{param8}",
+            "DGT durant la chute|{param9}%",
+            "DGT chute basse/élevée|{param10}% / {param11}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "École Kamisato : Beauté réfléchie",
+          "description": "Kamisato Ayato change d'emplacement et entre dans un état de Réflexion torrentielle.\r\nAprès ce déplacement, il laisse une illusion aqueuse à son emplacement d'origine, qui, une fois complètement formée, explose après un certain temps ou si des ennemis sont à proximité, infligeant des DGT Hydro de zone.\r\n",
+          "abilities": [
+            {
+              "name": "Réflexion torrentielle",
+              "description": "Dans cet état, Ayato utilise son Shunsuiken pour attaquer avec une rapidité aveuglante, convertissant les DGT infligés par ses attaques normales en DGT Hydro de zone ne pouvant pas être enchantés.\r\nLes propriétés suivantes sont également appliquées :\r\n",
+              "descriptions": [
+                "Après avoir touché un ennemi avec une attaque de Shunsuiken, Ayato obtient un effet de flash onduleux, augmentant les DGT infligés par son Shunsuiken en fonction de ses PV max actuels. Le flash onduleux peut être initialement cumulé 4 fois maximum, et 1 cumul peut être obtenu une fois toutes les 0,1 s grâce à une attaque de Shunsuiken. Cet effet prend fin quand l'état de Réflexion torrentielle se termine.",
+                "La RÉS à l'interruption d'Ayato augmente.",
+                "Il est impossible d'utiliser des attaques chargées ou plongeantes.",
+                "L'état de Réflexion torrentielle cesse lorsqu'Ayato quitte le champ de bataille. Utiliser à nouveau École Kamisato : Beauté réfléchie en état de Réflexion torrentielle y mettra fin."
+              ]
+            }
+          ],
+          "stats": [
+            "DGT 1er coup de Shunsuiken|{param1}%",
+            "DGT 2e coup de Shunsuiken|{param2}%",
+            "DGT 3e coup de Shunsuiken|{param3}%",
+            "Durée Réflexion torrentielle|{param4}s",
+            "Bonus de DGT de flash onduleux|{param5}%Max HP / Stack",
+            "DGT illusion aqueuse|{param6}%",
+            "Durée illusion aqueuse|{param7}s",
+            "Temps de recharge|{param8}s"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
+          "title": "École Kamisato : Jardin d'eau",
+          "description": "Dévoile un jardin de pureté qui étouffe toute cacophonie en son sein.\r\nTant que cet espace existe, des lames de rosée pleuvent de façon continue pour attaquer les adversaires dans la zone, leur infligeant des DGT Hydro et augmentant les DGT des attaques normales des personnages à l'intérieur.\r\n",
           "abilities": [],
-          "stats": []
+          "stats": [
+            "DGT lame de rosée|{param1}%",
+            "Bonus ATQ normale|{param2}%",
+            "Durée|{param3}s",
+            "Temps de recharge|{param4}s",
+            "Énergie élémentaire|{param5}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "École Kamisato : Cuisine du jour",
+          "description": "18 % de chances d'obtenir un plat suspect supplémentaire du même type lorsque vous cuisinez un plat parfait.\r\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
+          "title": "École Kamisato : Clarté de bruine",
+          "description": "École Kamisato : Beauté réfléchie obtient les propriétés suivantes :\r\n",
+          "descriptions": [
+            "2 cumuls de flash onduleux sont accordés lors de l'utilisation.",
+            "Quand une illusion aqueuse explose, Ayato obtient un effet de flash onduleux équivalant au nombre maximum de cumuls possibles."
+          ]
         },
         {
           "key": "p3",
-          "title": "NA",
-          "description": "",
+          "title": "École Kamisato : Avènement de la pleine lune",
+          "description": "Lorsque Kamisato Ayato fait partie de l'équipe mais n'est pas déployé, et s'il possède moins de 40 pts d'énergie élémentaire, il en récupère 2 pts toutes les secondes.\r\n",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "Reflet gracieux",
+          "description": "Les DGT infligés par une attaque de Shunsuiken augmentent de 40 % contre les ennemis dont les PV sont inférieurs ou égaux à 50 %.\r\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "Source du monde",
+          "description": "Le flash onduleux peut maintenant être cumulé 5 fois maximum. Lorsqu'Ayato possède au moins 3 cumuls de flash onduleux, ses PV max augmentent de 50 %.\r\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "Contemplation des fleurs",
+          "description": "Niveau de compétence École Kamisato : Beauté réfléchie +3.\r\nNiveau max : 15\r\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "Flux ininterrompu",
+          "description": "Après avoir utilisé École Kamisato : Jardin d'eau, la VIT d'attaque des attaques normales des personnages de l'équipe à proximité augmentent de 15 % pendant 15 s.\r\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "Rosée de mille gouttes",
+          "description": "Niveau de compétence École Kamisato : Jardin d'eau +3.\r\nNiveau max : 15\r\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
+          "title": "Origine illimitée",
+          "description": "Après avoir utilisé École Kamisato : Beauté réfléchie, la prochaine attaque de Shunsuiken d'Ayato déclenchent 2 attaques supplémentaires de Shunsuiken en touchant un ennemi, chaque attaque supplémentaire infligeant des DGT d'une valeur équivalant à 450 % de l'ATQ d'Ayato.\r\nCes deux attaques supplémentaires ne seront pas affectées par l'effet de flash onduleux.\r\n",
           "descriptions": []
         }
       ]
@@ -7617,6 +7672,18 @@
         "Augmente les DGT infligés par les attaques normales de {color}24{/color} % et ceux des attaques chargées de {color}18{/color} %. Lorsque l'énergie élémentaire du personnage équipé de l'arme atteint 100 %, cet effet augmente de 100 %.",
         "Augmente les DGT infligés par les attaques normales de {color}28{/color} % et ceux des attaques chargées de {color}21{/color} %. Lorsque l'énergie élémentaire du personnage équipé de l'arme atteint 100 %, cet effet augmente de 100 %.",
         "Augmente les DGT infligés par les attaques normales de {color}32{/color} % et ceux des attaques chargées de {color}24{/color} %. Lorsque l'énergie élémentaire du personnage équipé de l'arme atteint 100 %, cet effet augmente de 100 %."
+      ]
+    },
+    {
+      "key": "haran-geppaku-futsu",
+      "name": "Haran Geppaku Futsu",
+      "description": "Une œuvre célèbre des forgerons de la lignée des Futsu. Son nom renvoie aux vagues violentes de la mer qui se déchaînent sous une nuit de pleine lune.",
+      "refinements": [
+        "Accorde un bonus de DGT élémentaires de {color}12{/color} %. Lorsqu'un autre personnage de l'équipe à proximité utilise une compétence élémentaire, le personnage équipé de cette arme obtient 1 cumul de Pic de vague. Cet effet peut être cumulé 2 fois maximum et déclenché une fois toutes les 0,3 s. Lorsque le personnage équipé de l'arme utilise une compétence élémentaire, tous les cumuls de Pic de vague sont consommés pour accorder un effet de Tumulte, augmentant les DGT d'attaque normale de {color}20{/color} % pour chaque cumul de Pic de vague consommé, pendant 8 s.",
+        "Accorde un bonus de DGT élémentaires de {color}15{/color} %. Lorsqu'un autre personnage de l'équipe à proximité utilise une compétence élémentaire, le personnage équipé de cette arme obtient 1 cumul de Pic de vague. Cet effet peut être cumulé 2 fois maximum et déclenché une fois toutes les 0,3 s. Lorsque le personnage équipé de l'arme utilise une compétence élémentaire, tous les cumuls de Pic de vague sont consommés pour accorder un effet de Tumulte, augmentant les DGT d'attaque normale de {color}25{/color} % pour chaque cumul de Pic de vague consommé, pendant 8 s.",
+        "Accorde un bonus de DGT élémentaires de {color}18{/color} %. Lorsqu'un autre personnage de l'équipe à proximité utilise une compétence élémentaire, le personnage équipé de cette arme obtient 1 cumul de Pic de vague. Cet effet peut être cumulé 2 fois maximum et déclenché une fois toutes les 0,3 s. Lorsque le personnage équipé de l'arme utilise une compétence élémentaire, tous les cumuls de Pic de vague sont consommés pour accorder un effet de Tumulte, augmentant les DGT d'attaque normale de {color}30{/color} % pour chaque cumul de Pic de vague consommé, pendant 8 s.",
+        "Accorde un bonus de DGT élémentaires de {color}21{/color} %. Lorsqu'un autre personnage de l'équipe à proximité utilise une compétence élémentaire, le personnage équipé de cette arme obtient 1 cumul de Pic de vague. Cet effet peut être cumulé 2 fois maximum et déclenché une fois toutes les 0,3 s. Lorsque le personnage équipé de l'arme utilise une compétence élémentaire, tous les cumuls de Pic de vague sont consommés pour accorder un effet de Tumulte, augmentant les DGT d'attaque normale de {color}35{/color} % pour chaque cumul de Pic de vague consommé, pendant 8 s.",
+        "Accorde un bonus de DGT élémentaires de {color}24{/color}%. Lorsqu'un autre personnage de l'équipe à proximité utilise une compétence élémentaire, le personnage équipé de cette arme obtient 1 cumul de Pic de vague. Cet effet peut être cumulé 2 fois maximum et déclenché une fois toutes les 0,3 s. Lorsque le personnage équipé de l'arme utilise une compétence élémentaire, tous les cumuls de Pic de vague sont consommés pour accorder un effet de Tumulte, augmentant les DGT d'attaque normale de {color}40{/color} % pour chaque cumul de Pic de vague consommé, pendant 8 s."
       ]
     },
     {

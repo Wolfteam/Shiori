@@ -2726,85 +2726,140 @@
       "key": "kamisato-ayato",
       "name": "Kamisato Ayato",
       "title": "El Vigoroso Estratega",
-      "description": "Joven promesa y actual líder del clan Kamisato de la Comisión Yashiro. Refinado y educado, siempre tiene una forma de hacer las cosas.",
+      "description": "Joven promesa y actual líder del clan Kamisato de la Comisión Yashiro. Refinado y educado, siempre tiene una forma de solucionar las cosas.",
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Estilo Kamisato - Marobashi",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Ataque Normal",
+              "description": "Realiza hasta 5 ataques rápidos.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Ataque Cargado",
+              "description": "Consume una cierta cantidad de Aguante para arremeter hacia delante y golpear con su espada.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Ataque Descendente",
+              "description": "Se lanza desde el aire para golpear el suelo, dañando a los enemigos cercanos e infligiendo Daño en el AdE en el momento del impacto.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "Daño de 1er golpe|{param1}%",
+            "Daño de 2.º golpe|{param2}%",
+            "Daño de 3er golpe|{param3}%",
+            "Daño de 4.º golpe|{param4}%×{param5}",
+            "Daño de 5.º golpe|{param6}%",
+            "Daño de ATQ Cargado|{param7}%",
+            "Coste de Aguante de ATQ Cargado|{param8}",
+            "Daño de Caída|{param9}%",
+            "Daño de impacto de caída baja/alta|{param10}% / {param11}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Estilo Kamisato: Belleza reflejada",
+          "description": "Kamisato Ayato se mueve de posición y entra en el estado de “reflejo torrencial”.\r\nTras hacer este movimiento, deja en su ubicación original una ilusión de agua. Al ser formada, la ilusión explotará si se encuentra cerca de un enemigo o cuando termine su duración, tras lo que inflige Daño Hydro en el AdE.\r\n",
+          "abilities": [
+            {
+              "name": "Reflejo torrencial",
+              "description": "En este estado, Kamisato Ayato ataca rápidamente con una hidroespada y el daño de sus Ataques Normales se transforma en Daño Hydro en el AdE, el cual no puede sustituirse imbuyéndose de otro elemento.\r\nAdemás, este estado tiene las siguientes características:\r\n",
+              "descriptions": [
+                "Al golpear a un enemigo con la hidroespada, Kamisato Ayato obtiene el efecto de “oleaje centelleante”, el cual aumenta el daño de la hidroespada en proporción su Vida Máx. actual. Inicialmente, oleaje centelleante puede acumularse hasta 4 veces y obtenerse una vez cada 0.1 s por cada ataque realizado con la hidroespada. Este efecto desaparece cuando termina la duración del estado de reflejo torrencial.",
+                "Aumenta la RES a interrupción de Kamisato Ayato.",
+                "Mientras dure este estado, no podrá ejecutar ni Ataques Cargados ni Descendentes.",
+                "El estado de reflejo torrencial se anulará cuando Kamisato Ayato sea retirado de combate. Si vuelve a usar Estilo Kamisato: Belleza reflejada mientras dicho estado está activo, el estado anterior terminará y la duración del nuevo estado se reiniciará."
+              ]
+            }
+          ],
+          "stats": [
+            "Daño de 1er golpe de hidroespada|{param1}%",
+            "Daño de 2.º golpe de hidroespada|{param2}%",
+            "Daño de 3er golpe de hidroespada|{param3}%",
+            "Duración de reflejo torrencial|{param4}s",
+            "Aumento de daño de oleaje centelleante|{param5}%Max HP / Stack",
+            "Daño de ilusión de agua|{param6}%",
+            "Duración de ilusión de agua|{param7}s",
+            "TdE|{param8}s"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
+          "title": "Estilo Kamisato: Jardín ácueo",
+          "description": "Crea un jardín de paz en el que ningún ruido tiene cabida.\r\nMientras está activo, en el jardín caerán continuamente filos de agua que atacarán a los enemigos en su interior, les infligirán Daño Hydro y aumentarán el daño de los Ataques Normales de los personajes dentro del área.\r\n",
           "abilities": [],
-          "stats": []
+          "stats": [
+            "Daño de filos de agua|{param1}%",
+            "Aumento de daño de ATQ Normal|{param2}%",
+            "Duración|{param3}s",
+            "TdE|{param4}s",
+            "Energía Elemental|{param5}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "Estilo Kamisato: Cocina diaria",
+          "description": "Al lograr un “Perfecto” al cocinar un plato, hay una probabilidad del 18% de obtener ese mismo plato con calidad “extraña”.\r\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
+          "title": "Estilo Kamisato: Corriente montañosa",
+          "description": "Estilo Kamisato: Belleza reflejada obtiene las siguientes características:\r\n",
+          "descriptions": [
+            "Al activar la habilidad, Kamisato Ayato obtiene 2 acumulaciones de oleaje centelleante.",
+            "Cuando la ilusión de agua se destruye, Kamisato Ayato obtiene el efecto de oleaje centelleante con la máxima cantidad de acumulaciones posibles."
+          ]
         },
         {
           "key": "p3",
-          "title": "NA",
-          "description": "",
+          "title": "Estilo Kamisato: Crecida de la luna",
+          "description": "Cuando Kamisato Ayato está en tu equipo pero no en combate y su Energía Elemental es menor a 40 pts., recuperará 2 pts. de Energía por segundo.\r\n",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "Reflejo grácil",
+          "description": "Aumenta en un 40% el daño infligido por la hidroespada contra los enemigos cuya vida es igual o inferior al 50%.\r\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "Manantial de la tierra",
+          "description": "Oleaje centelleante puede acumularse hasta un máximo de 5 veces. Cuando Kamisato Ayato tiene al menos 3 acumulaciones de este efecto, su Vida Máx. aumenta en un 50%.\r\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "Admiración floral",
+          "description": "Aumenta el nivel de habilidad de Estilo Kamisato: Belleza reflejada +3.\r\nPuede ser aumentado hasta Niv. 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "Flujo inagotable",
+          "description": "Tras usar Estilo Kamisato: Jardín ácueo, la Vel. de Ataque Normal de los miembros del equipo cercanos aumenta en un 15% durante 15 s.\r\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "Rocío pluvial",
+          "description": "Aumenta el nivel de habilidad de Estilo Kamisato: Jardín ácueo +3.\r\nPuede ser aumentado hasta Niv. 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
+          "title": "Fuente infinita",
+          "description": "Tras usar Estilo Kamisato: Belleza reflejada, cuando Kamisato Ayato golpea a un enemigo con el siguiente ataque de hidroespada, se liberarán dos ataques de hidroespada adicionales que infligen cada uno un daño equivalente al 450% del ATQ de Kamisato Ayato.\r\nEstos dos ataques no pueden beneficiarse de los efectos de oleaje centelleante.\r\n",
           "descriptions": []
         }
       ]
@@ -7604,6 +7659,18 @@
         "Aumenta en un {color}24{/color}% el daño infligido con Ataques Normales y en un {color}18{/color}% el infligido con Ataques Cargados. Este efecto aumenta en un 100% cuando el personaje que equipa esta arma tiene restaurada toda su Energía Elemental.",
         "Aumenta en un {color}28{/color}% el daño infligido con Ataques Normales y en un {color}21{/color}% el infligido con Ataques Cargados. Este efecto aumenta en un 100% cuando el personaje que equipa esta arma tiene restaurada toda su Energía Elemental.",
         "Aumenta en un {color}32{/color}% el daño infligido con Ataques Normales y en un {color}24{/color}% el infligido con Ataques Cargados. Este efecto aumenta en un 100% cuando el personaje que equipa esta arma tiene restaurada toda su Energía Elemental."
+      ]
+    },
+    {
+      "key": "haran-geppaku-futsu",
+      "name": "Haran Geppaku Futsu",
+      "description": "Una obra maestra de la escuela de espadas Futsu forjada por encargo. Su nombre se debe a su parecido con una violenta ola del mar.",
+      "refinements": [
+        "Otorga un {color}12{/color}% a todos los Bonos de Daño Elemental. Cuando los demás personajes del equipo cercanos usan una Habilidad Elemental, otorgan 1 carga de “acuapúa” al portador de esta arma. Este efecto puede acumularse hasta 2 veces y activarse una vez cada 0.3 s. Cuando el personaje que lleva esta arma equipada usa su Habilidad Elemental, si tenía cargas de acuapúa, las consumirá todas y obtendrá el efecto de “ondulación”, el cual aumenta el daño de Ataque Normal en un {color}20{/color}% durante 8 s por cada carga consumida.",
+        "Otorga un {color}15{/color}% a todos los Bonos de Daño Elemental. Cuando los demás personajes del equipo cercanos usan una Habilidad Elemental, otorgan 1 carga de “acuapúa” al portador de esta arma. Este efecto puede acumularse hasta 2 veces y activarse una vez cada 0.3 s. Cuando el personaje que lleva esta arma equipada usa su Habilidad Elemental, si tenía cargas de acuapúa, las consumirá todas y obtendrá el efecto de “ondulación”, el cual aumenta el daño de Ataque Normal en un {color}25{/color}% durante 8 s por cada carga consumida.",
+        "Otorga un {color}18{/color}% a todos los Bonos de Daño Elemental. Cuando los demás personajes del equipo cercanos usan una Habilidad Elemental, otorgan 1 carga de “acuapúa” al portador de esta arma. Este efecto puede acumularse hasta 2 veces y activarse una vez cada 0.3 s. Cuando el personaje que lleva esta arma equipada usa su Habilidad Elemental, si tenía cargas de acuapúa, las consumirá todas y obtendrá el efecto de “ondulación”, el cual aumenta el daño de Ataque Normal en un {color}30{/color}% durante 8 s por cada carga consumida.",
+        "Otorga un {color}21{/color}% a todos los Bonos de Daño Elemental. Cuando los demás personajes del equipo cercanos usan una Habilidad Elemental, otorgan 1 carga de “acuapúa” al portador de esta arma. Este efecto puede acumularse hasta 2 veces y activarse una vez cada 0.3 s. Cuando el personaje que lleva esta arma equipada usa su Habilidad Elemental, si tenía cargas de acuapúa, las consumirá todas y obtendrá el efecto de “ondulación”, el cual aumenta el daño de Ataque Normal en un {color}35{/color}% durante 8 s por cada carga consumida.",
+        "Otorga un {color}24{/color}% a todos los Bonos de Daño Elemental. Cuando los demás personajes del equipo cercanos usan una Habilidad Elemental, otorgan 1 carga de “acuapúa” al portador de esta arma. Este efecto puede acumularse hasta 2 veces y activarse una vez cada 0.3 s. Cuando el personaje que lleva esta arma equipada usa su Habilidad Elemental, si tenía cargas de acuapúa, las consumirá todas y obtendrá el efecto de “ondulación”, el cual aumenta el daño de Ataque Normal en un {color}40{/color}% durante 8 s por cada carga consumida."
       ]
     },
     {

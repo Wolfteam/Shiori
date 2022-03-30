@@ -2735,81 +2735,136 @@
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Kamisato-Stil – Marobashi",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Standardangriff",
+              "description": "Führt bis zu 5 Schwerthiebe hintereinander aus.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Heftiger Schlag",
+              "description": "Verbraucht eine gewisse Menge Ausdauer, um vorwärts zu stürmen und einen Iai auszuführen.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Angriff aus dem Fall",
+              "description": "Schlägt beim Fallen aus der Luft auf den Boden, greift alle Gegner in der Bahn an und verursacht beim Aufkommen Flächenschaden.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "SCH Phase 1|{param1}%",
+            "SCH Phase 2|{param2}%",
+            "SCH Phase 3|{param3}%",
+            "SCH Phase 4|{param4}%×{param5}",
+            "SCH Phase 5|{param6}%",
+            "Heftige Schläge|{param7}%",
+            "Ausdauerverbrauch heftiger Schläge|{param8}",
+            "SCH beim Fallen|{param9}%",
+            "SCH beim Fallen aus niedriger/großer Höhe|{param10}% / {param11}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Kamisato-Stil – Kyouka",
+          "description": "Kamisato Ayato wechselt seine Position und tritt in den Zustand „Takimeguri Kanka“ ein.\r\nHinterlässt danach eine „Wasserillusion“ an seinem ursprünglichen Standort. Sobald sie geformt ist, explodiert die Wasserillusion, wenn Gegner in der Nähe sind, oder nach einer bestimmten Zeit und verursacht Hydro-Flächenschaden.\r\n",
+          "abilities": [
+            {
+              "name": "Takimeguri Kanka",
+              "description": "In diesem Zustand setzt Kamisato Ayato sein Shunsuiken ein, um blitzschnelle Angriffe auszuführen, wodurch der mit seinen Standardangriffen verursachte Schaden in Hydro-Flächenschaden, der nicht von anderen Elementen überdeckt werden kann, umgewandelt wird.\r\nHat außerdem folgende Effekte:\r\n",
+              "descriptions": [
+                "Gewährt Ayato, nachdem ein Shunsuiken-Angriff Gegner getroffen hat, den Effekt Namisen, der den von Shunsuiken verursachten Schaden basierend auf Ayatos aktuellen max. LP erhöht. Namisen-Effekt anfänglich 4-fach stapelbar, höchstens 1 Stapelung alle 0,1 s durch Shunsuiken zu erhalten. Dieser Effekt erlischt, wenn Takimeguri Kanka endet.",
+                "Erhöht den Unterbrechungs-WDS von Kamisato Ayato.",
+                "Kann keinen heftigen Schlag oder Angriff aus dem Fall ausführen.",
+                "Takimeguri Kanka erlischt, wenn Ayato ausgewechselt wird, sowie bei Anwendung von Kamisato-Stil – Kyouka im bereits bestehenden Zustand Takimeguri Kanka."
+              ]
+            }
+          ],
+          "stats": [
+            "Shunsuiken-SCH Phase 1|{param1}%",
+            "Shunsuiken-SCH Phase 2|{param2}%",
+            "Shunsuiken-SCH Phase 3|{param3}%",
+            "Dauer von Takimeguri Kanka|{param4}s",
+            "ANG-Bonus von Namisen|{param5}%Max HP / Stack",
+            "Wasserillusions-SCH|{param6}%",
+            "Wasserillusions-Dauer|{param7}s",
+            "Abklingzeit|{param8}s"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
+          "title": "Kamisato-Stil – Suiyuu",
+          "description": "Erschafft einen Garten der Reinheit, der jeglichen Lärm in seinem Inneren auslöscht.\r\nLässt während der Wirkungsdauer fortlaufend Wasserblütenklingen fallen, die Gegner im Wirkungsbereich angreifen und ihnen Hydro-Schaden zufügen, und erhöht den mit Standardangriffen der Figuren im Wirkungsbereich verursachten Schaden.\r\n",
           "abilities": [],
-          "stats": []
+          "stats": [
+            "Wasserblütenklingen-SCH|{param1}%",
+            "SCH-Bonus für Standardangriffe|{param2}%",
+            "Dauer|{param3}s",
+            "Abklingzeit|{param4}s",
+            "Elementarenergie|{param5}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "Kamisato-Stil – Alltägliche Gerichte",
+          "description": "Stellt bei der perfekten Zubereitung von Gerichten mit einer Wahrscheinlichkeit von 18 % zusätzlich die misslungene Variante des jeweiligen Gerichts her.\r\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
+          "title": "Kamisato-Stil – Mine Wo Matoishi Kiyotaki",
+          "description": "Kamisato-Stil – Kyouka löst folgende Effekte aus:\r\n",
+          "descriptions": [
+            "Kamisato Ayato erhält beim Auslösen 2 Stapelungen des Effekts Namisen.",
+            "Wenn die Wasserillusion explodiert, erhält Ayato eine Menge an Stapelungen des Effekts Namisen, die der höchstmöglichen Anzahl von Stapelungen entspricht."
+          ]
         },
         {
           "key": "p3",
-          "title": "NA",
-          "description": "",
+          "title": "Kamisato-Stil – Michiyuku Hagetsu",
+          "description": "Stellt Kamisato Ayato, wenn er inaktiv in der Truppe ist und weniger als 40 Punkte Elementarenergie hat, pro s 2 Punkte Elementarenergie wieder her.\r\n",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "Kyouka Fuushi",
+          "description": "Erhöht den Gegnern mit bis zu 50 % LP mit Shunsuiken zugefügten Schaden um 40 %.\r\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "Quelle der Welt",
+          "description": "Erhöht die Höchstmenge an Stapelungen von Namisen auf 5. Erhöht, wenn Kamisato Ayato mindestens 3 Namisen-Stapelungen hat, seine maximalen LP um 50 %.\r\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "Bewunderung der Blumen",
+          "description": "Erhöht die Stufe der Fähigkeit Kamisato-Stil – Kyouka um 3.\r\nHöchststufe 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "Ewiger Fluss",
+          "description": "Erhöht nach dem Auslösen von Kamisato-Stil – Suiyuu die Angriffs-GSW der Standardangriffe aller Truppenmitglieder in der Nähe 15 s lang um 15 %.\r\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "Bansui Ichiro",
+          "description": "Erhöht die Stufe der Fähigkeit Kamisato-Stil – Suiyuu um 3.\r\nHöchststufe 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
+          "title": "Unerschöpfliche Quelle",
+          "description": "Löst, wenn der nächste Angriff von Kamisato Ayato mit Shunsuiken nach Anwendung von Kamisato-Stil – Kyouka Gegner trifft, 2 weitere Shunsuiken-Angriffe aus, von denen jeder Schaden in Höhe von 450 % von Ayatos ANG zufügt.\r\nDiese beiden Shunsuiken-Angriffe erhalten keine Bonuseffekte von Namisen.\r\n",
           "descriptions": []
         }
       ]
@@ -7611,6 +7666,18 @@
         "Erhöht den mit Standardangriffen verursachten Schaden um {color}24{/color} % und den mit heftigen Schlägen verursachten Schaden um {color}18{/color} %. Verstärkt diesen Effekt bei 100 % Elementarenergie der mit dieser Waffe ausgerüsteten Figur um 100 %.",
         "Erhöht den mit Standardangriffen verursachten Schaden um {color}28{/color} % und den mit heftigen Schlägen verursachten Schaden um {color}21{/color} %. Verstärkt diesen Effekt bei 100 % Elementarenergie der mit dieser Waffe ausgerüsteten Figur um 100 %.",
         "Erhöht den mit Standardangriffen verursachten Schaden um {color}32{/color} % und den mit heftigen Schlägen verursachten Schaden um {color}24{/color} %. Verstärkt diesen Effekt bei 100 % Elementarenergie der mit dieser Waffe ausgerüsteten Figur um 100 %."
+      ]
+    },
+    {
+      "key": "haran-geppaku-futsu",
+      "name": "Haran Geppaku Futsu",
+      "description": "Ein berühmtes Werk der Futsu-Schmiedefamilie. Der Name „Haran“ kommt von der Art und Weise, in der es den heftigen, aufgewühlten Wellen ähnelt.",
+      "refinements": [
+        "Erhöht den Schaden aller Elemente um {color}12{/color} %. Verleiht der mit dieser Waffe ausgerüsteten Figur bei Anwendung von Elementarfähigkeiten anderer Truppenmitglieder in der Nähe 1 Stapelung des Effekts „Wellenähre“, 2-fach stapelbar, 0,3 s Abklingzeit. Verbraucht bei der Anwendung der Elementarfähigkeit der mit dieser Waffe ausgerüsteten Figur den gesamten Effekt „Wellenähre“, sofern dieser Effekt vorhanden ist, und erhält den Effekt „Wogenprall“: Erhöht den mit Standardangriffen verursachten Schaden pro verbrauchte Stapelung 8 s lang um {color}20{/color} %.",
+        "Erhöht den Schaden aller Elemente um {color}15{/color} %. Verleiht der mit dieser Waffe ausgerüsteten Figur bei Anwendung von Elementarfähigkeiten anderer Truppenmitglieder in der Nähe 1 Stapelung des Effekts „Wellenähre“, 2-fach stapelbar, 0,3 s Abklingzeit. Verbraucht bei der Anwendung der Elementarfähigkeit der mit dieser Waffe ausgerüsteten Figur den gesamten Effekt „Wellenähre“, sofern dieser Effekt vorhanden ist, und erhält den Effekt „Wogenprall“: Erhöht den mit Standardangriffen verursachten Schaden pro verbrauchte Stapelung 8 s lang um {color}25{/color} %.",
+        "Erhöht den Schaden aller Elemente um {color}18{/color} %. Verleiht der mit dieser Waffe ausgerüsteten Figur bei Anwendung von Elementarfähigkeiten anderer Truppenmitglieder in der Nähe 1 Stapelung des Effekts „Wellenähre“, 2-fach stapelbar, 0,3 s Abklingzeit. Verbraucht bei der Anwendung der Elementarfähigkeit der mit dieser Waffe ausgerüsteten Figur den gesamten Effekt „Wellenähre“, sofern dieser Effekt vorhanden ist, und erhält den Effekt „Wogenprall“: Erhöht den mit Standardangriffen verursachten Schaden pro verbrauchte Stapelung 8 s lang um {color}30{/color} %.",
+        "Erhöht den Schaden aller Elemente um {color}21{/color} %. Verleiht der mit dieser Waffe ausgerüsteten Figur bei Anwendung von Elementarfähigkeiten anderer Truppenmitglieder in der Nähe 1 Stapelung des Effekts „Wellenähre“, 2-fach stapelbar, 0,3 s Abklingzeit. Verbraucht bei der Anwendung der Elementarfähigkeit der mit dieser Waffe ausgerüsteten Figur den gesamten Effekt „Wellenähre“, sofern dieser Effekt vorhanden ist, und erhält den Effekt „Wogenprall“: Erhöht den mit Standardangriffen verursachten Schaden pro verbrauchte Stapelung 8 s lang um {color}35{/color} %.",
+        "Erhöht den Schaden aller Elemente um {color}24{/color} %. Verleiht der mit dieser Waffe ausgerüsteten Figur bei Anwendung von Elementarfähigkeiten anderer Truppenmitglieder in der Nähe 1 Stapelung des Effekts „Wellenähre“, 2-fach stapelbar, 0,3 s Abklingzeit. Verbraucht bei der Anwendung der Elementarfähigkeit der mit dieser Waffe ausgerüsteten Figur den gesamten Effekt „Wellenähre“, sofern dieser Effekt vorhanden ist, und erhält den Effekt „Wogenprall“: Erhöht den mit Standardangriffen verursachten Schaden pro verbrauchte Stapelung 8 s lang um {color}40{/color} %."
       ]
     },
     {
