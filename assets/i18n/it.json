@@ -8654,6 +8654,14 @@
       ]
     },
     {
+      "key": "echoes-of-an-offering",
+      "name": "Echoes of an Offering",
+      "bonus": [
+        "ATK +18%.",
+        "When Normal Attacks hit opponents, there is a 36% chance that it will trigger Valley Rite, which will increase Normal Attack DMG by 70% of ATK. This effect will be dispelled 0.05s after a Normal Attack deals DMG. If a Normal Attack fails to trigger Valley Rite, the odds of it triggering the next time will increase by 20%. This trigger can occur once every 0.2s."
+      ]
+    },
+    {
       "key": "emblem-of-severed-fate",
       "name": "Emblem of Severed Fate",
       "bonus": [
@@ -8758,19 +8766,19 @@
       ]
     },
     {
-      "key": "pale-flame",
-      "name": "Pale Flame",
-      "bonus": [
-        "Physical DMG +25%.",
-        "Quando un'Elemental Skill colpisce un nemico, si ottiene ATK +9% per 7s. Si può attivare solo una volta ogni 0.3s. Max 2 stacks raggiunti i quali il Physical DMG bonus del Set-2 pezzi aumenta del 100%."
-      ]
-    },
-    {
       "key": "ocean-hued-clam",
       "name": "Ocean-Hued Clam",
       "bonus": [
         "Healing Bonus +15%.",
         "Quando un personaggio che equipaggia questo Set di Artefatti cura un personaggio del party, una \"Sea-Dyed Foam\" apparirà per 3s, per accumulare la quantità di HP ripristinati dalla cura (eccessi compresi). Dopo 3s, la Sea-Dyed Foam esploderà infliggendo DMG pari al 90% degli HP che ha accumulato. (Questo DMG è calcolato in modo simile al DMG delle Reazioni di tipo Electro-Charged e Superconduct, ma non è condizionabile da Elemental Mastery, Livello del Personaggio o DMG Bonus per le Reazioni). Si può produrre un solo Sea-Dyed Foam ogni 3.5s. Ciascun Sea-Dyed Foam può accumulare massimo 30,000 HP (cure in eccesso comprese). Può essere attivo un solo Sea-Dyed Foam per volta. Questo effetto può avvenire anche se il personaggio che lo equipaggia non è in uso ma è presente nel party."
+      ]
+    },
+    {
+      "key": "pale-flame",
+      "name": "Pale Flame",
+      "bonus": [
+        "Physical DMG +25%.",
+        "Quando un'Elemental Skill colpisce un nemico, si ottiene ATK +9% per 7s. Si può attivare solo una volta ogni 0.3s. Max 2 stacks raggiunti i quali il Physical DMG bonus del Set-2 pezzi aumenta del 100%."
       ]
     },
     {
@@ -8886,6 +8894,14 @@
       "bonus": [
         "Le cure ricevute aumentano del 20%.",
         "Gli Elemental Burst rigenerano il 20% di HP."
+      ]
+    },
+    {
+      "key": "vermillion-hereafter",
+      "name": "Vermillion Hereafter",
+      "bonus": [
+        "ATK +18%.",
+        "After using an Elemental Burst, this character will gain the Nascent Light effect, increasing their ATK by 8% for 16s. When the character's HP decreases, their ATK will further increase by 10%. This further increase can occur this way a maximum of 4 times. This effect can be triggered once every 0.8s. Nascent Light will be dispelled when the character leaves the field. If an Elemental Burst is used again during the duration of Nascent Light, the original Nascent Light will be dispelled."
       ]
     },
     {

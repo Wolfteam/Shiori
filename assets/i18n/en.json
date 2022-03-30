@@ -8654,6 +8654,14 @@
       ]
     },
     {
+      "key": "echoes-of-an-offering",
+      "name": "Echoes of an Offering",
+      "bonus": [
+        "ATK +18%.",
+        "When Normal Attacks hit opponents, there is a 36% chance that it will trigger Valley Rite, which will increase Normal Attack DMG by 70% of ATK. This effect will be dispelled 0.05s after a Normal Attack deals DMG. If a Normal Attack fails to trigger Valley Rite, the odds of it triggering the next time will increase by 20%. This trigger can occur once every 0.2s."
+      ]
+    },
+    {
       "key": "emblem-of-severed-fate",
       "name": "Emblem of Severed Fate",
       "bonus": [
@@ -8878,6 +8886,14 @@
       "bonus": [
         "Increases incoming healing by 20%.",
         "Using Elemental Burst restores 20% HP."
+      ]
+    },
+    {
+      "key": "vermillion-hereafter",
+      "name": "Vermillion Hereafter",
+      "bonus": [
+        "ATK +18%.",
+        "After using an Elemental Burst, this character will gain the Nascent Light effect, increasing their ATK by 8% for 16s. When the character's HP decreases, their ATK will further increase by 10%. This further increase can occur this way a maximum of 4 times. This effect can be triggered once every 0.8s. Nascent Light will be dispelled when the character leaves the field. If an Elemental Burst is used again during the duration of Nascent Light, the original Nascent Light will be dispelled."
       ]
     },
     {

@@ -8661,6 +8661,14 @@
       ]
     },
     {
+      "key": "echoes-of-an-offering",
+      "name": "Echoes of an Offering",
+      "bonus": [
+        "ATK +18%.",
+        "Saat Normal Attack mengenai musuh, ada 36% kemungkinan akan memicu Valley Rite yang akan meningkatkan DMG Normal Attack sebesar 70% ATK. Efek akan hilang 0,05 detik setelah Normal Attack mengakibatkan DMG. Jika Normal Attack gagal memicu efek Valley Rite, maka kemungkinan Valley Rite akan terpicu pada serangan berikutnya meningkat 20%. Efek ini dapat terpicu maksimum sekali setiap 0,2 detik."
+      ]
+    },
+    {
       "key": "emblem-of-severed-fate",
       "name": "Emblem of Severed Fate",
       "bonus": [
@@ -8870,6 +8878,14 @@
       "bonus": [
         "Efek pemulihan yang diterima meningkat 20%.",
         "Menggunakan Elemental Burst memulihkan 20% HP."
+      ]
+    },
+    {
+      "key": "vermillion-hereafter",
+      "name": "Vermillion Hereafter",
+      "bonus": [
+        "ATK +18%.",
+        "Setelah melancarkan Elemental Burst, Karakter tersebut akan mendapatkan efek Nascent Light yang akan meningkatkan 8% ATK-nya selama 16 detik. Saat HP Karakter tersebut berkurang, akan meningkatkan lagi 10% ATK-nya. Peningkatan yang bisa didapat dengan cara ini maksimum 4 kali. Efek dapat terpicu setiap 0,8 detik. Nascent Light akan hilang saat Karakter meninggalkan medan pertempuran. Jika Elemental Burst dilancarkan lagi saat durasi efeknya masih ada, maka efek Nascent Light awal akan hilang."
       ]
     },
     {

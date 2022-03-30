@@ -8655,6 +8655,14 @@
       ]
     },
     {
+      "key": "echoes-of-an-offering",
+      "name": "Eco del Sacrificio",
+      "bonus": [
+        "ATQ +18%.",
+        "Al golpear a un enemigo con un Ataque Normal, hay una probabilidad del 36% de activar el efecto de “ritual del valle”, el cual aumenta el daño de Ataque Normal en una cantidad equivalente al 70% del ATQ. Este efecto se anula 0.05 s después de infligir daño con un Ataque Normal. Si dicho ataque no activa ritual del valle, la probabilidad de activarlo con el siguiente golpe de Ataque Normal aumenta en un 20%. Esta activación solo puede ocurrir una vez cada 0.2s."
+      ]
+    },
+    {
       "key": "emblem-of-severed-fate",
       "name": "Emblema del Destino",
       "bonus": [
@@ -8864,6 +8872,14 @@
       "bonus": [
         "Curación recibida +20%.",
         "Al lanzar una Habilidad Definitiva, restaura un 20% de Vida."
+      ]
+    },
+    {
+      "key": "vermillion-hereafter",
+      "name": "Deceso del Cinabrio",
+      "bonus": [
+        "ATQ +18%.",
+        "Al usar la Habilidad Definitiva, obtienes el efecto de “destello emergente” durante 16s, el cual aumenta el ATQ en un 8% y, además, hace que cada vez que el personaje pierda Vida, su ATQ aumente en un 10% adicional. Este efecto solo puede aumentar el ATQ un máximo de 4 veces de esta manera y activarse una vez cada 0.8 s. Los efectos de destello emergente se disiparán si el personaje es retirado de combate. Si el personaje vuelve a usar la Habilidad Definitiva mientras dicho efecto está activo, el destello emergente original también se disipará."
       ]
     },
     {

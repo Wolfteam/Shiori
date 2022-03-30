@@ -49,6 +49,12 @@
       "maxRarity": 4
     },
     {
+      "key": "echoes-of-an-offering",
+      "image": "echoes-of-an-offering_4.png",
+      "minRarity": 4,
+      "maxRarity": 5
+    },
+    {
       "key": "emblem-of-severed-fate",
       "image": "emblem-of-severed-fate_4.png",
       "minRarity": 4,
@@ -209,6 +215,12 @@
       "image": "traveling-doctor_4.png",
       "minRarity": 2,
       "maxRarity": 3
+    },
+    {
+      "key": "vermillion-hereafter",
+      "image": "vermillion-hereafter_4.png",
+      "minRarity": 4,
+      "maxRarity": 5
     },
     {
       "key": "viridescent-venerer",

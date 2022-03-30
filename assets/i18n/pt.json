@@ -8552,6 +8552,14 @@
       ]
     },
     {
+      "key": "echoes-of-an-offering",
+      "name": "Eco do Sacrifício",
+      "bonus": [
+        "ATQ +18%.",
+        "Quando o Ataque Normal atinge um inimigo, tem 36% de chance de ativar o Rito do Vale o Ataque Normal aumenta o Dano e o valor de aumento é 70% do ATQ. Esse efeito desaparece nos 0.05s após o Ataque Normal causar dano. Quando o Ataque Normal não ativar o Rito do Vale, aumenta a probabilidade em 20% no próximo lançamento. Essa ativação pode ocorrer 1 vez a cada 0.2s."
+      ]
+    },
+    {
       "key": "emblem-of-severed-fate",
       "name": "Selo da Insulação",
       "bonus": [
@@ -8761,6 +8769,14 @@
       "bonus": [
         "Aumenta o efeito de cura em 20%.",
         "Após usar o Supremo, restaura 20% de Vida."
+      ]
+    },
+    {
+      "key": "vermillion-hereafter",
+      "name": "Além-vida Cinábrio",
+      "bonus": [
+        "ATQ +18%.",
+        "Depois do Supremo ser usado, será desencadeado o efeito de \"Luz Nascente\" por 16s o ATQ será aumentado em 8% e quando a Vida do personagem diminuir, o ATQ aumentará mais 10%. Esse aumento pode ocorrer desta forma no máximo 4 vezes, e pode ser desencadeado 1 vez a cada 0.8s. O efeito de \"Luz Nascente\" desaparece quando o personagem sai do campo de batalha. Quando o personagem lança novamente o Supremo durante o efeito, o efeito original de \"Luz Nascente\" será removido."
       ]
     },
     {

@@ -8655,6 +8655,14 @@
       ]
     },
     {
+      "key": "echoes-of-an-offering",
+      "name": "Dư Âm Tế Lễ",
+      "bonus": [
+        "Tấn công tăng 18%",
+        "Khi tấn công thường đánh trúng kẻ địch, sẽ có 36% tỷ lệ kích hoạt \"Nghi Lễ Vực Thẳm\" Tăng sát thương do tấn công thường gây ra, lượng tăng thêm bằng 70% tấn công; 0.05s sau khi tấn công thường gây ra sát thương, hiệu quả này sẽ biến mất. Khi tấn công thường chưa kích hoạt \"Nghi Lễ Vực Thẳm\", sẽ tăng 20% tỷ lệ kích hoạt lần sau, trong 0.2s tối đa kích hoạt 1 lần."
+      ]
+    },
+    {
       "key": "emblem-of-severed-fate",
       "name": "Dấu Ấn Ngăn Cách",
       "bonus": [
@@ -8864,6 +8872,14 @@
       "bonus": [
         "Tăng 20% hiệu quả trị liệu nhân vật nhận được.",
         "Khi thi triển Kỹ Năng Nộ, hồi 20% HP."
+      ]
+    },
+    {
+      "key": "vermillion-hereafter",
+      "name": "Thần Sa Vãng Sinh Lục",
+      "bonus": [
+        "Tấn công tăng 18%",
+        "Sau khi thi triển kỹ năng nộ, sẽ sinh ra hiệu quả \"Ánh Sáng Ngầm\" duy trì 16s Tăng 8% tấn công; đồng thời khi nhân vật bị giảm HP, sẽ tiếp tục tăng 10% tấn công, tối đa tăng 4 lần bằng cách này, mỗi 0.8s tối đa kích hoạt 1 lần. Hiệu quả \"Ánh Sáng Ngầm\" sẽ biến mất khi nhân vật rời trận; thi triển kỹ năng nộ lần nữa khi đang trong thời gian duy trì, sẽ xóa \"Ánh Sáng Ngầm\" đã có."
       ]
     },
     {

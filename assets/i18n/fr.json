@@ -8616,7 +8616,7 @@
       "name": "Roche ancienne",
       "bonus": [
         "Confère un bonus de DGT Géo de 15 %",
-        "Lorsque vous obtenez un cristal issu d'une Cristallisation, tous les personnages de l'équipe reçoivent un bonus de DGT du second élément de la réaction de 35 % pendant 10 s. Cet effet ne peut s'appliquer qu'à un seul élément à la fois."
+        "Lorsque vous obtenez un cristal issu d'une Cristallisation, tous les personnages de l'équipe bénéficient d'un bonus de DGT du second élément de la réaction de 35 % pendant 10 s. Cet effet ne peut s'appliquer qu'à un seul élément à la fois."
       ]
     },
     {
@@ -8656,7 +8656,7 @@
       "name": "Sorcière des flammes ardentes",
       "bonus": [
         "Confère un bonus de DGT Pyro de 15 %.",
-        "Augmente les DGT infligés par Surcharge et Brûlure de 40 % et ceux d'Évaporation et de Fonte de 15 %. L'utilisation d'une compétence élémentaire augmente pendant 10 s l'effet du set de 2 pièces de 50 % ; cet effet peut être cumulé 3 fois au maximum."
+        "Augmente les DGT infligés par Surcharge et Brûlure de 40 % et ceux d'Évaporation et de Fonte de 15 %. L'utilisation d'une compétence élémentaire augmente pendant 10 s l'effet du set de 2 pièces de 50 %. Cet effet peut être cumulé 3 fois maximum."
       ]
     },
     {
@@ -8665,6 +8665,14 @@
       "bonus": [
         "Augmente la DÉF de 30 %.",
         "Pour chaque personnage de l'équipe ayant un élément de type différent du personnage équipé, la RÉS élémentaire correspondante est augmentée de 30 %."
+      ]
+    },
+    {
+      "key": "echoes-of-an-offering",
+      "name": "Échos d'une offrande",
+      "bonus": [
+        "Augmente l'ATQ de 18 %.",
+        "En touchant un ennemi, les attaques normales ont 36 % de chances de déclencher un effet de Rituel de la vallée, augmentant les DGT d'attaque normale d'une valeur équivalant à 70 % de l'ATQ. Cet effet sera dissipé 0,05 s après avoir infligé des DGT avec une attaque normale. Chaque attaque normale ne déclenchant pas l'effet augmentera les chances de le déclencher la prochaine fois de 20 %. Cet effet peut être déclenché une fois toutes les 0,2 s."
       ]
     },
     {
@@ -8704,7 +8712,7 @@
       "name": "Coquille des rêves opulents",
       "bonus": [
         "Augmente la DÉF de 30 %.",
-        "Un personnage équipé de ce set d'artéfacts obtiendra 1 cumul de Curiosité des façons suivantes  sur le champ de bataille, il gagne 1 cumul en touchant un ennemi avec une attaque Géo, ceci pouvant être déclenché une fois toutes les 0,3 s ; en faisant partie de l'équipe mais en n'étant pas déployé, il gagne 1 cumul toutes les 3 s. La Curiosité peut être cumulée 4 fois maximum, chaque cumul accordant 6 % de bonus de DÉF et 6 % de Bonus de DGT Géo. Si 6 s s'écoulent sans gagner de cumul de Curiosité, 1 cumul sera perdu."
+        "Un personnage équipé de ce set d'artéfacts obtiendra 1 cumul de Curiosité des façons suivantes  sur le champ de bataille, il gagne 1 cumul en touchant un ennemi avec une attaque Géo, ceci pouvant être déclenché une fois toutes les 0,3 s ; en faisant partie de l'équipe mais en n'étant pas déployé, il gagne 1 cumul toutes les 3 s. La Curiosité peut être cumulée 4 fois maximum, chaque cumul accordant 6 % de bonus de DÉF et 6 % de bonus de DGT Géo. Si 6 s s'écoulent sans gagner de cumul de Curiosité, 1 cumul sera perdu."
       ]
     },
     {
@@ -8768,7 +8776,7 @@
       "name": "Flamme blême",
       "bonus": [
         "Augmente les DGT physiques de 25 %.",
-        "Lorsqu'une compétence élémentaire touche un ennemi, l'ATQ augmente de 9 % pendant 7 s. Cet effet peut être cumulé jusqu'à 2 fois et déclenché une fois toutes les 0,3 s. Une fois 2 cumuls atteints, l'effet du set de 2 pièces augmente de 100 %."
+        "Lorsqu'une compétence élémentaire touche un ennemi, l'ATQ augmente de 9 % pendant 7 s. Cet effet peut être cumulé 2 fois maximum et déclenché une fois toutes les 0,3 s. Une fois 2 cumuls atteints, l'effet du set de 2 pièces augmente de 100 %."
       ]
     },
     {
@@ -8877,6 +8885,14 @@
       "bonus": [
         "Augmente les soins reçus par le personnage de 20 %.",
         "Le déchaînement élémentaire restaure 20 % des PV."
+      ]
+    },
+    {
+      "key": "vermillion-hereafter",
+      "name": "Au-delà cinabrin",
+      "bonus": [
+        "Augmente l'ATQ de 18 %.",
+        "Lorsqu'un personnage utilise un déchaînement élémentaire, il gagne un effet de Lumière latente pendant 16 s, augmentant son ATQ de 8 %, puis de 10 % supplémentaires à chaque fois que ses PV diminuent. Cette augmentation supplémentaire peut être cumulée 4 fois maximum et déclenchée une fois toutes les 0,8 s. L'effet de Lumière latente cesse lorsque le personnage quitte le champ de bataille. Si le personnage utilise à nouveau son déchaînement élémentaire alors que la Lumière latente est en effet, l'effet original de Lumière latente est dissipé."
       ]
     },
     {
