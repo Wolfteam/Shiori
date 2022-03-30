@@ -35,6 +35,7 @@ class FixedLeftColumn extends StatelessWidget {
             itemKey: item.key,
             type: item.type,
             name: item.name,
+            number: item.versions.where((el) => el.released).length,
           );
         },
       ),
@@ -47,6 +48,7 @@ class _ItemCard extends StatelessWidget {
   final BannerHistoryItemType type;
   final String name;
   final String image;
+  final int number;
   final EdgeInsets margin;
   final double cellWidth;
   final double cellHeight;
@@ -57,6 +59,7 @@ class _ItemCard extends StatelessWidget {
     required this.type,
     required this.name,
     required this.image,
+    required this.number,
     required this.margin,
     required this.cellWidth,
     required this.cellHeight,
@@ -65,6 +68,7 @@ class _ItemCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+    final text = '$name ($number)';
     return InkWell(
       onTap: () {
         //show some details here ?
@@ -85,9 +89,9 @@ class _ItemCard extends StatelessWidget {
               else
                 CircleWeapon(itemKey: itemKey, image: image, radius: 45),
               Tooltip(
-                message: name,
+                message: text,
                 child: Text(
-                  name,
+                  text,
                   overflow: TextOverflow.ellipsis,
                   style: theme.textTheme.subtitle2!.copyWith(fontWeight: FontWeight.bold),
                 ),

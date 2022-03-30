@@ -415,5 +415,8 @@
   "restorePurchaseError": "Purchases could not be restored",
   "collapse": "Collapse",
   "useDarkAmoledTheme": "Use dark amoled theme",
-  "unlockedWithDonation": "Unlocked with a donation"
+  "unlockedWithDonation": "Unlocked with a donation",
+  "bannerHistory": "Banner History",
+  "versions": "Versions",
+  "checkBannerHistory": "Check when a character / weapon was released"
 }
