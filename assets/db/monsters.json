@@ -342,7 +342,20 @@
       "image": "black-serpent-knight-windcutter.png",
       "type": "abyssOrder",
       "isComingSoon": false,
-      "drops": []
+      "drops": [
+        {
+          "key": "gloomy-statuette",
+          "type": "material"
+        },
+        {
+          "key": "dark-statuette",
+          "type": "material"
+        },
+        {
+          "key": "deathly-statuette",
+          "type": "material"
+        }
+      ]
     },
     {
       "key": "blazing-axe-mitachurl",
@@ -671,18 +684,6 @@
         },
         {
           "key": "ley-line-sprout",
-          "type": "material"
-        },
-        {
-          "key": "gloomy-statuette",
-          "type": "material"
-        },
-        {
-          "key": "dark-statuette",
-          "type": "material"
-        },
-        {
-          "key": "deathly-statuette",
           "type": "material"
         },
         {
@@ -1098,18 +1099,6 @@
         },
         {
           "key": "ley-line-sprout",
-          "type": "material"
-        },
-        {
-          "key": "gloomy-statuette",
-          "type": "material"
-        },
-        {
-          "key": "dark-statuette",
-          "type": "material"
-        },
-        {
-          "key": "deathly-statuette",
           "type": "material"
         },
         {
@@ -2232,18 +2221,6 @@
         },
         {
           "key": "ley-line-sprout",
-          "type": "material"
-        },
-        {
-          "key": "gloomy-statuette",
-          "type": "material"
-        },
-        {
-          "key": "dark-statuette",
-          "type": "material"
-        },
-        {
-          "key": "deathly-statuette",
           "type": "material"
         },
         {
@@ -3716,18 +3693,6 @@
         },
         {
           "key": "ley-line-sprout",
-          "type": "material"
-        },
-        {
-          "key": "gloomy-statuette",
-          "type": "material"
-        },
-        {
-          "key": "dark-statuette",
-          "type": "material"
-        },
-        {
-          "key": "deathly-statuette",
           "type": "material"
         },
         {
