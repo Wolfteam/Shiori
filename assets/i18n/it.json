@@ -2725,86 +2725,141 @@
     {
       "key": "kamisato-ayato",
       "name": "Kamisato Ayato",
-      "title": "",
-      "description": "The young but highly accomplished head of the Yashiro Commision's Kamisato Clan. Cultured and polite, he is a man of many ways and means.",
+      "title": "Pillar of Fortitude",
+      "description": "The young but highly accomplished head of the Yashiro Commission's Kamisato Clan. Cultured and polite, he is a man of many ways and means.",
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Kamisato Art - Marobashi",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Normal Attack",
+              "description": "Perform up to 5 rapid strikes.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Charged Attack",
+              "description": "Consumes a certain amount of Stamina to dash forward and perform an iai.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Plunging Attack",
+              "description": "Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "1-Hit DMG|{param1}%",
+            "2-Hit DMG|{param2}%",
+            "3-Hit DMG|{param3}%",
+            "4-Hit DMG|{param4}%×{param5}",
+            "5-Hit DMG|{param6}%",
+            "Charged Attack DMG|{param7}%",
+            "Charged Attack Stamina Cost|{param8}",
+            "Plunge DMG|{param9}%",
+            "Low/High Plunge DMG|{param10}% / {param11}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Kamisato Art: Kyouka",
+          "description": "Kamisato Ayato shifts positions and enters the Takimeguri Kanka state.\r\nAfter this shift, he will leave a watery illusion at his original location. After it is formed, the watery illusion will explode if opponents are nearby or after its duration ends, dealing AoE Hydro DMG.\r\n",
+          "abilities": [
+            {
+              "name": "Takimeguri Kanka",
+              "description": "In this state, Kamisato Ayato uses his Shunsuiken to engage in blindingly fast attacks, causing DMG from his Normal Attacks to be converted into AoE Hydro DMG. This cannot be overridden.\r\nIt also has the following properties:\r\n",
+              "descriptions": [
+                "After a Shunsuiken attack hits an opponent, it will grant Ayato the Namisen effect, increasing the DMG dealt by Shunsuiken based on Ayato's current Max HP. The initial maximum number of Namisen stacks is 4, and 1 stack can be gained through Shunsuiken every 0.1s. This effect will be dispelled when Takimeguri Kanka ends.",
+                "Kamisato Ayato's resistance to interruption is increased.",
+                "Unable to use Charged or Plunging Attacks.",
+                "Takimeguri Kanka will be cleared when Ayato leaves the field. Using Kamisato Art: Kyouka again while in the Takimeguri Kanka state will reset and replace the pre-existing state."
+              ]
+            }
+          ],
+          "stats": [
+            "Shunsuiken 1-Hit DMG|{param1}%",
+            "Shunsuiken 2-Hit DMG|{param2}%",
+            "Shunsuiken 3-Hit DMG|{param3}%",
+            "Takimeguri Kanka Duration|{param4}s",
+            "Namisen DMG Bonus|{param5}%Max HP / Stack",
+            "Water Illusion DMG|{param6}%",
+            "Water Illusion Duration|{param7}s",
+            "CD|{param8}s"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
+          "title": "Kamisato Art: Suiyuu",
+          "description": "Unveils a garden of purity that silences the cacophony within.\r\nWhile this space exists, Bloomwater Blades will constantly rain down and attack opponents within its AoE, dealing Hydro DMG and increasing the Normal Attack DMG of characters within.\r\n",
           "abilities": [],
-          "stats": []
+          "stats": [
+            "Bloomwater Blade DMG|{param1}%",
+            "Normal Attack DMG Bonus|{param2}%",
+            "Duration|{param3}s",
+            "CD|{param4}s",
+            "Energy Cost|{param5}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "Kamisato Art: Daily Cooking",
+          "description": "When Ayato cooks a dish perfectly, he has a 18% chance to receive an additional \"Suspicious\" dish of the same type.\r\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
+          "title": "Kamisato Art: Mine Wo Matoishi Kiyotaki",
+          "description": "Kamisato Art: Kyouka has the following properties:\r\n",
+          "descriptions": [
+            "After it is used, Kamisato Ayato will gain 2 Namisen stacks.",
+            "When the water illusion explodes, Ayato will gain a Namisen effect equal to the maximum number of stacks possible."
+          ]
         },
         {
           "key": "p3",
-          "title": "NA",
-          "description": "",
+          "title": "Kamisato Art: Michiyuku Hagetsu",
+          "description": "If Kamisato Ayato is not on the field and his Energy is less than 40, he will regenerate 2 Energy for himself every second.\r\n",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "Kyouka Fuushi",
+          "description": "Shunsuiken DMG is increased by 40% against opponents with 50% HP or less.\r\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "World Source",
+          "description": "Namisen's maximum stack count is increased to 5. When Kamisato Ayato has at least 3 Namisen stacks, his Max HP is increased by 50%.\r\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "To Admire the Flowers",
+          "description": "Increases the Level of Kamisato Art: Kyouka by 3.\r\nMaximum upgrade level is 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "Endless Flow",
+          "description": "After using Kamisato Art: Suiyuu, all nearby party members will have 15% increased Normal Attack SPD for 15s.\r\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "Bansui Ichiro",
+          "description": "Increases the Level of Kamisato Art: Suiyuu by 3.\r\nMaximum upgrade level is 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
+          "title": "Boundless Origin",
+          "description": "After using Kamisato Art: Kyouka, Ayato's next Shunsuiken attack will create 2 extra Shunsuiken strikes when they hit opponents, each one dealing 450% of Ayato's ATK as DMG.\r\nBoth these Shunsuiken attacks will not be affected by Namisen.\r\n",
           "descriptions": []
         }
       ]
@@ -3187,6 +3242,93 @@
           "key": "c6",
           "title": "Sin of Pride",
           "description": "L'Electro DMG dei personaggi che hanno ricevuto un ATK Bonus dai Tengu Juurai ottiene CRIT DMG +60%.\r\n",
+          "descriptions": []
+        }
+      ]
+    },
+    {
+      "key": "kuki-shinobu",
+      "name": "Kuki Shinobu",
+      "title": "",
+      "description": "",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
           "descriptions": []
         }
       ]
@@ -6646,6 +6788,87 @@
       ]
     },
     {
+      "key": "yelan",
+      "name": "Yelan",
+      "title": "",
+      "description": "",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ]
+    },
+    {
       "key": "yoimiya",
       "name": "Yoimiya",
       "title": "Frolicking Flames",
@@ -7603,6 +7826,18 @@
         "Aumenta il DMG di Attacchi Normali del {color}24{/color}% e il DMG di Attacchi Caricati del {color}18{/color}%. Quando il personaggio che lo equipaggia raggiunge Energy 100%, questo potenziamento aumenta del 100%.",
         "Aumenta il DMG di Attacchi Normali del {color}28{/color}% e il DMG di Attacchi Caricati del {color}21{/color}%. Quando il personaggio che lo equipaggia raggiunge Energy 100%, questo potenziamento aumenta del 100%.",
         "Aumenta il DMG di Attacchi Normali del {color}32{/color}% e il DMG di Attacchi Caricati del {color}24{/color}%. Quando il personaggio che lo equipaggia raggiunge Energy 100%, questo potenziamento aumenta del 100%."
+      ]
+    },
+    {
+      "key": "haran-geppaku-futsu",
+      "name": "Haran Geppaku Futsu",
+      "description": "A famed work by the Futsu line of smiths. The name \"Haran\" comes from the manner in which it resembles the violent, roiling waves.",
+      "refinements": [
+        "Obtain {color}12{/color}% All Elemental DMG Bonus. When other nearby party members use Elemental Skills, the character equipping this weapon will gain 1 Wavespike stack. Max 2 stacks. This effect can be triggered once every 0.3s. When the character equipping this weapon uses an Elemental Skill, all stacks of Wavespike will be consumed to gain Rippling Upheaval: each stack of Wavespike consumed will increase Normal Attack DMG by {color}20{/color}% for 8s.",
+        "Obtain {color}15{/color}% All Elemental DMG Bonus. When other nearby party members use Elemental Skills, the character equipping this weapon will gain 1 Wavespike stack. Max 2 stacks. This effect can be triggered once every 0.3s. When the character equipping this weapon uses an Elemental Skill, all stacks of Wavespike will be consumed to gain Rippling Upheaval: each stack of Wavespike consumed will increase Normal Attack DMG by {color}25{/color}% for 8s.",
+        "Obtain {color}18{/color}% All Elemental DMG Bonus. When other nearby party members use Elemental Skills, the character equipping this weapon will gain 1 Wavespike stack. Max 2 stacks. This effect can be triggered once every 0.3s. When the character equipping this weapon uses an Elemental Skill, all stacks of Wavespike will be consumed to gain Rippling Upheaval: each stack of Wavespike consumed will increase Normal Attack DMG by {color}30{/color}% for 8s.",
+        "Obtain {color}21{/color}% All Elemental DMG Bonus. When other nearby party members use Elemental Skills, the character equipping this weapon will gain 1 Wavespike stack. Max 2 stacks. This effect can be triggered once every 0.3s. When the character equipping this weapon uses an Elemental Skill, all stacks of Wavespike will be consumed to gain Rippling Upheaval: each stack of Wavespike consumed will increase Normal Attack DMG by {color}35{/color}% for 8s.",
+        "Obtain {color}24{/color}% All Elemental DMG Bonus. When other nearby party members use Elemental Skills, the character equipping this weapon will gain 1 Wavespike stack. Max 2 stacks. This effect can be triggered once every 0.3s. When the character equipping this weapon uses an Elemental Skill, all stacks of Wavespike will be consumed to gain Rippling Upheaval: each stack of Wavespike consumed will increase Normal Attack DMG by {color}40{/color}% for 8s."
       ]
     },
     {
@@ -8654,6 +8889,14 @@
       ]
     },
     {
+      "key": "echoes-of-an-offering",
+      "name": "Echoes of an Offering",
+      "bonus": [
+        "ATK +18%.",
+        "When Normal Attacks hit opponents, there is a 36% chance that it will trigger Valley Rite, which will increase Normal Attack DMG by 70% of ATK. This effect will be dispelled 0.05s after a Normal Attack deals DMG. If a Normal Attack fails to trigger Valley Rite, the odds of it triggering the next time will increase by 20%. This trigger can occur once every 0.2s."
+      ]
+    },
+    {
       "key": "emblem-of-severed-fate",
       "name": "Emblem of Severed Fate",
       "bonus": [
@@ -8754,7 +8997,7 @@
       "name": "Ocean-Hued Clam",
       "bonus": [
         "Healing Bonus +15%.",
-        "When the character equipping this artifact set heals a character in the party, a Sea-Dyed Foam will appear for 3 seconds, accumulating the amount of HP recovered from healing (including overflow healing). At the end of the duration, the Sea-Dyed Foam will explode, dealing DMG to nearby opponents based on 90% of the accumulated healing. (This DMG is calculated similarly to Reactions such as Electro-Charged, and Superconduct, but is not affected by Elemental Mastery, Character Levels, or Reaction DMG Bonuses). Only one Sea-Dyed Foam can be produced every 3.5 seconds. Each Sea-Dyed Foam can accumulate up to 30,000 HP (including overflow healing). There can be no more than one Sea-Dyed Foam active at any given time. This effect can still be triggered even when the character who is using this artifact set is not on the field."
+        "Quando un personaggio che equipaggia questo Set di Artefatti cura un personaggio del party, una \"Sea-Dyed Foam\" apparirà per 3s, per accumulare la quantità di HP ripristinati dalla cura (eccessi compresi). Dopo 3s, la Sea-Dyed Foam esploderà infliggendo DMG pari al 90% degli HP che ha accumulato. (Questo DMG è calcolato in modo simile al DMG delle Reazioni di tipo Electro-Charged e Superconduct, ma non è condizionabile da Elemental Mastery, Livello del Personaggio o DMG Bonus per le Reazioni). Si può produrre un solo Sea-Dyed Foam ogni 3.5s. Ciascun Sea-Dyed Foam può accumulare massimo 30,000 HP (cure in eccesso comprese). Può essere attivo un solo Sea-Dyed Foam per volta. Questo effetto può avvenire anche se il personaggio che lo equipaggia non è in uso ma è presente nel party."
       ]
     },
     {
@@ -8763,14 +9006,6 @@
       "bonus": [
         "Physical DMG +25%.",
         "Quando un'Elemental Skill colpisce un nemico, si ottiene ATK +9% per 7s. Si può attivare solo una volta ogni 0.3s. Max 2 stacks raggiunti i quali il Physical DMG bonus del Set-2 pezzi aumenta del 100%."
-      ]
-    },
-    {
-      "key": "ocean-hued-clam",
-      "name": "Ocean-Hued Clam",
-      "bonus": [
-        "Healing Bonus +15%.",
-        "Quando un personaggio che equipaggia questo Set di Artefatti cura un personaggio del party, una \"Sea-Dyed Foam\" apparirà per 3s, per accumulare la quantità di HP ripristinati dalla cura (eccessi compresi). Dopo 3s, la Sea-Dyed Foam esploderà infliggendo DMG pari al 90% degli HP che ha accumulato. (Questo DMG è calcolato in modo simile al DMG delle Reazioni di tipo Electro-Charged e Superconduct, ma non è condizionabile da Elemental Mastery, Livello del Personaggio o DMG Bonus per le Reazioni). Si può produrre un solo Sea-Dyed Foam ogni 3.5s. Ciascun Sea-Dyed Foam può accumulare massimo 30,000 HP (cure in eccesso comprese). Può essere attivo un solo Sea-Dyed Foam per volta. Questo effetto può avvenire anche se il personaggio che lo equipaggia non è in uso ma è presente nel party."
       ]
     },
     {
@@ -8886,6 +9121,14 @@
       "bonus": [
         "Le cure ricevute aumentano del 20%.",
         "Gli Elemental Burst rigenerano il 20% di HP."
+      ]
+    },
+    {
+      "key": "vermillion-hereafter",
+      "name": "Vermillion Hereafter",
+      "bonus": [
+        "ATK +18%.",
+        "After using an Elemental Burst, this character will gain the Nascent Light effect, increasing their ATK by 8% for 16s. When the character's HP decreases, their ATK will further increase by 10%. This further increase can occur this way a maximum of 4 times. This effect can be triggered once every 0.8s. Nascent Light will be dispelled when the character leaves the field. If an Elemental Burst is used again during the duration of Nascent Light, the original Nascent Light will be dispelled."
       ]
     },
     {
@@ -9977,6 +10220,11 @@
       "description": "Un pezzo di ghiaccio cristallizzato del Grande Re Lupo del Nord.\r\nUn tempo questa terra era un regno di gelide bufere di neve e tempeste glaciali di frammenti di ghiaccio affilati come rasoi; ogni cosa era controllato da Boreas. Sebbene il suo potere sia diminuito, Boreas può ancora congelare la terra in un istante."
     },
     {
+      "key": "runic-fang",
+      "name": "Runic Fang",
+      "description": "A \"fang\" with which the mysterious, snakelike machine of old dug into mountains' depths. There are many ominous runes carved on it.\r\nIt is said that giant serpents lurk in the dark fissures deep beneath the ground. Burning with eternal resentment and malice toward the world above, they throw themselves into digging great tunnels, yet none know what their malicious purposes are..."
+    },
+    {
       "key": "sakura-bloom",
       "name": "Sakura Bloom",
       "description": "Fiori dal Sacro Sakura del Grande Santuario Narukami, pieni di affetto per Inazuma."
@@ -10554,6 +10802,10 @@
       "name": "Azhdaha"
     },
     {
+      "key": "black-serpent-knight-windcutter",
+      "name": "Black Serpent Knight: Windcutter"
+    },
+    {
       "key": "blazing-axe-mitachurl",
       "name": "Blazing Axe Mitachurl"
     },
@@ -10696,6 +10948,10 @@
     {
       "key": "fatui-skirmisher-pyroslinger-bracer",
       "name": "Fatui Skirmisher - Pyroslinger Bracer"
+    },
+    {
+      "key": "floating-hydro-fungus",
+      "name": "Floating Hydro Fungus"
     },
     {
       "key": "frostarm-lawachurl",
@@ -11016,6 +11272,10 @@
     {
       "key": "ruin-scout",
       "name": "Ruin Scout"
+    },
+    {
+      "key": "ruin-serpent",
+      "name": "Ruin Serpent"
     },
     {
       "key": "sangonomiya-cohort",

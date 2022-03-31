@@ -2664,85 +2664,140 @@
       "key": "kamisato-ayato",
       "name": "Kamisato Ayato",
       "title": "Pilar da Fortaleza",
-      "description": "O jovem promessa e chefe atual da Comissão Yashiro, é culto e educado, e sempre tem uma forma de fazer as coisas.",
+      "description": "O jovem promissor e chefe atual da Comissão Yashiro, é culto e educado, e sempre tem uma forma de fazer as coisas.",
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Arte Kamisato - Giro",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Ataque Normal",
+              "description": "Realiza até 5 golpes de espada.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Ataque Carregado",
+              "description": "Consome uma certa quantidade de Stamina para avançar para frente realizando Iaido.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Ataque Imersivo",
+              "description": "Mergulha em pleno ar para golpear o chão, causando dano aos inimigos ao longo do caminho e infligindo Dano em uma AdE no impacto.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "Dano do 1° Golpe|{param1}%",
+            "Dano do 2° Golpe|{param2}%",
+            "Dano do 3° Golpe|{param3}%",
+            "Dano do 4° Golpe|{param4}%×{param5}",
+            "Dano do 5° Golpe|{param6}%",
+            "Dano de Ataque Carregado|{param7}%",
+            "Consumo de Stamina de Ataque Carregado|{param8}",
+            "Dano Durante a Queda|{param9}%",
+            "Dano de Queda de Baixa/Alta Altitude|{param10}% / {param11}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Arte Kamisato: Beleza Refletida",
+          "description": "Kamisato Ayato troca de posição e entra no estado \"Reflexão Torrencial\".\r\nApós esta troca, ele deixará uma Ilusão de Água na sua localização original. Após sua formação, a Ilusão de Água explodirá se os oponentes estiverem próximos ou quando sua duração terminar, infligindo Dano Hydro em AdE.\r\n",
+          "abilities": [
+            {
+              "name": "Reflexão Torrencial",
+              "description": "Nesse estado, Kamisato Ayato usa sua Espada Aquática para realizar ataques rápidos, fazendo com que o Dano de seus Ataques Normais seja convertido em Dano Hydro em AdE que não pode ser substituído pelo encantamento de outros elementos.\r\nAlém disso, também possui as seguintes propriedades:\r\n",
+              "descriptions": [
+                "Quando os ataques da Espada Aquática atingem um inimigo, darão a Ayato o efeito de Ondas Brilhantes, aumentando o Dano infligido pela Espada Aquática baseado na Vida Máxima atual de Ayato. O número máximo inicial de acúmulos de Ondas Brilhantes é 4, e é possível obter um acúmulo através da Espada Aquática a cada 0.1s. Esse efeito desaparecerá quando a Reflexão Torrencial acabar.",
+                "Aumenta a Resistência Contra Interrupção de Kamisato Ayato.",
+                "Se torna incapaz de usar Ataques Carregados ou Imersivos.",
+                "A Reflexão Torrencial será eliminada quando Ayato sair do campo de batalha. Usar Arte Kamisato: Beleza Refletida novamente enquanto ainda estiver no estado Reflexão Torrencial encerrará tal estado."
+              ]
+            }
+          ],
+          "stats": [
+            "Dano do 1° Golpe da Espada Aquática|{param1}%",
+            "Dano do 2° Golpe da Espada Aquática|{param2}%",
+            "Dano do 3° Golpe da Espada Aquática|{param3}%",
+            "Duração da Reflexão Torrencial|{param4}s",
+            "Aumento de Dano de Ondas Brilhantes|{param5}%Max HP / Stack",
+            "Dano da Ilusão de Água|{param6}%",
+            "Duração da Ilusão de Água|{param7}s",
+            "Tempo de Recarga|{param8}s"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
+          "title": "Arte Kamisato: Jardim Aquático",
+          "description": "Revela um jardim puro que extingue toda a cacofonia.\r\nEnquanto esse espaço existir, Lâminas de Flores de Água constantemente cairão e atacarão os inimigos em sua AdE, infligindo Dano Hydro e aumentando o dano do Ataque Normal dos personagens dentro da AdE.\r\n\"",
           "abilities": [],
-          "stats": []
+          "stats": [
+            "Dano da Lâmina de Flores de Água|{param1}%",
+            "Aumento de Dano do Ataque Normal|{param2}%",
+            "Duração|{param3}s",
+            "Recarga|{param4}s",
+            "Energia Elemental|{param5}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "Arte Kamisato: Cozinha Diária",
+          "description": "Quando uma Comida Perfeita é feita, tem uma chance de 18% de receber uma Comida Estranha de mesmo tipo.\r\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
+          "title": "Arte Kamisato: Corrente entre Montanhas",
+          "description": "Arte Kamisato: Beleza Refletida possui as seguintes propriedades:\r\n",
+          "descriptions": [
+            "Depois de ser lançada, Kamisato Ayato obtém 2 acúmulos de Ondas Brilhantes;",
+            "Depois de sua Ilusão de Água explodir, Kamisato Ayato obterá um efeito de Ondas Brilhantes igual ao máximo de número de acúmulos possíveis."
+          ]
         },
         {
           "key": "p3",
-          "title": "NA",
-          "description": "",
+          "title": "Arte Kamisato: Completação da Lua Nascente",
+          "description": "Quando Kamisato Ayato está na equipe, mas não ativo no campo de batalha, se sua Energia Elemental for menor que 40 pontos, ele regenerará 2 pontos de Energia Elemental para si mesmo por segundo.\r\n",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "Reflexo Gracioso",
+          "description": "Espada Aquática infligirá 40% a mais de Dano em inimigos com Vida igual ou inferior a 50%.\r\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "Fonte do Mundo",
+          "description": "O número máximo de acúmulos de Onda Brilhante é aumentado para 5. Quando Kamisato Ayato possuir pelo menos 3 acúmulos de Ondas Brilhantes, sua Vida Máxima será aumentada em 50%.\r\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "Admiração das Flores",
+          "description": "Aumenta o nível de Arte Kamisato: Beleza Refletida em 3.\r\nO nível máximo de elevação é 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "Fluxo Ininterrupto",
+          "description": "Ao usar Arte Kamisato: Jardim Aquático, os personagens próximos da equipe terão um aumento da Vel. de ATQ do Ataque Normal de 15% por 15s.\r\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "Orvalho de Mil Gotas",
+          "description": "Aumenta o nível Arte Kamisato: Jardim Aquático em 3.\r\nO nível máximo de elevação é 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
+          "title": "Origem Ilimitada",
+          "description": "Depois de usar Arte Kamisato: Beleza Refletida, o próximo ataque de Espada Aquática de Kamisato Ayato que atingir um inimigo desencadeará dois ataques de Espadas Aquáticas adicionais, cada um infligindo Dano equivalente a 450% do Dano do Ataque de Kamisato Ayato.\r\nEstes dois ataques da Espada Aquática não receberão bônus de Onda Brilhante.\r\n",
           "descriptions": []
         }
       ]
@@ -3125,6 +3180,93 @@
           "key": "c6",
           "title": "Meu Mundo",
           "description": "O Dano Electro dos personagens que tiveram seus ATQs aumentados pelo Tengu Juurai tem seu Dano CRIT aumentado em 60%.\r\n",
+          "descriptions": []
+        }
+      ]
+    },
+    {
+      "key": "kuki-shinobu",
+      "name": "Kuki Shinobu",
+      "title": "",
+      "description": "",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
           "descriptions": []
         }
       ]
@@ -6550,6 +6692,87 @@
       ]
     },
     {
+      "key": "yelan",
+      "name": "Yelan",
+      "title": "",
+      "description": "",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ]
+    },
+    {
       "key": "yoimiya",
       "name": "Yoimiya",
       "title": "Dança das Chamas",
@@ -7501,6 +7724,18 @@
         "Aumenta o Dano de ATQ Normal em {color}24{/color}% e o Dano de ATQ Carregado em {color}18{/color}%. Quando a Energia Elemental do personagem equipado com essa arma é igual a 100%, esse efeito aumenta 100%.",
         "Aumenta o Dano de ATQ Normal em {color}28{/color}% e o Dano de ATQ Carregado em {color}21{/color}%. Quando a Energia Elemental do personagem equipado com essa arma é igual a 100%, esse efeito aumenta 100%.",
         "Aumenta o Dano de ATQ Normal em {color}32{/color}% e o Dano de ATQ Carregado em {color}24{/color}%. Quando a Energia Elemental do personagem equipado com essa arma é igual a 100%, esse efeito aumenta 100%."
+      ]
+    },
+    {
+      "key": "haran-geppaku-futsu",
+      "name": "Haran Geppaku Futsu",
+      "description": "Uma obra da linhagem Futsu. Seu nome tem como origem devido à maneira que lembra uma onda violenta do mar.",
+      "refinements": [
+        "Obtém {color}12{/color}% de bônus de Dano de todos os elementos. Quando os outros personagens da equipe usam Habilidades Elementais, gerarão um acúmulo do efeito \"Ondulação\" para o personagem que tem esta arma equipada. Esse efeito é acumulável no máximo 2 vezes e pode ser desencadeado uma vez a cada 0.3s. Quando o personagem que tiver esta arma equipada lançar sua Habilidade Elemental, se tiver acúmulos de \"Ondulação\", consumirá os acúmulos existentes e obterá \"Maremoto\", cada acúmulo consumido aumenta o Dano do Ataque Normal em {color}20{/color}% por 8s.",
+        "Obtém {color}15{/color}% de bônus de Dano de todos os elementos. Quando os outros personagens da equipe usam Habilidades Elementais, gerarão um acúmulo do efeito \"Ondulação\" para o personagem que tem esta arma equipada. Esse efeito é acumulável no máximo 2 vezes e pode ser desencadeado uma vez a cada 0.3s. Quando o personagem que tiver esta arma equipada lançar sua Habilidade Elemental, se tiver acúmulos de \"Ondulação\", consumirá os acúmulos existentes e obterá \"Maremoto\", cada acúmulo consumido aumenta o Dano do Ataque Normal em {color}25{/color}% por 8s.",
+        "Obtém {color}18{/color}% de bônus de Dano de todos os elementos. Quando os outros personagens da equipe usam Habilidades Elementais, gerarão um acúmulo do efeito \"Ondulação\" para o personagem que tem esta arma equipada. Esse efeito é acumulável no máximo 2 vezes e pode ser desencadeado uma vez a cada 0.3s. Quando o personagem que tiver esta arma equipada lançar sua Habilidade Elemental, se tiver acúmulos de \"Ondulação\", consumirá os acúmulos existentes e obterá \"Maremoto\", cada acúmulo consumido aumenta o Dano do Ataque Normal em {color}30{/color}% por 8s.",
+        "Obtém {color}21{/color}% de bônus de Dano de todos os elementos. Quando os outros personagens da equipe usam Habilidades Elementais, gerarão um acúmulo do efeito \"Ondulação\" para o personagem que tem esta arma equipada. Esse efeito é acumulável no máximo 2 vezes e pode ser desencadeado uma vez a cada 0.3s. Quando o personagem que tiver esta arma equipada lançar sua Habilidade Elemental, se tiver acúmulos de \"Ondulação\", consumirá os acúmulos existentes e obterá \"Maremoto\", cada acúmulo consumido aumenta o Dano do Ataque Normal em {color}35{/color}% por 8s.",
+        "Obtém {color}24{/color}% de bônus de Dano de todos os elementos. Quando os outros personagens da equipe usam Habilidades Elementais, gerarão um acúmulo do efeito \"Ondulação\" para o personagem que tem esta arma equipada. Esse efeito é acumulável no máximo 2 vezes e pode ser desencadeado uma vez a cada 0.3s. Quando o personagem que tiver esta arma equipada lançar sua Habilidade Elemental, se tiver acúmulos de \"Ondulação\", consumirá os acúmulos existentes e obterá \"Maremoto\", cada acúmulo consumido aumenta o Dano do Ataque Normal em {color}40{/color}% por 8s."
       ]
     },
     {
@@ -8552,6 +8787,14 @@
       ]
     },
     {
+      "key": "echoes-of-an-offering",
+      "name": "Eco do Sacrifício",
+      "bonus": [
+        "ATQ +18%.",
+        "Quando o Ataque Normal atinge um inimigo, tem 36% de chance de ativar o Rito do Vale o Ataque Normal aumenta o Dano e o valor de aumento é 70% do ATQ. Esse efeito desaparece nos 0.05s após o Ataque Normal causar dano. Quando o Ataque Normal não ativar o Rito do Vale, aumenta a probabilidade em 20% no próximo lançamento. Essa ativação pode ocorrer 1 vez a cada 0.2s."
+      ]
+    },
+    {
       "key": "emblem-of-severed-fate",
       "name": "Selo da Insulação",
       "bonus": [
@@ -8761,6 +9004,14 @@
       "bonus": [
         "Aumenta o efeito de cura em 20%.",
         "Após usar o Supremo, restaura 20% de Vida."
+      ]
+    },
+    {
+      "key": "vermillion-hereafter",
+      "name": "Além-vida Cinábrio",
+      "bonus": [
+        "ATQ +18%.",
+        "Depois do Supremo ser usado, será desencadeado o efeito de \"Luz Nascente\" por 16s o ATQ será aumentado em 8% e quando a Vida do personagem diminuir, o ATQ aumentará mais 10%. Esse aumento pode ocorrer desta forma no máximo 4 vezes, e pode ser desencadeado 1 vez a cada 0.8s. O efeito de \"Luz Nascente\" desaparece quando o personagem sai do campo de batalha. Quando o personagem lança novamente o Supremo durante o efeito, o efeito original de \"Luz Nascente\" será removido."
       ]
     },
     {
@@ -9852,6 +10103,11 @@
       "description": "Condensado de gelo vindo do corpo do Grande Lobo do Vento do Norte.\r\nNeste pedaço de terra, soprou-se o vento do norte congelante. O gelo e a neve rasgam a pele, deixando o sangue se condensar. Embora a força do Grande Lobo do Vento do Norte não seja tão boa quanto costumava ser, ele ainda possui o poder de congelar a terra."
     },
     {
+      "key": "runic-fang",
+      "name": "Presa Rúnica",
+      "description": "Uma \"presa\" que o mecanismo misterioso antigo em forma de serpente usou para escavar até as profundezas das montanhas. Há algumas runas sinistras esculpidas nela.\r\nDizem que serpentes gigantes espreitam nas fissuras sombrias das profundezas. Queimando com o eterno ressentimento e malícia em direção ao mundo de cima, elas cavam imensos túneis, mas ninguém sabe quais são seus reais propósitos maliciosos..."
+    },
+    {
       "key": "sakura-bloom",
       "name": "Flor Sakura",
       "description": "Flores de Sakura Sagrada no Grande Santuário Narukami, exalando a afeição por Inazuma."
@@ -10429,6 +10685,10 @@
       "name": "Azhdaha"
     },
     {
+      "key": "black-serpent-knight-windcutter",
+      "name": "Cavaleiro da Serpente Negra - Quebra-Vento"
+    },
+    {
       "key": "blazing-axe-mitachurl",
       "name": "Mitachurl do Machado Ardente"
     },
@@ -10450,7 +10710,7 @@
     },
     {
       "key": "cryo-abyss-mage",
-      "name": "Mago do Abismo Cryo"
+      "name": "Feiticeiro do Abismo Cryo"
     },
     {
       "key": "cryo-cicin",
@@ -10573,6 +10833,10 @@
       "name": "Soldado dos Fatui - Guerrilheiro de Canhão Pyro"
     },
     {
+      "key": "floating-hydro-fungus",
+      "name": "Cogumelo Flutuante Hydro"
+    },
+    {
       "key": "frostarm-lawachurl",
       "name": "Lawachurl dos Braços Congelantes"
     },
@@ -10662,7 +10926,7 @@
     },
     {
       "key": "hydro-mimic-mallard",
-      "name": "Pato-real Fantasma - Hydro"
+      "name": "Pato-real Ilusório - Hydro"
     },
     {
       "key": "hydro-mimic-raptor",
@@ -10891,6 +11155,10 @@
     {
       "key": "ruin-scout",
       "name": "Batedor das Ruínas"
+    },
+    {
+      "key": "ruin-serpent",
+      "name": "Serpente das Ruínas"
     },
     {
       "key": "sangonomiya-cohort",
