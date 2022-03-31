@@ -3254,6 +3254,93 @@
       ]
     },
     {
+      "key": "kuki-shinobu",
+      "name": "久岐忍",
+      "title": "",
+      "description": "",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ]
+    },
+    {
       "key": "lisa",
       "name": "リサ",
       "title": "薔薇の魔女",
@@ -6696,6 +6783,87 @@
       ]
     },
     {
+      "key": "yelan",
+      "name": "夜蘭",
+      "title": "",
+      "description": "",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ]
+    },
+    {
       "key": "yoimiya",
       "name": "宵宮",
       "title": "琉焔に舞う大輪",
@@ -10032,6 +10200,11 @@
       "key": "ring-of-boreas",
       "name": "北風のリング",
       "description": "北風の王狼の体から取ったごくわずかな氷。\r\nこの大地はかつて北風に吹かれ、氷霜に包まれていた。砂利のような氷と雪は寒風の中で叫び、肌を裂き、血を固まらせる。今の北風の王狼の力は昔より劣るが、大地を凍らせるほどの力はまだある。"
+    },
+    {
+      "key": "runic-fang",
+      "name": "符文の歯車",
+      "description": "山壁の「歯車」を掘り出すために使われた、謎の蛇の形をした古代の機械。解読不能の不吉な符文が刻まれている。\r\n伝説によると、大地の黒き亀裂には、巨大な蛇が潜んでいるらしい。それらは地上の世界に恨みと悪意を抱きながら、未知なる目的のため、巨大な隧道を掘り続けていると言う…"
     },
     {
       "key": "sakura-bloom",

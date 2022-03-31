@@ -3256,6 +3256,93 @@
       ]
     },
     {
+      "key": "kuki-shinobu",
+      "name": "Kuki Shinobu",
+      "title": "",
+      "description": "",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ]
+    },
+    {
       "key": "lisa",
       "name": "Lisa",
       "title": "Sorcière à la rose",
@@ -6715,6 +6802,87 @@
       ]
     },
     {
+      "key": "yelan",
+      "name": "Yelan",
+      "title": "",
+      "description": "",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ]
+    },
+    {
       "key": "yoimiya",
       "name": "Yoimiya",
       "title": "Flamme gambadante",
@@ -10049,6 +10217,11 @@
       "key": "ring-of-boreas",
       "name": "Vertèbre de Borée",
       "description": "Un peu de glace provenant du corps du Grand Roi Loup du Nord.\r\nIl déclenchait des blizzards et des tempêtes de neige à la grêle si acérée qu'elle pouvait couper la chair. Ses pouvoirs ne sont plus ceux d'antan, mais il possède encore la puissance de recouvrir ses terres de neige."
+    },
+    {
+      "key": "runic-fang",
+      "name": "Croc runique",
+      "description": "Un « croc » qui a permis à la mystérieuse machine antique à l'apparence de serpent de creuser dans les profondeurs de la montagne. Il présente des gravures de runes funestes.\r\nD'après la légende, des serpents géants se tapissent dans les entrailles du sol. Nourrissant une haine et une malveillance éternelle envers la surface, ils creusent d'immenses tunnels sans que personne ne sache leur but sinistre."
     },
     {
       "key": "sakura-bloom",

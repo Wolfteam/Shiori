@@ -3245,6 +3245,93 @@
       ]
     },
     {
+      "key": "kuki-shinobu",
+      "name": "Kuki Shinobu",
+      "title": "",
+      "description": "",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ]
+    },
+    {
       "key": "lisa",
       "name": "Lisa",
       "title": "Ma Nữ Tường Vi",
@@ -6702,6 +6789,87 @@
       ]
     },
     {
+      "key": "yelan",
+      "name": "Yelan",
+      "title": "",
+      "description": "",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ]
+    },
+    {
       "key": "yoimiya",
       "name": "Yoimiya",
       "title": "Vũ Điệu Bão Lửa",
@@ -10036,6 +10204,11 @@
       "key": "ring-of-boreas",
       "name": "Móng Vuốt Bắc Phong",
       "description": "Một chút băng lấy từ trên người Vua Sói Bắc Phong.\r\nNơi này từng có gió bắc lạnh giá thổi qua, khiến cho người ta lạnh buốt da khi bay. Hiện nay sức mạnh Vua Sói tuy không được như trước, nhưng vẫn đủ để khiến nơi này đóng băng."
+    },
+    {
+      "key": "runic-fang",
+      "name": "Bánh Răng Ấn Ký",
+      "description": "Cỗ máy cổ đại hình rắn bí ẩn được sử dụng để đào \"răng\" của vách núi, trên đó có khắc những ký tự khó hiểu.\r\nNgười ta nói rằng, ẩn trong những vết nứt đen sâu thẳm của trái đất là những con rắn khổng lồ, chúng luôn nuôi dưỡng lòng thù hận và ác ý đối với thế giới mặt đất, với mục đích thâm độc và không thể biết trước, chúng đào những đường hầm rất lớn..."
     },
     {
       "key": "sakura-bloom",

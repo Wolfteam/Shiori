@@ -3247,6 +3247,93 @@
       ]
     },
     {
+      "key": "kuki-shinobu",
+      "name": "Kuki Shinobu",
+      "title": "",
+      "description": "",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ]
+    },
+    {
       "key": "lisa",
       "name": "Lisa",
       "title": "Witch of Purple Rose",
@@ -6701,6 +6788,87 @@
       ]
     },
     {
+      "key": "yelan",
+      "name": "Yelan",
+      "title": "",
+      "description": "",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ]
+    },
+    {
       "key": "yoimiya",
       "name": "Yoimiya",
       "title": "Frolicking Flames",
@@ -10050,6 +10218,11 @@
       "key": "ring-of-boreas",
       "name": "Ring of Boreas",
       "description": "Un pezzo di ghiaccio cristallizzato del Grande Re Lupo del Nord.\r\nUn tempo questa terra era un regno di gelide bufere di neve e tempeste glaciali di frammenti di ghiaccio affilati come rasoi; ogni cosa era controllato da Boreas. Sebbene il suo potere sia diminuito, Boreas può ancora congelare la terra in un istante."
+    },
+    {
+      "key": "runic-fang",
+      "name": "Runic Fang",
+      "description": "A \"fang\" with which the mysterious, snakelike machine of old dug into mountains' depths. There are many ominous runes carved on it.\r\nIt is said that giant serpents lurk in the dark fissures deep beneath the ground. Burning with eternal resentment and malice toward the world above, they throw themselves into digging great tunnels, yet none know what their malicious purposes are..."
     },
     {
       "key": "sakura-bloom",

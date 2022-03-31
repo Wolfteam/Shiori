@@ -3249,6 +3249,93 @@
       ]
     },
     {
+      "key": "kuki-shinobu",
+      "name": "Куки Синобу",
+      "title": "",
+      "description": "",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ]
+    },
+    {
       "key": "lisa",
       "name": "Лиза",
       "title": "Пурпурная ведьма",
@@ -6697,6 +6784,87 @@
       ]
     },
     {
+      "key": "yelan",
+      "name": "Е Лань",
+      "title": "",
+      "description": "",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ]
+    },
+    {
       "key": "yoimiya",
       "name": "Ёимия",
       "title": "Пляшущие огоньки",
@@ -10031,6 +10199,11 @@
       "key": "ring-of-boreas",
       "name": "Кольцо Борея",
       "description": "Кристаллизованный лёд Великого Короля Волков Севера.\r\nВо времена правления Борея в этих землях царили замораживающие кровь в венах бури и метели из острых как бритва ледяных осколков. Сейчас же Борея покинула почти вся его сила, но заморозить землю он всё ещё может лишь моргнув глазом."
+    },
+    {
+      "key": "runic-fang",
+      "name": "Рунический клык",
+      "description": "Испещрённый зловещими рунами клык, с помощью которого загадочный змееподобный механизм из древности вгрызался в скальную породу.\r\nСогласно легенде, в тёмных расселинах глубоко под землёй обитают гигантские змееобразные существа, затаившие на мир земной горькую злобу. Со зловещей целью, которая известна им одним, они продолжают рыть грандиозные тоннели..."
     },
     {
       "key": "sakura-bloom",

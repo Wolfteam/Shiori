@@ -3249,6 +3249,93 @@
       ]
     },
     {
+      "key": "kuki-shinobu",
+      "name": "久岐忍",
+      "title": "烦恼刈除",
+      "description": "测试角色",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ]
+    },
+    {
       "key": "lisa",
       "name": "丽莎",
       "title": "蔷薇魔女",
@@ -6691,6 +6778,87 @@
       ]
     },
     {
+      "key": "yelan",
+      "name": "夜兰",
+      "title": "兰生幽谷",
+      "description": "测试角色",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ]
+    },
+    {
       "key": "yoimiya",
       "name": "宵宫",
       "title": "琉焰华舞",
@@ -10040,6 +10208,11 @@
       "key": "ring-of-boreas",
       "name": "北风之环",
       "description": "从北风的伟大王狼身上，取来的些许凝冰。\r\n这片大地曾经北风呼啸，呼气凝霜。如砂砾的冰与雪在寒风中嚣叫，飞舞着将肌肤撕裂，让血液凝结。如今的北风王狼力量虽然不如往昔，却仍有能将大地冰封的力量。"
+    },
+    {
+      "key": "runic-fang",
+      "name": "符纹之齿",
+      "description": "神秘的蛇状古代机械用于掘削山壁的「齿」，其上篆刻着无解的不祥符文。\r\n相传在大地的深黑裂缝中潜藏着庞大的虺类，它们永远怀着对地上世界的憎恨与恶意，抱着不可知的险恶目的，发掘着宏大的隧道…"
     },
     {
       "key": "sakura-bloom",

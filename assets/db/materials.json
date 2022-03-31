@@ -5355,6 +5355,19 @@
       "attributes": null
     },
     {
+      "key": "runic-fang",
+      "image": "runic-fang.png",
+      "rarity": 4,
+      "position": 46,
+      "level": 0,
+      "type": "elementalStone",
+      "hasSiblings": true,
+      "days": [],
+      "recipes": [],
+      "obtainedFrom": [],
+      "attributes": null
+    },
+    {
       "key": "smoldering-pearl",
       "image": "smoldering-pearl.png",
       "rarity": 4,

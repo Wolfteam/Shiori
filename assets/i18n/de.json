@@ -3252,6 +3252,93 @@
       ]
     },
     {
+      "key": "kuki-shinobu",
+      "name": "Kuki Shinobu",
+      "title": "",
+      "description": "",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ]
+    },
+    {
       "key": "lisa",
       "name": "Lisa",
       "title": "Rosenhexe",
@@ -6709,6 +6796,87 @@
       ]
     },
     {
+      "key": "yelan",
+      "name": "Yelan",
+      "title": "",
+      "description": "",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ]
+    },
+    {
       "key": "yoimiya",
       "name": "Yoimiya",
       "title": "Ausgelassene Flammen",
@@ -10058,6 +10226,11 @@
       "key": "ring-of-boreas",
       "name": "Ring des Nordwinds",
       "description": "Einige Eiskristalle vom großen Wolf des Nordens.\r\nDurch dieses Land pfiff einst der eiskalte Wind des Nordens. Wie scharfkantiger Kies sausten die Eiskristalle durch die Luft. Nackte Haut zerschlitzten sie in ihrem wilden Tanz und das Blut erstarrte im Nu. Heute ist der Wolf des Nordens zwar nur noch ein Schatten seiner selbst. Er besitzt aber immer noch die Kraft, das gesamte Land mit Schnee zu bedecken."
+    },
+    {
+      "key": "runic-fang",
+      "name": "Runenzahn",
+      "description": "Ein „Zahn“, mit dem sich die geheimnisvolle, schlangenartige Maschine von einst in die Tiefen der Berge grub. Darauf sind viele unheilvolle Runen eingemeißelt. Es heißt, dass riesige Schlangen in den dunklen Spalten tief unter der Erde lauern. In ihrem ewigen Groll und ihrer Bosheit gegenüber der Welt da oben graben sie große Tunnel, doch niemand weiß, welche bösen Absichten sie verfolgen ..."
     },
     {
       "key": "sakura-bloom",

@@ -4560,7 +4560,12 @@
       "image": "ruin-serpent.png",
       "type": "automaton",
       "isComingSoon": false,
-      "drops": []
+      "drops": [
+        {
+          "key": "runic-fang",
+          "type": "material"
+        }
+      ]
     },
     {
       "key": "sangonomiya-cohort",

@@ -3185,6 +3185,93 @@
       ]
     },
     {
+      "key": "kuki-shinobu",
+      "name": "Kuki Shinobu",
+      "title": "",
+      "description": "",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ]
+    },
+    {
       "key": "lisa",
       "name": "Lisa",
       "title": "Bruxa das Rosas",
@@ -6605,6 +6692,87 @@
       ]
     },
     {
+      "key": "yelan",
+      "name": "Yelan",
+      "title": "",
+      "description": "",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ]
+    },
+    {
       "key": "yoimiya",
       "name": "Yoimiya",
       "title": "Dança das Chamas",
@@ -9933,6 +10101,11 @@
       "key": "ring-of-boreas",
       "name": "Cálice do Vento Norte",
       "description": "Condensado de gelo vindo do corpo do Grande Lobo do Vento do Norte.\r\nNeste pedaço de terra, soprou-se o vento do norte congelante. O gelo e a neve rasgam a pele, deixando o sangue se condensar. Embora a força do Grande Lobo do Vento do Norte não seja tão boa quanto costumava ser, ele ainda possui o poder de congelar a terra."
+    },
+    {
+      "key": "runic-fang",
+      "name": "Presa Rúnica",
+      "description": "Uma \"presa\" que o mecanismo misterioso antigo em forma de serpente usou para escavar até as profundezas das montanhas. Há algumas runas sinistras esculpidas nela.\r\nDizem que serpentes gigantes espreitam nas fissuras sombrias das profundezas. Queimando com o eterno ressentimento e malícia em direção ao mundo de cima, elas cavam imensos túneis, mas ninguém sabe quais são seus reais propósitos maliciosos..."
     },
     {
       "key": "sakura-bloom",
