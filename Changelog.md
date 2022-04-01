@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.3.3+54 (30/03/2022)
+- The onii sama is here
+
+
+## 1.3.2+52 (07/03/2022)
+- Donations
+- Dark amoled theme (unlocked with a donation)
+
+
 ## 1.3.0+47 (16/02/2022)
 - Yae Miko is here
 - Custom Builds
