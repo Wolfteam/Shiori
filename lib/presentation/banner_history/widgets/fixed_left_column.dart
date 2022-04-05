@@ -68,7 +68,6 @@ class _ItemCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    final text = '$name ($number)';
     return InkWell(
       onTap: () {
         //show some details here ?
@@ -82,19 +81,44 @@ class _ItemCard extends StatelessWidget {
           width: cellWidth,
           height: cellHeight,
           padding: Styles.edgeInsetHorizontal5,
-          child: Column(
+          child: Stack(
+            alignment: AlignmentDirectional.topCenter,
+            fit: StackFit.passthrough,
             children: [
-              if (type == BannerHistoryItemType.character)
-                CircleCharacter(itemKey: itemKey, image: image, radius: 45)
-              else
-                CircleWeapon(itemKey: itemKey, image: image, radius: 45),
-              Tooltip(
-                message: text,
-                child: Text(
-                  text,
-                  overflow: TextOverflow.ellipsis,
-                  style: theme.textTheme.subtitle2!.copyWith(fontWeight: FontWeight.bold),
+              Align(
+                alignment: Alignment.topRight,
+                child: Container(
+                  margin: const EdgeInsets.only(top: 3),
+                  child: CircleAvatar(
+                    radius: 15,
+                    backgroundColor: Colors.black.withOpacity(0.25),
+                    child: Tooltip(
+                      message: '$number',
+                      child: Text(
+                        '$number',
+                        overflow: TextOverflow.ellipsis,
+                        style: theme.textTheme.subtitle2!.copyWith(fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                  ),
                 ),
+              ),
+              Column(
+                children: [
+                  if (type == BannerHistoryItemType.character)
+                    CircleCharacter(itemKey: itemKey, image: image, radius: 45)
+                  else
+                    CircleWeapon(itemKey: itemKey, image: image, radius: 45),
+                  Tooltip(
+                    message: name,
+                    child: Text(
+                      name,
+                      overflow: TextOverflow.ellipsis,
+                      textAlign: TextAlign.center,
+                      style: theme.textTheme.subtitle2!.copyWith(fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                ],
               ),
             ],
           ),
