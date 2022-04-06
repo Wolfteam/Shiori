@@ -2726,7 +2726,7 @@
       "key": "kamisato-ayato",
       "name": "Kamisato Ayato",
       "title": "Pillar of Fortitude",
-      "description": "The young but highly accomplished head of the Yashiro Commission's Kamisato Clan. Cultured and polite, he is a man of many ways and means.",
+      "description": "Il giovane ma altamente esperto capo della Yashiro Commission del Kamisato Clan. acculturato ed educato, è un uomo con molti modi e mezzi.",
       "skills": [
         {
           "key": "s1",
@@ -2734,71 +2734,71 @@
           "description": "",
           "abilities": [
             {
-              "name": "Normal Attack",
-              "description": "Perform up to 5 rapid strikes.\r\n",
+              "name": "Attacco Normale",
+              "description": "Esegue fino a 5 fendenti rapidi.\r\n",
               "descriptions": []
             },
             {
-              "name": "Charged Attack",
-              "description": "Consumes a certain amount of Stamina to dash forward and perform an iai.\r\n",
+              "name": "Attacco Caricato",
+              "description": "Consuma una certa quantità di Stamina per scattare in avanti e performare uno iai.\r\n",
               "descriptions": []
             },
             {
-              "name": "Plunging Attack",
-              "description": "Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
+              "name": "Attacco in Picchiata",
+              "description": "Si lancia in picchiata da mezz'aria per colpire il terreno sottostante e infliggere AoE DMG all'impatto.",
               "descriptions": []
             }
           ],
           "stats": [
-            "1-Hit DMG|{param1}%",
-            "2-Hit DMG|{param2}%",
-            "3-Hit DMG|{param3}%",
-            "4-Hit DMG|{param4}%×{param5}",
-            "5-Hit DMG|{param6}%",
-            "Charged Attack DMG|{param7}%",
-            "Charged Attack Stamina Cost|{param8}",
-            "Plunge DMG|{param9}%",
-            "Low/High Plunge DMG|{param10}% / {param11}%"
+            "DMG 1° Colpo|{param1}%",
+            "DMG 2° Colpo|{param2}%",
+            "DMG 3° Colpo|{param3}%",
+            "DMG 4° Colpo|{param4}%×{param5}",
+            "DMG 5° Colpo|{param6}%",
+            "DMG Attacco Caricato|{param7}%",
+            "Costo in Stamina Attacco Caricato|{param8}",
+            "DMG Attacco in Picchiata|{param9}%",
+            "DMG Att. in Picchiata per altezze Basse/Elevate|{param10}% / {param11}%"
           ]
         },
         {
           "key": "s2",
           "title": "Kamisato Art: Kyouka",
-          "description": "Kamisato Ayato shifts positions and enters the Takimeguri Kanka state.\r\nAfter this shift, he will leave a watery illusion at his original location. After it is formed, the watery illusion will explode if opponents are nearby or after its duration ends, dealing AoE Hydro DMG.\r\n",
+          "description": "Kamisato Ayato cambia posizione ed entra nello stato Takimeguri Kanka.\r\nDopo questo cambio, lascerà un’illusione d’acqua nella sua posizione originale. Dopo la sua formazione, l’illusione d’acqua esploderà se i nemici sono vicini o dopo la fine della sua durata, infliggendo AoE Hydro DMG.\r\n",
           "abilities": [
             {
               "name": "Takimeguri Kanka",
-              "description": "In this state, Kamisato Ayato uses his Shunsuiken to engage in blindingly fast attacks, causing DMG from his Normal Attacks to be converted into AoE Hydro DMG. This cannot be overridden.\r\nIt also has the following properties:\r\n",
+              "description": "In questo stato, Kamisato Ayato usa il suo Shunsuiken per attaccare con veloci attacchi impercettibili, in modo che il DMG dei suoi Attacchi Normali sia convertito in AoE Hydro DMG. Questo non può essere sovrascritto.\r\nHa anche le seguenti proprietà:\r\n",
               "descriptions": [
-                "After a Shunsuiken attack hits an opponent, it will grant Ayato the Namisen effect, increasing the DMG dealt by Shunsuiken based on Ayato's current Max HP. The initial maximum number of Namisen stacks is 4, and 1 stack can be gained through Shunsuiken every 0.1s. This effect will be dispelled when Takimeguri Kanka ends.",
-                "Kamisato Ayato's resistance to interruption is increased.",
-                "Unable to use Charged or Plunging Attacks.",
-                "Takimeguri Kanka will be cleared when Ayato leaves the field. Using Kamisato Art: Kyouka again while in the Takimeguri Kanka state will reset and replace the pre-existing state."
+                "Dopo che un attacco con lo Shunsuiken colpisce un nemico, questo garantirà ad Ayato l’effetto Namisen, aumentando il DMG inferto dallo Shunsuiken in base agli HP massimi attuali di Ayato. Il massimo numero iniziale degli stack di Namisen è 4, e 1 stack può essere ottenuta attraverso lo Shunsuiken ogni 0.1s. Questo effetto sarà disperso alla fine del Takimeguri Kanka.",
+                "La resistenza alle interruzioni di Kamisato Ayato è aumentata.",
+                "Impossibile usare Attacchi Caricati o in Picchiata.",
+                "Takimeguri Kanka terminerà quando Ayato lascia il terreno. Usare Kamisato Art: Kyouka di nuovo mentre si è nello stato di Takimeguri Kanka resetterà e rimpiazzerà lo stato pre-esistente."
               ]
             }
           ],
           "stats": [
-            "Shunsuiken 1-Hit DMG|{param1}%",
-            "Shunsuiken 2-Hit DMG|{param2}%",
-            "Shunsuiken 3-Hit DMG|{param3}%",
-            "Takimeguri Kanka Duration|{param4}s",
+            "Shunsuiken DMG 1° Colpo|{param1}%",
+            "Shunsuiken DMG 2° Colpo|{param2}%",
+            "Shunsuiken DMG 3° Colpo|{param3}%",
+            "Durata Takimeguri Kanka|{param4}s",
             "Namisen DMG Bonus|{param5}%Max HP / Stack",
-            "Water Illusion DMG|{param6}%",
-            "Water Illusion Duration|{param7}s",
+            "DMG Illusione d’Acqua|{param6}%",
+            "Durata Illusione d’Acqua|{param7}s",
             "CD|{param8}s"
           ]
         },
         {
           "key": "s3",
           "title": "Kamisato Art: Suiyuu",
-          "description": "Unveils a garden of purity that silences the cacophony within.\r\nWhile this space exists, Bloomwater Blades will constantly rain down and attack opponents within its AoE, dealing Hydro DMG and increasing the Normal Attack DMG of characters within.\r\n",
+          "description": "Rivela un giardino di purezza che silenzia la cacofonia al suo interno.\r\nMentre questo spazio esiste, Bloomwater Blades continueranno costantemente a piovere giù e attaccare i nemici all’interno della sua AoE, infliggendo Hydro DMG e aumentando il DMG dell’Attacco Normale dei personaggi al suo interno.\r\n",
           "abilities": [],
           "stats": [
             "Bloomwater Blade DMG|{param1}%",
-            "Normal Attack DMG Bonus|{param2}%",
-            "Duration|{param3}s",
+            "Bonus DMG all’Attacco Normale|{param2}%",
+            "Durata|{param3}s",
             "CD|{param4}s",
-            "Energy Cost|{param5}"
+            "Costo Energy|{param5}"
           ]
         }
       ],
@@ -2806,22 +2806,22 @@
         {
           "key": "p1",
           "title": "Kamisato Art: Daily Cooking",
-          "description": "When Ayato cooks a dish perfectly, he has a 18% chance to receive an additional \"Suspicious\" dish of the same type.\r\n",
+          "description": "Quando Ayato cucina un piatto perfettamente, ha il 18% di probabilità di ottenere un ulteriore piatto \"Suspicious\" dello stesso tipo.\r\n",
           "descriptions": []
         },
         {
           "key": "p2",
           "title": "Kamisato Art: Mine Wo Matoishi Kiyotaki",
-          "description": "Kamisato Art: Kyouka has the following properties:\r\n",
+          "description": "Kamisato Art: Kyouka ha le seguenti proprietà:\r\n",
           "descriptions": [
-            "After it is used, Kamisato Ayato will gain 2 Namisen stacks.",
-            "When the water illusion explodes, Ayato will gain a Namisen effect equal to the maximum number of stacks possible."
+            "Dopo il suo utilizzo, Kamisato Ayato otterrà 2 Namisen stacks.",
+            "Quando l’illusione d’acqua esplode, Ayato otterrà un effetto Namisen eguale al massimo numero di stack possibili."
           ]
         },
         {
           "key": "p3",
           "title": "Kamisato Art: Michiyuku Hagetsu",
-          "description": "If Kamisato Ayato is not on the field and his Energy is less than 40, he will regenerate 2 Energy for himself every second.\r\n",
+          "description": "Se Kamisato Ayato non è sul campo e la sua Energy è inferiore a 40, genererà 2 Energy per sé stesso ogni secondo.\r\n",
           "descriptions": []
         }
       ],
@@ -2829,37 +2829,37 @@
         {
           "key": "c1",
           "title": "Kyouka Fuushi",
-          "description": "Shunsuiken DMG is increased by 40% against opponents with 50% HP or less.\r\n",
+          "description": "Il DMG dello Shunsuiken è aumentato del 40% contro nemici con il 50% degli HP o meno.\r\n",
           "descriptions": []
         },
         {
           "key": "c2",
           "title": "World Source",
-          "description": "Namisen's maximum stack count is increased to 5. When Kamisato Ayato has at least 3 Namisen stacks, his Max HP is increased by 50%.\r\n",
+          "description": "Il massimo numero di stack del Namisen è aumentato a 5. Quando Kamisato Ayato ha almeno 3 Namisen stacks, i suoi HP massimi sono aumentati del 50%.\r\n",
           "descriptions": []
         },
         {
           "key": "c3",
           "title": "To Admire the Flowers",
-          "description": "Increases the Level of Kamisato Art: Kyouka by 3.\r\nMaximum upgrade level is 15.\r\n",
+          "description": "Aumenta di 3 il livello di Kamisato Art: Kyouka by 3.\r\nOra il livello massimo di upgrade è 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c4",
           "title": "Endless Flow",
-          "description": "After using Kamisato Art: Suiyuu, all nearby party members will have 15% increased Normal Attack SPD for 15s.\r\n",
+          "description": "Dopo aver usato Kamisato Art: Suiyuu, tutti i membri del party vicini avranno la SPD dell’Attacco Normale aumentata del 15% per 15s.\r\n",
           "descriptions": []
         },
         {
           "key": "c5",
           "title": "Bansui Ichiro",
-          "description": "Increases the Level of Kamisato Art: Suiyuu by 3.\r\nMaximum upgrade level is 15.\r\n",
+          "description": "Aumenta di 3 il livello di Kamisato Art: Suiyuu by 3.\r\nOra il livello massimo di upgrade è 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c6",
           "title": "Boundless Origin",
-          "description": "After using Kamisato Art: Kyouka, Ayato's next Shunsuiken attack will create 2 extra Shunsuiken strikes when they hit opponents, each one dealing 450% of Ayato's ATK as DMG.\r\nBoth these Shunsuiken attacks will not be affected by Namisen.\r\n",
+          "description": "Dopo aver usato Kamisato Art: Kyouka, il prossimo attacco Shunsuiken di Ayato creerà 2 extra colpi di Shunsuiken quando colpisce il nemico, ognuno dei quali infliggerà il 450% dell’ATK di Ayato come DMG.\r\nEntrambi questi attacchi di Shunsuiken non saranno affetti dal Namisen.\r\n",
           "descriptions": []
         }
       ]
@@ -7831,13 +7831,13 @@
     {
       "key": "haran-geppaku-futsu",
       "name": "Haran Geppaku Futsu",
-      "description": "A famed work by the Futsu line of smiths. The name \"Haran\" comes from the manner in which it resembles the violent, roiling waves.",
+      "description": "Una famosa creazione della linea di fabbri Futsu. Il nome \"Haran\" deriva dal suo modo di ricordare tempestose onde violente.",
       "refinements": [
-        "Obtain {color}12{/color}% All Elemental DMG Bonus. When other nearby party members use Elemental Skills, the character equipping this weapon will gain 1 Wavespike stack. Max 2 stacks. This effect can be triggered once every 0.3s. When the character equipping this weapon uses an Elemental Skill, all stacks of Wavespike will be consumed to gain Rippling Upheaval: each stack of Wavespike consumed will increase Normal Attack DMG by {color}20{/color}% for 8s.",
-        "Obtain {color}15{/color}% All Elemental DMG Bonus. When other nearby party members use Elemental Skills, the character equipping this weapon will gain 1 Wavespike stack. Max 2 stacks. This effect can be triggered once every 0.3s. When the character equipping this weapon uses an Elemental Skill, all stacks of Wavespike will be consumed to gain Rippling Upheaval: each stack of Wavespike consumed will increase Normal Attack DMG by {color}25{/color}% for 8s.",
-        "Obtain {color}18{/color}% All Elemental DMG Bonus. When other nearby party members use Elemental Skills, the character equipping this weapon will gain 1 Wavespike stack. Max 2 stacks. This effect can be triggered once every 0.3s. When the character equipping this weapon uses an Elemental Skill, all stacks of Wavespike will be consumed to gain Rippling Upheaval: each stack of Wavespike consumed will increase Normal Attack DMG by {color}30{/color}% for 8s.",
-        "Obtain {color}21{/color}% All Elemental DMG Bonus. When other nearby party members use Elemental Skills, the character equipping this weapon will gain 1 Wavespike stack. Max 2 stacks. This effect can be triggered once every 0.3s. When the character equipping this weapon uses an Elemental Skill, all stacks of Wavespike will be consumed to gain Rippling Upheaval: each stack of Wavespike consumed will increase Normal Attack DMG by {color}35{/color}% for 8s.",
-        "Obtain {color}24{/color}% All Elemental DMG Bonus. When other nearby party members use Elemental Skills, the character equipping this weapon will gain 1 Wavespike stack. Max 2 stacks. This effect can be triggered once every 0.3s. When the character equipping this weapon uses an Elemental Skill, all stacks of Wavespike will be consumed to gain Rippling Upheaval: each stack of Wavespike consumed will increase Normal Attack DMG by {color}40{/color}% for 8s."
+        "Tutti gli Elemental DMG Bonus aumentano del {color}12{/color}%. Quando altri membri vicini del party usano Elemental Skills, il personaggio che equipaggia questa spada ottiene 1 Wavespike stack. Max 2 stacks. Questo effetto può avvenire una volta ogni 0.3s. Quando il personaggio che equipaggia questa spada usa una Elemental Skill, tutte le stacks di Wavespike saranno consumate per conferire Rippling Upheaval: ciascuna stack di Wavespike consumata aumenta il Normal Attack DMG del {color}20{/color}% per 8s.",
+        "Tutti gli Elemental DMG Bonus aumentano del {color}15{/color}%. Quando altri membri vicini del party usano Elemental Skills, il personaggio che equipaggia questa spada ottiene 1 Wavespike stack. Max 2 stacks. Questo effetto può avvenire una volta ogni 0.3s. Quando il personaggio che equipaggia questa spada usa una Elemental Skill, tutte le stacks di Wavespike saranno consumate per conferire Rippling Upheaval: ciascuna stack di Wavespike consumata aumenta il Normal Attack DMG del {color}25{/color}% per 8s.",
+        "Tutti gli Elemental DMG Bonus aumentano del {color}18{/color}%. Quando altri membri vicini del party usano Elemental Skills, il personaggio che equipaggia questa spada ottiene 1 Wavespike stack. Max 2 stacks. Questo effetto può avvenire una volta ogni 0.3s. Quando il personaggio che equipaggia questa spada usa una Elemental Skill, tutte le stacks di Wavespike saranno consumate per conferire Rippling Upheaval: ciascuna stack di Wavespike consumata aumenta il Normal Attack DMG del {color}30{/color}% per 8s.",
+        "Tutti gli Elemental DMG Bonus aumentano del {color}21{/color}%. Quando altri membri vicini del party usano Elemental Skills, il personaggio che equipaggia questa spada ottiene 1 Wavespike stack. Max 2 stacks. Questo effetto può avvenire una volta ogni 0.3s. Quando il personaggio che equipaggia questa spada usa una Elemental Skill, tutte le stacks di Wavespike saranno consumate per conferire Rippling Upheaval: ciascuna stack di Wavespike consumata aumenta il Normal Attack DMG del {color}35{/color}% per 8s.",
+        "Tutti gli Elemental DMG Bonus aumentano del {color}24{/color}%. Quando altri membri vicini del party usano Elemental Skills, il personaggio che equipaggia questa spada ottiene 1 Wavespike stack. Max 2 stacks. Questo effetto può avvenire una volta ogni 0.3s. Quando il personaggio che equipaggia questa spada usa una Elemental Skill, tutte le stacks di Wavespike saranno consumate per conferire Rippling Upheaval: ciascuna stack di Wavespike consumata aumenta il Normal Attack DMG del {color}40{/color}% per 8s."
       ]
     },
     {
@@ -8893,7 +8893,7 @@
       "name": "Echoes of an Offering",
       "bonus": [
         "ATK +18%.",
-        "When Normal Attacks hit opponents, there is a 36% chance that it will trigger Valley Rite, which will increase Normal Attack DMG by 70% of ATK. This effect will be dispelled 0.05s after a Normal Attack deals DMG. If a Normal Attack fails to trigger Valley Rite, the odds of it triggering the next time will increase by 20%. This trigger can occur once every 0.2s."
+        "Quando un Attacco Normale colpisce i nemici, c’è il 36% di possibilità che questo attivi Valley Rite, che aumenterà il DMG dell’Attacco Normale del 70% dell’ATK. Questo effetto sarà disperso 0.05s dopo che un Attacco Normale avrà inferto del DMG. Se un Attacco Normale non attiva Valley Rite, la probabilità che lo attivi la volta successiva aumenterà del 20%. Questo effetto può verificarsi ogni 0.2s."
       ]
     },
     {
@@ -9128,7 +9128,7 @@
       "name": "Vermillion Hereafter",
       "bonus": [
         "ATK +18%.",
-        "After using an Elemental Burst, this character will gain the Nascent Light effect, increasing their ATK by 8% for 16s. When the character's HP decreases, their ATK will further increase by 10%. This further increase can occur this way a maximum of 4 times. This effect can be triggered once every 0.8s. Nascent Light will be dispelled when the character leaves the field. If an Elemental Burst is used again during the duration of Nascent Light, the original Nascent Light will be dispelled."
+        "Dopo aver usato un Elemental Burst, il personaggio ottiene l’effetto Nascent Light che aumenta i suoi ATK del 8% per 16s. Quando il personaggio perde HP, i suoi ATK aumentano di un ulteriore 10%. Questo secondo tipo di aumento può avvenire massimo 4 volte. Questo effetto può avvenire una volta ogni 0.8s. Nascent Light termina quando il personaggio scompare/si cambia personaggio. Se si usa un altro Elemental Burst mentre Nascent Light è ancora attivo, il Nascent Light precedente verrà sostituito."
       ]
     },
     {
@@ -10222,7 +10222,7 @@
     {
       "key": "runic-fang",
       "name": "Runic Fang",
-      "description": "A \"fang\" with which the mysterious, snakelike machine of old dug into mountains' depths. There are many ominous runes carved on it.\r\nIt is said that giant serpents lurk in the dark fissures deep beneath the ground. Burning with eternal resentment and malice toward the world above, they throw themselves into digging great tunnels, yet none know what their malicious purposes are..."
+      "description": "Una \"zanna\" con la quale la misteriosa with which the mysterious, snakelike machine of old dug into mountains' depths. There are many ominous runes carved on it.\r\nIt is said that giant serpents lurk in the dark fissures deep beneath the ground. Burning with eternal resentment and malice toward the world above, they throw themselves into digging great tunnels, yet none know what their malicious purposes are..."
     },
     {
       "key": "sakura-bloom",
