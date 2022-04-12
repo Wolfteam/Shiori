@@ -26875,6 +26875,7 @@
             "elementalBurst"
           ],
           "weaponKeys": [
+            "kaguras-verity",
             "skyward-atlas",
             "lost-prayer-to-the-sacred-winds",
             "the-widsith",
@@ -26940,6 +26941,7 @@
             "normalAttack"
           ],
           "weaponKeys": [
+            "kaguras-verity",
             "skyward-atlas",
             "the-widsith",
             "thrilling-tales-of-dragon-slayers"
@@ -49561,6 +49563,17 @@
             "prototype-starglitter"
           ],
           "artifacts": [
+            {
+              "oneKey": "vermillion-hereafter",
+              "multiples": [],
+              "stats": [
+                "hp",
+                "atk",
+                "atkPercentage",
+                "anemoDmgBonusPercentage",
+                "critDmgPercentage"
+              ]
+            },
             {
               "oneKey": null,
               "multiples": [
