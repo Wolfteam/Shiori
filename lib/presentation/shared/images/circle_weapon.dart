@@ -10,6 +10,7 @@ class CircleWeapon extends StatelessWidget {
   final double radius;
   final bool forDrag;
   final Function(String)? onTap;
+  final Gradient? gradient;
 
   const CircleWeapon({
     Key? key,
@@ -18,6 +19,7 @@ class CircleWeapon extends StatelessWidget {
     this.radius = 30,
     this.forDrag = false,
     this.onTap,
+    this.gradient,
   }) : super(key: key);
 
   CircleWeapon.fromItem({
@@ -26,6 +28,7 @@ class CircleWeapon extends StatelessWidget {
     this.radius = 30,
     this.forDrag = false,
     this.onTap,
+    this.gradient,
   })  : itemKey = item.key,
         image = item.image,
         super(key: key);
@@ -37,6 +40,7 @@ class CircleWeapon extends StatelessWidget {
       radius: radius,
       forDrag: forDrag,
       onTap: (img) => onTap != null ? onTap!(img) : _gotoWeaponPage(context),
+      gradient: gradient,
     );
   }
 
