@@ -1,6 +1,6 @@
 export 'artifacts/artifact_card_model.dart';
 export 'banner_history/banner_history_item_model.dart';
-export 'banner_history/banner_history_item_model.dart';
+export 'banner_history/banner_history_period_model.dart';
 export 'calculator_asc_materials/ascension_materials_summary.dart';
 export 'calculator_asc_materials/calculator_session_model.dart';
 export 'calculator_asc_materials/character_skill.dart';

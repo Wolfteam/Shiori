@@ -10,6 +10,7 @@ class BannerHistoryItemModel with _$BannerHistoryItemModel {
     required BannerHistoryItemType type,
     required String name,
     required String image,
+    required int rarity,
     required List<BannerHistoryItemVersionModel> versions,
   }) = _BannerHistoryItemModel;
 }

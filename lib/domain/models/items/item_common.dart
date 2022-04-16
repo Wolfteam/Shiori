@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:shiori/domain/enums/enums.dart';
 
 part 'item_common.freezed.dart';
 
@@ -23,4 +24,15 @@ class ItemCommonWithQuantity with _$ItemCommonWithQuantity {
 @freezed
 class ItemObtainedFrom with _$ItemObtainedFrom {
   const factory ItemObtainedFrom(String key, List<ItemCommonWithQuantity> items) = _ItemObtainedFrom;
+}
+
+@freezed
+class ItemCommonWithRarityAndType with _$ItemCommonWithRarityAndType {
+  @Implements<ItemCommonBase>()
+  const factory ItemCommonWithRarityAndType(
+    String key,
+    String image,
+    int rarity,
+    ItemType type,
+  ) = _ItemCommonWithRarityAndType;
 }

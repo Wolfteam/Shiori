@@ -61,4 +61,6 @@ abstract class TelemetryService {
   Future<void> trackRestore(String userId, bool succeed);
 
   Future<void> trackPurchase(String userId, String identifier, bool succeed);
+
+  Future<void> trackBannerHistoryOpened();
 }

@@ -88,6 +88,7 @@ abstract class GenshinService {
   String getArtifactRelatedPart(String fullImagePath, String image, int bonus, ArtifactType type);
   List<StatType> generateSubStatSummary(List<CustomBuildArtifactModel> artifacts);
 
-  List<double> getBannerHistoryVersions();
+  List<double> getBannerHistoryVersions(SortDirectionType type);
   List<BannerHistoryItemModel> getBannerHistory(BannerHistoryItemType type);
+  List<BannerHistoryPeriodModel> getBanners(double version);
 }
