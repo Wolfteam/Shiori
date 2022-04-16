@@ -810,13 +810,21 @@ class GenshinServiceImpl implements GenshinService {
   }
 
   @override
-  List<double> getBannerHistoryVersions() => _bannerHistoryFile.banners.map((el) => el.version).toSet().toList()..sort((x, y) => x.compareTo(y));
+  List<double> getBannerHistoryVersions(SortDirectionType type) {
+    final versions = _bannerHistoryFile.banners.map((el) => el.version).toSet().toList();
+    switch (type) {
+      case SortDirectionType.asc:
+        return versions..sort((x, y) => x.compareTo(y));
+      case SortDirectionType.desc:
+        return versions..sort((x, y) => y.compareTo(x));
+    }
+  }
 
   @override
   List<BannerHistoryItemModel> getBannerHistory(BannerHistoryItemType type) {
     final banners = <BannerHistoryItemModel>[];
     final itemVersionsMap = <String, List<double>>{};
-    final allVersions = getBannerHistoryVersions();
+    final allVersions = getBannerHistoryVersions(SortDirectionType.asc);
     final filteredBanners = _bannerHistoryFile.banners.where((el) => el.type == type).toList();
 
     for (final banner in filteredBanners) {
@@ -826,13 +834,29 @@ class GenshinServiceImpl implements GenshinService {
           case BannerHistoryItemType.character:
             if (!alreadyAdded) {
               final char = getCharacterForCard(key);
-              banners.add(BannerHistoryItemModel(versions: [], image: char.image, name: char.name, key: key, type: banner.type));
+              final item = BannerHistoryItemModel(
+                versions: [],
+                image: char.image,
+                name: char.name,
+                key: key,
+                type: banner.type,
+                rarity: char.stars,
+              );
+              banners.add(item);
             }
             break;
           case BannerHistoryItemType.weapon:
             if (!alreadyAdded) {
               final weapon = getWeaponForCard(key);
-              banners.add(BannerHistoryItemModel(versions: [], image: weapon.image, name: weapon.name, key: key, type: banner.type));
+              final bannerItem = BannerHistoryItemModel(
+                versions: [],
+                image: weapon.image,
+                name: weapon.name,
+                key: key,
+                type: banner.type,
+                rarity: weapon.rarity,
+              );
+              banners.add(bannerItem);
             }
             break;
           default:
@@ -850,13 +874,49 @@ class GenshinServiceImpl implements GenshinService {
     for (var i = 0; i < banners.length; i++) {
       final current = banners[i];
       final values = itemVersionsMap.entries.firstWhere((el) => el.key == current.key).value;
-      final updated = current.copyWith.call(versions: getBannerVersionsForItem(allVersions, values));
+      final updated = current.copyWith.call(versions: _getBannerVersionsForItem(allVersions, values));
       banners.removeAt(i);
       banners.insert(i, updated);
     }
 
     return banners;
   }
+
+  @override
+  List<BannerHistoryPeriodModel> getBanners(double version) => _bannerHistoryFile.banners
+      .where((el) => el.version == version)
+      .map(
+        (e) => BannerHistoryPeriodModel(
+          from: e.from,
+          until: e.until,
+          type: e.type,
+          version: e.version,
+          items: e.itemKeys.map((key) {
+            String? imagePath;
+            int? rarity;
+            ItemType? type;
+            switch (e.type) {
+              case BannerHistoryItemType.character:
+                final character = getCharacter(key);
+                rarity = character.rarity;
+                imagePath = character.fullImagePath;
+                type = ItemType.character;
+                break;
+              case BannerHistoryItemType.weapon:
+                final weapon = getWeapon(key);
+                rarity = weapon.rarity;
+                imagePath = weapon.fullImagePath;
+                type = ItemType.weapon;
+                break;
+              default:
+                throw Exception('Banner history item type = ${e.type} is not valid');
+            }
+            return ItemCommonWithRarityAndType(key, imagePath, rarity, type);
+          }).toList(),
+        ),
+      )
+      .toList()
+    ..sort((x, y) => x.from.compareTo(y.from));
 
   CharacterCardModel _toCharacterForCard(CharacterFileModel character) {
     final translation = getCharacterTranslation(character.key);
@@ -955,7 +1015,7 @@ class GenshinServiceImpl implements GenshinService {
     );
   }
 
-  List<BannerHistoryItemVersionModel> getBannerVersionsForItem(List<double> allVersions, List<double> releasedOn) {
+  List<BannerHistoryItemVersionModel> _getBannerVersionsForItem(List<double> allVersions, List<double> releasedOn) {
     final history = <BannerHistoryItemVersionModel>[];
     int number = 0;
     for (var i = 0; i < allVersions.length; i++) {
