@@ -146,7 +146,14 @@ class Injection {
 
   static BannerHistoryBloc get bannerHistoryBloc {
     final genshinService = getIt<GenshinService>();
-    return BannerHistoryBloc(genshinService);
+    final telemetryService = getIt<TelemetryService>();
+    return BannerHistoryBloc(genshinService, telemetryService);
+  }
+
+  static BannerHistoryItemBloc get bannerHistoryItemBloc {
+    final genshinService = getIt<GenshinService>();
+    final telemetryService = getIt<TelemetryService>();
+    return BannerHistoryItemBloc(genshinService, telemetryService);
   }
 
   //TODO: USE THIS PROP

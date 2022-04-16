@@ -24,9 +24,6 @@ class BannerHistoryBloc extends Bloc<BannerHistoryEvent, BannerHistoryState> {
   final List<BannerHistoryItemModel> _characterBanners = [];
   final List<BannerHistoryItemModel> _weaponBanners = [];
 
-  //TODO: ON DESC ORDER YOU MAY WANT TO CHANGE THE WAY YOU SHOW THE NUMBERS
-  // SO INSTEAD OF 9 8 7 X... YOU SHOW 1 2 3 X...
-
   BannerHistoryBloc(this._genshinService, this._telemetryService) : super(_initialState);
 
   @override

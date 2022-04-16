@@ -622,4 +622,26 @@ extension I18nExtensions on S {
         return crown;
     }
   }
+
+  String translateBannerHistoryItemType(BannerHistoryItemType type) {
+    switch (type) {
+      case BannerHistoryItemType.character:
+        return characters;
+      case BannerHistoryItemType.weapon:
+        return weapons;
+    }
+  }
+
+  String translateBannerHistorySortType(BannerHistorySortType type) {
+    switch (type) {
+      case BannerHistorySortType.nameAsc:
+        return nameAsc;
+      case BannerHistorySortType.nameDesc:
+        return nameDesc;
+      case BannerHistorySortType.versionAsc:
+        return versionAsc;
+      case BannerHistorySortType.versionDesc:
+        return versionDesc;
+    }
+  }
 }

@@ -417,6 +417,13 @@
   "useDarkAmoledTheme": "Use dark amoled theme",
   "unlockedWithDonation": "Unlocked with a donation",
   "bannerHistory": "Banner History",
+  "bannerType": "Banner Type",
   "versions": "Versions",
-  "checkBannerHistory": "Check when a character / weapon was released"
+  "checkBannerHistory": "Check when a character / weapon was released",
+  "fromDate": "From: {date}",
+  "untilDate": "Until: {date}",
+  "nameAsc": "Name asc.",
+  "nameDesc": "Name desc.",
+  "versionAsc": "Version asc.",
+  "versionDesc": "Version desc."
 }

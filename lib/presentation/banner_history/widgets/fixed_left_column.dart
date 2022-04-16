@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/models/models.dart';
+import 'package:shiori/presentation/shared/extensions/rarity_extensions.dart';
 import 'package:shiori/presentation/shared/images/circle_character.dart';
 import 'package:shiori/presentation/shared/images/circle_weapon.dart';
 import 'package:shiori/presentation/shared/styles.dart';
@@ -34,6 +35,7 @@ class FixedLeftColumn extends StatelessWidget {
             image: item.image,
             itemKey: item.key,
             type: item.type,
+            rarity: item.rarity,
             name: item.name,
             number: item.versions.where((el) => el.released).length,
           );
@@ -48,6 +50,7 @@ class _ItemCard extends StatelessWidget {
   final BannerHistoryItemType type;
   final String name;
   final String image;
+  final int rarity;
   final int number;
   final EdgeInsets margin;
   final double cellWidth;
@@ -59,6 +62,7 @@ class _ItemCard extends StatelessWidget {
     required this.type,
     required this.name,
     required this.image,
+    required this.rarity,
     required this.number,
     required this.margin,
     required this.cellWidth,
@@ -68,15 +72,22 @@ class _ItemCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+    final gradient = rarity.getRarityGradient();
+    const double radius = 10;
     return InkWell(
+      borderRadius: const BorderRadius.all(Radius.circular(radius)),
       onTap: () {
         //show some details here ?
       },
       child: Card(
         margin: margin,
-        color: theme.colorScheme.primary,
         elevation: 10,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(radius)),
         child: Container(
+          decoration: BoxDecoration(
+            gradient: gradient,
+            borderRadius: BorderRadius.circular(radius),
+          ),
           alignment: Alignment.center,
           width: cellWidth,
           height: cellHeight,

@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shiori/application/bloc.dart';
+import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/generated/l10n.dart';
 import 'package:shiori/injection.dart';
 import 'package:shiori/presentation/banner_history/widgets/content.dart';
 import 'package:shiori/presentation/banner_history/widgets/fixed_header_row.dart';
 import 'package:shiori/presentation/banner_history/widgets/fixed_left_column.dart';
 import 'package:shiori/presentation/shared/app_fab.dart';
+import 'package:shiori/presentation/shared/extensions/i18n_extensions.dart';
+import 'package:shiori/presentation/shared/item_popupmenu_filter.dart';
 import 'package:shiori/presentation/shared/mixins/app_fab_mixin.dart';
 import 'package:shiori/presentation/shared/sync_controller.dart';
 
@@ -37,12 +40,11 @@ class _BannerHistoryPageState extends State<BannerHistoryPage> with SingleTicker
 
   @override
   Widget build(BuildContext context) {
-    final s = S.of(context);
     const margin = EdgeInsets.all(4.0);
     return BlocProvider(
       create: (_) => Injection.bannerHistoryBloc..add(const BannerHistoryEvent.init()),
       child: Scaffold(
-        appBar: AppBar(title: Text(s.bannerHistory)),
+        appBar: const _AppBar(),
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
@@ -56,7 +58,9 @@ class _BannerHistoryPageState extends State<BannerHistoryPage> with SingleTicker
                 controller: _fixedHeaderScrollController,
                 child: BlocBuilder<BannerHistoryBloc, BannerHistoryState>(
                   builder: (ctx, state) => FixedHeaderRow(
+                    type: state.type,
                     versions: state.versions,
+                    selectedVersions: state.selectedVersions,
                     margin: margin,
                     firstCellWidth: _firstCellWidth,
                     firstCellHeight: _firstCellHeight,
@@ -115,4 +119,39 @@ class _BannerHistoryPageState extends State<BannerHistoryPage> with SingleTicker
       ),
     );
   }
+}
+
+class _AppBar extends StatelessWidget implements PreferredSizeWidget {
+  const _AppBar({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    final s = S.of(context);
+    return BlocBuilder<BannerHistoryBloc, BannerHistoryState>(
+      builder: (ctx, state) => AppBar(
+        title: Text(s.bannerHistory),
+        actions: [
+          ItemPopupMenuFilter<BannerHistoryItemType>(
+            tooltipText: s.bannerType,
+            selectedValue: state.type,
+            values: BannerHistoryItemType.values,
+            onSelected: (val) => context.read<BannerHistoryBloc>().add(BannerHistoryEvent.typeChanged(type: val)),
+            icon: const Icon(Icons.swap_horiz),
+            itemText: (val, _) => s.translateBannerHistoryItemType(val),
+          ),
+          ItemPopupMenuFilter<BannerHistorySortType>(
+            tooltipText: s.sortType,
+            selectedValue: state.sortType,
+            values: BannerHistorySortType.values,
+            onSelected: (val) => context.read<BannerHistoryBloc>().add(BannerHistoryEvent.sortTypeChanged(type: val)),
+            icon: const Icon(Icons.sort),
+            itemText: (val, _) => s.translateBannerHistorySortType(val),
+          ),
+        ],
+      ),
+    );
+  }
+
+  @override
+  Size get preferredSize => const Size.fromHeight(kToolbarHeight);
 }
