@@ -8,5 +8,6 @@ class BannerHistoryState with _$BannerHistoryState {
     required List<BannerHistoryItemModel> banners,
     required List<double> versions,
     @Default(<double>[]) List<double> selectedVersions,
+    @Default(<String>[]) List<String> selectedItemKeys,
   }) = _InitialState;
 }

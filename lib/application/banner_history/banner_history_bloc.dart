@@ -34,8 +34,15 @@ class BannerHistoryBloc extends Bloc<BannerHistoryEvent, BannerHistoryState> {
       typeChanged: (e) => _typeChanged(e.type),
       sortTypeChanged: (e) => _sortTypeChanged(e.type),
       versionSelected: (e) => _versionSelected(e.version),
+      itemsSelected: (e) => _itemsSelected(e.keys),
     );
+
     yield s;
+  }
+
+  List<ItemCommonWithName> getItemsForSearch() {
+    final banners = _getBannerItems(state.type);
+    return banners.map((e) => ItemCommonWithName(e.key, e.image, e.name)).toSet().toList();
   }
 
   BannerHistoryState _init() {
@@ -69,7 +76,7 @@ class BannerHistoryBloc extends Bloc<BannerHistoryEvent, BannerHistoryState> {
         throw Exception('Banner history item type = $type is not valid');
     }
 
-    return state.copyWith.call(banners: banners, versions: versions, type: type);
+    return state.copyWith.call(banners: banners, versions: versions, type: type, selectedItemKeys: []);
   }
 
   BannerHistoryState _sortTypeChanged(BannerHistorySortType type) {
@@ -90,22 +97,20 @@ class BannerHistoryBloc extends Bloc<BannerHistoryEvent, BannerHistoryState> {
       selectedVersions.addAll([...state.selectedVersions, version]);
     }
 
-    final banners = <BannerHistoryItemModel>[];
-    switch (state.type) {
-      case BannerHistoryItemType.character:
-        banners.addAll(_characterBanners);
-        break;
-      case BannerHistoryItemType.weapon:
-        banners.addAll(_weaponBanners);
-        break;
-      default:
-        throw Exception('Banner history item type = ${state.type} is not valid');
-    }
-
+    final banners = _getBannerItems(state.type);
     if (selectedVersions.isNotEmpty) {
       banners.removeWhere((el) => el.versions.where((ver) => ver.released && selectedVersions.contains(ver.version)).isEmpty);
     }
     return state.copyWith.call(banners: _sortBanners(banners, state.versions, state.sortType), selectedVersions: selectedVersions);
+  }
+
+  BannerHistoryState _itemsSelected(List<String> keys) {
+    final banners = _getBannerItems(state.type);
+    if (keys.isNotEmpty) {
+      banners.removeWhere((el) => !keys.contains(el.key));
+    }
+
+    return state.copyWith.call(banners: _sortBanners(banners, state.versions, state.sortType), selectedItemKeys: keys);
   }
 
   List<BannerHistoryItemModel> _sortBanners(List<BannerHistoryItemModel> banners, List<double> versions, BannerHistorySortType sortType) {
@@ -141,5 +146,20 @@ class BannerHistoryBloc extends Bloc<BannerHistoryEvent, BannerHistoryState> {
       case BannerHistorySortType.versionDesc:
         return versions..sort((x, y) => y.compareTo(x));
     }
+  }
+
+  List<BannerHistoryItemModel> _getBannerItems(BannerHistoryItemType type) {
+    final banners = <BannerHistoryItemModel>[];
+    switch (type) {
+      case BannerHistoryItemType.character:
+        banners.addAll(_characterBanners);
+        break;
+      case BannerHistoryItemType.weapon:
+        banners.addAll(_weaponBanners);
+        break;
+      default:
+        throw Exception('Banner history item type = $type is not valid');
+    }
+    return banners;
   }
 }

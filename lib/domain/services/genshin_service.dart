@@ -91,4 +91,5 @@ abstract class GenshinService {
   List<double> getBannerHistoryVersions(SortDirectionType type);
   List<BannerHistoryItemModel> getBannerHistory(BannerHistoryItemType type);
   List<BannerHistoryPeriodModel> getBanners(double version);
+  List<ItemReleaseHistoryModel> getItemReleaseHistory(String itemKey);
 }

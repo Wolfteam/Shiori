@@ -15,4 +15,8 @@ class BannerHistoryEvent with _$BannerHistoryEvent {
   const factory BannerHistoryEvent.versionSelected({
     required double version,
   }) = _VersionSelected;
+
+  const factory BannerHistoryEvent.itemsSelected({
+    required List<String> keys,
+  }) = _CharactersSelected;
 }

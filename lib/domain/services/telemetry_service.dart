@@ -65,4 +65,6 @@ abstract class TelemetryService {
   Future<void> trackBannerHistoryOpened();
 
   Future<void> trackBannerHistoryItemOpened(double version);
+
+  Future<void> trackItemReleaseHistoryOpened(String itemKey);
 }

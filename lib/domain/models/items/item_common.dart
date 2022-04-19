@@ -36,3 +36,9 @@ class ItemCommonWithRarityAndType with _$ItemCommonWithRarityAndType {
     ItemType type,
   ) = _ItemCommonWithRarityAndType;
 }
+
+@freezed
+class ItemCommonWithName with _$ItemCommonWithName {
+  @Implements<ItemCommonBase>()
+  const factory ItemCommonWithName(String key, String image, String name) = _ItemCommonWithName;
+}
