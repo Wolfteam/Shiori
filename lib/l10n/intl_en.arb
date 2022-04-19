@@ -425,5 +425,8 @@
   "nameAsc": "Name asc.",
   "nameDesc": "Name desc.",
   "versionAsc": "Version asc.",
-  "versionDesc": "Version desc."
+  "versionDesc": "Version desc.",
+  "releaseHistory": "Release History",
+  "selectAnOption": "Select an option",
+  "details": "Details"
 }

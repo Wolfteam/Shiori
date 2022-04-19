@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:responsive_builder/responsive_builder.dart';
 import 'package:shiori/application/bloc.dart';
 import 'package:shiori/domain/enums/enums.dart';
+import 'package:shiori/domain/extensions/string_extensions.dart';
+import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/generated/l10n.dart';
 import 'package:shiori/injection.dart';
 import 'package:shiori/presentation/banner_history/widgets/content.dart';
@@ -13,9 +16,11 @@ import 'package:shiori/presentation/shared/item_popupmenu_filter.dart';
 import 'package:shiori/presentation/shared/mixins/app_fab_mixin.dart';
 import 'package:shiori/presentation/shared/sync_controller.dart';
 
-const double _firstCellWidth = 150;
+const double _tabletFirstCellWidth = 150;
+const double _mobileFirstCellWidth = 120;
 const double _firstCellHeight = 70;
-const double _cellWidth = 100;
+const double _tabletCellWidth = 100;
+const double _mobileCellWidth = 80;
 const double _cellHeight = 120;
 
 class BannerHistoryPage extends StatefulWidget {
@@ -41,6 +46,12 @@ class _BannerHistoryPageState extends State<BannerHistoryPage> with SingleTicker
   @override
   Widget build(BuildContext context) {
     const margin = EdgeInsets.all(4.0);
+    double firstCellWidth = _tabletFirstCellWidth;
+    double cellWidth = _tabletCellWidth;
+    if (getDeviceType(MediaQuery.of(context).size) == DeviceScreenType.mobile) {
+      firstCellWidth = _mobileFirstCellWidth;
+      cellWidth = _mobileCellWidth;
+    }
     return BlocProvider(
       create: (_) => Injection.bannerHistoryBloc..add(const BannerHistoryEvent.init()),
       child: Scaffold(
@@ -62,9 +73,9 @@ class _BannerHistoryPageState extends State<BannerHistoryPage> with SingleTicker
                     versions: state.versions,
                     selectedVersions: state.selectedVersions,
                     margin: margin,
-                    firstCellWidth: _firstCellWidth,
+                    firstCellWidth: firstCellWidth,
                     firstCellHeight: _firstCellHeight,
-                    cellWidth: _cellWidth,
+                    cellWidth: cellWidth,
                     cellHeight: 60,
                   ),
                 ),
@@ -79,7 +90,7 @@ class _BannerHistoryPageState extends State<BannerHistoryPage> with SingleTicker
                     BlocBuilder<BannerHistoryBloc, BannerHistoryState>(
                       builder: (ctx, state) => FixedLeftColumn(
                         margin: margin,
-                        cellWidth: _firstCellWidth,
+                        cellWidth: firstCellWidth,
                         cellHeight: _cellHeight,
                         items: state.banners,
                       ),
@@ -98,7 +109,7 @@ class _BannerHistoryPageState extends State<BannerHistoryPage> with SingleTicker
                               banners: state.banners,
                               versions: state.versions,
                               margin: margin,
-                              cellWidth: _cellWidth,
+                              cellWidth: cellWidth,
                               cellHeight: _cellHeight,
                             ),
                           ),
@@ -131,6 +142,21 @@ class _AppBar extends StatelessWidget implements PreferredSizeWidget {
       builder: (ctx, state) => AppBar(
         title: Text(s.bannerHistory),
         actions: [
+          IconButton(
+            icon: const Icon(Icons.search),
+            onPressed: () => showSearch<List<String>>(
+              context: context,
+              delegate: _AppBarSearchDelegate(
+                ctx.read<BannerHistoryBloc>().getItemsForSearch(),
+                [...state.selectedItemKeys],
+              ),
+            ).then((keys) {
+              if (keys == null) {
+                return;
+              }
+              context.read<BannerHistoryBloc>().add(BannerHistoryEvent.itemsSelected(keys: keys));
+            }),
+          ),
           ItemPopupMenuFilter<BannerHistoryItemType>(
             tooltipText: s.bannerType,
             selectedValue: state.type,
@@ -154,4 +180,66 @@ class _AppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Size get preferredSize => const Size.fromHeight(kToolbarHeight);
+}
+
+class _AppBarSearchDelegate extends SearchDelegate<List<String>> {
+  final List<ItemCommonWithName> items;
+  final List<String> selected;
+
+  _AppBarSearchDelegate(this.items, this.selected);
+
+  @override
+  List<Widget> buildActions(BuildContext context) => [
+        IconButton(
+          icon: const Icon(Icons.check, color: Colors.green),
+          onPressed: () => close(context, selected),
+        ),
+        IconButton(
+          icon: const Icon(Icons.clear, color: Colors.red),
+          onPressed: () {
+            if (query.isNullEmptyOrWhitespace) {
+              close(context, []);
+            } else {
+              query = '';
+            }
+          },
+        )
+      ];
+
+  @override
+  Widget buildLeading(BuildContext context) => IconButton(
+        icon: const Icon(Icons.arrow_back, color: Colors.white),
+        onPressed: () => close(context, selected),
+      );
+
+  @override
+  Widget buildResults(BuildContext context) => Text(query);
+
+  @override
+  Widget buildSuggestions(BuildContext context) {
+    final possibilities = query.isNullEmptyOrWhitespace ? items : items.where((el) => el.name.toLowerCase().contains(query.toLowerCase())).toList();
+    possibilities.sort((x, y) => x.name.compareTo(y.name));
+
+    return StatefulBuilder(
+      builder: (BuildContext context, StateSetter setState) => ListView.builder(
+        itemCount: possibilities.length,
+        itemBuilder: (ctx, index) {
+          final item = possibilities[index];
+          final isSelected = selected.any((el) => el == item.key);
+          return ListTile(
+            title: Text(item.name),
+            leading: isSelected ? const Icon(Icons.check) : null,
+            minLeadingWidth: 10,
+            onTap: () {
+              if (isSelected) {
+                setState(() => selected.remove(item.key));
+              } else {
+                setState(() => selected.add(item.key));
+              }
+            },
+          );
+        },
+      ),
+    );
+  }
 }

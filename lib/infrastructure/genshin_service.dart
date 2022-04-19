@@ -918,6 +918,25 @@ class GenshinServiceImpl implements GenshinService {
       .toList()
     ..sort((x, y) => x.from.compareTo(y.from));
 
+  @override
+  List<ItemReleaseHistoryModel> getItemReleaseHistory(String itemKey) {
+    final history = _bannerHistoryFile.banners
+        .where((el) => el.itemKeys.contains(itemKey))
+        .map((e) => ItemReleaseHistoryModel(version: e.version, dates: [ItemReleaseHistoryDatesModel(from: e.from, until: e.until)]))
+        .toList();
+
+    if (history.isEmpty) {
+      throw Exception('There is no banner history associated to itemKey = $itemKey');
+    }
+
+    return history
+        .groupListsBy((el) => el.version)
+        .entries
+        .map((e) => ItemReleaseHistoryModel(version: e.key, dates: e.value.expand((el) => el.dates).toList()))
+        .toList()
+      ..sort((x, y) => x.version.compareTo(y.version));
+  }
+
   CharacterCardModel _toCharacterForCard(CharacterFileModel character) {
     final translation = getCharacterTranslation(character.key);
 

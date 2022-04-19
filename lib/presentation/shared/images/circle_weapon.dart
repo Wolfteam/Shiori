@@ -39,14 +39,8 @@ class CircleWeapon extends StatelessWidget {
       image: image,
       radius: radius,
       forDrag: forDrag,
-      onTap: (img) => onTap != null ? onTap!(img) : _gotoWeaponPage(context),
+      onTap: (img) => onTap != null ? onTap!(img) : WeaponPage.route(itemKey, context),
       gradient: gradient,
     );
-  }
-
-  Future<void> _gotoWeaponPage(BuildContext context) async {
-    final route = MaterialPageRoute(builder: (c) => WeaponPage(itemKey: itemKey));
-    await Navigator.push(context, route);
-    await route.completed;
   }
 }

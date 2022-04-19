@@ -11,6 +11,12 @@ class CharacterPage extends StatelessWidget {
 
   const CharacterPage({Key? key, required this.itemKey}) : super(key: key);
 
+  static Future<void> route(String itemKey, BuildContext context) async {
+    final route = MaterialPageRoute(builder: (c) => CharacterPage(itemKey: itemKey));
+    await Navigator.push(context, route);
+    await route.completed;
+  }
+
   @override
   Widget build(BuildContext context) {
     final isPortrait = MediaQuery.of(context).orientation == Orientation.portrait;

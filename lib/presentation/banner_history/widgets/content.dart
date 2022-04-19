@@ -65,7 +65,6 @@ class _ContentCard extends StatelessWidget {
       return SizedBox.fromSize(size: Size(cellWidth + margin.horizontal, cellHeight + margin.vertical));
     }
     final theme = Theme.of(context);
-    //TODO: LIGHT COLOR
     return SizedBox(
       child: Container(
         width: cellWidth,
@@ -74,7 +73,7 @@ class _ContentCard extends StatelessWidget {
         child: Container(
           alignment: Alignment.center,
           margin: const EdgeInsets.only(top: 15, bottom: 15, left: 10, right: 10),
-          color: theme.colorScheme.background.withOpacity(0.2),
+          color: theme.brightness == Brightness.dark ? theme.colorScheme.background.withOpacity(0.2) : theme.dividerColor,
           child: number != null
               ? Text(
                   '$number',

@@ -1,10 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/models/models.dart';
+import 'package:shiori/generated/l10n.dart';
+import 'package:shiori/presentation/banner_history/widgets/item_release_history_dialog.dart';
+import 'package:shiori/presentation/character/character_page.dart';
 import 'package:shiori/presentation/shared/extensions/rarity_extensions.dart';
 import 'package:shiori/presentation/shared/images/circle_character.dart';
 import 'package:shiori/presentation/shared/images/circle_weapon.dart';
 import 'package:shiori/presentation/shared/styles.dart';
+import 'package:shiori/presentation/weapon/weapon_page.dart';
+
+enum _ItemOptionsType {
+  details,
+  releaseHistory,
+}
 
 class FixedLeftColumn extends StatelessWidget {
   final List<BannerHistoryItemModel> items;
@@ -76,9 +85,9 @@ class _ItemCard extends StatelessWidget {
     const double radius = 10;
     return InkWell(
       borderRadius: const BorderRadius.all(Radius.circular(radius)),
-      onTap: () {
-        //show some details here ?
-      },
+      onTap: () => showDialog<_ItemOptionsType>(context: context, builder: (_) => const _OptionsDialog()).then(
+        (value) async => _handleOptionSelected(value, context),
+      ),
       child: Card(
         margin: margin,
         elevation: 10,
@@ -108,7 +117,7 @@ class _ItemCard extends StatelessWidget {
                       child: Text(
                         '$number',
                         overflow: TextOverflow.ellipsis,
-                        style: theme.textTheme.subtitle2!.copyWith(fontWeight: FontWeight.bold),
+                        style: theme.textTheme.subtitle2!.copyWith(fontWeight: FontWeight.bold, color: Colors.white),
                       ),
                     ),
                   ),
@@ -126,13 +135,68 @@ class _ItemCard extends StatelessWidget {
                       name,
                       overflow: TextOverflow.ellipsis,
                       textAlign: TextAlign.center,
-                      style: theme.textTheme.subtitle2!.copyWith(fontWeight: FontWeight.bold),
+                      style: theme.textTheme.subtitle2!.copyWith(fontWeight: FontWeight.bold, color: Colors.white),
                     ),
                   ),
                 ],
               ),
             ],
           ),
+        ),
+      ),
+    );
+  }
+
+  Future<void> _handleOptionSelected(_ItemOptionsType? value, BuildContext context) async {
+    if (value == null) {
+      return;
+    }
+
+    switch (value) {
+      case _ItemOptionsType.details:
+        switch (type) {
+          case BannerHistoryItemType.character:
+            await CharacterPage.route(itemKey, context);
+            break;
+          case BannerHistoryItemType.weapon:
+            await WeaponPage.route(itemKey, context);
+            break;
+        }
+        break;
+      case _ItemOptionsType.releaseHistory:
+        await showDialog(context: context, builder: (_) => ItemReleaseHistoryDialog(itemKey: itemKey));
+        break;
+    }
+  }
+}
+
+class _OptionsDialog extends StatelessWidget {
+  const _OptionsDialog({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    final s = S.of(context);
+    return AlertDialog(
+      title: Text(s.selectAnOption),
+      actions: [
+        ElevatedButton(
+          onPressed: () => Navigator.pop(context),
+          child: Text(s.cancel),
+        )
+      ],
+      content: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            ListTile(
+              title: Text(s.details),
+              onTap: () => Navigator.pop(context, _ItemOptionsType.details),
+            ),
+            ListTile(
+              title: Text(s.releaseHistory),
+              onTap: () => Navigator.pop(context, _ItemOptionsType.releaseHistory),
+            ),
+          ],
         ),
       ),
     );

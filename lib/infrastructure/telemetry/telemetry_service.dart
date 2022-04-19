@@ -165,4 +165,7 @@ class TelemetryServiceImpl implements TelemetryService {
 
   @override
   Future<void> trackBannerHistoryItemOpened(double version) => trackEventAsync('Banner-History-Item-Opened', {'Version': '$version'});
+
+  @override
+  Future<void> trackItemReleaseHistoryOpened(String itemKey) => trackEventAsync('Banner-History-Item-Release-History-Opened', {'ItemKey': itemKey});
 }

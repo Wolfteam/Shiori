@@ -38,15 +38,9 @@ class CircleCharacter extends StatelessWidget {
     return CircleItem(
       image: image,
       forDrag: forDrag,
-      onTap: (img) => onTap != null ? onTap!(img) : _gotoCharacterPage(context),
+      onTap: (img) => onTap != null ? onTap!(img) : CharacterPage.route(itemKey, context),
       radius: radius,
       gradient: gradient,
     );
-  }
-
-  Future<void> _gotoCharacterPage(BuildContext context) async {
-    final route = MaterialPageRoute(builder: (c) => CharacterPage(itemKey: itemKey));
-    await Navigator.push(context, route);
-    await route.completed;
   }
 }
