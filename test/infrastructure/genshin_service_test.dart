@@ -613,7 +613,7 @@ void main() {
             //all weapons with a rarity > 2 have 5 refinements except the following
             //the ps4 sword, the aloy weapon
             final ignore = ['sword-of-descension', 'predator'];
-            if (!ignore.contains(detail.key)){
+            if (!ignore.contains(detail.key)) {
               expect(translation.refinements.length, 5);
             } else {
               expect(translation.refinements, isNotEmpty);
@@ -837,6 +837,93 @@ void main() {
           expect(notComingSoon, equals(got));
         }
       }
+    });
+  });
+
+  group('Banner History', () {
+    test('check banner history', () async {
+      const types = BannerHistoryItemType.values;
+      final service = _getService();
+      await service.init(AppLanguageType.english);
+
+      for (final type in types) {
+        final banners = service.getBannerHistory(type);
+        expect(banners.length, banners.where((el) => el.type == type).length);
+        for (final banner in banners) {
+          checkItemKeyAndImage(banner.key, banner.image);
+          checkTranslation(banner.name, canBeNull: false);
+          expect(banner.versions.isNotEmpty, isTrue);
+          expect(banner.rarity >= 4, isTrue);
+          expect(banner.versions.any((el) => el.released), isTrue);
+          for (final version in banner.versions) {
+            if (version.released) {
+              expect(version.number, isNull);
+              expect(version.version >= 1, isTrue);
+            } else if (version.number == 0) {
+              expect(version.released, isFalse);
+            } else {
+              expect(version.released, isFalse);
+              expect(version.number, isNotNull);
+              expect(version.number! >= 1, isTrue);
+            }
+          }
+        }
+      }
+    });
+
+    test('check versions', () async {
+      final service = _getService();
+      await service.init(AppLanguageType.english);
+
+      final versions = service.getBannerHistoryVersions(SortDirectionType.asc);
+      expect(versions.length, versions.toSet().length);
+    });
+
+    test('check periods', () async {
+      final service = _getService();
+      await service.init(AppLanguageType.english);
+
+      final versions = service.getBannerHistoryVersions(SortDirectionType.asc);
+      final validItemTypes = [ItemType.character, ItemType.weapon];
+      for (final version in versions) {
+        final banners = service.getBanners(version);
+        expect(banners.isNotEmpty, isTrue);
+        for (final banner in banners) {
+          expect(banner.version, version);
+          expect(banner.until.isAfter(banner.from), isTrue);
+          expect(banner.items.isNotEmpty, isTrue);
+          for (final item in banner.items) {
+            checkItemKeyAndImage(item.key, item.image);
+            expect(item.rarity >= 4, isTrue);
+            expect(validItemTypes.contains(item.type), isTrue);
+          }
+        }
+      }
+    });
+
+    test('check periods, period does not exist', () async {
+      final service = _getService();
+      await service.init(AppLanguageType.english);
+      expect(() => service.getBanners(0.5), throwsA(isA<Exception>()));
+    });
+
+    test('check item release history', () async {
+      final service = _getService();
+      await service.init(AppLanguageType.english);
+
+      final history = service.getItemReleaseHistory('keqing');
+      expect(history.isNotEmpty, isTrue);
+
+      for (final item in history) {
+        expect(item.dates.isNotEmpty, isTrue);
+        expect(item.version >= 1, isTrue);
+      }
+    });
+
+    test('check item release history, item does not exist', () async {
+      final service = _getService();
+      await service.init(AppLanguageType.english);
+      expect(() => service.getItemReleaseHistory('the-item'), throwsA(isA<Exception>()));
     });
   });
 }
