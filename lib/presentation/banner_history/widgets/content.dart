@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shiori/domain/models/models.dart';
+import 'package:shiori/presentation/banner_history/widgets/item_release_history_dialog.dart';
 
 class Content extends StatelessWidget {
   final List<BannerHistoryItemModel> banners;
@@ -30,10 +31,12 @@ class Content extends StatelessWidget {
               final version = versions[j];
               final banner = banners[i];
               return _ContentCard(
+                banner: banner,
                 number: banner.versions.firstWhere((el) => el.version == version).number,
                 margin: margin,
                 cellHeight: cellHeight,
                 cellWidth: cellWidth,
+                version: version,
               );
             },
           ),
@@ -44,19 +47,23 @@ class Content extends StatelessWidget {
 }
 
 class _ContentCard extends StatelessWidget {
+  final BannerHistoryItemModel banner;
   final EdgeInsets margin;
   final double cellWidth;
   final double cellHeight;
   final int? number;
   final double iconSize;
+  final double version;
 
   const _ContentCard({
     Key? key,
+    required this.banner,
     required this.margin,
     required this.cellWidth,
     required this.cellHeight,
     this.number,
     this.iconSize = 45,
+    required this.version,
   }) : super(key: key);
 
   @override
@@ -66,21 +73,33 @@ class _ContentCard extends StatelessWidget {
     }
     final theme = Theme.of(context);
     return SizedBox(
-      child: Container(
-        width: cellWidth,
-        height: cellHeight,
-        margin: margin,
+      child: InkWell(
+        onTap: number != null
+            ? null
+            : () => showDialog(
+                  context: context,
+                  builder: (_) => ItemReleaseHistoryDialog(
+                    itemKey: banner.key,
+                    itemName: banner.name,
+                    selectedVersion: version,
+                  ),
+                ),
         child: Container(
-          alignment: Alignment.center,
-          margin: const EdgeInsets.only(top: 15, bottom: 15, left: 10, right: 10),
-          color: theme.brightness == Brightness.dark ? theme.colorScheme.background.withOpacity(0.2) : theme.dividerColor,
-          child: number != null
-              ? Text(
-                  '$number',
-                  overflow: TextOverflow.ellipsis,
-                  style: theme.textTheme.titleLarge!.copyWith(fontWeight: FontWeight.bold),
-                )
-              : Icon(Icons.check_circle, size: iconSize, color: Colors.green),
+          width: cellWidth,
+          height: cellHeight,
+          margin: margin,
+          child: Container(
+            alignment: Alignment.center,
+            margin: const EdgeInsets.only(top: 15, bottom: 15, left: 10, right: 10),
+            color: theme.brightness == Brightness.dark ? theme.colorScheme.background.withOpacity(0.2) : theme.dividerColor,
+            child: number != null
+                ? Text(
+                    '$number',
+                    overflow: TextOverflow.ellipsis,
+                    style: theme.textTheme.titleLarge!.copyWith(fontWeight: FontWeight.bold),
+                  )
+                : Icon(Icons.check_circle, size: iconSize, color: Colors.green),
+          ),
         ),
       ),
     );

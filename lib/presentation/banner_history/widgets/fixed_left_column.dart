@@ -164,7 +164,7 @@ class _ItemCard extends StatelessWidget {
         }
         break;
       case _ItemOptionsType.releaseHistory:
-        await showDialog(context: context, builder: (_) => ItemReleaseHistoryDialog(itemKey: itemKey));
+        await showDialog(context: context, builder: (_) => ItemReleaseHistoryDialog(itemKey: itemKey, itemName: name));
         break;
     }
   }

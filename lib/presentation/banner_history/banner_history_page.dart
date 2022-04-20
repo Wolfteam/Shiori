@@ -208,7 +208,7 @@ class _AppBarSearchDelegate extends SearchDelegate<List<String>> {
 
   @override
   Widget buildLeading(BuildContext context) => IconButton(
-        icon: const Icon(Icons.arrow_back, color: Colors.white),
+        icon: const Icon(Icons.arrow_back),
         onPressed: () => close(context, selected),
       );
 

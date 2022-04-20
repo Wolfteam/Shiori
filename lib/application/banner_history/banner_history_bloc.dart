@@ -28,13 +28,12 @@ class BannerHistoryBloc extends Bloc<BannerHistoryEvent, BannerHistoryState> {
 
   @override
   Stream<BannerHistoryState> mapEventToState(BannerHistoryEvent event) async* {
-    await _telemetryService.trackBannerHistoryOpened();
-    final s = event.map(
-      init: (e) => _init(),
-      typeChanged: (e) => _typeChanged(e.type),
-      sortTypeChanged: (e) => _sortTypeChanged(e.type),
-      versionSelected: (e) => _versionSelected(e.version),
-      itemsSelected: (e) => _itemsSelected(e.keys),
+    final s = await event.map(
+      init: (e) async => _init(),
+      typeChanged: (e) async => _typeChanged(e.type),
+      sortTypeChanged: (e) async => _sortTypeChanged(e.type),
+      versionSelected: (e) async => _versionSelected(e.version),
+      itemsSelected: (e) async => _itemsSelected(e.keys),
     );
 
     yield s;
@@ -45,7 +44,8 @@ class BannerHistoryBloc extends Bloc<BannerHistoryEvent, BannerHistoryState> {
     return banners.map((e) => ItemCommonWithName(e.key, e.image, e.name)).toSet().toList();
   }
 
-  BannerHistoryState _init() {
+  Future<BannerHistoryState> _init() async {
+    await _telemetryService.trackBannerHistoryOpened();
     _characterBanners.addAll(_genshinService.getBannerHistory(BannerHistoryItemType.character));
     _weaponBanners.addAll(_genshinService.getBannerHistory(BannerHistoryItemType.weapon));
 
