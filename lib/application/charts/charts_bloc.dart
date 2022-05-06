@@ -13,6 +13,9 @@ class ChartsBloc extends Bloc<ChartsEvent, ChartsState> {
   final GenshinService _genshinService;
   final TelemetryService _telemetryService;
 
+  // This one is used on the elements chart, so we can start from 1.0 instead of 0
+  static const int versionStartsOn = 1;
+
   ChartsBloc(this._genshinService, this._telemetryService) : super(const ChartsState.loading());
 
   @override
@@ -29,7 +32,7 @@ class ChartsBloc extends Bloc<ChartsEvent, ChartsState> {
   //Some versions were skipped (e.g: 1.7, 1.8, 1.9), that's why we use this function
   //to determine if the version can be skipped or no
   static bool isValidVersion(double value) {
-    return value + 1 < 1.7 || value + 1 >= 2;
+    return value + versionStartsOn < 1.7 || value + versionStartsOn >= 2;
   }
 
   Future<ChartsState> _init() async {
@@ -45,7 +48,7 @@ class ChartsBloc extends Bloc<ChartsEvent, ChartsState> {
       ..._genshinService.getTopCharts(ChartType.topFourStarWeaponLeastReruns),
     ];
     final birthdays = _genshinService.getCharacterBirthdaysForCharts();
-    final elements = _genshinService.getElementsForCharts();
+    final elements = _genshinService.getElementsForCharts(versionStartsOn);
     return ChartsState.initial(tops: tops, birthdays: birthdays, elements: elements, filteredElements: elements);
   }
 

@@ -2,53 +2,80 @@ import 'dart:math';
 
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
-import 'package:shiori/domain/models/models.dart';
-import 'package:shiori/presentation/shared/extensions/element_type_extensions.dart';
 import 'package:shiori/presentation/shared/styles.dart';
+
+class HorizontalBarDataModel {
+  final int index;
+  final Color color;
+  final List<Point<double>> points;
+
+  HorizontalBarDataModel(this.index, this.color, this.points);
+}
 
 typedef CanValueBeRendered = bool Function(double);
 typedef OnPointTap = void Function(double);
+typedef GetText = String Function(double);
 
 class HorizontalBarChart extends StatelessWidget {
-  final List<ChartElementItemModel> items;
+  final List<HorizontalBarDataModel> items;
+
   final CanValueBeRendered canValueBeRendered;
   final OnPointTap? onPointTap;
+  final GetText getBottomText;
+  final GetText getLeftText;
+  final GetLineTooltipItems? getTooltipItems;
+
+  final double yIntervals;
+  final double xIntervals;
+
+  final double minX;
+  final double minY;
+
+  final double barWidth;
+
+  final Color? toolTipBgColor;
 
   const HorizontalBarChart({
     Key? key,
     required this.items,
     required this.canValueBeRendered,
     this.onPointTap,
+    required this.getBottomText,
+    required this.getLeftText,
+    this.getTooltipItems,
+    this.xIntervals = 0.1,
+    this.yIntervals = 1.0,
+    this.minX = 0,
+    this.minY = 0,
+    this.barWidth = 4,
+    this.toolTipBgColor,
   }) : super(key: key);
 
-  //TODO: MOVE THE ELEMENTS LOGIC OUT OF HERE
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final points = items.expand((el) => el.points);
     final maxY = points.map((e) => e.y).reduce(max) + 1;
     final maxX = points.map((e) => e.x).reduce(max);
-    //TODO: THESE VALUES
-    final yIntervals = 1.0;
-    final xIntervals = 0.1;
     return Padding(
       padding: Styles.edgeInsetAll10,
       child: LineChart(
         LineChartData(
-          minX: 0,
-          minY: 0,
+          minX: minX,
+          minY: minY,
           maxX: maxX,
           maxY: maxY,
           lineTouchData: LineTouchData(
             handleBuiltInTouches: true,
             touchCallback: (event, response) {
               if (event is FlTapUpEvent && response?.lineBarSpots != null && response!.lineBarSpots!.isNotEmpty) {
-                final version = response.lineBarSpots!.first.x + 1;
-                onPointTap?.call(version);
+                onPointTap?.call(response.lineBarSpots!.first.x);
               }
             },
             touchTooltipData: LineTouchTooltipData(
-              tooltipBgColor: theme.backgroundColor,
+              tooltipBgColor: toolTipBgColor ?? theme.backgroundColor,
+              fitInsideHorizontally: true,
+              getTooltipItems: getTooltipItems,
             ),
           ),
           gridData: FlGridData(show: true),
@@ -58,13 +85,12 @@ class HorizontalBarChart extends StatelessWidget {
                 showTitles: true,
                 reservedSize: 32,
                 interval: xIntervals,
-                //TODO: TOOLTIPS
                 getTitlesWidget: (value, meta) => !canValueBeRendered(value)
                     ? Container()
                     : Padding(
                         padding: const EdgeInsets.only(top: 10.0),
                         child: Text(
-                          (value + 1).toStringAsFixed(1),
+                          getBottomText(value),
                           style: const TextStyle(
                             color: Colors.grey,
                             fontWeight: FontWeight.bold,
@@ -79,7 +105,7 @@ class HorizontalBarChart extends StatelessWidget {
             leftTitles: AxisTitles(
               sideTitles: SideTitles(
                 getTitlesWidget: (value, meta) => Text(
-                  value.toInt().toString(),
+                  getLeftText(value),
                   textAlign: TextAlign.center,
                   style: const TextStyle(
                     color: Colors.grey,
@@ -98,8 +124,8 @@ class HorizontalBarChart extends StatelessWidget {
               .map(
                 (e) => LineChartBarData(
                   isCurved: true,
-                  color: e.type.getElementColorFromContext(context),
-                  barWidth: 4,
+                  color: e.color,
+                  barWidth: barWidth,
                   isStrokeCapRound: true,
                   dotData: FlDotData(show: true),
                   belowBarData: BarAreaData(show: false),

@@ -1013,12 +1013,13 @@ class GenshinServiceImpl implements GenshinService {
   }
 
   @override
-  List<ChartElementItemModel> getElementsForCharts() {
+  List<ChartElementItemModel> getElementsForCharts(int versionStartsOn) {
     final banners = _bannerHistoryFile.banners.where((el) => el.type == BannerHistoryItemType.character).toList()
       ..sort((x, y) => x.version.compareTo(y.version));
     final charts = <ChartElementItemModel>[];
     final characters = getCharactersForCard();
     final usedChars = <double, List<String>>{};
+    const double incrementY = 1;
 
     for (final banner in banners) {
       for (final key in banner.itemKeys) {
@@ -1035,8 +1036,10 @@ class GenshinServiceImpl implements GenshinService {
         final char = characters.firstWhere((el) => el.key == key);
         final existing = charts.firstWhereOrNull((el) => el.type == char.elementType);
         final points = existing?.points ?? [];
-        final existingPoint = points.firstWhereOrNull((el) => el.x == banner.version - 1);
-        final newPoint = existingPoint != null ? Point<double>(existingPoint.x, existingPoint.y + 1) : Point<double>(banner.version - 1, 1);
+        final existingPoint = points.firstWhereOrNull((el) => el.x == banner.version - versionStartsOn);
+        final newPoint = existingPoint != null
+            ? Point<double>(existingPoint.x, existingPoint.y + incrementY)
+            : Point<double>(banner.version - versionStartsOn, incrementY);
 
         if (existing == null) {
           final newItem = ChartElementItemModel(type: char.elementType, points: [newPoint]);

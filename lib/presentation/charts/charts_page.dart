@@ -1,3 +1,6 @@
+import 'dart:math';
+
+import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shiori/application/bloc.dart';
@@ -49,6 +52,8 @@ class ChartsPage extends StatelessWidget {
     final theme = Theme.of(context);
     final mq = MediaQuery.of(context);
     final s = S.of(context);
+    final tooltipColor = Colors.black.withOpacity(0.7);
+    final monthNames = date_utils.DateUtils.getAllMonthsName();
 
     return BlocProvider<ChartsBloc>(
       create: (context) => Injection.chartsBloc..add(const ChartsEvent.init()),
@@ -63,6 +68,7 @@ class ChartsPage extends StatelessWidget {
               builder: (context, state) => state.map(
                 loading: (_) => const Loading(useScaffold: false),
                 initial: (state) {
+                  final maxYValueForBirthdays = state.birthdays.map((e) => e.items.length).reduce(max).toDouble() + 1;
                   return Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
@@ -163,8 +169,6 @@ class ChartsPage extends StatelessWidget {
                         title: s.mostAndLeastReleased,
                         bottom: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
-                          // crossAxisAlignment: WrapCrossAlignment.center,
-                          // alignment: WrapAlignment.center,
                           children: state.elements
                               .map(
                                 (e) => ChartLegendIndicator(
@@ -178,12 +182,33 @@ class ChartsPage extends StatelessWidget {
                               .toList(),
                         ),
                         child: HorizontalBarChart(
-                          items: state.filteredElements,
+                          items: state.filteredElements
+                              .mapIndex(
+                                (e, i) => HorizontalBarDataModel(i, e.type.getElementColor(true), e.points),
+                              )
+                              .toList(),
                           canValueBeRendered: ChartsBloc.isValidVersion,
-                          onPointTap: (version) => showDialog(
+                          getBottomText: (value) => (value + ChartsBloc.versionStartsOn).toStringAsFixed(1),
+                          getLeftText: (value) => value.toInt().toString(),
+                          toolTipBgColor: tooltipColor,
+                          getTooltipItems: (touchedSpots) => touchedSpots.map(
+                            (touchedSpot) {
+                              final quantity = touchedSpot.y;
+                              final element = state.filteredElements[touchedSpot.barIndex];
+                              final textStyle = TextStyle(
+                                color: touchedSpot.bar.gradient?.colors.first ?? touchedSpot.bar.color ?? theme.colorScheme.primary,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 15,
+                              );
+                              final text = '${s.translateElementType(element.type)} (${quantity.toInt()})';
+                              return LineTooltipItem(text, textStyle);
+                            },
+                          ).toList()
+                            ..sort((x, y) => x.text.compareTo(y.text)),
+                          onPointTap: (value) => showDialog(
                             context: context,
                             builder: (_) => VersionDetailsDialog(
-                              version: version,
+                              version: value + ChartsBloc.versionStartsOn,
                               showWeapons: false,
                             ),
                           ),
@@ -195,8 +220,14 @@ class ChartsPage extends StatelessWidget {
                         height: 400,
                         title: s.mostAndLeastRepeated,
                         child: VerticalBarChart(
-                          items: state.birthdays,
-                          months: date_utils.DateUtils.getAllMonthsName(),
+                          items: state.birthdays
+                              .mapIndex((e, i) => VerticalBarDataModel(i, theme.colorScheme.primary, e.month, e.items.length.toDouble()))
+                              .toList(),
+                          maxY: maxYValueForBirthdays,
+                          interval: (maxYValueForBirthdays ~/ 5).toDouble(),
+                          tooltipColor: tooltipColor,
+                          getBottomText: (value) => monthNames[value.toInt() - 1],
+                          getLeftText: (value) => value.toInt().toString(),
                           onBarChartTap: (index) => showDialog(
                             context: context,
                             builder: (_) => BirthdaysPerMonthDialog(month: index + 1),

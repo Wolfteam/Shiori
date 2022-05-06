@@ -1,45 +1,56 @@
-import 'dart:math';
-
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
-import 'package:shiori/domain/models/models.dart';
 
 typedef OnBarChartTap = void Function(int);
+typedef GetText = String Function(double);
+
+class VerticalBarDataModel {
+  final int index;
+  final Color color;
+  final int x;
+  final double y;
+
+  VerticalBarDataModel(this.index, this.color, this.x, this.y);
+}
 
 class VerticalBarChart extends StatelessWidget {
-  final List<ChartBirthdayMonthModel> items;
-  final List<String> months;
+  final List<VerticalBarDataModel> items;
   final OnBarChartTap? onBarChartTap;
+  final GetText getBottomText;
+  final GetText getLeftText;
+
+  final double maxY;
+  final double interval;
+
+  final Color? tooltipColor;
 
   const VerticalBarChart({
     Key? key,
     required this.items,
-    required this.months,
+    required this.getLeftText,
+    required this.getBottomText,
     this.onBarChartTap,
+    required this.maxY,
+    required this.interval,
+    this.tooltipColor,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    final values = items.map((e) => e.items.length);
-    final maxValue = values.reduce(max).toDouble() + 1;
-    final interval = (maxValue / 5).roundToDouble();
-
     const textStyle = TextStyle(
       color: Colors.grey,
       fontWeight: FontWeight.bold,
       fontSize: 14,
     );
-    //TODO: TOOLTIP COLOR
-    //TODO: HIGHLIGHT THE CURRENT BAR
-    //TODO: MOVE THE BIRTHDAY LOGIC OUT OF HERE
     return BarChart(
       BarChartData(
-        maxY: maxValue,
+        maxY: maxY,
         minY: 0,
         barTouchData: BarTouchData(
           touchTooltipData: BarTouchTooltipData(
-            tooltipBgColor: theme.backgroundColor,
+            fitInsideHorizontally: true,
+            tooltipBgColor: tooltipColor ?? theme.backgroundColor,
             getTooltipItem: (group, groupIndex, rod, rodIndex) => BarTooltipItem(
               rod.toY.toInt().toString(),
               const TextStyle(color: Colors.white),
@@ -61,7 +72,7 @@ class VerticalBarChart extends StatelessWidget {
               getTitlesWidget: (value, meta) => Padding(
                 padding: const EdgeInsets.only(top: 10),
                 child: Text(
-                  months[value.toInt() - 1],
+                  getBottomText(value),
                   textAlign: TextAlign.center,
                   style: textStyle,
                 ),
@@ -75,7 +86,7 @@ class VerticalBarChart extends StatelessWidget {
               reservedSize: 40,
               interval: interval,
               getTitlesWidget: (value, meta) => Text(
-                value.toInt().toString(),
+                getLeftText(value),
                 textAlign: TextAlign.center,
                 style: textStyle,
               ),
@@ -86,11 +97,11 @@ class VerticalBarChart extends StatelessWidget {
         barGroups: items
             .map(
               (e) => BarChartGroupData(
-                x: e.month,
+                x: e.x,
                 barRods: [
                   BarChartRodData(
-                    toY: e.items.length.toDouble(),
-                    color: theme.colorScheme.primary,
+                    toY: e.y,
+                    color: e.color,
                     borderRadius: BorderRadius.zero,
                     width: 10,
                   ),
