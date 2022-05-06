@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:math';
 
 import 'package:collection/collection.dart';
 import 'package:flutter/services.dart' show rootBundle;
@@ -949,6 +950,107 @@ class GenshinServiceImpl implements GenshinService {
       ..sort((x, y) => x.version.compareTo(y.version));
   }
 
+  @override
+  List<ChartTopItemModel> getTopCharts(ChartType type) {
+    final fiveStars = [
+      ChartType.topFiveStarCharacterMostReruns,
+      ChartType.topFiveStarCharacterLeastReruns,
+      ChartType.topFiveStarWeaponMostReruns,
+      ChartType.topFiveStarWeaponLeastReruns,
+    ];
+    final stars = fiveStars.contains(type) ? 5 : 4;
+
+    final mostRerunsTypes = [
+      ChartType.topFiveStarCharacterMostReruns,
+      ChartType.topFourStarCharacterMostReruns,
+      ChartType.topFiveStarWeaponMostReruns,
+      ChartType.topFourStarWeaponMostReruns,
+    ];
+    final mostReruns = mostRerunsTypes.contains(type);
+
+    switch (type) {
+      case ChartType.topFiveStarCharacterMostReruns:
+      case ChartType.topFourStarCharacterMostReruns:
+      case ChartType.topFiveStarCharacterLeastReruns:
+      case ChartType.topFourStarCharacterLeastReruns:
+        final characters = getCharactersForCard().where((el) => el.stars == stars).map((e) => ItemCommonWithName(e.key, e.image, e.name)).toList();
+        return _getTopCharts(mostReruns, type, BannerHistoryItemType.character, characters);
+      case ChartType.topFiveStarWeaponMostReruns:
+      case ChartType.topFourStarWeaponMostReruns:
+      case ChartType.topFiveStarWeaponLeastReruns:
+      case ChartType.topFourStarWeaponLeastReruns:
+        final weapons = getWeaponsForCard().where((el) => el.rarity == stars).map((e) => ItemCommonWithName(e.key, e.image, e.name)).toList();
+        return _getTopCharts(mostReruns, type, BannerHistoryItemType.weapon, weapons);
+      default:
+        throw Exception('Type = $type is not valid in the getTopCharts method');
+    }
+  }
+
+  @override
+  List<ChartBirthdayMonthModel> getCharacterBirthdaysForCharts() {
+    final grouped = _charactersFile.characters
+        .where((char) => !char.isComingSoon && !char.birthday.isNullEmptyOrWhitespace)
+        .groupListsBy((char) => _localeService.getCharBirthDate(char.birthday).month)
+        .entries;
+
+    final birthdays = grouped
+        .map(
+          (e) => ChartBirthdayMonthModel(
+            month: e.key,
+            items: e.value.map((e) {
+              final translation = getCharacterTranslation(e.key);
+              return ItemCommonWithName(e.key, e.fullImagePath, translation.name);
+            }).toList(),
+          ),
+        )
+        .toList()
+      ..sort((x, y) => x.month.compareTo(y.month));
+
+    assert(birthdays.length == 12, 'Birthday items for chart should not be empty and must be equal to 12');
+
+    return birthdays;
+  }
+
+  @override
+  List<ChartElementItemModel> getElementsForCharts() {
+    final banners = _bannerHistoryFile.banners.where((el) => el.type == BannerHistoryItemType.character).toList()
+      ..sort((x, y) => x.version.compareTo(y.version));
+    final charts = <ChartElementItemModel>[];
+    final characters = getCharactersForCard();
+
+    for (final banner in banners) {
+      for (final key in banner.itemKeys) {
+        final char = characters.firstWhere((el) => el.key == key);
+        final existing = charts.firstWhereOrNull((el) => el.type == char.elementType);
+        final points = existing?.points ?? [];
+        final existingPoint = points.firstWhereOrNull((el) => el.x == banner.version - 1);
+        final newPoint = existingPoint != null ? Point<double>(existingPoint.x, existingPoint.y + 1) : Point<double>(banner.version - 1, 1);
+
+        if (existing == null) {
+          final newItem = ChartElementItemModel(type: char.elementType, points: [newPoint]);
+          charts.add(newItem);
+          continue;
+        }
+
+        if (existingPoint != null) {
+          final index = points.indexOf(existingPoint);
+          points.removeAt(index);
+          points.insert(index, newPoint);
+        } else {
+          points.add(newPoint);
+        }
+        final updated = existing.copyWith.call(points: points);
+        final index = charts.indexOf(existing);
+        charts.removeAt(index);
+        charts.insert(index, updated);
+      }
+    }
+
+    assert(charts.isNotEmpty, 'Element chart items must not be empty');
+
+    return charts;
+  }
+
   CharacterCardModel _toCharacterForCard(CharacterFileModel character) {
     final translation = getCharacterTranslation(character.key);
 
@@ -1064,5 +1166,49 @@ class GenshinServiceImpl implements GenshinService {
       }
     }
     return history;
+  }
+
+  List<ChartTopItemModel> _getTopCharts(bool mostReruns, ChartType type, BannerHistoryItemType bannerType, List<ItemCommonWithName> items) {
+    final grouped = _bannerHistoryFile.banners.where((el) => el.type == bannerType).expand((el) => el.itemKeys).groupListsBy((el) => el).entries;
+
+    final selected = <ItemCommonWithQuantity>[];
+    for (final g in grouped) {
+      if (mostReruns && selected.isNotEmpty && selected.every((el) => el.quantity > g.value.length)) {
+        continue;
+      } else if (!mostReruns && selected.isNotEmpty && selected.every((el) => el.quantity < g.value.length)) {
+        continue;
+      }
+
+      final element = items.firstWhereOrNull((el) => el.key == g.key);
+      if (element == null) {
+        continue;
+      }
+
+      selected.add(ItemCommonWithQuantity(g.key, element.image, g.value.length));
+    }
+
+    if (mostReruns) {
+      selected.sort((x, y) => y.quantity.compareTo(x.quantity));
+    } else {
+      selected.sort((x, y) => x.quantity.compareTo(y.quantity));
+    }
+
+    assert(selected.isNotEmpty, 'The selected item list should not be empty');
+    assert(selected.length >= 5, 'There should be at least 5 top items');
+
+    final tops = selected.take(5);
+    final total = tops.map((e) => e.quantity).sum;
+
+    return tops
+        .map(
+          (e) => ChartTopItemModel(
+            key: e.key,
+            name: items.firstWhere((el) => el.key == e.key).name,
+            type: type,
+            value: e.quantity,
+            percentage: e.quantity * 100 / total,
+          ),
+        )
+        .toList();
   }
 }
