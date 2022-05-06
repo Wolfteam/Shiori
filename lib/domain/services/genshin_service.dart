@@ -92,4 +92,8 @@ abstract class GenshinService {
   List<BannerHistoryItemModel> getBannerHistory(BannerHistoryItemType type);
   List<BannerHistoryPeriodModel> getBanners(double version);
   List<ItemReleaseHistoryModel> getItemReleaseHistory(String itemKey);
+
+  List<ChartTopItemModel> getTopCharts(ChartType type);
+  List<ChartBirthdayMonthModel> getCharacterBirthdaysForCharts();
+  List<ChartElementItemModel> getElementsForCharts();
 }
