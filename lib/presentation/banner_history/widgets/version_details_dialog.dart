@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:intl/intl.dart';
 import 'package:shiori/application/bloc.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/models/models.dart';
@@ -12,8 +10,6 @@ import 'package:shiori/presentation/shared/extensions/rarity_extensions.dart';
 import 'package:shiori/presentation/shared/images/circle_character.dart';
 import 'package:shiori/presentation/shared/images/circle_weapon.dart';
 import 'package:shiori/presentation/shared/loading.dart';
-
-const _dateFormat = 'yyyy/MM/dd';
 
 class VersionDetailsDialog extends StatelessWidget {
   final double version;
@@ -44,21 +40,16 @@ class VersionDetailsDialog extends StatelessWidget {
                 loadedState: (state) => Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: state.items
-                      .groupListsBy((el) => '${DateFormat(_dateFormat).format(el.from)}_${DateFormat(_dateFormat).format(el.until)}')
-                      .values
                       .map(
-                    (e) {
-                      final group = e.first;
-
-                      return _VersionDetailPeriod(
-                        from: group.from,
-                        until: group.until,
-                        showCharacters: showCharacters,
-                        showWeapons: showWeapons,
-                        items: e.expand((el) => el.items).toList(),
-                      );
-                    },
-                  ).toList(),
+                        (e) => _VersionDetailPeriod(
+                          from: e.from,
+                          until: e.until,
+                          items: e.items,
+                          showCharacters: showCharacters,
+                          showWeapons: showWeapons,
+                        ),
+                      )
+                      .toList(),
                 ),
                 orElse: () => const Loading(useScaffold: false),
               ),
@@ -77,8 +68,8 @@ class VersionDetailsDialog extends StatelessWidget {
 }
 
 class _VersionDetailPeriod extends StatelessWidget {
-  final DateTime from;
-  final DateTime until;
+  final String from;
+  final String until;
   final List<ItemCommonWithRarityAndType> items;
   final bool showWeapons;
   final bool showCharacters;
@@ -96,8 +87,6 @@ class _VersionDetailPeriod extends StatelessWidget {
   Widget build(BuildContext context) {
     final s = S.of(context);
     final theme = Theme.of(context);
-    final from = DateFormat(_dateFormat).format(this.from);
-    final until = DateFormat(_dateFormat).format(this.until);
     final characters = items.where((el) => el.type == ItemType.character).toList()..sort((x, y) => y.rarity.compareTo(x.rarity));
     final weapons = items.where((el) => el.type == ItemType.weapon).toList()..sort((x, y) => y.rarity.compareTo(x.rarity));
 

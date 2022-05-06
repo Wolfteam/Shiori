@@ -1,5 +1,6 @@
 import 'package:bloc_test/bloc_test.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:intl/intl.dart';
 import 'package:mockito/mockito.dart';
 import 'package:shiori/application/bloc.dart';
 import 'package:shiori/domain/enums/enums.dart';
@@ -37,28 +38,43 @@ void main() {
   );
 
   group('Init', () {
+    void _validVersionCheck(BannerHistoryItemState state, double version) => state.map(
+          loading: (_) => throw Exception('Invalid state'),
+          loadedState: (state) {
+            final validItemTypes = [ItemType.character, ItemType.weapon];
+            expect(state.version, version);
+            expect(state.items.isNotEmpty, isTrue);
+            for (final grouped in state.items) {
+              final from = DateFormat(BannerHistoryItemBloc.periodDateFormat).parse(grouped.from);
+              final until = DateFormat(BannerHistoryItemBloc.periodDateFormat).parse(grouped.until);
+              expect(until.isAfter(from), isTrue);
+              expect(grouped.items.isNotEmpty, isTrue);
+
+              final keys = grouped.items.map((e) => e.key).toList();
+              expect(keys.toSet().length == keys.length, isTrue);
+
+              for (final group in grouped.items) {
+                checkItemKeyAndImage(group.key, group.image);
+                expect(group.rarity >= 4, isTrue);
+                expect(validItemTypes.contains(group.type), isTrue);
+              }
+            }
+            return null;
+          },
+        );
+
     blocTest<BannerHistoryItemBloc, BannerHistoryItemState>(
       'valid version',
       build: () => BannerHistoryItemBloc(_genshinService, _telemetryService),
       act: (bloc) => bloc.add(const BannerHistoryItemEvent.init(version: 1.1)),
-      verify: (bloc) => bloc.state.map(
-        loading: (_) => throw Exception('Invalid state'),
-        loadedState: (state) {
-          final validItemTypes = [ItemType.character, ItemType.weapon];
-          expect(state.version, 1.1);
-          expect(state.items.isNotEmpty, isTrue);
-          for (final item in state.items) {
-            expect(item.until.isAfter(item.from), isTrue);
-            expect(item.version >= 1, isTrue);
-            expect(BannerHistoryItemType.values.contains(item.type), isTrue);
-            for (final el in item.items) {
-              checkItemKeyAndImage(el.key, el.image);
-              expect(el.rarity >= 4, isTrue);
-              expect(validItemTypes.contains(el.type), isTrue);
-            }
-          }
-        },
-      ),
+      verify: (bloc) => _validVersionCheck(bloc.state, 1.1),
+    );
+
+    blocTest<BannerHistoryItemBloc, BannerHistoryItemState>(
+      'valid version, double banner',
+      build: () => BannerHistoryItemBloc(_genshinService, _telemetryService),
+      act: (bloc) => bloc.add(const BannerHistoryItemEvent.init(version: 2.4)),
+      verify: (bloc) => _validVersionCheck(bloc.state, 2.4),
     );
 
     blocTest<BannerHistoryItemBloc, BannerHistoryItemState>(

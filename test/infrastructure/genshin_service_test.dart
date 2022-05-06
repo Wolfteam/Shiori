@@ -892,6 +892,10 @@ void main() {
           expect(banner.version, version);
           expect(banner.until.isAfter(banner.from), isTrue);
           expect(banner.items.isNotEmpty, isTrue);
+
+          final keys = banner.items.map((e) => e.key).toList();
+          expect(keys.toSet().length == keys.length, isTrue);
+
           for (final item in banner.items) {
             checkItemKeyAndImage(item.key, item.image);
             expect(item.rarity >= 4, isTrue);

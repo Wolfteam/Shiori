@@ -14,3 +14,12 @@ class BannerHistoryPeriodModel with _$BannerHistoryPeriodModel {
     required List<ItemCommonWithRarityAndType> items,
   }) = _BannerHistoryPeriodModel;
 }
+
+@freezed
+class BannerHistoryGroupedPeriodModel with _$BannerHistoryGroupedPeriodModel {
+  const factory BannerHistoryGroupedPeriodModel({
+    required String from,
+    required String until,
+    required List<ItemCommonWithRarityAndType> items,
+  }) = _BannerHistoryGroupedPeriodModel;
+}
