@@ -10,6 +10,7 @@ import 'package:shiori/domain/extensions/string_extensions.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/genshin_service.dart';
 import 'package:shiori/domain/services/locale_service.dart';
+import 'package:shiori/domain/utils/date_utils.dart';
 
 class GenshinServiceImpl implements GenshinService {
   final LocaleService _localeService;
@@ -1060,6 +1061,67 @@ class GenshinServiceImpl implements GenshinService {
     assert(charts.isNotEmpty, 'Element chart items must not be empty');
 
     return charts;
+  }
+
+  //TODO: CALL THIS METHOD IN THE MAIN PAGE
+  @override
+  List<CharacterBirthdayModel> getCharacterBirthdays({int? month, int? day}) {
+    if (month == null && day == null) {
+      throw Exception('You must provide a month, day or both');
+    }
+
+    if (month != null && (month < DateTime.january || month > DateTime.december)) {
+      throw Exception('The provided month = $month is not valid');
+    }
+
+    if (day != null && day <= 0) {
+      throw Exception('The provided day = $day is not valid');
+    }
+
+    if (day != null && month != null) {
+      final lastDay = DateUtils.getLastDayOfMonth(month);
+      if (day > lastDay) {
+        throw Exception('The provided day = $day is not valid for month = $month');
+      }
+    }
+
+    return _charactersFile.characters.where((char) {
+      if (char.isComingSoon) {
+        return false;
+      }
+
+      if (char.birthday.isNullEmptyOrWhitespace) {
+        return false;
+      }
+
+      final charBirthday = _localeService.getCharBirthDate(char.birthday);
+      if (month != null && day != null) {
+        return charBirthday.month == month && charBirthday.day == day;
+      }
+      if (month != null) {
+        return charBirthday.month == month;
+      }
+      if (day != null) {
+        return charBirthday.day == day;
+      }
+
+      return true;
+    }).map((e) {
+      //TODO: CHECK BENNET
+      final char = getCharacterForCard(e.key);
+      final birthday = _localeService.getCharBirthDate(e.birthday, useCurrentYear: true);
+      final now = DateTime.now();
+      final nowFromZero = DateTime(now.year, now.month, now.day);
+      return CharacterBirthdayModel(
+        key: e.key,
+        name: char.name,
+        image: char.image,
+        birthday: birthday,
+        birthdayString: e.birthday!,
+        daysUntilBirthday: nowFromZero.difference(birthday).inDays.abs(),
+      );
+    }).toList()
+      ..sort((x, y) => x.daysUntilBirthday.compareTo(y.daysUntilBirthday));
   }
 
   CharacterCardModel _toCharacterForCard(CharacterFileModel character) {

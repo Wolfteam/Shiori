@@ -12,7 +12,7 @@ class LocaleServiceImpl implements LocaleService {
   LocaleServiceImpl(this._settingsService);
 
   @override
-  DateTime getCharBirthDate(String? birthday) {
+  DateTime getCharBirthDate(String? birthday, {bool useCurrentYear = false}) {
     if (birthday.isNullEmptyOrWhitespace) {
       throw Exception('Character birthday must not be null');
     }
@@ -23,7 +23,18 @@ class LocaleServiceImpl implements LocaleService {
     final locale = getFormattedLocale(_settingsService.language);
     final format = DateFormat('MM/dd/yyyy', locale);
     //The format is in MM/dd, I use 2024 since that is a leap-year
-    return format.parse('$birthday/2024');
+    final now = DateTime.now();
+    //TODO: TEST THIS WITH BENNET SINCE THE NOW DATE MAY NOT BE A LEAP YEAR
+    final year = useCurrentYear ? now.year : 2024;
+    final charBirthday = format.parse('$birthday/$year');
+    if (!useCurrentYear) {
+      return charBirthday;
+    }
+    //TODO: TEST THIS WITH BENNET
+    if (charBirthday.isBefore(now)) {
+      return charBirthday.add(const Duration(days: 365));
+    }
+    return charBirthday;
   }
 
   @override

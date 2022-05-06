@@ -171,4 +171,7 @@ class TelemetryServiceImpl implements TelemetryService {
 
   @override
   Future<void> trackChartsOpened() => trackEventAsync('Charts-Opened');
+
+  @override
+  Future<void> trackBirthdaysPerMonthOpened(int month) => trackEventAsync('BirthdaysPerMonth-Opened', {'Month': '$month'});
 }
