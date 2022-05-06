@@ -69,4 +69,6 @@ abstract class TelemetryService {
   Future<void> trackItemReleaseHistoryOpened(String itemKey);
 
   Future<void> trackChartsOpened();
+
+  Future<void> trackBirthdaysPerMonthOpened(int month);
 }

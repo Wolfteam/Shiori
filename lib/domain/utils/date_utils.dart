@@ -22,4 +22,26 @@ class DateUtils {
     final format = useTwentyFourHoursFormat ? twentyFourHoursFormat : defaultFormat;
     return formatDate(date, format: format);
   }
+
+  static int getLastDayOfMonth(int month) {
+    final now = DateTime.now();
+    return DateTime(now.year, month + 1, 0).day;
+  }
+
+  static String getMonthFullName(int month) {
+    final formatter = DateFormat('MMMM');
+    final formatted = formatter.format(DateTime(DateTime.now().year, month));
+    //languages like spanish need the first letter in upper case
+    return toBeginningOfSentenceCase(formatted)!;
+  }
+
+  static List<String> getAllMonthsName({String format = 'MMM'}) {
+    final now = DateTime.now();
+    final formatter = DateFormat(format);
+    return List.generate(DateTime.monthsPerYear, (int index) {
+      final date = DateTime(now.year, index + 1);
+      final formatted = formatter.format(date);
+      return toBeginningOfSentenceCase(formatted)!;
+    });
+  }
 }
