@@ -428,5 +428,14 @@
   "versionDesc": "Version desc.",
   "releaseHistory": "Release History",
   "selectAnOption": "Select an option",
-  "details": "Details"
+  "details": "Details",
+  "charts": "Charts",
+  "birthdays": "Birthdays",
+  "topCharacters": "Top characters",
+  "topWeapons": "Top weapons",
+  "xStarsWithMostReruns": "{xStars} with most reruns",
+  "xStarsWithLeastReruns": "{xStars} with least reruns",
+  "birthdaysPerMonth": "Birthdays per month",
+  "mostAndLeastReleased": "Most and least released",
+  "mostAndLeastRepeated": "Most and least repeated"
 }

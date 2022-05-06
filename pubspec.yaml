@@ -28,6 +28,7 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_bloc: ^7.3.1
+  fl_chart: ^0.50.1
   flutter_colorpicker: ^1.0.3
   flutter_inappwebview: ^5.3.2
   flutter_local_notifications: ^9.1.4
