@@ -162,6 +162,12 @@ class Injection {
     return ItemReleaseHistoryBloc(genshinService, telemetryService);
   }
 
+  static ChartsBloc get chartsBloc {
+    final genshinService = getIt<GenshinService>();
+    final telemetryService = getIt<TelemetryService>();
+    return ChartsBloc(genshinService, telemetryService);
+  }
+
   //TODO: USE THIS PROP
   // static CalculatorAscMaterialsItemBloc get calculatorAscMaterialsItemBloc {
   //   final genshinService = getIt<GenshinService>();
