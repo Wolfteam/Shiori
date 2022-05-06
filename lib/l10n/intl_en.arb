@@ -437,5 +437,7 @@
   "xStarsWithLeastReruns": "{xStars} with least reruns",
   "birthdaysPerMonth": "Birthdays per month",
   "mostAndLeastReleased": "Most and least released",
-  "mostAndLeastRepeated": "Most and least repeated"
+  "mostAndLeastRepeated": "Most and least repeated",
+  "inXDays": "in {days} day(s)",
+  "today": "Today"
 }

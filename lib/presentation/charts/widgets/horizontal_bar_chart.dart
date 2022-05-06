@@ -21,6 +21,7 @@ class HorizontalBarChart extends StatelessWidget {
     this.onPointTap,
   }) : super(key: key);
 
+  //TODO: MOVE THE ELEMENTS LOGIC OUT OF HERE
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);

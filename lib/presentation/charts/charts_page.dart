@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:intl/intl.dart';
 import 'package:shiori/application/bloc.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/extensions/iterable_extensions.dart';
+import 'package:shiori/domain/utils/date_utils.dart' as date_utils;
 import 'package:shiori/generated/l10n.dart';
 import 'package:shiori/injection.dart';
 import 'package:shiori/presentation/banner_history/widgets/version_details_dialog.dart';
 import 'package:shiori/presentation/character/character_page.dart';
+import 'package:shiori/presentation/charts/widgets/birthdays_per_month_dialog.dart';
 import 'package:shiori/presentation/charts/widgets/chart_card.dart';
 import 'package:shiori/presentation/charts/widgets/chart_legend.dart';
 import 'package:shiori/presentation/charts/widgets/horizontal_bar_chart.dart';
@@ -48,13 +49,6 @@ class ChartsPage extends StatelessWidget {
     final theme = Theme.of(context);
     final mq = MediaQuery.of(context);
     final s = S.of(context);
-
-    final now = DateTime.now();
-    final formatter = DateFormat('MMM');
-    final List<String> months = List.generate(DateTime.monthsPerYear, (int index) {
-      final date = DateTime(now.year, index + 1);
-      return formatter.format(date);
-    });
 
     return BlocProvider<ChartsBloc>(
       create: (context) => Injection.chartsBloc..add(const ChartsEvent.init()),
@@ -200,7 +194,14 @@ class ChartsPage extends StatelessWidget {
                         width: 300,
                         height: 400,
                         title: s.mostAndLeastRepeated,
-                        child: VerticalBarChart(items: state.birthdays, months: months),
+                        child: VerticalBarChart(
+                          items: state.birthdays,
+                          months: date_utils.DateUtils.getAllMonthsName(),
+                          onBarChartTap: (index) => showDialog(
+                            context: context,
+                            builder: (_) => BirthdaysPerMonthDialog(month: index + 1),
+                          ),
+                        ),
                       ),
                     ],
                   );

@@ -31,6 +31,8 @@ class VerticalBarChart extends StatelessWidget {
       fontSize: 14,
     );
     //TODO: TOOLTIP COLOR
+    //TODO: HIGHLIGHT THE CURRENT BAR
+    //TODO: MOVE THE BIRTHDAY LOGIC OUT OF HERE
     return BarChart(
       BarChartData(
         maxY: maxValue,
@@ -86,7 +88,12 @@ class VerticalBarChart extends StatelessWidget {
               (e) => BarChartGroupData(
                 x: e.month,
                 barRods: [
-                  BarChartRodData(toY: e.items.length.toDouble(), color: theme.colorScheme.primary),
+                  BarChartRodData(
+                    toY: e.items.length.toDouble(),
+                    color: theme.colorScheme.primary,
+                    borderRadius: BorderRadius.zero,
+                    width: 10,
+                  ),
                 ],
               ),
             )
