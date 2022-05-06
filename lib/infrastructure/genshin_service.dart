@@ -1017,9 +1017,20 @@ class GenshinServiceImpl implements GenshinService {
       ..sort((x, y) => x.version.compareTo(y.version));
     final charts = <ChartElementItemModel>[];
     final characters = getCharactersForCard();
+    final usedChars = <double, List<String>>{};
 
     for (final banner in banners) {
       for (final key in banner.itemKeys) {
+        final bannerHasAlreadyBeenAdded = usedChars.containsKey(banner.version);
+        final characterAlreadyAppearedInThisBanner = usedChars.entries.any((el) => el.key == banner.version && el.value.contains(key));
+        if (!bannerHasAlreadyBeenAdded) {
+          usedChars.putIfAbsent(banner.version, () => [key]);
+        } else if (characterAlreadyAppearedInThisBanner) {
+          continue;
+        } else {
+          usedChars.update(banner.version, (value) => [...value, key]);
+        }
+
         final char = characters.firstWhere((el) => el.key == key);
         final existing = charts.firstWhereOrNull((el) => el.type == char.elementType);
         final points = existing?.points ?? [];

@@ -6,6 +6,7 @@ import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/extensions/iterable_extensions.dart';
 import 'package:shiori/generated/l10n.dart';
 import 'package:shiori/injection.dart';
+import 'package:shiori/presentation/banner_history/widgets/version_details_dialog.dart';
 import 'package:shiori/presentation/character/character_page.dart';
 import 'package:shiori/presentation/charts/widgets/chart_card.dart';
 import 'package:shiori/presentation/charts/widgets/chart_legend.dart';
@@ -182,7 +183,17 @@ class ChartsPage extends StatelessWidget {
                               )
                               .toList(),
                         ),
-                        child: HorizontalBarChart(items: state.filteredElements),
+                        child: HorizontalBarChart(
+                          items: state.filteredElements,
+                          canValueBeRendered: ChartsBloc.isValidVersion,
+                          onPointTap: (version) => showDialog(
+                            context: context,
+                            builder: (_) => VersionDetailsDialog(
+                              version: version,
+                              showWeapons: false,
+                            ),
+                          ),
+                        ),
                       ),
                       Text(s.birthdays, style: theme.textTheme.headline5),
                       ChartCard(

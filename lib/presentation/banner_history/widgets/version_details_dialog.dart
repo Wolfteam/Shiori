@@ -17,11 +17,16 @@ const _dateFormat = 'yyyy/MM/dd';
 
 class VersionDetailsDialog extends StatelessWidget {
   final double version;
+  final bool showWeapons;
+  final bool showCharacters;
 
   const VersionDetailsDialog({
     Key? key,
     required this.version,
-  }) : super(key: key);
+    this.showCharacters = true,
+    this.showWeapons = true,
+  })  : assert(!(showCharacters == false && showWeapons == false), 'You must show either characters, weapons or both'),
+        super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -48,6 +53,8 @@ class VersionDetailsDialog extends StatelessWidget {
                       return _VersionDetailPeriod(
                         from: group.from,
                         until: group.until,
+                        showCharacters: showCharacters,
+                        showWeapons: showWeapons,
                         items: e.expand((el) => el.items).toList(),
                       );
                     },
@@ -73,12 +80,16 @@ class _VersionDetailPeriod extends StatelessWidget {
   final DateTime from;
   final DateTime until;
   final List<ItemCommonWithRarityAndType> items;
+  final bool showWeapons;
+  final bool showCharacters;
 
   const _VersionDetailPeriod({
     Key? key,
     required this.from,
     required this.until,
     required this.items,
+    required this.showCharacters,
+    required this.showWeapons,
   }) : super(key: key);
 
   @override
@@ -89,6 +100,10 @@ class _VersionDetailPeriod extends StatelessWidget {
     final until = DateFormat(_dateFormat).format(this.until);
     final characters = items.where((el) => el.type == ItemType.character).toList()..sort((x, y) => y.rarity.compareTo(x.rarity));
     final weapons = items.where((el) => el.type == ItemType.weapon).toList()..sort((x, y) => y.rarity.compareTo(x.rarity));
+
+    if (characters.isEmpty && !showWeapons || weapons.isEmpty && !showCharacters) {
+      return const SizedBox.shrink();
+    }
 
     return Container(
       margin: const EdgeInsets.only(bottom: 20),
@@ -103,14 +118,14 @@ class _VersionDetailPeriod extends StatelessWidget {
             ],
           ),
           Divider(color: theme.colorScheme.primary),
-          if (characters.isNotEmpty) Text(s.characters, style: theme.textTheme.subtitle1),
-          if (characters.isNotEmpty)
+          if (characters.isNotEmpty && showCharacters) Text(s.characters, style: theme.textTheme.subtitle1),
+          if (characters.isNotEmpty && showCharacters)
             _Items(
               type: BannerHistoryItemType.character,
               items: characters,
             ),
-          if (weapons.isNotEmpty) Text(s.weapons, style: theme.textTheme.subtitle1),
-          if (weapons.isNotEmpty)
+          if (weapons.isNotEmpty && showWeapons) Text(s.weapons, style: theme.textTheme.subtitle1),
+          if (weapons.isNotEmpty && showWeapons)
             _Items(
               type: BannerHistoryItemType.weapon,
               items: weapons,

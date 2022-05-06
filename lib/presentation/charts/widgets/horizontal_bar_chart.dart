@@ -6,12 +6,19 @@ import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/presentation/shared/extensions/element_type_extensions.dart';
 import 'package:shiori/presentation/shared/styles.dart';
 
+typedef CanValueBeRendered = bool Function(double);
+typedef OnPointTap = void Function(double);
+
 class HorizontalBarChart extends StatelessWidget {
   final List<ChartElementItemModel> items;
+  final CanValueBeRendered canValueBeRendered;
+  final OnPointTap? onPointTap;
 
   const HorizontalBarChart({
     Key? key,
     required this.items,
+    required this.canValueBeRendered,
+    this.onPointTap,
   }) : super(key: key);
 
   @override
@@ -33,6 +40,12 @@ class HorizontalBarChart extends StatelessWidget {
           maxY: maxY,
           lineTouchData: LineTouchData(
             handleBuiltInTouches: true,
+            touchCallback: (event, response) {
+              if (event is FlTapUpEvent && response?.lineBarSpots != null && response!.lineBarSpots!.isNotEmpty) {
+                final version = response.lineBarSpots!.first.x + 1;
+                onPointTap?.call(version);
+              }
+            },
             touchTooltipData: LineTouchTooltipData(
               tooltipBgColor: theme.backgroundColor,
             ),
@@ -45,7 +58,7 @@ class HorizontalBarChart extends StatelessWidget {
                 reservedSize: 32,
                 interval: xIntervals,
                 //TODO: TOOLTIPS
-                getTitlesWidget: (value, meta) => value + 1 >= 1.7 && value + 1 < 2
+                getTitlesWidget: (value, meta) => !canValueBeRendered(value)
                     ? Container()
                     : Padding(
                         padding: const EdgeInsets.only(top: 10.0),

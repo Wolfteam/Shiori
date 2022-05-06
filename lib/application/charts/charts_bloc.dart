@@ -25,6 +25,13 @@ class ChartsBloc extends Bloc<ChartsEvent, ChartsState> {
     yield s;
   }
 
+  //TODO: MAYBE REMOVE THIS FUNCTION FROM HERE
+  //Some versions were skipped (e.g: 1.7, 1.8, 1.9), that's why we use this function
+  //to determine if the version can be skipped or no
+  static bool isValidVersion(double value) {
+    return value + 1 < 1.7 || value + 1 >= 2;
+  }
+
   Future<ChartsState> _init() async {
     await _telemetryService.trackChartsOpened();
     final tops = [
