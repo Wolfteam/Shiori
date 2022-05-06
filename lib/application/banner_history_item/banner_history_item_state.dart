@@ -6,6 +6,6 @@ class BannerHistoryItemState with _$BannerHistoryItemState {
 
   const factory BannerHistoryItemState.loadedState({
     required double version,
-    required List<BannerHistoryPeriodModel> items,
+    required List<BannerHistoryGroupedPeriodModel> items,
   }) = _LoadedState;
 }
