@@ -2,6 +2,7 @@ export 'artifact/artifact_bloc.dart';
 export 'artifacts/artifacts_bloc.dart';
 export 'banner_history/banner_history_bloc.dart';
 export 'banner_history_item/banner_history_item_bloc.dart';
+export 'birthdays_per_month/birthdays_per_month_bloc.dart';
 export 'calculator_asc_materials/material_item/calculator_asc_materials_item_bloc.dart';
 export 'calculator_asc_materials/material_item_quantity/calculator_asc_materials_item_update_quantity_bloc.dart';
 export 'calculator_asc_materials/materials/calculator_asc_materials_bloc.dart';
