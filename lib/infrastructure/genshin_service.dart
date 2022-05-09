@@ -6,6 +6,7 @@ import 'package:flutter/services.dart' show rootBundle;
 import 'package:shiori/domain/app_constants.dart';
 import 'package:shiori/domain/assets.dart';
 import 'package:shiori/domain/enums/enums.dart';
+import 'package:shiori/domain/extensions/double_extensions.dart';
 import 'package:shiori/domain/extensions/string_extensions.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/genshin_service.dart';
@@ -1013,8 +1014,10 @@ class GenshinServiceImpl implements GenshinService {
   }
 
   @override
-  List<ChartElementItemModel> getElementsForCharts(int versionStartsOn) {
-    final banners = _bannerHistoryFile.banners.where((el) => el.type == BannerHistoryItemType.character).toList()
+  List<ChartElementItemModel> getElementsForCharts(double fromVersion, double untilVersion) {
+    final banners = _bannerHistoryFile.banners
+        .where((el) => el.type == BannerHistoryItemType.character && el.version >= fromVersion && el.version <= untilVersion)
+        .toList()
       ..sort((x, y) => x.version.compareTo(y.version));
     final charts = <ChartElementItemModel>[];
     final characters = getCharactersForCard();
@@ -1036,10 +1039,10 @@ class GenshinServiceImpl implements GenshinService {
         final char = characters.firstWhere((el) => el.key == key);
         final existing = charts.firstWhereOrNull((el) => el.type == char.elementType);
         final points = existing?.points ?? [];
-        final existingPoint = points.firstWhereOrNull((el) => el.x == banner.version - versionStartsOn);
+        final existingPoint = points.firstWhereOrNull((el) => el.x == banner.version);
         final newPoint = existingPoint != null
-            ? Point<double>(existingPoint.x, existingPoint.y + incrementY)
-            : Point<double>(banner.version - versionStartsOn, incrementY);
+            ? Point<double>(existingPoint.x, (existingPoint.y + incrementY).truncateToDecimalPlaces())
+            : Point<double>(banner.version, incrementY);
 
         if (existing == null) {
           final newItem = ChartElementItemModel(type: char.elementType, points: [newPoint]);

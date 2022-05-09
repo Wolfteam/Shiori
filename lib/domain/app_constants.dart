@@ -114,6 +114,7 @@ const int maxItemLevel = 90;
 const minResinValue = 0;
 const maxResinValue = 160;
 const resinRefillsEach = 8;
+const gameVersionIncrementsBy = 0.10;
 
 // According to this page, the server reset happens at 4 am
 // https://game8.co/games/Genshin-Impact/archives/301599
