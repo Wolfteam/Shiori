@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:responsive_builder/responsive_builder.dart';
 import 'package:shiori/application/bloc.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/models/models.dart';
@@ -99,12 +100,10 @@ class _VersionDetailPeriod extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(s.fromDate(from), style: theme.textTheme.subtitle1!.copyWith(fontWeight: FontWeight.bold)),
-              Text(s.untilDate(until), style: theme.textTheme.subtitle1!.copyWith(fontWeight: FontWeight.bold)),
-            ],
+          ScreenTypeLayout(
+            mobile: _DetailDates(from: from, until: until, useRow: false),
+            tablet: _DetailDates(from: from, until: until, useRow: true),
+            desktop: _DetailDates(from: from, until: until, useRow: true),
           ),
           Divider(color: theme.colorScheme.primary),
           if (characters.isNotEmpty && showCharacters) Text(s.characters, style: theme.textTheme.subtitle1),
@@ -156,6 +155,60 @@ class _Items extends StatelessWidget {
           }
         },
       ),
+    );
+  }
+}
+
+class _DetailDates extends StatelessWidget {
+  final String from;
+  final String until;
+  final bool useRow;
+
+  const _DetailDates({
+    Key? key,
+    required this.from,
+    required this.until,
+    required this.useRow,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    final s = S.of(context);
+    final theme = Theme.of(context);
+    final fromString = s.fromDate(from);
+    final untilString = s.untilDate(until);
+    final fromWidget = Tooltip(
+      message: fromString,
+      child: Text(
+        fromString,
+        overflow: TextOverflow.ellipsis,
+        style: theme.textTheme.subtitle1!.copyWith(fontWeight: FontWeight.bold),
+      ),
+    );
+    final untilWidget = Tooltip(
+      message: untilString,
+      child: Text(
+        untilString,
+        overflow: TextOverflow.ellipsis,
+        style: theme.textTheme.subtitle1!.copyWith(fontWeight: FontWeight.bold),
+      ),
+    );
+    if (useRow) {
+      return Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Expanded(child: fromWidget),
+          Expanded(child: untilWidget),
+        ],
+      );
+    }
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        fromWidget,
+        untilWidget,
+      ],
     );
   }
 }

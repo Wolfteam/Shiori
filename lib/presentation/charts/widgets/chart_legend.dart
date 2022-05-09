@@ -26,6 +26,7 @@ class ChartLegendIndicator extends StatelessWidget {
   final Function? tap;
   final bool expandText;
   final bool lineThrough;
+  final double? width;
 
   const ChartLegendIndicator({
     Key? key,
@@ -35,6 +36,7 @@ class ChartLegendIndicator extends StatelessWidget {
     this.tap,
     this.expandText = true,
     this.lineThrough = false,
+    this.width,
   }) : super(key: key);
 
   @override
@@ -48,40 +50,38 @@ class ChartLegendIndicator extends StatelessWidget {
     );
     return Container(
       margin: expandText ? const EdgeInsets.symmetric(vertical: 3) : Styles.edgeInsetAll5,
-      child: InkWell(
-        onTap: tap != null ? () => tap?.call() : null,
-        child: Row(
-          children: [
-            Container(
-              width: size,
-              height: size,
-              decoration: BoxDecoration(
-                color: color,
-                borderRadius: BorderRadius.circular(5),
+      width: width,
+      child: Tooltip(
+        message: text,
+        child: InkWell(
+          onTap: tap != null ? () => tap?.call() : null,
+          child: Row(
+            children: [
+              Container(
+                width: size,
+                height: size,
+                decoration: BoxDecoration(
+                  color: color,
+                  borderRadius: BorderRadius.circular(5),
+                ),
               ),
-            ),
-            const SizedBox(width: 4),
-            if (expandText)
-              Expanded(
-                child: Tooltip(
-                  message: text,
+              const SizedBox(width: 4),
+              if (expandText)
+                Expanded(
                   child: Text(
                     text,
                     overflow: TextOverflow.ellipsis,
                     style: textStyle,
                   ),
-                ),
-              )
-            else
-              Tooltip(
-                message: text,
-                child: Text(
+                )
+              else
+                Text(
                   text,
                   overflow: TextOverflow.ellipsis,
                   style: textStyle,
-                ),
-              )
-          ],
+                )
+            ],
+          ),
         ),
       ),
     );

@@ -43,7 +43,7 @@ class HorizontalBarChart extends StatelessWidget {
     required this.getBottomText,
     required this.getLeftText,
     this.getTooltipItems,
-    this.xIntervals = 0.1,
+    this.xIntervals = 0.10,
     this.yIntervals = 1.0,
     this.minX = 0,
     this.minY = 0,
@@ -86,7 +86,7 @@ class HorizontalBarChart extends StatelessWidget {
                 reservedSize: 32,
                 interval: xIntervals,
                 getTitlesWidget: (value, meta) => !canValueBeRendered(value)
-                    ? Container()
+                    ? const SizedBox.shrink()
                     : Padding(
                         padding: const EdgeInsets.only(top: 10.0),
                         child: Text(
@@ -94,7 +94,7 @@ class HorizontalBarChart extends StatelessWidget {
                           style: const TextStyle(
                             color: Colors.grey,
                             fontWeight: FontWeight.bold,
-                            fontSize: 16,
+                            fontSize: 12,
                           ),
                         ),
                       ),
@@ -110,7 +110,7 @@ class HorizontalBarChart extends StatelessWidget {
                   style: const TextStyle(
                     color: Colors.grey,
                     fontWeight: FontWeight.bold,
-                    fontSize: 14,
+                    fontSize: 12,
                   ),
                 ),
                 showTitles: true,

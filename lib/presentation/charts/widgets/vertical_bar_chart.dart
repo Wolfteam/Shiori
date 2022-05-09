@@ -41,7 +41,7 @@ class VerticalBarChart extends StatelessWidget {
     const textStyle = TextStyle(
       color: Colors.grey,
       fontWeight: FontWeight.bold,
-      fontSize: 14,
+      fontSize: 12,
     );
     return BarChart(
       BarChartData(

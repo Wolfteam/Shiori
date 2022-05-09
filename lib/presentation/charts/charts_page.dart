@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:responsive_builder/responsive_builder.dart';
 import 'package:shiori/application/bloc.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/extensions/iterable_extensions.dart';
@@ -54,9 +55,20 @@ class ChartsPage extends StatelessWidget {
     final s = S.of(context);
     final tooltipColor = Colors.black.withOpacity(0.7);
     final monthNames = date_utils.DateUtils.getAllMonthsName();
+    final maxNumberOfColumns = getValueForScreenType<int>(context: context, mobile: 5, tablet: 10, desktop: 10);
 
-    return BlocProvider<ChartsBloc>(
-      create: (context) => Injection.chartsBloc..add(const ChartsEvent.init()),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider<ChartTopsBloc>(
+          create: (context) => Injection.chartTopsBloc..add(const ChartTopsEvent.init()),
+        ),
+        BlocProvider<ChartElementsBloc>(
+          create: (context) => Injection.chartElementsBloc..add(ChartElementsEvent.init(maxNumberOfColumns: maxNumberOfColumns)),
+        ),
+        BlocProvider<ChartBirthdaysBloc>(
+          create: (context) => Injection.chartBirthdaysBloc..add(const ChartBirthdaysEvent.init()),
+        ),
+      ],
       child: Scaffold(
         appBar: AppBar(
           title: Text(s.charts),
@@ -64,162 +76,215 @@ class ChartsPage extends StatelessWidget {
         body: SingleChildScrollView(
           child: Padding(
             padding: Styles.edgeInsetAll5,
-            child: BlocBuilder<ChartsBloc, ChartsState>(
-              builder: (context, state) => state.map(
-                loading: (_) => const Loading(useScaffold: false),
-                initial: (state) {
-                  final maxYValueForBirthdays = state.birthdays.map((e) => e.items.length).reduce(max).toDouble() + 1;
-                  return Column(
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
-                    children: [
-                      Text(s.topCharacters, style: theme.textTheme.headline5),
-                      SizedBox(
-                        height: _topCardBoxHeight,
-                        //TODO: SPACE BETWEEN ITEMS
-                        child: ListView.builder(
-                          physics: const BouncingScrollPhysics(),
-                          scrollDirection: Axis.horizontal,
-                          itemCount: _topCharacterTypes.length,
-                          itemBuilder: (ctx, index) {
-                            final type = _topCharacterTypes[index];
-                            final items = state.tops.where((el) => el.type == type).toList();
-                            return ChartCard(
-                              height: _topCardHeight,
-                              width: _topCardWidth,
-                              title: s.translateChartType(type),
-                              //TODO: THIS TEXT
-                              bottom: Text(
-                                'Number of times a character was released',
-                                style: theme.textTheme.caption,
-                                textAlign: TextAlign.center,
-                              ),
-                              child: Row(
-                                children: [
-                                  Flexible(flex: 70, fit: FlexFit.tight, child: TopPieChart(items: items, colors: _topCharacterColors)),
-                                  Flexible(
-                                    flex: 30,
-                                    fit: FlexFit.tight,
-                                    child: ChartLegend(
-                                      indicators: items
-                                          .mapIndex(
-                                            (e, i) => ChartLegendIndicator(
-                                              text: e.name,
-                                              color: _topCharacterColors[i],
-                                              tap: () => CharacterPage.route(e.key, context),
-                                            ),
-                                          )
-                                          .toList(),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            );
-                          },
-                        ),
-                      ),
-                      Text(s.topWeapons, style: theme.textTheme.headline5),
-                      SizedBox(
-                        height: _topCardBoxHeight,
-                        child: ListView.builder(
-                          physics: const BouncingScrollPhysics(),
-                          scrollDirection: Axis.horizontal,
-                          itemCount: _topWeaponTypes.length,
-                          itemBuilder: (ctx, index) {
-                            final type = _topWeaponTypes[index];
-                            final items = state.tops.where((el) => el.type == type).toList();
-                            return ChartCard(
-                              height: _topCardHeight,
-                              width: _topCardWidth,
-                              title: s.translateChartType(type),
-                              bottom: Text(
-                                'Number of times a character was released',
-                                style: theme.textTheme.caption,
-                                textAlign: TextAlign.center,
-                              ),
-                              child: Row(
-                                children: [
-                                  Flexible(flex: 70, fit: FlexFit.tight, child: TopPieChart(items: items, colors: _topWeaponColors)),
-                                  Flexible(
-                                    flex: 30,
-                                    fit: FlexFit.tight,
-                                    child: ChartLegend(
-                                      indicators: items
-                                          .mapIndex(
-                                            (e, i) => ChartLegendIndicator(
-                                              text: e.name,
-                                              color: _topWeaponColors[i],
-                                              tap: () => WeaponPage.route(e.key, context),
-                                            ),
-                                          )
-                                          .toList(),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            );
-                          },
-                        ),
-                      ),
-                      const SizedBox(height: 10),
-                      Text(s.elements, style: theme.textTheme.headline5),
-                      //TODO: VERSIONS WILL GROW OVER TIME AND THIS CHART MAY LOOK UGLY
-                      ChartCard(
-                        width: mq.size.width,
-                        height: 400,
-                        title: s.mostAndLeastReleased,
-                        bottom: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: state.elements
-                              .map(
-                                (e) => ChartLegendIndicator(
-                                  color: e.type.getElementColorFromContext(context),
-                                  text: s.translateElementType(e.type),
-                                  expandText: false,
-                                  lineThrough: state.selectedElementTypes.contains(e.type),
-                                  tap: () => context.read<ChartsBloc>().add(ChartsEvent.elementSelected(type: e.type)),
-                                ),
-                              )
-                              .toList(),
-                        ),
-                        child: HorizontalBarChart(
-                          items: state.filteredElements
-                              .mapIndex(
-                                (e, i) => HorizontalBarDataModel(i, e.type.getElementColor(true), e.points),
-                              )
-                              .toList(),
-                          canValueBeRendered: ChartsBloc.isValidVersion,
-                          getBottomText: (value) => (value + ChartsBloc.versionStartsOn).toStringAsFixed(1),
-                          getLeftText: (value) => value.toInt().toString(),
-                          toolTipBgColor: tooltipColor,
-                          getTooltipItems: (touchedSpots) => touchedSpots.map(
-                            (touchedSpot) {
-                              final quantity = touchedSpot.y;
-                              final element = state.filteredElements[touchedSpot.barIndex];
-                              final textStyle = TextStyle(
-                                color: touchedSpot.bar.gradient?.colors.first ?? touchedSpot.bar.color ?? theme.colorScheme.primary,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 15,
-                              );
-                              final text = '${s.translateElementType(element.type)} (${quantity.toInt()})';
-                              return LineTooltipItem(text, textStyle);
-                            },
-                          ).toList()
-                            ..sort((x, y) => x.text.compareTo(y.text)),
-                          onPointTap: (value) => showDialog(
-                            context: context,
-                            builder: (_) => VersionDetailsDialog(
-                              version: value + ChartsBloc.versionStartsOn,
-                              showWeapons: false,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                Text(s.topCharacters, style: theme.textTheme.headline5),
+                SizedBox(
+                  height: _topCardBoxHeight,
+                  child: BlocBuilder<ChartTopsBloc, ChartTopsState>(
+                    builder: (context, state) => state.maybeMap(
+                      loaded: (state) => ListView.builder(
+                        physics: const BouncingScrollPhysics(),
+                        scrollDirection: Axis.horizontal,
+                        itemCount: _topCharacterTypes.length,
+                        itemBuilder: (ctx, index) {
+                          final type = _topCharacterTypes[index];
+                          final items = state.tops.where((el) => el.type == type).toList();
+                          return ChartCard(
+                            height: _topCardHeight,
+                            width: _topCardWidth,
+                            title: s.translateChartType(type),
+                            //TODO: THIS TEXT
+                            bottom: Text(
+                              'Number of times a character was released',
+                              style: theme.textTheme.caption,
+                              textAlign: TextAlign.center,
                             ),
+                            child: Row(
+                              children: [
+                                Flexible(flex: 70, fit: FlexFit.tight, child: TopPieChart(items: items, colors: _topCharacterColors)),
+                                Flexible(
+                                  flex: 30,
+                                  fit: FlexFit.tight,
+                                  child: ChartLegend(
+                                    indicators: items
+                                        .mapIndex(
+                                          (e, i) => ChartLegendIndicator(
+                                            text: e.name,
+                                            color: _topCharacterColors[i],
+                                            tap: () => CharacterPage.route(e.key, context),
+                                          ),
+                                        )
+                                        .toList(),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          );
+                        },
+                      ),
+                      orElse: () => const Loading(useScaffold: false),
+                    ),
+                  ),
+                ),
+                Text(s.topWeapons, style: theme.textTheme.headline5),
+                SizedBox(
+                  height: _topCardBoxHeight,
+                  child: BlocBuilder<ChartTopsBloc, ChartTopsState>(
+                    builder: (context, state) => state.maybeMap(
+                      loaded: (state) => ListView.builder(
+                        physics: const BouncingScrollPhysics(),
+                        scrollDirection: Axis.horizontal,
+                        itemCount: _topWeaponTypes.length,
+                        itemBuilder: (ctx, index) {
+                          final type = _topWeaponTypes[index];
+                          final items = state.tops.where((el) => el.type == type).toList();
+                          return ChartCard(
+                            height: _topCardHeight,
+                            width: _topCardWidth,
+                            title: s.translateChartType(type),
+                            bottom: Text(
+                              'Number of times a character was released',
+                              style: theme.textTheme.caption,
+                              textAlign: TextAlign.center,
+                            ),
+                            child: Row(
+                              children: [
+                                Flexible(flex: 70, fit: FlexFit.tight, child: TopPieChart(items: items, colors: _topWeaponColors)),
+                                Flexible(
+                                  flex: 30,
+                                  fit: FlexFit.tight,
+                                  child: ChartLegend(
+                                    indicators: items
+                                        .mapIndex(
+                                          (e, i) => ChartLegendIndicator(
+                                            text: e.name,
+                                            color: _topWeaponColors[i],
+                                            tap: () => WeaponPage.route(e.key, context),
+                                          ),
+                                        )
+                                        .toList(),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          );
+                        },
+                      ),
+                      orElse: () => const Loading(useScaffold: false),
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 10),
+                Text(s.elements, style: theme.textTheme.headline5),
+                BlocBuilder<ChartElementsBloc, ChartElementsState>(
+                  builder: (context, state) => state.maybeMap(
+                    loaded: (state) => ChartCard(
+                      width: mq.size.width,
+                      height: 400,
+                      title: s.mostAndLeastReleased,
+                      bottom: Column(
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                        children: [
+                          Wrap(
+                            crossAxisAlignment: WrapCrossAlignment.center,
+                            alignment: WrapAlignment.center,
+                            children: ElementType.values
+                                .map(
+                                  (e) => ChartLegendIndicator(
+                                    width: min(mq.size.width / state.elements.length, 100),
+                                    color: e.getElementColorFromContext(context),
+                                    text: s.translateElementType(e),
+                                    lineThrough: state.selectedElementTypes.contains(e),
+                                    tap: () => context.read<ChartElementsBloc>().add(ChartElementsEvent.elementSelected(type: e)),
+                                  ),
+                                )
+                                .toList(),
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              IconButton(
+                                splashRadius: Styles.smallButtonSplashRadius,
+                                tooltip: s.firstPage,
+                                icon: const Icon(Icons.first_page),
+                                onPressed: !state.canGoToFirstPage
+                                    ? null
+                                    : () => context.read<ChartElementsBloc>().add(const ChartElementsEvent.goToFirstPage()),
+                              ),
+                              IconButton(
+                                splashRadius: Styles.smallButtonSplashRadius,
+                                tooltip: s.previousPage,
+                                icon: const Icon(Icons.chevron_left),
+                                onPressed: !state.canGoToPreviousPage
+                                    ? null
+                                    : () => context.read<ChartElementsBloc>().add(const ChartElementsEvent.goToPreviousPage()),
+                              ),
+                              IconButton(
+                                splashRadius: Styles.smallButtonSplashRadius,
+                                tooltip: s.nextPage,
+                                icon: const Icon(Icons.chevron_right),
+                                onPressed: !state.canGoToNextPage
+                                    ? null
+                                    : () => context.read<ChartElementsBloc>().add(const ChartElementsEvent.goToNextPage()),
+                              ),
+                              IconButton(
+                                splashRadius: Styles.smallButtonSplashRadius,
+                                tooltip: s.lastPage,
+                                icon: const Icon(Icons.last_page),
+                                onPressed: !state.canGoToLastPage
+                                    ? null
+                                    : () => context.read<ChartElementsBloc>().add(const ChartElementsEvent.goToLastPage()),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                      child: HorizontalBarChart(
+                        minX: state.firstVersion,
+                        items: state.filteredElements.mapIndex((e, i) => HorizontalBarDataModel(i, e.type.getElementColor(true), e.points)).toList(),
+                        canValueBeRendered: (value) => context.read<ChartElementsBloc>().isValidVersion(value),
+                        getBottomText: (value) => value.toStringAsFixed(1),
+                        getLeftText: (value) => value.toInt().toString(),
+                        toolTipBgColor: tooltipColor,
+                        getTooltipItems: (touchedSpots) => touchedSpots.map(
+                          (touchedSpot) {
+                            final quantity = touchedSpot.y;
+                            final element = state.filteredElements[touchedSpot.barIndex];
+                            final textStyle = TextStyle(
+                              color: touchedSpot.bar.gradient?.colors.first ?? touchedSpot.bar.color ?? theme.colorScheme.primary,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 15,
+                            );
+                            final text = '${s.translateElementType(element.type)} (${quantity.toInt()})';
+                            return LineTooltipItem(text, textStyle);
+                          },
+                        ).toList()
+                          ..sort((x, y) => x.text.compareTo(y.text)),
+                        onPointTap: (value) => showDialog(
+                          context: context,
+                          builder: (_) => VersionDetailsDialog(
+                            version: value,
+                            showWeapons: false,
                           ),
                         ),
                       ),
-                      Text(s.birthdays, style: theme.textTheme.headline5),
-                      ChartCard(
-                        width: 300,
-                        height: 400,
-                        title: s.mostAndLeastRepeated,
-                        child: VerticalBarChart(
+                    ),
+                    orElse: () => const Loading(useScaffold: false),
+                  ),
+                ),
+                Text(s.birthdays, style: theme.textTheme.headline5),
+                ChartCard(
+                  width: 300,
+                  height: 400,
+                  title: s.mostAndLeastRepeated,
+                  child: BlocBuilder<ChartBirthdaysBloc, ChartBirthdaysState>(
+                    builder: (context, state) => state.maybeMap(
+                      initial: (state) {
+                        final maxYValueForBirthdays = state.birthdays.map((e) => e.items.length).reduce(max).toDouble() + 1;
+                        return VerticalBarChart(
                           items: state.birthdays
                               .mapIndex((e, i) => VerticalBarDataModel(i, theme.colorScheme.primary, e.month, e.items.length.toDouble()))
                               .toList(),
@@ -232,12 +297,13 @@ class ChartsPage extends StatelessWidget {
                             context: context,
                             builder: (_) => BirthdaysPerMonthDialog(month: index + 1),
                           ),
-                        ),
-                      ),
-                    ],
-                  );
-                },
-              ),
+                        );
+                      },
+                      orElse: () => const Loading(useScaffold: false),
+                    ),
+                  ),
+                ),
+              ],
             ),
           ),
         ),
