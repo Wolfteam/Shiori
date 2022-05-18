@@ -15,6 +15,7 @@ export 'characters/character_multi_talent_ascension_model.dart';
 export 'characters/character_passive_talent_model.dart';
 export 'characters/character_skill_card_model.dart';
 export 'characters/character_talent_ascension_model.dart';
+export 'charts/chart_ascension_stat_model.dart';
 export 'charts/chart_birthday_month_model.dart';
 export 'charts/chart_element_item_model.dart';
 export 'charts/chart_top_item_model.dart';

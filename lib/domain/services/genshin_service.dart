@@ -96,6 +96,7 @@ abstract class GenshinService {
   List<ChartTopItemModel> getTopCharts(ChartType type);
   List<ChartBirthdayMonthModel> getCharacterBirthdaysForCharts();
   List<ChartElementItemModel> getElementsForCharts(double fromVersion, double untilVersion);
+  List<ChartAscensionStatModel> getItemAscensionStatsForCharts(ItemType itemType);
 
   List<CharacterBirthdayModel> getCharacterBirthdays({int? month, int? day});
 }

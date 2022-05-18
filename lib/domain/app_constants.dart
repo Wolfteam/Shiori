@@ -87,6 +87,46 @@ int getArtifactMaxNumberOfSubStats(int rarity) {
   }
 }
 
+List<StatType> getWeaponPossibleAscensionStats() {
+  const ignoredSubStats = [
+    StatType.atk,
+    StatType.critAtk,
+    StatType.critRate,
+    StatType.physDmgPercentage,
+    StatType.hp,
+    StatType.electroDmgBonusPercentage,
+    StatType.cryoDmgBonusPercentage,
+    StatType.pyroDmgBonusPercentage,
+    StatType.hydroDmgBonusPercentage,
+    StatType.geoDmgBonusPercentage,
+    StatType.anemoDmgBonusPercentage,
+    StatType.healingBonusPercentage,
+    StatType.def,
+  ];
+
+  return StatType.values.except(ignoredSubStats).toList();
+}
+
+List<StatType> getCharacterPossibleAscensionStats() {
+  return [
+    StatType.elementalMastery,
+    StatType.energyRechargePercentage,
+    StatType.critRatePercentage,
+    StatType.critDmgPercentage,
+    StatType.hpPercentage,
+    StatType.electroDmgBonusPercentage,
+    StatType.cryoDmgBonusPercentage,
+    StatType.pyroDmgBonusPercentage,
+    StatType.hydroDmgBonusPercentage,
+    StatType.geoDmgBonusPercentage,
+    StatType.anemoDmgBonusPercentage,
+    StatType.healingBonusPercentage,
+    StatType.physDmgPercentage,
+    StatType.atkPercentage,
+    StatType.defPercentage,
+  ];
+}
+
 const languagesMap = {
   AppLanguageType.english: LanguageModel('en', 'US'),
   AppLanguageType.spanish: LanguageModel('es', 'ES'),
