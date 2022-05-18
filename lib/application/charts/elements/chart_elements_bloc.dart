@@ -70,7 +70,7 @@ class ChartElementsBloc extends Bloc<ChartElementsEvent, ChartElementsState> {
     );
   }
 
-  ChartElementsState _elementSelectionChanged(_InitialState state, ElementType type) {
+  ChartElementsState _elementSelectionChanged(_LoadedState state, ElementType type) {
     final selectedTypes = [...state.selectedElementTypes];
     if (selectedTypes.contains(type)) {
       selectedTypes.remove(type);
@@ -84,9 +84,9 @@ class ChartElementsBloc extends Bloc<ChartElementsEvent, ChartElementsState> {
   List<ChartElementItemModel> _getFilteredElements(List<ChartElementItemModel> elements, List<ElementType> selectedTypes) =>
       selectedTypes.isEmpty ? elements : elements.where((el) => selectedTypes.contains(el.type)).toList();
 
-  double _getStep(_InitialState state) => state.maxNumberOfColumns * gameVersionIncrementsBy;
+  double _getStep(_LoadedState state) => state.maxNumberOfColumns * gameVersionIncrementsBy;
 
-  ChartElementsState _goToFirstOrLastPage(_InitialState state, bool toFirstPage) {
+  ChartElementsState _goToFirstOrLastPage(_LoadedState state, bool toFirstPage) {
     final firstVersion = versions.first;
     if (toFirstPage) {
       return _newVersionChanged(state, firstVersion);
@@ -100,7 +100,7 @@ class ChartElementsBloc extends Bloc<ChartElementsEvent, ChartElementsState> {
     return _newVersionChanged(state, possibleVersionA);
   }
 
-  ChartElementsState _goToNextPage(_InitialState state) {
+  ChartElementsState _goToNextPage(_LoadedState state) {
     if (!_canGoToNextPage(state.firstVersion)) {
       throw Exception('Cannot go to the next page');
     }
@@ -108,7 +108,7 @@ class ChartElementsBloc extends Bloc<ChartElementsEvent, ChartElementsState> {
     return _newVersionChanged(state, newVersion);
   }
 
-  ChartElementsState _goToPreviousPage(_InitialState state) {
+  ChartElementsState _goToPreviousPage(_LoadedState state) {
     if (!_canGoToPreviousPage(state.firstVersion)) {
       throw Exception('Cannot go to the previous page');
     }
@@ -116,7 +116,7 @@ class ChartElementsBloc extends Bloc<ChartElementsEvent, ChartElementsState> {
     return _newVersionChanged(state, newVersion);
   }
 
-  ChartElementsState _newVersionChanged(_InitialState state, double newFirstVersion) {
+  ChartElementsState _newVersionChanged(_LoadedState state, double newFirstVersion) {
     final step = _getStep(state);
     double newLastVersion = (newFirstVersion + step).truncateToDecimalPlaces();
 

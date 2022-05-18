@@ -23,6 +23,6 @@ class ChartBirthdaysBloc extends Bloc<ChartBirthdaysEvent, ChartBirthdaysState> 
 
   Future<ChartBirthdaysState> _init() async {
     final birthdays = _genshinService.getCharacterBirthdaysForCharts();
-    return ChartBirthdaysState.initial(birthdays: birthdays);
+    return ChartBirthdaysState.loaded(birthdays: birthdays);
   }
 }

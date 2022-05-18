@@ -15,5 +15,5 @@ class ChartElementsState with _$ChartElementsState {
     required bool canGoToPreviousPage,
     required bool canGoToLastPage,
     @Default(<ElementType>[]) List<ElementType> selectedElementTypes,
-  }) = _InitialState;
+  }) = _LoadedState;
 }
