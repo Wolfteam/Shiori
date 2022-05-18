@@ -178,6 +178,11 @@ class Injection {
     return ChartElementsBloc(genshinService);
   }
 
+  static ChartAscensionStatsBloc get chartAscensionStatsBloc {
+    final genshinService = getIt<GenshinService>();
+    return ChartAscensionStatsBloc(genshinService);
+  }
+
   static BirthdaysPerMonthBloc get birthdaysPerMonthBloc {
     final genshinService = getIt<GenshinService>();
     final telemetryService = getIt<TelemetryService>();

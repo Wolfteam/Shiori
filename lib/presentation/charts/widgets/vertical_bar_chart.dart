@@ -1,5 +1,6 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
+import 'package:shiori/domain/extensions/string_extensions.dart';
 
 typedef OnBarChartTap = void Function(int);
 typedef GetText = String Function(double);
@@ -24,6 +25,11 @@ class VerticalBarChart extends StatelessWidget {
 
   final Color? tooltipColor;
 
+  final int bottomTextMaxLength;
+  final int leftTextMaxLength;
+
+  final bool rotateBottomText;
+
   const VerticalBarChart({
     Key? key,
     required this.items,
@@ -33,6 +39,9 @@ class VerticalBarChart extends StatelessWidget {
     required this.maxY,
     required this.interval,
     this.tooltipColor,
+    this.bottomTextMaxLength = 10,
+    this.leftTextMaxLength = 10,
+    this.rotateBottomText = false,
   }) : super(key: key);
 
   @override
@@ -69,14 +78,27 @@ class VerticalBarChart extends StatelessWidget {
           bottomTitles: AxisTitles(
             sideTitles: SideTitles(
               showTitles: true,
-              getTitlesWidget: (value, meta) => Padding(
-                padding: const EdgeInsets.only(top: 10),
-                child: Text(
-                  getBottomText(value),
-                  textAlign: TextAlign.center,
-                  style: textStyle,
-                ),
-              ),
+              getTitlesWidget: (value, meta) {
+                final text = getBottomText(value);
+                final tooltip = Tooltip(
+                  message: text,
+                  child: Text(
+                    text.substringIfOverflow(bottomTextMaxLength),
+                    textAlign: TextAlign.center,
+                    style: textStyle,
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                );
+                return Padding(
+                  padding: const EdgeInsets.only(top: 10),
+                  child: !rotateBottomText
+                      ? tooltip
+                      : RotationTransition(
+                          turns: const AlwaysStoppedAnimation(15 / 360),
+                          child: tooltip,
+                        ),
+                );
+              },
               reservedSize: 40,
             ),
           ),
@@ -85,11 +107,17 @@ class VerticalBarChart extends StatelessWidget {
               showTitles: true,
               reservedSize: 40,
               interval: interval,
-              getTitlesWidget: (value, meta) => Text(
-                getLeftText(value),
-                textAlign: TextAlign.center,
-                style: textStyle,
-              ),
+              getTitlesWidget: (value, meta) {
+                final text = getLeftText(value);
+                return Tooltip(
+                  message: text,
+                  child: Text(
+                    text.substringIfOverflow(leftTextMaxLength),
+                    textAlign: TextAlign.center,
+                    style: textStyle,
+                  ),
+                );
+              },
             ),
           ),
         ),

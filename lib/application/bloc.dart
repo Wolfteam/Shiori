@@ -13,6 +13,7 @@ export 'calculator_asc_materials/sessions_order/calculator_asc_materials_session
 export 'changelog/changelog_bloc.dart';
 export 'character/character_bloc.dart';
 export 'characters/characters_bloc.dart';
+export 'charts/ascension_stats/chart_ascension_stats_bloc.dart';
 export 'charts/birthdays/chart_birthdays_bloc.dart';
 export 'charts/elements/chart_elements_bloc.dart';
 export 'charts/elements/chart_elements_bloc.dart';

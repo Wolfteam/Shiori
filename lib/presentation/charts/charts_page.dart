@@ -21,12 +21,14 @@ import 'package:shiori/presentation/charts/widgets/vertical_bar_chart.dart';
 import 'package:shiori/presentation/shared/extensions/element_type_extensions.dart';
 import 'package:shiori/presentation/shared/extensions/i18n_extensions.dart';
 import 'package:shiori/presentation/shared/loading.dart';
+import 'package:shiori/presentation/shared/nothing_found_column.dart';
 import 'package:shiori/presentation/shared/styles.dart';
 import 'package:shiori/presentation/weapon/weapon_page.dart';
 
 const double _topCardWidth = 350;
 const double _topCardHeight = 300;
 const double _topCardBoxHeight = _topCardHeight + 20;
+const double _defaultChartHeight = 400;
 
 const _topCharacterTypes = [
   ChartType.topFiveStarCharacterMostReruns,
@@ -59,6 +61,7 @@ class ChartsPage extends StatelessWidget {
 
     return MultiBlocProvider(
       providers: [
+        //TODO: WRITE TEST FOR THESE
         BlocProvider<ChartTopsBloc>(
           create: (context) => Injection.chartTopsBloc..add(const ChartTopsEvent.init()),
         ),
@@ -67,6 +70,15 @@ class ChartsPage extends StatelessWidget {
         ),
         BlocProvider<ChartBirthdaysBloc>(
           create: (context) => Injection.chartBirthdaysBloc..add(const ChartBirthdaysEvent.init()),
+        ),
+        BlocProvider<ChartAscensionStatsBloc>(
+          create: (context) => Injection.chartAscensionStatsBloc
+            ..add(
+              ChartAscensionStatsEvent.init(
+                type: ItemType.character,
+                maxNumberOfColumns: maxNumberOfColumns,
+              ),
+            ),
         ),
       ],
       child: Scaffold(
@@ -91,6 +103,9 @@ class ChartsPage extends StatelessWidget {
                         itemBuilder: (ctx, index) {
                           final type = _topCharacterTypes[index];
                           final items = state.tops.where((el) => el.type == type).toList();
+                          if (items.isEmpty) {
+                            return NothingFoundColumn(msg: s.nothingToShow);
+                          }
                           return ChartCard(
                             height: _topCardHeight,
                             width: _topCardWidth,
@@ -140,6 +155,9 @@ class ChartsPage extends StatelessWidget {
                         itemBuilder: (ctx, index) {
                           final type = _topWeaponTypes[index];
                           final items = state.tops.where((el) => el.type == type).toList();
+                          if (items.isEmpty) {
+                            return NothingFoundColumn(msg: s.nothingToShow);
+                          }
                           return ChartCard(
                             height: _topCardHeight,
                             width: _topCardWidth,
@@ -182,7 +200,7 @@ class ChartsPage extends StatelessWidget {
                   builder: (context, state) => state.maybeMap(
                     loaded: (state) => ChartCard(
                       width: mq.size.width,
-                      height: 400,
+                      height: _defaultChartHeight,
                       title: s.mostAndLeastReleased,
                       bottom: Column(
                         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -202,87 +220,66 @@ class ChartsPage extends StatelessWidget {
                                 )
                                 .toList(),
                           ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.end,
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              IconButton(
-                                splashRadius: Styles.smallButtonSplashRadius,
-                                tooltip: s.firstPage,
-                                icon: const Icon(Icons.first_page),
-                                onPressed: !state.canGoToFirstPage
-                                    ? null
-                                    : () => context.read<ChartElementsBloc>().add(const ChartElementsEvent.goToFirstPage()),
-                              ),
-                              IconButton(
-                                splashRadius: Styles.smallButtonSplashRadius,
-                                tooltip: s.previousPage,
-                                icon: const Icon(Icons.chevron_left),
-                                onPressed: !state.canGoToPreviousPage
-                                    ? null
-                                    : () => context.read<ChartElementsBloc>().add(const ChartElementsEvent.goToPreviousPage()),
-                              ),
-                              IconButton(
-                                splashRadius: Styles.smallButtonSplashRadius,
-                                tooltip: s.nextPage,
-                                icon: const Icon(Icons.chevron_right),
-                                onPressed: !state.canGoToNextPage
-                                    ? null
-                                    : () => context.read<ChartElementsBloc>().add(const ChartElementsEvent.goToNextPage()),
-                              ),
-                              IconButton(
-                                splashRadius: Styles.smallButtonSplashRadius,
-                                tooltip: s.lastPage,
-                                icon: const Icon(Icons.last_page),
-                                onPressed: !state.canGoToLastPage
-                                    ? null
-                                    : () => context.read<ChartElementsBloc>().add(const ChartElementsEvent.goToLastPage()),
-                              ),
-                            ],
+                          _ChartPagination(
+                            canGoToFirstPage: state.canGoToFirstPage,
+                            canGoToLastPage: state.canGoToLastPage,
+                            canGoToNextPage: state.canGoToNextPage,
+                            canGoToPreviousPage: state.canGoToPreviousPage,
+                            onFirstPagePressed: () => context.read<ChartElementsBloc>().add(const ChartElementsEvent.goToFirstPage()),
+                            onLastPagePressed: () => context.read<ChartElementsBloc>().add(const ChartElementsEvent.goToLastPage()),
+                            onNextPagePressed: () => context.read<ChartElementsBloc>().add(const ChartElementsEvent.goToNextPage()),
+                            onPreviousPagePressed: () => context.read<ChartElementsBloc>().add(const ChartElementsEvent.goToPreviousPage()),
                           ),
                         ],
                       ),
-                      child: HorizontalBarChart(
-                        minX: state.firstVersion,
-                        items: state.filteredElements.mapIndex((e, i) => HorizontalBarDataModel(i, e.type.getElementColor(true), e.points)).toList(),
-                        canValueBeRendered: (value) => context.read<ChartElementsBloc>().isValidVersion(value),
-                        getBottomText: (value) => value.toStringAsFixed(1),
-                        getLeftText: (value) => value.toInt().toString(),
-                        toolTipBgColor: tooltipColor,
-                        getTooltipItems: (touchedSpots) => touchedSpots.map(
-                          (touchedSpot) {
-                            final quantity = touchedSpot.y;
-                            final element = state.filteredElements[touchedSpot.barIndex];
-                            final textStyle = TextStyle(
-                              color: touchedSpot.bar.gradient?.colors.first ?? touchedSpot.bar.color ?? theme.colorScheme.primary,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 15,
-                            );
-                            final text = '${s.translateElementType(element.type)} (${quantity.toInt()})';
-                            return LineTooltipItem(text, textStyle);
-                          },
-                        ).toList()
-                          ..sort((x, y) => x.text.compareTo(y.text)),
-                        onPointTap: (value) => showDialog(
-                          context: context,
-                          builder: (_) => VersionDetailsDialog(
-                            version: value,
-                            showWeapons: false,
-                          ),
-                        ),
-                      ),
+                      child: state.filteredElements.isEmpty
+                          ? NothingFoundColumn(msg: s.nothingToShow)
+                          : HorizontalBarChart(
+                              minX: state.firstVersion,
+                              items: state.filteredElements
+                                  .mapIndex((e, i) => HorizontalBarDataModel(i, e.type.getElementColor(true), e.points))
+                                  .toList(),
+                              canValueBeRendered: (value) => context.read<ChartElementsBloc>().isValidVersion(value),
+                              getBottomText: (value) => value.toStringAsFixed(1),
+                              getLeftText: (value) => value.toInt().toString(),
+                              toolTipBgColor: tooltipColor,
+                              getTooltipItems: (touchedSpots) => touchedSpots.map(
+                                (touchedSpot) {
+                                  final quantity = touchedSpot.y;
+                                  final element = state.filteredElements[touchedSpot.barIndex];
+                                  final textStyle = TextStyle(
+                                    color: touchedSpot.bar.gradient?.colors.first ?? touchedSpot.bar.color ?? theme.colorScheme.primary,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 15,
+                                  );
+                                  final text = '${s.translateElementType(element.type)} (${quantity.toInt()})';
+                                  return LineTooltipItem(text, textStyle);
+                                },
+                              ).toList()
+                                ..sort((x, y) => x.text.compareTo(y.text)),
+                              onPointTap: (value) => showDialog(
+                                context: context,
+                                builder: (_) => VersionDetailsDialog(
+                                  version: value,
+                                  showWeapons: false,
+                                ),
+                              ),
+                            ),
                     ),
                     orElse: () => const Loading(useScaffold: false),
                   ),
                 ),
                 Text(s.birthdays, style: theme.textTheme.headline5),
                 ChartCard(
-                  width: 300,
-                  height: 400,
+                  width: mq.size.width,
+                  height: _defaultChartHeight,
                   title: s.mostAndLeastRepeated,
                   child: BlocBuilder<ChartBirthdaysBloc, ChartBirthdaysState>(
                     builder: (context, state) => state.maybeMap(
-                      initial: (state) {
+                      loaded: (state) {
+                        if (state.birthdays.isEmpty) {
+                          return NothingFoundColumn(msg: s.nothingToShow);
+                        }
                         final maxYValueForBirthdays = state.birthdays.map((e) => e.items.length).reduce(max).toDouble() + 1;
                         return VerticalBarChart(
                           items: state.birthdays
@@ -303,11 +300,148 @@ class ChartsPage extends StatelessWidget {
                     ),
                   ),
                 ),
+                //TODO: CHAR / WEAPON SCALING
+                //TODO: REGIONS (VERTICAL BAR)
+                //TODO: GENDER (VERTICAL BAR) ?
+                //TODO: CHAR ROLE (VERTICAL BAR)
+                //TODO: CHARACTER MOST USED WEAPON TYPES (VERTICAL BAR)
+                //TODO: NUMBER OF RELEASED WEAPON TYPES
+                Text(s.ascensionStats, style: theme.textTheme.headline5),
+                BlocBuilder<ChartAscensionStatsBloc, ChartAscensionStatsState>(
+                  builder: (context, state) => state.maybeMap(
+                    loaded: (state) => ChartCard(
+                      width: mq.size.width,
+                      height: _defaultChartHeight,
+                      title: s.mostAndLeastRepeated,
+                      bottom: Column(
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                        children: [
+                          Center(
+                            child: ToggleButtons(
+                              onPressed: (index) => context.read<ChartAscensionStatsBloc>().add(
+                                    ChartAscensionStatsEvent.init(
+                                      type: index == 0 ? ItemType.character : ItemType.weapon,
+                                      maxNumberOfColumns: maxNumberOfColumns,
+                                    ),
+                                  ),
+                              borderRadius: BorderRadius.circular(10),
+                              constraints: const BoxConstraints(minHeight: 40, maxHeight: 40),
+                              isSelected: [
+                                state.itemType == ItemType.character,
+                                state.itemType == ItemType.weapon,
+                              ],
+                              children: [
+                                Container(
+                                  margin: Styles.edgeInsetHorizontal16,
+                                  child: Text(s.characters),
+                                ),
+                                Container(
+                                  margin: Styles.edgeInsetHorizontal16,
+                                  child: Text(s.weapons),
+                                ),
+                              ],
+                            ),
+                          ),
+                          _ChartPagination(
+                            canGoToFirstPage: state.canGoToFirstPage,
+                            canGoToLastPage: state.canGoToLastPage,
+                            canGoToNextPage: state.canGoToNextPage,
+                            canGoToPreviousPage: state.canGoToPreviousPage,
+                            onFirstPagePressed: () => context.read<ChartAscensionStatsBloc>().add(const ChartAscensionStatsEvent.goToFirstPage()),
+                            onLastPagePressed: () => context.read<ChartAscensionStatsBloc>().add(const ChartAscensionStatsEvent.goToLastPage()),
+                            onNextPagePressed: () => context.read<ChartAscensionStatsBloc>().add(const ChartAscensionStatsEvent.goToNextPage()),
+                            onPreviousPagePressed: () =>
+                                context.read<ChartAscensionStatsBloc>().add(const ChartAscensionStatsEvent.goToPreviousPage()),
+                          ),
+                        ],
+                      ),
+                      //TODO: EMPTY
+                      child: VerticalBarChart(
+                        items: state.ascensionStats
+                            .mapIndex(
+                              (e, i) => VerticalBarDataModel(i, theme.colorScheme.primary, e.type.index, e.quantity.toDouble()),
+                            )
+                            .toList(),
+                        maxY: state.maxCount + 1,
+                        interval: (state.maxCount * 0.2).roundToDouble(),
+                        tooltipColor: tooltipColor,
+                        getBottomText: (value) => s.translateStatTypeWithoutValue(StatType.values[value.toInt()]),
+                        getLeftText: (value) => value.toInt().toString(),
+                        rotateBottomText: true,
+                        //TODO: ON TAP
+                        // onBarChartTap: (index) => showDialog(
+                        //   context: context,
+                        //   builder: (_) => BirthdaysPerMonthDialog(month: index + 1),
+                        // ),
+                      ),
+                    ),
+                    orElse: () => const Loading(useScaffold: false),
+                  ),
+                ),
               ],
             ),
           ),
         ),
       ),
+    );
+  }
+}
+
+class _ChartPagination extends StatelessWidget {
+  final bool canGoToFirstPage;
+  final bool canGoToPreviousPage;
+  final bool canGoToNextPage;
+  final bool canGoToLastPage;
+
+  final Function onFirstPagePressed;
+  final Function onPreviousPagePressed;
+  final Function onNextPagePressed;
+  final Function onLastPagePressed;
+
+  const _ChartPagination({
+    Key? key,
+    required this.canGoToFirstPage,
+    required this.canGoToPreviousPage,
+    required this.canGoToNextPage,
+    required this.canGoToLastPage,
+    required this.onFirstPagePressed,
+    required this.onPreviousPagePressed,
+    required this.onNextPagePressed,
+    required this.onLastPagePressed,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    final s = S.of(context);
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.end,
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        IconButton(
+          splashRadius: Styles.smallButtonSplashRadius,
+          tooltip: s.firstPage,
+          icon: const Icon(Icons.first_page),
+          onPressed: !canGoToFirstPage ? null : () => onFirstPagePressed.call(),
+        ),
+        IconButton(
+          splashRadius: Styles.smallButtonSplashRadius,
+          tooltip: s.previousPage,
+          icon: const Icon(Icons.chevron_left),
+          onPressed: !canGoToPreviousPage ? null : () => onPreviousPagePressed.call(),
+        ),
+        IconButton(
+          splashRadius: Styles.smallButtonSplashRadius,
+          tooltip: s.nextPage,
+          icon: const Icon(Icons.chevron_right),
+          onPressed: !canGoToNextPage ? null : () => onNextPagePressed.call(),
+        ),
+        IconButton(
+          splashRadius: Styles.smallButtonSplashRadius,
+          tooltip: s.lastPage,
+          icon: const Icon(Icons.last_page),
+          onPressed: !canGoToLastPage ? null : () => onLastPagePressed.call(),
+        ),
+      ],
     );
   }
 }

@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
+import 'package:shiori/domain/extensions/string_extensions.dart';
 import 'package:shiori/presentation/shared/styles.dart';
 
 class HorizontalBarDataModel {
@@ -35,6 +36,9 @@ class HorizontalBarChart extends StatelessWidget {
 
   final Color? toolTipBgColor;
 
+  final int bottomTextMaxLength;
+  final int leftTextMaxLength;
+
   const HorizontalBarChart({
     Key? key,
     required this.items,
@@ -49,6 +53,8 @@ class HorizontalBarChart extends StatelessWidget {
     this.minY = 0,
     this.barWidth = 4,
     this.toolTipBgColor,
+    this.bottomTextMaxLength = 10,
+    this.leftTextMaxLength = 10,
   }) : super(key: key);
 
   @override
@@ -85,34 +91,48 @@ class HorizontalBarChart extends StatelessWidget {
                 showTitles: true,
                 reservedSize: 32,
                 interval: xIntervals,
-                getTitlesWidget: (value, meta) => !canValueBeRendered(value)
-                    ? const SizedBox.shrink()
-                    : Padding(
-                        padding: const EdgeInsets.only(top: 10.0),
-                        child: Text(
-                          getBottomText(value),
-                          style: const TextStyle(
-                            color: Colors.grey,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 12,
-                          ),
+                getTitlesWidget: (value, meta) {
+                  if (!canValueBeRendered(value)) {
+                    return const SizedBox.shrink();
+                  }
+
+                  final text = getBottomText(value);
+                  return Padding(
+                    padding: const EdgeInsets.only(top: 10.0),
+                    child: Tooltip(
+                      message: text,
+                      child: Text(
+                        text.substringIfOverflow(bottomTextMaxLength),
+                        style: const TextStyle(
+                          color: Colors.grey,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 12,
                         ),
                       ),
+                    ),
+                  );
+                },
               ),
             ),
             rightTitles: AxisTitles(sideTitles: SideTitles(showTitles: false)),
             topTitles: AxisTitles(sideTitles: SideTitles(showTitles: false)),
             leftTitles: AxisTitles(
               sideTitles: SideTitles(
-                getTitlesWidget: (value, meta) => Text(
-                  getLeftText(value),
-                  textAlign: TextAlign.center,
-                  style: const TextStyle(
-                    color: Colors.grey,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 12,
-                  ),
-                ),
+                getTitlesWidget: (value, meta) {
+                  final text = getLeftText(value);
+                  return Tooltip(
+                    message: text,
+                    child: Text(
+                      text.substringIfOverflow(leftTextMaxLength),
+                      textAlign: TextAlign.center,
+                      style: const TextStyle(
+                        color: Colors.grey,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 12,
+                      ),
+                    ),
+                  );
+                },
                 showTitles: true,
                 interval: yIntervals,
                 reservedSize: 40,
