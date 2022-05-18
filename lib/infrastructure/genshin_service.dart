@@ -1069,6 +1069,33 @@ class GenshinServiceImpl implements GenshinService {
     return charts;
   }
 
+  @override
+  List<ChartAscensionStatModel> getItemAscensionStatsForCharts(ItemType itemType) {
+    if (itemType != ItemType.character && itemType != ItemType.weapon) {
+      throw Exception('ItemType = $itemType is not Not supported');
+    }
+
+    final stats = itemType == ItemType.character ? getCharacterPossibleAscensionStats() : getWeaponPossibleAscensionStats();
+    return stats.map(
+      (stat) {
+        int count = 0;
+        switch (itemType) {
+          case ItemType.character:
+            count = _charactersFile.characters.where((el) => el.subStatType == stat).length;
+            break;
+          case ItemType.weapon:
+            count = _weaponsFile.weapons.where((el) => el.secondaryStat == stat).length;
+            break;
+          default:
+            throw Exception('ItemType = $itemType is not Not supported');
+        }
+
+        return ChartAscensionStatModel(type: stat, itemType: itemType, quantity: count);
+      },
+    ).toList()
+      ..sort((x, y) => y.quantity.compareTo(x.quantity));
+  }
+
   //TODO: CALL THIS METHOD IN THE MAIN PAGE
   @override
   List<CharacterBirthdayModel> getCharacterBirthdays({int? month, int? day}) {
