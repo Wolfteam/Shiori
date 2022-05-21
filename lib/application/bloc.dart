@@ -27,6 +27,7 @@ export 'home/home_bloc.dart';
 export 'inventory/inventory_bloc.dart';
 export 'item_quantity_form/item_quantity_form_bloc.dart';
 export 'item_release_history/item_release_history_bloc.dart';
+export 'items_ascension_stats/items_ascension_stats_bloc.dart';
 export 'main/main_bloc.dart';
 export 'main_tab/main_tab_bloc.dart';
 export 'material/material_bloc.dart';

@@ -1159,22 +1159,28 @@ class GenshinServiceImpl implements GenshinService {
 
   @override
   List<ItemCommonWithName> getItemsAscensionStats(StatType statType, ItemType itemType) {
+    final items = <ItemCommonWithName>[];
     switch (itemType) {
       case ItemType.character:
-        return _charactersFile.characters.where((el) => el.subStatType == statType && !el.isComingSoon).map((e) {
-          final translation = getCharacterTranslation(e.key);
-          return ItemCommonWithName(e.key, e.fullImagePath, translation.name);
-        }).toList()
-          ..sort((x, y) => x.name.compareTo(y.name));
+        items.addAll(
+          _charactersFile.characters.where((el) => el.subStatType == statType && !el.isComingSoon).map((e) {
+            final translation = getCharacterTranslation(e.key);
+            return ItemCommonWithName(e.key, e.fullImagePath, translation.name);
+          }).toList(),
+        );
+        break;
       case ItemType.weapon:
-        return _weaponsFile.weapons.where((el) => el.secondaryStat == statType && !el.isComingSoon).map((e) {
-          final translation = getWeaponTranslation(e.key);
-          return ItemCommonWithName(e.key, e.fullImagePath, translation.name);
-        }).toList()
-          ..sort((x, y) => x.name.compareTo(y.name));
+        items.addAll(
+          _weaponsFile.weapons.where((el) => el.secondaryStat == statType && !el.isComingSoon).map((e) {
+            final translation = getWeaponTranslation(e.key);
+            return ItemCommonWithName(e.key, e.fullImagePath, translation.name);
+          }).toList(),
+        );
+        break;
       default:
         throw Exception('Invalid statType = $itemType');
     }
+    return items..sort((x, y) => x.name.compareTo(y.name));
   }
 
   CharacterCardModel _toCharacterForCard(CharacterFileModel character) {
