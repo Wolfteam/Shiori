@@ -189,6 +189,11 @@ class Injection {
     return BirthdaysPerMonthBloc(genshinService, telemetryService);
   }
 
+  static ItemsAscensionStatsBloc get itemsAscensionStatsBloc {
+    final genshinService = getIt<GenshinService>();
+    return ItemsAscensionStatsBloc(genshinService);
+  }
+
   //TODO: USE THIS PROP
   // static CalculatorAscMaterialsItemBloc get calculatorAscMaterialsItemBloc {
   //   final genshinService = getIt<GenshinService>();

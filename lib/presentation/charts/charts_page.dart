@@ -16,6 +16,7 @@ import 'package:shiori/presentation/charts/widgets/birthdays_per_month_dialog.da
 import 'package:shiori/presentation/charts/widgets/chart_card.dart';
 import 'package:shiori/presentation/charts/widgets/chart_legend.dart';
 import 'package:shiori/presentation/charts/widgets/horizontal_bar_chart.dart';
+import 'package:shiori/presentation/charts/widgets/items_ascension_stats_dialog.dart';
 import 'package:shiori/presentation/charts/widgets/pie_chart.dart';
 import 'package:shiori/presentation/charts/widgets/vertical_bar_chart.dart';
 import 'package:shiori/presentation/shared/extensions/element_type_extensions.dart';
@@ -212,7 +213,7 @@ class ChartsPage extends StatelessWidget {
                                 .map(
                                   (e) => ChartLegendIndicator(
                                     width: min(mq.size.width / state.elements.length, 100),
-                                    color: e.getElementColorFromContext(context),
+                                    color: e.getElementColor(true),
                                     text: s.translateElementType(e),
                                     lineThrough: state.selectedElementTypes.contains(e),
                                     tap: () => context.read<ChartElementsBloc>().add(ChartElementsEvent.elementSelected(type: e)),
@@ -290,6 +291,7 @@ class ChartsPage extends StatelessWidget {
                           tooltipColor: tooltipColor,
                           getBottomText: (value) => monthNames[value.toInt() - 1],
                           getLeftText: (value) => value.toInt().toString(),
+                          rotateBottomText: true,
                           onBarChartTap: (index) => showDialog(
                             context: context,
                             builder: (_) => BirthdaysPerMonthDialog(month: index + 1),
@@ -355,25 +357,23 @@ class ChartsPage extends StatelessWidget {
                           ),
                         ],
                       ),
-                      //TODO: EMPTY
-                      child: VerticalBarChart(
-                        items: state.ascensionStats
-                            .mapIndex(
-                              (e, i) => VerticalBarDataModel(i, theme.colorScheme.primary, e.type.index, e.quantity.toDouble()),
-                            )
-                            .toList(),
-                        maxY: state.maxCount + 1,
-                        interval: (state.maxCount * 0.2).roundToDouble(),
-                        tooltipColor: tooltipColor,
-                        getBottomText: (value) => s.translateStatTypeWithoutValue(StatType.values[value.toInt()]),
-                        getLeftText: (value) => value.toInt().toString(),
-                        rotateBottomText: true,
-                        //TODO: ON TAP
-                        // onBarChartTap: (index) => showDialog(
-                        //   context: context,
-                        //   builder: (_) => BirthdaysPerMonthDialog(month: index + 1),
-                        // ),
-                      ),
+                      child: state.ascensionStats.isEmpty
+                          ? NothingFoundColumn(msg: s.nothingToShow)
+                          : VerticalBarChart(
+                              items: state.ascensionStats
+                                  .mapIndex((e, i) => VerticalBarDataModel(i, theme.colorScheme.primary, e.type.index, e.quantity.toDouble()))
+                                  .toList(),
+                              maxY: state.maxCount + 1,
+                              interval: (state.maxCount * 0.2).roundToDouble(),
+                              tooltipColor: tooltipColor,
+                              getBottomText: (value) => s.translateStatTypeWithoutValue(StatType.values[value.toInt()]),
+                              getLeftText: (value) => value.toInt().toString(),
+                              rotateBottomText: true,
+                              onBarChartTap: (index) => showDialog(
+                                context: context,
+                                builder: (_) => ItemsAscensionStatsDialog(itemType: state.itemType, statType: state.ascensionStats[index].type),
+                              ),
+                            ),
                     ),
                     orElse: () => const Loading(useScaffold: false),
                   ),
