@@ -99,4 +99,6 @@ abstract class GenshinService {
   List<ChartAscensionStatModel> getItemAscensionStatsForCharts(ItemType itemType);
 
   List<CharacterBirthdayModel> getCharacterBirthdays({int? month, int? day});
+
+  List<ItemCommonWithName> getItemsAscensionStats(StatType statType, ItemType itemType);
 }
