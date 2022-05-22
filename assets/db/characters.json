@@ -38617,6 +38617,1020 @@
       ]
     },
     {
+      "key": "shikanoin-heizou",
+      "rarity": 4,
+      "weaponType": "catalyst",
+      "elementType": "anemo",
+      "image": "shikanoin-heizou.png",
+      "fullImage": "shikanoin-heizou.png",
+      "secondFullImage": null,
+      "isComingSoon": true,
+      "isNew": false,
+      "isFemale": false,
+      "region": "inazuma",
+      "role": "support",
+      "tier": "a",
+      "birthday": "07/24",
+      "subStatType": "anemoDmgBonusPercentage",
+      "ascensionMaterials": [
+        {
+          "rank": 1,
+          "level": 20,
+          "materials": [
+            {
+              "key": "vayuda-turquoise-sliver",
+              "quantity": 1,
+              "type": "jewels"
+            },
+            {
+              "key": "onikabuto",
+              "quantity": 3,
+              "type": "local"
+            },
+            {
+              "key": "treasure-hoarder-insignia",
+              "quantity": 3,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 20000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "rank": 2,
+          "level": 40,
+          "materials": [
+            {
+              "key": "vayuda-turquoise-fragment",
+              "quantity": 3,
+              "type": "jewels"
+            },
+            {
+              "key": "runic-fang",
+              "quantity": 2,
+              "type": "elementalStone"
+            },
+            {
+              "key": "onikabuto",
+              "quantity": 10,
+              "type": "local"
+            },
+            {
+              "key": "treasure-hoarder-insignia",
+              "quantity": 15,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 40000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "rank": 3,
+          "level": 50,
+          "materials": [
+            {
+              "key": "vayuda-turquoise-fragment",
+              "quantity": 6,
+              "type": "jewels"
+            },
+            {
+              "key": "runic-fang",
+              "quantity": 4,
+              "type": "elementalStone"
+            },
+            {
+              "key": "onikabuto",
+              "quantity": 20,
+              "type": "local"
+            },
+            {
+              "key": "silver-raven-insignia",
+              "quantity": 12,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 60000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "rank": 4,
+          "level": 60,
+          "materials": [
+            {
+              "key": "vayuda-turquoise-chunk",
+              "quantity": 3,
+              "type": "jewels"
+            },
+            {
+              "key": "runic-fang",
+              "quantity": 8,
+              "type": "elementalStone"
+            },
+            {
+              "key": "onikabuto",
+              "quantity": 30,
+              "type": "local"
+            },
+            {
+              "key": "silver-raven-insignia",
+              "quantity": 18,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 80000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "rank": 5,
+          "level": 70,
+          "materials": [
+            {
+              "key": "vayuda-turquoise-chunk",
+              "quantity": 6,
+              "type": "jewels"
+            },
+            {
+              "key": "runic-fang",
+              "quantity": 12,
+              "type": "elementalStone"
+            },
+            {
+              "key": "onikabuto",
+              "quantity": 45,
+              "type": "local"
+            },
+            {
+              "key": "golden-raven-insignia",
+              "quantity": 12,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 100000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "rank": 6,
+          "level": 80,
+          "materials": [
+            {
+              "key": "vayuda-turquoise-gemstone",
+              "quantity": 6,
+              "type": "jewels"
+            },
+            {
+              "key": "runic-fang",
+              "quantity": 20,
+              "type": "elementalStone"
+            },
+            {
+              "key": "onikabuto",
+              "quantity": 60,
+              "type": "local"
+            },
+            {
+              "key": "golden-raven-insignia",
+              "quantity": 24,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 120000,
+              "type": "currency"
+            }
+          ]
+        }
+      ],
+      "talentAscensionMaterials": [
+        {
+          "level": 2,
+          "materials": [
+            {
+              "key": "teachings-of-transience",
+              "quantity": 3,
+              "type": "talents"
+            },
+            {
+              "key": "treasure-hoarder-insignia",
+              "quantity": 6,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 12500,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "level": 3,
+          "materials": [
+            {
+              "key": "guide-to-transience",
+              "quantity": 2,
+              "type": "talents"
+            },
+            {
+              "key": "silver-raven-insignia",
+              "quantity": 3,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 17500,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "materials": [
+            {
+              "key": "guide-to-transience",
+              "quantity": 4,
+              "type": "talents"
+            },
+            {
+              "key": "silver-raven-insignia",
+              "quantity": 4,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 25000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "materials": [
+            {
+              "key": "guide-to-transience",
+              "quantity": 6,
+              "type": "talents"
+            },
+            {
+              "key": "silver-raven-insignia",
+              "quantity": 6,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 30000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "level": 6,
+          "materials": [
+            {
+              "key": "guide-to-transience",
+              "quantity": 9,
+              "type": "talents"
+            },
+            {
+              "key": "silver-raven-insignia",
+              "quantity": 9,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 37500,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "level": 7,
+          "materials": [
+            {
+              "key": "philosophies-of-transience",
+              "quantity": 4,
+              "type": "talents"
+            },
+            {
+              "key": "golden-raven-insignia",
+              "quantity": 4,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 120000,
+              "type": "currency"
+            },
+            {
+              "key": "the-meaning-of-aeons",
+              "quantity": 1,
+              "type": "talents"
+            }
+          ]
+        },
+        {
+          "level": 8,
+          "materials": [
+            {
+              "key": "philosophies-of-transience",
+              "quantity": 6,
+              "type": "talents"
+            },
+            {
+              "key": "golden-raven-insignia",
+              "quantity": 6,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 260000,
+              "type": "currency"
+            },
+            {
+              "key": "the-meaning-of-aeons",
+              "quantity": 1,
+              "type": "talents"
+            }
+          ]
+        },
+        {
+          "level": 9,
+          "materials": [
+            {
+              "key": "philosophies-of-transience",
+              "quantity": 12,
+              "type": "talents"
+            },
+            {
+              "key": "golden-raven-insignia",
+              "quantity": 9,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 450000,
+              "type": "currency"
+            },
+            {
+              "key": "the-meaning-of-aeons",
+              "quantity": 2,
+              "type": "talents"
+            }
+          ]
+        },
+        {
+          "level": 10,
+          "materials": [
+            {
+              "key": "philosophies-of-transience",
+              "quantity": 16,
+              "type": "talents"
+            },
+            {
+              "key": "golden-raven-insignia",
+              "quantity": 12,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 700000,
+              "type": "currency"
+            },
+            {
+              "key": "the-meaning-of-aeons",
+              "quantity": 2,
+              "type": "talents"
+            },
+            {
+              "key": "crown-of-insight",
+              "quantity": 1,
+              "type": "talents"
+            }
+          ]
+        }
+      ],
+      "skills": [
+        {
+          "key": "s1",
+          "image": "shikanoin-heizou_s1.png",
+          "type": "normalAttack",
+          "stats": [
+            {
+              "key": "param1",
+              "values": [
+                37.47,
+                40.28,
+                43.09,
+                46.84,
+                49.65,
+                52.46,
+                56.21,
+                59.96,
+                63.71,
+                67.45,
+                71.2,
+                74.95,
+                79.63,
+                84.32,
+                89.0
+              ]
+            },
+            {
+              "key": "param2",
+              "values": [
+                36.85,
+                39.62,
+                42.38,
+                46.07,
+                48.83,
+                51.59,
+                55.28,
+                58.96,
+                62.65,
+                66.33,
+                70.02,
+                73.7,
+                78.31,
+                82.92,
+                87.52
+              ]
+            },
+            {
+              "key": "param3",
+              "values": [
+                51.06,
+                54.89,
+                58.72,
+                63.83,
+                67.65,
+                71.48,
+                76.59,
+                81.7,
+                86.8,
+                91.91,
+                97.01,
+                102.12,
+                108.5,
+                114.89,
+                121.27
+              ]
+            },
+            {
+              "key": "param4",
+              "values": [
+                14.78,
+                15.89,
+                17.0,
+                18.48,
+                19.59,
+                20.7,
+                22.17,
+                23.65,
+                25.13,
+                26.61,
+                28.09,
+                29.56,
+                31.41,
+                33.26,
+                35.11
+              ]
+            },
+            {
+              "key": "param5",
+              "values": [
+                16.26,
+                17.48,
+                18.7,
+                20.33,
+                21.55,
+                22.77,
+                24.39,
+                26.02,
+                27.64,
+                29.27,
+                30.9,
+                32.52,
+                34.55,
+                36.59,
+                38.62
+              ]
+            },
+            {
+              "key": "param6",
+              "values": [
+                19.22,
+                20.66,
+                22.1,
+                24.02,
+                25.46,
+                26.9,
+                28.83,
+                30.75,
+                32.67,
+                34.59,
+                36.51,
+                38.44,
+                40.84,
+                43.24,
+                45.64
+              ]
+            },
+            {
+              "key": "param7",
+              "values": [
+                61.45,
+                66.06,
+                70.67,
+                76.81,
+                81.42,
+                86.03,
+                92.17,
+                98.32,
+                104.46,
+                110.61,
+                116.75,
+                122.9,
+                130.58,
+                138.26,
+                145.94
+              ]
+            },
+            {
+              "key": "param8",
+              "values": [
+                73.0,
+                78.48,
+                83.95,
+                91.25,
+                96.73,
+                102.2,
+                109.5,
+                116.8,
+                124.1,
+                131.4,
+                138.7,
+                146.0,
+                155.13,
+                164.25,
+                173.38
+              ]
+            },
+            {
+              "key": "param9",
+              "values": [
+                25.0,
+                25.0,
+                25.0,
+                25.0,
+                25.0,
+                25.0,
+                25.0,
+                25.0,
+                25.0,
+                25.0,
+                25.0,
+                25.0,
+                25.0,
+                25.0,
+                25.0
+              ]
+            },
+            {
+              "key": "param10",
+              "values": [
+                56.83,
+                61.45,
+                66.08,
+                72.69,
+                77.31,
+                82.6,
+                89.87,
+                97.14,
+                104.41,
+                112.34,
+                120.27,
+                128.2,
+                136.12,
+                144.05,
+                151.98
+              ]
+            },
+            {
+              "key": "param11",
+              "values": [
+                113.63,
+                122.88,
+                132.13,
+                145.35,
+                154.59,
+                165.17,
+                179.7,
+                194.23,
+                208.77,
+                224.62,
+                240.48,
+                256.34,
+                272.19,
+                288.05,
+                303.9
+              ]
+            },
+            {
+              "key": "param12",
+              "values": [
+                141.93,
+                153.49,
+                165.04,
+                181.54,
+                193.1,
+                206.3,
+                224.45,
+                242.61,
+                260.76,
+                280.57,
+                300.37,
+                320.18,
+                339.98,
+                359.79,
+                379.59
+              ]
+            }
+          ]
+        },
+        {
+          "key": "s2",
+          "image": "shikanoin-heizou_s2.png",
+          "type": "elementalSkill",
+          "stats": [
+            {
+              "key": "param1",
+              "values": [
+                227.52,
+                244.58,
+                261.65,
+                284.4,
+                301.46,
+                318.53,
+                341.28,
+                364.03,
+                386.78,
+                409.54,
+                432.29,
+                455.04,
+                483.48,
+                511.92,
+                540.36
+              ]
+            },
+            {
+              "key": "param2",
+              "values": [
+                56.88,
+                61.15,
+                65.41,
+                71.1,
+                75.37,
+                79.63,
+                85.32,
+                91.01,
+                96.7,
+                102.38,
+                108.07,
+                113.76,
+                120.87,
+                127.98,
+                135.09
+              ]
+            },
+            {
+              "key": "param3",
+              "values": [
+                113.76,
+                122.29,
+                130.82,
+                142.2,
+                150.73,
+                159.26,
+                170.64,
+                182.02,
+                193.39,
+                204.77,
+                216.14,
+                227.52,
+                241.74,
+                255.96,
+                270.18
+              ]
+            },
+            {
+              "key": "param4",
+              "values": [
+                60.0,
+                60.0,
+                60.0,
+                60.0,
+                60.0,
+                60.0,
+                60.0,
+                60.0,
+                60.0,
+                60.0,
+                60.0,
+                60.0,
+                60.0,
+                60.0,
+                60.0
+              ]
+            },
+            {
+              "key": "param5",
+              "values": [
+                10.0,
+                10.0,
+                10.0,
+                10.0,
+                10.0,
+                10.0,
+                10.0,
+                10.0,
+                10.0,
+                10.0,
+                10.0,
+                10.0,
+                10.0,
+                10.0,
+                10.0
+              ]
+            }
+          ]
+        },
+        {
+          "key": "s3",
+          "image": "shikanoin-heizou_s3.png",
+          "type": "elementalBurst",
+          "stats": [
+            {
+              "key": "param1",
+              "values": [
+                314.69,
+                338.29,
+                361.89,
+                393.36,
+                416.96,
+                440.56,
+                472.03,
+                503.5,
+                534.97,
+                566.44,
+                597.91,
+                629.38,
+                668.71,
+                708.05,
+                747.38
+              ]
+            },
+            {
+              "key": "param2",
+              "values": [
+                21.46,
+                23.07,
+                24.67,
+                26.82,
+                28.43,
+                30.04,
+                32.18,
+                34.33,
+                36.48,
+                38.62,
+                40.77,
+                42.91,
+                45.59,
+                48.28,
+                50.96
+              ]
+            },
+            {
+              "key": "param3",
+              "values": [
+                12.0,
+                12.0,
+                12.0,
+                12.0,
+                12.0,
+                12.0,
+                12.0,
+                12.0,
+                12.0,
+                12.0,
+                12.0,
+                12.0,
+                12.0,
+                12.0,
+                12.0
+              ]
+            },
+            {
+              "key": "param4",
+              "values": [
+                40.0,
+                40.0,
+                40.0,
+                40.0,
+                40.0,
+                40.0,
+                40.0,
+                40.0,
+                40.0,
+                40.0,
+                40.0,
+                40.0,
+                40.0,
+                40.0,
+                40.0
+              ]
+            }
+          ]
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "image": "shikanoin-heizou_p1.png",
+          "unlockedAt": -1
+        },
+        {
+          "key": "p2",
+          "image": "shikanoin-heizou_p2.png",
+          "unlockedAt": 1
+        },
+        {
+          "key": "p3",
+          "image": "shikanoin-heizou_p3.png",
+          "unlockedAt": 4
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "number": 1,
+          "image": "shikanoin-heizou_c1.png"
+        },
+        {
+          "key": "c2",
+          "number": 2,
+          "image": "shikanoin-heizou_c2.png"
+        },
+        {
+          "key": "c3",
+          "number": 3,
+          "image": "shikanoin-heizou_c3.png"
+        },
+        {
+          "key": "c4",
+          "number": 4,
+          "image": "shikanoin-heizou_c4.png"
+        },
+        {
+          "key": "c5",
+          "number": 5,
+          "image": "shikanoin-heizou_c5.png"
+        },
+        {
+          "key": "c6",
+          "number": 6,
+          "image": "shikanoin-heizou_c6.png"
+        }
+      ],
+      "builds": [],
+      "stats": [
+        {
+          "level": 1,
+          "baseHp": 894.0,
+          "baseAtk": 19.0,
+          "baseDef": 57.0,
+          "isAnAscension": false,
+          "statValue": 0.0
+        },
+        {
+          "level": 20,
+          "baseHp": 2296.0,
+          "baseAtk": 48.0,
+          "baseDef": 147.0,
+          "isAnAscension": false,
+          "statValue": 0.0
+        },
+        {
+          "level": 20,
+          "baseHp": 2963.0,
+          "baseAtk": 63.0,
+          "baseDef": 190.0,
+          "isAnAscension": true,
+          "statValue": 0.0
+        },
+        {
+          "level": 40,
+          "baseHp": 4438.0,
+          "baseAtk": 94.0,
+          "baseDef": 285.0,
+          "isAnAscension": false,
+          "statValue": 0.0
+        },
+        {
+          "level": 40,
+          "baseHp": 4913.0,
+          "baseAtk": 104.0,
+          "baseDef": 315.0,
+          "isAnAscension": true,
+          "statValue": 6.0
+        },
+        {
+          "level": 50,
+          "baseHp": 5651.0,
+          "baseAtk": 119.0,
+          "baseDef": 363.0,
+          "isAnAscension": false,
+          "statValue": 6.0
+        },
+        {
+          "level": 50,
+          "baseHp": 6283.0,
+          "baseAtk": 133.0,
+          "baseDef": 403.0,
+          "isAnAscension": true,
+          "statValue": 12.0
+        },
+        {
+          "level": 60,
+          "baseHp": 7021.0,
+          "baseAtk": 148.0,
+          "baseDef": 451.0,
+          "isAnAscension": false,
+          "statValue": 12.0
+        },
+        {
+          "level": 60,
+          "baseHp": 7495.0,
+          "baseAtk": 158.0,
+          "baseDef": 481.0,
+          "isAnAscension": true,
+          "statValue": 12.0
+        },
+        {
+          "level": 70,
+          "baseHp": 8233.0,
+          "baseAtk": 174.0,
+          "baseDef": 528.0,
+          "isAnAscension": false,
+          "statValue": 12.0
+        },
+        {
+          "level": 70,
+          "baseHp": 8707.0,
+          "baseAtk": 184.0,
+          "baseDef": 559.0,
+          "isAnAscension": true,
+          "statValue": 18.0
+        },
+        {
+          "level": 80,
+          "baseHp": 9445.0,
+          "baseAtk": 200.0,
+          "baseDef": 606.0,
+          "isAnAscension": false,
+          "statValue": 18.0
+        },
+        {
+          "level": 80,
+          "baseHp": 9919.0,
+          "baseAtk": 210.0,
+          "baseDef": 637.0,
+          "isAnAscension": true,
+          "statValue": 24.0
+        },
+        {
+          "level": 90,
+          "baseHp": 10657.0,
+          "baseAtk": 225.0,
+          "baseDef": 684.0,
+          "isAnAscension": false,
+          "statValue": 24.0
+        }
+      ]
+    },
+    {
       "key": "sucrose",
       "rarity": 4,
       "weaponType": "catalyst",
