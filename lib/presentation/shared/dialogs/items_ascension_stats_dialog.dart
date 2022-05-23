@@ -8,6 +8,7 @@ import 'package:shiori/presentation/shared/dialogs/dialog_list_item_row.dart';
 import 'package:shiori/presentation/shared/extensions/i18n_extensions.dart';
 import 'package:shiori/presentation/shared/extensions/media_query_extensions.dart';
 import 'package:shiori/presentation/shared/loading.dart';
+import 'package:shiori/presentation/shared/nothing_found_column.dart';
 
 class ItemsAscensionStatsDialog extends StatelessWidget {
   final ItemType itemType;
@@ -50,15 +51,17 @@ class ItemsAscensionStatsDialog extends StatelessWidget {
         ],
         content: BlocBuilder<ItemsAscensionStatsBloc, ItemsAscensionStatsState>(
           builder: (context, state) => state.maybeMap(
-            loaded: (state) => SizedBox(
-              height: mq.getHeightForDialogs(state.items.length + 1),
-              width: mq.getWidthForDialogs(),
-              child: ListView.builder(
-                itemCount: state.items.length,
-                itemBuilder: (context, index) => DialogListItemRow.fromItem(itemType: itemType, item: state.items[index]),
-              ),
-            ),
-            orElse: () => const Loading(useScaffold: false),
+            loaded: (state) => state.items.isEmpty
+                ? const NothingFoundColumn(mainAxisSize: MainAxisSize.min)
+                : SizedBox(
+                    height: mq.getHeightForDialogs(state.items.length + 1),
+                    width: mq.getWidthForDialogs(),
+                    child: ListView.builder(
+                      itemCount: state.items.length,
+                      itemBuilder: (context, index) => DialogListItemRow.fromItem(itemType: itemType, item: state.items[index]),
+                    ),
+                  ),
+            orElse: () => const Loading(useScaffold: false, mainAxisSize: MainAxisSize.min),
           ),
         ),
       ),

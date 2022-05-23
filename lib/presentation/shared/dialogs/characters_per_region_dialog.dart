@@ -49,7 +49,7 @@ class CharactersPerRegionDialog extends StatelessWidget {
         content: BlocBuilder<CharactersPerRegionBloc, CharactersPerRegionState>(
           builder: (context, state) => state.maybeMap(
             loaded: (state) => state.items.isEmpty
-                ? const NothingFoundColumn()
+                ? const NothingFoundColumn(mainAxisSize: MainAxisSize.min)
                 : SizedBox(
                     height: mq.getHeightForDialogs(state.items.length + 1),
                     width: mq.getWidthForDialogs(),
@@ -58,7 +58,7 @@ class CharactersPerRegionDialog extends StatelessWidget {
                       itemBuilder: (context, index) => DialogListItemRow.fromItem(itemType: ItemType.character, item: state.items[index]),
                     ),
                   ),
-            orElse: () => const Loading(useScaffold: false),
+            orElse: () => const Loading(useScaffold: false, mainAxisSize: MainAxisSize.min),
           ),
         ),
       ),
