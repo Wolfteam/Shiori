@@ -1106,12 +1106,42 @@ class GenshinServiceImpl implements GenshinService {
   }
 
   @override
+  List<ChartGenderModel> getCharacterGendersForCharts() =>
+      RegionType.values.where((el) => el != RegionType.anotherWorld).map((e) => getCharacterGendersByRegionForCharts(e)).toList()
+        ..sort((x, y) => y.maxCount.compareTo(x.maxCount));
+
+  @override
+  ChartGenderModel getCharacterGendersByRegionForCharts(RegionType regionType) {
+    if (regionType == RegionType.anotherWorld) {
+      throw Exception('Another world is not supported');
+    }
+
+    final characters = _charactersFile.characters.where((el) => !el.isComingSoon && el.region == regionType).toList();
+    final maleCount = characters.where((el) => !el.isFemale).length;
+    final femaleCount = characters.where((el) => el.isFemale).length;
+    return ChartGenderModel(regionType: regionType, maleCount: maleCount, femaleCount: femaleCount, maxCount: max(maleCount, femaleCount));
+  }
+
+  @override
   List<ItemCommonWithName> getCharactersForItemsByRegion(RegionType regionType) {
     if (regionType == RegionType.anotherWorld) {
       throw Exception('Another world is not supported');
     }
 
     return _charactersFile.characters.where((el) => !el.isComingSoon && el.region == regionType).map((e) {
+      final char = getCharacterForCard(e.key);
+      return ItemCommonWithName(e.key, char.image, char.name);
+    }).toList()
+      ..sort((x, y) => x.name.compareTo(y.name));
+  }
+
+  @override
+  List<ItemCommonWithName> getCharactersForItemsByRegionAndGender(RegionType regionType, bool onlyFemales) {
+    if (regionType == RegionType.anotherWorld) {
+      throw Exception('Another world is not supported');
+    }
+
+    return _charactersFile.characters.where((el) => !el.isComingSoon && el.region == regionType && el.isFemale == onlyFemales).map((e) {
       final char = getCharacterForCard(e.key);
       return ItemCommonWithName(e.key, char.image, char.name);
     }).toList()
