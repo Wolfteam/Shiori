@@ -204,6 +204,16 @@ class Injection {
     return CharactersPerRegionBloc(genshinService);
   }
 
+  static ChartGendersBloc get chartGendersBloc {
+    final genshinService = getIt<GenshinService>();
+    return ChartGendersBloc(genshinService);
+  }
+
+  static CharactersPerRegionGenderBloc get charactersPerRegionGenderBloc {
+    final genshinService = getIt<GenshinService>();
+    return CharactersPerRegionGenderBloc(genshinService);
+  }
+
   //TODO: USE THIS PROP
   // static CalculatorAscMaterialsItemBloc get calculatorAscMaterialsItemBloc {
   //   final genshinService = getIt<GenshinService>();

@@ -445,5 +445,7 @@
   "previousPage": "Previous page",
   "nextPage": "Next page",
   "lastPage": "Last page",
-  "regions": "Regions"
+  "regions": "Regions",
+  "genders": "Genders",
+  "perRegions": "Per regions"
 }

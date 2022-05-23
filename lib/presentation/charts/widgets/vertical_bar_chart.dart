@@ -2,8 +2,9 @@ import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:shiori/domain/extensions/string_extensions.dart';
 
-typedef OnBarChartTap = void Function(int);
+typedef OnBarChartTap = void Function(int, int);
 typedef GetText = String Function(double);
+typedef GetBarChartRodData = List<BarChartRodData> Function(int);
 
 class VerticalBarDataModel {
   final int index;
@@ -19,6 +20,7 @@ class VerticalBarChart extends StatelessWidget {
   final OnBarChartTap? onBarChartTap;
   final GetText getBottomText;
   final GetText getLeftText;
+  final GetBarChartRodData? getBarChartRodData;
 
   final double maxY;
   final double interval;
@@ -36,6 +38,7 @@ class VerticalBarChart extends StatelessWidget {
     required this.getLeftText,
     required this.getBottomText,
     this.onBarChartTap,
+    this.getBarChartRodData,
     required this.maxY,
     required this.interval,
     this.tooltipColor,
@@ -67,7 +70,7 @@ class VerticalBarChart extends StatelessWidget {
           ),
           touchCallback: (FlTouchEvent event, response) {
             if (event is FlTapUpEvent && response?.spot?.touchedBarGroupIndex != null) {
-              onBarChartTap?.call(response!.spot!.touchedBarGroupIndex);
+              onBarChartTap?.call(response!.spot!.touchedBarGroupIndex, response.spot!.touchedRodDataIndex);
             }
           },
         ),
@@ -126,14 +129,15 @@ class VerticalBarChart extends StatelessWidget {
             .map(
               (e) => BarChartGroupData(
                 x: e.x,
-                barRods: [
-                  BarChartRodData(
-                    toY: e.y,
-                    color: e.color,
-                    borderRadius: BorderRadius.zero,
-                    width: 10,
-                  ),
-                ],
+                barRods: getBarChartRodData?.call(e.x) ??
+                    [
+                      BarChartRodData(
+                        toY: e.y,
+                        color: e.color,
+                        borderRadius: BorderRadius.zero,
+                        width: 10,
+                      ),
+                    ],
               ),
             )
             .toList(),
