@@ -19,6 +19,7 @@ export 'charts/chart_ascension_stat_model.dart';
 export 'charts/chart_birthday_month_model.dart';
 export 'charts/chart_character_region_model.dart';
 export 'charts/chart_element_item_model.dart';
+export 'charts/chart_gender_model.dart';
 export 'charts/chart_top_item_model.dart';
 export 'custom_builds/custom_build_artifact_model.dart';
 export 'custom_builds/custom_build_model.dart';

@@ -98,7 +98,10 @@ abstract class GenshinService {
   List<ChartElementItemModel> getElementsForCharts(double fromVersion, double untilVersion);
   List<ChartAscensionStatModel> getItemAscensionStatsForCharts(ItemType itemType);
   List<ChartCharacterRegionModel> getCharacterRegionsForCharts();
+  List<ChartGenderModel> getCharacterGendersForCharts();
+  ChartGenderModel getCharacterGendersByRegionForCharts(RegionType regionType);
   List<ItemCommonWithName> getCharactersForItemsByRegion(RegionType regionType);
+  List<ItemCommonWithName> getCharactersForItemsByRegionAndGender(RegionType regionType, bool onlyFemales);
 
   List<CharacterBirthdayModel> getCharacterBirthdays({int? month, int? day});
 
