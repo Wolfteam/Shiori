@@ -1081,10 +1081,10 @@ class GenshinServiceImpl implements GenshinService {
         int count = 0;
         switch (itemType) {
           case ItemType.character:
-            count = _charactersFile.characters.where((el) => el.subStatType == stat).length;
+            count = _charactersFile.characters.where((el) => !el.isComingSoon && el.subStatType == stat).length;
             break;
           case ItemType.weapon:
-            count = _weaponsFile.weapons.where((el) => el.secondaryStat == stat).length;
+            count = _weaponsFile.weapons.where((el) => !el.isComingSoon && el.secondaryStat == stat).length;
             break;
           default:
             throw Exception('ItemType = $itemType is not Not supported');
@@ -1094,6 +1094,28 @@ class GenshinServiceImpl implements GenshinService {
       },
     ).toList()
       ..sort((x, y) => y.quantity.compareTo(x.quantity));
+  }
+
+  @override
+  List<ChartCharacterRegionModel> getCharacterRegionsForCharts() {
+    return RegionType.values.where((el) => el != RegionType.anotherWorld).map((type) {
+      final quantity = _charactersFile.characters.where((el) => !el.isComingSoon && el.region == type).length;
+      return ChartCharacterRegionModel(regionType: type, quantity: quantity);
+    }).toList()
+      ..sort((x, y) => y.quantity.compareTo(x.quantity));
+  }
+
+  @override
+  List<ItemCommonWithName> getCharactersForItemsByRegion(RegionType regionType) {
+    if (regionType == RegionType.anotherWorld) {
+      throw Exception('Another world is not supported');
+    }
+
+    return _charactersFile.characters.where((el) => !el.isComingSoon && el.region == regionType).map((e) {
+      final char = getCharacterForCard(e.key);
+      return ItemCommonWithName(e.key, char.image, char.name);
+    }).toList()
+      ..sort((x, y) => x.name.compareTo(y.name));
   }
 
   //TODO: CALL THIS METHOD IN THE MAIN PAGE
