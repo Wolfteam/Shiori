@@ -194,6 +194,16 @@ class Injection {
     return ItemsAscensionStatsBloc(genshinService);
   }
 
+  static ChartRegionsBloc get chartRegionsBloc {
+    final genshinService = getIt<GenshinService>();
+    return ChartRegionsBloc(genshinService);
+  }
+
+  static CharactersPerRegionBloc get charactersPerRegionBloc {
+    final genshinService = getIt<GenshinService>();
+    return CharactersPerRegionBloc(genshinService);
+  }
+
   //TODO: USE THIS PROP
   // static CalculatorAscMaterialsItemBloc get calculatorAscMaterialsItemBloc {
   //   final genshinService = getIt<GenshinService>();

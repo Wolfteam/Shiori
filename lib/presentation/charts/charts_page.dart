@@ -12,13 +12,14 @@ import 'package:shiori/generated/l10n.dart';
 import 'package:shiori/injection.dart';
 import 'package:shiori/presentation/banner_history/widgets/version_details_dialog.dart';
 import 'package:shiori/presentation/character/character_page.dart';
-import 'package:shiori/presentation/charts/widgets/birthdays_per_month_dialog.dart';
 import 'package:shiori/presentation/charts/widgets/chart_card.dart';
 import 'package:shiori/presentation/charts/widgets/chart_legend.dart';
 import 'package:shiori/presentation/charts/widgets/horizontal_bar_chart.dart';
-import 'package:shiori/presentation/charts/widgets/items_ascension_stats_dialog.dart';
 import 'package:shiori/presentation/charts/widgets/pie_chart.dart';
 import 'package:shiori/presentation/charts/widgets/vertical_bar_chart.dart';
+import 'package:shiori/presentation/shared/dialogs/birthdays_per_month_dialog.dart';
+import 'package:shiori/presentation/shared/dialogs/characters_per_region_dialog.dart';
+import 'package:shiori/presentation/shared/dialogs/items_ascension_stats_dialog.dart';
 import 'package:shiori/presentation/shared/extensions/element_type_extensions.dart';
 import 'package:shiori/presentation/shared/extensions/i18n_extensions.dart';
 import 'package:shiori/presentation/shared/loading.dart';
@@ -80,6 +81,9 @@ class ChartsPage extends StatelessWidget {
                 maxNumberOfColumns: maxNumberOfColumns,
               ),
             ),
+        ),
+        BlocProvider<ChartRegionsBloc>(
+          create: (context) => Injection.chartRegionsBloc..add(const ChartRegionsEvent.init()),
         ),
       ],
       child: Scaffold(
@@ -275,13 +279,14 @@ class ChartsPage extends StatelessWidget {
                   width: mq.size.width,
                   height: _defaultChartHeight,
                   title: s.mostAndLeastRepeated,
+                  titleMargin: const EdgeInsets.only(bottom: 20),
                   child: BlocBuilder<ChartBirthdaysBloc, ChartBirthdaysState>(
                     builder: (context, state) => state.maybeMap(
                       loaded: (state) {
                         if (state.birthdays.isEmpty) {
                           return NothingFoundColumn(msg: s.nothingToShow);
                         }
-                        final maxYValueForBirthdays = state.birthdays.map((e) => e.items.length).reduce(max).toDouble() + 1;
+                        final maxYValueForBirthdays = state.birthdays.map((e) => e.items.length).reduce(max).toDouble();
                         return VerticalBarChart(
                           items: state.birthdays
                               .mapIndex((e, i) => VerticalBarDataModel(i, theme.colorScheme.primary, e.month, e.items.length.toDouble()))
@@ -303,7 +308,6 @@ class ChartsPage extends StatelessWidget {
                   ),
                 ),
                 //TODO: CHAR / WEAPON SCALING
-                //TODO: REGIONS (VERTICAL BAR)
                 //TODO: GENDER (VERTICAL BAR) ?
                 //TODO: CHAR ROLE (VERTICAL BAR)
                 //TODO: CHARACTER MOST USED WEAPON TYPES (VERTICAL BAR)
@@ -315,6 +319,7 @@ class ChartsPage extends StatelessWidget {
                       width: mq.size.width,
                       height: _defaultChartHeight,
                       title: s.mostAndLeastRepeated,
+                      titleMargin: const EdgeInsets.only(bottom: 20),
                       bottom: Column(
                         crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: [
@@ -363,7 +368,7 @@ class ChartsPage extends StatelessWidget {
                               items: state.ascensionStats
                                   .mapIndex((e, i) => VerticalBarDataModel(i, theme.colorScheme.primary, e.type.index, e.quantity.toDouble()))
                                   .toList(),
-                              maxY: state.maxCount + 1,
+                              maxY: state.maxCount.toDouble(),
                               interval: (state.maxCount * 0.2).roundToDouble(),
                               tooltipColor: tooltipColor,
                               getBottomText: (value) => s.translateStatTypeWithoutValue(StatType.values[value.toInt()]),
@@ -378,6 +383,33 @@ class ChartsPage extends StatelessWidget {
                     orElse: () => const Loading(useScaffold: false),
                   ),
                 ),
+                Text(s.regions, style: theme.textTheme.headline5),
+                ChartCard(
+                  width: mq.size.width,
+                  height: _defaultChartHeight,
+                  title: s.mostAndLeastRepeated,
+                  titleMargin: const EdgeInsets.only(bottom: 20),
+                  child: BlocBuilder<ChartRegionsBloc, ChartRegionsState>(
+                    builder: (context, state) => state.maybeMap(
+                      loaded: (state) => VerticalBarChart(
+                        items: state.items
+                            .mapIndex((e, i) => VerticalBarDataModel(i, theme.colorScheme.primary, e.regionType.index, e.quantity.toDouble()))
+                            .toList(),
+                        maxY: state.maxCount.toDouble(),
+                        interval: (state.maxCount * 0.2).roundToDouble(),
+                        tooltipColor: tooltipColor,
+                        getBottomText: (value) => s.translateRegionType(state.items[value.toInt()].regionType),
+                        getLeftText: (value) => value.toInt().toString(),
+                        rotateBottomText: true,
+                        onBarChartTap: (index) => showDialog(
+                          context: context,
+                          builder: (_) => CharactersPerRegionDialog(regionType: state.items[index].regionType),
+                        ),
+                      ),
+                      orElse: () => const Loading(useScaffold: false),
+                    ),
+                  ),
+                )
               ],
             ),
           ),

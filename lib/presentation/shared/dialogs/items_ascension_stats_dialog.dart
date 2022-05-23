@@ -2,15 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shiori/application/bloc.dart';
 import 'package:shiori/domain/enums/enums.dart';
-import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/generated/l10n.dart';
 import 'package:shiori/injection.dart';
+import 'package:shiori/presentation/shared/dialogs/dialog_list_item_row.dart';
 import 'package:shiori/presentation/shared/extensions/i18n_extensions.dart';
 import 'package:shiori/presentation/shared/extensions/media_query_extensions.dart';
-import 'package:shiori/presentation/shared/images/circle_character.dart';
-import 'package:shiori/presentation/shared/images/circle_weapon.dart';
 import 'package:shiori/presentation/shared/loading.dart';
-import 'package:shiori/presentation/shared/styles.dart';
 
 class ItemsAscensionStatsDialog extends StatelessWidget {
   final ItemType itemType;
@@ -58,55 +55,13 @@ class ItemsAscensionStatsDialog extends StatelessWidget {
               width: mq.getWidthForDialogs(),
               child: ListView.builder(
                 itemCount: state.items.length,
-                itemBuilder: (context, index) => _Row(itemType: itemType, item: state.items[index]),
+                itemBuilder: (context, index) => DialogListItemRow.fromItem(itemType: itemType, item: state.items[index]),
               ),
             ),
             orElse: () => const Loading(useScaffold: false),
           ),
         ),
       ),
-    );
-  }
-}
-
-class _Row extends StatelessWidget {
-  final ItemType itemType;
-  final ItemCommonWithName item;
-
-  const _Row({
-    Key? key,
-    required this.itemType,
-    required this.item,
-  })  : assert(itemType == ItemType.character || itemType == ItemType.weapon),
-        super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: [
-        Row(
-          children: [
-            if (itemType == ItemType.character)
-              CircleCharacter(itemKey: item.key, image: item.image, radius: 40)
-            else
-              CircleWeapon(itemKey: item.key, image: item.image, radius: 40),
-            Expanded(
-              child: Padding(
-                padding: Styles.edgeInsetHorizontal16,
-                child: Text(
-                  item.name,
-                  overflow: TextOverflow.ellipsis,
-                  maxLines: 2,
-                  style: theme.textTheme.subtitle1,
-                ),
-              ),
-            ),
-          ],
-        ),
-        const Divider(),
-      ],
     );
   }
 }

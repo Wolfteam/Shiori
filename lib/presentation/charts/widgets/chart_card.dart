@@ -7,6 +7,7 @@ class ChartCard extends StatelessWidget {
   final Widget? bottom;
   final double height;
   final double width;
+  final EdgeInsets titleMargin;
 
   const ChartCard({
     Key? key,
@@ -15,6 +16,7 @@ class ChartCard extends StatelessWidget {
     required this.width,
     required this.height,
     this.bottom,
+    this.titleMargin = const EdgeInsets.only(bottom: 10),
   }) : super(key: key);
 
   @override
@@ -32,7 +34,7 @@ class ChartCard extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             children: [
               Container(
-                margin: const EdgeInsets.only(bottom: 10),
+                margin: titleMargin,
                 child: Text(
                   title,
                   style: theme.textTheme.headline6,

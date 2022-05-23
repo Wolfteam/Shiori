@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shiori/application/birthdays_per_month/birthdays_per_month_bloc.dart';
+import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/utils/date_utils.dart' as date_utils;
 import 'package:shiori/generated/l10n.dart';
 import 'package:shiori/injection.dart';
+import 'package:shiori/presentation/shared/dialogs/dialog_list_item_row.dart';
 import 'package:shiori/presentation/shared/extensions/media_query_extensions.dart';
-import 'package:shiori/presentation/shared/images/circle_character.dart';
 import 'package:shiori/presentation/shared/loading.dart';
-import 'package:shiori/presentation/shared/styles.dart';
 
 class BirthdaysPerMonthDialog extends StatelessWidget {
   final int month;
@@ -53,7 +53,16 @@ class BirthdaysPerMonthDialog extends StatelessWidget {
               width: mq.getWidthForDialogs(),
               child: ListView.builder(
                 itemCount: state.characters.length,
-                itemBuilder: (context, index) => _Row(character: state.characters[index]),
+                itemBuilder: (context, index) {
+                  final char = state.characters[index];
+                  return DialogListItemRow(
+                    itemType: ItemType.character,
+                    itemKey: char.key,
+                    image: char.image,
+                    name: char.name,
+                    getRowEndWidget: (_) => _RowEndColumn(character: char),
+                  );
+                },
               ),
             ),
             orElse: () => const Loading(useScaffold: false),
@@ -64,10 +73,10 @@ class BirthdaysPerMonthDialog extends StatelessWidget {
   }
 }
 
-class _Row extends StatelessWidget {
+class _RowEndColumn extends StatelessWidget {
   final CharacterBirthdayModel character;
 
-  const _Row({
+  const _RowEndColumn({
     Key? key,
     required this.character,
   }) : super(key: key);
@@ -77,48 +86,28 @@ class _Row extends StatelessWidget {
     final s = S.of(context);
     final theme = Theme.of(context);
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.stretch,
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
+        Text(
+          character.name,
+          overflow: TextOverflow.ellipsis,
+          style: theme.textTheme.subtitle1,
+        ),
         Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            CircleCharacter(
-              itemKey: character.key,
-              image: character.image,
-              radius: 40,
+            Text(
+              character.birthdayString,
+              overflow: TextOverflow.ellipsis,
+              style: theme.textTheme.caption,
             ),
-            Expanded(
-              child: Padding(
-                padding: Styles.edgeInsetHorizontal16,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      character.name,
-                      overflow: TextOverflow.ellipsis,
-                      style: theme.textTheme.subtitle1,
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          character.birthdayString,
-                          overflow: TextOverflow.ellipsis,
-                          style: theme.textTheme.caption,
-                        ),
-                        Text(
-                          character.daysUntilBirthday > 0 ? s.inXDays(character.daysUntilBirthday) : s.today,
-                          overflow: TextOverflow.ellipsis,
-                          style: theme.textTheme.caption!.copyWith(color: theme.colorScheme.primary, fontWeight: FontWeight.bold),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-              ),
+            Text(
+              character.daysUntilBirthday > 0 ? s.inXDays(character.daysUntilBirthday) : s.today,
+              overflow: TextOverflow.ellipsis,
+              style: theme.textTheme.caption!.copyWith(color: theme.colorScheme.primary, fontWeight: FontWeight.bold),
             ),
           ],
         ),
-        const Divider(),
       ],
     );
   }
