@@ -6377,87 +6377,87 @@
     {
       "key": "xinyan",
       "name": "Xinyan",
-      "title": "Blazing Riff",
-      "description": "Liyue's sole rock 'n' roll musician. She rebels against ossified prejudices using her music and passionate singing.",
+      "title": "เมโลดี้อันร้อนแรง",
+      "description": "นักดนตรีร็อกแอนด์โรล เพียงหนึ่งเดียวของท่าเรือ Liyue ผู้ใช้บทเพลง และความหลงใหลในการร้องเพลง ในการต่อต้านความอคติ",
       "skills": [
         {
           "key": "s1",
-          "title": "Dance on Fire",
+          "title": "โจมตีปกติ - Dance on Fire",
           "description": "",
           "abilities": [
             {
-              "name": "Normal Attack",
-              "description": "Perform up to 4 consecutive strikes.\r\n",
+              "name": "โจมตีปกติ",
+              "description": "ฟาดฟันต่อเนื่องมากสุดสี่ครั้ง\r\n",
               "descriptions": []
             },
             {
-              "name": "Charged Attack",
-              "description": "Drains Stamina over time to perform continuous spinning attacks against all nearby opponents.\r\nAt the end of the sequence, perform a more powerful slash. \r\n",
+              "name": "ชาร์จโจมตี",
+              "description": "ใช้พลังกายอย่างต่อเนื่องเพื่อหมุนโจมตีศัตรูรอบตัวด้วยดาบขนาดใหญ่\r\nเมื่อหยุดหมุนจะทำการฟันเพิ่มอย่างรุนแรงอีกหนึ่งครั้ง\r\n",
               "descriptions": []
             },
             {
-              "name": "Plunging Attack",
-              "description": "Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
+              "name": "โจมตีพุ่งลงจากอากาศ",
+              "description": "กระโจนจากกลางอากาศลงมายังพื้นดิน เพื่อโจมตีศัตรูที่อยู่ในเส้นทางการโจมตี โดยจะสร้างความเสียหายวงกว้างเมื่อลงถึงพื้น",
               "descriptions": []
             }
           ],
           "stats": [
-            "1-Hit DMG|{param1}%",
-            "2-Hit DMG|{param2}%",
-            "3-Hit DMG|{param3}%",
-            "4-Hit DMG|{param4}%",
-            "Charged Attack Spinning DMG|{param5}%",
-            "Charged Attack Final DMG|{param6}%",
-            "Charged Attack Stamina Cost|{param7}/s",
-            "Max Duration|{param8}s",
-            "Plunge DMG|{param9}%",
-            "Low/High Plunge DMG|{param10}% / {param11}%"
+            "ความเสียหายขั้น 1|{param1}%",
+            "ความเสียหายขั้น 2|{param2}%",
+            "ความเสียหายขั้น 3|{param3}%",
+            "ความเสียหายขั้น 4|{param4}%",
+            "ความเสียหายขณะชาร์จโจมตี|{param5}%",
+            "ความเสียหายชาร์จโจมตีครั้งสุดท้าย|{param6}%",
+            "ชาร์จโจมตีใช้พลังกาย|{param7}/s",
+            "ระยะเวลาต่อเนื่องสูงสุด|{param8}s",
+            "ความเสียหายพุ่งลง|{param9}%",
+            "ความเสียหายพุ่งถึงพื้นจากที่ต่ำ/สูง|{param10}% / {param11}%"
           ]
         },
         {
           "key": "s2",
           "title": "Sweeping Fervor",
-          "description": "Xinyan brandishes her instrument, dealing Pyro DMG on nearby opponents, forming a shield made out of her audience's passion.\r\nThe shield's DMG Absorption scales based on Xinyan's DEF and on the number of opponents hit.\r\n",
+          "description": "Xinyan กวัดแกว่งเครื่องดนตรี เกิดเป็นความเสียหายไฟแก่ศัตรูโดยรอบ และใช้ \"ความรุ่มร้อน\" ของ \"ผู้ชม\" ในการสร้างโล่ป้องกันขึ้นมา\r\n",
           "abilities": [
             {
               "name": null,
               "description": null,
               "descriptions": [
-                "Hitting 0–1 opponents grants Shield Level 1: Ad Lib.",
-                "Hitting 2 opponents grants Shield Level 2: Lead-In.",
-                "Hitting 3 or more opponents grants Shield Level 3: Rave, which will also deal intermittent Pyro DMG to nearby opponents."
+                "โจมตีถูกศัตรู 0-1 ตัว: โล่เลเวล 1 - Ad Lib;",
+                "โจมตีถูกศัตรู 2 ตัว: โล่เลเวล 2 - Lead-In;",
+                "โจมตีถูกศัตรูตั้งแต่ 3 ตัวขึ้นไป: โล่เลเวล 3 - Rave โดยนอกจากจะดูดซับความเสียหายแล้ว ยังจะทำให้เกิดความเสียหายไฟแก่ศัตรูโดยรอบเป็นระยะ ๆ อีกด้วย"
               ]
             },
             {
               "name": null,
-              "description": "The shield has the following special properties:",
+              "description": "โล่มีคุณลักษณะพิเศษดังนี้:",
               "descriptions": [
-                "When unleashed, it infuses Xinyan with Pyro.",
-                "It has 250% DMG Absorption effectiveness against Pyro DMG."
+                "ในตอนที่ปล่อยออกมา จะทำให้ Xinyan ติดธาตุไฟ;",
+                "มีเอฟเฟกต์ดูดซับความเสียหายไฟ 250%"
               ]
             }
           ],
           "stats": [
-            "Swing DMG|{param1}%",
-            "Shield Level 1 DMG Absorption|{param2}% DEF + {param3}",
-            "Shield Level 2 DMG Absorption|{param4}% DEF + {param5}",
-            "Shield Level 3 DMG Absorption|{param6}% DEF + {param7}",
-            "DoT|{param8}%",
-            "Shield Duration|{param9}s",
-            "CD|{param10}s"
+            "ความเสียหายจากการแกว่ง|{param1}%",
+            "ปริมาณการดูดซับของโล่เลเวล 1|{param2}% DEF + {param3}",
+            "ปริมาณการดูดซับของโล่เลเวล 2|{param4}% DEF + {param5}",
+            "ปริมาณการดูดซับของโล่เลเวล 3|{param6}% DEF + {param7}",
+            "ความเสียหายต่อเนื่อง|{param8}%",
+            "ระยะเวลาต่อเนื่องของโล่|{param9}s",
+            "เวลาคูลดาวน์|{param10}s"
           ]
         },
         {
           "key": "s3",
           "title": "Riff Revolution",
-          "description": "Strumming rapidly, Xinyan launches nearby opponents and deals Physical DMG to them, hyping up the crowd.\r\nThe sheer intensity of the atmosphere will cause explosions that deal Pyro DMG to nearby opponents.\r\n",
+          "description": "บรรเลงอย่างรวดเร็ว จนเกิดเป็นคลื่นเสียงกระแทกศัตรูให้ถอยกลับไป สร้างความเสียหายทางกายภาพให้แก่ศัตรูโดยรอบ และกระตุ้นให้เกิดบรรยากาศของ \"เวที\"\r\nเพราะว่าบรรยากาศบนเวทีนั้นช่างเร่าร้อนเหลือเกิน จึงทำให้เกิดไฟอันร้อนแรงและสร้างความเสียหายไฟแก่ศัตรูโดยรอบอย่างต่อเนื่อง\r\n",
           "abilities": [],
           "stats": [
-            "Skill DMG|{param1}%",
-            "Pyro DoT|{param2}%",
-            "Duration|{param3}s",
-            "CD|{param4}s",
-            "Energy Cost|{param5}"
+            "ความเสียหายสกิล|{param1}%",
+            "ความเสียหายต่อเนื่องของธาตุไฟ|{param2}%",
+            "ระยะเวลาต่อเนื่อง|{param3}s",
+            "คูลดาวน์|{param4}s",
+            "พลังงานธาตุ|{param5}"
           ]
         }
       ],
@@ -6465,22 +6465,22 @@
         {
           "key": "p1",
           "title": "A Rad Recipe",
-          "description": "When a Perfect Cooking is achieved on a DEF-boosting dish, Xinyan has a 12% chance to obtain double the product.\r\n",
+          "description": "เมื่อปรุงอาหารประเภทป้องกันได้ระดับ สมบูรณ์ จะมีโอกาส 12% ที่จะได้รับผลผลิตเพิ่มเป็น 2 เท่า\r\n",
           "descriptions": []
         },
         {
           "key": "p2",
           "title": "\"The Show Goes On, Even Without An Audience...\"",
-          "description": "Decreases the number of opponents Sweeping Fervor must hit to trigger each level of shielding.\r\n",
+          "description": "ลดจำนวนศัตรูที่โล่ของ Sweeping Fervor ต้องโจมตีให้โดนลง:\r\n",
           "descriptions": [
-            "Shield Level 2: Lead-In requirement reduced to 1 opponent hit.",
-            "Shield Level 3: Rave requirement reduced to 2 opponents hit or more."
+            "โล่เลเวล 2 - Lead-In: โจมตีถูกศัตรู 1 ตัว;",
+            "โล่เลเวล 3 - Rave: โจมตีถูกศัตรู 2 ตัวขึ้นไป"
           ]
         },
         {
           "key": "p3",
           "title": "\"...Now That's Rock 'N' Roll!\"",
-          "description": "Characters shielded by Sweeping Fervor deal 15% increased Physical DMG.\r\n",
+          "description": "ตัวละครที่อยู่ภายใต้การป้องกันของ Sweeping Fervor จะสร้างความเสียหายทางกายภาพ เพิ่มขึ้น 15%\r\n",
           "descriptions": []
         }
       ],
@@ -6488,37 +6488,37 @@
         {
           "key": "c1",
           "title": "Fatal Acceleration",
-          "description": "Upon scoring a CRIT Hit, increases ATK SPD of Xinyan's Normal and Charged Attacks by 12% for 5s.\r\nCan only occur once every 5s.\r\n",
+          "description": "เมื่อ Xinyan โจมตีติดคริติคอล ความเร็วในการโจมตีปกติและชาร์จโจมตีจะเพิ่มขึ้น 12%\r\nเอฟเฟกต์นี้เกิดขึ้นได้หนึ่งครั้ง ในทุก 5 วินาที\r\n",
           "descriptions": []
         },
         {
           "key": "c2",
           "title": "Impromptu Opening",
-          "description": "Riff Revolution's Physical DMG has its CRIT Rate increased by 100%, and will form a shield at Shield Level 3: Rave when cast.\r\n",
+          "description": "ความเสียหายกายภาพของRiff Revolution จะมีอัตราคริเพิ่มขึ้น 100% และจะสร้างโล่เลเวล 3 - Rave\r\n",
           "descriptions": []
         },
         {
           "key": "c3",
           "title": "Double-Stop",
-          "description": "Increases the Level of Sweeping Fervor by 3.\r\nMaximum upgrade level is 15.\r\n",
+          "description": "เพิ่มเลเวลของสกิล Sweeping Fervor ขึ้น 3 ระดับ\r\nเพิ่มได้มากสุด 15 ระดับ\r\n",
           "descriptions": []
         },
         {
           "key": "c4",
           "title": "Wildfire Rhythm",
-          "description": "Sweeping Fervor's swing DMG decreases opponent's Physical RES by 15% for 12s.\r\n",
+          "description": "ความเสียหายจากการแกว่งของ Sweeping Fervor จะลดความต้านทานทางกายภาพของศัตรูลง 15% เป็นเวลา 12 วินาที\r\n",
           "descriptions": []
         },
         {
           "key": "c5",
           "title": "Screamin' for an Encore",
-          "description": "Increases the Level of Riff Revolution by 3.\r\nMaximum upgrade level is 15.\r\n",
+          "description": "เพิ่มเลเวลของสกิล Riff Revolution ขึ้น 3 ระดับ\r\nเพิ่มได้มากสุด 15 ระดับ\r\n",
           "descriptions": []
         },
         {
           "key": "c6",
           "title": "Rockin' in a Flaming World",
-          "description": "Decreases the Stamina Consumption of Xinyan's Charged Attacks by 30%. Additionally, Xinyan's Charged Attacks gain an ATK Bonus equal to 50% of her DEF.\r\n",
+          "description": "ลดการใช้พลังกายในการชาร์จโจมตีของ Xinyan ลง 30% และในขณะที่ชาร์จโจมตีจะเพิ่มพลังโจมตี 50% ของพลังป้องกัน\r\n",
           "descriptions": []
         }
       ]
