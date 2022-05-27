@@ -11,6 +11,7 @@ import 'package:shiori/presentation/shared/extensions/rarity_extensions.dart';
 import 'package:shiori/presentation/shared/images/circle_character.dart';
 import 'package:shiori/presentation/shared/images/circle_weapon.dart';
 import 'package:shiori/presentation/shared/loading.dart';
+import 'package:shiori/presentation/shared/nothing_found_column.dart';
 
 class VersionDetailsDialog extends StatelessWidget {
   final double version;
@@ -38,20 +39,22 @@ class VersionDetailsDialog extends StatelessWidget {
           child: SingleChildScrollView(
             child: BlocBuilder<BannerHistoryItemBloc, BannerHistoryItemState>(
               builder: (context, state) => state.maybeMap(
-                loadedState: (state) => Column(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: state.items
-                      .map(
-                        (e) => _VersionDetailPeriod(
-                          from: e.from,
-                          until: e.until,
-                          items: e.items,
-                          showCharacters: showCharacters,
-                          showWeapons: showWeapons,
-                        ),
-                      )
-                      .toList(),
-                ),
+                loadedState: (state) => state.items.isEmpty
+                    ? const NothingFoundColumn(mainAxisSize: MainAxisSize.min)
+                    : Column(
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                        children: state.items
+                            .map(
+                              (e) => _VersionDetailPeriod(
+                                from: e.from,
+                                until: e.until,
+                                items: e.items,
+                                showCharacters: showCharacters,
+                                showWeapons: showWeapons,
+                              ),
+                            )
+                            .toList(),
+                      ),
                 orElse: () => const Loading(useScaffold: false),
               ),
             ),

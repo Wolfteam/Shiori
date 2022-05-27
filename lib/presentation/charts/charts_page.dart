@@ -90,9 +90,6 @@ class ChartsPage extends StatelessWidget {
           create: (context) => Injection.chartGendersBloc..add(const ChartGendersEvent.init()),
         ),
       ],
-      //TODO: CHAR ROLE (VERTICAL BAR)
-      //TODO: CHARACTER MOST USED WEAPON TYPES (VERTICAL BAR)
-      //TODO: NUMBER OF RELEASED WEAPON TYPES
       child: Scaffold(
         appBar: AppBar(
           title: Text(s.charts),

@@ -92,10 +92,6 @@ class HorizontalBarChart extends StatelessWidget {
                 reservedSize: 32,
                 interval: xIntervals,
                 getTitlesWidget: (value, meta) {
-                  if (!canValueBeRendered(value)) {
-                    return const SizedBox.shrink();
-                  }
-
                   final text = getBottomText(value);
                   return Padding(
                     padding: const EdgeInsets.only(top: 10.0),
@@ -143,13 +139,18 @@ class HorizontalBarChart extends StatelessWidget {
           lineBarsData: items
               .map(
                 (e) => LineChartBarData(
-                  isCurved: true,
+                  isCurved: false,
                   color: e.color,
                   barWidth: barWidth,
                   isStrokeCapRound: true,
                   dotData: FlDotData(show: true),
                   belowBarData: BarAreaData(show: false),
-                  spots: e.points.map((e) => FlSpot(e.x, e.y)).toList(),
+                  spots: e.points.map((e) {
+                    if (!canValueBeRendered(e.x)) {
+                      return FlSpot.nullSpot;
+                    }
+                    return FlSpot(e.x, e.y);
+                  }).toList(),
                 ),
               )
               .toList(),

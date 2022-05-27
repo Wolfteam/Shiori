@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:shiori/application/birthdays_per_month/birthdays_per_month_bloc.dart';
+import 'package:shiori/application/bloc.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/utils/date_utils.dart' as date_utils;
@@ -24,8 +24,8 @@ class BirthdaysPerMonthDialog extends StatelessWidget {
     final s = S.of(context);
     final theme = Theme.of(context);
     final mq = MediaQuery.of(context);
-    return BlocProvider<BirthdaysPerMonthBloc>(
-      create: (context) => Injection.birthdaysPerMonthBloc..add(BirthdaysPerMonthEvent.init(month: month)),
+    return BlocProvider<CharactersBirthdaysPerMonthBloc>(
+      create: (context) => Injection.charactersBirthdaysPerMonthBloc..add(CharactersBirthdaysPerMonthEvent.init(month: month)),
       child: AlertDialog(
         title: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -47,7 +47,7 @@ class BirthdaysPerMonthDialog extends StatelessWidget {
             child: Text(s.ok),
           )
         ],
-        content: BlocBuilder<BirthdaysPerMonthBloc, BirthdaysPerMonthState>(
+        content: BlocBuilder<CharactersBirthdaysPerMonthBloc, CharactersBirthdaysPerMonthState>(
           builder: (context, state) => state.maybeMap(
             loaded: (state) => state.characters.isEmpty
                 ? const NothingFoundColumn(mainAxisSize: MainAxisSize.min)

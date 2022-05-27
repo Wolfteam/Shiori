@@ -183,10 +183,10 @@ class Injection {
     return ChartAscensionStatsBloc(genshinService);
   }
 
-  static BirthdaysPerMonthBloc get birthdaysPerMonthBloc {
+  static CharactersBirthdaysPerMonthBloc get charactersBirthdaysPerMonthBloc {
     final genshinService = getIt<GenshinService>();
     final telemetryService = getIt<TelemetryService>();
-    return BirthdaysPerMonthBloc(genshinService, telemetryService);
+    return CharactersBirthdaysPerMonthBloc(genshinService, telemetryService);
   }
 
   static ItemsAscensionStatsBloc get itemsAscensionStatsBloc {
