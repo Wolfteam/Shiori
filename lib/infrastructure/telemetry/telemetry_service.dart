@@ -168,4 +168,10 @@ class TelemetryServiceImpl implements TelemetryService {
 
   @override
   Future<void> trackItemReleaseHistoryOpened(String itemKey) => trackEventAsync('Banner-History-Item-Release-History-Opened', {'ItemKey': itemKey});
+
+  @override
+  Future<void> trackChartsOpened() => trackEventAsync('Charts-Opened');
+
+  @override
+  Future<void> trackBirthdaysPerMonthOpened(int month) => trackEventAsync('BirthdaysPerMonth-Opened', {'Month': '$month'});
 }

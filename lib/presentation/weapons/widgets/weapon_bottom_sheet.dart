@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import 'package:shiori/application/bloc.dart';
+import 'package:shiori/domain/app_constants.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/generated/l10n.dart';
 import 'package:shiori/presentation/shared/bottom_sheets/common_bottom_sheet.dart';
@@ -15,22 +16,6 @@ import 'package:shiori/presentation/shared/shiori_icons.dart';
 import 'package:shiori/presentation/shared/sort_direction_popupmenu_filter.dart';
 import 'package:shiori/presentation/shared/styles.dart';
 import 'package:shiori/presentation/shared/weapons_button_bar.dart';
-
-final _ignoredSubStats = [
-  StatType.atk,
-  StatType.critAtk,
-  StatType.critRate,
-  StatType.physDmgPercentage,
-  StatType.hp,
-  StatType.electroDmgBonusPercentage,
-  StatType.cryoDmgBonusPercentage,
-  StatType.pyroDmgBonusPercentage,
-  StatType.hydroDmgBonusPercentage,
-  StatType.geoDmgBonusPercentage,
-  StatType.anemoDmgBonusPercentage,
-  StatType.healingBonusPercentage,
-  StatType.def,
-];
 
 const _areWeaponTypesEnabledKey = 'areWeaponTypesEnabled';
 
@@ -163,7 +148,7 @@ class _OtherFilters extends StatelessWidget {
           tooltipText: s.secondaryState,
           onAllOrValueSelected: (v) => context.read<WeaponsBloc>().add(WeaponsEvent.weaponSubStatTypeChanged(v != null ? StatType.values[v] : null)),
           selectedValue: tempWeaponSubStatType?.index,
-          values: StatType.values.where((el) => !_ignoredSubStats.contains(el)).map((e) => e.index).toList(),
+          values: getWeaponPossibleAscensionStats().map((e) => e.index).toList(),
           itemText: (val, _) => s.translateStatTypeWithoutValue(StatType.values[val]),
           icon: Icon(Shiori.sliders_h, size: Styles.getIconSizeForItemPopupMenuFilter(forEndDrawer, false)),
         ),

@@ -17,7 +17,6 @@ abstract class GenshinService {
   List<CharacterCardModel> getCharactersForCard();
   CharacterCardModel getCharacterForCard(String key);
   CharacterFileModel getCharacter(String key);
-  List<CharacterFileModel> getCharactersForBirthday(DateTime date);
   List<TierListRowModel> getDefaultCharacterTierList(List<int> colors);
   List<String> getUpcomingCharactersKeys();
   List<CharacterSkillStatModel> getCharacterSkillStats(List<CharacterFileSkillStatModel> skillStats, List<String> statsTranslations);
@@ -92,4 +91,18 @@ abstract class GenshinService {
   List<BannerHistoryItemModel> getBannerHistory(BannerHistoryItemType type);
   List<BannerHistoryPeriodModel> getBanners(double version);
   List<ItemReleaseHistoryModel> getItemReleaseHistory(String itemKey);
+
+  List<ChartTopItemModel> getTopCharts(ChartType type);
+  List<ChartBirthdayMonthModel> getCharacterBirthdaysForCharts();
+  List<ChartElementItemModel> getElementsForCharts(double fromVersion, double untilVersion);
+  List<ChartAscensionStatModel> getItemAscensionStatsForCharts(ItemType itemType);
+  List<ChartCharacterRegionModel> getCharacterRegionsForCharts();
+  List<ChartGenderModel> getCharacterGendersForCharts();
+  ChartGenderModel getCharacterGendersByRegionForCharts(RegionType regionType);
+  List<ItemCommonWithName> getCharactersForItemsByRegion(RegionType regionType);
+  List<ItemCommonWithName> getCharactersForItemsByRegionAndGender(RegionType regionType, bool onlyFemales);
+
+  List<CharacterBirthdayModel> getCharacterBirthdays({int? month, int? day});
+
+  List<ItemCommonWithName> getItemsAscensionStats(StatType statType, ItemType itemType);
 }

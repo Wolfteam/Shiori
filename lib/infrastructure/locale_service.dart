@@ -5,6 +5,7 @@ import 'package:shiori/domain/extensions/string_extensions.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/locale_service.dart';
 import 'package:shiori/domain/services/settings_service.dart';
+import 'package:shiori/domain/utils/date_utils.dart';
 
 class LocaleServiceImpl implements LocaleService {
   final SettingsService _settingsService;
@@ -12,7 +13,7 @@ class LocaleServiceImpl implements LocaleService {
   LocaleServiceImpl(this._settingsService);
 
   @override
-  DateTime getCharBirthDate(String? birthday) {
+  DateTime getCharBirthDate(String? birthday, {bool useCurrentYear = false}) {
     if (birthday.isNullEmptyOrWhitespace) {
       throw Exception('Character birthday must not be null');
     }
@@ -23,7 +24,26 @@ class LocaleServiceImpl implements LocaleService {
     final locale = getFormattedLocale(_settingsService.language);
     final format = DateFormat('MM/dd/yyyy', locale);
     //The format is in MM/dd, I use 2024 since that is a leap-year
-    return format.parse('$birthday/2024');
+    final now = DateTime.now();
+    final year = useCurrentYear ? now.year : 2024;
+    DateTime charBirthday = format.parse('$birthday/$year');
+    if (!useCurrentYear) {
+      return charBirthday;
+    }
+    final split = birthday.split('/');
+    final expectedMonth = int.parse(split.first);
+    final expectedDay = int.parse(split.last);
+
+    //leap year occurred
+    if (expectedMonth != charBirthday.month || expectedDay != charBirthday.day) {
+      final newDay = DateUtils.getLastDayOfMonth(expectedMonth);
+      charBirthday = DateTime(charBirthday.year, expectedMonth, newDay);
+    }
+
+    if (charBirthday.isBefore(now)) {
+      return charBirthday.add(const Duration(days: 365));
+    }
+    return charBirthday;
   }
 
   @override

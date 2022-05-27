@@ -3,4 +3,22 @@ extension StringExtensions on String? {
   bool get isNotNullEmptyOrWhitespace => !isNullEmptyOrWhitespace;
 
   bool isValidLength({int minLength = 0, int maxLength = 255}) => isNotNullEmptyOrWhitespace || this!.length > maxLength || this!.length < minLength;
+
+  String substringIfOverflow(int maxLength, {int numberOfDots = 3}) {
+    if (isNullEmptyOrWhitespace) {
+      return '';
+    }
+
+    if (this!.length < maxLength) {
+      return this!;
+    }
+
+    final take = maxLength - numberOfDots;
+    if (this!.length < take) {
+      return this!;
+    }
+
+    final newValue = this!.substring(0, take);
+    return '$newValue...';
+  }
 }
