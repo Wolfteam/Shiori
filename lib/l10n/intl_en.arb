@@ -12,7 +12,7 @@
   "japanese": "Japanese",
   "vietnamese": "Vietnamese",
   "indonesian": "Indonesian",
-  "deutsch": "Deutsch",
+  "deutsch": "German",
   "korean": "Korean",
   "thai": "Thai",
   "traditionalChinese": "Chinese (Traditional)",
@@ -415,5 +415,18 @@
   "restorePurchaseError": "Purchases could not be restored",
   "collapse": "Collapse",
   "useDarkAmoledTheme": "Use dark amoled theme",
-  "unlockedWithDonation": "Unlocked with a donation"
+  "unlockedWithDonation": "Unlocked with a donation",
+  "bannerHistory": "Banner History",
+  "bannerType": "Banner Type",
+  "versions": "Versions",
+  "checkBannerHistory": "Check when a character / weapon was released",
+  "fromDate": "From: {date}",
+  "untilDate": "Until: {date}",
+  "nameAsc": "Name asc.",
+  "nameDesc": "Name desc.",
+  "versionAsc": "Version asc.",
+  "versionDesc": "Version desc.",
+  "releaseHistory": "Release History",
+  "selectAnOption": "Select an option",
+  "details": "Details"
 }

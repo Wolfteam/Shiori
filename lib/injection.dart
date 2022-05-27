@@ -140,7 +140,26 @@ class Injection {
   static DonationsBloc get donationsBloc {
     final purchaseService = getIt<PurchaseService>();
     final networkService = getIt<NetworkService>();
-    return DonationsBloc(purchaseService, networkService);
+    final telemetryService = getIt<TelemetryService>();
+    return DonationsBloc(purchaseService, networkService, telemetryService);
+  }
+
+  static BannerHistoryBloc get bannerHistoryBloc {
+    final genshinService = getIt<GenshinService>();
+    final telemetryService = getIt<TelemetryService>();
+    return BannerHistoryBloc(genshinService, telemetryService);
+  }
+
+  static BannerHistoryItemBloc get bannerHistoryItemBloc {
+    final genshinService = getIt<GenshinService>();
+    final telemetryService = getIt<TelemetryService>();
+    return BannerHistoryItemBloc(genshinService, telemetryService);
+  }
+
+  static ItemReleaseHistoryBloc get itemReleaseHistoryBloc {
+    final genshinService = getIt<GenshinService>();
+    final telemetryService = getIt<TelemetryService>();
+    return ItemReleaseHistoryBloc(genshinService, telemetryService);
   }
 
   //TODO: USE THIS PROP

@@ -9,6 +9,8 @@ class CircleItem extends StatelessWidget {
   final Function(String)? onTap;
   final BoxFit fit;
   final Alignment alignment;
+  final Color backgroundColor;
+  final Gradient? gradient;
 
   const CircleItem({
     Key? key,
@@ -19,6 +21,8 @@ class CircleItem extends StatelessWidget {
     this.onTap,
     this.fit = BoxFit.cover,
     this.alignment = Alignment.topCenter,
+    this.backgroundColor = Colors.transparent,
+    this.gradient,
   }) : super(key: key);
 
   @override
@@ -27,7 +31,7 @@ class CircleItem extends StatelessWidget {
     final size = imageSizeTimesTwo ? radius * 2 : radius;
     final avatar = CircleAvatar(
       radius: radius,
-      backgroundColor: Colors.transparent,
+      backgroundColor: backgroundColor,
       child: ClipOval(
         child: FadeInImage(
           placeholder: MemoryImage(kTransparentImage),
@@ -40,12 +44,21 @@ class CircleItem extends StatelessWidget {
       ),
     );
 
+    final boxDecoration = BoxDecoration(shape: BoxShape.circle, gradient: gradient);
+
     if (forDrag) {
+      if (gradient != null) {
+        return Container(
+          decoration: boxDecoration,
+          child: avatar,
+        );
+      }
       return avatar;
     }
 
     return Container(
       margin: const EdgeInsets.all(3),
+      decoration: boxDecoration,
       child: InkWell(
         radius: radius,
         borderRadius: BorderRadius.circular(radius),

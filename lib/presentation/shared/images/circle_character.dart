@@ -10,6 +10,7 @@ class CircleCharacter extends StatelessWidget {
   final double radius;
   final bool forDrag;
   final Function(String)? onTap;
+  final Gradient? gradient;
 
   const CircleCharacter({
     Key? key,
@@ -18,6 +19,7 @@ class CircleCharacter extends StatelessWidget {
     this.radius = 35,
     this.forDrag = false,
     this.onTap,
+    this.gradient,
   }) : super(key: key);
 
   CircleCharacter.fromItem({
@@ -26,6 +28,7 @@ class CircleCharacter extends StatelessWidget {
     this.radius = 35,
     this.forDrag = false,
     this.onTap,
+    this.gradient,
   })  : itemKey = item.key,
         image = item.image,
         super(key: key);
@@ -35,14 +38,9 @@ class CircleCharacter extends StatelessWidget {
     return CircleItem(
       image: image,
       forDrag: forDrag,
-      onTap: (img) => onTap != null ? onTap!(img) : _gotoCharacterPage(context),
+      onTap: (img) => onTap != null ? onTap!(img) : CharacterPage.route(itemKey, context),
       radius: radius,
+      gradient: gradient,
     );
-  }
-
-  Future<void> _gotoCharacterPage(BuildContext context) async {
-    final route = MaterialPageRoute(builder: (c) => CharacterPage(itemKey: itemKey));
-    await Navigator.push(context, route);
-    await route.completed;
   }
 }

@@ -1,0 +1,4 @@
+enum BannerHistoryItemType {
+  character,
+  weapon,
+}

@@ -2728,81 +2728,136 @@
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Marobashi",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Tấn Công Thường",
+              "description": "Thực hiện tối đa 5 lần đánh kiếm liên tiếp.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Trọng Kích",
+              "description": "Tiêu hao thể lực nhất định, xung kích về phía trước và thi triển đòn Iai.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Tấn Công Khi Đáp",
+              "description": "Đáp xuống đất từ trên không, tấn công kẻ địch trên đường và gây sát thương phạm vi khi chạm đất.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "Sát Thương Lần 1|{param1}%",
+            "Sát Thương Lần 2|{param2}%",
+            "Sát Thương Lần 3|{param3}%",
+            "Sát Thương Lần 4|{param4}%×{param5}",
+            "Sát Thương Lần 5|{param6}%",
+            "Sát Thương Trọng Kích|{param7}%",
+            "Thể lực Trọng Kích tiêu hao|{param8}",
+            "Sát Thương Khi Rơi|{param9}%",
+            "Sát Thương Khi Rơi Từ Độ Cao Thấp/Cao|{param10}% / {param11}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Trường Phái Kamisato - Kyouka",
+          "description": "Kamisato Ayato thay đổi vị trí và vào trạng thái \"Takimeguri Kanka\".\r\nSau khi di chuyển, Ayato sẽ để lại Thủy Ảnh ở vị trí ban đầu. Thủy Ảnh sau khi hình thành sẽ phát nổ khi có kẻ địch đến gần hoặc kết thúc thời gian duy trì, gây Sát Thương Phạm Vi Nguyên Tố Thủy.\r\n",
+          "abilities": [
+            {
+              "name": "Takimeguri Kanka",
+              "description": "Trong trạng thái này, Kamisato Ayato sẽ sử dụng Shunsuiken để tấn công nhanh, chuyển hóa sát thương đòn đánh thường thành Sát Thương Phạm Vi Nguyên Tố Thủy không thể bị thay thế.\r\nNgoài ra, còn có những hiệu quả sau:\r\n",
+              "descriptions": [
+                "Shunsuiken sau khi đánh trúng kẻ địch sẽ cung cấp cho Kamisato Ayato hiệu quả \"Namisen\", tăng sát thương của Shunsuiken gây ra dựa vào HP tối đa ở hiện tại của Kamisato Ayato. Ban đầu Namisen có thể cộng dồn tối đa 4 tầng, mỗi 0.1s tối đa nhận 1 tầng từ Shunsuiken, trạng thái sẽ biến mất khi Takimeguri Kanka kết thúc.",
+                "Tăng khả năng kháng gián đoạn của Kamisato Ayato;",
+                "Không thể sử dụng trọng kích và tấn công khi đáp.",
+                "Trạng thái Takimeguri Kanka sẽ biến mất khi Kamisato Ayato rời trận; Khi dùng lại Trường Phái Kamisato - Kyouka trong trạng thái Takimeguri Kanka, sẽ xóa bỏ trạng thái Takimeguri Kanka đã có."
+              ]
+            }
+          ],
+          "stats": [
+            "Sát Thương Shunsuiken Lần 1|{param1}%",
+            "Sát Thương Shunsuiken Lần 2|{param2}%",
+            "Sát Thương Shunsuiken Lần 3|{param3}%",
+            "Thời Gian Duy Trì Takimeguri Kanka|{param4}s",
+            "Tăng Sát Thương Namisen|{param5}%Max HP / Stack",
+            "Sát Thương Thủy Ảnh|{param6}%",
+            "Thời Gian Thủy Ảnh Duy Trì|{param7}s",
+            "CD|{param8}s"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
+          "title": "Trường Phái Kamisato - Suiyuu",
+          "description": "Dựng lên khu vườn thanh tịnh, dập tắt mọi sự ồn ào.\r\nTrong thời gian tồn tại sẽ liên tục giáng xuống Thủy Hoa Kiếm tấn công kẻ địch trong phạm vi, gây Sát Thương Nguyên Tố Thủy, đồng thời tăng sát thương tấn công thường cho nhân vật trong đó.\r\n",
           "abilities": [],
-          "stats": []
+          "stats": [
+            "Sát Thương Thủy Hoa Kiếm|{param1}%",
+            "Sát Thương Tấn Công Thường Tăng|{param2}%",
+            "Thời Gian Kéo Dài|{param3}s",
+            "CD|{param4}s",
+            "Năng Lượng Nguyên Tố|{param5}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "Trường Phái Kamisato - Cơm Nước Thường Ngày",
+          "description": "Khi nấu hoàn mỹ món ăn, có 18% cơ hội nhận thêm 1 món cùng loại với phẩm chất \"kỳ lạ\".\r\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
+          "title": "Trường Phái Kamisato - Mine Wo Matoishi Kiyotaki",
+          "description": "Trường Phái Kamisato - Kyouka có hiệu quả sau:\r\n",
+          "descriptions": [
+            "Sau khi thi triển, Kamisato Ayato sẽ nhận 2 tầng hiệu quả Namisen;",
+            "Khi Thủy Ảnh phát nổ, Kamisato Ayato sẽ nhận được tối đa số tầng hiệu quả Namisen có thể đạt được."
+          ]
         },
         {
           "key": "p3",
-          "title": "NA",
-          "description": "",
+          "title": "Trường Phái Kamisato: Michiyuku Hagetsu",
+          "description": "Khi Ayato không ra trận, nếu Năng Lượng Nguyên Tố thấp hơn 40 điểm, mỗi 1 giây sẽ hồi phục 2 điểm Năng Lượng Nguyên Tố.\r\n",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "Kyouka Fuushi",
+          "description": "Tăng 40% sát thương của Shunsuiken gây ra khi HP của kẻ địch thấp hơn hoặc bằng 50%.\r\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "Suối Nguồn Thế Giới",
+          "description": "Hiệu quả Namisen tối đa cộng dồn đến 5 tầng. Khi Kamisato Ayato có được ít nhất 3 tầng Namisen sẽ tăng 50% giới hạn HP.\r\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "Vô Ý Thưởng Hoa",
+          "description": "Cấp kỹ năng Trường Phái Kamisato - Kyouka +3.\r\nTăng tối đa đến cấp 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "Dòng Chảy Vô Hạn",
+          "description": "Sau khi thi triển Trường Phái Kamisato - Suiyuu, tốc độ tấn công thường của nhân vật trong đội gần đó tăng 15%, duy trì 15s.\r\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "Vạn Thủy Nhất Lộ",
+          "description": "Cấp kỹ năng Trường Phái Kamisato - Suiyuu +3.\r\nTăng tối đa đến cấp 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
+          "title": "Ngọn Nguồn Bất Tận",
+          "description": "Sau khi thi triển Trường Phái Kamisato - Kyouka, lần tiếp theo Kamisato Ayato dùng Shunsuiken đánh trúng kẻ địch, sẽ tiến hành thêm 2 lần tấn công Shunsuiken, mỗi lần sẽ gây ra sát thương bằng 450% tấn công của Kamisato Ayato.\r\nHai lần tấn công Shunsuiken này sẽ không nhận được hiệu quả Namisen.\r\n",
           "descriptions": []
         }
       ]
@@ -3185,6 +3240,93 @@
           "key": "c6",
           "title": "Bản Ngã",
           "description": "Khi nhân vật ở trạng thái tăng tấn công nhờ Tengu Juurai, sát thương bạo kích Nguyên Tố Lôi tăng 60%.\r\n",
+          "descriptions": []
+        }
+      ]
+    },
+    {
+      "key": "kuki-shinobu",
+      "name": "Kuki Shinobu",
+      "title": "",
+      "description": "",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
           "descriptions": []
         }
       ]
@@ -6647,6 +6789,87 @@
       ]
     },
     {
+      "key": "yelan",
+      "name": "Yelan",
+      "title": "",
+      "description": "",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ]
+    },
+    {
       "key": "yoimiya",
       "name": "Yoimiya",
       "title": "Vũ Điệu Bão Lửa",
@@ -7607,6 +7830,18 @@
       ]
     },
     {
+      "key": "haran-geppaku-futsu",
+      "name": "Haran Geppaku Futsu",
+      "description": "Tác phẩm nổi tiếng do Futsu phụng mệnh chế tạo. Do nó sở hữu khí thế tựa những cơn sóng cuộn trào, nên được đặt tên là \"Haran\".",
+      "refinements": [
+        "Nhận được {color}12{/color}% buff sát thương tất cả nguyên tố; nhân vật khác trong đội ở gần khi thi triển Kỹ Năng Nguyên Tố, sẽ tạo ra 1 tầng \"Mũi Sóng\" cho nhân vật trang bị vũ khí này, tối đa cộng dồn 2 tầng, mỗi 0.3s tối đa kích hoạt 1 lần. Khi nhân vật trang bị vũ khí này thi triển Kỹ Năng Nguyên Tố, nếu có hiệu ứng \"Mũi Sóng\" sẽ tiêu hao \"Mũi Sóng\" đã có, và nhận được \"Sóng Loạn\": Căn cứ số tầng tiêu hao, mỗi tầng tăng {color}20{/color}% sát thương tấn công thường, duy trì 8s.",
+        "Nhận được {color}15{/color}% buff sát thương tất cả nguyên tố; nhân vật khác trong đội ở gần khi thi triển Kỹ Năng Nguyên Tố, sẽ tạo ra 1 tầng \"Mũi Sóng\" cho nhân vật trang bị vũ khí này, tối đa cộng dồn 2 tầng, mỗi 0.3s tối đa kích hoạt 1 lần. Khi nhân vật trang bị vũ khí này thi triển Kỹ Năng Nguyên Tố, nếu có hiệu ứng \"Mũi Sóng\" sẽ tiêu hao \"Mũi Sóng\" đã có, và nhận được \"Sóng Loạn\": Căn cứ số tầng tiêu hao, mỗi tầng tăng {color}25{/color}% sát thương tấn công thường, duy trì 8s.",
+        "Nhận được {color}18{/color}% buff sát thương tất cả nguyên tố; nhân vật khác trong đội ở gần khi thi triển Kỹ Năng Nguyên Tố, sẽ tạo ra 1 tầng \"Mũi Sóng\" cho nhân vật trang bị vũ khí này, tối đa cộng dồn 2 tầng, mỗi 0.3s tối đa kích hoạt 1 lần. Khi nhân vật trang bị vũ khí này thi triển Kỹ Năng Nguyên Tố, nếu có hiệu ứng \"Mũi Sóng\" sẽ tiêu hao \"Mũi Sóng\" đã có, và nhận được \"Sóng Loạn\": Căn cứ số tầng tiêu hao, mỗi tầng tăng {color}30{/color}% sát thương tấn công thường, duy trì 8s.",
+        "Nhận được {color}21{/color}% buff sát thương tất cả nguyên tố; nhân vật khác trong đội ở gần khi thi triển Kỹ Năng Nguyên Tố, sẽ tạo ra 1 tầng \"Mũi Sóng\" cho nhân vật trang bị vũ khí này, tối đa cộng dồn 2 tầng, mỗi 0.3s tối đa kích hoạt 1 lần. Khi nhân vật trang bị vũ khí này thi triển Kỹ Năng Nguyên Tố, nếu có hiệu ứng \"Mũi Sóng\" sẽ tiêu hao \"Mũi Sóng\" đã có, và nhận được \"Sóng Loạn\": Căn cứ số tầng tiêu hao, mỗi tầng tăng {color}35{/color}% sát thương tấn công thường, duy trì 8s.",
+        "Nhận được {color}24{/color}% buff sát thương tất cả nguyên tố; nhân vật khác trong đội ở gần khi thi triển Kỹ Năng Nguyên Tố, sẽ tạo ra 1 tầng \"Mũi Sóng\" cho nhân vật trang bị vũ khí này, tối đa cộng dồn 2 tầng, mỗi 0.3s tối đa kích hoạt 1 lần. Khi nhân vật trang bị vũ khí này thi triển Kỹ Năng Nguyên Tố, nếu có hiệu ứng \"Mũi Sóng\" sẽ tiêu hao \"Mũi Sóng\" đã có, và nhận được \"Sóng Loạn\": Căn cứ số tầng tiêu hao, mỗi tầng tăng {color}40{/color}% sát thương tấn công thường, duy trì 8s."
+      ]
+    },
+    {
       "key": "harbinger-of-dawn",
       "name": "Thần Kiếm Lê Minh",
       "description": "Một thanh bảo kiếm sáng ngời, người nắm giữ nó sẽ có được sức mạnh \"Tự mình cảm thấy ưu tú\". Nhưng thanh kiếm đã có đôi chút xuống sắc.",
@@ -8560,7 +8795,8 @@
         "Khi thi triển kỹ năng nguyên tố, nhận được lời chúc của Hoa Gió cổ xưa, tấn công tăng {color}16{/color}%, kéo dài 6s.",
         "Khi thi triển kỹ năng nguyên tố, nhận được lời chúc của Hoa Gió cổ xưa, tấn công tăng {color}20{/color}%, kéo dài 6s.",
         "Khi thi triển kỹ năng nguyên tố, nhận được lời chúc của Hoa Gió cổ xưa, tấn công tăng {color}24{/color}%, kéo dài 6s.",
-        "Khi thi triển kỹ năng nguyên tố, nhận được lời chúc của Hoa Gió cổ xưa, tấn công tăng {color}28{/color}%, kéo dài 6s."
+        "Khi thi triển kỹ năng nguyên tố, nhận được lời chúc của Hoa Gió cổ xưa, tấn công tăng {color}28{/color}%, kéo dài 6s.",
+        "Khi thi triển kỹ năng nguyên tố, nhận được lời chúc của Hoa Gió cổ xưa, tấn công tăng {color}32{/color}%, kéo dài 6s."
       ]
     },
     {
@@ -8651,6 +8887,14 @@
       "bonus": [
         "Phòng ngự tăng 30%.",
         "Cứ mỗi nhân vật của bản thân có 1 nguyên tố khác trong đội thì bản thân sẽ được nhận 30% kháng Nguyên Tố tương ứng."
+      ]
+    },
+    {
+      "key": "echoes-of-an-offering",
+      "name": "Dư Âm Tế Lễ",
+      "bonus": [
+        "Tấn công tăng 18%",
+        "Khi tấn công thường đánh trúng kẻ địch, sẽ có 36% tỷ lệ kích hoạt \"Nghi Lễ Vực Thẳm\" Tăng sát thương do tấn công thường gây ra, lượng tăng thêm bằng 70% tấn công; 0.05s sau khi tấn công thường gây ra sát thương, hiệu quả này sẽ biến mất. Khi tấn công thường chưa kích hoạt \"Nghi Lễ Vực Thẳm\", sẽ tăng 20% tỷ lệ kích hoạt lần sau, trong 0.2s tối đa kích hoạt 1 lần."
       ]
     },
     {
@@ -8863,6 +9107,14 @@
       "bonus": [
         "Tăng 20% hiệu quả trị liệu nhân vật nhận được.",
         "Khi thi triển Kỹ Năng Nộ, hồi 20% HP."
+      ]
+    },
+    {
+      "key": "vermillion-hereafter",
+      "name": "Thần Sa Vãng Sinh Lục",
+      "bonus": [
+        "Tấn công tăng 18%",
+        "Sau khi thi triển kỹ năng nộ, sẽ sinh ra hiệu quả \"Ánh Sáng Ngầm\" duy trì 16s Tăng 8% tấn công; đồng thời khi nhân vật bị giảm HP, sẽ tiếp tục tăng 10% tấn công, tối đa tăng 4 lần bằng cách này, mỗi 0.8s tối đa kích hoạt 1 lần. Hiệu quả \"Ánh Sáng Ngầm\" sẽ biến mất khi nhân vật rời trận; thi triển kỹ năng nộ lần nữa khi đang trong thời gian duy trì, sẽ xóa \"Ánh Sáng Ngầm\" đã có."
       ]
     },
     {
@@ -9954,6 +10206,11 @@
       "description": "Một chút băng lấy từ trên người Vua Sói Bắc Phong.\r\nNơi này từng có gió bắc lạnh giá thổi qua, khiến cho người ta lạnh buốt da khi bay. Hiện nay sức mạnh Vua Sói tuy không được như trước, nhưng vẫn đủ để khiến nơi này đóng băng."
     },
     {
+      "key": "runic-fang",
+      "name": "Bánh Răng Ấn Ký",
+      "description": "Cỗ máy cổ đại hình rắn bí ẩn được sử dụng để đào \"răng\" của vách núi, trên đó có khắc những ký tự khó hiểu.\r\nNgười ta nói rằng, ẩn trong những vết nứt đen sâu thẳm của trái đất là những con rắn khổng lồ, chúng luôn nuôi dưỡng lòng thù hận và ác ý đối với thế giới mặt đất, với mục đích thâm độc và không thể biết trước, chúng đào những đường hầm rất lớn..."
+    },
+    {
       "key": "sakura-bloom",
       "name": "Tú Cầu Anh Đào",
       "description": "Cánh hoa rơi từ cây Anh Đào Thần ở Đền Narukami, mang theo sự phù hộ của Inazuma."
@@ -10531,6 +10788,10 @@
       "name": "Azhdaha"
     },
     {
+      "key": "black-serpent-knight-windcutter",
+      "name": "Kỵ Sĩ Hắc Xà - Trảm Phong Kiếm"
+    },
+    {
       "key": "blazing-axe-mitachurl",
       "name": "Bạo Đồ Hilichurl Búa Lửa"
     },
@@ -10673,6 +10934,10 @@
     {
       "key": "fatui-skirmisher-pyroslinger-bracer",
       "name": "Đội tiên phong Fatui - Quân du kích Hỏa"
+    },
+    {
+      "key": "floating-hydro-fungus",
+      "name": "Nấm Quỷ Phù Du - Thủy"
     },
     {
       "key": "frostarm-lawachurl",
@@ -10993,6 +11258,10 @@
     {
       "key": "ruin-scout",
       "name": "Trinh Sát Di Tích"
+    },
+    {
+      "key": "ruin-serpent",
+      "name": "Mãng Xà Di Tích"
     },
     {
       "key": "sangonomiya-cohort",

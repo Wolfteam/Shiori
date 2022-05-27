@@ -11,6 +11,7 @@ abstract class GenshinService {
   Future<void> initMonsters();
   Future<void> initGadgets();
   Future<void> initFurniture();
+  Future<void> initBannerHistory();
   Future<void> initTranslations(AppLanguageType languageType);
 
   List<CharacterCardModel> getCharactersForCard();
@@ -86,4 +87,9 @@ abstract class GenshinService {
   List<String> getArtifactRelatedParts(String fullImagePath, String image, int bonus);
   String getArtifactRelatedPart(String fullImagePath, String image, int bonus, ArtifactType type);
   List<StatType> generateSubStatSummary(List<CustomBuildArtifactModel> artifacts);
+
+  List<double> getBannerHistoryVersions(SortDirectionType type);
+  List<BannerHistoryItemModel> getBannerHistory(BannerHistoryItemType type);
+  List<BannerHistoryPeriodModel> getBanners(double version);
+  List<ItemReleaseHistoryModel> getItemReleaseHistory(String itemKey);
 }

@@ -177,7 +177,11 @@ class _DonationItem extends StatelessWidget {
     return InkWell(
       onTap: onTap,
       child: Card(
-        color: isSelected ? theme.colorScheme.primary.withOpacity(0.5) : null,
+        color: isSelected
+            ? theme.colorScheme.primary.withOpacity(0.5)
+            : theme.scaffoldBackgroundColor == Colors.black
+              ? theme.cardColor.withOpacity(0.5)
+              : theme.cardColor,
         margin: Styles.edgeInsetAll10,
         child: Padding(
           padding: Styles.edgeInsetAll10,

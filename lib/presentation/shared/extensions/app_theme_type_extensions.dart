@@ -56,7 +56,7 @@ extension AppThemeTypeExtensions on AppAccentColorType {
           return dark;
         }
 
-        const almostBlackColor =  Color.fromARGB(255, 16, 16, 16);
+        const almostBlackColor =  Color.fromARGB(255, 20, 20, 20);
         return dark.copyWith(
           scaffoldBackgroundColor: Colors.black,
           popupMenuTheme: const PopupMenuThemeData(color: almostBlackColor),

@@ -4,6 +4,7 @@ import 'package:shiori/domain/extensions/string_extensions.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/network_service.dart';
 import 'package:shiori/domain/services/purchase_service.dart';
+import 'package:shiori/domain/services/telemetry_service.dart';
 
 part 'donations_bloc.freezed.dart';
 part 'donations_event.dart';
@@ -12,13 +13,14 @@ part 'donations_state.dart';
 class DonationsBloc extends Bloc<DonationsEvent, DonationsState> {
   final PurchaseService _purchaseService;
   final NetworkService _networkService;
+  final TelemetryService _telemetryService;
 
   static int maxUserIdLength = 20;
 
   //The user id must be something like 12345_xyz
   static String appUserIdRegex = '([a-zA-Z0-9]{5,20})';
 
-  DonationsBloc(this._purchaseService, this._networkService) : super(const DonationsState.loading());
+  DonationsBloc(this._purchaseService, this._networkService, this._telemetryService) : super(const DonationsState.loading());
 
   @override
   Stream<DonationsState> mapEventToState(DonationsEvent event) async* {
@@ -88,6 +90,7 @@ class DonationsBloc extends Bloc<DonationsEvent, DonationsState> {
       throw Exception('AppUserId is not valid');
     }
     final restored = await _purchaseService.restorePurchases(userId);
+    await _telemetryService.trackRestore(userId, restored);
     return DonationsState.restoreCompleted(error: !restored);
   }
 
@@ -105,6 +108,7 @@ class DonationsBloc extends Bloc<DonationsEvent, DonationsState> {
     }
 
     final succeed = await _purchaseService.purchase(e.userId, e.identifier, e.offeringIdentifier);
+    await _telemetryService.trackPurchase(e.userId, e.identifier, succeed);
     return DonationsState.purchaseCompleted(error: !succeed);
   }
 }

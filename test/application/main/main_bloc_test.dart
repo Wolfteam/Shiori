@@ -3,15 +3,9 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:mocktail/mocktail.dart' show registerFallbackValue;
 import 'package:shiori/application/bloc.dart';
+import 'package:shiori/domain/app_constants.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/models/models.dart';
-import 'package:shiori/domain/services/device_info_service.dart';
-import 'package:shiori/domain/services/genshin_service.dart';
-import 'package:shiori/domain/services/locale_service.dart';
-import 'package:shiori/domain/services/logging_service.dart';
-import 'package:shiori/domain/services/purchase_service.dart';
-import 'package:shiori/domain/services/settings_service.dart';
-import 'package:shiori/domain/services/telemetry_service.dart';
 import 'package:shiori/infrastructure/infrastructure.dart';
 
 import '../../mocks.mocks.dart';
@@ -65,19 +59,6 @@ void main() {
     useTwentyFourHoursFormat: true,
   );
 
-  late final LoggingService _logger;
-  late final GenshinService _genshinService;
-  late final SettingsService _settingsService;
-  late final LocaleService _localeService;
-  late final TelemetryService _telemetryService;
-  late final DeviceInfoService _deviceInfoService;
-  late final PurchaseService _purchaseService;
-
-  late final CharactersBloc _charactersBloc;
-  late final WeaponsBloc _weaponsBloc;
-  late final HomeBloc _homeBloc;
-  late final ArtifactsBloc _artifactsBloc;
-
   setUpAll(() {
     TestWidgetsFlutterBinding.ensureInitialized();
     registerFallbackValue(FakeCharactersState());
@@ -90,46 +71,57 @@ void main() {
     registerFallbackValue(FakeArtifactsEvent());
     registerFallbackValue(FakeElementsState());
     registerFallbackValue(FakeElementsEvent());
-    _logger = MockLoggingService();
-    _settingsService = MockSettingsService();
-    _telemetryService = MockTelemetryService();
-    _deviceInfoService = MockDeviceInfoService();
-    _localeService = LocaleServiceImpl(_settingsService);
-    _genshinService = GenshinServiceImpl(_localeService);
-    _purchaseService = MockPurchaseService();
-    when(_purchaseService.getUnlockedFeatures()).thenAnswer((_) => Future.value(AppUnlockedFeature.values));
-
-    _charactersBloc = MockCharactersBloc();
-    _weaponsBloc = MockWeaponsBloc();
-    _homeBloc = MockHomeBloc();
-    _artifactsBloc = MockArtifactsBloc();
   });
 
-  setUp(() {
-    when(_settingsService.language).thenReturn(_defaultLang);
-    when(_settingsService.appTheme).thenReturn(_defaultTheme);
-    when(_settingsService.useDarkAmoledTheme).thenReturn(false);
-    when(_settingsService.accentColor).thenReturn(_defaultAccentColor);
-    when(_settingsService.isFirstInstall).thenReturn(_defaultAppSettings.isFirstInstall);
-    when(_settingsService.appSettings).thenReturn(_defaultAppSettings);
+  MainBloc _getBloc({
+    String appName = _defaultAppName,
+    // AppLanguageType language = _defaultLang,
+    // AppThemeType theme = _defaultTheme,
+    // AppAccentColorType accentColor = _defaultAccentColor,
+    AppSettings? appSettings,
+    bool versionChanged = false,
+    List<AppUnlockedFeature> unlockedFeatures = AppUnlockedFeature.values,
+  }) {
+    final settings = appSettings ?? _defaultAppSettings;
+    final logger = MockLoggingService();
+    final settingsService = MockSettingsService();
+    final telemetryService = MockTelemetryService();
+    final deviceInfoService = MockDeviceInfoService();
+    final localeService = LocaleServiceImpl(settingsService);
+    final genshinService = GenshinServiceImpl(localeService);
+    final purchaseService = MockPurchaseService();
+    when(purchaseService.getUnlockedFeatures()).thenAnswer((_) => Future.value(unlockedFeatures));
+    for (final feature in unlockedFeatures) {
+      when(purchaseService.isFeatureUnlocked(feature)).thenAnswer((_) => Future.value(true));
+    }
 
-    when(_deviceInfoService.appName).thenReturn(_defaultAppName);
-    when(_deviceInfoService.versionChanged).thenReturn(false);
-  });
+    final charactersBloc = MockCharactersBloc();
+    final weaponsBloc = MockWeaponsBloc();
+    final homeBloc = MockHomeBloc();
+    final artifactsBloc = MockArtifactsBloc();
+    when(settingsService.language).thenReturn(settings.appLanguage);
+    when(settingsService.appTheme).thenReturn(settings.appTheme);
+    when(settingsService.useDarkAmoledTheme).thenReturn(settings.useDarkAmoled);
+    when(settingsService.accentColor).thenReturn(settings.accentColor);
+    when(settingsService.isFirstInstall).thenReturn(settings.isFirstInstall);
+    when(settingsService.appSettings).thenReturn(settings);
 
-  MainBloc _getBloc() => MainBloc(
-        _logger,
-        _genshinService,
-        _settingsService,
-        _localeService,
-        _telemetryService,
-        _deviceInfoService,
-        _purchaseService,
-        _charactersBloc,
-        _weaponsBloc,
-        _homeBloc,
-        _artifactsBloc,
-      );
+    when(deviceInfoService.appName).thenReturn(appName);
+    when(deviceInfoService.versionChanged).thenReturn(versionChanged);
+    return MainBloc(
+      logger,
+      genshinService,
+      settingsService,
+      localeService,
+      telemetryService,
+      deviceInfoService,
+      purchaseService,
+      charactersBloc,
+      weaponsBloc,
+      homeBloc,
+      artifactsBloc,
+    );
+  }
 
   test('Initial state', () {
     final bloc = _getBloc();
@@ -147,10 +139,10 @@ void main() {
           theme: _defaultTheme,
           useDarkAmoledTheme: false,
           accentColor: _defaultAccentColor,
-          language: _localeService.getLocale(_defaultLang),
+          language: languagesMap.entries.firstWhere((kvp) => kvp.key == _defaultLang).value,
           initialized: true,
           firstInstall: _defaultAppSettings.isFirstInstall,
-          versionChanged: _deviceInfoService.versionChanged,
+          versionChanged: false,
         )
       ],
     );
@@ -170,10 +162,10 @@ void main() {
           theme: AppThemeType.light,
           useDarkAmoledTheme: false,
           accentColor: _defaultAppSettings.accentColor,
-          language: _localeService.getLocale(_defaultLang),
+          language: languagesMap.entries.firstWhere((kvp) => kvp.key == _defaultLang).value,
           initialized: true,
           firstInstall: _defaultAppSettings.isFirstInstall,
-          versionChanged: _deviceInfoService.versionChanged,
+          versionChanged: false,
         ),
       ],
     );
@@ -191,31 +183,28 @@ void main() {
           theme: _defaultAppSettings.appTheme,
           useDarkAmoledTheme: false,
           accentColor: AppAccentColorType.blueGrey,
-          language: _localeService.getLocale(_defaultLang),
+          language: languagesMap.entries.firstWhere((kvp) => kvp.key == _defaultLang).value,
           initialized: true,
           firstInstall: _defaultAppSettings.isFirstInstall,
-          versionChanged: _deviceInfoService.versionChanged,
+          versionChanged: false,
         ),
       ],
     );
 
     blocTest<MainBloc, MainState>(
       'uses dark amoled',
-      build: () => _getBloc(),
-      act: (bloc) => bloc
-        ..add(const MainEvent.init())
-        ..add(const MainEvent.useDarkAmoledThemeChanged(newValue: true)),
-      skip: 1,
+      build: () => _getBloc(appSettings: _defaultAppSettings.copyWith.call(useDarkAmoled: true)),
+      act: (bloc) => bloc..add(const MainEvent.useDarkAmoledThemeChanged(newValue: true)),
       expect: () => [
         MainState.loaded(
           appTitle: _defaultAppName,
           theme: _defaultAppSettings.appTheme,
           useDarkAmoledTheme: true,
           accentColor: _defaultAccentColor,
-          language: _localeService.getLocale(_defaultLang),
+          language: languagesMap.entries.firstWhere((kvp) => kvp.key == _defaultLang).value,
           initialized: true,
           firstInstall: _defaultAppSettings.isFirstInstall,
-          versionChanged: _deviceInfoService.versionChanged,
+          versionChanged: false,
         ),
       ],
     );
@@ -224,10 +213,7 @@ void main() {
   group('Language changed', () {
     blocTest<MainBloc, MainState>(
       'updates the language in the state',
-      build: () => _getBloc(),
-      setUp: () {
-        when(_settingsService.language).thenReturn(AppLanguageType.russian);
-      },
+      build: () => _getBloc(appSettings: _defaultAppSettings.copyWith.call(appLanguage: AppLanguageType.russian)),
       act: (bloc) => bloc
         ..add(const MainEvent.init())
         ..add(const MainEvent.languageChanged(newValue: AppLanguageType.russian)),
@@ -237,10 +223,10 @@ void main() {
           theme: _defaultAppSettings.appTheme,
           useDarkAmoledTheme: false,
           accentColor: _defaultAppSettings.accentColor,
-          language: _localeService.getLocale(AppLanguageType.russian),
+          language: languagesMap.entries.firstWhere((kvp) => kvp.key == AppLanguageType.russian).value,
           initialized: true,
           firstInstall: _defaultAppSettings.isFirstInstall,
-          versionChanged: _deviceInfoService.versionChanged,
+          versionChanged: false,
         ),
       ],
     );

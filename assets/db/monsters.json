@@ -338,6 +338,26 @@
       ]
     },
     {
+      "key": "black-serpent-knight-windcutter",
+      "image": "black-serpent-knight-windcutter.png",
+      "type": "abyssOrder",
+      "isComingSoon": false,
+      "drops": [
+        {
+          "key": "gloomy-statuette",
+          "type": "material"
+        },
+        {
+          "key": "dark-statuette",
+          "type": "material"
+        },
+        {
+          "key": "deathly-statuette",
+          "type": "material"
+        }
+      ]
+    },
+    {
       "key": "blazing-axe-mitachurl",
       "image": "blazing-axe-mitachurl.png",
       "type": "hilichurl",
@@ -664,18 +684,6 @@
         },
         {
           "key": "ley-line-sprout",
-          "type": "material"
-        },
-        {
-          "key": "gloomy-statuette",
-          "type": "material"
-        },
-        {
-          "key": "dark-statuette",
-          "type": "material"
-        },
-        {
-          "key": "deathly-statuette",
           "type": "material"
         },
         {
@@ -1091,18 +1099,6 @@
         },
         {
           "key": "ley-line-sprout",
-          "type": "material"
-        },
-        {
-          "key": "gloomy-statuette",
-          "type": "material"
-        },
-        {
-          "key": "dark-statuette",
-          "type": "material"
-        },
-        {
-          "key": "deathly-statuette",
           "type": "material"
         },
         {
@@ -1707,6 +1703,13 @@
       ]
     },
     {
+      "key": "floating-hydro-fungus",
+      "image": "floating-hydro-fungus.png",
+      "type": "magicalBeast",
+      "isComingSoon": false,
+      "drops": []
+    },
+    {
       "key": "frostarm-lawachurl",
       "image": "frostarm-lawachurl.png",
       "type": "hilichurl",
@@ -2218,18 +2221,6 @@
         },
         {
           "key": "ley-line-sprout",
-          "type": "material"
-        },
-        {
-          "key": "gloomy-statuette",
-          "type": "material"
-        },
-        {
-          "key": "dark-statuette",
-          "type": "material"
-        },
-        {
-          "key": "deathly-statuette",
           "type": "material"
         },
         {
@@ -3705,18 +3696,6 @@
           "type": "material"
         },
         {
-          "key": "gloomy-statuette",
-          "type": "material"
-        },
-        {
-          "key": "dark-statuette",
-          "type": "material"
-        },
-        {
-          "key": "deathly-statuette",
-          "type": "material"
-        },
-        {
           "key": "berserker",
           "type": "artifact"
         },
@@ -4573,6 +4552,18 @@
         {
           "key": "traveling-doctor",
           "type": "artifact"
+        }
+      ]
+    },
+    {
+      "key": "ruin-serpent",
+      "image": "ruin-serpent.png",
+      "type": "automaton",
+      "isComingSoon": false,
+      "drops": [
+        {
+          "key": "runic-fang",
+          "type": "material"
         }
       ]
     },

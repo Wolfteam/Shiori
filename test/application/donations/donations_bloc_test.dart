@@ -18,7 +18,10 @@ void main() {
     TestWidgetsFlutterBinding.ensureInitialized();
   });
 
-  test('Initial state', () => expect(DonationsBloc(MockPurchaseService(), MockNetworkService()).state, const DonationsState.loading()));
+  test(
+    'Initial state',
+    () => expect(DonationsBloc(MockPurchaseService(), MockNetworkService(), MockTelemetryService()).state, const DonationsState.loading()),
+  );
 
   group('init', () {
     blocTest<DonationsBloc, DonationsState>(
@@ -27,7 +30,7 @@ void main() {
         final networkService = MockNetworkService();
         final purchaseService = MockPurchaseService();
         when(networkService.isInternetAvailable()).thenAnswer((_) => Future.value(false));
-        return DonationsBloc(purchaseService, networkService);
+        return DonationsBloc(purchaseService, networkService, MockTelemetryService());
       },
       act: (bloc) => bloc.add(const DonationsEvent.init()),
       expect: () => const [
@@ -48,7 +51,7 @@ void main() {
         final purchaseService = MockPurchaseService();
         when(networkService.isInternetAvailable()).thenAnswer((_) => Future.value(true));
         when(purchaseService.isPlatformSupported()).thenAnswer((_) => Future.value(false));
-        return DonationsBloc(purchaseService, networkService);
+        return DonationsBloc(purchaseService, networkService, MockTelemetryService());
       },
       act: (bloc) => bloc.add(const DonationsEvent.init()),
       expect: () => const [
@@ -72,7 +75,7 @@ void main() {
         when(purchaseService.isInitialized).thenReturn(true);
         when(purchaseService.init()).thenAnswer((_) => Future.value(true));
         when(purchaseService.canMakePurchases()).thenAnswer((_) => Future.value(false));
-        return DonationsBloc(purchaseService, networkService);
+        return DonationsBloc(purchaseService, networkService, MockTelemetryService());
       },
       act: (bloc) => bloc.add(const DonationsEvent.init()),
       expect: () => const [
@@ -97,7 +100,7 @@ void main() {
         when(purchaseService.init()).thenAnswer((_) => Future.value(true));
         when(purchaseService.canMakePurchases()).thenAnswer((_) => Future.value(true));
         when(purchaseService.getInAppPurchases()).thenAnswer((_) => Future.value(_packages));
-        return DonationsBloc(purchaseService, networkService);
+        return DonationsBloc(purchaseService, networkService, MockTelemetryService());
       },
       act: (bloc) => bloc.add(const DonationsEvent.init()),
       expect: () => const [
@@ -123,7 +126,7 @@ void main() {
       when(purchaseService.canMakePurchases()).thenAnswer((_) => Future.value(true));
       when(purchaseService.getInAppPurchases()).thenAnswer((_) => Future.value(_packages));
       when(purchaseService.restorePurchases(_validUserId)).thenAnswer((_) => Future.value(restoreSucceeds));
-      return DonationsBloc(purchaseService, networkService);
+      return DonationsBloc(purchaseService, networkService, MockTelemetryService());
     }
 
     blocTest<DonationsBloc, DonationsState>(
@@ -162,6 +165,7 @@ void main() {
     DonationsBloc _getBloc({bool purchaseSucceeds = true}) {
       final networkService = MockNetworkService();
       final purchaseService = MockPurchaseService();
+      final telemetryService = MockTelemetryService();
       when(networkService.isInternetAvailable()).thenAnswer((_) => Future.value(true));
       when(purchaseService.isPlatformSupported()).thenAnswer((_) => Future.value(true));
       when(purchaseService.isInitialized).thenReturn(true);
@@ -170,7 +174,7 @@ void main() {
       when(purchaseService.getInAppPurchases()).thenAnswer((_) => Future.value(_packages));
       when(purchaseService.purchase(_validUserId, _packages.first.identifier, _packages.first.offeringIdentifier))
           .thenAnswer((_) => Future.value(purchaseSucceeds));
-      return DonationsBloc(purchaseService, networkService);
+      return DonationsBloc(purchaseService, networkService, telemetryService);
     }
 
     blocTest<DonationsBloc, DonationsState>(

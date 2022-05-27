@@ -115,9 +115,13 @@ class _Title extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    final text = Text(
-      title,
-      style: theme.textTheme.headline6!.copyWith(color: color),
+    final text = Tooltip(
+      message: title,
+      child: Text(
+        title,
+        overflow: TextOverflow.ellipsis,
+        style: theme.textTheme.headline6!.copyWith(color: color),
+      ),
     );
 
     if (isRecommended && isCustomBuild) {
@@ -125,7 +129,7 @@ class _Title extends StatelessWidget {
         children: [
           Icon(Icons.dashboard_customize, color: color),
           Icon(Icons.star, color: color),
-          text,
+          Expanded(child: text),
         ],
       );
     }
@@ -134,7 +138,7 @@ class _Title extends StatelessWidget {
       return Row(
         children: [
           Icon(Icons.star, color: color),
-          text,
+          Expanded(child: text),
         ],
       );
     }
@@ -143,7 +147,7 @@ class _Title extends StatelessWidget {
       return Row(
         children: [
           Icon(Icons.dashboard_customize, color: color),
-          text,
+          Expanded(child: text),
         ],
       );
     }

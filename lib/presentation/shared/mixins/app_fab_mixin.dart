@@ -11,9 +11,8 @@ mixin AppFabMixin<T extends StatefulWidget> on State<T>, SingleTickerProviderSta
   @override
   void initState() {
     super.initState();
-    scrollController = ScrollController();
     hideFabAnimController = AnimationController(vsync: this, duration: kThemeAnimationDuration, value: isInitiallyVisible ? 1 : 0);
-    scrollController.addListener(() => scrollController.handleScrollForFab(hideFabAnimController, hideOnTop: hideOnTop));
+    _setScrollController();
   }
 
   @override
@@ -23,10 +22,31 @@ mixin AppFabMixin<T extends StatefulWidget> on State<T>, SingleTickerProviderSta
     super.dispose();
   }
 
-  AppFab getAppFab() {
+  void _setScrollController({ScrollController? customController}) {
+    if (customController != null) {
+      scrollController.dispose();
+      scrollController = customController;
+    } else {
+      scrollController = ScrollController();
+    }
+    scrollController.addListener(() => scrollController.handleScrollForFab(hideFabAnimController, hideOnTop: hideOnTop));
+  }
+
+  AppFab getAppFab({
+    ScrollController? customController,
+    Icon icon = const Icon(Icons.arrow_upward),
+    bool mini = true,
+    OnClick? onPressed,
+  }) {
+    if (customController != null) {
+      _setScrollController(customController: customController);
+    }
     return AppFab(
       hideFabAnimController: hideFabAnimController,
       scrollController: scrollController,
+      icon: icon,
+      mini: mini,
+      onPressed: onPressed,
     );
   }
 }

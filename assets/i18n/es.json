@@ -2726,85 +2726,140 @@
       "key": "kamisato-ayato",
       "name": "Kamisato Ayato",
       "title": "El Vigoroso Estratega",
-      "description": "Joven promesa y actual líder del clan Kamisato de la Comisión Yashiro. Refinado y educado, siempre tiene una forma de hacer las cosas.",
+      "description": "Joven promesa y actual líder del clan Kamisato de la Comisión Yashiro. Refinado y educado, siempre tiene una forma de solucionar las cosas.",
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Estilo Kamisato - Marobashi",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Ataque Normal",
+              "description": "Realiza hasta 5 ataques rápidos.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Ataque Cargado",
+              "description": "Consume una cierta cantidad de Aguante para arremeter hacia delante y golpear con su espada.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Ataque Descendente",
+              "description": "Se lanza desde el aire para golpear el suelo, dañando a los enemigos cercanos e infligiendo Daño en el AdE en el momento del impacto.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "Daño de 1er golpe|{param1}%",
+            "Daño de 2.º golpe|{param2}%",
+            "Daño de 3er golpe|{param3}%",
+            "Daño de 4.º golpe|{param4}%×{param5}",
+            "Daño de 5.º golpe|{param6}%",
+            "Daño de ATQ Cargado|{param7}%",
+            "Coste de Aguante de ATQ Cargado|{param8}",
+            "Daño de Caída|{param9}%",
+            "Daño de impacto de caída baja/alta|{param10}% / {param11}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Estilo Kamisato: Belleza reflejada",
+          "description": "Kamisato Ayato se mueve de posición y entra en el estado de “reflejo torrencial”.\r\nTras hacer este movimiento, deja en su ubicación original una ilusión de agua. Al ser formada, la ilusión explotará si se encuentra cerca de un enemigo o cuando termine su duración, tras lo que inflige Daño Hydro en el AdE.\r\n",
+          "abilities": [
+            {
+              "name": "Reflejo torrencial",
+              "description": "En este estado, Kamisato Ayato ataca rápidamente con una hidroespada y el daño de sus Ataques Normales se transforma en Daño Hydro en el AdE, el cual no puede sustituirse imbuyéndose de otro elemento.\r\nAdemás, este estado tiene las siguientes características:\r\n",
+              "descriptions": [
+                "Al golpear a un enemigo con la hidroespada, Kamisato Ayato obtiene el efecto de “oleaje centelleante”, el cual aumenta el daño de la hidroespada en proporción su Vida Máx. actual. Inicialmente, oleaje centelleante puede acumularse hasta 4 veces y obtenerse una vez cada 0.1 s por cada ataque realizado con la hidroespada. Este efecto desaparece cuando termina la duración del estado de reflejo torrencial.",
+                "Aumenta la RES a interrupción de Kamisato Ayato.",
+                "Mientras dure este estado, no podrá ejecutar ni Ataques Cargados ni Descendentes.",
+                "El estado de reflejo torrencial se anulará cuando Kamisato Ayato sea retirado de combate. Si vuelve a usar Estilo Kamisato: Belleza reflejada mientras dicho estado está activo, el estado anterior terminará y la duración del nuevo estado se reiniciará."
+              ]
+            }
+          ],
+          "stats": [
+            "Daño de 1er golpe de hidroespada|{param1}%",
+            "Daño de 2.º golpe de hidroespada|{param2}%",
+            "Daño de 3er golpe de hidroespada|{param3}%",
+            "Duración de reflejo torrencial|{param4}s",
+            "Aumento de daño de oleaje centelleante|{param5}%Max HP / Stack",
+            "Daño de ilusión de agua|{param6}%",
+            "Duración de ilusión de agua|{param7}s",
+            "TdE|{param8}s"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
+          "title": "Estilo Kamisato: Jardín ácueo",
+          "description": "Crea un jardín de paz en el que ningún ruido tiene cabida.\r\nMientras está activo, en el jardín caerán continuamente filos de agua que atacarán a los enemigos en su interior, les infligirán Daño Hydro y aumentarán el daño de los Ataques Normales de los personajes dentro del área.\r\n",
           "abilities": [],
-          "stats": []
+          "stats": [
+            "Daño de filos de agua|{param1}%",
+            "Aumento de daño de ATQ Normal|{param2}%",
+            "Duración|{param3}s",
+            "TdE|{param4}s",
+            "Energía Elemental|{param5}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "Estilo Kamisato: Cocina diaria",
+          "description": "Al lograr un “Perfecto” al cocinar un plato, hay una probabilidad del 18% de obtener ese mismo plato con calidad “extraña”.\r\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
+          "title": "Estilo Kamisato: Corriente montañosa",
+          "description": "Estilo Kamisato: Belleza reflejada obtiene las siguientes características:\r\n",
+          "descriptions": [
+            "Al activar la habilidad, Kamisato Ayato obtiene 2 acumulaciones de oleaje centelleante.",
+            "Cuando la ilusión de agua se destruye, Kamisato Ayato obtiene el efecto de oleaje centelleante con la máxima cantidad de acumulaciones posibles."
+          ]
         },
         {
           "key": "p3",
-          "title": "NA",
-          "description": "",
+          "title": "Estilo Kamisato: Crecida de la luna",
+          "description": "Cuando Kamisato Ayato está en tu equipo pero no en combate y su Energía Elemental es menor a 40 pts., recuperará 2 pts. de Energía por segundo.\r\n",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "Reflejo grácil",
+          "description": "Aumenta en un 40% el daño infligido por la hidroespada contra los enemigos cuya vida es igual o inferior al 50%.\r\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "Manantial de la tierra",
+          "description": "Oleaje centelleante puede acumularse hasta un máximo de 5 veces. Cuando Kamisato Ayato tiene al menos 3 acumulaciones de este efecto, su Vida Máx. aumenta en un 50%.\r\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "Admiración floral",
+          "description": "Aumenta el nivel de habilidad de Estilo Kamisato: Belleza reflejada +3.\r\nPuede ser aumentado hasta Niv. 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "Flujo inagotable",
+          "description": "Tras usar Estilo Kamisato: Jardín ácueo, la Vel. de Ataque Normal de los miembros del equipo cercanos aumenta en un 15% durante 15 s.\r\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "Rocío pluvial",
+          "description": "Aumenta el nivel de habilidad de Estilo Kamisato: Jardín ácueo +3.\r\nPuede ser aumentado hasta Niv. 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
+          "title": "Fuente infinita",
+          "description": "Tras usar Estilo Kamisato: Belleza reflejada, cuando Kamisato Ayato golpea a un enemigo con el siguiente ataque de hidroespada, se liberarán dos ataques de hidroespada adicionales que infligen cada uno un daño equivalente al 450% del ATQ de Kamisato Ayato.\r\nEstos dos ataques no pueden beneficiarse de los efectos de oleaje centelleante.\r\n",
           "descriptions": []
         }
       ]
@@ -3187,6 +3242,93 @@
           "key": "c6",
           "title": "Pecado del orgullo",
           "description": "Aumenta en un 60% el Daño CRIT Electro de los personajes que han obtenido un Bono de ATQ mediante una maldición tengu.\r\n",
+          "descriptions": []
+        }
+      ]
+    },
+    {
+      "key": "kuki-shinobu",
+      "name": "Kuki Shinobu",
+      "title": "",
+      "description": "",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
           "descriptions": []
         }
       ]
@@ -6647,6 +6789,87 @@
       ]
     },
     {
+      "key": "yelan",
+      "name": "Yelan",
+      "title": "",
+      "description": "",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ]
+    },
+    {
       "key": "yoimiya",
       "name": "Yoimiya",
       "title": "la Maestra de las Llamas",
@@ -7607,6 +7830,18 @@
       ]
     },
     {
+      "key": "haran-geppaku-futsu",
+      "name": "Haran Geppaku Futsu",
+      "description": "Una obra maestra de la escuela de espadas Futsu forjada por encargo. Su nombre se debe a su parecido con una violenta ola del mar.",
+      "refinements": [
+        "Otorga un {color}12{/color}% a todos los Bonos de Daño Elemental. Cuando los demás personajes del equipo cercanos usan una Habilidad Elemental, otorgan 1 carga de “acuapúa” al portador de esta arma. Este efecto puede acumularse hasta 2 veces y activarse una vez cada 0.3 s. Cuando el personaje que lleva esta arma equipada usa su Habilidad Elemental, si tenía cargas de acuapúa, las consumirá todas y obtendrá el efecto de “ondulación”, el cual aumenta el daño de Ataque Normal en un {color}20{/color}% durante 8 s por cada carga consumida.",
+        "Otorga un {color}15{/color}% a todos los Bonos de Daño Elemental. Cuando los demás personajes del equipo cercanos usan una Habilidad Elemental, otorgan 1 carga de “acuapúa” al portador de esta arma. Este efecto puede acumularse hasta 2 veces y activarse una vez cada 0.3 s. Cuando el personaje que lleva esta arma equipada usa su Habilidad Elemental, si tenía cargas de acuapúa, las consumirá todas y obtendrá el efecto de “ondulación”, el cual aumenta el daño de Ataque Normal en un {color}25{/color}% durante 8 s por cada carga consumida.",
+        "Otorga un {color}18{/color}% a todos los Bonos de Daño Elemental. Cuando los demás personajes del equipo cercanos usan una Habilidad Elemental, otorgan 1 carga de “acuapúa” al portador de esta arma. Este efecto puede acumularse hasta 2 veces y activarse una vez cada 0.3 s. Cuando el personaje que lleva esta arma equipada usa su Habilidad Elemental, si tenía cargas de acuapúa, las consumirá todas y obtendrá el efecto de “ondulación”, el cual aumenta el daño de Ataque Normal en un {color}30{/color}% durante 8 s por cada carga consumida.",
+        "Otorga un {color}21{/color}% a todos los Bonos de Daño Elemental. Cuando los demás personajes del equipo cercanos usan una Habilidad Elemental, otorgan 1 carga de “acuapúa” al portador de esta arma. Este efecto puede acumularse hasta 2 veces y activarse una vez cada 0.3 s. Cuando el personaje que lleva esta arma equipada usa su Habilidad Elemental, si tenía cargas de acuapúa, las consumirá todas y obtendrá el efecto de “ondulación”, el cual aumenta el daño de Ataque Normal en un {color}35{/color}% durante 8 s por cada carga consumida.",
+        "Otorga un {color}24{/color}% a todos los Bonos de Daño Elemental. Cuando los demás personajes del equipo cercanos usan una Habilidad Elemental, otorgan 1 carga de “acuapúa” al portador de esta arma. Este efecto puede acumularse hasta 2 veces y activarse una vez cada 0.3 s. Cuando el personaje que lleva esta arma equipada usa su Habilidad Elemental, si tenía cargas de acuapúa, las consumirá todas y obtendrá el efecto de “ondulación”, el cual aumenta el daño de Ataque Normal en un {color}40{/color}% durante 8 s por cada carga consumida."
+      ]
+    },
+    {
       "key": "harbinger-of-dawn",
       "name": "Espada del Alba",
       "description": "Una espada que solía brillar como el sol. Su portador será bendecido con una sensación de poder y bienestar. El material reflectante de su hoja se desgastó hace mucho tiempo.",
@@ -8560,7 +8795,8 @@
         "Al usar una Habilidad Elemental, obtienes la gracia de las flores de viento, que aumenta el ATQ en un {color}16{/color}% durante 6 s.",
         "Al usar una Habilidad Elemental, obtienes la gracia de las flores de viento, que aumenta el ATQ en un {color}20{/color}% durante 6 s.",
         "Al usar una Habilidad Elemental, obtienes la gracia de las flores de viento, que aumenta el ATQ en un {color}24{/color}% durante 6 s.",
-        "Al usar una Habilidad Elemental, obtienes la gracia de las flores de viento, que aumenta el ATQ en un {color}28{/color}% durante 6 s."
+        "Al usar una Habilidad Elemental, obtienes la gracia de las flores de viento, que aumenta el ATQ en un {color}28{/color}% durante 6 s.",
+        "Al usar una Habilidad Elemental, obtienes la gracia de las flores de viento, que aumenta el ATQ en un {color}32{/color}% durante 6 s."
       ]
     },
     {
@@ -8651,6 +8887,14 @@
       "bonus": [
         "DEF +30%.",
         "Por cada miembro de tu equipo con un tipo elemental distinto, La RES Elemental del personaje que lleve este conjunto aumenta en un 30% contra dicho elemento."
+      ]
+    },
+    {
+      "key": "echoes-of-an-offering",
+      "name": "Eco del Sacrificio",
+      "bonus": [
+        "ATQ +18%.",
+        "Al golpear a un enemigo con un Ataque Normal, hay una probabilidad del 36% de activar el efecto de “ritual del valle”, el cual aumenta el daño de Ataque Normal en una cantidad equivalente al 70% del ATQ. Este efecto se anula 0.05 s después de infligir daño con un Ataque Normal. Si dicho ataque no activa ritual del valle, la probabilidad de activarlo con el siguiente golpe de Ataque Normal aumenta en un 20%. Esta activación solo puede ocurrir una vez cada 0.2s."
       ]
     },
     {
@@ -8863,6 +9107,14 @@
       "bonus": [
         "Curación recibida +20%.",
         "Al lanzar una Habilidad Definitiva, restaura un 20% de Vida."
+      ]
+    },
+    {
+      "key": "vermillion-hereafter",
+      "name": "Deceso del Cinabrio",
+      "bonus": [
+        "ATQ +18%.",
+        "Al usar la Habilidad Definitiva, obtienes el efecto de “destello emergente” durante 16s, el cual aumenta el ATQ en un 8% y, además, hace que cada vez que el personaje pierda Vida, su ATQ aumente en un 10% adicional. Este efecto solo puede aumentar el ATQ un máximo de 4 veces de esta manera y activarse una vez cada 0.8 s. Los efectos de destello emergente se disiparán si el personaje es retirado de combate. Si el personaje vuelve a usar la Habilidad Definitiva mientras dicho efecto está activo, el destello emergente original también se disipará."
       ]
     },
     {
@@ -9954,6 +10206,11 @@
       "description": "Un poco de hielo cristalizado del gran Rey Lobo del Norte.\r\nEsta tierra fue una vez un reino de ventiscas gélidas y tormentas de hielo llenas de fragmentos de hielo afilados como cuchillas, todo a las órdenes de Boreas. Aunque sus poderes hayan disminuido, puede congelar la tierra fácilmente."
     },
     {
+      "key": "runic-fang",
+      "name": "Colmillo rúnico",
+      "description": "Un colmillo que la antigua máquina con forma de serpiente utiliza para excavar a través de las rocosas paredes de las profundidades de la montaña. Hay varias runas grabadas en él.\r\nCuenta la leyenda que serpientes gigantes se esconden entre las rocas bajo tierra y que albergan un gran odio hacia aquello que pertenece a la superficie. Se dedican a cavar grandes túneles subterráneos, aunque aún no se sabe con qué siniestro fin..."
+    },
+    {
       "key": "sakura-bloom",
       "name": "Pétalos de cerezo",
       "description": "Pétalos que caen apaciblemente del Cerezo Sagrado del Gran Santuario Narukami, el cual custodia la región de Inazuma."
@@ -10531,6 +10788,10 @@
       "name": "Azhdaha"
     },
     {
+      "key": "black-serpent-knight-windcutter",
+      "name": "Caballero Serpiente Negra - Aire afilado"
+    },
+    {
       "key": "blazing-axe-mitachurl",
       "name": "Mitachurl con Hacha de Fuego"
     },
@@ -10673,6 +10934,10 @@
     {
       "key": "fatui-skirmisher-pyroslinger-bracer",
       "name": "Soldado Fatui - Guerrillero con Cañón Pyro"
+    },
+    {
+      "key": "floating-hydro-fungus",
+      "name": "Flotihongo Hydro"
     },
     {
       "key": "frostarm-lawachurl",
@@ -10995,6 +11260,10 @@
       "name": "Explorador de las Ruinas"
     },
     {
+      "key": "ruin-serpent",
+      "name": "Serpiente de las Ruinas"
+    },
+    {
       "key": "sangonomiya-cohort",
       "name": "Secuaz de Sangonomiya"
     },
@@ -11052,7 +11321,7 @@
     },
     {
       "key": "treasure-hoarders-carmen",
-      "name": "Ladrón de Tesoros - Carmen"
+      "name": "Ladrón de Tesoros - Carmelo"
     },
     {
       "key": "treasure-hoarders-crusher",

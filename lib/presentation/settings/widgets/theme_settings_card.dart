@@ -61,11 +61,14 @@ class ThemeSettingsCard extends StatelessWidget {
                   activeColor: theme.colorScheme.secondary,
                   title: Text(s.useDarkAmoledTheme),
                   value: state.useDarkAmoledTheme,
-                  subtitle: state.unlockedFeatures.contains(AppUnlockedFeature.darkAmoledTheme) ? null : Text(
-                    s.unlockedWithDonation,
-                    overflow: TextOverflow.ellipsis,
-                    style: theme.textTheme.caption!.copyWith(color: theme.primaryColor, fontStyle: FontStyle.italic),
-                  ),
+                  subtitle: state.unlockedFeatures.contains(AppUnlockedFeature.darkAmoledTheme)
+                      ? null
+                      : Text(
+                          s.unlockedWithDonation,
+                          overflow: TextOverflow.ellipsis,
+                          maxLines: 2,
+                          style: theme.textTheme.caption!.copyWith(color: theme.primaryColor, fontStyle: FontStyle.italic),
+                        ),
                   onChanged: !state.unlockedFeatures.contains(AppUnlockedFeature.darkAmoledTheme)
                       ? null
                       : (newVal) => context.read<SettingsBloc>().add(SettingsEvent.useDarkAmoledTheme(newValue: newVal)),
