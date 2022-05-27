@@ -16,6 +16,7 @@ export 'character_role_subtype.dart';
 export 'character_role_type.dart';
 export 'character_skill_ability_type.dart';
 export 'character_skill_type.dart';
+export 'chart_type.dart';
 export 'day_type.dart';
 export 'element_type.dart';
 export 'end_drawer_item_type.dart';

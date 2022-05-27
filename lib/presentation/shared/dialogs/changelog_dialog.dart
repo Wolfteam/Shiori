@@ -22,7 +22,7 @@ class ChangelogDialog extends StatelessWidget {
           child: SingleChildScrollView(
             child: BlocBuilder<ChangelogBloc, ChangelogState>(
               builder: (ctx, state) => state.map(
-                loading: (_) => const Loading(useScaffold: false),
+                loading: (_) => const Loading(useScaffold: false, mainAxisSize: MainAxisSize.min),
                 loadedState: (state) => MarkdownBody(data: state.changelog),
               ),
             ),

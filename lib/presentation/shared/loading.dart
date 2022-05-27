@@ -3,13 +3,19 @@ import 'package:shiori/generated/l10n.dart';
 
 class Loading extends StatelessWidget {
   final bool useScaffold;
-  const Loading({this.useScaffold = true});
+  final MainAxisSize mainAxisSize;
+
+  const Loading({
+    this.useScaffold = true,
+    this.mainAxisSize = MainAxisSize.max,
+  });
 
   @override
   Widget build(BuildContext context) {
     final s = S.of(context);
     final body = Column(
       mainAxisAlignment: MainAxisAlignment.center,
+      mainAxisSize: mainAxisSize,
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: <Widget>[
         const Center(

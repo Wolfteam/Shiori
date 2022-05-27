@@ -8,7 +8,7 @@ abstract class LocaleService {
 
   String getFormattedLocale(AppLanguageType language);
 
-  DateTime getCharBirthDate(String? birthday);
+  DateTime getCharBirthDate(String? birthday, {bool useCurrentYear = false});
 
   String formatCharBirthDate(String? birthday);
 

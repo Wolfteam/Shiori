@@ -162,6 +162,58 @@ class Injection {
     return ItemReleaseHistoryBloc(genshinService, telemetryService);
   }
 
+  static ChartTopsBloc get chartTopsBloc {
+    final genshinService = getIt<GenshinService>();
+    final telemetryService = getIt<TelemetryService>();
+    return ChartTopsBloc(genshinService, telemetryService);
+  }
+
+  static ChartBirthdaysBloc get chartBirthdaysBloc {
+    final genshinService = getIt<GenshinService>();
+    return ChartBirthdaysBloc(genshinService);
+  }
+
+  static ChartElementsBloc get chartElementsBloc {
+    final genshinService = getIt<GenshinService>();
+    return ChartElementsBloc(genshinService);
+  }
+
+  static ChartAscensionStatsBloc get chartAscensionStatsBloc {
+    final genshinService = getIt<GenshinService>();
+    return ChartAscensionStatsBloc(genshinService);
+  }
+
+  static CharactersBirthdaysPerMonthBloc get charactersBirthdaysPerMonthBloc {
+    final genshinService = getIt<GenshinService>();
+    final telemetryService = getIt<TelemetryService>();
+    return CharactersBirthdaysPerMonthBloc(genshinService, telemetryService);
+  }
+
+  static ItemsAscensionStatsBloc get itemsAscensionStatsBloc {
+    final genshinService = getIt<GenshinService>();
+    return ItemsAscensionStatsBloc(genshinService);
+  }
+
+  static ChartRegionsBloc get chartRegionsBloc {
+    final genshinService = getIt<GenshinService>();
+    return ChartRegionsBloc(genshinService);
+  }
+
+  static CharactersPerRegionBloc get charactersPerRegionBloc {
+    final genshinService = getIt<GenshinService>();
+    return CharactersPerRegionBloc(genshinService);
+  }
+
+  static ChartGendersBloc get chartGendersBloc {
+    final genshinService = getIt<GenshinService>();
+    return ChartGendersBloc(genshinService);
+  }
+
+  static CharactersPerRegionGenderBloc get charactersPerRegionGenderBloc {
+    final genshinService = getIt<GenshinService>();
+    return CharactersPerRegionGenderBloc(genshinService);
+  }
+
   //TODO: USE THIS PROP
   // static CalculatorAscMaterialsItemBloc get calculatorAscMaterialsItemBloc {
   //   final genshinService = getIt<GenshinService>();

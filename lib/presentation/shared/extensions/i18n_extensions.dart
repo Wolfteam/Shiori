@@ -644,4 +644,24 @@ extension I18nExtensions on S {
         return versionDesc;
     }
   }
+
+  String translateChartType(ChartType type) {
+    final star = String.fromCharCode(9734);
+    switch (type) {
+      case ChartType.topFiveStarCharacterMostReruns:
+      case ChartType.topFiveStarWeaponMostReruns:
+        return xStarsWithMostReruns('5$star');
+      case ChartType.topFourStarCharacterMostReruns:
+      case ChartType.topFourStarWeaponMostReruns:
+        return xStarsWithMostReruns('4$star');
+      case ChartType.topFourStarCharacterLeastReruns:
+      case ChartType.topFourStarWeaponLeastReruns:
+        return xStarsWithLeastReruns('4$star');
+      case ChartType.topFiveStarCharacterLeastReruns:
+      case ChartType.topFiveStarWeaponLeastReruns:
+        return xStarsWithLeastReruns('5$star');
+      case ChartType.characterBirthdays:
+        return birthdaysPerMonth;
+    }
+  }
 }
