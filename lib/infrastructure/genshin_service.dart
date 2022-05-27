@@ -1353,23 +1353,21 @@ class GenshinServiceImpl implements GenshinService {
   }
 
   List<ChartTopItemModel> _getTopCharts(bool mostReruns, ChartType type, BannerHistoryItemType bannerType, List<ItemCommonWithName> items) {
-    final grouped = _bannerHistoryFile.banners.where((el) => el.type == bannerType).expand((el) => el.itemKeys).groupListsBy((el) => el).entries;
-
-    final selected = <ItemCommonWithQuantity>[];
-    for (final g in grouped) {
-      if (mostReruns && selected.isNotEmpty && selected.every((el) => el.quantity > g.value.length)) {
-        continue;
-      } else if (!mostReruns && selected.isNotEmpty && selected.every((el) => el.quantity < g.value.length)) {
-        continue;
-      }
-
-      final element = items.firstWhereOrNull((el) => el.key == g.key);
-      if (element == null) {
-        continue;
-      }
-
-      selected.add(ItemCommonWithQuantity(g.key, element.image, g.value.length));
-    }
+    final selected = _bannerHistoryFile.banners
+        .where((el) => el.type == bannerType)
+        .expand((el) => el.itemKeys)
+        .groupListsBy((el) => el)
+        .entries
+        .map((g) {
+          final element = items.firstWhereOrNull((el) => el.key == g.key);
+          if (element == null) {
+            return null;
+          }
+          return ItemCommonWithQuantity(g.key, element.image, g.value.length);
+        })
+        .where((el) => el != null)
+        .map((e) => e!)
+        .toList();
 
     if (mostReruns) {
       selected.sort((x, y) => y.quantity.compareTo(x.quantity));

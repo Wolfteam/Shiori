@@ -761,6 +761,72 @@
         "sacrificial-fragments"
       ],
       "version": 2.5
+    },
+    {
+      "type": "character",
+      "from": "2022-03-30T00:00:00",
+      "until": "2022-04-19T00:00:00",
+      "itemKeys": [
+        "kamisato-ayato",
+        "sucrose",
+        "xiangling",
+        "yun-jin"
+      ],
+      "version": 2.6
+    },
+    {
+      "type": "character",
+      "from": "2022-03-30T00:00:00",
+      "until": "2022-04-19T00:00:00",
+      "itemKeys": [
+        "venti",
+        "sucrose",
+        "xiangling",
+        "yun-jin"
+      ],
+      "version": 2.6
+    },
+    {
+      "type": "weapon",
+      "from": "2022-03-30T00:00:00",
+      "until": "2022-04-19T00:00:00",
+      "itemKeys": [
+        "haran-geppaku-futsu",
+        "elegy-for-the-end",
+        "the-flute",
+        "sacrificial-greatsword",
+        "dragons-bane",
+        "the-widsith",
+        "rust"
+      ],
+      "version": 2.6
+    },
+    {
+      "type": "character",
+      "from": "2022-04-19T00:00:00",
+      "until": "2022-05-31T00:00:00",
+      "itemKeys": [
+        "kamisato-ayaka",
+        "razor",
+        "rosaria",
+        "sayu"
+      ],
+      "version": 2.6
+    },
+    {
+      "type": "weapon",
+      "from": "2022-04-19T00:00:00",
+      "until": "2022-05-31T00:00:00",
+      "itemKeys": [
+        "mistsplitter-reforged",
+        "the-unforged",
+        "favonius-sword",
+        "the-bell",
+        "favonius-lance",
+        "favonius-codex",
+        "favonius-warbow"
+      ],
+      "version": 2.6
     }
   ]
 }
