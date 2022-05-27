@@ -1075,7 +1075,6 @@ void main() {
         expect(element.points.isNotEmpty, isTrue);
 
         for (final point in element.points) {
-          expect(point.x, isIn(versions));
           expect(point.y >= 0, isTrue);
         }
       }
