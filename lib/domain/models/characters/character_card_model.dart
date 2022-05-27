@@ -17,5 +17,6 @@ class CharacterCardModel with _$CharacterCardModel {
     required List<String> materials,
     required CharacterRoleType roleType,
     required RegionType regionType,
+    required StatType subStatType,
   }) = _CharacterCardModel;
 }

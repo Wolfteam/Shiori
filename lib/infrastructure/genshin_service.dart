@@ -134,22 +134,6 @@ class GenshinServiceImpl implements GenshinService {
   }
 
   @override
-  List<CharacterFileModel> getCharactersForBirthday(DateTime date) {
-    return _charactersFile.characters.where((char) {
-      if (char.isComingSoon) {
-        return false;
-      }
-
-      if (char.birthday.isNullEmptyOrWhitespace) {
-        return false;
-      }
-
-      final charBirthday = _localeService.getCharBirthDate(char.birthday);
-      return charBirthday.day == date.day && charBirthday.month == date.month;
-    }).toList();
-  }
-
-  @override
   List<TierListRowModel> getDefaultCharacterTierList(List<int> colors) {
     assert(colors.length == 7);
 
@@ -887,6 +871,9 @@ class GenshinServiceImpl implements GenshinService {
 
   @override
   List<BannerHistoryPeriodModel> getBanners(double version) {
+    if (version < getBannerHistoryVersions(SortDirectionType.asc).first) {
+      throw Exception('Version = $version is not valid');
+    }
     final banners = _bannerHistoryFile.banners
         .where((el) => el.version == version)
         .map(
@@ -921,10 +908,6 @@ class GenshinServiceImpl implements GenshinService {
         )
         .toList()
       ..sort((x, y) => x.from.compareTo(y.from));
-
-    if (banners.isEmpty) {
-      throw Exception('Banners associated to version = $version were not found');
-    }
 
     return banners;
   }
@@ -1015,6 +998,19 @@ class GenshinServiceImpl implements GenshinService {
 
   @override
   List<ChartElementItemModel> getElementsForCharts(double fromVersion, double untilVersion) {
+    final allVersions = getBannerHistoryVersions(SortDirectionType.asc);
+    if (fromVersion < allVersions.first) {
+      throw Exception('The fromVersion = $fromVersion is not valid');
+    }
+
+    if (untilVersion > allVersions.last) {
+      throw Exception('The untilVersion = $untilVersion is not valid');
+    }
+
+    if (fromVersion > untilVersion) {
+      throw Exception('The fromVersion = $fromVersion cannot be greater than untilVersion = $untilVersion');
+    }
+
     final banners = _bannerHistoryFile.banners
         .where((el) => el.type == BannerHistoryItemType.character && el.version >= fromVersion && el.version <= untilVersion)
         .toList()
@@ -1064,9 +1060,23 @@ class GenshinServiceImpl implements GenshinService {
       }
     }
 
+    double from = fromVersion;
+    while (from <= untilVersion) {
+      for (final chart in charts) {
+        if (!chart.points.any((el) => el.x == from)) {
+          chart.points.add(Point<double>(from, 0));
+        }
+      }
+      from = (from + gameVersionIncrementsBy).truncateToDecimalPlaces();
+    }
+
+    for (final chart in charts) {
+      chart.points.sort((x, y) => x.x.compareTo(y.x));
+    }
+
     assert(charts.isNotEmpty, 'Element chart items must not be empty');
 
-    return charts;
+    return charts..sort((x, y) => x.type.index.compareTo(y.type.index));
   }
 
   @override
@@ -1078,18 +1088,9 @@ class GenshinServiceImpl implements GenshinService {
     final stats = itemType == ItemType.character ? getCharacterPossibleAscensionStats() : getWeaponPossibleAscensionStats();
     return stats.map(
       (stat) {
-        int count = 0;
-        switch (itemType) {
-          case ItemType.character:
-            count = _charactersFile.characters.where((el) => !el.isComingSoon && el.subStatType == stat).length;
-            break;
-          case ItemType.weapon:
-            count = _weaponsFile.weapons.where((el) => !el.isComingSoon && el.secondaryStat == stat).length;
-            break;
-          default:
-            throw Exception('ItemType = $itemType is not Not supported');
-        }
-
+        final count = itemType == ItemType.character
+            ? _charactersFile.characters.where((el) => !el.isComingSoon && el.subStatType == stat).length
+            : _weaponsFile.weapons.where((el) => !el.isComingSoon && el.secondaryStat == stat).length;
         return ChartAscensionStatModel(type: stat, itemType: itemType, quantity: count);
       },
     ).toList()
@@ -1148,7 +1149,6 @@ class GenshinServiceImpl implements GenshinService {
       ..sort((x, y) => x.name.compareTo(y.name));
   }
 
-  //TODO: CALL THIS METHOD IN THE MAIN PAGE
   @override
   List<CharacterBirthdayModel> getCharacterBirthdays({int? month, int? day}) {
     if (month == null && day == null) {
@@ -1192,7 +1192,6 @@ class GenshinServiceImpl implements GenshinService {
 
       return true;
     }).map((e) {
-      //TODO: CHECK BENNET
       final char = getCharacterForCard(e.key);
       final birthday = _localeService.getCharBirthDate(e.birthday, useCurrentYear: true);
       final now = DateTime.now();
@@ -1230,7 +1229,7 @@ class GenshinServiceImpl implements GenshinService {
         );
         break;
       default:
-        throw Exception('Invalid statType = $itemType');
+        throw Exception('Invalid itemType = $itemType');
     }
     return items..sort((x, y) => x.name.compareTo(y.name));
   }
@@ -1268,6 +1267,7 @@ class GenshinServiceImpl implements GenshinService {
       isNew: character.isNew,
       roleType: character.role,
       regionType: character.region,
+      subStatType: character.subStatType,
     );
   }
 
