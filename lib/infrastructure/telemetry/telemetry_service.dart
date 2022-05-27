@@ -159,4 +159,13 @@ class TelemetryServiceImpl implements TelemetryService {
 
   @override
   Future<void> trackRestore(String userId, bool succeed) => trackEventAsync('Donations-Restore', {'UserId_Succeed': '${userId}_$succeed'});
+
+  @override
+  Future<void> trackBannerHistoryOpened() => trackEventAsync('Banner-History-Opened');
+
+  @override
+  Future<void> trackBannerHistoryItemOpened(double version) => trackEventAsync('Banner-History-Item-Opened', {'Version': '$version'});
+
+  @override
+  Future<void> trackItemReleaseHistoryOpened(String itemKey) => trackEventAsync('Banner-History-Item-Release-History-Opened', {'ItemKey': itemKey});
 }

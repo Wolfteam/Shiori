@@ -22,6 +22,7 @@ class GenshinServiceImpl implements GenshinService {
   late MonstersFile _monstersFile;
   late GadgetsFile _gadgetsFile;
   late FurnitureFile _furnitureFile;
+  late BannerHistoryFile _bannerHistoryFile;
 
   GenshinServiceImpl(this._localeService);
 
@@ -36,6 +37,7 @@ class GenshinServiceImpl implements GenshinService {
       initMonsters(),
       initGadgets(),
       initFurniture(),
+      initBannerHistory(),
       initTranslations(languageType),
     ]);
   }
@@ -102,6 +104,13 @@ class GenshinServiceImpl implements GenshinService {
       _furnitureFile.furniture.map((e) => e.key).toSet().length == _furnitureFile.furniture.length,
       'All the furniture keys must be unique',
     );
+  }
+
+  @override
+  Future<void> initBannerHistory() async {
+    final jsonStr = await rootBundle.loadString(Assets.bannerHistoryDbPath);
+    final json = jsonDecode(jsonStr) as Map<String, dynamic>;
+    _bannerHistoryFile = BannerHistoryFile.fromJson(json);
   }
 
   @override
@@ -800,6 +809,146 @@ class GenshinServiceImpl implements GenshinService {
     return sorted.map((e) => e.key).toList();
   }
 
+  @override
+  List<double> getBannerHistoryVersions(SortDirectionType type) {
+    final versions = _bannerHistoryFile.banners.map((el) => el.version).toSet().toList();
+    switch (type) {
+      case SortDirectionType.asc:
+        return versions..sort((x, y) => x.compareTo(y));
+      case SortDirectionType.desc:
+        return versions..sort((x, y) => y.compareTo(x));
+    }
+  }
+
+  @override
+  List<BannerHistoryItemModel> getBannerHistory(BannerHistoryItemType type) {
+    final banners = <BannerHistoryItemModel>[];
+    final itemVersionsMap = <String, List<double>>{};
+    final allVersions = getBannerHistoryVersions(SortDirectionType.asc);
+    final filteredBanners = _bannerHistoryFile.banners.where((el) => el.type == type).toList();
+
+    for (final banner in filteredBanners) {
+      for (final key in banner.itemKeys) {
+        final alreadyAdded = banners.any((el) => el.key == key);
+        switch (banner.type) {
+          case BannerHistoryItemType.character:
+            if (!alreadyAdded) {
+              final char = getCharacterForCard(key);
+              final item = BannerHistoryItemModel(
+                versions: [],
+                image: char.image,
+                name: char.name,
+                key: key,
+                type: banner.type,
+                rarity: char.stars,
+              );
+              banners.add(item);
+            }
+            break;
+          case BannerHistoryItemType.weapon:
+            if (!alreadyAdded) {
+              final weapon = getWeaponForCard(key);
+              final bannerItem = BannerHistoryItemModel(
+                versions: [],
+                image: weapon.image,
+                name: weapon.name,
+                key: key,
+                type: banner.type,
+                rarity: weapon.rarity,
+              );
+              banners.add(bannerItem);
+            }
+            break;
+          default:
+            throw Exception('The provided banner type = ${banner.type} is not mapped');
+        }
+
+        if (!alreadyAdded) {
+          itemVersionsMap[key] = [banner.version];
+        } else {
+          itemVersionsMap.update(key, (value) => [...value, banner.version]);
+        }
+      }
+    }
+
+    for (var i = 0; i < banners.length; i++) {
+      final current = banners[i];
+      final values = itemVersionsMap.entries.firstWhere((el) => el.key == current.key).value;
+      final updated = current.copyWith.call(versions: _getBannerVersionsForItem(allVersions, values));
+      banners.removeAt(i);
+      banners.insert(i, updated);
+    }
+
+    return banners;
+  }
+
+  @override
+  List<BannerHistoryPeriodModel> getBanners(double version) {
+    final banners = _bannerHistoryFile.banners
+        .where((el) => el.version == version)
+        .map(
+          (e) => BannerHistoryPeriodModel(
+            from: e.from,
+            until: e.until,
+            type: e.type,
+            version: e.version,
+            items: e.itemKeys.map((key) {
+              String? imagePath;
+              int? rarity;
+              ItemType? type;
+              switch (e.type) {
+                case BannerHistoryItemType.character:
+                  final character = getCharacter(key);
+                  rarity = character.rarity;
+                  imagePath = character.fullImagePath;
+                  type = ItemType.character;
+                  break;
+                case BannerHistoryItemType.weapon:
+                  final weapon = getWeapon(key);
+                  rarity = weapon.rarity;
+                  imagePath = weapon.fullImagePath;
+                  type = ItemType.weapon;
+                  break;
+                default:
+                  throw Exception('Banner history item type = ${e.type} is not valid');
+              }
+              return ItemCommonWithRarityAndType(key, imagePath, rarity, type);
+            }).toList(),
+          ),
+        )
+        .toList()
+      ..sort((x, y) => x.from.compareTo(y.from));
+
+    if (banners.isEmpty) {
+      throw Exception('Banners associated to version = $version were not found');
+    }
+
+    return banners;
+  }
+
+  @override
+  List<ItemReleaseHistoryModel> getItemReleaseHistory(String itemKey) {
+    final history = _bannerHistoryFile.banners
+        .where((el) => el.itemKeys.contains(itemKey))
+        .map((e) => ItemReleaseHistoryModel(version: e.version, dates: [ItemReleaseHistoryDatesModel(from: e.from, until: e.until)]))
+        .toList();
+
+    if (history.isEmpty) {
+      throw Exception('There is no banner history associated to itemKey = $itemKey');
+    }
+    return history.groupListsBy((el) => el.version).entries.map((e) {
+      //with the multi banners, we need to group the dates to avoid showing up repeated ones
+      final dates = e.value
+          .expand((el) => el.dates)
+          .groupListsBy((d) => '${d.from}__${d.until}')
+          .values
+          .map((e) => ItemReleaseHistoryDatesModel(from: e.first.from, until: e.first.until))
+          .toList();
+      return ItemReleaseHistoryModel(version: e.key, dates: dates);
+    }).toList()
+      ..sort((x, y) => x.version.compareTo(y.version));
+  }
+
   CharacterCardModel _toCharacterForCard(CharacterFileModel character) {
     final translation = getCharacterTranslation(character.key);
 
@@ -895,5 +1044,25 @@ class GenshinServiceImpl implements GenshinService {
       type: monster.type,
       isComingSoon: monster.isComingSoon,
     );
+  }
+
+  List<BannerHistoryItemVersionModel> _getBannerVersionsForItem(List<double> allVersions, List<double> releasedOn) {
+    final history = <BannerHistoryItemVersionModel>[];
+    int number = 0;
+    for (var i = 0; i < allVersions.length; i++) {
+      final current = allVersions[i];
+      final released = releasedOn.contains(current);
+      final notReleasedYet = releasedOn.every((e) => current < e);
+      if (notReleasedYet) {
+        history.add(BannerHistoryItemVersionModel(version: current, number: 0, released: false));
+      } else if (!released) {
+        number++;
+        history.add(BannerHistoryItemVersionModel(version: current, number: number, released: false));
+      } else {
+        history.add(BannerHistoryItemVersionModel(version: current, released: true));
+        number = 0;
+      }
+    }
+    return history;
   }
 }

@@ -144,6 +144,24 @@ class Injection {
     return DonationsBloc(purchaseService, networkService, telemetryService);
   }
 
+  static BannerHistoryBloc get bannerHistoryBloc {
+    final genshinService = getIt<GenshinService>();
+    final telemetryService = getIt<TelemetryService>();
+    return BannerHistoryBloc(genshinService, telemetryService);
+  }
+
+  static BannerHistoryItemBloc get bannerHistoryItemBloc {
+    final genshinService = getIt<GenshinService>();
+    final telemetryService = getIt<TelemetryService>();
+    return BannerHistoryItemBloc(genshinService, telemetryService);
+  }
+
+  static ItemReleaseHistoryBloc get itemReleaseHistoryBloc {
+    final genshinService = getIt<GenshinService>();
+    final telemetryService = getIt<TelemetryService>();
+    return ItemReleaseHistoryBloc(genshinService, telemetryService);
+  }
+
   //TODO: USE THIS PROP
   // static CalculatorAscMaterialsItemBloc get calculatorAscMaterialsItemBloc {
   //   final genshinService = getIt<GenshinService>();

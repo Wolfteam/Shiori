@@ -11,6 +11,7 @@ class Assets {
   static String monstersDbPath = '$dbPath/monsters.json';
   static String gadgetsDbPath = '$dbPath/gadgets.json';
   static String furnitureDbPath = '$dbPath/furniture.json';
+  static String bannerHistoryDbPath = '$dbPath/banners_history.json';
   static String translationsBasePath = 'assets/i18n';
 
   //General

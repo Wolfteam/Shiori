@@ -1,0 +1,766 @@
+﻿{
+  "banners": [
+    {
+      "type": "character",
+      "from": "2020-09-28T00:00:00",
+      "until": "2020-10-18T00:00:00",
+      "itemKeys": [
+        "venti",
+        "barbara",
+        "fischl",
+        "xiangling"
+      ],
+      "version": 1.0
+    },
+    {
+      "type": "weapon",
+      "from": "2020-09-28T00:00:00",
+      "until": "2020-10-18T00:00:00",
+      "itemKeys": [
+        "aquila-favonia",
+        "amos-bow",
+        "the-flute",
+        "the-bell",
+        "the-widsith",
+        "the-stringless",
+        "favonius-lance"
+      ],
+      "version": 1.0
+    },
+    {
+      "type": "character",
+      "from": "2020-10-20T00:00:00",
+      "until": "2020-11-10T00:00:00",
+      "itemKeys": [
+        "klee",
+        "xingqiu",
+        "noelle",
+        "sucrose"
+      ],
+      "version": 1.0
+    },
+    {
+      "type": "weapon",
+      "from": "2020-10-20T00:00:00",
+      "until": "2020-11-10T00:00:00",
+      "itemKeys": [
+        "lost-prayer-to-the-sacred-winds",
+        "wolfs-gravestone",
+        "sacrificial-sword",
+        "sacrificial-bow",
+        "sacrificial-greatsword",
+        "sacrificial-fragments",
+        "dragons-bane"
+      ],
+      "version": 1.0
+    },
+    {
+      "type": "character",
+      "from": "2020-11-11T00:00:00",
+      "until": "2020-12-01T00:00:00",
+      "itemKeys": [
+        "tartaglia",
+        "diona",
+        "beidou",
+        "ningguang"
+      ],
+      "version": 1.1
+    },
+    {
+      "type": "weapon",
+      "from": "2020-11-11T00:00:00",
+      "until": "2020-12-01T00:00:00",
+      "itemKeys": [
+        "memory-of-dust",
+        "skyward-harp",
+        "the-flute",
+        "rainslasher",
+        "eye-of-perception",
+        "rust",
+        "favonius-lance"
+      ],
+      "version": 1.1
+    },
+    {
+      "type": "character",
+      "from": "2020-12-01T00:00:00",
+      "until": "2020-12-22T00:00:00",
+      "itemKeys": [
+        "zhongli",
+        "xinyan",
+        "razor",
+        "chongyun"
+      ],
+      "version": 1.1
+    },
+    {
+      "type": "weapon",
+      "from": "2020-12-01T00:00:00",
+      "until": "2020-12-22T00:00:00",
+      "itemKeys": [
+        "vortex-vanquisher",
+        "the-unforged",
+        "lions-roar",
+        "the-bell",
+        "favonius-codex",
+        "favonius-warbow",
+        "dragons-bane"
+      ],
+      "version": 1.1
+    },
+    {
+      "type": "character",
+      "from": "2020-12-23T00:00:00",
+      "until": "2021-01-12T00:00:00",
+      "itemKeys": [
+        "albedo",
+        "fischl",
+        "sucrose",
+        "bennett"
+      ],
+      "version": 1.2
+    },
+    {
+      "type": "weapon",
+      "from": "2020-12-23T00:00:00",
+      "until": "2021-01-12T00:00:00",
+      "itemKeys": [
+        "summit-shaper",
+        "skyward-atlas",
+        "favonius-sword",
+        "favonius-greatsword",
+        "favonius-lance",
+        "sacrificial-fragments",
+        "the-stringless"
+      ],
+      "version": 1.2
+    },
+    {
+      "type": "character",
+      "from": "2021-01-12T00:00:00",
+      "until": "2021-02-02T00:00:00",
+      "itemKeys": [
+        "ganyu",
+        "xiangling",
+        "xingqiu",
+        "noelle"
+      ],
+      "version": 1.2
+    },
+    {
+      "type": "weapon",
+      "from": "2021-01-12T00:00:00",
+      "until": "2021-02-02T00:00:00",
+      "itemKeys": [
+        "skyward-pride",
+        "amos-bow",
+        "sacrificial-sword",
+        "the-bell",
+        "dragons-bane",
+        "eye-of-perception",
+        "favonius-warbow"
+      ],
+      "version": 1.2
+    },
+    {
+      "type": "character",
+      "from": "2021-02-03T00:00:00",
+      "until": "2021-02-17T00:00:00",
+      "itemKeys": [
+        "xiao",
+        "diona",
+        "beidou",
+        "xinyan"
+      ],
+      "version": 1.3
+    },
+    {
+      "type": "weapon",
+      "from": "2021-02-03T00:00:00",
+      "until": "2021-02-23T00:00:00",
+      "itemKeys": [
+        "primordial-jade-cutter",
+        "primordial-jade-winged-spear",
+        "the-flute",
+        "sacrificial-greatsword",
+        "rust",
+        "eye-of-perception",
+        "favonius-lance"
+      ],
+      "version": 1.3
+    },
+    {
+      "type": "character",
+      "from": "2021-02-17T00:00:00",
+      "until": "2021-03-02T00:00:00",
+      "itemKeys": [
+        "keqing",
+        "ningguang",
+        "bennett",
+        "barbara"
+      ],
+      "version": 1.3
+    },
+    {
+      "type": "weapon",
+      "from": "2021-02-23T00:00:00",
+      "until": "2021-03-16T00:00:00",
+      "itemKeys": [
+        "staff-of-homa",
+        "wolfs-gravestone",
+        "lithic-blade",
+        "lithic-spear",
+        "lions-roar",
+        "sacrificial-bow",
+        "the-widsith"
+      ],
+      "version": 1.3
+    },
+    {
+      "type": "character",
+      "from": "2021-03-02T00:00:00",
+      "until": "2021-03-16T00:00:00",
+      "itemKeys": [
+        "hu-tao",
+        "xingqiu",
+        "xiangling",
+        "chongyun"
+      ],
+      "version": 1.3
+    },
+    {
+      "type": "character",
+      "from": "2021-03-17T00:00:00",
+      "until": "2021-04-06T00:00:00",
+      "itemKeys": [
+        "venti",
+        "sucrose",
+        "razor",
+        "noelle"
+      ],
+      "version": 1.4
+    },
+    {
+      "type": "weapon",
+      "from": "2021-03-17T00:00:00",
+      "until": "2021-04-06T00:00:00",
+      "itemKeys": [
+        "elegy-for-the-end",
+        "skyward-blade",
+        "the-alley-flash",
+        "wine-and-song",
+        "favonius-greatsword",
+        "favonius-warbow",
+        "dragons-bane"
+      ],
+      "version": 1.4
+    },
+    {
+      "type": "character",
+      "from": "2021-04-06T00:00:00",
+      "until": "2021-04-27T00:00:00",
+      "itemKeys": [
+        "tartaglia",
+        "rosaria",
+        "barbara",
+        "fischl"
+      ],
+      "version": 1.4
+    },
+    {
+      "type": "weapon",
+      "from": "2021-04-06T00:00:00",
+      "until": "2021-04-27T00:00:00",
+      "itemKeys": [
+        "skyward-harp",
+        "lost-prayer-to-the-sacred-winds",
+        "alley-hunter",
+        "favonius-sword",
+        "sacrificial-greatsword",
+        "favonius-codex",
+        "favonius-lance"
+      ],
+      "version": 1.4
+    },
+    {
+      "type": "character",
+      "from": "2021-04-28T00:00:00",
+      "until": "2021-05-18T00:00:00",
+      "itemKeys": [
+        "zhongli",
+        "yanfei",
+        "noelle",
+        "diona"
+      ],
+      "version": 1.5
+    },
+    {
+      "type": "weapon",
+      "from": "2021-04-28T00:00:00",
+      "until": "2021-05-18T00:00:00",
+      "itemKeys": [
+        "summit-shaper",
+        "memory-of-dust",
+        "lithic-blade",
+        "lithic-spear",
+        "the-flute",
+        "eye-of-perception",
+        "sacrificial-bow"
+      ],
+      "version": 1.5
+    },
+    {
+      "type": "character",
+      "from": "2021-05-18T00:00:00",
+      "until": "2021-06-08T00:00:00",
+      "itemKeys": [
+        "eula",
+        "xinyan",
+        "xingqiu",
+        "beidou"
+      ],
+      "version": 1.5
+    },
+    {
+      "type": "weapon",
+      "from": "2021-05-18T00:00:00",
+      "until": "2021-06-08T00:00:00",
+      "itemKeys": [
+        "song-of-broken-pines",
+        "aquila-favonia",
+        "sacrificial-sword",
+        "rainslasher",
+        "dragons-bane",
+        "sacrificial-fragments",
+        "rust"
+      ],
+      "version": 1.5
+    },
+    {
+      "type": "character",
+      "from": "2021-06-09T00:00:00",
+      "until": "2021-06-29T00:00:00",
+      "itemKeys": [
+        "klee",
+        "barbara",
+        "sucrose",
+        "fischl"
+      ],
+      "version": 1.6
+    },
+    {
+      "type": "weapon",
+      "from": "2021-06-09T00:00:00",
+      "until": "2021-06-29T00:00:00",
+      "itemKeys": [
+        "skyward-pride",
+        "lost-prayer-to-the-sacred-winds",
+        "mitternachts-waltz",
+        "lions-roar",
+        "the-bell",
+        "favonius-lance",
+        "the-widsith"
+      ],
+      "version": 1.6
+    },
+    {
+      "type": "character",
+      "from": "2021-06-29T00:00:00",
+      "until": "2021-07-20T00:00:00",
+      "itemKeys": [
+        "kaedehara-kazuha",
+        "rosaria",
+        "bennett",
+        "razor"
+      ],
+      "version": 1.6
+    },
+    {
+      "type": "weapon",
+      "from": "2021-06-29T00:00:00",
+      "until": "2021-07-20T00:00:00",
+      "itemKeys": [
+        "freedom-sworn",
+        "skyward-atlas",
+        "the-alley-flash",
+        "wine-and-song",
+        "alley-hunter",
+        "dragons-bane",
+        "favonius-greatsword"
+      ],
+      "version": 1.6
+    },
+    {
+      "type": "character",
+      "from": "2021-07-21T00:00:00",
+      "until": "2021-08-10T00:00:00",
+      "itemKeys": [
+        "kamisato-ayaka",
+        "ningguang",
+        "chongyun",
+        "yanfei"
+      ],
+      "version": 2.0
+    },
+    {
+      "type": "weapon",
+      "from": "2021-07-21T00:00:00",
+      "until": "2021-08-10T00:00:00",
+      "itemKeys": [
+        "mistsplitter-reforged",
+        "skyward-spine",
+        "sacrificial-greatsword",
+        "favonius-lance",
+        "favonius-codex",
+        "favonius-sword",
+        "the-stringless"
+      ],
+      "version": 2.0
+    },
+    {
+      "type": "character",
+      "from": "2021-08-10T00:00:00",
+      "until": "2021-08-31T00:00:00",
+      "itemKeys": [
+        "yoimiya",
+        "sayu",
+        "diona",
+        "xinyan"
+      ],
+      "version": 2.0
+    },
+    {
+      "type": "weapon",
+      "from": "2021-08-10T00:00:00",
+      "until": "2021-08-31T00:00:00",
+      "itemKeys": [
+        "thundering-pulse",
+        "skyward-blade",
+        "sacrificial-sword",
+        "rainslasher",
+        "dragons-bane",
+        "sacrificial-fragments",
+        "favonius-warbow"
+      ],
+      "version": 2.0
+    },
+    {
+      "type": "character",
+      "from": "2021-09-01T00:00:00",
+      "until": "2021-09-21T00:00:00",
+      "itemKeys": [
+        "raiden-shogun",
+        "kujou-sara",
+        "xiangling",
+        "sucrose"
+      ],
+      "version": 2.1
+    },
+    {
+      "type": "weapon",
+      "from": "2021-09-01T00:00:00",
+      "until": "2021-09-21T00:00:00",
+      "itemKeys": [
+        "engulfing-lightning",
+        "the-unforged",
+        "lions-roar",
+        "the-bell",
+        "favonius-lance",
+        "the-widsith",
+        "sacrificial-bow"
+      ],
+      "version": 2.1
+    },
+    {
+      "type": "character",
+      "from": "2021-09-21T00:00:00",
+      "until": "2021-10-12T00:00:00",
+      "itemKeys": [
+        "sangonomiya-kokomi",
+        "rosaria",
+        "beidou",
+        "xingqiu"
+      ],
+      "version": 2.1
+    },
+    {
+      "type": "weapon",
+      "from": "2021-09-21T00:00:00",
+      "until": "2021-10-12T00:00:00",
+      "itemKeys": [
+        "everlasting-moonglow",
+        "primordial-jade-cutter",
+        "the-flute",
+        "favonius-greatsword",
+        "dragons-bane",
+        "favonius-codex",
+        "the-stringless"
+      ],
+      "version": 2.1
+    },
+    {
+      "type": "character",
+      "from": "2021-10-13T00:00:00",
+      "until": "2021-11-02T00:00:00",
+      "itemKeys": [
+        "tartaglia",
+        "ningguang",
+        "chongyun",
+        "yanfei"
+      ],
+      "version": 2.2
+    },
+    {
+      "type": "weapon",
+      "from": "2021-10-13T00:00:00",
+      "until": "2021-11-02T00:00:00",
+      "itemKeys": [
+        "polar-star",
+        "memory-of-dust",
+        "akuoumaru",
+        "favonius-sword",
+        "favonius-lance",
+        "eye-of-perception",
+        "rust"
+      ],
+      "version": 2.2
+    },
+    {
+      "type": "character",
+      "from": "2021-11-02T00:00:00",
+      "until": "2021-11-23T00:00:00",
+      "itemKeys": [
+        "hu-tao",
+        "thoma",
+        "diona",
+        "sayu"
+      ],
+      "version": 2.2
+    },
+    {
+      "type": "weapon",
+      "from": "2021-11-02T00:00:00",
+      "until": "2021-11-23T00:00:00",
+      "itemKeys": [
+        "staff-of-homa",
+        "elegy-for-the-end",
+        "wavebreakers-fin",
+        "mouuns-moon",
+        "sacrificial-sword",
+        "rainslasher",
+        "the-widsith"
+      ],
+      "version": 2.2
+    },
+    {
+      "type": "character",
+      "from": "2021-11-24T00:00:00",
+      "until": "2021-12-14T00:00:00",
+      "itemKeys": [
+        "albedo",
+        "bennett",
+        "noelle",
+        "rosaria"
+      ],
+      "version": 2.3
+    },
+    {
+      "type": "character",
+      "from": "2021-11-24T00:00:00",
+      "until": "2021-12-14T00:00:00",
+      "itemKeys": [
+        "eula",
+        "bennett",
+        "noelle",
+        "rosaria"
+      ],
+      "version": 2.3
+    },
+    {
+      "type": "weapon",
+      "from": "2021-11-24T00:00:00",
+      "until": "2021-12-14T00:00:00",
+      "itemKeys": [
+        "freedom-sworn",
+        "song-of-broken-pines",
+        "wine-and-song",
+        "alley-hunter",
+        "lions-roar",
+        "sacrificial-greatsword",
+        "dragons-bane"
+      ],
+      "version": 2.3
+    },
+    {
+      "type": "character",
+      "from": "2021-12-14T00:00:00",
+      "until": "2022-01-04T00:00:00",
+      "itemKeys": [
+        "arataki-itto",
+        "gorou",
+        "barbara",
+        "xiangling"
+      ],
+      "version": 2.3
+    },
+    {
+      "type": "weapon",
+      "from": "2021-12-14T00:00:00",
+      "until": "2022-01-04T00:00:00",
+      "itemKeys": [
+        "redhorn-stonethresher",
+        "skyward-harp",
+        "the-alley-flash",
+        "mitternachts-waltz",
+        "the-bell",
+        "favonius-lance",
+        "sacrificial-fragments"
+      ],
+      "version": 2.3
+    },
+    {
+      "type": "character",
+      "from": "2022-01-05T00:00:00",
+      "until": "2022-01-25T00:00:00",
+      "itemKeys": [
+        "shenhe",
+        "yun-jin",
+        "ningguang",
+        "chongyun"
+      ],
+      "version": 2.4
+    },
+    {
+      "type": "character",
+      "from": "2022-01-05T00:00:00",
+      "until": "2022-01-25T00:00:00",
+      "itemKeys": [
+        "xiao",
+        "yun-jin",
+        "ningguang",
+        "chongyun"
+      ],
+      "version": 2.4
+    },
+    {
+      "type": "weapon",
+      "from": "2022-01-05T00:00:00",
+      "until": "2022-01-25T00:00:00",
+      "itemKeys": [
+        "calamity-queller",
+        "primordial-jade-winged-spear",
+        "lithic-spear",
+        "the-flute",
+        "favonius-greatsword",
+        "the-widsith",
+        "favonius-warbow"
+      ],
+      "version": 2.4
+    },
+    {
+      "type": "character",
+      "from": "2022-01-25T00:00:00",
+      "until": "2022-02-15T00:00:00",
+      "itemKeys": [
+        "zhongli",
+        "xingqiu",
+        "beidou",
+        "yanfei"
+      ],
+      "version": 2.4
+    },
+    {
+      "type": "character",
+      "from": "2022-01-25T00:00:00",
+      "until": "2022-02-15T00:00:00",
+      "itemKeys": [
+        "ganyu",
+        "xingqiu",
+        "beidou",
+        "yanfei"
+      ],
+      "version": 2.4
+    },
+    {
+      "type": "weapon",
+      "from": "2022-01-25T00:00:00",
+      "until": "2022-02-15T00:00:00",
+      "itemKeys": [
+        "vortex-vanquisher",
+        "amos-bow",
+        "lithic-blade",
+        "favonius-sword",
+        "dragons-bane",
+        "favonius-codex",
+        "sacrificial-bow"
+      ],
+      "version": 2.4
+    },
+    {
+      "type": "character",
+      "from": "2022-02-16T00:00:00",
+      "until": "2022-03-08T00:00:00",
+      "itemKeys": [
+        "yae-miko",
+        "fischl",
+        "diona",
+        "thoma"
+      ],
+      "version": 2.5
+    },
+    {
+      "type": "weapon",
+      "from": "2022-02-16T00:00:00",
+      "until": "2022-03-08T00:00:00",
+      "itemKeys": [
+        "kaguras-verity",
+        "primordial-jade-cutter",
+        "wavebreakers-fin",
+        "sacrificial-sword",
+        "rainslasher",
+        "eye-of-perception",
+        "the-stringless"
+      ],
+      "version": 2.5
+    },
+    {
+      "type": "character",
+      "from": "2022-03-08T00:00:00",
+      "until": "2022-03-29T00:00:00",
+      "itemKeys": [
+        "raiden-shogun",
+        "bennett",
+        "xinyan",
+        "kujou-sara"
+      ],
+      "version": 2.5
+    },
+    {
+      "type": "character",
+      "from": "2022-03-08T00:00:00",
+      "until": "2022-03-29T00:00:00",
+      "itemKeys": [
+        "sangonomiya-kokomi",
+        "bennett",
+        "xinyan",
+        "kujou-sara"
+      ],
+      "version": 2.5
+    },
+    {
+      "type": "weapon",
+      "from": "2022-03-08T00:00:00",
+      "until": "2022-03-29T00:00:00",
+      "itemKeys": [
+        "engulfing-lightning",
+        "everlasting-moonglow",
+        "akuoumaru",
+        "mouuns-moon",
+        "lions-roar",
+        "favonius-lance",
+        "sacrificial-fragments"
+      ],
+      "version": 2.5
+    }
+  ]
+}
