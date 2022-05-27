@@ -64,7 +64,6 @@ class ChartsPage extends StatelessWidget {
     final isPortrait = MediaQuery.of(context).orientation == Orientation.portrait;
     return MultiBlocProvider(
       providers: [
-        //TODO: WRITE TEST FOR THESE
         BlocProvider<ChartTopsBloc>(
           create: (context) => Injection.chartTopsBloc..add(const ChartTopsEvent.init()),
         ),
@@ -276,12 +275,6 @@ class _TopCharacters extends StatelessWidget {
                   height: _topCardHeight,
                   width: _topCardWidth,
                   title: s.translateChartType(type),
-                  //TODO: THIS TEXT
-                  bottom: Text(
-                    'Number of times a character was released',
-                    style: theme.textTheme.caption,
-                    textAlign: TextAlign.center,
-                  ),
                   child: Row(
                     children: [
                       Flexible(flex: 70, fit: FlexFit.tight, child: TopPieChart(items: items, colors: _topCharacterColors)),
@@ -529,8 +522,8 @@ class _AscensionStats extends StatelessWidget {
             height: _defaultChartHeight,
             title: s.mostAndLeastRepeated,
             titleMargin: const EdgeInsets.only(bottom: 20),
-            bottom: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
+            bottom: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Center(
                   child: ToggleButtons(
@@ -541,7 +534,7 @@ class _AscensionStats extends StatelessWidget {
                           ),
                         ),
                     borderRadius: BorderRadius.circular(10),
-                    constraints: const BoxConstraints(minHeight: 40, maxHeight: 40),
+                    constraints: const BoxConstraints(minHeight: 25, maxHeight: 25),
                     isSelected: [
                       state.itemType == ItemType.character,
                       state.itemType == ItemType.weapon,

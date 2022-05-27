@@ -14,7 +14,6 @@ class TopPieChart extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    //TODO: TOOLTIP ?
     return PieChart(
       PieChartData(
         borderData: FlBorderData(show: false),

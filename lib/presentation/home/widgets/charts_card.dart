@@ -21,10 +21,7 @@ class ChartsCard extends StatelessWidget {
       iconToTheLeft: iconToTheLeft,
       onClick: _gotoChartsPage,
       icon: Icon(Icons.pie_chart, size: 60, color: theme.colorScheme.secondary),
-      children: [
-        //TODO: DESCRIPTION ?
-        CardDescription(text: 'Useful charts'),
-      ],
+      children: [CardDescription(text: s.usefulDataInTheFormOfCharts)],
     );
   }
 
