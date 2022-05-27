@@ -47,8 +47,12 @@ class ChartAscensionStatsBloc extends Bloc<ChartAscensionStatsEvent, ChartAscens
   }
 
   ChartAscensionStatsState _init(ItemType itemType, int maxNumberOfColumns) {
-    if (state.mapOrNull(loaded: (state) => state.itemType) == itemType) {
+    if (state.mapOrNull(loaded: (state) => state.itemType == itemType && state.maxNumberOfColumns == maxNumberOfColumns) == true) {
       return state;
+    }
+
+    if (maxNumberOfColumns < 1) {
+      throw Exception('The provided maxNumberOfColumns = $maxNumberOfColumns is not valid');
     }
 
     final ascensionStats = <ChartAscensionStatModel>[];
@@ -120,6 +124,10 @@ class ChartAscensionStatsBloc extends Bloc<ChartAscensionStatsEvent, ChartAscens
   ChartAscensionStatsState _pageChanged(_LoadedState state, int newPage) {
     if (newPage < _firstPage) {
       throw Exception('The newPage = $newPage cannot be less than $_firstPage');
+    }
+
+    if (state.currentPage == newPage) {
+      throw Exception('We are already on the same page = $newPage');
     }
 
     final skip = state.maxNumberOfColumns * (newPage - 1);

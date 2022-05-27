@@ -2,7 +2,6 @@ export 'artifact/artifact_bloc.dart';
 export 'artifacts/artifacts_bloc.dart';
 export 'banner_history/banner_history_bloc.dart';
 export 'banner_history_item/banner_history_item_bloc.dart';
-export 'birthdays_per_month/birthdays_per_month_bloc.dart';
 export 'calculator_asc_materials/material_item/calculator_asc_materials_item_bloc.dart';
 export 'calculator_asc_materials/material_item_quantity/calculator_asc_materials_item_update_quantity_bloc.dart';
 export 'calculator_asc_materials/materials/calculator_asc_materials_bloc.dart';
@@ -13,6 +12,7 @@ export 'calculator_asc_materials/sessions_order/calculator_asc_materials_session
 export 'changelog/changelog_bloc.dart';
 export 'character/character_bloc.dart';
 export 'characters/characters_bloc.dart';
+export 'characters_birthdays_per_month/characters_birthdays_per_month_bloc.dart';
 export 'characters_per_region/characters_per_region_bloc.dart';
 export 'characters_per_region_gender/characters_per_region_gender_bloc.dart';
 export 'charts/ascension_stats/chart_ascension_stats_bloc.dart';

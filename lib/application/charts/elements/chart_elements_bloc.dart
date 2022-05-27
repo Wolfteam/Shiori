@@ -54,8 +54,15 @@ class ChartElementsBloc extends Bloc<ChartElementsEvent, ChartElementsState> {
   }
 
   ChartElementsState _init(int maxNumberOfColumns) {
+    if (maxNumberOfColumns < 1) {
+      throw Exception('The provided maxNumberOfColumns = $maxNumberOfColumns is not valid');
+    }
     final firstVersion = versions.first;
-    final lastVersion = versions.first + (maxNumberOfColumns / 10);
+    double lastVersion = firstVersion + _getStep(maxNumberOfColumns);
+    if (lastVersion > versions.last) {
+      lastVersion = versions.last;
+    }
+
     final elements = _genshinService.getElementsForCharts(firstVersion, lastVersion);
     return ChartElementsState.loaded(
       maxNumberOfColumns: maxNumberOfColumns,
@@ -64,8 +71,8 @@ class ChartElementsBloc extends Bloc<ChartElementsEvent, ChartElementsState> {
       elements: elements,
       filteredElements: elements,
       canGoToFirstPage: _canGoToFirstPage(firstVersion),
-      canGoToLastPage: _canGoToLastPage(firstVersion),
-      canGoToNextPage: _canGoToNextPage(firstVersion),
+      canGoToLastPage: _canGoToLastPage(lastVersion),
+      canGoToNextPage: _canGoToNextPage(lastVersion),
       canGoToPreviousPage: _canGoToPreviousPage(firstVersion),
     );
   }
@@ -84,7 +91,7 @@ class ChartElementsBloc extends Bloc<ChartElementsEvent, ChartElementsState> {
   List<ChartElementItemModel> _getFilteredElements(List<ChartElementItemModel> elements, List<ElementType> selectedTypes) =>
       selectedTypes.isEmpty ? elements : elements.where((el) => selectedTypes.contains(el.type)).toList();
 
-  double _getStep(_LoadedState state) => state.maxNumberOfColumns * gameVersionIncrementsBy;
+  double _getStep(int maxNumberOfColumns) => maxNumberOfColumns * gameVersionIncrementsBy;
 
   ChartElementsState _goToFirstOrLastPage(_LoadedState state, bool toFirstPage) {
     final firstVersion = versions.first;
@@ -92,16 +99,12 @@ class ChartElementsBloc extends Bloc<ChartElementsEvent, ChartElementsState> {
       return _newVersionChanged(state, firstVersion);
     }
 
-    final possibleVersionA = (firstVersion + _getStep(state)).truncateToDecimalPlaces();
-    final possibleVersionB = (versions.last - _getStep(state)).truncateToDecimalPlaces();
-    if (possibleVersionA > possibleVersionB && possibleVersionB > firstVersion) {
-      return _newVersionChanged(state, possibleVersionB);
-    }
-    return _newVersionChanged(state, possibleVersionA);
+    final fromVersion = versions.last - _getStep(state.maxNumberOfColumns);
+    return _newVersionChanged(state, fromVersion);
   }
 
   ChartElementsState _goToNextPage(_LoadedState state) {
-    if (!_canGoToNextPage(state.firstVersion)) {
+    if (!_canGoToNextPage(state.lastVersion)) {
       throw Exception('Cannot go to the next page');
     }
     final newVersion = (state.firstVersion + gameVersionIncrementsBy).truncateToDecimalPlaces();
@@ -117,7 +120,7 @@ class ChartElementsBloc extends Bloc<ChartElementsEvent, ChartElementsState> {
   }
 
   ChartElementsState _newVersionChanged(_LoadedState state, double newFirstVersion) {
-    final step = _getStep(state);
+    final step = _getStep(state.maxNumberOfColumns);
     double newLastVersion = (newFirstVersion + step).truncateToDecimalPlaces();
 
     if (newLastVersion > versions.last) {
@@ -131,6 +134,10 @@ class ChartElementsBloc extends Bloc<ChartElementsEvent, ChartElementsState> {
       throw Exception('Last version = $newLastVersion cannot be greater than = ${versions.last}');
     }
 
+    if (state.firstVersion == newFirstVersion && state.lastVersion == newLastVersion) {
+      throw Exception('The state already has the same first and last version');
+    }
+
     assert(newFirstVersion != newLastVersion, 'New and last version cannot be equal');
 
     final elements = _genshinService.getElementsForCharts(newFirstVersion, newLastVersion);
@@ -141,7 +148,7 @@ class ChartElementsBloc extends Bloc<ChartElementsEvent, ChartElementsState> {
       lastVersion: newLastVersion,
       canGoToFirstPage: _canGoToFirstPage(newFirstVersion),
       canGoToLastPage: _canGoToLastPage(newLastVersion),
-      canGoToNextPage: _canGoToNextPage(newFirstVersion) && _canGoToLastPage(newLastVersion),
+      canGoToNextPage: _canGoToNextPage(newLastVersion) && _canGoToLastPage(newLastVersion),
       canGoToPreviousPage: _canGoToPreviousPage(newFirstVersion) && _canGoToFirstPage(newFirstVersion),
     );
   }
