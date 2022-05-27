@@ -65,9 +65,19 @@ void checkItemCommon(ItemCommon item) {
   checkItemKeyAndImage(item.key, item.image);
 }
 
+void checkItemCommonWithName(ItemCommonWithName item) {
+  checkItemKeyAndImage(item.key, item.image);
+  checkTranslation(item.name, canBeNull: false);
+}
+
 void checkItemKeyAndImage(String key, String image) {
   checkKey(key);
   checkAsset(image);
+}
+
+void checkItemKeyNameAndImage(String key, String name, String image) {
+  checkItemKeyAndImage(key, image);
+  checkTranslation(name, canBeNull: false);
 }
 
 void checkItemAscensionMaterialFileModel(GenshinService service, List<ItemAscensionMaterialFileModel> all) {
