@@ -253,7 +253,6 @@ class _TopCharacters extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
     final s = S.of(context);
     return _Chart(
       title: s.topCharacters,
@@ -311,7 +310,6 @@ class _TopWeapons extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
     final s = S.of(context);
     return _Chart(
       title: s.topWeapons,
@@ -333,11 +331,6 @@ class _TopWeapons extends StatelessWidget {
                   height: _topCardHeight,
                   width: _topCardWidth,
                   title: s.translateChartType(type),
-                  bottom: Text(
-                    'Number of times a character was released',
-                    style: theme.textTheme.caption,
-                    textAlign: TextAlign.center,
-                  ),
                   child: Row(
                     children: [
                       Flexible(flex: 70, fit: FlexFit.tight, child: TopPieChart(items: items, colors: _topWeaponColors)),
