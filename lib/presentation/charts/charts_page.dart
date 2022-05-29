@@ -76,10 +76,7 @@ class ChartsPage extends StatelessWidget {
         BlocProvider<ChartAscensionStatsBloc>(
           create: (context) => Injection.chartAscensionStatsBloc
             ..add(
-              ChartAscensionStatsEvent.init(
-                type: ItemType.character,
-                maxNumberOfColumns: maxNumberOfColumns,
-              ),
+              ChartAscensionStatsEvent.init(type: ItemType.character, maxNumberOfColumns: maxNumberOfColumns),
             ),
         ),
         BlocProvider<ChartRegionsBloc>(
@@ -100,8 +97,8 @@ class ChartsPage extends StatelessWidget {
               builder: (context, sizingInformation) => !isPortrait &&
                       (sizingInformation.deviceScreenType == DeviceScreenType.desktop ||
                           sizingInformation.deviceScreenType == DeviceScreenType.tablet)
-                  ? const _LandscapeLayout()
-                  : const _PortraitLayout(),
+                  ? _LandscapeLayout(maxNumberOfColumns: maxNumberOfColumns)
+                  : _PortraitLayout(maxNumberOfColumns: maxNumberOfColumns),
             ),
           ),
         ),
@@ -111,11 +108,15 @@ class ChartsPage extends StatelessWidget {
 }
 
 class _PortraitLayout extends StatelessWidget {
-  const _PortraitLayout({Key? key}) : super(key: key);
+  final int maxNumberOfColumns;
+
+  const _PortraitLayout({
+    Key? key,
+    required this.maxNumberOfColumns,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final maxNumberOfColumns = getValueForScreenType<int>(context: context, mobile: 5, tablet: 10, desktop: 10);
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
@@ -133,11 +134,14 @@ class _PortraitLayout extends StatelessWidget {
 }
 
 class _LandscapeLayout extends StatelessWidget {
-  const _LandscapeLayout({Key? key}) : super(key: key);
+  final int maxNumberOfColumns;
+  const _LandscapeLayout({
+    Key? key,
+    required this.maxNumberOfColumns,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final maxNumberOfColumns = getValueForScreenType<int>(context: context, mobile: 5, tablet: 10, desktop: 10);
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
@@ -192,6 +196,7 @@ class _ChartPagination extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final s = S.of(context);
+    const size = Size.fromRadius(20);
     return Row(
       mainAxisAlignment: MainAxisAlignment.end,
       mainAxisSize: MainAxisSize.min,
@@ -200,24 +205,28 @@ class _ChartPagination extends StatelessWidget {
           splashRadius: Styles.smallButtonSplashRadius,
           tooltip: s.firstPage,
           icon: const Icon(Icons.first_page),
+          constraints: BoxConstraints.tight(size),
           onPressed: !canGoToFirstPage ? null : () => onFirstPagePressed.call(),
         ),
         IconButton(
           splashRadius: Styles.smallButtonSplashRadius,
           tooltip: s.previousPage,
           icon: const Icon(Icons.chevron_left),
+          constraints: BoxConstraints.tight(size),
           onPressed: !canGoToPreviousPage ? null : () => onPreviousPagePressed.call(),
         ),
         IconButton(
           splashRadius: Styles.smallButtonSplashRadius,
           tooltip: s.nextPage,
           icon: const Icon(Icons.chevron_right),
+          constraints: BoxConstraints.tight(size),
           onPressed: !canGoToNextPage ? null : () => onNextPagePressed.call(),
         ),
         IconButton(
           splashRadius: Styles.smallButtonSplashRadius,
           tooltip: s.lastPage,
           icon: const Icon(Icons.last_page),
+          constraints: BoxConstraints.tight(size),
           onPressed: !canGoToLastPage ? null : () => onLastPagePressed.call(),
         ),
       ],
@@ -381,21 +390,7 @@ class _Elements extends StatelessWidget {
             bottom: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                Wrap(
-                  crossAxisAlignment: WrapCrossAlignment.center,
-                  alignment: WrapAlignment.center,
-                  children: ElementType.values
-                      .map(
-                        (e) => ChartLegendIndicator(
-                          width: min(mq.size.width / state.elements.length, 100),
-                          color: e.getElementColor(true),
-                          text: s.translateElementType(e),
-                          lineThrough: state.selectedElementTypes.contains(e),
-                          tap: () => context.read<ChartElementsBloc>().add(ChartElementsEvent.elementSelected(type: e)),
-                        ),
-                      )
-                      .toList(),
-                ),
+                _ElementsWrap(selectedElementTypes: state.selectedElementTypes),
                 _ChartPagination(
                   canGoToFirstPage: state.canGoToFirstPage,
                   canGoToLastPage: state.canGoToLastPage,
@@ -443,6 +438,36 @@ class _Elements extends StatelessWidget {
           orElse: () => const Loading(useScaffold: false),
         ),
       ),
+    );
+  }
+}
+
+class _ElementsWrap extends StatelessWidget {
+  final List<ElementType> selectedElementTypes;
+  const _ElementsWrap({
+    Key? key,
+    required this.selectedElementTypes,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    final s = S.of(context);
+    final mq = MediaQuery.of(context);
+    final double width = min(mq.size.width * 0.25, 100);
+    return Wrap(
+      crossAxisAlignment: WrapCrossAlignment.center,
+      alignment: WrapAlignment.center,
+      children: ElementType.values
+          .map(
+            (e) => ChartLegendIndicator(
+              width: width,
+              color: e.getElementColor(true),
+              text: s.translateElementType(e),
+              lineThrough: selectedElementTypes.contains(e),
+              tap: () => context.read<ChartElementsBloc>().add(ChartElementsEvent.elementSelected(type: e)),
+            ),
+          )
+          .toList(),
     );
   }
 }
@@ -516,43 +541,44 @@ class _AscensionStats extends StatelessWidget {
             title: s.mostAndLeastRepeated,
             titleMargin: const EdgeInsets.only(bottom: 20),
             bottom: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                Center(
-                  child: ToggleButtons(
-                    onPressed: (index) => context.read<ChartAscensionStatsBloc>().add(
-                          ChartAscensionStatsEvent.init(
-                            type: index == 0 ? ItemType.character : ItemType.weapon,
-                            maxNumberOfColumns: maxNumberOfColumns,
-                          ),
+                ToggleButtons(
+                  onPressed: (index) => context.read<ChartAscensionStatsBloc>().add(
+                        ChartAscensionStatsEvent.init(
+                          type: ItemType.values[index],
+                          maxNumberOfColumns: maxNumberOfColumns,
                         ),
-                    borderRadius: BorderRadius.circular(10),
-                    constraints: const BoxConstraints(minHeight: 25, maxHeight: 25),
-                    isSelected: [
-                      state.itemType == ItemType.character,
-                      state.itemType == ItemType.weapon,
-                    ],
-                    children: [
-                      Container(
-                        margin: Styles.edgeInsetHorizontal16,
-                        child: Text(s.characters),
                       ),
-                      Container(
-                        margin: Styles.edgeInsetHorizontal16,
-                        child: Text(s.weapons),
-                      ),
-                    ],
-                  ),
+                  direction: Axis.vertical,
+                  borderRadius: BorderRadius.circular(10),
+                  constraints: const BoxConstraints(minHeight: 25, maxHeight: 25),
+                  isSelected: [
+                    state.itemType == ItemType.character,
+                    state.itemType == ItemType.weapon,
+                  ],
+                  children: [
+                    Container(
+                      margin: Styles.edgeInsetHorizontal16,
+                      child: Text(s.characters),
+                    ),
+                    Container(
+                      margin: Styles.edgeInsetHorizontal16,
+                      child: Text(s.weapons),
+                    ),
+                  ],
                 ),
-                _ChartPagination(
-                  canGoToFirstPage: state.canGoToFirstPage,
-                  canGoToLastPage: state.canGoToLastPage,
-                  canGoToNextPage: state.canGoToNextPage,
-                  canGoToPreviousPage: state.canGoToPreviousPage,
-                  onFirstPagePressed: () => context.read<ChartAscensionStatsBloc>().add(const ChartAscensionStatsEvent.goToFirstPage()),
-                  onLastPagePressed: () => context.read<ChartAscensionStatsBloc>().add(const ChartAscensionStatsEvent.goToLastPage()),
-                  onNextPagePressed: () => context.read<ChartAscensionStatsBloc>().add(const ChartAscensionStatsEvent.goToNextPage()),
-                  onPreviousPagePressed: () => context.read<ChartAscensionStatsBloc>().add(const ChartAscensionStatsEvent.goToPreviousPage()),
+                Expanded(
+                  child: _ChartPagination(
+                    canGoToFirstPage: state.canGoToFirstPage,
+                    canGoToLastPage: state.canGoToLastPage,
+                    canGoToNextPage: state.canGoToNextPage,
+                    canGoToPreviousPage: state.canGoToPreviousPage,
+                    onFirstPagePressed: () => context.read<ChartAscensionStatsBloc>().add(const ChartAscensionStatsEvent.goToFirstPage()),
+                    onLastPagePressed: () => context.read<ChartAscensionStatsBloc>().add(const ChartAscensionStatsEvent.goToLastPage()),
+                    onNextPagePressed: () => context.read<ChartAscensionStatsBloc>().add(const ChartAscensionStatsEvent.goToNextPage()),
+                    onPreviousPagePressed: () => context.read<ChartAscensionStatsBloc>().add(const ChartAscensionStatsEvent.goToPreviousPage()),
+                  ),
                 ),
               ],
             ),
