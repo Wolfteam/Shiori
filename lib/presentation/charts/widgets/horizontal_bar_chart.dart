@@ -84,51 +84,21 @@ class HorizontalBarChart extends StatelessWidget {
               getTooltipItems: getTooltipItems,
             ),
           ),
-          gridData: FlGridData(show: true),
+          gridData: FlGridData(show: false),
           titlesData: FlTitlesData(
             bottomTitles: AxisTitles(
               sideTitles: SideTitles(
                 showTitles: true,
                 reservedSize: 32,
                 interval: xIntervals,
-                getTitlesWidget: (value, meta) {
-                  final text = getBottomText(value);
-                  return Padding(
-                    padding: const EdgeInsets.only(top: 10.0),
-                    child: Tooltip(
-                      message: text,
-                      child: Text(
-                        text.substringIfOverflow(bottomTextMaxLength),
-                        style: const TextStyle(
-                          color: Colors.grey,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 12,
-                        ),
-                      ),
-                    ),
-                  );
-                },
+                getTitlesWidget: (value, meta) => _BottomTitle(getBottomText: getBottomText, bottomTextMaxLength: bottomTextMaxLength, value: value),
               ),
             ),
             rightTitles: AxisTitles(sideTitles: SideTitles(showTitles: false)),
             topTitles: AxisTitles(sideTitles: SideTitles(showTitles: false)),
             leftTitles: AxisTitles(
               sideTitles: SideTitles(
-                getTitlesWidget: (value, meta) {
-                  final text = getLeftText(value);
-                  return Tooltip(
-                    message: text,
-                    child: Text(
-                      text.substringIfOverflow(leftTextMaxLength),
-                      textAlign: TextAlign.center,
-                      style: const TextStyle(
-                        color: Colors.grey,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 12,
-                      ),
-                    ),
-                  );
-                },
+                getTitlesWidget: (value, meta) => _LeftTitle(getLeftText: getLeftText, leftTextMaxLength: leftTextMaxLength, value: value),
                 showTitles: true,
                 interval: yIntervals,
                 reservedSize: 40,
@@ -154,6 +124,68 @@ class HorizontalBarChart extends StatelessWidget {
                 ),
               )
               .toList(),
+        ),
+      ),
+    );
+  }
+}
+
+class _BottomTitle extends StatelessWidget {
+  final GetText getBottomText;
+  final double value;
+  final int bottomTextMaxLength;
+  const _BottomTitle({
+    Key? key,
+    required this.getBottomText,
+    required this.value,
+    required this.bottomTextMaxLength,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    final text = getBottomText(value);
+    return Padding(
+      padding: const EdgeInsets.only(top: 10.0),
+      child: Tooltip(
+        message: text,
+        child: Text(
+          text.substringIfOverflow(bottomTextMaxLength),
+          style: const TextStyle(
+            color: Colors.grey,
+            fontWeight: FontWeight.bold,
+            fontSize: 12,
+          ),
+        ),
+      ),
+    );
+    ;
+  }
+}
+
+class _LeftTitle extends StatelessWidget {
+  final GetText getLeftText;
+  final double value;
+  final int leftTextMaxLength;
+
+  const _LeftTitle({
+    Key? key,
+    required this.getLeftText,
+    required this.value,
+    required this.leftTextMaxLength,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    final text = getLeftText(value);
+    return Tooltip(
+      message: text,
+      child: Text(
+        text.substringIfOverflow(leftTextMaxLength),
+        textAlign: TextAlign.center,
+        style: const TextStyle(
+          color: Colors.grey,
+          fontWeight: FontWeight.bold,
+          fontSize: 12,
         ),
       ),
     );

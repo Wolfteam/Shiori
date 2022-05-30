@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:math';
 
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -16,6 +17,7 @@ const _initialState = BannerHistoryState.initial(
   sortType: BannerHistorySortType.versionAsc,
   banners: [],
   versions: [],
+  maxNumberOfItems: 0,
 );
 
 class BannerHistoryBloc extends Bloc<BannerHistoryEvent, BannerHistoryState> {
@@ -56,6 +58,7 @@ class BannerHistoryBloc extends Bloc<BannerHistoryEvent, BannerHistoryState> {
       sortType: _initialState.sortType,
       banners: banners,
       versions: versions,
+      maxNumberOfItems: max(_characterBanners.length, _weaponBanners.length),
     );
   }
 

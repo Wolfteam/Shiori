@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:linked_scroll_controller/linked_scroll_controller.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import 'package:shiori/application/bloc.dart';
 import 'package:shiori/domain/enums/enums.dart';
@@ -14,7 +15,7 @@ import 'package:shiori/presentation/shared/app_fab.dart';
 import 'package:shiori/presentation/shared/extensions/i18n_extensions.dart';
 import 'package:shiori/presentation/shared/item_popupmenu_filter.dart';
 import 'package:shiori/presentation/shared/mixins/app_fab_mixin.dart';
-import 'package:shiori/presentation/shared/sync_controller.dart';
+import 'package:shiori/presentation/shared/nothing_found_column.dart';
 
 const double _tabletFirstCellWidth = 150;
 const double _mobileFirstCellWidth = 120;
@@ -31,15 +32,23 @@ class BannerHistoryPage extends StatefulWidget {
 }
 
 class _BannerHistoryPageState extends State<BannerHistoryPage> with SingleTickerProviderStateMixin, AppFabMixin {
+  late final LinkedScrollControllerGroup _verticalControllers;
+  late final LinkedScrollControllerGroup _horizontalControllers;
   late final ScrollController _fixedHeaderScrollController;
   late final ScrollController _fixedLeftColumnScrollController;
-  late final SyncScrollController _syncScrollController;
+  late final ScrollController _fabController;
 
   @override
   void initState() {
-    _fixedHeaderScrollController = ScrollController();
-    _fixedLeftColumnScrollController = ScrollController();
-    _syncScrollController = SyncScrollController([_fixedHeaderScrollController, _fixedLeftColumnScrollController]);
+    _verticalControllers = LinkedScrollControllerGroup();
+    _horizontalControllers = LinkedScrollControllerGroup();
+
+    _fixedHeaderScrollController = _horizontalControllers.addAndGet();
+    _fixedLeftColumnScrollController = _verticalControllers.addAndGet();
+    _fabController = _verticalControllers.addAndGet();
+
+    //another hack here, for some reason I had to invert the fab scroll listener
+    setFabScrollListener(_fabController, inverted: true);
     super.initState();
   }
 
@@ -56,79 +65,73 @@ class _BannerHistoryPageState extends State<BannerHistoryPage> with SingleTicker
       create: (_) => Injection.bannerHistoryBloc..add(const BannerHistoryEvent.init()),
       child: Scaffold(
         appBar: const _AppBar(),
+        floatingActionButton: AppFab(
+          hideFabAnimController: hideFabAnimController,
+          scrollController: _fabController,
+        ),
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            NotificationListener<ScrollNotification>(
-              onNotification: (scrollInfo) {
-                _syncScrollController.processNotification(scrollInfo, _fixedHeaderScrollController);
-                return true;
-              },
-              child: SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
+            BlocBuilder<BannerHistoryBloc, BannerHistoryState>(
+              builder: (ctx, state) => FixedHeaderRow(
+                type: state.type,
+                versions: state.versions,
+                selectedVersions: state.selectedVersions,
+                margin: margin,
+                firstCellWidth: firstCellWidth,
+                firstCellHeight: _firstCellHeight,
+                cellWidth: cellWidth,
+                cellHeight: 60,
                 controller: _fixedHeaderScrollController,
-                child: BlocBuilder<BannerHistoryBloc, BannerHistoryState>(
-                  builder: (ctx, state) => FixedHeaderRow(
-                    type: state.type,
-                    versions: state.versions,
-                    selectedVersions: state.selectedVersions,
-                    margin: margin,
-                    firstCellWidth: firstCellWidth,
-                    firstCellHeight: _firstCellHeight,
-                    cellWidth: cellWidth,
-                    cellHeight: 60,
-                  ),
-                ),
               ),
             ),
-            Flexible(
-              child: SingleChildScrollView(
-                controller: scrollController,
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: <Widget>[
-                    BlocBuilder<BannerHistoryBloc, BannerHistoryState>(
-                      builder: (ctx, state) => FixedLeftColumn(
-                        margin: margin,
-                        cellWidth: firstCellWidth,
-                        cellHeight: _cellHeight,
-                        items: state.banners,
-                      ),
+            Expanded(
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  BlocBuilder<BannerHistoryBloc, BannerHistoryState>(
+                    builder: (ctx, state) => FixedLeftColumn(
+                      margin: margin,
+                      cellWidth: firstCellWidth,
+                      cellHeight: _cellHeight,
+                      items: state.banners,
+                      controller: _fabController,
                     ),
-                    Flexible(
-                      child: NotificationListener<ScrollNotification>(
-                        onNotification: (scrollInfo) {
-                          _syncScrollController.processNotification(scrollInfo, _fixedLeftColumnScrollController);
-                          return true;
-                        },
-                        child: SingleChildScrollView(
-                          scrollDirection: Axis.horizontal,
-                          controller: _fixedLeftColumnScrollController,
-                          child: BlocBuilder<BannerHistoryBloc, BannerHistoryState>(
-                            builder: (ctx, state) => Content(
-                              banners: state.banners,
-                              versions: state.versions,
-                              margin: margin,
-                              cellWidth: cellWidth,
-                              cellHeight: _cellHeight,
+                  ),
+                  Expanded(
+                    child: BlocBuilder<BannerHistoryBloc, BannerHistoryState>(
+                      builder: (ctx, state) => state.banners.isEmpty
+                          ? const NothingFoundColumn()
+                          : Container(
+                              //this margin is a kinda hack xd
+                              margin: const EdgeInsets.only(left: 8),
+                              child: Content(
+                                banners: state.banners,
+                                versions: state.versions,
+                                margin: margin,
+                                cellWidth: cellWidth,
+                                cellHeight: _cellHeight,
+                                verticalController: _fixedLeftColumnScrollController,
+                                horizontalControllerGroup: _horizontalControllers,
+                                maxNumberOfItems: state.maxNumberOfItems,
+                              ),
                             ),
-                          ),
-                        ),
-                      ),
-                    )
-                  ],
-                ),
+                    ),
+                  ),
+                ],
               ),
             ),
           ],
         ),
-        floatingActionButton: AppFab(
-          hideFabAnimController: hideFabAnimController,
-          scrollController: scrollController,
-          mini: false,
-        ),
       ),
     );
+  }
+
+  @override
+  void dispose() {
+    _fixedHeaderScrollController.dispose();
+    _fixedLeftColumnScrollController.dispose();
+    super.dispose();
   }
 }
 

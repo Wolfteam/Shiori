@@ -10,7 +10,6 @@ import 'package:shiori/domain/extensions/iterable_extensions.dart';
 import 'package:shiori/domain/utils/date_utils.dart' as date_utils;
 import 'package:shiori/generated/l10n.dart';
 import 'package:shiori/injection.dart';
-import 'package:shiori/presentation/banner_history/widgets/version_details_dialog.dart';
 import 'package:shiori/presentation/character/character_page.dart';
 import 'package:shiori/presentation/charts/widgets/chart_card.dart';
 import 'package:shiori/presentation/charts/widgets/chart_legend.dart';
@@ -20,10 +19,13 @@ import 'package:shiori/presentation/charts/widgets/vertical_bar_chart.dart';
 import 'package:shiori/presentation/shared/dialogs/birthdays_per_month_dialog.dart';
 import 'package:shiori/presentation/shared/dialogs/characters_per_region_dialog.dart';
 import 'package:shiori/presentation/shared/dialogs/characters_per_region_gender_dialog.dart';
+import 'package:shiori/presentation/shared/dialogs/item_release_history_dialog.dart';
 import 'package:shiori/presentation/shared/dialogs/items_ascension_stats_dialog.dart';
+import 'package:shiori/presentation/shared/dialogs/version_details_dialog.dart';
 import 'package:shiori/presentation/shared/extensions/element_type_extensions.dart';
 import 'package:shiori/presentation/shared/extensions/i18n_extensions.dart';
 import 'package:shiori/presentation/shared/loading.dart';
+import 'package:shiori/presentation/shared/mixins/app_fab_mixin.dart';
 import 'package:shiori/presentation/shared/nothing_found_column.dart';
 import 'package:shiori/presentation/shared/styles.dart';
 import 'package:shiori/presentation/weapon/weapon_page.dart';
@@ -59,9 +61,7 @@ class ChartsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final s = S.of(context);
     final maxNumberOfColumns = getValueForScreenType<int>(context: context, mobile: 5, tablet: 10, desktop: 10);
-    final isPortrait = MediaQuery.of(context).orientation == Orientation.portrait;
     return MultiBlocProvider(
       providers: [
         BlocProvider<ChartTopsBloc>(
@@ -76,10 +76,7 @@ class ChartsPage extends StatelessWidget {
         BlocProvider<ChartAscensionStatsBloc>(
           create: (context) => Injection.chartAscensionStatsBloc
             ..add(
-              ChartAscensionStatsEvent.init(
-                type: ItemType.character,
-                maxNumberOfColumns: maxNumberOfColumns,
-              ),
+              ChartAscensionStatsEvent.init(type: ItemType.character, maxNumberOfColumns: maxNumberOfColumns),
             ),
         ),
         BlocProvider<ChartRegionsBloc>(
@@ -89,21 +86,36 @@ class ChartsPage extends StatelessWidget {
           create: (context) => Injection.chartGendersBloc..add(const ChartGendersEvent.init()),
         ),
       ],
-      child: Scaffold(
-        appBar: AppBar(
-          title: Text(s.charts),
-        ),
-        body: SingleChildScrollView(
-          child: Padding(
-            padding: Styles.edgeInsetAll5,
-            child: ResponsiveBuilder(
-              builder: (context, sizingInformation) => !isPortrait &&
-                      (sizingInformation.deviceScreenType == DeviceScreenType.desktop ||
-                          sizingInformation.deviceScreenType == DeviceScreenType.tablet)
-                  ? const _LandscapeLayout()
-                  : const _PortraitLayout(),
-            ),
-          ),
+      child: const _Body(),
+    );
+  }
+}
+
+class _Body extends StatefulWidget {
+  const _Body({Key? key}) : super(key: key);
+
+  @override
+  State<_Body> createState() => _BodyState();
+}
+
+class _BodyState extends State<_Body> with SingleTickerProviderStateMixin, AppFabMixin {
+  @override
+  Widget build(BuildContext context) {
+    final s = S.of(context);
+    final maxNumberOfColumns = getValueForScreenType<int>(context: context, mobile: 5, tablet: 10, desktop: 10);
+    final isPortrait = MediaQuery.of(context).orientation == Orientation.portrait;
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(s.charts),
+      ),
+      floatingActionButton: getAppFab(),
+      body: Padding(
+        padding: Styles.edgeInsetAll5,
+        child: ResponsiveBuilder(
+          builder: (context, sizingInformation) => !isPortrait &&
+                  (sizingInformation.deviceScreenType == DeviceScreenType.desktop || sizingInformation.deviceScreenType == DeviceScreenType.tablet)
+              ? _LandscapeLayout(maxNumberOfColumns: maxNumberOfColumns, controller: scrollController)
+              : _PortraitLayout(maxNumberOfColumns: maxNumberOfColumns, controller: scrollController),
         ),
       ),
     );
@@ -111,57 +123,93 @@ class ChartsPage extends StatelessWidget {
 }
 
 class _PortraitLayout extends StatelessWidget {
-  const _PortraitLayout({Key? key}) : super(key: key);
+  final int maxNumberOfColumns;
+  final ScrollController controller;
+
+  const _PortraitLayout({
+    Key? key,
+    required this.maxNumberOfColumns,
+    required this.controller,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final maxNumberOfColumns = getValueForScreenType<int>(context: context, mobile: 5, tablet: 10, desktop: 10);
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: [
-        const _TopCharacters(),
-        const _TopWeapons(),
-        const SizedBox(height: 10),
-        const _Elements(),
-        const _Birthdays(),
-        _AscensionStats(maxNumberOfColumns: maxNumberOfColumns),
-        const _Regions(),
-        const _Genders(),
-      ],
+    return ListView.builder(
+      itemCount: 8,
+      controller: controller,
+      itemBuilder: (ctx, index) {
+        switch (index) {
+          case 0:
+            return const _TopCharacters();
+          case 1:
+            return const _TopWeapons();
+          case 2:
+            return const SizedBox(height: 10);
+          case 3:
+            return const _Elements();
+          case 4:
+            return const _Birthdays();
+          case 5:
+            return _AscensionStats(maxNumberOfColumns: maxNumberOfColumns);
+          case 6:
+            return const _Regions();
+          case 7:
+            return const _Genders();
+          default:
+            throw Exception('Invalid index');
+        }
+      },
     );
   }
 }
 
 class _LandscapeLayout extends StatelessWidget {
-  const _LandscapeLayout({Key? key}) : super(key: key);
+  final int maxNumberOfColumns;
+  final ScrollController controller;
+
+  const _LandscapeLayout({
+    Key? key,
+    required this.maxNumberOfColumns,
+    required this.controller,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final maxNumberOfColumns = getValueForScreenType<int>(context: context, mobile: 5, tablet: 10, desktop: 10);
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: [
-        const _TopCharacters(),
-        const _TopWeapons(),
-        const SizedBox(height: 10),
-        const _Elements(),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            const Expanded(flex: 49, child: _Birthdays()),
-            const Spacer(flex: 2),
-            Expanded(flex: 49, child: _AscensionStats(maxNumberOfColumns: maxNumberOfColumns)),
-          ],
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: const [
-            Expanded(flex: 49, child: _Regions()),
-            Spacer(flex: 2),
-            Expanded(flex: 49, child: _Genders()),
-          ],
-        ),
-      ],
+    return ListView.builder(
+      itemCount: 6,
+      controller: controller,
+      itemBuilder: (ctx, index) {
+        switch (index) {
+          case 0:
+            return const _TopCharacters();
+          case 1:
+            return const _TopWeapons();
+          case 2:
+            return const SizedBox(height: 10);
+          case 3:
+            return const _Elements();
+          case 4:
+            return Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                const Expanded(flex: 49, child: _Birthdays()),
+                const Spacer(flex: 2),
+                Expanded(flex: 49, child: _AscensionStats(maxNumberOfColumns: maxNumberOfColumns)),
+              ],
+            );
+          case 5:
+            return Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: const [
+                Expanded(flex: 49, child: _Regions()),
+                Spacer(flex: 2),
+                Expanded(flex: 49, child: _Genders()),
+              ],
+            );
+          default:
+            throw Exception('Invalid index');
+        }
+      },
     );
   }
 }
@@ -192,6 +240,7 @@ class _ChartPagination extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final s = S.of(context);
+    const size = Size.fromRadius(20);
     return Row(
       mainAxisAlignment: MainAxisAlignment.end,
       mainAxisSize: MainAxisSize.min,
@@ -200,24 +249,28 @@ class _ChartPagination extends StatelessWidget {
           splashRadius: Styles.smallButtonSplashRadius,
           tooltip: s.firstPage,
           icon: const Icon(Icons.first_page),
+          constraints: BoxConstraints.tight(size),
           onPressed: !canGoToFirstPage ? null : () => onFirstPagePressed.call(),
         ),
         IconButton(
           splashRadius: Styles.smallButtonSplashRadius,
           tooltip: s.previousPage,
           icon: const Icon(Icons.chevron_left),
+          constraints: BoxConstraints.tight(size),
           onPressed: !canGoToPreviousPage ? null : () => onPreviousPagePressed.call(),
         ),
         IconButton(
           splashRadius: Styles.smallButtonSplashRadius,
           tooltip: s.nextPage,
           icon: const Icon(Icons.chevron_right),
+          constraints: BoxConstraints.tight(size),
           onPressed: !canGoToNextPage ? null : () => onNextPagePressed.call(),
         ),
         IconButton(
           splashRadius: Styles.smallButtonSplashRadius,
           tooltip: s.lastPage,
           icon: const Icon(Icons.last_page),
+          constraints: BoxConstraints.tight(size),
           onPressed: !canGoToLastPage ? null : () => onLastPagePressed.call(),
         ),
       ],
@@ -253,7 +306,6 @@ class _TopCharacters extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
     final s = S.of(context);
     return _Chart(
       title: s.topCharacters,
@@ -277,7 +329,21 @@ class _TopCharacters extends StatelessWidget {
                   title: s.translateChartType(type),
                   child: Row(
                     children: [
-                      Flexible(flex: 70, fit: FlexFit.tight, child: TopPieChart(items: items, colors: _topCharacterColors)),
+                      Flexible(
+                        flex: 70,
+                        fit: FlexFit.tight,
+                        child: TopPieChart(
+                          items: items,
+                          colors: _topCharacterColors,
+                          onSectionTap: (item) => showDialog(
+                            context: context,
+                            builder: (_) => ItemReleaseHistoryDialog(
+                              itemKey: item.key,
+                              itemName: item.name,
+                            ),
+                          ),
+                        ),
+                      ),
                       Flexible(
                         flex: 30,
                         fit: FlexFit.tight,
@@ -311,7 +377,6 @@ class _TopWeapons extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
     final s = S.of(context);
     return _Chart(
       title: s.topWeapons,
@@ -333,14 +398,23 @@ class _TopWeapons extends StatelessWidget {
                   height: _topCardHeight,
                   width: _topCardWidth,
                   title: s.translateChartType(type),
-                  bottom: Text(
-                    'Number of times a character was released',
-                    style: theme.textTheme.caption,
-                    textAlign: TextAlign.center,
-                  ),
                   child: Row(
                     children: [
-                      Flexible(flex: 70, fit: FlexFit.tight, child: TopPieChart(items: items, colors: _topWeaponColors)),
+                      Flexible(
+                        flex: 70,
+                        fit: FlexFit.tight,
+                        child: TopPieChart(
+                          items: items,
+                          colors: _topWeaponColors,
+                          onSectionTap: (item) => showDialog(
+                            context: context,
+                            builder: (_) => ItemReleaseHistoryDialog(
+                              itemKey: item.key,
+                              itemName: item.name,
+                            ),
+                          ),
+                        ),
+                      ),
                       Flexible(
                         flex: 30,
                         fit: FlexFit.tight,
@@ -388,21 +462,7 @@ class _Elements extends StatelessWidget {
             bottom: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                Wrap(
-                  crossAxisAlignment: WrapCrossAlignment.center,
-                  alignment: WrapAlignment.center,
-                  children: ElementType.values
-                      .map(
-                        (e) => ChartLegendIndicator(
-                          width: min(mq.size.width / state.elements.length, 100),
-                          color: e.getElementColor(true),
-                          text: s.translateElementType(e),
-                          lineThrough: state.selectedElementTypes.contains(e),
-                          tap: () => context.read<ChartElementsBloc>().add(ChartElementsEvent.elementSelected(type: e)),
-                        ),
-                      )
-                      .toList(),
-                ),
+                _ElementsWrap(selectedElementTypes: state.selectedElementTypes),
                 _ChartPagination(
                   canGoToFirstPage: state.canGoToFirstPage,
                   canGoToLastPage: state.canGoToLastPage,
@@ -450,6 +510,37 @@ class _Elements extends StatelessWidget {
           orElse: () => const Loading(useScaffold: false),
         ),
       ),
+    );
+  }
+}
+
+class _ElementsWrap extends StatelessWidget {
+  final List<ElementType> selectedElementTypes;
+
+  const _ElementsWrap({
+    Key? key,
+    required this.selectedElementTypes,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    final s = S.of(context);
+    final mq = MediaQuery.of(context);
+    final double width = min(mq.size.width * 0.25, 100);
+    return Wrap(
+      crossAxisAlignment: WrapCrossAlignment.center,
+      alignment: WrapAlignment.center,
+      children: ElementType.values
+          .map(
+            (e) => ChartLegendIndicator(
+              width: width,
+              color: e.getElementColor(true),
+              text: s.translateElementType(e),
+              lineThrough: selectedElementTypes.contains(e),
+              tap: () => context.read<ChartElementsBloc>().add(ChartElementsEvent.elementSelected(type: e)),
+            ),
+          )
+          .toList(),
     );
   }
 }
@@ -523,43 +614,44 @@ class _AscensionStats extends StatelessWidget {
             title: s.mostAndLeastRepeated,
             titleMargin: const EdgeInsets.only(bottom: 20),
             bottom: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                Center(
-                  child: ToggleButtons(
-                    onPressed: (index) => context.read<ChartAscensionStatsBloc>().add(
-                          ChartAscensionStatsEvent.init(
-                            type: index == 0 ? ItemType.character : ItemType.weapon,
-                            maxNumberOfColumns: maxNumberOfColumns,
-                          ),
+                ToggleButtons(
+                  onPressed: (index) => context.read<ChartAscensionStatsBloc>().add(
+                        ChartAscensionStatsEvent.init(
+                          type: ItemType.values[index],
+                          maxNumberOfColumns: maxNumberOfColumns,
                         ),
-                    borderRadius: BorderRadius.circular(10),
-                    constraints: const BoxConstraints(minHeight: 25, maxHeight: 25),
-                    isSelected: [
-                      state.itemType == ItemType.character,
-                      state.itemType == ItemType.weapon,
-                    ],
-                    children: [
-                      Container(
-                        margin: Styles.edgeInsetHorizontal16,
-                        child: Text(s.characters),
                       ),
-                      Container(
-                        margin: Styles.edgeInsetHorizontal16,
-                        child: Text(s.weapons),
-                      ),
-                    ],
-                  ),
+                  direction: Axis.vertical,
+                  borderRadius: BorderRadius.circular(10),
+                  constraints: const BoxConstraints(minHeight: 25, maxHeight: 25),
+                  isSelected: [
+                    state.itemType == ItemType.character,
+                    state.itemType == ItemType.weapon,
+                  ],
+                  children: [
+                    Container(
+                      margin: Styles.edgeInsetHorizontal16,
+                      child: Text(s.characters),
+                    ),
+                    Container(
+                      margin: Styles.edgeInsetHorizontal16,
+                      child: Text(s.weapons),
+                    ),
+                  ],
                 ),
-                _ChartPagination(
-                  canGoToFirstPage: state.canGoToFirstPage,
-                  canGoToLastPage: state.canGoToLastPage,
-                  canGoToNextPage: state.canGoToNextPage,
-                  canGoToPreviousPage: state.canGoToPreviousPage,
-                  onFirstPagePressed: () => context.read<ChartAscensionStatsBloc>().add(const ChartAscensionStatsEvent.goToFirstPage()),
-                  onLastPagePressed: () => context.read<ChartAscensionStatsBloc>().add(const ChartAscensionStatsEvent.goToLastPage()),
-                  onNextPagePressed: () => context.read<ChartAscensionStatsBloc>().add(const ChartAscensionStatsEvent.goToNextPage()),
-                  onPreviousPagePressed: () => context.read<ChartAscensionStatsBloc>().add(const ChartAscensionStatsEvent.goToPreviousPage()),
+                Expanded(
+                  child: _ChartPagination(
+                    canGoToFirstPage: state.canGoToFirstPage,
+                    canGoToLastPage: state.canGoToLastPage,
+                    canGoToNextPage: state.canGoToNextPage,
+                    canGoToPreviousPage: state.canGoToPreviousPage,
+                    onFirstPagePressed: () => context.read<ChartAscensionStatsBloc>().add(const ChartAscensionStatsEvent.goToFirstPage()),
+                    onLastPagePressed: () => context.read<ChartAscensionStatsBloc>().add(const ChartAscensionStatsEvent.goToLastPage()),
+                    onNextPagePressed: () => context.read<ChartAscensionStatsBloc>().add(const ChartAscensionStatsEvent.goToNextPage()),
+                    onPreviousPagePressed: () => context.read<ChartAscensionStatsBloc>().add(const ChartAscensionStatsEvent.goToPreviousPage()),
+                  ),
                 ),
               ],
             ),
@@ -643,7 +735,7 @@ class _Genders extends StatelessWidget {
       chart: ChartCard(
         width: mq.size.width,
         height: _defaultChartHeight,
-        title: s.perRegions,
+        title: s.perRegion,
         titleMargin: const EdgeInsets.only(bottom: 20),
         child: BlocBuilder<ChartGendersBloc, ChartGendersState>(
           builder: (context, state) => state.maybeMap(

@@ -15,6 +15,12 @@ class VerticalBarDataModel {
   VerticalBarDataModel(this.index, this.color, this.x, this.y);
 }
 
+const _textStyle = TextStyle(
+  color: Colors.grey,
+  fontWeight: FontWeight.bold,
+  fontSize: 12,
+);
+
 class VerticalBarChart extends StatelessWidget {
   final List<VerticalBarDataModel> items;
   final OnBarChartTap? onBarChartTap;
@@ -50,11 +56,6 @@ class VerticalBarChart extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    const textStyle = TextStyle(
-      color: Colors.grey,
-      fontWeight: FontWeight.bold,
-      fontSize: 12,
-    );
     return BarChart(
       BarChartData(
         maxY: maxY,
@@ -81,27 +82,12 @@ class VerticalBarChart extends StatelessWidget {
           bottomTitles: AxisTitles(
             sideTitles: SideTitles(
               showTitles: true,
-              getTitlesWidget: (value, meta) {
-                final text = getBottomText(value);
-                final tooltip = Tooltip(
-                  message: text,
-                  child: Text(
-                    text.substringIfOverflow(bottomTextMaxLength),
-                    textAlign: TextAlign.center,
-                    style: textStyle,
-                    overflow: TextOverflow.ellipsis,
-                  ),
-                );
-                return Padding(
-                  padding: const EdgeInsets.only(top: 10),
-                  child: !rotateBottomText
-                      ? tooltip
-                      : RotationTransition(
-                          turns: const AlwaysStoppedAnimation(15 / 360),
-                          child: tooltip,
-                        ),
-                );
-              },
+              getTitlesWidget: (value, meta) => _BottomTitles(
+                getBottomText: getBottomText,
+                bottomTextMaxLength: bottomTextMaxLength,
+                value: value,
+                rotateBottomText: rotateBottomText,
+              ),
               reservedSize: 40,
             ),
           ),
@@ -110,17 +96,7 @@ class VerticalBarChart extends StatelessWidget {
               showTitles: true,
               reservedSize: 40,
               interval: interval,
-              getTitlesWidget: (value, meta) {
-                final text = getLeftText(value);
-                return Tooltip(
-                  message: text,
-                  child: Text(
-                    text.substringIfOverflow(leftTextMaxLength),
-                    textAlign: TextAlign.center,
-                    style: textStyle,
-                  ),
-                );
-              },
+              getTitlesWidget: (value, meta) => _LeftTitle(getLeftText: getLeftText, leftTextMaxLength: leftTextMaxLength, value: value),
             ),
           ),
         ),
@@ -141,7 +117,78 @@ class VerticalBarChart extends StatelessWidget {
               ),
             )
             .toList(),
-        gridData: FlGridData(show: true),
+        gridData: FlGridData(show: false),
+      ),
+    );
+  }
+}
+
+class _BottomTitles extends StatelessWidget {
+  final GetText getBottomText;
+  final double value;
+  final int bottomTextMaxLength;
+  final bool rotateBottomText;
+
+  const _BottomTitles({
+    Key? key,
+    required this.getBottomText,
+    required this.value,
+    required this.bottomTextMaxLength,
+    required this.rotateBottomText,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    final text = getBottomText(value);
+    return Padding(
+      padding: const EdgeInsets.only(top: 10),
+      child: !rotateBottomText
+          ? Tooltip(
+              message: text,
+              child: Text(
+                text.substringIfOverflow(bottomTextMaxLength),
+                textAlign: TextAlign.center,
+                style: _textStyle,
+                overflow: TextOverflow.ellipsis,
+              ),
+            )
+          : RotationTransition(
+              turns: const AlwaysStoppedAnimation(15 / 360),
+              child: Tooltip(
+                message: text,
+                child: Text(
+                  text.substringIfOverflow(bottomTextMaxLength),
+                  textAlign: TextAlign.center,
+                  style: _textStyle,
+                  overflow: TextOverflow.ellipsis,
+                ),
+              ),
+            ),
+    );
+  }
+}
+
+class _LeftTitle extends StatelessWidget {
+  final GetText getLeftText;
+  final double value;
+  final int leftTextMaxLength;
+
+  const _LeftTitle({
+    Key? key,
+    required this.getLeftText,
+    required this.value,
+    required this.leftTextMaxLength,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    final text = getLeftText(value);
+    return Tooltip(
+      message: text,
+      child: Text(
+        text.substringIfOverflow(leftTextMaxLength),
+        textAlign: TextAlign.center,
+        style: _textStyle,
       ),
     );
   }

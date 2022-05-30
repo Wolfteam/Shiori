@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/generated/l10n.dart';
-import 'package:shiori/presentation/banner_history/widgets/item_release_history_dialog.dart';
 import 'package:shiori/presentation/character/character_page.dart';
+import 'package:shiori/presentation/shared/dialogs/item_release_history_dialog.dart';
 import 'package:shiori/presentation/shared/extensions/rarity_extensions.dart';
 import 'package:shiori/presentation/shared/images/circle_character.dart';
 import 'package:shiori/presentation/shared/images/circle_weapon.dart';
@@ -20,6 +20,7 @@ class FixedLeftColumn extends StatelessWidget {
   final EdgeInsets margin;
   final double cellWidth;
   final double cellHeight;
+  final ScrollController controller;
 
   const FixedLeftColumn({
     Key? key,
@@ -27,15 +28,17 @@ class FixedLeftColumn extends StatelessWidget {
     required this.margin,
     required this.cellWidth,
     required this.cellHeight,
+    required this.controller,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: List.generate(
-        items.length,
-        (index) {
+    return SizedBox(
+      width: cellWidth,
+      child: ListView.builder(
+        controller: controller,
+        itemCount: items.length,
+        itemBuilder: (context, index) {
           final item = items[index];
           return _ItemCard(
             cellWidth: cellWidth,
@@ -105,6 +108,23 @@ class _ItemCard extends StatelessWidget {
             alignment: AlignmentDirectional.topCenter,
             fit: StackFit.passthrough,
             children: [
+              Column(
+                children: [
+                  if (type == BannerHistoryItemType.character)
+                    CircleCharacter(itemKey: itemKey, image: image, radius: 45)
+                  else
+                    CircleWeapon(itemKey: itemKey, image: image, radius: 45),
+                  Tooltip(
+                    message: name,
+                    child: Text(
+                      name,
+                      overflow: TextOverflow.ellipsis,
+                      textAlign: TextAlign.center,
+                      style: theme.textTheme.subtitle2!.copyWith(fontWeight: FontWeight.bold, color: Colors.white),
+                    ),
+                  ),
+                ],
+              ),
               Align(
                 alignment: Alignment.topRight,
                 child: Container(
@@ -122,23 +142,6 @@ class _ItemCard extends StatelessWidget {
                     ),
                   ),
                 ),
-              ),
-              Column(
-                children: [
-                  if (type == BannerHistoryItemType.character)
-                    CircleCharacter(itemKey: itemKey, image: image, radius: 45)
-                  else
-                    CircleWeapon(itemKey: itemKey, image: image, radius: 45),
-                  Tooltip(
-                    message: name,
-                    child: Text(
-                      name,
-                      overflow: TextOverflow.ellipsis,
-                      textAlign: TextAlign.center,
-                      style: theme.textTheme.subtitle2!.copyWith(fontWeight: FontWeight.bold, color: Colors.white),
-                    ),
-                  ),
-                ],
               ),
             ],
           ),

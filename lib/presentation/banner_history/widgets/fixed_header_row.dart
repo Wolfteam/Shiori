@@ -5,7 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shiori/application/bloc.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/generated/l10n.dart';
-import 'package:shiori/presentation/banner_history/widgets/version_details_dialog.dart';
+import 'package:shiori/presentation/shared/dialogs/version_details_dialog.dart';
 
 class FixedHeaderRow extends StatelessWidget {
   final BannerHistoryItemType type;
@@ -16,6 +16,7 @@ class FixedHeaderRow extends StatelessWidget {
   final double firstCellHeight;
   final double cellWidth;
   final double cellHeight;
+  final ScrollController controller;
 
   const FixedHeaderRow({
     Key? key,
@@ -27,22 +28,18 @@ class FixedHeaderRow extends StatelessWidget {
     required this.firstCellHeight,
     required this.cellWidth,
     required this.cellHeight,
+    required this.controller,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    //TODO: listview wont work inside a column...
-    // return ListView.builder(
-    //   itemCount: versions.length + 1,
-    //   scrollDirection: Axis.horizontal,
-    //   itemBuilder: (ctx, index) => index == 0
-    //       ? _VersionsCharactersCell(cellWidth: firstCellWidth, cellHeight: firstCellHeight, margin: margin)
-    //       : _VersionCard(cellWidth: cellWidth, cellHeight: cellHeight, margin: margin, version: versions[index - 1]),
-    // );
-    return Row(
-      children: List.generate(
-        versions.length + 1,
-        (index) => index == 0
+    return SizedBox(
+      height: math.max(firstCellHeight, cellHeight),
+      child: ListView.builder(
+        itemCount: versions.length + 1,
+        scrollDirection: Axis.horizontal,
+        controller: controller,
+        itemBuilder: (ctx, index) => index == 0
             ? _VersionsCharactersCell(type: type, cellWidth: firstCellWidth, cellHeight: firstCellHeight, margin: margin)
             : _VersionCard(
                 cellWidth: cellWidth,

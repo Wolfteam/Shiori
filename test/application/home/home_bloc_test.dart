@@ -72,6 +72,10 @@ void main() {
           expect(material.days.every((day) => _expectedDays.contains(day)), isTrue);
           checkItemsCommon(material.weapons);
         }
+
+        for (final birthday in state.characterImgBirthday) {
+          checkItemKeyAndImage(birthday.key, birthday.image);
+        }
       },
     );
   }

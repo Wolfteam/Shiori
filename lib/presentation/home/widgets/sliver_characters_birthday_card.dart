@@ -37,7 +37,7 @@ class SliverCharactersBirthdayCard extends StatelessWidget {
                     ),
                   ],
                 )
-              : Container(),
+              : const SizedBox.shrink(),
         ),
       ),
     );

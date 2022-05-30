@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:bloc_test/bloc_test.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
@@ -15,6 +17,9 @@ void main() {
   late GenshinService _genshinService;
   late TelemetryService _telemetryService;
 
+  final List<BannerHistoryItemModel> _characterBanners = [];
+  final List<BannerHistoryItemModel> _weaponBanners = [];
+
   setUpAll(() {
     TestWidgetsFlutterBinding.ensureInitialized();
     return Future(() async {
@@ -26,6 +31,9 @@ void main() {
       _genshinService = GenshinServiceImpl(localeService);
 
       await _genshinService.init(settingsService.language);
+
+      _characterBanners.addAll(_genshinService.getBannerHistory(BannerHistoryItemType.character));
+      _weaponBanners.addAll(_genshinService.getBannerHistory(BannerHistoryItemType.weapon));
     });
   });
 
@@ -81,6 +89,9 @@ void main() {
               .toList();
           expect(versions.length, selectedVersions.length);
         }
+
+        final maxCount = max(_characterBanners.length, _weaponBanners.length);
+        expect(state.maxNumberOfItems, maxCount);
       },
     );
   }
@@ -96,6 +107,7 @@ void main() {
         versions: [],
         selectedItemKeys: [],
         selectedVersions: [],
+        maxNumberOfItems: 0,
       ),
     ),
   );
