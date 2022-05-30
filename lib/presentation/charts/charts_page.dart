@@ -735,7 +735,7 @@ class _Genders extends StatelessWidget {
       chart: ChartCard(
         width: mq.size.width,
         height: _defaultChartHeight,
-        title: s.perRegions,
+        title: s.perRegion,
         titleMargin: const EdgeInsets.only(bottom: 20),
         child: BlocBuilder<ChartGendersBloc, ChartGendersState>(
           builder: (context, state) => state.maybeMap(
