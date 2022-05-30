@@ -6902,82 +6902,157 @@
     },
     {
       "key": "yelan",
-      "name": "Yelan",
-      "title": "",
-      "description": "",
+      "name": "야란",
+      "title": "유곡에 피어난 난초",
+      "description": "자신을 총무부 직원이라고 소개하지만 총무부 명단에는 「존재하지 않는」 의문의 인물",
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "일반 공격·빛을 감춘 활",
+          "description": "",
+          "abilities": [
+            {
+              "name": "일반 공격",
+              "description": "활로 최대 4번 공격한다.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "강공격",
+              "description": "더 강력하고 정확한 조준 사격을 한다.\r\n조준 시 흐르는 물이 화살 촉에 모이고, 격류가 가득 찬 화살은 물 원소 피해를 준다.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "타파",
+              "description": "전투 이탈 후 5초 뒤 야란이 「타파」 상태를 획득해, 다음 풀차지 조준 사격에 필요한 차지 시간이 80% 감소한다. 또한 풀차지로 「타파의 화살」 발사 시, 야란의 HP 최대치에 따라 물 원소 범위 피해를 준다.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "낙하 공격",
+              "description": "공중에서 화살비를 쏜 후 빠른 속도로 땅에 착지한다. 착지 시 범위 피해를 준다",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "1단 공격 피해|{param1}%",
+            "2단 공격 피해|{param2}%",
+            "3단 공격 피해|{param3}%",
+            "4단 공격 피해|{param4}% + {param5}%",
+            "조준 사격|{param6}%",
+            "풀차지 조준 사격|{param7}%",
+            "타파의 화살 피해|{param8}% Max HP",
+            "낙하 기간 피해|{param9}%",
+            "저공/고공 추락 충격 피해|{param10}% / {param11}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "뒤얽힌 생명줄",
+          "description": "「생명의 실」을 이끌고 질주해 경로에 있는 적을 옭아맨다.\r\n질주가 끝나면 「생명의 실」이 폭발하며 야란의 HP 최대치에 따라 표시된 적에게 물 원소 피해를 준다.\r\n",
+          "abilities": [
+            {
+              "name": "짧은 터치",
+              "description": "빠르게 전방으로 일정 거리를 질주한다.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "홀드",
+              "description": "계속 질주한다, 해당 상태의 야란의 경직 저항력이 상승한다.\r\n발동하는 동안 야란은 대시 방향을 제어할 수 있으며 다시 스킬을 시전해 질주 상태를 조기 종료할 수 있다.\r\n또한, 「생명의 실」 폭발 시, 표시된 적의 수량에 따라 야란이 일정 확률로 「타파」 상태를 획득한다: 표시된 적마다 획득 확률이 34% 증가한다.\r\n",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "스킬 피해|{param1}% Max HP",
+            "차지 최대 지속 시간|{param2}s",
+            "재사용 대기시간|{param3}s"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "심오하고 영롱한 주사위",
+          "description": "",
+          "abilities": [
+            {
+              "name": "",
+              "description": "물 원소 범위 피해를 주고 「던져진 영롱」을 생성해 함께 전투에 나선다.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "던져진 영롱",
+              "description": "캐릭터를 따라다니며 다음 상황에서 협동 공격을 펼친다. 야란의 HP 최대치에 따라 물 원소 피해를 준다:\r\n",
+              "descriptions": [
+                "파티 내 자신의 현재 필드 위 캐릭터가 일반 공격을 가하면 1초마다 최대 1회 발동한다.",
+                "야란 자신의 「생명의 실」이 폭발해 적에게 명중하면 협동 공격을 1회 가한다."
+              ]
+            }
+          ],
+          "stats": [
+            "스킬 피해|{param1}% Max HP",
+            "던져진 영롱 피해|{param2}% Max HP ×{param3}",
+            "지속 시간|{param4}s",
+            "재사용 대기시간|{param5}s",
+            "원소 에너지|{param6}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "장고 후의 한 수",
+          "description": "리월에서 20시간의 탐사 파견 임무 수행 시 획득하는 보상이 25% 증가한다\r\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
+          "title": "선공의 묘수",
+          "description": "파티 내 1/2/3/4가지 원소 타입의 캐릭터 존재 시, 야란의 HP 최대치가 각각 6%/12%/18%/30%만큼 증가한다\r\n",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "마음 가는 대로",
+          "description": "「던져진 영롱」이 존재하는 동안 파티 내 필드 위에 있는 자신의 캐릭터가 가하는 피해가 1% 증가하고, 1초마다 3.5%만큼 추가로 증가한다. 최대 50%까지 증가할 수 있다.\r\n해당 효과가 존재하는 동안 심오하고 영롱한 주사위를 다시 발동 시, 원래 존재하던 효과가 소멸한다\r\n",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "승부에 뛰어든 공모자",
+          "description": "뒤얽힌 생명줄의 사용 가능 횟수가 1회 증가한다\r\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "올가미에 걸린 적",
+          "description": "「던져진 영롱」 협동 공격 시 추가로 화살 한 발을 발사해 야란 HP 최대치의 14%에 해당하는 물 원소 피해를 준다.\r\n해당 효과는 1.8초마다 최대 1회 발동한다\r\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "노름꾼의 주사위",
+          "description": "심오하고 영롱한 주사위의 스킬 레벨+3\r\n최대 Lv.15까지 상승\r\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "이화접목의 현혹술",
+          "description": "「생명의 실」이 표시한 적의 수량에 따라, 표식이 폭발할 때마다 파티 내 모든 캐릭터의 HP 최대치가 10% 증가한다. 지속 시간: 25초. 해당 방식으로 HP 최대치가 최대 40%까지 증가한다\r\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "눈보다 빠른 손",
+          "description": "뒤얽힌 생명줄의 스킬 레벨+3\r\n최대 Lv.15까지 상승\r\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
+          "title": "승자의 독식",
+          "description": "심오하고 영롱한 주사위를 시전하면 야란이 「전략 설계」상태에 진입한다:\r\n",
+          "descriptions": [
+            "야란의 일반 공격이 특수한 「타파의 화살」을 발사로 전환된다. 이 화살은 「타파의 화살」과 비슷한 특성을 지니며 해당 피해는 강공격 피해로 간주, 타파의 화살의 156%에 해당하는 피해를 가한다.",
+            "「전략 설계」 상태는 최대 20초 동안 지속되며, 야란이 화살 5발을 발사한 후 사라진다"
+          ]
         }
       ]
     },
@@ -7489,6 +7564,18 @@
       "name": "학도의 노트",
       "description": "어느 우등생이 남긴 학습노트, 아담한 글씨가 매우 아름답다. 실용적인 주문이 적지 않게 기록되어 있다",
       "refinements": []
+    },
+    {
+      "key": "aqua-simulacra",
+      "name": "약수",
+      "description": "시시각각 변화하는 색의 장궁. 빛에 비추면 물 같은 푸른 색을 띈다",
+      "refinements": [
+        "HP가 {color}16{/color}% 증가하고, 해당 무기를 장착한 캐릭터 주변에 적이 존재하면 캐릭터가 가하는 피해가 {color}20{/color}% 증가한다. 이 효과는 해당 캐릭터가 필드 위에 존재하거나 대기 상태인 것과 관계없이 발동된다",
+        "HP가 {color}20{/color}% 증가하고, 해당 무기를 장착한 캐릭터 주변에 적이 존재하면 캐릭터가 가하는 피해가 {color}25{/color}% 증가한다. 이 효과는 해당 캐릭터의 필드 위 혹은 대기 상태에 관계없이 발동된다",
+        "HP가 {color}24{/color}% 증가하고, 해당 무기를 장착한 캐릭터 주변에 적이 존재하면 캐릭터가 가하는 피해가 {color}30{/color}% 증가한다. 이 효과는 해당 캐릭터의 필드 위 혹은 대기 상태에 관계없이 발동된다",
+        "HP가 {color}28{/color}% 증가하고, 해당 무기를 장착한 캐릭터 주변에 적이 존재하면 캐릭터가 가하는 피해가 {color}35{/color}% 증가한다. 이 효과는 해당 캐릭터의 필드 위 혹은 대기 상태에 관계없이 발동된다",
+        "HP가 {color}32{/color}% 증가하고, 해당 무기를 장착한 캐릭터 주변에 적이 존재하면 캐릭터가 가하는 피해가 {color}40{/color}% 증가한다. 이 효과는 해당 캐릭터의 필드 위 혹은 대기 상태에 관계없이 발동된다"
+      ]
     },
     {
       "key": "aquila-favonia",

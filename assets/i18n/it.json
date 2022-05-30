@@ -6877,80 +6877,147 @@
     {
       "key": "yelan",
       "name": "Yelan",
-      "title": "",
-      "description": "",
+      "title": "Valley Orchid",
+      "description": "A mysterious person who claims to work for the Ministry of Civil Affairs, but is a \"non-entity\" on the Ministry of Civil Affairs' list.",
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Stealthy Bowshot",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Normal Attack",
+              "description": "Performs up to 4 consecutive shots with a bow.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Charged Attack",
+              "description": "Perform a more precise Aimed Shot with increased DMG.\r\nWhile aiming, flowing water will accumulate on the arrowhead. A fully charged torrential arrow will deal Hydro DMG.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Breakthrough",
+              "description": "Yelan will enter a \"Breakthrough\" state after spending 5s out of combat, which will cause her next Charged Aimed Shot to have 80% decreased charge time, and once charged, she can fire a \"Breakthrough Barb\" that will deal AoE Hydro DMG based on Yelan's Max HP.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Plunging Attack",
+              "description": "Fires off a shower of arrows in mid-air before falling and striking the ground, dealing AoE DMG upon impact.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "1-Hit DMG|{param1}%",
+            "2-Hit DMG|{param2}%",
+            "3-Hit DMG|{param3}%",
+            "4-Hit DMG|{param4}% + {param5}%",
+            "Aimed Shot|{param6}%",
+            "Fully-Charged Aimed Shot|{param7}%",
+            "Breakthrough Barb DMG|{param8}% Max HP",
+            "Plunge DMG|{param9}%",
+            "Low/High Plunge DMG|{param10}% / {param11}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Lingering Lifeline",
+          "description": "Fires off a Lifeline that allows her to move rapidly, entangling and marking opponents along its path.\r\nWhen this rapid movement ends, the Lifeline will explode, dealing Hydro DMG to the marked opponents based on Yelan's Max HP.\r\n",
+          "abilities": [
+            {
+              "name": "Tap",
+              "description": "Moves a certain distance forward swiftly.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Hold",
+              "description": "Engages in continuous, swift movement, during which Yelan's resistance to interruption is increased.\r\nDuring this time, Yelan can control this rapid movement and end it by using this Skill again.\r\nAdditionally, each opponent marked by the Lifeline when it explodes grants Yelan a 34% chance to reset her Breakthrough state.\r\n",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "Skill DMG|{param1}% Max HP",
+            "Max Duration (Hold)|{param2}s",
+            "CD|{param3}s"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Depth-Clarion Dice",
+          "description": "Deals AoE Hydro DMG and creates an \"Exquisite Throw,\" which aids her in battle.\r\n",
+          "abilities": [
+            {
+              "name": "Exquisite Throw",
+              "description": "Follows the character around and will initiate a coordinated attack under the following circumstances, dealing Hydro DMG based on Yelan's Max HP:\r\n",
+              "descriptions": [
+                "Can occur once every second when your active character uses a Normal Attack.",
+                "Will occur each time Yelan's Lifeline explodes and hits opponents."
+              ]
+            }
+          ],
+          "stats": [
+            "Skill DMG|{param1}% Max HP",
+            "Exquisite Throw DMG|{param2}% Max HP ×{param3}",
+            "Duration|{param4}s",
+            "CD|{param5}s",
+            "Energy Cost|{param6}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "Necessary Calculation",
+          "description": "Gains 25% more rewards when dispatched on a Liyue Expedition for 20 hours.\r\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
+          "title": "Turn Control",
+          "description": "When the party has 1/2/3/4 Elemental Types, Yelan's Max HP is increased by 6%/12%/18%/30%.\r\n",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "Adapt With Ease",
+          "description": "So long as an Exquisite Throw is in play, your own active character deals 1% more DMG. This increases by a further 3.5% DMG every second. The maximum increase to DMG dealt is 50%.\r\nThe pre-existing effect will be dispelled if Depth-Clarion Dice is recast during its duration.\r\n",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "Enter the Plotters",
+          "description": "Lingering Lifeline gains 1 additional charge.\r\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "Taking All Comers",
+          "description": "When Exquisite Throw conducts a coordinated attack, it will fire an additional water arrow that will deal 14% of Yelan's Max HP as Hydro DMG.\r\nThis effect can trigger once every 1.8s.\r\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "Beware the Trickster's Dice",
+          "description": "Increases the Level of Depth-Clarion Dice by 3.\r\nMaximum upgrade level is 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "Bait-and-Switch",
+          "description": "Increases all party members' Max HP by 10% for 25s for every opponent marked by Lifeline when the Lifeline explodes. A maximum increase of 40% Max HP can be attained in this manner.\r\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "Dealer's Sleight",
+          "description": "Increases the Level of Lingering Lifeline by 3.\r\nMaximum upgrade level is 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
+          "title": "Winner Takes All",
+          "description": "After using Depth-Clarion Dice, Yelan will enter the Mastermind state.\r\nIn this state, all of Yelan's Normal Attacks will be special Breakthrough Barbs. These Breakthrough Barbs will have similar abilities to normal ones and the DMG dealt will be considered Charged Attack DMG, dealing 156% of a normal Breakthrough Barb's DMG.\r\nThe Mastermind state lasts 20s and will be cleared after Yelan fires 5 arrows.\r\n",
           "descriptions": []
         }
       ]
@@ -7458,6 +7525,18 @@
       "name": "Apprentice's Notes",
       "description": "Note lasciate da uno studente modello. Sono elencati molti incantesimi utili e la grafia è bellissima.",
       "refinements": []
+    },
+    {
+      "key": "aqua-simulacra",
+      "name": "Aqua Simulacra",
+      "description": "This longbow's color is unpredictable. Under the light, it takes on a lustrous, watery blue.",
+      "refinements": [
+        "HP is increased by {color}16{/color}%. When there are opponents nearby, the DMG dealt by the wielder of this weapon is increased by {color}20{/color}%. This will take effect whether the character is on-field or not.",
+        "HP is increased by {color}20{/color}%. When there are opponents nearby, the DMG dealt by the wielder of this weapon is increased by {color}25{/color}%. This will take effect whether the character is on-field or not.",
+        "HP is increased by {color}24{/color}%. When there are opponents nearby, the DMG dealt by the wielder of this weapon is increased by {color}30{/color}%. This will take effect whether the character is on-field or not.",
+        "HP is increased by {color}28{/color}%. When there are opponents nearby, the DMG dealt by the wielder of this weapon is increased by {color}35{/color}%. This will take effect whether the character is on-field or not.",
+        "HP is increased by {color}32{/color}%. When there are opponents nearby, the DMG dealt by the wielder of this weapon is increased by {color}40{/color}%. This will take effect whether the character is on-field or not."
+      ]
     },
     {
       "key": "aquila-favonia",

@@ -6867,80 +6867,147 @@
     {
       "key": "yelan",
       "name": "夜蘭",
-      "title": "",
-      "description": "",
+      "title": "蘭生幽谷",
+      "description": "自稱供職於總務司的神秘人士，卻又是總務司名錄裡的「不存在之人」。",
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "普通攻擊·潛形隱曜弓",
+          "description": "",
+          "abilities": [
+            {
+              "name": "普通攻擊",
+              "description": "進行至多四段的連續弓箭射擊。\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "重擊",
+              "description": "進行傷害更高、更為精準的瞄準射擊。\r\n瞄準時，流水會在箭矢上持續積聚。聚滿了激流的箭矢會造成水元素傷害。\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "破局",
+              "description": "脫離戰鬥狀態5秒後，夜蘭將獲得「破局」狀態，使下一次滿蓄力瞄準射擊所需的蓄力時間減少80%，並將在滿蓄力時改為發射「破局矢」，破局矢將根據夜蘭的生命值上限造成水元素範圍傷害。\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "下落攻擊",
+              "description": "從空中射出箭雨，並迅速下墜衝擊地面，在落地時造成範圍傷害。",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "一段傷害|{param1}%",
+            "二段傷害|{param2}%",
+            "三段傷害|{param3}%",
+            "四段傷害|{param4}% + {param5}%",
+            "瞄準射擊|{param6}%",
+            "滿蓄力瞄準射擊|{param7}%",
+            "破局矢傷害|{param8}% Max HP",
+            "下墜期間傷害|{param9}%",
+            "低空/高空墜地衝擊傷害|{param10}% / {param11}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "縈絡縱命索",
+          "description": "牽引「絡命絲」疾走，纏絡標記途徑的敵人。\r\n疾走結束時，「絡命絲」將會爆發，基於夜蘭的生命值上限，對標記的敵人造成水元素傷害。\r\n",
+          "abilities": [
+            {
+              "name": "點按",
+              "description": "快速向前疾走一段距離。\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "長按",
+              "description": "持續疾走，並在該狀態下提高夜蘭的抗打斷能力。\r\n期間，夜蘭可以控制疾走的方向，並能透過再次施放技能，提前結束疾走狀態。\r\n此外，「絡命絲」爆發時，依照標記敵人的數量，夜蘭將有機率獲得「破局」狀態：每個標記的敵人能使機率提升34%。\r\n",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "技能傷害|{param1}% Max HP",
+            "長按最大持續時間|{param2}s",
+            "冷卻時間|{param3}s"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "淵圖玲瓏骰",
+          "description": "造成水元素範圍傷害，並凝聚出「玄擲玲瓏」，協助進行戰鬥。\r\n",
+          "abilities": [
+            {
+              "name": "玄擲玲瓏",
+              "description": "將跟隨角色，並在以下情況下，進行協同攻擊，基於夜蘭的生命值上限造成水元素傷害：\r\n",
+              "descriptions": [
+                "隊伍中自己的目前場上角色進行普通攻擊時，每1秒至多觸發一次；",
+                "夜蘭自己的「絡命絲」爆發並命中敵人時，將進行一次協同攻擊。"
+              ]
+            }
+          ],
+          "stats": [
+            "技能傷害|{param1}% Max HP",
+            "玄擲玲瓏傷害|{param2}% Max HP ×{param3}",
+            "持續時間|{param4}s",
+            "冷卻時間|{param5}s",
+            "元素能量|{param6}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "長考一著",
+          "description": "在璃月執行時長為20小時的探索派遣任務時，獲得的獎勵增加25%。\r\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
+          "title": "猜先有方",
+          "description": "隊伍存在1/2/3/4種元素類型的角色時，夜蘭的生命值上限提升6%/12%/18%/30%。\r\n",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "妙轉隨心",
+          "description": "「玄擲玲瓏」存在期間，能使隊伍中自己的目前場上角色造成的傷害提高1%，並且每1秒進一步提高3.5%，至多使角色造成的傷害提高50%。\r\n若於該效果生效期間重新施放淵圖玲瓏骰，則將移除原有的上述效果。\r\n",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "與謀者，以局入局",
+          "description": "縈絡縱命索的可使用次數增加1次。\r\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "入彀者，多多益善",
+          "description": "「玄擲玲瓏」協同攻擊時，會發射一枚額外的水箭，造成相當於夜蘭生命值上限14%的水元素傷害。\r\n該效果每1.8秒至多觸發一次。\r\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "晃盅者，瓊稷藥骰",
+          "description": "淵圖玲瓏骰的技能等級提高3級。\r\n至多提升至15級。\r\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "誆惑者，接樹移花",
+          "description": "依照「絡命絲」標記敵人的數量，每次標記將在爆發時使隊伍中所有角色的生命值上限提升10%，持續25秒。依此方式，生命值上限至多獲得40%提升。\r\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "坐莊者，三仙戲法",
+          "description": "縈絡縱命索的技能等級提高3級。\r\n至多提升至15級。\r\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
+          "title": "取勝者，大小通吃",
+          "description": "施放淵圖玲瓏骰後，夜蘭將進入「運籌帷幄」狀態：\r\n夜蘭的普通攻擊將轉為發射特殊的「破局矢」。這種箭矢具有與破局矢近似的特性，造成的傷害視為重擊傷害，能造成破局矢156%的傷害。\r\n「運籌帷幄」狀態至多持續20秒，將在夜蘭發射5枚箭矢後移除。\r\n",
           "descriptions": []
         }
       ]
@@ -7448,6 +7515,18 @@
       "name": "學徒筆記",
       "description": "某個優等生留下的學習筆記，娟秀的字跡非常好看。記錄了不少實用的咒語。",
       "refinements": []
+    },
+    {
+      "key": "aqua-simulacra",
+      "name": "若水",
+      "description": "色澤流移難測的長弓，在光下顯現著如水的潤藍。",
+      "refinements": [
+        "生命值提升{color}16{/color}%。周圍存在敵人時，裝備該武器的角色造成的傷害都會提升{color}20{/color}%，不論該角色處於場上或是處於隊伍後台。",
+        "生命值提升{color}20{/color}%。周圍存在敵人時，裝備該武器的角色造成的傷害都會提升{color}25{/color}%，不論該角色處於場上或是處於隊伍後台。",
+        "生命值提升{color}24{/color}%。周圍存在敵人時，裝備該武器的角色造成的傷害都會提升{color}30{/color}%，不論該角色處於場上或是處於隊伍後台。",
+        "生命值提升{color}28{/color}%。周圍存在敵人時，裝備該武器的角色造成的傷害都會提升{color}35{/color}%，不論該角色處於場上或是處於隊伍後台。",
+        "生命值提升{color}32{/color}%。周圍存在敵人時，裝備該武器的角色造成的傷害都會提升{color}40{/color}%，不論該角色處於場上或是處於隊伍後台。"
+      ]
     },
     {
       "key": "aquila-favonia",

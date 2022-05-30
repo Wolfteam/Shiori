@@ -6878,80 +6878,147 @@
     {
       "key": "yelan",
       "name": "Yelan",
-      "title": "",
-      "description": "",
+      "title": "La Orquídea del Valle",
+      "description": "Una misteriosa persona que dice trabajar para el Ministerio de Asuntos Civiles, pero que “no existe” según los registros del propio Ministerio.",
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Flecha subrepticia",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Ataque Normal",
+              "description": "Realiza hasta 4 disparos consecutivos con arco.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Ataque Cargado",
+              "description": "Realiza un Disparo Preciso que inflige mayor daño y tiene mayor precisión.\r\nAl apuntar, un flujo de agua se acumulará en la punta de la flecha. Una flecha torrencial totalmente cargada infligirá Daño Hydro.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Irrupción",
+              "description": "Cuando el equipo está 5 s fuera de combate, Yelan entra en el estado de “irrupción”, en el que el tiempo de carga de su siguiente Disparo Preciso totalmente cargado se reduce en un 80%. Una vez cargado, el disparo se convertirá en una flecha irruptora que inflige Daño Hydro en el AdE en proporción a la Vida Máx. de Yelan.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Ataque Descendente",
+              "description": "Dispara una lluvia de flechas desde el aire mientras desciende rápidamente, infligiendo Daño en el AdE al impactar contra el suelo.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "Daño de 1er golpe|{param1}%",
+            "Daño de 2.º golpe|{param2}%",
+            "Daño de 3er golpe|{param3}%",
+            "Daño de 4.º golpe|{param4}% + {param5}%",
+            "Disparo Preciso|{param6}%",
+            "Disparo Preciso (carga completa)|{param7}%",
+            "Daño de flecha irruptora|{param8}% Max HP",
+            "Daño de Caída|{param9}%",
+            "Daño de impacto de caída baja/alta|{param10}% / {param11}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Atadura salvavidas",
+          "description": "Saca una cuerda salvavidas y corre a gran velocidad para atársela a los enemigos a su paso y marcarlos.\r\nAl terminar el movimiento, la cuerda explotará para infligir Daño Hydro contra los enemigos marcados en proporción a la Vida Máx. de Yelan.\r\n",
+          "abilities": [
+            {
+              "name": "Pulsar una vez",
+              "description": "Recorre rápidamente cierta distancia hacia delante.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Mantener pulsado",
+              "description": "Corre continuamente a gran velocidad. En este estado, la RES a interrupción de Yelan aumenta.\r\nMientras lo hace, Yelan puede controlar la dirección en la que esprinta y, al volver a Pulsar una vez la habilidad, terminará de correr.\r\nAdemás, cuando la cuerda salvavidas explota, por cada enemigo marcado aumentará en un 34% la probabilidad de que Yelan entre en el estado de irrupción.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "Daño de habilidad|{param1}% Max HP",
+            "Duración máx. de mantener pulsado|{param2}s",
+            "TdE|{param3}s"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Dado clarividente",
+          "description": "Inflige Daño Hydro en el AdE y crea un dado intrincado que la asiste en combate.\r\n",
+          "abilities": [
+            {
+              "name": "Dado intrincado",
+              "description": "Sigue al personaje y ejecuta un ataque coordinado que inflige Daño Hydro en proporción a la Vida Máx. de Yelan en las siguientes situaciones:\r\n",
+              "descriptions": [
+                "Cuando tu personaje en uso ejecuta un Ataque Normal. El ataque coordinado liberado de esta manera solo se podrá activar una vez por segundo.",
+                "Cuando la explosión de la cuerda salvavidas de Yelan golpea a un enemigo."
+              ]
+            }
+          ],
+          "stats": [
+            "Daño de habilidad|{param1}% Max HP",
+            "Daño de dado intrincado|{param2}% Max HP ×{param3}",
+            "Duración|{param4}s",
+            "TdE|{param5}s",
+            "Energía Elemental|{param6}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "Jugada táctica",
+          "description": "Aumenta en un 25% las recompensas de las expediciones de 20 h en Liyue.\r\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
+          "title": "Control estratégico",
+          "description": "Cuando en el equipo haya 1/2/3/4 personajes de tipos elementales distintos, la Vida Máx. de Yelan aumenta en un 6/12/18/30% respectivamente.\r\n",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "Adaptación maestra",
+          "description": "Mientras el dado intrincado esté activo, el daño de tu personaje en uso aumenta en un 1%, e irá aumentando en un 3.5% adicional por segundo hasta un máximo de un 50%.\r\nSi vuelves a usar Dado clarividente mientras el dado intrincado está activo, el efecto anterior se disipará.\r\n",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "Trampa anticonspiradores",
+          "description": "Aumenta en 1 las cargas de Atadura salvavidas.\r\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "Aprisionamiento masivo",
+          "description": "Cuando el dado intrincado activa un ataque coordinado, lanzará una flecha Hydro adicional que inflige Daño Hydro equivalente al 14% de la Vida Máx. de Yelan.\r\nEsto solo puede ocurrir una vez cada 1.8 s.\r\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "Dado trucado",
+          "description": "Aumenta el nivel de habilidad de Dado clarividente +3.\r\nPuede ser aumentado hasta Niv. 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "Intercambio encubierto",
+          "description": "Por cada enemigo marcado con la cuerda salvavidas, la explosión de cada marca aumenta la Vida Máx. de todos los miembros del equipo en un 10% durante 25 s. La Vida Máx. solo podrá aumentar hasta un máximo del 40% de esta manera.\r\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "Artificio de crupier",
+          "description": "Aumenta el nivel de habilidad de Atadura salvavidas +3.\r\nPuede ser aumentado hasta Niv. 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
+          "title": "Mano ganadora",
+          "description": "Tras usar Dado clarividente, Yelan entra en el estado de “planificación táctica”.\r\nEn este estado, sus Ataques Normales se convierten en flechas irruptoras especiales con unas características similares a las de las flechas irruptoras normales y que infligen un 156% de su daño original. Este daño es considerado daño de Ataque Cargado.\r\nEl estado de planificación táctica dura un máximo de 20 s y se anulará después de que Yelan haya disparado 5 flechas.\r\n",
           "descriptions": []
         }
       ]
@@ -7459,6 +7526,18 @@
       "name": "Apuntes del Aprendiz",
       "description": "Notas escritas por un estudiante brillante. Dejó anotados muchos hechizos útiles. Su letra es hermosa.",
       "refinements": []
+    },
+    {
+      "key": "aqua-simulacra",
+      "name": "Aqua Simulacra",
+      "description": "Un arco largo de un brillo imprevisiblemente cambiante. Al recibir el reflejo de una luz, adquiere un color azulado.",
+      "refinements": [
+        "Aumenta la Vida en un {color}16{/color}%. Cuando haya algún enemigo cerca, el daño del personaje que lleva esta arma equipada aumenta en un {color}20{/color}%. Este efecto se puede activar cuando dicho personaje está en uso o cuando está en tu equipo pero no en combate.",
+        "Aumenta la Vida en un {color}20{/color}%. Cuando haya algún enemigo cerca, el daño del personaje que lleva esta arma equipada aumenta en un {color}25{/color}%. Este efecto se puede activar cuando dicho personaje está en uso o cuando está en tu equipo pero no en combate.",
+        "Aumenta la Vida en un {color}24{/color}%. Cuando haya algún enemigo cerca, el daño del personaje que lleva esta arma equipada aumenta en un {color}30{/color}%. Este efecto se puede activar cuando dicho personaje está en uso o cuando está en tu equipo pero no en combate.",
+        "Aumenta la Vida en un {color}28{/color}%. Cuando haya algún enemigo cerca, el daño del personaje que lleva esta arma equipada aumenta en un {color}35{/color}%. Este efecto se puede activar cuando dicho personaje está en uso o cuando está en tu equipo pero no en combate.",
+        "Aumenta la Vida en un {color}32{/color}%. Cuando haya algún enemigo cerca, el daño del personaje que lleva esta arma equipada aumenta en un {color}40{/color}%. Este efecto se puede activar cuando dicho personaje está en uso o cuando está en tu equipo pero no en combate."
+      ]
     },
     {
       "key": "aquila-favonia",
