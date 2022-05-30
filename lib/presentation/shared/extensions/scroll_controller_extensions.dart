@@ -2,15 +2,24 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 
 extension ScrollControllerExtensions on ScrollController {
-  void handleScrollForFab(AnimationController hideFabController, {bool hideOnTop = true}) {
+  void handleScrollForFab(AnimationController hideFabController, {bool hideOnTop = true, bool inverted = false}) {
     switch (position.userScrollDirection) {
       case ScrollDirection.idle:
         break;
       case ScrollDirection.forward:
-        hideFabController.forward();
+        if (inverted) {
+          hideFabController.reverse();
+        } else {
+          hideFabController.forward();
+        }
+
         break;
       case ScrollDirection.reverse:
-        hideFabController.reverse();
+        if (inverted) {
+          hideFabController.forward();
+        } else {
+          hideFabController.reverse();
+        }
         break;
     }
 

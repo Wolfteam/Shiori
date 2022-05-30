@@ -10,7 +10,6 @@ import 'package:shiori/domain/extensions/iterable_extensions.dart';
 import 'package:shiori/domain/utils/date_utils.dart' as date_utils;
 import 'package:shiori/generated/l10n.dart';
 import 'package:shiori/injection.dart';
-import 'package:shiori/presentation/banner_history/widgets/version_details_dialog.dart';
 import 'package:shiori/presentation/character/character_page.dart';
 import 'package:shiori/presentation/charts/widgets/chart_card.dart';
 import 'package:shiori/presentation/charts/widgets/chart_legend.dart';
@@ -20,10 +19,13 @@ import 'package:shiori/presentation/charts/widgets/vertical_bar_chart.dart';
 import 'package:shiori/presentation/shared/dialogs/birthdays_per_month_dialog.dart';
 import 'package:shiori/presentation/shared/dialogs/characters_per_region_dialog.dart';
 import 'package:shiori/presentation/shared/dialogs/characters_per_region_gender_dialog.dart';
+import 'package:shiori/presentation/shared/dialogs/item_release_history_dialog.dart';
 import 'package:shiori/presentation/shared/dialogs/items_ascension_stats_dialog.dart';
+import 'package:shiori/presentation/shared/dialogs/version_details_dialog.dart';
 import 'package:shiori/presentation/shared/extensions/element_type_extensions.dart';
 import 'package:shiori/presentation/shared/extensions/i18n_extensions.dart';
 import 'package:shiori/presentation/shared/loading.dart';
+import 'package:shiori/presentation/shared/mixins/app_fab_mixin.dart';
 import 'package:shiori/presentation/shared/nothing_found_column.dart';
 import 'package:shiori/presentation/shared/styles.dart';
 import 'package:shiori/presentation/weapon/weapon_page.dart';
@@ -59,9 +61,7 @@ class ChartsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final s = S.of(context);
     final maxNumberOfColumns = getValueForScreenType<int>(context: context, mobile: 5, tablet: 10, desktop: 10);
-    final isPortrait = MediaQuery.of(context).orientation == Orientation.portrait;
     return MultiBlocProvider(
       providers: [
         BlocProvider<ChartTopsBloc>(
@@ -86,21 +86,36 @@ class ChartsPage extends StatelessWidget {
           create: (context) => Injection.chartGendersBloc..add(const ChartGendersEvent.init()),
         ),
       ],
-      child: Scaffold(
-        appBar: AppBar(
-          title: Text(s.charts),
-        ),
-        body: SingleChildScrollView(
-          child: Padding(
-            padding: Styles.edgeInsetAll5,
-            child: ResponsiveBuilder(
-              builder: (context, sizingInformation) => !isPortrait &&
-                      (sizingInformation.deviceScreenType == DeviceScreenType.desktop ||
-                          sizingInformation.deviceScreenType == DeviceScreenType.tablet)
-                  ? _LandscapeLayout(maxNumberOfColumns: maxNumberOfColumns)
-                  : _PortraitLayout(maxNumberOfColumns: maxNumberOfColumns),
-            ),
-          ),
+      child: const _Body(),
+    );
+  }
+}
+
+class _Body extends StatefulWidget {
+  const _Body({Key? key}) : super(key: key);
+
+  @override
+  State<_Body> createState() => _BodyState();
+}
+
+class _BodyState extends State<_Body> with SingleTickerProviderStateMixin, AppFabMixin {
+  @override
+  Widget build(BuildContext context) {
+    final s = S.of(context);
+    final maxNumberOfColumns = getValueForScreenType<int>(context: context, mobile: 5, tablet: 10, desktop: 10);
+    final isPortrait = MediaQuery.of(context).orientation == Orientation.portrait;
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(s.charts),
+      ),
+      floatingActionButton: getAppFab(),
+      body: Padding(
+        padding: Styles.edgeInsetAll5,
+        child: ResponsiveBuilder(
+          builder: (context, sizingInformation) => !isPortrait &&
+                  (sizingInformation.deviceScreenType == DeviceScreenType.desktop || sizingInformation.deviceScreenType == DeviceScreenType.tablet)
+              ? _LandscapeLayout(maxNumberOfColumns: maxNumberOfColumns, controller: scrollController)
+              : _PortraitLayout(maxNumberOfColumns: maxNumberOfColumns, controller: scrollController),
         ),
       ),
     );
@@ -109,63 +124,92 @@ class ChartsPage extends StatelessWidget {
 
 class _PortraitLayout extends StatelessWidget {
   final int maxNumberOfColumns;
+  final ScrollController controller;
 
   const _PortraitLayout({
     Key? key,
     required this.maxNumberOfColumns,
+    required this.controller,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: [
-        const _TopCharacters(),
-        const _TopWeapons(),
-        const SizedBox(height: 10),
-        const _Elements(),
-        const _Birthdays(),
-        _AscensionStats(maxNumberOfColumns: maxNumberOfColumns),
-        const _Regions(),
-        const _Genders(),
-      ],
+    return ListView.builder(
+      itemCount: 8,
+      controller: controller,
+      itemBuilder: (ctx, index) {
+        switch (index) {
+          case 0:
+            return const _TopCharacters();
+          case 1:
+            return const _TopWeapons();
+          case 2:
+            return const SizedBox(height: 10);
+          case 3:
+            return const _Elements();
+          case 4:
+            return const _Birthdays();
+          case 5:
+            return _AscensionStats(maxNumberOfColumns: maxNumberOfColumns);
+          case 6:
+            return const _Regions();
+          case 7:
+            return const _Genders();
+          default:
+            throw Exception('Invalid index');
+        }
+      },
     );
   }
 }
 
 class _LandscapeLayout extends StatelessWidget {
   final int maxNumberOfColumns;
+  final ScrollController controller;
+
   const _LandscapeLayout({
     Key? key,
     required this.maxNumberOfColumns,
+    required this.controller,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: [
-        const _TopCharacters(),
-        const _TopWeapons(),
-        const SizedBox(height: 10),
-        const _Elements(),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            const Expanded(flex: 49, child: _Birthdays()),
-            const Spacer(flex: 2),
-            Expanded(flex: 49, child: _AscensionStats(maxNumberOfColumns: maxNumberOfColumns)),
-          ],
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: const [
-            Expanded(flex: 49, child: _Regions()),
-            Spacer(flex: 2),
-            Expanded(flex: 49, child: _Genders()),
-          ],
-        ),
-      ],
+    return ListView.builder(
+      itemCount: 6,
+      controller: controller,
+      itemBuilder: (ctx, index) {
+        switch (index) {
+          case 0:
+            return const _TopCharacters();
+          case 1:
+            return const _TopWeapons();
+          case 2:
+            return const SizedBox(height: 10);
+          case 3:
+            return const _Elements();
+          case 4:
+            return Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                const Expanded(flex: 49, child: _Birthdays()),
+                const Spacer(flex: 2),
+                Expanded(flex: 49, child: _AscensionStats(maxNumberOfColumns: maxNumberOfColumns)),
+              ],
+            );
+          case 5:
+            return Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: const [
+                Expanded(flex: 49, child: _Regions()),
+                Spacer(flex: 2),
+                Expanded(flex: 49, child: _Genders()),
+              ],
+            );
+          default:
+            throw Exception('Invalid index');
+        }
+      },
     );
   }
 }
@@ -285,7 +329,21 @@ class _TopCharacters extends StatelessWidget {
                   title: s.translateChartType(type),
                   child: Row(
                     children: [
-                      Flexible(flex: 70, fit: FlexFit.tight, child: TopPieChart(items: items, colors: _topCharacterColors)),
+                      Flexible(
+                        flex: 70,
+                        fit: FlexFit.tight,
+                        child: TopPieChart(
+                          items: items,
+                          colors: _topCharacterColors,
+                          onSectionTap: (item) => showDialog(
+                            context: context,
+                            builder: (_) => ItemReleaseHistoryDialog(
+                              itemKey: item.key,
+                              itemName: item.name,
+                            ),
+                          ),
+                        ),
+                      ),
                       Flexible(
                         flex: 30,
                         fit: FlexFit.tight,
@@ -342,7 +400,21 @@ class _TopWeapons extends StatelessWidget {
                   title: s.translateChartType(type),
                   child: Row(
                     children: [
-                      Flexible(flex: 70, fit: FlexFit.tight, child: TopPieChart(items: items, colors: _topWeaponColors)),
+                      Flexible(
+                        flex: 70,
+                        fit: FlexFit.tight,
+                        child: TopPieChart(
+                          items: items,
+                          colors: _topWeaponColors,
+                          onSectionTap: (item) => showDialog(
+                            context: context,
+                            builder: (_) => ItemReleaseHistoryDialog(
+                              itemKey: item.key,
+                              itemName: item.name,
+                            ),
+                          ),
+                        ),
+                      ),
                       Flexible(
                         flex: 30,
                         fit: FlexFit.tight,
@@ -444,6 +516,7 @@ class _Elements extends StatelessWidget {
 
 class _ElementsWrap extends StatelessWidget {
   final List<ElementType> selectedElementTypes;
+
   const _ElementsWrap({
     Key? key,
     required this.selectedElementTypes,

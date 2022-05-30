@@ -55,6 +55,7 @@ class ItemReleaseHistoryDialog extends StatelessWidget {
                         history: e,
                         selected: e.version == selectedVersion,
                         lastItem: i == state.history.length - 1,
+                        index: i,
                       ),
                     )
                     .toList(),
@@ -71,12 +72,14 @@ class _ReleasedOn extends StatelessWidget {
   final ItemReleaseHistoryModel history;
   final bool selected;
   final bool lastItem;
+  final int index;
 
   const _ReleasedOn({
     Key? key,
     required this.history,
     required this.selected,
     required this.lastItem,
+    required this.index,
   }) : super(key: key);
 
   @override
@@ -85,31 +88,45 @@ class _ReleasedOn extends StatelessWidget {
     final theme = Theme.of(context);
     final dateFormat = DateFormat(_dateFormat);
     final selectedColor = selected ? theme.colorScheme.primary.withOpacity(0.5) : null;
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.stretch,
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Container(
-          color: selectedColor,
-          padding: selected ? Styles.edgeInsetHorizontal5.add(const EdgeInsets.only(top: 5)) : null,
+          margin: const EdgeInsets.only(right: 10),
           child: Text(
-            s.appVersion(history.version),
-            style: theme.textTheme.titleMedium!.copyWith(fontWeight: FontWeight.bold),
+            '${index + 1} -',
+            style: theme.textTheme.caption!.copyWith(fontSize: 18, color: selectedColor),
           ),
         ),
-        ...history.dates.map(
-          (e) => Container(
-            color: selectedColor,
-            padding: selected ? Styles.edgeInsetHorizontal5.add(const EdgeInsets.only(bottom: 5)) : null,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                Text(s.fromDate(dateFormat.format(e.from))),
-                Text(s.untilDate(dateFormat.format(e.until))),
-              ],
-            ),
+        Expanded(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Container(
+                color: selectedColor,
+                padding: selected ? Styles.edgeInsetHorizontal5.add(const EdgeInsets.only(top: 5)) : null,
+                child: Text(
+                  s.appVersion(history.version),
+                  style: theme.textTheme.titleMedium!.copyWith(fontWeight: FontWeight.bold),
+                ),
+              ),
+              ...history.dates.map(
+                (e) => Container(
+                  color: selectedColor,
+                  padding: selected ? Styles.edgeInsetHorizontal5.add(const EdgeInsets.only(bottom: 5)) : null,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [
+                      Text(s.fromDate(dateFormat.format(e.from))),
+                      Text(s.untilDate(dateFormat.format(e.until))),
+                    ],
+                  ),
+                ),
+              ),
+              const Divider(),
+            ],
           ),
         ),
-        const Divider(),
       ],
     );
   }
