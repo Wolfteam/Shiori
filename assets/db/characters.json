@@ -20635,7 +20635,7 @@
       "fullImage": "kamisato-ayato.png",
       "secondFullImage": null,
       "isComingSoon": false,
-      "isNew": true,
+      "isNew": false,
       "isFemale": false,
       "region": "inazuma",
       "role": "dps",
@@ -55165,12 +55165,12 @@
       "image": "yelan.png",
       "fullImage": "yelan.png",
       "secondFullImage": null,
-      "isComingSoon": true,
-      "isNew": false,
+      "isComingSoon": false,
+      "isNew": true,
       "isFemale": false,
       "region": "liyue",
-      "role": "na",
-      "tier": "s",
+      "role": "offFieldDps",
+      "tier": "a",
       "birthday": "04/20",
       "subStatType": "critRatePercentage",
       "ascensionMaterials": [
@@ -56035,7 +56035,78 @@
           "image": "yelan_c6.png"
         }
       ],
-      "builds": [],
+      "builds": [
+        {
+          "isRecommended": true,
+          "type": "offFieldDps",
+          "subType": "none",
+          "skillPriorities": [
+            "elementalBurst",
+            "elementalSkill",
+            "normalAttack"
+          ],
+          "weaponKeys": [
+            "elegy-for-the-end",
+            "favonius-warbow",
+            "sacrificial-bow",
+            "fading-twilight"
+          ],
+          "artifacts": [
+            {
+              "oneKey": "emblem-of-severed-fate",
+              "multiples": [],
+              "stats": [
+                "hp",
+                "atk",
+                "hpPercentage",
+                "hydroDmgBonusPercentage",
+                "critDmgPercentage"
+              ]
+            }
+          ],
+          "subStatsToFocus": [
+            "energyRechargePercentage",
+            "critRatePercentage",
+            "critDmgPercentage",
+            "hpPercentage"
+          ]
+        },
+        {
+          "isRecommended": true,
+          "type": "offFieldDps",
+          "subType": "none",
+          "skillPriorities": [
+            "elementalBurst",
+            "elementalSkill",
+            "normalAttack"
+          ],
+          "weaponKeys": [
+            "aqua-simulacra",
+            "mouuns-moon",
+            "the-stringless",
+            "raven-bow"
+          ],
+          "artifacts": [
+            {
+              "oneKey": "emblem-of-severed-fate",
+              "multiples": [],
+              "stats": [
+                "hp",
+                "atk",
+                "energyRechargePercentage",
+                "hydroDmgBonusPercentage",
+                "critDmgPercentage"
+              ]
+            }
+          ],
+          "subStatsToFocus": [
+            "energyRechargePercentage",
+            "critRatePercentage",
+            "critDmgPercentage",
+            "hpPercentage"
+          ]
+        }
+      ],
       "stats": [
         {
           "level": 1,

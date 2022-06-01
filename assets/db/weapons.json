@@ -1920,7 +1920,7 @@
       "rarity": 4,
       "secondaryStat": "energyRechargePercentage",
       "secondaryStatValue": 6.7,
-      "location": "gacha",
+      "location": "quest",
       "isComingSoon": false,
       "ascensionMaterials": [
         {
