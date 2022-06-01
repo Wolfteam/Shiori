@@ -6884,80 +6884,147 @@
     {
       "key": "yelan",
       "name": "Yelan",
-      "title": "",
-      "description": "",
+      "title": "Valley Orchid",
+      "description": "Orang misterius yang mengaku bekerja di Bagian Urusan Sipil, tetapi \"tidak terdaftar\" di data Bagian Urusan Sipil.",
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Stealthy Bowshot",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Normal Attack",
+              "description": "Melancarkan hingga 4 serangan berturut-turut menggunakan busur.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Charged Attack",
+              "description": "Melancarkan sebuah Serangan Membidik yang lebih akurat untuk mengakibatkan DMG lebih besar.\r\nSaat membidik, air yang mengalir akan berkumpul di ujung anak panah. Setelah terkumpul penuh, anak panah yang diluncurkan akan mengakibatkan Hydro DMG.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Breakthrough",
+              "description": "Setelah keluar dari medan tempur selama 5 detik Yelan akan memasuki kondisi \"Breakthrough\", dalam kondisi ini waktu charge untuk Serangan Membidik-nya akan berkurang 80% dan saat dilancarkan, Yelan akan menembakkan \"Breakthrough Barb\" yang mengakibatkan Hydro DMG Area berdasarkan Max HP Yelan.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Plunging Attack",
+              "description": "Melancarkan hujan panah dari udara dan menerjang tanah dengan kecepatan tinggi, mengakibatkan DMG Area saat mendarat.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "DMG Tahap 1|{param1}%",
+            "DMG Tahap 2|{param2}%",
+            "DMG Tahap 3|{param3}%",
+            "DMG Tahap 4|{param4}% + {param5}%",
+            "DMG Membidik|{param6}%",
+            "DMG Membidik Penuh|{param7}%",
+            "DMG Breakthrough Barb|{param8}% Max HP",
+            "DMG Selama Plunging|{param9}%",
+            "DMG Plunging Attack Min./Maks.|{param10}% / {param11}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Lingering Lifeline",
+          "description": "Menembakkan Lifeline yang menariknya dengan cepat, menjerat dan menandai musuh di sepanjang jalurnya\r\nSaat gerakannya yang cepat berakhir, Lifeline akan meledak, mengakibatkan Hydro DMG pada musuh yang telah ditandai berdasarkan Max HP Yelan.\r\n",
+          "abilities": [
+            {
+              "name": "Tekan",
+              "description": "Pindah maju ke depan dalam jarak tertentu dengan cepat.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Tahan",
+              "description": "Pindah maju ke depan dengan cepat secara terus menerus. Selama Yelan melakukan gerakan tersebut, ketahanannya terhadap interupsi akan meningkat.\r\nSelama waktu tersebut juga, Yelan dapat mengontrol arah sprint-nya dan mengakhiri gerakan cepatnya dengan menggunakan Skill ini lagi.\r\nLalu, setiap musuh yang ditandai oleh Lifeline dan meledak, akan memberikan 34% kesempatan pada Yelan untuk memasuki kembali kondisi Breakthrough.\r\n",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "DMG Skill|{param1}% Max HP",
+            "Durasi Maksimum (Mode Tahan)|{param2}s",
+            "Cooldown|{param3}s"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Depth-Clarion Dice",
+          "description": "Mengakibatkan Hydro DMG Area dan membuat \"Exquisite Throw\" yang bisa membantunya dalam pertempuran.\r\n",
+          "abilities": [
+            {
+              "name": "Exquisite Throw",
+              "description": "Mengikuti Karakter dan akan memulai serangan terkoordinasi dalam situasi berikut, mengakibatkan Hydro DMG berdasarkan Max HP Yelan:\r\n",
+              "descriptions": [
+                "Dapat terpicu sekali dalam setiap detik saat Karakter aktif menggunakan Normal Attack.",
+                "Akan muncul setiap kali Lifeline milik Yelan meledak dan mengenai musuh."
+              ]
+            }
+          ],
+          "stats": [
+            "DMG Skill|{param1}% Max HP",
+            "DMG Exquisite Throw|{param2}% Max HP ×{param3}",
+            "Durasi|{param4}s",
+            "Cooldown|{param5}s",
+            "Konsumsi Energy|{param6}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "Necessary Calculation",
+          "description": "Ketika dikirim untuk melakukan ekspedisi di Liyue selama 20 jam, hadiah yang didapatkan akan bertambah 25%.\r\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
+          "title": "Turn Control",
+          "description": "Saat party memiliki 1/2/3/4 Tipe Elemental, Max HP Yelan meningkat sebesar 6%/12%/18%/30%.\r\n",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "Adapt With Ease",
+          "description": "Selama Exquisite Throw masih berjalan, maka Karakter aktif akan mengakibatkan 1% DMG lebih besar. Peningkatakan ini berlangsung sebanyak 3,5% DMG setiap detik. Maksimum peningkatan DMG sampai 50%.\r\nJika Depth-Clarion Dice dilancarkan lagi saat durasinya masih berlangsung maka efek yang sudah ada sebelumnya akan hilang.\r\n",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "Enter the Plotters",
+          "description": "Lingering Lifeline mendapatkan 1 charge tambahan.\r\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "Taking All Comers",
+          "description": "Saat Exquisite Throw menghasilkan serangan terkoordinasi, akan menghasilkan pula panah air tambahan yang menjadikan 14% Max HP Yelan sebagai Hydro DMG.\r\nEfek ini terpicu setiap 1,8 detik.\r\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "Beware the Trickster's Dice",
+          "description": "Meningkatkan 3 level Depth-Clarion Dice.\r\nMaksimum: Lv. 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "Bait-and-Switch",
+          "description": "Meningkatkan Max HP semua anggota party sebesar 10% selama 25 detik untuk setiap musuh yang ditandai oleh Lifeline saat Lifeline tersebut meledak. Peningkatan Max HP yang bisa didapatkan dengan cara ini maksimum 40%.\r\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "Dealer's Sleight",
+          "description": "Meningkatkan 3 level Lingering Lifeline.\r\nMaksimum: Lv. 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
+          "title": "Winner Take All",
+          "description": "Setelah menggunakan Depth-Clarion Dice, Yelan akan memasuki kondisi Mastermind.\r\nDalam kondisi ini, semua Normal Attack Yelan akan menjadi Breakthrough Barb spesial. Breakthrough Barb ini akan memiliki semua kemampuan Breakthrough Barb biasa dan DMG yang diakibatkan akan dianggap sebagai DMG Charged Attack, mengakibatkan 156% dari DMG Breakthrough Barb normal.\r\nKondisi Mastermind berlangsung selama 20 detik dan akan berakhir setelah Yelan menembakkan 5 anak panah.\r\n",
           "descriptions": []
         }
       ]
@@ -7465,6 +7532,18 @@
       "name": "Apprentice's Notes",
       "description": "Catatan milik salah satu murid terbaik, di dalamnya terdapat berbagai sihir yang sangat berguna, dan tulisan tangannya sangat indah.",
       "refinements": []
+    },
+    {
+      "key": "aqua-simulacra",
+      "name": "Aqua Simulacra",
+      "description": "Warna busur ini tidak dapat diprediksi. Di bawah cahaya, ia menjadi warna biru bagaikan air dan terang berkilauan.",
+      "refinements": [
+        "HP meningkat {color}16{/color}%. Saat ada musuh di sekitar, maka DMG yang diakibatkan oleh Karakter pengguna Senjata ini meningkat {color}20{/color}% baik saat Karakter-nya aktif, maupun hanya ada dalam party namun sedang tidak bertempur.",
+        "HP meningkat {color}20{/color}%. Saat ada musuh di sekitar, maka DMG yang diakibatkan oleh Karakter pengguna Senjata ini meningkat {color}25{/color}% baik saat Karakter-nya aktif, maupun hanya ada dalam party namun sedang tidak bertempur.",
+        "HP meningkat {color}24{/color}%. Saat ada musuh di sekitar, maka DMG yang diakibatkan oleh Karakter pengguna Senjata ini meningkat {color}30{/color}% baik saat Karakter-nya aktif, maupun hanya ada dalam party namun sedang tidak bertempur.",
+        "HP meningkat {color}28{/color}%. Saat ada musuh di sekitar, maka DMG yang diakibatkan oleh Karakter pengguna Senjata ini meningkat {color}35{/color}% baik saat Karakter-nya aktif, maupun hanya ada dalam party namun sedang tidak bertempur.",
+        "HP meningkat {color}32{/color}%. Saat ada musuh di sekitar, maka DMG yang diakibatkan oleh Karakter pengguna Senjata ini meningkat {color}40{/color}% baik saat Karakter-nya aktif, maupun hanya ada dalam party namun sedang tidak bertempur."
+      ]
     },
     {
       "key": "aquila-favonia",

@@ -6781,81 +6781,151 @@
     {
       "key": "yelan",
       "name": "Yelan",
-      "title": "",
-      "description": "",
+      "title": "Vale das Orquídeas",
+      "description": "Uma pessoa misteriosa que afirma trabalhar para o Ministério dos Assuntos Civis, mas \"não existe\" nos registros deles.",
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Flecha Oculta",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Ataque Normal",
+              "description": "Realiza até quatro disparos consecutivos com o arco.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Ataque Carregado",
+              "description": "Realiza um disparo com mira de maior dano e precisão.\r\nAo mirar, o fluxo de água acumulará continuamente na ponta da flecha. Quando a flecha estiver totalmente carregada com esse fluxo torrencial, infligirá Dano Hydro.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Ruptura",
+              "description": "Depois de 5s fora do campo de batalha, Yelan entra no estado \"Ruptura\", no qual o carregamento de seu próximo Disparo com Mira terá seu tempo necessário reduzido em 80%, e quando estiver totalmente carregado, ela disparará a sua \"Flecha da Ruptura\", que infligirá Dano Hydro em AdE baseado em sua Vida Máxima.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Ataque Imersivo",
+              "description": "Dispara uma chuva de flechas em pleno ar antes de atingir o chão, infligindo Dano em uma AdE durante o impacto.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "Dano do 1° Golpe|{param1}%",
+            "Dano do 2° Golpe|{param2}%",
+            "Dano do 3° Golpe|{param3}%",
+            "Dano do 4° Golpe|{param4}% + {param5}%",
+            "Disparo com Mira|{param6}%",
+            "Disparo com Mira com Energização Completa|{param7}%",
+            "Dano da Flecha da Ruptura|{param8}% Max HP",
+            "Dano Durante a Queda|{param9}%",
+            "Dano de Queda de Baixa/Alta Altitude|{param10}% / {param11}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Rede da Vida Salvadora",
+          "description": "Tira seu \"Fio da Vida\" e corre, marcando os inimigos no caminho.\r\nQuando termina de correr, o \"Fio da Vida\" explodirá e infligirá Dano Hydro contra os inimigos marcados baseado na Vida Máxima de Yelan.\r\n",
+          "abilities": [
+            {
+              "name": "Pressionar",
+              "description": "Corre uma certa distância para frente rapidamente.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Manter Pressionado",
+              "description": "Corre continuamente e aumenta a Resistência Contra Interrupção de Yelan enquanto estiver nesse estado.\r\nNesse período, Yelan poderá controlar a direção que corre. Lançar sua habilidade mais uma vez fará com que sua corrida termine.\r\nAlém disso, quando o \"Fio da Vida\" explode, Yelan possui uma chance de obter o efeito \"Ruptura\" de acordo com o número de inimigos marcados: cada inimigo marcado aumenta essa chance em 34%.\r\n",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "Dano de Habilidade|{param1}% Max HP",
+            "Duração Máxima por Manter Pressionado|{param2}s",
+            "Recarga|{param3}s"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Dado das Profundezas Claras",
+          "description": "Inflige Dano Hydro em AdE e lança um \"Dado Misterioso\" que ajuda na batalha.\r\n",
+          "abilities": [
+            {
+              "name": "Dado Misterioso",
+              "description": "Segue o personagem e, nas circunstâncias específicas abaixo, realiza Ataques Coordenados que infligem Dano Hydro baseados na Vida Máxima de Yelan:\r\n",
+              "descriptions": [
+                "Pode ser desencadeado uma vez por segundo quando o personagem ativo de sua equipe realizar um Ataque Normal;",
+                "Quando o \"Fio da Vida\" de Yelan explodir e atingir os inimigos, realizará um Ataque Coordenado."
+              ]
+            }
+          ],
+          "stats": [
+            "Dano de Habilidade|{param1}% Max HP",
+            "Dano do Dado Misterioso|{param2}% Max HP ×{param3}",
+            "Duração|{param4}s",
+            "Recarga|{param5}s",
+            "Energia Elemental|{param6}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "Longa Consideração",
+          "description": "Ganha 25% recompensas a mais quando enviada numa Expedição em Liyue por 20 horas.\r\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
+          "title": "Estratégia Controlada",
+          "description": "Quando há 1/2/3/4 personagens de tipos elementais diferentes, a Vida Máxima de Yelan aumenta 6%/12%/18%/30% respectivamente.\r\n",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "Adaptação Esperta",
+          "description": "Enquanto o Dado Misterioso existir, aumenta o Dano do personagem ativo no campo de batalha em 1%, e a cada 1s aumenta em 3.5%. Permite aumentar o Dano infligido pelo personagem em até 50%.\r\nSe Dado das Profundezas Claras for lançado novamente enquanto o efeito estiver ativo, esse efeito original será eliminado.\r\n",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "Entram os Trapaceadores",
+          "description": "Rede da Vida Salvadora pode ser utilizada mais uma vez.\r\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "Quanto Mais Pessoas, Melhor",
+          "description": "Quando Dado Misterioso faz um Ataque Coordenado, será disparada uma flecha d'água adicional, infligindo Dano Hydro equivalente a 14% da Vida Máxima de Yelan.\r\nEsse efeito pode ocorrer até uma vez a cada 1.8s.\r\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "Dado Viciado",
+          "description": "Aumenta o nível de Dado das Profundezas Claras em 3.\r\nO nível máximo de elevação é 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "Blefe e Reviravolta",
+          "description": "De acordo com a quantidade de inimigos marcados por Fio da Vida, a explosão de cada marca aumentará a Vida Máxima de todos os membros da equipe em 10% por 25s. É possível no máximo obter 40% de aumento da Vida Máxima desta forma.\r\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "Prestidigitação da Banca",
+          "description": "Aumenta o nível de Rede da Vida Salvadora em 3.\r\nO nível máximo de elevação é 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
+          "title": "Vencedor Leva Tudo",
+          "description": "Depois de lançar Dado das Profundezas Claras, Yelan entra no estado \"Mestra Estrategista\":\r\n",
+          "descriptions": [
+            "Os Ataques Normais de Yelan serão convertidos em \"Flechas da Ruptura\" especiais. Essas flechas possuem as características similares à \"Flecha da Ruptura\", e seu Dano infligido será considerado como Dano de Ataque Carregado, infligindo 156% do Dano da Flecha da Ruptura normal.",
+            "O estado \"Mestra Estrategista\" dura 20s e será eliminado quando Yelan disparar 5 flechas."
+          ]
         }
       ]
     },
@@ -7356,6 +7426,18 @@
       "name": "Anotações do Aprendiz",
       "description": "Notas deixadas por um estudante brilhante que deixou uma lista de magias muito úteis. Sua caligrafia é muito bonita.",
       "refinements": []
+    },
+    {
+      "key": "aqua-simulacra",
+      "name": "Aqua Simulacra",
+      "description": "A cor desse arco longo muda imprevisivelmente. Sob a luz, possui um brilho azulado como água.",
+      "refinements": [
+        "Aumenta a Vida em {color}16{/color}%. Se existirem inimigos próximos, o personagem que tem esta arma equipada terá um aumento de Dano de {color}20{/color}%, independentemente do personagem estar ativo no campo de batalha ou não.",
+        "Aumenta a Vida em {color}20{/color}%. Se existirem inimigos próximos, o personagem que tem esta arma equipada terá um aumento de Dano de {color}25{/color}%, independentemente do personagem estar ativo no campo de batalha ou não.",
+        "Aumenta a Vida em {color}24{/color}%. Se existirem inimigos próximos, o personagem que tem esta arma equipada terá um aumento de Dano de {color}30{/color}%, independentemente do personagem estar ativo no campo de batalha ou não.",
+        "Aumenta a Vida em {color}28{/color}%. Se existirem inimigos próximos, o personagem que tem esta arma equipada terá um aumento de Dano de {color}35{/color}%, independentemente do personagem estar ativo no campo de batalha ou não.",
+        "Aumenta a Vida em {color}32{/color}%. Se existirem inimigos próximos, o personagem que tem esta arma equipada terá um aumento de Dano de {color}40{/color}%, independentemente do personagem estar ativo no campo de batalha ou não."
+      ]
     },
     {
       "key": "aquila-favonia",

@@ -633,6 +633,322 @@
       ]
     },
     {
+      "key": "aqua-simulacra",
+      "image": "aqua-simulacra.png",
+      "type": "bow",
+      "atk": 44.0,
+      "rarity": 5,
+      "secondaryStat": "critDmgPercentage",
+      "secondaryStatValue": 19.2,
+      "location": "gacha",
+      "isComingSoon": false,
+      "ascensionMaterials": [
+        {
+          "level": 20,
+          "materials": [
+            {
+              "key": "luminous-sands-from-guyun",
+              "quantity": 5,
+              "type": "weaponPrimary"
+            },
+            {
+              "key": "gloomy-statuette",
+              "quantity": 5,
+              "type": "weapon"
+            },
+            {
+              "key": "spectral-husk",
+              "quantity": 3,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 10000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "level": 40,
+          "materials": [
+            {
+              "key": "lustrous-stone-from-guyun",
+              "quantity": 5,
+              "type": "weaponPrimary"
+            },
+            {
+              "key": "gloomy-statuette",
+              "quantity": 18,
+              "type": "weapon"
+            },
+            {
+              "key": "spectral-husk",
+              "quantity": 12,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 20000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "level": 50,
+          "materials": [
+            {
+              "key": "lustrous-stone-from-guyun",
+              "quantity": 9,
+              "type": "weaponPrimary"
+            },
+            {
+              "key": "dark-statuette",
+              "quantity": 9,
+              "type": "weapon"
+            },
+            {
+              "key": "spectral-heart",
+              "quantity": 9,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 30000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "level": 60,
+          "materials": [
+            {
+              "key": "relic-from-guyun",
+              "quantity": 5,
+              "type": "weaponPrimary"
+            },
+            {
+              "key": "dark-statuette",
+              "quantity": 18,
+              "type": "weapon"
+            },
+            {
+              "key": "spectral-heart",
+              "quantity": 14,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 45000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "level": 70,
+          "materials": [
+            {
+              "key": "relic-from-guyun",
+              "quantity": 9,
+              "type": "weaponPrimary"
+            },
+            {
+              "key": "deathly-statuette",
+              "quantity": 14,
+              "type": "weapon"
+            },
+            {
+              "key": "spectral-nucleus",
+              "quantity": 9,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 55000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "level": 80,
+          "materials": [
+            {
+              "key": "divine-body-from-guyun",
+              "quantity": 6,
+              "type": "weaponPrimary"
+            },
+            {
+              "key": "deathly-statuette",
+              "quantity": 27,
+              "type": "weapon"
+            },
+            {
+              "key": "spectral-nucleus",
+              "quantity": 18,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 65000,
+              "type": "currency"
+            }
+          ]
+        }
+      ],
+      "craftingMaterials": [],
+      "stats": [
+        {
+          "level": 1,
+          "baseAtk": 44.0,
+          "statValue": 19.2,
+          "isAnAscension": false
+        },
+        {
+          "level": 5,
+          "baseAtk": 58.0,
+          "statValue": 22.3,
+          "isAnAscension": false
+        },
+        {
+          "level": 10,
+          "baseAtk": 76.0,
+          "statValue": 26.2,
+          "isAnAscension": false
+        },
+        {
+          "level": 15,
+          "baseAtk": 93.0,
+          "statValue": 30.0,
+          "isAnAscension": false
+        },
+        {
+          "level": 20,
+          "baseAtk": 110.0,
+          "statValue": 33.9,
+          "isAnAscension": false
+        },
+        {
+          "level": 20,
+          "baseAtk": 141.0,
+          "statValue": 33.9,
+          "isAnAscension": true
+        },
+        {
+          "level": 25,
+          "baseAtk": 158.0,
+          "statValue": 37.8,
+          "isAnAscension": false
+        },
+        {
+          "level": 30,
+          "baseAtk": 176.0,
+          "statValue": 41.7,
+          "isAnAscension": false
+        },
+        {
+          "level": 35,
+          "baseAtk": 193.0,
+          "statValue": 45.6,
+          "isAnAscension": false
+        },
+        {
+          "level": 40,
+          "baseAtk": 210.0,
+          "statValue": 49.4,
+          "isAnAscension": false
+        },
+        {
+          "level": 40,
+          "baseAtk": 241.0,
+          "statValue": 49.4,
+          "isAnAscension": true
+        },
+        {
+          "level": 45,
+          "baseAtk": 258.0,
+          "statValue": 53.3,
+          "isAnAscension": false
+        },
+        {
+          "level": 50,
+          "baseAtk": 275.0,
+          "statValue": 57.2,
+          "isAnAscension": false
+        },
+        {
+          "level": 50,
+          "baseAtk": 307.0,
+          "statValue": 57.2,
+          "isAnAscension": true
+        },
+        {
+          "level": 55,
+          "baseAtk": 324.0,
+          "statValue": 61.1,
+          "isAnAscension": false
+        },
+        {
+          "level": 60,
+          "baseAtk": 341.0,
+          "statValue": 65.0,
+          "isAnAscension": false
+        },
+        {
+          "level": 60,
+          "baseAtk": 373.0,
+          "statValue": 65.0,
+          "isAnAscension": true
+        },
+        {
+          "level": 65,
+          "baseAtk": 390.0,
+          "statValue": 68.8,
+          "isAnAscension": false
+        },
+        {
+          "level": 70,
+          "baseAtk": 408.0,
+          "statValue": 72.7,
+          "isAnAscension": false
+        },
+        {
+          "level": 70,
+          "baseAtk": 439.0,
+          "statValue": 72.7,
+          "isAnAscension": true
+        },
+        {
+          "level": 75,
+          "baseAtk": 457.0,
+          "statValue": 76.6,
+          "isAnAscension": false
+        },
+        {
+          "level": 80,
+          "baseAtk": 475.0,
+          "statValue": 80.4,
+          "isAnAscension": false
+        },
+        {
+          "level": 80,
+          "baseAtk": 506.0,
+          "statValue": 80.4,
+          "isAnAscension": true
+        },
+        {
+          "level": 85,
+          "baseAtk": 524.0,
+          "statValue": 84.3,
+          "isAnAscension": false
+        },
+        {
+          "level": 90,
+          "baseAtk": 542.0,
+          "statValue": 88.2,
+          "isAnAscension": false
+        }
+      ]
+    },
+    {
       "key": "blackcliff-warbow",
       "image": "blackcliff-warbow.png",
       "type": "bow",

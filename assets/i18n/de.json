@@ -6885,81 +6885,151 @@
     {
       "key": "yelan",
       "name": "Yelan",
-      "title": "",
-      "description": "",
+      "title": "Orchidee im tiefen Tal",
+      "description": "Eine mysteriöse Person, die behauptet, für den Rat für Allgemeine Angelegenheiten zu arbeiten, aber auf der Liste des Rats für Allgemeine Angelegenheiten als „nicht existent“ geführt wird.",
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Bogen der Unterströmung",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Standardangriff",
+              "description": "Führt bis zu 4 Pfeilschüsse hintereinander aus.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Heftiger Schlag",
+              "description": "Führt einen gezielten Schuss mit höherem Schaden und höherer Genauigkeit aus.\r\nKonzentriert das fließende Wasser während des Zielens an der Pfeilspitze, die voll aufgeladen Hydro-Schaden verursacht.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Durchstoß",
+              "description": "5 s nach dem Verlassen des Kampfes erhält Yelan den Zustand „Durchstoß“, der die Aufladedauer beim nächsten voll aufgeladenen gezielten Schuss um 80 % verringert und den Pfeil beim Schießen des voll aufgeladenen Schusses in einen „Durchstoßpfeil“ verwandelt, der basierend auf Yelans max. LP Hydro-Flächenschaden verursacht.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Angriff aus dem Fall",
+              "description": "Schießt in der Luft einen Pfeilregen ab, trifft schnell auf dem Boden auf und verursacht dort Flächenschaden.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "SCH Phase 1|{param1}%",
+            "SCH Phase 2|{param2}%",
+            "SCH Phase 3|{param3}%",
+            "SCH Phase 4|{param4}% + {param5}%",
+            "Gezielte Schüsse|{param6}%",
+            "Voll aufgeladene gezielte Schüsse|{param7}%",
+            "Durchstoßpfeil-SCH|{param8}% Max HP",
+            "SCH beim Fallen|{param9}%",
+            "SCH beim Fallen aus niedriger/großer Höhe|{param10}% / {param11}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Seil der Todesbotin",
+          "description": "Yelan bewegt sich schnell mit ihrem „todbringenden Seil“ in der Hand, das alle Gegner in ihrer Bahn verknüpft und markiert.\r\nNach der schnellen Bewegung explodiert das „todbringende Seil“, wobei es den markierten Gegnern Hydro-Schaden basierend auf Yelans max. LP zufügt.\r\n",
+          "abilities": [
+            {
+              "name": "Einmaliges Drücken",
+              "description": "Bewegt sich schnell ein Stück nach vorn.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Gedrückt halten",
+              "description": "Bewegt sich schnell und fortlaufend und erhöht in diesem Zustand Yelans Unterbrechungs-WDS.\r\nWährend dieser Zeit kann Yelan die Richtung ihrer Bewegung steuern und diesen Zustand durch erneutes Auslösen der Fähigkeit vorzeitig beenden.\r\nDarüber hinaus erhält Yelan bei der Explosion des „todbringenden Seils“ mit gewisser Wahrscheinlichkeit gemäß der Anzahl der markierten Gegner den Zustand „Durchstoß“: Erhöht für jeden markierten Gegner die Wahrscheinlichkeit um 34 %.\r\n",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "Fähigkeits-SCH|{param1}% Max HP",
+            "Höchstdauer beim Gedrückthalten|{param2}s",
+            "Abklingzeit|{param3}s"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Würfel des Strategems",
+          "description": "Verursacht Hydro-Flächenschaden und beschwört einen „Würfel der Mystik“, der beim Kampf Unterstützung leistet.\r\n",
+          "abilities": [
+            {
+              "name": "Würfel der Mystik",
+              "description": "Folgt der Figur auf Schritt und Tritt und führt unter folgenden Umständen abgestimmte Angriffe aus, die basierend auf Yelans max. LP Hydro-Schaden verursachen: \r\n",
+              "descriptions": [
+                "Wenn eigene aktuelle Truppenmitglieder Standardangriffe ausführen, 1 s Abklingzeit.",
+                "Wenn Yelans „todbringendes Seil“ explodiert und dabei Gegner trifft."
+              ]
+            }
+          ],
+          "stats": [
+            "Fähigkeits-SCH|{param1}% Max HP",
+            "SCH des Würfels der Mystik|{param2}% Max HP ×{param3}",
+            "Dauer|{param4}s",
+            "Abklingzeit|{param5}s",
+            "Elementarenergie|{param6}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "Lange Überlegung",
+          "description": "Bringt bei 20-stündigen Erkundungsentsendungen in Liyue 25 % mehr Belohnungen.\r\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
+          "title": "Beste Gewinnstrategie",
+          "description": "Erhöht die max. LP von Yelan bei Truppenmitgliedern mit 1/2/3/4 verschiedenen Elementartypen zusätzlich um 6/12/18/30 %.\r\n",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "Glückswürfel",
+          "description": "Erhöht den von eigenen aktuellen Truppenmitgliedern während der Wirkungsdauer von „Würfel der Mystik“ verursachten Schaden um 1 % und danach alle 1 s um 3,5 %, insgesamt um bis zu 50 %.\r\nErneutes Aktivieren von Würfel des Strategems innerhalb der Laufzeit des oben beschriebenen Effekts entfernt diesen.\r\n",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "Falle in der Falle",
+          "description": "Ermöglicht 1 weitere Anwendung von Seil der Todesbotin.\r\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "Viel hilft viel",
+          "description": "Schießt beim abgestimmten Angriff von „Würfel der Mystik“ einen zusätzlichen Wasserpfeil ab, der Hydro-Schaden in Höhe von 14 % der max. LP von Yelan verursacht.\r\n1,8 s Abklingzeit.\r\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "Gezinkter Würfel",
+          "description": "Erhöht die Stufe der Fähigkeit Würfel des Strategems um 3.\r\nHöchststufe 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "Täuschung des Schwindlers",
+          "description": "Erhöht für jeden von dem „todbringenden Seil“ markierten Gegner bei der Explosion die max. LP aller Truppenmitglieder 25 s lang um 10 %. Auf diese Weise können die max. LP um bis zu 40 % erhöht werden.\r\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "Tricks des Bankhalters",
+          "description": "Erhöht die Stufe der Fähigkeit Seil der Todesbotin um 3.\r\nHöchststufe 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
+          "title": "Alles dem Gewinner",
+          "description": "Verleiht Yelan nach dem Auslösen des Würfels des Strategems den Zustand „Gewinnstrategie“:\r\n",
+          "descriptions": [
+            "Yelans Standardangriffe verwandeln sich in spezielle „Durchstoßpfeile“. Diese Pfeile verfügen über ähnliche Eigenschaften wie normale „Durchstoßpfeile“. Ihr Schaden wird als Schaden heftiger Schläge betrachtet und sie verursachen 156 % des Schadens von normalen „Durchstoßpfeilen“.",
+            "Der Zustand „Gewinnstrategie“ hält bis zu 20 s und erlischt, nachdem Yelan 5 Pfeile abgeschossen hat."
+          ]
         }
       ]
     },
@@ -7466,6 +7536,18 @@
       "name": "Aufzeichnungen eines Lehrlings",
       "description": "Die Aufzeichnungen eines sehr begabten Schülers. Die Handschrift ist wunderschön und gibt so einige nützliche Zaubersprüche wieder.",
       "refinements": []
+    },
+    {
+      "key": "aqua-simulacra",
+      "name": "Aqua Simulacra",
+      "description": "Die Farbe dieses Langbogens ist unberechenbar und fließend wie Wasser. Im Licht nimmt er ein glänzendes, wässriges Blau an.",
+      "refinements": [
+        "Erhöht die LP um {color}16{/color} %. Erhöht, wenn es in der Umgebung Gegner gibt, den durch die mit dieser Waffe ausgerüstete Figur verursachten Schaden um {color}20{/color} %, ganz gleich, ob sie aktiv oder inaktiv ist.",
+        "Erhöht die LP um {color}20{/color} %. Erhöht, wenn es in der Umgebung Gegner gibt, den durch die mit dieser Waffe ausgerüstete Figur verursachten Schaden um {color}25{/color} %, ganz gleich, ob sie aktiv oder inaktiv ist.",
+        "Erhöht die LP um {color}24{/color} %. Erhöht, wenn es in der Umgebung Gegner gibt, den durch die mit dieser Waffe ausgerüstete Figur verursachten Schaden um {color}30{/color} %, ganz gleich, ob sie aktiv oder inaktiv ist.",
+        "Erhöht die LP um {color}28{/color} %. Erhöht, wenn es in der Umgebung Gegner gibt, den durch die mit dieser Waffe ausgerüstete Figur verursachten Schaden um {color}35{/color} %, ganz gleich, ob sie aktiv oder inaktiv ist.",
+        "Erhöht die LP um {color}32{/color} %. Erhöht, wenn es in der Umgebung Gegner gibt, den durch die mit dieser Waffe ausgerüstete Figur verursachten Schaden um {color}40{/color} %, ganz gleich, ob sie aktiv oder inaktiv ist."
+      ]
     },
     {
       "key": "aquila-favonia",
