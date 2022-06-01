@@ -536,7 +536,7 @@ class _ElementsWrap extends StatelessWidget {
               width: width,
               color: e.getElementColor(true),
               text: s.translateElementType(e),
-              lineThrough: selectedElementTypes.contains(e),
+              selected: selectedElementTypes.isNotEmpty ? selectedElementTypes.contains(e) : true,
               tap: () => context.read<ChartElementsBloc>().add(ChartElementsEvent.elementSelected(type: e)),
             ),
           )
