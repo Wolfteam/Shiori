@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.4.0+60 (31/05/2022)
+- Banner History
+- Charts
+- Yelan
+
+
 ## 1.3.3+54 (30/03/2022)
 - The onii sama is here
 
