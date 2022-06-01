@@ -827,6 +827,45 @@
         "favonius-warbow"
       ],
       "version": 2.6
+    },
+    {
+      "type": "character",
+      "from": "2022-05-31T00:00:00",
+      "until": "2022-06-21T00:00:00",
+      "itemKeys": [
+        "yelan",
+        "barbara",
+        "yanfei",
+        "noelle"
+      ],
+      "version": 2.7
+    },
+    {
+      "type": "character",
+      "from": "2022-05-31T00:00:00",
+      "until": "2022-06-21T00:00:00",
+      "itemKeys": [
+        "xiao",
+        "barbara",
+        "yanfei",
+        "noelle"
+      ],
+      "version": 2.7
+    },
+    {
+      "type": "weapon",
+      "from": "2022-05-31T00:00:00",
+      "until": "2022-06-21T00:00:00",
+      "itemKeys": [
+        "aqua-simulacra",
+        "primordial-jade-winged-spear",
+        "lithic-spear",
+        "eye-of-perception",
+        "favonius-greatsword",
+        "sacrificial-bow",
+        "sacrificial-sword"
+      ],
+      "version": 2.7
     }
   ]
 }

@@ -1002,7 +1002,7 @@ void main() {
         final tops = service.getTopCharts(type);
         expect(tops.isNotEmpty, isTrue);
         final totalPercentage = tops.map((e) => e.percentage).sum;
-        expect(totalPercentage.toInt(), 100);
+        expect(totalPercentage.round(), 100);
         for (final item in tops) {
           expect(item.type == type, isTrue);
           checkKey(item.key);

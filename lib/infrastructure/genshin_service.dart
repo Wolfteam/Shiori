@@ -1378,7 +1378,7 @@ class GenshinServiceImpl implements GenshinService {
     assert(selected.isNotEmpty, 'The selected item list should not be empty');
     assert(selected.length >= 5, 'There should be at least 5 top items');
 
-    final tops = selected.take(5);
+    final tops = selected.take(5).toList();
     final total = tops.map((e) => e.quantity).sum;
 
     return tops
@@ -1388,7 +1388,7 @@ class GenshinServiceImpl implements GenshinService {
             name: items.firstWhere((el) => el.key == e.key).name,
             type: type,
             value: e.quantity,
-            percentage: e.quantity * 100 / total,
+            percentage: (e.quantity * 100 / total).truncateToDecimalPlaces(fractionalDigits: 2),
           ),
         )
         .toList();
