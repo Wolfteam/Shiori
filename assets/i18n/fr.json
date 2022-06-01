@@ -7848,6 +7848,18 @@
       ]
     },
     {
+      "key": "fading-twilight",
+      "name": "Crépuscule couchant",
+      "description": "Un arc précieux en platine, incrusté d'un orbe qui scintille à la lumière du soir.",
+      "refinements": [
+        "Cette arme possède trois états (crépuscule, rémanence et aube) qui augmentent respectivement les DGT infligés de {color}6{/color}%/10%/14%. Lorsqu'une attaque a touché un ennemi, l'arme passe à l'état suivant. Un changement d'état peut être déclenché une fois toutes les 7 s, même si le personnage équipé de l'arme fait partie de l'équipe mais n'est pas déployé.",
+        "Cette arme possède trois états (crépuscule, rémanence et aube) qui augmentent respectivement les DGT infligés de {color}7,5{/color}%/12,5%/17,5%. Lorsqu'une attaque a touché un ennemi, l'arme passe à l'état suivant. Un changement d'état peut être déclenché une fois toutes les 7 s, même si le personnage équipé de l'arme fait partie de l'équipe mais n'est pas déployé.",
+        "Cette arme possède trois états (crépuscule, rémanence et aube) qui augmentent respectivement les DGT infligés de {color}9{/color}%/15%/21%. Lorsqu'une attaque a touché un ennemi, l'arme passe à l'état suivant. Un changement d'état peut être déclenché une fois toutes les 7 s, même si le personnage équipé de l'arme fait partie de l'équipe mais n'est pas déployé.",
+        "Cette arme possède trois états (crépuscule, rémanence et aube) qui augmentent respectivement les DGT infligés de {color}10,5{/color}%/17,5%/24,5%. Lorsqu'une attaque a touché un ennemi, l'arme passe à l'état suivant. Un changement d'état peut être déclenché une fois toutes les 7 s, même si le personnage équipé de l'arme fait partie de l'équipe mais n'est pas déployé.",
+        "Cette arme possède trois états (crépuscule, rémanence et aube) qui augmentent respectivement les DGT infligés de {color}12{/color}%/20%/28%. Lorsqu'une attaque a touché un ennemi, l'arme passe à l'état suivant. Un changement d'état peut être déclenché une fois toutes les 7 s, même si le personnage équipé de l'arme fait partie de l'équipe mais n'est pas déployé."
+      ]
+    },
+    {
       "key": "favonius-codex",
       "name": "Code de Favonius",
       "description": "Un ouvrage autrefois utilisé par les savants de l'Ordre de Favonius. Il décrit la logique régissant les éléments et la matière, ainsi que leur puissance.",

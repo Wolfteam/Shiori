@@ -1913,6 +1913,322 @@
       ]
     },
     {
+      "key": "fading-twilight",
+      "image": "fading-twilight.png",
+      "type": "bow",
+      "atk": 44.0,
+      "rarity": 4,
+      "secondaryStat": "energyRechargePercentage",
+      "secondaryStatValue": 6.7,
+      "location": "gacha",
+      "isComingSoon": false,
+      "ascensionMaterials": [
+        {
+          "level": 20,
+          "materials": [
+            {
+              "key": "grain-of-aerosiderite",
+              "quantity": 3,
+              "type": "weaponPrimary"
+            },
+            {
+              "key": "hunters-sacrificial-knife",
+              "quantity": 3,
+              "type": "weapon"
+            },
+            {
+              "key": "divining-scroll",
+              "quantity": 2,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 5000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "level": 40,
+          "materials": [
+            {
+              "key": "piece-of-aerosiderite",
+              "quantity": 3,
+              "type": "weaponPrimary"
+            },
+            {
+              "key": "hunters-sacrificial-knife",
+              "quantity": 12,
+              "type": "weapon"
+            },
+            {
+              "key": "divining-scroll",
+              "quantity": 8,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 15000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "level": 50,
+          "materials": [
+            {
+              "key": "piece-of-aerosiderite",
+              "quantity": 6,
+              "type": "weaponPrimary"
+            },
+            {
+              "key": "agents-sacrificial-knife",
+              "quantity": 6,
+              "type": "weapon"
+            },
+            {
+              "key": "sealed-scroll",
+              "quantity": 6,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 20000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "level": 60,
+          "materials": [
+            {
+              "key": "bit-of-aerosiderite",
+              "quantity": 3,
+              "type": "weaponPrimary"
+            },
+            {
+              "key": "agents-sacrificial-knife",
+              "quantity": 12,
+              "type": "weapon"
+            },
+            {
+              "key": "sealed-scroll",
+              "quantity": 9,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 30000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "level": 70,
+          "materials": [
+            {
+              "key": "bit-of-aerosiderite",
+              "quantity": 6,
+              "type": "weaponPrimary"
+            },
+            {
+              "key": "inspectors-sacrificial-knife",
+              "quantity": 9,
+              "type": "weapon"
+            },
+            {
+              "key": "forbidden-curse-scroll",
+              "quantity": 6,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 35000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "level": 80,
+          "materials": [
+            {
+              "key": "chunk-of-aerosiderite",
+              "quantity": 4,
+              "type": "weaponPrimary"
+            },
+            {
+              "key": "inspectors-sacrificial-knife",
+              "quantity": 18,
+              "type": "weapon"
+            },
+            {
+              "key": "forbidden-curse-scroll",
+              "quantity": 12,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 45000,
+              "type": "currency"
+            }
+          ]
+        }
+      ],
+      "craftingMaterials": [],
+      "stats": [
+        {
+          "level": 1,
+          "baseAtk": 44.0,
+          "statValue": 6.7,
+          "isAnAscension": false
+        },
+        {
+          "level": 5,
+          "baseAtk": 59.0,
+          "statValue": 7.7,
+          "isAnAscension": false
+        },
+        {
+          "level": 10,
+          "baseAtk": 79.0,
+          "statValue": 9.1,
+          "isAnAscension": false
+        },
+        {
+          "level": 15,
+          "baseAtk": 99.0,
+          "statValue": 10.4,
+          "isAnAscension": false
+        },
+        {
+          "level": 20,
+          "baseAtk": 119.0,
+          "statValue": 11.8,
+          "isAnAscension": false
+        },
+        {
+          "level": 20,
+          "baseAtk": 144.0,
+          "statValue": 11.8,
+          "isAnAscension": true
+        },
+        {
+          "level": 25,
+          "baseAtk": 165.0,
+          "statValue": 13.1,
+          "isAnAscension": false
+        },
+        {
+          "level": 30,
+          "baseAtk": 185.0,
+          "statValue": 14.5,
+          "isAnAscension": false
+        },
+        {
+          "level": 35,
+          "baseAtk": 205.0,
+          "statValue": 15.8,
+          "isAnAscension": false
+        },
+        {
+          "level": 40,
+          "baseAtk": 226.0,
+          "statValue": 17.2,
+          "isAnAscension": false
+        },
+        {
+          "level": 40,
+          "baseAtk": 252.0,
+          "statValue": 17.2,
+          "isAnAscension": true
+        },
+        {
+          "level": 45,
+          "baseAtk": 273.0,
+          "statValue": 18.5,
+          "isAnAscension": false
+        },
+        {
+          "level": 50,
+          "baseAtk": 293.0,
+          "statValue": 19.9,
+          "isAnAscension": false
+        },
+        {
+          "level": 50,
+          "baseAtk": 319.0,
+          "statValue": 19.9,
+          "isAnAscension": true
+        },
+        {
+          "level": 55,
+          "baseAtk": 340.0,
+          "statValue": 21.2,
+          "isAnAscension": false
+        },
+        {
+          "level": 60,
+          "baseAtk": 361.0,
+          "statValue": 22.6,
+          "isAnAscension": false
+        },
+        {
+          "level": 60,
+          "baseAtk": 387.0,
+          "statValue": 22.6,
+          "isAnAscension": true
+        },
+        {
+          "level": 65,
+          "baseAtk": 408.0,
+          "statValue": 23.9,
+          "isAnAscension": false
+        },
+        {
+          "level": 70,
+          "baseAtk": 429.0,
+          "statValue": 25.2,
+          "isAnAscension": false
+        },
+        {
+          "level": 70,
+          "baseAtk": 455.0,
+          "statValue": 25.2,
+          "isAnAscension": true
+        },
+        {
+          "level": 75,
+          "baseAtk": 476.0,
+          "statValue": 26.6,
+          "isAnAscension": false
+        },
+        {
+          "level": 80,
+          "baseAtk": 497.0,
+          "statValue": 27.9,
+          "isAnAscension": false
+        },
+        {
+          "level": 80,
+          "baseAtk": 523.0,
+          "statValue": 27.9,
+          "isAnAscension": true
+        },
+        {
+          "level": 85,
+          "baseAtk": 544.0,
+          "statValue": 29.3,
+          "isAnAscension": false
+        },
+        {
+          "level": 90,
+          "baseAtk": 565.0,
+          "statValue": 30.6,
+          "isAnAscension": false
+        }
+      ]
+    },
+    {
       "key": "favonius-warbow",
       "image": "favonius-warbow.png",
       "type": "bow",

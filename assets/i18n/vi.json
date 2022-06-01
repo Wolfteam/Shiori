@@ -7843,6 +7843,18 @@
       ]
     },
     {
+      "key": "fading-twilight",
+      "name": "Lạc Hà",
+      "description": "Cung quý được đúc từ bạch kim, trên đó có khảm bảo ngọc lấp lánh.",
+      "refinements": [
+        "Có 3 loại trạng thái gồm Chạng Vạng, Lưu Hà, Hừng Đông, lần lượt tăng {color}6{/color}%/10%/14% sát thương gây ra. Khi tấn công trúng kẻ địch sẽ chuyển sang trạng thái tiếp theo, mỗi 7s tối đa chuyển trạng thái một lần. Nhân vật trang bị vũ khí này khi không ra trận cũng sẽ có thể kích hoạt chuyển đổi.",
+        "Có 3 loại trạng thái gồm Chạng Vạng, Lưu Hà, Hừng Đông, lần lượt tăng {color}7.5{/color}%/12.5%/17.5% sát thương gây ra. Khi tấn công trúng kẻ địch sẽ chuyển sang trạng thái tiếp theo, mỗi 7s tối đa chuyển trạng thái một lần. Nhân vật trang bị vũ khí này khi không ra trận cũng sẽ có thể kích hoạt chuyển đổi.",
+        "Có 3 loại trạng thái gồm Chạng Vạng, Lưu Hà, Hừng Đông, lần lượt tăng {color}9{/color}%/15%/21% sát thương gây ra. Khi tấn công trúng kẻ địch sẽ chuyển sang trạng thái tiếp theo, mỗi 7s tối đa chuyển trạng thái một lần. Nhân vật trang bị vũ khí này khi không ra trận cũng sẽ có thể kích hoạt chuyển đổi.",
+        "Có 3 loại trạng thái gồm Chạng Vạng, Lưu Hà, Hừng Đông, lần lượt tăng {color}10.5{/color}%/17.5%/24.5% sát thương gây ra. Khi tấn công trúng kẻ địch sẽ chuyển sang trạng thái tiếp theo, mỗi 7s tối đa chuyển trạng thái một lần. Nhân vật trang bị vũ khí này khi không ra trận cũng sẽ có thể kích hoạt chuyển đổi.",
+        "Có 3 loại trạng thái gồm Chạng Vạng, Lưu Hà, Hừng Đông, lần lượt tăng {color}12{/color}%/20%/28% sát thương gây ra. Khi tấn công trúng kẻ địch sẽ chuyển sang trạng thái tiếp theo, mỗi 7s tối đa chuyển trạng thái một lần. Nhân vật trang bị vũ khí này khi không ra trận cũng sẽ có thể kích hoạt chuyển đổi."
+      ]
+    },
+    {
       "key": "favonius-codex",
       "name": "Tây Phong Mật Điển",
       "description": "Mật điển được học giả Đội Kỵ Sĩ Tây Phong lưu truyền. Ghi chép đạo lý và sức mạnh của vật chất và Nguyên Tố.",

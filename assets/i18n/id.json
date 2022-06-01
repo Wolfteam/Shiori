@@ -7846,6 +7846,18 @@
       ]
     },
     {
+      "key": "fading-twilight",
+      "name": "Fading Twilight",
+      "description": "Busur berharga yang dibuat dari platinum, bertatahkan bola-bola yang terang berkilauan dengan cahaya senja yang indah.",
+      "refinements": [
+        "Mempunyai 3 status, yakni: Evengleam, Afterglow, dan Dawnblaze. Masing-masing meningkatkan DMG sebesar {color}6{/color}%/10%/14%. Setelah serangannya mengenai musuh, senjata ini akan berubah ke status selanjutnya. Status berubah setiap 7 detik. Efek ini tetap dapat memicu perubahan status sekalipun Karakter yang mengenakannya ada dalam party namun sedang tidak berada di medan pertempuran.",
+        "Mempunyai 3 status, yakni: Evengleam, Afterglow, dan Dawnblaze. Masing-masing meningkatkan DMG sebesar {color}7,5{/color}%/12,5%/17,5%. Setelah serangannya mengenai musuh, senjata ini akan berubah ke status selanjutnya. Status berubah setiap 7 detik. Efek ini tetap dapat memicu perubahan status sekalipun Karakter yang mengenakannya ada dalam party namun sedang tidak berada di medan pertempuran.",
+        "Mempunyai 3 status, yakni: Evengleam, Afterglow, dan Dawnblaze. Masing-masing meningkatkan DMG sebesar {color}9{/color}%/15%/21%. Setelah serangannya mengenai musuh, senjata ini akan berubah ke status selanjutnya. Status berubah setiap 7 detik. Efek ini tetap dapat memicu perubahan status sekalipun Karakter yang mengenakannya ada dalam party namun sedang tidak berada di medan pertempuran.",
+        "Mempunyai 3 status, yakni: Evengleam, Afterglow, dan Dawnblaze. Masing-masing meningkatkan DMG sebesar {color}10,5{/color}%/17,5%/24,5%. Setelah serangannya mengenai musuh, senjata ini akan berubah ke status selanjutnya. Status berubah setiap 7 detik. Efek ini tetap dapat memicu perubahan status sekalipun Karakter yang mengenakannya ada dalam party namun sedang tidak berada di medan pertempuran.",
+        "Mempunyai 3 status, yakni: Evengleam, Afterglow, dan Dawnblaze. Masing-masing meningkatkan DMG sebesar {color}12{/color}%/20%/28%. Setelah serangannya mengenai musuh, senjata ini akan berubah ke status selanjutnya. Status berubah setiap 7 detik. Efek ini tetap dapat memicu perubahan status sekalipun Karakter yang mengenakannya ada dalam party namun sedang tidak berada di medan pertempuran."
+      ]
+    },
+    {
       "key": "favonius-codex",
       "name": "Favonius Codex",
       "description": "Kitab rahasia milik para sarjana Knights of Favonius. Di dalamnya tercatat logika dan kekuatan akan elemen dan materi alam.",
