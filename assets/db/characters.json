@@ -55167,7 +55167,7 @@
       "secondFullImage": null,
       "isComingSoon": false,
       "isNew": true,
-      "isFemale": false,
+      "isFemale": true,
       "region": "liyue",
       "role": "offFieldDps",
       "tier": "a",
