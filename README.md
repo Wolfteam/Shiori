@@ -22,6 +22,8 @@
 
 [<img height="100" width="250" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" />](https://play.google.com/store/apps/details?id=com.miraisoft.shiori)
 
+[<img height="100" width="300" src="https://www.nexiahome.com/wp-content/uploads/2016/03/windows-store-button.png" />]([https://play.google.com/store/apps/details?id=com.miraisoft.shiori](https://apps.microsoft.com/store/detail/shiori-for-genshin-unofficial/9PH29FZMQK7T))
+
 [<img height="100" width="100" src="https://sparkcdnwus2.azureedge.net/sparkimageassets/XPDC2RH70K22MN-08afd558-a61c-4a63-9171-d3f199738e9f" />](https://discord.gg/A8SgudQMwP)
 
 ### Contributing
