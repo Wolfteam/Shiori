@@ -3256,86 +3256,133 @@
     {
       "key": "kuki-shinobu",
       "name": "久岐忍",
-      "title": "",
-      "description": "",
+      "title": "煩悩刈除",
+      "description": "有能で信頼できる「荒瀧派」の二番手——注：「有能」と「信頼できる」は「荒瀧派」ではなく、二番手のことを表している。",
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "通常攻撃·忍流飛刃斬り",
+          "description": "",
+          "abilities": [
+            {
+              "name": "通常攻撃",
+              "description": "剣による最大4段の連続攻撃を行う。\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "重撃",
+              "description": "一定のスタミナを消費し、前方に斬撃を2回放つ。\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "落下攻撃",
+              "description": "空中から落下し地面に衝撃を与える。経路上の敵を攻撃し、落下時に範囲ダメージを与える。",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "1段ダメージ|{param1}",
+            "2段ダメージ|{param2}",
+            "3段ダメージ|{param3}",
+            "4段ダメージ|{param4}",
+            "重撃ダメージ|{param5} + {param6}",
+            "重撃スタミナ消費|{param7}",
+            "落下期間のダメージ|{param8}",
+            "低空/高空落下攻撃ダメージ|{param9} / {param10}"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "越祓雷草の輪",
+          "description": "越祓草輪を編み、一定のHPを消費して周囲の敵に雷元素ダメージを与える。\r\n",
+          "abilities": [
+            {
+              "name": "越祓草輪",
+              "description": "フィールド上のキャラクターと共に移動する。1.5秒毎に周囲の敵に雷元素ダメージを与え、範囲内のフィールド上キャラクターのHPを回復する。回復量は久岐忍のHP上限によって決まる。\r\nスキル発動によるHP消費によって、久岐忍の残りHPが20%を下回ることはない。\r\n",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "スキルダメージ|{param1}",
+            "越祓草輪治療量|{param2}% Max HP + {param3}",
+            "越祓草輪ダメージ|{param4}",
+            "スキル消費|{param5}% Current HP",
+            "継続時間|{param6}s",
+            "クールタイム|{param7}s"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
+          "title": "御詠鳴神刈山祭",
+          "description": "退邪の刃を地面に突き刺し、邪悪なるものを祓う結界を前方に張って、その中にいる敵に雷元素ダメージを継続的に与える。ダメージ量は久岐忍のHP上限によって決まる。\r\n発動時、久岐忍のHPが50%以下の際、結界の継続時間が延びる。\r\n",
           "abilities": [],
-          "stats": []
+          "stats": [
+            "1回のダメージ|{param1} Max HP",
+            "合計ダメージ|{param2} / {param3} Max HP",
+            "継続時間|{param4}s / {param5}s",
+            "クールタイム|{param6}s",
+            "元素エネルギー|{param7}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "永き刻の祈り",
+          "description": "稲妻で20時間かかる探索任務を完了した時、獲得する報酬+25%。\r\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
+          "title": "檻を破る志",
+          "description": "久岐忍のHPが50%以下の時、与える治療効果+15%。\r\n",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
+          "title": "安心の処",
+          "description": "久岐忍の元素熟知を基準に、越祓雷草の輪は以下の強化を得る。\r\n",
+          "descriptions": [
+            "アップする治療量：元素熟知の75%。",
+            "アップするダメージ量：元素熟知の25%。"
+          ]
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "捨て去りし憐憫の心",
+          "description": "御詠鳴神刈山祭の影響範囲+50%。\r\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "捨て去りし僥倖の心",
+          "description": "越祓草輪の継続時間+3秒。\r\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "捨て去りし苦痛の心",
+          "description": "越祓雷草の輪のスキルLv.+3。\r\n最大Lv.15まで。\r\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "捨て去りし閉鎖の心",
+          "description": "久岐忍自身の越祓草輪を受けたキャラクターの通常攻撃、重撃、落下攻撃が敵に命中すると、雷草が敵の位置に落ち、久岐忍のHP上限の9.7%を基準に雷元素範囲ダメージを与える。\r\n5秒毎に1回のみ発動可能。\r\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "捨て去りし阿諛の心",
+          "description": "御詠鳴神刈山祭のスキルLv.+3。\r\n最大Lv.15まで。\r\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
+          "title": "捨て去りし軟弱な心",
+          "description": "久岐忍が戦闘不能に至るダメージを受けた時、このダメージで戦闘不能にならない。この効果は久岐忍のHPが1の時に自動で発動され、60秒毎に1回のみ発動できる。\r\nまた、久岐忍のHPが25%以下になると15秒間、自身の元素熟知+150、60秒毎に1回のみ発動できる。\r\n",
           "descriptions": []
         }
       ]
