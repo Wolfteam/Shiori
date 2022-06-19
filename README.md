@@ -22,7 +22,7 @@
 
 [<img height="100" width="250" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" />](https://play.google.com/store/apps/details?id=com.miraisoft.shiori)
 
-[<img height="100" width="250" src="https://sparkcdnwus2.azureedge.net/sparkimageassets/XPDC2RH70K22MN-08afd558-a61c-4a63-9171-d3f199738e9f" />](https://discord.gg/A8SgudQMwP)
+[<img height="100" width="100" src="https://sparkcdnwus2.azureedge.net/sparkimageassets/XPDC2RH70K22MN-08afd558-a61c-4a63-9171-d3f199738e9f" />](https://discord.gg/A8SgudQMwP)
 
 ### Contributing
 
