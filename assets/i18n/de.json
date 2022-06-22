@@ -3254,86 +3254,133 @@
     {
       "key": "kuki-shinobu",
       "name": "Kuki Shinobu",
-      "title": "",
-      "description": "",
+      "title": "Besänftigerin des Leids",
+      "description": "Die fähige und zuverlässige Stellvertreterin der „Arataki-Bande“. Beachte, dass diese Bezeichnungen nicht die Arataki-Bande an sich beschreiben, sondern allein ihre stellvertretende Anführerin.",
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Shinobus fliegender Schwerthieb",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Standardangriff",
+              "description": "Führt bis zu 4 Schwerthiebe hintereinander aus.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Heftiger Schlag",
+              "description": "Verbraucht eine gewisse Menge Ausdauer und schwingt das Schwert zweimal schnell nach vorn.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Angriff aus dem Fall",
+              "description": "Schlägt beim Fallen aus der Luft auf den Boden, greift alle Gegner in der Bahn an und verursacht beim Aufkommen Flächenschaden.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "SCH Phase 1|{param1}",
+            "SCH Phase 2|{param2}",
+            "SCH Phase 3|{param3}",
+            "SCH Phase 4|{param4}",
+            "SCH heftiger Schläge|{param5} + {param6}",
+            "Ausdauerverbrauch heftiger Schläge|{param7}",
+            "SCH beim Fallen|{param8}",
+            "SCH beim Fallen aus niedriger/großer Höhe|{param9} / {param10}"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Grasring der Reinigung",
+          "description": "Flechtet auf Kosten eines Teils der eigenen LP einen Grasring, der Gegnern in der Umgebung Elektro-Schaden zufügt.\r\n",
+          "abilities": [
+            {
+              "name": "Grasring",
+              "description": "Folgt der aktuellen Figur, fügt Gegnern in der Umgebung alle 1,5 s Elektro-Schaden zu und stellt basierend auf Kuki Shinobus max. LP den aktuellen Figuren LP wieder her.\r\nVerringert Kuki Shinobus LP beim Auslösen dieser Fähigkeit höchstens auf 20 %.\r\n",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "Fähigkeits-SCH|{param1}",
+            "Grasring-Heilung|{param2}% Max HP + {param3}",
+            "Grasring-SCH|{param4}",
+            "Kosten|{param5}% Current HP",
+            "Dauer|{param6}s",
+            "Abklingzeit|{param7}s"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
+          "title": "Gyoei-Narukami-Kariyama-Ritual",
+          "description": "Stößt die Klinge der Geistervertreibung in den Boden und erschafft vor sich eine Barriere, die das Böse beseitigt und Gegnern darin basierend auf Kuki Shinobus max. LP fortlaufend Elektro-Schaden zufügt.\r\nVerlängert die Wirkungsdauer der Barriere, wenn Kuki Shinobu beim Auslösen der Fähigkeit nicht mehr als 50 % LP hat.\r\n",
           "abilities": [],
-          "stats": []
+          "stats": [
+            "Einzel-SCH|{param1} Max HP",
+            "Gesamt-SCH|{param2} / {param3} Max HP",
+            "Dauer|{param4}s / {param5}s",
+            "Abklingzeit|{param6}s",
+            "Elementarenergie|{param7}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "Langwierige Gebete",
+          "description": "Bringt bei 20-stündigen Erkundungsentsendungen in Inazuma 25 % mehr Belohnungen.\r\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
+          "title": "Wille zur Freiheit",
+          "description": "Erhöht, wenn Kuki Shinobus LP nicht höher als 50 % sind, ihren Heilungsbonus um 15 %.\r\n",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
+          "title": "Ruheplatz des Herzens",
+          "description": "Verleiht Grasring der Reinigung basierend auf Kuki Shinobus Elementarkunde folgende Boni:\r\n",
+          "descriptions": [
+            "Heilungsbonus: 75 % der Elementarkunde",
+            "Schadensbonus: 25 % der Elementarkunde"
+          ]
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "Verzicht auf Mitleid",
+          "description": "Vergrößert den Wirkungsbereich von Gyoei-Narukami-Kariyama-Ritual um 50 %.\r\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "Verzicht auf Trägheit",
+          "description": "Verlängert die Wirkungsdauer des Grasrings um 3 s.\r\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "Verzicht auf Empfindlichkeit",
+          "description": "Erhöht die Stufe der Fähigkeit Grasring der Reinigung um 3.\r\nHöchststufe 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "Verzicht auf Verschlossenheit",
+          "description": "Wenn Figuren im Zustand Grasring von Kuki Shinobu Gegner mit Standardangriffen, heftigen Schlägen oder Angriffen aus dem Fall treffen, fällt eine Donnergras-Markierung an der Stelle der getroffenen Gegner herab und verursacht Elektro-Flächenschaden in Höhe von 9,7 % von Kuki Shinobus max. LP.\r\n5 s Abklingzeit.\r\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "Verzicht auf Anbiederung",
+          "description": "Erhöht die Stufe der Fähigkeit Gyoei-Narukami-Kariyama-Ritual um 3.\r\nHöchststufe 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
+          "title": "Verzicht auf Weichheit",
+          "description": "Vermeidet, wenn Kuki Shinobu Schaden erleidet, der sie besiegen würde, dass dieser Schaden sie besiegt. Dieser Effekt wird automatisch ausgelöst, wenn Kuki Shinobu nur noch 1 LP hat. 60 s Abklingzeit.\r\nErhöht, wenn Kuki Shinobus LP unter 25 % fallen, ihre Elementarkunde 15 s lang um 150 Punkte. 60 s Abklingzeit.\r\n",
           "descriptions": []
         }
       ]

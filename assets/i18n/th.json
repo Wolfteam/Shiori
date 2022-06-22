@@ -3197,86 +3197,133 @@
     {
       "key": "kuki-shinobu",
       "name": "Kuki Shinobu",
-      "title": "",
-      "description": "",
+      "title": "นักแก้ปัญหามือฉมัง",
+      "description": "รองหัวหน้าผู้มีความสามารถ และเชื่อถือได้ของ \"แก๊ง Arataki\"... หมายเหตุพิเศษ: คนที่มีความสามารถ และเชื่อถือได้ไม่ใช่ \"แก๊ง Arataki\" แต่เป็นรองหัวหน้า",
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Shinobu's Shadowsword",
+          "description": "",
+          "abilities": [
+            {
+              "name": "โจมตีปกติ",
+              "description": "โจมตีด้วยดาบต่อเนื่องมากสุด 4 ครั้ง\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "ชาร์จโจมตี",
+              "description": "ใช้พลังกายส่วนหนึ่งเพื่อฟาดฟันดาบ ออกไปข้างหน้า 2 ครั้ง ในช่วงเวลาสั้น ๆ\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "โจมตีพุ่งลงจากอากาศ",
+              "description": "กระโจนจากกลางอากาศลงมายังพื้นดิน เพื่อโจมตีศัตรูที่อยู่ในเส้นทางการโจมตี โดยจะสร้างความเสียหายวงกว้างเมื่อลงถึงพื้น",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "ความเสียหายขั้น 1|{param1}",
+            "ความเสียหายขั้น 2|{param2}",
+            "ความเสียหายขั้น 3|{param3}",
+            "ความเสียหายขั้น 4|{param4}",
+            "ความเสียหายชาร์จโจมตี|{param5} + {param6}",
+            "ชาร์จโจมตีใช้พลังกาย|{param7}",
+            "ความเสียหายพุ่งลง|{param8}",
+            "ความเสียหายพุ่งถึงพื้นจากที่ต่ำ/สูง|{param9} / {param10}"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Sanctifying Ring",
+          "description": "สร้าง Grass Ring of Sanctification ขึ้นมา โดยแลกเปลี่ยนกับพลังชีวิตส่วนหนึ่ง เพื่อสร้างความเสียหายไฟฟ้าแก่ศัตรูที่อยู่โดยรอบ\r\n",
+          "abilities": [
+            {
+              "name": "Grass Ring of Sanctification",
+              "description": "จะเคลื่อนที่ตามตัวละครที่เข้าร่วมการต่อสู้ในขณะนั้น โดยที่ทุก 1.5 วินาที จะสร้างความเสียหายไฟฟ้าแก่ศัตรูที่อยู่โดยรอบ และฟื้นฟูพลังชีวิตของตัวละครที่เข้าร่วมการต่อสู้ในขณะนั้นที่อยู่ในพื้นที่ ซึ่งปริมาณการฟื้นฟู จะขึ้นอยู่กับพลังชีวิตสูงสุดของ Kuki Shinobu\r\nพลังชีวิตที่ถูกใช้ไปในการปล่อยสกิลนี้ จะทำให้พลังชีวิตของ Kuki Shinobu ลดลงต่ำสุดถึง 20% เท่านั้น\r\n",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "ความเสียหายสกิล|{param1}",
+            "ปริมาณการรักษาของ Grass Ring of Sanctification|{param2}% Max HP + {param3}",
+            "ความเสียหาย Grass Ring of Sanctification|{param4}",
+            "ค่าใช้จ่ายสกิล|{param5}% Current HP",
+            "ระยะเวลาต่อเนื่อง|{param6}s",
+            "คูลดาวน์|{param7}s"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
+          "title": "Gyoei Narukami Kariyama Rite",
+          "description": "ปักดาบปราบความชั่วร้ายลงบนพื้นดิน และสร้างเขตแดนชำระล้างสิ่งชั่วร้ายขึ้นมาตรงเบื้องหน้า เพื่อสร้างความเสียหายไฟฟ้าแก่ศัตรูที่อยู่ในพื้นที่อย่างต่อเนื่อง โดยขึ้นกับพลังชีวิตสูงสุดของ Kuki Shinobu\r\nเมื่อใช้สกิล หากพลังชีวิตของ Shinobu ต่ำกว่าหรือเท่ากับ 50% ช่วงเวลาคงอยู่ของเขตแดนจะยาวนานขึ้น\r\n",
           "abilities": [],
-          "stats": []
+          "stats": [
+            "ความเสียหายต่อครั้ง|{param1} Max HP",
+            "ความเสียหายรวม|{param2} / {param3} Max HP",
+            "ระยะเวลาต่อเนื่อง|{param4}s / {param5}s",
+            "คูลดาวน์|{param6}s",
+            "พลังงานธาตุ|{param7}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "Protracted Prayers",
+          "description": "เมื่อทำคำขอการออกสำรวจของ Inazuma ที่ใช้เวลา 20 ชั่วโมง รางวัลที่ได้รับจะเพิ่มขึ้น 25%\r\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
+          "title": "Breaking Free",
+          "description": "ในตอนที่พลังชีวิตของ Kuki Shinobu ไม่เกิน 50% โบนัสการรักษาจะเพิ่มขึ้น 15%\r\n",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
+          "title": "Heart's Repose",
+          "description": "Sanctifying Ring จะได้รับโบนัสดังต่อไปนี้ โดยขึ้นกับความชำนาญธาตุของ Shinobu:\r\n",
+          "descriptions": [
+            "ปริมาณการรักษาเพิ่มขึ้น: 75% ของความชำนาญธาตุ;",
+            "สร้างความเสียหายเพิ่มขึ้น: 25% ของความชำนาญธาตุ"
+          ]
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "To Cloister Compassion",
+          "description": "พื้นที่ผลกระทบของ Gyoei Narukami Kariyama Rite เพิ่มขึ้น 50%\r\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "To Forsake Fortune",
+          "description": "ช่วงเวลาต่อเนื่องของ Grass Ring of Santification เพิ่มขึ้น 3 วินาที\r\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "To Sequester Sorrow",
+          "description": "เพิ่มเลเวลสกิลของ Sanctifying Ring ขึ้น 3 ระดับ\r\nเพิ่มได้สูงสุดถึงระดับ 15\r\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "To Sever Sealing",
+          "description": "เมื่อตัวละครที่อยู่ภายใต้สถานะ Grass Ring of Sanctification ของ Shinobu ใช้การโจมตีปกติ, การชาร์จโจมตี และการโจมตีพุ่งลงจากอากาศถูกศัตรู ตรา Thundergrass Mark จะร่วงหล่นลงมายังตำแหน่งของศัตรู และสร้างความเสียหายไฟฟ้าวงกว้าง เป็น 9.7% ของพลังชีวิตสูงสุดของ Shinobu\r\nเอฟเฟกต์นี้จะเกิดขึ้นได้มากสุด 1 ครั้ง ในทุก 5 วินาที\r\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "To Cease Courtesies",
+          "description": "เพิ่มเลเวลสกิลของ Gyoei Narukami Kariyama Rite ขึ้น 3 ระดับ\r\nเพิ่มได้สูงสุดถึงระดับ 15\r\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
+          "title": "To Ward Weakness",
+          "description": "เมื่อ Kuki Shinobu ได้รับความเสียหายมากพอที่จะทำให้เธอหมดสติ ความเสียหายในครั้งนี้ จะไม่ทำให้เธอหมดสติ โดยที่เอฟเฟกต์นี้ จะเกิดขึ้นโดยอัตโนมัติเมื่อพลังชีวิตของ Kuki Shinobu เหลือ 1 และในทุก 60 วินาที จะเกิดขึ้นได้เพียงหนึ่งครั้ง\r\nเมื่อพลังชีวิตของ Kuki Shinobu ลดลงต่ำกว่า 25% จะเพิ่มความชำนาญธาตุของตนเองขึ้น 150 หน่วย เป็นเวลา 15 วินาที ซึ่งในทุก 60 วินาที เอฟเฟกต์นี้จะเกิดขึ้นได้เพียงหนึ่งครั้ง\r\n",
           "descriptions": []
         }
       ]

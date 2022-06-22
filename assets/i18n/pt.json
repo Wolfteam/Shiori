@@ -3187,86 +3187,127 @@
     {
       "key": "kuki-shinobu",
       "name": "Kuki Shinobu",
-      "title": "",
-      "description": "",
+      "title": "Erradicadora das Preocupações",
+      "description": "Uma talentosa e confiável ajudante da Gangue Arataki — Nota: Talentosa e confiável descreve a ajudante, mas não a Gangue Arataki.",
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Lâmina Escondida de Shinobu",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Ataque Normal",
+              "description": "Realiza até 4 golpes rápidos.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Ataque Carregado",
+              "description": "Consome uma certa quantidade de Stamina para desferir 2 golpes rápidos com a espada.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Ataque Imersivo",
+              "description": "Mergulha em pleno ar para golpear o chão, causando Dano aos inimigos ao longo do caminho e infligindo Dano em uma AdE durante o impacto.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "Dano do 1° Golpe|{param1}",
+            "Dano do 2° Golpe|{param2}",
+            "Dano do 3° Golpe|{param3}",
+            "Dano do 4° Golpe|{param4}",
+            "Dano de Ataque Carregado|{param5} + {param6}",
+            "Consumo de Stamina de Ataque Carregado|{param7}",
+            "Dano Durante a Queda|{param8}",
+            "Dano de Queda de Baixa/Alta Altitude|{param9} / {param10}"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
+          "title": "Anel Santificador",
+          "description": "Cria um Anel de Grama Santificada que consome parte da Vida para infligir Dano Electro contra os inimigos ao redor.\r\nAnel de Grama Santificada.\r\nSegue o personagem ativo no campo de batalha. A cada 1.5s inflige Dano Electro contra os inimigos ao redor e regenera Vida para personagens dentro da AdE do anel no campo de batalha. A quantidade de Vida restaurada é baseada na Vida Máxima de Kuki Shinobu.\r\nA Vida consumida para usar essa habilidade não reduzirá a Vida atual de Kuki Shinobu para menos de 20%.\r\n",
           "abilities": [],
-          "stats": []
+          "stats": [
+            "Dano de Habilidade|{param1}",
+            "Cura de Anel de Grama Santificada|{param2}% Max HP + {param3}",
+            "Dano de Anel de Grama Santificada|{param4}",
+            "Consumo da Habilidade|{param5}% Current HP",
+            "Duração|{param6}s",
+            "Recarga|{param7}s"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
+          "title": "Ritual Semeador Narukami",
+          "description": "Crava uma lâmina expurgadora do mal no chão, criando uma barreira purificadora do mal em frente, infligindo Dano Electro contínuo contra os inimigos dentro dela baseado na Vida Máxima de Kuki Shinobu.\r\nAo lançar essa habilidade, se a Vida de Kuki Shinobu for menor ou igual a 50%, a duração da barreira será prolongada.\r\n",
           "abilities": [],
-          "stats": []
+          "stats": [
+            "Dano Único|{param1} Max HP",
+            "Dano Total|{param2} / {param3} Max HP",
+            "Duração|{param4}s / {param5}s",
+            "Recarga|{param6}s",
+            "Energia Elemental|{param7}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "Rezas Prolongadas",
+          "description": "Ganha 25% de recompensas a mais quando enviada numa Expedição em Inazuma por 20 horas.\r\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
+          "title": "Ambição Libertadora",
+          "description": "Quando a Vida de Kuki Shinobu não for superior a 50%, o Bônus de Cura é aumentado em 15%.\r\n",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
+          "title": "Local da Calma",
+          "description": "Anel Santificador obtém os seguintes bônus baseados na Proficiência Elemental de Kuki Shinobu:\r\n",
+          "descriptions": [
+            "Aumento de Cura baseado em 75% da Proficiência Elemental;",
+            "Aumento de Dano baseado em 25% da Proficiência Elemental."
+          ]
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "Compaixão Renegada",
+          "description": "Aumenta a AdE de Ritual Semeador Narukami em 50%.\r\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "Fortuna Renegada",
+          "description": "Aumenta a duração do Anel de Grama Santificada em 3s.\r\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "Dor Renegada",
+          "description": "Aumenta o nível de Anel Santificador em 3.\r\nO nível máximo de elevação é 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "Reclusão Renegada",
+          "description": "Quando o personagem está no estado de Anel de Grama Santificada de Kuki Shinobu e seu Ataque Normal, Ataque Carregado ou Ataque Imersivo atinge o inimigo, uma marca de Grama dos Trovões cairá na posição do adversário, e infligirá Dano Electro em AdE baseado em 9.7% da Vida Máxima de Kuki Shinobu.\r\nEsse efeito pode ocorrer até uma vez a cada 5s.\r\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "Sem Cortesia",
+          "description": "Aumenta o nível de Ritual Semeador Narukami em 3.\r\nO nível máximo de elevação é 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
+          "title": "Evitando a Fraqueza",
+          "description": "Quando Kuki Shinobu sofre Dano que pode derrotá-la, esse Dano não a derrotará. Esse efeito será desencadeado automaticamente quando sua Vida atingir 1, e pode ocorrer uma vez a cada 60s.\r\nQuando a Vida de Kuki Shinobu for inferior a 25%, aumentará sua Proficiência Elemental em 150 pontos por 15s. Esse efeito pode ocorrer uma vez a cada 60s.\r\n",
           "descriptions": []
         }
       ]

@@ -1041,7 +1041,7 @@
       "isFemale": true,
       "region": "anotherWorld",
       "role": "dps",
-      "tier": "b",
+      "tier": "c",
       "birthday": "04/04",
       "subStatType": "cryoDmgBonusPercentage",
       "ascensionMaterials": [
@@ -3165,7 +3165,7 @@
       "isFemale": false,
       "region": "inazuma",
       "role": "dps",
-      "tier": "s",
+      "tier": "a",
       "birthday": "06/01",
       "subStatType": "critRatePercentage",
       "ascensionMaterials": [
@@ -5278,7 +5278,7 @@
       "isFemale": true,
       "region": "liyue",
       "role": "offFieldDps",
-      "tier": "ss",
+      "tier": "s",
       "birthday": "02/14",
       "subStatType": "electroDmgBonusPercentage",
       "ascensionMaterials": [
@@ -8614,7 +8614,7 @@
       "isFemale": false,
       "region": "mondstadt",
       "role": "dps",
-      "tier": "s",
+      "tier": "a",
       "birthday": "04/30",
       "subStatType": "critRatePercentage",
       "ascensionMaterials": [
@@ -9665,7 +9665,7 @@
       "isFemale": true,
       "region": "mondstadt",
       "role": "support",
-      "tier": "a",
+      "tier": "b",
       "birthday": "01/18",
       "subStatType": "cryoDmgBonusPercentage",
       "ascensionMaterials": [
@@ -13071,7 +13071,7 @@
       "isFemale": true,
       "region": "liyue",
       "role": "dps",
-      "tier": "ss",
+      "tier": "sss",
       "birthday": "12/02",
       "subStatType": "critDmgPercentage",
       "ascensionMaterials": [
@@ -14212,7 +14212,7 @@
       "isFemale": false,
       "region": "inazuma",
       "role": "support",
-      "tier": "a",
+      "tier": "b",
       "birthday": "05/18",
       "subStatType": "geoDmgBonusPercentage",
       "ascensionMaterials": [
@@ -18553,7 +18553,7 @@
       "isFemale": false,
       "region": "mondstadt",
       "role": "dps",
-      "tier": "a",
+      "tier": "b",
       "birthday": "11/30",
       "subStatType": "energyRechargePercentage",
       "ascensionMaterials": [
@@ -20639,7 +20639,7 @@
       "isFemale": false,
       "region": "inazuma",
       "role": "dps",
-      "tier": "s",
+      "tier": "a",
       "birthday": "03/26",
       "subStatType": "critDmgPercentage",
       "ascensionMaterials": [
@@ -22985,7 +22985,7 @@
       "isFemale": true,
       "region": "mondstadt",
       "role": "dps",
-      "tier": "s",
+      "tier": "a",
       "birthday": "07/27",
       "subStatType": "pyroDmgBonusPercentage",
       "ascensionMaterials": [
@@ -23965,7 +23965,7 @@
       "isFemale": true,
       "region": "inazuma",
       "role": "burstSupport",
-      "tier": "a",
+      "tier": "b",
       "birthday": "07/14",
       "subStatType": "atkPercentage",
       "ascensionMaterials": [
@@ -24960,12 +24960,12 @@
       "image": "kuki-shinobu.png",
       "fullImage": "kuki-shinobu.png",
       "secondFullImage": null,
-      "isComingSoon": true,
-      "isNew": false,
-      "isFemale": false,
+      "isComingSoon": false,
+      "isNew": true,
+      "isFemale": true,
       "region": "inazuma",
-      "role": "na",
-      "tier": "a",
+      "role": "support",
+      "tier": "b",
       "birthday": "07/27",
       "subStatType": "hpPercentage",
       "ascensionMaterials": [
@@ -25608,7 +25608,7 @@
                 6.0,
                 6.38,
                 6.75,
-                7.13
+                7.12
               ]
             },
             {
@@ -25741,6 +25741,46 @@
             {
               "key": "param2",
               "values": [
+                25.23,
+                27.13,
+                29.02,
+                31.54,
+                33.43,
+                35.33,
+                37.85,
+                40.37,
+                42.9,
+                45.42,
+                47.94,
+                50.47,
+                53.62,
+                56.78,
+                59.93
+              ]
+            },
+            {
+              "key": "param3",
+              "values": [
+                43.26,
+                46.5,
+                49.75,
+                54.07,
+                57.32,
+                60.56,
+                64.89,
+                69.21,
+                73.54,
+                77.86,
+                82.19,
+                86.52,
+                91.92,
+                97.33,
+                102.74
+              ]
+            },
+            {
+              "key": "param4",
+              "values": [
                 2.0,
                 2.0,
                 2.0,
@@ -25759,7 +25799,7 @@
               ]
             },
             {
-              "key": "param3",
+              "key": "param5",
               "values": [
                 3.5,
                 3.5,
@@ -25779,7 +25819,7 @@
               ]
             },
             {
-              "key": "param4",
+              "key": "param6",
               "values": [
                 15.0,
                 15.0,
@@ -25799,7 +25839,7 @@
               ]
             },
             {
-              "key": "param5",
+              "key": "param7",
               "values": [
                 60.0,
                 60.0,
@@ -25870,7 +25910,74 @@
           "image": "kuki-shinobu_c6.png"
         }
       ],
-      "builds": [],
+      "builds": [
+        {
+          "isRecommended": true,
+          "type": "support",
+          "subType": "none",
+          "skillPriorities": [
+            "elementalSkill",
+            "elementalBurst"
+          ],
+          "weaponKeys": [
+            "freedom-sworn",
+            "favonius-sword",
+            "iron-sting"
+          ],
+          "artifacts": [
+            {
+              "oneKey": "tenacity-of-the-millelith",
+              "multiples": [],
+              "stats": [
+                "hp",
+                "atk",
+                "hpPercentage",
+                "hpPercentage",
+                "hpPercentage"
+              ]
+            }
+          ],
+          "subStatsToFocus": [
+            "hpPercentage",
+            "elementalMastery",
+            "critRatePercentage",
+            "energyRechargePercentage"
+          ]
+        },
+        {
+          "isRecommended": false,
+          "type": "support",
+          "subType": "elementalMastery",
+          "skillPriorities": [
+            "elementalSkill",
+            "elementalBurst"
+          ],
+          "weaponKeys": [
+            "freedom-sworn",
+            "favonius-sword",
+            "iron-sting"
+          ],
+          "artifacts": [
+            {
+              "oneKey": "tenacity-of-the-millelith",
+              "multiples": [],
+              "stats": [
+                "hp",
+                "atk",
+                "elementalMastery",
+                "elementalMastery",
+                "elementalMastery"
+              ]
+            }
+          ],
+          "subStatsToFocus": [
+            "elementalMastery",
+            "hpPercentage",
+            "critRatePercentage",
+            "energyRechargePercentage"
+          ]
+        }
+      ],
       "stats": [
         {
           "level": 1,
@@ -28164,7 +28271,7 @@
       "isFemale": true,
       "region": "liyue",
       "role": "dps",
-      "tier": "a",
+      "tier": "b",
       "birthday": "08/26",
       "subStatType": "geoDmgBonusPercentage",
       "ascensionMaterials": [
@@ -32855,7 +32962,7 @@
       "isFemale": false,
       "region": "mondstadt",
       "role": "dps",
-      "tier": "a",
+      "tier": "b",
       "birthday": "09/09",
       "subStatType": "physDmgPercentage",
       "ascensionMaterials": [
@@ -34016,7 +34123,7 @@
       "isFemale": true,
       "region": "mondstadt",
       "role": "burstSupport",
-      "tier": "a",
+      "tier": "b",
       "birthday": "01/24",
       "subStatType": "atkPercentage",
       "ascensionMaterials": [
@@ -35147,7 +35254,7 @@
       "isFemale": true,
       "region": "inazuma",
       "role": "support",
-      "tier": "a",
+      "tier": "s",
       "birthday": "02/22",
       "subStatType": "hydroDmgBonusPercentage",
       "ascensionMaterials": [
@@ -36266,7 +36373,7 @@
       "isFemale": true,
       "region": "inazuma",
       "role": "support",
-      "tier": "s",
+      "tier": "b",
       "birthday": "10/19",
       "subStatType": "elementalMastery",
       "ascensionMaterials": [
@@ -37473,7 +37580,7 @@
       "isFemale": true,
       "region": "liyue",
       "role": "support",
-      "tier": "s",
+      "tier": "a",
       "birthday": "03/10",
       "subStatType": "atkPercentage",
       "ascensionMaterials": [
@@ -38628,8 +38735,8 @@
       "isNew": false,
       "isFemale": false,
       "region": "inazuma",
-      "role": "support",
-      "tier": "a",
+      "role": "dps",
+      "tier": "b",
       "birthday": "07/24",
       "subStatType": "anemoDmgBonusPercentage",
       "ascensionMaterials": [
@@ -40592,7 +40699,7 @@
       "isFemale": false,
       "region": "snezhnaya",
       "role": "dps",
-      "tier": "ss",
+      "tier": "s",
       "birthday": "07/20",
       "subStatType": "hydroDmgBonusPercentage",
       "ascensionMaterials": [
@@ -41964,7 +42071,7 @@
       "isFemale": false,
       "region": "inazuma",
       "role": "support",
-      "tier": "a",
+      "tier": "b",
       "birthday": "01/09",
       "subStatType": "atkPercentage",
       "ascensionMaterials": [
@@ -47511,7 +47618,7 @@
       "isFemale": false,
       "region": "mondstadt",
       "role": "offFieldDps",
-      "tier": "sss",
+      "tier": "s",
       "birthday": "06/16",
       "subStatType": "energyRechargePercentage",
       "ascensionMaterials": [
@@ -48580,7 +48687,7 @@
       "isFemale": true,
       "region": "liyue",
       "role": "offFieldDps",
-      "tier": "ss",
+      "tier": "sss",
       "birthday": "11/02",
       "subStatType": "elementalMastery",
       "ascensionMaterials": [
@@ -53089,7 +53196,7 @@
       "isFemale": true,
       "region": "inazuma",
       "role": "offFieldDps",
-      "tier": "s",
+      "tier": "a",
       "birthday": "06/27",
       "subStatType": "critRatePercentage",
       "ascensionMaterials": [
@@ -54099,7 +54206,7 @@
       "isFemale": true,
       "region": "liyue",
       "role": "dps",
-      "tier": "a",
+      "tier": "b",
       "birthday": "07/28",
       "subStatType": "pyroDmgBonusPercentage",
       "ascensionMaterials": [
@@ -55166,11 +55273,11 @@
       "fullImage": "yelan.png",
       "secondFullImage": null,
       "isComingSoon": false,
-      "isNew": true,
+      "isNew": false,
       "isFemale": true,
       "region": "liyue",
       "role": "offFieldDps",
-      "tier": "a",
+      "tier": "s",
       "birthday": "04/20",
       "subStatType": "critRatePercentage",
       "ascensionMaterials": [
@@ -56235,7 +56342,7 @@
       "isFemale": true,
       "region": "inazuma",
       "role": "dps",
-      "tier": "a",
+      "tier": "s",
       "birthday": "06/21",
       "subStatType": "critRatePercentage",
       "ascensionMaterials": [
@@ -57315,7 +57422,7 @@
       "isFemale": true,
       "region": "liyue",
       "role": "support",
-      "tier": "a",
+      "tier": "b",
       "birthday": "05/21",
       "subStatType": "energyRechargePercentage",
       "ascensionMaterials": [

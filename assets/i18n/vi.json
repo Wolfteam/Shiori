@@ -3247,86 +3247,133 @@
     {
       "key": "kuki-shinobu",
       "name": "Kuki Shinobu",
-      "title": "",
-      "description": "",
+      "title": "Gạt Bỏ Phiền Não",
+      "description": "Trợ thủ của Bang Arataki có năng lực và đáng tin cậy. Lưu ý: Mô tả có năng lực và đáng tin cậy không phải là Bang Arataki mà là trợ thủ.",
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Tấn Công Thường - Lưỡi Kiếm Shinobu",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Tấn Công Thường",
+              "description": "Thực hiện tối đa 4 lần đánh kiếm liên tiếp.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Trọng Kích",
+              "description": "Tiêu hao thể lực nhất định, đánh ra hai kiếm về phía trước trong chớp mắt.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Tấn Công Khi Đáp",
+              "description": "Đáp xuống đất từ trên không, tấn công kẻ địch trên đường và gây sát thương phạm vi khi chạm đất.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "Sát Thương Lần 1|{param1}",
+            "Sát Thương Lần 2|{param2}",
+            "Sát Thương Lần 3|{param3}",
+            "Sát Thương Lần 4|{param4}",
+            "Sát Thương Trọng Kích|{param5} + {param6}",
+            "Thể lực Trọng Kích tiêu hao|{param7}",
+            "Sát Thương Khi Rơi|{param8}",
+            "Sát Thương Khi Rơi Từ Độ Cao Thấp/Cao|{param9} / {param10}"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Vòng Cỏ Sấm Thánh Hóa",
+          "description": "Kết Vòng Cỏ Thánh Hóa, tiêu hao một lượng HP để gây Sát Thương Nguyên Tố Lôi cho kẻ địch xung quanh.\r\n",
+          "abilities": [
+            {
+              "name": "Vòng Cỏ Thánh Hóa",
+              "description": "Sẽ đi theo nhân vật trong trận. Mỗi 1.5s sẽ gây Sát Thương Nguyên Tố Lôi cho kẻ địch xung quanh, đồng thời hồi phục HP cho nhân vật đang chiến đấu trong đó, lượng hồi phục sẽ căn cứ vào giới hạn HP của Kuki Shinobu.\r\nLượng HP tiêu hao để thi triển kỹ năng này tối đa chỉ khiến HP của Kuki Shinobu giảm đến 20%\r\n",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "Sát Thương Kỹ Năng|{param1}",
+            "Lượng Trị Liệu Vòng Cỏ Thánh Hóa|{param2}% Max HP + {param3}",
+            "Sát Thương Vòng Cỏ Thánh Hóa|{param4}",
+            "Kỹ năng tiêu hao|{param5}% Current HP",
+            "Thời Gian Kéo Dài|{param6}s",
+            "CD|{param7}s"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
+          "title": "Nghi Lễ Gyoei Narukami Kariyama",
+          "description": "Cắm thanh kiếm đuổi tà xuống đất, tạo kết giới thanh tẩy tà ma ở phía trước, căn cứ vào giới hạn HP của Kuki Shinobu để liên tục gây Sát Thương Nguyên Tố Lôi cho kẻ địch trong đó.\r\nKhi thi triển, nếu HP của Shinobu thấp hơn hoặc bằng 50% sẽ tăng thời gian tồn tại của kết giới.\r\n",
           "abilities": [],
-          "stats": []
+          "stats": [
+            "Sát Thương Đơn Lẻ|{param1} Max HP",
+            "Tổng Sát Thương|{param2} / {param3} Max HP",
+            "Thời Gian Duy Trì|{param4}s / {param5}s",
+            "CD|{param6}s",
+            "Năng Lượng Nguyên Tố|{param7}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "Lời Cầu Nguyện Lâu Dài",
+          "description": "Khi làm nhiệm vụ Phái Đi Thám Hiểm có thời gian là 20 giờ ở Inazuma, phần thưởng nhận được tăng 25%.\r\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
+          "title": "Ý Chí Đột Phá",
+          "description": "Khi HP của Shinobu không cao hơn 50%, lượng trị liệu tăng 15%.\r\n",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
+          "title": "Nơi An Lòng",
+          "description": "Vòng Cỏ Sấm Thánh Hóa sẽ tăng sức mạnh dựa vào Tinh Thông Nguyên Tố của Shinobu:\r\n",
+          "descriptions": [
+            "Tăng lượng trị liệu dựa trên 75% Tinh Thông Nguyên Tố;",
+            "Tăng sát thương dựa trên 25% Tinh Thông Nguyên Tố."
+          ]
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "Từ Bỏ Thương Hại",
+          "description": "Phạm vi ảnh hưởng của Nghi Lễ Gyoei Narukami Kariyama tăng 50%.\r\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "Từ Bỏ Thời Vận",
+          "description": "Thời gian duy trì của Vòng Cỏ Thánh Hóa tăng 3s.\r\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "Từ Bỏ Khổ Đau",
+          "description": "Cấp kỹ năng Vòng Cỏ Sấm Thánh Hóa +3.\r\nTăng tối đa đến cấp 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "Từ Bỏ Phong Bế",
+          "description": "Nhân vật trong trạng thái Vòng Cỏ Thánh Hóa của Shinobu khi tấn công thường, trọng kích hoặc tấn công khi đáp trúng kẻ địch, Lôi Thảo Ấn sẽ giáng xuống vị trí của kẻ địch, gây Sát Thương Phạm Vi Nguyên Tố Lôi bằng 9.7% giới hạn HP của Shinobu.\r\nHiệu quả này mỗi 5s tối đa kích hoạt một lần.\r\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "Từ Bỏ Xu Nịnh",
+          "description": "Cấp kỹ năng Nghi Lễ Gyoei Narukami Kariyama +3.\r\nTăng tối đa đến cấp 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
+          "title": "Từ Bỏ Nhu Nhược",
+          "description": "Kuki Shinobu sau khi nhận sát thương chí tử sẽ không gục ngã, hiệu ứng này sẽ tự động kích hoạt khi HP của Shinobu giảm còn 1, mỗi 60s tối đa kích hoạt một lần.\r\nKhi HP của Shinobu giảm đến dưới 25% sẽ tăng 150 điểm tinh thông cho bản thân, duy trì 15s, hiệu quả này mỗi 60s tối đa kích hoạt một lần.\r\n",
           "descriptions": []
         }
       ]

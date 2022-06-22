@@ -866,6 +866,33 @@
         "sacrificial-sword"
       ],
       "version": 2.7
+    },
+    {
+      "type": "character",
+      "from": "2022-06-21T00:00:00",
+      "until": "2022-07-12T00:00:00",
+      "itemKeys": [
+        "arataki-itto",
+        "kuki-shinobu",
+        "chongyun",
+        "gorou"
+      ],
+      "version": 2.7
+    },
+    {
+      "type": "weapon",
+      "from": "2022-06-21T00:00:00",
+      "until": "2022-07-12T00:00:00",
+      "itemKeys": [
+        "redhorn-stonethresher",
+        "memory-of-dust",
+        "lithic-blade",
+        "lions-roar",
+        "dragons-bane",
+        "sacrificial-fragments",
+        "the-stringless"
+      ],
+      "version": 2.7
     }
   ]
 }
