@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.4.2+62 (21/06/2022)
+- Cookie
+
+
 ## 1.4.0+60 (31/05/2022)
 - Banner History
 - Charts
