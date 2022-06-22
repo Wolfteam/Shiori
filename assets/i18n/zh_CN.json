@@ -3252,85 +3252,132 @@
       "key": "kuki-shinobu",
       "name": "久岐忍",
       "title": "烦恼刈除",
-      "description": "测试角色",
+      "description": "干练可靠的「荒泷派」的副手——特别注明：干练可靠形容的不是「荒泷派」而是副手。",
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "普通攻击·忍流飞刃斩",
+          "description": "",
+          "abilities": [
+            {
+              "name": "普通攻击",
+              "description": "进行至多四段的连续剑击。\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "重击",
+              "description": "消耗一定体力，瞬间向前方挥出两剑。\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "下落攻击",
+              "description": "从空中下坠冲击地面，攻击下落路径上的敌人，并在落地时造成范围伤害。",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "一段伤害|{param1}",
+            "二段伤害|{param2}",
+            "三段伤害|{param3}",
+            "四段伤害|{param4}",
+            "重击伤害|{param5} + {param6}",
+            "重击体力消耗|{param7}",
+            "下坠期间伤害|{param8}",
+            "低空/高空坠地冲击伤害|{param9} / {param10}"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "越祓雷草之轮",
+          "description": "编结越祓草轮，消耗一部分生命值，对周围的敌人造成雷元素伤害。\r\n",
+          "abilities": [
+            {
+              "name": "越祓草轮",
+              "description": "将跟随当前场上角色。每1.5秒，对周围的敌人造成雷元素伤害，并为范围内的当前场上角色恢复生命值，回复量受益于久岐忍的生命值上限。\r\n施放该技能所消耗的生命值，至多使久岐忍的生命值降低至20%。\r\n",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "技能伤害|{param1}",
+            "越祓草轮治疗量|{param2}% Max HP + {param3}",
+            "越祓草轮伤害|{param4}",
+            "技能消耗|{param5}% Current HP",
+            "持续时间|{param6}s",
+            "冷却时间|{param7}s"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
+          "title": "御咏鸣神刈山祭",
+          "description": "将退邪之刃刺入地面，在前方创造清净邪物的结界，基于久岐忍的生命值上限，对其中的敌人持续造成雷元素伤害。\r\n施放时，若久岐忍的生命值低于或等于50%，结界的持续时间将会延长。\r\n",
           "abilities": [],
-          "stats": []
+          "stats": [
+            "单次伤害|{param1} Max HP",
+            "总伤害|{param2} / {param3} Max HP",
+            "持续时间|{param4}s / {param5}s",
+            "冷却时间|{param6}s",
+            "元素能量|{param7}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "久时的祝祷",
+          "description": "在稻妻执行时长为20小时的探索派遣任务时，获得的奖励增加25%。\r\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
+          "title": "破笼之志",
+          "description": "久岐忍的生命值不高于50%时，治疗加成提升15%。\r\n",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
+          "title": "安心之所",
+          "description": "基于久岐忍的元素精通，越祓雷草之轮获得以下提升：\r\n",
+          "descriptions": [
+            "治疗量提升值：元素精通的75%；",
+            "伤害提升值：元素精通的25%。"
+          ]
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "割舍怜悯之心",
+          "description": "御咏鸣神刈山祭的影响范围提升50%。\r\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "割舍侥幸之心",
+          "description": "越祓草轮的持续时间延长3秒。\r\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "割舍痛苦之心",
+          "description": "越祓雷草之轮的技能等级提高3级。\r\n至多提升至15级。\r\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "割舍封闭之心",
+          "description": "处于久岐忍自己的越祓草轮状态下的角色，在普通攻击、重击或下落攻击命中敌人时，雷草标将落在敌人所在的位置，基于久岐忍生命值上限的9.7%，造成雷元素范围伤害。\r\n该效果每5秒至多触发一次。\r\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "割舍逢迎之心",
+          "description": "御咏鸣神刈山祭的技能等级提高3级。\r\n至多提升至15级。\r\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
+          "title": "割舍软弱之心",
+          "description": "久岐忍承受足以使她倒下的伤害时，此次伤害不会使她倒下，这个效果在久岐忍生命值为1时会自动触发，该效果每60秒只能触发一次。\r\n久岐忍生命值降至25%以下时，会提升自身150点精通，持续15秒，该效果每60秒只能触发一次。\r\n",
           "descriptions": []
         }
       ]
