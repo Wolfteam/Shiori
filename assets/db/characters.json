@@ -24960,7 +24960,7 @@
       "image": "kuki-shinobu.png",
       "fullImage": "kuki-shinobu.png",
       "secondFullImage": null,
-      "isComingSoon": true,
+      "isComingSoon": false,
       "isNew": true,
       "isFemale": true,
       "region": "inazuma",
@@ -25910,7 +25910,74 @@
           "image": "kuki-shinobu_c6.png"
         }
       ],
-      "builds": [],
+      "builds": [
+        {
+          "isRecommended": true,
+          "type": "support",
+          "subType": "none",
+          "skillPriorities": [
+            "elementalSkill",
+            "elementalBurst"
+          ],
+          "weaponKeys": [
+            "freedom-sworn",
+            "favonius-sword",
+            "iron-sting"
+          ],
+          "artifacts": [
+            {
+              "oneKey": "tenacity-of-the-millelith",
+              "multiples": [],
+              "stats": [
+                "hp",
+                "atk",
+                "hpPercentage",
+                "hpPercentage",
+                "hpPercentage"
+              ]
+            }
+          ],
+          "subStatsToFocus": [
+            "hpPercentage",
+            "elementalMastery",
+            "critRatePercentage",
+            "energyRechargePercentage"
+          ]
+        },
+        {
+          "isRecommended": false,
+          "type": "support",
+          "subType": "elementalMastery",
+          "skillPriorities": [
+            "elementalSkill",
+            "elementalBurst"
+          ],
+          "weaponKeys": [
+            "freedom-sworn",
+            "favonius-sword",
+            "iron-sting"
+          ],
+          "artifacts": [
+            {
+              "oneKey": "tenacity-of-the-millelith",
+              "multiples": [],
+              "stats": [
+                "hp",
+                "atk",
+                "elementalMastery",
+                "elementalMastery",
+                "elementalMastery"
+              ]
+            }
+          ],
+          "subStatsToFocus": [
+            "elementalMastery",
+            "hpPercentage",
+            "critRatePercentage",
+            "energyRechargePercentage"
+          ]
+        }
+      ],
       "stats": [
         {
           "level": 1,
