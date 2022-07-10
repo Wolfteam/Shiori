@@ -3279,14 +3279,14 @@
             }
           ],
           "stats": [
-            "SCH Phase 1|{param1}",
-            "SCH Phase 2|{param2}",
-            "SCH Phase 3|{param3}",
-            "SCH Phase 4|{param4}",
-            "SCH heftiger Schläge|{param5} + {param6}",
+            "SCH Phase 1|{param1}%",
+            "SCH Phase 2|{param2}%",
+            "SCH Phase 3|{param3}%",
+            "SCH Phase 4|{param4}%",
+            "SCH heftiger Schläge|{param5}% + {param6}%",
             "Ausdauerverbrauch heftiger Schläge|{param7}",
-            "SCH beim Fallen|{param8}",
-            "SCH beim Fallen aus niedriger/großer Höhe|{param9} / {param10}"
+            "SCH beim Fallen|{param8}%",
+            "SCH beim Fallen aus niedriger/großer Höhe|{param9}% / {param10}%"
           ]
         },
         {
@@ -3301,9 +3301,9 @@
             }
           ],
           "stats": [
-            "Fähigkeits-SCH|{param1}",
+            "Fähigkeits-SCH|{param1}%",
             "Grasring-Heilung|{param2}% Max HP + {param3}",
-            "Grasring-SCH|{param4}",
+            "Grasring-SCH|{param4}%",
             "Kosten|{param5}% Current HP",
             "Dauer|{param6}s",
             "Abklingzeit|{param7}s"
@@ -3315,8 +3315,8 @@
           "description": "Stößt die Klinge der Geistervertreibung in den Boden und erschafft vor sich eine Barriere, die das Böse beseitigt und Gegnern darin basierend auf Kuki Shinobus max. LP fortlaufend Elektro-Schaden zufügt.\r\nVerlängert die Wirkungsdauer der Barriere, wenn Kuki Shinobu beim Auslösen der Fähigkeit nicht mehr als 50 % LP hat.\r\n",
           "abilities": [],
           "stats": [
-            "Einzel-SCH|{param1} Max HP",
-            "Gesamt-SCH|{param2} / {param3} Max HP",
+            "Einzel-SCH|{param1}% Max HP",
+            "Gesamt-SCH|{param2}% / {param3}% Max HP",
             "Dauer|{param4}s / {param5}s",
             "Abklingzeit|{param6}s",
             "Elementarenergie|{param7}"

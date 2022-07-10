@@ -3274,14 +3274,14 @@
             }
           ],
           "stats": [
-            "Daño de 1er golpe|{param1}",
-            "Daño de 2.º golpe|{param2}",
-            "Daño de 3er golpe|{param3}",
-            "Daño de 4.º golpe|{param4}",
-            "Daño de ATQ Cargado|{param5} + {param6}",
+            "Daño de 1er golpe|{param1}%",
+            "Daño de 2.º golpe|{param2}%",
+            "Daño de 3er golpe|{param3}%",
+            "Daño de 4.º golpe|{param4}%",
+            "Daño de ATQ Cargado|{param5}% + {param6}%",
             "Coste de Aguante de ATQ Cargado|{param7}",
-            "Daño de Caída|{param8}",
-            "Daño de impacto de caída baja/alta|{param9} / {param10}"
+            "Daño de Caída|{param8}%",
+            "Daño de impacto de caída baja/alta|{param9}% / {param10}%"
           ]
         },
         {
@@ -3296,9 +3296,9 @@
             }
           ],
           "stats": [
-            "Daño de habilidad|{param1}",
+            "Daño de habilidad|{param1}%",
             "Curación de anillo purificador|{param2}% Max HP + {param3}",
-            "Daño de anillo purificador|{param4}",
+            "Daño de anillo purificador|{param4}%",
             "Consumo de Vida|{param5}% Current HP",
             "Duración|{param6}s",
             "TdE|{param7}s"
@@ -3310,8 +3310,8 @@
           "description": "Clava una espada exorcizante en el suelo para crear frente a sí misma una barrera purificadora, la cual inflige Daño Electro de forma continua en función de la Vida Máx. de Kuki Shinobu contra los enemigos que se encuentren en el AdE de la barrera.\r\nSi al usar esta habilidad la Vida de Kuki Shinobu es igual o inferior al 50%, la duración de la barrera será mayor.\r\n",
           "abilities": [],
           "stats": [
-            "Daño por cada golpe|{param1} Max HP",
-            "Daño total|{param2} / {param3} Max HP",
+            "Daño por cada golpe|{param1}% Max HP",
+            "Daño total|{param2}% / {param3}% Max HP",
             "Duración|{param4}s / {param5}s",
             "TdE|{param6}s",
             "Energía Elemental|{param7}"

@@ -3212,14 +3212,14 @@
             }
           ],
           "stats": [
-            "Dano do 1° Golpe|{param1}",
-            "Dano do 2° Golpe|{param2}",
-            "Dano do 3° Golpe|{param3}",
-            "Dano do 4° Golpe|{param4}",
-            "Dano de Ataque Carregado|{param5} + {param6}",
+            "Dano do 1° Golpe|{param1}%",
+            "Dano do 2° Golpe|{param2}%",
+            "Dano do 3° Golpe|{param3}%",
+            "Dano do 4° Golpe|{param4}%",
+            "Dano de Ataque Carregado|{param5}% + {param6}%",
             "Consumo de Stamina de Ataque Carregado|{param7}",
-            "Dano Durante a Queda|{param8}",
-            "Dano de Queda de Baixa/Alta Altitude|{param9} / {param10}"
+            "Dano Durante a Queda|{param8}%",
+            "Dano de Queda de Baixa/Alta Altitude|{param9}% / {param10}%"
           ]
         },
         {
@@ -3228,9 +3228,9 @@
           "description": "Cria um Anel de Grama Santificada que consome parte da Vida para infligir Dano Electro contra os inimigos ao redor.\r\nAnel de Grama Santificada.\r\nSegue o personagem ativo no campo de batalha. A cada 1.5s inflige Dano Electro contra os inimigos ao redor e regenera Vida para personagens dentro da AdE do anel no campo de batalha. A quantidade de Vida restaurada é baseada na Vida Máxima de Kuki Shinobu.\r\nA Vida consumida para usar essa habilidade não reduzirá a Vida atual de Kuki Shinobu para menos de 20%.\r\n",
           "abilities": [],
           "stats": [
-            "Dano de Habilidade|{param1}",
+            "Dano de Habilidade|{param1}%",
             "Cura de Anel de Grama Santificada|{param2}% Max HP + {param3}",
-            "Dano de Anel de Grama Santificada|{param4}",
+            "Dano de Anel de Grama Santificada|{param4}%",
             "Consumo da Habilidade|{param5}% Current HP",
             "Duração|{param6}s",
             "Recarga|{param7}s"
@@ -3242,8 +3242,8 @@
           "description": "Crava uma lâmina expurgadora do mal no chão, criando uma barreira purificadora do mal em frente, infligindo Dano Electro contínuo contra os inimigos dentro dela baseado na Vida Máxima de Kuki Shinobu.\r\nAo lançar essa habilidade, se a Vida de Kuki Shinobu for menor ou igual a 50%, a duração da barreira será prolongada.\r\n",
           "abilities": [],
           "stats": [
-            "Dano Único|{param1} Max HP",
-            "Dano Total|{param2} / {param3} Max HP",
+            "Dano Único|{param1}% Max HP",
+            "Dano Total|{param2}% / {param3}% Max HP",
             "Duração|{param4}s / {param5}s",
             "Recarga|{param6}s",
             "Energia Elemental|{param7}"

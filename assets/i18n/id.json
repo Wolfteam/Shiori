@@ -3277,14 +3277,14 @@
             }
           ],
           "stats": [
-            "DMG Tahap 1|{param1}",
-            "DMG Tahap 2|{param2}",
-            "DMG Tahap 3|{param3}",
-            "DMG Tahap 4|{param4}",
-            "DMG Charged Attack|{param5} + {param6}",
+            "DMG Tahap 1|{param1}%",
+            "DMG Tahap 2|{param2}%",
+            "DMG Tahap 3|{param3}%",
+            "DMG Tahap 4|{param4}%",
+            "DMG Charged Attack|{param5}% + {param6}%",
             "Konsumsi Stamina Charged Attack|{param7}",
-            "DMG Selama Plunging|{param8}",
-            "DMG Plunging Attack Min./Maks.|{param9} / {param10}"
+            "DMG Selama Plunging|{param8}%",
+            "DMG Plunging Attack Min./Maks.|{param9}% / {param10}%"
           ]
         },
         {
@@ -3299,9 +3299,9 @@
             }
           ],
           "stats": [
-            "DMG Skill|{param1}",
+            "DMG Skill|{param1}%",
             "Pemulihan Grass Ring of Sanctification|{param2}% Max HP + {param3}",
-            "DMG Grass Ring of Sanctification|{param4}",
+            "DMG Grass Ring of Sanctification|{param4}%",
             "Mengonsumsi|{param5}% Current HP",
             "Durasi|{param6}s",
             "Cooldown|{param7}s"
@@ -3313,8 +3313,8 @@
           "description": "Menancapkan pedang pengusir roh jahat di tanah, dan membuat perisai yang membersihkan area yang kotor, mengakibatkan Electro DMG secara berkelanjutan kepada musuh di dalam Area efeknya berdasarkan Max HP Kuki Shinobu.\r\nJika HP Shinobu kurang atau berada pada 50% saat skill ini digunakan, perisai akan bertahan lebih lama.\r\n",
           "abilities": [],
           "stats": [
-            "DMG Instan Tunggal|{param1} Max HP",
-            "Total DMG|{param2} / {param3} Max HP",
+            "DMG Instan Tunggal|{param1}% Max HP",
+            "Total DMG|{param2}% / {param3}% Max HP",
             "Durasi|{param4}s / {param5}s",
             "Cooldown|{param6}s",
             "Konsumsi Energy|{param7}"

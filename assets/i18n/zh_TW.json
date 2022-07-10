@@ -3276,14 +3276,14 @@
             }
           ],
           "stats": [
-            "一段傷害|{param1}",
-            "二段傷害|{param2}",
-            "三段傷害|{param3}",
-            "四段傷害|{param4}",
-            "重擊傷害|{param5} + {param6}",
+            "一段傷害|{param1}%",
+            "二段傷害|{param2}%",
+            "三段傷害|{param3}%",
+            "四段傷害|{param4}%",
+            "重擊傷害|{param5}% + {param6}%",
             "重擊體力消耗|{param7}",
-            "下墜期間傷害|{param8}",
-            "低空/高空墜地衝擊傷害|{param9} / {param10}"
+            "下墜期間傷害|{param8}%",
+            "低空/高空墜地衝擊傷害|{param9}% / {param10}%"
           ]
         },
         {
@@ -3298,9 +3298,9 @@
             }
           ],
           "stats": [
-            "技能傷害|{param1}",
+            "技能傷害|{param1}%",
             "越祓草輪治療量|{param2}% Max HP + {param3}",
-            "越祓草輪傷害|{param4}",
+            "越祓草輪傷害|{param4}%",
             "技能消耗|{param5}% Current HP",
             "持續時間|{param6}s",
             "冷卻時間|{param7}s"
@@ -3312,8 +3312,8 @@
           "description": "將退邪之刃刺入地面，在前方創造清淨邪物的結界，基於久岐忍的生命值上限，對其中的敵人持續造成雷元素傷害。\r\n施放時，若久岐忍的生命值低於或等於50%，則結界的持續時間將會延長。\r\n",
           "abilities": [],
           "stats": [
-            "單次傷害|{param1} Max HP",
-            "總傷害|{param2} / {param3} Max HP",
+            "單次傷害|{param1}% Max HP",
+            "總傷害|{param2}% / {param3}% Max HP",
             "持續時間|{param4}s / {param5}s",
             "冷卻時間|{param6}s",
             "元素能量|{param7}"

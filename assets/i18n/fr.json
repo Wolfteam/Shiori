@@ -3283,14 +3283,14 @@
             }
           ],
           "stats": [
-            "DGT 1er coup|{param1}",
-            "DGT 2e coup|{param2}",
-            "DGT 3e coup|{param3}",
-            "DGT 4e coup|{param4}",
-            "DGT attaque chargée|{param5} + {param6}",
+            "DGT 1er coup|{param1}%",
+            "DGT 2e coup|{param2}%",
+            "DGT 3e coup|{param3}%",
+            "DGT 4e coup|{param4}%",
+            "DGT attaque chargée|{param5}% + {param6}%",
             "Coût d'endurance attaque chargée|{param7}",
-            "DGT durant la chute|{param8}",
-            "DGT chute basse/élevée|{param9} / {param10}"
+            "DGT durant la chute|{param8}%",
+            "DGT chute basse/élevée|{param9}% / {param10}%"
           ]
         },
         {
@@ -3305,9 +3305,9 @@
             }
           ],
           "stats": [
-            "DGT compétence|{param1}",
+            "DGT compétence|{param1}%",
             "Soins d'anneau d'herbes de consécration|{param2}% Max HP + {param3}",
-            "DGT anneau d'herbes de consécration|{param4}",
+            "DGT anneau d'herbes de consécration|{param4}%",
             "PV consommés|{param5}% Current HP",
             "Durée|{param6}s",
             "Temps de recharge|{param7}s"
@@ -3319,8 +3319,8 @@
           "description": "Enfonce une lame d'adjuration dans le sol pour créer une barrière qui purifie la zone de tout ce qui est malsain, infligeant de façon continue des DGT Électro aux ennemis à l'intérieur selon les PV max de Kuki Shinobu.\r\nSi les PV de Shinobu sont inférieurs ou égaux à 50 % lors de l'utilisation de cette compétence, la barrière dure plus longtemps.\r\n",
           "abilities": [],
           "stats": [
-            "DGT uniques|{param1} Max HP",
-            "DGT totaux|{param2} / {param3} Max HP",
+            "DGT uniques|{param1}% Max HP",
+            "DGT totaux|{param2}% / {param3}% Max HP",
             "Durée|{param4}s / {param5}s",
             "TdR|{param6}s",
             "Énergie élémentaire|{param7}"

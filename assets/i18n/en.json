@@ -3274,14 +3274,14 @@
             }
           ],
           "stats": [
-            "1-Hit DMG|{param1}",
-            "2-Hit DMG|{param2}",
-            "3-Hit DMG|{param3}",
-            "4-Hit DMG|{param4}",
-            "Charged Attack DMG|{param5} + {param6}",
+            "1-Hit DMG|{param1}%",
+            "2-Hit DMG|{param2}%",
+            "3-Hit DMG|{param3}%",
+            "4-Hit DMG|{param4}%",
+            "Charged Attack DMG|{param5}% + {param6}%",
             "Charged Attack Stamina Cost|{param7}",
-            "Plunge DMG|{param8}",
-            "Low/High Plunge DMG|{param9} / {param10}"
+            "Plunge DMG|{param8}%",
+            "Low/High Plunge DMG|{param9}% / {param10}%"
           ]
         },
         {
@@ -3296,9 +3296,9 @@
             }
           ],
           "stats": [
-            "Skill DMG|{param1}",
+            "Skill DMG|{param1}%",
             "Grass Ring of Sanctification Healing|{param2}% Max HP + {param3}",
-            "Grass Ring of Sanctification DMG|{param4}",
+            "Grass Ring of Sanctification DMG|{param4}%",
             "Activation Cost|{param5}% Current HP",
             "Duration|{param6}s",
             "CD|{param7}s"
@@ -3310,8 +3310,8 @@
           "description": "Stabs an evil-excoriating blade into the ground, creating a field that cleanses the area of all that is foul, dealing continuous Electro DMG to opponents within its AoE based on Shinobu's Max HP.\r\nIf Shinobu's HP is less than or equal to 50% when this skill is used, the field will last longer.\r\n",
           "abilities": [],
           "stats": [
-            "Single Instance DMG|{param1} Max HP",
-            "Total DMG|{param2} / {param3} Max HP",
+            "Single Instance DMG|{param1}% Max HP",
+            "Total DMG|{param2}% / {param3}% Max HP",
             "Duration|{param4}s / {param5}s",
             "CD|{param6}s",
             "Energy Cost|{param7}"

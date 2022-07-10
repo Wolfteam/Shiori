@@ -3272,14 +3272,14 @@
             }
           ],
           "stats": [
-            "Sát Thương Lần 1|{param1}",
-            "Sát Thương Lần 2|{param2}",
-            "Sát Thương Lần 3|{param3}",
-            "Sát Thương Lần 4|{param4}",
-            "Sát Thương Trọng Kích|{param5} + {param6}",
+            "Sát Thương Lần 1|{param1}%",
+            "Sát Thương Lần 2|{param2}%",
+            "Sát Thương Lần 3|{param3}%",
+            "Sát Thương Lần 4|{param4}%",
+            "Sát Thương Trọng Kích|{param5}% + {param6}%",
             "Thể lực Trọng Kích tiêu hao|{param7}",
-            "Sát Thương Khi Rơi|{param8}",
-            "Sát Thương Khi Rơi Từ Độ Cao Thấp/Cao|{param9} / {param10}"
+            "Sát Thương Khi Rơi|{param8}%",
+            "Sát Thương Khi Rơi Từ Độ Cao Thấp/Cao|{param9}% / {param10}%"
           ]
         },
         {
@@ -3294,9 +3294,9 @@
             }
           ],
           "stats": [
-            "Sát Thương Kỹ Năng|{param1}",
+            "Sát Thương Kỹ Năng|{param1}%",
             "Lượng Trị Liệu Vòng Cỏ Thánh Hóa|{param2}% Max HP + {param3}",
-            "Sát Thương Vòng Cỏ Thánh Hóa|{param4}",
+            "Sát Thương Vòng Cỏ Thánh Hóa|{param4}%",
             "Kỹ năng tiêu hao|{param5}% Current HP",
             "Thời Gian Kéo Dài|{param6}s",
             "CD|{param7}s"
@@ -3308,8 +3308,8 @@
           "description": "Cắm thanh kiếm đuổi tà xuống đất, tạo kết giới thanh tẩy tà ma ở phía trước, căn cứ vào giới hạn HP của Kuki Shinobu để liên tục gây Sát Thương Nguyên Tố Lôi cho kẻ địch trong đó.\r\nKhi thi triển, nếu HP của Shinobu thấp hơn hoặc bằng 50% sẽ tăng thời gian tồn tại của kết giới.\r\n",
           "abilities": [],
           "stats": [
-            "Sát Thương Đơn Lẻ|{param1} Max HP",
-            "Tổng Sát Thương|{param2} / {param3} Max HP",
+            "Sát Thương Đơn Lẻ|{param1}% Max HP",
+            "Tổng Sát Thương|{param2}% / {param3}% Max HP",
             "Thời Gian Duy Trì|{param4}s / {param5}s",
             "CD|{param6}s",
             "Năng Lượng Nguyên Tố|{param7}"
