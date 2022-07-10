@@ -8,7 +8,7 @@ import 'package:shiori/presentation/shared/loading.dart';
 const _script = '''
     let wasRemoved = false;
     function removeAds(){
-      //console.log("Removing ads..");
+      console.log("Removing ads..");
       let topNav = document.getElementById("topnav");
       if (topNav) {
         topNav.remove();
@@ -44,10 +44,42 @@ const _script = '''
         document.getElementsByClassName("mhy-hoyolab-app-header")[0].remove();
       }
     }
+    
+    function removeAds2() {
+      const ad1 = document.getElementsByClassName('MapLayout_BottomAd');
+      if (ad1.length > 0)
+        ad1[0].remove();
+        
+      const ad2 = document.getElementsByClassName('MapLayout_BottomMobiAd');
+      if (ad2.length > 0)
+        ad2[0].remove();
+        
+      const appbars = document.getElementsByClassName('MuiAppBar-root');
+      if (appbars.length > 0)
+        appbars[0].remove();
+        
+      const buttons = document.getElementsByClassName('MuiTab-root');
+      if (buttons.length > 0) {
+        buttons[2].remove();
+        buttons[1].remove();
+      }
+      
+      const extraButtons = document.getElementsByClassName('TopNav');
+      if (extraButtons.length > 0) {
+        extraButtons[0].remove();
+        extraButtons[1].remove();
+      }
+    }
+    
     setTimeout(removeAds, 500);
     setTimeout(removeAds, 1000);
     setTimeout(removeAds, 2000);
     setTimeout(removeAds, 3500);
+    
+    setTimeout(removeAds2, 500);
+    setTimeout(removeAds2, 1000);
+    setTimeout(removeAds2, 2000);
+    setTimeout(removeAds2, 3500);
     ''';
 
 class MapPage extends StatelessWidget {
