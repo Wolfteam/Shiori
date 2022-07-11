@@ -55,7 +55,7 @@ dependencies:
   package_info_plus: ^1.4.2
   path: ^1.8.0
   path_provider: ^2.0.8
-  permission_handler: ^8.3.0
+  permission_handler: ^10.0.0
   pull_to_refresh: ^2.0.0
   purchases_flutter: ^3.10.0
   rate_my_app: ^1.1.2
