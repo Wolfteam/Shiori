@@ -163,7 +163,12 @@ void main() {
         expect(detail.role, character.roleType);
         expect(detail.isComingSoon, character.isComingSoon);
         expect(detail.isNew, character.isNew);
-        expect(detail.tier, isIn(['d', 'c', 'b', 'a', 's', 'ss', 'sss']));
+        if (detail.isComingSoon) {
+          expect(detail.tier, 'na');
+        } else {
+          expect(detail.tier, isIn(['d', 'c', 'b', 'a', 's', 'ss', 'sss']));
+        }
+
         if (isTraveler) {
           checkAsset(detail.fullSecondImagePath!);
         } else {
