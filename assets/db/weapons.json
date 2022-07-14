@@ -13413,6 +13413,322 @@
       ]
     },
     {
+      "key": "kagotsurube-isshin",
+      "image": "kagotsurube-isshin.png",
+      "type": "sword",
+      "atk": 42.0,
+      "rarity": 4,
+      "secondaryStat": "atkPercentage",
+      "secondaryStatValue": 9.0,
+      "location": "quest",
+      "isComingSoon": false,
+      "ascensionMaterials": [
+        {
+          "level": 20,
+          "materials": [
+            {
+              "key": "mask-of-the-wicked-lieutenant",
+              "quantity": 3,
+              "type": "weaponPrimary"
+            },
+            {
+              "key": "gloomy-statuette",
+              "quantity": 3,
+              "type": "weapon"
+            },
+            {
+              "key": "spectral-husk",
+              "quantity": 2,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 5000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "level": 40,
+          "materials": [
+            {
+              "key": "mask-of-the-tigers-bite",
+              "quantity": 3,
+              "type": "weaponPrimary"
+            },
+            {
+              "key": "gloomy-statuette",
+              "quantity": 12,
+              "type": "weapon"
+            },
+            {
+              "key": "spectral-husk",
+              "quantity": 8,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 15000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "level": 50,
+          "materials": [
+            {
+              "key": "mask-of-the-tigers-bite",
+              "quantity": 6,
+              "type": "weaponPrimary"
+            },
+            {
+              "key": "dark-statuette",
+              "quantity": 6,
+              "type": "weapon"
+            },
+            {
+              "key": "spectral-heart",
+              "quantity": 6,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 20000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "level": 60,
+          "materials": [
+            {
+              "key": "mask-of-the-one-horned",
+              "quantity": 3,
+              "type": "weaponPrimary"
+            },
+            {
+              "key": "dark-statuette",
+              "quantity": 12,
+              "type": "weapon"
+            },
+            {
+              "key": "spectral-heart",
+              "quantity": 9,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 30000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "level": 70,
+          "materials": [
+            {
+              "key": "mask-of-the-one-horned",
+              "quantity": 6,
+              "type": "weaponPrimary"
+            },
+            {
+              "key": "deathly-statuette",
+              "quantity": 9,
+              "type": "weapon"
+            },
+            {
+              "key": "spectral-nucleus",
+              "quantity": 6,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 35000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "level": 80,
+          "materials": [
+            {
+              "key": "mask-of-the-kijin",
+              "quantity": 4,
+              "type": "weaponPrimary"
+            },
+            {
+              "key": "deathly-statuette",
+              "quantity": 18,
+              "type": "weapon"
+            },
+            {
+              "key": "spectral-nucleus",
+              "quantity": 12,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 45000,
+              "type": "currency"
+            }
+          ]
+        }
+      ],
+      "craftingMaterials": [],
+      "stats": [
+        {
+          "level": 1,
+          "baseAtk": 42.0,
+          "statValue": 9.0,
+          "isAnAscension": false
+        },
+        {
+          "level": 5,
+          "baseAtk": 56.0,
+          "statValue": 10.5,
+          "isAnAscension": false
+        },
+        {
+          "level": 10,
+          "baseAtk": 74.0,
+          "statValue": 12.3,
+          "isAnAscension": false
+        },
+        {
+          "level": 15,
+          "baseAtk": 91.0,
+          "statValue": 14.1,
+          "isAnAscension": false
+        },
+        {
+          "level": 20,
+          "baseAtk": 109.0,
+          "statValue": 15.9,
+          "isAnAscension": false
+        },
+        {
+          "level": 20,
+          "baseAtk": 135.0,
+          "statValue": 15.9,
+          "isAnAscension": true
+        },
+        {
+          "level": 25,
+          "baseAtk": 152.0,
+          "statValue": 17.7,
+          "isAnAscension": false
+        },
+        {
+          "level": 30,
+          "baseAtk": 170.0,
+          "statValue": 19.5,
+          "isAnAscension": false
+        },
+        {
+          "level": 35,
+          "baseAtk": 187.0,
+          "statValue": 21.4,
+          "isAnAscension": false
+        },
+        {
+          "level": 40,
+          "baseAtk": 205.0,
+          "statValue": 23.2,
+          "isAnAscension": false
+        },
+        {
+          "level": 40,
+          "baseAtk": 231.0,
+          "statValue": 23.2,
+          "isAnAscension": true
+        },
+        {
+          "level": 45,
+          "baseAtk": 248.0,
+          "statValue": 25.0,
+          "isAnAscension": false
+        },
+        {
+          "level": 50,
+          "baseAtk": 266.0,
+          "statValue": 26.8,
+          "isAnAscension": false
+        },
+        {
+          "level": 50,
+          "baseAtk": 292.0,
+          "statValue": 26.8,
+          "isAnAscension": true
+        },
+        {
+          "level": 55,
+          "baseAtk": 309.0,
+          "statValue": 28.6,
+          "isAnAscension": false
+        },
+        {
+          "level": 60,
+          "baseAtk": 327.0,
+          "statValue": 30.4,
+          "isAnAscension": false
+        },
+        {
+          "level": 60,
+          "baseAtk": 353.0,
+          "statValue": 30.4,
+          "isAnAscension": true
+        },
+        {
+          "level": 65,
+          "baseAtk": 370.0,
+          "statValue": 32.3,
+          "isAnAscension": false
+        },
+        {
+          "level": 70,
+          "baseAtk": 388.0,
+          "statValue": 34.1,
+          "isAnAscension": false
+        },
+        {
+          "level": 70,
+          "baseAtk": 414.0,
+          "statValue": 34.1,
+          "isAnAscension": true
+        },
+        {
+          "level": 75,
+          "baseAtk": 431.0,
+          "statValue": 35.9,
+          "isAnAscension": false
+        },
+        {
+          "level": 80,
+          "baseAtk": 449.0,
+          "statValue": 37.7,
+          "isAnAscension": false
+        },
+        {
+          "level": 80,
+          "baseAtk": 475.0,
+          "statValue": 37.7,
+          "isAnAscension": true
+        },
+        {
+          "level": 85,
+          "baseAtk": 492.0,
+          "statValue": 39.5,
+          "isAnAscension": false
+        },
+        {
+          "level": 90,
+          "baseAtk": 510.0,
+          "statValue": 41.3,
+          "isAnAscension": false
+        }
+      ]
+    },
+    {
       "key": "lions-roar",
       "image": "lions-roar.png",
       "type": "sword",

@@ -1143,6 +1143,93 @@
       ]
     },
     {
+      "key": "collei",
+      "name": "Collei",
+      "title": "???",
+      "description": "",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ]
+    },
+    {
       "key": "diluc",
       "name": "Diluc",
       "title": "The Dark Side of Dawn",
@@ -1414,6 +1501,93 @@
             "Meningkatkan 30% Bonus Pemulihan HP saat HP sama dengan atau kurang dari 50%.",
             "Elemental Mastery +200 ketika HP di atas 50%."
           ]
+        }
+      ]
+    },
+    {
+      "key": "dori",
+      "name": "Dori",
+      "title": "???",
+      "description": "",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
         }
       ]
     },
@@ -3277,14 +3451,14 @@
             }
           ],
           "stats": [
-            "DMG Tahap 1|{param1}",
-            "DMG Tahap 2|{param2}",
-            "DMG Tahap 3|{param3}",
-            "DMG Tahap 4|{param4}",
-            "DMG Charged Attack|{param5} + {param6}",
+            "DMG Tahap 1|{param1}%",
+            "DMG Tahap 2|{param2}%",
+            "DMG Tahap 3|{param3}%",
+            "DMG Tahap 4|{param4}%",
+            "DMG Charged Attack|{param5}% + {param6}%",
             "Konsumsi Stamina Charged Attack|{param7}",
-            "DMG Selama Plunging|{param8}",
-            "DMG Plunging Attack Min./Maks.|{param9} / {param10}"
+            "DMG Selama Plunging|{param8}%",
+            "DMG Plunging Attack Min./Maks.|{param9}% / {param10}%"
           ]
         },
         {
@@ -3299,9 +3473,9 @@
             }
           ],
           "stats": [
-            "DMG Skill|{param1}",
+            "DMG Skill|{param1}%",
             "Pemulihan Grass Ring of Sanctification|{param2}% Max HP + {param3}",
-            "DMG Grass Ring of Sanctification|{param4}",
+            "DMG Grass Ring of Sanctification|{param4}%",
             "Mengonsumsi|{param5}% Current HP",
             "Durasi|{param6}s",
             "Cooldown|{param7}s"
@@ -3313,8 +3487,8 @@
           "description": "Menancapkan pedang pengusir roh jahat di tanah, dan membuat perisai yang membersihkan area yang kotor, mengakibatkan Electro DMG secara berkelanjutan kepada musuh di dalam Area efeknya berdasarkan Max HP Kuki Shinobu.\r\nJika HP Shinobu kurang atau berada pada 50% saat skill ini digunakan, perisai akan bertahan lebih lama.\r\n",
           "abilities": [],
           "stats": [
-            "DMG Instan Tunggal|{param1} Max HP",
-            "Total DMG|{param2} / {param3} Max HP",
+            "DMG Instan Tunggal|{param1}% Max HP",
+            "Total DMG|{param2}% / {param3}% Max HP",
             "Durasi|{param4}s / {param5}s",
             "Cooldown|{param6}s",
             "Konsumsi Energy|{param7}"
@@ -5022,86 +5196,139 @@
     {
       "key": "shikanoin-heizou",
       "name": "Shikanoin Heizou",
-      "title": "",
+      "title": "Analytical Harmony",
       "description": "Seorang detektif jenius dari Tenryou Commission. Mempunyai intuisi yang kuat dan pemikiran yang tajam.",
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Fudou Style Martial Arts",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Normal Attack",
+              "description": "Melancarkan hingga 5 serangan tinju yang diperkuat oleh angin, mengakibatkan Anemo DMG.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Charged Attack",
+              "description": "Mengonsumsi sejumlah Stamina untuk mengakibatkan tendangan yang mengakibatkan Anemo DMG Area.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Plunging Attack",
+              "description": "Mengumpulkan kekuatan Anemo, Heizou menerjang tanah, mengakibatkan DMG pada musuh di jalur terjangan dan mengakibatkan Anemo DMG Area saat mendarat.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "DMG Tahap 1|{param1}%",
+            "DMG Tahap 2|{param2}%",
+            "DMG Tahap 3|{param3}%",
+            "DMG Tahap 4|{param4}% + {param5}% + {param6}%",
+            "DMG Tahap 5|{param7}%",
+            "Charged Attack|{param8}%",
+            "Konsumsi Stamina Charged Attack|{param9}",
+            "DMG Selama Plunging|{param10}%",
+            "DMG Plunging Attack Min./Maks.|{param11}% / {param12}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Heartstopper Strike",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Tekan",
+              "description": "Menggunakan angin kencang untuk meluncurkan Heartstopper Strike yang mengakibatkan Anemo DMG.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Tahan",
+              "description": "Mengisi energi untuk melepaskan pukulan yang lebih kuat. Heizou akan mengdapatkan efek Declension saat sedang mengisi energi, efek tersebut akan meningkatkan kekuatan Heartstopper Strike. Saat tombol skill dilepaskan atau saat skill sudah selesai mengisi energi, Heizou akan maju menerjang ke depan dan mengakibatkan Anemo DMG.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Declension",
+              "description": "Meningkatkan kekuatan Heartstopper Strike berikutnya. Maks. 4 lapis.\r\nSaat mempunyai 4 lapis Declension, akan tercipta lapisan Conviction yang akan mengakibatkan Hearstopper Strike berikutnya menjadi lebih kuat lagi dan mempunyai Area efek yang lebih besar.\r\n",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "DMG Skill|{param1}%",
+            "DMG Bonus Declension|{param2}%/stack",
+            "DMG Bonus Conviction|{param3}%",
+            "Durasi Declension|{param4}s",
+            "Cooldown|{param5}s"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
+          "title": "Windmuster Kick",
+          "description": "Melompat ke udara dan menandang Fudou Style Vacuum Slugger ke arah lawan. Saat mengenai musuh, Fudou Style Vacuum Slugger akan menciptakan area berangin yang menarik objek dan musuh di sekitar, lalu mengakibatkan Anemo DMG Area.\r\nSaat Vacuum Slugger mengenai musuh yang terkena efek Hydro/Pyro/Cryo/Electro, maka musuh trsebut akan terkena Windmuster Iris yang akan meledak setelah beberapa saat dan mengakibatkan DMG Area dari tipe elemen yang disebutkan sebelumnya.\r\nVacuum Slugger dapat memukul maks. 4 musuh dengan menggunakan Windmuster Iris. Musuh tidak bisa terpengaruh efek Windmuster Iris dari elemen berbeda dalam waktu yang bersamaan.\r\n",
           "abilities": [],
-          "stats": []
+          "stats": [
+            "DMG Fudou Style Vacuum Slugger|{param1}%",
+            "DMG Windmuster Iris|{param2}%",
+            "Cooldown|{param3}s",
+            "Konsumsi Energy|{param4}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "Pre-Existing Guilt",
+          "description": "Mengurangi 20% konsumsi Stamina Karakter sendiri saat berlari.\r\nEfek tidak dapat ditumpuk dengan Talenta Pasif lain yang memiliki efek yang sama.\r\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
+          "title": "Paradoxical Practice",
+          "description": "Saat Shikanoin Heizou mengaktifkan reaksi Swirl saat dalam medan tempur, dia akan mendapatkan 1 lapis Declension untuk Heartstopper Strike. Efek ini terpicu setiap 0,1 detik.\r\n",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "NA",
-          "description": "",
+          "title": "Penetrative Reasoning",
+          "description": "Setelah Heartstopper Strike milik Shikanoin Heizou mengenai musuh, maka akan meningkatkan Elemental Mastery seluruh anggota party (tidak termasuk Shikanoin Heizou) sebesar 80 selama 10 detik.\r\n",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "Named Juvenile Casebook",
+          "description": "Setelah Shikanoin Heizou berada di medan tempur selama 5 detik, Normal Attack SPD-nya akan meningkat 15%. Lalu akan mendapatkan 1 lapis efek Declension dari Heartstopper Strike. Efek dapat terpicu setiap 10 detik.\r\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "Investigative Collection",
+          "description": "Efek tarikan dari Arresting Windtunnel yang diciptakan oleh Windmuster Kick menjadi semakin kuat dan durasinya bertambah menjadi 1 detik.\r\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "Esoteric Puzzle Book",
+          "description": "Meningkatkan 3 level Heartstopper Strike.\r\nMaksimum: Lv. 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "Tome of Lies",
+          "description": "Ledakan Windmuster Iris pertama di setiap Windmuster Kick akan memulihkan 9 Elemental Energy Shikanoin Heizou. Setiap ledakan berikutnya dalam Windmuster Kick tersebut masing-masing akan memulihkan 1,5 Energy tambahan untuk Heizou.\r\nSatu kali Windmuster Kick hanya dapat memulihkan maksimum hingga 13,5 Energy Heizou dengan cara ini.\r\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "Secret Archive",
+          "description": "Meningkatkan 3 level Windmuster Kick.\r\nMaksimum: Lv. 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
+          "title": "Curious Casefiles",
+          "description": "Setiap lapis Declension akan meningkatkan CRIT Rate Heartstopper Strike yang dilancarkan sebesar 4%. Saat Heizou memiliki Conviction, maka akan meningkatkan 32% CRIT DMG dari Heartstoppper Strike.\r\n",
           "descriptions": []
         }
       ]
@@ -5564,6 +5791,93 @@
           "key": "c6",
           "title": "Burning Heart",
           "description": "Saat mendapatkan atau memperbarui Blazing Barrier, DMG Normal, Charged, dan Plunging Attack yang diakibatkan semua anggota party akan meningkat 15% selama 6 detik.\r\n",
+          "descriptions": []
+        }
+      ]
+    },
+    {
+      "key": "tighnari",
+      "name": "Tighnari",
+      "title": "???",
+      "description": "",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
           "descriptions": []
         }
       ]
@@ -8106,6 +8420,14 @@
         "Mengakibatkan Elemental DMG akan meningkatkan {color}9{/color}% DMG selama 6 detik. Maksimum 2 lapis. Dapat terpicu setiap 1 detik.",
         "Mengakibatkan Elemental DMG akan meningkatkan {color}10{/color},5% DMG selama 6 detik. Maksimum 2 lapis. Dapat terpicu setiap 1 detik.",
         "Mengakibatkan Elemental DMG akan meningkatkan {color}12{/color}% DMG selama 6 detik. Maksimum 2 lapis. Dapat terpicu setiap 1 detik."
+      ]
+    },
+    {
+      "key": "kagotsurube-isshin",
+      "name": "Kagotsurube Isshin",
+      "description": "Pedang terkenal yang lahir di sebuah negara di ujung utara. Dengan mengemban nama \"Isshin\", pedang itu ternodai oleh banyak perbuatan jahat dalam perjalanannya kembali pulang.",
+      "refinements": [
+        "Saat Normal, Charged, atau Plunging Attack mengenai musuh, akan memicu Hewing Gale yang mengakibatkan DMG Area setara dengan 180% ATK dan meningkatkan 15% ATK selama 8 detik. Efek ini terpicu setiap 8 detik."
       ]
     },
     {

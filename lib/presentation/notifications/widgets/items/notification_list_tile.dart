@@ -48,6 +48,8 @@ class NotificationListTitle extends StatelessWidget {
     final typeIsValidForReduction = type != AppNotificationType.resin && type != AppNotificationType.realmCurrency;
     final extentRatio = SizeUtils.getExtentRatioForSlidablePane(context);
     return BlocProvider<NotificationTimerBloc>(
+      //the value key will take care of recreating the bloc provider when completesAt changes
+      key: ValueKey(completesAt),
       create: (ctx) => Injection.notificationTimerBloc..add(NotificationTimerEvent.init(completesAt: completesAt)),
       child: Slidable(
         key: ValueKey('$itemKey-$type'),

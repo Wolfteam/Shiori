@@ -1147,6 +1147,93 @@
       ]
     },
     {
+      "key": "collei",
+      "name": "Collei",
+      "title": "???",
+      "description": "",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ]
+    },
+    {
       "key": "diluc",
       "name": "다이루크",
       "title": "새벽의 어둠",
@@ -1418,6 +1505,93 @@
             "HP 50% 이하 - 받는 치유 보너스+ 30%",
             "HP 50% 초과 - 원소 마스터리+200pt"
           ]
+        }
+      ]
+    },
+    {
+      "key": "dori",
+      "name": "Dori",
+      "title": "???",
+      "description": "",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
         }
       ]
     },
@@ -3292,14 +3466,14 @@
             }
           ],
           "stats": [
-            "1단 공격 피해|{param1}",
-            "2단 공격 피해|{param2}",
-            "3단 공격 피해|{param3}",
-            "4단 공격 피해|{param4}",
-            "강공격 피해|{param5} + {param6}",
+            "1단 공격 피해|{param1}%",
+            "2단 공격 피해|{param2}%",
+            "3단 공격 피해|{param3}%",
+            "4단 공격 피해|{param4}%",
+            "강공격 피해|{param5}% + {param6}%",
             "강공격 스태미나 소모|{param7}",
-            "낙하 기간 피해|{param8}",
-            "저공/고공 추락 충격 피해|{param9} / {param10}"
+            "낙하 기간 피해|{param8}%",
+            "저공/고공 추락 충격 피해|{param9}% / {param10}%"
           ]
         },
         {
@@ -3314,9 +3488,9 @@
             }
           ],
           "stats": [
-            "스킬 피해|{param1}",
+            "스킬 피해|{param1}%",
             "제액의 륜 치유량|{param2}% Max HP + {param3}",
-            "제액의 륜 피해|{param4}",
+            "제액의 륜 피해|{param4}%",
             "스킬 소모|{param5}% Current HP",
             "지속 시간|{param6}s",
             "재사용 대기시간|{param7}s"
@@ -3328,8 +3502,8 @@
           "description": "퇴마의 칼날을 지면에 꽂아 전방에 있는 요괴를 처단하는 결계를 생성한다. 쿠키 시노부의 HP 최대치에 따라 결계 안의 적에게 지속적으로 번개 원소 피해를 준다.\r\n발동 시 쿠키 시노부의 HP가 50% 이하일 경우 결계 지속 시간이 연장된다.\r\n",
           "abilities": [],
           "stats": [
-            "1회 피해|{param1} Max HP",
-            "총 피해|{param2} / {param3} Max HP",
+            "1회 피해|{param1}% Max HP",
+            "총 피해|{param2}% / {param3}% Max HP",
             "지속 시간|{param4}s / {param5}s",
             "재사용 대기시간|{param6}s",
             "원소 에너지|{param7}"
@@ -5035,87 +5209,140 @@
     },
     {
       "key": "shikanoin-heizou",
-      "name": "Shikanoin Heizou",
-      "title": "",
-      "description": "",
+      "name": "시카노인 헤이조",
+      "title": "태평을 향한 마음",
+      "description": "텐료 봉행의 천재 소년 탐정. 예민한 직감에 맑은 마음을 가지고 있다",
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "일반 공격·부동류 격투술",
+          "description": "",
+          "abilities": [
+            {
+              "name": "일반 공격",
+              "description": "강풍의 힘을 받아 적과 격투를 펼친다. 최대 5번 공격해 바람 원소 피해를 준다.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "강공격",
+              "description": "일정 스태미나를 소모해 먼지바람을 일으키는 발차기를 시전해 바람 원소 피해를 준다.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "낙하 공격",
+              "description": "공중에서 땅을 내려찍어 경로상의 적을 공격하고 착지 시 바람 원소 범위 피해를 준다",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "1단 공격 피해|{param1}%",
+            "2단 공격 피해|{param2}%",
+            "3단 공격 피해|{param3}%",
+            "4단 공격 피해|{param4}% + {param5}% + {param6}%",
+            "5단 공격 피해|{param7}%",
+            "강공격 피해|{param8}%",
+            "강공격 스태미나 소모|{param9}",
+            "낙하 기간 피해|{param10}%",
+            "저공/고공 추락 충격 피해|{param11}% / {param12}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "쇄심권",
+          "description": "",
+          "abilities": [
+            {
+              "name": "짧은 터치",
+              "description": "질풍을 휘둘러 전방에 쇄심권을 시전해 바람 원소 피해를 준다.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "홀드",
+              "description": "힘을 모아 더욱 강력한 권법을 펼친다. 차지 기간 동안 쇄심권의 위력을 강화시키는 「변격」 효과를 지속적으로 획득한다. 스킬 버튼에서 손을 떼거나 차지가 종료되면 전방으로 쇄심권을 발동해 바람 원소 피해를 준다.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "변격",
+              "description": "다음 쇄심권으로 가하는 피해가 증가한다. 최대 중첩수: 4스택.\r\n4스택의 「변격」 보유 시, 「정론」 효과가 발생해 다음 쇄심권으로 가하는 피해가 다시 한번 증가하고 더 큰 영향 범위를 가지게 된다.\r\n",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "스킬 피해|{param1}%",
+            "변격 피해 증가|{param2}%/stack",
+            "정론 피해 증가|{param3}%",
+            "변격 지속 시간|{param4}s",
+            "재사용 대기시간|{param5}s"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
+          "title": "선풍각",
+          "description": "공중으로 뛰어오르며 발로 부동류 • 진공탄을 차 공격한다. 부동류 • 진공탄이 적에게 명중 시, 폭발하며 포박의 풍혈을 생성해 주변의 적과 물체에게 바람 원소 범위 피해를 준다.\r\n부동류 • 진공탄이 물 원소/불 원소/얼음 원소/번개 원소를 부착한 적에게 명중하면 해당 적에게 「선풍진안」 효과를 부여한다. 해당 효과는 잠시 후 폭발하며 사라지고 상응하는 원소 속성의 범위 피해를 준다.\r\n부동류 • 진공탄은 최대 4명의 적에게 「선풍진안」 효과를 부여할 수 있으며, 적에게 동시에 여러 원소 속성의 「선풍진안」 효과를 부여할 수 없다.\r\n",
           "abilities": [],
-          "stats": []
+          "stats": [
+            "부동류·진공탄 피해|{param1}%",
+            "선풍진안 피해|{param2}%",
+            "재사용 대기시간|{param3}s",
+            "원소 에너지|{param4}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "범인보다 한발 먼저",
+          "description": "파티 내 자신의 캐릭터의 대시 시 소모하는 스태미나가 20% 감소한다.\r\n같은 효과의 고유 특성과 중첩되지 않는다\r\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
+          "title": "반론의 고찰",
+          "description": "시카노인 헤이조가 필드에서 확산 반응을 일으키면 쇄심권의 「변격」 효과를 1스택 획득한다. 해당 효과는 0.1초마다 최대 1회 발동된다\r\n",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "NA",
-          "description": "",
+          "title": "원인 간파",
+          "description": "쇄심권이 적에게 명중한 후, 파티 내 모든 캐릭터(시카노인 헤이조 제외)의 원소 마스터리가 80pt 증가한다. 지속 시간: 10초\r\n",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "소년 사건부",
+          "description": "시카노인 헤이조 등장 후 5초 동안 일반 공격의 공격 속도가 15% 증가하고 쇄심권의 「변격」 효과 1스택을 획득한다. 해당 효과는 10초마다 최대 1회 발동한다\r\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "진상 조사 사건집",
+          "description": "선풍각에 의해 생성된 포박의 풍혈의 끌어당기는 효과가 강화되고, 지속 시간이 1초까지 증가한다\r\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "은밀한 수수께끼 모음집",
+          "description": "쇄심권의 스킬 레벨+3\r\n최대 Lv.15까지 상승\r\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "황당무계한 모노가타리",
+          "description": "첫 번째 선풍각 발동 중, 「선풍진안」이 첫 폭발을 일으키면 시카노인 헤이조의 원소 에너지가 9pt 회복된다. 이후 폭발할 때마다 시카노인 헤이조의 원소 에너지가 추가로 1.5pt 씩 회복된다.\r\n첫 번째 선풍각 발동 중, 해당 방식으로 시카노인 헤이조의 원소 에너지를 최대 13.5pt 회복할 수 있다\r\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "밀실 대도감",
+          "description": "선풍각의 스킬 레벨+3\r\n최대 Lv.15까지 상승\r\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
+          "title": "기상천외 사건 기록부",
+          "description": "쇄심권을 발동 시, 「변격」 1스택 당 이번 쇄심권의 치명타 확률이 4% 증가한다. 「정론」 보유 시, 이번 쇄심권의 치명타 피해가 32% 증가한다\r\n",
           "descriptions": []
         }
       ]
@@ -5584,6 +5811,93 @@
           "key": "c6",
           "title": "불타오르는 진심",
           "description": "타오르는 우명의 방패 획득 또는 갱신 시, 파티 내 모든 캐릭터의 일반 공격, 강공격, 낙하 공격으로 가하는 피해가 15% 증가한다. 지속 시간: 6초\r\n",
+          "descriptions": []
+        }
+      ]
+    },
+    {
+      "key": "tighnari",
+      "name": "Tighnari",
+      "title": "???",
+      "description": "",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
           "descriptions": []
         }
       ]
@@ -8138,6 +8452,14 @@
         "원소 피해를 가한 후 6초 동안 캐릭터가 가하는 피해가 {color}9{/color}% 증가한다. 최대 중첩수: 2회. 해당 효과는 1초마다 1번 발동한다",
         "원소 피해를 가한 후 6초 동안 캐릭터가 가하는 피해가 {color}10.5{/color}% 증가한다. 최대 중첩수: 2회. 해당 효과는 1초마다 1번 발동한다",
         "원소 피해를 가한 후 6초 동안 캐릭터가 가하는 피해가 {color}12{/color}% 증가한다. 최대 중첩수: 2회. 해당 효과는 1초마다 1번 발동한다"
+      ]
+    },
+    {
+      "key": "kagotsurube-isshin",
+      "name": "카고츠루베 잇신",
+      "description": "머나먼 북방의 왕국에서 탄생한 명검. 오직 「잇신」이란 두 글자를 위해 귀향의 길 위에서 수많은 죄악을 저지른 바 있다",
+      "refinements": [
+        "일반 공격, 강공격, 낙하 공격이 적에게 명중 시, 날카로운 바람으로 공격력의 180%에 해당하는 범위 피해를 주고, 공격력이 15% 증가한다. 지속 시간: 8초. 해당 효과는 8초마다 최대 1회 발동한다"
       ]
     },
     {

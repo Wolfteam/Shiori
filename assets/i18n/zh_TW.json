@@ -1144,6 +1144,93 @@
       ]
     },
     {
+      "key": "collei",
+      "name": "Collei",
+      "title": "???",
+      "description": "",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ]
+    },
+    {
       "key": "diluc",
       "name": "迪盧克",
       "title": "晨曦的暗面",
@@ -1415,6 +1502,93 @@
             "生命值低於或等於50%時，受治療加成提升30%；",
             "生命值高於50%時，元素精通提升200。"
           ]
+        }
+      ]
+    },
+    {
+      "key": "dori",
+      "name": "Dori",
+      "title": "???",
+      "description": "",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
         }
       ]
     },
@@ -3276,14 +3450,14 @@
             }
           ],
           "stats": [
-            "一段傷害|{param1}",
-            "二段傷害|{param2}",
-            "三段傷害|{param3}",
-            "四段傷害|{param4}",
-            "重擊傷害|{param5} + {param6}",
+            "一段傷害|{param1}%",
+            "二段傷害|{param2}%",
+            "三段傷害|{param3}%",
+            "四段傷害|{param4}%",
+            "重擊傷害|{param5}% + {param6}%",
             "重擊體力消耗|{param7}",
-            "下墜期間傷害|{param8}",
-            "低空/高空墜地衝擊傷害|{param9} / {param10}"
+            "下墜期間傷害|{param8}%",
+            "低空/高空墜地衝擊傷害|{param9}% / {param10}%"
           ]
         },
         {
@@ -3298,9 +3472,9 @@
             }
           ],
           "stats": [
-            "技能傷害|{param1}",
+            "技能傷害|{param1}%",
             "越祓草輪治療量|{param2}% Max HP + {param3}",
-            "越祓草輪傷害|{param4}",
+            "越祓草輪傷害|{param4}%",
             "技能消耗|{param5}% Current HP",
             "持續時間|{param6}s",
             "冷卻時間|{param7}s"
@@ -3312,8 +3486,8 @@
           "description": "將退邪之刃刺入地面，在前方創造清淨邪物的結界，基於久岐忍的生命值上限，對其中的敵人持續造成雷元素傷害。\r\n施放時，若久岐忍的生命值低於或等於50%，則結界的持續時間將會延長。\r\n",
           "abilities": [],
           "stats": [
-            "單次傷害|{param1} Max HP",
-            "總傷害|{param2} / {param3} Max HP",
+            "單次傷害|{param1}% Max HP",
+            "總傷害|{param2}% / {param3}% Max HP",
             "持續時間|{param4}s / {param5}s",
             "冷卻時間|{param6}s",
             "元素能量|{param7}"
@@ -5018,87 +5192,140 @@
     },
     {
       "key": "shikanoin-heizou",
-      "name": "Shikanoin Heizou",
-      "title": "",
+      "name": "鹿野院平藏",
+      "title": "心朝乂安",
       "description": "天領奉行的天才少年偵探，直覺敏銳，心思玲瓏。",
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "普通攻擊·不動流格鬥術",
+          "description": "",
+          "abilities": [
+            {
+              "name": "普通攻擊",
+              "description": "以強風加持的招式與敵人格鬥，進行至多五段的攻擊，造成風元素傷害。\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "重擊",
+              "description": "消耗一定體力，使出揚塵踢，造成風元素傷害。\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "下落攻擊",
+              "description": "凝聚強風的力量，從空中下墜衝擊地面，攻擊下落路徑上的敵人，並在落地時造成風元素範圍傷害。",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "一段傷害|{param1}%",
+            "二段傷害|{param2}%",
+            "三段傷害|{param3}%",
+            "四段傷害|{param4}% + {param5}% + {param6}%",
+            "五段傷害|{param7}%",
+            "重擊傷害|{param8}%",
+            "重擊體力消耗|{param9}",
+            "下墜期間傷害|{param10}%",
+            "低空/高空墜地衝擊傷害|{param11}% / {param12}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "勠心拳",
+          "description": "",
+          "abilities": [
+            {
+              "name": "點按",
+              "description": "驅使疾風，向前打出勠心拳，造成風元素傷害。\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "長按",
+              "description": "積蓄力量，以施展更為強大的拳勢。蓄力期間，將持續獲得能提升勠心拳威力的「變格」效果；鬆開技能或蓄力結束時，會向前打出勠心拳，造成風元素傷害。\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "變格",
+              "description": "提升下一次勠心拳造成的傷害，至多疊加4層。\r\n擁有4層「變格」時，將產生「正論」效果，使下一次勠心拳造成的傷害將進一步提高，並擁有更大的影響範圍。\r\n",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "技能傷害|{param1}%",
+            "變格傷害提升|{param2}%/stack",
+            "正論傷害提升|{param3}%",
+            "變格持續時間|{param4}s",
+            "冷卻時間|{param5}s"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
+          "title": "聚風蹴",
+          "description": "騰躍至空中，向敵人踢出不動流 • 真空彈。不動流 • 真空彈將在命中時炸裂，產生緝拿風穴，牽引附近的物體與敵人，造成風元素範圍傷害。\r\n不動流 • 真空彈命中處於水元素/火元素/冰元素/雷元素附著下的敵人時，會為這些敵人施加「聚風真眼」效果，該效果會在片刻後爆發消失，並造成對應元素屬性的範圍傷害。\r\n不動流 • 真空彈至多對4名命中的敵人施加「聚風真眼」；敵人無法同時處於多種元素屬性的「聚風真眼」狀態下。\r\n",
           "abilities": [],
-          "stats": []
+          "stats": [
+            "不動流·真空彈傷害|{param1}%",
+            "聚風真眼傷害|{param2}%",
+            "冷卻時間|{param3}s",
+            "元素能量|{param4}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "在罪之先",
+          "description": "隊伍中自己的角色衝刺消耗的體力降低20%。\r\n無法與效果完全相同的固有天賦疊加。\r\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
+          "title": "反論稽古",
+          "description": "鹿野院平藏在場上觸發擴散反應時，將獲得1層勠心拳的「變格」效果，該效果每0.1秒至多觸發一次。\r\n",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "NA",
-          "description": "",
+          "title": "因由勘破",
+          "description": "勠心拳命中敵人後，隊伍中所有角色（不包括鹿野院平藏自己）的元素精通提升80點，持續10秒。\r\n",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "稱名少年事件簿",
+          "description": "鹿野院平藏登場後的5秒內，普通攻擊的攻擊速度提升15%，並獲得1層勠心拳的「變格」效果，該效果每10秒最多觸發一次。\r\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "殊解諸因探案集",
+          "description": "聚風蹴產生的緝拿風穴牽引效果提升，且持續時間延長至1秒。\r\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "暗文隱語謎題冊",
+          "description": "勠心拳的技能等級提高3級。\r\n至多提升至15級。\r\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "虛言假說百物語",
+          "description": "在一次聚風蹴中，「聚風真眼」在第一次爆發後，將為鹿野院平藏恢復9點元素能量，此後每次爆發，都將分別為鹿野院平藏額外恢復1.5點元素能量，\r\n一次聚風蹴，至多依此方式為鹿野院平藏恢復13.5點元素能量。\r\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "禁室密所大圖鑑",
+          "description": "聚風蹴的技能等級提高3級。\r\n至多提升至15級。\r\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
+          "title": "奇想天開捕物帳",
+          "description": "施放勠心拳時，每層「變格」都將為本次勠心拳提升4%暴擊率。擁有「正論」時，本次勠心拳的暴擊傷害將提升32%。\r\n",
           "descriptions": []
         }
       ]
@@ -5557,6 +5784,93 @@
           "key": "c6",
           "title": "熾燒的至心",
           "description": "獲得或重置烈燒佑命護盾時，隊伍中所有角色的普通攻擊，重擊與下落攻擊造成的傷害提升15%，持續6秒。\r\n",
+          "descriptions": []
+        }
+      ]
+    },
+    {
+      "key": "tighnari",
+      "name": "Tighnari",
+      "title": "???",
+      "description": "",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
           "descriptions": []
         }
       ]
@@ -8089,6 +8403,14 @@
         "造成元素傷害後的6秒內，角色造成的傷害提高{color}9{/color}%，最多疊加兩層。該效果每秒只能觸發一次。",
         "造成元素傷害後的6秒內，角色造成的傷害提高{color}10.5{/color}%，最多疊加兩層。該效果每秒只能觸發一次。",
         "造成元素傷害後的6秒內，角色造成的傷害提高{color}12{/color}%，最多疊加兩層。該效果每秒只能觸發一次。"
+      ]
+    },
+    {
+      "key": "kagotsurube-isshin",
+      "name": "籠釣瓶一心",
+      "description": "於遙遠北國誕生之名刀，曾在歸鄉路上沾染無數罪惡，只為「一心」二字。",
+      "refinements": [
+        "普通攻擊、重擊或下落攻擊命中敵人時，將捲起切落風，造成180%攻擊力的範圍傷害，並且使攻擊力提升15%，持續8秒。該效果每8秒至多觸發一次。"
       ]
     },
     {

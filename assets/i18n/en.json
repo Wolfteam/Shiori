@@ -1142,6 +1142,93 @@
       ]
     },
     {
+      "key": "collei",
+      "name": "Collei",
+      "title": "???",
+      "description": "",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ]
+    },
+    {
       "key": "diluc",
       "name": "Diluc",
       "title": "The Dark Side of Dawn",
@@ -1413,6 +1500,93 @@
             "Increases Incoming Healing Bonus by 30% when HP falls below or is equal to 50%.",
             "Elemental Mastery increased by 200 when HP is above 50%."
           ]
+        }
+      ]
+    },
+    {
+      "key": "dori",
+      "name": "Dori",
+      "title": "???",
+      "description": "",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
         }
       ]
     },
@@ -3274,14 +3448,14 @@
             }
           ],
           "stats": [
-            "1-Hit DMG|{param1}",
-            "2-Hit DMG|{param2}",
-            "3-Hit DMG|{param3}",
-            "4-Hit DMG|{param4}",
-            "Charged Attack DMG|{param5} + {param6}",
+            "1-Hit DMG|{param1}%",
+            "2-Hit DMG|{param2}%",
+            "3-Hit DMG|{param3}%",
+            "4-Hit DMG|{param4}%",
+            "Charged Attack DMG|{param5}% + {param6}%",
             "Charged Attack Stamina Cost|{param7}",
-            "Plunge DMG|{param8}",
-            "Low/High Plunge DMG|{param9} / {param10}"
+            "Plunge DMG|{param8}%",
+            "Low/High Plunge DMG|{param9}% / {param10}%"
           ]
         },
         {
@@ -3296,9 +3470,9 @@
             }
           ],
           "stats": [
-            "Skill DMG|{param1}",
+            "Skill DMG|{param1}%",
             "Grass Ring of Sanctification Healing|{param2}% Max HP + {param3}",
-            "Grass Ring of Sanctification DMG|{param4}",
+            "Grass Ring of Sanctification DMG|{param4}%",
             "Activation Cost|{param5}% Current HP",
             "Duration|{param6}s",
             "CD|{param7}s"
@@ -3310,8 +3484,8 @@
           "description": "Stabs an evil-excoriating blade into the ground, creating a field that cleanses the area of all that is foul, dealing continuous Electro DMG to opponents within its AoE based on Shinobu's Max HP.\r\nIf Shinobu's HP is less than or equal to 50% when this skill is used, the field will last longer.\r\n",
           "abilities": [],
           "stats": [
-            "Single Instance DMG|{param1} Max HP",
-            "Total DMG|{param2} / {param3} Max HP",
+            "Single Instance DMG|{param1}% Max HP",
+            "Total DMG|{param2}% / {param3}% Max HP",
             "Duration|{param4}s / {param5}s",
             "CD|{param6}s",
             "Energy Cost|{param7}"
@@ -5020,86 +5194,139 @@
     {
       "key": "shikanoin-heizou",
       "name": "Shikanoin Heizou",
-      "title": "",
+      "title": "Analytical Harmony",
       "description": "A young prodigy detective from the Tenryou Commission. His senses are sharp and his thoughts are clear.",
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Fudou Style Martial Arts",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Normal Attack",
+              "description": "Performs up to 5 fisticuffs empowered by a mighty wind, dealing Anemo DMG.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Charged Attack",
+              "description": "Consumes a certain amount of Stamina and performs a sweeping kick that deals Anemo DMG.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Plunging Attack",
+              "description": "Calling upon the surging wind, Heizou plunges towards the ground from mid-air, damaging all opponents in his path. Deals AoE Anemo DMG upon impact with the ground.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "1-Hit DMG|{param1}%",
+            "2-Hit DMG|{param2}%",
+            "3-Hit DMG|{param3}%",
+            "4-Hit DMG|{param4}% + {param5}% + {param6}%",
+            "5-Hit DMG|{param7}%",
+            "Charged Attack|{param8}%",
+            "Charged Attack Stamina Cost|{param9}",
+            "Plunge DMG|{param10}%",
+            "Low/High Plunge DMG|{param11}% / {param12}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Heartstopper Strike",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Tap",
+              "description": "Wields the swift winds to launch a Heartstopper Strike that deals Anemo DMG.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Hold",
+              "description": "Charges energy to unleash an even stronger blow. He will obtain the Declension effect while charging, which will increase the power of the Heartstopper Strike. When the skill button is released or the skill finishes charging, he will strike forward, dealing Anemo DMG.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Declension",
+              "description": "Increases the power of the next Heartstopper Strike. Max 4 stacks.\r\nWhen you possess 4 Declension stacks, the Conviction effect will be produced, which will cause the next Hearstopper Strike to be even stronger and have a larger AoE.\r\n",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "Skill DMG|{param1}%",
+            "Declension DMG Bonus|{param2}%/stack",
+            "Conviction DMG Bonus|{param3}%",
+            "Declension Duration|{param4}s",
+            "CD|{param5}s"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
+          "title": "Windmuster Kick",
+          "description": "Leaps into the air and uses the Fudou Style Vacuum Slugger and kicks his opponent. The Vacuum Slugger will explode upon hit and create an Arresting Windtunnel that pulls in nearby objects and opponents, dealing AoE Anemo DMG.\r\nWhen Vacuum Slugger hits opponents affected by Hydro/Pyro/Cryo/Electro, these opponents will be afflicted with Windmuster Iris. This Windmuster Iris will explode after a moment and dissipate, dealing AoE DMG of the corresponding aforementioned elemental type.\r\nVacuum Slugger can afflict a maximum of 4 opponents with the Windmuster Iris. A single opponent cannot be under the effect of Windmuster Irises of different elements at the same time.\r\n",
           "abilities": [],
-          "stats": []
+          "stats": [
+            "Fudou Style Vacuum Slugger DMG|{param1}%",
+            "Windmuster Iris DMG|{param2}%",
+            "CD|{param3}s",
+            "Energy Cost|{param4}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "Pre-Existing Guilt",
+          "description": "Decreases sprinting Stamina consumption for your own party members by 20%.\r\nNot stackable with Passive Talents that provide the exact same effects.\r\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
+          "title": "Paradoxical Practice",
+          "description": "When Shikanoin Heizou activates a Swirl reaction while on the field, he will gain 1 Declension stack for Heartstopper Strike. This effect can be triggered once every 0.1s.\r\n",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "NA",
-          "description": "",
+          "title": "Penetrative Reasoning",
+          "description": "After Shikanoin Heizou's Heartstopper Strike hits an opponent, increases all party members' (excluding Shikanoin Heizou) Elemental Mastery by 80 for 10s.\r\n",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "Named Juvenile Casebook",
+          "description": "For 5s after Shikanoin Heizou takes the field, his Normal Attack SPD is increased by 15%. He also gains 1 Declension stack for Heartstopper Strike. This effect can be triggered once every 10s.\r\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "Investigative Collection",
+          "description": "The pull effect of the Arresting Windtunnel created by Windmuster Kick is enhanced, and its duration is increased to 1s.\r\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "Esoteric Puzzle Book",
+          "description": "Increases the Level of Heartstopper Strike by 3.\r\nMaximum upgrade level is 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "Tome of Lies",
+          "description": "The first Windmuster Iris explosion in each Windmuster Kick will regenerate 9 Elemental Energy for Shikanoin Heizou. Every subsequent explosion in that Windmuster Kick will each regenerate an additional 1.5 Energy for Heizou.\r\nOne Windmuster Kick can regenerate a total of 13.5 Energy for Heizou in this manner.\r\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "Secret Archive",
+          "description": "Increases the Level of Windmuster Kick by 3.\r\nMaximum upgrade level is 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
+          "title": "Curious Casefiles",
+          "description": "Each Declension stack will increase the CRIT Rate of the Heartstopper Strike unleashed by 4%. When Heizou possesses Conviction, this Heartstopper Strike's CRIT DMG is increased by 32%.\r\n",
           "descriptions": []
         }
       ]
@@ -5557,6 +5784,93 @@
           "key": "c6",
           "title": "Burning Heart",
           "description": "When a Blazing Barrier is obtained or refreshed, the DMG dealt by all party members' Normal, Charged, and Plunging Attacks is increased by 15% for 6s.\r\n",
+          "descriptions": []
+        }
+      ]
+    },
+    {
+      "key": "tighnari",
+      "name": "Tighnari",
+      "title": "???",
+      "description": "",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
           "descriptions": []
         }
       ]
@@ -8099,6 +8413,14 @@
         "Dealing Elemental DMG increases all DMG by {color}9{/color}% for 6s. Max 2 stacks. Can occur once every 1s.",
         "Dealing Elemental DMG increases all DMG by {color}10.5{/color}% for 6s. Max 2 stacks. Can occur once every 1s.",
         "Dealing Elemental DMG increases all DMG by {color}12{/color}% for 6s. Max 2 stacks. Can occur once every 1s."
+      ]
+    },
+    {
+      "key": "kagotsurube-isshin",
+      "name": "Kagotsurube Isshin",
+      "description": "This famed blade was born in a nation to the far north. But in the name of \"Isshin,\" it was stained with many a dark deed on its home-bound journey.",
+      "refinements": [
+        "When a Normal, Charged, or Plunging Attack hits an opponent, it will whip up a Hewing Gale, dealing AoE DMG equal to 180% of ATK and increasing ATK by 15% for 8s. This effect can be triggered once every 8s."
       ]
     },
     {

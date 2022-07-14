@@ -1142,6 +1142,93 @@
       ]
     },
     {
+      "key": "collei",
+      "name": "Collei",
+      "title": "???",
+      "description": "",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ]
+    },
+    {
       "key": "diluc",
       "name": "Diluc",
       "title": "el Amanecer Oscuro",
@@ -1413,6 +1500,93 @@
             "Si su Vida es igual o inferior al 50%, aumenta su Bono de Curación recibida en un 30%.",
             "Si su vida es superior al 50%, aumenta la Maestría Elemental en 200 pts."
           ]
+        }
+      ]
+    },
+    {
+      "key": "dori",
+      "name": "Dori",
+      "title": "???",
+      "description": "",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
         }
       ]
     },
@@ -3274,14 +3448,14 @@
             }
           ],
           "stats": [
-            "Daño de 1er golpe|{param1}",
-            "Daño de 2.º golpe|{param2}",
-            "Daño de 3er golpe|{param3}",
-            "Daño de 4.º golpe|{param4}",
-            "Daño de ATQ Cargado|{param5} + {param6}",
+            "Daño de 1er golpe|{param1}%",
+            "Daño de 2.º golpe|{param2}%",
+            "Daño de 3er golpe|{param3}%",
+            "Daño de 4.º golpe|{param4}%",
+            "Daño de ATQ Cargado|{param5}% + {param6}%",
             "Coste de Aguante de ATQ Cargado|{param7}",
-            "Daño de Caída|{param8}",
-            "Daño de impacto de caída baja/alta|{param9} / {param10}"
+            "Daño de Caída|{param8}%",
+            "Daño de impacto de caída baja/alta|{param9}% / {param10}%"
           ]
         },
         {
@@ -3296,9 +3470,9 @@
             }
           ],
           "stats": [
-            "Daño de habilidad|{param1}",
+            "Daño de habilidad|{param1}%",
             "Curación de anillo purificador|{param2}% Max HP + {param3}",
-            "Daño de anillo purificador|{param4}",
+            "Daño de anillo purificador|{param4}%",
             "Consumo de Vida|{param5}% Current HP",
             "Duración|{param6}s",
             "TdE|{param7}s"
@@ -3310,8 +3484,8 @@
           "description": "Clava una espada exorcizante en el suelo para crear frente a sí misma una barrera purificadora, la cual inflige Daño Electro de forma continua en función de la Vida Máx. de Kuki Shinobu contra los enemigos que se encuentren en el AdE de la barrera.\r\nSi al usar esta habilidad la Vida de Kuki Shinobu es igual o inferior al 50%, la duración de la barrera será mayor.\r\n",
           "abilities": [],
           "stats": [
-            "Daño por cada golpe|{param1} Max HP",
-            "Daño total|{param2} / {param3} Max HP",
+            "Daño por cada golpe|{param1}% Max HP",
+            "Daño total|{param2}% / {param3}% Max HP",
             "Duración|{param4}s / {param5}s",
             "TdE|{param6}s",
             "Energía Elemental|{param7}"
@@ -5020,86 +5194,134 @@
     {
       "key": "shikanoin-heizou",
       "name": "Shikanoin Heizou",
-      "title": "",
+      "title": "El Detective de la Armonía",
       "description": "El joven y talentoso detective de la Comisión Tenryou. Intuitivo, sagaz y muy inteligente.",
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Artes marciales Fudou",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Ataque Normal",
+              "description": "Ejecuta hasta 5 golpes marciales fortalecidos con el poder del viento para infligir Daño Anemo.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Ataque Cargado",
+              "description": "Consume una cierta cantidad de Aguante para ejecutar una patada que levanta polvo e inflige Daño Anemo después de un corto tiempo de lanzamiento.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Ataque Descendente",
+              "description": "Concentra el poder del viento para lanzarse desde el aire y golpear el suelo, dañando a todos los enemigos cercanos e infligiendo Daño Anemo en el AdE en el momento del impacto.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "Daño de 1er golpe|{param1}%",
+            "Daño de 2.º golpe|{param2}%",
+            "Daño de 3er golpe|{param3}%",
+            "Daño de 4.º golpe|{param4}% + {param5}% + {param6}%",
+            "Daño de 5.º golpe|{param7}%",
+            "Ataque Cargado|{param8}%",
+            "Coste de Aguante de ATQ Cargado|{param9}",
+            "Daño de Caída|{param10}%",
+            "Daño de impacto de caída baja/alta|{param11}% / {param12}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Puñetazo cardiaco",
+          "description": "Pulsar una vez\r\nCrea una ráfaga de viento para ejecutar un puñetazo cardiaco que inflige Daño Anemo.",
+          "abilities": [
+            {
+              "name": "Mantener pulsado",
+              "description": "Acumula fuerza para ejecutar un puñetazo aún más poderoso. Durante el tiempo de carga, obtiene el efecto de “decantación”, el cual aumenta continuamente la fuerza del puñetazo cardiaco. Al dejar de pulsar la habilidad o cuando termine su tiempo de carga, ejecuta un puñetazo cardiaco hacia delante que inflige Daño Anemo.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Decantación",
+              "description": "Aumenta el daño infligido por el puñetazo cardiaco. Este efecto puede acumularse hasta 4 veces.\r\nAl tener 4 cargas de decantación, se crea el efecto de “convicción”, el cual aumenta aún más el daño y el AdE del puñetazo cardiaco.\r\n",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "Daño de habilidad|{param1}%",
+            "Aumento de daño de decantación|{param2}%/stack",
+            "Aumento de daño de convicción|{param3}%",
+            "Duración de decantación|{param4}s",
+            "TdE|{param5}s"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
+          "title": "Patada huracanada",
+          "description": "Salta y le da una patada a una bomba de vacío de técnica Fudou que, al golpear al enemigo, explota, crea un túnel de viento apresador que atrae a los objetos y enemigos cercanos e inflige Daño Anemo en el AdE.\r\nCuando la bomba de vacío golpea a un enemigo afectado por Hydro/Pyro/Cryo/Electro, aplicará sobre él el efecto de “ojo del tifón”, el cual explotará y desaparecerá para infligir Daño en el AdE del elemento correspondiente.\r\nLa bomba de vacío de técnica Fudou solo podrá aplicar el ojo del tifón sobre un máximo de 4 enemigos golpeados, y cada enemigo no podrá ser afectado por un ojo del tifón de varios elementos distintos al mismo tiempo.\r\n",
           "abilities": [],
-          "stats": []
+          "stats": [
+            "Daño de bomba de vacío de técnica Fudou|{param1}%",
+            "Daño de ojo del tifón|{param2}%",
+            "TdE|{param3}s",
+            "Energía Elemental|{param4}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "Un paso adelante",
+          "description": "Disminuye en un 20% el Coste de Aguante al esprintar de todos los miembros de tu equipo.\r\nNo se puede acumular con otros talentos pasivos que tengan los mismos efectos.\r\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
+          "title": "Práctica paradójica",
+          "description": "Cuando Shikanoin Heizou causa una reacción de Torbellino mientras está en uso, obtiene 1 carga de decantación para Puñetazo cardiaco. Esto solo puede ocurrir una vez cada 0.1 s.\r\n",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "NA",
-          "description": "",
+          "title": "Razonamiento penetrante",
+          "description": "Al golpear a un enemigo con Puñetazo cardiaco, la Maestría Elemental de todos los miembros del equipo (a excepción de Shikanoin Heizou) aumenta en 80 pts. durante 10 s.\r\n",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "Los casos de Shikanoin",
+          "description": "Al entrar en el campo de batalla, la Vel. del Ataque Normal de Shikanoin Heizou aumenta en un 15% durante 5 s, y además obtiene 1 carga de decantación para Puñetazo cardiaco. Esto solo puede ocurrir una vez cada 10 s.\r\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "Canon Shikanoiniano",
+          "description": "Mejora el efecto de atracción del túnel de viento apresador creado con Patada huracanada y aumenta a 1 s su duración.\r\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "Acertijo inextricable",
+          "description": "Aumenta el nivel de habilidad de Puñetazo cardiaco +3.\r\nPuede ser aumentado hasta Niv. 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "Colección de calumnias",
+          "description": "La primera explosión del ojo del tifón de una Patada huracanada regenera 9 pts. de Energía Elemental para Shikanoin Heizou. Después, cada explosión regenera 1.5 pts. de Energía adicionales.\r\nUna Patada huracanada solo podrá regenerar un máximo de 13.5 pts. de Energía Elemental para Shikanoin Heizou de esta manera.\r\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "Secrétdex",
+          "description": "Aumenta el nivel de habilidad de Patada huracanada +3.\r\nPuede ser aumentado hasta Niv. 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
+          "title": "Detective Heizou",
+          "description": "Al usar Puñetazo cardiaco, cada carga de decantación aumenta en un 4% la Prob. CRIT del puñetazo. Al estar bajo los efectos de “convicción”, el Daño CRIT del puñetazo cardiaco aumenta en un 32%.\r\n",
           "descriptions": []
         }
       ]
@@ -5562,6 +5784,93 @@
           "key": "c6",
           "title": "Corazón fervoroso",
           "description": "Al obtener un escudo llameante o reiniciar su duración, el daño de los Ataques Normales, Cargados y Descendentes de todos los miembros del equipo aumenta en un 15% durante 6 s.\r\n",
+          "descriptions": []
+        }
+      ]
+    },
+    {
+      "key": "tighnari",
+      "name": "Tighnari",
+      "title": "???",
+      "description": "",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
           "descriptions": []
         }
       ]
@@ -8100,6 +8409,14 @@
         "Tras causar Daño Elemental, aumenta todo el daño infligido en un {color}9{/color}% durante 6 s. Este efecto puede acumularse hasta 2 veces y activarse una vez cada 1 s.",
         "Tras causar Daño Elemental, aumenta todo el daño infligido en un {color}10.5{/color}% durante 6 s. Este efecto puede acumularse hasta 2 veces y activarse una vez cada 1 s.",
         "Tras causar Daño Elemental, aumenta todo el daño infligido en un {color}12{/color}% durante 6 s. Este efecto puede acumularse hasta 2 veces y activarse una vez cada 1 s."
+      ]
+    },
+    {
+      "key": "kagotsurube-isshin",
+      "name": "Kagotsurube Isshin",
+      "description": "Una famosa espada forjada en el lejano Reino del Norte. Sin embargo, en el nombre de “Isshin”, se corrompió en su camino de regreso a su hogar natal.",
+      "refinements": [
+        "Al golpear a un enemigo con un Ataque Normal, Cargado o Descendente, se crea una ráfaga de viento cortante que inflige un Daño en el AdE equivalente al 180% del ATQ y aumenta en un 15% el ATQ durante 8 s. Este efecto solo se puede activar una vez cada 8 s."
       ]
     },
     {

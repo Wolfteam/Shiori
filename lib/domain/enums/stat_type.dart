@@ -21,4 +21,5 @@ enum StatType {
   anemoDmgBonusPercentage,
   healingBonusPercentage,
   def,
+  dendroDmgBonusPercentage
 }

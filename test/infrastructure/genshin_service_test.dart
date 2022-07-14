@@ -163,7 +163,12 @@ void main() {
         expect(detail.role, character.roleType);
         expect(detail.isComingSoon, character.isComingSoon);
         expect(detail.isNew, character.isNew);
-        expect(detail.tier, isIn(['d', 'c', 'b', 'a', 's', 'ss', 'sss']));
+        if (detail.isComingSoon) {
+          expect(detail.tier, 'na');
+        } else {
+          expect(detail.tier, isIn(['d', 'c', 'b', 'a', 's', 'ss', 'sss']));
+        }
+
         if (isTraveler) {
           checkAsset(detail.fullSecondImagePath!);
         } else {
@@ -618,7 +623,7 @@ void main() {
           if (detail.rarity > 2) {
             //all weapons with a rarity > 2 have 5 refinements except the following
             //the ps4 sword, the aloy weapon
-            final ignore = ['sword-of-descension', 'predator'];
+            final ignore = ['sword-of-descension', 'predator', 'kagotsurube-isshin'];
             if (!ignore.contains(detail.key)) {
               expect(translation.refinements.length, 5);
             } else {
