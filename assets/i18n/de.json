@@ -8427,6 +8427,14 @@
       ]
     },
     {
+      "key": "kagotsurube-isshin",
+      "name": "Kagotsurube Isshin",
+      "description": "Diese im fernen Norden geschmiedete Klinge wurde einst auf ihrem Heimweg im Namen „Isshin“ mit unzähligen Sünden befleckt.",
+      "refinements": [
+        "Wirbelt beim Treffen von Gegnern mit Standardangriffen, heftigen Schlägen oder Angriffen aus dem Fall einen dreschenden Wind auf, der Flächenschaden in Höhe von 180 % ANG verursacht und den ANG 8 s lang um 15 % erhöht. 8 s Abklingzeit."
+      ]
+    },
+    {
       "key": "kaguras-verity",
       "name": "Kaguras Wahrheit",
       "description": "Die Glocke, die bei der Aufführung des Kagura-Tanzes verwendet wird, wurde von der Guuji selbst gesegnet. Der Duft der heiligen Sakura hält noch immer an.",

@@ -623,7 +623,7 @@ void main() {
           if (detail.rarity > 2) {
             //all weapons with a rarity > 2 have 5 refinements except the following
             //the ps4 sword, the aloy weapon
-            final ignore = ['sword-of-descension', 'predator'];
+            final ignore = ['sword-of-descension', 'predator', 'kagotsurube-isshin'];
             if (!ignore.contains(detail.key)) {
               expect(translation.refinements.length, 5);
             } else {

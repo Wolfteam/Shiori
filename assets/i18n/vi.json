@@ -8420,6 +8420,14 @@
       ]
     },
     {
+      "key": "kagotsurube-isshin",
+      "name": "Kagotsurube Isshin",
+      "description": "Danh đao được sinh ra từ vương quốc phía bắc xa xôi, từng nhiễm vô số tội ác trên đường trở về quê hương chỉ vì hai chữ \"Isshin\".",
+      "refinements": [
+        "Khi tấn công thường, trọng kích hoặc tấn công khi đáp trúng kẻ địch sẽ thi triển Gió Cắt, gây 180% sát thương diện rộng, đồng thời tăng 15% tấn công, duy trì 8s. Hiệu quả này mỗi 8s tối đa kích hoạt một lần."
+      ]
+    },
+    {
       "key": "kaguras-verity",
       "name": "Chân Ý Của Kagura",
       "description": "Chuông thần được dùng khi biểu diễn Vũ Điệu Kagura, đã được Guuji chúc phúc. Hương thơm của Anh Đào Thần thoang thoảng trên đó.",
