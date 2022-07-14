@@ -5022,86 +5022,139 @@
     {
       "key": "shikanoin-heizou",
       "name": "Shikanoin Heizou",
-      "title": "",
+      "title": "Analytical Harmony",
       "description": "Seorang detektif jenius dari Tenryou Commission. Mempunyai intuisi yang kuat dan pemikiran yang tajam.",
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Fudou Style Martial Arts",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Normal Attack",
+              "description": "Melancarkan hingga 5 serangan tinju yang diperkuat oleh angin, mengakibatkan Anemo DMG.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Charged Attack",
+              "description": "Mengonsumsi sejumlah Stamina untuk mengakibatkan tendangan yang mengakibatkan Anemo DMG Area.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Plunging Attack",
+              "description": "Mengumpulkan kekuatan Anemo, Heizou menerjang tanah, mengakibatkan DMG pada musuh di jalur terjangan dan mengakibatkan Anemo DMG Area saat mendarat.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "DMG Tahap 1|{param1}%",
+            "DMG Tahap 2|{param2}%",
+            "DMG Tahap 3|{param3}%",
+            "DMG Tahap 4|{param4}% + {param5}% + {param6}%",
+            "DMG Tahap 5|{param7}%",
+            "Charged Attack|{param8}%",
+            "Konsumsi Stamina Charged Attack|{param9}",
+            "DMG Selama Plunging|{param10}%",
+            "DMG Plunging Attack Min./Maks.|{param11}% / {param12}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Heartstopper Strike",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Tekan",
+              "description": "Menggunakan angin kencang untuk meluncurkan Heartstopper Strike yang mengakibatkan Anemo DMG.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Tahan",
+              "description": "Mengisi energi untuk melepaskan pukulan yang lebih kuat. Heizou akan mengdapatkan efek Declension saat sedang mengisi energi, efek tersebut akan meningkatkan kekuatan Heartstopper Strike. Saat tombol skill dilepaskan atau saat skill sudah selesai mengisi energi, Heizou akan maju menerjang ke depan dan mengakibatkan Anemo DMG.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Declension",
+              "description": "Meningkatkan kekuatan Heartstopper Strike berikutnya. Maks. 4 lapis.\r\nSaat mempunyai 4 lapis Declension, akan tercipta lapisan Conviction yang akan mengakibatkan Hearstopper Strike berikutnya menjadi lebih kuat lagi dan mempunyai Area efek yang lebih besar.\r\n",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "DMG Skill|{param1}%",
+            "DMG Bonus Declension|{param2}%/stack",
+            "DMG Bonus Conviction|{param3}%",
+            "Durasi Declension|{param4}s",
+            "Cooldown|{param5}s"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
+          "title": "Windmuster Kick",
+          "description": "Melompat ke udara dan menandang Fudou Style Vacuum Slugger ke arah lawan. Saat mengenai musuh, Fudou Style Vacuum Slugger akan menciptakan area berangin yang menarik objek dan musuh di sekitar, lalu mengakibatkan Anemo DMG Area.\r\nSaat Vacuum Slugger mengenai musuh yang terkena efek Hydro/Pyro/Cryo/Electro, maka musuh trsebut akan terkena Windmuster Iris yang akan meledak setelah beberapa saat dan mengakibatkan DMG Area dari tipe elemen yang disebutkan sebelumnya.\r\nVacuum Slugger dapat memukul maks. 4 musuh dengan menggunakan Windmuster Iris. Musuh tidak bisa terpengaruh efek Windmuster Iris dari elemen berbeda dalam waktu yang bersamaan.\r\n",
           "abilities": [],
-          "stats": []
+          "stats": [
+            "DMG Fudou Style Vacuum Slugger|{param1}%",
+            "DMG Windmuster Iris|{param2}%",
+            "Cooldown|{param3}s",
+            "Konsumsi Energy|{param4}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "Pre-Existing Guilt",
+          "description": "Mengurangi 20% konsumsi Stamina Karakter sendiri saat berlari.\r\nEfek tidak dapat ditumpuk dengan Talenta Pasif lain yang memiliki efek yang sama.\r\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
+          "title": "Paradoxical Practice",
+          "description": "Saat Shikanoin Heizou mengaktifkan reaksi Swirl saat dalam medan tempur, dia akan mendapatkan 1 lapis Declension untuk Heartstopper Strike. Efek ini terpicu setiap 0,1 detik.\r\n",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "NA",
-          "description": "",
+          "title": "Penetrative Reasoning",
+          "description": "Setelah Heartstopper Strike milik Shikanoin Heizou mengenai musuh, maka akan meningkatkan Elemental Mastery seluruh anggota party (tidak termasuk Shikanoin Heizou) sebesar 80 selama 10 detik.\r\n",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "Named Juvenile Casebook",
+          "description": "Setelah Shikanoin Heizou berada di medan tempur selama 5 detik, Normal Attack SPD-nya akan meningkat 15%. Lalu akan mendapatkan 1 lapis efek Declension dari Heartstopper Strike. Efek dapat terpicu setiap 10 detik.\r\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "Investigative Collection",
+          "description": "Efek tarikan dari Arresting Windtunnel yang diciptakan oleh Windmuster Kick menjadi semakin kuat dan durasinya bertambah menjadi 1 detik.\r\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "Esoteric Puzzle Book",
+          "description": "Meningkatkan 3 level Heartstopper Strike.\r\nMaksimum: Lv. 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "Tome of Lies",
+          "description": "Ledakan Windmuster Iris pertama di setiap Windmuster Kick akan memulihkan 9 Elemental Energy Shikanoin Heizou. Setiap ledakan berikutnya dalam Windmuster Kick tersebut masing-masing akan memulihkan 1,5 Energy tambahan untuk Heizou.\r\nSatu kali Windmuster Kick hanya dapat memulihkan maksimum hingga 13,5 Energy Heizou dengan cara ini.\r\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "Secret Archive",
+          "description": "Meningkatkan 3 level Windmuster Kick.\r\nMaksimum: Lv. 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
+          "title": "Curious Casefiles",
+          "description": "Setiap lapis Declension akan meningkatkan CRIT Rate Heartstopper Strike yang dilancarkan sebesar 4%. Saat Heizou memiliki Conviction, maka akan meningkatkan 32% CRIT DMG dari Heartstoppper Strike.\r\n",
           "descriptions": []
         }
       ]

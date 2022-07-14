@@ -38731,12 +38731,12 @@
       "image": "shikanoin-heizou.png",
       "fullImage": "shikanoin-heizou.png",
       "secondFullImage": null,
-      "isComingSoon": true,
-      "isNew": false,
+      "isComingSoon": false,
+      "isNew": true,
       "isFemale": false,
       "region": "inazuma",
       "role": "dps",
-      "tier": "b",
+      "tier": "a",
       "birthday": "07/24",
       "subStatType": "anemoDmgBonusPercentage",
       "ascensionMaterials": [
@@ -39279,7 +39279,7 @@
               "key": "param8",
               "values": [
                 73.0,
-                78.48,
+                78.47,
                 83.95,
                 91.25,
                 96.73,
@@ -39621,7 +39621,78 @@
           "image": "shikanoin-heizou_c6.png"
         }
       ],
-      "builds": [],
+      "builds": [
+        {
+          "isRecommended": true,
+          "type": "dps",
+          "subType": "anemo",
+          "skillPriorities": [
+            "elementalSkill",
+            "elementalBurst",
+            "normalAttack"
+          ],
+          "weaponKeys": [
+            "skyward-atlas",
+            "kaguras-verity",
+            "lost-prayer-to-the-sacred-winds",
+            "the-widsith",
+            "mappa-mare"
+          ],
+          "artifacts": [
+            {
+              "oneKey": "viridescent-venerer",
+              "multiples": [],
+              "stats": [
+                "hp",
+                "atk",
+                "atkPercentage",
+                "anemoDmgBonusPercentage",
+                "critRatePercentage"
+              ]
+            }
+          ],
+          "subStatsToFocus": [
+            "critDmgPercentage",
+            "critRatePercentage",
+            "atkPercentage",
+            "elementalMastery"
+          ]
+        },
+        {
+          "isRecommended": true,
+          "type": "dps",
+          "subType": "elementalMastery",
+          "skillPriorities": [
+            "elementalSkill",
+            "elementalBurst",
+            "normalAttack"
+          ],
+          "weaponKeys": [
+            "sacrificial-fragments",
+            "magic-guide",
+            "mappa-mare"
+          ],
+          "artifacts": [
+            {
+              "oneKey": "viridescent-venerer",
+              "multiples": [],
+              "stats": [
+                "hp",
+                "atk",
+                "elementalMastery",
+                "elementalMastery",
+                "elementalMastery"
+              ]
+            }
+          ],
+          "subStatsToFocus": [
+            "elementalMastery",
+            "atkPercentage",
+            "critDmgPercentage",
+            "critRatePercentage"
+          ]
+        }
+      ],
       "stats": [
         {
           "level": 1,

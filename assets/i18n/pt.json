@@ -4931,86 +4931,139 @@
     {
       "key": "shikanoin-heizou",
       "name": "Shikanoin Heizou",
-      "title": "",
+      "title": "Mente Condizente",
       "description": "Um jovem e talentoso detetive da Comissão Tenryou. Tem uma intuição astuta e aguçada.",
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Arte Marcial Fudou",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Ataque Normal",
+              "description": "Realiza até 5 ataques de punhos de vento, infligindo Dano Anemo.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Ataque Carregado",
+              "description": "Consome uma certa quantidade de Stamina que inflige Dano Anemo em uma AdE com um chute de varredura.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Ataque Imersivo",
+              "description": "Convoca o poder do vento para si, Heizou mergulha ao chão em pleno ar, infligindo Dano a todos os inimigos em seu caminho. Inflige Dano Anemo em uma AdE ao atingir o chão.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "Dano do 1° Golpe|{param1}%",
+            "Dano do 2° Golpe|{param2}%",
+            "Dano do 3° Golpe|{param3}%",
+            "Dano do 4° Golpe|{param4}% + {param5}% + {param6}%",
+            "Dano do 5° Golpe|{param7}%",
+            "Dano de Ataque Carregado|{param8}%",
+            "Consumo de Stamina de Ataque Carregado|{param9}",
+            "Dano Durante a Queda|{param10}%",
+            "Dano de Queda de Baixa/Alta Altitude|{param11}% / {param12}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Soco Cardíaco",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Pressionar",
+              "description": "Usa o vento para realizar o Soco Cardíaco que inflige Dano Anemo.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Manter Pressionado",
+              "description": "Acumula poder e desfere um soco ainda mais forte. Enquanto carrega, obterá o efeito \"Declinação\" que fortalece o Soco Cardíaco: Ao lançar a Habilidade ou quando a habilidade terminar de carregar, desferirá um Soco Cardíaco que inflige Dano Anemo.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Declinação",
+              "description": "Aumenta o Dano infligido do próximo Soco Cardíaco e acumula até 4 vezes.\r\nQuando possuir 4 acúmulos de \"Declinação\", gerará o efeito \"Convicção\", que aumentará o Dano infligido pelo próximo Soco Cardíaco e aumentará sua AdE.\r\n",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "Dano de Habilidade|{param1}%",
+            "Aumento de Dano de Declinação|{param2}%/stack",
+            "Aumento de Dano de Convicção|{param3}%",
+            "Duração de Declinação|{param4}s",
+            "Tempo de Recarga|{param5}s"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
+          "title": "Chute Turbilhão",
+          "description": "Salta no ar e usa a Bomba de Vácuo Fudou para chutar seus inimigos explosivamente. Ao atingir os inimigos, a Bomba de Vácuo Fudou gerará um Túnel de Vento Repreendedor que atrairá inimigos e objetos próximos, infligindo Dano Anemo em AdE.\r\nQuando a Bomba de Vácuo Fudou atinge inimigos afetados por Hydro/Pyro/Cryo/Electro, esses inimigos serão afetados pelo efeito \"Olho do Furacão\". Esse efeito explodirá após um breve momento e infligirá Dano em AdE do tipo elemental correspondente.\r\nBomba de Vácuo Fudou pode atingir até 4 inimigos com Olho do Furacão; os inimigos não poderão estar sob a influência de Olhos do Furacão de elementos diferentes simultaneamente.\r\n",
           "abilities": [],
-          "stats": []
+          "stats": [
+            "Dano da Bomba de Vácuo Fudou|{param1}%",
+            "Dano de Olho do Furacão|{param2}%",
+            "Recarga|{param3}s",
+            "Energia Elemental|{param4}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "Culpa Pré-Existente",
+          "description": "Diminui o consumo de Stamina ao correr de todos os seus membros da equipe em 20%.\r\nNão acumulável com Talentos Passivos que concedem exatamente os mesmos efeitos.\r\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
+          "title": "Prática Paradoxal",
+          "description": "Quando Shikanoin Heizou está ativo no campo de batalha e desencadeia a reação de Redemoinho, ele obtém um acúmulo do efeito \"Declinação\" de Soco Cardíaco. Esse efeito pode ser desencadeado uma vez por 0.1 segundo.\r\n",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "NA",
-          "description": "",
+          "title": "Razão Penetradora",
+          "description": "Quando Soco Cardíaco atinge o inimigo, aumenta a Proficiência Elemental em 80 pontos para todos os membros da equipe (não inclui Shikanoin Heizou) por 10s.\r\n",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "Justiça Juvenil",
+          "description": "Nos 5s após Shikanoin Heizou ficar ativo no campo de batalha, a Vel. de ATQ do Ataque Normal aumenta 15% e obtém um acúmulo do efeito \"Declinação\" de Soco Cardíaco. Esse efeito pode ser desencadeado uma vez a cada 10s.\r\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "Coleção Investigativa",
+          "description": "O efeito de atração Túnel de Vento Repreendedor gerado por Chute Turbilhão é aumentado, e sua duração é prolongada para 1s.\r\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "Livro de Quebra-Cabeças Inextricáveis",
+          "description": "Aumenta o nível de Soco Cardíaco em 3.\r\nO nível máximo de elevação é 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "Coletânea de Calúnias",
+          "description": "A primeira explosão de \"Olho do Furacão\" de Chute Turbilhão regenerará 9 pontos de Energia Elemental para Shikanoin Heizou. Toda explosão seguinte regenerará 1.5 de Energia Elemental adicional para Shikanoin Heizou.\r\nUm Chute Turbilhão pode regenerar até 13.5 de Energia Elemental para Shikanoin Heizou desta forma.\r\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "Arquivo Secreto",
+          "description": "Aumenta o nível de Chute Turbilhão em 3.\r\nO nível máximo de elevação é 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
+          "title": "Casos Curiosos",
+          "description": "Ao lançar Soco Cardíaco, cada acúmulo de \"Declinação\" aumentará 4% da Taxa CRIT do Soco Cardíaco atual. Quando possuir \"Convicção\", o Dano CRIT desse Soco Cardíaco aumentará em 32%.\r\n",
           "descriptions": []
         }
       ]

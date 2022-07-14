@@ -5027,86 +5027,139 @@
     {
       "key": "shikanoin-heizou",
       "name": "Shikanoin Heizou",
-      "title": "",
+      "title": "Harmonie analytique",
       "description": "Un jeune détective prodige de la Commission administrative, aux sens aiguisés et aux pensées claires.",
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Arts martiaux style Fudou",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Attaque normale",
+              "description": "Enchaîne jusqu'à 5 coups de poing renforcés par un vent puissant, qui infligent des DGT Anémo.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Attaque chargée",
+              "description": "Consomme de l'endurance pour exécuter un balayage qui inflige des DGT Anémo.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Attaque plongeante",
+              "description": "Plonge depuis les airs en concentrant ses pouvoirs Anémo, infligeant des DGT aux ennemis en chemin et des DGT Anémo de zone à l'impact.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "DGT 1er coup|{param1}%",
+            "DGT 2e coup|{param2}%",
+            "DGT 3e coup|{param3}%",
+            "DGT 4e coup|{param4}% + {param5}% + {param6}%",
+            "DGT 5e coup|{param7}%",
+            "DGT attaque chargée|{param8}%",
+            "Coût d'endurance attaque chargée|{param9}",
+            "DGT durant la chute|{param10}%",
+            "DGT chute basse/élevée|{param11}% / {param12}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Poing d'arrêt cardiaque",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Appui simple",
+              "description": "Contrôle les rafales de vent pour déclencher un Poing d'arrêt cardiaque qui inflige des DGT Anémo.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Appui long",
+              "description": "Charge de l'énergie pour déclencher un coup de poing encore plus puissant. L'effet Détection est obtenu pendant la charge, permettant d'augmenter la puissance du Poing d'arrêt cardiaque. Lorsque vous relâchez la compétence ou que sa charge est complète, vous frappez en avant pour infliger des DGT Anémo.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Détection",
+              "description": "Augmente les DGT du prochain Poing d'arrêt cardiaque. Cet effet peut être cumulé 4 fois maximum.\r\nAvec 4 cumuls de Détection, vous obtenez un effet de Conviction, permettant au prochain Poing d'arrêt cardiaque d'être encore plus puissant et d'avoir une zone d'effet plus grande.\r\n",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "DGT compétence|{param1}%",
+            "Bonus ATQ détection|{param2}%/stack",
+            "Bonus ATQ conviction|{param3}%",
+            "Durée détection|{param4}s",
+            "Temps de recharge|{param5}s"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
+          "title": "Coup de pied ouragan",
+          "description": "S'élance dans les airs et utilise la bombe du vide du style Fudou pour donner un coup de pied à son ennemi. La bombe du vide explose à l'impact et crée ensuite un tunnel de vent qui attire les objets et les ennemis à proximité, infligeant des DGT Anémo de zone.\r\nLorsque la bombe du vide du style Fudou touche un ennemi affecté par l'élément Hydro/Pyro/Cryo/Électro, ce dernier est affligé d'un œil du cyclone qui explose après un moment en infligeant des DGT de zone de l'élément correspondant.\r\nLa bombe du vide du style Fudou peut affecter un maximum de 4 ennemis avec un œil du cyclone, mais un même ennemi ne peut pas subir l'effet de plusieurs yeux du cyclone de différents éléments en même temps.\r\n",
           "abilities": [],
-          "stats": []
+          "stats": [
+            "DGT bombe du vide du style Fudou|{param1}%",
+            "DGT œil du cyclone|{param2}%",
+            "Temps de recharge|{param3}s",
+            "Énergie élémentaire|{param4}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "Culpabilité préexistante",
+          "description": "Réduit la consommation d'endurance des personnages de l'équipe de 20 % lors du sprint.\r\nNe peut pas être cumulé avec d'autres aptitudes passives aux effets identiques.\r\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
+          "title": "Pratique paradoxale",
+          "description": "Lorsque Shikanoin Heizou déclenche une réaction de Dispersion sur le champ de bataille, il obtient 1 cumul de Détection pour Poing d'arrêt cardiaque. Cet effet peut être déclenché une fois toutes les 0,1 s.\r\n",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "NA",
-          "description": "",
+          "title": "Raisonnement indéniable",
+          "description": "Lorsque Poing d'arrêt cardiaque a touché un ennemi, la maîtrise élémentaire de tous les personnages de l'équipe (hormis Shikanoin Heizou) augmente de 80 pts pendant 10 s.\r\n",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "Justice juvénile",
+          "description": "Pendant les 5 s qui suivent l'arrivée de Shikanoin Heizou sur le terrain, la VIT d'attaque de ses attaques normales augmente de 15 % et il obtient 1 cumul de Détection pour Poing d'arrêt cardiaque. Cet effet peut être déclenché une fois toutes les 10s.\r\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "Recueil d'enquêtes",
+          "description": "L'effet d'attraction du tunnel de vent créé par Coup de pied ouragan est amélioré, et sa durée augmente à 1 s.\r\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "Énigme inextricable",
+          "description": "Niveau d'aptitude Poing d'arrêt cardiaque +3.\r\nNiveau max : 15\r\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "Collection de calomnies",
+          "description": "Après l'explosion du premier œil du cyclone de chaque Coup de pied ouragan, Shikanoin Heizou récupère 9 pts d'énergie élémentaire, tandis que chaque explosion suivante lui permet d'en récupérer 1,5 pts supplémentaires.\r\nUn maximum de 13,5 pts d'énergie élémentaire peut être restauré de cette manière pour chaque Coup de pied ouragan.\r\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "Archives secrètes",
+          "description": "Niveau d'aptitude Coup de pied ouragan +3.\r\nNiveau max : 15\r\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
+          "title": "Dossier étrange",
+          "description": "Chaque cumul de Détection augmente le taux CRIT de Poing d'arrêt cardiaque de 4 %. Sous l'effet de Conviction, les DGT CRIT du Poing d'arrêt cardiaque augmentent de 32 %.\r\n",
           "descriptions": []
         }
       ]

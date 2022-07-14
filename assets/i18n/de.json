@@ -5023,86 +5023,139 @@
     {
       "key": "shikanoin-heizou",
       "name": "Shikanoin Heizou",
-      "title": "",
-      "description": "Der begnadete junge Detektiv der Tenryou-Verwaltung, ausgestattet mit einer scharfen Intuition und einem wachen Geist.",
+      "title": "Mitfühlender Analytiker",
+      "description": "Der begnadete junge Detektiv der Tenryou-Verwaltung, ausgestattet mit scharfem Instinkt und wachem Geist.",
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Kampf im Fudou-Stil",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Standardangriff",
+              "description": "Kämpft mit der Kraft eines starken Windes gegen den Feind, führt bis zu 5 Angriffe aus und verursacht Anemo-Schaden.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Heftiger Schlag",
+              "description": "Verbraucht eine gewisse Menge Ausdauer und verursacht mit einem über das Feld fegenden Tritt Anemo-Schaden.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Angriff aus dem Fall",
+              "description": "Konzentriert die Kraft des starken Windes, schlägt beim Fallen aus der Luft auf den Boden, greift alle Gegner in der Bahn an und verursacht beim Aufkommen Anemo-Flächenschaden.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "SCH Phase 1|{param1}%",
+            "SCH Phase 2|{param2}%",
+            "SCH Phase 3|{param3}%",
+            "SCH Phase 4|{param4}% + {param5}% + {param6}%",
+            "SCH Phase 5|{param7}%",
+            "SCH heftiger Schläge|{param8}%",
+            "Ausdauerverbrauch heftiger Schläge|{param9}",
+            "SCH beim Fallen|{param10}%",
+            "SCH beim Fallen aus niedriger/großer Höhe|{param11}% / {param12}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Faust der Brüderlichkeit",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Drücken",
+              "description": "Nutzt den schnellen Wind und schlägt mit der Faust der Brüderlichkeit zu, um Anemo-Schaden zu verursachen.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Gedrückt halten",
+              "description": "Sammelt Kraft, um einen noch stärkeren Schlag auszuführen und erhält während des Aufladens fortlaufend den Effekt „Deklination“, der die Stärke der Faust der Brüderlichkeit erhöhen kann. Löst beim Loslassen der Taste oder am Ende des Aufladens die Faust der Brüderlichkeit aus und verursacht nach vorn gerichteten Anemo-Schaden.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Deklination",
+              "description": "Erhöht den mit der nächsten Faust der Brüderlichkeit verursachten Schaden, 4-fach stapelbar.\r\nErschafft bei 4 Stapelungen „Deklination“ den Effekt „Urteilsspruch“, der den mit der nächsten Faust der Brüderlichkeit verursachten Schaden weiter erhöht und ihm einen größeren Wirkungsbereich verleiht.\r\n",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "Fähigkeits-SCH|{param1}%",
+            "SCH-Bonus von Deklination|{param2}%/stack",
+            "SCH-Bonus von Urteilsspruch|{param3}%",
+            "Dauer von Deklination|{param4}s",
+            "Abklingzeit|{param5}s"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
+          "title": "Tritt des konzentrierten Winds",
+          "description": "Springt in die Luft und führt den Vakuumtritt des Fudou-Stils aus, der beim Treffen eine Explosion auslöst und ein Windloch erschafft, in das Objekte sowie Gegner in der Nähe gezogen werden. Verursacht Anemo-Flächenschaden.\r\nFügt, wenn die mit dem Vakuumtritt des Fudou-Stils getroffenen Gegner von Hydro-, Pyro-, Kryo- oder Elektro-Kraft betroffen sind, diesen Gegnern den Effekt „Auge des konzentrierten Winds“ zu, der nach kurzer Zeit mit einer Explosion erlischt und damit Flächenschaden des jeweiligen Elements verursacht.\r\nDer Vakuumtritt des Fudou-Stils verleiht bis zu 4 getroffenen Gegnern den Effekt „Auge des konzentrierten Winds“. Diese Gegner können zu einem Zeitpunkt nur dem Effekt „Auge des konzentrierten Winds“ eines einzigen Elements ausgesetzt sein.\r\n",
           "abilities": [],
-          "stats": []
+          "stats": [
+            "SCH von Vakuumtritt des Fudou-Stils|{param1}%",
+            "SCH von Auge des konzentrierten Winds|{param2}%",
+            "Abklingzeit|{param3}s",
+            "Elementarenergie|{param4}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "Verbrechen zuvorkommen",
+          "description": "Verringert die beim Rennen verbrauchte Ausdauer aller eigenen Truppenmitglieder um 20 %.\r\nNicht mit passiven Talenten mit völlig gleichen Effekten stapelbar.\r\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
+          "title": "Unterricht der Ablehnung",
+          "description": "Shikanoin Heizou erhält beim Auslösen einer Verwirbelung auf dem Feld eine Stapelung des Effekts „Deklination“ für die Faust der Brüderlichkeit, 0,1 s Abklingzeit.\r\n",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "NA",
-          "description": "",
+          "title": "Durchschauen der Motive",
+          "description": "Erhöht beim Treffen von Gegnern mit der Faust der Brüderlichkeit die Elementarkunde aller Truppenmitglieder (außer Shikanoin Heizou selbst) 10 s lang um 80 Punkte.\r\n",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "Fallakte eines berüchtigten jungen Mannes",
+          "description": "Erhöht die Angriffs-GSW von Standardangriffen nach dem Einwechseln von Shikanoin Heizou 5 s lang um 15 % und verleiht ihm 1 Stapelung des Effekts „Deklination“ für die Faust der Brüderlichkeit, 10 s Abklingzeit.\r\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "Aufdeckung der Hintergründe",
+          "description": "Verstärkt den Anziehungseffekt des Windlochs, das durch Tritt des konzentrierten Winds ausgelöst wird, und verlängert die Dauer des Effekts auf 1 s.\r\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "Rätselheft",
+          "description": "Erhöht die Stufe der Fähigkeit Faust der Brüderlichkeit um 3.\r\nHöchststufe 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "Stoff, aus dem Lügen gemacht sind",
+          "description": "Stellt Shikanoin Heizou bei der jeweils ersten Explosion des „Auges des konzentrierten Winds“ von jedem Tritt des konzentrierten Winds 9 Punkte Elementarenergie und bei jeder weiteren Explosion zusätzlich 1,5 Punkte Elementarenergie wieder her.\r\nBis zu 13,5 Punkte Elementarenergie auf diese Weise pro Tritt des konzentrierten Winds für Shikanoin Heizou zu erhalten.\r\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "Geheimarchiv",
+          "description": "Erhöht die Stufe der Fähigkeit Tritt des konzentrierten Winds um 3.\r\nHöchststufe 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
+          "title": "Verblüffende Festnahme",
+          "description": "Erhöht beim Auslösen der Faust der Brüderlichkeit die KT dabei für jede Stapelung „Deklination“ um 4 %. Erhöht bei Vorhandensein von „Urteilsspruch“ für Faust der Brüderlichkeit den KSCH der Faust der Brüderlichkeit dieses Mal um 32 %.\r\n",
           "descriptions": []
         }
       ]
