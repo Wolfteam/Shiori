@@ -49,6 +49,7 @@ class Shiori {
   static const IconData trefoil_lily = IconData(0xead4, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData heart = IconData(0xf004, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData cogs = IconData(0xf085, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData twitter = IconData(0xf099, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData github_circled = IconData(0xf09b, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData globe_1 = IconData(0xf0ac, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData filter = IconData(0xf0b0, fontFamily: _kFontFam, fontPackage: _kFontPkg);

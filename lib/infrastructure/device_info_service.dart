@@ -1,7 +1,6 @@
 import 'dart:io';
 
 import 'package:device_info_plus/device_info_plus.dart';
-import 'package:device_info_plus_windows/device_info_plus_windows.dart' as device_info_plus_windows;
 import 'package:flutter_user_agentx/flutter_user_agent.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 import 'package:shiori/domain/services/device_info_service.dart';
@@ -62,10 +61,9 @@ class DeviceInfoServiceImpl implements DeviceInfoService {
   }
 
   Future<void> _initForWindows() async {
-    final deviceInfo = device_info_plus_windows.DeviceInfoWindows();
-    //TODO: DeviceInfoPlugin CRASHES ON WINDOWS
-    final info = await deviceInfo.windowsInfo();
-    final model = info != null ? info.computerName : 'N/A';
+    final deviceInfo = DeviceInfoPlugin();
+    final info = await deviceInfo.windowsInfo;
+    final model = info.computerName;
     _deviceInfo = {
       'Model': model,
       'OsVersion': 'N/A',
