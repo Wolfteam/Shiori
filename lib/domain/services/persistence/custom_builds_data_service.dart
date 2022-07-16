@@ -1,12 +1,8 @@
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/models/models.dart';
+import 'package:shiori/domain/services/persistence/base_data_service.dart';
 
-abstract class CustomBuildsDataService {
-  //TODO: THESE 2 METHODS ARE COMMON IN ALL THE SERVICES
-  Future<void> init();
-
-  Future<void> deleteThemAll();
-
+abstract class CustomBuildsDataService implements BaseDataService {
   List<CustomBuildModel> getAllCustomBuilds();
 
   CustomBuildModel getCustomBuild(int key);
