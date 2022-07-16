@@ -71,7 +71,7 @@ void main() {
     expect: () {
       final character = _genshinService.getCharacterForCard(_keqingKey);
       final weapon = _genshinService.getWeaponForCard(_aquilaFavoniaKey);
-      final materials = _dataService.getAllMaterialsInInventory();
+      final materials = _dataService.inventory.getAllMaterialsInInventory();
       final material = materials.firstWhere((el) => el.key == _moraKey);
       expect(material.quantity, 20000);
       return [
@@ -97,7 +97,7 @@ void main() {
       skip: 1,
       expect: () {
         final character = _genshinService.getCharacterForCard(_keqingKey);
-        final materials = _dataService.getAllMaterialsInInventory();
+        final materials = _dataService.inventory.getAllMaterialsInInventory();
         return [
           InventoryState.loaded(
             characters: [character],
@@ -120,7 +120,7 @@ void main() {
       skip: 1,
       expect: () {
         final weapon = _genshinService.getWeaponForCard(_aquilaFavoniaKey);
-        final materials = _dataService.getAllMaterialsInInventory();
+        final materials = _dataService.inventory.getAllMaterialsInInventory();
         return [
           InventoryState.loaded(
             characters: [],
@@ -142,7 +142,7 @@ void main() {
         ..add(const InventoryEvent.updateMaterial(key: _moraKey, quantity: 100000)),
       skip: 1,
       expect: () {
-        final materials = _dataService.getAllMaterialsInInventory();
+        final materials = _dataService.inventory.getAllMaterialsInInventory();
         final material = materials.firstWhere((el) => el.key == _moraKey);
         expect(material.quantity, 100000);
         return [
@@ -170,7 +170,7 @@ void main() {
       //here I skip only 2 cause the init event does not make an state change
       skip: 2,
       expect: () {
-        final materials = _dataService.getAllMaterialsInInventory();
+        final materials = _dataService.inventory.getAllMaterialsInInventory();
         return [
           InventoryState.loaded(
             characters: [],
@@ -194,7 +194,7 @@ void main() {
       //here I skip only 2 cause the init event does not make an state change
       skip: 2,
       expect: () {
-        final materials = _dataService.getAllMaterialsInInventory();
+        final materials = _dataService.inventory.getAllMaterialsInInventory();
         return [
           InventoryState.loaded(
             characters: [],
@@ -218,7 +218,7 @@ void main() {
       //here I skip only 1 cause the init event does not make an state change
       skip: 1,
       expect: () {
-        final materials = _dataService.getAllMaterialsInInventory();
+        final materials = _dataService.inventory.getAllMaterialsInInventory();
         final material = materials.firstWhere((el) => el.key == _moraKey);
         expect(material.quantity, 0);
         return [
@@ -245,7 +245,7 @@ void main() {
         ..add(const InventoryEvent.clearAllCharacters()),
       skip: 2,
       expect: () {
-        final materials = _dataService.getAllMaterialsInInventory();
+        final materials = _dataService.inventory.getAllMaterialsInInventory();
         return [
           InventoryState.loaded(
             characters: [],
@@ -268,7 +268,7 @@ void main() {
         ..add(const InventoryEvent.clearAllWeapons()),
       skip: 2,
       expect: () {
-        final materials = _dataService.getAllMaterialsInInventory();
+        final materials = _dataService.inventory.getAllMaterialsInInventory();
         return [
           InventoryState.loaded(
             characters: [],
@@ -291,7 +291,7 @@ void main() {
         ..add(const InventoryEvent.clearAllMaterials()),
       skip: 2,
       expect: () {
-        final materials = _dataService.getAllMaterialsInInventory();
+        final materials = _dataService.inventory.getAllMaterialsInInventory();
         expect(materials.every((el) => el.quantity == 0), isTrue);
         return [
           InventoryState.loaded(

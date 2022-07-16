@@ -67,13 +67,13 @@ void main() {
       'should return custom tier list',
       setUp: () async {
         final defaultTierList = _genshinService.getDefaultCharacterTierList(TierListBloc.defaultColors);
-        await _dataService.saveTierList([
+        await _dataService.tierList.saveTierList([
           TierListRowModel.row(tierText: 'SSS', tierColor: TierListBloc.defaultColors.first, items: defaultTierList.first.items),
           TierListRowModel.row(tierText: 'SS', tierColor: TierListBloc.defaultColors[1], items: defaultTierList.last.items),
         ]);
       },
       tearDown: () async {
-        await _dataService.deleteTierList();
+        await _dataService.tierList.deleteTierList();
       },
       build: () => TierListBloc(_genshinService, _dataService, _telemetryService, _loggingService),
       act: (bloc) => bloc.add(const TierListEvent.init()),
@@ -89,7 +89,7 @@ void main() {
       'custom tier list exist but a reset is made',
       setUp: () async {
         final defaultTierList = _genshinService.getDefaultCharacterTierList(TierListBloc.defaultColors);
-        await _dataService.saveTierList([
+        await _dataService.tierList.saveTierList([
           TierListRowModel.row(tierText: 'SSS', tierColor: TierListBloc.defaultColors.first, items: defaultTierList.first.items),
           TierListRowModel.row(tierText: 'SS', tierColor: TierListBloc.defaultColors[1], items: defaultTierList.last.items),
         ]);
@@ -111,7 +111,7 @@ void main() {
       'text changed',
       build: () => TierListBloc(_genshinService, _dataService, _telemetryService, _loggingService),
       tearDown: () async {
-        await _dataService.deleteTierList();
+        await _dataService.tierList.deleteTierList();
       },
       act: (bloc) => bloc
         ..add(const TierListEvent.init())
@@ -125,7 +125,7 @@ void main() {
       'position changed',
       build: () => TierListBloc(_genshinService, _dataService, _telemetryService, _loggingService),
       tearDown: () async {
-        await _dataService.deleteTierList();
+        await _dataService.tierList.deleteTierList();
       },
       act: (bloc) => bloc
         ..add(const TierListEvent.init())
@@ -141,7 +141,7 @@ void main() {
       'color changed',
       build: () => TierListBloc(_genshinService, _dataService, _telemetryService, _loggingService),
       tearDown: () async {
-        await _dataService.deleteTierList();
+        await _dataService.tierList.deleteTierList();
       },
       act: (bloc) => bloc
         ..add(const TierListEvent.init())
@@ -154,7 +154,7 @@ void main() {
     blocTest<TierListBloc, TierListState>(
       'add character',
       tearDown: () async {
-        await _dataService.deleteTierList();
+        await _dataService.tierList.deleteTierList();
       },
       build: () => TierListBloc(_genshinService, _dataService, _telemetryService, _loggingService),
       act: (bloc) {
@@ -173,7 +173,7 @@ void main() {
     blocTest<TierListBloc, TierListState>(
       'delete character',
       tearDown: () async {
-        await _dataService.deleteTierList();
+        await _dataService.tierList.deleteTierList();
       },
       build: () => TierListBloc(_genshinService, _dataService, _telemetryService, _loggingService),
       act: (bloc) {
@@ -195,7 +195,7 @@ void main() {
       'add new one above the first one',
       build: () => TierListBloc(_genshinService, _dataService, _telemetryService, _loggingService),
       tearDown: () async {
-        await _dataService.deleteTierList();
+        await _dataService.tierList.deleteTierList();
       },
       act: (bloc) => bloc
         ..add(const TierListEvent.init())
@@ -211,7 +211,7 @@ void main() {
       'add new one below the first one',
       build: () => TierListBloc(_genshinService, _dataService, _telemetryService, _loggingService),
       tearDown: () async {
-        await _dataService.deleteTierList();
+        await _dataService.tierList.deleteTierList();
       },
       act: (bloc) => bloc
         ..add(const TierListEvent.init())
@@ -227,7 +227,7 @@ void main() {
       'clear',
       build: () => TierListBloc(_genshinService, _dataService, _telemetryService, _loggingService),
       tearDown: () async {
-        await _dataService.deleteTierList();
+        await _dataService.tierList.deleteTierList();
       },
       act: (bloc) => bloc
         ..add(const TierListEvent.init())
@@ -242,7 +242,7 @@ void main() {
       'clear all',
       build: () => TierListBloc(_genshinService, _dataService, _telemetryService, _loggingService),
       tearDown: () async {
-        await _dataService.deleteTierList();
+        await _dataService.tierList.deleteTierList();
       },
       act: (bloc) => bloc
         ..add(const TierListEvent.init())
@@ -259,7 +259,7 @@ void main() {
       'was successfully taken',
       build: () => TierListBloc(_genshinService, _dataService, _telemetryService, _loggingService),
       tearDown: () async {
-        await _dataService.deleteTierList();
+        await _dataService.tierList.deleteTierList();
       },
       act: (bloc) => bloc
         ..add(const TierListEvent.init())
@@ -274,7 +274,7 @@ void main() {
       'could not be taken',
       build: () => TierListBloc(_genshinService, _dataService, _telemetryService, _loggingService),
       tearDown: () async {
-        await _dataService.deleteTierList();
+        await _dataService.tierList.deleteTierList();
       },
       act: (bloc) => bloc
         ..add(const TierListEvent.init())

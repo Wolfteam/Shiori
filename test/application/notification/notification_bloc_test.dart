@@ -140,14 +140,14 @@ void main() {
     blocTest<NotificationBloc, NotificationState>(
       'a resin notification',
       setUp: () async {
-        await _dataService.saveResinNotification(_fragileResinKey, _defaultTitle, _defaultBody, 60, note: _defaultNote);
+        await _dataService.notifications.saveResinNotification(_fragileResinKey, _defaultTitle, _defaultBody, 60, note: _defaultNote);
       },
       tearDown: () async {
         await _dataService.deleteThemAll();
       },
       build: () => _buildBloc(),
       act: (bloc) {
-        final notification = _dataService.getAllNotifications().first;
+        final notification = _dataService.notifications.getAllNotifications().first;
         return bloc.add(NotificationEvent.edit(key: notification.key, type: AppNotificationType.resin));
       },
       verify: (bloc) => bloc.state.maybeMap(
@@ -164,7 +164,7 @@ void main() {
       'an expedition notification',
       setUp: () async {
         final material = _genshinService.getAllMaterialsThatCanBeObtainedFromAnExpedition().first;
-        await _dataService.saveExpeditionNotification(
+        await _dataService.notifications.saveExpeditionNotification(
           material.key,
           _defaultTitle,
           _defaultBody,
@@ -178,7 +178,7 @@ void main() {
       },
       build: () => _buildBloc(),
       act: (bloc) {
-        final notification = _dataService.getAllNotifications().first;
+        final notification = _dataService.notifications.getAllNotifications().first;
         return bloc.add(NotificationEvent.edit(key: notification.key, type: AppNotificationType.expedition));
       },
       verify: (bloc) => bloc.state.maybeMap(
@@ -196,7 +196,7 @@ void main() {
       'a farming artifact notification',
       setUp: () async {
         final artifact = _genshinService.getArtifactsForCard().first;
-        await _dataService.saveFarmingArtifactNotification(
+        await _dataService.notifications.saveFarmingArtifactNotification(
           artifact.key,
           ArtifactFarmingTimeType.twelveHours,
           _defaultTitle,
@@ -209,7 +209,7 @@ void main() {
       },
       build: () => _buildBloc(),
       act: (bloc) {
-        final notification = _dataService.getAllNotifications().first;
+        final notification = _dataService.notifications.getAllNotifications().first;
         return bloc.add(NotificationEvent.edit(key: notification.key, type: AppNotificationType.farmingArtifacts));
       },
       verify: (bloc) => bloc.state.maybeMap(
@@ -226,14 +226,14 @@ void main() {
       'a farming material notification',
       setUp: () async {
         final material = _genshinService.getAllMaterialsThatHaveAFarmingRespawnDuration().first;
-        await _dataService.saveFarmingMaterialNotification(material.key, _defaultTitle, _defaultBody, note: _defaultNote);
+        await _dataService.notifications.saveFarmingMaterialNotification(material.key, _defaultTitle, _defaultBody, note: _defaultNote);
       },
       tearDown: () async {
         await _dataService.deleteThemAll();
       },
       build: () => _buildBloc(),
       act: (bloc) {
-        final notification = _dataService.getAllNotifications().first;
+        final notification = _dataService.notifications.getAllNotifications().first;
         return bloc.add(NotificationEvent.edit(key: notification.key, type: AppNotificationType.farmingMaterials));
       },
       verify: (bloc) => bloc.state.maybeMap(
@@ -249,14 +249,14 @@ void main() {
       'a gadget notification',
       setUp: () async {
         final gadget = _genshinService.getAllGadgetsForNotifications().first;
-        await _dataService.saveGadgetNotification(gadget.key, _defaultTitle, _defaultBody, note: _defaultNote);
+        await _dataService.notifications.saveGadgetNotification(gadget.key, _defaultTitle, _defaultBody, note: _defaultNote);
       },
       tearDown: () async {
         await _dataService.deleteThemAll();
       },
       build: () => _buildBloc(),
       act: (bloc) {
-        final notification = _dataService.getAllNotifications().first;
+        final notification = _dataService.notifications.getAllNotifications().first;
         return bloc.add(NotificationEvent.edit(key: notification.key, type: AppNotificationType.gadget));
       },
       verify: (bloc) => bloc.state.maybeMap(
@@ -272,7 +272,7 @@ void main() {
       'a furniture notification',
       setUp: () async {
         final furniture = _genshinService.getDefaultFurnitureForNotifications();
-        await _dataService.saveFurnitureNotification(
+        await _dataService.notifications.saveFurnitureNotification(
           furniture.key,
           FurnitureCraftingTimeType.fourteenHours,
           _defaultTitle,
@@ -285,7 +285,7 @@ void main() {
       },
       build: () => _buildBloc(),
       act: (bloc) {
-        final notification = _dataService.getAllNotifications().first;
+        final notification = _dataService.notifications.getAllNotifications().first;
         return bloc.add(NotificationEvent.edit(key: notification.key, type: AppNotificationType.furniture));
       },
       verify: (bloc) => bloc.state.maybeMap(
@@ -301,7 +301,7 @@ void main() {
     blocTest<NotificationBloc, NotificationState>(
       'a realm currency notification',
       setUp: () async {
-        await _dataService.saveRealmCurrencyNotification(
+        await _dataService.notifications.saveRealmCurrencyNotification(
           _realmCurrency,
           RealmRankType.luxury,
           7,
@@ -316,7 +316,7 @@ void main() {
       },
       build: () => _buildBloc(),
       act: (bloc) {
-        final notification = _dataService.getAllNotifications().first;
+        final notification = _dataService.notifications.getAllNotifications().first;
         return bloc.add(NotificationEvent.edit(key: notification.key, type: AppNotificationType.realmCurrency));
       },
       verify: (bloc) => bloc.state.maybeMap(
@@ -335,7 +335,7 @@ void main() {
       'a weekly boss notification',
       setUp: () async {
         final boss = _genshinService.getAllMonstersForCard().where((el) => el.type == MonsterType.boss).first;
-        await _dataService.saveWeeklyBossNotification(
+        await _dataService.notifications.saveWeeklyBossNotification(
           boss.key,
           _settingsService.serverResetTime,
           _defaultTitle,
@@ -348,7 +348,7 @@ void main() {
       },
       build: () => _buildBloc(),
       act: (bloc) {
-        final notification = _dataService.getAllNotifications().first;
+        final notification = _dataService.notifications.getAllNotifications().first;
         return bloc.add(NotificationEvent.edit(key: notification.key, type: AppNotificationType.weeklyBoss));
       },
       verify: (bloc) => bloc.state.maybeMap(
@@ -363,14 +363,14 @@ void main() {
     blocTest<NotificationBloc, NotificationState>(
       'a daily check in notification',
       setUp: () async {
-        await _dataService.saveDailyCheckInNotification(_primogemKey, _defaultTitle, _defaultBody, note: _defaultNote);
+        await _dataService.notifications.saveDailyCheckInNotification(_primogemKey, _defaultTitle, _defaultBody, note: _defaultNote);
       },
       tearDown: () async {
         await _dataService.deleteThemAll();
       },
       build: () => _buildBloc(),
       act: (bloc) {
-        final notification = _dataService.getAllNotifications().first;
+        final notification = _dataService.notifications.getAllNotifications().first;
         return bloc.add(NotificationEvent.edit(key: notification.key, type: AppNotificationType.dailyCheckIn));
       },
       verify: (bloc) => bloc.state.maybeMap(
@@ -409,14 +409,15 @@ void main() {
             default:
               throw Exception('Not mapped type');
           }
-          await _dataService.saveCustomNotification(key, _defaultTitle, _defaultBody, _customNotificationCompletesAt, type, note: _defaultNote);
+          await _dataService.notifications
+              .saveCustomNotification(key, _defaultTitle, _defaultBody, _customNotificationCompletesAt, type, note: _defaultNote);
         },
         tearDown: () async {
           await _dataService.deleteThemAll();
         },
         build: () => _buildBloc(),
         act: (bloc) {
-          final notification = _dataService.getAllNotifications().first;
+          final notification = _dataService.notifications.getAllNotifications().first;
           return bloc.add(NotificationEvent.edit(key: notification.key, type: AppNotificationType.custom));
         },
         verify: (bloc) => bloc.state.maybeMap(
@@ -454,13 +455,13 @@ void main() {
       'on an existing notification',
       build: () => _buildBloc(),
       setUp: () async {
-        await _dataService.saveResinNotification(_fragileResinKey, _defaultTitle, _defaultBody, 60, note: _defaultNote);
+        await _dataService.notifications.saveResinNotification(_fragileResinKey, _defaultTitle, _defaultBody, 60, note: _defaultNote);
       },
       tearDown: () async {
         await _dataService.deleteThemAll();
       },
       act: (bloc) {
-        final notification = _dataService.getAllNotifications().first;
+        final notification = _dataService.notifications.getAllNotifications().first;
         return bloc
           ..add(NotificationEvent.edit(key: notification.key, type: AppNotificationType.resin))
           ..add(const NotificationEvent.titleChanged(newValue: 'Title'))
@@ -499,13 +500,13 @@ void main() {
       'on an existing notification',
       build: () => _buildBloc(),
       setUp: () async {
-        await _dataService.saveResinNotification(_fragileResinKey, _defaultTitle, _defaultBody, 60, note: _defaultNote);
+        await _dataService.notifications.saveResinNotification(_fragileResinKey, _defaultTitle, _defaultBody, 60, note: _defaultNote);
       },
       tearDown: () async {
         await _dataService.deleteThemAll();
       },
       act: (bloc) {
-        final notification = _dataService.getAllNotifications().first;
+        final notification = _dataService.notifications.getAllNotifications().first;
         return bloc
           ..add(NotificationEvent.edit(key: notification.key, type: AppNotificationType.resin))
           ..add(const NotificationEvent.resinChanged(newValue: 100));
@@ -545,7 +546,7 @@ void main() {
       'on an existing notification',
       build: () => _buildBloc(),
       setUp: () async {
-        await _dataService.saveExpeditionNotification(
+        await _dataService.notifications.saveExpeditionNotification(
           'mora',
           _defaultTitle,
           _defaultBody,
@@ -558,7 +559,7 @@ void main() {
         await _dataService.deleteThemAll();
       },
       act: (bloc) {
-        final notification = _dataService.getAllNotifications().first;
+        final notification = _dataService.notifications.getAllNotifications().first;
         return bloc
           ..add(NotificationEvent.edit(key: notification.key, type: AppNotificationType.expedition))
           ..add(const NotificationEvent.expeditionTimeTypeChanged(newValue: ExpeditionTimeType.eightHours))
@@ -599,7 +600,7 @@ void main() {
       build: () => _buildBloc(),
       setUp: () async {
         final artifact = _genshinService.getArtifactsForCard().first;
-        await _dataService.saveFarmingArtifactNotification(
+        await _dataService.notifications.saveFarmingArtifactNotification(
           artifact.key,
           ArtifactFarmingTimeType.twelveHours,
           _defaultTitle,
@@ -611,7 +612,7 @@ void main() {
         await _dataService.deleteThemAll();
       },
       act: (bloc) {
-        final notification = _dataService.getAllNotifications().first;
+        final notification = _dataService.notifications.getAllNotifications().first;
         return bloc
           ..add(NotificationEvent.edit(key: notification.key, type: AppNotificationType.farmingArtifacts))
           ..add(const NotificationEvent.artifactFarmingTimeTypeChanged(newValue: ArtifactFarmingTimeType.twentyFourHours));
@@ -654,13 +655,13 @@ void main() {
       build: () => _buildBloc(),
       setUp: () async {
         final material = _genshinService.getAllMaterialsThatHaveAFarmingRespawnDuration().first;
-        await _dataService.saveFarmingMaterialNotification(material.key, _defaultTitle, _defaultBody, note: _defaultNote);
+        await _dataService.notifications.saveFarmingMaterialNotification(material.key, _defaultTitle, _defaultBody, note: _defaultNote);
       },
       tearDown: () async {
         await _dataService.deleteThemAll();
       },
       act: (bloc) {
-        final notification = _dataService.getAllNotifications().first;
+        final notification = _dataService.notifications.getAllNotifications().first;
         final newMaterial = _genshinService.getAllMaterialsThatHaveAFarmingRespawnDuration().last;
         return bloc
           ..add(NotificationEvent.edit(key: notification.key, type: AppNotificationType.farmingMaterials))
@@ -705,13 +706,13 @@ void main() {
       build: () => _buildBloc(),
       setUp: () async {
         final gadget = _genshinService.getAllGadgetsForNotifications().first;
-        await _dataService.saveGadgetNotification(gadget.key, _defaultTitle, _defaultBody, note: _defaultNote);
+        await _dataService.notifications.saveGadgetNotification(gadget.key, _defaultTitle, _defaultBody, note: _defaultNote);
       },
       tearDown: () async {
         await _dataService.deleteThemAll();
       },
       act: (bloc) {
-        final notification = _dataService.getAllNotifications().first;
+        final notification = _dataService.notifications.getAllNotifications().first;
         final gadget = _genshinService.getAllGadgetsForNotifications().last;
         return bloc
           ..add(NotificationEvent.edit(key: notification.key, type: AppNotificationType.gadget))
@@ -752,7 +753,7 @@ void main() {
       build: () => _buildBloc(),
       setUp: () async {
         final furniture = _genshinService.getDefaultFurnitureForNotifications();
-        await _dataService.saveFurnitureNotification(
+        await _dataService.notifications.saveFurnitureNotification(
           furniture.key,
           FurnitureCraftingTimeType.sixteenHours,
           _defaultTitle,
@@ -764,7 +765,7 @@ void main() {
         await _dataService.deleteThemAll();
       },
       act: (bloc) {
-        final notification = _dataService.getAllNotifications().first;
+        final notification = _dataService.notifications.getAllNotifications().first;
         return bloc
           ..add(NotificationEvent.edit(key: notification.key, type: AppNotificationType.furniture))
           ..add(const NotificationEvent.furnitureCraftingTimeTypeChanged(newValue: FurnitureCraftingTimeType.sixteenHours));
@@ -806,7 +807,7 @@ void main() {
       'on an existing notification',
       build: () => _buildBloc(),
       setUp: () async {
-        await _dataService.saveRealmCurrencyNotification(
+        await _dataService.notifications.saveRealmCurrencyNotification(
           _realmCurrency,
           RealmRankType.luxury,
           10,
@@ -820,7 +821,7 @@ void main() {
         await _dataService.deleteThemAll();
       },
       act: (bloc) {
-        final notification = _dataService.getAllNotifications().first;
+        final notification = _dataService.notifications.getAllNotifications().first;
         return bloc
           ..add(NotificationEvent.edit(key: notification.key, type: AppNotificationType.realmCurrency))
           ..add(const NotificationEvent.realmCurrencyChanged(newValue: 1000))
@@ -861,7 +862,7 @@ void main() {
       build: () => _buildBloc(),
       setUp: () async {
         final boss = _genshinService.getAllMonstersForCard().firstWhere((el) => el.type == MonsterType.boss).key;
-        await _dataService.saveWeeklyBossNotification(
+        await _dataService.notifications.saveWeeklyBossNotification(
           boss,
           AppServerResetTimeType.northAmerica,
           _defaultTitle,
@@ -874,7 +875,7 @@ void main() {
       },
       act: (bloc) {
         final boss = _genshinService.getAllMonstersForCard().lastWhere((el) => el.type == MonsterType.boss);
-        final notification = _dataService.getAllNotifications().first;
+        final notification = _dataService.notifications.getAllNotifications().first;
         return bloc
           ..add(NotificationEvent.edit(key: notification.key, type: AppNotificationType.weeklyBoss))
           ..add(NotificationEvent.imageChanged(newValue: boss.image));
@@ -914,7 +915,7 @@ void main() {
       build: () => _buildBloc(),
       setUp: () async {
         final boss = _genshinService.getAllMonstersForCard().firstWhere((el) => el.type == MonsterType.boss).key;
-        await _dataService.saveCustomNotification(
+        await _dataService.notifications.saveCustomNotification(
           boss,
           _defaultTitle,
           _defaultBody,
@@ -927,7 +928,7 @@ void main() {
         await _dataService.deleteThemAll();
       },
       act: (bloc) {
-        final notification = _dataService.getAllNotifications().first;
+        final notification = _dataService.notifications.getAllNotifications().first;
         return bloc
           ..add(NotificationEvent.edit(key: notification.key, type: AppNotificationType.custom))
           ..add(const NotificationEvent.itemTypeChanged(newValue: AppNotificationItemType.artifact));
@@ -963,13 +964,13 @@ void main() {
       'on an existing notification',
       build: () => _buildBloc(),
       setUp: () async {
-        await _dataService.saveDailyCheckInNotification(_primogemKey, _defaultTitle, _defaultBody, note: _defaultNote);
+        await _dataService.notifications.saveDailyCheckInNotification(_primogemKey, _defaultTitle, _defaultBody, note: _defaultNote);
       },
       tearDown: () async {
         await _dataService.deleteThemAll();
       },
       act: (bloc) {
-        final notification = _dataService.getAllNotifications().first;
+        final notification = _dataService.notifications.getAllNotifications().first;
         return bloc.add(NotificationEvent.edit(key: notification.key, type: AppNotificationType.dailyCheckIn));
       },
       verify: (bloc) => bloc.state.maybeMap(

@@ -32,7 +32,7 @@ class WeaponBloc extends Bloc<WeaponEvent, WeaponState> {
         loading: (state) async => state,
         loaded: (state) async {
           await _telemetryService.trackItemAddedToInventory(key, 1);
-          await _dataService.addWeaponToInventory(key);
+          await _dataService.inventory.addWeaponToInventory(key);
           return state.copyWith.call(isInInventory: true);
         },
       ),
@@ -40,7 +40,7 @@ class WeaponBloc extends Bloc<WeaponEvent, WeaponState> {
         loading: (state) async => state,
         loaded: (state) async {
           await _telemetryService.trackItemDeletedFromInventory(key);
-          await _dataService.deleteWeaponFromInventory(key);
+          await _dataService.inventory.deleteWeaponFromInventory(key);
           return state.copyWith.call(isInInventory: false);
         },
       ),
@@ -76,7 +76,7 @@ class WeaponBloc extends Bloc<WeaponEvent, WeaponState> {
       secondaryStatValue: weapon.secondaryStatValue,
       description: translation.description,
       locationType: weapon.location,
-      isInInventory: _dataService.isItemInInventory(weapon.key, ItemType.weapon),
+      isInInventory: _dataService.inventory.isItemInInventory(weapon.key, ItemType.weapon),
       ascensionMaterials: ascensionMaterials,
       refinements: refinements,
       characters: charImgs,

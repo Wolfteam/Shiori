@@ -42,7 +42,7 @@ class CharacterBloc extends Bloc<CharacterEvent, CharacterState> {
         loading: (state) async => state,
         loaded: (state) async {
           await _telemetryService.trackItemAddedToInventory(key, 1);
-          await _dataService.addCharacterToInventory(key);
+          await _dataService.inventory.addCharacterToInventory(key);
           return state.copyWith.call(isInInventory: true);
         },
       ),
@@ -50,7 +50,7 @@ class CharacterBloc extends Bloc<CharacterEvent, CharacterState> {
         loading: (state) async => state,
         loaded: (state) async {
           await _telemetryService.trackItemDeletedFromInventory(key);
-          await _dataService.deleteCharacterFromInventory(key);
+          await _dataService.inventory.deleteCharacterFromInventory(key);
           return state.copyWith.call(isInInventory: false);
         },
       ),
@@ -85,7 +85,7 @@ class CharacterBloc extends Bloc<CharacterEvent, CharacterState> {
     }).toList();
 
     final birthday = _localeService.formatCharBirthDate(char.birthday);
-    final isInInventory = _dataService.isItemInInventory(char.key, ItemType.character);
+    final isInInventory = _dataService.inventory.isItemInInventory(char.key, ItemType.character);
     final builds = char.builds.map((build) {
       return CharacterBuildCardModel(
         isRecommended: build.isRecommended,

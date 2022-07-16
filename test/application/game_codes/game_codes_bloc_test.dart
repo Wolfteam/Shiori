@@ -85,7 +85,7 @@ void main() {
       'some game codes have been loaded',
       build: () => GameCodesBloc(_dataService, _telemetryService, _gameCodeService, _networkService),
       setUp: () async {
-        await _dataService.saveGameCodes(_defaultGameCodes);
+        await _dataService.gameCodes.saveGameCodes(_defaultGameCodes);
       },
       tearDown: () async {
         await _dataService.deleteThemAll();
@@ -121,7 +121,7 @@ void main() {
     'Mark as used',
     build: () => GameCodesBloc(_dataService, _telemetryService, _gameCodeService, _networkService),
     setUp: () async {
-      await _dataService.saveGameCodes(_defaultGameCodes);
+      await _dataService.gameCodes.saveGameCodes(_defaultGameCodes);
     },
     tearDown: () async {
       await _dataService.deleteThemAll();

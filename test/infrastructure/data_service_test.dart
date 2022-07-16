@@ -44,11 +44,11 @@ void main() {
 
   group('Sessions', () {
     test('create 1 session with 1 item', () async {
-      final existingSessions = _dataService.getAllCalAscMatSessions();
+      final existingSessions = _dataService.calculator.getAllCalAscMatSessions();
       expect(existingSessions.length, equals(0));
 
       const sessionName = 'Keqing session';
-      final sessionKey = await _dataService.createCalAscMatSession(sessionName, 0);
+      final sessionKey = await _dataService.calculator.createCalAscMatSession(sessionName, 0);
       final char = _genshinService.getCharacter('keqing');
       const currentAscensionLevel = 1;
       const desiredAscensionLevel = 5;
@@ -102,9 +102,9 @@ void main() {
           useMaterialsFromInventory: false,
         ),
       );
-      await _dataService.addCalAscMatSessionItems(sessionKey, items);
+      await _dataService.calculator.addCalAscMatSessionItems(sessionKey, items);
 
-      final created = _dataService.getCalcAscMatSession(sessionKey);
+      final created = _dataService.calculator.getCalcAscMatSession(sessionKey);
       expect(created.key, sessionKey);
       expect(created.name, equals(sessionName));
       expect(created.items, isNotEmpty);

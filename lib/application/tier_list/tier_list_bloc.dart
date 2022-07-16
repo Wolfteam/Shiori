@@ -65,10 +65,10 @@ class TierListBloc extends Bloc<TierListEvent, TierListState> {
   Future<TierListState> _init(bool reset) async {
     await _telemetryService.trackTierListOpened();
     if (reset) {
-      await _dataService.deleteTierList();
+      await _dataService.tierList.deleteTierList();
     }
 
-    final tierList = _dataService.getTierList();
+    final tierList = _dataService.tierList.getTierList();
     final defaultTierList = _genshinService.getDefaultCharacterTierList(defaultColors);
     if (tierList.isEmpty) {
       return TierListState.loaded(rows: defaultTierList, charsAvailable: [], readyToSave: false);
@@ -82,21 +82,21 @@ class TierListBloc extends Bloc<TierListEvent, TierListState> {
   Future<TierListState> _rowTextChanged(int index, String newValue) async {
     final updated = currentState.rows.elementAt(index).copyWith.call(tierText: newValue);
     final rows = _updateRows(updated, index, index);
-    await _dataService.saveTierList(rows);
+    await _dataService.tierList.saveTierList(rows);
     return currentState.copyWith.call(rows: rows);
   }
 
   Future<TierListState> _rowPositionChanged(int index, int newIndex) async {
     final updated = currentState.rows.elementAt(index);
     final rows = _updateRows(updated, newIndex, index);
-    await _dataService.saveTierList(rows);
+    await _dataService.tierList.saveTierList(rows);
     return currentState.copyWith.call(rows: rows);
   }
 
   Future<TierListState> _rowColorChanged(int index, int newColor) async {
     final updated = currentState.rows.elementAt(index).copyWith.call(tierColor: newColor);
     final rows = _updateRows(updated, index, index);
-    await _dataService.saveTierList(rows);
+    await _dataService.tierList.saveTierList(rows);
     return currentState.copyWith.call(rows: rows);
   }
 
@@ -108,7 +108,7 @@ class TierListBloc extends Bloc<TierListEvent, TierListState> {
     final newRow = TierListRowModel.row(tierText: (currentState.rows.length + 1).toString(), tierColor: color, items: []);
     final rows = [...currentState.rows];
     rows.insert(newIndex, newRow);
-    await _dataService.saveTierList(rows);
+    await _dataService.tierList.saveTierList(rows);
     return currentState.copyWith.call(rows: rows);
   }
 
@@ -120,7 +120,7 @@ class TierListBloc extends Bloc<TierListEvent, TierListState> {
     final row = rows.elementAt(index);
     final chars = _updateAvailableChars([...currentState.charsAvailable, ...row.items], []);
     rows.removeAt(index);
-    await _dataService.saveTierList(rows);
+    await _dataService.tierList.saveTierList(rows);
     return currentState.copyWith.call(rows: rows, charsAvailable: chars);
   }
 
@@ -129,14 +129,14 @@ class TierListBloc extends Bloc<TierListEvent, TierListState> {
     final updated = row.copyWith.call(items: []);
     final rows = _updateRows(updated, index, index);
     final chars = _updateAvailableChars([...currentState.charsAvailable, ...row.items], []);
-    await _dataService.saveTierList(rows);
+    await _dataService.tierList.saveTierList(rows);
     return currentState.copyWith.call(rows: rows, charsAvailable: chars);
   }
 
   Future<TierListState> _clearAllRows() async {
     final chars = _updateAvailableChars(_genshinService.getDefaultCharacterTierList(defaultColors).expand((row) => row.items).toList(), []);
     final updatedRows = currentState.rows.map((row) => row.copyWith.call(items: [])).toList();
-    await _dataService.saveTierList(updatedRows);
+    await _dataService.tierList.saveTierList(updatedRows);
     return currentState.copyWith.call(rows: updatedRows, charsAvailable: chars, readyToSave: false);
   }
 
@@ -148,7 +148,7 @@ class TierListBloc extends Bloc<TierListEvent, TierListState> {
     final updated = row.copyWith.call(items: [...row.items, item]);
     final updatedChars = _updateAvailableChars(currentState.charsAvailable, [item]);
     final updatedRows = _updateRows(updated, index, index);
-    await _dataService.saveTierList(updatedRows);
+    await _dataService.tierList.saveTierList(updatedRows);
     return currentState.copyWith.call(rows: updatedRows, charsAvailable: updatedChars);
   }
 
@@ -157,7 +157,7 @@ class TierListBloc extends Bloc<TierListEvent, TierListState> {
     final updated = row.copyWith.call(items: row.items.where((el) => el.key != item.key).toList());
     final updatedChars = _updateAvailableChars([...currentState.charsAvailable, item], []);
     final updatedRows = _updateRows(updated, index, index);
-    await _dataService.saveTierList(updatedRows);
+    await _dataService.tierList.saveTierList(updatedRows);
     return currentState.copyWith.call(rows: updatedRows, charsAvailable: updatedChars, readyToSave: false);
   }
 
