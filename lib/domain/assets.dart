@@ -1,5 +1,8 @@
-import 'enums/enums.dart';
-import 'extensions/string_extensions.dart';
+import 'dart:convert';
+
+import 'package:flutter/services.dart' show rootBundle;
+import 'package:shiori/domain/enums/enums.dart';
+import 'package:shiori/domain/extensions/string_extensions.dart';
 
 class Assets {
   static String dbPath = 'assets/db';
@@ -237,4 +240,10 @@ class Assets {
   static String getGadgetPath(String image) => '$gadgetsBasePath/$image';
 
   static String getFurniturePath(String image) => '$furnitureBasePath/$image';
+
+  static Future<Map<String, dynamic>> getJsonFromPath(String path) async {
+    final jsonStr = await rootBundle.loadString(path);
+    final json = jsonDecode(jsonStr) as Map<String, dynamic>;
+    return json;
+  }
 }
