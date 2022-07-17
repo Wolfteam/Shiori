@@ -136,7 +136,7 @@ class CalculatorDataServiceImpl implements CalculatorDataService {
 
     //Here we created a used inventory item for each material
     for (final material in item.materials) {
-      final mat = _genshinService.getMaterial(material.key);
+      final mat = _genshinService.materials.getMaterial(material.key);
       await _inventory.useItemFromInventory(calculatorItemKey, mat.key, ItemType.material, material.quantity);
     }
 
@@ -250,8 +250,8 @@ class CalculatorDataServiceImpl implements CalculatorDataService {
   }
 
   ItemAscensionMaterials _buildForCharacter(CalculatorItem item, {int? calculatorItemKey, bool includeInventory = false}) {
-    final character = _genshinService.getCharacter(item.itemKey);
-    final translation = _genshinService.getCharacterTranslation(item.itemKey);
+    final character = _genshinService.characters.getCharacter(item.itemKey);
+    final translation = _genshinService.translations.getCharacterTranslation(item.itemKey);
     final skills = _calcItemSkillBox.values
         .where((s) => s.calculatorItemKey == item.key)
         .map((skill) => _buildCharacterSkill(item, skill, translation.skills.firstWhere((t) => t.key == skill.skillKey)))
@@ -312,8 +312,8 @@ class CalculatorDataServiceImpl implements CalculatorDataService {
   }
 
   ItemAscensionMaterials _buildForWeapon(CalculatorItem item, {int? calculatorItemKey, bool includeInventory = false}) {
-    final weapon = _genshinService.getWeapon(item.itemKey);
-    final translation = _genshinService.getWeaponTranslation(item.itemKey);
+    final weapon = _genshinService.weapons.getWeapon(item.itemKey);
+    final translation = _genshinService.translations.getWeaponTranslation(item.itemKey);
     var materials = _calculatorService.getWeaponMaterialsToUse(
       weapon,
       item.currentLevel,

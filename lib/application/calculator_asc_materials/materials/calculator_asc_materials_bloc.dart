@@ -47,8 +47,8 @@ class CalculatorAscMaterialsBloc extends Bloc<CalculatorAscMaterialsEvent, Calcu
       },
       addCharacter: (e) async {
         await _telemetryService.trackCalculatorItemAscMaterialLoaded(e.key);
-        final char = _genshinService.getCharacter(e.key);
-        final translation = _genshinService.getCharacterTranslation(e.key);
+        final char = _genshinService.characters.getCharacter(e.key);
+        final translation = _genshinService.translations.getCharacterTranslation(e.key);
         var newItem = ItemAscensionMaterials.forCharacters(
           key: e.key,
           image: Assets.getCharacterPath(char.image),
@@ -80,8 +80,8 @@ class CalculatorAscMaterialsBloc extends Bloc<CalculatorAscMaterialsEvent, Calcu
       },
       addWeapon: (e) async {
         await _telemetryService.trackCalculatorItemAscMaterialLoaded(e.key);
-        final weapon = _genshinService.getWeapon(e.key);
-        final translation = _genshinService.getWeaponTranslation(e.key);
+        final weapon = _genshinService.weapons.getWeapon(e.key);
+        final translation = _genshinService.translations.getWeaponTranslation(e.key);
         var newItem = ItemAscensionMaterials.forWeapons(
           key: e.key,
           image: weapon.fullImagePath,
@@ -132,7 +132,7 @@ class CalculatorAscMaterialsBloc extends Bloc<CalculatorAscMaterialsEvent, Calcu
       },
       updateCharacter: (e) async {
         final currentChar = currentState.items.elementAt(e.index);
-        final char = _genshinService.getCharacter(currentChar.key);
+        final char = _genshinService.characters.getCharacter(currentChar.key);
         final updatedChar = currentChar.copyWith.call(
           materials: _calculatorService.getCharacterMaterialsToUse(
             char,
@@ -155,7 +155,7 @@ class CalculatorAscMaterialsBloc extends Bloc<CalculatorAscMaterialsEvent, Calcu
       },
       updateWeapon: (e) async {
         final currentWeapon = currentState.items.elementAt(e.index);
-        final weapon = _genshinService.getWeapon(currentWeapon.key);
+        final weapon = _genshinService.weapons.getWeapon(currentWeapon.key);
         final updatedWeapon = currentWeapon.copyWith.call(
           materials: _calculatorService.getWeaponMaterialsToUse(
             weapon,

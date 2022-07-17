@@ -48,10 +48,10 @@ class BannerHistoryBloc extends Bloc<BannerHistoryEvent, BannerHistoryState> {
 
   Future<BannerHistoryState> _init() async {
     await _telemetryService.trackBannerHistoryOpened();
-    _characterBanners.addAll(_genshinService.getBannerHistory(BannerHistoryItemType.character));
-    _weaponBanners.addAll(_genshinService.getBannerHistory(BannerHistoryItemType.weapon));
+    _characterBanners.addAll(_genshinService.bannerHistory.getBannerHistory(BannerHistoryItemType.character));
+    _weaponBanners.addAll(_genshinService.bannerHistory.getBannerHistory(BannerHistoryItemType.weapon));
 
-    final versions = _genshinService.getBannerHistoryVersions(SortDirectionType.asc);
+    final versions = _genshinService.bannerHistory.getBannerHistoryVersions(SortDirectionType.asc);
     final banners = _sortBanners(_characterBanners, versions, state.sortType);
     return BannerHistoryState.initial(
       type: BannerHistoryItemType.character,

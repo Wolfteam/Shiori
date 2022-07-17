@@ -32,8 +32,8 @@ void main() {
 
       await _genshinService.init(settingsService.language);
 
-      _characterBanners.addAll(_genshinService.getBannerHistory(BannerHistoryItemType.character));
-      _weaponBanners.addAll(_genshinService.getBannerHistory(BannerHistoryItemType.weapon));
+      _characterBanners.addAll(_genshinService.bannerHistory.getBannerHistory(BannerHistoryItemType.character));
+      _weaponBanners.addAll(_genshinService.bannerHistory.getBannerHistory(BannerHistoryItemType.weapon));
     });
   });
 
@@ -237,7 +237,7 @@ void main() {
     verify: (bloc) {
       checkCommonState(bloc.state, type: BannerHistoryItemType.weapon, sortType: BannerHistorySortType.nameDesc, selectedVersions: [1.1]);
       final itemsForSearch = bloc.getItemsForSearch();
-      final banners = _genshinService.getBanners(bloc.state.selectedVersions.first);
+      final banners = _genshinService.bannerHistory.getBanners(bloc.state.selectedVersions.first);
       final expectedCount = banners.where((el) => el.type == BannerHistoryItemType.weapon).expand((el) => el.items).map((e) => e.key).toSet().length;
       final expectedItems = bloc.state.banners.map((e) => e.key).toSet().toList();
       expect(expectedCount, 14);

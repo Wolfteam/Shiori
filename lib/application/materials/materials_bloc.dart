@@ -64,7 +64,7 @@ class MaterialsBloc extends Bloc<MaterialsEvent, MaterialsState> {
     SortDirectionType sortDirectionType = SortDirectionType.asc,
   }) {
     final isLoaded = state is _LoadedState;
-    var data = _genshinService.getAllMaterialsForCard();
+    var data = _genshinService.materials.getAllMaterialsForCard();
     if (excludeKeys.isNotEmpty) {
       data = data.where((el) => !excludeKeys.contains(el.key)).toList();
     }

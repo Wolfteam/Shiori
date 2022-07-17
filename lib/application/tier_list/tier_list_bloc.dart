@@ -69,7 +69,7 @@ class TierListBloc extends Bloc<TierListEvent, TierListState> {
     }
 
     final tierList = _dataService.tierList.getTierList();
-    final defaultTierList = _genshinService.getDefaultCharacterTierList(defaultColors);
+    final defaultTierList = _genshinService.characters.getDefaultCharacterTierList(defaultColors);
     if (tierList.isEmpty) {
       return TierListState.loaded(rows: defaultTierList, charsAvailable: [], readyToSave: false);
     }
@@ -134,7 +134,8 @@ class TierListBloc extends Bloc<TierListEvent, TierListState> {
   }
 
   Future<TierListState> _clearAllRows() async {
-    final chars = _updateAvailableChars(_genshinService.getDefaultCharacterTierList(defaultColors).expand((row) => row.items).toList(), []);
+    final chars =
+        _updateAvailableChars(_genshinService.characters.getDefaultCharacterTierList(defaultColors).expand((row) => row.items).toList(), []);
     final updatedRows = currentState.rows.map((row) => row.copyWith.call(items: [])).toList();
     await _dataService.tierList.saveTierList(updatedRows);
     return currentState.copyWith.call(rows: updatedRows, charsAvailable: chars, readyToSave: false);

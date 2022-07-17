@@ -127,7 +127,7 @@ class NotificationsDataServiceImpl implements NotificationsDataService {
     bool showNotification = true,
   }) async {
     final now = DateTime.now();
-    final gadget = _genshinService.getGadget(itemKey);
+    final gadget = _genshinService.gadgets.getGadget(itemKey);
     final completesAt = now.add(gadget.cooldownDuration!);
     final notification = NotificationGadget(
       itemKey: itemKey,
@@ -200,7 +200,7 @@ class NotificationsDataServiceImpl implements NotificationsDataService {
     bool showNotification = true,
   }) async {
     final now = DateTime.now();
-    final completesAt = now.add(_genshinService.getMaterial(itemKey).farmingRespawnDuration!);
+    final completesAt = now.add(_genshinService.materials.getMaterial(itemKey).farmingRespawnDuration!);
     final notification = NotificationFarmingMaterial(
       itemKey: itemKey,
       createdAt: now,
@@ -358,7 +358,7 @@ class NotificationsDataServiceImpl implements NotificationsDataService {
         return _mapToNotificationItem(item);
       case AppNotificationType.farmingMaterials:
         final item = _getNotification<NotificationFarmingMaterial>(key, type);
-        item.completesAt = DateTime.now().add(_genshinService.getMaterial(item.itemKey).farmingRespawnDuration!);
+        item.completesAt = DateTime.now().add(_genshinService.materials.getMaterial(item.itemKey).farmingRespawnDuration!);
         await item.save();
         return _mapToNotificationItem(item);
       case AppNotificationType.farmingArtifacts:
@@ -368,7 +368,7 @@ class NotificationsDataServiceImpl implements NotificationsDataService {
         return _mapToNotificationItem(item);
       case AppNotificationType.gadget:
         final item = _getNotification<NotificationGadget>(key, type);
-        item.completesAt = DateTime.now().add(_genshinService.getGadget(item.itemKey).cooldownDuration!);
+        item.completesAt = DateTime.now().add(_genshinService.gadgets.getGadget(item.itemKey).cooldownDuration!);
         await item.save();
         return _mapToNotificationItem(item);
       case AppNotificationType.furniture:
@@ -466,7 +466,7 @@ class NotificationsDataServiceImpl implements NotificationsDataService {
     final item = _notificationsFarmingMaterialBox.values.firstWhere((el) => el.key == key);
     final isCompleted = item.completesAt.isBefore(DateTime.now());
     if (item.itemKey != itemKey || isCompleted) {
-      final newDuration = _genshinService.getMaterial(itemKey).farmingRespawnDuration!;
+      final newDuration = _genshinService.materials.getMaterial(itemKey).farmingRespawnDuration!;
       item.completesAt = DateTime.now().add(newDuration);
     }
 
@@ -507,7 +507,7 @@ class NotificationsDataServiceImpl implements NotificationsDataService {
     final item = _notificationsGadgetBox.values.firstWhere((el) => el.key == key);
     final isCompleted = item.completesAt.isBefore(DateTime.now());
     if (item.itemKey != itemKey || isCompleted) {
-      final gadget = _genshinService.getGadget(item.itemKey);
+      final gadget = _genshinService.gadgets.getGadget(item.itemKey);
       final now = DateTime.now();
       item.completesAt = now.add(gadget.cooldownDuration!);
       item.itemKey = itemKey;

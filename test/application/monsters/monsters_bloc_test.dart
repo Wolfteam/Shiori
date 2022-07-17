@@ -35,7 +35,7 @@ void main() {
       build: () => MonstersBloc(_genshinService),
       act: (bloc) => bloc.add(const MonstersEvent.init()),
       expect: () {
-        final monsters = _genshinService.getAllMonstersForCard()..sort((x, y) => x.name.compareTo(y.name));
+        final monsters = _genshinService.monsters.getAllMonstersForCard()..sort((x, y) => x.name.compareTo(y.name));
         return [
           MonstersState.loaded(
             monsters: monsters,
@@ -57,7 +57,7 @@ void main() {
         emittedState.map(
           loading: (_) => throw Exception('Invalid artifact state'),
           loaded: (state) {
-            final monsters = _genshinService.getAllMonstersForCard().where((el) => !_excludedKeys.contains(el.key)).toList();
+            final monsters = _genshinService.monsters.getAllMonstersForCard().where((el) => !_excludedKeys.contains(el.key)).toList();
 
             expect(state.monsters.length, monsters.length);
             expect(state.filterType, MonsterFilterType.name);
@@ -74,10 +74,12 @@ void main() {
     blocTest<MonstersBloc, MonstersState>(
       'should return only one item',
       build: () => MonstersBloc(_genshinService),
-      act: (bloc) => bloc..add(const MonstersEvent.init())..add(const MonstersEvent.searchChanged(search: _search)),
+      act: (bloc) => bloc
+        ..add(const MonstersEvent.init())
+        ..add(const MonstersEvent.searchChanged(search: _search)),
       skip: 1,
       expect: () {
-        final monster = _genshinService.getMonsterForCard(_key);
+        final monster = _genshinService.monsters.getMonsterForCard(_key);
         return [
           MonstersState.loaded(
             monsters: [monster],
@@ -94,7 +96,9 @@ void main() {
     blocTest<MonstersBloc, MonstersState>(
       'should not return any item',
       build: () => MonstersBloc(_genshinService),
-      act: (bloc) => bloc..add(const MonstersEvent.init())..add(const MonstersEvent.searchChanged(search: 'Keqing')),
+      act: (bloc) => bloc
+        ..add(const MonstersEvent.init())
+        ..add(const MonstersEvent.searchChanged(search: 'Keqing')),
       skip: 1,
       expect: () => const [
         MonstersState.loaded(
@@ -123,7 +127,7 @@ void main() {
       //I use 4 here cause MonsterFilterType.name does not emit a new state since it is the only value
       skip: 4,
       expect: () {
-        final monster = _genshinService.getMonsterForCard(_key);
+        final monster = _genshinService.monsters.getMonsterForCard(_key);
         return [
           MonstersState.loaded(
             monsters: [monster],
@@ -152,7 +156,7 @@ void main() {
         ..add(const MonstersEvent.cancelChanges()),
       skip: 6,
       expect: () {
-        final monsters = _genshinService.getAllMonstersForCard().where((el) => el.type == MonsterType.boss).toList()
+        final monsters = _genshinService.monsters.getAllMonstersForCard().where((el) => el.type == MonsterType.boss).toList()
           ..sort((x, y) => y.name.compareTo(x.name));
         return [
           MonstersState.loaded(
@@ -179,7 +183,7 @@ void main() {
         ..add(const MonstersEvent.resetFilters()),
       skip: 4,
       expect: () {
-        final monsters = _genshinService.getAllMonstersForCard()..sort((x, y) => x.name.compareTo(y.name));
+        final monsters = _genshinService.monsters.getAllMonstersForCard()..sort((x, y) => x.name.compareTo(y.name));
         return [
           MonstersState.loaded(
             monsters: monsters,

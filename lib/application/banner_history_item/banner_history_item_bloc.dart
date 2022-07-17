@@ -28,7 +28,7 @@ class BannerHistoryItemBloc extends Bloc<BannerHistoryItemEvent, BannerHistoryIt
 
   Future<BannerHistoryItemState> _init(double version) async {
     await _telemetryService.trackBannerHistoryItemOpened(version);
-    final banners = _genshinService.getBanners(version);
+    final banners = _genshinService.bannerHistory.getBanners(version);
     final grouped = banners
         .groupListsBy(
           (el) => '${DateFormat(periodDateFormat).format(el.from)}_${DateFormat(periodDateFormat).format(el.until)}',

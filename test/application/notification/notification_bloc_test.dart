@@ -163,7 +163,7 @@ void main() {
     blocTest<NotificationBloc, NotificationState>(
       'an expedition notification',
       setUp: () async {
-        final material = _genshinService.getAllMaterialsThatCanBeObtainedFromAnExpedition().first;
+        final material = _genshinService.materials.getAllMaterialsThatCanBeObtainedFromAnExpedition().first;
         await _dataService.notifications.saveExpeditionNotification(
           material.key,
           _defaultTitle,
@@ -195,7 +195,7 @@ void main() {
     blocTest<NotificationBloc, NotificationState>(
       'a farming artifact notification',
       setUp: () async {
-        final artifact = _genshinService.getArtifactsForCard().first;
+        final artifact = _genshinService.artifacts.getArtifactsForCard().first;
         await _dataService.notifications.saveFarmingArtifactNotification(
           artifact.key,
           ArtifactFarmingTimeType.twelveHours,
@@ -225,7 +225,7 @@ void main() {
     blocTest<NotificationBloc, NotificationState>(
       'a farming material notification',
       setUp: () async {
-        final material = _genshinService.getAllMaterialsThatHaveAFarmingRespawnDuration().first;
+        final material = _genshinService.materials.getAllMaterialsThatHaveAFarmingRespawnDuration().first;
         await _dataService.notifications.saveFarmingMaterialNotification(material.key, _defaultTitle, _defaultBody, note: _defaultNote);
       },
       tearDown: () async {
@@ -248,7 +248,7 @@ void main() {
     blocTest<NotificationBloc, NotificationState>(
       'a gadget notification',
       setUp: () async {
-        final gadget = _genshinService.getAllGadgetsForNotifications().first;
+        final gadget = _genshinService.gadgets.getAllGadgetsForNotifications().first;
         await _dataService.notifications.saveGadgetNotification(gadget.key, _defaultTitle, _defaultBody, note: _defaultNote);
       },
       tearDown: () async {
@@ -271,7 +271,7 @@ void main() {
     blocTest<NotificationBloc, NotificationState>(
       'a furniture notification',
       setUp: () async {
-        final furniture = _genshinService.getDefaultFurnitureForNotifications();
+        final furniture = _genshinService.furniture.getDefaultFurnitureForNotifications();
         await _dataService.notifications.saveFurnitureNotification(
           furniture.key,
           FurnitureCraftingTimeType.fourteenHours,
@@ -334,7 +334,7 @@ void main() {
     blocTest<NotificationBloc, NotificationState>(
       'a weekly boss notification',
       setUp: () async {
-        final boss = _genshinService.getAllMonstersForCard().where((el) => el.type == MonsterType.boss).first;
+        final boss = _genshinService.monsters.getAllMonstersForCard().where((el) => el.type == MonsterType.boss).first;
         await _dataService.notifications.saveWeeklyBossNotification(
           boss.key,
           _settingsService.serverResetTime,
@@ -395,13 +395,13 @@ void main() {
               key = _keqingKey;
               break;
             case AppNotificationItemType.weapon:
-              key = _genshinService.getWeaponsForCard().firstWhere((el) => el.rarity == 1).key;
+              key = _genshinService.weapons.getWeaponsForCard().firstWhere((el) => el.rarity == 1).key;
               break;
             case AppNotificationItemType.artifact:
-              key = _genshinService.getArtifactsForCard().first.key;
+              key = _genshinService.artifacts.getArtifactsForCard().first.key;
               break;
             case AppNotificationItemType.monster:
-              key = _genshinService.getAllMonstersForCard().firstWhere((el) => el.type == MonsterType.abyssOrder).key;
+              key = _genshinService.monsters.getAllMonstersForCard().firstWhere((el) => el.type == MonsterType.abyssOrder).key;
               break;
             case AppNotificationItemType.material:
               key = _fragileResinKey;
@@ -599,7 +599,7 @@ void main() {
       'on an existing notification',
       build: () => _buildBloc(),
       setUp: () async {
-        final artifact = _genshinService.getArtifactsForCard().first;
+        final artifact = _genshinService.artifacts.getArtifactsForCard().first;
         await _dataService.notifications.saveFarmingArtifactNotification(
           artifact.key,
           ArtifactFarmingTimeType.twelveHours,
@@ -633,7 +633,7 @@ void main() {
       'on a not saved notification',
       build: () => _buildBloc(),
       act: (bloc) {
-        final newMaterial = _genshinService.getAllMaterialsThatHaveAFarmingRespawnDuration().last;
+        final newMaterial = _genshinService.materials.getAllMaterialsThatHaveAFarmingRespawnDuration().last;
         return bloc
           ..add(const NotificationEvent.add(defaultTitle: _defaultTitle, defaultBody: _defaultBody))
           ..add(const NotificationEvent.typeChanged(newValue: AppNotificationType.farmingMaterials))
@@ -643,7 +643,7 @@ void main() {
         farmingMaterial: (state) {
           _checkState(state, AppNotificationType.farmingMaterials, checkKey: false);
           _checkNotDirtyFields(state, shouldBeDirty: false);
-          final newMaterial = _genshinService.getAllMaterialsThatHaveAFarmingRespawnDuration().last;
+          final newMaterial = _genshinService.materials.getAllMaterialsThatHaveAFarmingRespawnDuration().last;
           expect(state.images.any((el) => el.isSelected && el.image == newMaterial.fullImagePath), isTrue);
         },
         orElse: () => throw Exception('Invalid state'),
@@ -654,7 +654,7 @@ void main() {
       'on an existing notification',
       build: () => _buildBloc(),
       setUp: () async {
-        final material = _genshinService.getAllMaterialsThatHaveAFarmingRespawnDuration().first;
+        final material = _genshinService.materials.getAllMaterialsThatHaveAFarmingRespawnDuration().first;
         await _dataService.notifications.saveFarmingMaterialNotification(material.key, _defaultTitle, _defaultBody, note: _defaultNote);
       },
       tearDown: () async {
@@ -662,7 +662,7 @@ void main() {
       },
       act: (bloc) {
         final notification = _dataService.notifications.getAllNotifications().first;
-        final newMaterial = _genshinService.getAllMaterialsThatHaveAFarmingRespawnDuration().last;
+        final newMaterial = _genshinService.materials.getAllMaterialsThatHaveAFarmingRespawnDuration().last;
         return bloc
           ..add(NotificationEvent.edit(key: notification.key, type: AppNotificationType.farmingMaterials))
           ..add(NotificationEvent.imageChanged(newValue: newMaterial.fullImagePath));
@@ -671,7 +671,7 @@ void main() {
         farmingMaterial: (state) {
           _checkState(state, AppNotificationType.farmingMaterials, checkKey: false);
           _checkNotDirtyFields(state);
-          final newMaterial = _genshinService.getAllMaterialsThatHaveAFarmingRespawnDuration().last;
+          final newMaterial = _genshinService.materials.getAllMaterialsThatHaveAFarmingRespawnDuration().last;
           expect(state.images.any((el) => el.isSelected && el.image == newMaterial.fullImagePath), isTrue);
         },
         orElse: () => throw Exception('Invalid state'),
@@ -684,7 +684,7 @@ void main() {
       'on a not saved notification',
       build: () => _buildBloc(),
       act: (bloc) {
-        final gadget = _genshinService.getAllGadgetsForNotifications().last;
+        final gadget = _genshinService.gadgets.getAllGadgetsForNotifications().last;
         return bloc
           ..add(const NotificationEvent.add(defaultTitle: _defaultTitle, defaultBody: _defaultBody))
           ..add(const NotificationEvent.typeChanged(newValue: AppNotificationType.gadget))
@@ -694,7 +694,7 @@ void main() {
         gadget: (state) {
           _checkState(state, AppNotificationType.gadget, checkKey: false);
           _checkNotDirtyFields(state, shouldBeDirty: false);
-          final gadget = _genshinService.getAllGadgetsForNotifications().last;
+          final gadget = _genshinService.gadgets.getAllGadgetsForNotifications().last;
           expect(state.images.any((el) => el.isSelected && el.image == gadget.fullImagePath), isTrue);
         },
         orElse: () => throw Exception('Invalid state'),
@@ -705,7 +705,7 @@ void main() {
       'on an existing notification',
       build: () => _buildBloc(),
       setUp: () async {
-        final gadget = _genshinService.getAllGadgetsForNotifications().first;
+        final gadget = _genshinService.gadgets.getAllGadgetsForNotifications().first;
         await _dataService.notifications.saveGadgetNotification(gadget.key, _defaultTitle, _defaultBody, note: _defaultNote);
       },
       tearDown: () async {
@@ -713,7 +713,7 @@ void main() {
       },
       act: (bloc) {
         final notification = _dataService.notifications.getAllNotifications().first;
-        final gadget = _genshinService.getAllGadgetsForNotifications().last;
+        final gadget = _genshinService.gadgets.getAllGadgetsForNotifications().last;
         return bloc
           ..add(NotificationEvent.edit(key: notification.key, type: AppNotificationType.gadget))
           ..add(NotificationEvent.imageChanged(newValue: gadget.fullImagePath));
@@ -722,7 +722,7 @@ void main() {
         gadget: (state) {
           _checkState(state, AppNotificationType.gadget, checkKey: false);
           _checkNotDirtyFields(state);
-          final gadget = _genshinService.getAllGadgetsForNotifications().last;
+          final gadget = _genshinService.gadgets.getAllGadgetsForNotifications().last;
           expect(state.images.any((el) => el.isSelected && el.image == gadget.fullImagePath), isTrue);
         },
         orElse: () => throw Exception('Invalid state'),
@@ -752,7 +752,7 @@ void main() {
       'on an existing notification',
       build: () => _buildBloc(),
       setUp: () async {
-        final furniture = _genshinService.getDefaultFurnitureForNotifications();
+        final furniture = _genshinService.furniture.getDefaultFurnitureForNotifications();
         await _dataService.notifications.saveFurnitureNotification(
           furniture.key,
           FurnitureCraftingTimeType.sixteenHours,
@@ -861,7 +861,7 @@ void main() {
       'on an existing notification',
       build: () => _buildBloc(),
       setUp: () async {
-        final boss = _genshinService.getAllMonstersForCard().firstWhere((el) => el.type == MonsterType.boss).key;
+        final boss = _genshinService.monsters.getAllMonstersForCard().firstWhere((el) => el.type == MonsterType.boss).key;
         await _dataService.notifications.saveWeeklyBossNotification(
           boss,
           AppServerResetTimeType.northAmerica,
@@ -874,7 +874,7 @@ void main() {
         await _dataService.deleteThemAll();
       },
       act: (bloc) {
-        final boss = _genshinService.getAllMonstersForCard().lastWhere((el) => el.type == MonsterType.boss);
+        final boss = _genshinService.monsters.getAllMonstersForCard().lastWhere((el) => el.type == MonsterType.boss);
         final notification = _dataService.notifications.getAllNotifications().first;
         return bloc
           ..add(NotificationEvent.edit(key: notification.key, type: AppNotificationType.weeklyBoss))
@@ -884,7 +884,7 @@ void main() {
         weeklyBoss: (state) {
           _checkState(state, AppNotificationType.weeklyBoss, checkKey: false);
           _checkNotDirtyFields(state);
-          final boss = _genshinService.getAllMonstersForCard().lastWhere((el) => el.type == MonsterType.boss);
+          final boss = _genshinService.monsters.getAllMonstersForCard().lastWhere((el) => el.type == MonsterType.boss);
           expect(state.images.any((el) => el.isSelected && el.image == boss.image), isTrue);
         },
         orElse: () => throw Exception('Invalid state'),
@@ -914,7 +914,7 @@ void main() {
       'on an existing notification',
       build: () => _buildBloc(),
       setUp: () async {
-        final boss = _genshinService.getAllMonstersForCard().firstWhere((el) => el.type == MonsterType.boss).key;
+        final boss = _genshinService.monsters.getAllMonstersForCard().firstWhere((el) => el.type == MonsterType.boss).key;
         await _dataService.notifications.saveCustomNotification(
           boss,
           _defaultTitle,

@@ -20,9 +20,9 @@ class ElementsBloc extends Bloc<ElementsEvent, ElementsState> {
   ) async* {
     final s = event.when(
       init: () {
-        final debuffs = _genshinService.getElementDebuffs();
-        final reactions = _genshinService.getElementReactions();
-        final resonances = _genshinService.getElementResonances();
+        final debuffs = _genshinService.elements.getElementDebuffs();
+        final reactions = _genshinService.elements.getElementReactions();
+        final resonances = _genshinService.elements.getElementResonances();
 
         return ElementsState.loaded(debuffs: debuffs, reactions: reactions, resonances: resonances);
       },

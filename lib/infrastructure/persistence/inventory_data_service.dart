@@ -129,7 +129,7 @@ class InventoryDataServiceImpl implements InventoryDataService {
     final characters = _inventoryBox.values
         .where((el) => el.type == ItemType.character.index)
         .map(
-          (e) => _genshinService.getCharacterForCard(e.itemKey),
+          (e) => _genshinService.characters.getCharacterForCard(e.itemKey),
         )
         .toList();
 
@@ -138,9 +138,9 @@ class InventoryDataServiceImpl implements InventoryDataService {
 
   @override
   List<MaterialCardModel> getAllMaterialsInInventory() {
-    final materials = _genshinService.getAllMaterialsForCard();
+    final materials = _genshinService.materials.getAllMaterialsForCard();
     final inInventory = _inventoryBox.values.where((el) => el.type == ItemType.material.index).map((e) {
-      final material = _genshinService.getMaterialForCard(e.itemKey);
+      final material = _genshinService.materials.getMaterialForCard(e.itemKey);
       return material.copyWith.call(quantity: e.quantity);
     }).toList();
 
@@ -161,7 +161,7 @@ class InventoryDataServiceImpl implements InventoryDataService {
 
   @override
   MaterialCardModel getMaterialFromInventory(String key) {
-    final materialForCard = _genshinService.getMaterialForCard(key);
+    final materialForCard = _genshinService.materials.getMaterialForCard(key);
     final materialInInventory = _inventoryBox.values.firstWhereOrNull((m) => m.itemKey == key);
     if (materialInInventory == null) {
       return materialForCard.copyWith.call(quantity: 0);
@@ -175,7 +175,7 @@ class InventoryDataServiceImpl implements InventoryDataService {
     final weapons = _inventoryBox.values
         .where((el) => el.type == ItemType.weapon.index)
         .map(
-          (e) => _genshinService.getWeaponForCard(e.itemKey),
+          (e) => _genshinService.weapons.getWeaponForCard(e.itemKey),
         )
         .toList();
 
@@ -223,7 +223,7 @@ class InventoryDataServiceImpl implements InventoryDataService {
   @override
   Future<int> redistributeMaterial(int calItemKey, ItemAscensionMaterials item, String itemKey, int currentQuantity) async {
     int currentQty = currentQuantity;
-    final material = _genshinService.getMaterial(itemKey);
+    final material = _genshinService.materials.getMaterial(itemKey);
     final desiredQuantityToUse = item.materials.firstWhereOrNull((el) => el.key == material.key)?.quantity ?? 0;
 
     //Next, we check if there is a used item for this calculator item

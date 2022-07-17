@@ -22,7 +22,7 @@ class CharactersPerRegionGenderBloc extends Bloc<CharactersPerRegionGenderEvent,
   }
 
   CharactersPerRegionGenderState _init(RegionType regionType, bool onlyFemales) {
-    final characters = _genshinService.getCharactersForItemsByRegionAndGender(regionType, onlyFemales);
+    final characters = _genshinService.characters.getCharactersForItemsByRegionAndGender(regionType, onlyFemales);
     return CharactersPerRegionGenderState.loaded(regionType: regionType, onlyFemales: onlyFemales, items: characters);
   }
 }

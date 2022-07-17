@@ -49,7 +49,7 @@ void main() {
 
       const sessionName = 'Keqing session';
       final sessionKey = await _dataService.calculator.createCalAscMatSession(sessionName, 0);
-      final char = _genshinService.getCharacter('keqing');
+      final char = _genshinService.characters.getCharacter('keqing');
       const currentAscensionLevel = 1;
       const desiredAscensionLevel = 5;
       final currentSkillLevel = _calculatorService.getSkillLevelToUse(currentAscensionLevel, 1);

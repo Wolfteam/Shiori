@@ -44,8 +44,8 @@ void main() {
         ..add(const CharactersPerRegionGenderEvent.init(regionType: RegionType.inazuma, onlyFemales: true))
         ..add(const CharactersPerRegionGenderEvent.init(regionType: RegionType.inazuma, onlyFemales: false)),
       expect: () {
-        final females = _genshinService.getCharactersForItemsByRegionAndGender(RegionType.inazuma, true);
-        final males = _genshinService.getCharactersForItemsByRegionAndGender(RegionType.inazuma, false);
+        final females = _genshinService.characters.getCharactersForItemsByRegionAndGender(RegionType.inazuma, true);
+        final males = _genshinService.characters.getCharactersForItemsByRegionAndGender(RegionType.inazuma, false);
         return [
           CharactersPerRegionGenderState.loaded(regionType: RegionType.inazuma, onlyFemales: true, items: females),
           CharactersPerRegionGenderState.loaded(regionType: RegionType.inazuma, onlyFemales: false, items: males),

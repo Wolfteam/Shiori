@@ -31,7 +31,7 @@ class GameCodesDataServiceImpl implements GameCodesDataService {
   List<GameCodeModel> getAllGameCodes() {
     return _gameCodesBox.values.map((e) {
       final rewards = _gameCodeRewardsBox.values.where((el) => el.gameCodeKey == e.key).map((reward) {
-        final material = _genshinService.getMaterial(reward.itemKey);
+        final material = _genshinService.materials.getMaterial(reward.itemKey);
         return ItemAscensionMaterialModel(quantity: reward.quantity, key: material.key, type: material.type, image: material.fullImagePath);
       }).toList();
       //Some codes don't have an expiration date, that's why we use this boolean here
@@ -76,7 +76,7 @@ class GameCodesDataServiceImpl implements GameCodesDataService {
   Future<void> saveGameCodeRewards(int gameCodeKey, List<ItemAscensionMaterialModel> rewards) {
     final rewardsToSave = rewards
         .map(
-          (e) => GameCodeReward(gameCodeKey, _genshinService.getMaterial(e.key).key, e.quantity),
+          (e) => GameCodeReward(gameCodeKey, _genshinService.materials.getMaterial(e.key).key, e.quantity),
         )
         .toList();
     return _gameCodeRewardsBox.addAll(rewardsToSave);

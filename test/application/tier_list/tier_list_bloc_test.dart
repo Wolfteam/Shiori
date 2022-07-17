@@ -55,7 +55,7 @@ void main() {
       build: () => TierListBloc(_genshinService, _dataService, _telemetryService, _loggingService),
       act: (bloc) => bloc.add(const TierListEvent.init()),
       expect: () {
-        final defaultTierList = _genshinService.getDefaultCharacterTierList(TierListBloc.defaultColors);
+        final defaultTierList = _genshinService.characters.getDefaultCharacterTierList(TierListBloc.defaultColors);
         return [TierListState.loaded(rows: defaultTierList, charsAvailable: [], readyToSave: false)];
       },
       verify: (bloc) {
@@ -66,7 +66,7 @@ void main() {
     blocTest<TierListBloc, TierListState>(
       'should return custom tier list',
       setUp: () async {
-        final defaultTierList = _genshinService.getDefaultCharacterTierList(TierListBloc.defaultColors);
+        final defaultTierList = _genshinService.characters.getDefaultCharacterTierList(TierListBloc.defaultColors);
         await _dataService.tierList.saveTierList([
           TierListRowModel.row(tierText: 'SSS', tierColor: TierListBloc.defaultColors.first, items: defaultTierList.first.items),
           TierListRowModel.row(tierText: 'SS', tierColor: TierListBloc.defaultColors[1], items: defaultTierList.last.items),
@@ -88,7 +88,7 @@ void main() {
     blocTest<TierListBloc, TierListState>(
       'custom tier list exist but a reset is made',
       setUp: () async {
-        final defaultTierList = _genshinService.getDefaultCharacterTierList(TierListBloc.defaultColors);
+        final defaultTierList = _genshinService.characters.getDefaultCharacterTierList(TierListBloc.defaultColors);
         await _dataService.tierList.saveTierList([
           TierListRowModel.row(tierText: 'SSS', tierColor: TierListBloc.defaultColors.first, items: defaultTierList.first.items),
           TierListRowModel.row(tierText: 'SS', tierColor: TierListBloc.defaultColors[1], items: defaultTierList.last.items),
@@ -97,7 +97,7 @@ void main() {
       build: () => TierListBloc(_genshinService, _dataService, _telemetryService, _loggingService),
       act: (bloc) => bloc.add(const TierListEvent.init(reset: true)),
       expect: () {
-        final defaultTierList = _genshinService.getDefaultCharacterTierList(TierListBloc.defaultColors);
+        final defaultTierList = _genshinService.characters.getDefaultCharacterTierList(TierListBloc.defaultColors);
         return [TierListState.loaded(rows: defaultTierList, charsAvailable: [], readyToSave: false)];
       },
       verify: (bloc) {
@@ -131,7 +131,7 @@ void main() {
         ..add(const TierListEvent.init())
         ..add(const TierListEvent.rowPositionChanged(index: 0, newIndex: 5)),
       verify: (bloc) {
-        final defaultTierList = _genshinService.getDefaultCharacterTierList(TierListBloc.defaultColors);
+        final defaultTierList = _genshinService.characters.getDefaultCharacterTierList(TierListBloc.defaultColors);
         final movedOne = defaultTierList.first;
         expect(movedOne.tierText, bloc.state.rows[5].tierText);
       },
@@ -158,7 +158,7 @@ void main() {
       },
       build: () => TierListBloc(_genshinService, _dataService, _telemetryService, _loggingService),
       act: (bloc) {
-        final firstRow = _genshinService.getDefaultCharacterTierList(TierListBloc.defaultColors).first;
+        final firstRow = _genshinService.characters.getDefaultCharacterTierList(TierListBloc.defaultColors).first;
         return bloc
           ..add(const TierListEvent.init())
           ..add(const TierListEvent.clearRow(index: 0))
@@ -177,13 +177,13 @@ void main() {
       },
       build: () => TierListBloc(_genshinService, _dataService, _telemetryService, _loggingService),
       act: (bloc) {
-        final firstRow = _genshinService.getDefaultCharacterTierList(TierListBloc.defaultColors).first;
+        final firstRow = _genshinService.characters.getDefaultCharacterTierList(TierListBloc.defaultColors).first;
         return bloc
           ..add(const TierListEvent.init())
           ..add(TierListEvent.deleteCharacterFromRow(index: 0, item: firstRow.items.first));
       },
       verify: (bloc) {
-        final firstRow = _genshinService.getDefaultCharacterTierList(TierListBloc.defaultColors).first;
+        final firstRow = _genshinService.characters.getDefaultCharacterTierList(TierListBloc.defaultColors).first;
         expect(bloc.state.rows.first.items.length, firstRow.items.length - 1);
         expect(bloc.state.charsAvailable.length, 1);
       },
@@ -201,7 +201,7 @@ void main() {
         ..add(const TierListEvent.init())
         ..add(const TierListEvent.addNewRow(index: 0, above: true)),
       verify: (bloc) {
-        final defaultTierList = _genshinService.getDefaultCharacterTierList(TierListBloc.defaultColors);
+        final defaultTierList = _genshinService.characters.getDefaultCharacterTierList(TierListBloc.defaultColors);
         expect(bloc.state.rows.length, defaultTierList.length + 1);
         expect(bloc.state.rows.first.tierText != defaultTierList.first.tierText, isTrue);
       },
@@ -217,7 +217,7 @@ void main() {
         ..add(const TierListEvent.init())
         ..add(const TierListEvent.addNewRow(index: 0, above: false)),
       verify: (bloc) {
-        final defaultTierList = _genshinService.getDefaultCharacterTierList(TierListBloc.defaultColors);
+        final defaultTierList = _genshinService.characters.getDefaultCharacterTierList(TierListBloc.defaultColors);
         expect(bloc.state.rows.length, defaultTierList.length + 1);
         expect(defaultTierList.any((el) => el.tierText == bloc.state.rows[1].tierText), isFalse);
       },

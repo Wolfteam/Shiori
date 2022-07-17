@@ -26,7 +26,7 @@ class TierListDataServiceImpl implements TierListDataService {
     final values = _tierListBox.values.toList()..sort((x, y) => x.position.compareTo(y.position));
     return values.map((e) {
       final characters = e.charKeys.map((e) {
-        final character = _genshinService.getCharacter(e);
+        final character = _genshinService.characters.getCharacter(e);
         return ItemCommon(character.key, character.fullImagePath);
       }).toList();
       return TierListRowModel.row(tierText: e.text, items: characters, tierColor: e.color);
