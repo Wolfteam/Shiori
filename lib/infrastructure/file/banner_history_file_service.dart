@@ -249,14 +249,20 @@ class BannerHistoryFileServiceImpl implements BannerHistoryFileService {
     final selected = _bannerHistoryFile.banners
         .where((el) => el.type == bannerType)
         .expand((el) => el.itemKeys)
-        .groupListsBy((el) => el)
-        .entries
-        .map((g) {
-          final element = items.firstWhereOrNull((el) => el.key == g.key);
+        .toSet()
+        .map((key) {
+          final element = items.firstWhereOrNull((el) => el.key == key);
           if (element == null) {
             return null;
           }
-          return ItemCommonWithQuantity(g.key, element.image, g.value.length);
+
+          //with the multi banners, we need to group the dates to avoid showing up repeated ones
+          final count = _bannerHistoryFile.banners
+              .where((el) => el.type == bannerType && el.itemKeys.contains(key))
+              .groupListsBy((d) => '${d.from}__${d.until}')
+              .length;
+
+          return ItemCommonWithQuantity(key, element.image, count);
         })
         .where((el) => el != null)
         .map((e) => e!)

@@ -1006,8 +1006,8 @@ void main() {
       for (final type in types) {
         final tops = service.getTopCharts(type);
         expect(tops.isNotEmpty, isTrue);
-        final totalPercentage = tops.map((e) => e.percentage).sum;
-        expect(totalPercentage.round(), 100);
+        final totalPercentage = tops.map((e) => e.percentage).sum.round();
+        expect(totalPercentage, 100);
         for (final item in tops) {
           expect(item.type == type, isTrue);
           checkKey(item.key);
@@ -1034,6 +1034,9 @@ void main() {
             default:
               throw Exception('Type = $type is not valid');
           }
+
+          final releaseCount = service.bannerHistory.getItemReleaseHistory(item.key).length;
+          expect(item.value == releaseCount, isTrue);
         }
       }
     });
