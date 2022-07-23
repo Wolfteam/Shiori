@@ -155,9 +155,9 @@ class ChartElementsBloc extends Bloc<ChartElementsEvent, ChartElementsState> {
 
   bool _canGoToFirstPage(double version) => version > versions.first;
 
-  bool _canGoToNextPage(double version) => version + gameVersionIncrementsBy <= versions.last;
+  bool _canGoToNextPage(double version) => (version + gameVersionIncrementsBy).truncateToDecimalPlaces() <= versions.last;
 
-  bool _canGoToPreviousPage(double version) => version - gameVersionIncrementsBy >= versions.first;
+  bool _canGoToPreviousPage(double version) => (version - gameVersionIncrementsBy).truncateToDecimalPlaces() >= versions.first;
 
   bool _canGoToLastPage(double version) => version < versions.last;
 }
