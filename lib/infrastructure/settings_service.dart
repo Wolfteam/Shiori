@@ -3,6 +3,7 @@ import 'package:devicelocale/devicelocale.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:shiori/domain/app_constants.dart';
 import 'package:shiori/domain/enums/enums.dart';
+import 'package:shiori/domain/extensions/string_extensions.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/logging_service.dart';
 import 'package:shiori/domain/services/settings_service.dart';
@@ -19,6 +20,8 @@ class SettingsServiceImpl extends SettingsService {
   final _doubleBackToCloseKey = 'DoubleBackToCloseKey';
   final _useOfficialMapKey = 'UseOfficialMapKey';
   final _useTwentyFourHoursFormatKey = 'UseTwentyFourHoursFormat';
+  final _lastResourcesCheckedDate = 'LastResourcesCheckedDate';
+  final _resourcesVersion = 'ResourcesVersion';
 
   bool _initialized = false;
 
@@ -90,6 +93,33 @@ class SettingsServiceImpl extends SettingsService {
 
   @override
   set useTwentyFourHoursFormat(bool value) => _prefs.setBool(_useTwentyFourHoursFormatKey, value);
+
+  @override
+  DateTime? get lastResourcesCheckedDate {
+    final val = _prefs.getString(_lastResourcesCheckedDate);
+    if (val.isNullEmptyOrWhitespace) {
+      return null;
+    }
+
+    final date = DateTime.tryParse(val!);
+    return date;
+  }
+
+  @override
+  set lastResourcesCheckedDate(DateTime? value) {
+    if (value == null) {
+      throw Exception('$_lastResourcesCheckedDate cannot be null');
+    }
+
+    final val = value.toString();
+    _prefs.setString(_lastResourcesCheckedDate, val);
+  }
+
+  @override
+  int get resourceVersion => _prefs.getInt(_resourcesVersion)!;
+
+  @override
+  set resourceVersion(int value) => _prefs.setInt(_resourcesVersion, value);
 
   @override
   AppSettings get appSettings => AppSettings(
@@ -170,6 +200,11 @@ class SettingsServiceImpl extends SettingsService {
     if (_prefs.getBool(_useTwentyFourHoursFormatKey) == null) {
       _logger.info(runtimeType, 'The default date format will be set to its default (false)');
       useTwentyFourHoursFormat = false;
+    }
+
+    if (_prefs.getInt(_resourcesVersion) == null) {
+      _logger.info(runtimeType, 'The default value for the resource version will be set');
+      resourceVersion = -1;
     }
 
     _initialized = true;
