@@ -24,10 +24,12 @@ dependencies:
   darq: ^1.2.1
   device_info_plus: ^4.0.0
   devicelocale: ^0.5.4
+  dio: ^4.0.6
   enum_to_string: ^2.0.1
   fl_chart: ^0.55.0
   flutter:
     sdk: flutter
+  flutter_archive: ^5.0.0
   flutter_bloc: ^7.3.1
   flutter_colorpicker: ^1.0.3
   flutter_inappwebview: ^5.4.3+7
@@ -98,34 +100,7 @@ flutter:
   uses-material-design: true
 
   assets:
-    - assets/db/
-    - assets/artifacts/
-    - assets/characters/
-    - assets/characters_full/
-    - assets/elements/
-    - assets/furniture/
-    - assets/gadgets/
-    - assets/i18n/
-    - assets/items/common/
-    - assets/items/currency/
-    - assets/items/elemental/
-    - assets/items/experience/
-    - assets/items/ingredients/
-    - assets/items/jewels/
-    - assets/items/local/
-    - assets/items/others/
-    - assets/items/talents/
-    - assets/items/weapon/
-    - assets/items/weapon_primary/
-    - assets/monsters/
     - assets/others/
-    - assets/skills/
-    - assets/weapons/
-    - assets/weapons/bows/
-    - assets/weapons/catalysts/
-    - assets/weapons/polearms/
-    - assets/weapons/claymores/
-    - assets/weapons/swords/
     - assets/icon/icon.png
 
   fonts:

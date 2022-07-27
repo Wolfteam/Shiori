@@ -11,6 +11,7 @@ import 'package:shiori/domain/services/logging_service.dart';
 import 'package:shiori/domain/services/network_service.dart';
 import 'package:shiori/domain/services/notification_service.dart';
 import 'package:shiori/domain/services/purchase_service.dart';
+import 'package:shiori/domain/services/resources_service.dart';
 import 'package:shiori/domain/services/settings_service.dart';
 import 'package:shiori/domain/services/telemetry_service.dart';
 import 'package:shiori/infrastructure/infrastructure.dart';
@@ -297,5 +298,8 @@ class Injection {
     final purchaseService = PurchaseServiceImpl(loggingService);
     await purchaseService.init();
     getIt.registerSingleton<PurchaseService>(purchaseService);
+
+    final resourcesService = ResourceServiceImpl(loggingService, settingsService, networkService);
+    getIt.registerSingleton<ResourceService>(resourcesService);
   }
 }
