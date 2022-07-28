@@ -1,21 +1,13 @@
 import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:shiori/domain/enums/enums.dart';
-
-import '../../../assets.dart';
-import '../../models.dart';
+import 'package:shiori/domain/models/models.dart';
 
 part 'character_file_model.freezed.dart';
 part 'character_file_model.g.dart';
 
 @freezed
 class CharacterFileModel with _$CharacterFileModel {
-  String get fullCharacterImagePath => Assets.getCharacterFullPath(image);
-
-  String get fullImagePath => Assets.getCharacterPath(image);
-
-  String? get fullSecondImagePath => secondFullImage != null ? Assets.getCharacterFullPath(secondFullImage!) : null;
-
   factory CharacterFileModel({
     required String key,
     required int rarity,
@@ -129,8 +121,6 @@ class CharacterFileArtifactMultipleBuild with _$CharacterFileArtifactMultipleBui
 
 @freezed
 class CharacterFileSkillModel with _$CharacterFileSkillModel {
-  String get fullImagePath => Assets.getSkillPath(image);
-
   factory CharacterFileSkillModel({
     required String key,
     required CharacterSkillType type,
@@ -157,8 +147,6 @@ class CharacterFileSkillStatModel with _$CharacterFileSkillStatModel {
 
 @freezed
 class CharacterFilePassiveModel with _$CharacterFilePassiveModel {
-  String get fullImagePath => Assets.getSkillPath(image);
-
   factory CharacterFilePassiveModel({
     required String key,
     required int unlockedAt,
@@ -172,8 +160,6 @@ class CharacterFilePassiveModel with _$CharacterFilePassiveModel {
 
 @freezed
 class CharacterFileConstellationModel with _$CharacterFileConstellationModel {
-  String get fullImagePath => Assets.getSkillPath(image);
-
   factory CharacterFileConstellationModel({
     required String key,
     required int number,

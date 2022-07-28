@@ -4,10 +4,13 @@ part 'json_versions_file.g.dart';
 
 @JsonSerializable()
 class JsonVersionsFile {
+  @JsonKey(name: 'AppVersion')
   final String appVersion;
 
+  @JsonKey(name: 'Version')
   final int version;
 
+  @JsonKey(name: 'KeyNames')
   final List<String> keyNames;
 
   JsonVersionsFile({

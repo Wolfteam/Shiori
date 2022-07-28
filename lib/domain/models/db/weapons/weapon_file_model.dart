@@ -1,16 +1,12 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:shiori/domain/enums/enums.dart';
-
-import '../../../assets.dart';
-import '../../models.dart';
+import 'package:shiori/domain/models/models.dart';
 
 part 'weapon_file_model.freezed.dart';
 part 'weapon_file_model.g.dart';
 
 @freezed
 class WeaponFileModel with _$WeaponFileModel {
-  String get fullImagePath => Assets.getWeaponPath(image, type);
-
   factory WeaponFileModel({
     required String key,
     required String image,

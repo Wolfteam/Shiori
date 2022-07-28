@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:shiori/domain/assets.dart';
 import 'package:shiori/domain/enums/enums.dart';
 
 part 'material_file_model.freezed.dart';
@@ -7,8 +6,6 @@ part 'material_file_model.g.dart';
 
 @freezed
 class MaterialFileModel with _$MaterialFileModel {
-  String get fullImagePath => Assets.getMaterialPath(image, type);
-
   bool get isAnExperienceMaterial => type == MaterialType.expWeapon || type == MaterialType.expCharacter;
 
   ExperienceMaterialAttributesModel? get experienceAttributes =>
