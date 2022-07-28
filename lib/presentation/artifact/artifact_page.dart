@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shiori/application/bloc.dart';
@@ -85,7 +87,7 @@ class _PortraitLayout extends StatelessWidget {
                               .map(
                                 (e) => Container(
                                   margin: Styles.edgeInsetAll5,
-                                  child: Image.asset(e, width: size * 2, height: size * 2),
+                                  child: Image.file(File(e), width: size * 2, height: size * 2),
                                 ),
                               )
                               .toList(),
@@ -193,7 +195,7 @@ class _LandscapeLayout extends StatelessWidget {
                                       .map(
                                         (e) => Container(
                                           margin: Styles.edgeInsetAll5,
-                                          child: Image.asset(e, width: imgSize * 2, height: imgSize * 2),
+                                          child: Image.file(File(e), width: imgSize * 2, height: imgSize * 2),
                                         ),
                                       )
                                       .toList(),

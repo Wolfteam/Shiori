@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/presentation/artifact/artifact_page.dart';
@@ -93,12 +95,12 @@ class ArtifactCard extends StatelessWidget {
                 width: imgWidth,
                 height: imgHeight,
                 placeholder: MemoryImage(kTransparentImage),
-                image: AssetImage(image),
+                image: FileImage(File(image)),
                 imageErrorBuilder: (context, error, stack) {
                   //This can happen when trying to load sets like 'Prayer to xxx'
                   final path = image.replaceFirst(replaceDigitRegex, '4');
-                  return Image.asset(
-                    path,
+                  return Image.file(
+                    File(path),
                     width: imgWidth,
                     height: imgHeight,
                   );

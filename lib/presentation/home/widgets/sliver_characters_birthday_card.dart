@@ -69,7 +69,7 @@ class _CakeCard extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  Image.asset(Assets.getOtherMaterialPath('cake.png'), width: 120, height: 120),
+                  Image.asset(Assets.cakeIconPath, width: 120, height: 120),
                   //The cake has some space in the top and bottom, that's why we used this offset here
                   FractionalTranslation(
                     translation: const Offset(0, -0.5),

@@ -12,7 +12,7 @@ class SplashPage extends StatelessWidget {
             child: Container(
               margin: const EdgeInsets.all(10),
               child: Image.asset(
-                Assets.getCharacterFullPath('Paimon.png'),
+                Assets.paimonImagePath,
                 fit: BoxFit.scaleDown,
               ),
             ),

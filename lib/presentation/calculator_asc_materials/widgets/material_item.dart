@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shiori/application/bloc.dart';
@@ -35,7 +37,7 @@ class MaterialItem extends StatelessWidget {
           onLongPress: () => _showQuantityPickerDialog(context),
           borderRadius: BorderRadius.circular(30),
           child: IconButton(
-            icon: Image.asset(image),
+            icon: Image.file(File(image)),
             iconSize: 45,
             splashRadius: 30,
             constraints: const BoxConstraints(),

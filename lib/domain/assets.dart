@@ -1,11 +1,18 @@
-import 'enums/enums.dart';
+import 'package:shiori/domain/enums/enums.dart';
 
 class Assets {
   static String elementsBasePath = 'assets/elements';
   static String otherImgsBasePath = 'assets/others';
   static String weaponTypesBasePath = 'assets/weapon_types';
+
   static String noImageAvailablePath = '$otherImgsBasePath/na.png';
   static String paimonImagePath = '$otherImgsBasePath/paimon.png';
+  static String bagIconPath = '$otherImgsBasePath/bag.png';
+  static String monsterIconPath = '$otherImgsBasePath/monster.png';
+  static String cakeIconPath = '$otherImgsBasePath/cake.png';
+  static String gachaIconPath = '$otherImgsBasePath/gacha.png';
+  static String starCrystalIconPath = '$otherImgsBasePath/mark_wind_crystal.png';
+  static String primogemIconPath = '$otherImgsBasePath/primogem.png';
 
   static String _getElementPath(String name) => '$elementsBasePath/$name';
 
@@ -67,16 +74,4 @@ class Assets {
         throw Exception('Invalid weapon type = $type');
     }
   }
-
-  static String getBagIconPath() => '$otherImgsBasePath/bag.png';
-
-  static String getMonsterIconPath() => '$otherImgsBasePath/monster.png';
-
-  static String getCakeIconPath() => '$otherImgsBasePath/cake.png';
-
-  static String getGachaIconPath() => '$otherImgsBasePath/gacha.png';
-
-  static String getStarCrystalIconPath() => '$otherImgsBasePath/mark_wind_crystal.png';
-
-  static String getPrimogemIconPath() => '$otherImgsBasePath/primogem.png';
 }

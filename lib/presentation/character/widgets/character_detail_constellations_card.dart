@@ -1,5 +1,8 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:responsive_grid/responsive_grid.dart';
+import 'package:shiori/domain/assets.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/generated/l10n.dart';
@@ -62,7 +65,9 @@ class _ConstellationCard extends StatelessWidget {
             CircleAvatar(
               radius: 40,
               backgroundColor: elementType.getElementColorFromContext(context),
-              child: Image.asset(model.image, width: 60, height: 60),
+              child: model.image == Assets.noImageAvailablePath
+                  ? Image.asset(model.image, width: 60, height: 60)
+                  : Image.file(File(model.image), width: 60, height: 60),
             ),
             Tooltip(
               message: model.title,
