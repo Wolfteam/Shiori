@@ -6,6 +6,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/genshin_service.dart';
+import 'package:shiori/domain/services/resources_service.dart';
 import 'package:shiori/domain/services/telemetry_service.dart';
 
 part 'material_bloc.freezed.dart';
@@ -15,8 +16,9 @@ part 'material_state.dart';
 class MaterialBloc extends Bloc<MaterialEvent, MaterialState> {
   final GenshinService _genshinService;
   final TelemetryService _telemetryService;
+  final ResourceService _resourceService;
 
-  MaterialBloc(this._genshinService, this._telemetryService) : super(const MaterialState.loading());
+  MaterialBloc(this._genshinService, this._telemetryService, this._resourceService) : super(const MaterialState.loading());
 
   @override
   @override
@@ -51,13 +53,13 @@ class MaterialBloc extends Bloc<MaterialEvent, MaterialState> {
     final relatedMaterials = material.recipes
         .map((el) {
           final material = _genshinService.materials.getMaterial(el.createsMaterialKey);
-          return ItemCommon(material.key, material.fullImagePath);
+          return ItemCommon(material.key, _resourceService.getMaterialImagePath(material.image, material.type));
         })
         .distinct((x) => x.key)
         .toList();
     return MaterialState.loaded(
       name: translation.name,
-      fullImage: material.fullImagePath,
+      fullImage: _resourceService.getMaterialImagePath(material.image, material.type),
       rarity: material.rarity,
       type: material.type,
       description: translation.description,
