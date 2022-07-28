@@ -4,6 +4,7 @@ import 'dart:io';
 import 'package:dio/dio.dart';
 import 'package:flutter_archive/flutter_archive.dart';
 import 'package:http/http.dart' as http;
+import 'package:path/path.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/extensions/string_extensions.dart';
@@ -15,15 +16,71 @@ import 'package:shiori/domain/services/resources_service.dart';
 import 'package:shiori/domain/services/settings_service.dart';
 import 'package:shiori/infrastructure/secrets.dart';
 
+const _tempDirName = 'shiori_temp';
+const _tempAssetsDirName = 'shiori_assets';
+
 class ResourceServiceImpl implements ResourceService {
   final LoggingService _loggingService;
   final SettingsService _settingsService;
   final NetworkService _networkService;
 
   final bool _usesZipFile = Platform.isAndroid || Platform.isIOS;
-  final bool _usesJsonFile = Platform.isWindows;
+  final bool _usesJsonFile = Platform.isWindows || Platform.isLinux;
+
+  final _dio = Dio();
+
+  late final String _tempPath;
+  late final String _assetsPath;
 
   ResourceServiceImpl(this._loggingService, this._settingsService, this._networkService);
+
+  Future<void> init() async {
+    //Windows: Users/Temp
+    final temp = (await getTemporaryDirectory()).path;
+    final supp = (await getApplicationSupportDirectory()).path;
+    if (!Platform.isWindows) {
+      final lib = (await getLibraryDirectory()).path;
+      final ext = (await getExternalStorageDirectory())!.path;
+    }
+
+    final dir = (await getApplicationDocumentsDirectory()).path;
+    _tempPath = join(dir, _tempDirName);
+    _assetsPath = join(dir, _tempAssetsDirName);
+    await _deleteDirectoryIfExists(_tempPath);
+  }
+
+  @override
+  String getJsonFilePath(AppJsonFileType type, {AppLanguageType? language}) {
+    if (language != null) {
+      assert(type == AppJsonFileType.translations, 'The translation type must be set when a language is provided');
+      final filename = _getJsonTranslationFilename(language);
+      return join(_assetsPath, 'i18n', filename);
+    }
+
+    final dbPath = join(_assetsPath, 'db');
+    switch (type) {
+      case AppJsonFileType.artifacts:
+        return join(dbPath, 'artifacts.json');
+      case AppJsonFileType.bannerHistory:
+        return join(dbPath, 'banners_history.json');
+      case AppJsonFileType.characters:
+        return join(dbPath, 'characters.json');
+      case AppJsonFileType.elements:
+        return join(dbPath, 'elements.json');
+      case AppJsonFileType.furniture:
+        return join(dbPath, 'furniture.json');
+      case AppJsonFileType.gadgets:
+        return join(dbPath, 'gadgets.json');
+      case AppJsonFileType.materials:
+        return join(dbPath, 'materials.json');
+      case AppJsonFileType.monsters:
+        return join(dbPath, 'monsters.json');
+      case AppJsonFileType.weapons:
+        return join(dbPath, 'weapons.json');
+      case AppJsonFileType.translations:
+        throw Exception('You must provide a language to retrieve a translation file');
+    }
+  }
 
   @override
   Future<bool> canCheckForUpdates() async {
@@ -56,7 +113,7 @@ class ResourceServiceImpl implements ResourceService {
       throw Exception('Unsupported platform');
     }
     try {
-      String url = '${Secrets.apiBaseUrl}?AppVersion=$currentAppVersion';
+      String url = '${Secrets.apiBaseUrl}/api/resources/diff?AppVersion=$currentAppVersion';
       if (currentResourcesVersion > 0) {
         url += '&CurrentResourceVersion=$currentResourcesVersion';
       }
@@ -147,17 +204,13 @@ class ResourceServiceImpl implements ResourceService {
 
     try {
       _loggingService.info(runtimeType, 'downloadAndApplyUpdates: Creating temp folders...');
-
-      final dir = (await getApplicationDocumentsDirectory()).path;
-      final tempFolder = '$dir/Temp';
-      final assetsFolder = '$dir/Assets';
-      await _deleteDirectoryIfExists(tempFolder);
-      await _createDirectoryIfItDoesntExist(tempFolder);
+      await _deleteDirectoryIfExists(_tempPath);
+      await _createDirectoryIfItDoesntExist(_tempPath);
 
       if (mainFilesMustBeDownloaded) {
         _loggingService.info(runtimeType, 'downloadAndApplyUpdates: Downloading main files...');
         //we need to download the whole file
-        final destMainFilePath = '$tempFolder/${_usesZipFile ? zipFileKeyName! : jsonFileKeyName!}';
+        final destMainFilePath = join(_tempPath, _usesZipFile ? zipFileKeyName! : jsonFileKeyName!);
         final downloaded =
             _usesZipFile ? await _downloadFile(zipFileKeyName!, destMainFilePath) : await _downloadFile(jsonFileKeyName!, destMainFilePath);
 
@@ -168,8 +221,8 @@ class ResourceServiceImpl implements ResourceService {
 
         _loggingService.info(runtimeType, 'downloadAndApplyUpdates: Processing files...');
         final processed = _usesZipFile
-            ? await _processZipFile(destMainFilePath, tempFolder, assetsFolder)
-            : await _processVersionsJsonFile(destMainFilePath, tempFolder, assetsFolder);
+            ? await _processZipFile(destMainFilePath, _tempPath, _assetsPath)
+            : await _processVersionsJsonFile(destMainFilePath, _tempPath, _assetsPath);
 
         if (!processed) {
           _loggingService.error(runtimeType, 'downloadAndApplyUpdates: Could not process the main file');
@@ -178,7 +231,7 @@ class ResourceServiceImpl implements ResourceService {
       } else {
         //we need to download a portion
         _loggingService.info(runtimeType, 'downloadAndApplyUpdates: Downloading partial files...');
-        final processed = await _processKeyNames(tempFolder, assetsFolder, keyNames);
+        final processed = await _processPartialUpdate(_tempPath, _assetsPath, keyNames);
         if (!processed) {
           _loggingService.error(runtimeType, 'downloadAndApplyUpdates: Could not process the partial file');
           return false;
@@ -204,8 +257,7 @@ class ResourceServiceImpl implements ResourceService {
       await _deleteDirectoryIfExists(tempFolder);
       return false;
     }
-    await _deleteDirectoryIfExists(assetsFolder);
-    await _moveFile(File(tempFolder), assetsFolder);
+    await _afterMainFileWasProcessed(tempFolder, assetsFolder);
     _loggingService.info(runtimeType, '_processZipFile: Main zip file was successfully processed');
     return true;
   }
@@ -217,10 +269,11 @@ class ResourceServiceImpl implements ResourceService {
     final json = jsonDecode(jsonString) as Map<String, dynamic>;
     final version = JsonVersionsFile.fromJson(json);
     await File(destMainFilePath).delete();
-    final processed = await _processKeyNames(tempFolder, assetsFolder, version.keyNames);
+    final processed = await _downloadAssets(tempFolder, version.keyNames);
 
     if (processed) {
       _loggingService.info(runtimeType, '_processVersionsJsonFile: Main json file was successfully processed');
+      await _afterMainFileWasProcessed(tempFolder, assetsFolder);
     } else {
       _loggingService.error(runtimeType, '_processVersionsJsonFile: Processing of  main json file failed');
     }
@@ -228,52 +281,83 @@ class ResourceServiceImpl implements ResourceService {
     return processed;
   }
 
-  Future<bool> _processKeyNames(String tempFolder, String assetsFolder, List<String> keyNames) async {
+  Future<bool> _processPartialUpdate(String tempFolder, String assetsFolder, List<String> keyNames) async {
+    _loggingService.info(runtimeType, '_processPartialUpdate: Downloading partial files...');
+    final processed = await _downloadAssets(tempFolder, keyNames);
+    if (!processed) {
+      _loggingService.error(runtimeType, '_processPartialUpdate: Could not process the partial file');
+      await _deleteDirectoryIfExists(tempFolder);
+      return false;
+    }
+    //TODO: MANUALLY MOVE THE FILES?
+    // await _afterMainFileWasProcessed(tempFolder, assetsFolder);
+    _loggingService.info(runtimeType, '_processPartialUpdate: Partial update was successfully processed');
+    return true;
+  }
+
+  Future<bool> _downloadAssets(String tempFolder, List<String> keyNames) async {
     if (keyNames.isEmpty) {
       return true;
     }
 
-    _loggingService.info(runtimeType, '_processKeyNames: Processing ${keyNames.length} keyName(s)...');
-    bool somethingFailed = false;
-    for (final keyName in keyNames) {
-      final split = keyName.split('/');
-      //the last item is the filename
-      final dir = '$tempFolder/${split.take(split.length - 1).join('/')}';
-      await _createDirectoryIfItDoesntExist(dir);
+    _loggingService.info(runtimeType, '_downloadAssets: Processing ${keyNames.length} keyName(s)...');
+    final keyNamesCopy = [...keyNames];
+    while (keyNamesCopy.isNotEmpty) {
+      _loggingService.debug(runtimeType, '_downloadAssets: Remaining = ${keyNamesCopy.length}');
+      final taken = keyNamesCopy.take(10).toList();
+      for (int i = 0; i < 10; i++) {
+        if (keyNamesCopy.isEmpty) {
+          break;
+        }
+        keyNamesCopy.removeAt(0);
+      }
 
-      final destPath = '$dir/${split.last}';
-      somethingFailed = await _downloadFile(keyName, destPath);
-
-      if (somethingFailed) {
-        break;
+      try {
+        if (taken.isNotEmpty) {
+          await Future.wait(taken.map((e) => _downloadAsset(tempFolder, e)).toList(), eagerError: true);
+        }
+      } catch (e, s) {
+        _loggingService.error(runtimeType, '_downloadAssets: One or more keyNames failed...', e, s);
+        await _deleteDirectoryIfExists(tempFolder);
+        return false;
       }
     }
 
-    if (somethingFailed) {
-      await _deleteDirectoryIfExists(tempFolder);
-      return false;
-    }
-
-    await _deleteDirectoryIfExists(assetsFolder);
-    await _moveFile(File(tempFolder), assetsFolder);
-
-    _loggingService.info(runtimeType, '_processKeyNames: ${keyNames.length} keyName(s) were successfully processed');
+    _loggingService.info(runtimeType, '_downloadAssets: ${keyNames.length} keyName(s) were successfully downloaded');
     return true;
+  }
+
+  Future<void> _downloadAsset(String tempFolder, String keyName) async {
+    final split = keyName.split('/');
+    //the last item is the filename
+    final partA = split.take(split.length - 1).fold<String>('', (previousValue, element) {
+      if (previousValue.isEmpty) {
+        return element;
+      }
+      return join(previousValue, element);
+    });
+    final dir = join(tempFolder, partA);
+    await _createDirectoryIfItDoesntExist(dir);
+
+    final destPath = join(dir, split.last);
+    final downloaded = await _downloadFile(keyName, destPath);
+    if (!downloaded) {
+      throw Exception('Download of keyName = $keyName failed');
+    }
   }
 
   Future<bool> _downloadFile(String keyName, String destPath) async {
     try {
       _loggingService.info(runtimeType, '_downloadFile: Downloading file = $keyName...');
-      final dio = Dio();
       final url = '${Secrets.assetsBaseUrl}/$keyName';
 
-      await dio.downloadUri(
+      await _dio.downloadUri(
         Uri.parse(url),
         destPath,
         onReceiveProgress: (received, total) {
           if (total != -1) {
             final progress = received / total * 100;
-            print('${progress.toStringAsFixed(0)}%');
+            // print('${progress.toStringAsFixed(0)}%');
           }
         },
       );
@@ -294,9 +378,9 @@ class ResourceServiceImpl implements ResourceService {
         zipFile: zipFile,
         destinationDir: destinationDir,
         onExtracting: (zipEntry, progress) {
-          print('progress: ${progress.toStringAsFixed(1)}%');
-          print('name: ${zipEntry.name}');
-          print('isDirectory: ${zipEntry.isDirectory}');
+          // print('progress: ${progress.toStringAsFixed(1)}%');
+          // print('name: ${zipEntry.name}');
+          // print('isDirectory: ${zipEntry.isDirectory}');
           return ZipFileOperation.includeItem;
         },
       );
@@ -306,6 +390,14 @@ class ResourceServiceImpl implements ResourceService {
       _loggingService.error(runtimeType, '_extractZip: Unknown error', e, s);
       return false;
     }
+  }
+
+  Future<void> _afterMainFileWasProcessed(String tempFolder, String assetsFolder) async {
+    //I delete and create the folder because it may exist and contain old data
+    await _deleteDirectoryIfExists(assetsFolder);
+    await _createDirectoryIfItDoesntExist(assetsFolder);
+    await _moveFolder(tempFolder, assetsFolder, _tempDirName);
+    await _deleteDirectoryIfExists(tempFolder);
   }
 
   Future<void> _createDirectoryIfItDoesntExist(String path) async {
@@ -324,15 +416,97 @@ class ResourceServiceImpl implements ResourceService {
     }
   }
 
-  Future<File> _moveFile(File sourceFile, String newPath) async {
+  String _getNewPathForMove(String to, String fromFolderName, FileSystemEntity entity) {
+    final subPath = entity.path.substring(entity.path.indexOf(fromFolderName) + fromFolderName.length + 1);
+    return join(to, subPath);
+  }
+
+  Future<void> _moveFolder(String from, String to, String fromFolderName) async {
     try {
       // prefer using rename as it is probably faster
-      return await sourceFile.rename(newPath);
-    } on FileSystemException catch (e) {
+      await Directory(from).rename(to);
+      return;
+    } catch (e) {
+      //NO OP
+    }
+
+    try {
       // if rename fails, copy the source file and then delete it
-      final newFile = await sourceFile.copy(newPath);
-      await sourceFile.delete();
-      return newFile;
+      final entities = await Directory(from).list(recursive: true).toList();
+
+      final dirs = entities.whereType<Directory>().toList();
+      for (final dir in dirs) {
+        final newPath = _getNewPathForMove(to, fromFolderName, dir);
+        await _createDirectoryIfItDoesntExist(newPath);
+      }
+
+      final files = entities.whereType<File>().toList();
+      for (final file in files) {
+        final newPath = _getNewPathForMove(to, fromFolderName, file);
+        await _moveFile(file.path, newPath);
+      }
+      return;
+    } catch (e) {
+      //NO OP
+    }
+
+    throw Exception('Could not move from = $from to = $to');
+  }
+
+  Future<void> _moveFile(String from, String to) async {
+    final file = File(from);
+    try {
+      // prefer using rename as it is probably faster
+      await file.rename(to);
+      return;
+    } catch (e) {
+      //NO OP
+    }
+
+    try {
+      // if rename fails, copy the source file and then delete it
+      await file.copy(to);
+      await file.delete();
+      return;
+    } catch (e) {
+      //NO OP
+    }
+
+    throw Exception('Could not move from = $from to = $to');
+  }
+
+  String _getJsonTranslationFilename(AppLanguageType languageType) {
+    switch (languageType) {
+      case AppLanguageType.english:
+        return 'en.json';
+      case AppLanguageType.spanish:
+        return 'es.json';
+      case AppLanguageType.russian:
+        return 'ru.json';
+      case AppLanguageType.simplifiedChinese:
+        return 'zh_CN.json';
+      case AppLanguageType.portuguese:
+        return 'pt.json';
+      case AppLanguageType.italian:
+        return 'it.json';
+      case AppLanguageType.japanese:
+        return 'ja.json';
+      case AppLanguageType.vietnamese:
+        return 'vi.json';
+      case AppLanguageType.indonesian:
+        return 'id.json';
+      case AppLanguageType.deutsch:
+        return 'de.json';
+      case AppLanguageType.french:
+        return 'fr.json';
+      case AppLanguageType.traditionalChinese:
+        return 'zh_TW.json';
+      case AppLanguageType.korean:
+        return 'ko.json';
+      case AppLanguageType.thai:
+        return 'th.json';
+      default:
+        throw Exception('Invalid language = $languageType');
     }
   }
 }

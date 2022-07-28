@@ -1,10 +1,9 @@
-import 'package:shiori/domain/assets.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/file/material_file_service.dart';
 import 'package:shiori/domain/services/file/translation_file_service.dart';
 
-class MaterialFileServiceImpl implements MaterialFileService {
+class MaterialFileServiceImpl extends MaterialFileService {
   final TranslationFileService _translations;
 
   late MaterialsFile _materialsFile;
@@ -12,8 +11,8 @@ class MaterialFileServiceImpl implements MaterialFileService {
   MaterialFileServiceImpl(this._translations);
 
   @override
-  Future<void> init() async {
-    final json = await Assets.getJsonFromPath(Assets.materialsDbPath);
+  Future<void> init(String assetPath) async {
+    final json = await readJson(assetPath);
     _materialsFile = MaterialsFile.fromJson(json);
   }
 

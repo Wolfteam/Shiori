@@ -2,7 +2,7 @@ import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/file/base_file_service.dart';
 
-abstract class WeaponFileService implements BaseFileService {
+abstract class WeaponFileService extends BaseFileService {
   List<WeaponCardModel> getWeaponsForCard();
 
   WeaponCardModel getWeaponForCard(String key);

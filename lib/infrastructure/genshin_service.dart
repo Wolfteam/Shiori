@@ -4,9 +4,11 @@ import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/file/file_infrastructure.dart';
 import 'package:shiori/domain/services/genshin_service.dart';
 import 'package:shiori/domain/services/locale_service.dart';
+import 'package:shiori/domain/services/resources_service.dart';
 import 'package:shiori/infrastructure/file/file_infrastructure.dart';
 
 class GenshinServiceImpl implements GenshinService {
+  final ResourceService _resourceService;
   final TranslationFileService _translations;
 
   late final ArtifactFileService _artifacts;
@@ -49,7 +51,7 @@ class GenshinServiceImpl implements GenshinService {
   @override
   TranslationFileService get translations => _translations;
 
-  GenshinServiceImpl(LocaleService localeService) : _translations = TranslationFileServiceImpl() {
+  GenshinServiceImpl(this._resourceService, LocaleService localeService) : _translations = TranslationFileServiceImpl() {
     _artifacts = ArtifactFileServiceImpl(_translations);
     _elements = ElementFileServiceImpl(_translations);
     _furniture = FurnitureFileServiceImpl();
@@ -64,16 +66,16 @@ class GenshinServiceImpl implements GenshinService {
   @override
   Future<void> init(AppLanguageType languageType) async {
     await Future.wait([
-      _artifacts.init(),
-      _bannerHistory.init(),
-      _characters.init(),
-      _elements.init(),
-      _furniture.init(),
-      _gadgets.init(),
-      _materials.init(),
-      _monsters.init(),
-      _weapons.init(),
-      _translations.init(languageType)
+      _artifacts.init(_resourceService.getJsonFilePath(AppJsonFileType.artifacts)),
+      _bannerHistory.init(_resourceService.getJsonFilePath(AppJsonFileType.bannerHistory)),
+      _characters.init(_resourceService.getJsonFilePath(AppJsonFileType.characters)),
+      _elements.init(_resourceService.getJsonFilePath(AppJsonFileType.elements)),
+      _furniture.init(_resourceService.getJsonFilePath(AppJsonFileType.furniture)),
+      _gadgets.init(_resourceService.getJsonFilePath(AppJsonFileType.gadgets)),
+      _materials.init(_resourceService.getJsonFilePath(AppJsonFileType.materials)),
+      _monsters.init(_resourceService.getJsonFilePath(AppJsonFileType.monsters)),
+      _weapons.init(_resourceService.getJsonFilePath(AppJsonFileType.weapons)),
+      _translations.initTranslations(languageType, _resourceService.getJsonFilePath(AppJsonFileType.translations, language: languageType))
     ]);
   }
 

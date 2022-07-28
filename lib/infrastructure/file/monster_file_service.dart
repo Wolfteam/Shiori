@@ -1,10 +1,9 @@
-import 'package:shiori/domain/assets.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/file/monster_file_service.dart';
 import 'package:shiori/domain/services/file/translation_file_service.dart';
 
-class MonsterFileServiceImpl implements MonsterFileService {
+class MonsterFileServiceImpl extends MonsterFileService {
   final TranslationFileService _translations;
 
   late MonstersFile _monstersFile;
@@ -12,8 +11,8 @@ class MonsterFileServiceImpl implements MonsterFileService {
   MonsterFileServiceImpl(this._translations);
 
   @override
-  Future<void> init() async {
-    final json = await Assets.getJsonFromPath(Assets.monstersDbPath);
+  Future<void> init(String assetPath) async {
+    final json = await readJson(assetPath);
     _monstersFile = MonstersFile.fromJson(json);
   }
 

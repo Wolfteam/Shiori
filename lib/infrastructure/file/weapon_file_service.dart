@@ -3,7 +3,7 @@ import 'package:shiori/domain/enums/stat_type.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/file/file_infrastructure.dart';
 
-class WeaponFileServiceImpl implements WeaponFileService {
+class WeaponFileServiceImpl extends WeaponFileService {
   final MaterialFileService _materials;
   final TranslationFileService _translations;
 
@@ -12,8 +12,8 @@ class WeaponFileServiceImpl implements WeaponFileService {
   WeaponFileServiceImpl(this._materials, this._translations);
 
   @override
-  Future<void> init() async {
-    final json = await Assets.getJsonFromPath(Assets.weaponsDbPath);
+  Future<void> init(String assetPath) async {
+    final json = await readJson(assetPath);
     _weaponsFile = WeaponsFile.fromJson(json);
   }
 

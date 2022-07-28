@@ -23,8 +23,8 @@ class CharacterFileServiceImpl extends CharacterFileService {
   CharacterFileServiceImpl(this._localeService, this._artifacts, this._materials, this._weapons, this._translations);
 
   @override
-  Future<void> init() async {
-    final json = await Assets.getJsonFromPath(Assets.charactersDbPath);
+  Future<void> init(String assetPath) async {
+    final json = await readJson(assetPath);
     _charactersFile = CharactersFile.fromJson(json);
   }
 

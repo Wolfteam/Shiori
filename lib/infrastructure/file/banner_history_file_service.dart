@@ -2,13 +2,12 @@ import 'dart:math';
 
 import 'package:collection/collection.dart';
 import 'package:shiori/domain/app_constants.dart';
-import 'package:shiori/domain/assets.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/extensions/double_extensions.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/file/file_infrastructure.dart';
 
-class BannerHistoryFileServiceImpl implements BannerHistoryFileService {
+class BannerHistoryFileServiceImpl extends BannerHistoryFileService {
   final CharacterFileService _characters;
   final WeaponFileService _weapons;
 
@@ -17,8 +16,8 @@ class BannerHistoryFileServiceImpl implements BannerHistoryFileService {
   BannerHistoryFileServiceImpl(this._characters, this._weapons);
 
   @override
-  Future<void> init() async {
-    final json = await Assets.getJsonFromPath(Assets.bannerHistoryDbPath);
+  Future<void> init(String assetPath) async {
+    final json = await readJson(assetPath);
     _bannerHistoryFile = BannerHistoryFile.fromJson(json);
   }
 
