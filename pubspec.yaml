@@ -100,7 +100,9 @@ flutter:
   uses-material-design: true
 
   assets:
+    - assets/elements/
     - assets/others/
+    - assets/weapon_types/
     - assets/icon/icon.png
 
   fonts:
