@@ -5,7 +5,7 @@ import 'package:shiori/domain/services/file/translation_file_service.dart';
 class TranslationFileServiceImpl extends TranslationFileService {
   late TranslationFile _translationFile;
 
-  late AppLanguageType? _currentLanguage;
+  AppLanguageType? _currentLanguage;
 
   AppLanguageType get currentLanguage => _currentLanguage!;
 

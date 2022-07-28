@@ -1,7 +1,6 @@
 import 'package:collection/collection.dart' show IterableExtension;
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:shiori/domain/app_constants.dart';
-import 'package:shiori/domain/assets.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/models/entities.dart';
 import 'package:shiori/domain/models/models.dart';
@@ -9,17 +8,19 @@ import 'package:shiori/domain/services/calculator_service.dart';
 import 'package:shiori/domain/services/genshin_service.dart';
 import 'package:shiori/domain/services/persistence/calculator_data_service.dart';
 import 'package:shiori/domain/services/persistence/inventory_data_service.dart';
+import 'package:shiori/domain/services/resources_service.dart';
 
 class CalculatorDataServiceImpl implements CalculatorDataService {
   final GenshinService _genshinService;
   final CalculatorService _calculatorService;
   final InventoryDataService _inventory;
+  final ResourceService _resourceService;
 
   late Box<CalculatorSession> _sessionBox;
   late Box<CalculatorItem> _calcItemBox;
   late Box<CalculatorCharacterSkill> _calcItemSkillBox;
 
-  CalculatorDataServiceImpl(this._genshinService, this._calculatorService, this._inventory);
+  CalculatorDataServiceImpl(this._genshinService, this._calculatorService, this._inventory, this._resourceService);
 
   @override
   Future<void> init() async {
@@ -272,7 +273,7 @@ class CalculatorDataServiceImpl implements CalculatorDataService {
     return ItemAscensionMaterials.forCharacters(
       key: item.itemKey,
       name: translation.name,
-      image: Assets.getCharacterPath(character.image),
+      image: _resourceService.getCharacterImagePath(character.image),
       elementType: character.elementType,
       rarity: character.rarity,
       materials: materials,
@@ -329,7 +330,7 @@ class CalculatorDataServiceImpl implements CalculatorDataService {
     return ItemAscensionMaterials.forWeapons(
       key: item.itemKey,
       name: translation.name,
-      image: weapon.fullImagePath,
+      image: _resourceService.getWeaponImagePath(weapon.image, weapon.type),
       rarity: weapon.rarity,
       materials: materials,
       currentLevel: item.currentLevel,

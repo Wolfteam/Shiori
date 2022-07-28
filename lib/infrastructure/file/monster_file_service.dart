@@ -2,13 +2,15 @@ import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/file/monster_file_service.dart';
 import 'package:shiori/domain/services/file/translation_file_service.dart';
+import 'package:shiori/domain/services/resources_service.dart';
 
 class MonsterFileServiceImpl extends MonsterFileService {
+  final ResourceService _resourceService;
   final TranslationFileService _translations;
 
   late MonstersFile _monstersFile;
 
-  MonsterFileServiceImpl(this._translations);
+  MonsterFileServiceImpl(this._resourceService, this._translations);
 
   @override
   Future<void> init(String assetPath) async {
@@ -44,7 +46,7 @@ class MonsterFileServiceImpl extends MonsterFileService {
       if (!monster.drops.any((el) => el.type == MonsterDropType.material && el.key == key)) {
         continue;
       }
-      items.add(ItemCommon(monster.key, monster.fullImagePath));
+      items.add(ItemCommon(monster.key, _resourceService.getMonsterImagePath(monster.image)));
     }
     return items;
   }
@@ -56,7 +58,7 @@ class MonsterFileServiceImpl extends MonsterFileService {
       if (!monster.drops.any((el) => el.type == MonsterDropType.artifact && key == el.key)) {
         continue;
       }
-      items.add(ItemCommon(monster.key, monster.fullImagePath));
+      items.add(ItemCommon(monster.key, _resourceService.getMonsterImagePath(monster.image)));
     }
     return items;
   }
@@ -65,7 +67,7 @@ class MonsterFileServiceImpl extends MonsterFileService {
     final translation = _translations.getMonsterTranslation(monster.key);
     return MonsterCardModel(
       key: monster.key,
-      image: monster.fullImagePath,
+      image: _resourceService.getMonsterImagePath(monster.image),
       name: translation.name,
       type: monster.type,
       isComingSoon: monster.isComingSoon,

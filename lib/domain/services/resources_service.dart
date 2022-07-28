@@ -4,6 +4,24 @@ import 'package:shiori/domain/models/models.dart';
 abstract class ResourceService {
   String getJsonFilePath(AppJsonFileType type, {AppLanguageType? language});
 
+  String getArtifactImagePath(String filename);
+
+  String getCharacterImagePath(String filename);
+
+  String getCharacterFullImagePath(String filename);
+
+  String getFurnitureImagePath(String filename);
+
+  String getGadgetImagePath(String filename);
+
+  String getMonsterImagePath(String filename);
+
+  String getSkillImagePath(String? filename);
+
+  String getWeaponImagePath(String filename, WeaponType type);
+
+  String getMaterialImagePath(String filename, MaterialType type);
+
   Future<bool> canCheckForUpdates();
 
   Future<CheckForUpdatesResult> checkForUpdates(String currentAppVersion, int currentResourcesVersion);

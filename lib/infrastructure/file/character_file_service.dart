@@ -1,7 +1,6 @@
 import 'dart:math';
 
 import 'package:collection/collection.dart';
-import 'package:shiori/domain/assets.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/extensions/string_extensions.dart';
 import 'package:shiori/domain/models/models.dart';
@@ -9,9 +8,11 @@ import 'package:shiori/domain/services/file/character_file_service.dart';
 import 'package:shiori/domain/services/file/file_infrastructure.dart';
 import 'package:shiori/domain/services/file/translation_file_service.dart';
 import 'package:shiori/domain/services/locale_service.dart';
+import 'package:shiori/domain/services/resources_service.dart';
 import 'package:shiori/domain/utils/date_utils.dart';
 
 class CharacterFileServiceImpl extends CharacterFileService {
+  final ResourceService _resourceService;
   final LocaleService _localeService;
   final ArtifactFileService _artifacts;
   final MaterialFileService _materials;
@@ -20,7 +21,7 @@ class CharacterFileServiceImpl extends CharacterFileService {
 
   late CharactersFile _charactersFile;
 
-  CharacterFileServiceImpl(this._localeService, this._artifacts, this._materials, this._weapons, this._translations);
+  CharacterFileServiceImpl(this._resourceService, this._localeService, this._artifacts, this._materials, this._weapons, this._translations);
 
   @override
   Future<void> init(String assetPath) async {
@@ -44,31 +45,31 @@ class CharacterFileServiceImpl extends CharacterFileService {
 
     final sssTier = _charactersFile.characters
         .where((char) => !char.isComingSoon && char.tier == 'sss')
-        .map((char) => ItemCommon(char.key, Assets.getCharacterPath(char.image)))
+        .map((char) => ItemCommon(char.key, _resourceService.getCharacterImagePath(char.image)))
         .toList();
     final ssTier = _charactersFile.characters
         .where((char) => !char.isComingSoon && char.tier == 'ss')
-        .map((char) => ItemCommon(char.key, Assets.getCharacterPath(char.image)))
+        .map((char) => ItemCommon(char.key, _resourceService.getCharacterImagePath(char.image)))
         .toList();
     final sTier = _charactersFile.characters
         .where((char) => !char.isComingSoon && char.tier == 's')
-        .map((char) => ItemCommon(char.key, Assets.getCharacterPath(char.image)))
+        .map((char) => ItemCommon(char.key, _resourceService.getCharacterImagePath(char.image)))
         .toList();
     final aTier = _charactersFile.characters
         .where((char) => !char.isComingSoon && char.tier == 'a')
-        .map((char) => ItemCommon(char.key, Assets.getCharacterPath(char.image)))
+        .map((char) => ItemCommon(char.key, _resourceService.getCharacterImagePath(char.image)))
         .toList();
     final bTier = _charactersFile.characters
         .where((char) => !char.isComingSoon && char.tier == 'b')
-        .map((char) => ItemCommon(char.key, Assets.getCharacterPath(char.image)))
+        .map((char) => ItemCommon(char.key, _resourceService.getCharacterImagePath(char.image)))
         .toList();
     final cTier = _charactersFile.characters
         .where((char) => !char.isComingSoon && char.tier == 'c')
-        .map((char) => ItemCommon(char.key, Assets.getCharacterPath(char.image)))
+        .map((char) => ItemCommon(char.key, _resourceService.getCharacterImagePath(char.image)))
         .toList();
     final dTier = _charactersFile.characters
         .where((char) => !char.isComingSoon && char.tier == 'd')
-        .map((char) => ItemCommon(char.key, Assets.getCharacterPath(char.image)))
+        .map((char) => ItemCommon(char.key, _resourceService.getCharacterImagePath(char.image)))
         .toList();
 
     return <TierListRowModel>[
@@ -90,7 +91,7 @@ class CharacterFileServiceImpl extends CharacterFileService {
       for (final build in char.builds) {
         final isBeingUsed = build.weaponKeys.contains(weapon.key);
         if (isBeingUsed && !items.any((el) => el.key == char.key)) {
-          items.add(ItemCommon(char.key, Assets.getCharacterPath(char.image)));
+          items.add(ItemCommon(char.key, _resourceService.getCharacterImagePath(char.image)));
         }
       }
     }
@@ -107,7 +108,7 @@ class CharacterFileServiceImpl extends CharacterFileService {
         final isBeingUsed = build.artifacts.any((a) => a.oneKey == artifact.key || a.multiples.any((m) => m.key == artifact.key));
 
         if (isBeingUsed && !items.any((el) => el.key == char.key)) {
-          items.add(ItemCommon(char.key, Assets.getCharacterPath(char.image)));
+          items.add(ItemCommon(char.key, _resourceService.getCharacterImagePath(char.image)));
         }
       }
     }
@@ -131,7 +132,7 @@ class CharacterFileServiceImpl extends CharacterFileService {
       final allMaterials = _materials.getMaterialsFromAscensionMaterials(materials);
 
       if (allMaterials.any((m) => m.key == material.key)) {
-        imgs.add(ItemCommon(char.key, Assets.getCharacterPath(char.image)));
+        imgs.add(ItemCommon(char.key, _resourceService.getCharacterImagePath(char.image)));
       }
     }
 
@@ -168,7 +169,7 @@ class CharacterFileServiceImpl extends CharacterFileService {
 
         final materialIsBeingUsed = normalAscMaterial || specialAscMaterial;
         if (materialIsBeingUsed && !characters.any((el) => el.key == char.key)) {
-          characters.add(ItemCommon(char.key, Assets.getCharacterPath(char.image)));
+          characters.add(ItemCommon(char.key, _resourceService.getCharacterImagePath(char.image)));
         }
       }
 
@@ -176,14 +177,14 @@ class CharacterFileServiceImpl extends CharacterFileService {
           ? TodayCharAscensionMaterialsModel.fromBoss(
               key: e.key,
               name: translation.name,
-              image: Assets.getMaterialPath(e.image, e.type),
+              image: _resourceService.getMaterialImagePath(e.image, e.type),
               bossName: translation.bossName,
               characters: characters,
             )
           : TodayCharAscensionMaterialsModel.fromDays(
               key: e.key,
               name: translation.name,
-              image: Assets.getMaterialPath(e.image, e.type),
+              image: _resourceService.getMaterialImagePath(e.image, e.type),
               characters: characters,
               days: e.days,
             );
@@ -209,7 +210,7 @@ class CharacterFileServiceImpl extends CharacterFileService {
             month: e.key,
             items: e.value.map((e) {
               final translation = _translations.getCharacterTranslation(e.key);
-              return ItemCommonWithName(e.key, e.fullImagePath, translation.name);
+              return ItemCommonWithName(e.key, _resourceService.getCharacterImagePath(e.image), translation.name);
             }).toList(),
           ),
         )
@@ -392,7 +393,7 @@ class CharacterFileServiceImpl extends CharacterFileService {
   List<ItemCommonWithName> getItemCommonWithNameByStatType(StatType statType) {
     return _charactersFile.characters.where((el) => el.subStatType == statType && !el.isComingSoon).map((e) {
       final translation = _translations.getCharacterTranslation(e.key);
-      return ItemCommonWithName(e.key, e.fullImagePath, translation.name);
+      return ItemCommonWithName(e.key, _resourceService.getCharacterImagePath(e.image), translation.name);
     }).toList();
   }
 
@@ -420,8 +421,8 @@ class CharacterFileServiceImpl extends CharacterFileService {
     return CharacterCardModel(
       key: character.key,
       elementType: character.elementType,
-      image: Assets.getCharacterPath(character.image),
-      materials: quickMaterials.map((m) => m.fullImagePath).toList(),
+      image: _resourceService.getCharacterImagePath(character.image),
+      materials: quickMaterials.map((m) => _resourceService.getMaterialImagePath(m.image, m.type)).toList(),
       name: translation.name,
       stars: character.rarity,
       weaponType: character.weaponType,

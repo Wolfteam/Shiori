@@ -4,12 +4,15 @@ import 'package:shiori/domain/models/entities.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/genshin_service.dart';
 import 'package:shiori/domain/services/persistence/tier_list_data_service.dart';
+import 'package:shiori/domain/services/resources_service.dart';
 
 class TierListDataServiceImpl implements TierListDataService {
   final GenshinService _genshinService;
+  final ResourceService _resourceService;
+
   late Box<TierListItem> _tierListBox;
 
-  TierListDataServiceImpl(this._genshinService);
+  TierListDataServiceImpl(this._genshinService, this._resourceService);
 
   @override
   Future<void> init() async {
@@ -27,7 +30,7 @@ class TierListDataServiceImpl implements TierListDataService {
     return values.map((e) {
       final characters = e.charKeys.map((e) {
         final character = _genshinService.characters.getCharacter(e);
-        return ItemCommon(character.key, character.fullImagePath);
+        return ItemCommon(character.key, _resourceService.getCharacterImagePath(character.image));
       }).toList();
       return TierListRowModel.row(tierText: e.text, items: characters, tierColor: e.color);
     }).toList();

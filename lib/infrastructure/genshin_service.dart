@@ -52,15 +52,15 @@ class GenshinServiceImpl implements GenshinService {
   TranslationFileService get translations => _translations;
 
   GenshinServiceImpl(this._resourceService, LocaleService localeService) : _translations = TranslationFileServiceImpl() {
-    _artifacts = ArtifactFileServiceImpl(_translations);
+    _artifacts = ArtifactFileServiceImpl(_resourceService, _translations);
     _elements = ElementFileServiceImpl(_translations);
     _furniture = FurnitureFileServiceImpl();
     _gadgets = GadgetFileServiceImpl();
-    _materials = MaterialFileServiceImpl(_translations);
-    _monsters = MonsterFileServiceImpl(_translations);
-    _weapons = WeaponFileServiceImpl(_materials, _translations);
-    _characters = CharacterFileServiceImpl(localeService, _artifacts, _materials, _weapons, _translations);
-    _bannerHistory = BannerHistoryFileServiceImpl(_characters, _weapons);
+    _materials = MaterialFileServiceImpl(_resourceService, _translations);
+    _monsters = MonsterFileServiceImpl(_resourceService, _translations);
+    _weapons = WeaponFileServiceImpl(_resourceService, _materials, _translations);
+    _characters = CharacterFileServiceImpl(_resourceService, localeService, _artifacts, _materials, _weapons, _translations);
+    _bannerHistory = BannerHistoryFileServiceImpl(_resourceService, _characters, _weapons);
   }
 
   @override
@@ -147,22 +147,22 @@ class GenshinServiceImpl implements GenshinService {
       case AppNotificationType.expedition:
       case AppNotificationType.realmCurrency:
         final material = materials.getMaterial(itemKey);
-        return material.fullImagePath;
+        return _resourceService.getMaterialImagePath(material.image, material.type);
       case AppNotificationType.furniture:
         final furniture = this.furniture.getFurniture(itemKey);
-        return furniture.fullImagePath;
+        return _resourceService.getFurnitureImagePath(furniture.image);
       case AppNotificationType.gadget:
         final gadget = gadgets.getGadget(itemKey);
-        return gadget.fullImagePath;
+        return _resourceService.getGadgetImagePath(gadget.image);
       case AppNotificationType.farmingArtifacts:
         final artifact = artifacts.getArtifact(itemKey);
-        return artifact.fullImagePath;
+        return _resourceService.getArtifactImagePath(artifact.image);
       case AppNotificationType.farmingMaterials:
         final material = materials.getMaterial(itemKey);
-        return material.fullImagePath;
+        return _resourceService.getMaterialImagePath(material.image, material.type);
       case AppNotificationType.weeklyBoss:
         final monster = monsters.getMonster(itemKey);
-        return monster.fullImagePath;
+        return _resourceService.getMonsterImagePath(monster.image);
       case AppNotificationType.custom:
       case AppNotificationType.dailyCheckIn:
         return getItemImageFromNotificationItemType(itemKey, notificationItemType!);
@@ -176,19 +176,19 @@ class GenshinServiceImpl implements GenshinService {
     switch (notificationItemType) {
       case AppNotificationItemType.character:
         final character = characters.getCharacter(itemKey);
-        return character.fullImagePath;
+        return _resourceService.getCharacterImagePath(character.image);
       case AppNotificationItemType.weapon:
         final weapon = weapons.getWeapon(itemKey);
-        return weapon.fullImagePath;
+        return _resourceService.getWeaponImagePath(weapon.image, weapon.type);
       case AppNotificationItemType.artifact:
         final artifact = artifacts.getArtifact(itemKey);
-        return artifact.fullImagePath;
+        return _resourceService.getArtifactImagePath(artifact.image);
       case AppNotificationItemType.monster:
         final monster = monsters.getMonster(itemKey);
-        return monster.fullImagePath;
+        return _resourceService.getMonsterImagePath(monster.image);
       case AppNotificationItemType.material:
         final material = materials.getMaterial(itemKey);
-        return material.fullImagePath;
+        return _resourceService.getMaterialImagePath(material.image, material.type);
       default:
         throw Exception('The provided notification item type = $notificationItemType');
     }

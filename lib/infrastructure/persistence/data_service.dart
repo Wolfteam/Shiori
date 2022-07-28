@@ -11,6 +11,7 @@ import 'package:shiori/domain/services/persistence/game_codes_data_service.dart'
 import 'package:shiori/domain/services/persistence/inventory_data_service.dart';
 import 'package:shiori/domain/services/persistence/notifications_data_service.dart';
 import 'package:shiori/domain/services/persistence/tier_list_data_service.dart';
+import 'package:shiori/domain/services/resources_service.dart';
 import 'package:shiori/infrastructure/persistence/calculator_data_service.dart';
 import 'package:shiori/infrastructure/persistence/custom_builds_data_service.dart';
 import 'package:shiori/infrastructure/persistence/game_codes_data_service.dart';
@@ -49,13 +50,13 @@ class DataServiceImpl implements DataService {
   @override
   TierListDataService get tierList => _tierList;
 
-  DataServiceImpl(GenshinService genshinService, CalculatorService calculatorService)
+  DataServiceImpl(GenshinService genshinService, CalculatorService calculatorService, ResourceService resourceService)
       : _inventory = InventoryDataServiceImpl(genshinService),
-        _builds = CustomBuildsDataServiceImpl(genshinService),
+        _builds = CustomBuildsDataServiceImpl(genshinService, resourceService),
         _notifications = NotificationsDataServiceImpl(genshinService),
-        _gameCodes = GameCodesDataServiceImpl(genshinService),
-        _tierList = TierListDataServiceImpl(genshinService) {
-    _calculator = CalculatorDataServiceImpl(genshinService, calculatorService, _inventory);
+        _gameCodes = GameCodesDataServiceImpl(genshinService, resourceService),
+        _tierList = TierListDataServiceImpl(genshinService, resourceService) {
+    _calculator = CalculatorDataServiceImpl(genshinService, calculatorService, _inventory, resourceService);
   }
 
   @override

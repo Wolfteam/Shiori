@@ -1,17 +1,18 @@
 import 'package:collection/collection.dart';
 import 'package:shiori/domain/app_constants.dart';
-import 'package:shiori/domain/assets.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/file/artifact_file_service.dart';
 import 'package:shiori/domain/services/file/translation_file_service.dart';
+import 'package:shiori/domain/services/resources_service.dart';
 
 class ArtifactFileServiceImpl extends ArtifactFileService {
+  final ResourceService _resourceService;
   final TranslationFileService _translations;
 
   late ArtifactsFile _artifactsFile;
 
-  ArtifactFileServiceImpl(this._translations);
+  ArtifactFileServiceImpl(this._resourceService, this._translations);
 
   @override
   Future<void> init(String assetPath) async {
@@ -61,7 +62,7 @@ class ArtifactFileServiceImpl extends ArtifactFileService {
 
     var imageWithoutExt = image.split('.png').first;
     imageWithoutExt = imageWithoutExt.substring(0, imageWithoutExt.length - 1);
-    return artifactOrder.map((e) => Assets.getArtifactPath('$imageWithoutExt$e.png')).toList();
+    return artifactOrder.map((e) => _resourceService.getArtifactImagePath('$imageWithoutExt$e.png')).toList();
   }
 
   @override
@@ -100,17 +101,18 @@ class ArtifactFileServiceImpl extends ArtifactFileService {
   ArtifactCardModel _toArtifactForCard(ArtifactFileModel artifact, {ArtifactType? type}) {
     final translation = _translations.getArtifactTranslation(artifact.key);
     final bonus = getArtifactBonus(translation);
+    final imagePath = _resourceService.getArtifactImagePath(artifact.image);
     final mapped = ArtifactCardModel(
       key: artifact.key,
       name: translation.name,
-      image: artifact.fullImagePath,
+      image: imagePath,
       rarity: artifact.maxRarity,
       bonus: bonus,
     );
 
     //only search for other images if the artifact has more than 1 bonus effect
     if (type != null && bonus.length > 1) {
-      final img = getArtifactRelatedPart(artifact.fullImagePath, artifact.image, bonus.length, type);
+      final img = getArtifactRelatedPart(imagePath, artifact.image, bonus.length, type);
       return mapped.copyWith.call(image: img);
     }
 

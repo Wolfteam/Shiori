@@ -33,4 +33,6 @@ abstract class MaterialFileService extends BaseFileService {
   MaterialFileModel getRealmCurrencyMaterial();
 
   MaterialFileModel getPrimogemMaterial();
+
+  MaterialFileModel getFragileResinMaterial();
 }
