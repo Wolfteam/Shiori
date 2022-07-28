@@ -6,6 +6,7 @@ import 'package:flutter_archive/flutter_archive.dart';
 import 'package:http/http.dart' as http;
 import 'package:path/path.dart';
 import 'package:path_provider/path_provider.dart';
+import 'package:shiori/domain/assets.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/extensions/string_extensions.dart';
 import 'package:shiori/domain/models/dtos.dart';
@@ -81,6 +82,103 @@ class ResourceServiceImpl implements ResourceService {
         throw Exception('You must provide a language to retrieve a translation file');
     }
   }
+
+  String _getImagePath(String filename, AppImageFolderType type, {WeaponType? weaponType, MaterialType? materialType}) {
+    switch (type) {
+      case AppImageFolderType.artifacts:
+        return join(_assetsPath, 'artifacts', filename);
+      case AppImageFolderType.characters:
+        return join(_assetsPath, 'characters', filename);
+      case AppImageFolderType.charactersFull:
+        return join(_assetsPath, 'characters_full', filename);
+      case AppImageFolderType.furniture:
+        return join(_assetsPath, 'furniture', filename);
+      case AppImageFolderType.gadgets:
+        return join(_assetsPath, 'gadgets', filename);
+      case AppImageFolderType.items:
+        final materialBasePath = join(_assetsPath, 'items');
+        switch (materialType) {
+          case MaterialType.common:
+            return join(materialBasePath, 'common', filename);
+          case MaterialType.currency:
+            return join(materialBasePath, 'currency', filename);
+          case MaterialType.elementalStone:
+            return join(materialBasePath, 'elemental', filename);
+          case MaterialType.expWeapon:
+          case MaterialType.expCharacter:
+            return join(materialBasePath, 'experience', filename);
+          case MaterialType.ingredient:
+            return join(materialBasePath, 'ingredients', filename);
+          case MaterialType.jewels:
+            return join(materialBasePath, 'jewels', filename);
+          case MaterialType.local:
+            return join(materialBasePath, 'local', filename);
+          case MaterialType.talents:
+            return join(materialBasePath, 'talents', filename);
+          case MaterialType.weapon:
+            return join(materialBasePath, 'weapon', filename);
+          case MaterialType.weaponPrimary:
+            return join(materialBasePath, 'weapon_primary', filename);
+          case MaterialType.others:
+            throw Exception('Invalid material type');
+          default:
+            throw Exception('You must provide a material type');
+        }
+      case AppImageFolderType.monsters:
+        return join(_assetsPath, 'monsters', filename);
+      case AppImageFolderType.skills:
+        return join(_assetsPath, 'skills', filename);
+      case AppImageFolderType.weapons:
+        final weaponBasePath = join(_assetsPath, 'weapons');
+        switch (weaponType) {
+          case WeaponType.sword:
+            return join(weaponBasePath, 'swords', filename);
+          case WeaponType.claymore:
+            return join(weaponBasePath, 'claymores', filename);
+          case WeaponType.polearm:
+            return join(weaponBasePath, 'polearms', filename);
+          case WeaponType.bow:
+            return join(weaponBasePath, 'bows', filename);
+          case WeaponType.catalyst:
+            return join(weaponBasePath, 'catalysts', filename);
+          default:
+            throw Exception('You must provide a weapon type');
+        }
+    }
+  }
+
+  @override
+  String getArtifactImagePath(String filename) => _getImagePath(filename, AppImageFolderType.artifacts);
+
+  @override
+  String getCharacterImagePath(String filename) => _getImagePath(filename, AppImageFolderType.characters);
+
+  @override
+  String getCharacterFullImagePath(String filename) => _getImagePath(filename, AppImageFolderType.charactersFull);
+
+  @override
+  String getFurnitureImagePath(String filename) => _getImagePath(filename, AppImageFolderType.furniture);
+
+  @override
+  String getGadgetImagePath(String filename) => _getImagePath(filename, AppImageFolderType.gadgets);
+
+  @override
+  String getMonsterImagePath(String filename) => _getImagePath(filename, AppImageFolderType.monsters);
+
+  @override
+  String getSkillImagePath(String? filename) {
+    if (filename.isNullEmptyOrWhitespace) {
+      return Assets.noImageAvailablePath;
+    }
+
+    return _getImagePath(filename!, AppImageFolderType.skills);
+  }
+
+  @override
+  String getWeaponImagePath(String filename, WeaponType type) => _getImagePath(filename, AppImageFolderType.weapons, weaponType: type);
+
+  @override
+  String getMaterialImagePath(String filename, MaterialType type) => _getImagePath(filename, AppImageFolderType.items, materialType: type);
 
   @override
   Future<bool> canCheckForUpdates() async {
