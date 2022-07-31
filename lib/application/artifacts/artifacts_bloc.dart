@@ -66,7 +66,7 @@ class ArtifactsBloc extends Bloc<ArtifactsEvent, ArtifactsState> {
     ArtifactType? type,
   }) {
     final isLoaded = state is _LoadedState;
-    var data = _genshinService.getArtifactsForCard(type: type);
+    var data = _genshinService.artifacts.getArtifactsForCard(type: type);
     if (excludeKeys.isNotEmpty) {
       data = data.where((el) => !excludeKeys.contains(el.key)).toList();
     }

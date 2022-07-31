@@ -23,8 +23,8 @@ class WeaponBloc extends Bloc<WeaponEvent, WeaponState> {
   Stream<WeaponState> mapEventToState(WeaponEvent event) async* {
     final s = await event.when(
       loadFromKey: (key) async {
-        final weapon = _genshinService.getWeapon(key);
-        final translation = _genshinService.getWeaponTranslation(weapon.key);
+        final weapon = _genshinService.weapons.getWeapon(key);
+        final translation = _genshinService.translations.getWeaponTranslation(weapon.key);
         await _telemetryService.trackWeaponLoaded(key);
         return _buildInitialState(weapon, translation);
       },
@@ -32,7 +32,7 @@ class WeaponBloc extends Bloc<WeaponEvent, WeaponState> {
         loading: (state) async => state,
         loaded: (state) async {
           await _telemetryService.trackItemAddedToInventory(key, 1);
-          await _dataService.addWeaponToInventory(key);
+          await _dataService.inventory.addWeaponToInventory(key);
           return state.copyWith.call(isInInventory: true);
         },
       ),
@@ -40,7 +40,7 @@ class WeaponBloc extends Bloc<WeaponEvent, WeaponState> {
         loading: (state) async => state,
         loaded: (state) async {
           await _telemetryService.trackItemDeletedFromInventory(key);
-          await _dataService.deleteWeaponFromInventory(key);
+          await _dataService.inventory.deleteWeaponFromInventory(key);
           return state.copyWith.call(isInInventory: false);
         },
       ),
@@ -50,10 +50,10 @@ class WeaponBloc extends Bloc<WeaponEvent, WeaponState> {
   }
 
   WeaponState _buildInitialState(WeaponFileModel weapon, TranslationWeaponFile translation) {
-    final charImgs = _genshinService.getCharacterForItemsUsingWeapon(weapon.key);
+    final charImgs = _genshinService.characters.getCharacterForItemsUsingWeapon(weapon.key);
     final ascensionMaterials = weapon.ascensionMaterials.map((e) {
       final materials = e.materials.map((e) {
-        final material = _genshinService.getMaterial(e.key);
+        final material = _genshinService.materials.getMaterial(e.key);
         return ItemAscensionMaterialModel(key: material.key, type: material.type, quantity: e.quantity, image: material.fullImagePath);
       }).toList();
       return WeaponAscensionModel(level: e.level, materials: materials);
@@ -62,7 +62,7 @@ class WeaponBloc extends Bloc<WeaponEvent, WeaponState> {
     final refinements = translation.refinements.mapIndexed((index, e) => WeaponFileRefinementModel(level: index + 1, description: e)).toList();
 
     final craftingMaterials = weapon.craftingMaterials.map((e) {
-      final material = _genshinService.getMaterial(e.key);
+      final material = _genshinService.materials.getMaterial(e.key);
       return ItemAscensionMaterialModel(key: e.key, type: material.type, quantity: e.quantity, image: material.fullImagePath);
     }).toList();
     return WeaponState.loaded(
@@ -76,7 +76,7 @@ class WeaponBloc extends Bloc<WeaponEvent, WeaponState> {
       secondaryStatValue: weapon.secondaryStatValue,
       description: translation.description,
       locationType: weapon.location,
-      isInInventory: _dataService.isItemInInventory(weapon.key, ItemType.weapon),
+      isInInventory: _dataService.inventory.isItemInInventory(weapon.key, ItemType.weapon),
       ascensionMaterials: ascensionMaterials,
       refinements: refinements,
       characters: charImgs,

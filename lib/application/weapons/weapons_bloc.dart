@@ -94,7 +94,7 @@ class WeaponsBloc extends Bloc<WeaponsEvent, WeaponsState> {
     bool areWeaponTypesEnabled = true,
   }) {
     final isLoaded = state is _LoadedState;
-    var data = _genshinService.getWeaponsForCard();
+    var data = _genshinService.weapons.getWeaponsForCard();
     if (excludeKeys.isNotEmpty) {
       data = data.where((el) => !excludeKeys.contains(el.key)).toList();
     }

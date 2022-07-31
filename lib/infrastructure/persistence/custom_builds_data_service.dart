@@ -138,15 +138,15 @@ class CustomBuildsDataServiceImpl implements CustomBuildsDataService {
   List<CharacterBuildCardModel> getCustomBuildsForCharacter(String charKey) {
     return _buildsBox.values.where((el) => el.showOnCharacterDetail && el.characterKey == charKey).map((e) {
       final build = getCustomBuild(e.key as int);
-      final artifacts = build.artifacts.map((e) => _genshinService.getArtifactForCard(e.key)).toList();
+      final artifacts = build.artifacts.map((e) => _genshinService.artifacts.getArtifactForCard(e.key)).toList();
       return CharacterBuildCardModel(
         isRecommended: e.isRecommended,
         isCustomBuild: true,
         type: CharacterRoleType.values[e.roleType],
         subType: CharacterRoleSubType.values[e.roleSubType],
         skillPriorities: e.skillPriorities.map((e) => CharacterSkillType.values[e]).toList(),
-        subStatsToFocus: _genshinService.generateSubStatSummary(build.artifacts),
-        weapons: build.weapons.map((e) => _genshinService.getWeaponForCard(e.key)).toList(),
+        subStatsToFocus: _genshinService.artifacts.generateSubStatSummary(build.artifacts),
+        weapons: build.weapons.map((e) => _genshinService.weapons.getWeaponForCard(e.key)).toList(),
         artifacts: [
           CharacterBuildArtifactModel(
             one: null,
@@ -234,11 +234,11 @@ class CustomBuildsDataServiceImpl implements CustomBuildsDataService {
     List<CustomBuildArtifact> buildArtifacts,
     List<CustomBuildTeamCharacter> buildTeamCharacters,
   ) {
-    final character = _genshinService.getCharacterForCard(build.characterKey);
+    final character = _genshinService.characters.getCharacterForCard(build.characterKey);
     final artifacts = buildArtifacts.map((e) {
-      final fullArtifact = _genshinService.getArtifact(e.itemKey);
-      final translation = _genshinService.getArtifactTranslation(e.itemKey);
-      final image = _genshinService.getArtifactRelatedPart(
+      final fullArtifact = _genshinService.artifacts.getArtifact(e.itemKey);
+      final translation = _genshinService.translations.getArtifactTranslation(e.itemKey);
+      final image = _genshinService.artifacts.getArtifactRelatedPart(
         fullArtifact.fullImagePath,
         fullArtifact.image,
         translation.bonus.length,
@@ -264,8 +264,8 @@ class CustomBuildsDataServiceImpl implements CustomBuildsDataService {
       isRecommended: build.isRecommended,
       character: character,
       weapons: buildWeapons.map((e) {
-        final weapon = _genshinService.getWeapon(e.weaponKey);
-        final translation = _genshinService.getWeaponTranslation(e.weaponKey);
+        final weapon = _genshinService.weapons.getWeapon(e.weaponKey);
+        final translation = _genshinService.translations.getWeaponTranslation(e.weaponKey);
         final stat = e.level <= 0 ? weapon.stats.last : weapon.stats.firstWhere((el) => el.level == e.level && el.isAnAscension == e.isAnAscension);
         return CustomBuildWeaponModel(
           key: e.weaponKey,
@@ -281,11 +281,11 @@ class CustomBuildsDataServiceImpl implements CustomBuildsDataService {
       }).toList()
         ..sort((x, y) => x.index.compareTo(y.index)),
       artifacts: artifacts,
-      subStatsSummary: _genshinService.generateSubStatSummary(artifacts),
+      subStatsSummary: _genshinService.artifacts.generateSubStatSummary(artifacts),
       skillPriorities: build.skillPriorities.map((e) => CharacterSkillType.values[e]).toList(),
       notes: buildNotes.map((e) => CustomBuildNoteModel(index: e.index, note: e.note)).toList()..sort((x, y) => x.index.compareTo(y.index)),
       teamCharacters: buildTeamCharacters.map((e) {
-        final char = _genshinService.getCharacterForCard(e.characterKey);
+        final char = _genshinService.characters.getCharacterForCard(e.characterKey);
         return CustomBuildTeamCharacterModel(
           key: e.characterKey,
           index: e.index,

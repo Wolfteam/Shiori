@@ -32,8 +32,8 @@ class CharacterBloc extends Bloc<CharacterEvent, CharacterState> {
   Stream<CharacterState> mapEventToState(CharacterEvent event) async* {
     final s = await event.when(
       loadFromKey: (key) async {
-        final char = _genshinService.getCharacter(key);
-        final translation = _genshinService.getCharacterTranslation(key);
+        final char = _genshinService.characters.getCharacter(key);
+        final translation = _genshinService.translations.getCharacterTranslation(key);
 
         await _telemetryService.trackCharacterLoaded(key);
         return _buildInitialState(char, translation);
@@ -42,7 +42,7 @@ class CharacterBloc extends Bloc<CharacterEvent, CharacterState> {
         loading: (state) async => state,
         loaded: (state) async {
           await _telemetryService.trackItemAddedToInventory(key, 1);
-          await _dataService.addCharacterToInventory(key);
+          await _dataService.inventory.addCharacterToInventory(key);
           return state.copyWith.call(isInInventory: true);
         },
       ),
@@ -50,7 +50,7 @@ class CharacterBloc extends Bloc<CharacterEvent, CharacterState> {
         loading: (state) async => state,
         loaded: (state) async {
           await _telemetryService.trackItemDeletedFromInventory(key);
-          await _dataService.deleteCharacterFromInventory(key);
+          await _dataService.inventory.deleteCharacterFromInventory(key);
           return state.copyWith.call(isInInventory: false);
         },
       ),
@@ -60,7 +60,7 @@ class CharacterBloc extends Bloc<CharacterEvent, CharacterState> {
   }
 
   ItemAscensionMaterialModel _mapToItemAscensionModel(ItemAscensionMaterialFileModel m) {
-    final img = _genshinService.getMaterial(m.key).fullImagePath;
+    final img = _genshinService.materials.getMaterial(m.key).fullImagePath;
     return ItemAscensionMaterialModel(key: m.key, type: m.type, quantity: m.quantity, image: img);
   }
 
@@ -85,7 +85,7 @@ class CharacterBloc extends Bloc<CharacterEvent, CharacterState> {
     }).toList();
 
     final birthday = _localeService.formatCharBirthDate(char.birthday);
-    final isInInventory = _dataService.isItemInInventory(char.key, ItemType.character);
+    final isInInventory = _dataService.inventory.isItemInInventory(char.key, ItemType.character);
     final builds = char.builds.map((build) {
       return CharacterBuildCardModel(
         isRecommended: build.isRecommended,
@@ -93,15 +93,15 @@ class CharacterBloc extends Bloc<CharacterEvent, CharacterState> {
         subType: build.subType,
         skillPriorities: build.skillPriorities,
         subStatsToFocus: build.subStatsToFocus,
-        weapons: build.weaponKeys.map((e) => _genshinService.getWeaponForCard(e)).toList(),
+        weapons: build.weaponKeys.map((e) => _genshinService.weapons.getWeaponForCard(e)).toList(),
         artifacts: build.artifacts.map(
           (e) {
-            final one = e.oneKey != null ? _genshinService.getArtifactForCard(e.oneKey!) : null;
+            final one = e.oneKey != null ? _genshinService.artifacts.getArtifactForCard(e.oneKey!) : null;
             final multiples = e.multiples
                 .map(
                   (m) => CharacterBuildMultipleArtifactModel(
                     quantity: m.quantity,
-                    artifact: _genshinService.getArtifactForCard(m.key),
+                    artifact: _genshinService.artifacts.getArtifactForCard(m.key),
                   ),
                 )
                 .toList();
@@ -148,7 +148,7 @@ class CharacterBloc extends Bloc<CharacterEvent, CharacterState> {
             secondDescription: a.secondDescription,
           );
         }).toList();
-        final stats = _genshinService.getCharacterSkillStats(skill.stats, e.stats);
+        final stats = _genshinService.characters.getCharacterSkillStats(skill.stats, e.stats);
         return CharacterSkillCardModel(
           image: skill.fullImagePath,
           stats: stats,

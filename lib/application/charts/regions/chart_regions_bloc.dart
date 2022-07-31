@@ -24,7 +24,7 @@ class ChartRegionsBloc extends Bloc<ChartRegionsEvent, ChartRegionsState> {
   }
 
   ChartRegionsState _init() {
-    final items = _genshinService.getCharacterRegionsForCharts();
+    final items = _genshinService.characters.getCharacterRegionsForCharts();
     final maxCount = items.map((e) => e.quantity).reduce(max);
     return ChartRegionsState.loaded(maxCount: maxCount, items: items);
   }

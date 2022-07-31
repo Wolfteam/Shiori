@@ -111,7 +111,7 @@ class GameCodeServiceImpl implements GameCodeService {
         final quantityString = cellNodes[i + 1].text!.trim().replaceAll('\n', '').replaceAll(',', '');
         final quantity = int.parse(quantityRegex.allMatches(quantityString).first.group(0)!);
         final key = _getMaterialKey(wikiName, type);
-        final img = _genshinService.getMaterialImg(key);
+        final img = _genshinService.materials.getMaterialImg(key);
         rewards.add(ItemAscensionMaterialModel(quantity: quantity, type: type, key: key, image: img));
       } catch (e, s) {
         _logger.error(runtimeType, '_parseRewards: Unknown error', e, s);
@@ -139,7 +139,7 @@ class GameCodeServiceImpl implements GameCodeService {
   }
 
   String _getMaterialKey(String wikiName, MaterialType type) {
-    final relatedMaterials = _genshinService.getMaterials(type);
+    final relatedMaterials = _genshinService.materials.getMaterials(type);
 
     final map = <String, int>{};
     for (final material in relatedMaterials) {

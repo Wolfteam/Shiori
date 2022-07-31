@@ -33,8 +33,8 @@ class CalculatorAscMaterialsItemBloc extends Bloc<CalculatorAscMaterialsItemEven
     final s = event.map(
       load: (e) {
         if (e.isCharacter) {
-          final char = _genshinService.getCharacter(e.key);
-          final translation = _genshinService.getCharacterTranslation(e.key);
+          final char = _genshinService.characters.getCharacter(e.key);
+          final translation = _genshinService.translations.getCharacterTranslation(e.key);
           return CalculatorAscMaterialsItemState.loaded(
             name: translation.name,
             imageFullPath: Assets.getCharacterPath(char.image),
@@ -46,8 +46,8 @@ class CalculatorAscMaterialsItemBloc extends Bloc<CalculatorAscMaterialsItemEven
             skills: _getCharacterSkillsToUse(char, translation),
           );
         }
-        final weapon = _genshinService.getWeapon(e.key);
-        final translation = _genshinService.getWeaponTranslation(e.key);
+        final weapon = _genshinService.weapons.getWeapon(e.key);
+        final translation = _genshinService.translations.getWeaponTranslation(e.key);
         return CalculatorAscMaterialsItemState.loaded(
           name: translation.name,
           imageFullPath: weapon.fullImagePath,
@@ -60,8 +60,8 @@ class CalculatorAscMaterialsItemBloc extends Bloc<CalculatorAscMaterialsItemEven
       },
       loadWith: (e) {
         if (e.isCharacter) {
-          final char = _genshinService.getCharacter(e.key);
-          final translation = _genshinService.getCharacterTranslation(e.key);
+          final char = _genshinService.characters.getCharacter(e.key);
+          final translation = _genshinService.translations.getCharacterTranslation(e.key);
           return CalculatorAscMaterialsItemState.loaded(
             name: translation.name,
             imageFullPath: Assets.getCharacterPath(char.image),
@@ -74,8 +74,8 @@ class CalculatorAscMaterialsItemBloc extends Bloc<CalculatorAscMaterialsItemEven
           );
         }
 
-        final weapon = _genshinService.getWeapon(e.key);
-        final translation = _genshinService.getWeaponTranslation(e.key);
+        final weapon = _genshinService.weapons.getWeapon(e.key);
+        final translation = _genshinService.translations.getWeaponTranslation(e.key);
         return CalculatorAscMaterialsItemState.loaded(
           name: translation.name,
           imageFullPath: weapon.fullImagePath,

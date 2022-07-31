@@ -40,15 +40,15 @@ class CalculatorAscMaterialsBloc extends Bloc<CalculatorAscMaterialsEvent, Calcu
   ) async* {
     final s = await event.map(
       init: (e) async {
-        final session = _dataService.getCalcAscMatSession(e.sessionKey);
+        final session = _dataService.calculator.getCalcAscMatSession(e.sessionKey);
         final materialsForSummary = _buildMaterialsForSummary(session.items);
         final summary = _calculatorService.generateSummary(materialsForSummary);
         return CalculatorAscMaterialsState.initial(items: session.items, summary: summary);
       },
       addCharacter: (e) async {
         await _telemetryService.trackCalculatorItemAscMaterialLoaded(e.key);
-        final char = _genshinService.getCharacter(e.key);
-        final translation = _genshinService.getCharacterTranslation(e.key);
+        final char = _genshinService.characters.getCharacter(e.key);
+        final translation = _genshinService.translations.getCharacterTranslation(e.key);
         var newItem = ItemAscensionMaterials.forCharacters(
           key: e.key,
           image: Assets.getCharacterPath(char.image),
@@ -71,7 +71,7 @@ class CalculatorAscMaterialsBloc extends Bloc<CalculatorAscMaterialsEvent, Calcu
           currentAscensionLevel: e.currentAscensionLevel,
           useMaterialsFromInventory: e.useMaterialsFromInventory,
         );
-        newItem = await _dataService.addCalAscMatSessionItem(e.sessionKey, newItem);
+        newItem = await _dataService.calculator.addCalAscMatSessionItem(e.sessionKey, newItem);
         final items = [...currentState.items, newItem];
         final materialsForSummary = _buildMaterialsForSummary(items);
 
@@ -80,8 +80,8 @@ class CalculatorAscMaterialsBloc extends Bloc<CalculatorAscMaterialsEvent, Calcu
       },
       addWeapon: (e) async {
         await _telemetryService.trackCalculatorItemAscMaterialLoaded(e.key);
-        final weapon = _genshinService.getWeapon(e.key);
-        final translation = _genshinService.getWeaponTranslation(e.key);
+        final weapon = _genshinService.weapons.getWeapon(e.key);
+        final translation = _genshinService.translations.getWeaponTranslation(e.key);
         var newItem = ItemAscensionMaterials.forWeapons(
           key: e.key,
           image: weapon.fullImagePath,
@@ -101,7 +101,7 @@ class CalculatorAscMaterialsBloc extends Bloc<CalculatorAscMaterialsEvent, Calcu
           currentAscensionLevel: e.currentAscensionLevel,
           useMaterialsFromInventory: e.useMaterialsFromInventory,
         );
-        newItem = await _dataService.addCalAscMatSessionItem(e.sessionKey, newItem);
+        newItem = await _dataService.calculator.addCalAscMatSessionItem(e.sessionKey, newItem);
         final items = [...currentState.items, newItem];
         final materialsForSummary = _buildMaterialsForSummary(items);
 
@@ -115,16 +115,16 @@ class CalculatorAscMaterialsBloc extends Bloc<CalculatorAscMaterialsEvent, Calcu
         final itemPosition = itemsToLoop.elementAt(e.index).position;
         itemsToLoop.removeAt(e.index);
 
-        await _dataService.deleteCalAscMatSessionItem(e.sessionKey, itemPosition, redistribute: false);
+        await _dataService.calculator.deleteCalAscMatSessionItem(e.sessionKey, itemPosition, redistribute: false);
 
         for (var i = 0; i < itemsToLoop.length; i++) {
           final item = itemsToLoop[i];
-          await _dataService.updateCalAscMatSessionItem(e.sessionKey, i, item, redistribute: false);
+          await _dataService.calculator.updateCalAscMatSessionItem(e.sessionKey, i, item, redistribute: false);
         }
 
-        await _dataService.redistributeAllInventoryMaterials();
+        await _dataService.calculator.redistributeAllInventoryMaterials();
 
-        final session = _dataService.getCalcAscMatSession(e.sessionKey);
+        final session = _dataService.calculator.getCalcAscMatSession(e.sessionKey);
         final materialsForSummary = _buildMaterialsForSummary(session.items);
 
         _notifyParent();
@@ -132,7 +132,7 @@ class CalculatorAscMaterialsBloc extends Bloc<CalculatorAscMaterialsEvent, Calcu
       },
       updateCharacter: (e) async {
         final currentChar = currentState.items.elementAt(e.index);
-        final char = _genshinService.getCharacter(currentChar.key);
+        final char = _genshinService.characters.getCharacter(currentChar.key);
         final updatedChar = currentChar.copyWith.call(
           materials: _calculatorService.getCharacterMaterialsToUse(
             char,
@@ -155,7 +155,7 @@ class CalculatorAscMaterialsBloc extends Bloc<CalculatorAscMaterialsEvent, Calcu
       },
       updateWeapon: (e) async {
         final currentWeapon = currentState.items.elementAt(e.index);
-        final weapon = _genshinService.getWeapon(currentWeapon.key);
+        final weapon = _genshinService.weapons.getWeapon(currentWeapon.key);
         final updatedWeapon = currentWeapon.copyWith.call(
           materials: _calculatorService.getWeaponMaterialsToUse(
             weapon,
@@ -176,7 +176,7 @@ class CalculatorAscMaterialsBloc extends Bloc<CalculatorAscMaterialsEvent, Calcu
         return _updateItem(e.sessionKey, e.index, updatedWeapon);
       },
       clearAllItems: (e) async {
-        await _dataService.deleteAllCalAscMatSessionItems(e.sessionKey);
+        await _dataService.calculator.deleteAllCalAscMatSessionItems(e.sessionKey);
         return const CalculatorAscMaterialsState.initial(items: [], summary: []);
       },
     );
@@ -189,7 +189,7 @@ class CalculatorAscMaterialsBloc extends Bloc<CalculatorAscMaterialsEvent, Calcu
   List<String> getItemsKeysToExclude() => currentState.items.map((e) => e.key).toList();
 
   Future<CalculatorAscMaterialsState> _updateItem(int sessionKey, int index, ItemAscensionMaterials updatedItem) async {
-    final toAdd = await _dataService.updateCalAscMatSessionItem(sessionKey, index, updatedItem);
+    final toAdd = await _dataService.calculator.updateCalAscMatSessionItem(sessionKey, index, updatedItem);
     final items = [...currentState.items];
     items.removeAt(index);
     items.insert(index, toAdd);

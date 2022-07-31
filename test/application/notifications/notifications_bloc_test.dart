@@ -67,7 +67,7 @@ void main() {
     'Init',
     build: () => NotificationsBloc(_dataService, _notificationService, _settingsService, _telemetryService),
     setUp: () async {
-      await _dataService.saveCustomNotification(
+      await _dataService.notifications.saveCustomNotification(
         _keqingKey,
         _defaultTitle,
         _defaultBody,
@@ -100,7 +100,7 @@ void main() {
   blocTest<NotificationsBloc, NotificationsState>(
     'Delete',
     setUp: () async {
-      await _dataService.saveCustomNotification(
+      await _dataService.notifications.saveCustomNotification(
         _keqingKey,
         _defaultTitle,
         _defaultBody,
@@ -123,7 +123,7 @@ void main() {
   blocTest<NotificationsBloc, NotificationsState>(
     'Reset',
     setUp: () async {
-      await _dataService.saveResinNotification(_fragileResinKey, _defaultTitle, _defaultBody, 100, note: _defaultNote);
+      await _dataService.notifications.saveResinNotification(_fragileResinKey, _defaultTitle, _defaultBody, 100, note: _defaultNote);
     },
     tearDown: () async {
       await _dataService.deleteThemAll();
@@ -152,7 +152,7 @@ void main() {
   blocTest<NotificationsBloc, NotificationsState>(
     'Stop',
     setUp: () async {
-      await _dataService.saveResinNotification(_fragileResinKey, _defaultTitle, _defaultBody, 100, note: _defaultNote);
+      await _dataService.notifications.saveResinNotification(_fragileResinKey, _defaultTitle, _defaultBody, 100, note: _defaultNote);
     },
     tearDown: () async {
       await _dataService.deleteThemAll();
@@ -181,7 +181,7 @@ void main() {
   blocTest<NotificationsBloc, NotificationsState>(
     'Reduce hours',
     setUp: () async {
-      await _dataService.saveCustomNotification(
+      await _dataService.notifications.saveCustomNotification(
         _keqingKey,
         _defaultTitle,
         _defaultBody,

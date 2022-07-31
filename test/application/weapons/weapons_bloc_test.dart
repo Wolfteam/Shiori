@@ -40,7 +40,7 @@ void main() {
       build: () => WeaponsBloc(_genshinService, _settingsService),
       act: (bloc) => bloc.add(const WeaponsEvent.init()),
       expect: () {
-        final weapons = _genshinService.getWeaponsForCard()..sort((x, y) => x.rarity.compareTo(y.rarity));
+        final weapons = _genshinService.weapons.getWeaponsForCard()..sort((x, y) => x.rarity.compareTo(y.rarity));
         return [
           WeaponsState.loaded(
             weapons: weapons,
@@ -66,7 +66,7 @@ void main() {
         bloc.state.map(
           loading: (_) => throw Exception('Invalid artifact state'),
           loaded: (state) {
-            final weapons = _genshinService.getWeaponsForCard().where((el) => !excludedKeys.contains(el.key)).toList();
+            final weapons = _genshinService.weapons.getWeaponsForCard().where((el) => !excludedKeys.contains(el.key)).toList();
             expect(state.weapons.length, weapons.length);
             expect(state.showWeaponDetails, true);
             expect(state.rarity, 0);
@@ -85,10 +85,12 @@ void main() {
     blocTest<WeaponsBloc, WeaponsState>(
       'should return only one item',
       build: () => WeaponsBloc(_genshinService, _settingsService),
-      act: (bloc) => bloc..add(const WeaponsEvent.init())..add(const WeaponsEvent.searchChanged(search: search)),
+      act: (bloc) => bloc
+        ..add(const WeaponsEvent.init())
+        ..add(const WeaponsEvent.searchChanged(search: search)),
       skip: 1,
       expect: () {
-        final weapons = _genshinService.getWeaponsForCard().where((el) => el.key == key).toList();
+        final weapons = _genshinService.weapons.getWeaponsForCard().where((el) => el.key == key).toList();
         return [
           WeaponsState.loaded(
             weapons: weapons,
@@ -110,7 +112,9 @@ void main() {
     blocTest<WeaponsBloc, WeaponsState>(
       'should not return any item',
       build: () => WeaponsBloc(_genshinService, _settingsService),
-      act: (bloc) => bloc..add(const WeaponsEvent.init())..add(const WeaponsEvent.searchChanged(search: 'Wanderer')),
+      act: (bloc) => bloc
+        ..add(const WeaponsEvent.init())
+        ..add(const WeaponsEvent.searchChanged(search: 'Wanderer')),
       skip: 1,
       expect: () => [
         WeaponsState.loaded(
@@ -149,7 +153,8 @@ void main() {
         ..add(const WeaponsEvent.applyFilterChanges()),
       skip: 11,
       expect: () {
-        final weapons = _genshinService.getWeaponsForCard().where((el) => el.key == key).toList()..sort((x, y) => y.baseAtk.compareTo(x.baseAtk));
+        final weapons = _genshinService.weapons.getWeaponsForCard().where((el) => el.key == key).toList()
+          ..sort((x, y) => y.baseAtk.compareTo(x.baseAtk));
         return [
           WeaponsState.loaded(
             weapons: weapons,
@@ -192,7 +197,7 @@ void main() {
         ..add(const WeaponsEvent.cancelChanges()),
       skip: 13,
       expect: () {
-        final weapons = _genshinService.getWeaponsForCard().where((el) => el.subStatType == StatType.physDmgBonus && el.rarity == 5).toList()
+        final weapons = _genshinService.weapons.getWeaponsForCard().where((el) => el.subStatType == StatType.physDmgBonus && el.rarity == 5).toList()
           ..sort((x, y) => y.subStatValue.compareTo(x.subStatValue));
         return [
           WeaponsState.loaded(
@@ -228,7 +233,7 @@ void main() {
         ..add(const WeaponsEvent.resetFilters()),
       skip: 8,
       expect: () {
-        final weapons = _genshinService.getWeaponsForCard()..sort((x, y) => x.rarity.compareTo(y.rarity));
+        final weapons = _genshinService.weapons.getWeaponsForCard()..sort((x, y) => x.rarity.compareTo(y.rarity));
         return [
           WeaponsState.loaded(
             weapons: weapons,

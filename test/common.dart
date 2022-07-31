@@ -84,7 +84,7 @@ void checkItemAscensionMaterialFileModel(GenshinService service, List<ItemAscens
   expect(all, isNotEmpty);
   for (final material in all) {
     checkKey(material.key);
-    expect(() => service.getMaterial(material.key), returnsNormally);
+    expect(() => service.materials.getMaterial(material.key), returnsNormally);
     expect(material.quantity, greaterThanOrEqualTo(0));
   }
 }

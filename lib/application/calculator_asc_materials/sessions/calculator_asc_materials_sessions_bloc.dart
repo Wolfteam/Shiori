@@ -23,31 +23,31 @@ class CalculatorAscMaterialsSessionsBloc extends Bloc<CalculatorAscMaterialsSess
     final s = await event.map(
       init: (_) async {
         await _telemetryService.trackCalculatorAscMaterialsSessionsLoaded();
-        final sessions = _dataService.getAllCalAscMatSessions();
+        final sessions = _dataService.calculator.getAllCalAscMatSessions();
         return CalculatorAscMaterialsSessionsState.loaded(sessions: sessions);
       },
       createSession: (e) async {
         await _telemetryService.trackCalculatorAscMaterialsSessionsCreated();
-        await _dataService.createCalAscMatSession(e.name.trim(), currentState.sessions.length);
-        final sessions = _dataService.getAllCalAscMatSessions();
+        await _dataService.calculator.createCalAscMatSession(e.name.trim(), currentState.sessions.length);
+        final sessions = _dataService.calculator.getAllCalAscMatSessions();
         return CalculatorAscMaterialsSessionsState.loaded(sessions: sessions);
       },
       updateSession: (e) async {
         final position = currentState.sessions.firstWhere((el) => el.key == e.key).position;
         await _telemetryService.trackCalculatorAscMaterialsSessionsUpdated();
-        await _dataService.updateCalAscMatSession(e.key, e.name.trim(), position);
-        final sessions = _dataService.getAllCalAscMatSessions();
+        await _dataService.calculator.updateCalAscMatSession(e.key, e.name.trim(), position);
+        final sessions = _dataService.calculator.getAllCalAscMatSessions();
         return CalculatorAscMaterialsSessionsState.loaded(sessions: sessions);
       },
       deleteSession: (e) async {
         await _telemetryService.trackCalculatorAscMaterialsSessionsDeleted();
-        await _dataService.deleteCalAscMatSession(e.key);
-        final sessions = _dataService.getAllCalAscMatSessions();
+        await _dataService.calculator.deleteCalAscMatSession(e.key);
+        final sessions = _dataService.calculator.getAllCalAscMatSessions();
         return CalculatorAscMaterialsSessionsState.loaded(sessions: sessions);
       },
       deleteAllSessions: (_) async {
         await _telemetryService.trackCalculatorAscMaterialsSessionsDeleted(all: true);
-        await _dataService.deleteAllCalAscMatSession();
+        await _dataService.calculator.deleteAllCalAscMatSession();
         return const CalculatorAscMaterialsSessionsState.loaded(sessions: []);
       },
     );

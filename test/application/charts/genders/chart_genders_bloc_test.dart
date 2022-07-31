@@ -37,7 +37,7 @@ void main() {
     build: () => ChartGendersBloc(_genshinService),
     act: (bloc) => bloc.add(const ChartGendersEvent.init()),
     expect: () {
-      final items = _genshinService.getCharacterGendersForCharts();
+      final items = _genshinService.characters.getCharacterGendersForCharts();
       final maxCount = max<int>(items.map((e) => e.femaleCount).reduce(max), items.map((e) => e.maleCount).reduce(max));
       return [ChartGendersState.loaded(genders: items, maxCount: maxCount)];
     },

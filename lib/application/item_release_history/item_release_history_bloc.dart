@@ -19,7 +19,7 @@ class ItemReleaseHistoryBloc extends Bloc<ItemReleaseHistoryEvent, ItemReleaseHi
     final s = await event.map(
       init: (e) async {
         await _telemetryService.trackItemReleaseHistoryOpened(e.itemKey);
-        final history = _genshinService.getItemReleaseHistory(e.itemKey);
+        final history = _genshinService.bannerHistory.getItemReleaseHistory(e.itemKey);
         return ItemReleaseHistoryState.initial(itemKey: e.itemKey, history: history);
       },
     );

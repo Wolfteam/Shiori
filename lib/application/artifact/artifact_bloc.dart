@@ -22,12 +22,12 @@ class ArtifactBloc extends Bloc<ArtifactEvent, ArtifactState> {
 
     final s = await event.map(
       loadFromKey: (e) async {
-        final artifact = _genshinService.getArtifact(e.key);
-        final translation = _genshinService.getArtifactTranslation(e.key);
-        final charImgs = _genshinService.getCharacterForItemsUsingArtifact(e.key);
-        final droppedBy = _genshinService.getRelatedMonsterToArtifactForItems(e.key);
-        final images = _genshinService.getArtifactRelatedParts(artifact.fullImagePath, artifact.image, translation.bonus.length);
-        final bonus = _genshinService.getArtifactBonus(translation);
+        final artifact = _genshinService.artifacts.getArtifact(e.key);
+        final translation = _genshinService.translations.getArtifactTranslation(e.key);
+        final charImgs = _genshinService.characters.getCharacterForItemsUsingArtifact(e.key);
+        final droppedBy = _genshinService.monsters.getRelatedMonsterToArtifactForItems(e.key);
+        final images = _genshinService.artifacts.getArtifactRelatedParts(artifact.fullImagePath, artifact.image, translation.bonus.length);
+        final bonus = _genshinService.artifacts.getArtifactBonus(translation);
 
         await _telemetryService.trackArtifactLoaded(e.key);
 

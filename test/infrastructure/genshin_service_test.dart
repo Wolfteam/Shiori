@@ -50,9 +50,9 @@ void main() {
 
       for (final lang in languages) {
         await service.init(lang);
-        final characters = service.getCharactersForCard();
+        final characters = service.characters.getCharactersForCard();
         checkKeys(characters.map((e) => e.key).toList());
-        final materialImgs = service.getAllMaterialsForCard().map((e) => e.image).toList();
+        final materialImgs = service.materials.getAllMaterialsForCard().map((e) => e.image).toList();
         for (final char in characters) {
           checkKey(char.key);
           expect(char.name, allOf([isNotEmpty, isNotNull]));
@@ -75,7 +75,7 @@ void main() {
       final service = _getService();
       for (final lang in languages) {
         await service.init(lang);
-        final weapons = service.getWeaponsForCard();
+        final weapons = service.weapons.getWeaponsForCard();
         checkKeys(weapons.map((e) => e.key).toList());
         for (final weapon in weapons) {
           checkKey(weapon.key);
@@ -92,7 +92,7 @@ void main() {
       final service = _getService();
       for (final lang in languages) {
         await service.init(lang);
-        final artifacts = service.getArtifactsForCard();
+        final artifacts = service.artifacts.getArtifactsForCard();
         checkKeys(artifacts.map((e) => e.key).toList());
         for (final artifact in artifacts) {
           checkKey(artifact.key);
@@ -116,7 +116,7 @@ void main() {
       final service = _getService();
       for (final lang in languages) {
         await service.init(lang);
-        final materials = service.getAllMaterialsForCard();
+        final materials = service.materials.getAllMaterialsForCard();
         checkKeys(materials.map((e) => e.key).toList());
         for (final material in materials) {
           checkKey(material.key);
@@ -132,7 +132,7 @@ void main() {
       final service = _getService();
       for (final lang in languages) {
         await service.init(lang);
-        final monsters = service.getAllMonstersForCard();
+        final monsters = service.monsters.getAllMonstersForCard();
         checkKeys(monsters.map((e) => e.key).toList());
         for (final monster in monsters) {
           checkKey(monster.key);
@@ -148,10 +148,10 @@ void main() {
       final service = _getService();
       await service.init(AppLanguageType.english);
       final localeService = _getLocaleService(AppLanguageType.english);
-      final characters = service.getCharactersForCard();
+      final characters = service.characters.getCharactersForCard();
       for (final character in characters) {
         final travelerKeys = ['traveler-geo', 'traveler-electro', 'traveler-anemo', 'traveler-hydro', 'traveler-pyro', 'traveler-cryo'];
-        final detail = service.getCharacter(character.key);
+        final detail = service.characters.getCharacter(character.key);
         final isTraveler = travelerKeys.contains(character.key);
         checkKey(detail.key);
         expect(detail.rarity, character.stars);
@@ -221,7 +221,7 @@ void main() {
           expect(build.weaponKeys, isNotEmpty);
           expect(build.subStatsToFocus.length, greaterThanOrEqualTo(3));
           for (final key in build.weaponKeys) {
-            final weapon = service.getWeapon(key);
+            final weapon = service.weapons.getWeapon(key);
             expect(weapon.type == detail.weaponType, isTrue);
           }
 
@@ -232,10 +232,10 @@ void main() {
             expect(artifact.stats[0], equals(StatType.hp));
             expect(artifact.stats[1], equals(StatType.atk));
             if (artifact.oneKey != null) {
-              expect(() => service.getArtifact(artifact.oneKey!), returnsNormally);
+              expect(() => service.artifacts.getArtifact(artifact.oneKey!), returnsNormally);
             } else {
               for (final partial in artifact.multiples) {
-                expect(() => service.getArtifact(partial.key), returnsNormally);
+                expect(() => service.artifacts.getArtifact(partial.key), returnsNormally);
                 expect(partial.quantity, inInclusiveRange(1, 2));
               }
             }
@@ -314,9 +314,9 @@ void main() {
     test('check for weapons', () async {
       final service = _getService();
       await service.init(AppLanguageType.english);
-      final weapons = service.getWeaponsForCard();
+      final weapons = service.weapons.getWeaponsForCard();
       for (final weapon in weapons) {
-        final detail = service.getWeapon(weapon.key);
+        final detail = service.weapons.getWeapon(weapon.key);
         checkKey(detail.key);
         checkAsset(detail.fullImagePath);
         expect(detail.type, equals(weapon.type));
@@ -386,9 +386,9 @@ void main() {
     test('check for artifacts', () async {
       final service = _getService();
       await service.init(AppLanguageType.english);
-      final artifacts = service.getArtifactsForCard();
+      final artifacts = service.artifacts.getArtifactsForCard();
       for (final artifact in artifacts) {
-        final detail = service.getArtifact(artifact.key);
+        final detail = service.artifacts.getArtifact(artifact.key);
         checkKey(detail.key);
         checkAsset(detail.fullImagePath);
         expect(detail.minRarity, inInclusiveRange(2, 4));
@@ -399,9 +399,9 @@ void main() {
     test('check the materials', () async {
       final service = _getService();
       await service.init(AppLanguageType.english);
-      final materials = service.getAllMaterialsForCard();
+      final materials = service.materials.getAllMaterialsForCard();
       for (final material in materials) {
-        final detail = service.getMaterial(material.key);
+        final detail = service.materials.getMaterial(material.key);
         checkKey(detail.key);
         checkAsset(detail.fullImagePath);
         expect(detail.rarity, equals(material.rarity));
@@ -471,20 +471,20 @@ void main() {
 
         for (final part in partOfRecipes) {
           checkKey(part.createsMaterialKey);
-          expect(() => service.getMaterial(part.createsMaterialKey), returnsNormally);
+          expect(() => service.materials.getMaterial(part.createsMaterialKey), returnsNormally);
           for (final needs in part.needs) {
             expect(needs.quantity, greaterThanOrEqualTo(1));
-            expect(() => service.getMaterial(needs.key), returnsNormally);
+            expect(() => service.materials.getMaterial(needs.key), returnsNormally);
           }
         }
 
-        final characters = service.getCharacterForItemsUsingMaterial(material.key);
+        final characters = service.characters.getCharacterForItemsUsingMaterial(material.key);
         expect(characters.map((e) => e.key).toSet().length == characters.length, isTrue);
 
-        final weapons = service.getWeaponForItemsUsingMaterial(material.key);
+        final weapons = service.weapons.getWeaponForItemsUsingMaterial(material.key);
         expect(weapons.map((e) => e.key).toSet().length == weapons.length, isTrue);
 
-        final droppedBy = service.getRelatedMonsterToMaterialForItems(detail.key);
+        final droppedBy = service.monsters.getRelatedMonsterToMaterialForItems(detail.key);
         expect(droppedBy.map((e) => e.key).toSet().length == droppedBy.length, isTrue);
       }
     });
@@ -492,19 +492,19 @@ void main() {
     test('check the monsters', () async {
       final service = _getService();
       await service.init(AppLanguageType.english);
-      final monsters = service.getAllMonstersForCard();
+      final monsters = service.monsters.getAllMonstersForCard();
       for (final monster in monsters) {
-        final detail = service.getMonster(monster.key);
+        final detail = service.monsters.getMonster(monster.key);
         checkKey(detail.key);
         checkAsset(detail.fullImagePath);
 
         for (final drop in detail.drops) {
           switch (drop.type) {
             case MonsterDropType.material:
-              expect(() => service.getMaterial(drop.key), returnsNormally);
+              expect(() => service.materials.getMaterial(drop.key), returnsNormally);
               break;
             case MonsterDropType.artifact:
-              expect(() => service.getArtifact(drop.key), returnsNormally);
+              expect(() => service.artifacts.getArtifact(drop.key), returnsNormally);
               break;
           }
         }
@@ -518,11 +518,11 @@ void main() {
       for (final lang in languages) {
         await service.init(lang);
 
-        final characters = service.getCharactersForCard();
+        final characters = service.characters.getCharactersForCard();
 
         for (final character in characters) {
-          final detail = service.getCharacter(character.key);
-          final translation = service.getCharacterTranslation(character.key);
+          final detail = service.characters.getCharacter(character.key);
+          final translation = service.translations.getCharacterTranslation(character.key);
           checkKey(translation.key);
           checkTranslation(translation.name, canBeNull: false);
           if (!detail.isComingSoon) {
@@ -562,7 +562,7 @@ void main() {
               }
             }
 
-            final stats = service.getCharacterSkillStats(detail.skills[i].stats, skill.stats);
+            final stats = service.characters.getCharacterSkillStats(detail.skills[i].stats, skill.stats);
             expect(stats, isNotEmpty);
             switch (detail.skills[i].type) {
               case CharacterSkillType.normalAttack:
@@ -613,10 +613,10 @@ void main() {
       final service = _getService();
       for (final lang in languages) {
         await service.init(lang);
-        final weapons = service.getWeaponsForCard();
+        final weapons = service.weapons.getWeaponsForCard();
         for (final weapon in weapons) {
-          final detail = service.getWeapon(weapon.key);
-          final translation = service.getWeaponTranslation(weapon.key);
+          final detail = service.weapons.getWeapon(weapon.key);
+          final translation = service.translations.getWeaponTranslation(weapon.key);
           checkKey(translation.key);
           checkTranslation(translation.name, canBeNull: false);
           checkTranslation(translation.description, canBeNull: false);
@@ -644,10 +644,10 @@ void main() {
       final service = _getService();
       for (final lang in languages) {
         await service.init(lang);
-        final artifacts = service.getArtifactsForCard();
+        final artifacts = service.artifacts.getArtifactsForCard();
         for (final artifact in artifacts) {
-          final detail = service.getArtifact(artifact.key);
-          final translation = service.getArtifactTranslation(detail.key);
+          final detail = service.artifacts.getArtifact(artifact.key);
+          final translation = service.translations.getArtifactTranslation(detail.key);
           checkKey(translation.key);
           checkTranslation(translation.name, canBeNull: false);
           expect(translation.bonus.length, inInclusiveRange(1, 2));
@@ -663,10 +663,10 @@ void main() {
       final toCheck = [AppLanguageType.english, AppLanguageType.spanish, AppLanguageType.simplifiedChinese];
       for (final lang in toCheck) {
         await service.init(lang);
-        final materials = service.getAllMaterialsForCard();
+        final materials = service.materials.getAllMaterialsForCard();
         for (final material in materials) {
-          final detail = service.getMaterial(material.key);
-          final translation = service.getMaterialTranslation(detail.key);
+          final detail = service.materials.getMaterial(material.key);
+          final translation = service.translations.getMaterialTranslation(detail.key);
           checkKey(translation.key);
           checkTranslation(translation.name, canBeNull: false);
           checkTranslation(translation.description, canBeNull: false);
@@ -678,9 +678,9 @@ void main() {
       final service = _getService();
       for (final lang in languages) {
         await service.init(lang);
-        final monsters = service.getAllMonstersForCard();
+        final monsters = service.monsters.getAllMonstersForCard();
         for (final monster in monsters) {
-          final translation = service.getMonsterTranslation(monster.key);
+          final translation = service.translations.getMonsterTranslation(monster.key);
           checkKey(translation.key);
           checkTranslation(translation.name, canBeNull: false);
         }
@@ -719,11 +719,11 @@ void main() {
       final service = _getService();
       await service.init(AppLanguageType.english);
       final localeService = _getLocaleService(AppLanguageType.english);
-      final upcoming = service.getUpcomingCharactersKeys();
+      final upcoming = service.characters.getUpcomingCharactersKeys();
       for (final key in upcoming) {
-        final char = service.getCharacter(key);
+        final char = service.characters.getCharacter(key);
         final date = localeService.getCharBirthDate(char.birthday);
-        final chars = service.getCharacterBirthdays(month: date.month, day: date.day);
+        final chars = service.characters.getCharacterBirthdays(month: date.month, day: date.day);
         expect(chars.any((el) => el.key == key), false);
       }
     });
@@ -733,7 +733,7 @@ void main() {
       await service.init(AppLanguageType.english);
       final months = List.generate(DateTime.monthsPerYear, (index) => index + 1);
       for (final month in months) {
-        final birthdays = service.getCharacterBirthdays(month: month);
+        final birthdays = service.characters.getCharacterBirthdays(month: month);
         expect(birthdays.isNotEmpty, isTrue);
         for (final birthday in birthdays) {
           _checkBirthday(birthday);
@@ -744,7 +744,7 @@ void main() {
     test('check character birthdays, only by day', () async {
       final service = _getService();
       await service.init(AppLanguageType.english);
-      final birthdays = service.getCharacterBirthdays(day: 20);
+      final birthdays = service.characters.getCharacterBirthdays(day: 20);
       expect(birthdays.isNotEmpty, isTrue);
       for (final birthday in birthdays) {
         _checkBirthday(birthday);
@@ -754,7 +754,7 @@ void main() {
     test('check character birthdays, by month and day', () async {
       final service = _getService();
       await service.init(AppLanguageType.english);
-      final birthdays = service.getCharacterBirthdays(month: DateTime.november, day: 20);
+      final birthdays = service.characters.getCharacterBirthdays(month: DateTime.november, day: 20);
       expect(birthdays.length, 1);
       expect(birthdays.first.key, equals('keqing'));
       _checkBirthday(birthdays.first);
@@ -763,10 +763,10 @@ void main() {
     test('check character birthdays, invalid month and day', () async {
       final service = _getService();
       await service.init(AppLanguageType.english);
-      expect(() => service.getCharacterBirthdays(), throwsA(isA<Exception>()));
-      expect(() => service.getCharacterBirthdays(month: -1), throwsA(isA<Exception>()));
-      expect(() => service.getCharacterBirthdays(day: -1), throwsA(isA<Exception>()));
-      expect(() => service.getCharacterBirthdays(month: DateTime.february, day: 31), throwsA(isA<Exception>()));
+      expect(() => service.characters.getCharacterBirthdays(), throwsA(isA<Exception>()));
+      expect(() => service.characters.getCharacterBirthdays(month: -1), throwsA(isA<Exception>()));
+      expect(() => service.characters.getCharacterBirthdays(day: -1), throwsA(isA<Exception>()));
+      expect(() => service.characters.getCharacterBirthdays(month: DateTime.february, day: 31), throwsA(isA<Exception>()));
     });
   });
 
@@ -776,7 +776,7 @@ void main() {
 
       for (final lang in languages) {
         await service.init(lang);
-        final debuffs = service.getElementDebuffs();
+        final debuffs = service.elements.getElementDebuffs();
         expect(debuffs.length, equals(4));
         for (final debuff in debuffs) {
           expect(debuff.name, allOf([isNotNull, isNotEmpty]));
@@ -791,7 +791,7 @@ void main() {
 
       for (final lang in languages) {
         await service.init(lang);
-        final reactions = service.getElementReactions();
+        final reactions = service.elements.getElementReactions();
         expect(reactions.length, equals(11));
         for (final reaction in reactions) {
           expect(reaction.name, allOf([isNotNull, isNotEmpty]));
@@ -812,7 +812,7 @@ void main() {
 
       for (final lang in languages) {
         await service.init(lang);
-        final resonances = service.getElementResonances();
+        final resonances = service.elements.getElementResonances();
         expect(resonances.length, equals(7));
         for (final resonance in resonances) {
           expect(resonance.name, allOf([isNotNull, isNotEmpty]));
@@ -841,11 +841,11 @@ void main() {
 
       final service = _getService();
       await service.init(AppLanguageType.english);
-      final defaultTierList = service.getDefaultCharacterTierList(defaultColors);
+      final defaultTierList = service.characters.getDefaultCharacterTierList(defaultColors);
       expect(defaultTierList.length, equals(7));
 
       final charCountInTierList = defaultTierList.expand((el) => el.items).length;
-      final charCount = service.getCharactersForCard().where((el) => !el.isComingSoon).length;
+      final charCount = service.characters.getCharactersForCard().where((el) => !el.isComingSoon).length;
       expect(charCountInTierList == charCount, isTrue);
 
       for (var i = 0; i < defaultColors.length; i++) {
@@ -877,7 +877,7 @@ void main() {
       ];
 
       for (final day in days) {
-        final materials = service.getCharacterAscensionMaterials(day);
+        final materials = service.characters.getCharacterAscensionMaterials(day);
         expect(materials, isNotEmpty);
         for (final material in materials) {
           checkKey(material.key);
@@ -891,7 +891,7 @@ void main() {
         }
 
         if (day == DateTime.sunday) {
-          final allCharacters = service.getCharactersForCard();
+          final allCharacters = service.characters.getCharactersForCard();
           final notComingSoon = allCharacters.where((el) => !el.isComingSoon).length;
           final got = materials.expand((el) => el.characters).map((e) => e.key).toSet().length;
           expect(notComingSoon, equals(got));
@@ -907,7 +907,7 @@ void main() {
       await service.init(AppLanguageType.english);
 
       for (final type in types) {
-        final banners = service.getBannerHistory(type);
+        final banners = service.bannerHistory.getBannerHistory(type);
         expect(banners.length, banners.where((el) => el.type == type).length);
         for (final banner in banners) {
           checkItemKeyAndImage(banner.key, banner.image);
@@ -935,7 +935,7 @@ void main() {
       final service = _getService();
       await service.init(AppLanguageType.english);
 
-      final versions = service.getBannerHistoryVersions(SortDirectionType.asc);
+      final versions = service.bannerHistory.getBannerHistoryVersions(SortDirectionType.asc);
       expect(versions.length, versions.toSet().length);
     });
 
@@ -943,10 +943,10 @@ void main() {
       final service = _getService();
       await service.init(AppLanguageType.english);
 
-      final versions = service.getBannerHistoryVersions(SortDirectionType.asc);
+      final versions = service.bannerHistory.getBannerHistoryVersions(SortDirectionType.asc);
       final validItemTypes = [ItemType.character, ItemType.weapon];
       for (final version in versions) {
-        final banners = service.getBanners(version);
+        final banners = service.bannerHistory.getBanners(version);
         expect(banners.isNotEmpty, isTrue);
         for (final banner in banners) {
           expect(banner.version, version);
@@ -968,21 +968,21 @@ void main() {
     test('check version, version does not have any banner', () async {
       final service = _getService();
       await service.init(AppLanguageType.english);
-      final banners = service.getBanners(1.7);
+      final banners = service.bannerHistory.getBanners(1.7);
       expect(banners.isEmpty, isTrue);
     });
 
     test('check version, invalid version', () async {
       final service = _getService();
       await service.init(AppLanguageType.english);
-      expect(() => service.getBanners(0.1), throwsA(isA<Exception>()));
+      expect(() => service.bannerHistory.getBanners(0.1), throwsA(isA<Exception>()));
     });
 
     test('check item release history', () async {
       final service = _getService();
       await service.init(AppLanguageType.english);
 
-      final history = service.getItemReleaseHistory('keqing');
+      final history = service.bannerHistory.getItemReleaseHistory('keqing');
       expect(history.isNotEmpty, isTrue);
 
       for (final item in history) {
@@ -994,7 +994,7 @@ void main() {
     test('check item release history, item does not exist', () async {
       final service = _getService();
       await service.init(AppLanguageType.english);
-      expect(() => service.getItemReleaseHistory('the-item'), throwsA(isA<Exception>()));
+      expect(() => service.bannerHistory.getItemReleaseHistory('the-item'), throwsA(isA<Exception>()));
     });
   });
 
@@ -1006,8 +1006,8 @@ void main() {
       for (final type in types) {
         final tops = service.getTopCharts(type);
         expect(tops.isNotEmpty, isTrue);
-        final totalPercentage = tops.map((e) => e.percentage).sum;
-        expect(totalPercentage.round(), 100);
+        final totalPercentage = tops.map((e) => e.percentage).sum.round();
+        expect(totalPercentage, 100);
         for (final item in tops) {
           expect(item.type == type, isTrue);
           checkKey(item.key);
@@ -1021,19 +1021,22 @@ void main() {
             case ChartType.topFourStarCharacterMostReruns:
             case ChartType.topFiveStarCharacterLeastReruns:
             case ChartType.topFourStarCharacterLeastReruns:
-              final char = service.getCharacter(item.key);
+              final char = service.characters.getCharacter(item.key);
               expect(char.rarity == expectedStars, isTrue);
               break;
             case ChartType.topFiveStarWeaponMostReruns:
             case ChartType.topFourStarWeaponMostReruns:
             case ChartType.topFiveStarWeaponLeastReruns:
             case ChartType.topFourStarWeaponLeastReruns:
-              final weapon = service.getWeapon(item.key);
+              final weapon = service.weapons.getWeapon(item.key);
               expect(weapon.rarity == expectedStars, isTrue);
               break;
             default:
               throw Exception('Type = $type is not valid');
           }
+
+          final releaseCount = service.bannerHistory.getItemReleaseHistory(item.key).length;
+          expect(item.value == releaseCount, isTrue);
         }
       }
     });
@@ -1047,14 +1050,14 @@ void main() {
     test('check birthdays', () async {
       final service = _getService();
       await service.init(AppLanguageType.english);
-      final birthdays = service.getCharacterBirthdaysForCharts();
+      final birthdays = service.characters.getCharacterBirthdaysForCharts();
       expect(birthdays.isNotEmpty, isTrue);
       expect(birthdays.length, 12);
 
       final keys = birthdays.expand((el) => el.items).map((e) => e.key).toList();
       expect(keys.length, keys.toSet().length);
 
-      final charCount = service.getCharactersForCard().where((el) => !el.key.startsWith('traveler') && !el.isComingSoon).length;
+      final charCount = service.characters.getCharactersForCard().where((el) => !el.key.startsWith('traveler') && !el.isComingSoon).length;
       expect(keys.length, charCount);
 
       final allMonths = List.generate(DateTime.monthsPerYear, (index) => index + 1);
@@ -1069,10 +1072,10 @@ void main() {
     test('check elements', () async {
       final service = _getService();
       await service.init(AppLanguageType.english);
-      final versions = service.getBannerHistoryVersions(SortDirectionType.asc);
+      final versions = service.bannerHistory.getBannerHistoryVersions(SortDirectionType.asc);
       final expectedLength = ElementType.values.length - 1;
 
-      final elements = service.getElementsForCharts(versions.first, versions.last);
+      final elements = service.bannerHistory.getElementsForCharts(versions.first, versions.last);
       expect(elements.length, expectedLength);
       expect(elements.map((el) => el.type).toSet().length, expectedLength);
 
@@ -1088,13 +1091,13 @@ void main() {
     test('check elements, invalid from version', () async {
       final service = _getService();
       await service.init(AppLanguageType.english);
-      expect(() => service.getElementsForCharts(-1, 2.1), throwsA(isA<Exception>()));
+      expect(() => service.bannerHistory.getElementsForCharts(-1, 2.1), throwsA(isA<Exception>()));
     });
 
     test('check elements, invalid until version', () async {
       final service = _getService();
       await service.init(AppLanguageType.english);
-      expect(() => service.getElementsForCharts(1, -1), throwsA(isA<Exception>()));
+      expect(() => service.bannerHistory.getElementsForCharts(1, -1), throwsA(isA<Exception>()));
     });
 
     test('check item ascension stats', () async {
@@ -1134,11 +1137,12 @@ void main() {
     test('check character regions', () async {
       final service = _getService();
       await service.init(AppLanguageType.english);
-      final regions = service.getCharacterRegionsForCharts();
+      final regions = service.characters.getCharacterRegionsForCharts();
       expect(regions.isNotEmpty, isTrue);
       expect(regions.map((e) => e.regionType).toSet().length, RegionType.values.length - 1);
 
-      final characters = service.getCharactersForCard().where((el) => !el.isComingSoon && el.regionType != RegionType.anotherWorld).toList();
+      final characters =
+          service.characters.getCharactersForCard().where((el) => !el.isComingSoon && el.regionType != RegionType.anotherWorld).toList();
       for (final region in regions) {
         expect(region.regionType != RegionType.anotherWorld, isTrue);
         expect(region.quantity, characters.where((el) => el.regionType == region.regionType).length);
@@ -1159,11 +1163,12 @@ void main() {
     test('check character genders', () async {
       final service = _getService();
       await service.init(AppLanguageType.english);
-      final genders = service.getCharacterGendersForCharts();
+      final genders = service.characters.getCharacterGendersForCharts();
       expect(genders.isNotEmpty, isTrue);
       expect(genders.map((e) => e.regionType).toSet().length, RegionType.values.length - 1);
 
-      final characters = service.getCharactersForCard().where((el) => !el.isComingSoon && el.regionType != RegionType.anotherWorld).toList();
+      final characters =
+          service.characters.getCharactersForCard().where((el) => !el.isComingSoon && el.regionType != RegionType.anotherWorld).toList();
       for (final gender in genders) {
         _validateChartGenderModel(gender);
 
@@ -1176,9 +1181,10 @@ void main() {
       final service = _getService();
       await service.init(AppLanguageType.english);
       final regions = RegionType.values.where((el) => el != RegionType.anotherWorld).toList();
-      final characters = service.getCharactersForCard().where((el) => !el.isComingSoon && el.regionType != RegionType.anotherWorld).toList();
+      final characters =
+          service.characters.getCharactersForCard().where((el) => !el.isComingSoon && el.regionType != RegionType.anotherWorld).toList();
       for (final region in regions) {
-        final gender = service.getCharacterGendersByRegionForCharts(region);
+        final gender = service.characters.getCharacterGendersByRegionForCharts(region);
         _validateChartGenderModel(gender);
 
         final expectedCount = characters.where((el) => el.regionType == region).length;
@@ -1189,7 +1195,7 @@ void main() {
     test('check character gender by region, invalid region', () async {
       final service = _getService();
       await service.init(AppLanguageType.english);
-      expect(() => service.getCharacterGendersByRegionForCharts(RegionType.anotherWorld), throwsA(isA<Exception>()));
+      expect(() => service.characters.getCharacterGendersByRegionForCharts(RegionType.anotherWorld), throwsA(isA<Exception>()));
     });
   });
 
@@ -1198,9 +1204,10 @@ void main() {
       final service = _getService();
       await service.init(AppLanguageType.english);
       final regions = RegionType.values.where((el) => el != RegionType.anotherWorld).toList();
-      final characters = service.getCharactersForCard().where((el) => !el.isComingSoon && el.regionType != RegionType.anotherWorld).toList();
+      final characters =
+          service.characters.getCharactersForCard().where((el) => !el.isComingSoon && el.regionType != RegionType.anotherWorld).toList();
       for (final region in regions) {
-        final items = service.getCharactersForItemsByRegion(region);
+        final items = service.characters.getCharactersForItemsByRegion(region);
         final expectedCount = characters.where((el) => el.regionType == region).length;
         expect(items.length, expectedCount);
 
@@ -1213,17 +1220,18 @@ void main() {
     test('check character for items by region, invalid region', () async {
       final service = _getService();
       await service.init(AppLanguageType.english);
-      expect(() => service.getCharactersForItemsByRegion(RegionType.anotherWorld), throwsA(isA<Exception>()));
+      expect(() => service.characters.getCharactersForItemsByRegion(RegionType.anotherWorld), throwsA(isA<Exception>()));
     });
 
     test('check characters for items by region and gender', () async {
       final service = _getService();
       await service.init(AppLanguageType.english);
       final regions = RegionType.values.where((el) => el != RegionType.anotherWorld).toList();
-      final characters = service.getCharactersForCard().where((el) => !el.isComingSoon && el.regionType != RegionType.anotherWorld).toList();
+      final characters =
+          service.characters.getCharactersForCard().where((el) => !el.isComingSoon && el.regionType != RegionType.anotherWorld).toList();
       for (final region in regions) {
-        final females = service.getCharactersForItemsByRegionAndGender(region, true);
-        final males = service.getCharactersForItemsByRegionAndGender(region, false);
+        final females = service.characters.getCharactersForItemsByRegionAndGender(region, true);
+        final males = service.characters.getCharactersForItemsByRegionAndGender(region, false);
         final items = males + females;
         final expectedCount = characters.where((el) => el.regionType == region).length;
         expect(items.length, expectedCount);
@@ -1237,8 +1245,8 @@ void main() {
     test('check characters for items by region and gender, invalid region', () async {
       final service = _getService();
       await service.init(AppLanguageType.english);
-      expect(() => service.getCharactersForItemsByRegionAndGender(RegionType.anotherWorld, true), throwsA(isA<Exception>()));
-      expect(() => service.getCharactersForItemsByRegionAndGender(RegionType.anotherWorld, false), throwsA(isA<Exception>()));
+      expect(() => service.characters.getCharactersForItemsByRegionAndGender(RegionType.anotherWorld, true), throwsA(isA<Exception>()));
+      expect(() => service.characters.getCharactersForItemsByRegionAndGender(RegionType.anotherWorld, false), throwsA(isA<Exception>()));
     });
 
     test('check items ascension stats', () async {
@@ -1246,8 +1254,8 @@ void main() {
       await service.init(AppLanguageType.english);
       final validForCharacters = getCharacterPossibleAscensionStats();
       final validForWeapons = getWeaponPossibleAscensionStats();
-      final characters = service.getCharactersForCard().where((el) => !el.isComingSoon).toList();
-      final weapons = service.getWeaponsForCard().where((el) => !el.isComingSoon).toList();
+      final characters = service.characters.getCharactersForCard().where((el) => !el.isComingSoon).toList();
+      final weapons = service.weapons.getWeaponsForCard().where((el) => !el.isComingSoon).toList();
 
       for (final stat in validForCharacters) {
         final items = service.getItemsAscensionStats(stat, ItemType.character);
