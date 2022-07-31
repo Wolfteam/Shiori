@@ -219,6 +219,14 @@ class Injection {
     return CharactersPerRegionGenderBloc(genshinService);
   }
 
+  static SplashBloc get splashBloc {
+    final resourceService = getIt<ResourceService>();
+    final settingsService = getIt<SettingsService>();
+    final deviceInfoService = getIt<DeviceInfoService>();
+    final localeService = getIt<LocaleService>();
+    return SplashBloc(resourceService, settingsService, deviceInfoService, localeService);
+  }
+
   //TODO: USE THIS PROP
   // static CalculatorAscMaterialsItemBloc get calculatorAscMaterialsItemBloc {
   //   final genshinService = getIt<GenshinService>();

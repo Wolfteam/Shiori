@@ -89,7 +89,6 @@ class MyApp extends StatelessWidget {
             final telemetryService = getIt<TelemetryService>();
             final deviceInfoService = getIt<DeviceInfoService>();
             final purchaseService = getIt<PurchaseService>();
-            final resourcesService = getIt<ResourceService>();
             return MainBloc(
               loggingService,
               genshinService,
@@ -98,12 +97,11 @@ class MyApp extends StatelessWidget {
               telemetryService,
               deviceInfoService,
               purchaseService,
-              resourcesService,
               ctx.read<CharactersBloc>(),
               ctx.read<WeaponsBloc>(),
               ctx.read<HomeBloc>(),
               ctx.read<ArtifactsBloc>(),
-            )..add(const MainEvent.init());
+            );
           },
         ),
         BlocProvider(
