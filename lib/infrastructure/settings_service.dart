@@ -134,6 +134,7 @@ class SettingsServiceImpl extends SettingsService {
         doubleBackToClose: doubleBackToClose,
         useOfficialMap: useOfficialMap,
         useTwentyFourHoursFormat: useTwentyFourHoursFormat,
+        resourceVersion: resourceVersion,
       );
 
   SettingsServiceImpl(this._logger);

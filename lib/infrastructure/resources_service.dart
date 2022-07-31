@@ -210,6 +210,7 @@ class ResourceServiceImpl implements ResourceService {
     }
 
     try {
+      _loggingService.info(runtimeType, 'Checking if there is a diff for appVersion = $currentAppVersion');
       String url = '${Secrets.apiBaseUrl}/api/resources/diff?AppVersion=$currentAppVersion';
       if (currentResourcesVersion > 0) {
         url += '&CurrentResourceVersion=$currentResourcesVersion';
@@ -406,7 +407,7 @@ class ResourceServiceImpl implements ResourceService {
 
     final keyNamesCopy = [...keyNames];
     while (keyNamesCopy.isNotEmpty) {
-      _loggingService.debug(runtimeType, '_downloadAssets: Remaining = ${keyNamesCopy.length}');
+      // _loggingService.debug(runtimeType, '_downloadAssets: Remaining = ${keyNamesCopy.length}');
       final taken = keyNamesCopy.take(maxItemsPerBatch).toList();
       for (int i = 0; i < maxItemsPerBatch; i++) {
         if (keyNamesCopy.isEmpty) {
@@ -454,7 +455,7 @@ class ResourceServiceImpl implements ResourceService {
 
   Future<bool> _downloadFile(String keyName, String destPath, ProgressChanged? onProgress) async {
     try {
-      _loggingService.info(runtimeType, '_downloadFile: Downloading file = $keyName...');
+      // _loggingService.debug(runtimeType, '_downloadFile: Downloading file = $keyName...');
       final url = '${Secrets.assetsBaseUrl}/$keyName';
 
       await _dio.downloadUri(
@@ -467,7 +468,7 @@ class ResourceServiceImpl implements ResourceService {
           }
         },
       );
-      _loggingService.info(runtimeType, '_downloadFile: File = $keyName was successfully downloaded');
+      // _loggingService.debug(runtimeType, '_downloadFile: File = $keyName was successfully downloaded');
       return true;
     } catch (e, s) {
       _loggingService.error(runtimeType, '_downloadFile: Unknown error', e, s);
@@ -484,9 +485,6 @@ class ResourceServiceImpl implements ResourceService {
         zipFile: zipFile,
         destinationDir: destinationDir,
         onExtracting: (zipEntry, progress) {
-          // print('progress: ${progress.toStringAsFixed(1)}%');
-          // print('name: ${zipEntry.name}');
-          // print('isDirectory: ${zipEntry.isDirectory}');
           return ZipFileOperation.includeItem;
         },
       );

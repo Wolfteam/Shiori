@@ -2,13 +2,14 @@ import 'package:http/http.dart' as http;
 import 'package:shiori/domain/services/changelog_provider.dart';
 import 'package:shiori/domain/services/logging_service.dart';
 import 'package:shiori/domain/services/network_service.dart';
+import 'package:shiori/infrastructure/secrets.dart';
 
 const _defaultChangelog = '''
 ### Changelog
 #### NA
 ''';
 
-const _url = 'https://raw.githubusercontent.com/Wolfteam/Shiori/main/Changelog.md';
+final _url = '${Secrets.assetsBaseUrl}/changelog.md';
 
 class ChangelogProviderImpl implements ChangelogProvider {
   final LoggingService _loggingService;

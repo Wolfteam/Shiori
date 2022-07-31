@@ -51,6 +51,7 @@ class SettingsBloc extends Bloc<SettingsEvent, SettingsState> {
           useOfficialMap: settings.useOfficialMap,
           useTwentyFourHoursFormat: settings.useTwentyFourHoursFormat,
           unlockedFeatures: features,
+          resourceVersion: settings.resourceVersion,
         );
       },
       themeChanged: (event) async {

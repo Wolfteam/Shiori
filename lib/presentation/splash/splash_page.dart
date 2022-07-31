@@ -204,7 +204,7 @@ class _Updating extends StatelessWidget {
             ),
           ),
           Container(
-            margin: const EdgeInsets.only(top: 10),
+            margin: const EdgeInsets.only(top: 10, bottom: 10),
             child: Text(
               s.doNotCloseAppWhileUpdating,
               textAlign: TextAlign.center,
