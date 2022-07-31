@@ -13,21 +13,21 @@ import 'splash/splash_page.dart';
 class AppWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final delegates = <LocalizationsDelegate>[
+      S.delegate,
+      GlobalMaterialLocalizations.delegate,
+      GlobalWidgetsLocalizations.delegate,
+      GlobalCupertinoLocalizations.delegate,
+    ];
     return BlocBuilder<MainBloc, MainState>(
       builder: (ctx, state) => state.map<Widget>(
-        loading: (_) => SplashPage(),
+        loading: (_) => SplashPage(delegates: delegates),
         loaded: (s) {
-          final delegates = <LocalizationsDelegate>[
-            S.delegate,
-            GlobalMaterialLocalizations.delegate,
-            GlobalWidgetsLocalizations.delegate,
-            GlobalCupertinoLocalizations.delegate,
-          ];
           final locale = Locale(s.language.code, s.language.countryCode);
           return MaterialApp(
             title: s.appTitle,
             theme: s.accentColor.getThemeData(s.theme, s.useDarkAmoledTheme),
-            home: MainTabPage(showChangelog: s.versionChanged),
+            home: MainTabPage(showChangelog: s.versionChanged, updateResult: s.updateResult),
             themeMode: ThemeMode.dark,
             //Without this, the lang won't be reloaded
             locale: locale,

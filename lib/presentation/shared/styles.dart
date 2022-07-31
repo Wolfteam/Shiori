@@ -70,4 +70,6 @@ class Styles {
     }
     return forEndDrawer ? 26 : 18;
   }
+
+  static const Color paimonColor = Color.fromARGB(255, 191, 138, 104);
 }
