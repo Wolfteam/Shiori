@@ -5,6 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:rate_my_app/rate_my_app.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import 'package:shiori/application/bloc.dart';
+import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/generated/l10n.dart';
 import 'package:shiori/presentation/desktop_tablet_scaffold.dart';
 import 'package:shiori/presentation/mobile_scaffold.dart';
@@ -13,10 +14,12 @@ import 'package:shiori/presentation/shared/utils/toast_utils.dart';
 
 class MainTabPage extends StatefulWidget {
   final bool showChangelog;
+  final AppResourceUpdateResultType? updateResult;
 
   const MainTabPage({
     Key? key,
     required this.showChangelog,
+    this.updateResult,
   }) : super(key: key);
 
   @override
@@ -53,6 +56,29 @@ class _MainTabPageState extends State<MainTabPage> with SingleTickerProviderStat
     if (widget.showChangelog) {
       WidgetsBinding.instance?.addPostFrameCallback((_) {
         showDialog(context: context, builder: (ctx) => const ChangelogDialog());
+      });
+    }
+
+    if (widget.updateResult != null) {
+      WidgetsBinding.instance?.addPostFrameCallback((_) {
+        final toast = ToastUtils.of(context);
+        final s = S.of(context);
+        switch (widget.updateResult) {
+          case AppResourceUpdateResultType.unknownError:
+            ToastUtils.showErrorToast(toast, s.unknownErrorWhileUpdating);
+            break;
+          case AppResourceUpdateResultType.needsLatestAppVersion:
+            ToastUtils.showInfoToast(toast, s.newAppVersionInStore);
+            break;
+          case AppResourceUpdateResultType.updated:
+            ToastUtils.showSucceedToast(toast, s.resourceUpdateCompleted);
+            break;
+          case AppResourceUpdateResultType.updatesAvailable:
+          case AppResourceUpdateResultType.noUpdatesAvailable:
+          case AppResourceUpdateResultType.noInternetConnectionForFirstInstall:
+          default:
+            break;
+        }
       });
     }
   }

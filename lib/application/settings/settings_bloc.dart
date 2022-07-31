@@ -43,7 +43,7 @@ class SettingsBloc extends Bloc<SettingsEvent, SettingsState> {
           useDarkAmoledTheme: settings.useDarkAmoled,
           currentAccentColor: settings.accentColor,
           currentLanguage: settings.appLanguage,
-          appVersion: _deviceInfoService.version,
+          appVersion: _deviceInfoService.versionWithBuildNumber,
           showCharacterDetails: settings.showCharacterDetails,
           showWeaponDetails: settings.showWeaponDetails,
           serverResetTime: settings.serverResetTime,
@@ -51,6 +51,7 @@ class SettingsBloc extends Bloc<SettingsEvent, SettingsState> {
           useOfficialMap: settings.useOfficialMap,
           useTwentyFourHoursFormat: settings.useTwentyFourHoursFormat,
           unlockedFeatures: features,
+          resourceVersion: settings.resourceVersion,
         );
       },
       themeChanged: (event) async {

@@ -22,7 +22,7 @@ class MonstersCard extends StatelessWidget {
       onClick: (context) => _goToMonstersPage(context),
       iconToTheLeft: iconToTheLeft,
       icon: Image.asset(
-        Assets.getOtherMaterialPath('monster.png'),
+        Assets.monsterIconPath,
         width: 60,
         height: 60,
         color: theme.colorScheme.secondary,

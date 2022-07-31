@@ -1,13 +1,12 @@
-import 'package:shiori/domain/assets.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/file/gadget_file_service.dart';
 
-class GadgetFileServiceImpl implements GadgetFileService {
+class GadgetFileServiceImpl extends GadgetFileService {
   late GadgetsFile _gadgetsFile;
 
   @override
-  Future<void> init() async {
-    final json = await Assets.getJsonFromPath(Assets.gadgetsDbPath);
+  Future<void> init(String assetPath) async {
+    final json = await readJson(assetPath);
     _gadgetsFile = GadgetsFile.fromJson(json);
     assert(
       _gadgetsFile.gadgets.map((e) => e.key).toSet().length == _gadgetsFile.gadgets.length,

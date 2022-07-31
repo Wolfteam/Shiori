@@ -1,4 +1,7 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
+import 'package:shiori/domain/assets.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/extensions/iterable_extensions.dart';
 import 'package:shiori/domain/extensions/string_extensions.dart';
@@ -113,7 +116,7 @@ class _SkillHeader extends StatelessWidget {
       child: CircleAvatar(
         radius: 40,
         backgroundColor: elementType.getElementColorFromContext(context),
-        child: Image.asset(image, width: 65, height: 65),
+        child: image == Assets.noImageAvailablePath ? Image.asset(image, width: 65, height: 65) : Image.file(File(image), width: 65, height: 65),
       ),
     );
     final titles = Expanded(

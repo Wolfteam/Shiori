@@ -6,7 +6,7 @@ class PrimoGemIcon extends StatelessWidget {
   Widget build(BuildContext context) {
     return IconButton(
       iconSize: 30,
-      icon: Image.asset(Assets.getCurrencyMaterialPath('primogem.png')),
+      icon: Image.asset(Assets.primogemIconPath),
       onPressed: null,
     );
   }

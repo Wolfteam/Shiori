@@ -5,7 +5,6 @@ import 'package:darq/darq.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:shiori/application/bloc.dart';
 import 'package:shiori/domain/app_constants.dart';
-import 'package:shiori/domain/assets.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/extensions/iterable_extensions.dart';
 import 'package:shiori/domain/extensions/string_extensions.dart';
@@ -15,6 +14,7 @@ import 'package:shiori/domain/services/genshin_service.dart';
 import 'package:shiori/domain/services/locale_service.dart';
 import 'package:shiori/domain/services/logging_service.dart';
 import 'package:shiori/domain/services/notification_service.dart';
+import 'package:shiori/domain/services/resources_service.dart';
 import 'package:shiori/domain/services/settings_service.dart';
 import 'package:shiori/domain/services/telemetry_service.dart';
 
@@ -37,6 +37,7 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
   final LoggingService _loggingService;
   final TelemetryService _telemetryService;
   final SettingsService _settingsService;
+  final ResourceService _resourceService;
 
   final NotificationsBloc _notificationsBloc;
 
@@ -54,6 +55,7 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
     this._loggingService,
     this._telemetryService,
     this._settingsService,
+    this._resourceService,
     this._notificationsBloc,
   ) : super(_initialState);
 
@@ -327,7 +329,8 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
             break;
           case AppNotificationItemType.material:
             final material = _genshinService.materials.getAllMaterialsThatCanBeObtainedFromAnExpedition().first;
-            images.add(NotificationItemImage(itemKey: material.key, image: material.fullImagePath, isSelected: true));
+            final imagePath = _resourceService.getMaterialImagePath(material.image, material.type);
+            images.add(NotificationItemImage(itemKey: material.key, image: imagePath, isSelected: true));
             break;
           default:
             throw Exception('The provided notification item type = $newValue is not valid');
@@ -655,8 +658,9 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
   }
 
   List<NotificationItemImage> _getImagesForResin() {
-    final material = _genshinService.materials.getMaterialByImage(Assets.getOriginalResinPath());
-    return [NotificationItemImage(itemKey: material.key, image: material.fullImagePath, isSelected: true)];
+    final material = _genshinService.materials.getFragileResinMaterial();
+    final imagePath = _resourceService.getMaterialImagePath(material.image, material.type);
+    return [NotificationItemImage(itemKey: material.key, image: imagePath, isSelected: true)];
   }
 
   List<NotificationItemImage> _getImagesForExpeditionNotifications({String? selectedImage}) {
@@ -667,13 +671,23 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
         )
         .thenBy((x) => x.key)
         .toList();
+
     if (selectedImage.isNotNullEmptyOrWhitespace) {
-      return materials
-          .mapIndex((e, index) => NotificationItemImage(itemKey: e.key, image: e.fullImagePath, isSelected: selectedImage == e.fullImagePath))
-          .toList();
+      return materials.mapIndex((e, index) {
+        final imagePath = _resourceService.getMaterialImagePath(e.image, e.type);
+        return NotificationItemImage(itemKey: e.key, image: imagePath, isSelected: selectedImage == imagePath);
+      }).toList();
     }
 
-    return materials.mapIndex((e, index) => NotificationItemImage(itemKey: e.key, image: e.fullImagePath, isSelected: index == 0)).toList();
+    return materials
+        .mapIndex(
+          (e, index) => NotificationItemImage(
+            itemKey: e.key,
+            image: _resourceService.getMaterialImagePath(e.image, e.type),
+            isSelected: index == 0,
+          ),
+        )
+        .toList();
   }
 
   List<NotificationItemImage> _getImagesForFarmingArtifactNotifications({String? selectedImage}) {
@@ -691,7 +705,9 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
         )
         .thenBy((x) => x.key)
         .toList();
-    final images = materials.mapIndex((e, index) => NotificationItemImage(itemKey: e.key, image: e.fullImagePath)).toList();
+    final images = materials
+        .mapIndex((e, index) => NotificationItemImage(itemKey: e.key, image: _resourceService.getMaterialImagePath(e.image, e.type)))
+        .toList();
     return _getImagesForFarmingNotifications(images, selectedImage: selectedImage);
   }
 
@@ -705,35 +721,59 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
 
   List<NotificationItemImage> _getImagesForGadgetNotifications({String? selectedImage}) {
     final gadgets = _genshinService.gadgets.getAllGadgetsForNotifications();
+
     if (selectedImage.isNotNullEmptyOrWhitespace) {
-      return gadgets.map((e) => NotificationItemImage(itemKey: e.key, image: e.fullImagePath, isSelected: e.fullImagePath == selectedImage)).toList();
+      return gadgets.map((e) {
+        final imagePath = _resourceService.getGadgetImagePath(e.image);
+        return NotificationItemImage(itemKey: e.key, image: imagePath, isSelected: imagePath == selectedImage);
+      }).toList();
     }
 
-    return gadgets.mapIndex((e, i) => NotificationItemImage(itemKey: e.key, image: e.fullImagePath, isSelected: i == 0)).toList();
+    return gadgets
+        .mapIndex(
+          (e, i) => NotificationItemImage(
+            itemKey: e.key,
+            image: _resourceService.getGadgetImagePath(e.image),
+            isSelected: i == 0,
+          ),
+        )
+        .toList();
   }
 
   List<NotificationItemImage> _getImagesForFurnitureNotifications({String? selectedImage}) {
     final furniture = _genshinService.furniture.getDefaultFurnitureForNotifications();
+    final imagePath = _resourceService.getFurnitureImagePath(furniture.image);
     if (selectedImage.isNotNullEmptyOrWhitespace) {
-      return [NotificationItemImage(itemKey: furniture.key, image: furniture.fullImagePath, isSelected: furniture.fullImagePath == selectedImage)];
+      return [NotificationItemImage(itemKey: furniture.key, image: imagePath, isSelected: imagePath == selectedImage)];
     }
-    return [NotificationItemImage(itemKey: furniture.key, image: furniture.fullImagePath, isSelected: true)];
+    return [NotificationItemImage(itemKey: furniture.key, image: imagePath, isSelected: true)];
   }
 
   List<NotificationItemImage> _getImagesForRealmCurrencyNotifications({String? selectedImage}) {
     final material = _genshinService.materials.getRealmCurrencyMaterial();
-    return [NotificationItemImage(itemKey: material.key, image: material.fullImagePath, isSelected: true)];
+    return [
+      NotificationItemImage(itemKey: material.key, image: _resourceService.getMaterialImagePath(material.image, material.type), isSelected: true)
+    ];
   }
 
   List<NotificationItemImage> _getImagesForWeeklyBossNotifications({String? selectedImage}) {
     final monsters = _genshinService.monsters.getMonsters(MonsterType.boss).toList();
     if (selectedImage.isNotNullEmptyOrWhitespace) {
-      return monsters
-          .map((e) => NotificationItemImage(itemKey: e.key, image: e.fullImagePath, isSelected: e.fullImagePath == selectedImage))
-          .toList();
+      return monsters.map((e) {
+        final imagePath = _resourceService.getMonsterImagePath(e.image);
+        return NotificationItemImage(itemKey: e.key, image: imagePath, isSelected: imagePath == selectedImage);
+      }).toList();
     }
 
-    return monsters.mapIndex((e, i) => NotificationItemImage(itemKey: e.key, image: e.fullImagePath, isSelected: i == 0)).toList();
+    return monsters
+        .mapIndex(
+          (e, i) => NotificationItemImage(
+            itemKey: e.key,
+            image: _resourceService.getMonsterImagePath(e.image),
+            isSelected: i == 0,
+          ),
+        )
+        .toList();
   }
 
   List<NotificationItemImage> _getImagesForCustomNotifications({String? itemKey, String? selectedImage}) {
@@ -741,7 +781,8 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
       return [NotificationItemImage(itemKey: itemKey!, image: selectedImage!, isSelected: true)];
     }
     final material = _genshinService.materials.getAllMaterialsThatCanBeObtainedFromAnExpedition().first;
-    return [NotificationItemImage(itemKey: material.key, image: material.fullImagePath, isSelected: true)];
+    final imagePath = _resourceService.getMaterialImagePath(material.image, material.type);
+    return [NotificationItemImage(itemKey: material.key, image: imagePath, isSelected: true)];
   }
 
   List<NotificationItemImage> _getImagesForDailyCheckIn({String? itemKey, String? selectedImage}) {
@@ -749,7 +790,8 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
       return [NotificationItemImage(itemKey: itemKey!, image: selectedImage!, isSelected: true)];
     }
     final material = _genshinService.materials.getPrimogemMaterial();
-    return [NotificationItemImage(itemKey: material.key, image: material.fullImagePath, isSelected: true)];
+    final imagePath = _resourceService.getMaterialImagePath(material.image, material.type);
+    return [NotificationItemImage(itemKey: material.key, image: imagePath, isSelected: true)];
   }
 
   Future<void> _afterNotificationWasCreated(NotificationItem notif) async {

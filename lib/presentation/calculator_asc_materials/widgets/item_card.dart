@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shiori/application/bloc.dart';
@@ -75,7 +77,7 @@ class ItemCard extends StatelessWidget {
                   clipBehavior: Clip.hardEdge,
                   child: FadeInImage(
                     placeholder: MemoryImage(kTransparentImage),
-                    image: AssetImage(image),
+                    image: FileImage(File(image)),
                   ),
                 ),
               ),

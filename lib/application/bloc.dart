@@ -41,6 +41,7 @@ export 'notification/notification_bloc.dart';
 export 'notification_timer/notification_timer_bloc.dart';
 export 'notifications/notifications_bloc.dart';
 export 'settings/settings_bloc.dart';
+export 'splash/splash_bloc.dart';
 export 'tier_list/tier_list_bloc.dart';
 export 'tier_list_form/tier_list_form_bloc.dart';
 export 'today_materials/today_materials_bloc.dart';

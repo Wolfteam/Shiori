@@ -9,6 +9,7 @@ import 'package:version_tracker/version_tracker.dart';
 class DeviceInfoServiceImpl implements DeviceInfoService {
   late Map<String, String> _deviceInfo;
   late String _version;
+  late String _versionWithBuildNumber;
   late String _appName;
   late bool _versionChanged = false;
 
@@ -20,6 +21,9 @@ class DeviceInfoServiceImpl implements DeviceInfoService {
 
   @override
   String get version => _version;
+
+  @override
+  String get versionWithBuildNumber => _versionWithBuildNumber;
 
   @override
   bool get versionChanged => _versionChanged;
@@ -35,7 +39,8 @@ class DeviceInfoServiceImpl implements DeviceInfoService {
       //TODO: VERSION DOES NOT MATCH THE ONE ON THE PUBSPEC
       final packageInfo = await PackageInfo.fromPlatform();
       _appName = packageInfo.appName;
-      _version = Platform.isWindows ? packageInfo.version : '${packageInfo.version}+${packageInfo.buildNumber}';
+      _version = packageInfo.version;
+      _versionWithBuildNumber = Platform.isWindows ? packageInfo.version : '${packageInfo.version}+${packageInfo.buildNumber}';
 
       await _initVersionTracker();
 
@@ -56,7 +61,7 @@ class DeviceInfoServiceImpl implements DeviceInfoService {
         'OsVersion': 'N/A',
         'AppVersion': 'N/A',
       };
-      _version = _appName = 'N/A';
+      _version = _versionWithBuildNumber = _appName = 'N/A';
     }
   }
 
@@ -67,7 +72,7 @@ class DeviceInfoServiceImpl implements DeviceInfoService {
     _deviceInfo = {
       'Model': model,
       'OsVersion': 'N/A',
-      'AppVersion': _version,
+      'AppVersion': _versionWithBuildNumber,
     };
   }
 
@@ -77,7 +82,7 @@ class DeviceInfoServiceImpl implements DeviceInfoService {
     _deviceInfo = {
       'Model': info.model ?? 'N/A',
       'OsVersion': '${info.version.sdkInt}',
-      'AppVersion': _version,
+      'AppVersion': _versionWithBuildNumber,
     };
   }
 

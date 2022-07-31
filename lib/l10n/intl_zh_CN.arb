@@ -448,5 +448,15 @@
   "lastPage": "尾页",
   "regions": "地区",
   "genders": "性别",
-  "perRegion": "每地区"
+  "perRegion": "每地区",
+  "resourcesVersion": "Resources version: {version}",
+  "retry": "Retry",
+  "continueLabel": "Continue",
+  "updatingResources": "Updating resources",
+  "resourceUpdateFailed": "Resource update failed",
+  "resourceUpdateCompleted": "Resource update was successfully applied",
+  "internetRequiredToUpdate": "Make sure you are connected to a stable internet connection",
+  "doNotCloseAppWhileUpdating": "Do not close the app while the update takes place",
+  "unknownErrorWhileUpdating": "Unknown error occurred while checking updates",
+  "newAppVersionInStore": "A new version of the app should be available in the store"
 }

@@ -2,23 +2,24 @@ import 'dart:math';
 
 import 'package:collection/collection.dart';
 import 'package:shiori/domain/app_constants.dart';
-import 'package:shiori/domain/assets.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/extensions/double_extensions.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/file/file_infrastructure.dart';
+import 'package:shiori/domain/services/resources_service.dart';
 
-class BannerHistoryFileServiceImpl implements BannerHistoryFileService {
+class BannerHistoryFileServiceImpl extends BannerHistoryFileService {
+  final ResourceService _resourceService;
   final CharacterFileService _characters;
   final WeaponFileService _weapons;
 
   late BannerHistoryFile _bannerHistoryFile;
 
-  BannerHistoryFileServiceImpl(this._characters, this._weapons);
+  BannerHistoryFileServiceImpl(this._resourceService, this._characters, this._weapons);
 
   @override
-  Future<void> init() async {
-    final json = await Assets.getJsonFromPath(Assets.bannerHistoryDbPath);
+  Future<void> init(String assetPath) async {
+    final json = await readJson(assetPath);
     _bannerHistoryFile = BannerHistoryFile.fromJson(json);
   }
 
@@ -116,13 +117,13 @@ class BannerHistoryFileServiceImpl implements BannerHistoryFileService {
                 case BannerHistoryItemType.character:
                   final character = _characters.getCharacter(key);
                   rarity = character.rarity;
-                  imagePath = character.fullImagePath;
+                  imagePath = _resourceService.getCharacterImagePath(character.image);
                   type = ItemType.character;
                   break;
                 case BannerHistoryItemType.weapon:
                   final weapon = _weapons.getWeapon(key);
                   rarity = weapon.rarity;
-                  imagePath = weapon.fullImagePath;
+                  imagePath = _resourceService.getWeaponImagePath(weapon.image, weapon.type);
                   type = ItemType.weapon;
                   break;
                 default:

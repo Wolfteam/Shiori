@@ -3,11 +3,11 @@ import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:shiori/domain/app_constants.dart';
-import 'package:shiori/domain/assets.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/calculator_service.dart';
 import 'package:shiori/domain/services/genshin_service.dart';
+import 'package:shiori/domain/services/resources_service.dart';
 import 'package:tuple/tuple.dart';
 
 part 'calculator_asc_materials_item_bloc.freezed.dart';
@@ -17,10 +17,12 @@ part 'calculator_asc_materials_item_state.dart';
 class CalculatorAscMaterialsItemBloc extends Bloc<CalculatorAscMaterialsItemEvent, CalculatorAscMaterialsItemState> {
   final GenshinService _genshinService;
   final CalculatorService _calculatorService;
+  final ResourceService _resourceService;
 
   _LoadedState get currentState => state as _LoadedState;
 
-  CalculatorAscMaterialsItemBloc(this._genshinService, this._calculatorService) : super(const CalculatorAscMaterialsItemState.loading());
+  CalculatorAscMaterialsItemBloc(this._genshinService, this._calculatorService, this._resourceService)
+      : super(const CalculatorAscMaterialsItemState.loading());
 
   @override
   Stream<CalculatorAscMaterialsItemState> mapEventToState(
@@ -37,7 +39,7 @@ class CalculatorAscMaterialsItemBloc extends Bloc<CalculatorAscMaterialsItemEven
           final translation = _genshinService.translations.getCharacterTranslation(e.key);
           return CalculatorAscMaterialsItemState.loaded(
             name: translation.name,
-            imageFullPath: Assets.getCharacterPath(char.image),
+            imageFullPath: _resourceService.getCharacterImagePath(char.image),
             currentLevel: itemAscensionLevelMap.entries.first.value,
             desiredLevel: maxItemLevel,
             currentAscensionLevel: minAscensionLevel,
@@ -50,7 +52,7 @@ class CalculatorAscMaterialsItemBloc extends Bloc<CalculatorAscMaterialsItemEven
         final translation = _genshinService.translations.getWeaponTranslation(e.key);
         return CalculatorAscMaterialsItemState.loaded(
           name: translation.name,
-          imageFullPath: weapon.fullImagePath,
+          imageFullPath: _resourceService.getWeaponImagePath(weapon.image, weapon.type),
           currentLevel: itemAscensionLevelMap.entries.first.value,
           desiredLevel: maxItemLevel,
           currentAscensionLevel: minAscensionLevel,
@@ -64,7 +66,7 @@ class CalculatorAscMaterialsItemBloc extends Bloc<CalculatorAscMaterialsItemEven
           final translation = _genshinService.translations.getCharacterTranslation(e.key);
           return CalculatorAscMaterialsItemState.loaded(
             name: translation.name,
-            imageFullPath: Assets.getCharacterPath(char.image),
+            imageFullPath: _resourceService.getCharacterImagePath(char.image),
             currentLevel: e.currentLevel,
             desiredLevel: e.desiredLevel,
             skills: e.skills,
@@ -78,7 +80,7 @@ class CalculatorAscMaterialsItemBloc extends Bloc<CalculatorAscMaterialsItemEven
         final translation = _genshinService.translations.getWeaponTranslation(e.key);
         return CalculatorAscMaterialsItemState.loaded(
           name: translation.name,
-          imageFullPath: weapon.fullImagePath,
+          imageFullPath: _resourceService.getWeaponImagePath(weapon.image, weapon.type),
           currentLevel: e.currentLevel,
           desiredLevel: e.desiredLevel,
           currentAscensionLevel: e.currentAscensionLevel,

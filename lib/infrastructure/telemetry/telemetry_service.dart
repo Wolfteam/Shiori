@@ -81,6 +81,7 @@ class TelemetryServiceImpl implements TelemetryService {
       'ServerResetTime': EnumToString.convertToString(settings.serverResetTime),
       'DoubleBackToClose': settings.doubleBackToClose.toString(),
       'UseOfficialMap': settings.useOfficialMap.toString(),
+      'ResourcesVersion': settings.resourceVersion.toString(),
     });
   }
 

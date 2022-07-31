@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/models/models.dart';
@@ -94,7 +96,7 @@ class CharacterCard extends StatelessWidget {
                     clipBehavior: Clip.hardEdge,
                     child: FadeInImage(
                       placeholder: MemoryImage(kTransparentImage),
-                      image: AssetImage(image),
+                      image: FileImage(File(image)),
                     ),
                   ),
                 ),

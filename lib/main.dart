@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:shiori/domain/services/resources_service.dart';
 import 'package:shiori/presentation/shared/utils/size_utils.dart';
 import 'package:window_size/window_size.dart';
 
@@ -100,7 +101,7 @@ class MyApp extends StatelessWidget {
               ctx.read<WeaponsBloc>(),
               ctx.read<HomeBloc>(),
               ctx.read<ArtifactsBloc>(),
-            )..add(const MainEvent.init());
+            );
           },
         ),
         BlocProvider(
@@ -115,7 +116,8 @@ class MyApp extends StatelessWidget {
           create: (ctx) {
             final genshinService = getIt<GenshinService>();
             final calculatorService = getIt<CalculatorService>();
-            return CalculatorAscMaterialsItemBloc(genshinService, calculatorService);
+            final resourceService = getIt<ResourceService>();
+            return CalculatorAscMaterialsItemBloc(genshinService, calculatorService, resourceService);
           },
         ),
       ],

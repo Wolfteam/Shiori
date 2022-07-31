@@ -1,19 +1,20 @@
-import 'package:shiori/domain/assets.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/file/material_file_service.dart';
 import 'package:shiori/domain/services/file/translation_file_service.dart';
+import 'package:shiori/domain/services/resources_service.dart';
 
-class MaterialFileServiceImpl implements MaterialFileService {
+class MaterialFileServiceImpl extends MaterialFileService {
+  final ResourceService _resourceService;
   final TranslationFileService _translations;
 
   late MaterialsFile _materialsFile;
 
-  MaterialFileServiceImpl(this._translations);
+  MaterialFileServiceImpl(this._resourceService, this._translations);
 
   @override
-  Future<void> init() async {
-    final json = await Assets.getJsonFromPath(Assets.materialsDbPath);
+  Future<void> init(String assetPath) async {
+    final json = await readJson(assetPath);
     _materialsFile = MaterialsFile.fromJson(json);
   }
 
@@ -29,7 +30,7 @@ class MaterialFileServiceImpl implements MaterialFileService {
 
   @override
   MaterialFileModel getMaterialByImage(String image) {
-    return _materialsFile.materials.firstWhere((m) => m.fullImagePath == image);
+    return _materialsFile.materials.firstWhere((m) => _resourceService.getMaterialImagePath(m.image, m.type) == image);
   }
 
   @override
@@ -47,7 +48,8 @@ class MaterialFileServiceImpl implements MaterialFileService {
 
   @override
   String getMaterialImg(String key) {
-    return _materialsFile.materials.firstWhere((m) => m.key == key).fullImagePath;
+    final material = _materialsFile.materials.firstWhere((m) => m.key == key);
+    return _resourceService.getMaterialImagePath(material.image, material.type);
   }
 
   @override
@@ -108,11 +110,17 @@ class MaterialFileServiceImpl implements MaterialFileService {
     return materials.firstWhere((el) => el.key == 'primogem');
   }
 
+  @override
+  MaterialFileModel getFragileResinMaterial() {
+    final materials = getMaterials(MaterialType.currency);
+    return materials.firstWhere((el) => el.key == 'fragile-resin');
+  }
+
   MaterialCardModel _toMaterialForCard(MaterialFileModel material) {
     final translation = _translations.getMaterialTranslation(material.key);
     return MaterialCardModel.item(
       key: material.key,
-      image: material.fullImagePath,
+      image: _resourceService.getMaterialImagePath(material.image, material.type),
       rarity: material.rarity,
       position: material.position,
       type: material.type,

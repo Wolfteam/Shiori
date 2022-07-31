@@ -448,5 +448,15 @@
   "lastPage": "Última página",
   "regions": "Regiones",
   "genders": "Géneros",
-  "perRegion": "Por región"
+  "perRegion": "Por región",
+  "resourcesVersion": "Versión de los recursos: {version}",
+  "retry": "Reintentar",
+  "continueLabel": "Continuar",
+  "updatingResources": "Actualizando recursos",
+  "resourceUpdateFailed": "La actualización de recursos falló",
+  "resourceUpdateCompleted": "La actualización de recursos fue aplicada exitósamente",
+  "internetRequiredToUpdate": "Asegurate de estar conectado a una conexión de internet estable",
+  "doNotCloseAppWhileUpdating": "No cierres la aplicación mientras se actualiza",
+  "unknownErrorWhileUpdating": "Un error ocurrió mientras se comprobaban las actualizaciones",
+  "newAppVersionInStore": "Una nueva versión de la aplicación debería estar disponible en la tienda"
 }
