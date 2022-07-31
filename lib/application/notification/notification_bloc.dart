@@ -158,7 +158,7 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
   }
 
   NotificationState _buildEditState(int key, AppNotificationType type) {
-    final item = _dataService.getNotification(key, type);
+    final item = _dataService.notifications.getNotification(key, type);
     NotificationState state;
     final images = <NotificationItemImage>[];
     switch (item.type) {
@@ -310,23 +310,23 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
         final images = <NotificationItemImage>[];
         switch (newValue) {
           case AppNotificationItemType.character:
-            final character = _genshinService.getCharactersForCard().first;
+            final character = _genshinService.characters.getCharactersForCard().first;
             images.add(NotificationItemImage(itemKey: character.key, image: character.image, isSelected: true));
             break;
           case AppNotificationItemType.weapon:
-            final weapon = _genshinService.getWeaponsForCard().first;
+            final weapon = _genshinService.weapons.getWeaponsForCard().first;
             images.add(NotificationItemImage(itemKey: weapon.key, image: weapon.image, isSelected: true));
             break;
           case AppNotificationItemType.artifact:
-            final artifact = _genshinService.getArtifactsForCard().first;
+            final artifact = _genshinService.artifacts.getArtifactsForCard().first;
             images.add(NotificationItemImage(itemKey: artifact.key, image: artifact.image, isSelected: true));
             break;
           case AppNotificationItemType.monster:
-            final monster = _genshinService.getAllMonstersForCard().first;
+            final monster = _genshinService.monsters.getAllMonstersForCard().first;
             images.add(NotificationItemImage(itemKey: monster.key, image: monster.image, isSelected: true));
             break;
           case AppNotificationItemType.material:
-            final material = _genshinService.getAllMaterialsThatCanBeObtainedFromAnExpedition().first;
+            final material = _genshinService.materials.getAllMaterialsThatCanBeObtainedFromAnExpedition().first;
             images.add(NotificationItemImage(itemKey: material.key, image: material.fullImagePath, isSelected: true));
             break;
           default:
@@ -381,7 +381,7 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
   Future<void> _saveResinNotification(_ResinState s) async {
     final selectedItemKey = _getSelectedItemKey();
     if (s.key != null) {
-      final updated = await _dataService.updateResinNotification(
+      final updated = await _dataService.notifications.updateResinNotification(
         s.key!,
         selectedItemKey,
         s.title,
@@ -394,7 +394,7 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
       return;
     }
 
-    final notif = await _dataService.saveResinNotification(
+    final notif = await _dataService.notifications.saveResinNotification(
       selectedItemKey,
       s.title,
       s.body,
@@ -408,7 +408,7 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
   Future<void> _saveExpeditionNotification(_ExpeditionState s) async {
     final selectedItemKey = _getSelectedItemKey();
     if (s.key != null) {
-      final updated = await _dataService.updateExpeditionNotification(
+      final updated = await _dataService.notifications.updateExpeditionNotification(
         s.key!,
         selectedItemKey,
         s.expeditionTimeType,
@@ -422,7 +422,7 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
       return;
     }
 
-    final notif = await _dataService.saveExpeditionNotification(
+    final notif = await _dataService.notifications.saveExpeditionNotification(
       selectedItemKey,
       s.title,
       s.body,
@@ -437,7 +437,7 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
   Future<void> _saveFarmingArtifactNotification(_FarmingArtifactState s) async {
     final selectedItemKey = _getSelectedItemKey();
     if (s.key != null) {
-      final updated = await _dataService.updateFarmingArtifactNotification(
+      final updated = await _dataService.notifications.updateFarmingArtifactNotification(
         s.key!,
         selectedItemKey,
         s.artifactFarmingTimeType,
@@ -450,7 +450,7 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
       return;
     }
 
-    final notif = await _dataService.saveFarmingArtifactNotification(
+    final notif = await _dataService.notifications.saveFarmingArtifactNotification(
       selectedItemKey,
       s.artifactFarmingTimeType,
       s.title,
@@ -464,7 +464,7 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
   Future<void> _saveFarmingMaterialNotification(_FarmingMaterialState s) async {
     final selectedItemKey = _getSelectedItemKey();
     if (s.key != null) {
-      final updated = await _dataService.updateFarmingMaterialNotification(
+      final updated = await _dataService.notifications.updateFarmingMaterialNotification(
         s.key!,
         selectedItemKey,
         s.title,
@@ -476,7 +476,7 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
       return;
     }
 
-    final notif = await _dataService.saveFarmingMaterialNotification(
+    final notif = await _dataService.notifications.saveFarmingMaterialNotification(
       selectedItemKey,
       s.title,
       s.body,
@@ -489,7 +489,7 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
   Future<void> _saveGadgetNotification(_GadgetState s) async {
     final selectedItemKey = _getSelectedItemKey();
     if (s.key != null) {
-      final updated = await _dataService.updateGadgetNotification(
+      final updated = await _dataService.notifications.updateGadgetNotification(
         s.key!,
         selectedItemKey,
         s.title,
@@ -501,7 +501,7 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
       return;
     }
 
-    final notif = await _dataService.saveGadgetNotification(
+    final notif = await _dataService.notifications.saveGadgetNotification(
       selectedItemKey,
       s.title,
       s.body,
@@ -514,7 +514,7 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
   Future<void> _saveFurnitureNotification(_FurnitureState s) async {
     final selectedItemKey = _getSelectedItemKey();
     if (s.key != null) {
-      final updated = await _dataService.updateFurnitureNotification(
+      final updated = await _dataService.notifications.updateFurnitureNotification(
         s.key!,
         selectedItemKey,
         s.timeType,
@@ -527,7 +527,7 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
       return;
     }
 
-    final notif = await _dataService.saveFurnitureNotification(
+    final notif = await _dataService.notifications.saveFurnitureNotification(
       selectedItemKey,
       s.timeType,
       s.title,
@@ -541,7 +541,7 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
   Future<void> _saveRealmCurrencyNotification(_RealmCurrencyState s) async {
     final selectedItemKey = _getSelectedItemKey();
     if (s.key != null) {
-      final updated = await _dataService.updateRealmCurrencyNotification(
+      final updated = await _dataService.notifications.updateRealmCurrencyNotification(
         s.key!,
         selectedItemKey,
         s.currentRealmRankType,
@@ -556,7 +556,7 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
       return;
     }
 
-    final notif = await _dataService.saveRealmCurrencyNotification(
+    final notif = await _dataService.notifications.saveRealmCurrencyNotification(
       selectedItemKey,
       s.currentRealmRankType,
       s.currentTrustRank,
@@ -572,7 +572,7 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
   Future<void> _saveWeeklyBossNotification(_WeeklyBossState s) async {
     final selectedItemKey = _getSelectedItemKey();
     if (s.key != null) {
-      final updated = await _dataService.updateWeeklyBossNotification(
+      final updated = await _dataService.notifications.updateWeeklyBossNotification(
         s.key!,
         _settingsService.serverResetTime,
         selectedItemKey,
@@ -585,7 +585,7 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
       return;
     }
 
-    final notif = await _dataService.saveWeeklyBossNotification(
+    final notif = await _dataService.notifications.saveWeeklyBossNotification(
       selectedItemKey,
       _settingsService.serverResetTime,
       s.title,
@@ -599,7 +599,7 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
   Future<void> _saveCustomNotification(_CustomState s) async {
     final selectedItemKey = _getSelectedItemKey();
     if (s.key != null) {
-      final updated = await _dataService.updateCustomNotification(
+      final updated = await _dataService.notifications.updateCustomNotification(
         s.key!,
         selectedItemKey,
         s.title,
@@ -613,7 +613,7 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
       return;
     }
 
-    final notif = await _dataService.saveCustomNotification(
+    final notif = await _dataService.notifications.saveCustomNotification(
       selectedItemKey,
       s.title,
       s.body,
@@ -628,7 +628,7 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
   Future<void> _saveDailyCheckInNotification(_DailyCheckInState s) async {
     final selectedItemKey = _getSelectedItemKey();
     if (s.key != null) {
-      final updated = await _dataService.updateDailyCheckInNotification(
+      final updated = await _dataService.notifications.updateDailyCheckInNotification(
         s.key!,
         selectedItemKey,
         s.title,
@@ -640,7 +640,7 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
       return;
     }
 
-    final notif = await _dataService.saveDailyCheckInNotification(
+    final notif = await _dataService.notifications.saveDailyCheckInNotification(
       selectedItemKey,
       s.title,
       s.body,
@@ -655,12 +655,12 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
   }
 
   List<NotificationItemImage> _getImagesForResin() {
-    final material = _genshinService.getMaterialByImage(Assets.getOriginalResinPath());
+    final material = _genshinService.materials.getMaterialByImage(Assets.getOriginalResinPath());
     return [NotificationItemImage(itemKey: material.key, image: material.fullImagePath, isSelected: true)];
   }
 
   List<NotificationItemImage> _getImagesForExpeditionNotifications({String? selectedImage}) {
-    final materials = _genshinService
+    final materials = _genshinService.materials
         .getAllMaterialsThatCanBeObtainedFromAnExpedition()
         .orderByDescending(
           (x) => x.rarity,
@@ -677,14 +677,14 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
   }
 
   List<NotificationItemImage> _getImagesForFarmingArtifactNotifications({String? selectedImage}) {
-    final artifact = _genshinService.getArtifactsForCard().first;
+    final artifact = _genshinService.artifacts.getArtifactsForCard().first;
     final images = <NotificationItemImage>[];
     images.add(NotificationItemImage(itemKey: artifact.key, image: artifact.image));
     return _getImagesForFarmingNotifications(images, selectedImage: selectedImage);
   }
 
   List<NotificationItemImage> _getImagesForFarmingMaterialNotifications({String? selectedImage}) {
-    final materials = _genshinService
+    final materials = _genshinService.materials
         .getAllMaterialsThatHaveAFarmingRespawnDuration()
         .orderByDescending(
           (x) => x.rarity,
@@ -704,7 +704,7 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
   }
 
   List<NotificationItemImage> _getImagesForGadgetNotifications({String? selectedImage}) {
-    final gadgets = _genshinService.getAllGadgetsForNotifications();
+    final gadgets = _genshinService.gadgets.getAllGadgetsForNotifications();
     if (selectedImage.isNotNullEmptyOrWhitespace) {
       return gadgets.map((e) => NotificationItemImage(itemKey: e.key, image: e.fullImagePath, isSelected: e.fullImagePath == selectedImage)).toList();
     }
@@ -713,7 +713,7 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
   }
 
   List<NotificationItemImage> _getImagesForFurnitureNotifications({String? selectedImage}) {
-    final furniture = _genshinService.getDefaultFurnitureForNotifications();
+    final furniture = _genshinService.furniture.getDefaultFurnitureForNotifications();
     if (selectedImage.isNotNullEmptyOrWhitespace) {
       return [NotificationItemImage(itemKey: furniture.key, image: furniture.fullImagePath, isSelected: furniture.fullImagePath == selectedImage)];
     }
@@ -721,13 +721,12 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
   }
 
   List<NotificationItemImage> _getImagesForRealmCurrencyNotifications({String? selectedImage}) {
-    //TODO: FIGURE OUT HOW CAN I REMOVE THIS KEY FROM HERE
-    final material = _genshinService.getMaterial('realm-currency');
+    final material = _genshinService.materials.getRealmCurrencyMaterial();
     return [NotificationItemImage(itemKey: material.key, image: material.fullImagePath, isSelected: true)];
   }
 
   List<NotificationItemImage> _getImagesForWeeklyBossNotifications({String? selectedImage}) {
-    final monsters = _genshinService.getMonsters(MonsterType.boss).toList();
+    final monsters = _genshinService.monsters.getMonsters(MonsterType.boss).toList();
     if (selectedImage.isNotNullEmptyOrWhitespace) {
       return monsters
           .map((e) => NotificationItemImage(itemKey: e.key, image: e.fullImagePath, isSelected: e.fullImagePath == selectedImage))
@@ -741,7 +740,7 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
     if (selectedImage.isNotNullEmptyOrWhitespace) {
       return [NotificationItemImage(itemKey: itemKey!, image: selectedImage!, isSelected: true)];
     }
-    final material = _genshinService.getAllMaterialsThatCanBeObtainedFromAnExpedition().first;
+    final material = _genshinService.materials.getAllMaterialsThatCanBeObtainedFromAnExpedition().first;
     return [NotificationItemImage(itemKey: material.key, image: material.fullImagePath, isSelected: true)];
   }
 
@@ -749,9 +748,7 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
     if (selectedImage.isNotNullEmptyOrWhitespace) {
       return [NotificationItemImage(itemKey: itemKey!, image: selectedImage!, isSelected: true)];
     }
-    //TODO: FIGURE OUT HOW CAN I REMOVE THIS KEY FROM HERE
-    final materials = _genshinService.getMaterials(MaterialType.currency);
-    final material = materials.firstWhere((el) => el.key == 'primogem');
+    final material = _genshinService.materials.getPrimogemMaterial();
     return [NotificationItemImage(itemKey: material.key, image: material.fullImagePath, isSelected: true)];
   }
 

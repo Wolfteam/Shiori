@@ -103,7 +103,7 @@ class CharactersBloc extends Bloc<CharactersEvent, CharactersState> {
     RegionType? regionType,
   }) {
     final isLoaded = state is _LoadedState;
-    var characters = _genshinService.getCharactersForCard();
+    var characters = _genshinService.characters.getCharactersForCard();
     if (excludeKeys.isNotEmpty) {
       characters = characters.where((el) => !excludeKeys.contains(el.key)).toList();
     }

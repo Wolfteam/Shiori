@@ -37,7 +37,7 @@ void main() {
     build: () => ChartRegionsBloc(_genshinService),
     act: (bloc) => bloc.add(const ChartRegionsEvent.init()),
     expect: () {
-      final items = _genshinService.getCharacterRegionsForCharts();
+      final items = _genshinService.characters.getCharacterRegionsForCharts();
       final maxCount = items.map((e) => e.quantity).reduce(max);
       return [ChartRegionsState.loaded(maxCount: maxCount, items: items)];
     },

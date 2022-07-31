@@ -22,7 +22,7 @@ class CharactersPerRegionBloc extends Bloc<CharactersPerRegionEvent, CharactersP
   }
 
   CharactersPerRegionState _init(RegionType type) {
-    final characters = _genshinService.getCharactersForItemsByRegion(type);
+    final characters = _genshinService.characters.getCharactersForItemsByRegion(type);
     return CharactersPerRegionState.loaded(regionType: type, items: characters);
   }
 }

@@ -1110,6 +1110,93 @@
       ]
     },
     {
+      "key": "collei",
+      "name": "Collei",
+      "title": "???",
+      "description": "",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ]
+    },
+    {
       "key": "diluc",
       "name": "Diluc",
       "title": "เงาแห่งรุ่งอรุณ",
@@ -1376,6 +1463,93 @@
             "เมื่อพลังชีวิตต่ำกว่า 50% จะได้รับปริมาณการรักษา เพิ่มขึ้น 30%;",
             "เมื่อพลังชีวิตสูงกว่า 50% ความชำนาญธาตุจะเพิ่มขึ้น 200 หน่วย"
           ]
+        }
+      ]
+    },
+    {
+      "key": "dori",
+      "name": "Dori",
+      "title": "???",
+      "description": "",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
         }
       ]
     },
@@ -3197,86 +3371,133 @@
     {
       "key": "kuki-shinobu",
       "name": "Kuki Shinobu",
-      "title": "",
-      "description": "",
+      "title": "นักแก้ปัญหามือฉมัง",
+      "description": "รองหัวหน้าผู้มีความสามารถ และเชื่อถือได้ของ \"แก๊ง Arataki\"... หมายเหตุพิเศษ: คนที่มีความสามารถ และเชื่อถือได้ไม่ใช่ \"แก๊ง Arataki\" แต่เป็นรองหัวหน้า",
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Shinobu's Shadowsword",
+          "description": "",
+          "abilities": [
+            {
+              "name": "โจมตีปกติ",
+              "description": "โจมตีด้วยดาบต่อเนื่องมากสุด 4 ครั้ง\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "ชาร์จโจมตี",
+              "description": "ใช้พลังกายส่วนหนึ่งเพื่อฟาดฟันดาบ ออกไปข้างหน้า 2 ครั้ง ในช่วงเวลาสั้น ๆ\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "โจมตีพุ่งลงจากอากาศ",
+              "description": "กระโจนจากกลางอากาศลงมายังพื้นดิน เพื่อโจมตีศัตรูที่อยู่ในเส้นทางการโจมตี โดยจะสร้างความเสียหายวงกว้างเมื่อลงถึงพื้น",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "ความเสียหายขั้น 1|{param1}%",
+            "ความเสียหายขั้น 2|{param2}%",
+            "ความเสียหายขั้น 3|{param3}%",
+            "ความเสียหายขั้น 4|{param4}%",
+            "ความเสียหายชาร์จโจมตี|{param5}% + {param6}%",
+            "ชาร์จโจมตีใช้พลังกาย|{param7}",
+            "ความเสียหายพุ่งลง|{param8}%",
+            "ความเสียหายพุ่งถึงพื้นจากที่ต่ำ/สูง|{param9}% / {param10}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Sanctifying Ring",
+          "description": "สร้าง Grass Ring of Sanctification ขึ้นมา โดยแลกเปลี่ยนกับพลังชีวิตส่วนหนึ่ง เพื่อสร้างความเสียหายไฟฟ้าแก่ศัตรูที่อยู่โดยรอบ\r\n",
+          "abilities": [
+            {
+              "name": "Grass Ring of Sanctification",
+              "description": "จะเคลื่อนที่ตามตัวละครที่เข้าร่วมการต่อสู้ในขณะนั้น โดยที่ทุก 1.5 วินาที จะสร้างความเสียหายไฟฟ้าแก่ศัตรูที่อยู่โดยรอบ และฟื้นฟูพลังชีวิตของตัวละครที่เข้าร่วมการต่อสู้ในขณะนั้นที่อยู่ในพื้นที่ ซึ่งปริมาณการฟื้นฟู จะขึ้นอยู่กับพลังชีวิตสูงสุดของ Kuki Shinobu\r\nพลังชีวิตที่ถูกใช้ไปในการปล่อยสกิลนี้ จะทำให้พลังชีวิตของ Kuki Shinobu ลดลงต่ำสุดถึง 20% เท่านั้น\r\n",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "ความเสียหายสกิล|{param1}%",
+            "ปริมาณการรักษาของ Grass Ring of Sanctification|{param2}% Max HP + {param3}",
+            "ความเสียหาย Grass Ring of Sanctification|{param4}%",
+            "ค่าใช้จ่ายสกิล|{param5}% Current HP",
+            "ระยะเวลาต่อเนื่อง|{param6}s",
+            "คูลดาวน์|{param7}s"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
+          "title": "Gyoei Narukami Kariyama Rite",
+          "description": "ปักดาบปราบความชั่วร้ายลงบนพื้นดิน และสร้างเขตแดนชำระล้างสิ่งชั่วร้ายขึ้นมาตรงเบื้องหน้า เพื่อสร้างความเสียหายไฟฟ้าแก่ศัตรูที่อยู่ในพื้นที่อย่างต่อเนื่อง โดยขึ้นกับพลังชีวิตสูงสุดของ Kuki Shinobu\r\nเมื่อใช้สกิล หากพลังชีวิตของ Shinobu ต่ำกว่าหรือเท่ากับ 50% ช่วงเวลาคงอยู่ของเขตแดนจะยาวนานขึ้น\r\n",
           "abilities": [],
-          "stats": []
+          "stats": [
+            "ความเสียหายต่อครั้ง|{param1}% Max HP",
+            "ความเสียหายรวม|{param2}% / {param3}% Max HP",
+            "ระยะเวลาต่อเนื่อง|{param4}s / {param5}s",
+            "คูลดาวน์|{param6}s",
+            "พลังงานธาตุ|{param7}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "Protracted Prayers",
+          "description": "เมื่อทำคำขอการออกสำรวจของ Inazuma ที่ใช้เวลา 20 ชั่วโมง รางวัลที่ได้รับจะเพิ่มขึ้น 25%\r\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
+          "title": "Breaking Free",
+          "description": "ในตอนที่พลังชีวิตของ Kuki Shinobu ไม่เกิน 50% โบนัสการรักษาจะเพิ่มขึ้น 15%\r\n",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
+          "title": "Heart's Repose",
+          "description": "Sanctifying Ring จะได้รับโบนัสดังต่อไปนี้ โดยขึ้นกับความชำนาญธาตุของ Shinobu:\r\n",
+          "descriptions": [
+            "ปริมาณการรักษาเพิ่มขึ้น: 75% ของความชำนาญธาตุ;",
+            "สร้างความเสียหายเพิ่มขึ้น: 25% ของความชำนาญธาตุ"
+          ]
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "To Cloister Compassion",
+          "description": "พื้นที่ผลกระทบของ Gyoei Narukami Kariyama Rite เพิ่มขึ้น 50%\r\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "To Forsake Fortune",
+          "description": "ช่วงเวลาต่อเนื่องของ Grass Ring of Santification เพิ่มขึ้น 3 วินาที\r\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "To Sequester Sorrow",
+          "description": "เพิ่มเลเวลสกิลของ Sanctifying Ring ขึ้น 3 ระดับ\r\nเพิ่มได้สูงสุดถึงระดับ 15\r\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "To Sever Sealing",
+          "description": "เมื่อตัวละครที่อยู่ภายใต้สถานะ Grass Ring of Sanctification ของ Shinobu ใช้การโจมตีปกติ, การชาร์จโจมตี และการโจมตีพุ่งลงจากอากาศถูกศัตรู ตรา Thundergrass Mark จะร่วงหล่นลงมายังตำแหน่งของศัตรู และสร้างความเสียหายไฟฟ้าวงกว้าง เป็น 9.7% ของพลังชีวิตสูงสุดของ Shinobu\r\nเอฟเฟกต์นี้จะเกิดขึ้นได้มากสุด 1 ครั้ง ในทุก 5 วินาที\r\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "To Cease Courtesies",
+          "description": "เพิ่มเลเวลสกิลของ Gyoei Narukami Kariyama Rite ขึ้น 3 ระดับ\r\nเพิ่มได้สูงสุดถึงระดับ 15\r\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
+          "title": "To Ward Weakness",
+          "description": "เมื่อ Kuki Shinobu ได้รับความเสียหายมากพอที่จะทำให้เธอหมดสติ ความเสียหายในครั้งนี้ จะไม่ทำให้เธอหมดสติ โดยที่เอฟเฟกต์นี้ จะเกิดขึ้นโดยอัตโนมัติเมื่อพลังชีวิตของ Kuki Shinobu เหลือ 1 และในทุก 60 วินาที จะเกิดขึ้นได้เพียงหนึ่งครั้ง\r\nเมื่อพลังชีวิตของ Kuki Shinobu ลดลงต่ำกว่า 25% จะเพิ่มความชำนาญธาตุของตนเองขึ้น 150 หน่วย เป็นเวลา 15 วินาที ซึ่งในทุก 60 วินาที เอฟเฟกต์นี้จะเกิดขึ้นได้เพียงหนึ่งครั้ง\r\n",
           "descriptions": []
         }
       ]
@@ -4903,86 +5124,134 @@
     {
       "key": "shikanoin-heizou",
       "name": "Shikanoin Heizou",
-      "title": "",
+      "title": "สงบจิตผสานเชาวน์",
       "description": "นักสืบหนุ่มอัจฉริยะของสำนัก Tenryou ผู้มาพร้อมกับสัญชาตญาณที่เฉียบแหลม และจิตใจที่งดงาม",
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Fudou Style Martial Arts",
+          "description": "",
+          "abilities": [
+            {
+              "name": "โจมตีปกติ",
+              "description": "ต่อสู้กับศัตรูด้วยท่วงท่าที่ได้รับการสนับสนุนจากสายลมที่โหมกระหน่ำ ทำการโจมตีต่อเนื่องมากสุด 5 ครั้ง เพื่อสร้างความเสียหายลม\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "ชาร์จโจมตี",
+              "description": "ใช้พลังกายบางส่วน เพื่อใช้ท่าเตะและสร้างความเสียหายลม\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "โจมตีพุ่งลงจากอากาศ",
+              "description": "รวบรวมพลังของสายลมที่รุนแรง กระโจนจากกลางอากาศลงมายังพื้นดิน เพื่อโจมตีศัตรูที่อยู่ในเส้นทางการโจมตี โดยจะสร้างความเสียหายลมวงกว้างเมื่อลงถึงพื้น",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "ความเสียหายขั้น 1|{param1}%",
+            "ความเสียหายขั้น 2|{param2}%",
+            "ความเสียหายขั้น 3|{param3}%",
+            "ความเสียหายขั้น 4|{param4}% + {param5}% + {param6}%",
+            "ความเสียหายขั้น 5|{param7}%",
+            "ความเสียหายชาร์จโจมตี|{param8}%",
+            "ชาร์จโจมตีใช้พลังกาย|{param9}",
+            "ความเสียหายพุ่งลง|{param10}%",
+            "ความเสียหายพุ่งถึงพื้นจากที่ต่ำ/สูง|{param11}% / {param12}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Heartstopper Strike",
+          "description": "กด\r\nควบคุมพลังของสายลมที่รุนแรง เพื่อปล่อย Heartstopper Strike ไปข้างหน้า และสร้างความเสียหายลม",
+          "abilities": [
+            {
+              "name": "กดค้าง",
+              "description": "รวบรวมพลังเพื่อปลดปล่อยหมัดที่ทรงพลังยิ่งขึ้น โดยระหว่างที่รวบรวมพลัง จะได้รับเอฟเฟกต์ Declension ที่สามารถเสริมพลังของ Heartstopper Strike ได้ ซึ่งเมื่อปล่อยสกิลหรือสิ้นสุดช่วงเวลาการชาร์จ จะปล่อย Heartstopper Strike ออกไปข้างหน้าเพื่อสร้างความเสียหายลม\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Declension",
+              "description": "เพิ่มความเสียหายของ Heartstopper Strike ครั้งต่อไป โดยจะซ้อนทับได้มากสุด 4 ชั้น\r\nเมื่อมี Declension 4 ชั้น จะทำให้เกิดเอฟเฟกต์ Conviction ซึ่งจะทำให้ Hearstopper Strike ครั้งต่อไปรุนแรงขึ้นไปอีกขั้น และมีพื้นที่ผลกระทบที่กว้างมากขึ้น\r\n",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "ความเสียหายสกิล|{param1}%",
+            "โบนัสความเสียหายของ Declension|{param2}%/stack",
+            "โบนัสความเสียหายของ Conviction|{param3}%",
+            "ระยะเวลาของ Declension|{param4}s",
+            "คูลดาวน์|{param5}s"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
+          "title": "Windmuster Kick",
+          "description": "กระโดดขึ้นไปกลางอากาศ และใช้ท่าเตะ Fudou Style Vacuum Slugger ใส่ศัตรู โดยในตอนที่ Fudou Style Vacuum Slugger ระเบิดเมื่อถูกเป้าหมาย จะก่อให้เกิด Arresting Windtunnel ซึ่งจะดึงดูดวัตถุและศัตรูที่อยู่ในบริเวณใกล้เคียงให้เข้าไป เกิดเป็นความเสียหายลมวงกว้าง\r\nเมื่อ Vacuum Slugger ถูกศัตรูที่ติดสถานะ ธาตุน้ำ/ธาตุไฟ/ธาตุน้ำแข็ง/ธาตุไฟฟ้า ศัตรูเหล่านี้จะถูกเอฟเฟกต์ \"Windmuster Iris\" ซึ่งจะระเบิดไม่นานหลังจากนั้นและหายไป พร้อมทำให้เกิดความเสียหายของธาตุที่เกี่ยวข้องเป็นวงกว้าง\r\nVacuum Slugger จะทำให้เกิดเอฟเฟกต์ \"Windmuster Iris\" แก่ศัตรูที่ถูกโจมตีได้มากสุด 4 ตัว โดยตัวศัตรูจะไม่สามารถอยู่ในสถานะ \"Windmuster Iris\" ของคุณลักษณะธาตุหลายอย่างพร้อมกันได้\r\n",
           "abilities": [],
-          "stats": []
+          "stats": [
+            "ความเสียหาย Fudou Style Vacuum Slugger|{param1}%",
+            "ความเสียหาย Windmuster Iris|{param2}%",
+            "คูลดาวน์|{param3}s",
+            "พลังงานธาตุ|{param4}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "Pre-Existing Guilt",
+          "description": "ลดอัตราการเสียพลังกายจากการวิ่ง ให้ตัวละครของตนเองที่อยู่ในทีมลง 20%\r\nไม่สามารถซ้อนทับพรสวรรค์ติดตัวที่เอฟเฟกต์เหมือนกันทุกประการได้\r\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
+          "title": "Paradoxical Practice",
+          "description": "เมื่อ Shikanoin Heizou ทำให้เกิดปฏิกิริยาการกระจาย จะได้รับเอฟเฟกต์ Declension ของ Heartstopper Strike 1 ชั้น โดยที่ทุก 0.1 วินาที เอฟเฟกต์นี้จะสามารถเกิดขึ้นได้มากสุด 1 ครั้ง\r\n",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "NA",
-          "description": "",
+          "title": "Penetrative Reasoning",
+          "description": "หลังจากที่ Heartstopper Strike ถูกเป้าหมาย ความชำนาญธาตุของตัวละครทั้งหมดในทีม (ไม่รวมตัวของ Shikanoin Heizou เอง) จะเพิ่มขึ้น 80 หน่วย เป็นเวลา 10 วินาที\r\n",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "Named Juvenile Casebook",
+          "description": "ภายใน 5 วินาที หลังจากที่ Shikanoin Heizou เข้าสู่การต่อสู้ ความเร็วของการโจมตีปกติจะเพิ่มขึ้น 15% และจะได้รับเอฟเฟกต์ Declension ของ Heartstopper Strike 1 ชั้น โดยที่ทุก 10 วินาที เอฟเฟกต์นี้จะเกิดขึ้นได้มากสุด 1 ครั้ง\r\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "Investigative Collection",
+          "description": "เอฟเฟกต์ดึงดูดของ Arresting Windtunnel ที่เกิดจาก Windmuster Kick จะได้รับการเสริมพลัง และเพิ่มช่วงเวลาต่อเนื่องเป็น 1 วินาที\r\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "Esoteric Puzzle Book",
+          "description": "เพิ่มเลเวลสกิลของ Heartstopper Strike ขึ้น 3 ระดับ\r\nเพิ่มได้สูงสุดถึงระดับ 15\r\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "Tome of Lies",
+          "description": "ใน Windmuster Kick แต่ละครั้ง หลังจากที่ Windmuster Iris ระเบิดเป็นครั้งแรก จะฟื้นฟูพลังงานธาตุให้ Shikanoin Heizou 9 หน่วย และการระเบิดทุกครั้งหลังจากนั้น จะฟื้นฟูพลังงานธาตุให้ Shikanoin Heizou เพิ่มอีกครั้งละ 1.5 หน่วย\r\nWindmuster Kick แต่ละครั้ง จะสามารถฟื้นฟูพลังงานธาตุให้ Shikanoin Heizou ด้วยวิธีนี้ได้มากสุด 13.5 หน่วย\r\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "Secret Archive",
+          "description": "เพิ่มเลเวลสกิลของ Windmuster Kick ขึ้น 3 ระดับ\r\nเพิ่มได้สูงสุดถึงระดับ 15\r\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
+          "title": "Curious Casefiles",
+          "description": "เมื่อใช้ Heartstopper Strike แต่ละชั้นของ Declension จะเพิ่มอัตราคริให้ Heartstopper Strike ในครั้งนั้นขึ้น 4% และเมื่อมี Conviction ความแรงคริของ Heartstopper Strike ในครั้งนั้นจะเพิ่มขึ้น 32%\r\n",
           "descriptions": []
         }
       ]
@@ -5440,6 +5709,93 @@
           "key": "c6",
           "title": "Burning Heart",
           "description": "เมื่อได้รับหรือรีเฟรช Blazing Barrier การโจมตีปกติ, ชาร์จโจมตี และโจมตีพุ่งลงจากอากาศ ของตัวละครทั้งหมดในทีม จะสร้างความเสียหายเพิ่มขึ้น 15% เป็นเวลา 6 วินาที\r\n",
+          "descriptions": []
+        }
+      ]
+    },
+    {
+      "key": "tighnari",
+      "name": "Tighnari",
+      "title": "???",
+      "description": "",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
           "descriptions": []
         }
       ]
@@ -6793,81 +7149,151 @@
     {
       "key": "yelan",
       "name": "Yelan",
-      "title": "",
-      "description": "",
+      "title": "กล้วยไม้งามกลางหุบเขา",
+      "description": "บุคคลลึกลับที่อ้างตัวว่าทำงานในฝ่ายกิจการทั่วไป แต่กลับเป็น \"บุคคลที่ไม่มีตัวตน\" ในรายชื่อพนักงานของฝ่ายกิจการทั่วไป",
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Stealthy Bowshot",
+          "description": "",
+          "abilities": [
+            {
+              "name": "โจมตีปกติ",
+              "description": "ยิงธนูโจมตีอย่างต่อเนื่องมากสุด 4 ครั้ง\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "ชาร์จโจมตี",
+              "description": "การเล็งโจมตีสร้างความเสียหายเพิ่มขึ้น และแม่นยำยิ่งขึ้น\r\nเมื่อเล็งโจมตีจะทำการรวบรวมกระแสน้ำไว้บนหัวลูกศร ซึ่งลูกศรที่รวบรวมกระแสน้ำจนเต็ม จะทำให้เกิดความเสียหายน้ำ\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Breakthrough",
+              "description": "หลังออกจากสถานะต่อสู้ 5 วินาที Yelan จะได้รับสถานะ \"Breakthrough\" ซึ่งจะทำให้ช่วงเวลาที่ต้องใช้ในการชาร์จให้เต็ม เพื่อเล็งโจมตีครั้งต่อไปลดลง 80% และจะทำให้การชาร์จที่เต็มแล้วเปลี่ยนเป็นการยิง \"Breakthrough Barb\" ออกไป โดยที่ Breakthrough Barb จะสร้างความเสียหายน้ำวงกว้างที่มีความแรงขึ้นกับพลังชีวิตสูงสุดของ Yelan\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "โจมตีพุ่งลงจากอากาศ",
+              "description": "ปล่อยฝนธนูจากกลางอากาศ และพุ่งลงมายังพื้นดินอย่างรวดเร็ว โดยจะสร้างความเสียหายวงกว้างเมื่อลงถึงพื้น",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "ความเสียหายขั้น 1|{param1}%",
+            "ความเสียหายขั้น 2|{param2}%",
+            "ความเสียหายขั้น 3|{param3}%",
+            "ความเสียหายขั้น 4|{param4}% + {param5}%",
+            "เล็งโจมตี|{param6}%",
+            "เล็งโจมตีเมื่อชาร์จเต็ม|{param7}%",
+            "ความเสียหาย Breakthrough Barb|{param8}% Max HP",
+            "ความเสียหายพุ่งลง|{param9}%",
+            "ความเสียหายพุ่งถึงพื้นจากที่ต่ำ/สูง|{param10}% / {param11}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Lingering Lifeline",
+          "description": "ลาก \"Lifeline\" ออกมาและเคลื่อนที่อย่างรวดเร็ว เพื่อพัวพันและทำสัญลักษณ์ใส่ศัตรูที่อยู่ในเส้นทาง\r\nเมื่อการเคลื่อนที่อย่างรวดเร็วสิ้นสุดลง Lifeline จะระเบิด และสร้างความเสียหายน้ำโดยขึ้นกับค่าพลังชีวิตสูงสุดของ Yelan แก่ศัตรูที่ถูกทำสัญลักษณ์\r\n",
+          "abilities": [
+            {
+              "name": "กด",
+              "description": "เคลื่อนที่ไปข้างหน้าเป็นระยะทางประมาณหนึ่งอย่างรวดเร็ว\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "กดค้าง",
+              "description": "เคลื่อนที่อย่างรวดเร็วและต่อเนื่อง โดยภายใต้สภาวะนี้ ความสามารถในการต้านทานการหยุดชะงักของ Yelan จะเพิ่มขึ้น\r\nระหว่างช่วงเวลานี้ Yelan สามารถควบคุมทิศทางในการเคลื่อนที่อย่างรวดเร็ว และจะสามารถหยุดสถานะการเคลื่อนที่อย่างรวดเร็วล่วงหน้าได้ ด้วยการใช้สกิลนี้อีกครั้ง\r\nนอกจากนี้ เมื่อ Lifeline ระเบิด Yelan จะมีโอกาสที่จะได้รับสถานะ Breakthrough โดยจะขึ้นอยู่กับจำนวนของศัตรูที่ถูกทำสัญลักษณ์: ศัตรูแต่ละตัวที่ถูกทำสัญลักษณ์ จะสามารถเพิ่มโอกาสขึ้นได้ 34%\r\n",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "ความเสียหายสกิล|{param1}% Max HP",
+            "เวลาต่อเนื่องสูงสุดเมื่อแตะค้าง|{param2}s",
+            "คูลดาวน์|{param3}s"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Depth-Clarion Dice",
+          "description": "สร้างความเสียหายน้ำวงกว้าง และรวบรวม Exquisite Throw ขึ้นมาเพื่อช่วยในการต่อสู้\r\n",
+          "abilities": [
+            {
+              "name": "Exquisite Throw",
+              "description": "จะเคลื่อนที่ตามตัวละคร และโจมตีสนับสนุนเพื่อสร้างความเสียหายน้ำ โดยขึ้นกับพลังชีวิตสูงสุดของ Yelan เมื่ออยู่ในสถานการณ์ดังต่อไปนี้:\r\n",
+              "descriptions": [
+                "จะเกิดขึ้น 1 ครั้ง ในทุก 1 วินาที เมื่อตัวละครในทีมของตัวเอง ที่เข้าร่วมการต่อสู้ในขณะนั้นใช้การโจมตีปกติ;",
+                "จะทำการโจมตีสนับสนุน 1 ครั้ง เมื่อ Lifeline ของ Yelan ระเบิดถูกศัตรู"
+              ]
+            }
+          ],
+          "stats": [
+            "ความเสียหายสกิล|{param1}% Max HP",
+            "ความเสียหาย Exquisite Throw|{param2}% Max HP ×{param3}",
+            "ระยะเวลาต่อเนื่อง|{param4}s",
+            "คูลดาวน์|{param5}s",
+            "พลังงานธาตุ|{param6}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "Necessary Calculation",
+          "description": "เมื่อทำคำขอการออกสำรวจของ Liyue ที่ใช้เวลา 20 ชั่วโมง รางวัลที่ได้รับจะเพิ่มขึ้น 25%\r\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
+          "title": "Turn Control",
+          "description": "เมื่อในทีมมีประเภทธาตุของตัวละคร 1/2/3/4 ประเภท พลังชีวิตสูงสุดของ Yelan จะเพิ่มขึ้น 6%/12%/18%/30%\r\n",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "Adapt With Ease",
+          "description": "ตลอดช่วงเวลาคงอยู่ของ Exquisite Throw จะทำให้ตัวละครของตนเอง ที่เข้าร่วมการต่อสู้ในขณะนั้น สร้างความเสียหายเพิ่มขึ้น 1% และจะเพิ่มขึ้นอีก 3.5% ในทุก 1 วินาที โดยจะเพิ่มความเสียหายที่ตัวละครสร้างได้มากสุดถึง 50%\r\nระหว่างช่วงเวลาคงอยู่ของเอฟเฟกต์ เอฟเฟกต์ที่กล่าวถึงข้างต้นจะหายไปเมื่อปล่อย Depth-Clarion Dice อีกครั้ง\r\n",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "Enter the Plotters",
+          "description": "จำนวนครั้งที่สามารถใช้ Lingering Lifeline ได้ เพิ่มขึ้น 1 ครั้ง\r\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "Taking All Comers",
+          "description": "ในตอนที่ Exquisite Throw ทำการโจมตีสนับสนุน จะยิงลูกศรน้ำออกมาเพิ่ม 1 ดอก สร้างความเสียหายน้ำเป็น 14% ของพลังชีวิตสูงสุดของ Yelan\r\nในทุก 1.8 วินาที เอฟเฟกต์นี้จะเกิดขึ้นได้มากสุด 1 ครั้ง\r\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "Beware the Trickster's Dice",
+          "description": "เพิ่มเลเวลสกิลของ Depth-Clarion Dice ขึ้น 3 ระดับ\r\nเพิ่มได้สูงสุดถึงระดับ 15\r\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "Bait-and-Switch",
+          "description": "ตามจำนวนของศัตรูที่ถูก Lifeline ทำสัญลักษณ์ ในแต่ละครั้งที่สัญลักษณ์ระเบิด จะทำให้พลังชีวิตสูงสุดของตัวละครทั้งหมดในทีมเพิ่มขึ้น 10% เป็นเวลา 25 วินาที โดยจะสามารถเพิ่มพลังชีวิตสูงสุดด้วยวิธีนี้ได้มากสุด 40%\r\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "Dealer's Sleight",
+          "description": "เพิ่มเลเวลสกิลของ Lingering Lifeline ขึ้น 3 ระดับ\r\nเพิ่มได้สูงสุดถึงระดับ 15\r\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
+          "title": "Winner Take All",
+          "description": "หลังจากใช้ Depth-Clarion Dice Yelan จะเข้าสู่สถานะ Mastermind:\r\n",
+          "descriptions": [
+            "การโจมตีปกติของ Yelan จะเปลี่ยนเป็นการยิง Breakthrough Barb ที่มีความพิเศษ ซึ่งลูกศรแบบนี้ จะมีคุณลักษณะที่คล้ายกับ Breakthrough Barb โดยความเสียหายที่สร้าง จะถูกมองว่าเป็นความเสียหายของการชาร์จโจมตี ซึ่งสามารถสร้างความเสียหายเป็น 156% ของความเสียหายของ Breakthrough Barb ปกติ",
+            "สถานะ Mastermind จะคงอยู่ได้นานสุด 20 วินาที และจะหายไปเมื่อ Yelan ยิงลูกศรออกไป 5 ดอก"
+          ]
         }
       ]
     },
@@ -7371,6 +7797,18 @@
       "refinements": []
     },
     {
+      "key": "aqua-simulacra",
+      "name": "Aqua Simulacra",
+      "description": "คันธนูยาวซึ่งมีสีที่คาดเดาไม่ได้ เมื่อกระทบแสงจะปรากฏเป็นสีครามราวกับน้ำ",
+      "refinements": [
+        "พลังชีวิตเพิ่มขึ้น {color}16{/color}% และเมื่อมีศัตรูอยู่ในบริเวณใกล้เคียง ความเสียหายที่ตัวละครที่ใช้อาวุธนี้สร้าง จะเพิ่มขึ้น {color}20{/color}% ไม่ว่าตัวละครนี้จะอยู่ในการต่อสู้ หรืออยู่ในทีม แต่ไม่ได้เข้าร่วมการต่อสู้ก็ตาม",
+        "พลังชีวิตเพิ่มขึ้น {color}20{/color}% และเมื่อมีศัตรูอยู่ในบริเวณใกล้เคียง ความเสียหายที่ตัวละครที่ใช้อาวุธนี้สร้าง จะเพิ่มขึ้น {color}25{/color}% ไม่ว่าตัวละครนี้จะอยู่ในการต่อสู้ หรืออยู่ในทีม แต่ไม่ได้เข้าร่วมการต่อสู้ก็ตาม",
+        "พลังชีวิตเพิ่มขึ้น {color}24{/color}% และเมื่อมีศัตรูอยู่ในบริเวณใกล้เคียง ความเสียหายที่ตัวละครที่ใช้อาวุธนี้สร้าง จะเพิ่มขึ้น {color}30{/color}% ไม่ว่าตัวละครนี้จะอยู่ในการต่อสู้ หรืออยู่ในทีม แต่ไม่ได้เข้าร่วมการต่อสู้ก็ตาม",
+        "พลังชีวิตเพิ่มขึ้น {color}28{/color}% และเมื่อมีศัตรูอยู่ในบริเวณใกล้เคียง ความเสียหายที่ตัวละครที่ใช้อาวุธนี้สร้าง จะเพิ่มขึ้น {color}35{/color}% ไม่ว่าตัวละครนี้จะอยู่ในการต่อสู้ หรืออยู่ในทีม แต่ไม่ได้เข้าร่วมการต่อสู้ก็ตาม",
+        "พลังชีวิตเพิ่มขึ้น {color}32{/color}% และเมื่อมีศัตรูอยู่ในบริเวณใกล้เคียง ความเสียหายที่ตัวละครที่ใช้อาวุธนี้สร้าง จะเพิ่มขึ้น {color}40{/color}% ไม่ว่าตัวละครนี้จะอยู่ในการต่อสู้ หรืออยู่ในทีม แต่ไม่ได้เข้าร่วมการต่อสู้ก็ตาม"
+      ]
+    },
+    {
       "key": "aquila-favonia",
       "name": "Aquila Favonia",
       "description": "จิตวิญญาณของเหล่าอัศวินแห่ง Favonius แม้พันปีผ่านไป มันก็ยังคงเป็นดั่งสายลมแห่ง ความยุติธรรมที่ขับไล่สิ่งชั่วร้าย เช่นเดียวกับวีรชนหญิง คนสุดท้ายที่กวัดแกว่งมัน",
@@ -7671,6 +8109,18 @@
       ]
     },
     {
+      "key": "fading-twilight",
+      "name": "Fading Twilight",
+      "description": "คันธนูแสนล้ำค่าที่ทำขึ้นจากทองคำขาว ถูกฝังด้วยไข่มุกที่ส่องประกายแสงระยิบระยับ",
+      "refinements": [
+        "มีอยู่สามสถานะได้แก่ Evengleam, Afterglow และ Dawnblaze ซึ่งจะสามารถทำให้ความเสียหายที่สร้างเพิ่มขึ้น {color}6%/10%/14%{/color} ตามลำดับ โดยหลังจากที่โจมตีถูกศัตรูแล้ว จะเปลี่ยนเป็นสถานะถัดไป ซึ่งในทุก 7 วินาที จะเปลี่ยนสถานะได้มากสุด 1 ครั้ง และเอฟเฟกต์ดังกล่าวจะยังคงเกิดขึ้นและเปลี่ยนสถานะได้ แม้ในขณะที่ตัวละครที่ใช้อาวุธนี้อยู่ในทีม แต่ไม่ได้เข้าร่วมการต่อสู้",
+        "มีอยู่สามสถานะได้แก่ Evengleam, Afterglow และ Dawnblaze ซึ่งจะสามารถทำให้ความเสียหายที่สร้างเพิ่มขึ้น {color}7.5%/12.5%/17.5%{/color} ตามลำดับ โดยหลังจากที่โจมตีถูกศัตรูแล้ว จะเปลี่ยนเป็นสถานะถัดไป ซึ่งในทุก 7 วินาที จะเปลี่ยนสถานะได้มากสุด 1 ครั้ง และเอฟเฟกต์ดังกล่าวจะยังคงเกิดขึ้นและเปลี่ยนสถานะได้ แม้ในขณะที่ตัวละครที่ใช้อาวุธนี้อยู่ในทีม แต่ไม่ได้เข้าร่วมการต่อสู้",
+        "มีอยู่สามสถานะได้แก่ Evengleam, Afterglow และ Dawnblaze ซึ่งจะสามารถทำให้ความเสียหายที่สร้างเพิ่มขึ้น {color}9%/15%/21%{/color} ตามลำดับ โดยหลังจากที่โจมตีถูกศัตรูแล้ว จะเปลี่ยนเป็นสถานะถัดไป ซึ่งในทุก 7 วินาที จะเปลี่ยนสถานะได้มากสุด 1 ครั้ง และเอฟเฟกต์ดังกล่าวจะยังคงเกิดขึ้นและเปลี่ยนสถานะได้ แม้ในขณะที่ตัวละครที่ใช้อาวุธนี้อยู่ในทีม แต่ไม่ได้เข้าร่วมการต่อสู้",
+        "มีอยู่สามสถานะได้แก่ Evengleam, Afterglow และ Dawnblaze ซึ่งจะสามารถทำให้ความเสียหายที่สร้างเพิ่มขึ้น {color}10.5%/17.5%/24.5%{/color} ตามลำดับ โดยหลังจากที่โจมตีถูกศัตรูแล้ว จะเปลี่ยนเป็นสถานะถัดไป ซึ่งในทุก 7 วินาที จะเปลี่ยนสถานะได้มากสุด 1 ครั้ง และเอฟเฟกต์ดังกล่าวจะยังคงเกิดขึ้นและเปลี่ยนสถานะได้ แม้ในขณะที่ตัวละครที่ใช้อาวุธนี้อยู่ในทีม แต่ไม่ได้เข้าร่วมการต่อสู้",
+        "มีอยู่สามสถานะได้แก่ Evengleam, Afterglow และ Dawnblaze ซึ่งจะสามารถทำให้ความเสียหายที่สร้างเพิ่มขึ้น {color}12%/20%/28%{/color} ตามลำดับ โดยหลังจากที่โจมตีถูกศัตรูแล้ว จะเปลี่ยนเป็นสถานะถัดไป ซึ่งในทุก 7 วินาที จะเปลี่ยนสถานะได้มากสุด 1 ครั้ง และเอฟเฟกต์ดังกล่าวจะยังคงเกิดขึ้นและเปลี่ยนสถานะได้ แม้ในขณะที่ตัวละครที่ใช้อาวุธนี้อยู่ในทีม แต่ไม่ได้เข้าร่วมการต่อสู้"
+      ]
+    },
+    {
       "key": "favonius-codex",
       "name": "Favonius Codex",
       "description": "ตำราลับที่เป็นของนักแปรธาตุของกองอัศวินแห่ง Favonius ภายในระบุเรื่องพลังของสิ่งต่าง ๆ และความเป็นเหตุเป็นผล รวมถึงเรื่องอื่น ๆ ด้วย",
@@ -7872,6 +8322,14 @@
         "ภายใน 6 วินาทีหลังจากสร้างความเสียหายธาตุ ความเสียหายที่ตัวละครสร้างจะเพิ่มขึ้น {color}9{/color}% ซึ่งเอฟเฟกต์นี้จะซ้อนทับได้สูงสุด 2 ชั้นและสามารถปล่อยได้หนึ่งครั้งในทุก 1 วินาที",
         "ภายใน 6 วินาทีหลังจากสร้างความเสียหายธาตุ ความเสียหายที่ตัวละครสร้างจะเพิ่มขึ้น {color}10.5{/color}% ซึ่งเอฟเฟกต์นี้จะซ้อนทับได้สูงสุด 2 ชั้นและสามารถปล่อยได้หนึ่งครั้งในทุก 1 วินาที",
         "ภายใน 6 วินาทีหลังจากสร้างความเสียหายธาตุ ความเสียหายที่ตัวละครสร้างจะเพิ่มขึ้น {color}12{/color}% ซึ่งเอฟเฟกต์นี้จะเกิดขึ้นมากสุด 2 ชั้นและสามารถปล่อยได้หนึ่งครั้งในทุก 1 วินาที"
+      ]
+    },
+    {
+      "key": "kagotsurube-isshin",
+      "name": "Kagotsurube Isshin",
+      "description": "ดาบเลื่องชื่อที่เกิดในแดนเหนืออันไกลโพ้น บนเส้นทางหวนคืนสู่บ้านเกิดเคยแปดเปื้อนบาปมากมายนับไม่ถ้วน เพียงเพื่อคำว่า \"Isshin\" เท่านั้น",
+      "refinements": [
+        "เมื่อการโจมตีปกติ การชาร์จโจมตี และการโจมตีพุ่งลงจากอากาศถูกศัตรู จะทำให้เกิด Hewing Gale เพื่อสร้างความเสียหายวงกว้างเป็น 180% ของพลังโจมตี และเพิ่มพลังโจมตีขึ้น 15% เป็นเวลา 8 วินาที โดยที่ทุก 8 วินาที เอฟเฟกต์นี้จะเกิดขึ้นได้มากสุด 1 ครั้ง"
       ]
     },
     {

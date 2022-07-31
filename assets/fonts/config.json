@@ -107,6 +107,12 @@
       "css": "globe-1",
       "code": 61612,
       "src": "fontawesome5"
+    },
+    {
+      "uid": "627abcdb627cb1789e009c08e2678ef9",
+      "css": "twitter",
+      "code": 61593,
+      "src": "fontawesome"
     }
   ]
 }

@@ -1142,6 +1142,93 @@
       ]
     },
     {
+      "key": "collei",
+      "name": "Collei",
+      "title": "???",
+      "description": "",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ]
+    },
+    {
       "key": "diluc",
       "name": "Diluc",
       "title": "The Dark Side of Dawn",
@@ -1413,6 +1500,93 @@
             "Quando gli HP sono </= 50%, l'Healing Bonus ricevuto aumenta del 30%.",
             "Quando gli HP sono > 50%, l'Elemental Mastery aumenta di 200."
           ]
+        }
+      ]
+    },
+    {
+      "key": "dori",
+      "name": "Dori",
+      "title": "???",
+      "description": "",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
         }
       ]
     },
@@ -3249,86 +3423,133 @@
     {
       "key": "kuki-shinobu",
       "name": "Kuki Shinobu",
-      "title": "",
-      "description": "",
+      "title": "Mender of Tribulations",
+      "description": "The capable and reliable deputy leader of the \"Arataki Gang.\" Please note: capable and reliable are not appellations for the \"Arataki Gang,\" but for their deputy leader in specific.",
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Shinobu's Shadowsword",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Normal Attack",
+              "description": "Perform up to 4 rapid strikes.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Charged Attack",
+              "description": "Consumes a certain amount of Stamina to unleash 2 rapid sword strikes.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Plunging Attack",
+              "description": "Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "1-Hit DMG|{param1}%",
+            "2-Hit DMG|{param2}%",
+            "3-Hit DMG|{param3}%",
+            "4-Hit DMG|{param4}%",
+            "Charged Attack DMG|{param5}% + {param6}%",
+            "Charged Attack Stamina Cost|{param7}",
+            "Plunge DMG|{param8}%",
+            "Low/High Plunge DMG|{param9}% / {param10}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Sanctifying Ring",
+          "description": "Creates a Grass Ring of Sanctification at the cost of part of her HP, dealing Electro DMG to nearby opponents.\r\n",
+          "abilities": [
+            {
+              "name": "Grass Ring of Sanctification",
+              "description": "Follows your current active character around. Deals Electro DMG to nearby opponents every 1.5s and restores HP for active character(s) within the ring's AoE based on Kuki Shinobu's Max HP.\r\nThe HP consumption from using this skill can only bring her to 20% HP.\r\n",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "Skill DMG|{param1}%",
+            "Grass Ring of Sanctification Healing|{param2}% Max HP + {param3}",
+            "Grass Ring of Sanctification DMG|{param4}%",
+            "Activation Cost|{param5}% Current HP",
+            "Duration|{param6}s",
+            "CD|{param7}s"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
+          "title": "Gyoei Narukami Kariyama Rite",
+          "description": "Stabs an evil-excoriating blade into the ground, creating a field that cleanses the area of all that is foul, dealing continuous Electro DMG to opponents within its AoE based on Shinobu's Max HP.\r\nIf Shinobu's HP is less than or equal to 50% when this skill is used, the field will last longer.\r\n",
           "abilities": [],
-          "stats": []
+          "stats": [
+            "Single Instance DMG|{param1}% Max HP",
+            "Total DMG|{param2}% / {param3}% Max HP",
+            "Duration|{param4}s / {param5}s",
+            "CD|{param6}s",
+            "Energy Cost|{param7}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "Protracted Prayers",
+          "description": "Gains 25% more rewards when dispatched on an Inazuma Expedition for 20 hours.\r\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
+          "title": "Breaking Free",
+          "description": "When Shinobu's HP is not higher than 50%, her Healing Bonus is increased by 15%.\r\n",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
+          "title": "Heart's Repose",
+          "description": "Sanctifying Ring's abilities will be boosted based on Shinobu's Elemental Mastery:\r\n",
+          "descriptions": [
+            "Healing amount will be increased by 75% of Elemental Mastery.",
+            "DMG dealt is increased by 25% of Elemental Mastery."
+          ]
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "To Cloister Compassion",
+          "description": "Gyoei Narukami Kariyama Rite's AoE is increased by 50%.\r\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "To Forsake Fortune",
+          "description": "Grass Ring of Sanctification's duration is increased by 3s.\r\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "To Sequester Sorrow",
+          "description": "Increases the Level of Sanctifying Ring by 3.\r\nMaximum upgrade level is 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "To Sever Sealing",
+          "description": "When the Normal, Charged, or Plunging Attacks of the character affected by Shinobu's Grass Ring of Sanctification hit opponents, a Thundergrass Mark will land on the opponent's position and deal AoE Electro DMG based on 9.7% of Shinobu's Max HP.\r\nThis effect can occur once every 5s.\r\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "To Cease Courtesies",
+          "description": "Increases the Level of Gyoei Narukami Kariyama Rite by 3.\r\nMaximum upgrade level is 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
+          "title": "To Ward Weakness",
+          "description": "When Kuki Shinobu takes lethal DMG, this instance of DMG will not take her down. This effect will automatically trigger when her HP reaches 1 and will trigger once every 60s.\r\nWhen Shinobu's HP drops below 25%, she will gain 150 Elemental Mastery for 15s. This effect will trigger once every 60s.\r\n",
           "descriptions": []
         }
       ]
@@ -4973,86 +5194,139 @@
     {
       "key": "shikanoin-heizou",
       "name": "Shikanoin Heizou",
-      "title": "",
+      "title": "Analytical Harmony",
       "description": "A young prodigy detective from the Tenryou Commission. His senses are sharp and his thoughts are clear.",
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Fudou Style Martial Arts",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Normal Attack",
+              "description": "Performs up to 5 fisticuffs empowered by a mighty wind, dealing Anemo DMG.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Charged Attack",
+              "description": "Consumes a certain amount of Stamina and performs a sweeping kick that deals Anemo DMG.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Plunging Attack",
+              "description": "Calling upon the surging wind, Heizou plunges towards the ground from mid-air, damaging all opponents in his path. Deals AoE Anemo DMG upon impact with the ground.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "1-Hit DMG|{param1}%",
+            "2-Hit DMG|{param2}%",
+            "3-Hit DMG|{param3}%",
+            "4-Hit DMG|{param4}% + {param5}% + {param6}%",
+            "5-Hit DMG|{param7}%",
+            "Charged Attack|{param8}%",
+            "Charged Attack Stamina Cost|{param9}",
+            "Plunge DMG|{param10}%",
+            "Low/High Plunge DMG|{param11}% / {param12}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Heartstopper Strike",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Tap",
+              "description": "Wields the swift winds to launch a Heartstopper Strike that deals Anemo DMG.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Hold",
+              "description": "Charges energy to unleash an even stronger blow. He will obtain the Declension effect while charging, which will increase the power of the Heartstopper Strike. When the skill button is released or the skill finishes charging, he will strike forward, dealing Anemo DMG.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Declension",
+              "description": "Increases the power of the next Heartstopper Strike. Max 4 stacks.\r\nWhen you possess 4 Declension stacks, the Conviction effect will be produced, which will cause the next Hearstopper Strike to be even stronger and have a larger AoE.\r\n",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "Skill DMG|{param1}%",
+            "Declension DMG Bonus|{param2}%/stack",
+            "Conviction DMG Bonus|{param3}%",
+            "Declension Duration|{param4}s",
+            "CD|{param5}s"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
+          "title": "Windmuster Kick",
+          "description": "Leaps into the air and uses the Fudou Style Vacuum Slugger and kicks his opponent. The Vacuum Slugger will explode upon hit and create an Arresting Windtunnel that pulls in nearby objects and opponents, dealing AoE Anemo DMG.\r\nWhen Vacuum Slugger hits opponents affected by Hydro/Pyro/Cryo/Electro, these opponents will be afflicted with Windmuster Iris. This Windmuster Iris will explode after a moment and dissipate, dealing AoE DMG of the corresponding aforementioned elemental type.\r\nVacuum Slugger can afflict a maximum of 4 opponents with the Windmuster Iris. A single opponent cannot be under the effect of Windmuster Irises of different elements at the same time.\r\n",
           "abilities": [],
-          "stats": []
+          "stats": [
+            "Fudou Style Vacuum Slugger DMG|{param1}%",
+            "Windmuster Iris DMG|{param2}%",
+            "CD|{param3}s",
+            "Energy Cost|{param4}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "Pre-Existing Guilt",
+          "description": "Decreases sprinting Stamina consumption for your own party members by 20%.\r\nNot stackable with Passive Talents that provide the exact same effects.\r\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
+          "title": "Paradoxical Practice",
+          "description": "When Shikanoin Heizou activates a Swirl reaction while on the field, he will gain 1 Declension stack for Heartstopper Strike. This effect can be triggered once every 0.1s.\r\n",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "NA",
-          "description": "",
+          "title": "Penetrative Reasoning",
+          "description": "After Shikanoin Heizou's Heartstopper Strike hits an opponent, increases all party members' (excluding Shikanoin Heizou) Elemental Mastery by 80 for 10s.\r\n",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "Named Juvenile Casebook",
+          "description": "For 5s after Shikanoin Heizou takes the field, his Normal Attack SPD is increased by 15%. He also gains 1 Declension stack for Heartstopper Strike. This effect can be triggered once every 10s.\r\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "Investigative Collection",
+          "description": "The pull effect of the Arresting Windtunnel created by Windmuster Kick is enhanced, and its duration is increased to 1s.\r\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "Esoteric Puzzle Book",
+          "description": "Increases the Level of Heartstopper Strike by 3.\r\nMaximum upgrade level is 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "Tome of Lies",
+          "description": "The first Windmuster Iris explosion in each Windmuster Kick will regenerate 9 Elemental Energy for Shikanoin Heizou. Every subsequent explosion in that Windmuster Kick will each regenerate an additional 1.5 Energy for Heizou.\r\nOne Windmuster Kick can regenerate a total of 13.5 Energy for Heizou in this manner.\r\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "Secret Archive",
+          "description": "Increases the Level of Windmuster Kick by 3.\r\nMaximum upgrade level is 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
+          "title": "Curious Casefiles",
+          "description": "Each Declension stack will increase the CRIT Rate of the Heartstopper Strike unleashed by 4%. When Heizou possesses Conviction, this Heartstopper Strike's CRIT DMG is increased by 32%.\r\n",
           "descriptions": []
         }
       ]
@@ -5510,6 +5784,93 @@
           "key": "c6",
           "title": "Burning Heart",
           "description": "Quando si ottiene o si aggiorna una Barriera Ardente, il danno inflitto da Attacchi Normali, Caricati e in Picchiata di tutti i membri del party aumenta del 15% per 6s.\r\n",
+          "descriptions": []
+        }
+      ]
+    },
+    {
+      "key": "tighnari",
+      "name": "Tighnari",
+      "title": "???",
+      "description": "",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
           "descriptions": []
         }
       ]
@@ -6877,80 +7238,147 @@
     {
       "key": "yelan",
       "name": "Yelan",
-      "title": "",
-      "description": "",
+      "title": "Valley Orchid",
+      "description": "A mysterious person who claims to work for the Ministry of Civil Affairs, but is a \"non-entity\" on the Ministry of Civil Affairs' list.",
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Stealthy Bowshot",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Normal Attack",
+              "description": "Performs up to 4 consecutive shots with a bow.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Charged Attack",
+              "description": "Perform a more precise Aimed Shot with increased DMG.\r\nWhile aiming, flowing water will accumulate on the arrowhead. A fully charged torrential arrow will deal Hydro DMG.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Breakthrough",
+              "description": "Yelan will enter a \"Breakthrough\" state after spending 5s out of combat, which will cause her next Charged Aimed Shot to have 80% decreased charge time, and once charged, she can fire a \"Breakthrough Barb\" that will deal AoE Hydro DMG based on Yelan's Max HP.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Plunging Attack",
+              "description": "Fires off a shower of arrows in mid-air before falling and striking the ground, dealing AoE DMG upon impact.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "1-Hit DMG|{param1}%",
+            "2-Hit DMG|{param2}%",
+            "3-Hit DMG|{param3}%",
+            "4-Hit DMG|{param4}% + {param5}%",
+            "Aimed Shot|{param6}%",
+            "Fully-Charged Aimed Shot|{param7}%",
+            "Breakthrough Barb DMG|{param8}% Max HP",
+            "Plunge DMG|{param9}%",
+            "Low/High Plunge DMG|{param10}% / {param11}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Lingering Lifeline",
+          "description": "Fires off a Lifeline that allows her to move rapidly, entangling and marking opponents along its path.\r\nWhen this rapid movement ends, the Lifeline will explode, dealing Hydro DMG to the marked opponents based on Yelan's Max HP.\r\n",
+          "abilities": [
+            {
+              "name": "Tap",
+              "description": "Moves a certain distance forward swiftly.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Hold",
+              "description": "Engages in continuous, swift movement, during which Yelan's resistance to interruption is increased.\r\nDuring this time, Yelan can control this rapid movement and end it by using this Skill again.\r\nAdditionally, each opponent marked by the Lifeline when it explodes grants Yelan a 34% chance to reset her Breakthrough state.\r\n",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "Skill DMG|{param1}% Max HP",
+            "Max Duration (Hold)|{param2}s",
+            "CD|{param3}s"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Depth-Clarion Dice",
+          "description": "Deals AoE Hydro DMG and creates an \"Exquisite Throw,\" which aids her in battle.\r\n",
+          "abilities": [
+            {
+              "name": "Exquisite Throw",
+              "description": "Follows the character around and will initiate a coordinated attack under the following circumstances, dealing Hydro DMG based on Yelan's Max HP:\r\n",
+              "descriptions": [
+                "Can occur once every second when your active character uses a Normal Attack.",
+                "Will occur each time Yelan's Lifeline explodes and hits opponents."
+              ]
+            }
+          ],
+          "stats": [
+            "Skill DMG|{param1}% Max HP",
+            "Exquisite Throw DMG|{param2}% Max HP ×{param3}",
+            "Duration|{param4}s",
+            "CD|{param5}s",
+            "Energy Cost|{param6}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "Necessary Calculation",
+          "description": "Gains 25% more rewards when dispatched on a Liyue Expedition for 20 hours.\r\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
+          "title": "Turn Control",
+          "description": "When the party has 1/2/3/4 Elemental Types, Yelan's Max HP is increased by 6%/12%/18%/30%.\r\n",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "Adapt With Ease",
+          "description": "So long as an Exquisite Throw is in play, your own active character deals 1% more DMG. This increases by a further 3.5% DMG every second. The maximum increase to DMG dealt is 50%.\r\nThe pre-existing effect will be dispelled if Depth-Clarion Dice is recast during its duration.\r\n",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "Enter the Plotters",
+          "description": "Lingering Lifeline gains 1 additional charge.\r\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "Taking All Comers",
+          "description": "When Exquisite Throw conducts a coordinated attack, it will fire an additional water arrow that will deal 14% of Yelan's Max HP as Hydro DMG.\r\nThis effect can trigger once every 1.8s.\r\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "Beware the Trickster's Dice",
+          "description": "Increases the Level of Depth-Clarion Dice by 3.\r\nMaximum upgrade level is 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "Bait-and-Switch",
+          "description": "Increases all party members' Max HP by 10% for 25s for every opponent marked by Lifeline when the Lifeline explodes. A maximum increase of 40% Max HP can be attained in this manner.\r\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "Dealer's Sleight",
+          "description": "Increases the Level of Lingering Lifeline by 3.\r\nMaximum upgrade level is 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
+          "title": "Winner Takes All",
+          "description": "After using Depth-Clarion Dice, Yelan will enter the Mastermind state.\r\nIn this state, all of Yelan's Normal Attacks will be special Breakthrough Barbs. These Breakthrough Barbs will have similar abilities to normal ones and the DMG dealt will be considered Charged Attack DMG, dealing 156% of a normal Breakthrough Barb's DMG.\r\nThe Mastermind state lasts 20s and will be cleared after Yelan fires 5 arrows.\r\n",
           "descriptions": []
         }
       ]
@@ -7460,6 +7888,18 @@
       "refinements": []
     },
     {
+      "key": "aqua-simulacra",
+      "name": "Aqua Simulacra",
+      "description": "Il colore di questo arco lungo è imprevedibile. Sotto la luce acquista un brillante, acquatico color blu.",
+      "refinements": [
+        "Gli HP sono aumentati del {color}16{/color}%. Quando ci sono nemici vicini, il DMG inferto dal portatore di questa arma è aumentato del {color}20{/color}%. Questo accadrà sia che il personaggio sia sul terreno o meno.",
+        "Gli HP sono aumentati del {color}20{/color}%. Quando ci sono nemici vicini, il DMG inferto dal portatore di questa arma è aumentato del {color}25{/color}%.  Questo accadrà sia che il personaggio sia sul terreno o meno.",
+        "Gli HP sono aumentati del {color}24{/color}%. Quando ci sono nemici vicini, il DMG inferto dal portatore di questa arma è aumentato del {color}30{/color}%. Questo accadrà sia che il personaggio sia sul terreno o meno.",
+        "Gli HP sono aumentati del {color}28{/color}%. Quando ci sono nemici vicini, il DMG inferto dal portatore di questa arma è aumentato del {color}35{/color}%. Questo accadrà sia che il personaggio sia sul terreno o meno.",
+        "Gli HP sono aumentati del {color}32{/color}%. Quando ci sono nemici vicini, il DMG inferto dal portatore di questa arma è aumentato del {color}40{/color}%.  Questo accadrà sia che il personaggio sia sul terreno o meno."
+      ]
+    },
+    {
       "key": "aquila-favonia",
       "name": "Aquila Favonia",
       "description": "L'anima dei cavalieri di Favonius. Millenni dopo, richiama ancora a sé i forti venti della giustizia per sconfiggere ogni male — proprio come l'ultima eroina che l'ha impugnata.",
@@ -7760,6 +8200,18 @@
       ]
     },
     {
+      "key": "fading-twilight",
+      "name": "Fading Twilight",
+      "description": "Un arco prezioso fatto di platino, intarsiato con una sfera che luccica con la luce del vespro.",
+      "refinements": [
+        "Ha tre stati, Evengleam, Afterglow, and Dawnblaze, che aumentano il DMG inferto del {color}6%/10%/14%{/color} rispettivamente. Quando degli attacchi colpiscono i nemici, questa arma passerà allo stadio successivo. Questa arma può cambiare stato ogni 7s. Il personaggio equipaggiato con questa arma può attivare il cambio di stato anche quando non sul campo.",
+        "Ha tre stati, Evengleam, Afterglow, and Dawnblaze, che aumentano il DMG inferto del {color}7.5%/12.5%/17.5%{/color}  rispettivamente. Quando degli attacchi colpiscono i nemici, questa arma passerà allo stadio successivo. Questa arma può cambiare stato ogni 7s. Il personaggio equipaggiato con questa arma può attivare il cambio di stato anche quando non sul campo.",
+        "Ha tre stati, Evengleam, Afterglow, and Dawnblaze, che aumentano il DMG inferto del {color}9%/15%/21%{/color} rispettivamente. Quando degli attacchi colpiscono i nemici, questa arma passerà allo stadio successivo. Questa arma può cambiare stato ogni 7s. Il personaggio equipaggiato con questa arma può attivare il cambio di stato anche quando non sul campo.",
+        "Ha tre stati, Evengleam, Afterglow, and Dawnblaze, che aumentano il DMG inferto del {color}10.5%/17.5%/24.5%{/color} rispettivamente. Quando degli attacchi colpiscono i nemici, questa arma passerà allo stadio successivo. Questa arma può cambiare stato ogni 7s. Il personaggio equipaggiato con questa arma può attivare il cambio di stato anche quando non sul campo.",
+        "Ha tre stati, Evengleam, Afterglow, and Dawnblaze, che aumentano il DMG inferto del {color}12%/20%/28%{/color}  rispettivamente. Quando degli attacchi colpiscono i nemici, questa arma passerà allo stadio successivo. Questa arma può cambiare stato ogni 7s. Il personaggio equipaggiato con questa arma può attivare il cambio di stato anche quando non sul campo."
+      ]
+    },
+    {
       "key": "favonius-codex",
       "name": "Favonius Codex",
       "description": "Un tomo segreto appartenuto agli studiosi dei Cavalieri di Favonius. Descrive la logica e il potere degli elementi e della materia.",
@@ -7961,6 +8413,14 @@
         "Infliggere Elemental DMG aumenta tutti i DMG inflitti del {color}9{/color}% per 6s. Massimo 2 stacks. L'effetto può avvenire una volta ogni 1s.",
         "Infliggere Elemental DMG aumenta tutti i DMG inflitti del {color}10.5{/color}% per 6s. Massimo 2 stacks. L'effetto può avvenire una volta ogni 1s.",
         "Infliggere Elemental DMG aumenta tutti i DMG inflitti del {color}12{/color}% per 6s. Massimo 2 stacks. L'effetto può avvenire una volta ogni 1s."
+      ]
+    },
+    {
+      "key": "kagotsurube-isshin",
+      "name": "Kagotsurube Isshin",
+      "description": "This famed blade was born in a nation to the far north. But in the name of \"Isshin,\" it was stained with many a dark deed on its home-bound journey.",
+      "refinements": [
+        "When a Normal, Charged, or Plunging Attack hits an opponent, it will whip up a Hewing Gale, dealing AoE DMG equal to 180% of ATK and increasing ATK by 15% for 8s. This effect can be triggered once every 8s."
       ]
     },
     {

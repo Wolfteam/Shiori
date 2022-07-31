@@ -1147,6 +1147,93 @@
       ]
     },
     {
+      "key": "collei",
+      "name": "Collei",
+      "title": "???",
+      "description": "",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ]
+    },
+    {
       "key": "diluc",
       "name": "Diluc",
       "title": "Ombre de l'Aurore",
@@ -1418,6 +1505,93 @@
             "Bonus de 30 % de soins reçus si les PV sont à 50 % ou en dessous.",
             "Maîtrise élémentaire augmentée de 200 si les PV sont au-dessus de 50 %."
           ]
+        }
+      ]
+    },
+    {
+      "key": "dori",
+      "name": "Dori",
+      "title": "???",
+      "description": "",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
         }
       ]
     },
@@ -3258,86 +3432,133 @@
     {
       "key": "kuki-shinobu",
       "name": "Kuki Shinobu",
-      "title": "",
-      "description": "",
+      "title": "Réparatrice d'afflictions",
+      "description": "La fiable et talentueuse cheffe adjointe du gang Arataki... Veuillez noter que ces adjectifs ne s'appliquent pas au gang Arataki à son ensemble, mais seulement à sa cheffe adjointe.",
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Lame volante",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Attaque normale",
+              "description": "Enchaîne jusqu'à 4 coups d'épée.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Attaque chargée",
+              "description": "Consomme de l'endurance pour déclencher deux coups d'épée rapides.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Attaque plongeante",
+              "description": "Plonge depuis les airs pour frapper le sol, infligeant des DGT aux ennemis en chemin et des DGT de zone à l'impact.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "DGT 1er coup|{param1}%",
+            "DGT 2e coup|{param2}%",
+            "DGT 3e coup|{param3}%",
+            "DGT 4e coup|{param4}%",
+            "DGT attaque chargée|{param5}% + {param6}%",
+            "Coût d'endurance attaque chargée|{param7}",
+            "DGT durant la chute|{param8}%",
+            "DGT chute basse/élevée|{param9}% / {param10}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Anneau de consécration",
+          "description": "Sacrifie une partie des PV pour créer un anneau d'herbes de consécration qui inflige des DGT Électro aux ennemis proches.\r\n",
+          "abilities": [
+            {
+              "name": "Anneau d'herbes de consécration",
+              "description": "Suit le personnage déployé pour infliger des DGT Électro aux ennemis proches et restaurer les PV des personnages déployés à portée d'une valeur proportionnelle aux PV max de Kuki Shinobu, ces deux effets se déclenchant une fois toutes les 1,5s.\r\nLe sacrifice de PV de cette compétence ne fera pas tomber les PV de Kuki Shinobu en dessous de 20 %.\r\n",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "DGT compétence|{param1}%",
+            "Soins d'anneau d'herbes de consécration|{param2}% Max HP + {param3}",
+            "DGT anneau d'herbes de consécration|{param4}%",
+            "PV consommés|{param5}% Current HP",
+            "Durée|{param6}s",
+            "Temps de recharge|{param7}s"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
+          "title": "Rituel des semoirs de Narukami",
+          "description": "Enfonce une lame d'adjuration dans le sol pour créer une barrière qui purifie la zone de tout ce qui est malsain, infligeant de façon continue des DGT Électro aux ennemis à l'intérieur selon les PV max de Kuki Shinobu.\r\nSi les PV de Shinobu sont inférieurs ou égaux à 50 % lors de l'utilisation de cette compétence, la barrière dure plus longtemps.\r\n",
           "abilities": [],
-          "stats": []
+          "stats": [
+            "DGT uniques|{param1}% Max HP",
+            "DGT totaux|{param2}% / {param3}% Max HP",
+            "Durée|{param4}s / {param5}s",
+            "TdR|{param6}s",
+            "Énergie élémentaire|{param7}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "Prière prolongée",
+          "description": "Augmente les récompenses d'une expédition de 20 h à Inazuma de 25 %.\r\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
+          "title": "Désir libérateur",
+          "description": "Augmente le bonus de soins de 15 % quand les PV de Kuki Shinobu sont inférieurs ou égaux à 50 %.\r\n",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
+          "title": "Quiétude du cœur",
+          "description": "L'effet d'Anneau de consécration s'améliore selon la maîtrise élémentaire de Kuki Shinobu :\r\n",
+          "descriptions": [
+            "Augmente les soins de 75 % de sa maîtrise.",
+            "Augmente les DGT de 25 % de sa maîtrise."
+          ]
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "Pour cloîtrer la compassion",
+          "description": "La zone d'effet de Rituel des semoirs de Narukami augmente de 50 %.\r\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "Pour renier la fortune",
+          "description": "La durée des anneaux d'herbes de consécration augmente de 3 s.\r\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "Pour séquestrer le chagrin",
+          "description": "Niveau d'aptitude Anneau de consécration +3.\r\nNiveau max : 15\r\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "Pour rompre le scellement",
+          "description": "Lorsqu'une attaque normale, chargée ou plongeante d'un personnage affecté par un anneau d'herbes de consécration de Kuki Shinobu touche un ennemi, une marque d'herbes tonitruantes est apposée à l'emplacement de l'ennemi pour infliger des DGT Électro de zone d'une valeur équivalant à 9,7 % des PV max de Shinobu.\r\nCet effet peut être déclenché une fois toutes les 5 s.\r\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "Pour cesser les courtoisies",
+          "description": "Niveau d'aptitude Rituel des semoirs de Narukami +3.\r\nNiveau max : 15\r\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
+          "title": "Pour parer à la faiblesse",
+          "description": "Lorsque Kuki Shinobu subit des DGT mortels, elle n'est pas vaincue cette fois-ci. Cet effet se déclenche automatiquement lorsque Kuki Shinobu a 1 PV et peut être déclenché une fois toutes les 60 s.\r\nLorsque les PV de Kuki Shinobu passent sous le seuil des 25 %, sa maîtrise élémentaire augmente de 150 pts pendant 15 s. Cet effet peut être déclenché une fois toutes les 60 s.\r\n",
           "descriptions": []
         }
       ]
@@ -4980,86 +5201,139 @@
     {
       "key": "shikanoin-heizou",
       "name": "Shikanoin Heizou",
-      "title": "",
+      "title": "Harmonie analytique",
       "description": "Un jeune détective prodige de la Commission administrative, aux sens aiguisés et aux pensées claires.",
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Arts martiaux style Fudou",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Attaque normale",
+              "description": "Enchaîne jusqu'à 5 coups de poing renforcés par un vent puissant, qui infligent des DGT Anémo.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Attaque chargée",
+              "description": "Consomme de l'endurance pour exécuter un balayage qui inflige des DGT Anémo.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Attaque plongeante",
+              "description": "Plonge depuis les airs en concentrant ses pouvoirs Anémo, infligeant des DGT aux ennemis en chemin et des DGT Anémo de zone à l'impact.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "DGT 1er coup|{param1}%",
+            "DGT 2e coup|{param2}%",
+            "DGT 3e coup|{param3}%",
+            "DGT 4e coup|{param4}% + {param5}% + {param6}%",
+            "DGT 5e coup|{param7}%",
+            "DGT attaque chargée|{param8}%",
+            "Coût d'endurance attaque chargée|{param9}",
+            "DGT durant la chute|{param10}%",
+            "DGT chute basse/élevée|{param11}% / {param12}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Poing d'arrêt cardiaque",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Appui simple",
+              "description": "Contrôle les rafales de vent pour déclencher un Poing d'arrêt cardiaque qui inflige des DGT Anémo.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Appui long",
+              "description": "Charge de l'énergie pour déclencher un coup de poing encore plus puissant. L'effet Détection est obtenu pendant la charge, permettant d'augmenter la puissance du Poing d'arrêt cardiaque. Lorsque vous relâchez la compétence ou que sa charge est complète, vous frappez en avant pour infliger des DGT Anémo.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Détection",
+              "description": "Augmente les DGT du prochain Poing d'arrêt cardiaque. Cet effet peut être cumulé 4 fois maximum.\r\nAvec 4 cumuls de Détection, vous obtenez un effet de Conviction, permettant au prochain Poing d'arrêt cardiaque d'être encore plus puissant et d'avoir une zone d'effet plus grande.\r\n",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "DGT compétence|{param1}%",
+            "Bonus ATQ détection|{param2}%/stack",
+            "Bonus ATQ conviction|{param3}%",
+            "Durée détection|{param4}s",
+            "Temps de recharge|{param5}s"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
+          "title": "Coup de pied ouragan",
+          "description": "S'élance dans les airs et utilise la bombe du vide du style Fudou pour donner un coup de pied à son ennemi. La bombe du vide explose à l'impact et crée ensuite un tunnel de vent qui attire les objets et les ennemis à proximité, infligeant des DGT Anémo de zone.\r\nLorsque la bombe du vide du style Fudou touche un ennemi affecté par l'élément Hydro/Pyro/Cryo/Électro, ce dernier est affligé d'un œil du cyclone qui explose après un moment en infligeant des DGT de zone de l'élément correspondant.\r\nLa bombe du vide du style Fudou peut affecter un maximum de 4 ennemis avec un œil du cyclone, mais un même ennemi ne peut pas subir l'effet de plusieurs yeux du cyclone de différents éléments en même temps.\r\n",
           "abilities": [],
-          "stats": []
+          "stats": [
+            "DGT bombe du vide du style Fudou|{param1}%",
+            "DGT œil du cyclone|{param2}%",
+            "Temps de recharge|{param3}s",
+            "Énergie élémentaire|{param4}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "Culpabilité préexistante",
+          "description": "Réduit la consommation d'endurance des personnages de l'équipe de 20 % lors du sprint.\r\nNe peut pas être cumulé avec d'autres aptitudes passives aux effets identiques.\r\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
+          "title": "Pratique paradoxale",
+          "description": "Lorsque Shikanoin Heizou déclenche une réaction de Dispersion sur le champ de bataille, il obtient 1 cumul de Détection pour Poing d'arrêt cardiaque. Cet effet peut être déclenché une fois toutes les 0,1 s.\r\n",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "NA",
-          "description": "",
+          "title": "Raisonnement indéniable",
+          "description": "Lorsque Poing d'arrêt cardiaque a touché un ennemi, la maîtrise élémentaire de tous les personnages de l'équipe (hormis Shikanoin Heizou) augmente de 80 pts pendant 10 s.\r\n",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "Justice juvénile",
+          "description": "Pendant les 5 s qui suivent l'arrivée de Shikanoin Heizou sur le terrain, la VIT d'attaque de ses attaques normales augmente de 15 % et il obtient 1 cumul de Détection pour Poing d'arrêt cardiaque. Cet effet peut être déclenché une fois toutes les 10s.\r\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "Recueil d'enquêtes",
+          "description": "L'effet d'attraction du tunnel de vent créé par Coup de pied ouragan est amélioré, et sa durée augmente à 1 s.\r\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "Énigme inextricable",
+          "description": "Niveau d'aptitude Poing d'arrêt cardiaque +3.\r\nNiveau max : 15\r\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "Collection de calomnies",
+          "description": "Après l'explosion du premier œil du cyclone de chaque Coup de pied ouragan, Shikanoin Heizou récupère 9 pts d'énergie élémentaire, tandis que chaque explosion suivante lui permet d'en récupérer 1,5 pts supplémentaires.\r\nUn maximum de 13,5 pts d'énergie élémentaire peut être restauré de cette manière pour chaque Coup de pied ouragan.\r\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "Archives secrètes",
+          "description": "Niveau d'aptitude Coup de pied ouragan +3.\r\nNiveau max : 15\r\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
+          "title": "Dossier étrange",
+          "description": "Chaque cumul de Détection augmente le taux CRIT de Poing d'arrêt cardiaque de 4 %. Sous l'effet de Conviction, les DGT CRIT du Poing d'arrêt cardiaque augmentent de 32 %.\r\n",
           "descriptions": []
         }
       ]
@@ -5524,6 +5798,93 @@
           "key": "c6",
           "title": "Cœur brûlant",
           "description": "Lorsqu'une barrière brûlante est obtenue ou actualisée, les DGT des attaques normales, chargées et plongeantes de tous les personnages de l'équipe augmentent de 15 % pendant 6 s.\r\n",
+          "descriptions": []
+        }
+      ]
+    },
+    {
+      "key": "tighnari",
+      "name": "Tighnari",
+      "title": "???",
+      "description": "",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
           "descriptions": []
         }
       ]
@@ -6891,80 +7252,142 @@
     {
       "key": "yelan",
       "name": "Yelan",
-      "title": "",
-      "description": "",
+      "title": "Orchidée de la vallée",
+      "description": "Une mystérieuse personne qui prétend travailler pour le Bureau des affaires civiles. Cependant, elle n'apparaît nulle part dans leur registre.",
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Sagette furtive",
+          "description": "Attaque normale\r\nEnchaîne jusqu'à 4 tirs consécutifs.\r\n",
+          "abilities": [
+            {
+              "name": "Attaque chargée",
+              "description": "Effectue un tir visé plus précis infligeant davantage de DGT.\r\nLors de la visée, la flèche se charge de flux d'eau, infligeant des DGT Hydro quand elle est complètement chargée.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Percée",
+              "description": "Si l'équipe est hors combat pendant 5s, Yelan entre dans un état de Percée permettant de diminuer le temps de charge de son prochain tir visé de 80%, et une fois le tir complètement chargé, elle peut tirer une flèche perçante qui inflige des DGT Hydro de zone selon ses PV max.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Attaque plongeante",
+              "description": "Tire une pluie de flèches depuis les airs et plonge au sol, infligeant des DGT de zone à l'impact.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "DGT 1er coup|{param1}%",
+            "DGT 2e coup|{param2}%",
+            "DGT 3e coup|{param3}%",
+            "DGT 4e coup|{param4}% + {param5}%",
+            "DGT tir visé|{param6}%",
+            "DGT tir visé (pleine charge)|{param7}%",
+            "DGT flèche perçante|{param8}% Max HP",
+            "DGT durant la chute|{param9}%",
+            "DGT chute basse/élevée|{param10}% / {param11}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Ligne vitale persistante",
+          "description": "Tire une ligne vitale et court à grande vitesse, enchevêtrant et marquant les ennemis sur son chemin.\r\nÀ la fin du déplacement, la ligne vitale explose, infligeant des DGT Hydro aux ennemis marqués selon les PV max de Yelan.\r\n",
+          "abilities": [
+            {
+              "name": "Appui simple",
+              "description": "Avance rapidement sur une certaine distance.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Appui long",
+              "description": "Avance rapidement de façon continue, tout en augmentant la RÉS à l'interruption de Yelan pendant son mouvement.\r\nPendant ce déplacement, Yelan peut contrôler la direction de sa course et peut s'arrêter en utilisant à nouveau la compétence.\r\nDe plus, chaque ennemi marqué par la ligne vitale lorsqu'elle explose accorde à Yelan 34 % de chances d'obtenir un état de Percée.\r\n",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "DGT compétence|{param1}% Max HP",
+            "Durée max (appui long)|{param2}s",
+            "Temps de recharge|{param3}s"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Dé exquis des profondeurs",
+          "description": "Inflige des DGT Hydro de zone et crée un dé exquis pour aider en combat.\r\n",
+          "abilities": [
+            {
+              "name": "Dé exquis",
+              "description": "Suit le personnage et déclenche une attaque coordonnée dans les circonstances suivantes, infligeant des DGT Hydro selon les PV max de Yelan :\r\n",
+              "descriptions": [
+                "Chaque fois qu'un personnage déployé utilise une attaque normale, cet effet pouvant être déclenché une fois toutes les secondes.",
+                "Chaque fois que la ligne vitale de Yelan explose et touche des ennemis."
+              ]
+            }
+          ],
+          "stats": [
+            "DGT compétence|{param1}% Max HP",
+            "DGT dé exquis|{param2}% Max HP ×{param3}",
+            "Durée|{param4}s",
+            "Temps de recharge|{param5}s",
+            "Énergie élémentaire|{param6}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "Longue considération",
+          "description": "Augmente les récompenses d'une expédition de 20 h à Liyue de 25 %.\r\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
+          "title": "Contrôle stratégique",
+          "description": "Si l'équipe comprend des personnages de 1/2/3/4 types élémentaires, les PV max de Yelan augmentent de 6 %/12%/18 %/30 %.\r\n",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "Adaptation aisée",
+          "description": "Tant qu'un dé exquis est en combat, les DGT infligés par le personnage déployé augmentent de 1 %, puis de 3,5% supplémentaires toutes les secondes. Les DGT peuvent être augmentés jusqu'à 50 % maximum de cette manière.\r\nUtiliser à nouveau Dé exquis des profondeurs pendant la durée de l'effet décrit ci-dessus dissipera ce dernier.\r\n",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "Tricheur en jeu",
+          "description": "Confère une charge supplémentaire pour Ligne vitale persistante.\r\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "Offert par la maison",
+          "description": "Lorsqu'un dé exquis déclenche une attaque coordonnée, une flèche d'eau supplémentaire est envoyée pour infliger des DGT Hydro équivalant à 14 % des PV max de Yelan.\r\nCet effet peut être déclenché une fois toutes les 1,8 s.\r\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "Dé pipé",
+          "description": "Niveau d'aptitude Dé exquis des profondeurs +3.\r\nNiveau max : 15\r\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "Tour de passe-passe",
+          "description": "Augmente les PV max de tous les personnages de l'équipe de 10 % pendant 25 s pour chaque ennemi marqué par la ligne vitale lorsqu'elle explose. Les PV max peuvent être augmentés jusqu'à 40 % de cette manière.\r\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "Dextérité de la croupière",
+          "description": "Niveau d'aptitude Ligne vitale persistante +3.\r\nNiveau max : 15\r\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
+          "title": "Tout pour le vainqueur",
+          "description": "Après avoir utilisé Dé exquis des profondeurs, Yelan entre dans un état de Stratège.\r\nSes attaques normales deviennent alors des flèches perçantes spéciales. Ces flèches possèdent les mêmes capacités que les flèches perçantes normales, et les DGT qu'elles infligent sont considérés comme des DGT d'attaque chargée infligeant 156% des DGT des flèches perçantes normales.\r\nL'état de Stratège dure 20 s maximum ou est annulé après avoir tiré 5 flèches.\r\n",
           "descriptions": []
         }
       ]
@@ -7474,6 +7897,18 @@
       "refinements": []
     },
     {
+      "key": "aqua-simulacra",
+      "name": "Simulacre d'eau",
+      "description": "La couleur de cet arc long est imprévisible. Sous la lumière, il prend un bleu lustré et aqueux.",
+      "refinements": [
+        "Les PV sont augmentés de {color}16{/color}%. Si des ennemis sont proches, les DGT infligés par le personnage équipé de l'arme augmentent de {color}20{/color}%, qu'il soit déployé ou non.",
+        "Les PV sont augmentés de {color}20{/color}%. Si des ennemis sont proches, les DGT infligés par le personnage équipé de l'arme augmentent de {color}25{/color}%, qu'il soit déployé ou non.",
+        "Les PV sont augmentés de {color}24{/color}%. Si des ennemis sont proches, les DGT infligés par le personnage équipé de l'arme augmentent de {color}30{/color}%, qu'il soit déployé ou non.",
+        "Les PV sont augmentés de {color}28{/color}%. Si des ennemis sont proches, les DGT infligés par le personnage équipé de l'arme augmentent de {color}35{/color}%, qu'il soit déployé ou non.",
+        "Les PV sont augmentés de {color}32{/color}%. Si des ennemis sont proches, les DGT infligés par le personnage équipé de l'arme augmentent de {color}40{/color}%, qu'il soit déployé ou non."
+      ]
+    },
+    {
       "key": "aquila-favonia",
       "name": "Épée du faucon",
       "description": "L'âme de l'Ordre de Favonius. Même après des millénaires, elle continue d'appeler le vent de la justice pour venir à bout du mal – tout comme la dernière héroïne à qui elle appartenait.",
@@ -7774,6 +8209,18 @@
       ]
     },
     {
+      "key": "fading-twilight",
+      "name": "Crépuscule couchant",
+      "description": "Un arc précieux en platine, incrusté d'un orbe qui scintille à la lumière du soir.",
+      "refinements": [
+        "Cette arme possède trois états (crépuscule, rémanence et aube) qui augmentent respectivement les DGT infligés de {color}6%/10%/14%{/color}. Lorsqu'une attaque a touché un ennemi, l'arme passe à l'état suivant. Un changement d'état peut être déclenché une fois toutes les 7 s, même si le personnage équipé de l'arme fait partie de l'équipe mais n'est pas déployé.",
+        "Cette arme possède trois états (crépuscule, rémanence et aube) qui augmentent respectivement les DGT infligés de {color}7,5%/12,5%/17,5%{/color}. Lorsqu'une attaque a touché un ennemi, l'arme passe à l'état suivant. Un changement d'état peut être déclenché une fois toutes les 7 s, même si le personnage équipé de l'arme fait partie de l'équipe mais n'est pas déployé.",
+        "Cette arme possède trois états (crépuscule, rémanence et aube) qui augmentent respectivement les DGT infligés de {color}9%/15%/21%{/color}. Lorsqu'une attaque a touché un ennemi, l'arme passe à l'état suivant. Un changement d'état peut être déclenché une fois toutes les 7 s, même si le personnage équipé de l'arme fait partie de l'équipe mais n'est pas déployé.",
+        "Cette arme possède trois états (crépuscule, rémanence et aube) qui augmentent respectivement les DGT infligés de {color}10,5%/17,5%/24,5%{/color}. Lorsqu'une attaque a touché un ennemi, l'arme passe à l'état suivant. Un changement d'état peut être déclenché une fois toutes les 7 s, même si le personnage équipé de l'arme fait partie de l'équipe mais n'est pas déployé.",
+        "Cette arme possède trois états (crépuscule, rémanence et aube) qui augmentent respectivement les DGT infligés de {color}12%/20%/28%{/color}. Lorsqu'une attaque a touché un ennemi, l'arme passe à l'état suivant. Un changement d'état peut être déclenché une fois toutes les 7 s, même si le personnage équipé de l'arme fait partie de l'équipe mais n'est pas déployé."
+      ]
+    },
+    {
       "key": "favonius-codex",
       "name": "Code de Favonius",
       "description": "Un ouvrage autrefois utilisé par les savants de l'Ordre de Favonius. Il décrit la logique régissant les éléments et la matière, ainsi que leur puissance.",
@@ -7931,14 +8378,14 @@
     },
     {
       "key": "haran-geppaku-futsu",
-      "name": "Haran Geppaku Futsu",
+      "name": "Lune ondulante de Futsu",
       "description": "Une œuvre célèbre des forgerons de la lignée des Futsu. Son nom renvoie aux vagues violentes de la mer qui se déchaînent sous une nuit de pleine lune.",
       "refinements": [
         "Accorde un bonus de DGT élémentaires de {color}12{/color} %. Lorsqu'un autre personnage de l'équipe à proximité utilise une compétence élémentaire, le personnage équipé de cette arme obtient 1 cumul de Pic de vague. Cet effet peut être cumulé 2 fois maximum et déclenché une fois toutes les 0,3 s. Lorsque le personnage équipé de l'arme utilise une compétence élémentaire, tous les cumuls de Pic de vague sont consommés pour accorder un effet de Tumulte, augmentant les DGT d'attaque normale de {color}20{/color} % pour chaque cumul de Pic de vague consommé, pendant 8 s.",
         "Accorde un bonus de DGT élémentaires de {color}15{/color} %. Lorsqu'un autre personnage de l'équipe à proximité utilise une compétence élémentaire, le personnage équipé de cette arme obtient 1 cumul de Pic de vague. Cet effet peut être cumulé 2 fois maximum et déclenché une fois toutes les 0,3 s. Lorsque le personnage équipé de l'arme utilise une compétence élémentaire, tous les cumuls de Pic de vague sont consommés pour accorder un effet de Tumulte, augmentant les DGT d'attaque normale de {color}25{/color} % pour chaque cumul de Pic de vague consommé, pendant 8 s.",
         "Accorde un bonus de DGT élémentaires de {color}18{/color} %. Lorsqu'un autre personnage de l'équipe à proximité utilise une compétence élémentaire, le personnage équipé de cette arme obtient 1 cumul de Pic de vague. Cet effet peut être cumulé 2 fois maximum et déclenché une fois toutes les 0,3 s. Lorsque le personnage équipé de l'arme utilise une compétence élémentaire, tous les cumuls de Pic de vague sont consommés pour accorder un effet de Tumulte, augmentant les DGT d'attaque normale de {color}30{/color} % pour chaque cumul de Pic de vague consommé, pendant 8 s.",
         "Accorde un bonus de DGT élémentaires de {color}21{/color} %. Lorsqu'un autre personnage de l'équipe à proximité utilise une compétence élémentaire, le personnage équipé de cette arme obtient 1 cumul de Pic de vague. Cet effet peut être cumulé 2 fois maximum et déclenché une fois toutes les 0,3 s. Lorsque le personnage équipé de l'arme utilise une compétence élémentaire, tous les cumuls de Pic de vague sont consommés pour accorder un effet de Tumulte, augmentant les DGT d'attaque normale de {color}35{/color} % pour chaque cumul de Pic de vague consommé, pendant 8 s.",
-        "Accorde un bonus de DGT élémentaires de {color}24{/color}%. Lorsqu'un autre personnage de l'équipe à proximité utilise une compétence élémentaire, le personnage équipé de cette arme obtient 1 cumul de Pic de vague. Cet effet peut être cumulé 2 fois maximum et déclenché une fois toutes les 0,3 s. Lorsque le personnage équipé de l'arme utilise une compétence élémentaire, tous les cumuls de Pic de vague sont consommés pour accorder un effet de Tumulte, augmentant les DGT d'attaque normale de {color}40{/color} % pour chaque cumul de Pic de vague consommé, pendant 8 s."
+        "Accorde un bonus de DGT élémentaires de {color}24{/color} %. Lorsqu'un autre personnage de l'équipe à proximité utilise une compétence élémentaire, le personnage équipé de cette arme obtient 1 cumul de Pic de vague. Cet effet peut être cumulé 2 fois maximum et déclenché une fois toutes les 0,3 s. Lorsque le personnage équipé de l'arme utilise une compétence élémentaire, tous les cumuls de Pic de vague sont consommés pour accorder un effet de Tumulte, augmentant les DGT d'attaque normale de {color}40{/color} % pour chaque cumul de Pic de vague consommé, pendant 8 s."
       ]
     },
     {
@@ -7975,6 +8422,14 @@
         "Lorsque vous infligez des DGT élémentaires à vos ennemis, tous les DGT infligés par ce personnage augmentent de {color}9{/color} % pendant 6 s. Cet effet peut être cumulé 2 fois et déclenché une fois toutes les secondes.",
         "Lorsque vous infligez des DGT élémentaires à vos ennemis, tous les DGT infligés par ce personnage augmentent de {color}10{/color},5 % pendant 6 s. Cet effet peut être cumulé 2 fois et déclenché une fois toutes les secondes.",
         "Lorsque vous infligez des DGT élémentaires à vos ennemis, tous les DGT infligés par ce personnage augmentent de {color}12{/color} % pendant 6 s. Cet effet peut être cumulé 2 fois et déclenché une fois toutes les secondes."
+      ]
+    },
+    {
+      "key": "kagotsurube-isshin",
+      "name": "Kagotsurube Isshin",
+      "description": "Cette célèbre lame est née dans une nation du grand nord. Mais au nom de l'Isshin, elle a été souillée de nombreux actes néfastes lors de son voyage de retour.",
+      "refinements": [
+        "Lorsqu'une attaque normale, chargée ou plongeante touche un ennemi, elle déclenche une rafale de mistral, infligeant des DGT de zone équivalant à 180 % de l'ATQ et augmentant l'ATQ de 15 % pendant 8 s. Cet effet peut être déclenché une fois toutes les 8 s."
       ]
     },
     {

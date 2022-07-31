@@ -1,5 +1,19 @@
 # Changelog
 
+## 1.4.5+65 (13/07/2022)
+- Heizou
+
+
+## 1.4.2+62 (21/06/2022)
+- Cookie
+
+
+## 1.4.0+60 (31/05/2022)
+- Banner History
+- Charts
+- Yelan
+
+
 ## 1.3.3+54 (30/03/2022)
 - The onii sama is here
 

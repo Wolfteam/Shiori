@@ -36,7 +36,7 @@ class NotificationsBloc extends Bloc<NotificationsEvent, NotificationsState> {
   }
 
   NotificationsState _buildInitialState() {
-    final notifications = _dataService.getAllNotifications();
+    final notifications = _dataService.notifications.getAllNotifications();
     return NotificationsState.initial(
       notifications: notifications,
       useTwentyFourHoursFormat: _settingsService.useTwentyFourHoursFormat,
@@ -44,7 +44,7 @@ class NotificationsBloc extends Bloc<NotificationsEvent, NotificationsState> {
   }
 
   Future<NotificationsState> _deleteNotification(int key, AppNotificationType type) async {
-    await _dataService.deleteNotification(key, type);
+    await _dataService.notifications.deleteNotification(key, type);
     await _notificationService.cancelNotification(key, type);
     final notifications = [...state.notifications];
     notifications.removeWhere((el) => el.key == key && el.type == type);
@@ -53,7 +53,7 @@ class NotificationsBloc extends Bloc<NotificationsEvent, NotificationsState> {
   }
 
   Future<NotificationsState> _resetNotification(int key, AppNotificationType type) async {
-    final notif = await _dataService.resetNotification(key, type, _settingsService.serverResetTime);
+    final notif = await _dataService.notifications.resetNotification(key, type, _settingsService.serverResetTime);
     await _notificationService.cancelNotification(key, type);
     await _notificationService.scheduleNotification(key, type, notif.title, notif.body, notif.completesAt);
     await _telemetryService.trackNotificationRestarted(type);
@@ -61,7 +61,7 @@ class NotificationsBloc extends Bloc<NotificationsEvent, NotificationsState> {
   }
 
   Future<NotificationsState> _stopNotification(int key, AppNotificationType type) async {
-    final notif = await _dataService.stopNotification(key, type);
+    final notif = await _dataService.notifications.stopNotification(key, type);
     await _notificationService.cancelNotification(key, type);
     await _telemetryService.trackNotificationStopped(type);
     return _afterUpdatingNotification(notif);
@@ -76,7 +76,7 @@ class NotificationsBloc extends Bloc<NotificationsEvent, NotificationsState> {
   }
 
   Future<NotificationsState> _reduceHours(int key, AppNotificationType type, int hours) async {
-    final notif = await _dataService.reduceNotificationHours(key, type, hours);
+    final notif = await _dataService.notifications.reduceNotificationHours(key, type, hours);
     await _notificationService.cancelNotification(key, type);
     await _notificationService.scheduleNotification(key, type, notif.title, notif.body, notif.completesAt);
     return _afterUpdatingNotification(notif);

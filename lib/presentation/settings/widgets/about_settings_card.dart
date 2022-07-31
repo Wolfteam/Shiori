@@ -7,13 +7,12 @@ import 'package:shiori/application/bloc.dart';
 import 'package:shiori/domain/app_constants.dart';
 import 'package:shiori/generated/l10n.dart';
 import 'package:shiori/presentation/donations/donations_bottom_sheet.dart';
+import 'package:shiori/presentation/settings/widgets/settings_card.dart';
 import 'package:shiori/presentation/shared/dialogs/changelog_dialog.dart';
 import 'package:shiori/presentation/shared/loading.dart';
 import 'package:shiori/presentation/shared/shiori_icons.dart';
 import 'package:shiori/presentation/shared/styles.dart';
 import 'package:url_launcher/url_launcher.dart';
-
-import 'settings_card.dart';
 
 class AboutSettingsCard extends StatelessWidget {
   @override
@@ -95,6 +94,15 @@ class AboutSettingsCard extends StatelessWidget {
                         splashRadius: Styles.mediumButtonSplashRadius,
                         icon: const Icon(Icons.list_alt, color: Colors.blueGrey),
                         onPressed: () => showDialog(context: context, builder: (ctx) => const ChangelogDialog()),
+                      ),
+                    ),
+                    Tooltip(
+                      message: 'Twitter',
+                      child: IconButton(
+                        splashRadius: Styles.mediumButtonSplashRadius,
+                        icon: const Icon(Shiori.twitter),
+                        color: Colors.blue,
+                        onPressed: () => _launchUrl('https://twitter.com/GenshinShiori'),
                       ),
                     ),
                     Tooltip(
@@ -181,8 +189,8 @@ class AboutSettingsCard extends StatelessWidget {
   }
 
   Future<void> _launchUrl(String url) async {
-    if (await canLaunch(url)) {
-      await launch(url);
+    if (await canLaunchUrl(Uri.parse(url))) {
+      await launchUrl(Uri.parse(url), mode: LaunchMode.externalNonBrowserApplication);
     }
   }
 

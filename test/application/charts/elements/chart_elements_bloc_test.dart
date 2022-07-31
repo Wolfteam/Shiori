@@ -28,7 +28,7 @@ void main() {
 
     return Future(() async {
       await _genshinService.init(AppLanguageType.english);
-      _versions = _genshinService.getBannerHistoryVersions(SortDirectionType.asc);
+      _versions = _genshinService.bannerHistory.getBannerHistoryVersions(SortDirectionType.asc);
     });
   });
 
@@ -49,8 +49,8 @@ void main() {
         final secondLastVersion = _versions.first + 8 * gameVersionIncrementsBy;
         return [
           ChartElementsState.loaded(
-            elements: _genshinService.getElementsForCharts(_versions.first, firstLastVersion),
-            filteredElements: _genshinService.getElementsForCharts(_versions.first, firstLastVersion),
+            elements: _genshinService.bannerHistory.getElementsForCharts(_versions.first, firstLastVersion),
+            filteredElements: _genshinService.bannerHistory.getElementsForCharts(_versions.first, firstLastVersion),
             firstVersion: _versions.first,
             lastVersion: firstLastVersion,
             maxNumberOfColumns: 10,
@@ -60,8 +60,8 @@ void main() {
             canGoToPreviousPage: false,
           ),
           ChartElementsState.loaded(
-            elements: _genshinService.getElementsForCharts(_versions.first, secondLastVersion),
-            filteredElements: _genshinService.getElementsForCharts(_versions.first, secondLastVersion),
+            elements: _genshinService.bannerHistory.getElementsForCharts(_versions.first, secondLastVersion),
+            filteredElements: _genshinService.bannerHistory.getElementsForCharts(_versions.first, secondLastVersion),
             firstVersion: _versions.first,
             lastVersion: secondLastVersion,
             maxNumberOfColumns: 8,
@@ -104,7 +104,7 @@ void main() {
       expect: () {
         final fromVersion = _versions.first;
         final untilVersion = fromVersion + 4 * gameVersionIncrementsBy;
-        final elements = _genshinService.getElementsForCharts(fromVersion, untilVersion);
+        final elements = _genshinService.bannerHistory.getElementsForCharts(fromVersion, untilVersion);
         final filteredElements = elements.where((el) => el.type == ElementType.electro || el.type == ElementType.anemo).toList();
         return [
           ChartElementsState.loaded(
@@ -134,7 +134,7 @@ void main() {
       expect: () {
         final fromVersion = _versions.first;
         final untilVersion = fromVersion + 4 * gameVersionIncrementsBy;
-        final elements = _genshinService.getElementsForCharts(fromVersion, untilVersion);
+        final elements = _genshinService.bannerHistory.getElementsForCharts(fromVersion, untilVersion);
         return [
           ChartElementsState.loaded(
             firstVersion: fromVersion,
@@ -163,7 +163,7 @@ void main() {
       expect: () {
         final fromVersion = (_versions.first + gameVersionIncrementsBy).truncateToDecimalPlaces();
         final untilVersion = fromVersion + 4 * gameVersionIncrementsBy;
-        final elements = _genshinService.getElementsForCharts(fromVersion, untilVersion);
+        final elements = _genshinService.bannerHistory.getElementsForCharts(fromVersion, untilVersion);
         return [
           ChartElementsState.loaded(
             firstVersion: fromVersion,
@@ -210,7 +210,7 @@ void main() {
       expect: () {
         final fromVersion = _versions.first;
         final untilVersion = fromVersion + 4 * gameVersionIncrementsBy;
-        final elements = _genshinService.getElementsForCharts(fromVersion, untilVersion);
+        final elements = _genshinService.bannerHistory.getElementsForCharts(fromVersion, untilVersion);
         return [
           ChartElementsState.loaded(
             firstVersion: fromVersion,
@@ -258,7 +258,7 @@ void main() {
       expect: () {
         final fromVersion = _versions.first;
         final untilVersion = fromVersion + 4 * gameVersionIncrementsBy;
-        final elements = _genshinService.getElementsForCharts(fromVersion, untilVersion);
+        final elements = _genshinService.bannerHistory.getElementsForCharts(fromVersion, untilVersion);
         return [
           ChartElementsState.loaded(
             firstVersion: fromVersion,
@@ -304,7 +304,7 @@ void main() {
       expect: () {
         final fromVersion = _versions.last - 4 * gameVersionIncrementsBy;
         final untilVersion = _versions.last;
-        final elements = _genshinService.getElementsForCharts(fromVersion, untilVersion);
+        final elements = _genshinService.bannerHistory.getElementsForCharts(fromVersion, untilVersion);
         return [
           ChartElementsState.loaded(
             firstVersion: fromVersion,

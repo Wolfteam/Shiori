@@ -14,7 +14,7 @@ part 'url_page_state.dart';
 
 class UrlPageBloc extends Bloc<UrlPageEvent, UrlPageState> {
   final wishSimulatorUrl = 'https://gi-wish-simulator.uzairashraf.dev';
-  final officialMapUrl = 'https://webstatic-sea.mihoyo.com/app/ys-map-sea/index.html';
+  final officialMapUrl = 'https://act.hoyolab.com/ys/app/interactive-map/index.html';
   final unofficialMapUrl = 'https://genshin-impact-map.appsample.com';
   final dailyCheckInUrl = 'https://webstatic-sea.mihoyo.com/ys/event/signin-sea/index.html?act_id=e202102251931481';
 

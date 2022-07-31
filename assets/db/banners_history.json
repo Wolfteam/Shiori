@@ -827,6 +827,111 @@
         "favonius-warbow"
       ],
       "version": 2.6
+    },
+    {
+      "type": "character",
+      "from": "2022-05-31T00:00:00",
+      "until": "2022-06-21T00:00:00",
+      "itemKeys": [
+        "yelan",
+        "barbara",
+        "yanfei",
+        "noelle"
+      ],
+      "version": 2.7
+    },
+    {
+      "type": "character",
+      "from": "2022-05-31T00:00:00",
+      "until": "2022-06-21T00:00:00",
+      "itemKeys": [
+        "xiao",
+        "barbara",
+        "yanfei",
+        "noelle"
+      ],
+      "version": 2.7
+    },
+    {
+      "type": "weapon",
+      "from": "2022-05-31T00:00:00",
+      "until": "2022-06-21T00:00:00",
+      "itemKeys": [
+        "aqua-simulacra",
+        "primordial-jade-winged-spear",
+        "lithic-spear",
+        "eye-of-perception",
+        "favonius-greatsword",
+        "sacrificial-bow",
+        "sacrificial-sword"
+      ],
+      "version": 2.7
+    },
+    {
+      "type": "character",
+      "from": "2022-06-21T00:00:00",
+      "until": "2022-07-12T00:00:00",
+      "itemKeys": [
+        "arataki-itto",
+        "kuki-shinobu",
+        "chongyun",
+        "gorou"
+      ],
+      "version": 2.7
+    },
+    {
+      "type": "weapon",
+      "from": "2022-06-21T00:00:00",
+      "until": "2022-07-12T00:00:00",
+      "itemKeys": [
+        "redhorn-stonethresher",
+        "memory-of-dust",
+        "lithic-blade",
+        "lions-roar",
+        "dragons-bane",
+        "sacrificial-fragments",
+        "the-stringless"
+      ],
+      "version": 2.7
+    },
+    {
+      "type": "character",
+      "from": "2022-07-13T00:00:00",
+      "until": "2022-08-02T00:00:00",
+      "itemKeys": [
+        "kaedehara-kazuha",
+        "shikanoin-heizou",
+        "ningguang",
+        "thoma"
+      ],
+      "version": 2.8
+    },
+    {
+      "type": "character",
+      "from": "2022-07-13T00:00:00",
+      "until": "2022-08-02T00:00:00",
+      "itemKeys": [
+        "klee",
+        "shikanoin-heizou",
+        "ningguang",
+        "thoma"
+      ],
+      "version": 2.8
+    },
+    {
+      "type": "weapon",
+      "from": "2022-07-13T00:00:00",
+      "until": "2022-08-02T00:00:00",
+      "itemKeys": [
+        "freedom-sworn",
+        "lost-prayer-to-the-sacred-winds",
+        "the-alley-flash",
+        "mitternachts-waltz",
+        "rainslasher",
+        "favonius-lance",
+        "the-widsith"
+      ],
+      "version": 2.8
     }
   ]
 }

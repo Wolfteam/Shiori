@@ -42,7 +42,7 @@ void main() {
       build: () => CharactersPerRegionBloc(_genshinService),
       act: (bloc) => bloc.add(const CharactersPerRegionEvent.init(type: RegionType.inazuma)),
       expect: () {
-        final items = _genshinService.getCharactersForItemsByRegion(RegionType.inazuma);
+        final items = _genshinService.characters.getCharactersForItemsByRegion(RegionType.inazuma);
         return [CharactersPerRegionState.loaded(regionType: RegionType.inazuma, items: items)];
       },
     );

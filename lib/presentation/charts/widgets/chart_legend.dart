@@ -25,7 +25,7 @@ class ChartLegendIndicator extends StatelessWidget {
   final double size;
   final Function? tap;
   final bool expandText;
-  final bool lineThrough;
+  final bool selected;
   final double? width;
 
   const ChartLegendIndicator({
@@ -35,7 +35,7 @@ class ChartLegendIndicator extends StatelessWidget {
     this.size = 16,
     this.tap,
     this.expandText = true,
-    this.lineThrough = false,
+    this.selected = false,
     this.width,
   }) : super(key: key);
 
@@ -45,7 +45,6 @@ class ChartLegendIndicator extends StatelessWidget {
       fontSize: size,
       fontWeight: FontWeight.bold,
       color: Colors.grey,
-      decoration: lineThrough ? TextDecoration.lineThrough : null,
       decorationThickness: 3,
     );
     return Container(
@@ -64,6 +63,7 @@ class ChartLegendIndicator extends StatelessWidget {
                   color: color,
                   borderRadius: BorderRadius.circular(5),
                 ),
+                child: selected ? Icon(Icons.check_circle_outline, size: size / 1.2) : null,
               ),
               const SizedBox(width: 4),
               if (expandText)

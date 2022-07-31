@@ -102,6 +102,7 @@ List<StatType> getWeaponPossibleAscensionStats() {
     StatType.anemoDmgBonusPercentage,
     StatType.healingBonusPercentage,
     StatType.def,
+    StatType.dendroDmgBonusPercentage,
   ];
 
   return StatType.values.except(ignoredSubStats).toList();
@@ -124,6 +125,8 @@ List<StatType> getCharacterPossibleAscensionStats() {
     StatType.physDmgPercentage,
     StatType.atkPercentage,
     StatType.defPercentage,
+    //TODO: UNCOMMENT THIS ONE ON 3.0
+    // StatType.dendroDmgBonusPercentage,
   ];
 }
 

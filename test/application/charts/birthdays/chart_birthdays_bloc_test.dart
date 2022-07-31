@@ -38,7 +38,7 @@ void main() {
     build: () => ChartBirthdaysBloc(_genshinService),
     act: (bloc) => bloc.add(const ChartBirthdaysEvent.init()),
     expect: () {
-      final birthdays = _genshinService.getCharacterBirthdaysForCharts();
+      final birthdays = _genshinService.characters.getCharacterBirthdaysForCharts();
       return [ChartBirthdaysState.loaded(birthdays: birthdays)];
     },
   );

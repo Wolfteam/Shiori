@@ -130,10 +130,10 @@ void main() {
       bloc.state.map(
         loading: (_) => throw Exception('Invalid state'),
         loaded: (state) {
-          final charMaterials = _genshinService.getCharacterAscensionMaterials(day);
-          final weaponMaterials = _genshinService.getWeaponAscensionMaterials(day);
+          final charMaterials = _genshinService.characters.getCharacterAscensionMaterials(day);
+          final weaponMaterials = _genshinService.weapons.getWeaponAscensionMaterials(day);
           final now = DateTime.now();
-          final charsForBirthday = _genshinService.getCharacterBirthdays(month: now.month, day: now.day);
+          final charsForBirthday = _genshinService.characters.getCharacterBirthdays(month: now.month, day: now.day);
           _checkState(state, AppServerResetTimeType.northAmerica, checkServerDate: false);
           expect(state.charAscMaterials.length, charMaterials.length);
           expect(state.weaponAscMaterials.length, weaponMaterials.length);

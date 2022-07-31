@@ -7,8 +7,8 @@ import 'package:shiori/presentation/shared/loading.dart';
 
 const _script = '''
     let wasRemoved = false;
-    function removeAds(){
-      //console.log("Removing ads..");
+    function removeAdsFromOfficialMap(){
+      console.log("Removing ads..");
       let topNav = document.getElementById("topnav");
       if (topNav) {
         topNav.remove();
@@ -44,6 +44,53 @@ const _script = '''
         document.getElementsByClassName("mhy-hoyolab-app-header")[0].remove();
       }
     }
+    
+    function removeAdsFromUnofficialMap() {
+      try {
+        const ad1 = document.getElementsByClassName('MapLayout_BottomAd');
+        if (ad1.length > 0)
+          ad1[0].remove();
+          
+        const ad2 = document.getElementsByClassName('MapLayout_BottomMobiAd');
+        if (ad2.length > 0)
+          ad2[0].remove();
+          
+        const appbars = document.getElementsByClassName('MuiAppBar-root');
+        if (appbars.length > 1)
+          appbars[1].remove();
+          
+        const buttons = document.getElementsByClassName('MuiTab-root');
+        if (buttons.length > 0) {
+          buttons[2].remove();
+          buttons[1].remove();
+        }
+        
+        const extraButtons = document.getElementsByClassName('TopNav');
+        if (extraButtons.length > 0) {
+          for (var i = 0; i < extraButtons.length; i++){
+             extraButtons[i].remove();
+          } 
+        }
+        
+        const hrs = document.getElementsByClassName("mt-4");
+        if (hrs.length > 0) {
+          const hr = hrs[0];
+          const parent = hr.parentElement;
+          for (var i = 0; i < 3; i++) {
+            parent.lastElementChild.remove();
+          }
+          hr.remove();
+        }
+      }
+      catch(_){
+      }
+    }
+    
+    function removeAds() {
+      removeAdsFromOfficialMap();
+      removeAdsFromUnofficialMap();
+    }
+    
     setTimeout(removeAds, 500);
     setTimeout(removeAds, 1000);
     setTimeout(removeAds, 2000);

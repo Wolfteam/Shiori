@@ -1144,6 +1144,93 @@
       ]
     },
     {
+      "key": "collei",
+      "name": "Collei",
+      "title": "???",
+      "description": "",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ]
+    },
+    {
       "key": "diluc",
       "name": "ディルック",
       "title": "アカツキの裏面",
@@ -1415,6 +1502,93 @@
             "HPが50%以下の時、受ける治療効果+30%。",
             "HPが50%を超えている時、元素熟知+200。"
           ]
+        }
+      ]
+    },
+    {
+      "key": "dori",
+      "name": "Dori",
+      "title": "???",
+      "description": "",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
         }
       ]
     },
@@ -3256,86 +3430,133 @@
     {
       "key": "kuki-shinobu",
       "name": "久岐忍",
-      "title": "",
-      "description": "",
+      "title": "煩悩刈除",
+      "description": "有能で信頼できる「荒瀧派」の二番手——注：「有能」と「信頼できる」は「荒瀧派」ではなく、二番手のことを表している。",
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "通常攻撃·忍流飛刃斬り",
+          "description": "",
+          "abilities": [
+            {
+              "name": "通常攻撃",
+              "description": "剣による最大4段の連続攻撃を行う。\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "重撃",
+              "description": "一定のスタミナを消費し、前方に斬撃を2回放つ。\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "落下攻撃",
+              "description": "空中から落下し地面に衝撃を与える。経路上の敵を攻撃し、落下時に範囲ダメージを与える。",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "1段ダメージ|{param1}%",
+            "2段ダメージ|{param2}%",
+            "3段ダメージ|{param3}%",
+            "4段ダメージ|{param4}%",
+            "重撃ダメージ|{param5}% + {param6}%",
+            "重撃スタミナ消費|{param7}",
+            "落下期間のダメージ|{param8}%",
+            "低空/高空落下攻撃ダメージ|{param9}% / {param10}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "越祓雷草の輪",
+          "description": "越祓草輪を編み、一定のHPを消費して周囲の敵に雷元素ダメージを与える。\r\n",
+          "abilities": [
+            {
+              "name": "越祓草輪",
+              "description": "フィールド上のキャラクターと共に移動する。1.5秒毎に周囲の敵に雷元素ダメージを与え、範囲内のフィールド上キャラクターのHPを回復する。回復量は久岐忍のHP上限によって決まる。\r\nスキル発動によるHP消費によって、久岐忍の残りHPが20%を下回ることはない。\r\n",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "スキルダメージ|{param1}%",
+            "越祓草輪治療量|{param2}% Max HP + {param3}",
+            "越祓草輪ダメージ|{param4}%",
+            "スキル消費|{param5}% Current HP",
+            "継続時間|{param6}s",
+            "クールタイム|{param7}s"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
+          "title": "御詠鳴神刈山祭",
+          "description": "退邪の刃を地面に突き刺し、邪悪なるものを祓う結界を前方に張って、その中にいる敵に雷元素ダメージを継続的に与える。ダメージ量は久岐忍のHP上限によって決まる。\r\n発動時、久岐忍のHPが50%以下の際、結界の継続時間が延びる。\r\n",
           "abilities": [],
-          "stats": []
+          "stats": [
+            "1回のダメージ|{param1}% Max HP",
+            "合計ダメージ|{param2}% / {param3}% Max HP",
+            "継続時間|{param4}s / {param5}s",
+            "クールタイム|{param6}s",
+            "元素エネルギー|{param7}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "永き刻の祈り",
+          "description": "稲妻で20時間かかる探索任務を完了した時、獲得する報酬+25%。\r\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
+          "title": "檻を破る志",
+          "description": "久岐忍のHPが50%以下の時、与える治療効果+15%。\r\n",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
+          "title": "安心の処",
+          "description": "久岐忍の元素熟知を基準に、越祓雷草の輪は以下の強化を得る。\r\n",
+          "descriptions": [
+            "アップする治療量：元素熟知の75%。",
+            "アップするダメージ量：元素熟知の25%。"
+          ]
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "捨て去りし憐憫の心",
+          "description": "御詠鳴神刈山祭の影響範囲+50%。\r\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "捨て去りし僥倖の心",
+          "description": "越祓草輪の継続時間+3秒。\r\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "捨て去りし苦痛の心",
+          "description": "越祓雷草の輪のスキルLv.+3。\r\n最大Lv.15まで。\r\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "捨て去りし閉鎖の心",
+          "description": "久岐忍自身の越祓草輪を受けたキャラクターの通常攻撃、重撃、落下攻撃が敵に命中すると、雷草が敵の位置に落ち、久岐忍のHP上限の9.7%を基準に雷元素範囲ダメージを与える。\r\n5秒毎に1回のみ発動可能。\r\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "捨て去りし阿諛の心",
+          "description": "御詠鳴神刈山祭のスキルLv.+3。\r\n最大Lv.15まで。\r\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
+          "title": "捨て去りし軟弱な心",
+          "description": "久岐忍が戦闘不能に至るダメージを受けた時、このダメージで戦闘不能にならない。この効果は久岐忍のHPが1の時に自動で発動され、60秒毎に1回のみ発動できる。\r\nまた、久岐忍のHPが25%以下になると15秒間、自身の元素熟知+150、60秒毎に1回のみ発動できる。\r\n",
           "descriptions": []
         }
       ]
@@ -4979,87 +5200,140 @@
     },
     {
       "key": "shikanoin-heizou",
-      "name": "Shikanoin Heizou",
-      "title": "",
-      "description": "天領奉行の天才少年探偵。直感が鋭敏で思慮深い人である。",
+      "name": "鹿野院平蔵",
+      "title": "乂安を願う者",
+      "description": "天領奉行の天才少年探偵。直感が鋭く、洞察力に優れている。",
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "通常攻撃·不動流格闘術",
+          "description": "",
+          "abilities": [
+            {
+              "name": "通常攻撃",
+              "description": "強風が宿る強力な技で敵と格闘する。最大5段の連続攻撃を行い、風元素ダメージを与える。\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "重撃",
+              "description": "一定のスタミナを消費して砂撒脚を繰り出し、敵に風元素ダメージを与える。\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "落下攻撃",
+              "description": "空中から強風の力を凝集しながら落下し、地面に衝撃を与える。経路上の敵を攻撃し、落下時に風元素範囲ダメージを与える。",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "1段ダメージ|{param1}%",
+            "2段ダメージ|{param2}%",
+            "3段ダメージ|{param3}%",
+            "4段ダメージ|{param4}% + {param5}% + {param6}%",
+            "5段ダメージ|{param7}%",
+            "重撃ダメージ|{param8}%",
+            "重撃スタミナ消費|{param9}",
+            "落下期間のダメージ|{param10}%",
+            "低空/高空落下攻撃ダメージ|{param11}% / {param12}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "戮心拳",
+          "description": "",
+          "abilities": [
+            {
+              "name": "一回押し",
+              "description": "疾風を駆使して戮心拳を前方に打ち出し、風元素ダメージを与える。\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "長押し",
+              "description": "力を溜めて、より強力な一撃を繰り出す。溜めている間、戮心拳の威力をアップする「変格」効果を継続的に得る。元素スキルボタンを離した時、または力を溜め終わった時、前方に戮心拳を打ち出し、風元素ダメージを与える。\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "変格",
+              "description": "次の戮心拳のダメージをアップさせる、最大4層まで。\r\n「変格」効果を4層まで重ねると、「正論」効果が生み出され、次の戮心拳の与えるダメージがさらにアップし、影響範囲がより広くなる。\r\n",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "スキルダメージ|{param1}%",
+            "変格によるダメージアップ|{param2}%/stack",
+            "正論によるダメージアップ|{param3}%",
+            "変格継続時間|{param4}s",
+            "クールタイム|{param5}s"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
+          "title": "廻風蹴",
+          "description": "空に跳ね上がり、不動流 • 真空弾を敵に蹴りつける。着弾時に爆発し、捕縛の風穴を生成する。近くの物体と敵を引き寄せ、風元素範囲ダメージを与える。\r\n不動流 • 真空弾が水元素/炎元素/氷元素/雷元素付着状態の敵に命中すると、敵に「廻風真眼」効果を与える。この効果はしばらくすると爆発して消え去るが、その際敵に付着していた元素の範囲ダメージを与える。\r\n不動流 • 真空弾は最大4体の敵に「廻風真眼」効果を付与できる。また、1体の敵が同時に複数の元素による「廻風真眼」効果を受けることはない。\r\n",
           "abilities": [],
-          "stats": []
+          "stats": [
+            "不動流·真空弾ダメージ|{param1}%",
+            "廻風真眼ダメージ|{param2}%",
+            "クールタイム|{param3}s",
+            "元素エネルギー|{param4}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "罪より前に",
+          "description": "チーム内の自身のキャラクター全員がダッシュに消費するスタミナ-20%。\r\n同じ効果を持つ固有天賦との重ね掛け不可。\r\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
+          "title": "反論稽古",
+          "description": "鹿野院平蔵がフィールド上で拡散反応を起こした時、戮心拳の「変格」効果を1層獲得する。この効果は0.1秒毎に1回のみ発動可能。\r\n",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "NA",
-          "description": "",
+          "title": "因由勘破",
+          "description": "戮心拳が敵に命中すると、チーム全員（鹿野院平蔵自身を除く）の元素熟知+80、継続時間10秒。\r\n",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "通称少年事件簿",
+          "description": "鹿野院平蔵が登場してから5秒間、通常攻撃の攻撃速度+15%、また戮心拳の「変格」効果を1層獲得する。この効果は10秒毎に1回のみ発動可能。\r\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "真相究明捜査集",
+          "description": "廻風蹴で生成した捕縛の風穴による引き寄せ効果が強化され、継続時間が延長され1秒になる。\r\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "暗号隠語難問集",
+          "description": "戮心拳のスキルLv.+3。\r\n最大Lv.15まで。\r\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "荒唐無稽百物語",
+          "description": "一回の廻風蹴で発生した「廻風真眼」が初めて爆発する時、鹿野院平蔵自身の元素エネルギーを9回復する。その後、爆発するたびに追加で元素エネルギーを1.5回復する。\r\nこの方法により一回の廻風蹴で回復できる元素エネルギーは、最大13.5まで。\r\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "屏禁密室大図鑑",
+          "description": "廻風蹴のスキルLv.+3。\r\n最大Lv.15まで。\r\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
+          "title": "奇想天外捕物帳",
+          "description": "戮心拳を発動する時、戮心拳の会心率が「変格」の層数ごとに4%アップする。「正論」効果が付与されている場合、戮心拳の会心ダメージは32%アップする。\r\n",
           "descriptions": []
         }
       ]
@@ -5517,6 +5791,93 @@
           "key": "c6",
           "title": "燃え立つ誠心",
           "description": "烈炎侍立シールドを獲得または更新した時、チーム全員の通常攻撃、重撃及び落下攻撃ダメージ+15%、継続時間6秒。\r\n",
+          "descriptions": []
+        }
+      ]
+    },
+    {
+      "key": "tighnari",
+      "name": "Tighnari",
+      "title": "???",
+      "description": "",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
           "descriptions": []
         }
       ]
@@ -6872,80 +7233,152 @@
     {
       "key": "yelan",
       "name": "夜蘭",
-      "title": "",
-      "description": "",
+      "title": "幽谷に咲く蘭",
+      "description": "総務司所属を称する謎の人物。しかし、総務司の名簿上では「存在しない人」となっている。",
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "通常攻撃·匿影隠曜の弓",
+          "description": "",
+          "abilities": [
+            {
+              "name": "通常攻撃",
+              "description": "最大4段の連続射撃を行う。\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "重撃",
+              "description": "ダメージがより高く、より精確な狙い撃ちを発動する。\r\n照準時、流水を矢先に凝集させ、激流に満ちた矢で敵に水元素ダメージを与える。\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "打破",
+              "description": "戦闘状態が解除されてから5秒経過すると「打破」状態に入り、次のフルチャージ狙い撃ちのチャージ時間-80%、かつフルチャージ時に「打破の矢」を放ち、夜蘭のHP上限を基準に水元素範囲ダメージを与える。\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "落下攻撃",
+              "description": "空中から矢の雨を放ち、凄まじいスピードで落下し地面に衝撃を与え、落下時に範囲ダメージを与える。",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "1段ダメージ|{param1}%",
+            "2段ダメージ|{param2}%",
+            "3段ダメージ|{param3}%",
+            "4段ダメージ|{param4}% + {param5}%",
+            "狙い撃ち|{param6}%",
+            "フルチャージ狙い撃ち|{param7}%",
+            "打破の矢ダメージ|{param8}% Max HP",
+            "落下期間のダメージ|{param9}%",
+            "低空/高空落下攻撃ダメージ|{param10}% / {param11}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "絡み合う命の糸",
+          "description": "「命の糸」を引きながら疾走し、経路上の敵を絡めてマークする。\r\n疾走終了時、「命の糸」は爆発し、夜蘭のHP上限を基準に水元素ダメージをマークした敵に与える。\r\n",
+          "abilities": [
+            {
+              "name": "一回押し",
+              "description": "驚異的なスピードで疾走し、前方へと一定距離移動する。\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "長押し",
+              "description": "疾走を続け、かつ本状態中は中断耐性をアップさせる。\r\n継続時間中、夜蘭は進行方向を変えることができる。再び発動すると疾走状態を早期に終了できる。\r\nまた、「命の糸」が爆発する際、マークした敵1体につき、夜蘭が「打破」状態に入る確率が34%アップする。\r\n",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "スキルダメージ|{param1}% Max HP",
+            "長押し最大継続時間|{param2}s",
+            "クールタイム|{param3}s"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "深謀玲瓏賽",
+          "description": "",
+          "abilities": [
+            {
+              "name": "",
+              "description": "水元素範囲ダメージを与えた後、「玲瓏一擲」を凝集させて戦闘を支援する。\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "玲瓏一擲",
+              "description": "キャラクターに追従し、以下の状況で夜蘭のHP上限を基準に水元素ダメージの連携攻撃を発動する。\r\n",
+              "descriptions": [
+                "フィールド上でチーム内の自身キャラクターが通常攻撃を行う時、1秒につき1回発動する。",
+                "夜蘭自身が放った「命の糸」が爆発して敵に命中した時、連携攻撃を1回発動する。"
+              ]
+            }
+          ],
+          "stats": [
+            "スキルダメージ|{param1}% Max HP",
+            "玲瓏一擲ダメージ|{param2}% Max HP ×{param3}",
+            "継続時間|{param4}s",
+            "クールタイム|{param5}s",
+            "元素エネルギー|{param6}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "長考一手",
+          "description": "璃月で20時間かかる探索任務を完了した時、獲得する報酬+25%。\r\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
+          "title": "先後の決め手",
+          "description": "チーム内キャラクターの元素タイプが1/2/3/4種類の時、夜蘭自身のHP上限+6%/12%/18%/30%。\r\n",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "気随気儘",
+          "description": "「玲瓏一擲」継続時間中、フィールド上にいるチーム内の自身キャラクターの与えるダメージ+1%、1秒毎に3.5%アップする。最大で50%までアップする。\r\n継続時間中、深謀玲瓏賽を再発動すると、既存の上記効果が先にクリアされる。\r\n",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "共謀する者、以局征局",
+          "description": "絡み合う命の糸の使用可能回数+1。\r\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "罠に陥る者、多々益善",
+          "description": "「玲瓏一擲」による連携攻撃を行った時、追加で水の矢を1本発射し、夜蘭のHP上限の14%に相当する水元素ダメージを与える。\r\n1.8秒毎に1回のみ発動可能。\r\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "壺振り師、賽子詭計",
+          "description": "深謀玲瓏賽のスキルLv.+3。\r\n最大Lv.15まで。\r\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "騙し取る者、移花接木",
+          "description": "「命の糸」が爆発した時、マークした敵1体につき、チーム全員のHP上限+10%、継続時間25秒。この方式でアップできるHP上限は最大40%まで。\r\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "胴元になる者、三仙奇術",
+          "description": "絡み合う命の糸のスキルLv.+3。\r\n最大Lv.15まで。\r\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
+          "title": "勝ち得る者、独り勝ち",
+          "description": "深謀玲瓏賽を発動後、夜蘭は「権謀術数」状態に入る。\r\n通常攻撃は特殊な「打破の矢」に変化する。この矢は打破の矢に近い特性を持ち、与えるダメージは打破の矢の156%、かつ重撃ダメージとみなされる。\r\n「権謀術数」状態の継続時間は最大20秒となり、5本の矢が発射されると終了する。\r\n",
           "descriptions": []
         }
       ]
@@ -7457,6 +7890,18 @@
       "refinements": []
     },
     {
+      "key": "aqua-simulacra",
+      "name": "若水",
+      "description": "色の流れが予測不能な長弓。光りの下では、水のような藍の輝きを見せる。",
+      "refinements": [
+        "HP+{color}16{/color}%。周囲に敵がいる時、装備キャラクターの与えるダメージ+{color}20{/color}%、この効果はキャラクターが待機状態でも発動する。",
+        "HP+{color}20{/color}%。周囲に敵がいる時、装備キャラクターの与えるダメージ+{color}25{/color}%、この効果はキャラクターが待機状態でも発動する。",
+        "HP+{color}24{/color}%。周囲に敵がいる時、装備キャラクターの与えるダメージ+{color}30{/color}%、この効果はキャラクターが待機状態でも発動する。",
+        "HP+{color}28{/color}%。周囲に敵がいる時、装備キャラクターの与えるダメージ+{color}35{/color}%、この効果はキャラクターが待機状態でも発動する。",
+        "HP+{color}32{/color}%。周囲に敵がいる時、装備キャラクターの与えるダメージ+{color}40{/color}%、この効果はキャラクターが待機状態でも発動する。"
+      ]
+    },
+    {
       "key": "aquila-favonia",
       "name": "風鷹剣",
       "description": "西風騎士団の魂。この剣を振り回していた女傑と同じように、千年経っても未だ正義の風を巻き起こし、悪を排除しようとする。",
@@ -7757,6 +8202,18 @@
       ]
     },
     {
+      "key": "fading-twilight",
+      "name": "落霞",
+      "description": "白金から作られた無二の弓。輝く霞光を放つ宝珠が嵌め込まれている。",
+      "refinements": [
+        "夕暮、流霞、朝日の3種類の強化効果が武器にはあり、それぞれ与えるダメージ+{color}6%/10%/14%{/color}。攻撃が敵に命中すると、強化効果が次のものに切り替わる。この切り替わりは7秒に1回のみ発動でき、装備キャラクターが待機状態でも発動する。",
+        "夕暮、流霞、朝日の3種類の強化効果が武器にはあり、それぞれ与えるダメージ+{color}7.5%/12.5%/17.5%{/color}。攻撃が敵に命中すると、強化効果が次のものに切り替わる。この切り替わりは7秒に1回のみ発動でき、装備キャラクターが待機状態でも発動する。",
+        "夕暮、流霞、朝日の3種類の強化効果が武器にはあり、それぞれ与えるダメージ+{color}9%/15%/21%{/color}。攻撃が敵に命中すると、強化効果が次のものに切り替わる。この切り替わりは7秒に1回のみ発動でき、装備キャラクターが待機状態でも発動する。",
+        "夕暮、流霞、朝日の3種類の強化効果が武器にはあり、それぞれ与えるダメージ+{color}10.5%/17.5%/24.5%{/color}。攻撃が敵に命中すると、強化効果が次のものに切り替わる。この切り替わりは7秒に1回のみ発動でき、装備キャラクターが待機状態でも発動する。",
+        "夕暮、流霞、朝日の3種類の強化効果が武器にはあり、それぞれ与えるダメージ+{color}12%/20%/28%{/color}。攻撃が敵に命中すると、強化効果が次のものに切り替わる。この切り替わりは7秒に1回のみ発動でき、装備キャラクターが待機状態でも発動する。"
+      ]
+    },
+    {
       "key": "favonius-codex",
       "name": "西風秘典",
       "description": "西風騎士団の錬金学者の間に伝わる秘典。物質の原則や力、それと別のものが記されている。",
@@ -7958,6 +8415,14 @@
         "元素ダメージを与えた後、6秒間キャラの与えるダメージ+{color}9{/color}%、最大2重まで。1秒毎に1回のみ発動可能。",
         "元素ダメージを与えた後、6秒間キャラの与えるダメージ+{color}10.5{/color}%、最大2重まで。1秒毎に1回のみ発動可能。",
         "元素ダメージを与えた後、6秒間キャラの与えるダメージ+{color}12{/color}%、最大2重まで。1秒毎に1回のみ発動可能。"
+      ]
+    },
+    {
+      "key": "kagotsurube-isshin",
+      "name": "籠釣瓶一心",
+      "description": "遠い北国で造られた名刀。かつて「一心」という言葉のために、帰郷の途上、無数の罪に染まった。",
+      "refinements": [
+        "通常攻撃、重撃、落下攻撃が敵に命中すると鋭い風が巻き起こり、攻撃力の180%の範囲ダメージを与える。また攻撃力+15%、継続時間8秒。この効果は8秒毎に1回のみ発動可能。"
       ]
     },
     {

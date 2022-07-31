@@ -40,7 +40,7 @@ void main() {
       build: () => CharactersBloc(_genshinService, _settingsService),
       act: (bloc) => bloc.add(const CharactersEvent.init()),
       expect: () {
-        final characters = _genshinService.getCharactersForCard();
+        final characters = _genshinService.characters.getCharactersForCard();
         return [
           CharactersState.loaded(
             characters: characters,
@@ -69,7 +69,7 @@ void main() {
         emittedState.map(
           loading: (_) => throw Exception('Invalid artifact state'),
           loaded: (state) {
-            final characters = _genshinService.getCharactersForCard().where((el) => !excludedKeys.contains(el.key)).toList();
+            final characters = _genshinService.characters.getCharactersForCard().where((el) => !excludedKeys.contains(el.key)).toList();
             expect(state.characters.length, characters.length);
             expect(state.showCharacterDetails, true);
             expect(state.rarity, 0);
@@ -93,7 +93,7 @@ void main() {
         ..add(const CharactersEvent.searchChanged(search: keqingSearch)),
       skip: 1,
       expect: () {
-        final characters = _genshinService.getCharactersForCard().where((el) => el.key == keqingKey).toList();
+        final characters = _genshinService.characters.getCharactersForCard().where((el) => el.key == keqingKey).toList();
         return [
           CharactersState.loaded(
             characters: characters,
@@ -167,7 +167,7 @@ void main() {
         ..add(const CharactersEvent.applyFilterChanges()),
       skip: 18,
       expect: () {
-        final characters = _genshinService.getCharactersForCard().where((el) => el.key == keqingKey).toList();
+        final characters = _genshinService.characters.getCharactersForCard().where((el) => el.key == keqingKey).toList();
         return [
           CharactersState.loaded(
             characters: characters,
@@ -216,7 +216,8 @@ void main() {
         ..add(const CharactersEvent.cancelChanges()),
       skip: 15,
       expect: () {
-        final characters = _genshinService.getCharactersForCard().where((el) => el.elementType == ElementType.electro && el.stars == 5).toList();
+        final characters =
+            _genshinService.characters.getCharactersForCard().where((el) => el.elementType == ElementType.electro && el.stars == 5).toList();
         return [
           CharactersState.loaded(
             characters: characters,
@@ -253,7 +254,7 @@ void main() {
         ..add(const CharactersEvent.resetFilters()),
       skip: 10,
       expect: () {
-        final characters = _genshinService.getCharactersForCard();
+        final characters = _genshinService.characters.getCharactersForCard();
         return [
           CharactersState.loaded(
             characters: characters,
