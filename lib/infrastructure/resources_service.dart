@@ -36,17 +36,11 @@ class ResourceServiceImpl implements ResourceService {
   ResourceServiceImpl(this._loggingService, this._settingsService, this._networkService);
 
   Future<void> init() async {
-    //Windows: Users/Temp
-    final temp = (await getTemporaryDirectory()).path;
-    final supp = (await getApplicationSupportDirectory()).path;
-    if (!Platform.isWindows) {
-      final lib = (await getLibraryDirectory()).path;
-      final ext = (await getExternalStorageDirectory())!.path;
-    }
+    final temp = await getTemporaryDirectory();
+    final support = await getApplicationSupportDirectory();
 
-    final dir = (await getApplicationDocumentsDirectory()).path;
-    _tempPath = join(dir, _tempDirName);
-    _assetsPath = join(dir, _tempAssetsDirName);
+    _tempPath = join(temp.path, _tempDirName);
+    _assetsPath = join(support.path, _tempAssetsDirName);
     await _deleteDirectoryIfExists(_tempPath);
   }
 
@@ -180,8 +174,7 @@ class ResourceServiceImpl implements ResourceService {
   @override
   String getMaterialImagePath(String filename, MaterialType type) => _getImagePath(filename, AppImageFolderType.items, materialType: type);
 
-  @override
-  Future<bool> canCheckForUpdates() async {
+  bool _canCheckForUpdates() {
     _loggingService.info(runtimeType, 'Checking if we can check for resource updates...');
     final lastResourcesCheckedDate = _settingsService.lastResourcesCheckedDate;
     if (lastResourcesCheckedDate == null) {
@@ -193,8 +186,7 @@ class ResourceServiceImpl implements ResourceService {
       return false;
     }
 
-    final bool isInternetAvailable = await _networkService.isInternetAvailable();
-    return isInternetAvailable;
+    return true;
   }
 
   @override
@@ -203,13 +195,20 @@ class ResourceServiceImpl implements ResourceService {
       throw Exception('Invalid app version');
     }
 
-    if (!await canCheckForUpdates()) {
-      return CheckForUpdatesResult(result: AppResourceUpdateResultType.noUpdatesAvailable, resourceVersion: currentResourcesVersion);
-    }
-
     if (!_usesZipFile && !_usesJsonFile) {
       throw Exception('Unsupported platform');
     }
+
+    if (!_canCheckForUpdates()) {
+      return CheckForUpdatesResult(type: AppResourceUpdateResultType.noUpdatesAvailable, resourceVersion: currentResourcesVersion);
+    }
+
+    final isInternetAvailable = await _networkService.isInternetAvailable();
+    final isFirstResourceCheck = _settingsService.lastResourcesCheckedDate == null;
+    if (!isInternetAvailable && isFirstResourceCheck) {
+      return CheckForUpdatesResult(type: AppResourceUpdateResultType.noInternetConnectionForFirstInstall, resourceVersion: currentResourcesVersion);
+    }
+
     try {
       String url = '${Secrets.apiBaseUrl}/api/resources/diff?AppVersion=$currentAppVersion';
       if (currentResourcesVersion > 0) {
@@ -225,18 +224,18 @@ class ResourceServiceImpl implements ResourceService {
 
       switch (apiResponse.messageId) {
         case '3':
-          return CheckForUpdatesResult(result: AppResourceUpdateResultType.needsLatestAppVersion, resourceVersion: currentResourcesVersion);
+          return CheckForUpdatesResult(type: AppResourceUpdateResultType.needsLatestAppVersion, resourceVersion: currentResourcesVersion);
         case '4':
-          return CheckForUpdatesResult(result: AppResourceUpdateResultType.noUpdatesAvailable, resourceVersion: currentResourcesVersion);
+          return CheckForUpdatesResult(type: AppResourceUpdateResultType.noUpdatesAvailable, resourceVersion: currentResourcesVersion);
         case null:
           break;
         default: // Unknown error
           _loggingService.error(runtimeType, 'checkForUpdates: Api returned with unknown msg = ${apiResponse.message}');
-          return CheckForUpdatesResult(result: AppResourceUpdateResultType.unknownError, resourceVersion: currentResourcesVersion);
+          return CheckForUpdatesResult(type: AppResourceUpdateResultType.unknownError, resourceVersion: currentResourcesVersion);
       }
 
       if (currentResourcesVersion == apiResponse.result!.targetResourceVersion) {
-        return CheckForUpdatesResult(result: AppResourceUpdateResultType.noUpdatesAvailable, resourceVersion: currentResourcesVersion);
+        return CheckForUpdatesResult(type: AppResourceUpdateResultType.noUpdatesAvailable, resourceVersion: currentResourcesVersion);
       }
 
       final mainFilesMustBeDownloaded =
@@ -246,11 +245,11 @@ class ResourceServiceImpl implements ResourceService {
 
       if (!mainFilesMustBeDownloaded && !partialFilesMustBeDownloaded) {
         _loggingService.warning(runtimeType, 'checkForUpdates: We got a case were we do not have nothing to process. Error = ${apiResponse.message}');
-        return CheckForUpdatesResult(result: AppResourceUpdateResultType.noUpdatesAvailable, resourceVersion: currentResourcesVersion);
+        return CheckForUpdatesResult(type: AppResourceUpdateResultType.noUpdatesAvailable, resourceVersion: currentResourcesVersion);
       }
 
       return CheckForUpdatesResult(
-        result: AppResourceUpdateResultType.updatesAvailable,
+        type: AppResourceUpdateResultType.updatesAvailable,
         resourceVersion: apiResponse.result!.targetResourceVersion,
         zipFileKeyName: apiResponse.result!.zipFileKeyName,
         jsonFileKeyName: apiResponse.result!.jsonFileKeyName,
@@ -258,7 +257,7 @@ class ResourceServiceImpl implements ResourceService {
       );
     } catch (e, s) {
       _loggingService.error(runtimeType, 'checkForUpdates: Unknown error', e, s);
-      return CheckForUpdatesResult(result: AppResourceUpdateResultType.unknownError, resourceVersion: currentResourcesVersion);
+      return CheckForUpdatesResult(type: AppResourceUpdateResultType.unknownError, resourceVersion: currentResourcesVersion);
     }
   }
 
@@ -268,6 +267,7 @@ class ResourceServiceImpl implements ResourceService {
     String? zipFileKeyName,
     String? jsonFileKeyName, {
     List<String> keyNames = const <String>[],
+    ProgressChanged? onProgress,
   }) async {
     if (targetResourceVersion <= 0) {
       throw Exception('The provided targetResourceVersion = $targetResourceVersion is not valid');
@@ -296,7 +296,7 @@ class ResourceServiceImpl implements ResourceService {
       throw Exception('The provided targetResourceVersion = $targetResourceVersion == ${_settingsService.resourceVersion}');
     }
 
-    if (!await canCheckForUpdates()) {
+    if (!_canCheckForUpdates()) {
       return false;
     }
 
@@ -309,8 +309,9 @@ class ResourceServiceImpl implements ResourceService {
         _loggingService.info(runtimeType, 'downloadAndApplyUpdates: Downloading main files...');
         //we need to download the whole file
         final destMainFilePath = join(_tempPath, _usesZipFile ? zipFileKeyName! : jsonFileKeyName!);
-        final downloaded =
-            _usesZipFile ? await _downloadFile(zipFileKeyName!, destMainFilePath) : await _downloadFile(jsonFileKeyName!, destMainFilePath);
+        final downloaded = _usesZipFile
+            ? await _downloadFile(zipFileKeyName!, destMainFilePath, onProgress)
+            : await _downloadFile(jsonFileKeyName!, destMainFilePath, onProgress);
 
         if (!downloaded) {
           _loggingService.error(runtimeType, 'downloadAndApplyUpdates: Could not download the main file');
@@ -320,7 +321,7 @@ class ResourceServiceImpl implements ResourceService {
         _loggingService.info(runtimeType, 'downloadAndApplyUpdates: Processing files...');
         final processed = _usesZipFile
             ? await _processZipFile(destMainFilePath, _tempPath, _assetsPath)
-            : await _processVersionsJsonFile(destMainFilePath, _tempPath, _assetsPath);
+            : await _processVersionsJsonFile(destMainFilePath, _tempPath, _assetsPath, onProgress);
 
         if (!processed) {
           _loggingService.error(runtimeType, 'downloadAndApplyUpdates: Could not process the main file');
@@ -329,7 +330,7 @@ class ResourceServiceImpl implements ResourceService {
       } else {
         //we need to download a portion
         _loggingService.info(runtimeType, 'downloadAndApplyUpdates: Downloading partial files...');
-        final processed = await _processPartialUpdate(_tempPath, _assetsPath, keyNames);
+        final processed = await _processPartialUpdate(_tempPath, _assetsPath, keyNames, onProgress);
         if (!processed) {
           _loggingService.error(runtimeType, 'downloadAndApplyUpdates: Could not process the partial file');
           return false;
@@ -360,14 +361,14 @@ class ResourceServiceImpl implements ResourceService {
     return true;
   }
 
-  Future<bool> _processVersionsJsonFile(String destMainFilePath, String tempFolder, String assetsFolder) async {
+  Future<bool> _processVersionsJsonFile(String destMainFilePath, String tempFolder, String assetsFolder, ProgressChanged? onProgress) async {
     _loggingService.info(runtimeType, '_processVersionsJsonFile: Processing main json file...');
     final file = File(destMainFilePath);
     final jsonString = await file.readAsString();
     final json = jsonDecode(jsonString) as Map<String, dynamic>;
     final version = JsonVersionsFile.fromJson(json);
     await File(destMainFilePath).delete();
-    final processed = await _downloadAssets(tempFolder, version.keyNames);
+    final processed = await _downloadAssets(tempFolder, version.keyNames, onProgress);
 
     if (processed) {
       _loggingService.info(runtimeType, '_processVersionsJsonFile: Main json file was successfully processed');
@@ -379,9 +380,9 @@ class ResourceServiceImpl implements ResourceService {
     return processed;
   }
 
-  Future<bool> _processPartialUpdate(String tempFolder, String assetsFolder, List<String> keyNames) async {
+  Future<bool> _processPartialUpdate(String tempFolder, String assetsFolder, List<String> keyNames, ProgressChanged? onProgress) async {
     _loggingService.info(runtimeType, '_processPartialUpdate: Downloading partial files...');
-    final processed = await _downloadAssets(tempFolder, keyNames);
+    final processed = await _downloadAssets(tempFolder, keyNames, onProgress);
     if (!processed) {
       _loggingService.error(runtimeType, '_processPartialUpdate: Could not process the partial file');
       await _deleteDirectoryIfExists(tempFolder);
@@ -393,17 +394,21 @@ class ResourceServiceImpl implements ResourceService {
     return true;
   }
 
-  Future<bool> _downloadAssets(String tempFolder, List<String> keyNames) async {
+  Future<bool> _downloadAssets(String tempFolder, List<String> keyNames, ProgressChanged? onProgress) async {
     if (keyNames.isEmpty) {
       return true;
     }
 
     _loggingService.info(runtimeType, '_downloadAssets: Processing ${keyNames.length} keyName(s)...');
+    const maxItemsPerBatch = 10;
+    final total = keyNames.length;
+    int processedItems = 0;
+
     final keyNamesCopy = [...keyNames];
     while (keyNamesCopy.isNotEmpty) {
       _loggingService.debug(runtimeType, '_downloadAssets: Remaining = ${keyNamesCopy.length}');
-      final taken = keyNamesCopy.take(10).toList();
-      for (int i = 0; i < 10; i++) {
+      final taken = keyNamesCopy.take(maxItemsPerBatch).toList();
+      for (int i = 0; i < maxItemsPerBatch; i++) {
         if (keyNamesCopy.isEmpty) {
           break;
         }
@@ -413,6 +418,9 @@ class ResourceServiceImpl implements ResourceService {
       try {
         if (taken.isNotEmpty) {
           await Future.wait(taken.map((e) => _downloadAsset(tempFolder, e)).toList(), eagerError: true);
+          processedItems += taken.length;
+          final progress = processedItems * 100 / total;
+          onProgress?.call(progress);
         }
       } catch (e, s) {
         _loggingService.error(runtimeType, '_downloadAssets: One or more keyNames failed...', e, s);
@@ -438,13 +446,13 @@ class ResourceServiceImpl implements ResourceService {
     await _createDirectoryIfItDoesntExist(dir);
 
     final destPath = join(dir, split.last);
-    final downloaded = await _downloadFile(keyName, destPath);
+    final downloaded = await _downloadFile(keyName, destPath, null);
     if (!downloaded) {
       throw Exception('Download of keyName = $keyName failed');
     }
   }
 
-  Future<bool> _downloadFile(String keyName, String destPath) async {
+  Future<bool> _downloadFile(String keyName, String destPath, ProgressChanged? onProgress) async {
     try {
       _loggingService.info(runtimeType, '_downloadFile: Downloading file = $keyName...');
       final url = '${Secrets.assetsBaseUrl}/$keyName';
@@ -455,7 +463,7 @@ class ResourceServiceImpl implements ResourceService {
         onReceiveProgress: (received, total) {
           if (total != -1) {
             final progress = received / total * 100;
-            // print('${progress.toStringAsFixed(0)}%');
+            onProgress?.call(progress);
           }
         },
       );

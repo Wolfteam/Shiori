@@ -1,6 +1,8 @@
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/models/models.dart';
 
+typedef ProgressChanged = void Function(double);
+
 abstract class ResourceService {
   String getJsonFilePath(AppJsonFileType type, {AppLanguageType? language});
 
@@ -22,8 +24,6 @@ abstract class ResourceService {
 
   String getMaterialImagePath(String filename, MaterialType type);
 
-  Future<bool> canCheckForUpdates();
-
   Future<CheckForUpdatesResult> checkForUpdates(String currentAppVersion, int currentResourcesVersion);
 
   Future<bool> downloadAndApplyUpdates(
@@ -31,5 +31,6 @@ abstract class ResourceService {
     String? zipFileKeyName,
     String? jsonFileKeyName, {
     List<String> keyNames = const <String>[],
+    ProgressChanged? onProgress,
   });
 }

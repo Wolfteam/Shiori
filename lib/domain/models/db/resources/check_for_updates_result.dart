@@ -6,7 +6,7 @@ part 'check_for_updates_result.freezed.dart';
 @freezed
 class CheckForUpdatesResult with _$CheckForUpdatesResult {
   const factory CheckForUpdatesResult({
-    required AppResourceUpdateResultType result,
+    required AppResourceUpdateResultType type,
     required int resourceVersion,
     String? zipFileKeyName,
     String? jsonFileKeyName,
