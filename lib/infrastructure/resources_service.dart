@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:dio/dio.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter_archive/flutter_archive.dart';
 import 'package:http/http.dart' as http;
 import 'package:path/path.dart';
@@ -25,15 +26,22 @@ class ResourceServiceImpl implements ResourceService {
   final SettingsService _settingsService;
   final NetworkService _networkService;
 
-  final bool _usesZipFile = Platform.isAndroid || Platform.isIOS;
-  final bool _usesJsonFile = Platform.isWindows || Platform.isLinux;
+  final bool _usesZipFile;
+  final bool _usesJsonFile;
 
   final _dio = Dio();
 
   late final String _tempPath;
   late final String _assetsPath;
 
-  ResourceServiceImpl(this._loggingService, this._settingsService, this._networkService);
+  ResourceServiceImpl(
+    this._loggingService,
+    this._settingsService,
+    this._networkService, {
+    @visibleForTesting bool? usesZipFile,
+    @visibleForTesting bool? usesJsonFile,
+  })  : _usesZipFile = usesZipFile ?? Platform.isAndroid || Platform.isIOS,
+        _usesJsonFile = usesJsonFile ?? Platform.isWindows || Platform.isLinux;
 
   Future<void> init() async {
     final temp = await getTemporaryDirectory();
@@ -44,10 +52,26 @@ class ResourceServiceImpl implements ResourceService {
     await _deleteDirectoryIfExists(_tempPath);
   }
 
+  @visibleForTesting
+  void initForTests(String temPath, String assetsPath) {
+    if (temPath.isNullEmptyOrWhitespace) {
+      throw Exception('Invalid temp path');
+    }
+
+    if (assetsPath.isNullEmptyOrWhitespace) {
+      throw Exception('Invalid assets path');
+    }
+
+    _tempPath = temPath;
+    _assetsPath = assetsPath;
+  }
+
   @override
   String getJsonFilePath(AppJsonFileType type, {AppLanguageType? language}) {
     if (language != null) {
-      assert(type == AppJsonFileType.translations, 'The translation type must be set when a language is provided');
+      if (type != AppJsonFileType.translations) {
+        throw Exception('The translation type must be set when a language is provided');
+      }
       final filename = _getJsonTranslationFilename(language);
       return join(_assetsPath, 'i18n', filename);
     }
