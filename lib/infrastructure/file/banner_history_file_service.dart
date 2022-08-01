@@ -15,6 +15,12 @@ class BannerHistoryFileServiceImpl extends BannerHistoryFileService {
 
   late BannerHistoryFile _bannerHistoryFile;
 
+  @override
+  ResourceService get resources => _resourceService;
+
+  @override
+  TranslationFileService get translations => throw UnimplementedError('Translations are not required in this file');
+
   BannerHistoryFileServiceImpl(this._resourceService, this._characters, this._weapons);
 
   @override

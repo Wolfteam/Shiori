@@ -12,6 +12,12 @@ class ArtifactFileServiceImpl extends ArtifactFileService {
 
   late ArtifactsFile _artifactsFile;
 
+  @override
+  ResourceService get resources => _resourceService;
+
+  @override
+  TranslationFileService get translations => _translations;
+
   ArtifactFileServiceImpl(this._resourceService, this._translations);
 
   @override

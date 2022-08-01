@@ -19,6 +19,21 @@ class CharacterFileServiceImpl extends CharacterFileService {
 
   late CharactersFile _charactersFile;
 
+  @override
+  ResourceService get resources => _resourceService;
+
+  @override
+  TranslationFileService get translations => _translations;
+
+  @override
+  ArtifactFileService get artifacts => _artifacts;
+
+  @override
+  MaterialFileService get materials => _materials;
+
+  @override
+  WeaponFileService get weapons => _weapons;
+
   CharacterFileServiceImpl(this._resourceService, this._localeService, this._artifacts, this._materials, this._weapons, this._translations);
 
   @override

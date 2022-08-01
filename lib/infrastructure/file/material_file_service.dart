@@ -10,6 +10,12 @@ class MaterialFileServiceImpl extends MaterialFileService {
 
   late MaterialsFile _materialsFile;
 
+  @override
+  ResourceService get resources => _resourceService;
+
+  @override
+  TranslationFileService get translations => _translations;
+
   MaterialFileServiceImpl(this._resourceService, this._translations);
 
   @override

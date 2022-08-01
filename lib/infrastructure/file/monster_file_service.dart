@@ -10,6 +10,12 @@ class MonsterFileServiceImpl extends MonsterFileService {
 
   late MonstersFile _monstersFile;
 
+  @override
+  ResourceService get resources => _resourceService;
+
+  @override
+  TranslationFileService get translations => _translations;
+
   MonsterFileServiceImpl(this._resourceService, this._translations);
 
   @override

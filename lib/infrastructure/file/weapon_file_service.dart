@@ -10,6 +10,15 @@ class WeaponFileServiceImpl extends WeaponFileService {
 
   late WeaponsFile _weaponsFile;
 
+  @override
+  ResourceService get resources => _resourceService;
+
+  @override
+  TranslationFileService get translations => _translations;
+
+  @override
+  MaterialFileService get materials => _materials;
+
   WeaponFileServiceImpl(this._resourceService, this._materials, this._translations);
 
   @override
