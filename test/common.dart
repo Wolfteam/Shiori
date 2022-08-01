@@ -3,12 +3,13 @@ import 'dart:io';
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:intl/date_symbol_data_local.dart';
+import 'package:mockito/mockito.dart';
 import 'package:path/path.dart' as path_helper;
 import 'package:path_provider/path_provider.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/extensions/string_extensions.dart';
 import 'package:shiori/domain/models/models.dart';
-import 'package:shiori/domain/services/genshin_service.dart';
+import 'package:shiori/domain/services/file/file_infrastructure.dart';
 import 'package:shiori/domain/services/locale_service.dart';
 import 'package:shiori/domain/services/resources_service.dart';
 import 'package:shiori/domain/services/settings_service.dart';
@@ -98,29 +99,29 @@ void checkItemKeyNameAndImage(String key, String name, String image) {
   checkTranslation(name, canBeNull: false);
 }
 
-void checkItemAscensionMaterialFileModel(GenshinService service, List<ItemAscensionMaterialFileModel> all) {
+void checkItemAscensionMaterialFileModel(MaterialFileService materialFileService, List<ItemAscensionMaterialFileModel> all) {
   expect(all, isNotEmpty);
   for (final material in all) {
     checkKey(material.key);
-    expect(() => service.materials.getMaterial(material.key), returnsNormally);
+    expect(() => materialFileService.getMaterial(material.key), returnsNormally);
     expect(material.quantity, greaterThanOrEqualTo(0));
   }
 }
 
-void checkCharacterFileAscensionMaterialModel(GenshinService service, List<CharacterFileAscensionMaterialModel> all) {
+void checkCharacterFileAscensionMaterialModel(MaterialFileService materialFileService, List<CharacterFileAscensionMaterialModel> all) {
   expect(all, isNotEmpty);
   for (final ascMaterial in all) {
     expect(ascMaterial.rank, allOf([greaterThanOrEqualTo(1), lessThanOrEqualTo(6)]));
     expect(ascMaterial.level, allOf([greaterThanOrEqualTo(20), lessThanOrEqualTo(80)]));
-    checkItemAscensionMaterialFileModel(service, ascMaterial.materials);
+    checkItemAscensionMaterialFileModel(materialFileService, ascMaterial.materials);
   }
 }
 
-void checkCharacterFileTalentAscensionMaterialModel(GenshinService service, List<CharacterFileTalentAscensionMaterialModel> all) {
+void checkCharacterFileTalentAscensionMaterialModel(MaterialFileService materialFileService, List<CharacterFileTalentAscensionMaterialModel> all) {
   expect(all, isNotEmpty);
   for (final ascMaterial in all) {
     expect(ascMaterial.level, inInclusiveRange(2, 10));
-    checkItemAscensionMaterialFileModel(service, ascMaterial.materials);
+    checkItemAscensionMaterialFileModel(materialFileService, ascMaterial.materials);
   }
 }
 
@@ -143,4 +144,12 @@ ResourceService getResourceService(SettingsService settingsService) {
   final resourceService = ResourceServiceImpl(MockLoggingService(), settingsService, MockNetworkService());
   resourceService.initForTests(Secrets.testTempPath, Secrets.testAssetsPath);
   return resourceService;
+}
+
+LocaleService getLocaleService(AppLanguageType language) {
+  final settings = MockSettingsService();
+  when(settings.language).thenReturn(language);
+  final service = LocaleServiceImpl(settings);
+  manuallyInitLocale(service, language);
+  return service;
 }
