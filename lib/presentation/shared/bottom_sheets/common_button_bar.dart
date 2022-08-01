@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_builder/responsive_builder.dart';
-
-import '../styles.dart';
+import 'package:shiori/presentation/shared/styles.dart';
 
 class CommonButtonBar extends StatelessWidget {
   final List<Widget> children;

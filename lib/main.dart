@@ -2,22 +2,21 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:shiori/application/bloc.dart';
+import 'package:shiori/domain/services/calculator_service.dart';
+import 'package:shiori/domain/services/device_info_service.dart';
+import 'package:shiori/domain/services/genshin_service.dart';
+import 'package:shiori/domain/services/locale_service.dart';
+import 'package:shiori/domain/services/logging_service.dart';
+import 'package:shiori/domain/services/notification_service.dart';
+import 'package:shiori/domain/services/purchase_service.dart';
 import 'package:shiori/domain/services/resources_service.dart';
+import 'package:shiori/domain/services/settings_service.dart';
+import 'package:shiori/domain/services/telemetry_service.dart';
+import 'package:shiori/injection.dart';
+import 'package:shiori/presentation/app_widget.dart';
 import 'package:shiori/presentation/shared/utils/size_utils.dart';
 import 'package:window_size/window_size.dart';
-
-import 'application/bloc.dart';
-import 'domain/services/calculator_service.dart';
-import 'domain/services/device_info_service.dart';
-import 'domain/services/genshin_service.dart';
-import 'domain/services/locale_service.dart';
-import 'domain/services/logging_service.dart';
-import 'domain/services/notification_service.dart';
-import 'domain/services/purchase_service.dart';
-import 'domain/services/settings_service.dart';
-import 'domain/services/telemetry_service.dart';
-import 'injection.dart';
-import 'presentation/app_widget.dart';
 
 Future<void> main() async {
   //This is required by app center

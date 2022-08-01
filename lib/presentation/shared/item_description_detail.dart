@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-
-import 'images/primogem_icon.dart';
-import 'styles.dart';
+import 'package:shiori/presentation/shared/images/primogem_icon.dart';
+import 'package:shiori/presentation/shared/styles.dart';
 
 class ItemDescriptionDetail extends StatelessWidget {
   final String title;

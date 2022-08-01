@@ -6,6 +6,11 @@ import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/models/models.dart' as models;
 import 'package:shiori/generated/l10n.dart';
 import 'package:shiori/injection.dart';
+import 'package:shiori/presentation/notifications/widgets/add_edit_notification_bottom_sheet.dart';
+import 'package:shiori/presentation/notifications/widgets/items/notification_list_subtitle.dart';
+import 'package:shiori/presentation/notifications/widgets/items/notification_list_tile.dart';
+import 'package:shiori/presentation/notifications/widgets/items/notification_realm_currency_subtitle.dart';
+import 'package:shiori/presentation/notifications/widgets/items/notification_resin_list_subtitle.dart';
 import 'package:shiori/presentation/shared/app_fab.dart';
 import 'package:shiori/presentation/shared/dialogs/info_dialog.dart';
 import 'package:shiori/presentation/shared/extensions/i18n_extensions.dart';
@@ -13,12 +18,6 @@ import 'package:shiori/presentation/shared/mixins/app_fab_mixin.dart';
 import 'package:shiori/presentation/shared/nothing_found_column.dart';
 import 'package:shiori/presentation/shared/styles.dart';
 import 'package:shiori/presentation/shared/utils/modal_bottom_sheet_utils.dart';
-
-import 'widgets/add_edit_notification_bottom_sheet.dart';
-import 'widgets/items/notification_list_subtitle.dart';
-import 'widgets/items/notification_list_tile.dart';
-import 'widgets/items/notification_realm_currency_subtitle.dart';
-import 'widgets/items/notification_resin_list_subtitle.dart';
 
 class NotificationsPage extends StatefulWidget {
   @override

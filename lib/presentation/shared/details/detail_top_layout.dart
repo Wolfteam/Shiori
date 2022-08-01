@@ -2,8 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:responsive_builder/responsive_builder.dart';
-
-import 'constants.dart';
+import 'package:shiori/presentation/shared/details/constants.dart';
 
 class DetailTopLayout extends StatelessWidget {
   final String fullImage;

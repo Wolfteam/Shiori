@@ -5,11 +5,10 @@ import 'package:responsive_grid/responsive_grid.dart';
 import 'package:shiori/application/bloc.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/generated/l10n.dart';
+import 'package:shiori/presentation/settings/widgets/settings_card.dart';
 import 'package:shiori/presentation/shared/extensions/app_theme_type_extensions.dart';
 import 'package:shiori/presentation/shared/loading.dart';
 import 'package:shiori/presentation/shared/styles.dart';
-
-import 'settings_card.dart';
 
 class AccentColorSettingsCard extends StatelessWidget {
   @override

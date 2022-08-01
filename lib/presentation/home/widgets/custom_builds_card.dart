@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:shiori/generated/l10n.dart';
 import 'package:shiori/presentation/custom_builds/custom_builds_page.dart';
 import 'package:shiori/presentation/home/widgets/card_description.dart';
-
-import 'card_item.dart';
+import 'package:shiori/presentation/home/widgets/card_item.dart';
 
 class CustomBuildsCard extends StatelessWidget {
   final bool iconToTheLeft;

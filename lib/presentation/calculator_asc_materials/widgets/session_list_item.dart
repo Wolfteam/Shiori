@@ -5,9 +5,8 @@ import 'package:shiori/application/bloc.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/generated/l10n.dart';
 import 'package:shiori/presentation/calculator_asc_materials/calculator_ascension_materials_page.dart';
+import 'package:shiori/presentation/calculator_asc_materials/widgets/add_edit_session_dialog.dart';
 import 'package:shiori/presentation/shared/utils/size_utils.dart';
-
-import 'add_edit_session_dialog.dart';
 
 class SessionListItem extends StatelessWidget {
   final CalculatorSessionModel session;

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shiori/domain/extensions/iterable_extensions.dart';
-
-import 'styles.dart';
+import 'package:shiori/presentation/shared/styles.dart';
 
 class BulletList extends StatelessWidget {
   final List<String> items;

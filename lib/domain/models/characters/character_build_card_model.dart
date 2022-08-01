@@ -1,6 +1,5 @@
 import 'package:shiori/domain/enums/enums.dart';
-
-import '../models.dart';
+import 'package:shiori/domain/models/models.dart';
 
 class CharacterBuildCardModel {
   final bool isRecommended;

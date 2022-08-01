@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shiori/generated/l10n.dart';
+import 'package:shiori/presentation/shared/images/circle_item.dart';
 import 'package:shiori/presentation/shared/utils/toast_utils.dart';
-
-import 'circle_item.dart';
 
 class CircleMonster extends StatelessWidget {
   final String itemKey;

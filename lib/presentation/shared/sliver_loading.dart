@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import 'loading.dart';
+import 'package:shiori/presentation/shared/loading.dart';
 
 class SliverLoading extends StatelessWidget {
   const SliverLoading();

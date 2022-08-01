@@ -1,7 +1,6 @@
 import 'package:darq/darq.dart';
 import 'package:shiori/domain/enums/enums.dart';
-
-import 'models/models.dart';
+import 'package:shiori/domain/models/models.dart';
 
 const githubPage = 'https://github.com/Wolfteam/Shiori';
 

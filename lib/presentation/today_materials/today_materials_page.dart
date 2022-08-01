@@ -3,9 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shiori/application/bloc.dart';
 import 'package:shiori/generated/l10n.dart';
 import 'package:shiori/presentation/shared/loading.dart';
-
-import 'widgets/sliver_character_ascension_materials.dart';
-import 'widgets/sliver_weapon_ascension_materials.dart';
+import 'package:shiori/presentation/today_materials/widgets/sliver_character_ascension_materials.dart';
+import 'package:shiori/presentation/today_materials/widgets/sliver_weapon_ascension_materials.dart';
 
 class TodayMaterialsPage extends StatelessWidget {
   @override

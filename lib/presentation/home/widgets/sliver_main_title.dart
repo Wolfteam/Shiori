@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import 'main_title.dart';
+import 'package:shiori/presentation/home/widgets/main_title.dart';
 
 class SliverMainTitle extends StatelessWidget {
   final String title;

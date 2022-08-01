@@ -1,7 +1,6 @@
 import 'package:shiori/domain/app_constants.dart';
-
-import '../../../domain/enums/enums.dart';
-import '../../../generated/l10n.dart';
+import 'package:shiori/domain/enums/enums.dart';
+import 'package:shiori/generated/l10n.dart';
 
 extension I18nExtensions on S {
   String translateAppThemeType(AppThemeType theme) {

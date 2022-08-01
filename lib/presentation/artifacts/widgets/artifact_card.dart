@@ -3,13 +3,12 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/presentation/artifact/artifact_page.dart';
+import 'package:shiori/presentation/artifacts/widgets/artifact_stats.dart';
 import 'package:shiori/presentation/shared/extensions/rarity_extensions.dart';
 import 'package:shiori/presentation/shared/gradient_card.dart';
 import 'package:shiori/presentation/shared/images/rarity.dart';
 import 'package:shiori/presentation/shared/styles.dart';
 import 'package:transparent_image/transparent_image.dart';
-
-import 'artifact_stats.dart';
 
 final replaceDigitRegex = RegExp(r'\d{1}');
 

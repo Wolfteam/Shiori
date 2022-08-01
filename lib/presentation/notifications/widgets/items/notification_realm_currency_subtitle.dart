@@ -2,9 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:shiori/domain/app_constants.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/generated/l10n.dart';
+import 'package:shiori/presentation/notifications/widgets/items/notification_list_subtitle.dart';
 import 'package:shiori/presentation/shared/extensions/i18n_extensions.dart';
-
-import 'notification_list_subtitle.dart';
 
 class NotificationRealmCurrencySubtitle extends StatelessWidget {
   final int initialRealmCurrency;

@@ -5,10 +5,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:shiori/application/bloc.dart';
 import 'package:shiori/generated/l10n.dart';
+import 'package:shiori/presentation/main_tab_page.dart';
 import 'package:shiori/presentation/shared/extensions/app_theme_type_extensions.dart';
-
-import 'main_tab_page.dart';
-import 'splash/splash_page.dart';
+import 'package:shiori/presentation/splash/splash_page.dart';
 
 class AppWidget extends StatelessWidget {
   @override
