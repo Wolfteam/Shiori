@@ -8,6 +8,7 @@ import 'package:shiori/domain/services/genshin_service.dart';
 import 'package:shiori/domain/services/locale_service.dart';
 import 'package:shiori/domain/services/logging_service.dart';
 import 'package:shiori/domain/services/notification_service.dart';
+import 'package:shiori/domain/services/resources_service.dart';
 import 'package:shiori/domain/services/settings_service.dart';
 import 'package:shiori/domain/services/telemetry_service.dart';
 import 'package:shiori/infrastructure/infrastructure.dart';
@@ -26,6 +27,7 @@ void main() {
   late final GenshinService _genshinService;
   late final DataService _dataService;
   late final NotificationsBloc _notificationsBloc;
+  late final ResourceService _resourceService;
 
   const _defaultTitle = 'Notification title';
   const _defaultBody = 'Notification body';
@@ -47,8 +49,9 @@ void main() {
     when(_settingsService.useTwentyFourHoursFormat).thenReturn(true);
     when(_settingsService.serverResetTime).thenReturn(AppServerResetTimeType.northAmerica);
     _localeService = LocaleServiceImpl(_settingsService);
-    _genshinService = GenshinServiceImpl(_localeService);
-    _dataService = DataServiceImpl(_genshinService, CalculatorServiceImpl(_genshinService));
+    _resourceService = getResourceService(_settingsService);
+    _genshinService = GenshinServiceImpl(_resourceService, _localeService);
+    _dataService = DataServiceImpl(_genshinService, CalculatorServiceImpl(_genshinService, _resourceService), _resourceService);
     _notificationsBloc = NotificationsBloc(_dataService, _notificationService, _settingsService, _telemetryService);
 
     return Future(() async {
@@ -109,6 +112,7 @@ void main() {
       _loggingService,
       _telemetryService,
       _settingsService,
+      _resourceService,
       _notificationsBloc,
     );
   }
@@ -634,17 +638,19 @@ void main() {
       build: () => _buildBloc(),
       act: (bloc) {
         final newMaterial = _genshinService.materials.getAllMaterialsThatHaveAFarmingRespawnDuration().last;
+        final imgPath = _resourceService.getMaterialImagePath(newMaterial.image, newMaterial.type);
         return bloc
           ..add(const NotificationEvent.add(defaultTitle: _defaultTitle, defaultBody: _defaultBody))
           ..add(const NotificationEvent.typeChanged(newValue: AppNotificationType.farmingMaterials))
-          ..add(NotificationEvent.imageChanged(newValue: newMaterial.fullImagePath));
+          ..add(NotificationEvent.imageChanged(newValue: imgPath));
       },
       verify: (bloc) => bloc.state.maybeMap(
         farmingMaterial: (state) {
           _checkState(state, AppNotificationType.farmingMaterials, checkKey: false);
           _checkNotDirtyFields(state, shouldBeDirty: false);
           final newMaterial = _genshinService.materials.getAllMaterialsThatHaveAFarmingRespawnDuration().last;
-          expect(state.images.any((el) => el.isSelected && el.image == newMaterial.fullImagePath), isTrue);
+          final imgPath = _resourceService.getMaterialImagePath(newMaterial.image, newMaterial.type);
+          expect(state.images.any((el) => el.isSelected && el.image == imgPath), isTrue);
         },
         orElse: () => throw Exception('Invalid state'),
       ),
@@ -663,16 +669,18 @@ void main() {
       act: (bloc) {
         final notification = _dataService.notifications.getAllNotifications().first;
         final newMaterial = _genshinService.materials.getAllMaterialsThatHaveAFarmingRespawnDuration().last;
+        final imgPath = _resourceService.getMaterialImagePath(newMaterial.image, newMaterial.type);
         return bloc
           ..add(NotificationEvent.edit(key: notification.key, type: AppNotificationType.farmingMaterials))
-          ..add(NotificationEvent.imageChanged(newValue: newMaterial.fullImagePath));
+          ..add(NotificationEvent.imageChanged(newValue: imgPath));
       },
       verify: (bloc) => bloc.state.maybeMap(
         farmingMaterial: (state) {
           _checkState(state, AppNotificationType.farmingMaterials, checkKey: false);
           _checkNotDirtyFields(state);
           final newMaterial = _genshinService.materials.getAllMaterialsThatHaveAFarmingRespawnDuration().last;
-          expect(state.images.any((el) => el.isSelected && el.image == newMaterial.fullImagePath), isTrue);
+          final imgPath = _resourceService.getMaterialImagePath(newMaterial.image, newMaterial.type);
+          expect(state.images.any((el) => el.isSelected && el.image == imgPath), isTrue);
         },
         orElse: () => throw Exception('Invalid state'),
       ),
@@ -685,17 +693,19 @@ void main() {
       build: () => _buildBloc(),
       act: (bloc) {
         final gadget = _genshinService.gadgets.getAllGadgetsForNotifications().last;
+        final imgPath = _resourceService.getGadgetImagePath(gadget.image);
         return bloc
           ..add(const NotificationEvent.add(defaultTitle: _defaultTitle, defaultBody: _defaultBody))
           ..add(const NotificationEvent.typeChanged(newValue: AppNotificationType.gadget))
-          ..add(NotificationEvent.imageChanged(newValue: gadget.fullImagePath));
+          ..add(NotificationEvent.imageChanged(newValue: imgPath));
       },
       verify: (bloc) => bloc.state.maybeMap(
         gadget: (state) {
           _checkState(state, AppNotificationType.gadget, checkKey: false);
           _checkNotDirtyFields(state, shouldBeDirty: false);
           final gadget = _genshinService.gadgets.getAllGadgetsForNotifications().last;
-          expect(state.images.any((el) => el.isSelected && el.image == gadget.fullImagePath), isTrue);
+          final imgPath = _resourceService.getGadgetImagePath(gadget.image);
+          expect(state.images.any((el) => el.isSelected && el.image == imgPath), isTrue);
         },
         orElse: () => throw Exception('Invalid state'),
       ),
@@ -714,16 +724,18 @@ void main() {
       act: (bloc) {
         final notification = _dataService.notifications.getAllNotifications().first;
         final gadget = _genshinService.gadgets.getAllGadgetsForNotifications().last;
+        final imgPath = _resourceService.getGadgetImagePath(gadget.image);
         return bloc
           ..add(NotificationEvent.edit(key: notification.key, type: AppNotificationType.gadget))
-          ..add(NotificationEvent.imageChanged(newValue: gadget.fullImagePath));
+          ..add(NotificationEvent.imageChanged(newValue: imgPath));
       },
       verify: (bloc) => bloc.state.maybeMap(
         gadget: (state) {
           _checkState(state, AppNotificationType.gadget, checkKey: false);
           _checkNotDirtyFields(state);
           final gadget = _genshinService.gadgets.getAllGadgetsForNotifications().last;
-          expect(state.images.any((el) => el.isSelected && el.image == gadget.fullImagePath), isTrue);
+          final imgPath = _resourceService.getGadgetImagePath(gadget.image);
+          expect(state.images.any((el) => el.isSelected && el.image == imgPath), isTrue);
         },
         orElse: () => throw Exception('Invalid state'),
       ),

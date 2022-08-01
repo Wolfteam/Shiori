@@ -32,8 +32,10 @@ void main() {
     _settingsService = MockSettingsService();
     when(_settingsService.language).thenReturn(AppLanguageType.english);
     _localeService = LocaleServiceImpl(_settingsService);
-    _genshinService = GenshinServiceImpl(_localeService);
-    _dataService = DataServiceImpl(_genshinService, CalculatorServiceImpl(_genshinService));
+
+    final resourceService = getResourceService(_settingsService);
+    _genshinService = GenshinServiceImpl(resourceService, _localeService);
+    _dataService = DataServiceImpl(_genshinService, CalculatorServiceImpl(_genshinService, resourceService), resourceService);
     return Future(() async {
       await _genshinService.init(_settingsService.language);
       await _dataService.init(dir: _dbFolder);

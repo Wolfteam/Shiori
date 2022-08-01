@@ -9,6 +9,8 @@ import 'package:shiori/domain/extensions/string_extensions.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/genshin_service.dart';
 import 'package:shiori/domain/services/locale_service.dart';
+import 'package:shiori/domain/services/resources_service.dart';
+import 'package:shiori/domain/services/settings_service.dart';
 import 'package:shiori/domain/utils/date_utils.dart';
 import 'package:shiori/infrastructure/infrastructure.dart';
 
@@ -21,18 +23,28 @@ void main() {
   final languages = AppLanguageType.values.toList();
   TestWidgetsFlutterBinding.ensureInitialized();
 
-  LocaleService _getLocaleService(AppLanguageType language) {
+  SettingsService _getSettingsService(AppLanguageType language) {
     final settings = MockSettingsService();
     when(settings.language).thenReturn(language);
-    final service = LocaleServiceImpl(settings);
+    return settings;
+  }
 
+  LocaleService _getLocaleService(AppLanguageType language) {
+    final resourceService = _getSettingsService(language);
+    final service = LocaleServiceImpl(resourceService);
     manuallyInitLocale(service, language);
     return service;
   }
 
+  ResourceService _getResourceService(AppLanguageType language) {
+    final settingsService = _getSettingsService(language);
+    return getResourceService(settingsService);
+  }
+
   GenshinService _getService() {
     final localeService = _getLocaleService(AppLanguageType.english);
-    final service = GenshinServiceImpl(localeService);
+    final resourceService = _getResourceService(AppLanguageType.english);
+    final service = GenshinServiceImpl(resourceService, localeService);
     return service;
   }
 
@@ -148,6 +160,7 @@ void main() {
       final service = _getService();
       await service.init(AppLanguageType.english);
       final localeService = _getLocaleService(AppLanguageType.english);
+      final resourceService = _getResourceService(AppLanguageType.english);
       final characters = service.characters.getCharactersForCard();
       for (final character in characters) {
         final travelerKeys = ['traveler-geo', 'traveler-electro', 'traveler-anemo', 'traveler-hydro', 'traveler-pyro', 'traveler-cryo'];
@@ -157,8 +170,8 @@ void main() {
         expect(detail.rarity, character.stars);
         expect(detail.weaponType, character.weaponType);
         expect(detail.elementType, character.elementType);
-        checkAsset(detail.fullImagePath);
-        checkAsset(detail.fullCharacterImagePath);
+        checkAsset(resourceService.getCharacterImagePath(detail.image));
+        checkAsset(resourceService.getCharacterFullImagePath(detail.fullImage));
         expect(detail.region, character.regionType);
         expect(detail.role, character.roleType);
         expect(detail.isComingSoon, character.isComingSoon);
@@ -170,7 +183,7 @@ void main() {
         }
 
         if (isTraveler) {
-          checkAsset(detail.fullSecondImagePath!);
+          checkAsset(resourceService.getCharacterFullImagePath(detail.secondFullImage!));
         } else {
           expect(detail.birthday, allOf([isNotNull, isNotEmpty]));
 
@@ -245,7 +258,7 @@ void main() {
         for (final skill in detail.skills) {
           checkKey(skill.key);
           if (!detail.isComingSoon) {
-            checkAsset(skill.fullImagePath);
+            checkAsset(resourceService.getSkillImagePath(skill.image));
             expect(skill.stats, isNotEmpty);
             for (final stat in skill.stats) {
               switch (skill.type) {
@@ -275,7 +288,7 @@ void main() {
         for (final passive in detail.passives) {
           checkKey(passive.key);
           if (!detail.isComingSoon) {
-            checkAsset(passive.fullImagePath);
+            checkAsset(resourceService.getSkillImagePath(passive.image));
           }
 
           expect(passive.unlockedAt, isIn([-1, 1, 4]));
@@ -284,7 +297,7 @@ void main() {
         for (final constellation in detail.constellations) {
           checkKey(constellation.key);
           if (!detail.isComingSoon) {
-            checkAsset(constellation.fullImagePath);
+            checkAsset(resourceService.getSkillImagePath(constellation.image));
           }
           expect(constellation.number, inInclusiveRange(1, 6));
         }
@@ -314,11 +327,12 @@ void main() {
     test('check for weapons', () async {
       final service = _getService();
       await service.init(AppLanguageType.english);
+      final resourceService = _getResourceService(AppLanguageType.english);
       final weapons = service.weapons.getWeaponsForCard();
       for (final weapon in weapons) {
         final detail = service.weapons.getWeapon(weapon.key);
         checkKey(detail.key);
-        checkAsset(detail.fullImagePath);
+        checkAsset(resourceService.getWeaponImagePath(detail.image, detail.type));
         expect(detail.type, equals(weapon.type));
         expect(detail.atk, equals(weapon.baseAtk));
         expect(detail.rarity, equals(weapon.rarity));
@@ -387,10 +401,11 @@ void main() {
       final service = _getService();
       await service.init(AppLanguageType.english);
       final artifacts = service.artifacts.getArtifactsForCard();
+      final resourceService = _getResourceService(AppLanguageType.english);
       for (final artifact in artifacts) {
         final detail = service.artifacts.getArtifact(artifact.key);
         checkKey(detail.key);
-        checkAsset(detail.fullImagePath);
+        checkAsset(resourceService.getArtifactImagePath(detail.image));
         expect(detail.minRarity, inInclusiveRange(2, 4));
         expect(detail.maxRarity, inInclusiveRange(3, 5));
       }
@@ -400,10 +415,11 @@ void main() {
       final service = _getService();
       await service.init(AppLanguageType.english);
       final materials = service.materials.getAllMaterialsForCard();
+      final resourceService = _getResourceService(AppLanguageType.english);
       for (final material in materials) {
         final detail = service.materials.getMaterial(material.key);
         checkKey(detail.key);
-        checkAsset(detail.fullImagePath);
+        checkAsset(resourceService.getMaterialImagePath(detail.image, detail.type));
         expect(detail.rarity, equals(material.rarity));
         expect(detail.type, equals(material.type));
 
@@ -493,10 +509,11 @@ void main() {
       final service = _getService();
       await service.init(AppLanguageType.english);
       final monsters = service.monsters.getAllMonstersForCard();
+      final resourceService = _getResourceService(AppLanguageType.english);
       for (final monster in monsters) {
         final detail = service.monsters.getMonster(monster.key);
         checkKey(detail.key);
-        checkAsset(detail.fullImagePath);
+        checkAsset(resourceService.getMonsterImagePath(detail.image));
 
         for (final drop in detail.drops) {
           switch (drop.type) {

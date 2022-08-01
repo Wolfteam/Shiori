@@ -10,6 +10,12 @@ import 'package:shiori/domain/extensions/string_extensions.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/genshin_service.dart';
 import 'package:shiori/domain/services/locale_service.dart';
+import 'package:shiori/domain/services/resources_service.dart';
+import 'package:shiori/domain/services/settings_service.dart';
+import 'package:shiori/infrastructure/infrastructure.dart';
+
+import 'mocks.mocks.dart';
+import 'secrets.dart';
 
 //since we are using a real impl of the data service,
 // to avoid problems we just create different folders and delete them all after the test completes
@@ -46,9 +52,21 @@ Future<bool> _assetExists(String path) async {
   }
 }
 
-void checkAsset(String path) {
+Future<bool> _fileExists(String path) => File(path).exists();
+
+void checkAsset(String path, {bool isAnAsset = false}) {
   expect(path, allOf([isNotEmpty, isNotNull]));
-  expect(_assetExists(path), completion(equals(true)));
+  if (isAnAsset) {
+    expect(_assetExists(path), completion(equals(true)));
+  } else {
+    expect(_fileExists(path), completion(equals(true)));
+  }
+}
+
+void checkAssets(List<String> paths, {bool isAnAsset = false}) {
+  for (final path in paths) {
+    checkAsset(path, isAnAsset: isAnAsset);
+  }
 }
 
 void checkItemsCommon(List<ItemCommon> items, {bool checkEmpty = true}) {
@@ -119,4 +137,10 @@ void checkTranslation(String? text, {bool canBeNull = true, bool checkForColor =
     final hasColor = text.contains('{color}') || text.contains('{/color}');
     expect(hasColor, isFalse);
   }
+}
+
+ResourceService getResourceService(SettingsService settingsService) {
+  final resourceService = ResourceServiceImpl(MockLoggingService(), settingsService, MockNetworkService());
+  resourceService.initForTests(Secrets.testTempPath, Secrets.testAssetsPath);
+  return resourceService;
 }

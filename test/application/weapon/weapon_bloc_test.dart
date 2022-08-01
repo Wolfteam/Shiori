@@ -4,6 +4,7 @@ import 'package:shiori/application/bloc.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/services/data_service.dart';
 import 'package:shiori/domain/services/genshin_service.dart';
+import 'package:shiori/domain/services/resources_service.dart';
 import 'package:shiori/domain/services/telemetry_service.dart';
 import 'package:shiori/infrastructure/infrastructure.dart';
 
@@ -16,6 +17,7 @@ void main() {
   late final TelemetryService _telemetryService;
   late final GenshinService _genshinService;
   late final DataService _dataService;
+  late final ResourceService _resourceService;
 
   const _key = 'aquila-favonia';
 
@@ -24,8 +26,9 @@ void main() {
     _telemetryService = MockTelemetryService();
     final settingsService = SettingsServiceImpl(MockLoggingService());
     final localeService = LocaleServiceImpl(settingsService);
-    _genshinService = GenshinServiceImpl(localeService);
-    _dataService = DataServiceImpl(_genshinService, CalculatorServiceImpl(_genshinService));
+    _resourceService = getResourceService(settingsService);
+    _genshinService = GenshinServiceImpl(_resourceService, localeService);
+    _dataService = DataServiceImpl(_genshinService, CalculatorServiceImpl(_genshinService, _resourceService), _resourceService);
 
     return Future(() async {
       await _genshinService.init(AppLanguageType.english);
@@ -42,7 +45,7 @@ void main() {
 
   test(
     'Initial state',
-    () => expect(WeaponBloc(_genshinService, _telemetryService, _dataService).state, const WeaponState.loading()),
+    () => expect(WeaponBloc(_genshinService, _telemetryService, _dataService, _resourceService).state, const WeaponState.loading()),
   );
 
   group('Load from key', () {
@@ -72,7 +75,7 @@ void main() {
 
     blocTest<WeaponBloc, WeaponState>(
       'keqing',
-      build: () => WeaponBloc(_genshinService, _telemetryService, _dataService),
+      build: () => WeaponBloc(_genshinService, _telemetryService, _dataService, _resourceService),
       act: (bloc) => bloc.add(const WeaponEvent.loadFromKey(key: _key)),
       //we skip 1 because since the event is not _AddedToInventory the bloc will emit a loading
       skip: 1,
@@ -81,7 +84,7 @@ void main() {
 
     blocTest<WeaponBloc, WeaponState>(
       'keqing is in inventory',
-      build: () => WeaponBloc(_genshinService, _telemetryService, _dataService),
+      build: () => WeaponBloc(_genshinService, _telemetryService, _dataService, _resourceService),
       setUp: () {
         _dataService.inventory.addItemToInventory(_key, ItemType.weapon, 1);
       },
