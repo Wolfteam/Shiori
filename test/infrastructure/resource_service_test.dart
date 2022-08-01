@@ -132,6 +132,7 @@ void main() {
     test('invalid app version', () {
       final service = ResourceServiceImpl(MockLoggingService(), MockSettingsService(), MockNetworkService());
       expect(() => service.checkForUpdates('', -1), throwsA(isA<Exception>()));
+      expect(() => service.checkForUpdates('1,0,2', -1), throwsA(isA<Exception>()));
     });
 
     test('no updates available because not enough time has passed', () async {

@@ -199,7 +199,7 @@ class ResourceServiceImpl implements ResourceService {
   String getMaterialImagePath(String filename, MaterialType type) => _getImagePath(filename, AppImageFolderType.items, materialType: type);
 
   bool _canCheckForUpdates() {
-    _loggingService.info(runtimeType, 'Checking if we can check for resource updates...');
+    _loggingService.info(runtimeType, '_canCheckForUpdates: Checking if we can check for resource updates...');
     final lastResourcesCheckedDate = _settingsService.lastResourcesCheckedDate;
     if (lastResourcesCheckedDate == null) {
       return true;
@@ -219,6 +219,11 @@ class ResourceServiceImpl implements ResourceService {
       throw Exception('Invalid app version');
     }
 
+    final appVersionRegex = RegExp(r'(\d+\.)(\d+\.)(\d+)');
+    if (!appVersionRegex.hasMatch(currentAppVersion)) {
+      throw Exception('Invalid app version');
+    }
+
     if (!_usesZipFile && !_usesJsonFile) {
       throw Exception('Unsupported platform');
     }
@@ -234,7 +239,7 @@ class ResourceServiceImpl implements ResourceService {
     }
 
     try {
-      _loggingService.info(runtimeType, 'Checking if there is a diff for appVersion = $currentAppVersion');
+      _loggingService.info(runtimeType, 'checkForUpdates: Checking if there is a diff for appVersion = $currentAppVersion');
       String url = '${Secrets.apiBaseUrl}/api/resources/diff?AppVersion=$currentAppVersion';
       if (currentResourcesVersion > 0) {
         url += '&CurrentResourceVersion=$currentResourcesVersion';
