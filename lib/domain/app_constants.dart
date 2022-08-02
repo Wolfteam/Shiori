@@ -11,6 +11,13 @@ int getArtifactOrder(ArtifactType type) {
   return artifactOrder[type.index];
 }
 
+//This method is used to make sure we return the artifacts in the right order
+String getArtifactPathByOrder(int index, String currentPath) {
+  final order = artifactOrder[index];
+  final replaceDigitRegex = RegExp(r'_\d{1}');
+  return currentPath.replaceFirst(replaceDigitRegex, '_$order');
+}
+
 List<StatType> getArtifactPossibleMainStats(ArtifactType type) {
   switch (type) {
     case ArtifactType.flower:
