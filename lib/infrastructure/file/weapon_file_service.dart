@@ -48,13 +48,12 @@ class WeaponFileServiceImpl extends WeaponFileService {
 
   @override
   List<ItemCommon> getWeaponForItemsUsingMaterial(String key) {
-    final material = _materials.getMaterial(key);
     final items = <ItemCommon>[];
 
     for (final weapon in _weaponsFile.weapons) {
       final materials = weapon.craftingMaterials + weapon.ascensionMaterials.expand((e) => e.materials).toList();
       final allMaterials = _materials.getMaterialsFromAscensionMaterials(materials);
-      if (allMaterials.any((m) => m.key == material.key)) {
+      if (allMaterials.any((m) => m.key == key)) {
         items.add(ItemCommon(weapon.key, _resourceService.getWeaponImagePath(weapon.image, weapon.type)));
       }
     }

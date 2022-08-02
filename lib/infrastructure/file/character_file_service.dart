@@ -131,10 +131,10 @@ class CharacterFileServiceImpl extends CharacterFileService {
 
   @override
   List<ItemCommon> getCharacterForItemsUsingMaterial(String key) {
-    final material = _materials.getMaterial(key);
     final imgs = <ItemCommon>[];
+    final chars = _charactersFile.characters.where((c) => !c.isComingSoon).toList();
 
-    for (final char in _charactersFile.characters.where((c) => !c.isComingSoon)) {
+    for (final char in chars) {
       final multiTalentAscensionMaterials =
           (char.multiTalentAscensionMaterials?.expand((e) => e.materials).expand((e) => e.materials) ?? <ItemAscensionMaterialFileModel>[]).toList();
 
@@ -144,7 +144,7 @@ class CharacterFileServiceImpl extends CharacterFileService {
       final materials = multiTalentAscensionMaterials + ascensionMaterial + talentMaterial;
       final allMaterials = _materials.getMaterialsFromAscensionMaterials(materials);
 
-      if (allMaterials.any((m) => m.key == material.key)) {
+      if (allMaterials.any((m) => m.key == key)) {
         imgs.add(ItemCommon(char.key, _resourceService.getCharacterImagePath(char.image)));
       }
     }
