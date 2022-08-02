@@ -449,7 +449,8 @@
   "regions": "Regions",
   "genders": "Genders",
   "perRegion": "Per region",
-  "resourcesVersion": "Resources version: {version}",
+  "currentResourcesVersion": "Current resources version: {version}",
+  "newResourcesVersion": "New resources version: {version}",
   "retry": "Retry",
   "continueLabel": "Continue",
   "updatingResources": "Updating resources",
@@ -458,5 +459,13 @@
   "internetRequiredToUpdate": "Make sure you are connected to a stable internet connection",
   "doNotCloseAppWhileUpdating": "Do not close the app while the update takes place",
   "unknownErrorWhileUpdating": "Unknown error occurred while checking updates",
-  "newAppVersionInStore": "A new version of the app should be available in the store"
+  "newAppVersionInStore": "A new version of the app should be available in the store",
+  "subjectOfEmail": "The subject of the email",
+  "beforeSendingEmailMsg": "Before sending an email, make sure you write in either english or spanish.\nIf you write in any other language I will not answer you.",
+  "checkForResourceUpdates": "Check for resource updates",
+  "updatesAvailable": "Updates available",
+  "noUpdatesAvailable": "No updates available",
+  "tryAgainLater": "Please try again later",
+  "applyUpdate": "Apply update",
+  "checkingForResourceUpdates": "Checking for resource updates..."
 }
