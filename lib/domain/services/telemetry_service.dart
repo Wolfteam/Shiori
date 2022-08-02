@@ -71,4 +71,6 @@ abstract class TelemetryService {
   Future<void> trackChartsOpened();
 
   Future<void> trackBirthdaysPerMonthOpened(int month);
+
+  Future<void> trackCheckForResourceUpdates(AppResourceUpdateResultType result);
 }

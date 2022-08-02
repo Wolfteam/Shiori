@@ -22,6 +22,7 @@ export 'charts/elements/chart_elements_bloc.dart';
 export 'charts/genders/chart_genders_bloc.dart';
 export 'charts/regions/chart_regions_bloc.dart';
 export 'charts/tops/chart_tops_bloc.dart';
+export 'check_for_resource_updates/check_for_resource_updates_bloc.dart';
 export 'custom_build/custom_build_bloc.dart';
 export 'custom_builds/custom_builds_bloc.dart';
 export 'donations/donations_bloc.dart';

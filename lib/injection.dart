@@ -227,6 +227,14 @@ class Injection {
     return SplashBloc(resourceService, settingsService, deviceInfoService, localeService);
   }
 
+  static CheckForResourceUpdatesBloc get checkForResourceUpdatesBlocBloc {
+    final resourceService = getIt<ResourceService>();
+    final settingsService = getIt<SettingsService>();
+    final deviceInfoService = getIt<DeviceInfoService>();
+    final telemetryService = getIt<TelemetryService>();
+    return CheckForResourceUpdatesBloc(resourceService, settingsService, deviceInfoService, telemetryService);
+  }
+
   //TODO: USE THIS PROP
   // static CalculatorAscMaterialsItemBloc get calculatorAscMaterialsItemBloc {
   //   final genshinService = getIt<GenshinService>();
