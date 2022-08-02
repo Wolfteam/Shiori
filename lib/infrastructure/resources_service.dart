@@ -288,6 +288,8 @@ class ResourceServiceImpl implements ResourceService {
     } catch (e, s) {
       _loggingService.error(runtimeType, 'checkForUpdates: Unknown error', e, s);
       return CheckForUpdatesResult(type: AppResourceUpdateResultType.unknownError, resourceVersion: currentResourcesVersion);
+    } finally {
+      _settingsService.lastResourcesCheckedDate = DateTime.now();
     }
   }
 
@@ -368,7 +370,6 @@ class ResourceServiceImpl implements ResourceService {
       }
 
       _loggingService.info(runtimeType, 'downloadAndApplyUpdates: Update completed');
-      _settingsService.lastResourcesCheckedDate = DateTime.now();
       _settingsService.resourceVersion = targetResourceVersion;
       return true;
     } catch (e, s) {
