@@ -120,9 +120,7 @@ class MyApp extends StatelessWidget {
           },
         ),
       ],
-      child: BlocBuilder<MainBloc, MainState>(
-        builder: (ctx, state) => AppWidget(),
-      ),
+      child: AppWidget(),
     );
   }
 }

@@ -55,6 +55,7 @@ class MainBloc extends Bloc<MainEvent, MainState> {
       accentColorChanged: (accentColor) async => _loadThemeData(_settingsService.appTheme, accentColor),
       languageChanged: (language) async => _init(languageChanged: true),
       useDarkAmoledThemeChanged: (use) async => _loadThemeData(_settingsService.appTheme, _settingsService.accentColor),
+      restart: () async => const MainState.loading(),
     );
     yield s;
   }
