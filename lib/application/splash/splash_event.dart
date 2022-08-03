@@ -6,5 +6,8 @@ class SplashEvent with _$SplashEvent {
 
   const factory SplashEvent.progressChanged({required double progress}) = _ProgressChanged;
 
-  const factory SplashEvent.updateCompleted({required bool applied}) = _UpdateCompleted;
+  const factory SplashEvent.updateCompleted({
+    required bool applied,
+    required int resourceVersion,
+  }) = _UpdateCompleted;
 }

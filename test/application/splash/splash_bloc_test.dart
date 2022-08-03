@@ -29,7 +29,7 @@ void main() {
     when(settingsService.resourceVersion).thenReturn(currentResourcesVersion);
     final localeService = getLocaleService(AppLanguageType.english);
 
-    return SplashBloc(resourceService, settingsService, deviceInfoService, localeService);
+    return SplashBloc(resourceService, settingsService, deviceInfoService, MockTelemetryService(), localeService);
   }
 
   test('Initial state', () => expect(_getBloc(MockResourceService()).state, const SplashState.loading()));
@@ -190,7 +190,7 @@ void main() {
       'and was applied',
       seed: () => SplashState.loaded(updateResultType: AppResourceUpdateResultType.updatesAvailable, language: _language),
       build: () => _getBloc(MockResourceService()),
-      act: (bloc) => bloc.add(const SplashEvent.updateCompleted(applied: true)),
+      act: (bloc) => bloc.add(const SplashEvent.updateCompleted(applied: true, resourceVersion: 2)),
       expect: () => [SplashState.loaded(updateResultType: AppResourceUpdateResultType.updated, language: _language, progress: 100)],
     );
 
@@ -198,7 +198,7 @@ void main() {
       'and was not applied',
       seed: () => SplashState.loaded(updateResultType: AppResourceUpdateResultType.updatesAvailable, language: _language),
       build: () => _getBloc(MockResourceService()),
-      act: (bloc) => bloc.add(const SplashEvent.updateCompleted(applied: false)),
+      act: (bloc) => bloc.add(const SplashEvent.updateCompleted(applied: false, resourceVersion: 2)),
       expect: () => [SplashState.loaded(updateResultType: AppResourceUpdateResultType.unknownError, language: _language, progress: 100)],
     );
   });

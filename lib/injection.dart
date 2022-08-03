@@ -226,7 +226,8 @@ class Injection {
     final settingsService = getIt<SettingsService>();
     final deviceInfoService = getIt<DeviceInfoService>();
     final localeService = getIt<LocaleService>();
-    return SplashBloc(resourceService, settingsService, deviceInfoService, localeService);
+    final telemetryService = getIt<TelemetryService>();
+    return SplashBloc(resourceService, settingsService, deviceInfoService, telemetryService, localeService);
   }
 
   static CheckForResourceUpdatesBloc get checkForResourceUpdatesBlocBloc {

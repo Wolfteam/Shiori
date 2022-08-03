@@ -8,6 +8,7 @@ import 'package:shiori/domain/services/device_info_service.dart';
 import 'package:shiori/domain/services/locale_service.dart';
 import 'package:shiori/domain/services/resources_service.dart';
 import 'package:shiori/domain/services/settings_service.dart';
+import 'package:shiori/domain/services/telemetry_service.dart';
 
 part 'splash_bloc.freezed.dart';
 part 'splash_event.dart';
@@ -17,6 +18,7 @@ class SplashBloc extends Bloc<SplashEvent, SplashState> {
   final ResourceService _resourceService;
   final SettingsService _settingsService;
   final DeviceInfoService _deviceInfoService;
+  final TelemetryService _telemetryService;
   final LanguageModel _language;
 
   StreamSubscription? _downloadStream;
@@ -25,6 +27,7 @@ class SplashBloc extends Bloc<SplashEvent, SplashState> {
     this._resourceService,
     this._settingsService,
     this._deviceInfoService,
+    this._telemetryService,
     LocaleService localeService,
   )   : _language = localeService.getLocaleWithoutLang(),
         super(const SplashState.loading());
@@ -42,6 +45,7 @@ class SplashBloc extends Bloc<SplashEvent, SplashState> {
       yield SplashState.loaded(updateResultType: result.type, language: _language);
 
       if (result.type == AppResourceUpdateResultType.updatesAvailable) {
+        await _telemetryService.trackResourceUpdateDownload(result.resourceVersion);
         //the stream is required to avoid blocking the bloc
         final downloadStream = _resourceService
             .downloadAndApplyUpdates(
@@ -53,8 +57,10 @@ class SplashBloc extends Bloc<SplashEvent, SplashState> {
             )
             .asStream();
 
-        _downloadStream?.cancel();
-        _downloadStream = downloadStream.listen((applied) => add(SplashEvent.updateCompleted(applied: applied)));
+        await _downloadStream?.cancel();
+        _downloadStream = downloadStream.listen(
+          (applied) => add(SplashEvent.updateCompleted(applied: applied, resourceVersion: result.resourceVersion)),
+        );
       }
       return;
     }
@@ -80,6 +86,7 @@ class SplashBloc extends Bloc<SplashEvent, SplashState> {
 
     if (event is _UpdateCompleted) {
       final appliedResult = event.applied ? AppResourceUpdateResultType.updated : AppResourceUpdateResultType.unknownError;
+      await _telemetryService.trackResourceUpdateCompleted(event.applied, event.resourceVersion);
       yield SplashState.loaded(updateResultType: appliedResult, language: _language, progress: 100);
     }
   }
