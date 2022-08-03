@@ -92,8 +92,8 @@ class SplashBloc extends Bloc<SplashEvent, SplashState> {
   }
 
   @override
-  Future<void> close() {
-    _downloadStream?.cancel();
+  Future<void> close() async {
+    await _downloadStream?.cancel();
     return super.close();
   }
 }
