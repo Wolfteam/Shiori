@@ -1,4 +1,5 @@
 import 'package:mockito/annotations.dart';
+import 'package:shiori/domain/services/api_service.dart';
 import 'package:shiori/domain/services/device_info_service.dart';
 import 'package:shiori/domain/services/game_code_service.dart';
 import 'package:shiori/domain/services/logging_service.dart';
@@ -19,5 +20,6 @@ import 'package:shiori/domain/services/telemetry_service.dart';
   NotificationService,
   PurchaseService,
   ResourceService,
+  ApiService,
 ])
 void main() {}

@@ -30,8 +30,12 @@ void main() {
   test('Initial state', () => expect(_getBloc().state, const CheckForResourceUpdatesState.loading()));
 
   group('Init', () {
-    void _checkState(CheckForResourceUpdatesState state, AppResourceUpdateResultType resultType, int currentResourcesVersion,
-        {int? targetResourceVersion}) {
+    void _checkState(
+      CheckForResourceUpdatesState state,
+      AppResourceUpdateResultType resultType,
+      int currentResourcesVersion, {
+      int? targetResourceVersion,
+    }) {
       state.map(
         loading: (_) => throw Exception('Invalid state'),
         loaded: (state) {

@@ -141,7 +141,7 @@ void checkTranslation(String? text, {bool canBeNull = true, bool checkForColor =
 }
 
 ResourceService getResourceService(SettingsService settingsService) {
-  final resourceService = ResourceServiceImpl(MockLoggingService(), settingsService, MockNetworkService());
+  final resourceService = ResourceServiceImpl(MockLoggingService(), settingsService, MockNetworkService(), MockApiService());
   resourceService.initForTests(Secrets.testTempPath, Secrets.testAssetsPath);
   return resourceService;
 }

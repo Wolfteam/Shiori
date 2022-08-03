@@ -1,7 +1,9 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:shiori/domain/enums/enums.dart';
+import 'package:shiori/domain/models/dtos.dart';
 import 'package:shiori/domain/models/models.dart';
+import 'package:shiori/domain/services/resources_service.dart';
 import 'package:shiori/infrastructure/infrastructure.dart';
 
 import '../common.dart';
@@ -121,7 +123,7 @@ void main() {
   });
 
   group('Check for updates', () {
-    void _checkUpdateResult(AppResourceUpdateResultType expectedResultType, int expectedResourceVersion, CheckForUpdatesResult result) {
+    void _checkEmptyUpdateResult(AppResourceUpdateResultType expectedResultType, int expectedResourceVersion, CheckForUpdatesResult result) {
       expect(result.type == expectedResultType, isTrue);
       expect(result.resourceVersion == expectedResourceVersion, isTrue);
       expect(result.jsonFileKeyName, isNull);
@@ -129,8 +131,42 @@ void main() {
       expect(result.keyNames, isEmpty);
     }
 
+    void _checkUpdateResult(
+      AppResourceUpdateResultType expectedResultType,
+      int expectedResourceVersion,
+      CheckForUpdatesResult result,
+      ResourceDiffResponseDto? apiResponse,
+    ) {
+      expect(result.type == expectedResultType, isTrue);
+      expect(result.resourceVersion == expectedResourceVersion, isTrue);
+      if (apiResponse != null) {
+        expect(result.jsonFileKeyName == apiResponse.jsonFileKeyName, isTrue);
+        expect(result.zipFileKeyName == apiResponse.zipFileKeyName, isTrue);
+        expect(result.keyNames, apiResponse.keyNames);
+      } else {
+        _checkEmptyUpdateResult(expectedResultType, expectedResourceVersion, result);
+      }
+    }
+
+    ResourceService _getService({
+      String appVersion = '1.0.0',
+      int currentResourceVersion = -1,
+      bool isInternetAvailable = false,
+      ApiResponseDto<ResourceDiffResponseDto?>? apiResult,
+    }) {
+      final settingsService = MockSettingsService();
+      when(settingsService.lastResourcesCheckedDate).thenReturn(null);
+
+      final networkService = MockNetworkService();
+      when(networkService.isInternetAvailable()).thenAnswer((_) => Future.value(isInternetAvailable));
+      final apiService = MockApiService();
+      when(apiService.checkForUpdates(appVersion, currentResourceVersion)).thenAnswer((_) => Future.value(apiResult));
+
+      return ResourceServiceImpl(MockLoggingService(), settingsService, networkService, apiService);
+    }
+
     test('invalid app version', () {
-      final service = ResourceServiceImpl(MockLoggingService(), MockSettingsService(), MockNetworkService());
+      final service = ResourceServiceImpl(MockLoggingService(), MockSettingsService(), MockNetworkService(), MockApiService());
       expect(() => service.checkForUpdates('', -1), throwsA(isA<Exception>()));
       expect(() => service.checkForUpdates('1,0,2', -1), throwsA(isA<Exception>()));
     });
@@ -139,57 +175,180 @@ void main() {
       final settingsService = MockSettingsService();
       when(settingsService.lastResourcesCheckedDate).thenReturn(DateTime.now());
 
-      final service = ResourceServiceImpl(MockLoggingService(), settingsService, MockNetworkService());
+      final service = ResourceServiceImpl(MockLoggingService(), settingsService, MockNetworkService(), MockApiService());
 
       final result = await service.checkForUpdates('1.0.0', -1);
-      _checkUpdateResult(AppResourceUpdateResultType.noUpdatesAvailable, -1, result);
+      _checkEmptyUpdateResult(AppResourceUpdateResultType.noUpdatesAvailable, -1, result);
     });
 
     test('no internet connection on first install', () async {
-      final settingsService = MockSettingsService();
-      when(settingsService.lastResourcesCheckedDate).thenReturn(null);
-      final networkService = MockNetworkService();
-      when(networkService.isInternetAvailable()).thenAnswer((_) => Future.value(false));
-
-      final service = ResourceServiceImpl(MockLoggingService(), settingsService, networkService);
-
+      final service = _getService();
       final result = await service.checkForUpdates('1.0.0', -1);
-      _checkUpdateResult(AppResourceUpdateResultType.noInternetConnectionForFirstInstall, -1, result);
+      _checkEmptyUpdateResult(AppResourceUpdateResultType.noInternetConnectionForFirstInstall, -1, result);
     });
 
     test('unsupported platform', () {
-      final service = ResourceServiceImpl(MockLoggingService(), MockSettingsService(), MockNetworkService(), usesJsonFile: false, usesZipFile: false);
+      final service = ResourceServiceImpl(
+        MockLoggingService(),
+        MockSettingsService(),
+        MockNetworkService(),
+        MockApiService(),
+        usesJsonFile: false,
+        usesZipFile: false,
+      );
       expect(() => service.checkForUpdates('1.0.0', -1), throwsA(isA<Exception>()));
     });
 
-    //todo: missing cases
+    test('api returns that there is a new app version', () async {
+      final service = _getService(
+        isInternetAvailable: true,
+        currentResourceVersion: 1,
+        apiResult: ApiResponseDto<ResourceDiffResponseDto?>(succeed: true, messageId: '3'),
+      );
+      final result = await service.checkForUpdates('1.0.0', 1);
+      _checkEmptyUpdateResult(AppResourceUpdateResultType.needsLatestAppVersion, 1, result);
+    });
+
+    test('api returns that there are no updates available', () async {
+      final service = _getService(
+        isInternetAvailable: true,
+        currentResourceVersion: 1,
+        apiResult: ApiResponseDto<ResourceDiffResponseDto?>(succeed: true, messageId: '4'),
+      );
+      final result = await service.checkForUpdates('1.0.0', 1);
+      _checkEmptyUpdateResult(AppResourceUpdateResultType.noUpdatesAvailable, 1, result);
+    });
+
+    test('api returns unknown message id', () async {
+      final service = _getService(
+        isInternetAvailable: true,
+        currentResourceVersion: 1,
+        apiResult: ApiResponseDto<ResourceDiffResponseDto?>(succeed: true, messageId: 'XXX'),
+      );
+      final result = await service.checkForUpdates('1.0.0', 1);
+      _checkEmptyUpdateResult(AppResourceUpdateResultType.unknownError, 1, result);
+    });
+
+    test('api returns that main files must be downloaded', () async {
+      final apiResult = ApiResponseDto<ResourceDiffResponseDto?>(
+        succeed: true,
+        result: ResourceDiffResponseDto(
+          currentResourceVersion: 1,
+          targetResourceVersion: 2,
+          zipFileKeyName: 'all.zip',
+          jsonFileKeyName: 'all.json',
+          keyNames: [],
+        ),
+      );
+      final service = _getService(
+        isInternetAvailable: true,
+        currentResourceVersion: 1,
+        apiResult: apiResult,
+      );
+      final result = await service.checkForUpdates('1.0.0', 1);
+      _checkUpdateResult(AppResourceUpdateResultType.updatesAvailable, 2, result, apiResult.result!);
+    });
+
+    test('api returns that partial files must be downloaded', () async {
+      final apiResult = ApiResponseDto<ResourceDiffResponseDto?>(
+        succeed: true,
+        result: ResourceDiffResponseDto(currentResourceVersion: 1, targetResourceVersion: 2, keyNames: ['characters/keqing.png']),
+      );
+      final service = _getService(
+        isInternetAvailable: true,
+        currentResourceVersion: 1,
+        apiResult: apiResult,
+      );
+      final result = await service.checkForUpdates('1.0.0', 1);
+      _checkUpdateResult(AppResourceUpdateResultType.updatesAvailable, 2, result, apiResult.result!);
+    });
+
+    test('api returns no files to be downloaded, hence no updates available', () async {
+      final apiResult = ApiResponseDto<ResourceDiffResponseDto?>(
+        succeed: true,
+        result: ResourceDiffResponseDto(currentResourceVersion: 1, targetResourceVersion: 2, keyNames: []),
+      );
+      final service = _getService(
+        isInternetAvailable: true,
+        currentResourceVersion: 1,
+        apiResult: apiResult,
+      );
+      final result = await service.checkForUpdates('1.0.0', 1);
+      _checkUpdateResult(AppResourceUpdateResultType.noUpdatesAvailable, 1, result, apiResult.result!);
+    });
+
+    test('api returns same resource version, hence no updates available', () async {
+      final apiResult = ApiResponseDto<ResourceDiffResponseDto?>(
+        succeed: true,
+        result: ResourceDiffResponseDto(currentResourceVersion: 1, targetResourceVersion: 1, keyNames: []),
+      );
+      final service = _getService(
+        isInternetAvailable: true,
+        currentResourceVersion: 1,
+        apiResult: apiResult,
+      );
+      final result = await service.checkForUpdates('1.0.0', 1);
+      _checkUpdateResult(AppResourceUpdateResultType.noUpdatesAvailable, 1, result, apiResult.result!);
+    });
+
+    test('api returns null result, hence no unknown error', () async {
+      final apiResult = ApiResponseDto<ResourceDiffResponseDto?>(succeed: true);
+      final service = _getService(
+        isInternetAvailable: true,
+        currentResourceVersion: 1,
+        apiResult: apiResult,
+      );
+      final result = await service.checkForUpdates('1.0.0', 1);
+      _checkUpdateResult(AppResourceUpdateResultType.unknownError, 1, result, null);
+    });
   });
 
   group('Download and apply updates', () {
     test('invalid target version', () {
-      final service = ResourceServiceImpl(MockLoggingService(), MockSettingsService(), MockNetworkService());
+      final service = ResourceServiceImpl(MockLoggingService(), MockSettingsService(), MockNetworkService(), MockApiService());
       expect(() => service.downloadAndApplyUpdates(0, null, null), throwsA(isA<Exception>()));
     });
 
     test('neither zip file nor keyNames were provided', () {
-      final service = ResourceServiceImpl(MockLoggingService(), MockSettingsService(), MockNetworkService(), usesZipFile: true, usesJsonFile: false);
+      final service = ResourceServiceImpl(
+        MockLoggingService(),
+        MockSettingsService(),
+        MockNetworkService(),
+        MockApiService(),
+        usesZipFile: true,
+        usesJsonFile: false,
+      );
       expect(() => service.downloadAndApplyUpdates(1, null, null), throwsA(isA<Exception>()));
     });
 
     test('neither json file nor keyNames were provided', () {
-      final service = ResourceServiceImpl(MockLoggingService(), MockSettingsService(), MockNetworkService(), usesZipFile: false, usesJsonFile: true);
+      final service = ResourceServiceImpl(
+        MockLoggingService(),
+        MockSettingsService(),
+        MockNetworkService(),
+        MockApiService(),
+        usesZipFile: false,
+        usesJsonFile: true,
+      );
       expect(() => service.downloadAndApplyUpdates(1, null, null), throwsA(isA<Exception>()));
     });
 
     test('unsupported platform', () {
-      final service = ResourceServiceImpl(MockLoggingService(), MockSettingsService(), MockNetworkService(), usesJsonFile: false, usesZipFile: false);
+      final service = ResourceServiceImpl(
+        MockLoggingService(),
+        MockSettingsService(),
+        MockNetworkService(),
+        MockApiService(),
+        usesJsonFile: false,
+        usesZipFile: false,
+      );
       expect(() => service.downloadAndApplyUpdates(1, null, null), throwsA(isA<Exception>()));
     });
 
     test('target resource version already applied', () {
       final settingsService = MockSettingsService();
       when(settingsService.resourceVersion).thenReturn(2);
-      final service = ResourceServiceImpl(MockLoggingService(), settingsService, MockNetworkService());
+      final service = ResourceServiceImpl(MockLoggingService(), settingsService, MockNetworkService(), MockApiService());
       expect(() => service.downloadAndApplyUpdates(2, null, null), throwsA(isA<Exception>()));
     });
 
@@ -200,7 +359,14 @@ void main() {
       final networkService = MockNetworkService();
       when(networkService.isInternetAvailable()).thenAnswer((_) => Future.value(false));
 
-      final service = ResourceServiceImpl(MockLoggingService(), settingsService, networkService, usesZipFile: true, usesJsonFile: false);
+      final service = ResourceServiceImpl(
+        MockLoggingService(),
+        settingsService,
+        networkService,
+        MockApiService(),
+        usesZipFile: true,
+        usesJsonFile: false,
+      );
       final appliedA = await service.downloadAndApplyUpdates(1, 'all.zip', null);
       final appliedB = await service.downloadAndApplyUpdates(1, 'all.zip', null, keyNames: ['characters/keqing.png']);
 
@@ -215,7 +381,14 @@ void main() {
       final networkService = MockNetworkService();
       when(networkService.isInternetAvailable()).thenAnswer((_) => Future.value(false));
 
-      final service = ResourceServiceImpl(MockLoggingService(), settingsService, networkService, usesZipFile: false, usesJsonFile: true);
+      final service = ResourceServiceImpl(
+        MockLoggingService(),
+        settingsService,
+        networkService,
+        MockApiService(),
+        usesZipFile: false,
+        usesJsonFile: true,
+      );
       final appliedA = await service.downloadAndApplyUpdates(1, null, 'all.json');
       final appliedB = await service.downloadAndApplyUpdates(1, null, 'all.json', keyNames: ['characters/keqing.png']);
 
@@ -230,7 +403,14 @@ void main() {
       final networkService = MockNetworkService();
       when(networkService.isInternetAvailable()).thenAnswer((_) => Future.value(false));
 
-      final service = ResourceServiceImpl(MockLoggingService(), settingsService, networkService, usesZipFile: false, usesJsonFile: true);
+      final service = ResourceServiceImpl(
+        MockLoggingService(),
+        settingsService,
+        networkService,
+        MockApiService(),
+        usesZipFile: false,
+        usesJsonFile: true,
+      );
       final applied = await service.downloadAndApplyUpdates(1, null, null, keyNames: ['characters/keqing.png']);
 
       expect(applied, isFalse);
