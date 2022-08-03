@@ -1,5 +1,6 @@
 import 'package:get_it/get_it.dart';
 import 'package:shiori/application/bloc.dart';
+import 'package:shiori/domain/services/api_service.dart';
 import 'package:shiori/domain/services/calculator_service.dart';
 import 'package:shiori/domain/services/changelog_provider.dart';
 import 'package:shiori/domain/services/data_service.dart';
@@ -14,6 +15,7 @@ import 'package:shiori/domain/services/purchase_service.dart';
 import 'package:shiori/domain/services/resources_service.dart';
 import 'package:shiori/domain/services/settings_service.dart';
 import 'package:shiori/domain/services/telemetry_service.dart';
+import 'package:shiori/infrastructure/api_service.dart';
 import 'package:shiori/infrastructure/infrastructure.dart';
 
 final GetIt getIt = GetIt.instance;
@@ -312,7 +314,10 @@ class Injection {
     await settingsService.init();
     getIt.registerSingleton<SettingsService>(settingsService);
 
-    final resourcesService = ResourceServiceImpl(loggingService, settingsService, networkService);
+    final apiService = ApiServiceImpl(loggingService);
+    getIt.registerSingleton<ApiService>(apiService);
+
+    final resourcesService = ResourceServiceImpl(loggingService, settingsService, networkService, apiService);
     await resourcesService.init();
     getIt.registerSingleton<ResourceService>(resourcesService);
 
@@ -330,7 +335,7 @@ class Injection {
     await notificationService.init();
     getIt.registerSingleton<NotificationService>(notificationService);
 
-    final changelogProvider = ChangelogProviderImpl(loggingService, networkService);
+    final changelogProvider = ChangelogProviderImpl(loggingService, networkService, apiService);
     getIt.registerSingleton<ChangelogProvider>(changelogProvider);
 
     final purchaseService = PurchaseServiceImpl(loggingService);

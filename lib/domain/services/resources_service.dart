@@ -1,7 +1,6 @@
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/models/models.dart';
-
-typedef ProgressChanged = void Function(double);
+import 'package:shiori/domain/services/api_service.dart';
 
 abstract class ResourceService {
   String getJsonFilePath(AppJsonFileType type, {AppLanguageType? language});

@@ -1,22 +1,19 @@
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_archive/flutter_archive.dart';
-import 'package:http/http.dart' as http;
 import 'package:path/path.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:shiori/domain/assets.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/extensions/string_extensions.dart';
-import 'package:shiori/domain/models/dtos.dart';
 import 'package:shiori/domain/models/models.dart';
+import 'package:shiori/domain/services/api_service.dart';
 import 'package:shiori/domain/services/logging_service.dart';
 import 'package:shiori/domain/services/network_service.dart';
 import 'package:shiori/domain/services/resources_service.dart';
 import 'package:shiori/domain/services/settings_service.dart';
-import 'package:shiori/infrastructure/secrets.dart';
 
 const _tempDirName = 'shiori_temp';
 const _tempAssetsDirName = 'shiori_assets';
@@ -25,11 +22,10 @@ class ResourceServiceImpl implements ResourceService {
   final LoggingService _loggingService;
   final SettingsService _settingsService;
   final NetworkService _networkService;
+  final ApiService _apiService;
 
   final bool _usesZipFile;
   final bool _usesJsonFile;
-
-  final _dio = Dio();
 
   late final String _tempPath;
   late final String _assetsPath;
@@ -37,7 +33,8 @@ class ResourceServiceImpl implements ResourceService {
   ResourceServiceImpl(
     this._loggingService,
     this._settingsService,
-    this._networkService, {
+    this._networkService,
+    this._apiService, {
     @visibleForTesting bool? usesZipFile,
     @visibleForTesting bool? usesJsonFile,
   })  : _usesZipFile = usesZipFile ?? Platform.isAndroid || Platform.isIOS,
@@ -240,18 +237,7 @@ class ResourceServiceImpl implements ResourceService {
 
     try {
       _loggingService.info(runtimeType, 'checkForUpdates: Checking if there is a diff for appVersion = $currentAppVersion');
-      String url = '${Secrets.apiBaseUrl}/api/resources/diff?AppVersion=$currentAppVersion';
-      if (currentResourcesVersion > 0) {
-        url += '&CurrentResourceVersion=$currentResourcesVersion';
-      }
-
-      final response = await http.Client().get(Uri.parse(url));
-      final json = jsonDecode(response.body) as Map<String, dynamic>;
-      final apiResponse = ApiResponseDto.fromJson(
-        json,
-        (data) => data == null ? null : ResourceDiffResponseDto.fromJson(data as Map<String, dynamic>),
-      );
-
+      final apiResponse = await _apiService.checkForUpdates(currentAppVersion, currentResourcesVersion);
       switch (apiResponse.messageId) {
         case '3':
           return CheckForUpdatesResult(type: AppResourceUpdateResultType.needsLatestAppVersion, resourceVersion: currentResourcesVersion);
@@ -342,8 +328,8 @@ class ResourceServiceImpl implements ResourceService {
         //we need to download the whole file
         final destMainFilePath = join(_tempPath, _usesZipFile ? zipFileKeyName! : jsonFileKeyName!);
         final downloaded = _usesZipFile
-            ? await _downloadFile(zipFileKeyName!, destMainFilePath, onProgress)
-            : await _downloadFile(jsonFileKeyName!, destMainFilePath, onProgress);
+            ? await _apiService.downloadAsset(zipFileKeyName!, destMainFilePath, onProgress)
+            : await _apiService.downloadAsset(jsonFileKeyName!, destMainFilePath, onProgress);
 
         if (!downloaded) {
           _loggingService.error(runtimeType, 'downloadAndApplyUpdates: Could not download the main file');
@@ -419,8 +405,7 @@ class ResourceServiceImpl implements ResourceService {
       await _deleteDirectoryIfExists(tempFolder);
       return false;
     }
-    //TODO: MANUALLY MOVE THE FILES?
-    // await _afterMainFileWasProcessed(tempFolder, assetsFolder);
+    await _afterMainFileWasProcessed(tempFolder, assetsFolder, deleteAssetsFolder: false);
     _loggingService.info(runtimeType, '_processPartialUpdate: Partial update was successfully processed');
     return true;
   }
@@ -477,32 +462,9 @@ class ResourceServiceImpl implements ResourceService {
     await _createDirectoryIfItDoesntExist(dir);
 
     final destPath = join(dir, split.last);
-    final downloaded = await _downloadFile(keyName, destPath, null);
+    final downloaded = await _apiService.downloadAsset(keyName, destPath, null);
     if (!downloaded) {
       throw Exception('Download of keyName = $keyName failed');
-    }
-  }
-
-  Future<bool> _downloadFile(String keyName, String destPath, ProgressChanged? onProgress) async {
-    try {
-      // _loggingService.debug(runtimeType, '_downloadFile: Downloading file = $keyName...');
-      final url = '${Secrets.assetsBaseUrl}/$keyName';
-
-      await _dio.downloadUri(
-        Uri.parse(url),
-        destPath,
-        onReceiveProgress: (received, total) {
-          if (total != -1) {
-            final progress = received / total * 100;
-            onProgress?.call(progress);
-          }
-        },
-      );
-      // _loggingService.debug(runtimeType, '_downloadFile: File = $keyName was successfully downloaded');
-      return true;
-    } catch (e, s) {
-      _loggingService.error(runtimeType, '_downloadFile: Unknown error', e, s);
-      return false;
     }
   }
 
@@ -526,10 +488,12 @@ class ResourceServiceImpl implements ResourceService {
     }
   }
 
-  Future<void> _afterMainFileWasProcessed(String tempFolder, String assetsFolder) async {
+  Future<void> _afterMainFileWasProcessed(String tempFolder, String assetsFolder, {bool deleteAssetsFolder = true}) async {
     //I delete and create the folder because it may exist and contain old data
-    await _deleteDirectoryIfExists(assetsFolder);
-    await _createDirectoryIfItDoesntExist(assetsFolder);
+    if (deleteAssetsFolder) {
+      await _deleteDirectoryIfExists(assetsFolder);
+      await _createDirectoryIfItDoesntExist(assetsFolder);
+    }
     await _moveFolder(tempFolder, assetsFolder, _tempDirName);
     await _deleteDirectoryIfExists(tempFolder);
   }
