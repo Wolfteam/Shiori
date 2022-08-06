@@ -195,10 +195,14 @@ class ResourceServiceImpl implements ResourceService {
   @override
   String getMaterialImagePath(String filename, MaterialType type) => _getImagePath(filename, AppImageFolderType.items, materialType: type);
 
-  bool _canCheckForUpdates() {
+  bool _canCheckForUpdates({bool checkDate = true}) {
     _loggingService.info(runtimeType, '_canCheckForUpdates: Checking if we can check for resource updates...');
     final lastResourcesCheckedDate = _settingsService.lastResourcesCheckedDate;
     if (lastResourcesCheckedDate == null) {
+      return true;
+    }
+
+    if (!checkDate) {
       return true;
     }
 
@@ -230,14 +234,17 @@ class ResourceServiceImpl implements ResourceService {
     }
 
     final isInternetAvailable = await _networkService.isInternetAvailable();
-    final isFirstResourceCheck = _settingsService.lastResourcesCheckedDate == null;
+    final isFirstResourceCheck = _settingsService.noResourcesHasBeenDownloaded;
     if (!isInternetAvailable && isFirstResourceCheck) {
       return CheckForUpdatesResult(type: AppResourceUpdateResultType.noInternetConnectionForFirstInstall, resourceVersion: currentResourcesVersion);
     }
 
+    bool canUpdateResourceCheckedDate = false;
+
     try {
       _loggingService.info(runtimeType, 'checkForUpdates: Checking if there is a diff for appVersion = $currentAppVersion');
       final apiResponse = await _apiService.checkForUpdates(currentAppVersion, currentResourcesVersion);
+      canUpdateResourceCheckedDate = true;
       switch (apiResponse.messageId) {
         case '3':
           return CheckForUpdatesResult(type: AppResourceUpdateResultType.needsLatestAppVersion, resourceVersion: currentResourcesVersion);
@@ -275,7 +282,9 @@ class ResourceServiceImpl implements ResourceService {
       _loggingService.error(runtimeType, 'checkForUpdates: Unknown error', e, s);
       return CheckForUpdatesResult(type: AppResourceUpdateResultType.unknownError, resourceVersion: currentResourcesVersion);
     } finally {
-      _settingsService.lastResourcesCheckedDate = DateTime.now();
+      if (canUpdateResourceCheckedDate) {
+        _settingsService.lastResourcesCheckedDate = DateTime.now();
+      }
     }
   }
 
@@ -314,7 +323,7 @@ class ResourceServiceImpl implements ResourceService {
       throw Exception('The provided targetResourceVersion = $targetResourceVersion == ${_settingsService.resourceVersion}');
     }
 
-    if (!_canCheckForUpdates()) {
+    if (!_canCheckForUpdates(checkDate: false)) {
       return false;
     }
 

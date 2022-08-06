@@ -108,7 +108,8 @@ class SettingsServiceImpl extends SettingsService {
   @override
   set lastResourcesCheckedDate(DateTime? value) {
     if (value == null) {
-      throw Exception('$_lastResourcesCheckedDate cannot be null');
+      _prefs.setString(_lastResourcesCheckedDate, '');
+      return;
     }
 
     final val = value.toString();
@@ -120,6 +121,9 @@ class SettingsServiceImpl extends SettingsService {
 
   @override
   set resourceVersion(int value) => _prefs.setInt(_resourcesVersion, value);
+
+  @override
+  bool get noResourcesHasBeenDownloaded => resourceVersion <= 0 || lastResourcesCheckedDate == null;
 
   @override
   AppSettings get appSettings => AppSettings(

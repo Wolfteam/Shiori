@@ -73,6 +73,7 @@ class CheckForResourceUpdatesDialog extends StatelessWidget {
   String _getMsgToShow(AppResourceUpdateResultType resultType, S s) {
     switch (resultType) {
       case AppResourceUpdateResultType.unknownError:
+      case AppResourceUpdateResultType.unknownErrorOnFirstInstall:
         return s.unknownError;
       case AppResourceUpdateResultType.noUpdatesAvailable:
         return '${s.noUpdatesAvailable}\n${s.tryAgainLater}';

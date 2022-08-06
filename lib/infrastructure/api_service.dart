@@ -37,7 +37,7 @@ class ApiServiceImpl implements ApiService {
         url += '&CurrentResourceVersion=$currentResourcesVersion';
       }
 
-      final response = await _dio.getUri<String>(Uri.parse(url));
+      final response = await _dio.getUri<String>(Uri.parse(url), options: Options(headers: Secrets.getApiHeaders()));
       final json = jsonDecode(response.data!) as Map<String, dynamic>;
       final apiResponse = ApiResponseDto.fromJson(
         json,

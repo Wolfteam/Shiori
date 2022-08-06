@@ -42,7 +42,10 @@ class SplashBloc extends Bloc<SplashEvent, SplashState> {
       }
 
       final result = await _resourceService.checkForUpdates(_deviceInfoService.version, _settingsService.resourceVersion);
-      yield SplashState.loaded(updateResultType: result.type, language: _language);
+      final unknownErrorOnFirstInstall = result.type == AppResourceUpdateResultType.unknownError && _settingsService.noResourcesHasBeenDownloaded;
+      final resultType = unknownErrorOnFirstInstall ? AppResourceUpdateResultType.unknownErrorOnFirstInstall : result.type;
+      await _telemetryService.trackCheckForResourceUpdates(resultType);
+      yield SplashState.loaded(updateResultType: resultType, language: _language);
 
       if (result.type == AppResourceUpdateResultType.updatesAvailable) {
         await _telemetryService.trackResourceUpdateDownload(result.resourceVersion);
@@ -85,7 +88,15 @@ class SplashBloc extends Bloc<SplashEvent, SplashState> {
     }
 
     if (event is _UpdateCompleted) {
-      final appliedResult = event.applied ? AppResourceUpdateResultType.updated : AppResourceUpdateResultType.unknownError;
+      final appliedResult = event.applied
+          ? AppResourceUpdateResultType.updated
+          : _settingsService.noResourcesHasBeenDownloaded
+              ? AppResourceUpdateResultType.unknownErrorOnFirstInstall
+              : AppResourceUpdateResultType.unknownError;
+      if (!event.applied) {
+        _settingsService.lastResourcesCheckedDate = null;
+      }
+
       await _telemetryService.trackResourceUpdateCompleted(event.applied, event.resourceVersion);
       yield SplashState.loaded(updateResultType: appliedResult, language: _language, progress: 100);
     }
