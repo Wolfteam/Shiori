@@ -6,6 +6,7 @@ import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/services/data_service.dart';
 import 'package:shiori/domain/services/genshin_service.dart';
 import 'package:shiori/domain/services/locale_service.dart';
+import 'package:shiori/domain/services/resources_service.dart';
 import 'package:shiori/domain/services/settings_service.dart';
 import 'package:shiori/domain/services/telemetry_service.dart';
 import 'package:shiori/infrastructure/infrastructure.dart';
@@ -21,6 +22,8 @@ void main() {
   late SettingsService _settingsService;
   late GenshinService _genshinService;
   late DataService _dataService;
+  late ResourceService _resourceService;
+  late final String _dbPath;
 
   setUpAll(() {
     TestWidgetsFlutterBinding.ensureInitialized();
@@ -28,25 +31,30 @@ void main() {
     _settingsService = MockSettingsService();
     when(_settingsService.language).thenReturn(AppLanguageType.english);
     _localeService = LocaleServiceImpl(_settingsService);
-    _genshinService = GenshinServiceImpl(_localeService);
-    _dataService = DataServiceImpl(_genshinService, CalculatorServiceImpl(_genshinService));
+    _resourceService = getResourceService(_settingsService);
+    _genshinService = GenshinServiceImpl(_resourceService, _localeService);
+    _dataService = DataServiceImpl(_genshinService, CalculatorServiceImpl(_genshinService, _resourceService), _resourceService);
     manuallyInitLocale(_localeService, AppLanguageType.english);
     return Future(() async {
       await _genshinService.init(AppLanguageType.english);
-      await _dataService.init(dir: _dbFolder);
+      _dbPath = await getDbPath(_dbFolder);
+      await _dataService.initForTests(_dbPath);
     });
   });
 
   tearDownAll(() {
     return Future(() async {
       await _dataService.closeThemAll();
-      await deleteDbFolder(_dbFolder);
+      await deleteDbFolder(_dbPath);
     });
   });
 
   test(
     'Initial state',
-    () => expect(CharacterBloc(_genshinService, _telemetryService, _localeService, _dataService).state, const CharacterState.loading()),
+    () => expect(
+      CharacterBloc(_genshinService, _telemetryService, _localeService, _dataService, _resourceService).state,
+      const CharacterState.loading(),
+    ),
   );
 
   group('Load from key', () {
@@ -82,7 +90,7 @@ void main() {
 
     blocTest<CharacterBloc, CharacterState>(
       'keqing',
-      build: () => CharacterBloc(_genshinService, _telemetryService, _localeService, _dataService),
+      build: () => CharacterBloc(_genshinService, _telemetryService, _localeService, _dataService, _resourceService),
       act: (bloc) => bloc.add(const CharacterEvent.loadFromKey(key: 'keqing')),
       //we skip 1 because since the event is not _AddedToInventory the bloc will emit a loading
       skip: 1,
@@ -91,7 +99,7 @@ void main() {
 
     blocTest<CharacterBloc, CharacterState>(
       'keqing is in inventory',
-      build: () => CharacterBloc(_genshinService, _telemetryService, _localeService, _dataService),
+      build: () => CharacterBloc(_genshinService, _telemetryService, _localeService, _dataService, _resourceService),
       setUp: () {
         _dataService.inventory.addItemToInventory('keqing', ItemType.character, 1);
       },

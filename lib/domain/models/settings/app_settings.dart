@@ -1,7 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-
-import '../../enums/enums.dart';
+import 'package:shiori/domain/enums/enums.dart';
 
 part 'app_settings.freezed.dart';
 part 'app_settings.g.dart';

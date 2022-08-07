@@ -7,6 +7,7 @@ import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/services/genshin_service.dart';
 import 'package:shiori/infrastructure/infrastructure.dart';
 
+import '../../common.dart';
 import '../../mocks.mocks.dart';
 
 void main() {
@@ -21,7 +22,8 @@ void main() {
     final settingsService = MockSettingsService();
     when(settingsService.language).thenReturn(AppLanguageType.english);
     final localeService = LocaleServiceImpl(settingsService);
-    _genshinService = GenshinServiceImpl(localeService);
+    final resourceService = getResourceService(settingsService);
+    _genshinService = GenshinServiceImpl(resourceService, localeService);
 
     return Future(() async {
       await _genshinService.init(AppLanguageType.english);

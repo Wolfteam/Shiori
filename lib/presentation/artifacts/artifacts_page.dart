@@ -4,6 +4,8 @@ import 'package:shiori/application/bloc.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/generated/l10n.dart';
+import 'package:shiori/presentation/artifacts/widgets/artifact_card.dart';
+import 'package:shiori/presentation/artifacts/widgets/artifact_info_card.dart';
 import 'package:shiori/presentation/shared/loading.dart';
 import 'package:shiori/presentation/shared/sliver_nothing_found.dart';
 import 'package:shiori/presentation/shared/sliver_page_filter.dart';
@@ -11,9 +13,6 @@ import 'package:shiori/presentation/shared/sliver_scaffold_with_fab.dart';
 import 'package:shiori/presentation/shared/utils/modal_bottom_sheet_utils.dart';
 import 'package:shiori/presentation/shared/utils/size_utils.dart';
 import 'package:waterfall_flow/waterfall_flow.dart';
-
-import 'widgets/artifact_card.dart';
-import 'widgets/artifact_info_card.dart';
 
 class ArtifactsPage extends StatefulWidget {
   final bool isInSelectionMode;

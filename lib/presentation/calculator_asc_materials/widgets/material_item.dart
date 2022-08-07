@@ -5,9 +5,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shiori/application/bloc.dart';
 import 'package:shiori/domain/enums/enums.dart' as app;
 import 'package:shiori/domain/utils/currency_utils.dart';
+import 'package:shiori/presentation/calculator_asc_materials/widgets/change_material_quantity_dialog.dart';
 import 'package:shiori/presentation/material/material_page.dart' as mp;
-
-import 'change_material_quantity_dialog.dart';
 
 class MaterialItem extends StatelessWidget {
   final app.MaterialType type;

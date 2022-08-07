@@ -40,7 +40,7 @@ class DeviceInfoServiceImpl implements DeviceInfoService {
       final packageInfo = await PackageInfo.fromPlatform();
       _appName = packageInfo.appName;
       _version = packageInfo.version;
-      _versionWithBuildNumber = Platform.isWindows ? packageInfo.version : '${packageInfo.version}+${packageInfo.buildNumber}';
+      _versionWithBuildNumber = Platform.isWindows ? _version : '$_version+${packageInfo.buildNumber}';
 
       await _initVersionTracker();
 

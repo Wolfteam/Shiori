@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import 'extensions/scroll_controller_extensions.dart';
+import 'package:shiori/presentation/shared/extensions/scroll_controller_extensions.dart';
 
 typedef OnClick = void Function();
 

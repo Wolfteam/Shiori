@@ -53,6 +53,7 @@ class SplashPage extends StatelessWidget {
         break;
       case AppResourceUpdateResultType.retrying:
       case AppResourceUpdateResultType.noInternetConnectionForFirstInstall:
+      case AppResourceUpdateResultType.unknownErrorOnFirstInstall:
         break;
     }
 
@@ -74,9 +75,14 @@ class _SplashPage extends StatelessWidget {
 
   bool get isUpdating => updateResultType == AppResourceUpdateResultType.updatesAvailable;
 
-  bool get updateFailed => updateResultType == AppResourceUpdateResultType.unknownError || isFirstInstall;
+  bool get updateFailed =>
+      updateResultType == AppResourceUpdateResultType.unknownError ||
+      updateResultType == AppResourceUpdateResultType.unknownErrorOnFirstInstall ||
+      noInternetConnectionOnFirstInstall;
 
-  bool get isFirstInstall => updateResultType == AppResourceUpdateResultType.noInternetConnectionForFirstInstall;
+  bool get noInternetConnectionOnFirstInstall => updateResultType == AppResourceUpdateResultType.noInternetConnectionForFirstInstall;
+
+  bool get canContinue => updateResultType != AppResourceUpdateResultType.unknownErrorOnFirstInstall && !noInternetConnectionOnFirstInstall;
 
   const _SplashPage({
     Key? key,
@@ -104,7 +110,7 @@ class _SplashPage extends StatelessWidget {
               child: const CircularProgressIndicator(valueColor: AlwaysStoppedAnimation<Color>(Colors.white)),
             ),
           if (isUpdating) const _Updating(),
-          if (updateFailed) _Buttons(updateResultType: updateResultType, canContinue: !isFirstInstall),
+          if (updateFailed) _Buttons(updateResultType: updateResultType, canContinue: canContinue),
         ],
       ),
     );
@@ -138,7 +144,9 @@ class _Buttons extends StatelessWidget {
             style: theme.textTheme.subtitle1!.copyWith(color: Colors.white, fontWeight: FontWeight.bold),
           ),
           Text(
-            s.internetRequiredToUpdate,
+            updateResultType == AppResourceUpdateResultType.unknownError || updateResultType == AppResourceUpdateResultType.unknownErrorOnFirstInstall
+                ? s.unknownErrorWhileUpdating
+                : s.internetRequiredToUpdate,
             textAlign: TextAlign.center,
             style: theme.textTheme.labelMedium!.copyWith(color: Colors.white),
           ),

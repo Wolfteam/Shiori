@@ -5,6 +5,7 @@ import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/generated/l10n.dart';
 import 'package:shiori/presentation/character/character_page.dart';
+import 'package:shiori/presentation/characters/widgets/character_card_ascension_materials_bottom.dart';
 import 'package:shiori/presentation/shared/extensions/element_type_extensions.dart';
 import 'package:shiori/presentation/shared/extensions/i18n_extensions.dart';
 import 'package:shiori/presentation/shared/images/comingsoon_new_avatar.dart';
@@ -13,8 +14,6 @@ import 'package:shiori/presentation/shared/images/rarity.dart';
 import 'package:shiori/presentation/shared/styles.dart';
 import 'package:shiori/presentation/shared/utils/toast_utils.dart';
 import 'package:transparent_image/transparent_image.dart';
-
-import 'character_card_ascension_materials_bottom.dart';
 
 class CharacterCard extends StatelessWidget {
   final String keyName;

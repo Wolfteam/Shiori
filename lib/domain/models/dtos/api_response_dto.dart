@@ -18,8 +18,8 @@ class ApiResponseDto<T> implements EmptyResponseDto {
 
   ApiResponseDto({
     required this.succeed,
-    required this.message,
-    required this.messageId,
+    this.message,
+    this.messageId,
     this.result,
   });
 

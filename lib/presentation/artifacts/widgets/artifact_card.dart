@@ -1,17 +1,15 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:shiori/domain/app_constants.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/presentation/artifact/artifact_page.dart';
+import 'package:shiori/presentation/artifacts/widgets/artifact_stats.dart';
 import 'package:shiori/presentation/shared/extensions/rarity_extensions.dart';
 import 'package:shiori/presentation/shared/gradient_card.dart';
 import 'package:shiori/presentation/shared/images/rarity.dart';
 import 'package:shiori/presentation/shared/styles.dart';
 import 'package:transparent_image/transparent_image.dart';
-
-import 'artifact_stats.dart';
-
-final replaceDigitRegex = RegExp(r'\d{1}');
 
 class ArtifactCard extends StatelessWidget {
   final String keyName;
@@ -98,7 +96,7 @@ class ArtifactCard extends StatelessWidget {
                 image: FileImage(File(image)),
                 imageErrorBuilder: (context, error, stack) {
                   //This can happen when trying to load sets like 'Prayer to xxx'
-                  final path = image.replaceFirst(replaceDigitRegex, '4');
+                  final path = getArtifactPathByOrder(0, image);
                   return Image.file(
                     File(path),
                     width: imgWidth,

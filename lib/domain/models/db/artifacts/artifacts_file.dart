@@ -1,6 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-
-import 'artifact_file_model.dart';
+import 'package:shiori/domain/models/models.dart';
 
 part 'artifacts_file.freezed.dart';
 part 'artifacts_file.g.dart';

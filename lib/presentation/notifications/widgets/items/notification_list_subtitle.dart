@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shiori/domain/extensions/string_extensions.dart';
-
-import 'notification_list_subtitle_dates.dart';
+import 'package:shiori/presentation/notifications/widgets/items/notification_list_subtitle_dates.dart';
 
 class NotificationSubtitle extends StatelessWidget {
   final DateTime createdAt;

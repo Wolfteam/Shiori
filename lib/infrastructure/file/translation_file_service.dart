@@ -1,6 +1,7 @@
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/file/translation_file_service.dart';
+import 'package:shiori/domain/services/resources_service.dart';
 
 class TranslationFileServiceImpl extends TranslationFileService {
   late TranslationFile _translationFile;
@@ -8,6 +9,12 @@ class TranslationFileServiceImpl extends TranslationFileService {
   AppLanguageType? _currentLanguage;
 
   AppLanguageType get currentLanguage => _currentLanguage!;
+
+  @override
+  ResourceService get resources => throw UnimplementedError('Resource service is not required in this file');
+
+  @override
+  TranslationFileService get translations => this;
 
   @override
   Future<void> init(String assetPath) {

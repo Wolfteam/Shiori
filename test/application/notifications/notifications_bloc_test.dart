@@ -18,6 +18,7 @@ void main() {
   late final SettingsService _settingsService;
   late final MockNotificationService _notificationService;
   late final DataService _dataService;
+  late final String _dbPath;
 
   const _defaultTitle = 'Notification title';
   const _defaultBody = 'Notification body';
@@ -39,19 +40,21 @@ void main() {
     _notificationService = MockNotificationService();
     when(_notificationService.cancelNotification(any, any)).thenAnswer((_) => Future.value());
     when(_notificationService.scheduleNotification(any, any, any, any, any)).thenAnswer((_) => Future.value());
-    final genshinService = GenshinServiceImpl(LocaleServiceImpl(_settingsService));
-    _dataService = DataServiceImpl(genshinService, CalculatorServiceImpl(genshinService));
+    final resourceService = getResourceService(_settingsService);
+    final genshinService = GenshinServiceImpl(resourceService, LocaleServiceImpl(_settingsService));
+    _dataService = DataServiceImpl(genshinService, CalculatorServiceImpl(genshinService, resourceService), resourceService);
 
     return Future(() async {
       await genshinService.init(_settingsService.language);
-      await _dataService.init(dir: _dbFolder);
+      _dbPath = await getDbPath(_dbFolder);
+      await _dataService.initForTests(_dbPath);
     });
   });
 
   tearDownAll(() {
     return Future(() async {
       await _dataService.closeThemAll();
-      await deleteDbFolder(_dbFolder);
+      await deleteDbFolder(_dbPath);
     });
   });
 

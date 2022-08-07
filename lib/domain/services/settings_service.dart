@@ -43,5 +43,7 @@ abstract class SettingsService {
   int get resourceVersion;
   set resourceVersion(int value);
 
+  bool get noResourcesHasBeenDownloaded;
+
   Future<void> init();
 }

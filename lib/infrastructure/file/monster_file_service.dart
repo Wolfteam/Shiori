@@ -10,6 +10,12 @@ class MonsterFileServiceImpl extends MonsterFileService {
 
   late MonstersFile _monstersFile;
 
+  @override
+  ResourceService get resources => _resourceService;
+
+  @override
+  TranslationFileService get translations => _translations;
+
   MonsterFileServiceImpl(this._resourceService, this._translations);
 
   @override
@@ -41,26 +47,18 @@ class MonsterFileServiceImpl extends MonsterFileService {
 
   @override
   List<ItemCommon> getRelatedMonsterToMaterialForItems(String key) {
-    final items = <ItemCommon>[];
-    for (final monster in _monstersFile.monsters) {
-      if (!monster.drops.any((el) => el.type == MonsterDropType.material && el.key == key)) {
-        continue;
-      }
-      items.add(ItemCommon(monster.key, _resourceService.getMonsterImagePath(monster.image)));
-    }
-    return items;
+    return _monstersFile.monsters
+        .where((monster) => monster.drops.any((el) => el.type == MonsterDropType.material && el.key == key))
+        .map((monster) => ItemCommon(monster.key, _resourceService.getMonsterImagePath(monster.image)))
+        .toList();
   }
 
   @override
   List<ItemCommon> getRelatedMonsterToArtifactForItems(String key) {
-    final items = <ItemCommon>[];
-    for (final monster in _monstersFile.monsters) {
-      if (!monster.drops.any((el) => el.type == MonsterDropType.artifact && key == el.key)) {
-        continue;
-      }
-      items.add(ItemCommon(monster.key, _resourceService.getMonsterImagePath(monster.image)));
-    }
-    return items;
+    return _monstersFile.monsters
+        .where((monster) => monster.drops.any((el) => el.type == MonsterDropType.artifact && el.key == key))
+        .map((monster) => ItemCommon(monster.key, _resourceService.getMonsterImagePath(monster.image)))
+        .toList();
   }
 
   MonsterCardModel _toMonsterForCard(MonsterFileModel monster) {

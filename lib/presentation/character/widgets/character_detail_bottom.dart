@@ -9,8 +9,6 @@ import 'package:shiori/presentation/shared/extensions/element_type_extensions.da
 import 'package:shiori/presentation/shared/item_description_detail.dart';
 import 'package:shiori/presentation/shared/loading.dart';
 
-import 'character_detail.dart';
-
 class CharacterDetailBottom extends StatelessWidget {
   const CharacterDetailBottom({Key? key}) : super(key: key);
 

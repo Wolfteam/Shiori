@@ -10,6 +10,12 @@ class MaterialFileServiceImpl extends MaterialFileService {
 
   late MaterialsFile _materialsFile;
 
+  @override
+  ResourceService get resources => _resourceService;
+
+  @override
+  TranslationFileService get translations => _translations;
+
   MaterialFileServiceImpl(this._resourceService, this._translations);
 
   @override
@@ -75,8 +81,8 @@ class MaterialFileServiceImpl extends MaterialFileService {
   }) {
     final mp = <String, MaterialFileModel>{};
     for (final item in materials) {
-      final material = getMaterial(item.key);
       if (!ignore.contains(item.type)) {
+        final material = getMaterial(item.key);
         mp[item.key] = material;
       }
     }

@@ -19,25 +19,28 @@ void main() {
   late final LoggingService _loggingService;
   late final GenshinService _genshinService;
   late final DataService _dataService;
+  late final String _dbPath;
 
   setUpAll(() {
     TestWidgetsFlutterBinding.ensureInitialized();
     _telemetryService = MockTelemetryService();
     _loggingService = MockLoggingService();
     final settingsService = SettingsServiceImpl(_loggingService);
-    _genshinService = GenshinServiceImpl(LocaleServiceImpl(settingsService));
-    _dataService = DataServiceImpl(_genshinService, CalculatorServiceImpl(_genshinService));
+    final resourceService = getResourceService(settingsService);
+    _genshinService = GenshinServiceImpl(resourceService, LocaleServiceImpl(settingsService));
+    _dataService = DataServiceImpl(_genshinService, CalculatorServiceImpl(_genshinService, resourceService), resourceService);
 
     return Future(() async {
       await _genshinService.init(AppLanguageType.english);
-      await _dataService.init(dir: _dbFolder);
+      _dbPath = await getDbPath(_dbFolder);
+      await _dataService.initForTests(_dbPath);
     });
   });
 
   tearDownAll(() {
     return Future(() async {
       await _dataService.closeThemAll();
-      await deleteDbFolder(_dbFolder);
+      await deleteDbFolder(_dbPath);
     });
   });
 

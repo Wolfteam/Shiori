@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import 'package:shiori/generated/l10n.dart';
+import 'package:shiori/presentation/settings/widgets/about_settings_card.dart';
+import 'package:shiori/presentation/settings/widgets/accent_color_settings_card.dart';
+import 'package:shiori/presentation/settings/widgets/credits_settings_card.dart';
+import 'package:shiori/presentation/settings/widgets/language_settings_card.dart';
+import 'package:shiori/presentation/settings/widgets/other_settings.dart';
+import 'package:shiori/presentation/settings/widgets/theme_settings_card.dart';
 import 'package:shiori/presentation/shared/styles.dart';
-
-import 'widgets/about_settings_card.dart';
-import 'widgets/accent_color_settings_card.dart';
-import 'widgets/credits_settings_card.dart';
-import 'widgets/language_settings_card.dart';
-import 'widgets/other_settings.dart';
-import 'widgets/theme_settings_card.dart';
 
 class SettingsPage extends StatelessWidget {
   @override

@@ -2,9 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shiori/application/bloc.dart';
 import 'package:shiori/injection.dart';
+import 'package:shiori/presentation/character/widgets/character_detail.dart';
 import 'package:shiori/presentation/shared/scaffold_with_fab.dart';
-
-import 'widgets/character_detail.dart';
 
 class CharacterPage extends StatelessWidget {
   final String itemKey;

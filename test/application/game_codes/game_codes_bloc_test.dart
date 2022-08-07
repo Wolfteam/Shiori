@@ -23,6 +23,7 @@ void main() {
   late final GameCodeService _gameCodeService;
   late final DataService _dataService;
   late final GenshinService _genshinService;
+  late final String _dbPath;
 
   final _defaultGameCodes = [
     GameCodeModel(
@@ -51,20 +52,22 @@ void main() {
     final settingsService = MockSettingsService();
     when(settingsService.language).thenReturn(AppLanguageType.english);
 
-    _genshinService = GenshinServiceImpl(LocaleServiceImpl(settingsService));
+    final resourceService = getResourceService(settingsService);
+    _genshinService = GenshinServiceImpl(resourceService, LocaleServiceImpl(settingsService));
     _gameCodeService = MockGameCodeService();
     when(_gameCodeService.getAllGameCodes()).thenAnswer((_) => Future.value(_defaultGameCodes));
-    _dataService = DataServiceImpl(_genshinService, CalculatorServiceImpl(_genshinService));
+    _dataService = DataServiceImpl(_genshinService, CalculatorServiceImpl(_genshinService, resourceService), resourceService);
     return Future(() async {
       await _genshinService.init(AppLanguageType.english);
-      await _dataService.init(dir: _dbFolder);
+      _dbPath = await getDbPath(_dbFolder);
+      await _dataService.initForTests(_dbPath);
     });
   });
 
   tearDownAll(() {
     return Future(() async {
       await _dataService.closeThemAll();
-      await deleteDbFolder(_dbFolder);
+      await deleteDbFolder(_dbPath);
     });
   });
 

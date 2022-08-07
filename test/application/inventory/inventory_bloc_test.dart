@@ -21,6 +21,7 @@ void main() {
   late final LocaleService _localeService;
   late final GenshinService _genshinService;
   late final DataService _dataService;
+  late final String _dbPath;
 
   const _keqingKey = 'keqing';
   const _aquilaFavoniaKey = 'aquila-favonia';
@@ -32,18 +33,21 @@ void main() {
     _settingsService = MockSettingsService();
     when(_settingsService.language).thenReturn(AppLanguageType.english);
     _localeService = LocaleServiceImpl(_settingsService);
-    _genshinService = GenshinServiceImpl(_localeService);
-    _dataService = DataServiceImpl(_genshinService, CalculatorServiceImpl(_genshinService));
+
+    final resourceService = getResourceService(_settingsService);
+    _genshinService = GenshinServiceImpl(resourceService, _localeService);
+    _dataService = DataServiceImpl(_genshinService, CalculatorServiceImpl(_genshinService, resourceService), resourceService);
     return Future(() async {
       await _genshinService.init(_settingsService.language);
-      await _dataService.init(dir: _dbFolder);
+      _dbPath = await getDbPath(_dbFolder);
+      await _dataService.initForTests(_dbPath);
     });
   });
 
   tearDownAll(() {
     return Future(() async {
       await _dataService.closeThemAll();
-      await deleteDbFolder(_dbFolder);
+      await deleteDbFolder(_dbPath);
     });
   });
 

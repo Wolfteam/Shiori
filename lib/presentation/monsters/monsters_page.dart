@@ -4,6 +4,7 @@ import 'package:shiori/application/bloc.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/generated/l10n.dart';
 import 'package:shiori/injection.dart';
+import 'package:shiori/presentation/monsters/widgets/monster_card.dart';
 import 'package:shiori/presentation/shared/loading.dart';
 import 'package:shiori/presentation/shared/sliver_nothing_found.dart';
 import 'package:shiori/presentation/shared/sliver_page_filter.dart';
@@ -11,8 +12,6 @@ import 'package:shiori/presentation/shared/sliver_scaffold_with_fab.dart';
 import 'package:shiori/presentation/shared/utils/modal_bottom_sheet_utils.dart';
 import 'package:shiori/presentation/shared/utils/size_utils.dart';
 import 'package:waterfall_flow/waterfall_flow.dart';
-
-import 'widgets/monster_card.dart';
 
 class MonstersPage extends StatelessWidget {
   final bool isInSelectionMode;

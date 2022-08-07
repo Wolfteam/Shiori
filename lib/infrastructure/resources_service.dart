@@ -1,21 +1,19 @@
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:dio/dio.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter_archive/flutter_archive.dart';
-import 'package:http/http.dart' as http;
 import 'package:path/path.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:shiori/domain/assets.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/extensions/string_extensions.dart';
-import 'package:shiori/domain/models/dtos.dart';
 import 'package:shiori/domain/models/models.dart';
+import 'package:shiori/domain/services/api_service.dart';
 import 'package:shiori/domain/services/logging_service.dart';
 import 'package:shiori/domain/services/network_service.dart';
 import 'package:shiori/domain/services/resources_service.dart';
 import 'package:shiori/domain/services/settings_service.dart';
-import 'package:shiori/infrastructure/secrets.dart';
 
 const _tempDirName = 'shiori_temp';
 const _tempAssetsDirName = 'shiori_assets';
@@ -24,16 +22,23 @@ class ResourceServiceImpl implements ResourceService {
   final LoggingService _loggingService;
   final SettingsService _settingsService;
   final NetworkService _networkService;
+  final ApiService _apiService;
 
-  final bool _usesZipFile = Platform.isAndroid || Platform.isIOS;
-  final bool _usesJsonFile = Platform.isWindows || Platform.isLinux;
-
-  final _dio = Dio();
+  final bool _usesZipFile;
+  final bool _usesJsonFile;
 
   late final String _tempPath;
   late final String _assetsPath;
 
-  ResourceServiceImpl(this._loggingService, this._settingsService, this._networkService);
+  ResourceServiceImpl(
+    this._loggingService,
+    this._settingsService,
+    this._networkService,
+    this._apiService, {
+    @visibleForTesting bool? usesZipFile,
+    @visibleForTesting bool? usesJsonFile,
+  })  : _usesZipFile = usesZipFile ?? Platform.isAndroid || Platform.isIOS || Platform.isMacOS,
+        _usesJsonFile = usesJsonFile ?? Platform.isWindows || Platform.isLinux;
 
   Future<void> init() async {
     final temp = await getTemporaryDirectory();
@@ -44,10 +49,26 @@ class ResourceServiceImpl implements ResourceService {
     await _deleteDirectoryIfExists(_tempPath);
   }
 
+  @visibleForTesting
+  void initForTests(String temPath, String assetsPath) {
+    if (temPath.isNullEmptyOrWhitespace) {
+      throw Exception('Invalid temp path');
+    }
+
+    if (assetsPath.isNullEmptyOrWhitespace) {
+      throw Exception('Invalid assets path');
+    }
+
+    _tempPath = temPath;
+    _assetsPath = assetsPath;
+  }
+
   @override
   String getJsonFilePath(AppJsonFileType type, {AppLanguageType? language}) {
     if (language != null) {
-      assert(type == AppJsonFileType.translations, 'The translation type must be set when a language is provided');
+      if (type != AppJsonFileType.translations) {
+        throw Exception('The translation type must be set when a language is provided');
+      }
       final filename = _getJsonTranslationFilename(language);
       return join(_assetsPath, 'i18n', filename);
     }
@@ -174,10 +195,14 @@ class ResourceServiceImpl implements ResourceService {
   @override
   String getMaterialImagePath(String filename, MaterialType type) => _getImagePath(filename, AppImageFolderType.items, materialType: type);
 
-  bool _canCheckForUpdates() {
-    _loggingService.info(runtimeType, 'Checking if we can check for resource updates...');
+  bool _canCheckForUpdates({bool checkDate = true}) {
+    _loggingService.info(runtimeType, '_canCheckForUpdates: Checking if we can check for resource updates...');
     final lastResourcesCheckedDate = _settingsService.lastResourcesCheckedDate;
     if (lastResourcesCheckedDate == null) {
+      return true;
+    }
+
+    if (!checkDate) {
       return true;
     }
 
@@ -195,6 +220,11 @@ class ResourceServiceImpl implements ResourceService {
       throw Exception('Invalid app version');
     }
 
+    final appVersionRegex = RegExp(r'(\d+\.)(\d+\.)(\d+)');
+    if (!appVersionRegex.hasMatch(currentAppVersion)) {
+      throw Exception('Invalid app version');
+    }
+
     if (!_usesZipFile && !_usesJsonFile) {
       throw Exception('Unsupported platform');
     }
@@ -204,25 +234,17 @@ class ResourceServiceImpl implements ResourceService {
     }
 
     final isInternetAvailable = await _networkService.isInternetAvailable();
-    final isFirstResourceCheck = _settingsService.lastResourcesCheckedDate == null;
+    final isFirstResourceCheck = _settingsService.noResourcesHasBeenDownloaded;
     if (!isInternetAvailable && isFirstResourceCheck) {
       return CheckForUpdatesResult(type: AppResourceUpdateResultType.noInternetConnectionForFirstInstall, resourceVersion: currentResourcesVersion);
     }
 
+    bool canUpdateResourceCheckedDate = false;
+
     try {
-      _loggingService.info(runtimeType, 'Checking if there is a diff for appVersion = $currentAppVersion');
-      String url = '${Secrets.apiBaseUrl}/api/resources/diff?AppVersion=$currentAppVersion';
-      if (currentResourcesVersion > 0) {
-        url += '&CurrentResourceVersion=$currentResourcesVersion';
-      }
-
-      final response = await http.Client().get(Uri.parse(url));
-      final json = jsonDecode(response.body) as Map<String, dynamic>;
-      final apiResponse = ApiResponseDto.fromJson(
-        json,
-        (data) => data == null ? null : ResourceDiffResponseDto.fromJson(data as Map<String, dynamic>),
-      );
-
+      _loggingService.info(runtimeType, 'checkForUpdates: Checking if there is a diff for appVersion = $currentAppVersion');
+      final apiResponse = await _apiService.checkForUpdates(currentAppVersion, currentResourcesVersion);
+      canUpdateResourceCheckedDate = true;
       switch (apiResponse.messageId) {
         case '3':
           return CheckForUpdatesResult(type: AppResourceUpdateResultType.needsLatestAppVersion, resourceVersion: currentResourcesVersion);
@@ -259,6 +281,10 @@ class ResourceServiceImpl implements ResourceService {
     } catch (e, s) {
       _loggingService.error(runtimeType, 'checkForUpdates: Unknown error', e, s);
       return CheckForUpdatesResult(type: AppResourceUpdateResultType.unknownError, resourceVersion: currentResourcesVersion);
+    } finally {
+      if (canUpdateResourceCheckedDate) {
+        _settingsService.lastResourcesCheckedDate = DateTime.now();
+      }
     }
   }
 
@@ -297,7 +323,7 @@ class ResourceServiceImpl implements ResourceService {
       throw Exception('The provided targetResourceVersion = $targetResourceVersion == ${_settingsService.resourceVersion}');
     }
 
-    if (!_canCheckForUpdates()) {
+    if (!_canCheckForUpdates(checkDate: false)) {
       return false;
     }
 
@@ -311,8 +337,8 @@ class ResourceServiceImpl implements ResourceService {
         //we need to download the whole file
         final destMainFilePath = join(_tempPath, _usesZipFile ? zipFileKeyName! : jsonFileKeyName!);
         final downloaded = _usesZipFile
-            ? await _downloadFile(zipFileKeyName!, destMainFilePath, onProgress)
-            : await _downloadFile(jsonFileKeyName!, destMainFilePath, onProgress);
+            ? await _apiService.downloadAsset(zipFileKeyName!, destMainFilePath, onProgress)
+            : await _apiService.downloadAsset(jsonFileKeyName!, destMainFilePath, onProgress);
 
         if (!downloaded) {
           _loggingService.error(runtimeType, 'downloadAndApplyUpdates: Could not download the main file');
@@ -339,7 +365,6 @@ class ResourceServiceImpl implements ResourceService {
       }
 
       _loggingService.info(runtimeType, 'downloadAndApplyUpdates: Update completed');
-      _settingsService.lastResourcesCheckedDate = DateTime.now();
       _settingsService.resourceVersion = targetResourceVersion;
       return true;
     } catch (e, s) {
@@ -389,8 +414,7 @@ class ResourceServiceImpl implements ResourceService {
       await _deleteDirectoryIfExists(tempFolder);
       return false;
     }
-    //TODO: MANUALLY MOVE THE FILES?
-    // await _afterMainFileWasProcessed(tempFolder, assetsFolder);
+    await _afterMainFileWasProcessed(tempFolder, assetsFolder, deleteAssetsFolder: false);
     _loggingService.info(runtimeType, '_processPartialUpdate: Partial update was successfully processed');
     return true;
   }
@@ -447,32 +471,9 @@ class ResourceServiceImpl implements ResourceService {
     await _createDirectoryIfItDoesntExist(dir);
 
     final destPath = join(dir, split.last);
-    final downloaded = await _downloadFile(keyName, destPath, null);
+    final downloaded = await _apiService.downloadAsset(keyName, destPath, null);
     if (!downloaded) {
       throw Exception('Download of keyName = $keyName failed');
-    }
-  }
-
-  Future<bool> _downloadFile(String keyName, String destPath, ProgressChanged? onProgress) async {
-    try {
-      // _loggingService.debug(runtimeType, '_downloadFile: Downloading file = $keyName...');
-      final url = '${Secrets.assetsBaseUrl}/$keyName';
-
-      await _dio.downloadUri(
-        Uri.parse(url),
-        destPath,
-        onReceiveProgress: (received, total) {
-          if (total != -1) {
-            final progress = received / total * 100;
-            onProgress?.call(progress);
-          }
-        },
-      );
-      // _loggingService.debug(runtimeType, '_downloadFile: File = $keyName was successfully downloaded');
-      return true;
-    } catch (e, s) {
-      _loggingService.error(runtimeType, '_downloadFile: Unknown error', e, s);
-      return false;
     }
   }
 
@@ -496,10 +497,12 @@ class ResourceServiceImpl implements ResourceService {
     }
   }
 
-  Future<void> _afterMainFileWasProcessed(String tempFolder, String assetsFolder) async {
+  Future<void> _afterMainFileWasProcessed(String tempFolder, String assetsFolder, {bool deleteAssetsFolder = true}) async {
     //I delete and create the folder because it may exist and contain old data
-    await _deleteDirectoryIfExists(assetsFolder);
-    await _createDirectoryIfItDoesntExist(assetsFolder);
+    if (deleteAssetsFolder) {
+      await _deleteDirectoryIfExists(assetsFolder);
+      await _createDirectoryIfItDoesntExist(assetsFolder);
+    }
     await _moveFolder(tempFolder, assetsFolder, _tempDirName);
     await _deleteDirectoryIfExists(tempFolder);
   }

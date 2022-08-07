@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shiori/generated/l10n.dart';
-
-import 'styles.dart';
+import 'package:shiori/presentation/shared/styles.dart';
 
 class ItemDescriptionCard extends StatelessWidget {
   final String description;

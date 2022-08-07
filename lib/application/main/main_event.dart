@@ -22,5 +22,7 @@ class MainEvent with _$MainEvent {
     required AppLanguageType newValue,
   }) = _LanguageChanged;
 
+  const factory MainEvent.restart() = _Restart;
+
   const MainEvent._();
 }

@@ -3,11 +3,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shiori/application/bloc.dart';
 import 'package:shiori/generated/l10n.dart';
 import 'package:shiori/injection.dart';
+import 'package:shiori/presentation/elements/widgets/sliver_element_debuffs.dart';
+import 'package:shiori/presentation/elements/widgets/sliver_element_reactions.dart';
+import 'package:shiori/presentation/elements/widgets/sliver_element_resonances.dart';
 import 'package:shiori/presentation/shared/styles.dart';
-
-import 'widgets/sliver_element_debuffs.dart';
-import 'widgets/sliver_element_reactions.dart';
-import 'widgets/sliver_element_resonances.dart';
 
 class ElementsPage extends StatelessWidget {
   @override

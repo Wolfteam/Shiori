@@ -7,6 +7,7 @@ import 'package:shiori/domain/services/genshin_service.dart';
 import 'package:shiori/domain/services/telemetry_service.dart';
 import 'package:shiori/infrastructure/infrastructure.dart';
 
+import '../../common.dart';
 import '../../mocks.mocks.dart';
 
 void main() {
@@ -21,7 +22,8 @@ void main() {
       when(settingsService.language).thenReturn(AppLanguageType.english);
 
       final localeService = LocaleServiceImpl(settingsService);
-      _genshinService = GenshinServiceImpl(localeService);
+      final resourceService = getResourceService(settingsService);
+      _genshinService = GenshinServiceImpl(resourceService, localeService);
 
       await _genshinService.init(settingsService.language);
     });

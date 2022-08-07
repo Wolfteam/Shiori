@@ -20,8 +20,8 @@ class EmptyResponseDto {
 
   const EmptyResponseDto({
     required this.succeed,
-    required this.message,
-    required this.messageId,
+    this.message,
+    this.messageId,
   });
 
   factory EmptyResponseDto.fromJson(Map<String, dynamic> json) => _$EmptyResponseDtoFromJson(json);

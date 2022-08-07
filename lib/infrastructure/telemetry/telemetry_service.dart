@@ -175,4 +175,19 @@ class TelemetryServiceImpl implements TelemetryService {
 
   @override
   Future<void> trackBirthdaysPerMonthOpened(int month) => trackEventAsync('BirthdaysPerMonth-Opened', {'Month': '$month'});
+
+  @override
+  Future<void> trackCheckForResourceUpdates(AppResourceUpdateResultType result) => trackEventAsync('Resource-Updates-Check', {'Result': '$result'});
+
+  @override
+  Future<void> trackResourceUpdateCompleted(bool applied, int targetResourceVersion) => trackEventAsync(
+        'Resource-Updates-Completed',
+        {'Applied': '$applied', 'TargetResourceVersion': '$targetResourceVersion'},
+      );
+
+  @override
+  Future<void> trackResourceUpdateDownload(int targetResourceVersion) => trackEventAsync(
+        'Resource-Updates-Download',
+        {'TargetResourceVersion': '$targetResourceVersion'},
+      );
 }

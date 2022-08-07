@@ -160,7 +160,7 @@ class _SmoothStarRatingState extends State<SmoothStarRating> {
                       currentRating = newRating;
                     });
                     debounceTimer?.cancel();
-                    debounceTimer = Timer(Duration(milliseconds: 100), () {
+                    debounceTimer = Timer(const Duration(milliseconds: 100), () {
                       if (widget.onRated != null) {
                         currentRating = normalizeRating(newRating);
                         widget.onRated!(currentRating);
@@ -205,7 +205,7 @@ class _SmoothStarRatingState extends State<SmoothStarRating> {
                     currentRating = newRating;
                   });
                   debounceTimer?.cancel();
-                  debounceTimer = Timer(Duration(milliseconds: 100), () {
+                  debounceTimer = Timer(const Duration(milliseconds: 100), () {
                     if (widget.onRated != null) {
                       currentRating = normalizeRating(newRating);
                       widget.onRated!(currentRating);

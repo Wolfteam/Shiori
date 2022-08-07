@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:shiori/domain/enums/enums.dart' as enums;
+import 'package:shiori/presentation/material/widgets/material_detail_general_card.dart';
 import 'package:shiori/presentation/shared/details/detail_appbar.dart';
 import 'package:shiori/presentation/shared/details/detail_top_layout.dart';
 import 'package:shiori/presentation/shared/extensions/rarity_extensions.dart';
-
-import 'material_detail_general_card.dart';
 
 class MaterialDetailTop extends StatelessWidget {
   final String name;
