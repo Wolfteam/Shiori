@@ -37,7 +37,7 @@ class ResourceServiceImpl implements ResourceService {
     this._apiService, {
     @visibleForTesting bool? usesZipFile,
     @visibleForTesting bool? usesJsonFile,
-  })  : _usesZipFile = usesZipFile ?? Platform.isAndroid || Platform.isIOS,
+  })  : _usesZipFile = usesZipFile ?? Platform.isAndroid || Platform.isIOS || Platform.isMacOS,
         _usesJsonFile = usesJsonFile ?? Platform.isWindows || Platform.isLinux;
 
   Future<void> init() async {
