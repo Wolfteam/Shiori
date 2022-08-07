@@ -156,6 +156,7 @@ void main() {
     }) {
       final settingsService = MockSettingsService();
       when(settingsService.lastResourcesCheckedDate).thenReturn(null);
+      when(settingsService.noResourcesHasBeenDownloaded).thenReturn(true);
 
       final networkService = MockNetworkService();
       when(networkService.isInternetAvailable()).thenAnswer((_) => Future.value(isInternetAvailable));

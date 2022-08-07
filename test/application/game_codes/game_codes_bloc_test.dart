@@ -23,6 +23,7 @@ void main() {
   late final GameCodeService _gameCodeService;
   late final DataService _dataService;
   late final GenshinService _genshinService;
+  late final String _dbPath;
 
   final _defaultGameCodes = [
     GameCodeModel(
@@ -58,14 +59,15 @@ void main() {
     _dataService = DataServiceImpl(_genshinService, CalculatorServiceImpl(_genshinService, resourceService), resourceService);
     return Future(() async {
       await _genshinService.init(AppLanguageType.english);
-      await _dataService.init(dir: _dbFolder);
+      _dbPath = await getDbPath(_dbFolder);
+      await _dataService.initForTests(_dbPath);
     });
   });
 
   tearDownAll(() {
     return Future(() async {
       await _dataService.closeThemAll();
-      await deleteDbFolder(_dbFolder);
+      await deleteDbFolder(_dbPath);
     });
   });
 

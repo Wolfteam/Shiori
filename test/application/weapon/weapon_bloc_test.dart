@@ -18,6 +18,7 @@ void main() {
   late final GenshinService _genshinService;
   late final DataService _dataService;
   late final ResourceService _resourceService;
+  late final String _dbPath;
 
   const _key = 'aquila-favonia';
 
@@ -32,14 +33,15 @@ void main() {
 
     return Future(() async {
       await _genshinService.init(AppLanguageType.english);
-      await _dataService.init(dir: _dbFolder);
+      _dbPath = await getDbPath(_dbFolder);
+      await _dataService.initForTests(_dbPath);
     });
   });
 
   tearDownAll(() {
     return Future(() async {
       await _dataService.closeThemAll();
-      await deleteDbFolder(_dbFolder);
+      await deleteDbFolder(_dbPath);
     });
   });
 

@@ -6,6 +6,7 @@ import 'package:shiori/domain/app_constants.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/resources_service.dart';
+import 'package:shiori/domain/services/settings_service.dart';
 
 import '../../common.dart';
 import '../../mocks.mocks.dart';
@@ -20,16 +21,21 @@ void main() {
 
   SplashBloc _getBloc(
     ResourceService resourceService, {
+    SettingsService? settingsService,
     String appVersion = _defaultAppVersion,
     int currentResourcesVersion = _defaultResourcesVersion,
   }) {
     final deviceInfoService = MockDeviceInfoService();
     when(deviceInfoService.version).thenReturn(appVersion);
-    final settingsService = MockSettingsService();
-    when(settingsService.resourceVersion).thenReturn(currentResourcesVersion);
+
+    final settings = settingsService ?? MockSettingsService();
+    if (settingsService == null) {
+      when(settings.resourceVersion).thenReturn(currentResourcesVersion);
+    }
+
     final localeService = getLocaleService(AppLanguageType.english);
 
-    return SplashBloc(resourceService, settingsService, deviceInfoService, MockTelemetryService(), localeService);
+    return SplashBloc(resourceService, settings, deviceInfoService, MockTelemetryService(), localeService);
   }
 
   test('Initial state', () => expect(_getBloc(MockResourceService()).state, const SplashState.loading()));
@@ -42,12 +48,33 @@ void main() {
           resourceVersion: _defaultResourcesVersion,
           type: AppResourceUpdateResultType.unknownError,
         );
+        final settingsService = MockSettingsService();
+        when(settingsService.resourceVersion).thenReturn(_defaultResourcesVersion);
+        when(settingsService.noResourcesHasBeenDownloaded).thenReturn(false);
         final resourceService = MockResourceService();
         when(resourceService.checkForUpdates(_defaultAppVersion, _defaultResourcesVersion)).thenAnswer((_) => Future.value(result));
-        return _getBloc(resourceService);
+        return _getBloc(resourceService, settingsService: settingsService);
       },
       act: (bloc) => bloc.add(const SplashEvent.init()),
       expect: () => [SplashState.loaded(updateResultType: AppResourceUpdateResultType.unknownError, language: _language)],
+    );
+
+    blocTest<SplashBloc, SplashState>(
+      'unknown error and no resources has been downloaded',
+      build: () {
+        const result = CheckForUpdatesResult(
+          resourceVersion: _defaultResourcesVersion,
+          type: AppResourceUpdateResultType.unknownError,
+        );
+        final settingsService = MockSettingsService();
+        when(settingsService.resourceVersion).thenReturn(_defaultResourcesVersion);
+        when(settingsService.noResourcesHasBeenDownloaded).thenReturn(true);
+        final resourceService = MockResourceService();
+        when(resourceService.checkForUpdates(_defaultAppVersion, _defaultResourcesVersion)).thenAnswer((_) => Future.value(result));
+        return _getBloc(resourceService, settingsService: settingsService);
+      },
+      act: (bloc) => bloc.add(const SplashEvent.init()),
+      expect: () => [SplashState.loaded(updateResultType: AppResourceUpdateResultType.unknownErrorOnFirstInstall, language: _language)],
     );
 
     blocTest<SplashBloc, SplashState>(
@@ -197,9 +224,29 @@ void main() {
     blocTest<SplashBloc, SplashState>(
       'and was not applied',
       seed: () => SplashState.loaded(updateResultType: AppResourceUpdateResultType.updatesAvailable, language: _language),
-      build: () => _getBloc(MockResourceService()),
+      build: () {
+        final settingsService = MockSettingsService();
+        when(settingsService.resourceVersion).thenReturn(_defaultResourcesVersion);
+        when(settingsService.noResourcesHasBeenDownloaded).thenReturn(false);
+        return _getBloc(MockResourceService(), settingsService: settingsService);
+      },
       act: (bloc) => bloc.add(const SplashEvent.updateCompleted(applied: false, resourceVersion: 2)),
       expect: () => [SplashState.loaded(updateResultType: AppResourceUpdateResultType.unknownError, language: _language, progress: 100)],
+    );
+
+    blocTest<SplashBloc, SplashState>(
+      'and was not applied and no resources has been downloaded',
+      seed: () => SplashState.loaded(updateResultType: AppResourceUpdateResultType.updatesAvailable, language: _language),
+      build: () {
+        final settingsService = MockSettingsService();
+        when(settingsService.resourceVersion).thenReturn(_defaultResourcesVersion);
+        when(settingsService.noResourcesHasBeenDownloaded).thenReturn(true);
+        return _getBloc(MockResourceService(), settingsService: settingsService);
+      },
+      act: (bloc) => bloc.add(const SplashEvent.updateCompleted(applied: false, resourceVersion: 2)),
+      expect: () => [
+        SplashState.loaded(updateResultType: AppResourceUpdateResultType.unknownErrorOnFirstInstall, language: _language, progress: 100),
+      ],
     );
   });
 }

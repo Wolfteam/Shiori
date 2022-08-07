@@ -4,8 +4,6 @@ import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:intl/date_symbol_data_local.dart';
 import 'package:mockito/mockito.dart';
-import 'package:path/path.dart' as path_helper;
-import 'package:path_provider/path_provider.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/extensions/string_extensions.dart';
 import 'package:shiori/domain/models/models.dart';
@@ -18,11 +16,15 @@ import 'package:shiori/infrastructure/infrastructure.dart';
 import 'mocks.mocks.dart';
 import 'secrets.dart';
 
+Future<String> getDbPath(String subDir) async {
+  final appDir = await Directory.systemTemp.createTemp(subDir);
+  await Directory(appDir.path).create();
+  return appDir.path;
+}
+
 //since we are using a real impl of the data service,
 // to avoid problems we just create different folders and delete them all after the test completes
-Future<void> deleteDbFolder(String subDir) async {
-  final appDir = await getApplicationDocumentsDirectory();
-  final path = path_helper.join(appDir.path, subDir);
+Future<void> deleteDbFolder(String path) async {
   await Directory(path).delete(recursive: true);
 }
 
