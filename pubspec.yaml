@@ -66,6 +66,7 @@ dependencies:
   screenshot: ^1.2.3
   shared_preferences: ^2.0.15
   sprintf: ^6.0.0
+  store_checker: ^1.0.0
   synchronized: ^3.0.0+2
   transparent_image: 2.0.0
   tuple: ^2.0.0

@@ -292,6 +292,20 @@ void main() {
       _checkUpdateResult(AppResourceUpdateResultType.noUpdatesAvailable, 1, result, apiResult.result!);
     });
 
+    test('api returns lower resource version, hence no updates available', () async {
+      final apiResult = ApiResponseDto<ResourceDiffResponseDto?>(
+        succeed: true,
+        result: ResourceDiffResponseDto(currentResourceVersion: 1, targetResourceVersion: 0, keyNames: ['characters/keqing.png']),
+      );
+      final service = _getService(
+        isInternetAvailable: true,
+        currentResourceVersion: 1,
+        apiResult: apiResult,
+      );
+      final result = await service.checkForUpdates('1.0.0', 1);
+      _checkUpdateResult(AppResourceUpdateResultType.noUpdatesAvailable, 1, result, null);
+    });
+
     test('api returns null result, hence no unknown error', () async {
       final apiResult = ApiResponseDto<ResourceDiffResponseDto?>(succeed: true);
       final service = _getService(
@@ -307,7 +321,10 @@ void main() {
   group('Download and apply updates', () {
     test('invalid target version', () {
       final service = ResourceServiceImpl(MockLoggingService(), MockSettingsService(), MockNetworkService(), MockApiService());
-      expect(() => service.downloadAndApplyUpdates(0, null, null), throwsA(isA<Exception>()));
+      expect(
+        () => service.downloadAndApplyUpdates(0, null, null),
+        throwsA(isA<Exception>().having((ex) => ex.toString(), 'message', contains('The provided targetResourceVersion = 0 is not valid'))),
+      );
     });
 
     test('neither zip file nor keyNames were provided', () {
@@ -319,7 +336,16 @@ void main() {
         usesZipFile: true,
         usesJsonFile: false,
       );
-      expect(() => service.downloadAndApplyUpdates(1, null, null), throwsA(isA<Exception>()));
+      expect(
+        () => service.downloadAndApplyUpdates(1, null, null),
+        throwsA(
+          isA<Exception>().having(
+            (ex) => ex.toString(),
+            'message',
+            contains('This platform uses either a zipKeyName or multiple keyNames files but neither were provided'),
+          ),
+        ),
+      );
     });
 
     test('neither json file nor keyNames were provided', () {
@@ -331,7 +357,16 @@ void main() {
         usesZipFile: false,
         usesJsonFile: true,
       );
-      expect(() => service.downloadAndApplyUpdates(1, null, null), throwsA(isA<Exception>()));
+      expect(
+        () => service.downloadAndApplyUpdates(1, null, null),
+        throwsA(
+          isA<Exception>().having(
+            (ex) => ex.toString(),
+            'message',
+            contains('This platform uses either a jsonKeyName or multiple keyNames files but neither were provided'),
+          ),
+        ),
+      );
     });
 
     test('unsupported platform', () {
@@ -343,14 +378,30 @@ void main() {
         usesJsonFile: false,
         usesZipFile: false,
       );
-      expect(() => service.downloadAndApplyUpdates(1, null, null), throwsA(isA<Exception>()));
+      expect(
+        () => service.downloadAndApplyUpdates(1, null, null),
+        throwsA(isA<Exception>().having((error) => error.toString(), 'message', contains('Unsupported platform'))),
+      );
     });
 
     test('target resource version already applied', () {
       final settingsService = MockSettingsService();
       when(settingsService.resourceVersion).thenReturn(2);
       final service = ResourceServiceImpl(MockLoggingService(), settingsService, MockNetworkService(), MockApiService());
-      expect(() => service.downloadAndApplyUpdates(2, null, null), throwsA(isA<Exception>()));
+      expect(
+        () => service.downloadAndApplyUpdates(2, null, null, keyNames: ['characters/keqing.png']),
+        throwsA(isA<Exception>().having((error) => error.toString(), 'message', contains('The provided targetResourceVersion = 2 == 2'))),
+      );
+    });
+
+    test('target resource version is lower than current', () {
+      final settingsService = MockSettingsService();
+      when(settingsService.resourceVersion).thenReturn(2);
+      final service = ResourceServiceImpl(MockLoggingService(), settingsService, MockNetworkService(), MockApiService());
+      expect(
+        () => service.downloadAndApplyUpdates(1, null, null, keyNames: ['characters/keqing.png']),
+        throwsA(isA<Exception>().having((error) => error.toString(), 'message', contains('The provided targetResourceVersion = 1 < 2'))),
+      );
     });
 
     test('download main zip file, cannot check for updates', () async {

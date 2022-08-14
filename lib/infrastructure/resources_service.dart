@@ -257,7 +257,14 @@ class ResourceServiceImpl implements ResourceService {
           return CheckForUpdatesResult(type: AppResourceUpdateResultType.unknownError, resourceVersion: currentResourcesVersion);
       }
 
-      if (currentResourcesVersion == apiResponse.result!.targetResourceVersion) {
+      final targetResourceVersion = apiResponse.result!.targetResourceVersion;
+      if (currentResourcesVersion == targetResourceVersion) {
+        return CheckForUpdatesResult(type: AppResourceUpdateResultType.noUpdatesAvailable, resourceVersion: currentResourcesVersion);
+      } else if (currentResourcesVersion > targetResourceVersion) {
+        _loggingService.warning(
+          runtimeType,
+          'checkForUpdates: Server returned a lower resource version. Current = $currentResourcesVersion -- Target = $targetResourceVersion',
+        );
         return CheckForUpdatesResult(type: AppResourceUpdateResultType.noUpdatesAvailable, resourceVersion: currentResourcesVersion);
       }
 
@@ -273,7 +280,7 @@ class ResourceServiceImpl implements ResourceService {
 
       return CheckForUpdatesResult(
         type: AppResourceUpdateResultType.updatesAvailable,
-        resourceVersion: apiResponse.result!.targetResourceVersion,
+        resourceVersion: targetResourceVersion,
         zipFileKeyName: apiResponse.result!.zipFileKeyName,
         jsonFileKeyName: apiResponse.result!.jsonFileKeyName,
         keyNames: apiResponse.result!.keyNames,
@@ -312,8 +319,9 @@ class ResourceServiceImpl implements ResourceService {
       throw Exception('This platform uses either a jsonKeyName or multiple keyNames files but neither were provided');
     }
 
-    final mainFilesMustBeDownloaded = jsonFileKeyName.isNotNullEmptyOrWhitespace || zipFileKeyName.isNotNullEmptyOrWhitespace;
     final partialFilesMustBeDownloaded = keyNames.isNotEmpty;
+    final mainFilesMustBeDownloaded =
+        !partialFilesMustBeDownloaded && (jsonFileKeyName.isNotNullEmptyOrWhitespace || zipFileKeyName.isNotNullEmptyOrWhitespace);
 
     if (!mainFilesMustBeDownloaded && !partialFilesMustBeDownloaded) {
       throw Exception('You need to either provide a main or partial files');
@@ -321,6 +329,8 @@ class ResourceServiceImpl implements ResourceService {
 
     if (_settingsService.resourceVersion == targetResourceVersion) {
       throw Exception('The provided targetResourceVersion = $targetResourceVersion == ${_settingsService.resourceVersion}');
+    } else if (_settingsService.resourceVersion > targetResourceVersion) {
+      throw Exception('The provided targetResourceVersion = $targetResourceVersion < ${_settingsService.resourceVersion}');
     }
 
     if (!_canCheckForUpdates(checkDate: false)) {
