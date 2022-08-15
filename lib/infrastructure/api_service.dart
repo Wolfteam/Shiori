@@ -19,6 +19,10 @@ class ApiServiceImpl implements ApiService {
       final url = '${Secrets.assetsBaseUrl}/changelog.md';
       final response = await _dio.getUri<String>(Uri.parse(url));
       if (response.statusCode != 200) {
+        _loggingService.warning(
+          runtimeType,
+          'getChangelog: Could not retrieve changelog, got status code = ${response.statusCode}, falling back to the default one',
+        );
         return defaultValue;
       }
 
@@ -34,7 +38,7 @@ class ApiServiceImpl implements ApiService {
     try {
       String url = '${Secrets.apiBaseUrl}/api/resources/diff?AppVersion=$currentAppVersion';
       if (currentResourcesVersion > 0) {
-        url += '&CurrentResourceVersion=$currentResourcesVersion';
+        url += '&CurrentVersion=$currentResourcesVersion';
       }
 
       final response = await _dio.getUri<String>(Uri.parse(url), options: Options(headers: Secrets.getApiHeaders()));
