@@ -45,7 +45,7 @@ class AppCenter {
 
   /// Track events
   static Future<void> trackEventAsync(String name, [Map<String, String?>? properties]) async {
-    if (Platform.isWindows) {
+    if (Platform.isWindows || Platform.isIOS) {
       return;
     }
     await _methodChannel.invokeMethod('trackEvent', <String, dynamic>{
@@ -56,7 +56,7 @@ class AppCenter {
 
   /// Check whether analytics is enabled
   static Future<bool?> isAnalyticsEnabledAsync() async {
-    if (Platform.isWindows) {
+    if (Platform.isWindows || Platform.isIOS) {
       return false;
     }
     return _methodChannel.invokeMethod('isAnalyticsEnabled');
@@ -64,7 +64,7 @@ class AppCenter {
 
   /// Get app center installation id
   static Future<String> getInstallIdAsync() async {
-    if (Platform.isWindows) {
+    if (Platform.isWindows || Platform.isIOS) {
       return 'N/A';
     }
     return _methodChannel.invokeMethod('getInstallId').then((r) => r as String);
@@ -72,7 +72,7 @@ class AppCenter {
 
   /// Enable or disable analytics
   static Future configureAnalyticsAsync({required bool enabled}) async {
-    if (Platform.isWindows) {
+    if (Platform.isWindows || Platform.isIOS) {
       return;
     }
     await _methodChannel.invokeMethod('configureAnalytics', enabled);
@@ -80,7 +80,7 @@ class AppCenter {
 
   /// Check whether crashes is enabled
   static Future<bool?> isCrashesEnabledAsync() async {
-    if (Platform.isWindows) {
+    if (Platform.isWindows || Platform.isIOS) {
       return false;
     }
     return _methodChannel.invokeMethod('isCrashesEnabled');
@@ -88,7 +88,7 @@ class AppCenter {
 
   /// Enable or disable app center crash reports
   static Future configureCrashesAsync({required bool enabled}) async {
-    if (Platform.isWindows) {
+    if (Platform.isWindows || Platform.isIOS) {
       return;
     }
     await _methodChannel.invokeMethod('configureCrashes', enabled);

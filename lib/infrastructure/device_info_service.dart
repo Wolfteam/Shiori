@@ -1,16 +1,20 @@
 import 'dart:io';
 
 import 'package:device_info_plus/device_info_plus.dart';
-import 'package:flutter_user_agentx/flutter_user_agent.dart';
+import 'package:fk_user_agent/fk_user_agent.dart';
 import 'package:package_info_plus/package_info_plus.dart';
+import 'package:shiori/domain/app_constants.dart';
 import 'package:shiori/domain/services/device_info_service.dart';
+import 'package:store_checker/store_checker.dart';
 import 'package:version_tracker/version_tracker.dart';
 
 class DeviceInfoServiceImpl implements DeviceInfoService {
-  late Map<String, String> _deviceInfo;
+  final Map<String, String> _deviceInfo = {};
   late String _version;
+  late String _versionWithBuildNumber;
   late String _appName;
   late bool _versionChanged = false;
+  late String _packageName;
 
   @override
   Map<String, String> get deviceInfo => _deviceInfo;
@@ -22,11 +26,14 @@ class DeviceInfoServiceImpl implements DeviceInfoService {
   String get version => _version;
 
   @override
+  String get versionWithBuildNumber => _versionWithBuildNumber;
+
+  @override
   bool get versionChanged => _versionChanged;
 
   //TODO: COMPLETE THIS
   @override
-  String? get userAgent => Platform.isWindows ? null : FlutterUserAgent.webViewUserAgent!.replaceAll(RegExp(r'wv'), '');
+  String? get userAgent => Platform.isWindows ? null : FkUserAgent.webViewUserAgent!.replaceAll(RegExp(r'wv'), '');
 
   @override
   Future<void> init() async {
@@ -35,7 +42,9 @@ class DeviceInfoServiceImpl implements DeviceInfoService {
       //TODO: VERSION DOES NOT MATCH THE ONE ON THE PUBSPEC
       final packageInfo = await PackageInfo.fromPlatform();
       _appName = packageInfo.appName;
-      _version = Platform.isWindows ? packageInfo.version : '${packageInfo.version}+${packageInfo.buildNumber}';
+      _version = packageInfo.version;
+      _packageName = packageInfo.packageName;
+      _versionWithBuildNumber = Platform.isWindows ? _version : '$_version+${packageInfo.buildNumber}';
 
       await _initVersionTracker();
 
@@ -47,43 +56,58 @@ class DeviceInfoServiceImpl implements DeviceInfoService {
         await _initForWindows();
       }
 
+      if (Platform.isIOS) {
+        await _initForIOs();
+      }
+
       if (!Platform.isWindows) {
-        await FlutterUserAgent.init();
+        await FkUserAgent.init();
       }
     } catch (ex) {
-      _deviceInfo = {
-        'Model': 'N/A',
-        'OsVersion': 'N/A',
-        'AppVersion': 'N/A',
-      };
-      _version = _appName = 'N/A';
+      _version = _versionWithBuildNumber = _appName = _packageName = na;
+      _setDefaultDeviceInfoProps(na, na);
     }
   }
 
   Future<void> _initForWindows() async {
     final deviceInfo = DeviceInfoPlugin();
     final info = await deviceInfo.windowsInfo;
-    final model = info.computerName;
-    _deviceInfo = {
-      'Model': model,
-      'OsVersion': 'N/A',
-      'AppVersion': _version,
-    };
+    _setDefaultDeviceInfoProps(info.computerName, na);
   }
 
   Future<void> _initForAndroid() async {
     final deviceInfo = DeviceInfoPlugin();
     final info = await deviceInfo.androidInfo;
-    _deviceInfo = {
-      'Model': info.model ?? 'N/A',
-      'OsVersion': '${info.version.sdkInt}',
-      'AppVersion': _version,
-    };
+    final model = 'Model: ${info.model ?? na} --- Device: ${info.device ?? na} --- Manufacturer: ${info.manufacturer ?? na}';
+    _setDefaultDeviceInfoProps(model, '${info.version.sdkInt}');
+    _setOtherDeviceInfoProps(info.isPhysicalDevice);
+  }
+
+  Future<void> _initForIOs() async {
+    final deviceInfo = DeviceInfoPlugin();
+    final info = await deviceInfo.iosInfo;
+    final model = 'Model: ${info.model ?? na} --- Name: ${info.name ?? na}';
+    final osVersion = '${info.systemName ?? na} : ${info.systemVersion ?? na}';
+    _setDefaultDeviceInfoProps(model, osVersion);
+    _setOtherDeviceInfoProps(info.isPhysicalDevice);
+  }
+
+  Future<void> _setOtherDeviceInfoProps(bool? isPhysicalDevice) async {
+    final installationSource = await StoreChecker.getSource;
+    _deviceInfo.putIfAbsent('IsPhysicalDevice', () => '${isPhysicalDevice ?? na}');
+    _deviceInfo.putIfAbsent('InstallationSource', () => installationSource.name);
   }
 
   Future<void> _initVersionTracker() async {
     final vt = VersionTracker();
     await vt.track();
     _versionChanged = vt.isFirstLaunchForCurrentBuild ?? vt.isFirstLaunchForCurrentVersion ?? vt.isFirstLaunchEver ?? false;
+  }
+
+  void _setDefaultDeviceInfoProps(String model, String osVersion) {
+    _deviceInfo.putIfAbsent('Model', () => model);
+    _deviceInfo.putIfAbsent('OsVersion', () => osVersion);
+    _deviceInfo.putIfAbsent('AppVersion', () => _versionWithBuildNumber);
+    _deviceInfo.putIfAbsent('PackageName', () => _packageName);
   }
 }
