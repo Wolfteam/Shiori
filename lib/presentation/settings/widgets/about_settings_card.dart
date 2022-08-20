@@ -190,7 +190,7 @@ class AboutSettingsCard extends StatelessWidget {
 
   Future<void> _launchUrl(String url) async {
     if (await canLaunchUrl(Uri.parse(url))) {
-      await launchUrl(Uri.parse(url), mode: LaunchMode.externalNonBrowserApplication);
+      await launchUrl(Uri.parse(url), mode: Platform.isIOS ? LaunchMode.externalApplication : LaunchMode.externalNonBrowserApplication);
     }
   }
 
