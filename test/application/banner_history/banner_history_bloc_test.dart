@@ -63,38 +63,35 @@ void main() {
     BannerHistorySortType sortType = BannerHistorySortType.versionAsc,
     List<String> selectedItemKeys = const [],
     List<double> selectedVersions = const [],
+    bool bannersAreNotEmpty = true,
   }) {
-    state.map(
-      initial: (state) {
-        expect(state.type, type);
-        expect(state.versions, isNotEmpty);
-        expect(state.versions.length, state.versions.toSet().length);
-        expect(state.banners.isNotEmpty, isTrue);
-        for (final banner in state.banners) {
-          checkBannerItem(banner, type);
-        }
-        expect(state.sortType, sortType);
-        expect(state.selectedItemKeys, selectedItemKeys);
-        expect(state.selectedVersions, selectedVersions);
+    expect(state.type, type);
+    expect(state.versions, isNotEmpty);
+    expect(state.versions.length, state.versions.toSet().length);
+    expect(bannersAreNotEmpty ? state.banners.isNotEmpty : state.banners.isEmpty, isTrue);
+    for (final banner in state.banners) {
+      checkBannerItem(banner, type);
+    }
+    expect(state.sortType, sortType);
+    expect(state.selectedItemKeys, selectedItemKeys);
+    expect(state.selectedVersions, selectedVersions);
 
-        if (selectedItemKeys.isNotEmpty) {
-          expect(state.banners.length, state.selectedItemKeys.length);
-        }
+    if (selectedItemKeys.isNotEmpty && bannersAreNotEmpty) {
+      expect(state.banners.length, state.selectedItemKeys.length);
+    }
 
-        if (selectedVersions.isNotEmpty) {
-          final versions = state.banners
-              .expand((el) => el.versions)
-              .where((e) => e.released && selectedVersions.contains(e.version))
-              .map((e) => e.version)
-              .toSet()
-              .toList();
-          expect(versions.length, selectedVersions.length);
-        }
+    if (selectedVersions.isNotEmpty && bannersAreNotEmpty) {
+      final versions = state.banners
+          .expand((el) => el.versions)
+          .where((e) => e.released && selectedVersions.contains(e.version))
+          .map((e) => e.version)
+          .toSet()
+          .toList();
+      expect(versions.length, selectedVersions.length);
+    }
 
-        final maxCount = max(_characterBanners.length, _weaponBanners.length);
-        expect(state.maxNumberOfItems, maxCount);
-      },
-    );
+    final maxCount = max(_characterBanners.length, _weaponBanners.length);
+    expect(state.maxNumberOfItems, maxCount);
   }
 
   test(
@@ -204,6 +201,69 @@ void main() {
         ..add(const BannerHistoryEvent.versionSelected(version: 2.5))
         ..add(const BannerHistoryEvent.versionSelected(version: 2.5)),
       verify: (bloc) => checkCommonState(bloc.state),
+    );
+
+    blocTest<BannerHistoryBloc, BannerHistoryState>(
+      'items was previously selected and should be cleared after version change',
+      build: () => BannerHistoryBloc(_genshinService, _telemetryService),
+      act: (bloc) => bloc
+        ..add(const BannerHistoryEvent.init())
+        ..add(const BannerHistoryEvent.itemsSelected(keys: ['keqing']))
+        ..add(const BannerHistoryEvent.versionSelected(version: 2.5)),
+      verify: (bloc) => checkCommonState(bloc.state, selectedVersions: [2.5]),
+    );
+
+    blocTest<BannerHistoryBloc, BannerHistoryState>(
+      'to 1.3, user did not select any item thus the banners should be kept',
+      build: () => BannerHistoryBloc(_genshinService, _telemetryService),
+      act: (bloc) => bloc
+        ..add(const BannerHistoryEvent.init())
+        ..add(const BannerHistoryEvent.versionSelected(version: 1.3))
+        ..add(const BannerHistoryEvent.itemsSelected(keys: [])),
+      verify: (bloc) {
+        checkCommonState(bloc.state, selectedVersions: [1.3]);
+        expect(bloc.state.banners.length, 12);
+      },
+    );
+
+    blocTest<BannerHistoryBloc, BannerHistoryState>(
+      'to 1.3, and user changes the banner type',
+      build: () => BannerHistoryBloc(_genshinService, _telemetryService),
+      act: (bloc) => bloc
+        ..add(const BannerHistoryEvent.init())
+        ..add(const BannerHistoryEvent.versionSelected(version: 1.3))
+        ..add(const BannerHistoryEvent.typeChanged(type: BannerHistoryItemType.weapon)),
+      verify: (bloc) {
+        checkCommonState(bloc.state, type: BannerHistoryItemType.weapon, selectedVersions: [1.3]);
+        expect(bloc.state.banners.length, 14);
+      },
+    );
+
+    blocTest<BannerHistoryBloc, BannerHistoryState>(
+      'to 1.3, user selects and deselects item key thus the items in the banners should be kept',
+      build: () => BannerHistoryBloc(_genshinService, _telemetryService),
+      act: (bloc) => bloc
+        ..add(const BannerHistoryEvent.init())
+        ..add(const BannerHistoryEvent.versionSelected(version: 1.3))
+        ..add(const BannerHistoryEvent.itemsSelected(keys: ['keqing']))
+        ..add(const BannerHistoryEvent.itemsSelected(keys: [])),
+      verify: (bloc) {
+        checkCommonState(bloc.state, selectedVersions: [1.3]);
+        expect(bloc.state.banners.length, 12);
+      },
+    );
+
+    blocTest<BannerHistoryBloc, BannerHistoryState>(
+      'to 1.0, user selects item key which is not released on this version thus the banners are empty',
+      build: () => BannerHistoryBloc(_genshinService, _telemetryService),
+      act: (bloc) => bloc
+        ..add(const BannerHistoryEvent.init())
+        ..add(const BannerHistoryEvent.versionSelected(version: 1.0))
+        ..add(const BannerHistoryEvent.itemsSelected(keys: ['keqing'])),
+      verify: (bloc) {
+        checkCommonState(bloc.state, selectedVersions: [1.0], selectedItemKeys: ['keqing'], bannersAreNotEmpty: false);
+        expect(bloc.state.banners.length, 0);
+      },
     );
   });
 
