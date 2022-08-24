@@ -45,7 +45,7 @@ void main() {
       build: () => CharactersBirthdaysPerMonthBloc(_genshinService, _telemetryService),
       act: (bloc) => bloc.add(const CharactersBirthdaysPerMonthEvent.init(month: DateTime.january)),
       expect: () {
-        final characters = _genshinService.getCharacterBirthdays(month: DateTime.january);
+        final characters = _genshinService.characters.getCharacterBirthdays(month: DateTime.january);
         return [CharactersBirthdaysPerMonthState.loaded(characters: characters, month: DateTime.january)];
       },
     );

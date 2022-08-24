@@ -36,7 +36,7 @@ void main() {
       build: () => MaterialsBloc(_genshinService),
       act: (bloc) => bloc.add(const MaterialsEvent.init()),
       expect: () {
-        final materials = _genshinService.getAllMaterialsForCard();
+        final materials = _genshinService.materials.getAllMaterialsForCard();
         return [
           MaterialsState.loaded(
             materials: sortMaterialsByGrouping(materials, SortDirectionType.asc),
@@ -60,7 +60,7 @@ void main() {
         emittedState.map(
           loading: (_) => throw Exception('Invalid artifact state'),
           loaded: (state) {
-            final materials = _genshinService.getAllMaterialsForCard().where((el) => !_excludedKeys.contains(el.key)).toList();
+            final materials = _genshinService.materials.getAllMaterialsForCard().where((el) => !_excludedKeys.contains(el.key)).toList();
 
             expect(state.materials.length, materials.length);
             expect(state.rarity, 0);
@@ -84,7 +84,7 @@ void main() {
         ..add(const MaterialsEvent.searchChanged(search: _search)),
       skip: 1,
       expect: () {
-        final material = _genshinService.getMaterialForCard(_key);
+        final material = _genshinService.materials.getMaterialForCard(_key);
         return [
           MaterialsState.loaded(
             materials: [material],
@@ -136,7 +136,7 @@ void main() {
         ..add(const MaterialsEvent.applyFilterChanges()),
       skip: 6,
       expect: () {
-        final material = _genshinService.getMaterialForCard(_key);
+        final material = _genshinService.materials.getMaterialForCard(_key);
         return [
           MaterialsState.loaded(
             materials: [material],
@@ -168,7 +168,8 @@ void main() {
         ..add(const MaterialsEvent.cancelChanges()),
       skip: 7,
       expect: () {
-        final materials = _genshinService.getAllMaterialsForCard().where((el) => el.type == MaterialType.currency && el.rarity == 5).toList();
+        final materials =
+            _genshinService.materials.getAllMaterialsForCard().where((el) => el.type == MaterialType.currency && el.rarity == 5).toList();
         return [
           MaterialsState.loaded(
             materials: sortMaterialsByGrouping(materials, SortDirectionType.desc),
@@ -198,7 +199,7 @@ void main() {
         ..add(const MaterialsEvent.resetFilters()),
       skip: 6,
       expect: () {
-        final materials = _genshinService.getAllMaterialsForCard();
+        final materials = _genshinService.materials.getAllMaterialsForCard();
         return [
           MaterialsState.loaded(
             materials: sortMaterialsByGrouping(materials, SortDirectionType.asc),

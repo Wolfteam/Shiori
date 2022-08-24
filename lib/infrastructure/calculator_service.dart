@@ -17,7 +17,7 @@ class CalculatorServiceImpl implements CalculatorService {
     final summary = <AscensionMaterialSummaryType, List<MaterialSummary>>{};
     for (var i = 0; i < flattened.length; i++) {
       final item = flattened[i];
-      final material = _genshinService.getMaterial(item.key);
+      final material = _genshinService.materials.getMaterial(item.key);
 
       MaterialSummary newValue;
       AscensionMaterialSummaryType key;
@@ -119,7 +119,7 @@ class CalculatorServiceImpl implements CalculatorService {
     final ascensionMaterials = char.ascensionMaterials
         .where((m) => m.rank > currentAscensionLevel && m.rank <= desiredAscensionLevel)
         .expand((e) => e.materials)
-        .map((e) => ItemAscensionMaterialModel.fromFile(e, _genshinService.getMaterialImg(e.key)))
+        .map((e) => ItemAscensionMaterialModel.fromFile(e, _genshinService.materials.getMaterialImg(e.key)))
         .toList();
 
     final skillMaterials = <ItemAscensionMaterialModel>[];
@@ -129,7 +129,7 @@ class CalculatorServiceImpl implements CalculatorService {
         final materials = char.talentAscensionMaterials
             .where((m) => m.level > skill.currentLevel && m.level <= skill.desiredLevel)
             .expand((m) => m.materials)
-            .map((e) => ItemAscensionMaterialModel.fromFile(e, _genshinService.getMaterialImg(e.key)))
+            .map((e) => ItemAscensionMaterialModel.fromFile(e, _genshinService.materials.getMaterialImg(e.key)))
             .toList();
 
         skillMaterials.addAll(materials);
@@ -144,7 +144,7 @@ class CalculatorServiceImpl implements CalculatorService {
             .expand((mt) => mt.materials)
             .where((m) => m.level > skill.currentLevel && m.level <= skill.desiredLevel)
             .expand((m) => m.materials)
-            .map((e) => ItemAscensionMaterialModel.fromFile(e, _genshinService.getMaterialImg(e.key)))
+            .map((e) => ItemAscensionMaterialModel.fromFile(e, _genshinService.materials.getMaterialImg(e.key)))
             .toList();
 
         skillMaterials.addAll(materials);
@@ -168,7 +168,7 @@ class CalculatorServiceImpl implements CalculatorService {
     final materials = weapon.ascensionMaterials
         .where((m) => m.level > _mapToWeaponLevel(currentAscensionLevel) && m.level <= _mapToWeaponLevel(desiredAscensionLevel))
         .expand((m) => m.materials)
-        .map((e) => ItemAscensionMaterialModel.fromFile(e, _genshinService.getMaterialImg(e.key)))
+        .map((e) => ItemAscensionMaterialModel.fromFile(e, _genshinService.materials.getMaterialImg(e.key)))
         .toList();
 
     return _flatMaterialsList(expMaterials + materials);
@@ -360,10 +360,10 @@ class CalculatorServiceImpl implements CalculatorService {
   List<ItemAscensionMaterialModel> _getItemExperienceMaterials(int currentLevel, int desiredLevel, int rarity, bool forCharacters) {
     final materials = <ItemAscensionMaterialModel>[];
     //Here we order the exp materials in a way that the one that gives more exp is first and so on
-    final expMaterials = _genshinService.getMaterials(forCharacters ? MaterialType.expCharacter : MaterialType.expWeapon)
+    final expMaterials = _genshinService.materials.getMaterials(forCharacters ? MaterialType.expCharacter : MaterialType.expWeapon)
       ..sort((x, y) => (y.experienceAttributes!.experience - x.experienceAttributes!.experience).round());
     var requiredExp = getItemTotalExp(currentLevel, desiredLevel, rarity, forCharacters);
-    final moraMaterial = _genshinService.getMoraMaterial();
+    final moraMaterial = _genshinService.materials.getMoraMaterial();
 
     for (final material in expMaterials) {
       if (requiredExp <= 0) {

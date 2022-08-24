@@ -53,8 +53,8 @@ void main() {
   CustomBuildBloc _getBloc() => CustomBuildBloc(_genshinService, _dataService, _telemetryService, _loggingService, _customBuildsBloc);
 
   Future<CustomBuildModel> _saveCustomBuild(String charKey) async {
-    final artifact = _genshinService.getArtifactForCard(_thunderingFuryKey);
-    final weapon = _genshinService.getWeapon(_aquilaFavoniaKey);
+    final artifact = _genshinService.artifacts.getArtifactForCard(_thunderingFuryKey);
+    final weapon = _genshinService.weapons.getWeapon(_aquilaFavoniaKey);
     return _dataService.customBuilds.saveCustomBuild(
       charKey,
       '$charKey pro DPS',
@@ -186,7 +186,7 @@ void main() {
       act: (bloc) => bloc.add(const CustomBuildEvent.load(initialTitle: 'DPS PRO')),
       verify: (bloc) => bloc.state.maybeMap(
         loaded: (state) {
-          final character = _genshinService.getCharactersForCard().first;
+          final character = _genshinService.characters.getCharactersForCard().first;
           expect(state.title, 'DPS PRO');
           expect(state.type, CharacterRoleType.dps);
           expect(state.subType, CharacterRoleSubType.none);
@@ -598,7 +598,7 @@ void main() {
       'stat changed',
       build: () => _getBloc(),
       act: (bloc) {
-        final weapon = _genshinService.getWeapon(_aquilaFavoniaKey);
+        final weapon = _genshinService.weapons.getWeapon(_aquilaFavoniaKey);
         return bloc
           ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
           ..add(const CustomBuildEvent.characterChanged(newKey: _keqingKey))
@@ -607,7 +607,7 @@ void main() {
       },
       verify: (bloc) => bloc.state.maybeMap(
         loaded: (state) {
-          final stat = _genshinService.getWeapon(_aquilaFavoniaKey).stats[3];
+          final stat = _genshinService.weapons.getWeapon(_aquilaFavoniaKey).stats[3];
           expect(state.weapons.length == 1, true);
           expect(state.weapons.first.key == _aquilaFavoniaKey, true);
           expect(state.weapons.first.stat == stat, true);
@@ -886,7 +886,7 @@ void main() {
       'all stuff was set',
       build: () => _getBloc(),
       act: (bloc) {
-        final weapon = _genshinService.getWeapon(_aquilaFavoniaKey);
+        final weapon = _genshinService.weapons.getWeapon(_aquilaFavoniaKey);
         return bloc
           ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
           ..add(const CustomBuildEvent.characterChanged(newKey: _keqingKey))
@@ -918,7 +918,7 @@ void main() {
       },
       verify: (bloc) => bloc.state.maybeMap(
         loaded: (state) {
-          final stat = _genshinService.getWeapon(_aquilaFavoniaKey).stats.first;
+          final stat = _genshinService.weapons.getWeapon(_aquilaFavoniaKey).stats.first;
           expect(state.character.key, _keqingKey);
           expect(state.isRecommended, true);
           expect(state.showOnCharacterDetail, false);

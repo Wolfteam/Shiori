@@ -93,7 +93,7 @@ void main() {
       'keqing is in inventory',
       build: () => CharacterBloc(_genshinService, _telemetryService, _localeService, _dataService),
       setUp: () {
-        _dataService.addItemToInventory('keqing', ItemType.character, 1);
+        _dataService.inventory.addItemToInventory('keqing', ItemType.character, 1);
       },
       act: (bloc) => bloc.add(const CharacterEvent.loadFromKey(key: 'keqing')),
       //we skip 1 because since the event is not _AddedToInventory the bloc will emit a loading

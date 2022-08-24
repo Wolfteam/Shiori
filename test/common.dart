@@ -48,7 +48,7 @@ Future<bool> _assetExists(String path) async {
 
 void checkAsset(String path) {
   expect(path, allOf([isNotEmpty, isNotNull]));
-  expect(_assetExists(path), completion(equals(true)));
+  expect(_assetExists(path), completion(equals(true)), reason: 'Asset = $path does not exist');
 }
 
 void checkItemsCommon(List<ItemCommon> items, {bool checkEmpty = true}) {
@@ -84,7 +84,7 @@ void checkItemAscensionMaterialFileModel(GenshinService service, List<ItemAscens
   expect(all, isNotEmpty);
   for (final material in all) {
     checkKey(material.key);
-    expect(() => service.getMaterial(material.key), returnsNormally);
+    expect(() => service.materials.getMaterial(material.key), returnsNormally);
     expect(material.quantity, greaterThanOrEqualTo(0));
   }
 }

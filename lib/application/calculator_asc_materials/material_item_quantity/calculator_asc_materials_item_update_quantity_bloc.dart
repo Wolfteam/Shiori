@@ -20,7 +20,7 @@ class CalculatorAscMaterialsItemUpdateQuantityBloc
   Stream<CalculatorAscMaterialsItemUpdateQuantityState> mapEventToState(CalculatorAscMaterialsItemUpdateQuantityEvent event) async* {
     final s = await event.map(
       load: (e) async {
-        final material = _dataService.getMaterialFromInventory(e.key);
+        final material = _dataService.inventory.getMaterialFromInventory(e.key);
         return CalculatorAscMaterialsItemUpdateQuantityState.loaded(key: material.key, quantity: material.quantity);
       },
       update: (e) async {
@@ -34,6 +34,6 @@ class CalculatorAscMaterialsItemUpdateQuantityBloc
 
   Future<void> _updateMaterialQuantity(String key, int quantity) async {
     await _telemetryService.trackItemUpdatedInInventory(key, quantity);
-    await _dataService.updateItemInInventory(key, ItemType.material, quantity);
+    await _dataService.inventory.updateItemInInventory(key, ItemType.material, quantity, _dataService.calculator.redistributeInventoryMaterial);
   }
 }

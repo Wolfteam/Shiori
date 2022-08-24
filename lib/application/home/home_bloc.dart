@@ -34,9 +34,14 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
 
   HomeState _buildInitialState(int day) {
     final now = DateTime.now();
-    final charMaterials = _genshinService.getCharacterAscensionMaterials(day);
-    final weaponMaterials = _genshinService.getWeaponAscensionMaterials(day);
-    final charsForBirthday = _genshinService.getCharacterBirthdays(month: now.month, day: now.day).map((e) => ItemCommon(e.key, e.image)).toList();
+    final charMaterials = _genshinService.characters.getCharacterAscensionMaterials(day);
+    final weaponMaterials = _genshinService.weapons.getWeaponAscensionMaterials(day);
+    final charsForBirthday = _genshinService.characters
+        .getCharacterBirthdays(month: now.month, day: now.day)
+        .map(
+          (e) => ItemCommon(e.key, e.image),
+        )
+        .toList();
     final dayName = _localeService.getDayNameFromDay(day);
 
     return HomeState.loaded(

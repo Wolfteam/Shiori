@@ -24,7 +24,7 @@ class CharactersBirthdaysPerMonthBloc extends Bloc<CharactersBirthdaysPerMonthEv
 
   Future<CharactersBirthdaysPerMonthState> _init(int month) async {
     await _telemetryService.trackBirthdaysPerMonthOpened(month);
-    final characters = _genshinService.getCharacterBirthdays(month: month);
+    final characters = _genshinService.characters.getCharacterBirthdays(month: month);
     return CharactersBirthdaysPerMonthState.loaded(month: month, characters: characters);
   }
 }

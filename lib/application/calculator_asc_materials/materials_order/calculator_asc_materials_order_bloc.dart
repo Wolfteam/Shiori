@@ -30,10 +30,10 @@ class CalculatorAscMaterialsOrderBloc extends Bloc<CalculatorAscMaterialsOrderEv
       applyChanges: (_) async {
         for (var i = 0; i < state.items.length; i++) {
           final item = state.items[i];
-          await _dataService.updateCalAscMatSessionItem(state.sessionKey, i, item, redistribute: false);
+          await _dataService.calculator.updateCalAscMatSessionItem(state.sessionKey, i, item, redistribute: false);
         }
 
-        await _dataService.redistributeAllInventoryMaterials();
+        await _dataService.calculator.redistributeAllInventoryMaterials();
 
         _calculatorAscMaterialsBloc.add(CalculatorAscMaterialsEvent.init(sessionKey: state.sessionKey));
 

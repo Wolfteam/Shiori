@@ -42,17 +42,17 @@ class BannerHistoryBloc extends Bloc<BannerHistoryEvent, BannerHistoryState> {
   }
 
   List<ItemCommonWithName> getItemsForSearch() {
-    final banners = _getBannerItems(state.type);
+    final banners = _getBannerItemsByType(state.type);
     return banners.map((e) => ItemCommonWithName(e.key, e.image, e.name)).toSet().toList();
   }
 
   Future<BannerHistoryState> _init() async {
     await _telemetryService.trackBannerHistoryOpened();
-    _characterBanners.addAll(_genshinService.getBannerHistory(BannerHistoryItemType.character));
-    _weaponBanners.addAll(_genshinService.getBannerHistory(BannerHistoryItemType.weapon));
+    _characterBanners.addAll(_genshinService.bannerHistory.getBannerHistory(BannerHistoryItemType.character));
+    _weaponBanners.addAll(_genshinService.bannerHistory.getBannerHistory(BannerHistoryItemType.weapon));
 
-    final versions = _genshinService.getBannerHistoryVersions(SortDirectionType.asc);
-    final banners = _sortBanners(_characterBanners, versions, state.sortType);
+    final versions = _genshinService.bannerHistory.getBannerHistoryVersions(SortDirectionType.asc);
+    final banners = _getFinalSortedBanners(_characterBanners, versions, state.sortType);
     return BannerHistoryState.initial(
       type: BannerHistoryItemType.character,
       sortType: _initialState.sortType,
@@ -66,20 +66,26 @@ class BannerHistoryBloc extends Bloc<BannerHistoryEvent, BannerHistoryState> {
     if (type == state.type) {
       return state;
     }
-    final versions = _sortVersions(state.versions, state.sortType);
+    final allVersions = _getSortedVersions(state.versions, state.sortType);
+    final selectedVersions = state.selectedVersions.isEmpty ? allVersions : state.selectedVersions;
     final banners = <BannerHistoryItemModel>[];
     switch (type) {
       case BannerHistoryItemType.character:
-        banners.addAll(_sortBanners(_characterBanners, versions, state.sortType));
+        banners.addAll(_getFinalSortedBanners(_characterBanners, selectedVersions, state.sortType));
         break;
       case BannerHistoryItemType.weapon:
-        banners.addAll(_sortBanners(_weaponBanners, versions, state.sortType));
+        banners.addAll(_getFinalSortedBanners(_weaponBanners, selectedVersions, state.sortType));
         break;
       default:
         throw Exception('Banner history item type = $type is not valid');
     }
 
-    return state.copyWith.call(banners: banners, versions: versions, type: type, selectedItemKeys: []);
+    return state.copyWith.call(
+      banners: banners,
+      versions: allVersions,
+      type: type,
+      selectedItemKeys: [],
+    );
   }
 
   BannerHistoryState _sortTypeChanged(BannerHistorySortType type) {
@@ -87,8 +93,8 @@ class BannerHistoryBloc extends Bloc<BannerHistoryEvent, BannerHistoryState> {
       return state;
     }
 
-    final versions = _sortVersions(state.versions, type);
-    final banners = _sortBanners(state.banners, versions, type);
+    final versions = _getSortedVersions(state.versions, type);
+    final banners = _getFinalSortedBanners(state.banners, versions, type);
     return state.copyWith.call(banners: banners, versions: versions, sortType: type);
   }
 
@@ -100,43 +106,55 @@ class BannerHistoryBloc extends Bloc<BannerHistoryEvent, BannerHistoryState> {
       selectedVersions.addAll([...state.selectedVersions, version]);
     }
 
-    final banners = _getBannerItems(state.type);
+    final banners = _getBannerItemsByType(state.type);
     if (selectedVersions.isNotEmpty) {
       banners.removeWhere((el) => el.versions.where((ver) => ver.released && selectedVersions.contains(ver.version)).isEmpty);
     }
-    return state.copyWith.call(banners: _sortBanners(banners, state.versions, state.sortType), selectedVersions: selectedVersions);
+    return state.copyWith.call(
+      banners: _getFinalSortedBanners(banners, state.versions, state.sortType),
+      selectedVersions: selectedVersions,
+      selectedItemKeys: [],
+    );
   }
 
   BannerHistoryState _itemsSelected(List<String> keys) {
-    final banners = _getBannerItems(state.type);
+    if (keys.equals(state.selectedItemKeys)) {
+      return state;
+    }
+
+    final banners = _getBannerItemsByType(state.type);
     if (keys.isNotEmpty) {
       banners.removeWhere((el) => !keys.contains(el.key));
     }
 
-    return state.copyWith.call(banners: _sortBanners(banners, state.versions, state.sortType), selectedItemKeys: keys);
+    final selectedVersions = state.selectedVersions.isEmpty ? _getSortedVersions(state.versions, state.sortType) : state.selectedVersions;
+    return state.copyWith.call(
+      banners: _getFinalSortedBanners(banners, selectedVersions, state.sortType),
+      selectedItemKeys: keys,
+    );
   }
 
-  List<BannerHistoryItemModel> _sortBanners(List<BannerHistoryItemModel> banners, List<double> versions, BannerHistorySortType sortType) {
+  List<BannerHistoryItemModel> _getFinalSortedBanners(List<BannerHistoryItemModel> banners, List<double> versions, BannerHistorySortType sortType) {
+    final sortedBannerByVersion = <BannerHistoryItemModel>[];
+    for (final version in versions) {
+      final onVersion = banners.where((el) => el.versions.any((v) => v.released && v.version == version)).toList()
+        ..sort((x, y) => y.rarity.compareTo(x.rarity));
+
+      onVersion.removeWhere((el) => sortedBannerByVersion.any((x) => x.key == el.key));
+      sortedBannerByVersion.addAll(onVersion);
+    }
     switch (sortType) {
       case BannerHistorySortType.nameAsc:
-        return banners..sort((x, y) => x.name.compareTo(y.name));
+        return sortedBannerByVersion..sort((x, y) => x.name.compareTo(y.name));
       case BannerHistorySortType.nameDesc:
-        return banners..sort((x, y) => y.name.compareTo(x.name));
+        return sortedBannerByVersion..sort((x, y) => y.name.compareTo(x.name));
       case BannerHistorySortType.versionAsc:
       case BannerHistorySortType.versionDesc:
-        final sortedBanners = <BannerHistoryItemModel>[];
-        for (final version in versions) {
-          final onVersion = banners.where((el) => el.versions.any((v) => v.released && v.version == version)).toList()
-            ..sort((x, y) => y.rarity.compareTo(x.rarity));
-
-          onVersion.removeWhere((el) => sortedBanners.any((x) => x.key == el.key));
-          sortedBanners.addAll(onVersion);
-        }
-        return sortedBanners;
+        return sortedBannerByVersion;
     }
   }
 
-  List<double> _sortVersions(List<double> versions, BannerHistorySortType sortType) {
+  List<double> _getSortedVersions(List<double> versions, BannerHistorySortType sortType) {
     if (sortType == state.sortType) {
       return versions;
     }
@@ -151,7 +169,7 @@ class BannerHistoryBloc extends Bloc<BannerHistoryEvent, BannerHistoryState> {
     }
   }
 
-  List<BannerHistoryItemModel> _getBannerItems(BannerHistoryItemType type) {
+  List<BannerHistoryItemModel> _getBannerItemsByType(BannerHistoryItemType type) {
     final banners = <BannerHistoryItemModel>[];
     switch (type) {
       case BannerHistoryItemType.character:

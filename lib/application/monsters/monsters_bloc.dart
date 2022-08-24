@@ -58,7 +58,7 @@ class MonstersBloc extends Bloc<MonstersEvent, MonstersState> {
     SortDirectionType sortDirectionType = SortDirectionType.asc,
   }) {
     final isLoaded = state is _LoadedState;
-    var data = _genshinService.getAllMonstersForCard();
+    var data = _genshinService.monsters.getAllMonstersForCard();
     if (excludeKeys.isNotEmpty) {
       data = data.where((el) => !excludeKeys.contains(el.key)).toList();
     }

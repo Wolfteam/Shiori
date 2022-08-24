@@ -40,12 +40,12 @@ class GameCodesBloc extends Bloc<GameCodesEvent, GameCodesState> {
         return _buildInitialState();
       },
       markAsUsed: (code, wasUsed) async {
-        await _dataService.markCodeAsUsed(code, wasUsed: wasUsed);
+        await _dataService.gameCodes.markCodeAsUsed(code, wasUsed: wasUsed);
         return _buildInitialState();
       },
       refresh: () async {
         final gameCodes = await _gameCodeService.getAllGameCodes();
-        await _dataService.saveGameCodes(gameCodes);
+        await _dataService.gameCodes.saveGameCodes(gameCodes);
 
         await _telemetryService.trackGameCodesOpened();
         return _buildInitialState();
@@ -57,7 +57,7 @@ class GameCodesBloc extends Bloc<GameCodesEvent, GameCodesState> {
   }
 
   GameCodesState _buildInitialState() {
-    final gameCodes = _dataService.getAllGameCodes();
+    final gameCodes = _dataService.gameCodes.getAllGameCodes();
 
     return GameCodesState.loaded(
       workingGameCodes: gameCodes.where((code) => !code.isExpired).toList(),

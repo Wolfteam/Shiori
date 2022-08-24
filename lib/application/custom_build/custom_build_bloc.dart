@@ -174,12 +174,12 @@ class CustomBuildBloc extends Bloc<CustomBuildEvent, CustomBuildState> {
         skillPriorities: build.skillPriorities,
         artifacts: build.artifacts..sort((x, y) => x.type.index.compareTo(y.type.index)),
         teamCharacters: build.teamCharacters,
-        subStatsSummary: _genshinService.generateSubStatSummary(build.artifacts),
+        subStatsSummary: _genshinService.artifacts.generateSubStatSummary(build.artifacts),
         readyForScreenshot: false,
       );
     }
 
-    final character = _genshinService.getCharactersForCard().first;
+    final character = _genshinService.characters.getCharactersForCard().first;
     return CustomBuildState.loaded(
       title: initialTitle,
       type: CharacterRoleType.dps,
@@ -239,7 +239,7 @@ class CustomBuildBloc extends Bloc<CustomBuildEvent, CustomBuildState> {
     if (state.character.key == e.newKey) {
       return state;
     }
-    final newCharacter = _genshinService.getCharacterForCard(e.newKey);
+    final newCharacter = _genshinService.characters.getCharacterForCard(e.newKey);
     _LoadedState updatedState = state.copyWith.call(character: newCharacter, readyForScreenshot: false);
     if (newCharacter.weaponType != state.character.weaponType) {
       updatedState = updatedState.copyWith.call(weapons: []);
@@ -261,8 +261,8 @@ class CustomBuildBloc extends Bloc<CustomBuildEvent, CustomBuildState> {
       throw Exception('Cannot add more than = $maxNumberOfWeapons weapons to the state');
     }
 
-    final weapon = _genshinService.getWeapon(e.key);
-    final translation = _genshinService.getWeaponTranslation(e.key);
+    final weapon = _genshinService.weapons.getWeapon(e.key);
+    final translation = _genshinService.translations.getWeaponTranslation(e.key);
     if (state.character.weaponType != weapon.type) {
       throw Exception('Type = ${weapon.type} is not valid for character = ${state.character.key}');
     }
@@ -359,9 +359,9 @@ class CustomBuildBloc extends Bloc<CustomBuildEvent, CustomBuildState> {
       throw Exception('Cannot add more than = ${ArtifactType.values.length} artifacts to the state');
     }
 
-    final fullArtifact = _genshinService.getArtifact(e.key);
-    final translation = _genshinService.getArtifactTranslation(e.key);
-    final img = _genshinService.getArtifactRelatedPart(fullArtifact.fullImagePath, fullArtifact.image, translation.bonus.length, e.type);
+    final fullArtifact = _genshinService.artifacts.getArtifact(e.key);
+    final translation = _genshinService.translations.getArtifactTranslation(e.key);
+    final img = _genshinService.artifacts.getArtifactRelatedPart(fullArtifact.fullImagePath, fullArtifact.image, translation.bonus.length, e.type);
 
     final updatedArtifacts = [...state.artifacts];
     final old = state.artifacts.firstWhereOrNull((el) => el.type == e.type);
@@ -409,7 +409,11 @@ class CustomBuildBloc extends Bloc<CustomBuildEvent, CustomBuildState> {
     final artifacts = [...state.artifacts];
     artifacts.removeAt(index);
     artifacts.insert(index, updated);
-    return state.copyWith.call(artifacts: artifacts, subStatsSummary: _genshinService.generateSubStatSummary(artifacts), readyForScreenshot: false);
+    return state.copyWith.call(
+      artifacts: artifacts,
+      subStatsSummary: _genshinService.artifacts.generateSubStatSummary(artifacts),
+      readyForScreenshot: false,
+    );
   }
 
   CustomBuildState _deleteArtifact(_DeleteArtifact e, _LoadedState state) {
@@ -419,7 +423,11 @@ class CustomBuildBloc extends Bloc<CustomBuildEvent, CustomBuildState> {
 
     final updated = [...state.artifacts];
     updated.removeWhere((el) => el.type == e.type);
-    return state.copyWith.call(artifacts: updated, subStatsSummary: _genshinService.generateSubStatSummary(updated), readyForScreenshot: false);
+    return state.copyWith.call(
+      artifacts: updated,
+      subStatsSummary: _genshinService.artifacts.generateSubStatSummary(updated),
+      readyForScreenshot: false,
+    );
   }
 
   CustomBuildState _addTeamCharacter(_AddTeamCharacter e, _LoadedState state) {
@@ -431,7 +439,7 @@ class CustomBuildBloc extends Bloc<CustomBuildEvent, CustomBuildState> {
       throw Exception('The selected character cannot be in the team characters');
     }
 
-    final char = _genshinService.getCharacterForCard(e.key);
+    final char = _genshinService.characters.getCharacterForCard(e.key);
     final updatedTeamCharacters = [...state.teamCharacters];
     final old = updatedTeamCharacters.firstWhereOrNull((el) => el.key == e.key);
     if (old != null) {

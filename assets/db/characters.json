@@ -478,13 +478,13 @@
                 49.75,
                 53.8,
                 57.85,
-                63.64,
+                63.63,
                 67.68,
                 72.31,
                 78.68,
                 85.04,
                 91.4,
-                98.35,
+                98.34,
                 106.3,
                 115.65,
                 125.01,
@@ -529,7 +529,7 @@
                 109.96,
                 118.85,
                 127.74,
-                137.45
+                137.44
               ]
             },
             {
@@ -1608,7 +1608,7 @@
                 132.13,
                 145.35,
                 154.59,
-                165.17,
+                165.16,
                 179.7,
                 194.23,
                 208.77,
@@ -1730,21 +1730,21 @@
             {
               "key": "param5",
               "values": [
-                5.85,
-                6.2,
+                5.84,
+                6.19,
                 6.54,
                 7.0,
                 7.35,
                 7.7,
                 8.16,
                 8.61,
-                9.07,
+                9.06,
                 9.52,
-                9.98,
+                9.97,
                 10.43,
                 10.89,
                 11.34,
-                11.8
+                11.79
               ]
             },
             {
@@ -1770,9 +1770,9 @@
             {
               "key": "param7",
               "values": [
-                17.54,
+                17.53,
                 18.58,
-                19.64,
+                19.63,
                 21.0,
                 22.05,
                 23.1,
@@ -1791,20 +1791,20 @@
               "key": "param8",
               "values": [
                 29.23,
-                30.98,
+                30.97,
                 32.73,
                 35.0,
                 36.75,
                 38.5,
                 40.78,
                 43.05,
-                45.33,
+                45.32,
                 47.6,
                 49.88,
                 52.15,
                 54.43,
                 56.7,
-                58.98
+                58.97
               ]
             },
             {
@@ -1829,6 +1829,46 @@
             },
             {
               "key": "param10",
+              "values": [
+                20.0,
+                20.0,
+                20.0,
+                20.0,
+                20.0,
+                20.0,
+                20.0,
+                20.0,
+                20.0,
+                20.0,
+                20.0,
+                20.0,
+                20.0,
+                20.0,
+                20.0
+              ]
+            },
+            {
+              "key": "param11",
+              "values": [
+                1000.0,
+                1000.0,
+                1000.0,
+                1000.0,
+                1000.0,
+                1000.0,
+                1000.0,
+                1000.0,
+                1000.0,
+                1000.0,
+                1000.0,
+                1000.0,
+                1000.0,
+                1000.0,
+                1000.0
+              ]
+            },
+            {
+              "key": "param12",
               "values": [
                 20.0,
                 20.0,
@@ -2699,7 +2739,7 @@
                 132.13,
                 145.35,
                 154.59,
-                165.17,
+                165.16,
                 179.7,
                 194.23,
                 208.77,
@@ -3657,7 +3697,7 @@
                 155.82,
                 167.48,
                 180.2,
-                194.78,
+                194.77,
                 211.92,
                 229.06,
                 246.2,
@@ -3677,7 +3717,7 @@
                 326.34,
                 350.76,
                 377.4,
-                407.93,
+                407.92,
                 443.82,
                 479.72,
                 515.62,
@@ -4094,7 +4134,7 @@
           "baseAtk": 18.0,
           "baseDef": 75.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 20,
@@ -4102,7 +4142,7 @@
           "baseAtk": 46.0,
           "baseDef": 194.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 20,
@@ -4110,7 +4150,7 @@
           "baseAtk": 61.0,
           "baseDef": 258.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 40,
@@ -4118,7 +4158,7 @@
           "baseAtk": 91.0,
           "baseDef": 386.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 40,
@@ -4126,15 +4166,15 @@
           "baseAtk": 102.0,
           "baseDef": 431.0,
           "isAnAscension": true,
-          "statValue": 9.8
+          "statValue": 4.8
         },
         {
           "level": 50,
           "baseHp": 6649.0,
-          "baseAtk": 117.0,
+          "baseAtk": 118.0,
           "baseDef": 496.0,
           "isAnAscension": false,
-          "statValue": 9.8
+          "statValue": 4.8
         },
         {
           "level": 50,
@@ -4142,7 +4182,7 @@
           "baseAtk": 132.0,
           "baseDef": 557.0,
           "isAnAscension": true,
-          "statValue": 14.6
+          "statValue": 9.6
         },
         {
           "level": 60,
@@ -4150,7 +4190,7 @@
           "baseAtk": 147.0,
           "baseDef": 622.0,
           "isAnAscension": false,
-          "statValue": 14.6
+          "statValue": 9.6
         },
         {
           "level": 60,
@@ -4158,7 +4198,7 @@
           "baseAtk": 158.0,
           "baseDef": 668.0,
           "isAnAscension": true,
-          "statValue": 14.6
+          "statValue": 9.6
         },
         {
           "level": 70,
@@ -4166,7 +4206,7 @@
           "baseAtk": 174.0,
           "baseDef": 734.0,
           "isAnAscension": false,
-          "statValue": 14.6
+          "statValue": 9.6
         },
         {
           "level": 70,
@@ -4174,7 +4214,7 @@
           "baseAtk": 185.0,
           "baseDef": 779.0,
           "isAnAscension": true,
-          "statValue": 19.4
+          "statValue": 14.4
         },
         {
           "level": 80,
@@ -4182,7 +4222,7 @@
           "baseAtk": 200.0,
           "baseDef": 846.0,
           "isAnAscension": false,
-          "statValue": 19.4
+          "statValue": 14.4
         },
         {
           "level": 80,
@@ -4190,7 +4230,7 @@
           "baseAtk": 211.0,
           "baseDef": 892.0,
           "isAnAscension": true,
-          "statValue": 24.2
+          "statValue": 19.2
         },
         {
           "level": 90,
@@ -4198,7 +4238,7 @@
           "baseAtk": 227.0,
           "baseDef": 959.0,
           "isAnAscension": false,
-          "statValue": 24.2
+          "statValue": 19.2
         }
       ]
     },
@@ -4762,7 +4802,7 @@
                 132.13,
                 145.35,
                 154.59,
-                165.17,
+                165.16,
                 179.7,
                 194.23,
                 208.77,
@@ -4824,21 +4864,21 @@
             {
               "key": "param2",
               "values": [
-                72.0,
-                79.0,
-                87.0,
-                96.0,
-                105.0,
-                114.0,
-                125.0,
-                135.0,
-                147.0,
-                159.0,
-                172.0,
-                185.0,
-                199.0,
-                213.0,
-                228.0
+                72.22,
+                79.45,
+                87.27,
+                95.7,
+                104.73,
+                114.36,
+                124.59,
+                135.43,
+                146.86,
+                158.9,
+                171.54,
+                184.79,
+                198.63,
+                213.08,
+                228.13
               ]
             },
             {
@@ -4864,21 +4904,21 @@
             {
               "key": "param4",
               "values": [
-                385.0,
-                424.0,
-                465.0,
-                510.0,
-                559.0,
-                610.0,
-                664.0,
-                722.0,
-                783.0,
-                847.0,
-                915.0,
-                986.0,
-                1059.0,
-                1136.0,
-                1217.0
+                385.19,
+                423.71,
+                465.45,
+                510.39,
+                558.55,
+                609.91,
+                664.49,
+                722.27,
+                783.27,
+                847.48,
+                914.89,
+                985.52,
+                1059.36,
+                1136.41,
+                1216.67
               ]
             },
             {
@@ -4971,21 +5011,21 @@
             {
               "key": "param2",
               "values": [
-                1694.0,
-                1864.0,
-                2047.0,
+                1694.28,
+                1863.73,
+                2047.31,
                 2245.0,
-                2457.0,
-                2683.0,
-                2923.0,
-                3177.0,
-                3445.0,
-                3728.0,
-                4024.0,
-                4335.0,
-                4660.0,
-                4999.0,
-                5352.0
+                2456.81,
+                2682.75,
+                2922.81,
+                3176.98,
+                3445.28,
+                3727.7,
+                4024.24,
+                4334.9,
+                4659.69,
+                4998.59,
+                5351.62
               ]
             },
             {
@@ -5947,21 +5987,21 @@
             {
               "key": "param2",
               "values": [
-                1386.0,
-                1525.0,
-                1675.0,
+                1386.37,
+                1525.02,
+                1675.23,
                 1837.0,
-                2010.0,
-                2195.0,
-                2392.0,
-                2600.0,
-                2819.0,
-                3050.0,
-                3293.0,
-                3547.0,
-                3813.0,
-                4090.0,
-                4379.0
+                2010.32,
+                2195.19,
+                2391.62,
+                2599.61,
+                2819.15,
+                3050.24,
+                3292.89,
+                3547.09,
+                3812.85,
+                4090.16,
+                4379.03
               ]
             },
             {
@@ -6794,7 +6834,7 @@
                 49.7,
                 54.67,
                 58.15,
-                62.13,
+                62.12,
                 67.59,
                 73.06,
                 78.53,
@@ -6814,9 +6854,9 @@
                 63.5,
                 69.85,
                 74.3,
-                79.38,
+                79.37,
                 86.36,
-                93.35,
+                93.34,
                 100.33,
                 107.95,
                 115.57,
@@ -7172,6 +7212,66 @@
                 10.0,
                 10.0
               ]
+            },
+            {
+              "key": "param10",
+              "values": [
+                7.5,
+                7.5,
+                7.5,
+                7.5,
+                7.5,
+                7.5,
+                7.5,
+                7.5,
+                7.5,
+                7.5,
+                7.5,
+                7.5,
+                7.5,
+                7.5,
+                7.5
+              ]
+            },
+            {
+              "key": "param11",
+              "values": [
+                10.0,
+                10.0,
+                10.0,
+                10.0,
+                10.0,
+                10.0,
+                10.0,
+                10.0,
+                10.0,
+                10.0,
+                10.0,
+                10.0,
+                10.0,
+                10.0,
+                10.0
+              ]
+            },
+            {
+              "key": "param12",
+              "values": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
             }
           ]
         },
@@ -7223,21 +7323,21 @@
             {
               "key": "param3",
               "values": [
-                577.0,
-                635.0,
-                698.0,
+                577.34,
+                635.08,
+                697.63,
                 765.0,
-                837.0,
-                914.0,
-                996.0,
-                1083.0,
-                1174.0,
-                1270.0,
-                1371.0,
-                1477.0,
-                1588.0,
-                1703.0,
-                1824.0
+                837.18,
+                914.17,
+                995.97,
+                1082.58,
+                1174.01,
+                1270.24,
+                1371.29,
+                1477.15,
+                1587.82,
+                1703.31,
+                1823.6
               ]
             },
             {
@@ -8121,7 +8221,7 @@
                 101.78,
                 110.07,
                 118.35,
-                130.19,
+                130.18,
                 138.47,
                 147.94,
                 160.96,
@@ -8132,7 +8232,7 @@
                 229.6,
                 243.8,
                 258.0,
-                272.21
+                272.2
               ]
             },
             {
@@ -8257,9 +8357,9 @@
                 309.67,
                 326.88,
                 344.08,
-                365.59,
+                365.58,
                 387.09,
-                408.6
+                408.59
               ]
             },
             {
@@ -8609,13 +8709,13 @@
       "image": "collei.png",
       "fullImage": "collei.png",
       "secondFullImage": null,
-      "isComingSoon": true,
-      "isNew": false,
+      "isComingSoon": false,
+      "isNew": true,
       "isFemale": true,
       "region": "sumeru",
-      "role": "na",
-      "tier": "na",
-      "birthday": "01/01",
+      "role": "support",
+      "tier": "a",
+      "birthday": "05/08",
       "subStatType": "atkPercentage",
       "ascensionMaterials": [
         {
@@ -8626,6 +8726,11 @@
               "key": "nagadus-emerald-sliver",
               "quantity": 1,
               "type": "jewels"
+            },
+            {
+              "key": "rukkhashava-mushrooms",
+              "quantity": 3,
+              "type": "local"
             },
             {
               "key": "firm-arrowhead",
@@ -8649,6 +8754,16 @@
               "type": "jewels"
             },
             {
+              "key": "majestic-hooked-beak",
+              "quantity": 2,
+              "type": "elementalStone"
+            },
+            {
+              "key": "rukkhashava-mushrooms",
+              "quantity": 10,
+              "type": "local"
+            },
+            {
               "key": "firm-arrowhead",
               "quantity": 15,
               "type": "common"
@@ -8668,6 +8783,16 @@
               "key": "nagadus-emerald-fragment",
               "quantity": 6,
               "type": "jewels"
+            },
+            {
+              "key": "majestic-hooked-beak",
+              "quantity": 4,
+              "type": "elementalStone"
+            },
+            {
+              "key": "rukkhashava-mushrooms",
+              "quantity": 20,
+              "type": "local"
             },
             {
               "key": "sharp-arrowhead",
@@ -8691,6 +8816,16 @@
               "type": "jewels"
             },
             {
+              "key": "majestic-hooked-beak",
+              "quantity": 8,
+              "type": "elementalStone"
+            },
+            {
+              "key": "rukkhashava-mushrooms",
+              "quantity": 30,
+              "type": "local"
+            },
+            {
               "key": "sharp-arrowhead",
               "quantity": 18,
               "type": "common"
@@ -8710,6 +8845,16 @@
               "key": "nagadus-emerald-chunk",
               "quantity": 6,
               "type": "jewels"
+            },
+            {
+              "key": "majestic-hooked-beak",
+              "quantity": 12,
+              "type": "elementalStone"
+            },
+            {
+              "key": "rukkhashava-mushrooms",
+              "quantity": 45,
+              "type": "local"
             },
             {
               "key": "weathered-arrowhead",
@@ -8733,6 +8878,16 @@
               "type": "jewels"
             },
             {
+              "key": "majestic-hooked-beak",
+              "quantity": 20,
+              "type": "elementalStone"
+            },
+            {
+              "key": "rukkhashava-mushrooms",
+              "quantity": 60,
+              "type": "local"
+            },
+            {
               "key": "weathered-arrowhead",
               "quantity": 24,
               "type": "common"
@@ -8750,6 +8905,11 @@
           "level": 2,
           "materials": [
             {
+              "key": "teachings-of-praxis",
+              "quantity": 3,
+              "type": "talents"
+            },
+            {
               "key": "firm-arrowhead",
               "quantity": 6,
               "type": "common"
@@ -8764,6 +8924,11 @@
         {
           "level": 3,
           "materials": [
+            {
+              "key": "guide-to-praxis",
+              "quantity": 2,
+              "type": "talents"
+            },
             {
               "key": "sharp-arrowhead",
               "quantity": 3,
@@ -8780,6 +8945,11 @@
           "level": 4,
           "materials": [
             {
+              "key": "guide-to-praxis",
+              "quantity": 4,
+              "type": "talents"
+            },
+            {
               "key": "sharp-arrowhead",
               "quantity": 4,
               "type": "common"
@@ -8794,6 +8964,11 @@
         {
           "level": 5,
           "materials": [
+            {
+              "key": "guide-to-praxis",
+              "quantity": 6,
+              "type": "talents"
+            },
             {
               "key": "sharp-arrowhead",
               "quantity": 6,
@@ -8810,6 +8985,11 @@
           "level": 6,
           "materials": [
             {
+              "key": "guide-to-praxis",
+              "quantity": 9,
+              "type": "talents"
+            },
+            {
               "key": "sharp-arrowhead",
               "quantity": 9,
               "type": "common"
@@ -8824,6 +9004,11 @@
         {
           "level": 7,
           "materials": [
+            {
+              "key": "philosophies-of-praxis",
+              "quantity": 4,
+              "type": "talents"
+            },
             {
               "key": "weathered-arrowhead",
               "quantity": 4,
@@ -8845,6 +9030,11 @@
           "level": 8,
           "materials": [
             {
+              "key": "philosophies-of-praxis",
+              "quantity": 6,
+              "type": "talents"
+            },
+            {
               "key": "weathered-arrowhead",
               "quantity": 6,
               "type": "common"
@@ -8865,6 +9055,11 @@
           "level": 9,
           "materials": [
             {
+              "key": "philosophies-of-praxis",
+              "quantity": 12,
+              "type": "talents"
+            },
+            {
               "key": "weathered-arrowhead",
               "quantity": 9,
               "type": "common"
@@ -8884,6 +9079,11 @@
         {
           "level": 10,
           "materials": [
+            {
+              "key": "philosophies-of-praxis",
+              "quantity": 16,
+              "type": "talents"
+            },
             {
               "key": "weathered-arrowhead",
               "quantity": 12,
@@ -8961,7 +9161,7 @@
                 62.9,
                 69.19,
                 73.59,
-                78.63,
+                78.62,
                 85.54,
                 92.46,
                 99.38,
@@ -8981,7 +9181,7 @@
                 79.1,
                 87.01,
                 92.55,
-                98.88,
+                98.87,
                 107.58,
                 116.28,
                 124.98,
@@ -9061,7 +9261,7 @@
                 132.13,
                 145.35,
                 154.59,
-                165.17,
+                165.16,
                 179.7,
                 194.23,
                 208.77,
@@ -9299,7 +9499,43 @@
           "image": "collei_c6.png"
         }
       ],
-      "builds": [],
+      "builds": [
+        {
+          "isRecommended": true,
+          "type": "subDps",
+          "subType": "dendro",
+          "skillPriorities": [
+            "elementalBurst",
+            "elementalSkill"
+          ],
+          "weaponKeys": [
+            "elegy-for-the-end",
+            "polar-star",
+            "the-stringless",
+            "sacrificial-bow",
+            "kings-squire"
+          ],
+          "artifacts": [
+            {
+              "oneKey": "deepwood-memories",
+              "multiples": [],
+              "stats": [
+                "hp",
+                "atk",
+                "elementalMastery",
+                "dendroDmgBonusPercentage",
+                "critRatePercentage"
+              ]
+            }
+          ],
+          "subStatsToFocus": [
+            "elementalMastery",
+            "atkPercentage",
+            "critDmgPercentage",
+            "critRatePercentage"
+          ]
+        }
+      ],
       "stats": [
         {
           "level": 1,
@@ -9855,7 +10091,7 @@
                 101.9,
                 112.09,
                 119.22,
-                127.38,
+                127.37,
                 138.58,
                 149.79,
                 161.0,
@@ -9875,7 +10111,7 @@
                 114.9,
                 126.39,
                 134.43,
-                143.63,
+                143.62,
                 156.26,
                 168.9,
                 181.54,
@@ -9944,7 +10180,7 @@
                 289.88,
                 313.33,
                 336.78,
-                362.36
+                362.35
               ]
             },
             {
@@ -10358,7 +10594,7 @@
           "baseAtk": 26.0,
           "baseDef": 61.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 20,
@@ -10366,7 +10602,7 @@
           "baseAtk": 68.0,
           "baseDef": 158.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 20,
@@ -10374,7 +10610,7 @@
           "baseAtk": 90.0,
           "baseDef": 211.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 40,
@@ -10382,23 +10618,23 @@
           "baseAtk": 135.0,
           "baseDef": 315.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 40,
           "baseHp": 5834.0,
-          "baseAtk": 151.0,
+          "baseAtk": 150.0,
           "baseDef": 352.0,
           "isAnAscension": true,
-          "statValue": 9.8
+          "statValue": 4.8
         },
         {
           "level": 50,
-          "baseHp": 6712.0,
+          "baseHp": 6713.0,
           "baseAtk": 173.0,
           "baseDef": 405.0,
           "isAnAscension": false,
-          "statValue": 9.8
+          "statValue": 4.8
         },
         {
           "level": 50,
@@ -10406,7 +10642,7 @@
           "baseAtk": 194.0,
           "baseDef": 455.0,
           "isAnAscension": true,
-          "statValue": 14.6
+          "statValue": 9.6
         },
         {
           "level": 60,
@@ -10414,7 +10650,7 @@
           "baseAtk": 217.0,
           "baseDef": 509.0,
           "isAnAscension": false,
-          "statValue": 14.6
+          "statValue": 9.6
         },
         {
           "level": 60,
@@ -10422,7 +10658,7 @@
           "baseAtk": 233.0,
           "baseDef": 546.0,
           "isAnAscension": true,
-          "statValue": 14.6
+          "statValue": 9.6
         },
         {
           "level": 70,
@@ -10430,7 +10666,7 @@
           "baseAtk": 256.0,
           "baseDef": 600.0,
           "isAnAscension": false,
-          "statValue": 14.6
+          "statValue": 9.6
         },
         {
           "level": 70,
@@ -10438,7 +10674,7 @@
           "baseAtk": 272.0,
           "baseDef": 637.0,
           "isAnAscension": true,
-          "statValue": 19.4
+          "statValue": 14.4
         },
         {
           "level": 80,
@@ -10446,7 +10682,7 @@
           "baseAtk": 295.0,
           "baseDef": 692.0,
           "isAnAscension": false,
-          "statValue": 19.4
+          "statValue": 14.4
         },
         {
           "level": 80,
@@ -10454,7 +10690,7 @@
           "baseAtk": 311.0,
           "baseDef": 729.0,
           "isAnAscension": true,
-          "statValue": 24.2
+          "statValue": 19.2
         },
         {
           "level": 90,
@@ -10462,7 +10698,7 @@
           "baseAtk": 335.0,
           "baseDef": 784.0,
           "isAnAscension": false,
-          "statValue": 24.2
+          "statValue": 19.2
         }
       ]
     },
@@ -10891,7 +11127,7 @@
                 61.74,
                 66.36,
                 71.4,
-                77.18,
+                77.17,
                 83.97,
                 90.76,
                 97.55,
@@ -10951,7 +11187,7 @@
                 73.5,
                 79.0,
                 85.0,
-                91.88,
+                91.87,
                 99.96,
                 108.05,
                 116.13,
@@ -10965,10 +11201,10 @@
                 58.13,
                 62.5,
                 68.75,
-                73.13,
+                73.12,
                 78.13,
                 85.0,
-                91.88,
+                91.87,
                 98.75,
                 106.25,
                 114.84,
@@ -11046,7 +11282,7 @@
                 132.13,
                 145.35,
                 154.59,
-                165.17,
+                165.16,
                 179.7,
                 194.23,
                 208.77,
@@ -11128,21 +11364,21 @@
             {
               "key": "param3",
               "values": [
-                693.0,
-                762.0,
-                837.0,
+                692.81,
+                762.1,
+                837.16,
                 918.0,
-                1005.0,
+                1004.61,
                 1097.0,
-                1195.0,
-                1299.0,
-                1409.0,
-                1524.0,
-                1646.0,
-                1773.0,
-                1905.0,
-                2044.0,
-                2188.0
+                1195.16,
+                1299.1,
+                1408.81,
+                1524.29,
+                1645.55,
+                1772.58,
+                1905.39,
+                2043.97,
+                2188.32
               ]
             },
             {
@@ -11275,21 +11511,21 @@
             {
               "key": "param4",
               "values": [
-                513.0,
-                565.0,
-                620.0,
+                513.19,
+                564.52,
+                620.12,
                 680.0,
-                744.0,
-                813.0,
-                885.0,
-                962.0,
-                1044.0,
-                1129.0,
-                1219.0,
-                1313.0,
-                1411.0,
-                1514.0,
-                1621.0
+                744.16,
+                812.59,
+                885.3,
+                962.29,
+                1043.56,
+                1129.1,
+                1218.92,
+                1313.02,
+                1411.4,
+                1514.05,
+                1620.98
               ]
             },
             {
@@ -11541,7 +11777,7 @@
         },
         {
           "level": 70,
-          "baseHp": 7818.0,
+          "baseHp": 7819.0,
           "baseAtk": 174.0,
           "baseDef": 491.0,
           "isAnAscension": true,
@@ -11585,9 +11821,9 @@
       "isNew": false,
       "isFemale": true,
       "region": "sumeru",
-      "role": "na",
+      "role": "support",
       "tier": "na",
-      "birthday": "01/01",
+      "birthday": "12/21",
       "subStatType": "hpPercentage",
       "ascensionMaterials": [
         {
@@ -11598,6 +11834,16 @@
               "key": "vajrada-amethyst-sliver",
               "quantity": 1,
               "type": "jewels"
+            },
+            {
+              "key": "kalpalata-lotus",
+              "quantity": 3,
+              "type": "local"
+            },
+            {
+              "key": "faded-red-satin",
+              "quantity": 3,
+              "type": "common"
             },
             {
               "key": "mora",
@@ -11616,6 +11862,21 @@
               "type": "jewels"
             },
             {
+              "key": "thunderclap-fruitcore",
+              "quantity": 2,
+              "type": "elementalStone"
+            },
+            {
+              "key": "kalpalata-lotus",
+              "quantity": 10,
+              "type": "local"
+            },
+            {
+              "key": "faded-red-satin",
+              "quantity": 15,
+              "type": "common"
+            },
+            {
               "key": "mora",
               "quantity": 40000,
               "type": "currency"
@@ -11630,6 +11891,21 @@
               "key": "vajrada-amethyst-fragment",
               "quantity": 6,
               "type": "jewels"
+            },
+            {
+              "key": "thunderclap-fruitcore",
+              "quantity": 4,
+              "type": "elementalStone"
+            },
+            {
+              "key": "kalpalata-lotus",
+              "quantity": 20,
+              "type": "local"
+            },
+            {
+              "key": "trimmed-red-silk",
+              "quantity": 12,
+              "type": "common"
             },
             {
               "key": "mora",
@@ -11648,6 +11924,21 @@
               "type": "jewels"
             },
             {
+              "key": "thunderclap-fruitcore",
+              "quantity": 8,
+              "type": "elementalStone"
+            },
+            {
+              "key": "kalpalata-lotus",
+              "quantity": 30,
+              "type": "local"
+            },
+            {
+              "key": "trimmed-red-silk",
+              "quantity": 18,
+              "type": "common"
+            },
+            {
               "key": "mora",
               "quantity": 80000,
               "type": "currency"
@@ -11662,6 +11953,21 @@
               "key": "vajrada-amethyst-chunk",
               "quantity": 6,
               "type": "jewels"
+            },
+            {
+              "key": "thunderclap-fruitcore",
+              "quantity": 12,
+              "type": "elementalStone"
+            },
+            {
+              "key": "kalpalata-lotus",
+              "quantity": 45,
+              "type": "local"
+            },
+            {
+              "key": "rich-red-brocade",
+              "quantity": 12,
+              "type": "common"
             },
             {
               "key": "mora",
@@ -11680,6 +11986,21 @@
               "type": "jewels"
             },
             {
+              "key": "thunderclap-fruitcore",
+              "quantity": 20,
+              "type": "elementalStone"
+            },
+            {
+              "key": "kalpalata-lotus",
+              "quantity": 60,
+              "type": "local"
+            },
+            {
+              "key": "rich-red-brocade",
+              "quantity": 24,
+              "type": "common"
+            },
+            {
               "key": "mora",
               "quantity": 120000,
               "type": "currency"
@@ -11692,6 +12013,16 @@
           "level": 2,
           "materials": [
             {
+              "key": "teachings-of-ingenuity",
+              "quantity": 3,
+              "type": "talents"
+            },
+            {
+              "key": "faded-red-satin",
+              "quantity": 6,
+              "type": "common"
+            },
+            {
               "key": "mora",
               "quantity": 12500,
               "type": "currency"
@@ -11701,6 +12032,16 @@
         {
           "level": 3,
           "materials": [
+            {
+              "key": "guide-to-ingenuity",
+              "quantity": 2,
+              "type": "talents"
+            },
+            {
+              "key": "trimmed-red-silk",
+              "quantity": 3,
+              "type": "common"
+            },
             {
               "key": "mora",
               "quantity": 17500,
@@ -11712,6 +12053,16 @@
           "level": 4,
           "materials": [
             {
+              "key": "guide-to-ingenuity",
+              "quantity": 4,
+              "type": "talents"
+            },
+            {
+              "key": "trimmed-red-silk",
+              "quantity": 4,
+              "type": "common"
+            },
+            {
               "key": "mora",
               "quantity": 25000,
               "type": "currency"
@@ -11721,6 +12072,16 @@
         {
           "level": 5,
           "materials": [
+            {
+              "key": "guide-to-ingenuity",
+              "quantity": 6,
+              "type": "talents"
+            },
+            {
+              "key": "trimmed-red-silk",
+              "quantity": 6,
+              "type": "common"
+            },
             {
               "key": "mora",
               "quantity": 30000,
@@ -11732,6 +12093,16 @@
           "level": 6,
           "materials": [
             {
+              "key": "guide-to-ingenuity",
+              "quantity": 9,
+              "type": "talents"
+            },
+            {
+              "key": "trimmed-red-silk",
+              "quantity": 9,
+              "type": "common"
+            },
+            {
               "key": "mora",
               "quantity": 37500,
               "type": "currency"
@@ -11741,6 +12112,16 @@
         {
           "level": 7,
           "materials": [
+            {
+              "key": "philosophies-of-ingenuity",
+              "quantity": 4,
+              "type": "talents"
+            },
+            {
+              "key": "rich-red-brocade",
+              "quantity": 4,
+              "type": "common"
+            },
             {
               "key": "mora",
               "quantity": 120000,
@@ -11757,6 +12138,16 @@
           "level": 8,
           "materials": [
             {
+              "key": "philosophies-of-ingenuity",
+              "quantity": 6,
+              "type": "talents"
+            },
+            {
+              "key": "rich-red-brocade",
+              "quantity": 6,
+              "type": "common"
+            },
+            {
               "key": "mora",
               "quantity": 260000,
               "type": "currency"
@@ -11772,6 +12163,16 @@
           "level": 9,
           "materials": [
             {
+              "key": "philosophies-of-ingenuity",
+              "quantity": 12,
+              "type": "talents"
+            },
+            {
+              "key": "rich-red-brocade",
+              "quantity": 9,
+              "type": "common"
+            },
+            {
               "key": "mora",
               "quantity": 450000,
               "type": "currency"
@@ -11786,6 +12187,16 @@
         {
           "level": 10,
           "materials": [
+            {
+              "key": "philosophies-of-ingenuity",
+              "quantity": 16,
+              "type": "talents"
+            },
+            {
+              "key": "rich-red-brocade",
+              "quantity": 12,
+              "type": "common"
+            },
             {
               "key": "mora",
               "quantity": 700000,
@@ -11813,81 +12224,81 @@
             {
               "key": "param1",
               "values": [
-                71.21,
-                77.0,
-                82.8,
-                91.08,
-                96.88,
-                103.5,
-                112.61,
-                121.72,
-                130.82,
-                140.76,
-                150.7,
-                160.63,
-                170.57,
-                180.5,
-                190.44
+                90.21,
+                97.56,
+                104.9,
+                115.39,
+                122.73,
+                131.12,
+                142.66,
+                154.2,
+                165.74,
+                178.33,
+                190.92,
+                203.51,
+                216.09,
+                228.68,
+                241.27
               ]
             },
             {
               "key": "param2",
               "values": [
-                33.94,
-                36.7,
-                39.46,
-                43.41,
-                46.17,
-                49.33,
-                53.67,
-                58.01,
-                62.35,
-                67.08,
-                71.82,
-                76.55,
-                81.29,
-                86.02,
-                90.76
+                41.07,
+                44.42,
+                47.76,
+                52.54,
+                55.88,
+                59.7,
+                64.95,
+                70.21,
+                75.46,
+                81.19,
+                86.92,
+                92.65,
+                98.39,
+                104.12,
+                109.85
               ]
             },
             {
               "key": "param3",
               "values": [
-                35.64,
-                38.54,
-                41.44,
-                45.58,
-                48.48,
-                51.8,
-                56.36,
-                60.92,
-                65.48,
-                70.45,
-                75.42,
-                80.39,
-                85.37,
-                90.34,
-                95.31
+                43.12,
+                46.63,
+                50.14,
+                55.15,
+                58.66,
+                62.67,
+                68.19,
+                73.71,
+                79.22,
+                85.24,
+                91.25,
+                97.27,
+                103.29,
+                109.31,
+                115.32
               ]
             },
             {
               "key": "param4",
               "values": [
-                95.29,
-                103.04,
-                110.8,
-                121.88,
-                129.64,
-                138.5,
-                150.69,
-                162.88,
-                175.06,
-                188.36,
-                201.66,
-                214.95,
-                228.25,
-                241.54,
-                254.84
+                128.4,
+                138.85,
+                149.3,
+                164.23,
+                174.68,
+                186.63,
+                203.05,
+                219.47,
+                235.89,
+                253.81,
+                271.73,
+                289.64,
+                307.56,
+                325.47,
+                343.39
               ]
             },
             {
@@ -11914,11 +12325,11 @@
               "key": "param6",
               "values": [
                 113.09,
-                122.3,
+                122.29,
                 131.5,
                 144.65,
                 153.86,
-                164.38,
+                164.37,
                 178.84,
                 193.31,
                 207.77,
@@ -12040,41 +12451,41 @@
             {
               "key": "param1",
               "values": [
-                156.24,
-                167.96,
-                179.68,
-                195.3,
-                207.02,
-                218.74,
-                234.36,
-                249.98,
-                265.61,
-                281.23,
-                296.86,
-                312.48,
-                332.01,
-                351.54,
-                371.07
+                147.28,
+                158.33,
+                169.37,
+                184.1,
+                195.15,
+                206.19,
+                220.92,
+                235.65,
+                250.38,
+                265.1,
+                279.83,
+                294.56,
+                312.97,
+                331.38,
+                349.79
               ]
             },
             {
               "key": "param2",
               "values": [
-                33.48,
-                35.99,
-                38.5,
-                41.85,
-                44.36,
-                46.87,
-                50.22,
-                53.57,
-                56.92,
-                60.26,
-                63.61,
-                66.96,
-                71.15,
-                75.33,
-                79.52
+                31.56,
+                33.93,
+                36.29,
+                39.45,
+                41.82,
+                44.18,
+                47.34,
+                50.5,
+                53.65,
+                56.81,
+                59.96,
+                63.12,
+                67.07,
+                71.01,
+                74.95
               ]
             },
             {
@@ -12127,61 +12538,61 @@
             {
               "key": "param2",
               "values": [
-                5.34,
-                5.74,
-                6.14,
                 6.67,
-                7.07,
-                7.47,
-                8.0,
-                8.54,
-                9.07,
-                9.6,
-                10.14,
+                7.17,
+                7.67,
+                8.34,
+                8.84,
+                9.34,
+                10.01,
                 10.67,
                 11.34,
                 12.01,
-                12.67
+                12.67,
+                13.34,
+                14.17,
+                15.01,
+                15.84
               ]
             },
             {
               "key": "param3",
               "values": [
-                514.0,
-                565.0,
-                621.0,
-                681.0,
-                745.0,
-                813.0,
-                886.0,
-                963.0,
-                1044.0,
-                1130.0,
-                1220.0,
-                1314.0,
-                1412.0,
-                1515.0,
-                1622.0
+                641.98,
+                706.19,
+                775.74,
+                850.65,
+                930.91,
+                1016.52,
+                1107.48,
+                1203.79,
+                1305.45,
+                1412.46,
+                1524.82,
+                1642.54,
+                1765.6,
+                1894.01,
+                2027.78
               ]
             },
             {
               "key": "param4",
               "values": [
-                1.5,
-                1.6,
                 1.6,
                 1.7,
-                1.7,
-                1.8,
                 1.8,
                 1.9,
-                1.9,
                 2.0,
-                2.0,
-                2.0,
-                2.0,
-                2.0,
-                2.0
+                2.1,
+                2.2,
+                2.3,
+                2.4,
+                2.5,
+                2.5,
+                2.5,
+                2.5,
+                2.5,
+                2.5
               ]
             },
             {
@@ -12296,7 +12707,52 @@
           "image": "dori_c6.png"
         }
       ],
-      "builds": [],
+      "builds": [
+        {
+          "isRecommended": true,
+          "type": "support",
+          "subType": "none",
+          "skillPriorities": [
+            "elementalBurst",
+            "elementalSkill"
+          ],
+          "weaponKeys": [
+            "sacrificial-greatsword",
+            "favonius-greatsword",
+            "forest-regalia",
+            "the-bell"
+          ],
+          "artifacts": [
+            {
+              "oneKey": "ocean-hued-clam",
+              "multiples": [],
+              "stats": [
+                "hp",
+                "atk",
+                "energyRechargePercentage",
+                "hpPercentage",
+                "healingBonusPercentage"
+              ]
+            },
+            {
+              "oneKey": "maiden-beloved",
+              "multiples": [],
+              "stats": [
+                "hp",
+                "atk",
+                "energyRechargePercentage",
+                "hpPercentage",
+                "healingBonusPercentage"
+              ]
+            }
+          ],
+          "subStatsToFocus": [
+            "energyRechargePercentage",
+            "hpPercentage",
+            "hp"
+          ]
+        }
+      ],
       "stats": [
         {
           "level": 1,
@@ -12869,7 +13325,7 @@
               "values": [
                 56.8,
                 61.42,
-                66.05,
+                66.04,
                 72.65,
                 77.27,
                 82.56,
@@ -12889,7 +13345,7 @@
               "values": [
                 56.8,
                 61.42,
-                66.05,
+                66.04,
                 72.65,
                 77.27,
                 82.56,
@@ -12912,7 +13368,7 @@
                 130.98,
                 144.08,
                 153.25,
-                163.73,
+                163.72,
                 178.13,
                 192.54,
                 206.95,
@@ -12996,7 +13452,7 @@
                 196.72,
                 212.64,
                 228.55,
-                245.91,
+                245.9,
                 265.79,
                 289.18,
                 312.57,
@@ -13555,7 +14011,7 @@
           "baseAtk": 27.0,
           "baseDef": 58.0,
           "isAnAscension": false,
-          "statValue": 50.0
+          "statValue": 0.0
         },
         {
           "level": 20,
@@ -13563,7 +14019,7 @@
           "baseAtk": 69.0,
           "baseDef": 152.0,
           "isAnAscension": false,
-          "statValue": 50.0
+          "statValue": 0.0
         },
         {
           "level": 20,
@@ -13571,7 +14027,7 @@
           "baseAtk": 92.0,
           "baseDef": 202.0,
           "isAnAscension": true,
-          "statValue": 50.0
+          "statValue": 0.0
         },
         {
           "level": 40,
@@ -13579,7 +14035,7 @@
           "baseAtk": 138.0,
           "baseDef": 302.0,
           "isAnAscension": false,
-          "statValue": 50.0
+          "statValue": 0.0
         },
         {
           "level": 40,
@@ -13587,7 +14043,7 @@
           "baseAtk": 154.0,
           "baseDef": 337.0,
           "isAnAscension": true,
-          "statValue": 59.6
+          "statValue": 9.6
         },
         {
           "level": 50,
@@ -13595,7 +14051,7 @@
           "baseAtk": 177.0,
           "baseDef": 388.0,
           "isAnAscension": false,
-          "statValue": 59.6
+          "statValue": 9.6
         },
         {
           "level": 50,
@@ -13603,7 +14059,7 @@
           "baseAtk": 198.0,
           "baseDef": 436.0,
           "isAnAscension": true,
-          "statValue": 69.2
+          "statValue": 19.2
         },
         {
           "level": 60,
@@ -13611,7 +14067,7 @@
           "baseAtk": 222.0,
           "baseDef": 487.0,
           "isAnAscension": false,
-          "statValue": 69.2
+          "statValue": 19.2
         },
         {
           "level": 60,
@@ -13619,7 +14075,7 @@
           "baseAtk": 238.0,
           "baseDef": 523.0,
           "isAnAscension": true,
-          "statValue": 69.2
+          "statValue": 19.2
         },
         {
           "level": 70,
@@ -13627,7 +14083,7 @@
           "baseAtk": 262.0,
           "baseDef": 574.0,
           "isAnAscension": false,
-          "statValue": 69.2
+          "statValue": 19.2
         },
         {
           "level": 70,
@@ -13635,7 +14091,7 @@
           "baseAtk": 278.0,
           "baseDef": 610.0,
           "isAnAscension": true,
-          "statValue": 78.8
+          "statValue": 28.8
         },
         {
           "level": 80,
@@ -13643,7 +14099,7 @@
           "baseAtk": 302.0,
           "baseDef": 662.0,
           "isAnAscension": false,
-          "statValue": 78.8
+          "statValue": 28.8
         },
         {
           "level": 80,
@@ -13651,7 +14107,7 @@
           "baseAtk": 318.0,
           "baseDef": 698.0,
           "isAnAscension": true,
-          "statValue": 88.4
+          "statValue": 38.4
         },
         {
           "level": 90,
@@ -13659,7 +14115,7 @@
           "baseAtk": 342.0,
           "baseDef": 751.0,
           "isAnAscension": false,
-          "statValue": 88.4
+          "statValue": 38.4
         }
       ]
     },
@@ -14243,7 +14699,7 @@
                 132.13,
                 145.35,
                 154.59,
-                165.17,
+                165.16,
                 179.7,
                 194.23,
                 208.77,
@@ -14411,6 +14867,46 @@
             },
             {
               "key": "param3",
+              "values": [
+                60.0,
+                60.0,
+                60.0,
+                60.0,
+                60.0,
+                60.0,
+                60.0,
+                60.0,
+                60.0,
+                60.0,
+                60.0,
+                60.0,
+                60.0,
+                60.0,
+                60.0
+              ]
+            },
+            {
+              "key": "param4",
+              "values": [
+                15.0,
+                15.0,
+                15.0,
+                15.0,
+                15.0,
+                15.0,
+                15.0,
+                15.0,
+                15.0,
+                15.0,
+                15.0,
+                15.0,
+                15.0,
+                15.0,
+                15.0
+              ]
+            },
+            {
+              "key": "param5",
               "values": [
                 60.0,
                 60.0,
@@ -15171,7 +15667,7 @@
                 52.9,
                 58.19,
                 61.89,
-                66.13,
+                66.12,
                 71.94,
                 77.76,
                 83.58,
@@ -15191,7 +15687,7 @@
                 52.9,
                 58.19,
                 61.89,
-                66.13,
+                66.12,
                 71.94,
                 77.76,
                 83.58,
@@ -15351,7 +15847,7 @@
                 132.13,
                 145.35,
                 154.59,
-                165.17,
+                165.16,
                 179.7,
                 194.23,
                 208.77,
@@ -15744,7 +16240,7 @@
           "baseAtk": 26.0,
           "baseDef": 49.0,
           "isAnAscension": false,
-          "statValue": 50.0
+          "statValue": 0.0
         },
         {
           "level": 20,
@@ -15752,7 +16248,7 @@
           "baseAtk": 68.0,
           "baseDef": 127.0,
           "isAnAscension": false,
-          "statValue": 50.0
+          "statValue": 0.0
         },
         {
           "level": 20,
@@ -15760,7 +16256,7 @@
           "baseAtk": 90.0,
           "baseDef": 169.0,
           "isAnAscension": true,
-          "statValue": 50.0
+          "statValue": 0.0
         },
         {
           "level": 40,
@@ -15768,15 +16264,15 @@
           "baseAtk": 135.0,
           "baseDef": 253.0,
           "isAnAscension": false,
-          "statValue": 50.0
+          "statValue": 0.0
         },
         {
           "level": 40,
           "baseHp": 4403.0,
-          "baseAtk": 151.0,
+          "baseAtk": 150.0,
           "baseDef": 283.0,
           "isAnAscension": true,
-          "statValue": 59.6
+          "statValue": 9.6
         },
         {
           "level": 50,
@@ -15784,7 +16280,7 @@
           "baseAtk": 173.0,
           "baseDef": 326.0,
           "isAnAscension": false,
-          "statValue": 59.6
+          "statValue": 9.6
         },
         {
           "level": 50,
@@ -15792,7 +16288,7 @@
           "baseAtk": 194.0,
           "baseDef": 366.0,
           "isAnAscension": true,
-          "statValue": 69.2
+          "statValue": 19.2
         },
         {
           "level": 60,
@@ -15800,7 +16296,7 @@
           "baseAtk": 217.0,
           "baseDef": 409.0,
           "isAnAscension": false,
-          "statValue": 69.2
+          "statValue": 19.2
         },
         {
           "level": 60,
@@ -15808,7 +16304,7 @@
           "baseAtk": 233.0,
           "baseDef": 439.0,
           "isAnAscension": true,
-          "statValue": 69.2
+          "statValue": 19.2
         },
         {
           "level": 70,
@@ -15816,7 +16312,7 @@
           "baseAtk": 256.0,
           "baseDef": 482.0,
           "isAnAscension": false,
-          "statValue": 69.2
+          "statValue": 19.2
         },
         {
           "level": 70,
@@ -15824,7 +16320,7 @@
           "baseAtk": 272.0,
           "baseDef": 512.0,
           "isAnAscension": true,
-          "statValue": 78.8
+          "statValue": 28.8
         },
         {
           "level": 80,
@@ -15832,7 +16328,7 @@
           "baseAtk": 295.0,
           "baseDef": 556.0,
           "isAnAscension": false,
-          "statValue": 78.8
+          "statValue": 28.8
         },
         {
           "level": 80,
@@ -15840,7 +16336,7 @@
           "baseAtk": 311.0,
           "baseDef": 586.0,
           "isAnAscension": true,
-          "statValue": 88.4
+          "statValue": 38.4
         },
         {
           "level": 90,
@@ -15848,7 +16344,7 @@
           "baseAtk": 335.0,
           "baseDef": 630.0,
           "isAnAscension": false,
-          "statValue": 88.4
+          "statValue": 38.4
         }
       ]
     },
@@ -16272,7 +16768,7 @@
                 43.9,
                 48.29,
                 51.36,
-                54.88,
+                54.87,
                 59.7,
                 64.53,
                 69.36,
@@ -16311,7 +16807,7 @@
                 53.47,
                 57.5,
                 63.25,
-                67.28,
+                67.27,
                 71.88,
                 78.2,
                 84.53,
@@ -16412,7 +16908,7 @@
                 132.13,
                 145.35,
                 154.59,
-                165.17,
+                165.16,
                 179.7,
                 194.23,
                 208.77,
@@ -16474,21 +16970,21 @@
             {
               "key": "param2",
               "values": [
-                206.0,
-                222.0,
-                237.0,
-                258.0,
-                273.0,
-                289.0,
-                309.0,
-                330.0,
-                350.0,
-                371.0,
-                392.0,
-                412.0,
-                438.0,
-                464.0,
-                490.0
+                206.16,
+                221.62,
+                237.08,
+                257.7,
+                273.16,
+                288.62,
+                309.24,
+                329.86,
+                350.47,
+                371.09,
+                391.7,
+                412.32,
+                438.09,
+                463.86,
+                489.63
               ]
             },
             {
@@ -16583,7 +17079,7 @@
               "values": [
                 61.3,
                 65.9,
-                70.5,
+                70.49,
                 76.63,
                 81.22,
                 85.82,
@@ -16847,7 +17343,7 @@
         },
         {
           "level": 70,
-          "baseHp": 7818.0,
+          "baseHp": 7819.0,
           "baseAtk": 149.0,
           "baseDef": 530.0,
           "isAnAscension": true,
@@ -17337,12 +17833,12 @@
                 61.05,
                 65.21,
                 69.38,
-                74.93,
+                74.92,
                 79.09,
                 83.94,
                 90.19,
                 96.43,
-                102.68,
+                102.67,
                 108.92,
                 115.16,
                 121.41,
@@ -17439,15 +17935,15 @@
                 154.5,
                 166.86,
                 176.13,
-                186.95,
+                186.94,
                 200.85,
                 214.76,
                 228.66,
-                242.57,
+                242.56,
                 256.47,
-                270.38,
+                270.37,
                 284.28,
-                298.19,
+                298.18,
                 312.09
               ]
             },
@@ -17571,7 +18067,7 @@
                 5.66,
                 5.96,
                 6.26,
-                6.56,
+                6.55,
                 6.85,
                 7.15,
                 7.45,
@@ -17712,14 +18208,14 @@
                 6.64,
                 7.01,
                 7.5,
-                7.88,
+                7.87,
                 8.25,
                 8.74,
-                9.23,
+                9.22,
                 9.71,
                 10.2,
                 10.69,
-                11.18,
+                11.17,
                 11.66,
                 12.15,
                 12.64
@@ -17882,7 +18378,7 @@
           "baseAtk": 8.0,
           "baseDef": 68.0,
           "isAnAscension": false,
-          "statValue": 50.0
+          "statValue": 0.0
         },
         {
           "level": 20,
@@ -17890,7 +18386,7 @@
           "baseAtk": 21.0,
           "baseDef": 177.0,
           "isAnAscension": false,
-          "statValue": 50.0
+          "statValue": 0.0
         },
         {
           "level": 20,
@@ -17898,7 +18394,7 @@
           "baseAtk": 29.0,
           "baseDef": 235.0,
           "isAnAscension": true,
-          "statValue": 50.0
+          "statValue": 0.0
         },
         {
           "level": 40,
@@ -17906,7 +18402,7 @@
           "baseAtk": 43.0,
           "baseDef": 352.0,
           "isAnAscension": false,
-          "statValue": 50.0
+          "statValue": 0.0
         },
         {
           "level": 40,
@@ -17914,7 +18410,7 @@
           "baseAtk": 48.0,
           "baseDef": 394.0,
           "isAnAscension": true,
-          "statValue": 59.6
+          "statValue": 9.6
         },
         {
           "level": 50,
@@ -17922,7 +18418,7 @@
           "baseAtk": 55.0,
           "baseDef": 453.0,
           "isAnAscension": false,
-          "statValue": 59.6
+          "statValue": 9.6
         },
         {
           "level": 50,
@@ -17930,7 +18426,7 @@
           "baseAtk": 62.0,
           "baseDef": 508.0,
           "isAnAscension": true,
-          "statValue": 69.2
+          "statValue": 19.2
         },
         {
           "level": 60,
@@ -17938,7 +18434,7 @@
           "baseAtk": 69.0,
           "baseDef": 568.0,
           "isAnAscension": false,
-          "statValue": 69.2
+          "statValue": 19.2
         },
         {
           "level": 60,
@@ -17946,7 +18442,7 @@
           "baseAtk": 74.0,
           "baseDef": 610.0,
           "isAnAscension": true,
-          "statValue": 69.2
+          "statValue": 19.2
         },
         {
           "level": 70,
@@ -17954,7 +18450,7 @@
           "baseAtk": 81.0,
           "baseDef": 670.0,
           "isAnAscension": false,
-          "statValue": 69.2
+          "statValue": 19.2
         },
         {
           "level": 70,
@@ -17962,7 +18458,7 @@
           "baseAtk": 86.0,
           "baseDef": 712.0,
           "isAnAscension": true,
-          "statValue": 78.8
+          "statValue": 28.8
         },
         {
           "level": 80,
@@ -17970,7 +18466,7 @@
           "baseAtk": 94.0,
           "baseDef": 773.0,
           "isAnAscension": false,
-          "statValue": 78.8
+          "statValue": 28.8
         },
         {
           "level": 80,
@@ -17978,7 +18474,7 @@
           "baseAtk": 99.0,
           "baseDef": 815.0,
           "isAnAscension": true,
-          "statValue": 88.4
+          "statValue": 38.4
         },
         {
           "level": 90,
@@ -17986,7 +18482,7 @@
           "baseAtk": 106.0,
           "baseDef": 876.0,
           "isAnAscension": false,
-          "statValue": 88.4
+          "statValue": 38.4
         }
       ]
     },
@@ -18515,7 +19011,7 @@
                 276.95,
                 297.67,
                 320.28,
-                346.19,
+                346.18,
                 376.65,
                 407.11,
                 437.58,
@@ -18759,21 +19255,21 @@
             {
               "key": "param4",
               "values": [
-                1540.0,
-                1694.0,
-                1861.0,
+                1540.32,
+                1694.38,
+                1861.27,
                 2041.0,
-                2234.0,
-                2439.0,
-                2657.0,
-                2888.0,
-                3132.0,
-                3389.0,
-                3659.0,
+                2233.57,
+                2438.97,
+                2657.22,
+                2888.3,
+                3132.22,
+                3388.97,
+                3658.57,
                 3941.0,
-                4236.0,
-                4544.0,
-                4865.0
+                4236.27,
+                4544.38,
+                4865.32
               ]
             },
             {
@@ -18799,21 +19295,21 @@
             {
               "key": "param6",
               "values": [
-                154.0,
-                169.0,
-                186.0,
-                204.0,
-                223.0,
-                244.0,
-                266.0,
-                289.0,
-                313.0,
-                339.0,
-                366.0,
-                394.0,
-                424.0,
-                454.0,
-                487.0
+                154.03,
+                169.44,
+                186.13,
+                204.1,
+                223.36,
+                243.9,
+                265.72,
+                288.83,
+                313.22,
+                338.9,
+                365.86,
+                394.1,
+                423.63,
+                454.44,
+                486.53
               ]
             },
             {
@@ -19568,7 +20064,7 @@
                 44.1,
                 47.4,
                 51.0,
-                55.13,
+                55.12,
                 59.98,
                 64.83,
                 69.68,
@@ -19619,13 +20115,13 @@
               "key": "param6",
               "values": [
                 25.37,
-                27.44,
+                27.43,
                 29.5,
                 32.45,
-                34.52,
+                34.51,
                 36.88,
                 40.12,
-                43.37,
+                43.36,
                 46.61,
                 50.15,
                 54.21,
@@ -19668,7 +20164,7 @@
                 73.5,
                 79.0,
                 85.0,
-                91.88,
+                91.87,
                 99.96,
                 108.05,
                 116.13,
@@ -19688,7 +20184,7 @@
                 127.6,
                 137.14,
                 147.56,
-                159.5,
+                159.49,
                 173.53,
                 187.57,
                 201.6,
@@ -20117,7 +20613,7 @@
           "baseAtk": 133.0,
           "baseDef": 363.0,
           "isAnAscension": true,
-          "statValue": 28.8
+          "statValue": 29.0
         },
         {
           "level": 50,
@@ -20125,7 +20621,7 @@
           "baseAtk": 153.0,
           "baseDef": 417.0,
           "isAnAscension": false,
-          "statValue": 28.8
+          "statValue": 29.0
         },
         {
           "level": 50,
@@ -20133,7 +20629,7 @@
           "baseAtk": 172.0,
           "baseDef": 468.0,
           "isAnAscension": true,
-          "statValue": 57.6
+          "statValue": 58.0
         },
         {
           "level": 60,
@@ -20141,7 +20637,7 @@
           "baseAtk": 192.0,
           "baseDef": 523.0,
           "isAnAscension": false,
-          "statValue": 57.6
+          "statValue": 58.0
         },
         {
           "level": 60,
@@ -20149,7 +20645,7 @@
           "baseAtk": 206.0,
           "baseDef": 562.0,
           "isAnAscension": true,
-          "statValue": 57.6
+          "statValue": 58.0
         },
         {
           "level": 70,
@@ -20157,7 +20653,7 @@
           "baseAtk": 227.0,
           "baseDef": 617.0,
           "isAnAscension": false,
-          "statValue": 57.6
+          "statValue": 58.0
         },
         {
           "level": 70,
@@ -20165,7 +20661,7 @@
           "baseAtk": 241.0,
           "baseDef": 656.0,
           "isAnAscension": true,
-          "statValue": 86.4
+          "statValue": 86.0
         },
         {
           "level": 80,
@@ -20173,7 +20669,7 @@
           "baseAtk": 262.0,
           "baseDef": 712.0,
           "isAnAscension": false,
-          "statValue": 86.4
+          "statValue": 86.0
         },
         {
           "level": 80,
@@ -20181,7 +20677,7 @@
           "baseAtk": 276.0,
           "baseDef": 750.0,
           "isAnAscension": true,
-          "statValue": 115.2
+          "statValue": 115.0
         },
         {
           "level": 90,
@@ -20189,7 +20685,7 @@
           "baseAtk": 297.0,
           "baseDef": 807.0,
           "isAnAscension": false,
-          "statValue": 115.2
+          "statValue": 115.0
         }
       ]
     },
@@ -20612,10 +21108,10 @@
                 58.13,
                 62.5,
                 68.75,
-                73.13,
+                73.12,
                 78.13,
                 85.0,
-                91.88,
+                91.87,
                 98.75,
                 106.25,
                 114.84,
@@ -20957,6 +21453,26 @@
                 60.0,
                 60.0,
                 60.0
+              ]
+            },
+            {
+              "key": "param5",
+              "values": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
               ]
             }
           ]
@@ -21783,7 +22299,7 @@
                 64.1,
                 70.51,
                 75.0,
-                80.13,
+                80.12,
                 87.18,
                 94.23,
                 101.28,
@@ -21980,7 +22496,7 @@
                 112.3,
                 120.72,
                 129.15,
-                140.38,
+                140.37,
                 148.8,
                 157.22,
                 168.45,
@@ -22005,9 +22521,9 @@
                 235.83,
                 252.68,
                 269.52,
-                286.36,
+                286.37,
                 303.21,
-                320.05,
+                320.06,
                 336.9,
                 357.96,
                 379.01,
@@ -22171,7 +22687,7 @@
           "baseAtk": 27.0,
           "baseDef": 61.0,
           "isAnAscension": false,
-          "statValue": 50.0
+          "statValue": 0.0
         },
         {
           "level": 20,
@@ -22179,7 +22695,7 @@
           "baseAtk": 69.0,
           "baseDef": 158.0,
           "isAnAscension": false,
-          "statValue": 50.0
+          "statValue": 0.0
         },
         {
           "level": 20,
@@ -22187,7 +22703,7 @@
           "baseAtk": 92.0,
           "baseDef": 211.0,
           "isAnAscension": true,
-          "statValue": 50.0
+          "statValue": 0.0
         },
         {
           "level": 40,
@@ -22195,7 +22711,7 @@
           "baseAtk": 138.0,
           "baseDef": 315.0,
           "isAnAscension": false,
-          "statValue": 50.0
+          "statValue": 0.0
         },
         {
           "level": 40,
@@ -22203,7 +22719,7 @@
           "baseAtk": 154.0,
           "baseDef": 352.0,
           "isAnAscension": true,
-          "statValue": 59.6
+          "statValue": 9.6
         },
         {
           "level": 50,
@@ -22211,7 +22727,7 @@
           "baseAtk": 177.0,
           "baseDef": 405.0,
           "isAnAscension": false,
-          "statValue": 59.6
+          "statValue": 9.6
         },
         {
           "level": 50,
@@ -22219,7 +22735,7 @@
           "baseAtk": 198.0,
           "baseDef": 455.0,
           "isAnAscension": true,
-          "statValue": 69.2
+          "statValue": 19.2
         },
         {
           "level": 60,
@@ -22227,7 +22743,7 @@
           "baseAtk": 222.0,
           "baseDef": 509.0,
           "isAnAscension": false,
-          "statValue": 69.2
+          "statValue": 19.2
         },
         {
           "level": 60,
@@ -22235,7 +22751,7 @@
           "baseAtk": 238.0,
           "baseDef": 546.0,
           "isAnAscension": true,
-          "statValue": 69.2
+          "statValue": 19.2
         },
         {
           "level": 70,
@@ -22243,7 +22759,7 @@
           "baseAtk": 262.0,
           "baseDef": 600.0,
           "isAnAscension": false,
-          "statValue": 69.2
+          "statValue": 19.2
         },
         {
           "level": 70,
@@ -22251,7 +22767,7 @@
           "baseAtk": 278.0,
           "baseDef": 637.0,
           "isAnAscension": true,
-          "statValue": 78.8
+          "statValue": 28.8
         },
         {
           "level": 80,
@@ -22259,7 +22775,7 @@
           "baseAtk": 302.0,
           "baseDef": 692.0,
           "isAnAscension": false,
-          "statValue": 78.8
+          "statValue": 28.8
         },
         {
           "level": 80,
@@ -22267,7 +22783,7 @@
           "baseAtk": 318.0,
           "baseDef": 729.0,
           "isAnAscension": true,
-          "statValue": 88.4
+          "statValue": 38.4
         },
         {
           "level": 90,
@@ -22275,7 +22791,7 @@
           "baseAtk": 342.0,
           "baseDef": 784.0,
           "isAnAscension": false,
-          "statValue": 88.4
+          "statValue": 38.4
         }
       ]
     },
@@ -22928,7 +23444,7 @@
                 71.96,
                 76.88,
                 83.64,
-                90.41,
+                90.4,
                 97.17,
                 104.55,
                 111.93,
@@ -22942,11 +23458,11 @@
               "key": "param2",
               "values": [
                 58.91,
-                63.71,
+                63.7,
                 68.5,
                 75.35,
                 80.15,
-                85.63,
+                85.62,
                 93.16,
                 100.7,
                 108.23,
@@ -22962,7 +23478,7 @@
               "key": "param3",
               "values": [
                 64.93,
-                70.22,
+                70.21,
                 75.5,
                 83.05,
                 88.34,
@@ -23076,6 +23592,46 @@
                 12.0,
                 12.0,
                 12.0
+              ]
+            },
+            {
+              "key": "param9",
+              "values": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            {
+              "key": "param10",
+              "values": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
               ]
             }
           ]
@@ -23340,7 +23896,7 @@
           "baseAtk": 23.0,
           "baseDef": 60.0,
           "isAnAscension": false,
-          "statValue": 50.0
+          "statValue": 0.0
         },
         {
           "level": 20,
@@ -23348,7 +23904,7 @@
           "baseAtk": 60.0,
           "baseDef": 155.0,
           "isAnAscension": false,
-          "statValue": 50.0
+          "statValue": 0.0
         },
         {
           "level": 20,
@@ -23356,7 +23912,7 @@
           "baseAtk": 80.0,
           "baseDef": 206.0,
           "isAnAscension": true,
-          "statValue": 50.0
+          "statValue": 0.0
         },
         {
           "level": 40,
@@ -23364,7 +23920,7 @@
           "baseAtk": 120.0,
           "baseDef": 309.0,
           "isAnAscension": false,
-          "statValue": 50.0
+          "statValue": 0.0
         },
         {
           "level": 40,
@@ -23372,7 +23928,7 @@
           "baseAtk": 134.0,
           "baseDef": 345.0,
           "isAnAscension": true,
-          "statValue": 59.6
+          "statValue": 9.6
         },
         {
           "level": 50,
@@ -23380,7 +23936,7 @@
           "baseAtk": 155.0,
           "baseDef": 397.0,
           "isAnAscension": false,
-          "statValue": 59.6
+          "statValue": 9.6
         },
         {
           "level": 50,
@@ -23388,7 +23944,7 @@
           "baseAtk": 174.0,
           "baseDef": 446.0,
           "isAnAscension": true,
-          "statValue": 69.2
+          "statValue": 19.2
         },
         {
           "level": 60,
@@ -23396,7 +23952,7 @@
           "baseAtk": 194.0,
           "baseDef": 499.0,
           "isAnAscension": false,
-          "statValue": 69.2
+          "statValue": 19.2
         },
         {
           "level": 60,
@@ -23404,7 +23960,7 @@
           "baseAtk": 208.0,
           "baseDef": 535.0,
           "isAnAscension": true,
-          "statValue": 69.2
+          "statValue": 19.2
         },
         {
           "level": 70,
@@ -23412,7 +23968,7 @@
           "baseAtk": 229.0,
           "baseDef": 588.0,
           "isAnAscension": false,
-          "statValue": 69.2
+          "statValue": 19.2
         },
         {
           "level": 70,
@@ -23420,7 +23976,7 @@
           "baseAtk": 243.0,
           "baseDef": 624.0,
           "isAnAscension": true,
-          "statValue": 78.8
+          "statValue": 28.8
         },
         {
           "level": 80,
@@ -23428,7 +23984,7 @@
           "baseAtk": 264.0,
           "baseDef": 678.0,
           "isAnAscension": false,
-          "statValue": 78.8
+          "statValue": 28.8
         },
         {
           "level": 80,
@@ -23436,7 +23992,7 @@
           "baseAtk": 278.0,
           "baseDef": 715.0,
           "isAnAscension": true,
-          "statValue": 88.4
+          "statValue": 38.4
         },
         {
           "level": 90,
@@ -23444,7 +24000,7 @@
           "baseAtk": 299.0,
           "baseDef": 769.0,
           "isAnAscension": false,
-          "statValue": 88.4
+          "statValue": 38.4
         }
       ]
     },
@@ -23908,7 +24464,7 @@
                 63.3,
                 69.63,
                 74.06,
-                79.13,
+                79.12,
                 86.09,
                 93.05,
                 100.01,
@@ -23968,7 +24524,7 @@
                 77.9,
                 85.69,
                 91.14,
-                97.38,
+                97.37,
                 105.94,
                 114.51,
                 123.08,
@@ -24517,7 +25073,7 @@
           "baseAtk": 25.0,
           "baseDef": 62.0,
           "isAnAscension": false,
-          "statValue": 50.0
+          "statValue": 0.0
         },
         {
           "level": 20,
@@ -24525,7 +25081,7 @@
           "baseAtk": 65.0,
           "baseDef": 161.0,
           "isAnAscension": false,
-          "statValue": 50.0
+          "statValue": 0.0
         },
         {
           "level": 20,
@@ -24533,7 +25089,7 @@
           "baseAtk": 87.0,
           "baseDef": 215.0,
           "isAnAscension": true,
-          "statValue": 50.0
+          "statValue": 0.0
         },
         {
           "level": 40,
@@ -24541,7 +25097,7 @@
           "baseAtk": 130.0,
           "baseDef": 321.0,
           "isAnAscension": false,
-          "statValue": 50.0
+          "statValue": 0.0
         },
         {
           "level": 40,
@@ -24549,7 +25105,7 @@
           "baseAtk": 145.0,
           "baseDef": 359.0,
           "isAnAscension": true,
-          "statValue": 59.6
+          "statValue": 9.6
         },
         {
           "level": 50,
@@ -24557,7 +25113,7 @@
           "baseAtk": 167.0,
           "baseDef": 413.0,
           "isAnAscension": false,
-          "statValue": 59.6
+          "statValue": 9.6
         },
         {
           "level": 50,
@@ -24565,15 +25121,15 @@
           "baseAtk": 187.0,
           "baseDef": 464.0,
           "isAnAscension": true,
-          "statValue": 69.2
+          "statValue": 19.2
         },
         {
           "level": 60,
           "baseHp": 8500.0,
           "baseAtk": 209.0,
-          "baseDef": 519.0,
+          "baseDef": 518.0,
           "isAnAscension": false,
-          "statValue": 69.2
+          "statValue": 19.2
         },
         {
           "level": 60,
@@ -24581,7 +25137,7 @@
           "baseAtk": 225.0,
           "baseDef": 556.0,
           "isAnAscension": true,
-          "statValue": 69.2
+          "statValue": 19.2
         },
         {
           "level": 70,
@@ -24589,7 +25145,7 @@
           "baseAtk": 247.0,
           "baseDef": 612.0,
           "isAnAscension": false,
-          "statValue": 69.2
+          "statValue": 19.2
         },
         {
           "level": 70,
@@ -24597,7 +25153,7 @@
           "baseAtk": 262.0,
           "baseDef": 649.0,
           "isAnAscension": true,
-          "statValue": 78.8
+          "statValue": 28.8
         },
         {
           "level": 80,
@@ -24605,7 +25161,7 @@
           "baseAtk": 285.0,
           "baseDef": 705.0,
           "isAnAscension": false,
-          "statValue": 78.8
+          "statValue": 28.8
         },
         {
           "level": 80,
@@ -24613,7 +25169,7 @@
           "baseAtk": 300.0,
           "baseDef": 743.0,
           "isAnAscension": true,
-          "statValue": 88.4
+          "statValue": 38.4
         },
         {
           "level": 90,
@@ -24621,7 +25177,7 @@
           "baseAtk": 323.0,
           "baseDef": 799.0,
           "isAnAscension": false,
-          "statValue": 88.4
+          "statValue": 38.4
         }
       ]
     },
@@ -25093,7 +25649,7 @@
                 171.21,
                 183.44,
                 195.67,
-                207.9,
+                207.89,
                 220.12
               ]
             },
@@ -25165,7 +25721,7 @@
                 132.13,
                 145.35,
                 154.59,
-                165.17,
+                165.16,
                 179.7,
                 194.23,
                 208.77,
@@ -26025,7 +26581,7 @@
                 42.9,
                 47.19,
                 50.19,
-                53.63,
+                53.62,
                 58.34,
                 63.06,
                 67.78,
@@ -26101,7 +26657,7 @@
               "key": "param5",
               "values": [
                 58.05,
-                62.78,
+                62.77,
                 67.5,
                 74.25,
                 78.97,
@@ -26185,7 +26741,7 @@
                 132.13,
                 145.35,
                 154.59,
-                165.17,
+                165.16,
                 179.7,
                 194.23,
                 208.77,
@@ -26346,7 +26902,7 @@
                 61.42,
                 64.83,
                 68.24,
-                72.51,
+                72.5,
                 76.77,
                 81.04
               ]
@@ -26573,7 +27129,7 @@
         },
         {
           "level": 70,
-          "baseHp": 7818.0,
+          "baseHp": 7819.0,
           "baseAtk": 160.0,
           "baseDef": 513.0,
           "isAnAscension": true,
@@ -27084,7 +27640,7 @@
                 82.31,
                 88.5,
                 97.35,
-                103.55,
+                103.54,
                 110.63,
                 120.36,
                 130.1,
@@ -27248,10 +27804,10 @@
               "key": "param2",
               "values": [
                 3.0,
-                3.23,
+                3.22,
                 3.45,
                 3.75,
-                3.98,
+                3.97,
                 4.2,
                 4.5,
                 4.8,
@@ -27259,7 +27815,7 @@
                 5.4,
                 5.7,
                 6.0,
-                6.38,
+                6.37,
                 6.75,
                 7.12
               ]
@@ -27267,21 +27823,21 @@
             {
               "key": "param3",
               "values": [
-                289.0,
-                318.0,
-                349.0,
-                383.0,
-                419.0,
-                457.0,
-                498.0,
-                542.0,
-                587.0,
-                636.0,
-                686.0,
-                739.0,
-                795.0,
-                852.0,
-                913.0
+                288.89,
+                317.78,
+                349.08,
+                382.79,
+                418.91,
+                457.43,
+                498.37,
+                541.71,
+                587.45,
+                635.61,
+                686.17,
+                739.14,
+                794.52,
+                852.31,
+                912.5
               ]
             },
             {
@@ -27301,7 +27857,7 @@
                 50.48,
                 53.64,
                 56.79,
-                59.95
+                59.94
               ]
             },
             {
@@ -28306,7 +28862,7 @@
                 132.13,
                 145.35,
                 154.59,
-                165.17,
+                165.16,
                 179.7,
                 194.23,
                 208.77,
@@ -28839,7 +29395,7 @@
         },
         {
           "level": 70,
-          "baseHp": 7818.0,
+          "baseHp": 7819.0,
           "baseAtk": 189.0,
           "baseDef": 468.0,
           "isAnAscension": true,
@@ -29431,7 +29987,7 @@
                 132.13,
                 145.35,
                 154.59,
-                165.17,
+                165.16,
                 179.7,
                 194.23,
                 208.77,
@@ -30431,7 +30987,7 @@
                 132.13,
                 145.35,
                 154.59,
-                165.17,
+                165.16,
                 179.7,
                 194.23,
                 208.77,
@@ -30528,6 +31084,26 @@
                 12.0,
                 12.0,
                 12.0
+              ]
+            },
+            {
+              "key": "param4",
+              "values": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
               ]
             }
           ]
@@ -31317,7 +31893,7 @@
                 85.3,
                 93.83,
                 99.8,
-                106.63,
+                106.62,
                 116.01,
                 125.39,
                 134.77,
@@ -31337,7 +31913,7 @@
                 100.3,
                 110.33,
                 117.35,
-                125.38,
+                125.37,
                 136.41,
                 147.44,
                 158.47,
@@ -31357,7 +31933,7 @@
                 131.9,
                 145.09,
                 154.32,
-                164.88,
+                164.87,
                 179.38,
                 193.89,
                 208.4,
@@ -31559,21 +32135,21 @@
             {
               "key": "param3",
               "values": [
-                770.0,
-                847.0,
-                930.0,
+                769.79,
+                846.77,
+                930.18,
                 1020.0,
-                1116.0,
-                1219.0,
-                1328.0,
-                1443.0,
-                1565.0,
-                1694.0,
-                1828.0,
-                1970.0,
-                2117.0,
-                2271.0,
-                2431.0
+                1116.24,
+                1218.89,
+                1327.96,
+                1443.44,
+                1565.34,
+                1693.66,
+                1828.39,
+                1969.53,
+                2117.1,
+                2271.07,
+                2431.47
               ]
             },
             {
@@ -31599,21 +32175,21 @@
             {
               "key": "param5",
               "values": [
-                103.0,
-                113.0,
-                124.0,
-                136.0,
-                149.0,
-                163.0,
-                177.0,
-                193.0,
-                209.0,
+                102.72,
+                112.99,
+                124.12,
+                136.11,
+                148.95,
+                162.65,
+                177.2,
+                192.61,
+                208.87,
                 226.0,
-                244.0,
-                263.0,
-                282.0,
-                303.0,
-                324.0
+                243.97,
+                262.81,
+                282.5,
+                303.05,
+                324.45
               ]
             },
             {
@@ -31674,6 +32250,26 @@
                 24.0,
                 24.0,
                 24.0
+              ]
+            },
+            {
+              "key": "param9",
+              "values": [
+                769.79,
+                846.77,
+                930.18,
+                1020.0,
+                1116.24,
+                1218.89,
+                1327.96,
+                1443.44,
+                1565.34,
+                1693.66,
+                1828.39,
+                1969.53,
+                2117.1,
+                2271.07,
+                2431.47
               ]
             }
           ]
@@ -32492,7 +33088,7 @@
                 43.9,
                 48.29,
                 51.36,
-                54.88,
+                54.87,
                 59.7,
                 64.53,
                 69.36,
@@ -32532,7 +33128,7 @@
                 28.1,
                 30.91,
                 32.88,
-                35.13,
+                35.12,
                 38.22,
                 41.31,
                 44.4,
@@ -32552,7 +33148,7 @@
                 28.1,
                 30.91,
                 32.88,
-                35.13,
+                35.12,
                 38.22,
                 41.31,
                 44.4,
@@ -32572,7 +33168,7 @@
                 28.7,
                 31.57,
                 33.58,
-                35.88,
+                35.87,
                 39.03,
                 42.19,
                 45.35,
@@ -32592,7 +33188,7 @@
                 28.7,
                 31.57,
                 33.58,
-                35.88,
+                35.87,
                 39.03,
                 42.19,
                 45.35,
@@ -32612,7 +33208,7 @@
                 73.3,
                 80.63,
                 85.76,
-                91.63,
+                91.62,
                 99.69,
                 107.75,
                 115.81,
@@ -32794,21 +33390,21 @@
             {
               "key": "param3",
               "values": [
-                67.0,
-                74.0,
-                81.0,
-                89.0,
-                98.0,
-                107.0,
-                116.0,
-                126.0,
-                137.0,
-                148.0,
-                160.0,
-                172.0,
-                185.0,
-                199.0,
-                213.0
+                67.41,
+                74.15,
+                81.45,
+                89.32,
+                97.75,
+                106.73,
+                116.29,
+                126.4,
+                137.07,
+                148.31,
+                160.11,
+                172.47,
+                185.39,
+                198.87,
+                212.92
               ]
             },
             {
@@ -32834,21 +33430,21 @@
             {
               "key": "param5",
               "values": [
-                451.0,
-                496.0,
-                544.0,
+                450.55,
+                495.61,
+                544.43,
                 597.0,
-                653.0,
-                713.0,
-                777.0,
-                845.0,
-                916.0,
-                991.0,
-                1070.0,
-                1153.0,
-                1239.0,
-                1329.0,
-                1423.0
+                653.33,
+                713.41,
+                777.25,
+                844.84,
+                916.18,
+                991.29,
+                1070.14,
+                1152.76,
+                1239.12,
+                1329.25,
+                1423.12
               ]
             },
             {
@@ -32961,21 +33557,21 @@
             {
               "key": "param3",
               "values": [
-                577.0,
-                635.0,
-                698.0,
+                577.34,
+                635.08,
+                697.63,
                 765.0,
-                837.0,
-                914.0,
-                996.0,
-                1083.0,
-                1174.0,
-                1270.0,
-                1371.0,
-                1477.0,
-                1588.0,
-                1703.0,
-                1824.0
+                837.18,
+                914.17,
+                995.97,
+                1082.58,
+                1174.01,
+                1270.24,
+                1371.29,
+                1477.15,
+                1587.82,
+                1703.31,
+                1823.6
               ]
             },
             {
@@ -33732,7 +34328,7 @@
                 33.7,
                 37.07,
                 39.43,
-                42.13,
+                42.12,
                 45.83,
                 49.54,
                 53.25,
@@ -33752,7 +34348,7 @@
                 33.7,
                 37.07,
                 39.43,
-                42.13,
+                42.12,
                 45.83,
                 49.54,
                 53.25,
@@ -34084,7 +34680,7 @@
                 44.74,
                 47.79,
                 50.84,
-                54.91,
+                54.9,
                 57.96,
                 61.51,
                 66.09,
@@ -34107,7 +34703,7 @@
                 53.95,
                 56.94,
                 60.44,
-                64.94,
+                64.93,
                 69.43,
                 73.93,
                 78.42,
@@ -34226,15 +34822,15 @@
                 84.5,
                 91.26,
                 96.33,
-                102.25,
+                102.24,
                 109.85,
                 117.46,
                 125.06,
                 132.67,
                 140.27,
-                147.88,
+                147.87,
                 155.48,
-                163.09,
+                163.08,
                 170.69
               ]
             },
@@ -35048,7 +35644,7 @@
                 138.97,
                 147.42,
                 155.87,
-                164.33,
+                164.32,
                 172.78,
                 181.23,
                 189.68
@@ -35118,11 +35714,11 @@
               "key": "param6",
               "values": [
                 113.09,
-                122.3,
+                122.29,
                 131.5,
                 144.65,
                 153.86,
-                164.38,
+                164.37,
                 178.84,
                 193.31,
                 207.77,
@@ -36831,7 +37427,7 @@
         {
           "level": 50,
           "baseHp": 7245.0,
-          "baseAtk": 141.0,
+          "baseAtk": 142.0,
           "baseDef": 418.0,
           "isAnAscension": true,
           "statValue": 12.0
@@ -37434,7 +38030,7 @@
                 132.13,
                 145.35,
                 154.59,
-                165.17,
+                165.16,
                 179.7,
                 194.23,
                 208.77,
@@ -37496,21 +38092,21 @@
             {
               "key": "param2",
               "values": [
-                424.0,
-                466.0,
-                512.0,
-                561.0,
-                614.0,
-                671.0,
-                731.0,
-                795.0,
-                862.0,
-                932.0,
-                1006.0,
-                1084.0,
-                1165.0,
-                1250.0,
-                1338.0
+                423.71,
+                466.08,
+                511.99,
+                561.43,
+                614.4,
+                670.9,
+                730.94,
+                794.5,
+                861.6,
+                932.22,
+                1006.38,
+                1084.07,
+                1165.3,
+                1250.05,
+                1338.33
               ]
             },
             {
@@ -37615,7 +38211,7 @@
                 8.71,
                 9.2,
                 9.68,
-                10.29,
+                10.28,
                 10.89,
                 11.5
               ]
@@ -37683,21 +38279,21 @@
             {
               "key": "param6",
               "values": [
-                77.0,
-                85.0,
-                93.0,
-                102.0,
-                112.0,
-                122.0,
-                133.0,
-                144.0,
-                157.0,
-                169.0,
-                183.0,
-                197.0,
-                212.0,
-                227.0,
-                243.0
+                77.04,
+                84.74,
+                93.09,
+                102.08,
+                111.71,
+                121.98,
+                132.9,
+                144.45,
+                156.65,
+                169.5,
+                182.98,
+                197.1,
+                211.87,
+                227.28,
+                243.33
               ]
             },
             {
@@ -37765,23 +38361,23 @@
       ],
       "passives": [
         {
-          "key": "p3",
-          "image": "sangonomiya-kokomi_p3.png",
-          "unlockedAt": -1
-        },
-        {
-          "key": "p4",
-          "image": "sangonomiya-kokomi_p4.png",
-          "unlockedAt": -1
-        },
-        {
           "key": "p1",
           "image": "sangonomiya-kokomi_p1.png",
-          "unlockedAt": 1
+          "unlockedAt": -1
         },
         {
           "key": "p2",
           "image": "sangonomiya-kokomi_p2.png",
+          "unlockedAt": -1
+        },
+        {
+          "key": "p3",
+          "image": "sangonomiya-kokomi_p3.png",
+          "unlockedAt": 1
+        },
+        {
+          "key": "p4",
+          "image": "sangonomiya-kokomi_p4.png",
           "unlockedAt": 4
         }
       ],
@@ -38472,7 +39068,7 @@
                 46.97,
                 50.5,
                 55.55,
-                59.09,
+                59.08,
                 63.13,
                 68.68,
                 74.23,
@@ -38492,7 +39088,7 @@
                 46.97,
                 50.5,
                 55.55,
-                59.09,
+                59.08,
                 63.13,
                 68.68,
                 74.23,
@@ -38513,7 +39109,7 @@
                 114.1,
                 125.51,
                 133.5,
-                142.63,
+                142.62,
                 155.18,
                 167.73,
                 180.28,
@@ -38549,11 +39145,11 @@
               "key": "param7",
               "values": [
                 113.09,
-                122.3,
+                122.29,
                 131.5,
                 144.65,
                 153.86,
-                164.38,
+                164.37,
                 178.84,
                 193.31,
                 207.77,
@@ -38882,21 +39478,21 @@
             {
               "key": "param3",
               "values": [
-                577.0,
-                635.0,
-                698.0,
+                577.34,
+                635.08,
+                697.63,
                 765.0,
-                837.0,
-                914.0,
-                996.0,
-                1083.0,
-                1174.0,
-                1270.0,
-                1371.0,
-                1477.0,
-                1588.0,
-                1703.0,
-                1824.0
+                837.18,
+                914.17,
+                995.97,
+                1082.58,
+                1174.01,
+                1270.24,
+                1371.29,
+                1477.15,
+                1587.82,
+                1703.31,
+                1823.6
               ]
             },
             {
@@ -38942,21 +39538,21 @@
             {
               "key": "param6",
               "values": [
-                500.0,
-                550.0,
-                605.0,
+                500.36,
+                550.4,
+                604.62,
                 663.0,
-                726.0,
-                792.0,
-                863.0,
-                938.0,
-                1017.0,
-                1101.0,
-                1188.0,
-                1280.0,
-                1376.0,
-                1476.0,
-                1580.0
+                725.55,
+                792.28,
+                863.17,
+                938.24,
+                1017.47,
+                1100.88,
+                1188.45,
+                1280.2,
+                1376.11,
+                1476.2,
+                1580.45
               ]
             },
             {
@@ -40385,7 +40981,7 @@
       "fullImage": "shikanoin-heizou.png",
       "secondFullImage": null,
       "isComingSoon": false,
-      "isNew": true,
+      "isNew": false,
       "isFemale": false,
       "region": "inazuma",
       "role": "dps",
@@ -40814,7 +41410,7 @@
                 36.85,
                 39.62,
                 42.38,
-                46.07,
+                46.06,
                 48.83,
                 51.59,
                 55.28,
@@ -40834,7 +41430,7 @@
                 51.06,
                 54.89,
                 58.72,
-                63.83,
+                63.82,
                 67.65,
                 71.48,
                 76.59,
@@ -40844,7 +41440,7 @@
                 97.01,
                 102.12,
                 108.5,
-                114.89,
+                114.88,
                 121.27
               ]
             },
@@ -40935,7 +41531,7 @@
                 78.47,
                 83.95,
                 91.25,
-                96.73,
+                96.72,
                 102.2,
                 109.5,
                 116.8,
@@ -40943,9 +41539,9 @@
                 131.4,
                 138.7,
                 146.0,
-                155.13,
+                155.12,
                 164.25,
-                173.38
+                173.37
               ]
             },
             {
@@ -40996,7 +41592,7 @@
                 132.13,
                 145.35,
                 154.59,
-                165.17,
+                165.16,
                 179.7,
                 194.23,
                 208.77,
@@ -42021,7 +42617,7 @@
                 132.13,
                 145.35,
                 154.59,
-                165.17,
+                165.16,
                 179.7,
                 194.23,
                 208.77,
@@ -43193,13 +43789,13 @@
               "key": "param4",
               "values": [
                 56.33,
-                60.92,
+                60.91,
                 65.5,
                 72.05,
-                76.64,
+                76.63,
                 81.88,
                 89.08,
-                96.29,
+                96.28,
                 103.49,
                 111.35,
                 119.21,
@@ -43217,7 +43813,7 @@
                 69.7,
                 76.67,
                 81.55,
-                87.13,
+                87.12,
                 94.79,
                 102.46,
                 110.13,
@@ -43237,7 +43833,7 @@
                 64.3,
                 70.73,
                 75.23,
-                80.38,
+                80.37,
                 87.45,
                 94.52,
                 101.59,
@@ -43727,7 +44323,7 @@
         {
           "level": 60,
           "baseHp": 8500.0,
-          "baseAtk": 195.0,
+          "baseAtk": 196.0,
           "baseDef": 528.0,
           "isAnAscension": false,
           "statValue": 14.4
@@ -44240,7 +44836,7 @@
                 26.79,
                 28.97,
                 31.15,
-                34.27,
+                34.26,
                 36.45,
                 38.94,
                 42.36,
@@ -44251,7 +44847,7 @@
                 60.43,
                 64.17,
                 67.91,
-                71.65
+                71.64
               ]
             },
             {
@@ -44302,7 +44898,7 @@
                 131.1,
                 144.21,
                 153.39,
-                163.88,
+                163.87,
                 178.3,
                 192.72,
                 207.14,
@@ -44444,21 +45040,21 @@
             {
               "key": "param3",
               "values": [
-                693.0,
-                763.0,
-                838.0,
-                919.0,
-                1005.0,
-                1098.0,
-                1196.0,
-                1300.0,
-                1410.0,
-                1525.0,
-                1647.0,
-                1774.0,
-                1907.0,
-                2046.0,
-                2190.0
+                693.33,
+                762.68,
+                837.8,
+                918.7,
+                1005.38,
+                1097.84,
+                1196.07,
+                1300.09,
+                1409.88,
+                1525.45,
+                1646.8,
+                1773.93,
+                1906.84,
+                2045.53,
+                2189.99
               ]
             },
             {
@@ -44504,21 +45100,21 @@
             {
               "key": "param6",
               "values": [
-                1887.0,
-                2076.0,
-                2281.0,
-                2501.0,
-                2737.0,
-                2989.0,
-                3256.0,
-                3539.0,
-                3838.0,
-                4153.0,
-                4483.0,
-                4829.0,
-                5191.0,
-                5568.0,
-                5962.0
+                1887.42,
+                2076.19,
+                2280.69,
+                2500.92,
+                2736.88,
+                2988.57,
+                3255.99,
+                3539.14,
+                3838.02,
+                4152.64,
+                4482.98,
+                4829.06,
+                5190.86,
+                5568.4,
+                5961.67
               ]
             },
             {
@@ -44611,21 +45207,21 @@
             {
               "key": "param4",
               "values": [
-                110.0,
-                121.0,
-                133.0,
-                146.0,
-                160.0,
-                174.0,
-                190.0,
-                206.0,
-                224.0,
-                242.0,
-                261.0,
-                282.0,
-                303.0,
-                325.0,
-                348.0
+                110.03,
+                121.04,
+                132.96,
+                145.8,
+                159.56,
+                174.23,
+                189.82,
+                206.33,
+                223.75,
+                242.09,
+                261.35,
+                281.53,
+                302.62,
+                324.63,
+                347.56
               ]
             },
             {
@@ -44938,13 +45534,13 @@
       "image": "tighnari.png",
       "fullImage": "tighnari.png",
       "secondFullImage": null,
-      "isComingSoon": true,
-      "isNew": false,
+      "isComingSoon": false,
+      "isNew": true,
       "isFemale": false,
       "region": "sumeru",
-      "role": "na",
-      "tier": "na",
-      "birthday": "01/01",
+      "role": "dps",
+      "tier": "s",
+      "birthday": "12/29",
       "subStatType": "dendroDmgBonusPercentage",
       "ascensionMaterials": [
         {
@@ -44955,6 +45551,16 @@
               "key": "nagadus-emerald-sliver",
               "quantity": 1,
               "type": "jewels"
+            },
+            {
+              "key": "nilotpala-lotus",
+              "quantity": 3,
+              "type": "local"
+            },
+            {
+              "key": "fungal-spores",
+              "quantity": 3,
+              "type": "common"
             },
             {
               "key": "mora",
@@ -44973,6 +45579,21 @@
               "type": "jewels"
             },
             {
+              "key": "majestic-hooked-beak",
+              "quantity": 2,
+              "type": "elementalStone"
+            },
+            {
+              "key": "nilotpala-lotus",
+              "quantity": 10,
+              "type": "local"
+            },
+            {
+              "key": "fungal-spores",
+              "quantity": 15,
+              "type": "common"
+            },
+            {
               "key": "mora",
               "quantity": 40000,
               "type": "currency"
@@ -44987,6 +45608,21 @@
               "key": "nagadus-emerald-fragment",
               "quantity": 6,
               "type": "jewels"
+            },
+            {
+              "key": "majestic-hooked-beak",
+              "quantity": 4,
+              "type": "elementalStone"
+            },
+            {
+              "key": "nilotpala-lotus",
+              "quantity": 20,
+              "type": "local"
+            },
+            {
+              "key": "luminescent-pollen",
+              "quantity": 12,
+              "type": "common"
             },
             {
               "key": "mora",
@@ -45005,6 +45641,21 @@
               "type": "jewels"
             },
             {
+              "key": "majestic-hooked-beak",
+              "quantity": 8,
+              "type": "elementalStone"
+            },
+            {
+              "key": "nilotpala-lotus",
+              "quantity": 30,
+              "type": "local"
+            },
+            {
+              "key": "luminescent-pollen",
+              "quantity": 18,
+              "type": "common"
+            },
+            {
               "key": "mora",
               "quantity": 80000,
               "type": "currency"
@@ -45019,6 +45670,21 @@
               "key": "nagadus-emerald-chunk",
               "quantity": 6,
               "type": "jewels"
+            },
+            {
+              "key": "majestic-hooked-beak",
+              "quantity": 12,
+              "type": "elementalStone"
+            },
+            {
+              "key": "nilotpala-lotus",
+              "quantity": 45,
+              "type": "local"
+            },
+            {
+              "key": "crystalline-cyst-dust",
+              "quantity": 12,
+              "type": "common"
             },
             {
               "key": "mora",
@@ -45037,6 +45703,21 @@
               "type": "jewels"
             },
             {
+              "key": "majestic-hooked-beak",
+              "quantity": 20,
+              "type": "elementalStone"
+            },
+            {
+              "key": "nilotpala-lotus",
+              "quantity": 60,
+              "type": "local"
+            },
+            {
+              "key": "crystalline-cyst-dust",
+              "quantity": 24,
+              "type": "common"
+            },
+            {
               "key": "mora",
               "quantity": 120000,
               "type": "currency"
@@ -45049,6 +45730,16 @@
           "level": 2,
           "materials": [
             {
+              "key": "teachings-of-admonition",
+              "quantity": 3,
+              "type": "talents"
+            },
+            {
+              "key": "fungal-spores",
+              "quantity": 6,
+              "type": "common"
+            },
+            {
               "key": "mora",
               "quantity": 12500,
               "type": "currency"
@@ -45058,6 +45749,16 @@
         {
           "level": 3,
           "materials": [
+            {
+              "key": "guide-to-admonition",
+              "quantity": 2,
+              "type": "talents"
+            },
+            {
+              "key": "luminescent-pollen",
+              "quantity": 3,
+              "type": "common"
+            },
             {
               "key": "mora",
               "quantity": 17500,
@@ -45069,6 +45770,16 @@
           "level": 4,
           "materials": [
             {
+              "key": "guide-to-admonition",
+              "quantity": 4,
+              "type": "talents"
+            },
+            {
+              "key": "luminescent-pollen",
+              "quantity": 4,
+              "type": "common"
+            },
+            {
               "key": "mora",
               "quantity": 25000,
               "type": "currency"
@@ -45078,6 +45789,16 @@
         {
           "level": 5,
           "materials": [
+            {
+              "key": "guide-to-admonition",
+              "quantity": 6,
+              "type": "talents"
+            },
+            {
+              "key": "luminescent-pollen",
+              "quantity": 6,
+              "type": "common"
+            },
             {
               "key": "mora",
               "quantity": 30000,
@@ -45089,6 +45810,16 @@
           "level": 6,
           "materials": [
             {
+              "key": "guide-to-admonition",
+              "quantity": 9,
+              "type": "talents"
+            },
+            {
+              "key": "luminescent-pollen",
+              "quantity": 9,
+              "type": "common"
+            },
+            {
               "key": "mora",
               "quantity": 37500,
               "type": "currency"
@@ -45098,6 +45829,16 @@
         {
           "level": 7,
           "materials": [
+            {
+              "key": "philosophies-of-admonition",
+              "quantity": 4,
+              "type": "talents"
+            },
+            {
+              "key": "crystalline-cyst-dust",
+              "quantity": 4,
+              "type": "common"
+            },
             {
               "key": "mora",
               "quantity": 120000,
@@ -45114,6 +45855,16 @@
           "level": 8,
           "materials": [
             {
+              "key": "philosophies-of-admonition",
+              "quantity": 6,
+              "type": "talents"
+            },
+            {
+              "key": "crystalline-cyst-dust",
+              "quantity": 6,
+              "type": "common"
+            },
+            {
               "key": "mora",
               "quantity": 260000,
               "type": "currency"
@@ -45129,6 +45880,16 @@
           "level": 9,
           "materials": [
             {
+              "key": "philosophies-of-admonition",
+              "quantity": 12,
+              "type": "talents"
+            },
+            {
+              "key": "crystalline-cyst-dust",
+              "quantity": 9,
+              "type": "common"
+            },
+            {
               "key": "mora",
               "quantity": 450000,
               "type": "currency"
@@ -45143,6 +45904,16 @@
         {
           "level": 10,
           "materials": [
+            {
+              "key": "philosophies-of-admonition",
+              "quantity": 16,
+              "type": "talents"
+            },
+            {
+              "key": "crystalline-cyst-dust",
+              "quantity": 12,
+              "type": "common"
+            },
             {
               "key": "mora",
               "quantity": 700000,
@@ -45221,10 +45992,10 @@
                 48.59,
                 52.28,
                 55.97,
-                59.66,
-                63.35,
+                59.65,
+                63.34,
                 67.04,
-                70.73
+                70.72
               ]
             },
             {
@@ -45334,7 +46105,7 @@
                 41.5,
                 44.39,
                 48.25,
-                51.15,
+                51.14,
                 54.04,
                 57.9,
                 61.76,
@@ -45342,7 +46113,7 @@
                 69.48,
                 73.34,
                 77.2,
-                82.03,
+                82.02,
                 86.85,
                 91.68
               ]
@@ -45375,7 +46146,7 @@
                 132.13,
                 145.35,
                 154.59,
-                165.17,
+                165.16,
                 179.7,
                 194.23,
                 208.77,
@@ -45507,7 +46278,7 @@
                 55.62,
                 59.79,
                 63.96,
-                69.53,
+                69.52,
                 73.7,
                 77.87,
                 83.43,
@@ -45517,7 +46288,7 @@
                 105.68,
                 111.24,
                 118.19,
-                125.15,
+                125.14,
                 132.1
               ]
             },
@@ -45527,7 +46298,7 @@
                 67.98,
                 73.08,
                 78.18,
-                84.98,
+                84.97,
                 90.07,
                 95.17,
                 101.97,
@@ -45537,7 +46308,7 @@
                 129.16,
                 135.96,
                 144.46,
-                152.96,
+                152.95,
                 161.45
               ]
             },
@@ -45633,7 +46404,66 @@
           "image": "tighnari_c6.png"
         }
       ],
-      "builds": [],
+      "builds": [
+        {
+          "isRecommended": true,
+          "type": "dps",
+          "subType": "none",
+          "skillPriorities": [
+            "normalAttack",
+            "elementalBurst",
+            "elementalSkill"
+          ],
+          "weaponKeys": [
+            "hunters-path",
+            "skyward-harp",
+            "the-stringless",
+            "windblume-ode",
+            "hamayumi"
+          ],
+          "artifacts": [
+            {
+              "oneKey": "wanderers-troupe",
+              "multiples": [],
+              "stats": [
+                "hp",
+                "atk",
+                "elementalMastery",
+                "dendroDmgBonusPercentage",
+                "critRatePercentage"
+              ]
+            },
+            {
+              "oneKey": "gilded-dreams",
+              "multiples": [],
+              "stats": [
+                "hp",
+                "atk",
+                "elementalMastery",
+                "dendroDmgBonusPercentage",
+                "critRatePercentage"
+              ]
+            },
+            {
+              "oneKey": "deepwood-memories",
+              "multiples": [],
+              "stats": [
+                "hp",
+                "atk",
+                "elementalMastery",
+                "dendroDmgBonusPercentage",
+                "critRatePercentage"
+              ]
+            }
+          ],
+          "subStatsToFocus": [
+            "critDmgPercentage",
+            "critRatePercentage",
+            "elementalMastery",
+            "atkPercentage"
+          ]
+        }
+      ],
       "stats": [
         {
           "level": 1,
@@ -45645,105 +46475,105 @@
         },
         {
           "level": 20,
-          "baseHp": 2170.0,
+          "baseHp": 2191.0,
           "baseAtk": 54.0,
-          "baseDef": 126.0,
+          "baseDef": 127.0,
           "isAnAscension": false,
           "statValue": 0.0
         },
         {
           "level": 20,
-          "baseHp": 2894.0,
-          "baseAtk": 71.0,
-          "baseDef": 168.0,
+          "baseHp": 2915.0,
+          "baseAtk": 72.0,
+          "baseDef": 169.0,
           "isAnAscension": true,
           "statValue": 0.0
         },
         {
           "level": 40,
-          "baseHp": 4289.0,
-          "baseAtk": 106.0,
-          "baseDef": 249.0,
+          "baseHp": 4362.0,
+          "baseAtk": 108.0,
+          "baseDef": 253.0,
           "isAnAscension": false,
           "statValue": 0.0
         },
         {
           "level": 40,
-          "baseHp": 4803.0,
-          "baseAtk": 119.0,
-          "baseDef": 279.0,
+          "baseHp": 4877.0,
+          "baseAtk": 120.0,
+          "baseDef": 283.0,
           "isAnAscension": true,
           "statValue": 7.2
         },
         {
           "level": 50,
-          "baseHp": 5501.0,
-          "baseAtk": 136.0,
-          "baseDef": 320.0,
+          "baseHp": 5611.0,
+          "baseAtk": 139.0,
+          "baseDef": 326.0,
           "isAnAscension": false,
           "statValue": 7.2
         },
         {
           "level": 50,
-          "baseHp": 6187.0,
-          "baseAtk": 153.0,
-          "baseDef": 359.0,
+          "baseHp": 6297.0,
+          "baseAtk": 155.0,
+          "baseDef": 366.0,
           "isAnAscension": true,
           "statValue": 14.4
         },
         {
           "level": 60,
-          "baseHp": 6885.0,
-          "baseAtk": 170.0,
-          "baseDef": 400.0,
+          "baseHp": 7038.0,
+          "baseAtk": 174.0,
+          "baseDef": 409.0,
           "isAnAscension": false,
           "statValue": 14.4
         },
         {
           "level": 60,
-          "baseHp": 7399.0,
-          "baseAtk": 183.0,
-          "baseDef": 430.0,
+          "baseHp": 7553.0,
+          "baseAtk": 186.0,
+          "baseDef": 439.0,
           "isAnAscension": true,
           "statValue": 14.4
         },
         {
           "level": 70,
-          "baseHp": 8096.0,
-          "baseAtk": 200.0,
-          "baseDef": 470.0,
+          "baseHp": 8301.0,
+          "baseAtk": 205.0,
+          "baseDef": 482.0,
           "isAnAscension": false,
           "statValue": 14.4
         },
         {
           "level": 70,
-          "baseHp": 8611.0,
-          "baseAtk": 213.0,
-          "baseDef": 500.0,
+          "baseHp": 8816.0,
+          "baseAtk": 218.0,
+          "baseDef": 512.0,
           "isAnAscension": true,
           "statValue": 21.6
         },
         {
           "level": 80,
-          "baseHp": 9308.0,
-          "baseAtk": 230.0,
-          "baseDef": 541.0,
+          "baseHp": 9573.0,
+          "baseAtk": 236.0,
+          "baseDef": 556.0,
           "isAnAscension": false,
           "statValue": 21.6
         },
         {
           "level": 80,
-          "baseHp": 9823.0,
-          "baseAtk": 243.0,
-          "baseDef": 571.0,
+          "baseHp": 10087.0,
+          "baseAtk": 249.0,
+          "baseDef": 586.0,
           "isAnAscension": true,
           "statValue": 28.8
         },
         {
           "level": 90,
-          "baseHp": 10520.0,
-          "baseAtk": 260.0,
-          "baseDef": 611.0,
+          "baseHp": 10850.0,
+          "baseAtk": 268.0,
+          "baseDef": 630.0,
           "isAnAscension": false,
           "statValue": 28.8
         }
@@ -45957,7 +46787,7 @@
                 46.97,
                 50.5,
                 55.55,
-                59.09,
+                59.08,
                 63.13,
                 68.68,
                 74.23,
@@ -46018,7 +46848,7 @@
                 82.3,
                 90.53,
                 96.29,
-                102.88,
+                102.87,
                 111.93,
                 120.98,
                 130.03,
@@ -47249,6 +48079,1405 @@
       ]
     },
     {
+      "key": "traveler-dendro",
+      "rarity": 5,
+      "weaponType": "sword",
+      "elementType": "dendro",
+      "image": "traveler-male.png",
+      "fullImage": "traveler-female.png",
+      "secondFullImage": "traveler-male.png",
+      "isComingSoon": false,
+      "isNew": true,
+      "isFemale": false,
+      "region": "anotherWorld",
+      "role": "support",
+      "tier": "b",
+      "birthday": null,
+      "subStatType": "atkPercentage",
+      "ascensionMaterials": [
+        {
+          "rank": 1,
+          "level": 20,
+          "materials": [
+            {
+              "key": "brilliant-diamond-sliver",
+              "quantity": 1,
+              "type": "jewels"
+            },
+            {
+              "key": "windwheel-aster",
+              "quantity": 3,
+              "type": "local"
+            },
+            {
+              "key": "damaged-mask",
+              "quantity": 3,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 20000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "rank": 2,
+          "level": 40,
+          "materials": [
+            {
+              "key": "brilliant-diamond-fragment",
+              "quantity": 3,
+              "type": "jewels"
+            },
+            {
+              "key": "windwheel-aster",
+              "quantity": 10,
+              "type": "local"
+            },
+            {
+              "key": "damaged-mask",
+              "quantity": 15,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 40000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "rank": 3,
+          "level": 50,
+          "materials": [
+            {
+              "key": "brilliant-diamond-fragment",
+              "quantity": 6,
+              "type": "jewels"
+            },
+            {
+              "key": "windwheel-aster",
+              "quantity": 20,
+              "type": "local"
+            },
+            {
+              "key": "stained-mask",
+              "quantity": 12,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 60000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "rank": 4,
+          "level": 60,
+          "materials": [
+            {
+              "key": "brilliant-diamond-chunk",
+              "quantity": 3,
+              "type": "jewels"
+            },
+            {
+              "key": "windwheel-aster",
+              "quantity": 30,
+              "type": "local"
+            },
+            {
+              "key": "stained-mask",
+              "quantity": 18,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 80000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "rank": 5,
+          "level": 70,
+          "materials": [
+            {
+              "key": "brilliant-diamond-chunk",
+              "quantity": 6,
+              "type": "jewels"
+            },
+            {
+              "key": "windwheel-aster",
+              "quantity": 45,
+              "type": "local"
+            },
+            {
+              "key": "ominous-mask",
+              "quantity": 12,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 100000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "rank": 6,
+          "level": 80,
+          "materials": [
+            {
+              "key": "brilliant-diamond-gemstone",
+              "quantity": 6,
+              "type": "jewels"
+            },
+            {
+              "key": "windwheel-aster",
+              "quantity": 60,
+              "type": "local"
+            },
+            {
+              "key": "ominous-mask",
+              "quantity": 24,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 120000,
+              "type": "currency"
+            }
+          ]
+        }
+      ],
+      "talentAscensionMaterials": [],
+      "skills": [
+        {
+          "key": "s1",
+          "image": "traveler-dendro_s1.png",
+          "type": "normalAttack",
+          "stats": [
+            {
+              "key": "param1",
+              "values": [
+                44.46,
+                48.08,
+                51.7,
+                56.87,
+                60.49,
+                64.63,
+                70.31,
+                76.0,
+                81.69,
+                87.89,
+                94.09,
+                100.3,
+                106.5,
+                112.71,
+                118.91
+              ]
+            },
+            {
+              "key": "param2",
+              "values": [
+                43.43,
+                46.97,
+                50.5,
+                55.55,
+                59.08,
+                63.13,
+                68.68,
+                74.23,
+                79.79,
+                85.85,
+                91.91,
+                97.97,
+                104.03,
+                110.09,
+                116.15
+              ]
+            },
+            {
+              "key": "param3",
+              "values": [
+                52.98,
+                57.29,
+                61.6,
+                67.76,
+                72.07,
+                77.0,
+                83.78,
+                90.55,
+                97.33,
+                104.72,
+                112.11,
+                119.5,
+                126.9,
+                134.29,
+                141.68
+              ]
+            },
+            {
+              "key": "param4",
+              "values": [
+                58.31,
+                63.05,
+                67.8,
+                74.58,
+                79.33,
+                84.75,
+                92.21,
+                99.67,
+                107.12,
+                115.26,
+                123.4,
+                131.53,
+                139.67,
+                147.8,
+                155.94
+              ]
+            },
+            {
+              "key": "param5",
+              "values": [
+                70.78,
+                76.54,
+                82.3,
+                90.53,
+                96.29,
+                102.87,
+                111.93,
+                120.98,
+                130.03,
+                139.91,
+                149.79,
+                159.66,
+                169.54,
+                179.41,
+                189.29
+              ]
+            },
+            {
+              "key": "param6",
+              "values": [
+                55.9,
+                60.45,
+                65.0,
+                71.5,
+                76.05,
+                81.25,
+                88.4,
+                95.55,
+                102.7,
+                110.5,
+                118.3,
+                126.1,
+                133.9,
+                141.7,
+                149.5
+              ]
+            },
+            {
+              "key": "param7",
+              "values": [
+                60.72,
+                65.66,
+                70.6,
+                77.66,
+                82.6,
+                88.25,
+                96.02,
+                103.78,
+                111.55,
+                120.02,
+                128.49,
+                136.96,
+                145.44,
+                153.91,
+                162.38
+              ]
+            },
+            {
+              "key": "param8",
+              "values": [
+                20.0,
+                20.0,
+                20.0,
+                20.0,
+                20.0,
+                20.0,
+                20.0,
+                20.0,
+                20.0,
+                20.0,
+                20.0,
+                20.0,
+                20.0,
+                20.0,
+                20.0
+              ]
+            },
+            {
+              "key": "param9",
+              "values": [
+                63.93,
+                69.14,
+                74.34,
+                81.77,
+                86.98,
+                92.93,
+                101.1,
+                109.28,
+                117.46,
+                126.38,
+                135.3,
+                144.22,
+                153.14,
+                162.06,
+                170.98
+              ]
+            },
+            {
+              "key": "param10",
+              "values": [
+                127.84,
+                138.24,
+                148.65,
+                163.51,
+                173.92,
+                185.81,
+                202.16,
+                218.51,
+                234.86,
+                252.7,
+                270.54,
+                288.38,
+                306.22,
+                324.05,
+                341.89
+              ]
+            },
+            {
+              "key": "param11",
+              "values": [
+                159.68,
+                172.67,
+                185.67,
+                204.24,
+                217.23,
+                232.09,
+                252.51,
+                272.93,
+                293.36,
+                315.64,
+                337.92,
+                360.2,
+                382.48,
+                404.76,
+                427.04
+              ]
+            }
+          ]
+        },
+        {
+          "key": "s2",
+          "image": "traveler-dendro_s2.png",
+          "type": "elementalSkill",
+          "stats": [
+            {
+              "key": "param1",
+              "values": [
+                230.4,
+                247.68,
+                264.96,
+                288.0,
+                305.28,
+                322.56,
+                345.6,
+                368.64,
+                391.68,
+                414.72,
+                437.76,
+                460.8,
+                489.6,
+                518.4,
+                547.2
+              ]
+            },
+            {
+              "key": "param2",
+              "values": [
+                8.0,
+                8.0,
+                8.0,
+                8.0,
+                8.0,
+                8.0,
+                8.0,
+                8.0,
+                8.0,
+                8.0,
+                8.0,
+                8.0,
+                8.0,
+                8.0,
+                8.0
+              ]
+            }
+          ]
+        },
+        {
+          "key": "s3",
+          "image": "traveler-dendro_s3.png",
+          "type": "elementalBurst",
+          "stats": [
+            {
+              "key": "param1",
+              "values": [
+                80.16,
+                86.17,
+                92.18,
+                100.2,
+                106.21,
+                112.22,
+                120.24,
+                128.26,
+                136.27,
+                144.29,
+                152.3,
+                160.32,
+                170.34,
+                180.36,
+                190.38
+              ]
+            },
+            {
+              "key": "param2",
+              "values": [
+                400.8,
+                430.86,
+                460.92,
+                501.0,
+                531.06,
+                561.12,
+                601.2,
+                641.28,
+                681.36,
+                721.44,
+                761.52,
+                801.6,
+                851.7,
+                901.8,
+                951.9
+              ]
+            },
+            {
+              "key": "param3",
+              "values": [
+                12.0,
+                12.0,
+                12.0,
+                12.0,
+                12.0,
+                12.0,
+                12.0,
+                12.0,
+                12.0,
+                12.0,
+                12.0,
+                12.0,
+                12.0,
+                12.0,
+                12.0
+              ]
+            },
+            {
+              "key": "param4",
+              "values": [
+                20.0,
+                20.0,
+                20.0,
+                20.0,
+                20.0,
+                20.0,
+                20.0,
+                20.0,
+                20.0,
+                20.0,
+                20.0,
+                20.0,
+                20.0,
+                20.0,
+                20.0
+              ]
+            },
+            {
+              "key": "param5",
+              "values": [
+                80.0,
+                80.0,
+                80.0,
+                80.0,
+                80.0,
+                80.0,
+                80.0,
+                80.0,
+                80.0,
+                80.0,
+                80.0,
+                80.0,
+                80.0,
+                80.0,
+                80.0
+              ]
+            }
+          ]
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "image": "traveler-dendro_p1.png",
+          "unlockedAt": -1
+        },
+        {
+          "key": "p2",
+          "image": "traveler-dendro_p2.png",
+          "unlockedAt": 1
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "number": 1,
+          "image": "traveler-dendro_c1.png"
+        },
+        {
+          "key": "c2",
+          "number": 2,
+          "image": "traveler-dendro_c2.png"
+        },
+        {
+          "key": "c3",
+          "number": 3,
+          "image": "traveler-dendro_c3.png"
+        },
+        {
+          "key": "c4",
+          "number": 4,
+          "image": "traveler-dendro_c4.png"
+        },
+        {
+          "key": "c5",
+          "number": 5,
+          "image": "traveler-dendro_c5.png"
+        },
+        {
+          "key": "c6",
+          "number": 6,
+          "image": "traveler-dendro_c6.png"
+        }
+      ],
+      "builds": [
+        {
+          "isRecommended": true,
+          "type": "support",
+          "subType": "none",
+          "skillPriorities": [
+            "elementalBurst",
+            "elementalSkill"
+          ],
+          "weaponKeys": [
+            "primordial-jade-cutter",
+            "freedom-sworn",
+            "the-black-sword",
+            "blackcliff-longsword",
+            "favonius-sword",
+            "sacrificial-sword",
+            "sapwood-blade"
+          ],
+          "artifacts": [
+            {
+              "oneKey": "emblem-of-severed-fate",
+              "multiples": [],
+              "stats": [
+                "hp",
+                "atk",
+                "elementalMastery",
+                "dendroDmgBonusPercentage",
+                "critRatePercentage"
+              ]
+            },
+            {
+              "oneKey": "deepwood-memories",
+              "multiples": [],
+              "stats": [
+                "hp",
+                "atk",
+                "energyRechargePercentage",
+                "dendroDmgBonusPercentage",
+                "critRatePercentage"
+              ]
+            }
+          ],
+          "subStatsToFocus": [
+            "energyRechargePercentage",
+            "critDmgPercentage",
+            "critRatePercentage",
+            "atkPercentage"
+          ]
+        }
+      ],
+      "stats": [
+        {
+          "level": 1,
+          "baseHp": 912.0,
+          "baseAtk": 18.0,
+          "baseDef": 57.0,
+          "isAnAscension": false,
+          "statValue": 0.0
+        },
+        {
+          "level": 20,
+          "baseHp": 2342.0,
+          "baseAtk": 46.0,
+          "baseDef": 147.0,
+          "isAnAscension": false,
+          "statValue": 0.0
+        },
+        {
+          "level": 20,
+          "baseHp": 3024.0,
+          "baseAtk": 59.0,
+          "baseDef": 190.0,
+          "isAnAscension": true,
+          "statValue": 0.0
+        },
+        {
+          "level": 40,
+          "baseHp": 4529.0,
+          "baseAtk": 88.0,
+          "baseDef": 284.0,
+          "isAnAscension": false,
+          "statValue": 0.0
+        },
+        {
+          "level": 40,
+          "baseHp": 5013.0,
+          "baseAtk": 98.0,
+          "baseDef": 315.0,
+          "isAnAscension": true,
+          "statValue": 6.0
+        },
+        {
+          "level": 50,
+          "baseHp": 5766.0,
+          "baseAtk": 113.0,
+          "baseDef": 362.0,
+          "isAnAscension": false,
+          "statValue": 6.0
+        },
+        {
+          "level": 50,
+          "baseHp": 6411.0,
+          "baseAtk": 125.0,
+          "baseDef": 402.0,
+          "isAnAscension": true,
+          "statValue": 12.0
+        },
+        {
+          "level": 60,
+          "baseHp": 7164.0,
+          "baseAtk": 140.0,
+          "baseDef": 450.0,
+          "isAnAscension": false,
+          "statValue": 12.0
+        },
+        {
+          "level": 60,
+          "baseHp": 7648.0,
+          "baseAtk": 149.0,
+          "baseDef": 480.0,
+          "isAnAscension": true,
+          "statValue": 12.0
+        },
+        {
+          "level": 70,
+          "baseHp": 8401.0,
+          "baseAtk": 164.0,
+          "baseDef": 527.0,
+          "isAnAscension": false,
+          "statValue": 12.0
+        },
+        {
+          "level": 70,
+          "baseHp": 8885.0,
+          "baseAtk": 174.0,
+          "baseDef": 558.0,
+          "isAnAscension": true,
+          "statValue": 18.0
+        },
+        {
+          "level": 80,
+          "baseHp": 9638.0,
+          "baseAtk": 188.0,
+          "baseDef": 605.0,
+          "isAnAscension": false,
+          "statValue": 18.0
+        },
+        {
+          "level": 80,
+          "baseHp": 10122.0,
+          "baseAtk": 198.0,
+          "baseDef": 635.0,
+          "isAnAscension": true,
+          "statValue": 24.0
+        },
+        {
+          "level": 90,
+          "baseHp": 10875.0,
+          "baseAtk": 212.0,
+          "baseDef": 683.0,
+          "isAnAscension": false,
+          "statValue": 24.0
+        }
+      ],
+      "multiTalentAscensionMaterials": [
+        {
+          "number": 1,
+          "materials": [
+            {
+              "level": 2,
+              "materials": [
+                {
+                  "key": "teachings-of-admonition",
+                  "quantity": 3,
+                  "type": "talents"
+                },
+                {
+                  "key": "fungal-spores",
+                  "quantity": 6,
+                  "type": "common"
+                },
+                {
+                  "key": "mora",
+                  "quantity": 12500,
+                  "type": "currency"
+                }
+              ]
+            },
+            {
+              "level": 3,
+              "materials": [
+                {
+                  "key": "guide-to-ingenuity",
+                  "quantity": 2,
+                  "type": "talents"
+                },
+                {
+                  "key": "luminescent-pollen",
+                  "quantity": 3,
+                  "type": "common"
+                },
+                {
+                  "key": "mora",
+                  "quantity": 17500,
+                  "type": "currency"
+                }
+              ]
+            },
+            {
+              "level": 4,
+              "materials": [
+                {
+                  "key": "guide-to-praxis",
+                  "quantity": 4,
+                  "type": "talents"
+                },
+                {
+                  "key": "luminescent-pollen",
+                  "quantity": 4,
+                  "type": "common"
+                },
+                {
+                  "key": "mora",
+                  "quantity": 25000,
+                  "type": "currency"
+                }
+              ]
+            },
+            {
+              "level": 5,
+              "materials": [
+                {
+                  "key": "guide-to-admonition",
+                  "quantity": 6,
+                  "type": "talents"
+                },
+                {
+                  "key": "luminescent-pollen",
+                  "quantity": 6,
+                  "type": "common"
+                },
+                {
+                  "key": "mora",
+                  "quantity": 30000,
+                  "type": "currency"
+                }
+              ]
+            },
+            {
+              "level": 6,
+              "materials": [
+                {
+                  "key": "guide-to-ingenuity",
+                  "quantity": 9,
+                  "type": "talents"
+                },
+                {
+                  "key": "luminescent-pollen",
+                  "quantity": 9,
+                  "type": "common"
+                },
+                {
+                  "key": "mora",
+                  "quantity": 37500,
+                  "type": "currency"
+                }
+              ]
+            },
+            {
+              "level": 7,
+              "materials": [
+                {
+                  "key": "philosophies-of-praxis",
+                  "quantity": 4,
+                  "type": "talents"
+                },
+                {
+                  "key": "crystalline-cyst-dust",
+                  "quantity": 4,
+                  "type": "common"
+                },
+                {
+                  "key": "mora",
+                  "quantity": 120000,
+                  "type": "currency"
+                },
+                {
+                  "key": "mudra-of-the-malefic-general",
+                  "quantity": 1,
+                  "type": "talents"
+                }
+              ]
+            },
+            {
+              "level": 8,
+              "materials": [
+                {
+                  "key": "philosophies-of-admonition",
+                  "quantity": 6,
+                  "type": "talents"
+                },
+                {
+                  "key": "crystalline-cyst-dust",
+                  "quantity": 6,
+                  "type": "common"
+                },
+                {
+                  "key": "mora",
+                  "quantity": 260000,
+                  "type": "currency"
+                },
+                {
+                  "key": "mudra-of-the-malefic-general",
+                  "quantity": 1,
+                  "type": "talents"
+                }
+              ]
+            },
+            {
+              "level": 9,
+              "materials": [
+                {
+                  "key": "philosophies-of-ingenuity",
+                  "quantity": 12,
+                  "type": "talents"
+                },
+                {
+                  "key": "crystalline-cyst-dust",
+                  "quantity": 9,
+                  "type": "common"
+                },
+                {
+                  "key": "mora",
+                  "quantity": 450000,
+                  "type": "currency"
+                },
+                {
+                  "key": "mudra-of-the-malefic-general",
+                  "quantity": 2,
+                  "type": "talents"
+                }
+              ]
+            },
+            {
+              "level": 10,
+              "materials": [
+                {
+                  "key": "philosophies-of-praxis",
+                  "quantity": 16,
+                  "type": "talents"
+                },
+                {
+                  "key": "crystalline-cyst-dust",
+                  "quantity": 12,
+                  "type": "common"
+                },
+                {
+                  "key": "mora",
+                  "quantity": 700000,
+                  "type": "currency"
+                },
+                {
+                  "key": "mudra-of-the-malefic-general",
+                  "quantity": 2,
+                  "type": "talents"
+                },
+                {
+                  "key": "crown-of-insight",
+                  "quantity": 1,
+                  "type": "talents"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "number": 2,
+          "materials": [
+            {
+              "level": 2,
+              "materials": [
+                {
+                  "key": "teachings-of-admonition",
+                  "quantity": 3,
+                  "type": "talents"
+                },
+                {
+                  "key": "fungal-spores",
+                  "quantity": 6,
+                  "type": "common"
+                },
+                {
+                  "key": "mora",
+                  "quantity": 12500,
+                  "type": "currency"
+                }
+              ]
+            },
+            {
+              "level": 3,
+              "materials": [
+                {
+                  "key": "guide-to-ingenuity",
+                  "quantity": 2,
+                  "type": "talents"
+                },
+                {
+                  "key": "luminescent-pollen",
+                  "quantity": 3,
+                  "type": "common"
+                },
+                {
+                  "key": "mora",
+                  "quantity": 17500,
+                  "type": "currency"
+                }
+              ]
+            },
+            {
+              "level": 4,
+              "materials": [
+                {
+                  "key": "guide-to-praxis",
+                  "quantity": 4,
+                  "type": "talents"
+                },
+                {
+                  "key": "luminescent-pollen",
+                  "quantity": 4,
+                  "type": "common"
+                },
+                {
+                  "key": "mora",
+                  "quantity": 25000,
+                  "type": "currency"
+                }
+              ]
+            },
+            {
+              "level": 5,
+              "materials": [
+                {
+                  "key": "guide-to-admonition",
+                  "quantity": 6,
+                  "type": "talents"
+                },
+                {
+                  "key": "luminescent-pollen",
+                  "quantity": 6,
+                  "type": "common"
+                },
+                {
+                  "key": "mora",
+                  "quantity": 30000,
+                  "type": "currency"
+                }
+              ]
+            },
+            {
+              "level": 6,
+              "materials": [
+                {
+                  "key": "guide-to-ingenuity",
+                  "quantity": 9,
+                  "type": "talents"
+                },
+                {
+                  "key": "luminescent-pollen",
+                  "quantity": 9,
+                  "type": "common"
+                },
+                {
+                  "key": "mora",
+                  "quantity": 37500,
+                  "type": "currency"
+                }
+              ]
+            },
+            {
+              "level": 7,
+              "materials": [
+                {
+                  "key": "philosophies-of-praxis",
+                  "quantity": 4,
+                  "type": "talents"
+                },
+                {
+                  "key": "crystalline-cyst-dust",
+                  "quantity": 4,
+                  "type": "common"
+                },
+                {
+                  "key": "mora",
+                  "quantity": 120000,
+                  "type": "currency"
+                },
+                {
+                  "key": "mudra-of-the-malefic-general",
+                  "quantity": 1,
+                  "type": "talents"
+                }
+              ]
+            },
+            {
+              "level": 8,
+              "materials": [
+                {
+                  "key": "philosophies-of-admonition",
+                  "quantity": 6,
+                  "type": "talents"
+                },
+                {
+                  "key": "crystalline-cyst-dust",
+                  "quantity": 6,
+                  "type": "common"
+                },
+                {
+                  "key": "mora",
+                  "quantity": 260000,
+                  "type": "currency"
+                },
+                {
+                  "key": "mudra-of-the-malefic-general",
+                  "quantity": 1,
+                  "type": "talents"
+                }
+              ]
+            },
+            {
+              "level": 9,
+              "materials": [
+                {
+                  "key": "philosophies-of-ingenuity",
+                  "quantity": 12,
+                  "type": "talents"
+                },
+                {
+                  "key": "crystalline-cyst-dust",
+                  "quantity": 9,
+                  "type": "common"
+                },
+                {
+                  "key": "mora",
+                  "quantity": 450000,
+                  "type": "currency"
+                },
+                {
+                  "key": "mudra-of-the-malefic-general",
+                  "quantity": 2,
+                  "type": "talents"
+                }
+              ]
+            },
+            {
+              "level": 10,
+              "materials": [
+                {
+                  "key": "philosophies-of-praxis",
+                  "quantity": 16,
+                  "type": "talents"
+                },
+                {
+                  "key": "crystalline-cyst-dust",
+                  "quantity": 12,
+                  "type": "common"
+                },
+                {
+                  "key": "mora",
+                  "quantity": 700000,
+                  "type": "currency"
+                },
+                {
+                  "key": "mudra-of-the-malefic-general",
+                  "quantity": 2,
+                  "type": "talents"
+                },
+                {
+                  "key": "crown-of-insight",
+                  "quantity": 1,
+                  "type": "talents"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "number": 3,
+          "materials": [
+            {
+              "level": 2,
+              "materials": [
+                {
+                  "key": "teachings-of-admonition",
+                  "quantity": 3,
+                  "type": "talents"
+                },
+                {
+                  "key": "fungal-spores",
+                  "quantity": 6,
+                  "type": "common"
+                },
+                {
+                  "key": "mora",
+                  "quantity": 12500,
+                  "type": "currency"
+                }
+              ]
+            },
+            {
+              "level": 3,
+              "materials": [
+                {
+                  "key": "guide-to-ingenuity",
+                  "quantity": 2,
+                  "type": "talents"
+                },
+                {
+                  "key": "luminescent-pollen",
+                  "quantity": 3,
+                  "type": "common"
+                },
+                {
+                  "key": "mora",
+                  "quantity": 17500,
+                  "type": "currency"
+                }
+              ]
+            },
+            {
+              "level": 4,
+              "materials": [
+                {
+                  "key": "guide-to-praxis",
+                  "quantity": 4,
+                  "type": "talents"
+                },
+                {
+                  "key": "luminescent-pollen",
+                  "quantity": 4,
+                  "type": "common"
+                },
+                {
+                  "key": "mora",
+                  "quantity": 25000,
+                  "type": "currency"
+                }
+              ]
+            },
+            {
+              "level": 5,
+              "materials": [
+                {
+                  "key": "guide-to-admonition",
+                  "quantity": 6,
+                  "type": "talents"
+                },
+                {
+                  "key": "luminescent-pollen",
+                  "quantity": 6,
+                  "type": "common"
+                },
+                {
+                  "key": "mora",
+                  "quantity": 30000,
+                  "type": "currency"
+                }
+              ]
+            },
+            {
+              "level": 6,
+              "materials": [
+                {
+                  "key": "guide-to-ingenuity",
+                  "quantity": 9,
+                  "type": "talents"
+                },
+                {
+                  "key": "luminescent-pollen",
+                  "quantity": 9,
+                  "type": "common"
+                },
+                {
+                  "key": "mora",
+                  "quantity": 37500,
+                  "type": "currency"
+                }
+              ]
+            },
+            {
+              "level": 7,
+              "materials": [
+                {
+                  "key": "philosophies-of-praxis",
+                  "quantity": 4,
+                  "type": "talents"
+                },
+                {
+                  "key": "crystalline-cyst-dust",
+                  "quantity": 4,
+                  "type": "common"
+                },
+                {
+                  "key": "mora",
+                  "quantity": 120000,
+                  "type": "currency"
+                },
+                {
+                  "key": "mudra-of-the-malefic-general",
+                  "quantity": 1,
+                  "type": "talents"
+                }
+              ]
+            },
+            {
+              "level": 8,
+              "materials": [
+                {
+                  "key": "philosophies-of-admonition",
+                  "quantity": 6,
+                  "type": "talents"
+                },
+                {
+                  "key": "crystalline-cyst-dust",
+                  "quantity": 6,
+                  "type": "common"
+                },
+                {
+                  "key": "mora",
+                  "quantity": 260000,
+                  "type": "currency"
+                },
+                {
+                  "key": "mudra-of-the-malefic-general",
+                  "quantity": 1,
+                  "type": "talents"
+                }
+              ]
+            },
+            {
+              "level": 9,
+              "materials": [
+                {
+                  "key": "philosophies-of-ingenuity",
+                  "quantity": 12,
+                  "type": "talents"
+                },
+                {
+                  "key": "crystalline-cyst-dust",
+                  "quantity": 9,
+                  "type": "common"
+                },
+                {
+                  "key": "mora",
+                  "quantity": 450000,
+                  "type": "currency"
+                },
+                {
+                  "key": "mudra-of-the-malefic-general",
+                  "quantity": 2,
+                  "type": "talents"
+                }
+              ]
+            },
+            {
+              "level": 10,
+              "materials": [
+                {
+                  "key": "philosophies-of-praxis",
+                  "quantity": 16,
+                  "type": "talents"
+                },
+                {
+                  "key": "crystalline-cyst-dust",
+                  "quantity": 12,
+                  "type": "common"
+                },
+                {
+                  "key": "mora",
+                  "quantity": 700000,
+                  "type": "currency"
+                },
+                {
+                  "key": "mudra-of-the-malefic-general",
+                  "quantity": 2,
+                  "type": "talents"
+                },
+                {
+                  "key": "crown-of-insight",
+                  "quantity": 1,
+                  "type": "talents"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
       "key": "traveler-electro",
       "rarity": 5,
       "weaponType": "sword",
@@ -47456,7 +49685,7 @@
                 46.97,
                 50.5,
                 55.55,
-                59.09,
+                59.08,
                 63.13,
                 68.68,
                 74.23,
@@ -47517,7 +49746,7 @@
                 82.3,
                 90.53,
                 96.29,
-                102.88,
+                102.87,
                 111.93,
                 120.98,
                 130.03,
@@ -48942,7 +51171,7 @@
                 46.97,
                 50.5,
                 55.55,
-                59.09,
+                59.08,
                 63.13,
                 68.68,
                 74.23,
@@ -49003,7 +51232,7 @@
                 82.3,
                 90.53,
                 96.29,
-                102.88,
+                102.87,
                 111.93,
                 120.98,
                 130.03,
@@ -50568,7 +52797,7 @@
                 23.7,
                 26.07,
                 27.73,
-                29.63,
+                29.62,
                 32.23,
                 34.84,
                 37.45,
@@ -50588,7 +52817,7 @@
                 23.7,
                 26.07,
                 27.73,
-                29.63,
+                29.62,
                 32.23,
                 34.84,
                 37.45,
@@ -50613,7 +52842,7 @@
                 75.85,
                 81.53,
                 87.72,
-                94.82,
+                94.81,
                 103.16,
                 111.5,
                 119.85,
@@ -50688,7 +52917,7 @@
                 58.9,
                 64.79,
                 68.91,
-                73.63,
+                73.62,
                 80.1,
                 86.58,
                 93.06,
@@ -50710,7 +52939,7 @@
                 96.53,
                 103.13,
                 112.2,
-                121.28,
+                121.27,
                 130.35,
                 140.25,
                 151.59,
@@ -50788,7 +53017,7 @@
                 132.13,
                 145.35,
                 154.59,
-                165.17,
+                165.16,
                 179.7,
                 194.23,
                 208.77,
@@ -51637,7 +53866,7 @@
                 48.9,
                 53.79,
                 57.21,
-                61.13,
+                61.12,
                 66.5,
                 71.88,
                 77.26,
@@ -51722,7 +53951,7 @@
                 24.11,
                 25.91,
                 27.88,
-                30.14,
+                30.13,
                 32.79,
                 35.44,
                 38.09,
@@ -51777,9 +54006,9 @@
                 141.5,
                 155.65,
                 165.56,
-                176.88,
+                176.87,
                 192.44,
-                208.01,
+                208.0,
                 223.57,
                 240.55,
                 260.01,
@@ -52757,7 +54986,7 @@
                 46.32,
                 49.14,
                 51.96,
-                54.78,
+                54.77,
                 57.59,
                 60.41,
                 63.23
@@ -52777,7 +55006,7 @@
                 46.32,
                 49.14,
                 51.96,
-                54.78,
+                54.77,
                 57.59,
                 60.41,
                 63.23
@@ -52797,7 +55026,7 @@
                 95.76,
                 101.58,
                 107.4,
-                113.23,
+                113.22,
                 119.05,
                 124.87,
                 130.69
@@ -52877,7 +55106,7 @@
                 120.32,
                 127.64,
                 134.96,
-                142.28,
+                142.27,
                 149.59,
                 156.91,
                 164.23
@@ -53294,7 +55523,7 @@
           "baseAtk": 27.0,
           "baseDef": 62.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 20,
@@ -53302,7 +55531,7 @@
           "baseAtk": 71.0,
           "baseDef": 161.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 20,
@@ -53310,7 +55539,7 @@
           "baseAtk": 94.0,
           "baseDef": 215.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 40,
@@ -53318,7 +55547,7 @@
           "baseAtk": 140.0,
           "baseDef": 321.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 40,
@@ -53326,7 +55555,7 @@
           "baseAtk": 157.0,
           "baseDef": 359.0,
           "isAnAscension": true,
-          "statValue": 9.8
+          "statValue": 4.8
         },
         {
           "level": 50,
@@ -53334,7 +55563,7 @@
           "baseAtk": 181.0,
           "baseDef": 413.0,
           "isAnAscension": false,
-          "statValue": 9.8
+          "statValue": 4.8
         },
         {
           "level": 50,
@@ -53342,15 +55571,15 @@
           "baseAtk": 203.0,
           "baseDef": 464.0,
           "isAnAscension": true,
-          "statValue": 14.6
+          "statValue": 9.6
         },
         {
           "level": 60,
           "baseHp": 8262.0,
           "baseAtk": 227.0,
-          "baseDef": 519.0,
+          "baseDef": 518.0,
           "isAnAscension": false,
-          "statValue": 14.6
+          "statValue": 9.6
         },
         {
           "level": 60,
@@ -53358,7 +55587,7 @@
           "baseAtk": 243.0,
           "baseDef": 556.0,
           "isAnAscension": true,
-          "statValue": 14.6
+          "statValue": 9.6
         },
         {
           "level": 70,
@@ -53366,7 +55595,7 @@
           "baseAtk": 267.0,
           "baseDef": 612.0,
           "isAnAscension": false,
-          "statValue": 14.6
+          "statValue": 9.6
         },
         {
           "level": 70,
@@ -53374,7 +55603,7 @@
           "baseAtk": 284.0,
           "baseDef": 649.0,
           "isAnAscension": true,
-          "statValue": 19.4
+          "statValue": 14.4
         },
         {
           "level": 80,
@@ -53382,7 +55611,7 @@
           "baseAtk": 308.0,
           "baseDef": 705.0,
           "isAnAscension": false,
-          "statValue": 19.4
+          "statValue": 14.4
         },
         {
           "level": 80,
@@ -53390,7 +55619,7 @@
           "baseAtk": 325.0,
           "baseDef": 743.0,
           "isAnAscension": true,
-          "statValue": 24.2
+          "statValue": 19.2
         },
         {
           "level": 90,
@@ -53398,7 +55627,7 @@
           "baseAtk": 349.0,
           "baseDef": 799.0,
           "isAnAscension": false,
-          "statValue": 24.2
+          "statValue": 19.2
         }
       ]
     },
@@ -53971,7 +56200,7 @@
                 109.96,
                 118.85,
                 127.74,
-                137.45
+                137.44
               ]
             },
             {
@@ -54179,6 +56408,66 @@
                 21.0,
                 21.0,
                 21.0
+              ]
+            },
+            {
+              "key": "param6",
+              "values": [
+                2100.0,
+                2100.0,
+                2100.0,
+                2100.0,
+                2100.0,
+                2100.0,
+                2100.0,
+                2100.0,
+                2100.0,
+                2100.0,
+                2100.0,
+                2100.0,
+                2100.0,
+                2100.0,
+                2100.0
+              ]
+            },
+            {
+              "key": "param7",
+              "values": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            {
+              "key": "param8",
+              "values": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
               ]
             }
           ]
@@ -55019,11 +57308,11 @@
               "key": "param6",
               "values": [
                 113.09,
-                122.3,
+                122.29,
                 131.5,
                 144.65,
                 153.86,
-                164.38,
+                164.37,
                 178.84,
                 193.31,
                 207.77,
@@ -55179,27 +57468,27 @@
                 208.08,
                 221.09,
                 234.09,
-                247.1
+                247.09
               ]
             },
             {
               "key": "param3",
               "values": [
-                501.0,
-                551.0,
-                605.0,
-                663.0,
-                726.0,
-                793.0,
-                864.0,
-                939.0,
-                1018.0,
-                1101.0,
-                1189.0,
-                1281.0,
-                1377.0,
-                1477.0,
-                1581.0
+                500.55,
+                550.61,
+                604.85,
+                663.26,
+                725.83,
+                792.58,
+                863.5,
+                938.6,
+                1017.86,
+                1101.3,
+                1188.91,
+                1280.69,
+                1376.64,
+                1476.77,
+                1581.06
               ]
             },
             {
@@ -55225,21 +57514,21 @@
             {
               "key": "param5",
               "values": [
-                589.0,
-                648.0,
-                712.0,
-                780.0,
-                854.0,
-                932.0,
-                1016.0,
-                1104.0,
-                1197.0,
-                1296.0,
-                1399.0,
-                1507.0,
-                1620.0,
-                1737.0,
-                1860.0
+                588.89,
+                647.78,
+                711.59,
+                780.3,
+                853.92,
+                932.45,
+                1015.89,
+                1104.23,
+                1197.49,
+                1295.65,
+                1398.72,
+                1506.69,
+                1619.58,
+                1737.37,
+                1860.07
               ]
             },
             {
@@ -55265,21 +57554,21 @@
             {
               "key": "param7",
               "values": [
-                693.0,
-                762.0,
-                837.0,
+                692.81,
+                762.1,
+                837.16,
                 918.0,
-                1005.0,
+                1004.61,
                 1097.0,
-                1195.0,
-                1299.0,
-                1409.0,
-                1524.0,
-                1646.0,
-                1773.0,
-                1905.0,
-                2044.0,
-                2188.0
+                1195.16,
+                1299.1,
+                1408.81,
+                1524.29,
+                1645.55,
+                1772.58,
+                1905.39,
+                2043.97,
+                2188.32
               ]
             },
             {
@@ -55719,7 +58008,7 @@
         {
           "level": 90,
           "baseHp": 11201.0,
-          "baseAtk": 249.0,
+          "baseAtk": 248.0,
           "baseDef": 799.0,
           "isAnAscension": false,
           "statValue": 24.0
@@ -56266,7 +58555,7 @@
                 132.13,
                 145.35,
                 154.59,
-                165.17,
+                165.16,
                 179.7,
                 194.23,
                 208.77,
@@ -56381,7 +58670,7 @@
                 225.15,
                 237.0,
                 251.81,
-                266.63,
+                266.62,
                 281.44
               ]
             },
@@ -56628,7 +58917,7 @@
           "baseAtk": 26.0,
           "baseDef": 44.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 20,
@@ -56636,7 +58925,7 @@
           "baseAtk": 69.0,
           "baseDef": 115.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 20,
@@ -56644,7 +58933,7 @@
           "baseAtk": 91.0,
           "baseDef": 153.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 40,
@@ -56652,7 +58941,7 @@
           "baseAtk": 137.0,
           "baseDef": 229.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 40,
@@ -56660,7 +58949,7 @@
           "baseAtk": 153.0,
           "baseDef": 256.0,
           "isAnAscension": true,
-          "statValue": 9.8
+          "statValue": 4.8
         },
         {
           "level": 50,
@@ -56668,7 +58957,7 @@
           "baseAtk": 176.0,
           "baseDef": 294.0,
           "isAnAscension": false,
-          "statValue": 9.8
+          "statValue": 4.8
         },
         {
           "level": 50,
@@ -56676,7 +58965,7 @@
           "baseAtk": 197.0,
           "baseDef": 330.0,
           "isAnAscension": true,
-          "statValue": 14.6
+          "statValue": 9.6
         },
         {
           "level": 60,
@@ -56684,7 +58973,7 @@
           "baseAtk": 220.0,
           "baseDef": 369.0,
           "isAnAscension": false,
-          "statValue": 14.6
+          "statValue": 9.6
         },
         {
           "level": 60,
@@ -56692,7 +58981,7 @@
           "baseAtk": 236.0,
           "baseDef": 396.0,
           "isAnAscension": true,
-          "statValue": 14.6
+          "statValue": 9.6
         },
         {
           "level": 70,
@@ -56700,7 +58989,7 @@
           "baseAtk": 260.0,
           "baseDef": 435.0,
           "isAnAscension": false,
-          "statValue": 14.6
+          "statValue": 9.6
         },
         {
           "level": 70,
@@ -56708,7 +58997,7 @@
           "baseAtk": 276.0,
           "baseDef": 462.0,
           "isAnAscension": true,
-          "statValue": 19.4
+          "statValue": 14.4
         },
         {
           "level": 80,
@@ -56716,7 +59005,7 @@
           "baseAtk": 300.0,
           "baseDef": 502.0,
           "isAnAscension": false,
-          "statValue": 19.4
+          "statValue": 14.4
         },
         {
           "level": 80,
@@ -56724,7 +59013,7 @@
           "baseAtk": 316.0,
           "baseDef": 529.0,
           "isAnAscension": true,
-          "statValue": 24.2
+          "statValue": 19.2
         },
         {
           "level": 90,
@@ -56732,7 +59021,7 @@
           "baseAtk": 340.0,
           "baseDef": 569.0,
           "isAnAscension": false,
-          "statValue": 24.2
+          "statValue": 19.2
         }
       ]
     },
@@ -57396,7 +59685,7 @@
                 132.13,
                 145.35,
                 154.59,
-                165.17,
+                165.16,
                 179.7,
                 194.23,
                 208.77,
@@ -57473,6 +59762,26 @@
                 9.0,
                 9.0,
                 9.0
+              ]
+            },
+            {
+              "key": "param3",
+              "values": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
               ]
             }
           ]
@@ -57744,7 +60053,7 @@
         {
           "level": 50,
           "baseHp": 5514.0,
-          "baseAtk": 141.0,
+          "baseAtk": 142.0,
           "baseDef": 346.0,
           "isAnAscension": true,
           "statValue": 12.0
@@ -58407,7 +60716,7 @@
                 132.13,
                 145.35,
                 154.59,
-                165.17,
+                165.16,
                 179.7,
                 194.23,
                 208.77,
@@ -58519,7 +60828,7 @@
                 7.31,
                 7.86,
                 8.4,
-                9.14,
+                9.13,
                 9.68,
                 10.23,
                 10.96,
@@ -58764,7 +61073,7 @@
           "baseAtk": 19.0,
           "baseDef": 43.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 20,
@@ -58772,7 +61081,7 @@
           "baseAtk": 49.0,
           "baseDef": 111.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 20,
@@ -58780,7 +61089,7 @@
           "baseAtk": 66.0,
           "baseDef": 147.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 40,
@@ -58788,7 +61097,7 @@
           "baseAtk": 98.0,
           "baseDef": 220.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 40,
@@ -58796,7 +61105,7 @@
           "baseAtk": 110.0,
           "baseDef": 246.0,
           "isAnAscension": true,
-          "statValue": 9.8
+          "statValue": 4.8
         },
         {
           "level": 50,
@@ -58804,7 +61113,7 @@
           "baseAtk": 126.0,
           "baseDef": 283.0,
           "isAnAscension": false,
-          "statValue": 9.8
+          "statValue": 4.8
         },
         {
           "level": 50,
@@ -58812,7 +61121,7 @@
           "baseAtk": 142.0,
           "baseDef": 318.0,
           "isAnAscension": true,
-          "statValue": 14.6
+          "statValue": 9.6
         },
         {
           "level": 60,
@@ -58820,7 +61129,7 @@
           "baseAtk": 158.0,
           "baseDef": 355.0,
           "isAnAscension": false,
-          "statValue": 14.6
+          "statValue": 9.6
         },
         {
           "level": 60,
@@ -58828,7 +61137,7 @@
           "baseAtk": 170.0,
           "baseDef": 381.0,
           "isAnAscension": true,
-          "statValue": 14.6
+          "statValue": 9.6
         },
         {
           "level": 70,
@@ -58836,7 +61145,7 @@
           "baseAtk": 187.0,
           "baseDef": 419.0,
           "isAnAscension": false,
-          "statValue": 14.6
+          "statValue": 9.6
         },
         {
           "level": 70,
@@ -58844,7 +61153,7 @@
           "baseAtk": 198.0,
           "baseDef": 445.0,
           "isAnAscension": true,
-          "statValue": 19.4
+          "statValue": 14.4
         },
         {
           "level": 80,
@@ -58852,7 +61161,7 @@
           "baseAtk": 215.0,
           "baseDef": 483.0,
           "isAnAscension": false,
-          "statValue": 19.4
+          "statValue": 14.4
         },
         {
           "level": 80,
@@ -58860,7 +61169,7 @@
           "baseAtk": 227.0,
           "baseDef": 509.0,
           "isAnAscension": true,
-          "statValue": 24.2
+          "statValue": 19.2
         },
         {
           "level": 90,
@@ -58868,7 +61177,7 @@
           "baseAtk": 244.0,
           "baseDef": 548.0,
           "isAnAscension": false,
-          "statValue": 24.2
+          "statValue": 19.2
         }
       ]
     },
@@ -59292,9 +61601,9 @@
                 40.5,
                 43.74,
                 46.17,
-                49.01,
+                49.0,
                 52.65,
-                56.29,
+                56.3,
                 59.94,
                 63.59,
                 67.23,
@@ -59368,7 +61677,7 @@
               "key": "param5",
               "values": [
                 46.42,
-                49.59,
+                49.58,
                 52.75,
                 56.97,
                 60.14,
@@ -59377,11 +61686,11 @@
                 73.32,
                 78.07,
                 82.82,
-                87.57,
+                87.56,
                 92.31,
                 97.06,
                 101.81,
-                106.56
+                106.55
               ]
             },
             {
@@ -59418,7 +61727,7 @@
                 178.04,
                 188.87,
                 199.7,
-                210.53,
+                210.52,
                 221.35,
                 232.18,
                 243.01
@@ -59512,7 +61821,7 @@
                 132.13,
                 145.35,
                 154.59,
-                165.17,
+                165.16,
                 179.7,
                 194.23,
                 208.77,
@@ -59844,7 +62153,7 @@
           "baseAtk": 25.0,
           "baseDef": 48.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 20,
@@ -59852,7 +62161,7 @@
           "baseAtk": 65.0,
           "baseDef": 124.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 20,
@@ -59860,7 +62169,7 @@
           "baseAtk": 87.0,
           "baseDef": 165.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 40,
@@ -59868,7 +62177,7 @@
           "baseAtk": 130.0,
           "baseDef": 247.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 40,
@@ -59876,7 +62185,7 @@
           "baseAtk": 145.0,
           "baseDef": 276.0,
           "isAnAscension": true,
-          "statValue": 9.8
+          "statValue": 4.8
         },
         {
           "level": 50,
@@ -59884,7 +62193,7 @@
           "baseAtk": 167.0,
           "baseDef": 318.0,
           "isAnAscension": false,
-          "statValue": 9.8
+          "statValue": 4.8
         },
         {
           "level": 50,
@@ -59892,7 +62201,7 @@
           "baseAtk": 187.0,
           "baseDef": 357.0,
           "isAnAscension": true,
-          "statValue": 14.6
+          "statValue": 9.6
         },
         {
           "level": 60,
@@ -59900,15 +62209,15 @@
           "baseAtk": 209.0,
           "baseDef": 399.0,
           "isAnAscension": false,
-          "statValue": 14.6
+          "statValue": 9.6
         },
         {
           "level": 60,
-          "baseHp": 7075.0,
+          "baseHp": 7076.0,
           "baseAtk": 225.0,
           "baseDef": 428.0,
           "isAnAscension": true,
-          "statValue": 14.6
+          "statValue": 9.6
         },
         {
           "level": 70,
@@ -59916,7 +62225,7 @@
           "baseAtk": 247.0,
           "baseDef": 470.0,
           "isAnAscension": false,
-          "statValue": 14.6
+          "statValue": 9.6
         },
         {
           "level": 70,
@@ -59924,7 +62233,7 @@
           "baseAtk": 262.0,
           "baseDef": 500.0,
           "isAnAscension": true,
-          "statValue": 19.4
+          "statValue": 14.4
         },
         {
           "level": 80,
@@ -59932,7 +62241,7 @@
           "baseAtk": 285.0,
           "baseDef": 542.0,
           "isAnAscension": false,
-          "statValue": 19.4
+          "statValue": 14.4
         },
         {
           "level": 80,
@@ -59940,7 +62249,7 @@
           "baseAtk": 300.0,
           "baseDef": 572.0,
           "isAnAscension": true,
-          "statValue": 24.2
+          "statValue": 19.2
         },
         {
           "level": 90,
@@ -59948,7 +62257,7 @@
           "baseAtk": 323.0,
           "baseDef": 615.0,
           "isAnAscension": false,
-          "statValue": 24.2
+          "statValue": 19.2
         }
       ]
     },
@@ -60452,7 +62761,7 @@
                 27.9,
                 30.69,
                 32.64,
-                34.88,
+                34.87,
                 37.94,
                 41.01,
                 44.08,
@@ -60468,13 +62777,13 @@
               "key": "param6",
               "values": [
                 28.81,
-                31.16,
+                31.15,
                 33.5,
                 36.85,
                 39.2,
-                41.88,
+                41.87,
                 45.56,
-                49.25,
+                49.24,
                 52.93,
                 56.95,
                 60.97,
@@ -60492,7 +62801,7 @@
                 78.3,
                 86.13,
                 91.61,
-                97.88,
+                97.87,
                 106.49,
                 115.1,
                 123.71,
@@ -60512,9 +62821,9 @@
                 141.5,
                 155.65,
                 165.56,
-                176.88,
+                176.87,
                 192.44,
-                208.01,
+                208.0,
                 223.57,
                 240.55,
                 260.01,
@@ -60694,21 +63003,21 @@
             {
               "key": "param5",
               "values": [
-                1155.0,
-                1271.0,
-                1396.0,
+                1155.43,
+                1270.99,
+                1396.18,
                 1531.0,
-                1675.0,
-                1830.0,
-                1993.0,
-                2167.0,
-                2350.0,
-                2542.0,
-                2744.0,
-                2956.0,
-                3178.0,
-                3409.0,
-                3650.0
+                1675.45,
+                1829.53,
+                1993.24,
+                2166.58,
+                2349.54,
+                2542.14,
+                2744.37,
+                2956.23,
+                3177.72,
+                3408.84,
+                3649.59
               ]
             },
             {
@@ -61578,7 +63887,7 @@
                 11.63,
                 12.5,
                 13.75,
-                14.63,
+                14.62,
                 15.63,
                 17.0,
                 18.38,
@@ -61639,7 +63948,7 @@
                 129.1,
                 142.01,
                 151.05,
-                161.38,
+                161.37,
                 175.58,
                 189.78,
                 203.98,
@@ -61821,21 +64130,21 @@
             {
               "key": "param5",
               "values": [
-                1232.0,
-                1356.0,
-                1489.0,
+                1232.41,
+                1355.67,
+                1489.2,
                 1633.0,
-                1787.0,
-                1951.0,
-                2126.0,
-                2311.0,
-                2506.0,
-                2712.0,
-                2927.0,
-                3153.0,
-                3389.0,
-                3636.0,
-                3893.0
+                1787.07,
+                1951.42,
+                2126.03,
+                2310.92,
+                2506.08,
+                2711.51,
+                2927.21,
+                3153.18,
+                3389.43,
+                3635.95,
+                3892.73
               ]
             },
             {

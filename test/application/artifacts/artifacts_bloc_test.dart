@@ -41,7 +41,7 @@ void main() {
       build: () => ArtifactsBloc(_genshinService),
       act: (bloc) => bloc.add(const ArtifactsEvent.init()),
       expect: () {
-        final artifacts = _genshinService.getArtifactsForCard();
+        final artifacts = _genshinService.artifacts.getArtifactsForCard();
         return [
           ArtifactsState.loaded(
             artifacts: artifacts,
@@ -66,7 +66,7 @@ void main() {
         emittedState.map(
           loading: (_) => throw Exception('Invalid artifact state'),
           loaded: (state) {
-            final artifacts = _genshinService.getArtifactsForCard().where((el) => !excludedKeys.contains(el.key)).toList();
+            final artifacts = _genshinService.artifacts.getArtifactsForCard().where((el) => !excludedKeys.contains(el.key)).toList();
             expect(state.artifacts.length, artifacts.length);
             expect(state.collapseNotes, false);
             expect(state.rarity, 0);
@@ -85,10 +85,12 @@ void main() {
     blocTest<ArtifactsBloc, ArtifactsState>(
       'should return only one item',
       build: () => ArtifactsBloc(_genshinService),
-      act: (bloc) => bloc..add(const ArtifactsEvent.init())..add(const ArtifactsEvent.searchChanged(search: wandererSearch)),
+      act: (bloc) => bloc
+        ..add(const ArtifactsEvent.init())
+        ..add(const ArtifactsEvent.searchChanged(search: wandererSearch)),
       skip: 1,
       expect: () {
-        final artifacts = _genshinService.getArtifactsForCard().where((el) => el.key == wanderersKey).toList();
+        final artifacts = _genshinService.artifacts.getArtifactsForCard().where((el) => el.key == wanderersKey).toList();
         return [
           ArtifactsState.loaded(
             artifacts: artifacts,
@@ -108,7 +110,9 @@ void main() {
     blocTest<ArtifactsBloc, ArtifactsState>(
       'should not return any item',
       build: () => ArtifactsBloc(_genshinService),
-      act: (bloc) => bloc..add(const ArtifactsEvent.init())..add(const ArtifactsEvent.searchChanged(search: 'Keqing')),
+      act: (bloc) => bloc
+        ..add(const ArtifactsEvent.init())
+        ..add(const ArtifactsEvent.searchChanged(search: 'Keqing')),
       skip: 1,
       expect: () => const [
         ArtifactsState.loaded(
@@ -140,7 +144,7 @@ void main() {
         ..add(const ArtifactsEvent.applyFilterChanges()),
       skip: 6,
       expect: () {
-        final artifacts = _genshinService.getArtifactsForCard().where((el) => el.key == wanderersKey).toList();
+        final artifacts = _genshinService.artifacts.getArtifactsForCard().where((el) => el.key == wanderersKey).toList();
         return [
           ArtifactsState.loaded(
             artifacts: artifacts,
@@ -168,7 +172,7 @@ void main() {
         ..add(const ArtifactsEvent.cancelChanges()),
       skip: 4,
       expect: () {
-        final artifacts = _genshinService.getArtifactsForCard().toList();
+        final artifacts = _genshinService.artifacts.getArtifactsForCard().toList();
         return [
           ArtifactsState.loaded(
             artifacts: artifacts,
@@ -196,7 +200,7 @@ void main() {
         ..add(const ArtifactsEvent.resetFilters()),
       skip: 5,
       expect: () {
-        final artifacts = _genshinService.getArtifactsForCard();
+        final artifacts = _genshinService.artifacts.getArtifactsForCard();
         return [
           ArtifactsState.loaded(
             artifacts: artifacts,

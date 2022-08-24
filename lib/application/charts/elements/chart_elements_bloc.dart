@@ -15,7 +15,7 @@ class ChartElementsBloc extends Bloc<ChartElementsEvent, ChartElementsState> {
   final List<double> versions;
 
   ChartElementsBloc(this._genshinService)
-      : versions = _genshinService.getBannerHistoryVersions(SortDirectionType.asc),
+      : versions = _genshinService.bannerHistory.getBannerHistoryVersions(SortDirectionType.asc),
         super(const ChartElementsState.loading());
 
   @override
@@ -63,7 +63,7 @@ class ChartElementsBloc extends Bloc<ChartElementsEvent, ChartElementsState> {
       lastVersion = versions.last;
     }
 
-    final elements = _genshinService.getElementsForCharts(firstVersion, lastVersion);
+    final elements = _genshinService.bannerHistory.getElementsForCharts(firstVersion, lastVersion);
     return ChartElementsState.loaded(
       maxNumberOfColumns: maxNumberOfColumns,
       firstVersion: firstVersion,
@@ -140,7 +140,7 @@ class ChartElementsBloc extends Bloc<ChartElementsEvent, ChartElementsState> {
 
     assert(newFirstVersion != newLastVersion, 'New and last version cannot be equal');
 
-    final elements = _genshinService.getElementsForCharts(newFirstVersion, newLastVersion);
+    final elements = _genshinService.bannerHistory.getElementsForCharts(newFirstVersion, newLastVersion);
     return state.copyWith(
       elements: elements,
       filteredElements: _getFilteredElements(elements, state.selectedElementTypes),
@@ -155,9 +155,9 @@ class ChartElementsBloc extends Bloc<ChartElementsEvent, ChartElementsState> {
 
   bool _canGoToFirstPage(double version) => version > versions.first;
 
-  bool _canGoToNextPage(double version) => version + gameVersionIncrementsBy <= versions.last;
+  bool _canGoToNextPage(double version) => (version + gameVersionIncrementsBy).truncateToDecimalPlaces() <= versions.last;
 
-  bool _canGoToPreviousPage(double version) => version - gameVersionIncrementsBy >= versions.first;
+  bool _canGoToPreviousPage(double version) => (version - gameVersionIncrementsBy).truncateToDecimalPlaces() >= versions.first;
 
   bool _canGoToLastPage(double version) => version < versions.last;
 }
