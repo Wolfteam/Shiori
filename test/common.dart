@@ -48,7 +48,7 @@ Future<bool> _assetExists(String path) async {
 
 void checkAsset(String path) {
   expect(path, allOf([isNotEmpty, isNotNull]));
-  expect(_assetExists(path), completion(equals(true)));
+  expect(_assetExists(path), completion(equals(true)), reason: 'Asset = $path does not exist');
 }
 
 void checkItemsCommon(List<ItemCommon> items, {bool checkEmpty = true}) {

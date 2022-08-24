@@ -150,7 +150,15 @@ void main() {
       final localeService = _getLocaleService(AppLanguageType.english);
       final characters = service.characters.getCharactersForCard();
       for (final character in characters) {
-        final travelerKeys = ['traveler-geo', 'traveler-electro', 'traveler-anemo', 'traveler-hydro', 'traveler-pyro', 'traveler-cryo'];
+        final travelerKeys = [
+          'traveler-geo',
+          'traveler-electro',
+          'traveler-anemo',
+          'traveler-hydro',
+          'traveler-pyro',
+          'traveler-cryo',
+          'traveler-dendro',
+        ];
         final detail = service.characters.getCharacter(character.key);
         final isTraveler = travelerKeys.contains(character.key);
         checkKey(detail.key);
@@ -391,7 +399,7 @@ void main() {
         final detail = service.artifacts.getArtifact(artifact.key);
         checkKey(detail.key);
         checkAsset(detail.fullImagePath);
-        expect(detail.minRarity, inInclusiveRange(2, 4));
+        expect(detail.minRarity, inInclusiveRange(1, 4));
         expect(detail.maxRarity, inInclusiveRange(3, 5));
       }
     });
