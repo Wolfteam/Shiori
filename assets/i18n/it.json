@@ -8728,9 +8728,9 @@
     {
       "key": "kagotsurube-isshin",
       "name": "Kagotsurube Isshin",
-      "description": "This famed blade was born in a nation to the far north. But in the name of \"Isshin,\" it was stained with many a dark deed on its home-bound journey.",
+      "description": "Questa celebre lama è nata in una nazione del lontano nord. Ma nel nome di \"Isshin,\" è stata macchiata da tanti oscuri atti nel suo viaggio per tornare a casa.",
       "refinements": [
-        "When a Normal, Charged, or Plunging Attack hits an opponent, it will whip up a Hewing Gale, dealing AoE DMG equal to 180% of ATK and increasing ATK by 15% for 8s. This effect can be triggered once every 8s."
+        "Quando un Attacco Normale, Caricato o In Picchiata colpisce un nemico, creerà un Hewing Gale, infliggendo AoE DMG uguale a 180% dell’ATK e aumentando l’ATK del 15% per 8s. Questo effetto può essere attivato una volta ogni 8s."
       ]
     },
     {
