@@ -1081,7 +1081,7 @@ void main() {
       final service = _getService();
       await service.init(AppLanguageType.english);
       final versions = service.bannerHistory.getBannerHistoryVersions(SortDirectionType.asc);
-      final expectedLength = ElementType.values.length - 1;
+      final expectedLength = ElementType.values.length;
 
       final elements = service.bannerHistory.getElementsForCharts(versions.first, versions.last);
       expect(elements.length, expectedLength);
