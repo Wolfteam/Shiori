@@ -3518,7 +3518,7 @@
       "key": "kuki-shinobu",
       "name": "Kuki Shinobu",
       "title": "Mender of Tribulations",
-      "description": "The capable and reliable deputy leader of the \"Arataki Gang.\" Please note: capable and reliable are not appellations for the \"Arataki Gang,\" but for their deputy leader in specific.",
+      "description": "La sempre capace e affidabile vice capo dell’ \"Arataki Gang.\" Nota bene: capace e affidabile non sono appellativi per l’ \"Arataki Gang,\" ma solo per la loro vice capo.",
       "skills": [
         {
           "key": "s1",
@@ -3526,63 +3526,63 @@
           "description": "",
           "abilities": [
             {
-              "name": "Normal Attack",
-              "description": "Perform up to 4 rapid strikes.\r\n",
+              "name": "Attacco Normale",
+              "description": "Esegue fino a 4 fendenti rapidi.\r\n",
               "descriptions": []
             },
             {
-              "name": "Charged Attack",
-              "description": "Consumes a certain amount of Stamina to unleash 2 rapid sword strikes.\r\n",
+              "name": "Attacco Caricato",
+              "description": "Consuma una certa quantità di Stamina per eseguire 2 fendenti rapidi.\r\n",
               "descriptions": []
             },
             {
-              "name": "Plunging Attack",
-              "description": "Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
+              "name": "Attacco in Picchiata",
+              "description": "Si lancia in picchiata da mezz'aria per colpire il terreno sottostante e infliggere AoE DMG all'impatto.",
               "descriptions": []
             }
           ],
           "stats": [
-            "1-Hit DMG|{param1}%",
-            "2-Hit DMG|{param2}%",
-            "3-Hit DMG|{param3}%",
-            "4-Hit DMG|{param4}%",
-            "Charged Attack DMG|{param5}% + {param6}%",
-            "Charged Attack Stamina Cost|{param7}",
-            "Plunge DMG|{param8}%",
-            "Low/High Plunge DMG|{param9}% / {param10}%"
+            "DMG 1° Colpo|{param1}",
+            "DMG 2° Colpo|{param2}",
+            "DMG 3° Colpo|{param3}",
+            "DMG 4° Colpo|{param4}",
+            "DMG Attacco Caricato|{param5} + {param6}",
+            "Costo in Stamina Attacco Caricato|{param7}",
+            "DMG Attacco in Picchiata|{param8}",
+            "DMG Att. in Picchiata per altezze Basse/Elevate|{param9} / {param10}"
           ]
         },
         {
           "key": "s2",
           "title": "Sanctifying Ring",
-          "description": "Creates a Grass Ring of Sanctification at the cost of part of her HP, dealing Electro DMG to nearby opponents.\r\n",
+          "description": "Al costo di parte dei suoi HP crea un \"Grass Ring of Sanctification\" e alla comparsa infligge Electro DMG ai nemici vicini.\r\n",
           "abilities": [
             {
               "name": "Grass Ring of Sanctification",
-              "description": "Follows your current active character around. Deals Electro DMG to nearby opponents every 1.5s and restores HP for active character(s) within the ring's AoE based on Kuki Shinobu's Max HP.\r\nThe HP consumption from using this skill can only bring her to 20% HP.\r\n",
+              "description": "Orbita attorno al personaggio in uso. Infligge Electro DMG ai nemici vicini e in base ai Max HP di Kuki Shinobu rigenera HP per i personaggi che si trovano all’interno dell’AoE dell’anello.\r\nIl consumo dei suoi HP può portarla ad avere non meno del 20% di HP totali.\r\n",
               "descriptions": []
             }
           ],
           "stats": [
-            "Skill DMG|{param1}%",
+            "Skill DMG|{param1}",
             "Grass Ring of Sanctification Healing|{param2}% Max HP + {param3}",
-            "Grass Ring of Sanctification DMG|{param4}%",
-            "Activation Cost|{param5}% Current HP",
-            "Duration|{param6}s",
-            "CD|{param7}s"
+            "Grass Ring of Sanctification DMG|{param4}",
+            "Costo di attivazione in HP|{param5}% degli HP attuali",
+            "Durata|{param6}s",
+            "CD (Tempo Ricarica)|{param7}s"
           ]
         },
         {
           "key": "s3",
           "title": "Gyoei Narukami Kariyama Rite",
-          "description": "Stabs an evil-excoriating blade into the ground, creating a field that cleanses the area of all that is foul, dealing continuous Electro DMG to opponents within its AoE based on Shinobu's Max HP.\r\nIf Shinobu's HP is less than or equal to 50% when this skill is used, the field will last longer.\r\n",
+          "description": "Affonda nel terreno una malvagia lama escoriante, creando un campo che purifica l’area dalle sue corruzioni infliggendo nel suo AoE continui Electro DMG che scalano in base ai Max HP di Shinobu.\r\nAll’attivazione della Skill, se Shinobu ha HP </=  50%, il campo durerà più a lungo.\r\n",
           "abilities": [],
           "stats": [
-            "Single Instance DMG|{param1}% Max HP",
-            "Total DMG|{param2}% / {param3}% Max HP",
-            "Duration|{param4}s / {param5}s",
-            "CD|{param6}s",
-            "Energy Cost|{param7}"
+            "DMG singola istanza|{param1} Max HP",
+            "DMG Totale|{param2} / {param3} Max HP",
+            "Durata|{param4}s / {param5}s",
+            "CD (Tempo Ricarica)|{param6}s",
+            "Costo Energy|{param7}"
           ]
         }
       ],
@@ -3590,22 +3590,22 @@
         {
           "key": "p1",
           "title": "Protracted Prayers",
-          "description": "Gains 25% more rewards when dispatched on an Inazuma Expedition for 20 hours.\r\n",
+          "description": "Guadagna il 25% in più di ricompense quando inviata in una spedizione da 20 ore a Inazuma.\r\n",
           "descriptions": []
         },
         {
           "key": "p2",
           "title": "Breaking Free",
-          "description": "When Shinobu's HP is not higher than 50%, her Healing Bonus is increased by 15%.\r\n",
+          "description": "Quando Shinobu ha HP < 50%, il suo Healing Bonus aumenta del 15%.\r\n",
           "descriptions": []
         },
         {
           "key": "p3",
           "title": "Heart's Repose",
-          "description": "Sanctifying Ring's abilities will be boosted based on Shinobu's Elemental Mastery:\r\n",
+          "description": "Potenzia gli effetti di Sanctifying Ring in base all’Elemental Mastery di Shinobu:\r\n",
           "descriptions": [
-            "Healing amount will be increased by 75% of Elemental Mastery.",
-            "DMG dealt is increased by 25% of Elemental Mastery."
+            "La quantità di Healing aumenta del 75% dell’Elemental Mastery.",
+            "Il DMG inflitto aumenta del 25% dell’Elemental Mastery."
           ]
         }
       ],
@@ -3613,13 +3613,13 @@
         {
           "key": "c1",
           "title": "To Cloister Compassion",
-          "description": "Gyoei Narukami Kariyama Rite's AoE is increased by 50%.\r\n",
+          "description": "L’AoE di Gyoei Narukami Kariyama Rite aumenta del 50%.\r\n",
           "descriptions": []
         },
         {
           "key": "c2",
           "title": "To Forsake Fortune",
-          "description": "Grass Ring of Sanctification's duration is increased by 3s.\r\n",
+          "description": "La durata di Grass Ring of Sanctification aumenta di 3s.\r\n",
           "descriptions": []
         },
         {
@@ -3637,13 +3637,13 @@
         {
           "key": "c5",
           "title": "To Cease Courtesies",
-          "description": "Increases the Level of Gyoei Narukami Kariyama Rite by 3.\r\nMaximum upgrade level is 15.\r\n",
+          "description": "Aumenta di 3 il livello di Gyoei Narukami Kariyama Rite.\r\nOra il massimo livello di upgrade è 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c6",
           "title": "To Ward Weakness",
-          "description": "When Kuki Shinobu takes lethal DMG, this instance of DMG will not take her down. This effect will automatically trigger when her HP reaches 1 and will trigger once every 60s.\r\nWhen Shinobu's HP drops below 25%, she will gain 150 Elemental Mastery for 15s. This effect will trigger once every 60s.\r\n",
+          "description": "Kuki Shinobu non muore quando riceve un danno potenzialmente letale. L’effetto si attiva automaticamente quando gli rimane 1 HP e solo una volta ogni 60s.\r\nQuando Shinobu ha HP < 25% ottiene 150 Elemental Mastery per 15s. Questo effetto può avvenire solo una volta ogni 60s.\r\n",
           "descriptions": []
         }
       ]
@@ -5289,7 +5289,7 @@
       "key": "shikanoin-heizou",
       "name": "Shikanoin Heizou",
       "title": "Analytical Harmony",
-      "description": "A young prodigy detective from the Tenryou Commission. His senses are sharp and his thoughts are clear.",
+      "description": "Un giovane detective prodigio del Tenryou Commission. Ha sensi acuti e i suoi pensieri sono chiari.",
       "skills": [
         {
           "key": "s1",
@@ -5297,31 +5297,31 @@
           "description": "",
           "abilities": [
             {
-              "name": "Normal Attack",
-              "description": "Performs up to 5 fisticuffs empowered by a mighty wind, dealing Anemo DMG.\r\n",
+              "name": "Attacco Normale",
+              "description": "Assesta fino a 5 pugni potenziati da un potente vento, infliggendo Anemo DMG.\r\n",
               "descriptions": []
             },
             {
-              "name": "Charged Attack",
-              "description": "Consumes a certain amount of Stamina and performs a sweeping kick that deals Anemo DMG.\r\n",
+              "name": "Attacco Caricato",
+              "description": "Consuma una certa quantità di Stamina per eseguire un calcio rovesciato che infligge Anemo DMG.\r\n",
               "descriptions": []
             },
             {
-              "name": "Plunging Attack",
-              "description": "Calling upon the surging wind, Heizou plunges towards the ground from mid-air, damaging all opponents in his path. Deals AoE Anemo DMG upon impact with the ground.",
+              "name": "Attacco in Picchiata",
+              "description": "Richiamando a sé venti impetuosi, Heizou si lancia in picchiata da mezz'aria verso il terreno e assesta AoE Anemo DMG all'impatto.",
               "descriptions": []
             }
           ],
           "stats": [
-            "1-Hit DMG|{param1}%",
-            "2-Hit DMG|{param2}%",
-            "3-Hit DMG|{param3}%",
-            "4-Hit DMG|{param4}% + {param5}% + {param6}%",
-            "5-Hit DMG|{param7}%",
-            "Charged Attack|{param8}%",
-            "Charged Attack Stamina Cost|{param9}",
-            "Plunge DMG|{param10}%",
-            "Low/High Plunge DMG|{param11}% / {param12}%"
+            "DMG 1° Colpo|{param1}%",
+            "DMG 2° Colpo|{param2}%",
+            "DMG 3° Colpo|{param3}%",
+            "DMG 4° Colpo|{param4}% + {param5}% + {param6}%",
+            "DMG 5° Colpo|{param7}%",
+            "DMG Attacco Caricato|{param8}%",
+            "Costo in Stamina Attacco Caricato|{param9}",
+            "DMG Attacco in Picchiata|{param10}%",
+            "DMG Att. in Picchiata per altezze Basse/Elevate|{param11}% / {param12}%"
           ]
         },
         {
@@ -5330,18 +5330,18 @@
           "description": "",
           "abilities": [
             {
-              "name": "Tap",
-              "description": "Wields the swift winds to launch a Heartstopper Strike that deals Anemo DMG.\r\n",
+              "name": "Premi",
+              "description": "Incanala rapidi venti per assestare un Heartstopper Strike che infligge Anemo DMG.\r\n",
               "descriptions": []
             },
             {
-              "name": "Hold",
-              "description": "Charges energy to unleash an even stronger blow. He will obtain the Declension effect while charging, which will increase the power of the Heartstopper Strike. When the skill button is released or the skill finishes charging, he will strike forward, dealing Anemo DMG.\r\n",
+              "name": "Tieni Premuto",
+              "description": "Carica energia per assestare un pugno molto più potente. Mentre carica il colpo ottiene l’effetto Declension che aumenta la potenza di Heartstopper Strike. Quando si rilascia il bottone della Skill o il colpo finisce di caricare, Heizou colpisce in avanti infliggendo Anemo DMG.\r\n",
               "descriptions": []
             },
             {
               "name": "Declension",
-              "description": "Increases the power of the next Heartstopper Strike. Max 4 stacks.\r\nWhen you possess 4 Declension stacks, the Conviction effect will be produced, which will cause the next Hearstopper Strike to be even stronger and have a larger AoE.\r\n",
+              "description": "Aumenta la forza del successivo Heartstopper Strike. Massimo 4 stacks.\r\nDopo 4 Declension stacks si ottiene l’effetto Conviction che potenzia ulteriormente la forza e l’AoE del successivo Hearstopper.\r\n",
               "descriptions": []
             }
           ],
@@ -5349,20 +5349,20 @@
             "Skill DMG|{param1}%",
             "Declension DMG Bonus|{param2}%/stack",
             "Conviction DMG Bonus|{param3}%",
-            "Declension Duration|{param4}s",
-            "CD|{param5}s"
+            "Durata Declension|{param4}s",
+            "CD (Tempo Ricarica)|{param5}s"
           ]
         },
         {
           "key": "s3",
           "title": "Windmuster Kick",
-          "description": "Leaps into the air and uses the Fudou Style Vacuum Slugger and kicks his opponent. The Vacuum Slugger will explode upon hit and create an Arresting Windtunnel that pulls in nearby objects and opponents, dealing AoE Anemo DMG.\r\nWhen Vacuum Slugger hits opponents affected by Hydro/Pyro/Cryo/Electro, these opponents will be afflicted with Windmuster Iris. This Windmuster Iris will explode after a moment and dissipate, dealing AoE DMG of the corresponding aforementioned elemental type.\r\nVacuum Slugger can afflict a maximum of 4 opponents with the Windmuster Iris. A single opponent cannot be under the effect of Windmuster Irises of different elements at the same time.\r\n",
+          "description": "Balza in aria e usa il Fudou Style Vacuum Slugger per calciare i nemici. Il Vacuum Slugger esplode quando colpisce nemici e crea un Arresting Windtunnel che attrae oggetti e nemici al suo interno, infliggendo AoE Anemo DMG.\r\nQuando il Vacuum Slugger colpisce nemici affetti da Hydro/Pyro/Cryo/Electro, gli verranno applicati un Windmuster Iris. Questo Windmuster Iris esploderà dissipandosi istantaneamente, infliggendo AoE DMG dello stesso elemento con cui il Vacuum Slugger è entrato in contatto.\r\nVacuum Slugger può applicare Windmuster Iris a un massimo di 4 nemici. Un singolo nemico non può subire gli effetti di molteplici Windmuster Irises di diversi elementi allo stesso tempo.\r\n",
           "abilities": [],
           "stats": [
             "Fudou Style Vacuum Slugger DMG|{param1}%",
             "Windmuster Iris DMG|{param2}%",
-            "CD|{param3}s",
-            "Energy Cost|{param4}"
+            "CD (Tempo Ricarica)|{param3}s",
+            "Costo Energy|{param4}"
           ]
         }
       ],
@@ -5370,19 +5370,19 @@
         {
           "key": "p1",
           "title": "Pre-Existing Guilt",
-          "description": "Decreases sprinting Stamina consumption for your own party members by 20%.\r\nNot stackable with Passive Talents that provide the exact same effects.\r\n",
+          "description": "Riduce del 20% il consumo di Stamina di tutti i tuoi personaggi mentre si corre.\r\nL’effetto non è sommabile alle altre Skill Passive che forniscono lo stesso effetto.\r\n",
           "descriptions": []
         },
         {
           "key": "p2",
           "title": "Paradoxical Practice",
-          "description": "When Shikanoin Heizou activates a Swirl reaction while on the field, he will gain 1 Declension stack for Heartstopper Strike. This effect can be triggered once every 0.1s.\r\n",
+          "description": "Quando Shikanoin Heizou innesca una reazione Swirl, lui otterrà 1 Declension stack per ogni Heartstopper Strike. Questo effetto può avvenire solo una volta ogni 0.1s.\r\n",
           "descriptions": []
         },
         {
           "key": "p3",
           "title": "Penetrative Reasoning",
-          "description": "After Shikanoin Heizou's Heartstopper Strike hits an opponent, increases all party members' (excluding Shikanoin Heizou) Elemental Mastery by 80 for 10s.\r\n",
+          "description": "Quando il Shikanoin Heartstopper Strike di Heizou colpise un nemico, tutti i membri del party (escluso Shikanoin Heizou) ricevono Elemental Mastery +80 per 10s.\r\n",
           "descriptions": []
         }
       ],
@@ -5390,37 +5390,37 @@
         {
           "key": "c1",
           "title": "Named Juvenile Casebook",
-          "description": "For 5s after Shikanoin Heizou takes the field, his Normal Attack SPD is increased by 15%. He also gains 1 Declension stack for Heartstopper Strike. This effect can be triggered once every 10s.\r\n",
+          "description": "Ogni volta che Shikanoin Heizou scende in campo, per i primi 5s il suo Normal Attack SPD aumenta del 15%. Inoltre ottiene 1 Declension stack per ogni Heartstopper Strike. Questo effetto può avvenire una volta ogni 10s.\r\n",
           "descriptions": []
         },
         {
           "key": "c2",
           "title": "Investigative Collection",
-          "description": "The pull effect of the Arresting Windtunnel created by Windmuster Kick is enhanced, and its duration is increased to 1s.\r\n",
+          "description": "L’effetto di attrazione dell’ Arresting Windtunnel creato da Windmuster Kick è potenziato e la sua durata aumenta di 1s.\r\n",
           "descriptions": []
         },
         {
           "key": "c3",
           "title": "Esoteric Puzzle Book",
-          "description": "Increases the Level of Heartstopper Strike by 3.\r\nMaximum upgrade level is 15.\r\n",
+          "description": "Aumenta di 3 il livello di Heartstopper Strike.\r\nOra il livello massimo di upgrade è 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c4",
           "title": "Tome of Lies",
-          "description": "The first Windmuster Iris explosion in each Windmuster Kick will regenerate 9 Elemental Energy for Shikanoin Heizou. Every subsequent explosion in that Windmuster Kick will each regenerate an additional 1.5 Energy for Heizou.\r\nOne Windmuster Kick can regenerate a total of 13.5 Energy for Heizou in this manner.\r\n",
+          "description": "La prima esplosione di un Windmuster Iris per ogni Windmuster Kick rigenererà 9 Elemental Energy per Shikanoin Heizou. Tutte le successive esplosioni dello stesso Windmuster Kick rigenereranno ciascuno un ulteriore 1.5 Energy per Heizou.\r\nUn Windmuster Kick può rigenerare un massimo di 13.5 Energy per Heizou.\r\n",
           "descriptions": []
         },
         {
           "key": "c5",
           "title": "Secret Archive",
-          "description": "Increases the Level of Windmuster Kick by 3.\r\nMaximum upgrade level is 15.\r\n",
+          "description": "Aumenta di 3 il livello di Windmuster Kick.\r\nOra il livello massimo di upgrade è 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c6",
           "title": "Curious Casefiles",
-          "description": "Each Declension stack will increase the CRIT Rate of the Heartstopper Strike unleashed by 4%. When Heizou possesses Conviction, this Heartstopper Strike's CRIT DMG is increased by 32%.\r\n",
+          "description": "Ciascuna Declension stack aumenta del 4% il CRIT Rate di Heartstopper Strike. Quando Heizou possiede l’effetto Conviction, questo Heartstopper Strike ha CRIT DMG +32%.\r\n",
           "descriptions": []
         }
       ]
@@ -7501,7 +7501,7 @@
       "key": "yelan",
       "name": "Yelan",
       "title": "Valley Orchid",
-      "description": "A mysterious person who claims to work for the Ministry of Civil Affairs, but is a \"non-entity\" on the Ministry of Civil Affairs' list.",
+      "description": "Una persona misteriosa che dice di lavorare per il Ministry of Civil Affairs, ma è una \"non-entità\" sulla lista del Ministry of Civil Affairs.",
       "skills": [
         {
           "key": "s1",
@@ -7509,80 +7509,80 @@
           "description": "",
           "abilities": [
             {
-              "name": "Normal Attack",
-              "description": "Performs up to 4 consecutive shots with a bow.\r\n",
+              "name": "Attacco Normale",
+              "description": "Esegue fino a 4 tiri consecutivi con l’arco.\r\n",
               "descriptions": []
             },
             {
-              "name": "Charged Attack",
-              "description": "Perform a more precise Aimed Shot with increased DMG.\r\nWhile aiming, flowing water will accumulate on the arrowhead. A fully charged torrential arrow will deal Hydro DMG.\r\n",
+              "name": "Attacco Caricato",
+              "description": "Esegue un Tiro Mirato più preciso con un DMG aumentato.\r\nMentre mira, acqua scorrevole si accumulerà sulla punta della freccia. Una freccia torrenziale completamente carica infliggerà Hydro DMG.\r\n",
               "descriptions": []
             },
             {
               "name": "Breakthrough",
-              "description": "Yelan will enter a \"Breakthrough\" state after spending 5s out of combat, which will cause her next Charged Aimed Shot to have 80% decreased charge time, and once charged, she can fire a \"Breakthrough Barb\" that will deal AoE Hydro DMG based on Yelan's Max HP.\r\n",
+              "description": "Yelan entrerà nello stato \"Breakthrough\" dopo aver speso 5s fuori dal combattimento,che farà sì che il  suo prossimo Attacco Caricato avrà un tempo di ricarica inferiore dell’80%, e una volta caricato, può scoccare un \"Breakthrough Barb\" che infliggerà AoE Hydro DMG in base agli HP Max di Yelan.\r\n",
               "descriptions": []
             },
             {
-              "name": "Plunging Attack",
-              "description": "Fires off a shower of arrows in mid-air before falling and striking the ground, dealing AoE DMG upon impact.",
+              "name": "Attacco in Picchiata",
+              "description": "Scocca un fiume di frecce a mezz’aria prima di cadere e colpire il terreno, infliggendo AoE DMG all’impatto.",
               "descriptions": []
             }
           ],
           "stats": [
-            "1-Hit DMG|{param1}%",
-            "2-Hit DMG|{param2}%",
-            "3-Hit DMG|{param3}%",
-            "4-Hit DMG|{param4}% + {param5}%",
-            "Aimed Shot|{param6}%",
-            "Fully-Charged Aimed Shot|{param7}%",
+            "DMG 1° Colpo|{param1}%",
+            "DMG 2° Colpo|{param2}%",
+            "DMG 3° Colpo|{param3}%",
+            "DMG 4° Colpo|{param4}% + {param5}%",
+            "Colpo Caricato|{param6}%",
+            "Colpo Caricato Completamente Caricato|{param7}%",
             "Breakthrough Barb DMG|{param8}% Max HP",
-            "Plunge DMG|{param9}%",
-            "Low/High Plunge DMG|{param10}% / {param11}%"
+            "DMG Attacco in Picchiata|{param9}%",
+            "DMG Att. in Picchiata per altezze Basse/Elevate|{param10}% / {param11}%"
           ]
         },
         {
           "key": "s2",
           "title": "Lingering Lifeline",
-          "description": "Fires off a Lifeline that allows her to move rapidly, entangling and marking opponents along its path.\r\nWhen this rapid movement ends, the Lifeline will explode, dealing Hydro DMG to the marked opponents based on Yelan's Max HP.\r\n",
+          "description": "Spara una Lifeline che le permette di muoversi rapidamente, intrappolando e marchiando nemici lungo la via.\r\nQuando il suo movimento rapido finisce, la Lifeline esploderà, infliggendo Hydro DMG ai nemici marchiati in base agli HP Max di Yelan.\r\n",
           "abilities": [
             {
-              "name": "Tap",
-              "description": "Moves a certain distance forward swiftly.\r\n",
+              "name": "Premi",
+              "description": "Si muove avanti rapidamente per una certa distanza.\r\n",
               "descriptions": []
             },
             {
-              "name": "Hold",
-              "description": "Engages in continuous, swift movement, during which Yelan's resistance to interruption is increased.\r\nDuring this time, Yelan can control this rapid movement and end it by using this Skill again.\r\nAdditionally, each opponent marked by the Lifeline when it explodes grants Yelan a 34% chance to reset her Breakthrough state.\r\n",
+              "name": "Tieni Premuto",
+              "description": "Ingaggia in un continuo, rapido movimento, durante il quale la resistenza all’interruzione di Yelan è aumentata.\r\nDurante questo periodo, Yelan può controllare questo movimento rapido e terminarlo usando di nuovo questa Skill.\r\nIn più, ogni nemico marchiato dalla Lifeline quando esplode garantendo a Yelan una probabilità del 34%di resettare il suo stato Breakthrough.\r\n",
               "descriptions": []
             }
           ],
           "stats": [
             "Skill DMG|{param1}% Max HP",
-            "Max Duration (Hold)|{param2}s",
+            "Durata Max (Tieni Premuto)|{param2}s",
             "CD|{param3}s"
           ]
         },
         {
           "key": "s3",
           "title": "Depth-Clarion Dice",
-          "description": "Deals AoE Hydro DMG and creates an \"Exquisite Throw,\" which aids her in battle.\r\n",
+          "description": "Infligge AoE Hydro DMG e crea un \"Exquisite Throw,\" che la aiuta in battaglia.\r\n",
           "abilities": [
             {
               "name": "Exquisite Throw",
-              "description": "Follows the character around and will initiate a coordinated attack under the following circumstances, dealing Hydro DMG based on Yelan's Max HP:\r\n",
+              "description": "Segue il personaggio in giro e inizia un attacco coordinato nelle seguenti condizioni, infliggendo Hydro DMG basati sui Max HP di Yelan:\r\n",
               "descriptions": [
-                "Can occur once every second when your active character uses a Normal Attack.",
-                "Will occur each time Yelan's Lifeline explodes and hits opponents."
+                "Può avvenire una volta al secondo quando il tuo personaggio attivo usa un Attacco Normale.",
+                "Avviene ogni volta che la Lifeline di Yelan esplode e colpisce dei nemici."
               ]
             }
           ],
           "stats": [
             "Skill DMG|{param1}% Max HP",
             "Exquisite Throw DMG|{param2}% Max HP ×{param3}",
-            "Duration|{param4}s",
+            "Durata|{param4}s",
             "CD|{param5}s",
-            "Energy Cost|{param6}"
+            "Costo Energy|{param6}"
           ]
         }
       ],
@@ -7590,19 +7590,19 @@
         {
           "key": "p1",
           "title": "Necessary Calculation",
-          "description": "Gains 25% more rewards when dispatched on a Liyue Expedition for 20 hours.\r\n",
+          "description": "Guadagna il 25% in più di ricompense quando inviata in una spedizione da 20 ore a Liyue.\r\n",
           "descriptions": []
         },
         {
           "key": "p2",
           "title": "Turn Control",
-          "description": "When the party has 1/2/3/4 Elemental Types, Yelan's Max HP is increased by 6%/12%/18%/30%.\r\n",
+          "description": "Quando il party ha 1/2/3/4 Elemental Types, i Max HP di Yelan aumentano del 6%/12%/18%/30%.\r\n",
           "descriptions": []
         },
         {
           "key": "p3",
           "title": "Adapt With Ease",
-          "description": "So long as an Exquisite Throw is in play, your own active character deals 1% more DMG. This increases by a further 3.5% DMG every second. The maximum increase to DMG dealt is 50%.\r\nThe pre-existing effect will be dispelled if Depth-Clarion Dice is recast during its duration.\r\n",
+          "description": "Finchè un Exquisite Throw è attivo, il tuo personaggio attivo infligge  1% in più di DMG. Questo DMG viene aumentato ulteriormente del 3.5% ogni secondo. L’aumento massimo del DMG inferto è 50%.\r\nL’effetto pre-esistente sarà dissipato se Depth-Clarion Dice viene usato di nuovo nel mentre della sua durata.\r\n",
           "descriptions": []
         }
       ],
@@ -7610,37 +7610,37 @@
         {
           "key": "c1",
           "title": "Enter the Plotters",
-          "description": "Lingering Lifeline gains 1 additional charge.\r\n",
+          "description": "Lingering Lifeline guadagna 1 carica addizionale.\r\n",
           "descriptions": []
         },
         {
           "key": "c2",
           "title": "Taking All Comers",
-          "description": "When Exquisite Throw conducts a coordinated attack, it will fire an additional water arrow that will deal 14% of Yelan's Max HP as Hydro DMG.\r\nThis effect can trigger once every 1.8s.\r\n",
+          "description": "Quando Exquisite Throw conduce un attacco coordinato, sparerà una freccia d’acqua addizionale che infliggerà i 14% dei Max HP di Yelan come Hydro DMG.\r\nQuesto effetto può essere attivato una volta ogni 1.8s.\r\n",
           "descriptions": []
         },
         {
           "key": "c3",
           "title": "Beware the Trickster's Dice",
-          "description": "Increases the Level of Depth-Clarion Dice by 3.\r\nMaximum upgrade level is 15.\r\n",
+          "description": "Aumenta di 3 il livello di Depth-Clarion Dice.\r\nOra il livello massimo di upgrade è 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c4",
           "title": "Bait-and-Switch",
-          "description": "Increases all party members' Max HP by 10% for 25s for every opponent marked by Lifeline when the Lifeline explodes. A maximum increase of 40% Max HP can be attained in this manner.\r\n",
+          "description": "Aumenta i Max HP di ogni membro del party del 10% per 25s per ogni nemico marchiato dalla Lifeline quando la Lifeline esplode. Un massimo aumento del 40% di Max HP può essere ottenuto in questa maniera.\r\n",
           "descriptions": []
         },
         {
           "key": "c5",
           "title": "Dealer's Sleight",
-          "description": "Increases the Level of Lingering Lifeline by 3.\r\nMaximum upgrade level is 15.\r\n",
+          "description": "Aumenta di 3 il livello di Lingering Lifeline.\r\nOra il livello massimo di upgrade è 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c6",
           "title": "Winner Takes All",
-          "description": "After using Depth-Clarion Dice, Yelan will enter the Mastermind state.\r\nIn this state, all of Yelan's Normal Attacks will be special Breakthrough Barbs. These Breakthrough Barbs will have similar abilities to normal ones and the DMG dealt will be considered Charged Attack DMG, dealing 156% of a normal Breakthrough Barb's DMG.\r\nThe Mastermind state lasts 20s and will be cleared after Yelan fires 5 arrows.\r\n",
+          "description": "Dopo aver usato Depth-Clarion Dice, Yelan entrerà nello stato Mastermind.\r\nIn questo stato, tutti gli Attacchi Normali di Yelan saranno speciali Breakthrough Barbs. Questi Breakthrough Barbs avranno abilità simili a quelli normali e il DMG inferto sarà considerato DMG da Attacco Caricato, infliggendo 156% di DMG in più rispetto a un normale Breakthrough Barb.\r\nLo stato Mastermind durerà 20s e sarà dissipato dopo che Yelan sparerà 5 frecce.\r\n",
           "descriptions": []
         }
       ]
