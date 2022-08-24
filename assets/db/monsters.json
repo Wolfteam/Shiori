@@ -5,21 +5,144 @@
       "image": "abyss-herald-wicked-torrents.png",
       "type": "abyssOrder",
       "isComingSoon": false,
-      "drops": []
+      "drops": [
+        {
+          "key": "berserker",
+          "type": "artifact"
+        },
+        {
+          "key": "dark-statuette",
+          "type": "material"
+        },
+        {
+          "key": "dead-ley-line-branch",
+          "type": "material"
+        },
+        {
+          "key": "dead-ley-line-leaves",
+          "type": "material"
+        },
+        {
+          "key": "deathly-statuette",
+          "type": "material"
+        },
+        {
+          "key": "gloomy-statuette",
+          "type": "material"
+        },
+        {
+          "key": "instructor",
+          "type": "artifact"
+        },
+        {
+          "key": "ley-line-sprout",
+          "type": "material"
+        },
+        {
+          "key": "mora",
+          "type": "material"
+        },
+        {
+          "key": "the-exile",
+          "type": "artifact"
+        }
+      ]
     },
     {
       "key": "abyss-lector-fathomless-flames",
       "image": "abyss-lector-fathomless-flames.png",
       "type": "abyssOrder",
       "isComingSoon": false,
-      "drops": []
+      "drops": [
+        {
+          "key": "berserker",
+          "type": "artifact"
+        },
+        {
+          "key": "dark-statuette",
+          "type": "material"
+        },
+        {
+          "key": "dead-ley-line-branch",
+          "type": "material"
+        },
+        {
+          "key": "dead-ley-line-leaves",
+          "type": "material"
+        },
+        {
+          "key": "deathly-statuette",
+          "type": "material"
+        },
+        {
+          "key": "gloomy-statuette",
+          "type": "material"
+        },
+        {
+          "key": "instructor",
+          "type": "artifact"
+        },
+        {
+          "key": "ley-line-sprout",
+          "type": "material"
+        },
+        {
+          "key": "mora",
+          "type": "material"
+        },
+        {
+          "key": "the-exile",
+          "type": "artifact"
+        }
+      ]
     },
     {
       "key": "abyss-lector-violet-lightning",
       "image": "abyss-lector-violet-lightning.png",
       "type": "abyssOrder",
       "isComingSoon": false,
-      "drops": []
+      "drops": [
+        {
+          "key": "berserker",
+          "type": "artifact"
+        },
+        {
+          "key": "dark-statuette",
+          "type": "material"
+        },
+        {
+          "key": "dead-ley-line-branch",
+          "type": "material"
+        },
+        {
+          "key": "dead-ley-line-leaves",
+          "type": "material"
+        },
+        {
+          "key": "deathly-statuette",
+          "type": "material"
+        },
+        {
+          "key": "gloomy-statuette",
+          "type": "material"
+        },
+        {
+          "key": "instructor",
+          "type": "artifact"
+        },
+        {
+          "key": "ley-line-sprout",
+          "type": "material"
+        },
+        {
+          "key": "mora",
+          "type": "material"
+        },
+        {
+          "key": "the-exile",
+          "type": "artifact"
+        }
+      ]
     },
     {
       "key": "anemo-hypostasis",
@@ -28,11 +151,23 @@
       "isComingSoon": false,
       "drops": [
         {
-          "key": "vayuda-turquoise-sliver",
+          "key": "berserker",
+          "type": "artifact"
+        },
+        {
+          "key": "gladiators-finale",
+          "type": "artifact"
+        },
+        {
+          "key": "hurricane-seed",
           "type": "material"
         },
         {
-          "key": "vayuda-turquoise-fragment",
+          "key": "instructor",
+          "type": "artifact"
+        },
+        {
+          "key": "mora",
           "type": "material"
         },
         {
@@ -40,60 +175,20 @@
           "type": "material"
         },
         {
+          "key": "vayuda-turquoise-fragment",
+          "type": "material"
+        },
+        {
           "key": "vayuda-turquoise-gemstone",
           "type": "material"
         },
         {
-          "key": "hurricane-seed",
+          "key": "vayuda-turquoise-sliver",
           "type": "material"
-        },
-        {
-          "key": "berserker",
-          "type": "artifact"
-        },
-        {
-          "key": "instructor",
-          "type": "artifact"
-        },
-        {
-          "key": "the-exile",
-          "type": "artifact"
-        },
-        {
-          "key": "traveling-doctor",
-          "type": "artifact"
-        },
-        {
-          "key": "berserker",
-          "type": "artifact"
-        },
-        {
-          "key": "instructor",
-          "type": "artifact"
-        },
-        {
-          "key": "traveling-doctor",
-          "type": "artifact"
-        },
-        {
-          "key": "gladiators-finale",
-          "type": "artifact"
         },
         {
           "key": "wanderers-troupe",
           "type": "artifact"
-        },
-        {
-          "key": "gladiators-finale",
-          "type": "artifact"
-        },
-        {
-          "key": "wanderers-troupe",
-          "type": "artifact"
-        },
-        {
-          "key": "mora",
-          "type": "material"
         }
       ]
     },
@@ -104,11 +199,11 @@
       "isComingSoon": false,
       "drops": [
         {
-          "key": "divining-scroll",
+          "key": "damaged-mask",
           "type": "material"
         },
         {
-          "key": "sealed-scroll",
+          "key": "divining-scroll",
           "type": "material"
         },
         {
@@ -116,15 +211,19 @@
           "type": "material"
         },
         {
-          "key": "damaged-mask",
-          "type": "material"
-        },
-        {
-          "key": "stained-mask",
+          "key": "mora",
           "type": "material"
         },
         {
           "key": "ominous-mask",
+          "type": "material"
+        },
+        {
+          "key": "sealed-scroll",
+          "type": "material"
+        },
+        {
+          "key": "stained-mask",
           "type": "material"
         }
       ]
@@ -136,15 +235,19 @@
       "isComingSoon": false,
       "drops": [
         {
+          "key": "mora",
+          "type": "material"
+        },
+        {
+          "key": "slime-concentrate",
+          "type": "material"
+        },
+        {
           "key": "slime-condensate",
           "type": "material"
         },
         {
           "key": "slime-secretions",
-          "type": "material"
-        },
-        {
-          "key": "slime-concentrate",
           "type": "material"
         }
       ]
@@ -156,11 +259,15 @@
       "isComingSoon": false,
       "drops": [
         {
-          "key": "spectral-husk",
+          "key": "mora",
           "type": "material"
         },
         {
           "key": "spectral-heart",
+          "type": "material"
+        },
+        {
+          "key": "spectral-husk",
           "type": "material"
         },
         {
@@ -176,23 +283,7 @@
       "isComingSoon": false,
       "drops": [
         {
-          "key": "prithiva-topaz-sliver",
-          "type": "material"
-        },
-        {
-          "key": "prithiva-topaz-fragment",
-          "type": "material"
-        },
-        {
-          "key": "prithiva-topaz-chunk",
-          "type": "material"
-        },
-        {
-          "key": "prithiva-topaz-gemstone",
-          "type": "material"
-        },
-        {
-          "key": "agnidus-agate-sliver",
+          "key": "agnidus-agate-chunk",
           "type": "material"
         },
         {
@@ -200,59 +291,19 @@
           "type": "material"
         },
         {
-          "key": "agnidus-agate-chunk",
-          "type": "material"
-        },
-        {
           "key": "agnidus-agate-gemstone",
           "type": "material"
         },
         {
-          "key": "varunada-lazurite-sliver",
+          "key": "agnidus-agate-sliver",
           "type": "material"
         },
         {
-          "key": "varunada-lazurite-fragment",
-          "type": "material"
+          "key": "berserker",
+          "type": "artifact"
         },
         {
-          "key": "varunada-lazurite-chunk",
-          "type": "material"
-        },
-        {
-          "key": "varunada-lazurite-gemstone",
-          "type": "material"
-        },
-        {
-          "key": "vajrada-amethyst-sliver",
-          "type": "material"
-        },
-        {
-          "key": "vajrada-amethyst-fragment",
-          "type": "material"
-        },
-        {
-          "key": "vajrada-amethyst-chunk",
-          "type": "material"
-        },
-        {
-          "key": "vajrada-amethyst-gemstone",
-          "type": "material"
-        },
-        {
-          "key": "shivada-jade-sliver",
-          "type": "material"
-        },
-        {
-          "key": "shivada-jade-fragment",
-          "type": "material"
-        },
-        {
-          "key": "shivada-jade-chunk",
-          "type": "material"
-        },
-        {
-          "key": "shivada-jade-gemstone",
+          "key": "bloodjade-branch",
           "type": "material"
         },
         {
@@ -260,7 +311,7 @@
           "type": "material"
         },
         {
-          "key": "bloodjade-branch",
+          "key": "dream-solvent",
           "type": "material"
         },
         {
@@ -268,15 +319,15 @@
           "type": "material"
         },
         {
-          "key": "northlander-sword-billet",
-          "type": "material"
+          "key": "gladiators-finale",
+          "type": "artifact"
         },
         {
-          "key": "northlander-claymore-billet",
-          "type": "material"
+          "key": "instructor",
+          "type": "artifact"
         },
         {
-          "key": "northlander-polearm-billet",
+          "key": "mora",
           "type": "material"
         },
         {
@@ -288,54 +339,97 @@
           "type": "material"
         },
         {
-          "key": "berserker",
-          "type": "artifact"
+          "key": "northlander-claymore-billet",
+          "type": "material"
         },
         {
-          "key": "instructor",
-          "type": "artifact"
+          "key": "northlander-polearm-billet",
+          "type": "material"
+        },
+        {
+          "key": "northlander-sword-billet",
+          "type": "material"
+        },
+        {
+          "key": "prithiva-topaz-chunk",
+          "type": "material"
+        },
+        {
+          "key": "prithiva-topaz-fragment",
+          "type": "material"
+        },
+        {
+          "key": "prithiva-topaz-gemstone",
+          "type": "material"
+        },
+        {
+          "key": "prithiva-topaz-sliver",
+          "type": "material"
+        },
+        {
+          "key": "shivada-jade-chunk",
+          "type": "material"
+        },
+        {
+          "key": "shivada-jade-fragment",
+          "type": "material"
+        },
+        {
+          "key": "shivada-jade-gemstone",
+          "type": "material"
+        },
+        {
+          "key": "shivada-jade-sliver",
+          "type": "material"
         },
         {
           "key": "the-exile",
           "type": "artifact"
         },
         {
-          "key": "traveling-doctor",
-          "type": "artifact"
-        },
-        {
-          "key": "berserker",
-          "type": "artifact"
-        },
-        {
-          "key": "instructor",
-          "type": "artifact"
-        },
-        {
-          "key": "traveling-doctor",
-          "type": "artifact"
-        },
-        {
-          "key": "gladiators-finale",
-          "type": "artifact"
-        },
-        {
-          "key": "wanderers-troupe",
-          "type": "artifact"
-        },
-        {
-          "key": "gladiators-finale",
-          "type": "artifact"
-        },
-        {
-          "key": "wanderers-troupe",
-          "type": "artifact"
-        },
-        {
-          "key": "mora",
+          "key": "vajrada-amethyst-chunk",
           "type": "material"
+        },
+        {
+          "key": "vajrada-amethyst-fragment",
+          "type": "material"
+        },
+        {
+          "key": "vajrada-amethyst-gemstone",
+          "type": "material"
+        },
+        {
+          "key": "vajrada-amethyst-sliver",
+          "type": "material"
+        },
+        {
+          "key": "varunada-lazurite-chunk",
+          "type": "material"
+        },
+        {
+          "key": "varunada-lazurite-fragment",
+          "type": "material"
+        },
+        {
+          "key": "varunada-lazurite-gemstone",
+          "type": "material"
+        },
+        {
+          "key": "varunada-lazurite-sliver",
+          "type": "material"
+        },
+        {
+          "key": "wanderers-troupe",
+          "type": "artifact"
         }
       ]
+    },
+    {
+      "key": "beisht",
+      "image": "beisht.png",
+      "type": "na",
+      "isComingSoon": false,
+      "drops": []
     },
     {
       "key": "black-serpent-knight-windcutter",
@@ -344,8 +438,8 @@
       "isComingSoon": false,
       "drops": [
         {
-          "key": "gloomy-statuette",
-          "type": "material"
+          "key": "berserker",
+          "type": "artifact"
         },
         {
           "key": "dark-statuette",
@@ -354,6 +448,22 @@
         {
           "key": "deathly-statuette",
           "type": "material"
+        },
+        {
+          "key": "gloomy-statuette",
+          "type": "material"
+        },
+        {
+          "key": "instructor",
+          "type": "artifact"
+        },
+        {
+          "key": "mora",
+          "type": "material"
+        },
+        {
+          "key": "the-exile",
+          "type": "artifact"
         }
       ]
     },
@@ -364,8 +474,8 @@
       "isComingSoon": false,
       "drops": [
         {
-          "key": "heavy-horn",
-          "type": "material"
+          "key": "berserker",
+          "type": "artifact"
         },
         {
           "key": "black-bronze-horn",
@@ -380,7 +490,15 @@
           "type": "material"
         },
         {
-          "key": "stained-mask",
+          "key": "heavy-horn",
+          "type": "material"
+        },
+        {
+          "key": "instructor",
+          "type": "artifact"
+        },
+        {
+          "key": "mora",
           "type": "material"
         },
         {
@@ -388,31 +506,11 @@
           "type": "material"
         },
         {
-          "key": "berserker",
-          "type": "artifact"
-        },
-        {
-          "key": "instructor",
-          "type": "artifact"
+          "key": "stained-mask",
+          "type": "material"
         },
         {
           "key": "the-exile",
-          "type": "artifact"
-        },
-        {
-          "key": "traveling-doctor",
-          "type": "artifact"
-        },
-        {
-          "key": "berserker",
-          "type": "artifact"
-        },
-        {
-          "key": "instructor",
-          "type": "artifact"
-        },
-        {
-          "key": "traveling-doctor",
           "type": "artifact"
         }
       ]
@@ -424,43 +522,63 @@
       "isComingSoon": false,
       "drops": [
         {
-          "key": "fragile-bone-shard",
-          "type": "material"
-        },
-        {
-          "key": "sturdy-bone-shard",
-          "type": "material"
-        },
-        {
-          "key": "fossilized-bone-shard",
-          "type": "material"
-        },
-        {
           "key": "berserker",
           "type": "artifact"
         },
         {
-          "key": "instructor",
+          "key": "dragonheirs-false-fin",
+          "type": "material"
+        },
+        {
+          "key": "gladiators-finale",
           "type": "artifact"
+        },
+        {
+          "key": "mora",
+          "type": "material"
+        },
+        {
+          "key": "prayers-to-springtime",
+          "type": "artifact"
+        },
+        {
+          "key": "shivada-jade-chunk",
+          "type": "material"
+        },
+        {
+          "key": "shivada-jade-fragment",
+          "type": "material"
+        },
+        {
+          "key": "shivada-jade-gemstone",
+          "type": "material"
+        },
+        {
+          "key": "shivada-jade-sliver",
+          "type": "material"
         },
         {
           "key": "the-exile",
           "type": "artifact"
         },
         {
-          "key": "traveling-doctor",
-          "type": "artifact"
+          "key": "vajrada-amethyst-chunk",
+          "type": "material"
         },
         {
-          "key": "berserker",
-          "type": "artifact"
+          "key": "vajrada-amethyst-fragment",
+          "type": "material"
         },
         {
-          "key": "instructor",
-          "type": "artifact"
+          "key": "vajrada-amethyst-gemstone",
+          "type": "material"
         },
         {
-          "key": "traveling-doctor",
+          "key": "vajrada-amethyst-sliver",
+          "type": "material"
+        },
+        {
+          "key": "wanderers-troupe",
           "type": "artifact"
         }
       ]
@@ -470,7 +588,36 @@
       "image": "bolteater-bathysmal-vishap-hatchling.png",
       "type": "na",
       "isComingSoon": false,
-      "drops": []
+      "drops": [
+        {
+          "key": "berserker",
+          "type": "artifact"
+        },
+        {
+          "key": "fossilized-bone-shard",
+          "type": "material"
+        },
+        {
+          "key": "fragile-bone-shard",
+          "type": "material"
+        },
+        {
+          "key": "instructor",
+          "type": "artifact"
+        },
+        {
+          "key": "mora",
+          "type": "material"
+        },
+        {
+          "key": "sturdy-bone-shard",
+          "type": "material"
+        },
+        {
+          "key": "the-exile",
+          "type": "artifact"
+        }
+      ]
     },
     {
       "key": "childe",
@@ -479,75 +626,23 @@
       "isComingSoon": false,
       "drops": [
         {
-          "key": "varunada-lazurite-sliver",
+          "key": "berserker",
+          "type": "artifact"
+        },
+        {
+          "key": "dream-solvent",
           "type": "material"
         },
         {
-          "key": "varunada-lazurite-fragment",
-          "type": "material"
+          "key": "gladiators-finale",
+          "type": "artifact"
         },
         {
-          "key": "varunada-lazurite-chunk",
-          "type": "material"
+          "key": "instructor",
+          "type": "artifact"
         },
         {
-          "key": "varunada-lazurite-gemstone",
-          "type": "material"
-        },
-        {
-          "key": "vajrada-amethyst-sliver",
-          "type": "material"
-        },
-        {
-          "key": "vajrada-amethyst-fragment",
-          "type": "material"
-        },
-        {
-          "key": "vajrada-amethyst-chunk",
-          "type": "material"
-        },
-        {
-          "key": "vajrada-amethyst-gemstone",
-          "type": "material"
-        },
-        {
-          "key": "shivada-jade-sliver",
-          "type": "material"
-        },
-        {
-          "key": "shivada-jade-fragment",
-          "type": "material"
-        },
-        {
-          "key": "shivada-jade-chunk",
-          "type": "material"
-        },
-        {
-          "key": "shivada-jade-gemstone",
-          "type": "material"
-        },
-        {
-          "key": "tusk-of-monoceros-caeli",
-          "type": "material"
-        },
-        {
-          "key": "shard-of-a-foul-legacy",
-          "type": "material"
-        },
-        {
-          "key": "shadow-of-the-warrior",
-          "type": "material"
-        },
-        {
-          "key": "northlander-sword-billet",
-          "type": "material"
-        },
-        {
-          "key": "northlander-claymore-billet",
-          "type": "material"
-        },
-        {
-          "key": "northlander-polearm-billet",
+          "key": "mora",
           "type": "material"
         },
         {
@@ -559,52 +654,84 @@
           "type": "material"
         },
         {
-          "key": "berserker",
-          "type": "artifact"
+          "key": "northlander-claymore-billet",
+          "type": "material"
         },
         {
-          "key": "instructor",
-          "type": "artifact"
+          "key": "northlander-polearm-billet",
+          "type": "material"
+        },
+        {
+          "key": "northlander-sword-billet",
+          "type": "material"
+        },
+        {
+          "key": "shadow-of-the-warrior",
+          "type": "material"
+        },
+        {
+          "key": "shard-of-a-foul-legacy",
+          "type": "material"
+        },
+        {
+          "key": "shivada-jade-chunk",
+          "type": "material"
+        },
+        {
+          "key": "shivada-jade-fragment",
+          "type": "material"
+        },
+        {
+          "key": "shivada-jade-gemstone",
+          "type": "material"
+        },
+        {
+          "key": "shivada-jade-sliver",
+          "type": "material"
         },
         {
           "key": "the-exile",
           "type": "artifact"
         },
         {
-          "key": "traveling-doctor",
-          "type": "artifact"
-        },
-        {
-          "key": "berserker",
-          "type": "artifact"
-        },
-        {
-          "key": "instructor",
-          "type": "artifact"
-        },
-        {
-          "key": "traveling-doctor",
-          "type": "artifact"
-        },
-        {
-          "key": "gladiators-finale",
-          "type": "artifact"
-        },
-        {
-          "key": "wanderers-troupe",
-          "type": "artifact"
-        },
-        {
-          "key": "gladiators-finale",
-          "type": "artifact"
-        },
-        {
-          "key": "wanderers-troupe",
-          "type": "artifact"
-        },
-        {
-          "key": "mora",
+          "key": "tusk-of-monoceros-caeli",
           "type": "material"
+        },
+        {
+          "key": "vajrada-amethyst-chunk",
+          "type": "material"
+        },
+        {
+          "key": "vajrada-amethyst-fragment",
+          "type": "material"
+        },
+        {
+          "key": "vajrada-amethyst-gemstone",
+          "type": "material"
+        },
+        {
+          "key": "vajrada-amethyst-sliver",
+          "type": "material"
+        },
+        {
+          "key": "varunada-lazurite-chunk",
+          "type": "material"
+        },
+        {
+          "key": "varunada-lazurite-fragment",
+          "type": "material"
+        },
+        {
+          "key": "varunada-lazurite-gemstone",
+          "type": "material"
+        },
+        {
+          "key": "varunada-lazurite-sliver",
+          "type": "material"
+        },
+        {
+          "key": "wanderers-troupe",
+          "type": "artifact"
         }
       ]
     },
@@ -615,8 +742,8 @@
       "isComingSoon": false,
       "drops": [
         {
-          "key": "heavy-horn",
-          "type": "material"
+          "key": "berserker",
+          "type": "artifact"
         },
         {
           "key": "black-bronze-horn",
@@ -631,7 +758,15 @@
           "type": "material"
         },
         {
-          "key": "stained-mask",
+          "key": "heavy-horn",
+          "type": "material"
+        },
+        {
+          "key": "instructor",
+          "type": "artifact"
+        },
+        {
+          "key": "mora",
           "type": "material"
         },
         {
@@ -639,31 +774,11 @@
           "type": "material"
         },
         {
-          "key": "berserker",
-          "type": "artifact"
-        },
-        {
-          "key": "instructor",
-          "type": "artifact"
+          "key": "stained-mask",
+          "type": "material"
         },
         {
           "key": "the-exile",
-          "type": "artifact"
-        },
-        {
-          "key": "traveling-doctor",
-          "type": "artifact"
-        },
-        {
-          "key": "berserker",
-          "type": "artifact"
-        },
-        {
-          "key": "instructor",
-          "type": "artifact"
-        },
-        {
-          "key": "traveling-doctor",
           "type": "artifact"
         }
       ]
@@ -675,6 +790,10 @@
       "isComingSoon": false,
       "drops": [
         {
+          "key": "berserker",
+          "type": "artifact"
+        },
+        {
           "key": "dead-ley-line-branch",
           "type": "material"
         },
@@ -683,35 +802,19 @@
           "type": "material"
         },
         {
+          "key": "instructor",
+          "type": "artifact"
+        },
+        {
           "key": "ley-line-sprout",
           "type": "material"
         },
         {
-          "key": "berserker",
-          "type": "artifact"
-        },
-        {
-          "key": "instructor",
-          "type": "artifact"
+          "key": "mora",
+          "type": "material"
         },
         {
           "key": "the-exile",
-          "type": "artifact"
-        },
-        {
-          "key": "traveling-doctor",
-          "type": "artifact"
-        },
-        {
-          "key": "berserker",
-          "type": "artifact"
-        },
-        {
-          "key": "instructor",
-          "type": "artifact"
-        },
-        {
-          "key": "traveling-doctor",
           "type": "artifact"
         }
       ]
@@ -734,11 +837,15 @@
           "type": "material"
         },
         {
-          "key": "stained-mask",
+          "key": "mora",
           "type": "material"
         },
         {
           "key": "ominous-mask",
+          "type": "material"
+        },
+        {
+          "key": "stained-mask",
           "type": "material"
         }
       ]
@@ -750,7 +857,19 @@
       "isComingSoon": false,
       "drops": [
         {
+          "key": "damaged-mask",
+          "type": "material"
+        },
+        {
           "key": "firm-arrowhead",
+          "type": "material"
+        },
+        {
+          "key": "mora",
+          "type": "material"
+        },
+        {
+          "key": "ominous-mask",
           "type": "material"
         },
         {
@@ -758,19 +877,11 @@
           "type": "material"
         },
         {
-          "key": "weathered-arrowhead",
-          "type": "material"
-        },
-        {
-          "key": "damaged-mask",
-          "type": "material"
-        },
-        {
           "key": "stained-mask",
           "type": "material"
         },
         {
-          "key": "ominous-mask",
+          "key": "weathered-arrowhead",
           "type": "material"
         }
       ]
@@ -782,7 +893,27 @@
       "isComingSoon": false,
       "drops": [
         {
-          "key": "shivada-jade-sliver",
+          "key": "berserker",
+          "type": "artifact"
+        },
+        {
+          "key": "crystalline-bloom",
+          "type": "material"
+        },
+        {
+          "key": "gladiators-finale",
+          "type": "artifact"
+        },
+        {
+          "key": "mora",
+          "type": "material"
+        },
+        {
+          "key": "prayers-to-springtime",
+          "type": "artifact"
+        },
+        {
+          "key": "shivada-jade-chunk",
           "type": "material"
         },
         {
@@ -790,68 +921,20 @@
           "type": "material"
         },
         {
-          "key": "shivada-jade-chunk",
-          "type": "material"
-        },
-        {
           "key": "shivada-jade-gemstone",
           "type": "material"
         },
         {
-          "key": "crystalline-bloom",
+          "key": "shivada-jade-sliver",
           "type": "material"
-        },
-        {
-          "key": "lucky-dog",
-          "type": "artifact"
-        },
-        {
-          "key": "lucky-dog",
-          "type": "artifact"
-        },
-        {
-          "key": "berserker",
-          "type": "artifact"
         },
         {
           "key": "the-exile",
           "type": "artifact"
         },
         {
-          "key": "prayers-to-springtime",
-          "type": "artifact"
-        },
-        {
-          "key": "berserker",
-          "type": "artifact"
-        },
-        {
-          "key": "the-exile",
-          "type": "artifact"
-        },
-        {
-          "key": "prayers-to-springtime",
-          "type": "artifact"
-        },
-        {
-          "key": "gladiators-finale",
-          "type": "artifact"
-        },
-        {
           "key": "wanderers-troupe",
           "type": "artifact"
-        },
-        {
-          "key": "gladiators-finale",
-          "type": "artifact"
-        },
-        {
-          "key": "wanderers-troupe",
-          "type": "artifact"
-        },
-        {
-          "key": "mora",
-          "type": "material"
         }
       ]
     },
@@ -862,7 +945,27 @@
       "isComingSoon": false,
       "drops": [
         {
-          "key": "shivada-jade-sliver",
+          "key": "berserker",
+          "type": "artifact"
+        },
+        {
+          "key": "gladiators-finale",
+          "type": "artifact"
+        },
+        {
+          "key": "hoarfrost-core",
+          "type": "material"
+        },
+        {
+          "key": "mora",
+          "type": "material"
+        },
+        {
+          "key": "prayers-to-springtime",
+          "type": "artifact"
+        },
+        {
+          "key": "shivada-jade-chunk",
           "type": "material"
         },
         {
@@ -870,72 +973,20 @@
           "type": "material"
         },
         {
-          "key": "shivada-jade-chunk",
-          "type": "material"
-        },
-        {
           "key": "shivada-jade-gemstone",
           "type": "material"
         },
         {
-          "key": "hoarfrost-core",
+          "key": "shivada-jade-sliver",
           "type": "material"
-        },
-        {
-          "key": "berserker",
-          "type": "artifact"
-        },
-        {
-          "key": "instructor",
-          "type": "artifact"
         },
         {
           "key": "the-exile",
           "type": "artifact"
         },
         {
-          "key": "traveling-doctor",
-          "type": "artifact"
-        },
-        {
-          "key": "berserker",
-          "type": "artifact"
-        },
-        {
-          "key": "instructor",
-          "type": "artifact"
-        },
-        {
-          "key": "traveling-doctor",
-          "type": "artifact"
-        },
-        {
-          "key": "gladiators-finale",
-          "type": "artifact"
-        },
-        {
           "key": "wanderers-troupe",
           "type": "artifact"
-        },
-        {
-          "key": "gladiators-finale",
-          "type": "artifact"
-        },
-        {
-          "key": "wanderers-troupe",
-          "type": "artifact"
-        },
-        {
-          "key": "prayers-to-springtime",
-          "type": "artifact"
-        },
-        {
-          "key": "prayers-to-springtime",
-          "type": "artifact"
-        },
-        {
-          "key": "mora",
-          "type": "material"
         }
       ]
     },
@@ -946,11 +997,11 @@
       "isComingSoon": false,
       "drops": [
         {
-          "key": "divining-scroll",
+          "key": "damaged-mask",
           "type": "material"
         },
         {
-          "key": "sealed-scroll",
+          "key": "divining-scroll",
           "type": "material"
         },
         {
@@ -958,15 +1009,19 @@
           "type": "material"
         },
         {
-          "key": "damaged-mask",
-          "type": "material"
-        },
-        {
-          "key": "stained-mask",
+          "key": "mora",
           "type": "material"
         },
         {
           "key": "ominous-mask",
+          "type": "material"
+        },
+        {
+          "key": "sealed-scroll",
+          "type": "material"
+        },
+        {
+          "key": "stained-mask",
           "type": "material"
         }
       ]
@@ -978,15 +1033,19 @@
       "isComingSoon": false,
       "drops": [
         {
+          "key": "mora",
+          "type": "material"
+        },
+        {
+          "key": "slime-concentrate",
+          "type": "material"
+        },
+        {
           "key": "slime-condensate",
           "type": "material"
         },
         {
           "key": "slime-secretions",
-          "type": "material"
-        },
-        {
-          "key": "slime-concentrate",
           "type": "material"
         }
       ]
@@ -998,11 +1057,15 @@
       "isComingSoon": false,
       "drops": [
         {
-          "key": "spectral-husk",
+          "key": "mora",
           "type": "material"
         },
         {
           "key": "spectral-heart",
+          "type": "material"
+        },
+        {
+          "key": "spectral-husk",
           "type": "material"
         },
         {
@@ -1018,7 +1081,11 @@
       "isComingSoon": false,
       "drops": [
         {
-          "key": "whopperflower-nectar",
+          "key": "energy-nectar",
+          "type": "material"
+        },
+        {
+          "key": "mora",
           "type": "material"
         },
         {
@@ -1026,7 +1093,7 @@
           "type": "material"
         },
         {
-          "key": "energy-nectar",
+          "key": "whopperflower-nectar",
           "type": "material"
         }
       ]
@@ -1038,11 +1105,11 @@
       "isComingSoon": false,
       "drops": [
         {
-          "key": "divining-scroll",
+          "key": "damaged-mask",
           "type": "material"
         },
         {
-          "key": "sealed-scroll",
+          "key": "divining-scroll",
           "type": "material"
         },
         {
@@ -1050,15 +1117,19 @@
           "type": "material"
         },
         {
-          "key": "damaged-mask",
-          "type": "material"
-        },
-        {
-          "key": "stained-mask",
+          "key": "mora",
           "type": "material"
         },
         {
           "key": "ominous-mask",
+          "type": "material"
+        },
+        {
+          "key": "sealed-scroll",
+          "type": "material"
+        },
+        {
+          "key": "stained-mask",
           "type": "material"
         }
       ]
@@ -1070,15 +1141,43 @@
       "isComingSoon": false,
       "drops": [
         {
+          "key": "mora",
+          "type": "material"
+        },
+        {
+          "key": "slime-concentrate",
+          "type": "material"
+        },
+        {
           "key": "slime-condensate",
           "type": "material"
         },
         {
           "key": "slime-secretions",
           "type": "material"
+        }
+      ]
+    },
+    {
+      "key": "dendro-specter",
+      "image": "dendro-specter.png",
+      "type": "elementalLifeForm",
+      "isComingSoon": false,
+      "drops": [
+        {
+          "key": "mora",
+          "type": "material"
         },
         {
-          "key": "slime-concentrate",
+          "key": "spectral-heart",
+          "type": "material"
+        },
+        {
+          "key": "spectral-husk",
+          "type": "material"
+        },
+        {
+          "key": "spectral-nucleus",
           "type": "material"
         }
       ]
@@ -1090,6 +1189,10 @@
       "isComingSoon": false,
       "drops": [
         {
+          "key": "berserker",
+          "type": "artifact"
+        },
+        {
           "key": "dead-ley-line-branch",
           "type": "material"
         },
@@ -1098,35 +1201,19 @@
           "type": "material"
         },
         {
+          "key": "instructor",
+          "type": "artifact"
+        },
+        {
           "key": "ley-line-sprout",
           "type": "material"
         },
         {
-          "key": "berserker",
-          "type": "artifact"
-        },
-        {
-          "key": "instructor",
-          "type": "artifact"
+          "key": "mora",
+          "type": "material"
         },
         {
           "key": "the-exile",
-          "type": "artifact"
-        },
-        {
-          "key": "traveling-doctor",
-          "type": "artifact"
-        },
-        {
-          "key": "berserker",
-          "type": "artifact"
-        },
-        {
-          "key": "instructor",
-          "type": "artifact"
-        },
-        {
-          "key": "traveling-doctor",
           "type": "artifact"
         }
       ]
@@ -1149,11 +1236,15 @@
           "type": "material"
         },
         {
-          "key": "stained-mask",
+          "key": "mora",
           "type": "material"
         },
         {
           "key": "ominous-mask",
+          "type": "material"
+        },
+        {
+          "key": "stained-mask",
           "type": "material"
         }
       ]
@@ -1165,7 +1256,19 @@
       "isComingSoon": false,
       "drops": [
         {
+          "key": "damaged-mask",
+          "type": "material"
+        },
+        {
           "key": "firm-arrowhead",
+          "type": "material"
+        },
+        {
+          "key": "mora",
+          "type": "material"
+        },
+        {
+          "key": "ominous-mask",
           "type": "material"
         },
         {
@@ -1173,19 +1276,11 @@
           "type": "material"
         },
         {
-          "key": "weathered-arrowhead",
-          "type": "material"
-        },
-        {
-          "key": "damaged-mask",
-          "type": "material"
-        },
-        {
           "key": "stained-mask",
           "type": "material"
         },
         {
-          "key": "ominous-mask",
+          "key": "weathered-arrowhead",
           "type": "material"
         }
       ]
@@ -1197,31 +1292,23 @@
       "isComingSoon": false,
       "drops": [
         {
-          "key": "vajrada-amethyst-sliver",
-          "type": "material"
+          "key": "gladiators-finale",
+          "type": "artifact"
         },
         {
-          "key": "vajrada-amethyst-fragment",
-          "type": "material"
-        },
-        {
-          "key": "vajrada-amethyst-chunk",
-          "type": "material"
-        },
-        {
-          "key": "vajrada-amethyst-gemstone",
-          "type": "material"
+          "key": "instructor",
+          "type": "artifact"
         },
         {
           "key": "lightning-prism",
           "type": "material"
         },
         {
-          "key": "berserker",
-          "type": "artifact"
+          "key": "mora",
+          "type": "material"
         },
         {
-          "key": "instructor",
+          "key": "prayers-for-wisdom",
           "type": "artifact"
         },
         {
@@ -1229,11 +1316,35 @@
           "type": "artifact"
         },
         {
-          "key": "traveling-doctor",
-          "type": "artifact"
+          "key": "vajrada-amethyst-chunk",
+          "type": "material"
         },
         {
-          "key": "berserker",
+          "key": "vajrada-amethyst-fragment",
+          "type": "material"
+        },
+        {
+          "key": "vajrada-amethyst-gemstone",
+          "type": "material"
+        },
+        {
+          "key": "vajrada-amethyst-sliver",
+          "type": "material"
+        },
+        {
+          "key": "wanderers-troupe",
+          "type": "artifact"
+        }
+      ]
+    },
+    {
+      "key": "electro-regisvine",
+      "image": "electro-regisvine.png",
+      "type": "magicalBeast",
+      "isComingSoon": false,
+      "drops": [
+        {
+          "key": "gladiators-finale",
           "type": "artifact"
         },
         {
@@ -1241,36 +1352,40 @@
           "type": "artifact"
         },
         {
-          "key": "traveling-doctor",
-          "type": "artifact"
-        },
-        {
-          "key": "gladiators-finale",
-          "type": "artifact"
-        },
-        {
-          "key": "wanderers-troupe",
-          "type": "artifact"
-        },
-        {
-          "key": "gladiators-finale",
-          "type": "artifact"
-        },
-        {
-          "key": "wanderers-troupe",
-          "type": "artifact"
-        },
-        {
-          "key": "prayers-for-wisdom",
-          "type": "artifact"
-        },
-        {
-          "key": "prayers-for-wisdom",
-          "type": "artifact"
-        },
-        {
           "key": "mora",
           "type": "material"
+        },
+        {
+          "key": "prayers-for-wisdom",
+          "type": "artifact"
+        },
+        {
+          "key": "the-exile",
+          "type": "artifact"
+        },
+        {
+          "key": "thunderclap-fruitcore",
+          "type": "material"
+        },
+        {
+          "key": "vajrada-amethyst-chunk",
+          "type": "material"
+        },
+        {
+          "key": "vajrada-amethyst-fragment",
+          "type": "material"
+        },
+        {
+          "key": "vajrada-amethyst-gemstone",
+          "type": "material"
+        },
+        {
+          "key": "vajrada-amethyst-sliver",
+          "type": "material"
+        },
+        {
+          "key": "wanderers-troupe",
+          "type": "artifact"
         }
       ]
     },
@@ -1281,11 +1396,11 @@
       "isComingSoon": false,
       "drops": [
         {
-          "key": "divining-scroll",
+          "key": "damaged-mask",
           "type": "material"
         },
         {
-          "key": "sealed-scroll",
+          "key": "divining-scroll",
           "type": "material"
         },
         {
@@ -1293,15 +1408,19 @@
           "type": "material"
         },
         {
-          "key": "damaged-mask",
-          "type": "material"
-        },
-        {
-          "key": "stained-mask",
+          "key": "mora",
           "type": "material"
         },
         {
           "key": "ominous-mask",
+          "type": "material"
+        },
+        {
+          "key": "sealed-scroll",
+          "type": "material"
+        },
+        {
+          "key": "stained-mask",
           "type": "material"
         }
       ]
@@ -1313,15 +1432,19 @@
       "isComingSoon": false,
       "drops": [
         {
+          "key": "mora",
+          "type": "material"
+        },
+        {
+          "key": "slime-concentrate",
+          "type": "material"
+        },
+        {
           "key": "slime-condensate",
           "type": "material"
         },
         {
           "key": "slime-secretions",
-          "type": "material"
-        },
-        {
-          "key": "slime-concentrate",
           "type": "material"
         }
       ]
@@ -1333,11 +1456,15 @@
       "isComingSoon": false,
       "drops": [
         {
-          "key": "spectral-husk",
+          "key": "mora",
           "type": "material"
         },
         {
           "key": "spectral-heart",
+          "type": "material"
+        },
+        {
+          "key": "spectral-husk",
           "type": "material"
         },
         {
@@ -1353,7 +1480,11 @@
       "isComingSoon": false,
       "drops": [
         {
-          "key": "whopperflower-nectar",
+          "key": "energy-nectar",
+          "type": "material"
+        },
+        {
+          "key": "mora",
           "type": "material"
         },
         {
@@ -1361,7 +1492,199 @@
           "type": "material"
         },
         {
-          "key": "energy-nectar",
+          "key": "whopperflower-nectar",
+          "type": "material"
+        }
+      ]
+    },
+    {
+      "key": "eremite-axe-vanguard",
+      "image": "eremite-axe-vanguard.png",
+      "type": "human",
+      "isComingSoon": false,
+      "drops": [
+        {
+          "key": "faded-red-satin",
+          "type": "material"
+        },
+        {
+          "key": "mora",
+          "type": "material"
+        },
+        {
+          "key": "rich-red-brocade",
+          "type": "material"
+        },
+        {
+          "key": "trimmed-red-silk",
+          "type": "material"
+        }
+      ]
+    },
+    {
+      "key": "eremite-crossbow",
+      "image": "eremite-crossbow.png",
+      "type": "human",
+      "isComingSoon": false,
+      "drops": [
+        {
+          "key": "faded-red-satin",
+          "type": "material"
+        },
+        {
+          "key": "mora",
+          "type": "material"
+        },
+        {
+          "key": "rich-red-brocade",
+          "type": "material"
+        },
+        {
+          "key": "trimmed-red-silk",
+          "type": "material"
+        }
+      ]
+    },
+    {
+      "key": "eremite-daythunder",
+      "image": "eremite-daythunder.png",
+      "type": "human",
+      "isComingSoon": false,
+      "drops": [
+        {
+          "key": "faded-red-satin",
+          "type": "material"
+        },
+        {
+          "key": "mora",
+          "type": "material"
+        },
+        {
+          "key": "rich-red-brocade",
+          "type": "material"
+        },
+        {
+          "key": "trimmed-red-silk",
+          "type": "material"
+        }
+      ]
+    },
+    {
+      "key": "eremite-desert-clearwater",
+      "image": "eremite-desert-clearwater.png",
+      "type": "human",
+      "isComingSoon": false,
+      "drops": [
+        {
+          "key": "faded-red-satin",
+          "type": "material"
+        },
+        {
+          "key": "mora",
+          "type": "material"
+        },
+        {
+          "key": "rich-red-brocade",
+          "type": "material"
+        },
+        {
+          "key": "trimmed-red-silk",
+          "type": "material"
+        }
+      ]
+    },
+    {
+      "key": "eremite-linebreaker",
+      "image": "eremite-linebreaker.png",
+      "type": "human",
+      "isComingSoon": false,
+      "drops": [
+        {
+          "key": "faded-red-satin",
+          "type": "material"
+        },
+        {
+          "key": "mora",
+          "type": "material"
+        },
+        {
+          "key": "rich-red-brocade",
+          "type": "material"
+        },
+        {
+          "key": "trimmed-red-silk",
+          "type": "material"
+        }
+      ]
+    },
+    {
+      "key": "eremite-ravenbeak-halberdier",
+      "image": "eremite-ravenbeak-halberdier.png",
+      "type": "human",
+      "isComingSoon": false,
+      "drops": [
+        {
+          "key": "faded-red-satin",
+          "type": "material"
+        },
+        {
+          "key": "mora",
+          "type": "material"
+        },
+        {
+          "key": "rich-red-brocade",
+          "type": "material"
+        },
+        {
+          "key": "trimmed-red-silk",
+          "type": "material"
+        }
+      ]
+    },
+    {
+      "key": "eremite-sunfrost",
+      "image": "eremite-sunfrost.png",
+      "type": "human",
+      "isComingSoon": false,
+      "drops": [
+        {
+          "key": "faded-red-satin",
+          "type": "material"
+        },
+        {
+          "key": "mora",
+          "type": "material"
+        },
+        {
+          "key": "rich-red-brocade",
+          "type": "material"
+        },
+        {
+          "key": "trimmed-red-silk",
+          "type": "material"
+        }
+      ]
+    },
+    {
+      "key": "eremite-sword-dancer",
+      "image": "eremite-sword-dancer.png",
+      "type": "human",
+      "isComingSoon": false,
+      "drops": [
+        {
+          "key": "faded-red-satin",
+          "type": "material"
+        },
+        {
+          "key": "mora",
+          "type": "material"
+        },
+        {
+          "key": "rich-red-brocade",
+          "type": "material"
+        },
+        {
+          "key": "trimmed-red-silk",
           "type": "material"
         }
       ]
@@ -1371,36 +1694,7 @@
       "image": "eye-of-the-storm.png",
       "type": "elementalLifeForm",
       "isComingSoon": false,
-      "drops": [
-        {
-          "key": "berserker",
-          "type": "artifact"
-        },
-        {
-          "key": "instructor",
-          "type": "artifact"
-        },
-        {
-          "key": "the-exile",
-          "type": "artifact"
-        },
-        {
-          "key": "traveling-doctor",
-          "type": "artifact"
-        },
-        {
-          "key": "berserker",
-          "type": "artifact"
-        },
-        {
-          "key": "instructor",
-          "type": "artifact"
-        },
-        {
-          "key": "traveling-doctor",
-          "type": "artifact"
-        }
-      ]
+      "drops": []
     },
     {
       "key": "fatui-cryo-cicin-mage",
@@ -1408,6 +1702,34 @@
       "type": "fatui",
       "isComingSoon": false,
       "drops": [
+        {
+          "key": "berserker",
+          "type": "artifact"
+        },
+        {
+          "key": "instructor",
+          "type": "artifact"
+        },
+        {
+          "key": "lieutenants-insignia",
+          "type": "material"
+        },
+        {
+          "key": "mist-grass",
+          "type": "material"
+        },
+        {
+          "key": "mist-grass-pollen",
+          "type": "material"
+        },
+        {
+          "key": "mist-grass-wick",
+          "type": "material"
+        },
+        {
+          "key": "mora",
+          "type": "material"
+        },
         {
           "key": "recruits-insignia",
           "type": "material"
@@ -1417,47 +1739,7 @@
           "type": "material"
         },
         {
-          "key": "lieutenants-insignia",
-          "type": "material"
-        },
-        {
-          "key": "mist-grass-pollen",
-          "type": "material"
-        },
-        {
-          "key": "mist-grass",
-          "type": "material"
-        },
-        {
-          "key": "mist-grass-wick",
-          "type": "material"
-        },
-        {
-          "key": "berserker",
-          "type": "artifact"
-        },
-        {
-          "key": "instructor",
-          "type": "artifact"
-        },
-        {
           "key": "the-exile",
-          "type": "artifact"
-        },
-        {
-          "key": "traveling-doctor",
-          "type": "artifact"
-        },
-        {
-          "key": "berserker",
-          "type": "artifact"
-        },
-        {
-          "key": "instructor",
-          "type": "artifact"
-        },
-        {
-          "key": "traveling-doctor",
           "type": "artifact"
         }
       ]
@@ -1469,6 +1751,34 @@
       "isComingSoon": false,
       "drops": [
         {
+          "key": "berserker",
+          "type": "artifact"
+        },
+        {
+          "key": "instructor",
+          "type": "artifact"
+        },
+        {
+          "key": "lieutenants-insignia",
+          "type": "material"
+        },
+        {
+          "key": "mist-grass",
+          "type": "material"
+        },
+        {
+          "key": "mist-grass-pollen",
+          "type": "material"
+        },
+        {
+          "key": "mist-grass-wick",
+          "type": "material"
+        },
+        {
+          "key": "mora",
+          "type": "material"
+        },
+        {
           "key": "recruits-insignia",
           "type": "material"
         },
@@ -1477,47 +1787,7 @@
           "type": "material"
         },
         {
-          "key": "lieutenants-insignia",
-          "type": "material"
-        },
-        {
-          "key": "mist-grass-pollen",
-          "type": "material"
-        },
-        {
-          "key": "mist-grass",
-          "type": "material"
-        },
-        {
-          "key": "mist-grass-wick",
-          "type": "material"
-        },
-        {
-          "key": "berserker",
-          "type": "artifact"
-        },
-        {
-          "key": "instructor",
-          "type": "artifact"
-        },
-        {
           "key": "the-exile",
-          "type": "artifact"
-        },
-        {
-          "key": "traveling-doctor",
-          "type": "artifact"
-        },
-        {
-          "key": "berserker",
-          "type": "artifact"
-        },
-        {
-          "key": "instructor",
-          "type": "artifact"
-        },
-        {
-          "key": "traveling-doctor",
           "type": "artifact"
         }
       ]
@@ -1529,6 +1799,34 @@
       "isComingSoon": false,
       "drops": [
         {
+          "key": "agents-sacrificial-knife",
+          "type": "material"
+        },
+        {
+          "key": "berserker",
+          "type": "artifact"
+        },
+        {
+          "key": "hunters-sacrificial-knife",
+          "type": "material"
+        },
+        {
+          "key": "inspectors-sacrificial-knife",
+          "type": "material"
+        },
+        {
+          "key": "instructor",
+          "type": "artifact"
+        },
+        {
+          "key": "lieutenants-insignia",
+          "type": "material"
+        },
+        {
+          "key": "mora",
+          "type": "material"
+        },
+        {
           "key": "recruits-insignia",
           "type": "material"
         },
@@ -1537,47 +1835,7 @@
           "type": "material"
         },
         {
-          "key": "lieutenants-insignia",
-          "type": "material"
-        },
-        {
-          "key": "hunters-sacrificial-knife",
-          "type": "material"
-        },
-        {
-          "key": "agents-sacrificial-knife",
-          "type": "material"
-        },
-        {
-          "key": "inspectors-sacrificial-knife",
-          "type": "material"
-        },
-        {
-          "key": "berserker",
-          "type": "artifact"
-        },
-        {
-          "key": "instructor",
-          "type": "artifact"
-        },
-        {
           "key": "the-exile",
-          "type": "artifact"
-        },
-        {
-          "key": "traveling-doctor",
-          "type": "artifact"
-        },
-        {
-          "key": "berserker",
-          "type": "artifact"
-        },
-        {
-          "key": "instructor",
-          "type": "artifact"
-        },
-        {
-          "key": "traveling-doctor",
           "type": "artifact"
         }
       ]
@@ -1589,15 +1847,19 @@
       "isComingSoon": false,
       "drops": [
         {
+          "key": "lieutenants-insignia",
+          "type": "material"
+        },
+        {
+          "key": "mora",
+          "type": "material"
+        },
+        {
           "key": "recruits-insignia",
           "type": "material"
         },
         {
           "key": "sergeants-insignia",
-          "type": "material"
-        },
-        {
-          "key": "lieutenants-insignia",
           "type": "material"
         }
       ]
@@ -1609,15 +1871,19 @@
       "isComingSoon": false,
       "drops": [
         {
+          "key": "lieutenants-insignia",
+          "type": "material"
+        },
+        {
+          "key": "mora",
+          "type": "material"
+        },
+        {
           "key": "recruits-insignia",
           "type": "material"
         },
         {
           "key": "sergeants-insignia",
-          "type": "material"
-        },
-        {
-          "key": "lieutenants-insignia",
           "type": "material"
         }
       ]
@@ -1629,15 +1895,19 @@
       "isComingSoon": false,
       "drops": [
         {
+          "key": "lieutenants-insignia",
+          "type": "material"
+        },
+        {
+          "key": "mora",
+          "type": "material"
+        },
+        {
           "key": "recruits-insignia",
           "type": "material"
         },
         {
           "key": "sergeants-insignia",
-          "type": "material"
-        },
-        {
-          "key": "lieutenants-insignia",
           "type": "material"
         }
       ]
@@ -1649,15 +1919,19 @@
       "isComingSoon": false,
       "drops": [
         {
+          "key": "lieutenants-insignia",
+          "type": "material"
+        },
+        {
+          "key": "mora",
+          "type": "material"
+        },
+        {
           "key": "recruits-insignia",
           "type": "material"
         },
         {
           "key": "sergeants-insignia",
-          "type": "material"
-        },
-        {
-          "key": "lieutenants-insignia",
           "type": "material"
         }
       ]
@@ -1669,15 +1943,19 @@
       "isComingSoon": false,
       "drops": [
         {
+          "key": "lieutenants-insignia",
+          "type": "material"
+        },
+        {
+          "key": "mora",
+          "type": "material"
+        },
+        {
           "key": "recruits-insignia",
           "type": "material"
         },
         {
           "key": "sergeants-insignia",
-          "type": "material"
-        },
-        {
-          "key": "lieutenants-insignia",
           "type": "material"
         }
       ]
@@ -1689,15 +1967,55 @@
       "isComingSoon": false,
       "drops": [
         {
+          "key": "lieutenants-insignia",
+          "type": "material"
+        },
+        {
+          "key": "mora",
+          "type": "material"
+        },
+        {
           "key": "recruits-insignia",
           "type": "material"
         },
         {
           "key": "sergeants-insignia",
           "type": "material"
+        }
+      ]
+    },
+    {
+      "key": "floating-dendro-fungus",
+      "image": "floating-dendro-fungus.png",
+      "type": "magicalBeast",
+      "isComingSoon": false,
+      "drops": [
+        {
+          "key": "crystalline-cyst-dust",
+          "type": "material"
         },
         {
-          "key": "lieutenants-insignia",
+          "key": "dormant-fungal-nucleus",
+          "type": "material"
+        },
+        {
+          "key": "fungal-spores",
+          "type": "material"
+        },
+        {
+          "key": "inactivated-fungal-nucleus",
+          "type": "material"
+        },
+        {
+          "key": "luminescent-pollen",
+          "type": "material"
+        },
+        {
+          "key": "mora",
+          "type": "material"
+        },
+        {
+          "key": "robust-fungal-nucleus",
           "type": "material"
         }
       ]
@@ -1707,7 +2025,28 @@
       "image": "floating-hydro-fungus.png",
       "type": "magicalBeast",
       "isComingSoon": false,
-      "drops": []
+      "drops": [
+        {
+          "key": "cabbage",
+          "type": "material"
+        },
+        {
+          "key": "crystalline-cyst-dust",
+          "type": "material"
+        },
+        {
+          "key": "fungal-spores",
+          "type": "material"
+        },
+        {
+          "key": "luminescent-pollen",
+          "type": "material"
+        },
+        {
+          "key": "mora",
+          "type": "material"
+        }
+      ]
     },
     {
       "key": "frostarm-lawachurl",
@@ -1716,8 +2055,8 @@
       "isComingSoon": false,
       "drops": [
         {
-          "key": "heavy-horn",
-          "type": "material"
+          "key": "berserker",
+          "type": "artifact"
         },
         {
           "key": "black-bronze-horn",
@@ -1732,7 +2071,15 @@
           "type": "material"
         },
         {
-          "key": "stained-mask",
+          "key": "heavy-horn",
+          "type": "material"
+        },
+        {
+          "key": "instructor",
+          "type": "artifact"
+        },
+        {
+          "key": "mora",
           "type": "material"
         },
         {
@@ -1740,31 +2087,11 @@
           "type": "material"
         },
         {
-          "key": "berserker",
-          "type": "artifact"
-        },
-        {
-          "key": "instructor",
-          "type": "artifact"
+          "key": "stained-mask",
+          "type": "material"
         },
         {
           "key": "the-exile",
-          "type": "artifact"
-        },
-        {
-          "key": "traveling-doctor",
-          "type": "artifact"
-        },
-        {
-          "key": "berserker",
-          "type": "artifact"
-        },
-        {
-          "key": "instructor",
-          "type": "artifact"
-        },
-        {
-          "key": "traveling-doctor",
           "type": "artifact"
         }
       ]
@@ -1776,11 +2103,19 @@
       "isComingSoon": false,
       "drops": [
         {
-          "key": "prithiva-topaz-sliver",
+          "key": "basalt-pillar",
           "type": "material"
         },
         {
-          "key": "prithiva-topaz-fragment",
+          "key": "gladiators-finale",
+          "type": "artifact"
+        },
+        {
+          "key": "instructor",
+          "type": "artifact"
+        },
+        {
+          "key": "mora",
           "type": "material"
         },
         {
@@ -1788,60 +2123,24 @@
           "type": "material"
         },
         {
+          "key": "prithiva-topaz-fragment",
+          "type": "material"
+        },
+        {
           "key": "prithiva-topaz-gemstone",
           "type": "material"
         },
         {
-          "key": "basalt-pillar",
+          "key": "prithiva-topaz-sliver",
           "type": "material"
-        },
-        {
-          "key": "berserker",
-          "type": "artifact"
-        },
-        {
-          "key": "instructor",
-          "type": "artifact"
         },
         {
           "key": "the-exile",
           "type": "artifact"
         },
         {
-          "key": "traveling-doctor",
-          "type": "artifact"
-        },
-        {
-          "key": "berserker",
-          "type": "artifact"
-        },
-        {
-          "key": "instructor",
-          "type": "artifact"
-        },
-        {
-          "key": "traveling-doctor",
-          "type": "artifact"
-        },
-        {
-          "key": "gladiators-finale",
-          "type": "artifact"
-        },
-        {
           "key": "wanderers-troupe",
           "type": "artifact"
-        },
-        {
-          "key": "gladiators-finale",
-          "type": "artifact"
-        },
-        {
-          "key": "wanderers-troupe",
-          "type": "artifact"
-        },
-        {
-          "key": "mora",
-          "type": "material"
         }
       ]
     },
@@ -1852,11 +2151,11 @@
       "isComingSoon": false,
       "drops": [
         {
-          "key": "divining-scroll",
+          "key": "damaged-mask",
           "type": "material"
         },
         {
-          "key": "sealed-scroll",
+          "key": "divining-scroll",
           "type": "material"
         },
         {
@@ -1864,15 +2163,19 @@
           "type": "material"
         },
         {
-          "key": "damaged-mask",
-          "type": "material"
-        },
-        {
-          "key": "stained-mask",
+          "key": "mora",
           "type": "material"
         },
         {
           "key": "ominous-mask",
+          "type": "material"
+        },
+        {
+          "key": "sealed-scroll",
+          "type": "material"
+        },
+        {
+          "key": "stained-mask",
           "type": "material"
         }
       ]
@@ -1884,15 +2187,19 @@
       "isComingSoon": false,
       "drops": [
         {
+          "key": "mora",
+          "type": "material"
+        },
+        {
+          "key": "slime-concentrate",
+          "type": "material"
+        },
+        {
           "key": "slime-condensate",
           "type": "material"
         },
         {
           "key": "slime-secretions",
-          "type": "material"
-        },
-        {
-          "key": "slime-concentrate",
           "type": "material"
         }
       ]
@@ -1904,11 +2211,15 @@
       "isComingSoon": false,
       "drops": [
         {
-          "key": "spectral-husk",
+          "key": "mora",
           "type": "material"
         },
         {
           "key": "spectral-heart",
+          "type": "material"
+        },
+        {
+          "key": "spectral-husk",
           "type": "material"
         },
         {
@@ -1924,7 +2235,23 @@
       "isComingSoon": false,
       "drops": [
         {
+          "key": "berserker",
+          "type": "artifact"
+        },
+        {
+          "key": "fossilized-bone-shard",
+          "type": "material"
+        },
+        {
           "key": "fragile-bone-shard",
+          "type": "material"
+        },
+        {
+          "key": "instructor",
+          "type": "artifact"
+        },
+        {
+          "key": "mora",
           "type": "material"
         },
         {
@@ -1932,35 +2259,7 @@
           "type": "material"
         },
         {
-          "key": "fossilized-bone-shard",
-          "type": "material"
-        },
-        {
-          "key": "berserker",
-          "type": "artifact"
-        },
-        {
-          "key": "instructor",
-          "type": "artifact"
-        },
-        {
           "key": "the-exile",
-          "type": "artifact"
-        },
-        {
-          "key": "traveling-doctor",
-          "type": "artifact"
-        },
-        {
-          "key": "berserker",
-          "type": "artifact"
-        },
-        {
-          "key": "instructor",
-          "type": "artifact"
-        },
-        {
-          "key": "traveling-doctor",
           "type": "artifact"
         }
       ]
@@ -1972,7 +2271,23 @@
       "isComingSoon": false,
       "drops": [
         {
+          "key": "berserker",
+          "type": "artifact"
+        },
+        {
+          "key": "fossilized-bone-shard",
+          "type": "material"
+        },
+        {
           "key": "fragile-bone-shard",
+          "type": "material"
+        },
+        {
+          "key": "instructor",
+          "type": "artifact"
+        },
+        {
+          "key": "mora",
           "type": "material"
         },
         {
@@ -1980,35 +2295,7 @@
           "type": "material"
         },
         {
-          "key": "fossilized-bone-shard",
-          "type": "material"
-        },
-        {
-          "key": "berserker",
-          "type": "artifact"
-        },
-        {
-          "key": "instructor",
-          "type": "artifact"
-        },
-        {
           "key": "the-exile",
-          "type": "artifact"
-        },
-        {
-          "key": "traveling-doctor",
-          "type": "artifact"
-        },
-        {
-          "key": "berserker",
-          "type": "artifact"
-        },
-        {
-          "key": "instructor",
-          "type": "artifact"
-        },
-        {
-          "key": "traveling-doctor",
           "type": "artifact"
         }
       ]
@@ -2020,11 +2307,15 @@
       "isComingSoon": false,
       "drops": [
         {
-          "key": "prithiva-topaz-sliver",
-          "type": "material"
+          "key": "gladiators-finale",
+          "type": "artifact"
         },
         {
-          "key": "prithiva-topaz-fragment",
+          "key": "instructor",
+          "type": "artifact"
+        },
+        {
+          "key": "mora",
           "type": "material"
         },
         {
@@ -2032,7 +2323,15 @@
           "type": "material"
         },
         {
+          "key": "prithiva-topaz-fragment",
+          "type": "material"
+        },
+        {
           "key": "prithiva-topaz-gemstone",
+          "type": "material"
+        },
+        {
+          "key": "prithiva-topaz-sliver",
           "type": "material"
         },
         {
@@ -2040,55 +2339,47 @@
           "type": "material"
         },
         {
-          "key": "traveling-doctor",
-          "type": "artifact"
-        },
-        {
-          "key": "traveling-doctor",
-          "type": "artifact"
-        },
-        {
-          "key": "instructor",
-          "type": "artifact"
-        },
-        {
           "key": "the-exile",
-          "type": "artifact"
-        },
-        {
-          "key": "prayers-for-wisdom",
-          "type": "artifact"
-        },
-        {
-          "key": "instructor",
-          "type": "artifact"
-        },
-        {
-          "key": "the-exile",
-          "type": "artifact"
-        },
-        {
-          "key": "prayers-for-wisdom",
-          "type": "artifact"
-        },
-        {
-          "key": "gladiators-finale",
           "type": "artifact"
         },
         {
           "key": "wanderers-troupe",
           "type": "artifact"
+        }
+      ]
+    },
+    {
+      "key": "grounded-hydroshroom",
+      "image": "grounded-hydroshroom.png",
+      "type": "magicalBeast",
+      "isComingSoon": false,
+      "drops": [
+        {
+          "key": "crystalline-cyst-dust",
+          "type": "material"
         },
         {
-          "key": "gladiators-finale",
-          "type": "artifact"
+          "key": "dormant-fungal-nucleus",
+          "type": "material"
         },
         {
-          "key": "wanderers-troupe",
-          "type": "artifact"
+          "key": "fungal-spores",
+          "type": "material"
+        },
+        {
+          "key": "inactivated-fungal-nucleus",
+          "type": "material"
+        },
+        {
+          "key": "luminescent-pollen",
+          "type": "material"
         },
         {
           "key": "mora",
+          "type": "material"
+        },
+        {
+          "key": "robust-fungal-nucleus",
           "type": "material"
         }
       ]
@@ -2104,11 +2395,15 @@
           "type": "material"
         },
         {
-          "key": "stained-mask",
+          "key": "mora",
           "type": "material"
         },
         {
           "key": "ominous-mask",
+          "type": "material"
+        },
+        {
+          "key": "stained-mask",
           "type": "material"
         }
       ]
@@ -2124,11 +2419,15 @@
           "type": "material"
         },
         {
-          "key": "stained-mask",
+          "key": "mora",
           "type": "material"
         },
         {
           "key": "ominous-mask",
+          "type": "material"
+        },
+        {
+          "key": "stained-mask",
           "type": "material"
         }
       ]
@@ -2144,11 +2443,15 @@
           "type": "material"
         },
         {
-          "key": "stained-mask",
+          "key": "mora",
           "type": "material"
         },
         {
           "key": "ominous-mask",
+          "type": "material"
+        },
+        {
+          "key": "stained-mask",
           "type": "material"
         }
       ]
@@ -2164,11 +2467,15 @@
           "type": "material"
         },
         {
-          "key": "stained-mask",
+          "key": "mora",
           "type": "material"
         },
         {
           "key": "ominous-mask",
+          "type": "material"
+        },
+        {
+          "key": "stained-mask",
           "type": "material"
         }
       ]
@@ -2180,7 +2487,19 @@
       "isComingSoon": false,
       "drops": [
         {
+          "key": "damaged-mask",
+          "type": "material"
+        },
+        {
           "key": "firm-arrowhead",
+          "type": "material"
+        },
+        {
+          "key": "mora",
+          "type": "material"
+        },
+        {
+          "key": "ominous-mask",
           "type": "material"
         },
         {
@@ -2188,19 +2507,11 @@
           "type": "material"
         },
         {
-          "key": "weathered-arrowhead",
-          "type": "material"
-        },
-        {
-          "key": "damaged-mask",
-          "type": "material"
-        },
-        {
           "key": "stained-mask",
           "type": "material"
         },
         {
-          "key": "ominous-mask",
+          "key": "weathered-arrowhead",
           "type": "material"
         }
       ]
@@ -2212,6 +2523,10 @@
       "isComingSoon": false,
       "drops": [
         {
+          "key": "berserker",
+          "type": "artifact"
+        },
+        {
           "key": "dead-ley-line-branch",
           "type": "material"
         },
@@ -2220,35 +2535,19 @@
           "type": "material"
         },
         {
+          "key": "instructor",
+          "type": "artifact"
+        },
+        {
           "key": "ley-line-sprout",
           "type": "material"
         },
         {
-          "key": "berserker",
-          "type": "artifact"
-        },
-        {
-          "key": "instructor",
-          "type": "artifact"
+          "key": "mora",
+          "type": "material"
         },
         {
           "key": "the-exile",
-          "type": "artifact"
-        },
-        {
-          "key": "traveling-doctor",
-          "type": "artifact"
-        },
-        {
-          "key": "berserker",
-          "type": "artifact"
-        },
-        {
-          "key": "instructor",
-          "type": "artifact"
-        },
-        {
-          "key": "traveling-doctor",
           "type": "artifact"
         }
       ]
@@ -2267,7 +2566,31 @@
       "isComingSoon": false,
       "drops": [
         {
-          "key": "varunada-lazurite-sliver",
+          "key": "berserker",
+          "type": "artifact"
+        },
+        {
+          "key": "dew-of-repudiation",
+          "type": "material"
+        },
+        {
+          "key": "gladiators-finale",
+          "type": "artifact"
+        },
+        {
+          "key": "mora",
+          "type": "material"
+        },
+        {
+          "key": "prayers-for-destiny",
+          "type": "artifact"
+        },
+        {
+          "key": "the-exile",
+          "type": "artifact"
+        },
+        {
+          "key": "varunada-lazurite-chunk",
           "type": "material"
         },
         {
@@ -2275,68 +2598,16 @@
           "type": "material"
         },
         {
-          "key": "varunada-lazurite-chunk",
-          "type": "material"
-        },
-        {
           "key": "varunada-lazurite-gemstone",
           "type": "material"
         },
         {
-          "key": "dew-of-repudiation",
+          "key": "varunada-lazurite-sliver",
           "type": "material"
-        },
-        {
-          "key": "traveling-doctor",
-          "type": "artifact"
-        },
-        {
-          "key": "traveling-doctor",
-          "type": "artifact"
-        },
-        {
-          "key": "instructor",
-          "type": "artifact"
-        },
-        {
-          "key": "the-exile",
-          "type": "artifact"
-        },
-        {
-          "key": "prayers-for-wisdom",
-          "type": "artifact"
-        },
-        {
-          "key": "instructor",
-          "type": "artifact"
-        },
-        {
-          "key": "the-exile",
-          "type": "artifact"
-        },
-        {
-          "key": "prayers-for-wisdom",
-          "type": "artifact"
-        },
-        {
-          "key": "gladiators-finale",
-          "type": "artifact"
         },
         {
           "key": "wanderers-troupe",
           "type": "artifact"
-        },
-        {
-          "key": "gladiators-finale",
-          "type": "artifact"
-        },
-        {
-          "key": "wanderers-troupe",
-          "type": "artifact"
-        },
-        {
-          "key": "mora",
-          "type": "material"
         }
       ]
     },
@@ -2403,11 +2674,11 @@
       "isComingSoon": false,
       "drops": [
         {
-          "key": "divining-scroll",
+          "key": "damaged-mask",
           "type": "material"
         },
         {
-          "key": "sealed-scroll",
+          "key": "divining-scroll",
           "type": "material"
         },
         {
@@ -2415,15 +2686,19 @@
           "type": "material"
         },
         {
-          "key": "damaged-mask",
-          "type": "material"
-        },
-        {
-          "key": "stained-mask",
+          "key": "mora",
           "type": "material"
         },
         {
           "key": "ominous-mask",
+          "type": "material"
+        },
+        {
+          "key": "sealed-scroll",
+          "type": "material"
+        },
+        {
+          "key": "stained-mask",
           "type": "material"
         }
       ]
@@ -2435,15 +2710,19 @@
       "isComingSoon": false,
       "drops": [
         {
+          "key": "mora",
+          "type": "material"
+        },
+        {
+          "key": "slime-concentrate",
+          "type": "material"
+        },
+        {
           "key": "slime-condensate",
           "type": "material"
         },
         {
           "key": "slime-secretions",
-          "type": "material"
-        },
-        {
-          "key": "slime-concentrate",
           "type": "material"
         }
       ]
@@ -2455,11 +2734,15 @@
       "isComingSoon": false,
       "drops": [
         {
-          "key": "spectral-husk",
+          "key": "mora",
           "type": "material"
         },
         {
           "key": "spectral-heart",
+          "type": "material"
+        },
+        {
+          "key": "spectral-husk",
           "type": "material"
         },
         {
@@ -2479,11 +2762,15 @@
           "type": "material"
         },
         {
-          "key": "stained-mask",
+          "key": "mora",
           "type": "material"
         },
         {
           "key": "ominous-mask",
+          "type": "material"
+        },
+        {
+          "key": "stained-mask",
           "type": "material"
         }
       ]
@@ -2495,8 +2782,8 @@
       "isComingSoon": false,
       "drops": [
         {
-          "key": "heavy-horn",
-          "type": "material"
+          "key": "berserker",
+          "type": "artifact"
         },
         {
           "key": "black-bronze-horn",
@@ -2511,7 +2798,15 @@
           "type": "material"
         },
         {
-          "key": "stained-mask",
+          "key": "heavy-horn",
+          "type": "material"
+        },
+        {
+          "key": "instructor",
+          "type": "artifact"
+        },
+        {
+          "key": "mora",
           "type": "material"
         },
         {
@@ -2519,23 +2814,27 @@
           "type": "material"
         },
         {
-          "key": "berserker",
-          "type": "artifact"
-        },
-        {
-          "key": "instructor",
-          "type": "artifact"
+          "key": "stained-mask",
+          "type": "material"
         },
         {
           "key": "the-exile",
           "type": "artifact"
-        },
+        }
+      ]
+    },
+    {
+      "key": "jadeplume-terrorshroom",
+      "image": "jadeplume-terrorshroom.png",
+      "type": "magicalBeast",
+      "isComingSoon": false,
+      "drops": [
         {
-          "key": "traveling-doctor",
+          "key": "berserker",
           "type": "artifact"
         },
         {
-          "key": "berserker",
+          "key": "gladiators-finale",
           "type": "artifact"
         },
         {
@@ -2543,7 +2842,31 @@
           "type": "artifact"
         },
         {
-          "key": "traveling-doctor",
+          "key": "majestic-hooked-beak",
+          "type": "material"
+        },
+        {
+          "key": "mora",
+          "type": "material"
+        },
+        {
+          "key": "nagadus-emerald-chunk",
+          "type": "material"
+        },
+        {
+          "key": "nagadus-emerald-fragment",
+          "type": "material"
+        },
+        {
+          "key": "nagadus-emerald-gemstone",
+          "type": "material"
+        },
+        {
+          "key": "nagadus-emerald-sliver",
+          "type": "material"
+        },
+        {
+          "key": "wanderers-troupe",
           "type": "artifact"
         }
       ]
@@ -2555,7 +2878,7 @@
       "isComingSoon": false,
       "drops": [
         {
-          "key": "old-handguard",
+          "key": "famed-handguard",
           "type": "material"
         },
         {
@@ -2563,7 +2886,11 @@
           "type": "material"
         },
         {
-          "key": "famed-handguard",
+          "key": "mora",
+          "type": "material"
+        },
+        {
+          "key": "old-handguard",
           "type": "material"
         }
       ]
@@ -2575,7 +2902,7 @@
       "isComingSoon": false,
       "drops": [
         {
-          "key": "old-handguard",
+          "key": "famed-handguard",
           "type": "material"
         },
         {
@@ -2583,7 +2910,11 @@
           "type": "material"
         },
         {
-          "key": "famed-handguard",
+          "key": "mora",
+          "type": "material"
+        },
+        {
+          "key": "old-handguard",
           "type": "material"
         }
       ]
@@ -2595,23 +2926,7 @@
       "isComingSoon": false,
       "drops": [
         {
-          "key": "shivada-jade-sliver",
-          "type": "material"
-        },
-        {
-          "key": "shivada-jade-fragment",
-          "type": "material"
-        },
-        {
-          "key": "shivada-jade-chunk",
-          "type": "material"
-        },
-        {
-          "key": "shivada-jade-gemstone",
-          "type": "material"
-        },
-        {
-          "key": "agnidus-agate-sliver",
+          "key": "agnidus-agate-chunk",
           "type": "material"
         },
         {
@@ -2619,19 +2934,11 @@
           "type": "material"
         },
         {
-          "key": "agnidus-agate-chunk",
-          "type": "material"
-        },
-        {
           "key": "agnidus-agate-gemstone",
           "type": "material"
         },
         {
-          "key": "molten-moment",
-          "type": "material"
-        },
-        {
-          "key": "hellfire-butterfly",
+          "key": "agnidus-agate-sliver",
           "type": "material"
         },
         {
@@ -2639,15 +2946,31 @@
           "type": "material"
         },
         {
-          "key": "northlander-sword-billet",
+          "key": "berserker",
+          "type": "artifact"
+        },
+        {
+          "key": "dream-solvent",
           "type": "material"
         },
         {
-          "key": "northlander-claymore-billet",
+          "key": "gladiators-finale",
+          "type": "artifact"
+        },
+        {
+          "key": "hellfire-butterfly",
           "type": "material"
         },
         {
-          "key": "northlander-polearm-billet",
+          "key": "instructor",
+          "type": "artifact"
+        },
+        {
+          "key": "molten-moment",
+          "type": "material"
+        },
+        {
+          "key": "mora",
           "type": "material"
         },
         {
@@ -2659,52 +2982,40 @@
           "type": "material"
         },
         {
-          "key": "berserker",
-          "type": "artifact"
+          "key": "northlander-claymore-billet",
+          "type": "material"
         },
         {
-          "key": "instructor",
-          "type": "artifact"
+          "key": "northlander-polearm-billet",
+          "type": "material"
+        },
+        {
+          "key": "northlander-sword-billet",
+          "type": "material"
+        },
+        {
+          "key": "shivada-jade-chunk",
+          "type": "material"
+        },
+        {
+          "key": "shivada-jade-fragment",
+          "type": "material"
+        },
+        {
+          "key": "shivada-jade-gemstone",
+          "type": "material"
+        },
+        {
+          "key": "shivada-jade-sliver",
+          "type": "material"
         },
         {
           "key": "the-exile",
           "type": "artifact"
         },
         {
-          "key": "traveling-doctor",
-          "type": "artifact"
-        },
-        {
-          "key": "berserker",
-          "type": "artifact"
-        },
-        {
-          "key": "instructor",
-          "type": "artifact"
-        },
-        {
-          "key": "traveling-doctor",
-          "type": "artifact"
-        },
-        {
-          "key": "gladiators-finale",
-          "type": "artifact"
-        },
-        {
           "key": "wanderers-troupe",
           "type": "artifact"
-        },
-        {
-          "key": "gladiators-finale",
-          "type": "artifact"
-        },
-        {
-          "key": "wanderers-troupe",
-          "type": "artifact"
-        },
-        {
-          "key": "mora",
-          "type": "material"
         }
       ]
     },
@@ -2715,15 +3026,19 @@
       "isComingSoon": false,
       "drops": [
         {
+          "key": "mora",
+          "type": "material"
+        },
+        {
+          "key": "slime-concentrate",
+          "type": "material"
+        },
+        {
           "key": "slime-condensate",
           "type": "material"
         },
         {
           "key": "slime-secretions",
-          "type": "material"
-        },
-        {
-          "key": "slime-concentrate",
           "type": "material"
         }
       ]
@@ -2735,15 +3050,19 @@
       "isComingSoon": false,
       "drops": [
         {
+          "key": "mora",
+          "type": "material"
+        },
+        {
+          "key": "slime-concentrate",
+          "type": "material"
+        },
+        {
           "key": "slime-condensate",
           "type": "material"
         },
         {
           "key": "slime-secretions",
-          "type": "material"
-        },
-        {
-          "key": "slime-concentrate",
           "type": "material"
         }
       ]
@@ -2755,15 +3074,19 @@
       "isComingSoon": false,
       "drops": [
         {
+          "key": "mora",
+          "type": "material"
+        },
+        {
+          "key": "slime-concentrate",
+          "type": "material"
+        },
+        {
           "key": "slime-condensate",
           "type": "material"
         },
         {
           "key": "slime-secretions",
-          "type": "material"
-        },
-        {
-          "key": "slime-concentrate",
           "type": "material"
         }
       ]
@@ -2775,15 +3098,19 @@
       "isComingSoon": false,
       "drops": [
         {
+          "key": "mora",
+          "type": "material"
+        },
+        {
+          "key": "slime-concentrate",
+          "type": "material"
+        },
+        {
           "key": "slime-condensate",
           "type": "material"
         },
         {
           "key": "slime-secretions",
-          "type": "material"
-        },
-        {
-          "key": "slime-concentrate",
           "type": "material"
         }
       ]
@@ -2795,15 +3122,19 @@
       "isComingSoon": false,
       "drops": [
         {
+          "key": "mora",
+          "type": "material"
+        },
+        {
+          "key": "slime-concentrate",
+          "type": "material"
+        },
+        {
           "key": "slime-condensate",
           "type": "material"
         },
         {
           "key": "slime-secretions",
-          "type": "material"
-        },
-        {
-          "key": "slime-concentrate",
           "type": "material"
         }
       ]
@@ -2815,15 +3146,19 @@
       "isComingSoon": false,
       "drops": [
         {
+          "key": "mora",
+          "type": "material"
+        },
+        {
+          "key": "slime-concentrate",
+          "type": "material"
+        },
+        {
           "key": "slime-condensate",
           "type": "material"
         },
         {
           "key": "slime-secretions",
-          "type": "material"
-        },
-        {
-          "key": "slime-concentrate",
           "type": "material"
         }
       ]
@@ -2835,15 +3170,19 @@
       "isComingSoon": false,
       "drops": [
         {
+          "key": "mora",
+          "type": "material"
+        },
+        {
+          "key": "slime-concentrate",
+          "type": "material"
+        },
+        {
           "key": "slime-condensate",
           "type": "material"
         },
         {
           "key": "slime-secretions",
-          "type": "material"
-        },
-        {
-          "key": "slime-concentrate",
           "type": "material"
         }
       ]
@@ -2855,39 +3194,7 @@
       "isComingSoon": false,
       "drops": [
         {
-          "key": "shivada-jade-sliver",
-          "type": "material"
-        },
-        {
-          "key": "shivada-jade-fragment",
-          "type": "material"
-        },
-        {
-          "key": "shivada-jade-chunk",
-          "type": "material"
-        },
-        {
-          "key": "shivada-jade-gemstone",
-          "type": "material"
-        },
-        {
-          "key": "prithiva-topaz-sliver",
-          "type": "material"
-        },
-        {
-          "key": "prithiva-topaz-fragment",
-          "type": "material"
-        },
-        {
-          "key": "prithiva-topaz-chunk",
-          "type": "material"
-        },
-        {
-          "key": "prithiva-topaz-gemstone",
-          "type": "material"
-        },
-        {
-          "key": "agnidus-agate-sliver",
+          "key": "agnidus-agate-chunk",
           "type": "material"
         },
         {
@@ -2895,35 +3202,31 @@
           "type": "material"
         },
         {
-          "key": "agnidus-agate-chunk",
-          "type": "material"
-        },
-        {
           "key": "agnidus-agate-gemstone",
           "type": "material"
         },
         {
-          "key": "tail-of-boreas",
+          "key": "agnidus-agate-sliver",
           "type": "material"
         },
         {
-          "key": "ring-of-boreas",
+          "key": "berserker",
+          "type": "artifact"
+        },
+        {
+          "key": "dream-solvent",
           "type": "material"
         },
         {
-          "key": "spirit-locket-of-boreas",
-          "type": "material"
+          "key": "gladiators-finale",
+          "type": "artifact"
         },
         {
-          "key": "northlander-sword-billet",
-          "type": "material"
+          "key": "instructor",
+          "type": "artifact"
         },
         {
-          "key": "northlander-claymore-billet",
-          "type": "material"
-        },
-        {
-          "key": "northlander-polearm-billet",
+          "key": "mora",
           "type": "material"
         },
         {
@@ -2935,52 +3238,68 @@
           "type": "material"
         },
         {
-          "key": "berserker",
-          "type": "artifact"
+          "key": "northlander-claymore-billet",
+          "type": "material"
         },
         {
-          "key": "instructor",
-          "type": "artifact"
+          "key": "northlander-polearm-billet",
+          "type": "material"
+        },
+        {
+          "key": "northlander-sword-billet",
+          "type": "material"
+        },
+        {
+          "key": "prithiva-topaz-chunk",
+          "type": "material"
+        },
+        {
+          "key": "prithiva-topaz-fragment",
+          "type": "material"
+        },
+        {
+          "key": "prithiva-topaz-gemstone",
+          "type": "material"
+        },
+        {
+          "key": "prithiva-topaz-sliver",
+          "type": "material"
+        },
+        {
+          "key": "ring-of-boreas",
+          "type": "material"
+        },
+        {
+          "key": "shivada-jade-chunk",
+          "type": "material"
+        },
+        {
+          "key": "shivada-jade-fragment",
+          "type": "material"
+        },
+        {
+          "key": "shivada-jade-gemstone",
+          "type": "material"
+        },
+        {
+          "key": "shivada-jade-sliver",
+          "type": "material"
+        },
+        {
+          "key": "spirit-locket-of-boreas",
+          "type": "material"
+        },
+        {
+          "key": "tail-of-boreas",
+          "type": "material"
         },
         {
           "key": "the-exile",
           "type": "artifact"
         },
         {
-          "key": "traveling-doctor",
-          "type": "artifact"
-        },
-        {
-          "key": "berserker",
-          "type": "artifact"
-        },
-        {
-          "key": "instructor",
-          "type": "artifact"
-        },
-        {
-          "key": "traveling-doctor",
-          "type": "artifact"
-        },
-        {
-          "key": "gladiators-finale",
-          "type": "artifact"
-        },
-        {
           "key": "wanderers-troupe",
           "type": "artifact"
-        },
-        {
-          "key": "gladiators-finale",
-          "type": "artifact"
-        },
-        {
-          "key": "wanderers-troupe",
-          "type": "artifact"
-        },
-        {
-          "key": "mora",
-          "type": "material"
         }
       ]
     },
@@ -2991,43 +3310,27 @@
       "isComingSoon": false,
       "drops": [
         {
-          "key": "vajrada-amethyst-sliver",
+          "key": "berserker",
+          "type": "artifact"
+        },
+        {
+          "key": "dream-solvent",
           "type": "material"
         },
         {
-          "key": "vajrada-amethyst-fragment",
-          "type": "material"
+          "key": "gladiators-finale",
+          "type": "artifact"
         },
         {
-          "key": "vajrada-amethyst-chunk",
-          "type": "material"
+          "key": "instructor",
+          "type": "artifact"
         },
         {
-          "key": "vajrada-amethyst-gemstone",
+          "key": "mora",
           "type": "material"
         },
         {
           "key": "mudra-of-the-malefic-general",
-          "type": "material"
-        },
-        {
-          "key": "tears-of-the-calamitous-god",
-          "type": "material"
-        },
-        {
-          "key": "the-meaning-of-aeons",
-          "type": "material"
-        },
-        {
-          "key": "northlander-sword-billet",
-          "type": "material"
-        },
-        {
-          "key": "northlander-claymore-billet",
-          "type": "material"
-        },
-        {
-          "key": "northlander-polearm-billet",
           "type": "material"
         },
         {
@@ -3039,52 +3342,48 @@
           "type": "material"
         },
         {
-          "key": "berserker",
-          "type": "artifact"
+          "key": "northlander-claymore-billet",
+          "type": "material"
         },
         {
-          "key": "instructor",
-          "type": "artifact"
+          "key": "northlander-polearm-billet",
+          "type": "material"
+        },
+        {
+          "key": "northlander-sword-billet",
+          "type": "material"
+        },
+        {
+          "key": "tears-of-the-calamitous-god",
+          "type": "material"
         },
         {
           "key": "the-exile",
           "type": "artifact"
         },
         {
-          "key": "traveling-doctor",
-          "type": "artifact"
-        },
-        {
-          "key": "berserker",
-          "type": "artifact"
-        },
-        {
-          "key": "instructor",
-          "type": "artifact"
-        },
-        {
-          "key": "traveling-doctor",
-          "type": "artifact"
-        },
-        {
-          "key": "gladiators-finale",
-          "type": "artifact"
-        },
-        {
-          "key": "wanderers-troupe",
-          "type": "artifact"
-        },
-        {
-          "key": "gladiators-finale",
-          "type": "artifact"
-        },
-        {
-          "key": "wanderers-troupe",
-          "type": "artifact"
-        },
-        {
-          "key": "mora",
+          "key": "the-meaning-of-aeons",
           "type": "material"
+        },
+        {
+          "key": "vajrada-amethyst-chunk",
+          "type": "material"
+        },
+        {
+          "key": "vajrada-amethyst-fragment",
+          "type": "material"
+        },
+        {
+          "key": "vajrada-amethyst-gemstone",
+          "type": "material"
+        },
+        {
+          "key": "vajrada-amethyst-sliver",
+          "type": "material"
+        },
+        {
+          "key": "wanderers-troupe",
+          "type": "artifact"
         }
       ]
     },
@@ -3095,71 +3394,23 @@
       "isComingSoon": false,
       "drops": [
         {
-          "key": "vayuda-turquoise-sliver",
-          "type": "material"
+          "key": "berserker",
+          "type": "artifact"
         },
         {
-          "key": "vayuda-turquoise-fragment",
-          "type": "material"
+          "key": "gladiators-finale",
+          "type": "artifact"
         },
         {
-          "key": "vayuda-turquoise-chunk",
-          "type": "material"
-        },
-        {
-          "key": "vayuda-turquoise-gemstone",
-          "type": "material"
+          "key": "instructor",
+          "type": "artifact"
         },
         {
           "key": "maguu-kishin",
           "type": "material"
         },
         {
-          "key": "berserker",
-          "type": "artifact"
-        },
-        {
-          "key": "instructor",
-          "type": "artifact"
-        },
-        {
-          "key": "lucky-dog",
-          "type": "artifact"
-        },
-        {
-          "key": "berserker",
-          "type": "artifact"
-        },
-        {
-          "key": "instructor",
-          "type": "artifact"
-        },
-        {
-          "key": "gladiators-finale",
-          "type": "artifact"
-        },
-        {
-          "key": "wanderers-troupe",
-          "type": "artifact"
-        },
-        {
-          "key": "gladiators-finale",
-          "type": "artifact"
-        },
-        {
-          "key": "wanderers-troupe",
-          "type": "artifact"
-        },
-        {
           "key": "mora",
-          "type": "material"
-        },
-        {
-          "key": "shivada-jade-sliver",
-          "type": "material"
-        },
-        {
-          "key": "shivada-jade-fragment",
           "type": "material"
         },
         {
@@ -3167,8 +3418,36 @@
           "type": "material"
         },
         {
+          "key": "shivada-jade-fragment",
+          "type": "material"
+        },
+        {
           "key": "shivada-jade-gemstone",
           "type": "material"
+        },
+        {
+          "key": "shivada-jade-sliver",
+          "type": "material"
+        },
+        {
+          "key": "vayuda-turquoise-chunk",
+          "type": "material"
+        },
+        {
+          "key": "vayuda-turquoise-fragment",
+          "type": "material"
+        },
+        {
+          "key": "vayuda-turquoise-gemstone",
+          "type": "material"
+        },
+        {
+          "key": "vayuda-turquoise-sliver",
+          "type": "material"
+        },
+        {
+          "key": "wanderers-troupe",
+          "type": "artifact"
         }
       ]
     },
@@ -3198,40 +3477,14 @@
       "image": "millelith-sergeant.png",
       "type": "human",
       "isComingSoon": false,
-      "drops": [
-        {
-          "key": "treasure-hoarder-insignia",
-          "type": "material"
-        },
-        {
-          "key": "silver-raven-insignia",
-          "type": "material"
-        },
-        {
-          "key": "golden-raven-insignia",
-          "type": "material"
-        }
-      ]
+      "drops": []
     },
     {
       "key": "millelith-soldier",
       "image": "millelith-soldier.png",
       "type": "human",
       "isComingSoon": false,
-      "drops": [
-        {
-          "key": "treasure-hoarder-insignia",
-          "type": "material"
-        },
-        {
-          "key": "silver-raven-insignia",
-          "type": "material"
-        },
-        {
-          "key": "golden-raven-insignia",
-          "type": "material"
-        }
-      ]
+      "drops": []
     },
     {
       "key": "mirror-maiden",
@@ -3240,11 +3493,23 @@
       "isComingSoon": false,
       "drops": [
         {
+          "key": "berserker",
+          "type": "artifact"
+        },
+        {
+          "key": "crystal-prism",
+          "type": "material"
+        },
+        {
           "key": "dismal-prism",
           "type": "material"
         },
         {
-          "key": "crystal-prism",
+          "key": "instructor",
+          "type": "artifact"
+        },
+        {
+          "key": "mora",
           "type": "material"
         },
         {
@@ -3252,31 +3517,7 @@
           "type": "material"
         },
         {
-          "key": "berserker",
-          "type": "artifact"
-        },
-        {
-          "key": "instructor",
-          "type": "artifact"
-        },
-        {
           "key": "the-exile",
-          "type": "artifact"
-        },
-        {
-          "key": "traveling-doctor",
-          "type": "artifact"
-        },
-        {
-          "key": "berserker",
-          "type": "artifact"
-        },
-        {
-          "key": "instructor",
-          "type": "artifact"
-        },
-        {
-          "key": "traveling-doctor",
           "type": "artifact"
         }
       ]
@@ -3288,15 +3529,19 @@
       "isComingSoon": false,
       "drops": [
         {
+          "key": "mora",
+          "type": "material"
+        },
+        {
+          "key": "slime-concentrate",
+          "type": "material"
+        },
+        {
           "key": "slime-condensate",
           "type": "material"
         },
         {
           "key": "slime-secretions",
-          "type": "material"
-        },
-        {
-          "key": "slime-concentrate",
           "type": "material"
         }
       ]
@@ -3308,7 +3553,7 @@
       "isComingSoon": false,
       "drops": [
         {
-          "key": "old-handguard",
+          "key": "famed-handguard",
           "type": "material"
         },
         {
@@ -3316,7 +3561,11 @@
           "type": "material"
         },
         {
-          "key": "famed-handguard",
+          "key": "mora",
+          "type": "material"
+        },
+        {
+          "key": "old-handguard",
           "type": "material"
         }
       ]
@@ -3328,7 +3577,7 @@
       "isComingSoon": false,
       "drops": [
         {
-          "key": "old-handguard",
+          "key": "famed-handguard",
           "type": "material"
         },
         {
@@ -3336,7 +3585,11 @@
           "type": "material"
         },
         {
-          "key": "famed-handguard",
+          "key": "mora",
+          "type": "material"
+        },
+        {
+          "key": "old-handguard",
           "type": "material"
         }
       ]
@@ -3348,7 +3601,7 @@
       "isComingSoon": false,
       "drops": [
         {
-          "key": "old-handguard",
+          "key": "famed-handguard",
           "type": "material"
         },
         {
@@ -3356,7 +3609,11 @@
           "type": "material"
         },
         {
-          "key": "famed-handguard",
+          "key": "mora",
+          "type": "material"
+        },
+        {
+          "key": "old-handguard",
           "type": "material"
         }
       ]
@@ -3368,31 +3625,23 @@
       "isComingSoon": false,
       "drops": [
         {
-          "key": "varunada-lazurite-sliver",
-          "type": "material"
-        },
-        {
-          "key": "varunada-lazurite-fragment",
-          "type": "material"
-        },
-        {
-          "key": "varunada-lazurite-chunk",
-          "type": "material"
-        },
-        {
-          "key": "varunada-lazurite-gemstone",
-          "type": "material"
+          "key": "berserker",
+          "type": "artifact"
         },
         {
           "key": "cleansing-heart",
           "type": "material"
         },
         {
-          "key": "berserker",
+          "key": "gladiators-finale",
           "type": "artifact"
         },
         {
-          "key": "instructor",
+          "key": "mora",
+          "type": "material"
+        },
+        {
+          "key": "prayers-for-destiny",
           "type": "artifact"
         },
         {
@@ -3400,48 +3649,24 @@
           "type": "artifact"
         },
         {
-          "key": "traveling-doctor",
-          "type": "artifact"
-        },
-        {
-          "key": "berserker",
-          "type": "artifact"
-        },
-        {
-          "key": "instructor",
-          "type": "artifact"
-        },
-        {
-          "key": "traveling-doctor",
-          "type": "artifact"
-        },
-        {
-          "key": "gladiators-finale",
-          "type": "artifact"
-        },
-        {
-          "key": "wanderers-troupe",
-          "type": "artifact"
-        },
-        {
-          "key": "gladiators-finale",
-          "type": "artifact"
-        },
-        {
-          "key": "wanderers-troupe",
-          "type": "artifact"
-        },
-        {
-          "key": "prayers-for-destiny",
-          "type": "artifact"
-        },
-        {
-          "key": "prayers-for-destiny",
-          "type": "artifact"
-        },
-        {
-          "key": "mora",
+          "key": "varunada-lazurite-chunk",
           "type": "material"
+        },
+        {
+          "key": "varunada-lazurite-fragment",
+          "type": "material"
+        },
+        {
+          "key": "varunada-lazurite-gemstone",
+          "type": "material"
+        },
+        {
+          "key": "varunada-lazurite-sliver",
+          "type": "material"
+        },
+        {
+          "key": "wanderers-troupe",
+          "type": "artifact"
         }
       ]
     },
@@ -3466,67 +3691,11 @@
       "isComingSoon": false,
       "drops": [
         {
-          "key": "prithiva-topaz-sliver",
-          "type": "material"
-        },
-        {
-          "key": "prithiva-topaz-fragment",
-          "type": "material"
-        },
-        {
-          "key": "prithiva-topaz-chunk",
-          "type": "material"
-        },
-        {
-          "key": "prithiva-topaz-gemstone",
-          "type": "material"
-        },
-        {
-          "key": "perpetual-heart",
-          "type": "material"
-        },
-        {
           "key": "berserker",
           "type": "artifact"
         },
         {
-          "key": "the-exile",
-          "type": "artifact"
-        },
-        {
-          "key": "lucky-dog",
-          "type": "artifact"
-        },
-        {
-          "key": "prayers-to-springtime",
-          "type": "artifact"
-        },
-        {
-          "key": "berserker",
-          "type": "artifact"
-        },
-        {
-          "key": "the-exile",
-          "type": "artifact"
-        },
-        {
-          "key": "prayers-to-springtime",
-          "type": "artifact"
-        },
-        {
           "key": "gladiators-finale",
-          "type": "artifact"
-        },
-        {
-          "key": "wanderers-troupe",
-          "type": "artifact"
-        },
-        {
-          "key": "gladiators-finale",
-          "type": "artifact"
-        },
-        {
-          "key": "wanderers-troupe",
           "type": "artifact"
         },
         {
@@ -3534,11 +3703,27 @@
           "type": "material"
         },
         {
-          "key": "shivada-jade-sliver",
+          "key": "perpetual-heart",
           "type": "material"
         },
         {
-          "key": "shivada-jade-fragment",
+          "key": "prayers-to-springtime",
+          "type": "artifact"
+        },
+        {
+          "key": "prithiva-topaz-chunk",
+          "type": "material"
+        },
+        {
+          "key": "prithiva-topaz-fragment",
+          "type": "material"
+        },
+        {
+          "key": "prithiva-topaz-gemstone",
+          "type": "material"
+        },
+        {
+          "key": "prithiva-topaz-sliver",
           "type": "material"
         },
         {
@@ -3546,8 +3731,24 @@
           "type": "material"
         },
         {
+          "key": "shivada-jade-fragment",
+          "type": "material"
+        },
+        {
           "key": "shivada-jade-gemstone",
           "type": "material"
+        },
+        {
+          "key": "shivada-jade-sliver",
+          "type": "material"
+        },
+        {
+          "key": "the-exile",
+          "type": "artifact"
+        },
+        {
+          "key": "wanderers-troupe",
+          "type": "artifact"
         }
       ]
     },
@@ -3558,23 +3759,7 @@
       "isComingSoon": false,
       "drops": [
         {
-          "key": "prithiva-topaz-sliver",
-          "type": "material"
-        },
-        {
-          "key": "prithiva-topaz-fragment",
-          "type": "material"
-        },
-        {
-          "key": "prithiva-topaz-chunk",
-          "type": "material"
-        },
-        {
-          "key": "prithiva-topaz-gemstone",
-          "type": "material"
-        },
-        {
-          "key": "agnidus-agate-sliver",
+          "key": "agnidus-agate-chunk",
           "type": "material"
         },
         {
@@ -3582,51 +3767,47 @@
           "type": "material"
         },
         {
-          "key": "agnidus-agate-chunk",
-          "type": "material"
-        },
-        {
           "key": "agnidus-agate-gemstone",
           "type": "material"
         },
         {
-          "key": "varunada-lazurite-sliver",
+          "key": "agnidus-agate-sliver",
           "type": "material"
         },
         {
-          "key": "varunada-lazurite-fragment",
+          "key": "berserker",
+          "type": "artifact"
+        },
+        {
+          "key": "gladiators-finale",
+          "type": "artifact"
+        },
+        {
+          "key": "instructor",
+          "type": "artifact"
+        },
+        {
+          "key": "juvenile-jade",
           "type": "material"
         },
         {
-          "key": "varunada-lazurite-chunk",
+          "key": "mora",
           "type": "material"
         },
         {
-          "key": "varunada-lazurite-gemstone",
+          "key": "prithiva-topaz-chunk",
           "type": "material"
         },
         {
-          "key": "vajrada-amethyst-sliver",
+          "key": "prithiva-topaz-fragment",
           "type": "material"
         },
         {
-          "key": "vajrada-amethyst-fragment",
+          "key": "prithiva-topaz-gemstone",
           "type": "material"
         },
         {
-          "key": "vajrada-amethyst-chunk",
-          "type": "material"
-        },
-        {
-          "key": "vajrada-amethyst-gemstone",
-          "type": "material"
-        },
-        {
-          "key": "shivada-jade-sliver",
-          "type": "material"
-        },
-        {
-          "key": "shivada-jade-fragment",
+          "key": "prithiva-topaz-sliver",
           "type": "material"
         },
         {
@@ -3634,87 +3815,55 @@
           "type": "material"
         },
         {
+          "key": "shivada-jade-fragment",
+          "type": "material"
+        },
+        {
           "key": "shivada-jade-gemstone",
           "type": "material"
         },
         {
-          "key": "juvenile-jade",
+          "key": "shivada-jade-sliver",
           "type": "material"
-        },
-        {
-          "key": "berserker",
-          "type": "artifact"
-        },
-        {
-          "key": "instructor",
-          "type": "artifact"
         },
         {
           "key": "the-exile",
           "type": "artifact"
         },
         {
-          "key": "berserker",
-          "type": "artifact"
-        },
-        {
-          "key": "instructor",
-          "type": "artifact"
-        },
-        {
-          "key": "the-exile",
-          "type": "artifact"
-        },
-        {
-          "key": "gladiators-finale",
-          "type": "artifact"
-        },
-        {
-          "key": "wanderers-troupe",
-          "type": "artifact"
-        },
-        {
-          "key": "gladiators-finale",
-          "type": "artifact"
-        },
-        {
-          "key": "wanderers-troupe",
-          "type": "artifact"
-        },
-        {
-          "key": "mora",
+          "key": "vajrada-amethyst-chunk",
           "type": "material"
         },
         {
-          "key": "prayers-for-illumination",
-          "type": "artifact"
+          "key": "vajrada-amethyst-fragment",
+          "type": "material"
         },
         {
-          "key": "prayers-for-destiny",
-          "type": "artifact"
+          "key": "vajrada-amethyst-gemstone",
+          "type": "material"
         },
         {
-          "key": "prayers-for-wisdom",
-          "type": "artifact"
+          "key": "vajrada-amethyst-sliver",
+          "type": "material"
         },
         {
-          "key": "prayers-to-springtime",
-          "type": "artifact"
+          "key": "varunada-lazurite-chunk",
+          "type": "material"
         },
         {
-          "key": "prayers-for-illumination",
-          "type": "artifact"
+          "key": "varunada-lazurite-fragment",
+          "type": "material"
         },
         {
-          "key": "prayers-for-destiny",
-          "type": "artifact"
+          "key": "varunada-lazurite-gemstone",
+          "type": "material"
         },
         {
-          "key": "prayers-for-wisdom",
-          "type": "artifact"
+          "key": "varunada-lazurite-sliver",
+          "type": "material"
         },
         {
-          "key": "prayers-to-springtime",
+          "key": "wanderers-troupe",
           "type": "artifact"
         }
       ]
@@ -3726,7 +3875,23 @@
       "isComingSoon": false,
       "drops": [
         {
+          "key": "berserker",
+          "type": "artifact"
+        },
+        {
+          "key": "fossilized-bone-shard",
+          "type": "material"
+        },
+        {
           "key": "fragile-bone-shard",
+          "type": "material"
+        },
+        {
+          "key": "instructor",
+          "type": "artifact"
+        },
+        {
+          "key": "mora",
           "type": "material"
         },
         {
@@ -3734,35 +3899,7 @@
           "type": "material"
         },
         {
-          "key": "fossilized-bone-shard",
-          "type": "material"
-        },
-        {
-          "key": "berserker",
-          "type": "artifact"
-        },
-        {
-          "key": "instructor",
-          "type": "artifact"
-        },
-        {
           "key": "the-exile",
-          "type": "artifact"
-        },
-        {
-          "key": "traveling-doctor",
-          "type": "artifact"
-        },
-        {
-          "key": "berserker",
-          "type": "artifact"
-        },
-        {
-          "key": "instructor",
-          "type": "artifact"
-        },
-        {
-          "key": "traveling-doctor",
           "type": "artifact"
         }
       ]
@@ -3772,7 +3909,36 @@
       "image": "primordial-bathysmal-vishap-hatchling.png",
       "type": "na",
       "isComingSoon": false,
-      "drops": []
+      "drops": [
+        {
+          "key": "berserker",
+          "type": "artifact"
+        },
+        {
+          "key": "fossilized-bone-shard",
+          "type": "material"
+        },
+        {
+          "key": "fragile-bone-shard",
+          "type": "material"
+        },
+        {
+          "key": "instructor",
+          "type": "artifact"
+        },
+        {
+          "key": "mora",
+          "type": "material"
+        },
+        {
+          "key": "sturdy-bone-shard",
+          "type": "material"
+        },
+        {
+          "key": "the-exile",
+          "type": "artifact"
+        }
+      ]
     },
     {
       "key": "pyro-abyss-mage",
@@ -3780,6 +3946,10 @@
       "type": "abyssOrder",
       "isComingSoon": false,
       "drops": [
+        {
+          "key": "berserker",
+          "type": "artifact"
+        },
         {
           "key": "dead-ley-line-branch",
           "type": "material"
@@ -3789,35 +3959,19 @@
           "type": "material"
         },
         {
+          "key": "instructor",
+          "type": "artifact"
+        },
+        {
           "key": "ley-line-sprout",
           "type": "material"
         },
         {
-          "key": "berserker",
-          "type": "artifact"
-        },
-        {
-          "key": "instructor",
-          "type": "artifact"
+          "key": "mora",
+          "type": "material"
         },
         {
           "key": "the-exile",
-          "type": "artifact"
-        },
-        {
-          "key": "traveling-doctor",
-          "type": "artifact"
-        },
-        {
-          "key": "berserker",
-          "type": "artifact"
-        },
-        {
-          "key": "instructor",
-          "type": "artifact"
-        },
-        {
-          "key": "traveling-doctor",
           "type": "artifact"
         }
       ]
@@ -3829,7 +3983,19 @@
       "isComingSoon": false,
       "drops": [
         {
+          "key": "damaged-mask",
+          "type": "material"
+        },
+        {
           "key": "firm-arrowhead",
+          "type": "material"
+        },
+        {
+          "key": "mora",
+          "type": "material"
+        },
+        {
+          "key": "ominous-mask",
           "type": "material"
         },
         {
@@ -3837,19 +4003,11 @@
           "type": "material"
         },
         {
-          "key": "weathered-arrowhead",
-          "type": "material"
-        },
-        {
-          "key": "damaged-mask",
-          "type": "material"
-        },
-        {
           "key": "stained-mask",
           "type": "material"
         },
         {
-          "key": "ominous-mask",
+          "key": "weathered-arrowhead",
           "type": "material"
         }
       ]
@@ -3861,7 +4019,7 @@
       "isComingSoon": false,
       "drops": [
         {
-          "key": "agnidus-agate-sliver",
+          "key": "agnidus-agate-chunk",
           "type": "material"
         },
         {
@@ -3869,68 +4027,40 @@
           "type": "material"
         },
         {
-          "key": "agnidus-agate-chunk",
+          "key": "agnidus-agate-gemstone",
           "type": "material"
         },
         {
-          "key": "agnidus-agate-gemstone",
+          "key": "agnidus-agate-sliver",
           "type": "material"
+        },
+        {
+          "key": "berserker",
+          "type": "artifact"
+        },
+        {
+          "key": "gladiators-finale",
+          "type": "artifact"
+        },
+        {
+          "key": "instructor",
+          "type": "artifact"
+        },
+        {
+          "key": "mora",
+          "type": "material"
+        },
+        {
+          "key": "prayers-for-illumination",
+          "type": "artifact"
         },
         {
           "key": "smoldering-pearl",
           "type": "material"
         },
         {
-          "key": "adventurer",
-          "type": "artifact"
-        },
-        {
-          "key": "adventurer",
-          "type": "artifact"
-        },
-        {
-          "key": "instructor",
-          "type": "artifact"
-        },
-        {
-          "key": "berserker",
-          "type": "artifact"
-        },
-        {
-          "key": "prayers-for-illumination",
-          "type": "artifact"
-        },
-        {
-          "key": "instructor",
-          "type": "artifact"
-        },
-        {
-          "key": "berserker",
-          "type": "artifact"
-        },
-        {
-          "key": "prayers-for-illumination",
-          "type": "artifact"
-        },
-        {
-          "key": "gladiators-finale",
-          "type": "artifact"
-        },
-        {
           "key": "wanderers-troupe",
           "type": "artifact"
-        },
-        {
-          "key": "gladiators-finale",
-          "type": "artifact"
-        },
-        {
-          "key": "wanderers-troupe",
-          "type": "artifact"
-        },
-        {
-          "key": "mora",
-          "type": "material"
         }
       ]
     },
@@ -3941,7 +4071,7 @@
       "isComingSoon": false,
       "drops": [
         {
-          "key": "agnidus-agate-sliver",
+          "key": "agnidus-agate-chunk",
           "type": "material"
         },
         {
@@ -3949,72 +4079,40 @@
           "type": "material"
         },
         {
-          "key": "agnidus-agate-chunk",
+          "key": "agnidus-agate-gemstone",
           "type": "material"
         },
         {
-          "key": "agnidus-agate-gemstone",
+          "key": "agnidus-agate-sliver",
           "type": "material"
+        },
+        {
+          "key": "berserker",
+          "type": "artifact"
         },
         {
           "key": "everflame-seed",
           "type": "material"
         },
         {
-          "key": "berserker",
-          "type": "artifact"
-        },
-        {
-          "key": "instructor",
-          "type": "artifact"
-        },
-        {
-          "key": "the-exile",
-          "type": "artifact"
-        },
-        {
-          "key": "traveling-doctor",
-          "type": "artifact"
-        },
-        {
-          "key": "berserker",
-          "type": "artifact"
-        },
-        {
-          "key": "instructor",
-          "type": "artifact"
-        },
-        {
-          "key": "traveling-doctor",
-          "type": "artifact"
-        },
-        {
           "key": "gladiators-finale",
           "type": "artifact"
         },
         {
-          "key": "wanderers-troupe",
-          "type": "artifact"
-        },
-        {
-          "key": "gladiators-finale",
-          "type": "artifact"
-        },
-        {
-          "key": "wanderers-troupe",
-          "type": "artifact"
-        },
-        {
-          "key": "prayers-for-illumination",
-          "type": "artifact"
-        },
-        {
-          "key": "prayers-for-illumination",
+          "key": "instructor",
           "type": "artifact"
         },
         {
           "key": "mora",
           "type": "material"
+        },
+        {
+          "key": "prayers-for-illumination",
+          "type": "artifact"
+        },
+        {
+          "key": "wanderers-troupe",
+          "type": "artifact"
         }
       ]
     },
@@ -4025,15 +4123,19 @@
       "isComingSoon": false,
       "drops": [
         {
+          "key": "mora",
+          "type": "material"
+        },
+        {
+          "key": "slime-concentrate",
+          "type": "material"
+        },
+        {
           "key": "slime-condensate",
           "type": "material"
         },
         {
           "key": "slime-secretions",
-          "type": "material"
-        },
-        {
-          "key": "slime-concentrate",
           "type": "material"
         }
       ]
@@ -4045,11 +4147,15 @@
       "isComingSoon": false,
       "drops": [
         {
-          "key": "spectral-husk",
+          "key": "mora",
           "type": "material"
         },
         {
           "key": "spectral-heart",
+          "type": "material"
+        },
+        {
+          "key": "spectral-husk",
           "type": "material"
         },
         {
@@ -4065,7 +4171,11 @@
       "isComingSoon": false,
       "drops": [
         {
-          "key": "whopperflower-nectar",
+          "key": "energy-nectar",
+          "type": "material"
+        },
+        {
+          "key": "mora",
           "type": "material"
         },
         {
@@ -4073,7 +4183,7 @@
           "type": "material"
         },
         {
-          "key": "energy-nectar",
+          "key": "whopperflower-nectar",
           "type": "material"
         }
       ]
@@ -4092,43 +4202,63 @@
       "isComingSoon": false,
       "drops": [
         {
-          "key": "fragile-bone-shard",
-          "type": "material"
-        },
-        {
-          "key": "sturdy-bone-shard",
-          "type": "material"
-        },
-        {
-          "key": "fossilized-bone-shard",
-          "type": "material"
-        },
-        {
           "key": "berserker",
           "type": "artifact"
         },
         {
-          "key": "instructor",
+          "key": "dragonheirs-false-fin",
+          "type": "material"
+        },
+        {
+          "key": "gladiators-finale",
           "type": "artifact"
+        },
+        {
+          "key": "mora",
+          "type": "material"
+        },
+        {
+          "key": "prayers-to-springtime",
+          "type": "artifact"
+        },
+        {
+          "key": "shivada-jade-chunk",
+          "type": "material"
+        },
+        {
+          "key": "shivada-jade-fragment",
+          "type": "material"
+        },
+        {
+          "key": "shivada-jade-gemstone",
+          "type": "material"
+        },
+        {
+          "key": "shivada-jade-sliver",
+          "type": "material"
         },
         {
           "key": "the-exile",
           "type": "artifact"
         },
         {
-          "key": "traveling-doctor",
-          "type": "artifact"
+          "key": "vajrada-amethyst-chunk",
+          "type": "material"
         },
         {
-          "key": "berserker",
-          "type": "artifact"
+          "key": "vajrada-amethyst-fragment",
+          "type": "material"
         },
         {
-          "key": "instructor",
-          "type": "artifact"
+          "key": "vajrada-amethyst-gemstone",
+          "type": "material"
         },
         {
-          "key": "traveling-doctor",
+          "key": "vajrada-amethyst-sliver",
+          "type": "material"
+        },
+        {
+          "key": "wanderers-troupe",
           "type": "artifact"
         }
       ]
@@ -4138,7 +4268,36 @@
       "image": "rimebiter-bathysmal-vishap-hatchling.png",
       "type": "na",
       "isComingSoon": false,
-      "drops": []
+      "drops": [
+        {
+          "key": "berserker",
+          "type": "artifact"
+        },
+        {
+          "key": "fossilized-bone-shard",
+          "type": "material"
+        },
+        {
+          "key": "fragile-bone-shard",
+          "type": "material"
+        },
+        {
+          "key": "instructor",
+          "type": "artifact"
+        },
+        {
+          "key": "mora",
+          "type": "material"
+        },
+        {
+          "key": "sturdy-bone-shard",
+          "type": "material"
+        },
+        {
+          "key": "the-exile",
+          "type": "artifact"
+        }
+      ]
     },
     {
       "key": "rock-shield-hilichurl-guard",
@@ -4151,11 +4310,15 @@
           "type": "material"
         },
         {
-          "key": "stained-mask",
+          "key": "mora",
           "type": "material"
         },
         {
           "key": "ominous-mask",
+          "type": "material"
+        },
+        {
+          "key": "stained-mask",
           "type": "material"
         }
       ]
@@ -4167,8 +4330,8 @@
       "isComingSoon": false,
       "drops": [
         {
-          "key": "heavy-horn",
-          "type": "material"
+          "key": "berserker",
+          "type": "artifact"
         },
         {
           "key": "black-bronze-horn",
@@ -4183,7 +4346,15 @@
           "type": "material"
         },
         {
-          "key": "stained-mask",
+          "key": "heavy-horn",
+          "type": "material"
+        },
+        {
+          "key": "instructor",
+          "type": "artifact"
+        },
+        {
+          "key": "mora",
           "type": "material"
         },
         {
@@ -4191,31 +4362,11 @@
           "type": "material"
         },
         {
-          "key": "berserker",
-          "type": "artifact"
-        },
-        {
-          "key": "instructor",
-          "type": "artifact"
+          "key": "stained-mask",
+          "type": "material"
         },
         {
           "key": "the-exile",
-          "type": "artifact"
-        },
-        {
-          "key": "traveling-doctor",
-          "type": "artifact"
-        },
-        {
-          "key": "berserker",
-          "type": "artifact"
-        },
-        {
-          "key": "instructor",
-          "type": "artifact"
-        },
-        {
-          "key": "traveling-doctor",
           "type": "artifact"
         }
       ]
@@ -4227,11 +4378,11 @@
       "isComingSoon": false,
       "drops": [
         {
-          "key": "concealed-claw",
-          "type": "material"
+          "key": "berserker",
+          "type": "artifact"
         },
         {
-          "key": "concealed-unguis",
+          "key": "concealed-claw",
           "type": "material"
         },
         {
@@ -4239,31 +4390,19 @@
           "type": "material"
         },
         {
-          "key": "berserker",
-          "type": "artifact"
+          "key": "concealed-unguis",
+          "type": "material"
         },
         {
           "key": "instructor",
           "type": "artifact"
+        },
+        {
+          "key": "mora",
+          "type": "material"
         },
         {
           "key": "the-exile",
-          "type": "artifact"
-        },
-        {
-          "key": "traveling-doctor",
-          "type": "artifact"
-        },
-        {
-          "key": "berserker",
-          "type": "artifact"
-        },
-        {
-          "key": "instructor",
-          "type": "artifact"
-        },
-        {
-          "key": "traveling-doctor",
           "type": "artifact"
         }
       ]
@@ -4275,11 +4414,11 @@
       "isComingSoon": false,
       "drops": [
         {
-          "key": "concealed-claw",
-          "type": "material"
+          "key": "berserker",
+          "type": "artifact"
         },
         {
-          "key": "concealed-unguis",
+          "key": "concealed-claw",
           "type": "material"
         },
         {
@@ -4287,31 +4426,19 @@
           "type": "material"
         },
         {
-          "key": "berserker",
-          "type": "artifact"
+          "key": "concealed-unguis",
+          "type": "material"
         },
         {
           "key": "instructor",
           "type": "artifact"
+        },
+        {
+          "key": "mora",
+          "type": "material"
         },
         {
           "key": "the-exile",
-          "type": "artifact"
-        },
-        {
-          "key": "traveling-doctor",
-          "type": "artifact"
-        },
-        {
-          "key": "berserker",
-          "type": "artifact"
-        },
-        {
-          "key": "instructor",
-          "type": "artifact"
-        },
-        {
-          "key": "traveling-doctor",
           "type": "artifact"
         }
       ]
@@ -4323,11 +4450,15 @@
       "isComingSoon": false,
       "drops": [
         {
-          "key": "chaos-gear",
-          "type": "material"
+          "key": "berserker",
+          "type": "artifact"
         },
         {
           "key": "chaos-axis",
+          "type": "material"
+        },
+        {
+          "key": "chaos-gear",
           "type": "material"
         },
         {
@@ -4335,31 +4466,15 @@
           "type": "material"
         },
         {
-          "key": "berserker",
+          "key": "instructor",
           "type": "artifact"
         },
         {
-          "key": "instructor",
-          "type": "artifact"
+          "key": "mora",
+          "type": "material"
         },
         {
           "key": "the-exile",
-          "type": "artifact"
-        },
-        {
-          "key": "traveling-doctor",
-          "type": "artifact"
-        },
-        {
-          "key": "berserker",
-          "type": "artifact"
-        },
-        {
-          "key": "instructor",
-          "type": "artifact"
-        },
-        {
-          "key": "traveling-doctor",
           "type": "artifact"
         }
       ]
@@ -4371,11 +4486,15 @@
       "isComingSoon": false,
       "drops": [
         {
-          "key": "chaos-gear",
-          "type": "material"
+          "key": "berserker",
+          "type": "artifact"
         },
         {
           "key": "chaos-axis",
+          "type": "material"
+        },
+        {
+          "key": "chaos-gear",
           "type": "material"
         },
         {
@@ -4383,31 +4502,15 @@
           "type": "material"
         },
         {
-          "key": "berserker",
+          "key": "instructor",
           "type": "artifact"
         },
         {
-          "key": "instructor",
-          "type": "artifact"
+          "key": "mora",
+          "type": "material"
         },
         {
           "key": "the-exile",
-          "type": "artifact"
-        },
-        {
-          "key": "traveling-doctor",
-          "type": "artifact"
-        },
-        {
-          "key": "berserker",
-          "type": "artifact"
-        },
-        {
-          "key": "instructor",
-          "type": "artifact"
-        },
-        {
-          "key": "traveling-doctor",
           "type": "artifact"
         }
       ]
@@ -4419,11 +4522,15 @@
       "isComingSoon": false,
       "drops": [
         {
-          "key": "chaos-gear",
-          "type": "material"
+          "key": "berserker",
+          "type": "artifact"
         },
         {
           "key": "chaos-axis",
+          "type": "material"
+        },
+        {
+          "key": "chaos-gear",
           "type": "material"
         },
         {
@@ -4431,31 +4538,87 @@
           "type": "material"
         },
         {
-          "key": "berserker",
+          "key": "instructor",
           "type": "artifact"
         },
         {
-          "key": "instructor",
-          "type": "artifact"
+          "key": "mora",
+          "type": "material"
         },
         {
           "key": "the-exile",
           "type": "artifact"
-        },
-        {
-          "key": "traveling-doctor",
-          "type": "artifact"
-        },
+        }
+      ]
+    },
+    {
+      "key": "ruin-drake-earthguard",
+      "image": "ruin-drake-earthguard.png",
+      "type": "automaton",
+      "isComingSoon": false,
+      "drops": [
         {
           "key": "berserker",
           "type": "artifact"
+        },
+        {
+          "key": "chaos-bolt",
+          "type": "material"
+        },
+        {
+          "key": "chaos-module",
+          "type": "material"
+        },
+        {
+          "key": "chaos-storage",
+          "type": "material"
         },
         {
           "key": "instructor",
           "type": "artifact"
         },
         {
-          "key": "traveling-doctor",
+          "key": "mora",
+          "type": "material"
+        },
+        {
+          "key": "the-exile",
+          "type": "artifact"
+        }
+      ]
+    },
+    {
+      "key": "ruin-drake-skywatch",
+      "image": "ruin-drake-skywatch.png",
+      "type": "automaton",
+      "isComingSoon": false,
+      "drops": [
+        {
+          "key": "berserker",
+          "type": "artifact"
+        },
+        {
+          "key": "chaos-bolt",
+          "type": "material"
+        },
+        {
+          "key": "chaos-module",
+          "type": "material"
+        },
+        {
+          "key": "chaos-storage",
+          "type": "material"
+        },
+        {
+          "key": "instructor",
+          "type": "artifact"
+        },
+        {
+          "key": "mora",
+          "type": "material"
+        },
+        {
+          "key": "the-exile",
           "type": "artifact"
         }
       ]
@@ -4467,8 +4630,8 @@
       "isComingSoon": false,
       "drops": [
         {
-          "key": "chaos-device",
-          "type": "material"
+          "key": "berserker",
+          "type": "artifact"
         },
         {
           "key": "chaos-circuit",
@@ -4479,31 +4642,19 @@
           "type": "material"
         },
         {
-          "key": "berserker",
-          "type": "artifact"
+          "key": "chaos-device",
+          "type": "material"
         },
         {
           "key": "instructor",
           "type": "artifact"
+        },
+        {
+          "key": "mora",
+          "type": "material"
         },
         {
           "key": "the-exile",
-          "type": "artifact"
-        },
-        {
-          "key": "traveling-doctor",
-          "type": "artifact"
-        },
-        {
-          "key": "berserker",
-          "type": "artifact"
-        },
-        {
-          "key": "instructor",
-          "type": "artifact"
-        },
-        {
-          "key": "traveling-doctor",
           "type": "artifact"
         }
       ]
@@ -4515,8 +4666,8 @@
       "isComingSoon": false,
       "drops": [
         {
-          "key": "chaos-device",
-          "type": "material"
+          "key": "berserker",
+          "type": "artifact"
         },
         {
           "key": "chaos-circuit",
@@ -4527,31 +4678,19 @@
           "type": "material"
         },
         {
-          "key": "berserker",
-          "type": "artifact"
+          "key": "chaos-device",
+          "type": "material"
         },
         {
           "key": "instructor",
           "type": "artifact"
+        },
+        {
+          "key": "mora",
+          "type": "material"
         },
         {
           "key": "the-exile",
-          "type": "artifact"
-        },
-        {
-          "key": "traveling-doctor",
-          "type": "artifact"
-        },
-        {
-          "key": "berserker",
-          "type": "artifact"
-        },
-        {
-          "key": "instructor",
-          "type": "artifact"
-        },
-        {
-          "key": "traveling-doctor",
           "type": "artifact"
         }
       ]
@@ -4563,8 +4702,8 @@
       "isComingSoon": false,
       "drops": [
         {
-          "key": "chaos-device",
-          "type": "material"
+          "key": "berserker",
+          "type": "artifact"
         },
         {
           "key": "chaos-circuit",
@@ -4575,31 +4714,19 @@
           "type": "material"
         },
         {
-          "key": "berserker",
-          "type": "artifact"
+          "key": "chaos-device",
+          "type": "material"
         },
         {
           "key": "instructor",
           "type": "artifact"
+        },
+        {
+          "key": "mora",
+          "type": "material"
         },
         {
           "key": "the-exile",
-          "type": "artifact"
-        },
-        {
-          "key": "traveling-doctor",
-          "type": "artifact"
-        },
-        {
-          "key": "berserker",
-          "type": "artifact"
-        },
-        {
-          "key": "instructor",
-          "type": "artifact"
-        },
-        {
-          "key": "traveling-doctor",
           "type": "artifact"
         }
       ]
@@ -4611,11 +4738,15 @@
       "isComingSoon": false,
       "drops": [
         {
-          "key": "chaos-gear",
-          "type": "material"
+          "key": "berserker",
+          "type": "artifact"
         },
         {
           "key": "chaos-axis",
+          "type": "material"
+        },
+        {
+          "key": "chaos-gear",
           "type": "material"
         },
         {
@@ -4623,31 +4754,15 @@
           "type": "material"
         },
         {
-          "key": "berserker",
+          "key": "instructor",
           "type": "artifact"
         },
         {
-          "key": "instructor",
-          "type": "artifact"
+          "key": "mora",
+          "type": "material"
         },
         {
           "key": "the-exile",
-          "type": "artifact"
-        },
-        {
-          "key": "traveling-doctor",
-          "type": "artifact"
-        },
-        {
-          "key": "berserker",
-          "type": "artifact"
-        },
-        {
-          "key": "instructor",
-          "type": "artifact"
-        },
-        {
-          "key": "traveling-doctor",
           "type": "artifact"
         }
       ]
@@ -4659,8 +4774,44 @@
       "isComingSoon": false,
       "drops": [
         {
+          "key": "gladiators-finale",
+          "type": "artifact"
+        },
+        {
+          "key": "instructor",
+          "type": "artifact"
+        },
+        {
+          "key": "mora",
+          "type": "material"
+        },
+        {
+          "key": "prithiva-topaz-chunk",
+          "type": "material"
+        },
+        {
+          "key": "prithiva-topaz-fragment",
+          "type": "material"
+        },
+        {
+          "key": "prithiva-topaz-gemstone",
+          "type": "material"
+        },
+        {
+          "key": "prithiva-topaz-sliver",
+          "type": "material"
+        },
+        {
           "key": "runic-fang",
           "type": "material"
+        },
+        {
+          "key": "the-exile",
+          "type": "artifact"
+        },
+        {
+          "key": "wanderers-troupe",
+          "type": "artifact"
         }
       ]
     },
@@ -4678,8 +4829,8 @@
       "isComingSoon": false,
       "drops": [
         {
-          "key": "gloomy-statuette",
-          "type": "material"
+          "key": "berserker",
+          "type": "artifact"
         },
         {
           "key": "dark-statuette",
@@ -4688,6 +4839,22 @@
         {
           "key": "deathly-statuette",
           "type": "material"
+        },
+        {
+          "key": "gloomy-statuette",
+          "type": "material"
+        },
+        {
+          "key": "instructor",
+          "type": "artifact"
+        },
+        {
+          "key": "mora",
+          "type": "material"
+        },
+        {
+          "key": "the-exile",
+          "type": "artifact"
         }
       ]
     },
@@ -4698,8 +4865,8 @@
       "isComingSoon": false,
       "drops": [
         {
-          "key": "gloomy-statuette",
-          "type": "material"
+          "key": "berserker",
+          "type": "artifact"
         },
         {
           "key": "dark-statuette",
@@ -4708,6 +4875,22 @@
         {
           "key": "deathly-statuette",
           "type": "material"
+        },
+        {
+          "key": "gloomy-statuette",
+          "type": "material"
+        },
+        {
+          "key": "instructor",
+          "type": "artifact"
+        },
+        {
+          "key": "mora",
+          "type": "material"
+        },
+        {
+          "key": "the-exile",
+          "type": "artifact"
         }
       ]
     },
@@ -4718,8 +4901,8 @@
       "isComingSoon": false,
       "drops": [
         {
-          "key": "gloomy-statuette",
-          "type": "material"
+          "key": "berserker",
+          "type": "artifact"
         },
         {
           "key": "dark-statuette",
@@ -4728,6 +4911,22 @@
         {
           "key": "deathly-statuette",
           "type": "material"
+        },
+        {
+          "key": "gloomy-statuette",
+          "type": "material"
+        },
+        {
+          "key": "instructor",
+          "type": "artifact"
+        },
+        {
+          "key": "mora",
+          "type": "material"
+        },
+        {
+          "key": "the-exile",
+          "type": "artifact"
         }
       ]
     },
@@ -4752,8 +4951,8 @@
       "isComingSoon": false,
       "drops": [
         {
-          "key": "heavy-horn",
-          "type": "material"
+          "key": "berserker",
+          "type": "artifact"
         },
         {
           "key": "black-bronze-horn",
@@ -4768,7 +4967,15 @@
           "type": "material"
         },
         {
-          "key": "stained-mask",
+          "key": "heavy-horn",
+          "type": "material"
+        },
+        {
+          "key": "instructor",
+          "type": "artifact"
+        },
+        {
+          "key": "mora",
           "type": "material"
         },
         {
@@ -4776,31 +4983,11 @@
           "type": "material"
         },
         {
-          "key": "berserker",
-          "type": "artifact"
-        },
-        {
-          "key": "instructor",
-          "type": "artifact"
+          "key": "stained-mask",
+          "type": "material"
         },
         {
           "key": "the-exile",
-          "type": "artifact"
-        },
-        {
-          "key": "traveling-doctor",
-          "type": "artifact"
-        },
-        {
-          "key": "berserker",
-          "type": "artifact"
-        },
-        {
-          "key": "instructor",
-          "type": "artifact"
-        },
-        {
-          "key": "traveling-doctor",
           "type": "artifact"
         }
       ]
@@ -4812,55 +4999,11 @@
       "isComingSoon": false,
       "drops": [
         {
-          "key": "vayuda-turquoise-sliver",
-          "type": "material"
+          "key": "berserker",
+          "type": "artifact"
         },
         {
-          "key": "vayuda-turquoise-fragment",
-          "type": "material"
-        },
-        {
-          "key": "vayuda-turquoise-chunk",
-          "type": "material"
-        },
-        {
-          "key": "vayuda-turquoise-gemstone",
-          "type": "material"
-        },
-        {
-          "key": "vajrada-amethyst-sliver",
-          "type": "material"
-        },
-        {
-          "key": "vajrada-amethyst-fragment",
-          "type": "material"
-        },
-        {
-          "key": "vajrada-amethyst-chunk",
-          "type": "material"
-        },
-        {
-          "key": "vajrada-amethyst-gemstone",
-          "type": "material"
-        },
-        {
-          "key": "varunada-lazurite-sliver",
-          "type": "material"
-        },
-        {
-          "key": "varunada-lazurite-fragment",
-          "type": "material"
-        },
-        {
-          "key": "varunada-lazurite-chunk",
-          "type": "material"
-        },
-        {
-          "key": "varunada-lazurite-gemstone",
-          "type": "material"
-        },
-        {
-          "key": "dvalins-plume",
+          "key": "dream-solvent",
           "type": "material"
         },
         {
@@ -4868,19 +5011,23 @@
           "type": "material"
         },
         {
+          "key": "dvalins-plume",
+          "type": "material"
+        },
+        {
           "key": "dvalins-sigh",
           "type": "material"
         },
         {
-          "key": "northlander-sword-billet",
-          "type": "material"
+          "key": "gladiators-finale",
+          "type": "artifact"
         },
         {
-          "key": "northlander-claymore-billet",
-          "type": "material"
+          "key": "instructor",
+          "type": "artifact"
         },
         {
-          "key": "northlander-polearm-billet",
+          "key": "mora",
           "type": "material"
         },
         {
@@ -4892,51 +5039,179 @@
           "type": "material"
         },
         {
-          "key": "berserker",
-          "type": "artifact"
+          "key": "northlander-claymore-billet",
+          "type": "material"
         },
         {
-          "key": "instructor",
-          "type": "artifact"
+          "key": "northlander-polearm-billet",
+          "type": "material"
+        },
+        {
+          "key": "northlander-sword-billet",
+          "type": "material"
         },
         {
           "key": "the-exile",
           "type": "artifact"
         },
         {
-          "key": "traveling-doctor",
-          "type": "artifact"
+          "key": "vajrada-amethyst-chunk",
+          "type": "material"
         },
         {
-          "key": "berserker",
-          "type": "artifact"
+          "key": "vajrada-amethyst-fragment",
+          "type": "material"
         },
         {
-          "key": "instructor",
-          "type": "artifact"
+          "key": "vajrada-amethyst-gemstone",
+          "type": "material"
         },
         {
-          "key": "traveling-doctor",
-          "type": "artifact"
+          "key": "vajrada-amethyst-sliver",
+          "type": "material"
         },
         {
-          "key": "gladiators-finale",
-          "type": "artifact"
+          "key": "varunada-lazurite-chunk",
+          "type": "material"
+        },
+        {
+          "key": "varunada-lazurite-fragment",
+          "type": "material"
+        },
+        {
+          "key": "varunada-lazurite-gemstone",
+          "type": "material"
+        },
+        {
+          "key": "varunada-lazurite-sliver",
+          "type": "material"
+        },
+        {
+          "key": "vayuda-turquoise-chunk",
+          "type": "material"
+        },
+        {
+          "key": "vayuda-turquoise-fragment",
+          "type": "material"
+        },
+        {
+          "key": "vayuda-turquoise-gemstone",
+          "type": "material"
+        },
+        {
+          "key": "vayuda-turquoise-sliver",
+          "type": "material"
         },
         {
           "key": "wanderers-troupe",
           "type": "artifact"
+        }
+      ]
+    },
+    {
+      "key": "stretchy-anemo-fungus",
+      "image": "stretchy-anemo-fungus.png",
+      "type": "magicalBeast",
+      "isComingSoon": false,
+      "drops": [
+        {
+          "key": "crystalline-cyst-dust",
+          "type": "material"
         },
         {
-          "key": "gladiators-finale",
-          "type": "artifact"
+          "key": "dormant-fungal-nucleus",
+          "type": "material"
         },
         {
-          "key": "wanderers-troupe",
-          "type": "artifact"
+          "key": "fungal-spores",
+          "type": "material"
+        },
+        {
+          "key": "inactivated-fungal-nucleus",
+          "type": "material"
+        },
+        {
+          "key": "luminescent-pollen",
+          "type": "material"
         },
         {
           "key": "mora",
+          "type": "material"
+        },
+        {
+          "key": "robust-fungal-nucleus",
+          "type": "material"
+        }
+      ]
+    },
+    {
+      "key": "stretchy-geo-fungus",
+      "image": "stretchy-geo-fungus.png",
+      "type": "magicalBeast",
+      "isComingSoon": false,
+      "drops": [
+        {
+          "key": "crystalline-cyst-dust",
+          "type": "material"
+        },
+        {
+          "key": "dormant-fungal-nucleus",
+          "type": "material"
+        },
+        {
+          "key": "fungal-spores",
+          "type": "material"
+        },
+        {
+          "key": "inactivated-fungal-nucleus",
+          "type": "material"
+        },
+        {
+          "key": "luminescent-pollen",
+          "type": "material"
+        },
+        {
+          "key": "mora",
+          "type": "material"
+        },
+        {
+          "key": "robust-fungal-nucleus",
+          "type": "material"
+        }
+      ]
+    },
+    {
+      "key": "stretchy-pyro-fungus",
+      "image": "stretchy-pyro-fungus.png",
+      "type": "magicalBeast",
+      "isComingSoon": false,
+      "drops": [
+        {
+          "key": "crystalline-cyst-dust",
+          "type": "material"
+        },
+        {
+          "key": "dormant-fungal-nucleus",
+          "type": "material"
+        },
+        {
+          "key": "fungal-spores",
+          "type": "material"
+        },
+        {
+          "key": "inactivated-fungal-nucleus",
+          "type": "material"
+        },
+        {
+          "key": "luminescent-pollen",
+          "type": "material"
+        },
+        {
+          "key": "mora",
+          "type": "material"
+        },
+        {
+          "key": "robust-fungal-nucleus",
           "type": "material"
         }
       ]
@@ -4948,7 +5223,31 @@
       "isComingSoon": false,
       "drops": [
         {
-          "key": "vajrada-amethyst-sliver",
+          "key": "gladiators-finale",
+          "type": "artifact"
+        },
+        {
+          "key": "instructor",
+          "type": "artifact"
+        },
+        {
+          "key": "mora",
+          "type": "material"
+        },
+        {
+          "key": "prayers-for-wisdom",
+          "type": "artifact"
+        },
+        {
+          "key": "storm-beads",
+          "type": "material"
+        },
+        {
+          "key": "the-exile",
+          "type": "artifact"
+        },
+        {
+          "key": "vajrada-amethyst-chunk",
           "type": "material"
         },
         {
@@ -4956,68 +5255,16 @@
           "type": "material"
         },
         {
-          "key": "vajrada-amethyst-chunk",
-          "type": "material"
-        },
-        {
           "key": "vajrada-amethyst-gemstone",
           "type": "material"
         },
         {
-          "key": "storm-beads",
+          "key": "vajrada-amethyst-sliver",
           "type": "material"
-        },
-        {
-          "key": "traveling-doctor",
-          "type": "artifact"
-        },
-        {
-          "key": "traveling-doctor",
-          "type": "artifact"
-        },
-        {
-          "key": "instructor",
-          "type": "artifact"
-        },
-        {
-          "key": "the-exile",
-          "type": "artifact"
-        },
-        {
-          "key": "prayers-for-wisdom",
-          "type": "artifact"
-        },
-        {
-          "key": "instructor",
-          "type": "artifact"
-        },
-        {
-          "key": "the-exile",
-          "type": "artifact"
-        },
-        {
-          "key": "prayers-for-wisdom",
-          "type": "artifact"
-        },
-        {
-          "key": "gladiators-finale",
-          "type": "artifact"
         },
         {
           "key": "wanderers-troupe",
           "type": "artifact"
-        },
-        {
-          "key": "gladiators-finale",
-          "type": "artifact"
-        },
-        {
-          "key": "wanderers-troupe",
-          "type": "artifact"
-        },
-        {
-          "key": "mora",
-          "type": "material"
         }
       ]
     },
@@ -5028,11 +5275,11 @@
       "isComingSoon": false,
       "drops": [
         {
-          "key": "concealed-claw",
-          "type": "material"
+          "key": "berserker",
+          "type": "artifact"
         },
         {
-          "key": "concealed-unguis",
+          "key": "concealed-claw",
           "type": "material"
         },
         {
@@ -5040,31 +5287,19 @@
           "type": "material"
         },
         {
-          "key": "berserker",
-          "type": "artifact"
+          "key": "concealed-unguis",
+          "type": "material"
         },
         {
           "key": "instructor",
           "type": "artifact"
+        },
+        {
+          "key": "mora",
+          "type": "material"
         },
         {
           "key": "the-exile",
-          "type": "artifact"
-        },
-        {
-          "key": "traveling-doctor",
-          "type": "artifact"
-        },
-        {
-          "key": "berserker",
-          "type": "artifact"
-        },
-        {
-          "key": "instructor",
-          "type": "artifact"
-        },
-        {
-          "key": "traveling-doctor",
           "type": "artifact"
         }
       ]
@@ -5076,11 +5311,11 @@
       "isComingSoon": false,
       "drops": [
         {
-          "key": "concealed-claw",
-          "type": "material"
+          "key": "berserker",
+          "type": "artifact"
         },
         {
-          "key": "concealed-unguis",
+          "key": "concealed-claw",
           "type": "material"
         },
         {
@@ -5088,31 +5323,19 @@
           "type": "material"
         },
         {
-          "key": "berserker",
-          "type": "artifact"
+          "key": "concealed-unguis",
+          "type": "material"
         },
         {
           "key": "instructor",
           "type": "artifact"
+        },
+        {
+          "key": "mora",
+          "type": "material"
         },
         {
           "key": "the-exile",
-          "type": "artifact"
-        },
-        {
-          "key": "traveling-doctor",
-          "type": "artifact"
-        },
-        {
-          "key": "berserker",
-          "type": "artifact"
-        },
-        {
-          "key": "instructor",
-          "type": "artifact"
-        },
-        {
-          "key": "traveling-doctor",
           "type": "artifact"
         }
       ]
@@ -5124,8 +5347,8 @@
       "isComingSoon": false,
       "drops": [
         {
-          "key": "heavy-horn",
-          "type": "material"
+          "key": "berserker",
+          "type": "artifact"
         },
         {
           "key": "black-bronze-horn",
@@ -5140,7 +5363,15 @@
           "type": "material"
         },
         {
-          "key": "stained-mask",
+          "key": "heavy-horn",
+          "type": "material"
+        },
+        {
+          "key": "instructor",
+          "type": "artifact"
+        },
+        {
+          "key": "mora",
           "type": "material"
         },
         {
@@ -5148,81 +5379,28 @@
           "type": "material"
         },
         {
-          "key": "berserker",
-          "type": "artifact"
-        },
-        {
-          "key": "instructor",
-          "type": "artifact"
+          "key": "stained-mask",
+          "type": "material"
         },
         {
           "key": "the-exile",
           "type": "artifact"
-        },
-        {
-          "key": "traveling-doctor",
-          "type": "artifact"
-        },
-        {
-          "key": "berserker",
-          "type": "artifact"
-        },
-        {
-          "key": "instructor",
-          "type": "artifact"
-        },
-        {
-          "key": "traveling-doctor",
-          "type": "artifact"
         }
       ]
-    },
-    {
-      "key": "treasure-hoarder-wallenstein",
-      "image": "treasure-hoarder-wallenstein.png",
-      "type": "na",
-      "isComingSoon": false,
-      "drops": []
     },
     {
       "key": "treasure-hoarders-boss",
       "image": "treasure-hoarders-boss.png",
       "type": "human",
       "isComingSoon": false,
-      "drops": [
-        {
-          "key": "treasure-hoarder-insignia",
-          "type": "material"
-        },
-        {
-          "key": "silver-raven-insignia",
-          "type": "material"
-        },
-        {
-          "key": "golden-raven-insignia",
-          "type": "material"
-        }
-      ]
+      "drops": []
     },
     {
       "key": "treasure-hoarders-carmen",
       "image": "treasure-hoarders-carmen.png",
       "type": "human",
       "isComingSoon": false,
-      "drops": [
-        {
-          "key": "treasure-hoarder-insignia",
-          "type": "material"
-        },
-        {
-          "key": "silver-raven-insignia",
-          "type": "material"
-        },
-        {
-          "key": "golden-raven-insignia",
-          "type": "material"
-        }
-      ]
+      "drops": []
     },
     {
       "key": "treasure-hoarders-crusher",
@@ -5231,7 +5409,11 @@
       "isComingSoon": false,
       "drops": [
         {
-          "key": "treasure-hoarder-insignia",
+          "key": "golden-raven-insignia",
+          "type": "material"
+        },
+        {
+          "key": "mora",
           "type": "material"
         },
         {
@@ -5239,7 +5421,7 @@
           "type": "material"
         },
         {
-          "key": "golden-raven-insignia",
+          "key": "treasure-hoarder-insignia",
           "type": "material"
         }
       ]
@@ -5251,7 +5433,11 @@
       "isComingSoon": false,
       "drops": [
         {
-          "key": "treasure-hoarder-insignia",
+          "key": "golden-raven-insignia",
+          "type": "material"
+        },
+        {
+          "key": "mora",
           "type": "material"
         },
         {
@@ -5259,7 +5445,7 @@
           "type": "material"
         },
         {
-          "key": "golden-raven-insignia",
+          "key": "treasure-hoarder-insignia",
           "type": "material"
         }
       ]
@@ -5271,7 +5457,11 @@
       "isComingSoon": false,
       "drops": [
         {
-          "key": "treasure-hoarder-insignia",
+          "key": "golden-raven-insignia",
+          "type": "material"
+        },
+        {
+          "key": "mora",
           "type": "material"
         },
         {
@@ -5279,7 +5469,7 @@
           "type": "material"
         },
         {
-          "key": "golden-raven-insignia",
+          "key": "treasure-hoarder-insignia",
           "type": "material"
         }
       ]
@@ -5291,7 +5481,11 @@
       "isComingSoon": false,
       "drops": [
         {
-          "key": "treasure-hoarder-insignia",
+          "key": "golden-raven-insignia",
+          "type": "material"
+        },
+        {
+          "key": "mora",
           "type": "material"
         },
         {
@@ -5299,7 +5493,7 @@
           "type": "material"
         },
         {
-          "key": "golden-raven-insignia",
+          "key": "treasure-hoarder-insignia",
           "type": "material"
         }
       ]
@@ -5311,7 +5505,11 @@
       "isComingSoon": false,
       "drops": [
         {
-          "key": "treasure-hoarder-insignia",
+          "key": "golden-raven-insignia",
+          "type": "material"
+        },
+        {
+          "key": "mora",
           "type": "material"
         },
         {
@@ -5319,7 +5517,7 @@
           "type": "material"
         },
         {
-          "key": "golden-raven-insignia",
+          "key": "treasure-hoarder-insignia",
           "type": "material"
         }
       ]
@@ -5331,7 +5529,11 @@
       "isComingSoon": false,
       "drops": [
         {
-          "key": "treasure-hoarder-insignia",
+          "key": "golden-raven-insignia",
+          "type": "material"
+        },
+        {
+          "key": "mora",
           "type": "material"
         },
         {
@@ -5339,7 +5541,7 @@
           "type": "material"
         },
         {
-          "key": "golden-raven-insignia",
+          "key": "treasure-hoarder-insignia",
           "type": "material"
         }
       ]
@@ -5349,20 +5551,7 @@
       "image": "treasure-hoarders-liuliu.png",
       "type": "human",
       "isComingSoon": false,
-      "drops": [
-        {
-          "key": "treasure-hoarder-insignia",
-          "type": "material"
-        },
-        {
-          "key": "silver-raven-insignia",
-          "type": "material"
-        },
-        {
-          "key": "golden-raven-insignia",
-          "type": "material"
-        }
-      ]
+      "drops": []
     },
     {
       "key": "treasure-hoarders-marksman",
@@ -5371,7 +5560,11 @@
       "isComingSoon": false,
       "drops": [
         {
-          "key": "treasure-hoarder-insignia",
+          "key": "golden-raven-insignia",
+          "type": "material"
+        },
+        {
+          "key": "mora",
           "type": "material"
         },
         {
@@ -5379,7 +5572,7 @@
           "type": "material"
         },
         {
-          "key": "golden-raven-insignia",
+          "key": "treasure-hoarder-insignia",
           "type": "material"
         }
       ]
@@ -5391,7 +5584,11 @@
       "isComingSoon": false,
       "drops": [
         {
-          "key": "treasure-hoarder-insignia",
+          "key": "golden-raven-insignia",
+          "type": "material"
+        },
+        {
+          "key": "mora",
           "type": "material"
         },
         {
@@ -5399,7 +5596,7 @@
           "type": "material"
         },
         {
-          "key": "golden-raven-insignia",
+          "key": "treasure-hoarder-insignia",
           "type": "material"
         }
       ]
@@ -5411,7 +5608,11 @@
       "isComingSoon": false,
       "drops": [
         {
-          "key": "treasure-hoarder-insignia",
+          "key": "golden-raven-insignia",
+          "type": "material"
+        },
+        {
+          "key": "mora",
           "type": "material"
         },
         {
@@ -5419,7 +5620,7 @@
           "type": "material"
         },
         {
-          "key": "golden-raven-insignia",
+          "key": "treasure-hoarder-insignia",
           "type": "material"
         }
       ]
@@ -5429,20 +5630,7 @@
       "image": "treasure-hoarders-raptor.png",
       "type": "human",
       "isComingSoon": false,
-      "drops": [
-        {
-          "key": "treasure-hoarder-insignia",
-          "type": "material"
-        },
-        {
-          "key": "silver-raven-insignia",
-          "type": "material"
-        },
-        {
-          "key": "golden-raven-insignia",
-          "type": "material"
-        }
-      ]
+      "drops": []
     },
     {
       "key": "treasure-hoarders-scout",
@@ -5451,7 +5639,11 @@
       "isComingSoon": false,
       "drops": [
         {
-          "key": "treasure-hoarder-insignia",
+          "key": "golden-raven-insignia",
+          "type": "material"
+        },
+        {
+          "key": "mora",
           "type": "material"
         },
         {
@@ -5459,7 +5651,7 @@
           "type": "material"
         },
         {
-          "key": "golden-raven-insignia",
+          "key": "treasure-hoarder-insignia",
           "type": "material"
         }
       ]
@@ -5471,7 +5663,11 @@
       "isComingSoon": false,
       "drops": [
         {
-          "key": "treasure-hoarder-insignia",
+          "key": "golden-raven-insignia",
+          "type": "material"
+        },
+        {
+          "key": "mora",
           "type": "material"
         },
         {
@@ -5479,17 +5675,177 @@
           "type": "material"
         },
         {
-          "key": "golden-raven-insignia",
+          "key": "treasure-hoarder-insignia",
           "type": "material"
         }
       ]
+    },
+    {
+      "key": "treasure-hoarders-wallenstein",
+      "image": "treasure-hoarders-wallenstein.png",
+      "type": "na",
+      "isComingSoon": false,
+      "drops": []
     },
     {
       "key": "unusual-hilichurl",
       "image": "unusual-hilichurl.png",
       "type": "hilichurl",
       "isComingSoon": false,
-      "drops": []
+      "drops": [
+        {
+          "key": "cabbage",
+          "type": "material"
+        },
+        {
+          "key": "mora",
+          "type": "material"
+        }
+      ]
+    },
+    {
+      "key": "whirling-cryo-fungus",
+      "image": "whirling-cryo-fungus.png",
+      "type": "magicalBeast",
+      "isComingSoon": false,
+      "drops": [
+        {
+          "key": "crystalline-cyst-dust",
+          "type": "material"
+        },
+        {
+          "key": "dormant-fungal-nucleus",
+          "type": "material"
+        },
+        {
+          "key": "fungal-spores",
+          "type": "material"
+        },
+        {
+          "key": "inactivated-fungal-nucleus",
+          "type": "material"
+        },
+        {
+          "key": "luminescent-pollen",
+          "type": "material"
+        },
+        {
+          "key": "mora",
+          "type": "material"
+        },
+        {
+          "key": "robust-fungal-nucleus",
+          "type": "material"
+        }
+      ]
+    },
+    {
+      "key": "whirling-electro-fungus",
+      "image": "whirling-electro-fungus.png",
+      "type": "magicalBeast",
+      "isComingSoon": false,
+      "drops": [
+        {
+          "key": "crystalline-cyst-dust",
+          "type": "material"
+        },
+        {
+          "key": "dormant-fungal-nucleus",
+          "type": "material"
+        },
+        {
+          "key": "fungal-spores",
+          "type": "material"
+        },
+        {
+          "key": "inactivated-fungal-nucleus",
+          "type": "material"
+        },
+        {
+          "key": "luminescent-pollen",
+          "type": "material"
+        },
+        {
+          "key": "mora",
+          "type": "material"
+        },
+        {
+          "key": "robust-fungal-nucleus",
+          "type": "material"
+        }
+      ]
+    },
+    {
+      "key": "winged-cryoshroom",
+      "image": "winged-cryoshroom.png",
+      "type": "magicalBeast",
+      "isComingSoon": false,
+      "drops": [
+        {
+          "key": "crystalline-cyst-dust",
+          "type": "material"
+        },
+        {
+          "key": "dormant-fungal-nucleus",
+          "type": "material"
+        },
+        {
+          "key": "fungal-spores",
+          "type": "material"
+        },
+        {
+          "key": "inactivated-fungal-nucleus",
+          "type": "material"
+        },
+        {
+          "key": "luminescent-pollen",
+          "type": "material"
+        },
+        {
+          "key": "mora",
+          "type": "material"
+        },
+        {
+          "key": "robust-fungal-nucleus",
+          "type": "material"
+        }
+      ]
+    },
+    {
+      "key": "winged-dendroshroom",
+      "image": "winged-dendroshroom.png",
+      "type": "magicalBeast",
+      "isComingSoon": false,
+      "drops": [
+        {
+          "key": "crystalline-cyst-dust",
+          "type": "material"
+        },
+        {
+          "key": "dormant-fungal-nucleus",
+          "type": "material"
+        },
+        {
+          "key": "fungal-spores",
+          "type": "material"
+        },
+        {
+          "key": "inactivated-fungal-nucleus",
+          "type": "material"
+        },
+        {
+          "key": "luminescent-pollen",
+          "type": "material"
+        },
+        {
+          "key": "mora",
+          "type": "material"
+        },
+        {
+          "key": "robust-fungal-nucleus",
+          "type": "material"
+        }
+      ]
     },
     {
       "key": "wooden-shield-hilichurl-guard",
@@ -5502,11 +5858,15 @@
           "type": "material"
         },
         {
-          "key": "stained-mask",
+          "key": "mora",
           "type": "material"
         },
         {
           "key": "ominous-mask",
+          "type": "material"
+        },
+        {
+          "key": "stained-mask",
           "type": "material"
         }
       ]
@@ -5518,8 +5878,8 @@
       "isComingSoon": false,
       "drops": [
         {
-          "key": "heavy-horn",
-          "type": "material"
+          "key": "berserker",
+          "type": "artifact"
         },
         {
           "key": "black-bronze-horn",
@@ -5534,7 +5894,15 @@
           "type": "material"
         },
         {
-          "key": "stained-mask",
+          "key": "heavy-horn",
+          "type": "material"
+        },
+        {
+          "key": "instructor",
+          "type": "artifact"
+        },
+        {
+          "key": "mora",
           "type": "material"
         },
         {
@@ -5542,31 +5910,11 @@
           "type": "material"
         },
         {
-          "key": "berserker",
-          "type": "artifact"
-        },
-        {
-          "key": "instructor",
-          "type": "artifact"
+          "key": "stained-mask",
+          "type": "material"
         },
         {
           "key": "the-exile",
-          "type": "artifact"
-        },
-        {
-          "key": "traveling-doctor",
-          "type": "artifact"
-        },
-        {
-          "key": "berserker",
-          "type": "artifact"
-        },
-        {
-          "key": "instructor",
-          "type": "artifact"
-        },
-        {
-          "key": "traveling-doctor",
           "type": "artifact"
         }
       ]

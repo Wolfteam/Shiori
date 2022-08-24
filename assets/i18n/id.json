@@ -152,12 +152,12 @@
           "abilities": [
             {
               "name": "Normal Attack",
-              "description": "Melancarkan hingga 4 serangan berturut-turut menggunakan busur.\r\n",
+              "description": "Melancarkan hingga 4 serangan berturut-turut menggunakan busur.\n",
               "descriptions": []
             },
             {
               "name": "Charged Attack",
-              "description": "Mengerahkan sebuah Serangan Membidik yang lebih akurat untuk mengakibatkan DMG lebih besar.\r\nSaat membidik, es akan berkumpul di ujung anak panah. Panah dengan energi es yang terkumpul penuh akan mengakibatkan Cryo DMG.\r\n",
+              "description": "Mengerahkan sebuah Serangan Membidik yang lebih akurat untuk mengakibatkan DMG lebih besar.\nSaat membidik, es akan berkumpul di ujung anak panah. Panah dengan energi es yang terkumpul penuh akan mengakibatkan Cryo DMG.\n",
               "descriptions": []
             },
             {
@@ -180,7 +180,7 @@
         {
           "key": "s2",
           "title": "Frozen Wilds",
-          "description": "Aloy melemparkan sebuah Freeze Bomb ke arah target. Freeze Bomb ini akan meledak dan mengakibatkan Cryo DMG saat mengenai target. Setelah meledak, Freeze Bomb akan pecah menjadi beberapa Chillwater Bomblet yang akan meledak dan mengakibatkan Cryo DMG saat tersentuh musuh atau setelah jeda beberapa saat.\r\nSaat Freeze Bomb atau Chillwater Bomblet mengenai musuh, ATK musuh akan berkurang dan Aloy mendapatkan 1 lapisan Coil.\r\nAloy hanya bisa mendapatkan 1 lapisan Coil setiap 0,1 detik.\r\n",
+          "description": "Aloy melemparkan sebuah Freeze Bomb ke arah target. Freeze Bomb ini akan meledak dan mengakibatkan Cryo DMG saat mengenai target. Setelah meledak, Freeze Bomb akan pecah menjadi beberapa Chillwater Bomblet yang akan meledak dan mengakibatkan Cryo DMG saat tersentuh musuh atau setelah jeda beberapa saat.\nSaat Freeze Bomb atau Chillwater Bomblet mengenai musuh, ATK musuh akan berkurang dan Aloy mendapatkan 1 lapisan Coil.\nAloy hanya bisa mendapatkan 1 lapisan Coil setiap 0,1 detik.\n\n",
           "abilities": [
             {
               "name": "Coil",
@@ -197,21 +197,23 @@
             "DMG Freeze Bomb|{param1}%",
             "DMG Chillwater Bomblet|{param2}%",
             "Penurunan ATK|{param3}%",
-            "Durasi Penurunan ATK|{param4}s",
+            "Durasi Penurunan ATK|{param4} detik",
             "Bonus DMG Normal Attack dari Coil|{param5}% / {param6}% / {param7}%",
             "Bonus DMG Normal Attack dari Rushing Ice|{param8}%",
-            "Durasi Rushing Ice|{param9}s",
-            "Cooldown|{param10}s"
+            "Durasi Rushing Ice|{param9} detik",
+            "Cooldown|{param10} dtk",
+            "Normal Attack DMG Bonus Level 4|{param11}%",
+            "Cooldown|{param12} dtk"
           ]
         },
         {
           "key": "s3",
           "title": "Prophecies of Dawn",
-          "description": "Aloy melemparkan sebuah Power Cell yang berisi elemen Cryo ke arah target dan meledakannya dengan anak panah, mengakibatkan Cryo DMG Area.\r\n",
+          "description": "Aloy melemparkan sebuah Power Cell yang berisi elemen Cryo ke arah target dan meledakkannya dengan anak panah, mengakibatkan Cryo DMG Area.\n\n",
           "abilities": [],
           "stats": [
             "DMG Skill|{param1}%",
-            "Cooldown|{param2}s",
+            "Cooldown|{param2} dtk",
             "Konsumsi Energy|{param3}"
           ]
         }
@@ -220,19 +222,19 @@
         {
           "key": "p1",
           "title": "Easy Does It",
-          "description": "Saat Aloy berada dalam party, binatang kecil yang bisa menghasilkan Fowl, Raw Meat, atau Chilled Meat tidak mudah terkejut saat didekati anggota party.\r\n",
+          "description": "Saat Aloy berada dalam party, binatang kecil yang bisa menghasilkan Fowl, Raw Meat, atau Chilled Meat tidak mudah terkejut saat didekati anggota party.\n",
           "descriptions": []
         },
         {
           "key": "p2",
           "title": "Combat Override",
-          "description": "Saat Aloy mendapatkan efek Coil dari skill Frozen Wilds, ATK Aloy akan meningkat 16%, sedangkan ATK anggota party lainnya yang berada di sekitar akan meningkat 8%. Efek ini bertahan selama 10 detik.\r\n",
+          "description": "Saat Aloy mendapatkan efek Coil dari skill Frozen Wilds, ATK Aloy akan meningkat 16%, sedangkan ATK anggota party lainnya yang berada di sekitar akan meningkat 8%. Efek ini bertahan selama 10 detik.\n",
           "descriptions": []
         },
         {
           "key": "p3",
           "title": "Strong Strike",
-          "description": "Saat Aloy berada dalam status Rushing Ice dari skill Frozen Wilds, Cryo DMG Bonus Aloy akan meningkat 3,5% setiap detik. Aloy bisa mendapatkan hingga 35% Cryo DMG Bonus dengan cara ini.\r\n",
+          "description": "Saat Aloy berada dalam status Rushing Ice dari skill Frozen Wilds, Cryo DMG Bonus Aloy akan meningkat 3,5% setiap detik. Aloy bisa mendapatkan hingga 35% Cryo DMG Bonus dengan cara ini.\n",
           "descriptions": []
         }
       ],
@@ -240,37 +242,37 @@
         {
           "key": "c1",
           "title": "Star of Another World",
-          "description": "Belum tiba saatnya bagi orang ini untuk menerangi sudut langit malam yang gelap.\r\n",
+          "description": "Belum tiba saatnya bagi orang ini untuk menerangi sudut langit malam yang gelap.\n",
           "descriptions": []
         },
         {
           "key": "c2",
           "title": "Star of Another World",
-          "description": "Belum tiba saatnya bagi orang ini untuk menerangi sudut langit malam yang gelap.\r\n",
+          "description": "Belum tiba saatnya bagi orang ini untuk menerangi sudut langit malam yang gelap.\n",
           "descriptions": []
         },
         {
           "key": "c3",
           "title": "Star of Another World",
-          "description": "Belum tiba saatnya bagi orang ini untuk menerangi sudut langit malam yang gelap.\r\n",
+          "description": "Belum tiba saatnya bagi orang ini untuk menerangi sudut langit malam yang gelap.\n",
           "descriptions": []
         },
         {
           "key": "c4",
           "title": "Star of Another World",
-          "description": "Belum tiba saatnya bagi orang ini untuk menerangi sudut langit malam yang gelap.\r\n",
+          "description": "Belum tiba saatnya bagi orang ini untuk menerangi sudut langit malam yang gelap.\n",
           "descriptions": []
         },
         {
           "key": "c5",
           "title": "Star of Another World",
-          "description": "Belum tiba saatnya bagi orang ini untuk menerangi sudut langit malam yang gelap.\r\n",
+          "description": "Belum tiba saatnya bagi orang ini untuk menerangi sudut langit malam yang gelap.\n",
           "descriptions": []
         },
         {
           "key": "c6",
           "title": "Star of Another World",
-          "description": "Belum tiba saatnya bagi orang ini untuk menerangi sudut langit malam yang gelap.\r\n",
+          "description": "Belum tiba saatnya bagi orang ini untuk menerangi sudut langit malam yang gelap.\n",
           "descriptions": []
         }
       ]
@@ -1145,86 +1147,125 @@
     {
       "key": "collei",
       "name": "Collei",
-      "title": "???",
-      "description": "",
+      "title": "Sprout of Rebirth",
+      "description": "Seorang Penjaga Hutan Pemula yang aktif di Hutan Avidya. Tutur kata dan perbuatannya sangat lembut, namun kepribadiannya sedikit tertutup.",
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Supplicant’s Bowmanship",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Normal Attack",
+              "description": "Melancarkan hingga 4 serangan berturut-turut menggunakan busur.\n",
+              "descriptions": []
+            },
+            {
+              "name": "Charged Attack",
+              "description": "Mengerahkan sebuah Serangan Membidik yang lebih akurat untuk mengakibatkan DMG lebih besar.\nSaat membidik, elemen Dendro akan berkumpul di ujung anak panah. Panah dengan elemen Dendro yang terkumpul penuh akan mengakibatkan Dendro DMG.\n",
+              "descriptions": []
+            },
+            {
+              "name": "Plunging Attack",
+              "description": "Melancarkan hujan panah dari udara dan menerjang tanah dengan kecepatan tinggi, mengakibatkan DMG area saat mendarat.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "DMG Tahap 1|{param1}%",
+            "DMG Tahap 2|{param2}%",
+            "DMG Tahap 3|{param3}%",
+            "DMG Tahap 4|{param4}%",
+            "DMG Membidik|{param5}%",
+            "DMG Membidik Penuh|{param6}%",
+            "DMG Selama Plunging|{param7}%",
+            "DMG Plunging Attack Min./Maks.|{param8}% / {param9}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
+          "title": "Floral Brush",
+          "description": "Melemparkan Floral Ring yang mengakibatkan 1 kali Dendro DMG pada target yang terkena.\nFloral Ring akan kembali setelah dilemparkan dalam kurun waktu tertentu, dan akan mengakibatkan Dendro DMG lagi.\n\n",
           "abilities": [],
-          "stats": []
+          "stats": [
+            "DMG Skill|{param1}%",
+            "Cooldown|{param2} dtk"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
+          "title": "Trump-Card Kitty",
+          "description": "Mengundang Cuilein-Anbar yang bisa diandalkan untuk membantu di medan pertempuran.\nMelemparkan boneka Cuilein-Anbar yang saat meledak akan mengakibatkan Dendro DMG Area dan akan menghasilkan Zona Cuilein-Anbar. Cuilein-Anbar akan terus memantul-mantul di dalam areanya dan mengakibatkan Dendro DMG Area.\n\n",
           "abilities": [],
-          "stats": []
+          "stats": [
+            "DMG Elemental Burst|{param1}%",
+            "DMG Pantulan|{param2}%",
+            "Durasi|{param3} dtk",
+            "Cooldown|{param4} dtk",
+            "Konsumsi Energy|{param5}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "Gliding Champion of Sumeru",
+          "description": "Mengurangi 20% konsumsi Stamina Karakter sendiri saat meluncur.\nEfek tidak dapat ditumpuk dengan Talenta Pasif lain yang memiliki efek yang sama persis.\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
+          "title": "Floral Sidewinder",
+          "description": "Sebelum Floral Ring kembali, jika ada Karakter di dalam party yang memicu reaksi Burning, Quicken, Aggravate, Spread, Bloom, Hyperbloom, atau Burgeon, akan memberikan status “Sprout” untuk Karakter, yang akan mengakibatkan Dendro DMG secara terus-menerus kepada musuh di sekitar sebesar 40% dari ATK Collei selama 3 detik.\nJika efek Sprout terpicu lagi selama durasinya masih berlangsung, maka efek yang awal akan dihapus. DMG yang diakibatkan oleh efek Sprout akan dianggap sebagai DMG Elemental Skill.\n",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "NA",
-          "description": "",
+          "title": "The Languid Wood",
+          "description": "Saat Karakter yang berada di dalam Zona Cuilein-Anbar memicu efek Burning, Quicken, Aggravate, Spread, Bloom, Hyperbloom, atau Burgeon, maka durasi area akan diperpanjang 1 detik.\nDalam 1 kali Trump-Card Kitty, perpanjangan durasi yang bisa didapatkan dengan cara ini maksimum sebanyak 3 kali.\n",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "Deepwood Patrol",
+          "description": "Ketika Collei ada dalam party namun sedang tidak berada di medan pertempuran, Energy Recharge Collei meningkat 20%.\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
+          "title": "Through Hill and Copse",
+          "description": "Talenta Pasif “Floral Sidewinder” akan berubah menjadi:\n",
+          "descriptions": [
+            "Saat Floral Ring kembali, Talenta Pasif “Floral Sidewinder” akan memberikan status “Sprout” untuk Karakter, yang akan mengakibatkan Dendro DMG secara terus-menerus kepada musuh di sekitar sebesar 40% dari ATK Collei selama 3 detik.",
+            "Sejak melancarkan Floral Brush dan sebelum status Sprout kali ini hilang, jika ada Karakter di dalam party yang memicu reaksi Burning, Quicken, Aggravate, Spread, Bloom, Hyperbloom, atau Burgeon, maka durasi efek Sprout kali ini diperpanjang 3 detik.",
+            "Perpanjangan durasi efek Sprout yang bisa didapatkan dengan cara ini adalah 1 kali. Jika efek Sprout terpicu lagi selama durasinya berlangsung, maka efek yang awal akan dihapus. DMG yang diakibatkan oleh efek Sprout dianggap sebagai DMG Elemental Skill.",
+            "Harus sudah membuka Talenta Pasif Floral Sidewinder lebih dulu."
+          ]
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "Scent of Summer",
+          "description": "Meningkatkan 3 level Floral Brush.\nMaksimum: Lv. 15.\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "Gift of the Woods",
+          "description": "Saat melancarkan Trump-Card Kitty, akan meningkatkan 60 poin Elemental Mastery seluruh anggota party di sekitar (tidak termasuk Collei) selama 12 detik.\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "All Embers",
+          "description": "Meningkatkan 3 level Trump-Card Kitty.\nMaksimum: Lv. 15.\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
+          "title": "Forest of Falling Arrows",
+          "description": "Saat Floral Ring mengenai target, akan menghasilkan 1 miniatur Cuilein-Anbar dan mengakibatkan Dendro DMG sebesar 200% dari ATK Collei.\nHanya 1 miniatur Cuilein-Anbar yang bisa dihasilkan setiap kali melancarkan Floral Brush.\n",
           "descriptions": []
         }
       ]
@@ -1507,87 +1548,142 @@
     {
       "key": "dori",
       "name": "Dori",
-      "title": "???",
-      "description": "",
+      "title": "Treasure of Dream Garden",
+      "description": "Pedagang keliling yang sulit dipahami dan paling suka dengan Mora yang berkilauan.",
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Marvelous Sword-Dance (Modified)",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Normal Attack Melancarkan hingga 3 tebasan berturut-turut.",
+              "description": "",
+              "descriptions": []
+            },
+            {
+              "name": "Charged Attack",
+              "description": "Terus menguras Stamina untuk melancarkan serangan berputar yang mengakibatkan DMG ke musuh di sekitar.\nSaat berhenti berputar, akan melancarkan sebuah tebasan yang sangat kuat.\n",
+              "descriptions": []
+            },
+            {
+              "name": "Plunging Attack",
+              "description": "Menerjang dari udara untuk menghantam tanah, mengakibatkan DMG pada musuh di jalur terjangan dan mengakibatkan DMG Area saat mendarat.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "DMG Tahap 1|{param1}%",
+            "DMG Tahap 2|{param2}% + {param3}%",
+            "DMG Tahap 3|{param4}%",
+            "DMG Berputar Charged Attack|{param5}%",
+            "DMG Akhir Charged Attack|{param6}%",
+            "Konsumsi Stamina Charged Attack|{param7} / dtk",
+            "Durasi Maksimum|{param8} dtk",
+            "DMG Selama Plunging|{param9}%",
+            "DMG Plunging Attack Min./Maks.|{param10}% / {param11}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
+          "title": "Spirit-Warding Lamp: Troubleshooter Cannon",
+          "description": "Memerintahkan Spirit-Warding Lamp untuk menembakkan Troubleshooter Shot terhadap musuh, mengakibatkan Electro DMG.\nSetelah Troubleshooter Shot mengenai target, akan menghasilkan 2 buah After-Sales Service Round yang akan otomatis mengikuti musuh di sekitar dan mengakibatkan Electro DMG.\n\n",
           "abilities": [],
-          "stats": []
+          "stats": [
+            "DMG Troubleshooter Shot|{param1}%",
+            "DMG After-Sales Service Round|{param2}%",
+            "Cooldown|{param3} dtk"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Alcazarzaray’s Exactitude",
+          "description": "Memanggil Jinni yang berada di dalam lampu dan menyediakan bantuan yang beragam kepada klien.\n\n",
+          "abilities": [
+            {
+              "name": "Lamp Spirit",
+              "description": "Akan bisa terhubung dengan Karakter di sekitar. Karakter yang terhubung dengan Jinni akan:\n",
+              "descriptions": [
+                "Terus-menerus memulihkan HP berdasarkan Max HP Dori;",
+                "Terus menerus memulihkan Energy Karakter;",
+                "Berada dalam status terpengaruh oleh efek Electro.",
+                "Selain itu, saat penghubung antara Karakter dan Jinni menyentuh musuh, akan mengakibatkan satu kali Electro DMG terhadap musuh setiap 0,4 detik.",
+                "Hanya satu Jinni yang bisa muncul dalam waktu bersamaan."
+              ]
+            }
+          ],
+          "stats": [
+            "DMG Connector|{param1}%",
+            "Heal Berkelanjutan|{param2}% Max HP + {param3}",
+            "Pemulihan Energy|{param4}",
+            "Durasi|{param5} dtk",
+            "Cooldown|{param6} dtk",
+            "Konsumsi Energy|{param7}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "Unexpected Order",
+          "description": "Saat membuat Material Penguatan Senjata dan Karakter, memiliki 25% persentase untuk mendapatkan kembali sebagian material yang digunakan.\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
+          "title": "An Eye for Gold",
+          "description": "Setelah Karakter yang terhubung dengan Jinni memicu Electro-Charged, Superconduct, Overloaded, Quicken, Aggravate, Hyperbloom, atau reaksi Swirl atau Crystallize dari Electro, maka CD Spirit-Warding Lamp: Troubleshooter Cannon berkurang 1 detik.\nEfek ini dapat terpicu setiap 3 detik.\n",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "NA",
-          "description": "",
+          "title": "Compound Interest",
+          "description": "Saat Troubleshooter Shot atau After-Sales Service Round dari Spirit-Warding Lamp: Troubleshooter Cannon mengenai musuh, Dori akan memulihkan 5 Energy untuk setiap 100% Energy Recharge yang dimiliki Dori.\nUntuk setiap Spirit-Warding Lamp: Troubleshooter Cannon, hanya satu pemulihan Energi yang dapat terpicu dan maksimal 15 Energy yang bisa dipulihkan dengan cara ini.\n",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "Additional Investment",
+          "description": "Jumlah After Sales Service Round yang diciptakan dari Troubleshooter Shot bertambah 1.\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "Special Franchise",
+          "description": "Saat berada dalam status pertempuran, saat Jinni memulihkan HP Karakter yang terhubung, maka akan menembakkan Jinni Toop dari posisi berdiri Karakter tersebut dan mengakibatkan DMG setara dengan 50% dari ATK Dori.\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "Wonders Never Cease",
+          "description": "Meningkatkan 3 level Alcazarzaray’s Exactitude.\nMaksimum: Lv. 15.\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
+          "title": "Discretionary Supplement",
+          "description": "Karakter yang terhubung dengan Jinni akan mendapatkan buff berikut berdasarkan HP dan Energy sekarang:\n",
+          "descriptions": [
+            "Meningkatkan 50% Bonus Pemulihan saat HP kurang dari 50%;",
+            "Meningkatkan 30% Energy Recharge saat Energy kurang dari 50%."
+          ]
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "Value for Mora",
+          "description": "Meningkatkan 3 level Spirit-Warding Lamp: Troubleshooter Cannon.\nMaksimum: Lv. 15.\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
+          "title": "Sprinkling Weight",
+          "description": "3 detik setelah melancarkan Spirit-Warding Lamp: Troubleshooter Cannon, Dori akan mendapatkan efek berikut:\n",
+          "descriptions": [
+            "Electro Infusion;",
+            "Saat Normal Attack mengenai musuh, memulihkan HP kepada seluruh anggota party di sekitar sebesar 4% Max HP Dori. Pemulihan HP dengan cara ini bisa terjadi setiap 0.1 detik sekali."
+          ]
         }
       ]
     },
@@ -1744,7 +1840,7 @@
       "key": "fischl",
       "name": "Fischl",
       "title": "Prinzessin der Verurteilung!!",
-      "description": "Seorang gadis misterius yang menyebut dirinya sendiri \"Prinzessin der Verurteilung\", dia selalu terlihat bersama dengan seekor gagak hitam yang bernama Oz.",
+      "description": "Seorang gadis misterius yang menyebut dirinya sendiri “Prinzessin der Verurteilung”, dia selalu terlihat bersama dengan seekor gagak hitam yang bernama Oz.",
       "skills": [
         {
           "key": "s1",
@@ -1753,12 +1849,12 @@
           "abilities": [
             {
               "name": "Normal Attack",
-              "description": "Melancarkan hingga 5 serangan berturut-turut menggunakan busur.\r\n",
+              "description": "Melancarkan hingga 5 serangan berturut-turut menggunakan busur.\n",
               "descriptions": []
             },
             {
               "name": "Charged Attack",
-              "description": "Melancarkan sebuah Serangan Membidik yang lebih akurat untuk mengakibatkan DMG lebih besar. Saat membidik, jiwa petir hitam dari Immernachtreich akan menjawab panggilan Prinzessin dan kekuatannya berkumpul pada ujung anak panah. Saat terkumpul penuh, Rachsüchtig Blitz akan mengakibatkan Electro DMG.\r\n",
+              "description": "Melancarkan sebuah Serangan Membidik yang lebih akurat untuk mengakibatkan DMG lebih besar. Saat membidik, jiwa petir hitam dari Immernachtreich akan menjawab panggilan Prinzessin dan kekuatannya berkumpul pada ujung anak panah. Saat terkumpul penuh, Rachsüchtig Blitz akan mengakibatkan Electro DMG.\n",
               "descriptions": []
             },
             {
@@ -1782,23 +1878,23 @@
         {
           "key": "s2",
           "title": "Nightrider",
-          "description": "Memanggil Oz. Gagak malam yang tercipta dalam kegelapan dan halilintar turun ke bumi untuk mengakibatkan Electro DMG dalam area kecil.\r\nSelama durasi skill, Oz akan terus menyerang musuh di sekitar dengan Freikugel.\r\nTahan untuk mengatur lokasi di mana Oz akan dipanggil.\r\nTekan lagi sewaktu-waktu dalam durasi skill untuk memanggil Oz kembali ke sisi Fischl.\r\n",
+          "description": "Memanggil Oz. Gagak malam yang tercipta dalam kegelapan dan halilintar turun ke bumi untuk mengakibatkan Electro DMG dalam area kecil.\nSelama durasi skill, Oz akan terus menyerang musuh di sekitar dengan Freikugel.\n\nTahan untuk mengatur lokasi di mana Oz akan dipanggil.\nTekan lagi sewaktu-waktu dalam durasi skill untuk memanggil Oz kembali ke sisi Fischl.\n\n\n",
           "abilities": [],
           "stats": [
             "DMG Serangan Oz|{param1}%",
             "Summoning DMG|{param2}%",
-            "Durasi OZ|{param3}s",
-            "CD|{param4}s"
+            "Durasi Oz|{param3} detik",
+            "Cooldown|{param4} dtk"
           ]
         },
         {
           "key": "s3",
           "title": "Midnight Phantasmagoria",
-          "description": "Memanggil Oz untuk membentangkan kedua sayap kegelapan dan melindungi Fischl.\r\n",
+          "description": "Memanggil Oz untuk membentangkan kedua sayap kegelapan dan melindungi Fischl.\n",
           "abilities": [
             {
               "name": "",
-              "description": "Memiliki efek berikut selama durasi skill:\r\n",
+              "description": "Memiliki efek berikut selama durasi skill:\n",
               "descriptions": [
                 "Fischl mengambil bentuk Oz, membuat kecepatan gerak dia meningkat drastis.",
                 "Menyerang musuh terdekat dengan menggunakan petir, menghasilkan Electro DMG kepada musuh yang menyentuhnya. Setiap musuh hanya dapat tersambar satu kali.",
@@ -1808,8 +1904,9 @@
           ],
           "stats": [
             "DMG Falling Thunder|{param1}%",
-            "CD|{param2}s",
-            "Konsumsi Energy|{param3}"
+            "Cooldown|{param2} dtk",
+            "Konsumsi Energy|{param3}",
+            "Konsumsi Energy|{param4}"
           ]
         }
       ],
@@ -1817,19 +1914,19 @@
         {
           "key": "p1",
           "title": "Mein Hausgarten",
-          "description": "Ketika dikirim untuk melakukan ekspedisi di Mondstadt, waktu yang dibutuhkan berkurang 25%.\r\n",
+          "description": "Ketika dikirim untuk melakukan ekspedisi di Mondstadt, waktu yang dibutuhkan berkurang 25%.\n",
           "descriptions": []
         },
         {
           "key": "p2",
           "title": "Stellar Predator",
-          "description": "Saat Fischl menembakkan Serangan Membidik yang telah di-Charge penuh ke arah Oz, Oz akan memanggil Thundering Retribution yang mengakibatkan Electro DMG area sebesar 152.7% DMG panah.\r\n",
+          "description": "Saat Fischl menembakkan Serangan Membidik yang telah di-Charge penuh ke arah Oz, Oz akan memanggil Thundering Retribution yang mengakibatkan Electro DMG area sebesar 152.7% DMG panah.\n",
           "descriptions": []
         },
         {
           "key": "p3",
           "title": "Undone Be Thy Sinful Hex",
-          "description": "Jika karakter yang sedang digunakan memicu Reaksi Elemental yang berhubungan dengan elemen Electro pada saat Oz berada di medan tempur, musuh akan terkena Thundering Retribution yang mengakibatkan Electro DMG sebesar 80% ATK Fischl.\r\n",
+          "description": "Jika karakter yang sedang digunakan memicu Reaksi Elemental yang berhubungan dengan elemen Electro pada saat Oz berada di medan tempur, musuh akan terkena Thundering Retribution yang mengakibatkan Electro DMG sebesar 80% ATK Fischl.\n",
           "descriptions": []
         }
       ],
@@ -1837,37 +1934,37 @@
         {
           "key": "c1",
           "title": "Gaze of the Deep",
-          "description": "Saat Oz tidak di dalam medan pertarungan, dia masih tetap bisa melindungi Fischl melalui mata burung gagak. Saat Fischl menyerang musuh dengan Normal Attack, Oz melancarkan serangan melalui mata burung gagak yang mengakibatkan DMG sebesar 22% ATK.\r\n",
+          "description": "Saat Oz tidak di dalam medan pertarungan, dia masih tetap bisa melindungi Fischl melalui mata burung gagak. Saat Fischl menyerang musuh dengan Normal Attack, Oz melancarkan serangan melalui mata burung gagak yang mengakibatkan DMG sebesar 22% ATK.\n",
           "descriptions": []
         },
         {
           "key": "c2",
           "title": "Devourer of All Sins",
-          "description": "Menggunakan Nightrider akan mengakibatkan serangan tambahan sebesar 200% ATK, dan meningkatkan 50% area serangan.\r\n",
+          "description": "Menggunakan Nightrider akan mengakibatkan serangan tambahan sebesar 200% ATK, dan meningkatkan 50% area serangan.\n",
           "descriptions": []
         },
         {
           "key": "c3",
           "title": "Wings of Nightmare",
-          "description": "Meningkatkan 3 level Nightrider.\r\nMaksimum: Lv. 15.\r\n",
+          "description": "Meningkatkan 3 level Nightrider.\nMaksimum: Lv. 15.\n",
           "descriptions": []
         },
         {
           "key": "c4",
           "title": "Her Pilgrimage of Bleak",
-          "description": "Saat menggunakan Midnight Phantasmagoria, mengakibatkan Electro DMG ke musuh di sekitar sebesar 222% ATK ke musuh di sekitar.\r\nSaat skill berakhir, memulihkan 20% HP Fischl.\r\n",
+          "description": "Saat menggunakan Midnight Phantasmagoria, mengakibatkan Electro DMG ke musuh di sekitar sebesar 222% ATK ke musuh di sekitar.\nSaat skill berakhir, memulihkan 20% HP Fischl.\n",
           "descriptions": []
         },
         {
           "key": "c5",
           "title": "Against the Fleeing Light",
-          "description": "Meningkatkan 3 level Midnight Phantasmagoria.\r\nMaksimum: Lv. 15.\r\n",
+          "description": "Meningkatkan 3 level Midnight Phantasmagoria.\nMaksimum: Lv. 15.\n",
           "descriptions": []
         },
         {
           "key": "c6",
           "title": "Evernight Raven",
-          "description": "Meningkatkan durasi pemanggilan Oz selama 2 detik, selama durasi, Oz menyerang bersama dengan karakter yang sedang bertarung, mengakibatkan 30% ATK Fischl sebagai Electro DMG.\r\n",
+          "description": "Meningkatkan durasi pemanggilan Oz selama 2 detik, selama durasi, Oz menyerang bersama dengan karakter yang sedang bertarung, mengakibatkan 30% ATK Fischl sebagai Electro DMG.\n",
           "descriptions": []
         }
       ]
@@ -2632,12 +2729,12 @@
           "abilities": [
             {
               "name": "Normal Attack",
-              "description": "Melancarkan hingga 5 serangan berturut-turut.\r\n",
+              "description": "Melancarkan hingga 5 serangan berturut-turut.\n",
               "descriptions": []
             },
             {
               "name": "Charged Attack",
-              "description": "Mengonsumsi sejumlah Stamina untuk melancarkan dua tebasan pedang.\r\n",
+              "description": "Mengonsumsi sejumlah Stamina untuk melancarkan dua tebasan pedang.\n",
               "descriptions": []
             },
             {
@@ -2661,23 +2758,24 @@
         {
           "key": "s2",
           "title": "Frostgnaw",
-          "description": "Mengerahkan sebuah ledakan dingin yang mengakibatkan Cryo DMG ke musuh di depan Kaeya.\r\n",
+          "description": "Mengerahkan sebuah ledakan dingin yang mengakibatkan Cryo DMG ke musuh di depan Kaeya.\n\n",
           "abilities": [],
           "stats": [
             "DMG Skill|{param1}%",
-            "Cooldown|{param2}s"
+            "Cooldown|{param2} dtk"
           ]
         },
         {
           "key": "s3",
           "title": "Glacial Waltz",
-          "description": "Dengan menggabungkan es di udara, Kaeya membuat 3 pilar es di sekitar dia.\r\nPilar-pilar ini akan mengikuti karakter dan mengakibatkan Cryo DMG ke musuh di jalurnya.\r\n",
+          "description": "Dengan menggabungkan es di udara, Kaeya membuat 3 pilar es di sekitar dia.\nPilar-pilar ini akan mengikuti karakter dan mengakibatkan Cryo DMG ke musuh di jalurnya.\n\n",
           "abilities": [],
           "stats": [
             "DMG Skill|{param1}%",
-            "Cooldown|{param2}s",
-            "Durasi|{param3}s",
-            "Konsumsi Energy|{param4}"
+            "Cooldown|{param2} dtk",
+            "Durasi|{param3} dtk",
+            "Konsumsi Energy|{param4}",
+            "Konsumsi Energy|{param5}"
           ]
         }
       ],
@@ -2685,19 +2783,19 @@
         {
           "key": "p1",
           "title": "Hidden Strength",
-          "description": "Mengurangi 20% konsumsi Stamina karakter sendiri saat berlari.\r\nEfek tidak dapat ditumpuk dengan Talenta Pasif lain yang memiliki efek yang sama.\r\n",
+          "description": "Mengurangi 20% konsumsi Stamina karakter sendiri saat berlari.\nEfek tidak dapat ditumpuk dengan Talenta Pasif lain yang memiliki efek yang sama.\n",
           "descriptions": []
         },
         {
           "key": "p2",
           "title": "Cold-Blooded Strike",
-          "description": "Setiap kali skill Frostgnaw mengenai satu musuh, memulihkan HP Kaeya sebesar 15% ATK.\r\n",
+          "description": "Setiap kali skill Frostgnaw mengenai satu musuh, memulihkan HP Kaeya sebesar 15% ATK.\n",
           "descriptions": []
         },
         {
           "key": "p3",
           "title": "Glacial Heart",
-          "description": "Musuh yang terkena efek Frozen dari skill Frostgnaw akan menjatuhkan Elemental Particle tambahan. Maksimum menjatuhkan 2 Elemental Particle tambahan setiap kalinya.\r\n",
+          "description": "Musuh yang terkena efek Frozen dari skill Frostgnaw akan menjatuhkan Elemental Particle tambahan.\nMaksimum menjatuhkan 2 Elemental Particle tambahan setiap kalinya.\n",
           "descriptions": []
         }
       ],
@@ -2705,25 +2803,25 @@
         {
           "key": "c1",
           "title": "Excellent Blood",
-          "description": "CRIT Rate dari Normal dan Charged Attack milik Kaeya terhadap musuh yang terkena efek Cryo meningkat sebesar 15%.\r\n",
+          "description": "CRIT Rate dari Normal dan Charged Attack milik Kaeya terhadap musuh yang terkena efek Cryo meningkat sebesar 15%.\n",
           "descriptions": []
         },
         {
           "key": "c2",
           "title": "Never-Ending Performance",
-          "description": "Setiap kali sebuah musuh dikalahkan dalam durasi Glacial Waltz, durasinya meningkat 2,5 detik, sampai maksimum 15 detik.\r\n",
+          "description": "Setiap kali sebuah musuh dikalahkan dalam durasi Glacial Waltz, durasinya meningkat 2,5 detik, sampai maksimum 15 detik.\n",
           "descriptions": []
         },
         {
           "key": "c3",
           "title": "Dance of Frost",
-          "description": "Meningkatkan 3 level Frostgnaw.\r\nMaksimum: Lv. 15.\r\n",
+          "description": "Meningkatkan 3 level Frostgnaw.\nMaksimum: Lv. 15.\n",
           "descriptions": []
         },
         {
           "key": "c4",
           "title": "Frozen Kiss",
-          "description": "Terpicu secara otomatis saat HP Kaeya kurang dari 20%:\r\n",
+          "description": "Terpicu secara otomatis saat HP Kaeya kurang dari 20%:\n",
           "descriptions": [
             "Membuat perisai yang menahan DMG setara dengan 30% Max HP Kaeya. Berlangsung selama 20 detik.",
             "Perisai ini menahan Cryo DMG dengan efisiensi 250%.",
@@ -2733,13 +2831,13 @@
         {
           "key": "c5",
           "title": "Frostbiting Embrace",
-          "description": "Meningkatkan 3 level Glacial Waltz.\r\nMaksimum: Lv. 15.\r\n",
+          "description": "Meningkatkan 3 level Glacial Waltz.\nMaksimum: Lv. 15.\n",
           "descriptions": []
         },
         {
           "key": "c6",
           "title": "Glacial Whirlwind",
-          "description": "Glacial Waltz mengeluarkan 1 es tambahan, dan memulihkan 15 Energy saat skill digunakan.\r\n",
+          "description": "Glacial Waltz mengeluarkan 1 es tambahan, dan memulihkan 15 Energy saat skill digunakan.\n",
           "descriptions": []
         }
       ]
@@ -2906,17 +3004,17 @@
       "skills": [
         {
           "key": "s1",
-          "title": "Kamisato Art - Marobashi",
+          "title": "Kamisato Art – Marobashi",
           "description": "",
           "abilities": [
             {
               "name": "Normal Attack",
-              "description": "Melancarkan hingga 5 serangan berturut-turut.\r\n",
+              "description": "Melancarkan hingga 5 serangan berturut-turut.\n",
               "descriptions": []
             },
             {
               "name": "Charged Attack",
-              "description": "Mengonsumsi sejumlah Stamina untuk bergerak ke depan dan melancarkan tebasan iai.\r\n",
+              "description": "Mengonsumsi sejumlah Stamina untuk bergerak ke depan dan melancarkan tebasan iai.\n",
               "descriptions": []
             },
             {
@@ -2932,7 +3030,7 @@
             "DMG Tahap 4|{param4}%×{param5}",
             "DMG Tahap 5|{param6}%",
             "DMG Charged Attack|{param7}%",
-            "Konsumsi Stamina Charged Attack|{param8}",
+            "Konsumsi Stamina Charged Attack|{param8} pt",
             "DMG Selama Plunging|{param9}%",
             "DMG Plunging Attack Min./Maks.|{param10}% / {param11}%"
           ]
@@ -2940,16 +3038,16 @@
         {
           "key": "s2",
           "title": "Kamisato Art: Kyouka",
-          "description": "Kamisato Ayato menggeser posisinya dan memasuki kondisi Takimeguri Kanka.\r\nSetelah berpindah posisi, Ayato akan meninggalkan ilusi air di posisi sebelumnya. Setelah terbentuk, ilusi air akan meledak saat ada musuh di sekitar atau setelah durasinya habis, mengakibatkan Hydro DMG Area.\r\n",
+          "description": "Kamisato Ayato menggeser posisinya dan memasuki kondisi Takimeguri Kanka.\nSetelah berpindah posisi, Ayato akan meninggalkan ilusi air di posisi sebelumnya. Setelah terbentuk, ilusi air akan meledak saat ada musuh di sekitar atau setelah durasinya habis, mengakibatkan Hydro DMG Area.\n\n",
           "abilities": [
             {
               "name": "Takimeguri Kanka",
-              "description": "Dalam kondisi ini, Kamisato Ayato menggunakan Shunsuiken miliknya untuk melakukan serangan yang sangat cepat, mengakibatkan DMG Normal Attack berubah menjadi Hydro DMG Area yang tidak bisa ditimpa Elemental Infusion lainnya.\r\nLalu juga mempunyai efek berikut:\r\n",
+              "description": "Dalam kondisi ini, Kamisato Ayato menggunakan Shunsuiken miliknya untuk melakukan serangan yang sangat cepat, mengakibatkan DMG Normal Attack berubah menjadi Hydro DMG Area yang tidak bisa ditimpa Elemental Infusion lainnya.\nLalu juga mempunyai efek berikut:\n",
               "descriptions": [
                 "Setelah serangan Shunsuiken mengenai musuh, Ayato akan mendapatkan efek Namisen, yang meningkatkan DMG yang diakibatkan oleh Shunsuiken berdasarkan dari Max HP Ayato saat ini. Namisen dapat ditumpuk hingga 4 lapis, dan setiap 0,1 detik bisa mendapatkan 1 lapis dari serangan Shunsuiken. Efek ini akan hilang saat Takimeguri Kanka berakhir.",
                 "Meningkatkan ketahanan Kamisato Ayato terhadap interupsi.",
                 "Tidak bisa melancarkan Charged dan Plunging Attack.",
-                "Takimeguri Kanka akan selesai saat Ayato meninggalkan medan pertempuran. Jika Kamisato Art: Kyouka dilancarkan lagi saat masih dalam kondisi Takimeguri Kanka, maka kondisi Takimeguri Kanka tersebut akan berakhir dan diganti dengan yang baru.."
+                "Takimeguri Kanka akan selesai saat Ayato meninggalkan medan pertempuran. Jika Kamisato Art: Kyouka dilancarkan lagi saat masih dalam kondisi Takimeguri Kanka, maka kondisi Takimeguri Kanka tersebut akan berakhir dan diganti dengan yang baru."
               ]
             }
           ],
@@ -2957,23 +3055,25 @@
             "DMG Tahap 1 Shunsuiken|{param1}%",
             "DMG Tahap 2 Shunsuiken|{param2}%",
             "DMG Tahap 3 Shunsuiken|{param3}%",
-            "Durasi Takimeguri Kanka|{param4}s",
-            "Bonus DMG Namisen|{param5}%Max HP / Stack",
+            "Durasi Takimeguri Kanka|{param4} dtk",
+            "Bonus DMG Namisen|{param5}%Max HP / Lapis",
             "DMG Water Illusion|{param6}%",
-            "Durasi Water Illusion|{param7}s",
-            "Cooldown|{param8}s"
+            "Durasi Water Illusion|{param7} dtk",
+            "Cooldown|{param8} dtk",
+            "Jeda Terpendek Terpicu|{param9} dtk",
+            "Cooldown|{param10} detik"
           ]
         },
         {
           "key": "s3",
           "title": "Kamisato Art: Suiyuu",
-          "description": "Mengungkap sebuah taman penyucian yang menyingkirkan segala hiruk pikuk di dalamnya.\r\nSaat taman tersebut ada, Bloomwater Blade akan terus menghujani dan menyerang musuh di dalam areanya, mengakibatkan Hydro DMG dan meningkatkan DMG Normal Attack Karakter di dalamnya.\r\n",
+          "description": "Mengungkap sebuah taman penyucian yang menyingkirkan segala hiruk pikuk di dalamnya.\nSaat taman tersebut ada, Bloomwater Blade akan terus menghujani dan menyerang musuh di dalam areanya, mengakibatkan Hydro DMG dan meningkatkan DMG Normal Attack Karakter di dalamnya.\n\n",
           "abilities": [],
           "stats": [
             "DMG Bloomwater Blade|{param1}%",
             "Bonus DMG Normal Attack|{param2}%",
-            "Durasi|{param3}s",
-            "Cooldown|{param4}s",
+            "Durasi|{param3} dtk",
+            "Cooldown|{param4} dtk",
             "Konsumsi Energy|{param5}"
           ]
         }
@@ -2982,13 +3082,13 @@
         {
           "key": "p1",
           "title": "Kamisato Art: Daily Cooking",
-          "description": "Saat Ayato memasak makanan dengan sempurna, terdapat 18% kemungkinan mendapatkan hasil tambahan makanan \"Suspicious\" dari jenis makanan yang sama.\r\n",
+          "description": "Saat Ayato memasak makanan dengan sempurna, terdapat 18% kemungkinan mendapatkan hasil tambahan makanan “Suspicious” dari jenis makanan yang sama.\n",
           "descriptions": []
         },
         {
           "key": "p2",
           "title": "Kamisato Art: Mine Wo Matoishi Kiyotaki",
-          "description": "Kamisato Art: Kyouka memiliki karakteristik berikut:\r\n",
+          "description": "Kamisato Art: Kyouka memiliki karakteristik berikut:\n",
           "descriptions": [
             "Kamisato Ayato akan mendapatkan 2 lapis Namisen saat melancarkan skill ini.",
             "Setelah ilusi air meledak, Kamisato Ayato akan mendapatkan efek Namisen setara dengan jumlah tumpukan maksimum lapisan."
@@ -2997,7 +3097,7 @@
         {
           "key": "p3",
           "title": "Kamisato Art: Michiyuku Hagetsu",
-          "description": "Saat Kamisato Ayato ada di dalam party tapi tidak sedang aktif di medan pertempuran, dan jika jumlah Energy-nya kurang dari 40 poin, maka dia akan memulihkan 2 Energy-nya sendiri setiap detik.\r\n",
+          "description": "Saat Kamisato Ayato ada di dalam party tapi tidak sedang aktif di medan pertempuran, dan jika jumlah Energy-nya kurang dari 40 poin, maka dia akan memulihkan 2 Energy-nya sendiri setiap detik.\n",
           "descriptions": []
         }
       ],
@@ -3005,37 +3105,37 @@
         {
           "key": "c1",
           "title": "Kyouka Fuushi",
-          "description": "Meningkatkan 40% DMG Shunsuiken pada musuh dengan HP 50% atau kurang.\r\n",
+          "description": "Meningkatkan 40% DMG Shunsuiken pada musuh dengan HP 50% atau kurang.\n",
           "descriptions": []
         },
         {
           "key": "c2",
           "title": "World Source",
-          "description": "Tumpukan maksimum Namisen bertambah menjadi 5 lapis. Max HP Kamisato Ayato akan bertambah 50% saat memiliki setidaknya 3 lapis Namisen.\r\n",
+          "description": "Tumpukan maksimum Namisen bertambah menjadi 5 lapis. Max HP Kamisato Ayato akan bertambah 50% saat memiliki setidaknya 3 lapis Namisen.\n",
           "descriptions": []
         },
         {
           "key": "c3",
           "title": "To Admire the Flowers",
-          "description": "Meningkatkan 3 level Kamisato Art: Kyouka.\r\nMaksimum: Lv. 15.\r\n",
+          "description": "Meningkatkan 3 level Kamisato Art: Kyouka.\nMaksimum: Lv. 15.\n",
           "descriptions": []
         },
         {
           "key": "c4",
           "title": "Endless Flow",
-          "description": "Setelah melancarkan Kamisato Art: Suiyuu, ATK SPD Normal Attack anggota party di sekitar akan meningkat 15% selama 15 detik.\r\n",
+          "description": "Setelah melancarkan Kamisato Art: Suiyuu, ATK SPD Normal Attack anggota party di sekitar akan meningkat 15% selama 15 detik.\n",
           "descriptions": []
         },
         {
           "key": "c5",
           "title": "Bansui Ichiro",
-          "description": "Meningkatkan 3 level Kamisato Art: Suiyuu.\r\nMaksimum: Lv. 15.\r\n",
+          "description": "Meningkatkan 3 level Kamisato Art: Suiyuu.\nMaksimum: Lv. 15.\n",
           "descriptions": []
         },
         {
           "key": "c6",
           "title": "Boundless Origin",
-          "description": "Setelah menggunakan Kamisato Art: Kyouka, Serangan Shunsuiken milik Ayato selanjutnya akan membuat 2 serangan Shunsuiken tambahan saat mengenai musuh, setiap serangannya mengakibatkan DMG sebesar 450% ATK Ayato.\r\nKedua serangan Shunsuiken ini tidak akan terpengaruh oleh Namisen.\r\n",
+          "description": "Setelah menggunakan Kamisato Art: Kyouka, Serangan Shunsuiken milik Ayato selanjutnya akan membuat 2 serangan Shunsuiken tambahan saat mengenai musuh, setiap serangannya mengakibatkan DMG sebesar 450% ATK Ayato.\nKedua serangan Shunsuiken ini tidak akan terpengaruh oleh Namisen.\n",
           "descriptions": []
         }
       ]
@@ -3873,7 +3973,7 @@
       "key": "ningguang",
       "name": "Ningguang",
       "title": "Eclipsing Star",
-      "description": "Seorang \"Tianquan\" dari \"Liyue Qixing\", kekayaannya tidak tertandingi di seluruh Teyvat.",
+      "description": "Seorang “Tianquan” dari “Liyue Qixing”, kekayaannya tidak tertandingi di seluruh Teyvat.",
       "skills": [
         {
           "key": "s1",
@@ -3882,12 +3982,12 @@
           "abilities": [
             {
               "name": "Normal Attack",
-              "description": "Menembakkan batu mutiara yang mengakibatkan Geo DMG.\r\nSaat mengenai musuh, Ningguang mendapatkan 1 Star Jade.\r\n",
+              "description": "Menembakkan batu mutiara yang mengakibatkan Geo DMG.\nSaat mengenai musuh, Ningguang mendapatkan 1 Star Jade.\n",
               "descriptions": []
             },
             {
               "name": "Charged Attack",
-              "description": "Mengonsumsi sejumlah Stamina untuk menembakkan batu mutiara raksasa yang mengakibatkan Geo DMG.\r\nJika Ningguang memiliki Star Jade, melancarkan Charged Attack juga akan menembakkan Star Jade ke musuh untuk mengakibatkan DMG tambahan.\r\n",
+              "description": "Mengonsumsi sejumlah Stamina untuk menembakkan batu mutiara raksasa yang mengakibatkan Geo DMG.\nJika Ningguang memiliki Star Jade, melancarkan Charged Attack juga akan menembakkan Star Jade ke musuh untuk mengakibatkan DMG tambahan.\n",
               "descriptions": []
             },
             {
@@ -3908,14 +4008,14 @@
         {
           "key": "s2",
           "title": "Jade Screen",
-          "description": "Ningguang membentuk sebuah perisai Geo yang terbuat dari emas, obsidian, dan kekayaannya untuk mengakibatkan Geo DMG area.\r\n",
+          "description": "Ningguang membentuk sebuah perisai Geo yang terbuat dari emas, obsidian, dan kekayaannya untuk mengakibatkan Geo DMG area.\n\n",
           "abilities": [
             {
               "name": "Jade Screen",
               "description": "",
               "descriptions": [
                 "Menghalangi proyektil musuh.",
-                "Ketahanannya meningkat berdasarkan Max HP Ningguang.",
+                "HP Jade Screen mewarisi Max HP Ningguang berdasarkan persentase tertentu.",
                 "Jade Screen dianggap sebagai sebuah Geo Construct dan dapat digunakan untuk menghalang beberapa jenis serangan, tapi tidak dapat dipanjat. Ningguang hanya dapat memiliki satu Jade Screen di satu waktu."
               ]
             }
@@ -3923,17 +4023,18 @@
           "stats": [
             "HP Terwariskan|{param1}%",
             "DMG Skill|{param2}%",
-            "Cooldown|{param3}s"
+            "Cooldown|{param3} dtk",
+            "Cooldown|{param4}dtk"
           ]
         },
         {
           "key": "s3",
           "title": "Starshatter",
-          "description": "Ningguang mengumpulkan batu mutiara di sekeliling dirinya dan menyebarkan semuanya sekaligus untuk dilontarkan ke musuh, mengakibatkan Geo DMG yang besar.\r\nJika Starshatter digunakan saat Jade Screen berada di dekatnya, Jade Screen juga akan menembakkan tambahan batu mutiara pada saat bersamaan.\r\n",
+          "description": "Ningguang mengumpulkan batu mutiara di sekeliling dirinya dan menyebarkan semuanya sekaligus untuk dilontarkan ke musuh, mengakibatkan Geo DMG yang besar.\nJika Starshatter digunakan saat Jade Screen berada di dekatnya, Jade Screen juga akan menembakkan tambahan batu mutiara pada saat bersamaan.\n\n",
           "abilities": [],
           "stats": [
             "DMG Per Gem|{param1}%",
-            "Cooldown|{param2}s",
+            "Cooldown|{param2} dtk",
             "Konsumsi Energy|{param3}"
           ]
         }
@@ -3942,19 +4043,19 @@
         {
           "key": "p1",
           "title": "Trove of Marvelous Treasures",
-          "description": "Memperlihatkan lokasi tambang ore untuk Forge di peta kecil.\r\n",
+          "description": "Memperlihatkan lokasi tambang ore untuk Forge di peta kecil.\n",
           "descriptions": []
         },
         {
           "key": "p2",
           "title": "Backup Plan",
-          "description": "Charged Attack Ningguang tidak mengonsumsi Stamina saat Ningguang memiliki Star Jade.\r\n",
+          "description": "Charged Attack Ningguang tidak mengonsumsi Stamina saat Ningguang memiliki Star Jade.\n",
           "descriptions": []
         },
         {
           "key": "p3",
           "title": "Strategic Reserve",
-          "description": "Karakter yang melewati Jade Screen akan mendapatkan 12% Geo DMG Bonus selama 10 detik.\r\n",
+          "description": "Karakter yang melewati Jade Screen akan mendapatkan 12% Geo DMG Bonus selama 10 detik.\n",
           "descriptions": []
         }
       ],
@@ -3962,37 +4063,37 @@
         {
           "key": "c1",
           "title": "Piercing Fragments",
-          "description": "Saat Normal Attack mengenai musuh, mengakibatkan DMG Area.\r\n",
+          "description": "Saat Normal Attack mengenai musuh, mengakibatkan DMG Area.\n",
           "descriptions": []
         },
         {
           "key": "c2",
           "title": "Shock Effect",
-          "description": "Saat Jade Screen pecah, CD skill akan selesai.\r\nDapat terpicu setiap 6 detik.\r\n",
+          "description": "Saat Jade Screen pecah, CD skill akan selesai.\nDapat terpicu setiap 6 detik.\n",
           "descriptions": []
         },
         {
           "key": "c3",
           "title": "Majesty be the Array of Stars",
-          "description": "Meningkatkan 3 level Starshatter.\r\nMaksimum: Lv. 15.\r\n",
+          "description": "Meningkatkan 3 level Starshatter.\nMaksimum: Lv. 15.\n",
           "descriptions": []
         },
         {
           "key": "c4",
           "title": "Exquisite be the Jade, Outshining All Beneath",
-          "description": "Jade Screen meningkatkan Elemental RES karakter di sekitar sebanyak 10%.\r\n",
+          "description": "Jade Screen meningkatkan Elemental RES karakter di sekitar sebanyak 10%.\n",
           "descriptions": []
         },
         {
           "key": "c5",
           "title": "Invincible be the Jade Screen",
-          "description": "Meningkatkan 3 level Jade Screen.\r\nMaksimum: Lv. 15.\r\n",
+          "description": "Meningkatkan 3 level Jade Screen.\nMaksimum: Lv. 15.\n",
           "descriptions": []
         },
         {
           "key": "c6",
           "title": "Grandeur be the Seven Stars",
-          "description": "Ningguang akan mendapatkan 7 Star Jade ketika Starshatter digunakan.\r\n",
+          "description": "Ningguang akan mendapatkan 7 Star Jade ketika Starshatter digunakan.\n",
           "descriptions": []
         }
       ]
@@ -4005,17 +4106,17 @@
       "skills": [
         {
           "key": "s1",
-          "title": "Favonius Bladework - Maid",
+          "title": "Favonius Bladework – Maid",
           "description": "",
           "abilities": [
             {
-              "name": "",
-              "description": "Normal Attack Melancarkan hingga 4 tebasan berturut-turut.\r\n",
+              "name": "Normal Attack Melancarkan hingga 4 tebasan berturut-turut.",
+              "description": "",
               "descriptions": []
             },
             {
               "name": "Charged Attack",
-              "description": "Terus menguras Stamina untuk melancarkan serangan berputar yang mengakibatkan DMG ke musuh di sekitar.\r\nDiakhiri dengan sebuah tebasan yang kuat.\r\n",
+              "description": "Terus menguras Stamina untuk melancarkan serangan berputar yang mengakibatkan DMG ke musuh di sekitar.\nDiakhiri dengan sebuah tebasan yang kuat.\n",
               "descriptions": []
             },
             {
@@ -4031,8 +4132,8 @@
             "DMG Tahap 4|{param4}%",
             "DMG Berputar Charged Attack|{param5}%",
             "DMG Akhir Charged Attack|{param6}%",
-            "Konsumsi Stamina Charged Attack|{param7}/s",
-            "Durasi Maks.|{param8}s",
+            "Konsumsi Stamina Charged Attack|{param7} / dtk",
+            "Durasi Maksimum|{param8} dtk",
             "DMG Selama Plunging|{param9}%",
             "DMG Plunging Attack Min./Maks.|{param10}% / {param11}%"
           ]
@@ -4040,11 +4141,11 @@
         {
           "key": "s2",
           "title": "Breastplate",
-          "description": "Menciptakan zirah batu yang mengakibatkan Geo DMG pada musuh di sekitar dan membentuk perisai. DMG yang ditahan perisai berdasarkan DEF Noelle.\r\n",
+          "description": "Menciptakan zirah batu yang mengakibatkan Geo DMG pada musuh di sekitar dan membentuk perisai. DMG yang ditahan perisai berdasarkan DEF Noelle.\n",
           "abilities": [
             {
               "name": "",
-              "description": "Perisainya memiliki ciri-ciri berikut:\r\n",
+              "description": "Perisainya memiliki ciri-ciri berikut:\n",
               "descriptions": [
                 "Saat Normal dan Charged Attack Noelle mengenai target, berkemungkinan memulihkan HP untuk semua karakter.",
                 "Memiliki 150% Efisiensi Penahanan DMG terhadap semua Elemental dan Physical DMG.",
@@ -4057,18 +4158,18 @@
             "Penahanan DMG|{param2}% DEF + {param3}",
             "Pemulihan HP|{param4}% DEF + {param5}",
             "Persentase Pemulihan Terpicu|{param6}%",
-            "Durasi|{param7}s",
-            "CD|{param8}s"
+            "Durasi|{param7} dtk",
+            "Cooldown|{param8} dtk"
           ]
         },
         {
           "key": "s3",
           "title": "Sweeping Time",
-          "description": "Mengumpulkan kekuatan Geo di sekitar senjatanya, Noelle menghantam musuh di sekitarnya dengan serangan dalam area besar, mengakibatkan Geo DMG.\r\n",
+          "description": "Mengumpulkan kekuatan Geo di sekitar senjatanya, Noelle menghantam musuh di sekitarnya dengan serangan dalam area besar, mengakibatkan Geo DMG.\n",
           "abilities": [
             {
               "name": "",
-              "description": "Setelahnya, Noelle mendapatkan efek berikut:\r\n",
+              "description": "Setelahnya, Noelle mendapatkan efek berikut:\n",
               "descriptions": [
                 "Serangan area yang lebih besar.",
                 "Mengonversi serangan menjadi Geo DMG, konversi ini tidak bisa ditimpa oleh Elemental Infusion lainnya.",
@@ -4080,8 +4181,8 @@
             "DMG Elemental Burst|{param1}%",
             "DMG Skill|{param2}%",
             "Peningkatan ATK|{param3}% DEF",
-            "Durasi|{param4}s",
-            "CD|{param5}s",
+            "Durasi|{param4} dtk",
+            "Cooldown|{param5} dtk",
             "Konsumsi Energy|{param6}"
           ]
         }
@@ -4089,14 +4190,14 @@
       "passives": [
         {
           "key": "p1",
-          "title": "Maid's Knighthood",
-          "description": "Saat masakan jenis pertahanan dimasak dengan sempurna, terdapat 12% kemungkinan mendapatkan hasil 2 kali lipat.\r\n",
+          "title": "Maid’s Knighthood",
+          "description": "Saat masakan jenis pertahanan dimasak dengan sempurna, terdapat 12% kemungkinan mendapatkan hasil 2 kali lipat.\n",
           "descriptions": []
         },
         {
           "key": "p2",
           "title": "Devotion",
-          "description": "Saat Noelle berada dalam party, tetapi tidak sedang bertarung, skill ini akan terpicu secara otomatis ketika HP karakter yang sedang digunakan kurang dari 30%:\r\n",
+          "description": "Saat Noelle berada dalam party, tetapi tidak sedang bertarung, skill ini akan terpicu secara otomatis ketika HP karakter yang sedang digunakan kurang dari 30%:\n",
           "descriptions": [
             "Karakter tersebut akan mendapatkan perisai yang dapat menahan DMG sebesar 400% dari DEF Noelle selama 20 detik.",
             "Perisai ini memiliki bonus 150% efektivitas Penahanan DMG untuk semua Elemental dan Physical DMG.",
@@ -4106,7 +4207,7 @@
         {
           "key": "p3",
           "title": "Nice and Clean",
-          "description": "Mengurangi 1 detik CD skill Breastplate setiap 4 Normal atau Charged Attack yang mengenai musuh.\r\nSerangan yang mengenai beberapa musuh sekaligus tetap terhitung sebagai 1 serangan.\r\n",
+          "description": "Saat Normal Attack atau Charged Attack Noelle mengenai musuh 4 kali, CD skill Breastplate akan berkurang 1 detik.\nSerangan Noelle dapat dihitung sebagai 1 kali setiap 0,1 detik.\n",
           "descriptions": []
         }
       ],
@@ -4114,37 +4215,37 @@
         {
           "key": "c1",
           "title": "I Got Your Back",
-          "description": "Saat Sweeping Time dan Breastplate aktif bersamaan, serangan memiliki 100% persentase untuk memicu efek pemulihan.\r\n",
+          "description": "Saat Sweeping Time dan Breastplate aktif bersamaan, serangan memiliki 100% persentase untuk memicu efek pemulihan.\n",
           "descriptions": []
         },
         {
           "key": "c2",
           "title": "Combat Maid",
-          "description": "Mengurangi 20% konsumsi stamina Charged Attack dan meningkatkan 15% DMG Charged Attack Noelle.\r\n",
+          "description": "Mengurangi 20% konsumsi stamina Charged Attack dan meningkatkan 15% DMG Charged Attack Noelle.\n",
           "descriptions": []
         },
         {
           "key": "c3",
           "title": "Invulnerable Maid",
-          "description": "Meningkatkan 3 level Breastplate.\r\nMaksimum: Lv. 15.\r\n",
+          "description": "Meningkatkan 3 level Breastplate.\nMaksimum: Lv. 15.\n",
           "descriptions": []
         },
         {
           "key": "c4",
           "title": "To Be Cleaned",
-          "description": "Breastplate mengakibatkan Geo DMG sebesar 400% ATK ke musuh di sekitar saat hancur atau saat durasi selesai.\r\n",
+          "description": "Breastplate mengakibatkan Geo DMG sebesar 400% ATK ke musuh di sekitar saat hancur atau saat durasi selesai.\n",
           "descriptions": []
         },
         {
           "key": "c5",
           "title": "Favonius Sweeper Master",
-          "description": "Meningkatkan 3 level Sweeping Time.\r\nMaksimum: Lv. 15.\r\n",
+          "description": "Meningkatkan 3 level Sweeping Time.\nMaksimum: Lv. 15.\n",
           "descriptions": []
         },
         {
           "key": "c6",
           "title": "Must Be Spotless",
-          "description": "Sweeping Time meningkatkan ATK Noelle dengan tambahan 50% dari DEF Noelle.\r\nDurasi skill meningkat 1 detik setiap mengalahkan musuh saat skill masih aktif, hingga 10 detik.\r\n",
+          "description": "Sweeping Time meningkatkan ATK Noelle dengan tambahan 50% dari DEF Noelle.\nDurasi skill meningkat 1 detik setiap mengalahkan musuh saat skill masih aktif, hingga 10 detik.\n",
           "descriptions": []
         }
       ]
@@ -5798,86 +5899,126 @@
     {
       "key": "tighnari",
       "name": "Tighnari",
-      "title": "???",
-      "description": "",
+      "title": "Verdant Strider",
+      "description": "Peneliti muda yang berpengalaman di bidang botani yang saat ini menjabat sebagai Pelindung Hutan di Hutan Avidya. Seorang penembak dengan hati penuh kebajikan — dan juga seorang yang andal dalam membimbing bahkan murid yang paling bodoh sekalipun.",
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Khanda Barrier-Buster",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Normal Attack",
+              "description": "Melancarkan hingga 4 serangan berturut-turut dengan busur.\n",
+              "descriptions": []
+            },
+            {
+              "name": "Charged Attack",
+              "description": "Melancarkan sebuah Serangan Membidik yang lebih akurat untuk mengakibatkan DMG lebih besar.\nSaat membidik, kekuatan Dendro akan berkumpul di ujung anak panah. Memiliki efek yang berbeda tergantung dari lama serangannya ditahan:\n",
+              "descriptions": [
+                "Charge Tahap 1: Menembakkan panah yang penuh dengan kekuatan tumbuhan yang mengakibatkan Dendro DMG;",
+                "Charge Tahap 2: Menembakkan sebuah Wreath Arrow yang mengakibatkan Dendro DMG. Setelah mengenai target, Wreath Arrow akan menciptakan 4 Clusterbloom Arrow yang akan otomatis mengikuti musuh di sekitar dan mengakibatkan Dendro DMG."
+              ]
+            },
+            {
+              "name": "Plunging Attack",
+              "description": "Melancarkan hujan panah dari udara dan menerjang tanah dengan kecepatan tinggi, mengakibatkan DMG area saat mendarat.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "DMG Tahap 1|{param1}%",
+            "DMG Tahap 2|{param2}%",
+            "DMG Tahap 3|{param3}%×{param4}",
+            "DMG Tahap 4|{param5}%",
+            "DMG Membidik|{param6}%",
+            "Serangan Membidik Tahap 1|{param7}%",
+            "DMG Wreath Arrow|{param8}%",
+            "DMG Clusterbloom Arrow|{param9}%",
+            "DMG Selama Plunging|{param10}%",
+            "DMG Plunging Attack Min./Maks.|{param11}% / {param12}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
+          "title": "Vijnana-Phala Mine",
+          "description": "Tighnari melemparkan sebuah Vijnana Stormheart ke depan dan memberikan Dendro DMG area, yang menciptakan sebuah Vijnana-Khanda Field. Bayangan-bayangan dalam area ini akan terus menarik perhatian musuh dan serangan mereka.\nSelain itu, Tighnari memperoleh efek Vijnana Suffusion yang akan mengurangi waktu membidik Wreath Arrow selanjutnya sebesar 2,4 detik. Efek ini akan hilang setelah durasi skill berakhir atau setelah Tighnari menembakkan 3 Wreath Arrow.\n\n",
           "abilities": [],
-          "stats": []
+          "stats": [
+            "DMG Skill|{param1}%",
+            "Durasi Vijnana-Khanda Field|{param2} dtk",
+            "Durasi Vijnana Suffusion|{param3} dtk",
+            "Cooldown|{param4} dtk"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
+          "title": "Fashioner’s Tanglevine Shaft",
+          "description": "Mengumpulkan kekuatan dari seluruh benih, dan menembakkan 6 Tanglevine Shaft yang akan bisa mengejar musuh dan mengakibatkan Dendro DMG.\nSetelah mengenai musuh, Tangelvine Shaft akan menciptakan Tanglevine Shaft gelombang kedua yang juga bisa mengejar musuh dan mengakibatkan Dendro DMG saat mengenai musuh.\n\n",
           "abilities": [],
-          "stats": []
+          "stats": [
+            "DMG Tanglevine Shaft|{param1}%",
+            "DMG Tanglevine Shaft Gelombang Kedua|{param2}%",
+            "Cooldown|{param3} dtk",
+            "Konsumsi Energy|{param4}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "Encyclopedic Knowledge",
+          "description": "Memperlihatkan lokasi produk khas Sumeru di sekitar pada peta kecil.\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
+          "title": "Keen Sight",
+          "description": "Setelah Tighnari menembakkan Wreath Arrow, Elemental Mastery-nya akan meningkat 50 poin selama 4 detik.\n",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "NA",
-          "description": "",
+          "title": "Scholarly Blade",
+          "description": "Untuk setiap Elemental Mastery yang dimiliki Tighnari, DMG Charged Attack dan Fashioner’s Tanglevine Shaft akan meningkat 0,06%.\nMaksimum bonus DMG yang bisa diperoleh dengan cara ini adalah 60%.\n",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "Beginnings Determined at the Roots",
+          "description": "Meningkatkan 15% CRIT Rate dari Charged Attack Tighnari.\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "Origins Known From the Stem",
+          "description": "Saat ada musuh di dalam Vijnana-Khanda Field yang dihasilkan Vijnana-Phala Mine, Tighnari memperoleh 20% Dendro DMG Bonus.\nSetelah durasi aktif Vijnana-Khanda Field berakhir atau sudah tidak ada musuh di dalamnya, efek ini akan bertahan hingga 6 detik.\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "Fortunes Read Amongst the Branches",
+          "description": "Meningkatkan 3 level  Fashioner’s Tanglevine Shaft.\nMaksimum: Lv. 15.\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "Withering Glimpsed in the Leaves",
+          "description": "Saat melancarkan Fashioner’s Tanglevine Shaft, Elemental Mastery seluruh anggota party di sekitar akan meningkat 60 poin selama 8 detik. Jika Fashioner’s Tanglevine Shaft memicu reaksi Burning, Bloom, Quicken, atau Spread, maka Elemental Mastery mereka akan mengalami peningkatan tambahan sebesar 60 poin dan akan memperbarui durasi berlangsungnya buff ini.\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "Comprehension Amidst the Flowers",
+          "description": "Meningkatkan 3 level Vijnana-Phala Mine.\nMaksimum: Lv. 15.\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
+          "title": "Karma Adjudged From the Leaden Fruit",
+          "description": "Waktu charge Wreath Arrow berkurang 0,9 detik dan akan menghasilkan 1 Clusterbloom Arrow tambahan setelah mengenai musuh, mengakibatkan DMG sebesar 150% ATK Tighnari.\n",
           "descriptions": []
         }
       ]
@@ -6015,6 +6156,134 @@
           "key": "c6",
           "title": "Intertwined Winds",
           "description": "Mengurangi 20% Anemo RES musuh yang menerima DMG skill Gust Surge.\r\nJika Elemental Absorption muncul, maka RES terhadap elemen yang bersangkutan juga berkurang 20%.\r\n",
+          "descriptions": []
+        }
+      ]
+    },
+    {
+      "key": "traveler-dendro",
+      "name": "Pengembara (Dendro)",
+      "title": null,
+      "description": "Seorang pengembara yang berasal dari dunia lain, saudara satu-satunya yang ia miliki dirampas dari hadapannya oleh sesosok dewa, dan kini ia mengembara untuk mencari The Seven.",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "Foreign Fieldcleaver",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Normal Attack",
+              "description": "Melancarkan hingga 5 serangan pedang berturut-turut.\n",
+              "descriptions": []
+            },
+            {
+              "name": "Charged Attack",
+              "description": "Mengonsumsi sejumlah Stamina untuk melancarkan dua tebasan pedang.\n",
+              "descriptions": []
+            },
+            {
+              "name": "Plunging Attack",
+              "description": "Menerjang dari udara untuk menghantam tanah di bawahnya, mengakibatkan DMG pada musuh di jalurnya dan mengakibatkan DMG area saat mendarat.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "DMG Tahap 1|{param1}%",
+            "DMG Tahap 2|{param2}%",
+            "DMG Tahap 3|{param3}%",
+            "DMG Tahap 4|{param4}%",
+            "DMG Tahap 5|{param5}%",
+            "DMG Charged Attack|{param6}% + {param7}%",
+            "Konsumsi Stamina Charged Attack|{param8} pt",
+            "DMG Selama Plunging|{param9}%",
+            "DMG Plunging Attack Min./Maks.|{param10}% / {param11}%"
+          ]
+        },
+        {
+          "key": "s2",
+          "title": "Razorgrass Blade",
+          "description": "Mengayunkan senjata dan menyebarkan dedaunan yang tajam, mengakibatkan Dendro DMG.\n\n",
+          "abilities": [],
+          "stats": [
+            "DMG Skill|{param1}%",
+            "Cooldown|{param2} dtk"
+          ]
+        },
+        {
+          "key": "s3",
+          "title": "Surgent Manifestation",
+          "description": "Mengondensasikan kekuatan tumbuh-tumbuhan untuk menciptakan Lea Lotus Lamp.\nLea Lotus Lamp akan menyerang musuh di dalam areanya secara terus-menerus dan mengakibatkan Dendro DMG.\n\n",
+          "abilities": [
+            {
+              "name": "Lotuslight Transfiguration",
+              "description": "Setelah bersentuhan dengan Hydro/Electro/Pyro, Lea Lotus Lamp akan mengalami transformasi sebagai berikut:\n",
+              "descriptions": [
+                "Hydro: memperluas cakupan area Lotuslight Transfiguration dan jangkauan serangannya;",
+                "Electro: Meningkatkan ATK SPD Lea Lotus Lamp;",
+                "Pyro: Setelah jeda waktu yang singkat, Lea Lotus Lamp akan menghilang dalam ledakan dahsyat, dan mengakibatkan Dendro DMG Area.",
+                "Pada durasi keberadaannya, Lea Lotus Lamp hanya dapat mengalami Lotuslight Transfiguration sebanyak 1 kali.",
+                "Pada saat yang bersamaan, hanya bisa terdapat satu Lea Lotus Lamp saja yang diciptakan oleh Pengembara sendiri."
+              ]
+            }
+          ],
+          "stats": [
+            "DMG Attack Lea Lotus Lamp|{param1}%",
+            "DMG Explosion|{param2}%",
+            "Durasi Aktif Lea Lotus Lamp|{param3} detik",
+            "Cooldown|{param4} dtk",
+            "Konsumsi Energy|{param5}"
+          ]
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "Verdant Overgrowth",
+          "description": "Lea Lotus Lamp akan memperoleh satu lapis Overflowing Lotuslight saat berada di medan pertempuran setiap detiknya, meningkatkan 6 poin Elemental Mastery Karakter aktif di dalam areanya. Efek Overflowing Lotuslight dari Lea Lotus Lamp dapat ditumpuk sampai 10 lapis.\n",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "Verdant Luxury",
+          "description": "Setiap poin Elemental Mastery yang dimiliki oleh Pengembara sendiri akan meningkatkan 0,15% DMG yang diakibatkan oleh Razorgrass Blade, dan meningkatkan 0,1% DMG yang diakibatkan oleh Surgent Manifestation.\n",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "Symbiotic Creeper",
+          "description": "Setelah Razorgrass Blade mengenai musuh, memulihkan 3,5 Energy untuk Pengembara.\n",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "Green Resilience",
+          "description": "Durasi Lea Lotus Lamp meningkat 3 detik.\n",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "Whirling Weeds",
+          "description": "Meningkatkan 3 level Razorgrass Blade.\nMaksimum: Lv. 15.\n",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "Treacle Grass",
+          "description": "Setelah Lea Lotus Lamp memicu Lotuslight Transfiguration, akan mendapatkan 5 lapis efek Overflowing Lotuslight dari Talenta Pasif “Verdant Overgrowth”.\nHarus sudah membuka Talenta Pasif “Verdant Overgrowth” lebih dulu.\n",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "Viridian Transience",
+          "description": "Meningkatkan 3 level Surgent Manifestation.\nMaksimum: Lv. 15.\n",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "Withering Aggregation",
+          "description": "Dendro DMG Bonus Karakter yang terpengaruh oleh efek Overflowing Lotuslight yang diciptakan oleh Lea Lotus Lamp meningkat 12%. Jika Lea Lotus Lamp sudah pernah memicu Lotuslight Transfiguration sebelumnya, juga akan mendapatkan 12% DMG Bonus untuk elemen yang sesuai.\n",
           "descriptions": []
         }
       ]
@@ -6691,12 +6960,12 @@
           "abilities": [
             {
               "name": "Normal Attack",
-              "description": "Melancarkan hingga 5 serangan berturut-turut.\r\n",
+              "description": "Melancarkan hingga 5 serangan berturut-turut.\n",
               "descriptions": []
             },
             {
               "name": "Charged Attack",
-              "description": "Mengonsumsi sejumlah Stamina untuk melancarkan dua tebasan pedang.\r\n",
+              "description": "Mengonsumsi sejumlah Stamina untuk melancarkan dua tebasan pedang.\n",
               "descriptions": []
             },
             {
@@ -6712,19 +6981,19 @@
             "DMG Tahap 4|{param5}%",
             "DMG Tahap 5|{param6}% + {param7}%",
             "DMG Charged Attack|{param8}% + {param9}%",
-            "Konsumsi Stamina Charged Attack|{param10}",
-            "DMG Selama Pluging|{param11}%",
+            "Konsumsi Stamina Charged Attack|{param10} pt",
+            "DMG Selama Plunging|{param11}%",
             "DMG Plunging Attack Min./Maks.|{param12}% / {param13}%"
           ]
         },
         {
           "key": "s2",
           "title": "Guhua Sword: Fatal Rainscreen",
-          "description": "Xingqiu mengayunkan pedangnya dua kali, mengakibatkan Hydro DMG kepada musuh di hadapannya. Pada saat bersamaan, skill ini akan menciptakan Rain Sword dalam jumlah maksimum yang akan mengitari karakter.\r\n",
+          "description": "Xingqiu mengayunkan pedangnya dua kali, mengakibatkan Hydro DMG kepada musuh di hadapannya. Pada saat bersamaan, skill ini akan menciptakan Rain Sword dalam jumlah maksimum yang akan mengitari karakter.\n",
           "abilities": [
             {
               "name": "",
-              "description": "Rain Sword memiliki karakteristik berikut:\r\n",
+              "description": "Rain Sword memiliki karakteristik berikut:\n",
               "descriptions": [
                 "Saat karakter menerima DMG, Rain Sword akan hancur dan mengurangi DMG yang diterima;",
                 "Meningkatkan ketahanan karakter terhadap interupsi.",
@@ -6738,14 +7007,15 @@
           "stats": [
             "DMG Skill|{param1}% + {param2}%",
             "Perbandingan Pengurangan DMG|{param3}%",
-            "Durasi|{param4}s",
-            "CD|{param5}s"
+            "Durasi|{param4} dtk",
+            "Cooldown|{param5} dtk",
+            "Cooldown|{param6}dtk"
           ]
         },
         {
           "key": "s3",
           "title": "Guhua Sword: Raincutter",
-          "description": "Memulai Rainbow Bladework dan bertarung menggunakan hujanan pedang ilusi sambil menciptakan Rain Sword dalam jumlah maksimum.\r\n",
+          "description": "Memulai Rainbow Bladework dan bertarung menggunakan hujanan pedang ilusi sambil menciptakan Rain Sword dalam jumlah maksimum.\n\n",
           "abilities": [
             {
               "name": "Rainbow Bladework",
@@ -6758,8 +7028,8 @@
           ],
           "stats": [
             "DMG Sword Rain|{param1}%",
-            "Durasi|{param2}s",
-            "Cooldown|{param3}s",
+            "Durasi|{param2} dtk",
+            "Cooldown|{param3} dtk",
             "Konsumsi Energy|{param4}"
           ]
         }
@@ -6768,19 +7038,19 @@
         {
           "key": "p1",
           "title": "Flash of Genius",
-          "description": "Xingqiu memiliki 25% kemungkinan untuk mendapatkan kembali material yang digunakan untuk membuat Material Talenta Karakter.\r\n",
+          "description": "Xingqiu memiliki 25% kemungkinan untuk mendapatkan kembali material yang digunakan untuk membuat Material Talenta Karakter.\n",
           "descriptions": []
         },
         {
           "key": "p2",
           "title": "Hydropathic",
-          "description": "Saat sebuah Rain Sword hancur atau durasinya berakhir, memulihkan HP karakter saat ini sebesar 6% Max HP Xingqiu.\r\n",
+          "description": "Saat sebuah Rain Sword hancur atau durasinya berakhir, memulihkan HP karakter saat ini sebesar 6% Max HP Xingqiu.\n",
           "descriptions": []
         },
         {
           "key": "p3",
           "title": "Blades Amidst Raindrops",
-          "description": "Xingqiu memperoleh 20% Hydro DMG Bonus.\r\n",
+          "description": "Xingqiu memperoleh 20% Hydro DMG Bonus.\n",
           "descriptions": []
         }
       ],
@@ -6788,37 +7058,37 @@
         {
           "key": "c1",
           "title": "The Scent Remained",
-          "description": "Meningkatkan 1 jumlah maksimum Rain Sword\r\n",
+          "description": "Meningkatkan 1 jumlah maksimum Rain Sword\n",
           "descriptions": []
         },
         {
           "key": "c2",
           "title": "Rainbow Upon the Azure Sky",
-          "description": "Memperpanjang 3 detik durasi Guhua Sword: Raincutter.\r\ndan mengurangi 15% Hydro RES musuh yang terkena serangan Sword Rain selama 4 detik.\r\n",
+          "description": "Memperpanjang 3 detik durasi Guhua Sword: Raincutter.\ndan mengurangi 15% Hydro RES musuh yang terkena serangan Sword Rain selama 4 detik.\n",
           "descriptions": []
         },
         {
           "key": "c3",
           "title": "Weaver of Verses",
-          "description": "Meningkatkan 3 level Guhua Sword: Raincutter.\r\nMaksimum: Lv. 15.\r\n",
+          "description": "Meningkatkan 3 level Guhua Sword: Raincutter.\nMaksimum: Lv. 15.\n",
           "descriptions": []
         },
         {
           "key": "c4",
           "title": "Evilsoother",
-          "description": "Pada durasi Guhua Sword: Raincutter, DMG yang dihasilkan oleh Guhua Sword: Fatal Rainscreen meningkat 50%.\r\n",
+          "description": "Pada durasi Guhua Sword: Raincutter, DMG yang dihasilkan oleh Guhua Sword: Fatal Rainscreen meningkat 50%.\n",
           "descriptions": []
         },
         {
           "key": "c5",
           "title": "Embrace of Rain",
-          "description": "Meningkatkan 3 level Guhua Sword: Fatal Rainscreen.\r\nMaksimum: Lv. 15.\r\n",
+          "description": "Meningkatkan 3 level Guhua Sword: Fatal Rainscreen.\nMaksimum: Lv. 15.\n",
           "descriptions": []
         },
         {
           "key": "c6",
           "title": "Hence, Call Them My Own Verses",
-          "description": "Mengaktifkan 2 dari Guhua Sword: Raincutter Sword Rain akan meningkatkan DMG ketiganya. Xingqiu akan mendapatkan 3 Energy saat Sword Rain mengenai musuh.\r\n",
+          "description": "Mengaktifkan 2 dari Guhua Sword: Raincutter Sword Rain akan meningkatkan DMG ketiganya. Xingqiu akan mendapatkan 3 Energy saat Sword Rain mengenai musuh.\n",
           "descriptions": []
         }
       ]
@@ -7119,12 +7389,12 @@
           "abilities": [
             {
               "name": "Normal Attack",
-              "description": "Melancarkan hingga 3 serangan bola api yang mengakibatkan Pyro DMG.\r\nKetika Normal Attack Yanfei mengenai musuh, Yanfei akan mendapatkan 1 Scarlet Seal. Scarlet Seal maksimum yang bisa dikumpulkan Yanfei adalah 3 buah. Setiap kali efek ini terpicu, durasi dari Scarlet Seal yang telah terkumpul akan diperbarui.\r\nSetiap Scarlet Seal akan mengurangi konsumsi Stamina Yanfei dan akan menghilang jika Yanfei meninggalkan medan pertempuran.\r\n",
+              "description": "Melancarkan hingga 3 serangan bola api yang mengakibatkan Pyro DMG.\nKetika Normal Attack Yanfei mengenai musuh, Yanfei akan mendapatkan 1 Scarlet Seal. Scarlet Seal maksimum yang bisa dikumpulkan Yanfei adalah 3 buah. Setiap kali efek ini terpicu, durasi dari Scarlet Seal yang telah terkumpul akan diperbarui.\nSetiap Scarlet Seal akan mengurangi konsumsi Stamina Yanfei dan akan menghilang jika Yanfei meninggalkan medan pertempuran.\n",
               "descriptions": []
             },
             {
               "name": "Charged Attack",
-              "description": "Mengonsumsi Stamina dan semua Scarlet Seal untuk mengakibatkan Pyro DMG area setelah jeda singkat.\r\nArea dan DMG dari Charged Attack ini akan meluas dan meningkat sesuai dengan jumlah Scarlet Seal yang dikonsumsi.\r\n",
+              "description": "Mengonsumsi Stamina dan semua Scarlet Seal untuk mengakibatkan Pyro DMG area setelah jeda singkat.\nArea dan DMG dari Charged Attack ini akan meluas dan meningkat sesuai dengan jumlah Scarlet Seal yang dikonsumsi.\n",
               "descriptions": []
             },
             {
@@ -7139,8 +7409,8 @@
             "DMG Tahap 3|{param3}%",
             "DMG Charged Attack|{param4}% / {param5}% / {param6}% / {param7}% / {param8}%",
             "Konsumsi Stamina Charged Attack|{param9}",
-            "Pengurangan Konsumsi Stamina Scarlet Seal|{param10}% Per Seal",
-            "Durasi Scarlet Seal|{param11}s",
+            "Pengurangan Konsumsi Stamina Scarlet Seal|{param10}% / Seal",
+            "Durasi Scarlet Seal|{param11} detik",
             "DMG Selama Plunging|{param12}%",
             "DMG Plunging Attack Ketinggian Rendah/Tinggi|{param13}% / {param14}%"
           ]
@@ -7148,21 +7418,22 @@
         {
           "key": "s2",
           "title": "Signed Edict",
-          "description": "Memanggil api yang mengakibatkan Pyro DMG Area.\r\nYanfei akan mendapatkan Scarlet Seal dalam jumlah maksimum saat Signed Edict mengenai musuh.\r\n",
+          "description": "Memanggil api yang mengakibatkan Pyro DMG Area.\nYanfei akan mendapatkan Scarlet Seal dalam jumlah maksimum saat Signed Edict mengenai musuh.\n\n",
           "abilities": [],
           "stats": [
             "DMG Skill|{param1}%",
-            "Cooldown|{param2}s"
+            "Cooldown|{param2} dtk",
+            "Cooldown|{param3}dtk"
           ]
         },
         {
           "key": "s3",
           "title": "Done Deal",
-          "description": "Memicu semburan api dahsyat yang menyerbu musuh di sekitar dan mengakibatkan Pyro DMG Area, serta memberikan Scarlet Seal dalam jumlah maksimum dan efek Brilliance pada Yanfei.\r\n",
+          "description": "Memicu semburan api dahsyat yang menyerbu musuh di sekitar dan mengakibatkan Pyro DMG Area, serta memberikan Scarlet Seal dalam jumlah maksimum dan efek Brilliance pada Yanfei.\n\n",
           "abilities": [
             {
               "name": "Brilliance",
-              "description": "Memiliki efek berikut:\r\n",
+              "description": "Memiliki efek berikut:\n",
               "descriptions": [
                 "Memberikan Scarlet Seal pada Yanfei setiap beberapa saat.",
                 "Meningkatkan DMG yang diakibatkan oleh Charged Attack.",
@@ -7184,19 +7455,19 @@
         {
           "key": "p1",
           "title": "Encyclopedic Expertise",
-          "description": "Memperlihatkan lokasi produk khas Liyue di sekitar pada mini-map.\r\n",
+          "description": "Memperlihatkan lokasi produk khas Liyue di sekitar pada mini-map.\n",
           "descriptions": []
         },
         {
           "key": "p2",
           "title": "Proviso",
-          "description": "Saat Yanfei mengonsumsi Scarlet Seal dengan menggunakan Charged Attack, setiap Scarlet Seal akan meningkatkan 5% Bonus Pyro DMG Yanfei selama 6 detik. Jika Yanfei menggunakan Charged Attack sekali lagi selama durasi masih berlangsung, maka efek sebelumnya akan hilang.\r\n",
+          "description": "Saat Yanfei mengonsumsi Scarlet Seal dengan menggunakan Charged Attack, setiap Scarlet Seal akan meningkatkan 5% Bonus Pyro DMG Yanfei selama 6 detik. Jika Yanfei menggunakan Charged Attack sekali lagi selama durasi masih berlangsung, maka efek sebelumnya akan hilang.\n",
           "descriptions": []
         },
         {
           "key": "p3",
           "title": "Blazing Eye",
-          "description": "Saat Charged Attack Yanfei mengakibatkan CRIT pada musuh, Yanfei akan mengakibatkan Pyro DMG Area tambahan sebesar 80% ATK Yanfei. DMG ini terhitung sebagai DMG Charged Attack.\r\n",
+          "description": "Saat Charged Attack Yanfei mengakibatkan CRIT pada musuh, Yanfei akan mengakibatkan Pyro DMG Area tambahan sebesar 80% ATK Yanfei. DMG ini terhitung sebagai DMG Charged Attack.\n",
           "descriptions": []
         }
       ],
@@ -7204,25 +7475,25 @@
         {
           "key": "c1",
           "title": "The Law Knows No Kindness",
-          "description": "Saat Yanfei menggunakan Charged Attack, setiap Scarlet Seal yang terkumpul akan mengurangi 10% konsumsi stamina Charged Attack dan meningkatkan ketahanan terhadap interupsi selama Charged Attack berlangsung.\r\n",
+          "description": "Saat Yanfei menggunakan Charged Attack, setiap Scarlet Seal yang terkumpul akan mengurangi 10% konsumsi stamina Charged Attack dan meningkatkan ketahanan terhadap interupsi selama Charged Attack berlangsung.\n",
           "descriptions": []
         },
         {
           "key": "c2",
           "title": "Right of Final Interpretation",
-          "description": "Meningkatkan 20% CRIT Rate Charged Attack Yanfei terhadap musuh dengan HP kurang dari 50%.\r\n",
+          "description": "Meningkatkan 20% CRIT Rate Charged Attack Yanfei terhadap musuh dengan HP kurang dari 50%.\n",
           "descriptions": []
         },
         {
           "key": "c3",
           "title": "Samadhi Fire-Forged",
-          "description": "Meningkatkan 3 level Signed Edict.\r\nMaksimum: Lv. 15.\r\n",
+          "description": "Meningkatkan 3 level Signed Edict.\nMaksimum: Lv. 15.\n",
           "descriptions": []
         },
         {
           "key": "c4",
           "title": "Supreme Amnesty",
-          "description": "Saat Done Deal digunakan:\r\n",
+          "description": "Saat Done Deal digunakan:\n",
           "descriptions": [
             "Menciptakan perisai yang dapat menahan DMG hingga 45% dari Max HP Yanfei selama 15 detik.",
             "Perisai ini dapat menahan Pyro DMG 250% lebih efektif."
@@ -7231,13 +7502,13 @@
         {
           "key": "c5",
           "title": "Abiding Affidavit",
-          "description": "Meningkatkan 3 level Done Deal.\r\nMaksimum: Lv. 15.\r\n",
+          "description": "Meningkatkan 3 level Done Deal.\nMaksimum: Lv. 15.\n",
           "descriptions": []
         },
         {
           "key": "c6",
           "title": "Extra Clause",
-          "description": "Meningkatkan jumlah maksimum Scarlet Seal sebanyak 1.\r\n",
+          "description": "Meningkatkan jumlah maksimum Scarlet Seal sebanyak 1.\n",
           "descriptions": []
         }
       ]
@@ -8171,6 +8442,18 @@
       ]
     },
     {
+      "key": "end-of-the-line",
+      "name": "End of the Line",
+      "description": "Tampak seperti ikan yang kini sudah punah. Dengan elastisitas tubuhnya, ia dapat digunakan sebagai busur setelah diikatkan dengan tali.",
+      "refinements": [
+        "Setelah melancarkan Elemental Skill dan saat serangannya mengenai musuh, akan mendapatkan efek “Flowrider” yang mengakibatkan DMG Area sebesar {color}80{/color}% ATK. Efek tersebut akan dihapus setelah 15 detik atau setelah memicu DMG Area sebanyak 3 kali. Dengan cara ini, DMG Area diakibatkan setiap 2 detik, sementara “Flowrider” terpicu setiap 12 detik.",
+        "Setelah melancarkan Elemental Skill dan saat serangannya mengenai musuh, akan mendapatkan efek “Flowrider” yang mengakibatkan DMG Area sebesar {color}100{/color}% ATK. Efek tersebut akan dihapus setelah 15 detik atau setelah memicu DMG Area sebanyak 3 kali. Dengan cara ini, DMG Area diakibatkan setiap 2 detik, sementara “Flowrider” terpicu setiap 12 detik.",
+        "Setelah melancarkan Elemental Skill dan saat serangannya mengenai musuh, akan mendapatkan efek “Flowrider” yang mengakibatkan DMG Area sebesar {color}120{/color}% ATK. Efek tersebut akan dihapus setelah 15 detik atau setelah memicu DMG Area sebanyak 3 kali. Dengan cara ini, DMG Area diakibatkan setiap 2 detik, sementara “Flowrider” terpicu setiap 12 detik.",
+        "Setelah melancarkan Elemental Skill dan saat serangannya mengenai musuh, akan mendapatkan efek “Flowrider” yang mengakibatkan DMG Area sebesar {color}140{/color}% ATK. Efek tersebut akan dihapus setelah 15 detik atau setelah memicu DMG Area sebanyak 3 kali. Dengan cara ini, DMG Area diakibatkan setiap 2 detik, sementara “Flowrider” terpicu setiap 12 detik.",
+        "Setelah melancarkan Elemental Skill dan saat serangannya mengenai musuh, akan mendapatkan efek “Flowrider” yang mengakibatkan DMG Area sebesar {color}160{/color}% ATK. Efek tersebut akan dihapus setelah 15 detik atau setelah memicu DMG Area sebanyak 3 kali. Dengan cara ini, DMG Area diakibatkan setiap 2 detik, sementara “Flowrider” terpicu setiap 12 detik."
+      ]
+    },
+    {
       "key": "engulfing-lightning",
       "name": "Engulfing Lightning",
       "description": "Naginata yang digunakan untuk \"memotong rumput\". Pasukan yang berani berdiri di hadapan senjata ini pasti akan tertebas seperti rumput liar...",
@@ -8315,6 +8598,18 @@
       ]
     },
     {
+      "key": "forest-regalia",
+      "name": "Forest Regalia",
+      "description": "Senjata yang didapat dari cerita Aranara. Senjata dengan bentuk pedang besar ini dapat menghancurkan musuh-musuh hutan.",
+      "refinements": [
+        "Setelah memicu Burning, Quicken, Aggravate, Spread, Bloom, Hyperbloom, atau Burgeon, “Leaf of Consciousness” akan muncul di sekitar Karakter dan bertahan hingga 10 detik. Elemental Mastery dari Karakter yang mengambil “Leaf of Consciousness” ini akan meningkat sebesar {color}60{/color} poin selama 12 detik. Maksimal satu “Leaf of Consciousness” yang bisa dihasilkan setiap 20 detik dengan cara ini. Juga bisa terpicu saat Karakter party yang mengenakannya ada dalam party namun sedang tidak berada di medan pertempuran. Efek Leaf of Consciousness tidak dapat ditumpuk.",
+        "Setelah memicu Burning, Quicken, Aggravate, Spread, Bloom, Hyperbloom, atau Burgeon, “Leaf of Consciousness” akan muncul di sekitar Karakter dan bertahan hingga 10 detik. Elemental Mastery dari Karakter yang mengambil “Leaf of Consciousness” ini akan meningkat sebesar {color}75{/color} poin selama 12 detik. Maksimal satu “Leaf of Consciousness” yang bisa dihasilkan setiap 20 detik dengan cara ini. Juga bisa terpicu saat Karakter party yang mengenakannya ada dalam party namun sedang tidak berada di medan pertempuran. Efek Leaf of Consciousness tidak dapat ditumpuk.",
+        "Setelah memicu Burning, Quicken, Aggravate, Spread, Bloom, Hyperbloom, atau Burgeon, “Leaf of Consciousness” akan muncul di sekitar Karakter dan bertahan hingga 10 detik. Elemental Mastery dari Karakter yang mengambil “Leaf of Consciousness” ini akan meningkat sebesar {color}90{/color} poin selama 12 detik. Maksimal satu “Leaf of Consciousness” yang bisa dihasilkan setiap 20 detik dengan cara ini. Juga bisa terpicu saat Karakter party yang mengenakannya ada dalam party namun sedang tidak berada di medan pertempuran. Efek Leaf of Consciousness tidak dapat ditumpuk.",
+        "Setelah memicu Burning, Quicken, Aggravate, Spread, Bloom, Hyperbloom, atau Burgeon, “Leaf of Consciousness” akan muncul di sekitar Karakter dan bertahan hingga 10 detik. Elemental Mastery dari Karakter yang mengambil “Leaf of Consciousness” ini akan meningkat sebesar {color}105{/color} poin selama 12 detik. Maksimal satu “Leaf of Consciousness” yang bisa dihasilkan setiap 20 detik dengan cara ini. Juga bisa terpicu saat Karakter party yang mengenakannya ada dalam party namun sedang tidak berada di medan pertempuran. Efek Leaf of Consciousness tidak dapat ditumpuk.",
+        "Setelah memicu Burning, Quicken, Aggravate, Spread, Bloom, Hyperbloom, atau Burgeon, “Leaf of Consciousness” akan muncul di sekitar Karakter dan bertahan hingga 10 detik. Elemental Mastery dari Karakter yang mengambil “Leaf of Consciousness” ini akan meningkat sebesar {color}120{/color} poin selama 12 detik. Maksimal satu “Leaf of Consciousness” yang bisa dihasilkan setiap 20 detik dengan cara ini. Juga bisa terpicu saat Karakter party yang mengenakannya ada dalam party namun sedang tidak berada di medan pertempuran. Efek Leaf of Consciousness tidak dapat ditumpuk."
+      ]
+    },
+    {
       "key": "freedom-sworn",
       "name": "Freedom-Sworn",
       "description": "Pedang biru langit yang mengingatkan pada lagu lama, senjata tajam seperti sumpah kebebasan di Kota milik Dewa Angin.",
@@ -8336,6 +8631,18 @@
         "Saat Normal atau Charged Attack mengenai musuh, memiliki {color}80{/color}% persentase untuk menciptakan Everfrost Icicle di atas musuh, mengakibatkan DMG area sebesar {color}110{/color}% ATK. Jika musuh berada dalam efek Cryo, maka Everfrost Icicle akan mengakibatkan DMG sebesar {color}280{/color}% ATK. Efek ini dapat terpicu setiap 10 detik.",
         "Saat Normal atau Charged Attack mengenai musuh, memiliki {color}90{/color}% persentase untuk menciptakan Everfrost Icicle di atas musuh, mengakibatkan DMG area sebesar {color}125{/color}% ATK. Jika musuh berada dalam efek Cryo, maka Everfrost Icicle akan mengakibatkan DMG sebesar {color}320{/color}% ATK. Efek ini dapat terpicu setiap 10 detik.",
         "Saat Normal atau Charged Attack mengenai musuh, memiliki {color}100{/color}% persentase untuk menciptakan Everfrost Icicle di atas musuh, mengakibatkan DMG area sebesar {color}140{/color}% ATK. Jika musuh berada dalam efek Cryo, maka Everfrost Icicle akan mengakibatkan DMG sebesar {color}360{/color}% ATK. Efek ini dapat terpicu setiap 10 detik."
+      ]
+    },
+    {
+      "key": "fruit-of-fulfillment",
+      "name": "Fruit of Fulfillment",
+      "description": "Buah yang didapat dari cerita Aranara. Darinyalah terdapat potensi untuk mengatasi krisis apa pun.",
+      "refinements": [
+        "Setelah memicu reaksi elemental, akan mendapatkan efek “Wax and Wane” yang meningkatkan {color}24{/color} poin Elemental Mastery, namun mengurangi 5% ATK. Satu lapis efek “Wax and Wane” didapatkan setiap 0,3 detik. Efek ini dapat ditumpuk maksimum sebanyak 5 lapis. Satu lapis efek ini akan hilang setiap 6 detik saat reaksi elemental belum dipicu. Efek ini tetap dapat terpicu meskipun Karakter penggunanya ada dalam party namun sedang tidak berada di medan pertempuran.",
+        "Setelah memicu reaksi elemental, akan mendapatkan efek “Wax and Wane” yang meningkatkan {color}27{/color} poin Elemental Mastery, namun mengurangi 5% ATK. Satu lapis efek “Wax and Wane” didapatkan setiap 0,3 detik. Efek ini dapat ditumpuk maksimum sebanyak 5 lapis. Satu lapis efek ini akan hilang setiap 6 detik saat reaksi elemental belum dipicu. Efek ini tetap dapat terpicu meskipun Karakter penggunanya ada dalam party namun sedang tidak berada di medan pertempuran.",
+        "Setelah memicu reaksi elemental, akan mendapatkan efek “Wax and Wane” yang meningkatkan {color}30{/color} poin Elemental Mastery, namun mengurangi 5% ATK. Satu lapis efek “Wax and Wane” didapatkan setiap 0,3 detik. Efek ini dapat ditumpuk maksimum sebanyak 5 lapis. Satu lapis efek ini akan hilang setiap 6 detik saat reaksi elemental belum dipicu. Efek ini tetap dapat terpicu meskipun Karakter penggunanya ada dalam party namun sedang tidak berada di medan pertempuran.",
+        "Setelah memicu reaksi elemental, akan mendapatkan efek “Wax and Wane” yang meningkatkan {color}33{/color} poin Elemental Mastery, namun mengurangi 5% ATK. Satu lapis efek “Wax and Wane” didapatkan setiap 0,3 detik. Efek ini dapat ditumpuk maksimum sebanyak 5 lapis. Satu lapis efek ini akan hilang setiap 6 detik saat reaksi elemental belum dipicu. Efek ini tetap dapat terpicu meskipun Karakter penggunanya ada dalam party namun sedang tidak berada di medan pertempuran.",
+        "Setelah memicu reaksi elemental, akan mendapatkan efek “Wax and Wane” yang meningkatkan {color}36{/color} poin Elemental Mastery, namun mengurangi 5% ATK. Satu lapis efek “Wax and Wane” didapatkan setiap 0,3 detik. Efek ini dapat ditumpuk maksimum sebanyak 5 lapis. Satu lapis efek ini akan hilang setiap 6 detik saat reaksi elemental belum dipicu. Efek ini tetap dapat terpicu meskipun Karakter penggunanya ada dalam party namun sedang tidak berada di medan pertempuran."
       ]
     },
     {
@@ -8405,6 +8712,18 @@
       "refinements": []
     },
     {
+      "key": "hunters-path",
+      "name": "Hunter’s Path",
+      "description": "Busur berburu berwarna emas yang dibuat dari cabang putih yang berharga telah menembak jatuh begitu banyak monster buas yang hendak menyerbu hutan.",
+      "refinements": [
+        "Mendapatkan {color}12{/color}% Elemental DMG Bonus untuk semua elemen. Setelah Charged Attack mengenai musuh, akan mendapatkan “Tireless Hunt” yang akan meningkatkan DMG Charged Attack setara dengan {color}160{/color}% dari nilai Elemental Mastery. Efek tersebut akan menghilang setelah aktif sebanyak 12 kali atau 10 detik. “Tireless Hunt” bisa didapatkan setiap 12 detik.",
+        "Mendapatkan {color}15{/color}% Elemental DMG Bonus untuk semua elemen. Setelah Charged Attack mengenai musuh, akan mendapatkan “Tireless Hunt” yang akan meningkatkan DMG Charged Attack setara dengan {color}200{/color}% dari nilai Elemental Mastery. Efek tersebut akan menghilang setelah aktif sebanyak 12 kali atau 10 detik. “Tireless Hunt” bisa didapatkan setiap 12 detik.",
+        "Mendapatkan {color}18{/color}% Elemental DMG Bonus untuk semua elemen. Setelah Charged Attack mengenai musuh, akan mendapatkan “Tireless Hunt” yang akan meningkatkan DMG Charged Attack setara dengan {color}240{/color}% dari nilai Elemental Mastery. Efek tersebut akan menghilang setelah aktif sebanyak 12 kali atau 10 detik. “Tireless Hunt” bisa didapatkan setiap 12 detik.",
+        "Mendapatkan {color}21{/color}% Elemental DMG Bonus untuk semua elemen. Setelah Charged Attack mengenai musuh, akan mendapatkan “Tireless Hunt” yang akan meningkatkan DMG Charged Attack setara dengan {color}280{/color}% dari nilai Elemental Mastery. Efek tersebut akan menghilang setelah aktif sebanyak 12 kali atau 10 detik. “Tireless Hunt” bisa didapatkan setiap 12 detik.",
+        "Mendapatkan {color}24{/color}% Elemental DMG Bonus untuk semua elemen. Setelah Charged Attack mengenai musuh, akan mendapatkan “Tireless Hunt” yang akan meningkatkan DMG Charged Attack setara dengan {color}320{/color}% dari nilai Elemental Mastery. Efek tersebut akan menghilang setelah aktif sebanyak 12 kali atau 10 detik. “Tireless Hunt” bisa didapatkan setiap 12 detik."
+      ]
+    },
+    {
       "key": "iron-point",
       "name": "Iron Point",
       "description": "Mata pedangnya sangat tajam, sebuah senjata dengan keseimbangan yang baik, senjata ini populer di kalangan para petualang.",
@@ -8452,6 +8771,18 @@
         "Meningkatkan {color}9{/color}% Elemental Skill DMG. Setelah Elemental Skill mengenai musuh, 3 Energy hilang tapi akan memulihkan {color}4{/color} Energy setiap 2 detik selama 6 detik. Efek terpicu setiap 10 detik. Dapat terpicu walaupun Karakter tersebut tidak berada di medan perang.",
         "Meningkatkan {color}10{/color},5% Elemental Skill DMG. Setelah Elemental Skill mengenai musuh, 3 Energy hilang tapi akan memulihkan {color}4{/color},5 Energy setiap 2 detik selama 6 detik. Efek terpicu setiap 10 detik. Dapat terpicu walaupun Karakter tersebut tidak berada di medan perang.",
         "Meningkatkan {color}12{/color}% Elemental Skill DMG. Setelah Elemental Skill mengenai musuh, 3 Energy hilang tapi akan memulihkan {color}5{/color} Energy setiap 2 detik selama 6 detik. Efek terpicu setiap 10 detik. Dapat terpicu walaupun Karakter tersebut tidak berada di medan perang."
+      ]
+    },
+    {
+      "key": "kings-squire",
+      "name": "King’s Squire",
+      "description": "Senjata yang didapat dari cerita Aranara. Senjata dengan bentuk busur ini dapat menembak jatuh musuh hutan.",
+      "refinements": [
+        "Saat melancarkan Elemental Skill atau Elemental Burst, akan mendapatkan efek “Teachings of the Forest” yang meningkatkan {color}60{/color} poin Elemental Mastery selama 12 detik. Efek ini akan hilang saat berganti Karakter. Saat durasi “Teachings of the Forest” berakhir atau dihapus, akan mengakibatkan DMG setara dengan {color}100{/color}% ATK terhadap 1 musuh di sekitar. “Teachings of the Forest” bisa terpicu setiap 20 detik.",
+        "Saat melancarkan Elemental Skill atau Elemental Burst, akan mendapatkan efek “Teachings of the Forest” yang meningkatkan {color}80{/color} poin Elemental Mastery selama 12 detik. Efek ini akan hilang saat berganti Karakter. Saat durasi “Teachings of the Forest” berakhir atau dihapus, akan mengakibatkan DMG setara dengan {color}120{/color}% ATK terhadap 1 musuh di sekitar. “Teachings of the Forest” bisa terpicu setiap 20 detik.",
+        "Saat melancarkan Elemental Skill atau Elemental Burst, akan mendapatkan efek “Teachings of the Forest” yang meningkatkan {color}100{/color} poin Elemental Mastery selama 12 detik. Efek ini akan hilang saat berganti Karakter. Saat durasi “Teachings of the Forest” berakhir atau dihapus, akan mengakibatkan DMG setara dengan {color}140{/color}% ATK terhadap 1 musuh di sekitar. “Teachings of the Forest” bisa terpicu setiap 20 detik.",
+        "Saat melancarkan Elemental Skill atau Elemental Burst, akan mendapatkan efek “Teachings of the Forest” yang meningkatkan {color}120{/color} poin Elemental Mastery selama 12 detik. Efek ini akan hilang saat berganti Karakter. Saat durasi “Teachings of the Forest” berakhir atau dihapus, akan mengakibatkan DMG setara dengan {color}160{/color}% ATK terhadap 1 musuh di sekitar. “Teachings of the Forest” bisa terpicu setiap 20 detik.",
+        "Saat melancarkan Elemental Skill atau Elemental Burst, akan mendapatkan efek “Teachings of the Forest” yang meningkatkan {color}140{/color} poin Elemental Mastery selama 12 detik. Efek ini akan hilang saat berganti Karakter. Saat durasi “Teachings of the Forest” berakhir atau dihapus, akan mengakibatkan DMG setara dengan {color}180{/color}% ATK terhadap 1 musuh di sekitar. “Teachings of the Forest” bisa terpicu setiap 20 detik."
       ]
     },
     {
@@ -8596,6 +8927,18 @@
         "Saat Normal Attack mengenai musuh, meningkatkan {color}30{/color}% DMG Elemental Skill selama 5 detik; Saat Elemental Skill mengenai musuh, meningkatkan {color}30{/color}% DMG Normal Attack selama 5 detik.",
         "Saat Normal Attack mengenai musuh, meningkatkan {color}35{/color}% DMG Elemental Skill selama 5 detik; Saat Elemental Skill mengenai musuh, meningkatkan {color}35{/color}% DMG Normal Attack selama 5 detik.",
         "Saat Normal Attack mengenai musuh, meningkatkan {color}40{/color}% DMG Elemental Skill selama 5 detik; Saat Elemental Skill mengenai musuh, meningkatkan {color}40{/color}% DMG Normal Attack selama 5 detik."
+      ]
+    },
+    {
+      "key": "moonpiercer",
+      "name": "Moonpiercer",
+      "description": "Senjata yang didapat dari cerita Aranara. Bentuknya seperti panah raksasa, dan bisa digunakan sebagai tombak.",
+      "refinements": [
+        "Setelah memicu Burning, Quicken, Aggravate, Spread, Bloom, Hyperbloom, atau Burgeon, “Leaf of Revival” akan muncul di sekitar Karakter dan bertahan hingga 10 detik. ATK dari Karakter yang mengambil “Leaf of Revival” ini akan meningkat sebesar {color}16{/color}% selama 12 detik. Maksimal satu “Leaf of Revival” yang bisa dihasilkan setiap 20 detik dengan cara ini. Juga bisa terpicu saat Karakter party yang mengenakannya ada dalam party namun sedang tidak berada di medan pertempuran.",
+        "Setelah memicu Burning, Quicken, Aggravate, Spread, Bloom, Hyperbloom, atau Burgeon, “Leaf of Revival” akan muncul di sekitar Karakter dan bertahan hingga 10 detik. ATK dari Karakter yang mengambil “Leaf of Revival” ini akan meningkat sebesar {color}20{/color}% selama 12 detik. Maksimal satu “Leaf of Revival” yang bisa dihasilkan setiap 20 detik dengan cara ini. Juga bisa terpicu saat Karakter party yang mengenakannya ada dalam party namun sedang tidak berada di medan pertempuran.",
+        "Setelah memicu Burning, Quicken, Aggravate, Spread, Bloom, Hyperbloom, atau Burgeon, “Leaf of Revival” akan muncul di sekitar Karakter dan bertahan hingga 10 detik. ATK dari Karakter yang mengambil “Leaf of Revival” ini akan meningkat sebesar {color}24{/color}% selama 12 detik. Maksimal satu “Leaf of Revival” yang bisa dihasilkan setiap 20 detik dengan cara ini. Juga bisa terpicu saat Karakter party yang mengenakannya ada dalam party namun sedang tidak berada di medan pertempuran.",
+        "Setelah memicu Burning, Quicken, Aggravate, Spread, Bloom, Hyperbloom, atau Burgeon, “Leaf of Revival” akan muncul di sekitar Karakter dan bertahan hingga 10 detik. ATK dari Karakter yang mengambil “Leaf of Revival” ini akan meningkat sebesar {color}28{/color}% selama 12 detik. Maksimal satu “Leaf of Revival” yang bisa dihasilkan setiap 20 detik dengan cara ini. Juga bisa terpicu saat Karakter party yang mengenakannya ada dalam party namun sedang tidak berada di medan pertempuran.",
+        "Setelah memicu Burning, Quicken, Aggravate, Spread, Bloom, Hyperbloom, atau Burgeon, “Leaf of Revival” akan muncul di sekitar Karakter dan bertahan hingga 10 detik. ATK dari Karakter yang mengambil “Leaf of Revival” ini akan meningkat sebesar {color}32{/color}% selama 12 detik. Maksimal satu “Leaf of Revival” yang bisa dihasilkan setiap 20 detik dengan cara ini. Juga bisa terpicu saat Karakter party yang mengenakannya ada dalam party namun sedang tidak berada di medan pertempuran."
       ]
     },
     {
@@ -8916,6 +9259,18 @@
         "Setelah Elemental Skill mengakibatkan DMG, terdapat {color}60{/color}% persentase CD Skill langsung selesai. Dapat terpicu setiap {color}22{/color} detik.",
         "Setelah Elemental Skill mengakibatkan DMG, terdapat {color}70{/color}% persentase CD Skill langsung selesai. Dapat terpicu setiap {color}19{/color} detik.",
         "Setelah Elemental Skill mengakibatkan DMG, terdapat {color}80{/color}% persentase CD Skill langsung selesai. Dapat terpicu setiap {color}16{/color} detik."
+      ]
+    },
+    {
+      "key": "sapwood-blade",
+      "name": "Sapwood Blade",
+      "description": "Senjata yang didapat dari cerita Aranara. Senjata dengan bentuk pisau ini bisa menembus musuh hutan.",
+      "refinements": [
+        "Setelah memicu Burning, Quicken, Aggravate, Spread, Bloom, Hyperbloom, atau Burgeon, “Leaf of Consciousness” akan muncul di sekitar Karakter dan bertahan hingga 10 detik. Elemental Mastery dari Karakter yang mengambil “Leaf of Consciousness” ini akan meningkat sebesar {color}60{/color} poin selama 12 detik. Maksimal satu “Leaf of Consciousness” yang bisa dihasilkan setiap 20 detik dengan cara ini. Juga bisa terpicu saat Karakter party yang mengenakannya ada dalam party namun sedang tidak berada di medan pertempuran. Efek Leaf of Consciousness tidak dapat ditumpuk.",
+        "Setelah memicu Burning, Quicken, Aggravate, Spread, Bloom, Hyperbloom, atau Burgeon, “Leaf of Consciousness” akan muncul di sekitar Karakter dan bertahan hingga 10 detik. Elemental Mastery dari Karakter yang mengambil “Leaf of Consciousness” ini akan meningkat sebesar {color}75{/color} poin selama 12 detik. Maksimal satu “Leaf of Consciousness” yang bisa dihasilkan setiap 20 detik dengan cara ini. Juga bisa terpicu saat Karakter party yang mengenakannya ada dalam party namun sedang tidak berada di medan pertempuran. Efek Leaf of Consciousness tidak dapat ditumpuk.",
+        "Setelah memicu Burning, Quicken, Aggravate, Spread, Bloom, Hyperbloom, atau Burgeon, “Leaf of Consciousness” akan muncul di sekitar Karakter dan bertahan hingga 10 detik. Elemental Mastery dari Karakter yang mengambil “Leaf of Consciousness” ini akan meningkat sebesar {color}90{/color} poin selama 12 detik. Maksimal satu “Leaf of Consciousness” yang bisa dihasilkan setiap 20 detik dengan cara ini. Juga bisa terpicu saat Karakter party yang mengenakannya ada dalam party namun sedang tidak berada di medan pertempuran. Efek Leaf of Consciousness tidak dapat ditumpuk.",
+        "Setelah memicu Burning, Quicken, Aggravate, Spread, Bloom, Hyperbloom, atau Burgeon, “Leaf of Consciousness” akan muncul di sekitar Karakter dan bertahan hingga 10 detik. Elemental Mastery dari Karakter yang mengambil “Leaf of Consciousness” ini akan meningkat sebesar {color}105{/color} poin selama 12 detik. Maksimal satu “Leaf of Consciousness” yang bisa dihasilkan setiap 20 detik dengan cara ini. Juga bisa terpicu saat Karakter party yang mengenakannya ada dalam party namun sedang tidak berada di medan pertempuran. Efek Leaf of Consciousness tidak dapat ditumpuk.",
+        "Setelah memicu Burning, Quicken, Aggravate, Spread, Bloom, Hyperbloom, atau Burgeon, “Leaf of Consciousness” akan muncul di sekitar Karakter dan bertahan hingga 10 detik. Elemental Mastery dari Karakter yang mengambil “Leaf of Consciousness” ini akan meningkat sebesar {color}120{/color} poin selama 12 detik. Maksimal satu “Leaf of Consciousness” yang bisa dihasilkan setiap 20 detik dengan cara ini. Juga bisa terpicu saat Karakter party yang mengenakannya ada dalam party namun sedang tidak berada di medan pertempuran. Efek Leaf of Consciousness tidak dapat ditumpuk."
       ]
     },
     {
@@ -9431,7 +9786,15 @@
       "name": "Crimson Witch of Flames",
       "bonus": [
         "Pyro DMG Bonus +15%.",
-        "Meningkatkan 40% DMG Overloaded dan Burning. Meningkatkan 15% DMG Vaporize dan Melt. Setelah menggunakan Elemental Skill, meningkatkan 50% efek 2-Piece Set selama 10 detik. Maksimum 3 lapis."
+        "Meningkatkan 40% DMG Overloaded, Burning, dan Burgeon. Meningkatkan 15% DMG Vaporize dan Melt. Setelah menggunakan Elemental Skill, meningkatkan 50% efek 2-Piece Set selama 10 detik. Maksimum 3 lapis."
+      ]
+    },
+    {
+      "key": "deepwood-memories",
+      "name": "Deepwood Memories",
+      "bonus": [
+        "Dendro DMG Bonus +15%.",
+        "Setelah Elemental Skill atau Elemental Burst mengenai musuh, Dendro RES dari target yang terkena akan berkurang 30% selama 8 detik. Efek ini tetap dapat terpicu meskipun Karakter party yang mengenakannya tidak berada di medan pertempuran."
       ]
     },
     {
@@ -9464,6 +9827,14 @@
       "bonus": [
         "Meningkatkan 20% DMG Elemental Skill.",
         "Mengalahkan musuh memiliki 100% persentase CD Elemental Skill akan langsung selesai. Dapat terpicu setiap 15 detik."
+      ]
+    },
+    {
+      "key": "gilded-dreams",
+      "name": "Gilded Dreams",
+      "bonus": [
+        "Elemental Mastery +80.",
+        "Selama 8 detik setelah memicu Reaksi Elemental, Karakter yang mengenakannya mendapatkan efek penguatan berdasarkan tipe elemen Karakter lain yang berada dalam tim Untuk setiap anggota party yang berelemen sama dengan Karakter yang mengenakan, maka ATK meningkat 14%; Untuk setiap anggota party yang berelemen berbeda dengan Karakter yang mengenakan, maka Elemental Mastery meningkat 50 poin. Efek yang dijelaskan tersebut maksimal dihitung untuk 3 Karakter. Efek ini terpicu setiap 8 detik. Efek ini tetap dapat terpicu meskipun Karakter party yang mengenakannya ada dalam party namun sedang tidak berada di medan pertempuran."
       ]
     },
     {
@@ -9635,7 +10006,7 @@
       "name": "Thundering Fury",
       "bonus": [
         "Electro DMG Bonus +15%.",
-        "Meningkatkan 40% DMG yang diakibatkan Overloaded, Electro-Charged, dan Superconduct. Memicu efek-efek tersebut mengurangi 1 detik CD Elemental Skill. Dapat terpicu setiap 0,8 detik."
+        "Meningkatkan 40% DMG yang diakibatkan Overloaded, Electro-Charged, Superconduct, dan Hyperbloom. Meningkatkan 20% DMG yang diakibatkan Aggravate. Saat memicu reaksi-reaksi elemental di atas atau reaksi Quicken, akan mengurangi 1 detik CD Elemental Skill. Efek ini terpicu setiap 0,8 detik."
       ]
     },
     {
@@ -9874,6 +10245,11 @@
       "description": "Berasal dari mesin Ruin kuno yang sekarang sudah tidak aktif.\r\nBahkan teknik yang hebat dan kekuatan yang tidak diketahui dari perangkat ini pun kini sudah tidak ada gunanya setelah mesin yang memuatnya gagal untuk mempertahankan integritas strukturalnya."
     },
     {
+      "key": "chaos-bolt",
+      "name": "Chaos Bolt",
+      "description": "Berasal dari Ruin Drake kuno yang sekarang tidak aktif lagi.\nDi antara kerajaan kuno yang sudah hilang, pernah ada sekelompok orang yang terobsesi dengan ide penciptaan ulang, baik itu elemen berurutan murni dari Hypostasis atau kekuatan primitif dari naga, mereka percaya bahwa semua ini bisa direplikasi dan dimodifikasi sampai bisa melampaui bentuk alaminya.\nDengan cara ini, bentuk tubuh yang unggul dan tidak ternoda dapat menggantikan tatanan yang pada akhirnya membusuk dan hancur."
+    },
+    {
       "key": "chaos-circuit",
       "name": "Chaos Circuit",
       "description": "Bagian dari mesin kuno yang sudah tidak lagi bekerja. Bagian ini terlihat seperti sirkuit yang menggerakkan tubuh mesin, sayangnya tidak ada yang dapat menebak bagaimana alat ini bekerja."
@@ -9894,9 +10270,19 @@
       "description": "Berasal dari mesin Ruin kuno yang sekarang sudah tidak aktif.\r\nMesin ini adalah sumber energi dari mekanisme biomimetik tersebut."
     },
     {
+      "key": "chaos-module",
+      "name": "Chaos Module",
+      "description": "Berasal dari Ruin Drake kuno yang sekarang tidak aktif lagi.\n“Naga” pernah menjadi bentuk tubuh paling primitif dan kuno dari unsur-unsur tertinggi sampai mereka dikalahkan, ditaklukkan, atau diasimilasi."
+    },
+    {
       "key": "chaos-oculus",
       "name": "Chaos Oculus",
       "description": "Berasal dari mesin Ruin kuno yang sekarang sudah tidak aktif.\r\nNama \"Ruin\" berasal dari area di mana mereka sering melakukan aktivitasnya. Namun kenyataannya, mesin Ruin sebenarnya tidak punya banyak kesamaan dengan puing-puing reruntuhan di area di mana mereka biasanya ditemukan.\r\nDi masa lalu, reruntuhan ini pernah menjadi bagian dari peradaban yang kekuatannya hampir sanggup untuk menyentuh atap langit, sementara \"Ruin\" masih menunggu dengan manis di tempat-tempat yang dalam di bumi, menunggu datangnya perintah untuk bangkit dan menginjak semua kerajaan yang ada."
+    },
+    {
+      "key": "chaos-storage",
+      "name": "Chaos Storage",
+      "description": "Berasal dari Ruin Drake kuno yang sekarang tidak aktif lagi.\nRuin Drake dapat menyerap Elemental Energy dari luar dan menyimpannya di komponen ini di dalam “leher” mereka."
     },
     {
       "key": "cheese",
@@ -9932,6 +10318,11 @@
       "key": "concealed-unguis",
       "name": "Concealed Unguis",
       "description": "Jaringan tubuh yang ditinggalkan oleh salah satu dari Riftwolves.\r\nWalaupun memang sangat menakjubkan, tapi \"Alfisol\" dari para anjing pemburu ini tidak sebanding dengan \"Humus\" Durin."
+    },
+    {
+      "key": "copper-talisman-of-the-forest-dew",
+      "name": "Copper Talisman of the Forest Dew",
+      "description": "Material Ascension Senjata.\nAtas bimbingan Sage Pertama, nenek moyang hutan hujan mengukir kayu mati menjadi sajak untuk memperingati penguasa rumput hijau dan pohon-pohon tinggi.\nSajak diukir dalam bentuk embun jernih di hutan, dan ini melambangkan tetesan kebijaksanaan yang meresap ke dalam pikiran manusia."
     },
     {
       "key": "cor-lapis",
@@ -9987,6 +10378,11 @@
       "key": "crystalline-bloom",
       "name": "Crystalline Bloom",
       "description": "Kristal es dengan kemurnian luar biasa yang terbentuk dari mekarnya bunga es Cryo Hypostasis.\r\nKristal es ini akan terus bertumbuh mengikuti prinsip pembekuan yang tidak bisa diganggu gugat, bertumbuh sampai suatu hari sekuntum bunga musim dingin mekar dan membekukan segalanya. Mungkin waktu yang terhenti, dan jiwa yang tak pernah membeku adalah inti dari bunga abadi ini."
+    },
+    {
+      "key": "crystalline-cyst-dust",
+      "name": "Crystalline Cyst Dust",
+      "description": "Spora dalam jumlah besar yang dikumpulkan secara hati-hati dari sporangium utuh. Kalau lingkungannya mendukung, maka spora ini akan menghasilkan koloni Floating Fungus yang bertumbuh pesat …."
     },
     {
       "key": "damaged-mask",
@@ -10049,6 +10445,11 @@
       "description": "Gulungan yang kemungkinan berhubungan dengan sejenis sihir.\r\nMemancarkan kehangatan yang tidak bisa dijelaskan."
     },
     {
+      "key": "dormant-fungal-nucleus",
+      "name": "Dormant Fungal Nucleus",
+      "description": "Jaringan tubuh yang ditinggalkan oleh Fungus yang telah terkena rangsangan unsur yang intens.\nPernah ada perdebatan panjang di antara para peneliti Amurta tentang apakah jamur harus dikategorikan sebagai tumbuhan atau hewan. Pada akhirnya, mereka mencapai kesepakatan dan menutup kasus ini untuk selamanya — Jamur punya kategorinya sendiri, bukan tumbuhan atau hewan."
+    },
+    {
       "key": "dragon-lords-crown",
       "name": "Dragon Lord's Crown",
       "description": "Tanduk yang terbuat dari kristalisasi giok selama ribuan tahun, berada di kepala sang raja naga layaknya sebuah mahkota.\r\nDipenuhi jiwa-jiwa dan diukir dari batu paling kokoh, tanduk ini lahir dari jantung gunung yang terdalam untuk menunjukkan kekuatan bumi pada bangsa ribuan bebatuan ini, dan tanduk berwarna emasnya melambangkan pertentangan masa lalu terhadap raja kuno.\r\nSelama beberapa waktu, tanduk ini telah hancur dan kehilangan keindahannya, tapi kini dia berkilau kembali di dalam genggaman tanganmu."
@@ -10057,6 +10458,11 @@
       "key": "dragonheirs-false-fin",
       "name": "Dragonheir's False Fin",
       "description": "Sepotong jaringan biologis yang kamu temukan setelah mengalahkan Bathysmal Vishap.\r\nMeskipun terlihat seperti semacam sirip, namun sebenarnya ia tidak punya fungsi apa pun.\r\nOrang-orang Byakuyakoku pernah melakukan penelitian yang mendalam terhadap Bathysmal Vishap. Ciri paling khas yang mereka miliki adalah kemampuan untuk memilih sifat genetis apa yang ingin diturunkan oleh mereka kepada keturunannya. Karena kebencian mereka yang besar terhadap umat manusia, para vishap ini akan kehilangan ketajaman visualnya pada saat mereka mencapai usia dewasa. Pada saat yang sama, mereka juga telah mengembangkan tingkat keberagaman struktur atom dalam unsur tertentu untuk tujuan pertempuran."
+    },
+    {
+      "key": "dream-of-scorching-might",
+      "name": "Dream of Scorching Might",
+      "description": "Material Ascension Senjata.\nSinar bulan yang berwarna keperakan dan mata air yang jernih begitu melengkapi pemandangan oasis. Namun ketika yang empunya bunga memudar dalam badai pasir yang semakin gelap, begitu pula tanah kesenangan berwarna emas tanpa kekhawatiran yang tenggelam oleh kematian.\nDalam sajak Suku Eremite, bulan memancarkan cahaya peraknya ke atas mantel berwarna merah, kemudian Al-Ahmar, Raja yang Berduka, berubah menjadi gila.\nDalam balada gurun melankolis yang didorong oleh nostalgia yang menghantui, raja yang kesepian itu pun menciptakan sebuah alam mimpi yang tak dapat menua di tengah gurun. Di sanalah terdapat mata air murni yang tidak terganggu diembunkan, dan embun yang muncul saat matahari terbenam selamanya tetap ada."
     },
     {
       "key": "dream-of-the-dandelion-gladiator",
@@ -10089,6 +10495,11 @@
       "description": "Sepercik kekuatan yang diambil dari angin topan dibentuk Dragon of the East.\r\nBentuknya indah dan tembus pandang, tiupan sejuk ataupun topan akan mendengar panggilannya. Angin adalah kekuatan, suara, dan kebabasannya.\r\nMenghembus melawan arus dari ribuan lawan-lawannya."
     },
     {
+      "key": "echo-of-scorching-might",
+      "name": "Echo of Scorching Might",
+      "description": "Material Ascension Senjata.\nDulu, masyarakat Lord of Deserts mengukir lencana kekaisaran ini berdasarkan kumbang yang kuat untuk mengenang matahari yang cerah yang menandai pergantian waktu yang tak berawal maupun berujung.\nMeskipun nama dari Lord tersebut tidak lagi disebutkan, namun lencana yang dapat memberikan sedikit atmosfer-atmosfer kejayaan masa lalu ini telah disimpan sepanjang waktu.\nLambang ini kini menemani setiap langkah perjalanan keturunan Suku Eremite, sembari diam-diam menceritakan kisah Tuannya pada masa itu."
+    },
+    {
       "key": "electro-crystal",
       "name": "Electro Crystal",
       "description": "Kristal yang kaya akan listrik, dan menghisap listrik dari udara di sekitarnya. Menggenggamnya membuat tanganmu mati rasa."
@@ -10107,6 +10518,11 @@
       "key": "everflame-seed",
       "name": "Everflame Seed",
       "description": "Benih yang menyulut Pyro Regisvine dengan api yang tiada habisnya. Mengeluarkan energy Pyro seolah-olah akan membakar semua yang pernah tumbuh dari tanah.\r\nKeinginan tanpa akhir mengalir di antara energi turbulen jauh di dalam inti bumi. Keinginan macam apa yang bisa menahan api ini agar tetap menyala pada tanaman ini, dan berusaha membakar segala sesuatu dengan api tersebut?"
+    },
+    {
+      "key": "faded-red-satin",
+      "name": "Faded Red Satin",
+      "description": "Sepotong kain satin merah yang digunakan untuk menutupi mata. Kainnya sedikit sobek.\nBanyak dari Eremite yang cenderung menutup mata mereka dengan kain tekstil, tetapi tujuan asli dari praktik ini telah lama hilang ditelan waktu."
     },
     {
       "key": "famed-handguard",
@@ -10184,6 +10600,11 @@
       "description": "Kodok yang mudah ditemui di tempat basah. Penuh dengan tenaga, di dalam tubuhnya terdapat nutrisi yang dapat memulihkan kebugaran tubuh."
     },
     {
+      "key": "fungal-spores",
+      "name": "Fungal Spore",
+      "description": "Spora berkilauan yang dijatuhkan oleh Floating Fungus. Kecil dan lembut, sepertinya cuma kena bersin saja, spora ini akan lenyap tak bersisa."
+    },
+    {
       "key": "genesis-crystal",
       "name": "Genesis Crystal",
       "description": "Kristal energi yang berasal dari alam semesta. Dibentuk dari dalam ketiadaan dari potensi dan harapan murni, mengandung cukup energi untuk melahirkan kembali bintang yang baru."
@@ -10192,6 +10613,11 @@
       "key": "gilded-scale",
       "name": "Gilded Scale",
       "description": "Baju zirah bersisik yang terbentuk secara alami dari bebatuan mistis, kokoh dan dingin, serta diliputi dengan kekuatan raja naga.\r\nSetelah melewati waktu yang tak terhitung jumlahnya dan terurai ke dalam bumi, emas dan batu obsidian menyatu ke dalam darah dan daging mineral, dan dari situlah sisik-sisik zirah terbentuk.\r\nRasa sakit yang membara, tangisan penuh derita yang tak bersuara... mungkin semua kesengsaraan itu akan menghilang di saat dendam kesumat yang memunculkan mereka, juga mencapai titik akhir."
+    },
+    {
+      "key": "glabrous-beans",
+      "name": "Glabrous Beans",
+      "description": "Tumbuhan kacang-kacangan yang umum ditemukan di Teyvat. Karena aromanya yang ringan, bahan ini bisa dimasak menjadi berbagai jenis hidangan dan disukai oleh orang-orang dari segala penjuru."
     },
     {
       "key": "glaze-lily",
@@ -10214,9 +10640,19 @@
       "description": "Sebuah lencana gagak yang melambangkan kebanggaan dan prinsip yang menuntun para Treasure Hoarder. Tidak peduli di mana, asal ada harta untuk diburu, jiwa pemburu mereka tidak akan pernah mati."
     },
     {
+      "key": "golden-talisman-of-the-forest-dew",
+      "name": "Golden Talisman of the Forest Dew",
+      "description": "Material Ascension Senjata.\n“Hanya ada tiga hal yang dinilai berharga oleh manusia: mata air yang memeluk cahaya bulan, kesuburan yang penuh dengan kehidupan, dan penampilan yang awet muda …”\nSifat dari “kebijaksanaan” bukanlah mendominasi semua pikiran atau memikir cara meraup keuntungan saja. Tapi justru tentang bagaimana cara membuat makhluk biasa bisa melewati batasan dirinya sendiri.\nMeski suara auman singa sudah tidak terdengar di dalam hutan, sang penjaga yang teguh itu menarik dirinya dari mimpi anak-anak … Di malam hari saat semua segel emas terbuka dan semua mimpi bersinar kuning di bawah cahaya rembulan, mungkin dia dan orang terkasihnya bisa mendapatkan kebebasan yang sejati."
+    },
+    {
       "key": "grain-of-aerosiderite",
       "name": "Grain of Aerosiderite",
       "description": "Material Ascension Senjata.\r\nSebuah meteor hitam dulu jatuh di Sea of Cloud, Liyue, dikatakan bahwa meteor itu jatuh untuk mengalahkan monster. Namun, ternodai oleh darah tercemar yang sangat kuat, sehingga benda ini tidak lagi mempunyai kekuatan suci dari Rex Lapis."
+    },
+    {
+      "key": "guide-to-admonition",
+      "name": "Guide to Admonition",
+      "description": "Material Penguatan Talenta.\n“Admonition” adalah cabang dari bangsa kebijaksanaan.\nPeringatan disertai dengan pertimbangan yang matang. Pertimbangan yang matang baru bisa menghasilkan kata-kata yang rendah hati dan jelas, membuat yang bijak yakin, membuat yang bodoh tersadarkan, sehingga kebijaksanaan terus mengalir tiada henti bagai sungai yang mengalir."
     },
     {
       "key": "guide-to-ballad",
@@ -10244,9 +10680,19 @@
       "description": "Material Penguatan Talenta.\r\nEmas adalah simbol tanah bumi.\r\nEmas melambangkan konversi. Kepahaman yang tidak perlu diucapkan antara gunung, tanah, kota, dan rakyat Liyue. Di Liyue, ketekunan diubah menjadi emas, dan emas diubah menjadi kemakmuran."
     },
     {
+      "key": "guide-to-ingenuity",
+      "name": "Guide to Ingenuity",
+      "description": "Material Penguatan Talenta.\n“Ingenuity” adalah jaringan pengangkut bangsa kebijaksanaan.\nKecerdasan adalah bahasa yang menuntun kebenaran. Pemikiran ke arah kebaikan yang cerdas dan menyeluruh akan membuat ucapan yang keluar dari mulut tidak menyimpang dari jalan kebaikan yang membawa berkah; Kelalaian dan niat jahat akan menghasilkan ucapan dan perbuatan yang tercela."
+    },
+    {
       "key": "guide-to-light",
       "name": "Guide to Light",
       "description": "Material Penguatan Talenta.\r\n\"Light\" adalah harapan bangsa petir.\r\nMeskipun sinar matahari tertutup awan kelabu yang berlapis-lapis, masih saja ada orang-orang di tanah dewa petir yang bermimpi untuk menembus lautan petir yang bergelora demi mengejar kemuliaan ilahi. Sekalipun harus mati, mereka bahkan tidak peduli."
+    },
+    {
+      "key": "guide-to-praxis",
+      "name": "Guide to Praxis",
+      "description": "Material Penguatan Talenta.\n“Praxis” adalah sistem akar bangsa kebijaksanaan.\nPelaksanaan membuktikan ucapan yang jujur. Semua yang dipikirkan dan dilakukan adalah baik, ini saja masih belum cukup untuk dikatakan bijaksana. Kebijaksanaan terkandung dalam tindakan, dan menjadi segel atas integritas kata-kata."
     },
     {
       "key": "guide-to-prosperity",
@@ -10267,6 +10713,11 @@
       "key": "ham",
       "name": "Ham",
       "description": "Daging asap dari bagian paha hewan. Satu lapisan tipis saja dapat memberikan rasa yang luar biasa."
+    },
+    {
+      "key": "harra-fruit",
+      "name": "Harra Fruit",
+      "description": "Tumbuh di hutan hujan lembap yang panas, buah ini memiliki aroma pedas yang istimewa. Saat digiling menjadi bubuk, maka bisa dibuat jadi bumbu. Ini adalah tanaman rempah yang paling berharga di Sumeru."
     },
     {
       "key": "heavy-horn",
@@ -10304,6 +10755,11 @@
       "description": "Bentuk Anemo Hypostasis setelah dikalahkan.\r\nBerisi esensi energi Anemo.\r\nKonon, tubuhnya yang rapuh ini memiliki kekuatan untuk menciptakan badai. Kupu-kupu yang murni dengan energi Anemo ini pasti sedang menunggu datangnya hari di mana dia bisa menciptakan badai lagi."
     },
     {
+      "key": "inactivated-fungal-nucleus",
+      "name": "Inactivated Fungal Nucleus",
+      "description": "Jaringan tubuh yang ditinggalkan oleh Fungus yang telah terkena rangsangan unsur yang intens.\nTeksturnya yang menenangkan membuatnya sangat baik untuk menghilangkan stres. Namun juga dapat dengan mudah menyebabkan Fungus berkembang biak, dan karenanya tidak cocok untuk penggunaan komersial"
+    },
+    {
       "key": "inspectors-sacrificial-knife",
       "name": "Inspector's Sacrificial Knife",
       "description": "Pada tangan pemiliknya, senjata kejam ini telah menangani banyak \"hutang\". Pandangan setiap orang memiliki sudut mati di belakang kepala mereka, dan senjata ini dibuat khusus untuk menyerang titik kelemahan tersebut."
@@ -10317,6 +10773,11 @@
       "key": "iron-chunk",
       "name": "Iron Chunk",
       "description": "Di tangan pengrajin yang handal, bongkahan besi ini dapat diolah menjadi berbagai benda berguna."
+    },
+    {
+      "key": "iron-talisman-of-the-forest-dew",
+      "name": "Iron Talisman of the Forest Dew",
+      "description": "Material Ascension Senjata.\nKemudian, penguasa rerumputan dan pepohonan mengajari orang-orang rahasia menempa besi hitam. Dengan begini, manusia biasa belajar caranya menggunakan api dan pisau tajam.\nPenguasa rerumputan dan pepohonan bersukacita, meskipun api dan logam dapat melukainya, namun keduanya juga dapat membuat manusia lebih kuat."
     },
     {
       "key": "jade-branch-of-a-distant-sea",
@@ -10347,6 +10808,11 @@
       "key": "kageuchi-handguard",
       "name": "Kageuchi Handguard",
       "description": "Pelindung tangan yang terpasang pada sebilah pedang yang sangat bagus.\r\nInazuma memiliki tradisi yang panjang dalam seni membuat pedang. Saat membuat pedang, pandai besi akan sering membuat beberapa senjata yang berbeda sekaligus, sebelum memilih salah satu dari mereka sebagai \"shinuchi,\" atau senjata terbaik, sementara yang lain disebut sebagai \"kageuchi\"."
+    },
+    {
+      "key": "kalpalata-lotus",
+      "name": "Kalpalata Lotus",
+      "description": "Bunga dari tanaman merambat yang tumbuh di sisi tebing. Disebut teratai karena tampilannya yang mirip. Selain itu, tidak ada sifat lainnya yang mirip dengan teratai."
     },
     {
       "key": "lavender-melon",
@@ -10384,6 +10850,11 @@
       "description": "Tumbuhan akuatik dari Liyue yang tumbuh dan mekar berpasangan. Satunya harum dan satunya pahit. Dikatakan bagus menjadi obat herbal."
     },
     {
+      "key": "luminescent-pollen",
+      "name": "Luminescent Pollen",
+      "description": "Sekantong kecil bubuk Fungal Spore bercahaya, sejenis obat yang umum dipakai di tanah hutan hujan. Biasa dijual dalam kemasan kertas."
+    },
+    {
       "key": "luminescent-spine",
       "name": "Luminescent Spine",
       "description": "Bagian dari kunang-kunang yang memancarkan cahaya. Mereka menggunakannya untuk menarik lawan jenis, dan di dalam dunia pengobatan, digunakan untuk meningkatkan kekuatan."
@@ -10409,6 +10880,11 @@
       "description": "Inti ini bisa memberikan tenaga pada Maguu Kenki yang terbuat dari materi anorganik dan membuatnya bisa menggunakan pedang seperti makhluk hidup.\r\nTubuh manusia akan menua, dan segala ilmu bela diri dan ingatan dalam tubuh itu perlahan akan menghilang, tidak peduli seberapa hebat atau indahnya.\r\nMungkin kita hanya bisa mendekati keabadian dengan cara mengubah anggota tubuh kita menjadi bagian mesin yang kokoh, dan mengorbankan jantung kita menjadi sebuah jantung dari mesin..."
     },
     {
+      "key": "majestic-hooked-beak",
+      "name": "Majestic Hooked Beak",
+      "description": "Struktur paruh yang diperoleh setelah mengalahkan Jadeplume Terrorshroom.\nSampai sekarang, pelajar masih menganggapnya sebagai keajaiban karena struktur paruh yang sekeras batu ini adalah hasil evolusi dari Fungus lembut. Raja dari seluruh jamur ini seakan-akan sedang berjalan mondar-mandir di akhir garis evolusi, kadang-kadang berseru panjang seperti mengatakan kepada seluruh makhluk hidup di hutan hujan: Meskipun makhluk yang paling tidak berdaya dan paling penakut sekalipun, pasti akan bisa menjadi raja yang menguasai hutan pada suatu hari."
+    },
+    {
       "key": "mask-of-the-kijin",
       "name": "Mask of the Kijin",
       "description": "Material Ascension Senjata.\r\nChiyo adalah seorang pejuang dari suku oni, dengan lambang Electro Mitsudomoe yang terpampang di punggungnya. Saat menghadapi kekuatan kegelapan, dia pernah ditelan oleh binatang buas dari dunia luar yang memiliki tubuh harimau dan ekor ular. Dia kemudian merobek dada dan mulut binatang itu untuk membebaskan diri.\r\nInilah asal muasal dari ungkapan \"Chiyo si Gigitan Harimau\", yang seiring dengan waktu berubah menjadi \"Torachiyo\".\r\nTapi di dalam perut binatang buas itu, dia telah ternodai dosa yang dalam dan menyaksikan rekan-rekannya dicabik-cabik oleh gigi yang sudah berwarna merah darah. Dia yang tenggelam dalam kegelapan kemudian menghunuskan pedangnya pada Narukami Ogosho Yang Mahakuasa. Tangan yang memegang pedang dan tanduk tajamnya kemudian terbelah, dan dia lalu melarikan diri ke hutan seperti binatang yang terluka. Di sana, dia sepertinya dihabisi oleh tengu atau monster lain, atau mungkin Shuumatsuban, atau mungkin keturunan Klan Iwakura yang sedang berlatih di gunung. Wajahnya sudah tak bisa dikenali karena sudah berubah oleh kebencian dan penderitaan yang mendalam. Atau mungkin juga, dia bertemu dengan boneka bertopeng oni yang membawa pedang di dekat mayat Serpent raksasa, dan di sanalah hidupnya berakhir.\r\nBeberapa di antara mereka yang berperang melawan kegelapan mungkin akan memimpikan adegan pertempuran yang mengerikan itu. Tidak sedikit juga orang-orang yang membunuh monster, pada akhirnya berubah menjadi salah satu monsternya. Perbatasan antara dunia menjadi sangat rapuh dan tipis, dan mungkin kerusakan semacam ini bukan satu arah saja."
@@ -10432,6 +10908,31 @@
       "key": "matsutake",
       "name": "Matsutake",
       "description": "Jamur langka yang biasanya tumbuh di sekitar pohon pinus. Aromanya yang harum dapat menuntunmu ke lokasi jamur ini berada."
+    },
+    {
+      "key": "midlander-bow-billet",
+      "name": "Midlander Bow Billet",
+      "description": "Material Crafting Senjata. Dapat digunakan untuk menempa Bow 4★.\nAhli filsafat percaya ada empat tujuan benda duniawi. Begitu juga dengan material senjata ini, tujuannya adalah untuk menjadi senjata yang layak untuk menemani perjalanan seorang pahlawan."
+    },
+    {
+      "key": "midlander-catalyst-billet",
+      "name": "Midlander Catalyst Billet",
+      "description": "Material Crafting Senjata. Dapat digunakan untuk menempa Catalyst 4★.\nAhli filsafat percaya ada empat tujuan benda duniawi. Begitu juga dengan material senjata ini, tujuannya adalah untuk menjadi senjata yang layak untuk menemani perjalanan seorang pahlawan."
+    },
+    {
+      "key": "midlander-claymore-billet",
+      "name": "Midlander Claymore Billet",
+      "description": "Material Crafting Senjata. Dapat digunakan untuk menempa Claymore 4★.\nAhli filsafat percaya ada empat tujuan benda duniawi. Begitu juga dengan material senjata ini, tujuannya adalah untuk menjadi senjata yang layak untuk menemani perjalanan seorang pahlawan."
+    },
+    {
+      "key": "midlander-polearm-billet",
+      "name": "Midlander Polearm Billet",
+      "description": "Material Crafting Senjata. Dapat digunakan untuk menempa Polearm 4★.\nAhli filsafat percaya ada empat tujuan benda duniawi. Begitu juga dengan material senjata ini, tujuannya adalah untuk menjadi senjata yang layak untuk menemani perjalanan seorang pahlawan."
+    },
+    {
+      "key": "midlander-sword-billet",
+      "name": "Midlander Sword Billet",
+      "description": "Material Crafting Senjata. Dapat digunakan untuk menempa Sword 4★.\nAhli filsafat percaya ada empat tujuan benda duniawi. Begitu juga dengan material senjata ini, tujuannya adalah untuk menjadi senjata yang layak untuk menemani perjalanan seorang pahlawan."
     },
     {
       "key": "milk",
@@ -10554,6 +11055,11 @@
       "description": "Material Ascension Senjata.\r\nDi masa lalu, orang-orang purba akan mendaki puncak yang kini dikenal sebagai Mt. Yougou, mengukir kayu-kayu yang hangus oleh petir menjadi berbentuk kail melengkung, dan memberikan wujud pada sambaran kilat yang menerangi langit dan guntur yang mengguncang bumi. Seiring waktu, wujud ini pada akhirnya berkembang menjadi simbol \"Electro Mitsudomoe\" yang melambangkan kebaikan, kebijaksanaan, kekuatan Electro, dan orang-orang yang mewakili nilai-nilai tersebut."
     },
     {
+      "key": "nilotpala-lotus",
+      "name": "Nilotpala Lotus",
+      "description": "Tumbuh di tanah hutan hujan, tanaman ini hanya mekar di malam hari dengan bunga yang seterang bulan."
+    },
+    {
       "key": "noctilucous-jade",
       "name": "Noctilucous Jade",
       "description": "Mineral langka yang bersinar dalam kegelapan. Kata orang-orang, batunya terbuat dari elemen-elemen yang melimpah di dunia."
@@ -10584,9 +11090,34 @@
       "description": "Material Crafting Senjata. Dapat digunakan untuk menempa Sword 4★.\r\nAhli filsafat percaya marmer memiliki potensi untuk diukir menjadi patung yang indah. Begitu juga dengan material senjata ini; ia juga memiliki potensi yang tak terbatas."
     },
     {
+      "key": "oasis-gardens-kindness",
+      "name": "Oasis Garden’s Kindness",
+      "description": "Material Ascension Senjata.\nDalam teks kuno yang terkubur jauh di dalam pasir berwarna kuning, Lord of Flower dulunya adalah Owner of Dreams.\nDia yang menciptakan mimpi untuk orang yang dikucilkan, yang menggila, dan yang bodoh. Mereka akan diberikan kebahagiaan yang meluap-luap di dalam mimpi itu. Karena beratnya beban dalam kehidupan, mereka terpesona oleh Lord of Flower dan terpikat oleh kecantikan serta perhatiannya."
+    },
+    {
+      "key": "oasis-gardens-mourning",
+      "name": "Oasis Garden’s Mourning",
+      "description": "Material Ascension Senjata.\nSang Lord of Flowers memiliki hubungan yang baik dengan Jinni.\nSang pemilik bunga dan oasis bekerja sama dengan Lord of Deserts untuk membangun Ay-Khanoum, yaitu “Kota Amfiteater”, yang juga berarti “Kota Gadis Rembulan” dalam bahasa kuno milik sang Jinni.\nTapi setelahnya, dikatakan bahwa Lord of Flowers meninggal karena kerasnya panas matahari dan pasir di gurun, hingga akhirnya Padisarah ungu tidak pernah muncul lagi di oasis.\nSetelah kepergian Lord of Flower, badai pasir berkabung, Jinni itu pun menangis, piring permata dari cahaya bulan telah kehilangan kesenangannya dan memberikan kilauan yang menyedihkan."
+    },
+    {
+      "key": "oasis-gardens-reminiscence",
+      "name": "Oasis Garden’s Reminiscence",
+      "description": "Material Ascension Senjata.\nKonon orang-orang dulu mengatakan kalau Lord of Flowers adalah Lord of Joy and Happiness. Mata air segar mengalir dari lengan bajunya, menciptakan oasis yang penuh dengan bunga di tengah-tengah padang pasir. Bunga dan rerumputan tumbuh di jejak kakinya, cahaya rembulan pun membukakan jalan untuk dirinya.\nDi hari yang kelam saat langit pun tidak mengacuhkan daratan, Lord of Flower tetap mengulurkan belas kasihannya kepada setiap manusia, agar mereka semua bisa mendapatkan kembali kebahagiaan dan egonya. Dan melanjutkan kesenangan dan kemewahan mereka."
+    },
+    {
+      "key": "oasis-gardens-truth",
+      "name": "Oasis Garden’s Truth",
+      "description": "Material Ascension Senjata.\n“Siapa gerangan yang akan menyembah dewa yang telah meninggal?”\nLord of Flowers pernah bersekutu dengan dua rekannya. Tapi terlepas dari kebijaksanaan dan kekuatannya, dia mendatangkan belas kasihan dan kegembiraan kepada rakyatnya.\nSama seperti bumi yang butuh lebih dari sekadar sinar matahari yang membakar dan hujan yang lebat, bagi rakyat Lord of Flowers, kegembiraan dan cinta, nyanyian dan musik, serta anggur dan kemewahan sama pentingnya dengan rasionalitas dan kekuatan.\nDikatakan bahwa tujuan dari mekarnya setangkai bunga adalah layunya yang mulia, dan layunya yang mulia itulah tujuan yang didambakan oleh Lord of Flowers sejak awal — karena kematian menambah kepahitan pada kebahagiaan yang telah hilang dan membuatnya muncul lebih dan lebih kuat lagi dalam ingatan yang tak terbatas.\nLord of Deserts yang arogan tidak pernah sadar akan filosofinya. Dia hanya menikmati pesona dan keanggunannya yang luar biasa — sepalsu kasih sayang yang begitu kuat, dan itu pun menjadi hal yang sudah Lord of Flowers perhitungkan."
+    },
+    {
       "key": "old-handguard",
       "name": "Old Handguard",
       "description": "Pelindung tangan yang digunakan dalam pertempuran yang juga pernah terpasang pada sebilah pedang orang Inazuma.\r\nBagi mereka yang mahir dalam seni pedang, pelindung tangan ini dapat digunakan untuk menahan pedang musuh. Tapi bagi seorang pemula, pelindung tangan lebih berguna untuk menahan serangan diri mereka sendiri."
+    },
+    {
+      "key": "olden-days-of-scorching-might",
+      "name": "Olden Days of Scorching Might",
+      "description": "Material Ascension Senjata.\nDi masa ketika Lord of Deserts yang bodoh memerintah, kekuatan emas seperti matahari yang terik menyebar ke seluruh bumi.\nDalam catatan tablet batu kuno, dia mengubah kekuatannya menjadi tujuh sinar cahaya yang menyilaukan atau tujuh pilar, yang dia berikan secara adil dan merata serta penuh belas kasihan kepada semua orang, sehingga tidak ada orang yang terabaikan, ataupun yang merasa tidak puas.\nItu adalah masa keemasan yang terlupakan, masa ketika Lord of Flowers menghilang ke dalam pasir dan Lord of Flora memutuskan untuk pergi. Hanya merekalah para keturunan di atas pasir kuning yang memilih untuk mengikuti dewanya. Bahkan ketika bayangan malapetaka yang suram pun semakin membayangi, keyakinan mereka pada dewa tetaplah kuat bersinar terang seperti kuning dan emas.\nNamun akhirnya bencana tetap saja menimpa. Lambang emas terkubur di kedalaman kuil dan istana, di bawah pilar runtuh yang diukir dengan elang dan kepala banteng."
     },
     {
       "key": "ominous-mask",
@@ -10609,6 +11140,11 @@
       "description": "Digunakan untuk vitalisasi Petrified Tree dan Ley Line Blossom, membuka jalan untuk mendapatkan harta yang tersimpan di dalamnya. Energi beregenerasi dari waktu ke waktu.\r\nDikatakan bahwa akar dari semua pohon dan bunga Irminsul di dunia saling terhubung di tempat terdalam dan paling tersembunyi di dalam bumi, dan pola yang terbentuk dari akar-akar tersebut membentuk Ley Lines di dunia..."
     },
     {
+      "key": "padisarah",
+      "name": "Padisarah",
+      "description": "Tumbuhan yang suci dan mulia. Membutuhkan lingkungan yang cukup kondusif untuk dapat tumbuh. Kuncup bunganya dapat diolah menjadi rempah-rempah yang berharga."
+    },
+    {
       "key": "pepper",
       "name": "Pepper",
       "description": "Bumbu rempah yang memiliki rasa dominan. Rasanya dapat menghapus rasa makanan yang terlalu berminyak atau berlemak, serta dapat mengaktifkan indra perasa di lidah. Sangat cocok dipadukan dengan daging."
@@ -10622,6 +11158,11 @@
       "key": "philanemo-mushroom",
       "name": "Philanemo Mushroom",
       "description": "Jamur yang tumbuh dengan sentuhan hangat angin. Sama abadinya dengan angin, memelihara kehidupan."
+    },
+    {
+      "key": "philosophies-of-admonition",
+      "name": "Philosophies of Admonition",
+      "description": "Material Penguatan Talenta.\n“Admonition” adalah cabang dari bangsa kebijaksanaan.\nPeringatan pada puncaknya adalah perilaku yang baik. Perilaku memberikan arti sebenarnya kepada ucapan. Ucapan, pikiran, dan tindakan yang selaras adalah nutrisi yang kaya bagi pohon kebijaksanaan dan untuk bisa menghasilkan buah yang baik."
     },
     {
       "key": "philosophies-of-ballad",
@@ -10649,9 +11190,19 @@
       "description": "Material Penguatan Talenta.\r\nEmas adalah simbol tanah bumi.\r\nEmas adalah kemakmuran Liyue, tetapi kemakmuran asli Liyue berada di dalam hati rakyatnya yang bersinar seperti emas."
     },
     {
+      "key": "philosophies-of-ingenuity",
+      "name": "Philosophies of Ingenuity",
+      "description": "Material Penguatan Talenta.\n“Ingenuity” adalah jaringan pengangkut bangsa kebijaksanaan.\nKecerdasan terbentuk dari sifat dan perilaku yang harmonis. Tindakan akan memberikan bentuk yang sempurna terhadap pemikiran. Bunga kebijaksanaan akan mekar pada saat pikiran, perkataan, dan perbuatan bertemu menjadi satu."
+    },
+    {
       "key": "philosophies-of-light",
       "name": "Philosophies of Light",
       "description": "Material Penguatan Talenta.\r\n“Light“ adalah harapan bangsa petir.\r\nMeskipun harus selamanya hidup di bawah tanah, manusia akan berdoa meminta cahaya. Manusia mengejar dan melampauinya, selamanya begitu tanpa henti. Mungkin keabadian yang tersegel dalam keheningan tampak mempesona, tapi kematian adalah esensinya."
+    },
+    {
+      "key": "philosophies-of-praxis",
+      "name": "Philosophies of Praxis",
+      "description": "Material Penguatan Talenta.\n“Praxis” adalah sistem akar bangsa kebijaksanaan.\nPelaksanaan akan mendukung kebijaksanaan untuk berbuah. Tindakan membuktikan makna dari tindakan itu sendiri. Ucapan, tindakan, dan pemikiran yang selaras adalah satu-satunya cara bagi orang bijak untuk menyaksikan kesempurnaan."
     },
     {
       "key": "philosophies-of-prosperity",
@@ -10744,9 +11295,19 @@
       "description": "Material Ascension Senjata.\r\nTombak batu memiliki inti berkilauan yang dibentuk oleh kekuatan para Dewa yang kalah. Kebencian mereka tidak ditujukan pada Morax, karena mereka telah kehilangan diri mereka sejak lama dan tidak sanggup lagi menyimpan dendam di dalam diri."
     },
     {
+      "key": "remnant-glow-of-scorching-might",
+      "name": "Remnant Glow of Scorching Might",
+      "description": "Material Ascension Senjata.\nUntuk mengatur beragam pikiran dan memimpin jiwa yang tak terhitung jumlahnya, itu adalah esensi dari kekuatan.\nNamun, kekuatan bukanlah tirani yang berdarah dingin. Karakteristik dari cita-cita sejatinya sangatlah jelas — untuk menciptakan dunia euthymia yang bebas dari kekhawatiran, penganiayaan, dan perbudakan.\nItu seperti yang disaksikan oleh Lord dari kristal, dan seperti yang pernah dicerahkan oleh partnernya yang telah mangkat.\nDengan demikianlah, lencana merah tua dan penilaian baja meletakkan dasar-dasar aturan kerajaan."
+    },
+    {
       "key": "rice",
       "name": "Rice",
       "description": "Sebuah tanaman biji-bijian yang biasa ditemukan di Teyvat. Orang-orang dari semua lapisan masyarakat menikmati tekstur butirannya yang berbeda, seperti kata pepatah \"Jenis beras yang sama dapat memberi makan 100 jenis orang.\""
+    },
+    {
+      "key": "rich-red-brocade",
+      "name": "Rich Red Brocade",
+      "description": "Sepotong kain brokat merah yang ditenun dengan sutra emas.\nSisa-sisa yang lahir di gurun emas di bawah matahari terkadang bisa menyanyikan sebuah lagu yang maknanya telah lama dilupakan. Mereka akan memuji terik matahari yang menerangi bumi sama seperti biasanya dan meratapi sisa-sisa cahaya di akhir senja. Beberapa kata asing terkadang muncul i di akhir lagu dan dikatakan sebagai nama dari dewa kuno. Legenda mengatakan bahwa ketika Raja Gurun Pasir masih hidup, rakyatnya memilih untuk menutupi mata mereka karena mereka tidak berani memandangnya sebab cahayanya yang melebihi matahari."
     },
     {
       "key": "riftborn-regalia",
@@ -10757,6 +11318,16 @@
       "key": "ring-of-boreas",
       "name": "Ring of Boreas",
       "description": "Sebongkah es kristal dari Great Wolf King of the North.\r\nDaratan ini sebelumnya merupakan tempat yang selalu dilanda badai salju dan dipenuhi potongan es yang tajam, semuanya bergerak atas kehendak Boreas. Meskipun kekuatannya sudah meredup, tetapi angin dingin masih berhembus di daratan ini."
+    },
+    {
+      "key": "robust-fungal-nucleus",
+      "name": "Robust Fungal Nucleus",
+      "description": "Jaringan tubuh yang ditinggalkan oleh Jamur yang telah terkena rangsangan unsur yang intens.\nSecara umum diyakini bahwa Fungus berevolusi menjadi bentuk yang lebih praktis untuk menyebarkan spora mereka dengan lebih baik.\nSeorang penyair pernah menggambarkan mimpi bersama tentang Fungus di mana spora mereka menutupi setiap inci gunung dan lautan. Dunia menjadi sangat tenang. Kemudian jamur berubah menjadi ikan, burung, binatang buas, manusia, dan dewa, mengandalkan curah hujan, tanah, dan bangsanya sendiri yang telah kembali ke bumi."
+    },
+    {
+      "key": "rukkhashava-mushrooms",
+      "name": "Rukkhashava Mushroom",
+      "description": "Jamur yang tumbuh berlapis-lapis seperti lautan awan, dan kebanyakan tumbuh di pepohonan yang jauh di dalam hutan hujan. Oleh karena itu, mereka dianggap oleh masyarakat Sumeru sebagai kristalisasi suci warisan dari Rukkhadevata."
     },
     {
       "key": "runic-fang",
@@ -10869,6 +11440,11 @@
       "description": "Lencana gagak yang digunakan oleh anggota Treasure Hoarder untuk mengenali satu sama lain. Para Treasure Hoarder tidak memerlukan surat lamaran. Siapa pun yang memiliki hasrat untuk mendapatkan harta dan keberanian layak menjadi anggotanya."
     },
     {
+      "key": "silver-talisman-of-the-forest-dew",
+      "name": "Silver Talisman of the Forest Dew",
+      "description": "Material Ascension Senjata.\nDi antara banyaknya kisah tentang hutan, ada sebuah kisah tentang Greater Lord of the Labyrinths dengan jubah berpola garis yang menyerupai kobaran api, ia juga merupakan pemilik dari Moon-Mirrored Spring.\nDia menunduk dan berteman dengan Lord of Flora. Simbol persahabatan mereka adalah permata yang berkilau bagaikan air, dan perak yang indah bagaikan cahaya bulan. \nSebagai gantinya, Lord of Flora berjanji untuk menjaga rahasia Raja Labirin yang ingin menjaga keindahan hutan hujan bersama-sama.\nTapi tidak ada yang pernah menduga kalau keindahan yang penuh dengan rahasia dan mimpi-mimpi ini akan sirna ditelan gelapnya api kehancuran, hingga akhirnya debu-debu kembali ke tanah dan menjadi pupuk bagi hutan hujan yang baru."
+    },
+    {
       "key": "slime-concentrate",
       "name": "Slime Concentrate",
       "description": "Esensi Slime yang terkonsentrasi. Jika dibiarkan, akan mulai bergerak sendiri."
@@ -10919,6 +11495,11 @@
       "description": "Inti energi penuh yang terkadang dapat ditemukan setelah mengalahkan Specter.\r\nAda perdebatan di antara mereka yang gemar mengelompokkan segala sesuatunya menjadi pemenang dan pecundang: Siapa yang dapat melayang lebih tinggi — Specter atau Anemo Slime?\""
     },
     {
+      "key": "spice",
+      "name": "Spice",
+      "description": "Penyedap dengan rasa yang kompleks. Terbuat dari Harra Fruit yang sudah dikeringkan dan diproses. Bumbu ini bisa memberikan beberapa lapis rasa pada hidangan, sehingga diberi nama “Bumbu Sejuta Hidangan”."
+    },
+    {
       "key": "spirit-locket-of-boreas",
       "name": "Spirit Locket of Boreas",
       "description": "Segenap kekuatan yang terkumpul dari jiwa Great Wolf King of the North.\r\nDaratan ini sebelumnya merupakan tempat yang selalu dilanda badai salju dan dipenuhi potongan es yang tajam, semuanya bergerak atas kehendak Boreas. Pada detik-detik terakhirnya, dia menyadari bahwa angin dingin hanya memusnahkan nyawa, bukan memeliharanya, karena itu dia membiarkan kekuatannya mengalir bebas di alam untuk melindungi daratan dan penghuninya."
@@ -10932,6 +11513,11 @@
       "key": "starconch",
       "name": "Starconch",
       "description": "Kerang kosong yang dibawa ke pantai oleh ombak pasang. Dekatkan ke telinga, dan kamu akan mendengar suara lautan."
+    },
+    {
+      "key": "starshroom",
+      "name": "Starshroom",
+      "description": "Jamur dengan topi yang menyerupai bentuk bintang bersudut lima. Jamur ini memang cukup tangguh. Setelah dewasa, bagian tengah topinya akan terbelah."
     },
     {
       "key": "starsilver",
@@ -10959,6 +11545,11 @@
       "description": "Bumbu yang berasal dari ekstrak Sweet Flower. Mempunyai kekuatan untuk memberikan energi dan kebahagiaan."
     },
     {
+      "key": "sumeru-rose",
+      "name": "Sumeru Rose",
+      "description": "Memiliki warna yang cerah dan indah, bunga berwarna ungu ini mengeluarkan aroma memabukkan yang akan membuat orang-orang yang melewatinya berhenti sejenak. Sementara beberapa orang menyebutnya sebagai jenis “mawar semak-semak”, karena meskipun mereka mawar, mereka tidak mirip dengan bunga lain dari klasifikasi bunga yang sama."
+    },
+    {
       "key": "sunsettia",
       "name": "Sunsettia",
       "description": "Buah yang bulat dan indah, warnanya seperti matahari saat terbenam, dapat ditemukan di seluruh Teyvat. Kulitnya memiliki aroma manis yang dapat memulihkan tenaga."
@@ -10972,6 +11563,11 @@
       "key": "tail-of-boreas",
       "name": "Tail of Boreas",
       "description": "Segenggam sisik ekor dari Great Wolf King of the North.\r\nMeskipun telah lama meninggal, dan tubuhnya tidak lagi ada di dunia. Boreas tetap menyimpan kekuatan yang luar biasa. Kekuatannya mengambil wujud es dan angin untuk menyambut tantangannya yang baru, tetapi itu pun tidak dapat membendung kekuatannya. Sisik es yang terjatuh di tengah pertarungan masih menyimpan segenap energi jiwanya."
+    },
+    {
+      "key": "teachings-of-admonition",
+      "name": "Teachings of Admonition",
+      "description": "Material Penguatan Talenta.\n“Admonition” adalah cabang dari bangsa kebijaksanaan.\nPeringatan berasal dari kebijaksanaan internal yang murni. Hanya kata-kata yang murni baik dan penuh kesadaran, yang akan bisa menyampaikan keajaiban dari kebijaksanaan, sehingga benih kebijaksanaan akan bisa menembus rintangan kesombongan, berakar, dan tumbuh subur."
     },
     {
       "key": "teachings-of-ballad",
@@ -10999,9 +11595,19 @@
       "description": "Material Penguatan Talenta.\r\nEmas adalah simbol tanah bumi.\r\nEmas adalah darah yang mengalir jauh di dalam tanah Liyue, otot yang memompa jantung Liyue, dan tulang yang membantu Liyue berdiri dengan bangga."
     },
     {
+      "key": "teachings-of-ingenuity",
+      "name": "Teachings of Ingenuity",
+      "description": "Material Penguatan Talenta.\n“Ingenuity” adalah jaringan pengangkut bangsa kebijaksanaan.\nKecerdasan terlahir dari niat yang baik. Pepatah memakanan “pohon beracun tidak akan menghasilkan buah yang baik”, niat yang baik dan teguh baru bisa menghasilkan kecerdasan dan kebijaksanaan, sehingga tidak menodai nama harum dari kebijaksanaan."
+    },
+    {
       "key": "teachings-of-light",
       "name": "Teachings of Light",
       "description": "Material Penguatan Talenta.\r\n\"Light\" adalah harapan bangsa petir.\r\nPenguasa yang menganggap dirinya sendiri mahatahu selalu berupaya untuk mendapatkan semua kemuliaan setinggi bintang. Namun Vision yang bukan untuk dibagi-bagikan justru membuat orang semakin menginginkannya dengan lebih tamak — namun akhirnya hanya menjadi senjata makan tuan."
+    },
+    {
+      "key": "teachings-of-praxis",
+      "name": "Teachings of Praxis",
+      "description": "Material Penguatan Talenta.\n“Praxis” adalah sistem akar bangsa kebijaksanaan.\nPelaksanaan berasal dari kebenaran yang gamblang. Praktek pengejaran yang tidak henti-hentinya, adalah jalan yang harus ditempuh oleh seluruh kebijaksanaan agar bisa bersinar pada akhirnya. Saat perbuatan baik tidak dipraktekkan, pemikiran jernih dan ucapan elegan akan layu dengan sendirinya."
     },
     {
       "key": "teachings-of-prosperity",
@@ -11029,6 +11635,11 @@
       "description": "Hiasan kepala kecil yang didapatkan dari Plane of Euthymia setelah semuanya mereda.\r\nSebuah pikiran dapat mengakhiri segala bencana, dan akan selalu ada pikiran yang melampaui waktu.\r\nDi tengah semua ini, entah arti sebenarnya yang ingin Makoto sampaikan sudah tersampaikan atau belum."
     },
     {
+      "key": "thunderclap-fruitcore",
+      "name": "Thunderclap Fruitcore",
+      "description": "Inti dari Electro Regisvine yang terbungkus di dalam daun setajam silet dan memancarkan energi Electro dengan bebas.\nEnergi mengaum yang berasal dari dalam bumi sudah tidak sabar untuk meluapkan seluruh amarahnya, sehingga bahkan tanaman merambat yang malang juga ternodai oleh aura kegilaannya, yang menyebabkan tanaman ini meraung-raung dan memukul-mukul ranting tanamannya sendiri. Tidak ada yang tahu dengan jelas motifnya melakukan gerakan ini, apakah agar orang lain juga merasakan penderitaan kekuatan listrik yang menyetrum seluruh tubuhnya, atau sebuah manifestasi gerakannya yang sedang berjuang dan menantikan hari kiamat yang pasti datang baginya."
+    },
+    {
       "key": "tile-of-decarabians-tower",
       "name": "Tile of Decarabian's Tower",
       "description": "Material Ascension Senjata.\r\nTempat yang sekarang dikenal sebagai Stormterror's Lair dulunya adalah ibu kota yang dibangun oleh Decarabian sang Archon Anemo. Karena mimpi kemakmuran ini dibangun oleh kekuatannya, pecahan-pecahan yang tertinggal saat mimpinya hancur masih memiliki kekuatan besar."
@@ -11047,6 +11658,11 @@
       "key": "treasure-hoarder-insignia",
       "name": "Treasure Hoarder Insignia",
       "description": "Lencana yang dengan bangga menandakan posisi pemiliknya sebagai anggota Treasure Hoarder. Mengejar harta tanpa mengenal batas. Tapi, ngomong-ngomong soal itu... apakah menjadi pencuri adalah sesuatu yang bisa dibanggakan?"
+    },
+    {
+      "key": "trimmed-red-silk",
+      "name": "Trimmed Red Silk",
+      "description": "Sepotong sutra merah yang dipangkas dengan dekorasi yang sederhana.\nSeorang prajurit berpengalaman dapat mendeteksi kelemahan dari mata musuh mereka dan memanfaatkannya. Pasukan di Eremite telah lama kehilangan seorang tuan untuk dilayani, dan sekarang mereka tidak memiliki siapa pun untuk dipercaya selain diri mereka sendiri. Dikatakan bahwa mereka sangat yakin kalau segala sesuatu bisa berkhianat, termasuk mata mereka sendiri."
     },
     {
       "key": "tusk-of-monoceros-caeli",
@@ -11167,6 +11783,11 @@
       "key": "wolfhook",
       "name": "Wolfhook",
       "description": "Beri dengan duri yang sering tertancap di kulit serigala. Kalau kamu perhatikan, kamu seperti bisa mendengar lolongan serigala di hutan."
+    },
+    {
+      "key": "zaytun-peach",
+      "name": "Zaytun Peach",
+      "description": "Buah dari semak hutan. Dagingnya keras dan manis. Dikatakan memiliki efek penenang pada pikiran."
     }
   ],
   "debuffs": [
@@ -11341,6 +11962,10 @@
       "name": "Azhdaha"
     },
     {
+      "key": "beisht",
+      "name": "Beisht"
+    },
+    {
       "key": "black-serpent-knight-windcutter",
       "name": "Black Serpent Knight: Windcutter"
     },
@@ -11413,6 +12038,10 @@
       "name": "Dendro Slime"
     },
     {
+      "key": "dendro-specter",
+      "name": "Dendro Specter"
+    },
+    {
       "key": "electro-abyss-mage",
       "name": "Electro Abyss Mage"
     },
@@ -11433,6 +12062,10 @@
       "name": "Electro Hypostasis"
     },
     {
+      "key": "electro-regisvine",
+      "name": "Electro Regisvine"
+    },
+    {
       "key": "electro-samachurl",
       "name": "Electro Samachurl"
     },
@@ -11447,6 +12080,38 @@
     {
       "key": "electro-whopperflower",
       "name": "Electro Whopperflower"
+    },
+    {
+      "key": "eremite-axe-vanguard",
+      "name": "Eremite Axe Vanguard"
+    },
+    {
+      "key": "eremite-crossbow",
+      "name": "Eremite Crossbow"
+    },
+    {
+      "key": "eremite-daythunder",
+      "name": "Eremite Daythunder"
+    },
+    {
+      "key": "eremite-desert-clearwater",
+      "name": "Eremite Desert Clearwater"
+    },
+    {
+      "key": "eremite-linebreaker",
+      "name": "Eremite Linebreaker"
+    },
+    {
+      "key": "eremite-ravenbeak-halberdier",
+      "name": "Eremite Ravenbeak Halberdier"
+    },
+    {
+      "key": "eremite-sunfrost",
+      "name": "Eremite Sunfrost"
+    },
+    {
+      "key": "eremite-sword-dancer",
+      "name": "Eremite Sword-Dancer"
     },
     {
       "key": "eye-of-the-storm",
@@ -11489,6 +12154,10 @@
       "name": "Fatui Skirmisher - Pyroslinger Bracer"
     },
     {
+      "key": "floating-dendro-fungus",
+      "name": "Floating Dendro Fungus"
+    },
+    {
       "key": "floating-hydro-fungus",
       "name": "Floating Hydro Fungus"
     },
@@ -11523,6 +12192,10 @@
     {
       "key": "golden-wolflord",
       "name": "Golden Wolflord"
+    },
+    {
+      "key": "grounded-hydroshroom",
+      "name": "Grounded Hydroshroom"
     },
     {
       "key": "hilichurl",
@@ -11607,6 +12280,10 @@
     {
       "key": "ice-shieldwall-mitachurl",
       "name": "Ice Shieldwall Mitachurl"
+    },
+    {
+      "key": "jadeplume-terrorshroom",
+      "name": "Jadeplume Terrorshroom"
     },
     {
       "key": "kairagi-dancing-thunder",
@@ -11797,6 +12474,14 @@
       "name": "Ruin Destroyer"
     },
     {
+      "key": "ruin-drake-earthguard",
+      "name": "Ruin Drake: Earthguard"
+    },
+    {
+      "key": "ruin-drake-skywatch",
+      "name": "Ruin Drake: Skywatch"
+    },
+    {
       "key": "ruin-grader",
       "name": "Ruin Grader"
     },
@@ -11847,6 +12532,18 @@
     {
       "key": "stormterror",
       "name": "Stormterror"
+    },
+    {
+      "key": "stretchy-anemo-fungus",
+      "name": "Stretchy Anemo Fungus"
+    },
+    {
+      "key": "stretchy-geo-fungus",
+      "name": "Stretchy Geo Fungus"
+    },
+    {
+      "key": "stretchy-pyro-fungus",
+      "name": "Stretchy Pyro Fungus"
     },
     {
       "key": "thunder-manifestation",
@@ -11929,8 +12626,28 @@
       "name": "Treasure Hoarder - Seaman"
     },
     {
+      "key": "treasure-hoarders-wallenstein",
+      "name": "Treasure Hoarder: Wallenstein"
+    },
+    {
       "key": "unusual-hilichurl",
       "name": "Unusual Hilichurl"
+    },
+    {
+      "key": "whirling-cryo-fungus",
+      "name": "Whirling Cryo Fungus"
+    },
+    {
+      "key": "whirling-electro-fungus",
+      "name": "Whirling Electro Fungus"
+    },
+    {
+      "key": "winged-cryoshroom",
+      "name": "Winged Cryoshroom"
+    },
+    {
+      "key": "winged-dendroshroom",
+      "name": "Winged Dendroshroom"
     },
     {
       "key": "wooden-shield-hilichurl-guard",
