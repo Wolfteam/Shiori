@@ -12149,6 +12149,42 @@
       "name": "Cristallisation",
       "effect": "Génère des fragments élémentaires et protège le personnage qui récupère le fragment à l’aide de différents types de boucliers élémentaires. La Cristallisation absorbe les deux éléments mis en réaction. Le bouclier élémentaire protège de tous types de DGT mais absorbe plus efficacement les DGT infligés par le même élément que celui du fragment cristallisé (Exemple : un bouclier Électro protège mieux des DGT Électro).",
       "description": null
+    },
+    {
+      "key": "bloom",
+      "name": "Bloom",
+      "effect": "Creates a Dendro Core that explode after 6 seconds, dealing AoE Dendro DMG in a 5m radius to both enemies and players.",
+      "description": null
+    },
+    {
+      "key": "hyperbloom",
+      "name": "Hyperbloom",
+      "effect": "Triggered when applying Electro to a Dendro Core. Transforms the Dendro Core into a homing Sprawling Shot that deals increased AoE Dendro DMG in a much smaller AoE.",
+      "description": null
+    },
+    {
+      "key": "burgeon",
+      "name": "Burgeon",
+      "effect": "Triggered when applying Pyro to a Dendro Core. Detonates the Dendro Core immediately, dealing increased AoE Dendro DMG.",
+      "description": null
+    },
+    {
+      "key": "quicken",
+      "name": "Quicken",
+      "effect": "Applies a Quicken aura that decays over time.",
+      "description": null
+    },
+    {
+      "key": "aggravate",
+      "name": "Aggravate",
+      "effect": "Triggered when applying Electro to an entity with the Quicken aura. Adds Flat DMG Bonus to the attack that triggers this reaction.",
+      "description": null
+    },
+    {
+      "key": "spread",
+      "name": "Spread",
+      "effect": "Triggered when applying Dendro to an entity with the Quicken aura. Adds Flat DMG Bonus to the attack that triggers this reaction.",
+      "description": null
     }
   ],
   "resonance": [
@@ -12193,6 +12229,12 @@
       "name": "Lianes protectrices",
       "effect": "Augmente toutes les RES élémentaires et la RES physique de 15%",
       "description": "4 éléments différents"
+    },
+    {
+      "key": "sprawling-greenery",
+      "name": "Sprawling Greenery",
+      "effect": "After triggering Burning, Quicken, or Bloom reactions, all nearby party members gain 30 Elemental Mastery for 6s. After triggering Aggravate, Spread, Hyperbloom, or Burgeon reactions, all nearby party members gain 20 Elemental Mastery for 6s. The durations of the aforementioned effects will be counted independently.",
+      "description": null
     }
   ],
   "monsters": [
