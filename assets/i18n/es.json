@@ -12136,38 +12136,38 @@
     },
     {
       "key": "bloom",
-      "name": "Bloom",
-      "effect": "Creates a Dendro Core that explode after 6 seconds, dealing AoE Dendro DMG in a 5m radius to both enemies and players.",
+      "name": "Florecimiento",
+      "effect": "Crea un núcleo Dendro que explota a los 6 segundos, ocasionando Daño Dendro en el AdE en un radio de 5m tanto a enemigos como jugadores.",
       "description": null
     },
     {
       "key": "hyperbloom",
-      "name": "Hyperbloom",
-      "effect": "Triggered when applying Electro to a Dendro Core. Transforms the Dendro Core into a homing Sprawling Shot that deals increased AoE Dendro DMG in a much smaller AoE.",
+      "name": "Sobreflorecimiento",
+      "effect": "Ocasionada al aplicar Electro a un núcleo Dendro. Transforma el núcleo Dendro en un proyectil enredador que inflige daño Dendro incrementado en un AdE mucho más pequeña.",
       "description": null
     },
     {
       "key": "burgeon",
-      "name": "Burgeon",
-      "effect": "Triggered when applying Pyro to a Dendro Core. Detonates the Dendro Core immediately, dealing increased AoE Dendro DMG.",
+      "name": "Crepitar",
+      "effect": "Ocasionada al aplicar Pyro a un núcleo Dendro. Detona el núcleo Dendro inmediatamente ocasionando un daño Dendro incrementado en el AdE.",
       "description": null
     },
     {
       "key": "quicken",
-      "name": "Quicken",
-      "effect": "Applies a Quicken aura that decays over time.",
+      "name": "Aceleración",
+      "effect": "Aplica un aura de Aceleración que desaparece con en el tiempo.",
       "description": null
     },
     {
       "key": "aggravate",
-      "name": "Aggravate",
-      "effect": "Triggered when applying Electro to an entity with the Quicken aura. Adds Flat DMG Bonus to the attack that triggers this reaction.",
+      "name": "Intensificación",
+      "effect": "Ocasionada al aplicar Electro a una entidad con aura de Aceleración. Agrega un Bono de daño Plano al ataque que desencadena la reacción.",
       "description": null
     },
     {
       "key": "spread",
-      "name": "Spread",
-      "effect": "Triggered when applying Dendro to an entity with the Quicken aura. Adds Flat DMG Bonus to the attack that triggers this reaction.",
+      "name": "Propagación",
+      "effect": "Ocasionada al aplicar Dendro a una entidad con aura de Aceleración. Agrega un Bono de daño Plano al ataque que desencadena la reacción.",
       "description": null
     }
   ],
@@ -12199,7 +12199,7 @@
     {
       "key": "high-voltage",
       "name": "Alto Voltaje",
-      "effect": "Reduce la duración de efectos con Hydro en 40%. Superconductor, Sobrecarga y Electrocargado tienen 100% de generar una Particula Elemental Electro (TdE 5 s.).",
+      "effect": "Reduce la duración de efectos con Hydro en 40%. Superconductor, Sobrecarga, Electrocargado, Aceleración, Intensificación y Sobreflorecimiento tienen 100% de generar una Particula Elemental Electro (TdE 5 s.).",
       "description": null
     },
     {
@@ -12216,8 +12216,8 @@
     },
     {
       "key": "sprawling-greenery",
-      "name": "Sprawling Greenery",
-      "effect": "After triggering Burning, Quicken, or Bloom reactions, all nearby party members gain 30 Elemental Mastery for 6s. After triggering Aggravate, Spread, Hyperbloom, or Burgeon reactions, all nearby party members gain 20 Elemental Mastery for 6s. The durations of the aforementioned effects will be counted independently.",
+      "name": "Planta Trepadora",
+      "effect": "La Maestría Elemental aumenta en 50pts. Tras causar Quemadura, Aceleración o Florecimiento, la Maestría Elemental de todos los miembros del equipo cercanos aumenta en 30pts. durante 6s. Tras causar una reacción de Intensificación, Propagación, Sobreflorecimiento o Crepitar, la Maestría Elemental de todos los miembros del equipo cercanos aumenta en 20pts. durante 6s. La duración de estos efectos se calcula de manera independiente",
       "description": null
     }
   ],
