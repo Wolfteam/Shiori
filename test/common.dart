@@ -60,9 +60,9 @@ Future<bool> _fileExists(String path) => File(path).exists();
 void checkAsset(String path, {bool isAnAsset = false}) {
   expect(path, allOf([isNotEmpty, isNotNull]));
   if (isAnAsset) {
-    expect(_assetExists(path), completion(equals(true)));
+    expect(_assetExists(path), completion(equals(true)), reason: 'Asset = $path does not exist');
   } else {
-    expect(_fileExists(path), completion(equals(true)));
+    expect(_fileExists(path), completion(equals(true)), reason: 'File = $path does not exist');
   }
 }
 
