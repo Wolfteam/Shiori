@@ -220,10 +220,10 @@ class _ChartPagination extends StatelessWidget {
   final bool canGoToNextPage;
   final bool canGoToLastPage;
 
-  final Function onFirstPagePressed;
-  final Function onPreviousPagePressed;
-  final Function onNextPagePressed;
-  final Function onLastPagePressed;
+  final VoidCallback onFirstPagePressed;
+  final VoidCallback onPreviousPagePressed;
+  final VoidCallback onNextPagePressed;
+  final VoidCallback onLastPagePressed;
 
   const _ChartPagination({
     Key? key,
@@ -701,7 +701,15 @@ class _Regions extends StatelessWidget {
                 ? NothingFoundColumn(msg: s.nothingToShow)
                 : VerticalBarChart(
                     items: state.items
-                        .mapIndex((e, i) => VerticalBarDataModel(i, theme.colorScheme.primary, e.regionType.index, e.quantity.toDouble()))
+                        .mapIndex(
+                          (e, i) => VerticalBarDataModel(
+                            i,
+                            theme.colorScheme.primary,
+                            e.regionType.index,
+                            e.quantity.toDouble(),
+                            useIndexAsX: true,
+                          ),
+                        )
                         .toList(),
                     maxY: state.maxCount.toDouble(),
                     interval: (state.maxCount * 0.2).roundToDouble(),

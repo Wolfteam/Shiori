@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.4.6+70 (23/08/2022)
+- Collei
+- Tighnari
+
+
 ## 1.4.5+65 (13/07/2022)
 - Heizou
 

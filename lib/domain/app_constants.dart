@@ -46,6 +46,7 @@ List<StatType> getArtifactPossibleMainStats(ArtifactType type) {
         StatType.electroDmgBonusPercentage,
         StatType.anemoDmgBonusPercentage,
         StatType.geoDmgBonusPercentage,
+        StatType.dendroDmgBonusPercentage,
       ];
     case ArtifactType.crown:
       return [

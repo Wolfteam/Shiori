@@ -117,6 +117,21 @@ void main() {
     verify: (bloc) => checkCommonState(bloc.state),
   );
 
+  blocTest<BannerHistoryBloc, BannerHistoryState>(
+    'Characters must exist in banner',
+    build: () => BannerHistoryBloc(_genshinService, _telemetryService),
+    act: (bloc) => bloc.add(const BannerHistoryEvent.init()),
+    verify: (bloc) {
+      final charsWithoutBanner = ['aloy', 'mona', 'qiqi', 'amber', 'kaeya', 'lisa', 'diluc', 'jean'];
+      final allCharsCount = _genshinService.characters
+          .getCharactersForCard()
+          .where((el) => !el.isComingSoon && !el.key.startsWith('traveler') && !charsWithoutBanner.contains(el.key))
+          .length;
+      final bannerCount = bloc.state.banners.map((e) => e.key).length;
+      expect(allCharsCount, bannerCount);
+    },
+  );
+
   group('Type changed', () {
     blocTest<BannerHistoryBloc, BannerHistoryState>(
       'weapon selected',
