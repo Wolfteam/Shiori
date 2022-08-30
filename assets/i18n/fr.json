@@ -12087,7 +12087,7 @@
     {
       "key": "vaporize",
       "name": "Évaporation",
-      "effect": "Multiplie par 2 les DGT Pyro de la réaction lorsqu’une attaque Pyro déclenche la réaction.",
+      "effect": "Multiplie par 1.5 les DGT Pyro de la réaction lorsqu’une attaque Pyro déclenche la réaction.",
       "description": null
     },
     {
@@ -12111,7 +12111,7 @@
     {
       "key": "vaporize-reverse",
       "name": "Évaporation (Inversée)",
-      "effect": "Multiplie par 1.5 les DGT Hydro de la réaction lorsqu’une attaque Hydro déclenche la réaction.",
+      "effect": "Multiplie par 2 les DGT Hydro de la réaction lorsqu’une attaque Hydro déclenche la réaction.",
       "description": null
     },
     {
@@ -12152,38 +12152,38 @@
     },
     {
       "key": "bloom",
-      "name": "Bloom",
-      "effect": "Creates a Dendro Core that explode after 6 seconds, dealing AoE Dendro DMG in a 5m radius to both enemies and players.",
+      "name": "Fleurissement",
+      "effect": "Génère un noyau Dendro qui explose après 6s, infligeant des DGT Dendro de zone dans un rayon de 6 mètres, aussi bien aux ennemis qu’aux alliés.",
       "description": null
     },
     {
       "key": "hyperbloom",
-      "name": "Hyperbloom",
-      "effect": "Triggered when applying Electro to a Dendro Core. Transforms the Dendro Core into a homing Sprawling Shot that deals increased AoE Dendro DMG in a much smaller AoE.",
+      "name": "Exubérance",
+      "effect": "Se déclenche lorsqu’un noyau Dendro entre en contact avec l’élément Électro. Transformant les noyaux Dendro en projectiles tentaculaires poursuivant les ennemis.",
       "description": null
     },
     {
       "key": "burgeon",
-      "name": "Burgeon",
-      "effect": "Triggered when applying Pyro to a Dendro Core. Detonates the Dendro Core immediately, dealing increased AoE Dendro DMG.",
+      "name": "Bourgeonnement",
+      "effect": "Se déclenche lorsqu’un noyau Dendro entre en contact avec l’élément Pyro. Créant une détonation qui inflige des DGT Dendro de zone.",
       "description": null
     },
     {
       "key": "quicken",
-      "name": "Quicken",
-      "effect": "Applies a Quicken aura that decays over time.",
+      "name": "Stimulation",
+      "effect": "Fait passer l’ennemi dans l’état Stimulé.",
       "description": null
     },
     {
       "key": "aggravate",
-      "name": "Aggravate",
-      "effect": "Triggered when applying Electro to an entity with the Quicken aura. Adds Flat DMG Bonus to the attack that triggers this reaction.",
+      "name": "Suractivation",
+      "effect": "Se déclenche lorsqu’on applique l’élément Électro à un ennemi Stimulé. Ajoute un bonus de DGT fixe (non proportionnel aux DGT infligés) aux attaques reçues par l’ennemi qui déclenchent la réaction.",
       "description": null
     },
     {
       "key": "spread",
-      "name": "Spread",
-      "effect": "Triggered when applying Dendro to an entity with the Quicken aura. Adds Flat DMG Bonus to the attack that triggers this reaction.",
+      "name": "Propagation",
+      "effect": "Se déclenche lorsqu’on applique l’élément Dendro à un ennemi Stimulé. Ajoute un bonus de DGT fixe (non proportionnel aux DGT infligés) aux attaques reçues par l’ennemi qui déclenchent la réaction.",
       "description": null
     }
   ],
@@ -12232,8 +12232,8 @@
     },
     {
       "key": "sprawling-greenery",
-      "name": "Sprawling Greenery",
-      "effect": "After triggering Burning, Quicken, or Bloom reactions, all nearby party members gain 30 Elemental Mastery for 6s. After triggering Aggravate, Spread, Hyperbloom, or Burgeon reactions, all nearby party members gain 20 Elemental Mastery for 6s. The durations of the aforementioned effects will be counted independently.",
+      "name": "Plante grimpante",
+      "effect": "Augmente la maîtrise élémentaire de 50 pts. Après avoir déclenché une réaction de Brûlure, de Fleurissement ou de Stimulation, la maîtrise élémentaire de tous les personnages de l’équipe à proximité augmente de 30 pts pendant 6s. Après avoir déclenché une réaction de Suractivation, de Propagation, d’Exubérance ou de Bourgeonnement, la maîtrise élémentaire des personnages de l’équipe à proximité augmente de 20 pts pendant 6s. La durée de ces effets est calculée indépendamment.",
       "description": null
     }
   ],

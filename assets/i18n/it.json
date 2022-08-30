@@ -12080,7 +12080,7 @@
     {
       "key": "vaporize",
       "name": "vaporize",
-      "effect": "Infligge Pyro DMG x2 se innescato da un Attacco Pyro.",
+      "effect": "Infligge Pyro DMG x1.5 se innescato da un Attacco Pyro.",
       "description": null
     },
     {
@@ -12104,7 +12104,7 @@
     {
       "key": "vaporize-reverse",
       "name": "Vaporize (Reverse)",
-      "effect": "Infligge Hydro DMG x1.5 se innescato da un Attacco Hydro.",
+      "effect": "Infligge Hydro DMG x2 se innescato da un Attacco Hydro.",
       "description": null
     },
     {
@@ -12146,37 +12146,37 @@
     {
       "key": "bloom",
       "name": "Bloom",
-      "effect": "Creates a Dendro Core that explode after 6 seconds, dealing AoE Dendro DMG in a 5m radius to both enemies and players.",
+      "effect": "Crea un Dendro Core che esplode dopo 6 secondi, infliggendo AoE Dendro DMG a nemici e giocatori nel raggio di 5m.",
       "description": null
     },
     {
       "key": "hyperbloom",
       "name": "Hyperbloom",
-      "effect": "Triggered when applying Electro to a Dendro Core. Transforms the Dendro Core into a homing Sprawling Shot that deals increased AoE Dendro DMG in a much smaller AoE.",
+      "effect": "Avviene applicando Electro a un Dendro Core. Trasforma il Dendro Core in un Sprawling Shot a ricerca che infligge un potente AoE Dendro DMG ma con AoE ridotto.",
       "description": null
     },
     {
       "key": "burgeon",
       "name": "Burgeon",
-      "effect": "Triggered when applying Pyro to a Dendro Core. Detonates the Dendro Core immediately, dealing increased AoE Dendro DMG.",
+      "effect": "Avviene applicando Pyro a un Dendro Core. Detona immediatamente il Dendro Core, infliggendo un potente AoE Dendro DMG.",
       "description": null
     },
     {
       "key": "quicken",
       "name": "Quicken",
-      "effect": "Applies a Quicken aura that decays over time.",
+      "effect": "Applica l’aura Quicken che decade nel tempo.",
       "description": null
     },
     {
       "key": "aggravate",
       "name": "Aggravate",
-      "effect": "Triggered when applying Electro to an entity with the Quicken aura. Adds Flat DMG Bonus to the attack that triggers this reaction.",
+      "effect": "Avviene applicando Electro a un’entità afflitta da Quicken. Aggiunge Flat DMG Bonus all’attacco che ha provocato questa reazione.",
       "description": null
     },
     {
       "key": "spread",
       "name": "Spread",
-      "effect": "Triggered when applying Dendro to an entity with the Quicken aura. Adds Flat DMG Bonus to the attack that triggers this reaction.",
+      "effect": "Avviene applicando Dendro a un’entità afflitta da Quicken. Aggiunge Flat DMG Bonus all’attacco che ha provocato questa reazione.",
       "description": null
     }
   ],
@@ -12226,7 +12226,7 @@
     {
       "key": "sprawling-greenery",
       "name": "Sprawling Greenery",
-      "effect": "After triggering Burning, Quicken, or Bloom reactions, all nearby party members gain 30 Elemental Mastery for 6s. After triggering Aggravate, Spread, Hyperbloom, or Burgeon reactions, all nearby party members gain 20 Elemental Mastery for 6s. The durations of the aforementioned effects will be counted independently.",
+      "effect": "Dopo aver provocato una reazione Burning, Quicken o Bloom, tutti i membri vicini del party ottengono Elemental Mastery +30 per 6s. Se si provoca una reazione Aggravate, Spread, Hyperbloom o Burgeon, tutti i membri vicini del party ottengono Elemental Mastery +20 per 6s. La durata di un effetto è indipendente dall’altra.",
       "description": null
     }
   ],
