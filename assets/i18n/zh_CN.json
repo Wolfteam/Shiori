@@ -1023,6 +1023,93 @@
       ]
     },
     {
+      "key": "candace",
+      "name": "坎蒂丝",
+      "title": "？？？",
+      "description": "测试角色",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ]
+    },
+    {
       "key": "chongyun",
       "name": "重云",
       "title": "雪融有踪",
@@ -1267,6 +1354,93 @@
           "key": "c6",
           "title": "坠镞为林",
           "description": "飞叶轮命中时，会产生一个迷你柯里安巴，造成相当于柯莱攻击力200%的草元素伤害。\n每次施放拂花偈叶至多产生1次迷你柯里安巴。\n",
+          "descriptions": []
+        }
+      ]
+    },
+    {
+      "key": "cyno",
+      "name": "赛诺",
+      "title": "？？？",
+      "description": "测试角色",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
           "descriptions": []
         }
       ]
@@ -3966,6 +4140,93 @@
           "key": "c6",
           "title": "厄运的修辞",
           "description": "进入虚实流动状态后，每移动1秒，莫娜的下一次重击伤害就增加60%，\r\n通过这种方式至多可以获得180%重击伤害加成，该效果至多持续8秒。\r\n",
+          "descriptions": []
+        }
+      ]
+    },
+    {
+      "key": "nilou",
+      "name": "妮露",
+      "title": "？？？",
+      "description": "测试角色",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
           "descriptions": []
         }
       ]
@@ -11886,6 +12147,42 @@
       "name": "Crystallize",
       "effect": "Absorbs the element and drops a crystal of that same element. The crystal will give an elemental shield. The shield absorbs all types of damage, but it protects more efficiently against the shield's element.",
       "description": null
+    },
+    {
+      "key": "bloom",
+      "name": "Bloom",
+      "effect": "Creates a Dendro Core that explode after 6 seconds, dealing AoE Dendro DMG in a 5m radius to both enemies and players.",
+      "description": null
+    },
+    {
+      "key": "hyperbloom",
+      "name": "Hyperbloom",
+      "effect": "Triggered when applying Electro to a Dendro Core. Transforms the Dendro Core into a homing Sprawling Shot that deals increased AoE Dendro DMG in a much smaller AoE.",
+      "description": null
+    },
+    {
+      "key": "burgeon",
+      "name": "Burgeon",
+      "effect": "Triggered when applying Pyro to a Dendro Core. Detonates the Dendro Core immediately, dealing increased AoE Dendro DMG.",
+      "description": null
+    },
+    {
+      "key": "quicken",
+      "name": "Quicken",
+      "effect": "Applies a Quicken aura that decays over time.",
+      "description": null
+    },
+    {
+      "key": "aggravate",
+      "name": "Aggravate",
+      "effect": "Triggered when applying Electro to an entity with the Quicken aura. Adds Flat DMG Bonus to the attack that triggers this reaction.",
+      "description": null
+    },
+    {
+      "key": "spread",
+      "name": "Spread",
+      "effect": "Triggered when applying Dendro to an entity with the Quicken aura. Adds Flat DMG Bonus to the attack that triggers this reaction.",
+      "description": null
     }
   ],
   "resonance": [
@@ -11930,6 +12227,12 @@
       "name": "交织之护",
       "effect": "所有元素抗性提升15%，物理抗性提升15%。",
       "description": "任意四种不同元素"
+    },
+    {
+      "key": "sprawling-greenery",
+      "name": "Sprawling Greenery",
+      "effect": "After triggering Burning, Quicken, or Bloom reactions, all nearby party members gain 30 Elemental Mastery for 6s. After triggering Aggravate, Spread, Hyperbloom, or Burgeon reactions, all nearby party members gain 20 Elemental Mastery for 6s. The durations of the aforementioned effects will be counted independently.",
+      "description": null
     }
   ],
   "monsters": [

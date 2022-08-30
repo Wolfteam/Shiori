@@ -2718,6 +2718,11 @@
           "level": 20,
           "materials": [
             {
+              "key": "echo-of-scorching-might",
+              "quantity": 5,
+              "type": "weaponPrimary"
+            },
+            {
               "key": "inactivated-fungal-nucleus",
               "quantity": 5,
               "type": "weapon"
@@ -2737,6 +2742,11 @@
         {
           "level": 40,
           "materials": [
+            {
+              "key": "remnant-glow-of-scorching-might",
+              "quantity": 5,
+              "type": "weaponPrimary"
+            },
             {
               "key": "inactivated-fungal-nucleus",
               "quantity": 18,
@@ -2758,6 +2768,11 @@
           "level": 50,
           "materials": [
             {
+              "key": "remnant-glow-of-scorching-might",
+              "quantity": 9,
+              "type": "weaponPrimary"
+            },
+            {
               "key": "dormant-fungal-nucleus",
               "quantity": 9,
               "type": "weapon"
@@ -2777,6 +2792,11 @@
         {
           "level": 60,
           "materials": [
+            {
+              "key": "dream-of-scorching-might",
+              "quantity": 5,
+              "type": "weaponPrimary"
+            },
             {
               "key": "dormant-fungal-nucleus",
               "quantity": 18,
@@ -2798,6 +2818,11 @@
           "level": 70,
           "materials": [
             {
+              "key": "dream-of-scorching-might",
+              "quantity": 9,
+              "type": "weaponPrimary"
+            },
+            {
               "key": "robust-fungal-nucleus",
               "quantity": 14,
               "type": "weapon"
@@ -2817,6 +2842,11 @@
         {
           "level": 80,
           "materials": [
+            {
+              "key": "olden-days-of-scorching-might",
+              "quantity": 6,
+              "type": "weaponPrimary"
+            },
             {
               "key": "robust-fungal-nucleus",
               "quantity": 27,

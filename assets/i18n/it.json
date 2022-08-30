@@ -1019,6 +1019,93 @@
       ]
     },
     {
+      "key": "candace",
+      "name": "Candace",
+      "title": "？？？",
+      "description": "？？？",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ]
+    },
+    {
       "key": "chongyun",
       "name": "Chongyun",
       "title": "Frozen Ardor",
@@ -1263,6 +1350,93 @@
           "key": "c6",
           "title": "Forest of Falling Arrows",
           "description": "When the Floral Ring hits, it will create a miniature Cuilein-Anbar that will deal 200% of Collei’s ATK as Dendro DMG.\nEach Floral Brush can only create one such miniature Cuilein-Anbar.\n",
+          "descriptions": []
+        }
+      ]
+    },
+    {
+      "key": "cyno",
+      "name": "Cyno",
+      "title": "？？？",
+      "description": "？？？",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
           "descriptions": []
         }
       ]
@@ -3956,6 +4130,93 @@
           "key": "c6",
           "title": "Rhetorics of Calamitas",
           "description": "Quando Mona entra nello stato Illusory Torrent, i danni del prossimo Attacco Caricato aumentano del 60% per ogni secondo in movimento.\r\nIl massimo DMG Bonus ottenibile è del 180%. Il potenziamento non dura più di 8s.\r\n",
+          "descriptions": []
+        }
+      ]
+    },
+    {
+      "key": "nilou",
+      "name": "Nilou",
+      "title": "？？？",
+      "description": "？？？",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
           "descriptions": []
         }
       ]
@@ -11819,7 +12080,7 @@
     {
       "key": "vaporize",
       "name": "vaporize",
-      "effect": "Infligge Pyro DMG x2 se innescato da un Attacco Pyro.",
+      "effect": "Infligge Pyro DMG x1.5 se innescato da un Attacco Pyro.",
       "description": null
     },
     {
@@ -11843,7 +12104,7 @@
     {
       "key": "vaporize-reverse",
       "name": "Vaporize (Reverse)",
-      "effect": "Infligge Hydro DMG x1.5 se innescato da un Attacco Hydro.",
+      "effect": "Infligge Hydro DMG x2 se innescato da un Attacco Hydro.",
       "description": null
     },
     {
@@ -11880,6 +12141,42 @@
       "key": "crystallize",
       "name": "Crystallize",
       "effect": "Assorbe l’elemento e ne crea un cristallo, se raccolto fornisce uno scudo elementale. Lo scudo protegge da qualsiasi tipo di danno, ma è molto più efficace contro lo stesso elemento dello scudo.",
+      "description": null
+    },
+    {
+      "key": "bloom",
+      "name": "Bloom",
+      "effect": "Crea un Dendro Core che esplode dopo 6 secondi, infliggendo AoE Dendro DMG a nemici e giocatori nel raggio di 5m.",
+      "description": null
+    },
+    {
+      "key": "hyperbloom",
+      "name": "Hyperbloom",
+      "effect": "Avviene applicando Electro a un Dendro Core. Trasforma il Dendro Core in un Sprawling Shot a ricerca che infligge un potente AoE Dendro DMG ma con AoE ridotto.",
+      "description": null
+    },
+    {
+      "key": "burgeon",
+      "name": "Burgeon",
+      "effect": "Avviene applicando Pyro a un Dendro Core. Detona immediatamente il Dendro Core, infliggendo un potente AoE Dendro DMG.",
+      "description": null
+    },
+    {
+      "key": "quicken",
+      "name": "Quicken",
+      "effect": "Applica l’aura Quicken che decade nel tempo.",
+      "description": null
+    },
+    {
+      "key": "aggravate",
+      "name": "Aggravate",
+      "effect": "Avviene applicando Electro a un’entità afflitta da Quicken. Aggiunge Flat DMG Bonus all’attacco che ha provocato questa reazione.",
+      "description": null
+    },
+    {
+      "key": "spread",
+      "name": "Spread",
+      "effect": "Avviene applicando Dendro a un’entità afflitta da Quicken. Aggiunge Flat DMG Bonus all’attacco che ha provocato questa reazione.",
       "description": null
     }
   ],
@@ -11925,6 +12222,12 @@
       "name": "Protective Canopy",
       "effect": "Tutti gli Elemental RES +15%. Physical RES +15%.",
       "description": "4 elementi diversi."
+    },
+    {
+      "key": "sprawling-greenery",
+      "name": "Sprawling Greenery",
+      "effect": "Dopo aver provocato una reazione Burning, Quicken o Bloom, tutti i membri vicini del party ottengono Elemental Mastery +30 per 6s. Se si provoca una reazione Aggravate, Spread, Hyperbloom o Burgeon, tutti i membri vicini del party ottengono Elemental Mastery +20 per 6s. La durata di un effetto è indipendente dall’altra.",
+      "description": null
     }
   ],
   "monsters": [

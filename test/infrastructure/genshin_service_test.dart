@@ -800,7 +800,7 @@ void main() {
       for (final lang in languages) {
         await service.init(lang);
         final reactions = service.elements.getElementReactions();
-        expect(reactions.length, equals(11));
+        expect(reactions.length, equals(17));
         for (final reaction in reactions) {
           expect(reaction.name, allOf([isNotNull, isNotEmpty]));
           expect(reaction.effect, allOf([isNotNull, isNotEmpty]));
@@ -821,7 +821,7 @@ void main() {
       for (final lang in languages) {
         await service.init(lang);
         final resonances = service.elements.getElementResonances();
-        expect(resonances.length, equals(7));
+        expect(resonances.length, equals(8));
         for (final resonance in resonances) {
           expect(resonance.name, allOf([isNotNull, isNotEmpty]));
           expect(resonance.effect, allOf([isNotNull, isNotEmpty]));

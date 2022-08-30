@@ -987,6 +987,93 @@
       ]
     },
     {
+      "key": "candace",
+      "name": "Candace",
+      "title": "？？？",
+      "description": "？？？",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ]
+    },
+    {
       "key": "chongyun",
       "name": "Chongyun",
       "title": "ร่องรอยในหิมะ",
@@ -1231,6 +1318,93 @@
           "key": "c6",
           "title": "Forest of Falling Arrows",
           "description": "เมื่อ Floral Ring ถูกเป้าหมาย จะสร้าง Cuilein-Anbar จิ๋ว ขึ้นมาหนึ่งอัน ซึ่งจะทำให้เกิดความเสียหายไม้เป็น 200% ของพลังโจมตีของ Collei\nในแต่ละครั้งที่ใช้ Floral Brush จะทำให้เกิด Cuilein-Anbar จิ๋ว ได้มากสุด 1 ครั้ง\n",
+          "descriptions": []
+        }
+      ]
+    },
+    {
+      "key": "cyno",
+      "name": "Cyno",
+      "title": "？？？",
+      "description": "？？？",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
           "descriptions": []
         }
       ]
@@ -3896,6 +4070,93 @@
           "key": "c6",
           "title": "Rhetorics of Calamitas",
           "description": "หลังจากเข้าสู่สภาวะ Illusory Torrent ความเสียหายจาก การชาร์จโจมตีของ Mona ครั้งต่อไปจะเพิ่มขึ้น 60% ทุก 1 วินาที\r\nด้วยวิธีนี้จะเพิ่มความเสียหาย ชาร์จโจมตีได้สูงสุด 180% เอฟเฟกต์นี้จะคงอยู่ได้สูงสุด 8 วินาที\r\n",
+          "descriptions": []
+        }
+      ]
+    },
+    {
+      "key": "nilou",
+      "name": "Nilou",
+      "title": "？？？",
+      "description": "？？？",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
           "descriptions": []
         }
       ]
@@ -11785,6 +12046,42 @@
       "name": "Crystallize",
       "effect": "Absorbs the element and drops a crystal of that same element. The crystal will give an elemental shield. The shield absorbs all types of damage, but it protects more efficiently against the shield's element.",
       "description": null
+    },
+    {
+      "key": "bloom",
+      "name": "Bloom",
+      "effect": "Creates a Dendro Core that explode after 6 seconds, dealing AoE Dendro DMG in a 5m radius to both enemies and players.",
+      "description": null
+    },
+    {
+      "key": "hyperbloom",
+      "name": "Hyperbloom",
+      "effect": "Triggered when applying Electro to a Dendro Core. Transforms the Dendro Core into a homing Sprawling Shot that deals increased AoE Dendro DMG in a much smaller AoE.",
+      "description": null
+    },
+    {
+      "key": "burgeon",
+      "name": "Burgeon",
+      "effect": "Triggered when applying Pyro to a Dendro Core. Detonates the Dendro Core immediately, dealing increased AoE Dendro DMG.",
+      "description": null
+    },
+    {
+      "key": "quicken",
+      "name": "Quicken",
+      "effect": "Applies a Quicken aura that decays over time.",
+      "description": null
+    },
+    {
+      "key": "aggravate",
+      "name": "Aggravate",
+      "effect": "Triggered when applying Electro to an entity with the Quicken aura. Adds Flat DMG Bonus to the attack that triggers this reaction.",
+      "description": null
+    },
+    {
+      "key": "spread",
+      "name": "Spread",
+      "effect": "Triggered when applying Dendro to an entity with the Quicken aura. Adds Flat DMG Bonus to the attack that triggers this reaction.",
+      "description": null
     }
   ],
   "resonance": [
@@ -11829,6 +12126,12 @@
       "name": "Protective Canopy",
       "effect": "All Elemental RES by 15%. Physical RES + 15%",
       "description": "Any 4 Unique Elements"
+    },
+    {
+      "key": "sprawling-greenery",
+      "name": "Sprawling Greenery",
+      "effect": "After triggering Burning, Quicken, or Bloom reactions, all nearby party members gain 30 Elemental Mastery for 6s. After triggering Aggravate, Spread, Hyperbloom, or Burgeon reactions, all nearby party members gain 20 Elemental Mastery for 6s. The durations of the aforementioned effects will be counted independently.",
+      "description": null
     }
   ],
   "monsters": [

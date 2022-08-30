@@ -1026,6 +1026,93 @@
       ]
     },
     {
+      "key": "candace",
+      "name": "Candace",
+      "title": "？？？",
+      "description": "？？？",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ]
+    },
+    {
       "key": "chongyun",
       "name": "Chongyun",
       "title": "Corps de glace et cœur de feu",
@@ -1270,6 +1357,93 @@
           "key": "c6",
           "title": "Bosquet de flèches",
           "description": "Lorsque l’anneau floral touche, il crée un Cuilein-Anbar miniature qui inflige des DGT Dendro d’une valeur équivalant à 200 % de l’ATQ de Collei.\nChaque utilisation de Brosse florale permet de créer 1 Cuilein-Anbar miniature maximum.\n",
+          "descriptions": []
+        }
+      ]
+    },
+    {
+      "key": "cyno",
+      "name": "Cyno",
+      "title": "？？？",
+      "description": "？？？",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
           "descriptions": []
         }
       ]
@@ -3970,6 +4144,93 @@
           "key": "c6",
           "title": "Rhétorique de l'adversité",
           "description": "Dans l'état Vicissitude, Mona obtient un bonus de 60 % DGT pour sa prochaine attaque chargée à chaque seconde passée à se déplacer.\r\nCet effet est cumulable 3 fois max (bonus de 180 %) et dure 8 s.\r\n",
+          "descriptions": []
+        }
+      ]
+    },
+    {
+      "key": "nilou",
+      "name": "Nilou",
+      "title": "？？？",
+      "description": "？？？",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
           "descriptions": []
         }
       ]
@@ -11826,7 +12087,7 @@
     {
       "key": "vaporize",
       "name": "Évaporation",
-      "effect": "Multiplie par 2 les DGT Pyro de la réaction lorsqu’une attaque Pyro déclenche la réaction.",
+      "effect": "Multiplie par 1.5 les DGT Pyro de la réaction lorsqu’une attaque Pyro déclenche la réaction.",
       "description": null
     },
     {
@@ -11850,7 +12111,7 @@
     {
       "key": "vaporize-reverse",
       "name": "Évaporation (Inversée)",
-      "effect": "Multiplie par 1.5 les DGT Hydro de la réaction lorsqu’une attaque Hydro déclenche la réaction.",
+      "effect": "Multiplie par 2 les DGT Hydro de la réaction lorsqu’une attaque Hydro déclenche la réaction.",
       "description": null
     },
     {
@@ -11887,6 +12148,42 @@
       "key": "crystallize",
       "name": "Cristallisation",
       "effect": "Génère des fragments élémentaires et protège le personnage qui récupère le fragment à l’aide de différents types de boucliers élémentaires. La Cristallisation absorbe les deux éléments mis en réaction. Le bouclier élémentaire protège de tous types de DGT mais absorbe plus efficacement les DGT infligés par le même élément que celui du fragment cristallisé (Exemple : un bouclier Électro protège mieux des DGT Électro).",
+      "description": null
+    },
+    {
+      "key": "bloom",
+      "name": "Fleurissement",
+      "effect": "Génère un noyau Dendro qui explose après 6s, infligeant des DGT Dendro de zone dans un rayon de 6 mètres, aussi bien aux ennemis qu’aux alliés.",
+      "description": null
+    },
+    {
+      "key": "hyperbloom",
+      "name": "Exubérance",
+      "effect": "Se déclenche lorsqu’un noyau Dendro entre en contact avec l’élément Électro. Transformant les noyaux Dendro en projectiles tentaculaires poursuivant les ennemis.",
+      "description": null
+    },
+    {
+      "key": "burgeon",
+      "name": "Bourgeonnement",
+      "effect": "Se déclenche lorsqu’un noyau Dendro entre en contact avec l’élément Pyro. Créant une détonation qui inflige des DGT Dendro de zone.",
+      "description": null
+    },
+    {
+      "key": "quicken",
+      "name": "Stimulation",
+      "effect": "Fait passer l’ennemi dans l’état Stimulé.",
+      "description": null
+    },
+    {
+      "key": "aggravate",
+      "name": "Suractivation",
+      "effect": "Se déclenche lorsqu’on applique l’élément Électro à un ennemi Stimulé. Ajoute un bonus de DGT fixe (non proportionnel aux DGT infligés) aux attaques reçues par l’ennemi qui déclenchent la réaction.",
+      "description": null
+    },
+    {
+      "key": "spread",
+      "name": "Propagation",
+      "effect": "Se déclenche lorsqu’on applique l’élément Dendro à un ennemi Stimulé. Ajoute un bonus de DGT fixe (non proportionnel aux DGT infligés) aux attaques reçues par l’ennemi qui déclenchent la réaction.",
       "description": null
     }
   ],
@@ -11932,6 +12229,12 @@
       "name": "Lianes protectrices",
       "effect": "Augmente toutes les RES élémentaires et la RES physique de 15%",
       "description": "4 éléments différents"
+    },
+    {
+      "key": "sprawling-greenery",
+      "name": "Plante grimpante",
+      "effect": "Augmente la maîtrise élémentaire de 50 pts. Après avoir déclenché une réaction de Brûlure, de Fleurissement ou de Stimulation, la maîtrise élémentaire de tous les personnages de l’équipe à proximité augmente de 30 pts pendant 6s. Après avoir déclenché une réaction de Suractivation, de Propagation, d’Exubérance ou de Bourgeonnement, la maîtrise élémentaire des personnages de l’équipe à proximité augmente de 20 pts pendant 6s. La durée de ces effets est calculée indépendamment.",
+      "description": null
     }
   ],
   "monsters": [

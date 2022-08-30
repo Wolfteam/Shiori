@@ -1021,6 +1021,93 @@
       ]
     },
     {
+      "key": "candace",
+      "name": "Candace",
+      "title": "？？？",
+      "description": "？？？",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ]
+    },
+    {
       "key": "chongyun",
       "name": "Chongyun",
       "title": "el Hielo Ardiente",
@@ -1265,6 +1352,93 @@
           "key": "c6",
           "title": "Bosque de flechas",
           "description": "Cuando el bumerán foliáceo golpea a un enemigo, se crea un mini-Colleámbar que inflige Daño Dendro en una cantidad equivalente al 200% del ATQ de Collei.\nSolo se puede crear 1 mini-Colleámbar cada vez que se use Caricia de las flores.\n",
+          "descriptions": []
+        }
+      ]
+    },
+    {
+      "key": "cyno",
+      "name": "Cyno",
+      "title": "？？？",
+      "description": "？？？",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
           "descriptions": []
         }
       ]
@@ -3960,6 +4134,93 @@
           "key": "c6",
           "title": "Retórica de la calamidad",
           "description": "Al entrar en Torrente ilusorio, Mona obtiene un aumento del 60% de daño en su próximo Ataque Cargado por cada segundo que se mueve.\r\nEl máximo bono de daño que se puede alcanzar es del 180%. Este efecto solo puede durar un máximo de 8 s.\r\n",
+          "descriptions": []
+        }
+      ]
+    },
+    {
+      "key": "nilou",
+      "name": "Nilou",
+      "title": "？？？",
+      "description": "？？？",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
           "descriptions": []
         }
       ]
@@ -11872,6 +12133,42 @@
       "name": "Cristalizar",
       "effect": "Absorbe el elemento y arroja un cristal del el mismo elemento. El cristal otorgará un escudo elemental. El escudo absorbe todo tipo de daños, pero es más efectivo contra daño del mismo elemento.",
       "description": null
+    },
+    {
+      "key": "bloom",
+      "name": "Florecimiento",
+      "effect": "Crea un núcleo Dendro que explota a los 6 segundos, ocasionando Daño Dendro en el AdE en un radio de 5m tanto a enemigos como jugadores.",
+      "description": null
+    },
+    {
+      "key": "hyperbloom",
+      "name": "Sobreflorecimiento",
+      "effect": "Ocasionada al aplicar Electro a un núcleo Dendro. Transforma el núcleo Dendro en un proyectil enredador que inflige daño Dendro incrementado en un AdE mucho más pequeña.",
+      "description": null
+    },
+    {
+      "key": "burgeon",
+      "name": "Crepitar",
+      "effect": "Ocasionada al aplicar Pyro a un núcleo Dendro. Detona el núcleo Dendro inmediatamente ocasionando un daño Dendro incrementado en el AdE.",
+      "description": null
+    },
+    {
+      "key": "quicken",
+      "name": "Aceleración",
+      "effect": "Aplica un aura de Aceleración que desaparece con en el tiempo.",
+      "description": null
+    },
+    {
+      "key": "aggravate",
+      "name": "Intensificación",
+      "effect": "Ocasionada al aplicar Electro a una entidad con aura de Aceleración. Agrega un Bono de daño Plano al ataque que desencadena la reacción.",
+      "description": null
+    },
+    {
+      "key": "spread",
+      "name": "Propagación",
+      "effect": "Ocasionada al aplicar Dendro a una entidad con aura de Aceleración. Agrega un Bono de daño Plano al ataque que desencadena la reacción.",
+      "description": null
     }
   ],
   "resonance": [
@@ -11902,7 +12199,7 @@
     {
       "key": "high-voltage",
       "name": "Alto Voltaje",
-      "effect": "Reduce la duración de efectos con Hydro en 40%. Superconductor, Sobrecarga y Electrocargado tienen 100% de generar una Particula Elemental Electro (TdE 5 s.).",
+      "effect": "Reduce la duración de efectos con Hydro en 40%. Superconductor, Sobrecarga, Electrocargado, Aceleración, Intensificación y Sobreflorecimiento tienen 100% de generar una Particula Elemental Electro (TdE 5 s.).",
       "description": null
     },
     {
@@ -11916,6 +12213,12 @@
       "name": "Cubierta Protectora",
       "effect": "Todas las RES elementales + 15%, RES Física + 15%.",
       "description": "Cualquiera de los 4 elementos únicos"
+    },
+    {
+      "key": "sprawling-greenery",
+      "name": "Planta Trepadora",
+      "effect": "La Maestría Elemental aumenta en 50pts. Tras causar Quemadura, Aceleración o Florecimiento, la Maestría Elemental de todos los miembros del equipo cercanos aumenta en 30pts. durante 6s. Tras causar una reacción de Intensificación, Propagación, Sobreflorecimiento o Crepitar, la Maestría Elemental de todos los miembros del equipo cercanos aumenta en 20pts. durante 6s. La duración de estos efectos se calcula de manera independiente",
+      "description": null
     }
   ],
   "monsters": [

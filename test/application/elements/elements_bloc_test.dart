@@ -40,8 +40,8 @@ void main() {
         loading: (_) => throw Exception('Invalid state'),
         loaded: (state) {
           expect(state.debuffs.length, 4);
-          expect(state.reactions.length, 11);
-          expect(state.resonances.length, 7);
+          expect(state.reactions.length, 17);
+          expect(state.resonances.length, 8);
 
           for (final debuff in state.debuffs) {
             checkTranslation(debuff.name, canBeNull: false);

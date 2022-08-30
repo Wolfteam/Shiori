@@ -1025,6 +1025,93 @@
       ]
     },
     {
+      "key": "candace",
+      "name": "Candace",
+      "title": "？？？",
+      "description": "？？？",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ]
+    },
+    {
       "key": "chongyun",
       "name": "Chongyun",
       "title": "Spuren im schmelzenden Schnee",
@@ -1269,6 +1356,93 @@
           "key": "c6",
           "title": "Stählerner Wald aus Pfeilen",
           "description": "Bei Treffern mit dem fliegenden Laubrad erschafft es ein Mini-Cuilein-Anbar, das Dendro-Schaden in Höhe von 200 % von Colleis ANG verursacht.\nJede Anwendung von Der Kämpferin Laub kann nur 1 Mini-Cuilein-Anbar erschaffen.\n",
+          "descriptions": []
+        }
+      ]
+    },
+    {
+      "key": "cyno",
+      "name": "Cyno",
+      "title": "？？？",
+      "description": "？？？",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
           "descriptions": []
         }
       ]
@@ -3965,6 +4139,93 @@
           "key": "c6",
           "title": "Rhetorik des Unglücks",
           "description": "Erhöht den Schaden des nächsten heftigen Schlags für jede Sekunde, die sich Mona im Zustand Irreführende Strömung bewegt, um 60 %.\r\nAuf diese Weise kann der Schaden heftiger Schläge um bis zu 180 % erhöht werden und hält bis zu 8 s lang.\r\n",
+          "descriptions": []
+        }
+      ]
+    },
+    {
+      "key": "nilou",
+      "name": "Nilou",
+      "title": "？？？",
+      "description": "？？？",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
           "descriptions": []
         }
       ]
@@ -11901,6 +12162,42 @@
       "name": "Kristallisation",
       "effect": "Absorbiert das Element (Hydro, Pyro, Kryo, Elektro) und lässt einen Kristall fallen, der einen Schild gibt. Der Schild stoppt zwar jede Art von Schaden, aber beschützt gegen das Element des Schildes am effizientesten",
       "description": null
+    },
+    {
+      "key": "bloom",
+      "name": "Bloom",
+      "effect": "Creates a Dendro Core that explode after 6 seconds, dealing AoE Dendro DMG in a 5m radius to both enemies and players.",
+      "description": null
+    },
+    {
+      "key": "hyperbloom",
+      "name": "Hyperbloom",
+      "effect": "Triggered when applying Electro to a Dendro Core. Transforms the Dendro Core into a homing Sprawling Shot that deals increased AoE Dendro DMG in a much smaller AoE.",
+      "description": null
+    },
+    {
+      "key": "burgeon",
+      "name": "Burgeon",
+      "effect": "Triggered when applying Pyro to a Dendro Core. Detonates the Dendro Core immediately, dealing increased AoE Dendro DMG.",
+      "description": null
+    },
+    {
+      "key": "quicken",
+      "name": "Quicken",
+      "effect": "Applies a Quicken aura that decays over time.",
+      "description": null
+    },
+    {
+      "key": "aggravate",
+      "name": "Aggravate",
+      "effect": "Triggered when applying Electro to an entity with the Quicken aura. Adds Flat DMG Bonus to the attack that triggers this reaction.",
+      "description": null
+    },
+    {
+      "key": "spread",
+      "name": "Spread",
+      "effect": "Triggered when applying Dendro to an entity with the Quicken aura. Adds Flat DMG Bonus to the attack that triggers this reaction.",
+      "description": null
     }
   ],
   "resonance": [
@@ -11945,6 +12242,12 @@
       "name": "Verwobene Wehr",
       "effect": "Erhöht den WDS gegen alle Elemente um 15% und den phys. WDS um 15%.",
       "description": "4 unterschiedliche Elemente"
+    },
+    {
+      "key": "sprawling-greenery",
+      "name": "Sprawling Greenery",
+      "effect": "After triggering Burning, Quicken, or Bloom reactions, all nearby party members gain 30 Elemental Mastery for 6s. After triggering Aggravate, Spread, Hyperbloom, or Burgeon reactions, all nearby party members gain 20 Elemental Mastery for 6s. The durations of the aforementioned effects will be counted independently.",
+      "description": null
     }
   ],
   "monsters": [
