@@ -19,7 +19,7 @@ void main() {
         for (final bonus in artifact.bonus) {
           expect(bonus.bonus, allOf([isNotEmpty, isNotNull]));
           if (artifact.bonus.length == 2) {
-            expect(bonus.pieces, isIn([2, 4]));
+            expect(bonus.pieces, inInclusiveRange(1, 4));
           } else {
             expect(bonus.pieces == 1, isTrue);
           }
@@ -35,7 +35,7 @@ void main() {
       final detail = service.getArtifact(artifact.key);
       checkKey(detail.key);
       checkAsset(service.resources.getArtifactImagePath(detail.image));
-      expect(detail.minRarity, inInclusiveRange(2, 4));
+      expect(detail.minRarity, inInclusiveRange(1, 4));
       expect(detail.maxRarity, inInclusiveRange(3, 5));
     }
   });

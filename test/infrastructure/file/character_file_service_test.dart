@@ -58,7 +58,15 @@ void main() {
     final localeService = getLocaleService(AppLanguageType.english);
     final characters = _service.getCharactersForCard();
     for (final character in characters) {
-      final travelerKeys = ['traveler-geo', 'traveler-electro', 'traveler-anemo', 'traveler-hydro', 'traveler-pyro', 'traveler-cryo'];
+      final travelerKeys = [
+        'traveler-geo',
+        'traveler-electro',
+        'traveler-anemo',
+        'traveler-hydro',
+        'traveler-pyro',
+        'traveler-cryo',
+        'traveler-dendro'
+      ];
       final detail = _service.getCharacter(character.key);
       final isTraveler = travelerKeys.contains(character.key);
       checkKey(detail.key);
