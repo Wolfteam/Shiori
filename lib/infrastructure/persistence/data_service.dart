@@ -60,16 +60,6 @@ class DataServiceImpl implements DataService {
     _calculator = CalculatorDataServiceImpl(genshinService, calculatorService, _inventory, resourceService);
   }
 
-  Future<void> _init () async {
-    _registerAdapters();
-    await _calculator.init();
-    await _inventory.init();
-    await _builds.init();
-    await _notifications.init();
-    await _gameCodes.init();
-    await _tierList.init();
-  }
-
   Future<void> _init() async {
     _registerAdapters();
     await _calculator.init();
