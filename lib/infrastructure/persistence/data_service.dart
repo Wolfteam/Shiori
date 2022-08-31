@@ -70,6 +70,16 @@ class DataServiceImpl implements DataService {
     await _tierList.init();
   }
 
+  Future<void> _init() async {
+    _registerAdapters();
+    await _calculator.init();
+    await _inventory.init();
+    await _builds.init();
+    await _notifications.init();
+    await _gameCodes.init();
+    await _tierList.init();
+  }
+
   @override
   Future<void> init({String dir = 'shiori_data'}) async {
     await _initLock.synchronized(() async {
