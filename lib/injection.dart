@@ -1,5 +1,6 @@
 import 'package:get_it/get_it.dart';
 import 'package:shiori/application/bloc.dart';
+import 'package:shiori/domain/services/api_service.dart';
 import 'package:shiori/domain/services/calculator_service.dart';
 import 'package:shiori/domain/services/changelog_provider.dart';
 import 'package:shiori/domain/services/data_service.dart';
@@ -277,6 +278,10 @@ class Injection {
     final settingsService = SettingsServiceImpl(loggingService);
     await settingsService.init();
     getIt.registerSingleton<SettingsService>(settingsService);
+
+    final apiService = ApiServiceImpl(loggingService);
+    getIt.registerSingleton<ApiService>(apiService);
+
     getIt.registerSingleton<LocaleService>(LocaleServiceImpl(getIt<SettingsService>()));
     getIt.registerSingleton<GenshinService>(GenshinServiceImpl(getIt<LocaleService>()));
     getIt.registerSingleton<CalculatorService>(CalculatorServiceImpl(getIt<GenshinService>()));
@@ -291,7 +296,7 @@ class Injection {
     await notificationService.init();
     getIt.registerSingleton<NotificationService>(notificationService);
 
-    final changelogProvider = ChangelogProviderImpl(loggingService, networkService);
+    final changelogProvider = ChangelogProviderImpl(loggingService, networkService, apiService);
     getIt.registerSingleton<ChangelogProvider>(changelogProvider);
 
     final purchaseService = PurchaseServiceImpl(loggingService);

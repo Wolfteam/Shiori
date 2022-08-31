@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:flutter/foundation.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:shiori/domain/models/entities.dart';
 import 'package:shiori/domain/services/calculator_service.dart';
@@ -58,17 +59,30 @@ class DataServiceImpl implements DataService {
     _calculator = CalculatorDataServiceImpl(genshinService, calculatorService, _inventory);
   }
 
+  Future<void> _init() async {
+    _registerAdapters();
+    await _calculator.init();
+    await _inventory.init();
+    await _builds.init();
+    await _notifications.init();
+    await _gameCodes.init();
+    await _tierList.init();
+  }
+
   @override
   Future<void> init({String dir = 'shiori_data'}) async {
     await _initLock.synchronized(() async {
       await Hive.initFlutter(dir);
-      _registerAdapters();
-      await _calculator.init();
-      await _inventory.init();
-      await _builds.init();
-      await _notifications.init();
-      await _gameCodes.init();
-      await _tierList.init();
+      await _init();
+    });
+  }
+
+  @visibleForTesting
+  @override
+  Future<void> initForTests(String path) async {
+    await _initLock.synchronized(() async {
+      Hive.init(path);
+      await _init();
     });
   }
 
