@@ -3,6 +3,7 @@ import 'package:shiori/domain/enums/enums.dart';
 
 import 'models/models.dart';
 
+const na = 'N/A';
 const githubPage = 'https://github.com/Wolfteam/Shiori';
 
 //This order matches the one in the game, and the numbers represent each image
