@@ -6,8 +6,7 @@ import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/services/genshin_service.dart';
 import 'package:shiori/domain/services/locale_service.dart';
 import 'package:shiori/domain/services/settings_service.dart';
-import 'package:shiori/infrastructure/genshin_service.dart';
-import 'package:shiori/infrastructure/locale_service.dart';
+import 'package:shiori/infrastructure/infrastructure.dart';
 
 import '../../mocks.mocks.dart';
 
