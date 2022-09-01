@@ -108,20 +108,45 @@ void checkItemAscensionMaterialFileModel(MaterialFileService materialFileService
   }
 }
 
-void checkCharacterFileAscensionMaterialModel(MaterialFileService materialFileService, List<CharacterFileAscensionMaterialModel> all) {
+void checkCharacterFileAscensionMaterialModel(
+  MaterialFileService materialFileService,
+  List<CharacterFileAscensionMaterialModel> all, {
+  bool checkMaterialType = true,
+}) {
   expect(all, isNotEmpty);
   for (final ascMaterial in all) {
     expect(ascMaterial.rank, allOf([greaterThanOrEqualTo(1), lessThanOrEqualTo(6)]));
     expect(ascMaterial.level, allOf([greaterThanOrEqualTo(20), lessThanOrEqualTo(80)]));
     checkItemAscensionMaterialFileModel(materialFileService, ascMaterial.materials);
+    if (checkMaterialType) {
+      expect(ascMaterial.materials.where((el) => el.type == MaterialType.jewels).length, 1);
+      expect(ascMaterial.materials.where((el) => el.type == MaterialType.local).length, 1);
+      expect(ascMaterial.materials.where((el) => el.type == MaterialType.common).length, 1);
+      expect(ascMaterial.materials.where((el) => el.type == MaterialType.currency).length, 1);
+    }
   }
 }
 
-void checkCharacterFileTalentAscensionMaterialModel(MaterialFileService materialFileService, List<CharacterFileTalentAscensionMaterialModel> all) {
+void checkCharacterFileTalentAscensionMaterialModel(
+  MaterialFileService materialFileService,
+  List<CharacterFileTalentAscensionMaterialModel> all, {
+  bool checkMaterialTypeAndLength = true,
+}) {
   expect(all, isNotEmpty);
   for (final ascMaterial in all) {
     expect(ascMaterial.level, inInclusiveRange(2, 10));
     checkItemAscensionMaterialFileModel(materialFileService, ascMaterial.materials);
+
+    if (checkMaterialTypeAndLength) {
+      final expectedLengthForTalents = ascMaterial.level == 10
+          ? 3
+          : ascMaterial.level >= 7
+              ? 2
+              : 1;
+      expect(ascMaterial.materials.where((el) => el.type == MaterialType.talents).length, expectedLengthForTalents);
+      expect(ascMaterial.materials.where((el) => el.type == MaterialType.common).length, 1);
+      expect(ascMaterial.materials.where((el) => el.type == MaterialType.currency).length, 1);
+    }
   }
 }
 

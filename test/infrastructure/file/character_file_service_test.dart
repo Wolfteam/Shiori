@@ -123,13 +123,17 @@ void main() {
         expect(detail.stats, isNotEmpty);
       }
 
-      checkCharacterFileAscensionMaterialModel(_service.materials, detail.ascensionMaterials);
+      checkCharacterFileAscensionMaterialModel(_service.materials, detail.ascensionMaterials, checkMaterialType: !detail.isComingSoon);
       if (!isTraveler) {
-        checkCharacterFileTalentAscensionMaterialModel(_service.materials, detail.talentAscensionMaterials);
+        checkCharacterFileTalentAscensionMaterialModel(
+          _service.materials,
+          detail.talentAscensionMaterials,
+          checkMaterialTypeAndLength: !detail.isComingSoon,
+        );
       } else {
         for (final ascMaterial in detail.multiTalentAscensionMaterials!) {
           expect(ascMaterial.number, inInclusiveRange(1, 3));
-          checkCharacterFileTalentAscensionMaterialModel(_service.materials, ascMaterial.materials);
+          checkCharacterFileTalentAscensionMaterialModel(_service.materials, ascMaterial.materials, checkMaterialTypeAndLength: !detail.isComingSoon);
         }
       }
 
