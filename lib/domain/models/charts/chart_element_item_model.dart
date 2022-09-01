@@ -5,7 +5,7 @@ import 'package:shiori/domain/enums/enums.dart';
 
 part 'chart_element_item_model.freezed.dart';
 
-@freezed
+@Freezed(makeCollectionsUnmodifiable: false)
 class ChartElementItemModel with _$ChartElementItemModel {
   const factory ChartElementItemModel({
     required ElementType type,

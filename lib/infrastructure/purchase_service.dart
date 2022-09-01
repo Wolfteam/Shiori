@@ -92,8 +92,8 @@ class PurchaseServiceImpl implements PurchaseService {
             (p) => PackageItemModel(
               identifier: p.identifier,
               offeringIdentifier: p.offeringIdentifier,
-              priceString: p.product.priceString,
-              productIdentifier: p.product.identifier,
+              priceString: p.storeProduct.priceString,
+              productIdentifier: p.storeProduct.identifier,
             ),
           )
           .toList();
@@ -112,7 +112,7 @@ class PurchaseServiceImpl implements PurchaseService {
     try {
       //behind the scenes, the purchase method just uses two params...
       //that's why I create dummy object to satisfy the constructor
-      const dummyProduct = Product('', '', '', 0, '0', '');
+      const dummyProduct = StoreProduct('', '', '', 0, '0', '');
       final package = Package(identifier, PackageType.lifetime, dummyProduct, offeringIdentifier);
       await Purchases.purchasePackage(package);
       return true;
@@ -158,7 +158,7 @@ class PurchaseServiceImpl implements PurchaseService {
 
   Future<List<AppUnlockedFeature>> _getUnlockedFeatures({String? entitlementIdentifier}) async {
     try {
-      if (_unlockedFeatures != null){
+      if (_unlockedFeatures != null) {
         return _unlockedFeatures!;
       }
 
@@ -170,7 +170,7 @@ class PurchaseServiceImpl implements PurchaseService {
         return [];
       }
 
-      final transactions = await Purchases.restoreTransactions();
+      final transactions = await Purchases.restorePurchases();
       if (entitlementIdentifier.isNullEmptyOrWhitespace) {
         final activeEntitlements = transactions.entitlements.active.values.any((el) => el.isActive);
         _unlockedFeatures = activeEntitlements ? AppUnlockedFeature.values : [];

@@ -3,7 +3,7 @@ import 'package:shiori/domain/enums/enums.dart';
 
 part 'banner_history_item_model.freezed.dart';
 
-@freezed
+@Freezed(makeCollectionsUnmodifiable: false)
 class BannerHistoryItemModel with _$BannerHistoryItemModel {
   const factory BannerHistoryItemModel({
     required String key,
