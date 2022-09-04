@@ -97,7 +97,7 @@ void main() {
   group('Get elements for charts', () {
     test('valid versions', () async {
       final versions = _service.getBannerHistoryVersions(SortDirectionType.asc);
-      final expectedLength = ElementType.values.length - 1;
+      final expectedLength = ElementType.values.length;
 
       final elements = _service.getElementsForCharts(versions.first, versions.last);
       expect(elements.length, expectedLength);

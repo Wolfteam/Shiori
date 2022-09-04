@@ -1,3 +1,4 @@
+export 'package:shiori/infrastructure/api_service.dart';
 export 'package:shiori/infrastructure/calculator_service.dart';
 export 'package:shiori/infrastructure/changelog_provider.dart';
 export 'package:shiori/infrastructure/device_info_service.dart';

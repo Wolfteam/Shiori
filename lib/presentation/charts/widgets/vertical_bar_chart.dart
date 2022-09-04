@@ -11,8 +11,9 @@ class VerticalBarDataModel {
   final Color color;
   final int x;
   final double y;
+  final bool useIndexAsX;
 
-  VerticalBarDataModel(this.index, this.color, this.x, this.y);
+  VerticalBarDataModel(this.index, this.color, this.x, this.y, {this.useIndexAsX = false});
 }
 
 const _textStyle = TextStyle(
@@ -71,7 +72,8 @@ class VerticalBarChart extends StatelessWidget {
           ),
           touchCallback: (FlTouchEvent event, response) {
             if (event is FlTapUpEvent && response?.spot?.touchedBarGroupIndex != null) {
-              onBarChartTap?.call(response!.spot!.touchedBarGroupIndex, response.spot!.touchedRodDataIndex);
+              final spot = response!.spot!;
+              onBarChartTap?.call(spot.touchedBarGroupIndex, spot.touchedRodDataIndex);
             }
           },
         ),
@@ -104,7 +106,7 @@ class VerticalBarChart extends StatelessWidget {
         barGroups: items
             .map(
               (e) => BarChartGroupData(
-                x: e.x,
+                x: e.useIndexAsX ? e.index : e.x,
                 barRods: getBarChartRodData?.call(e.x) ??
                     [
                       BarChartRodData(

@@ -55,14 +55,10 @@ const _script = '''
         if (ad2.length > 0)
           ad2[0].remove();
           
-        const appbars = document.getElementsByClassName('MuiAppBar-root');
-        if (appbars.length > 1)
-          appbars[1].remove();
-          
-        const buttons = document.getElementsByClassName('MuiTab-root');
-        if (buttons.length > 0) {
-          buttons[2].remove();
-          buttons[1].remove();
+        const divs = document.getElementsByClassName("MapSidebarTabs")[0].childNodes;
+        if (divs.length > 2) {
+          divs[3].remove();
+          divs[2].remove();
         }
         
         const extraButtons = document.getElementsByClassName('TopNav');
@@ -76,10 +72,11 @@ const _script = '''
         if (hrs.length > 0) {
           const hr = hrs[0];
           const parent = hr.parentElement;
-          for (var i = 0; i < 3; i++) {
-            parent.lastElementChild.remove();
+          for (var i = 3; i > 0; i--) {
+            const el = parent.children[parent.children.length - i];
+            el.innerHTML = "";
+            el.style.display = 'none'
           }
-          hr.remove();
         }
       }
       catch(_){

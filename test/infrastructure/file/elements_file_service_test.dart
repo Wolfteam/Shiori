@@ -22,7 +22,7 @@ void main() {
     for (final lang in AppLanguageType.values) {
       final service = await getElementFileService(lang);
       final reactions = service.getElementReactions();
-      expect(reactions.length, equals(11));
+      expect(reactions.length, equals(17));
       for (final reaction in reactions) {
         expect(reaction.name, allOf([isNotNull, isNotEmpty]));
         expect(reaction.effect, allOf([isNotNull, isNotEmpty]));
@@ -41,7 +41,7 @@ void main() {
     for (final lang in AppLanguageType.values) {
       final service = await getElementFileService(lang);
       final resonances = service.getElementResonances();
-      expect(resonances.length, equals(7));
+      expect(resonances.length, equals(8));
       for (final resonance in resonances) {
         expect(resonance.name, allOf([isNotNull, isNotEmpty]));
         expect(resonance.effect, allOf([isNotNull, isNotEmpty]));
