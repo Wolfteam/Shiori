@@ -2,7 +2,7 @@
   "bows": [
     {
       "key": "alley-hunter",
-      "image": "alley-hunter.png",
+      "image": "alley-hunter.webp",
       "type": "bow",
       "atk": 44.0,
       "rarity": 4,
@@ -252,7 +252,7 @@
     },
     {
       "key": "amos-bow",
-      "image": "amos-bow.png",
+      "image": "amos-bow.webp",
       "type": "bow",
       "atk": 46.0,
       "rarity": 5,
@@ -502,7 +502,7 @@
     },
     {
       "key": "aqua-simulacra",
-      "image": "aqua-simulacra.png",
+      "image": "aqua-simulacra.webp",
       "type": "bow",
       "atk": 44.0,
       "rarity": 5,
@@ -752,7 +752,7 @@
     },
     {
       "key": "blackcliff-warbow",
-      "image": "blackcliff-warbow.png",
+      "image": "blackcliff-warbow.webp",
       "type": "bow",
       "atk": 44.0,
       "rarity": 4,
@@ -1002,7 +1002,7 @@
     },
     {
       "key": "compound-bow",
-      "image": "compound-bow.png",
+      "image": "compound-bow.webp",
       "type": "bow",
       "atk": 41.0,
       "rarity": 4,
@@ -1268,7 +1268,7 @@
     },
     {
       "key": "elegy-for-the-end",
-      "image": "elegy-for-the-end.png",
+      "image": "elegy-for-the-end.webp",
       "type": "bow",
       "atk": 46.0,
       "rarity": 5,
@@ -1518,7 +1518,7 @@
     },
     {
       "key": "end-of-the-line",
-      "image": "end-of-the-line.png",
+      "image": "end-of-the-line.webp",
       "type": "bow",
       "atk": 42.0,
       "rarity": 4,
@@ -1768,7 +1768,7 @@
     },
     {
       "key": "fading-twilight",
-      "image": "fading-twilight.png",
+      "image": "fading-twilight.webp",
       "type": "bow",
       "atk": 44.0,
       "rarity": 4,
@@ -2018,7 +2018,7 @@
     },
     {
       "key": "favonius-warbow",
-      "image": "favonius-warbow.png",
+      "image": "favonius-warbow.webp",
       "type": "bow",
       "atk": 41.0,
       "rarity": 4,
@@ -2268,7 +2268,7 @@
     },
     {
       "key": "hamayumi",
-      "image": "hamayumi.png",
+      "image": "hamayumi.webp",
       "type": "bow",
       "atk": 41.0,
       "rarity": 4,
@@ -2534,7 +2534,7 @@
     },
     {
       "key": "hunters-bow",
-      "image": "hunters-bow.png",
+      "image": "hunters-bow.webp",
       "type": "bow",
       "atk": 23.0,
       "rarity": 1,
@@ -2705,7 +2705,7 @@
     },
     {
       "key": "hunters-path",
-      "image": "hunters-path.png",
+      "image": "hunters-path.webp",
       "type": "bow",
       "atk": 44.0,
       "rarity": 5,
@@ -2955,7 +2955,7 @@
     },
     {
       "key": "kings-squire",
-      "image": "kings-squire.png",
+      "image": "kings-squire.webp",
       "type": "bow",
       "atk": 41.0,
       "rarity": 4,
@@ -3221,7 +3221,7 @@
     },
     {
       "key": "messenger",
-      "image": "messenger.png",
+      "image": "messenger.webp",
       "type": "bow",
       "atk": 40.0,
       "rarity": 3,
@@ -3471,7 +3471,7 @@
     },
     {
       "key": "mitternachts-waltz",
-      "image": "mitternachts-waltz.png",
+      "image": "mitternachts-waltz.webp",
       "type": "bow",
       "atk": 42.0,
       "rarity": 4,
@@ -3721,7 +3721,7 @@
     },
     {
       "key": "mouuns-moon",
-      "image": "mouuns-moon.png",
+      "image": "mouuns-moon.webp",
       "type": "bow",
       "atk": 44.0,
       "rarity": 4,
@@ -3971,7 +3971,7 @@
     },
     {
       "key": "polar-star",
-      "image": "polar-star.png",
+      "image": "polar-star.webp",
       "type": "bow",
       "atk": 46.0,
       "rarity": 5,
@@ -4221,7 +4221,7 @@
     },
     {
       "key": "predator",
-      "image": "predator.png",
+      "image": "predator.webp",
       "type": "bow",
       "atk": 42.0,
       "rarity": 4,
@@ -4471,7 +4471,7 @@
     },
     {
       "key": "prototype-crescent",
-      "image": "prototype-crescent.png",
+      "image": "prototype-crescent.webp",
       "type": "bow",
       "atk": 42.0,
       "rarity": 4,
@@ -4737,7 +4737,7 @@
     },
     {
       "key": "raven-bow",
-      "image": "raven-bow.png",
+      "image": "raven-bow.webp",
       "type": "bow",
       "atk": 40.0,
       "rarity": 3,
@@ -4987,7 +4987,7 @@
     },
     {
       "key": "recurve-bow",
-      "image": "recurve-bow.png",
+      "image": "recurve-bow.webp",
       "type": "bow",
       "atk": 38.0,
       "rarity": 3,
@@ -5237,7 +5237,7 @@
     },
     {
       "key": "royal-bow",
-      "image": "royal-bow.png",
+      "image": "royal-bow.webp",
       "type": "bow",
       "atk": 42.0,
       "rarity": 4,
@@ -5487,7 +5487,7 @@
     },
     {
       "key": "rust",
-      "image": "rust.png",
+      "image": "rust.webp",
       "type": "bow",
       "atk": 42.0,
       "rarity": 4,
@@ -5737,7 +5737,7 @@
     },
     {
       "key": "sacrificial-bow",
-      "image": "sacrificial-bow.png",
+      "image": "sacrificial-bow.webp",
       "type": "bow",
       "atk": 44.0,
       "rarity": 4,
@@ -5987,7 +5987,7 @@
     },
     {
       "key": "seasoned-hunters-bow",
-      "image": "seasoned-hunters-bow.png",
+      "image": "seasoned-hunters-bow.webp",
       "type": "bow",
       "atk": 33.0,
       "rarity": 2,
@@ -6163,7 +6163,7 @@
     },
     {
       "key": "sharpshooters-oath",
-      "image": "sharpshooters-oath.png",
+      "image": "sharpshooters-oath.webp",
       "type": "bow",
       "atk": 39.0,
       "rarity": 3,
@@ -6413,7 +6413,7 @@
     },
     {
       "key": "skyward-harp",
-      "image": "skyward-harp.png",
+      "image": "skyward-harp.webp",
       "type": "bow",
       "atk": 48.0,
       "rarity": 5,
@@ -6663,7 +6663,7 @@
     },
     {
       "key": "slingshot",
-      "image": "slingshot.png",
+      "image": "slingshot.webp",
       "type": "bow",
       "atk": 38.0,
       "rarity": 3,
@@ -6913,7 +6913,7 @@
     },
     {
       "key": "the-stringless",
-      "image": "the-stringless.png",
+      "image": "the-stringless.webp",
       "type": "bow",
       "atk": 42.0,
       "rarity": 4,
@@ -7163,7 +7163,7 @@
     },
     {
       "key": "the-viridescent-hunt",
-      "image": "the-viridescent-hunt.png",
+      "image": "the-viridescent-hunt.webp",
       "type": "bow",
       "atk": 42.0,
       "rarity": 4,
@@ -7413,7 +7413,7 @@
     },
     {
       "key": "thundering-pulse",
-      "image": "thundering-pulse.png",
+      "image": "thundering-pulse.webp",
       "type": "bow",
       "atk": 46.0,
       "rarity": 5,
@@ -7663,7 +7663,7 @@
     },
     {
       "key": "windblume-ode",
-      "image": "windblume-ode.png",
+      "image": "windblume-ode.webp",
       "type": "bow",
       "atk": 42.0,
       "rarity": 4,
@@ -7915,7 +7915,7 @@
   "swords": [
     {
       "key": "amenoma-kageuchi",
-      "image": "amenoma-kageuchi.png",
+      "image": "amenoma-kageuchi.webp",
       "type": "sword",
       "atk": 41.0,
       "rarity": 4,
@@ -8181,7 +8181,7 @@
     },
     {
       "key": "aquila-favonia",
-      "image": "aquila-favonia.png",
+      "image": "aquila-favonia.webp",
       "type": "sword",
       "atk": 48.0,
       "rarity": 5,
@@ -8431,7 +8431,7 @@
     },
     {
       "key": "blackcliff-longsword",
-      "image": "blackcliff-longsword.png",
+      "image": "blackcliff-longsword.webp",
       "type": "sword",
       "atk": 44.0,
       "rarity": 4,
@@ -8681,7 +8681,7 @@
     },
     {
       "key": "cinnabar-spindle",
-      "image": "cinnabar-spindle.png",
+      "image": "cinnabar-spindle.webp",
       "type": "sword",
       "atk": 41.0,
       "rarity": 4,
@@ -8931,7 +8931,7 @@
     },
     {
       "key": "cool-steel",
-      "image": "cool-steel.png",
+      "image": "cool-steel.webp",
       "type": "sword",
       "atk": 39.0,
       "rarity": 3,
@@ -9181,7 +9181,7 @@
     },
     {
       "key": "dark-iron-sword",
-      "image": "dark-iron-sword.png",
+      "image": "dark-iron-sword.webp",
       "type": "sword",
       "atk": 39.0,
       "rarity": 3,
@@ -9431,7 +9431,7 @@
     },
     {
       "key": "dull-blade",
-      "image": "dull-blade.png",
+      "image": "dull-blade.webp",
       "type": "sword",
       "atk": 23.0,
       "rarity": 1,
@@ -9602,7 +9602,7 @@
     },
     {
       "key": "favonius-sword",
-      "image": "favonius-sword.png",
+      "image": "favonius-sword.webp",
       "type": "sword",
       "atk": 41.0,
       "rarity": 4,
@@ -9852,7 +9852,7 @@
     },
     {
       "key": "festering-desire",
-      "image": "festering-desire.png",
+      "image": "festering-desire.webp",
       "type": "sword",
       "atk": 42.0,
       "rarity": 4,
@@ -10102,7 +10102,7 @@
     },
     {
       "key": "fillet-blade",
-      "image": "fillet-blade.png",
+      "image": "fillet-blade.webp",
       "type": "sword",
       "atk": 39.0,
       "rarity": 3,
@@ -10352,7 +10352,7 @@
     },
     {
       "key": "freedom-sworn",
-      "image": "freedom-sworn.png",
+      "image": "freedom-sworn.webp",
       "type": "sword",
       "atk": 46.0,
       "rarity": 5,
@@ -10602,7 +10602,7 @@
     },
     {
       "key": "haran-geppaku-futsu",
-      "image": "haran-geppaku-futsu.png",
+      "image": "haran-geppaku-futsu.webp",
       "type": "sword",
       "atk": 46.0,
       "rarity": 5,
@@ -10852,7 +10852,7 @@
     },
     {
       "key": "harbinger-of-dawn",
-      "image": "harbinger-of-dawn.png",
+      "image": "harbinger-of-dawn.webp",
       "type": "sword",
       "atk": 39.0,
       "rarity": 3,
@@ -11102,7 +11102,7 @@
     },
     {
       "key": "iron-sting",
-      "image": "iron-sting.png",
+      "image": "iron-sting.webp",
       "type": "sword",
       "atk": 42.0,
       "rarity": 4,
@@ -11368,7 +11368,7 @@
     },
     {
       "key": "kagotsurube-isshin",
-      "image": "kagotsurube-isshin.png",
+      "image": "kagotsurube-isshin.webp",
       "type": "sword",
       "atk": 42.0,
       "rarity": 4,
@@ -11618,7 +11618,7 @@
     },
     {
       "key": "lions-roar",
-      "image": "lions-roar.png",
+      "image": "lions-roar.webp",
       "type": "sword",
       "atk": 42.0,
       "rarity": 4,
@@ -11868,7 +11868,7 @@
     },
     {
       "key": "mistsplitter-reforged",
-      "image": "mistsplitter-reforged.png",
+      "image": "mistsplitter-reforged.webp",
       "type": "sword",
       "atk": 48.0,
       "rarity": 5,
@@ -12118,7 +12118,7 @@
     },
     {
       "key": "primordial-jade-cutter",
-      "image": "primordial-jade-cutter.png",
+      "image": "primordial-jade-cutter.webp",
       "type": "sword",
       "atk": 44.0,
       "rarity": 5,
@@ -12368,7 +12368,7 @@
     },
     {
       "key": "prototype-rancour",
-      "image": "prototype-rancour.png",
+      "image": "prototype-rancour.webp",
       "type": "sword",
       "atk": 44.0,
       "rarity": 4,
@@ -12634,7 +12634,7 @@
     },
     {
       "key": "royal-longsword",
-      "image": "royal-longsword.png",
+      "image": "royal-longsword.webp",
       "type": "sword",
       "atk": 42.0,
       "rarity": 4,
@@ -12884,7 +12884,7 @@
     },
     {
       "key": "sacrificial-sword",
-      "image": "sacrificial-sword.png",
+      "image": "sacrificial-sword.webp",
       "type": "sword",
       "atk": 41.0,
       "rarity": 4,
@@ -13134,7 +13134,7 @@
     },
     {
       "key": "sapwood-blade",
-      "image": "sapwood-blade.png",
+      "image": "sapwood-blade.webp",
       "type": "sword",
       "atk": 44.0,
       "rarity": 4,
@@ -13400,7 +13400,7 @@
     },
     {
       "key": "silver-sword",
-      "image": "silver-sword.png",
+      "image": "silver-sword.webp",
       "type": "sword",
       "atk": 33.0,
       "rarity": 2,
@@ -13576,7 +13576,7 @@
     },
     {
       "key": "skyrider-sword",
-      "image": "skyrider-sword.png",
+      "image": "skyrider-sword.webp",
       "type": "sword",
       "atk": 38.0,
       "rarity": 3,
@@ -13826,7 +13826,7 @@
     },
     {
       "key": "skyward-blade",
-      "image": "skyward-blade.png",
+      "image": "skyward-blade.webp",
       "type": "sword",
       "atk": 46.0,
       "rarity": 5,
@@ -14076,7 +14076,7 @@
     },
     {
       "key": "summit-shaper",
-      "image": "summit-shaper.png",
+      "image": "summit-shaper.webp",
       "type": "sword",
       "atk": 46.0,
       "rarity": 5,
@@ -14326,7 +14326,7 @@
     },
     {
       "key": "sword-of-descension",
-      "image": "sword-of-descension.png",
+      "image": "sword-of-descension.webp",
       "type": "sword",
       "atk": 39.0,
       "rarity": 4,
@@ -14576,7 +14576,7 @@
     },
     {
       "key": "the-alley-flash",
-      "image": "the-alley-flash.png",
+      "image": "the-alley-flash.webp",
       "type": "sword",
       "atk": 45.0,
       "rarity": 4,
@@ -14826,7 +14826,7 @@
     },
     {
       "key": "the-black-sword",
-      "image": "the-black-sword.png",
+      "image": "the-black-sword.webp",
       "type": "sword",
       "atk": 42.0,
       "rarity": 4,
@@ -15076,7 +15076,7 @@
     },
     {
       "key": "the-flute",
-      "image": "the-flute.png",
+      "image": "the-flute.webp",
       "type": "sword",
       "atk": 42.0,
       "rarity": 4,
@@ -15326,7 +15326,7 @@
     },
     {
       "key": "travelers-handy-sword",
-      "image": "travelers-handy-sword.png",
+      "image": "travelers-handy-sword.webp",
       "type": "sword",
       "atk": 40.0,
       "rarity": 3,
@@ -15578,7 +15578,7 @@
   "catalysts": [
     {
       "key": "apprentices-notes",
-      "image": "apprentices-notes.png",
+      "image": "apprentices-notes.webp",
       "type": "catalyst",
       "atk": 23.0,
       "rarity": 1,
@@ -15749,7 +15749,7 @@
     },
     {
       "key": "blackcliff-agate",
-      "image": "blackcliff-agate.png",
+      "image": "blackcliff-agate.webp",
       "type": "catalyst",
       "atk": 42.0,
       "rarity": 4,
@@ -15999,7 +15999,7 @@
     },
     {
       "key": "dodoco-tales",
-      "image": "dodoco-tales.png",
+      "image": "dodoco-tales.webp",
       "type": "catalyst",
       "atk": 41.0,
       "rarity": 4,
@@ -16249,7 +16249,7 @@
     },
     {
       "key": "emerald-orb",
-      "image": "emerald-orb.png",
+      "image": "emerald-orb.webp",
       "type": "catalyst",
       "atk": 40.0,
       "rarity": 3,
@@ -16499,7 +16499,7 @@
     },
     {
       "key": "everlasting-moonglow",
-      "image": "everlasting-moonglow.png",
+      "image": "everlasting-moonglow.webp",
       "type": "catalyst",
       "atk": 46.0,
       "rarity": 5,
@@ -16749,7 +16749,7 @@
     },
     {
       "key": "eye-of-perception",
-      "image": "eye-of-perception.png",
+      "image": "eye-of-perception.webp",
       "type": "catalyst",
       "atk": 41.0,
       "rarity": 4,
@@ -16999,7 +16999,7 @@
     },
     {
       "key": "favonius-codex",
-      "image": "favonius-codex.png",
+      "image": "favonius-codex.webp",
       "type": "catalyst",
       "atk": 42.0,
       "rarity": 4,
@@ -17249,7 +17249,7 @@
     },
     {
       "key": "frostbearer",
-      "image": "frostbearer.png",
+      "image": "frostbearer.webp",
       "type": "catalyst",
       "atk": 42.0,
       "rarity": 4,
@@ -17515,7 +17515,7 @@
     },
     {
       "key": "fruit-of-fulfillment",
-      "image": "fruit-of-fulfillment.png",
+      "image": "fruit-of-fulfillment.webp",
       "type": "catalyst",
       "atk": 42.0,
       "rarity": 4,
@@ -17781,7 +17781,7 @@
     },
     {
       "key": "hakushin-ring",
-      "image": "hakushin-ring.png",
+      "image": "hakushin-ring.webp",
       "type": "catalyst",
       "atk": 44.0,
       "rarity": 4,
@@ -18047,7 +18047,7 @@
     },
     {
       "key": "kaguras-verity",
-      "image": "kaguras-verity.png",
+      "image": "kaguras-verity.webp",
       "type": "catalyst",
       "atk": 46.0,
       "rarity": 5,
@@ -18297,7 +18297,7 @@
     },
     {
       "key": "lost-prayer-to-the-sacred-winds",
-      "image": "lost-prayer-to-the-sacred-winds.png",
+      "image": "lost-prayer-to-the-sacred-winds.webp",
       "type": "catalyst",
       "atk": 46.0,
       "rarity": 5,
@@ -18547,7 +18547,7 @@
     },
     {
       "key": "magic-guide",
-      "image": "magic-guide.png",
+      "image": "magic-guide.webp",
       "type": "catalyst",
       "atk": 38.0,
       "rarity": 3,
@@ -18797,7 +18797,7 @@
     },
     {
       "key": "mappa-mare",
-      "image": "mappa-mare.png",
+      "image": "mappa-mare.webp",
       "type": "catalyst",
       "atk": 44.0,
       "rarity": 4,
@@ -19063,7 +19063,7 @@
     },
     {
       "key": "memory-of-dust",
-      "image": "memory-of-dust.png",
+      "image": "memory-of-dust.webp",
       "type": "catalyst",
       "atk": 46.0,
       "rarity": 5,
@@ -19313,7 +19313,7 @@
     },
     {
       "key": "oathsworn-eye",
-      "image": "oathsworn-eye.png",
+      "image": "oathsworn-eye.webp",
       "type": "catalyst",
       "atk": 44.0,
       "rarity": 4,
@@ -19563,7 +19563,7 @@
     },
     {
       "key": "otherworldly-story",
-      "image": "otherworldly-story.png",
+      "image": "otherworldly-story.webp",
       "type": "catalyst",
       "atk": 39.0,
       "rarity": 3,
@@ -19813,7 +19813,7 @@
     },
     {
       "key": "pocket-grimoire",
-      "image": "pocket-grimoire.png",
+      "image": "pocket-grimoire.webp",
       "type": "catalyst",
       "atk": 33.0,
       "rarity": 2,
@@ -19989,7 +19989,7 @@
     },
     {
       "key": "prototype-amber",
-      "image": "prototype-amber.png",
+      "image": "prototype-amber.webp",
       "type": "catalyst",
       "atk": 42.0,
       "rarity": 4,
@@ -20255,7 +20255,7 @@
     },
     {
       "key": "royal-grimoire",
-      "image": "royal-grimoire.png",
+      "image": "royal-grimoire.webp",
       "type": "catalyst",
       "atk": 44.0,
       "rarity": 4,
@@ -20505,7 +20505,7 @@
     },
     {
       "key": "sacrificial-fragments",
-      "image": "sacrificial-fragments.png",
+      "image": "sacrificial-fragments.webp",
       "type": "catalyst",
       "atk": 41.0,
       "rarity": 4,
@@ -20755,7 +20755,7 @@
     },
     {
       "key": "skyward-atlas",
-      "image": "skyward-atlas.png",
+      "image": "skyward-atlas.webp",
       "type": "catalyst",
       "atk": 48.0,
       "rarity": 5,
@@ -21005,7 +21005,7 @@
     },
     {
       "key": "solar-pearl",
-      "image": "solar-pearl.png",
+      "image": "solar-pearl.webp",
       "type": "catalyst",
       "atk": 42.0,
       "rarity": 4,
@@ -21255,7 +21255,7 @@
     },
     {
       "key": "the-widsith",
-      "image": "the-widsith.png",
+      "image": "the-widsith.webp",
       "type": "catalyst",
       "atk": 42.0,
       "rarity": 4,
@@ -21505,7 +21505,7 @@
     },
     {
       "key": "thrilling-tales-of-dragon-slayers",
-      "image": "thrilling-tales-of-dragon-slayers.png",
+      "image": "thrilling-tales-of-dragon-slayers.webp",
       "type": "catalyst",
       "atk": 39.0,
       "rarity": 3,
@@ -21755,7 +21755,7 @@
     },
     {
       "key": "twin-nephrite",
-      "image": "twin-nephrite.png",
+      "image": "twin-nephrite.webp",
       "type": "catalyst",
       "atk": 40.0,
       "rarity": 3,
@@ -22005,7 +22005,7 @@
     },
     {
       "key": "wine-and-song",
-      "image": "wine-and-song.png",
+      "image": "wine-and-song.webp",
       "type": "catalyst",
       "atk": 44.0,
       "rarity": 4,
@@ -22257,7 +22257,7 @@
   "claymores": [
     {
       "key": "akuoumaru",
-      "image": "akuoumaru.png",
+      "image": "akuoumaru.webp",
       "type": "claymore",
       "atk": 42.0,
       "rarity": 4,
@@ -22507,7 +22507,7 @@
     },
     {
       "key": "blackcliff-slasher",
-      "image": "blackcliff-slasher.png",
+      "image": "blackcliff-slasher.webp",
       "type": "claymore",
       "atk": 42.0,
       "rarity": 4,
@@ -22757,7 +22757,7 @@
     },
     {
       "key": "bloodtainted-greatsword",
-      "image": "bloodtainted-greatsword.png",
+      "image": "bloodtainted-greatsword.webp",
       "type": "claymore",
       "atk": 38.0,
       "rarity": 3,
@@ -23007,7 +23007,7 @@
     },
     {
       "key": "debate-club",
-      "image": "debate-club.png",
+      "image": "debate-club.webp",
       "type": "claymore",
       "atk": 39.0,
       "rarity": 3,
@@ -23257,7 +23257,7 @@
     },
     {
       "key": "favonius-greatsword",
-      "image": "favonius-greatsword.png",
+      "image": "favonius-greatsword.webp",
       "type": "claymore",
       "atk": 41.0,
       "rarity": 4,
@@ -23507,7 +23507,7 @@
     },
     {
       "key": "ferrous-shadow",
-      "image": "ferrous-shadow.png",
+      "image": "ferrous-shadow.webp",
       "type": "claymore",
       "atk": 39.0,
       "rarity": 3,
@@ -23757,7 +23757,7 @@
     },
     {
       "key": "forest-regalia",
-      "image": "forest-regalia.png",
+      "image": "forest-regalia.webp",
       "type": "claymore",
       "atk": 44.0,
       "rarity": 4,
@@ -24023,7 +24023,7 @@
     },
     {
       "key": "katsuragikiri-nagamasa",
-      "image": "katsuragikiri-nagamasa.png",
+      "image": "katsuragikiri-nagamasa.webp",
       "type": "claymore",
       "atk": 42.0,
       "rarity": 4,
@@ -24289,7 +24289,7 @@
     },
     {
       "key": "lithic-blade",
-      "image": "lithic-blade.png",
+      "image": "lithic-blade.webp",
       "type": "claymore",
       "atk": 42.0,
       "rarity": 4,
@@ -24539,7 +24539,7 @@
     },
     {
       "key": "luxurious-sea-lord",
-      "image": "luxurious-sea-lord.png",
+      "image": "luxurious-sea-lord.webp",
       "type": "claymore",
       "atk": 41.0,
       "rarity": 4,
@@ -24789,7 +24789,7 @@
     },
     {
       "key": "old-mercs-pal",
-      "image": "old-mercs-pal.png",
+      "image": "old-mercs-pal.webp",
       "type": "claymore",
       "atk": 33.0,
       "rarity": 2,
@@ -24965,7 +24965,7 @@
     },
     {
       "key": "prototype-archaic",
-      "image": "prototype-archaic.png",
+      "image": "prototype-archaic.webp",
       "type": "claymore",
       "atk": 44.0,
       "rarity": 4,
@@ -25231,7 +25231,7 @@
     },
     {
       "key": "rainslasher",
-      "image": "rainslasher.png",
+      "image": "rainslasher.webp",
       "type": "claymore",
       "atk": 42.0,
       "rarity": 4,
@@ -25481,7 +25481,7 @@
     },
     {
       "key": "redhorn-stonethresher",
-      "image": "redhorn-stonethresher.png",
+      "image": "redhorn-stonethresher.webp",
       "type": "claymore",
       "atk": 44.0,
       "rarity": 5,
@@ -25731,7 +25731,7 @@
     },
     {
       "key": "royal-greatsword",
-      "image": "royal-greatsword.png",
+      "image": "royal-greatsword.webp",
       "type": "claymore",
       "atk": 44.0,
       "rarity": 4,
@@ -25981,7 +25981,7 @@
     },
     {
       "key": "sacrificial-greatsword",
-      "image": "sacrificial-greatsword.png",
+      "image": "sacrificial-greatsword.webp",
       "type": "claymore",
       "atk": 44.0,
       "rarity": 4,
@@ -26231,7 +26231,7 @@
     },
     {
       "key": "serpent-spine",
-      "image": "serpent-spine.png",
+      "image": "serpent-spine.webp",
       "type": "claymore",
       "atk": 42.0,
       "rarity": 4,
@@ -26481,7 +26481,7 @@
     },
     {
       "key": "skyrider-greatsword",
-      "image": "skyrider-greatsword.png",
+      "image": "skyrider-greatsword.webp",
       "type": "claymore",
       "atk": 39.0,
       "rarity": 3,
@@ -26731,7 +26731,7 @@
     },
     {
       "key": "skyward-pride",
-      "image": "skyward-pride.png",
+      "image": "skyward-pride.webp",
       "type": "claymore",
       "atk": 48.0,
       "rarity": 5,
@@ -26981,7 +26981,7 @@
     },
     {
       "key": "snow-tombed-starsilver",
-      "image": "snow-tombed-starsilver.png",
+      "image": "snow-tombed-starsilver.webp",
       "type": "claymore",
       "atk": 44.0,
       "rarity": 4,
@@ -27247,7 +27247,7 @@
     },
     {
       "key": "song-of-broken-pines",
-      "image": "song-of-broken-pines.png",
+      "image": "song-of-broken-pines.webp",
       "type": "claymore",
       "atk": 49.0,
       "rarity": 5,
@@ -27497,7 +27497,7 @@
     },
     {
       "key": "the-bell",
-      "image": "the-bell.png",
+      "image": "the-bell.webp",
       "type": "claymore",
       "atk": 42.0,
       "rarity": 4,
@@ -27747,7 +27747,7 @@
     },
     {
       "key": "the-unforged",
-      "image": "the-unforged.png",
+      "image": "the-unforged.webp",
       "type": "claymore",
       "atk": 46.0,
       "rarity": 5,
@@ -27997,7 +27997,7 @@
     },
     {
       "key": "waster-greatsword",
-      "image": "waster-greatsword.png",
+      "image": "waster-greatsword.webp",
       "type": "claymore",
       "atk": 23.0,
       "rarity": 1,
@@ -28168,7 +28168,7 @@
     },
     {
       "key": "white-iron-greatsword",
-      "image": "white-iron-greatsword.png",
+      "image": "white-iron-greatsword.webp",
       "type": "claymore",
       "atk": 39.0,
       "rarity": 3,
@@ -28418,7 +28418,7 @@
     },
     {
       "key": "whiteblind",
-      "image": "whiteblind.png",
+      "image": "whiteblind.webp",
       "type": "claymore",
       "atk": 42.0,
       "rarity": 4,
@@ -28684,7 +28684,7 @@
     },
     {
       "key": "wolfs-gravestone",
-      "image": "wolfs-gravestone.png",
+      "image": "wolfs-gravestone.webp",
       "type": "claymore",
       "atk": 46.0,
       "rarity": 5,
@@ -28936,7 +28936,7 @@
   "polearms": [
     {
       "key": "beginners-protector",
-      "image": "beginners-protector.png",
+      "image": "beginners-protector.webp",
       "type": "polearm",
       "atk": 23.0,
       "rarity": 1,
@@ -29107,7 +29107,7 @@
     },
     {
       "key": "black-tassel",
-      "image": "black-tassel.png",
+      "image": "black-tassel.webp",
       "type": "polearm",
       "atk": 38.0,
       "rarity": 3,
@@ -29357,7 +29357,7 @@
     },
     {
       "key": "blackcliff-pole",
-      "image": "blackcliff-pole.png",
+      "image": "blackcliff-pole.webp",
       "type": "polearm",
       "atk": 42.0,
       "rarity": 4,
@@ -29607,7 +29607,7 @@
     },
     {
       "key": "calamity-queller",
-      "image": "calamity-queller.png",
+      "image": "calamity-queller.webp",
       "type": "polearm",
       "atk": 49.0,
       "rarity": 5,
@@ -29857,7 +29857,7 @@
     },
     {
       "key": "crescent-pike",
-      "image": "crescent-pike.png",
+      "image": "crescent-pike.webp",
       "type": "polearm",
       "atk": 44.0,
       "rarity": 4,
@@ -30123,7 +30123,7 @@
     },
     {
       "key": "deathmatch",
-      "image": "deathmatch.png",
+      "image": "deathmatch.webp",
       "type": "polearm",
       "atk": 41.0,
       "rarity": 4,
@@ -30373,7 +30373,7 @@
     },
     {
       "key": "dragons-bane",
-      "image": "dragons-bane.png",
+      "image": "dragons-bane.webp",
       "type": "polearm",
       "atk": 41.0,
       "rarity": 4,
@@ -30623,7 +30623,7 @@
     },
     {
       "key": "dragonspine-spear",
-      "image": "dragonspine-spear.png",
+      "image": "dragonspine-spear.webp",
       "type": "polearm",
       "atk": 41.0,
       "rarity": 4,
@@ -30889,7 +30889,7 @@
     },
     {
       "key": "engulfing-lightning",
-      "image": "engulfing-lightning.png",
+      "image": "engulfing-lightning.webp",
       "type": "polearm",
       "atk": 46.0,
       "rarity": 5,
@@ -31139,7 +31139,7 @@
     },
     {
       "key": "favonius-lance",
-      "image": "favonius-lance.png",
+      "image": "favonius-lance.webp",
       "type": "polearm",
       "atk": 44.0,
       "rarity": 4,
@@ -31389,7 +31389,7 @@
     },
     {
       "key": "halberd",
-      "image": "halberd.png",
+      "image": "halberd.webp",
       "type": "polearm",
       "atk": 40.0,
       "rarity": 3,
@@ -31639,7 +31639,7 @@
     },
     {
       "key": "iron-point",
-      "image": "iron-point.png",
+      "image": "iron-point.webp",
       "type": "polearm",
       "atk": 33.0,
       "rarity": 2,
@@ -31815,7 +31815,7 @@
     },
     {
       "key": "kitain-cross-spear",
-      "image": "kitain-cross-spear.png",
+      "image": "kitain-cross-spear.webp",
       "type": "polearm",
       "atk": 44.0,
       "rarity": 4,
@@ -32081,7 +32081,7 @@
     },
     {
       "key": "lithic-spear",
-      "image": "lithic-spear.png",
+      "image": "lithic-spear.webp",
       "type": "polearm",
       "atk": 44.0,
       "rarity": 4,
@@ -32331,7 +32331,7 @@
     },
     {
       "key": "moonpiercer",
-      "image": "moonpiercer.png",
+      "image": "moonpiercer.webp",
       "type": "polearm",
       "atk": 44.0,
       "rarity": 4,
@@ -32597,7 +32597,7 @@
     },
     {
       "key": "primordial-jade-winged-spear",
-      "image": "primordial-jade-winged-spear.png",
+      "image": "primordial-jade-winged-spear.webp",
       "type": "polearm",
       "atk": 48.0,
       "rarity": 5,
@@ -32847,7 +32847,7 @@
     },
     {
       "key": "prototype-starglitter",
-      "image": "prototype-starglitter.png",
+      "image": "prototype-starglitter.webp",
       "type": "polearm",
       "atk": 42.0,
       "rarity": 4,
@@ -33113,7 +33113,7 @@
     },
     {
       "key": "royal-spear",
-      "image": "royal-spear.png",
+      "image": "royal-spear.webp",
       "type": "polearm",
       "atk": 44.0,
       "rarity": 4,
@@ -33363,7 +33363,7 @@
     },
     {
       "key": "skyward-spine",
-      "image": "skyward-spine.png",
+      "image": "skyward-spine.webp",
       "type": "polearm",
       "atk": 48.0,
       "rarity": 5,
@@ -33613,7 +33613,7 @@
     },
     {
       "key": "staff-of-homa",
-      "image": "staff-of-homa.png",
+      "image": "staff-of-homa.webp",
       "type": "polearm",
       "atk": 46.0,
       "rarity": 5,
@@ -33863,7 +33863,7 @@
     },
     {
       "key": "the-catch",
-      "image": "the-catch.png",
+      "image": "the-catch.webp",
       "type": "polearm",
       "atk": 42.0,
       "rarity": 4,
@@ -34113,7 +34113,7 @@
     },
     {
       "key": "vortex-vanquisher",
-      "image": "vortex-vanquisher.png",
+      "image": "vortex-vanquisher.webp",
       "type": "polearm",
       "atk": 46.0,
       "rarity": 5,
@@ -34363,7 +34363,7 @@
     },
     {
       "key": "wavebreakers-fin",
-      "image": "wavebreakers-fin.png",
+      "image": "wavebreakers-fin.webp",
       "type": "polearm",
       "atk": 45.0,
       "rarity": 4,
@@ -34613,7 +34613,7 @@
     },
     {
       "key": "white-tassel",
-      "image": "white-tassel.png",
+      "image": "white-tassel.webp",
       "type": "polearm",
       "atk": 39.0,
       "rarity": 3,
