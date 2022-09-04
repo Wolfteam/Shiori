@@ -4,16 +4,19 @@ import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/file/material_file_service.dart';
 import 'package:shiori/domain/services/file/translation_file_service.dart';
 
-class MaterialFileServiceImpl implements MaterialFileService {
+class MaterialFileServiceImpl extends MaterialFileService {
   final TranslationFileService _translations;
 
   late MaterialsFile _materialsFile;
 
+  @override
+  TranslationFileService get translations => _translations;
+
   MaterialFileServiceImpl(this._translations);
 
   @override
-  Future<void> init() async {
-    final json = await Assets.getJsonFromPath(Assets.materialsDbPath);
+  Future<void> init(String assetPath) async {
+    final json = await readJson(assetPath);
     _materialsFile = MaterialsFile.fromJson(json);
   }
 
@@ -29,7 +32,7 @@ class MaterialFileServiceImpl implements MaterialFileService {
 
   @override
   MaterialFileModel getMaterialByImage(String image) {
-    return _materialsFile.materials.firstWhere((m) => m.fullImagePath == image);
+    return _materialsFile.materials.firstWhere((m) => Assets.getMaterialPath(m.image, m.type) == image);
   }
 
   @override
@@ -73,8 +76,8 @@ class MaterialFileServiceImpl implements MaterialFileService {
   }) {
     final mp = <String, MaterialFileModel>{};
     for (final item in materials) {
-      final material = getMaterial(item.key);
       if (!ignore.contains(item.type)) {
+        final material = getMaterial(item.key);
         mp[item.key] = material;
       }
     }
@@ -106,6 +109,12 @@ class MaterialFileServiceImpl implements MaterialFileService {
   MaterialFileModel getPrimogemMaterial() {
     final materials = getMaterials(MaterialType.currency);
     return materials.firstWhere((el) => el.key == 'primogem');
+  }
+
+  @override
+  MaterialFileModel getFragileResinMaterial() {
+    final materials = getMaterials(MaterialType.currency);
+    return materials.firstWhere((el) => el.key == 'fragile-resin');
   }
 
   MaterialCardModel _toMaterialForCard(MaterialFileModel material) {

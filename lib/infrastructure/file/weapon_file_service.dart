@@ -3,17 +3,23 @@ import 'package:shiori/domain/enums/stat_type.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/file/file_infrastructure.dart';
 
-class WeaponFileServiceImpl implements WeaponFileService {
+class WeaponFileServiceImpl extends WeaponFileService {
   final MaterialFileService _materials;
   final TranslationFileService _translations;
 
   late WeaponsFile _weaponsFile;
 
+  @override
+  TranslationFileService get translations => _translations;
+
+  @override
+  MaterialFileService get materials => _materials;
+
   WeaponFileServiceImpl(this._materials, this._translations);
 
   @override
-  Future<void> init() async {
-    final json = await Assets.getJsonFromPath(Assets.weaponsDbPath);
+  Future<void> init(String assetPath) async {
+    final json = await readJson(assetPath);
     _weaponsFile = WeaponsFile.fromJson(json);
   }
 
@@ -38,13 +44,12 @@ class WeaponFileServiceImpl implements WeaponFileService {
 
   @override
   List<ItemCommon> getWeaponForItemsUsingMaterial(String key) {
-    final material = _materials.getMaterial(key);
     final items = <ItemCommon>[];
 
     for (final weapon in _weaponsFile.weapons) {
       final materials = weapon.craftingMaterials + weapon.ascensionMaterials.expand((e) => e.materials).toList();
       final allMaterials = _materials.getMaterialsFromAscensionMaterials(materials);
-      if (allMaterials.any((m) => m.key == material.key)) {
+      if (allMaterials.any((m) => m.key == key)) {
         items.add(ItemCommon(weapon.key, weapon.fullImagePath));
       }
     }

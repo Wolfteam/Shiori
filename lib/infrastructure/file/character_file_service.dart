@@ -5,9 +5,7 @@ import 'package:shiori/domain/assets.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/extensions/string_extensions.dart';
 import 'package:shiori/domain/models/models.dart';
-import 'package:shiori/domain/services/file/character_file_service.dart';
 import 'package:shiori/domain/services/file/file_infrastructure.dart';
-import 'package:shiori/domain/services/file/translation_file_service.dart';
 import 'package:shiori/domain/services/locale_service.dart';
 import 'package:shiori/domain/utils/date_utils.dart';
 
@@ -20,11 +18,23 @@ class CharacterFileServiceImpl extends CharacterFileService {
 
   late CharactersFile _charactersFile;
 
+  @override
+  TranslationFileService get translations => _translations;
+
+  @override
+  ArtifactFileService get artifacts => _artifacts;
+
+  @override
+  MaterialFileService get materials => _materials;
+
+  @override
+  WeaponFileService get weapons => _weapons;
+
   CharacterFileServiceImpl(this._localeService, this._artifacts, this._materials, this._weapons, this._translations);
 
   @override
-  Future<void> init() async {
-    final json = await Assets.getJsonFromPath(Assets.charactersDbPath);
+  Future<void> init(String assetPath) async {
+    final json = await readJson(assetPath);
     _charactersFile = CharactersFile.fromJson(json);
   }
 
@@ -117,10 +127,10 @@ class CharacterFileServiceImpl extends CharacterFileService {
 
   @override
   List<ItemCommon> getCharacterForItemsUsingMaterial(String key) {
-    final material = _materials.getMaterial(key);
     final imgs = <ItemCommon>[];
+    final chars = _charactersFile.characters.where((c) => !c.isComingSoon).toList();
 
-    for (final char in _charactersFile.characters.where((c) => !c.isComingSoon)) {
+    for (final char in chars) {
       final multiTalentAscensionMaterials =
           (char.multiTalentAscensionMaterials?.expand((e) => e.materials).expand((e) => e.materials) ?? <ItemAscensionMaterialFileModel>[]).toList();
 
@@ -130,7 +140,7 @@ class CharacterFileServiceImpl extends CharacterFileService {
       final materials = multiTalentAscensionMaterials + ascensionMaterial + talentMaterial;
       final allMaterials = _materials.getMaterialsFromAscensionMaterials(materials);
 
-      if (allMaterials.any((m) => m.key == material.key)) {
+      if (allMaterials.any((m) => m.key == key)) {
         imgs.add(ItemCommon(char.key, Assets.getCharacterPath(char.image)));
       }
     }

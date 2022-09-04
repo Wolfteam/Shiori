@@ -1,19 +1,21 @@
-import 'package:shiori/domain/assets.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/file/monster_file_service.dart';
 import 'package:shiori/domain/services/file/translation_file_service.dart';
 
-class MonsterFileServiceImpl implements MonsterFileService {
+class MonsterFileServiceImpl extends MonsterFileService {
   final TranslationFileService _translations;
 
   late MonstersFile _monstersFile;
 
+  @override
+  TranslationFileService get translations => _translations;
+
   MonsterFileServiceImpl(this._translations);
 
   @override
-  Future<void> init() async {
-    final json = await Assets.getJsonFromPath(Assets.monstersDbPath);
+  Future<void> init(String assetPath) async {
+    final json = await readJson(assetPath);
     _monstersFile = MonstersFile.fromJson(json);
   }
 
@@ -40,26 +42,18 @@ class MonsterFileServiceImpl implements MonsterFileService {
 
   @override
   List<ItemCommon> getRelatedMonsterToMaterialForItems(String key) {
-    final items = <ItemCommon>[];
-    for (final monster in _monstersFile.monsters) {
-      if (!monster.drops.any((el) => el.type == MonsterDropType.material && el.key == key)) {
-        continue;
-      }
-      items.add(ItemCommon(monster.key, monster.fullImagePath));
-    }
-    return items;
+    return _monstersFile.monsters
+        .where((monster) => monster.drops.any((el) => el.type == MonsterDropType.material && el.key == key))
+        .map((monster) => ItemCommon(monster.key, monster.fullImagePath))
+        .toList();
   }
 
   @override
   List<ItemCommon> getRelatedMonsterToArtifactForItems(String key) {
-    final items = <ItemCommon>[];
-    for (final monster in _monstersFile.monsters) {
-      if (!monster.drops.any((el) => el.type == MonsterDropType.artifact && key == el.key)) {
-        continue;
-      }
-      items.add(ItemCommon(monster.key, monster.fullImagePath));
-    }
-    return items;
+    return _monstersFile.monsters
+        .where((monster) => monster.drops.any((el) => el.type == MonsterDropType.artifact && el.key == key))
+        .map((monster) => ItemCommon(monster.key, monster.fullImagePath))
+        .toList();
   }
 
   MonsterCardModel _toMonsterForCard(MonsterFileModel monster) {
