@@ -78,11 +78,9 @@ class DeviceInfoServiceImpl implements DeviceInfoService {
   Future<void> _initForAndroid() async {
     final deviceInfo = DeviceInfoPlugin();
     final info = await deviceInfo.androidInfo;
-    final installationSource = await StoreChecker.getSource;
     final model = 'Model: ${info.model ?? na} --- Device: ${info.device ?? na} --- Manufacturer: ${info.manufacturer ?? na}';
     _setDefaultDeviceInfoProps(model, '${info.version.sdkInt}');
-    _deviceInfo.putIfAbsent('IsPhysicalDevice', () => '${info.isPhysicalDevice ?? na}');
-    _deviceInfo.putIfAbsent('InstallationSource', () => installationSource.name);
+    _setOtherDeviceInfoProps(info.isPhysicalDevice);
   }
 
   Future<void> _initForIOs() async {
@@ -105,5 +103,11 @@ class DeviceInfoServiceImpl implements DeviceInfoService {
     _deviceInfo.putIfAbsent('OsVersion', () => osVersion);
     _deviceInfo.putIfAbsent('AppVersion', () => _versionWithBuildNumber);
     _deviceInfo.putIfAbsent('PackageName', () => _packageName);
+  }
+
+  Future<void> _setOtherDeviceInfoProps(bool? isPhysicalDevice) async {
+    final installationSource = await StoreChecker.getSource;
+    _deviceInfo.putIfAbsent('IsPhysicalDevice', () => '${isPhysicalDevice ?? na}');
+    _deviceInfo.putIfAbsent('InstallationSource', () => installationSource.name);
   }
 }
