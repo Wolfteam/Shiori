@@ -5,6 +5,7 @@ import 'models/models.dart';
 
 const na = 'N/A';
 const githubPage = 'https://github.com/Wolfteam/Shiori';
+const imageFileExtension = '.webp';
 
 //This order matches the one in the game, and the numbers represent each image
 const artifactOrder = [4, 2, 5, 1, 3];
@@ -40,6 +41,7 @@ List<StatType> getArtifactPossibleMainStats(ArtifactType type) {
         StatType.electroDmgBonusPercentage,
         StatType.anemoDmgBonusPercentage,
         StatType.geoDmgBonusPercentage,
+        StatType.dendroDmgBonusPercentage,
       ];
     case ArtifactType.crown:
       return [

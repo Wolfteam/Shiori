@@ -5,6 +5,8 @@ abstract class DeviceInfoService {
 
   String get version;
 
+  String get versionWithBuildNumber;
+
   bool get versionChanged;
 
   String? get userAgent;

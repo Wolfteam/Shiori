@@ -932,6 +932,72 @@
         "the-widsith"
       ],
       "version": 2.8
+    },
+    {
+      "type": "character",
+      "from": "2022-08-02T00:00:00",
+      "until": "2022-08-23T00:00:00",
+      "itemKeys": [
+        "yoimiya",
+        "bennett",
+        "xinyan",
+        "yun-jin"
+      ],
+      "version": 2.8
+    },
+    {
+      "type": "weapon",
+      "from": "2022-08-02T00:00:00",
+      "until": "2022-08-23T00:00:00",
+      "itemKeys": [
+        "thundering-pulse",
+        "summit-shaper",
+        "wine-and-song",
+        "alley-hunter",
+        "the-flute",
+        "sacrificial-greatsword",
+        "dragons-bane"
+      ],
+      "version": 2.8
+    },
+    {
+      "type": "character",
+      "from": "2022-08-24T00:00:00",
+      "until": "2022-09-09T00:00:00",
+      "itemKeys": [
+        "tighnari",
+        "collei",
+        "diona",
+        "fischl"
+      ],
+      "version": 3.0
+    },
+    {
+      "type": "character",
+      "from": "2022-08-24T00:00:00",
+      "until": "2022-09-09T00:00:00",
+      "itemKeys": [
+        "zhongli",
+        "collei",
+        "diona",
+        "fischl"
+      ],
+      "version": 3.0
+    },
+    {
+      "type": "weapon",
+      "from": "2022-08-24T00:00:00",
+      "until": "2022-09-09T00:00:00",
+      "itemKeys": [
+        "hunters-path",
+        "vortex-vanquisher",
+        "favonius-sword",
+        "the-bell",
+        "favonius-lance",
+        "favonius-codex",
+        "the-stringless"
+      ],
+      "version": 3.0
     }
   ]
 }

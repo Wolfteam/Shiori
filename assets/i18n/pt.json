@@ -151,12 +151,12 @@
           "abilities": [
             {
               "name": "Ataque Normal",
-              "description": "Realiza até 4 disparos consecutivos com o arco.\r\n",
+              "description": "Realiza até 4 disparos consecutivos com o arco.\n",
               "descriptions": []
             },
             {
               "name": "Ataque Carregado",
-              "description": "Realiza um ataque Disparo com Mira mais preciso e com mais dano.\r\nEnquanto mira, gelo será acumulado na flecha. Uma flecha totalmente carregada causará Dano Cryo\r\n",
+              "description": "Realiza um ataque Disparo com Mira mais preciso e com mais dano.\nEnquanto mira, gelo será acumulado na flecha. Uma flecha totalmente carregada causará Dano Cryo.\n",
               "descriptions": []
             },
             {
@@ -179,11 +179,11 @@
         {
           "key": "s2",
           "title": "Natureza Gélida",
-          "description": "Aloy lança uma Bomba Congelante na direção desejada que explode no impacto, causando Dano Cryo. Depois de explodir, a Bomba Congelante se dividirá em muitas Bombinhas Congelantes que explodirão ao entrar em contato com os oponentes ou após um curto período de tempo, causando Dano Cryo.\r\nQuando a Bomba Congelante ou suas bombinhas atingem os oponentes, elas diminuirão o ATQ dos oponentes e concederão 1 acúmulo de Bobina a Aloy.\r\nAloy pode ganhar 1 acúmulo de Bobinas a cada 0,1s.\r\n",
+          "description": "Aloy lança uma Bomba Congelante na direção desejada que explode no impacto, causando Dano Cryo. Depois de explodir, a Bomba Congelante se dividirá em muitas Bombinhas Congelantes que explodirão ao entrar em contato com os oponentes ou após um curto período de tempo, causando Dano Cryo.\nQuando a Bomba Congelante ou suas bombinhas atingem os oponentes, elas diminuirão o ATQ dos oponentes e concederão 1 acúmulo de Bobina a Aloy.\nAloy pode ganhar 1 acúmulo de Bobinas a cada 0,1s.\n\n",
           "abilities": [
             {
               "name": "Bobina",
-              "description": "Cada acúmulo aumentará o Dano do Ataque Normal de Aloy.\r\nQuando ela tiver 4 acúmulos, Aloy elimina todos os efeitos de Bobina e ganha Gelo Rápido, aumentando o Dano causado pelo Ataque Normal e convertendo seus Ataques Normais para causar Dano Cryo.\r\nEnquanto sob o estado do Gelo Rápido, Aloy não pode obter efeitos de Bobina.\r\nO efeito de Bobina é excluído 30 segundos após sair da batalha.\r\n",
+              "description": "Cada acúmulo aumentará o Dano do Ataque Normal de Aloy.\nQuando ela tiver 4 acúmulos, Aloy elimina todos os efeitos de Bobina e ganha Gelo Rápido, aumentando o Dano causado pelo Ataque Normal e convertendo seus Ataques Normais para causar Dano Cryo.\nEnquanto sob o estado do Gelo Rápido, Aloy não pode obter efeitos de Bobina.\nO efeito de Bobina é excluído 30 segundos após sair da batalha.\n",
               "descriptions": []
             }
           ],
@@ -195,13 +195,15 @@
             "Bônus de Dano do Ataque Normal de Bobina|{param5}% / {param6}% / {param7}%",
             "Bônus de Dano do Ataque Normal de Gelo Rápido|{param8}%",
             "Duração do Gelo Rápido|{param9}s",
-            "Recarga|{param10}s"
+            "Recarga|{param10}s",
+            "Bônus de Dano do Ataque Normal Nível 4|{param11}%",
+            "Recarga|{param12}s"
           ]
         },
         {
           "key": "s3",
           "title": "Profecias do Alvorecer",
-          "description": "Arremessa uma Bateria cheia com Cryo na direção do alvo antes de ligá-la com uma flecha, causando Dano Cryo em uma AdE.\r\n",
+          "description": "Arremessa uma Bateria cheia com Cryo na direção do alvo antes de ligá-la com uma flecha, causando Dano Cryo em uma AdE.\n\n",
           "abilities": [],
           "stats": [
             "Dano de Habilidade|{param1}%",
@@ -214,19 +216,19 @@
         {
           "key": "p1",
           "title": "Devagarinho",
-          "description": "Quando Aloy está na equipe, os membros da equipe que se aproximarem de pequenos animais que possam produzir Carne de Ave, Carne crua ou Carne Fresca Fria, não se assustarão facilmente.\r\n",
+          "description": "Quando Aloy está na equipe, os membros da equipe que se aproximarem de pequenos animais que possam produzir Carne de Ave, Carne crua ou Carne Fresca Fria, não se assustarão facilmente.\n",
           "descriptions": []
         },
         {
           "key": "p2",
           "title": "Percepção de Combate",
-          "description": "Quando Aloy recebe o efeito de Natureza Gélida da Bobina, seu ATQ é aumentado em 16%, enquanto o ATQ de outros membros da equipe ao redor é aumentado em 8%. Este efeito dura 10s.\r\n",
+          "description": "Quando Aloy recebe o efeito de Natureza Gélida da Bobina, seu ATQ é aumentado em 16%, enquanto o ATQ de outros membros da equipe ao redor é aumentado em 8%. Este efeito dura 10s.\n",
           "descriptions": []
         },
         {
           "key": "p3",
           "title": "Ataque Poderoso",
-          "description": "Quando Aloy está sob o efeito de Gelo Rápido proporcionado pela Natureza Gélida, seu Bônus de Dano Cryo aumenta em 3.5% a cada 1s. O máximo de aumento de Bônus de Dano Cryo ganho desta forma é de 35%.\r\n",
+          "description": "Quando Aloy está sob o efeito de Gelo Rápido proporcionado pela Natureza Gélida, seu Bônus de Dano Cryo aumenta em 3.5% a cada 1s. O máximo de aumento de Bônus de Dano Cryo ganho desta forma é de 35%.\n",
           "descriptions": []
         }
       ],
@@ -234,37 +236,37 @@
         {
           "key": "c1",
           "title": "Estrela de Outro Mundo",
-          "description": "Ainda não chegou a hora de iluminar o recanto do céu noturno desta pessoa.\r\n",
+          "description": "Ainda não chegou a hora de iluminar o recanto do céu noturno desta pessoa.\n",
           "descriptions": []
         },
         {
           "key": "c2",
           "title": "Estrela de Outro Mundo",
-          "description": "Ainda não chegou a hora de iluminar o recanto do céu noturno desta pessoa.\r\n",
+          "description": "Ainda não chegou a hora de iluminar o recanto do céu noturno desta pessoa.\n",
           "descriptions": []
         },
         {
           "key": "c3",
           "title": "Estrela de Outro Mundo",
-          "description": "Ainda não chegou a hora de iluminar o recanto do céu noturno desta pessoa.\r\n",
+          "description": "Ainda não chegou a hora de iluminar o recanto do céu noturno desta pessoa.\n",
           "descriptions": []
         },
         {
           "key": "c4",
           "title": "Estrela de Outro Mundo",
-          "description": "Ainda não chegou a hora de iluminar o recanto do céu noturno desta pessoa.\r\n",
+          "description": "Ainda não chegou a hora de iluminar o recanto do céu noturno desta pessoa.\n",
           "descriptions": []
         },
         {
           "key": "c5",
           "title": "Estrela de Outro Mundo",
-          "description": "Ainda não chegou a hora de iluminar o recanto do céu noturno desta pessoa.\r\n",
+          "description": "Ainda não chegou a hora de iluminar o recanto do céu noturno desta pessoa.\n",
           "descriptions": []
         },
         {
           "key": "c6",
           "title": "Estrela de Outro Mundo",
-          "description": "Ainda não chegou a hora de iluminar o recanto do céu noturno desta pessoa.\r\n",
+          "description": "Ainda não chegou a hora de iluminar o recanto do céu noturno desta pessoa.\n",
           "descriptions": []
         }
       ]
@@ -987,6 +989,93 @@
       ]
     },
     {
+      "key": "candace",
+      "name": "Candace",
+      "title": "？？？",
+      "description": "？？？",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ]
+    },
+    {
       "key": "chongyun",
       "name": "Chongyun",
       "title": "Pegadas na Neve",
@@ -1112,8 +1201,134 @@
     {
       "key": "collei",
       "name": "Collei",
-      "title": "???",
-      "description": "",
+      "title": "Broto de Renascimento",
+      "description": "Uma Guarda-Florestal em Treinamento que patrulha a Floresta Avidya. Por trás de seu entusiasmo, encontra-se uma personalidade bastante introvertida.",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "Homenagem ao Tiro com Arco",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Ataque Normal",
+              "description": "Realiza até 4 disparos consecutivos com o arco.\n",
+              "descriptions": []
+            },
+            {
+              "name": "Ataque Carregado",
+              "description": "Realiza um Disparo com Mira mais preciso e com mais dano.\nEnquanto mira, elemento Dendro irá acumular na ponta da flecha. Uma flecha completamente carregada irá causar Dano Dendro.\n",
+              "descriptions": []
+            },
+            {
+              "name": "Ataque Imersivo",
+              "description": "Dispara uma chuva de flechas do ar antes de cair e impactar o chão, causando Dano em uma AdE no impacto.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "Dano do 1° Golpe|{param1}%",
+            "Dano do 2° Golpe|{param2}%",
+            "Dano do 3° Golpe|{param3}%",
+            "Dano do 4° Golpe|{param4}%",
+            "Disparo com Mira|{param5}%",
+            "Disparo com Mira com Energização Completa|{param6}%",
+            "Dano Durante a Queda|{param7}%",
+            "Dano de Queda de Baixa/Alta Altitude|{param8}% / {param9}%"
+          ]
+        },
+        {
+          "key": "s2",
+          "title": "Carícia das Flores",
+          "description": "Lança um Bumerangue Floral que inflige 1 golpe de Dano Dendro contra os oponentes atingidos.\nO Bumerangue Floral retornará depois de um tempo, infligindo Dano Dendro novamente.\n\n",
+          "abilities": [],
+          "stats": [
+            "Dano de Habilidade|{param1}%",
+            "Tempo de Recarga|{param2}s"
+          ]
+        },
+        {
+          "key": "s3",
+          "title": "Segredo Miauvilhoso",
+          "description": "A confiável Collambei chega para salvar o dia!\nLança a boneca chamada Collambei, causando uma explosão que inflige Dano Dendro em uma AdE e criando uma Zona Collambei. Collambei irá saltar constantemente dentro desta zona, infligindo Dano Dendro em uma AdE.\n\n",
+          "abilities": [],
+          "stats": [
+            "Dano de Explosão|{param1}%",
+            "Dano de Salto|{param2}%",
+            "Duração|{param3}s",
+            "Tempo de Recarga|{param4}s",
+            "Energia Elemental|{param5}"
+          ]
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "Campeã Voadora de Sumeru",
+          "description": "Diminui o consumo de Stamina ao Planar de todos os seus personagens em 20%.\nNão acumulável com Talentos Passivos que concedem exatamente os mesmos efeitos.\n",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "Retorno Floral",
+          "description": "Se antes do Bumerangue Floral retornar um dos membros da equipe desencadear a reação elemental de Queimaduras, Aceleração, Intensificação, Propagação, Florescimento, Superflorescimento ou Germinação, concederá ao personagem o estado “Brotar”, que infligirá Dano Dendro continuamente contra os inimigos próximos equivalente a 40% do ATQ de Collei por 3s.\nDesencadear um novo efeito “Brotar” na duração do efeito “Brotar” existente anulará o efeito original. O Dano infligido pelo efeito “Brotar” é considerado Dano de Habilidade Elemental.\n",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "Quietude da Floresta",
+          "description": "Quando um personagem dentro da Zona Collambei desencadeia uma reação elemental de Queimaduras, Aceleração, Intensificação, Propagação, Florescimento, Superflorescimento ou Germinação, a duração da área será prolongada em 1s.\nÉ possível prolongar a duração até 3 vezes desta maneira em um uso de Segredo Miauvilhoso.\n",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "Patrulha Florestal",
+          "description": "Quando Collei está na equipe, mas não no campo de batalha, sua Recarga de Energia é aumentada em 20%.\n",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "Pelas Colinas e Bosques",
+          "description": "Transforma o Talento Passivo Retorno Floral: \n",
+          "descriptions": [
+            "Quando o Bumerangue Floral retorna, fornece ao personagem o efeito “Brotar” do Talento Passivo “Retorno Floral”, infligindo continuamente 40% do ATQ de Collei como Dano Dendro contra os inimigos próximos por 3s.",
+            "Quando Carícia das Flores é lançada até o fim do estado “Brotar”, se qualquer um dos membros da equipe desencadear as reações de Queimaduras, Aceleração, Intensificação, Propagação, Florescimento, Superflorescimento ou Germinação antes que essa instância do efeito “Brotar” termine, a duração do efeito será estendida em 3s.",
+            "O efeito “Brotar” só pode ser estendido dessa forma uma vez. Se outro efeito “Brotar” for desencadeado na duração do efeito “Brotar” inicial, o efeito original será removido. O Dano infligido pelo efeito “Brotar” é considerado Dano de Habilidade Elemental.",
+            "Requer que você tenha desbloqueado o Talento Passivo “Retorno Floral”."
+          ]
+        },
+        {
+          "key": "c3",
+          "title": "Fragrância de Verão",
+          "description": "Aumenta o nível da Habilidade Carícia das Flores em 3.\nO nível máximo de elevação é 15.\n",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "Presente da Floresta",
+          "description": "Ao usar Segredo Miauvilhoso aumenta a Proficiência Elemental de todos os personagens próximos em 60 por 12s (exceto para a própria Collei).\n",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "Plenitude das Chamas",
+          "description": "Aumenta o nível de Segredo Miauvilhoso em 3.\nO nível máximo de elevação é 15.\n",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "Bosque das Flechas",
+          "description": "Quando o Bumerangue Floral atingir, ele irá criar uma Collambei em miniatura que inflige 200% do ATQ da Collei como Dano Dendro.\nCada Carícia das Flores pode criar até uma Collambei em miniatura.\n",
+          "descriptions": []
+        }
+      ]
+    },
+    {
+      "key": "cyno",
+      "name": "Cyno",
+      "title": "？？？",
+      "description": "？？？",
       "skills": [
         {
           "key": "s1",
@@ -1461,87 +1676,142 @@
     {
       "key": "dori",
       "name": "Dori",
-      "title": "???",
-      "description": "",
+      "title": "Tesouro do Jardim dos Sonhos",
+      "description": "Uma comerciante viajante imprevisível, cuja maior paixão é a Mora brilhante.",
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Dança de Espadas Fantástica (Modificada)",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Ataque Normal",
+              "description": "Realiza até 3 golpes consecutivos.\n",
+              "descriptions": []
+            },
+            {
+              "name": "Ataque Carregado",
+              "description": "Drena Stamina ao longo do tempo para realizar um ataque giratório contínuo contra todos os inimigos próximos.\nAo final da sequência, realiza um corte poderoso.\n",
+              "descriptions": []
+            },
+            {
+              "name": "Ataque Imersivo",
+              "description": "Mergulha em pleno ar para golpear o chão, danificando inimigos em seu caminho e infligindo dano em uma AdE durante o impacto.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "Dano do 1° Golpe|{param1}%",
+            "Dano do 2° Golpe|{param2}% + {param3}%",
+            "Dano do 3° Golpe|{param4}%",
+            "Dano de Loop de Ataque Carregado|{param5}%",
+            "Dano Final de Ataque Carregado|{param6}%",
+            "Consumo de Stamina de Ataque Carregado|{param7} / s",
+            "Duração Máxima|{param8}s",
+            "Dano Durante a Queda|{param9}%",
+            "Dano de Queda de Baixa/Alta Altitude|{param10}% / {param11}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
+          "title": "Lâmpada da Proteção: Canhão Apaziguador",
+          "description": "Mira uma Lâmpada da Proteção contra os inimigos para disparar Tiros Apaziguadores, infligindo Dano Electro.\nQuando os Tiros Apaziguadores acertam os oponentes, eles criam 2 Munições Pós-venda que perseguirão os oponentes próximos automaticamente, infligindo Dano Electro.\n\n",
           "abilities": [],
-          "stats": []
+          "stats": [
+            "Dano do Tiro Apaziguador|{param1}%",
+            "Dano da Munição Pós-venda|{param2}%",
+            "Tempo de Recarga|{param3}s"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Meticulosidade de Alcazarzaray",
+          "description": "Invoca o Gênio da Lâmpada para oferecer todo tipo de assistência aos clientes.\n\n",
+          "abilities": [
+            {
+              "name": "Gênio da Lâmpada",
+              "description": "Se conecta com um personagem próximo. O personagem conectado irá:\n",
+              "descriptions": [
+                "Regenerar Vida continuamente baseada na Vida Máxima de Dori;",
+                "Regenerar Energia Elemental continuamente.",
+                "Ficar afetado por Electro.",
+                "Além disso, quando a conexão entre o Gênio da Lâmpada e o personagem tocam os inimigos, infligirá Dano Electro contra eles uma vez a cada 0.4s.",
+                "Apenas um Gênio da Lâmpada pode existir por vez."
+              ]
+            }
+          ],
+          "stats": [
+            "Dano da Conexão|{param1}%",
+            "Cura Contínua|{param2}% de Vida Máxima + {param3}",
+            "Regeneração de Energia Elemental|{param4}",
+            "Duração|{param5}s",
+            "Tempo de Recarga|{param6}s",
+            "Energia Elemental|{param7}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "Venda Inesperada",
+          "description": "Possui 25% de chance de devolver alguns dos materiais usados ao fabricar Materiais de Personagem e Arma.\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
+          "title": "Um Olho Para Ouro",
+          "description": "Quando um personagem conectado ao Gênio da Lâmpada desencadear uma reação de Eletricamente Carregado, Supercondutor, Sobrecarga, Aceleração, Intensificação, Superflorescimento, Redemoinho Electro ou uma reação de Cristalização Electro, o Tempo de Recarga da Lâmpada da Proteção: Canhão Apaziguador é reduzido em 1s.\nEsse efeito pode ser desencadeado uma vez a cada 3s.\n",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "NA",
-          "description": "",
+          "title": "Interesse Composto",
+          "description": "Quando os Tiros Apaziguadores ou Munições Pós-venda da Lâmpada da Proteção: Canhão Apaziguador acertam oponentes, Dori recuperará 5 de Energia Elemental para cada 100% de Recarga de Energia possuída.\nEm cada uso de Lâmpada da Proteção: Canhão Apaziguador, só é possível restaurar Energia Elemental uma vez desta maneira, e no máximo é possível restaurar 15 de Energia Elemental.\n",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "Investimento Adicional",
+          "description": "O número de Munições Pós-venda criadas pelo Tiro Apaziguador ao atingir os inimigos é aumentado em 1.\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "Franquia Especial",
+          "description": "Quando o Gênio da Lâmpada cura o personagem a que está conectado em batalha, ele disparará um Tiro Jinni da posição desse personagem que inflige Dano equivalente a 50% do ATQ da Dori.\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "Maravilhas Sem Fim",
+          "description": "Aumenta o nível da habilidade de Meticulosidade de Alcazarzaray em 3.\nO nível máximo de elevação é 15.\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
+          "title": "Suplemento Descritivo",
+          "description": "Os personagens conectados ao Gênio da Lâmpada irão obter os seguintes bônus baseado na sua Vida Atual e Energia Elemental:\n",
+          "descriptions": [
+            "Quando sua Vida está abaixo de 50% eles ganham 50% de Bônus de Cura.",
+            "Quando sua Energia Elemental está abaixo de 50%, eles ganham 30% de Recarga de Energia."
+          ]
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "Qualidade e Preço",
+          "description": "Aumenta o nível da habilidade da Lâmpada da Proteção: Canhão Apaziguador em 3.\nO nível máximo de elevação é 15.\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
+          "title": "Peso Leve",
+          "description": "Dori ganha os seguintes efeitos por 3s após usar Lâmpada da Proteção: Canhão Apaziguador:\n",
+          "descriptions": [
+            "Encantamento Electro.",
+            "Quando Ataques Normais acertam os oponentes, todos os membros da equipe ao redor regenerarão Vida equivalente a 4% da Vida Máxima da Dori. Essa regeneração pode acontecer 1 vez a cada 0.1s."
+          ]
         }
       ]
     },
@@ -1698,7 +1968,7 @@
       "key": "fischl",
       "name": "Fischl",
       "title": "Princesa dos Pecados!",
-      "description": "Uma mulher misteriosa que se autointitula \"Princesa dos Pecados\" e viaja com um corvo chamado Oz.",
+      "description": "Uma mulher misteriosa que se autointitula “Princesa dos Pecados” e viaja com um corvo chamado Oz.",
       "skills": [
         {
           "key": "s1",
@@ -1706,13 +1976,13 @@
           "description": "",
           "abilities": [
             {
-              "name": "",
-              "description": "Ataque Normal Realiza até 5 tiros consecutivos com um arco.\r\n",
+              "name": "Ataque Normal",
+              "description": "Realiza até 5 tiros consecutivos com um arco.",
               "descriptions": []
             },
             {
               "name": "Ataque Carregado",
-              "description": "Realiza um Disparo com Mira mais preciso e com Dano aumentado.\r\nDurante a mira, espíritos sombrios dos relâmpagos da escuridão atenderão o chamado de sua Princesa e residirão na ponta encantada de sua flecha. Quando estiver completamente incorporado, o relâmpago vingativo irá infligir um imenso Dano Electro.\r\n",
+              "description": "Realiza um Disparo com Mira mais preciso e com Dano aumentado.\nDurante a mira, espíritos sombrios dos relâmpagos da escuridão atenderão o chamado de sua Princesa e residirão na ponta encantada de sua flecha. Quando estiver completamente incorporado, o relâmpago vingativo irá infligir um imenso Dano Electro.\n",
               "descriptions": []
             },
             {
@@ -1736,7 +2006,7 @@
         {
           "key": "s2",
           "title": "Asas da Vigilância Noturna",
-          "description": "Evoca o Oz. O corvo da noite moldado pela escuridão e relâmpagos desce à terra, infligindo Dano Electro em uma pequena AdE.\r\nAo longo da duração da habilidade, Oz irá continuamente atacar inimigos próximos com Bolas Eletrificantes.\r\nMantenha pressionado para ajustar a localização de onde o Oz será evocado.\r\nPressione a qualquer momento ao longo da duração da habilidade para chamá-lo novamente para o lado de Fischl.\r\n",
+          "description": "Evoca o Oz. O corvo da noite moldado pela escuridão e relâmpagos desce à terra, infligindo Dano Electro em uma pequena AdE.\nAo longo da duração da habilidade, Oz irá continuamente atacar inimigos próximos com Bolas Eletrificantes.\n\nMantenha pressionado para ajustar a localização de onde o Oz será evocado.\nPressione a qualquer momento ao longo da duração da habilidade para chamá-lo novamente para o lado de Fischl.\n\n\n",
           "abilities": [],
           "stats": [
             "Dano de ATQ de Oz|{param1}%",
@@ -1748,11 +2018,11 @@
         {
           "key": "s3",
           "title": "Ilusão Noturna",
-          "description": "Evoca Oz para estender suas asas gêmeas do crepúsculo e defender Fischl.\r\n",
+          "description": "Evoca Oz para estender suas asas gêmeas do crepúsculo e defender Fischl.\n",
           "abilities": [
             {
               "name": "",
-              "description": "Tem as seguintes propriedades ao longo da duração da habilidade:\r\n",
+              "description": "Tem as seguintes propriedades ao longo da duração da habilidade:\n",
               "descriptions": [
                 "Fischl se transforma na forma de Oz, aumentando incrivelmente sua Velocidade de Movimento.",
                 "Ataca inimigos próximos com relâmpago, infligindo Dano Electro em inimigos que ela entra em contato. Cada inimigo pode ser atingido apenas uma vez.",
@@ -1763,7 +2033,8 @@
           "stats": [
             "Dano de Eletrocutamento|{param1}%",
             "Tempo de Recarga|{param2}s",
-            "Energia Elemental|{param3}"
+            "Energia Elemental|{param3}",
+            "Energia Elemental|{param4}"
           ]
         }
       ],
@@ -1771,19 +2042,19 @@
         {
           "key": "p1",
           "title": "Meu Jardim Secreto",
-          "description": "Quando despachada em uma expedição em Mondstadt, o tempo consumido é reduzido em 25%\r\n",
+          "description": "Quando despachada em uma expedição em Mondstadt, o tempo consumido é reduzido em 25%\n",
           "descriptions": []
         },
         {
           "key": "p2",
           "title": "Predador Estelar",
-          "description": "Quando Fischl atinge Oz com um Disparo com Mira totalmente carregado, Oz traz a Retribuição Trovejante, causando Dano Electro AdE igual a 152.7% do Dano da flecha.\r\n",
+          "description": "Quando Fischl atinge Oz com um Disparo com Mira totalmente carregado, Oz traz a Retribuição Trovejante, causando Dano Electro AdE igual a 152.7% do Dano da flecha.\n",
           "descriptions": []
         },
         {
           "key": "p3",
           "title": "Desfeito Seja Teu Feitiço Pecaminoso",
-          "description": "Se o seu próprio personagem desencadeia uma Reação Elemental do tipo Electro quando Oz está em campo, o inimigo será infligido com Retribuição Trovejante, causando Dano Electro igual a 80% do ATQ de Fischl.\r\n",
+          "description": "Se o seu próprio personagem desencadeia uma Reação Elemental do tipo Electro quando Oz está em campo, o inimigo será infligido com Retribuição Trovejante, causando Dano Electro igual a 80% do ATQ de Fischl.\n",
           "descriptions": []
         }
       ],
@@ -1791,37 +2062,37 @@
         {
           "key": "c1",
           "title": "Olhar das Profundezas",
-          "description": "Mesmo que Oz não esteja presente no combate, ele ainda pode proteger Fischl através de seus Olhos de Corvo. Quando Fishl ataca um inimigo, Oz atacará simultaneamente, causando 22% de Dano de ATQ.\r\n",
+          "description": "Mesmo que Oz não esteja presente no combate, ele ainda pode proteger Fischl através de seus Olhos de Corvo. Quando Fishl ataca um inimigo, Oz atacará simultaneamente, causando 22% de Dano de ATQ.\n",
           "descriptions": []
         },
         {
           "key": "c2",
           "title": "Devorador de Todos os Pecados",
-          "description": "Quando as Asas da Vigilância Noturna são usadas, causa um adicional de 200% de ATQ como Dano e a sua AdE é aumentada em 50%.\r\n",
+          "description": "Quando as Asas da Vigilância Noturna são usadas, causa um adicional de 200% de ATQ como Dano e a sua AdE é aumentada em 50%.\n",
           "descriptions": []
         },
         {
           "key": "c3",
           "title": "Asas do Pesadelo",
-          "description": "Aumenta o nível das Asas da Vigilância Noturna em 3.\r\nO nível máximo de elevação é 15.\r\n",
+          "description": "Aumenta o nível das Asas da Vigilância Noturna em 3.\nO nível máximo de elevação é 15.\n",
           "descriptions": []
         },
         {
           "key": "c4",
           "title": "Fantasia da Rainha",
-          "description": "Quando Ilusão Noturna é usada, causa 222% de ATQ como Dano Electro nos inimigos próximos.\r\nQuando a habilidade termina, Fischl regenera 20% de sua Vida.\r\n",
+          "description": "Quando Ilusão Noturna é usada, causa 222% de ATQ como Dano Electro nos inimigos próximos.\nQuando a habilidade termina, Fischl regenera 20% de sua Vida.\n",
           "descriptions": []
         },
         {
           "key": "c5",
           "title": "Noite Silenciosa",
-          "description": "Aumenta o nível da Ilusão Noturna em 3.\r\nO nível máximo de elevação é 15.\r\n",
+          "description": "Aumenta o nível da Ilusão Noturna em 3.\nO nível máximo de elevação é 15.\n",
           "descriptions": []
         },
         {
           "key": "c6",
           "title": "Corvo da Noite Eterna",
-          "description": "Aumenta a duração da evocação de Oz por 2 segundos. Adicionalmente, Oz ataca juntamente com o seu próprio personagem quando presente, causando 30% do ATQ de Fischl como Dano Electro.\r\n",
+          "description": "Aumenta a duração da evocação de Oz por 2 segundos. Adicionalmente, Oz ataca juntamente com o seu próprio personagem quando presente, causando 30% do ATQ de Fischl como Dano Electro.\n",
           "descriptions": []
         }
       ]
@@ -2575,12 +2846,12 @@
           "abilities": [
             {
               "name": "Ataque Normal",
-              "description": "Realiza até 5 golpes rápidos.\r\n",
+              "description": "Realiza até 5 golpes rápidos.\n",
               "descriptions": []
             },
             {
               "name": "Ataque Carregado",
-              "description": "Consome uma certa quantidade de Stamina para desferir 2 golpes rápidos com a espada.\r\n",
+              "description": "Consome uma certa quantidade de Stamina para desferir 2 golpes rápidos com a espada.\n",
               "descriptions": []
             },
             {
@@ -2604,7 +2875,7 @@
         {
           "key": "s2",
           "title": "Mordida Congelante",
-          "description": "Lança uma explosão gélida, infligindo Dano Cryo aos inimigos em frente ao Kaeya.\r\n",
+          "description": "Lança uma explosão gélida, infligindo Dano Cryo aos inimigos em frente ao Kaeya.\n\n",
           "abilities": [],
           "stats": [
             "Dano de Habilidade|{param1}%",
@@ -2614,13 +2885,14 @@
         {
           "key": "s3",
           "title": "Valsa Glacial",
-          "description": "Coalescendo a geada no ar, Kaeya invoca 3 pingentes de gelo que giram em torno dele.\r\nEsses pingentes seguirão o personagem e causarão Dano Cryo aos inimigos em seu caminho enquanto eles persistirem.\r\n",
+          "description": "Coalescendo a geada no ar, Kaeya invoca 3 pontas de gelo que giram em torno dele.\nEsses pingentes seguirão o personagem e causarão Dano Cryo aos inimigos em seu caminho enquanto eles persistirem.\n\n",
           "abilities": [],
           "stats": [
             "Dano de Habilidade|{param1}%",
             "Tempo de Recarga|{param2}s",
-            "Duração|{param3}s",
-            "Energia Elemental|{param4}"
+            "Duração|{param3}",
+            "Energia Elemental|{param4}",
+            "Energia Elemental|{param5}"
           ]
         }
       ],
@@ -2628,19 +2900,19 @@
         {
           "key": "p1",
           "title": "Força Oculta",
-          "description": "Diminui o consumo de Stamina ao Correr de todos os seus personagens em 20%.\r\nNão acumulável com Talentos Passivos que concedem exatamente os mesmos efeitos.\r\n",
+          "description": "Diminui o consumo de Stamina ao Correr de todos os seus personagens em 20%.\nNão acumulável com Talentos Passivos que concedem exatamente os mesmos efeitos.\n",
           "descriptions": []
         },
         {
           "key": "p2",
           "title": "Espada do Sangue Frio",
-          "description": "Cada golpe com Mordida Congelante regenera a Vida de Kaeya equivalente a 15% do seu ATQ.\r\n",
+          "description": "Cada golpe com Mordida Congelante regenera a Vida de Kaeya equivalente a 15% do seu ATQ.\n",
           "descriptions": []
         },
         {
           "key": "p3",
           "title": "Coração Glacial",
-          "description": "Os inimigos Congelados pela Mordida Congelante irão dropar Partículas Elementais adicionais.\r\nA Mordida Congelante pode produzir no máximo 2 Partículas Elementais por uso.\r\n",
+          "description": "Os inimigos Congelados pela Mordida Congelante irão dropar Partículas Elementais adicionais.\nA Mordida Congelante pode produzir no máximo 2 Partículas Elementais por uso.\n",
           "descriptions": []
         }
       ],
@@ -2648,37 +2920,37 @@
         {
           "key": "c1",
           "title": "Sangue Excelente",
-          "description": "A Taxa Crítica do Ataque Normal e Ataque Carregado de Kaeya contra os inimigos afetados por Cryo aumentam em 15%.\r\n",
+          "description": "A Taxa Crítica do Ataque Normal e Ataque Carregado de Kaeya contra os inimigos afetados por Cryo aumentam em 15%.\n",
           "descriptions": []
         },
         {
           "key": "c2",
           "title": "Apresentação Eterna",
-          "description": "Cada Valsa Glacial que derrotar um inimigo aumenta sua duração em 2.5s por 15s.\r\n",
+          "description": "Cada Valsa Glacial que derrotar um inimigo aumenta sua duração em 2.5s por 15s.\n",
           "descriptions": []
         },
         {
           "key": "c3",
           "title": "Dança do Gelo",
-          "description": "Aumenta o nível do Mordida Congelante em 3.\r\nO nível máximo de elevação é 15.\r\n",
+          "description": "Aumenta o nível do Mordida Congelante em 3.\nO nível máximo de elevação é 15.\n",
           "descriptions": []
         },
         {
           "key": "c4",
           "title": "Beijo Congelante",
-          "description": "Ativa automaticamente quando a Vida de Kaeya cai para menos de 20%.\r\nCria um escudo que absorve Dano igual a 30% da Vida Máxima de Kaeya. Dura 20 segundos.\r\nEsse escudo absorve 250% do Dano Cryo mais eficientemente. Pode ocorrer apenas uma vez a cada 60 segundos.\r\n",
+          "description": "Ativa automaticamente quando a Vida de Kaeya cai para menos de 20%.\nCria um escudo que absorve Dano igual a 30% da Vida Máxima de Kaeya. Dura 20 segundos.\nEsse escudo absorve 250% do Dano Cryo mais eficientemente. Pode ocorrer apenas uma vez a cada 60 segundos.\n",
           "descriptions": []
         },
         {
           "key": "c5",
           "title": "Abraço Congelante",
-          "description": "Aumenta o nível do Valsa Glacial em 3.\r\nO nível máximo de elevação é 15.\r\n",
+          "description": "Aumenta o nível do Valsa Glacial em 3.\nO nível máximo de elevação é 15.\n",
           "descriptions": []
         },
         {
           "key": "c6",
           "title": "Redemoinho Glacial",
-          "description": "A Valsa Glacial irá gerar 1 Ponta de Gelo adicional, e irá retornar 15 de Energia quando lançada.\r\n",
+          "description": "A Valsa Glacial irá gerar 1 Ponta de Gelo adicional, e irá retornar 15 de Energia quando lançada.\n",
           "descriptions": []
         }
       ]
@@ -2842,17 +3114,17 @@
       "skills": [
         {
           "key": "s1",
-          "title": "Arte Kamisato - Giro",
+          "title": "Arte Kamisato – Giro",
           "description": "",
           "abilities": [
             {
               "name": "Ataque Normal",
-              "description": "Realiza até 5 golpes de espada.\r\n",
+              "description": "Realiza até 5 golpes de espada.\n",
               "descriptions": []
             },
             {
               "name": "Ataque Carregado",
-              "description": "Consome uma certa quantidade de Stamina para avançar para frente realizando Iaido.\r\n",
+              "description": "Consome uma certa quantidade de Stamina para avançar para frente realizando Iaido.\n",
               "descriptions": []
             },
             {
@@ -2865,10 +3137,10 @@
             "Dano do 1° Golpe|{param1}%",
             "Dano do 2° Golpe|{param2}%",
             "Dano do 3° Golpe|{param3}%",
-            "Dano do 4° Golpe|{param4}%×{param5}",
+            "Dano do 4° Golpe|{param4}% x{param5}",
             "Dano do 5° Golpe|{param6}%",
             "Dano de Ataque Carregado|{param7}%",
-            "Consumo de Stamina de Ataque Carregado|{param8}",
+            "Consumo de Stamina de Ataque Carregado|{param8} pontos",
             "Dano Durante a Queda|{param9}%",
             "Dano de Queda de Baixa/Alta Altitude|{param10}% / {param11}%"
           ]
@@ -2876,11 +3148,11 @@
         {
           "key": "s2",
           "title": "Arte Kamisato: Beleza Refletida",
-          "description": "Kamisato Ayato troca de posição e entra no estado \"Reflexão Torrencial\".\r\nApós esta troca, ele deixará uma Ilusão de Água na sua localização original. Após sua formação, a Ilusão de Água explodirá se os oponentes estiverem próximos ou quando sua duração terminar, infligindo Dano Hydro em AdE.\r\n",
+          "description": "Kamisato Ayato troca de posição e entra no estado “Reflexão Torrencial”.\nApós esta troca, ele deixará uma Ilusão de Água na sua localização original. Após sua formação, a Ilusão de Água explodirá se os oponentes estiverem próximos ou quando sua duração terminar, infligindo Dano Hydro em AdE.\n\n",
           "abilities": [
             {
               "name": "Reflexão Torrencial",
-              "description": "Nesse estado, Kamisato Ayato usa sua Espada Aquática para realizar ataques rápidos, fazendo com que o Dano de seus Ataques Normais seja convertido em Dano Hydro em AdE que não pode ser substituído pelo encantamento de outros elementos.\r\nAlém disso, também possui as seguintes propriedades:\r\n",
+              "description": "Nesse estado, Kamisato Ayato usa sua Espada Aquática para realizar ataques rápidos, fazendo com que o Dano de seus Ataques Normais seja convertido em Dano Hydro em AdE que não pode ser substituído pelo encantamento de outros elementos.\nAlém disso, também possui as seguintes propriedades:\n",
               "descriptions": [
                 "Quando os ataques da Espada Aquática atingem um inimigo, darão a Ayato o efeito de Ondas Brilhantes, aumentando o Dano infligido pela Espada Aquática baseado na Vida Máxima atual de Ayato. O número máximo inicial de acúmulos de Ondas Brilhantes é 4, e é possível obter um acúmulo através da Espada Aquática a cada 0.1s. Esse efeito desaparecerá quando a Reflexão Torrencial acabar.",
                 "Aumenta a Resistência Contra Interrupção de Kamisato Ayato.",
@@ -2894,16 +3166,18 @@
             "Dano do 2° Golpe da Espada Aquática|{param2}%",
             "Dano do 3° Golpe da Espada Aquática|{param3}%",
             "Duração da Reflexão Torrencial|{param4}s",
-            "Aumento de Dano de Ondas Brilhantes|{param5}%Max HP / Stack",
+            "Aumento de Dano de Ondas Brilhantes|{param5}% da Vida Máxima / Acúmulo",
             "Dano da Ilusão de Água|{param6}%",
             "Duração da Ilusão de Água|{param7}s",
-            "Tempo de Recarga|{param8}s"
+            "Tempo de Recarga|{param8}s",
+            "Intervalo de Ativação Mais Curto|{param9}s",
+            "Recarga|{param10}s"
           ]
         },
         {
           "key": "s3",
           "title": "Arte Kamisato: Jardim Aquático",
-          "description": "Revela um jardim puro que extingue toda a cacofonia.\r\nEnquanto esse espaço existir, Lâminas de Flores de Água constantemente cairão e atacarão os inimigos em sua AdE, infligindo Dano Hydro e aumentando o dano do Ataque Normal dos personagens dentro da AdE.\r\n\"",
+          "description": "Revela um jardim puro que extingue toda a cacofonia.\nEnquanto esse espaço existir, Lâminas de Flores de Água constantemente cairão e atacarão os inimigos em sua AdE, infligindo Dano Hydro e aumentando o dano do Ataque Normal dos personagens dentro da AdE.\n\n“",
           "abilities": [],
           "stats": [
             "Dano da Lâmina de Flores de Água|{param1}%",
@@ -2918,13 +3192,13 @@
         {
           "key": "p1",
           "title": "Arte Kamisato: Cozinha Diária",
-          "description": "Quando uma Comida Perfeita é feita, tem uma chance de 18% de receber uma Comida Estranha de mesmo tipo.\r\n",
+          "description": "Quando uma Comida Perfeita é feita, tem uma chance de 18% de receber uma Comida Estranha de mesmo tipo.\n",
           "descriptions": []
         },
         {
           "key": "p2",
           "title": "Arte Kamisato: Corrente entre Montanhas",
-          "description": "Arte Kamisato: Beleza Refletida possui as seguintes propriedades:\r\n",
+          "description": "Arte Kamisato: Beleza Refletida possui as seguintes propriedades:\n",
           "descriptions": [
             "Depois de ser lançada, Kamisato Ayato obtém 2 acúmulos de Ondas Brilhantes;",
             "Depois de sua Ilusão de Água explodir, Kamisato Ayato obterá um efeito de Ondas Brilhantes igual ao máximo de número de acúmulos possíveis."
@@ -2933,7 +3207,7 @@
         {
           "key": "p3",
           "title": "Arte Kamisato: Completação da Lua Nascente",
-          "description": "Quando Kamisato Ayato está na equipe, mas não ativo no campo de batalha, se sua Energia Elemental for menor que 40 pontos, ele regenerará 2 pontos de Energia Elemental para si mesmo por segundo.\r\n",
+          "description": "Quando Kamisato Ayato está na equipe, mas não ativo no campo de batalha, se sua Energia Elemental for menor que 40 pontos, ele regenerará 2 pontos de Energia Elemental para si mesmo por segundo.\n",
           "descriptions": []
         }
       ],
@@ -2941,37 +3215,37 @@
         {
           "key": "c1",
           "title": "Reflexo Gracioso",
-          "description": "Espada Aquática infligirá 40% a mais de Dano em inimigos com Vida igual ou inferior a 50%.\r\n",
+          "description": "Espada Aquática infligirá 40% a mais de Dano em inimigos com Vida igual ou inferior a 50%.\n",
           "descriptions": []
         },
         {
           "key": "c2",
           "title": "Fonte do Mundo",
-          "description": "O número máximo de acúmulos de Onda Brilhante é aumentado para 5. Quando Kamisato Ayato possuir pelo menos 3 acúmulos de Ondas Brilhantes, sua Vida Máxima será aumentada em 50%.\r\n",
+          "description": "O número máximo de acúmulos de Onda Brilhante é aumentado para 5. Quando Kamisato Ayato possuir pelo menos 3 acúmulos de Ondas Brilhantes, sua Vida Máxima será aumentada em 50%.\n",
           "descriptions": []
         },
         {
           "key": "c3",
           "title": "Admiração das Flores",
-          "description": "Aumenta o nível de Arte Kamisato: Beleza Refletida em 3.\r\nO nível máximo de elevação é 15.\r\n",
+          "description": "Aumenta o nível de Arte Kamisato: Beleza Refletida em 3.\nO nível máximo de elevação é 15.\n",
           "descriptions": []
         },
         {
           "key": "c4",
           "title": "Fluxo Ininterrupto",
-          "description": "Ao usar Arte Kamisato: Jardim Aquático, os personagens próximos da equipe terão um aumento da Vel. de ATQ do Ataque Normal de 15% por 15s.\r\n",
+          "description": "Ao usar Arte Kamisato: Jardim Aquático, os personagens próximos da equipe terão um aumento da Vel. de ATQ do Ataque Normal de 15% por 15s.\n",
           "descriptions": []
         },
         {
           "key": "c5",
           "title": "Orvalho de Mil Gotas",
-          "description": "Aumenta o nível Arte Kamisato: Jardim Aquático em 3.\r\nO nível máximo de elevação é 15.\r\n",
+          "description": "Aumenta o nível Arte Kamisato: Jardim Aquático em 3.\nO nível máximo de elevação é 15.\n",
           "descriptions": []
         },
         {
           "key": "c6",
           "title": "Origem Ilimitada",
-          "description": "Depois de usar Arte Kamisato: Beleza Refletida, o próximo ataque de Espada Aquática de Kamisato Ayato que atingir um inimigo desencadeará dois ataques de Espadas Aquáticas adicionais, cada um infligindo Dano equivalente a 450% do Dano do Ataque de Kamisato Ayato.\r\nEstes dois ataques da Espada Aquática não receberão bônus de Onda Brilhante.\r\n",
+          "description": "Depois de usar Arte Kamisato: Beleza Refletida, o próximo ataque de Espada Aquática de Kamisato Ayato que atingir um inimigo desencadeará dois ataques de Espadas Aquáticas adicionais, cada um infligindo Dano equivalente a 450% do Dano do Ataque de Kamisato Ayato.\nEstes dois ataques da Espada Aquática não receberão bônus de Onda Brilhante.\n",
           "descriptions": []
         }
       ]
@@ -3799,10 +4073,97 @@
       ]
     },
     {
+      "key": "nilou",
+      "name": "Nilou",
+      "title": "？？？",
+      "description": "？？？",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ]
+    },
+    {
       "key": "ningguang",
       "name": "Ningguang",
-      "title": "Tianquan em Eclipse",
-      "description": "\"Tianquan\" dos \"Qixing de Liyue\". Sua fortuna é insuperável em todo Teyvat.",
+      "title": "Estrela em Eclipse",
+      "description": "“Tianquan” dos “Qixing de Liyue”. Sua fortuna é insuperável em todo Teyvat.",
       "skills": [
         {
           "key": "s1",
@@ -3811,12 +4172,12 @@
           "abilities": [
             {
               "name": "Ataque Normal",
-              "description": "Dispara gemas que causam Dano Geo.\r\nAo acertar, concede a Ningguang 1 Jade de Estrela.\r\n",
+              "description": "Dispara gemas que causam Dano Geo.\nAo acertar, concede a Ningguang 1 Jade de Estrela.\n",
               "descriptions": []
             },
             {
               "name": "Ataque Carregado",
-              "description": "Consome uma certa quantidade de Stamina para disparar uma gema gigante que causa Dano Geo.\r\nSe Ningguang possui Jades Estelares, ao liberar um Ataque Carregado fará com que os Jades Estelares sejam disparados contra um inimigo também, causando Dano adicional.\r\n",
+              "description": "Consome uma certa quantidade de Stamina para disparar uma gema gigante que causa Dano Geo.\nSe Ningguang possui Jades Estelares, ao liberar um Ataque Carregado fará com que os Jades Estelares sejam disparados contra um inimigo também, causando Dano adicional.\n",
               "descriptions": []
             },
             {
@@ -3837,24 +4198,25 @@
         {
           "key": "s2",
           "title": "Tela de Jade",
-          "description": "Ningguang cria uma Tela de Jade a partir do ouro, obsidiana e sua grande opulência, infligindo Dano Geo em uma AdE.\r\n",
+          "description": "Ningguang cria uma Tela de Jade a partir do ouro, obsidiana e sua grande opulência, infligindo Dano Geo em uma AdE.\n\n",
           "abilities": [
             {
               "name": "Tela de Jade",
-              "description": "Bloqueia projéteis inimigos. \r\nResistência aumenta com base na Vida Máxima de Ningguang.\r\nTela de Jade é considerada uma Construção Geo e pode ser usada para bloquear alguns ataques, mas não pode ser escalada. Apenas uma Tela de Jade pode existir ao mesmo tempo.\r\n",
+              "description": "Bloqueia projéteis inimigos. \nResistência aumenta com base na Vida Máxima de Ningguang.\nTela de Jade é considerada uma Construção Geo e pode ser usada para bloquear alguns ataques, mas não pode ser escalada. Apenas uma Tela de Jade pode existir ao mesmo tempo.\n",
               "descriptions": []
             }
           ],
           "stats": [
             "Vida Recebida|{param1}%",
             "Dano de Habilidade|{param2}%",
-            "Tempo de Recarga|{param3}s"
+            "Tempo de Recarga|{param3}s",
+            "Tempo de Recarga|{param4} / s"
           ]
         },
         {
           "key": "s3",
           "title": "Quebrador de Estrelas",
-          "description": "Recolhendo um grande número de gemas, Ningguang espalha todas de uma vez, enviando projéteis perseguidores em seus inimigos que causam Dano Geo massivo.\r\nSe o Quebrador de Estrelas é lançado enquanto a Tela de Jade está próxima, a Tela de Jade irá disparar projéteis de gemas perseguidoras adicionais ao mesmo tempo.\r\n",
+          "description": "Recolhendo um grande número de gemas, Ningguang espalha todas de uma vez, enviando projéteis perseguidores em seus inimigos que causam Dano Geo massivo.\nSe o Quebrador de Estrelas é lançado enquanto a Tela de Jade está próxima, a Tela de Jade irá disparar projéteis de gemas perseguidoras adicionais ao mesmo tempo.\n\n",
           "abilities": [],
           "stats": [
             "Dano de Cada Gema|{param1}%",
@@ -3867,19 +4229,19 @@
         {
           "key": "p1",
           "title": "Registro dos Tesouros Maravilhosos",
-          "description": "Mostra a localização de veias de minério utilizadas na forja no mapa.\r\n",
+          "description": "Mostra a localização de veias de minério utilizadas na forja no mapa.\n",
           "descriptions": []
         },
         {
           "key": "p2",
           "title": "Plano B",
-          "description": "Quando Ningguang estiver em posse das Jades Estelares, seu Ataque Carregado não consome Stamina.\r\n",
+          "description": "Quando Ningguang estiver em posse das Jades Estelares, seu Ataque Carregado não consome Stamina.\n",
           "descriptions": []
         },
         {
           "key": "p3",
           "title": "Reserva Estratégica",
-          "description": "Um personagem que passa pela Tela de Jade ganhará 12% de  Bônus de Dano GEO por 10s.\r\n",
+          "description": "Um personagem que passa pela Tela de Jade ganhará 12% de  Bônus de Dano GEO por 10s.\n",
           "descriptions": []
         }
       ],
@@ -3887,37 +4249,37 @@
         {
           "key": "c1",
           "title": "Fragmentos Perfurantes",
-          "description": "Ao acertar um Ataque Normal, causará Dano de AdE.\r\n",
+          "description": "Ao acertar um Ataque Normal, causará Dano de AdE.\n",
           "descriptions": []
         },
         {
           "key": "c2",
           "title": "Efeito de Choque",
-          "description": "Quando a Tela de Jade for quebrada, o tempo de recarga é redefinido.\r\nEste efeito pode ser ativado uma vez a cada 6s.\r\n",
+          "description": "Quando a Tela de Jade for quebrada, o tempo de recarga é redefinido.\nEste efeito pode ser ativado uma vez a cada 6s.\n",
           "descriptions": []
         },
         {
           "key": "c3",
           "title": "Majestosa seja a Formação das Estrelas",
-          "description": "Aumenta o nível do Quebrador de Estrelas em 3. O nível máximo da elevação é 15.\r\n",
+          "description": "Aumenta o nível do Quebrador de Estrelas em 3. O nível máximo da elevação é 15.\n",
           "descriptions": []
         },
         {
           "key": "c4",
           "title": "Requintado seja o Jade, brilhando por todo lado",
-          "description": "A Tela de Jade aumenta a RES Elemental dos personagens próximos em 10%.\r\n",
+          "description": "A Tela de Jade aumenta a RES Elemental dos personagens próximos em 10%.\n",
           "descriptions": []
         },
         {
           "key": "c5",
           "title": "Invencível seja a Tela de Jade",
-          "description": "Aumenta o nível da Tela de Jade em 3.\r\nO nível máximo de elevação é 15.\r\n",
+          "description": "Aumenta o nível da Tela de Jade em 3.\nO nível máximo de elevação é 15.\n",
           "descriptions": []
         },
         {
           "key": "c6",
           "title": "Grandiosas sejam as Sete Estrelas",
-          "description": "Quando o Quebrador de Estrelas for usado, Ningguang ganha 7 Jades Estelares.\r\n",
+          "description": "Quando o Quebrador de Estrelas for usado, Ningguang ganha 7 Jades Estelares.\n",
           "descriptions": []
         }
       ]
@@ -3930,17 +4292,17 @@
       "skills": [
         {
           "key": "s1",
-          "title": "Ataque Normal - Técnica de Espada de Favonius - Empregada",
+          "title": "Técnica de Espada de Favonius – Empregada",
           "description": "",
           "abilities": [
             {
               "name": "Ataque Normal",
-              "description": "Realiza até 4 golpes consecutivos.\r\n",
+              "description": "Realiza até 4 golpes consecutivos.\n",
               "descriptions": []
             },
             {
               "name": "Ataque Carregado",
-              "description": "Drena Stamina ao longo do tempo para realizar um ataque giratório contínuo contra todos os inimigos próximos.\r\nAo final da sequência, realiza um corte poderoso.\r\n",
+              "description": "Drena Stamina ao longo do tempo para realizar um ataque giratório contínuo contra todos os inimigos próximos.\nAo final da sequência, realiza um corte poderoso.\n",
               "descriptions": []
             },
             {
@@ -3956,7 +4318,7 @@
             "Dano do 4° golpe|{param4}%",
             "Dano de Loop de Ataque Carregado|{param5}%",
             "Dano Final de Ataque Carregado|{param6}%",
-            "Consumo de Stamina de Ataque Carregado|{param7}/s",
+            "Consumo de Stamina de Ataque Carregado|{param7} / s",
             "Duração Máxima|{param8}s",
             "Dano Durante a Queda|{param9}%",
             "Dano de Queda de Baixa/Alta Altitude|{param10}% / {param11}%"
@@ -3965,11 +4327,11 @@
         {
           "key": "s2",
           "title": "Guardião do Coração",
-          "description": "Invoca uma armadura protetora, infligindo Dano Geo nos inimigos próximos e criando um escudo. A Absorção de Dano do escudo aumenta baseado na DEF de Noelle.\r\n",
+          "description": "Invoca uma armadura protetora, infligindo Dano Geo nos inimigos próximos e criando um escudo. A Absorção de Dano do escudo aumenta baseado na DEF de Noelle.\n",
           "abilities": [
             {
               "name": "",
-              "description": "O escudo tem as seguintes propriedades:\r\n",
+              "description": "O escudo tem as seguintes propriedades:\n",
               "descriptions": [
                 "Quando os Ataques Normais e Ataques Carregados da Noelle acertarem um alvo, eles terão uma certa chance de recuperar a Vida de todos os personagens.",
                 "Possui 150% de Eficiência em Absorção contra todos os danos elementais.",
@@ -3978,24 +4340,25 @@
             }
           ],
           "stats": [
-            "Dano de Habilidade|{param1}% DEF",
-            "Dano de Absorção|{param2}% DEF + {param3}",
-            "Cura|{param4}% DEF + {param5}",
+            "Dano de Habilidade|{param1}% da DEF",
+            "Dano de Absorção|{param2}% da DEF + {param3}",
+            "Cura|{param4}% da DEF + {param5}",
             "Probabilidade de Cura|{param6}%",
             "Duração|{param7}s",
-            "Tempo de Recarga|{param8}s"
+            "Tempo de Recarga|{param8}s",
+            "Tempo de Recarga|{param9}s"
           ]
         },
         {
           "key": "s3",
           "title": "Grande Limpeza",
-          "description": "Reunindo a força da pedra em sua arma, Noelle ataca os inimigos ao seu redor com uma grande AdE, causando Dano Geo.\r\n",
+          "description": "Reunindo a força da pedra em sua arma, Noelle ataca os inimigos ao seu redor com uma grande AdE, causando Dano Geo.\n",
           "abilities": [
             {
               "name": "",
-              "description": "Em seguida, Noelle ganha os seguintes efeitos:\r\n",
+              "description": "Em seguida, Noelle ganha os seguintes efeitos:\n",
               "descriptions": [
-                "Aumenta o Ataque AdE de Noelle.",
+                "Aumenta a AdE do Ataque da Noelle.",
                 "Converte o Dano ATQ para Dano Geo. O efeito dessa conversão elemental não pode ser anulado por nenhuma outra conversão elemental. ",
                 "Seu ATQ aumenta com base na sua DEF."
               ]
@@ -4004,7 +4367,7 @@
           "stats": [
             "Dano de Explosão|{param1}%",
             "Dano de Habilidade|{param2}%",
-            "Aumento de ATQ|{param3}% DEF",
+            "Aumento de ATQ|{param3}% da DEF",
             "Duração|{param4}s",
             "Tempo de Recarga|{param5}s",
             "Energia Elemental|{param6}"
@@ -4015,13 +4378,13 @@
         {
           "key": "p1",
           "title": "Dedicação da Empregada",
-          "description": "Quando uma Culinária Perfeita é feita em uma comida de aumento de DEF, Noelle tem uma chance de 12% de receber o dobro de produção.\r\n",
+          "description": "Quando uma Culinária Perfeita é feita em uma comida de aumento de DEF, Noelle tem uma chance de 12% de receber o dobro de produção.\n",
           "descriptions": []
         },
         {
           "key": "p2",
           "title": "Devoção",
-          "description": "Quando Noelle não estiver em combate, e a Vida do personagem selecionado cair para menos de 30%, o seguinte efeito acontecerá automaticamente:\r\n",
+          "description": "Quando Noelle não estiver em combate, e a Vida do personagem selecionado cair para menos de 30%, o seguinte efeito acontecerá automaticamente:\n",
           "descriptions": [
             "A Vida do Personagem em uso receberá imediatamente um escudo de duração de 20s que absorve um dano equivalenta a 400% da DEF de Noelle.",
             "O escudo tem 150% de eficiência contra Dano de todos os Elementos e Dano Físico.",
@@ -4031,7 +4394,7 @@
         {
           "key": "p3",
           "title": "Limpo e Eficaz",
-          "description": "Cada 4 Ataques Normais ou Carregados aumentam a Recarga de Guardião do Coração em 1s.\r\nAtingindo múltiplos inimigos com um único ataque apenas conta como 1 golpe.\r\n",
+          "description": "Quando o Ataque Normal e Carregado de Noelle atingir o inimigo cumulativamente 4 vezes, o tempo de Recarga do Guardião do Coração serão reduzido em 1s\nÉ possível acumular uma vez a cada 0.1s.\n",
           "descriptions": []
         }
       ],
@@ -4039,37 +4402,37 @@
         {
           "key": "c1",
           "title": "Estou na sua Retaguarda",
-          "description": "Enquanto ambos Grande Limpeza e Guardião do Coração estiverem em efeito, a chance de ativação de cura do Guardião do Coração aumenta em 100%.\r\n",
+          "description": "Enquanto ambos Grande Limpeza e Guardião do Coração estiverem em efeito, a chance de ativação de cura do Guardião do Coração aumenta em 100%.\n",
           "descriptions": []
         },
         {
           "key": "c2",
           "title": "Empregada do Redemoinho",
-          "description": "Diminui o Consumo de Stamina dos Ataques Carregados de Noelle em 20% e aumenta o Dano do seu Ataque Carregado em 15%.\r\n",
+          "description": "Diminui o Consumo de Stamina dos Ataques Carregados de Noelle em 20% e aumenta o Dano do seu Ataque Carregado em 15%.\n",
           "descriptions": []
         },
         {
           "key": "c3",
           "title": "Empregada Invulnerável",
-          "description": "Aumenta o nível do Guardião do Coração em 3.\r\nO nível máximo de elevação é 15.\r\n",
+          "description": "Aumenta o nível do Guardião do Coração em 3.\nO nível máximo de elevação é 15.\n",
           "descriptions": []
         },
         {
           "key": "c4",
           "title": "A Ser Limpo",
-          "description": "Quando o Guardião do Coração termina ou se rompe, causa 400% de ATQ como Dano Geo aos inimigos ao redor.\r\n",
+          "description": "Quando o Guardião do Coração termina ou se rompe, causa 400% de ATQ como Dano Geo aos inimigos ao redor.\n",
           "descriptions": []
         },
         {
           "key": "c5",
           "title": "Governanta de Favonius",
-          "description": "Aumenta o nível da Grande Limpeza em 3.\r\nO nível máximo de elevação é 15.\r\n",
+          "description": "Aumenta o nível da Grande Limpeza em 3.\nO nível máximo de elevação é 15.\n",
           "descriptions": []
         },
         {
           "key": "c6",
           "title": "Deve Ser Impecável",
-          "description": "A Grande Limpeza aumenta o ATQ de Noelle em um adicional de 50% de sua DEF.\r\nDurante esta habilidade, adiciona 1s de tempo de duração para cada oponente derrotado, até 10s.\r\n",
+          "description": "A Grande Limpeza aumenta o ATQ de Noelle em um adicional de 50% de sua DEF.\nDurante esta habilidade, adiciona 1s de tempo de duração para cada oponente derrotado, até 10s.\n",
           "descriptions": []
         }
       ]
@@ -5701,86 +6064,126 @@
     {
       "key": "tighnari",
       "name": "Tighnari",
-      "title": "???",
-      "description": "",
+      "title": "Andarilho Verdejante",
+      "description": "Um jovem pesquisador que conhece bastante de botânica e que atualmente trabalha como um Patrulheiro Florestal na Floresta Avidya. Ele é extremamente sincero com um bom coração — e muito bom na orientação até mesmo dos alunos mais ingênuos.",
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Rompedor de Barreiras Khanda",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Ataque Normal",
+              "description": "Realiza até 4 disparos consecutivos com um arco.\n",
+              "descriptions": []
+            },
+            {
+              "name": "Ataque Carregado",
+              "description": "Realiza um Disparo com Mira mais preciso com Dano aumentado.\nAo mirar, o poder do Dendro irá se acumular na ponta da flecha antes que ela seja lançada. Possui diferentes efeitos baseados em quanto tempo a energia foi carregada:\n",
+              "descriptions": [
+                "Carga Nv.1: Dispara uma flecha carregando o poder Dendro que inflige Dano Dendro.",
+                "Carga Nv.2: Dispara uma Flecha Floral que inflige Dano Dendro. Ao acertar, a Flecha Floral criará 4 Flechas Florescentes que perseguirão os oponentes próximos automaticamente e infligirão Dano Dendro."
+              ]
+            },
+            {
+              "name": "Ataque Imersivo",
+              "description": "Dispara uma chuva de flechas do ar antes de cair e atingir o chão, causando Dano em uma AdE no impacto.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "Dano do 1° Golpe|{param1}%",
+            "Dano do 2° Golpe|{param2}%",
+            "Dano do 3° Golpe|{param3}% x{param4}",
+            "Dano do 4° Golpe|{param5}%",
+            "Disparo com Mira|{param6}%",
+            "Disparo Carregado com Mira Nv.1|{param7}%",
+            "Dano da Flecha Floral|{param8}%",
+            "Dano das Flechas Florescentes|{param9}%",
+            "Dano Durante a Queda|{param10}%",
+            "Dano de Queda de Baixa/Alta Altitude|{param11}% / {param12}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
+          "title": "Mina Vijnana-Phala",
+          "description": "Tighnari lança um Núcleo Vijnana para a frente que inflige Dano Dendro em uma AdE e gera um Campo Vijnana-Khanda que cria misteriosas ilusões que provocam os oponentes dentro dele, atraindo seus ataques.\nAlém disso, Tighnari ganha o efeito “Perfurador Vijnana”, que reduz o tempo necessário para carregar a Flecha Floral em 2.4s. Esse efeito desaparecerá quando a duração da habilidade terminar ou depois que Tighnari disparar 3 Flechas Florais.\n\n",
           "abilities": [],
-          "stats": []
+          "stats": [
+            "Dano de Habilidade|{param1}%",
+            "Duração do Campo Vijnana-Khanda|{param2}s",
+            "Duração do Perfurador Vijnana|{param3}s",
+            "Tempo de Recarga|{param4}s"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
+          "title": "Flecha Enraizadora Artificial",
+          "description": "Combina o poder de todas as sementes para disparar 6 Flechas Enraizadoras que perseguem o inimigo e infligem Dano Dendro.\nAo atingirem, criarão Flechas Enraizadoras secundárias que também perseguem os inimigos e infligem Dano Dendro ao os atingirem.\n\n",
           "abilities": [],
-          "stats": []
+          "stats": [
+            "Dano da Flecha Enraizadora|{param1}%",
+            "Dano da Flecha Enraizadora Secundária|{param2}%",
+            "Tempo de Recarga|{param3}s",
+            "Energia Elemental|{param4}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "Conhecimento Enciclopédico",
+          "description": "Mostra a localização de Especialidades de Sumeru próximas no mapa.\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
+          "title": "Visão Aguçada",
+          "description": "Depois que Tighnari dispara uma Flecha Floral, sua Proficiência Elemental é aumentada em 50 por 4s.\n",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "NA",
-          "description": "",
+          "title": "Conhecedor da Flora",
+          "description": "Para cada ponto de Proficiência Elemental que Tighnari possui, o Dano do seu Ataque Carregado e da Flecha Enraizadora Artificial são aumentados em 0.06%.\nO aumento de Dano máximo obtido dessa forma é 60%.\n",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "Começos Determinados Pela Raiz",
+          "description": "A Taxa CRIT dos Ataques Carregados de Tighnari é aumentada em 15%.\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "Origens Conhecidas Pelo Caule",
+          "description": "Quando houverem oponentes dentro do Campo Vijnana-Khanda criado pela Mina Vijnana-Phala, Tighnari ganha 20% de Bônus de Dano Dendro.\nEsse efeito pode durar até 6s quando o Campo Vijnana-Khanda acabar ou quando não houverem inimigos dentro dele.\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "Ramos da Fortuna",
+          "description": "Aumenta o nível de habilidade da Flecha Enraizadora Artificial em 3.\nO nível máximo de elevação é 15.\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "Vislumbre das Folhas Murchas",
+          "description": "Quando Flecha Enraizadora Artificial é lançada, todos os membros da equipe ao redor ganham 60 de Proficiência Elemental por 8s. Se a Flecha Enraizadora Artificial causar uma reação Elemental de Queimaduras, Florescimento, Aceleração ou Propagação, sua Proficiência Elemental aumentará em mais 60 adicionais e também redefinirá a duração do bônus desse estado.\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "Compreensão em Meio as Flores",
+          "description": "Aumenta o nível da Mina Vijnana-Phala em 3.\nO nível máximo de elevação é 15.\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
+          "title": "Frutos Cármicos",
+          "description": "O tempo de carga da Flecha Floral é reduzido em 0.9s, e irá produzir 1 Flecha Florescente adicional ao acertar um inimigo, infligindo Dano de 150% do ATQ de Tighnari.\n",
           "descriptions": []
         }
       ]
@@ -5918,6 +6321,134 @@
           "key": "c6",
           "title": "Ventos Entrelaçados",
           "description": "Os alvos que recebem Dano de Ondas de Rajadas possuem sua RES Anemo reduzido em 20%.\r\nSe ocorrer uma Absorção Elemental, então sua RES do Elemento correspondente também diminuirá 20%.\r\n",
+          "descriptions": []
+        }
+      ]
+    },
+    {
+      "key": "traveler-dendro",
+      "name": "Viajante (Dendro)",
+      "title": null,
+      "description": "Um Viajante de outro mundo que teve seu ente querido levado e foi forçado a embarcar em uma jornada em busca dos Sete.",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "Foice Exótica",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Ataque Normal",
+              "description": "Realiza até 5 golpes consecutivos.\n",
+              "descriptions": []
+            },
+            {
+              "name": "Ataque Carregado",
+              "description": "Consome uma certa quantidade de Stamina para desferir 2 golpes rápidos com a espada.\n",
+              "descriptions": []
+            },
+            {
+              "name": "Ataque Imersivo",
+              "description": "Mergulha em pleno ar para golpear o chão, causando dano aos inimigos ao longo do caminho e infligindo Dano em uma AdE no impacto.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "Dano do 1° Golpe|{param1}%",
+            "Dano do 2° Golpe|{param2}%",
+            "Dano do 3° Golpe|{param3}%",
+            "Dano do 4° Golpe|{param4}%",
+            "Dano do 5° Golpe|{param5}%",
+            "Dano de Ataque Carregado|{param6}% + {param7}%",
+            "Consumo de Stamina de Ataque Carregado|{param8} pontos",
+            "Dano Durante a Queda|{param9}%",
+            "Dano de Queda de Baixa/Alta Altitude|{param10}% / {param11}%"
+          ]
+        },
+        {
+          "key": "s2",
+          "title": "Espada da Grama Afiada",
+          "description": "Brandindo sua espada, você desencadeia uma chuva de folhas afiadas que infligem Dano Dendro à frente.\n\n",
+          "abilities": [],
+          "stats": [
+            "Dano de Habilidade|{param1}%",
+            "Tempo de Recarga|{param2}s"
+          ]
+        },
+        {
+          "key": "s3",
+          "title": "Mímico Dendro",
+          "description": "Canalizando o poder da flora a sua volta, você cria uma Lótus Luminosa.\nEssa Lótus irá infligir Dano Dendro contínuo contra os oponentes dentro de uma AdE.\n\n",
+          "abilities": [
+            {
+              "name": "Transformação da Lótus Luminosa",
+              "description": "A Lótus Luminosa irá passar pelas seguintes mudanças depois de entrar em contato com Hydro/Electro/Pyro:\n",
+              "descriptions": [
+                "Hydro: A AdE da Lótus Luminosa e a AdE de seus ataques são aumentadas.",
+                "Electro: A Vel. de ATQ da Lótus Luminosa é aumentada.",
+                "Pyro: A Lótus Luminosa irá explodir depois de um curto período e então desaparecer, infligindo Dano Dendro em uma AdE.",
+                "A Lótus Luminosa apenas poderá passar por uma única Transformação durante sua duração.",
+                "Apenas uma Lótus Luminosa criada pel{M#o}{F#a} Viajante pode existir simultaneamente."
+              ]
+            }
+          ],
+          "stats": [
+            "Dano do Ataque da Lótus Luminosa|{param1}%",
+            "Dano da Explosão|{param2}%",
+            "Duração da Lótus Luminosa|{param3}s",
+            "Tempo de Recarga|{param4}s",
+            "Energia Elemental|{param5}"
+          ]
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "Proliferação Exuberante",
+          "description": "Lótus Luminosa irá obter um acúmulo do efeito Sobrecarga Luminosa a cada segundo em campo, aumentando a Proficiência Elemental dos personagens ativos dentro de sua AdE em 6. A Sobrecarga Luminosa pode acumular até 10 vezes.\n",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "Verde Luxuoso",
+          "description": "Cada ponto de Proficiência Elemental que {Mo}{Fa} Viajante possui aumenta o Dano infligido pela Espada da Grama Afiada em 0.15% e o Dano infligido pelo Mímico Dendro em 0.1%.\n",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "Videira Parasítica",
+          "description": "Após a Espada da Grama Afiada acertar um oponente, ela irá gerar 3.5 de Energia {Mao}{Fà} Viajante.\n",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "Resiliência Verde",
+          "description": "Aumenta a duração da Lótus Luminosa em 3s.\n",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "Turbilhão de Ervas Daninhas",
+          "description": "Aumenta o nível da Espada da Grama Afiada em 3.\nO nível máximo de elevação é 15.\n",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "Erva de Melaço",
+          "description": "Após a Lótus Luminosa desencadear a Transformação da Lótus Luminosa, ela irá obter 5 acúmulos do efeito de Sobrecarga Luminosa do Talento Passivo “Proliferação Exuberante”.\nÉ preciso ter desbloqueado esse Talento Passivo primeiro.\n",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "Transiência Viridiana",
+          "description": "Aumenta o nível do Mímico Dendro em 3.\nO nível máximo de elevação é 15.\n",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "Acúmulo Envelhecido",
+          "description": "O personagem sob o efeito da Sobrecarga Luminosa criada pela Lótus Luminosa ganha 12% de Bônus de Dano Dendro. Se a Lótus tiver passado pela Transformação da Lótus Luminosa, o personagem também ganhará 12% de Bônus de Dano ao elemento correspondente.\n",
           "descriptions": []
         }
       ]
@@ -6594,12 +7125,12 @@
           "abilities": [
             {
               "name": "Ataque Normal",
-              "description": "Realiza até 5 golpes rápidos.\r\n",
+              "description": "Realiza até 5 golpes rápidos.\n",
               "descriptions": []
             },
             {
               "name": "Ataque Carregado",
-              "description": "Consome uma certa quantidade de Stamina para desferir 2 golpes rápidos com a espada.\r\n",
+              "description": "Consome uma certa quantidade de Stamina para desferir 2 golpes rápidos com a espada.\n",
               "descriptions": []
             },
             {
@@ -6623,11 +7154,11 @@
         {
           "key": "s2",
           "title": "Espada de Guhua: Chuva Torrencial",
-          "description": "Xingqiu realiza ataques duplos com sua espada, causando Dano Hydro. Ao mesmo tempo, essa habilidade cria o número máximo de Espadas de Chuva, que orbitarão o seu próprio personagem.\r\n",
+          "description": "Xingqiu realiza ataques duplos com sua espada, causando Dano Hydro. Ao mesmo tempo, essa habilidade cria o número máximo de Espadas de Chuva, que orbitarão o seu próprio personagem.\n",
           "abilities": [
             {
               "name": "",
-              "description": "As Espadas de Chuva têm as seguintes propriedades:\r\n",
+              "description": "As Espadas de Chuva têm as seguintes propriedades:\n",
               "descriptions": [
                 "Quando um personagem recebe Dano, a Espada de Chuva se despedaça, reduzindo a quantidade de Dano recebido.",
                 "Aumenta a resistência do personagem à interrupção.",
@@ -6642,13 +7173,14 @@
             "Dano de Habilidade|{param1}% + {param2}%",
             "Taxa de Redução de Dano|{param3}%",
             "Duração|{param4}s",
-            "Tempo de Recarga|{param5}s"
+            "Tempo de Recarga|{param5}s",
+            "Tempo de Recarga|{param6} / s"
           ]
         },
         {
           "key": "s3",
           "title": "Espada Guhua: Retalhador de Chuva",
-          "description": "Inicia o Trabalho com Lâminas do Arco-íris e luta usando uma chuva de espadas ilusórias, enquanto cria um número máximo de Chuvas de Espadas.\r\n",
+          "description": "Inicia o Trabalho com Lâminas do Arco-íris e luta usando uma chuva de espadas ilusórias, enquanto cria um número máximo de Chuvas de Espadas.\n\n",
           "abilities": [
             {
               "name": "Trabalho com Lâminas do Arco-íris",
@@ -6671,19 +7203,19 @@
         {
           "key": "p1",
           "title": "Flash do Gênio",
-          "description": "Quando Xingqiu forja Materiais de Talento de Personagem, ele possui 25% de chance de retornar uma certa quantidade de materiais usados.\r\n",
+          "description": "Quando Xingqiu forja Materiais de Talento de Personagem, ele possui 25% de chance de retornar uma certa quantidade de materiais usados.\n",
           "descriptions": []
         },
         {
           "key": "p2",
           "title": "Hidropático",
-          "description": "Quando a Chuva de Espadas é quebrada ou quando sua duração acabar, regenera a Vida do personagem atual em 6% da Vida Máxima de Xingqiu.\r\n",
+          "description": "Quando uma espada da Chuva de Espadas é quebrada ou quando sua duração acabar, regenera a Vida do personagem atual em 6% da Vida Máxima de Xingqiu.\n",
           "descriptions": []
         },
         {
           "key": "p3",
           "title": "Lâminas Entre Gotas de Chuva",
-          "description": "Xingqiu ganha 20% de Dano Hydro Bônus.\r\n",
+          "description": "Xingqiu ganha 20% de Dano Hydro Bônus.\n",
           "descriptions": []
         }
       ],
@@ -6691,37 +7223,37 @@
         {
           "key": "c1",
           "title": "O Aroma Remanescente",
-          "description": "Aumenta o número Máximo de Espadas em 1.\r\n",
+          "description": "Aumenta o número máximo de Chuva das Espadas em 1.\n",
           "descriptions": []
         },
         {
           "key": "c2",
           "title": "Arco-Íris Acima do Céu Azul",
-          "description": "Estende a duração da Espada de Guhua - Retalhador de Chuva por 3 segundos.\r\nReduz a RES Hydro dos inimigos golpeados pelos ataques do retalhador de chuva em 15% por 4 segundos.\r\n",
+          "description": "Estende a duração da Espada de Guhua – Retalhador de Chuva por 3 segundos.\nReduz a RES Hydro dos inimigos golpeados pelos ataques do retalhador de chuva em 15% por 4 segundos.\n",
           "descriptions": []
         },
         {
           "key": "c3",
           "title": "Tecedor de Versos",
-          "description": "Aumenta o Nível de Guhua: Retalhador de Chuva em 3.\r\nPode ser elevado até Nv.15.\r\n",
+          "description": "Aumenta o Nível de Guhua: Retalhador de Chuva em 3.\nPode ser elevado até Nv.15.\n",
           "descriptions": []
         },
         {
           "key": "c4",
           "title": "Abrandamento do Mal",
-          "description": "Ao longo da duração da Espada de Guhua - Retalhador de Chuva, o Dano causado por Espada de Guhua - Chuva Torrencial é aumentado em 50%.\r\n",
+          "description": "Ao longo da duração da Espada de Guhua – Retalhador de Chuva, o Dano causado por Espada de Guhua – Chuva Torrencial é aumentado em 50%.\n",
           "descriptions": []
         },
         {
           "key": "c5",
           "title": "Abrace a Chuva",
-          "description": "Aumenta o Nível da Espada de Guhua - Chuva Torrencial em 3.\r\nPode ser elevado até Nv.15.\r\n",
+          "description": "Aumenta o Nível da Espada de Guhua – Chuva Torrencial em 3.\nPode ser elevado até Nv.15.\n",
           "descriptions": []
         },
         {
           "key": "c6",
           "title": "Coleção de Poemas",
-          "description": "A cada 2 ataques da Espada de Guhua - Retalhador de Chuva o ataque da chuva de espadas aumenta drasticamente o Dano do terceiro, e ao atingir um inimigo, o terceiro golpe de chuva de espadas de Xingqiu regenerará 3 de Energia.\r\n",
+          "description": "A cada 2 golpes da Espada de Guhua – Retalhador de Chuva o ataque da chuva de espadas aumenta drasticamente o Dano do terceiro golpe, e ao atingir um inimigo, o terceiro golpe de chuva de espadas de Xingqiu regenerará 3 de Energia.\n",
           "descriptions": []
         }
       ]
@@ -7005,17 +7537,17 @@
       "skills": [
         {
           "key": "s1",
-          "title": "Ataque Normal - Selo Ardente",
+          "title": "Selo Ardente",
           "description": "",
           "abilities": [
             {
               "name": "Ataque Normal",
-              "description": "Dispara bolas de fogo continuamente, causando no máximo três Danos Pyro.\r\nQuando o Ataque Normal atinge os inimigos, Yanfei obtém uma Insígnia de Chamas. Inicialmente, pode ter no máximo três Insígnias de Chamas. A cada vez que o efeito ocorre, a duração da Insígnia de Chamas atual será renovada.\r\nCada Insígnia de Chamas reduzirá o consumo de Stamina de Yanfei e desaparecerá quando Yanfei sair do combate.\r\n",
+              "description": "Dispara bolas de fogo continuamente, causando no máximo três Danos Pyro.\nQuando o Ataque Normal atinge os inimigos, Yanfei obtém uma Insígnia de Chamas. Inicialmente, pode ter no máximo três Insígnias de Chamas. A cada vez que o efeito ocorre, a duração da Insígnia de Chamas atual será renovada.\nCada Insígnia de Chamas reduzirá o consumo de Stamina de Yanfei e desaparecerá quando Yanfei sair do combate.\n",
               "descriptions": []
             },
             {
               "name": "Ataque Carregado",
-              "description": "Consome Stamina e, depois de ativada por um curto tempo, consome todas as Insígnias de Chamas e causa Dano Pyro na AdE em sua frente.\r\nDe acordo com a quantidade de Insígnias de Chama consumidas, fortalece a Área e Dano do Ataque Carregado.\r\n",
+              "description": "Consome Stamina e, depois de ativada por um curto tempo, consome todas as Insígnias de Chamas e causa Dano Pyro na AdE em sua frente.\nDe acordo com a quantidade de Insígnias de Chama consumidas, fortalece a Área e Dano do Ataque Carregado.\n",
               "descriptions": []
             },
             {
@@ -7028,9 +7560,9 @@
             "Dano do 1° Golpe|{param1}%",
             "Dano do 2° Golpe|{param2}%",
             "Dano do 3° Golpe|{param3}%",
-            "Dano de ATQ|{param4}% / {param5}% / {param6}% / {param7}% / {param8}%",
+            "Dano de Ataque Carregado|{param4}% / {param5}% / {param6}% / {param7}% / {param8}%",
             "Consumo de Stamina de Ataque Carregado|{param9}",
-            "Redução do Consumo de Stamina da Insígnia de Chamas|{param10}% Per Seal",
+            "Redução do Consumo de Stamina da Insígnia de Chamas|{param10}%",
             "Recarga de Insígnia de Chamas|{param11}s",
             "Dano Durante a Queda|{param12}%",
             "Dano de Queda de Baixa/Alta Altitude|{param13}% / {param14}%"
@@ -7039,7 +7571,7 @@
         {
           "key": "s2",
           "title": "Édito Assinado",
-          "description": "Invoca as chamas, criando Dano Pyro na AdE.\r\nDepois de atingir o inimigo, Yanfei obtém uma grande quantidade de Insígnias de Chamas.\r\n",
+          "description": "Invoca as chamas, criando Dano Pyro na AdE.\nDepois de atingir o inimigo, Yanfei obtém a quantidade máxima de Insígnias de Chamas.\n\n",
           "abilities": [],
           "stats": [
             "Dano de Habilidade|{param1}%",
@@ -7049,15 +7581,15 @@
         {
           "key": "s3",
           "title": "Contrato Vinculativo",
-          "description": "Causa o lançamento de uma chama explosiva, atacando os inimigos ao redor e criando Dano Pyro na AdE e Yanfei obtém a quantidade máxima de Insígnias de Chamas e Efeito de Clarão.\r\n",
+          "description": "Causa o lançamento de uma chama explosiva, atacando os inimigos ao redor e criando Dano Pyro na AdE e Yanfei obtém a quantidade máxima de Insígnias de Chamas e Efeito de Clarão.\n\n",
           "abilities": [
             {
               "name": "Clarão",
-              "description": "Possui os seguintes efeitos:\r\n",
+              "description": "Possui os seguintes efeitos:\n",
               "descriptions": [
                 "Yanfei obtém uma Insígnia de Chamas em cada intervalo de tempo;",
                 "Aumenta o Dano causado pelo Ataque Carregado.",
-                "O efeito de Clarão será eliminado quando Yanfei sair do combate ou for cair na batalha."
+                "O efeito de Clarão será eliminado quando Yanfei sair do combate ou for derrotada em batalha."
               ]
             }
           ],
@@ -7075,19 +7607,19 @@
         {
           "key": "p1",
           "title": "Conhecimento Enciclopédico",
-          "description": "Mostra a localização de Especialidades de Liyue próximos no mapa.\r\n",
+          "description": "Mostra a localização de Especialidades de Liyue próximos no mapa.\n",
           "descriptions": []
         },
         {
           "key": "p2",
           "title": "Clausulas Relacionais",
-          "description": "Quando o Ataque Carregado de Yanfei consumir uma Insígnia de Chama, cada Insígnia de Chama irá aumentar o Bônus de Dano Pyro de Yanfei em 5% por 6s. Ao lançar novamente o Ataque Carregado durante o período deste efeito, o efeito anterior será dissipado.\r\n",
+          "description": "Quando o Ataque Carregado de Yanfei consumir uma Insígnia de Chama, cada Insígnia de Chama irá aumentar o Bônus de Dano Pyro de Yanfei em 5% por 6s. Ao lançar novamente o Ataque Carregado durante o período deste efeito, o efeito anterior será dissipado.\n",
           "descriptions": []
         },
         {
           "key": "p3",
           "title": "Olho de Xiezhi",
-          "description": "Quando o Ataque Carregado de Yanfei causa um Dano CRIT, ela causará um Dano Pyro AdE correspondente a 80% do seu Ataque. Este Dano é considerado como Dano de um Ataque Carregado.\r\n",
+          "description": "Quando o Ataque Carregado de Yanfei causa um Dano CRIT, ela causará um Dano Pyro AdE correspondente a 80% do seu Ataque. Este Dano é considerado como Dano de um Ataque Carregado.\n",
           "descriptions": []
         }
       ],
@@ -7095,25 +7627,25 @@
         {
           "key": "c1",
           "title": "A Lei Não Perdoa",
-          "description": "Quando Yanfei realiza um Ataque Carregado, cada Insígnia de Chamas que ela possuir aumenta sua Resistência Contra Interrupção enquanto ataca, e também reduz o consumo de Stamina desse Ataque Carregado em 10%.\r\n",
+          "description": "Quando Yanfei realiza um Ataque Carregado, cada Insígnia de Chamas que ela possuir aumenta sua Resistência Contra Interrupção enquanto ataca, e também reduz o consumo de Stamina desse Ataque Carregado em 10%.\n",
           "descriptions": []
         },
         {
           "key": "c2",
           "title": "Direito de Interpretação Final",
-          "description": "A Taxa CRIT de Yanfei aumenta em 20% contra inimigos com menos de 50% de Vida.\r\n",
+          "description": "A Taxa CRIT de Yanfei aumenta em 20% contra inimigos com menos de 50% de Vida.\n",
           "descriptions": []
         },
         {
           "key": "c3",
           "title": "Selado sobre Fogo",
-          "description": "Aumenta o nível da Habilidade Édito Assinado em 3.\r\nO nível máximo é 15.\r\n",
+          "description": "Aumenta o nível da Habilidade Édito Assinado em 3.\nO nível máximo é 15.\n",
           "descriptions": []
         },
         {
           "key": "c4",
           "title": "Boa Autoridade",
-          "description": "Ao lançar o Contrato Vinculativo:\r\n",
+          "description": "Ao lançar o Contrato Vinculativo:\n",
           "descriptions": [
             "Gera um Escudo que absorve Dano com base em 45% da Vida Máxima, com duração de 15s.",
             "Esse Escudo tem eficiência de 250% contra Dano Pyro."
@@ -7122,13 +7654,13 @@
         {
           "key": "c5",
           "title": "Respeitando a Declaração Juramentada",
-          "description": "Aumenta o nível da Habilidade Contrato Vinculativo em 3.\r\nO nível máximo é 15.\r\n",
+          "description": "Aumenta o nível da Habilidade Contrato Vinculativo em 3.\nO nível máximo é 15.\n",
           "descriptions": []
         },
         {
           "key": "c6",
           "title": "Uma Cláusula Adicional",
-          "description": "Aumenta a capacidade máxima de Insígnia de Chamas que Yanfei pode ter em 1.\r\n",
+          "description": "Aumenta a capacidade máxima de Insígnia de Chamas que Yanfei pode ter em 1.\n",
           "descriptions": []
         }
       ]
@@ -8059,6 +8591,18 @@
       ]
     },
     {
+      "key": "end-of-the-line",
+      "name": "Águas Secas",
+      "description": "Parece ser um tipo de peixe extinto. Seu corpo é tão elástico, que uma corda pode ser presa a ele e fazer com que sirva como um arco.",
+      "refinements": [
+        "Desencadeia o efeito “Deriva” após usar uma Habilidade Elemental, causando {color}80{/color}% do ATQ como Dano em uma AdE após acertar um oponente com um ataque. O efeito de Deriva será removido após 15s ou após causar Dano em uma AdE 3 vezes. 1 Dano em uma AdE pode ser causado a cada 2s dessa forma. O efeito de Deriva pode ser desencadeado uma vez a cada 12s.",
+        "Desencadeia o efeito “Deriva” após usar uma Habilidade Elemental, causando {color}100{/color}% do ATQ como Dano em uma AdE após acertar um oponente com um ataque. O efeito de Deriva será removido após 15s ou após causar Dano em uma AdE 3 vezes. 1 Dano em uma AdE pode ser causado a cada 2s dessa forma. O efeito de Deriva pode ser desencadeado uma vez a cada 12s.",
+        "Desencadeia o efeito “Deriva” após usar uma Habilidade Elemental, causando {color}120{/color}% do ATQ como Dano em uma AdE após acertar um oponente com um ataque. O efeito de Deriva será removido após 15s ou após causar Dano em uma AdE 3 vezes. 1 Dano em uma AdE pode ser causado a cada 2s dessa forma. O efeito de Deriva pode ser desencadeado uma vez a cada 12s.",
+        "Desencadeia o efeito “Deriva” após usar uma Habilidade Elemental, causando {color}140{/color}% do ATQ como Dano em uma AdE após acertar um oponente com um ataque. O efeito de Deriva será removido após 15s ou após causar Dano em uma AdE 3 vezes. 1 Dano em uma AdE pode ser causado a cada 2s dessa forma. O efeito de Deriva pode ser desencadeado uma vez a cada 12s.",
+        "Desencadeia o efeito “Deriva” após usar uma Habilidade Elemental, causando {color}160{/color}% do ATQ como Dano em uma AdE após acertar um oponente com um ataque. O efeito de Deriva será removido após 15s ou após causar Dano em uma AdE 3 vezes. 1 Dano em uma AdE pode ser causado a cada 2s dessa forma. O efeito de Deriva pode ser desencadeado uma vez a cada 12s."
+      ]
+    },
+    {
       "key": "engulfing-lightning",
       "name": "Luz do Cortador de Grama",
       "description": "Uma naginata usada para \"cortar grama\". Qualquer exército que esteja diante desta arma provavelmente será igualmente cortado...",
@@ -8203,6 +8747,18 @@
       ]
     },
     {
+      "key": "forest-regalia",
+      "name": "Espada Real da Floresta",
+      "description": "Uma arma obtida através de uma das histórias dos Aranara. Ela tomou a forma de um espadão que é capaz de cortar os inimigos da floresta.",
+      "refinements": [
+        "Após desencadear Queimaduras, Aceleração, Intensificação, Propagação, Florescimento, Superflorescimento ou Germinação, uma Folha da Consciência será criada em volta do personagem por no máximo 10s. Quando coletada, a Folha da Consciência aumentará a Proficiência Elemental do personagem em {color}60{/color} por 12s. Apenas 1 Folha pode ser criada dessa forma a cada 20s. Esse efeito ainda pode ser desencadeado mesmo se o personagem não estiver em campo. O efeito da Folha da Consciência não pode ser acumulado.",
+        "Após desencadear Queimaduras, Aceleração, Intensificação, Propagação, Florescimento, Superflorescimento ou Germinação, uma Folha da Consciência será criada em volta do personagem por no máximo 10s. Quando coletada, a Folha da Consciência aumentará a Proficiência Elemental do personagem em {color}75{/color} por 12s . Apenas 1 Folha pode ser criada dessa forma a cada 20s. Esse efeito ainda pode ser desencadeado mesmo se o personagem não estiver em campo. O efeito da Folha da Consciência não pode ser acumulado.",
+        "Após desencadear Queimaduras, Aceleração, Intensificação, Propagação, Florescimento, Superflorescimento ou Germinação, uma Folha da Consciência será criada em volta do personagem por no máximo 10s. Quando coletada, a Folha da Consciência aumentará a Proficiência Elemental do personagem em {color}90{/color} por 12s. Apenas 1 Folha pode ser criada dessa forma a cada 20s. Esse efeito ainda pode ser desencadeado mesmo se o personagem não estiver em campo. O efeito da Folha da Consciência não pode ser acumulado.",
+        "Após desencadear Queimaduras, Aceleração, Intensificação, Propagação, Florescimento, Superflorescimento ou Germinação, uma Folha da Consciência será criada em volta do personagem por no máximo 10s. Quando coletada, a Folha da Consciência aumentará a Proficiência Elemental do personagem em {color}105{/color} por 12s . Apenas 1 Folha pode ser criada dessa forma a cada 20s. Esse efeito ainda pode ser desencadeado mesmo se o personagem não estiver em campo. O efeito da Folha da Consciência não pode ser acumulado.",
+        "Após desencadear Queimaduras, Aceleração, Intensificação, Propagação, Florescimento, Superflorescimento ou Germinação, uma Folha da Consciência será criada em volta do personagem por no máximo 10s. Quando coletada, a Folha da Consciência aumentará a Proficiência Elemental do personagem em {color}120{/color} por 12s. Apenas 1 Folha pode ser criada dessa forma a cada 20s. Esse efeito ainda pode ser desencadeado mesmo se o personagem não estiver em campo. O efeito da Folha da Consciência não pode ser acumulado."
+      ]
+    },
+    {
       "key": "freedom-sworn",
       "name": "Juramento pela Liberdade",
       "description": "Uma espada azul como canção antediluviana e tão aguçada quanto os juramentos de liberdade prestados na Terra do Vento.",
@@ -8224,6 +8780,18 @@
         "Atingir um inimigo com um Ataque Normal e Ataque Carregado possui uma chance de {color}80{/color}% de formar e dropar um Núcleo de Cristal Eterno sobre eles, causando {color}110{/color}% de Dano de ATQ em uma AdE. Inimigos afetados por Cryo recebem {color}280{/color}% de Dano de ATQ. Pode ocorrer apenas uma vez a cada 10s.",
         "Atingir um inimigo com um Ataque Normal e Ataque Carregado possui uma chance de {color}90{/color}% de formar e dropar um Núcleo de Cristal Eterno sobre eles, causando {color}125{/color}% de Dano de ATQ em uma AdE. Inimigos afetados por Cryo recebem {color}320{/color}% de Dano de ATQ. Pode ocorrer apenas uma vez a cada 10s.",
         "Atingir um inimigo com um Ataque Normal e Ataque Carregado possui uma chance de {color}100{/color}% de formar e dropar um Núcleo de Cristal Eterno sobre eles, causando {color}140{/color}% de Dano de ATQ em uma AdE. Inimigos afetados por Cryo recebem {color}360{/color}% de Dano de ATQ. Pode ocorrer apenas uma vez a cada 10s."
+      ]
+    },
+    {
+      "key": "fruit-of-fulfillment",
+      "name": "Fruto da Abundância",
+      "description": "Uma fruta obtida através de uma das histórias dos Aranara. Ela tem o poder de conquistar qualquer crise.",
+      "refinements": [
+        "Ao causar uma Reação Elemental, obtém o efeito “Excesso e Falta”, que aumenta a Proficiência Elemental em {color}24{/color} e reduz o ATQ em 5%. Apenas 1 acúmulo de Excesso e Falta poderá ser obtido a cada 0.3s. Máximo de 5 acúmulos. 1 acúmulo será perdido a cada 6s que se passar sem que uma Reação Elemental seja desencadeada. Esse efeito pode ser desencadeado mesmo se o personagem estiver fora de campo.",
+        "Ao causar uma Reação Elemental, obtém o efeito “Excesso e Falta”, que aumenta a Proficiência Elemental em {color}27{/color} e reduz o ATQ em 5%. Apenas 1 acúmulo de Excesso e Falta poderá ser obtido a cada 0.3s. Máximo de 5 acúmulos. 1 acúmulo será perdido a cada 6s que se passar sem que uma Reação Elemental seja desencadeada. Esse efeito pode ser desencadeado mesmo se o personagem estiver fora de campo.",
+        "Ao causar uma Reação Elemental, obtém o efeito “Excesso e Falta”, que aumenta a Proficiência Elemental em {color}30{/color} e reduz o ATQ em 5%. Apenas 1 acúmulo de Excesso e Falta poderá ser obtido a cada 0.3s. Máximo de 5 acúmulos. 1 acúmulo será perdido a cada 6s que se passar sem que uma Reação Elemental seja desencadeada. Esse efeito pode ser desencadeado mesmo se o personagem estiver fora de campo.",
+        "Ao causar uma Reação Elemental, obtém o efeito “Excesso e Falta”, que aumenta a Proficiência Elemental em {color}33{/color} e reduz o ATQ em 5%. Apenas 1 acúmulo de Excesso e Falta poderá ser obtido a cada 0.3s. Máximo de 5 acúmulos. 1 acúmulo será perdido a cada 6s que se passar sem que uma Reação Elemental seja desencadeada. Esse efeito pode ser desencadeado mesmo se o personagem estiver fora de campo.",
+        "Ao causar uma Reação Elemental, obtém o efeito “Excesso e Falta”, que aumenta a Proficiência Elemental em {color}36{/color} e reduz o ATQ em 5%. Apenas 1 acúmulo de Excesso e Falta poderá ser obtido a cada 0.3s. Máximo de 5 acúmulos. 1 acúmulo será perdido a cada 6s que se passar sem que uma Reação Elemental seja desencadeada. Esse efeito pode ser desencadeado mesmo se o personagem estiver fora de campo."
       ]
     },
     {
@@ -8293,6 +8861,18 @@
       "refinements": []
     },
     {
+      "key": "hunters-path",
+      "name": "Caminho do Caçador",
+      "description": "Este arco adornado foi feito usando galhos brancos preciosos. Ele já derrotou inúmeras bestas malignas que tentaram infiltrar a floresta.",
+      "refinements": [
+        "Ganha {color}12{/color}% de Bônus de Dano de todos os Elementos. Obtém o efeito “Caça Incansável” ao acertar um oponente com um Ataque Carregado. Esse efeito aumenta o Dano do Ataque Carregado em {color}160{/color}% da Proficiência Elemental. Esse efeito será removido depois 12 Ataques Carregados ou após 10s. Só é possível obter 1 efeito de Caça Incansável a cada 12s.",
+        "Ganha {color}15{/color}% de Bônus de Dano de todos os Elementos. Obtém o efeito “Caça Incansável” ao acertar um oponente com um Ataque Carregado. Esse efeito aumenta o Dano do Ataque Carregado em {color}200{/color}% da Proficiência Elemental. Esse efeito será removido depois 12 Ataques Carregados ou após 10s. Só é possível obter 1 efeito de Caça Incansável a cada 12s.",
+        "Ganha {color}18{/color}% de Bônus de Dano de todos os Elementos. Obtém o efeito “Caça Incansável” ao acertar um oponente com um Ataque Carregado. Esse efeito aumenta o Dano do Ataque Carregado em {color}240{/color}% da Proficiência Elemental. Esse efeito será removido depois 12 Ataques Carregados ou após 10s. Só é possível obter 1 efeito de Caça Incansável a cada 12s.",
+        "Ganha {color}21{/color}% de Bônus de Dano de todos os Elementos. Obtém o efeito “Caça Incansável” ao acertar um oponente com um Ataque Carregado. Esse efeito aumenta o Dano do Ataque Carregado em {color}280{/color}% da Proficiência Elemental. Esse efeito será removido depois 12 Ataques Carregados ou após 10s. Só é possível obter 1 efeito de Caça Incansável a cada 12s.",
+        "Ganha {color}24{/color}% de Bônus de Dano de todos os Elementos. Obtém o efeito “Caça Incansável” ao acertar um oponente com um Ataque Carregado. Esse efeito aumenta o Dano do Ataque Carregado em {color}320{/color}% da Proficiência Elemental. Esse efeito será removido depois de 12 Ataques Carregados ou após 10s. Só é possível obter 1 efeito de Caça Incansável a cada 12s."
+      ]
+    },
+    {
       "key": "iron-point",
       "name": "Ponta de Ferro",
       "description": "Afiada e pontiaguda em sua extremidade, é uma arma balanceada e bastante popular entre os viajantes.",
@@ -8340,6 +8920,18 @@
         "Aumenta o Dano causado pela Habilidade Elemental em {color}9{/color}%. Quando o personagem acerta no inimigo com sua Habilidade Elemental, ele perde 3 pontos de Energia Elemental e dentro dos 6s posteriores ele restaura {color}4{/color} pontos de Energia Elemental a cada 2s. Esse efeito só pode ser ativado uma vez a cada 10s. Quando o personagem não está em campo ele também pode ser ativado.",
         "Aumenta o Dano causado pela Habilidade Elemental em {color}10.5{/color}%. Quando o personagem acerta no inimigo com sua Habilidade Elemental, ele perde 3 pontos de Energia Elemental e dentro dos 6s posteriores ele restaura {color}4.5{/color} pontos de Energia Elemental a cada 2s. Esse efeito só pode ser ativado uma vez a cada 10s. Quando o personagem não está em campo ele também pode ser ativado.",
         "Aumenta o Dano causado pela Habilidade Elemental em {color}12{/color}%. Quando o personagem acerta no inimigo com sua Habilidade Elemental, ele perde 3 pontos de Energia Elemental e dentro dos 6s posteriores ele restaura {color}5{/color} pontos de Energia Elemental a cada 2s. Esse efeito só pode ser ativado uma vez a cada 10s. Quando o personagem não está em campo ele também pode ser ativado."
+      ]
+    },
+    {
+      "key": "kings-squire",
+      "name": "Vassalo do Rei",
+      "description": "Uma arma obtida através de uma das histórias dos Aranara. Ela tomou a forma de um arco que é capaz de perfurar os inimigos da floresta.",
+      "refinements": [
+        "Obtém o efeito “Ensinamentos da Floresta” ao desencadear Habilidades Elementais e Supremos, aumentando a Proficiência Elemental em {color}60{/color} por 12s. Este efeito será removido ao trocar de personagens. Quando o efeito de Ensinamentos da Floresta termina ou é removido, irá causar {color}100{/color}% de ATQ como Dano a 1 oponente próximo. O efeito de Ensinamentos da Floresta pode ser desencadeado uma vez a cada 20s.",
+        "Obtém o efeito “Ensinamentos da Floresta” ao desencadear Habilidades Elementais e Supremos, aumentando a Proficiência Elemental em {color}80{/color} por 12s. Este efeito será removido ao trocar de personagens. Quando o efeito de Ensinamentos da Floresta termina ou é removido, irá causar {color}120{/color}% de ATQ como Dano a 1 oponente próximo. O efeito de Ensinamentos da Floresta pode ser desencadeado uma vez a cada 20s.",
+        "Obtém o efeito “Ensinamentos da Floresta” ao desencadear Habilidades Elementais e Supremos, aumentando a Proficiência Elemental em {color}100{/color} por 12s. Este efeito será removido ao trocar de personagens. Quando o efeito de Ensinamentos da Floresta termina ou é removido, irá causar {color}140{/color}% de ATQ como Dano a 1 oponente próximo. O efeito de Ensinamentos da Floresta pode ser desencadeado uma vez a cada 20s.",
+        "Obtém o efeito “Ensinamentos da Floresta” ao desencadear Habilidades Elementais e Supremos, aumentando a Proficiência Elemental em {color}120{/color} por 12s. Este efeito será removido ao trocar de personagens. Quando o efeito de Ensinamentos da Floresta termina ou é removido, irá causar {color}160{/color}% de ATQ como Dano a 1 oponente próximo. O efeito de Ensinamentos da Floresta pode ser desencadeado uma vez a cada 20s.",
+        "Obtém o efeito “Ensinamentos da Floresta” ao desencadear Habilidades Elementais e Supremos, aumentando a Proficiência Elemental em {color}140{/color} por 12s. Este efeito será removido ao trocar de personagens. Quando o efeito de Ensinamentos da Floresta termina ou é removido, irá causar {color}180{/color}% de ATQ como Dano a 1 oponente próximo. O efeito de Ensinamentos da Floresta pode ser desencadeado uma vez a cada 20s."
       ]
     },
     {
@@ -8484,6 +9076,18 @@
         "Dentro de 5s após acertar um inimigo com o Ataque Normal, o Dano causado pela Habilidade Elemental aumenta em {color}30{/color}%. Dentro de 5s após acertar um inimigo com a Habilidade Elemental, o Dano do Ataque Normal aumenta {color}30{/color}%.",
         "Dentro de 5s após acertar um inimigo com o Ataque Normal, o Dano causado pela Habilidade Elemental aumenta em {color}35{/color}%. Dentro de 5s após acertar um inimigo com a Habilidade Elemental, o Dano do Ataque Normal aumenta {color}35{/color}%.",
         "Dentro de 5s após acertar um inimigo com o Ataque Normal, o Dano causado pela Habilidade Elemental aumenta em {color}40{/color}%. Dentro de 5s após acertar um inimigo com a Habilidade Elemental, o Dano do Ataque Normal aumenta {color}40{/color}%."
+      ]
+    },
+    {
+      "key": "moonpiercer",
+      "name": "Perfurador de Luas",
+      "description": "Uma arma obtida através de uma das histórias dos Aranara. Ela tomou a forma de uma flecha gigantesca e pode ser usada como uma lança.",
+      "refinements": [
+        "Após desencadear Queimadura, Aceleração, Intensificação, Propagação, Florescimento, Superflorescimento ou Germinação, uma Folha do Renascimento será criada em volta do personagem por no máximo 10s. Quando coletada, a Folha do Renascimento aumentará o ATQ do personagem em {color}16{/color}% por 12s. Apenas 1 Folha pode ser criada dessa forma a cada 20s. Esse efeito ainda pode ser desencadeado mesmo se o personagem não estiver em campo.",
+        "Após desencadear Queimadura, Aceleração, Intensificação, Propagação, Florescimento, Superflorescimento e Germinação, uma Folha do Renascimento será criada em volta do personagem por no máximo 10s. Quando coletada, a Folha do Renascimento aumentará o ATQ do personagem em {color}20{/color}% por 12s. Apenas 1 Folha pode ser criada dessa forma a cada 20s. Esse efeito ainda pode ser desencadeado mesmo se o personagem não estiver em campo.",
+        "Após desencadear Queimadura, Aceleração, Intensificação, Propagação, Florescimento, Superflorescimento e Germinação, uma Folha do Renascimento será criada em volta do personagem por no máximo 10s. Quando coletada, a Folha do Renascimento aumentará o ATQ do personagem em {color}24{/color}% por 12s. Apenas 1 Folha pode ser criada dessa forma a cada 20s. Esse efeito ainda pode ser desencadeado mesmo se o personagem não estiver em campo.",
+        "Após desencadear Queimadura, Aceleração, Intensificação, Propagação, Florescimento, Superflorescimento e Germinação, uma Folha do Renascimento será criada em volta do personagem por no máximo 10s. Quando coletada, a Folha do Renascimento aumentará o ATQ do personagem em {color}28{/color}% por 12s. Apenas 1 Folha pode ser criada dessa forma a cada 20s. Esse efeito ainda pode ser desencadeado mesmo se o personagem não estiver em campo.",
+        "Após desencadear Queimadura, Aceleração, Intensificação, Propagação, Florescimento, Superflorescimento e Germinação, uma Folha do Renascimento será criada em volta do personagem por no máximo 10s. Quando coletada, a Folha do Renascimento aumentará o ATQ do personagem em {color}32{/color}% por 12s. Apenas 1 Folha pode ser criada dessa forma a cada 20s. Esse efeito ainda pode ser desencadeado mesmo se o personagem não estiver em campo."
       ]
     },
     {
@@ -8804,6 +9408,18 @@
         "Ao causar dano contra um oponente com Habilidade Elemental, a habilidade possui {color}60{/color}% de chance de redefinir o tempo de Recarga desta habilidade. Este efeito pode ser ativado apenas uma vez a cada {color}22{/color} segundos.",
         "Ao causar dano contra um oponente com Habilidade Elemental, a habilidade possui {color}70{/color}% de chance de redefinir o tempo de Recarga desta habilidade. Este efeito pode ser ativado apenas uma vez a cada {color}19{/color} segundos.",
         "Ao causar dano contra um oponente com Habilidade Elemental, a habilidade possui {color}80{/color}% de chance de redefinir o tempo de Recarga desta habilidade. Este efeito pode ser ativado apenas uma vez a cada {color}16{/color} segundos."
+      ]
+    },
+    {
+      "key": "sapwood-blade",
+      "name": "Espada de Madeira",
+      "description": "Uma arma obtida através de uma das histórias dos Aranara. Ela tomou a forma de uma espada que é capaz de cortar os inimigos da floresta.",
+      "refinements": [
+        "Após desencadear Queimaduras, Aceleração, Intensificação, Propagação, Florescimento, Superflorescimento ou Germinação, uma Folha da Consciência será criada em volta do personagem por no máximo 10s. Quando coletada, a Folha da Consciência aumentará a Proficiência Elemental do personagem em {color}60{/color} por 12s. Apenas 1 Folha pode ser criada dessa forma a cada 20s. Esse efeito ainda pode ser desencadeado mesmo se o personagem não estiver em campo. O efeito da Folha da Consciência não pode ser acumulado.",
+        "Após desencadear Queimaduras, Aceleração, Intensificação, Propagação, Florescimento, Superflorescimento ou Germinação, uma Folha da Consciência será criada em volta do personagem por no máximo 10s. Quando coletada, a Folha da Consciência aumentará a Proficiência Elemental do personagem em {color}75{/color} por 12s . Apenas 1 Folha pode ser criada dessa forma a cada 20s. Esse efeito ainda pode ser desencadeado mesmo se o personagem não estiver em campo. O efeito da Folha da Consciência não pode ser acumulado.",
+        "Após desencadear Queimaduras, Aceleração, Intensificação, Propagação, Florescimento, Superflorescimento ou Germinação, uma Folha da Consciência será criada em volta do personagem por no máximo 10s. Quando coletada, a Folha da Consciência aumentará a Proficiência Elemental do personagem em {color}90{/color} por 12s. Apenas 1 Folha pode ser criada dessa forma a cada 20s. Esse efeito ainda pode ser desencadeado mesmo se o personagem não estiver em campo. O efeito da Folha da Consciência não pode ser acumulado.",
+        "Após desencadear Queimaduras, Aceleração, Intensificação, Propagação, Florescimento, Superflorescimento ou Germinação, uma Folha da Consciência será criada em volta do personagem por no máximo 10s. Quando coletada, a Folha da Consciência aumentará a Proficiência Elemental do personagem em {color}105{/color} por 12s . Apenas 1 Folha pode ser criada dessa forma a cada 20s. Esse efeito ainda pode ser desencadeado mesmo se o personagem não estiver em campo. O efeito da Folha da Consciência não pode ser acumulado.",
+        "Após desencadear Queimaduras, Aceleração, Intensificação, Propagação, Florescimento, Superflorescimento ou Germinação, uma Folha da Consciência será criada em volta do personagem por no máximo 10s. Quando coletada, a Folha da Consciência aumentará a Proficiência Elemental do personagem em {color}120{/color} por 12s. Apenas 1 Folha pode ser criada dessa forma a cada 20s. Esse efeito ainda pode ser desencadeado mesmo se o personagem não estiver em campo. O efeito da Folha da Consciência não pode ser acumulado."
       ]
     },
     {
@@ -9319,7 +9935,15 @@
       "name": "A Bruxa das Chamas Carmesim",
       "bonus": [
         "Bônus de Dano Pyro +15%",
-        "Aumenta o dano causado por Sobrecarga e Queimadura em 40%, aumenta o dano causado pela Vaporização e Fusão em 15%. Ao usar a Habilidade Elemental aumenta os efeitos do Conjunto de 2 Peças em 50% por 10s. Pode acumular até 3x."
+        "Aumenta o Dano causado por Sobrecarga, Queimaduras e Germinação em 40%. Aumenta o Dano causado por Vaporização e Fusão em 15%. Usar Habilidades Elementais aumenta o efeito de Bônus de Conjunto de 2 Peças em 50% do seu valor inicial por 10s. Máximo de 3 acúmulos."
+      ]
+    },
+    {
+      "key": "deepwood-memories",
+      "name": "Memórias da Floresta",
+      "bonus": [
+        "Bônus de Dano Dendro +15%",
+        "Depois que as Habilidades Elementais ou Supremos acertam os oponentes, a RES Dendro dos alvos serão reduzidas em 30% por 8s. Esse efeito pode ser desencadeado mesmo se o personagem equipando este conjunto não estiver em campo."
       ]
     },
     {
@@ -9352,6 +9976,14 @@
       "bonus": [
         "Aumenta o dano da Habilidade Elemental em 20%.",
         "Ao derrotar um inimigo, possui 100% de chance de remover a Recarga da Habilidade Elemental. Este efeito pode ser ativado uma vez a cada 15s."
+      ]
+    },
+    {
+      "key": "gilded-dreams",
+      "name": "Sonhos Dourados",
+      "bonus": [
+        "Proficiência Elemental +80",
+        "Dentro de 8s após causar uma Reação Elemental, o personagem equipando este conjunto irá obter aprimoramentos baseados no Tipo Elemental dos outros membros da equipe. O ATQ é aumentado em 14% para cada membro da equipe cujo Tipo Elemental seja o mesmo que o personagem equipando o conjunto. A Proficiência Elemental é aumentada em 50 para cada membro da equipe com Tipos Elementais diferentes. Cada um desses aprimoramentos mencionados anteriormente irá contar para até 3 personagens. Esse efeito pode ser desencadeado uma vez a cada 8s. O personagem que equipar este conjunto ainda pode ativar seu efeito mesmo que não esteja em campo."
       ]
     },
     {
@@ -9523,7 +10155,7 @@
       "name": "Trovão Furioso",
       "bonus": [
         "Bônus de Dano Electro +15%",
-        "Aumenta o Dano causado pela Sobrecarga, Eletricamente Carregado e Supercondutor em 40%. Ao ativar estes efeitos, diminui a Recarga da Habilidade Elemental em 1s. Pode ser ativado uma vez a cada 0.8s."
+        "Aumenta o Dano causado por Sobrecarga, Eletricamente Carregado, Supercondutor e Superflorescimento em 40%, e o Bônus de Dano causado pela Intensificação é aumentado em 20%. Quando Aceleração ou as outras reações elementais mencionadas anteriormente são desencadeadas, o Tempo de Recarga das Habilidades Elementais é reduzido em 1s. Podendo acontecer apenas uma vez a cada 0.8s."
       ]
     },
     {
@@ -9544,7 +10176,7 @@
     },
     {
       "key": "traveling-doctor",
-      "name": "O Doutor viajante",
+      "name": "O Doutor Viajante",
       "bonus": [
         "Aumenta o efeito de cura em 20%.",
         "Após usar o Supremo, restaura 20% de Vida."
@@ -9762,6 +10394,11 @@
       "description": "Vem de uma máquina inativa das Ruínas antigas.\r\nAs grandes técnicas e o poder desconhecido deste dispositivo não servirão para nada se a máquina que o contiver perder sua integridade estrutural."
     },
     {
+      "key": "chaos-bolt",
+      "name": "Parafuso do Caos",
+      "description": "Vem de um antigo dragão das ruínas que não está mais ativo.\nNa nação antiga perdida, havia um grupo de pessoas obcecadas pelos princípios da criação das mimeses. Seja o puro elemento de Hypostasis, ou o antigo poder primordial do dragão, deve ser fabricado e aprimorado para que finalmente supere tudo. \nDessa forma, um corpo mais superior e imaculado substituirá a ordem que acabará por decair e ser quebrada."
+    },
+    {
       "key": "chaos-circuit",
       "name": "Circuito do Caos",
       "description": "Vindo de relíquias antigas que não estão mais ativas. Costumava ser o circuito lógico de funcionamento. A grande tecnologia contida é agora é um mistério para todos."
@@ -9782,9 +10419,19 @@
       "description": "Vem de uma máquina inativa das Ruínas antigas.\r\nÉ a fonte de energia desse mecanismo biomimético."
     },
     {
+      "key": "chaos-module",
+      "name": "Módulo do Caos",
+      "description": "Vem de um antigo dragão das ruínas que não está mais ativo.\n“Dragão” é a encarnação do mais primitivo e antigo elemento superior. Eles só desaparecem quando são derrotados, conquistados ou assimilados."
+    },
+    {
       "key": "chaos-oculus",
       "name": "Olho do Caos",
       "description": "Originário de uma máquina antiga das Ruínas.\r\nA parte \"Ruína\" de seu nome vem das áreas em que são mais ativas. Mas na realidade, máquinas das Ruínas possuem pouco em comum com os detritos em que são comumente encontrados.\r\nNo passado antigo, essas ruínas foram parte de uma civilização grande o suficiente para quase tocar o domo do firmamente, enquanto a \"ruína\" ainda aguarda nos cantos mais profundos da terra, esperando a ordem para erguer-se e pisar sobre todos os reinos."
+    },
+    {
+      "key": "chaos-storage",
+      "name": "Recipiente do Caos",
+      "description": "Vem de um antigo dragão das ruínas que não está mais ativo.\nEste dragão pode absorver a energia elemental do mundo exterior e armazená-la em uma peça do “pescoço”."
     },
     {
       "key": "cheese",
@@ -9820,6 +10467,11 @@
       "key": "concealed-unguis",
       "name": "Garra Afiada Oculta",
       "description": "Tecido corporal deixado para trás por um dos Caninos da Fenda.\r\nApesar de ser maravilhoso, esses cães Alfisol não são nada quando comparados com o Humus de Durin."
+    },
+    {
+      "key": "copper-talisman-of-the-forest-dew",
+      "name": "Talismã de Bronze do Orvalho Florestal",
+      "description": "Material de Ascensão de Armas.\nSob a orientação do Primeiro Sábio, os ancestrais da floresta tropical uma vez entalharam runas em madeira seca para homenagear as gramas verdes e a sua mestre.\nAs runas foram entalhadas na forma do orvalho da floresta, simbolizando que a sabedoria está nas mentes dos mortais."
     },
     {
       "key": "cor-lapis",
@@ -9875,6 +10527,11 @@
       "key": "crystalline-bloom",
       "name": "Florescimento Cristalino",
       "description": "Um cristal de gelo de pureza excessiva que é criado no frígido desabrochar de um Hypostasis Cryo.\r\nEstes cristais gelados continuarão a crescer de acordo com suas próprias leis rígidas e frias, até que um dia uma flor de inverno floresça e congele tudo. Talvez o tempo de estagnação, a força que nunca se desfaz, seja a essência desta flor imortal."
+    },
+    {
+      "key": "crystalline-cyst-dust",
+      "name": "Poeira Cristalina de Cisto",
+      "description": "Um enorme bloco de esporos em pó coletado de um cisto de esporos com uma estrutura completa. Coloque-o em um ambiente apropriado, e a área mais tarde poderá ser totalmente preenchida com uma próspera aglomeração de Cogumelos Flutuantes…"
     },
     {
       "key": "damaged-mask",
@@ -9937,6 +10594,11 @@
       "description": "De um modo geral, são fragmentos de pergaminho sobre feitiçaria. Espalha de forma estável um tipo de calor desconhecido."
     },
     {
+      "key": "dormant-fungal-nucleus",
+      "name": "Núcleo Fúngico Adormecido",
+      "description": "Tecido orgânico deixado para trás por um Fungo que foi exposto a intensos estímulos elementais.\nUma vez, houve um longo debate entre os pesquisadores Amurta sobre se os fungos deveriam ser categorizados como plantas ou animais. No final, eles chegaram a um acordo e encerraram definitivamente o caso — os Fungos devem ser sua própria categoria, nem vegetal e nem animal."
+    },
+    {
       "key": "dragon-lords-crown",
       "name": "Coroa do Senhor dos Dragões",
       "description": "Chifres criados a partir da jade endurecida cristalizada durante mil anos são a coroa natural do rei dragão.\r\nInfuso de espírito e esculpido da rocha-mãe, nasceu do coração da montanha para mostrar a força da terra para a região em meio aos monólitos, e seus longos chifres dourados são a marca de sua antiga luta com um antigo lorde.\r\nPor um tempo, este chifre foi quebrado e perdeu seu brilho, mas agora brilha gelado e dourado enquanto está na palma de sua mão."
@@ -9945,6 +10607,11 @@
       "key": "dragonheirs-false-fin",
       "name": "Barbatana Falsa do Dragão Herdeiro das Profundezas",
       "description": "Um pedaço de tecido biológico que você encontrou após derrotar os Dragartos das Profundezas.\r\nEmbora pareça uma barbatana de algum tipo, na verdade não tem nenhuma função.\r\nO povo do Reino de Byakuya investigou profundamente os Dragartos das Profundezas. Sua habilidade mais distinta foi a capacidade de escolher quais características desejava transmitir à sua prole. Por causa do seu grande ódio pela humanidade, estes talvez percam qualquer acuidade visual no momento em que atingirem a maturidade. Ao mesmo tempo, eles também desenvolveram um certo grau de polimorfismo elemental para fins de combate."
+    },
+    {
+      "key": "dream-of-scorching-might",
+      "name": "Sonho do Poder Escaldante",
+      "description": "Material de Ascensão de Armas.\nNo passado, o brilho prateado da lua uma vez completou o cenário dos oásis. Mas conforme o dono das flores desbotou na escuridão da tempestade de areia, assim foi o paraíso dourado sem preocupações, submerso pela morte.\nNa poesia da Tribo Eremita, a lua lançou sua luz prateada sobre o manto carmesim, fazendo com que Al-Ahmar, o Rei de Luto, fosse levado à loucura.\nEm uma canção melancólica do deserto, impulsionado pela nostalgia assombrosa, o solitário rei, criou no centro do deserto, uma terra de sonho sempre alegre, onde brotou água sem perturbações e o perpétuo crepúsculo permaneceu."
     },
     {
       "key": "dream-of-the-dandelion-gladiator",
@@ -9977,6 +10644,11 @@
       "description": "Energia coletada dos ventos fortes assoprados pelo Senhor do Vento Oriental de Mondstadt.\r\nSeu formato é bonito e transparente, e tanto o vento quanto o furacão estão dispostos a aumentar sua efetividade. Enquanto o vento estiver ao seu lado, ele estará a seu favor.\r\nE seus inimigos são os inimigos de mil ventos de diferentes nomes."
     },
     {
+      "key": "echo-of-scorching-might",
+      "name": "Eco do Poder Escaldante",
+      "description": "Material de Ascensão de Armas.\nHá muito, muito tempo atrás, o povo do Rei das Areias Amarelas esculpiram alguns selos reais imitando um besouro robusto para homenagear o sol carmesim que marca a ciclo do dia e da noite e o tempo infinito.\nEmbora o nome do rei não seja mais mencionado agora, esses pequenos selos reais continuam bem preservados, revelando o prestígio do seu passado.\nEles estão espalhados por todos os cantos com seus descendentes dourados, contando silenciosamente o passado do velho dono."
+    },
+    {
       "key": "electro-crystal",
       "name": "Cristal Eletrificado",
       "description": "Um cristal rico em energia que extrai eletricidade do ar ao seu redor. Segurá-lo deixa sua mão um pouco dormente."
@@ -9995,6 +10667,11 @@
       "key": "everflame-seed",
       "name": "Semente de Fogo Eterno",
       "description": "Uma semente que alimenta as eternas chamas da Câmara de Pyro. Ela emite energia pyro como se fosse queimar tudo que já brotou do chão. \r\nEternos fluxos de desejos entre as turbulentas energias das profundezas da terra. Qual desejo poderia constantemente conter tamanho fogo para as plantas por tanto tempo e com tanta avidez capaz de banhar tudo com uma inextinguível chama?"
+    },
+    {
+      "key": "faded-red-satin",
+      "name": "Cetim Vermelho Desbotado",
+      "description": "Um cetim vermelho levemente rasgado, usado para cobrir os olhos.\nMuitas vezes pessoas de Eremitas cobrem os seus olhos com tecido, e o registro desse comportamento já está perdido há muito no tempo."
     },
     {
       "key": "famed-handguard",
@@ -10072,6 +10749,11 @@
       "description": "Um sapo comum encontrado em ambientes úmidos. Cheio de energia, eles secretam uma substância que pode revigorá-lo."
     },
     {
+      "key": "fungal-spores",
+      "name": "Esporo de Cogumelo Flutuante",
+      "description": "Uma pequena quantidade de esporos cintilantes que foi deixado pelos Cogumelos Flutuantes. Parece que tudo que é preciso para que desapareça completamente é um espirro."
+    },
+    {
       "key": "genesis-crystal",
       "name": "Cristal Gênesis",
       "description": "Cristal de força que abriu o universo. Formado a partir de nada mais do que puro potencial e esperança, contém energia suficiente para criar uma estrela recém-nascida."
@@ -10080,6 +10762,11 @@
       "key": "gilded-scale",
       "name": "Escama Dourada",
       "description": "Armadura de escama que cresce naturalmente sobre a pedra mística, dura e silenciosa, e cheia da força do rei dragão.\r\nAo longo dos anos, enquanto inúmeras gerações retornavam ao fertilizante da terra, ouro e obsidiana se incrustaram na carne e no sangue forjados a partir da rocha-mãe antes de se espalharem e se transformarem em escamas.\r\nAgonia intensa, gritos sem palavras... Talvez todos eles desapareçam quando as mágoas que os geraram, também, finalmente chegarem ao fim."
+    },
+    {
+      "key": "glabrous-beans",
+      "name": "Feijões Glabros",
+      "description": "Uma leguminosa comum em Teyvat com um aroma leve. Pode ser preparado de várias maneiras, e é amplamente aceito por pessoas de todas regiões."
     },
     {
       "key": "glaze-lily",
@@ -10102,9 +10789,19 @@
       "description": "Uma insígnia de corvo que simboliza o orgulho e o princípio dos Ladrões de Tesouro. Se está escondido entre a vastidão da terra ou nas profundezas dos mares, enquanto houver tesouros a serem caçados, o espírito dos Ladrões de Tesouro, que não se detém em nada para adquiri-los, nunca morrerá."
     },
     {
+      "key": "golden-talisman-of-the-forest-dew",
+      "name": "Talismã de Ouro do Orvalho Florestal",
+      "description": "Material de Ascensão de Armas.\n“Para as pessoas, há apenas três coisas que precisam se importar: a água da nascente que abraça o luar, o verde da vida e o rosto que não envelhece…”\nA “sabedoria” não se trata de controlar todos os pensamentos ou buscar todos os benefícios, mas de fazer pessoas comuns conquistarem a liberdade.\nO rugido assustador dos tigres não ecoa mais na floresta, os fortes guardiões também desapareceram dos sonhos das crianças… no entanto, na noite em que o selo dourado misterioso é quebrado e todos os sonhos brilham como âmbar ao luar, talvez ela e os mortais que ela ama se tornem livres de verdade."
+    },
+    {
       "key": "grain-of-aerosiderite",
       "name": "Grão de Aerosiderite",
       "description": "Material de Ascensão de Armas.\r\nUm meteoro preto caiu uma vez além do Mar das Nuvens de Liyue, que supostamente caiu para derrotar um monstro. No entanto, ele foi manchado por um poderoso sangue contaminado, portanto esse item não possui mais o puro poder de Rex Lapis."
+    },
+    {
+      "key": "guide-to-admonition",
+      "name": "Guia da Admoestação",
+      "description": "Material de Elevação de Talento.\nA exortação são os galhos da nação da sabedoria.\nExortação é acompanhada de um pensamento sábio. Uma deliberação cuidadosa proporciona às palavras humildes uma clareza que convence os sábios e ilumina os tolos. Tais palavras permitem que a sabedoria flua como um rio sem obstruções."
     },
     {
       "key": "guide-to-ballad",
@@ -10132,9 +10829,19 @@
       "description": "Material para aprimorar o nível do Talento.\r\nO ouro é o símbolo da Terra.\r\nO ouro simboliza a conversão. Este é o entendimento tácito entre as montanhas, a terra, a cidade e o povo de Liyue. Em Liyue, diligência é convertida em ouro e ouro em prosperidade."
     },
     {
+      "key": "guide-to-ingenuity",
+      "name": "Guia da Engenhosidade",
+      "description": "Material de Elevação de Talento\nA engenhosidade são as artérias da nação da sabedoria.\nAquele que pensa de forma bondosa, inteligente e cuidadosa nunca se afastara do caminho correto. Porém, aquele que pensa com desdém e malícia, manchará suas palavras com cores desprezíveis."
+    },
+    {
       "key": "guide-to-light",
       "name": "Guia da Luz Celeste",
       "description": "Material de Elevação de Talento.\r\nA luz é o anseio da terra do trovão.\r\nEmbora os próprios raios de sol devam ser bloqueados por várias camadas de nuvens, ainda existem aqueles na terra do deus do trovão que sonham com esse mar colérico de relâmpagos e alcançar a glória divina, sem temer o risco de serem cruelmente abatidos."
+    },
+    {
+      "key": "guide-to-praxis",
+      "name": "Guia da Práxis",
+      "description": "Material de Elevação de Talento\nAs Práxis são as raízes da nação da sabedoria.\nAs Práxis validam as palavras honestas. Embora se fale e se aja por bondade, ainda não se obtém a sabedoria. A sabedoria, nascida da ação, é marcada pelas palavras honestas."
     },
     {
       "key": "guide-to-prosperity",
@@ -10155,6 +10862,11 @@
       "key": "ham",
       "name": "Presunto",
       "description": "Carne de coxa defumada. Mesmo o pedaço mais fino pode trazer muito sabor à boca."
+    },
+    {
+      "key": "harra-fruit",
+      "name": "Fruta Harra",
+      "description": "Cresce em florestas tropicais quentes e úmidas, e possui um aroma especial. Basta moê-la para transformá-la numa especiaria. É a planta de especiaria mais importante de Sumeru."
     },
     {
       "key": "heavy-horn",
@@ -10192,6 +10904,11 @@
       "description": "A forma implodida de uma Hypostasis Anemo após sua derrota.\r\nEle contém a essência da energia Anemo.\r\nDizem que o poder de criar furacões reside dentro de seu corpo aparentemente frágil. Essa borboleta de pura energia Anemo deve estar esperando o dia para evocar tempestades mais uma vez."
     },
     {
+      "key": "inactivated-fungal-nucleus",
+      "name": "Núcleo Fúngico Inerte",
+      "description": "Tecido orgânico deixado para trás por um Fungo que foi exposto a intensos estímulos elementais.\nSua textura suave o torna surpreendentemente bom para o alívio do estresse. Entretanto, também pode facilmente causar multiplicação de Fungos, portanto, não é adequado para qualquer uso comercial."
+    },
+    {
       "key": "inspectors-sacrificial-knife",
       "name": "Faca Longa de Inspetor",
       "description": "Uma arma que foi usada ferozmente para resolver muitas \"Dívidas\". Ninguém nasce com olhos atrás, então essa arma é perfeita para ser usada contra esse ponto fraco das pessoas."
@@ -10205,6 +10922,11 @@
       "key": "iron-chunk",
       "name": "Pedaço de ferro",
       "description": "Este pedaço de ferro pode ser transformado em vários tipos de itens nas mãos de um bom ferreiro."
+    },
+    {
+      "key": "iron-talisman-of-the-forest-dew",
+      "name": "Talismã de Ferro do Orvalho Florestal",
+      "description": "Material de Ascensão de Armas.\nMais tarde, a dona das vegetações ensinou às pessoas como forjar ferro preto, e desta forma, os mortais ingênuos aprenderam como usar fogo e lâminas afiadas.\nA Dona da Grama tinham muito prazer em ver isso. Mesmo que o fogo e o metal pudessem acabar machucando-a, eles também podiam tornar os mortais mais fortes."
     },
     {
       "key": "jade-branch-of-a-distant-sea",
@@ -10235,6 +10957,11 @@
       "key": "kageuchi-handguard",
       "name": "Protetor de Mão Kageuchi",
       "description": "Um protetor de mão montado em uma espada de alguma distinção.\r\nInazuma possui uma longa tradição no forjamento de espadas. Ferreiros comumente fazem diferentes armas simultaneamente antes de escolherem entre elas a \"Shinuchi\", sua melhor arma, enquanto outras são conhecidas como \"Kageuchi\"."
+    },
+    {
+      "key": "kalpalata-lotus",
+      "name": "Lótus Kalpalata",
+      "description": "Flor de videiras que crescem no topo das falésias das montanhas. É chamada de lótus apenas por causa de sua aparência, mas o fato é que elas duas não têm relação nenhuma."
     },
     {
       "key": "lavender-melon",
@@ -10272,6 +10999,11 @@
       "description": "Uma planta aquática originária de Liyue que cresce e floresce em pares. Uma delas é aromática enquanto que a outra é amarga. Dizem que é boa como erva medicinal."
     },
     {
+      "key": "luminescent-pollen",
+      "name": "Pólen fluorescente",
+      "description": "Uma pequena quantidade de esporos luminescentes de Cogumelos Flutuantes, um ingrediente medicinal comum na terra das florestas tropicais. Os comerciantes geralmente os vendem em pacotinhos de papel."
+    },
+    {
       "key": "luminescent-spine",
       "name": "Espinha Luminescente",
       "description": "A parte luminosa de um vagalume. É o seu orgão de cortejo e o elixir da força para os humanos."
@@ -10297,6 +11029,11 @@
       "description": "Um núcleo que propele o Maguu Kenki. Seu uso é o que permite que ele branda uma espada como se fosse uma criatura viva.\r\nNão importa o quão exímio seja nas artes marciais, ou quantas belas memórias possua, seu corpo inevitavelmente se deteriorará com o tempo, tal como a carne humana.\r\nTeme-se que só é possível se aproximar da eternidade se os quatro membros do corpo forem trocados por firmes engrenagens, e se o coração for substituído por um preciso mecanismo."
     },
     {
+      "key": "majestic-hooked-beak",
+      "name": "Bico-Gancho do Terrorgumelo",
+      "description": "Um bico alongado que você obteve depois de derrotar o Terrorgumelo Emplumado.\nOs estudiosos ainda acham um milagre que alguns Cogumelos suaves têm um bico de gancho sólido como rocha. No topo da cadeia evolucionária, o elegante rei dos cogumelos caminha vagarosamente, e às vezes canta, como se estivesse proferindo a todos os seres da floresta tropical: mesmo as criaturas fracas e tímidas podem se tornar os futuros mestres da floresta."
+    },
+    {
       "key": "mask-of-the-kijin",
       "name": "Máscara de Kijin",
       "description": "Material de Ascensão de Arma.\r\nChiyo, uma guerreira da tribo Oni com o emblema Mitsudomoe Electro brasonado em suas costas. No passado, ela foi engolida inteira por uma besta fora desse mundo que tinha um corpo de tigre e uma cauda de serpente, enquanto lutava contra as forças da escuridão. No final, ela rasgou as entranhas da criatura de dentro e se libertou.\r\nEsta é a origem da expressão \"Chiyo, a Dentada de Tigre\" que, após vários anos, foi mudada para \"Torachiyo\".\r\nMas dentro da barriga da besta, ela foi manchada por um pecado profundo e viu seus companheiros destruídos em pedaços por aqueles dentes ensanguentados. Impregnada na imensa escuridão, ela usaria sua espada em Narukami Ogosho Toda-Poderosa. Seu braço-espada e chifre seriam divididos, e ela escaparia da cidade para a floresta como uma besta ferida. Ali, dizem que ela foi levada por um monstro desconhecido e assassinada por um Tengu, por um Shiyuumatsu-Ban ou talvez por um herdeiro de Iwakura que treinava nas profundezas da montanha, pois sua bela face estava contorcida por ódio e agonia dos seus ferimentos. Ou talvez ela terá conhecido um boneco com uma máscara de oni e uma espada perto do corpo da serpente gigante, e aí pôs fim à sua viagem da vida.\r\nPoucos daqueles que lutaram contra o abismo nesses dias tiveram finais felizes. Aqueles que mataram monstros e depois se tornaram neles eram uma minoria. A barreira entre mundos tornou-se frágil e a corrupção talvez não flua em apenas uma direção."
@@ -10320,6 +11057,31 @@
       "key": "matsutake",
       "name": "Matsutake",
       "description": "Um fungo raro que geralmente cresce sobre ou perto de pinheiros. Seu aroma delicado revela sua localização."
+    },
+    {
+      "key": "midlander-bow-billet",
+      "name": "Protótipo de Arco do Território Central",
+      "description": "Material de forjamento de armas. É possível forjar um arco de 4 estrelas com ele.\nDo ponto de vista filosófico, tudo neste mundo acontece por 4 diferentes causas, e o sentido da existência destes protótipos é ser uma arma para acompanhar grandes heróis."
+    },
+    {
+      "key": "midlander-catalyst-billet",
+      "name": "Protótipo de Catalisador do Território Central",
+      "description": "Material de forjamento de armas. É possível forjar um catalisador de 4 estrelas com ele.\nDo ponto de vista filosófico, tudo neste mundo acontece por 4 diferentes causas, e o sentido da existência destes protótipos é ser uma arma para acompanhar grandes heróis."
+    },
+    {
+      "key": "midlander-claymore-billet",
+      "name": "Protótipo de Espadão do Território Central",
+      "description": "Material de forjamento de armas. É possível forjar um espadão de 4 estrelas com ele.\nDo ponto de vista filosófico, tudo neste mundo acontece por 4 diferentes causas, e o sentido da existência destes protótipos é ser uma arma para acompanhar grandes heróis."
+    },
+    {
+      "key": "midlander-polearm-billet",
+      "name": "Protótipo de Lança do Território Central",
+      "description": "Material de forjamento de armas. É possível forjar uma lança de 4 estrelas com ele.\nDo ponto de vista filosófico, tudo neste mundo acontece por 4 diferentes causas, e o sentido da existência destes protótipos é ser uma arma para acompanhar grandes heróis."
+    },
+    {
+      "key": "midlander-sword-billet",
+      "name": "Protótipo de Espada do Território Central",
+      "description": "Material de forja de armas. É possível forjar uma espada de 4 estrelas com ele.\nDo ponto de vista filosófico, tudo neste mundo acontece por 4 diferentes causas, e o sentido da existência destes protótipos é ser uma arma para acompanhar grandes heróis."
     },
     {
       "key": "milk",
@@ -10442,6 +11204,11 @@
       "description": "Material de Ascensão de Armas.\r\nNo passado, os mais velhos escalavam o pico conhecido agora como Montanha Yougou e talhavam os pedaços de madeira carbonizados por raios em formato de ganchos para oferecer como uma efígie à força trovejante que iluminava os céus e sacudia a terra. Esse formato acabaria se tornando o símbolo \"Mitsudomoe Electro\", simbolizando a ajuda, a sabedoria e o poder do Electro e também as pessoas que representam esses valores."
     },
     {
+      "key": "nilotpala-lotus",
+      "name": "Lótus Nilotpala",
+      "description": "Crescendo nos pântanos da floresta e de florescimento noturno, com flores que emitem um brilho tão forte quanto a da lua."
+    },
+    {
       "key": "noctilucous-jade",
       "name": "Jade Nocticulosa",
       "description": "Um mineral raro que brilha no escuro. Dizem que é uma gema mutante condensada com elementos florescentes do mundo."
@@ -10472,9 +11239,34 @@
       "description": "Material de forjamento de armas. Pode ser usado para forjar espadas de 4 estrelas.\r\nOs filósofos acreditam que os mármores têm o potencial de serem esculpidos em belas estaturas. Esses protótipos também têm potenciais ilimitados."
     },
     {
+      "key": "oasis-gardens-kindness",
+      "name": "Graça do Jardim Oásis",
+      "description": "Material de Ascensão de Armas.\nOs textos antigos enterrados na areia amarela relatam que a rainha das flores é a dona dos sonhos.\nEla mostrou sonhos para os exilados, loucos e tolos, e lhes trouxe doce alegria em seus sonhos. Mesmo que as pessoas tivessem apenas tigelas de ferro preto em suas mãos, eles ainda eram fascinados pelo charme da Rainha das Flores e por sua bela aparência e atencioso cuidado."
+    },
+    {
+      "key": "oasis-gardens-mourning",
+      "name": "Luto do Jardim Oásis",
+      "description": "Material de Ascensão de Armas.\nA Rainha das Flores tinha uma boa relação com Jinni.\nA mestre das flores e óasis se uniu com o Rei dos Desertos para criar Ay-Khanoum, a “Cidade dos Anfiteatros”, que significava “Cidade da Dama da Lua” na antiga língua dos Jinni.\nEntretanto, depois, dizem que a Rainha das Flores faleceu devido a malícia do sol abrasador e da areia amarela, depois disso, as Padisarahs roxas nunca mais floresceram novamente no óasis.\nApós a partida da Rainha das Flores, as tempestades de areia ficaram de luto, os Jinni choraram, e o disco prateado emperolado perdeu seu propósito original, emitindo um brilho lúgubre."
+    },
+    {
+      "key": "oasis-gardens-reminiscence",
+      "name": "Reminiscência do Jardim Oásis",
+      "description": "Material de Ascensão de Armas.\nDizem que a rainha das flores é a senhora da alegria e da felicidade. A água clara jorra das suas mangas, se tornando em um oásis de flores desabrochando no deserto. Flores e ervas seguem seus passos, e o luar prateado abre caminho para ela.\nNos tempos difíceis em que o céu deu as costas à terra, a rainha das flores estendia sua misericórdia para os mortais, assim, eles recuperaram a felicidade e o ego, junto com a ociosidade e a luxúria."
+    },
+    {
+      "key": "oasis-gardens-truth",
+      "name": "Verdade do Jardim Oásis",
+      "description": "Material de Ascensão de Armas.\n“Que tipo de pessoa adoraria um arconte morto?”\nA Rainha das Flores uma vez formou uma aliança com os dois deuses reis da época, além da sabedoria e poder, ela trouxe misericórdia e alegria para as pessoas ignorantes.\nAssim como a terra precisa de mais coisas além do sol escaldante e da chuva, para o povo da Rainha das Flores, alegria e amor, canto e música, vinho e extravagância eram tão vitais quanto força e sensibilidade.\nPara as pessoas, o motivo das flores desabrocharem é enfrentar uma morte gloriosa, e a morte é o fim que a Rainha das Flores busca desde o início, porque a morte acrescenta um sabor amargo à alegria perdida, fazendo com que ela se manifeste cada vez mais intensamente em memórias infinitas. \nO ignorante Rei das Areias Amarelas nunca entendeu isso e ficou apenas fascinado pelo infinito charme e ternura dela. A obssessão às lembranças o fizeram errar o caminho, mas mesmo assim, isso estava sob controle da Rainha das Flores."
+    },
+    {
       "key": "old-handguard",
       "name": "Protetor de Mão Velho",
       "description": "Um protetor de mão gasto que estava em uma lâmina de Inazuma.\r\nPara aqueles que são adeptos na esgrima, o tsuba é a defesa contra a lâmina de um oponente. Para iniciantes, é uma defesa contra eles mesmos."
+    },
+    {
+      "key": "olden-days-of-scorching-might",
+      "name": "Glória Passada do Poder Escaldante",
+      "description": "Material de Ascensão de Armas.\nNa época em que o Rei do Deserto ignorante governava, seu poder se estendeu por toda parte da terra como um sol escaldante.\nAntigas tabuletas de pedras registram que ele transformou seu poder em sete raios de luz ofuscantes ou sete pilares, que ele concedeu igualmente e misericordiosamente a todos.\nFoi uma época dourada esquecida, uma época em que o Senhor das Flores havia desaparecido nas areias e o Senhor da Erva estava determinado a partir. Somente os descendentes da areia amarela escolheram seguir seu deus. Mesmo enquanto a sombra tenebrosa da calamidade se aproximava, o poder no qual eles tinham fé brilhava como âmbar e ouro.\nNo entanto, a calamidade ocorreu de qualquer forma, e as insígnias de insetos douradas foram enterradas sob as profundezas do santuário e do palácio, sob pilares desmoronados gravados com imagens de águias e touros."
     },
     {
       "key": "ominous-mask",
@@ -10497,6 +11289,11 @@
       "description": "Usado para revigorar Árvores Petrificadas e Flores de Linha Ley, permitindo acesso aos tesouros que elas escondem. A Energia se regenera com o tempo.\r\nÉ dito que as raízes de todas as árvores e flores de Irminsul no mundo são interligadas nas partes mais profundas e escondidas da terra, e que esse padrão de raízes define as Linhas Leys do mundo."
     },
     {
+      "key": "padisarah",
+      "name": "Padisarah",
+      "description": "Uma flor sagrada e nobre, é muito exigente em relação ao ambiente de crescimento. Os estames podem ser usados para fazer especiarias preciosas."
+    },
+    {
       "key": "pepper",
       "name": "Pimenta",
       "description": "Picante. Ela pode tirar os sabores enjoativos e deixar tudo mais cheiroso. Combina bem com carnes."
@@ -10510,6 +11307,11 @@
       "key": "philanemo-mushroom",
       "name": "Cogumelo Philanemo",
       "description": "Um fungo que cresce sobre as carícias do vento. É tão eterno quanto o vento, alimentando a vida."
+    },
+    {
+      "key": "philosophies-of-admonition",
+      "name": "Filosofia da Admoestação",
+      "description": "Material de Elevação de Talento.\nA exortação são os galhos da nação da sabedoria.\nA exortação é completa por boas ações. O que é feito atribui um significado real ao que é dito. Quando a mente, as palavras e os atos estão alinhados, seu sustento garantirá a frutificação da árvore da sabedoria."
     },
     {
       "key": "philosophies-of-ballad",
@@ -10537,9 +11339,19 @@
       "description": "Material para aprimorar o nível de Talento.\r\nO ouro é o Reino das Rochas.\r\nO ouro é a riqueza de Liyue, mas a verdadeira riqueza de Liyue é o coração de seu povo que brilha como ouro."
     },
     {
+      "key": "philosophies-of-ingenuity",
+      "name": "Filosofia da Engenhosidade",
+      "description": "Material de Elevação de Talento\nA engenhosidade são as artérias da nação da sabedoria.\nA engenhosidade é completa ao se ter uma conduta harmoniosa. O que é feito, completa o que é pensado. A sabedoria floresce de onde a mente, palavra e prática se unem."
+    },
+    {
       "key": "philosophies-of-light",
       "name": "Filosofia da Luz Celeste",
       "description": "Material de Elevação de Talento.\r\nA luz é o anseio da terra do trovão.\r\nEmbora deva viver para sempre na Terra, a humanidade sempre buscará a luz. Os mortais procurarão e desafiarão seus limites, sem jamais parar. Uma eternidade imaculada pode parecer magnífica, mas sua essência é a morte."
+    },
+    {
+      "key": "philosophies-of-praxis",
+      "name": "Filosofia da Práxis",
+      "description": "Material de Elevação de Talento\nAs Práxis são as raízes da nação da sabedoria.\nAs Práxis geram o fruto da sabedoria. A prática dá a si mesma o seu significado, e é somente trilhando o caminho que une ação, fala e pensamento que os sábios conseguem alcançar a perfeição."
     },
     {
       "key": "philosophies-of-prosperity",
@@ -10632,9 +11444,19 @@
       "description": "Material de Ascensão de Armas.\r\nA lança de pedra tem um núcleo brilhante formado pelo poder dos Arcontes derrotados. Seu ódio não era dirigido a Morax, pois eles se perderam há muito tempo, incapazes de guardar rancores pessoais."
     },
     {
+      "key": "remnant-glow-of-scorching-might",
+      "name": "Brilho Remanescente do Poder Escaldante",
+      "description": "Material de Ascensão de Armas.\nO poder se trata de tecer milhares de pensamentos e controlar milhares de almas.\nNo entanto, o poder não é uma tirania implacável. Seu propósito é precisamente o mais profundo – criar um verdadeiro paraíso onde ninguém seja incomodado e não haja necessidade de perseguição e escravidão. \nComo o rei silencioso viu no segredo do cristal, como o companheiro perdido ensinou uma vez. \nO selo preto de inseto e o julgamento cor de ferro tornaram-se assim a pedra angular das leis do reino."
+    },
+    {
       "key": "rice",
       "name": "Arroz",
       "description": "Uma colheita de grãos comumente encontrada em Teyvat. Pessoas de todas as esferas da vida desfrutam de sua textura granulada distinta. Como diz o ditado, \"O mesmo tipo de arroz pode alimentar cem tipos de pessoas\"."
+    },
+    {
+      "key": "rich-red-brocade",
+      "name": "Cetim Vermelho",
+      "description": "Cetim vermelho tecido com fios dourados. \nOs sobreviventes nascidos do deserto dourado sob o sol ocasionalmente cantam canções com significados há muito esquecidos, louvam o sol escaldante que ilumina imparcialmente todos os cantos da terra e deploram o brilho do sol poente. Diz-se que as palavras desconhecidas que aparecem repetitivamente no último capítulo da balada são os nomes de arcontes antigos e que quando o rei do deserto ainda estava vivo, as pessoas cobriam os olhos por não se atreverem a olhar diretamente para o sol."
     },
     {
       "key": "riftborn-regalia",
@@ -10645,6 +11467,16 @@
       "key": "ring-of-boreas",
       "name": "Cálice do Vento Norte",
       "description": "Condensado de gelo vindo do corpo do Grande Lobo do Vento do Norte.\r\nNeste pedaço de terra, soprou-se o vento do norte congelante. O gelo e a neve rasgam a pele, deixando o sangue se condensar. Embora a força do Grande Lobo do Vento do Norte não seja tão boa quanto costumava ser, ele ainda possui o poder de congelar a terra."
+    },
+    {
+      "key": "robust-fungal-nucleus",
+      "name": "Núcleo Fúngico Robusto",
+      "description": "Tecido orgânico deixado para trás por um Fungo que foi exposto a intensos estímulos elementais.\nEm geral, acredita-se que os Fungos evoluíram para dispersar melhor seus esporos.\nUm poeta uma vez retratou um sonho em comum dos Fungos, no qual seus esporos cobriam cada centímetro das montanhas e oceanos. O mundo nunca havia sido tão tranquilo. Então os Fungos se transformaram em peixes, pássaros, animais, homens e deuses, confiando na chuva, na terra e em sua própria espécie que havia retornado à terra."
+    },
+    {
+      "key": "rukkhashava-mushrooms",
+      "name": "Cogumelo Rukkhashava",
+      "description": "Um cogumelo que cresce em camadas, como um mar de nuvens. Normalmente cresce nas árvores das profundezas da floresta tropical. Por isso, o povo de Sumeru o considera a encarnação do legado da Lorde Maior Rukkhadevata."
     },
     {
       "key": "runic-fang",
@@ -10757,6 +11589,11 @@
       "description": "Uma insígnia de corvo usada pelos membros dos Ladrões de Tesouro para se identificar. Os Ladrões de Tesouro não pedem currículo. Qualquer pessoa que tenha um desejo insaciável por tesouros e coragem equiparável pode se tornar um membro digno."
     },
     {
+      "key": "silver-talisman-of-the-forest-dew",
+      "name": "Talismã de Prata do Orvalho Florestal",
+      "description": "Material de Ascensão de Armas.\nEm muitas histórias da floresta, o rei vestido de capa com listras de chamas ardentes é o dono do labirinto e o mestre da Água das Luas.\nQuando ele se inclinou para fazer amizade com a dona da grama, eles trocaram uma gema que brilha como a água e um objeto prateado como o luar.\nEssa troca de objetos simbolizava a amizade entre os dois, e como tal, a dona da grama prometeu guardar o segredo do rei do labirinto para sempre e proteger o lindo sonho da floresta tropical. \nNo entanto, mais tarde, todos os segredos e lindos palácios construídos com sonhos foram esquecidos sob as profundas chamas escuras, e afundaram no solo espesso, se transformando em nutrientes para a nova floresta tropical."
+    },
+    {
       "key": "slime-concentrate",
       "name": "Essência de Slime",
       "description": "Essência concentrada de Slime. Os movimentos são executados de forma autônoma e irregular."
@@ -10807,6 +11644,11 @@
       "description": "Um núcleo energético completo que às vezes pode ser encontrado depois de derrotar Espectros.\r\nHá um debate entre aqueles que tem que dividir o mundo entre vencedores e perdedores: quem flutua melhor, um Espectro ou um Slime Anemo?"
     },
     {
+      "key": "spice",
+      "name": "Tempero",
+      "description": "Um condimento com uma variedade de sabores. É feito de Fruta Harra seca e pode aprimorar o sabor de um prato. Portanto, os locais de Sumeru dizem, “esse tempero vai bem com tudo”."
+    },
+    {
       "key": "spirit-locket-of-boreas",
       "name": "Alma do Vento do Norte",
       "description": "Energia coletada pelo espírito do Grande Lobo do Vento do Norte.\r\nNeste pedaço de terra, soprou-se o vento do norte congelante. Contudo, no fim, entendeu que o forte vento norte só pode extinguir a vida e não pode alimentá-la. No final de sua vida, permite que o seu próprio poder flua para esta terra, sempre a protegendo e os habitantes que nela habitam."
@@ -10820,6 +11662,11 @@
       "key": "starconch",
       "name": "Conchas Estreladas",
       "description": "Conchas do mar vazias trazidas para terra pelas marés. Segure-o perto do ouvido e ouça os apelos do mar."
+    },
+    {
+      "key": "starshroom",
+      "name": "Cogumelo Estrelar",
+      "description": "Um fungo com um chapéu na forma de uma estrela de cinco pontas. Tem uma força vital forte. Quando estiver maduro, o centro do chapéu se abrirá."
     },
     {
       "key": "starsilver",
@@ -10847,6 +11694,11 @@
       "description": "Um tempero derivado das Flores Doces. Ele tem o poder de dar energia e felicidade."
     },
     {
+      "key": "sumeru-rose",
+      "name": "Rosa de Sumeru",
+      "description": "Flor roxa escura e exuberante, exala uma fragrância agradável que faz qualquer pessoa querer parar para sentir o seu aroma. Muitas pessoas a chamam de “rosa multiflora”, mas na verdade, ela é “rosa”."
+    },
+    {
       "key": "sunsettia",
       "name": "Fruto do Pôr do Sol",
       "description": "Uma fruta redonda e bonita como o pôr do sol, abundante em todo Teyvat. Tem um aroma curioso muito doce e dá muita energia."
@@ -10860,6 +11712,11 @@
       "key": "tail-of-boreas",
       "name": "Cauda do Vento do Norte",
       "description": "Algumas escamas vindo do Grande Dragão do Vento do Norte.\r\nO Lobo do Vento do Norte, que perdeu a sua vida e forma, ainda conta com poderes maiores que o normal. Para enfrentar os desafios, mesmo usando o gelo e a alma, não são o suficiente. Algumas almas estão presas às escamas de gelo que caem durante a batalha."
+    },
+    {
+      "key": "teachings-of-admonition",
+      "name": "Ensinamentos de Admoestações",
+      "description": "Material de Elevação de Talento.\nA exortação são os galhos da nação da sabedoria. Somente palavras sensatas de benevolência podem expressar profunda sabedoria e libertar o broto do conhecimento dos grilhões da arrogância."
     },
     {
       "key": "teachings-of-ballad",
@@ -10887,9 +11744,19 @@
       "description": "Material de elevação de Talento.\r\nO ouro é o símbolo da Terra.\r\nO ouro é o sangue que flui profundamente sob a terra de Liyue, são os músculos que bombeiam o coração de Liyue e os ossos que fazem Liyue se orgulhar."
     },
     {
+      "key": "teachings-of-ingenuity",
+      "name": "Ensinamentos de Engenhosidade",
+      "description": "Material de Elevação de Talento\nA engenhosidade são as artérias da nação da sabedoria.\nA engenhosidade brota de uma consideração benevolente. Dizem que “uma árvore venenosa não dá frutos gentis”. Da mesma forma, ideias engenhosas nascem sempre de mentes determinadas e benévolas, pois somente elas são dignas de sabedoria."
+    },
+    {
       "key": "teachings-of-light",
       "name": "Ensinamentos da Luz Celeste",
       "description": "Material de Elevação de Talento.\r\nA luz é o anseio da terra do trovão.\r\nO governante que afirma saber de tudo tem o objetivo eterno de chegar à glória celestial. Mas essa visão não pode ser compartilhada, o que leva as pessoas a desejá-la com mais intensidade, como mariposas sendo atraídas para uma chama."
+    },
+    {
+      "key": "teachings-of-praxis",
+      "name": "Ensinamentos de Práxis",
+      "description": "Material de Elevação de Talento\nAs Práxis são as raízes da nação da sabedoria.\nPráxis provêm de uma vontade inabalável. Toda sabedoria é manifestada através da busca inabalável pelo bem. Onde a bondade não é praticada, engenhosidade e eloquência morrem."
     },
     {
       "key": "teachings-of-prosperity",
@@ -10917,6 +11784,11 @@
       "description": "Um pequeno acessório de cabeça obtido uma vez que a poeira abaixou no Plano da Eutimia.\r\nApenas um único pensamento pode acabar com a calamidade, e sempre haverá pensamentos que transcendem o tempo.\r\nEm meio a tudo isso, é possível se perguntar se a verdadeira mensagem de Makoto foi transmitida ou não."
     },
     {
+      "key": "thunderclap-fruitcore",
+      "name": "Fruto do Trovão",
+      "description": "Núcleo da Regisvine Electro envolto em folhas afiadas, que emite o elemento Electro por todo o corpo.\nA energia rugindo nas profundezas da terra está ansiosa para acalmar sua raiva, então as videiras azaradas também foram contaminadas com essa raiva, e estão lamentando e agitando os galhos retorcidos. Não se sabe se eles querem que outros sintam a dor de trovão e fogo atravessando o corpo, ou se estão ansiosas para o fim inevitável."
+    },
+    {
       "key": "tile-of-decarabians-tower",
       "name": "Fragmento de Azulejo de Decarabia",
       "description": "Material de Ascensão de Armas.\r\nO local atualmente conhecido como Covil do Caçador de Tempestades já foi a capital construída por Decarabian, o Arconte Anemo. Desde que esse sonho próspero foi criado pelo seu poder, os pedaços partidos deixados para trás quando o sonho foi destruído ainda possuem grandes poderes."
@@ -10935,6 +11807,11 @@
       "key": "treasure-hoarder-insignia",
       "name": "Insígnia dos Ladrões de Tesouro",
       "description": "Uma insígnia que orgulhosamente representa a posição de seus proprietários como membro dos Ladrões de Tesouro. A busca por tesouros não tem limites. Dito isso... ser ladrão é algo para se orgulhar?"
+    },
+    {
+      "key": "trimmed-red-silk",
+      "name": "Seda Vermelha Bordada",
+      "description": "Cetim vermelho com enfeites simples incrustados.\nGuerreiros experientes podem encontrar falhas até mesmo em um olhar do oponente para obter uma oportunidade. Os Eremitas estão sem seu líder há muito tempo, e só podem confiar em si mesmos. Dizem que eles acreditam firmemente que tudo trai, até mesmo seus próprios olhos."
     },
     {
       "key": "tusk-of-monoceros-caeli",
@@ -11055,6 +11932,11 @@
       "key": "wolfhook",
       "name": "Gancho do Lobo",
       "description": "Uma baga com espinhos que frequentemente ficam presos na pele dos lobos. Se olhar de perto, você pode escutar o eco dos gritos dos lobos nos bosques."
+    },
+    {
+      "key": "zaytun-peach",
+      "name": "Pêssego Zaytun",
+      "description": "Fruto de um arbusto na floresta. A sua carne é firme e o sabor é doce. Dizem que serve para tranquilizar a mente."
     }
   ],
   "debuffs": [
@@ -11149,6 +12031,42 @@
       "name": "Crystallize",
       "effect": "Absorbs the element and drops a crystal of that same element. The crystal will give an elemental shield. The shield absorbs all types of damage, but it protects more efficiently against the shield's element.",
       "description": null
+    },
+    {
+      "key": "bloom",
+      "name": "Bloom",
+      "effect": "Creates a Dendro Core that explode after 6 seconds, dealing AoE Dendro DMG in a 5m radius to both enemies and players.",
+      "description": null
+    },
+    {
+      "key": "hyperbloom",
+      "name": "Hyperbloom",
+      "effect": "Triggered when applying Electro to a Dendro Core. Transforms the Dendro Core into a homing Sprawling Shot that deals increased AoE Dendro DMG in a much smaller AoE.",
+      "description": null
+    },
+    {
+      "key": "burgeon",
+      "name": "Burgeon",
+      "effect": "Triggered when applying Pyro to a Dendro Core. Detonates the Dendro Core immediately, dealing increased AoE Dendro DMG.",
+      "description": null
+    },
+    {
+      "key": "quicken",
+      "name": "Quicken",
+      "effect": "Applies a Quicken aura that decays over time.",
+      "description": null
+    },
+    {
+      "key": "aggravate",
+      "name": "Aggravate",
+      "effect": "Triggered when applying Electro to an entity with the Quicken aura. Adds Flat DMG Bonus to the attack that triggers this reaction.",
+      "description": null
+    },
+    {
+      "key": "spread",
+      "name": "Spread",
+      "effect": "Triggered when applying Dendro to an entity with the Quicken aura. Adds Flat DMG Bonus to the attack that triggers this reaction.",
+      "description": null
     }
   ],
   "resonance": [
@@ -11193,6 +12111,12 @@
       "name": "Protective Canopy",
       "effect": "All Elemental RES by 15%. Physical RES + 15%",
       "description": "Any 4 Unique Elements"
+    },
+    {
+      "key": "sprawling-greenery",
+      "name": "Sprawling Greenery",
+      "effect": "After triggering Burning, Quicken, or Bloom reactions, all nearby party members gain 30 Elemental Mastery for 6s. After triggering Aggravate, Spread, Hyperbloom, or Burgeon reactions, all nearby party members gain 20 Elemental Mastery for 6s. The durations of the aforementioned effects will be counted independently.",
+      "description": null
     }
   ],
   "monsters": [
@@ -11227,6 +12151,10 @@
     {
       "key": "azhdaha",
       "name": "Azhdaha"
+    },
+    {
+      "key": "beisht",
+      "name": "Beisht"
     },
     {
       "key": "black-serpent-knight-windcutter",
@@ -11301,6 +12229,10 @@
       "name": "Slime Dendro"
     },
     {
+      "key": "dendro-specter",
+      "name": "Espectro Dendro"
+    },
+    {
       "key": "electro-abyss-mage",
       "name": "Feiticeiro do Abismo Electro"
     },
@@ -11321,6 +12253,10 @@
       "name": "Hypostasis Electro"
     },
     {
+      "key": "electro-regisvine",
+      "name": "Regisvine Electro"
+    },
+    {
       "key": "electro-samachurl",
       "name": "Samachurl Electro"
     },
@@ -11335,6 +12271,38 @@
     {
       "key": "electro-whopperflower",
       "name": "Flor Gigante Electro"
+    },
+    {
+      "key": "eremite-axe-vanguard",
+      "name": "Eremita - Vanguarda do Machado"
+    },
+    {
+      "key": "eremite-crossbow",
+      "name": "Eremita - Besteiro"
+    },
+    {
+      "key": "eremite-daythunder",
+      "name": "Eremita - Invocador de Trovões"
+    },
+    {
+      "key": "eremite-desert-clearwater",
+      "name": "Eremita - Águas Cristalinas"
+    },
+    {
+      "key": "eremite-linebreaker",
+      "name": "Eremita - Demolidores de Linhas"
+    },
+    {
+      "key": "eremite-ravenbeak-halberdier",
+      "name": "Eremita - Alabardeiro"
+    },
+    {
+      "key": "eremite-sunfrost",
+      "name": "Eremita - Geada Solar"
+    },
+    {
+      "key": "eremite-sword-dancer",
+      "name": "Eremita - Dançarino Espadachim"
     },
     {
       "key": "eye-of-the-storm",
@@ -11377,6 +12345,10 @@
       "name": "Soldado dos Fatui - Guerrilheiro de Canhão Pyro"
     },
     {
+      "key": "floating-dendro-fungus",
+      "name": "Cogumelo Flutuante Dendro"
+    },
+    {
       "key": "floating-hydro-fungus",
       "name": "Cogumelo Flutuante Hydro"
     },
@@ -11411,6 +12383,10 @@
     {
       "key": "golden-wolflord",
       "name": "Rei Canino Dourado"
+    },
+    {
+      "key": "grounded-hydroshroom",
+      "name": "Cogumelo Terrestre Hydro"
     },
     {
       "key": "hilichurl",
@@ -11495,6 +12471,10 @@
     {
       "key": "ice-shieldwall-mitachurl",
       "name": "Mitachurl de Escudo de Gelo"
+    },
+    {
+      "key": "jadeplume-terrorshroom",
+      "name": "Terrorgumelo Emplumado"
     },
     {
       "key": "kairagi-dancing-thunder",
@@ -11685,6 +12665,14 @@
       "name": "Atacante das Ruínas"
     },
     {
+      "key": "ruin-drake-earthguard",
+      "name": "Dragão das Ruínas - Vigia Terrestre"
+    },
+    {
+      "key": "ruin-drake-skywatch",
+      "name": "Dragão das Ruínas - Vigia Aérea"
+    },
+    {
       "key": "ruin-grader",
       "name": "Colosso das Ruínas"
     },
@@ -11735,6 +12723,18 @@
     {
       "key": "stormterror",
       "name": "Stormterror"
+    },
+    {
+      "key": "stretchy-anemo-fungus",
+      "name": "Cogumelo Flexível Anemo"
+    },
+    {
+      "key": "stretchy-geo-fungus",
+      "name": "Cogumelo Flexível Geo"
+    },
+    {
+      "key": "stretchy-pyro-fungus",
+      "name": "Cogumelo Flexível Pyro"
     },
     {
       "key": "thunder-manifestation",
@@ -11817,8 +12817,28 @@
       "name": "Ladrões de Tesouro - Homem do Mar"
     },
     {
+      "key": "treasure-hoarders-wallenstein",
+      "name": "Ladrão de Tesouro: Wallenstein"
+    },
+    {
       "key": "unusual-hilichurl",
       "name": "Hilichurl Estranho"
+    },
+    {
+      "key": "whirling-cryo-fungus",
+      "name": "Cogumelo Rodopiante Cryo"
+    },
+    {
+      "key": "whirling-electro-fungus",
+      "name": "Cogumelo Rodopiante Electro"
+    },
+    {
+      "key": "winged-cryoshroom",
+      "name": "Cogumelo Alado Cryo"
+    },
+    {
+      "key": "winged-dendroshroom",
+      "name": "Cogumelo Alado Dendro"
     },
     {
       "key": "wooden-shield-hilichurl-guard",

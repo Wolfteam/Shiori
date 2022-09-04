@@ -21,6 +21,7 @@ void main() {
   late SettingsService _settingsService;
   late GenshinService _genshinService;
   late DataService _dataService;
+  late final String _dbPath;
 
   setUpAll(() {
     TestWidgetsFlutterBinding.ensureInitialized();
@@ -33,20 +34,24 @@ void main() {
     manuallyInitLocale(_localeService, AppLanguageType.english);
     return Future(() async {
       await _genshinService.init(AppLanguageType.english);
-      await _dataService.init(dir: _dbFolder);
+      _dbPath = await getDbPath(_dbFolder);
+      await _dataService.initForTests(_dbPath);
     });
   });
 
   tearDownAll(() {
     return Future(() async {
       await _dataService.closeThemAll();
-      await deleteDbFolder(_dbFolder);
+      await deleteDbFolder(_dbPath);
     });
   });
 
   test(
     'Initial state',
-    () => expect(CharacterBloc(_genshinService, _telemetryService, _localeService, _dataService).state, const CharacterState.loading()),
+    () => expect(
+      CharacterBloc(_genshinService, _telemetryService, _localeService, _dataService).state,
+      const CharacterState.loading(),
+    ),
   );
 
   group('Load from key', () {

@@ -25,6 +25,20 @@ class LoggingServiceImpl implements LoggingService {
   }
 
   @override
+  void debug(Type type, String msg, [List<Object>? args]) {
+    assert(!msg.isNullEmptyOrWhitespace);
+    if (kReleaseMode) {
+      return;
+    }
+
+    if (args != null && args.isNotEmpty) {
+      _logger.d('$type - ${sprintf(msg, args)}');
+    } else {
+      _logger.d('$type - $msg');
+    }
+  }
+
+  @override
   void warning(Type type, String msg, [dynamic ex, StackTrace? trace]) {
     assert(!msg.isNullEmptyOrWhitespace);
     final tag = type.toString();

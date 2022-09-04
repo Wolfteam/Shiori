@@ -156,12 +156,12 @@
           "abilities": [
             {
               "name": "Standardangriff",
-              "description": "Führt bis zu 4 Pfeilschüsse aus.\r\n",
+              "description": "Führt bis zu 4 Pfeilschüsse hintereinander aus.\n",
               "descriptions": []
             },
             {
               "name": "Heftiger Schlag",
-              "description": "Führt einen gezielten Schuss mit höherem Schaden und höherer Genauigkeit aus.\r\nKonzentriert die eisige Kälte während des Zielens an der Pfeilspitze, die voll aufgeladen Kryo-Schaden verursacht.\r\n",
+              "description": "Führt einen gezielten Schuss mit höherem Schaden und höherer Genauigkeit aus.\nKonzentriert die eisige Kälte während des Zielens an der Pfeilspitze, die voll aufgeladen Kryo-Schaden verursacht.\n",
               "descriptions": []
             },
             {
@@ -184,14 +184,14 @@
         {
           "key": "s2",
           "title": "Frostüberzogene Felder",
-          "description": "Wirft eine Eisbombe in die Richtung des Ziels, die beim Aufkommen explodiert und Kryo-Schaden verursacht, sich nach der Explosion aber in viele Kälteminen aufteilt, die bei Berührung mit Gegnern oder nach einer gewissen Zeit explodieren und dabei Kryo-Schaden verursachen.\r\nVerringert den ANG mit Eisbomben oder Kälteminen getroffener Gegner und verleiht Aloy eine Stapelung des Effekts „Spule“.\r\nErhält alle 0,1 s höchstens 1 Stapelung des Effekts Spule.\r\n",
+          "description": "Wirft eine Eisbombe in die Richtung des Ziels, die beim Aufkommen explodiert und Kryo-Schaden verursacht, sich nach der Explosion aber in viele Kälteminen aufteilt, die bei Berührung mit Gegnern oder nach einer gewissen Zeit explodieren und dabei Kryo-Schaden verursachen.\nVerringert den ANG mit Eisbomben oder Kälteminen getroffener Gegner und verleiht Aloy eine Stapelung des Effekts „Spule“.\nErhält alle 0,1 s höchstens 1 Stapelung des Effekts Spule.\n\n",
           "abilities": [
             {
               "name": "Spule",
               "description": "",
               "descriptions": [
                 "Erhöht den mit Aloys Standardangriffen verursachten Schaden gemäß der Menge an Stapelungen.",
-                "Beseitigt bei 4 Stapelungen Spule den gesamten Effekt von Spule und verleiht Aloy „Eisige Eile“, die den mit Standardangriffen verursachten Schaden zusätzlich erhöht und den mit Standardangriffen verursachten Schaden in KryoSchaden umwandelt.",
+                "Beseitigt bei 4 Stapelungen Spule den gesamten Effekt von Spule und verleiht Aloy „Eisige Eile“, die den mit Standardangriffen verursachten Schaden zusätzlich erhöht und den mit Standardangriffen verursachten Schaden in Kryo-Schaden umwandelt.",
                 "Aloy kann während des Zustands Eisige Eile nicht den Effekt Spule erhalten.",
                 "Der Effekt Spule wird 30 s nach dem Verlassen des Kampfs entfernt."
               ]
@@ -201,21 +201,23 @@
             "Eisbomben-SCH|{param1}%",
             "Kälteminen-SCH|{param2}%",
             "ANG-Malus|{param3}%",
-            "ANG-Malus-Dauer|{param4}s",
+            "ANG-Malus-Dauer|{param4} s",
             "SCH-Bonus für Standardangriffe durch Spule|{param5}% / {param6}% / {param7}%",
             "SCH-Bonus für Standardangriffe durch Eisige Eile|{param8}%",
-            "Dauer von Eisige Eile|{param9}s",
-            "Abklingzeit|{param10}s"
+            "Dauer von Eisige Eile|{param9} s",
+            "Abklingzeit|{param10} s",
+            "SCH-Bonus für Standardangriffe bei 4 Stapelungen|{param11}%",
+            "Abklingzeit|{param12} s"
           ]
         },
         {
           "key": "s3",
           "title": "Weissagung des Morgenlichts",
-          "description": "Wirft eine Energiezelle voller Kryo-Energie und lässt sie mit einem Pfeil explodieren, um Kryo-Flächenschaden zu verursachen.\r\n",
+          "description": "Wirft eine Energiezelle voller Kryo-Energie und lässt sie mit einem Pfeil explodieren, um Kryo-Flächenschaden zu verursachen.\n\n",
           "abilities": [],
           "stats": [
             "Fähigkeits-SCH|{param1}%",
-            "Abklingzeit|{param2}s",
+            "Abklingzeit|{param2} s",
             "Elementarenergie|{param3}"
           ]
         }
@@ -224,19 +226,19 @@
         {
           "key": "p1",
           "title": "Jäger der Wildnis",
-          "description": "Führt dazu, dass eigene Figuren in der Truppe kleine Tiere in der Nähe, die rohes Geflügel, rohes Fleisch oder kaltes Gourmetfleisch als Beute abgeben, nicht leicht aufscheuchen, wenn Aloy in der Truppe ist.\r\n",
+          "description": "Führt dazu, dass eigene Figuren in der Truppe kleine Tiere in der Nähe, die rohes Geflügel, rohes Fleisch oder kaltes Gourmetfleisch als Beute abgeben, nicht leicht aufscheuchen, wenn Aloy in der Truppe ist.\n",
           "descriptions": []
         },
         {
           "key": "p2",
           "title": "Kampf-Überbrückung",
-          "description": "Erhöht beim Erhalten des Effekts Spule von Frostüberzogene Felder durch Aloy 10 s lang ihren eigenen ANG um 16 % und den ANG aller anderen Truppenmitglieder in der Nähe um 8 %.\r\n",
+          "description": "Erhöht beim Erhalten des Effekts Spule von Frostüberzogene Felder durch Aloy 10 s lang ihren eigenen ANG um 16 % und den ANG aller anderen Truppenmitglieder in der Nähe um 8 %.\n",
           "descriptions": []
         },
         {
           "key": "p3",
           "title": "Wuchtangriff",
-          "description": "Erhöht Aloys Kryo-SCH-Bonus im Zustand Eisige Eile von Frostüberzogene Felder pro s um 3,5 %. Bis zu 35 % Kryo-SCH-Bonus auf diese Weise möglich.\r\n",
+          "description": "Erhöht Aloys Kryo-SCH-Bonus im Zustand Eisige Eile von Frostüberzogene Felder pro s um 3,5 %. Bis zu 35 % Kryo-SCH-Bonus auf diese Weise möglich.\n",
           "descriptions": []
         }
       ],
@@ -244,37 +246,37 @@
         {
           "key": "c1",
           "title": "Stern einer anderen Welt",
-          "description": "Der Moment, den Sternenhimmel dieser Person zu erleuchten, ist noch nicht gekommen.\r\n",
+          "description": "Der Moment, den Sternenhimmel dieser Person zu erleuchten, ist noch nicht gekommen.\n",
           "descriptions": []
         },
         {
           "key": "c2",
           "title": "Stern einer anderen Welt",
-          "description": "Der Moment, den Sternenhimmel dieser Person zu erleuchten, ist noch nicht gekommen.\r\n",
+          "description": "Der Moment, den Sternenhimmel dieser Person zu erleuchten, ist noch nicht gekommen.\n",
           "descriptions": []
         },
         {
           "key": "c3",
           "title": "Stern einer anderen Welt",
-          "description": "Der Moment, den Sternenhimmel dieser Person zu erleuchten, ist noch nicht gekommen.\r\n",
+          "description": "Der Moment, den Sternenhimmel dieser Person zu erleuchten, ist noch nicht gekommen.\n",
           "descriptions": []
         },
         {
           "key": "c4",
           "title": "Stern einer anderen Welt",
-          "description": "Der Moment, den Sternenhimmel dieser Person zu erleuchten, ist noch nicht gekommen.\r\n",
+          "description": "Der Moment, den Sternenhimmel dieser Person zu erleuchten, ist noch nicht gekommen.\n",
           "descriptions": []
         },
         {
           "key": "c5",
           "title": "Stern einer anderen Welt",
-          "description": "Der Moment, den Sternenhimmel dieser Person zu erleuchten, ist noch nicht gekommen.\r\n",
+          "description": "Der Moment, den Sternenhimmel dieser Person zu erleuchten, ist noch nicht gekommen.\n",
           "descriptions": []
         },
         {
           "key": "c6",
           "title": "Stern einer anderen Welt",
-          "description": "Der Moment, den Sternenhimmel dieser Person zu erleuchten, ist noch nicht gekommen.\r\n",
+          "description": "Der Moment, den Sternenhimmel dieser Person zu erleuchten, ist noch nicht gekommen.\n",
           "descriptions": []
         }
       ]
@@ -1023,6 +1025,93 @@
       ]
     },
     {
+      "key": "candace",
+      "name": "Candace",
+      "title": "？？？",
+      "description": "？？？",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ]
+    },
+    {
       "key": "chongyun",
       "name": "Chongyun",
       "title": "Spuren im schmelzenden Schnee",
@@ -1148,8 +1237,134 @@
     {
       "key": "collei",
       "name": "Collei",
-      "title": "???",
-      "description": "",
+      "title": "Taufrisches Keimblatt",
+      "description": "Eine auszubildende Waldhüterin vom Avidya-Wald. Hinter ihren leidenschaftlichen Worten und Taten verbirgt sich eine eher introvertierte Persönlichkeit.",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "Der Anbeterin Schießkunst",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Standardangriff",
+              "description": "Führt bis zu 4 Pfeilschüsse hintereinander aus.\n",
+              "descriptions": []
+            },
+            {
+              "name": "Heftiger Schlag",
+              "description": "Führt einen gezielten Schuss mit höherem Schaden und höherer Genauigkeit aus.\nKonzentriert die Dendro-Kraft während des Zielens an der Pfeilspitze, die voll aufgeladen Dendro-Schaden verursacht.\n",
+              "descriptions": []
+            },
+            {
+              "name": "Angriff aus dem Fall",
+              "description": "Schießt in der Luft einen Pfeilregen ab, trifft schnell auf dem Boden auf und verursacht dort Flächenschaden.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "SCH Phase 1|{param1}%",
+            "SCH Phase 2|{param2}%",
+            "SCH Phase 3|{param3}%",
+            "SCH Phase 4|{param4}%",
+            "Gezielte Schüsse|{param5}%",
+            "Voll aufgeladene gezielte Schüsse|{param6}%",
+            "SCH beim Fallen|{param7}%",
+            "SCH beim Fallen aus niedriger/großer Höhe|{param8}% / {param9}%"
+          ]
+        },
+        {
+          "key": "s2",
+          "title": "Der Kämpferin Laub",
+          "description": "Wirft das fliegende Laubrad aus, das jedem getroffenen Ziel 1-mal Dendro-Schaden zufügt.\nDas Rad kehrt nach einer gewissen Zeit zurück und verursacht erneut Dendro-Schaden.\n\n",
+          "abilities": [],
+          "stats": [
+            "Fähigkeits-SCH|{param1}%",
+            "Abklingzeit|{param2} s"
+          ]
+        },
+        {
+          "key": "s3",
+          "title": "Geheimer Katzenschatz",
+          "description": "Nimmt im Kampf die Hilfe des verlässlichen Cuilein-Anbar in Anspruch.\nWirft eine Cuilein-Anbar-Puppe, die bei ihrer Explosion Dendro-Flächenschaden verursacht und ein Cuilein-Anbar-Feld erzeugt. Cuilein-Anbar springt immer wieder auf diesem Feld herum und verursacht Dendro-Flächenschaden.\n\n",
+          "abilities": [],
+          "stats": [
+            "Explosions-SCH|{param1}%",
+            "SCH des Cuilein-Anbar-Sprungs|{param2}%",
+            "Dauer|{param3} s",
+            "Abklingzeit|{param4} s",
+            "Elementarenergie|{param5}"
+          ]
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "„Flugmeisterin von Sumeru“",
+          "description": "Verringert die beim Gleiten verbrauchte Ausdauer aller eigenen Truppenmitglieder um 20 %.\nNicht mit passiven Talenten mit völlig gleichen Effekten stapelbar.\n",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "Wiederkehr des fliegenden Laubs",
+          "description": "Verleiht der Figur bei der Rückkehr des fliegenden Laubrads den Effekt „Jungtrieb“, der 3 s lang den Gegnern in der Nähe fortlaufend Dendro-Schaden in Höhe von 40 % von Colleis ANG zufügt, wenn eine eigene Figur in der Truppe vor der Rückkehr des fliegenden Laubrads Reaktionen wie „In Flammen“, „Urwuchs“, „Suprawuchs“, „Rankenwuchs“, „Sprießen“, „Supraspross“ oder „Flammenspross“ ausgelöst hat.\nWenn während der Dauer des Effekts ein weiterer „Jungtrieb“ erzeugt wird, wird er den bestehenden ersetzen. Der vom Jungtrieb-Effekt verursachte Schaden gilt als Elementarfähigkeitsschaden.\n",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "Gemächliche Stille im Wald",
+          "description": "Verlängert die Dauer des Felds um 1 s, wenn eine Figur im Cuilein-Anbar-Feld Reaktionen wie „In Flammen“, „Urwuchs“, „Suprawuchs“, „Rankenwuchs“, „Sprießen“, „Supraspross“ oder „Flammenspross“ auslöst.\nDie Dauer pro Auslösung von Geheimer Katzenschatz kann auf diese Weise um bis zu 3 s verlängert werden.\n",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "Hüterin im tiefen Wald",
+          "description": "Erhöht Colleis Aufladerate um 20 %, wenn sie inaktiv in der Truppe ist.\n",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "Wanderin zwischen Bergen und Seen",
+          "description": "Ändert das passive Talent „Wiederkehr des fliegenden Laubs“ wie folgt:\n",
+          "descriptions": [
+            "Das fliegende Laubrad verleiht bei seiner Rückkehr der Figur den Effekt „Jungtrieb“ des passiven Talents „Wiederkehr des fliegenden Laubs“, der 3 s lang fortlaufend den Gegnern in der Nähe Dendro-Schaden in Höhe von 40 % von Colleis ANG zufügt.",
+            "Wenn eines der eigenen Truppenmitglieder nach Anwenden der Fähigkeit Der Kämpferin Laub und, bevor der aktuelle Effekt „Jungtrieb“ endet, Reaktionen wie „In Flammen“, „Urwuchs“, „Suprawuchs“, „Rankenwuchs“, „Sprießen“, „Supraspross“ oder „Flammenspross“ auslöst, wird dieser „Jungtrieb“ um 3 s verlängert.",
+            "Die Dauer des Effekts „Jungtrieb“ kann nur einmal auf diese Weise verlängert werden. Wird während der Dauer ein weiterer „Jungtrieb“ erzeugt, ersetzt er den bestehenden. Der vom Jungtrieb-Effekt verursachte Schaden gilt als Elementarfähigkeitsschaden.",
+            "Das passive Talent „Wiederkehr des fliegenden Laubs“ muss zuerst freigeschaltet werden."
+          ]
+        },
+        {
+          "key": "c3",
+          "title": "Blütenduft im Sommer",
+          "description": "Erhöht die Stufe der Fähigkeit Der Kämpferin Laub um 3.\nHöchststufe 15.\n",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "Waldgeschenk unterm Mond",
+          "description": "Erhöht bei Anwendung der Fähigkeit Geheimer Katzenschatz die Elementarkunde aller Truppenmitglieder in der Nähe (außer Collei) 12 s lang um 60 Punkte.\n",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "Schwelendes Feuer aus Illusionen",
+          "description": "Erhöht die Stufe der Fähigkeit Geheimer Katzenschatz um 3.\nHöchststufe 15.\n",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "Stählerner Wald aus Pfeilen",
+          "description": "Bei Treffern mit dem fliegenden Laubrad erschafft es ein Mini-Cuilein-Anbar, das Dendro-Schaden in Höhe von 200 % von Colleis ANG verursacht.\nJede Anwendung von Der Kämpferin Laub kann nur 1 Mini-Cuilein-Anbar erschaffen.\n",
+          "descriptions": []
+        }
+      ]
+    },
+    {
+      "key": "cyno",
+      "name": "Cyno",
+      "title": "？？？",
+      "description": "？？？",
       "skills": [
         {
           "key": "s1",
@@ -1510,87 +1725,142 @@
     {
       "key": "dori",
       "name": "Dori",
-      "title": "???",
-      "description": "",
+      "title": "Schatz im Schlummerland",
+      "description": "Eine geheimnisvolle Händlerin in Sumeru, die eine Vorliebe für glitzernde Mora hat.",
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Himmlischer Schwerttanz – Abwechslung",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Standardangriff",
+              "description": "Führt bis zu 3 Schwünge mit dem Schwert hintereinander aus.\n",
+              "descriptions": []
+            },
+            {
+              "name": "Heftiger Schlag",
+              "description": "Verbraucht fortlaufend Ausdauer, wirbelt das Großschwert und greift Gegner in der Umgebung an.\nSchwingt das Schwert am Ende mit besonders großer Wucht.\n",
+              "descriptions": []
+            },
+            {
+              "name": "Angriff aus dem Fall",
+              "description": "Schlägt beim Fallen aus der Luft auf den Boden, greift alle Gegner in der Bahn an und verursacht beim Aufkommen Flächenschaden.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "SCH Phase 1|{param1}%",
+            "SCH Phase 2|{param2}% + {param3}%",
+            "SCH Phase 3|{param4}%",
+            "SCH heftiger Schläge pro Runde|{param5}%",
+            "SCH heftiger Schläge am Ende|{param6}%",
+            "Ausdauerverbrauch heftiger Schläge|{param7} Punkte pro s",
+            "Höchstdauer|{param8} s",
+            "SCH beim Fallen|{param9}%",
+            "SCH beim Fallen aus niedriger/großer Höhe|{param10}% / {param11}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
+          "title": "Lampe des Dschinns – Sorgenbefreiende Kanone",
+          "description": "Die Lampe feuert eine sorgenbefreiende Kanone auf Gegner ab und verursacht Elektro-Schaden.\nTrifft die sorgenbefreiende Kanone, erzeugt sie 2 Kundendienst-Kanonen, die die Gegner automatisch verfolgen und Elektro-Schaden verursachen.\n\n",
           "abilities": [],
-          "stats": []
+          "stats": [
+            "SCH der sorgenbefreienden Kanone|{param1}%",
+            "SCH der Kundendienst-Kanone|{param2}%",
+            "Abklingzeit|{param3} s"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Zuneigung von Alcazarzaray",
+          "description": "Beschwört den Flaschengeist herauf, um den Kunden verschiedenste Arten von Hilfe zu geben.\n\n",
+          "abilities": [
+            {
+              "name": "Flaschengeist",
+              "description": "Verbindet sich mit der Figur in der Nähe:\n",
+              "descriptions": [
+                "Stellt der damit verbundenen Figur fortlaufend LP auf Basis von Doris max. LP wieder her.",
+                "Stellt dieser Figur fortlaufend Elementarenergie wieder her.",
+                "Verleiht dieser Figur das Elektro-Attribut.",
+                "Berührt das Verbindungsstück zwischen dem Flaschengeist und der Figur die Gegner, fügt es diesen alle 0,4 s 1-mal Elektro-Schaden zu.",
+                "Gleichzeitig kann immer nur höchstens 1 Flaschengeist existieren."
+              ]
+            }
+          ],
+          "stats": [
+            "SCH des Verbindungsstücks|{param1}%",
+            "Fortlaufende Heilung|{param2}% der max. LP + {param3}",
+            "Elementarenergie-Wiederherstellung|{param4}",
+            "Dauer|{param5} s",
+            "Abklingzeit|{param6} s",
+            "Elementarenergie|{param7}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "Unerwarteter Auftrag",
+          "description": "Gibt beim Zusammensetzen von Material zum Verstärken von Figuren und Waffen mit einer Wahrscheinlichkeit von 25 % einen Teil der Materialien zurück.\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
+          "title": "Eine Antenne für Gold",
+          "description": "Verringert die Abklingzeit der Fähigkeit Lampe des Dschinns – Sorgenbefreiende Kanone um 1 s, wenn die mit dem Flaschengeist verbundene Figur Reaktionen wie „Unter Strom“, „Supraleiter“, „Überladen“, „Urwuchs“, „Suprawuchs“, „Supraspross“, „Elektro-Verwirbelung“ und „Kristallisation mit Elektro-Kraft“ ausgelöst hat.\n3 s Abklingzeit.\n",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "NA",
-          "description": "",
+          "title": "Zinseszinsen",
+          "description": "Stellt Dori pro 100 % Aufladerate, die sie besitzt, 5 Punkte Elementarenergie wieder her, wenn sorgenbefreiende Kanonen oder Kundendienst-Kanonen der Fähigkeit Lampe des Dschinns – Sorgenbefreiende Kanone Gegner treffen.\nBis zu 15 Punkte Elementarenergie können auf diese Weise höchstens einmal pro Lampe des Dschinns – Sorgenbefreiende Kanone wiederhergestellt werden.\n",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "Zusatzinvestition",
+          "description": "Erhöht die Anzahl der beim Treffen mit der sorgenbefreienden Kanone entstehenden Kundendienst-Kanonen um 1.\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "Sonderfranchise",
+          "description": "Feuert während eines Kampfes von der Position der verbundenen Figur eine Dschinn-Kanone ab und verursacht Schaden in Höhe von 50 % ANG von Dori, wenn der Flaschengeist die mit ihm verbundene Figur heilt.\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "Wunder wie Wasserfälle",
+          "description": "Erhöht die Stufe der Fähigkeit Zuneigung von Alcazarzaray um 3.\nHöchststufe 15.\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
+          "title": "Zuschlag für Defizite",
+          "description": "Verleiht der Figur, die mit dem Flaschengeist verbunden ist, jeweils die folgenden Boni, je nach ihren aktuellen LP und ihrer Elementarenergie:\n",
+          "descriptions": [
+            "Erhöht den passiven Heilungsbonus um 50 %, wenn ihre LP weniger als 50 % betragen.",
+            "Erhöht ihre Aufladerate um 30 %, wenn ihre Elementarenergie weniger als 50 % beträgt."
+          ]
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "Mehrwert für Mora",
+          "description": "Erhöht die Stufe der Fähigkeit Lampe des Dschinns – Sorgenbefreiende Kanone um 3.\nHöchststufe 15.\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
+          "title": "Saus und Braus",
+          "description": "Erhält innerhalb 3 s nach Anwenden der Fähigkeit Lampe des Dschinns – Sorgenbefreiende Kanone folgende Effekte:\n",
+          "descriptions": [
+            "Verleiht Elektro-Attribut.",
+            "Stellt allen Truppenmitgliedern in der Nähe bei Treffern von Gegnern mit Standardangriffen LP in Höhe von 4 % der max. LP von Dori wieder her. 0,1 s Abklingzeit."
+          ]
         }
       ]
     },
@@ -1756,12 +2026,12 @@
           "abilities": [
             {
               "name": "Standardangriff",
-              "description": "Führt bis zu 5 Pfeilschüsse aus.\r\n",
+              "description": "Führt bis zu 5 Pfeilschüsse hintereinander aus.\n",
               "descriptions": []
             },
             {
               "name": "Heftiger Schlag",
-              "description": "Führt einen gezielten Schuss mit höherem Schaden und höherer Genauigkeit aus.\r\nRuft während des Zielens die Blitzgeister aus dem Immernachtreich herbei, die dem Befehl der Prinzessin folgen und ihre Kraft auf der Pfeilspitze konzentrieren, die voll aufgeladen mit dem Blitz der Rachsucht hohen Elektro-Schaden verursacht.\r\n",
+              "description": "Führt einen gezielten Schuss mit höherem Schaden und höherer Genauigkeit aus.\nRuft während des Zielens die Blitzgeister aus dem Immernachtreich herbei, die dem Befehl der Prinzessin folgen und ihre Kraft auf der Pfeilspitze konzentrieren, die voll aufgeladen mit dem Blitz der Rachsucht hohen Elektro-Schaden verursacht.\n",
               "descriptions": []
             },
             {
@@ -1785,34 +2055,35 @@
         {
           "key": "s2",
           "title": "Schutz der Dunkelheit",
-          "description": "Beschwört Oz, den Raben aus Schatten und Blitzen, in diese Welt, der Gegnern mit geringer Reichweite Elektro-Schaden zufügt.\r\nSchießt bei Anwesenheit von Oz Blitzgeschosse ab, die Gegner in der Nähe angreifen.\r\nGedrückt halten, um das Ziel der Fähigkeit zu bestimmen.\r\nBei Anwesenheit von Oz erneut drücken, um Oz zurückzuholen.\r\n",
+          "description": "Beschwört Oz, den Raben aus Schatten und Blitzen, in diese Welt, der Gegnern mit geringer Reichweite Elektro-Schaden zufügt.\nSchießt bei Anwesenheit von Oz Blitzgeschosse ab, die Gegner in der Nähe angreifen.\n\nGedrückt halten, um das Ziel der Fähigkeit zu bestimmen.\nBei Anwesenheit von Oz erneut drücken, um Oz zurückzuholen.\n\n\n",
           "abilities": [],
           "stats": [
             "Angriffs-SCH von Oz|{param1}%",
             "Beschwörungs-SCH|{param2}%",
-            "Vorhandensein von Oz|{param3}s",
-            "Abklingzeit|{param4}s"
+            "Vorhandensein von Oz|{param3} s",
+            "Abklingzeit|{param4} s"
           ]
         },
         {
           "key": "s3",
           "title": "Mitternachtstraum",
-          "description": "Beschwört Oz, der seine tiefschwarzen Flügel ausbreitet, um Fischl zu beschützen.\r\n",
+          "description": "Beschwört Oz, der seine tiefschwarzen Flügel ausbreitet, um Fischl zu beschützen.\n",
           "abilities": [
             {
               "name": "",
-              "description": "Effekte während der Wirkungsdauer:\r\n",
+              "description": "Effekte während der Wirkungsdauer:\n",
               "descriptions": [
                 "Bewegt sich in Form von Oz mit hoher Geschwindigkeit.",
-                "Trifft Gegner in der Nähe mit einem Blitz und verursacht ElektroSchaden. Jeder Gegner kann nur einmal Schaden von einem Blitz erleiden.",
+                "Trifft Gegner in der Nähe mit einem Blitz und verursacht Elektro-Schaden. Jeder Gegner kann nur einmal Schaden von einem Blitz erleiden.",
                 "Oz verbleibt nach dem Ende der Wirkungsdauer und greift die Gegner der Prinzessin an. Setzt die Aufenthaltsdauer von Oz zurück, wenn er schon auf dem Feld ist."
               ]
             }
           ],
           "stats": [
             "Blitz-SCH|{param1}%",
-            "Abklingzeit|{param2}s",
-            "Elementarenergie|{param3}"
+            "Abklingzeit|{param2} s",
+            "Elementarenergie|{param3}",
+            "Elementarenergie|{param4}"
           ]
         }
       ],
@@ -1820,19 +2091,19 @@
         {
           "key": "p1",
           "title": "Mein Hausgarten",
-          "description": "Verkürzt die bei Erkundungen innerhalb des Einflussbereichs von Mondstadt verbrauchte Zeit um 25 %.\r\n",
+          "description": "Verkürzt die bei Erkundungen innerhalb des Einflussbereichs von Mondstadt verbrauchte Zeit um 25 %.\n",
           "descriptions": []
         },
         {
           "key": "p2",
           "title": "Sterneverschlinger",
-          "description": "Wenn Fischl Oz mit einem voll aufgeladenen gezielten Schuss trifft, schickt Oz den Blitz des heiligen Urteils zu den Gegnern in der Nähe und verursacht damit Elektro-Flächenschaden in Höhe von 152,7 % des gezielten Schusses.\r\n",
+          "description": "Wenn Fischl Oz mit einem voll aufgeladenen gezielten Schuss trifft, schickt Oz den Blitz des heiligen Urteils zu den Gegnern in der Nähe und verursacht damit Elektro-Flächenschaden in Höhe von 152,7 % des gezielten Schusses.\n",
           "descriptions": []
         },
         {
           "key": "p3",
           "title": "Schatten der Verurteilung",
-          "description": "Schickt bei Anwesenheit von Oz und, wenn der Angriff der aktuellen eigenen Figur eine Elektro-Reaktion verursacht, den Blitz des heiligen Urteils auf den betroffenen Gegner und verursacht Elektro-Schaden in Höhe von 80 % von Fischls ANG.\r\n",
+          "description": "Schickt bei Anwesenheit von Oz und, wenn der Angriff der aktuellen eigenen Figur eine Elektro-Reaktion verursacht, den Blitz des heiligen Urteils auf den betroffenen Gegner und verursacht Elektro-Schaden in Höhe von 80 % von Fischls ANG.\n",
           "descriptions": []
         }
       ],
@@ -1840,37 +2111,37 @@
         {
           "key": "c1",
           "title": "Blick aus der Finsternis",
-          "description": "Oz wacht mithilfe der Krähenaugen über Fischl, selbst wenn er nicht anwesend ist. Oz greift über seine Krähenaugen an, wenn Fischl Gegner mit ihrem Standardangriff angreift, und verursacht Schaden in Höhe von 22 % ANG.\r\n",
+          "description": "Oz wacht mithilfe der Krähenaugen über Fischl, selbst wenn er nicht anwesend ist. Oz greift über seine Krähenaugen an, wenn Fischl Gegner mit ihrem Standardangriff angreift, und verursacht Schaden in Höhe von 22 % ANG.\n",
           "descriptions": []
         },
         {
           "key": "c2",
           "title": "Federn der Vollstreckung",
-          "description": "Verursacht bei Anwendung von Schutz der Dunkelheit zusätzlich Schaden in Höhe von 200 % ANG und vergrößert den Wirkungsbereich um 50 %.\r\n",
+          "description": "Verursacht bei Anwendung von Schutz der Dunkelheit zusätzlich Schaden in Höhe von 200 % ANG und vergrößert den Wirkungsbereich um 50 %.\n",
           "descriptions": []
         },
         {
           "key": "c3",
           "title": "Tiefschwarze Flügel",
-          "description": "Erhöht die Stufe der Fähigkeit Schutz der Dunkelheit um 3.\r\nHöchststufe 15.\r\n",
+          "description": "Erhöht die Stufe der Fähigkeit Schutz der Dunkelheit um 3.\nHöchststufe 15.\n",
           "descriptions": []
         },
         {
           "key": "c4",
           "title": "Fantastereien der Prinzessin",
-          "description": "Fügt allen Gegnern in der Umgebung bei Anwendung von Mitternachtstraum Elektro-Schaden in Höhe von 222 % ANG zu.\r\nStellt Fischl nach Ablauf der Dauer des Effekts 20 % LP wieder her.\r\n",
+          "description": "Fügt allen Gegnern in der Umgebung bei Anwendung von Mitternachtstraum Elektro-Schaden in Höhe von 222 % ANG zu.\nStellt Fischl nach Ablauf der Dauer des Effekts 20 % LP wieder her.\n",
           "descriptions": []
         },
         {
           "key": "c5",
           "title": "Offenbarung der Nacht",
-          "description": "Erhöht die Stufe der Fähigkeit Mitternachtstraum um 3.\r\nHöchststufe 15.\r\n",
+          "description": "Erhöht die Stufe der Fähigkeit Mitternachtstraum um 3.\nHöchststufe 15.\n",
           "descriptions": []
         },
         {
           "key": "c6",
           "title": "Vogel der ewigen Nacht",
-          "description": "Verlängert die Dauer des Vorhandenseins von Oz um 2 s, greift gemeinsam mit der aktuellen eigenen Figur an und verursacht Elektro-Schaden in Höhe von 30 % von Fischls ANG.\r\n",
+          "description": "Verlängert die Dauer des Vorhandenseins von Oz um 2 s, greift gemeinsam mit der aktuellen eigenen Figur an und verursacht Elektro-Schaden in Höhe von 30 % von Fischls ANG.\n",
           "descriptions": []
         }
       ]
@@ -2635,12 +2906,12 @@
           "abilities": [
             {
               "name": "Standardangriff",
-              "description": "Führt bis zu 5 Schwerthiebe aus.\r\n",
+              "description": "Führt bis zu 5 Schwerthiebe hintereinander aus.\n",
               "descriptions": []
             },
             {
               "name": "Heftiger Schlag",
-              "description": "Verbraucht eine gewisse Menge Ausdauer und schwingt das Schwert zweimal schnell nach vorn.\r\n",
+              "description": "Verbraucht eine gewisse Menge Ausdauer und schwingt das Schwert zweimal schnell nach vorn.\n",
               "descriptions": []
             },
             {
@@ -2656,7 +2927,7 @@
             "SCH Phase 4|{param4}%",
             "SCH Phase 5|{param5}%",
             "SCH heftiger Schläge|{param6}% + {param7}%",
-            "Ausdauerverbrauch heftiger Schläge|{param8}",
+            "Ausdauerverbrauch heftiger Schläge|{param8} Punkte",
             "SCH beim Fallen|{param9}%",
             "SCH beim Fallen aus niedriger/großer Höhe|{param10}% / {param11}%"
           ]
@@ -2664,23 +2935,24 @@
         {
           "key": "s2",
           "title": "Kälteatem",
-          "description": "Verströmt augenblicklich eisige Kälte und fügt gegenüberstehenden Gegnern Kryo-Schaden zu.\r\n",
+          "description": "Verströmt augenblicklich eisige Kälte und fügt gegenüberstehenden Gegnern Kryo-Schaden zu.\n\n",
           "abilities": [],
           "stats": [
             "Fähigkeits-SCH|{param1}%",
-            "Abklingzeit|{param2}s"
+            "Abklingzeit|{param2} s"
           ]
         },
         {
           "key": "s3",
           "title": "Kreis aus Eis",
-          "description": "Konzentriert den Frost in der Luft und erschafft 3 Eiszapfen, die die Figur umkreisen.\r\nDie Eiszapfen folgen den Bewegungen der Figur und fügen den Gegnern in ihrer Bahn Kryo-Schaden zu.\r\n",
+          "description": "Konzentriert den Frost in der Luft und erschafft 3 Eiszapfen, die die Figur umkreisen.\nDie Eiszapfen folgen den Bewegungen der Figur und fügen den Gegnern in ihrer Bahn Kryo-Schaden zu.\n\n",
           "abilities": [],
           "stats": [
             "Fähigkeits-SCH|{param1}%",
-            "Abklingzeit|{param2}s",
-            "Dauer|{param3}s",
-            "Elementarenergie|{param4}"
+            "Abklingzeit|{param2} s",
+            "Dauer|{param3} s",
+            "Elementarenergie|{param4}",
+            "Elementarenergie|{param5}"
           ]
         }
       ],
@@ -2688,19 +2960,19 @@
         {
           "key": "p1",
           "title": "Verborgene Stärke",
-          "description": "Verringert die beim Rennen verbrauchte Ausdauer aller eigenen Truppenmitglieder um 20 %.\r\nNicht mit passiven Talenten mit völlig gleichen Effekten stapelbar.\r\n",
+          "description": "Verringert die beim Rennen verbrauchte Ausdauer aller eigenen Truppenmitglieder um 20 %.\nNicht mit passiven Talenten mit völlig gleichen Effekten stapelbar.\n",
           "descriptions": []
         },
         {
           "key": "p2",
           "title": "Grausames Schwert",
-          "description": "Stellt Kaeya für jeden Treffer mit Kälteatem LP in Höhe von 15 % ANG wieder her.\r\n",
+          "description": "Stellt Kaeya für jeden Treffer mit Kälteatem LP in Höhe von 15 % ANG wieder her.\n",
           "descriptions": []
         },
         {
           "key": "p3",
           "title": "Eiskaltes Herz",
-          "description": "Erschafft für jeden durch Kälteatem vom Zustand Gefroren betroffenen Gegner 1 zusätzliches Elementarteilchen.\r\nErschafft auf diese Weise durch Kälteatem insgesamt bis zu 2 zusätzliche Elementarteilchen.\r\n",
+          "description": "Erschafft für jeden durch Kälteatem vom Zustand Gefroren betroffenen Gegner 1 zusätzliches Elementarteilchen.\nErschafft auf diese Weise durch Kälteatem insgesamt bis zu 2 zusätzliche Elementarteilchen.\n",
           "descriptions": []
         }
       ],
@@ -2708,25 +2980,25 @@
         {
           "key": "c1",
           "title": "Brillantes Blut",
-          "description": "Erhöht die KT von Kaeyas Standardangriffen und heftigen Schlägen gegenüber von Kryo-Effekten betroffenen Gegnern um 15 %.\r\n",
+          "description": "Erhöht die KT von Kaeyas Standardangriffen und heftigen Schlägen gegenüber von Kryo-Effekten betroffenen Gegnern um 15 %.\n",
           "descriptions": []
         },
         {
           "key": "c2",
           "title": "Endlose Vorführung",
-          "description": "Verlängert die Dauer von Kreis aus Eis beim Besiegen von Gegnern während der Wirkungsdauer dieser Fähigkeit um 2,5 s und insgesamt um bis zu 15 s.\r\n",
+          "description": "Verlängert die Dauer von Kreis aus Eis beim Besiegen von Gegnern während der Wirkungsdauer dieser Fähigkeit um 2,5 s und insgesamt um bis zu 15 s.\n",
           "descriptions": []
         },
         {
           "key": "c3",
           "title": "Bitterkaltes Schauspiel",
-          "description": "Erhöht die Stufe der Fähigkeit Kälteatem um 3.\r\nHöchststufe 15.\r\n",
+          "description": "Erhöht die Stufe der Fähigkeit Kälteatem um 3.\nHöchststufe 15.\n",
           "descriptions": []
         },
         {
           "key": "c4",
           "title": "Eiskalter Kuss",
-          "description": "Wird automatisch ausgelöst, wenn Kaeya weniger als 20 % LP hat:\r\n",
+          "description": "Wird automatisch ausgelöst, wenn Kaeya weniger als 20 % LP hat:\n",
           "descriptions": [
             "Erschafft einen Schutzschild mit einer Stärke von 30 % der max. LP, hält 20 s.",
             "Hält bei Kryo-Schaden 250 % ab.",
@@ -2736,13 +3008,13 @@
         {
           "key": "c5",
           "title": "Frostige Umarmung",
-          "description": "Erhöht die Stufe der Fähigkeit Kreis aus Eis um 3.\r\nHöchststufe 15.\r\n",
+          "description": "Erhöht die Stufe der Fähigkeit Kreis aus Eis um 3.\nHöchststufe 15.\n",
           "descriptions": []
         },
         {
           "key": "c6",
           "title": "Kreisender Eiszapfen",
-          "description": "Kreis aus Eis erschafft einen zusätzlichen Eiszapfen und gibt bei Anwendung 15 Punkte Elementarenergie zurück.\r\n",
+          "description": "Kreis aus Eis erschafft einen zusätzlichen Eiszapfen und gibt bei Anwendung 15 Punkte Elementarenergie zurück.\n",
           "descriptions": []
         }
       ]
@@ -2914,12 +3186,12 @@
           "abilities": [
             {
               "name": "Standardangriff",
-              "description": "Führt bis zu 5 Schwerthiebe hintereinander aus.\r\n",
+              "description": "Führt bis zu 5 Schwerthiebe hintereinander aus.\n",
               "descriptions": []
             },
             {
               "name": "Heftiger Schlag",
-              "description": "Verbraucht eine gewisse Menge Ausdauer, um vorwärts zu stürmen und einen Iai auszuführen.\r\n",
+              "description": "Verbraucht eine gewisse Menge Ausdauer, um vorwärts zu stürmen und einen Iai auszuführen.\n",
               "descriptions": []
             },
             {
@@ -2932,10 +3204,10 @@
             "SCH Phase 1|{param1}%",
             "SCH Phase 2|{param2}%",
             "SCH Phase 3|{param3}%",
-            "SCH Phase 4|{param4}%×{param5}",
+            "SCH Phase 4|{param4}% ×{param5}",
             "SCH Phase 5|{param6}%",
             "Heftige Schläge|{param7}%",
-            "Ausdauerverbrauch heftiger Schläge|{param8}",
+            "Ausdauerverbrauch heftiger Schläge|{param8} Punkte",
             "SCH beim Fallen|{param9}%",
             "SCH beim Fallen aus niedriger/großer Höhe|{param10}% / {param11}%"
           ]
@@ -2943,11 +3215,11 @@
         {
           "key": "s2",
           "title": "Kamisato-Stil – Kyouka",
-          "description": "Kamisato Ayato wechselt seine Position und tritt in den Zustand „Takimeguri Kanka“ ein.\r\nHinterlässt danach eine „Wasserillusion“ an seinem ursprünglichen Standort. Sobald sie geformt ist, explodiert die Wasserillusion, wenn Gegner in der Nähe sind, oder nach einer bestimmten Zeit und verursacht Hydro-Flächenschaden.\r\n",
+          "description": "Kamisato Ayato wechselt seine Position und tritt in den Zustand „Takimeguri Kanka“ ein.\nHinterlässt danach eine „Wasserillusion“ an seinem ursprünglichen Standort. Sobald sie geformt ist, explodiert die Wasserillusion, wenn Gegner in der Nähe sind, oder nach einer bestimmten Zeit und verursacht Hydro-Flächenschaden.\n\n",
           "abilities": [
             {
               "name": "Takimeguri Kanka",
-              "description": "In diesem Zustand setzt Kamisato Ayato sein Shunsuiken ein, um blitzschnelle Angriffe auszuführen, wodurch der mit seinen Standardangriffen verursachte Schaden in Hydro-Flächenschaden, der nicht von anderen Elementen überdeckt werden kann, umgewandelt wird.\r\nHat außerdem folgende Effekte:\r\n",
+              "description": "In diesem Zustand setzt Kamisato Ayato sein Shunsuiken ein, um blitzschnelle Angriffe auszuführen, wodurch der mit seinen Standardangriffen verursachte Schaden in Hydro-Flächenschaden, der nicht von anderen Elementen überdeckt werden kann, umgewandelt wird.\nHat außerdem folgende Effekte:\n",
               "descriptions": [
                 "Gewährt Ayato, nachdem ein Shunsuiken-Angriff Gegner getroffen hat, den Effekt Namisen, der den von Shunsuiken verursachten Schaden basierend auf Ayatos aktuellen max. LP erhöht. Namisen-Effekt anfänglich 4-fach stapelbar, höchstens 1 Stapelung alle 0,1 s durch Shunsuiken zu erhalten. Dieser Effekt erlischt, wenn Takimeguri Kanka endet.",
                 "Erhöht den Unterbrechungs-WDS von Kamisato Ayato.",
@@ -2960,23 +3232,25 @@
             "Shunsuiken-SCH Phase 1|{param1}%",
             "Shunsuiken-SCH Phase 2|{param2}%",
             "Shunsuiken-SCH Phase 3|{param3}%",
-            "Dauer von Takimeguri Kanka|{param4}s",
-            "ANG-Bonus von Namisen|{param5}%Max HP / Stack",
+            "Dauer von Takimeguri Kanka|{param4} s",
+            "ANG-Bonus von Namisen|{param5}% der max. LP pro Stapelung",
             "Wasserillusions-SCH|{param6}%",
-            "Wasserillusions-Dauer|{param7}s",
-            "Abklingzeit|{param8}s"
+            "Wasserillusions-Dauer|{param7} s",
+            "Abklingzeit|{param8} s",
+            "Kürzester Zeitabstand zum Auslösen|{param9} s",
+            "Abklingzeit|{param10} s"
           ]
         },
         {
           "key": "s3",
           "title": "Kamisato-Stil – Suiyuu",
-          "description": "Erschafft einen Garten der Reinheit, der jeglichen Lärm in seinem Inneren auslöscht.\r\nLässt während der Wirkungsdauer fortlaufend Wasserblütenklingen fallen, die Gegner im Wirkungsbereich angreifen und ihnen Hydro-Schaden zufügen, und erhöht den mit Standardangriffen der Figuren im Wirkungsbereich verursachten Schaden.\r\n",
+          "description": "Erschafft einen Garten der Reinheit, der jeglichen Lärm in seinem Inneren auslöscht.\nLässt während der Wirkungsdauer fortlaufend Wasserblütenklingen fallen, die Gegner im Wirkungsbereich angreifen und ihnen Hydro-Schaden zufügen, und erhöht den mit Standardangriffen der Figuren im Wirkungsbereich verursachten Schaden.\n\n",
           "abilities": [],
           "stats": [
             "Wasserblütenklingen-SCH|{param1}%",
             "SCH-Bonus für Standardangriffe|{param2}%",
-            "Dauer|{param3}s",
-            "Abklingzeit|{param4}s",
+            "Dauer|{param3} s",
+            "Abklingzeit|{param4} s",
             "Elementarenergie|{param5}"
           ]
         }
@@ -2985,13 +3259,13 @@
         {
           "key": "p1",
           "title": "Kamisato-Stil – Alltägliche Gerichte",
-          "description": "Stellt bei der perfekten Zubereitung von Gerichten mit einer Wahrscheinlichkeit von 18 % zusätzlich die misslungene Variante des jeweiligen Gerichts her.\r\n",
+          "description": "Stellt bei der perfekten Zubereitung von Gerichten mit einer Wahrscheinlichkeit von 18 % zusätzlich die misslungene Variante des jeweiligen Gerichts her.\n",
           "descriptions": []
         },
         {
           "key": "p2",
           "title": "Kamisato-Stil – Mine Wo Matoishi Kiyotaki",
-          "description": "Kamisato-Stil – Kyouka löst folgende Effekte aus:\r\n",
+          "description": "Kamisato-Stil – Kyouka löst folgende Effekte aus:\n",
           "descriptions": [
             "Kamisato Ayato erhält beim Auslösen 2 Stapelungen des Effekts Namisen.",
             "Wenn die Wasserillusion explodiert, erhält Ayato eine Menge an Stapelungen des Effekts Namisen, die der höchstmöglichen Anzahl von Stapelungen entspricht."
@@ -3000,7 +3274,7 @@
         {
           "key": "p3",
           "title": "Kamisato-Stil – Michiyuku Hagetsu",
-          "description": "Stellt Kamisato Ayato, wenn er inaktiv in der Truppe ist und weniger als 40 Punkte Elementarenergie hat, pro s 2 Punkte Elementarenergie wieder her.\r\n",
+          "description": "Stellt Kamisato Ayato, wenn er inaktiv in der Truppe ist und weniger als 40 Punkte Elementarenergie hat, pro s 2 Punkte Elementarenergie wieder her.\n",
           "descriptions": []
         }
       ],
@@ -3008,37 +3282,37 @@
         {
           "key": "c1",
           "title": "Kyouka Fuushi",
-          "description": "Erhöht den Gegnern mit bis zu 50 % LP mit Shunsuiken zugefügten Schaden um 40 %.\r\n",
+          "description": "Erhöht den Gegnern mit bis zu 50 % LP mit Shunsuiken zugefügten Schaden um 40 %.\n",
           "descriptions": []
         },
         {
           "key": "c2",
           "title": "Quelle der Welt",
-          "description": "Erhöht die Höchstmenge an Stapelungen von Namisen auf 5. Erhöht, wenn Kamisato Ayato mindestens 3 Namisen-Stapelungen hat, seine maximalen LP um 50 %.\r\n",
+          "description": "Erhöht die Höchstmenge an Stapelungen von Namisen auf 5. Erhöht, wenn Kamisato Ayato mindestens 3 Namisen-Stapelungen hat, seine maximalen LP um 50 %.\n",
           "descriptions": []
         },
         {
           "key": "c3",
           "title": "Bewunderung der Blumen",
-          "description": "Erhöht die Stufe der Fähigkeit Kamisato-Stil – Kyouka um 3.\r\nHöchststufe 15.\r\n",
+          "description": "Erhöht die Stufe der Fähigkeit Kamisato-Stil – Kyouka um 3.\nHöchststufe 15.\n",
           "descriptions": []
         },
         {
           "key": "c4",
           "title": "Ewiger Fluss",
-          "description": "Erhöht nach dem Auslösen von Kamisato-Stil – Suiyuu die Angriffs-GSW der Standardangriffe aller Truppenmitglieder in der Nähe 15 s lang um 15 %.\r\n",
+          "description": "Erhöht nach dem Auslösen von Kamisato-Stil – Suiyuu die Angriffs-GSW der Standardangriffe aller Truppenmitglieder in der Nähe 15 s lang um 15 %.\n",
           "descriptions": []
         },
         {
           "key": "c5",
           "title": "Bansui Ichiro",
-          "description": "Erhöht die Stufe der Fähigkeit Kamisato-Stil – Suiyuu um 3.\r\nHöchststufe 15.\r\n",
+          "description": "Erhöht die Stufe der Fähigkeit Kamisato-Stil – Suiyuu um 3.\nHöchststufe 15.\n",
           "descriptions": []
         },
         {
           "key": "c6",
           "title": "Unerschöpfliche Quelle",
-          "description": "Löst, wenn der nächste Angriff von Kamisato Ayato mit Shunsuiken nach Anwendung von Kamisato-Stil – Kyouka Gegner trifft, 2 weitere Shunsuiken-Angriffe aus, von denen jeder Schaden in Höhe von 450 % von Ayatos ANG zufügt.\r\nDiese beiden Shunsuiken-Angriffe erhalten keine Bonuseffekte von Namisen.\r\n",
+          "description": "Löst, wenn der nächste Angriff von Kamisato Ayato mit Shunsuiken nach Anwendung von Kamisato-Stil – Kyouka Gegner trifft, 2 weitere Shunsuiken-Angriffe aus, von denen jeder Schaden in Höhe von 450 % von Ayatos ANG zufügt.\nDiese beiden Shunsuiken-Angriffe erhalten keine Bonuseffekte von Namisen.\n",
           "descriptions": []
         }
       ]
@@ -3870,6 +4144,93 @@
       ]
     },
     {
+      "key": "nilou",
+      "name": "Nilou",
+      "title": "？？？",
+      "description": "？？？",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ]
+    },
+    {
       "key": "ningguang",
       "name": "Ningguang",
       "title": "Verdeckter Mond",
@@ -3882,12 +4243,12 @@
           "abilities": [
             {
               "name": "Standardangriff",
-              "description": "Verschießt Edelsteine, die Geo-Schaden verursachen.\r\nGibt Ningguang bei Treffern eine Sternjade.\r\n",
+              "description": "Verschießt Edelsteine, die Geo-Schaden verursachen.\nGibt Ningguang bei Treffern eine Sternjade.\n",
               "descriptions": []
             },
             {
               "name": "Heftiger Schlag",
-              "description": "Verbraucht Ausdauer und wirft einen gewaltigen Edelstein, der Geo-Schaden verursacht.\r\nVerschießt während eines heftigen Schlags bei Vorhandensein von Sternjade die gesamte Sternjade und verursacht zusätzlichen Schaden.\r\n",
+              "description": "Verbraucht Ausdauer und wirft einen gewaltigen Edelstein, der Geo-Schaden verursacht.\nVerschießt während eines heftigen Schlags bei Vorhandensein von Sternjade die gesamte Sternjade und verursacht zusätzlichen Schaden.\n",
               "descriptions": []
             },
             {
@@ -3900,7 +4261,7 @@
             "Standardangriffs-SCH|{param1}%",
             "SCH heftiger Schläge|{param2}%",
             "SCH pro Sternjade|{param3}%",
-            "Ausdauerverbrauch heftiger Schläge|{param4}",
+            "Ausdauerverbrauch heftiger Schläge|{param4} Punkte",
             "SCH beim Fallen|{param5}%",
             "SCH beim Fallen aus niedriger/großer Höhe|{param6}% / {param7}%"
           ]
@@ -3908,7 +4269,7 @@
         {
           "key": "s2",
           "title": "Jadeschirm",
-          "description": "Errichtet einen stabilen Jadeschirm aus Gold, Obsidian und dem Willen eines Kämpfers, der Geo-Flächenschaden verursacht.\r\n",
+          "description": "Errichtet einen stabilen Jadeschirm aus Gold, Obsidian und dem Willen eines Kämpfers, der Geo-Flächenschaden verursacht.\n\n",
           "abilities": [
             {
               "name": "Jadeschirm",
@@ -3923,17 +4284,18 @@
           "stats": [
             "Erhaltene LP|{param1}%",
             "Fähigkeits-SCH|{param2}%",
-            "Abklingzeit|{param3}s"
+            "Abklingzeit|{param3} s",
+            "Abklingzeit|{param4} s"
           ]
         },
         {
           "key": "s3",
           "title": "Sternensplitter",
-          "description": "Ningguang sammelt unzählige Edelsteine, die auf einen Schlag auf Gegner in der Umgebung zufliegen und hohen Geo-Schaden verursachen.\r\nLässt einen eventuell anwesenden Jadeschirm in der Nähe bei Anwendung von Sternensplitter zusätzlich viele kleine Edelsteine abschießen.\r\n",
+          "description": "Ningguang sammelt unzählige Edelsteine, die auf einen Schlag auf Gegner in der Umgebung zufliegen und hohen Geo-Schaden verursachen.\nLässt einen eventuell anwesenden Jadeschirm in der Nähe bei Anwendung von Sternensplitter zusätzlich viele kleine Edelsteine abschießen.\n\n",
           "abilities": [],
           "stats": [
             "SCH pro Edelstein|{param1}%",
-            "Abklingzeit|{param2}s",
+            "Abklingzeit|{param2} s",
             "Elementarenergie|{param3}"
           ]
         }
@@ -3942,19 +4304,19 @@
         {
           "key": "p1",
           "title": "Edelsteinhort",
-          "description": "Zeigt alle Erzadern mit zum Schmieden geeignetem Erz in der Nähe auf der Minikarte an.\r\n",
+          "description": "Zeigt alle Erzadern mit zum Schmieden geeignetem Erz in der Nähe auf der Minikarte an.\n",
           "descriptions": []
         },
         {
           "key": "p2",
           "title": "Ausweichplan",
-          "description": "Ningguang verbraucht bei Vorhandensein von Sternjade für die Anwendung heftiger Schläge keine Ausdauer.\r\n",
+          "description": "Ningguang verbraucht bei Vorhandensein von Sternjade für die Anwendung heftiger Schläge keine Ausdauer.\n",
           "descriptions": []
         },
         {
           "key": "p3",
           "title": "Rücklagen für alle Fälle",
-          "description": "Erhöht den Geo-Schaden von Figuren, die den Jadeschirm durchdringen, 10 s lang um 12 %.\r\n",
+          "description": "Erhöht den Geo-Schaden von Figuren, die den Jadeschirm durchdringen, 10 s lang um 12 %.\n",
           "descriptions": []
         }
       ],
@@ -3962,37 +4324,37 @@
         {
           "key": "c1",
           "title": "Berstende Splitter",
-          "description": "Verursacht bei Treffern mit Standardangriffen Flächenschaden.\r\n",
+          "description": "Verursacht bei Treffern mit Standardangriffen Flächenschaden.\n",
           "descriptions": []
         },
         {
           "key": "c2",
           "title": "Erschütterung",
-          "description": "Überspringt die Abklingzeit, wenn der Jadeschirm zerspringt.\r\n6 s Abklingzeit.\r\n",
+          "description": "Überspringt die Abklingzeit, wenn der Jadeschirm zerspringt.\n6 s Abklingzeit.\n",
           "descriptions": []
         },
         {
           "key": "c3",
           "title": "Anordnung der Sterne",
-          "description": "Erhöht die Stufe der Fähigkeit Sternensplitter um 3.\r\nHöchststufe 15.\r\n",
+          "description": "Erhöht die Stufe der Fähigkeit Sternensplitter um 3.\nHöchststufe 15.\n",
           "descriptions": []
         },
         {
           "key": "c4",
           "title": "Verteidigungsformation",
-          "description": "Erhöht den WDS der Figuren in der Umgebung gegen alle Elemente bei Anwendung von Jadeschirm um 10 %.\r\n",
+          "description": "Erhöht den WDS der Figuren in der Umgebung gegen alle Elemente bei Anwendung von Jadeschirm um 10 %.\n",
           "descriptions": []
         },
         {
           "key": "c5",
           "title": "Majestätischer Jadeschirm",
-          "description": "Erhöht die Stufe der Fähigkeit Jadeschirm um 3.\r\nHöchststufe 15.\r\n",
+          "description": "Erhöht die Stufe der Fähigkeit Jadeschirm um 3.\nHöchststufe 15.\n",
           "descriptions": []
         },
         {
           "key": "c6",
           "title": "Leuchten der Sieben Sterne",
-          "description": "Erschafft bei Anwendung von Sternensplitter sieben Stück Sternjade für Ningguang.\r\n",
+          "description": "Erschafft bei Anwendung von Sternensplitter sieben Stück Sternjade für Ningguang.\n",
           "descriptions": []
         }
       ]
@@ -4010,12 +4372,12 @@
           "abilities": [
             {
               "name": "Standardangriff",
-              "description": "Führt bis zu 4 Schwünge mit dem Schwert aus.\r\n",
+              "description": "Führt bis zu 4 Schwünge mit dem Schwert hintereinander aus.\n",
               "descriptions": []
             },
             {
               "name": "Heftiger Schlag",
-              "description": "Verbraucht fortlaufend Ausdauer, wirbelt das Großschwert und greift Gegner in der Umgebung an.\r\nSchwingt das Schwert am Ende mit besonders großer Wucht.\r\n",
+              "description": "Verbraucht fortlaufend Ausdauer, wirbelt das Großschwert und greift Gegner in der Umgebung an.\nSchwingt das Schwert am Ende mit besonders großer Wucht.\n",
               "descriptions": []
             },
             {
@@ -4031,8 +4393,8 @@
             "SCH Phase 4|{param4}%",
             "SCH heftiger Schläge pro Runde|{param5}%",
             "SCH heftiger Schläge am Ende|{param6}%",
-            "Ausdauerverbrauch heftiger Schläge|{param7}/s",
-            "Höchstdauer|{param8}s",
+            "Ausdauerverbrauch heftiger Schläge|{param7} Punkte pro s",
+            "Höchstdauer|{param8} s",
             "SCH beim Fallen|{param9}%",
             "SCH beim Fallen aus niedriger/großer Höhe|{param10}% / {param11}%"
           ]
@@ -4040,11 +4402,11 @@
         {
           "key": "s2",
           "title": "Brustpanzer",
-          "description": "Erschafft einen Geo-Panzer, der Gegnern in der Umgebung Geo-Schadenzufügt, sowie einen Schutzschild, der Schaden basierend auf Noelles VTD abhält.\r\n",
+          "description": "Erschafft einen Geo-Panzer, der Gegnern in der Umgebung Geo-Schadenzufügt, sowie einen Schutzschild, der Schaden basierend auf Noelles VTD abhält.\n",
           "abilities": [
             {
               "name": "",
-              "description": "Effekte des Schutzschilds:\r\n",
+              "description": "Effekte des Schutzschilds:\n",
               "descriptions": [
                 "Noelle stellt allen Truppenmitgliedern bei Treffern mit Standardangriffen und heftigen Schlägen mit gewisser Wahrscheinlichkeit LP wieder her.",
                 "Hält bei elementarem sowie physischem Schaden 150 % ab.",
@@ -4053,25 +4415,26 @@
             }
           ],
           "stats": [
-            "Fähigkeits-SCH|{param1}% DEF",
-            "Stärke|{param2}% DEF + {param3}",
-            "Heilung|{param4}% DEF + {param5}",
+            "Fähigkeits-SCH|{param1}% VTD",
+            "Stärke|{param2}% VTD + {param3}",
+            "Heilung|{param4}% VTD + {param5}",
             "Wahrscheinlichkeit der Heilung|{param6}%",
-            "Dauer|{param7}s",
-            "Abklingzeit|{param8}s"
+            "Dauer|{param7} s",
+            "Abklingzeit|{param8} s",
+            "Abklingzeit|{param9} s"
           ]
         },
         {
           "key": "s3",
           "title": "Großreinigung",
-          "description": "Konzentriert die Kraft der Felsen auf ihrer Waffe, greift Gegner in der Umgebung mit hoher Reichweite an und verursacht Geo-Schaden.\r\n",
+          "description": "Konzentriert die Kraft der Felsen auf ihrer Waffe, greift Gegner in der Umgebung mit hoher Reichweite an und verursacht Geo-Schaden.\n",
           "abilities": [
             {
               "name": "",
-              "description": "Löst danach folgende Effekte aus:\r\n",
+              "description": "Löst danach folgende Effekte aus:\n",
               "descriptions": [
                 "Erhöht Noelles Angriffsreichweite.",
-                "Wandelt den verursachten Schaden in GeoSchaden um. Diese Elementarumwandlung kann nicht von anderen Elementen überdeckt werden.",
+                "Wandelt den verursachten Schaden in Geo-Schaden um. Diese Elementarumwandlung kann nicht von anderen Elementen überdeckt werden.",
                 "Erhöht Noelles ANG basierend auf Noelles VTD."
               ]
             }
@@ -4079,9 +4442,9 @@
           "stats": [
             "Spezialfähigkeits-SCH|{param1}%",
             "Fähigkeits-SCH|{param2}%",
-            "ANG-Bonus|{param3}% DEF",
-            "Dauer|{param4}s",
-            "Abklingzeit|{param5}s",
+            "ANG-Bonus|{param3}% VTD",
+            "Dauer|{param4} s",
+            "Abklingzeit|{param5} s",
             "Elementarenergie|{param6}"
           ]
         }
@@ -4090,23 +4453,23 @@
         {
           "key": "p1",
           "title": "Hingabe einer Magd",
-          "description": "Stellt bei der perfekten Zubereitung eines Gerichts mit defensiver Funktion mit einer Wahrscheinlichkeit von 12 % den 2-fachen Ertrag her.\r\n",
+          "description": "Stellt bei der perfekten Zubereitung eines Gerichts mit defensiver Funktion mit einer Wahrscheinlichkeit von 12 % den 2-fachen Ertrag her.\n",
           "descriptions": []
         },
         {
           "key": "p2",
           "title": "Ernsthaftigkeit",
-          "description": "Effekte, wenn Noelle inaktiv in der Truppe ist und die aktuelle eigene Figur weniger als 30 % LP hat:\r\n",
+          "description": "Effekte, wenn Noelle inaktiv in der Truppe ist und die aktuelle eigene Figur weniger als 30 % LP hat:\n",
           "descriptions": [
             "Erstellt einen Schutzschild für die aktuelle eigene Figur, der Schaden in Höhe von 400 % von Noelles VTD abhält, hält 20 s.",
-            "Hält bei elementarem sowie physischem Schaden 150 % ab.",
+            "– Hält bei elementarem sowie physischem Schaden 150 % ab.",
             "60 s Abklingzeit."
           ]
         },
         {
           "key": "p3",
           "title": "Sauber und geschwind",
-          "description": "Noelle verringert alle vier Treffer mit Standardangriffen oder heftigen Schlägen, die sie bei Gegnern erzielt, die Abklingzeit von Brustpanzer um 1 s.\r\nEin Treffer kann alle 0,1 s gezählt werden.\r\n",
+          "description": "Noelle verringert alle vier Treffer mit Standardangriffen oder heftigen Schlägen, die sie bei Gegnern erzielt, die Abklingzeit von Brustpanzer um 1 s.\nEin Treffer kann alle 0,1 s gezählt werden.\n",
           "descriptions": []
         }
       ],
@@ -4114,37 +4477,37 @@
         {
           "key": "c1",
           "title": "Fürsorgliche Unterstützung",
-          "description": "Löst den Heileffekt von Brustpanzer mit einer Wahrscheinlichkeit von 100 % aus, wenn sowohl Großreinigung als auch Brustpanzer aktiv sind.\r\n",
+          "description": "Löst den Heileffekt von Brustpanzer mit einer Wahrscheinlichkeit von 100 % aus, wenn sowohl Großreinigung als auch Brustpanzer aktiv sind.\n",
           "descriptions": []
         },
         {
           "key": "c2",
           "title": "Wirbelnde Magd",
-          "description": "Verringert Noelles Ausdauerverbrauch für heftige Schläge um 20 % und erhöht den Schaden um 15 %.\r\n",
+          "description": "Verringert Noelles Ausdauerverbrauch für heftige Schläge um 20 % und erhöht den Schaden um 15 %.\n",
           "descriptions": []
         },
         {
           "key": "c3",
           "title": "Unverletzliche Magd",
-          "description": "Erhöht die Stufe der Fähigkeit Brustpanzer um 3.\r\nHöchststufe 15.\r\n",
+          "description": "Erhöht die Stufe der Fähigkeit Brustpanzer um 3.\nHöchststufe 15.\n",
           "descriptions": []
         },
         {
           "key": "c4",
           "title": "Zur Säuberung vorgesehen",
-          "description": "Fügt Gegnern in der Umgebung nach dem Ende des Effekts von Brustpanzer oder nach Zerstörung des Schildes Geo-Schaden in Höhe von 400 % ANG zu.\r\n",
+          "description": "Fügt Gegnern in der Umgebung nach dem Ende des Effekts von Brustpanzer oder nach Zerstörung des Schildes Geo-Schaden in Höhe von 400 % ANG zu.\n",
           "descriptions": []
         },
         {
           "key": "c5",
           "title": "Säuberungsexpertin des Ordens",
-          "description": "Erhöht die Stufe der Fähigkeit Großreinigung um 3.\r\nHöchststufe 15.\r\n",
+          "description": "Erhöht die Stufe der Fähigkeit Großreinigung um 3.\nHöchststufe 15.\n",
           "descriptions": []
         },
         {
           "key": "c6",
           "title": "Putzfimmel",
-          "description": "Großreinigung erhöht den ANG zusätzlich um 50 % der VTD von Noelle.\r\nVerlängert die Wirkungsdauer für jeden während der Dauer besiegten Gegner um 1 s und insgesamt um bis zu 10 s.\r\n",
+          "description": "Großreinigung erhöht den ANG zusätzlich um 50 % der VTD von Noelle.\nVerlängert die Wirkungsdauer für jeden während der Dauer besiegten Gegner um 1 s und insgesamt um bis zu 10 s.\n",
           "descriptions": []
         }
       ]
@@ -5799,86 +6162,126 @@
     {
       "key": "tighnari",
       "name": "Tighnari",
-      "title": "???",
-      "description": "",
+      "title": "Wanderer im Grünen",
+      "description": "Ein junger Gelehrter, der sich in der Botanik gut auskennt. Derzeit arbeitet er als Waldhütermeister im Avidya-Wald. Er ist aufrichtig, warmherzig und gut darin, ungeschickte Schüler zu unterrichten.",
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Khanda-Barrieren-Zerstörer",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Standardangriff",
+              "description": "Führt bis zu 4 Pfeilschüsse hintereinander aus.\n",
+              "descriptions": []
+            },
+            {
+              "name": "Heftiger Schlag",
+              "description": "Führt einen gezielten Schuss mit höherem Schaden und höherer Genauigkeit aus.\nKonzentriert die Kraft der Pflanzen während des Zielens an der Pfeilspitze und verursacht je nach Länge des Aufladens unterschiedliche Effekte:\n",
+              "descriptions": [
+                "Phase 1: Schießt einen Dendro-Pfeil und verursacht Dendro-Schaden.",
+                "Phase 2: Schießt einen Blütenpfeil und verursacht Dendro-Schaden. Erzeugt nach dem Treffer 4 Khanda-Blütenpfeile, die die Gegner in der Nähe verfolgen und Dendro-Schaden verursachen."
+              ]
+            },
+            {
+              "name": "Angriff aus dem Fall",
+              "description": "Schießt in der Luft einen Pfeilregen ab, trifft schnell auf dem Boden auf und verursacht dort Flächenschaden.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "SCH Phase 1|{param1}%",
+            "SCH Phase 2|{param2}%",
+            "SCH Phase 3|{param3}% ×{param4}",
+            "SCH Phase 4|{param5}%",
+            "Gezielte Schüsse|{param6}%",
+            "Gezielte Schüsse Aufladephase 1|{param7}%",
+            "Blütenpfeil-SCH|{param8}%",
+            "Khanda-Blütenpfeil-SCH|{param9}%",
+            "SCH beim Fallen|{param10}%",
+            "SCH beim Fallen aus niedriger/großer Höhe|{param11}% / {param12}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
+          "title": "Vijnana-Phala-Mine",
+          "description": "Tighnari schleudert das Vijnana-Donnerherz nach vorn, verursacht Dendro-Flächenschaden und erzeugt ein Vijnana-Khanda-Feld, das geheimnisvolle Illusionen schafft, die Gegner darin fortlaufend verspotten und ihre Angriffe auf sich ziehen.\nAußerdem erhält Tighnari den Effekt „Vijnana-Durchbruch“, der die Aufladedauer seines Blütenpfeils um 2,4 s verkürzt. Dieser Effekt erlischt am Ende seiner Wirkungsdauer oder, nachdem Tighnari 3 Blütenpfeile abgeschossen hat.\n\n",
           "abilities": [],
-          "stats": []
+          "stats": [
+            "Fähigkeits-SCH|{param1}%",
+            "Wirkungsdauer des Vijnana-Khanda-Felds|{param2} s",
+            "Wirkungsdauer des Vijnana-Durchbruchs|{param3} s",
+            "Abklingzeit|{param4} s"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
+          "title": "Des Erschaffers Schlingstängel-Pfeil",
+          "description": "Konzentriert die Kraft aller Samen und schießt 6 Schlingstängel-Pfeile, die Gegner verfolgen und Dendro-Schaden verursachen.\nErzeugt nach dem Treffen sekundäre Schlingstängel-Pfeile, die Gegner in der Nähe verfolgen und beim Treffen Dendro-Schaden verursachen.\n\n",
           "abilities": [],
-          "stats": []
+          "stats": [
+            "SCH des Schlingstängel-Pfeils|{param1}%",
+            "SCH des sekundären Schlingstängel-Pfeils|{param2}%",
+            "Abklingzeit|{param3} s",
+            "Elementarenergie|{param4}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "Weltwissen",
+          "description": "Zeigt auf der Minikarte alle Besonderheiten Sumerus in der Nähe an.\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
+          "title": "Scharfblick",
+          "description": "Nachdem Tighnari einen Blütenpfeil geschossen hat, wird seine Elementarkunde 4s lang um 50 Punkte erhöht.\n",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "NA",
-          "description": "",
+          "title": "Florakunde",
+          "description": "Für jeden Punkt der Elementarkunde, den Tighnari besitzt, wird der Schaden seiner heftigen Schläge und der von Des Erschaffers Schlingstängel-Pfeil um 0,06 % erhöht.\nDer maximale SCH-Bonus, der auf diese Weise erreicht werden kann, beträgt 60 %.\n",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "Wurzeln bestimmen Anfänge",
+          "description": "Erhöht die KT heftiger Schläge von Tighnari um 15 %.\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "Stämme verraten Herkünfte",
+          "description": "Verleiht Tighnari 20 % Dendro-SCH-Bonus, wenn sich Gegner im von Vijnana-Phala-Mine erzeugten Vijnana-Khanda-Feld befinden.\nDer Effekt hält bis zu 6 s an, nachdem die Dauer des Vijnana-Khanda-Felds endet oder sich keine Gegner mehr darin befinden.\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "Zweige kennen Schicksale",
+          "description": "Erhöht die Stufe der Fähigkeit Des Erschaffers Schlingstängel-Pfeil um 3.\nHöchststufe 15.\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "Blätter bezeugen das Auf und Ab",
+          "description": "Erhöht die Elementarkunde aller Truppenmitglieder in der Nähe beim Anwenden der Fähigkeit Des Erschaffers Schlingstängel-Pfeil 8 s lang um 60 Punkte. Wenn Des Erschaffers Schlingstängel-Pfeil Reaktionen wie „In Flammen“, „Sprießen“, „Urwuchs“ oder „Rankenwuchs“ auslöst, wird ihre Elementarkunde um weitere 60 Punkte erhöht. In letzterem Fall wird auch die Dauer dieses Bonus zurückgesetzt.\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "Blüten hegen Einsichten",
+          "description": "Erhöht die Stufe der Fähigkeit Vijnana-Phala-Mine um 3.\nHöchststufe 15.\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
+          "title": "Früchte tragen Karma",
+          "description": "Verkürzt die Aufladezeit für Blütenpfeil um 0,9 s und erzeugt nach einem Treffer 1 weiteren Khanda-Blütenpfeil. Verursacht Schaden in Höhe von 150 % von Tighnaris ANG.\n",
           "descriptions": []
         }
       ]
@@ -6016,6 +6419,134 @@
           "key": "c6",
           "title": "Verworrener Wind",
           "description": "Verringert den Anemo-WDS von Zielen, denen mit Ruhe vor dem Sturm Schaden zugefügt wird, um 20 %.\r\nVerringert bei Elementarumwandlung den entsprechenden Elementar-WDS auch um 20 %.\r\n",
+          "descriptions": []
+        }
+      ]
+    },
+    {
+      "key": "traveler-dendro",
+      "name": "Reisender (Dendro)",
+      "title": null,
+      "description": "Ein Reisender weit entfernt von der Heimat auf der Suche nach den Sieben, um seine Schwester wiederzufinden.",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "Grasfeder aus der Fremde",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Standardangriff",
+              "description": "Führt bis zu 5 Schwerthiebe hintereinander aus.\n",
+              "descriptions": []
+            },
+            {
+              "name": "Heftiger Schlag",
+              "description": "Verbraucht eine gewisse Menge Ausdauer und schwingt das Schwert zweimal schnell nach vorn.\n",
+              "descriptions": []
+            },
+            {
+              "name": "Angriff aus dem Fall",
+              "description": "Schlägt beim Fallen aus der Luft auf den Boden, greift alle Gegner in der Bahn an und verursacht beim Aufkommen Flächenschaden.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "SCH Phase 1|{param1}%",
+            "SCH Phase 2|{param2}%",
+            "SCH Phase 3|{param3}%",
+            "SCH Phase 4|{param4}%",
+            "SCH Phase 5|{param5}%",
+            "SCH heftiger Schläge|{param6}% + {param7}%",
+            "Ausdauerverbrauch heftiger Schläge|{param8} Punkte",
+            "SCH beim Fallen|{param9}%",
+            "SCH beim Fallen aus niedriger/großer Höhe|{param10}% / {param11}%"
+          ]
+        },
+        {
+          "key": "s2",
+          "title": "Grasklinge",
+          "description": "Zerstreut beim Schwingen der Waffe scharfe Blätter und verursacht vor sich Dendro-Schaden.\n\n",
+          "abilities": [],
+          "stats": [
+            "Fähigkeits-SCH|{param1}%",
+            "Abklingzeit|{param2} s"
+          ]
+        },
+        {
+          "key": "s3",
+          "title": "Florale Wandlung",
+          "description": "Konzentriert die Kraft der Pflanzen und erschafft einen Lampenlotos.\nDer Lampenlotos greift fortlaufend die Gegner in seinem Wirkungsbereich an und verursacht Dendro-Schaden.\n\n",
+          "abilities": [
+            {
+              "name": "Wandel des Lotoslichts",
+              "description": "In Kontakt mit Hydro-, Elektro– und Pyro-Kraft kommen jeweils folgende Wandlungen zustande:\n",
+              "descriptions": [
+                "Hydro: Vergrößert den Wirkungsbereich des Lampenlotos und erhöht die Reichweite seiner Angriffe.",
+                "Elektro: Steigert die Angriffs-GSW des Lampenlotos;",
+                "Pyro: Lampenlotos verschwindet nach einer kurzen Verzögerung mit einer heftigen Explosion und verursacht Dendro-Flächenschaden.",
+                "Während der Wirkungsdauer des Lampenlotos kann er nur 1-mal den Wandel des Lotoslichts durchgehen.",
+                "Gleichzeitig kann immer nur ein von {F#der Reisenden}{M#dem Reisenden} geschaffener Lampenlotos existieren."
+              ]
+            }
+          ],
+          "stats": [
+            "Angriffs-SCH von Lampenlotos|{param1}%",
+            "SCH der heftigen Explosion|{param2}%",
+            "Vorhandensein des Lampenlotos|{param3} s",
+            "Abklingzeit|{param4} s",
+            "Elementarenergie|{param5}"
+          ]
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "Überwucherndes Wildgras",
+          "description": "Der Lampenlotos erhält für die Dauer seiner Existenz pro Sekunde 1 Stapelung des Effekts „Glanz des Lotoslichts“, der die Elementarkunde der aktuellen Figur in seinem Wirkungsbereich um 6 Punkte erhöht, 10-fach stapelbar.\n",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "Üppiges Gras",
+          "description": "Erhöht für jeden Punkt Elementarkunde {Fder}{Mdes} Reisenden den mit Grasklinge verursachten Schaden um 0,15 % und den mit Florale Wandlung verursachten Schaden um 0,1 %.\n",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "Parasitäres Gras",
+          "description": "Stellt {Fder Reisende}{Mdem Reisenden} beim Treffen von Gegnern mit Grasklinge 3,5 Punkte Elementarenergie wieder her.\n",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "Beharrliches Gras",
+          "description": "Verlängert die Dauer des Lampenlotos um 3 s.\n",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "Tänzelndes Gras",
+          "description": "Erhöht die Stufe der Fähigkeit Grasklinge um 3.\nHöchststufe 15.\n",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "Zuckersüßes Gras",
+          "description": "Lampenlotos erhält nach Wandel des Lotoslichts 5 Stapelungen des Effekts „Glanz des Lotoslichts“ vom passiven Talent „Überwucherndes Wildgras“.\nDas passive Talent „Überwucherndes Wildgras“ muss zuerst freigeschaltet werden.\n",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "Sprießendes Gras",
+          "description": "Erhöht die Stufe der Fähigkeit Florale Wandlung um 3.\nHöchststufe 15.\n",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "Grübelndes Gras",
+          "description": "Verleiht der Figur, die unter dem „Glanz des Lotoslichts“ des Lampenlotos steht, einen Dendro-SCH-Bonus von 12 %. Wenn der Lampenlotos zuvor einen Wandel des Lotoslichts durchlaufen hat, erhält die Figur noch zusätzlich 12 % Elementar-SCH-Bonus für das entsprechende Element.\n",
           "descriptions": []
         }
       ]
@@ -6692,12 +7223,12 @@
           "abilities": [
             {
               "name": "Standardangriff",
-              "description": "Führt bis zu 5 Schwerthiebe aus.\r\n",
+              "description": "Führt bis zu 5 Schwerthiebe hintereinander aus.\n",
               "descriptions": []
             },
             {
               "name": "Heftiger Schlag",
-              "description": "Verbraucht eine gewisse Menge Ausdauer und schwingt das Schwert zweimal schnell nach vorn.\r\n",
+              "description": "Verbraucht eine gewisse Menge Ausdauer und schwingt das Schwert zweimal schnell nach vorn.\n",
               "descriptions": []
             },
             {
@@ -6713,7 +7244,7 @@
             "SCH Phase 4|{param5}%",
             "SCH Phase 5|{param6}% + {param7}%",
             "SCH heftiger Schläge|{param8}% + {param9}%",
-            "Ausdauerverbrauch heftiger Schläge|{param10}",
+            "Ausdauerverbrauch heftiger Schläge|{param10} Punkte",
             "SCH beim Fallen|{param11}%",
             "SCH beim Fallen aus niedriger/großer Höhe|{param12}% / {param13}%"
           ]
@@ -6721,14 +7252,14 @@
         {
           "key": "s2",
           "title": "Guhua-Schwert – Wolkenbruch",
-          "description": "Greift zweimal mit dem Schwert an und fügt gegenüberstehenden Gegnern Hydro-Schaden zu. Erstellt die Höchstzahl an Regenschwertern, die die aktuelle eigene Figur umkreisen.\r\n",
+          "description": "Greift zweimal mit dem Schwert an und fügt gegenüberstehenden Gegnern Hydro-Schaden zu. Erstellt die Höchstzahl an Regenschwertern, die die aktuelle eigene Figur umkreisen.\n",
           "abilities": [
             {
               "name": "",
-              "description": "Merkmale:\r\n",
+              "description": "Merkmale:\n",
               "descriptions": [
                 "Wird bei Erleiden von Schaden zerstört und verringert den erlittenen Schaden.",
-                "Erhöht den UnterbrechungsWDS der Figur.",
+                "Erhöht den Unterbrechungs-WDS der Figur.",
                 "20 % von Xingqius Hydro-SCH-Bonus werden zusätzlich zu Schadensminderung der Regenschwerter umgewandelt.",
                 "Bis zu 24 % zusätzliche Schadensminderung auf diese Weise möglich.",
                 "Anfänglich bis zu 3 Regenschwerter möglich.",
@@ -6739,28 +7270,29 @@
           "stats": [
             "Fähigkeits-SCH|{param1}% + {param2}%",
             "SCH-Minderungsrate|{param3}%",
-            "Dauer|{param4}s",
-            "Abklingzeit|{param5}s"
+            "Dauer|{param4} s",
+            "Abklingzeit|{param5} s",
+            "Abklingzeit|{param6} s"
           ]
         },
         {
           "key": "s3",
           "title": "Guhua-Schwert – Regen und Bogen",
-          "description": "Wendet „Regenbogentechnik“ an, um mit Illusionsschwertern zu kämpfen, und erstellt die Höchstzahl an Regenschwertern.\r\n",
+          "description": "Wendet „Regenbogentechnik“ an, um mit Illusionsschwertern zu kämpfen, und erstellt die Höchstzahl an Regenschwertern.\n\n",
           "abilities": [
             {
               "name": "Regenbogentechnik",
               "description": "",
               "descriptions": [
-                "Standardangriffe der aktuellen eigenen Figur lösen aufeinanderfolgende Schwertregenangriffe aus, die HydroSchaden verursachen.",
+                "Standardangriffe der aktuellen eigenen Figur lösen aufeinanderfolgende Schwertregenangriffe aus, die Hydro-Schaden verursachen.",
                 "Die Anzahl der Regenschwerter bleibt unverändert auf der höchsten Anzahl."
               ]
             }
           ],
           "stats": [
             "Schwertregen-SCH|{param1}%",
-            "Dauer|{param2}s",
-            "Abklingzeit|{param3}s",
+            "Dauer|{param2} s",
+            "Abklingzeit|{param3} s",
             "Elementarenergie|{param4}"
           ]
         }
@@ -6769,19 +7301,19 @@
         {
           "key": "p1",
           "title": "Gedankenblitz",
-          "description": "Gibt beim Zusammensetzen von Material für Figurentalente mit einer Wahrscheinlichkeit von 25 % einen Teil der Materialien zurück.\r\n",
+          "description": "Gibt beim Zusammensetzen von Material für Figurentalente mit einer Wahrscheinlichkeit von 25 % einen Teil der Materialien zurück.\n",
           "descriptions": []
         },
         {
           "key": "p2",
           "title": "Hydropathie",
-          "description": "Stellt der aktuellen Figur bei Zerstörung eines Regenschwerts durch einen Angriff oder nach Ablauf der Wirkungsdauer LP in Höhe von 6 % der max. LP von Xingqiu wieder her.\r\n",
+          "description": "Stellt der aktuellen Figur bei Zerstörung eines Regenschwerts durch einen Angriff oder nach Ablauf der Wirkungsdauer LP in Höhe von 6 % der max. LP von Xingqiu wieder her.\n",
           "descriptions": []
         },
         {
           "key": "p3",
           "title": "Realistischer Schreibstil",
-          "description": "Erhöht Xingqius Hydro-Schaden um 20 %.\r\n",
+          "description": "Erhöht Xingqius Hydro-Schaden um 20 %.\n",
           "descriptions": []
         }
       ],
@@ -6789,37 +7321,37 @@
         {
           "key": "c1",
           "title": "Nachgeschmack",
-          "description": "Erhöht die Höchstmenge an Regenschwertern um 1.\r\n",
+          "description": "Erhöht die Höchstmenge an Regenschwertern um 1.\n",
           "descriptions": []
         },
         {
           "key": "c2",
           "title": "Klarer Himmel",
-          "description": "Verlängert die Dauer von Guhua-Schwert – Regen und Bogen um 3 s.\r\nVerringert außerdem den Hydro-WDS von mit Schwertregen angegriffenen Gegnern 4 s lang um 15 %.\r\n",
+          "description": "Verlängert die Dauer von Guhua-Schwert – Regen und Bogen um 3 s.\nVerringert außerdem den Hydro-WDS von mit Schwertregen angegriffenen Gegnern 4 s lang um 15 %.\n",
           "descriptions": []
         },
         {
           "key": "c3",
           "title": "Reimemacher",
-          "description": "Erhöht die Stufe der Fähigkeit Guhua-Schwert – Regen und Bogen um 3.\r\nHöchststufe 15.\r\n",
+          "description": "Erhöht die Stufe der Fähigkeit Guhua-Schwert – Regen und Bogen um 3.\nHöchststufe 15.\n",
           "descriptions": []
         },
         {
           "key": "c4",
           "title": "Vernichter des Bösen",
-          "description": "Erhöht den mit Guhua-Schwert – Wolkenbruch verursachten Schaden während der Wirkungsdauer von Guhua-Schwert – Regen und Bogen um 50 %.\r\n",
+          "description": "Erhöht den mit Guhua-Schwert – Wolkenbruch verursachten Schaden während der Wirkungsdauer von Guhua-Schwert – Regen und Bogen um 50 %.\n",
           "descriptions": []
         },
         {
           "key": "c5",
           "title": "Tanz im Regen",
-          "description": "Erhöht die Stufe der Fähigkeit Guhua-Schwert – Wolkenbruchn um 3.\r\nHöchststufe 15.\r\n",
+          "description": "Erhöht die Stufe der Fähigkeit Guhua-Schwert – Wolkenbruchn um 3.\nHöchststufe 15.\n",
           "descriptions": []
         },
         {
           "key": "c6",
           "title": "Gesammelte Werke",
-          "description": "Verstärkt jeden dritten Schwertregenangriff von Guhua-Schwert – Regen und Bogen enorm und stellt Xingqiu bei einem Treffer damit 3 Punkte Elementarenergie wieder her.\r\n",
+          "description": "Verstärkt jeden dritten Schwertregenangriff von Guhua-Schwert – Regen und Bogen enorm und stellt Xingqiu bei einem Treffer damit 3 Punkte Elementarenergie wieder her.\n",
           "descriptions": []
         }
       ]
@@ -7120,12 +7652,12 @@
           "abilities": [
             {
               "name": "Standardangriff",
-              "description": "Schießt mehrere Feuerbälle nacheinander ab und verursacht bis zu dreimal Pyro-Schaden.\r\nJeder Treffer gibt Yanfei ein flammendes Siegel. Kann anfänglich bis zu drei flammende Siegel besitzen. Bei jedem Auslösen wird die Dauer der vorhandenen flammenden Siegel aktualisiert.\r\nJedes flammende Siegel verringert Yanfeis Ausdauerverbrauch und verschwindet, wenn sie ausgewechselt wird.\r\n",
+              "description": "Schießt mehrere Feuerbälle nacheinander ab und verursacht bis zu dreimal Pyro-Schaden.\nJeder Treffer gibt Yanfei ein flammendes Siegel. Kann anfänglich bis zu drei flammende Siegel besitzen. Bei jedem Auslösen wird die Dauer der vorhandenen flammenden Siegel aktualisiert.\nJedes flammende Siegel verringert Yanfeis Ausdauerverbrauch und verschwindet, wenn sie ausgewechselt wird.\n",
               "descriptions": []
             },
             {
               "name": "Heftiger Schlag",
-              "description": "Verbraucht Ausdauer sowie nach kurzem Aufladen alle flammenden Siegel und verursacht vor sich Pyro-Flächenschaden.\r\nVerstärkt basierend auf der Anzahl der verbrauchten flammenden Siegel die Reichweite und den Schaden des heftigen Schlags.\r\n",
+              "description": "Verbraucht Ausdauer sowie nach kurzem Aufladen alle flammenden Siegel und verursacht vor sich Pyro-Flächenschaden.\nVerstärkt basierend auf der Anzahl der verbrauchten flammenden Siegel die Reichweite und den Schaden des heftigen Schlags.\n",
               "descriptions": []
             },
             {
@@ -7138,10 +7670,10 @@
             "SCH Phase 1|{param1}%",
             "SCH Phase 2|{param2}%",
             "SCH Phase 3|{param3}%",
-            "SCH heftiger Schläge|{param4}% / {param5}% / {param6}% / {param7}% / {param8}%",
-            "Ausdauerverbrauch heftiger Schläge|{param9}",
-            "Verringerung des Ausdauerverbrauchs für flammende Siegel|{param10}% Per Seal",
-            "Dauer der flammenden Siegel|{param11}s",
+            "SCH heftiger Schläge|{param4}%, {param5}%, {param6}%, {param7}%, {param8}%",
+            "Ausdauerverbrauch heftiger Schläge|{param9} Punkte",
+            "Verringerung des Ausdauerverbrauchs für flammende Siegel|{param10}% pro Siegel",
+            "Dauer der flammenden Siegel|{param11} s",
             "SCH beim Fallen|{param12}%",
             "SCH beim Fallen aus niedriger/großer Höhe|{param13}% / {param14}%"
           ]
@@ -7149,21 +7681,21 @@
         {
           "key": "s2",
           "title": "Pakt des Feuers",
-          "description": "Beschwört lodernde Flammen und verursacht Pyro-Flächenschaden.\r\nBekommt beim Treffen von Gegnern die Höchstzahl an flammenden Siegeln.\r\n",
+          "description": "Beschwört lodernde Flammen und verursacht Pyro-Flächenschaden.\nBekommt beim Treffen von Gegnern die Höchstzahl an flammenden Siegeln.\n\n",
           "abilities": [],
           "stats": [
             "Fähigkeits-SCH|{param1}%",
-            "Abklingzeit|{param2}s"
+            "Abklingzeit|{param2} s"
           ]
         },
         {
           "key": "s3",
           "title": "Pakt des flammenden Infernos",
-          "description": "Beschwört Flammen des Infernos, greift Gegner in der Umgebung an und verursacht Pyro-Flächenschaden. Gibt dabei Yanfei die Höchstzahl an flammenden Siegeln und den Effekt Sengende Hitze.\r\n",
+          "description": "Beschwört Flammen des Infernos, greift Gegner in der Umgebung an und verursacht Pyro-Flächenschaden. Gibt dabei Yanfei die Höchstzahl an flammenden Siegeln und den Effekt Sengende Hitze.\n\n",
           "abilities": [
             {
               "name": "Sengende Hitze",
-              "description": "Löst folgende Effekte aus:\r\n",
+              "description": "Löst folgende Effekte aus:\n",
               "descriptions": [
                 "Gibt Yanfei in gleichen zeitlichen Abständen je ein flammendes Siegel.",
                 "Erhöht den Schaden heftiger Schläge.",
@@ -7173,10 +7705,10 @@
           ],
           "stats": [
             "Fähigkeits-SCH|{param1}%",
-            "Intervall der flammenden Siegel|{param2}s",
+            "Intervall der flammenden Siegel|{param2} s",
             "SCH-Bonus für heftige Schläge|{param3}%",
-            "Dauer|{param4}s",
-            "Abklingzeit|{param5}s",
+            "Dauer|{param4} s",
+            "Abklingzeit|{param5} s",
             "Elementarenergie|{param6}"
           ]
         }
@@ -7185,19 +7717,19 @@
         {
           "key": "p1",
           "title": "Gelehrsamkeit",
-          "description": "Zeigt alle Besonderheiten Liyues in der Nähe auf der Minikarte an.\r\n",
+          "description": "Zeigt alle Besonderheiten Liyues in der Nähe auf der Minikarte an.\n",
           "descriptions": []
         },
         {
           "key": "p2",
           "title": "Koppelungsklausel",
-          "description": "Erhöht mit jedem verbrauchten flammenden Siegel durch heftige Schläge den Pyro-Schadensbonus 6 s lang um 5 %. Falls die Figur innerhalb der Wirkungsdauer des Effekts nochmals heftige Schläge anwendet, wird der vorige Effekt zuerst entfernt.\r\n",
+          "description": "Erhöht mit jedem verbrauchten flammenden Siegel durch heftige Schläge den Pyro-Schadensbonus 6 s lang um 5 %. Falls die Figur innerhalb der Wirkungsdauer des Effekts nochmals heftige Schläge anwendet, wird der vorige Effekt zuerst entfernt.\n",
           "descriptions": []
         },
         {
           "key": "p3",
           "title": "Wachsame Argusaugen",
-          "description": "Verursacht einmal zusätzlichen Pyro-Flächenschaden in Höhe von 80 % ANG, wenn Yanfeis heftige Schläge KT bei Gegnern verursachen. Der Flächenschaden wird als Schaden von heftigen Schlägen betrachtet.\r\n",
+          "description": "Verursacht einmal zusätzlichen Pyro-Flächenschaden in Höhe von 80 % ANG, wenn Yanfeis heftige Schläge KT bei Gegnern verursachen. Der Flächenschaden wird als Schaden von heftigen Schlägen betrachtet.\n",
           "descriptions": []
         }
       ],
@@ -7205,25 +7737,25 @@
         {
           "key": "c1",
           "title": "Rechthaberei",
-          "description": "Erhöht mit jedem flammenden Siegel Yanfeis Unterbrechungs-WDS beim Aufladen, wenn sie einen heftigen Schlag ausführt, und verringert den Ausdauerverbrauch bei dem heftigen Schlag.\r\n",
+          "description": "Erhöht mit jedem flammenden Siegel Yanfeis Unterbrechungs-WDS beim Aufladen, wenn sie einen heftigen Schlag ausführt, und verringert den Ausdauerverbrauch bei dem heftigen Schlag.\n",
           "descriptions": []
         },
         {
           "key": "c2",
           "title": "Endgültige Auslegung vorbehalten",
-          "description": "Erhöht die KT bei Yanfeis heftigen Schlägen gegenüber Gegnern mit weniger als 50 % LP um 20 %.\r\n",
+          "description": "Erhöht die KT bei Yanfeis heftigen Schlägen gegenüber Gegnern mit weniger als 50 % LP um 20 %.\n",
           "descriptions": []
         },
         {
           "key": "c3",
           "title": "Siegel in lodernder Flamme",
-          "description": "Erhöht die Stufe der Fähigkeit Pakt des Feuers um 3.\r\nHöchststufe 15.\r\n",
+          "description": "Erhöht die Stufe der Fähigkeit Pakt des Feuers um 3.\nHöchststufe 15.\n",
           "descriptions": []
         },
         {
           "key": "c4",
           "title": "Eiserner Pakt",
-          "description": "Effekte bei Anwendung von Pakt des flammenden Infernos:\r\n",
+          "description": "Effekte bei Anwendung von Pakt des flammenden Infernos:\n",
           "descriptions": [
             "Erstellt einen Schutzschild, der Schaden in Höhe von 45 % der max. LP abhält, hält 15 s.",
             "Hält bei Pyro-Schaden 250 % ab."
@@ -7232,13 +7764,13 @@
         {
           "key": "c5",
           "title": "Eidesstattliche Versicherung",
-          "description": "Erhöht die Stufe der Fähigkeit Pakt des flammenden Infernos um 3.\r\nHöchststufe 15.\r\n",
+          "description": "Erhöht die Stufe der Fähigkeit Pakt des flammenden Infernos um 3.\nHöchststufe 15.\n",
           "descriptions": []
         },
         {
           "key": "c6",
           "title": "Extraklausel",
-          "description": "Erhöht die Höchstmenge an flammenden Siegeln um 1.\r\n",
+          "description": "Erhöht die Höchstmenge an flammenden Siegeln um 1.\n",
           "descriptions": []
         }
       ]
@@ -8175,6 +8707,18 @@
       ]
     },
     {
+      "key": "end-of-the-line",
+      "name": "Schwertfischer",
+      "description": "Dies scheint ein inzwischen ausgestorbener Fisch zu sein. Sein Körper ist so elastisch, dass man eine Schnur daran befestigen kann, um ihn als Bogen zu benutzen.",
+      "refinements": [
+        "Löst beim Anwenden der Elementarfähigkeit den Effekt „Drift“ aus, bei dem die Figur, wenn sie einen Gegner trifft, Flächenschaden in Höhe von {color}80{/color} % des ANG verursacht. Dieser Effekt wird nach 15 s oder 3-maligem Verursachen des Flächenschadens entfernt. 2 s Abklingzeit für das Verursachen solch eines Flächenschadens, 12 s Abklingzeit für den Effekt „Drift“.",
+        "Löst beim Anwenden der Elementarfähigkeit den Effekt „Drift“ aus, bei dem die Figur, wenn sie einen Gegner trifft, Flächenschaden in Höhe von {color}100{/color} % ANG verursacht. Dieser Effekt wird nach 15 s oder 3-maligem Verursachen des Flächenschadens entfernt. 2 s Abklingzeit für das Verursachen solch eines Flächenschadens, 12 s Abklingzeit für den Effekt „Drift“.",
+        "Löst beim Anwenden der Elementarfähigkeit den Effekt „Drift“ aus, bei dem die Figur, wenn sie einen Gegner trifft, Flächenschaden in Höhe von {color}120{/color} % ANG verursacht. Dieser Effekt wird nach 15 s oder 3-maligem Verursachen des Flächenschadens entfernt. 2 s Abklingzeit für das Verursachen solch eines Flächenschadens, 12 s Abklingzeit für den Effekt „Drift“.",
+        "Löst beim Anwenden der Elementarfähigkeit den Effekt „Drift“ aus, bei dem die Figur, wenn sie einen Gegner trifft, Flächenschaden in Höhe von {color}140{/color} % ANG verursacht. Dieser Effekt wird nach 15 s oder 3-maligem Verursachen des Flächenschadens entfernt. 2 s Abklingzeit für das Verursachen solch eines Flächenschadens, 12 s Abklingzeit für den Effekt „Drift“.",
+        "Löst beim Anwenden der Elementarfähigkeit den Effekt „Drift“ aus, bei dem die Figur, wenn sie einen Gegner trifft, Flächenschaden in Höhe von {color}160{/color} % ANG verursacht. Dieser Effekt wird nach 15 s oder 3-maligem Verursachen des Flächenschadens entfernt. 2 s Abklingzeit für das Verursachen solch eines Flächenschadens, 12 s Abklingzeit für den Effekt „Drift“."
+      ]
+    },
+    {
       "key": "engulfing-lightning",
       "name": "Grasschnittstrahl",
       "description": "Ein Naginata, das zum „Grasschneiden“ verwendet wird. Jede Armee, die vor dieser Waffe steht, wird wahrscheinlich ebenfalls niedergemäht ...",
@@ -8319,6 +8863,18 @@
       ]
     },
     {
+      "key": "forest-regalia",
+      "name": "Waldkönigsschwert",
+      "description": "Eine Waffe, die du aus einer Geschichte über die Aranara erhalten hast. Sie hat die Form eines Großschwertes angenommen, mit dem man die Gegner des Waldes durchschlagen kann.",
+      "refinements": [
+        "Erzeugt nach dem Auslösen der Reaktionen wie „In Flammen“, „Urwuchs“, „Suprawuchs“, „Rankenwuchs“, „Sprießen“, „Supraspross“ oder „Flammenspross“ in der Umgebung der Figur ein Vijnana-Blatt, das höchstens 10 s lang bestehen bleibt. Erhöht 12 s lang die Elementarkunde der Figur, die das Blatt sammelt, um {color}60{/color} Punkte. Auf diese Weise kann alle 20 s nur ein Vijnana-Blatt erzeugt werden. Dieser Effekt tritt auch in Kraft, wenn sich die Figur inaktiv in der Truppe befindet. Der Effekt von Vijnana-Blatt ist nicht stapelbar.",
+        "Erzeugt nach dem Auslösen der Reaktionen wie „In Flammen“, „Urwuchs“, „Suprawuchs“, „Rankenwuchs“, „Sprießen“, „Supraspross“ oder „Flammenspross“ in der Umgebung der Figur ein Vijnana-Blatt, das höchstens 10 s lang bestehen bleibt. Erhöht 12 s lang die Elementarkunde der Figur, die das Blatt sammelt, um {color}75{/color} Punkte. Auf diese Weise kann alle 20 s nur ein Vijnana-Blatt erzeugt werden. Dieser Effekt tritt auch in Kraft, wenn sich die Figur inaktiv in der Truppe befindet. Der Effekt von Vijnana-Blatt ist nicht stapelbar.",
+        "Erzeugt nach dem Auslösen der Reaktionen wie „In Flammen“, „Urwuchs“, „Suprawuchs“, „Rankenwuchs“, „Sprießen“, „Supraspross“ oder „Flammenspross“ in der Umgebung der Figur ein Vijnana-Blatt, das höchstens 10 s lang bestehen bleibt. Erhöht 12 s lang die Elementarkunde der Figur, die das Blatt sammelt, um {color}90{/color} Punkte. Auf diese Weise kann alle 20 s nur ein Vijnana-Blatt erzeugt werden. Dieser Effekt tritt auch in Kraft, wenn sich die Figur inaktiv in der Truppe befindet. Der Effekt von Vijnana-Blatt ist nicht stapelbar.",
+        "Erzeugt nach dem Auslösen der Reaktionen wie „In Flammen“, „Urwuchs“, „Suprawuchs“, „Rankenwuchs“, „Sprießen“, „Supraspross“ oder „Flammenspross“ in der Umgebung der Figur ein Vijnana-Blatt, das höchstens 10 s lang bestehen bleibt. Erhöht 12 s lang die Elementarkunde der Figur, die das Blatt sammelt, um {color}105{/color} Punkte. Auf diese Weise kann alle 20 s nur ein Vijnana-Blatt erzeugt werden. Dieser Effekt tritt auch in Kraft, wenn sich die Figur inaktiv in der Truppe befindet. Der Effekt von Vijnana-Blatt ist nicht stapelbar.",
+        "Erzeugt nach dem Auslösen der Reaktionen wie „In Flammen“, „Urwuchs“, „Suprawuchs“, „Rankenwuchs“, „Sprießen“, „Supraspross“ oder „Flammenspross“ in der Umgebung der Figur ein Vijnana-Blatt, das höchstens 10 s lang bestehen bleibt. Erhöht 12 s lang die Elementarkunde der Figur, die das Blatt sammelt, um {color}120{/color} Punkte. Auf diese Weise kann alle 20 s nur ein Vijnana-Blatt erzeugt werden. Dieser Effekt tritt auch in Kraft, wenn sich die Figur inaktiv in der Truppe befindet. Der Effekt von Vijnana-Blatt ist nicht stapelbar."
+      ]
+    },
+    {
       "key": "freedom-sworn",
       "name": "Blasser Schwur der Freiheit",
       "description": "Ein gerades Schwert, blass-bläulich, das an uralte Gesänge erinnert. Diese Waffe ist so scharf wie der Schwur der Freiheit des Reichs des Windes.",
@@ -8340,6 +8896,18 @@
         "Erstellt beim Treffen von Gegnern mit Standardangriffen und heftigen Schlägen mit einer Wahrscheinlichkeit von {color}80{/color} % über den Gegnern einen Kristallkern ewigen Eises, der herunterfällt und Flächenschaden in Höhe von {color}110{/color} % ANG verursacht. Verursacht Schaden in Höhe von {color}280{/color} % ANG, wenn die Gegner von Kryo-Effekten betroffen sind. 10 s Abklingzeit.",
         "Erstellt beim Treffen von Gegnern mit Standardangriffen und heftigen Schlägen mit einer Wahrscheinlichkeit von {color}90{/color} % über den Gegnern einen Kristallkern ewigen Eises, der herunterfällt und Flächenschaden in Höhe von {color}125{/color} % ANG verursacht. Verursacht Schaden in Höhe von {color}320{/color} % ANG, wenn die Gegner von Kryo-Effekten betroffen sind. 10 s Abklingzeit.",
         "Erstellt beim Treffen von Gegnern mit Standardangriffen und heftigen Schlägen mit einer Wahrscheinlichkeit von {color}100{/color} % über den Gegnern einen Kristallkern ewigen Eises, der herunterfällt und Flächenschaden in Höhe von {color}140{/color} % ANG verursacht. Verursacht Schaden in Höhe von {color}360{/color} % ANG, wenn die Gegner von Kryo-Effekten betroffen sind. 10 s Abklingzeit."
+      ]
+    },
+    {
+      "key": "fruit-of-fulfillment",
+      "name": "Vollmondfrucht",
+      "description": "Eine Frucht, die du aus einer Geschichte über die Aranara erhalten hast. Sie hat das Potenzial, jede Krise zu überwinden.",
+      "refinements": [
+        "Erhält nach dem Auslösen einer Elementarreaktion den Effekt „Mondphase“: Erhöht die Elementarkunde um {color}24{/color} Punkte und verringert den ANG um 5 %. Alle 0,3 s kann nur eine Stapelung dieses Effekts erhalten werden, 5-fach stapelbar. Wenn innerhalb von 6 s keine Elementarreaktion ausgelöst wird, wird eine Stapelung entfernt. Dieser Effekt tritt auch in Kraft, wenn sich die Figur inaktiv in der Truppe befindet.",
+        "Erhält nach dem Auslösen einer Elementarreaktion den Effekt „Mondphase“: Erhöht die Elementarkunde um {color}27{/color} Punkte und verringert den ANG um 5 %. Alle 0,3 s kann nur eine Stapelung dieses Effekts erhalten werden, 5-fach stapelbar. Wenn innerhalb von 6 s keine Elementarreaktion ausgelöst wird, wird eine Stapelung entfernt. Dieser Effekt tritt auch in Kraft, wenn sich die Figur inaktiv in der Truppe befindet.",
+        "Erhält nach dem Auslösen einer Elementarreaktion den Effekt „Mondphase“: Erhöht die Elementarkunde um {color}30{/color} Punkte und verringert den ANG um 5 %. Alle 0,3 s kann nur eine Stapelung dieses Effekts erhalten werden, 5-fach stapelbar. Wenn innerhalb von 6 s keine Elementarreaktion ausgelöst wird, wird eine Stapelung entfernt. Dieser Effekt tritt auch in Kraft, wenn sich die Figur inaktiv in der Truppe befindet.",
+        "Erhält nach dem Auslösen einer Elementarreaktion den Effekt „Mondphase“: Erhöht die Elementarkunde um {color}33{/color} Punkte und verringert den ANG um 5 %. Alle 0,3 s kann nur eine Stapelung dieses Effekts erhalten werden, 5-fach stapelbar. Wenn innerhalb von 6 s keine Elementarreaktion ausgelöst wird, wird eine Stapelung entfernt. Dieser Effekt tritt auch in Kraft, wenn sich die Figur inaktiv in der Truppe befindet.",
+        "Erhält nach dem Auslösen einer Elementarreaktion den Effekt „Mondphase“: Erhöht die Elementarkunde um {color}36{/color} Punkte und verringert den ANG um 5 %. Alle 0,3 s kann nur eine Stapelung dieses Effekts erhalten werden, 5-fach stapelbar. Wenn innerhalb von 6 s keine Elementarreaktion ausgelöst wird, wird eine Stapelung entfernt. Dieser Effekt tritt auch in Kraft, wenn sich die Figur inaktiv in der Truppe befindet."
       ]
     },
     {
@@ -8409,6 +8977,18 @@
       "refinements": []
     },
     {
+      "key": "hunters-path",
+      "name": "Pfad des Jägers",
+      "description": "Dieser vergoldete Bogen wurde aus seltenen weißen Ästen gefertigt. Er hat schon zahllose böse Bestien erlegt, die versuchten, in den Wald einzudringen.",
+      "refinements": [
+        "Erhöht den Schaden aller Elemente um {color}12{/color} %. Erhält nach Treffern mit heftigen Schlägen den Effekt „Unermüdliche Jagd“: Erhöht den Schaden heftiger Schläge um {color}160{/color} % der Elementarkunde. Dieser Effekt verschwindet nach 10 s oder 12 heftigen Schlägen. 12 s Abklingzeit.",
+        "Erhöht den Schaden aller Elemente um {color}15{/color} %. Erhält nach Treffern mit heftigen Schlägen den Effekt „Unermüdliche Jagd“: Erhöht den Schaden heftiger Schläge um {color}200{/color} % der Elementarkunde. Dieser Effekt verschwindet nach 10 s oder 12 heftigen Schlägen. 12 s Abklingzeit.",
+        "Erhöht den Schaden aller Elemente um {color}18{/color} %. Erhält nach Treffern mit heftigen Schlägen den Effekt „Unermüdliche Jagd“: Erhöht den Schaden heftiger Schläge um {color}240{/color} % der Elementarkunde. Dieser Effekt verschwindet nach 10 s oder 12 heftigen Schlägen. 12 s Abklingzeit.",
+        "Erhöht den Schaden aller Elemente um {color}21{/color} %. Erhält nach Treffern mit heftigen Schlägen den Effekt „Unermüdliche Jagd“: Erhöht den Schaden heftiger Schläge um {color}280{/color} % der Elementarkunde. Dieser Effekt verschwindet nach 10 s oder 12 heftigen Schlägen. 12 s Abklingzeit.",
+        "Erhöht den Schaden aller Elemente um {color}24{/color} %. Erhält nach Treffern mit heftigen Schlägen den Effekt „Unermüdliche Jagd“: Erhöht den Schaden heftiger Schläge um {color}320{/color} % der Elementarkunde. Dieser Effekt verschwindet nach 10 s oder 12 heftigen Schlägen. 12 s Abklingzeit."
+      ]
+    },
+    {
       "key": "iron-point",
       "name": "Eisenlanze",
       "description": "Spitz an einem Ende, geeignet für Angriff und Verteidigung. Äußerst beliebt bei Reisenden.",
@@ -8456,6 +9036,18 @@
         "Erhöht den mit Elementarfähigkeiten verursachten Schaden um {color}9{/color} %. Zieht der Figur bei Treffern mit einer Elementarfähigkeit 3 Punkte Elementarenergie ab und stellt im Gegenzug 6 s lang alle 2 s {color}4{/color} Punkte Elementarenergie wieder her. Dieser Effekt kann nur einmal alle 10 s ausgelöst werden, auch von Figuren, die sich in deiner Truppe, aber nicht im Kampf befinden.",
         "Erhöht den mit Elementarfähigkeiten verursachten Schaden um {color}10,5{/color} %. Zieht der Figur bei Treffern mit einer Elementarfähigkeit 3 Punkte Elementarenergie ab und stellt im Gegenzug 6 s lang alle 2 s {color}4,5{/color} Punkte Elementarenergie wieder her. Dieser Effekt kann nur einmal alle 10 s ausgelöst werden, auch von Figuren, die sich in deiner Truppe, aber nicht im Kampf befinden.",
         "Erhöht den mit Elementarfähigkeiten verursachten Schaden um {color}12{/color} %. Zieht der Figur bei Treffern mit einer Elementarfähigkeit 3 Punkte Elementarenergie ab und stellt im Gegenzug 6 s lang alle 2 s {color}5{/color} Punkte Elementarenergie wieder her. Dieser Effekt kann nur einmal alle 10 s ausgelöst werden, auch von Figuren, die sich in deiner Truppe, aber nicht im Kampf befinden."
+      ]
+    },
+    {
+      "key": "kings-squire",
+      "name": "Gefolgsfrau des Königs",
+      "description": "Eine Waffe, die du aus einer Geschichte über die Aranara erhalten hast. Sie hat die Form eines Bogens angenommen, mit dem man die Gegner des Waldes niederschießen kann.",
+      "refinements": [
+        "Erhält beim Anwenden der Elementarfähigkeit oder Spezialfähigkeit den Effekt „Waldlehre“, der 12 s lang die Elementarkunde um {color}60{/color} Punkte erhöht. Dieser Effekt wird beim Auswechseln der Figur entfernt. Wenn die Dauer des Effekts endet oder der Effekt entfernt wird, wird 1 Gegner in der Nähe Schaden in Höhe von {color}100{/color} % des ANG zugefügt. 20 s Abklingzeit.",
+        "Erhält beim Anwenden der Elementarfähigkeit oder Spezialfähigkeit den Effekt „Waldlehre“, der 12 s lang die Elementarkunde um {color}80{/color} Punkte erhöht. Dieser Effekt wird beim Auswechseln der Figur entfernt. Wenn die Dauer des Effekts endet oder der Effekt entfernt wird, wird 1 Gegner in der Nähe Schaden in Höhe von {color}120{/color} % des ANG zugefügt. 20 s Abklingzeit.",
+        "Erhält beim Anwenden der Elementarfähigkeit oder Spezialfähigkeit den Effekt „Waldlehre“, der 12 s lang die Elementarkunde um {color}100{/color} Punkte erhöht. Dieser Effekt wird beim Auswechseln der Figur entfernt. Wenn die Dauer des Effekts endet oder der Effekt entfernt wird, wird 1 Gegner in der Nähe Schaden in Höhe von {color}140{/color} % des ANG zugefügt. 20 s Abklingzeit.",
+        "Erhält beim Anwenden der Elementarfähigkeit oder Spezialfähigkeit den Effekt „Waldlehre“, der 12 s lang die Elementarkunde um {color}120{/color} Punkte erhöht. Dieser Effekt wird beim Auswechseln der Figur entfernt. Wenn die Dauer des Effekts endet oder der Effekt entfernt wird, wird 1 Gegner in der Nähe Schaden in Höhe von {color}160{/color} % des ANG zugefügt. 20 s Abklingzeit.",
+        "Erhält beim Anwenden der Elementarfähigkeit oder Spezialfähigkeit den Effekt „Waldlehre“, der 12 s lang die Elementarkunde um {color}140{/color} Punkte erhöht. Dieser Effekt wird beim Auswechseln der Figur entfernt. Wenn die Dauer des Effekts endet oder der Effekt entfernt wird, wird 1 Gegner in der Nähe Schaden in Höhe von {color}180{/color} % des ANG zugefügt. 20 s Abklingzeit."
       ]
     },
     {
@@ -8600,6 +9192,18 @@
         "Erhöht den mit Elementarfähigkeiten verursachten Schaden nach dem Treffen von Gegnern mit Standardangriffen 5 s lang um {color}30{/color} %. Erhöht den mit Standardangriffen verursachten Schaden nach dem Treffen von Gegnern mit Elementarfähigkeiten 5 s lang um {color}30{/color} %.",
         "Erhöht den mit Elementarfähigkeiten verursachten Schaden nach dem Treffen von Gegnern mit Standardangriffen 5 s lang um {color}35{/color} %. Erhöht den mit Standardangriffen verursachten Schaden nach dem Treffen von Gegnern mit Elementarfähigkeiten 5 s lang um {color}35{/color} %.",
         "Erhöht den mit Elementarfähigkeiten verursachten Schaden nach dem Treffen von Gegnern mit Standardangriffen 5 s lang um {color}40{/color} %. Erhöht den mit Standardangriffen verursachten Schaden nach dem Treffen von Gegnern mit Elementarfähigkeiten 5 s lang um {color}40{/color} %."
+      ]
+    },
+    {
+      "key": "moonpiercer",
+      "name": "Monddurchbohrer",
+      "description": "Eine Waffe, die du aus einer Geschichte über die Aranara erhalten hast. Sie hat die Form eines Riesenpfeils angenommen und kann als Speer verwendet werden.",
+      "refinements": [
+        "Erzeugt nach dem Auslösen der Reaktionen wie „In Flammen“, „Urwuchs“, „Suprawuchs“, „Rankenwuchs“, „Sprießen“, „Supraspross“ oder „Flammenspross“ in der Umgebung der Figur ein Reinkarnations-Blatt, das höchstens 10 s lang bestehen bleibt. Erhöht 12 s lang den ANG der Figur, die das Blatt sammelt, um {color}16{/color} %. Auf diese Weise kann alle 20 s nur ein Reinkarnations-Blatt erzeugt werden. Dieser Effekt tritt auch in Kraft, wenn sich die Figur inaktiv in der Truppe befindet.",
+        "Erzeugt nach dem Auslösen der Reaktionen wie „In Flammen“, „Urwuchs“, „Suprawuchs“, „Rankenwuchs“, „Sprießen“, „Supraspross“ oder „Flammenspross“ in der Umgebung der Figur ein Reinkarnations-Blatt, das höchstens 10 s lang bestehen bleibt. Erhöht 12 s lang den ANG der Figur, die das Blatt sammelt, um {color}20{/color} %. Auf diese Weise kann alle 20 s nur ein Reinkarnations-Blatt erzeugt werden. Dieser Effekt tritt auch in Kraft, wenn sich die Figur inaktiv in der Truppe befindet.",
+        "Erzeugt nach dem Auslösen der Reaktionen wie „In Flammen“, „Urwuchs“, „Suprawuchs“, „Rankenwuchs“, „Sprießen“, „Supraspross“ oder „Flammenspross“ in der Umgebung der Figur ein Reinkarnations-Blatt, das höchstens 10 s lang bestehen bleibt. Erhöht 12 s lang den ANG der Figur, die das Blatt sammelt, um {color}24{/color} %. Auf diese Weise kann alle 20 s nur ein Reinkarnations-Blatt erzeugt werden. Dieser Effekt tritt auch in Kraft, wenn sich die Figur inaktiv in der Truppe befindet.",
+        "Erzeugt nach dem Auslösen der Reaktionen wie „In Flammen“, „Urwuchs“, „Suprawuchs“, „Rankenwuchs“, „Sprießen“, „Supraspross“ oder „Flammenspross“ in der Umgebung der Figur ein Reinkarnations-Blatt, das höchstens 10 s lang bestehen bleibt. Erhöht 12 s lang den ANG der Figur, die das Blatt sammelt, um {color}28{/color} %. Auf diese Weise kann alle 20 s nur ein Reinkarnations-Blatt erzeugt werden. Dieser Effekt tritt auch in Kraft, wenn sich die Figur inaktiv in der Truppe befindet.",
+        "Erzeugt nach dem Auslösen der Reaktionen wie „In Flammen“, „Urwuchs“, „Suprawuchs“, „Rankenwuchs“, „Sprießen“, „Supraspross“ oder „Flammenspross“ in der Umgebung der Figur ein Reinkarnations-Blatt, das höchstens 10 s lang bestehen bleibt. Erhöht 12 s lang den ANG der Figur, die das Blatt sammelt, um {color}32{/color} %. Auf diese Weise kann alle 20 s nur ein Reinkarnations-Blatt erzeugt werden. Dieser Effekt tritt auch in Kraft, wenn sich die Figur inaktiv in der Truppe befindet."
       ]
     },
     {
@@ -8920,6 +9524,18 @@
         "Überspringt die Abklingzeit einer Elementarfähigkeit beim Verursachen von Schaden mit dieser Fähigkeit mit einer Wahrscheinlichkeit von {color}60{/color} %, {color}22{/color} s Abklingzeit.",
         "Überspringt die Abklingzeit einer Elementarfähigkeit beim Verursachen von Schaden mit dieser Fähigkeit mit einer Wahrscheinlichkeit von {color}70{/color} %, {color}19{/color} s Abklingzeit.",
         "Überspringt die Abklingzeit einer Elementarfähigkeit beim Verursachen von Schaden mit dieser Fähigkeit mit einer Wahrscheinlichkeit von {color}80{/color} %, {color}16{/color} s Abklingzeit."
+      ]
+    },
+    {
+      "key": "sapwood-blade",
+      "name": "Stammklinge",
+      "description": "Eine Waffe, die du aus einer Geschichte über die Aranara erhalten hast. Sie hat die Form eines Schwerts angenommen, mit dem man die Gegner des Waldes niederstrecken kann.",
+      "refinements": [
+        "Erzeugt nach dem Auslösen der Reaktionen wie „In Flammen“, „Urwuchs“, „Suprawuchs“, „Rankenwuchs“, „Sprießen“, „Supraspross“ oder „Flammenspross“ in der Umgebung der Figur ein Vijnana-Blatt, das höchstens 10 s lang bestehen bleibt. Erhöht 12 s lang die Elementarkunde der Figur, die das Blatt sammelt, um {color}60{/color} Punkte. Auf diese Weise kann alle 20 s nur ein Vijnana-Blatt erzeugt werden. Dieser Effekt tritt auch in Kraft, wenn sich die Figur inaktiv in der Truppe befindet. Der Effekt von Vijnana-Blatt ist nicht stapelbar.",
+        "Erzeugt nach dem Auslösen der Reaktionen wie „In Flammen“, „Urwuchs“, „Suprawuchs“, „Rankenwuchs“, „Sprießen“, „Supraspross“ oder „Flammenspross“ in der Umgebung der Figur ein Vijnana-Blatt, das höchstens 10 s lang bestehen bleibt. Erhöht 12 s lang die Elementarkunde der Figur, die das Blatt sammelt, um {color}75{/color} Punkte. Auf diese Weise kann alle 20 s nur ein Vijnana-Blatt erzeugt werden. Dieser Effekt tritt auch in Kraft, wenn sich die Figur inaktiv in der Truppe befindet. Der Effekt von Vijnana-Blatt ist nicht stapelbar.",
+        "Erzeugt nach dem Auslösen der Reaktionen wie „In Flammen“, „Urwuchs“, „Suprawuchs“, „Rankenwuchs“, „Sprießen“, „Supraspross“ oder „Flammenspross“ in der Umgebung der Figur ein Vijnana-Blatt, das höchstens 10 s lang bestehen bleibt. Erhöht 12 s lang die Elementarkunde der Figur, die das Blatt sammelt, um {color}90{/color} Punkte. Auf diese Weise kann alle 20 s nur ein Vijnana-Blatt erzeugt werden. Dieser Effekt tritt auch in Kraft, wenn sich die Figur inaktiv in der Truppe befindet. Der Effekt von Vijnana-Blatt ist nicht stapelbar.",
+        "Erzeugt nach dem Auslösen der Reaktionen wie „In Flammen“, „Urwuchs“, „Suprawuchs“, „Rankenwuchs“, „Sprießen“, „Supraspross“ oder „Flammenspross“ in der Umgebung der Figur ein Vijnana-Blatt, das höchstens 10 s lang bestehen bleibt. Erhöht 12 s lang die Elementarkunde der Figur, die das Blatt sammelt, um {color}105{/color} Punkte. Auf diese Weise kann alle 20 s nur ein Vijnana-Blatt erzeugt werden. Dieser Effekt tritt auch in Kraft, wenn sich die Figur inaktiv in der Truppe befindet. Der Effekt von Vijnana-Blatt ist nicht stapelbar.",
+        "Erzeugt nach dem Auslösen der Reaktionen wie „In Flammen“, „Urwuchs“, „Suprawuchs“, „Rankenwuchs“, „Sprießen“, „Supraspross“ oder „Flammenspross“ in der Umgebung der Figur ein Vijnana-Blatt, das höchstens 10 s lang bestehen bleibt. Erhöht 12 s lang die Elementarkunde der Figur, die das Blatt sammelt, um {color}120{/color} Punkte. Auf diese Weise kann alle 20 s nur ein Vijnana-Blatt erzeugt werden. Dieser Effekt tritt auch in Kraft, wenn sich die Figur inaktiv in der Truppe befindet. Der Effekt von Vijnana-Blatt ist nicht stapelbar."
       ]
     },
     {
@@ -9435,7 +10051,15 @@
       "name": "Brennende Pyro-Hexe",
       "bonus": [
         "Erhöht den Pyro-Schaden um 15 %.",
-        "Erhöht den mit den Reaktionen „Überladen“ und „In Flammen“ verursachten Schaden um 40 % und den von den Reaktionen „Verdampfen“ und „Schmelzen“ betroffenen Gegnern zugefügten Schaden um 15 %. Erhöht den Effekt eines 2er-Sets bei Anwendung von Elementarfähigkeiten 10 s lang um 50 %, 3-fach stapelbar."
+        "Erhöht den mit den Reaktionen „Überladen“, „In Flammen“ und „Sprießen“ verursachten Schaden um 40 % und den den von den Reaktionen „Verdampfen“ und „Schmelzen“ betroffenen Gegnern zugefügten Schaden um 15 %. Erhöht den Effekt eines 2er-Sets bei Anwendung von Elementarfähigkeiten 10 s lang um 50 %, 3-fach stapelbar."
+      ]
+    },
+    {
+      "key": "deepwood-memories",
+      "name": "Erinnerungen des tiefen Waldes",
+      "bonus": [
+        "Erhöht den Dendro-Schaden um 15 %.",
+        "Verringert nach Treffern mit der Elementarfähigkeit oder Spezialfähigkeit den Dendro-WDS des Ziels 8 s lang um 30 %. Dieser Effekt kann auch ausgelöst werden, wenn die damit ausgerüstete Figur inaktiv in der Truppe ist."
       ]
     },
     {
@@ -9468,6 +10092,14 @@
       "bonus": [
         "Erhöht den mit Elementarfähigkeiten verursachten Schaden um 20 %.",
         "Überspringt die Abklingzeit der Elementarfähigkeit beim Besiegen von Gegnern mit einer Wahrscheinlichkeit von 100 %. 15 s Abklingzeit."
+      ]
+    },
+    {
+      "key": "gilded-dreams",
+      "name": "Vergoldeter Traum",
+      "bonus": [
+        "Erhöht Elementarkunde um 80 Punkte.",
+        "Verleiht der damit ausgerüsteten Figur nach Auslösen einer Elementarreaktion entsprechend den Elementartypen anderer Figuren in der Truppe unterschiedliche Boni, die 8 s halten Die Anwesenheit von je 1 Figur des gleichen Elementartyps erhöht den ANG um 14 %. Die Anwesenheit von je 1 Figur unterschiedlichen Elementartyps erhöht die Elementarkunde um 50 Punkte. Für jeden dieser Boni werden bis zu 3 Figuren mit gleichem oder unterschiedlichem Elementartyp gewertet. Diese Effekte treten auch in Kraft, wenn die damit ausgerüstete Figur inaktiv in der Truppe ist, 8 s Abklingzeit."
       ]
     },
     {
@@ -9654,7 +10286,7 @@
       "name": "Donnernder Zorn",
       "bonus": [
         "Erhöht den Elektro-Schaden um 15 %.",
-        "Erhöht den mit den Effekten „Überladen“, „Unter Strom“ und „Supraleiter“ verursachten Schaden um 40 %. Verringert die Abklingzeit der Elementarfähigkeit beim Auslösen dieser Elementareffekte um 1 s. 0,8 s Abklingzeit."
+        "Erhöht den mit den Reaktionen „Überladen“, „Unter Strom“, „Supraleiter“ und „Supraspross“ verursachten Schaden um 40 %. Erhöht den Effekt des ANG-Bonus der Reaktion „Suprawuchs“ um 20 %. Verkürzt die Abklingzeit der Elementarfähigkeit beim Auslösen dieser Elementarreaktionen und der Reaktion „Urwuchs“ um 1 s. 0,8 s Abklingzeit."
       ]
     },
     {
@@ -9893,6 +10525,11 @@
       "description": "Es stammt aus einer alten Ruinenvorrichtung, die jetzt nicht mehr aktiv ist. Selbst die großartigen Techniken und die unbekannte Macht dieses Geräts müssen verpuffen, sollte die Maschine, die sie enthielt, jemals ihre strukturelle Integrität verlieren."
     },
     {
+      "key": "chaos-bolt",
+      "name": "Chaos-Anker",
+      "description": "Stammt von einem nicht länger aktiven uralten Ruinendrachen.\nIn den lange verlorenen uralten Königreichen gab es eine Gruppe von Menschen, die in das Prinzip der Mimesis verliebt waren. Egal ob es die Reinheit der in Hypostasen geordneten Elemente war oder die primitive Kraft der uralten Drachen, das alles konnte, so glaubten sie, nachgeahmt, verbessert und schließlich übertroffen werden.\nDenn so könne das makellose Überlegene den Platz des zum Schluss Zerfallenden einnehmen."
+    },
+    {
       "key": "chaos-circuit",
       "name": "Chaos-Schaltkreis",
       "description": "Ein Relikt aus uralten Ruinen, das einmal dazu diente, ein Gerät zu steuern. Die Technik dahinter ist nicht einmal annähernd zu begreifen."
@@ -9913,9 +10550,19 @@
       "description": "Es kommt von einer alten, jetzt inaktiven Ruinenmaschine.\r\nDas ist die Energiequelle dieser biomimetischen Vorrichtung."
     },
     {
+      "key": "chaos-module",
+      "name": "Chaos-Modul",
+      "description": "Stammt von einem nicht länger aktiven uralten Ruinendrachen.\nDie „Drachen“ waren die urtümlichsten und ältesten körperlichen Manifestationen der höchsten Stufe der Elemente, bis sie besiegt, bezwungen oder assimiliert wurden."
+    },
+    {
       "key": "chaos-oculus",
       "name": "Chaos-Oculus",
       "description": "Stammt von einer jetzt inaktiven alten Ruinenmaschine.\r\nDer „Ruinen“-Teil des Namens kommt von den Gebieten, in denen sie am aktivsten sind. Allerdings haben Ruinenmaschinen eigentlich wenig mit dem Geröll gemein, in dem sie oft zu finden sind.\r\nIn der alten Vergangenheit waren diese Ruinen einst Teil einer Zivilisation, die mächtig genug war, um fast die Kuppel des Firmaments zu berühren, während „Ruin“ immer noch in den Tiefen der Erde wartet und auf den Befehl wartet, sich zu erheben und alle Königreiche mit Füßen zu treten."
+    },
+    {
+      "key": "chaos-storage",
+      "name": "Chaos-Speicher",
+      "description": "Stammt von einem nicht länger aktiven uralten Ruinendrachen.\nRuinendrachen können die Elementarenergie der Welt um sie herum aufsaugen und in diesem Teil in ihrem „Hals“ speichern."
     },
     {
       "key": "cheese",
@@ -9951,6 +10598,11 @@
       "key": "concealed-unguis",
       "name": "Versteckte Monsterklauen",
       "description": "Körpergewebe, das von einem der Garmwölfe zurückgelassen wurde.\r\nAuch wenn sie in der Tat schon ziemlich stark sind, sind diese Jagdhunde von „Alfisol“ vor Durin von „Humus“ nur kleine Fische."
+    },
+    {
+      "key": "copper-talisman-of-the-forest-dew",
+      "name": "Kupfertalisman des Waldtaus",
+      "description": "Material mit der Kraft, Waffen aufsteigen zu lassen.\nNach den Anweisungen des Ersten Weisen fertigten die Vorfahren im Wald diese Talismane mit den verdorrten Bäumen in Erinnerung an die Herrin der Flora.\nDie Form des Talismans wurde vom Tau im Wald inspiriert. Er symbolisiert das Eindringen der Weisheit in den Geist der einfachen Sterblichen."
     },
     {
       "key": "cor-lapis",
@@ -10006,6 +10658,11 @@
       "key": "crystalline-bloom",
       "name": "Ewige Eisblume",
       "description": "Ein Eiskristall von höchster Reinheit, der in der eisigen Blüte einer Kryo-Hypostase entsteht.\r\nDiese frostigen Kristalle werden nach ihren eigenen kalten, starren Gesetzen weiter wachsen, bis eines Tages eine Blume des Winters erblühen und alles einfrieren wird. Vielleicht ist es die stagnierende Zeit, diese nie tauende Brust, welche die Essenz dieser unsterblichen Blume ist."
+    },
+    {
+      "key": "crystalline-cyst-dust",
+      "name": "Kristalliner Zystenstaub",
+      "description": "Ein großer Klumpen Sporenpulver, der aus einer strukturell vollständigen Sporenkapsel gewonnen wurde. Leg ihn in eine geeignete Umgebung und der Bereich könnte später mit Pilzbestien gefüllt sein …"
     },
     {
       "key": "damaged-mask",
@@ -10068,6 +10725,11 @@
       "description": "Dies scheint eine Schriftrolle zu sein, mit der irgendein Zauber in Verbindung steht. Es ist nicht klar zu fassen, aber sie strahlt eine seltsame Wärme aus."
     },
     {
+      "key": "dormant-fungal-nucleus",
+      "name": "Schlafendes Sklerotium",
+      "description": "Ein Teil des Gewebes einer Pilzbestie, das durch Stimulation durch die Elemente der Außenwelt Form angenommen hat.\nUnter den Gelehrten der Lebenskunde entbrannte einst eine heiße Debatte, ob die Pilzbestien zu den Pflanzen oder den Tieren gehören. Zum Schluss gab es einen Kompromiss zwischen den beiden Parteien, nach dem die Pilzbestien keinem der beiden Reiche zugeordnet werden sollten und es keine Debatte mehr darüber geben sollte."
+    },
+    {
       "key": "dragon-lords-crown",
       "name": "Horn des Drachenkönigs",
       "description": "Hörner, die aus gehärteter, über tausend Jahre kristallisierter Jade erschaffen wurden, sind die natürliche Krone des Drachenkönigs.\r\nDurchdrungen von Geist und aus dem Fels gehauen, wurde er aus dem Herzen des Berges geboren, um dem Land inmitten von Monolithen die Kraft der Erde zu zeigen, und seine langen goldenen Hörner sind das Zeichen seines alten Streits mit einem alten König.\r\nEine Zeit lang war dieses Horn zerbrochen und verlor seinen Glanz, aber jetzt schimmert es kalt und golden, wenn es in deiner Handfläche liegt."
@@ -10076,6 +10738,11 @@
       "key": "dragonheirs-false-fin",
       "name": "Falsche Flosse der Drachennachfahren",
       "description": "Ein Stück biologisches Gewebe, das du gefunden hast, nachdem du die Tiefsee-Drachenechsen besiegt hattest. Obwohl es wie eine Art Flosse aussieht, hat es eigentlich gar keine Funktion.\r\nDas Volk von Byakuyakoku hat die Tiefsee-Drachenechsen einst sehr gründlich untersucht. Ihr auffälligstes Merkmal war die Fähigkeit zu wählen, welche Eigenschaften sie an ihre Nachkommen weitergeben wollten. Wegen ihres großen Hasses auf die Menschheit verlieren diese Drachenechsen jede Sehkraft, wenn sie ausgewachsen sind. Gleichzeitig haben sie zu Kampfzwecken einen gewissen Polymorphismus der Elemente entwickelt."
+    },
+    {
+      "key": "dream-of-scorching-might",
+      "name": "Traum der sengenden Macht",
+      "description": "Material mit der Kraft, Waffen aufsteigen zu lassen.\nSilbernes Mondlicht und klare Quellen vervollständigten einst die Szenerie der Oasen. Doch so wie die Herrin der Blumen im dunkler werdenden Sandsturm verblasste, so wurde das sorglose goldene Paradies vom Tod überflutet.\nIn der Poesie des Stammes der Goldbrigade warf der Mond sein silbernes Licht auf den purpurnen Mantel, dann wurde Al-Ahmar, der König der Trauer, in den Wahnsinn getrieben.\nIn einer melancholischen Wüstenballade schuf der einsame König, getrieben von der quälenden Sehnsucht nach der Vergangenheit, mitten in der Wüste ein ewig junges Traumland, in dem ungestörtes heiliges Wasser sprudelte und die ewige Dämmerung blieb."
     },
     {
       "key": "dream-of-the-dandelion-gladiator",
@@ -10108,6 +10775,11 @@
       "description": "Ein Teil der Kraft der vom Herrscher des Ostwinds von Mondstadt heraufbeschworenen Winde.\r\nSchön und durchsichtig, Passate und Tornados entstehen in seinem Namen. Die Winde sind seine Kameraden, seine Stimme und seine Freiheit.\r\nSeine zahlreichen Feinde sind alle, die sich gegen den Wind stellen."
     },
     {
+      "key": "echo-of-scorching-might",
+      "name": "Echo der sengenden Macht",
+      "description": "Material mit der Kraft, Waffen aufsteigen zu lassen.\nVor langer Zeit schnitzte das Volk der Wüste diese kaiserlichen Insignien in Form von robusten Käfern, um sich an die helle Sonne, die den Wechsel von Tag und Nacht markierte, und die Unendlichkeit der Zeit zu erinnern.\nObwohl der Name dieses Königs nicht mehr genannt wird, werden diese kaiserlichen Insignien durch die Zeit hindurch aufbewahrt und tragen eine schwache Erinnerung an den vergangenen Ruhm.\nDiese Insignien reisen mit den Nachkommen des Stammes der Goldbrigade und erzählen schweigend die Geschichten ihres damaligen Königs."
+    },
+    {
       "key": "electro-crystal",
       "name": "Elektrisierter Kristall",
       "description": "Ein kraftvoller Kristall, der elektrische Energie aus der Umgebung anzieht. Es kribbelt, wenn man ihn anfasst."
@@ -10126,6 +10798,11 @@
       "key": "everflame-seed",
       "name": "Fluxfeuersamen",
       "description": "Der Samen, der Fluxfeuerbäume zum Brennen bringt. Er versprüht gleißende Pyro-Energie, als wollte er alles verbrennen, was auf dieser Erde grünt.\r\nIn nicht ruhen wollender Energie tief in der Erde steckt unendliche Sehnsucht. Doch wonach sehnt sich das ewige Feuer? Dürstet es danach, alles mit seinen unstillbaren Flammen zu reinigen?"
+    },
+    {
+      "key": "faded-red-satin",
+      "name": "Verblasste rote Seide",
+      "description": "Ein Stück roter Seide, das benutzt wurde, um die Augen zu verdecken. Es ist leicht gerissen.\nUnter den Goldbrigaden gibt es viele, die beide Augen hinter Stoff verbergen, aber die ursprüngliche Bedeutung dieser Praxis ist schon lange im Sand der Zeit untergegangen."
     },
     {
       "key": "famed-handguard",
@@ -10203,6 +10880,11 @@
       "description": "Ein Frosch, wie er häufig zu finden ist. Er lebt in einer feuchten Umgebung und ist immer voller Energie. Das Sekret, das er absondert, hat eine belebende Wirkung."
     },
     {
+      "key": "fungal-spores",
+      "name": "Sporen der Pilzbestie",
+      "description": "Eine kleine Menge glitzerndes Sporenpulver, das von Pilzbestien zurückgelassen wurde. Es scheint, als würde ein Niesen genügen, um es spurlos verschwinden zu lassen."
+    },
+    {
       "key": "genesis-crystal",
       "name": "Schöpfungskristall",
       "description": "Ein Energiekristall vom Anbeginn des Universums. Er besteht aus dem Potenzial und der Hoffnung, die das reine Nichts des Anfangs barg, und hat genügend Energie, einen neuen Stern zu erschaffen."
@@ -10211,6 +10893,11 @@
       "key": "gilded-scale",
       "name": "Schuppe der Vergoldung",
       "description": "Geschuppte Rüstungen, die auf natürliche Weise über mystischem Stein wachsen, zäh und lautlos und erfüllt von der Kraft des Drachenkönigs.\r\nIm Laufe der Jahre, als zahllose Generationen in den Mulch der Erde zurückkehrten, betteten sich Gold und Obsidian in Fleisch und Blut ein, die aus dem Gestein geformt wurden, bevor sie sich ausbreiteten und in Schuppen verwandelten.\r\nSehr schmerzhafte Qualen, wortlose Schreie ... vielleicht werden sie alle verschwinden, wenn auch der Groll, der sie hervorbrachte, endlich zu einem Ende kommt."
+    },
+    {
+      "key": "glabrous-beans",
+      "name": "Kahle Bohnen",
+      "description": "Eine in Teyvat weit verbreitete Art von Bohnen. Sie haben ein angenehm leichtes Aroma und sind daher überall äußerst beliebt."
     },
     {
       "key": "glaze-lily",
@@ -10233,9 +10920,19 @@
       "description": "Ein Abzeichen der Schatzräuber, das ihren Stolz sowie ihre einzige Regel symbolisiert. Solange geheime Schätze in den weiten Ländereien, tiefen Abgründen und unbekannten Meeren darauf warten, von den Schatzräubern entdeckt zu werden, wird ihr Geist vor nichts zurückschrecken, um diese Schätze zu bergen."
     },
     {
+      "key": "golden-talisman-of-the-forest-dew",
+      "name": "Goldtalisman des Waldtaus",
+      "description": "Material mit der Kraft, Waffen aufsteigen zu lassen.\n„Die Sterblichen schätzen nur drei Dinge: Quellwasser, das das Mondlicht umarmt, ein Grün, das dem Leben ähnelt, und ein junges Aussehen, das niemals altert …“\nDas Wesen der „Weisheit“ besteht nicht darin, alle Köpfe zu beherrschen oder sich alle Vorteile zu erschleichen. Stattdessen geht es darum, den gewöhnlichen Wesen die Freiheit zu geben, über ihre Grenzen hinaus zu leben.\nAuch wenn das Brüllen des Tigers im Wald nicht mehr zu hören ist, auch wenn sich die entschlossenen Wächter in die Träume der Kinder zurückgezogen sind … In der Nacht, wenn alle verborgenen goldenen Siegel der Geheimnisse gelüftet werden und alle Träume wie Bernstein im Mondlicht glühen, würden sie und ihr geliebtes Volk vielleicht endlich die wahre Freiheit gewinnen."
+    },
+    {
       "key": "grain-of-aerosiderite",
       "name": "Körnchen pechschwarzer Aerosiderit",
       "description": "Material mit der Kraft, Waffen aufsteigen zu lassen.\r\nVor langer Zeit ist ein pechschwarzer Meteorit über dem Wolkenmeer von Liyue aus dem Himmel gefallen, angeblich um Monster und Dämonen zu besiegen. Aufgrund des unreinen Blutes, mit dem dieses Metall befleckt ist, übersteigt es die Kräfte von Rex Lapis."
+    },
+    {
+      "key": "guide-to-admonition",
+      "name": "Anleitung zur „Ermahnung“",
+      "description": "Material zur Verbesserung von Talenten.\n„Ermahnung“ ist der Zweig des Reiches der Weisheit.\nErmahnung und sorgfältige Überlegung gehören untrennbar zusammen. Sich mit Demut und Klarheit auszudrücken, erfordert viel Nachdenken und Reflexion. Nur so kann man die Weisen überzeugen, die Narren erwecken, und die Weisheit wie einen Fluss fließen lassen."
     },
     {
       "key": "guide-to-ballad",
@@ -10263,9 +10960,19 @@
       "description": "Material zum Verbessern von Talenten.\r\nGold ist das Symbol des Reiches des Gesteins.\r\nDas Gold bedeutet Umwandlung. Es steht für die Beziehung zwischen den Bergen, der Erde, dem Hafen und den Menschen. In Liyue wird Fleiß in Gold gewandelt und Gold in Wohlstand."
     },
     {
+      "key": "guide-to-ingenuity",
+      "name": "Anleitung zur „Findigkeit“",
+      "description": "Material zur Verbesserung von Talenten.\n„Findigkeit“ ist die Vene des Reichs der Weisheit.\nFindigkeit führt zu aufrichtigen Worten. Wer aus gutem Willen denkt und klug überlegt, dessen Worte werden nie den Pfad des Wohlergehens verlassen. Wer aber aus Rücksichtslosigkeit und Boshaftigkeit spricht, dessen Worte werden verachtenswert und unwürdig."
+    },
+    {
       "key": "guide-to-light",
       "name": "Anleitung zum „Licht“",
       "description": "Material zur Verbesserung von Talenten.\r\nLicht ist die Sehnsucht des Reichs des Blitzes.\r\nAuch wenn die Sonnenstrahlen selbst durch Schichten über Schichten von Wolken blockiert werden sollten, gibt es im Land des Donnergottes immer noch diejenigen, die davon träumen, dieses zornige Meer von Blitzen zu durchdringen, um die Herrlichkeit des Göttlichen zu verfolgen, ohne zu fürchten, dass sie grausam niedergestreckt werden."
+    },
+    {
+      "key": "guide-to-praxis",
+      "name": "Anleitung zur „Praxis“",
+      "description": "Material zur Verbesserung von Talenten.\nDie „Praxis“ ist die Wurzel des Reichs der Weisheit.\nDie Praxis bestätigt die Ehrlichkeit in den Worten. Auch wenn alles Denken, alles Handeln, gut ist, kann man dennoch es nicht als Weisheit nennen. Aus Taten geborene Weisheit legt ein Siegel auf ehrliche Worte."
     },
     {
       "key": "guide-to-prosperity",
@@ -10286,6 +10993,11 @@
       "key": "ham",
       "name": "Schinken",
       "description": "Geräuchertes Fleisch. Selbst die dünnste Scheibe ist voller Aroma."
+    },
+    {
+      "key": "harra-fruit",
+      "name": "Harra-Frucht",
+      "description": "Diese Frucht wächst inmitten des feucht-heißen Regenwaldes. Sie hat ein besonderes scharfes Aroma. Indem sie zu einem Pulver zermahlen wird, entsteht die Harra-Würze. Somit ist sie die wertvollste Gewürzpflanze ganz Sumerus."
     },
     {
       "key": "heavy-horn",
@@ -10323,6 +11035,11 @@
       "description": "Die konzentrierte Form einer Anemo-Hypostase, nachdem sie besiegt worden ist. In ihr steckt pure Anemo-Kraft.\r\nMan sagt, dass der Flügelschlag eines Schmetterlings die Kraft birgt, einen ganzen Orkan auszulösen. Dieser Schmetterling, der aus reiner Anemo-Kraft besteht, wartet gewiss auf den Tag, an dem er erneut einen Sturm entfachen kann."
     },
     {
+      "key": "inactivated-fungal-nucleus",
+      "name": "Inaktives Sklerotium",
+      "description": "Ein Teil des Gewebes einer Pilzbestie, dass durch Stimulation durch die Elemente der Außenwelt Form angenommen hat.\nEs fühlt sich sehr angenehm an und eignet sich um Verspannungen zu lösen. Da es aber auch leicht zur Vervielfachung von Pilzbestien führen kann, ist es nicht für die kommerzielle Anwendung geeignet."
+    },
+    {
       "key": "inspectors-sacrificial-knife",
       "name": "Zeremonielles Kundschafterlangschwert",
       "description": "In der Hand ihres ursprünglichen Besitzers hat diese Waffe einst viele Schulden eingetragen. Da niemand Augen im Hinterkopf hat, wurde diese Waffe dazu entworfen, diese Schwäche wettzumachen."
@@ -10336,6 +11053,11 @@
       "key": "iron-chunk",
       "name": "Brocken Eisen",
       "description": "Ein Klumpen Eisenerz, der in den Händen eines begabten Schmieds zu einer ganzen Reihe an nützlichen Gegenständen werden kann."
+    },
+    {
+      "key": "iron-talisman-of-the-forest-dew",
+      "name": "Eisentalisman des Waldtaus",
+      "description": "Material mit der Kraft, Waffen aufsteigen zu lassen.\nDann lehrte die Herrin der Flora die Menschen das Geheimnis des Schmiedens von schwarzem Eisen. So lernten die unschuldigen Sterblichen, wie man mit Feuer Klingen schmiedet.\nDie Herrin der Flora hatte Freude an ihrem Wissen – so tödlich Feuer und Klingen für die Herrin der Flora auch waren, sie machten die einfachen Menschen mächtig."
     },
     {
       "key": "jade-branch-of-a-distant-sea",
@@ -10366,6 +11088,11 @@
       "key": "kageuchi-handguard",
       "name": "Kageuchi-Handschutz",
       "description": "Ein Handschutz, der auf ein Schwert von einiger Bedeutung aufgesetzt wird.\r\nInazuma hat eine lange Tradition in der Herstellung von Schwertern. Bei der Herstellung von Schwertern fertigen die Schmiede oft mehrere verschiedene Waffen auf einmal an, bevor sie aus ihnen die „Shinuchi“, oder die beste Waffe, auswählen, während die anderen als „Kageuchi“ bekannt sind."
+    },
+    {
+      "key": "kalpalata-lotus",
+      "name": "Kalpalata-Lotos",
+      "description": "Blüte am Kliff wachsender Kletterpflanze. Aufgrund ihres Aussehens wird sie als Lotos bezeichnet, auch wenn sie mit diesem nicht näher verwandt ist."
     },
     {
       "key": "lavender-melon",
@@ -10403,6 +11130,11 @@
       "description": "Eine Pflanze mit zwei Stängeln, die in stehenden Gewässern rund um Liyue wächst. Ein Stängel duftet angenehm, der andere ist bitter. Eignet sich angeblich gut für Medizin."
     },
     {
+      "key": "luminescent-pollen",
+      "name": "Leuchtendes Sporenpulver",
+      "description": "Ein kleines Päckchen mit leuchtendem Sporenpulver von Pilzbestien, das im Land der Regenwälder ein gängiger medizinischer Wirkstoff ist. Händler verkaufen sie normalerweise in Papierpaketen."
+    },
+    {
       "key": "luminescent-spine",
       "name": "Leuchtmark",
       "description": "Der leuchtende Teil von Glühwürmchen, die ihn zur Balz verwenden. Stärkt den menschlichen Körper."
@@ -10428,6 +11160,11 @@
       "description": "Dieser Kern kann die anorganischen Maguu Kenki mit Energie versorgen und sie dazu bringen, dass sie ihre Klingen wie ein lebendes Wesen führen.\r\nFleisch vergeht und so auch Kampffähigkeiten und Erinnerung, egal wie meisterhaft oder wunderbar.\r\nVielleicht kann man nur durch das Ersetzen aller vier Gliedmaßen und des Rumpfes durch robuste mechanische Teile und durch das Austauschen des eigenen Herzens mit einem ausgeklügelten mechanischen Gegenstück wirklich die Vergänglichkeit des Fleisches hinter sich lassen und sich der Ewigkeit nähern ..."
     },
     {
+      "key": "majestic-hooked-beak",
+      "name": "Hakenschnabel des Pilzkönigs",
+      "description": "Nach Besiegen einer gefiederten Pilzbestie erhaltene Chitin-Struktur.\nBis heute glauben Gelehrte, dass es ein Wunder sei, dass die weichen Pilzbestien einen felsenfesten Hakenschnabel hervorgebracht haben. Am Ende ihrer Evolutionslinie schreitet der prächtige König der Pilze gemächlich herum und schreit von Zeit zu Zeit, um den Lebewesen des Regenwaldes zu bedeuten: So jedes noch so hilflose und ängstliche Wesen hat die Möglichkeit eines Tages Herrscher der Wälder zu werden."
+    },
+    {
       "key": "mask-of-the-kijin",
       "name": "Maske der Kijin",
       "description": "Waffenaufstiegsmaterial.\r\nChiyo, eine Kriegerin des Oni-Stammes mit dem Elektro-Mitsudomoe-Emblem auf dem Rücken, wurde einst von einer Bestie aus dem Jenseits verschlungen, die den Körper eines Tigers und den Schwanz einer Schlange hatte, während sie die Kräfte der Dunkelheit zurückhielt. Schließlich zerriss sie die Innereien der Kreatur von innen heraus und befreite sich.\r\nDies ist der Ursprung der Phrase „Chiyo der Tigerbiss“ und würde im Laufe der Jahre in „Torachiyo“ geändert werden.\r\nAber im Bauch der Bestie wurde sie von einer tiefen Sünde befleckt und sah, wie ihre Kameraden von diesen blutroten Zähnen in Stücke gerissen wurden. Eingetaucht in Dunkelheit, so weit das Auge reicht, würde sie schließlich ihr Schwert gegen die Allmächtige Narukami Ogosho ziehen. Ihr Schwertarm und ein Horn wurden zerschnitten und sie floh aus der Stadt in den Wald wie ein verwundetes Tier. Dort, so sagt man, wurde sie für ein unbekanntes Monster gehalten und von den Tengu erschlagen oder vielleicht von den Shuumatsuban – oder vielleicht von einem Spross des Iwakura-Klans, der tief in den Bergen trainierte, denn ihre Gesichtszüge waren vom Hass und der Qual ihrer Wunden verdreht. Oder vielleicht traf sie sogar die als Oni maskierte, schwerttragende Puppe in der Nähe des Leichnams der Riesenschlange und dort endete ihre Lebensreise.\r\nWenige unter denen, die in jenen Tagen gegen den Abgrund kämpften, blieben von pechschwarzen Träumen verschont. Diejenigen, die Ungeheuer erschlugen und dann zu ihnen wurden, waren kaum die Minderheit. Die Grenze zwischen den Welten wird zerbrechlich und Korruption dieser Art ist vielleicht nicht nur in eine Richtung gerichtet."
@@ -10451,6 +11188,31 @@
       "key": "matsutake",
       "name": "Matsutake",
       "description": "Eine seltene Pilzart, die an oder in der Nähe von Kiefern wächst und ihre Stellung durch den unverkennbaren Duft verrät."
+    },
+    {
+      "key": "midlander-bow-billet",
+      "name": "Unbearbeiteter Bogen des Kernlands",
+      "description": "Rohmaterial zum Herstellen von Waffen. Kann zu einem 4-Sterne-Bogen geschmiedet werden.\nIn der Philosophie spricht man davon, dass alles in der Welt der Sterblichen vier Entstehungsgründe besitzt. Das „Ziel“ dieser unbearbeiteten Waffe ist es, eine Helden begleitende Waffe zu werden."
+    },
+    {
+      "key": "midlander-catalyst-billet",
+      "name": "Unbearbeiteter Katalysator des Kernlands",
+      "description": "Rohmaterial zum Herstellen von Waffen. Kann zu einem 4-Sterne-Katalysator geschmiedet werden.\nIn der Philosophie spricht man davon, dass alles in der Welt der Sterblichen vier Entstehungsgründe besitzt. Das „Ziel“ dieser unbearbeiteten Waffe ist es, eine Helden begleitende Waffe zu werden."
+    },
+    {
+      "key": "midlander-claymore-billet",
+      "name": "Unbearbeiteter Zweihänder des Kernlands",
+      "description": "Rohmaterial zum Herstellen von Waffen. Kann zu einem 4-Sterne-Zweihänder geschmiedet werden.\nIn der Philosophie spricht man davon, dass alles in der Welt der Sterblichen vier Entstehungsgründe besitzt. Das „Ziel“ dieser unbearbeiteten Waffe ist es, eine Helden begleitende Waffe zu werden."
+    },
+    {
+      "key": "midlander-polearm-billet",
+      "name": "Unbearbeitete Stangenwaffe des Kernlands",
+      "description": "Rohmaterial zum Herstellen von Waffen. Kann zu einer 4-Sterne-Stangenwaffe geschmiedet werden.\nIn der Philosophie spricht man davon, dass alles in der Welt der Sterblichen vier Entstehungsgründe besitzt. Das „Ziel“ dieser unbearbeiteten Waffe ist es, eine Helden begleitende Waffe zu werden."
+    },
+    {
+      "key": "midlander-sword-billet",
+      "name": "Unbearbeiteter Einhänder des Kernlands",
+      "description": "Rohmaterial zum Herstellen von Waffen. Kann zu einem 4-Sterne-Einhänder geschmiedet werden.\nIn der Philosophie spricht man davon, dass alles in der Welt der Sterblichen vier Entstehungsgründe besitzt. Das „Ziel“ dieser unbearbeiteten Waffe ist es, eine Helden begleitende Waffe zu werden."
     },
     {
       "key": "milk",
@@ -10573,6 +11335,11 @@
       "description": "Waffenaufstiegsmaterial.\r\nIn der Vergangenheit kletterten die Alten auf den Gipfel, der heute als Yougou-Berg bekannt ist, und bogen Holz, das vom Blitz verkohlt worden war, zu einem Haken, um es der donnernden Kraft, die den Himmel erhellte und die Erde erschütterte, als Abbild zu opfern. Diese Form wurde schließlich zum „Elektro-Mitsudomoe“-Symbol, das die Gunst, Weisheit und Macht der Elektro-Kraft symbolisiert, und auch die Menschen, die diese Werte repräsentieren."
     },
     {
+      "key": "nilotpala-lotus",
+      "name": "Nilotpala-Lotos",
+      "description": "Diese Pflanzen wachsen in feuchten Waldabschnitten. Sie geben ein schimmerndes Licht wie das Mondlicht ab und blühen nur in der Nacht."
+    },
+    {
       "key": "noctilucous-jade",
       "name": "Nachtjade",
       "description": "Ein äußerst seltenes Gestein, das in der Dunkelheit stiller Nächte leuchtet. Man hält es für das edle Produkt kristallisierter Elemente, die an die Oberfläche treten."
@@ -10603,9 +11370,34 @@
       "description": "Rohmaterial zum Herstellen von Waffen. Kann zu einem 4-Sterne-Einhänder geschmiedet werden.\r\nIn der Philosophie spricht man dem Marmor großes Potenzial zu, weil es sich zu den schönsten Figuren machen lässt. Auch dieses Rohmaterial birgt unzählige Möglichkeiten. Was wohl einmal daraus wird?"
     },
     {
+      "key": "oasis-gardens-kindness",
+      "name": "Gnade der Oase der blühenden Blumen",
+      "description": "Material mit der Kraft, Waffen aufsteigen zu lassen.\nIn der Literatur, die tief unter dem gelben Sand vergraben ist, war die Königin der Blumen die Herrin der Träume.\nSie inszenierte Träume für die Verbannten, die Verrückten und die Törichten. In den Träumen wurden sie mit dem größten Vergnügen präsentiert. Belastet von der Brutalität der Realität, waren sie fasziniert vom Charme der Königin der Blumen und gefesselt von ihrer Schönheit und Fürsorge."
+    },
+    {
+      "key": "oasis-gardens-mourning",
+      "name": "Trauer der Oase der blühenden Blumen",
+      "description": "Material mit der Kraft, Waffen aufsteigen zu lassen.\nDie Königin der Blumen hatte ein freundschaftliches Verhältnis zu den Dschinn.\nDie Herrin der Blumen und Oasen tat sich mit dem König der Wüste zusammen und baute Ay-Khanoum, die „Stadt des Amphitheaters“, die in der alten Sprache der Dschinn die Bedeutung „Stadt der Mondmädchen“ hatte.\nSpäter hieß es jedoch, die Königin der Blumen sei an der Bosheit der brennenden Sonne und des gelben Sandes gestorben, woraufhin die Blüte der purpurroten Padisarah nie wieder in den Oasen zu sehen war.\nNach dem Ableben der Königin der Blumen trauerten die Sandstürme. Die Dschinn schluchzten und die Edelsteinscheibe des Mondscheins verlor ihre erholsame Atmosphäre und verströmte stattdessen trauriges Glitzern."
+    },
+    {
+      "key": "oasis-gardens-reminiscence",
+      "name": "Reminiszenz der Oase der blühenden Blumen",
+      "description": "Material mit der Kraft, Waffen aufsteigen zu lassen.\nDie Menschen sagten früher, dass die Königin der Blumen die Königin der Freude und des Glücks war. Frisches Wasser sprudelte aus ihren Ärmeln und so wurde die Oase der blühenden Blumen in der Wüste geboren. Blumen und Gräser folgten ihren Schritten und das schimmernde Mondlicht ebnete ihr den Weg.\nIn den bitteren Tagen, in denen der Himmel der Erde den Rücken zukehrte, schenkte die Königin der Blumen jedem einzelnen Sterblichen ihre Gnade und ließ ihn sein Glück und sein Ego zurückgewinnen. Und so widmeten die Menschen sich wieder der Muße und dem Luxus."
+    },
+    {
+      "key": "oasis-gardens-truth",
+      "name": "Wahrheit der Oase der blühenden Blumen",
+      "description": "Material mit der Kraft, Waffen aufsteigen zu lassen.\n„Wer würde einen verstorbenen Gott verehren?“\nDie Königin der Blumen war einst mit zwei Königen der Götter im Bündnis. Neben Weisheit und Macht brachte sie ihrem Volk auch Barmherzigkeit und Freude.\nGenauso wie die Erde mehr braucht als brennenden Sonnenschein und strömenden Regen, waren für das Volk der Königin der Blumen Freude und Liebe, Gesang und Musik sowie Wein und Ausschweifung genauso wichtig wie Sensibilität und Macht.\nEs heißt, dass Blumen für ihr prächtiges Verwelken blühen, und das Verwelken war genau das Bestreben der Herrin der Blumen. Denn die Bitterkeit, die der Tod der verlorenen Freude hinzufügt, lässt sie inmitten der endlosen Erinnerungen immer intensiver erscheinen.\nDer unwissende König der Wüste war sich ihrer Philosophie nie bewusst. Er schwelgte nur in ihrem unermesslichen Charme und ihrer Anmut. So falsch diese glühende Zuneigung auch sein mochte, sie lag im Kalkül der Königin der Blumen."
+    },
+    {
       "key": "old-handguard",
       "name": "Alter Handschutz",
       "description": "Ein kampferprobter Handschutz, der einst an einer Inazuma-Klinge befestigt war.\r\nFür diejenigen, die in der Kunst des Schwertes versiert sind, ist die Tsuba eine Verteidigung gegen die Klinge des Gegners. Für Anfänger ist es ein Schutz gegen sich selbst."
+    },
+    {
+      "key": "olden-days-of-scorching-might",
+      "name": "Vergangenheit der sengenden Macht",
+      "description": "Material mit der Kraft, Waffen aufsteigen zu lassen.\nIn der Ära, in der der unwissende König der Wüste regierte, senkte sich seine Macht wie die sengende Sonne auf jeden Zentimeter des Landes.\nIn den Aufzeichnungen der alten Steintafel verwandelte er seine Macht in sieben Strahlen blendenden Lichts oder sieben Säulen, die er gleichmäßig und barmherzig an alle verteilte. Niemand wurde vernachlässigt und niemand war unzufrieden.\nDas war eine vergessene goldene Ära, eine Ära, in der die Königin der Blumen im Sand verblasste und die Herrin der Flora beschloss, zu gehen. Nur die Nachkommen im gelben Sand entschieden sich, ihrem Gott zu folgen. Selbst als sich das Unheil anbahnte, leuchtete die Autorität, der sie vertrauten, hell wie Bernstein und Gold.\nDas Unheil brach dennoch herein. Die goldenen Insignien wurden in den Tiefen des Schreins und des Palastes begraben, unter den eingestürzten Säulen mit den Gravuren von Adlern und Stieren."
     },
     {
       "key": "ominous-mask",
@@ -10628,6 +11420,11 @@
       "description": "Kann den versteinerten Baum und die Blüte des Flusses der Elemente aktivieren, wodurch du an geheime Schätze kommst. Die darin enthaltene Energie stellt sich mit der Zeit wieder her.\r\nDen Legenden zufolge breitet sich das Wurzelsystem Irminsuls und dieser alten Blume weit über die Lande aus und bildet den Grundstock für den Fluss der Elemente."
     },
     {
+      "key": "padisarah",
+      "name": "Padisarah",
+      "description": "Eine heilige und edle Pflanze, mit sehr hohen Ansprüchen an ihre Wachstumsbedingungen. Durch Verarbeitung können aus dem Staubblatt wertvolle Gewürze gewonnen werden."
+    },
+    {
       "key": "pepper",
       "name": "Pfeffer",
       "description": "Schmeckt nach Pfeffer. Bringt den Geschmack fettreicher Speisen gut hervor und passt besonders gut zu Fleisch."
@@ -10641,6 +11438,11 @@
       "key": "philanemo-mushroom",
       "name": "Philanemo-Pilz",
       "description": "Ein Pilz, der in Gebieten mit warmem Wind gedeiht. Er ist beständig wie der Wind und strotzt nur so vor Lebenskraft."
+    },
+    {
+      "key": "philosophies-of-admonition",
+      "name": "Philosophie der „Ermahnung“",
+      "description": "Material zur Verbesserung von Talenten.\n„Ermahnung“ ist der Zweig des Reiches der Weisheit.\nErmahnung sollte mit den ehrlichsten Worten und Taten praktiziert werden. Taten geben Worten wahre Bedeutung. Die Bäume der Weisheit lassen sich am besten kultivieren, wenn Worte, Gedanken und Taten miteinander übereinstimmen."
     },
     {
       "key": "philosophies-of-ballad",
@@ -10668,9 +11470,19 @@
       "description": "Material zum Verbessern von Talenten.\r\nGold ist das Symbol des Reiches des Gesteins.\r\nDas Gold ist Liyues Reichtum. Was Liyue zu diesem Reichtum verhilft, ist jedoch der wie Gold funkelnde Geist der Menschen."
     },
     {
+      "key": "philosophies-of-ingenuity",
+      "name": "Philosophie der „Findigkeit“",
+      "description": "Material zur Verbesserung von Talenten.\n„Findigkeit“ ist die Vene des Reichs der Weisheit.\nFindigkeit findet ihre Vollendung im moralischen Verhalten. Was getan wird, vervollständigt, was gedacht wird. Die Weisheit blüht auf, wo Gedanken, Worte und Taten zusammentreffen."
+    },
+    {
       "key": "philosophies-of-light",
       "name": "Philosophie des „Lichts“",
       "description": "Material zur Verbesserung von Talenten.\r\nLicht ist die Sehnsucht des Reichs des Blitzes.\r\nAuch wenn sie für immer auf der Erde leben müssen, wird die Menschheit immer nach dem Licht greifen. Sterbliche werden danach streben und es übertreffen und sie werden niemals aufhören. Eine versiegelte Ewigkeit mag vielleicht prächtig aussehen, aber ihre Essenz ist der Tod."
+    },
+    {
+      "key": "philosophies-of-praxis",
+      "name": "Philosophie der „Praxis“",
+      "description": "Material zur Verbesserung von Talenten.\nDie „Praxis“ ist die Wurzel des Reichs der Weisheit.\nDie Praxis nährt die Frucht der Weisheit. Taten geben sich selbst eine Bedeutung. Nur auf dem Pfad, wo sich Taten, Worte und Gedanken vereinen, kann der Weise die Perfektion erlangen."
     },
     {
       "key": "philosophies-of-prosperity",
@@ -10763,9 +11575,19 @@
       "description": "Material mit der Kraft, Waffen aufsteigen zu lassen.\r\nDas Innere der steinernen Lanze gebiert ein Licht, das von der Kraft der besiegten Götter im Gestein kommt. Ihr Groll ist aber nicht auf Morax gerichtet, da sie schon längst ihr Selbst und somit ihre persönlichen Gedanken verloren haben."
     },
     {
+      "key": "remnant-glow-of-scorching-might",
+      "name": "Nachglimmen der sengenden Macht",
+      "description": "Material mit der Kraft, Waffen aufsteigen zu lassen.\nDie Essenz der Macht ist es, verschiedene Köpfe zu organisieren und zahllose Seelen zu leiten.\nAllerdings ist Macht keine kaltblütige Tyrannei. Ihr wahres Ideal ist das, was in ihrer Natur liegt: eine Welt der Euthymie zu schaffen, frei von Sorgen, Intrigen und Sklaverei.\nEs war so, wie es der schweigsame König aus dem Kristall bezeugte und wie es die verstorbene Gefährtin einst lehrte.\nDie dunkelroten Insignien und das eisenfarbene Urteil legten so die Grundlagen für die Regeln des Königreichs."
+    },
+    {
       "key": "rice",
       "name": "Reis",
       "description": "Körner einer in Teyvat häufig aufzufindenden Getreideart. Die verschiedensten Menschen wissen diese sättigenden, weißen Körner zu schätzen. Daher sagt man auch, „Reis nährt alle Menschen.“"
+    },
+    {
+      "key": "rich-red-brocade",
+      "name": "Goldverwobene rote Seide",
+      "description": "Mit einem Muster aus Gold durchzogene rote Seide.\nDie Hinterbliebenen, die unter dem Licht der Sonne der goldenen Wüste geborenen sind, singen manchmal Lieder, deren Bedeutung längst vergessen wurde. In diesen preisen sie die brennende Sonne, die alle Länder darunter gleichsam bescheint, und beweinen das Nachleuchten zu Einbruch der Dunkelheit. Am Ende der Lieder wiederholen sich stets einige ungewohnte Worte, von denen es heißt, es seien die Namen alter Götter.\nMan sagt, zur Lebzeit des Königs der Wüste hätten es die Bürger nicht gewagt, seinen sonnengleichen Blick zu kreuzen. Deshalb haben sie ihre Augen bedeckt."
     },
     {
       "key": "riftborn-regalia",
@@ -10776,6 +11598,16 @@
       "key": "ring-of-boreas",
       "name": "Ring des Nordwinds",
       "description": "Einige Eiskristalle vom großen Wolf des Nordens.\r\nDurch dieses Land pfiff einst der eiskalte Wind des Nordens. Wie scharfkantiger Kies sausten die Eiskristalle durch die Luft. Nackte Haut zerschlitzten sie in ihrem wilden Tanz und das Blut erstarrte im Nu. Heute ist der Wolf des Nordens zwar nur noch ein Schatten seiner selbst. Er besitzt aber immer noch die Kraft, das gesamte Land mit Schnee zu bedecken."
+    },
+    {
+      "key": "robust-fungal-nucleus",
+      "name": "Robustes Sklerotium",
+      "description": "Ein Teil des Gewebes einer Pilzbestie, das durch Stimulation durch die Elemente der Außenwelt Form angenommen hat.\nIm Allgemeinen wird angenommen, dass Pilzbestien ihre Mobilität verbessert haben, um ihre Sporen weiter verbreiten zu können.\nEin Dichter sagte einst, die Pilzbestien hätten den gemeinsamen Traum, ihre Sporen mögen Berge und Meere bedecken, woraufhin die Welt stiller als je zuvor werde. Die Pilzbestien würden sich zu Fischen entwickeln, zu Landtieren, zu Vögeln, zu Menschen und zu Göttern, die vom Wasser, der Erde und ihren Vorfahren abhängig würden."
+    },
+    {
+      "key": "rukkhashava-mushrooms",
+      "name": "Rukkhashava-Pilz",
+      "description": "Wie die Wolken türmen sich diese Pilze Schicht für Schicht übereinander. Die meisten davon leben parasitär in der Tiefe des Waldes an Bäumen. Daher betrachten die Einwohner von Sumeru sie als den zurückgelassenen heiligen Körper der Höheren Herrin Rukkhadevata."
     },
     {
       "key": "runic-fang",
@@ -10888,6 +11720,11 @@
       "description": "Ein Krähenwappen, mit dem sich die Schatzräuber gegenseitig erkennen. Bei den Schatzräubern ist es egal, wo man herkommt oder wer man ist, solange man mit ganzem Herzen bei der Sache ist. Wer bereit ist, alles dafür zu geben, an die Schätze dieser Welt zu gelangen, kann ein großartiger Schatzräuber werden."
     },
     {
+      "key": "silver-talisman-of-the-forest-dew",
+      "name": "Silbertalisman des Waldtaus",
+      "description": "Material mit der Kraft, Waffen aufsteigen zu lassen.\nIn den unzähligen Überlieferungen des Waldes war derjenige mit dem gestreiften Umhang, der dem Aussehen lodernder Flammen ähnelte, der Labyrinthkönig und der Besitzer der mondgespiegelten Quelle.\nEr verneigte sich für die Freundschaft mit der Herrin der Flora. Die Zeichen ihrer Freundschaft waren der Edelstein, der wie Wasser schimmerte, und das Silber, das wie das Mondlicht glänzte.\nAls Dank für eine solche Geste versprach die Herrin der Flora, für den Labyrinthkönig Geheimnisse zu bewahren, um gemeinsam die komplizierten und schönen Träume des Regenwaldes zu schützen.\nNiemand konnte vorhersehen, dass das prächtige Schloss der Geheimnisse und Träume später im Leichentuch der dunklen Flamme des Vergessens verschwinden würde, woraufhin seine Asche in den Boden zurückkehrte und zum Nährstoff für die jungfräulichen Regenwälder wurde."
+    },
+    {
       "key": "slime-concentrate",
       "name": "Schleimkonzentrat",
       "description": "Ein sehr zähes Schleimkonzentrat, das sich ziellos bewegt, wenn es in Ruhe gelassen wird."
@@ -10938,6 +11775,11 @@
       "description": "Ein kompletter Energiekern, der manchmal nach dem Besiegen von Gespenstern gefunden werden kann.\r\nEs gibt eine Debatte unter denen, die die Welt einfach in Gewinner und Verlierer einteilen müssen: Was schwimmt besser, ein Gespenst oder Anemo-Schleim?"
     },
     {
+      "key": "spice",
+      "name": "Harra-Würze",
+      "description": "Ein Gewürz zusammengesetzt aus vielen Aromen. Geschaffen aus getrockneten Harra-Früchten. Da es aufgrund seines vielschichtigen Geschmacks als Gewürz für die verschiedensten Gerichte geeignet ist, sagt man in Sumeru „Harra-Würze passt zu allem“."
+    },
+    {
       "key": "spirit-locket-of-boreas",
       "name": "Seele des Nordwinds",
       "description": "Etwas Energie der Seele des Wolfs des Nordens.\r\nDurch dieses Land pfiff einst der eiskalte Wind des Nordens. Letztendlich hat er verstanden, dass dieser Wind das Leben nicht nährt, sondern es zerstört. Mit seinen letzten Atemzügen übertrug er seine Kraft auf dieses Land, um es und seine Bewohner auf ewig zu beschützen."
@@ -10951,6 +11793,11 @@
       "key": "starconch",
       "name": "Sternmuschel",
       "description": "Eine Muschel, die die Flut an den Strand gespült hat. Hält man sie ans Ohr, hört man das verheißungsvolle Rauschen des Meeres."
+    },
+    {
+      "key": "starshroom",
+      "name": "Sternpilz",
+      "description": "Ein Pilz mit einem sternförmigen Hut. Er hat eine sehr starke Lebenskraft. Wenn er reif ist, spaltet sich der Hut in der Mitte."
     },
     {
       "key": "starsilver",
@@ -10978,6 +11825,11 @@
       "description": "Ein Extrakt aus Zuckerblumen. Dieser süße Stoff, reich an Energie, belebt Körper und Seele."
     },
     {
+      "key": "sumeru-rose",
+      "name": "Sumeru-Rose",
+      "description": "Eine helle und wunderschöne tief purpurne Blume, die einen jeden vorbeikommenden zum Anhalten bewegenden Duft von sich gibt. Sie wird als Rose bezeichnet, weil sie genau betrachtet der Definition einer Rose entspricht."
+    },
+    {
       "key": "sunsettia",
       "name": "Dämmerfrucht",
       "description": "Eine Gabe der Natur, die man überall auf Teyvat findet. Sie ist so schön wie die Abenddämmerung und sättigt sehr. Sie hat ein merkwürdiges, süßes Aroma und belebt den ermüdeten Geist."
@@ -10991,6 +11843,11 @@
       "key": "tail-of-boreas",
       "name": "Schwanz des Nordwinds",
       "description": "Einige Schuppen vom Schwanz des großen Wolfs des Nordens.\r\nAuch nach dem Verlust von Leben und Form hat der Wolf des Nordens noch übermenschliche Kräfte. Seine für den Kampf aus Eis und Wind geformte Hülle kann sein ganzes Wesen nicht fassen. An den Eisschuppen haften im Kampf gefallene Seelen."
+    },
+    {
+      "key": "teachings-of-admonition",
+      "name": "Lehren der „Ermahnung“",
+      "description": "Material zur Verbesserung von Talenten.\n„Ermahnung“ ist der Zweig des Reiches der Weisheit.\nNur eine reine Seele kann Ermahnung erzeugen. Die tiefgründigsten Geheimnisse der Weisheit können nur in den nüchternsten und reinsten Worten ausgedrückt werden, wodurch die Saat der Weisheit die Barrieren der Arroganz durchbrechen kann."
     },
     {
       "key": "teachings-of-ballad",
@@ -11018,9 +11875,19 @@
       "description": "Material zum Verbessern von Talenten.\r\nGold ist das Symbol des Reiches des Gesteins.\r\nDas Gold fließt in den Adern Liyues. Es nährt Liyues Herz und gibt seinen Muskeln die Kraft, stolz und erhaben aufrecht zu stehen."
     },
     {
+      "key": "teachings-of-ingenuity",
+      "name": "Lehren der „Findigkeit“",
+      "description": "Material zur Verbesserung von Talenten.\n„Findigkeit“ ist die Vene des Reichs der Weisheit.\nFindigkeit speist sich aus wohlwollenden Gedanken. So wie es heißt, „ein böser Baum trägt keine guten Früchte“, so vermag ein dauerhaft guter Wille wundervolle Gedanken hervorzubringen, die den Namen der Weisheit nicht beflecken."
+    },
+    {
       "key": "teachings-of-light",
       "name": "Lehren des „Lichts“",
       "description": "Material zur Verbesserung von Talenten.\r\nLicht ist die Sehnsucht des Reichs des Blitzes.\r\nDer Herrscher, der behauptet, alles für immer erkannt zu haben, will himmlischen Ruhm horten. Aber diese Vision, die nicht geteilt werden kann, führt nur dazu, dass die Menschen sich noch heftiger danach sehnen, wie Motten, die in die Flamme tauchen."
+    },
+    {
+      "key": "teachings-of-praxis",
+      "name": "Lehren der „Praxis“",
+      "description": "Material zur Verbesserung von Talenten.\nDie „Praxis“ ist die Wurzel des Reichs der Weisheit.\nDie Praxis entstammt dem klaren Willen. Der Weg zu aller Weisheit ist das unnachgiebige Streben nach Gutem. Ohne die Praxis des Guten sind Findigkeit und schöne Worte nichts als Staub."
     },
     {
       "key": "teachings-of-prosperity",
@@ -11048,6 +11915,11 @@
       "description": "Ein kleines Stück Kopfbedeckung, das du erhalten hast, als sich der Staub in den utopischen Gefilden gelegt hatte.\r\nEin einziger Gedanke kann alles Unheil beenden und es wird immer Gedanken geben, die die Zeit überstehen können.\r\nInmitten all dieser Katastrophen fragt man sich, ob Makotos wahre Absicht erfolgreich herübergebracht wurde oder nicht."
     },
     {
+      "key": "thunderclap-fruitcore",
+      "name": "Donnerknall-Fruchtkern",
+      "description": "Der von messerscharfen Blättern umgebene Kern des Fluxblitzbaumes, der rücksichtslos die Elektro-Energie in seine Umgebung hineinstrahlt.\nDie in den Tiefen der Erde donnernde Energie will ihre Wut eilig ausschütten und so sind die unglücklichen Reben in Raserei getränkt. Dadurch schlagen sie mit ihren Ästen wild um sich und stoßen klagende Schreie aus. Niemand weiß, ob es ihn verlangt, anderen eine Kostprobe seiner Schmerzen durch die andauernden Stromstöße und Verbrennungen zu geben, oder ob er versucht, dagegen anzukämpfen und seinem unausweichlichen Ende entgegenzublicken."
+    },
+    {
       "key": "tile-of-decarabians-tower",
       "name": "Decabarians zerbrochener Ziegel",
       "description": "Material mit der Kraft, Waffen aufsteigen zu lassen.\r\nDvalins Ruinen, wie sie in letzter Zeit genannt werden, waren ursprünglich die Palastanlagen des Archons des Windes „Decabarian“. Da dieser majestätische Traum von einem Archon geschaffen wurde, ist die Macht dieses Bruchstücks auch nach dem Untergang des Traums enorm."
@@ -11066,6 +11938,11 @@
       "key": "treasure-hoarder-insignia",
       "name": "Krähenwappen der Schatzsuche",
       "description": "Dieses Zeichen deutet stolz auf die Zugehörigkeit zu den Schatzräubern hin. Es steht für die ewige Suche nach den größten Schätzen. Aber mal ganz ehrlich ... Ist das wirklich ein Grund stolz auf sich zu sein?"
+    },
+    {
+      "key": "trimmed-red-silk",
+      "name": "Geränderte rote Seide",
+      "description": "Rote Seide mit einfachen Verzierungen an den Rändern.\nErfahrene Kämpfer können anhand der Bewegungen der Augen ihres Kontrahenten die Gelegenheit zum Zuschlagen erkennen. Die Goldbrigaden haben schon seit Langem den Herren verloren, dem sie die Treue schwören können, und können nur sich selbst vertrauen. Es heißt, sie vertrauten darauf, dass alle Dinge sie verraten könnten und sie machen dabei selbst bei ihren Augen keine Ausnahme."
     },
     {
       "key": "tusk-of-monoceros-caeli",
@@ -11186,6 +12063,11 @@
       "key": "wolfhook",
       "name": "Wolfshaken",
       "description": "Eine stachelige Beere, die am Fell von Wölfen hängenbleibt und von ihnen weitergetragen wird. Sieht man diese Beeren, kann man sich darauf gefasst machen, das Echo von Wolfsgeheul zu hören."
+    },
+    {
+      "key": "zaytun-peach",
+      "name": "Zaytun-Pfirsich",
+      "description": "Die Frucht eines Waldstrauchs. Das Fruchtfleisch ist fest, der Geschmack süß. Ihr wird nachgesagt nach dem Verzehr den Geist zu besänftigen."
     }
   ],
   "debuffs": [
@@ -11280,6 +12162,42 @@
       "name": "Kristallisation",
       "effect": "Absorbiert das Element (Hydro, Pyro, Kryo, Elektro) und lässt einen Kristall fallen, der einen Schild gibt. Der Schild stoppt zwar jede Art von Schaden, aber beschützt gegen das Element des Schildes am effizientesten",
       "description": null
+    },
+    {
+      "key": "bloom",
+      "name": "Bloom",
+      "effect": "Creates a Dendro Core that explode after 6 seconds, dealing AoE Dendro DMG in a 5m radius to both enemies and players.",
+      "description": null
+    },
+    {
+      "key": "hyperbloom",
+      "name": "Hyperbloom",
+      "effect": "Triggered when applying Electro to a Dendro Core. Transforms the Dendro Core into a homing Sprawling Shot that deals increased AoE Dendro DMG in a much smaller AoE.",
+      "description": null
+    },
+    {
+      "key": "burgeon",
+      "name": "Burgeon",
+      "effect": "Triggered when applying Pyro to a Dendro Core. Detonates the Dendro Core immediately, dealing increased AoE Dendro DMG.",
+      "description": null
+    },
+    {
+      "key": "quicken",
+      "name": "Quicken",
+      "effect": "Applies a Quicken aura that decays over time.",
+      "description": null
+    },
+    {
+      "key": "aggravate",
+      "name": "Aggravate",
+      "effect": "Triggered when applying Electro to an entity with the Quicken aura. Adds Flat DMG Bonus to the attack that triggers this reaction.",
+      "description": null
+    },
+    {
+      "key": "spread",
+      "name": "Spread",
+      "effect": "Triggered when applying Dendro to an entity with the Quicken aura. Adds Flat DMG Bonus to the attack that triggers this reaction.",
+      "description": null
     }
   ],
   "resonance": [
@@ -11324,6 +12242,12 @@
       "name": "Verwobene Wehr",
       "effect": "Erhöht den WDS gegen alle Elemente um 15% und den phys. WDS um 15%.",
       "description": "4 unterschiedliche Elemente"
+    },
+    {
+      "key": "sprawling-greenery",
+      "name": "Sprawling Greenery",
+      "effect": "After triggering Burning, Quicken, or Bloom reactions, all nearby party members gain 30 Elemental Mastery for 6s. After triggering Aggravate, Spread, Hyperbloom, or Burgeon reactions, all nearby party members gain 20 Elemental Mastery for 6s. The durations of the aforementioned effects will be counted independently.",
+      "description": null
     }
   ],
   "monsters": [
@@ -11358,6 +12282,10 @@
     {
       "key": "azhdaha",
       "name": "Azhdaha"
+    },
+    {
+      "key": "beisht",
+      "name": "Beisht"
     },
     {
       "key": "black-serpent-knight-windcutter",
@@ -11432,6 +12360,10 @@
       "name": "Dendro-Schleim"
     },
     {
+      "key": "dendro-specter",
+      "name": "Dendro-Gespenst"
+    },
+    {
       "key": "electro-abyss-mage",
       "name": "Elektro-Abgrundmagier"
     },
@@ -11452,6 +12384,10 @@
       "name": "Elektro-Hypostase"
     },
     {
+      "key": "electro-regisvine",
+      "name": "Fluxblitzbaum"
+    },
+    {
       "key": "electro-samachurl",
       "name": "Elektro-Samachurl"
     },
@@ -11466,6 +12402,38 @@
     {
       "key": "electro-whopperflower",
       "name": "Elektro-Vaniloqua"
+    },
+    {
+      "key": "eremite-axe-vanguard",
+      "name": "Goldbrigade – Axtstürmerin"
+    },
+    {
+      "key": "eremite-crossbow",
+      "name": "Goldbrigade – Armbrustschütze"
+    },
+    {
+      "key": "eremite-daythunder",
+      "name": "Goldbrigade – Tagesdonner"
+    },
+    {
+      "key": "eremite-desert-clearwater",
+      "name": "Goldbrigade – Wüstenwasser"
+    },
+    {
+      "key": "eremite-linebreaker",
+      "name": "Goldbrigade – Formationsbrecher"
+    },
+    {
+      "key": "eremite-ravenbeak-halberdier",
+      "name": "Goldbrigade – Hellebardist"
+    },
+    {
+      "key": "eremite-sunfrost",
+      "name": "Goldbrigade – Sonnenfrost"
+    },
+    {
+      "key": "eremite-sword-dancer",
+      "name": "Goldbrigade – Schwerttänzer"
     },
     {
       "key": "eye-of-the-storm",
@@ -11508,6 +12476,10 @@
       "name": "Fatui-Plänkler – Pyro-Kanonen-Freischärler"
     },
     {
+      "key": "floating-dendro-fungus",
+      "name": "Schwebende Dendro-Pilzbestie"
+    },
+    {
       "key": "floating-hydro-fungus",
       "name": "Schwebende Hydro-Pilzbestie"
     },
@@ -11542,6 +12514,10 @@
     {
       "key": "golden-wolflord",
       "name": "Goldener Garmfürst"
+    },
+    {
+      "key": "grounded-hydroshroom",
+      "name": "Laufender Hydro-Pilz"
     },
     {
       "key": "hilichurl",
@@ -11626,6 +12602,10 @@
     {
       "key": "ice-shieldwall-mitachurl",
       "name": "Mitachurl mit Eisschild"
+    },
+    {
+      "key": "jadeplume-terrorshroom",
+      "name": "Gefiederte Pilzbestie"
     },
     {
       "key": "kairagi-dancing-thunder",
@@ -11816,6 +12796,14 @@
       "name": "Ruinenzerstörer"
     },
     {
+      "key": "ruin-drake-earthguard",
+      "name": "Ruinendrache – Erdwächter"
+    },
+    {
+      "key": "ruin-drake-skywatch",
+      "name": "Ruinendrache – Himmelswächter"
+    },
+    {
       "key": "ruin-grader",
       "name": "Ruinenkoloss"
     },
@@ -11853,7 +12841,7 @@
     },
     {
       "key": "shogunate-infantry",
-      "name": "Bakufu-Soldat"
+      "name": "Bakufu-Ashigaru"
     },
     {
       "key": "shogunate-infantry-captain",
@@ -11866,6 +12854,18 @@
     {
       "key": "stormterror",
       "name": "Furchterregender Sturmschrecken"
+    },
+    {
+      "key": "stretchy-anemo-fungus",
+      "name": "Dehnbare Anemo-Pilzbestie"
+    },
+    {
+      "key": "stretchy-geo-fungus",
+      "name": "Dehnbare Geo-Pilzbestie"
+    },
+    {
+      "key": "stretchy-pyro-fungus",
+      "name": "Dehnbare Pyro-Pilzbestie"
     },
     {
       "key": "thunder-manifestation",
@@ -11948,8 +12948,28 @@
       "name": "Schatzräuber – Seemann"
     },
     {
+      "key": "treasure-hoarders-wallenstein",
+      "name": "Schatzräuber Wallenstein"
+    },
+    {
       "key": "unusual-hilichurl",
       "name": "Merkwürdiger Hilichurl"
+    },
+    {
+      "key": "whirling-cryo-fungus",
+      "name": "Wirbelnde Kryo-Pilzbestie"
+    },
+    {
+      "key": "whirling-electro-fungus",
+      "name": "Wirbelnde Elektro-Pilzbestie"
+    },
+    {
+      "key": "winged-cryoshroom",
+      "name": "Geflügelter Kryo-Pilz"
+    },
+    {
+      "key": "winged-dendroshroom",
+      "name": "Geflügelter Dendro-Pilz"
     },
     {
       "key": "wooden-shield-hilichurl-guard",

@@ -146,8 +146,8 @@
     {
       "key": "aloy",
       "name": "Aloy",
-      "title": "Salvatrice d'un autre monde",
-      "description": "Autrefois une paria, maintenant une chasseuse d'une acuité sans précédent. Toujours prête à utiliser son arc pour la bonne cause.",
+      "title": "Salvatrice d’un autre monde",
+      "description": "Autrefois une paria, maintenant une chasseuse d’une acuité sans précédent. Toujours prête à utiliser son arc pour la bonne cause.",
       "skills": [
         {
           "key": "s1",
@@ -156,17 +156,17 @@
           "abilities": [
             {
               "name": "Attaque normale",
-              "description": "Enchaîne jusqu'à 4 tirs consécutifs.\r\n",
+              "description": "Enchaîne jusqu’à 4 tirs consécutifs.\n",
               "descriptions": []
             },
             {
               "name": "Attaque chargée",
-              "description": "Effectue un tir visé plus précis infligeant davantage de DGT.\r\nLors de la visée, la flèche se charge en élément Cryo, infligeant d'importants DGT Cryo quand elle est complètement chargée.\r\n",
+              "description": "Effectue un tir visé plus précis infligeant davantage de DGT.\nLors de la visée, la flèche se charge en élément Cryo, infligeant d’importants DGT Cryo quand elle est complètement chargée.\n",
               "descriptions": []
             },
             {
               "name": "Attaque plongeante",
-              "description": "Tire une pluie de flèches depuis les airs et plonge au sol, infligeant des DGT de zone à l'impact.",
+              "description": "Tire une pluie de flèches depuis les airs et plonge au sol, infligeant des DGT de zone à l’impact.",
               "descriptions": []
             }
           ],
@@ -184,13 +184,13 @@
         {
           "key": "s2",
           "title": "Frozen Wilds",
-          "description": "Aloy lance une bombe à gel qui explose à l'impact dans la direction ciblée, infligeant des DGT Cryo. Après avoir explosé, la bombe à gel se divise en de nombreuses petites bombes glacées qui explosent au contact des ennemis ou après un court délai, infligeant des DGT Cryo.\r\nLorsqu'une bombe à gel ou une petite bombe glacée touche un ennemi, l'ATQ de ce dernier est réduite et Aloy obtient 1 charge de bobine.\r\nUne charge de bobine peut être obtenue toutes les 0,1 s max.\r\n",
+          "description": "Aloy lance une bombe à gel qui explose à l’impact dans la direction ciblée, infligeant des DGT Cryo. Après avoir explosé, la bombe à gel se divise en de nombreuses petites bombes glacées qui explosent au contact des ennemis ou après un court délai, infligeant des DGT Cryo.\nLorsqu’une bombe à gel ou une petite bombe glacée touche un ennemi, l’ATQ de ce dernier est réduite et Aloy obtient 1 cumul de bobine.\nUne charge de bobine peut être obtenue toutes les 0,1 s max.\n\n",
           "abilities": [
             {
               "name": "Bobine",
               "description": "",
               "descriptions": [
-                "Chaque charge augmente les DGT des attaques normales d'Aloy ;",
+                "Chaque charge augmente les DGT des attaques normales d’Aloy ;",
                 "Avec 4 charges de bobine, Aloy consomme toutes les charges de bobine pour entrer dans un état de Glace précipitée, ce qui augmente davantage les DGT infligés par ses attaques normales et les convertit en DGT Cryo.",
                 "Quand Aloy est en état de Glace précipitée, elle ne peut pas recevoir de nouvelles charges de bobine.",
                 "Les effets de la bobine seront annulés après 30 s si Aloy quitte le combat."
@@ -200,22 +200,24 @@
           "stats": [
             "DGT bombe à gel|{param1}%",
             "DGT petite bombe glacée|{param2}%",
-            "Réduction d'ATQ|{param3}%",
-            "Durée réduction d'ATQ|{param4}s",
+            "Réduction d’ATQ|{param3}%",
+            "Durée réduction d’ATQ|{param4} s",
             "Bonus ATQ normale (Bobine)|{param5}% / {param6}% / {param7}%",
             "Bonus ATQ normale (Glace précipitée)|{param8}%",
-            "Durée Glace précipitée|{param9}s",
-            "Temps de recharge|{param10}s"
+            "Durée Glace précipitée|{param9} s",
+            "Temps de recharge|{param10} s",
+            "Bonus ATQ normale (4 charges)|{param11}%",
+            "Temps de recharge|{param12} s"
           ]
         },
         {
           "key": "s3",
-          "title": "Prophéties de l'aube",
-          "description": "Aloy lance une batterie Cryo dans la direction ciblée, puis la fait exploser avec une flèche, infligeant des DGT Cryo de zone.\r\n",
+          "title": "Prophéties de l’aube",
+          "description": "Aloy lance une batterie Cryo dans la direction ciblée, puis la fait exploser avec une flèche, infligeant des DGT Cryo de zone.\n\n",
           "abilities": [],
           "stats": [
             "DGT compétence|{param1}%",
-            "Temps de recharge|{param2}s",
+            "Temps de recharge|{param2} s",
             "Énergie élémentaire|{param3}"
           ]
         }
@@ -224,57 +226,57 @@
         {
           "key": "p1",
           "title": "Doucement mais sûrement",
-          "description": "Quand Aloy fait partie de l'équipe, vos personnages n'effraient pas les petits animaux en s'approchant, et peuvent ainsi obtenir de la volaille, de la viande crue et de la viande congelée.\r\n",
+          "description": "Quand Aloy fait partie de l’équipe, vos personnages n’effraient pas les petits animaux en s’approchant, et peuvent ainsi obtenir de la volaille, de la viande crue et de la viande congelée.\n",
           "descriptions": []
         },
         {
           "key": "p2",
           "title": "Surcharge offensive",
-          "description": "Lorsqu'Aloy est sous l'effet d'une bobine de Frozen Wilds, son ATQ augmente de 16 %, tandis que celle des personnages de l'équipe à proximité augmente de 8 %. Cet effet dure 10 s.\r\n",
+          "description": "Lorsqu’Aloy est sous l’effet d’une bobine de Frozen Wilds, son ATQ augmente de 16 %, tandis que celle des personnages de l’équipe à proximité augmente de 8 %. Cet effet dure 10 s.\n",
           "descriptions": []
         },
         {
           "key": "p3",
           "title": "Frappe puissante",
-          "description": "Lorsqu'Aloy est dans l'état de Glace précipitée accordé par Frozen Wilds, son bonus de DGT Cryo augmente de 3,5 % toutes les secondes. Son bonus de DGT Cryo peut augmenter de cette manière jusqu'à 35 %.\r\n",
+          "description": "Lorsqu’Aloy est dans l’état de Glace précipitée accordé par Frozen Wilds, son bonus de DGT Cryo augmente de 3,5 % toutes les secondes. Son bonus de DGT Cryo peut augmenter de cette manière jusqu’à 35 %.\n",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "Étoile d'un autre monde",
-          "description": "Le moment d'éclairer le coin du ciel nocturne de cette personne n'est pas encore venu.\r\n",
+          "title": "Étoile d’un autre monde",
+          "description": "Le moment d’éclairer le coin du ciel nocturne de cette personne n’est pas encore venu.\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "Étoile d'un autre monde",
-          "description": "Le moment d'éclairer le coin du ciel nocturne de cette personne n'est pas encore venu.\r\n",
+          "title": "Étoile d’un autre monde",
+          "description": "Le moment d’éclairer le coin du ciel nocturne de cette personne n’est pas encore venu.\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "Étoile d'un autre monde",
-          "description": "Le moment d'éclairer le coin du ciel nocturne de cette personne n'est pas encore venu.\r\n",
+          "title": "Étoile d’un autre monde",
+          "description": "Le moment d’éclairer le coin du ciel nocturne de cette personne n’est pas encore venu.\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "Étoile d'un autre monde",
-          "description": "Le moment d'éclairer le coin du ciel nocturne de cette personne n'est pas encore venu.\r\n",
+          "title": "Étoile d’un autre monde",
+          "description": "Le moment d’éclairer le coin du ciel nocturne de cette personne n’est pas encore venu.\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "Étoile d'un autre monde",
-          "description": "Le moment d'éclairer le coin du ciel nocturne de cette personne n'est pas encore venu.\r\n",
+          "title": "Étoile d’un autre monde",
+          "description": "Le moment d’éclairer le coin du ciel nocturne de cette personne n’est pas encore venu.\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "Étoile d'un autre monde",
-          "description": "Le moment d'éclairer le coin du ciel nocturne de cette personne n'est pas encore venu.\r\n",
+          "title": "Étoile d’un autre monde",
+          "description": "Le moment d’éclairer le coin du ciel nocturne de cette personne n’est pas encore venu.\n",
           "descriptions": []
         }
       ]
@@ -1024,6 +1026,93 @@
       ]
     },
     {
+      "key": "candace",
+      "name": "Candace",
+      "title": "？？？",
+      "description": "？？？",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ]
+    },
+    {
       "key": "chongyun",
       "name": "Chongyun",
       "title": "Corps de glace et cœur de feu",
@@ -1149,8 +1238,134 @@
     {
       "key": "collei",
       "name": "Collei",
-      "title": "???",
-      "description": "",
+      "title": "Germe de renaissance",
+      "description": "Une garde forestière en formation active dans la Forêt d’Avidya. Derrière ses paroles et ses actions enthousiastes se cache une personnalité légèrement introvertie.",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "Archerie de l’implorant",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Attaque normale",
+              "description": "Enchaîne jusqu’à 4 tirs consécutifs.\n",
+              "descriptions": []
+            },
+            {
+              "name": "Attaque chargée",
+              "description": "Effectue un tir visé plus précis infligeant davantage de DGT.\nLors de la visée, la flèche se charge en élément Dendro, infligeant d’importants DGT Dendro quand elle est complètement chargée.\n",
+              "descriptions": []
+            },
+            {
+              "name": "Attaque plongeante",
+              "description": "Tire une pluie de flèches depuis les airs et plonge au sol, infligeant des DGT de zone à l’impact.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "DGT 1er coup|{param1}%",
+            "DGT 2e coup|{param2}%",
+            "DGT 3e coup|{param3}%",
+            "DGT 4e coup|{param4}%",
+            "DGT tir visé|{param5}%",
+            "DGT tir visé (pleine charge)|{param6}%",
+            "DGT durant la chute|{param7}%",
+            "DGT chute basse/élevée|{param8}% / {param9}%"
+          ]
+        },
+        {
+          "key": "s2",
+          "title": "Brosse florale",
+          "description": "Lance un anneau floral qui inflige une fois des DGT Dendro aux cibles touchées.\nL’anneau floral revient ensuite après un certain temps, infligeant une nouvelle fois des DGT Dendro.\n\n",
+          "abilities": [],
+          "stats": [
+            "DGT compétence|{param1}%",
+            "Temps de recharge|{param2} s"
+          ]
+        },
+        {
+          "key": "s3",
+          "title": "Atout félin",
+          "description": "Le fidèle Cuilein-Anbar arrive pour apporter son aide !\nLance une poupée nommée Cuilein-Anbar, provoquant une explosion qui inflige des DGT Dendro de zone tout en créant un territoire de Cuilein-Anbar. Cuilein-Anbar bondira alors sans cesse dans son territoire, infligeant des DGT Dendro de zone.\n\n",
+          "abilities": [],
+          "stats": [
+            "DGT explosifs|{param1}%",
+            "DGT bond|{param2}%",
+            "Durée|{param3} s",
+            "Temps de recharge|{param4} s",
+            "Énergie élémentaire|{param5}"
+          ]
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "Championne de planage de Sumeru",
+          "description": "Réduit la consommation d’endurance de vos personnages dans l’équipe de 20 % lors du planage.\nNe peut pas être cumulé avec d’autres aptitudes passives aux effets identiques.\n",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "Retour folié",
+          "description": "Si un membre de votre équipe déclenche une réaction de Brûlure, de Stimulation, de Suractivation, de Propagation, de Fleurissement, d’Exubérance ou de Bourgeonnement avant le retour de l’anneau floral , le personnage obtient l’effet Germe au retour de l’anneau, ce qui inflige de façon continue aux ennemis proches des DGT Dendro d’une valeur équivalant à 40 % de l’ATQ de Collei pendant 3 s.\nSi un nouvel effet Germe est déclenché pendant la durée d’un effet Germe existant, l’effet d’origine est supprimé. Les DGT infligés par l’effet Germe sont considérés comme étant des DGT de compétence élémentaire.\n",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "Bois de langueur",
+          "description": "Si un personnage dans le territoire de Cuilein-Anbar déclenche une réaction de Brûlure, de Stimulation, de Suractivation, de Propagation, de Fleurissement, d’Exubérance ou de Bourgeonnement, la durée du territoire est prolongée de 1 s.\nLors d’une même utilisation d’Atout félin, cette durée peut être prolongée un maximum de 3 fois de cette manière.\n",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "Patrouille sylvestre",
+          "description": "La recharge d’énergie de Collei augmente de 20 % lorsqu’elle fait partie de l’équipe mais n’est pas déployée.\n",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "À travers collines et bosquets",
+          "description": "L’aptitude passive « Retour folié » est modifiée :\n",
+          "descriptions": [
+            "Au retour de l’anneau floral, le personnage obtient l’effet Germe de l’aptitude passive « Retour folié », infligeant de façon continue aux ennemis proches des DGT Dendro d’une valeur équivalant à 40 % de l’ATQ de Collei pendant 3 s.",
+            "Si un membre de votre équipe déclenche une réaction de Brûlure, de Stimulation, de Suractivation, de Propagation, de Fleurissement, d’Exubérance ou de Bourgeonnement entre l’utilisation de Brosse florale et l’arrêt de cet effet Germe, la durée de l’effet est prolongée de 3 s.",
+            "L’effet peut être prolongé 1 fois maximum de cette manière. Si un nouvel effet Germe est déclenché pendant la durée d’un effet Germe existant, l’effet d’origine est supprimé. Les DGT infligés par l’effet Germe sont considérés comme étant des DGT de compétence élémentaire.",
+            "L’aptitude passive « Retour folié » doit être déjà débloquée."
+          ]
+        },
+        {
+          "key": "c3",
+          "title": "Fragrance estivale",
+          "description": "Niveau d’aptitude Brosse florale +3.\nNiveau max : 15\n",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "Don de la nature",
+          "description": "L’utilisation d’Atout félin augmente la maîtrise élémentaire de tous les personnages (hormis Collei) de l’équipe à proximité de 60 pts pendant 12 s.\n",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "Plénitude des braises",
+          "description": "Niveau d’aptitude Atout félin +3.\nNiveau max : 15\n",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "Bosquet de flèches",
+          "description": "Lorsque l’anneau floral touche, il crée un Cuilein-Anbar miniature qui inflige des DGT Dendro d’une valeur équivalant à 200 % de l’ATQ de Collei.\nChaque utilisation de Brosse florale permet de créer 1 Cuilein-Anbar miniature maximum.\n",
+          "descriptions": []
+        }
+      ]
+    },
+    {
+      "key": "cyno",
+      "name": "Cyno",
+      "title": "？？？",
+      "description": "？？？",
       "skills": [
         {
           "key": "s1",
@@ -1511,87 +1726,142 @@
     {
       "key": "dori",
       "name": "Dori",
-      "title": "???",
-      "description": "",
+      "title": "Trésor du jardin onirique",
+      "description": "Une marchande ambulante avec un penchant pour les moras scintillants.",
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Valse des lames (modifiée)",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Attaque normale",
+              "description": "Enchaîne jusqu’à 3 coups d’épée.\n",
+              "descriptions": []
+            },
+            {
+              "name": "Attaque chargée",
+              "description": "Exécute une succession d’attaques tournoyantes contre les ennemis proches ; cette attaque consomme de l’endurance de façon continue.\nL’attaque chargée se termine sur un coup puissant.\n",
+              "descriptions": []
+            },
+            {
+              "name": "Attaque plongeante",
+              "description": "Plonge depuis les airs pour frapper le sol, infligeant des DGT aux ennemis en chemin et des DGT de zone à l’impact.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "DGT 1er coup|{param1}%",
+            "DGT 2e coup|{param2}% + {param3}%",
+            "DGT 3e coup|{param4}%",
+            "DGT enchaînement attaque chargée|{param5}%",
+            "DGT coup final attaque chargée|{param6}%",
+            "Coût d’endurance attaque chargée|{param7} pts / s",
+            "Durée max|{param8} s",
+            "DGT durant la chute|{param9}%",
+            "DGT chute basse/élevée|{param10}% / {param11}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
+          "title": "Lampe de protection : Canon pacificateur",
+          "description": "Commande à une lampe de protection de déclencher un tir pacificateur sur les ennemis, infligeant des DGT Électro.\nÀ l’impact, le tir pacificateur crée 2 obus de S.A.V. qui poursuivent automatiquement les ennemis pour infliger des DGT Électro.\n\n",
           "abilities": [],
-          "stats": []
+          "stats": [
+            "DGT tir pacificateur|{param1}%",
+            "DGT obus de S.A.V.|{param2}%",
+            "Temps de recharge|{param3} s"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Méticulosité d’Alcazarzaray",
+          "description": "Invoque le djinn à l’intérieur de la lampe pour accorder au client divers types d’aide.\n\n",
+          "abilities": [
+            {
+              "name": "Djinn",
+              "description": "Relie un personnage proche, qui bénéficie alors des effets suivants :\n",
+              "descriptions": [
+                "Récupère des PV de façon continue selon les PV max de Dori.",
+                "Obtient continuellement de l’énergie élémentaire.",
+                "Est affecté par l’élément Électro.",
+                "Lorsque le lien entre le djinn et le personnage touche un ennemi, il lui inflige des DGT Électro une fois toutes les 0,4 s.",
+                "Il ne peut exister qu’un seul djinn à la fois."
+              ]
+            }
+          ],
+          "stats": [
+            "DGT lien|{param1}%",
+            "Soins continus|{param2}% PV max + {param3}",
+            "Restauration énergie élémentaire|{param4}",
+            "Durée|{param5} s",
+            "Temps de recharge|{param6} s",
+            "Énergie élémentaire|{param7}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "Commande inattendue",
+          "description": "Le personnage a 25 % de chance de récupérer des matériaux de synthèse lors de la synthèse de matériaux d’amélioration de personnage ou d’arme.\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
+          "title": "Un œil d’or",
+          "description": "Si le personnage relié au djinn a déclenché une réaction d’Électrocution, de Supraconduction, de Surcharge, de Stimulation, de Suractivation, d’Exubérance, de Dispersion Électro ou de Cristallisation Électro, le TdR de Lampe de protection : Canon pacificateur diminue de 1 s.\nCet effet peut être déclenché une fois toutes les 3 s.\n",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "NA",
-          "description": "",
+          "title": "Intérêts composés",
+          "description": "Si le tir pacificateur ou les obus de S.A.V. de Lampe de protection : Canon pacificateur touche un ennemi, Dori restaure 5 pts d’énergie élémentaire tous les 100 % de recharge d’énergie qu’elle possède.\nPour chaque utilisation de Lampe de protection : Canon pacificateur, l’énergie élémentaire peut être restaurée une fois et d’un maximum de 15 pts de cette manière.\n",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "Investissement supplémentaire",
+          "description": "Le nombre d’obus de S.A.V. créés après un tir pacificateur augmente de 1.\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "Franchise spéciale",
+          "description": "En combat, lorsque le djinn soigne le personnage auquel il est relié, un tir djinn est déclenché à l’emplacement du personnage, infligeant des DGT équivalant à 50 % de l’ATQ de Dori.\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "Merveilles sans fin",
+          "description": "Niveau d’aptitude Méticulosité d’Alcazarzaray +3.\nNiveau max : 15\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
+          "title": "Supplément discrétionnaire",
+          "description": "Le personnage relié au djinn obtient les bonus suivants selon ses PV et son énergie élémentaire:\n",
+          "descriptions": [
+            "Bonus de soins reçus de 50 % si les PV sont inférieurs à 50 %.",
+            "Recharge d’énergie augmentée de 30 % si l’énergie élémentaire est inférieure à 50 %."
+          ]
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "Rapport qualité-mora",
+          "description": "Niveau d’aptitude Lampe de protection : Canon pacificateur +3.\nNiveau max : 15\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
+          "title": "Poids léger",
+          "description": "Après avoir utilisé Lampe de protection : Canon pacificateur, Dori obtient les effets suivants pendant 3 s :\n",
+          "descriptions": [
+            "Enchantement Électro.",
+            "Si une attaque normale touche un ennemi, tous les personnages de l’équipe à proximité récupèrent des PV pour une valeur équivalant à 4 % des PV max de Dori. Les PV peuvent être restaurés une fois toutes les 0,1 s de cette manière."
+          ]
         }
       ]
     },
@@ -1748,7 +2018,7 @@
       "key": "fischl",
       "name": "Fischl",
       "title": "Princesse du châtiment !",
-      "description": "Une fille mystérieuse qui se fait appeler « la Princesse du châtiment ». Elle est toujours accompagnée de son fidèle corbeau, Oz.",
+      "description": "Une fille mystérieuse qui se fait appeler « la Princesse du châtiment ». Elle est toujours accompagnée de son fidèle corbeau nocturne, Oz.",
       "skills": [
         {
           "key": "s1",
@@ -1757,17 +2027,17 @@
           "abilities": [
             {
               "name": "Attaque normale",
-              "description": "Enchaîne jusqu'à 5 tirs consécutifs.\r\n",
+              "description": "Enchaîne jusqu’à 5 tirs consécutifs.\n",
               "descriptions": []
             },
             {
               "name": "Attaque chargée",
-              "description": "Effectue un tir visé plus précis et infligeant davantage de DGT.\r\nLors de la visée, les ténébreux esprits de la nuit convergent sur la flèche. Celle-ci se charge en élément Électro, infligeant de considérables DGT Électro quand elle est complètement chargée.\r\n",
+              "description": "Effectue un tir visé plus précis et infligeant davantage de DGT.\nLors de la visée, les ténébreux esprits de la nuit convergent sur la flèche. Celle-ci se charge en élément Électro, infligeant de considérables DGT Électro quand elle est complètement chargée.\n",
               "descriptions": []
             },
             {
               "name": "Attaque plongeante",
-              "description": "Tire une pluie de flèches depuis les airs et plonge au sol, infligeant des DGT de zone à l'impact.",
+              "description": "Tire une pluie de flèches depuis les airs et plonge au sol, infligeant des DGT de zone à l’impact.",
               "descriptions": []
             }
           ],
@@ -1786,41 +2056,43 @@
         {
           "key": "s2",
           "title": "Ailes de surveillance nocturne",
-          "description": "Fischl invoque son fidèle Oz à ses côtés. Le corbeau d'ombre et de tonnerre descend sur ce monde, infligeant des DGT Électro dans une petite zone lors de son invocation.\r\nOz tire de façon continue des balles électrifiées sur les ennemis proches tant qu'il est actif.\r\n",
+          "description": "Fischl invoque son fidèle Oz à ses côtés. Le corbeau d’ombre et de tonnerre descend sur ce monde, infligeant des DGT Électro dans une petite zone lors de son invocation.\nOz tire de façon continue des balles électrifiées sur les ennemis proches tant qu’il est actif.\n\n",
           "abilities": [
             {
               "name": "Appui long",
-              "description": "Ajuste la zone où la compétence sera lancée ; appuyez à nouveau lorsque Oz est actif pour le faire revenir.\r\n",
+              "description": "Ajuste la zone où la compétence sera lancée ; appuyez à nouveau lorsque Oz est actif pour le faire revenir.\n",
               "descriptions": []
             }
           ],
           "stats": [
-            "DGT d'Oz|{param1}%",
-            "DGT à l'invocation|{param2}%",
-            "Durée d'Oz|{param3}s",
-            "Temps de recharge|{param4}s"
+            "DGT d’Oz|{param1}%",
+            "DGT à l’invocation|{param2}%",
+            "Durée d’Oz|{param3} s",
+            "Temps de recharge|{param4} s"
           ]
         },
         {
           "key": "s3",
           "title": "Incarnation de la nuit",
-          "description": "Répondant à l'appel de Fischl, Oz vient protéger sa maîtresse de ses ailes tel un voile nocturne.\r\n",
+          "description": "Répondant à l’appel de Fischl, Oz vient protéger sa maîtresse de ses ailes tel un voile nocturne.\n",
           "abilities": [
             {
               "name": "",
-              "description": "Pendant la durée de la compétence :\r\n",
+              "description": "Pendant la durée de la compétence :\n",
               "descriptions": [
-                "Fischl prend la forme d'Oz, ce qui lui permet d'augmenter sa VIT de déplacement.",
-                "Les ennemis sur sa route sont frappés par la foudre et subissent des DGT Électro. Chaque ennemi ne peut être frappé qu'une fois.",
-                "Lorsque l'effet prend fin, Oz reste pour combattre les ennemis de sa maîtresse. Si Oz est déjà présent sur le terrain avant l'utilisation de cette compétence, son temps de présence sera remis à zéro.",
-                "Restaure une partie de l'énergie élémentaire de Fischl une fois terminé."
+                "Fischl prend la forme d’Oz, ce qui lui permet d’augmenter sa VIT de déplacement.",
+                "Les ennemis sur sa route sont frappés par la foudre et subissent des DGT Électro. Chaque ennemi ne peut être frappé qu’une fois.",
+                "Lorsque l’effet prend fin, Oz reste pour combattre les ennemis de sa maîtresse. Si Oz est déjà présent sur le terrain avant l’utilisation de cette compétence, son temps de présence sera remis à zéro.",
+                "Restaure une partie de l’énergie élémentaire de Fischl une fois terminé."
               ]
             }
           ],
           "stats": [
             "DGT foudre|{param1}%",
-            "Temps de recharge|{param2}s",
-            "Énergie élémentaire|{param3}"
+            "Temps de recharge|{param2} s",
+            "Énergie élémentaire|{param3}",
+            "Temps de recharge|{param4} s",
+            "Énergie élémentaire|{param5}"
           ]
         }
       ],
@@ -1828,19 +2100,19 @@
         {
           "key": "p1",
           "title": "Jardin secret",
-          "description": "Réduit la durée d'une expédition de 25 % lorsqu'elle se déroule à Mondstadt.\r\n",
+          "description": "Réduit la durée d’une expédition de 25 % lorsqu’elle se déroule à Mondstadt.\n",
           "descriptions": []
         },
         {
           "key": "p2",
           "title": "Corbeau maléfique",
-          "description": "Oz libère sur les ennemis proches la foudre du jugement lorsque Fischl le touche d'une flèche complètement chargée, leur infligeant des DGT Électro de zone équivalant à 152,7 % des DGT du tir.\r\n",
+          "description": "Oz libère sur les ennemis proches la foudre du jugement lorsque Fischl le touche d’une flèche complètement chargée, leur infligeant des DGT Électro de zone équivalant à 152,7 % des DGT du tir.\n",
           "descriptions": []
         },
         {
           "key": "p3",
           "title": "Foudre divine",
-          "description": "Lorsque votre personnage déployé déclenche une réaction liée à l'élément Électro en la présence d'Oz, l'ennemi est frappé par la foudre du jugement divin, et subit des DGT Électro équivalant à 80 % de l'ATQ de Fischl.\r\n",
+          "description": "Lorsque votre personnage déployé déclenche une réaction liée à l’élément Électro en la présence d’Oz, l’ennemi est frappé par la foudre du jugement divin, et subit des DGT Électro équivalant à 80 % de l’ATQ de Fischl.\n",
           "descriptions": []
         }
       ],
@@ -1848,37 +2120,37 @@
         {
           "key": "c1",
           "title": "Œil du corbeau obscur",
-          "description": "Oz garde toujours un œil de corbeau sur Fischl, même quand il ne l'accompagne pas au combat : les attaques normales de Fischl infligent un bonus de DGT équivalant à 22 % de l'ATQ.\r\n",
+          "description": "Oz garde toujours un œil de corbeau sur Fischl, même quand il ne l’accompagne pas au combat : les attaques normales de Fischl infligent un bonus de DGT équivalant à 22 % de l’ATQ.\n",
           "descriptions": []
         },
         {
           "key": "c2",
           "title": "Plume de jugement",
-          "description": "Ailes de surveillance nocturne inflige un bonus de DGT équivalant à 200 % de l'ATQ ; la zone d'effet augmente de 50 %.\r\n",
+          "description": "Ailes de surveillance nocturne inflige un bonus de DGT équivalant à 200 % de l’ATQ ; la zone d’effet augmente de 50 %.\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "Ailes noires de l'Abîme",
-          "description": "Niveau d'aptitude Ailes de surveillance nocturne +3.\r\nNiveau max : 15\r\n",
+          "title": "Ailes noires de l’Abîme",
+          "description": "Niveau d’aptitude Ailes de surveillance nocturne +3.\nNiveau max : 15\n",
           "descriptions": []
         },
         {
           "key": "c4",
           "title": "Les fantasmes de la princesse",
-          "description": "Incarnation de la nuit inflige un bonus de DGT Électro équivalant à 222 % de l'ATQ aux ennemis proches.\r\nFischl récupère 20 % de PV à la fin de la compétence.\r\n",
+          "description": "Incarnation de la nuit inflige un bonus de DGT Électro équivalant à 222 % de l’ATQ aux ennemis proches.\nFischl récupère 20 % de PV à la fin de la compétence.\n",
           "descriptions": []
         },
         {
           "key": "c5",
           "title": "Apocalypse de la nuit",
-          "description": "Niveau d'aptitude Incarnation de la nuit +3.\r\nNiveau max : 15\r\n",
+          "description": "Niveau d’aptitude Incarnation de la nuit +3.\nNiveau max : 15\n",
           "descriptions": []
         },
         {
           "key": "c6",
           "title": "Oiseau de la nuit éternelle",
-          "description": "Prolonge la durée d'Oz de 2 s. De plus, Oz attaque aux côtés de votre personnage déployé, infligeant des DGT Électro équivalant à 30 % de l'ATQ de Fischl.\r\n",
+          "description": "Prolonge la durée d’Oz de 2 s. De plus, Oz attaque aux côtés de votre personnage déployé, infligeant des DGT Électro équivalant à 30 % de l’ATQ de Fischl.\n",
           "descriptions": []
         }
       ]
@@ -2634,26 +2906,26 @@
       "key": "kaeya",
       "name": "Kaeya",
       "title": "Chevalier du froid",
-      "description": "Un épéiste accompli et un stratège de génie de l'Ordre de Favonius ; il est originaire, selon les rumeurs, d'une terre bien au-delà des frontières de Mondstadt.",
+      "description": "Un épéiste accompli et un stratège de génie de l’Ordre de Favonius ; il est originaire, selon les rumeurs, d’une terre bien au-delà des frontières de Mondstadt.",
       "skills": [
         {
           "key": "s1",
-          "title": "Passe d'armes",
+          "title": "Passe d’armes",
           "description": "",
           "abilities": [
             {
               "name": "Attaque normale",
-              "description": "Enchaîne jusqu'à 5 coups d'épée.\r\n",
+              "description": "Enchaîne jusqu’à 5 coups d’épée.\n",
               "descriptions": []
             },
             {
               "name": "Attaque chargée",
-              "description": "Consomme de l'endurance pour déclencher deux coups d'épée rapides.\r\n",
+              "description": "Consomme de l’endurance pour déclencher deux coups d’épée rapides.\n",
               "descriptions": []
             },
             {
               "name": "Attaque plongeante",
-              "description": "Plonge depuis les airs pour frapper le sol, infligeant des DGT aux ennemis en chemin et des DGT de zone à l'impact.",
+              "description": "Plonge depuis les airs pour frapper le sol, infligeant des DGT aux ennemis en chemin et des DGT de zone à l’impact.",
               "descriptions": []
             }
           ],
@@ -2664,7 +2936,7 @@
             "DGT 4e coup|{param4}%",
             "DGT 5e coup|{param5}%",
             "DGT attaque chargée|{param6}% + {param7}%",
-            "Coût d'endurance attaque chargée|{param8}",
+            "Coût d’endurance attaque chargée|{param8} pts",
             "DGT durant la chute|{param9}%",
             "DGT chute basse/élevée|{param10}% / {param11}%"
           ]
@@ -2672,23 +2944,24 @@
         {
           "key": "s2",
           "title": "Attaque givrée",
-          "description": "Libère un blizzard gelant qui inflige des DGT Cryo aux ennemis en face.\r\n",
+          "description": "Libère un blizzard gelant qui inflige des DGT Cryo aux ennemis en face.\n\n",
           "abilities": [],
           "stats": [
             "DGT compétence|{param1}%",
-            "Temps de recharge|{param2}s"
+            "Temps de recharge|{param2} s"
           ]
         },
         {
           "key": "s3",
           "title": "Valse glaciale",
-          "description": "Kaeya condense les particules dans l'air pour invoquer 3 stalactites tournoyantes.\r\nLes stalactites suivent le personnage, et infligent des DGT Cryo aux ennemis sur leur route.\r\n",
+          "description": "Kaeya condense les particules dans l’air pour invoquer 3 stalactites tournoyantes.\nLes stalactites suivent le personnage, et infligent des DGT Cryo aux ennemis sur leur route.\n\n",
           "abilities": [],
           "stats": [
             "DGT compétence|{param1}%",
-            "Temps de recharge|{param2}s",
-            "Durée|{param3}s",
-            "Énergie élémentaire|{param4}"
+            "Temps de recharge|{param2} s",
+            "Durée|{param3} s",
+            "Énergie élémentaire|{param4}",
+            "Énergie élémentaire|{param5}"
           ]
         }
       ],
@@ -2696,57 +2969,57 @@
         {
           "key": "p1",
           "title": "Force cachée",
-          "description": "Réduit la consommation d'endurance des personnages de l'équipe de 20 % lors du sprint.\r\nNe peut pas être cumulé avec d'autres aptitudes passives aux effets identiques.\r\n",
+          "description": "Réduit la consommation d’endurance des personnages de l’équipe de 20 % lors du sprint.\nNe peut pas être cumulé avec d’autres aptitudes passives aux effets identiques.\n",
           "descriptions": []
         },
         {
           "key": "p2",
           "title": "Épée de la cruauté",
-          "description": "Chaque fois qu'Attaque givrée touche un ennemi, Kaeya récupère une quantité de PV équivalant à 15 % de son ATQ.\r\n",
+          "description": "Chaque fois qu’Attaque givrée touche un ennemi, Kaeya récupère une quantité de PV équivalant à 15 % de son ATQ.\n",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "Cœur de l'Abîme glacial",
-          "description": "Les ennemis gelés par Attaque givrée font tomber davantage de particules élémentaires.\r\nJusqu'à 2 particules supplémentaires peuvent ainsi être obtenues par Attaque givrée.\r\n",
+          "title": "Cœur de l’Abîme glacial",
+          "description": "Les ennemis gelés par Attaque givrée font tomber davantage de particules élémentaires.\nJusqu’à 2 particules supplémentaires peuvent ainsi être obtenues par Attaque givrée.\n",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "Lignée de l'excellence",
-          "description": "Le taux CRIT des attaques normales et chargées de Kaeya contre les ennemis affectés par Cryo augmente de 15 %.\r\n",
+          "title": "Lignée de l’excellence",
+          "description": "Le taux CRIT des attaques normales et chargées de Kaeya contre les ennemis affectés par Cryo augmente de 15 %.\n",
           "descriptions": []
         },
         {
           "key": "c2",
           "title": "Danse givrée éternelle",
-          "description": "Chaque ennemi éliminé pendant la durée de Valse glaciale prolonge la durée de la compétence de 2,5 s. Cumul max : 15 s.\r\n",
+          "description": "Chaque ennemi éliminé pendant la durée de Valse glaciale prolonge la durée de la compétence de 2,5 s. Cumul max : 15 s.\n",
           "descriptions": []
         },
         {
           "key": "c3",
           "title": "Ébats glacials",
-          "description": "Niveau d'aptitude Attaque givrée +3.\r\nNiveau max : 15\r\n",
+          "description": "Niveau d’aptitude Attaque givrée +3.\nNiveau max : 15\n",
           "descriptions": []
         },
         {
           "key": "c4",
           "title": "Baiser glacé",
-          "description": "Kaeya génère un bouclier lorsque ses PV sont inférieurs à 20 %.\r\nLe bouclier absorbe une quantité de DGT équivalant à 30 % des PV max et dure 20 s.\r\nLe bouclier est efficace à 250 % contre les DGT Cryo.\r\nCet effet peut être déclenché une fois toutes les 60 s.\r\n",
+          "description": "Kaeya génère un bouclier lorsque ses PV sont inférieurs à 20 %.\nLe bouclier absorbe une quantité de DGT équivalant à 30 % des PV max et dure 20 s.\nLe bouclier est efficace à 250 % contre les DGT Cryo.\nCet effet peut être déclenché une fois toutes les 60 s.\n",
           "descriptions": []
         },
         {
           "key": "c5",
           "title": "Étreinte glaciale",
-          "description": "Niveau d'aptitude Valse glaciale +3.\r\nNiveau max : 15\r\n",
+          "description": "Niveau d’aptitude Valse glaciale +3.\nNiveau max : 15\n",
           "descriptions": []
         },
         {
           "key": "c6",
           "title": "Tourbillon glacial",
-          "description": "Génère une stalactite supplémentaire pendant Valse glaciale et restaure 15 pts d'énergie élémentaire.\r\n",
+          "description": "Génère une stalactite supplémentaire pendant Valse glaciale et restaure 15 pts d’énergie élémentaire.\n",
           "descriptions": []
         }
       ]
@@ -2909,26 +3182,26 @@
       "key": "kamisato-ayato",
       "name": "Kamisato Ayato",
       "title": "Pilier de vaillance",
-      "description": "Le jeune, mais néanmoins très talentueux, chef du Clan Kamisato de la Commission culturelle. Cultivé et poli, c'est un homme aux multiples facettes.",
+      "description": "Le jeune, mais néanmoins très talentueux, chef du Clan Kamisato de la Commission culturelle. Cultivé et poli, c’est un homme aux multiples facettes.",
       "skills": [
         {
           "key": "s1",
-          "title": "École Kamisato - Transition",
+          "title": "École Kamisato – Transition",
           "description": "",
           "abilities": [
             {
               "name": "Attaque normale",
-              "description": "Enchaîne jusqu'à 5 coups d'épée.\r\n",
+              "description": "Enchaîne jusqu’à 5 coups d’épée.\n",
               "descriptions": []
             },
             {
               "name": "Attaque chargée",
-              "description": "Consomme de l'endurance pour se propulser en avant et déclencher un iai.\r\n",
+              "description": "Consomme de l’endurance pour se propulser en avant et déclencher un iai.\n",
               "descriptions": []
             },
             {
               "name": "Attaque plongeante",
-              "description": "Plonge depuis les airs pour frapper le sol, infligeant des DGT aux ennemis en chemin et des DGT de zone à l'impact.",
+              "description": "Plonge depuis les airs pour frapper le sol, infligeant des DGT aux ennemis en chemin et des DGT de zone à l’impact.",
               "descriptions": []
             }
           ],
@@ -2936,10 +3209,10 @@
             "DGT 1er coup|{param1}%",
             "DGT 2e coup|{param2}%",
             "DGT 3e coup|{param3}%",
-            "DGT 4e coup|{param4}%×{param5}",
+            "DGT 4e coup|{param4}% ×{param5}",
             "DGT 5e coup|{param6}%",
             "DGT attaque chargée|{param7}%",
-            "Coût d'endurance attaque chargée|{param8}",
+            "Coût d’endurance attaque chargée|{param8} pts",
             "DGT durant la chute|{param9}%",
             "DGT chute basse/élevée|{param10}% / {param11}%"
           ]
@@ -2947,16 +3220,16 @@
         {
           "key": "s2",
           "title": "École Kamisato : Beauté réfléchie",
-          "description": "Kamisato Ayato change d'emplacement et entre dans un état de Réflexion torrentielle.\r\nAprès ce déplacement, il laisse une illusion aqueuse à son emplacement d'origine, qui, une fois complètement formée, explose après un certain temps ou si des ennemis sont à proximité, infligeant des DGT Hydro de zone.\r\n",
+          "description": "Kamisato Ayato change d’emplacement et entre dans un état de Réflexion torrentielle.\nAprès ce déplacement, il laisse une illusion aqueuse à son emplacement d’origine, qui, une fois complètement formée, explose après un certain temps ou si des ennemis sont à proximité, infligeant des DGT Hydro de zone.\n\n",
           "abilities": [
             {
               "name": "Réflexion torrentielle",
-              "description": "Dans cet état, Ayato utilise son Shunsuiken pour attaquer avec une rapidité aveuglante, convertissant les DGT infligés par ses attaques normales en DGT Hydro de zone ne pouvant pas être enchantés.\r\nLes propriétés suivantes sont également appliquées :\r\n",
+              "description": "Dans cet état, Ayato utilise son Shunsuiken pour attaquer avec une rapidité aveuglante, convertissant les DGT infligés par ses attaques normales en DGT Hydro de zone ne pouvant pas être enchantés.\nLes propriétés suivantes sont également appliquées :\n",
               "descriptions": [
-                "Après avoir touché un ennemi avec une attaque de Shunsuiken, Ayato obtient un effet de flash onduleux, augmentant les DGT infligés par son Shunsuiken en fonction de ses PV max actuels. Le flash onduleux peut être initialement cumulé 4 fois maximum, et 1 cumul peut être obtenu une fois toutes les 0,1 s grâce à une attaque de Shunsuiken. Cet effet prend fin quand l'état de Réflexion torrentielle se termine.",
-                "La RÉS à l'interruption d'Ayato augmente.",
-                "Il est impossible d'utiliser des attaques chargées ou plongeantes.",
-                "L'état de Réflexion torrentielle cesse lorsqu'Ayato quitte le champ de bataille. Utiliser à nouveau École Kamisato : Beauté réfléchie en état de Réflexion torrentielle y mettra fin."
+                "Après avoir touché un ennemi avec une attaque de Shunsuiken, Ayato obtient un effet de Flash onduleux, augmentant les DGT infligés par son Shunsuiken en fonction de ses PV max actuels. Le Flash onduleux peut être initialement cumulé 4 fois maximum, et 1 cumul peut être obtenu une fois toutes les 0,1 s grâce à une attaque de Shunsuiken. Cet effet prend fin quand l’état de Réflexion torrentielle se termine.",
+                "La RÉS à l’interruption d’Ayato augmente.",
+                "Il est impossible d’utiliser des attaques chargées ou plongeantes.",
+                "L’état de Réflexion torrentielle cesse lorsqu’Ayato quitte le champ de bataille. Utiliser à nouveau École Kamisato : Beauté réfléchie en état de Réflexion torrentielle y mettra fin."
               ]
             }
           ],
@@ -2964,23 +3237,25 @@
             "DGT 1er coup de Shunsuiken|{param1}%",
             "DGT 2e coup de Shunsuiken|{param2}%",
             "DGT 3e coup de Shunsuiken|{param3}%",
-            "Durée Réflexion torrentielle|{param4}s",
-            "Bonus de DGT de flash onduleux|{param5}%Max HP / Stack",
+            "Durée Réflexion torrentielle|{param4} s",
+            "Bonus de DGT de flash onduleux|{param5}% PV max / cumul",
             "DGT illusion aqueuse|{param6}%",
-            "Durée illusion aqueuse|{param7}s",
-            "Temps de recharge|{param8}s"
+            "Durée illusion aqueuse|{param7} s",
+            "Temps de recharge|{param8} s",
+            "Intervalle de déclenchement minimum|{param9} s",
+            "Temps de recharge|{param10} s"
           ]
         },
         {
           "key": "s3",
-          "title": "École Kamisato : Jardin d'eau",
-          "description": "Dévoile un jardin de pureté qui étouffe toute cacophonie en son sein.\r\nTant que cet espace existe, des lames de rosée pleuvent de façon continue pour attaquer les adversaires dans la zone, leur infligeant des DGT Hydro et augmentant les DGT des attaques normales des personnages à l'intérieur.\r\n",
+          "title": "École Kamisato : Jardin d’eau",
+          "description": "Dévoile un jardin de pureté qui étouffe toute cacophonie en son sein.\nTant que cet espace existe, des lames de rosée pleuvent de façon continue pour attaquer les adversaires dans la zone, leur infligeant des DGT Hydro et augmentant les DGT des attaques normales des personnages à l’intérieur.\n\n",
           "abilities": [],
           "stats": [
             "DGT lame de rosée|{param1}%",
             "Bonus ATQ normale|{param2}%",
-            "Durée|{param3}s",
-            "Temps de recharge|{param4}s",
+            "Durée|{param3} s",
+            "Temps de recharge|{param4} s",
             "Énergie élémentaire|{param5}"
           ]
         }
@@ -2989,22 +3264,22 @@
         {
           "key": "p1",
           "title": "École Kamisato : Cuisine du jour",
-          "description": "18 % de chances d'obtenir un plat suspect supplémentaire du même type lorsque vous cuisinez un plat parfait.\r\n",
+          "description": "18 % de chances d’obtenir un plat suspect supplémentaire du même type lorsque vous cuisinez un plat parfait.\n",
           "descriptions": []
         },
         {
           "key": "p2",
           "title": "École Kamisato : Clarté de bruine",
-          "description": "École Kamisato : Beauté réfléchie obtient les propriétés suivantes :\r\n",
+          "description": "École Kamisato : Beauté réfléchie obtient les propriétés suivantes :\n",
           "descriptions": [
-            "2 cumuls de flash onduleux sont accordés lors de l'utilisation.",
-            "Quand une illusion aqueuse explose, Ayato obtient un effet de flash onduleux équivalant au nombre maximum de cumuls possibles."
+            "2 cumuls de flash onduleux sont accordés lors de l’utilisation.",
+            "Quand une illusion aqueuse explose, Ayato obtient un effet de Flash onduleux équivalant au nombre maximum de cumuls possibles."
           ]
         },
         {
           "key": "p3",
           "title": "École Kamisato : Avènement de la pleine lune",
-          "description": "Lorsque Kamisato Ayato fait partie de l'équipe mais n'est pas déployé, et s'il possède moins de 40 pts d'énergie élémentaire, il en récupère 2 pts toutes les secondes.\r\n",
+          "description": "Lorsque Kamisato Ayato fait partie de l’équipe mais n’est pas déployé, et s’il possède moins de 40 pts d’énergie élémentaire, il en récupère 2 pts toutes les secondes.\n",
           "descriptions": []
         }
       ],
@@ -3012,37 +3287,37 @@
         {
           "key": "c1",
           "title": "Reflet gracieux",
-          "description": "Les DGT infligés par une attaque de Shunsuiken augmentent de 40 % contre les ennemis dont les PV sont inférieurs ou égaux à 50 %.\r\n",
+          "description": "Les DGT infligés par une attaque de Shunsuiken augmentent de 40 % contre les ennemis dont les PV sont inférieurs ou égaux à 50 %.\n",
           "descriptions": []
         },
         {
           "key": "c2",
           "title": "Source du monde",
-          "description": "Le flash onduleux peut maintenant être cumulé 5 fois maximum. Lorsqu'Ayato possède au moins 3 cumuls de flash onduleux, ses PV max augmentent de 50 %.\r\n",
+          "description": "Le flash onduleux peut maintenant être cumulé 5 fois maximum. Lorsqu’Ayato possède au moins 3 cumuls de flash onduleux, ses PV max augmentent de 50 %.\n",
           "descriptions": []
         },
         {
           "key": "c3",
           "title": "Contemplation des fleurs",
-          "description": "Niveau de compétence École Kamisato : Beauté réfléchie +3.\r\nNiveau max : 15\r\n",
+          "description": "Niveau de compétence École Kamisato : Beauté réfléchie +3.\nNiveau max : 15\n",
           "descriptions": []
         },
         {
           "key": "c4",
           "title": "Flux ininterrompu",
-          "description": "Après avoir utilisé École Kamisato : Jardin d'eau, la VIT d'attaque des attaques normales des personnages de l'équipe à proximité augmentent de 15 % pendant 15 s.\r\n",
+          "description": "Après avoir utilisé École Kamisato : Jardin d’eau, la VIT d’attaque des attaques normales des personnages de l’équipe à proximité augmente de 15 % pendant 15 s.\n",
           "descriptions": []
         },
         {
           "key": "c5",
           "title": "Rosée de mille gouttes",
-          "description": "Niveau de compétence École Kamisato : Jardin d'eau +3.\r\nNiveau max : 15\r\n",
+          "description": "Niveau de compétence École Kamisato : Jardin d’eau +3.\nNiveau max : 15\n",
           "descriptions": []
         },
         {
           "key": "c6",
           "title": "Origine illimitée",
-          "description": "Après avoir utilisé École Kamisato : Beauté réfléchie, la prochaine attaque de Shunsuiken d'Ayato déclenchent 2 attaques supplémentaires de Shunsuiken en touchant un ennemi, chaque attaque supplémentaire infligeant des DGT d'une valeur équivalant à 450 % de l'ATQ d'Ayato.\r\nCes deux attaques supplémentaires ne seront pas affectées par l'effet de flash onduleux.\r\n",
+          "description": "Après avoir utilisé École Kamisato : Beauté réfléchie, la prochaine attaque de Shunsuiken d’Ayato déclenche 2 attaques supplémentaires de Shunsuiken en touchant un ennemi, chaque attaque supplémentaire infligeant des DGT d’une valeur équivalant à 450 % de l’ATQ d’Ayato.\nCes deux attaques supplémentaires ne seront pas affectées par l’effet Flash onduleux.\n",
           "descriptions": []
         }
       ]
@@ -3874,10 +4149,97 @@
       ]
     },
     {
+      "key": "nilou",
+      "name": "Nilou",
+      "title": "？？？",
+      "description": "？？？",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ]
+    },
+    {
       "key": "ningguang",
       "name": "Ningguang",
-      "title": "Megrez de l'éclipse",
-      "description": "La Megrez des Sept Étoiles de Liyue. Peu de personnes peuvent se vanter d'être aussi riches à travers Teyvat.",
+      "title": "Megrez de l’éclipse",
+      "description": "La Megrez des Sept Étoiles de Liyue. Peu de personnes peuvent se vanter d’être aussi riches à travers Teyvat.",
       "skills": [
         {
           "key": "s1",
@@ -3886,58 +4248,59 @@
           "abilities": [
             {
               "name": "Attaque normale",
-              "description": "Tire des gemmes qui infligent des DGT Géo.\r\nNingguang obtient un Jade d'étoile à chaque fois qu'une gemme touche un ennemi.\r\n",
+              "description": "Tire des gemmes qui infligent des DGT Géo.\nNingguang obtient un Jade d’étoile à chaque fois qu’une gemme touche un ennemi.\n",
               "descriptions": []
             },
             {
               "name": "Attaque chargée",
-              "description": "Tire une gemme géante qui inflige des DGT Géo.\r\nSi Ningguang a obtenu des Jades d'étoile, l'attaque chargée les tire tous au même moment, infligeant des DGT supplémentaires.\r\n",
+              "description": "Tire une gemme géante qui inflige des DGT Géo.\nSi Ningguang a obtenu des Jades d’étoile, l’attaque chargée les tire tous au même moment, infligeant des DGT supplémentaires.\n",
               "descriptions": []
             },
             {
               "name": "Attaque plongeante",
-              "description": "Plonge depuis les airs en concentrant ses pouvoirs Géo, infligeant des DGT aux ennemis en chemin et des DGT Géo de zone à l'impact.",
+              "description": "Plonge depuis les airs en concentrant ses pouvoirs Géo, infligeant des DGT aux ennemis en chemin et des DGT Géo de zone à l’impact.",
               "descriptions": []
             }
           ],
           "stats": [
             "DGT attaque normale|{param1}%",
             "DGT attaque chargée|{param2}%",
-            "DGT par Jade d'étoile|{param3}%",
-            "Coût d'endurance attaque chargée|{param4}",
+            "DGT par Jade d’étoile|{param3}%",
+            "Coût d’endurance attaque chargée|{param4} pts",
             "DGT durant la chute|{param5}%",
             "DGT chute basse/élevée|{param6}% / {param7}%"
           ]
         },
         {
           "key": "s2",
-          "title": "Paravent d'astrolabe",
-          "description": "Ningguang puise dans son opulence pour créer un paravent d'or et d'obsidienne infligeant des DGT Géo de zone.\r\n",
+          "title": "Paravent d’astrolabe",
+          "description": "Ningguang puise dans son opulence pour créer un paravent d’or et d’obsidienne infligeant des DGT Géo de zone.\n\n",
           "abilities": [
             {
-              "name": "Paravent d'astrolabe",
+              "name": "Paravent d’astrolabe",
               "description": "",
               "descriptions": [
                 "Bloque les projectiles ennemis.",
                 "Les PV du paravent sont proportionnels aux PV max de Ningguang.",
-                "Le paravent d'astrolabe est une construction Géo qui peut bloquer certaines attaques mais ne peut pas être escaladée. Il ne peut exister qu'un seul paravent à la fois."
+                "Le paravent d’astrolabe est une construction Géo qui peut bloquer certaines attaques mais ne peut pas être escaladée. Il ne peut exister qu’un seul paravent à la fois."
               ]
             }
           ],
           "stats": [
             "PV hérités|{param1}%",
             "DGT compétence|{param2}%",
-            "Temps de recharge|{param3}s"
+            "Temps de recharge|{param3} s",
+            "Temps de recharge|{param4} s"
           ]
         },
         {
           "key": "s3",
           "title": "Éclatement des étoiles",
-          "description": "Ningguang fait tournoyer plusieurs jades précieux à tête chercheuse autour d'elle, qu'elle relâche tous en même temps, infligeant ainsi d'importants DGT Géo.\r\nSi le paravent d'astrolabe est actif lorsque cette attaque est exécutée, il l'accompagne de tirs de jade supplémentaires.\r\n",
+          "description": "Ningguang fait tournoyer plusieurs jades précieux à tête chercheuse autour d’elle, qu’elle relâche tous en même temps, infligeant ainsi d’importants DGT Géo.\nSi le paravent d’astrolabe est actif lorsque cette attaque est exécutée, il l’accompagne de tirs de jade supplémentaires.\n\n",
           "abilities": [],
           "stats": [
             "DGT par gemme|{param1}%",
-            "Temps de recharge|{param2}s",
+            "Temps de recharge|{param2} s",
             "Énergie élémentaire|{param3}"
           ]
         }
@@ -3945,20 +4308,20 @@
       "passives": [
         {
           "key": "p1",
-          "title": "Corne d'abondance",
-          "description": "Affiche la localisation des filons de minerai utilisables en forge proches sur la carte.\r\n",
+          "title": "Corne d’abondance",
+          "description": "Affiche la localisation des filons de minerai utilisables en forge proches sur la carte.\n",
           "descriptions": []
         },
         {
           "key": "p2",
           "title": "Plan de reprise",
-          "description": "L'attaque chargée de Ningguang ne consomme pas d'endurance tant que celle-ci possède des Jades d'étoile.\r\n",
+          "description": "L’attaque chargée de Ningguang ne consomme pas d’endurance tant que celle-ci possède des Jades d’étoile.\n",
           "descriptions": []
         },
         {
           "key": "p3",
           "title": "Réserve stratégique",
-          "description": "Confère pendant 10 s un bonus de DGT Géo de 12 % aux personnages qui traversent le Paravent d'astrolabe.\r\n",
+          "description": "Confère pendant 10 s un bonus de DGT Géo de 12 % aux personnages qui traversent le Paravent d’astrolabe.\n",
           "descriptions": []
         }
       ],
@@ -3966,37 +4329,37 @@
         {
           "key": "c1",
           "title": "Fragments perforants",
-          "description": "Les attaques normales qui touchent infligent des DGT de zone.\r\n",
+          "description": "Les attaques normales qui touchent infligent des DGT de zone.\n",
           "descriptions": []
         },
         {
           "key": "c2",
           "title": "Effet de choc",
-          "description": "Le TdR de Paravent d'astrolabe est annulé lorsque ce dernier est brisé.\r\nCet effet peut être déclenché une fois toutes les 6 s.\r\n",
+          "description": "Le TdR de Paravent d’astrolabe est annulé lorsque ce dernier est brisé.\nCet effet peut être déclenché une fois toutes les 6 s.\n",
           "descriptions": []
         },
         {
           "key": "c3",
           "title": "Alignement des étoiles",
-          "description": "Niveau d'aptitude Éclatement des étoiles +3.\r\nNiveau max : 15\r\n",
+          "description": "Niveau d’aptitude Éclatement des étoiles +3.\nNiveau max : 15\n",
           "descriptions": []
         },
         {
           "key": "c4",
           "title": "Exquis soit le Jade, éclatant de toutes parts",
-          "description": "Paravent d'astrolabe augmente les RÉS élémentaires des personnages à proximité de 10 %.\r\n",
+          "description": "Paravent d’astrolabe augmente les RÉS élémentaires des personnages à proximité de 10 %.\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "Invincible soit le Paravent d'astrolabe",
-          "description": "Niveau d'aptitude Paravent d'astrolabe +3.\r\nNiveau max : 15\r\n",
+          "title": "Invincible soit le Paravent d’astrolabe",
+          "description": "Niveau d’aptitude Paravent d’astrolabe +3.\nNiveau max : 15\n",
           "descriptions": []
         },
         {
           "key": "c6",
           "title": "Grandeur soit les Sept Étoiles",
-          "description": "L'activation d'Éclatement des étoiles confère 7 Jades d'étoile à Ningguang.\r\n",
+          "description": "L’activation d’Éclatement des étoiles confère 7 Jades d’étoile à Ningguang.\n",
           "descriptions": []
         }
       ]
@@ -4005,26 +4368,26 @@
       "key": "noelle",
       "name": "Noëlle",
       "title": "Fleur chevaleresque",
-      "description": "Une jeune fille travaillant comme servante à l'Ordre de Favonius. Elle a toujours rêvé de devenir un jour chevalier.",
+      "description": "Une jeune fille travaillant comme servante à l’Ordre de Favonius. Elle a toujours rêvé de devenir un jour chevalier.",
       "skills": [
         {
           "key": "s1",
-          "title": "Escrime de Favonius - Servante",
+          "title": "Escrime de Favonius – Servante",
           "description": "",
           "abilities": [
             {
               "name": "Attaque normale",
-              "description": "Enchaîne jusqu'à 4 coups d'épée.\r\n",
+              "description": "Enchaîne jusqu’à 4 coups d’épée.\n",
               "descriptions": []
             },
             {
               "name": "Attaque chargée",
-              "description": "Exécute une succession d'attaques tournoyantes contre les ennemis proches ; cette attaque consomme de l'endurance de façon continue.\r\nL'attaque chargée se termine sur un coup puissant.\r\n",
+              "description": "Exécute une succession d’attaques tournoyantes contre les ennemis proches ; cette attaque consomme de l’endurance de façon continue.\nL’attaque chargée se termine sur un coup puissant.\n",
               "descriptions": []
             },
             {
               "name": "Attaque plongeante",
-              "description": "Plonge depuis les airs pour frapper le sol, infligeant des DGT aux ennemis en chemin et des DGT de zone à l'impact.",
+              "description": "Plonge depuis les airs pour frapper le sol, infligeant des DGT aux ennemis en chemin et des DGT de zone à l’impact.",
               "descriptions": []
             }
           ],
@@ -4035,8 +4398,8 @@
             "DGT 4e coup|{param4}%",
             "DGT enchaînement attaque chargée|{param5}%",
             "DGT coup final attaque chargée|{param6}%",
-            "Coût d'endurance attaque chargée|{param7}/s",
-            "Durée max|{param8}s",
+            "Coût d’endurance attaque chargée|{param7} pts / s",
+            "Durée max|{param8} s",
             "DGT durant la chute|{param9}%",
             "DGT chute basse/élevée|{param10}% / {param11}%"
           ]
@@ -4044,48 +4407,49 @@
         {
           "key": "s2",
           "title": "Armure de cœur",
-          "description": "Invoque une armure de roche qui inflige des DGT Géo aux ennemis proches et génère un bouclier absorbant une quantité de DGT proportionnelle à la DÉF de Noëlle.\r\n",
+          "description": "Invoque une armure de roche qui inflige des DGT Géo aux ennemis proches et génère un bouclier absorbant une quantité de DGT proportionnelle à la DÉF de Noëlle.\n",
           "abilities": [
             {
               "name": "",
-              "description": "L'armure de roche a les propriétés suivantes :\r\n",
+              "description": "L’armure de roche a les propriétés suivantes :\n",
               "descriptions": [
-                "Les attaques normales et chargées de Noëlle ont une chance de restaurer les PV de tous les personnages de l'équipe lorsqu'elles touchent un ennemi.",
-                "L'armure est efficace à 150 % contre les DGT élémentaires et physiques.",
+                "Les attaques normales et chargées de Noëlle ont une chance de restaurer les PV de tous les personnages de l’équipe lorsqu’elles touchent un ennemi.",
+                "L’armure est efficace à 150 % contre les DGT élémentaires et physiques.",
                 "Les soins reçus sont proportionnels à la DÉF de Noëlle."
               ]
             }
           ],
           "stats": [
-            "DGT compétence|{param1}% DEF",
-            "PV du bouclier|{param2}% DEF + {param3}",
-            "Soins|{param4}% DEF + {param5}",
+            "DGT compétence|{param1}% DÉF",
+            "PV du bouclier|{param2}% DÉF + {param3} PV",
+            "Soins|{param4}% DÉF + {param5} PV",
             "Chance de soins|{param6}%",
-            "Durée|{param7}s",
-            "Temps de recharge|{param8}s"
+            "Durée|{param7} s",
+            "Temps de recharge|{param8} s",
+            "Temps de recharge|{param9} s"
           ]
         },
         {
           "key": "s3",
           "title": "Grand ménage",
-          "description": "Concentrant le pouvoir de la roche sur son arme, Noëlle exécute une puissante attaque circulaire qui inflige des DGT Géo aux ennemis proches.\r\n",
+          "description": "Concentrant le pouvoir de la roche sur son arme, Noëlle exécute une puissante attaque circulaire qui inflige des DGT Géo aux ennemis proches.\n",
           "abilities": [
             {
               "name": "",
-              "description": "Noëlle bénéficie ensuite des effets suivants :\r\n",
+              "description": "Noëlle bénéficie ensuite des effets suivants :\n",
               "descriptions": [
-                "Portée d'attaque augmentée.",
-                "DGT d'attaque convertis en DGT Géo ne pouvant pas être enchantés.",
-                "Bonus d'ATQ proportionnel à la DÉF de Noëlle."
+                "Portée d’attaque augmentée.",
+                "DGT d’attaque convertis en DGT Géo ne pouvant pas être enchantés.",
+                "Bonus d’ATQ proportionnel à la DÉF de Noëlle."
               ]
             }
           ],
           "stats": [
             "DGT|{param1}%",
             "DGT compétence|{param2}%",
-            "Bonus ATQ|{param3}% DEF",
-            "Durée|{param4}s",
-            "Temps de recharge|{param5}s",
+            "Bonus ATQ|{param3}% DÉF",
+            "Durée|{param4} s",
+            "Temps de recharge|{param5} s",
             "Énergie élémentaire|{param6}"
           ]
         }
@@ -4094,13 +4458,13 @@
         {
           "key": "p1",
           "title": "À votre service",
-          "description": "12 % de chances d'obtenir un plat supplémentaire lorsque vous cuisinez un plat parfait qui renforce la DÉF.\r\n",
+          "description": "12 % de chances d’obtenir un plat supplémentaire lorsque vous cuisinez un plat parfait qui renforce la DÉF.\n",
           "descriptions": []
         },
         {
           "key": "p2",
           "title": "Dévotion ultime",
-          "description": "Lorsque Noëlle fait partie de l'équipe et n'est pas déployée, l'effet suivant se déclenche automatiquement si les PV du personnage déployé tombent en dessous de 30 % :\r\n",
+          "description": "Lorsque Noëlle fait partie de l’équipe et n’est pas déployée, l’effet suivant se déclenche automatiquement si les PV du personnage déployé sont inférieurs à 30 % :\n",
           "descriptions": [
             "Confère un bouclier au personnage déployé pouvant absorber des DGT équivalant à 400 % de la DÉF de Noëlle pendant 20 s.",
             "Le bouclier est efficace à 150 % contre les DGT élémentaires et les DGT physiques.",
@@ -4110,45 +4474,45 @@
         {
           "key": "p3",
           "title": "Clair et net",
-          "description": "Noëlle diminue le TdR d'Armure de cœur de 1 s tous les 4 coups d'attaque normale ou chargée qu'elle inflige à un ennemi.\r\nUn coup peut être compté toutes les 0,1 s.\r\n",
+          "description": "Noëlle réduit le TdR d’Armure de cœur de 1 s tous les 4 coups d’attaque normale ou chargée qu’elle inflige à un ennemi.\nUn coup peut être compté toutes les 0,1 s.\n",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "J'assure vos arrières",
-          "description": "L'effet de restauration des PV d'Armure de cœur a 100 % de chances d'être déclenché lorsque Grand ménage et Armure de cœur sont actifs en même temps.\r\n",
+          "title": "J’assure vos arrières",
+          "description": "L’effet de restauration des PV d’Armure de cœur a 100 % de chances d’être déclenché lorsque Grand ménage et Armure de cœur sont actifs en même temps.\n",
           "descriptions": []
         },
         {
           "key": "c2",
           "title": "Servante de tourbillon",
-          "description": "Les attaques chargées de Noëlle consomment 20 % d'endurance en moins et infligent 15 % de DGT supplémentaires.\r\n",
+          "description": "Les attaques chargées de Noëlle consomment 20 % d’endurance en moins et infligent 15 % de DGT supplémentaires.\n",
           "descriptions": []
         },
         {
           "key": "c3",
           "title": "La servante ne sera jamais blessée",
-          "description": "Niveau d'aptitude Armure de cœur +3.\r\nNiveau max : 15\r\n",
+          "description": "Niveau d’aptitude Armure de cœur +3.\nNiveau max : 15\n",
           "descriptions": []
         },
         {
           "key": "c4",
           "title": "Je vais nettoyer après",
-          "description": "Armure de cœur inflige une quantité de DGT Géo équivalant à 400 % de l'ATQ aux ennemis proches lorsqu'elle prend fin ou que l'armure est détruite.\r\n",
+          "description": "Armure de cœur inflige une quantité de DGT Géo équivalant à 400 % de l’ATQ aux ennemis proches lorsqu’elle prend fin ou que l’armure est détruite.\n",
           "descriptions": []
         },
         {
           "key": "c5",
           "title": "Maîtresse de ménage",
-          "description": "Niveau d'aptitude Grand ménage +3.\r\nNiveau max : 15\r\n",
+          "description": "Niveau d’aptitude Grand ménage +3.\nNiveau max : 15\n",
           "descriptions": []
         },
         {
           "key": "c6",
           "title": "Aucune poussière",
-          "description": "Grand ménage fait bénéficier Noëlle d'un bonus supplémentaire d'ATQ à hauteur de 50 % de sa DÉF.\r\nDe plus, chaque ennemi vaincu pendant que la compétence est active prolonge sa durée d'1 s (10 s max).\r\n",
+          "description": "Grand ménage fait bénéficier Noëlle d’un bonus supplémentaire d’ATQ à hauteur de 50 % de sa DÉF.\nDe plus, chaque ennemi vaincu pendant que la compétence est active prolonge sa durée de 1 s (10 s max).\n",
           "descriptions": []
         }
       ]
@@ -5805,86 +6169,126 @@
     {
       "key": "tighnari",
       "name": "Tighnari",
-      "title": "???",
-      "description": "",
+      "title": "Marcheur verdoyant",
+      "description": "Un jeune chercheur doué en botanique qui sert actuellement de brigadier forestier dans la Forêt d’Avidya. Il est franc et chaleureux, et on le qualifie de main habile pouvant guider même les élèves les plus ternes.",
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Khanda anti-barrière",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Attaque normale",
+              "description": "Enchaîne jusqu’à 4 tirs consécutifs.\n",
+              "descriptions": []
+            },
+            {
+              "name": "Attaque chargée",
+              "description": "Effectue un tir visé plus précis et infligeant davantage de DGT.\nLors du tir visé, la puissance de la nature vient se concentrer sur la pointe de la flèche. Les effets varient selon le nombre de charges :\n",
+              "descriptions": [
+                "1 charge : Tire une flèche écologique qui inflige des DGT Dendro.",
+                "2 charges : Tire une flèche florale qui inflige des DGT Dendro. En touchant, elle génère 4 flèches fleuronnées qui poursuivent automatiquement les ennemis pour infliger des DGT Dendro."
+              ]
+            },
+            {
+              "name": "Attaque plongeante",
+              "description": "Tire une pluie de flèches depuis les airs et plonge au sol, infligeant des DGT de zone à l’impact.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "DGT 1er coup|{param1}%",
+            "DGT 2e coup|{param2}%",
+            "DGT 3e coup|{param3}% ×{param4}",
+            "DGT 4e coup|{param5}%",
+            "DGT tir visé|{param6}%",
+            "DGT tir visé (1 charge)|{param7}%",
+            "DGT flèche florale|{param8}%",
+            "DGT flèche fleuronnée|{param9}%",
+            "DGT durant la chute|{param10}%",
+            "DGT chute basse/élevée|{param11}% / {param12}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
+          "title": "Mine de vijnana-phala",
+          "description": "Tighnari lance un éclœur de vijnana en avant, infligeant des DGT Dendro de zone et créant un champ de vijnana-khanda qui crée des illusions mystérieuses qui narguent les ennemis et attirent leurs attaques.\nDe plus, Tighnari gagne l’effet Suffusion de vijnana, qui diminue le temps de charge des flèches florales de 2,4 s. Cet effet se dissipe une fois la durée terminée ou si Tighnari a tiré 3 flèches florales.\n\n",
           "abilities": [],
-          "stats": []
+          "stats": [
+            "DGT compétence|{param1}%",
+            "Durée de champ de vijnana-khanda|{param2} s",
+            "Durée de suffusion de vijnana|{param3} s",
+            "Temps de recharge|{param4} s"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
+          "title": "Flèche de liane artificielle",
+          "description": "Concentre la puissance de toutes les graines pour tirer 6 flèches de liane qui poursuivent les ennemis pour infliger des DGT Dendro.\nEn touchant, les flèches de liane génèrent une seconde vague de flèches de liane qui poursuivent également les ennemis proches pour infliger des DGT Dendro en touchant.\n\n",
           "abilities": [],
-          "stats": []
+          "stats": [
+            "DGT flèche de liane|{param1}%",
+            "DGT flèche de liane (2e vague)|{param2}%",
+            "Temps de recharge|{param3} s",
+            "Énergie élémentaire|{param4}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "Connaissance encyclopédique",
+          "description": "Affiche l’emplacement des produits de Sumeru sur la mini-carte.\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
+          "title": "Vue aiguë",
+          "description": "Lorsque Tighnari a tiré une flèche florale, sa maîtrise élémentaire augmente de 50 pts pendant 4 s.\n",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "NA",
-          "description": "",
+          "title": "Lame d’érudition",
+          "description": "Chaque point de maîtrise élémentaire que Tighnari possède augmente les DGT infligés par ses attaques chargées et par Flèche de liane artificielle de 0,06 %.\nCes DGT peuvent être augmentés d’un maximum de 60 % de cette manière.\n",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "Début déterminé à la racine",
+          "description": "Le taux CRIT des attaques chargées de Tighnari augmente de 15 %.\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "Origine connue dans la tige",
+          "description": "Lorsqu’un ennemi est dans le champ de vijnana-khanda créé par Mine de vijnana-phala, Tighnari obtient un bonus de DGT Dendro de 20 %.\nCet effet dure 6 s si la durée du champ de vijnana-khanda se termine ou s’il n’y a plus d’ennemis à l’intérieur.\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "Destin lu parmi les branches",
+          "description": "Niveau d’aptitude Flèche de liane artificielle +3.\nNiveau max : 15\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "Flétrissement entrevu grâce aux feuilles",
+          "description": "Lorsque Flèche de liane artificielle est utilisée, la maîtrise élémentaire de tous les personnages de l’équipe à proximité augmente de 60 pts pendant 8 s. Si Flèche de liane artificielle déclenche une réaction de Brûlure, de Fleurissement, de Stimulation ou de Propagation, la maîtrise élémentaire augmente de 60 pts supplémentaires et la durée de l’effet est réinitialisée.\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "Compréhension au milieu des fleurs",
+          "description": "Niveau d’aptitude Mine de vijnana-phala +3.\nNiveau max : 15\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
+          "title": "Karma jugé par les fruits",
+          "description": "Le temps de charge des flèches florales diminue de 0,9 s et 1 flèche fleuronnée supplémentaire est créée en touchant un ennemi, pouvant infliger des DGT équivalant à 150 % de l’ATQ de Tighnari.\n",
           "descriptions": []
         }
       ]
@@ -6022,6 +6426,134 @@
           "key": "c6",
           "title": "Vents enlacés",
           "description": "La RÉS Anémo des ennemis touchés par Rafale de vent est réduite de 20 %.\r\nEn cas d'absorption élémentaire, leur RÉS à l'élément correspondant est également réduite de 20 %.\r\n",
+          "descriptions": []
+        }
+      ]
+    },
+    {
+      "key": "traveler-dendro",
+      "name": "Voyageur (Dendro)",
+      "title": null,
+      "description": "Un voyageur venant d'un autre monde qui a été séparé de sa sœur. Il débute son périple à la recherche des Sept Archons de Teyvat dans l'espoir de la retrouver.",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "Fendoir exotique",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Attaque normale",
+              "description": "Enchaîne jusqu’à 5 coups d’épée.\n",
+              "descriptions": []
+            },
+            {
+              "name": "Attaque chargée",
+              "description": "Consomme de l’endurance pour déclencher deux coups d’épée rapides.\n",
+              "descriptions": []
+            },
+            {
+              "name": "Attaque plongeante",
+              "description": "Plonge depuis les airs pour frapper le sol, infligeant des DGT aux ennemis en chemin et des DGT de zone à l’impact.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "DGT 1er coup|{param1}%",
+            "DGT 2e coup|{param2}%",
+            "DGT 3e coup|{param3}%",
+            "DGT 4e coup|{param4}%",
+            "DGT 5e coup|{param5}%",
+            "DGT attaque chargée|{param6}% + {param7}%",
+            "Coût d’endurance attaque chargée|{param8} pts",
+            "DGT durant la chute|{param9}%",
+            "DGT chute basse/élevée|{param10}% / {param11}%"
+          ]
+        },
+        {
+          "key": "s2",
+          "title": "Gerbe acérée",
+          "description": "D’un coup de lame, vous libérez une gerbe de feuilles acérées comme des rasoirs en avant pour infliger des DGT Dendro.\n\n",
+          "abilities": [],
+          "stats": [
+            "DGT compétence|{param1}%",
+            "Temps de recharge|{param2} s"
+          ]
+        },
+        {
+          "key": "s3",
+          "title": "Manifestation surgente",
+          "description": "En faisant appel à la puissance de la flore autour de vous, vous créez un lotus lumineux.\nCe dernier attaque les ennemis à portée de façon continue, infligeant des DGT Dendro.\n\n",
+          "abilities": [
+            {
+              "name": "Transfiguration lotumineuse",
+              "description": "Le lotus lumineux subit les changements suivants au contact des éléments Hydro, Électro ou Pyro :\n",
+              "descriptions": [
+                "Hydro : la portée du lotus et la zone d’effet de ses attaques augmentent.",
+                "Électro : la VIT d’attaque du lotus augmente.",
+                "Pyro : le lotus disparaît après un court délai en exposant, infligeant des DGT Dendro de zone.",
+                "Le lotus lumineux ne peut faire l’objet que d’une seule transfiguration lotumineuse.",
+                "{M#Le voyageur}{F#La voyageuse} ne peut générer qu’un seul lotus lumineux à la fois."
+              ]
+            }
+          ],
+          "stats": [
+            "DGT lotus lumineux|{param1}%",
+            "DGT explosion de lotus|{param2}%",
+            "Durée du lotus lumineux|{param3} s",
+            "Temps de recharge|{param4} s",
+            "Énergie élémentaire|{param5}"
+          ]
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "Prolifération de verdure",
+          "description": "Pendant sa durée, le lotus lumineux obtient 1 cumul de Lumière lotiforme toutes les secondes, augmentant la maîtrise élémentaire du ou des personnages déployés dans sa zone d’effet de 6 pts. La Lumière lotiforme du lotus lumineux peut être cumulée 10 fois maximum.\n",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "Luxe verdoyant",
+          "description": "Chaque point de maîtrise élémentaire que {Mle voyageur}{Fla voyageuse} possède augmente les DGT infligés par Gerbe acérée de 0,15%, et ceux de Manifestation surgente de 0,1 %.\n",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "Couvre-sol symbiotique",
+          "description": "{MLe voyageur}{FLa voyageuse} récupère 3,5 pts d’énergie élémentaire après avoir touché un ennemi avec Gerbe acérée.\n",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "Résilience verte",
+          "description": "La durée du lotus lumineux augmente de 3 s.\n",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "Herbes tourbillonnantes",
+          "description": "Niveau d’aptitude Gerbe acérée +3.\nNiveau max : 15\n",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "Herbe de mélasse",
+          "description": "Lorsque le lotus lumineux a déclenché sa transfiguration lotumineuse, il obtient 5 cumuls de Lumière lotiforme de l’aptitude passive « Prolifération de verdure ».\nL’aptitude passive « Prolifération de verdure » doit être déjà débloquée.\n",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "Viride éphémère",
+          "description": "Niveau d’aptitude Manifestation surgente +3.\nNiveau max : 15\n",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "Agrégation flétrissante",
+          "description": "Les personnages affectés par l’effet de la Lumière lotiforme du lotus lumineux obtiennent un bonus de DGT Dendro de 12 %. Si le lotus lumineux a déjà fait l’objet d’une transfiguration lotumineuse, les personnages obtiennent également un bonus de DGT de 12 % pour l’élément correspondant.\n",
           "descriptions": []
         }
       ]
@@ -6689,7 +7221,7 @@
       "key": "xingqiu",
       "name": "Xingqiu",
       "title": "Jeune galant",
-      "description": "Un jeune homme intègre et serviable, que l'on voit souvent dans les librairies. Il porte une longue épée, et poursuit un idéal de justice.",
+      "description": "Un jeune homme intègre et serviable, que l’on voit souvent dans les librairies. Il porte une longue épée, et poursuit un idéal de justice.",
       "skills": [
         {
           "key": "s1",
@@ -6698,17 +7230,17 @@
           "abilities": [
             {
               "name": "Attaque normale",
-              "description": "Enchaîne jusqu'à 5 coups d'épée.\r\n",
+              "description": "Enchaîne jusqu’à 5 coups d’épée.\n",
               "descriptions": []
             },
             {
               "name": "Attaque chargée",
-              "description": "Consomme de l'endurance pour déclencher deux coups d'épée rapides.\r\n",
+              "description": "Consomme de l’endurance pour déclencher deux coups d’épée rapides.\n",
               "descriptions": []
             },
             {
               "name": "Attaque plongeante",
-              "description": "Plonge depuis les airs pour frapper le sol, infligeant des DGT aux ennemis en chemin et des DGT de zone à l'impact.",
+              "description": "Plonge depuis les airs pour frapper le sol, infligeant des DGT aux ennemis en chemin et des DGT de zone à l’impact.",
               "descriptions": []
             }
           ],
@@ -6719,7 +7251,7 @@
             "DGT 4e coup|{param5}%",
             "DGT 5e coup|{param6}% + {param7}%",
             "DGT attaque chargée|{param8}% + {param9}%",
-            "Coût d'endurance attaque chargée|{param10}",
+            "Coût d’endurance attaque chargée|{param10} pts",
             "DGT durant la chute|{param11}%",
             "DGT chute basse/élevée|{param12}% / {param13}%"
           ]
@@ -6727,46 +7259,49 @@
         {
           "key": "s2",
           "title": "Épée Guhua : Pluie battante",
-          "description": "Lance une succession de 2 coups d'épée qui infligent des DGT Hydro aux ennemis en face. Dans le même temps, le personnage déployé s'entoure du nombre maximum d'épées de pluie.\r\n",
+          "description": "Lance une succession de 2 coups d’épée qui infligent des DGT Hydro aux ennemis en face. Dans le même temps, le personnage déployé s’entoure du nombre maximum d’épées de pluie.\n",
           "abilities": [
             {
               "name": "",
-              "description": "Les épées de pluie ont les propriétés suivantes :\r\n",
+              "description": "Les épées de pluie ont les propriétés suivantes :\n",
               "descriptions": [
                 "Les épées se brisent lorsque Xingqiu subit des DGT et ce faisant réduisent les DGT subis.",
-                "Augmentent la RÉS à l'interruption du personnage.",
+                "Augmentent la RÉS à l’interruption du personnage.",
                 "20 % du bonus de DGT Hydro de Xingqiu est converti en réduction de DGT supplémentaire par les épées de pluie.",
-                "Jusqu'à 24 % de réduction de DGT supplémentaire peut être obtenue de cette manière.",
+                "Jusqu’à 24 % de réduction de DGT supplémentaire peut être obtenue de cette manière.",
                 "Xingqiu commence avec 3 épées de pluie maximum.",
-                "Applique l'état Trempé à Xingqiu lors du lancement."
+                "Applique l’état Trempé à Xingqiu lors du lancement."
               ]
             }
           ],
           "stats": [
             "DGT compétence|{param1}% + {param2}%",
             "Réduction DGT|{param3}%",
-            "Durée|{param4}s",
-            "Temps de recharge|{param5}s"
+            "Durée|{param4} s",
+            "Temps de recharge|{param5} s",
+            "Limite de transformation en DGT réduits|{param6}%",
+            "Durée|{param7} s",
+            "Temps de recharge|{param8} s"
           ]
         },
         {
           "key": "s3",
           "title": "Épée Guhua : Pluie et arc-en-ciel",
-          "description": "Xingqiu fait appel à un déluge d'épées et combat avec une lame arc-en-ciel ; il s'entoure de plus du nombre maximum d'épées de pluie.\r\n",
+          "description": "Xingqiu fait appel à un déluge d’épées et combat avec une lame arc-en-ciel ; il s’entoure de plus du nombre maximum d’épées de pluie.\n\n",
           "abilities": [
             {
               "name": "Lame arc-en-ciel",
               "description": "",
               "descriptions": [
-                "Les attaques normales infligées par votre personnage déployé libèrent un déluge d'épées et infligent des DGT Hydro.",
-                "Le nombre d'épées de pluie ne diminue pas."
+                "Les attaques normales infligées par votre personnage déployé libèrent un déluge d’épées et infligent des DGT Hydro.",
+                "Le nombre d’épées de pluie ne diminue pas."
               ]
             }
           ],
           "stats": [
             "DGT épées de pluie|{param1}%",
-            "Durée|{param2}s",
-            "Temps de recharge|{param3}s",
+            "Durée|{param2} s",
+            "Temps de recharge|{param3} s",
             "Énergie élémentaire|{param4}"
           ]
         }
@@ -6775,19 +7310,19 @@
         {
           "key": "p1",
           "title": "Illumination",
-          "description": "25 % de chances de récupérer des ressources lors de la synthèse de matériaux d'amélioration d'aptitude.\r\n",
+          "description": "25 % de chances de récupérer des ressources lors de la synthèse de matériaux d’amélioration d’aptitude.\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "Clé d'invocation d'eau",
-          "description": "Lorsque une épée de pluie est brisée par des attaques ou se termine, elle restaure les PV du personnage déployé d'une quantité de PV équivalant à 6 % des PV max de Xingqiu.\r\n",
+          "title": "Clé d’invocation d’eau",
+          "description": "Lorsque une épée de pluie est brisée par des attaques ou se termine, elle restaure les PV du personnage déployé d’une quantité de PV équivalant à 6 % des PV max de Xingqiu.\n",
           "descriptions": []
         },
         {
           "key": "p3",
           "title": "Lames et gouttes de pluie",
-          "description": "Confère un bonus de DGT Hydro de 20 % à Xingqiu.\r\n",
+          "description": "Confère un bonus de DGT Hydro de 20 % à Xingqiu.\n",
           "descriptions": []
         }
       ],
@@ -6795,37 +7330,37 @@
         {
           "key": "c1",
           "title": "Parfum persistant",
-          "description": "Augmente le nombre max d'épées de pluie de 1.\r\n",
+          "description": "Augmente le nombre max d’épées de pluie de 1.\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "Arc-en-ciel sur le ciel d'azur",
-          "description": "Prolonge la durée d'Épée Guhua : Pluie et arc-en-ciel de 3 s.\r\nDe plus, les épées de pluie réduisent la RÉS Hydro des ennemis qu'elles touchent de 15 % pendant 4 s.\r\n",
+          "title": "Arc-en-ciel sur le ciel d’azur",
+          "description": "Prolonge la durée d’Épée Guhua : Pluie et arc-en-ciel de 3 s.\nDe plus, les épées de pluie réduisent la RÉS Hydro des ennemis qu’elles touchent de 15 % pendant 4 s.\n",
           "descriptions": []
         },
         {
           "key": "c3",
           "title": "Tisseuse de vers",
-          "description": "Niveau d'aptitude Épée Guhua - Pluie et arc-en-ciel +3.\r\nNiveau max : 15\r\n",
+          "description": "Niveau d’aptitude Épée Guhua – Pluie et arc-en-ciel +3.\nNiveau max : 15\n",
           "descriptions": []
         },
         {
           "key": "c4",
           "title": "Conquérant du dragon",
-          "description": "Pendant la durée d'Épée Guhua : Pluie et arc-en-ciel, les DGT infligés par l'Épée Guhua : Pluie battante augmentent de 50 %.\r\n",
+          "description": "Pendant la durée d’Épée Guhua : Pluie et arc-en-ciel, les DGT infligés par l’Épée Guhua : Pluie battante augmentent de 50 %.\n",
           "descriptions": []
         },
         {
           "key": "c5",
           "title": "Embrassement de pluie",
-          "description": "Niveau d'aptitude Épée Guhua : Pluie battante +3.\r\nNiveau max : 15\r\n",
+          "description": "Niveau d’aptitude Épée Guhua : Pluie battante +3.\nNiveau max : 15\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "Rassemblement d'articles",
-          "description": "Les DGT du déluge d'épées d'Épée Guhua : Pluie et arc-en-ciel augmentent considérablement tous les 2 pluies d'épées ; Xingqiu récupère de plus 3 pts d'énergie élémentaire.\r\n",
+          "title": "Rassemblement d’articles",
+          "description": "Les DGT du déluge d’épées d’Épée Guhua : Pluie et arc-en-ciel augmentent considérablement tous les 2 pluies d’épées ; Xingqiu récupère de plus 3 pts d’énergie élémentaire.\n",
           "descriptions": []
         }
       ]
@@ -7117,7 +7652,7 @@
       "key": "yanfei",
       "name": "Yanfei",
       "title": "Sage innocence",
-      "description": "Une célèbre conseillère juridique du Port de Liyue. Du sang d'Adepte coule dans les veines de cette jeune femme ingénieuse.",
+      "description": "Une célèbre conseillère juridique du Port de Liyue. Du sang d’Adepte coule dans les veines de cette jeune femme ingénieuse.",
       "skills": [
         {
           "key": "s1",
@@ -7126,17 +7661,17 @@
           "abilities": [
             {
               "name": "Attaque normale",
-              "description": "Tire des boules de feu qui infligent jusqu'à 3 vagues de DGT Pyro.\r\nLorsqu'une attaque normale touche un ennemi, Yanfei obtient un sceau écarlate. Yanfei peut détenir un maximum de 3 sceaux écarlates, et chaque fois que cet effet se déclenche, la durée des sceaux en sa possession est réinitialisée.\r\nChaque sceau écarlate diminue la consommation d'endurance de Yanfei, et disparaît lorsque Yanfei quitte le champ de bataille.\r\n",
+              "description": "Tire des boules de feu qui infligent jusqu’à 3 vagues de DGT Pyro.\nLorsqu’une attaque normale touche un ennemi, Yanfei obtient un sceau écarlate. Yanfei peut détenir un maximum de 3 sceaux écarlates, et chaque fois que cet effet se déclenche, la durée des sceaux en sa possession est réinitialisée.\nChaque sceau écarlate diminue la consommation d’endurance de Yanfei, et disparaît lorsque Yanfei quitte le champ de bataille.\n",
               "descriptions": []
             },
             {
               "name": "Attaque chargée",
-              "description": "Consomme de l'endurance et tous les sceaux écarlates pour infliger des DGT Pyro de zone aux ennemis en face de Yanfei après un court délai.\r\nLa portée et l'intensité de ces DGT Pyro de zone augmentent avec le nombre de sceaux écarlates consommés.\r\n",
+              "description": "Consomme de l’endurance et tous les sceaux écarlates pour infliger des DGT Pyro de zone aux ennemis en face de Yanfei après un court délai.\nLa portée et l’intensité de ces DGT Pyro de zone augmentent avec le nombre de sceaux écarlates consommés.\n",
               "descriptions": []
             },
             {
               "name": "Attaque plongeante",
-              "description": "Yanfei concentre son énergie Pyro et plonge depuis les airs pour frapper le sol, infligeant des DGT aux ennemis sur la route et des DGT Pyro de zone à l'impact.",
+              "description": "Yanfei concentre son énergie Pyro et plonge depuis les airs pour frapper le sol, infligeant des DGT aux ennemis sur la route et des DGT Pyro de zone à l’impact.",
               "descriptions": []
             }
           ],
@@ -7145,9 +7680,9 @@
             "DGT 2e coup|{param2}%",
             "DGT 3e coup|{param3}%",
             "DGT attaque chargée|{param4}% / {param5}% / {param6}% / {param7}% / {param8}%",
-            "Coût d'endurance attaque chargée|{param9}",
-            "Réduction du coût d'endurance|{param10}% Per Seal",
-            "Durée des sceaux écarlates|{param11}s",
+            "Coût d’endurance attaque chargée|{param9} pts",
+            "Réduction du coût d’endurance|{param10}% par sceau écarlate",
+            "Durée des sceaux écarlates|{param11} s",
             "DGT durant la chute|{param12}%",
             "DGT chute basse/élevée|{param13}% / {param14}%"
           ]
@@ -7155,34 +7690,35 @@
         {
           "key": "s2",
           "title": "Pacte des flammes",
-          "description": "Yanfei en appelle aux flammes dévastatrices, infligeant des DGT Pyro de zone.\r\nLorsque des ennemis sont touchés, Yanfei gagne le nombre maximum de sceaux écarlates.\r\n",
+          "description": "Yanfei en appelle aux flammes dévastatrices, infligeant des DGT Pyro de zone.\nLorsque des ennemis sont touchés, Yanfei gagne le nombre maximum de sceaux écarlates.\n\n",
           "abilities": [],
           "stats": [
             "DGT compétence|{param1}%",
-            "Temps de recharge|{param2}s"
+            "Temps de recharge|{param2} s",
+            "Temps de recharge|{param3} s"
           ]
         },
         {
           "key": "s3",
           "title": "Application des peines",
-          "description": "Invoque une explosion de flammes intenses qui jaillit vers les ennemis proches, infligeant des DGT Pyro de zone et conférant à Yanfei le nombre maximum de sceaux écarlates, tout en appliquant l'effet Brillance.\r\n",
+          "description": "Invoque une explosion de flammes intenses qui jaillit vers les ennemis proches, infligeant des DGT Pyro de zone et conférant à Yanfei le nombre maximum de sceaux écarlates, tout en appliquant l’effet Brillance.\n\n",
           "abilities": [
             {
               "name": "Brillance",
-              "description": "Confère les effets suivants :\r\n",
+              "description": "Confère les effets suivants :\n",
               "descriptions": [
                 "Confère à Yanfei un sceau écarlate à intervalles réguliers.",
                 "Augmente les DGT infligés par ses attaques chargées.",
-                "Les effets de Brillance se dissipent lorsque Yanfei quitte le champ de bataille ou qu'elle est vaincue."
+                "Les effets de Brillance se dissipent lorsque Yanfei quitte le champ de bataille ou qu’elle est vaincue."
               ]
             }
           ],
           "stats": [
             "DGT compétence|{param1}%",
-            "Intervalle entre les sceaux écarlates|{param2}s",
+            "Intervalle entre les sceaux écarlates|{param2} s",
             "Bonus ATQ chargée|{param3}%",
-            "Durée|{param4}s",
-            "Temps de recharge|{param5}s",
+            "Durée|{param4} s",
+            "Temps de recharge|{param5} s",
             "Énergie élémentaire|{param6}"
           ]
         }
@@ -7191,19 +7727,19 @@
         {
           "key": "p1",
           "title": "Connaissance du terrain",
-          "description": "Affiche l'emplacement des produits de Liyue sur la mini-carte.\r\n",
+          "description": "Affiche l’emplacement des produits de Liyue sur la mini-carte.\n",
           "descriptions": []
         },
         {
           "key": "p2",
           "title": "Dispositions supplémentaires",
-          "description": "Lorsque Yanfei consomme un sceau écarlate en utilisant une attaque chargée, chaque sceau écarlate augmente le bonus de DGT Pyro de Yanfei de 5 % pour 6 s. Utiliser une attaque chargée avant la fin de la durée d'un effet dissipe l'effet précédent.\r\n",
+          "description": "Lorsque Yanfei consomme un sceau écarlate en utilisant une attaque chargée, chaque sceau écarlate augmente le bonus de DGT Pyro de Yanfei de 5 % pour 6 s. Utiliser une attaque chargée avant la fin de la durée d’un effet dissipe l’effet précédent.\n",
           "descriptions": []
         },
         {
           "key": "p3",
           "title": "Œil de la justice",
-          "description": "Quand les attaques chargées de Yanfei infligent des coups CRIT aux ennemis, elle inflige des DGT Pyro de zone supplémentaires équivalant à 80 % de son ATQ. Ces DGT comptent comme des DGT d'attaque chargée.\r\n",
+          "description": "Quand les attaques chargées de Yanfei infligent des coups CRIT aux ennemis, elle inflige des DGT Pyro de zone supplémentaires équivalant à 80 % de son ATQ. Ces DGT comptent comme des DGT d’attaque chargée.\n",
           "descriptions": []
         }
       ],
@@ -7211,25 +7747,25 @@
         {
           "key": "c1",
           "title": "Plaidoyer convaincant",
-          "description": "Lorsque Yanfei utilise une attaque chargée, chaque sceau écarlate existant réduit sa consommation d'endurance de 10 % supplémentaires et augmente la RÉS à l'interruption lors de son déclenchement.\r\n",
+          "description": "Lorsque Yanfei utilise une attaque chargée, chaque sceau écarlate existant réduit sa consommation d’endurance de 10 % supplémentaires et augmente la RÉS à l’interruption lors de son déclenchement.\n",
           "descriptions": []
         },
         {
           "key": "c2",
           "title": "Verdict final",
-          "description": "Le taux CRIT des attaques chargées de Yanfei augmente de 20 % lorsqu'elles touchent des ennemis ayant moins de 50 % de PV.\r\n",
+          "description": "Le taux CRIT des attaques chargées de Yanfei augmente de 20 % lorsqu’elles touchent des ennemis dont les PV sont inférieurs à 50 %.\n",
           "descriptions": []
         },
         {
           "key": "c3",
           "title": "Mise sous scellés",
-          "description": "Niveau d'aptitude Pacte des flammes +3.\r\nNiveau max : 15\r\n",
+          "description": "Niveau d’aptitude Pacte des flammes +3.\nNiveau max : 15\n",
           "descriptions": []
         },
         {
           "key": "c4",
           "title": "Droit commun",
-          "description": "Application des peines confère les effets suivants :\r\n",
+          "description": "Application des peines confère les effets suivants :\n",
           "descriptions": [
             "Génère un bouclier qui absorbe une quantité de DGT équivalant à 45 % des PV max et dure 15 s.",
             "Le bouclier est efficace à 250 % contre les DGT Pyro."
@@ -7238,13 +7774,13 @@
         {
           "key": "c5",
           "title": "Déclaration sous serment",
-          "description": "Niveau d'aptitude Application des peines +3.\r\nNiveau max : 15\r\n",
+          "description": "Niveau d’aptitude Application des peines +3.\nNiveau max : 15\n",
           "descriptions": []
         },
         {
           "key": "c6",
           "title": "Clause complémentaire",
-          "description": "Augmente le nombre max de sceaux écarlates de 1.\r\n",
+          "description": "Augmente le nombre max de sceaux écarlates de 1.\n",
           "descriptions": []
         }
       ]
@@ -8173,6 +8709,18 @@
       ]
     },
     {
+      "key": "end-of-the-line",
+      "name": "Chalutier",
+      "description": "Cela semble être un poisson aujourd’hui disparu. Son corps est suffisamment élastique pour qu’une ficelle puisse y être attachée afin de s’en servir comme d’un arc.",
+      "refinements": [
+        "Accorde l’effet Dérive après l’utilisation d’une compétence élémentaire, permettant d’infliger des DGT de zone équivalant à {color}80{/color} % de l’ATQ en touchant un ennemi. Cet effet disparaît après 15 s ou après avoir infligé des DGT de zone 3 fois. Des DGT de zone peuvent être infligés toutes les 2 s maximum de cette manière, et l’effet Dérive peut être déclenché une fois toutes les 12 s.",
+        "Accorde l’effet Dérive après l’utilisation d’une compétence élémentaire, permettant d’infliger des DGT de zone équivalant à {color}100{/color} % de l’ATQ en touchant un ennemi. Cet effet disparaît après 15 s ou après avoir infligé des DGT de zone 3 fois. Des DGT de zone peuvent être infligés toutes les 2 s maximum de cette manière, et l’effet Dérive peut être déclenché une fois toutes les 12 s.",
+        "Accorde l’effet Dérive après l’utilisation d’une compétence élémentaire, permettant d’infliger des DGT de zone équivalant à {color}120{/color} % de l’ATQ en touchant un ennemi. Cet effet disparaît après 15 s ou après avoir infligé des DGT de zone 3 fois. Des DGT de zone peuvent être infligés toutes les 2 s maximum de cette manière, et l’effet Dérive peut être déclenché une fois toutes les 12 s.",
+        "Accorde l’effet Dérive après l’utilisation d’une compétence élémentaire, permettant d’infliger des DGT de zone équivalant à {color}140{/color} % de l’ATQ en touchant un ennemi. Cet effet disparaît après 15 s ou après avoir infligé des DGT de zone 3 fois. Des DGT de zone peuvent être infligés toutes les 2 s maximum de cette manière, et l’effet Dérive peut être déclenché une fois toutes les 12 s.",
+        "Accorde l’effet Dérive après l’utilisation d’une compétence élémentaire, permettant d’infliger des DGT de zone équivalant à {color}160{/color} % de l’ATQ en touchant un ennemi. Cet effet disparaît après 15 s ou après avoir infligé des DGT de zone 3 fois. Des DGT de zone peuvent être infligés toutes les 2 s maximum de cette manière, et l’effet Dérive peut être déclenché une fois toutes les 12 s."
+      ]
+    },
+    {
       "key": "engulfing-lightning",
       "name": "Lumière du faucheur",
       "description": "Un naginata utilisé pour « faucher les mauvaises herbes ». Tout soldat se tenant devant sa lame sera probablement également taillé d'un peu trop près...",
@@ -8317,6 +8865,18 @@
       ]
     },
     {
+      "key": "forest-regalia",
+      "name": "Apparat de la forêt",
+      "description": "Une arme que vous avez obtenue dans un conte d’aranara. Elle a pris la forme d’une grande lame qui peut pulvériser les ennemis de la forêt.",
+      "refinements": [
+        "Après avoir déclenché une réaction de Brûlure, de Stimulation, de Suractivation, de Propagation, de Fleurissement, d’Exubérance ou de Bourgeonnement, une feuille de conscience est générée autour du personnage pendant un maximum de 10 s. Une fois collectée, la feuille augmente la maîtrise élémentaire du personnage de {color}60{/color} pts pendant 12 s. Une feuille de conscience peut être créée de cette manière une fois toutes les 20 s. L’effet peut être déclenché même lorsque le personnage fait partie de l’équipe mais n’est pas déployé. L’effet de la feuille de conscience ne se cumule pas.",
+        "Après avoir déclenché une réaction de Brûlure, de Stimulation, de Suractivation, de Propagation, de Fleurissement, d’Exubérance ou de Bourgeonnement, une feuille de conscience est générée autour du personnage pendant un maximum de 10 s. Une fois collectée, la feuille augmente la maîtrise élémentaire du personnage de {color}75{/color} pts pendant 12 s. Une feuille de conscience peut être créée de cette manière une fois toutes les 20 s. L’effet peut être déclenché même lorsque le personnage fait partie de l’équipe mais n’est pas déployé. L’effet de la feuille de conscience ne se cumule pas.",
+        "Après avoir déclenché une réaction de Brûlure, de Stimulation, de Suractivation, de Propagation, de Fleurissement, d’Exubérance ou de Bourgeonnement, une feuille de conscience est générée autour du personnage pendant un maximum de 10 s. Une fois collectée, la feuille augmente la maîtrise élémentaire du personnage de {color}90{/color} pts pendant 12 s. Une feuille de conscience peut être créée de cette manière une fois toutes les 20 s. L’effet peut être déclenché même lorsque le personnage fait partie de l’équipe mais n’est pas déployé. L’effet de la feuille de conscience ne se cumule pas.",
+        "Après avoir déclenché une réaction de Brûlure, de Stimulation, de Suractivation, de Propagation, de Fleurissement, d’Exubérance ou de Bourgeonnement, une feuille de conscience est générée autour du personnage pendant un maximum de 10 s. Une fois collectée, la feuille augmente la maîtrise élémentaire du personnage de {color}105{/color} pts pendant 12 s. Une feuille de conscience peut être créée de cette manière une fois toutes les 20 s. L’effet peut être déclenché même lorsque le personnage fait partie de l’équipe mais n’est pas déployé. L’effet de la feuille de conscience ne se cumule pas.",
+        "Après avoir déclenché une réaction de Brûlure, de Stimulation, de Suractivation, de Propagation, de Fleurissement, d’Exubérance ou de Bourgeonnement, une feuille de conscience est générée autour du personnage pendant un maximum de 10 s. Une fois collectée, la feuille augmente la maîtrise élémentaire du personnage de {color}120{/color} pts pendant 12 s. Une feuille de conscience peut être créée de cette manière une fois toutes les 20 s. L’effet peut être déclenché même lorsque le personnage fait partie de l’équipe mais n’est pas déployé. L’effet de la feuille de conscience ne se cumule pas."
+      ]
+    },
+    {
       "key": "freedom-sworn",
       "name": "Serment de la liberté",
       "description": "Une épée droite à lame bleue, aussi inébranlable que le serment de la liberté du Royaume du Vent.",
@@ -8338,6 +8898,18 @@
         "Les attaques normales et chargées ont {color}80{/color} % de chance lorsqu'elles touchent de générer une stalactite de glace qui inflige des DGT de zone équivalant à {color}110{/color} % de l'ATQ. Si l'ennemi est affecté par l'élément Cryo, la stalactite inflige alors {color}280{/color} % de l'ATQ. Cet effet se déclenche une fois toutes les 10 s.",
         "Les attaques normales et chargées ont {color}90{/color} % de chance lorsqu'elles touchent de générer une stalactite de glace qui inflige des DGT de zone équivalant à {color}125{/color} % de l'ATQ. Si l'ennemi est affecté par l'élément Cryo, la stalactite inflige alors {color}320{/color} % de l'ATQ. Cet effet se déclenche une fois toutes les 10 s.",
         "Les attaques normales et chargées ont {color}100{/color} % de chance lorsqu'elles touchent de générer une stalactite de glace qui inflige des DGT de zone équivalant à {color}140{/color} % de l'ATQ. Si l'ennemi est affecté par l'élément Cryo, la stalactite inflige alors {color}360{/color} % de l'ATQ. Cet effet se déclenche une fois toutes les 10 s."
+      ]
+    },
+    {
+      "key": "fruit-of-fulfillment",
+      "name": "Le fruit de l’accomplissement",
+      "description": "Un fruit que vous avez obtenu dans un conte d’aranara. Il a le potentiel de vaincre n’importe quelle crise.",
+      "refinements": [
+        "Accorde l’effet Fluctuation après avoir déclenché une réaction élémentaire, augmentant la maîtrise élémentaire de {color}24{/color} pts et diminuant l’ATQ de 5 %. Cet effet peut être cumulé 5 fois maximum et déclenché une fois toutes les 0,3 s. Un cumul sera déduit si aucune réaction élémentaire n’est déclenchée pendant 6 s. L’effet peut être déclenché même lorsque le personnage fait partie de l’équipe mais n’est pas déployé.",
+        "Accorde l’effet Fluctuation après avoir déclenché une réaction élémentaire, augmentant la maîtrise élémentaire de {color}27{/color} pts et diminuant l’ATQ de 5 %. Cet effet peut être cumulé 5 fois maximum et déclenché une fois toutes les 0,3 s. Un cumul sera déduit si aucune réaction élémentaire n’est déclenchée pendant 6 s. L’effet peut être déclenché même lorsque le personnage fait partie de l’équipe mais n’est pas déployé.",
+        "Accorde l’effet Fluctuation après avoir déclenché une réaction élémentaire, augmentant la maîtrise élémentaire de {color}30{/color} pts et diminuant l’ATQ de 5 %. Cet effet peut être cumulé 5 fois maximum et déclenché une fois toutes les 0,3 s. Un cumul sera déduit si aucune réaction élémentaire n’est déclenchée pendant 6 s. L’effet peut être déclenché même lorsque le personnage fait partie de l’équipe mais n’est pas déployé.",
+        "Accorde l’effet Fluctuation après avoir déclenché une réaction élémentaire, augmentant la maîtrise élémentaire de {color}33{/color} pts et diminuant l’ATQ de 5 %. Cet effet peut être cumulé 5 fois maximum et déclenché une fois toutes les 0,3 s. Un cumul sera déduit si aucune réaction élémentaire n’est déclenchée pendant 6 s. L’effet peut être déclenché même lorsque le personnage fait partie de l’équipe mais n’est pas déployé.",
+        "Accorde l’effet Fluctuation après avoir déclenché une réaction élémentaire, augmentant la maîtrise élémentaire de {color}36{/color} pts et diminuant l’ATQ de 5 %. Cet effet peut être cumulé 5 fois maximum et déclenché une fois toutes les 0,3 s. Un cumul sera déduit si aucune réaction élémentaire n’est déclenchée pendant 6 s. L’effet peut être déclenché même lorsque le personnage fait partie de l’équipe mais n’est pas déployé."
       ]
     },
     {
@@ -8407,6 +8979,18 @@
       "refinements": []
     },
     {
+      "key": "hunters-path",
+      "name": "La voie du chasseur",
+      "description": "Cet arc doré a été réalisé à l’aide de branches blanches précieuses. Il a abattu d’innombrables bêtes méchantes qui tentaient de s’infiltrer dans les bois.",
+      "refinements": [
+        "Accorde un bonus de DGT élémentaires de {color}12{/color} %. Lorsqu’une attaque chargée a touché un ennemi, l’effet Chasse infatigable est accordé, augmentant les DGT d’attaque chargée d’une valeur équivalant à {color}160{/color} % de la maîtrise élémentaire. Cet effet disparaît après 10 s ou après 12 attaques chargées. Cet effet peut être déclenché une fois toutes les 12 s.",
+        "Accorde un bonus de DGT élémentaires de {color}15{/color} %. Lorsqu’une attaque chargée a touché un ennemi, l’effet Chasse infatigable est accordé, augmentant les DGT d’attaque chargée d’une valeur équivalant à {color}200{/color} % de la maîtrise élémentaire. Cet effet disparaît après 10 s ou après 12 attaques chargées. Cet effet peut être déclenché une fois toutes les 12 s.",
+        "Accorde un bonus de DGT élémentaires de {color}18{/color} %. Lorsqu’une attaque chargée a touché un ennemi, l’effet Chasse infatigable est accordé, augmentant les DGT d’attaque chargée d’une valeur équivalant à {color}240{/color} % de la maîtrise élémentaire. Cet effet disparaît après 10 s ou après 12 attaques chargées. Cet effet peut être déclenché une fois toutes les 12 s.",
+        "Accorde un bonus de DGT élémentaires de {color}21{/color} %. Lorsqu’une attaque chargée a touché un ennemi, l’effet Chasse infatigable est accordé, augmentant les DGT d’attaque chargée d’une valeur équivalant à {color}280{/color} % de la maîtrise élémentaire. Cet effet disparaît après 10 s ou après 12 attaques chargées. Cet effet peut être déclenché une fois toutes les 12 s.",
+        "Accorde un bonus de DGT élémentaires de {color}24{/color} %. Lorsqu’une attaque chargée a touché un ennemi, l’effet Chasse infatigable est accordé, augmentant les DGT d’attaque chargée d’une valeur équivalant à {color}320{/color} % de la maîtrise élémentaire. Cet effet disparaît après 10 s ou après 12 attaques chargées. Cet effet peut être déclenché une fois toutes les 12 s."
+      ]
+    },
+    {
       "key": "iron-point",
       "name": "Pointe de fer",
       "description": "Pointue à l'extrémité, cette épée convient aussi à l'attaque qu'à la défense et est très prisée des voyageurs.",
@@ -8454,6 +9038,18 @@
         "Augmente les DGT infligés par les compétences élémentaires de {color}9{/color} %. Lorsqu'une compétence élémentaire touche un ennemi, le personnage perd 3 pts d'énergie élémentaire, mais récupère {color}4{/color} pts d'énergie toutes les 2 s pendant 6 s. Cet effet peut être déclenché une fois toutes les 10 s, même si le personnage fait partie de l'équipe mais n'est pas déployé.",
         "Augmente les DGT infligés par les compétences élémentaires de {color}10{/color},5 %. Lorsqu'une compétence élémentaire touche un ennemi, le personnage perd 3 pts d'énergie élémentaire, mais récupère {color}4{/color},5 pts d'énergie toutes les 2 s pendant 6 s. Cet effet peut être déclenché une fois toutes les 10 s, même si le personnage fait partie de l'équipe mais n'est pas déployé.",
         "Augmente les DGT infligés par les compétences élémentaires de {color}12{/color} %. Lorsqu'une compétence élémentaire touche un ennemi, le personnage perd 3 pts d'énergie élémentaire, mais récupère {color}5{/color} pts d'énergie toutes les 2 s pendant 6 s. Cet effet peut être déclenché une fois toutes les 10 s, même si le personnage fait partie de l'équipe mais n'est pas déployé."
+      ]
+    },
+    {
+      "key": "kings-squire",
+      "name": "Le valet du roi",
+      "description": "Une arme que vous avez obtenue dans un conte d’aranara. Elle a pris la forme d’un arc qui peut abattre les ennemis de la forêt.",
+      "refinements": [
+        "Accorde l’effet Enseignements de la forêt lors de l’utilisation d’une compétence ou d’un déchaînement élémentaire, augmentant la maîtrise élémentaire de {color}60{/color} pts pendant 12s. Cet effet est annulé lors du changement de personnage. Lorsque l’effet Enseignements de la forêt prend fin ou est annulé, il inflige des DGT équivalant à {color}100{/color} % de l’ATQ à un ennemi proche. L’effet Enseignements de la forêt peut être déclenché une fois toutes les 20 s.",
+        "Accorde l’effet Enseignements de la forêt lors de l’utilisation d’une compétence ou d’un déchaînement élémentaire, augmentant la maîtrise élémentaire de {color}80{/color} pts pendant 12s. Cet effet est annulé lors du changement de personnage. Lorsque l’effet Enseignements de la forêt prend fin ou est annulé, il inflige des DGT équivalant à {color}120{/color} % de l’ATQ à un ennemi proche. L’effet Enseignements de la forêt peut être déclenché une fois toutes les 20 s.",
+        "Accorde l’effet Enseignements de la forêt lors de l’utilisation d’une compétence ou d’un déchaînement élémentaire, augmentant la maîtrise élémentaire de {color}100{/color} pts pendant 12s. Cet effet est annulé lors du changement de personnage. Lorsque l’effet Enseignements de la forêt prend fin ou est annulé, il inflige des DGT équivalant à {color}140{/color} % de l’ATQ à un ennemi proche. L’effet Enseignements de la forêt peut être déclenché une fois toutes les 20 s.",
+        "Accorde l’effet Enseignements de la forêt lors de l’utilisation d’une compétence ou d’un déchaînement élémentaire, augmentant la maîtrise élémentaire de {color}120{/color} pts pendant 12s. Cet effet est annulé lors du changement de personnage. Lorsque l’effet Enseignements de la forêt prend fin ou est annulé, il inflige des DGT équivalant à {color}160{/color} % de l’ATQ à un ennemi proche. L’effet Enseignements de la forêt peut être déclenché une fois toutes les 20 s.",
+        "Accorde l’effet Enseignements de la forêt lors de l’utilisation d’une compétence ou d’un déchaînement élémentaire, augmentant la maîtrise élémentaire de {color}140{/color} pts pendant 12s. Cet effet est annulé lors du changement de personnage. Lorsque l’effet Enseignements de la forêt prend fin ou est annulé, il inflige des DGT équivalant à {color}180{/color} % de l’ATQ à un ennemi proche. L’effet Enseignements de la forêt peut être déclenché une fois toutes les 20 s."
       ]
     },
     {
@@ -8598,6 +9194,18 @@
         "Lorsque vous touchez des ennemis avec des attaques normales, les DGT infligés par les compétences élémentaires sont augmentés de {color}30{/color} % pendant 5 s. Lorsque vous touchez des ennemis avec des compétences élémentaires, les DGT infligés par les attaques normales sont augmentés de {color}30{/color} % pendant 5 s.",
         "Lorsque vous touchez des ennemis avec des attaques normales, les DGT infligés par les compétences élémentaires sont augmentés de {color}35{/color} % pendant 5 s. Lorsque vous touchez des ennemis avec des compétences élémentaires, les DGT infligés par les attaques normales sont augmentés de {color}35{/color} % pendant 5 s.",
         "Lorsque vous touchez des ennemis avec des attaques normales, les DGT infligés par les compétences élémentaires sont augmentés de {color}40{/color} % pendant 5 s. Lorsque vous touchez des ennemis avec des compétences élémentaires, les DGT infligés par les attaques normales sont augmentés de {color}40{/color} % pendant 5 s."
+      ]
+    },
+    {
+      "key": "moonpiercer",
+      "name": "Perce-lune",
+      "description": "Une arme que vous avez obtenue dans un conte d’aranara. Elle a la forme d’une flèche géante et peut être utilisée comme lance.",
+      "refinements": [
+        "Après avoir déclenché une réaction de Brûlure, de Stimulation, de Suractivation, de Propagation, de Fleurissement, d’Exubérance ou de Bourgeonnement, une feuille de renouveau est générée autour du personnage pendant un maximum de 10 s. Une fois collectée, la feuille augmente l’ATQ du personnage de {color}16{/color} % pendant 12 s. Une feuille de renouveau peut être créée de cette manière une fois toutes les 20 s. L’effet peut être déclenché même lorsque le personnage fait partie de l’équipe mais n’est pas déployé.",
+        "Après avoir déclenché une réaction de Brûlure, de Stimulation, de Suractivation, de Propagation, de Fleurissement, d’Exubérance ou de Bourgeonnement, une feuille de renouveau est générée autour du personnage pendant un maximum de 10 s. Une fois collectée, la feuille augmente l’ATQ du personnage de {color}20{/color} % pendant 12 s. Une feuille de renouveau peut être créée de cette manière une fois toutes les 20 s. L’effet peut être déclenché même lorsque le personnage fait partie de l’équipe mais n’est pas déployé.",
+        "Après avoir déclenché une réaction de Brûlure, de Stimulation, de Suractivation, de Propagation, de Fleurissement, d’Exubérance ou de Bourgeonnement, une feuille de renouveau est générée autour du personnage pendant un maximum de 10 s. Une fois collectée, la feuille augmente l’ATQ du personnage de {color}24{/color} % pendant 12 s. Une feuille de renouveau peut être créée de cette manière une fois toutes les 20 s. L’effet peut être déclenché même lorsque le personnage fait partie de l’équipe mais n’est pas déployé.",
+        "Après avoir déclenché une réaction de Brûlure, de Stimulation, de Suractivation, de Propagation, de Fleurissement, d’Exubérance ou de Bourgeonnement, une feuille de renouveau est générée autour du personnage pendant un maximum de 10 s. Une fois collectée, la feuille augmente l’ATQ du personnage de {color}28{/color} % pendant 12 s. Une feuille de renouveau peut être créée de cette manière une fois toutes les 20 s. L’effet peut être déclenché même lorsque le personnage fait partie de l’équipe mais n’est pas déployé.",
+        "Après avoir déclenché une réaction de Brûlure, de Stimulation, de Suractivation, de Propagation, de Fleurissement, d’Exubérance ou de Bourgeonnement, une feuille de renouveau est générée autour du personnage pendant un maximum de 10 s. Une fois collectée, la feuille augmente l’ATQ du personnage de {color}32{/color} % pendant 12 s. Une feuille de renouveau peut être créée de cette manière une fois toutes les 20 s. L’effet peut être déclenché même lorsque le personnage fait partie de l’équipe mais n’est pas déployé."
       ]
     },
     {
@@ -8918,6 +9526,18 @@
         "Les compétences élémentaires ont {color}60{/color} % de chance de réinitialiser leur propre TdR lorsqu'elles infligent des DGT. Cet effet peut être déclenché une fois toutes les {color}22{/color} s.",
         "Les compétences élémentaires ont {color}70{/color} % de chance de réinitialiser leur propre TdR lorsqu'elles infligent des DGT. Cet effet peut être déclenché une fois toutes les {color}19{/color} s.",
         "Les compétences élémentaires ont {color}80{/color} % de chance de réinitialiser leur propre TdR lorsqu'elles infligent des DGT. Cet effet peut être déclenché une fois toutes les {color}16{/color} s."
+      ]
+    },
+    {
+      "key": "sapwood-blade",
+      "name": "Lame d’aubier",
+      "description": "Une arme que vous avez obtenue dans un conte d’aranara. Elle a pris la forme d’une lame qui peut terrasser les ennemis de la forêt.",
+      "refinements": [
+        "Après avoir déclenché une réaction de Brûlure, de Stimulation, de Suractivation, de Propagation, de Fleurissement, d’Exubérance ou de Bourgeonnement, une feuille de conscience est générée autour du personnage pendant un maximum de 10 s. Une fois collectée, la feuille augmente la maîtrise élémentaire du personnage de {color}60{/color} pts pendant 12 s. Une feuille de conscience peut être créée de cette manière une fois toutes les 20 s. L’effet peut être déclenché même lorsque le personnage fait partie de l’équipe mais n’est pas déployé. L’effet de la feuille de conscience ne se cumule pas.",
+        "Après avoir déclenché une réaction de Brûlure, de Stimulation, de Suractivation, de Propagation, de Fleurissement, d’Exubérance ou de Bourgeonnement, une feuille de conscience est générée autour du personnage pendant un maximum de 10 s. Une fois collectée, la feuille augmente la maîtrise élémentaire du personnage de {color}75{/color} pts pendant 12 s. Une feuille de conscience peut être créée de cette manière une fois toutes les 20 s. L’effet peut être déclenché même lorsque le personnage fait partie de l’équipe mais n’est pas déployé. L’effet de la feuille de conscience ne se cumule pas.",
+        "Après avoir déclenché une réaction de Brûlure, de Stimulation, de Suractivation, de Propagation, de Fleurissement, d’Exubérance ou de Bourgeonnement, une feuille de conscience est générée autour du personnage pendant un maximum de 10 s. Une fois collectée, la feuille augmente la maîtrise élémentaire du personnage de {color}90{/color} pts pendant 12 s. Une feuille de conscience peut être créée de cette manière une fois toutes les 20 s. L’effet peut être déclenché même lorsque le personnage fait partie de l’équipe mais n’est pas déployé. L’effet de la feuille de conscience ne se cumule pas.",
+        "Après avoir déclenché une réaction de Brûlure, de Stimulation, de Suractivation, de Propagation, de Fleurissement, d’Exubérance ou de Bourgeonnement, une feuille de conscience est générée autour du personnage pendant un maximum de 10 s. Une fois collectée, la feuille augmente la maîtrise élémentaire du personnage de {color}105{/color} pts pendant 12 s. Une feuille de conscience peut être créée de cette manière une fois toutes les 20 s. L’effet peut être déclenché même lorsque le personnage fait partie de l’équipe mais n’est pas déployé. L’effet de la feuille de conscience ne se cumule pas.",
+        "Après avoir déclenché une réaction de Brûlure, de Stimulation, de Suractivation, de Propagation, de Fleurissement, d’Exubérance ou de Bourgeonnement, une feuille de conscience est générée autour du personnage pendant un maximum de 10 s. Une fois collectée, la feuille augmente la maîtrise élémentaire du personnage de {color}120{/color} pts pendant 12 s. Une feuille de conscience peut être créée de cette manière une fois toutes les 20 s. L’effet peut être déclenché même lorsque le personnage fait partie de l’équipe mais n’est pas déployé. L’effet de la feuille de conscience ne se cumule pas."
       ]
     },
     {
@@ -9433,7 +10053,15 @@
       "name": "Sorcière des flammes ardentes",
       "bonus": [
         "Confère un bonus de DGT Pyro de 15 %.",
-        "Augmente les DGT infligés par Surcharge et Brûlure de 40 % et ceux d'Évaporation et de Fonte de 15 %. L'utilisation d'une compétence élémentaire augmente pendant 10 s l'effet du set de 2 pièces de 50 %. Cet effet peut être cumulé 3 fois maximum."
+        "Augmente les DGT infligés par Surcharge, Brûlure et Bourgeonnement de 40 % et ceux d'Évaporation et de Fonte de 15 %. L'utilisation d'une compétence élémentaire augmente pendant 10 s l'effet du set de 2 pièces de 50 %. Cet effet peut être cumulé 3 fois maximum."
+      ]
+    },
+    {
+      "key": "deepwood-memories",
+      "name": "Souvenir de forêt",
+      "bonus": [
+        "Confère un bonus de DGT Dendro de 15 %",
+        "Après qu'une compétence ou un déchaînement élémentaire a touché un ennemi, sa RÉS Dendro diminue de 30 % pendant 8 s. Cet effet peut être déclenché même si le personnage équipé de l'artéfact fait partie de l'équipe mais n'est pas déployé."
       ]
     },
     {
@@ -9466,6 +10094,14 @@
       "bonus": [
         "Augmente les DGT infligés par la compétence élémentaire de 20 %.",
         "Après la défaite d'un ennemi, le TdR de compétence élémentaire a 100 % de chances d'être réinitialisé. Cet effet peut être déclenché une fois toutes les 15 s."
+      ]
+    },
+    {
+      "key": "gilded-dreams",
+      "name": "Rêve doré",
+      "bonus": [
+        "Augmente la maîtrise élémentaire de 80 pts.",
+        "Déclencher une réaction élémentaire confère pendant 8 s au personnage équipé de l'artéfact des bonus en fonction du nombre de types élémentaires des autres personnages de l'équipe  son ATQ augmente de 14 % pour chaque membre du même type élémentaire que le sien ; sa maîtrise élémentaire augmente de 50 pts pour chaque membre de type élémentaire différent du sien. Chacun des bonus susmentionnés compte un maximum de 3 personnages. Cet effet peut être déclenché une fois toutes les 8 s, même si le personnage équipé de l'arme fait partie de l'équipe mais n'est pas déployé."
       ]
     },
     {
@@ -9553,7 +10189,7 @@
       "name": "Flamme blême",
       "bonus": [
         "Augmente les DGT physiques de 25 %.",
-        "Lorsqu'une compétence élémentaire touche un ennemi, l'ATQ augmente de 9 % pendant 7 s. Cet effet peut être cumulé 2 fois maximum et déclenché une fois toutes les 0,3 s. Une fois 2 cumuls atteints, l'effet du set de 2 pièces augmente de 100 %."
+        "Lorsqu'une compétence élémentaire a touché un ennemi, l'ATQ augmente de 9 % pendant 7 s. Cet effet peut être cumulé 2 fois maximum et déclenché une fois toutes les 0,3 s. Une fois 2 cumuls atteints, l'effet du set de 2 pièces augmente de 100 %."
       ]
     },
     {
@@ -9621,7 +10257,7 @@
       "name": "Ténacité du Millelithe",
       "bonus": [
         "Les PV sont augmentés de 20 %.",
-        "Lorsqu'une compétence élémentaire touche un ennemi, l'ATQ de tous les personnages de l'équipe à proximité augmente de 20 % et la force de leur bouclier augmente de 30 % pendant 3 s. Cet effet peut être déclenché une fois toutes les 0,5 s, même si le personnage équipé de ce set d'artéfacts fait partie de l'équipe mais n'est pas déployé."
+        "Lorsqu'une compétence élémentaire a touché un ennemi, l'ATQ de tous les personnages de l'équipe à proximité augmente de 20 % et la force de leur bouclier augmente de 30 % pendant 3 s. Cet effet peut être déclenché une fois toutes les 0,5 s, même si le personnage équipé de ce set d'artéfacts fait partie de l'équipe mais n'est pas déployé."
       ]
     },
     {
@@ -9637,7 +10273,7 @@
       "name": "Colère de tonnerre",
       "bonus": [
         "Confère un bonus de DGT Électro de 15 %.",
-        "Augmente les DGT infligés par Surcharge, Électrocution et Supraconduction de 40 %. Lorsque vous déclenchez ces réactions élémentaires, le TdR de la compétence élémentaire est réduit de 1 s. Cet effet peut être déclenché une fois toutes les 0,8 s."
+        "Augmente les DGT infligés par Surcharge, Électrocution, Supraconduction et Exubérance de 40 % et le bonus de DGT accordée par Suractivation de 20 %. Au déclenchement de ces réactions élémentaires ou d'une réaction de Stimulation, le TdR de la compétence élémentaire est réduit de 1 s. Cet effet peut être déclenché une fois toutes les 0,8 s."
       ]
     },
     {
@@ -9669,7 +10305,7 @@
       "name": "Au-delà cinabrin",
       "bonus": [
         "Augmente l'ATQ de 18 %.",
-        "Lorsqu'un personnage utilise un déchaînement élémentaire, il gagne un effet de Lumière latente pendant 16 s, augmentant son ATQ de 8 %, puis de 10 % supplémentaires à chaque fois que ses PV diminuent. Cette augmentation supplémentaire peut être cumulée 4 fois maximum et déclenchée une fois toutes les 0,8 s. L'effet de Lumière latente cesse lorsque le personnage quitte le champ de bataille. Si le personnage utilise à nouveau son déchaînement élémentaire alors que la Lumière latente est en effet, l'effet original de Lumière latente est dissipé."
+        "Lorsqu'un personnage utilise un déchaînement élémentaire, il gagne un effet de Lumière latente pendant 16 s, augmentant son ATQ de 8 %, puis de 10 % supplémentaires à chaque fois que ses PV diminuent. Cette augmentation supplémentaire peut être cumulée 4 fois maximum et déclenchée une fois toutes les 0,8 s. L'effet Lumière latente cesse lorsque le personnage quitte le champ de bataille. Si le personnage utilise à nouveau son déchaînement élémentaire alors que la Lumière latente est en effet, l'effet original de Lumière latente est dissipé."
       ]
     },
     {
@@ -9876,6 +10512,11 @@
       "description": "Provient d'une ancienne machine des ruines désormais inactive.\r\nLa haute technologie et la puissance de cette machine ont été perdues quand elle n'a pas réussi à maintenir son intégrité structurelle."
     },
     {
+      "key": "chaos-bolt",
+      "name": "Vis du chaos",
+      "description": "Provient d’un ancien Dragon des ruines désormais inactif.\nParmi les anciens royaumes perdus, il y avait un groupe de personnes qui étaient obsédées par l’idée de mimétisme. Qu’il s’agisse des éléments purs et ordonnés des Hypostases ou de l’ancien pouvoir primitif des dragons, ces personnes pensaient qu’ils pouvaient tous être reproduits et modifiés au point de surpasser leurs homologues naturels.\nAinsi, une forme corporelle supérieure et immaculée pourrait remplacer l’ordre voué à la décomposition et à la destruction."
+    },
+    {
       "key": "chaos-circuit",
       "name": "Circuit du chaos",
       "description": "Un circuit qui commandait les mouvements d'une structure antique. De nos jours, personne ne sait comment il fonctionne."
@@ -9896,9 +10537,19 @@
       "description": "Provient d'une ancienne machine des ruines désormais inactive. C'est la source d'énergie de ce mécanisme biomimétique."
     },
     {
+      "key": "chaos-module",
+      "name": "Module du chaos",
+      "description": "Provient d’un ancien Dragon des ruines désormais inactif.\nLes dragons étaient autrefois l’incarnation charnelle la plus primitive et la plus ancienne des éléments suprêmes jusqu’à ce qu’ils soient vaincus, conquis ou assimilés."
+    },
+    {
       "key": "chaos-oculus",
       "name": "Œil du chaos",
       "description": "Provient d'une ancienne machine des ruines désormais inactive.\r\nLe mot « ruines » fait référence aux zones dans lesquelles elles sont les plus actives. Cependant, les machines des ruines n'ont en réalité que peu de points communs avec les débris dans lesquels elles se trouvent habituellement.\r\nDans un passé lointain, ces ruines appartenaient à une civilisation assez puissante pour presque toucher le dôme du firmament, pendant qu'elles restaient à attendre dans les tréfonds de la terre, l'ordre de se soulever et de renverser tous les royaumes."
+    },
+    {
+      "key": "chaos-storage",
+      "name": "Conteneur du chaos",
+      "description": "Provient d’un ancien Dragon des ruines désormais inactif.\nLes Dragons des ruines peuvent absorber l’énergie élémentaire et la stocker dans un composant situé à l’intérieur de leur «cou»."
     },
     {
       "key": "cheese",
@@ -9934,6 +10585,11 @@
       "key": "concealed-unguis",
       "name": "Ongle dissimulé",
       "description": "Du tissu de chair provenant du corps d'un canidé de faille.\r\nAussi étonnantes qu'elles soient, ces créatures d'Alfisol ne sont rien comparées à Durin, l'Humus."
+    },
+    {
+      "key": "copper-talisman-of-the-forest-dew",
+      "name": "Talisman en cuivre de la rosée",
+      "description": "Matériau d’élévation d’arme.\nSous les instructions du Premier sage, les ancêtres du peuple de la forêt tropicale ont fabriqué ces talismans à l’aide d’arbres flétris pour honorer celle qui régnât sur les arbres et les fleurs.\nLa forme du talisman s’inspire de la rosée de la forêt. Elle symbolise l’imprégnation de la sagesse dans les esprits des mortels."
     },
     {
       "key": "cor-lapis",
@@ -9989,6 +10645,11 @@
       "key": "crystalline-bloom",
       "name": "Fleur cristalline",
       "description": "Un cristal de glace d'une extrême pureté qui s'est formé à partir de la floraison d'une Hypostase Cryo.\r\nLes cristaux glacés grandissent et fleurissent selon leurs propres lois du froid, jusqu'à ce qu'un jour une fleur hivernale éclose et gèle tout. Peut-être est-ce le temps stagnant et ce cœur qui ne fond jamais qui sont l'essence de cette fleur éternelle."
+    },
+    {
+      "key": "crystalline-cyst-dust",
+      "name": "Poussière cristalline de sporange",
+      "description": "Un gros amas de poudre de spores qui a été prélevé d’un kyste complet. Si vous le placez dans un environnement adapté, celui-ci pourrait se remplir de Fongus avec le temps…"
     },
     {
       "key": "damaged-mask",
@@ -10051,6 +10712,11 @@
       "description": "Un parchemin qui semble parler de magie. Il dégage une étrange chaleur."
     },
     {
+      "key": "dormant-fungal-nucleus",
+      "name": "Noyau fongique dormant",
+      "description": "Du tissu organique d’un Fongus qui a été exposé à une stimulation élémentaire intense.\nIl y a eu un jour un long débat entre les chercheurs de l’Amurta pour savoir si les Fongus devaient être classés dans la catégorie des plantes ou des animaux. Finalement, ils ont dégagé un consensus et ont définitivement clos l’affaire : les Fongus sont considérés comme une catégorie à part, ni végétale ni animale."
+    },
+    {
       "key": "dragon-lords-crown",
       "name": "Couronne du roi dragon",
       "description": "Ces cornes créées à partir de jade durci et cristallisé pendant des milliers d'années forment la couronne du roi dragon.\r\nInfusé par les esprits et sculpté dans la roche, il est né au cœur de la montagne pour montrer la force de la terre face aux étendues de monolithes, et ses longues cornes dorées sont la marque de sa lutte contre un roi du passé.\r\nCette corne avait, pendant un temps, été brisée et avait perdu de son éclat, mais désormais, elle brille d'une lueur froide et dorée, pendant que vous la tenez dans la paume de votre main."
@@ -10059,6 +10725,11 @@
       "key": "dragonheirs-false-fin",
       "name": "Fausse nageoire de l'héritier du dragon",
       "description": "Un morceau de tissu biologique que vous avez trouvé après avoir vaincu un Élémentosaure abyssal.\r\nBien qu'il ressemble à une sorte de nageoire, il n'a en fait aucune fonction.\r\nLes habitants de Byakuyakoku ont déjà mené des études approfondies sur les Élémentosaures abyssaux. Leur caractéristique la plus distinctive est la possibilité de choisir les traits qu'ils souhaitent transmettre à leur progéniture. En raison de leur grande haine envers l'humanité, ces Élémentosaures perdent toute acuité visuelle quand ils atteignent l'âge adulte. Dans le même temps, ils ont également développé un certain degré de polymorphisme élémentaire à des fins de combat."
+    },
+    {
+      "key": "dream-of-scorching-might",
+      "name": "Rêve dominant du pouvoir brûlant",
+      "description": "Matériau d’élévation d’arme.\nAutrefois, le clair de lune argenté et les sources turquoise décoraient cette belle oasis idyllique. Mais lorsque la reine des fleurs fana au milieu d’une tempête de sable qui rendit même le soleil invisible, ce paradis doré où régnait l’insouciance fut submergé par la mort.\nLes chants des tribus érémites racontent comment la lune argentée éclaira la robe écarlate d’Al-Ahmar, le roi endeuillé, ce qui le fit sombrer dans la folie.\nDans une chanson triste, le roi solitaire, qui ne parvient pas à se défaire de ses souvenirs du passé, érige un rêve immortel au milieu du désert. C’est un endroit où l’eau des sources pures converge sans être perturbée, un lieu éclairé par la lumière d’un soleil couchant éternel."
     },
     {
       "key": "dream-of-the-dandelion-gladiator",
@@ -10091,6 +10762,11 @@
       "description": "Un peu de pouvoir provenant des bourrasques du Dragon de l'Est.\r\nTransparent, mais beau, il permet d'invoquer les tornades et les alizés. Le vent est son compagnon, sa voix et sa liberté.\r\nTous ceux qui se tiennent en travers de son chemin sont ses ennemis."
     },
     {
+      "key": "echo-of-scorching-might",
+      "name": "Dernier écho du pouvoir brûlant",
+      "description": "Matériau d’élévation d’arme.\nJadis, le peuple du roi du désert sculpta des insignes royaux à l’image d’un scarabée robuste en l’honneur du soleil rouge qui ponctue les aubes et les crépuscules ainsi que le temps qui ne cesse de s’écouler.\nBien que le nom du roi ne soit plus jamais mentionné par quiconque, ces petits insignes royaux ont survécu jusqu’à nos jours, laissant entrevoir la gloire des jours d’autrefois.\nCes insignes voyagent aux quatre coins du pays avec les descendants des tribus érémites, contant silencieusement l’histoire des temps anciens."
+    },
+    {
       "key": "electro-crystal",
       "name": "Électrocristal",
       "description": "Un cristal qui puise son énergie électrique dans l'air. Il peut engourdir votre main si vous le tenez trop longtemps."
@@ -10109,6 +10785,11 @@
       "key": "everflame-seed",
       "name": "Graine de feu",
       "description": "Graine qui anime tout Arbre enflammé. Une chaleur qu'on devine prête à consumer la flore du monde semble s'en dégager.\r\nLe noyau de la terre regorge d'énergie sans cesse mouvante, aux désirs sans fond. S'emparant des plantes et arbres, elle les consume sous un feu éternel, et les soumets à sa volonté de détruire tout sur son passage. Tu parles d'un rêve."
+    },
+    {
+      "key": "faded-red-satin",
+      "name": "Satin rouge délavé",
+      "description": "Un morceau de satin rouge légèrement déchiré utilisé pour couvrir les yeux.\nDe nombreux Érémites ont tendance à se couvrir les yeux avec des tissus, une pratique dont l’origine est perdue depuis longtemps dans les sables du temps."
     },
     {
       "key": "famed-handguard",
@@ -10186,6 +10867,11 @@
       "description": "Un amphibien commun des environnements humides. Cet animal plein d'énergie sécrète une substance revigorante lorsqu'elle est ingérée par des humains."
     },
     {
+      "key": "fungal-spores",
+      "name": "Spores de Fongus",
+      "description": "Une petite quantité de poudre de spores lumineuses laissée par un Fongus. Un éternuement suffit à la faire s’envoler sans aucune trace."
+    },
+    {
       "key": "genesis-crystal",
       "name": "Cristal primaire",
       "description": "Un cristal infusé de l'énergie qui créa l'univers. Formé par l'espoir le plus pur, il renferme des possibilités infinies et contient assez d'énergie pour faire naître une nouvelle étoile."
@@ -10194,6 +10880,11 @@
       "key": "gilded-scale",
       "name": "Écaille dorée",
       "description": "Armure d'écaille qui pousse naturellement sur la pierre mystique. Robustes et silencieuses, ces écailles renferment la force du roi dragon.\r\nAu fil des années, à mesure que d'innombrables générations revenaient à la poussière de la terre, l'or et l'obsidienne se sont incrustés dans la chair et le sang créés par la roche avant de se répandre et de former des écailles.\r\nL'agonie fulgurante, les pleurs silencieux... Tout cela se dissipera peut-être une fois que la rancune aura pris fin."
+    },
+    {
+      "key": "glabrous-beans",
+      "name": "Haricot glabre",
+      "description": "Un légume commun en Teyvat qui dégage un parfum léger. Il se cuisine de diverses manières et son utilisation est donc répandue dans le monde entier."
     },
     {
       "key": "glaze-lily",
@@ -10216,9 +10907,19 @@
       "description": "Un insigne qui représente la fierté des Pilleurs de trésors. Ils ne reculeront jamais devant rien pour s'emparer du moindre trésor, qu'il soit enfoui sous de vastes plaines ou sous l'océan."
     },
     {
+      "key": "golden-talisman-of-the-forest-dew",
+      "name": "Talisman en or de la rosée",
+      "description": "Matériau d’élévation d’arme.\n« Les mortels n’aiment que trois choses : les sources éclairées par le clair de lune, la verdure pleine de vie et avoir un visage qui ne vieillit jamais… »\nL’essence de la sagesse ne réside pas dans la maîtrise de toutes les connaissances ou la recherche du profit, mais dans le fait que, grâce à elle, toute créature peut atteindre la liberté qui lui permettra de se défaire des chaînes qui l’emprisonnent.\nBien que le rugissement des tigres ne se fasse plus entendre dans la forêt, et que les gardiens intraitables se retirent dans les rêves des enfants… La nuit où chaque sceau d’or secret est levé et où tous les rêves brillent comme de l’ambre au clair de lune, peut-être qu’elle et son peuple bien-aimé finiront par gagner véritablement leur liberté."
+    },
+    {
       "key": "grain-of-aerosiderite",
       "name": "Grain d'aérosidérite noire",
       "description": "Matériau d'élévation d'arme.\r\nD'après la légende, une météorite noire tombée à travers la Mer de nuages de Liyue terrassa un monstre. Elle fut cependant souillée par le sang impur de la créature et perdit le pouvoir divin que lui avait insufflé le Souverain de la Roche."
+    },
+    {
+      "key": "guide-to-admonition",
+      "name": "Guide de l’Admonestation",
+      "description": "Matériau d’amélioration d’aptitude.\nL’admonestation est une des branches de la nation de la sagesse.\nElle va de pair avec la pensée ingénieuse. Une réflexion consciencieuse permet de s’exprimer clairement et humblement pour convaincre les sages et éclairer les ignorants. De telles paroles donnent la possibilité à la sagesse de couler librement, comme une rivière sans barrage."
     },
     {
       "key": "guide-to-ballad",
@@ -10246,9 +10947,19 @@
       "description": "Matériau d'amélioration d'aptitude.\r\nL'or est le symbole du Pays de la Roche.\r\nIl représente la transformation et le lien unissant le port, les monts, les terres et les hommes de Liyue : le travail se transforme en or, et ce dernier apporte la prospérité en retour."
     },
     {
+      "key": "guide-to-ingenuity",
+      "name": "Guide de l’Ingénuité",
+      "description": "Matériau d’amélioration d’aptitude.\nL’ingénuité est une nervure de feuille de la nation de la sagesse.\nElle guide les paroles honnêtes. Réfléchir avec intelligence, attention et bonté permet de rester dans le droit chemin. Seuls ceux dont l’âme est emplie de dédain et de méchanceté sont capables de paroles abjectes."
+    },
+    {
       "key": "guide-to-light",
       "name": "Guide de la lumière",
       "description": "Matériau d'amélioration d'aptitude.\r\nLa lumière est l'aspiration de la Nation du Tonnerre.\r\nBien que les rayons du soleil soient bloqués par des couches de nuages, il y a encore des gens au pays du dieu du tonnerre qui rêvent de percer cette mer de colère foudroyante pour poursuivre la gloire du divin, ne craignant pas d'être cruellement frappés."
+    },
+    {
+      "key": "guide-to-praxis",
+      "name": "Guide de l’Usage",
+      "description": "Matériau d’amélioration d’aptitude.\nL’usage représente les racines de la nation de la sagesse.\nIl corrobore les paroles sincères. Il ne suffit pas de penser et de se comporter avec bienveillance pour atteindre la sagesse. Elle émerge de certaines actions et laisse son empreinte sur les mots honnêtes."
     },
     {
       "key": "guide-to-prosperity",
@@ -10269,6 +10980,11 @@
       "key": "ham",
       "name": "Jambon",
       "description": "Une cuisse d'animal cuite pour en améliorer la conservation. Même la plus fine des tranches est pleine de saveur."
+    },
+    {
+      "key": "harra-fruit",
+      "name": "Fruit harra",
+      "description": "Poussant dans la forêt tropicale humide et chaude, ce fruit a une saveur épicée particulière. À Sumeru, il est un choix de prédilection pour fabriquer des épices, ce qui peut être réalisé en le réduisant à l’état de poudre."
     },
     {
       "key": "heavy-horn",
@@ -10306,6 +11022,11 @@
       "description": "La forme effondrée d'une Hypostase Anémo après avoir été vaincue. Elle contient un pouvoir Anémo d'une grande pureté.\r\nLa légende raconte qu'un petit papillon fragile possède également le pouvoir de provoquer un ouragan. Ce papillon fait partie du vent pur, attendant avec patience le jour pour invoquer à nouveau l'ouragan."
     },
     {
+      "key": "inactivated-fungal-nucleus",
+      "name": "Noyau fongique inactivé",
+      "description": "Du tissu d’un Fongus qui a été exposé à une stimulation élémentaire intense.\nSa texture apaisante en fait un excellent remède contre le stress. Cependant, son utilisation peut aussi facilement conduire à une infestation de Fongus, il ne convient donc pas à un usage commercial."
+    },
+    {
       "key": "inspectors-sacrificial-knife",
       "name": "Grande dague de l'Inspecteur",
       "description": "Une arme qui a servi à « régler des comptes ». Personne n'a les yeux derrière la tête, alors cette dague et ses techniques de maniement ont spécifiquement été conçues pour palier à cette faiblesse."
@@ -10319,6 +11040,11 @@
       "key": "iron-chunk",
       "name": "Morceau de fer",
       "description": "Un morceau de fer que les mains expertes d'un bon forgeron peuvent transformer en objet."
+    },
+    {
+      "key": "iron-talisman-of-the-forest-dew",
+      "name": "Talisman en fer de la rosée",
+      "description": "Matériau d’élévation d’arme.\nPlus tard, la maîtresse des plantes enseigna les secrets de la forge du fer noir aux humains. Et c’est ainsi que les mortels à l’esprit innocent apprirent à se servir du feu et des lames acérées.\nLa maîtresse des plantes se réjouit de voir une telle chose : certes, le feu et le métal pouvaient la blesser, mais maîtriser ces deux choses allait permettre aux humains de devenir puissants."
     },
     {
       "key": "jade-branch-of-a-distant-sea",
@@ -10349,6 +11075,11 @@
       "key": "kageuchi-handguard",
       "name": "Garde-main kageuchi",
       "description": "Un garde-main que l'on monte sur une épée de valeur.\r\nInazuma a une longue tradition de fabrication d'épées. Lorsqu'un artisan veut forger une épée, il fabrique souvent plusieurs exemplaires du même modèle pour en sélectionner le meilleur, le shinuchi, les autres étant appelés les kageuchi."
+    },
+    {
+      "key": "kalpalata-lotus",
+      "name": "Kalpalotus",
+      "description": "La fleur produite par une liane poussant sur les falaises. On l’appelle lotus uniquement parce qu’elle en a l’apparence, mais en dehors de cela, ces deux plantes ne partagent aucune similitude."
     },
     {
       "key": "lavender-melon",
@@ -10386,6 +11117,11 @@
       "description": "Une plante aquatique originaire de Liyue qui pousse par deux. L'une d'elle dégage un doux parfum floral, tandis que l'autre porte un fruit amer. On dit que c'est une bonne plante médicinale."
     },
     {
+      "key": "luminescent-pollen",
+      "name": "Pollen fluorescent",
+      "description": "Un petit paquet de spores fluorescentes qui provient d’un Fongus. Il s’agit d’un ingrédient médicinal commun dans les pays avec des forêts tropicales. Les marchands en vendent souvent dans des sachets en papier."
+    },
+    {
       "key": "luminescent-spine",
       "name": "Abdomen luminescent",
       "description": "Partie émettrice de lumière chez une luciole qui permet de séduire en période de reproduction. Son ingestion améliore la force chez les humains."
@@ -10411,6 +11147,11 @@
       "description": "Un noyau pouvant alimenter le mécanisme de la Lame oni, et lui permettant de manier une épée tel un être autonome.\r\nLa chair se décompose, et avec elle le souvenir des arts martiaux, quels qu'en soient la maîtrise et le raffinement.\r\nPeut-être qu'est-ce seulement en convertissant ses quatre membres et son corps en pièces mécaniques, et en sacrifiant son cœur pour un mécanisme sophistiqué que l'on peut transcender la chair et approcher l'éternité..."
     },
     {
+      "key": "majestic-hooked-beak",
+      "name": "Bec crochu majestueux",
+      "description": "Un bec allongé que vous avez trouvé après avoir vaincu le Champieffroi panaché.\nLes chercheurs considèrent toujours comme un miracle le fait que des Fongus mous aient pu évoluer pour avoir ces becs crochus durs comme la pierre. Cette espèce, que l’on peut dignement considérer comme le roi des champignons fait tranquillement les cent pas sur la ligne d’arrivée de l’évolution. De temps en temps, il lance un long appel à tous les êtres vivants de la forêt tropicale : même la créature la plus impuissante et timide peut un jour devenir le monarque des bois."
+    },
+    {
       "key": "mask-of-the-kijin",
       "name": "Masque du kijin",
       "description": "Matériau d'élévation d'arme.\r\nChiyo, une guerrière de la tribu oni avec l'emblème du Mitsudomoe Électro sur le dos, a été une fois avalée entière par une bête d'au-delà de ce monde qui avait un corps de tigre et une queue de serpent tout en retenant les forces des ténèbres. Finalement, elle a déchiré les entrailles de la créature de l'intérieur, se libérant.\r\nC'est l'origine de l'expression « Chiyo la morsure de tigre », qui sera changée au fil des années en « Torachiyo ».\r\nMais dans le ventre de la bête, elle fut souillée d'un péché profond et vit ses camarades déchiquetés par ces dents entachées de sang. Plongée dans les ténèbres à perte de vue, elle finira par retourner son épée contre la toute-puissante Narukami Ogosho. Son bras et une corne furent tranchés, et elle s'enfuit de la ville dans la forêt comme une bête blessée. Là, on raconte qu'elle a été prise pour un monstre inconnu et tuée par un Tengu, ou par le Shuumatsuban, ou peut-être même par un descendant du Clan Iwakura s'entraînant au fond des montagnes, car ses traits avaient été déformés par la haine et l'agonie de ses blessures. Ou peut-être a-t-elle même rencontré l'humanoïde portant une épée et un masque d'oni près du cadavre du serpent géant, et là s'est terminé le voyage de sa vie.\r\nPeu de ceux qui ont combattu l'abîme à cette époque ont été épargnés par les rêves les plus sombres. Ceux qui ont tué des monstres et se sont transformés en eux n'étaient guère la minorité. La frontière entre les mondes se fragilise, et une telle corruption n'est peut-être pas simplement à sens unique."
@@ -10434,6 +11175,31 @@
       "key": "matsutake",
       "name": "Matsutake",
       "description": "Un mycète qui pousse sur ou près des pins. On peut le trouver facilement grâce à son odeur particulière."
+    },
+    {
+      "key": "midlander-bow-billet",
+      "name": "Base d’arc du centre",
+      "description": "Un matériau qui peut être forgé en arc 4★.\nD’après les philosophes, toutes les choses du monde ont quatre raisons d’être. Le but de ce matériau est de devenir une arme digne d’accompagner un héros."
+    },
+    {
+      "key": "midlander-catalyst-billet",
+      "name": "Base de catalyseur du centre",
+      "description": "Un matériau qui peut être forgé en catalyseur 4★.\nD’après les philosophes, toutes les choses du monde ont quatre raisons d’être. Le but de ce matériau est de devenir une arme digne d’accompagner un héros."
+    },
+    {
+      "key": "midlander-claymore-billet",
+      "name": "Base d’épée à deux mains du centre",
+      "description": "Un matériau qui peut être forgé en épée à deux mains 4★.\nD’après les philosophes, toutes les choses du monde ont quatre raisons d’être. Le but de ce matériau est de devenir une arme digne d’accompagner un héros."
+    },
+    {
+      "key": "midlander-polearm-billet",
+      "name": "Base de lance du centre",
+      "description": "Un matériau qui peut être forgé en arme d’hast 4★.\nD’après les philosophes, toutes les choses du monde ont quatre raisons d’être. Le but de ce matériau est de devenir une arme digne d’accompagner un héros."
+    },
+    {
+      "key": "midlander-sword-billet",
+      "name": "Base d’épée du centre",
+      "description": "Un matériau qui peut être forgé en épée à une main 4★.\nD’après les philosophes, toutes les choses du monde ont quatre raisons d’être. Le but de ce matériau est de devenir une arme digne d’accompagner un héros."
     },
     {
       "key": "milk",
@@ -10556,6 +11322,11 @@
       "description": "Matériau d'élévation d'arme.\r\nPar le passé, les anciens escaladaient le sommet maintenant connu sous le nom de Mont Yougou et sculptaient du bois carbonisé par la foudre en un crochet incurvé pour l'offrir en effigie à la force tonitruante qui illuminait les cieux et secouait la terre. Cette forme deviendra finalement le symbole du Mitsudomoe Électro, symbolisant la faveur, la sagesse et la puissance de l'Électro, ainsi que les personnes qui représentent ces valeurs."
     },
     {
+      "key": "nilotpala-lotus",
+      "name": "Nilotpalotus",
+      "description": "Poussant dans les zones humides des forêts, ces plantes ne fleurissent que la nuit, et leurs fleurs projettent la même lueur que la lune."
+    },
+    {
       "key": "noctilucous-jade",
       "name": "Jade noctiluque",
       "description": "Un minerai rare qui brille dans l'obscurité. On dit qu'il s'agit du fruit de la condensation des éléments fluctuants entre le ciel et la terre."
@@ -10586,9 +11357,34 @@
       "description": "Un matériau qui peut être forgé en épée à une main 4★.\r\nD'après les philosophes, le marbre a le potentiel de donner naissance une belle sculpture. Ce matériau possède également des possibilités infinies qui n'attendent que vous pour être explorées."
     },
     {
+      "key": "oasis-gardens-kindness",
+      "name": "Gentillesse du jardin d’oasis",
+      "description": "Matériau d’élévation d’arme.\nLes textes anciens enfouis sous le sable évoquent une reine des fleurs qui est aussi la maîtresse des songes.\nElle prodiguait des rêves aux exilés, aux aliénés et aux simples d’esprit, dans lesquels ils purent vivre de belles choses. Bien qu’ils furent pauvres au point de ne posséder que le fer noir de leurs bols, les humains étaient entièrement sous le charme de la reine des fleurs. Ils se perdaient dans sa beauté et dans sa miséricorde sans limites."
+    },
+    {
+      "key": "oasis-gardens-mourning",
+      "name": "Deuil du jardin d’oasis",
+      "description": "Matériau d’élévation d’arme.\nLa reine des fleurs s’entendait bien avec les djinns.\nCelle qui régnait sur les fleurs et les oasis s’associa avec le roi du désert afin de construire Ay-Khanoum, la cité des amphithéâtres, ce qui signifiait « la cité de la fille de la lune » dans la langue ancienne des djinns.\nPlus tard, cependant, on dit que la reine des fleurs mourût sous la cruauté du soleil ardent et du sable, après quoi on n’aperçut plus jamais de padisachidées violettes dans les oasis.\nQuand elle quitta ce monde, les tempêtes de sable se mirent à faire rage, les djinns pleurèrent, et le disque de pierres précieuses d’une couleur argentée telle celle de la lune ne fut plus à même de prodiguer du bonheur comme il le faisait, et se mit à émettre une lueur inspirant la mélancolie."
+    },
+    {
+      "key": "oasis-gardens-reminiscence",
+      "name": "Souvenir du jardin d’oasis",
+      "description": "Matériau d’élévation d’arme.\nLes gens avaient l’habitude de dire que la maîtresse de la flore était la reine de la joie et du bonheur. De l’eau douce qui jaillit de ses manches sont nées les oasis fleuries du milieu du désert. Les fleurs et les herbes suivaient ses pas, et le clair de lune lui ouvrait la voie.\nLorsque le ciel tournait le dos à la terre, la maîtresse de la flore étendait sa miséricorde à chacun des mortels, et ceux-ci reprirent conscience de leur propre existence et de la notion de bonheur et de la notion de plaisir, et purent ainsi retrouver une vie fastueuse et oisive."
+    },
+    {
+      "key": "oasis-gardens-truth",
+      "name": "Vérité du jardin d’oasis",
+      "description": "Matériau d’élévation d’arme.\n« Qui donc pourrait vénérer une divinité défunte ? »\nLa reine des fleurs était autrefois alliée à deux autres divinités. En plus de la sagesse et du pouvoir, elle apporta à ses sujets joie et miséricorde.\nTout comme il ne peut y avoir uniquement un soleil brûlant et une pluie battante sur terre, pour le peuple de la reine des fleurs, la joie et l’amour, le chant et la musique, le vin et l’extravagance étaient tout aussi vitaux que la force et l’intelligence.\nOn dit que les fleurs s’épanouissent pour pouvoir se faner de la plus magnifique des manières, et c’est la mort était précisément le dénouement que la reine des fleurs cherchait à obtenir, car la mort ajoute de l’amertume à la joie disparue, et ce sentiment amer ne fait que s’intensifier à travers des souvenirs sans fin.\nLe roi du désert, qui était un ignorant, ne sût jamais saisir le sens de sa pensée, il était simplement envoûté par sa tendresse et son charme incommensurables. Aussi erronée que soit cette affection sans bornes, elle faisait partie des calculs de la reine des fleurs."
+    },
+    {
       "key": "old-handguard",
       "name": "Garde-main ancien",
       "description": "Un garde-main qui a connu de nombreuses batailles et qui autrefois était monté sur une lame inazumienne.\r\nPour les épéistes expérimentés, la tsuba permet de bloquer la lame de l'adversaire. Pour les débutants, elle permet de protéger sa propre main."
+    },
+    {
+      "key": "olden-days-of-scorching-might",
+      "name": "Passé glorieux du pouvoir brûlant",
+      "description": "Matériau d’élévation d’arme.\nÀ l’époque où régnait l’ignorant roi du désert, le pouvoir de ce dernier s’étendait jusqu’à chaque parcelle de terre, telle la lumière du soleil brûlant.\nD’anciennes tablettes de pierre rapportent qu’il transforma son pouvoir en sept rayons de lumière aveuglante ou sept piliers qu’il accorda ensuite de manière égale et miséricordieuse à tous. Personne ne fut négligé, personne ne fut mécontent.\nC’était un âge d’or oublié, une époque où la reine des fleurs s’était fondue dans les sables et où la maîtresse des plantes était déterminée à partir. Seuls les descendants du sable décidèrent de suivre leur divinité. Même si l’ombre sinistre de la calamité se profilait, la puissance en laquelle ils avaient foi brillait comme l’ambre et l’or.\nMalgré tout, la calamité finit par s’abattre, et les insignes de scarabée dorés furent ensevelis dans les profondeurs des sanctuaires et des palais, sous des piliers effondrés gravés d’images d’aigles et de taureaux."
     },
     {
       "key": "ominous-mask",
@@ -10611,6 +11407,11 @@
       "description": "Peut être utilisée pour activer des Arbres pétrifiés et des Fleurs des lignes énergétiques et en obtenir ainsi les récompenses.\r\nLa légende raconte que les racines des anciens arbres pétrifiés et les Fleurs des lignes énergétiques s'entrelacent dans les profondeurs de la terre. Leurs connexions dessinent les trajectoires que prennent les lignes énergétiques."
     },
     {
+      "key": "padisarah",
+      "name": "Padisachidée",
+      "description": "Une plante pure et noble, très exigeante quant à l’environnement dans lequel elle pousse. Son pistil peut être transformé en épices précieuses."
+    },
+    {
       "key": "pepper",
       "name": "Poivre",
       "description": "Cet assaisonnement pique légèrement vos papilles et fait des merveilles sur de la viande."
@@ -10624,6 +11425,11 @@
       "key": "philanemo-mushroom",
       "name": "Champignon anémophile",
       "description": "Un champignon qui grandit sous les caresses de la brise. Il prospère comme le vent qui souffle toujours, nourrissant la vie."
+    },
+    {
+      "key": "philosophies-of-admonition",
+      "name": "Philosophie de l’Admonestation",
+      "description": "Matériau d’amélioration d’aptitude.\nL’admonestation est une des branches de la nation de la sagesse.\nElle est accomplie par de bonnes actions. Les gestes donnent un sens aux mots. Ce n’est qu’en ayant des intentions, ses paroles et des actions que des fruits charnus mûriront de l’arbre de la sagesse."
     },
     {
       "key": "philosophies-of-ballad",
@@ -10651,9 +11457,19 @@
       "description": "Matériau d'amélioration d'aptitude.\r\nL'or est le symbole du Pays de la Roche.\r\nLiyue n'en manque pas, mais sa véritable richesse se trouve dans le cœur de ses habitants."
     },
     {
+      "key": "philosophies-of-ingenuity",
+      "name": "Philosophie de l’Ingénuité",
+      "description": "Matériau d’amélioration d’aptitude.\nL’ingénuité est une nervure de feuille de la nation de la sagesse.\nElle est vectrice d’une conduite harmonieuse. L’action est complémentaire à la pensée. La sagesse s’épanouit là où l’esprit, les mots et les actions convergent."
+    },
+    {
       "key": "philosophies-of-light",
       "name": "Philosophie de la lumière",
       "description": "Matériau d'amélioration d'aptitude.\r\nLa lumière est l'aspiration de la Nation du Tonnerre.\r\nBien qu'elle doive vivre sur la terre, l'humanité aspirera toujours à la lumière. Les mortels se dépasseront toujours et ils ne s'arrêteront jamais. Une éternité scellée peut sembler magnifique, mais son essence est la mort."
+    },
+    {
+      "key": "philosophies-of-praxis",
+      "name": "Philosophie de l’Usage",
+      "description": "Matériau d’amélioration d’aptitude.\nL’usage représente les racines de la nation de la sagesse.\nIl fait pousser les fruits de la sagesse. L’acte pratiqué se donne un sens. L’union des actions, des paroles et des pensées est le seul moyen qu’ont les sages d’atteindre la perfection."
     },
     {
       "key": "philosophies-of-prosperity",
@@ -10746,9 +11562,19 @@
       "description": "Matériau d'élévation d'arme.\r\nLa lance de pierre possède une sphère lumineuse formé par le pouvoir des ennemis du Souverain de la Roche. Il n'était pas l'objet de leur haine, car corrompus depuis bien longtemps, elle faisait désormais naturellement partie d'eux."
     },
     {
+      "key": "remnant-glow-of-scorching-might",
+      "name": "Éclat subsistant du pouvoir brûlant",
+      "description": "Matériau d’élévation d’arme.\nOrganiser une multitude d’idées différentes en un tout cohérent et régner sur un nombre incalculable d’âmes, telle est l’essence du pouvoir.\nCependant, le pouvoir ne doit pas être cruel et violent, car il a un but beaucoup plus profond : créer une utopie où les gens n’ont pas de soucis et où la persécution et l’esclavage n’ont pas leur place.\nC’est exactement ce que le roi silencieux a vu à travers les secrets des cristaux, et exactement ce que sa partenaire lui enseigna dans le passé.\nLes insignes sombres en forme de scarabée et l’intransigeance de la loi étaient les pierres fondatrices de l’autorité du royaume."
+    },
+    {
       "key": "rice",
       "name": "Riz",
       "description": "Une céréale commune en Teyvat. Son goût et sa texture sont appréciés des masses."
+    },
+    {
+      "key": "rich-red-brocade",
+      "name": "Brocart rouge luxueux",
+      "description": "Une pièce de brocart rouge avec des motifs dorés tissés à l’intérieur.\nLe peuple perdu qui a vu le jour parmi les sables dorés du désert entonne parfois un chant dont la signification a été oubliée depuis longtemps pour louer le soleil brûlant qui illumine la terre comme jamais et se lamenter devant les dernières lueurs du crépuscule. La chanson se termine par la répétition de mots inconnus, qui seraient les noms de leurs anciennes divinités. Lorsque le roi du désert était en vie, ses sujets se couvraient les yeux par crainte d’être brûlés par sa radiance semblable à celle du soleil."
     },
     {
       "key": "riftborn-regalia",
@@ -10759,6 +11585,16 @@
       "key": "ring-of-boreas",
       "name": "Vertèbre de Borée",
       "description": "Un peu de glace provenant du corps du Grand Roi Loup du Nord.\r\nIl déclenchait des blizzards et des tempêtes de neige à la grêle si acérée qu'elle pouvait couper la chair. Ses pouvoirs ne sont plus ceux d'antan, mais il possède encore la puissance de recouvrir ses terres de neige."
+    },
+    {
+      "key": "robust-fungal-nucleus",
+      "name": "Noyau fongique robuste",
+      "description": "Du tissu organique d’un Fongus qui a été exposé à une stimulation élémentaire intense.\nOn pense généralement que les Fongus ont évolué et gagné en mobilité pour mieux disperser leurs spores.\nUn poète a un jour affirmé que les Fongus avaient un rêve commun dans lequel leurs spores recouvraient chaque parcelle des montagnes et des océans, et que le monde était plus paisible que jamais. Puis les Fongus se transformèrent en poissons, en oiseaux, en bêtes, en hommes et en dieux qui dépendaient tous de la pluie, de la terre et de leur propre espèce qui était revenue sur terre pour survivre."
+    },
+    {
+      "key": "rukkhashava-mushrooms",
+      "name": "Champignon sacramental",
+      "description": "Un champignon qui pousse en couches successives telle une mer de nuages et que l’on trouve principalement sur les arbres au cœur de la forêt tropicale. Les habitants de Sumeru les considèrent comme la cristallisation sacrée de l’héritage de Rukkhadevata."
     },
     {
       "key": "runic-fang",
@@ -10871,6 +11707,11 @@
       "description": "Un insigne en forme de corbeau porté par les Pilleurs de trésors pour se reconnaître entre eux. Pas besoin d'entretien pour adhérer à leur groupe, tant qu'on est suffisamment motivé par le gain et que le courage ne nous fait pas défaut."
     },
     {
+      "key": "silver-talisman-of-the-forest-dew",
+      "name": "Talisman en argent de la rosée",
+      "description": "Matériau d’élévation d’arme.\nDans les innombrables histoires de la forêt, existe un personnage portant une cape aux rayures rouges comme le feu ardent : il est le roi des labyrinthes et le maître des eaux où se reflète la lune.\nCelui-ci inclina la tête pour officialiser son amitié avec la maîtresse des plantes, un acte qui fut scellé par le biais de pierres précieuses qui scintillaient comme l’eau et de l’argent qui brillait comme le clair de lune.\nEn échange d’un tel geste, la maîtresse des plantes promit de garder les secrets du roi du labyrinthe et de protéger les beaux rêves de la forêt tropicale.\nPersonne n’aurait pu prédire que le magnifique manoir des secrets et des rêves s’éteindrait plus tard dans le linceul de la flamme sombre de l’oubli, après quoi ses cendres retourneraient au sol et deviendraient des nutriments pour les forêts tropicales qui venaient de naître."
+    },
+    {
       "key": "slime-concentrate",
       "name": "Essence de Blob",
       "description": "Concentré de Blob. Il peut se déplacer tout seul sans surveillance de votre part."
@@ -10921,6 +11762,11 @@
       "description": "Un noyau d'énergie intégral qui peut être ramassé après avoir vaincu un Spectre.\r\nUn débat revient souvent parmi ceux qui aiment diviser le monde entre gagnants et perdants : Lequel flotte le mieux dans les airs ? Un Anémoblob ou un Spectre ?"
     },
     {
+      "key": "spice",
+      "name": "Épice",
+      "description": "Un condiment issu de la fusion de différentes saveurs que l’on fabrique à partir de fruits harras séchés. Il apporte toute une gamme de sensations culinaires aux plats dans lesquels il est utilisé. C’est pourquoi on dit qu’il n’y a pas un seul aliment qui ne lui convienne pas."
+    },
+    {
       "key": "spirit-locket-of-boreas",
       "name": "Esprit de Borée",
       "description": "Un fragment d'âme obtenu du Grand Roi Loup du Nord.\r\nCe dernier déclenchait des blizzards et des tempêtes de neige. Cependant, à la fin de sa vie, il comprit enfin que ses vents froids et violents ne pouvaient qu'éteindre la vie, et non la nourrir. Il laissa donc ses pouvoirs se répandre sur les terres pour leur apporter bénédiction et protection éternelles."
@@ -10934,6 +11780,11 @@
       "key": "starconch",
       "name": "Conque d'étoile",
       "description": "Un coquillage creux échoué sur la plage. Plaquez-le contre votre oreille et vous entendrez l'appel de la mer."
+    },
+    {
+      "key": "starshroom",
+      "name": "Champitoile",
+      "description": "Un champignon dont le chapeau ressemble à une étoile à cinq branches. Il est doté d’une très forte vitalité. Une fois qu’il a atteint sa maturité, son chapeau se fend et s’ouvre en son centre."
     },
     {
       "key": "starsilver",
@@ -10961,6 +11812,11 @@
       "description": "Une poudre obtenue à partir de fleurs sucrantes. Procure de l'énergie et du bonheur."
     },
     {
+      "key": "sumeru-rose",
+      "name": "Rose sumérienne",
+      "description": "Vives et belles, ces fleurs d’un violet pur dégagent un parfum agréable qui fera s’arrêter toute personne passant devant elles. Leur nom peut porter à confusion, car bien qu’elles soient des roses, elles sont semblables à nulle autre fleur de la même classification florale."
+    },
+    {
       "key": "sunsettia",
       "name": "Pomme crépusculaire",
       "description": "Un fruit dodu, beau comme le coucher de soleil, que l'on peut voir un peu partout sur le continent de Teyvat. Il dégage une douce et étrange odeur et possède une forte valeur énergétique."
@@ -10974,6 +11830,11 @@
       "key": "tail-of-boreas",
       "name": "Queue de Borée",
       "description": "Un fragment de la queue du Grand Roi Loup du nord.\r\nBien qu'il soit réduit à un esprit, la puissance de Borée n'est pas à sous-estimer. Le Roi Loup essaya de se construire un corps à l'aide de feu et de glace afin de combattre un ennemi, mais ce ne fut pas suffisant pour contenir ses pouvoirs. Les écailles givrées qui s'en sont détachées lors de l'affrontement ont conservé leur énergie spirituelle."
+    },
+    {
+      "key": "teachings-of-admonition",
+      "name": "Enseignement de l’Admonestation",
+      "description": "Matériau d’amélioration d’aptitude.\nL’admonestation est une des branches de la nation de la sagesse.\nElle provient d’un cœur pur et seuls les mots clairs et bienveillants peuvent exprimer une extrême sagesse et libérer les germes de la connaissance des chaînes de l’arrogance."
     },
     {
       "key": "teachings-of-ballad",
@@ -11001,9 +11862,19 @@
       "description": "Matériau d'amélioration d'aptitude.\r\nL'or est le symbole du Pays de la Roche.\r\nAbondant sous ses terres, il est le nerf de la guerre de Liyue qui tient debout grâce à lui."
     },
     {
+      "key": "teachings-of-ingenuity",
+      "name": "Enseignement de l’Ingénuité",
+      "description": "Matériau d’amélioration d’aptitude.\nL’ingénuité est une nervure de feuille de la nation de la sagesse.\nElle naît de la considération bienveillante. Il est souvent dit qu’un arbre empoisonné ne porte pas de fruit. De même, les idées ingénieuses proviennent uniquement d’esprits déterminés et attentionnés, dignes de sagesse."
+    },
+    {
       "key": "teachings-of-light",
       "name": "Enseignement de la lumière",
       "description": "Matériau d'amélioration d'aptitude.\r\nLa lumière est l'aspiration de la Nation du Tonnerre.\r\nLe dirigeant qui prétend tout savoir pour toujours vise à accumuler la gloire céleste. Mais cette vision qui ne peut être partagée ne mène les gens qu'à la désirer plus hardament, comme des papillons de nuit attirés par une lumière."
+    },
+    {
+      "key": "teachings-of-praxis",
+      "name": "Enseignement de l’Usage",
+      "description": "Matériau d’amélioration d’aptitude.\nL’usage représente les racines de la nation de la sagesse.\nIl naît d’une volonté inébranlable. La sagesse se manifeste à travers de la quête de la bonté. Lorsque cette dernière est absente, l’ingéniosité et l’éloquence le sont également."
     },
     {
       "key": "teachings-of-prosperity",
@@ -11031,6 +11902,11 @@
       "description": "Un petit couvre-chef que vous avez récupéré quand le calme est revenu dans le plan euthymique.\r\nUne seule pensée peut mettre fin à toutes les calamités, et il y aura toujours des pensées pour transcender le temps.\r\nMais au milieu de toutes ces catastrophes, on peut se demander si le véritable message de Makoto a pu faire son chemin."
     },
     {
+      "key": "thunderclap-fruitcore",
+      "name": "Fruit du tonnerre",
+      "description": "Le cœur d’un Arbre foudroyé enveloppé de feuilles acérées tels des rasoirs. Il émet de l’élément Électro.\nL’énergie rugissante qui se déchaîne au plus profond de la terre est impatiente de déverser sa rage, souillant même les malheureuses lianes avec sa folie, les faisant gémir et s’agiter frénétiquement. Il est difficile de dire si elle aspire à ce que d’autres goûtent à la douleur d’être continuellement électrocutés et carbonisés ou si elle se débat, attendant avec impatience sa mort inévitable."
+    },
+    {
       "key": "tile-of-decarabians-tower",
       "name": "Tuile cassée de Décabarian",
       "description": "Matériau d'élévation d'arme.\r\nL'endroit qu'on nomme l'Antre de Stormterror aujourd'hui était autrefois une cité construite par Décabarian, le Seigneur des Rafales. Ce beau rêve prospère a été créé par le pouvoir de l'Archon, et même après sa destruction, les tuiles cassées et les fragments dispersés laissés derrière possèdent toujours une grande puissance."
@@ -11049,6 +11925,11 @@
       "key": "treasure-hoarder-insignia",
       "name": "Insigne du Pilleur",
       "description": "Un insigne porté avec fierté et qui indique le rang de son propriétaire au sein des Pilleurs de trésors. Leur soif de richesse ne pourra jamais être assouvie... Ceci dit, depuis quand peut-on se vanter d'être un voleur ?"
+    },
+    {
+      "key": "trimmed-red-silk",
+      "name": "Soie rouge brodée",
+      "description": "Un morceau de soie rouge garni de décorations simples.\nUn guerrier aguerri peut détecter les faiblesses dans les yeux de son ennemi et en tirer ainsi profit. Les Érémites ont perdu leur maître il y a fort longtemps, et aujourd’hui, ils ne font plus confiance qu’à eux-mêmes. On dit qu’ils sont plus que convaincus que toutes les choses du monde les trahissent, même leurs propres yeux."
     },
     {
       "key": "tusk-of-monoceros-caeli",
@@ -11169,6 +12050,11 @@
       "key": "wolfhook",
       "name": "Baie à crochet",
       "description": "Une baie à crochet qui s'attache souvent aux poils des loups. Si vous la regardez, vous pouvez presque entendre les hurlements des loups dans les bois."
+    },
+    {
+      "key": "zaytun-peach",
+      "name": "Pêche zaytun",
+      "description": "Le fruit d’un arbuste forestier. Sa chair est ferme et sucrée. On dit qu’il a un effet calmant sur l’esprit."
     }
   ],
   "debuffs": [
@@ -11201,7 +12087,7 @@
     {
       "key": "vaporize",
       "name": "Évaporation",
-      "effect": "Multiplie par 2 les DGT Pyro de la réaction lorsqu’une attaque Pyro déclenche la réaction.",
+      "effect": "Multiplie par 1.5 les DGT Pyro de la réaction lorsqu’une attaque Pyro déclenche la réaction.",
       "description": null
     },
     {
@@ -11225,7 +12111,7 @@
     {
       "key": "vaporize-reverse",
       "name": "Évaporation (Inversée)",
-      "effect": "Multiplie par 1.5 les DGT Hydro de la réaction lorsqu’une attaque Hydro déclenche la réaction.",
+      "effect": "Multiplie par 2 les DGT Hydro de la réaction lorsqu’une attaque Hydro déclenche la réaction.",
       "description": null
     },
     {
@@ -11262,6 +12148,42 @@
       "key": "crystallize",
       "name": "Cristallisation",
       "effect": "Génère des fragments élémentaires et protège le personnage qui récupère le fragment à l’aide de différents types de boucliers élémentaires. La Cristallisation absorbe les deux éléments mis en réaction. Le bouclier élémentaire protège de tous types de DGT mais absorbe plus efficacement les DGT infligés par le même élément que celui du fragment cristallisé (Exemple : un bouclier Électro protège mieux des DGT Électro).",
+      "description": null
+    },
+    {
+      "key": "bloom",
+      "name": "Fleurissement",
+      "effect": "Génère un noyau Dendro qui explose après 6s, infligeant des DGT Dendro de zone dans un rayon de 6 mètres, aussi bien aux ennemis qu’aux alliés.",
+      "description": null
+    },
+    {
+      "key": "hyperbloom",
+      "name": "Exubérance",
+      "effect": "Se déclenche lorsqu’un noyau Dendro entre en contact avec l’élément Électro. Transformant les noyaux Dendro en projectiles tentaculaires poursuivant les ennemis.",
+      "description": null
+    },
+    {
+      "key": "burgeon",
+      "name": "Bourgeonnement",
+      "effect": "Se déclenche lorsqu’un noyau Dendro entre en contact avec l’élément Pyro. Créant une détonation qui inflige des DGT Dendro de zone.",
+      "description": null
+    },
+    {
+      "key": "quicken",
+      "name": "Stimulation",
+      "effect": "Fait passer l’ennemi dans l’état Stimulé.",
+      "description": null
+    },
+    {
+      "key": "aggravate",
+      "name": "Suractivation",
+      "effect": "Se déclenche lorsqu’on applique l’élément Électro à un ennemi Stimulé. Ajoute un bonus de DGT fixe (non proportionnel aux DGT infligés) aux attaques reçues par l’ennemi qui déclenchent la réaction.",
+      "description": null
+    },
+    {
+      "key": "spread",
+      "name": "Propagation",
+      "effect": "Se déclenche lorsqu’on applique l’élément Dendro à un ennemi Stimulé. Ajoute un bonus de DGT fixe (non proportionnel aux DGT infligés) aux attaques reçues par l’ennemi qui déclenchent la réaction.",
       "description": null
     }
   ],
@@ -11307,6 +12229,12 @@
       "name": "Lianes protectrices",
       "effect": "Augmente toutes les RES élémentaires et la RES physique de 15%",
       "description": "4 éléments différents"
+    },
+    {
+      "key": "sprawling-greenery",
+      "name": "Plante grimpante",
+      "effect": "Augmente la maîtrise élémentaire de 50 pts. Après avoir déclenché une réaction de Brûlure, de Fleurissement ou de Stimulation, la maîtrise élémentaire de tous les personnages de l’équipe à proximité augmente de 30 pts pendant 6s. Après avoir déclenché une réaction de Suractivation, de Propagation, d’Exubérance ou de Bourgeonnement, la maîtrise élémentaire des personnages de l’équipe à proximité augmente de 20 pts pendant 6s. La durée de ces effets est calculée indépendamment.",
+      "description": null
     }
   ],
   "monsters": [
@@ -11341,6 +12269,10 @@
     {
       "key": "azhdaha",
       "name": "Azhdaha"
+    },
+    {
+      "key": "beisht",
+      "name": "Beisht"
     },
     {
       "key": "black-serpent-knight-windcutter",
@@ -11415,6 +12347,10 @@
       "name": "Dendroblob"
     },
     {
+      "key": "dendro-specter",
+      "name": "Spectre Dendro"
+    },
+    {
       "key": "electro-abyss-mage",
       "name": "Électromage de l'Abîme"
     },
@@ -11435,6 +12371,10 @@
       "name": "Hypostase Électro"
     },
     {
+      "key": "electro-regisvine",
+      "name": "Arbre foudroyé"
+    },
+    {
       "key": "electro-samachurl",
       "name": "Brutoshaman Électro"
     },
@@ -11449,6 +12389,38 @@
     {
       "key": "electro-whopperflower",
       "name": "Fleur mensongère Électro"
+    },
+    {
+      "key": "eremite-axe-vanguard",
+      "name": "Lanceuse de hache des Érémites"
+    },
+    {
+      "key": "eremite-crossbow",
+      "name": "Arbalétrier des Érémites"
+    },
+    {
+      "key": "eremite-daythunder",
+      "name": "Foudre diurne des Érémites"
+    },
+    {
+      "key": "eremite-desert-clearwater",
+      "name": "Ablutionneuse des Érémites"
+    },
+    {
+      "key": "eremite-linebreaker",
+      "name": "Brise-formation des Érémites"
+    },
+    {
+      "key": "eremite-ravenbeak-halberdier",
+      "name": "Hallebardier des Érémites"
+    },
+    {
+      "key": "eremite-sunfrost",
+      "name": "Givre solaire des Érémites"
+    },
+    {
+      "key": "eremite-sword-dancer",
+      "name": "Épéiste des Érémites"
     },
     {
       "key": "eye-of-the-storm",
@@ -11491,6 +12463,10 @@
       "name": "Tirailleur Fatui - Mercenaire Pyro"
     },
     {
+      "key": "floating-dendro-fungus",
+      "name": "Fongus Dendro flottant"
+    },
+    {
       "key": "floating-hydro-fungus",
       "name": "Fongus Hydro flottant"
     },
@@ -11525,6 +12501,10 @@
     {
       "key": "golden-wolflord",
       "name": "Loup alpha doré"
+    },
+    {
+      "key": "grounded-hydroshroom",
+      "name": "Champihydro terré"
     },
     {
       "key": "hilichurl",
@@ -11609,6 +12589,10 @@
     {
       "key": "ice-shieldwall-mitachurl",
       "name": "Brutoviandu avec bouclier de glace"
+    },
+    {
+      "key": "jadeplume-terrorshroom",
+      "name": "Champieffroi panaché"
     },
     {
       "key": "kairagi-dancing-thunder",
@@ -11799,6 +12783,14 @@
       "name": "Destructeur des ruines"
     },
     {
+      "key": "ruin-drake-earthguard",
+      "name": "Dragon des ruines terrestre"
+    },
+    {
+      "key": "ruin-drake-skywatch",
+      "name": "Dragon des ruines aérien"
+    },
+    {
       "key": "ruin-grader",
       "name": "Colosse des ruines"
     },
@@ -11849,6 +12841,18 @@
     {
       "key": "stormterror",
       "name": "Stormterror"
+    },
+    {
+      "key": "stretchy-anemo-fungus",
+      "name": "Fongus Anémo extensible"
+    },
+    {
+      "key": "stretchy-geo-fungus",
+      "name": "Fongus Géo extensible"
+    },
+    {
+      "key": "stretchy-pyro-fungus",
+      "name": "Fongus Pyro extensible"
     },
     {
       "key": "thunder-manifestation",
@@ -11931,8 +12935,28 @@
       "name": "Marin des Pilleurs de trésors"
     },
     {
+      "key": "treasure-hoarders-wallenstein",
+      "name": "Wallenstein (Pilleur de trésors)"
+    },
+    {
       "key": "unusual-hilichurl",
       "name": "Brutocollinus étrange"
+    },
+    {
+      "key": "whirling-cryo-fungus",
+      "name": "Fongus Cryo tournoyant"
+    },
+    {
+      "key": "whirling-electro-fungus",
+      "name": "Fongus Électro tournoyant"
+    },
+    {
+      "key": "winged-cryoshroom",
+      "name": "Champicryo ailé"
+    },
+    {
+      "key": "winged-dendroshroom",
+      "name": "Champidendro ailé"
     },
     {
       "key": "wooden-shield-hilichurl-guard",

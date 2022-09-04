@@ -151,17 +151,17 @@
       "skills": [
         {
           "key": "s1",
-          "title": "Tấn Công Thường - Bắn Chớp Nhoáng",
+          "title": "Tấn Công Thường – Bắn Chớp Nhoáng",
           "description": "",
           "abilities": [
             {
               "name": "Tấn Công Thường",
-              "description": "Thực hiện tối đa 4 lần bắn tên liên tiếp.\r\n",
+              "description": "Thực hiện tối đa 4 lần bắn tên liên tiếp.\n",
               "descriptions": []
             },
             {
               "name": "Trọng Kích",
-              "description": "Ngắm bắn chuẩn hơn, sát thương cao hơn.\r\nKhi ngắm bắn, hơi lạnh sẽ tích tụ trên mũi tên. Mũi tên mang đầy hơi lạnh sẽ gây Sát Thương Nguyên Tố Băng.\r\n",
+              "description": "Ngắm bắn chuẩn hơn, sát thương cao hơn.\nKhi ngắm bắn, hơi lạnh sẽ tích tụ trên mũi tên. Mũi tên mang đầy hơi lạnh sẽ gây Sát Thương Nguyên Tố Băng.\n",
               "descriptions": []
             },
             {
@@ -184,14 +184,14 @@
         {
           "key": "s2",
           "title": "Băng Giá Hoang Dã",
-          "description": "Ném một quả Bom Băng Giá về hướng mục tiêu, khi trúng sẽ kích nổ, gây Sát Thương Nguyên Tố Băng. Bom Băng Giá khi nổ sẽ phân thành rất nhiều Bom Lạnh, kẻ địch dẫm phải hoặc sau một thời gian sẽ phát nổ, gây Sát Thương Nguyên Tố Băng.\r\nBom Băng Giá hoặc Bom Lạnh khi trúng địch sẽ giảm sức tấn công của kẻ địch và cung cấp 1 tầng hiệu quả \"Dây Móc\" cho Aloy.\r\nMỗi 0.1s tối đa nhận 1 tầng hiệu quả Dây Móc.\r\n",
+          "description": "Ném một quả Bom Băng Giá về hướng mục tiêu, khi trúng sẽ kích nổ, gây Sát Thương Nguyên Tố Băng. Bom Băng Giá khi nổ sẽ phân thành rất nhiều Bom Lạnh, kẻ địch dẫm phải hoặc sau một thời gian sẽ phát nổ, gây Sát Thương Nguyên Tố Băng.\nBom Băng Giá hoặc Bom Lạnh khi trúng địch sẽ giảm sức tấn công của kẻ địch và cung cấp 1 tầng hiệu quả “Dây Móc” cho Aloy.\nMỗi 0.1s tối đa nhận 1 tầng hiệu quả Dây Móc.\n\n",
           "abilities": [
             {
               "name": "Dây Móc",
               "description": "",
               "descriptions": [
                 "Dựa theo số tầng để tăng sát thương tấn công thường của Aloy;",
-                "Khi có 4 tầng Dây Móc, Aloy sẽ xóa tất cả hiệu quả Dây Móc và nhận \"Hồ Băng\", tăng thêm sát thương tấn công thường, đồng thời chuyển sát thương tấn công thường thành Sát Thương Nguyên Tố Băng.",
+                "Khi có 4 tầng Dây Móc, Aloy sẽ xóa tất cả hiệu quả Dây Móc và nhận “Hồ Băng”, tăng thêm sát thương tấn công thường, đồng thời chuyển sát thương tấn công thường thành Sát Thương Nguyên Tố Băng.",
                 "Khi trong trạng thái Hồ Băng, Aloy sẽ không thể nhận hiệu quả Dây Móc nữa.",
                 "Hiệu quả Dây Móc sẽ mất sau 30s thoát chiến đấu."
               ]
@@ -211,7 +211,7 @@
         {
           "key": "s3",
           "title": "Lời Tiên Tri Ánh Sáng",
-          "description": "Ném một Lõi Năng Lượng mang Nguyên Tố Băng vào hướng mục tiêu và dùng cung dẫn nổ, gây Sát Thương Phạm Vi Nguyên Tố Băng.\r\n",
+          "description": "Ném một Lõi Năng Lượng mang Nguyên Tố Băng vào hướng mục tiêu và dùng cung dẫn nổ, gây Sát Thương Phạm Vi Nguyên Tố Băng.\n\n",
           "abilities": [],
           "stats": [
             "Sát Thương Kỹ Năng|{param1}%",
@@ -224,19 +224,19 @@
         {
           "key": "p1",
           "title": "Thợ Săn Hoang Dã",
-          "description": "Khi có Aloy trong đội, nhân vật khi tiếp cận các động vật nhỏ tạo Thịt Rừng, Thịt Gia Cầm và Thịt Tươi Lạnh sẽ không làm kinh động đến chúng.\r\n",
+          "description": "Khi có Aloy trong đội, nhân vật khi tiếp cận các động vật nhỏ tạo Thịt Rừng, Thịt Gia Cầm và Thịt Tươi Lạnh sẽ không làm kinh động đến chúng.\n",
           "descriptions": []
         },
         {
           "key": "p2",
           "title": "Chiến Đấu Dồn Dập",
-          "description": "Khi Aloy nhận được hiệu quả Dây Móc của Băng Giá Hoang Dã, sức tấn công của Aloy tăng 16%, sức tấn công của các nhân vật trong đội ở gần đó tăng 8%, duy trì 10s.\r\n",
+          "description": "Khi Aloy nhận được hiệu quả Dây Móc của Băng Giá Hoang Dã, sức tấn công của Aloy tăng 16%, sức tấn công của các nhân vật trong đội ở gần đó tăng 8%, duy trì 10s.\n",
           "descriptions": []
         },
         {
           "key": "p3",
           "title": "Tấn Công Mạnh Mẽ",
-          "description": "Khi Aloy trong trạng thái Hồ Băng của Băng Giá Hoang Dã, mỗi giây tăng 3.5% hiệu quả Tăng Sát Thương Nguyên Tố Băng, tối đa tăng đến 35% Sát Thương Nguyên Tố Băng bằng cách này.\r\n",
+          "description": "Khi Aloy trong trạng thái Hồ Băng của Băng Giá Hoang Dã, mỗi giây tăng 3.5% hiệu quả Tăng Sát Thương Nguyên Tố Băng, tối đa tăng đến 35% Sát Thương Nguyên Tố Băng bằng cách này.\n",
           "descriptions": []
         }
       ],
@@ -244,37 +244,37 @@
         {
           "key": "c1",
           "title": "Ngôi Sao Dị Giới",
-          "description": "Thời khắc thắp sáng bầu trời của người này chưa đến.\r\n",
+          "description": "Thời khắc thắp sáng bầu trời của người này chưa đến.\n",
           "descriptions": []
         },
         {
           "key": "c2",
           "title": "Ngôi Sao Dị Giới",
-          "description": "Thời khắc thắp sáng bầu trời của người này chưa đến.\r\n",
+          "description": "Thời khắc thắp sáng bầu trời của người này chưa đến.\n",
           "descriptions": []
         },
         {
           "key": "c3",
           "title": "Ngôi Sao Dị Giới",
-          "description": "Thời khắc thắp sáng bầu trời của người này chưa đến.\r\n",
+          "description": "Thời khắc thắp sáng bầu trời của người này chưa đến.\n",
           "descriptions": []
         },
         {
           "key": "c4",
           "title": "Ngôi Sao Dị Giới",
-          "description": "Thời khắc thắp sáng bầu trời của người này chưa đến.\r\n",
+          "description": "Thời khắc thắp sáng bầu trời của người này chưa đến.\n",
           "descriptions": []
         },
         {
           "key": "c5",
           "title": "Ngôi Sao Dị Giới",
-          "description": "Thời khắc thắp sáng bầu trời của người này chưa đến.\r\n",
+          "description": "Thời khắc thắp sáng bầu trời của người này chưa đến.\n",
           "descriptions": []
         },
         {
           "key": "c6",
           "title": "Ngôi Sao Dị Giới",
-          "description": "Thời khắc thắp sáng bầu trời của người này chưa đến.\r\n",
+          "description": "Thời khắc thắp sáng bầu trời của người này chưa đến.\n",
           "descriptions": []
         }
       ]
@@ -1020,6 +1020,93 @@
       ]
     },
     {
+      "key": "candace",
+      "name": "Candace",
+      "title": "？？？",
+      "description": "？？？",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ]
+    },
+    {
       "key": "chongyun",
       "name": "Chongyun",
       "title": "Bóng Hình Băng Giá",
@@ -1145,8 +1232,134 @@
     {
       "key": "collei",
       "name": "Collei",
-      "title": "???",
-      "description": "",
+      "title": "Mầm Non Tái Sinh",
+      "description": "Kiểm lâm tập sự nhiệt tình của Rừng Avidya, nhưng đằng sau sự nhiệt tình đó là một trái tim hướng nội đau buồn.",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "Tấn Công Thường – Mũi Tên Chúc Tụng",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Tấn Công Thường",
+              "description": "Thực hiện tối đa 4 lần bắn tên liên tiếp.\n",
+              "descriptions": []
+            },
+            {
+              "name": "Trọng Kích",
+              "description": "Ngắm bắn chuẩn hơn, sát thương cao hơn.\nKhi ngắm bắn, nguyên tố Thảo sẽ tích tụ trên mũi tên. Mũi tên mang nguyên tố Thảo sẽ gây Sát Thương Nguyên Tố Thảo.\n",
+              "descriptions": []
+            },
+            {
+              "name": "Tấn Công Khi Đáp",
+              "description": "Bắn mưa tên liên tiếp xuống mặt đất, đồng thời lao nhanh xuống đất và gây sát thương phạm vi khi chạm đất.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "Sát Thương Lần 1|{param1}%",
+            "Sát Thương Lần 2|{param2}%",
+            "Sát Thương Lần 3|{param3}%",
+            "Sát Thương Lần 4|{param4}%",
+            "Ngắm Bắn|{param5}%",
+            "Tụ Lực Ngắm Bắn|{param6}%",
+            "Sát Thương Khi Rơi|{param7}%",
+            "Sát Thương Khi Rơi Từ Độ Cao Thấp/Cao|{param8}% / {param9}%"
+          ]
+        },
+        {
+          "key": "s2",
+          "title": "Xua Hoa Quét Lá",
+          "description": "Ném Phi Diệp Luân, gây một lần Sát Thương Nguyên Tố Thảo cho mỗi mục tiêu trúng phải.\nPhi Diệp Luân sẽ quay về sau một quãng thời gian, gây thêm một lần Sát Thương Nguyên Tố Thảo.\n\n",
+          "abilities": [],
+          "stats": [
+            "Sát Thương Kỹ Năng|{param1}%",
+            "CD|{param2}s"
+          ]
+        },
+        {
+          "key": "s3",
+          "title": "Báu Vật Meo Meo",
+          "description": "Mời Cuilein-Anbar ra trận giúp sức.\nNém món đồ chơi Cuilein-Anbar ra, khi nổ sẽ gây Sát Thương Phạm Vi Nguyên Tố Thảo, đồng thời tạo ra Khu Vực Cuilein-Anbar. Cuilein-Anbar sẽ liên tục nhảy nhót trong khu vực đó, gây Sát Thương Phạm Vi Nguyên Tố Thảo.\n\n",
+          "abilities": [],
+          "stats": [
+            "Sát Thương Nổ|{param1}%",
+            "Sát Thương Nhảy|{param2}%",
+            "Thời Gian Kéo Dài|{param3}s",
+            "CD|{param4}s",
+            "Năng Lượng Nguyên Tố|{param5}"
+          ]
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "Quán Quân Bay Lượn Sumeru",
+          "description": "Giảm 20% tiêu hao thể lực nhân vật của bản thân trong đội khi bay lượn.\nKhông thể cộng dồn với buff Thiên Phú cố định có hiệu quả giống hoàn toàn.\n",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "Lá Khẽ Bay Nghiêng",
+          "description": "Trước khi Phi Diệp Luân quay về, nếu nhân vật của bản thân trong đội kích hoạt phản ứng Thiêu Đốt, Sinh Trưởng, Tăng Cường, Lan Tràn, Sum Suê, Nở Rộ hoặc Bung Tỏa thì sẽ cung cấp cho nhân vật trạng thái “Lá Mới” khi Phi Diệp Luân quay về, liên tục gây cho kẻ địch xung quanh một lượng Sát Thương Nguyên Tố Thảo bằng 40% tấn công của Collei, duy trì 3s.\nTrong thời gian duy trì hiệu ứng Lá Mới nếu như nhận lại hiệu ứng trùng lặp sẽ hủy hiệu ứng trước đó. Sát thương hiệu ứng Lá Mới gây ra được tính là sát thương Kỹ Năng Nguyên Tố.\n",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "Rừng Rộng Gió Thoảng",
+          "description": "Nhân vật trong Khu Vực Cuilein-Anbar khi kích hoạt phản ứng Thiêu Đốt, Sinh Trưởng, Tăng Cường, Lan Tràn, Sum Suê, Nở Rộ hoặc Bung Tỏa sẽ khiến cho khu vực này duy trì thêm 1s.\nTrong một lần Báu Vật Meo Meo, tối đa có thể kéo dài thời gian duy trì 3 lần thông qua cách này.\n",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "Bảo Vệ Rừng Rậm",
+          "description": "Collei khi không ra trận, Hiệu Quả Nạp Nguyên Tố tăng 20%.\n",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "Dạo Bước Đồi Cỏ",
+          "description": "Thiên phú cố định “Lá Khẽ Bay Nghiêng” sẽ chuyển thành:\n",
+          "descriptions": [
+            "Khi Phi Diệp Luân quay về sẽ cung cấp cho nhân vật trạng thái “Lá Mới” của thiên phú cố định “Lá Khẽ Bay Nghiêng”, liên tục gây cho kẻ địch xung quanh một lượng Sát Thương Nguyên Tố Thảo bằng 40% tấn công của Collei, duy trì 3s.",
+            "Từ khi thi triển Xua Hoa Quét Lá đến trước khi trạng thái “Lá Mới” lần này kết thúc, nếu nhân vật của bản thân trong đội kích hoạt phản ứng Thiêu Đốt, Sinh Trưởng, Tăng Cường, Lan Tràn, Sum Suê, Nở Rộ hoặc Bung Tỏa sẽ khiến trạng thái “Lá Mới” lần này kéo dài thêm 3s.",
+            "Trạng thái Lá Mới tối đa kéo dài thời gian duy trì một lần thông qua cách này; khi trong thời gian duy trì nếu kích hoạt hiệu ứng Lá Mới lần nữa sẽ xóa hiệu ứng ban đầu. Sát thương gây ra của hiệu ứng Lá Mới được tính là sát thương Kỹ Năng Nguyên Tố.",
+            "Cần mở khóa thiên phú cố định “Lá Khẽ Bay Nghiêng”."
+          ]
+        },
+        {
+          "key": "c3",
+          "title": "Hương Thơm Nắng Hạ",
+          "description": "Cấp kỹ năng Xua Hoa Quét Lá +3.\nTăng tối đa đến cấp 15.\n",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "Quà Tặng Rừng Sâu",
+          "description": "Khi thi triển Báu Vật Meo Meo, sẽ khiến tất cả nhân vật trong đội gần đó (không bao gồm Collei) tăng 60 điểm Tinh Thông Nguyên Tố, duy trì 12s.\n",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "Tro Tàn Vạn Vật",
+          "description": "Cấp kỹ năng Báu Vật Meo Meo +3.\nTăng tối đa đến cấp 15.\n",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "Rừng Nơi Tên Đáp",
+          "description": "Phi Diệp Luân mỗi khi đánh trúng sẽ sản sinh một Cuilein-Anbar Mini, gây một lượng Sát Thương Nguyên Tố Thảo bằng 200% tấn công của Collei.\nMỗi lần thi triển Xua Hoa Quét Lá tối đa sản sinh 1 lần Cuilein-Anbar Mini.\n",
+          "descriptions": []
+        }
+      ]
+    },
+    {
+      "key": "cyno",
+      "name": "Cyno",
+      "title": "？？？",
+      "description": "？？？",
       "skills": [
         {
           "key": "s1",
@@ -1507,87 +1720,142 @@
     {
       "key": "dori",
       "name": "Dori",
-      "title": "???",
-      "description": "",
+      "title": "Kho Báu Vườn Mơ",
+      "description": "Thương nhân bách hóa xuất quỷ nhập thần, say mê những đồng Mora sáng loáng.",
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Tấn Công Thường – Kiếm Vũ Kỳ Ảo (Cải Tiến)",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Tấn Công Thường",
+              "description": "Thực hiện tối đa 3 lần chém liên tiếp.\n",
+              "descriptions": []
+            },
+            {
+              "name": "Trọng Kích",
+              "description": "Tiêu hao thể lực để xoay kiếm tấn công địch xung quanh.\nKhi ngừng quay, sẽ bổ một nhát cực mạnh.\n",
+              "descriptions": []
+            },
+            {
+              "name": "Tấn Công Khi Đáp",
+              "description": "Đáp xuống đất từ trên không, tấn công kẻ địch trên đường và gây sát thương phạm vi khi chạm đất.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "Sát Thương Lần 1|{param1}%",
+            "Sát Thương Lần 2|{param2}% + {param3}%",
+            "Sát Thương Lần 3|{param4}%",
+            "Sát Thương Trọng Kích Tuần Hoàn|{param5}%",
+            "Sát Thương Trọng Kích Chí Mạng|{param6}%",
+            "Thể lực Trọng Kích tiêu hao|Mỗi giây {param7} điểm",
+            "Thời Gian Kéo Dài Tối Đa|{param8}s",
+            "Sát Thương Khi Đáp|{param9}%",
+            "Sát Thương Khi Rơi Từ Độ Cao Thấp/Cao|{param10}% / {param11}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
+          "title": "Đèn Trấn Linh – Pháo Giải Trừ Phiền Não",
+          "description": "Điều khiển Đèn Trấn Linh bắn Pháo Cắt Đứt Phiền Não về phía kẻ địch, gây Sát Thương Nguyên Tố Lôi.\nPháo Cắt Đứt Phiền Não sau khi trúng sẽ sản sinh 2 Tên Lửa Hậu Mãi đuổi theo kẻ địch gần đó, gây Sát Thương Nguyên Tố Lôi.\n\n",
           "abilities": [],
-          "stats": []
+          "stats": [
+            "Sát Thương Pháo Cắt Đứt Phiền Não|{param1}%",
+            "Sát Thương Tên Lửa Hậu Mãi|{param2}%",
+            "CD|{param3}s"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Alcazarzaray Tinh Xảo",
+          "description": "Triệu hồi Linh Hồn Đèn để cung cấp các loại dịch vụ cho khách.\n\n",
+          "abilities": [
+            {
+              "name": "Linh Hồn Đèn",
+              "description": "Kết nối với nhân vật gần đó. Nhân vật kết nối với Linh Hồn Đèn sẽ:\n",
+              "descriptions": [
+                "Hồi phục HP liên tục, lượng hồi phục dựa vào giới hạn HP của Dori;",
+                "Liên tục nhận được Năng Lượng Nguyên Tố.",
+                "Vào trạng thái đính kèm nguyên tố Lôi.",
+                "Ngoài ra, dây liên kết giữa Linh Hồn Đèn và nhân vật khi chạm phải kẻ địch, mỗi 0.4s sẽ gây 1 lần Sát Thương Nguyên Tố Lôi cho kẻ địch.",
+                "Cùng lúc chỉ có thể tồn tại một Linh Hồn Đèn."
+              ]
+            }
+          ],
+          "stats": [
+            "Sát Thương Liên Kết|{param1}%",
+            "Lượng Trị Liệu|{param2}% Giới Hạn HP + {param3}",
+            "Hồi Phục Năng Lượng Nguyên Tố|{param4}",
+            "Thời Gian Kéo Dài|{param5}s",
+            "CD|{param6}s",
+            "Năng Lượng Nguyên Tố|{param7}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "Đơn Hàng Bất Ngờ",
+          "description": "Khi ghép nguyên liệu bồi dưỡng vũ khí và nhân vật, có 25% tỷ lệ hoàn trả một phần nguyên liệu ghép.\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
+          "title": "Đãi Cát Tìm Vàng",
+          "description": "Nhân vật kết nối với Linh Hồn Đèn khi kích hoạt phản ứng Điện Cảm, Siêu Dẫn, Quá Tải, Sinh Trưởng, Tăng Cường, Nở Rộ, Khuếch Tán nguyên tố Lôi hoặc Kết Tinh nguyên tố Lôi, CD của Đèn Trấn Linh – Pháo Giải Trừ Phiền Não sẽ rút ngắn 1s.\nHiệu quả này mỗi 3s tối đa kích hoạt một lần.\n",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "NA",
-          "description": "",
+          "title": "Lợi Chồng Lợi",
+          "description": "Pháo Cắt Đứt Phiền Não hoặc Tên Lửa Hậu Mãi của Đèn Trấn Linh – Pháo Giải Trừ Phiền Não khi trúng kẻ địch sẽ căn cứ vào mỗi 100% Hiệu Quả Nạp Nguyên Tố của Dori để hồi phục cho Dori 5 điểm Năng Lượng Nguyên Tố.\nMỗi lần thi triển Đèn Trấn Linh – Pháo Giải Trừ Phiền Não chỉ có thể hồi phục 1 lần Năng Lượng Nguyên Tố bằng cách này, và tối đa hồi phục 15 điểm Năng Lượng Nguyên Tố.\n",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "Thêm Vốn Thêm Lời",
+          "description": "Pháo Cắt Đứt Phiền Não khi bắn trúng kẻ địch sẽ sản sinh ra thêm 1 Tên Lửa Hậu Mãi.\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "Kinh Doanh Đặc Biệt",
+          "description": "Trong trạng thái chiến đấu, khi Linh Hồn Đèn trị liệu cho nhân vật được kết nối sẽ bắn Pháo Trấn Linh về phía đó, gây lượng sát thương bằng 50% tấn công của Dori.\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "Muốn Gì Cũng Có",
+          "description": "Cấp kỹ năng Alcazarzaray Tinh Xảo +3.\nTăng tối đa đến cấp 15.\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
+          "title": "Bổ Sung Tùy Ý",
+          "description": "Nhân vật liên kết với Linh Hồn Đèn sẽ căn cứ vào HP và Năng Lượng Nguyên Tố hiện tại để nhận được lợi ích sau:\n",
+          "descriptions": [
+            "Khi HP thấp hơn 50%, tăng 50% lượng trị liệu nhận được;",
+            "Khi Năng Lượng Nguyên Tố thấp hơn 50%, tăng 30% Hiệu Quả Nạp Nguyên Tố."
+          ]
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "Hàng Siêu Giá Trị",
+          "description": "Cấp kỹ năng Đèn Trấn Linh – Pháo Giải Trừ Phiền Não +3.\nTăng tối đa đến cấp 15.\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
+          "title": "Sức Nặng Thương Hiệu",
+          "description": "Trong 3s sau khi Dori thi triển Đèn Trấn Linh – Pháo Giải Trừ Phiền Não sẽ nhận được hiệu quả sau:\n",
+          "descriptions": [
+            "Đính kèm nguyên tố Lôi;",
+            "Đánh thường trúng kẻ địch sẽ hồi phục cho tất cả thành viên trong đội gần đó một lượng HP bằng 4% HP tối đa của Dori. Mỗi 0.1s tối đa hồi phục một lần thông qua cách này."
+          ]
         }
       ]
     },
@@ -1744,21 +2012,21 @@
       "key": "fischl",
       "name": "Fischl",
       "title": "Công Chúa Định Tội!!",
-      "description": "Tự xưng là \"Công Chúa Định Tội\", thiếu nữ thần bí đồng hành cùng chú quạ đen tên Oz.",
+      "description": "Tự xưng là “Công Chúa Định Tội”, thiếu nữ thần bí đồng hành cùng chú quạ đen tên Oz.",
       "skills": [
         {
           "key": "s1",
-          "title": "Tấn Công Thường - Mũi Tên Diệt Ác",
+          "title": "Tấn Công Thường – Mũi Tên Diệt Ác",
           "description": "",
           "abilities": [
             {
               "name": "Tấn Công Thường",
-              "description": "Thực hiện tối đa 5 lần bắn tên liên tiếp.\r\n",
+              "description": "Thực hiện tối đa 5 lần bắn tên liên tiếp.\n",
               "descriptions": []
             },
             {
               "name": "Trọng Kích",
-              "description": "Sát thương càng cao, ngắm bắn càng chuẩn.\r\nKhi ngắm bắn, Tinh Linh Sấm Sét của vùng đất Đêm Niết Bàn sẽ nghe theo hiệu lệnh của công chúa mà bám trên mũi tên sấm sét. Mũi tên chứa đầy tia sét định tội sẽ gây thêm Sát Thương Nguyên Tố Lôi.\r\n",
+              "description": "Sát thương càng cao, ngắm bắn càng chuẩn.\nKhi ngắm bắn, Tinh Linh Sấm Sét của Vương Đô U Ám sẽ nghe theo hiệu lệnh của công chúa mà bám trên mũi tên sấm sét. Mũi tên chứa đầy tia sét định tội sẽ gây thêm Sát Thương Nguyên Tố Lôi.\n",
               "descriptions": []
             },
             {
@@ -1782,7 +2050,7 @@
         {
           "key": "s2",
           "title": "Cánh Chim Đêm",
-          "description": "Triệu hồi Oz. Khi quạ đen do bóng đêm và sấm sét kết hợp được sinh ra, sẽ gây Sát Thương Nguyên Tố Lôi phạm vi nhỏ.\r\nTrong thời gian tồn tại, Oz sẽ liên tục bắn Đạn Sấm Sét tấn công địch xung quanh.\r\nNhấn giữ để điều chỉnh vị trí hiệu quả của kỹ năng.\r\nTrong thời gian Oz tồn tại, nhấn lần nữa có thể triệu hồi nó đến bên cạnh.\r\n",
+          "description": "Triệu hồi Oz. Khi quạ đen do bóng đêm và sấm sét kết hợp được sinh ra, sẽ gây Sát Thương Nguyên Tố Lôi phạm vi nhỏ.\nTrong thời gian tồn tại, Oz sẽ liên tục bắn Đạn Sấm Sét tấn công địch xung quanh.\n\nNhấn giữ để điều chỉnh vị trí hiệu quả của kỹ năng.\nTrong thời gian Oz tồn tại, nhấn lần nữa có thể triệu hồi nó đến bên cạnh.\n\n\n",
           "abilities": [],
           "stats": [
             "Sát thương tấn công Oz|{param1}%",
@@ -1794,11 +2062,11 @@
         {
           "key": "s3",
           "title": "Ảo Ảnh Bóng Đêm",
-          "description": "Triệu hồi Oz, mở ra đôi cánh dệt từ bóng đêm thuần khiết, bảo vệ Fischl.\r\n",
+          "description": "Triệu hồi Oz, mở ra đôi cánh dệt từ bóng đêm thuần khiết, bảo vệ Fischl.\n",
           "abilities": [
             {
               "name": "",
-              "description": "Trong thời gian duy trì, hiệu quả như sau:\r\n",
+              "description": "Trong thời gian duy trì, hiệu quả như sau:\n",
               "descriptions": [
                 "Di chuyển nhanh trong hình thái của Oz;",
                 "Đánh sét vào địch ở gần, gây Sát Thương Nguyên Tố Lôi. Mỗi kẻ địch chỉ chịu 1 lần sát thương sét đánh;",
@@ -1809,7 +2077,9 @@
           "stats": [
             "Sát Thương Sét Đánh|{param1}%",
             "CD|{param2}s",
-            "Năng Lượng Nguyên Tố|{param3}"
+            "Năng Lượng Nguyên Tố|{param3}",
+            "CD|{param4}s",
+            "Năng Lượng Nguyên Tố|{param5}"
           ]
         }
       ],
@@ -1817,19 +2087,19 @@
         {
           "key": "p1",
           "title": "Vườn Hoa Sau Nhà",
-          "description": "Khi làm nhiệm vụ Phái Đi thám Hiểm ở Mondstadt, thời gian tiêu hao rút ngắn 25%.\r\n",
+          "description": "Khi làm nhiệm vụ Phái Đi thám Hiểm ở Mondstadt, thời gian tiêu hao rút ngắn 25%.\n",
           "descriptions": []
         },
         {
           "key": "p2",
           "title": "Ác Điểu Nuốt Sao",
-          "description": "Khi Fischl dùng tụ lực ngắm bắn bắn trúng Oz, Oz sẽ giáng xuống Quả Báo Sấm Sét vào kẻ địch xung quanh, tạo thành sát thương phạm vi Nguyên Tố Lôi tương đương với 152.7% sát thương khi bắn.\r\n",
+          "description": "Khi Fischl dùng tụ lực ngắm bắn bắn trúng Oz, Oz sẽ giáng xuống Quả Báo Sấm Sét vào kẻ địch xung quanh, tạo thành sát thương phạm vi Nguyên Tố Lôi tương đương với 152.7% sát thương khi bắn.\n",
           "descriptions": []
         },
         {
           "key": "p3",
           "title": "Ánh Sét Định Tội",
-          "description": "Khi Oz trong trận, nếu nhân vật của bản thân trong trận hiện tại tấn công địch kích hoạt phản ứng với Nguyên Tố Lôi, thì sẽ giáng Quả Báo Sấm Sét, gây cho địch sát thương Nguyên Tố Lôi bằng 80% lực tấn công Fischl.\r\n",
+          "description": "Khi Oz trong trận, nếu nhân vật của bản thân trong trận hiện tại tấn công địch kích hoạt phản ứng với Nguyên Tố Lôi, thì sẽ giáng Quả Báo Sấm Sét, gây cho địch sát thương Nguyên Tố Lôi bằng 80% lực tấn công Fischl.\n",
           "descriptions": []
         }
       ],
@@ -1837,37 +2107,37 @@
         {
           "key": "c1",
           "title": "Mắt Quạ Huyền Bí",
-          "description": "Oz vẫn luôn theo dõi bảo vệ cho Fischl mặc dù không ở trên chiến trường. Khi Fischl tấn công thường với kẻ địch, Oz sẽ hỗ trợ tấn công qua mắt quạ và tạo ra sát thương bằng 22% tấn công.\r\n",
+          "description": "Oz vẫn luôn theo dõi bảo vệ cho Fischl mặc dù không ở trên chiến trường. Khi Fischl tấn công thường với kẻ địch, Oz sẽ hỗ trợ tấn công qua mắt quạ và tạo ra sát thương bằng 22% tấn công.\n",
           "descriptions": []
         },
         {
           "key": "c2",
           "title": "Đôi Cánh Phán Quyết",
-          "description": "Khi thi triển Cánh Chim Đêm, có thể gây thêm sát thương bằng 200% tấn công, phạm vi ảnh hưởng tăng 50%.\r\n",
+          "description": "Khi thi triển Cánh Chim Đêm, có thể gây thêm sát thương bằng 200% tấn công, phạm vi ảnh hưởng tăng 50%.\n",
           "descriptions": []
         },
         {
           "key": "c3",
           "title": "Đôi Cánh Đen Huyền",
-          "description": "Cấp kỹ năng Cánh Chim Đêm +3.\r\nTăng tối đa đến cấp 15.\r\n",
+          "description": "Cấp kỹ năng Cánh Chim Đêm +3.\nTăng tối đa đến cấp 15.\n",
           "descriptions": []
         },
         {
           "key": "c4",
           "title": "Truyền Thuyết Công Chúa Huyền Bí",
-          "description": "Khi thi triển Ảo Ảnh Bóng Đêm sẽ tạo ra 222% sát thương Nguyên Tố Lôi cho kẻ địch xung quanh;\r\nKhi hiệu quả kỹ năng kết thúc, sẽ hồi phục 20% HP cho Fischl.\r\n",
+          "description": "Khi thi triển Ảo Ảnh Bóng Đêm sẽ tạo ra 222% sát thương Nguyên Tố Lôi cho kẻ địch xung quanh;\nKhi hiệu quả kỹ năng kết thúc, sẽ hồi phục 20% HP cho Fischl.\n",
           "descriptions": []
         },
         {
           "key": "c5",
           "title": "Ghi Chú Khải Huyền",
-          "description": "Cấp kỹ năng Ảo Ảnh Bóng Đêm +3.\r\nTăng tối đa đến cấp 15.\r\n",
+          "description": "Cấp kỹ năng Ảo Ảnh Bóng Đêm +3.\nTăng tối đa đến cấp 15.\n",
           "descriptions": []
         },
         {
           "key": "c6",
           "title": "Quạ Bóng Đêm",
-          "description": "Thời gian Oz tồn tại kéo dài thêm 2s. Ngoài ra,Oz kết hợp với nhân vật của bản thân trong trận hiện tại cùng tấn công, gây sát thương Nguyên Tố Lôi bằng 30% tấn công của Fischl.\r\n",
+          "description": "Thời gian Oz tồn tại kéo dài thêm 2s. Ngoài ra,Oz kết hợp với nhân vật của bản thân trong trận hiện tại cùng tấn công, gây sát thương Nguyên Tố Lôi bằng 30% tấn công của Fischl.\n",
           "descriptions": []
         }
       ]
@@ -2632,12 +2902,12 @@
           "abilities": [
             {
               "name": "Tấn Công Thường",
-              "description": "Thực hiện tối đa 5 lần đánh kiếm liên tiếp.\r\n",
+              "description": "Thực hiện tối đa 5 lần đánh kiếm liên tiếp.\n",
               "descriptions": []
             },
             {
               "name": "Trọng Kích",
-              "description": "Tiêu hao thể lực nhất định, đánh ra hai kiếm về phía trước trong chớp mắt.\r\n",
+              "description": "Tiêu hao thể lực nhất định, đánh ra hai kiếm về phía trước trong chớp mắt.\n",
               "descriptions": []
             },
             {
@@ -2653,7 +2923,7 @@
             "Sát Thương Lần 4|{param4}%",
             "Sát Thương Lần 5|{param5}%",
             "Sát Thương Trọng Kích|{param6}% + {param7}%",
-            "Thể lực Trọng Kích tiêu hao|{param8}",
+            "Thể lực Trọng Kích tiêu hao|{param8} điểm",
             "Sát Thương Khi Đáp|{param9}%",
             "ST Khi Rơi Từ Độ Cao Thấp/Cao|{param10}% / {param11}%"
           ]
@@ -2661,7 +2931,7 @@
         {
           "key": "s2",
           "title": "Tuyết Tập Kích",
-          "description": "Nhanh chóng tỏa ra khí lạnh, gây cho địch phía trước Sát Thương Nguyên Tố Băng.\r\n",
+          "description": "Nhanh chóng tỏa ra khí lạnh, gây cho địch phía trước Sát Thương Nguyên Tố Băng.\n\n",
           "abilities": [],
           "stats": [
             "Sát Thương Kỹ Năng|{param1}%",
@@ -2671,13 +2941,14 @@
         {
           "key": "s3",
           "title": "Vũ Điệu Băng Giá",
-          "description": "Ngưng tự sương lạnh trong không khí, triệu hồi 3 nhũ băng lạnh giá xoay quanh người.\r\nTrong thời gian tồn tại, nhũ băng lạnh giá sẽ chuyển động theo nhân vật, gây cho địch trên đường Sát Thương Nguyên Tố Băng.\r\n",
+          "description": "Ngưng tự sương lạnh trong không khí, triệu hồi 3 nhũ băng lạnh giá xoay quanh người.\nTrong thời gian tồn tại, nhũ băng lạnh giá sẽ chuyển động theo nhân vật, gây cho địch trên đường Sát Thương Nguyên Tố Băng.\n\n",
           "abilities": [],
           "stats": [
             "Sát Thương Kỹ Năng|{param1}%",
             "CD|{param2}s",
             "Thời Gian Kéo Dài|{param3}s",
-            "Năng Lượng Nguyên Tố|{param4}"
+            "Năng Lượng Nguyên Tố|{param4}",
+            "Năng Lượng Nguyên Tố|{param5}"
           ]
         }
       ],
@@ -2685,19 +2956,19 @@
         {
           "key": "p1",
           "title": "Che Giấu Sức Mạnh",
-          "description": "Giảm 20% tiêu hao thể lực khi xung kích cho nhân vật trong đội của bản thân.\r\nKhông thể cộng dồn với buff Thiên Phú cố định có cùng hiệu quả.\r\n",
+          "description": "Giảm 20% tiêu hao thể lực khi xung kích cho nhân vật trong đội của bản thân.\nKhông thể cộng dồn với buff Thiên Phú cố định có cùng hiệu quả.\n",
           "descriptions": []
         },
         {
           "key": "p2",
           "title": "Lãnh Huyết Kiếm",
-          "description": "Tuyết Tập Kích mỗi khi đánh trúng 1 đơn vị, sẽ hồi phục HP cho Kaeya tương đương 15% lực tấn công.\r\n",
+          "description": "Tuyết Tập Kích mỗi khi đánh trúng 1 đơn vị, sẽ hồi phục HP cho Kaeya tương đương 15% lực tấn công.\n",
           "descriptions": []
         },
         {
           "key": "p3",
           "title": "Trái Tim Vực Băng",
-          "description": "Khi Tuyết Tập Kích khiến địch bị đóng băng, thì địch sẽ rơi ra Nguyên Tố Hạt Nhân.\r\nMột lần Tuyết Tập Kích tối đa sinh ra 2 Nguyên Tố Hạt Nhân.\r\n",
+          "description": "Khi Tuyết Tập Kích khiến địch bị đóng băng, thì địch sẽ rơi ra Nguyên Tố Hạt Nhân.\nMột lần Tuyết Tập Kích tối đa sinh ra 2 Nguyên Tố Hạt Nhân.\n",
           "descriptions": []
         }
       ],
@@ -2705,37 +2976,37 @@
         {
           "key": "c1",
           "title": "Huyết Mạch Ưu Việt",
-          "description": "Đối với địch bị ảnh hưởng bởi Nguyên Tố Băng, tấn công thường và tỷ lệ trọng kích bạo kích của Kaeya tăng 15%.\r\n",
+          "description": "Đối với địch bị ảnh hưởng bởi Nguyên Tố Băng, tấn công thường và tỷ lệ trọng kích bạo kích của Kaeya tăng 15%.\n",
           "descriptions": []
         },
         {
           "key": "c2",
           "title": "Vũ Điệu Trắng Vô Tận",
-          "description": "Trong thời gian có Vũ Điệu Băng Giá, nếu đánh bại địch sẽ cộng thêm 2,5s, tối đa 15s.\r\n",
+          "description": "Trong thời gian có Vũ Điệu Băng Giá, nếu đánh bại địch sẽ cộng thêm 2,5s, tối đa 15s.\n",
           "descriptions": []
         },
         {
           "key": "c3",
           "title": "Vở Kịch Băng Giá",
-          "description": "Cấp kỹ năng Tuyết Tập Kích +3.\r\nTăng tối đa đến cấp 15.\r\n",
+          "description": "Cấp kỹ năng Tuyết Tập Kích +3.\nTăng tối đa đến cấp 15.\n",
           "descriptions": []
         },
         {
           "key": "c4",
           "title": "Nụ Hôn Giá Lạnh",
-          "description": "Tự động kích hoạt khi HP của Kaeya dưới 20%.\r\nTạo thành khiên hấp thụ sát thương bằng 30% giới hạn HP, kéo dài 20s.\r\nKhiên có hiệu quả hấp thu 250% sát thương Nguyên Tố Băng.\r\nHiệu quả này mỗi 60s chỉ thi triển 1 lần.\r\n",
+          "description": "Tự động kích hoạt khi HP của Kaeya dưới 20%.\nTạo thành khiên hấp thụ sát thương bằng 30% giới hạn HP, kéo dài 20s.\nKhiên có hiệu quả hấp thu 250% sát thương Nguyên Tố Băng.\nHiệu quả này mỗi 60s chỉ thi triển 1 lần.\n",
           "descriptions": []
         },
         {
           "key": "c5",
           "title": "Cái Ôm Lạnh Giá",
-          "description": "Cấp kỹ năng Vũ Điệu Băng Giá +3.\r\nTăng tối đa đến cấp 15.\r\n",
+          "description": "Cấp kỹ năng Vũ Điệu Băng Giá +3.\nTăng tối đa đến cấp 15.\n",
           "descriptions": []
         },
         {
           "key": "c6",
           "title": "Vòng Tròn Băng Giá",
-          "description": "Vũ Điệu Băng Giá sẽ tạo ra thêm 1 nhũ băng lạnh giá, đồng thời hồi 15 điểm Năng Lượng Nguyên Tố khi thi triển.\r\n",
+          "description": "Vũ Điệu Băng Giá sẽ tạo ra thêm 1 nhũ băng lạnh giá, đồng thời hồi 15 điểm Năng Lượng Nguyên Tố khi thi triển.\n",
           "descriptions": []
         }
       ]
@@ -2907,12 +3178,12 @@
           "abilities": [
             {
               "name": "Tấn Công Thường",
-              "description": "Thực hiện tối đa 5 lần đánh kiếm liên tiếp.\r\n",
+              "description": "Thực hiện tối đa 5 lần đánh kiếm liên tiếp.\n",
               "descriptions": []
             },
             {
               "name": "Trọng Kích",
-              "description": "Tiêu hao thể lực nhất định, xung kích về phía trước và thi triển đòn Iai.\r\n",
+              "description": "Tiêu hao thể lực nhất định, xung kích về phía trước và thi triển đòn Iai.\n",
               "descriptions": []
             },
             {
@@ -2925,27 +3196,27 @@
             "Sát Thương Lần 1|{param1}%",
             "Sát Thương Lần 2|{param2}%",
             "Sát Thương Lần 3|{param3}%",
-            "Sát Thương Lần 4|{param4}%×{param5}",
+            "Sát Thương Lần 4|{param4}% x{param5}",
             "Sát Thương Lần 5|{param6}%",
             "Sát Thương Trọng Kích|{param7}%",
-            "Thể lực Trọng Kích tiêu hao|{param8}",
+            "Thể lực Trọng Kích tiêu hao|{param8} điểm",
             "Sát Thương Khi Rơi|{param9}%",
             "Sát Thương Khi Rơi Từ Độ Cao Thấp/Cao|{param10}% / {param11}%"
           ]
         },
         {
           "key": "s2",
-          "title": "Trường Phái Kamisato - Kyouka",
-          "description": "Kamisato Ayato thay đổi vị trí và vào trạng thái \"Takimeguri Kanka\".\r\nSau khi di chuyển, Ayato sẽ để lại Thủy Ảnh ở vị trí ban đầu. Thủy Ảnh sau khi hình thành sẽ phát nổ khi có kẻ địch đến gần hoặc kết thúc thời gian duy trì, gây Sát Thương Phạm Vi Nguyên Tố Thủy.\r\n",
+          "title": "Trường Phái Kamisato – Kyouka",
+          "description": "Kamisato Ayato thay đổi vị trí và vào trạng thái “Takimeguri Kanka”.\nSau khi di chuyển, Ayato sẽ để lại Thủy Ảnh ở vị trí ban đầu. Thủy Ảnh sau khi hình thành sẽ phát nổ khi có kẻ địch đến gần hoặc kết thúc thời gian duy trì, gây Sát Thương Phạm Vi Nguyên Tố Thủy.\n\n",
           "abilities": [
             {
               "name": "Takimeguri Kanka",
-              "description": "Trong trạng thái này, Kamisato Ayato sẽ sử dụng Shunsuiken để tấn công nhanh, chuyển hóa sát thương đòn đánh thường thành Sát Thương Phạm Vi Nguyên Tố Thủy không thể bị thay thế.\r\nNgoài ra, còn có những hiệu quả sau:\r\n",
+              "description": "Trong trạng thái này, Kamisato Ayato sẽ sử dụng Shunsuiken để tấn công nhanh, chuyển hóa sát thương đòn đánh thường thành Sát Thương Phạm Vi Nguyên Tố Thủy không thể bị thay thế.\nNgoài ra, còn có những hiệu quả sau:\n",
               "descriptions": [
-                "Shunsuiken sau khi đánh trúng kẻ địch sẽ cung cấp cho Kamisato Ayato hiệu quả \"Namisen\", tăng sát thương của Shunsuiken gây ra dựa vào HP tối đa ở hiện tại của Kamisato Ayato. Ban đầu Namisen có thể cộng dồn tối đa 4 tầng, mỗi 0.1s tối đa nhận 1 tầng từ Shunsuiken, trạng thái sẽ biến mất khi Takimeguri Kanka kết thúc.",
+                "Shunsuiken sau khi đánh trúng kẻ địch sẽ cung cấp cho Kamisato Ayato hiệu quả “Namisen”, tăng sát thương của Shunsuiken gây ra dựa vào HP tối đa ở hiện tại của Kamisato Ayato. Ban đầu Namisen có thể cộng dồn tối đa 4 tầng, mỗi 0.1s tối đa nhận 1 tầng từ Shunsuiken, trạng thái sẽ biến mất khi Takimeguri Kanka kết thúc.",
                 "Tăng khả năng kháng gián đoạn của Kamisato Ayato;",
                 "Không thể sử dụng trọng kích và tấn công khi đáp.",
-                "Trạng thái Takimeguri Kanka sẽ biến mất khi Kamisato Ayato rời trận; Khi dùng lại Trường Phái Kamisato - Kyouka trong trạng thái Takimeguri Kanka, sẽ xóa bỏ trạng thái Takimeguri Kanka đã có."
+                "Trạng thái Takimeguri Kanka sẽ biến mất khi Kamisato Ayato rời trận; Khi dùng lại Trường Phái Kamisato – Kyouka trong trạng thái Takimeguri Kanka, sẽ xóa bỏ trạng thái Takimeguri Kanka đã có."
               ]
             }
           ],
@@ -2954,16 +3225,18 @@
             "Sát Thương Shunsuiken Lần 2|{param2}%",
             "Sát Thương Shunsuiken Lần 3|{param3}%",
             "Thời Gian Duy Trì Takimeguri Kanka|{param4}s",
-            "Tăng Sát Thương Namisen|{param5}%Max HP / Stack",
+            "Tăng Sát Thương Namisen|{param5}% giới hạn HP / tầng",
             "Sát Thương Thủy Ảnh|{param6}%",
             "Thời Gian Thủy Ảnh Duy Trì|{param7}s",
-            "CD|{param8}s"
+            "CD|{param8}s",
+            "Giãn Cách Kích Hoạt Ngắn Nhất|{param9}s",
+            "CD|{param10}s"
           ]
         },
         {
           "key": "s3",
-          "title": "Trường Phái Kamisato - Suiyuu",
-          "description": "Dựng lên khu vườn thanh tịnh, dập tắt mọi sự ồn ào.\r\nTrong thời gian tồn tại sẽ liên tục giáng xuống Thủy Hoa Kiếm tấn công kẻ địch trong phạm vi, gây Sát Thương Nguyên Tố Thủy, đồng thời tăng sát thương tấn công thường cho nhân vật trong đó.\r\n",
+          "title": "Trường Phái Kamisato – Suiyuu",
+          "description": "Dựng lên khu vườn thanh tịnh, dập tắt mọi sự ồn ào.\nTrong thời gian tồn tại sẽ liên tục giáng xuống Thủy Hoa Kiếm tấn công kẻ địch trong phạm vi, gây Sát Thương Nguyên Tố Thủy, đồng thời tăng sát thương tấn công thường cho nhân vật trong đó.\n\n",
           "abilities": [],
           "stats": [
             "Sát Thương Thủy Hoa Kiếm|{param1}%",
@@ -2977,14 +3250,14 @@
       "passives": [
         {
           "key": "p1",
-          "title": "Trường Phái Kamisato - Cơm Nước Thường Ngày",
-          "description": "Khi nấu hoàn mỹ món ăn, có 18% cơ hội nhận thêm 1 món cùng loại với phẩm chất \"kỳ lạ\".\r\n",
+          "title": "Trường Phái Kamisato – Cơm Nước Thường Ngày",
+          "description": "Khi nấu hoàn mỹ món ăn, có 18% cơ hội nhận thêm 1 món cùng loại với phẩm chất “kỳ lạ”.\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "Trường Phái Kamisato - Mine Wo Matoishi Kiyotaki",
-          "description": "Trường Phái Kamisato - Kyouka có hiệu quả sau:\r\n",
+          "title": "Trường Phái Kamisato – Mine Wo Matoishi Kiyotaki",
+          "description": "Trường Phái Kamisato – Kyouka có hiệu quả sau:\n",
           "descriptions": [
             "Sau khi thi triển, Kamisato Ayato sẽ nhận 2 tầng hiệu quả Namisen;",
             "Khi Thủy Ảnh phát nổ, Kamisato Ayato sẽ nhận được tối đa số tầng hiệu quả Namisen có thể đạt được."
@@ -2993,7 +3266,7 @@
         {
           "key": "p3",
           "title": "Trường Phái Kamisato: Michiyuku Hagetsu",
-          "description": "Khi Ayato không ra trận, nếu Năng Lượng Nguyên Tố thấp hơn 40 điểm, mỗi 1 giây sẽ hồi phục 2 điểm Năng Lượng Nguyên Tố.\r\n",
+          "description": "Khi Ayato không ra trận, nếu Năng Lượng Nguyên Tố thấp hơn 40 điểm, mỗi 1 giây sẽ hồi phục 2 điểm Năng Lượng Nguyên Tố.\n",
           "descriptions": []
         }
       ],
@@ -3001,37 +3274,37 @@
         {
           "key": "c1",
           "title": "Kyouka Fuushi",
-          "description": "Tăng 40% sát thương của Shunsuiken gây ra khi HP của kẻ địch thấp hơn hoặc bằng 50%.\r\n",
+          "description": "Tăng 40% sát thương của Shunsuiken gây ra khi HP của kẻ địch thấp hơn hoặc bằng 50%.\n",
           "descriptions": []
         },
         {
           "key": "c2",
           "title": "Suối Nguồn Thế Giới",
-          "description": "Hiệu quả Namisen tối đa cộng dồn đến 5 tầng. Khi Kamisato Ayato có được ít nhất 3 tầng Namisen sẽ tăng 50% giới hạn HP.\r\n",
+          "description": "Hiệu quả Namisen tối đa cộng dồn đến 5 tầng. Khi Kamisato Ayato có được ít nhất 3 tầng Namisen sẽ tăng 50% giới hạn HP.\n",
           "descriptions": []
         },
         {
           "key": "c3",
           "title": "Vô Ý Thưởng Hoa",
-          "description": "Cấp kỹ năng Trường Phái Kamisato - Kyouka +3.\r\nTăng tối đa đến cấp 15.\r\n",
+          "description": "Cấp kỹ năng Trường Phái Kamisato – Kyouka +3.\nTăng tối đa đến cấp 15.\n",
           "descriptions": []
         },
         {
           "key": "c4",
           "title": "Dòng Chảy Vô Hạn",
-          "description": "Sau khi thi triển Trường Phái Kamisato - Suiyuu, tốc độ tấn công thường của nhân vật trong đội gần đó tăng 15%, duy trì 15s.\r\n",
+          "description": "Sau khi thi triển Trường Phái Kamisato – Suiyuu, tốc độ tấn công thường của nhân vật trong đội gần đó tăng 15%, duy trì 15s.\n",
           "descriptions": []
         },
         {
           "key": "c5",
           "title": "Vạn Thủy Nhất Lộ",
-          "description": "Cấp kỹ năng Trường Phái Kamisato - Suiyuu +3.\r\nTăng tối đa đến cấp 15.\r\n",
+          "description": "Cấp kỹ năng Trường Phái Kamisato – Suiyuu +3.\nTăng tối đa đến cấp 15.\n",
           "descriptions": []
         },
         {
           "key": "c6",
           "title": "Ngọn Nguồn Bất Tận",
-          "description": "Sau khi thi triển Trường Phái Kamisato - Kyouka, lần tiếp theo Kamisato Ayato dùng Shunsuiken đánh trúng kẻ địch, sẽ tiến hành thêm 2 lần tấn công Shunsuiken, mỗi lần sẽ gây ra sát thương bằng 450% tấn công của Kamisato Ayato.\r\nHai lần tấn công Shunsuiken này sẽ không nhận được hiệu quả Namisen.\r\n",
+          "description": "Sau khi thi triển Trường Phái Kamisato – Kyouka, lần tiếp theo Kamisato Ayato dùng Shunsuiken đánh trúng kẻ địch, sẽ tiến hành thêm 2 lần tấn công Shunsuiken, mỗi lần sẽ gây ra sát thương bằng 450% tấn công của Kamisato Ayato.\nHai lần tấn công Shunsuiken này sẽ không nhận được hiệu quả Namisen.\n",
           "descriptions": []
         }
       ]
@@ -3863,24 +4136,111 @@
       ]
     },
     {
-      "key": "ningguang",
-      "name": "Ningguang",
-      "title": "Yểm Nguyệt Thiên Quyền",
-      "description": "\"Thiên Quyền\" trong Thất Tinh Liyue, giàu có nổi tiếng, khắp đại lục khó ai sánh bằng.",
+      "key": "nilou",
+      "name": "Nilou",
+      "title": "？？？",
+      "description": "？？？",
       "skills": [
         {
           "key": "s1",
-          "title": "Tấn Công Thường - Ngàn Vàng Lấp Lánh",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ]
+    },
+    {
+      "key": "ningguang",
+      "name": "Ningguang",
+      "title": "Yểm Nguyệt Thiên Quyền",
+      "description": "“Thiên Quyền” trong Thất Tinh Liyue, giàu có nổi tiếng, khắp đại lục khó ai sánh bằng.",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "Tấn Công Thường – Ngàn Vàng Lấp Lánh",
           "description": "",
           "abilities": [
             {
               "name": "Tấn Công Thường",
-              "description": "Bắn ra bảo thạch, gây Sát Thương Nguyên Tố Nham.\r\nKhi trúng, ban cho Ningguang 1 Tinh Thạch.\r\n",
+              "description": "Bắn ra bảo thạch, gây Sát Thương Nguyên Tố Nham.\nKhi trúng, ban cho Ningguang 1 Tinh Thạch.\n",
               "descriptions": []
             },
             {
               "name": "Trọng Kích",
-              "description": "Tiêu hao thể lực, phóng ra 1 viên bảo thạch khổng lồ, gây Sát Thương Nguyên Tố Nham.\r\nNếu Ningguang có Tinh Thạch, khi thi triển Trọng Kích sẽ phóng ra tất cả Tinh Thạch cùng một lúc, gây thêm sát thương.\r\n",
+              "description": "Tiêu hao thể lực, phóng ra 1 viên bảo thạch khổng lồ, gây Sát Thương Nguyên Tố Nham.\nNếu Ningguang có Tinh Thạch, khi thi triển Trọng Kích sẽ phóng ra tất cả Tinh Thạch cùng một lúc, gây thêm sát thương.\n",
               "descriptions": []
             },
             {
@@ -3892,8 +4252,8 @@
           "stats": [
             "Sát thương tấn công thường|{param1}%",
             "Sát Thương Trọng Kích|{param2}%",
-            "Sát thương Tinh Thạch|{param3}%",
-            "Thể Lực Trọng Kích Tiêu Hao|{param4}",
+            "Sát thương Tinh Thạch|Mỗi cái {param3}%",
+            "Thể Lực Trọng Kích Tiêu Hao|{param4} điểm",
             "Sát Thương Khi Rơi|{param5}%",
             "Sát Thương Khi Rơi Từ Độ Cao Thấp/Cao|{param6}% / {param7}%"
           ]
@@ -3901,7 +4261,7 @@
         {
           "key": "s2",
           "title": "Vách Toàn Cơ",
-          "description": "Dùng vàng và đá đen thừa chế tạo Vách Toàn Cơ kiên cố, và gây Sát Thương Phạm Vi Nguyên Tố Nham.\r\n",
+          "description": "Dùng vàng và đá đen thừa chế tạo Vách Toàn Cơ kiên cố, và gây Sát Thương Phạm Vi Nguyên Tố Nham.\n\n",
           "abilities": [
             {
               "name": "Vách Toàn Cơ",
@@ -3916,16 +4276,17 @@
           "stats": [
             "HP Kế Thừa|{param1}%",
             "Sát Thương Kỹ Năng|{param2}%",
-            "CD|{param3}s"
+            "CD|{param3}s",
+            "CD|{param4}s"
           ]
         },
         {
           "key": "s3",
           "title": "Thiên Quyền Băng Ngọc",
-          "description": "Ningguang ngưng tụ rất nhiều bảo thạch bên cạnh, rồi phát tán trong chớp mắt, tự tìm và tấn công địch xung quanh, gây lượng lớn Sát Thương Nguyên Tố Nham.\r\nKhi phóng Thiên Quyền Băng Ngọc, nếu xung quanh có Vách Toàn Cơ, Vách Toàn Cơ sẽ phóng thêm bảo thạch cùng tấn công.\r\n",
+          "description": "Ningguang ngưng tụ rất nhiều bảo thạch bên cạnh, rồi phát tán trong chớp mắt, tự tìm và tấn công địch xung quanh, gây lượng lớn Sát Thương Nguyên Tố Nham.\nKhi phóng Thiên Quyền Băng Ngọc, nếu xung quanh có Vách Toàn Cơ, Vách Toàn Cơ sẽ phóng thêm bảo thạch cùng tấn công.\n\n",
           "abilities": [],
           "stats": [
-            "Sát Thương Bảo Thạch|{param1}%",
+            "Sát Thương Bảo Thạch|Mỗi cái {param1}%",
             "CD|{param2}s",
             "Năng Lượng Nguyên Tố|{param3}"
           ]
@@ -3935,19 +4296,19 @@
         {
           "key": "p1",
           "title": "Bộ Sưu Tập Đá Quý",
-          "description": "Hiển thị vị trí mạch khoáng có thể sản xuất Quặng Đúc trên bản đồ nhỏ.\r\n",
+          "description": "Hiển thị vị trí mạch khoáng có thể sản xuất Quặng Đúc trên bản đồ nhỏ.\n",
           "descriptions": []
         },
         {
           "key": "p2",
           "title": "Vật Đổi Sao Dời",
-          "description": "Khi có Tinh Thạch, trọng kích của Ningguang sẽ không tiêu hao thể lực.\r\n",
+          "description": "Khi có Tinh Thạch, trọng kích của Ningguang sẽ không tiêu hao thể lực.\n",
           "descriptions": []
         },
         {
           "key": "p3",
           "title": "Kiếm Củi Ba Năm Thiêu Một Giờ",
-          "description": "Nhân vật xuyên qua Vách Toàn Cơ sẽ nhận được 12% buff sát thương Nguyên Tố Nham, kéo dài 10s.\r\n",
+          "description": "Nhân vật xuyên qua Vách Toàn Cơ sẽ nhận được 12% buff sát thương Nguyên Tố Nham, kéo dài 10s.\n",
           "descriptions": []
         }
       ],
@@ -3955,37 +4316,37 @@
         {
           "key": "c1",
           "title": "Huyền Tinh Tán Mây",
-          "description": "Khi tấn công thường đánh trúng kẻ địch, sẽ tạo ra sát thương phạm vi.\r\n",
+          "description": "Khi tấn công thường đánh trúng kẻ địch, sẽ tạo ra sát thương phạm vi.\n",
           "descriptions": []
         },
         {
           "key": "c2",
           "title": "Toàn Cơ Kết Hợp Trấn Côn Lôn",
-          "description": "Khi Vách Toàn Cơ vỡ tan, sẽ xóa thời gian chờ.\r\nMỗi 6s mới thi triển hiệu quả 1 lần.\r\n",
+          "description": "Khi Vách Toàn Cơ vỡ tan, sẽ xóa thời gian chờ.\nMỗi 6s mới thi triển hiệu quả 1 lần.\n",
           "descriptions": []
         },
         {
           "key": "c3",
           "title": "Liệt Thiên Quyền Lâm",
-          "description": "Cấp kỹ năng Thiên Quyền Băng Ngọc +3.\r\nTăng tối đa đến cấp 15.\r\n",
+          "description": "Cấp kỹ năng Thiên Quyền Băng Ngọc +3.\nTăng tối đa đến cấp 15.\n",
           "descriptions": []
         },
         {
           "key": "c4",
           "title": "Thần Cơ Công Thủ",
-          "description": "Vách Toàn Cơ sẽ tăng 10% kháng tất cả các nguyên tố xung quanh nhân vật.\r\n",
+          "description": "Vách Toàn Cơ sẽ tăng 10% kháng tất cả các nguyên tố xung quanh nhân vật.\n",
           "descriptions": []
         },
         {
           "key": "c5",
           "title": "Thiên Phiến Chính Thiên Hoành",
-          "description": "Cấp kỹ năng Vách Toàn Cơ +3.\r\nTăng tối đa đến cấp 15.\r\n",
+          "description": "Cấp kỹ năng Vách Toàn Cơ +3.\nTăng tối đa đến cấp 15.\n",
           "descriptions": []
         },
         {
           "key": "c6",
           "title": "Thất Tinh Lưu Quang",
-          "description": "Khi thi triển Thiên Quyền Băng Ngọc, sẽ tạo ra 7 viên Tinh Thạch cho Ningguang.\r\n",
+          "description": "Khi thi triển Thiên Quyền Băng Ngọc, sẽ tạo ra 7 viên Tinh Thạch cho Ningguang.\n",
           "descriptions": []
         }
       ]
@@ -3998,17 +4359,17 @@
       "skills": [
         {
           "key": "s1",
-          "title": "Tây Phong Kiếm Thuật - Hầu Gái",
+          "title": "Tây Phong Kiếm Thuật – Hầu Gái",
           "description": "",
           "abilities": [
             {
               "name": "Tấn Công Thường",
-              "description": "Thực hiện tối đa 4 lần chém liên tiếp.\r\n",
+              "description": "Thực hiện tối đa 4 lần chém liên tiếp.\n",
               "descriptions": []
             },
             {
               "name": "Trọng Kích",
-              "description": "Tiêu hao thể lực để xoay kiếm tấn công địch xung quanh.\r\nKhi ngừng quay, sẽ bổ một nhát cực mạnh.\r\n",
+              "description": "Tiêu hao thể lực để xoay kiếm tấn công địch xung quanh.\nKhi ngừng quay, sẽ bổ một nhát cực mạnh.\n",
               "descriptions": []
             },
             {
@@ -4024,7 +4385,7 @@
             "Sát Thương Lần 4|{param4}%",
             "Sát Thương Trọng Kích Tuần Hoàn|{param5}%",
             "Sát Thương Trọng Kích Chí Mạng|{param6}%",
-            "Thể lực Trọng Kích tiêu hao|{param7}/s",
+            "Thể lực Trọng Kích tiêu hao|Mỗi giây {param7} điểm",
             "Thời Gian Kéo Dài Tối Đa|{param8}s",
             "Sát Thương Khi Đáp|{param9}%",
             "ST Khi Rơi Từ Độ Cao Thấp/Cao|{param10}% / {param11}%"
@@ -4033,11 +4394,11 @@
         {
           "key": "s2",
           "title": "Giáp Hộ Tâm",
-          "description": "Gọi ra giáp Nham bảo vệ bản thân, gây sát thương Nguyên Tố Nham cho kẻ địch xung quanh và hình thành khiên, lượng sát thương hấp thu dựa theo phòng ngự của Noelle.\r\n",
+          "description": "Gọi ra giáp Nham bảo vệ bản thân, gây sát thương Nguyên Tố Nham cho kẻ địch xung quanh và hình thành khiên, lượng sát thương hấp thu dựa theo phòng ngự của Noelle.\n",
           "abilities": [
             {
               "name": "",
-              "description": "Hiệu quả khiên:\r\n",
+              "description": "Hiệu quả khiên:\n",
               "descriptions": [
                 "Khi tấn công thường và trọng kích của Noelle đánh trúng kẻ địch đều có tỷ lệ hồi phục HP cho tất cả các nhân vật trong đội;",
                 "Có hiệu quả hấp thụ 150% tất cả sát thương nguyên tố và sát thương vật lý.",
@@ -4046,22 +4407,23 @@
             }
           ],
           "stats": [
-            "Sát Thương Kỹ Năng|{param1}% DEF",
-            "Lượng hấp thu|{param2}% DEF + {param3}",
-            "Lượng trị liệu|{param4}% DEF + {param5}",
+            "Sát Thương Kỹ Năng|{param1}% phòng ngự",
+            "Lượng hấp thu|{param2}% phòng ngự + {param3}",
+            "Lượng trị liệu|{param4}% phòng ngự + {param5}",
             "Tỷ lệ kích hoạt trị liệu|{param6}%",
             "Thời Gian Kéo Dài|{param7}s",
-            "CD|{param8}s"
+            "CD|{param8}s",
+            "CD|{param9}s"
           ]
         },
         {
           "key": "s3",
           "title": "Quét Sạch",
-          "description": "Ngưng tụ sức mạnh của đá lên vũ khí, càn quét phạm vi lớn đối với địch xung quanh, gây sát thương nguyên tố Nham.\r\n",
+          "description": "Ngưng tụ sức mạnh của đá lên vũ khí, càn quét phạm vi lớn đối với địch xung quanh, gây sát thương nguyên tố Nham.\n",
           "abilities": [
             {
               "name": "",
-              "description": "Sau đó nhận hiệu quả như sau:\r\n",
+              "description": "Sau đó nhận hiệu quả như sau:\n",
               "descriptions": [
                 "Tăng phạm vi tấn công của Noelle;",
                 "Chuyển hóa sát thương tấn công thành sát thương nguyên tố Nham, chuyển hóa Nguyên Tố này không thể bị đính kèm thay thế;",
@@ -4072,7 +4434,7 @@
           "stats": [
             "ST Bạo Phát|{param1}%",
             "Sát Thương Kỹ Năng|{param2}%",
-            "Tấn Công Tăng|{param3}% DEF",
+            "Tấn Công Tăng|{param3}% Phòng Ngự",
             "Thời Gian Kéo Dài|{param4}s",
             "CD|{param5}s",
             "Năng Lượng Nguyên Tố|{param6}"
@@ -4083,13 +4445,13 @@
         {
           "key": "p1",
           "title": "Thái Độ Của Hầu Gái",
-          "description": "Nấu hoàn mỹ món ăn thuộc loại phòng ngự, có tỷ lệ 12% x2 sản lượng.\r\n",
+          "description": "Nấu hoàn mỹ món ăn thuộc loại phòng ngự, có tỷ lệ 12% x2 sản lượng.\n",
           "descriptions": []
         },
         {
           "key": "p2",
           "title": "Toàn Tâm Toàn Ý",
-          "description": "Nếu Noelle ở trạng thái chờ mà nhân vật của bản thân đang chiến đấu có HP thấp hơn 30% sẽ tự động kích hoạt:\r\n",
+          "description": "Nếu Noelle ở trạng thái chờ mà nhân vật của bản thân đang chiến đấu có HP thấp hơn 30% sẽ tự động kích hoạt:\n",
           "descriptions": [
             "Tạo ra khiên có thể hấp thu sát thương tương đương 400% phòng ngự của Noelle cho nhân vật của bản thân trong trận hiện tại, duy trì 20s.",
             "Có hiệu quả hấp thụ 150% tất cả sát thương nguyên tố và sát thương vật lý.",
@@ -4099,7 +4461,7 @@
         {
           "key": "p3",
           "title": "Gọn Gàng",
-          "description": "Nếu tấn công thường hoặc trọng kích đánh trúng 4 lần, sẽ giảm CD của Giáp Hộ Tâm 1s.\r\nNếu đánh trúng nhiều kẻ địch cùng một lúc thì chỉ được tính là 1 lần đánh trúng.\r\n",
+          "description": "Tấn công thường hoặc trọng kích của Noelle tích lũy đánh trúng kẻ địch 4 lần sẽ giảm 1s CD của Giáp Hộ Tâm.\nMỗi 0.1s tối đa tính 1 lần.\n",
           "descriptions": []
         }
       ],
@@ -4107,37 +4469,37 @@
         {
           "key": "c1",
           "title": "Chi viện cứ giao cho tôi",
-          "description": "Khi cùng ở trạng thái Quét Sạch và Giáp Hộ Tâm, kích hoạt hiệu quả hồi HP của Giáp Hộ Tâm tăng lên 100%.\r\n",
+          "description": "Khi cùng ở trạng thái Quét Sạch và Giáp Hộ Tâm, kích hoạt hiệu quả hồi HP của Giáp Hộ Tâm tăng lên 100%.\n",
           "descriptions": []
         },
         {
           "key": "c2",
           "title": "Hầu Gái Lốc Xoáy",
-          "description": "Thể lực mà trọng kích của Noelle tiêu hao sẽ giảm 20%, sát thương tăng 15%.\r\n",
+          "description": "Thể lực mà trọng kích của Noelle tiêu hao sẽ giảm 20%, sát thương tăng 15%.\n",
           "descriptions": []
         },
         {
           "key": "c3",
           "title": "Hầu Gái Không Đau",
-          "description": "Cấp kỹ năng Giáp Hộ Tâm +3.\r\nTăng tối đa đến cấp 15.\r\n",
+          "description": "Cấp kỹ năng Giáp Hộ Tâm +3.\nTăng tối đa đến cấp 15.\n",
           "descriptions": []
         },
         {
           "key": "c4",
           "title": "Sẽ Dọn Dẹp Sạch Sẽ",
-          "description": "Khi hiệu quả Giáp Hộ Tâm kết thúc hoặc do sát thương đánh vỡ, sẽ tạo thành sát thương Nguyên Tố Nham với lực tấn công 400% cho kẻ địch xung quanh.\r\n",
+          "description": "Khi hiệu quả Giáp Hộ Tâm kết thúc hoặc do sát thương đánh vỡ, sẽ tạo thành sát thương Nguyên Tố Nham với lực tấn công 400% cho kẻ địch xung quanh.\n",
           "descriptions": []
         },
         {
           "key": "c5",
           "title": "Chuyên Gia Quét Dọn Đội Kỵ Sĩ",
-          "description": "Cấp kỹ năng Quét Sạch +3.\r\nTăng tối đa đến cấp 15.\r\n",
+          "description": "Cấp kỹ năng Quét Sạch +3.\nTăng tối đa đến cấp 15.\n",
           "descriptions": []
         },
         {
           "key": "c6",
           "title": "Phải Sạch Bong Kin Kít",
-          "description": "Quét Sạch tăng thêm sức tấn công tương đương 50% phòng ngự của Noelle.\r\nNgoài ra, trong thời gian duy trì mỗi lần đánh bại 1 kẻ địch, thời gian sẽ kéo dài thêm 1s, tối đa 10s.\r\n",
+          "description": "Quét Sạch tăng thêm sức tấn công tương đương 50% phòng ngự của Noelle.\nNgoài ra, trong thời gian duy trì mỗi lần đánh bại 1 kẻ địch, thời gian sẽ kéo dài thêm 1s, tối đa 10s.\n",
           "descriptions": []
         }
       ]
@@ -5792,86 +6154,126 @@
     {
       "key": "tighnari",
       "name": "Tighnari",
-      "title": "???",
-      "description": "",
+      "title": "Dạo Bước Rừng Xanh",
+      "description": "Học giả thiếu niên tinh thông thực vật học, hiện đang làm đội trưởng kiểm lâm của Rừng Avidya. Tính tình thẳng thắn nhiệt tình, hay dạy bảo những người hay lơ là đầu óc.",
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Tấn Công Thường – Phá Bỏ Chướng Ngại",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Tấn Công Thường",
+              "description": "Thực hiện tối đa 4 lần bắn tên liên tiếp.\n",
+              "descriptions": []
+            },
+            {
+              "name": "Trọng kích",
+              "description": "Ngắm bắn chuẩn hơn, sát thương cao hơn.\nKhi ngắm bắn, sức mạnh hoa cỏ sẽ ngưng tụ liên tục trên mũi tên và bắn ra. Căn cứ vào thời gian tụ lực dài hay ngắn sẽ gây ra hiệu quả khác nhau:\n",
+              "descriptions": [
+                "Tụ lực lần 1: Bắn mũi tên nguyên tố Thảo gây Sát Thương Nguyên Tố Thảo;",
+                "Tụ lực lần 2: Bắn Mũi Tên Hoa gây Sát Thương Nguyên Tố Thảo. Sau khi trúng sẽ sản sinh 4 Mũi Tên Bung Tỏa tự động truy đuổi kẻ địch gần đó, gây Sát Thương Nguyên Tố Thảo."
+              ]
+            },
+            {
+              "name": "Tấn Công Khi Đáp",
+              "description": "Bắn mưa tên từ trên không, đồng thời lao nhanh xuống mặt đất, gây sát thương phạm vi khi chạm đất.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "Sát Thương Lần 1|{param1}%",
+            "Sát Thương Lần 2|{param2}%",
+            "Sát Thương Lần 3|{param3}% x{param4}",
+            "Sát Thương Lần 4|{param5}%",
+            "Ngắm Bắn|{param6}%",
+            "Tụ Lực Ngắm Bắn Bậc 1|{param7}%",
+            "Sát Thương Mũi Tên Hoa|{param8}%",
+            "Sát Thương Mũi Tên Bung Tỏa|{param9}%",
+            "Sát Thương Khi Đáp|{param10}%",
+            "Sát Thương Khi Rơi Từ Độ Cao Thấp/Cao|{param11}% / {param12}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
+          "title": "Hạt Giống Vijnana-Phala",
+          "description": "Tighnari ném Bom Vijnana, gây Sát Thương Phạm Vi Nguyên Tố Thảo và tạo ra Khu Vực Vijnana-Khanda, ảo ảnh thần bí trong đó sẽ khiêu khích kẻ địch để thu hút hỏa lực.\nNgoài ra, Tighnari nhận được hiệu ứng “Vijnana Lan Tràn”, khiến cho thời gian tụ lực của Mũi Tên Hoa giảm 2.4s, hiệu quả này sẽ mất khi kết thúc thời gian duy trì hoặc Tighnari bắn ra 3 lần Mũi Tên Hoa.\n\n",
           "abilities": [],
-          "stats": []
+          "stats": [
+            "Sát Thương Kỹ Năng|{param1}%",
+            "Thời Gian Duy Trì Khu Vực Vijnana-Khanda|{param2}s",
+            "Thời Gian Duy Trì Vijnana Lan Tràn|{param3}s",
+            "CD|{param4}s"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
+          "title": "Dây Leo Sinh Trưởng",
+          "description": "Tập trung sức mạnh của hạt giống, bắn ra 6 Mũi Tên Dây Leo truy đuổi kẻ địch, gây Sát Thương Nguyên Tố Thảo.\nMũi Tên Dây Leo khi trúng đích sẽ sản sinh Mũi Tên Dây Leo Thứ Cấp truy đuổi kẻ địch gần đó, khi trúng sẽ gây Sát Thương Nguyên Tố Thảo.\n\n",
           "abilities": [],
-          "stats": []
+          "stats": [
+            "Sát Thương Mũi Tên Dây Leo|{param1}%",
+            "Sát Thương Mũi Tên Dây Leo Thứ Cấp|{param2}%",
+            "CD|{param3}s",
+            "Năng Lượng Nguyên Tố|{param4}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "Học Thức Uyên Thâm",
+          "description": "Hiển thị đặc sản khu vực Sumeru trên bản đồ nhỏ.\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
+          "title": "Tầm Nhìn Sắc Sảo",
+          "description": "Tighnari sau khi bắn Mũi Tên Hoa, Tinh Thông Nguyên Tố tăng 50 điểm, duy trì 4s.\n",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "NA",
-          "description": "",
+          "title": "Chuyên Gia Thực Vật",
+          "description": "Mỗi 1 điểm Tinh Thông Nguyên Tố của Tighnari sẽ khiến cho sát thương trọng kích và sát thương Dây Leo Sinh Trưởng gây ra tăng 0.06%.\nSát thương có thể tăng tối đa 60% thông qua cách này.\n",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "Từ Gốc Rễ Định Ban Sơ",
+          "description": "Tỉ lệ bạo kích từ trọng kích của Tighnari tăng 15%.\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "Từ Mầm Chồi Hiểu Ngọn Nguồn",
+          "description": "Khi có kẻ địch trong Khu Vực Vijnana-Khanda từ kỹ năng Hạt Giống Vijnana-Phala, Tighnari nhận được 20%Buff Sát Thương Nguyên Tố Thảo.\nKhi Khu Vực Vijnana-Khanda kết thúc hoặc không còn kẻ địch, hiệu ứng này tối đa duy trì 6s.\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "Từ Thân Nhánh Biết Vạn Vật",
+          "description": "Cấp kỹ năng Dây Leo Sinh Trưởng +3.\nTăng tối đa đến cấp 15.\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "Từ Phiến Lá Giải Thịnh Suy",
+          "description": "Khi thi triển Dây Leo Sinh Trưởng, Tinh Thông Nguyên Tố của tất cả nhân vật trong đội gần đó tăng 60 điểm, duy trì 8s. Nếu Dây Leo Sinh Trưởng kích hoạt phản ứng Thiêu Đốt, Sum Suê, Sinh Trưởng hoặc Lan Tràn, Tinh Thông Nguyên Tố sẽ tăng thêm 60 điểm, đồng thời làm mới thời gian duy trì của trạng thái này.\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "Từ Cánh Hoa Tìm Giác Ngộ",
+          "description": "Cấp kỹ năng Hạt Giống Vijnana-Phala +3.\nTăng tối đa đến cấp 15.\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
+          "title": "Từ Cây Trái Luận Nhân Quả",
+          "description": "Thời gian tụ lực cần thiết của Mũi Tên Hoa giảm 0.9s, đồng thời khi đánh trúng kẻ địch sẽ sản sinh thêm 1 Mũi Tên Bung Tỏa, gây lượng sát thương bằng 150% tấn công của Tighnari.\n",
           "descriptions": []
         }
       ]
@@ -6009,6 +6411,134 @@
           "key": "c6",
           "title": "Gió Mùa Hỗn Loạn",
           "description": "Những mục tiêu bị sát thương bởi Khuấy Động Gió Tàn, Kháng Nguyên Tố Phong giảm 20%. \r\nNếu sinh ra chuyển hoá nguyên tố thì kháng Nguyên Tố tương ứng cũng giảm 20%.\r\n",
+          "descriptions": []
+        }
+      ]
+    },
+    {
+      "key": "traveler-dendro",
+      "name": "Nhà Lữ Hành (Dendro)",
+      "title": null,
+      "description": "Nhà Lữ Hành lưu lạc đến đây từ thế giới khác, bị Thần cướp mất người thân, từ đó bước vào con đường đi tìm 7 vị Thần.",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "Tấn Công Thường – Xén Cỏ Dị Bang",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Tấn Công Thường",
+              "description": "Thực hiện tối đa 5 lần đánh kiếm liên tiếp.\n",
+              "descriptions": []
+            },
+            {
+              "name": "Trọng Kích",
+              "description": "Tiêu hao thể lực nhất định, vung ra hai nhát kiếm về phía trước trong chớp mắt.\n",
+              "descriptions": []
+            },
+            {
+              "name": "Tấn Công Khi Đáp",
+              "description": "Đáp xuống đất từ trên không, tấn công kẻ địch trên đường và gây sát thương phạm vi khi chạm đất.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "Sát Thương Lần 1|{param1}%",
+            "Sát Thương Lần 2|{param2}%",
+            "Sát Thương Lần 3|{param3}%",
+            "Sát Thương Lần 4|{param4}%",
+            "Sát Thương Lần 5|{param5}%",
+            "Sát Thương Trọng Kích|{param6}% + {param7}%",
+            "Thể lực Trọng Kích tiêu hao|{param8} điểm",
+            "Sát Thương Khi Đáp|{param9}%",
+            "Sát Thương Khi Rơi Từ Độ Cao Thấp/Cao|{param10}% / {param11}%"
+          ]
+        },
+        {
+          "key": "s2",
+          "title": "Thảo Duyên Kiếm",
+          "description": "Vung kiếm chém ra những phiến lá sắc bén, gây Sát Thương Nguyên Tố Thảo về phía trước.\n\n",
+          "abilities": [],
+          "stats": [
+            "Sát Thương Kỹ Năng|{param1}%",
+            "CD|{param2}s"
+          ]
+        },
+        {
+          "key": "s3",
+          "title": "Yển Thảo Nhược Hóa",
+          "description": "Ngưng tụ sức mạnh hoa cỏ để tạo ra Thảo Liên Đăng.\nThảo Liên Đăng sẽ liên tục tấn công kẻ địch trong khu vực, gây Sát Thương Nguyên Tố Thảo.\n\n",
+          "abilities": [
+            {
+              "name": "Ánh Sen Biến Hóa",
+              "description": "Thảo Liên Đăng khi tiếp xúc với Nguyên Tố Thủy/Nguyên Tố Lôi/Nguyên Tố Hỏa sẽ có những thay đổi sau:\n",
+              "descriptions": [
+                "Nguyên Tố Thủy: Khuếch đại phạm vi khu vực Thảo Liên Đăng, và gia tăng phạm vi ảnh hưởng khi tấn công của nó;",
+                "Nguyên Tố Lôi: Tăng tốc độ tấn công của Thảo Liên Đăng;",
+                "Nguyên Tố Hỏa: Thảo Liên Đăng sẽ phát nổ sau thời gian ngắn, gây Sát Thương Phạm Vi Nguyên Tố Thảo.",
+                "Thảo Liên Đăng trong thời gian tồn tại chỉ có thể kích hoạt một lần Ánh Sen Biến Hóa.",
+                "Cùng lúc chỉ có thể tồn tại một Thảo Liên Đăng do Nhà Lữ Hành tạo ra."
+              ]
+            }
+          ],
+          "stats": [
+            "Sát Thương Thảo Liên Đăng|{param1}%",
+            "Sát Thương Nổ|{param2}%",
+            "Thời Gian Tồn Tại Thảo Liên Đăng|{param3}s",
+            "CD|{param4}s",
+            "Năng Lượng Nguyên Tố|{param5}"
+          ]
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "Ngọn Cỏ Sinh Trưởng",
+          "description": "Trong thời gian Thảo Liên Đăng tồn tại, mỗi giây sẽ nhận được một tầng hiệu ứng Ánh Sen Chiếu Rọi, khiến nhân vật trong trận đang trong khu vực đó tăng 6 điểm Tinh Thông Nguyên Tố. Hiệu ứng Ánh Sen Chiếu Rọi của Thảo Liên Đăng tối đa cộng dồn 10 tầng.\n",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "Cỏ Cây Sum Suê",
+          "description": "Mỗi điểm Tinh Thông Nguyên Tố của Nhà Lữ Hành sẽ tăng 0.15% sát thương của Thảo Duyên Kiếm gây ra, tăng 0.1% sát thương của Yển Thảo Nhược Hóa gây ra.\n",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "Hạt Giống Ký Sinh",
+          "description": "Thảo Duyên Kiếm khi đánh trúng kẻ địch sẽ hồi cho Nhà Lữ Hành 3.5 điểm Năng Lượng Nguyên Tố.\n",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "Mầm Non Uyển Chuyển",
+          "description": "Thời gian tồn tại của Thảo Liên Đăng kéo dài thêm 3s.\n",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "Ngọn Cỏ Đung Đưa",
+          "description": "Cấp kỹ năng Thảo Duyên Kiếm +3.\nTăng tối đa đến cấp 15.\n",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "Bụi Cỏ Um Tùm",
+          "description": "Thảo Liên Đăng sau khi kích hoạt Ánh Sen Biến Hóa sẽ nhận được 5 tầng hiệu quả Ánh Sen Chiếu Rọi của thiên phú Ngọn Cỏ Sinh Trưởng.\nCần mở khóa thiên phú Ngọn Cỏ Sinh Trưởng.\n",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "Đồng Cỏ Sum Suê",
+          "description": "Cấp kỹ năng Yển Thảo Nhược Hóa +3.\nTăng tối đa đến cấp 15.\n",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "Mảng Xanh Hùng Vĩ",
+          "description": "Nhân vật chịu ảnh hưởng từ Ánh Sen Chiếu Rọi của Thảo Liên Đăng sẽ nhận được 12% Buff Sát Thương Nguyên Tố Thảo; Nếu Thảo Liên Đăng kích hoạt Ánh Sen Biến Hóa sẽ nhận được 12% buff sát thương nguyên tố tương ứng.\n",
           "descriptions": []
         }
       ]
@@ -6685,12 +7215,12 @@
           "abilities": [
             {
               "name": "Tấn Công Thường",
-              "description": "Thực hiện tối đa 5 lần đánh kiếm liên tiếp.\r\n",
+              "description": "Thực hiện tối đa 5 lần đánh kiếm liên tiếp.\n",
               "descriptions": []
             },
             {
               "name": "Trọng Kích",
-              "description": "Tiêu hao thể lực nhất định, đánh ra hai kiếm về phía trước trong chớp mắt.\r\n",
+              "description": "Tiêu hao thể lực nhất định, đánh ra hai kiếm về phía trước trong chớp mắt.\n",
               "descriptions": []
             },
             {
@@ -6706,19 +7236,19 @@
             "Sát Thương Lần 4|{param5}%",
             "Sát Thương Lần 5|{param6}% + {param7}%",
             "Sát Thương Trọng Kích|{param8}% + {param9}%",
-            "Thể lực Trọng Kích tiêu hao|{param10}",
+            "Thể lực Trọng Kích tiêu hao|{param10} điểm",
             "Sát Thương Khi Rơi|{param11}%",
             "Sát Thương Khi Rơi Từ Độ Cao Thấp/Cao|{param12}% / {param13}%"
           ]
         },
         {
           "key": "s2",
-          "title": "Cổ Hoa Kiếm - Họa Vũ Lung Sơn",
-          "description": "Thi triển hai đợt kiếm, gây Sát Thương Nguyên Tố Thủy cho địch phía trước. Đồng thời, tạo ra \"Vũ Liêm Kiếm\" với số lượng tối đa bay xung quanh nhân vật của bản thân trong trận hiện tại.\r\n",
+          "title": "Cổ Hoa Kiếm – Họa Vũ Lung Sơn",
+          "description": "Thi triển hai đợt kiếm, gây Sát Thương Nguyên Tố Thủy cho địch phía trước. Đồng thời, tạo ra “Vũ Liêm Kiếm” với số lượng tối đa bay xung quanh nhân vật của bản thân trong trận hiện tại.\n",
           "abilities": [
             {
               "name": "",
-              "description": "Đặc tính:\r\n",
+              "description": "Đặc tính:\n",
               "descriptions": [
                 "Khi nhân vật chịu sát thương sẽ vỡ và giảm sát thương phải chịu;",
                 "Tăng khả năng kháng gián đoạn của nhân vật",
@@ -6733,13 +7263,16 @@
             "Sát Thương Kỹ Năng|{param1}% + {param2}%",
             "Tỷ Lệ Miễn Thương|{param3}%",
             "Thời Gian Kéo Dài|{param4}s",
-            "CD|{param5}s"
+            "CD|{param5}s",
+            "Giới Hạn Buff Chuyển Giảm Thương|{param6}%",
+            "Thời Gian Kéo Dài|{param7}s",
+            "CD|{param8}s"
           ]
         },
         {
           "key": "s3",
-          "title": "Cổ Hoa Kiếm - Tài Vũ Lưu Hồng",
-          "description": "Thi triển thế kiếm cầu vồng, điều khiển ảo ảnh mưa kiếm để chiến đấu, tăng số lượng Vũ Liêm Kiếm lên mức cao nhất.\r\n",
+          "title": "Cổ Hoa Kiếm – Tài Vũ Lưu Hồng",
+          "description": "Thi triển thế kiếm cầu vồng, điều khiển ảo ảnh mưa kiếm để chiến đấu, tăng số lượng Vũ Liêm Kiếm lên mức cao nhất.\n\n",
           "abilities": [
             {
               "name": "Kiếm Cầu Vồng",
@@ -6762,19 +7295,19 @@
         {
           "key": "p1",
           "title": "Ánh Sáng Lấp Lánh",
-          "description": "Khi ghép nguyên liệu thiên phú nhân vật, có 25% tỷ lệ hoàn trả một phần nguyên liệu ghép.\r\n",
+          "description": "Khi ghép nguyên liệu thiên phú nhân vật, có 25% tỷ lệ hoàn trả một phần nguyên liệu ghép.\n",
           "descriptions": []
         },
         {
           "key": "p2",
           "title": "Sinh Thủy Yêu Quyết",
-          "description": "Vũ Liêm Kiếm bị phá vỡ hoặc hết thời gian, dựa trên 6% HP tối đa của Xingqiu, trị liệu HP cho nhân vật hiện tại.\r\n",
+          "description": "Vũ Liêm Kiếm bị phá vỡ hoặc hết thời gian, dựa trên 6% HP tối đa của Xingqiu, trị liệu HP cho nhân vật hiện tại.\n",
           "descriptions": []
         },
         {
           "key": "p3",
           "title": "Ngòi Bút Thực Hư",
-          "description": "Xingqiu nhận 20% buff sát thương Nguyên Tố Thủy.\r\n",
+          "description": "Xingqiu nhận 20% buff sát thương Nguyên Tố Thủy.\n",
           "descriptions": []
         }
       ],
@@ -6782,37 +7315,37 @@
         {
           "key": "c1",
           "title": "Mùi Hương Vương Vấn",
-          "description": "Số lượng tối đa của Vũ Liêm Kiếm tăng thêm 1.\r\n",
+          "description": "Số lượng tối đa của Vũ Liêm Kiếm tăng thêm 1.\n",
           "descriptions": []
         },
         {
           "key": "c2",
           "title": "Cầu Vồng Trời Xanh",
-          "description": "Kéo dài thời gian Cổ Hoa Kiếm - Tài Vũ Lưu Hồng thêm 3s;\r\nNgoài ra, kẻ địch chịu sát thương từ Mưa Kiếm giảm 15% kháng sát thương Nguyên Tố Thủy, kéo dài 4s.\r\n",
+          "description": "Kéo dài thời gian Cổ Hoa Kiếm – Tài Vũ Lưu Hồng thêm 3s;\nNgoài ra, kẻ địch chịu sát thương từ Mưa Kiếm giảm 15% kháng sát thương Nguyên Tố Thủy, kéo dài 4s.\n",
           "descriptions": []
         },
         {
           "key": "c3",
           "title": "Dệt Thơ Thành Lụa",
-          "description": "Cấp kỹ năng Cổ Hoa Kiếm - Tài Vũ Lưu Hồng +3.\r\nTăng tối đa đến cấp 15.\r\n",
+          "description": "Cấp kỹ năng Cổ Hoa Kiếm – Tài Vũ Lưu Hồng +3.\nTăng tối đa đến cấp 15.\n",
           "descriptions": []
         },
         {
           "key": "c4",
           "title": "Cô Châu Trảm Giao",
-          "description": "Trong thời gian Cổ Hoa Kiếm - Tài Vũ Lưu Hồng còn hiệu lực, sát thương Cổ Hoa Kiếm - Họa Vũ Lung Sơn gây ra tăng 50%.\r\n",
+          "description": "Trong thời gian Cổ Hoa Kiếm – Tài Vũ Lưu Hồng còn hiệu lực, sát thương Cổ Hoa Kiếm – Họa Vũ Lung Sơn gây ra tăng 50%.\n",
           "descriptions": []
         },
         {
           "key": "c5",
           "title": "Đóng Cửa Trong Mưa",
-          "description": "Cấp kỹ năng Cổ Hoa Kiếm - Họa Vũ Lung Sơn +3.\r\nTăng tối đa đến cấp 15.\r\n",
+          "description": "Cấp kỹ năng Cổ Hoa Kiếm – Họa Vũ Lung Sơn +3.\nTăng tối đa đến cấp 15.\n",
           "descriptions": []
         },
         {
           "key": "c6",
           "title": "Sách Đều Ở Đây",
-          "description": "Mỗi khi Cổ Hoa Kiếm - Tài Vũ Lưu Hồng phát động 2 lần mưa kiếm, sẽ tăng sát thương của lần mưa kiếm tiếp theo, đồng thời khi đánh trúng địch sẽ hồi phục 3 điểm Năng Lượng Nguyên Tố cho Xingqiu.\r\n",
+          "description": "Mỗi khi Cổ Hoa Kiếm – Tài Vũ Lưu Hồng phát động 2 lần mưa kiếm, sẽ tăng sát thương của lần mưa kiếm tiếp theo, đồng thời khi đánh trúng địch sẽ hồi phục 3 điểm Năng Lượng Nguyên Tố cho Xingqiu.\n",
           "descriptions": []
         }
       ]
@@ -7103,22 +7636,22 @@
     {
       "key": "yanfei",
       "name": "Yanfei",
-      "title": "Cơ trí ngây thơ",
+      "title": "Cơ Trí Ngây Thơ",
       "description": "Nhà cố vấn luật nổi tiếng hoạt động tại Liyue, là một thiếu nữ thông minh hoạt bát mang trong người huyết thống tiên thú.",
       "skills": [
         {
           "key": "s1",
-          "title": "Tấn Công Thường - Hỏa Ấn",
+          "title": "Tấn Công Thường – Hỏa Ấn",
           "description": "",
           "abilities": [
             {
               "name": "Tấn Công Thường",
-              "description": "Bắn cầu lửa liên tục, gây tối đa 3 lần Sát Thương Nguyên Tố Hỏa.\r\nKhi đánh thường trúng địch sẽ tạo cho Yanfei 1 Đan Hỏa Ấn. Ban đầu tối đa chỉ được 3 Đan Hỏa Ấn, mỗi lần kích hoạt sẽ làm mới thời gian duy trì Đan Hỏa Ấn đã có.\r\nMỗi Đan Hỏa Ấn sẽ giảm thể lực tiêu hao cho Yanfei, đồng thời sẽ biến mất khi Yanfei rời trận.\r\n",
+              "description": "Bắn cầu lửa liên tục, gây tối đa 3 lần Sát Thương Nguyên Tố Hỏa.\nKhi đánh thường trúng địch sẽ tạo cho Yanfei 1 Đan Hỏa Ấn. Ban đầu tối đa chỉ được 3 Đan Hỏa Ấn, mỗi lần kích hoạt sẽ làm mới thời gian duy trì Đan Hỏa Ấn đã có.\nMỗi Đan Hỏa Ấn sẽ giảm thể lực tiêu hao cho Yanfei, đồng thời sẽ biến mất khi Yanfei rời trận.\n",
               "descriptions": []
             },
             {
               "name": "Trọng Kích",
-              "description": "Tiêu hao thể lực, sau tiếng ngân, tiêu hao tất cả Đan Hỏa Ấn để gây Sát Thương Nguyên Tố Hỏa về phía trước.\r\nDựa vào số lượng Đan Hỏa Ấn tiêu hao để cường hóa phạm vi và sát thương của trọng kích lần này.\r\n",
+              "description": "Tiêu hao thể lực, sau khi tụ lực, tiêu hao tất cả Đan Hỏa Ấn để gây Sát Thương Nguyên Tố Hỏa về phía trước.\nDựa vào số lượng Đan Hỏa Ấn tiêu hao để cường hóa phạm vi và sát thương của trọng kích lần này.\n",
               "descriptions": []
             },
             {
@@ -7132,8 +7665,8 @@
             "Sát Thương Lần 2|{param2}%",
             "Sát Thương Lần 3|{param3}%",
             "Sát Thương Trọng Kích|{param4}% / {param5}% / {param6}% / {param7}% / {param8}%",
-            "Thể lực Trọng Kích tiêu hao|{param9}",
-            "Giảm tiêu hao thể lực Đan Hỏa Ấn|{param10}% Per Seal",
+            "Thể lực Trọng Kích tiêu hao|{param9} điểm",
+            "Giảm tiêu hao thể lực Đan Hỏa Ấn|Mỗi cái {param10}%",
             "Thời Gian Đan Hỏa Ấn Kéo Dài|{param11}s",
             "Sát Thương Khi Rơi|{param12}%",
             "Sát Thương Khi Rơi Từ Độ Cao Thấp/Cao|{param13}% / {param14}%"
@@ -7142,21 +7675,22 @@
         {
           "key": "s2",
           "title": "Sắc Lệnh Đã Ký",
-          "description": "Triệu hồi liệt hỏa, gây Sát Thương Nguyên Tố Hỏa diện rộng.\r\nKhi đánh trúng kẻ địch sẽ cung cấp số lượng Đan Hỏa Ấn tối đa cho Yanfei.\r\n",
+          "description": "Triệu hồi liệt hỏa, gây Sát Thương Nguyên Tố Hỏa diện rộng.\nKhi đánh trúng kẻ địch sẽ cung cấp số lượng Đan Hỏa Ấn tối đa cho Yanfei.\n\n",
           "abilities": [],
           "stats": [
             "Sát Thương Kỹ Năng|{param1}%",
-            "CD|{param2}s"
+            "CD|{param2}s",
+            "CD|{param3}s"
           ]
         },
         {
           "key": "s3",
           "title": "Khế Ước Đã Định",
-          "description": "Kích hoạt liệt hỏa xung kích kẻ địch xung quanh, gây Sát Thương Nguyên Tố Hỏa diện rộng, cung cấp số lượng Đan Hỏa Ấn tối đa và hiệu ứng Bỏng Cháy cho Yanfei.\r\n",
+          "description": "Kích hoạt liệt hỏa xung kích kẻ địch xung quanh, gây Sát Thương Nguyên Tố Hỏa diện rộng, cung cấp số lượng Đan Hỏa Ấn tối đa và hiệu ứng Bỏng Cháy cho Yanfei.\n\n",
           "abilities": [
             {
               "name": "Bỏng Cháy",
-              "description": "Hiệu quả:\r\n",
+              "description": "Hiệu quả:\n",
               "descriptions": [
                 "Mỗi cách một khoảng thời gian sẽ cung cấp 1 Đan Hỏa Ấn cho Yanfei;",
                 "Tăng sát thương trọng kích tạo thành.",
@@ -7178,19 +7712,19 @@
         {
           "key": "p1",
           "title": "Thông Minh Uyên Bác",
-          "description": "Hiển thị vị trí đặc sản xung quanh khu vực Liyue trên bản đồ nhỏ.\r\n",
+          "description": "Hiển thị vị trí đặc sản xung quanh khu vực Liyue trên bản đồ nhỏ.\n",
           "descriptions": []
         },
         {
           "key": "p2",
           "title": "Điều Khoản Liên Quan",
-          "description": "Khi Yanfei tiêu hao Đan Hỏa Ấn thông qua trọng kích, mỗi Đan Hỏa Ấn sẽ tăng 5% buff sát thương Nguyên Tố Hỏa của Yanfei, kéo dài 6s. Nếu thi triển lại trọng kích trong thời gian duy trì hiệu ứng này, sẽ hủy hiệu ứng ban đầu trước.\r\n",
+          "description": "Khi Yanfei tiêu hao Đan Hỏa Ấn thông qua trọng kích, mỗi Đan Hỏa Ấn sẽ tăng 5% buff sát thương Nguyên Tố Hỏa của Yanfei, kéo dài 6s. Nếu thi triển lại trọng kích trong thời gian duy trì hiệu ứng này, sẽ hủy hiệu ứng ban đầu trước.\n",
           "descriptions": []
         },
         {
           "key": "p3",
           "title": "Pháp Thú Chước Nhãn",
-          "description": "Khi Yanfei chủ động thi triển Trọng Kích gây ra bạo kích sẽ gây thêm 1 lần sát thương phạm vi Nguyên Tố Hỏa bằng 80% tấn công. Sát thương này xem như sát thương Trọng Kích.\r\n",
+          "description": "Khi Yanfei chủ động thi triển Trọng Kích gây ra bạo kích sẽ gây thêm 1 lần sát thương phạm vi Nguyên Tố Hỏa bằng 80% tấn công. Sát thương này xem như sát thương Trọng Kích.\n",
           "descriptions": []
         }
       ],
@@ -7198,25 +7732,25 @@
         {
           "key": "c1",
           "title": "Được Nước Làm Tới",
-          "description": "Khi Yanfei thực hiện trọng kích, mỗi khi sở hữu 1 Đan Hỏa Ấn sẽ tăng khả năng kháng gián đoạn trong thời gian tồn tại tiếng ngân, đồng thời giảm thêm thể lực tiêu hao bằng với 10% Trọng Kích của lần này.\r\n",
+          "description": "Khi Yanfei thực hiện trọng kích, mỗi khi sở hữu 1 Đan Hỏa Ấn sẽ tăng khả năng kháng gián đoạn trong thời gian tụ lực, đồng thời giảm thêm thể lực tiêu hao bằng với 10% Trọng Kích của lần này.\n",
           "descriptions": []
         },
         {
           "key": "c2",
           "title": "Quyền Giải Thích Cuối Cùng",
-          "description": "Khi Yanfei thi triển trọng kích lên kẻ địch có HP dưới 50%, tỷ lệ bạo kích tăng 20%.\r\n",
+          "description": "Khi Yanfei thi triển trọng kích lên kẻ địch có HP dưới 50%, tỷ lệ bạo kích tăng 20%.\n",
           "descriptions": []
         },
         {
           "key": "c3",
           "title": "Chân Hỏa Luyện Bảo Ấn",
-          "description": "Cấp kỹ năng Sắc Lệnh Đã Ký +3.\r\nTăng tối đa đến cấp 15.\r\n",
+          "description": "Cấp kỹ năng Sắc Lệnh Đã Ký +3.\nTăng tối đa đến cấp 15.\n",
           "descriptions": []
         },
         {
           "key": "c4",
           "title": "Đan Thư Kim Thiết Quyển",
-          "description": "Khi thi triển Khế Ước Đã Định:\r\n",
+          "description": "Khi thi triển Khế Ước Đã Định:\n",
           "descriptions": [
             "Hình thành tấm khiên hấp thu sát thương tương đương với 45% giới hạn HP, kéo dài 15s.",
             "Khiên có hiệu quả hấp thụ 250% sát thương Nguyên Tố Hỏa."
@@ -7225,13 +7759,13 @@
         {
           "key": "c5",
           "title": "Tuân Pháp Thiết Kết Thư",
-          "description": "Cấp kỹ năng Khế Ước Đã Định +3.\r\nTăng tối đa đến cấp 15.\r\n",
+          "description": "Cấp kỹ năng Khế Ước Đã Định +3.\nTăng tối đa đến cấp 15.\n",
           "descriptions": []
         },
         {
           "key": "c6",
           "title": "Điều Khoản Đi Kèm",
-          "description": "Số lượng tối đa của Đan Hỏa Ấn mà Yanfei sở hữu tăng thêm 1.\r\n",
+          "description": "Số lượng tối đa của Đan Hỏa Ấn mà Yanfei sở hữu tăng thêm 1.\n",
           "descriptions": []
         }
       ]
@@ -8168,6 +8702,18 @@
       ]
     },
     {
+      "key": "end-of-the-line",
+      "name": "Sông Cạn",
+      "description": "Loài cá dường như đã tuyệt chủng, thân của chúng có độ đàn hồi cao, gắn thêm dây vào sẽ có thể dùng như cung.",
+      "refinements": [
+        "Thi triển Kỹ Năng Nguyên Tố sẽ kích hoạt hiệu ứng “Xuôi Dòng”, khi đánh trúng kẻ địch sẽ gây sát thương diện rộng bằng {color}80{/color}% tấn công, hiệu quả này sẽ bị xóa sau 15s hoặc kích hoạt 3 lần sát thương diện rộng. Mỗi 2s tối đa gây một lần sát thương diện rộng bằng cách này, mỗi 12s tối đa kích hoạt một lần “Xuôi Dòng”.",
+        "Thi triển Kỹ Năng Nguyên Tố sẽ kích hoạt hiệu ứng “Xuôi Dòng”, khi đánh trúng kẻ địch sẽ gây sát thương diện rộng bằng {color}100{/color}% tấn công, hiệu quả này sẽ bị xóa sau 15s hoặc kích hoạt 3 lần sát thương diện rộng. Mỗi 2s tối đa gây một lần sát thương diện rộng bằng cách này, mỗi 12s tối đa kích hoạt một lần “Xuôi Dòng”.",
+        "Thi triển Kỹ Năng Nguyên Tố sẽ kích hoạt hiệu ứng “Xuôi Dòng”, khi đánh trúng kẻ địch sẽ gây sát thương diện rộng bằng {color}120{/color}% tấn công, hiệu quả này sẽ bị xóa sau 15s hoặc kích hoạt 3 lần sát thương diện rộng. Mỗi 2s tối đa gây một lần sát thương diện rộng bằng cách này, mỗi 12s tối đa kích hoạt một lần “Xuôi Dòng”.",
+        "Thi triển Kỹ Năng Nguyên Tố sẽ kích hoạt hiệu ứng “Xuôi Dòng”, khi đánh trúng kẻ địch sẽ gây sát thương diện rộng bằng {color}140{/color}% tấn công, hiệu quả này sẽ bị xóa sau 15s hoặc kích hoạt 3 lần sát thương diện rộng. Mỗi 2s tối đa gây một lần sát thương diện rộng bằng cách này, mỗi 12s tối đa kích hoạt một lần “Xuôi Dòng”.",
+        "Thi triển Kỹ Năng Nguyên Tố sẽ kích hoạt hiệu ứng “Xuôi Dòng”, khi đánh trúng kẻ địch sẽ gây sát thương diện rộng bằng {color}160{/color}% tấn công, hiệu quả này sẽ bị xóa sau 15s hoặc kích hoạt 3 lần sát thương diện rộng. Mỗi 2s tối đa gây một lần sát thương diện rộng bằng cách này, mỗi 12s tối đa kích hoạt một lần “Xuôi Dòng”."
+      ]
+    },
+    {
       "key": "engulfing-lightning",
       "name": "Đoạn Thảo Trường Đao",
       "description": "Trảm thảo trường đao, kẻ đối mặt với thanh đao này cũng sẽ như ngọn cỏ ngã xuống.",
@@ -8312,6 +8858,18 @@
       ]
     },
     {
+      "key": "forest-regalia",
+      "name": "Vương Khí Rừng Sâu",
+      "description": "Vũ khí nhận được từ câu chuyện của Aranara. Có tạo hình của đại kiếm, có thể nghiền nát kẻ địch trong rừng.",
+      "refinements": [
+        "Sau khi kích hoạt phản ứng Thiêu Đốt, Sinh Trưởng, Tăng Cường, Lan Tràn, Sum Suê, Nở Rộ hoặc Bung Tỏa sẽ sản sinh “Lá Tri Thức” tồn tại tối đa 10s ở xung quanh nhân vật. Nhân vật khi nhặt “Lá Tri Thức” sẽ tăng {color}60{/color} điểm Tinh Thông Nguyên Tố, duy trì 12s. Mỗi 20s tối đa sản sinh một “Lá Tri Thức” bằng cách này. Nhân vật khi không ra trận cũng sẽ kích hoạt. Hiệu ứng Lá Tri Thức không thể cộng dồn.",
+        "Sau khi kích hoạt phản ứng Thiêu Đốt, Sinh Trưởng, Tăng Cường, Lan Tràn, Sum Suê, Nở Rộ hoặc Bung Tỏa sẽ sản sinh “Lá Tri Thức” tồn tại tối đa 10s ở xung quanh nhân vật. Nhân vật khi nhặt “Lá Tri Thức” sẽ tăng {color}75{/color} điểm Tinh Thông Nguyên Tố, duy trì 12s. Mỗi 20s tối đa sản sinh một “Lá Tri Thức” bằng cách này. Nhân vật khi không ra trận cũng sẽ kích hoạt. Hiệu ứng Lá Tri Thức không thể cộng dồn.",
+        "Sau khi kích hoạt phản ứng Thiêu Đốt, Sinh Trưởng, Tăng Cường, Lan Tràn, Sum Suê, Nở Rộ hoặc Bung Tỏa sẽ sản sinh “Lá Tri Thức” tồn tại tối đa 10s ở xung quanh nhân vật. Nhân vật khi nhặt “Lá Tri Thức” sẽ tăng {color}90{/color} điểm Tinh Thông Nguyên Tố, duy trì 12s. Mỗi 20s tối đa sản sinh một “Lá Tri Thức” bằng cách này. Nhân vật khi không ra trận cũng sẽ kích hoạt. Hiệu ứng Lá Tri Thức không thể cộng dồn.",
+        "Sau khi kích hoạt phản ứng Thiêu Đốt, Sinh Trưởng, Tăng Cường, Lan Tràn, Sum Suê, Nở Rộ hoặc Bung Tỏa sẽ sản sinh “Lá Tri Thức” tồn tại tối đa 10s ở xung quanh nhân vật. Nhân vật khi nhặt “Lá Tri Thức” sẽ tăng {color}105{/color} điểm Tinh Thông Nguyên Tố, duy trì 12s. Mỗi 20s tối đa sản sinh một “Lá Tri Thức” bằng cách này. Nhân vật khi không ra trận cũng sẽ kích hoạt. Hiệu ứng Lá Tri Thức không thể cộng dồn.",
+        "Sau khi kích hoạt phản ứng Thiêu Đốt, Sinh Trưởng, Tăng Cường, Lan Tràn, Sum Suê, Nở Rộ hoặc Bung Tỏa sẽ sản sinh “Lá Tri Thức” tồn tại tối đa 10s ở xung quanh nhân vật. Nhân vật khi nhặt “Lá Tri Thức” sẽ tăng {color}120{/color} điểm Tinh Thông Nguyên Tố, duy trì 12s. Mỗi 20s tối đa sản sinh một “Lá Tri Thức” bằng cách này. Nhân vật khi không ra trận cũng sẽ kích hoạt. Hiệu ứng Lá Tri Thức không thể cộng dồn."
+      ]
+    },
+    {
       "key": "freedom-sworn",
       "name": "Lời Thề Tự Do Cổ Xưa",
       "description": "Thanh kiếm thẳng tắp màu xanh lam như tiếng ca hoài cổ, vũ khí sắc bén như lời thề tự do ở đất nước của gió.",
@@ -8333,6 +8891,18 @@
         "Khi tấn công thường và trọng kích đánh trúng kẻ địch có tỷ lệ {color}80{/color}% tạo ra Đá Vĩnh Hằng phía trên kẻ địch và rơi xuống, gây sát thương phạm vi bằng {color}110{/color}% tấn công. Nếu địch bị ảnh hưởng bởi nguyên tố Băng, sẽ gây sát thương bằng {color}280{/color}% tấn công. Hiệu quả này mỗi 10s kích hoạt 1 lần.",
         "Khi tấn công thường và trọng kích đánh trúng kẻ địch có tỷ lệ {color}90{/color}% tạo ra Đá Vĩnh Hằng phía trên kẻ địch và rơi xuống, gây sát thương phạm vi bằng {color}125{/color}% tấn công. Nếu địch bị ảnh hưởng bởi nguyên tố Băng, sẽ gây sát thương bằng {color}320{/color}% tấn công. Hiệu quả này mỗi 10s kích hoạt 1 lần.",
         "Khi tấn công thường và trọng kích đánh trúng kẻ địch có tỷ lệ {color}100{/color}% tạo ra Đá Vĩnh Hằng phía trên kẻ địch và rơi xuống, gây sát thương phạm vi bằng {color}140{/color}% tấn công. Nếu địch bị ảnh hưởng bởi nguyên tố Băng, sẽ gây sát thương bằng {color}360{/color}% tấn công. Hiệu quả này mỗi 10s kích hoạt 1 lần."
+      ]
+    },
+    {
+      "key": "fruit-of-fulfillment",
+      "name": "Quả Mọng",
+      "description": "Quả mọng nhận được từ câu chuyện của Aranara. Bên trong ẩn chứa tiềm năng chiến thắng mọi nguy hiểm.",
+      "refinements": [
+        "Sau khi kích hoạt phản ứng nguyên tố sẽ nhận hiệu ứng “Doanh Khuyết”: Tinh Thông Nguyên Tố tăng {color}24{/color} điểm, tấn công giảm 5%. Mỗi 0.3s tối đa nhận một tầng hiệu quả Doanh Khuyết, cộng dồn tối đa 5 tầng. Khi không kích hoạt phản ứng nguyên tố, mỗi 6s sẽ mất đi một tầng. Nhân vật không ra trận cũng sẽ kích hoạt hiệu quả này.",
+        "Sau khi kích hoạt phản ứng nguyên tố sẽ nhận hiệu ứng “Doanh Khuyết”: Tinh Thông Nguyên Tố tăng {color}27{/color} điểm, tấn công giảm 5%. Mỗi 0.3s tối đa nhận một tầng hiệu quả Doanh Khuyết, cộng dồn tối đa 5 tầng. Khi không kích hoạt phản ứng nguyên tố, mỗi 6s sẽ mất đi một tầng. Nhân vật không ra trận cũng sẽ kích hoạt hiệu quả này.",
+        "Sau khi kích hoạt phản ứng nguyên tố sẽ nhận hiệu ứng “Doanh Khuyết”: Tinh Thông Nguyên Tố tăng {color}30{/color} điểm, tấn công giảm 5%. Mỗi 0.3s tối đa nhận một tầng hiệu quả Doanh Khuyết, cộng dồn tối đa 5 tầng. Khi không kích hoạt phản ứng nguyên tố, mỗi 6s sẽ mất đi một tầng. Nhân vật không ra trận cũng sẽ kích hoạt hiệu quả này.",
+        "Sau khi kích hoạt phản ứng nguyên tố sẽ nhận hiệu ứng “Doanh Khuyết”: Tinh Thông Nguyên Tố tăng {color}33{/color} điểm, tấn công giảm 5%. Mỗi 0.3s tối đa nhận một tầng hiệu quả Doanh Khuyết, cộng dồn tối đa 5 tầng. Khi không kích hoạt phản ứng nguyên tố, mỗi 6s sẽ mất đi một tầng. Nhân vật không ra trận cũng sẽ kích hoạt hiệu quả này.",
+        "Sau khi kích hoạt phản ứng nguyên tố sẽ nhận hiệu ứng “Doanh Khuyết”: Tinh Thông Nguyên Tố tăng {color}36{/color} điểm, tấn công giảm 5%. Mỗi 0.3s tối đa nhận một tầng hiệu quả Doanh Khuyết, cộng dồn tối đa 5 tầng. Khi không kích hoạt phản ứng nguyên tố, mỗi 6s sẽ mất đi một tầng. Nhân vật không ra trận cũng sẽ kích hoạt hiệu quả này."
       ]
     },
     {
@@ -8402,6 +8972,18 @@
       "refinements": []
     },
     {
+      "key": "hunters-path",
+      "name": "Con Đường Thợ Săn",
+      "description": "Cung săn bắn được chế tạo từ nhánh cây trắng, từng bắn hạ vô số ác thú xâm chiếm khu rừng.",
+      "refinements": [
+        "Nhận {color}12{/color}% buff sát thương tất cả nguyên tố. Sau khi trọng kích đánh trúng kẻ địch sẽ nhận được hiệu ứng “Săn Bắt Vô Tận”: Tăng sát thương trọng kích gây ra, lượng sát thương tăng thêm tương đương {color}160{/color}% Tinh Thông Nguyên Tố. Hiệu quả này sẽ biến mất sau khi có hiệu lực 12 lần hoặc sau 10s. Mỗi 12s tối đa kích hoạt một lần “Săn Bắt Vô Tận”.",
+        "Nhận {color}15{/color}% buff sát thương tất cả nguyên tố. Sau khi trọng kích đánh trúng kẻ địch sẽ nhận được hiệu ứng “Săn Bắt Vô Tận”: Tăng sát thương trọng kích gây ra, lượng sát thương tăng thêm tương đương {color}200{/color}% Tinh Thông Nguyên Tố. Hiệu quả này sẽ biến mất sau khi có hiệu lực 12 lần hoặc sau 10s. Mỗi 12s tối đa kích hoạt một lần “Săn Bắt Vô Tận”.",
+        "Nhận {color}18{/color}% buff sát thương tất cả nguyên tố. Sau khi trọng kích đánh trúng kẻ địch sẽ nhận được hiệu ứng “Săn Bắt Vô Tận”: Tăng sát thương trọng kích gây ra, lượng sát thương tăng thêm tương đương {color}240{/color}% Tinh Thông Nguyên Tố. Hiệu quả này sẽ biến mất sau khi có hiệu lực 12 lần hoặc sau 10s. Mỗi 12s tối đa kích hoạt một lần “Săn Bắt Vô Tận”.",
+        "Nhận {color}21{/color}% buff sát thương tất cả nguyên tố. Sau khi trọng kích đánh trúng kẻ địch sẽ nhận được hiệu ứng “Săn Bắt Vô Tận”: Tăng sát thương trọng kích gây ra, lượng sát thương tăng thêm tương đương {color}280{/color}% Tinh Thông Nguyên Tố. Hiệu quả này sẽ biến mất sau khi có hiệu lực 12 lần hoặc sau 10s. Mỗi 12s tối đa kích hoạt một lần “Săn Bắt Vô Tận”.",
+        "Nhận {color}24{/color}% buff sát thương tất cả nguyên tố. Sau khi trọng kích đánh trúng kẻ địch sẽ nhận được hiệu ứng “Săn Bắt Vô Tận”: Tăng sát thương trọng kích gây ra, lượng sát thương tăng thêm tương đương {color}320{/color}% Tinh Thông Nguyên Tố. Hiệu quả này sẽ biến mất sau khi có hiệu lực 12 lần hoặc sau 10s. Mỗi 12s tối đa kích hoạt một lần “Săn Bắt Vô Tận”."
+      ]
+    },
+    {
       "key": "iron-point",
       "name": "Thương Sắt",
       "description": "Một đầu nhọn, là vũ khí hộ thân có thể công thủ. Rất thịnh hành trong giới lữ hành.",
@@ -8449,6 +9031,18 @@
         "Tăng sát thương Kỹ Năng Nguyên Tố {color}9{/color}%. Sau khi Kỹ Năng Nguyên Tố đánh trúng, nhân vật mất 3 điểm Năng Lượng Nguyên Tố, đồng thời 6 giây tiếp theo mỗi 2 giây hồi phục {color}4{/color} điểm. Hiệu quả này mỗi 10 giây kích hoạt 1 lần, nhân vật ở trong đội nhưng không ra trận vẫn có thể kích hoạt.",
         "Tăng sát thương Kỹ Năng Nguyên Tố {color}10.5{/color}%. Sau khi Kỹ Năng Nguyên Tố đánh trúng, nhân vật mất 3 điểm Năng Lượng Nguyên Tố, đồng thời 6 giây tiếp theo mỗi 2 giây hồi phục {color}4.5{/color} điểm. Hiệu quả này mỗi 10 giây kích hoạt 1 lần, nhân vật ở trong đội nhưng không ra trận vẫn có thể kích hoạt.",
         "Tăng sát thương Kỹ Năng Nguyên Tố {color}12{/color}%. Sau khi Kỹ Năng Nguyên Tố đánh trúng, nhân vật mất 3 điểm Năng Lượng Nguyên Tố, đồng thời 6 giây tiếp theo mỗi 2 giây hồi phục {color}5{/color} điểm. Hiệu quả này mỗi 10 giây kích hoạt 1 lần, nhân vật ở trong đội nhưng không ra trận vẫn có thể kích hoạt."
+      ]
+    },
+    {
+      "key": "kings-squire",
+      "name": "Cận Vệ Nhà Vua",
+      "description": "Vũ khí nhận được từ câu chuyện của Aranara. Có tạo hình của chiếc cung, có thể bắn rơi kẻ địch trong rừng.",
+      "refinements": [
+        "Khi thi triển Kỹ Năng Nguyên Tố hoặc Kỹ Năng Nộ sẽ nhận hiệu ứng “Chỉ Dẫn Của Rừng Sâu”, tăng {color}60{/color} Tinh Thông Nguyên Tố, duy trì 12s. Hiệu quả này sẽ hủy khi đổi nhân vật. “Chỉ Dẫn Của Rừng Sâu” khi kết thúc thời gian duy trì hoặc bị hủy sẽ gây cho một kẻ địch gần đó lượng sát thương bằng {color}100{/color}% tấn công. “Chỉ Dẫn Của Rừng Sâu” mỗi 20s tối đa kích hoạt một lần.",
+        "Khi thi triển Kỹ Năng Nguyên Tố hoặc Kỹ Năng Nộ sẽ nhận hiệu ứng “Chỉ Dẫn Của Rừng Sâu”, tăng {color}80{/color} Tinh Thông Nguyên Tố, duy trì 12s. Hiệu quả này sẽ hủy khi đổi nhân vật. “Chỉ Dẫn Của Rừng Sâu” khi kết thúc thời gian duy trì hoặc bị hủy sẽ gây cho một kẻ địch gần đó lượng sát thương bằng {color}120{/color}% tấn công. “Chỉ Dẫn Của Rừng Sâu” mỗi 20s tối đa kích hoạt một lần.",
+        "Khi thi triển Kỹ Năng Nguyên Tố hoặc Kỹ Năng Nộ sẽ nhận hiệu ứng “Chỉ Dẫn Của Rừng Sâu”, tăng {color}100{/color} Tinh Thông Nguyên Tố, duy trì 12s. Hiệu quả này sẽ hủy khi đổi nhân vật. “Chỉ Dẫn Của Rừng Sâu” khi kết thúc thời gian duy trì hoặc bị hủy sẽ gây cho một kẻ địch gần đó lượng sát thương bằng {color}140{/color}% tấn công. “Chỉ Dẫn Của Rừng Sâu” mỗi 20s tối đa kích hoạt một lần.",
+        "Khi thi triển Kỹ Năng Nguyên Tố hoặc Kỹ Năng Nộ sẽ nhận hiệu ứng “Chỉ Dẫn Của Rừng Sâu”, tăng {color}120{/color} Tinh Thông Nguyên Tố, duy trì 12s. Hiệu quả này sẽ hủy khi đổi nhân vật. “Chỉ Dẫn Của Rừng Sâu” khi kết thúc thời gian duy trì hoặc bị hủy sẽ gây cho một kẻ địch gần đó lượng sát thương bằng {color}160{/color}% tấn công. “Chỉ Dẫn Của Rừng Sâu” mỗi 20s tối đa kích hoạt một lần.",
+        "Khi thi triển Kỹ Năng Nguyên Tố hoặc Kỹ Năng Nộ sẽ nhận hiệu ứng “Chỉ Dẫn Của Rừng Sâu”, tăng {color}140{/color} Tinh Thông Nguyên Tố, duy trì 12s. Hiệu quả này sẽ hủy khi đổi nhân vật. “Chỉ Dẫn Của Rừng Sâu” khi kết thúc thời gian duy trì hoặc bị hủy sẽ gây cho một kẻ địch gần đó lượng sát thương bằng {color}180{/color}% tấn công. “Chỉ Dẫn Của Rừng Sâu” mỗi 20s tối đa kích hoạt một lần."
       ]
     },
     {
@@ -8593,6 +9187,18 @@
         "Trong 5s sau khi tấn công thường đánh trúng địch, sát thương kỹ năng nguyên tố tạo thành tăng {color}30{/color}%; Trong 5s sau khi kỹ năng nguyên tố đánh trúng địch, sát thương đánh thường tạo thành tăng {color}30{/color}%.",
         "Trong 5s sau khi tấn công thường đánh trúng địch, sát thương kỹ năng nguyên tố tạo thành tăng {color}35{/color}%; Trong 5s sau khi kỹ năng nguyên tố đánh trúng địch, sát thương đánh thường tạo thành tăng {color}35{/color}%.",
         "Trong 5s sau khi tấn công thường đánh trúng địch, sát thương kỹ năng nguyên tố tạo thành tăng {color}40{/color}%; Trong 5s sau khi kỹ năng nguyên tố đánh trúng địch, sát thương đánh thường tạo thành tăng {color}40{/color}%."
+      ]
+    },
+    {
+      "key": "moonpiercer",
+      "name": "Quán Nguyệt Thương",
+      "description": "Vũ khí nhận được từ câu chuyện của Aranara. Có tạo hình của mũi tên khổng lồ, được dùng như mũi thương sắc bén.",
+      "refinements": [
+        "Sau khi kích hoạt phản ứng Thiêu Đốt, Sinh Trưởng, Tăng Cường, Lan Tràn, Sum Suê, Nở Rộ hoặc Bung Tỏa sẽ sản sinh “Lá Phục Sinh” tồn tại tối đa 10s ở xung quanh nhân vật. Nhân vật khi nhặt “Lá Phục Sinh” sẽ tăng {color}16{/color}% tấn công, duy trì 12s. Mỗi 20s tối đa sản sinh một “Lá Phục Sinh” bằng cách này. Nhân vật khi không ra trận cũng sẽ kích hoạt.",
+        "Sau khi kích hoạt phản ứng Thiêu Đốt, Sinh Trưởng, Tăng Cường, Lan Tràn, Sum Suê, Nở Rộ hoặc Bung Tỏa sẽ sản sinh “Lá Phục Sinh” tồn tại tối đa 10s ở xung quanh nhân vật. Nhân vật khi nhặt “Lá Phục Sinh” sẽ tăng {color}20{/color}% tấn công, duy trì 12s. Mỗi 20s tối đa sản sinh một “Lá Phục Sinh” bằng cách này. Nhân vật khi không ra trận cũng sẽ kích hoạt.",
+        "Sau khi kích hoạt phản ứng Thiêu Đốt, Sinh Trưởng, Tăng Cường, Lan Tràn, Sum Suê, Nở Rộ hoặc Bung Tỏa sẽ sản sinh “Lá Phục Sinh” tồn tại tối đa 10s ở xung quanh nhân vật. Nhân vật khi nhặt “Lá Phục Sinh” sẽ tăng {color}24{/color}% tấn công, duy trì 12s. Mỗi 20s tối đa sản sinh một “Lá Phục Sinh” bằng cách này. Nhân vật khi không ra trận cũng sẽ kích hoạt.",
+        "Sau khi kích hoạt phản ứng Thiêu Đốt, Sinh Trưởng, Tăng Cường, Lan Tràn, Sum Suê, Nở Rộ hoặc Bung Tỏa sẽ sản sinh “Lá Phục Sinh” tồn tại tối đa 10s ở xung quanh nhân vật. Nhân vật khi nhặt “Lá Phục Sinh” sẽ tăng {color}28{/color}% tấn công, duy trì 12s. Mỗi 20s tối đa sản sinh một “Lá Phục Sinh” bằng cách này. Nhân vật khi không ra trận cũng sẽ kích hoạt.",
+        "Sau khi kích hoạt phản ứng Thiêu Đốt, Sinh Trưởng, Tăng Cường, Lan Tràn, Sum Suê, Nở Rộ hoặc Bung Tỏa sẽ sản sinh “Lá Phục Sinh” tồn tại tối đa 10s ở xung quanh nhân vật. Nhân vật khi nhặt “Lá Phục Sinh” sẽ tăng {color}32{/color}% tấn công, duy trì 12s. Mỗi 20s tối đa sản sinh một “Lá Phục Sinh” bằng cách này. Nhân vật khi không ra trận cũng sẽ kích hoạt."
       ]
     },
     {
@@ -8913,6 +9519,18 @@
         "Khi kỹ năng Nguyên Tố tạo thành sát thương, có tỷ lệ {color}60{/color}% làm mới thời gian CD kỹ năng đó, mỗi {color}22{/color}s mới thi triển 1 lần.",
         "Khi kỹ năng Nguyên Tố tạo thành sát thương, có tỷ lệ {color}70{/color}% làm mới thời gian CD kỹ năng đó, mỗi {color}19{/color}s mới thi triển 1 lần.",
         "Khi kỹ năng Nguyên Tố tạo thành sát thương, có tỷ lệ {color}80{/color}% làm mới thời gian CD kỹ năng đó, mỗi {color}16{/color}s mới thi triển 1 lần."
+      ]
+    },
+    {
+      "key": "sapwood-blade",
+      "name": "Kiếm Gỗ",
+      "description": "Vũ khí nhận được từ câu chuyện của Aranara. Có tạo hình của lưỡi đao, có thể tiêu diệt kẻ địch trong rừng.",
+      "refinements": [
+        "Sau khi kích hoạt phản ứng Thiêu Đốt, Sinh Trưởng, Tăng Cường, Lan Tràn, Sum Suê, Nở Rộ hoặc Bung Tỏa sẽ sản sinh “Lá Tri Thức” tồn tại tối đa 10s ở xung quanh nhân vật. Nhân vật khi nhặt “Lá Tri Thức” sẽ tăng {color}60{/color} điểm Tinh Thông Nguyên Tố, duy trì 12s. Mỗi 20s tối đa sản sinh một “Lá Tri Thức” bằng cách này. Nhân vật khi không ra trận cũng sẽ kích hoạt. Hiệu ứng Lá Tri Thức không thể cộng dồn.",
+        "Sau khi kích hoạt phản ứng Thiêu Đốt, Sinh Trưởng, Tăng Cường, Lan Tràn, Sum Suê, Nở Rộ hoặc Bung Tỏa sẽ sản sinh “Lá Tri Thức” tồn tại tối đa 10s ở xung quanh nhân vật. Nhân vật khi nhặt “Lá Tri Thức” sẽ tăng {color}75{/color} điểm Tinh Thông Nguyên Tố, duy trì 12s. Mỗi 20s tối đa sản sinh một “Lá Tri Thức” bằng cách này. Nhân vật khi không ra trận cũng sẽ kích hoạt. Hiệu ứng Lá Tri Thức không thể cộng dồn.",
+        "Sau khi kích hoạt phản ứng Thiêu Đốt, Sinh Trưởng, Tăng Cường, Lan Tràn, Sum Suê, Nở Rộ hoặc Bung Tỏa sẽ sản sinh “Lá Tri Thức” tồn tại tối đa 10s ở xung quanh nhân vật. Nhân vật khi nhặt “Lá Tri Thức” sẽ tăng {color}90{/color} điểm Tinh Thông Nguyên Tố, duy trì 12s. Mỗi 20s tối đa sản sinh một “Lá Tri Thức” bằng cách này. Nhân vật khi không ra trận cũng sẽ kích hoạt. Hiệu ứng Lá Tri Thức không thể cộng dồn.",
+        "Sau khi kích hoạt phản ứng Thiêu Đốt, Sinh Trưởng, Tăng Cường, Lan Tràn, Sum Suê, Nở Rộ hoặc Bung Tỏa sẽ sản sinh “Lá Tri Thức” tồn tại tối đa 10s ở xung quanh nhân vật. Nhân vật khi nhặt “Lá Tri Thức” sẽ tăng {color}105{/color} điểm Tinh Thông Nguyên Tố, duy trì 12s. Mỗi 20s tối đa sản sinh một “Lá Tri Thức” bằng cách này. Nhân vật khi không ra trận cũng sẽ kích hoạt. Hiệu ứng Lá Tri Thức không thể cộng dồn.",
+        "Sau khi kích hoạt phản ứng Thiêu Đốt, Sinh Trưởng, Tăng Cường, Lan Tràn, Sum Suê, Nở Rộ hoặc Bung Tỏa sẽ sản sinh “Lá Tri Thức” tồn tại tối đa 10s ở xung quanh nhân vật. Nhân vật khi nhặt “Lá Tri Thức” sẽ tăng {color}120{/color} điểm Tinh Thông Nguyên Tố, duy trì 12s. Mỗi 20s tối đa sản sinh một “Lá Tri Thức” bằng cách này. Nhân vật khi không ra trận cũng sẽ kích hoạt. Hiệu ứng Lá Tri Thức không thể cộng dồn."
       ]
     },
     {
@@ -9428,7 +10046,15 @@
       "name": "Diệm Liệt Ma Nữ Cháy Rực",
       "bonus": [
         "Nhận 15% buff sát thương nguyên tố Hỏa.",
-        "Sát thương phản ứng Quá Tải, Thiêu Đốt gây ra tăng 40%, phản ứng Bốc Hơi, Tan Chảy tăng hệ số buff 15%. 10s sau khi thi triển kỹ năng Nguyên Tố, hiệu quả của 2 món tăng 50%. Hiệu quả này tối đa cộng dồn 3 lần."
+        "Sát thương phản ứng Quá Tải, Thiêu Đốt, Bung Tỏa gây ra tăng 40%, phản ứng Bốc Hơi, Tan Chảy tăng hệ số buff 15%. 10s sau khi thi triển kỹ năng Nguyên Tố, hiệu quả của 2 món tăng 50%. Hiệu quả này tối đa cộng dồn 3 lần."
+      ]
+    },
+    {
+      "key": "deepwood-memories",
+      "name": "Ký Ức Rừng Sâu",
+      "bonus": [
+        "Nhận 15% buff sát thương nguyên tố Thảo.",
+        "Kỹ Năng Nguyên Tố hoặc Kỹ Năng Nộ sau khi đánh trúng kẻ địch, Kháng Nguyên Tố Thảo của mục tiêu sẽ giảm 30%, duy trì 8s. Nhân vật trang bị khi không ra trận cũng sẽ kích hoạt hiệu ứng."
       ]
     },
     {
@@ -9461,6 +10087,14 @@
       "bonus": [
         "Sát thương kỹ năng Nguyên Tố tạo thành tăng 20%.",
         "Khi đánh bại kẻ địch, có tỷ lệ 100% xóa CD kỹ năng Nguyên Tố. Mỗi 15s mới có hiệu quả 1 lần."
+      ]
+    },
+    {
+      "key": "gilded-dreams",
+      "name": "Giấc Mộng Hoàng Kim",
+      "bonus": [
+        "Tăng 80 điểm tinh thông nguyên tố.",
+        "Trong 8s sau khi kích hoạt phản ứng nguyên tố, sẽ căn cứ theo loại nguyên tố của các nhân vật khác trong đội để kích hoạt hiệu ứng cho người mang trang bị Mỗi một nhân vật trong đội có cùng loại nguyên tố với người mang trang bị, sẽ tăng 14% tấn công; mỗi một nhân vật trong đội khác loại nguyên tố với người mang trang bị, sẽ tăng 50 điểm tinh thông nguyên tố. Mỗi loại hiệu ứng bên trên tối đa tính 3 nhân vật. Hiệu quả này mỗi 8s tối đa kích hoạt 1 lần. Khi người trang bị không ra trận, thì vẫn sẽ kích hoạt hiệu ứng này."
       ]
     },
     {
@@ -9632,7 +10266,7 @@
       "name": "Như Sấm Thịnh Nộ",
       "bonus": [
         "Nhận 15% buff sát thương nguyên tố Lôi",
-        "Sát thương phản ứng quá tải, điện cảm, siêu dẫn tăng 40%. Khi kích hoạt những phản ứng nguyên tố này, CD kỹ năng nguyên tố giảm 1s. Hiệu quả này mỗi 0.8s thi triển nhiều nhất một lần."
+        "Sát thương tạo thành từ phản ứng Quá Tải, Điện Cảm, Siêu Dẫn, Nở Rộ tăng 40%; sát thương từ phản ứng Tăng Cường tăng 20%. Khi kích hoạt phản ứng Sinh Trưởng hoặc những phản ứng nêu trên, CD Kỹ Năng Nguyên Tố giảm 1s. Hiệu quả này mỗi 0.8s tối đa kích hoạt một lần."
       ]
     },
     {
@@ -9871,6 +10505,11 @@
       "description": "Thuộc về cơ quan di tích cổ đại không còn hoạt động nữa.\r\nKhi không thể duy trì kết cấu của cơ quan, công nghệ tuyệt vời và sức mạnh vô danh ẩn chứa trong đó cũng mất đi ý nghĩa."
     },
     {
+      "key": "chaos-bolt",
+      "name": "Chốt Neo Hỗn Độn",
+      "description": "Đến từ Rồng Di Tích Cổ Đại không còn hoạt động.\nTrong vương quốc cổ đại, có một nhóm người bị ám ảnh bởi nguyên lý về mô phỏng sinh mệnh. Cho dù là nguyên tố trật tự thuần túy nguyên bản hay sức mạnh nguyên thủy cổ xưa của rồng cũng đều nên chế tạo, cải tiến và nâng cấp.\nBằng cách này, một cơ thể ưu việt và hoàn mỹ hơn sẽ thay thế trật tự đang bị hao mòn liên tục."
+    },
+    {
       "key": "chaos-circuit",
       "name": "Bộ Não Hỗn Độn",
       "description": "Là một phần trong di tích không còn hoạt động. Là bộ não điều khiển hành động. Trong đó ẩn chứa những kỹ thuật vĩ đại mà hiện nay không ai giải thích được."
@@ -9891,9 +10530,19 @@
       "description": "Thuộc về cơ quan di tích cổ đại không còn hoạt động nữa.\r\nNó dường như là nguồn năng lượng của cỗ máy này."
     },
     {
+      "key": "chaos-module",
+      "name": "Mô Đun Hỗn Độn",
+      "description": "Đến từ Rồng Di Tích Cổ Đại không còn hoạt động.\n“Rồng” là hình dạng nguyên thủy và cổ xưa nhất của các nguyên tố tối cao cho đến khi chúng bị đánh bại, chinh phục hoặc đồng hóa."
+    },
+    {
       "key": "chaos-oculus",
       "name": "Con Ngươi Hỗn Độn",
       "description": "Đến từ cơ quan di tích cổ không còn hoạt động nữa.\r\nNguồn gốc tên gọi của những \"di tích\" này đến từ khu vực mà chúng hoạt động. Nhưng cũng không có nhiều điểm chung lắm giữa các di tích này và nơi chúng có mặt.\r\nTrong quá khứ xa xôi, di tích từng thuộc về nền văn minh vĩ đại gần như có thể chạm được tới trời, còn \"di tích\" thì vẫn luôn sẵn sàng chờ lệnh để san bằng bất kỳ quốc gia nào."
+    },
+    {
+      "key": "chaos-storage",
+      "name": "Vật Chứa Hỗn Độn",
+      "description": "Đến từ Rồng Di Tích Cổ Đại không còn hoạt động.\nRồng Di Tích có thể thu hút năng lượng nguyên tố bên ngoài và lưu trữ nó trong “cổ”."
     },
     {
       "key": "cheese",
@@ -9929,6 +10578,11 @@
       "key": "concealed-unguis",
       "name": "Vuốt Sắt Ma Thú",
       "description": "Mô cơ thể còn sót lại của bầy sói ma vật.\r\nMặc dù chúng thực sự khá kỳ lạ, nhưng những con chó săn \"Alfisol\" này chẳng là gì so với Durin \"Humus\" cả."
+    },
+    {
+      "key": "copper-talisman-of-the-forest-dew",
+      "name": "Bùa Rừng Xanh Sương Đọng – Đồng",
+      "description": "Nguyên liệu có sức mạnh đột phá vũ khí.\nDưới sự hướng dẫn của hiền giả đầu tiên, tổ tiên của khu rừng đã dùng những thân cây khô khắc thành những lá bùa để hiến tế chúa tể của cỏ cây.\nHình dạng của lá bùa được lấy cảm hứng từ sương mai trong rừng. Nó tượng trưng cho sự thấm nhuần của trí tuệ vào tâm trí phàm nhân."
     },
     {
       "key": "cor-lapis",
@@ -9984,6 +10638,11 @@
       "key": "crystalline-bloom",
       "name": "Tinh Hoa Ngưng Kết",
       "description": "Băng tinh thuần khiết được ngưng kết từ cái lạnh cực độ của Băng Nguyên Bản.\r\nKết tinh băng sẽ sinh sôi nảy nở từ trong hàn băng, sau cùng sẽ nở ra đóa hoa băng, đông kết mọi thứ. Có lẽ sự trì trệ của thời gian không thể hóa giải u sầu mới chính là chân lý cho sự trường tồn bất diệt."
+    },
+    {
+      "key": "crystalline-cyst-dust",
+      "name": "Bụi Tinh Thể",
+      "description": "Những nhúm lớn bột bào tử được thu thập cẩn thận từ những túi bào tử nguyên vẹn, có lẽ trong điều kiện môi trường thích hợp sẽ sinh ra một đám Nấm Quỷ quy mô lớn…"
     },
     {
       "key": "damaged-mask",
@@ -10046,6 +10705,11 @@
       "description": "Mảnh bản vẽ về ma pháp. Ẩn giấu một cảm giác dị thường, bất an."
     },
     {
+      "key": "dormant-fungal-nucleus",
+      "name": "Nhân Bào Nấm Bất Động",
+      "description": "Một phần mô cơ thể của Nấm Quỷ được hình thành dưới sự kích thích mạnh của các nguyên tố bên ngoài.\nHọc giả của Học Phái Amurta đã đưa ra một cuộc tranh luận kéo dài về việc liệu nấm thuộc về thực vật hay động vật. Cuối cùng, hai bên đã đạt được thỏa thuận, Nấm Quỷ được liệt kê riêng biệt giữa động vật và thực vật, và không bàn cãi nữa."
+    },
+    {
       "key": "dragon-lords-crown",
       "name": "Vương Miện Vua Rồng",
       "description": "Sừng kết tinh ngưng tụ từ ngọc ngàn năm, là vương miện thiên sinh của \"Long Vương\".\r\nĐược rót Tinh Phách, nặn từ thạch nham tạo thành, xuất hiện ở khe núi, là tượng trưng cho sự uy quyền quốc thổ, chiếc sừng dài lấp lánh như vàng là minh chứng cho sự phục vụ bậc quân vương nào đó trong quá khứ.\r\nĐã từng một lần đổi màu, hiện giờ là màu ánh vàng sáng lấp lánh trong tay bạn."
@@ -10054,6 +10718,11 @@
       "key": "dragonheirs-false-fin",
       "name": "Vảy Giả Tộc Rồng",
       "description": "Loại mô sinh học nhận được khi tiêu diệt Rồng Biển Sâu.\r\nTuy trông như vảy cá, nhưng thực ra lại không có công dụng gì.\r\nCư dân Vương Quốc Đêm Trắng cũng từng có nghiên cứu chuyên sâu về Rồng Biển Sâu. Điểm đặc biệt nhất của chúng là khả năng lựa chọn đặc điểm mà nó muốn truyền lại cho con cái. Vì căm ghét ánh sáng của loài người nên Rồng Biển Sâu khi trưởng thành sẽ mất đi phần lớn thị lực, đồng thời chúng cũng sẽ tiến hóa thành các loại nguyên tố khác nhau để thích nghi với chiến đấu."
+    },
+    {
+      "key": "dream-of-scorching-might",
+      "name": "Mơ Ước Của Ánh Nắng Quyền Uy",
+      "description": "Nguyên liệu có sức mạnh đột phá vũ khí.\nÁnh trăng bạc và dòng suối trong xanh từng tô điểm cho vẻ đẹp của ốc đảo. Nhưng từ khi chủ nhân của các loài hoa ngã xuống trong cơn bão cát chắn nắng, dải cát vàng vô ưu vô lo cũng bị chết chóc bao trùm.\nTrong thơ ca của Eremite, ánh trăng bạc chiếu vào chiếc áo choàng màu đỏ tươi, khiến Vua Tang Thương Al-Ahmar phát điên.\nNhững bài ca sa mạc buồn cất lên, thoát khỏi ám ảnh về những kỷ niệm xưa cũ, vị vua cô đơn đã tạo ra một vùng đất mộng mơ giữa sa mạc không bao giờ có thể già đi. Nơi đó ngưng tụ nước suối tinh khiết không bị khuấy động, và giọt sương đọng mãi khi hoàng hôn."
     },
     {
       "key": "dream-of-the-dandelion-gladiator",
@@ -10086,6 +10755,11 @@
       "description": "Khi chủ Đông Phong thành Mondstadt gọi gió đến đã tập hợp chút sức mạnh.\r\nThân thể của nó trong suốt tuyệt đẹp, gió và lốc xoáy đều để nó sai khiến. Chỉ cần cưỡi lên gió, gió là bạn, là tiếng hát và tự do.\r\nKẻ địch của gió chính là kẻ địch của nó."
     },
     {
+      "key": "echo-of-scorching-might",
+      "name": "Dư Âm Của Ánh Nắng Quyền Uy",
+      "description": "Nguyên liệu có sức mạnh đột phá vũ khí.\nTừ rất lâu trước đây, cư dân của sa mạc đã khắc một con dấu hình con bọ ngoan cường để tưởng nhớ mặt trời đỏ và đánh dấu sự chuyển dịch vô tận của ngày và đêm.\nMặc dù tên của vị vua đó không còn được nhắc đến, nhưng những chiếc ấn nhỏ này vẫn được lưu giữ, mơ hồ làm lộ rõ uy thế ngày xưa. Mỗi chiếc đều mang một bầu không khí mờ nhạt của những vinh quang trong quá khứ."
+    },
+    {
       "key": "electro-crystal",
       "name": "Pha Lê Điện",
       "description": "Tinh thạch có điện lực cao, được kết tinh từ điện trong khắp đại lục, chạm vào có cảm giác tê liệt."
@@ -10104,6 +10778,11 @@
       "key": "everflame-seed",
       "name": "Ngọn Lửa Vĩnh Hằng",
       "description": "Hạt giống âm ỉ bùng cháy của Cây Nổ, tỏa ra nguồn nhiệt lượng của Nguyên Tố Hỏa cứ như muốn thiêu đốt tất cả cây cỏ trên thế gian.\r\nDòng chảy năng lượng lưu chuyển sâu trong đại địa mang theo nguyện vọng vô tận, nương theo ngọn lửa thấm vào thực vật, khiến nó lúc nào cũng cháy rực và khao khát dùng hoa lửa tẩy sạch mọi thứ, đây là thứ nguyện vọng gì nhỉ."
+    },
+    {
+      "key": "faded-red-satin",
+      "name": "Băng Đỏ Phai Màu",
+      "description": "Dải lụa đỏ dùng để che mắt, hơi rách một chút.\nThường có những người trong Eremite che mắt bằng vải, và việc làm này từ lâu đã bị chìm trong biển cát thời gian."
     },
     {
       "key": "famed-handguard",
@@ -10181,6 +10860,11 @@
       "description": "Ếch sống trong môi trường ẩm ướt, rất có sức sống."
     },
     {
+      "key": "fungal-spores",
+      "name": "Bào Tử Nấm Quỷ",
+      "description": "Bột bào tử vụn vặt do Nấm Quỷ để lại, lấp lánh chút ánh sáng. Như thể chỉ cần một cái hắt hơi là nó sẽ bị thổi bay không dấu vết."
+    },
+    {
       "key": "genesis-crystal",
       "name": "Đá Sáng Thế",
       "description": "Kết tinh năng lượng khai phá vũ trụ. Được kết tinh từ tiềm lực và niềm hy vọng thắp sáng các ngôi sao mới trong khoảng không hư vô."
@@ -10189,6 +10873,11 @@
       "key": "gilded-scale",
       "name": "Vảy Vàng",
       "description": "Giáp được nung đúc từ huyền nham, bền bỉ và trầm mặc, chứa đựng quyền năng của \"Long Vương\".\r\nQua bao năm tháng chôn vùi, ánh hoàng kim và hắc diệu bên trong nó không hề bị lu mờ.\r\nSự đau đớn tột độ, âm thanh vô hình có lẽ sẽ biến mất để kết thúc ân oán ngàn năm."
+    },
+    {
+      "key": "glabrous-beans",
+      "name": "Đậu Bóng",
+      "description": "Một loại thực vật họ đậu phổ biến ở Teyvat. Có mùi thơm nhẹ, vì có nhiều cách ăn nên được nhiều người yêu thích."
     },
     {
       "key": "glaze-lily",
@@ -10211,9 +10900,19 @@
       "description": "Huân chương tượng trưng cho nguyên tắc và ngạo khí duy nhất của Đạo Bảo Đoàn. Chừng nào vẫn còn có những kho báu được phát hiện ở vùng đất rộng lớn, nơi vực thẳm hẻo lánh hay vùng biển vô danh, thì ngọn lửa trong tim của những kẻ trộm muốn chinh phục kho báu sẽ không bao giờ tắt."
     },
     {
+      "key": "golden-talisman-of-the-forest-dew",
+      "name": "Bùa Rừng Xanh Sương Đọng – Vàng",
+      "description": "Nguyên liệu có sức mạnh đột phá vũ khí.\n“Chỉ có ba điều đáng quan tâm: nước suối ôm lấy ánh trăng, màu xanh của sự sống, và gương mặt trường sinh bất lão…”\nBản chất của “trí tuệ” không phải là kiểm soát mọi suy nghĩ và tìm kiếm mọi lợi ích, mà là để cuộc sống bình thường đạt được tự do vượt qua gông cùm.\nMặc dù tiếng hổ gầm không còn vang vọng trong rừng rậm, những vệ binh kiên cường cũng rút lui khỏi giấc mơ của trẻ thơ… Nhưng vào đêm phong ấn vàng của bí mật được vén lên, mọi giấc mơ lấp lánh như hổ phách dưới ánh trăng, có lẽ cô ấy và những người phàm mà cô ấy yêu thương sẽ giành lấy được tự do thực sự."
+    },
+    {
       "key": "grain-of-aerosiderite",
       "name": "Hạt Thiên Thạch Đen",
       "description": "Nguyên liệu có sức mạnh đột phá vũ khí.\r\nLà thiên thạch màu đen rơi bên ngoài Vân Lai Hải của Liyue, nghe nói là để hàng yêu phục ma. Nhưng do bị nhiễm máu đen, đặc tính của nguyên liệu này đã không còn là sức mạch thuần khiết của Nham Vương Đế Quân nữa."
+    },
+    {
+      "key": "guide-to-admonition",
+      "name": "Hướng Dẫn Của “Khuyên Nhủ”",
+      "description": "Nguyên liệu bồi dưỡng thiên phú.\n“Khuyên Nhủ” là cành nhánh của vương quốc trí tuệ.\nKhuyên nhủ đi đôi với tư duy khéo léo. Suy nghĩ sâu sắc sẽ có thể nói ra những lời rành mạch, thuyết phục người thông minh, giúp kẻ ngốc tỉnh ngộ, làm cho trí tuệ tuôn chảy như sông ngòi mãi không ngừng nghỉ."
     },
     {
       "key": "guide-to-ballad",
@@ -10241,9 +10940,19 @@
       "description": "Nguyên liệu bồi dưỡng Thiên Phú.\r\nHoàng kim tượng trưng cho đất nước nham thạch.\r\nHoàng kim có ý nghĩa là chuyển đổi, là sự hiểu ý ngầm giữa người dân và núi đá, mặt đất cũng như thành phố cảng. Ở Liyue, sự chăm chỉ được chuyển thành hoàng kim, mà hoàng kim sẽ được chuyển thành sự phồn vinh."
     },
     {
+      "key": "guide-to-ingenuity",
+      "name": "Hướng Dẫn Của “Tinh Tế”",
+      "description": "Nguyên liệu bồi dưỡng thiên phú.\n“Tinh Tế” là gân lá của vương quốc trí tuệ.\nTư duy dẫn dắt lời nói chính trực. Tư duy hướng thiện khéo léo mà chu toàn, làm cho lời nói ra không xa rời chính đạo; ngược lại sự lạnh lùng và xấu xa sẽ làm cho lời nói và hành vi vô cùng đáng khinh."
+    },
+    {
       "key": "guide-to-light",
       "name": "Hướng Dẫn Của \"Ánh Sáng\"",
       "description": "Nguyên liệu bồi dưỡng thiên phú.\r\nƯớc nguyện của Lôi quốc là ánh sáng.\r\nNgay cả khi ánh sáng bị mây dông bao phủ, vẫn có những con người ở vùng đất Narukami với lý tưởng cao cả sẽ vượt qua sấm sét cuồng nộ của bầu trời để theo đuổi ánh sáng, dù cho có bị hủy diệt một cách lạnh lùng."
+    },
+    {
+      "key": "guide-to-praxis",
+      "name": "Hướng Dẫn Của “Thực Hành”",
+      "description": "Nguyên liệu bồi dưỡng thiên phú.\n“Thực Hành” là gốc rễ của vương quốc trí tuệ.\nThực hành minh chứng cho lời nói thẳng thắn. Suy nghĩ và hành động đều là thiện, vẫn không thể được gọi là trí tuệ. Trí tuệ được dưỡng dục trong hành động, và đóng xuống con dấu phong ấn cho lời nói chính trực."
     },
     {
       "key": "guide-to-prosperity",
@@ -10264,6 +10973,11 @@
       "key": "ham",
       "name": "Giăm Bông",
       "description": "Thịt đùi được xông khói. Một miếng mỏng thôi cũng thơm lừng cả miệng."
+    },
+    {
+      "key": "harra-fruit",
+      "name": "Quả Harra",
+      "description": "Mọc ở những khu rừng mưa nóng và ẩm ướt, có vị cay thơm đặc biệt. Sau khi nghiền thành bột có thể dùng làm gia vị, là loại thực vật gia vị có giá trị nhất Sumeru."
     },
     {
       "key": "heavy-horn",
@@ -10301,6 +11015,11 @@
       "description": "Sau khi đánh bại Phong Nguyên Bản hình thành nên thể cô đặc. Nó chứa sức mạnh của gió thuần khiết.\r\nNgười ta nói rằng những chú bướm với đôi cánh mỏng manh cũng chứa đựng sức mạnh đem đến bão tố. Những chú bướm được tạo ra bằng gió thuần khiết này chắc chắn đang chờ ngày gọi bão trở lại."
     },
     {
+      "key": "inactivated-fungal-nucleus",
+      "name": "Nhân Bào Nấm Đã Chết",
+      "description": "Một phần mô cơ thể của Nấm Quỷ được hình thành dưới sự kích thích mạnh của các nguyên tố bên ngoài.\nRất mềm mại, thích hợp để giảm căng thẳng, nhưng cũng có thể dễ dàng dẫn đến việc sinh sôi của Nấm Quỷ, do đó không thích hợp cho bất kỳ mục đích thương mại nào."
+    },
+    {
       "key": "inspectors-sacrificial-knife",
       "name": "Dao Đô Thám Trưởng",
       "description": "Vũ khí hung ác từng trải qua nhiều \"Nợ nần\". Người thường không có mắt mọc sau lưng, nhưng binh khí và võ nghệ này lại thiết kế để đối phó với nhược điểm đó."
@@ -10314,6 +11033,11 @@
       "key": "iron-chunk",
       "name": "Mảnh Sắt",
       "description": "Khoáng thạch của sắt, trong tay thợ thủ công lành nghề có thể phát ra hào quang."
+    },
+    {
+      "key": "iron-talisman-of-the-forest-dew",
+      "name": "Bùa Rừng Xanh Sương Đọng – Sắt",
+      "description": "Nguyên liệu có sức mạnh đột phá vũ khí.\nSau này, chúa tể của cỏ cây đã hướng dẫn mọi người bí quyết rèn sắt. Cứ như thế, con người ngây thơ đã học cách sử dụng lửa và những lưỡi dao sắc bén.\nChúa tể của cỏ cây rất vui mừng, mặc dù lửa và kim loại có thể làm tổn thương cô ấy, nhưng cũng có thể làm cho con người lớn mạnh hơn."
     },
     {
       "key": "jade-branch-of-a-distant-sea",
@@ -10344,6 +11068,11 @@
       "key": "kageuchi-handguard",
       "name": "Kiếm Cách Bản Sao",
       "description": "Vật phòng hộ trên thanh kiếm.\r\nThợ rèn Inazuma khi rèn kiếm sẽ luôn làm ra vài thanh cùng loại. Từ đó chọn ra thanh ưu tú nhất để làm \"bản chính\", những thanh còn lại được xem là \"bản sao\"."
+    },
+    {
+      "key": "kalpalata-lotus",
+      "name": "Sen Kalpalata",
+      "description": "Hoa của cây leo mọc trên các vách đá. Được gọi là hoa sen chỉ vì vẻ ngoài giống nhau chứ bản thân nó không liên quan gì đến hoa sen cả."
     },
     {
       "key": "lavender-melon",
@@ -10381,6 +11110,11 @@
       "description": "Hoa sen sinh trưởng trên nước ở Liyue, hoa nở hai đóa, một đóa tỏa ngát hương thơm, một đóa đài sen thanh đắng. Nghe nói có thể dùng làm thuốc."
     },
     {
+      "key": "luminescent-pollen",
+      "name": "Bột Huỳnh Quang",
+      "description": "Một gói nhỏ bột bào tử nấm huỳnh quang, là dược liệu phổ biến ở xứ sở rừng nhiệt đới, thường được các thương nhân gói trong túi giấy để bán."
+    },
+    {
       "key": "luminescent-spine",
       "name": "Tủy Phát Sáng",
       "description": "Bộ phận phát sáng của đom đóm. Đối với nó là cơ quan tìm bạn tình, nhưng là loài thuốc quý với con người."
@@ -10406,6 +11140,11 @@
       "description": "Có thể khởi động Maguu Kenki, khiến nó có thể vung đao múa kiếm như con người.\r\nBất luận võ nghệ tinh túy như thế nào, ký ức đẹp đẽ ra sao, thì cũng sẽ tan biến cùng cảm giác đau đớn của xác thịt.\r\nE rằng chỉ khi biến tứ chi, cơ thể thành người máy kiên cố, ngay cả con tim cũng biến thành \"Tim Máy\" tinh xảo, mới có thể đến gần với sức mạnh vĩnh hằng..."
     },
     {
+      "key": "majestic-hooked-beak",
+      "name": "Mỏ Vua Nấm",
+      "description": "Kết cấu mỏ cứng nhận được sau khi đánh bại Nấm Thúy Linh.\nCác học giả vẫn coi đây là một điều kỳ diệu khi những cây nấm mềm đã phát triển được chiếc mỏ có móc cứng như đá này. Trong quá trình tiến hóa, vị vua nấm tuyệt vời này đã ung dung đi từng bước đến vạch đích, thỉnh thoảng hô vang, thông báo với vạn vật trong rừng mưa: ngay cả những sinh vật yếu ớt và nhút nhát cũng có thể trở thành chủ nhân tương lai của khu rừng."
+    },
+    {
       "key": "mask-of-the-kijin",
       "name": "Con Quỷ Của Gekiga",
       "description": "Nguyên liệu có sức mạnh đột phá vũ khí.\r\nNữ võ sĩ mang tên \"Chiyo\" với hoa văn \"Tam Trùng Lôi\" trên lưng, khi đối diện với thế lực hắc ám, đã bị con thú nửa hổ nửa rắn nuốt chửng. Cuối cùng cô ta xé toạc bụng của ma thú để thoát ra và sống sót.\r\nĐó là lai lịch của \"Chiyo Nanh Cọp\". Dần theo năm tháng, danh hiệu đó được rút gọn thành \"Torachiyo\".\r\nNhưng khi ở sâu trong bụng con thú, cô ấy đã nhiễm chất độc của sự tà ác, cũng như thấy được đồng đội của mình hy sinh, cuối cùng cô ấy đã giơ kiếm nhắm vào Tôn Chủ Narukami Ogosho. Sau khi bị chặt đứt một tay một sừng, cô ấy chạy trốn vào rừng như một con thú bị thương, để rồi không để lại tung tích gì cả. Số mệnh của một khuôn mặt đẹp trở nên gớm ghiếc và méo mó vì bóng tối của lòng thù hận đã kết thúc từ đó.\r\nNhững người từng chiến đấu với vực thẳm sẽ luôn mang trong mình những ác mộng, một số bị giết và thậm chí trở thành một trong số chúng. Ranh giới của thế giới đã trở nên mong manh hơn, và sự xói mòn này có thể không phải là một sớm một chiều."
@@ -10429,6 +11168,31 @@
       "key": "matsutake",
       "name": "Nhung Tùng",
       "description": "Nấm quý mọc trên cây thông, mùi hương thoang thoảng phát ra đã khiến nó bị phát hiện."
+    },
+    {
+      "key": "midlander-bow-billet",
+      "name": "Phôi Cung Trung Địa",
+      "description": "Nguyên liệu gốc tạo ra vũ khí. Thông qua chế tạo, có thể tạo ra cung 4 sao.\nTrong triết học cho rằng, vạn vật trên đời đều có 4 nguyên nhân hình thành. “Mục đích” của những phôi này là trở thành vũ khí đồng hành cùng anh hùng."
+    },
+    {
+      "key": "midlander-catalyst-billet",
+      "name": "Phôi Pháp Khí Trung Địa",
+      "description": "Nguyên liệu gốc tạo ra vũ khí. Thông qua chế tạo, có thể tạo ra pháp khí 4 sao.\nTrong triết học cho rằng, vạn vật trên đời đều có 4 nguyên nhân hình thành. “Mục đích” của những phôi này là trở thành vũ khí đồng hành cùng anh hùng."
+    },
+    {
+      "key": "midlander-claymore-billet",
+      "name": "Phôi Trọng Kiếm Trung Địa",
+      "description": "Nguyên liệu gốc tạo ra vũ khí. Thông qua chế tạo, có thể tạo ra trọng kiếm 4 sao.\nTrong triết học cho rằng, vạn vật trên đời đều có 4 nguyên nhân hình thành. “Mục đích” của những phôi này là trở thành vũ khí đồng hành cùng anh hùng."
+    },
+    {
+      "key": "midlander-polearm-billet",
+      "name": "Phôi Vũ Khí Cán Dài Trung Địa",
+      "description": "Nguyên liệu gốc tạo ra vũ khí. Thông qua chế tạo, có thể tạo ra vũ khí cán dài 4 sao.\nTrong triết học cho rằng, vạn vật trên đời đều có 4 nguyên nhân hình thành. “Mục đích” của những phôi này là trở thành vũ khí đồng hành cùng anh hùng."
+    },
+    {
+      "key": "midlander-sword-billet",
+      "name": "Phôi Kiếm Đơn Trung Địa",
+      "description": "Nguyên liệu gốc tạo ra vũ khí. Thông qua chế tạo, có thể tạo ra kiếm đơn 4 sao.\nTrong triết học cho rằng, vạn vật trên đời đều có 4 nguyên nhân hình thành. “Mục đích” của những phôi này là trở thành vũ khí đồng hành cùng anh hùng."
     },
     {
       "key": "milk",
@@ -10551,6 +11315,11 @@
       "description": "Nguyên liệu có sức mạnh đột phá vũ khí.\r\nTrong quá khứ, tổ tiên sẽ leo lên đỉnh núi mà ngày nay được gọi là Núi Yougou, điêu khắc những cái cây bị sấm sét đốt cháy thành hình móc cong, tạo ra hình dạng của tia chớp sáng rực bầu trời và tiếng sấm rung chuyển mặt đất. Trải qua nhiều năm tích lũy, hình tượng này cuối cùng đã phát triển thành hình mẫu \"Tam Trùng Lôi\", tượng trưng cho sự ưu ái, trí tuệ và quyền lực của Lôi, cũng như những người thực hiện sự ưu ái, trí tuệ và quyền lực này."
     },
     {
+      "key": "nilotpala-lotus",
+      "name": "Sen Nilotpala",
+      "description": "Mọc trong rừng và đầm lầy, hoa phát sáng như mặt trăng. Chỉ nở vào ban đêm."
+    },
+    {
       "key": "noctilucous-jade",
       "name": "Dạ Phách Thạch",
       "description": "Khoáng thạch hiếm, sẽ tỏa sáng trong màn đêm yên tĩnh. Nghe nói là bảo thạch quý được ngưng tụ bởi những Nguyên Tố dị biến trong trời đất."
@@ -10581,9 +11350,34 @@
       "description": "Nguyên liệu gốc tạo ra vũ khí. Thông qua chế tạo, có thể tạo ra kiếm đơn 4 sao.\r\nTrong triết học cho rằng, Đại Lý Thạch có tiềm năng trở thành tượng điêu khắc tuyệt mỹ. Những phôi gốc này cũng có khả năng vô hạn. Thật khiến người khác mong chờ."
     },
     {
+      "key": "oasis-gardens-kindness",
+      "name": "Ân Huệ Vườn Hoa Ốc Đảo",
+      "description": "Nguyên liệu có sức mạnh đột phá vũ khí.\nTrong văn hiến cổ đại bị vùi lấp trong cát vàng, vua của các loài hoa là nữ chủ nhân của những giấc mơ.\nCô đã ban tặng giấc mơ cho những kẻ bị đày ải, những kẻ cuồng si và những kẻ khờ khạo. Trong những giấc mơ đó, họ được mang đến niềm vui ngọt ngào, ngay cả khi trong tay họ chỉ có chiếc bát và mảnh sắt đen, họ vẫn bị ấn tượng bởi vẻ đẹp quyến rũ, và bị mê hoặc bởi hình ảnh xinh đẹp và sự chăm chút tỉ mỉ của cô ấy."
+    },
+    {
+      "key": "oasis-gardens-mourning",
+      "name": "Nỗi Buồn Vườn Hoa Ốc Đảo",
+      "description": "Nguyên liệu có sức mạnh đột phá vũ khí.\nVua của các loài hoa từng có mối quan hệ thân thiết với Jinn.\nNữ chủ nhân của những bông hoa và ốc đảo từng cùng Vua Sa Mạc xây dựng “thành phố của rạp hát” Ay-Khanoum cho Jinn, trong ngôn ngữ cổ của Jinn thì nó mang ý nghĩa là “Nguyệt Nữ Thành”.\nNhưng sau này, người ta nói rằng nữ vương của các loài hoa đã chết vì cái nắng thiêu đốt và cát vàng, cả ốc đảo cũng không còn loài hoa Padisarah màu đỏ tím nở rộ nữa.\nSau khi cô ấy ngã xuống, cơn bão cát kêu gào, Jinn khóc thương, ánh trắng như mảnh ngọc trắng bạc cũng mất đi công dụng thưởng thức và tỏa ra ánh sáng u buồn."
+    },
+    {
+      "key": "oasis-gardens-reminiscence",
+      "name": "Hồi Ức Vườn Hoa Ốc Đảo",
+      "description": "Nguyên liệu có sức mạnh đột phá vũ khí.\nNgười ta nói rằng vua của các loài hoa là chủ nhân của niềm vui và hạnh phúc. Một dòng suối trong vắt chảy ra từ cổ tay áo của cô ấy, và có một ốc đảo đầy hoa trong sa mạc; Hoa tươi và hương thảo mọc theo từng bước chân, và ánh trăng bạc soi đường cho cô ấy.\nTrong lúc khó khăn khi trời cao ngoảnh mặt làm ngơ, nữ chủ nhân của muôn hoa đã gieo duyên cho phàm nhân, con người bắt đầu nhìn nhận lại hạnh phúc và bản ngã, nên lại tìm đến sự nhàn hạ và xa hoa."
+    },
+    {
+      "key": "oasis-gardens-truth",
+      "name": "Chân Lý Vườn Hoa Ốc Đảo",
+      "description": "Nguyên liệu có sức mạnh đột phá vũ khí.\n“Ai sẽ tôn thờ một vị thần đã khuất?”\nVua của các loài hoa đã từng kết liên minh với hai vị chúa tể thời bấy giờ, ngoài trí tuệ và uy quyền, cô còn đem lòng thương xót và niềm vui cho chúng dân ngu muội.\nGiống như đại lục không thể chỉ có nắng và mưa, dưới lý trí và sức mạnh, niềm vui và tình yêu, ca hát và âm nhạc, rượu và sự sang trọng đều quan trọng như nhau.\nNgười ta nói rằng mục đích của hoa nở là một cái chết huy hoàng, và cái chết đó là cứu cánh mà chủ nhân của những bông hoa đã tìm kiếm ngay từ đầu – vì cái chết sẽ làm tăng thêm hương vị cay đắng cho niềm vui đã mất, khiến nó trở nên mãnh liệt hơn.\nVị vua vô tri của sa mạc chưa từng hiểu được đạo lý của cô, mà chỉ bị mê hoặc bởi vẻ quyến rũ và dịu dàng vô hạn đó. Hồi ức dai dẳng, dù có đi chệch hướng cũng nằm trong tính toán của nữ vương của các loài hoa."
+    },
+    {
       "key": "old-handguard",
       "name": "Kiếm Cách Cũ Nát",
       "description": "Vật phòng hộ trên thanh kiếm, chứng kiến qua vô vàn trận chiến.\r\nĐối với những người thuần thục kiếm thuật, kiếm cách dùng để chặn lưỡi kiếm của đối phương; Còn đối với những kiếm sĩ mới tập, kiếm cách là chìa khóa để bảo vệ tay phải của họ."
+    },
+    {
+      "key": "olden-days-of-scorching-might",
+      "name": "Quá Khứ Của Ánh Nắng Quyền Uy",
+      "description": "Nguyên liệu có sức mạnh đột phá vũ khí.\nTrong thời đại mà Vua Sa Mạc vô tri cai trị, sức mạnh của hắn giáng xuống từng tấc đất như mặt trời thiêu đốt.\nTấm bia cổ ghi lại rằng uy quyền của nhà vua hóa thành bảy tia sáng hoặc bảy cây cột; Lòng nhân từ của nhà vua được ban cho tất cả mọi người một cách bình đẳng, không ai bị bỏ rơi và cũng không có ai cảm thấy bất mãn.\nĐó là một thời vàng son bị lãng quên, khi nữ vương của các loài hoa đã tàn lụi, chủ nhân của cây cỏ cũng quyết định ra đi. Nhưng chỉ những người con của sa mạc mới lựa chọn ở bên vị thần của họ, và ngay cả khi bóng đen thảm họa đến gần, quyền lực mà họ tin tưởng vẫn tỏa sáng như hổ phách và vàng.\nNhưng tai họa cuối cùng cũng ập đến, và con dấu bằng vàng cũng được chôn dưới chiếc cột bị gãy sâu trong thần điện và cung điện, nơi có khắc hình đại bàng và đầu bò."
     },
     {
       "key": "ominous-mask",
@@ -10606,6 +11400,11 @@
       "description": "Có thể kích hoạt Cổ Thụ Hóa Thạch, Hoa Địa Mạch để nhận báu vật. Năng lượng bên trong sẽ hồi phục theo thời gian.\r\nTương truyền tất cả rễ của cây và hoa Irminsul được liên kết với nhau dưới lòng đất, sự liên thông này đã vẽ nên quỹ đạo của địa mạch..."
     },
     {
+      "key": "padisarah",
+      "name": "Padisarah",
+      "description": "Loài hoa thánh thiện và cao quý, có những yêu cầu rất khắt khe về môi trường sinh trưởng. Nhụy hoa sau khi gia công có thể chế biến thành các loại hương liệu quý."
+    },
+    {
       "key": "pepper",
       "name": "Tiêu",
       "description": "Gia vị có mùi hương cay. Có thể kích thích vị giác và giảm độ ngấy cho món ăn, dùng với thịt là ngon nhất."
@@ -10619,6 +11418,11 @@
       "key": "philanemo-mushroom",
       "name": "Nấm Rơm Gió",
       "description": "Loại nấm lớn lên trong gió, tràn đầy nhựa sống như gió, nuôi dưỡng cuộc sống."
+    },
+    {
+      "key": "philosophies-of-admonition",
+      "name": "Triết Học Của “Khuyên Nhủ”",
+      "description": "Nguyên liệu bồi dưỡng thiên phú.\n“Khuyên Nhủ” là cành nhánh của vương quốc trí tuệ.\nKhuyên nhủ chung quy là một hành động chí thiện. Hành động mang lại ý nghĩa chân thực cho lời nói, nói – nghĩ – làm thống nhất với nhau, là nguồn dinh dưỡng phong phú để cây trí tuệ có thể kết thành quả ngọt."
     },
     {
       "key": "philosophies-of-ballad",
@@ -10646,9 +11450,19 @@
       "description": "Nguyên liệu bồi dưỡng Thiên Phú.\r\nHoàng kim tượng trưng cho đất nước nham thạch.\r\nHoàng kim là tài sản của Liyue. Nhưng tài sản thực sự của Liyue là tấm lòng của người dân cũng sáng như hoàng kim."
     },
     {
+      "key": "philosophies-of-ingenuity",
+      "name": "Triết Học Của “Tinh Tế”",
+      "description": "Nguyên liệu bồi dưỡng thiên phú.\n“Tinh Tế” là gân lá của vương quốc trí tuệ.\nTư duy khéo léo được hình thành từ phẩm hạnh hài hòa. Hành vi mang lại hình thái hoàn mỹ cho tư duy, nghĩ – nói – làm cùng minh chứng cho nhau, là cốt lõi vững chắc giúp cho cây trí tuệ có thể nở hoa."
+    },
+    {
       "key": "philosophies-of-light",
       "name": "Triết Học Của \"Ánh Sáng\"",
       "description": "Nguyên liệu bồi dưỡng thiên phú.\r\nƯớc nguyện của Lôi quốc là ánh sáng.\r\nDù có sống mãi dưới đất, con người vẫn kiên cường theo đuổi ánh sáng. Mọi người vẫn luôn muốn đuổi theo và vượt qua, không thể ngừng lại được. Sự vĩnh hằng tĩnh lặng và khép kín cũng thật tráng lệ, nhưng bản chất của nó suy cho cùng là cái chết."
+    },
+    {
+      "key": "philosophies-of-praxis",
+      "name": "Triết Học Của “Thực Hành”",
+      "description": "Nguyên liệu bồi dưỡng thiên phú.\n“Thực Hành” là gốc rễ của vương quốc trí tuệ.\nThực hành thúc đẩy trí tuệ kết thành quả. Hành vi chứng thực cho ý nghĩa của bản thân hành vi, làm – nói – nghĩ liên kết thành một thể, là con đường duy nhất để người hiền trí thấy được sự hoàn mỹ."
     },
     {
       "key": "philosophies-of-prosperity",
@@ -10741,9 +11555,19 @@
       "description": "Nguyên liệu có sức mạnh đột phá vũ khí.\r\nTâm của Nham Thương phát ra ánh sáng đen, nó được hình thành từ sức mạnh đánh bại Ma Thần. Sự oán hận của chúng không hướng đến Morax, vì chúng vốn đã sớm đánh mất bản thân, không còn tư thù cá nhân gì nữa."
     },
     {
+      "key": "remnant-glow-of-scorching-might",
+      "name": "Tia Sáng Của Ánh Nắng Quyền Uy",
+      "description": "Nguyên liệu có sức mạnh đột phá vũ khí.\nDệt nên hàng ngàn suy nghĩ và điều khiển hàng ngàn linh hồn, đó được gọi là độc đoán.\nTuy nhiên, chủ nghĩa độc tài không phải là chủ nghĩa chuyên chế tàn nhẫn, lý tưởng thực sự của nó, nằm trong trái tim của nó – tạo ra một thiên đường thực sự, nơi không ai bị giày vò, không bị ngược đãi và nô lệ.\nGiống như vị vua thầm lặng đã nhìn thấy tất cả trong bí mật của viên pha lê, cũng như người bạn đồng hành đã khuất từng dạy.\nCon ấn màu đen và phán quyết sắt đá đó đã trở thành nền tảng cho luật pháp của vương quốc."
+    },
+    {
       "key": "rice",
       "name": "Lúa Nước",
       "description": "Loài cây thân lúa thường được trồng trên đại lục Teyvat. Bất kỳ ai cũng yêu thích hương vị thơm ngon của chúng, cái tên \"hạt gạo nuôi trăm dân\" cũng từ đó mà ra."
+    },
+    {
+      "key": "rich-red-brocade",
+      "name": "Băng Đỏ Ánh Vàng",
+      "description": "Dải lụa đỏ được dệt bằng chỉ vàng.\nNhững tàn dư sinh ra trong sa mạc mạ vàng dưới ánh mặt trời thỉnh thoảng hát một bài hát, mà ý nghĩa của nó đã bị lãng quên, ca ngợi mặt trời thiêu đốt chiếu sáng mặt đất như mọi khi và say mê ánh sáng rực rỡ vào cuối buổi hoàng hôn. Một số từ không quen thuộc lặp lại ở cuối bài hát, được cho là tên của các vị thần cổ đại. Truyền thuyết kể rằng khi vua của sa mạc vẫn còn sống, con dân của ông đã chọn cách che đi đôi mắt vì không dám nhìn vào ông, người có ánh sáng rực rỡ hơn cả ánh mặt trời."
     },
     {
       "key": "riftborn-regalia",
@@ -10754,6 +11578,16 @@
       "key": "ring-of-boreas",
       "name": "Móng Vuốt Bắc Phong",
       "description": "Một chút băng lấy từ trên người Vua Sói Bắc Phong.\r\nNơi này từng có gió bắc lạnh giá thổi qua, khiến cho người ta lạnh buốt da khi bay. Hiện nay sức mạnh Vua Sói tuy không được như trước, nhưng vẫn đủ để khiến nơi này đóng băng."
+    },
+    {
+      "key": "robust-fungal-nucleus",
+      "name": "Nhân Bào Nấm Hồi Phục",
+      "description": "Một phần mô cơ thể của Nấm Quỷ được hình thành dưới sự kích thích mạnh của các nguyên tố bên ngoài.\nNgười ta thường tin rằng Nấm Quỷ phát triển khả năng di chuyển là để phân tán bào tử trong thế giới rộng lớn hơn.\nMột nhà thơ đã từng nói rằng trong giấc mơ chung của Nấm Quỷ, bào tử bao phủ núi non và đại dương, và thế giới vô cùng yên bình. Nấm Quỷ tiến hóa thành cá, thú, chim chóc, con người và thần linh. Chúng sinh trưởng dựa vào lượng mưa, đất đai và đồng loại của chúng khi trở về đất mẹ."
+    },
+    {
+      "key": "rukkhashava-mushrooms",
+      "name": "Nấm Thánh Rukkhashava",
+      "description": "Loại nấm mọc từng lớp như biển mây, phần lớn ký sinh trên các thân cây ở sâu trong rừng mưa, vì vậy được người dân Sumeru coi là thánh thể kết tinh của Rukkhadevata."
     },
     {
       "key": "runic-fang",
@@ -10866,6 +11700,11 @@
       "description": "Huân chương quạ đen được thành viên của Đạo Bảo Đoàn sử dụng để nhận biết lẫn nhau. Đạo Bảo Đoàn không hỏi xuất thân, bất kể là ai chỉ cần có lòng ham tìm bảo vật, dám mạo hiểm, đều có thể trở thành thành viên \"ưu tú\"."
     },
     {
+      "key": "silver-talisman-of-the-forest-dew",
+      "name": "Bùa Rừng Xanh Sương Đọng – Bạc",
+      "description": "Nguyên liệu có sức mạnh đột phá vũ khí.\nTrong nhiều câu chuyện của khu rừng, vị vua trong chiếc áo choàng sọc rực lửa là vua của mê cung và là chủ nhân của suối nguồn ánh trăng.\nKhi anh ta cúi đầu và kết bạn với chúa tể của cỏ cây, tín vật chính là viên ngọc sáng như nước và bạc như ánh trăng.\nNhư một sự trao đổi tình bạn quý giá, chúa tể của cỏ cây hứa sẽ giữ bí mật cho vị vua của mê cung và bảo vệ giấc mơ đẹp của khu rừng mưa.\nDù sau này, mọi bí mật và ước mơ về những cung điện lộng lẫy đều biến mất dưới ngọn lửa đen tối của sự lãng quên, hòa vào lớp đất dày và biến thành chất dinh dưỡng cho khu rừng mưa mới."
+    },
+    {
       "key": "slime-concentrate",
       "name": "Bột Slime",
       "description": "Kết tủa trong người Slime, khi để yên sẽ tự kết tủa."
@@ -10916,6 +11755,11 @@
       "description": "Hạt năng lượng thỉnh thoảng được tìm thấy sau khi đánh bại Bóng Ma.\r\nGiữa những người thích phân định cao thấp, thường xuyên xảy ra cuộc tranh luận này: Bóng Ma và Slime Phong, rốt cuộc thì bên nào bay cao hơn."
     },
     {
+      "key": "spice",
+      "name": "Gia Vị",
+      "description": "Gia vị hợp khẩu vị. Chế biến từ Quả Harra sấy khô. Có thể tạo ra nhiều tầng hương vị cho món ăn, vì vậy trên phố có câu “gia vị là tất cả”."
+    },
+    {
       "key": "spirit-locket-of-boreas",
       "name": "Linh Hồn Bắc Phong",
       "description": "Sức mạnh lấy từ nơi linh thiêng nhất trên người Vua Sói Bắc Phong.\r\nNơi này từng có gió bắc lạnh giá thổi qua, nhưng nó cuối cùng cũng hiểu ra, lạnh giá chỉ khiến sinh mệnh điêu tàn. Khi gần chết, nó đem sức mạnh của mình gửi gắm vào mặt đất, vĩnh viễn bảo vệ người dân ở đây."
@@ -10929,6 +11773,11 @@
       "key": "starconch",
       "name": "Ốc Sao",
       "description": "Ốc dạt vào bờ theo những cơn thủy triều. Đặt vào gần tai có thể nghe được tiếng gọi của biển."
+    },
+    {
+      "key": "starshroom",
+      "name": "Nấm Sao",
+      "description": "Nấm có phần đầu giống như ngôi sao 5 cánh, sức sống ngoan cường. Sau khi chín muồi, phần giữa đầu nấm sẽ nứt ra."
     },
     {
       "key": "starsilver",
@@ -10956,6 +11805,11 @@
       "description": "Gia vị làm từ Hoa Ngọt. Vị ngọt của nó giống như có thể nói chuyện với chim, có thể làm tan biến phiền muộn."
     },
     {
+      "key": "sumeru-rose",
+      "name": "Tường Vi Sumeru",
+      "description": "Bông hoa tím đậm và rực rỡ tỏa hương thơm ngát khiến người đi đường phải dừng chân. Mặc dù được gọi là tường vi, nhưng thật ra nó nên được gọi là hoa hồng."
+    },
+    {
       "key": "sunsettia",
       "name": "Quả Nhật Lạc",
       "description": "Ân huệ của tự nhiên ban tặng khắp đại lục Teyvat, quả cây mọng nước như ánh hoàng hôn, tỏa ra mùi vị thơm ngọt lạ kỳ, có thể giúp tỉnh táo tinh thần."
@@ -10969,6 +11823,11 @@
       "key": "tail-of-boreas",
       "name": "Lông Vũ Bắc Phong",
       "description": "Một ít vảy đuôi lấy từ trên người Vua Sói Bắc Phong.\r\nVua Sói đã mất đi sinh mệnh và hình thể nhưng vẫn có một sức mạnh vĩ đại. Để nghênh chiến nên đã dùng Băng và Phong để khôi phục hình thể, nhưng vẫn không dung nạp được hết nguồn sức mạnh, một ít linh hồn đã bị rơi rớt trên băng giá."
+    },
+    {
+      "key": "teachings-of-admonition",
+      "name": "Bài Giảng Của “Khuyên Nhủ”",
+      "description": "Nguyên liệu bồi dưỡng thiên phú.\n“Khuyên Nhủ” là cành nhánh của vương quốc trí tuệ.\nKhuyên Nhủ xuất phát từ tâm trí thuần khiết. Chỉ có lời nói tỉnh táo và thánh thiện mới có thể biểu đạt được trí tuệ thâm sâu, để hạt giống trí tuệ có thể đột phá được sự bế tắc ngạo mạn, đâm chồi sum suê."
     },
     {
       "key": "teachings-of-ballad",
@@ -10996,9 +11855,19 @@
       "description": "Nguyên liệu bồi dưỡng Thiên Phú.\r\nHoàng kim tượng trưng cho đất nước nham thạch.\r\nHoàng kim là huyết mạch chảy sâu trong lòng đất Liyue, giúp cho trái tim Liyue điều khiển được cơ bắp, là xương cốt giúp Liyue đứng vững."
     },
     {
+      "key": "teachings-of-ingenuity",
+      "name": "Bài Giảng Của “Tinh Tế”",
+      "description": "Nguyên liệu bồi dưỡng thiên phú.\n“Tinh Tế” là gân lá của vương quốc trí tuệ.\nTư duy bắt nguồn từ ý chỉ của lương thiện. Có câu “cây độc không kết trái lành”, ý niệm lương thiện kiên định mới có thể dưỡng dục ra tư duy thông minh chu đáo, như thế mới không làm ô uế danh nghĩa của trí tuệ."
+    },
+    {
       "key": "teachings-of-light",
       "name": "Bài Giảng Của \"Ánh Sáng\"",
       "description": "Nguyên liệu bồi dưỡng thiên phú.\r\nƯớc nguyện của Lôi quốc là ánh sáng.\r\nVị quân tử tự cho mình là thông suốt sẽ luôn cố gắng gặt hái vinh quang trên trời cao. Tuy nhiên, viễn cảnh tham vọng sẽ khiến những người cần nó theo đuổi quyết liệt hơn, giống như những con thiêu thân lao vào lửa."
+    },
+    {
+      "key": "teachings-of-praxis",
+      "name": "Bài Giảng Của “Thực Hành”",
+      "description": "Nguyên liệu bồi dưỡng thiên phú.\n“Thực Hành” là gốc rễ của vương quốc trí tuệ.\nThực hành bắt nguồn từ tính chân thật rõ ràng. Không màng gian khó quyết tâm thực hành, chính là con đường bắt buộc để mọi tri thức biến thành hiện thực. Không quan tâm hành thiện thì tư duy thông thái và lời nói đẹp đẽ cũng không có đất dùng."
     },
     {
       "key": "teachings-of-prosperity",
@@ -11026,6 +11895,11 @@
       "description": "Trang sức được mang về từ Tịnh Thổ sau khi mọi chuyện đã lắng xuống.\r\nNhất niệm vạn kiếp tận, sẽ luôn có những suy nghĩ có thể vượt qua thời gian.\r\nMuôn vạn kiếp nạn, liệu ý nghĩ thực sự của Makoto đã được truyền đạt thành công hay chưa."
     },
     {
+      "key": "thunderclap-fruitcore",
+      "name": "Hạt Tụ Sấm",
+      "description": "Lõi cây kích điện được bọc trong những chiếc lá sắc nhọn, tản ra nguyên tố Lôi khắp cơ thể.\nNăng lượng cuồn cuộn sâu trong lòng đất đang muốn trút cơn thịnh nộ, thế là dây leo không may cũng bị nhiễm cơn cuồng bạo, vẫy cành uốn éo than khóc, không biết là muốn để người khác thử nếm trải nỗi đau khi bị sét đánh xuyên thân, hay là chật vật mong chờ cái kết không thể tránh khỏi."
+    },
+    {
       "key": "tile-of-decarabians-tower",
       "name": "Mảnh Ngói Tháp Cô Vương",
       "description": "Nguyên liệu có sức mạnh đột phá vũ khí.\r\nGần đây nơi được mệnh danh là Phế Tích Phong Long, từng là vương đô được kiến tạo bởi \"Decarabian\" - Ma thần của gió. Vì giấc mơ phồn hoa này được tạo ra bởi sức mạnh ma thần, nên khi giấc mơ tan vỡ, những mảnh vụn của nó cũng mang sức mạnh to lớn."
@@ -11044,6 +11918,11 @@
       "key": "treasure-hoarder-insignia",
       "name": "Ấn Quạ Tầm Bảo",
       "description": "Dấu ấn kiêu hãnh thể hiện danh tính của Đạo Bảo Đoàn, miêu tả những chuyến truy tìm kho báu vô tận của họ. Tuy nói vậy, danh tính đạo tặc có cần phải được thể hiện một cách tự hào không nhỉ...?"
+    },
+    {
+      "key": "trimmed-red-silk",
+      "name": "Băng Đỏ Viền Vàng",
+      "description": "Dải lụa đỏ được khảm trang sức đơn giản.\nNhững chiến sĩ lão luyện có thể tìm ra sơ hở trong mắt đối thủ. Eremite đã mất đi chủ nhân để có thể trung thành từ lâu, chỉ có thể tin vào chính mình. Nghe nói, họ tin chắc rằng tất cả mọi thứ đều phản bội, ngay cả chính đôi mắt của mình cũng không ngoại lệ."
     },
     {
       "key": "tusk-of-monoceros-caeli",
@@ -11164,6 +12043,11 @@
       "key": "wolfhook",
       "name": "Quả Móc Câu",
       "description": "Quả mâm xôi có gai móc, có thể móc trên da của sói để di chuyển. Nhìn thấy nó cứ như nghe được tiếng tru thê lương của sói vang vọng giữa rừng sâu..."
+    },
+    {
+      "key": "zaytun-peach",
+      "name": "Đào Zaytun",
+      "description": "Quả của một bụi cây trong rừng. Thịt quả săn chắc, vị ngọt thanh, thơm ngon. Nghe nói có tác dụng tĩnh tâm và an thần."
     }
   ],
   "debuffs": [
@@ -11258,6 +12142,42 @@
       "name": "Crystallize",
       "effect": "Absorbs the element and drops a crystal of that same element. The crystal will give an elemental shield. The shield absorbs all types of damage, but it protects more efficiently against the shield's element.",
       "description": null
+    },
+    {
+      "key": "bloom",
+      "name": "Bloom",
+      "effect": "Creates a Dendro Core that explode after 6 seconds, dealing AoE Dendro DMG in a 5m radius to both enemies and players.",
+      "description": null
+    },
+    {
+      "key": "hyperbloom",
+      "name": "Hyperbloom",
+      "effect": "Triggered when applying Electro to a Dendro Core. Transforms the Dendro Core into a homing Sprawling Shot that deals increased AoE Dendro DMG in a much smaller AoE.",
+      "description": null
+    },
+    {
+      "key": "burgeon",
+      "name": "Burgeon",
+      "effect": "Triggered when applying Pyro to a Dendro Core. Detonates the Dendro Core immediately, dealing increased AoE Dendro DMG.",
+      "description": null
+    },
+    {
+      "key": "quicken",
+      "name": "Quicken",
+      "effect": "Applies a Quicken aura that decays over time.",
+      "description": null
+    },
+    {
+      "key": "aggravate",
+      "name": "Aggravate",
+      "effect": "Triggered when applying Electro to an entity with the Quicken aura. Adds Flat DMG Bonus to the attack that triggers this reaction.",
+      "description": null
+    },
+    {
+      "key": "spread",
+      "name": "Spread",
+      "effect": "Triggered when applying Dendro to an entity with the Quicken aura. Adds Flat DMG Bonus to the attack that triggers this reaction.",
+      "description": null
     }
   ],
   "resonance": [
@@ -11302,6 +12222,12 @@
       "name": "Bảo Hộ Đan Xen",
       "effect": "Tất cả kháng Nguyên Tố tăng 15%, kháng Vật Lý tăng 15%.",
       "description": "4 Nguyên tố khác nhau bất kỳ"
+    },
+    {
+      "key": "sprawling-greenery",
+      "name": "Sprawling Greenery",
+      "effect": "After triggering Burning, Quicken, or Bloom reactions, all nearby party members gain 30 Elemental Mastery for 6s. After triggering Aggravate, Spread, Hyperbloom, or Burgeon reactions, all nearby party members gain 20 Elemental Mastery for 6s. The durations of the aforementioned effects will be counted independently.",
+      "description": null
     }
   ],
   "monsters": [
@@ -11336,6 +12262,10 @@
     {
       "key": "azhdaha",
       "name": "Azhdaha"
+    },
+    {
+      "key": "beisht",
+      "name": "Beisht"
     },
     {
       "key": "black-serpent-knight-windcutter",
@@ -11410,6 +12340,10 @@
       "name": "Slime Thảo"
     },
     {
+      "key": "dendro-specter",
+      "name": "Bóng Ma - Thảo"
+    },
+    {
       "key": "electro-abyss-mage",
       "name": "Pháp Sư Vực Sâu Lôi"
     },
@@ -11430,6 +12364,10 @@
       "name": "Lôi Nguyên Bản"
     },
     {
+      "key": "electro-regisvine",
+      "name": "Cây Kích Điện"
+    },
+    {
       "key": "electro-samachurl",
       "name": "Phù Thủy Hilichurl Lôi"
     },
@@ -11444,6 +12382,38 @@
     {
       "key": "electro-whopperflower",
       "name": "Hoa Lừa Dối - Lôi"
+    },
+    {
+      "key": "eremite-axe-vanguard",
+      "name": "Eremite - Rìu Chiến"
+    },
+    {
+      "key": "eremite-crossbow",
+      "name": "Eremite - Lính Nỏ"
+    },
+    {
+      "key": "eremite-daythunder",
+      "name": "Eremite - Sấm Giữa Ban Ngày"
+    },
+    {
+      "key": "eremite-desert-clearwater",
+      "name": "Eremite - Nước Giữa Sa Mạc"
+    },
+    {
+      "key": "eremite-linebreaker",
+      "name": "Eremite - Phá Trận"
+    },
+    {
+      "key": "eremite-ravenbeak-halberdier",
+      "name": "Eremite - Kích Thủ"
+    },
+    {
+      "key": "eremite-sunfrost",
+      "name": "Eremite - Băng Giữa Nắng Nóng"
+    },
+    {
+      "key": "eremite-sword-dancer",
+      "name": "Eremite - Đao Vũ"
     },
     {
       "key": "eye-of-the-storm",
@@ -11486,6 +12456,10 @@
       "name": "Đội tiên phong Fatui - Quân du kích Hỏa"
     },
     {
+      "key": "floating-dendro-fungus",
+      "name": "Nấm Quỷ Phù Du - Thảo"
+    },
+    {
       "key": "floating-hydro-fungus",
       "name": "Nấm Quỷ Phù Du - Thủy"
     },
@@ -11520,6 +12494,10 @@
     {
       "key": "golden-wolflord",
       "name": "Vua Thú Hoàng Kim"
+    },
+    {
+      "key": "grounded-hydroshroom",
+      "name": "Nấm Quỷ Đi Bộ - Thủy"
     },
     {
       "key": "hilichurl",
@@ -11604,6 +12582,10 @@
     {
       "key": "ice-shieldwall-mitachurl",
       "name": "Bạo Đồ Hilichurl Khiên Băng"
+    },
+    {
+      "key": "jadeplume-terrorshroom",
+      "name": "Nấm Thúy Linh"
     },
     {
       "key": "kairagi-dancing-thunder",
@@ -11794,6 +12776,14 @@
       "name": "Tiên Phong Di Tích"
     },
     {
+      "key": "ruin-drake-earthguard",
+      "name": "Rồng Di Tích - Địa Vệ"
+    },
+    {
+      "key": "ruin-drake-skywatch",
+      "name": "Rồng Di Tích - Thiên Vệ"
+    },
+    {
       "key": "ruin-grader",
       "name": "Cần Cẩu Di Tích"
     },
@@ -11844,6 +12834,18 @@
     {
       "key": "stormterror",
       "name": "Phong Ma Long Bão Tố"
+    },
+    {
+      "key": "stretchy-anemo-fungus",
+      "name": "Nấm Quỷ Đàn Hồi - Phong"
+    },
+    {
+      "key": "stretchy-geo-fungus",
+      "name": "Nấm Quỷ Đàn Hồi - Nham"
+    },
+    {
+      "key": "stretchy-pyro-fungus",
+      "name": "Nấm Quỷ Đàn Hồi - Hỏa"
     },
     {
       "key": "thunder-manifestation",
@@ -11926,8 +12928,28 @@
       "name": "Đạo Bảo Đoàn - Thanh Niên Trên Biển"
     },
     {
+      "key": "treasure-hoarders-wallenstein",
+      "name": "Đạo Bảo Đoàn - Wallenstein"
+    },
+    {
       "key": "unusual-hilichurl",
       "name": "Hilichurl kỳ lạ"
+    },
+    {
+      "key": "whirling-cryo-fungus",
+      "name": "Nấm Quỷ Xoay Tròn - Băng"
+    },
+    {
+      "key": "whirling-electro-fungus",
+      "name": "Nấm Quỷ Xoay Tròn - Lôi"
+    },
+    {
+      "key": "winged-cryoshroom",
+      "name": "Nấm Quỷ Có Cánh - Băng"
+    },
+    {
+      "key": "winged-dendroshroom",
+      "name": "Nấm Quỷ Có Cánh - Thảo"
     },
     {
       "key": "wooden-shield-hilichurl-guard",

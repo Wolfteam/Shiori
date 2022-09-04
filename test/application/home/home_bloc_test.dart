@@ -61,7 +61,7 @@ void main() {
           checkAsset(material.image);
           expect(material.days, isNotEmpty);
           expect(material.days.every((day) => _expectedDays.contains(day)), isTrue);
-          checkItemsCommon(material.characters);
+          checkItemsCommon(material.characters, checkEmpty: false);
         }
 
         for (final material in state.weaponAscMaterials) {

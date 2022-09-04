@@ -13,6 +13,12 @@ class CharacterAscensionMaterials extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final s = S.of(context);
+    const minNumberOfMaterialsShown = 7;
+    final needsDummyItems = images.length < minNumberOfMaterialsShown;
+    if (needsDummyItems) {
+      final diff = minNumberOfMaterialsShown - images.length;
+      images.addAll(List.generate(diff, (index) => ''));
+    }
     return Tooltip(
       message: s.ascensionMaterials,
       child: Wrap(
@@ -31,9 +37,14 @@ class _MaterialItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    const double size = 23;
+    if (image.isEmpty) {
+      return const Icon(Icons.question_mark_outlined, size: size, color: Colors.white);
+    }
+
     return FadeInImage(
-      height: 23,
-      width: 23,
+      height: size,
+      width: size,
       placeholder: MemoryImage(kTransparentImage),
       image: AssetImage(image),
     );

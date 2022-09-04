@@ -6,16 +6,19 @@ import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/file/artifact_file_service.dart';
 import 'package:shiori/domain/services/file/translation_file_service.dart';
 
-class ArtifactFileServiceImpl implements ArtifactFileService {
+class ArtifactFileServiceImpl extends ArtifactFileService {
   final TranslationFileService _translations;
 
   late ArtifactsFile _artifactsFile;
 
+  @override
+  TranslationFileService get translations => _translations;
+
   ArtifactFileServiceImpl(this._translations);
 
   @override
-  Future<void> init() async {
-    final json = await Assets.getJsonFromPath(Assets.artifactsDbPath);
+  Future<void> init(String assetPath) async {
+    final json = await readJson(assetPath);
     _artifactsFile = ArtifactsFile.fromJson(json);
   }
 
@@ -55,9 +58,13 @@ class ArtifactFileServiceImpl implements ArtifactFileService {
 
   @override
   List<String> getArtifactRelatedParts(String fullImagePath, String image, int bonus) {
-    var imageWithoutExt = image.split('.png').first;
+    if (bonus == 1) {
+      return [fullImagePath];
+    }
+
+    var imageWithoutExt = image.split(imageFileExtension).first;
     imageWithoutExt = imageWithoutExt.substring(0, imageWithoutExt.length - 1);
-    return bonus == 1 ? [fullImagePath] : artifactOrder.map((e) => Assets.getArtifactPath('$imageWithoutExt$e.png')).toList();
+    return artifactOrder.map((e) => Assets.getArtifactPath('$imageWithoutExt$e$imageFileExtension')).toList();
   }
 
   @override
@@ -72,7 +79,7 @@ class ArtifactFileServiceImpl implements ArtifactFileService {
 
     final imgs = getArtifactRelatedParts(fullImagePath, image, bonus);
     final order = getArtifactOrder(type);
-    return imgs.firstWhere((el) => el.endsWith('$order.png'));
+    return imgs.firstWhere((el) => el.endsWith('$order$imageFileExtension'));
   }
 
   @override

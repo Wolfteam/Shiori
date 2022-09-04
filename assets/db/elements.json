@@ -122,6 +122,64 @@
         "electro",
         "cryo"
       ]
+    },
+    {
+      "key": "bloom",
+      "principal": [
+        "dendro"
+      ],
+      "secondary": [
+        "hydro"
+      ]
+    },
+    {
+      "key": "hyperbloom",
+      "principal": [
+        "dendro"
+      ],
+      "secondary": [
+        "hydro",
+        "electro"
+      ]
+    },
+    {
+      "key": "burgeon",
+      "principal": [
+        "dendro"
+      ],
+      "secondary": [
+        "hydro",
+        "pyro"
+      ]
+    },
+    {
+      "key": "quicken",
+      "principal": [
+        "dendro"
+      ],
+      "secondary": [
+        "electro"
+      ]
+    },
+    {
+      "key": "aggravate",
+      "principal": [
+        "dendro"
+      ],
+      "secondary": [
+        "electro",
+        "electro"
+      ]
+    },
+    {
+      "key": "spread",
+      "principal": [
+        "dendro"
+      ],
+      "secondary": [
+        "electro",
+        "dendro"
+      ]
     }
   ],
   "resonance": [
@@ -183,6 +241,15 @@
       "key": "protective-canopy",
       "principal": [],
       "secondary": []
+    },
+    {
+      "key": "sprawling-greenery",
+      "principal": [
+        "dendro"
+      ],
+      "secondary": [
+        "dendro"
+      ]
     }
   ]
 }
