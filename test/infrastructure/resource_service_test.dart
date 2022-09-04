@@ -1,5 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
+import 'package:shiori/domain/app_constants.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/models/dtos.dart';
 import 'package:shiori/domain/models/models.dart';
@@ -46,46 +47,46 @@ void main() {
   group('Image paths', () {
     test('valid artifact image path', () {
       final service = getResourceService(MockSettingsService());
-      final path = service.getArtifactImagePath('glacier-and-snowfield_4.png');
+      final path = service.getArtifactImagePath('glacier-and-snowfield_4$imageFileExtension');
       checkAsset(path);
     });
 
     test('valid character image path', () {
       final service = getResourceService(MockSettingsService());
-      final path = service.getCharacterImagePath('keqing.png');
+      final path = service.getCharacterImagePath('keqing$imageFileExtension');
       checkAsset(path);
     });
 
     test('valid character full image path', () {
       final service = getResourceService(MockSettingsService());
-      final path = service.getCharacterFullImagePath('keqing.png');
+      final path = service.getCharacterFullImagePath('keqing$imageFileExtension');
       checkAsset(path);
     });
 
     test('valid furniture image path', () {
       final service = getResourceService(MockSettingsService());
-      final path = service.getFurnitureImagePath('mondstadt-mansion-windward-manor.png');
+      final path = service.getFurnitureImagePath('mondstadt-mansion-windward-manor$imageFileExtension');
       checkAsset(path);
     });
 
     test('valid gadget image path', () {
       final service = getResourceService(MockSettingsService());
-      final path = service.getGadgetImagePath('parametric-transformer.png');
+      final path = service.getGadgetImagePath('parametric-transformer$imageFileExtension');
       checkAsset(path);
     });
 
     test('valid monster image path', () {
       final service = getResourceService(MockSettingsService());
-      final path = service.getMonsterImagePath('electro-specter.png');
+      final path = service.getMonsterImagePath('electro-specter$imageFileExtension');
       checkAsset(path);
     });
 
     test('valid skill image path', () {
       final service = getResourceService(MockSettingsService());
       final paths = [
-        service.getSkillImagePath('keqing_s1.png'),
-        service.getSkillImagePath('keqing_c1.png'),
-        service.getSkillImagePath('keqing_p1.png'),
+        service.getSkillImagePath('keqing_s1$imageFileExtension'),
+        service.getSkillImagePath('keqing_c1$imageFileExtension'),
+        service.getSkillImagePath('keqing_p1$imageFileExtension'),
         service.getSkillImagePath(null),
       ];
       checkAssets(paths);
@@ -94,11 +95,11 @@ void main() {
     test('valid weapon image path', () {
       final service = getResourceService(MockSettingsService());
       final paths = [
-        service.getWeaponImagePath('predator.png', WeaponType.bow),
-        service.getWeaponImagePath('the-widsith.png', WeaponType.catalyst),
-        service.getWeaponImagePath('akuoumaru.png', WeaponType.claymore),
-        service.getWeaponImagePath('the-catch.png', WeaponType.polearm),
-        service.getWeaponImagePath('the-flute.png', WeaponType.sword),
+        service.getWeaponImagePath('predator$imageFileExtension', WeaponType.bow),
+        service.getWeaponImagePath('the-widsith$imageFileExtension', WeaponType.catalyst),
+        service.getWeaponImagePath('akuoumaru$imageFileExtension', WeaponType.claymore),
+        service.getWeaponImagePath('the-catch$imageFileExtension', WeaponType.polearm),
+        service.getWeaponImagePath('the-flute$imageFileExtension', WeaponType.sword),
       ];
       checkAssets(paths);
     });
@@ -106,17 +107,17 @@ void main() {
     test('valid material image path', () {
       final service = getResourceService(MockSettingsService());
       final paths = [
-        service.getMaterialImagePath('firm-arrowhead.png', MaterialType.common),
-        service.getMaterialImagePath('mora.png', MaterialType.currency),
-        service.getMaterialImagePath('storm-beads.png', MaterialType.elementalStone),
-        service.getMaterialImagePath('wanderers-advice.png', MaterialType.expCharacter),
-        service.getMaterialImagePath('fine-enhancement-ore.png', MaterialType.expWeapon),
-        service.getMaterialImagePath('ham.png', MaterialType.ingredient),
-        service.getMaterialImagePath('agnidus-agate-gemstone.png', MaterialType.jewels),
-        service.getMaterialImagePath('amakumo-fruit.png', MaterialType.local),
-        service.getMaterialImagePath('crown-of-insight.png', MaterialType.talents),
-        service.getMaterialImagePath('heavy-horn.png', MaterialType.weapon),
-        service.getMaterialImagePath('narukamis-wisdom.png', MaterialType.weaponPrimary),
+        service.getMaterialImagePath('firm-arrowhead$imageFileExtension', MaterialType.common),
+        service.getMaterialImagePath('mora$imageFileExtension', MaterialType.currency),
+        service.getMaterialImagePath('storm-beads$imageFileExtension', MaterialType.elementalStone),
+        service.getMaterialImagePath('wanderers-advice$imageFileExtension', MaterialType.expCharacter),
+        service.getMaterialImagePath('fine-enhancement-ore$imageFileExtension', MaterialType.expWeapon),
+        service.getMaterialImagePath('ham$imageFileExtension', MaterialType.ingredient),
+        service.getMaterialImagePath('agnidus-agate-gemstone$imageFileExtension', MaterialType.jewels),
+        service.getMaterialImagePath('amakumo-fruit$imageFileExtension', MaterialType.local),
+        service.getMaterialImagePath('crown-of-insight$imageFileExtension', MaterialType.talents),
+        service.getMaterialImagePath('heavy-horn$imageFileExtension', MaterialType.weapon),
+        service.getMaterialImagePath('narukamis-wisdom$imageFileExtension', MaterialType.weaponPrimary),
       ];
       checkAssets(paths);
     });
@@ -253,7 +254,7 @@ void main() {
     test('api returns that partial files must be downloaded', () async {
       final apiResult = ApiResponseDto<ResourceDiffResponseDto?>(
         succeed: true,
-        result: ResourceDiffResponseDto(currentResourceVersion: 1, targetResourceVersion: 2, keyNames: ['characters/keqing.png']),
+        result: ResourceDiffResponseDto(currentResourceVersion: 1, targetResourceVersion: 2, keyNames: ['characters/keqing$imageFileExtension']),
       );
       final service = _getService(
         isInternetAvailable: true,
@@ -295,7 +296,7 @@ void main() {
     test('api returns lower resource version, hence no updates available', () async {
       final apiResult = ApiResponseDto<ResourceDiffResponseDto?>(
         succeed: true,
-        result: ResourceDiffResponseDto(currentResourceVersion: 1, targetResourceVersion: 0, keyNames: ['characters/keqing.png']),
+        result: ResourceDiffResponseDto(currentResourceVersion: 1, targetResourceVersion: 0, keyNames: ['characters/keqing$imageFileExtension']),
       );
       final service = _getService(
         isInternetAvailable: true,
@@ -389,7 +390,7 @@ void main() {
       when(settingsService.resourceVersion).thenReturn(2);
       final service = ResourceServiceImpl(MockLoggingService(), settingsService, MockNetworkService(), MockApiService());
       expect(
-        () => service.downloadAndApplyUpdates(2, null, null, keyNames: ['characters/keqing.png']),
+        () => service.downloadAndApplyUpdates(2, null, null, keyNames: ['characters/keqing$imageFileExtension']),
         throwsA(isA<Exception>().having((error) => error.toString(), 'message', contains('The provided targetResourceVersion = 2 == 2'))),
       );
     });
@@ -399,7 +400,7 @@ void main() {
       when(settingsService.resourceVersion).thenReturn(2);
       final service = ResourceServiceImpl(MockLoggingService(), settingsService, MockNetworkService(), MockApiService());
       expect(
-        () => service.downloadAndApplyUpdates(1, null, null, keyNames: ['characters/keqing.png']),
+        () => service.downloadAndApplyUpdates(1, null, null, keyNames: ['characters/keqing$imageFileExtension']),
         throwsA(isA<Exception>().having((error) => error.toString(), 'message', contains('The provided targetResourceVersion = 1 < 2'))),
       );
     });
@@ -420,7 +421,7 @@ void main() {
         usesJsonFile: false,
       );
       final appliedA = await service.downloadAndApplyUpdates(1, 'all.zip', null);
-      final appliedB = await service.downloadAndApplyUpdates(1, 'all.zip', null, keyNames: ['characters/keqing.png']);
+      final appliedB = await service.downloadAndApplyUpdates(1, 'all.zip', null, keyNames: ['characters/keqing$imageFileExtension']);
 
       expect(appliedA, isFalse);
       expect(appliedB, isFalse);
@@ -442,7 +443,7 @@ void main() {
         usesJsonFile: true,
       );
       final appliedA = await service.downloadAndApplyUpdates(1, null, 'all.json');
-      final appliedB = await service.downloadAndApplyUpdates(1, null, 'all.json', keyNames: ['characters/keqing.png']);
+      final appliedB = await service.downloadAndApplyUpdates(1, null, 'all.json', keyNames: ['characters/keqing$imageFileExtension']);
 
       expect(appliedA, isFalse);
       expect(appliedB, isFalse);
@@ -463,7 +464,7 @@ void main() {
         usesZipFile: false,
         usesJsonFile: true,
       );
-      final applied = await service.downloadAndApplyUpdates(1, null, null, keyNames: ['characters/keqing.png']);
+      final applied = await service.downloadAndApplyUpdates(1, null, null, keyNames: ['characters/keqing$imageFileExtension']);
 
       expect(applied, isFalse);
     });
