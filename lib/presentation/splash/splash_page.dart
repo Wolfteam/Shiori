@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shiori/domain/app_constants.dart';
 import 'package:shiori/domain/assets.dart';
 
 class SplashPage extends StatelessWidget {
@@ -12,7 +13,7 @@ class SplashPage extends StatelessWidget {
             child: Container(
               margin: const EdgeInsets.all(10),
               child: Image.asset(
-                Assets.getCharacterFullPath('Paimon.png'),
+                Assets.getCharacterFullPath('Paimon$imageFileExtension'),
                 fit: BoxFit.scaleDown,
               ),
             ),

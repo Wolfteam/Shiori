@@ -30,7 +30,7 @@ class AscensionLevel extends StatelessWidget {
         iconSize: iconSize,
         icon: Opacity(
           opacity: isSelected ? 1 : 0.2,
-          child: Image.asset(Assets.getOtherMaterialPath('mark_wind_crystal.png'), width: 40, height: 40),
+          child: Image.asset(Assets.getOtherMaterialPath('mark_wind_crystal$imageFileExtension'), width: 40, height: 40),
         ),
         splashRadius: 20,
         onPressed: () {
