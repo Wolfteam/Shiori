@@ -11,7 +11,5 @@ abstract class DeviceInfoService {
 
   String? get userAgent;
 
-  String get versionWithBuildNumber;
-
   Future<void> init();
 }
