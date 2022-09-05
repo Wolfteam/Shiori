@@ -66,9 +66,9 @@ class ArtifactFileServiceImpl extends ArtifactFileService {
       return [fullImagePath];
     }
 
-    var imageWithoutExt = image.split('.png').first;
+    var imageWithoutExt = image.split(imageFileExtension).first;
     imageWithoutExt = imageWithoutExt.substring(0, imageWithoutExt.length - 1);
-    return artifactOrder.map((e) => _resourceService.getArtifactImagePath('$imageWithoutExt$e.png')).toList();
+    return artifactOrder.map((e) => _resourceService.getArtifactImagePath('$imageWithoutExt$e$imageFileExtension')).toList();
   }
 
   @override
@@ -83,7 +83,7 @@ class ArtifactFileServiceImpl extends ArtifactFileService {
 
     final imgs = getArtifactRelatedParts(fullImagePath, image, bonus);
     final order = getArtifactOrder(type);
-    return imgs.firstWhere((el) => el.endsWith('$order.png'));
+    return imgs.firstWhere((el) => el.endsWith('$order$imageFileExtension'));
   }
 
   @override
