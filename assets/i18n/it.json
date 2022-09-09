@@ -1232,7 +1232,7 @@
       "key": "collei",
       "name": "Collei",
       "title": "Sprout of Rebirth",
-      "description": "A trainee ranger active in Avidya Forest. Behind her enthusiastic words and actions hides a slightly introverted personality.",
+      "description": "Una ranger apprendista attiva nell’Avidya Forest. Dietro le sue parole e modi entusiasti si nasconde una personalità leggermente introversa.",
       "skills": [
         {
           "key": "s1",
@@ -1240,53 +1240,53 @@
           "description": "",
           "abilities": [
             {
-              "name": "Normal Attack",
-              "description": "Perform up to 4 consecutive shots with a bow.\n",
+              "name": "Attacco Normale",
+              "description": "Scocca fino a 4 colpi con il suo arco.\n",
               "descriptions": []
             },
             {
-              "name": "Charged Attack",
-              "description": "Perform a more precise Aimed Shot with increased DMG.\nWhile aiming, Dendro energy will accumulate on the arrowhead. A fully charged arrow will deal Dendro DMG.\n",
+              "name": "Attacco Caricato",
+              "description": "Esegue un Colpo Mirato con danni aumentati.\nMentre si mira, energia Dendro avvolge la punta della freccia. Una freccia caricata al massimo infligge Dendro DMG.\n",
               "descriptions": []
             },
             {
-              "name": "Plunging Attack",
-              "description": "Fires off a shower of arrows in mid-air before falling and striking the ground, dealing AoE DMG upon impact.",
+              "name": "Attacco in Picchiata",
+              "description": "A mezz'aria scatena una pioggia di frecce che infliggono AoE DMG all'impatto con il terreno.",
               "descriptions": []
             }
           ],
           "stats": [
-            "1-Hit DMG|{param1}%",
-            "2-Hit DMG|{param2}%",
-            "3-Hit DMG|{param3}%",
-            "4-Hit DMG|{param4}%",
-            "Aimed Shot|{param5}%",
-            "Fully-Charged Aimed Shot|{param6}%",
-            "Plunge DMG|{param7}%",
-            "Low/High Plunge DMG|{param8}% / {param9}%"
+            "DMG 1° Freccia|{param1}%",
+            "DMG 2° Freccia|{param2}%",
+            "DMG 3° Colpo|{param3}%",
+            "DMG 4° Colpo|{param4}%",
+            "Colpo Mirato|{param5}%",
+            "Colpo Mirato caricato al massimo|{param6}%",
+            "DMG Attacco in Picchiata|{param7}%",
+            "DMG Att. in Picchiata per altezze Basse/Elevate|{param8}% / {param9}%"
           ]
         },
         {
           "key": "s2",
           "title": "Floral Brush",
-          "description": "Throws out a Floral Ring that deals 1 instance of Dendro DMG to targets it comes into contact with.\nThe Floral Ring will return after a set time, dealing Dendro DMG once again.\n\n",
+          "description": "Lancia un Floral Ring che infligge una sola istanza di Dendro DMG ai nemici che incontra.\nDopo un po’ di tempo, il Floral Ring ritornerà indietro infliggendo un ulteriore Dendro DMG.\n\n",
           "abilities": [],
           "stats": [
             "Skill DMG|{param1}%",
-            "CD|{param2}s"
+            "CD (Tempo Ricarica)|{param2}s"
           ]
         },
         {
           "key": "s3",
           "title": "Trump-Card Kitty",
-          "description": "Trusty Cuilein-Anbar comes to save the day!\nThrows the doll named Cuilein-Anbar, causing an explosion that deals AoE Dendro DMG, creating a Cuilein-Anbar Zone. Cuilein-Anbar will bounce around within this zone, dealing AoE Dendro DMG.\n\n",
+          "description": "L’affidabile Cuilein-Anbar accorre in aiuto per salvare la giornata!\nLancia una bambola chiamata Cuilein-Anbar che esplode infliggendo AoE Dendro DMG e crea una Cuilein-Anbar Zone. Cuilein-Anbar rimbalzerà in questa zona infliggendo AoE Dendro DMG.\n\n",
           "abilities": [],
           "stats": [
-            "Explosion DMG|{param1}%",
-            "Leap DMG|{param2}%",
-            "Duration|{param3}s",
-            "CD|{param4}s",
-            "Energy Cost|{param5}"
+            "DMG Esplosione|{param1}%",
+            "DMG balzo|{param2}%",
+            "Durata|{param3}s",
+            "CD (Tempo Ricarica)|{param4}s",
+            "Costo Energy|{param5}"
           ]
         }
       ],
@@ -1294,19 +1294,19 @@
         {
           "key": "p1",
           "title": "Gliding Champion of Sumeru",
-          "description": "Decreases gliding Stamina consumption for your own party members by 20%.\nNot stackable with Passive Talents that provide the exact same effects.\n",
+          "description": "Riduce del 20% il consumo di Stamina di tutti i tuoi personaggi mentre si vola.\r\nL’effetto non è sommabile alle altre Skill Passive che forniscono lo stesso effetto.\n",
           "descriptions": []
         },
         {
           "key": "p2",
           "title": "Floral Sidewinder",
-          "description": "If one of your party members has triggered Burning, Quicken, Aggravate, Spread, Bloom, Hyperbloom, or Burgeon reactions before the Floral Ring returns, it will grant the character the Sprout effect upon return, which will continuously deal Dendro DMG equivalent to 40% of Collei’s ATK to nearby opponents for 3s.\nIf another Sprout effect is triggered during its initial duration, the initial effect will be removed. DMG dealt by Sprout is considered Elemental Skill DMG.\n",
+          "description": "Se uno dei membri del tuo party provoca reazioni Burning, Quicken, Aggravate, Spread, Bloom, Hyperbloom o Burgeon prima del rientro del Floral Ring, una volta ritornato indietro, il personaggio otterrà per 3s l’effetto Sprout che gli permette di infliggere ai nemici vicini continui Dendro DMG pari al 40% dell’ATK di Collei.\nSe si ottiene un altro effetto Sprout mentre è ancora attivo quello precedente, questo effetto verrà sostituito. Il danno provocato da Sprout è considerato Elemental Skill DMG.\n",
           "descriptions": []
         },
         {
           "key": "p3",
           "title": "The Languid Wood",
-          "description": "When a character within the Cuilein-Anbar Zone triggers Burning, Quicken, Aggravate, Spread, Bloom, Hyperbloom, or Burgeon reactions, the Zone’s duration will be increased by 1s.\nA single Trump-Card Kitty can be extended by up to 3s.\n",
+          "description": "Quando un personaggio all’interno della Cuilein-Anbar Zone provoca reazioni Burning, Quicken, Aggravate, Spread, Bloom, Hyperbloom o Burgeon, la durata della zona aumenta di 1s.\nUn singolo Trump-Card Kitty può essere esteso fino a 3s.\n",
           "descriptions": []
         }
       ],
@@ -1314,42 +1314,42 @@
         {
           "key": "c1",
           "title": "Deepwood Patrol",
-          "description": "When in the party and not on the field, Collei’s Energy Recharge is increased by 20%.\n",
+          "description": "Quando è presente nel party ma non è in uso, Collei ottiene Energy Recharge +20%.\n",
           "descriptions": []
         },
         {
           "key": "c2",
           "title": "Through Hill and Copse",
-          "description": "The Passive Talent Floral Sidewinder is changed to this:\n",
+          "description": "Il Talento Passivo Floral Sidewinder cambia come segue:\n",
           "descriptions": [
-            "The Floral Ring will grant the character the Sprout effect from Floral Sidewinder upon return, dealing 40% of Collei’s ATK as Dendro DMG to nearby opponents for 3s.",
-            "From the moment of using Floral Brush to the moment when this instance of Sprout effect ends, if any of your party members triggers Burning, Quicken, Aggravate, Spread, Bloom, Hyperbloom, or Burgeon reactions, the Sprout effect will be extended by 3s.",
-            "The Sprout effect can only be extended this way once. If another Sprout effect is triggered during its initial duration, the initial effect will be removed. DMG dealt by Sprout is considered Elemental Skill DMG.",
-            "Requires you to have unlocked the Floral Sidewinder Passive Talent."
+            "Al rientro Floral Ring garantirà al personaggio l’effetto Sprout di Floral Sidewinder, e potrà infliggere Dendro DMG pari al 40% dell’ ATK di Collei per 3s.",
+            "Da quando inizia Floral Brush a quando questo effetto Sprout termina, se uno qualsiasi dei membri del party provoca reazioni Burning, Quicken, Aggravate, Spread, Bloom, Hyperbloom o Burgeon, la durata dell’effetto Sprout si estende di 3s.",
+            "Con questo metodo la durata dell’effetto Sprout può essere estesa solo una volta. Se si provoca un ulteriore effetto Sprout, l’effetto precedente sarà rimosso. Il danno provocato da Sprout è considerato Elemental Skill DMG.",
+            "Per questa costellazione è necessario aver già sbloccato il Talento Passivo Floral Sidewinder."
           ]
         },
         {
           "key": "c3",
           "title": "Scent of Summer",
-          "description": "Increases the Level of Floral Brush by 3.\nMaximum upgrade level is 15.\n",
+          "description": "Aumenta di 3 il livello di Floral Brush.\nOra il massimo livello di upgrade è 15.\n",
           "descriptions": []
         },
         {
           "key": "c4",
           "title": "Gift of the Woods",
-          "description": "Using Trump-Card Kitty will increase all nearby characters’ Elemental Mastery by 60 for 12s (not including Collei herself).\n",
+          "description": "Usare Trump-Card Kitty aumenterà di 60 l’Elemental Mastery di tutti i personaggi vicini (Collei esclusa) per 3s.\n",
           "descriptions": []
         },
         {
           "key": "c5",
           "title": "All Embers",
-          "description": "Increases the Level of Trump-Card Kitty by 3.\nMaximum upgrade level is 15.\n",
+          "description": "Aumenta di 3 il livello di Trump-Card Kitty.\nOra il massimo livello di upgrade è 15.\n",
           "descriptions": []
         },
         {
           "key": "c6",
           "title": "Forest of Falling Arrows",
-          "description": "When the Floral Ring hits, it will create a miniature Cuilein-Anbar that will deal 200% of Collei’s ATK as Dendro DMG.\nEach Floral Brush can only create one such miniature Cuilein-Anbar.\n",
+          "description": "Quando Floral Ring colpisce un bersaglio, apparirà una Cuilein-Anbar in miniatura che infligge un Dendro DMG pari al 200% dell’ATK di Collei.\nCiascun Floral Brush può creare una sola Cuilein-Anbar in miniatura per volta.\n",
           "descriptions": []
         }
       ]
@@ -2157,7 +2157,7 @@
             },
             {
               "name": "Attacco Caricato",
-              "description": "Esegue un Colpo Mirato più preciso con danni aumentati.\r\nMentre si mira, un'aura ghiacciata avvolge la punta della freccia. Ha diversi effetti in base alla durata di carica del colpo:\r\n",
+              "description": "Esegue un Colpo Mirato più preciso con danni aumentati.\r\nMentre si mira, un'aura ghiacciata avvolge la punta della freccia. Ha diversi effetti in base alla durata di caricamento del colpo:\r\n",
               "descriptions": [
                 "Livello di Carica 1: Scocca una freccia ghiacciata che infligge Cryo DMG.",
                 "Livello di Carica 2: Scocca una Frostflake Arrow che infligge Cryo DMG. Dopo aver colpito un bersaglio, la Frostflake Arrow si frammenta infliggendo AoE Cryo DMG."
@@ -6147,7 +6147,7 @@
       "key": "tighnari",
       "name": "Tighnari",
       "title": "Verdant Strider",
-      "description": "A young researcher well-versed in botany who currently serves as a Forest Watcher in Avidya Forest. He is a straight shooter with a warm heart — and a dab hand at guiding even the dullest of pupils.",
+      "description": "Un giovane ricercatore esperto in botanica che al momento presta servizio come Forest Watcher dell’Avidya Forest. È un abile tiratore dal cuore caldo e mano delicata anche nella guida degli allievi più ottusi.",
       "skills": [
         {
           "key": "s1",
@@ -6155,58 +6155,58 @@
           "description": "",
           "abilities": [
             {
-              "name": "Normal Attack",
-              "description": "Perform up to 4 consecutive shots with a bow.\n",
+              "name": "Attacco Normale",
+              "description": "Scocca fino a 6 frecce consecutive con l'arco.\n",
               "descriptions": []
             },
             {
-              "name": "Charged Attack",
-              "description": "Perform a more precise Aimed Shot with increased DMG.\nWhile aiming, the power of Dendro will accumulate on the arrowhead before the arrow is fired. Has different effects based on how long the energy has been charged:\n",
+              "name": "Attacco Caricato",
+              "description": "Esegue un Colpo Mirato più preciso con danni aumentati.\nMentre si mira, potere Dendro avvolge la punta della freccia. Ha diversi effetti in base alla durata di caricamento del colpo:\n",
               "descriptions": [
-                "Charge Level 1: Fires off an arrow carrying the power of flora that deals Dendro DMG.",
-                "Charge Level 2: Fires off a Wreath Arrow that deals Dendro DMG. Upon hit, the Wreath Arrow will create 4 Clusterbloom Arrows that will track nearby opponents automatically and deal Dendro DMG."
+                "Livello di Carica 1: Scocca una freccia avvolta dal potere della flora e infligge Dendro DMG.",
+                "Livello di Carica 2: Scocca una freccia Wreath Arrow che infligge Dendro DMG. All’impatto con il bersaglio, Wreath Arrow  crea 4 Clusterbloom Arrows che inseguono i nemici vicini e infliggono Dendro DMG."
               ]
             },
             {
-              "name": "Plunging Attack",
-              "description": "Fires off a shower of arrows in mid-air before falling and striking the ground, dealing AoE DMG upon impact.",
+              "name": "Attacco in Picchiata",
+              "description": "A mezz'aria scatena una pioggia di frecce che infliggono AoE DMG all'impatto con il terreno.",
               "descriptions": []
             }
           ],
           "stats": [
-            "1-Hit DMG|{param1}%",
-            "2-Hit DMG|{param2}%",
-            "3-Hit DMG|{param3}%×{param4}",
-            "4-Hit DMG|{param5}%",
-            "Aimed Shot|{param6}%",
-            "Level 1 Aimed Shot|{param7}%",
+            "DMG 1° Colpo|{param1}%",
+            "DMG 2° Colpo|{param2}%",
+            "DMG 3° Colpo|{param3}%×{param4}",
+            "DMG 4° Colpo|{param5}%",
+            "Colpo Mirato|{param6}%",
+            "Colpo Mirato, Livello di Carica 1|{param7}%",
             "Wreath Arrow DMG|{param8}%",
             "Clusterbloom Arrow DMG|{param9}%",
-            "Plunge DMG|{param10}%",
-            "Low/High Plunge DMG|{param11}% / {param12}%"
+            "DMG Attacco in Picchiata|{param10}%",
+            "DMG Att. in Picchiata per altezze Basse/Elevate|{param11}% / {param12}%"
           ]
         },
         {
           "key": "s2",
           "title": "Vijnana-Phala Mine",
-          "description": "Tighnari throws a Vijnana Stormheart ahead that deals AoE Dendro DMG, creating a Vijnana-Khanda Field that creates mysterious illusions that taunt opponents and draw their fire.\nAdditionally, Tighnari gains the Vijnana Suffusion effect, which will decrease the Wreath Arrow’s charging time by 2.4s. This effect will dissipate once the skill duration ends or after Tighnari has fired 3 Wreath Arrows.\n\n",
+          "description": "Tighnari lancia avanti una Vijnana Stormheart che infligge AoE Dendro DMG e crea un Vijnana-Khanda Field. Questo campo fa comparire misteriose illusioni che attraggono l’attenzione e gli attacchi dei nemici.\nInoltre, Tighnari ottiene l’effetto Vijnana Suffusion, che riduce di 2.4s il tempo di caricamento di una freccia Wreath Arrow. Questo effetto svanisce quando la durata della Skill termina o dopo aver scoccato 3 Wreath Arrows.\n\n",
           "abilities": [],
           "stats": [
             "Skill DMG|{param1}%",
-            "Vijnana-Khanda Field Duration|{param2}s",
-            "Vijnana Suffusion Duration|{param3}s",
-            "CD|{param4}s"
+            "Durata Vijnana-Khanda Field|{param2}s",
+            "Durata Vijnana Suffusion|{param3}s",
+            "CD (Tempo Ricarica)|{param4}s"
           ]
         },
         {
           "key": "s3",
           "title": "Fashioner’s Tanglevine Shaft",
-          "description": "Combines the power of all seeds to fire 6 Tanglevine Shafts that can track opponents and deal Dendro DMG.\nAfter they hit, the Tanglevine Shafts will create a secondary wave of Tanglevine Shafts that can also track opponents and deal Dendro DMG on hit.\n\n",
+          "description": "Combina il potere di tutti i semi per scoccare  6 Tanglevine Shafts che inseguono i nemici e infliggono Dendro DMG.\nAll’impatto con i nemici, i Tanglevine Shafts creano una seconda ondata di Tanglevine Shafts che a loro volta inseguono e infliggono Dendro DMG.\n\n",
           "abilities": [],
           "stats": [
             "Tanglevine Shaft DMG|{param1}%",
-            "Secondary Tanglevine Shaft DMG|{param2}%",
-            "CD|{param3}s",
+            "Tanglevine Shaft DMG (seconda ondata)|{param2}%",
+            "CD (Tempo Ricarica)|{param3}s",
             "Energy Cost|{param4}"
           ]
         }
@@ -6215,19 +6215,19 @@
         {
           "key": "p1",
           "title": "Encyclopedic Knowledge",
-          "description": "Displays the location of nearby resources unique to Sumeru on the mini-map.\n",
+          "description": "Mostra nella minimappa la posizione delle vicinie local specialties di Sumeru.\n",
           "descriptions": []
         },
         {
           "key": "p2",
           "title": "Keen Sight",
-          "description": "After Tighnari fires a Wreath Arrow, his Elemental Mastery is increased by 50 for 4s.\n",
+          "description": "Dopo aver scoccato una Wreath Arrow, Tighnari riceve Elemental Mastery +50 per 4s.\n",
           "descriptions": []
         },
         {
           "key": "p3",
           "title": "Scholarly Blade",
-          "description": "For every point of Elemental Mastery Tighnari possesses, his Charged Attack and Fashioner’s Tanglevine Shaft DMG are increased by 0.06%.\nThe maximum DMG Bonus obtainable this way is 60%.\n",
+          "description": "Per ogni punto di Elemental Mastery che Tighnari possiede, il danno del suo Attacco Caricato e del Fashioner’s Tanglevine Shaft aumenta del 0.06%.\nIl massimo DMG Bonus possibile è del 60%.\n",
           "descriptions": []
         }
       ],
@@ -6235,37 +6235,37 @@
         {
           "key": "c1",
           "title": "Beginnings Determined at the Roots",
-          "description": "Tighnari’s Charged Attack CRIT Rate is increased by 15%.\n",
+          "description": "Aumenta del 15% il CRIT Rate degli Attacchi Caricati di Tighnari.\n",
           "descriptions": []
         },
         {
           "key": "c2",
           "title": "Origins Known From the Stem",
-          "description": "When there are opponents within the Vijnana-Khanda Field created by Vijnana-Phala Mine, Tighnari gains 20% Dendro DMG Bonus.\nThe effect will last up to 6s if the field’s duration ends or if it no longer has opponents within it.\n",
+          "description": "Quando ci sono nemici all’interno del campo Vijnana-Khanda Field creato da Vijnana-Phala Mine, Tighnari ottiene Dendro DMG Bonus +20%.\nL’effetto dura per altri 6s dopo la scomparsa del campo oppure quando non ci sono più nemici al suo interno.\n",
           "descriptions": []
         },
         {
           "key": "c3",
           "title": "Fortunes Read Amongst the Branches",
-          "description": "Increases the Level of Fashioner’s Tanglevine Shaft by 3.\nMaximum upgrade level is 15.\n",
+          "description": "Aumenta di 3 il livello di Fashioner’s Tanglevine Shaft.\nOra il massimo livello di upgrade è 15.\n",
           "descriptions": []
         },
         {
           "key": "c4",
           "title": "Withering Glimpsed in the Leaves",
-          "description": "When Fashioner’s Tanglevine Shaft is unleashed, all nearby party members gain 60 Elemental Mastery for 8s. If the Fashioner’s Tanglevine Shaft triggers a Burning, Bloom, Quicken, or Spread reaction, their Elemental Mastery will be further increased by 60. This latter case will also refresh the buff state’s duration.\n",
+          "description": "Quando si attiva Fashioner’s Tanglevine Shaft, tutti i membri vicini del party ricevono Elemental Mastery +60 per 8s. Se Fashioner’s Tanglevine Shaft provoca una reazione Burning, Bloom, Quicken o Spread, i membri otterranno un ulteriore Elemental Mastery +60. Quest’ultimo aumento resetta la durata del potenziamento.\n",
           "descriptions": []
         },
         {
           "key": "c5",
           "title": "Comprehension Amidst the Flowers",
-          "description": "Increases the Level of Vijnana-Phala Mine by 3.\nMaximum upgrade level is 15.\n",
+          "description": "Aumenta di 3 il livello di Vijnana-Phala Mine.\nOra il massimo livello di upgrade è 15.\n",
           "descriptions": []
         },
         {
           "key": "c6",
           "title": "Karma Adjudged From the Leaden Fruit",
-          "description": "Wreath Arrow‘s charging time is decreased by 0.9s, and will produce 1 additional Clusterbloom Arrow upon hit. This arrow deals 150% of Tighnari’s ATK as DMG.\n",
+          "description": "Riduce di 0.9s il tempo di caricamento di una Wreath Arrow, e all’impatto con il bersaglio aggiunge una Clusterbloom Arrow aggiuntiva. Questa freccia aggiuntaiva infligge un danno pari al 150% dell’ATK di Tighnari.\n",
           "descriptions": []
         }
       ]
@@ -6411,7 +6411,7 @@
       "key": "traveler-dendro",
       "name": "Traveler (Dendro)",
       "title": null,
-      "description": "A traveler from another world who had their only kin taken away, forcing them to embark on a journey to find The Seven.",
+      "description": "Un Traveler da un altro mondo il cui unico familiare gli è stato portato via, forzando entrambi a imbarcarsi in un viaggio per trovare \"I Sette\".",
       "skills": [
         {
           "key": "s1",
@@ -6419,66 +6419,66 @@
           "description": "",
           "abilities": [
             {
-              "name": "Normal Attack",
-              "description": "Perform up to 5 rapid strikes.\n",
+              "name": "Attacco Normale",
+              "description": "Esegue 5 attacchi rapidi.\n",
               "descriptions": []
             },
             {
-              "name": "Charged Attack",
-              "description": "Consumes a certain amount of Stamina to unleash 2 rapid sword strikes.\n",
+              "name": "Attacco Caricato",
+              "description": "Consuma una certa quantità di Stamina per scatenare 2 fendenti rapidi.\n",
               "descriptions": []
             },
             {
-              "name": "Plunging Attack",
-              "description": "Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
+              "name": "Attacco in Picchiata",
+              "description": "Si lancia in picchiata da mezz'aria per colpire il terreno sottostante e infliggere AoE DMG all'impatto.",
               "descriptions": []
             }
           ],
           "stats": [
-            "1-Hit DMG|{param1}%",
-            "2-Hit DMG|{param2}%",
-            "3-Hit DMG|{param3}%",
-            "4-Hit DMG|{param4}%",
-            "5-Hit DMG|{param5}%",
-            "Charged Attack DMG|{param6}% + {param7}%",
-            "Charged Attack Stamina Cost|{param8}",
-            "Plunge DMG|{param9}%",
-            "Low/High Plunge DMG|{param10}% / {param11}%"
+            "DMG 1° Colpo|{param1}%",
+            "DMG 2° Colpo|{param2}%",
+            "DMG 3° Colpo|{param3}%",
+            "DMG 4° Colpo|{param4}%",
+            "DMG 5° Colpo|{param5}%",
+            "DMG Attacco Caricato|{param6}% + {param7}%",
+            "Costo in Stamina Attacco Caricato|{param8}",
+            "DMG Attacco in Picchiata|{param9}%",
+            "DMG Att. in Picchiata per altezze Basse/Elevate|{param10}% / {param11}%"
           ]
         },
         {
           "key": "s2",
           "title": "Razorgrass Blade",
-          "description": "With a flourish of your blade, you unleash a spray of razor-sharp leaves that go before you and deal Dendro DMG.\n\n",
+          "description": "Con un rapido movimento della tua lama, sprigioni davanti a te un getto di foglie affilate come rasoi che infliggono Dendro DMG.\n\n",
           "abilities": [],
           "stats": [
             "Skill DMG|{param1}%",
-            "CD|{param2}s"
+            "CD (Tempo Ricarica)|{param2}s"
           ]
         },
         {
           "key": "s3",
           "title": "Surgent Manifestation",
-          "description": "Calling upon the might of the flora all around you, you create a Lea Lotus Lamp. This Lamp will deal continuous Dendro DMG to opponents within its AoE.\n\n",
+          "description": "Richiamando la forza della flora che ti circonda, crei un Lea Lotus Lamp. Questa Lampada infligge continui Dendro DMG ai nemici all’interno del suo AoE.\n\n",
           "abilities": [
             {
               "name": "Lotuslight Transfiguration",
-              "description": "The Lea Lotus Lamp will undergo the following changes after it comes into contact with Hydro/Electro/Pyro:\n",
+              "description": "Lea Lotus Lamp si sottoporrà ai seguenti cambiamenti quando entra in contatto con Hydro/Electro/Pyro:\n",
               "descriptions": [
-                "Hydro: the Lamp’s AoE and the AoE of its attacks are increased.",
-                "Electro: the Lamp’s ATK SPD is increased.",
-                "Pyro: the Lamp will explode after a short delay and then disappear, dealing AoE Dendro DMG.",
-                "The Lea Lotus Lamp can only undergo one Lotuslight Transfiguration in its duration.",
-                "Only one Lamp created by the Traveler can exist at any one time."
+                "Hydro: aumenta l’AoE della Lampada e l’AoE dei suoi attacchi.",
+                "Electro: aumenta l’ATK SPD della Lampada.",
+                "Pyro: prima di sparire e dopo un breve periodo di attesa, la Lampada esploderà infliggendo AoE Dendro DMG.",
+                "La Lea Lotus Lamp può sottoporsi a una sola Lotuslight Transfiguration per durata.",
+                "Solo una Lampada creata dal Traveler può esistere per volta."
               ]
             }
           ],
           "stats": [
             "Lea Lotus Lamp Attack DMG|{param1}%",
-            "Explosion DMG|{param2}%",
-            "Lea Lotus Lamp Duration|{param3}s",
-            "CD|{param4}s",
-            "Energy Cost|{param5}"
+            "DMG esplosione|{param2}%",
+            "Durata Lea Lotus Lamp|{param3}s",
+            "CD (Tempo Ricarica)|{param4}s",
+            "Costo Energy|{param5}"
           ]
         }
       ],
@@ -6486,13 +6486,13 @@
         {
           "key": "p1",
           "title": "Verdant Overgrowth",
-          "description": "Lea Lotus Lamp will obtain one level of Overflowing Lotuslight every second it is on the field, increasing the Elemental Mastery of active character(s) within its AoE by 6. Overflowing Lotuslight has a maximum of 10 stacks.\n",
+          "description": "Lea Lotus Lamp otterrà un livello di Overflowing Lotuslight per ogni secondo in cui si è presente sul campo, conferendo Elemental Mastery +6 ai personaggi attivi nel suo AoE. Overflowing Lotuslight ha un massimo di 10 stacks.\n",
           "descriptions": []
         },
         {
           "key": "p2",
           "title": "Verdant Luxury",
-          "description": "Every point of Elemental Mastery the Traveler possesses increases the DMG dealt by Razorgrass Blade by 0.15% and the DMG dealt by Surgent Manifestation by 0.1%.\n",
+          "description": "Ogni punto di Elemental Mastery che il Traveler possiede aumenta del 0.15% il danno inflitto da Razorgrass Blade e aumenta del 0.1% il danno inflitto da Surgent Manifestation.\n",
           "descriptions": []
         }
       ],
@@ -6500,37 +6500,37 @@
         {
           "key": "c1",
           "title": "Symbiotic Creeper",
-          "description": "After Razorgrass Blade hits an opponent, it will regenerate 3.5 Energy for the Traveler.\n",
+          "description": "Quando Razorgrass Blade colpisce un nemico, il Traveler riceverà 3.5 Energy.\n",
           "descriptions": []
         },
         {
           "key": "c2",
           "title": "Green Resilience",
-          "description": "Lea Lotus Lamp‘s duration is increased by 3s.\n",
+          "description": "Aumenta di 3s la durata di Lea Lotus Lamp.\n",
           "descriptions": []
         },
         {
           "key": "c3",
           "title": "Whirling Weeds",
-          "description": "Increases the Level of Razorgrass Blade by 3.\nMaximum upgrade level is 15.\n",
+          "description": "Aumenta di 3 il livello di Razorgrass Blade.\nOra il livello massimo di upgrade è 15.\n",
           "descriptions": []
         },
         {
           "key": "c4",
           "title": "Treacle Grass",
-          "description": "After the Lea Lotus Lamp triggers a Lotuslight Transfiguration, it will obtain 5 stacks of the Overflowing Lotuslight effect from the Passive Talent “Verdant Overgrowth.”\nYou must have unlocked this Passive Talent first.\n",
+          "description": "Dopo aver attivato un Lotuslight Transfiguration, Lea Lotus Lamp otterrà 5 stacks di Overflowing Lotuslight dal Talento Passivo “Verdant Overgrowth.”\nPer questa costellazione devi aver già sbloccato quel Talento Passivo.\n",
           "descriptions": []
         },
         {
           "key": "c5",
           "title": "Viridian Transience",
-          "description": "Increases the Level of Surgent Manifestation by 3.\nMaximum upgrade level is 15.\n",
+          "description": "Aumenta di 3 il livello di4 Surgent Manifestation.\nOra il massimo livello di upgrade è 15.\n",
           "descriptions": []
         },
         {
           "key": "c6",
           "title": "Withering Aggregation",
-          "description": "The Dendro DMG Bonus of the character under the effect of Overflowing Lotuslight as created by the Lea Lotus Lamp is increased by 12%. If the Lamp has experienced a Lotuslight Transfiguration previously, the character will also gain 12% DMG Bonus for the corresponding element.\n",
+          "description": "Aumenta del 12% il Dendro DMG Bonus del personaggio sottoposto a Overflowing Lotuslight creato da Lea Lotus Lamp. Se la Lampada è già stata sottoposta a una precedente Lotuslight Transfiguration, allora il personaggio otterrà un’ulteriore DMG Bonus +12% per l’elemento corrispondente.\n",
           "descriptions": []
         }
       ]
@@ -10502,12 +10502,12 @@
     {
       "key": "chaos-axis",
       "name": "Chaos Axis",
-      "description": "Proviene da un'antica macchina Ruin ormai inattiva.\r\nAnche le grandi tecniche e la potenza sconosciuta di questo dispositivo non varrebbero nulla se la macchina che le conteneva dovesse mai fallire di mantenere l'integrità strutturale."
+      "description": "Deriva da un'antica macchina Ruin ormai inattiva.\r\nAnche le grandi tecniche e la potenza sconosciuta di questo dispositivo non varrebbero nulla se la macchina che le conteneva dovesse mai fallire di mantenere l'integrità strutturale."
     },
     {
       "key": "chaos-bolt",
       "name": "Chaos Bolt",
-      "description": "Comes from a now-inactive ancient Ruin Drake.\nAmong the lost ancient kingdoms, there was a group of people who were obsessed with the idea of mimesis. Be it the Hypostases’ pure ordered elements or the ancient primitive power of the dragons, these people believed that they might all be replicated and modified to the point where they had surpassed their natural counterparts.\nBy this means, a superior and unsullied bodily form could replace the continuously decaying and shattering order."
+      "description": "Deriva da un antico Ruin Drake ormai inattivo.\nTra gli antichi regni perduti, c’era un gruppo di persone che era ossessionata dall’idea di mimesi. Che si tratti dei puri elementi ordinati degli Hypostases’ oppure dell’antico potere primitivo dei draghi, queste persone credevano che prima o poi sarebbero stati tutti replicati e modificati al tal punto da superare le loro originali controparti organiche.\nIn questo modo una forma corporea superiore e incontaminata avrebbe potuto sostituire l’ordine delle cose in continuo decadimento e frammentazione."
     },
     {
       "key": "chaos-circuit",
@@ -10532,17 +10532,17 @@
     {
       "key": "chaos-module",
       "name": "Chaos Module",
-      "description": "Comes from a now-inactive ancient Ruin Drake.\nThe dragons were once the most primitive and ancient bodily form of the supreme elements until they were defeated, conquered, or assimilated."
+      "description": "Deriva da un antico Ruin Drake ormai inattivo.\nI draghi erano una volta la forma corporea più primitiva e antica degli elementi supremi fino a quando non furono sconfitti, conquistati o assimilati."
     },
     {
       "key": "chaos-oculus",
       "name": "Chaos Oculus",
-      "description": "Proviene da un'antica macchina Ruin ormai inattiva.\r\nLa parte \"Ruin\" del nome deriva dalle aree dove sono più attive. Tuttavia, queste macchine Ruin hanno poco a che fare con i detriti e le rovine nei quali sono spesso ritrovati.\r\nIn tempi antichi, queste rovine facevano parte di una civiltà talmente gloriosa da poter quasi toccare la cupola del firmamento; nel frattempo, il \"Ruin\" ancora aspetta nelle profondità della terra, in attesa di risorgere e soggiogare tutti i regni sotto i suoi piedi."
+      "description": "Proviene da un'antica macchina Ruin ormai inattiva.\r\nLa parte \"Ruin\" del nome deriva dalle aree dove sono più attive. Tuttavia, queste macchine Ruin hanno poco a che fare con i detriti e le rovine nei quali sono spesso ritrovati.\r\nIn tempi antichi, queste rovine facevano parte di una civiltà talmente gloriosa da poter quasi toccare la cupola del firmamento; nel frattempo, il \"Ruin\" ancora aspetta nelle profondità della terra, in attesa di risorgere e soggiogare sotto i suoi piedi tutti i regni."
     },
     {
       "key": "chaos-storage",
       "name": "Chaos Storage",
-      "description": "Comes from a now-inactive ancient Ruin Drake.\nRuin Drakes can absorb Elemental Energy from the outside and store it in this component inside their “neck.”"
+      "description": "Deriva da un antico Ruin Drake ormai inattivo.\nI Ruin Drakes possono assorbire Energia Elementale dall’esterno e immagazzinarla nel loro “collo.”"
     },
     {
       "key": "cheese",
@@ -10557,7 +10557,7 @@
     {
       "key": "chunk-of-aerosiderite",
       "name": "Chunk of Aerosiderite",
-      "description": "Materiale per l'Ascensione di armi.\r\nQuando Khaenri'ah fu distrutta, un grande peccatore creò innumerevoli mostri nelle cui vene scorreva sangue oscuro e alieno. Imperversarono ovunque, distruggendo ogni cosa sul loro cammino. Erano forme di vita mutate e le loro mutazioni provenivano da poteri al di fuori di questo mondo. Il dragone oscuro Durin che attaccò Mondstadt era una di questi esseri mutati."
+      "description": "Materiale per l'Ascensione di armi.\r\nQuando Khaenri'ah fu distrutta, un grande peccatore creò innumerevoli mostri nelle cui vene scorreva sangue oscuro e alieno. Imperversarono ovunque, distruggendo ogni cosa sul loro cammino. Erano forme di vita mutate e le loro mutazioni provenivano da poteri al di fuori di questo mondo. Il dragone oscuro Durin che attaccò Mondstadt era uno di questi esseri mutati."
     },
     {
       "key": "cleansing-heart",
@@ -10582,7 +10582,7 @@
     {
       "key": "copper-talisman-of-the-forest-dew",
       "name": "Copper Talisman of the Forest Dew",
-      "description": "Weapon Ascension Material.\nUnder the instructions of the First Sage, the ancestors of the forest people made these talismans using withered trees to commemorate the Lord of Verdure.\nThe talisman’s shape was inspired by the forest dew. It symbolizes the permeation of wisdom into mortal minds."
+      "description": "Materiale per l'Ascensione di armi.\nSotto le istruzioni del Primo Saggio (First Sage), gli antenati del popolo della foresta realizzarono questi talismani usando alberi appassiti per commemorare il Signore della Vegetazione (Lord of Verdure).\nLa forma del talismano è ispirata alla rugiada della foresta. Simboleggia la permeazione della saggezza nelle menti mortali."
     },
     {
       "key": "cor-lapis",
@@ -10642,7 +10642,7 @@
     {
       "key": "crystalline-cyst-dust",
       "name": "Crystalline Cyst Dust",
-      "description": "A huge lump of spore powder collected from a structurally complete spore cyst. Put it in an appropriate environment, and the area might be filled with a thriving aggregation of Floating Fungi later…"
+      "description": "Un enorme grumo di polvere di spore raccolto da una cisti di spore strutturalmente completa. Mettilo in un ambiente appropriato e potrebbe in seguito riempire l’area con un florido gruppo di Floating Fungi…"
     },
     {
       "key": "damaged-mask",
@@ -10707,7 +10707,7 @@
     {
       "key": "dormant-fungal-nucleus",
       "name": "Dormant Fungal Nucleus",
-      "description": "Body tissue left behind by a Fungus that has been exposed to intense elemental stimulation.\nThere was once a protracted debate among Amurta researchers on whether the Fungi should be categorized as plants or animals. In the end, they reached an agreement and closed the case for good — the Fungi shall be its own category, neither plant nor animal."
+      "description": "Tessuto corporeo lasciato da un Fungus esposto a intensa stimolazione elementale.\nTempo fa c’è stato un lungo dibattito tra i ricercatori di Amurta per classificare i Fungi come piante o animali. Alla fine raggiunsero un accordo chiudendo la questione una volta per tutte — i Fungi devono essere una categoria a sé stante, né vegetale né animale."
     },
     {
       "key": "dragon-lords-crown",
@@ -10722,7 +10722,7 @@
     {
       "key": "dream-of-scorching-might",
       "name": "Dream of Scorching Might",
-      "description": "Weapon Ascension Material.\nSilver moonlight and clear springs once completed the scenery of the oases. But as the Lord of Flowers faded in the darkening sandstorm, so was the worriless golden paradise submerged by death.\nIn the poetry of the Eremite Tribe, the moon cast its silver light on the crimson mantle, causing Al-Ahmar, the Mourning King, to be driven to madness.\nIn a melancholic desert ballad, driven by the haunting nostalgia, the lonely king created an ever-youthful dreamland in the center of the desert, where undisturbed water sprang up and perpetual dusk remained."
+      "description": "Materiale per l'Ascensione di armi.\nUn chiaro di luna d’argento e limpide sorgenti un tempo completavano lo scenario delle oasi. Ma come la Signora dei Fiori (Lord of Flowers) svanì nell’oscura tempesta di sabbia, così il rasserenante paradiso dorato fu sommerso dalla morte.\nNella poetica della Tribù Eremita, la luna gettò la sua luce argentata sul mantello cremisi, portando Al-Ahmar, il Re del Lutto (Mourning King), a cadere nella follia.\nIn una melanconica ballata del deserto, il re solitario, spinto da una nostalgia ossessionante, al centro del deserto diede vita a una terra da sogno eternamente giovane, dove l’acqua sgorgava a quantità e il crepuscolo rimaneva perpetuo."
     },
     {
       "key": "dream-of-the-dandelion-gladiator",
@@ -10757,7 +10757,7 @@
     {
       "key": "echo-of-scorching-might",
       "name": "Echo of Scorching Might",
-      "description": "Weapon Ascension Material.\nA long time ago, the people of the Lord of Deserts carved these imperial insignias based on robust beetles to memorialize the bright sun that marked the shifting of day and night, as well as the infinity of such times.\nThough the name of that Lord is no longer mentioned, these imperial insignias have been preserved through time, each bearing a faint ambiance of those past glories.\nThese insignias travel with the descendants of the Eremite Tribe, silently telling the tales of their then-Lord."
+      "description": "Materiale per l'Ascensione di armi.\nTanto tempo fa, il popolo del Signore dei Deserti (Lord of Deserts) scolpì queste insegne imperiali ispirati a robusti coleotteri per commemorare il sole che risplendeva il passaggio del giorno e della notte, così come l’infinità di tali tempi.\nSebbene il nome di quella divinità non sia più ricordato, queste insegne imperiali si sono preservate nel tempo e ciascuna con una debole atmosfera di quelle glorie che furono.\nQueste insegne viaggiano con i discendenti della Tribù Eremita, raccontando silenziosamente le storie del loro passato Signore."
     },
     {
       "key": "electro-crystal",
@@ -10782,7 +10782,7 @@
     {
       "key": "faded-red-satin",
       "name": "Faded Red Satin",
-      "description": "A piece of red satin used to cover the eyes. The fabric is slightly torn.\nMany Eremites tend to cover their eyes with textiles, but the original intention of this practice has long been lost to the sands of time."
+      "description": "Un pezzo di raso rosso utilizzato per coprire gli occhi. Il tessuto è leggermente strappato.\nMolti Eremiti tendono a coprirsi gli occhi con tessuti, ma la vera intenzione dietro a questa pratica è ormai andata perduta nelle sabbie del tempo."
     },
     {
       "key": "famed-handguard",
@@ -10862,7 +10862,7 @@
     {
       "key": "fungal-spores",
       "name": "Fungal Spores",
-      "description": "A small amount of glittering spore powder left behind by Floating Fungi. Seems that a sneeze is all it takes for this powder to vanish without a trace."
+      "description": "Una piccola quantità di polvere di spore scintillante lasciata dai Floating Fungi. Sembra che uno starnuto sia tutto ciò che serve per far svanire questa polvere senza lasciare traccia."
     },
     {
       "key": "genesis-crystal",
@@ -10877,7 +10877,7 @@
     {
       "key": "glabrous-beans",
       "name": "Glabrous Beans",
-      "description": "A common legume in Teyvat with a light aroma. It can be prepared in a variety of ways, and is thus widely accepted by people all over the world."
+      "description": "Un legume comune a Teyvat e con un aroma leggero. Può essere preparato in vari modi ed è quindi molto accettato da persone di tutto il mondo."
     },
     {
       "key": "glaze-lily",
@@ -10902,7 +10902,7 @@
     {
       "key": "golden-talisman-of-the-forest-dew",
       "name": "Golden Talisman of the Forest Dew",
-      "description": "Weapon Ascension Material.\n“Mortals hold dear three things only: the spring water that embraces the moonlight, verdant life, and ageless youth…”\nThe nature of “wisdom” is not domination over all minds or scheming to gain all the benefit. Instead, it is about empowering even ordinary beings to one day overcome their imposed constraints.\nThough the roar of the tiger is no longer heard in the forest and the resilient guardians would seclude themselves within the dreams of children… On the night when every secret golden seal is lifted and all dreams glow like amber in the moonlight, perhaps she and her beloved people will eventually win genuine freedom."
+      "description": "Materiale per l'Ascensione di armi.\n“Ai mortali sono care solo tre cose: l’acqua sorgiva che abbraccia il chiaro di luna, una vita lussureggiante, e l’eterna giovinezza…”\nLa natura della “saggezza” non è dominare su tutte le menti o complottare per trarre tutti i benefici. Al contrario, si tratta di dare anche agli esseri ordinari la forza di poter vincere un giorno i loro limiti.\nAnche se il ruggito della tigre non si sente più nella foresta e i resistenti guardiani si nascondono nei sogni dei bambini… Di notte quando ogni sigillo d’oro segreto viene sollevato e tutti i sogni brillano come ambra al chiaro di luna, forse allora lei e le sue persone amate potrebbero infine ottenere vera libertà."
     },
     {
       "key": "grain-of-aerosiderite",
@@ -10912,7 +10912,7 @@
     {
       "key": "guide-to-admonition",
       "name": "Guide to Admonition",
-      "description": "Talent Level-Up material.\nAdmonition is the branches of the nation of wisdom.\nAdmonition is paired with wise thinking. Careful deliberation affords humble words a clarity that convinces the wise and enlightens the foolish. Such words allow wisdom to flow like an unobstructed river."
+      "description": "Materiale per aumentare il livello di Talenti.\nIl rimprovero è il ramo della nazione della saggezza.\nIl rimprovero è abbinato al pensiero saggio. Un’attenta riflessione conferisce alle parole umili una chiarezza che convince il saggio e illumina lo stolto.Tali parole permettono alla saggezza di fluire come un fiume senza ostacoli."
     },
     {
       "key": "guide-to-ballad",
@@ -10942,7 +10942,7 @@
     {
       "key": "guide-to-ingenuity",
       "name": "Guide to Ingenuity",
-      "description": "Talent Level-Up material.\nIngenuity is the leaf-veins of the nation of wisdom. Ingenuity sets words of integrity on the right path. One who thinks out of goodwill and in a clever and careful fashion never deviates from the path of boons. Yet one who thinks with contempt and malice shall taint their words with despicable colors."
+      "description": "Materiale per aumentare il livello di Talenti.\nL’ingegno costituisce le nervature delle foglie della nazione della saggezza. L’ingegno mette parole di integrità sulla strada giusta. Colui che pensa con buone intenzioni e in modo intelligente e attento non devia mai dalla strada dei benefici. Eppure chi pensa con disprezzo e malizia contamina le proprie parole di vili colori."
     },
     {
       "key": "guide-to-light",
@@ -10952,7 +10952,7 @@
     {
       "key": "guide-to-praxis",
       "name": "Guide to Praxis",
-      "description": "Talent Level-Up material.\nPraxes are the roots of the nation of wisdom.\nPraxes validate words of honesty. Though one speaks and acts out of goodwill, one has not yet obtained wisdom. Wisdom, born from action, is a signet pressed upon honest words."
+      "description": "Materiale per aumentare il livello di Talenti.\nLa prassi forma le radici della nazione della saggezza.\nLa prassi convalida le parole di onestà. Sebbene si agisca e si parli con buona volontà, non si ottiene ancora la saggezza. La saggezza, nata dall’azione, è un sigillo stampato sulle parole oneste."
     },
     {
       "key": "guide-to-prosperity",
@@ -10977,7 +10977,7 @@
     {
       "key": "harra-fruit",
       "name": "Harra Fruit",
-      "description": "Growing in the hot humid rainforest, it is a fruit with a special spicy aroma. When ground to powder, spices can be made from it. It is the most valued spice plant in Sumeru."
+      "description": "È un frutto con uno speciale aroma speziato che cresce nella calda e umida foresta pluviale. Quando viene macinato in polvere, si possono ricavare spezie. È la pianta aromatica più valorizzata a Sumeru."
     },
     {
       "key": "heavy-horn",
@@ -11017,7 +11017,7 @@
     {
       "key": "inactivated-fungal-nucleus",
       "name": "Inactivated Fungal Nucleus",
-      "description": "Body tissue left behind by a Fungus that has been exposed to intense elemental stimulation.\nIts soothing texture makes it shockingly good for stress relief. However, frequent usage can also easily lead to the Fungi multiplying, and thus the material is not suitable for any commercial use."
+      "description": "Tessuto corporeo lasciato da un Fungus che è stato esposto a un’intensa stimolazione elementale.\nLa sua consistenza lenitiva lo rende incredibilmente buono per alleviare lo stress. Tuttavia, l’uso frequente può anche portare a una facile moltiplicazione dei Fungi, dunque non è un materiale adatto per alcun uso commerciale.’"
     },
     {
       "key": "inspectors-sacrificial-knife",
@@ -11037,7 +11037,7 @@
     {
       "key": "iron-talisman-of-the-forest-dew",
       "name": "Iron Talisman of the Forest Dew",
-      "description": "Weapon Ascension Material.\nLater, the Lord of Verdure taught people the mystery of the forging of black iron. The innocent mortals thus grasped the knowledge of using fire to forge blades.\nThe Lord of Verdure took pleasure in their knowledge — Lethal as fire and blades were to her, they made ordinary people powerful."
+      "description": "Materiale per l'Ascensione di armi.\nPiù tardi, il Signore della Vegetazione (Lord of Verdure) insegnò alle persone il mistero della forgiatura del ferro nero. Fu così che innocenti mortali appresero la conoscenza dell’uso del fuoco per forgiare lame.\nIl Signore della Vegetazione (Lord of Verdure) accolse con piacere questa loro conoscenza — per quanto il fuoco e le lame fossero letali per lei, rendevano potenti le persone comuni."
     },
     {
       "key": "jade-branch-of-a-distant-sea",
@@ -11072,7 +11072,7 @@
     {
       "key": "kalpalata-lotus",
       "name": "Kalpalata Lotus",
-      "description": "Flowers from vines that grow on cliff sides. It is called a lotus only because it has a similar appearance to one. Aside from that, it bears no other similar properties to the lotus."
+      "description": "Fiori di rampicanti che crescono sul pendio dei precipizi. Si chiama loto solo perchè gli assomiglia. A parte questo, non condivide altre proprietà."
     },
     {
       "key": "lavender-melon",
@@ -11112,7 +11112,7 @@
     {
       "key": "luminescent-pollen",
       "name": "Luminescent Pollen",
-      "description": "A small parcel of luminescent Fungal Spore powder, a common medical ingredient in the land of rainforests. Merchants usually sell them in paper packets."
+      "description": "Un piccolo pacchetto di polvere luminescente di spore di Fungi, un ingrediente medico comune nella terra delle foreste pluviali. I mercanti li vendono di solito in pacchetti di carta."
     },
     {
       "key": "luminescent-spine",
@@ -11142,7 +11142,7 @@
     {
       "key": "majestic-hooked-beak",
       "name": "Majestic Hooked Beak",
-      "description": "An elongated bill that you found after defeating the Jadeplume Terrorshroom.\nResearchers still consider it a miracle even now that some soft Fungi have evolved these rock-hard hooked beaks. This magnificent king amongst Fungi has been leisurely pacing on the finish line of evolution. Now and then, it emits a long call to all the living beings in the rainforest: Even the most helpless and timid creature may one day become the monarch of the woods."
+      "description": "Un becco allungato che hai trovato dopo aver sconfitto il Jadeplume Terrorshroom.\nI ricercatori continuano a considerare un miracolo che alcuni Fungi soffici abbiano sviluppato questi becchi uncinati duri come la roccia. Questo magnifico sovrano tra i Fungi ha raggiunto con andamento rilassato l’ultimo traguardo nell'evoluzione. Di tanto in tanto, emette un lungo appello a tutti gli esseri viventi della foresta pluviale: anche la creatura più debole e timida potrebbe diventare un giorno il monarca dei boschi."
     },
     {
       "key": "mask-of-the-kijin",
@@ -11172,27 +11172,27 @@
     {
       "key": "midlander-bow-billet",
       "name": "Midlander Bow Billet",
-      "description": "Weapon forging material. Can be used to forge 4-star bows.\nPhilosophers believe that there are four purposes behind earthly things. The purpose of these billets is to become a weapon worthy of accompanying a hero."
+      "description": "Materiale per forgiare armi. Può essere usato per forgiare archi a 4 stelle.\nI filosofi credono che dietro alle cose terrene ci siano 4 scopi. Lo scopo di queste billette è di diventare un’arma degna di accompagnare un eroe."
     },
     {
       "key": "midlander-catalyst-billet",
       "name": "Midlander Catalyst Billet",
-      "description": "Weapon forging material. Can be used to forge 4-star catalysts.\nPhilosophers believe that there are four purposes behind earthly things. The purpose of these billets is to become a weapon worthy of accompanying a hero."
+      "description": "Materiale per forgiare armi. Può essere usato per forgiare catalyst a 4 stelle.\nI filosofi credono che dietro alle cose terrene ci siano 4 scopi. Lo scopo di queste billette è di diventare un’arma degna di accompagnare un eroe."
     },
     {
       "key": "midlander-claymore-billet",
       "name": "Midlander Claymore Billet",
-      "description": "Weapon forging material. Can be used to forge 4-star claymores.\nPhilosophers believe that there are four purposes behind earthly things. The purpose of these billets is to become a weapon worthy of accompanying a hero."
+      "description": "Materiale per forgiare armi. Può essere usato per forgiare claymore a 4 stelle.\nI filosofi credono che dietro alle cose terrene ci siano 4 scopi. Lo scopo di queste billette è di diventare un’arma degna di accompagnare un eroe."
     },
     {
       "key": "midlander-polearm-billet",
       "name": "Midlander Polearm Billet",
-      "description": "Weapon forging material. Can be used to forge 4-star polearms.\nPhilosophers believe that there are four purposes behind earthly things. The purpose of these billets is to become a weapon worthy of accompanying a hero."
+      "description": "Materiale per forgiare armi. Può essere usato per forgiare polearm a 4 stelle.\nI filosofi credono che dietro alle cose terrene ci siano 4 scopi. Lo scopo di queste billette è di diventare un’arma degna di accompagnare un eroe."
     },
     {
       "key": "midlander-sword-billet",
       "name": "Midlander Sword Billet",
-      "description": "Weapon forging material. Can be used to forge 4-star swords.\nPhilosophers believe that there are four purposes behind earthly things. The purpose of these billets is to become a weapon worthy of accompanying a hero."
+      "description": "Materiale per forgiare armi. Può essere usato per forgiare spade a 4 stelle.\nI filosofi credono che dietro alle cose terrene ci siano 4 scopi. Lo scopo di queste billette è di diventare un’arma degna di accompagnare un eroe."
     },
     {
       "key": "milk",
@@ -11317,7 +11317,7 @@
     {
       "key": "nilotpala-lotus",
       "name": "Nilotpala Lotus",
-      "description": "Growing in the forest wetlands, these plants only bloom at night with flowers as bright as the moon."
+      "description": "Queste piante, che crescono nelle zone paludosi della foresta, fioriscono solo di notte con fiori luminosi come la luna."
     },
     {
       "key": "noctilucous-jade",
@@ -11352,22 +11352,22 @@
     {
       "key": "oasis-gardens-kindness",
       "name": "Oasis Garden’s Kindness",
-      "description": "Weapon Ascension Material.\nIn the literature buried deep beneath the yellow sands, the Lord of Flowers was the Mistress of Dreams.\nShe bestowed dreams upon the exiled, the manic, and the foolish. In those dreams, they were presented with their dearest delights. Burdened by the brutality of reality, they were fascinated by the charm of the Lord of Flowers and captivated by her beauty and care."
+      "description": "Materiale per l'Ascensione di armi.\nNella letteratura sepolta nelle profondità delle sabbie dorate, la Signora dei Fiori (Lord of Flowes) era la Signora dei Sogni (Mistress of Dreams).\nLei donava sogni agli esiliati, ai maniaci e agli sciocchi. In quei sogni, venivano loro presentati i loro più cari piaceri. Gravati dalla brutalità della realtà, loro erano ammaliati dal fascino della Signora dei Fiori e stregati dalla sua bellezza e cura."
     },
     {
       "key": "oasis-gardens-mourning",
       "name": "Oasis Garden’s Mourning",
-      "description": "Weapon Ascension Material.\nThe Lord of Flowers was in an amicable relationship with the Jinn.\nThe Mistress of Flowers and Oases joined hands with the Lord of Deserts and built Ay-Khanoum, the “City of Amphitheaters,” which carried the meaning of “City of the Moon Maiden” in the ancient language of the Jinn.\nLater, however, it was said that the Lord of Flowers died due to the malice of the burning sun and yellow sand, after which the blossoms of purple Padisarahs were never seen again in the oases.\nAfter the departure of the Lord of Flowers, the sandstorms keened, the Jinn sobbed, and the moonlight-silver gem disc lost its original, glad purpose, giving off a mournful glimmer."
+      "description": "Materiale per l'Ascensione di armi.\nLa Signora dei Fiori (Lord of Flowers) aveva un rapporto di amicizia con i Jinn.\nLa Signora dei Fiori e delle Oasi si unì al Signore dei Deserti (Lord of Deserts) per costruire Ay-Khanoum, la “Città degli Anfiteatri,” che nell’antica lingua dei Jinn significa “Città della Fanciulla della Luna (Moon Maiden)”.\nPiù tardi, tuttavia, si dice che la Signora dei Fiori morì a causa della malizia del Sole ardente e della sabbia dorata, e che dopo la sua morte i fiori viola Padisarah non furono mai più rivisti nelle oasi.\nDopo la scomparsa della Signora dei Fiori, le tempeste di sabbia aumentarono, i Jinn piansero e questo disco gemmato d’argento al chiaro di luna perse il suo scopo originale e lieto, emanando così un lugubre bagliore."
     },
     {
       "key": "oasis-gardens-reminiscence",
       "name": "Oasis Garden’s Reminiscence",
-      "description": "Weapon Ascension Material.\nPeople used to say that the Lord of Flowers was the Lord of Joy and Happiness. Freshwater sprang from her sleeves, and thus was the oasis of blossoming flowers born in the desert. Flowers and grasses followed in her footsteps, and gleaming moonlight cleared the way for her.\nIn the bitter days when the sky turned its back on the ground, the Lord of Flowers extended her mercy to each and every one of the mortals, letting them regain their happiness and egos, allowing leisure and luxury to resume."
+      "description": "Materiale per l'Ascensione di armi.\nLa gente diceva che la Signora dei Fiori (Lord of Flowers) era la Signora della Gioia e della Felicità. Acqua dolce sgorgava dalle sue maniche e fu così che nacque l’oasi dei fiori che sbocciavano nel deserto. Fiori ed erbe crescevano sulle sue orme e la luce scintillante della luna le indicava sempre la strada.\nNei tristi giorni in cui il cielo voltava le spalle alla terra, la Signora dei Fiori estendeva la sua misericordia a tutti i mortali, permettendo loro di ritrovare la felicità e il loro ego, così da permettere al tempo libero e al lusso di ricominciare."
     },
     {
       "key": "oasis-gardens-truth",
       "name": "Oasis Garden’s Truth",
-      "description": "Weapon Ascension Material.\n“Who would worship a departed god?”\nThe Lord of Flowers was once in alliance with two other gods. Apart from wisdom and power, she also brought mercy and joy to her people.\nJust as the earth needs more than the burning sunshine and pouring rain, to the people of the Lord of Flowers, joy and love, singing and music, and wine and extravagance were just as vital as strength and sensibility.\nIt is said that flowers blossom so that they may enjoy a spectacular death, and that death was precisely the wholehearted pursuit of the Lord of Flowers — for death adds bitterness to lost joy, and intensifies with time across endless memories.\nThe ignorant Lord of Deserts was never aware of her reasoning. He only reveled in her immense charm and grace — and as misguided as such fervent affections might be, they were well within the calculations of the Lord of Flowers."
+      "description": "Materiale per l'Ascensione di armi.\n“Chi venererebbe un dia ormai scomparsa?”\nLa Signora dei Fiori (Lord of Flowers) una volta era alleata con altre due divinità. Oltre a saggezza e potere, lei portò anche misericordia e gioia al suo popolo.\nProprio come la terra ha più bisogno del sole ardente e della pioggia battente, così al popolo della Signora dei Fiori, gioia e amore, canti e musica, vino e stravaganza erano vitali per la forza e la sensibilità.\nSi dice che i fiori sboccino in modo che possano godere di una morte spettacolare, e che proprio la morte fosse la cara meta della ricerca della Signora dei Fiori — perchè la morte aggiunge amarezza alla gioia perduta, e si intensifica con il passare del tempo attraverso ricordi senza fine.\nL’ignorante Signore dei Deserti (Lord of Deserts) non si è mai accorto del suo ragionamento. Lui si crogiolava solo nella sua immensa grazia e fascino — e per quanto fuorviati potessero essere tali appassionati affetti, questi erano ben considerati nei calcoli della Signora dei Fiori Lord of Flowers."
     },
     {
       "key": "old-handguard",

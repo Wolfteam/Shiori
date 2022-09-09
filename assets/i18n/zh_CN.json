@@ -12084,79 +12084,79 @@
   "reactions": [
     {
       "key": "vaporize",
-      "name": "Vaporize",
-      "effect": "Deals ×2 Pyro DMG when a Pyro attack triggers the reaction.",
+      "name": "蒸发",
+      "effect": "当火元素攻击引发反应时，造成1.5倍火元素伤害。",
       "description": null
     },
     {
       "key": "burning",
-      "name": "Burning",
-      "effect": "Deals large Pyro DMG over time. Grass is considered a Dendro object and will spread the burn effect around the area.",
+      "name": "燃烧",
+      "effect": "持续造成大量火元素伤害。草地被视为一种草元素物体，并会在范围内扩散燃烧反应。",
       "description": null
     },
     {
       "key": "overloaded",
-      "name": "Overloaded",
-      "effect": "Deals AoE Pyro DMG and causes an explosion. The explosion generated is considered as a Heavy Attack.",
+      "name": "超载",
+      "effect": "造成火元素范围伤害并引发爆炸，爆炸被视为一次重击。",
       "description": null
     },
     {
       "key": "melt",
-      "name": "Melt",
-      "effect": "Deals ×2 Pyro DMG when a Pyro attack triggers the reaction.",
+      "name": "融化",
+      "effect": "当火元素攻击引发反应时，造成2倍火元素伤害。",
       "description": null
     },
     {
       "key": "vaporize-reverse",
-      "name": "Vaporize (Reverse)",
-      "effect": "Deals ×1.5 Hydro DMG when a Hydro attack triggers the reaction.",
+      "name": "蒸发（水火）",
+      "effect": "当水元素攻击引发反应时，造成2倍水元素伤害。",
       "description": null
     },
     {
       "key": "electro-charged",
-      "name": "Electro Charged",
-      "effect": "Deals Electro DMG over time until the effect wears off, every tick shocks and interrupts any action. It also creates a lightning bolt that jumps to one nearby Wet target, dealing Electro DMG.",
+      "name": "感电",
+      "effect": "持续造成雷元素伤害直至效果消失，每次感电反应都会打断当前动作。同时感电会向附近的潮湿目标降下一道闪电，造成雷元素伤害。",
       "description": null
     },
     {
       "key": "frozen",
-      "name": "Frozen",
-      "effect": "Freezes the target. If the frozen target is hit by a Claymore, a Sword Plunge Attack, or Geo DMG (excluding Catalyst user's Plunge), it will cause Shattered. Shattering a frozen target will deal additional Physical damage.",
+      "name": "冻结",
+      "effect": "冻结目标，如果被冻结的目标被双手剑、单手剑的下落攻击或岩元素伤害（不包括法器角色的下落攻击）击中会造成碎冰反应。被冻结目标的碎冰反应会造成额外物理伤害。",
       "description": null
     },
     {
       "key": "swirl",
-      "name": "Swirl",
-      "effect": "Infuses an element and deals that elemental damage while spreading the effect to nearby enemies. It does not deal Anemo damage (as that elemental damage seen comes from the talent that is dealing the Anemo element). Only one element at a time can be infused with Anemo.",
+      "name": "扩散",
+      "effect": "选择一种元素，对附近的敌人造成该元素伤害并附带元素效果。扩散不会造成风元素伤害（扩散的元素伤害取决于风属性角色的等级）。同一时间只能扩散一种元素。",
       "description": null
     },
     {
       "key": "superconduct",
-      "name": "Superconduct",
-      "effect": "Deals AoE Cryo DMG and reduces the target's Physical DMG Resistance by -40% for 12 seconds. Each Superconduct reaction deals DMG to targets within its range once, meaning if there are 3 Superconduct reactions, given all 3 targets are within the reactions' AoE, each target will take DMG 3 times.",
+      "name": "超导",
+      "effect": "造成冰元素范围伤害，减少目标的物理抗性40%，持续12秒。每个超导反应会对目标造成一次伤害，意味着如果场上存在3个超导反应，超导范围内有3个目标，则每个目标会受到3次伤害。",
       "description": null
     },
     {
       "key": "melt-reverse",
-      "name": "Melt (Reverse)",
-      "effect": "Deals ×1.5 Cryo DMG when a Cryo attack triggers the reaction.",
+      "name": "融化(反向)",
+      "effect": "当冰元素攻击引发反应时，造成1.5倍冰元素伤害。",
       "description": null
     },
     {
       "key": "crystallize",
-      "name": "Crystallize",
-      "effect": "Absorbs the element and drops a crystal of that same element. The crystal will give an elemental shield. The shield absorbs all types of damage, but it protects more efficiently against the shield's element.",
+      "name": "结晶",
+      "effect": "吸收元素，掉落相应元素晶体，晶体可以提供一个相应元素护盾。护盾可以吸收任何类型的攻击，但对相同元素有更高的防御。",
       "description": null
     },
     {
       "key": "bloom",
-      "name": "Bloom",
+      "name": "绽放",
       "effect": "Creates a Dendro Core that explode after 6 seconds, dealing AoE Dendro DMG in a 5m radius to both enemies and players.",
       "description": null
     },
     {
       "key": "hyperbloom",
-      "name": "Hyperbloom",
+      "name": "超绽放",
       "effect": "Triggered when applying Electro to a Dendro Core. Transforms the Dendro Core into a homing Sprawling Shot that deals increased AoE Dendro DMG in a much smaller AoE.",
       "description": null
     },
