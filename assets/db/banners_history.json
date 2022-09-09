@@ -998,6 +998,45 @@
         "the-stringless"
       ],
       "version": 3.0
+    },
+    {
+      "type": "character",
+      "from": "2022-09-09T00:00:00",
+      "until": "2022-09-27T00:00:00",
+      "itemKeys": [
+        "ganyu",
+        "dori",
+        "sucrose",
+        "xingqiu"
+      ],
+      "version": 3.0
+    },
+    {
+      "type": "character",
+      "from": "2022-09-09T00:00:00",
+      "until": "2022-09-27T00:00:00",
+      "itemKeys": [
+        "sangonomiya-kokomi",
+        "dori",
+        "sucrose",
+        "xingqiu"
+      ],
+      "version": 3.0
+    },
+    {
+      "type": "weapon",
+      "from": "2022-09-09T00:00:00",
+      "until": "2022-09-27T00:00:00",
+      "itemKeys": [
+        "everlasting-moonglow",
+        "amos-bow",
+        "sacrificial-sword",
+        "favonius-greatsword",
+        "dragons-bane",
+        "eye-of-perception",
+        "rust"
+      ],
+      "version": 3.0
     }
   ]
 }
