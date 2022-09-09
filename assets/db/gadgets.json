@@ -3,14 +3,14 @@
     {
       "key": "parametric-transformer",
       "rarity": 4,
-      "image": "parametric-transformer.png",
+      "image": "parametric-transformer.webp",
       "cooldown": 166,
       "obtainedFrom": []
     },
     {
       "key": "portable-waypoint",
       "rarity": 4,
-      "image": "portable-waypoint.png",
+      "image": "portable-waypoint.webp",
       "cooldown": 168,
       "obtainedFrom": []
     }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shiori/application/bloc.dart';
+import 'package:shiori/domain/app_constants.dart';
 import 'package:shiori/domain/assets.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/generated/l10n.dart';
@@ -69,7 +70,7 @@ class _CakeCard extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  Image.asset(Assets.getOtherMaterialPath('cake.png'), width: 120, height: 120),
+                  Image.asset(Assets.getOtherMaterialPath('cake$imageFileExtension'), width: 120, height: 120),
                   //The cake has some space in the top and bottom, that's why we used this offset here
                   FractionalTranslation(
                     translation: const Offset(0, -0.5),

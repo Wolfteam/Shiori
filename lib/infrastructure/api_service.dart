@@ -1,7 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:shiori/domain/services/api_service.dart';
 import 'package:shiori/domain/services/logging_service.dart';
-import 'package:shiori/infrastructure/secrets.dart';
 
 class ApiServiceImpl implements ApiService {
   final LoggingService _loggingService;
@@ -13,7 +12,7 @@ class ApiServiceImpl implements ApiService {
   @override
   Future<String> getChangelog(String defaultValue) async {
     try {
-      final url = '${Secrets.assetsBaseUrl}/changelog.md';
+      const url = 'https://raw.githubusercontent.com/Wolfteam/Shiori/main/Changelog.md';
       final response = await _dio.getUri<String>(Uri.parse(url));
       if (response.statusCode != 200) {
         _loggingService.warning(

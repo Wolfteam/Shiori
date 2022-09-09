@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/services.dart' show rootBundle;
+import 'package:shiori/domain/app_constants.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/extensions/string_extensions.dart';
 
@@ -23,7 +24,7 @@ class Assets {
   static String characterFullBasePath = 'assets/characters_full';
   static String skillsBasePath = 'assets/skills';
   static String elementsBasePath = 'assets/elements';
-  static String noImageAvailableName = 'na.png';
+  static String noImageAvailableName = 'na$imageFileExtension';
 
   //Weapons
   static String weaponsBasePath = 'assets/weapons';
@@ -196,19 +197,19 @@ class Assets {
   static String getElementPathFromType(ElementType type) {
     switch (type) {
       case ElementType.anemo:
-        return getElementPath('anemo.png');
+        return getElementPath('anemo$imageFileExtension');
       case ElementType.cryo:
-        return getElementPath('cryo.png');
+        return getElementPath('cryo$imageFileExtension');
       case ElementType.dendro:
-        return getElementPath('dendro.png');
+        return getElementPath('dendro$imageFileExtension');
       case ElementType.electro:
-        return getElementPath('electro.png');
+        return getElementPath('electro$imageFileExtension');
       case ElementType.geo:
-        return getElementPath('geo.png');
+        return getElementPath('geo$imageFileExtension');
       case ElementType.hydro:
-        return getElementPath('hydro.png');
+        return getElementPath('hydro$imageFileExtension');
       case ElementType.pyro:
-        return getElementPath('pyro.png');
+        return getElementPath('pyro$imageFileExtension');
       default:
         throw Exception('Invalid element type = $type');
     }
@@ -221,21 +222,21 @@ class Assets {
   static String getArtifactPathFromType(ArtifactType type) {
     switch (type) {
       case ArtifactType.clock:
-        return getMaterialPath('clock.png', MaterialType.others);
+        return getMaterialPath('clock$imageFileExtension', MaterialType.others);
       case ArtifactType.crown:
-        return getMaterialPath('crown.png', MaterialType.others);
+        return getMaterialPath('crown$imageFileExtension', MaterialType.others);
       case ArtifactType.flower:
-        return getMaterialPath('flower.png', MaterialType.others);
+        return getMaterialPath('flower$imageFileExtension', MaterialType.others);
       case ArtifactType.goblet:
-        return getMaterialPath('goblet.png', MaterialType.others);
+        return getMaterialPath('goblet$imageFileExtension', MaterialType.others);
       case ArtifactType.plume:
-        return getMaterialPath('plume.png', MaterialType.others);
+        return getMaterialPath('plume$imageFileExtension', MaterialType.others);
       default:
         throw Exception('Invalid artifact type = $type');
     }
   }
 
-  static String getOriginalResinPath() => Assets.getCurrencyMaterialPath('fragile-resin.png');
+  static String getOriginalResinPath() => Assets.getCurrencyMaterialPath('fragile-resin$imageFileExtension');
 
   static String getGadgetPath(String image) => '$gadgetsBasePath/$image';
 

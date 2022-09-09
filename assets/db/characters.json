@@ -5,8 +5,8 @@
       "rarity": 5,
       "weaponType": "sword",
       "elementType": "geo",
-      "image": "albedo.png",
-      "fullImage": "albedo.png",
+      "image": "albedo.webp",
+      "fullImage": "albedo.webp",
       "secondFullImage": null,
       "isComingSoon": false,
       "isNew": false,
@@ -409,7 +409,7 @@
       "skills": [
         {
           "key": "s1",
-          "image": "albedo_s1.png",
+          "image": "albedo_s1.webp",
           "type": "normalAttack",
           "stats": [
             {
@@ -636,7 +636,7 @@
         },
         {
           "key": "s2",
-          "image": "albedo_s2.png",
+          "image": "albedo_s2.webp",
           "type": "elementalSkill",
           "stats": [
             {
@@ -723,7 +723,7 @@
         },
         {
           "key": "s3",
-          "image": "albedo_s3.png",
+          "image": "albedo_s3.webp",
           "type": "elementalBurst",
           "stats": [
             {
@@ -812,17 +812,17 @@
       "passives": [
         {
           "key": "p1",
-          "image": "albedo_p1.png",
+          "image": "albedo_p1.webp",
           "unlockedAt": -1
         },
         {
           "key": "p2",
-          "image": "albedo_p2.png",
+          "image": "albedo_p2.webp",
           "unlockedAt": 1
         },
         {
           "key": "p3",
-          "image": "albedo_p3.png",
+          "image": "albedo_p3.webp",
           "unlockedAt": 4
         }
       ],
@@ -830,32 +830,32 @@
         {
           "key": "c1",
           "number": 1,
-          "image": "albedo_c1.png"
+          "image": "albedo_c1.webp"
         },
         {
           "key": "c2",
           "number": 2,
-          "image": "albedo_c2.png"
+          "image": "albedo_c2.webp"
         },
         {
           "key": "c3",
           "number": 3,
-          "image": "albedo_c3.png"
+          "image": "albedo_c3.webp"
         },
         {
           "key": "c4",
           "number": 4,
-          "image": "albedo_c4.png"
+          "image": "albedo_c4.webp"
         },
         {
           "key": "c5",
           "number": 5,
-          "image": "albedo_c5.png"
+          "image": "albedo_c5.webp"
         },
         {
           "key": "c6",
           "number": 6,
-          "image": "albedo_c6.png"
+          "image": "albedo_c6.webp"
         }
       ],
       "builds": [
@@ -1033,8 +1033,8 @@
       "rarity": 5,
       "weaponType": "bow",
       "elementType": "cryo",
-      "image": "aloy.png",
-      "fullImage": "aloy.png",
+      "image": "aloy.webp",
+      "fullImage": "aloy.webp",
       "secondFullImage": null,
       "isComingSoon": false,
       "isNew": false,
@@ -1437,7 +1437,7 @@
       "skills": [
         {
           "key": "s1",
-          "image": "aloy_s1.png",
+          "image": "aloy_s1.webp",
           "type": "normalAttack",
           "stats": [
             {
@@ -1644,7 +1644,7 @@
         },
         {
           "key": "s2",
-          "image": "aloy_s2.png",
+          "image": "aloy_s2.webp",
           "type": "elementalSkill",
           "stats": [
             {
@@ -1891,7 +1891,7 @@
         },
         {
           "key": "s3",
-          "image": "aloy_s3.png",
+          "image": "aloy_s3.webp",
           "type": "elementalBurst",
           "stats": [
             {
@@ -1960,17 +1960,17 @@
       "passives": [
         {
           "key": "p1",
-          "image": "aloy_p1.png",
+          "image": "aloy_p1.webp",
           "unlockedAt": -1
         },
         {
           "key": "p2",
-          "image": "aloy_p2.png",
+          "image": "aloy_p2.webp",
           "unlockedAt": 1
         },
         {
           "key": "p3",
-          "image": "aloy_p3.png",
+          "image": "aloy_p3.webp",
           "unlockedAt": 4
         }
       ],
@@ -1978,32 +1978,32 @@
         {
           "key": "c1",
           "number": 1,
-          "image": "aloy_c1.png"
+          "image": "aloy_c1.webp"
         },
         {
           "key": "c2",
           "number": 2,
-          "image": "aloy_c2.png"
+          "image": "aloy_c2.webp"
         },
         {
           "key": "c3",
           "number": 3,
-          "image": "aloy_c3.png"
+          "image": "aloy_c3.webp"
         },
         {
           "key": "c4",
           "number": 4,
-          "image": "aloy_c4.png"
+          "image": "aloy_c4.webp"
         },
         {
           "key": "c5",
           "number": 5,
-          "image": "aloy_c5.png"
+          "image": "aloy_c5.webp"
         },
         {
           "key": "c6",
           "number": 6,
-          "image": "aloy_c6.png"
+          "image": "aloy_c6.webp"
         }
       ],
       "builds": [
@@ -2164,8 +2164,8 @@
       "rarity": 4,
       "weaponType": "bow",
       "elementType": "pyro",
-      "image": "amber.png",
-      "fullImage": "amber.png",
+      "image": "amber.webp",
+      "fullImage": "amber.webp",
       "secondFullImage": null,
       "isComingSoon": false,
       "isNew": false,
@@ -2568,7 +2568,7 @@
       "skills": [
         {
           "key": "s1",
-          "image": "amber_s1.png",
+          "image": "amber_s1.webp",
           "type": "normalAttack",
           "stats": [
             {
@@ -2775,7 +2775,7 @@
         },
         {
           "key": "s2",
-          "image": "amber_s2.png",
+          "image": "amber_s2.webp",
           "type": "elementalSkill",
           "stats": [
             {
@@ -2842,7 +2842,7 @@
         },
         {
           "key": "s3",
-          "image": "amber_s3.png",
+          "image": "amber_s3.webp",
           "type": "elementalBurst",
           "stats": [
             {
@@ -2951,17 +2951,17 @@
       "passives": [
         {
           "key": "p1",
-          "image": "amber_p1.png",
+          "image": "amber_p1.webp",
           "unlockedAt": -1
         },
         {
           "key": "p2",
-          "image": "amber_p2.png",
+          "image": "amber_p2.webp",
           "unlockedAt": 1
         },
         {
           "key": "p3",
-          "image": "amber_p3.png",
+          "image": "amber_p3.webp",
           "unlockedAt": 4
         }
       ],
@@ -2969,32 +2969,32 @@
         {
           "key": "c1",
           "number": 1,
-          "image": "amber_c1.png"
+          "image": "amber_c1.webp"
         },
         {
           "key": "c2",
           "number": 2,
-          "image": "amber_c2.png"
+          "image": "amber_c2.webp"
         },
         {
           "key": "c3",
           "number": 3,
-          "image": "amber_c3.png"
+          "image": "amber_c3.webp"
         },
         {
           "key": "c4",
           "number": 4,
-          "image": "amber_c4.png"
+          "image": "amber_c4.webp"
         },
         {
           "key": "c5",
           "number": 5,
-          "image": "amber_c5.png"
+          "image": "amber_c5.webp"
         },
         {
           "key": "c6",
           "number": 6,
-          "image": "amber_c6.png"
+          "image": "amber_c6.webp"
         }
       ],
       "builds": [
@@ -3197,8 +3197,8 @@
       "rarity": 5,
       "weaponType": "claymore",
       "elementType": "geo",
-      "image": "arataki-itto.png",
-      "fullImage": "arataki-itto.png",
+      "image": "arataki-itto.webp",
+      "fullImage": "arataki-itto.webp",
       "secondFullImage": null,
       "isComingSoon": false,
       "isNew": false,
@@ -3601,7 +3601,7 @@
       "skills": [
         {
           "key": "s1",
-          "image": "arataki-itto_s1.png",
+          "image": "arataki-itto_s1.webp",
           "type": "normalAttack",
           "stats": [
             {
@@ -3848,7 +3848,7 @@
         },
         {
           "key": "s2",
-          "image": "arataki-itto_s2.png",
+          "image": "arataki-itto_s2.webp",
           "type": "elementalSkill",
           "stats": [
             {
@@ -3935,7 +3935,7 @@
         },
         {
           "key": "s3",
-          "image": "arataki-itto_s3.png",
+          "image": "arataki-itto_s3.webp",
           "type": "elementalBurst",
           "stats": [
             {
@@ -4044,17 +4044,17 @@
       "passives": [
         {
           "key": "p1",
-          "image": "arataki-itto_p1.png",
+          "image": "arataki-itto_p1.webp",
           "unlockedAt": -1
         },
         {
           "key": "p2",
-          "image": "arataki-itto_p2.png",
+          "image": "arataki-itto_p2.webp",
           "unlockedAt": 1
         },
         {
           "key": "p3",
-          "image": "arataki-itto_p3.png",
+          "image": "arataki-itto_p3.webp",
           "unlockedAt": 4
         }
       ],
@@ -4062,32 +4062,32 @@
         {
           "key": "c1",
           "number": 1,
-          "image": "arataki-itto_c1.png"
+          "image": "arataki-itto_c1.webp"
         },
         {
           "key": "c2",
           "number": 2,
-          "image": "arataki-itto_c2.png"
+          "image": "arataki-itto_c2.webp"
         },
         {
           "key": "c3",
           "number": 3,
-          "image": "arataki-itto_c3.png"
+          "image": "arataki-itto_c3.webp"
         },
         {
           "key": "c4",
           "number": 4,
-          "image": "arataki-itto_c4.png"
+          "image": "arataki-itto_c4.webp"
         },
         {
           "key": "c5",
           "number": 5,
-          "image": "arataki-itto_c5.png"
+          "image": "arataki-itto_c5.webp"
         },
         {
           "key": "c6",
           "number": 6,
-          "image": "arataki-itto_c6.png"
+          "image": "arataki-itto_c6.webp"
         }
       ],
       "builds": [
@@ -4247,8 +4247,8 @@
       "rarity": 4,
       "weaponType": "catalyst",
       "elementType": "hydro",
-      "image": "barbara.png",
-      "fullImage": "barbara.png",
+      "image": "barbara.webp",
+      "fullImage": "barbara.webp",
       "secondFullImage": null,
       "isComingSoon": false,
       "isNew": false,
@@ -4651,7 +4651,7 @@
       "skills": [
         {
           "key": "s1",
-          "image": "barbara_s1.png",
+          "image": "barbara_s1.webp",
           "type": "normalAttack",
           "stats": [
             {
@@ -4838,7 +4838,7 @@
         },
         {
           "key": "s2",
-          "image": "barbara_s2.png",
+          "image": "barbara_s2.webp",
           "type": "elementalSkill",
           "stats": [
             {
@@ -4985,7 +4985,7 @@
         },
         {
           "key": "s3",
-          "image": "barbara_s3.png",
+          "image": "barbara_s3.webp",
           "type": "elementalBurst",
           "stats": [
             {
@@ -5074,17 +5074,17 @@
       "passives": [
         {
           "key": "p1",
-          "image": "barbara_p1.png",
+          "image": "barbara_p1.webp",
           "unlockedAt": -1
         },
         {
           "key": "p2",
-          "image": "barbara_p2.png",
+          "image": "barbara_p2.webp",
           "unlockedAt": 1
         },
         {
           "key": "p3",
-          "image": "barbara_p3.png",
+          "image": "barbara_p3.webp",
           "unlockedAt": 4
         }
       ],
@@ -5092,32 +5092,32 @@
         {
           "key": "c1",
           "number": 1,
-          "image": "barbara_c1.png"
+          "image": "barbara_c1.webp"
         },
         {
           "key": "c2",
           "number": 2,
-          "image": "barbara_c2.png"
+          "image": "barbara_c2.webp"
         },
         {
           "key": "c3",
           "number": 3,
-          "image": "barbara_c3.png"
+          "image": "barbara_c3.webp"
         },
         {
           "key": "c4",
           "number": 4,
-          "image": "barbara_c4.png"
+          "image": "barbara_c4.webp"
         },
         {
           "key": "c5",
           "number": 5,
-          "image": "barbara_c5.png"
+          "image": "barbara_c5.webp"
         },
         {
           "key": "c6",
           "number": 6,
-          "image": "barbara_c6.png"
+          "image": "barbara_c6.webp"
         }
       ],
       "builds": [
@@ -5310,8 +5310,8 @@
       "rarity": 4,
       "weaponType": "claymore",
       "elementType": "electro",
-      "image": "beidou.png",
-      "fullImage": "beidou.png",
+      "image": "beidou.webp",
+      "fullImage": "beidou.webp",
       "secondFullImage": null,
       "isComingSoon": false,
       "isNew": false,
@@ -5714,7 +5714,7 @@
       "skills": [
         {
           "key": "s1",
-          "image": "beidou_s1.png",
+          "image": "beidou_s1.webp",
           "type": "normalAttack",
           "stats": [
             {
@@ -5961,7 +5961,7 @@
         },
         {
           "key": "s2",
-          "image": "beidou_s2.png",
+          "image": "beidou_s2.webp",
           "type": "elementalSkill",
           "stats": [
             {
@@ -6068,7 +6068,7 @@
         },
         {
           "key": "s3",
-          "image": "beidou_s3.png",
+          "image": "beidou_s3.webp",
           "type": "elementalBurst",
           "stats": [
             {
@@ -6197,17 +6197,17 @@
       "passives": [
         {
           "key": "p1",
-          "image": "beidou_p1.png",
+          "image": "beidou_p1.webp",
           "unlockedAt": -1
         },
         {
           "key": "p2",
-          "image": "beidou_p2.png",
+          "image": "beidou_p2.webp",
           "unlockedAt": 1
         },
         {
           "key": "p3",
-          "image": "beidou_p3.png",
+          "image": "beidou_p3.webp",
           "unlockedAt": 4
         }
       ],
@@ -6215,32 +6215,32 @@
         {
           "key": "c1",
           "number": 1,
-          "image": "beidou_c1.png"
+          "image": "beidou_c1.webp"
         },
         {
           "key": "c2",
           "number": 2,
-          "image": "beidou_c2.png"
+          "image": "beidou_c2.webp"
         },
         {
           "key": "c3",
           "number": 3,
-          "image": "beidou_c3.png"
+          "image": "beidou_c3.webp"
         },
         {
           "key": "c4",
           "number": 4,
-          "image": "beidou_c4.png"
+          "image": "beidou_c4.webp"
         },
         {
           "key": "c5",
           "number": 5,
-          "image": "beidou_c5.png"
+          "image": "beidou_c5.webp"
         },
         {
           "key": "c6",
           "number": 6,
-          "image": "beidou_c6.png"
+          "image": "beidou_c6.webp"
         }
       ],
       "builds": [
@@ -6399,8 +6399,8 @@
       "rarity": 4,
       "weaponType": "sword",
       "elementType": "pyro",
-      "image": "bennett.png",
-      "fullImage": "bennett.png",
+      "image": "bennett.webp",
+      "fullImage": "bennett.webp",
       "secondFullImage": null,
       "isComingSoon": false,
       "isNew": false,
@@ -6803,7 +6803,7 @@
       "skills": [
         {
           "key": "s1",
-          "image": "bennett_s1.png",
+          "image": "bennett_s1.webp",
           "type": "normalAttack",
           "stats": [
             {
@@ -7030,7 +7030,7 @@
         },
         {
           "key": "s2",
-          "image": "bennett_s2.png",
+          "image": "bennett_s2.webp",
           "type": "elementalSkill",
           "stats": [
             {
@@ -7277,7 +7277,7 @@
         },
         {
           "key": "s3",
-          "image": "bennett_s3.png",
+          "image": "bennett_s3.webp",
           "type": "elementalBurst",
           "stats": [
             {
@@ -7426,17 +7426,17 @@
       "passives": [
         {
           "key": "p1",
-          "image": "bennett_p1.png",
+          "image": "bennett_p1.webp",
           "unlockedAt": -1
         },
         {
           "key": "p2",
-          "image": "bennett_p2.png",
+          "image": "bennett_p2.webp",
           "unlockedAt": 1
         },
         {
           "key": "p3",
-          "image": "bennett_p3.png",
+          "image": "bennett_p3.webp",
           "unlockedAt": 4
         }
       ],
@@ -7444,32 +7444,32 @@
         {
           "key": "c1",
           "number": 1,
-          "image": "bennett_c1.png"
+          "image": "bennett_c1.webp"
         },
         {
           "key": "c2",
           "number": 2,
-          "image": "bennett_c2.png"
+          "image": "bennett_c2.webp"
         },
         {
           "key": "c3",
           "number": 3,
-          "image": "bennett_c3.png"
+          "image": "bennett_c3.webp"
         },
         {
           "key": "c4",
           "number": 4,
-          "image": "bennett_c4.png"
+          "image": "bennett_c4.webp"
         },
         {
           "key": "c5",
           "number": 5,
-          "image": "bennett_c5.png"
+          "image": "bennett_c5.webp"
         },
         {
           "key": "c6",
           "number": 6,
-          "image": "bennett_c6.png"
+          "image": "bennett_c6.webp"
         }
       ],
       "builds": [
@@ -7708,8 +7708,8 @@
       "rarity": 4,
       "weaponType": "polearm",
       "elementType": "hydro",
-      "image": "candace.png",
-      "fullImage": "candace.png",
+      "image": "candace.webp",
+      "fullImage": "candace.webp",
       "secondFullImage": null,
       "isComingSoon": true,
       "isNew": false,
@@ -8057,7 +8057,7 @@
       "skills": [
         {
           "key": "s1",
-          "image": "candace_s1.png",
+          "image": "candace_s1.webp",
           "type": "normalAttack",
           "stats": [
             {
@@ -8264,7 +8264,7 @@
         },
         {
           "key": "s2",
-          "image": "candace_s2.png",
+          "image": "candace_s2.webp",
           "type": "elementalSkill",
           "stats": [
             {
@@ -8391,7 +8391,7 @@
         },
         {
           "key": "s3",
-          "image": "candace_s3.png",
+          "image": "candace_s3.webp",
           "type": "elementalBurst",
           "stats": [
             {
@@ -8540,17 +8540,17 @@
       "passives": [
         {
           "key": "p1",
-          "image": "candace_p1.png",
+          "image": "candace_p1.webp",
           "unlockedAt": -1
         },
         {
           "key": "p2",
-          "image": "candace_p2.png",
+          "image": "candace_p2.webp",
           "unlockedAt": 1
         },
         {
           "key": "p3",
-          "image": "candace_p3.png",
+          "image": "candace_p3.webp",
           "unlockedAt": 4
         }
       ],
@@ -8558,32 +8558,32 @@
         {
           "key": "c1",
           "number": 1,
-          "image": "candace_c1.png"
+          "image": "candace_c1.webp"
         },
         {
           "key": "c2",
           "number": 2,
-          "image": "candace_c2.png"
+          "image": "candace_c2.webp"
         },
         {
           "key": "c3",
           "number": 3,
-          "image": "candace_c3.png"
+          "image": "candace_c3.webp"
         },
         {
           "key": "c4",
           "number": 4,
-          "image": "candace_c4.png"
+          "image": "candace_c4.webp"
         },
         {
           "key": "c5",
           "number": 5,
-          "image": "candace_c5.png"
+          "image": "candace_c5.webp"
         },
         {
           "key": "c6",
           "number": 6,
-          "image": "candace_c6.png"
+          "image": "candace_c6.webp"
         }
       ],
       "builds": [],
@@ -8707,8 +8707,8 @@
       "rarity": 4,
       "weaponType": "claymore",
       "elementType": "cryo",
-      "image": "chongyun.png",
-      "fullImage": "chongyun.png",
+      "image": "chongyun.webp",
+      "fullImage": "chongyun.webp",
       "secondFullImage": null,
       "isComingSoon": false,
       "isNew": false,
@@ -9111,7 +9111,7 @@
       "skills": [
         {
           "key": "s1",
-          "image": "chongyun_s1.png",
+          "image": "chongyun_s1.webp",
           "type": "normalAttack",
           "stats": [
             {
@@ -9338,7 +9338,7 @@
         },
         {
           "key": "s2",
-          "image": "chongyun_s2.png",
+          "image": "chongyun_s2.webp",
           "type": "elementalSkill",
           "stats": [
             {
@@ -9425,7 +9425,7 @@
         },
         {
           "key": "s3",
-          "image": "chongyun_s3.png",
+          "image": "chongyun_s3.webp",
           "type": "elementalBurst",
           "stats": [
             {
@@ -9494,17 +9494,17 @@
       "passives": [
         {
           "key": "p1",
-          "image": "chongyun_p1.png",
+          "image": "chongyun_p1.webp",
           "unlockedAt": -1
         },
         {
           "key": "p2",
-          "image": "chongyun_p2.png",
+          "image": "chongyun_p2.webp",
           "unlockedAt": 1
         },
         {
           "key": "p3",
-          "image": "chongyun_p3.png",
+          "image": "chongyun_p3.webp",
           "unlockedAt": 4
         }
       ],
@@ -9512,32 +9512,32 @@
         {
           "key": "c1",
           "number": 1,
-          "image": "chongyun_c1.png"
+          "image": "chongyun_c1.webp"
         },
         {
           "key": "c2",
           "number": 2,
-          "image": "chongyun_c2.png"
+          "image": "chongyun_c2.webp"
         },
         {
           "key": "c3",
           "number": 3,
-          "image": "chongyun_c3.png"
+          "image": "chongyun_c3.webp"
         },
         {
           "key": "c4",
           "number": 4,
-          "image": "chongyun_c4.png"
+          "image": "chongyun_c4.webp"
         },
         {
           "key": "c5",
           "number": 5,
-          "image": "chongyun_c5.png"
+          "image": "chongyun_c5.webp"
         },
         {
           "key": "c6",
           "number": 6,
-          "image": "chongyun_c6.png"
+          "image": "chongyun_c6.webp"
         }
       ],
       "builds": [
@@ -9705,8 +9705,8 @@
       "rarity": 4,
       "weaponType": "bow",
       "elementType": "dendro",
-      "image": "collei.png",
-      "fullImage": "collei.png",
+      "image": "collei.webp",
+      "fullImage": "collei.webp",
       "secondFullImage": null,
       "isComingSoon": false,
       "isNew": true,
@@ -10109,7 +10109,7 @@
       "skills": [
         {
           "key": "s1",
-          "image": "collei_s1.png",
+          "image": "collei_s1.webp",
           "type": "normalAttack",
           "stats": [
             {
@@ -10296,7 +10296,7 @@
         },
         {
           "key": "s2",
-          "image": "collei_s2.png",
+          "image": "collei_s2.webp",
           "type": "elementalSkill",
           "stats": [
             {
@@ -10343,7 +10343,7 @@
         },
         {
           "key": "s3",
-          "image": "collei_s3.png",
+          "image": "collei_s3.webp",
           "type": "elementalBurst",
           "stats": [
             {
@@ -10452,17 +10452,17 @@
       "passives": [
         {
           "key": "p1",
-          "image": "collei_p1.png",
+          "image": "collei_p1.webp",
           "unlockedAt": -1
         },
         {
           "key": "p2",
-          "image": "collei_p2.png",
+          "image": "collei_p2.webp",
           "unlockedAt": 1
         },
         {
           "key": "p3",
-          "image": "collei_p3.png",
+          "image": "collei_p3.webp",
           "unlockedAt": 4
         }
       ],
@@ -10470,32 +10470,32 @@
         {
           "key": "c1",
           "number": 1,
-          "image": "collei_c1.png"
+          "image": "collei_c1.webp"
         },
         {
           "key": "c2",
           "number": 2,
-          "image": "collei_c2.png"
+          "image": "collei_c2.webp"
         },
         {
           "key": "c3",
           "number": 3,
-          "image": "collei_c3.png"
+          "image": "collei_c3.webp"
         },
         {
           "key": "c4",
           "number": 4,
-          "image": "collei_c4.png"
+          "image": "collei_c4.webp"
         },
         {
           "key": "c5",
           "number": 5,
-          "image": "collei_c5.png"
+          "image": "collei_c5.webp"
         },
         {
           "key": "c6",
           "number": 6,
-          "image": "collei_c6.png"
+          "image": "collei_c6.webp"
         }
       ],
       "builds": [
@@ -10655,8 +10655,8 @@
       "rarity": 5,
       "weaponType": "polearm",
       "elementType": "electro",
-      "image": "cyno.png",
-      "fullImage": "cyno.png",
+      "image": "cyno.webp",
+      "fullImage": "cyno.webp",
       "secondFullImage": null,
       "isComingSoon": true,
       "isNew": false,
@@ -11029,7 +11029,7 @@
       "skills": [
         {
           "key": "s1",
-          "image": "cyno_s1.png",
+          "image": "cyno_s1.webp",
           "type": "normalAttack",
           "stats": [
             {
@@ -11236,7 +11236,7 @@
         },
         {
           "key": "s2",
-          "image": "cyno_s2.png",
+          "image": "cyno_s2.webp",
           "type": "elementalSkill",
           "stats": [
             {
@@ -11343,7 +11343,7 @@
         },
         {
           "key": "s3",
-          "image": "cyno_s3.png",
+          "image": "cyno_s3.webp",
           "type": "elementalBurst",
           "stats": [
             {
@@ -11652,17 +11652,17 @@
       "passives": [
         {
           "key": "p1",
-          "image": "cyno_p1.png",
+          "image": "cyno_p1.webp",
           "unlockedAt": -1
         },
         {
           "key": "p2",
-          "image": "cyno_p2.png",
+          "image": "cyno_p2.webp",
           "unlockedAt": 1
         },
         {
           "key": "p3",
-          "image": "cyno_p3.png",
+          "image": "cyno_p3.webp",
           "unlockedAt": 4
         }
       ],
@@ -11670,32 +11670,32 @@
         {
           "key": "c1",
           "number": 1,
-          "image": "cyno_c1.png"
+          "image": "cyno_c1.webp"
         },
         {
           "key": "c2",
           "number": 2,
-          "image": "cyno_c2.png"
+          "image": "cyno_c2.webp"
         },
         {
           "key": "c3",
           "number": 3,
-          "image": "cyno_c3.png"
+          "image": "cyno_c3.webp"
         },
         {
           "key": "c4",
           "number": 4,
-          "image": "cyno_c4.png"
+          "image": "cyno_c4.webp"
         },
         {
           "key": "c5",
           "number": 5,
-          "image": "cyno_c5.png"
+          "image": "cyno_c5.webp"
         },
         {
           "key": "c6",
           "number": 6,
-          "image": "cyno_c6.png"
+          "image": "cyno_c6.webp"
         }
       ],
       "builds": [],
@@ -11819,8 +11819,8 @@
       "rarity": 5,
       "weaponType": "claymore",
       "elementType": "pyro",
-      "image": "diluc.png",
-      "fullImage": "diluc.png",
+      "image": "diluc.webp",
+      "fullImage": "diluc.webp",
       "secondFullImage": null,
       "isComingSoon": false,
       "isNew": false,
@@ -12223,7 +12223,7 @@
       "skills": [
         {
           "key": "s1",
-          "image": "diluc_s1.png",
+          "image": "diluc_s1.webp",
           "type": "normalAttack",
           "stats": [
             {
@@ -12450,7 +12450,7 @@
         },
         {
           "key": "s2",
-          "image": "diluc_s2.png",
+          "image": "diluc_s2.webp",
           "type": "elementalSkill",
           "stats": [
             {
@@ -12537,7 +12537,7 @@
         },
         {
           "key": "s3",
-          "image": "diluc_s3.png",
+          "image": "diluc_s3.webp",
           "type": "elementalBurst",
           "stats": [
             {
@@ -12666,17 +12666,17 @@
       "passives": [
         {
           "key": "p1",
-          "image": "diluc_p1.png",
+          "image": "diluc_p1.webp",
           "unlockedAt": -1
         },
         {
           "key": "p2",
-          "image": "diluc_p2.png",
+          "image": "diluc_p2.webp",
           "unlockedAt": 1
         },
         {
           "key": "p3",
-          "image": "diluc_p3.png",
+          "image": "diluc_p3.webp",
           "unlockedAt": 4
         }
       ],
@@ -12684,32 +12684,32 @@
         {
           "key": "c1",
           "number": 1,
-          "image": "diluc_c1.png"
+          "image": "diluc_c1.webp"
         },
         {
           "key": "c2",
           "number": 2,
-          "image": "diluc_c2.png"
+          "image": "diluc_c2.webp"
         },
         {
           "key": "c3",
           "number": 3,
-          "image": "diluc_c3.png"
+          "image": "diluc_c3.webp"
         },
         {
           "key": "c4",
           "number": 4,
-          "image": "diluc_c4.png"
+          "image": "diluc_c4.webp"
         },
         {
           "key": "c5",
           "number": 5,
-          "image": "diluc_c5.png"
+          "image": "diluc_c5.webp"
         },
         {
           "key": "c6",
           "number": 6,
-          "image": "diluc_c6.png"
+          "image": "diluc_c6.webp"
         }
       ],
       "builds": [
@@ -12870,8 +12870,8 @@
       "rarity": 4,
       "weaponType": "bow",
       "elementType": "cryo",
-      "image": "diona.png",
-      "fullImage": "diona.png",
+      "image": "diona.webp",
+      "fullImage": "diona.webp",
       "secondFullImage": null,
       "isComingSoon": false,
       "isNew": false,
@@ -13274,7 +13274,7 @@
       "skills": [
         {
           "key": "s1",
-          "image": "diona_s1.png",
+          "image": "diona_s1.webp",
           "type": "normalAttack",
           "stats": [
             {
@@ -13481,7 +13481,7 @@
         },
         {
           "key": "s2",
-          "image": "diona_s2.png",
+          "image": "diona_s2.webp",
           "type": "elementalSkill",
           "stats": [
             {
@@ -13608,7 +13608,7 @@
         },
         {
           "key": "s3",
-          "image": "diona_s3.png",
+          "image": "diona_s3.webp",
           "type": "elementalBurst",
           "stats": [
             {
@@ -13757,17 +13757,17 @@
       "passives": [
         {
           "key": "p1",
-          "image": "diona_p1.png",
+          "image": "diona_p1.webp",
           "unlockedAt": -1
         },
         {
           "key": "p2",
-          "image": "diona_p2.png",
+          "image": "diona_p2.webp",
           "unlockedAt": 1
         },
         {
           "key": "p3",
-          "image": "diona_p3.png",
+          "image": "diona_p3.webp",
           "unlockedAt": 4
         }
       ],
@@ -13775,32 +13775,32 @@
         {
           "key": "c1",
           "number": 1,
-          "image": "diona_c1.png"
+          "image": "diona_c1.webp"
         },
         {
           "key": "c2",
           "number": 2,
-          "image": "diona_c2.png"
+          "image": "diona_c2.webp"
         },
         {
           "key": "c3",
           "number": 3,
-          "image": "diona_c3.png"
+          "image": "diona_c3.webp"
         },
         {
           "key": "c4",
           "number": 4,
-          "image": "diona_c4.png"
+          "image": "diona_c4.webp"
         },
         {
           "key": "c5",
           "number": 5,
-          "image": "diona_c5.png"
+          "image": "diona_c5.webp"
         },
         {
           "key": "c6",
           "number": 6,
-          "image": "diona_c6.png"
+          "image": "diona_c6.webp"
         }
       ],
       "builds": [
@@ -13977,8 +13977,8 @@
       "rarity": 4,
       "weaponType": "claymore",
       "elementType": "electro",
-      "image": "dori.png",
-      "fullImage": "dori.png",
+      "image": "dori.webp",
+      "fullImage": "dori.webp",
       "secondFullImage": null,
       "isComingSoon": true,
       "isNew": false,
@@ -14381,7 +14381,7 @@
       "skills": [
         {
           "key": "s1",
-          "image": "dori_s1.png",
+          "image": "dori_s1.webp",
           "type": "normalAttack",
           "stats": [
             {
@@ -14608,7 +14608,7 @@
         },
         {
           "key": "s2",
-          "image": "dori_s2.png",
+          "image": "dori_s2.webp",
           "type": "elementalSkill",
           "stats": [
             {
@@ -14675,7 +14675,7 @@
         },
         {
           "key": "s3",
-          "image": "dori_s3.png",
+          "image": "dori_s3.webp",
           "type": "elementalBurst",
           "stats": [
             {
@@ -14824,17 +14824,17 @@
       "passives": [
         {
           "key": "p1",
-          "image": "dori_p1.png",
+          "image": "dori_p1.webp",
           "unlockedAt": -1
         },
         {
           "key": "p2",
-          "image": "dori_p2.png",
+          "image": "dori_p2.webp",
           "unlockedAt": 1
         },
         {
           "key": "p3",
-          "image": "dori_p3.png",
+          "image": "dori_p3.webp",
           "unlockedAt": 4
         }
       ],
@@ -14842,32 +14842,32 @@
         {
           "key": "c1",
           "number": 1,
-          "image": "dori_c1.png"
+          "image": "dori_c1.webp"
         },
         {
           "key": "c2",
           "number": 2,
-          "image": "dori_c2.png"
+          "image": "dori_c2.webp"
         },
         {
           "key": "c3",
           "number": 3,
-          "image": "dori_c3.png"
+          "image": "dori_c3.webp"
         },
         {
           "key": "c4",
           "number": 4,
-          "image": "dori_c4.png"
+          "image": "dori_c4.webp"
         },
         {
           "key": "c5",
           "number": 5,
-          "image": "dori_c5.png"
+          "image": "dori_c5.webp"
         },
         {
           "key": "c6",
           "number": 6,
-          "image": "dori_c6.png"
+          "image": "dori_c6.webp"
         }
       ],
       "builds": [
@@ -15036,8 +15036,8 @@
       "rarity": 5,
       "weaponType": "claymore",
       "elementType": "cryo",
-      "image": "eula.png",
-      "fullImage": "eula.png",
+      "image": "eula.webp",
+      "fullImage": "eula.webp",
       "secondFullImage": null,
       "isComingSoon": false,
       "isNew": false,
@@ -15440,7 +15440,7 @@
       "skills": [
         {
           "key": "s1",
-          "image": "eula_s1.png",
+          "image": "eula_s1.webp",
           "type": "normalAttack",
           "stats": [
             {
@@ -15727,7 +15727,7 @@
         },
         {
           "key": "s2",
-          "image": "eula_s2.png",
+          "image": "eula_s2.webp",
           "type": "elementalSkill",
           "stats": [
             {
@@ -15934,7 +15934,7 @@
         },
         {
           "key": "s3",
-          "image": "eula_s3.png",
+          "image": "eula_s3.webp",
           "type": "elementalBurst",
           "stats": [
             {
@@ -16063,17 +16063,17 @@
       "passives": [
         {
           "key": "p1",
-          "image": "eula_p1.png",
+          "image": "eula_p1.webp",
           "unlockedAt": -1
         },
         {
           "key": "p2",
-          "image": "eula_p2.png",
+          "image": "eula_p2.webp",
           "unlockedAt": 1
         },
         {
           "key": "p3",
-          "image": "eula_p3.png",
+          "image": "eula_p3.webp",
           "unlockedAt": 4
         }
       ],
@@ -16081,32 +16081,32 @@
         {
           "key": "c1",
           "number": 1,
-          "image": "eula_c1.png"
+          "image": "eula_c1.webp"
         },
         {
           "key": "c2",
           "number": 2,
-          "image": "eula_c2.png"
+          "image": "eula_c2.webp"
         },
         {
           "key": "c3",
           "number": 3,
-          "image": "eula_c3.png"
+          "image": "eula_c3.webp"
         },
         {
           "key": "c4",
           "number": 4,
-          "image": "eula_c4.png"
+          "image": "eula_c4.webp"
         },
         {
           "key": "c5",
           "number": 5,
-          "image": "eula_c5.png"
+          "image": "eula_c5.webp"
         },
         {
           "key": "c6",
           "number": 6,
-          "image": "eula_c6.png"
+          "image": "eula_c6.webp"
         }
       ],
       "builds": [
@@ -16287,8 +16287,8 @@
       "rarity": 4,
       "weaponType": "bow",
       "elementType": "electro",
-      "image": "fischl.png",
-      "fullImage": "fischl.png",
+      "image": "fischl.webp",
+      "fullImage": "fischl.webp",
       "secondFullImage": null,
       "isComingSoon": false,
       "isNew": false,
@@ -16691,7 +16691,7 @@
       "skills": [
         {
           "key": "s1",
-          "image": "fischl_s1.png",
+          "image": "fischl_s1.webp",
           "type": "normalAttack",
           "stats": [
             {
@@ -16898,7 +16898,7 @@
         },
         {
           "key": "s2",
-          "image": "fischl_s2.png",
+          "image": "fischl_s2.webp",
           "type": "elementalSkill",
           "stats": [
             {
@@ -16985,7 +16985,7 @@
         },
         {
           "key": "s3",
-          "image": "fischl_s3.png",
+          "image": "fischl_s3.webp",
           "type": "elementalBurst",
           "stats": [
             {
@@ -17094,17 +17094,17 @@
       "passives": [
         {
           "key": "p1",
-          "image": "fischl_p1.png",
+          "image": "fischl_p1.webp",
           "unlockedAt": -1
         },
         {
           "key": "p2",
-          "image": "fischl_p2.png",
+          "image": "fischl_p2.webp",
           "unlockedAt": 1
         },
         {
           "key": "p3",
-          "image": "fischl_p3.png",
+          "image": "fischl_p3.webp",
           "unlockedAt": 4
         }
       ],
@@ -17112,32 +17112,32 @@
         {
           "key": "c1",
           "number": 1,
-          "image": "fischl_c1.png"
+          "image": "fischl_c1.webp"
         },
         {
           "key": "c2",
           "number": 2,
-          "image": "fischl_c2.png"
+          "image": "fischl_c2.webp"
         },
         {
           "key": "c3",
           "number": 3,
-          "image": "fischl_c3.png"
+          "image": "fischl_c3.webp"
         },
         {
           "key": "c4",
           "number": 4,
-          "image": "fischl_c4.png"
+          "image": "fischl_c4.webp"
         },
         {
           "key": "c5",
           "number": 5,
-          "image": "fischl_c5.png"
+          "image": "fischl_c5.webp"
         },
         {
           "key": "c6",
           "number": 6,
-          "image": "fischl_c6.png"
+          "image": "fischl_c6.webp"
         }
       ],
       "builds": [
@@ -17375,8 +17375,8 @@
       "rarity": 5,
       "weaponType": "bow",
       "elementType": "cryo",
-      "image": "ganyu.png",
-      "fullImage": "ganyu.png",
+      "image": "ganyu.webp",
+      "fullImage": "ganyu.webp",
       "secondFullImage": null,
       "isComingSoon": false,
       "isNew": false,
@@ -17779,7 +17779,7 @@
       "skills": [
         {
           "key": "s1",
-          "image": "ganyu_s1.png",
+          "image": "ganyu_s1.webp",
           "type": "normalAttack",
           "stats": [
             {
@@ -18046,7 +18046,7 @@
         },
         {
           "key": "s2",
-          "image": "ganyu_s2.png",
+          "image": "ganyu_s2.webp",
           "type": "elementalSkill",
           "stats": [
             {
@@ -18133,7 +18133,7 @@
         },
         {
           "key": "s3",
-          "image": "ganyu_s3.png",
+          "image": "ganyu_s3.webp",
           "type": "elementalBurst",
           "stats": [
             {
@@ -18222,17 +18222,17 @@
       "passives": [
         {
           "key": "p1",
-          "image": "ganyu_p1.png",
+          "image": "ganyu_p1.webp",
           "unlockedAt": -1
         },
         {
           "key": "p2",
-          "image": "ganyu_p2.png",
+          "image": "ganyu_p2.webp",
           "unlockedAt": 1
         },
         {
           "key": "p3",
-          "image": "ganyu_p3.png",
+          "image": "ganyu_p3.webp",
           "unlockedAt": 4
         }
       ],
@@ -18240,32 +18240,32 @@
         {
           "key": "c1",
           "number": 1,
-          "image": "ganyu_c1.png"
+          "image": "ganyu_c1.webp"
         },
         {
           "key": "c2",
           "number": 2,
-          "image": "ganyu_c2.png"
+          "image": "ganyu_c2.webp"
         },
         {
           "key": "c3",
           "number": 3,
-          "image": "ganyu_c3.png"
+          "image": "ganyu_c3.webp"
         },
         {
           "key": "c4",
           "number": 4,
-          "image": "ganyu_c4.png"
+          "image": "ganyu_c4.webp"
         },
         {
           "key": "c5",
           "number": 5,
-          "image": "ganyu_c5.png"
+          "image": "ganyu_c5.webp"
         },
         {
           "key": "c6",
           "number": 6,
-          "image": "ganyu_c6.png"
+          "image": "ganyu_c6.webp"
         }
       ],
       "builds": [
@@ -18516,8 +18516,8 @@
       "rarity": 4,
       "weaponType": "bow",
       "elementType": "geo",
-      "image": "gorou.png",
-      "fullImage": "gorou.png",
+      "image": "gorou.webp",
+      "fullImage": "gorou.webp",
       "secondFullImage": null,
       "isComingSoon": false,
       "isNew": false,
@@ -18920,7 +18920,7 @@
       "skills": [
         {
           "key": "s1",
-          "image": "gorou_s1.png",
+          "image": "gorou_s1.webp",
           "type": "normalAttack",
           "stats": [
             {
@@ -19107,7 +19107,7 @@
         },
         {
           "key": "s2",
-          "image": "gorou_s2.png",
+          "image": "gorou_s2.webp",
           "type": "elementalSkill",
           "stats": [
             {
@@ -19214,7 +19214,7 @@
         },
         {
           "key": "s3",
-          "image": "gorou_s3.png",
+          "image": "gorou_s3.webp",
           "type": "elementalBurst",
           "stats": [
             {
@@ -19323,17 +19323,17 @@
       "passives": [
         {
           "key": "p1",
-          "image": "gorou_p1.png",
+          "image": "gorou_p1.webp",
           "unlockedAt": -1
         },
         {
           "key": "p2",
-          "image": "gorou_p2.png",
+          "image": "gorou_p2.webp",
           "unlockedAt": 1
         },
         {
           "key": "p3",
-          "image": "gorou_p3.png",
+          "image": "gorou_p3.webp",
           "unlockedAt": 4
         }
       ],
@@ -19341,32 +19341,32 @@
         {
           "key": "c1",
           "number": 1,
-          "image": "gorou_c1.png"
+          "image": "gorou_c1.webp"
         },
         {
           "key": "c2",
           "number": 2,
-          "image": "gorou_c2.png"
+          "image": "gorou_c2.webp"
         },
         {
           "key": "c3",
           "number": 3,
-          "image": "gorou_c3.png"
+          "image": "gorou_c3.webp"
         },
         {
           "key": "c4",
           "number": 4,
-          "image": "gorou_c4.png"
+          "image": "gorou_c4.webp"
         },
         {
           "key": "c5",
           "number": 5,
-          "image": "gorou_c5.png"
+          "image": "gorou_c5.webp"
         },
         {
           "key": "c6",
           "number": 6,
-          "image": "gorou_c6.png"
+          "image": "gorou_c6.webp"
         }
       ],
       "builds": [
@@ -19543,8 +19543,8 @@
       "rarity": 5,
       "weaponType": "polearm",
       "elementType": "pyro",
-      "image": "hu-tao.png",
-      "fullImage": "hu-tao.png",
+      "image": "hu-tao.webp",
+      "fullImage": "hu-tao.webp",
       "secondFullImage": null,
       "isComingSoon": false,
       "isNew": false,
@@ -19947,7 +19947,7 @@
       "skills": [
         {
           "key": "s1",
-          "image": "hu-tao_s1.png",
+          "image": "hu-tao_s1.webp",
           "type": "normalAttack",
           "stats": [
             {
@@ -20194,7 +20194,7 @@
         },
         {
           "key": "s2",
-          "image": "hu-tao_s2.png",
+          "image": "hu-tao_s2.webp",
           "type": "elementalSkill",
           "stats": [
             {
@@ -20321,7 +20321,7 @@
         },
         {
           "key": "s3",
-          "image": "hu-tao_s3.png",
+          "image": "hu-tao_s3.webp",
           "type": "elementalBurst",
           "stats": [
             {
@@ -20450,17 +20450,17 @@
       "passives": [
         {
           "key": "p1",
-          "image": "hu-tao_p1.png",
+          "image": "hu-tao_p1.webp",
           "unlockedAt": -1
         },
         {
           "key": "p2",
-          "image": "hu-tao_p2.png",
+          "image": "hu-tao_p2.webp",
           "unlockedAt": 1
         },
         {
           "key": "p3",
-          "image": "hu-tao_p3.png",
+          "image": "hu-tao_p3.webp",
           "unlockedAt": 4
         }
       ],
@@ -20468,32 +20468,32 @@
         {
           "key": "c1",
           "number": 1,
-          "image": "hu-tao_c1.png"
+          "image": "hu-tao_c1.webp"
         },
         {
           "key": "c2",
           "number": 2,
-          "image": "hu-tao_c2.png"
+          "image": "hu-tao_c2.webp"
         },
         {
           "key": "c3",
           "number": 3,
-          "image": "hu-tao_c3.png"
+          "image": "hu-tao_c3.webp"
         },
         {
           "key": "c4",
           "number": 4,
-          "image": "hu-tao_c4.png"
+          "image": "hu-tao_c4.webp"
         },
         {
           "key": "c5",
           "number": 5,
-          "image": "hu-tao_c5.png"
+          "image": "hu-tao_c5.webp"
         },
         {
           "key": "c6",
           "number": 6,
-          "image": "hu-tao_c6.png"
+          "image": "hu-tao_c6.webp"
         }
       ],
       "builds": [
@@ -20654,8 +20654,8 @@
       "rarity": 5,
       "weaponType": "sword",
       "elementType": "anemo",
-      "image": "jean.png",
-      "fullImage": "jean.png",
+      "image": "jean.webp",
+      "fullImage": "jean.webp",
       "secondFullImage": null,
       "isComingSoon": false,
       "isNew": false,
@@ -21058,7 +21058,7 @@
       "skills": [
         {
           "key": "s1",
-          "image": "jean_s1.png",
+          "image": "jean_s1.webp",
           "type": "normalAttack",
           "stats": [
             {
@@ -21265,7 +21265,7 @@
         },
         {
           "key": "s2",
-          "image": "jean_s2.png",
+          "image": "jean_s2.webp",
           "type": "elementalSkill",
           "stats": [
             {
@@ -21352,7 +21352,7 @@
         },
         {
           "key": "s3",
-          "image": "jean_s3.png",
+          "image": "jean_s3.webp",
           "type": "elementalBurst",
           "stats": [
             {
@@ -21521,17 +21521,17 @@
       "passives": [
         {
           "key": "p1",
-          "image": "jean_p1.png",
+          "image": "jean_p1.webp",
           "unlockedAt": -1
         },
         {
           "key": "p2",
-          "image": "jean_p2.png",
+          "image": "jean_p2.webp",
           "unlockedAt": 1
         },
         {
           "key": "p3",
-          "image": "jean_p3.png",
+          "image": "jean_p3.webp",
           "unlockedAt": 4
         }
       ],
@@ -21539,32 +21539,32 @@
         {
           "key": "c1",
           "number": 1,
-          "image": "jean_c1.png"
+          "image": "jean_c1.webp"
         },
         {
           "key": "c2",
           "number": 2,
-          "image": "jean_c2.png"
+          "image": "jean_c2.webp"
         },
         {
           "key": "c3",
           "number": 3,
-          "image": "jean_c3.png"
+          "image": "jean_c3.webp"
         },
         {
           "key": "c4",
           "number": 4,
-          "image": "jean_c4.png"
+          "image": "jean_c4.webp"
         },
         {
           "key": "c5",
           "number": 5,
-          "image": "jean_c5.png"
+          "image": "jean_c5.webp"
         },
         {
           "key": "c6",
           "number": 6,
-          "image": "jean_c6.png"
+          "image": "jean_c6.webp"
         }
       ],
       "builds": [
@@ -21767,8 +21767,8 @@
       "rarity": 5,
       "weaponType": "sword",
       "elementType": "anemo",
-      "image": "kaedehara-kazuha.png",
-      "fullImage": "kaedehara-kazuha.png",
+      "image": "kaedehara-kazuha.webp",
+      "fullImage": "kaedehara-kazuha.webp",
       "secondFullImage": null,
       "isComingSoon": false,
       "isNew": false,
@@ -22171,7 +22171,7 @@
       "skills": [
         {
           "key": "s1",
-          "image": "kaedehara-kazuha_s1.png",
+          "image": "kaedehara-kazuha_s1.webp",
           "type": "normalAttack",
           "stats": [
             {
@@ -22438,7 +22438,7 @@
         },
         {
           "key": "s2",
-          "image": "kaedehara-kazuha_s2.png",
+          "image": "kaedehara-kazuha_s2.webp",
           "type": "elementalSkill",
           "stats": [
             {
@@ -22525,7 +22525,7 @@
         },
         {
           "key": "s3",
-          "image": "kaedehara-kazuha_s3.png",
+          "image": "kaedehara-kazuha_s3.webp",
           "type": "elementalBurst",
           "stats": [
             {
@@ -22654,17 +22654,17 @@
       "passives": [
         {
           "key": "p1",
-          "image": "kaedehara-kazuha_p1.png",
+          "image": "kaedehara-kazuha_p1.webp",
           "unlockedAt": -1
         },
         {
           "key": "p2",
-          "image": "kaedehara-kazuha_p2.png",
+          "image": "kaedehara-kazuha_p2.webp",
           "unlockedAt": 1
         },
         {
           "key": "p3",
-          "image": "kaedehara-kazuha_p3.png",
+          "image": "kaedehara-kazuha_p3.webp",
           "unlockedAt": 4
         }
       ],
@@ -22672,32 +22672,32 @@
         {
           "key": "c1",
           "number": 1,
-          "image": "kaedehara-kazuha_c1.png"
+          "image": "kaedehara-kazuha_c1.webp"
         },
         {
           "key": "c2",
           "number": 2,
-          "image": "kaedehara-kazuha_c2.png"
+          "image": "kaedehara-kazuha_c2.webp"
         },
         {
           "key": "c3",
           "number": 3,
-          "image": "kaedehara-kazuha_c3.png"
+          "image": "kaedehara-kazuha_c3.webp"
         },
         {
           "key": "c4",
           "number": 4,
-          "image": "kaedehara-kazuha_c4.png"
+          "image": "kaedehara-kazuha_c4.webp"
         },
         {
           "key": "c5",
           "number": 5,
-          "image": "kaedehara-kazuha_c5.png"
+          "image": "kaedehara-kazuha_c5.webp"
         },
         {
           "key": "c6",
           "number": 6,
-          "image": "kaedehara-kazuha_c6.png"
+          "image": "kaedehara-kazuha_c6.webp"
         }
       ],
       "builds": [
@@ -22857,8 +22857,8 @@
       "rarity": 4,
       "weaponType": "sword",
       "elementType": "cryo",
-      "image": "kaeya.png",
-      "fullImage": "kaeya.png",
+      "image": "kaeya.webp",
+      "fullImage": "kaeya.webp",
       "secondFullImage": null,
       "isComingSoon": false,
       "isNew": false,
@@ -23261,7 +23261,7 @@
       "skills": [
         {
           "key": "s1",
-          "image": "kaeya_s1.png",
+          "image": "kaeya_s1.webp",
           "type": "normalAttack",
           "stats": [
             {
@@ -23488,7 +23488,7 @@
         },
         {
           "key": "s2",
-          "image": "kaeya_s2.png",
+          "image": "kaeya_s2.webp",
           "type": "elementalSkill",
           "stats": [
             {
@@ -23535,7 +23535,7 @@
         },
         {
           "key": "s3",
-          "image": "kaeya_s3.png",
+          "image": "kaeya_s3.webp",
           "type": "elementalBurst",
           "stats": [
             {
@@ -23644,17 +23644,17 @@
       "passives": [
         {
           "key": "p1",
-          "image": "kaeya_p1.png",
+          "image": "kaeya_p1.webp",
           "unlockedAt": -1
         },
         {
           "key": "p2",
-          "image": "kaeya_p2.png",
+          "image": "kaeya_p2.webp",
           "unlockedAt": 1
         },
         {
           "key": "p3",
-          "image": "kaeya_p3.png",
+          "image": "kaeya_p3.webp",
           "unlockedAt": 4
         }
       ],
@@ -23662,32 +23662,32 @@
         {
           "key": "c1",
           "number": 1,
-          "image": "kaeya_c1.png"
+          "image": "kaeya_c1.webp"
         },
         {
           "key": "c2",
           "number": 2,
-          "image": "kaeya_c2.png"
+          "image": "kaeya_c2.webp"
         },
         {
           "key": "c3",
           "number": 3,
-          "image": "kaeya_c3.png"
+          "image": "kaeya_c3.webp"
         },
         {
           "key": "c4",
           "number": 4,
-          "image": "kaeya_c4.png"
+          "image": "kaeya_c4.webp"
         },
         {
           "key": "c5",
           "number": 5,
-          "image": "kaeya_c5.png"
+          "image": "kaeya_c5.webp"
         },
         {
           "key": "c6",
           "number": 6,
-          "image": "kaeya_c6.png"
+          "image": "kaeya_c6.webp"
         }
       ],
       "builds": [
@@ -23927,8 +23927,8 @@
       "rarity": 5,
       "weaponType": "sword",
       "elementType": "cryo",
-      "image": "kamisato-ayaka.png",
-      "fullImage": "kamisato-ayaka.png",
+      "image": "kamisato-ayaka.webp",
+      "fullImage": "kamisato-ayaka.webp",
       "secondFullImage": null,
       "isComingSoon": false,
       "isNew": false,
@@ -24331,7 +24331,7 @@
       "skills": [
         {
           "key": "s1",
-          "image": "kamisato-ayaka_s1.png",
+          "image": "kamisato-ayaka_s1.webp",
           "type": "normalAttack",
           "stats": [
             {
@@ -24578,7 +24578,7 @@
         },
         {
           "key": "s2",
-          "image": "kamisato-ayaka_s2.png",
+          "image": "kamisato-ayaka_s2.webp",
           "type": "elementalSkill",
           "stats": [
             {
@@ -24625,7 +24625,7 @@
         },
         {
           "key": "s3",
-          "image": "kamisato-ayaka_s3.png",
+          "image": "kamisato-ayaka_s3.webp",
           "type": "others",
           "stats": [
             {
@@ -24650,7 +24650,7 @@
         },
         {
           "key": "s4",
-          "image": "kamisato-ayaka_s4.png",
+          "image": "kamisato-ayaka_s4.webp",
           "type": "elementalBurst",
           "stats": [
             {
@@ -24759,17 +24759,17 @@
       "passives": [
         {
           "key": "p1",
-          "image": "kamisato-ayaka_p1.png",
+          "image": "kamisato-ayaka_p1.webp",
           "unlockedAt": -1
         },
         {
           "key": "p2",
-          "image": "kamisato-ayaka_p2.png",
+          "image": "kamisato-ayaka_p2.webp",
           "unlockedAt": 1
         },
         {
           "key": "p3",
-          "image": "kamisato-ayaka_p3.png",
+          "image": "kamisato-ayaka_p3.webp",
           "unlockedAt": 4
         }
       ],
@@ -24777,32 +24777,32 @@
         {
           "key": "c1",
           "number": 1,
-          "image": "kamisato-ayaka_c1.png"
+          "image": "kamisato-ayaka_c1.webp"
         },
         {
           "key": "c2",
           "number": 2,
-          "image": "kamisato-ayaka_c2.png"
+          "image": "kamisato-ayaka_c2.webp"
         },
         {
           "key": "c3",
           "number": 3,
-          "image": "kamisato-ayaka_c3.png"
+          "image": "kamisato-ayaka_c3.webp"
         },
         {
           "key": "c4",
           "number": 4,
-          "image": "kamisato-ayaka_c4.png"
+          "image": "kamisato-ayaka_c4.webp"
         },
         {
           "key": "c5",
           "number": 5,
-          "image": "kamisato-ayaka_c5.png"
+          "image": "kamisato-ayaka_c5.webp"
         },
         {
           "key": "c6",
           "number": 6,
-          "image": "kamisato-ayaka_c6.png"
+          "image": "kamisato-ayaka_c6.webp"
         }
       ],
       "builds": [
@@ -24963,8 +24963,8 @@
       "rarity": 5,
       "weaponType": "sword",
       "elementType": "hydro",
-      "image": "kamisato-ayato.png",
-      "fullImage": "kamisato-ayato.png",
+      "image": "kamisato-ayato.webp",
+      "fullImage": "kamisato-ayato.webp",
       "secondFullImage": null,
       "isComingSoon": false,
       "isNew": false,
@@ -25367,7 +25367,7 @@
       "skills": [
         {
           "key": "s1",
-          "image": "kamisato-ayato_s1.png",
+          "image": "kamisato-ayato_s1.webp",
           "type": "normalAttack",
           "stats": [
             {
@@ -25594,7 +25594,7 @@
         },
         {
           "key": "s2",
-          "image": "kamisato-ayato_s2.png",
+          "image": "kamisato-ayato_s2.webp",
           "type": "elementalSkill",
           "stats": [
             {
@@ -25801,7 +25801,7 @@
         },
         {
           "key": "s3",
-          "image": "kamisato-ayato_s3.png",
+          "image": "kamisato-ayato_s3.webp",
           "type": "elementalBurst",
           "stats": [
             {
@@ -25910,17 +25910,17 @@
       "passives": [
         {
           "key": "p1",
-          "image": "kamisato-ayato_p1.png",
+          "image": "kamisato-ayato_p1.webp",
           "unlockedAt": -1
         },
         {
           "key": "p2",
-          "image": "kamisato-ayato_p2.png",
+          "image": "kamisato-ayato_p2.webp",
           "unlockedAt": 1
         },
         {
           "key": "p3",
-          "image": "kamisato-ayato_p3.png",
+          "image": "kamisato-ayato_p3.webp",
           "unlockedAt": 4
         }
       ],
@@ -25928,32 +25928,32 @@
         {
           "key": "c1",
           "number": 1,
-          "image": "kamisato-ayato_c1.png"
+          "image": "kamisato-ayato_c1.webp"
         },
         {
           "key": "c2",
           "number": 2,
-          "image": "kamisato-ayato_c2.png"
+          "image": "kamisato-ayato_c2.webp"
         },
         {
           "key": "c3",
           "number": 3,
-          "image": "kamisato-ayato_c3.png"
+          "image": "kamisato-ayato_c3.webp"
         },
         {
           "key": "c4",
           "number": 4,
-          "image": "kamisato-ayato_c4.png"
+          "image": "kamisato-ayato_c4.webp"
         },
         {
           "key": "c5",
           "number": 5,
-          "image": "kamisato-ayato_c5.png"
+          "image": "kamisato-ayato_c5.webp"
         },
         {
           "key": "c6",
           "number": 6,
-          "image": "kamisato-ayato_c6.png"
+          "image": "kamisato-ayato_c6.webp"
         }
       ],
       "builds": [
@@ -26172,8 +26172,8 @@
       "rarity": 5,
       "weaponType": "sword",
       "elementType": "electro",
-      "image": "keqing.png",
-      "fullImage": "keqing.png",
+      "image": "keqing.webp",
+      "fullImage": "keqing.webp",
       "secondFullImage": null,
       "isComingSoon": false,
       "isNew": false,
@@ -26576,7 +26576,7 @@
       "skills": [
         {
           "key": "s1",
-          "image": "keqing_s1.png",
+          "image": "keqing_s1.webp",
           "type": "normalAttack",
           "stats": [
             {
@@ -26823,7 +26823,7 @@
         },
         {
           "key": "s2",
-          "image": "keqing_s2.png",
+          "image": "keqing_s2.webp",
           "type": "elementalSkill",
           "stats": [
             {
@@ -26930,7 +26930,7 @@
         },
         {
           "key": "s3",
-          "image": "keqing_s3.png",
+          "image": "keqing_s3.webp",
           "type": "elementalBurst",
           "stats": [
             {
@@ -27059,17 +27059,17 @@
       "passives": [
         {
           "key": "p1",
-          "image": "keqing_p1.png",
+          "image": "keqing_p1.webp",
           "unlockedAt": -1
         },
         {
           "key": "p2",
-          "image": "keqing_p2.png",
+          "image": "keqing_p2.webp",
           "unlockedAt": 1
         },
         {
           "key": "p3",
-          "image": "keqing_p3.png",
+          "image": "keqing_p3.webp",
           "unlockedAt": 4
         }
       ],
@@ -27077,32 +27077,32 @@
         {
           "key": "c1",
           "number": 1,
-          "image": "keqing_c1.png"
+          "image": "keqing_c1.webp"
         },
         {
           "key": "c2",
           "number": 2,
-          "image": "keqing_c2.png"
+          "image": "keqing_c2.webp"
         },
         {
           "key": "c3",
           "number": 3,
-          "image": "keqing_c3.png"
+          "image": "keqing_c3.webp"
         },
         {
           "key": "c4",
           "number": 4,
-          "image": "keqing_c4.png"
+          "image": "keqing_c4.webp"
         },
         {
           "key": "c5",
           "number": 5,
-          "image": "keqing_c5.png"
+          "image": "keqing_c5.webp"
         },
         {
           "key": "c6",
           "number": 6,
-          "image": "keqing_c6.png"
+          "image": "keqing_c6.webp"
         }
       ],
       "builds": [
@@ -27349,8 +27349,8 @@
       "rarity": 5,
       "weaponType": "catalyst",
       "elementType": "pyro",
-      "image": "klee.png",
-      "fullImage": "klee.png",
+      "image": "klee.webp",
+      "fullImage": "klee.webp",
       "secondFullImage": null,
       "isComingSoon": false,
       "isNew": false,
@@ -27753,7 +27753,7 @@
       "skills": [
         {
           "key": "s1",
-          "image": "klee_s1.png",
+          "image": "klee_s1.webp",
           "type": "normalAttack",
           "stats": [
             {
@@ -27920,7 +27920,7 @@
         },
         {
           "key": "s2",
-          "image": "klee_s2.png",
+          "image": "klee_s2.webp",
           "type": "elementalSkill",
           "stats": [
             {
@@ -28007,7 +28007,7 @@
         },
         {
           "key": "s3",
-          "image": "klee_s3.png",
+          "image": "klee_s3.webp",
           "type": "elementalBurst",
           "stats": [
             {
@@ -28096,17 +28096,17 @@
       "passives": [
         {
           "key": "p1",
-          "image": "klee_p1.png",
+          "image": "klee_p1.webp",
           "unlockedAt": -1
         },
         {
           "key": "p2",
-          "image": "klee_p2.png",
+          "image": "klee_p2.webp",
           "unlockedAt": 1
         },
         {
           "key": "p3",
-          "image": "klee_p3.png",
+          "image": "klee_p3.webp",
           "unlockedAt": 4
         }
       ],
@@ -28114,32 +28114,32 @@
         {
           "key": "c1",
           "number": 1,
-          "image": "klee_c1.png"
+          "image": "klee_c1.webp"
         },
         {
           "key": "c2",
           "number": 2,
-          "image": "klee_c2.png"
+          "image": "klee_c2.webp"
         },
         {
           "key": "c3",
           "number": 3,
-          "image": "klee_c3.png"
+          "image": "klee_c3.webp"
         },
         {
           "key": "c4",
           "number": 4,
-          "image": "klee_c4.png"
+          "image": "klee_c4.webp"
         },
         {
           "key": "c5",
           "number": 5,
-          "image": "klee_c5.png"
+          "image": "klee_c5.webp"
         },
         {
           "key": "c6",
           "number": 6,
-          "image": "klee_c6.png"
+          "image": "klee_c6.webp"
         }
       ],
       "builds": [
@@ -28329,8 +28329,8 @@
       "rarity": 4,
       "weaponType": "bow",
       "elementType": "electro",
-      "image": "kujou-sara.png",
-      "fullImage": "kujou-sara.png",
+      "image": "kujou-sara.webp",
+      "fullImage": "kujou-sara.webp",
       "secondFullImage": null,
       "isComingSoon": false,
       "isNew": false,
@@ -28733,7 +28733,7 @@
       "skills": [
         {
           "key": "s1",
-          "image": "kujou-sara_s1.png",
+          "image": "kujou-sara_s1.webp",
           "type": "normalAttack",
           "stats": [
             {
@@ -28940,7 +28940,7 @@
         },
         {
           "key": "s2",
-          "image": "kujou-sara_s2.png",
+          "image": "kujou-sara_s2.webp",
           "type": "elementalSkill",
           "stats": [
             {
@@ -29027,7 +29027,7 @@
         },
         {
           "key": "s3",
-          "image": "kujou-sara_s3.png",
+          "image": "kujou-sara_s3.webp",
           "type": "elementalBurst",
           "stats": [
             {
@@ -29116,17 +29116,17 @@
       "passives": [
         {
           "key": "p1",
-          "image": "kujou-sara_p1.png",
+          "image": "kujou-sara_p1.webp",
           "unlockedAt": -1
         },
         {
           "key": "p2",
-          "image": "kujou-sara_p2.png",
+          "image": "kujou-sara_p2.webp",
           "unlockedAt": 1
         },
         {
           "key": "p3",
-          "image": "kujou-sara_p3.png",
+          "image": "kujou-sara_p3.webp",
           "unlockedAt": 4
         }
       ],
@@ -29134,32 +29134,32 @@
         {
           "key": "c1",
           "number": 1,
-          "image": "kujou-sara_c1.png"
+          "image": "kujou-sara_c1.webp"
         },
         {
           "key": "c2",
           "number": 2,
-          "image": "kujou-sara_c2.png"
+          "image": "kujou-sara_c2.webp"
         },
         {
           "key": "c3",
           "number": 3,
-          "image": "kujou-sara_c3.png"
+          "image": "kujou-sara_c3.webp"
         },
         {
           "key": "c4",
           "number": 4,
-          "image": "kujou-sara_c4.png"
+          "image": "kujou-sara_c4.webp"
         },
         {
           "key": "c5",
           "number": 5,
-          "image": "kujou-sara_c5.png"
+          "image": "kujou-sara_c5.webp"
         },
         {
           "key": "c6",
           "number": 6,
-          "image": "kujou-sara_c6.png"
+          "image": "kujou-sara_c6.webp"
         }
       ],
       "builds": [
@@ -29329,8 +29329,8 @@
       "rarity": 4,
       "weaponType": "sword",
       "elementType": "electro",
-      "image": "kuki-shinobu.png",
-      "fullImage": "kuki-shinobu.png",
+      "image": "kuki-shinobu.webp",
+      "fullImage": "kuki-shinobu.webp",
       "secondFullImage": null,
       "isComingSoon": false,
       "isNew": false,
@@ -29733,7 +29733,7 @@
       "skills": [
         {
           "key": "s1",
-          "image": "kuki-shinobu_s1.png",
+          "image": "kuki-shinobu_s1.webp",
           "type": "normalAttack",
           "stats": [
             {
@@ -29940,7 +29940,7 @@
         },
         {
           "key": "s2",
-          "image": "kuki-shinobu_s2.png",
+          "image": "kuki-shinobu_s2.webp",
           "type": "elementalSkill",
           "stats": [
             {
@@ -30087,7 +30087,7 @@
         },
         {
           "key": "s3",
-          "image": "kuki-shinobu_s3.png",
+          "image": "kuki-shinobu_s3.webp",
           "type": "elementalBurst",
           "stats": [
             {
@@ -30236,17 +30236,17 @@
       "passives": [
         {
           "key": "p1",
-          "image": "kuki-shinobu_p1.png",
+          "image": "kuki-shinobu_p1.webp",
           "unlockedAt": -1
         },
         {
           "key": "p2",
-          "image": "kuki-shinobu_p2.png",
+          "image": "kuki-shinobu_p2.webp",
           "unlockedAt": 1
         },
         {
           "key": "p3",
-          "image": "kuki-shinobu_p3.png",
+          "image": "kuki-shinobu_p3.webp",
           "unlockedAt": 4
         }
       ],
@@ -30254,32 +30254,32 @@
         {
           "key": "c1",
           "number": 1,
-          "image": "kuki-shinobu_c1.png"
+          "image": "kuki-shinobu_c1.webp"
         },
         {
           "key": "c2",
           "number": 2,
-          "image": "kuki-shinobu_c2.png"
+          "image": "kuki-shinobu_c2.webp"
         },
         {
           "key": "c3",
           "number": 3,
-          "image": "kuki-shinobu_c3.png"
+          "image": "kuki-shinobu_c3.webp"
         },
         {
           "key": "c4",
           "number": 4,
-          "image": "kuki-shinobu_c4.png"
+          "image": "kuki-shinobu_c4.webp"
         },
         {
           "key": "c5",
           "number": 5,
-          "image": "kuki-shinobu_c5.png"
+          "image": "kuki-shinobu_c5.webp"
         },
         {
           "key": "c6",
           "number": 6,
-          "image": "kuki-shinobu_c6.png"
+          "image": "kuki-shinobu_c6.webp"
         }
       ],
       "builds": [
@@ -30470,8 +30470,8 @@
       "rarity": 4,
       "weaponType": "catalyst",
       "elementType": "electro",
-      "image": "lisa.png",
-      "fullImage": "lisa.png",
+      "image": "lisa.webp",
+      "fullImage": "lisa.webp",
       "secondFullImage": null,
       "isComingSoon": false,
       "isNew": false,
@@ -30874,7 +30874,7 @@
       "skills": [
         {
           "key": "s1",
-          "image": "lisa_s1.png",
+          "image": "lisa_s1.webp",
           "type": "normalAttack",
           "stats": [
             {
@@ -31061,7 +31061,7 @@
         },
         {
           "key": "s2",
-          "image": "lisa_s2.png",
+          "image": "lisa_s2.webp",
           "type": "elementalSkill",
           "stats": [
             {
@@ -31208,7 +31208,7 @@
         },
         {
           "key": "s3",
-          "image": "lisa_s3.png",
+          "image": "lisa_s3.webp",
           "type": "elementalBurst",
           "stats": [
             {
@@ -31297,17 +31297,17 @@
       "passives": [
         {
           "key": "p1",
-          "image": "lisa_p1.png",
+          "image": "lisa_p1.webp",
           "unlockedAt": -1
         },
         {
           "key": "p2",
-          "image": "lisa_p2.png",
+          "image": "lisa_p2.webp",
           "unlockedAt": 1
         },
         {
           "key": "p3",
-          "image": "lisa_p3.png",
+          "image": "lisa_p3.webp",
           "unlockedAt": 4
         }
       ],
@@ -31315,32 +31315,32 @@
         {
           "key": "c1",
           "number": 1,
-          "image": "lisa_c1.png"
+          "image": "lisa_c1.webp"
         },
         {
           "key": "c2",
           "number": 2,
-          "image": "lisa_c2.png"
+          "image": "lisa_c2.webp"
         },
         {
           "key": "c3",
           "number": 3,
-          "image": "lisa_c3.png"
+          "image": "lisa_c3.webp"
         },
         {
           "key": "c4",
           "number": 4,
-          "image": "lisa_c4.png"
+          "image": "lisa_c4.webp"
         },
         {
           "key": "c5",
           "number": 5,
-          "image": "lisa_c5.png"
+          "image": "lisa_c5.webp"
         },
         {
           "key": "c6",
           "number": 6,
-          "image": "lisa_c6.png"
+          "image": "lisa_c6.webp"
         }
       ],
       "builds": [
@@ -31595,8 +31595,8 @@
       "rarity": 5,
       "weaponType": "catalyst",
       "elementType": "hydro",
-      "image": "mona.png",
-      "fullImage": "mona.png",
+      "image": "mona.webp",
+      "fullImage": "mona.webp",
       "secondFullImage": null,
       "isComingSoon": false,
       "isNew": false,
@@ -31999,7 +31999,7 @@
       "skills": [
         {
           "key": "s1",
-          "image": "mona_s1.png",
+          "image": "mona_s1.webp",
           "type": "normalAttack",
           "stats": [
             {
@@ -32186,7 +32186,7 @@
         },
         {
           "key": "s2",
-          "image": "mona_s2.png",
+          "image": "mona_s2.webp",
           "type": "elementalSkill",
           "stats": [
             {
@@ -32253,7 +32253,7 @@
         },
         {
           "key": "s3",
-          "image": "mona_s3.png",
+          "image": "mona_s3.webp",
           "type": "others",
           "stats": [
             {
@@ -32272,7 +32272,7 @@
         },
         {
           "key": "s4",
-          "image": "mona_s4.png",
+          "image": "mona_s4.webp",
           "type": "elementalBurst",
           "stats": [
             {
@@ -32401,17 +32401,17 @@
       "passives": [
         {
           "key": "p1",
-          "image": "mona_p1.png",
+          "image": "mona_p1.webp",
           "unlockedAt": -1
         },
         {
           "key": "p2",
-          "image": "mona_p2.png",
+          "image": "mona_p2.webp",
           "unlockedAt": 1
         },
         {
           "key": "p3",
-          "image": "mona_p3.png",
+          "image": "mona_p3.webp",
           "unlockedAt": 4
         }
       ],
@@ -32419,32 +32419,32 @@
         {
           "key": "c1",
           "number": 1,
-          "image": "mona_c1.png"
+          "image": "mona_c1.webp"
         },
         {
           "key": "c2",
           "number": 2,
-          "image": "mona_c2.png"
+          "image": "mona_c2.webp"
         },
         {
           "key": "c3",
           "number": 3,
-          "image": "mona_c3.png"
+          "image": "mona_c3.webp"
         },
         {
           "key": "c4",
           "number": 4,
-          "image": "mona_c4.png"
+          "image": "mona_c4.webp"
         },
         {
           "key": "c5",
           "number": 5,
-          "image": "mona_c5.png"
+          "image": "mona_c5.webp"
         },
         {
           "key": "c6",
           "number": 6,
-          "image": "mona_c6.png"
+          "image": "mona_c6.webp"
         }
       ],
       "builds": [
@@ -32635,8 +32635,8 @@
       "rarity": 5,
       "weaponType": "sword",
       "elementType": "hydro",
-      "image": "nilou.png",
-      "fullImage": "nilou.png",
+      "image": "nilou.webp",
+      "fullImage": "nilou.webp",
       "secondFullImage": null,
       "isComingSoon": true,
       "isNew": false,
@@ -33014,7 +33014,7 @@
       "skills": [
         {
           "key": "s1",
-          "image": "nilou_s1.png",
+          "image": "nilou_s1.webp",
           "type": "normalAttack",
           "stats": [
             {
@@ -33201,7 +33201,7 @@
         },
         {
           "key": "s2",
-          "image": "nilou_s2.png",
+          "image": "nilou_s2.webp",
           "type": "elementalSkill",
           "stats": [
             {
@@ -33428,7 +33428,7 @@
         },
         {
           "key": "s3",
-          "image": "nilou_s3.png",
+          "image": "nilou_s3.webp",
           "type": "elementalBurst",
           "stats": [
             {
@@ -33517,17 +33517,17 @@
       "passives": [
         {
           "key": "p1",
-          "image": "nilou_p1.png",
+          "image": "nilou_p1.webp",
           "unlockedAt": -1
         },
         {
           "key": "p2",
-          "image": "nilou_p2.png",
+          "image": "nilou_p2.webp",
           "unlockedAt": 1
         },
         {
           "key": "p3",
-          "image": "nilou_p3.png",
+          "image": "nilou_p3.webp",
           "unlockedAt": 4
         }
       ],
@@ -33535,32 +33535,32 @@
         {
           "key": "c1",
           "number": 1,
-          "image": "nilou_c1.png"
+          "image": "nilou_c1.webp"
         },
         {
           "key": "c2",
           "number": 2,
-          "image": "nilou_c2.png"
+          "image": "nilou_c2.webp"
         },
         {
           "key": "c3",
           "number": 3,
-          "image": "nilou_c3.png"
+          "image": "nilou_c3.webp"
         },
         {
           "key": "c4",
           "number": 4,
-          "image": "nilou_c4.png"
+          "image": "nilou_c4.webp"
         },
         {
           "key": "c5",
           "number": 5,
-          "image": "nilou_c5.png"
+          "image": "nilou_c5.webp"
         },
         {
           "key": "c6",
           "number": 6,
-          "image": "nilou_c6.png"
+          "image": "nilou_c6.webp"
         }
       ],
       "builds": [],
@@ -33684,8 +33684,8 @@
       "rarity": 4,
       "weaponType": "catalyst",
       "elementType": "geo",
-      "image": "ningguang.png",
-      "fullImage": "ningguang.png",
+      "image": "ningguang.webp",
+      "fullImage": "ningguang.webp",
       "secondFullImage": null,
       "isComingSoon": false,
       "isNew": false,
@@ -34088,7 +34088,7 @@
       "skills": [
         {
           "key": "s1",
-          "image": "ningguang_s1.png",
+          "image": "ningguang_s1.webp",
           "type": "normalAttack",
           "stats": [
             {
@@ -34235,7 +34235,7 @@
         },
         {
           "key": "s2",
-          "image": "ningguang_s2.png",
+          "image": "ningguang_s2.webp",
           "type": "elementalSkill",
           "stats": [
             {
@@ -34322,7 +34322,7 @@
         },
         {
           "key": "s3",
-          "image": "ningguang_s3.png",
+          "image": "ningguang_s3.webp",
           "type": "elementalBurst",
           "stats": [
             {
@@ -34391,17 +34391,17 @@
       "passives": [
         {
           "key": "p1",
-          "image": "ningguang_p1.png",
+          "image": "ningguang_p1.webp",
           "unlockedAt": -1
         },
         {
           "key": "p2",
-          "image": "ningguang_p2.png",
+          "image": "ningguang_p2.webp",
           "unlockedAt": 1
         },
         {
           "key": "p3",
-          "image": "ningguang_p3.png",
+          "image": "ningguang_p3.webp",
           "unlockedAt": 4
         }
       ],
@@ -34409,32 +34409,32 @@
         {
           "key": "c1",
           "number": 1,
-          "image": "ningguang_c1.png"
+          "image": "ningguang_c1.webp"
         },
         {
           "key": "c2",
           "number": 2,
-          "image": "ningguang_c2.png"
+          "image": "ningguang_c2.webp"
         },
         {
           "key": "c3",
           "number": 3,
-          "image": "ningguang_c3.png"
+          "image": "ningguang_c3.webp"
         },
         {
           "key": "c4",
           "number": 4,
-          "image": "ningguang_c4.png"
+          "image": "ningguang_c4.webp"
         },
         {
           "key": "c5",
           "number": 5,
-          "image": "ningguang_c5.png"
+          "image": "ningguang_c5.webp"
         },
         {
           "key": "c6",
           "number": 6,
-          "image": "ningguang_c6.png"
+          "image": "ningguang_c6.webp"
         }
       ],
       "builds": [
@@ -34670,8 +34670,8 @@
       "rarity": 4,
       "weaponType": "claymore",
       "elementType": "geo",
-      "image": "noelle.png",
-      "fullImage": "noelle.png",
+      "image": "noelle.webp",
+      "fullImage": "noelle.webp",
       "secondFullImage": null,
       "isComingSoon": false,
       "isNew": false,
@@ -35074,7 +35074,7 @@
       "skills": [
         {
           "key": "s1",
-          "image": "noelle_s1.png",
+          "image": "noelle_s1.webp",
           "type": "normalAttack",
           "stats": [
             {
@@ -35301,7 +35301,7 @@
         },
         {
           "key": "s2",
-          "image": "noelle_s2.png",
+          "image": "noelle_s2.webp",
           "type": "elementalSkill",
           "stats": [
             {
@@ -35488,7 +35488,7 @@
         },
         {
           "key": "s3",
-          "image": "noelle_s3.png",
+          "image": "noelle_s3.webp",
           "type": "elementalBurst",
           "stats": [
             {
@@ -35617,17 +35617,17 @@
       "passives": [
         {
           "key": "p1",
-          "image": "noelle_p1.png",
+          "image": "noelle_p1.webp",
           "unlockedAt": -1
         },
         {
           "key": "p2",
-          "image": "noelle_p2.png",
+          "image": "noelle_p2.webp",
           "unlockedAt": 1
         },
         {
           "key": "p3",
-          "image": "noelle_p3.png",
+          "image": "noelle_p3.webp",
           "unlockedAt": 4
         }
       ],
@@ -35635,32 +35635,32 @@
         {
           "key": "c1",
           "number": 1,
-          "image": "noelle_c1.png"
+          "image": "noelle_c1.webp"
         },
         {
           "key": "c2",
           "number": 2,
-          "image": "noelle_c2.png"
+          "image": "noelle_c2.webp"
         },
         {
           "key": "c3",
           "number": 3,
-          "image": "noelle_c3.png"
+          "image": "noelle_c3.webp"
         },
         {
           "key": "c4",
           "number": 4,
-          "image": "noelle_c4.png"
+          "image": "noelle_c4.webp"
         },
         {
           "key": "c5",
           "number": 5,
-          "image": "noelle_c5.png"
+          "image": "noelle_c5.webp"
         },
         {
           "key": "c6",
           "number": 6,
-          "image": "noelle_c6.png"
+          "image": "noelle_c6.webp"
         }
       ],
       "builds": [
@@ -35885,8 +35885,8 @@
       "rarity": 5,
       "weaponType": "sword",
       "elementType": "cryo",
-      "image": "qiqi.png",
-      "fullImage": "qiqi.png",
+      "image": "qiqi.webp",
+      "fullImage": "qiqi.webp",
       "secondFullImage": null,
       "isComingSoon": false,
       "isNew": false,
@@ -36289,7 +36289,7 @@
       "skills": [
         {
           "key": "s1",
-          "image": "qiqi_s1.png",
+          "image": "qiqi_s1.webp",
           "type": "normalAttack",
           "stats": [
             {
@@ -36556,7 +36556,7 @@
         },
         {
           "key": "s2",
-          "image": "qiqi_s2.png",
+          "image": "qiqi_s2.webp",
           "type": "elementalSkill",
           "stats": [
             {
@@ -36723,7 +36723,7 @@
         },
         {
           "key": "s3",
-          "image": "qiqi_s3.png",
+          "image": "qiqi_s3.webp",
           "type": "elementalBurst",
           "stats": [
             {
@@ -36852,17 +36852,17 @@
       "passives": [
         {
           "key": "p1",
-          "image": "qiqi_p1.png",
+          "image": "qiqi_p1.webp",
           "unlockedAt": -1
         },
         {
           "key": "p2",
-          "image": "qiqi_p2.png",
+          "image": "qiqi_p2.webp",
           "unlockedAt": 1
         },
         {
           "key": "p3",
-          "image": "qiqi_p3.png",
+          "image": "qiqi_p3.webp",
           "unlockedAt": 4
         }
       ],
@@ -36870,32 +36870,32 @@
         {
           "key": "c1",
           "number": 1,
-          "image": "qiqi_c1.png"
+          "image": "qiqi_c1.webp"
         },
         {
           "key": "c2",
           "number": 2,
-          "image": "qiqi_c2.png"
+          "image": "qiqi_c2.webp"
         },
         {
           "key": "c3",
           "number": 3,
-          "image": "qiqi_c3.png"
+          "image": "qiqi_c3.webp"
         },
         {
           "key": "c4",
           "number": 4,
-          "image": "qiqi_c4.png"
+          "image": "qiqi_c4.webp"
         },
         {
           "key": "c5",
           "number": 5,
-          "image": "qiqi_c5.png"
+          "image": "qiqi_c5.webp"
         },
         {
           "key": "c6",
           "number": 6,
-          "image": "qiqi_c6.png"
+          "image": "qiqi_c6.webp"
         }
       ],
       "builds": [
@@ -37065,8 +37065,8 @@
       "rarity": 5,
       "weaponType": "polearm",
       "elementType": "electro",
-      "image": "raiden-shogun.png",
-      "fullImage": "raiden-shogun.png",
+      "image": "raiden-shogun.webp",
+      "fullImage": "raiden-shogun.webp",
       "secondFullImage": null,
       "isComingSoon": false,
       "isNew": false,
@@ -37469,7 +37469,7 @@
       "skills": [
         {
           "key": "s1",
-          "image": "raiden-shogun_s1.png",
+          "image": "raiden-shogun_s1.webp",
           "type": "normalAttack",
           "stats": [
             {
@@ -37696,7 +37696,7 @@
         },
         {
           "key": "s2",
-          "image": "raiden-shogun_s2.png",
+          "image": "raiden-shogun_s2.webp",
           "type": "elementalSkill",
           "stats": [
             {
@@ -37803,7 +37803,7 @@
         },
         {
           "key": "s3",
-          "image": "raiden-shogun_s3.png",
+          "image": "raiden-shogun_s3.webp",
           "type": "elementalBurst",
           "stats": [
             {
@@ -38212,17 +38212,17 @@
       "passives": [
         {
           "key": "p1",
-          "image": "raiden-shogun_p1.png",
+          "image": "raiden-shogun_p1.webp",
           "unlockedAt": -1
         },
         {
           "key": "p2",
-          "image": "raiden-shogun_p2.png",
+          "image": "raiden-shogun_p2.webp",
           "unlockedAt": 1
         },
         {
           "key": "p3",
-          "image": "raiden-shogun_p3.png",
+          "image": "raiden-shogun_p3.webp",
           "unlockedAt": 4
         }
       ],
@@ -38230,32 +38230,32 @@
         {
           "key": "c1",
           "number": 1,
-          "image": "raiden-shogun_c1.png"
+          "image": "raiden-shogun_c1.webp"
         },
         {
           "key": "c2",
           "number": 2,
-          "image": "raiden-shogun_c2.png"
+          "image": "raiden-shogun_c2.webp"
         },
         {
           "key": "c3",
           "number": 3,
-          "image": "raiden-shogun_c3.png"
+          "image": "raiden-shogun_c3.webp"
         },
         {
           "key": "c4",
           "number": 4,
-          "image": "raiden-shogun_c4.png"
+          "image": "raiden-shogun_c4.webp"
         },
         {
           "key": "c5",
           "number": 5,
-          "image": "raiden-shogun_c5.png"
+          "image": "raiden-shogun_c5.webp"
         },
         {
           "key": "c6",
           "number": 6,
-          "image": "raiden-shogun_c6.png"
+          "image": "raiden-shogun_c6.webp"
         }
       ],
       "builds": [
@@ -38415,8 +38415,8 @@
       "rarity": 4,
       "weaponType": "claymore",
       "elementType": "electro",
-      "image": "razor.png",
-      "fullImage": "razor.png",
+      "image": "razor.webp",
+      "fullImage": "razor.webp",
       "secondFullImage": null,
       "isComingSoon": false,
       "isNew": false,
@@ -38819,7 +38819,7 @@
       "skills": [
         {
           "key": "s1",
-          "image": "razor_s1.png",
+          "image": "razor_s1.webp",
           "type": "normalAttack",
           "stats": [
             {
@@ -39046,7 +39046,7 @@
         },
         {
           "key": "s2",
-          "image": "razor_s2.png",
+          "image": "razor_s2.webp",
           "type": "elementalSkill",
           "stats": [
             {
@@ -39193,7 +39193,7 @@
         },
         {
           "key": "s3",
-          "image": "razor_s3.png",
+          "image": "razor_s3.webp",
           "type": "elementalBurst",
           "stats": [
             {
@@ -39342,17 +39342,17 @@
       "passives": [
         {
           "key": "p1",
-          "image": "razor_p1.png",
+          "image": "razor_p1.webp",
           "unlockedAt": -1
         },
         {
           "key": "p2",
-          "image": "razor_p2.png",
+          "image": "razor_p2.webp",
           "unlockedAt": 1
         },
         {
           "key": "p3",
-          "image": "razor_p3.png",
+          "image": "razor_p3.webp",
           "unlockedAt": 4
         }
       ],
@@ -39360,32 +39360,32 @@
         {
           "key": "c1",
           "number": 1,
-          "image": "razor_c1.png"
+          "image": "razor_c1.webp"
         },
         {
           "key": "c2",
           "number": 2,
-          "image": "razor_c2.png"
+          "image": "razor_c2.webp"
         },
         {
           "key": "c3",
           "number": 3,
-          "image": "razor_c3.png"
+          "image": "razor_c3.webp"
         },
         {
           "key": "c4",
           "number": 4,
-          "image": "razor_c4.png"
+          "image": "razor_c4.webp"
         },
         {
           "key": "c5",
           "number": 5,
-          "image": "razor_c5.png"
+          "image": "razor_c5.webp"
         },
         {
           "key": "c6",
           "number": 6,
-          "image": "razor_c6.png"
+          "image": "razor_c6.webp"
         }
       ],
       "builds": [
@@ -39576,8 +39576,8 @@
       "rarity": 4,
       "weaponType": "polearm",
       "elementType": "cryo",
-      "image": "rosaria.png",
-      "fullImage": "rosaria.png",
+      "image": "rosaria.webp",
+      "fullImage": "rosaria.webp",
       "secondFullImage": null,
       "isComingSoon": false,
       "isNew": false,
@@ -39980,7 +39980,7 @@
       "skills": [
         {
           "key": "s1",
-          "image": "rosaria_s1.png",
+          "image": "rosaria_s1.webp",
           "type": "normalAttack",
           "stats": [
             {
@@ -40227,7 +40227,7 @@
         },
         {
           "key": "s2",
-          "image": "rosaria_s2.png",
+          "image": "rosaria_s2.webp",
           "type": "elementalSkill",
           "stats": [
             {
@@ -40294,7 +40294,7 @@
         },
         {
           "key": "s3",
-          "image": "rosaria_s3.png",
+          "image": "rosaria_s3.webp",
           "type": "elementalBurst",
           "stats": [
             {
@@ -40423,17 +40423,17 @@
       "passives": [
         {
           "key": "p1",
-          "image": "rosaria_p1.png",
+          "image": "rosaria_p1.webp",
           "unlockedAt": -1
         },
         {
           "key": "p2",
-          "image": "rosaria_p2.png",
+          "image": "rosaria_p2.webp",
           "unlockedAt": 1
         },
         {
           "key": "p3",
-          "image": "rosaria_p3.png",
+          "image": "rosaria_p3.webp",
           "unlockedAt": 4
         }
       ],
@@ -40441,32 +40441,32 @@
         {
           "key": "c1",
           "number": 1,
-          "image": "rosaria_c1.png"
+          "image": "rosaria_c1.webp"
         },
         {
           "key": "c2",
           "number": 2,
-          "image": "rosaria_c2.png"
+          "image": "rosaria_c2.webp"
         },
         {
           "key": "c3",
           "number": 3,
-          "image": "rosaria_c3.png"
+          "image": "rosaria_c3.webp"
         },
         {
           "key": "c4",
           "number": 4,
-          "image": "rosaria_c4.png"
+          "image": "rosaria_c4.webp"
         },
         {
           "key": "c5",
           "number": 5,
-          "image": "rosaria_c5.png"
+          "image": "rosaria_c5.webp"
         },
         {
           "key": "c6",
           "number": 6,
-          "image": "rosaria_c6.png"
+          "image": "rosaria_c6.webp"
         }
       ],
       "builds": [
@@ -40707,8 +40707,8 @@
       "rarity": 5,
       "weaponType": "catalyst",
       "elementType": "hydro",
-      "image": "sangonomiya-kokomi.png",
-      "fullImage": "sangonomiya-kokomi.png",
+      "image": "sangonomiya-kokomi.webp",
+      "fullImage": "sangonomiya-kokomi.webp",
       "secondFullImage": null,
       "isComingSoon": false,
       "isNew": false,
@@ -41111,7 +41111,7 @@
       "skills": [
         {
           "key": "s1",
-          "image": "sangonomiya-kokomi_s1.png",
+          "image": "sangonomiya-kokomi_s1.webp",
           "type": "normalAttack",
           "stats": [
             {
@@ -41278,7 +41278,7 @@
         },
         {
           "key": "s2",
-          "image": "sangonomiya-kokomi_s2.png",
+          "image": "sangonomiya-kokomi_s2.webp",
           "type": "elementalSkill",
           "stats": [
             {
@@ -41385,7 +41385,7 @@
         },
         {
           "key": "s3",
-          "image": "sangonomiya-kokomi_s3.png",
+          "image": "sangonomiya-kokomi_s3.webp",
           "type": "elementalBurst",
           "stats": [
             {
@@ -41574,22 +41574,22 @@
       "passives": [
         {
           "key": "p1",
-          "image": "sangonomiya-kokomi_p1.png",
+          "image": "sangonomiya-kokomi_p1.webp",
           "unlockedAt": -1
         },
         {
           "key": "p2",
-          "image": "sangonomiya-kokomi_p2.png",
+          "image": "sangonomiya-kokomi_p2.webp",
           "unlockedAt": -1
         },
         {
           "key": "p3",
-          "image": "sangonomiya-kokomi_p3.png",
+          "image": "sangonomiya-kokomi_p3.webp",
           "unlockedAt": 1
         },
         {
           "key": "p4",
-          "image": "sangonomiya-kokomi_p4.png",
+          "image": "sangonomiya-kokomi_p4.webp",
           "unlockedAt": 4
         }
       ],
@@ -41597,32 +41597,32 @@
         {
           "key": "c1",
           "number": 1,
-          "image": "sangonomiya-kokomi_c1.png"
+          "image": "sangonomiya-kokomi_c1.webp"
         },
         {
           "key": "c2",
           "number": 2,
-          "image": "sangonomiya-kokomi_c2.png"
+          "image": "sangonomiya-kokomi_c2.webp"
         },
         {
           "key": "c3",
           "number": 3,
-          "image": "sangonomiya-kokomi_c3.png"
+          "image": "sangonomiya-kokomi_c3.webp"
         },
         {
           "key": "c4",
           "number": 4,
-          "image": "sangonomiya-kokomi_c4.png"
+          "image": "sangonomiya-kokomi_c4.webp"
         },
         {
           "key": "c5",
           "number": 5,
-          "image": "sangonomiya-kokomi_c5.png"
+          "image": "sangonomiya-kokomi_c5.webp"
         },
         {
           "key": "c6",
           "number": 6,
-          "image": "sangonomiya-kokomi_c6.png"
+          "image": "sangonomiya-kokomi_c6.webp"
         }
       ],
       "builds": [
@@ -41826,8 +41826,8 @@
       "rarity": 4,
       "weaponType": "claymore",
       "elementType": "anemo",
-      "image": "sayu.png",
-      "fullImage": "sayu.png",
+      "image": "sayu.webp",
+      "fullImage": "sayu.webp",
       "secondFullImage": null,
       "isComingSoon": false,
       "isNew": false,
@@ -42230,7 +42230,7 @@
       "skills": [
         {
           "key": "s1",
-          "image": "sayu_s1.png",
+          "image": "sayu_s1.webp",
           "type": "normalAttack",
           "stats": [
             {
@@ -42477,7 +42477,7 @@
         },
         {
           "key": "s2",
-          "image": "sayu_s2.png",
+          "image": "sayu_s2.webp",
           "type": "elementalSkill",
           "stats": [
             {
@@ -42644,7 +42644,7 @@
         },
         {
           "key": "s3",
-          "image": "sayu_s3.png",
+          "image": "sayu_s3.webp",
           "type": "elementalBurst",
           "stats": [
             {
@@ -42833,17 +42833,17 @@
       "passives": [
         {
           "key": "p1",
-          "image": "sayu_p1.png",
+          "image": "sayu_p1.webp",
           "unlockedAt": -1
         },
         {
           "key": "p2",
-          "image": "sayu_p2.png",
+          "image": "sayu_p2.webp",
           "unlockedAt": 1
         },
         {
           "key": "p3",
-          "image": "sayu_p3.png",
+          "image": "sayu_p3.webp",
           "unlockedAt": 4
         }
       ],
@@ -42851,32 +42851,32 @@
         {
           "key": "c1",
           "number": 1,
-          "image": "sayu_c1.png"
+          "image": "sayu_c1.webp"
         },
         {
           "key": "c2",
           "number": 2,
-          "image": "sayu_c2.png"
+          "image": "sayu_c2.webp"
         },
         {
           "key": "c3",
           "number": 3,
-          "image": "sayu_c3.png"
+          "image": "sayu_c3.webp"
         },
         {
           "key": "c4",
           "number": 4,
-          "image": "sayu_c4.png"
+          "image": "sayu_c4.webp"
         },
         {
           "key": "c5",
           "number": 5,
-          "image": "sayu_c5.png"
+          "image": "sayu_c5.webp"
         },
         {
           "key": "c6",
           "number": 6,
-          "image": "sayu_c6.png"
+          "image": "sayu_c6.webp"
         }
       ],
       "builds": [
@@ -43033,8 +43033,8 @@
       "rarity": 5,
       "weaponType": "polearm",
       "elementType": "cryo",
-      "image": "shenhe.png",
-      "fullImage": "shenhe.png",
+      "image": "shenhe.webp",
+      "fullImage": "shenhe.webp",
       "secondFullImage": null,
       "isComingSoon": false,
       "isNew": false,
@@ -43437,7 +43437,7 @@
       "skills": [
         {
           "key": "s1",
-          "image": "shenhe_s1.png",
+          "image": "shenhe_s1.webp",
           "type": "normalAttack",
           "stats": [
             {
@@ -43664,7 +43664,7 @@
         },
         {
           "key": "s2",
-          "image": "shenhe_s2.png",
+          "image": "shenhe_s2.webp",
           "type": "elementalSkill",
           "stats": [
             {
@@ -43851,7 +43851,7 @@
         },
         {
           "key": "s3",
-          "image": "shenhe_s3.png",
+          "image": "shenhe_s3.webp",
           "type": "elementalBurst",
           "stats": [
             {
@@ -43980,17 +43980,17 @@
       "passives": [
         {
           "key": "p1",
-          "image": "shenhe_p1.png",
+          "image": "shenhe_p1.webp",
           "unlockedAt": -1
         },
         {
           "key": "p2",
-          "image": "shenhe_p2.png",
+          "image": "shenhe_p2.webp",
           "unlockedAt": 1
         },
         {
           "key": "p3",
-          "image": "shenhe_p3.png",
+          "image": "shenhe_p3.webp",
           "unlockedAt": 4
         }
       ],
@@ -43998,32 +43998,32 @@
         {
           "key": "c1",
           "number": 1,
-          "image": "shenhe_c1.png"
+          "image": "shenhe_c1.webp"
         },
         {
           "key": "c2",
           "number": 2,
-          "image": "shenhe_c2.png"
+          "image": "shenhe_c2.webp"
         },
         {
           "key": "c3",
           "number": 3,
-          "image": "shenhe_c3.png"
+          "image": "shenhe_c3.webp"
         },
         {
           "key": "c4",
           "number": 4,
-          "image": "shenhe_c4.png"
+          "image": "shenhe_c4.webp"
         },
         {
           "key": "c5",
           "number": 5,
-          "image": "shenhe_c5.png"
+          "image": "shenhe_c5.webp"
         },
         {
           "key": "c6",
           "number": 6,
-          "image": "shenhe_c6.png"
+          "image": "shenhe_c6.webp"
         }
       ],
       "builds": [
@@ -44189,8 +44189,8 @@
       "rarity": 4,
       "weaponType": "catalyst",
       "elementType": "anemo",
-      "image": "shikanoin-heizou.png",
-      "fullImage": "shikanoin-heizou.png",
+      "image": "shikanoin-heizou.webp",
+      "fullImage": "shikanoin-heizou.webp",
       "secondFullImage": null,
       "isComingSoon": false,
       "isNew": false,
@@ -44593,7 +44593,7 @@
       "skills": [
         {
           "key": "s1",
-          "image": "shikanoin-heizou_s1.png",
+          "image": "shikanoin-heizou_s1.webp",
           "type": "normalAttack",
           "stats": [
             {
@@ -44840,7 +44840,7 @@
         },
         {
           "key": "s2",
-          "image": "shikanoin-heizou_s2.png",
+          "image": "shikanoin-heizou_s2.webp",
           "type": "elementalSkill",
           "stats": [
             {
@@ -44947,7 +44947,7 @@
         },
         {
           "key": "s3",
-          "image": "shikanoin-heizou_s3.png",
+          "image": "shikanoin-heizou_s3.webp",
           "type": "elementalBurst",
           "stats": [
             {
@@ -45036,17 +45036,17 @@
       "passives": [
         {
           "key": "p1",
-          "image": "shikanoin-heizou_p1.png",
+          "image": "shikanoin-heizou_p1.webp",
           "unlockedAt": -1
         },
         {
           "key": "p2",
-          "image": "shikanoin-heizou_p2.png",
+          "image": "shikanoin-heizou_p2.webp",
           "unlockedAt": 1
         },
         {
           "key": "p3",
-          "image": "shikanoin-heizou_p3.png",
+          "image": "shikanoin-heizou_p3.webp",
           "unlockedAt": 4
         }
       ],
@@ -45054,32 +45054,32 @@
         {
           "key": "c1",
           "number": 1,
-          "image": "shikanoin-heizou_c1.png"
+          "image": "shikanoin-heizou_c1.webp"
         },
         {
           "key": "c2",
           "number": 2,
-          "image": "shikanoin-heizou_c2.png"
+          "image": "shikanoin-heizou_c2.webp"
         },
         {
           "key": "c3",
           "number": 3,
-          "image": "shikanoin-heizou_c3.png"
+          "image": "shikanoin-heizou_c3.webp"
         },
         {
           "key": "c4",
           "number": 4,
-          "image": "shikanoin-heizou_c4.png"
+          "image": "shikanoin-heizou_c4.webp"
         },
         {
           "key": "c5",
           "number": 5,
-          "image": "shikanoin-heizou_c5.png"
+          "image": "shikanoin-heizou_c5.webp"
         },
         {
           "key": "c6",
           "number": 6,
-          "image": "shikanoin-heizou_c6.png"
+          "image": "shikanoin-heizou_c6.webp"
         }
       ],
       "builds": [
@@ -45274,8 +45274,8 @@
       "rarity": 4,
       "weaponType": "catalyst",
       "elementType": "anemo",
-      "image": "sucrose.png",
-      "fullImage": "sucrose.png",
+      "image": "sucrose.webp",
+      "fullImage": "sucrose.webp",
       "secondFullImage": null,
       "isComingSoon": false,
       "isNew": false,
@@ -45678,7 +45678,7 @@
       "skills": [
         {
           "key": "s1",
-          "image": "sucrose_s1.png",
+          "image": "sucrose_s1.webp",
           "type": "normalAttack",
           "stats": [
             {
@@ -45865,7 +45865,7 @@
         },
         {
           "key": "s2",
-          "image": "sucrose_s2.png",
+          "image": "sucrose_s2.webp",
           "type": "elementalSkill",
           "stats": [
             {
@@ -45912,7 +45912,7 @@
         },
         {
           "key": "s3",
-          "image": "sucrose_s3.png",
+          "image": "sucrose_s3.webp",
           "type": "elementalBurst",
           "stats": [
             {
@@ -46021,17 +46021,17 @@
       "passives": [
         {
           "key": "p1",
-          "image": "sucrose_p1.png",
+          "image": "sucrose_p1.webp",
           "unlockedAt": -1
         },
         {
           "key": "p2",
-          "image": "sucrose_p2.png",
+          "image": "sucrose_p2.webp",
           "unlockedAt": 1
         },
         {
           "key": "p3",
-          "image": "sucrose_p3.png",
+          "image": "sucrose_p3.webp",
           "unlockedAt": 4
         }
       ],
@@ -46039,32 +46039,32 @@
         {
           "key": "c1",
           "number": 1,
-          "image": "sucrose_c1.png"
+          "image": "sucrose_c1.webp"
         },
         {
           "key": "c2",
           "number": 2,
-          "image": "sucrose_c2.png"
+          "image": "sucrose_c2.webp"
         },
         {
           "key": "c3",
           "number": 3,
-          "image": "sucrose_c3.png"
+          "image": "sucrose_c3.webp"
         },
         {
           "key": "c4",
           "number": 4,
-          "image": "sucrose_c4.png"
+          "image": "sucrose_c4.webp"
         },
         {
           "key": "c5",
           "number": 5,
-          "image": "sucrose_c5.png"
+          "image": "sucrose_c5.webp"
         },
         {
           "key": "c6",
           "number": 6,
-          "image": "sucrose_c6.png"
+          "image": "sucrose_c6.webp"
         }
       ],
       "builds": [
@@ -46223,8 +46223,8 @@
       "rarity": 5,
       "weaponType": "bow",
       "elementType": "hydro",
-      "image": "tartaglia.png",
-      "fullImage": "tartaglia.png",
+      "image": "tartaglia.webp",
+      "fullImage": "tartaglia.webp",
       "secondFullImage": null,
       "isComingSoon": false,
       "isNew": false,
@@ -46627,7 +46627,7 @@
       "skills": [
         {
           "key": "s1",
-          "image": "tartaglia_s1.png",
+          "image": "tartaglia_s1.webp",
           "type": "normalAttack",
           "stats": [
             {
@@ -46934,7 +46934,7 @@
         },
         {
           "key": "s2",
-          "image": "tartaglia_s2.png",
+          "image": "tartaglia_s2.webp",
           "type": "elementalSkill",
           "stats": [
             {
@@ -47261,7 +47261,7 @@
         },
         {
           "key": "s3",
-          "image": "tartaglia_s3.png",
+          "image": "tartaglia_s3.webp",
           "type": "elementalBurst",
           "stats": [
             {
@@ -47390,17 +47390,17 @@
       "passives": [
         {
           "key": "p1",
-          "image": "tartaglia_p1.png",
+          "image": "tartaglia_p1.webp",
           "unlockedAt": -1
         },
         {
           "key": "p2",
-          "image": "tartaglia_p2.png",
+          "image": "tartaglia_p2.webp",
           "unlockedAt": 1
         },
         {
           "key": "p3",
-          "image": "tartaglia_p3.png",
+          "image": "tartaglia_p3.webp",
           "unlockedAt": 4
         }
       ],
@@ -47408,32 +47408,32 @@
         {
           "key": "c1",
           "number": 1,
-          "image": "tartaglia_c1.png"
+          "image": "tartaglia_c1.webp"
         },
         {
           "key": "c2",
           "number": 2,
-          "image": "tartaglia_c2.png"
+          "image": "tartaglia_c2.webp"
         },
         {
           "key": "c3",
           "number": 3,
-          "image": "tartaglia_c3.png"
+          "image": "tartaglia_c3.webp"
         },
         {
           "key": "c4",
           "number": 4,
-          "image": "tartaglia_c4.png"
+          "image": "tartaglia_c4.webp"
         },
         {
           "key": "c5",
           "number": 5,
-          "image": "tartaglia_c5.png"
+          "image": "tartaglia_c5.webp"
         },
         {
           "key": "c6",
           "number": 6,
-          "image": "tartaglia_c6.png"
+          "image": "tartaglia_c6.webp"
         }
       ],
       "builds": [
@@ -47595,8 +47595,8 @@
       "rarity": 4,
       "weaponType": "polearm",
       "elementType": "pyro",
-      "image": "thoma.png",
-      "fullImage": "thoma.png",
+      "image": "thoma.webp",
+      "fullImage": "thoma.webp",
       "secondFullImage": null,
       "isComingSoon": false,
       "isNew": false,
@@ -47999,7 +47999,7 @@
       "skills": [
         {
           "key": "s1",
-          "image": "thoma_s1.png",
+          "image": "thoma_s1.webp",
           "type": "normalAttack",
           "stats": [
             {
@@ -48206,7 +48206,7 @@
         },
         {
           "key": "s2",
-          "image": "thoma_s2.png",
+          "image": "thoma_s2.webp",
           "type": "elementalSkill",
           "stats": [
             {
@@ -48353,7 +48353,7 @@
         },
         {
           "key": "s3",
-          "image": "thoma_s3.png",
+          "image": "thoma_s3.webp",
           "type": "elementalBurst",
           "stats": [
             {
@@ -48522,17 +48522,17 @@
       "passives": [
         {
           "key": "p1",
-          "image": "thoma_p1.png",
+          "image": "thoma_p1.webp",
           "unlockedAt": -1
         },
         {
           "key": "p2",
-          "image": "thoma_p2.png",
+          "image": "thoma_p2.webp",
           "unlockedAt": 1
         },
         {
           "key": "p3",
-          "image": "thoma_p3.png",
+          "image": "thoma_p3.webp",
           "unlockedAt": 4
         }
       ],
@@ -48540,32 +48540,32 @@
         {
           "key": "c1",
           "number": 1,
-          "image": "thoma_c1.png"
+          "image": "thoma_c1.webp"
         },
         {
           "key": "c2",
           "number": 2,
-          "image": "thoma_c2.png"
+          "image": "thoma_c2.webp"
         },
         {
           "key": "c3",
           "number": 3,
-          "image": "thoma_c3.png"
+          "image": "thoma_c3.webp"
         },
         {
           "key": "c4",
           "number": 4,
-          "image": "thoma_c4.png"
+          "image": "thoma_c4.webp"
         },
         {
           "key": "c5",
           "number": 5,
-          "image": "thoma_c5.png"
+          "image": "thoma_c5.webp"
         },
         {
           "key": "c6",
           "number": 6,
-          "image": "thoma_c6.png"
+          "image": "thoma_c6.webp"
         }
       ],
       "builds": [
@@ -48743,8 +48743,8 @@
       "rarity": 5,
       "weaponType": "bow",
       "elementType": "dendro",
-      "image": "tighnari.png",
-      "fullImage": "tighnari.png",
+      "image": "tighnari.webp",
+      "fullImage": "tighnari.webp",
       "secondFullImage": null,
       "isComingSoon": false,
       "isNew": true,
@@ -49147,7 +49147,7 @@
       "skills": [
         {
           "key": "s1",
-          "image": "tighnari_s1.png",
+          "image": "tighnari_s1.webp",
           "type": "normalAttack",
           "stats": [
             {
@@ -49394,7 +49394,7 @@
         },
         {
           "key": "s2",
-          "image": "tighnari_s2.png",
+          "image": "tighnari_s2.webp",
           "type": "elementalSkill",
           "stats": [
             {
@@ -49481,7 +49481,7 @@
         },
         {
           "key": "s3",
-          "image": "tighnari_s3.png",
+          "image": "tighnari_s3.webp",
           "type": "elementalBurst",
           "stats": [
             {
@@ -49570,17 +49570,17 @@
       "passives": [
         {
           "key": "p1",
-          "image": "tighnari_p1.png",
+          "image": "tighnari_p1.webp",
           "unlockedAt": -1
         },
         {
           "key": "p2",
-          "image": "tighnari_p2.png",
+          "image": "tighnari_p2.webp",
           "unlockedAt": 1
         },
         {
           "key": "p3",
-          "image": "tighnari_p3.png",
+          "image": "tighnari_p3.webp",
           "unlockedAt": 4
         }
       ],
@@ -49588,32 +49588,32 @@
         {
           "key": "c1",
           "number": 1,
-          "image": "tighnari_c1.png"
+          "image": "tighnari_c1.webp"
         },
         {
           "key": "c2",
           "number": 2,
-          "image": "tighnari_c2.png"
+          "image": "tighnari_c2.webp"
         },
         {
           "key": "c3",
           "number": 3,
-          "image": "tighnari_c3.png"
+          "image": "tighnari_c3.webp"
         },
         {
           "key": "c4",
           "number": 4,
-          "image": "tighnari_c4.png"
+          "image": "tighnari_c4.webp"
         },
         {
           "key": "c5",
           "number": 5,
-          "image": "tighnari_c5.png"
+          "image": "tighnari_c5.webp"
         },
         {
           "key": "c6",
           "number": 6,
-          "image": "tighnari_c6.png"
+          "image": "tighnari_c6.webp"
         }
       ],
       "builds": [
@@ -49796,9 +49796,9 @@
       "rarity": 5,
       "weaponType": "sword",
       "elementType": "anemo",
-      "image": "traveler-female.png",
-      "fullImage": "traveler-female.png",
-      "secondFullImage": "traveler-male.png",
+      "image": "traveler-female.webp",
+      "fullImage": "traveler-female.webp",
+      "secondFullImage": "traveler-male.webp",
       "isComingSoon": false,
       "isNew": false,
       "isFemale": true,
@@ -49969,7 +49969,7 @@
       "skills": [
         {
           "key": "s1",
-          "image": "traveler-anemo_s1.png",
+          "image": "traveler-anemo_s1.webp",
           "type": "normalAttack",
           "stats": [
             {
@@ -50196,7 +50196,7 @@
         },
         {
           "key": "s2",
-          "image": "traveler-anemo_s2.png",
+          "image": "traveler-anemo_s2.webp",
           "type": "elementalSkill",
           "stats": [
             {
@@ -50323,7 +50323,7 @@
         },
         {
           "key": "s3",
-          "image": "traveler-anemo_s3.png",
+          "image": "traveler-anemo_s3.webp",
           "type": "elementalBurst",
           "stats": [
             {
@@ -50432,12 +50432,12 @@
       "passives": [
         {
           "key": "p1",
-          "image": "traveler-anemo_p1.png",
+          "image": "traveler-anemo_p1.webp",
           "unlockedAt": -1
         },
         {
           "key": "p2",
-          "image": "traveler-anemo_p2.png",
+          "image": "traveler-anemo_p2.webp",
           "unlockedAt": 1
         }
       ],
@@ -50445,32 +50445,32 @@
         {
           "key": "c1",
           "number": 1,
-          "image": "traveler-anemo_c1.png"
+          "image": "traveler-anemo_c1.webp"
         },
         {
           "key": "c2",
           "number": 2,
-          "image": "traveler-anemo_c2.png"
+          "image": "traveler-anemo_c2.webp"
         },
         {
           "key": "c3",
           "number": 3,
-          "image": "traveler-anemo_c3.png"
+          "image": "traveler-anemo_c3.webp"
         },
         {
           "key": "c4",
           "number": 4,
-          "image": "traveler-anemo_c4.png"
+          "image": "traveler-anemo_c4.webp"
         },
         {
           "key": "c5",
           "number": 5,
-          "image": "traveler-anemo_c5.png"
+          "image": "traveler-anemo_c5.webp"
         },
         {
           "key": "c6",
           "number": 6,
-          "image": "traveler-anemo_c6.png"
+          "image": "traveler-anemo_c6.webp"
         }
       ],
       "builds": [
@@ -51295,9 +51295,9 @@
       "rarity": 5,
       "weaponType": "sword",
       "elementType": "dendro",
-      "image": "traveler-male.png",
-      "fullImage": "traveler-female.png",
-      "secondFullImage": "traveler-male.png",
+      "image": "traveler-male.webp",
+      "fullImage": "traveler-female.webp",
+      "secondFullImage": "traveler-male.webp",
       "isComingSoon": false,
       "isNew": true,
       "isFemale": false,
@@ -51468,7 +51468,7 @@
       "skills": [
         {
           "key": "s1",
-          "image": "traveler-dendro_s1.png",
+          "image": "traveler-dendro_s1.webp",
           "type": "normalAttack",
           "stats": [
             {
@@ -51695,7 +51695,7 @@
         },
         {
           "key": "s2",
-          "image": "traveler-dendro_s2.png",
+          "image": "traveler-dendro_s2.webp",
           "type": "elementalSkill",
           "stats": [
             {
@@ -51742,7 +51742,7 @@
         },
         {
           "key": "s3",
-          "image": "traveler-dendro_s3.png",
+          "image": "traveler-dendro_s3.webp",
           "type": "elementalBurst",
           "stats": [
             {
@@ -51851,12 +51851,12 @@
       "passives": [
         {
           "key": "p1",
-          "image": "traveler-dendro_p1.png",
+          "image": "traveler-dendro_p1.webp",
           "unlockedAt": -1
         },
         {
           "key": "p2",
-          "image": "traveler-dendro_p2.png",
+          "image": "traveler-dendro_p2.webp",
           "unlockedAt": 1
         }
       ],
@@ -51864,32 +51864,32 @@
         {
           "key": "c1",
           "number": 1,
-          "image": "traveler-dendro_c1.png"
+          "image": "traveler-dendro_c1.webp"
         },
         {
           "key": "c2",
           "number": 2,
-          "image": "traveler-dendro_c2.png"
+          "image": "traveler-dendro_c2.webp"
         },
         {
           "key": "c3",
           "number": 3,
-          "image": "traveler-dendro_c3.png"
+          "image": "traveler-dendro_c3.webp"
         },
         {
           "key": "c4",
           "number": 4,
-          "image": "traveler-dendro_c4.png"
+          "image": "traveler-dendro_c4.webp"
         },
         {
           "key": "c5",
           "number": 5,
-          "image": "traveler-dendro_c5.png"
+          "image": "traveler-dendro_c5.webp"
         },
         {
           "key": "c6",
           "number": 6,
-          "image": "traveler-dendro_c6.png"
+          "image": "traveler-dendro_c6.webp"
         }
       ],
       "builds": [
@@ -52694,9 +52694,9 @@
       "rarity": 5,
       "weaponType": "sword",
       "elementType": "electro",
-      "image": "traveler-female.png",
-      "fullImage": "traveler-female.png",
-      "secondFullImage": "traveler-male.png",
+      "image": "traveler-female.webp",
+      "fullImage": "traveler-female.webp",
+      "secondFullImage": "traveler-male.webp",
       "isComingSoon": false,
       "isNew": false,
       "isFemale": true,
@@ -52867,7 +52867,7 @@
       "skills": [
         {
           "key": "s1",
-          "image": "traveler-electro_s1.png",
+          "image": "traveler-electro_s1.webp",
           "type": "normalAttack",
           "stats": [
             {
@@ -53094,7 +53094,7 @@
         },
         {
           "key": "s2",
-          "image": "traveler-electro_s2.png",
+          "image": "traveler-electro_s2.webp",
           "type": "elementalSkill",
           "stats": [
             {
@@ -53221,7 +53221,7 @@
         },
         {
           "key": "s3",
-          "image": "traveler-electro_s3.png",
+          "image": "traveler-electro_s3.webp",
           "type": "elementalBurst",
           "stats": [
             {
@@ -53350,12 +53350,12 @@
       "passives": [
         {
           "key": "p1",
-          "image": "traveler-electro_p1.png",
+          "image": "traveler-electro_p1.webp",
           "unlockedAt": -1
         },
         {
           "key": "p2",
-          "image": "traveler-electro_p2.png",
+          "image": "traveler-electro_p2.webp",
           "unlockedAt": 1
         }
       ],
@@ -53363,32 +53363,32 @@
         {
           "key": "c1",
           "number": 1,
-          "image": "traveler-electro_c1.png"
+          "image": "traveler-electro_c1.webp"
         },
         {
           "key": "c2",
           "number": 2,
-          "image": "traveler-electro_c2.png"
+          "image": "traveler-electro_c2.webp"
         },
         {
           "key": "c3",
           "number": 3,
-          "image": "traveler-electro_c3.png"
+          "image": "traveler-electro_c3.webp"
         },
         {
           "key": "c4",
           "number": 4,
-          "image": "traveler-electro_c4.png"
+          "image": "traveler-electro_c4.webp"
         },
         {
           "key": "c5",
           "number": 5,
-          "image": "traveler-electro_c5.png"
+          "image": "traveler-electro_c5.webp"
         },
         {
           "key": "c6",
           "number": 6,
-          "image": "traveler-electro_c6.png"
+          "image": "traveler-electro_c6.webp"
         }
       ],
       "builds": [
@@ -54180,9 +54180,9 @@
       "rarity": 5,
       "weaponType": "sword",
       "elementType": "geo",
-      "image": "traveler-male.png",
-      "fullImage": "traveler-female.png",
-      "secondFullImage": "traveler-male.png",
+      "image": "traveler-male.webp",
+      "fullImage": "traveler-female.webp",
+      "secondFullImage": "traveler-male.webp",
       "isComingSoon": false,
       "isNew": false,
       "isFemale": false,
@@ -54353,7 +54353,7 @@
       "skills": [
         {
           "key": "s1",
-          "image": "traveler-geo_s1.png",
+          "image": "traveler-geo_s1.webp",
           "type": "normalAttack",
           "stats": [
             {
@@ -54580,7 +54580,7 @@
         },
         {
           "key": "s2",
-          "image": "traveler-geo_s2.png",
+          "image": "traveler-geo_s2.webp",
           "type": "elementalSkill",
           "stats": [
             {
@@ -54647,7 +54647,7 @@
         },
         {
           "key": "s3",
-          "image": "traveler-geo_s3.png",
+          "image": "traveler-geo_s3.webp",
           "type": "elementalBurst",
           "stats": [
             {
@@ -54736,12 +54736,12 @@
       "passives": [
         {
           "key": "p1",
-          "image": "traveler-geo_p1.png",
+          "image": "traveler-geo_p1.webp",
           "unlockedAt": -1
         },
         {
           "key": "p2",
-          "image": "traveler-geo_p2.png",
+          "image": "traveler-geo_p2.webp",
           "unlockedAt": 1
         }
       ],
@@ -54749,32 +54749,32 @@
         {
           "key": "c1",
           "number": 1,
-          "image": "traveler-geo_c1.png"
+          "image": "traveler-geo_c1.webp"
         },
         {
           "key": "c2",
           "number": 2,
-          "image": "traveler-geo_c2.png"
+          "image": "traveler-geo_c2.webp"
         },
         {
           "key": "c3",
           "number": 3,
-          "image": "traveler-geo_c3.png"
+          "image": "traveler-geo_c3.webp"
         },
         {
           "key": "c4",
           "number": 4,
-          "image": "traveler-geo_c4.png"
+          "image": "traveler-geo_c4.webp"
         },
         {
           "key": "c5",
           "number": 5,
-          "image": "traveler-geo_c5.png"
+          "image": "traveler-geo_c5.webp"
         },
         {
           "key": "c6",
           "number": 6,
-          "image": "traveler-geo_c6.png"
+          "image": "traveler-geo_c6.webp"
         }
       ],
       "builds": [
@@ -55594,8 +55594,8 @@
       "rarity": 5,
       "weaponType": "bow",
       "elementType": "anemo",
-      "image": "venti.png",
-      "fullImage": "venti.png",
+      "image": "venti.webp",
+      "fullImage": "venti.webp",
       "secondFullImage": null,
       "isComingSoon": false,
       "isNew": false,
@@ -55998,7 +55998,7 @@
       "skills": [
         {
           "key": "s1",
-          "image": "venti_s1.png",
+          "image": "venti_s1.webp",
           "type": "normalAttack",
           "stats": [
             {
@@ -56265,7 +56265,7 @@
         },
         {
           "key": "s2",
-          "image": "venti_s2.png",
+          "image": "venti_s2.webp",
           "type": "elementalSkill",
           "stats": [
             {
@@ -56352,7 +56352,7 @@
         },
         {
           "key": "s3",
-          "image": "venti_s3.png",
+          "image": "venti_s3.webp",
           "type": "elementalBurst",
           "stats": [
             {
@@ -56461,17 +56461,17 @@
       "passives": [
         {
           "key": "p1",
-          "image": "venti_p1.png",
+          "image": "venti_p1.webp",
           "unlockedAt": -1
         },
         {
           "key": "p2",
-          "image": "venti_p2.png",
+          "image": "venti_p2.webp",
           "unlockedAt": 1
         },
         {
           "key": "p3",
-          "image": "venti_p3.png",
+          "image": "venti_p3.webp",
           "unlockedAt": 4
         }
       ],
@@ -56479,32 +56479,32 @@
         {
           "key": "c1",
           "number": 1,
-          "image": "venti_c1.png"
+          "image": "venti_c1.webp"
         },
         {
           "key": "c2",
           "number": 2,
-          "image": "venti_c2.png"
+          "image": "venti_c2.webp"
         },
         {
           "key": "c3",
           "number": 3,
-          "image": "venti_c3.png"
+          "image": "venti_c3.webp"
         },
         {
           "key": "c4",
           "number": 4,
-          "image": "venti_c4.png"
+          "image": "venti_c4.webp"
         },
         {
           "key": "c5",
           "number": 5,
-          "image": "venti_c5.png"
+          "image": "venti_c5.webp"
         },
         {
           "key": "c6",
           "number": 6,
-          "image": "venti_c6.png"
+          "image": "venti_c6.webp"
         }
       ],
       "builds": [
@@ -56663,8 +56663,8 @@
       "rarity": 4,
       "weaponType": "polearm",
       "elementType": "pyro",
-      "image": "xiangling.png",
-      "fullImage": "xiangling.png",
+      "image": "xiangling.webp",
+      "fullImage": "xiangling.webp",
       "secondFullImage": null,
       "isComingSoon": false,
       "isNew": false,
@@ -57067,7 +57067,7 @@
       "skills": [
         {
           "key": "s1",
-          "image": "xiangling_s1.png",
+          "image": "xiangling_s1.webp",
           "type": "normalAttack",
           "stats": [
             {
@@ -57314,7 +57314,7 @@
         },
         {
           "key": "s2",
-          "image": "xiangling_s2.png",
+          "image": "xiangling_s2.webp",
           "type": "elementalSkill",
           "stats": [
             {
@@ -57361,7 +57361,7 @@
         },
         {
           "key": "s3",
-          "image": "xiangling_s3.png",
+          "image": "xiangling_s3.webp",
           "type": "elementalBurst",
           "stats": [
             {
@@ -57510,17 +57510,17 @@
       "passives": [
         {
           "key": "p1",
-          "image": "xiangling_p1.png",
+          "image": "xiangling_p1.webp",
           "unlockedAt": -1
         },
         {
           "key": "p2",
-          "image": "xiangling_p2.png",
+          "image": "xiangling_p2.webp",
           "unlockedAt": 1
         },
         {
           "key": "p3",
-          "image": "xiangling_p3.png",
+          "image": "xiangling_p3.webp",
           "unlockedAt": 4
         }
       ],
@@ -57528,32 +57528,32 @@
         {
           "key": "c1",
           "number": 1,
-          "image": "xiangling_c1.png"
+          "image": "xiangling_c1.webp"
         },
         {
           "key": "c2",
           "number": 2,
-          "image": "xiangling_c2.png"
+          "image": "xiangling_c2.webp"
         },
         {
           "key": "c3",
           "number": 3,
-          "image": "xiangling_c3.png"
+          "image": "xiangling_c3.webp"
         },
         {
           "key": "c4",
           "number": 4,
-          "image": "xiangling_c4.png"
+          "image": "xiangling_c4.webp"
         },
         {
           "key": "c5",
           "number": 5,
-          "image": "xiangling_c5.png"
+          "image": "xiangling_c5.webp"
         },
         {
           "key": "c6",
           "number": 6,
-          "image": "xiangling_c6.png"
+          "image": "xiangling_c6.webp"
         }
       ],
       "builds": [
@@ -57777,8 +57777,8 @@
       "rarity": 5,
       "weaponType": "polearm",
       "elementType": "anemo",
-      "image": "xiao.png",
-      "fullImage": "xiao.png",
+      "image": "xiao.webp",
+      "fullImage": "xiao.webp",
       "secondFullImage": null,
       "isComingSoon": false,
       "isNew": false,
@@ -58181,7 +58181,7 @@
       "skills": [
         {
           "key": "s1",
-          "image": "xiao_s1.png",
+          "image": "xiao_s1.webp",
           "type": "normalAttack",
           "stats": [
             {
@@ -58448,7 +58448,7 @@
         },
         {
           "key": "s2",
-          "image": "xiao_s2.png",
+          "image": "xiao_s2.webp",
           "type": "elementalSkill",
           "stats": [
             {
@@ -58495,7 +58495,7 @@
         },
         {
           "key": "s3",
-          "image": "xiao_s3.png",
+          "image": "xiao_s3.webp",
           "type": "elementalBurst",
           "stats": [
             {
@@ -58604,17 +58604,17 @@
       "passives": [
         {
           "key": "p1",
-          "image": "xiao_p1.png",
+          "image": "xiao_p1.webp",
           "unlockedAt": -1
         },
         {
           "key": "p2",
-          "image": "xiao_p2.png",
+          "image": "xiao_p2.webp",
           "unlockedAt": 1
         },
         {
           "key": "p3",
-          "image": "xiao_p3.png",
+          "image": "xiao_p3.webp",
           "unlockedAt": 4
         }
       ],
@@ -58622,32 +58622,32 @@
         {
           "key": "c1",
           "number": 1,
-          "image": "xiao_c1.png"
+          "image": "xiao_c1.webp"
         },
         {
           "key": "c2",
           "number": 2,
-          "image": "xiao_c2.png"
+          "image": "xiao_c2.webp"
         },
         {
           "key": "c3",
           "number": 3,
-          "image": "xiao_c3.png"
+          "image": "xiao_c3.webp"
         },
         {
           "key": "c4",
           "number": 4,
-          "image": "xiao_c4.png"
+          "image": "xiao_c4.webp"
         },
         {
           "key": "c5",
           "number": 5,
-          "image": "xiao_c5.png"
+          "image": "xiao_c5.webp"
         },
         {
           "key": "c6",
           "number": 6,
-          "image": "xiao_c6.png"
+          "image": "xiao_c6.webp"
         }
       ],
       "builds": [
@@ -58848,8 +58848,8 @@
       "rarity": 4,
       "weaponType": "sword",
       "elementType": "hydro",
-      "image": "xingqiu.png",
-      "fullImage": "xingqiu.png",
+      "image": "xingqiu.webp",
+      "fullImage": "xingqiu.webp",
       "secondFullImage": null,
       "isComingSoon": false,
       "isNew": false,
@@ -59252,7 +59252,7 @@
       "skills": [
         {
           "key": "s1",
-          "image": "xingqiu_s1.png",
+          "image": "xingqiu_s1.webp",
           "type": "normalAttack",
           "stats": [
             {
@@ -59519,7 +59519,7 @@
         },
         {
           "key": "s2",
-          "image": "xingqiu_s2.png",
+          "image": "xingqiu_s2.webp",
           "type": "elementalSkill",
           "stats": [
             {
@@ -59686,7 +59686,7 @@
         },
         {
           "key": "s3",
-          "image": "xingqiu_s3.png",
+          "image": "xingqiu_s3.webp",
           "type": "elementalBurst",
           "stats": [
             {
@@ -59775,17 +59775,17 @@
       "passives": [
         {
           "key": "p1",
-          "image": "xingqiu_p1.png",
+          "image": "xingqiu_p1.webp",
           "unlockedAt": -1
         },
         {
           "key": "p2",
-          "image": "xingqiu_p2.png",
+          "image": "xingqiu_p2.webp",
           "unlockedAt": 1
         },
         {
           "key": "p3",
-          "image": "xingqiu_p3.png",
+          "image": "xingqiu_p3.webp",
           "unlockedAt": 4
         }
       ],
@@ -59793,32 +59793,32 @@
         {
           "key": "c1",
           "number": 1,
-          "image": "xingqiu_c1.png"
+          "image": "xingqiu_c1.webp"
         },
         {
           "key": "c2",
           "number": 2,
-          "image": "xingqiu_c2.png"
+          "image": "xingqiu_c2.webp"
         },
         {
           "key": "c3",
           "number": 3,
-          "image": "xingqiu_c3.png"
+          "image": "xingqiu_c3.webp"
         },
         {
           "key": "c4",
           "number": 4,
-          "image": "xingqiu_c4.png"
+          "image": "xingqiu_c4.webp"
         },
         {
           "key": "c5",
           "number": 5,
-          "image": "xingqiu_c5.png"
+          "image": "xingqiu_c5.webp"
         },
         {
           "key": "c6",
           "number": 6,
-          "image": "xingqiu_c6.png"
+          "image": "xingqiu_c6.webp"
         }
       ],
       "builds": [
@@ -60009,8 +60009,8 @@
       "rarity": 4,
       "weaponType": "claymore",
       "elementType": "pyro",
-      "image": "xinyan.png",
-      "fullImage": "xinyan.png",
+      "image": "xinyan.webp",
+      "fullImage": "xinyan.webp",
       "secondFullImage": null,
       "isComingSoon": false,
       "isNew": false,
@@ -60413,7 +60413,7 @@
       "skills": [
         {
           "key": "s1",
-          "image": "xinyan_s1.png",
+          "image": "xinyan_s1.webp",
           "type": "normalAttack",
           "stats": [
             {
@@ -60640,7 +60640,7 @@
         },
         {
           "key": "s2",
-          "image": "xinyan_s2.png",
+          "image": "xinyan_s2.webp",
           "type": "elementalSkill",
           "stats": [
             {
@@ -60847,7 +60847,7 @@
         },
         {
           "key": "s3",
-          "image": "xinyan_s3.png",
+          "image": "xinyan_s3.webp",
           "type": "elementalBurst",
           "stats": [
             {
@@ -60956,17 +60956,17 @@
       "passives": [
         {
           "key": "p1",
-          "image": "xinyan_p1.png",
+          "image": "xinyan_p1.webp",
           "unlockedAt": -1
         },
         {
           "key": "p2",
-          "image": "xinyan_p2.png",
+          "image": "xinyan_p2.webp",
           "unlockedAt": 1
         },
         {
           "key": "p3",
-          "image": "xinyan_p3.png",
+          "image": "xinyan_p3.webp",
           "unlockedAt": 4
         }
       ],
@@ -60974,32 +60974,32 @@
         {
           "key": "c1",
           "number": 1,
-          "image": "xinyan_c1.png"
+          "image": "xinyan_c1.webp"
         },
         {
           "key": "c2",
           "number": 2,
-          "image": "xinyan_c2.png"
+          "image": "xinyan_c2.webp"
         },
         {
           "key": "c3",
           "number": 3,
-          "image": "xinyan_c3.png"
+          "image": "xinyan_c3.webp"
         },
         {
           "key": "c4",
           "number": 4,
-          "image": "xinyan_c4.png"
+          "image": "xinyan_c4.webp"
         },
         {
           "key": "c5",
           "number": 5,
-          "image": "xinyan_c5.png"
+          "image": "xinyan_c5.webp"
         },
         {
           "key": "c6",
           "number": 6,
-          "image": "xinyan_c6.png"
+          "image": "xinyan_c6.webp"
         }
       ],
       "builds": [
@@ -61232,8 +61232,8 @@
       "rarity": 5,
       "weaponType": "catalyst",
       "elementType": "electro",
-      "image": "yae-miko.png",
-      "fullImage": "yae-miko.png",
+      "image": "yae-miko.webp",
+      "fullImage": "yae-miko.webp",
       "secondFullImage": null,
       "isComingSoon": false,
       "isNew": false,
@@ -61636,7 +61636,7 @@
       "skills": [
         {
           "key": "s1",
-          "image": "yae-miko_s1.png",
+          "image": "yae-miko_s1.webp",
           "type": "normalAttack",
           "stats": [
             {
@@ -61803,7 +61803,7 @@
         },
         {
           "key": "s2",
-          "image": "yae-miko_s2.png",
+          "image": "yae-miko_s2.webp",
           "type": "elementalSkill",
           "stats": [
             {
@@ -61930,7 +61930,7 @@
         },
         {
           "key": "s3",
-          "image": "yae-miko_s3.png",
+          "image": "yae-miko_s3.webp",
           "type": "elementalBurst",
           "stats": [
             {
@@ -62019,17 +62019,17 @@
       "passives": [
         {
           "key": "p1",
-          "image": "yae-miko_p1.png",
+          "image": "yae-miko_p1.webp",
           "unlockedAt": -1
         },
         {
           "key": "p2",
-          "image": "yae-miko_p2.png",
+          "image": "yae-miko_p2.webp",
           "unlockedAt": 1
         },
         {
           "key": "p3",
-          "image": "yae-miko_p3.png",
+          "image": "yae-miko_p3.webp",
           "unlockedAt": 4
         }
       ],
@@ -62037,32 +62037,32 @@
         {
           "key": "c1",
           "number": 1,
-          "image": "yae-miko_c1.png"
+          "image": "yae-miko_c1.webp"
         },
         {
           "key": "c2",
           "number": 2,
-          "image": "yae-miko_c2.png"
+          "image": "yae-miko_c2.webp"
         },
         {
           "key": "c3",
           "number": 3,
-          "image": "yae-miko_c3.png"
+          "image": "yae-miko_c3.webp"
         },
         {
           "key": "c4",
           "number": 4,
-          "image": "yae-miko_c4.png"
+          "image": "yae-miko_c4.webp"
         },
         {
           "key": "c5",
           "number": 5,
-          "image": "yae-miko_c5.png"
+          "image": "yae-miko_c5.webp"
         },
         {
           "key": "c6",
           "number": 6,
-          "image": "yae-miko_c6.png"
+          "image": "yae-miko_c6.webp"
         }
       ],
       "builds": [
@@ -62242,8 +62242,8 @@
       "rarity": 4,
       "weaponType": "catalyst",
       "elementType": "pyro",
-      "image": "yanfei.png",
-      "fullImage": "yanfei.png",
+      "image": "yanfei.webp",
+      "fullImage": "yanfei.webp",
       "secondFullImage": null,
       "isComingSoon": false,
       "isNew": false,
@@ -62646,7 +62646,7 @@
       "skills": [
         {
           "key": "s1",
-          "image": "yanfei_s1.png",
+          "image": "yanfei_s1.webp",
           "type": "normalAttack",
           "stats": [
             {
@@ -62933,7 +62933,7 @@
         },
         {
           "key": "s2",
-          "image": "yanfei_s2.png",
+          "image": "yanfei_s2.webp",
           "type": "elementalSkill",
           "stats": [
             {
@@ -63000,7 +63000,7 @@
         },
         {
           "key": "s3",
-          "image": "yanfei_s3.png",
+          "image": "yanfei_s3.webp",
           "type": "elementalBurst",
           "stats": [
             {
@@ -63129,17 +63129,17 @@
       "passives": [
         {
           "key": "p1",
-          "image": "yanfei_p1.png",
+          "image": "yanfei_p1.webp",
           "unlockedAt": -1
         },
         {
           "key": "p2",
-          "image": "yanfei_p2.png",
+          "image": "yanfei_p2.webp",
           "unlockedAt": 1
         },
         {
           "key": "p3",
-          "image": "yanfei_p3.png",
+          "image": "yanfei_p3.webp",
           "unlockedAt": 4
         }
       ],
@@ -63147,32 +63147,32 @@
         {
           "key": "c1",
           "number": 1,
-          "image": "yanfei_c1.png"
+          "image": "yanfei_c1.webp"
         },
         {
           "key": "c2",
           "number": 2,
-          "image": "yanfei_c2.png"
+          "image": "yanfei_c2.webp"
         },
         {
           "key": "c3",
           "number": 3,
-          "image": "yanfei_c3.png"
+          "image": "yanfei_c3.webp"
         },
         {
           "key": "c4",
           "number": 4,
-          "image": "yanfei_c4.png"
+          "image": "yanfei_c4.webp"
         },
         {
           "key": "c5",
           "number": 5,
-          "image": "yanfei_c5.png"
+          "image": "yanfei_c5.webp"
         },
         {
           "key": "c6",
           "number": 6,
-          "image": "yanfei_c6.png"
+          "image": "yanfei_c6.webp"
         }
       ],
       "builds": [
@@ -63333,8 +63333,8 @@
       "rarity": 5,
       "weaponType": "bow",
       "elementType": "hydro",
-      "image": "yelan.png",
-      "fullImage": "yelan.png",
+      "image": "yelan.webp",
+      "fullImage": "yelan.webp",
       "secondFullImage": null,
       "isComingSoon": false,
       "isNew": false,
@@ -63737,7 +63737,7 @@
       "skills": [
         {
           "key": "s1",
-          "image": "yelan_s1.png",
+          "image": "yelan_s1.webp",
           "type": "normalAttack",
           "stats": [
             {
@@ -63964,7 +63964,7 @@
         },
         {
           "key": "s2",
-          "image": "yelan_s2.png",
+          "image": "yelan_s2.webp",
           "type": "elementalSkill",
           "stats": [
             {
@@ -64031,7 +64031,7 @@
         },
         {
           "key": "s3",
-          "image": "yelan_s3.png",
+          "image": "yelan_s3.webp",
           "type": "elementalBurst",
           "stats": [
             {
@@ -64160,17 +64160,17 @@
       "passives": [
         {
           "key": "p1",
-          "image": "yelan_p1.png",
+          "image": "yelan_p1.webp",
           "unlockedAt": -1
         },
         {
           "key": "p2",
-          "image": "yelan_p2.png",
+          "image": "yelan_p2.webp",
           "unlockedAt": 1
         },
         {
           "key": "p3",
-          "image": "yelan_p3.png",
+          "image": "yelan_p3.webp",
           "unlockedAt": 4
         }
       ],
@@ -64178,32 +64178,32 @@
         {
           "key": "c1",
           "number": 1,
-          "image": "yelan_c1.png"
+          "image": "yelan_c1.webp"
         },
         {
           "key": "c2",
           "number": 2,
-          "image": "yelan_c2.png"
+          "image": "yelan_c2.webp"
         },
         {
           "key": "c3",
           "number": 3,
-          "image": "yelan_c3.png"
+          "image": "yelan_c3.webp"
         },
         {
           "key": "c4",
           "number": 4,
-          "image": "yelan_c4.png"
+          "image": "yelan_c4.webp"
         },
         {
           "key": "c5",
           "number": 5,
-          "image": "yelan_c5.png"
+          "image": "yelan_c5.webp"
         },
         {
           "key": "c6",
           "number": 6,
-          "image": "yelan_c6.png"
+          "image": "yelan_c6.webp"
         }
       ],
       "builds": [
@@ -64398,8 +64398,8 @@
       "rarity": 5,
       "weaponType": "bow",
       "elementType": "pyro",
-      "image": "yoimiya.png",
-      "fullImage": "yoimiya.png",
+      "image": "yoimiya.webp",
+      "fullImage": "yoimiya.webp",
       "secondFullImage": null,
       "isComingSoon": false,
       "isNew": false,
@@ -64802,7 +64802,7 @@
       "skills": [
         {
           "key": "s1",
-          "image": "yoimiya_s1.png",
+          "image": "yoimiya_s1.webp",
           "type": "normalAttack",
           "stats": [
             {
@@ -65069,7 +65069,7 @@
         },
         {
           "key": "s2",
-          "image": "yoimiya_s2.png",
+          "image": "yoimiya_s2.webp",
           "type": "elementalSkill",
           "stats": [
             {
@@ -65136,7 +65136,7 @@
         },
         {
           "key": "s3",
-          "image": "yoimiya_s3.png",
+          "image": "yoimiya_s3.webp",
           "type": "elementalBurst",
           "stats": [
             {
@@ -65245,17 +65245,17 @@
       "passives": [
         {
           "key": "p1",
-          "image": "yoimiya_p1.png",
+          "image": "yoimiya_p1.webp",
           "unlockedAt": -1
         },
         {
           "key": "p2",
-          "image": "yoimiya_p2.png",
+          "image": "yoimiya_p2.webp",
           "unlockedAt": 1
         },
         {
           "key": "p3",
-          "image": "yoimiya_p3.png",
+          "image": "yoimiya_p3.webp",
           "unlockedAt": 4
         }
       ],
@@ -65263,32 +65263,32 @@
         {
           "key": "c1",
           "number": 1,
-          "image": "yoimiya_c1.png"
+          "image": "yoimiya_c1.webp"
         },
         {
           "key": "c2",
           "number": 2,
-          "image": "yoimiya_c2.png"
+          "image": "yoimiya_c2.webp"
         },
         {
           "key": "c3",
           "number": 3,
-          "image": "yoimiya_c3.png"
+          "image": "yoimiya_c3.webp"
         },
         {
           "key": "c4",
           "number": 4,
-          "image": "yoimiya_c4.png"
+          "image": "yoimiya_c4.webp"
         },
         {
           "key": "c5",
           "number": 5,
-          "image": "yoimiya_c5.png"
+          "image": "yoimiya_c5.webp"
         },
         {
           "key": "c6",
           "number": 6,
-          "image": "yoimiya_c6.png"
+          "image": "yoimiya_c6.webp"
         }
       ],
       "builds": [
@@ -65478,8 +65478,8 @@
       "rarity": 4,
       "weaponType": "polearm",
       "elementType": "geo",
-      "image": "yun-jin.png",
-      "fullImage": "yun-jin.png",
+      "image": "yun-jin.webp",
+      "fullImage": "yun-jin.webp",
       "secondFullImage": null,
       "isComingSoon": false,
       "isNew": false,
@@ -65882,7 +65882,7 @@
       "skills": [
         {
           "key": "s1",
-          "image": "yun-jin_s1.png",
+          "image": "yun-jin_s1.webp",
           "type": "normalAttack",
           "stats": [
             {
@@ -66129,7 +66129,7 @@
         },
         {
           "key": "s2",
-          "image": "yun-jin_s2.png",
+          "image": "yun-jin_s2.webp",
           "type": "elementalSkill",
           "stats": [
             {
@@ -66256,7 +66256,7 @@
         },
         {
           "key": "s3",
-          "image": "yun-jin_s3.png",
+          "image": "yun-jin_s3.webp",
           "type": "elementalBurst",
           "stats": [
             {
@@ -66385,17 +66385,17 @@
       "passives": [
         {
           "key": "p1",
-          "image": "yun-jin_p1.png",
+          "image": "yun-jin_p1.webp",
           "unlockedAt": -1
         },
         {
           "key": "p2",
-          "image": "yun-jin_p2.png",
+          "image": "yun-jin_p2.webp",
           "unlockedAt": 1
         },
         {
           "key": "p3",
-          "image": "yun-jin_p3.png",
+          "image": "yun-jin_p3.webp",
           "unlockedAt": 4
         }
       ],
@@ -66403,32 +66403,32 @@
         {
           "key": "c1",
           "number": 1,
-          "image": "yun-jin_c1.png"
+          "image": "yun-jin_c1.webp"
         },
         {
           "key": "c2",
           "number": 2,
-          "image": "yun-jin_c2.png"
+          "image": "yun-jin_c2.webp"
         },
         {
           "key": "c3",
           "number": 3,
-          "image": "yun-jin_c3.png"
+          "image": "yun-jin_c3.webp"
         },
         {
           "key": "c4",
           "number": 4,
-          "image": "yun-jin_c4.png"
+          "image": "yun-jin_c4.webp"
         },
         {
           "key": "c5",
           "number": 5,
-          "image": "yun-jin_c5.png"
+          "image": "yun-jin_c5.webp"
         },
         {
           "key": "c6",
           "number": 6,
-          "image": "yun-jin_c6.png"
+          "image": "yun-jin_c6.webp"
         }
       ],
       "builds": [
@@ -66605,8 +66605,8 @@
       "rarity": 5,
       "weaponType": "polearm",
       "elementType": "geo",
-      "image": "zhongli.png",
-      "fullImage": "zhongli.png",
+      "image": "zhongli.webp",
+      "fullImage": "zhongli.webp",
       "secondFullImage": null,
       "isComingSoon": false,
       "isNew": false,
@@ -67009,7 +67009,7 @@
       "skills": [
         {
           "key": "s1",
-          "image": "zhongli_s1.png",
+          "image": "zhongli_s1.webp",
           "type": "normalAttack",
           "stats": [
             {
@@ -67256,7 +67256,7 @@
         },
         {
           "key": "s2",
-          "image": "zhongli_s2.png",
+          "image": "zhongli_s2.webp",
           "type": "elementalSkill",
           "stats": [
             {
@@ -67423,7 +67423,7 @@
         },
         {
           "key": "s3",
-          "image": "zhongli_s3.png",
+          "image": "zhongli_s3.webp",
           "type": "elementalBurst",
           "stats": [
             {
@@ -67512,17 +67512,17 @@
       "passives": [
         {
           "key": "p1",
-          "image": "zhongli_p1.png",
+          "image": "zhongli_p1.webp",
           "unlockedAt": -1
         },
         {
           "key": "p2",
-          "image": "zhongli_p2.png",
+          "image": "zhongli_p2.webp",
           "unlockedAt": 1
         },
         {
           "key": "p3",
-          "image": "zhongli_p3.png",
+          "image": "zhongli_p3.webp",
           "unlockedAt": 4
         }
       ],
@@ -67530,32 +67530,32 @@
         {
           "key": "c1",
           "number": 1,
-          "image": "zhongli_c1.png"
+          "image": "zhongli_c1.webp"
         },
         {
           "key": "c2",
           "number": 2,
-          "image": "zhongli_c2.png"
+          "image": "zhongli_c2.webp"
         },
         {
           "key": "c3",
           "number": 3,
-          "image": "zhongli_c3.png"
+          "image": "zhongli_c3.webp"
         },
         {
           "key": "c4",
           "number": 4,
-          "image": "zhongli_c4.png"
+          "image": "zhongli_c4.webp"
         },
         {
           "key": "c5",
           "number": 5,
-          "image": "zhongli_c5.png"
+          "image": "zhongli_c5.webp"
         },
         {
           "key": "c6",
           "number": 6,
-          "image": "zhongli_c6.png"
+          "image": "zhongli_c6.webp"
         }
       ],
       "builds": [

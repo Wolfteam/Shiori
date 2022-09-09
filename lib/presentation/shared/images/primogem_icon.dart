@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shiori/domain/app_constants.dart';
 import 'package:shiori/domain/assets.dart';
 
 class PrimoGemIcon extends StatelessWidget {
@@ -6,7 +7,7 @@ class PrimoGemIcon extends StatelessWidget {
   Widget build(BuildContext context) {
     return IconButton(
       iconSize: 30,
-      icon: Image.asset(Assets.getCurrencyMaterialPath('primogem.png')),
+      icon: Image.asset(Assets.getCurrencyMaterialPath('primogem$imageFileExtension')),
       onPressed: null,
     );
   }
