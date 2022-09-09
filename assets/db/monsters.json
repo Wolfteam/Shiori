@@ -2,7 +2,7 @@
   "monsters": [
     {
       "key": "abyss-herald-wicked-torrents",
-      "image": "abyss-herald-wicked-torrents.png",
+      "image": "abyss-herald-wicked-torrents.webp",
       "type": "abyssOrder",
       "isComingSoon": false,
       "drops": [
@@ -50,7 +50,7 @@
     },
     {
       "key": "abyss-lector-fathomless-flames",
-      "image": "abyss-lector-fathomless-flames.png",
+      "image": "abyss-lector-fathomless-flames.webp",
       "type": "abyssOrder",
       "isComingSoon": false,
       "drops": [
@@ -98,7 +98,7 @@
     },
     {
       "key": "abyss-lector-violet-lightning",
-      "image": "abyss-lector-violet-lightning.png",
+      "image": "abyss-lector-violet-lightning.webp",
       "type": "abyssOrder",
       "isComingSoon": false,
       "drops": [
@@ -146,7 +146,7 @@
     },
     {
       "key": "anemo-hypostasis",
-      "image": "anemo-hypostasis.png",
+      "image": "anemo-hypostasis.webp",
       "type": "elementalLifeForm",
       "isComingSoon": false,
       "drops": [
@@ -194,7 +194,7 @@
     },
     {
       "key": "anemo-samachurl",
-      "image": "anemo-samachurl.png",
+      "image": "anemo-samachurl.webp",
       "type": "hilichurl",
       "isComingSoon": false,
       "drops": [
@@ -230,7 +230,7 @@
     },
     {
       "key": "anemo-slime",
-      "image": "anemo-slime.png",
+      "image": "anemo-slime.webp",
       "type": "elementalLifeForm",
       "isComingSoon": false,
       "drops": [
@@ -254,7 +254,7 @@
     },
     {
       "key": "anemo-specter",
-      "image": "anemo-specter.png",
+      "image": "anemo-specter.webp",
       "type": "elementalLifeForm",
       "isComingSoon": false,
       "drops": [
@@ -278,7 +278,7 @@
     },
     {
       "key": "azhdaha",
-      "image": "azhdaha.png",
+      "image": "azhdaha.webp",
       "type": "boss",
       "isComingSoon": false,
       "drops": [
@@ -426,14 +426,14 @@
     },
     {
       "key": "beisht",
-      "image": "beisht.png",
+      "image": "beisht.webp",
       "type": "na",
       "isComingSoon": false,
       "drops": []
     },
     {
       "key": "black-serpent-knight-windcutter",
-      "image": "black-serpent-knight-windcutter.png",
+      "image": "black-serpent-knight-windcutter.webp",
       "type": "abyssOrder",
       "isComingSoon": false,
       "drops": [
@@ -469,7 +469,7 @@
     },
     {
       "key": "blazing-axe-mitachurl",
-      "image": "blazing-axe-mitachurl.png",
+      "image": "blazing-axe-mitachurl.webp",
       "type": "hilichurl",
       "isComingSoon": false,
       "drops": [
@@ -517,7 +517,7 @@
     },
     {
       "key": "bolteater-bathysmal-vishap",
-      "image": "bolteater-bathysmal-vishap.png",
+      "image": "bolteater-bathysmal-vishap.webp",
       "type": "magicalBeast",
       "isComingSoon": false,
       "drops": [
@@ -585,7 +585,7 @@
     },
     {
       "key": "bolteater-bathysmal-vishap-hatchling",
-      "image": "bolteater-bathysmal-vishap-hatchling.png",
+      "image": "bolteater-bathysmal-vishap-hatchling.webp",
       "type": "na",
       "isComingSoon": false,
       "drops": [
@@ -621,7 +621,7 @@
     },
     {
       "key": "childe",
-      "image": "childe.png",
+      "image": "childe.webp",
       "type": "boss",
       "isComingSoon": false,
       "drops": [
@@ -737,7 +737,7 @@
     },
     {
       "key": "crackling-axe-mitachurl",
-      "image": "crackling-axe-mitachurl.png",
+      "image": "crackling-axe-mitachurl.webp",
       "type": "hilichurl",
       "isComingSoon": false,
       "drops": [
@@ -785,7 +785,7 @@
     },
     {
       "key": "cryo-abyss-mage",
-      "image": "cryo-abyss-mage.png",
+      "image": "cryo-abyss-mage.webp",
       "type": "abyssOrder",
       "isComingSoon": false,
       "drops": [
@@ -821,14 +821,14 @@
     },
     {
       "key": "cryo-cicin",
-      "image": "cryo-cicin.png",
+      "image": "cryo-cicin.webp",
       "type": "magicalBeast",
       "isComingSoon": false,
       "drops": []
     },
     {
       "key": "cryo-hilichurl-grenadier",
-      "image": "cryo-hilichurl-grenadier.png",
+      "image": "cryo-hilichurl-grenadier.webp",
       "type": "hilichurl",
       "isComingSoon": false,
       "drops": [
@@ -852,7 +852,7 @@
     },
     {
       "key": "cryo-hilichurl-shooter",
-      "image": "cryo-hilichurl-shooter.png",
+      "image": "cryo-hilichurl-shooter.webp",
       "type": "hilichurl",
       "isComingSoon": false,
       "drops": [
@@ -888,7 +888,7 @@
     },
     {
       "key": "cryo-hypostasis",
-      "image": "cryo-hypostasis.png",
+      "image": "cryo-hypostasis.webp",
       "type": "elementalLifeForm",
       "isComingSoon": false,
       "drops": [
@@ -940,7 +940,7 @@
     },
     {
       "key": "cryo-regisvine",
-      "image": "cryo-regisvine.png",
+      "image": "cryo-regisvine.webp",
       "type": "magicalBeast",
       "isComingSoon": false,
       "drops": [
@@ -992,7 +992,7 @@
     },
     {
       "key": "cryo-samachurl",
-      "image": "cryo-samachurl.png",
+      "image": "cryo-samachurl.webp",
       "type": "hilichurl",
       "isComingSoon": false,
       "drops": [
@@ -1028,7 +1028,7 @@
     },
     {
       "key": "cryo-slime",
-      "image": "cryo-slime.png",
+      "image": "cryo-slime.webp",
       "type": "elementalLifeForm",
       "isComingSoon": false,
       "drops": [
@@ -1052,7 +1052,7 @@
     },
     {
       "key": "cryo-specter",
-      "image": "cryo-specter.png",
+      "image": "cryo-specter.webp",
       "type": "elementalLifeForm",
       "isComingSoon": false,
       "drops": [
@@ -1076,7 +1076,7 @@
     },
     {
       "key": "cryo-whopperflower",
-      "image": "cryo-whopperflower.png",
+      "image": "cryo-whopperflower.webp",
       "type": "magicalBeast",
       "isComingSoon": false,
       "drops": [
@@ -1100,7 +1100,7 @@
     },
     {
       "key": "dendro-samachurl",
-      "image": "dendro-samachurl.png",
+      "image": "dendro-samachurl.webp",
       "type": "hilichurl",
       "isComingSoon": false,
       "drops": [
@@ -1136,7 +1136,7 @@
     },
     {
       "key": "dendro-slime",
-      "image": "dendro-slime.png",
+      "image": "dendro-slime.webp",
       "type": "elementalLifeForm",
       "isComingSoon": false,
       "drops": [
@@ -1160,7 +1160,7 @@
     },
     {
       "key": "dendro-specter",
-      "image": "dendro-specter.png",
+      "image": "dendro-specter.webp",
       "type": "elementalLifeForm",
       "isComingSoon": false,
       "drops": [
@@ -1184,7 +1184,7 @@
     },
     {
       "key": "electro-abyss-mage",
-      "image": "electro-abyss-mage.png",
+      "image": "electro-abyss-mage.webp",
       "type": "abyssOrder",
       "isComingSoon": false,
       "drops": [
@@ -1220,14 +1220,14 @@
     },
     {
       "key": "electro-cicin",
-      "image": "electro-cicin.png",
+      "image": "electro-cicin.webp",
       "type": "magicalBeast",
       "isComingSoon": false,
       "drops": []
     },
     {
       "key": "electro-hilichurl-grenadier",
-      "image": "electro-hilichurl-grenadier.png",
+      "image": "electro-hilichurl-grenadier.webp",
       "type": "hilichurl",
       "isComingSoon": false,
       "drops": [
@@ -1251,7 +1251,7 @@
     },
     {
       "key": "electro-hilichurl-shooter",
-      "image": "electro-hilichurl-shooter.png",
+      "image": "electro-hilichurl-shooter.webp",
       "type": "hilichurl",
       "isComingSoon": false,
       "drops": [
@@ -1287,7 +1287,7 @@
     },
     {
       "key": "electro-hypostasis",
-      "image": "electro-hypostasis.png",
+      "image": "electro-hypostasis.webp",
       "type": "elementalLifeForm",
       "isComingSoon": false,
       "drops": [
@@ -1339,7 +1339,7 @@
     },
     {
       "key": "electro-regisvine",
-      "image": "electro-regisvine.png",
+      "image": "electro-regisvine.webp",
       "type": "magicalBeast",
       "isComingSoon": false,
       "drops": [
@@ -1391,7 +1391,7 @@
     },
     {
       "key": "electro-samachurl",
-      "image": "electro-samachurl.png",
+      "image": "electro-samachurl.webp",
       "type": "hilichurl",
       "isComingSoon": false,
       "drops": [
@@ -1427,7 +1427,7 @@
     },
     {
       "key": "electro-slime",
-      "image": "electro-slime.png",
+      "image": "electro-slime.webp",
       "type": "elementalLifeForm",
       "isComingSoon": false,
       "drops": [
@@ -1451,7 +1451,7 @@
     },
     {
       "key": "electro-specter",
-      "image": "electro-specter.png",
+      "image": "electro-specter.webp",
       "type": "elementalLifeForm",
       "isComingSoon": false,
       "drops": [
@@ -1475,7 +1475,7 @@
     },
     {
       "key": "electro-whopperflower",
-      "image": "electro-whopperflower.png",
+      "image": "electro-whopperflower.webp",
       "type": "magicalBeast",
       "isComingSoon": false,
       "drops": [
@@ -1499,7 +1499,7 @@
     },
     {
       "key": "eremite-axe-vanguard",
-      "image": "eremite-axe-vanguard.png",
+      "image": "eremite-axe-vanguard.webp",
       "type": "human",
       "isComingSoon": false,
       "drops": [
@@ -1523,7 +1523,7 @@
     },
     {
       "key": "eremite-crossbow",
-      "image": "eremite-crossbow.png",
+      "image": "eremite-crossbow.webp",
       "type": "human",
       "isComingSoon": false,
       "drops": [
@@ -1547,7 +1547,7 @@
     },
     {
       "key": "eremite-daythunder",
-      "image": "eremite-daythunder.png",
+      "image": "eremite-daythunder.webp",
       "type": "human",
       "isComingSoon": false,
       "drops": [
@@ -1571,7 +1571,7 @@
     },
     {
       "key": "eremite-desert-clearwater",
-      "image": "eremite-desert-clearwater.png",
+      "image": "eremite-desert-clearwater.webp",
       "type": "human",
       "isComingSoon": false,
       "drops": [
@@ -1595,7 +1595,7 @@
     },
     {
       "key": "eremite-linebreaker",
-      "image": "eremite-linebreaker.png",
+      "image": "eremite-linebreaker.webp",
       "type": "human",
       "isComingSoon": false,
       "drops": [
@@ -1619,7 +1619,7 @@
     },
     {
       "key": "eremite-ravenbeak-halberdier",
-      "image": "eremite-ravenbeak-halberdier.png",
+      "image": "eremite-ravenbeak-halberdier.webp",
       "type": "human",
       "isComingSoon": false,
       "drops": [
@@ -1643,7 +1643,7 @@
     },
     {
       "key": "eremite-sunfrost",
-      "image": "eremite-sunfrost.png",
+      "image": "eremite-sunfrost.webp",
       "type": "human",
       "isComingSoon": false,
       "drops": [
@@ -1667,7 +1667,7 @@
     },
     {
       "key": "eremite-sword-dancer",
-      "image": "eremite-sword-dancer.png",
+      "image": "eremite-sword-dancer.webp",
       "type": "human",
       "isComingSoon": false,
       "drops": [
@@ -1691,14 +1691,14 @@
     },
     {
       "key": "eye-of-the-storm",
-      "image": "eye-of-the-storm.png",
+      "image": "eye-of-the-storm.webp",
       "type": "elementalLifeForm",
       "isComingSoon": false,
       "drops": []
     },
     {
       "key": "fatui-cryo-cicin-mage",
-      "image": "fatui-cryo-cicin-mage.png",
+      "image": "fatui-cryo-cicin-mage.webp",
       "type": "fatui",
       "isComingSoon": false,
       "drops": [
@@ -1746,7 +1746,7 @@
     },
     {
       "key": "fatui-electro-cicin-mage",
-      "image": "fatui-electro-cicin-mage.png",
+      "image": "fatui-electro-cicin-mage.webp",
       "type": "fatui",
       "isComingSoon": false,
       "drops": [
@@ -1794,7 +1794,7 @@
     },
     {
       "key": "fatui-pyro-agent",
-      "image": "fatui-pyro-agent.png",
+      "image": "fatui-pyro-agent.webp",
       "type": "fatui",
       "isComingSoon": false,
       "drops": [
@@ -1842,7 +1842,7 @@
     },
     {
       "key": "fatui-skirmisher-anemoboxer-vanguard",
-      "image": "fatui-skirmisher-anemoboxer-vanguard.png",
+      "image": "fatui-skirmisher-anemoboxer-vanguard.webp",
       "type": "fatui",
       "isComingSoon": false,
       "drops": [
@@ -1866,7 +1866,7 @@
     },
     {
       "key": "fatui-skirmisher-cryogunner-legionnaire",
-      "image": "fatui-skirmisher-cryogunner-legionnaire.png",
+      "image": "fatui-skirmisher-cryogunner-legionnaire.webp",
       "type": "fatui",
       "isComingSoon": false,
       "drops": [
@@ -1890,7 +1890,7 @@
     },
     {
       "key": "fatui-skirmisher-electrohammer-vanguard",
-      "image": "fatui-skirmisher-electrohammer-vanguard.png",
+      "image": "fatui-skirmisher-electrohammer-vanguard.webp",
       "type": "fatui",
       "isComingSoon": false,
       "drops": [
@@ -1914,7 +1914,7 @@
     },
     {
       "key": "fatui-skirmisher-geochanter-bracer",
-      "image": "fatui-skirmisher-geochanter-bracer.png",
+      "image": "fatui-skirmisher-geochanter-bracer.webp",
       "type": "fatui",
       "isComingSoon": false,
       "drops": [
@@ -1938,7 +1938,7 @@
     },
     {
       "key": "fatui-skirmisher-hydrogunner-legionnaire",
-      "image": "fatui-skirmisher-hydrogunner-legionnaire.png",
+      "image": "fatui-skirmisher-hydrogunner-legionnaire.webp",
       "type": "fatui",
       "isComingSoon": false,
       "drops": [
@@ -1962,7 +1962,7 @@
     },
     {
       "key": "fatui-skirmisher-pyroslinger-bracer",
-      "image": "fatui-skirmisher-pyroslinger-bracer.png",
+      "image": "fatui-skirmisher-pyroslinger-bracer.webp",
       "type": "fatui",
       "isComingSoon": false,
       "drops": [
@@ -1986,7 +1986,7 @@
     },
     {
       "key": "floating-dendro-fungus",
-      "image": "floating-dendro-fungus.png",
+      "image": "floating-dendro-fungus.webp",
       "type": "magicalBeast",
       "isComingSoon": false,
       "drops": [
@@ -2022,7 +2022,7 @@
     },
     {
       "key": "floating-hydro-fungus",
-      "image": "floating-hydro-fungus.png",
+      "image": "floating-hydro-fungus.webp",
       "type": "magicalBeast",
       "isComingSoon": false,
       "drops": [
@@ -2050,7 +2050,7 @@
     },
     {
       "key": "frostarm-lawachurl",
-      "image": "frostarm-lawachurl.png",
+      "image": "frostarm-lawachurl.webp",
       "type": "hilichurl",
       "isComingSoon": false,
       "drops": [
@@ -2098,7 +2098,7 @@
     },
     {
       "key": "geo-hypostasis",
-      "image": "geo-hypostasis.png",
+      "image": "geo-hypostasis.webp",
       "type": "elementalLifeForm",
       "isComingSoon": false,
       "drops": [
@@ -2146,7 +2146,7 @@
     },
     {
       "key": "geo-samachurl",
-      "image": "geo-samachurl.png",
+      "image": "geo-samachurl.webp",
       "type": "hilichurl",
       "isComingSoon": false,
       "drops": [
@@ -2182,7 +2182,7 @@
     },
     {
       "key": "geo-slime",
-      "image": "geo-slime.png",
+      "image": "geo-slime.webp",
       "type": "elementalLifeForm",
       "isComingSoon": false,
       "drops": [
@@ -2206,7 +2206,7 @@
     },
     {
       "key": "geo-specter",
-      "image": "geo-specter.png",
+      "image": "geo-specter.webp",
       "type": "elementalLifeForm",
       "isComingSoon": false,
       "drops": [
@@ -2230,7 +2230,7 @@
     },
     {
       "key": "geovishap",
-      "image": "geovishap.png",
+      "image": "geovishap.webp",
       "type": "magicalBeast",
       "isComingSoon": false,
       "drops": [
@@ -2266,7 +2266,7 @@
     },
     {
       "key": "geovishap-hatchling",
-      "image": "geovishap-hatchling.png",
+      "image": "geovishap-hatchling.webp",
       "type": "magicalBeast",
       "isComingSoon": false,
       "drops": [
@@ -2302,7 +2302,7 @@
     },
     {
       "key": "golden-wolflord",
-      "image": "golden-wolflord.png",
+      "image": "golden-wolflord.webp",
       "type": "abyssOrder",
       "isComingSoon": false,
       "drops": [
@@ -2350,7 +2350,7 @@
     },
     {
       "key": "grounded-hydroshroom",
-      "image": "grounded-hydroshroom.png",
+      "image": "grounded-hydroshroom.webp",
       "type": "magicalBeast",
       "isComingSoon": false,
       "drops": [
@@ -2386,7 +2386,7 @@
     },
     {
       "key": "hilichurl",
-      "image": "hilichurl.png",
+      "image": "hilichurl.webp",
       "type": "hilichurl",
       "isComingSoon": false,
       "drops": [
@@ -2410,7 +2410,7 @@
     },
     {
       "key": "hilichurl-berserker",
-      "image": "hilichurl-berserker.png",
+      "image": "hilichurl-berserker.webp",
       "type": "hilichurl",
       "isComingSoon": false,
       "drops": [
@@ -2434,7 +2434,7 @@
     },
     {
       "key": "hilichurl-fighter",
-      "image": "hilichurl-fighter.png",
+      "image": "hilichurl-fighter.webp",
       "type": "hilichurl",
       "isComingSoon": false,
       "drops": [
@@ -2458,7 +2458,7 @@
     },
     {
       "key": "hilichurl-grenadier",
-      "image": "hilichurl-grenadier.png",
+      "image": "hilichurl-grenadier.webp",
       "type": "hilichurl",
       "isComingSoon": false,
       "drops": [
@@ -2482,7 +2482,7 @@
     },
     {
       "key": "hilichurl-shooter",
-      "image": "hilichurl-shooter.png",
+      "image": "hilichurl-shooter.webp",
       "type": "hilichurl",
       "isComingSoon": false,
       "drops": [
@@ -2518,7 +2518,7 @@
     },
     {
       "key": "hydro-abyss-mage",
-      "image": "hydro-abyss-mage.png",
+      "image": "hydro-abyss-mage.webp",
       "type": "abyssOrder",
       "isComingSoon": false,
       "drops": [
@@ -2554,14 +2554,14 @@
     },
     {
       "key": "hydro-cicin",
-      "image": "hydro-cicin.png",
+      "image": "hydro-cicin.webp",
       "type": "magicalBeast",
       "isComingSoon": false,
       "drops": []
     },
     {
       "key": "hydro-hypostasis",
-      "image": "hydro-hypostasis.png",
+      "image": "hydro-hypostasis.webp",
       "type": "elementalLifeForm",
       "isComingSoon": false,
       "drops": [
@@ -2613,63 +2613,63 @@
     },
     {
       "key": "hydro-mimic-boar",
-      "image": "hydro-mimic-boar.png",
+      "image": "hydro-mimic-boar.webp",
       "type": "na",
       "isComingSoon": false,
       "drops": []
     },
     {
       "key": "hydro-mimic-crab",
-      "image": "hydro-mimic-crab.png",
+      "image": "hydro-mimic-crab.webp",
       "type": "na",
       "isComingSoon": false,
       "drops": []
     },
     {
       "key": "hydro-mimic-crane",
-      "image": "hydro-mimic-crane.png",
+      "image": "hydro-mimic-crane.webp",
       "type": "na",
       "isComingSoon": false,
       "drops": []
     },
     {
       "key": "hydro-mimic-ferret",
-      "image": "hydro-mimic-ferret.png",
+      "image": "hydro-mimic-ferret.webp",
       "type": "na",
       "isComingSoon": false,
       "drops": []
     },
     {
       "key": "hydro-mimic-finch",
-      "image": "hydro-mimic-finch.png",
+      "image": "hydro-mimic-finch.webp",
       "type": "na",
       "isComingSoon": false,
       "drops": []
     },
     {
       "key": "hydro-mimic-frog",
-      "image": "hydro-mimic-frog.png",
+      "image": "hydro-mimic-frog.webp",
       "type": "na",
       "isComingSoon": false,
       "drops": []
     },
     {
       "key": "hydro-mimic-mallard",
-      "image": "hydro-mimic-mallard.png",
+      "image": "hydro-mimic-mallard.webp",
       "type": "na",
       "isComingSoon": false,
       "drops": []
     },
     {
       "key": "hydro-mimic-raptor",
-      "image": "hydro-mimic-raptor.png",
+      "image": "hydro-mimic-raptor.webp",
       "type": "na",
       "isComingSoon": false,
       "drops": []
     },
     {
       "key": "hydro-samachurl",
-      "image": "hydro-samachurl.png",
+      "image": "hydro-samachurl.webp",
       "type": "hilichurl",
       "isComingSoon": false,
       "drops": [
@@ -2705,7 +2705,7 @@
     },
     {
       "key": "hydro-slime",
-      "image": "hydro-slime.png",
+      "image": "hydro-slime.webp",
       "type": "elementalLifeForm",
       "isComingSoon": false,
       "drops": [
@@ -2729,7 +2729,7 @@
     },
     {
       "key": "hydro-specter",
-      "image": "hydro-specter.png",
+      "image": "hydro-specter.webp",
       "type": "elementalLifeForm",
       "isComingSoon": false,
       "drops": [
@@ -2753,7 +2753,7 @@
     },
     {
       "key": "ice-shield-hilichurl-guard",
-      "image": "ice-shield-hilichurl-guard.png",
+      "image": "ice-shield-hilichurl-guard.webp",
       "type": "hilichurl",
       "isComingSoon": false,
       "drops": [
@@ -2777,7 +2777,7 @@
     },
     {
       "key": "ice-shieldwall-mitachurl",
-      "image": "ice-shieldwall-mitachurl.png",
+      "image": "ice-shieldwall-mitachurl.webp",
       "type": "hilichurl",
       "isComingSoon": false,
       "drops": [
@@ -2825,7 +2825,7 @@
     },
     {
       "key": "jadeplume-terrorshroom",
-      "image": "jadeplume-terrorshroom.png",
+      "image": "jadeplume-terrorshroom.webp",
       "type": "magicalBeast",
       "isComingSoon": false,
       "drops": [
@@ -2873,7 +2873,7 @@
     },
     {
       "key": "kairagi-dancing-thunder",
-      "image": "kairagi-dancing-thunder.png",
+      "image": "kairagi-dancing-thunder.webp",
       "type": "human",
       "isComingSoon": false,
       "drops": [
@@ -2897,7 +2897,7 @@
     },
     {
       "key": "kairagi-fiery-might",
-      "image": "kairagi-fiery-might.png",
+      "image": "kairagi-fiery-might.webp",
       "type": "human",
       "isComingSoon": false,
       "drops": [
@@ -2921,7 +2921,7 @@
     },
     {
       "key": "la-signora",
-      "image": "la-signora.png",
+      "image": "la-signora.webp",
       "type": "boss",
       "isComingSoon": false,
       "drops": [
@@ -3021,7 +3021,7 @@
     },
     {
       "key": "large-anemo-slime",
-      "image": "large-anemo-slime.png",
+      "image": "large-anemo-slime.webp",
       "type": "elementalLifeForm",
       "isComingSoon": false,
       "drops": [
@@ -3045,7 +3045,7 @@
     },
     {
       "key": "large-cryo-slime",
-      "image": "large-cryo-slime.png",
+      "image": "large-cryo-slime.webp",
       "type": "elementalLifeForm",
       "isComingSoon": false,
       "drops": [
@@ -3069,7 +3069,7 @@
     },
     {
       "key": "large-dendro-slime",
-      "image": "large-dendro-slime.png",
+      "image": "large-dendro-slime.webp",
       "type": "elementalLifeForm",
       "isComingSoon": false,
       "drops": [
@@ -3093,7 +3093,7 @@
     },
     {
       "key": "large-electro-slime",
-      "image": "large-electro-slime.png",
+      "image": "large-electro-slime.webp",
       "type": "elementalLifeForm",
       "isComingSoon": false,
       "drops": [
@@ -3117,7 +3117,7 @@
     },
     {
       "key": "large-geo-slime",
-      "image": "large-geo-slime.png",
+      "image": "large-geo-slime.webp",
       "type": "elementalLifeForm",
       "isComingSoon": false,
       "drops": [
@@ -3141,7 +3141,7 @@
     },
     {
       "key": "large-hydro-slime",
-      "image": "large-hydro-slime.png",
+      "image": "large-hydro-slime.webp",
       "type": "elementalLifeForm",
       "isComingSoon": false,
       "drops": [
@@ -3165,7 +3165,7 @@
     },
     {
       "key": "large-pyro-slime",
-      "image": "large-pyro-slime.png",
+      "image": "large-pyro-slime.webp",
       "type": "elementalLifeForm",
       "isComingSoon": false,
       "drops": [
@@ -3189,7 +3189,7 @@
     },
     {
       "key": "lupus-boreas-dominator-of-wolves",
-      "image": "lupus-boreas-dominator-of-wolves.png",
+      "image": "lupus-boreas-dominator-of-wolves.webp",
       "type": "boss",
       "isComingSoon": false,
       "drops": [
@@ -3305,7 +3305,7 @@
     },
     {
       "key": "magatsu-mitake-narukami-no-mikoto",
-      "image": "magatsu-mitake-narukami-no-mikoto.png",
+      "image": "magatsu-mitake-narukami-no-mikoto.webp",
       "type": "boss",
       "isComingSoon": false,
       "drops": [
@@ -3389,7 +3389,7 @@
     },
     {
       "key": "maguu-kenki",
-      "image": "maguu-kenki.png",
+      "image": "maguu-kenki.webp",
       "type": "automaton",
       "isComingSoon": false,
       "drops": [
@@ -3453,42 +3453,42 @@
     },
     {
       "key": "maguu-kenki-galloping-frost",
-      "image": "maguu-kenki-galloping-frost.png",
+      "image": "maguu-kenki-galloping-frost.webp",
       "type": "na",
       "isComingSoon": false,
       "drops": []
     },
     {
       "key": "maguu-kenki-lone-gale",
-      "image": "maguu-kenki-lone-gale.png",
+      "image": "maguu-kenki-lone-gale.webp",
       "type": "na",
       "isComingSoon": false,
       "drops": []
     },
     {
       "key": "maguu-kenki-mask-of-terror",
-      "image": "maguu-kenki-mask-of-terror.png",
+      "image": "maguu-kenki-mask-of-terror.webp",
       "type": "na",
       "isComingSoon": false,
       "drops": []
     },
     {
       "key": "millelith-sergeant",
-      "image": "millelith-sergeant.png",
+      "image": "millelith-sergeant.webp",
       "type": "human",
       "isComingSoon": false,
       "drops": []
     },
     {
       "key": "millelith-soldier",
-      "image": "millelith-soldier.png",
+      "image": "millelith-soldier.webp",
       "type": "human",
       "isComingSoon": false,
       "drops": []
     },
     {
       "key": "mirror-maiden",
-      "image": "mirror-maiden.png",
+      "image": "mirror-maiden.webp",
       "type": "fatui",
       "isComingSoon": false,
       "drops": [
@@ -3524,7 +3524,7 @@
     },
     {
       "key": "mutant-electro-slime",
-      "image": "mutant-electro-slime.png",
+      "image": "mutant-electro-slime.webp",
       "type": "elementalLifeForm",
       "isComingSoon": false,
       "drops": [
@@ -3548,7 +3548,7 @@
     },
     {
       "key": "nobushi-hitsukeban",
-      "image": "nobushi-hitsukeban.png",
+      "image": "nobushi-hitsukeban.webp",
       "type": "human",
       "isComingSoon": false,
       "drops": [
@@ -3572,7 +3572,7 @@
     },
     {
       "key": "nobushi-jintouban",
-      "image": "nobushi-jintouban.png",
+      "image": "nobushi-jintouban.webp",
       "type": "human",
       "isComingSoon": false,
       "drops": [
@@ -3596,7 +3596,7 @@
     },
     {
       "key": "nobushi-kikouban",
-      "image": "nobushi-kikouban.png",
+      "image": "nobushi-kikouban.webp",
       "type": "human",
       "isComingSoon": false,
       "drops": [
@@ -3620,7 +3620,7 @@
     },
     {
       "key": "oceanid",
-      "image": "oceanid.png",
+      "image": "oceanid.webp",
       "type": "elementalLifeForm",
       "isComingSoon": false,
       "drops": [
@@ -3672,21 +3672,21 @@
     },
     {
       "key": "ochimusha-cankered-flame",
-      "image": "ochimusha-cankered-flame.png",
+      "image": "ochimusha-cankered-flame.webp",
       "type": "na",
       "isComingSoon": false,
       "drops": []
     },
     {
       "key": "ochimusha-ensorcelled-thunder",
-      "image": "ochimusha-ensorcelled-thunder.png",
+      "image": "ochimusha-ensorcelled-thunder.webp",
       "type": "na",
       "isComingSoon": false,
       "drops": []
     },
     {
       "key": "perpetual-mechanical-array",
-      "image": "perpetual-mechanical-array.png",
+      "image": "perpetual-mechanical-array.webp",
       "type": "automaton",
       "isComingSoon": false,
       "drops": [
@@ -3754,7 +3754,7 @@
     },
     {
       "key": "primo-geovishap",
-      "image": "primo-geovishap.png",
+      "image": "primo-geovishap.webp",
       "type": "magicalBeast",
       "isComingSoon": false,
       "drops": [
@@ -3870,7 +3870,7 @@
     },
     {
       "key": "primordial-bathysmal-vishap",
-      "image": "primordial-bathysmal-vishap.png",
+      "image": "primordial-bathysmal-vishap.webp",
       "type": "magicalBeast",
       "isComingSoon": false,
       "drops": [
@@ -3906,7 +3906,7 @@
     },
     {
       "key": "primordial-bathysmal-vishap-hatchling",
-      "image": "primordial-bathysmal-vishap-hatchling.png",
+      "image": "primordial-bathysmal-vishap-hatchling.webp",
       "type": "na",
       "isComingSoon": false,
       "drops": [
@@ -3942,7 +3942,7 @@
     },
     {
       "key": "pyro-abyss-mage",
-      "image": "pyro-abyss-mage.png",
+      "image": "pyro-abyss-mage.webp",
       "type": "abyssOrder",
       "isComingSoon": false,
       "drops": [
@@ -3978,7 +3978,7 @@
     },
     {
       "key": "pyro-hilichurl-shooter",
-      "image": "pyro-hilichurl-shooter.png",
+      "image": "pyro-hilichurl-shooter.webp",
       "type": "hilichurl",
       "isComingSoon": false,
       "drops": [
@@ -4014,7 +4014,7 @@
     },
     {
       "key": "pyro-hypostasis",
-      "image": "pyro-hypostasis.png",
+      "image": "pyro-hypostasis.webp",
       "type": "elementalLifeForm",
       "isComingSoon": false,
       "drops": [
@@ -4066,7 +4066,7 @@
     },
     {
       "key": "pyro-regisvine",
-      "image": "pyro-regisvine.png",
+      "image": "pyro-regisvine.webp",
       "type": "magicalBeast",
       "isComingSoon": false,
       "drops": [
@@ -4118,7 +4118,7 @@
     },
     {
       "key": "pyro-slime",
-      "image": "pyro-slime.png",
+      "image": "pyro-slime.webp",
       "type": "elementalLifeForm",
       "isComingSoon": false,
       "drops": [
@@ -4142,7 +4142,7 @@
     },
     {
       "key": "pyro-specter",
-      "image": "pyro-specter.png",
+      "image": "pyro-specter.webp",
       "type": "elementalLifeForm",
       "isComingSoon": false,
       "drops": [
@@ -4166,7 +4166,7 @@
     },
     {
       "key": "pyro-whopperflower",
-      "image": "pyro-whopperflower.png",
+      "image": "pyro-whopperflower.webp",
       "type": "magicalBeast",
       "isComingSoon": false,
       "drops": [
@@ -4190,14 +4190,14 @@
     },
     {
       "key": "raiden-shogun",
-      "image": "raiden-shogun.png",
+      "image": "raiden-shogun.webp",
       "type": "boss",
       "isComingSoon": false,
       "drops": []
     },
     {
       "key": "rimebiter-bathysmal-vishap",
-      "image": "rimebiter-bathysmal-vishap.png",
+      "image": "rimebiter-bathysmal-vishap.webp",
       "type": "magicalBeast",
       "isComingSoon": false,
       "drops": [
@@ -4265,7 +4265,7 @@
     },
     {
       "key": "rimebiter-bathysmal-vishap-hatchling",
-      "image": "rimebiter-bathysmal-vishap-hatchling.png",
+      "image": "rimebiter-bathysmal-vishap-hatchling.webp",
       "type": "na",
       "isComingSoon": false,
       "drops": [
@@ -4301,7 +4301,7 @@
     },
     {
       "key": "rock-shield-hilichurl-guard",
-      "image": "rock-shield-hilichurl-guard.png",
+      "image": "rock-shield-hilichurl-guard.webp",
       "type": "hilichurl",
       "isComingSoon": false,
       "drops": [
@@ -4325,7 +4325,7 @@
     },
     {
       "key": "rock-shieldwall-mitachurl",
-      "image": "rock-shieldwall-mitachurl.png",
+      "image": "rock-shieldwall-mitachurl.webp",
       "type": "hilichurl",
       "isComingSoon": false,
       "drops": [
@@ -4373,7 +4373,7 @@
     },
     {
       "key": "rockfond-rifthound",
-      "image": "rockfond-rifthound.png",
+      "image": "rockfond-rifthound.webp",
       "type": "abyssOrder",
       "isComingSoon": false,
       "drops": [
@@ -4409,7 +4409,7 @@
     },
     {
       "key": "rockfond-rifthound-whelp",
-      "image": "rockfond-rifthound-whelp.png",
+      "image": "rockfond-rifthound-whelp.webp",
       "type": "abyssOrder",
       "isComingSoon": false,
       "drops": [
@@ -4445,7 +4445,7 @@
     },
     {
       "key": "ruin-cruiser",
-      "image": "ruin-cruiser.png",
+      "image": "ruin-cruiser.webp",
       "type": "automaton",
       "isComingSoon": false,
       "drops": [
@@ -4481,7 +4481,7 @@
     },
     {
       "key": "ruin-defender",
-      "image": "ruin-defender.png",
+      "image": "ruin-defender.webp",
       "type": "automaton",
       "isComingSoon": false,
       "drops": [
@@ -4517,7 +4517,7 @@
     },
     {
       "key": "ruin-destroyer",
-      "image": "ruin-destroyer.png",
+      "image": "ruin-destroyer.webp",
       "type": "automaton",
       "isComingSoon": false,
       "drops": [
@@ -4553,7 +4553,7 @@
     },
     {
       "key": "ruin-drake-earthguard",
-      "image": "ruin-drake-earthguard.png",
+      "image": "ruin-drake-earthguard.webp",
       "type": "automaton",
       "isComingSoon": false,
       "drops": [
@@ -4589,7 +4589,7 @@
     },
     {
       "key": "ruin-drake-skywatch",
-      "image": "ruin-drake-skywatch.png",
+      "image": "ruin-drake-skywatch.webp",
       "type": "automaton",
       "isComingSoon": false,
       "drops": [
@@ -4625,7 +4625,7 @@
     },
     {
       "key": "ruin-grader",
-      "image": "ruin-grader.png",
+      "image": "ruin-grader.webp",
       "type": "automaton",
       "isComingSoon": false,
       "drops": [
@@ -4661,7 +4661,7 @@
     },
     {
       "key": "ruin-guard",
-      "image": "ruin-guard.png",
+      "image": "ruin-guard.webp",
       "type": "automaton",
       "isComingSoon": false,
       "drops": [
@@ -4697,7 +4697,7 @@
     },
     {
       "key": "ruin-hunter",
-      "image": "ruin-hunter.png",
+      "image": "ruin-hunter.webp",
       "type": "automaton",
       "isComingSoon": false,
       "drops": [
@@ -4733,7 +4733,7 @@
     },
     {
       "key": "ruin-scout",
-      "image": "ruin-scout.png",
+      "image": "ruin-scout.webp",
       "type": "automaton",
       "isComingSoon": false,
       "drops": [
@@ -4769,7 +4769,7 @@
     },
     {
       "key": "ruin-serpent",
-      "image": "ruin-serpent.png",
+      "image": "ruin-serpent.webp",
       "type": "automaton",
       "isComingSoon": false,
       "drops": [
@@ -4817,14 +4817,14 @@
     },
     {
       "key": "sangonomiya-cohort",
-      "image": "sangonomiya-cohort.png",
+      "image": "sangonomiya-cohort.webp",
       "type": "na",
       "isComingSoon": false,
       "drops": []
     },
     {
       "key": "shadowy-husk-defender",
-      "image": "shadowy-husk-defender.png",
+      "image": "shadowy-husk-defender.webp",
       "type": "abyssOrder",
       "isComingSoon": false,
       "drops": [
@@ -4860,7 +4860,7 @@
     },
     {
       "key": "shadowy-husk-line-breaker",
-      "image": "shadowy-husk-line-breaker.png",
+      "image": "shadowy-husk-line-breaker.webp",
       "type": "abyssOrder",
       "isComingSoon": false,
       "drops": [
@@ -4896,7 +4896,7 @@
     },
     {
       "key": "shadowy-husk-standard-bearer",
-      "image": "shadowy-husk-standard-bearer.png",
+      "image": "shadowy-husk-standard-bearer.webp",
       "type": "abyssOrder",
       "isComingSoon": false,
       "drops": [
@@ -4932,21 +4932,21 @@
     },
     {
       "key": "shogunate-infantry",
-      "image": "shogunate-infantry.png",
+      "image": "shogunate-infantry.webp",
       "type": "na",
       "isComingSoon": false,
       "drops": []
     },
     {
       "key": "shogunate-infantry-captain",
-      "image": "shogunate-infantry-captain.png",
+      "image": "shogunate-infantry-captain.webp",
       "type": "na",
       "isComingSoon": false,
       "drops": []
     },
     {
       "key": "stonehide-lawachurl",
-      "image": "stonehide-lawachurl.png",
+      "image": "stonehide-lawachurl.webp",
       "type": "hilichurl",
       "isComingSoon": false,
       "drops": [
@@ -4994,7 +4994,7 @@
     },
     {
       "key": "stormterror",
-      "image": "stormterror.png",
+      "image": "stormterror.webp",
       "type": "boss",
       "isComingSoon": false,
       "drops": [
@@ -5110,7 +5110,7 @@
     },
     {
       "key": "stretchy-anemo-fungus",
-      "image": "stretchy-anemo-fungus.png",
+      "image": "stretchy-anemo-fungus.webp",
       "type": "magicalBeast",
       "isComingSoon": false,
       "drops": [
@@ -5146,7 +5146,7 @@
     },
     {
       "key": "stretchy-geo-fungus",
-      "image": "stretchy-geo-fungus.png",
+      "image": "stretchy-geo-fungus.webp",
       "type": "magicalBeast",
       "isComingSoon": false,
       "drops": [
@@ -5182,7 +5182,7 @@
     },
     {
       "key": "stretchy-pyro-fungus",
-      "image": "stretchy-pyro-fungus.png",
+      "image": "stretchy-pyro-fungus.webp",
       "type": "magicalBeast",
       "isComingSoon": false,
       "drops": [
@@ -5218,7 +5218,7 @@
     },
     {
       "key": "thunder-manifestation",
-      "image": "thunder-manifestation.png",
+      "image": "thunder-manifestation.webp",
       "type": "elementalLifeForm",
       "isComingSoon": false,
       "drops": [
@@ -5270,7 +5270,7 @@
     },
     {
       "key": "thundercraven-rifthound",
-      "image": "thundercraven-rifthound.png",
+      "image": "thundercraven-rifthound.webp",
       "type": "abyssOrder",
       "isComingSoon": false,
       "drops": [
@@ -5306,7 +5306,7 @@
     },
     {
       "key": "thundercraven-rifthound-whelp",
-      "image": "thundercraven-rifthound-whelp.png",
+      "image": "thundercraven-rifthound-whelp.webp",
       "type": "abyssOrder",
       "isComingSoon": false,
       "drops": [
@@ -5342,7 +5342,7 @@
     },
     {
       "key": "thunderhelm-lawachurl",
-      "image": "thunderhelm-lawachurl.png",
+      "image": "thunderhelm-lawachurl.webp",
       "type": "hilichurl",
       "isComingSoon": false,
       "drops": [
@@ -5390,21 +5390,21 @@
     },
     {
       "key": "treasure-hoarders-boss",
-      "image": "treasure-hoarders-boss.png",
+      "image": "treasure-hoarders-boss.webp",
       "type": "human",
       "isComingSoon": false,
       "drops": []
     },
     {
       "key": "treasure-hoarders-carmen",
-      "image": "treasure-hoarders-carmen.png",
+      "image": "treasure-hoarders-carmen.webp",
       "type": "human",
       "isComingSoon": false,
       "drops": []
     },
     {
       "key": "treasure-hoarders-crusher",
-      "image": "treasure-hoarders-crusher.png",
+      "image": "treasure-hoarders-crusher.webp",
       "type": "human",
       "isComingSoon": false,
       "drops": [
@@ -5428,7 +5428,7 @@
     },
     {
       "key": "treasure-hoarders-cryo-potioneer",
-      "image": "treasure-hoarders-cryo-potioneer.png",
+      "image": "treasure-hoarders-cryo-potioneer.webp",
       "type": "human",
       "isComingSoon": false,
       "drops": [
@@ -5452,7 +5452,7 @@
     },
     {
       "key": "treasure-hoarders-electro-potioneer",
-      "image": "treasure-hoarders-electro-potioneer.png",
+      "image": "treasure-hoarders-electro-potioneer.webp",
       "type": "human",
       "isComingSoon": false,
       "drops": [
@@ -5476,7 +5476,7 @@
     },
     {
       "key": "treasure-hoarders-gravedigger",
-      "image": "treasure-hoarders-gravedigger.png",
+      "image": "treasure-hoarders-gravedigger.webp",
       "type": "human",
       "isComingSoon": false,
       "drops": [
@@ -5500,7 +5500,7 @@
     },
     {
       "key": "treasure-hoarders-handyman",
-      "image": "treasure-hoarders-handyman.png",
+      "image": "treasure-hoarders-handyman.webp",
       "type": "human",
       "isComingSoon": false,
       "drops": [
@@ -5524,7 +5524,7 @@
     },
     {
       "key": "treasure-hoarders-hydro-potioneer",
-      "image": "treasure-hoarders-hydro-potioneer.png",
+      "image": "treasure-hoarders-hydro-potioneer.webp",
       "type": "human",
       "isComingSoon": false,
       "drops": [
@@ -5548,14 +5548,14 @@
     },
     {
       "key": "treasure-hoarders-liuliu",
-      "image": "treasure-hoarders-liuliu.png",
+      "image": "treasure-hoarders-liuliu.webp",
       "type": "human",
       "isComingSoon": false,
       "drops": []
     },
     {
       "key": "treasure-hoarders-marksman",
-      "image": "treasure-hoarders-marksman.png",
+      "image": "treasure-hoarders-marksman.webp",
       "type": "human",
       "isComingSoon": false,
       "drops": [
@@ -5579,7 +5579,7 @@
     },
     {
       "key": "treasure-hoarders-pugilist",
-      "image": "treasure-hoarders-pugilist.png",
+      "image": "treasure-hoarders-pugilist.webp",
       "type": "human",
       "isComingSoon": false,
       "drops": [
@@ -5603,7 +5603,7 @@
     },
     {
       "key": "treasure-hoarders-pyro-potioneer",
-      "image": "treasure-hoarders-pyro-potioneer.png",
+      "image": "treasure-hoarders-pyro-potioneer.webp",
       "type": "human",
       "isComingSoon": false,
       "drops": [
@@ -5627,14 +5627,14 @@
     },
     {
       "key": "treasure-hoarders-raptor",
-      "image": "treasure-hoarders-raptor.png",
+      "image": "treasure-hoarders-raptor.webp",
       "type": "human",
       "isComingSoon": false,
       "drops": []
     },
     {
       "key": "treasure-hoarders-scout",
-      "image": "treasure-hoarders-scout.png",
+      "image": "treasure-hoarders-scout.webp",
       "type": "human",
       "isComingSoon": false,
       "drops": [
@@ -5658,7 +5658,7 @@
     },
     {
       "key": "treasure-hoarders-seaman",
-      "image": "treasure-hoarders-seaman.png",
+      "image": "treasure-hoarders-seaman.webp",
       "type": "human",
       "isComingSoon": false,
       "drops": [
@@ -5682,14 +5682,14 @@
     },
     {
       "key": "treasure-hoarders-wallenstein",
-      "image": "treasure-hoarders-wallenstein.png",
+      "image": "treasure-hoarders-wallenstein.webp",
       "type": "na",
       "isComingSoon": false,
       "drops": []
     },
     {
       "key": "unusual-hilichurl",
-      "image": "unusual-hilichurl.png",
+      "image": "unusual-hilichurl.webp",
       "type": "hilichurl",
       "isComingSoon": false,
       "drops": [
@@ -5705,7 +5705,7 @@
     },
     {
       "key": "whirling-cryo-fungus",
-      "image": "whirling-cryo-fungus.png",
+      "image": "whirling-cryo-fungus.webp",
       "type": "magicalBeast",
       "isComingSoon": false,
       "drops": [
@@ -5741,7 +5741,7 @@
     },
     {
       "key": "whirling-electro-fungus",
-      "image": "whirling-electro-fungus.png",
+      "image": "whirling-electro-fungus.webp",
       "type": "magicalBeast",
       "isComingSoon": false,
       "drops": [
@@ -5777,7 +5777,7 @@
     },
     {
       "key": "winged-cryoshroom",
-      "image": "winged-cryoshroom.png",
+      "image": "winged-cryoshroom.webp",
       "type": "magicalBeast",
       "isComingSoon": false,
       "drops": [
@@ -5813,7 +5813,7 @@
     },
     {
       "key": "winged-dendroshroom",
-      "image": "winged-dendroshroom.png",
+      "image": "winged-dendroshroom.webp",
       "type": "magicalBeast",
       "isComingSoon": false,
       "drops": [
@@ -5849,7 +5849,7 @@
     },
     {
       "key": "wooden-shield-hilichurl-guard",
-      "image": "wooden-shield-hilichurl-guard.png",
+      "image": "wooden-shield-hilichurl-guard.webp",
       "type": "hilichurl",
       "isComingSoon": false,
       "drops": [
@@ -5873,7 +5873,7 @@
     },
     {
       "key": "wooden-shieldwall-mitachurl",
-      "image": "wooden-shieldwall-mitachurl.png",
+      "image": "wooden-shieldwall-mitachurl.webp",
       "type": "hilichurl",
       "isComingSoon": false,
       "drops": [
@@ -5921,7 +5921,7 @@
     },
     {
       "key": "yoriki-samurai",
-      "image": "yoriki-samurai.png",
+      "image": "yoriki-samurai.webp",
       "type": "na",
       "isComingSoon": false,
       "drops": []

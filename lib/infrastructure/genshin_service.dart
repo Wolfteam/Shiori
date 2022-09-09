@@ -1,4 +1,5 @@
 import 'package:shiori/domain/app_constants.dart';
+import 'package:shiori/domain/assets.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/file/file_infrastructure.dart';
@@ -64,16 +65,16 @@ class GenshinServiceImpl implements GenshinService {
   @override
   Future<void> init(AppLanguageType languageType) async {
     await Future.wait([
-      _artifacts.init(),
-      _bannerHistory.init(),
-      _characters.init(),
-      _elements.init(),
-      _furniture.init(),
-      _gadgets.init(),
-      _materials.init(),
-      _monsters.init(),
-      _weapons.init(),
-      _translations.init(languageType)
+      _artifacts.init(Assets.artifactsDbPath),
+      _bannerHistory.init(Assets.bannerHistoryDbPath),
+      _characters.init(Assets.charactersDbPath),
+      _elements.init(Assets.elementsDbPath),
+      _furniture.init(Assets.furnitureDbPath),
+      _gadgets.init(Assets.gadgetsDbPath),
+      _materials.init(Assets.materialsDbPath),
+      _monsters.init(Assets.monstersDbPath),
+      _weapons.init(Assets.weaponsDbPath),
+      _translations.initTranslations(languageType, Assets.getTranslationPath(languageType))
     ]);
   }
 

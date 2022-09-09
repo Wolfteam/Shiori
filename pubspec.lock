@@ -281,6 +281,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.4.1"
+  dio:
+    dependency: "direct main"
+    description:
+      name: dio
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "4.0.6"
   enum_to_string:
     dependency: "direct main"
     description:
@@ -1090,6 +1097,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.10.0"
+  store_checker:
+    dependency: "direct main"
+    description:
+      name: store_checker
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.0.0"
   stream_channel:
     dependency: transitive
     description:

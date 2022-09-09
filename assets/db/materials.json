@@ -2,7 +2,7 @@
   "talents": [
     {
       "key": "ashen-heart",
-      "image": "ashen-heart.png",
+      "image": "ashen-heart.webp",
       "rarity": 5,
       "position": 186,
       "level": 0,
@@ -69,7 +69,7 @@
     },
     {
       "key": "bloodjade-branch",
-      "image": "bloodjade-branch.png",
+      "image": "bloodjade-branch.webp",
       "rarity": 5,
       "position": 182,
       "level": 0,
@@ -136,7 +136,7 @@
     },
     {
       "key": "crown-of-insight",
-      "image": "crown-of-insight.png",
+      "image": "crown-of-insight.webp",
       "rarity": 5,
       "position": 190,
       "level": 0,
@@ -149,7 +149,7 @@
     },
     {
       "key": "dragon-lords-crown",
-      "image": "dragon-lords-crown.png",
+      "image": "dragon-lords-crown.webp",
       "rarity": 5,
       "position": 181,
       "level": 0,
@@ -216,7 +216,7 @@
     },
     {
       "key": "dvalins-claw",
-      "image": "dvalins-claw.png",
+      "image": "dvalins-claw.webp",
       "rarity": 5,
       "position": 173,
       "level": 0,
@@ -283,7 +283,7 @@
     },
     {
       "key": "dvalins-plume",
-      "image": "dvalins-plume.png",
+      "image": "dvalins-plume.webp",
       "rarity": 5,
       "position": 172,
       "level": 0,
@@ -350,7 +350,7 @@
     },
     {
       "key": "dvalins-sigh",
-      "image": "dvalins-sigh.png",
+      "image": "dvalins-sigh.webp",
       "rarity": 5,
       "position": 174,
       "level": 0,
@@ -417,7 +417,7 @@
     },
     {
       "key": "gilded-scale",
-      "image": "gilded-scale.png",
+      "image": "gilded-scale.webp",
       "rarity": 5,
       "position": 183,
       "level": 0,
@@ -484,7 +484,7 @@
     },
     {
       "key": "guide-to-admonition",
-      "image": "guide-to-admonition.png",
+      "image": "guide-to-admonition.webp",
       "rarity": 3,
       "position": 173,
       "level": 1,
@@ -529,7 +529,7 @@
     },
     {
       "key": "guide-to-ballad",
-      "image": "guide-to-ballad.png",
+      "image": "guide-to-ballad.webp",
       "rarity": 3,
       "position": 152,
       "level": 1,
@@ -574,7 +574,7 @@
     },
     {
       "key": "guide-to-diligence",
-      "image": "guide-to-diligence.png",
+      "image": "guide-to-diligence.webp",
       "rarity": 3,
       "position": 158,
       "level": 1,
@@ -619,7 +619,7 @@
     },
     {
       "key": "guide-to-elegance",
-      "image": "guide-to-elegance.png",
+      "image": "guide-to-elegance.webp",
       "rarity": 3,
       "position": 167,
       "level": 1,
@@ -664,7 +664,7 @@
     },
     {
       "key": "guide-to-freedom",
-      "image": "guide-to-freedom.png",
+      "image": "guide-to-freedom.webp",
       "rarity": 3,
       "position": 146,
       "level": 1,
@@ -709,7 +709,7 @@
     },
     {
       "key": "guide-to-gold",
-      "image": "guide-to-gold.png",
+      "image": "guide-to-gold.webp",
       "rarity": 3,
       "position": 161,
       "level": 1,
@@ -754,7 +754,7 @@
     },
     {
       "key": "guide-to-ingenuity",
-      "image": "guide-to-ingenuity.png",
+      "image": "guide-to-ingenuity.webp",
       "rarity": 3,
       "position": 176,
       "level": 1,
@@ -799,7 +799,7 @@
     },
     {
       "key": "guide-to-light",
-      "image": "guide-to-light.png",
+      "image": "guide-to-light.webp",
       "rarity": 3,
       "position": 170,
       "level": 1,
@@ -844,7 +844,7 @@
     },
     {
       "key": "guide-to-praxis",
-      "image": "guide-to-praxis.png",
+      "image": "guide-to-praxis.webp",
       "rarity": 3,
       "position": 179,
       "level": 1,
@@ -889,7 +889,7 @@
     },
     {
       "key": "guide-to-prosperity",
-      "image": "guide-to-prosperity.png",
+      "image": "guide-to-prosperity.webp",
       "rarity": 3,
       "position": 155,
       "level": 1,
@@ -934,7 +934,7 @@
     },
     {
       "key": "guide-to-resistance",
-      "image": "guide-to-resistance.png",
+      "image": "guide-to-resistance.webp",
       "rarity": 3,
       "position": 149,
       "level": 1,
@@ -979,7 +979,7 @@
     },
     {
       "key": "guide-to-transience",
-      "image": "guide-to-transience.png",
+      "image": "guide-to-transience.webp",
       "rarity": 3,
       "position": 164,
       "level": 1,
@@ -1024,7 +1024,7 @@
     },
     {
       "key": "hellfire-butterfly",
-      "image": "hellfire-butterfly.png",
+      "image": "hellfire-butterfly.webp",
       "rarity": 5,
       "position": 185,
       "level": 0,
@@ -1091,7 +1091,7 @@
     },
     {
       "key": "molten-moment",
-      "image": "molten-moment.png",
+      "image": "molten-moment.webp",
       "rarity": 5,
       "position": 184,
       "level": 0,
@@ -1158,7 +1158,7 @@
     },
     {
       "key": "mudra-of-the-malefic-general",
-      "image": "mudra-of-the-malefic-general.png",
+      "image": "mudra-of-the-malefic-general.webp",
       "rarity": 5,
       "position": 187,
       "level": 0,
@@ -1225,7 +1225,7 @@
     },
     {
       "key": "philosophies-of-admonition",
-      "image": "philosophies-of-admonition.png",
+      "image": "philosophies-of-admonition.webp",
       "rarity": 4,
       "position": 174,
       "level": 2,
@@ -1256,7 +1256,7 @@
     },
     {
       "key": "philosophies-of-ballad",
-      "image": "philosophies-of-ballad.png",
+      "image": "philosophies-of-ballad.webp",
       "rarity": 4,
       "position": 153,
       "level": 2,
@@ -1287,7 +1287,7 @@
     },
     {
       "key": "philosophies-of-diligence",
-      "image": "philosophies-of-diligence.png",
+      "image": "philosophies-of-diligence.webp",
       "rarity": 4,
       "position": 159,
       "level": 2,
@@ -1318,7 +1318,7 @@
     },
     {
       "key": "philosophies-of-elegance",
-      "image": "philosophies-of-elegance.png",
+      "image": "philosophies-of-elegance.webp",
       "rarity": 4,
       "position": 168,
       "level": 2,
@@ -1349,7 +1349,7 @@
     },
     {
       "key": "philosophies-of-freedom",
-      "image": "philosophies-of-freedom.png",
+      "image": "philosophies-of-freedom.webp",
       "rarity": 4,
       "position": 147,
       "level": 2,
@@ -1380,7 +1380,7 @@
     },
     {
       "key": "philosophies-of-gold",
-      "image": "philosophies-of-gold.png",
+      "image": "philosophies-of-gold.webp",
       "rarity": 4,
       "position": 162,
       "level": 2,
@@ -1411,7 +1411,7 @@
     },
     {
       "key": "philosophies-of-ingenuity",
-      "image": "philosophies-of-ingenuity.png",
+      "image": "philosophies-of-ingenuity.webp",
       "rarity": 4,
       "position": 177,
       "level": 2,
@@ -1442,7 +1442,7 @@
     },
     {
       "key": "philosophies-of-light",
-      "image": "philosophies-of-light.png",
+      "image": "philosophies-of-light.webp",
       "rarity": 4,
       "position": 171,
       "level": 2,
@@ -1473,7 +1473,7 @@
     },
     {
       "key": "philosophies-of-praxis",
-      "image": "philosophies-of-praxis.png",
+      "image": "philosophies-of-praxis.webp",
       "rarity": 4,
       "position": 180,
       "level": 2,
@@ -1504,7 +1504,7 @@
     },
     {
       "key": "philosophies-of-prosperity",
-      "image": "philosophies-of-prosperity.png",
+      "image": "philosophies-of-prosperity.webp",
       "rarity": 4,
       "position": 156,
       "level": 2,
@@ -1535,7 +1535,7 @@
     },
     {
       "key": "philosophies-of-resistance",
-      "image": "philosophies-of-resistance.png",
+      "image": "philosophies-of-resistance.webp",
       "rarity": 4,
       "position": 150,
       "level": 2,
@@ -1566,7 +1566,7 @@
     },
     {
       "key": "philosophies-of-transience",
-      "image": "philosophies-of-transience.png",
+      "image": "philosophies-of-transience.webp",
       "rarity": 4,
       "position": 165,
       "level": 2,
@@ -1597,7 +1597,7 @@
     },
     {
       "key": "ring-of-boreas",
-      "image": "ring-of-boreas.png",
+      "image": "ring-of-boreas.webp",
       "rarity": 5,
       "position": 176,
       "level": 0,
@@ -1664,7 +1664,7 @@
     },
     {
       "key": "shadow-of-the-warrior",
-      "image": "shadow-of-the-warrior.png",
+      "image": "shadow-of-the-warrior.webp",
       "rarity": 5,
       "position": 180,
       "level": 0,
@@ -1731,7 +1731,7 @@
     },
     {
       "key": "shard-of-a-foul-legacy",
-      "image": "shard-of-a-foul-legacy.png",
+      "image": "shard-of-a-foul-legacy.webp",
       "rarity": 5,
       "position": 179,
       "level": 0,
@@ -1798,7 +1798,7 @@
     },
     {
       "key": "spirit-locket-of-boreas",
-      "image": "spirit-locket-of-boreas.png",
+      "image": "spirit-locket-of-boreas.webp",
       "rarity": 5,
       "position": 177,
       "level": 0,
@@ -1865,7 +1865,7 @@
     },
     {
       "key": "tail-of-boreas",
-      "image": "tail-of-boreas.png",
+      "image": "tail-of-boreas.webp",
       "rarity": 5,
       "position": 175,
       "level": 0,
@@ -1932,7 +1932,7 @@
     },
     {
       "key": "teachings-of-admonition",
-      "image": "teachings-of-admonition.png",
+      "image": "teachings-of-admonition.webp",
       "rarity": 2,
       "position": 172,
       "level": 0,
@@ -1963,7 +1963,7 @@
     },
     {
       "key": "teachings-of-ballad",
-      "image": "teachings-of-ballad.png",
+      "image": "teachings-of-ballad.webp",
       "rarity": 2,
       "position": 151,
       "level": 0,
@@ -1994,7 +1994,7 @@
     },
     {
       "key": "teachings-of-diligence",
-      "image": "teachings-of-diligence.png",
+      "image": "teachings-of-diligence.webp",
       "rarity": 2,
       "position": 157,
       "level": 0,
@@ -2025,7 +2025,7 @@
     },
     {
       "key": "teachings-of-elegance",
-      "image": "teachings-of-elegance.png",
+      "image": "teachings-of-elegance.webp",
       "rarity": 2,
       "position": 166,
       "level": 0,
@@ -2056,7 +2056,7 @@
     },
     {
       "key": "teachings-of-freedom",
-      "image": "teachings-of-freedom.png",
+      "image": "teachings-of-freedom.webp",
       "rarity": 2,
       "position": 145,
       "level": 0,
@@ -2087,7 +2087,7 @@
     },
     {
       "key": "teachings-of-gold",
-      "image": "teachings-of-gold.png",
+      "image": "teachings-of-gold.webp",
       "rarity": 2,
       "position": 160,
       "level": 0,
@@ -2118,7 +2118,7 @@
     },
     {
       "key": "teachings-of-ingenuity",
-      "image": "teachings-of-ingenuity.png",
+      "image": "teachings-of-ingenuity.webp",
       "rarity": 2,
       "position": 175,
       "level": 0,
@@ -2149,7 +2149,7 @@
     },
     {
       "key": "teachings-of-light",
-      "image": "teachings-of-light.png",
+      "image": "teachings-of-light.webp",
       "rarity": 2,
       "position": 169,
       "level": 0,
@@ -2180,7 +2180,7 @@
     },
     {
       "key": "teachings-of-praxis",
-      "image": "teachings-of-praxis.png",
+      "image": "teachings-of-praxis.webp",
       "rarity": 2,
       "position": 178,
       "level": 0,
@@ -2211,7 +2211,7 @@
     },
     {
       "key": "teachings-of-prosperity",
-      "image": "teachings-of-prosperity.png",
+      "image": "teachings-of-prosperity.webp",
       "rarity": 2,
       "position": 154,
       "level": 0,
@@ -2242,7 +2242,7 @@
     },
     {
       "key": "teachings-of-resistance",
-      "image": "teachings-of-resistance.png",
+      "image": "teachings-of-resistance.webp",
       "rarity": 2,
       "position": 148,
       "level": 0,
@@ -2273,7 +2273,7 @@
     },
     {
       "key": "teachings-of-transience",
-      "image": "teachings-of-transience.png",
+      "image": "teachings-of-transience.webp",
       "rarity": 2,
       "position": 163,
       "level": 0,
@@ -2304,7 +2304,7 @@
     },
     {
       "key": "tears-of-the-calamitous-god",
-      "image": "tears-of-the-calamitous-god.png",
+      "image": "tears-of-the-calamitous-god.webp",
       "rarity": 5,
       "position": 188,
       "level": 0,
@@ -2371,7 +2371,7 @@
     },
     {
       "key": "the-meaning-of-aeons",
-      "image": "the-meaning-of-aeons.png",
+      "image": "the-meaning-of-aeons.webp",
       "rarity": 5,
       "position": 189,
       "level": 0,
@@ -2438,7 +2438,7 @@
     },
     {
       "key": "tusk-of-monoceros-caeli",
-      "image": "tusk-of-monoceros-caeli.png",
+      "image": "tusk-of-monoceros-caeli.webp",
       "rarity": 5,
       "position": 178,
       "level": 0,
@@ -2507,7 +2507,7 @@
   "weapon": [
     {
       "key": "agents-sacrificial-knife",
-      "image": "agents-sacrificial-knife.png",
+      "image": "agents-sacrificial-knife.webp",
       "rarity": 3,
       "position": 207,
       "level": 2,
@@ -2548,7 +2548,7 @@
     },
     {
       "key": "black-bronze-horn",
-      "image": "black-bronze-horn.png",
+      "image": "black-bronze-horn.webp",
       "rarity": 3,
       "position": 192,
       "level": 2,
@@ -2589,7 +2589,7 @@
     },
     {
       "key": "black-crystal-horn",
-      "image": "black-crystal-horn.png",
+      "image": "black-crystal-horn.webp",
       "rarity": 4,
       "position": 193,
       "level": 3,
@@ -2616,7 +2616,7 @@
     },
     {
       "key": "chaos-axis",
-      "image": "chaos-axis.png",
+      "image": "chaos-axis.webp",
       "rarity": 3,
       "position": 213,
       "level": 2,
@@ -2657,7 +2657,7 @@
     },
     {
       "key": "chaos-bolt",
-      "image": "chaos-bolt.png",
+      "image": "chaos-bolt.webp",
       "rarity": 4,
       "position": 226,
       "level": 3,
@@ -2684,7 +2684,7 @@
     },
     {
       "key": "chaos-circuit",
-      "image": "chaos-circuit.png",
+      "image": "chaos-circuit.webp",
       "rarity": 3,
       "position": 201,
       "level": 2,
@@ -2725,7 +2725,7 @@
     },
     {
       "key": "chaos-core",
-      "image": "chaos-core.png",
+      "image": "chaos-core.webp",
       "rarity": 4,
       "position": 202,
       "level": 3,
@@ -2752,7 +2752,7 @@
     },
     {
       "key": "chaos-device",
-      "image": "chaos-device.png",
+      "image": "chaos-device.webp",
       "rarity": 2,
       "position": 200,
       "level": 1,
@@ -2779,7 +2779,7 @@
     },
     {
       "key": "chaos-gear",
-      "image": "chaos-gear.png",
+      "image": "chaos-gear.webp",
       "rarity": 2,
       "position": 212,
       "level": 1,
@@ -2806,7 +2806,7 @@
     },
     {
       "key": "chaos-module",
-      "image": "chaos-module.png",
+      "image": "chaos-module.webp",
       "rarity": 3,
       "position": 225,
       "level": 2,
@@ -2847,7 +2847,7 @@
     },
     {
       "key": "chaos-oculus",
-      "image": "chaos-oculus.png",
+      "image": "chaos-oculus.webp",
       "rarity": 4,
       "position": 214,
       "level": 3,
@@ -2874,7 +2874,7 @@
     },
     {
       "key": "chaos-storage",
-      "image": "chaos-storage.png",
+      "image": "chaos-storage.webp",
       "rarity": 2,
       "position": 224,
       "level": 1,
@@ -2901,7 +2901,7 @@
     },
     {
       "key": "concealed-claw",
-      "image": "concealed-claw.png",
+      "image": "concealed-claw.webp",
       "rarity": 2,
       "position": 218,
       "level": 1,
@@ -2928,7 +2928,7 @@
     },
     {
       "key": "concealed-talon",
-      "image": "concealed-talon.png",
+      "image": "concealed-talon.webp",
       "rarity": 4,
       "position": 220,
       "level": 3,
@@ -2955,7 +2955,7 @@
     },
     {
       "key": "concealed-unguis",
-      "image": "concealed-unguis.png",
+      "image": "concealed-unguis.webp",
       "rarity": 3,
       "position": 219,
       "level": 2,
@@ -2996,7 +2996,7 @@
     },
     {
       "key": "crystal-prism",
-      "image": "crystal-prism.png",
+      "image": "crystal-prism.webp",
       "rarity": 3,
       "position": 216,
       "level": 2,
@@ -3037,7 +3037,7 @@
     },
     {
       "key": "dark-statuette",
-      "image": "dark-statuette.png",
+      "image": "dark-statuette.webp",
       "rarity": 3,
       "position": 195,
       "level": 2,
@@ -3078,7 +3078,7 @@
     },
     {
       "key": "dead-ley-line-branch",
-      "image": "dead-ley-line-branch.png",
+      "image": "dead-ley-line-branch.webp",
       "rarity": 2,
       "position": 197,
       "level": 1,
@@ -3105,7 +3105,7 @@
     },
     {
       "key": "dead-ley-line-leaves",
-      "image": "dead-ley-line-leaves.png",
+      "image": "dead-ley-line-leaves.webp",
       "rarity": 3,
       "position": 198,
       "level": 2,
@@ -3146,7 +3146,7 @@
     },
     {
       "key": "deathly-statuette",
-      "image": "deathly-statuette.png",
+      "image": "deathly-statuette.webp",
       "rarity": 4,
       "position": 196,
       "level": 3,
@@ -3173,7 +3173,7 @@
     },
     {
       "key": "dismal-prism",
-      "image": "dismal-prism.png",
+      "image": "dismal-prism.webp",
       "rarity": 2,
       "position": 215,
       "level": 1,
@@ -3200,7 +3200,7 @@
     },
     {
       "key": "dormant-fungal-nucleus",
-      "image": "dormant-fungal-nucleus.png",
+      "image": "dormant-fungal-nucleus.webp",
       "rarity": 3,
       "position": 222,
       "level": 2,
@@ -3241,7 +3241,7 @@
     },
     {
       "key": "fossilized-bone-shard",
-      "image": "fossilized-bone-shard.png",
+      "image": "fossilized-bone-shard.webp",
       "rarity": 4,
       "position": 211,
       "level": 3,
@@ -3268,7 +3268,7 @@
     },
     {
       "key": "fragile-bone-shard",
-      "image": "fragile-bone-shard.png",
+      "image": "fragile-bone-shard.webp",
       "rarity": 2,
       "position": 209,
       "level": 1,
@@ -3295,7 +3295,7 @@
     },
     {
       "key": "gloomy-statuette",
-      "image": "gloomy-statuette.png",
+      "image": "gloomy-statuette.webp",
       "rarity": 2,
       "position": 194,
       "level": 1,
@@ -3322,7 +3322,7 @@
     },
     {
       "key": "heavy-horn",
-      "image": "heavy-horn.png",
+      "image": "heavy-horn.webp",
       "rarity": 2,
       "position": 191,
       "level": 1,
@@ -3349,7 +3349,7 @@
     },
     {
       "key": "hunters-sacrificial-knife",
-      "image": "hunters-sacrificial-knife.png",
+      "image": "hunters-sacrificial-knife.webp",
       "rarity": 2,
       "position": 206,
       "level": 1,
@@ -3376,7 +3376,7 @@
     },
     {
       "key": "inactivated-fungal-nucleus",
-      "image": "inactivated-fungal-nucleus.png",
+      "image": "inactivated-fungal-nucleus.webp",
       "rarity": 2,
       "position": 221,
       "level": 1,
@@ -3403,7 +3403,7 @@
     },
     {
       "key": "inspectors-sacrificial-knife",
-      "image": "inspectors-sacrificial-knife.png",
+      "image": "inspectors-sacrificial-knife.webp",
       "rarity": 4,
       "position": 208,
       "level": 3,
@@ -3430,7 +3430,7 @@
     },
     {
       "key": "ley-line-sprout",
-      "image": "ley-line-sprout.png",
+      "image": "ley-line-sprout.webp",
       "rarity": 4,
       "position": 199,
       "level": 3,
@@ -3457,7 +3457,7 @@
     },
     {
       "key": "mist-grass",
-      "image": "mist-grass.png",
+      "image": "mist-grass.webp",
       "rarity": 3,
       "position": 204,
       "level": 2,
@@ -3498,7 +3498,7 @@
     },
     {
       "key": "mist-grass-pollen",
-      "image": "mist-grass-pollen.png",
+      "image": "mist-grass-pollen.webp",
       "rarity": 2,
       "position": 203,
       "level": 1,
@@ -3525,7 +3525,7 @@
     },
     {
       "key": "mist-grass-wick",
-      "image": "mist-grass-wick.png",
+      "image": "mist-grass-wick.webp",
       "rarity": 4,
       "position": 205,
       "level": 3,
@@ -3552,7 +3552,7 @@
     },
     {
       "key": "polarizing-prism",
-      "image": "polarizing-prism.png",
+      "image": "polarizing-prism.webp",
       "rarity": 4,
       "position": 217,
       "level": 3,
@@ -3579,7 +3579,7 @@
     },
     {
       "key": "robust-fungal-nucleus",
-      "image": "robust-fungal-nucleus.png",
+      "image": "robust-fungal-nucleus.webp",
       "rarity": 4,
       "position": 223,
       "level": 3,
@@ -3606,7 +3606,7 @@
     },
     {
       "key": "spectral-heart",
-      "image": "spectral-heart.png",
+      "image": "spectral-heart.webp",
       "rarity": 2,
       "position": 168,
       "level": 1,
@@ -3639,7 +3639,7 @@
     },
     {
       "key": "spectral-husk",
-      "image": "spectral-husk.png",
+      "image": "spectral-husk.webp",
       "rarity": 1,
       "position": 167,
       "level": 0,
@@ -3662,7 +3662,7 @@
     },
     {
       "key": "spectral-nucleus",
-      "image": "spectral-nucleus.png",
+      "image": "spectral-nucleus.webp",
       "rarity": 3,
       "position": 169,
       "level": 2,
@@ -3685,7 +3685,7 @@
     },
     {
       "key": "sturdy-bone-shard",
-      "image": "sturdy-bone-shard.png",
+      "image": "sturdy-bone-shard.webp",
       "rarity": 3,
       "position": 210,
       "level": 2,
@@ -3728,7 +3728,7 @@
   "weaponPrimary": [
     {
       "key": "bit-of-aerosiderite",
-      "image": "bit-of-aerosiderite.png",
+      "image": "bit-of-aerosiderite.webp",
       "rarity": 4,
       "position": 249,
       "level": 2,
@@ -3773,7 +3773,7 @@
     },
     {
       "key": "boreal-wolfs-broken-fang",
-      "image": "boreal-wolfs-broken-fang.png",
+      "image": "boreal-wolfs-broken-fang.webp",
       "rarity": 4,
       "position": 233,
       "level": 2,
@@ -3818,7 +3818,7 @@
     },
     {
       "key": "boreal-wolfs-cracked-tooth",
-      "image": "boreal-wolfs-cracked-tooth.png",
+      "image": "boreal-wolfs-cracked-tooth.webp",
       "rarity": 3,
       "position": 232,
       "level": 1,
@@ -3863,7 +3863,7 @@
     },
     {
       "key": "boreal-wolfs-milk-tooth",
-      "image": "boreal-wolfs-milk-tooth.png",
+      "image": "boreal-wolfs-milk-tooth.webp",
       "rarity": 2,
       "position": 231,
       "level": 0,
@@ -3894,7 +3894,7 @@
     },
     {
       "key": "boreal-wolfs-nostalgia",
-      "image": "boreal-wolfs-nostalgia.png",
+      "image": "boreal-wolfs-nostalgia.webp",
       "rarity": 5,
       "position": 234,
       "level": 3,
@@ -3925,7 +3925,7 @@
     },
     {
       "key": "chains-of-the-dandelion-gladiator",
-      "image": "chains-of-the-dandelion-gladiator.png",
+      "image": "chains-of-the-dandelion-gladiator.webp",
       "rarity": 3,
       "position": 236,
       "level": 1,
@@ -3970,7 +3970,7 @@
     },
     {
       "key": "chunk-of-aerosiderite",
-      "image": "chunk-of-aerosiderite.png",
+      "image": "chunk-of-aerosiderite.webp",
       "rarity": 5,
       "position": 250,
       "level": 3,
@@ -4001,7 +4001,7 @@
     },
     {
       "key": "copper-talisman-of-the-forest-dew",
-      "image": "copper-talisman-of-the-forest-dew.png",
+      "image": "copper-talisman-of-the-forest-dew.webp",
       "rarity": 2,
       "position": 272,
       "level": 0,
@@ -4032,7 +4032,7 @@
     },
     {
       "key": "coral-branch-of-a-distant-sea",
-      "image": "coral-branch-of-a-distant-sea.png",
+      "image": "coral-branch-of-a-distant-sea.webp",
       "rarity": 2,
       "position": 251,
       "level": 0,
@@ -4063,7 +4063,7 @@
     },
     {
       "key": "debris-of-decarabians-city",
-      "image": "debris-of-decarabians-city.png",
+      "image": "debris-of-decarabians-city.webp",
       "rarity": 3,
       "position": 228,
       "level": 1,
@@ -4108,7 +4108,7 @@
     },
     {
       "key": "divine-body-from-guyun",
-      "image": "divine-body-from-guyun.png",
+      "image": "divine-body-from-guyun.webp",
       "rarity": 5,
       "position": 242,
       "level": 3,
@@ -4139,7 +4139,7 @@
     },
     {
       "key": "dream-of-scorching-might",
-      "image": "dream-of-scorching-might.png",
+      "image": "dream-of-scorching-might.webp",
       "rarity": 4,
       "position": 282,
       "level": 2,
@@ -4184,7 +4184,7 @@
     },
     {
       "key": "dream-of-the-dandelion-gladiator",
-      "image": "dream-of-the-dandelion-gladiator.png",
+      "image": "dream-of-the-dandelion-gladiator.webp",
       "rarity": 5,
       "position": 238,
       "level": 3,
@@ -4215,7 +4215,7 @@
     },
     {
       "key": "echo-of-scorching-might",
-      "image": "echo-of-scorching-might.png",
+      "image": "echo-of-scorching-might.webp",
       "rarity": 2,
       "position": 280,
       "level": 0,
@@ -4246,7 +4246,7 @@
     },
     {
       "key": "fetters-of-the-dandelion-gladiator",
-      "image": "fetters-of-the-dandelion-gladiator.png",
+      "image": "fetters-of-the-dandelion-gladiator.webp",
       "rarity": 2,
       "position": 235,
       "level": 0,
@@ -4277,7 +4277,7 @@
     },
     {
       "key": "fragment-of-decarabians-epic",
-      "image": "fragment-of-decarabians-epic.png",
+      "image": "fragment-of-decarabians-epic.webp",
       "rarity": 4,
       "position": 229,
       "level": 2,
@@ -4322,7 +4322,7 @@
     },
     {
       "key": "golden-branch-of-a-distant-sea",
-      "image": "golden-branch-of-a-distant-sea.png",
+      "image": "golden-branch-of-a-distant-sea.webp",
       "rarity": 5,
       "position": 254,
       "level": 3,
@@ -4353,7 +4353,7 @@
     },
     {
       "key": "golden-talisman-of-the-forest-dew",
-      "image": "golden-talisman-of-the-forest-dew.png",
+      "image": "golden-talisman-of-the-forest-dew.webp",
       "rarity": 5,
       "position": 275,
       "level": 3,
@@ -4384,7 +4384,7 @@
     },
     {
       "key": "grain-of-aerosiderite",
-      "image": "grain-of-aerosiderite.png",
+      "image": "grain-of-aerosiderite.webp",
       "rarity": 2,
       "position": 247,
       "level": 0,
@@ -4415,7 +4415,7 @@
     },
     {
       "key": "iron-talisman-of-the-forest-dew",
-      "image": "iron-talisman-of-the-forest-dew.png",
+      "image": "iron-talisman-of-the-forest-dew.webp",
       "rarity": 3,
       "position": 273,
       "level": 1,
@@ -4460,7 +4460,7 @@
     },
     {
       "key": "jade-branch-of-a-distant-sea",
-      "image": "jade-branch-of-a-distant-sea.png",
+      "image": "jade-branch-of-a-distant-sea.webp",
       "rarity": 4,
       "position": 253,
       "level": 2,
@@ -4505,7 +4505,7 @@
     },
     {
       "key": "jeweled-branch-of-a-distant-sea",
-      "image": "jeweled-branch-of-a-distant-sea.png",
+      "image": "jeweled-branch-of-a-distant-sea.webp",
       "rarity": 3,
       "position": 252,
       "level": 1,
@@ -4550,7 +4550,7 @@
     },
     {
       "key": "luminous-sands-from-guyun",
-      "image": "luminous-sands-from-guyun.png",
+      "image": "luminous-sands-from-guyun.webp",
       "rarity": 2,
       "position": 239,
       "level": 0,
@@ -4581,7 +4581,7 @@
     },
     {
       "key": "lustrous-stone-from-guyun",
-      "image": "lustrous-stone-from-guyun.png",
+      "image": "lustrous-stone-from-guyun.webp",
       "rarity": 3,
       "position": 240,
       "level": 1,
@@ -4626,7 +4626,7 @@
     },
     {
       "key": "mask-of-the-kijin",
-      "image": "mask-of-the-kijin.png",
+      "image": "mask-of-the-kijin.webp",
       "rarity": 5,
       "position": 262,
       "level": 3,
@@ -4657,7 +4657,7 @@
     },
     {
       "key": "mask-of-the-one-horned",
-      "image": "mask-of-the-one-horned.png",
+      "image": "mask-of-the-one-horned.webp",
       "rarity": 4,
       "position": 261,
       "level": 2,
@@ -4702,7 +4702,7 @@
     },
     {
       "key": "mask-of-the-tigers-bite",
-      "image": "mask-of-the-tigers-bite.png",
+      "image": "mask-of-the-tigers-bite.webp",
       "rarity": 3,
       "position": 260,
       "level": 1,
@@ -4747,7 +4747,7 @@
     },
     {
       "key": "mask-of-the-wicked-lieutenant",
-      "image": "mask-of-the-wicked-lieutenant.png",
+      "image": "mask-of-the-wicked-lieutenant.webp",
       "rarity": 2,
       "position": 259,
       "level": 0,
@@ -4778,7 +4778,7 @@
     },
     {
       "key": "mist-veiled-gold-elixir",
-      "image": "mist-veiled-gold-elixir.png",
+      "image": "mist-veiled-gold-elixir.webp",
       "rarity": 4,
       "position": 245,
       "level": 2,
@@ -4823,7 +4823,7 @@
     },
     {
       "key": "mist-veiled-lead-elixir",
-      "image": "mist-veiled-lead-elixir.png",
+      "image": "mist-veiled-lead-elixir.webp",
       "rarity": 2,
       "position": 243,
       "level": 0,
@@ -4854,7 +4854,7 @@
     },
     {
       "key": "mist-veiled-mercury-elixir",
-      "image": "mist-veiled-mercury-elixir.png",
+      "image": "mist-veiled-mercury-elixir.webp",
       "rarity": 3,
       "position": 244,
       "level": 1,
@@ -4899,7 +4899,7 @@
     },
     {
       "key": "mist-veiled-primo-elixir",
-      "image": "mist-veiled-primo-elixir.png",
+      "image": "mist-veiled-primo-elixir.webp",
       "rarity": 5,
       "position": 246,
       "level": 3,
@@ -4930,7 +4930,7 @@
     },
     {
       "key": "narukamis-affection",
-      "image": "narukamis-affection.png",
+      "image": "narukamis-affection.webp",
       "rarity": 4,
       "position": 257,
       "level": 2,
@@ -4975,7 +4975,7 @@
     },
     {
       "key": "narukamis-joy",
-      "image": "narukamis-joy.png",
+      "image": "narukamis-joy.webp",
       "rarity": 3,
       "position": 256,
       "level": 1,
@@ -5020,7 +5020,7 @@
     },
     {
       "key": "narukamis-valor",
-      "image": "narukamis-valor.png",
+      "image": "narukamis-valor.webp",
       "rarity": 5,
       "position": 258,
       "level": 3,
@@ -5051,7 +5051,7 @@
     },
     {
       "key": "narukamis-wisdom",
-      "image": "narukamis-wisdom.png",
+      "image": "narukamis-wisdom.webp",
       "rarity": 2,
       "position": 255,
       "level": 0,
@@ -5082,7 +5082,7 @@
     },
     {
       "key": "oasis-gardens-kindness",
-      "image": "oasis-gardens-kindness.png",
+      "image": "oasis-gardens-kindness.webp",
       "rarity": 3,
       "position": 277,
       "level": 1,
@@ -5127,7 +5127,7 @@
     },
     {
       "key": "oasis-gardens-mourning",
-      "image": "oasis-gardens-mourning.png",
+      "image": "oasis-gardens-mourning.webp",
       "rarity": 4,
       "position": 278,
       "level": 2,
@@ -5172,7 +5172,7 @@
     },
     {
       "key": "oasis-gardens-reminiscence",
-      "image": "oasis-gardens-reminiscence.png",
+      "image": "oasis-gardens-reminiscence.webp",
       "rarity": 2,
       "position": 276,
       "level": 0,
@@ -5203,7 +5203,7 @@
     },
     {
       "key": "oasis-gardens-truth",
-      "image": "oasis-gardens-truth.png",
+      "image": "oasis-gardens-truth.webp",
       "rarity": 5,
       "position": 279,
       "level": 3,
@@ -5234,7 +5234,7 @@
     },
     {
       "key": "olden-days-of-scorching-might",
-      "image": "olden-days-of-scorching-might.png",
+      "image": "olden-days-of-scorching-might.webp",
       "rarity": 5,
       "position": 283,
       "level": 3,
@@ -5265,7 +5265,7 @@
     },
     {
       "key": "piece-of-aerosiderite",
-      "image": "piece-of-aerosiderite.png",
+      "image": "piece-of-aerosiderite.webp",
       "rarity": 3,
       "position": 248,
       "level": 1,
@@ -5310,7 +5310,7 @@
     },
     {
       "key": "relic-from-guyun",
-      "image": "relic-from-guyun.png",
+      "image": "relic-from-guyun.webp",
       "rarity": 4,
       "position": 241,
       "level": 2,
@@ -5355,7 +5355,7 @@
     },
     {
       "key": "remnant-glow-of-scorching-might",
-      "image": "remnant-glow-of-scorching-might.png",
+      "image": "remnant-glow-of-scorching-might.webp",
       "rarity": 3,
       "position": 281,
       "level": 1,
@@ -5400,7 +5400,7 @@
     },
     {
       "key": "scattered-piece-of-decarabians-dream",
-      "image": "scattered-piece-of-decarabians-dream.png",
+      "image": "scattered-piece-of-decarabians-dream.webp",
       "rarity": 5,
       "position": 230,
       "level": 3,
@@ -5431,7 +5431,7 @@
     },
     {
       "key": "shackles-of-the-dandelion-gladiator",
-      "image": "shackles-of-the-dandelion-gladiator.png",
+      "image": "shackles-of-the-dandelion-gladiator.webp",
       "rarity": 4,
       "position": 237,
       "level": 2,
@@ -5476,7 +5476,7 @@
     },
     {
       "key": "silver-talisman-of-the-forest-dew",
-      "image": "silver-talisman-of-the-forest-dew.png",
+      "image": "silver-talisman-of-the-forest-dew.webp",
       "rarity": 4,
       "position": 274,
       "level": 2,
@@ -5521,7 +5521,7 @@
     },
     {
       "key": "tile-of-decarabians-tower",
-      "image": "tile-of-decarabians-tower.png",
+      "image": "tile-of-decarabians-tower.webp",
       "rarity": 2,
       "position": 227,
       "level": 0,
@@ -5554,7 +5554,7 @@
   "common": [
     {
       "key": "crystalline-cyst-dust",
-      "image": "crystalline-cyst-dust.png",
+      "image": "crystalline-cyst-dust.webp",
       "rarity": 3,
       "position": 30,
       "level": 2,
@@ -5581,7 +5581,7 @@
     },
     {
       "key": "damaged-mask",
-      "image": "damaged-mask.png",
+      "image": "damaged-mask.webp",
       "rarity": 1,
       "position": 4,
       "level": 0,
@@ -5608,7 +5608,7 @@
     },
     {
       "key": "divining-scroll",
-      "image": "divining-scroll.png",
+      "image": "divining-scroll.webp",
       "rarity": 1,
       "position": 7,
       "level": 0,
@@ -5631,7 +5631,7 @@
     },
     {
       "key": "energy-nectar",
-      "image": "energy-nectar.png",
+      "image": "energy-nectar.webp",
       "rarity": 3,
       "position": 21,
       "level": 2,
@@ -5658,7 +5658,7 @@
     },
     {
       "key": "faded-red-satin",
-      "image": "faded-red-satin.png",
+      "image": "faded-red-satin.webp",
       "rarity": 1,
       "position": 31,
       "level": 0,
@@ -5685,7 +5685,7 @@
     },
     {
       "key": "famed-handguard",
-      "image": "famed-handguard.png",
+      "image": "famed-handguard.webp",
       "rarity": 3,
       "position": 24,
       "level": 2,
@@ -5712,7 +5712,7 @@
     },
     {
       "key": "firm-arrowhead",
-      "image": "firm-arrowhead.png",
+      "image": "firm-arrowhead.webp",
       "rarity": 1,
       "position": 10,
       "level": 0,
@@ -5739,7 +5739,7 @@
     },
     {
       "key": "forbidden-curse-scroll",
-      "image": "forbidden-curse-scroll.png",
+      "image": "forbidden-curse-scroll.webp",
       "rarity": 3,
       "position": 9,
       "level": 2,
@@ -5766,7 +5766,7 @@
     },
     {
       "key": "fungal-spores",
-      "image": "fungal-spores.png",
+      "image": "fungal-spores.webp",
       "rarity": 1,
       "position": 28,
       "level": 0,
@@ -5793,7 +5793,7 @@
     },
     {
       "key": "golden-raven-insignia",
-      "image": "golden-raven-insignia.png",
+      "image": "golden-raven-insignia.webp",
       "rarity": 3,
       "position": 18,
       "level": 2,
@@ -5820,7 +5820,7 @@
     },
     {
       "key": "kageuchi-handguard",
-      "image": "kageuchi-handguard.png",
+      "image": "kageuchi-handguard.webp",
       "rarity": 2,
       "position": 23,
       "level": 1,
@@ -5861,7 +5861,7 @@
     },
     {
       "key": "lieutenants-insignia",
-      "image": "lieutenants-insignia.png",
+      "image": "lieutenants-insignia.webp",
       "rarity": 3,
       "position": 15,
       "level": 2,
@@ -5888,7 +5888,7 @@
     },
     {
       "key": "luminescent-pollen",
-      "image": "luminescent-pollen.png",
+      "image": "luminescent-pollen.webp",
       "rarity": 2,
       "position": 29,
       "level": 1,
@@ -5929,7 +5929,7 @@
     },
     {
       "key": "old-handguard",
-      "image": "old-handguard.png",
+      "image": "old-handguard.webp",
       "rarity": 1,
       "position": 22,
       "level": 0,
@@ -5956,7 +5956,7 @@
     },
     {
       "key": "ominous-mask",
-      "image": "ominous-mask.png",
+      "image": "ominous-mask.webp",
       "rarity": 3,
       "position": 6,
       "level": 2,
@@ -5983,7 +5983,7 @@
     },
     {
       "key": "recruits-insignia",
-      "image": "recruits-insignia.png",
+      "image": "recruits-insignia.webp",
       "rarity": 1,
       "position": 13,
       "level": 0,
@@ -6010,7 +6010,7 @@
     },
     {
       "key": "rich-red-brocade",
-      "image": "rich-red-brocade.png",
+      "image": "rich-red-brocade.webp",
       "rarity": 3,
       "position": 33,
       "level": 2,
@@ -6037,7 +6037,7 @@
     },
     {
       "key": "sealed-scroll",
-      "image": "sealed-scroll.png",
+      "image": "sealed-scroll.webp",
       "rarity": 2,
       "position": 8,
       "level": 1,
@@ -6078,7 +6078,7 @@
     },
     {
       "key": "sergeants-insignia",
-      "image": "sergeants-insignia.png",
+      "image": "sergeants-insignia.webp",
       "rarity": 2,
       "position": 14,
       "level": 1,
@@ -6119,7 +6119,7 @@
     },
     {
       "key": "sharp-arrowhead",
-      "image": "sharp-arrowhead.png",
+      "image": "sharp-arrowhead.webp",
       "rarity": 2,
       "position": 11,
       "level": 1,
@@ -6160,7 +6160,7 @@
     },
     {
       "key": "shimmering-nectar",
-      "image": "shimmering-nectar.png",
+      "image": "shimmering-nectar.webp",
       "rarity": 2,
       "position": 20,
       "level": 1,
@@ -6201,7 +6201,7 @@
     },
     {
       "key": "silver-raven-insignia",
-      "image": "silver-raven-insignia.png",
+      "image": "silver-raven-insignia.webp",
       "rarity": 2,
       "position": 17,
       "level": 1,
@@ -6242,7 +6242,7 @@
     },
     {
       "key": "slime-concentrate",
-      "image": "slime-concentrate.png",
+      "image": "slime-concentrate.webp",
       "rarity": 3,
       "position": 3,
       "level": 2,
@@ -6269,7 +6269,7 @@
     },
     {
       "key": "slime-condensate",
-      "image": "slime-condensate.png",
+      "image": "slime-condensate.webp",
       "rarity": 1,
       "position": 1,
       "level": 0,
@@ -6296,7 +6296,7 @@
     },
     {
       "key": "slime-secretions",
-      "image": "slime-secretions.png",
+      "image": "slime-secretions.webp",
       "rarity": 2,
       "position": 2,
       "level": 1,
@@ -6337,7 +6337,7 @@
     },
     {
       "key": "stained-mask",
-      "image": "stained-mask.png",
+      "image": "stained-mask.webp",
       "rarity": 2,
       "position": 5,
       "level": 1,
@@ -6370,7 +6370,7 @@
     },
     {
       "key": "treasure-hoarder-insignia",
-      "image": "treasure-hoarder-insignia.png",
+      "image": "treasure-hoarder-insignia.webp",
       "rarity": 1,
       "position": 16,
       "level": 0,
@@ -6397,7 +6397,7 @@
     },
     {
       "key": "trimmed-red-silk",
-      "image": "trimmed-red-silk.png",
+      "image": "trimmed-red-silk.webp",
       "rarity": 2,
       "position": 32,
       "level": 1,
@@ -6438,7 +6438,7 @@
     },
     {
       "key": "weathered-arrowhead",
-      "image": "weathered-arrowhead.png",
+      "image": "weathered-arrowhead.webp",
       "rarity": 3,
       "position": 12,
       "level": 2,
@@ -6465,7 +6465,7 @@
     },
     {
       "key": "whopperflower-nectar",
-      "image": "whopperflower-nectar.png",
+      "image": "whopperflower-nectar.webp",
       "rarity": 1,
       "position": 19,
       "level": 0,
@@ -6494,7 +6494,7 @@
   "currency": [
     {
       "key": "acquaint-fate",
-      "image": "acquaint-fate.png",
+      "image": "acquaint-fate.webp",
       "rarity": 5,
       "position": 264,
       "level": 0,
@@ -6507,7 +6507,7 @@
     },
     {
       "key": "fragile-resin",
-      "image": "fragile-resin.png",
+      "image": "fragile-resin.webp",
       "rarity": 4,
       "position": 265,
       "level": 0,
@@ -6520,7 +6520,7 @@
     },
     {
       "key": "genesis-crystal",
-      "image": "genesis-crystal.png",
+      "image": "genesis-crystal.webp",
       "rarity": 5,
       "position": 266,
       "level": 0,
@@ -6533,7 +6533,7 @@
     },
     {
       "key": "intertwined-fate",
-      "image": "intertwined-fate.png",
+      "image": "intertwined-fate.webp",
       "rarity": 5,
       "position": 270,
       "level": 0,
@@ -6546,7 +6546,7 @@
     },
     {
       "key": "mora",
-      "image": "mora.png",
+      "image": "mora.webp",
       "rarity": 3,
       "position": 263,
       "level": 0,
@@ -6561,7 +6561,7 @@
     },
     {
       "key": "original-resin",
-      "image": "original-resin.png",
+      "image": "original-resin.webp",
       "rarity": 3,
       "position": 269,
       "level": 0,
@@ -6588,7 +6588,7 @@
     },
     {
       "key": "primogem",
-      "image": "primogem.png",
+      "image": "primogem.webp",
       "rarity": 4,
       "position": 267,
       "level": 0,
@@ -6601,7 +6601,7 @@
     },
     {
       "key": "realm-currency",
-      "image": "realm-currency.png",
+      "image": "realm-currency.webp",
       "rarity": 3,
       "position": 268,
       "level": 0,
@@ -6616,7 +6616,7 @@
   "elemental": [
     {
       "key": "basalt-pillar",
-      "image": "basalt-pillar.png",
+      "image": "basalt-pillar.webp",
       "rarity": 4,
       "position": 69,
       "level": 0,
@@ -6629,7 +6629,7 @@
     },
     {
       "key": "cleansing-heart",
-      "image": "cleansing-heart.png",
+      "image": "cleansing-heart.webp",
       "rarity": 4,
       "position": 72,
       "level": 0,
@@ -6642,7 +6642,7 @@
     },
     {
       "key": "crystalline-bloom",
-      "image": "crystalline-bloom.png",
+      "image": "crystalline-bloom.webp",
       "rarity": 4,
       "position": 74,
       "level": 0,
@@ -6655,7 +6655,7 @@
     },
     {
       "key": "dew-of-repudiation",
-      "image": "dew-of-repudiation.png",
+      "image": "dew-of-repudiation.webp",
       "rarity": 4,
       "position": 78,
       "level": 0,
@@ -6668,7 +6668,7 @@
     },
     {
       "key": "dragonheirs-false-fin",
-      "image": "dragonheirs-false-fin.png",
+      "image": "dragonheirs-false-fin.webp",
       "rarity": 4,
       "position": 81,
       "level": 0,
@@ -6681,7 +6681,7 @@
     },
     {
       "key": "everflame-seed",
-      "image": "everflame-seed.png",
+      "image": "everflame-seed.webp",
       "rarity": 4,
       "position": 71,
       "level": 0,
@@ -6694,7 +6694,7 @@
     },
     {
       "key": "hoarfrost-core",
-      "image": "hoarfrost-core.png",
+      "image": "hoarfrost-core.webp",
       "rarity": 4,
       "position": 70,
       "level": 0,
@@ -6707,7 +6707,7 @@
     },
     {
       "key": "hurricane-seed",
-      "image": "hurricane-seed.png",
+      "image": "hurricane-seed.webp",
       "rarity": 4,
       "position": 67,
       "level": 0,
@@ -6720,7 +6720,7 @@
     },
     {
       "key": "juvenile-jade",
-      "image": "juvenile-jade.png",
+      "image": "juvenile-jade.webp",
       "rarity": 4,
       "position": 73,
       "level": 0,
@@ -6733,7 +6733,7 @@
     },
     {
       "key": "lightning-prism",
-      "image": "lightning-prism.png",
+      "image": "lightning-prism.webp",
       "rarity": 4,
       "position": 68,
       "level": 0,
@@ -6746,7 +6746,7 @@
     },
     {
       "key": "maguu-kishin",
-      "image": "maguu-kishin.png",
+      "image": "maguu-kishin.webp",
       "rarity": 4,
       "position": 75,
       "level": 0,
@@ -6759,7 +6759,7 @@
     },
     {
       "key": "majestic-hooked-beak",
-      "image": "majestic-hooked-beak.png",
+      "image": "majestic-hooked-beak.webp",
       "rarity": 4,
       "position": 83,
       "level": 0,
@@ -6772,7 +6772,7 @@
     },
     {
       "key": "perpetual-heart",
-      "image": "perpetual-heart.png",
+      "image": "perpetual-heart.webp",
       "rarity": 4,
       "position": 76,
       "level": 0,
@@ -6785,7 +6785,7 @@
     },
     {
       "key": "riftborn-regalia",
-      "image": "riftborn-regalia.png",
+      "image": "riftborn-regalia.webp",
       "rarity": 4,
       "position": 80,
       "level": 0,
@@ -6798,7 +6798,7 @@
     },
     {
       "key": "runic-fang",
-      "image": "runic-fang.png",
+      "image": "runic-fang.webp",
       "rarity": 4,
       "position": 82,
       "level": 0,
@@ -6811,7 +6811,7 @@
     },
     {
       "key": "smoldering-pearl",
-      "image": "smoldering-pearl.png",
+      "image": "smoldering-pearl.webp",
       "rarity": 4,
       "position": 77,
       "level": 0,
@@ -6824,7 +6824,7 @@
     },
     {
       "key": "storm-beads",
-      "image": "storm-beads.png",
+      "image": "storm-beads.webp",
       "rarity": 4,
       "position": 79,
       "level": 0,
@@ -6837,7 +6837,7 @@
     },
     {
       "key": "thunderclap-fruitcore",
-      "image": "thunderclap-fruitcore.png",
+      "image": "thunderclap-fruitcore.webp",
       "rarity": 4,
       "position": 84,
       "level": 0,
@@ -6852,7 +6852,7 @@
   "jewels": [
     {
       "key": "agnidus-agate-chunk",
-      "image": "agnidus-agate-chunk.png",
+      "image": "agnidus-agate-chunk.webp",
       "rarity": 4,
       "position": 91,
       "level": 2,
@@ -7049,7 +7049,7 @@
     },
     {
       "key": "agnidus-agate-fragment",
-      "image": "agnidus-agate-fragment.png",
+      "image": "agnidus-agate-fragment.webp",
       "rarity": 3,
       "position": 90,
       "level": 1,
@@ -7246,7 +7246,7 @@
     },
     {
       "key": "agnidus-agate-gemstone",
-      "image": "agnidus-agate-gemstone.png",
+      "image": "agnidus-agate-gemstone.webp",
       "rarity": 5,
       "position": 92,
       "level": 3,
@@ -7430,7 +7430,7 @@
     },
     {
       "key": "agnidus-agate-sliver",
-      "image": "agnidus-agate-sliver.png",
+      "image": "agnidus-agate-sliver.webp",
       "rarity": 2,
       "position": 89,
       "level": 0,
@@ -7614,7 +7614,7 @@
     },
     {
       "key": "brilliant-diamond-chunk",
-      "image": "brilliant-diamond-chunk.png",
+      "image": "brilliant-diamond-chunk.webp",
       "rarity": 4,
       "position": 87,
       "level": 2,
@@ -7627,7 +7627,7 @@
     },
     {
       "key": "brilliant-diamond-fragment",
-      "image": "brilliant-diamond-fragment.png",
+      "image": "brilliant-diamond-fragment.webp",
       "rarity": 3,
       "position": 86,
       "level": 1,
@@ -7640,7 +7640,7 @@
     },
     {
       "key": "brilliant-diamond-gemstone",
-      "image": "brilliant-diamond-gemstone.png",
+      "image": "brilliant-diamond-gemstone.webp",
       "rarity": 5,
       "position": 88,
       "level": 3,
@@ -7653,7 +7653,7 @@
     },
     {
       "key": "brilliant-diamond-sliver",
-      "image": "brilliant-diamond-sliver.png",
+      "image": "brilliant-diamond-sliver.webp",
       "rarity": 2,
       "position": 85,
       "level": 0,
@@ -7666,7 +7666,7 @@
     },
     {
       "key": "nagadus-emerald-chunk",
-      "image": "nagadus-emerald-chunk.png",
+      "image": "nagadus-emerald-chunk.webp",
       "rarity": 4,
       "position": 99,
       "level": 2,
@@ -7863,7 +7863,7 @@
     },
     {
       "key": "nagadus-emerald-fragment",
-      "image": "nagadus-emerald-fragment.png",
+      "image": "nagadus-emerald-fragment.webp",
       "rarity": 3,
       "position": 98,
       "level": 1,
@@ -8060,7 +8060,7 @@
     },
     {
       "key": "nagadus-emerald-gemstone",
-      "image": "nagadus-emerald-gemstone.png",
+      "image": "nagadus-emerald-gemstone.webp",
       "rarity": 5,
       "position": 100,
       "level": 3,
@@ -8244,7 +8244,7 @@
     },
     {
       "key": "nagadus-emerald-sliver",
-      "image": "nagadus-emerald-sliver.png",
+      "image": "nagadus-emerald-sliver.webp",
       "rarity": 2,
       "position": 97,
       "level": 0,
@@ -8428,7 +8428,7 @@
     },
     {
       "key": "prithiva-topaz-chunk",
-      "image": "prithiva-topaz-chunk.png",
+      "image": "prithiva-topaz-chunk.webp",
       "rarity": 4,
       "position": 115,
       "level": 2,
@@ -8625,7 +8625,7 @@
     },
     {
       "key": "prithiva-topaz-fragment",
-      "image": "prithiva-topaz-fragment.png",
+      "image": "prithiva-topaz-fragment.webp",
       "rarity": 3,
       "position": 114,
       "level": 1,
@@ -8822,7 +8822,7 @@
     },
     {
       "key": "prithiva-topaz-gemstone",
-      "image": "prithiva-topaz-gemstone.png",
+      "image": "prithiva-topaz-gemstone.webp",
       "rarity": 5,
       "position": 116,
       "level": 3,
@@ -9006,7 +9006,7 @@
     },
     {
       "key": "prithiva-topaz-sliver",
-      "image": "prithiva-topaz-sliver.png",
+      "image": "prithiva-topaz-sliver.webp",
       "rarity": 2,
       "position": 113,
       "level": 0,
@@ -9190,7 +9190,7 @@
     },
     {
       "key": "shivada-jade-chunk",
-      "image": "shivada-jade-chunk.png",
+      "image": "shivada-jade-chunk.webp",
       "rarity": 4,
       "position": 111,
       "level": 2,
@@ -9387,7 +9387,7 @@
     },
     {
       "key": "shivada-jade-fragment",
-      "image": "shivada-jade-fragment.png",
+      "image": "shivada-jade-fragment.webp",
       "rarity": 3,
       "position": 110,
       "level": 1,
@@ -9584,7 +9584,7 @@
     },
     {
       "key": "shivada-jade-gemstone",
-      "image": "shivada-jade-gemstone.png",
+      "image": "shivada-jade-gemstone.webp",
       "rarity": 5,
       "position": 112,
       "level": 3,
@@ -9768,7 +9768,7 @@
     },
     {
       "key": "shivada-jade-sliver",
-      "image": "shivada-jade-sliver.png",
+      "image": "shivada-jade-sliver.webp",
       "rarity": 2,
       "position": 109,
       "level": 0,
@@ -9952,7 +9952,7 @@
     },
     {
       "key": "vajrada-amethyst-chunk",
-      "image": "vajrada-amethyst-chunk.png",
+      "image": "vajrada-amethyst-chunk.webp",
       "rarity": 4,
       "position": 103,
       "level": 2,
@@ -10149,7 +10149,7 @@
     },
     {
       "key": "vajrada-amethyst-fragment",
-      "image": "vajrada-amethyst-fragment.png",
+      "image": "vajrada-amethyst-fragment.webp",
       "rarity": 3,
       "position": 102,
       "level": 1,
@@ -10346,7 +10346,7 @@
     },
     {
       "key": "vajrada-amethyst-gemstone",
-      "image": "vajrada-amethyst-gemstone.png",
+      "image": "vajrada-amethyst-gemstone.webp",
       "rarity": 5,
       "position": 104,
       "level": 3,
@@ -10530,7 +10530,7 @@
     },
     {
       "key": "vajrada-amethyst-sliver",
-      "image": "vajrada-amethyst-sliver.png",
+      "image": "vajrada-amethyst-sliver.webp",
       "rarity": 2,
       "position": 101,
       "level": 0,
@@ -10714,7 +10714,7 @@
     },
     {
       "key": "varunada-lazurite-chunk",
-      "image": "varunada-lazurite-chunk.png",
+      "image": "varunada-lazurite-chunk.webp",
       "rarity": 4,
       "position": 95,
       "level": 2,
@@ -10911,7 +10911,7 @@
     },
     {
       "key": "varunada-lazurite-fragment",
-      "image": "varunada-lazurite-fragment.png",
+      "image": "varunada-lazurite-fragment.webp",
       "rarity": 3,
       "position": 94,
       "level": 1,
@@ -11108,7 +11108,7 @@
     },
     {
       "key": "varunada-lazurite-gemstone",
-      "image": "varunada-lazurite-gemstone.png",
+      "image": "varunada-lazurite-gemstone.webp",
       "rarity": 5,
       "position": 96,
       "level": 3,
@@ -11292,7 +11292,7 @@
     },
     {
       "key": "varunada-lazurite-sliver",
-      "image": "varunada-lazurite-sliver.png",
+      "image": "varunada-lazurite-sliver.webp",
       "rarity": 2,
       "position": 93,
       "level": 0,
@@ -11476,7 +11476,7 @@
     },
     {
       "key": "vayuda-turquoise-chunk",
-      "image": "vayuda-turquoise-chunk.png",
+      "image": "vayuda-turquoise-chunk.webp",
       "rarity": 4,
       "position": 107,
       "level": 2,
@@ -11673,7 +11673,7 @@
     },
     {
       "key": "vayuda-turquoise-fragment",
-      "image": "vayuda-turquoise-fragment.png",
+      "image": "vayuda-turquoise-fragment.webp",
       "rarity": 3,
       "position": 106,
       "level": 1,
@@ -11870,7 +11870,7 @@
     },
     {
       "key": "vayuda-turquoise-gemstone",
-      "image": "vayuda-turquoise-gemstone.png",
+      "image": "vayuda-turquoise-gemstone.webp",
       "rarity": 5,
       "position": 108,
       "level": 3,
@@ -12054,7 +12054,7 @@
     },
     {
       "key": "vayuda-turquoise-sliver",
-      "image": "vayuda-turquoise-sliver.png",
+      "image": "vayuda-turquoise-sliver.webp",
       "rarity": 2,
       "position": 105,
       "level": 0,
@@ -12240,7 +12240,7 @@
   "locals": [
     {
       "key": "amakumo-fruit",
-      "image": "amakumo-fruit.png",
+      "image": "amakumo-fruit.webp",
       "rarity": 1,
       "position": 140,
       "level": 0,
@@ -12255,7 +12255,7 @@
     },
     {
       "key": "calla-lily",
-      "image": "calla-lily.png",
+      "image": "calla-lily.webp",
       "rarity": 1,
       "position": 130,
       "level": 0,
@@ -12270,7 +12270,7 @@
     },
     {
       "key": "cecilia",
-      "image": "cecilia.png",
+      "image": "cecilia.webp",
       "rarity": 1,
       "position": 119,
       "level": 0,
@@ -12285,7 +12285,7 @@
     },
     {
       "key": "cor-lapis",
-      "image": "cor-lapis.png",
+      "image": "cor-lapis.webp",
       "rarity": 1,
       "position": 132,
       "level": 0,
@@ -12300,7 +12300,7 @@
     },
     {
       "key": "crystal-marrow",
-      "image": "crystal-marrow.png",
+      "image": "crystal-marrow.webp",
       "rarity": 1,
       "position": 135,
       "level": 0,
@@ -12315,7 +12315,7 @@
     },
     {
       "key": "dandelion-seed",
-      "image": "dandelion-seed.png",
+      "image": "dandelion-seed.webp",
       "rarity": 1,
       "position": 131,
       "level": 0,
@@ -12330,7 +12330,7 @@
     },
     {
       "key": "dendrobium",
-      "image": "dendrobium.png",
+      "image": "dendrobium.webp",
       "rarity": 1,
       "position": 136,
       "level": 0,
@@ -12345,7 +12345,7 @@
     },
     {
       "key": "fluorescent-fungus",
-      "image": "fluorescent-fungus.png",
+      "image": "fluorescent-fungus.webp",
       "rarity": 1,
       "position": 141,
       "level": 0,
@@ -12360,7 +12360,7 @@
     },
     {
       "key": "glaze-lily",
-      "image": "glaze-lily.png",
+      "image": "glaze-lily.webp",
       "rarity": 1,
       "position": 125,
       "level": 0,
@@ -12375,7 +12375,7 @@
     },
     {
       "key": "jueyun-chili",
-      "image": "jueyun-chili.png",
+      "image": "jueyun-chili.webp",
       "rarity": 1,
       "position": 122,
       "level": 0,
@@ -12390,7 +12390,7 @@
     },
     {
       "key": "kalpalata-lotus",
-      "image": "kalpalata-lotus.png",
+      "image": "kalpalata-lotus.webp",
       "rarity": 1,
       "position": 144,
       "level": 0,
@@ -12405,7 +12405,7 @@
     },
     {
       "key": "naku-weed",
-      "image": "naku-weed.png",
+      "image": "naku-weed.webp",
       "rarity": 1,
       "position": 137,
       "level": 0,
@@ -12420,7 +12420,7 @@
     },
     {
       "key": "nilotpala-lotus",
-      "image": "nilotpala-lotus.png",
+      "image": "nilotpala-lotus.webp",
       "rarity": 1,
       "position": 143,
       "level": 0,
@@ -12435,7 +12435,7 @@
     },
     {
       "key": "noctilucous-jade",
-      "image": "noctilucous-jade.png",
+      "image": "noctilucous-jade.webp",
       "rarity": 1,
       "position": 123,
       "level": 0,
@@ -12450,7 +12450,7 @@
     },
     {
       "key": "onikabuto",
-      "image": "onikabuto.png",
+      "image": "onikabuto.webp",
       "rarity": 1,
       "position": 133,
       "level": 0,
@@ -12465,7 +12465,7 @@
     },
     {
       "key": "philanemo-mushroom",
-      "image": "philanemo-mushroom.png",
+      "image": "philanemo-mushroom.webp",
       "rarity": 1,
       "position": 121,
       "level": 0,
@@ -12480,7 +12480,7 @@
     },
     {
       "key": "qingxin",
-      "image": "qingxin.png",
+      "image": "qingxin.webp",
       "rarity": 1,
       "position": 126,
       "level": 0,
@@ -12495,7 +12495,7 @@
     },
     {
       "key": "rukkhashava-mushrooms",
-      "image": "rukkhashava-mushrooms.png",
+      "image": "rukkhashava-mushrooms.webp",
       "rarity": 1,
       "position": 142,
       "level": 0,
@@ -12510,7 +12510,7 @@
     },
     {
       "key": "sakura-bloom",
-      "image": "sakura-bloom.png",
+      "image": "sakura-bloom.webp",
       "rarity": 1,
       "position": 134,
       "level": 0,
@@ -12525,7 +12525,7 @@
     },
     {
       "key": "sango-pearl",
-      "image": "sango-pearl.png",
+      "image": "sango-pearl.webp",
       "rarity": 1,
       "position": 139,
       "level": 0,
@@ -12540,7 +12540,7 @@
     },
     {
       "key": "sea-ganoderma",
-      "image": "sea-ganoderma.png",
+      "image": "sea-ganoderma.webp",
       "rarity": 1,
       "position": 138,
       "level": 0,
@@ -12555,7 +12555,7 @@
     },
     {
       "key": "silk-flower",
-      "image": "silk-flower.png",
+      "image": "silk-flower.webp",
       "rarity": 1,
       "position": 124,
       "level": 0,
@@ -12570,7 +12570,7 @@
     },
     {
       "key": "small-lamp-grass",
-      "image": "small-lamp-grass.png",
+      "image": "small-lamp-grass.webp",
       "rarity": 1,
       "position": 129,
       "level": 0,
@@ -12585,7 +12585,7 @@
     },
     {
       "key": "starconch",
-      "image": "starconch.png",
+      "image": "starconch.webp",
       "rarity": 1,
       "position": 127,
       "level": 0,
@@ -12600,7 +12600,7 @@
     },
     {
       "key": "valberry",
-      "image": "valberry.png",
+      "image": "valberry.webp",
       "rarity": 1,
       "position": 118,
       "level": 0,
@@ -12615,7 +12615,7 @@
     },
     {
       "key": "violetgrass",
-      "image": "violetgrass.png",
+      "image": "violetgrass.webp",
       "rarity": 1,
       "position": 128,
       "level": 0,
@@ -12630,7 +12630,7 @@
     },
     {
       "key": "windwheel-aster",
-      "image": "windwheel-aster.png",
+      "image": "windwheel-aster.webp",
       "rarity": 1,
       "position": 120,
       "level": 0,
@@ -12645,7 +12645,7 @@
     },
     {
       "key": "wolfhook",
-      "image": "wolfhook.png",
+      "image": "wolfhook.webp",
       "rarity": 1,
       "position": 117,
       "level": 0,
@@ -12662,7 +12662,7 @@
   "experience": [
     {
       "key": "adventurers-experience",
-      "image": "adventurers-experience.png",
+      "image": "adventurers-experience.webp",
       "rarity": 3,
       "position": 584,
       "level": 0,
@@ -12678,7 +12678,7 @@
     },
     {
       "key": "enhancement-ore",
-      "image": "enhancement-ore.png",
+      "image": "enhancement-ore.webp",
       "rarity": 1,
       "position": 580,
       "level": 0,
@@ -12708,7 +12708,7 @@
     },
     {
       "key": "fine-enhancement-ore",
-      "image": "fine-enhancement-ore.png",
+      "image": "fine-enhancement-ore.webp",
       "rarity": 2,
       "position": 581,
       "level": 0,
@@ -12751,7 +12751,7 @@
     },
     {
       "key": "heros-wit",
-      "image": "heros-wit.png",
+      "image": "heros-wit.webp",
       "rarity": 4,
       "position": 585,
       "level": 0,
@@ -12767,7 +12767,7 @@
     },
     {
       "key": "mystic-enhancement-ore",
-      "image": "mystic-enhancement-ore.png",
+      "image": "mystic-enhancement-ore.webp",
       "rarity": 3,
       "position": 582,
       "level": 0,
@@ -12823,7 +12823,7 @@
     },
     {
       "key": "wanderers-advice",
-      "image": "wanderers-advice.png",
+      "image": "wanderers-advice.webp",
       "rarity": 2,
       "position": 583,
       "level": 0,
@@ -12841,7 +12841,7 @@
   "ingredient": [
     {
       "key": "almond",
-      "image": "almond.png",
+      "image": "almond.webp",
       "rarity": 1,
       "position": 514,
       "level": 0,
@@ -12854,7 +12854,7 @@
     },
     {
       "key": "amethyst-lump",
-      "image": "amethyst-lump.png",
+      "image": "amethyst-lump.webp",
       "rarity": 1,
       "position": 319,
       "level": 0,
@@ -12884,7 +12884,7 @@
     },
     {
       "key": "apple",
-      "image": "apple.png",
+      "image": "apple.webp",
       "rarity": 1,
       "position": 482,
       "level": 0,
@@ -12897,7 +12897,7 @@
     },
     {
       "key": "bacon",
-      "image": "bacon.png",
+      "image": "bacon.webp",
       "rarity": 1,
       "position": 537,
       "level": 0,
@@ -12924,7 +12924,7 @@
     },
     {
       "key": "bamboo-shoot",
-      "image": "bamboo-shoot.png",
+      "image": "bamboo-shoot.webp",
       "rarity": 1,
       "position": 515,
       "level": 0,
@@ -12937,7 +12937,7 @@
     },
     {
       "key": "berry",
-      "image": "berry.png",
+      "image": "berry.webp",
       "rarity": 1,
       "position": 306,
       "level": 0,
@@ -12968,7 +12968,7 @@
     },
     {
       "key": "bird-egg",
-      "image": "bird-egg.png",
+      "image": "bird-egg.webp",
       "rarity": 1,
       "position": 501,
       "level": 0,
@@ -12983,7 +12983,7 @@
     },
     {
       "key": "butter",
-      "image": "butter.png",
+      "image": "butter.webp",
       "rarity": 1,
       "position": 532,
       "level": 0,
@@ -13006,7 +13006,7 @@
     },
     {
       "key": "butterfly-wings",
-      "image": "butterfly-wings.png",
+      "image": "butterfly-wings.webp",
       "rarity": 1,
       "position": 313,
       "level": 0,
@@ -13019,7 +13019,7 @@
     },
     {
       "key": "cabbage",
-      "image": "cabbage.png",
+      "image": "cabbage.webp",
       "rarity": 1,
       "position": 490,
       "level": 0,
@@ -13032,7 +13032,7 @@
     },
     {
       "key": "carrot",
-      "image": "carrot.png",
+      "image": "carrot.webp",
       "rarity": 1,
       "position": 296,
       "level": 0,
@@ -13047,7 +13047,7 @@
     },
     {
       "key": "cheese",
-      "image": "cheese.png",
+      "image": "cheese.webp",
       "rarity": 1,
       "position": 536,
       "level": 0,
@@ -13070,7 +13070,7 @@
     },
     {
       "key": "chilled-meat",
-      "image": "chilled-meat.png",
+      "image": "chilled-meat.webp",
       "rarity": 1,
       "position": 518,
       "level": 0,
@@ -13093,7 +13093,7 @@
     },
     {
       "key": "crab",
-      "image": "crab.png",
+      "image": "crab.webp",
       "rarity": 1,
       "position": 504,
       "level": 0,
@@ -13116,7 +13116,7 @@
     },
     {
       "key": "crab-roe",
-      "image": "crab-roe.png",
+      "image": "crab-roe.webp",
       "rarity": 1,
       "position": 505,
       "level": 0,
@@ -13139,7 +13139,7 @@
     },
     {
       "key": "cream",
-      "image": "cream.png",
+      "image": "cream.webp",
       "rarity": 1,
       "position": 530,
       "level": 0,
@@ -13162,7 +13162,7 @@
     },
     {
       "key": "crystal-chunk",
-      "image": "crystal-chunk.png",
+      "image": "crystal-chunk.webp",
       "rarity": 1,
       "position": 318,
       "level": 0,
@@ -13192,7 +13192,7 @@
     },
     {
       "key": "crystal-core",
-      "image": "crystal-core.png",
+      "image": "crystal-core.webp",
       "rarity": 1,
       "position": 317,
       "level": 0,
@@ -13205,7 +13205,7 @@
     },
     {
       "key": "dream-solvent",
-      "image": "dream-solvent.png",
+      "image": "dream-solvent.webp",
       "rarity": 4,
       "position": 445,
       "level": 0,
@@ -13817,7 +13817,7 @@
     },
     {
       "key": "dust-of-azoth",
-      "image": "dust-of-azoth.png",
+      "image": "dust-of-azoth.webp",
       "rarity": 2,
       "position": 368,
       "level": 0,
@@ -16015,7 +16015,7 @@
     },
     {
       "key": "electro-crystal",
-      "image": "electro-crystal.png",
+      "image": "electro-crystal.webp",
       "rarity": 1,
       "position": 309,
       "level": 0,
@@ -16028,7 +16028,7 @@
     },
     {
       "key": "fish",
-      "image": "fish.png",
+      "image": "fish.webp",
       "rarity": 1,
       "position": 512,
       "level": 0,
@@ -16041,7 +16041,7 @@
     },
     {
       "key": "flaming-flower-stamen",
-      "image": "flaming-flower-stamen.png",
+      "image": "flaming-flower-stamen.webp",
       "rarity": 1,
       "position": 308,
       "level": 0,
@@ -16054,7 +16054,7 @@
     },
     {
       "key": "flour",
-      "image": "flour.png",
+      "image": "flour.webp",
       "rarity": 1,
       "position": 529,
       "level": 0,
@@ -16077,7 +16077,7 @@
     },
     {
       "key": "fowl",
-      "image": "fowl.png",
+      "image": "fowl.webp",
       "rarity": 1,
       "position": 312,
       "level": 0,
@@ -16106,7 +16106,7 @@
     },
     {
       "key": "frog",
-      "image": "frog.png",
+      "image": "frog.webp",
       "rarity": 1,
       "position": 314,
       "level": 0,
@@ -16119,7 +16119,7 @@
     },
     {
       "key": "glabrous-beans",
-      "image": "glabrous-beans.png",
+      "image": "glabrous-beans.webp",
       "rarity": 1,
       "position": 520,
       "level": 0,
@@ -16132,7 +16132,7 @@
     },
     {
       "key": "ham",
-      "image": "ham.png",
+      "image": "ham.webp",
       "rarity": 1,
       "position": 533,
       "level": 0,
@@ -16159,7 +16159,7 @@
     },
     {
       "key": "harra-fruit",
-      "image": "harra-fruit.png",
+      "image": "harra-fruit.webp",
       "rarity": 1,
       "position": 335,
       "level": 0,
@@ -16182,7 +16182,7 @@
     },
     {
       "key": "horsetail",
-      "image": "horsetail.png",
+      "image": "horsetail.webp",
       "rarity": 1,
       "position": 305,
       "level": 0,
@@ -16195,7 +16195,7 @@
     },
     {
       "key": "iron-chunk",
-      "image": "iron-chunk.png",
+      "image": "iron-chunk.webp",
       "rarity": 1,
       "position": 271,
       "level": 0,
@@ -16225,7 +16225,7 @@
     },
     {
       "key": "jam",
-      "image": "jam.png",
+      "image": "jam.webp",
       "rarity": 1,
       "position": 535,
       "level": 0,
@@ -16256,7 +16256,7 @@
     },
     {
       "key": "lavender-melon",
-      "image": "lavender-melon.png",
+      "image": "lavender-melon.webp",
       "rarity": 1,
       "position": 523,
       "level": 0,
@@ -16269,7 +16269,7 @@
     },
     {
       "key": "lizard-tail",
-      "image": "lizard-tail.png",
+      "image": "lizard-tail.webp",
       "rarity": 1,
       "position": 316,
       "level": 0,
@@ -16282,7 +16282,7 @@
     },
     {
       "key": "loach-pearl",
-      "image": "loach-pearl.png",
+      "image": "loach-pearl.webp",
       "rarity": 1,
       "position": 309,
       "level": 0,
@@ -16295,7 +16295,7 @@
     },
     {
       "key": "lotus-head",
-      "image": "lotus-head.png",
+      "image": "lotus-head.webp",
       "rarity": 1,
       "position": 302,
       "level": 0,
@@ -16310,7 +16310,7 @@
     },
     {
       "key": "luminescent-spine",
-      "image": "luminescent-spine.png",
+      "image": "luminescent-spine.webp",
       "rarity": 1,
       "position": 315,
       "level": 0,
@@ -16323,7 +16323,7 @@
     },
     {
       "key": "magical-crystal-chunk",
-      "image": "magical-crystal-chunk.png",
+      "image": "magical-crystal-chunk.webp",
       "rarity": 1,
       "position": 274,
       "level": 0,
@@ -16352,7 +16352,7 @@
     },
     {
       "key": "matsutake",
-      "image": "matsutake.png",
+      "image": "matsutake.webp",
       "rarity": 1,
       "position": 502,
       "level": 0,
@@ -16367,7 +16367,7 @@
     },
     {
       "key": "midlander-bow-billet",
-      "image": "midlander-bow-billet.png",
+      "image": "midlander-bow-billet.webp",
       "rarity": 4,
       "position": 326,
       "level": 0,
@@ -16408,7 +16408,7 @@
     },
     {
       "key": "midlander-catalyst-billet",
-      "image": "midlander-catalyst-billet.png",
+      "image": "midlander-catalyst-billet.webp",
       "rarity": 4,
       "position": 328,
       "level": 0,
@@ -16449,7 +16449,7 @@
     },
     {
       "key": "midlander-claymore-billet",
-      "image": "midlander-claymore-billet.png",
+      "image": "midlander-claymore-billet.webp",
       "rarity": 4,
       "position": 327,
       "level": 0,
@@ -16490,7 +16490,7 @@
     },
     {
       "key": "midlander-polearm-billet",
-      "image": "midlander-polearm-billet.png",
+      "image": "midlander-polearm-billet.webp",
       "rarity": 4,
       "position": 329,
       "level": 0,
@@ -16531,7 +16531,7 @@
     },
     {
       "key": "midlander-sword-billet",
-      "image": "midlander-sword-billet.png",
+      "image": "midlander-sword-billet.webp",
       "rarity": 4,
       "position": 325,
       "level": 0,
@@ -16572,7 +16572,7 @@
     },
     {
       "key": "milk",
-      "image": "milk.png",
+      "image": "milk.webp",
       "rarity": 1,
       "position": 509,
       "level": 0,
@@ -16613,7 +16613,7 @@
     },
     {
       "key": "mint",
-      "image": "mint.png",
+      "image": "mint.webp",
       "rarity": 1,
       "position": 297,
       "level": 0,
@@ -16626,7 +16626,7 @@
     },
     {
       "key": "mist-flower-corolla",
-      "image": "mist-flower-corolla.png",
+      "image": "mist-flower-corolla.webp",
       "rarity": 1,
       "position": 307,
       "level": 0,
@@ -16639,7 +16639,7 @@
     },
     {
       "key": "mushroom",
-      "image": "mushroom.png",
+      "image": "mushroom.webp",
       "rarity": 1,
       "position": 484,
       "level": 0,
@@ -16652,7 +16652,7 @@
     },
     {
       "key": "northlander-bow-billet",
-      "image": "northlander-bow-billet.png",
+      "image": "northlander-bow-billet.webp",
       "rarity": 4,
       "position": 321,
       "level": 0,
@@ -16693,7 +16693,7 @@
     },
     {
       "key": "northlander-catalyst-billet",
-      "image": "northlander-catalyst-billet.png",
+      "image": "northlander-catalyst-billet.webp",
       "rarity": 4,
       "position": 323,
       "level": 0,
@@ -16734,7 +16734,7 @@
     },
     {
       "key": "northlander-claymore-billet",
-      "image": "northlander-claymore-billet.png",
+      "image": "northlander-claymore-billet.webp",
       "rarity": 4,
       "position": 322,
       "level": 0,
@@ -16775,7 +16775,7 @@
     },
     {
       "key": "northlander-polearm-billet",
-      "image": "northlander-polearm-billet.png",
+      "image": "northlander-polearm-billet.webp",
       "rarity": 4,
       "position": 324,
       "level": 0,
@@ -16816,7 +16816,7 @@
     },
     {
       "key": "northlander-sword-billet",
-      "image": "northlander-sword-billet.png",
+      "image": "northlander-sword-billet.webp",
       "rarity": 4,
       "position": 320,
       "level": 0,
@@ -16857,7 +16857,7 @@
     },
     {
       "key": "onion",
-      "image": "onion.png",
+      "image": "onion.webp",
       "rarity": 1,
       "position": 507,
       "level": 0,
@@ -16870,7 +16870,7 @@
     },
     {
       "key": "padisarah",
-      "image": "padisarah.png",
+      "image": "padisarah.webp",
       "rarity": 1,
       "position": 288,
       "level": 0,
@@ -16883,7 +16883,7 @@
     },
     {
       "key": "pepper",
-      "image": "pepper.png",
+      "image": "pepper.webp",
       "rarity": 1,
       "position": 508,
       "level": 0,
@@ -16896,7 +16896,7 @@
     },
     {
       "key": "pinecone",
-      "image": "pinecone.png",
+      "image": "pinecone.webp",
       "rarity": 1,
       "position": 491,
       "level": 0,
@@ -16909,7 +16909,7 @@
     },
     {
       "key": "potato",
-      "image": "potato.png",
+      "image": "potato.webp",
       "rarity": 1,
       "position": 511,
       "level": 0,
@@ -16922,7 +16922,7 @@
     },
     {
       "key": "radish",
-      "image": "radish.png",
+      "image": "radish.webp",
       "rarity": 1,
       "position": 487,
       "level": 0,
@@ -16937,7 +16937,7 @@
     },
     {
       "key": "raw-meat",
-      "image": "raw-meat.png",
+      "image": "raw-meat.webp",
       "rarity": 1,
       "position": 500,
       "level": 0,
@@ -16998,7 +16998,7 @@
     },
     {
       "key": "rice",
-      "image": "rice.png",
+      "image": "rice.webp",
       "rarity": 1,
       "position": 516,
       "level": 0,
@@ -17011,7 +17011,7 @@
     },
     {
       "key": "salt",
-      "image": "salt.png",
+      "image": "salt.webp",
       "rarity": 1,
       "position": 506,
       "level": 0,
@@ -17064,7 +17064,7 @@
     },
     {
       "key": "sausage",
-      "image": "sausage.png",
+      "image": "sausage.webp",
       "rarity": 1,
       "position": 538,
       "level": 0,
@@ -17087,7 +17087,7 @@
     },
     {
       "key": "seagrass",
-      "image": "seagrass.png",
+      "image": "seagrass.webp",
       "rarity": 1,
       "position": 522,
       "level": 0,
@@ -17100,7 +17100,7 @@
     },
     {
       "key": "shrimp-meat",
-      "image": "shrimp-meat.png",
+      "image": "shrimp-meat.webp",
       "rarity": 1,
       "position": 517,
       "level": 0,
@@ -17113,7 +17113,7 @@
     },
     {
       "key": "smoked-fowl",
-      "image": "smoked-fowl.png",
+      "image": "smoked-fowl.webp",
       "rarity": 1,
       "position": 531,
       "level": 0,
@@ -17140,7 +17140,7 @@
     },
     {
       "key": "snapdragon",
-      "image": "snapdragon.png",
+      "image": "snapdragon.webp",
       "rarity": 1,
       "position": 488,
       "level": 0,
@@ -17153,7 +17153,7 @@
     },
     {
       "key": "spice",
-      "image": "spice.png",
+      "image": "spice.webp",
       "rarity": 1,
       "position": 539,
       "level": 0,
@@ -17176,7 +17176,7 @@
     },
     {
       "key": "starshroom",
-      "image": "starshroom.png",
+      "image": "starshroom.webp",
       "rarity": 1,
       "position": 524,
       "level": 0,
@@ -17189,7 +17189,7 @@
     },
     {
       "key": "starsilver",
-      "image": "starsilver.png",
+      "image": "starsilver.webp",
       "rarity": 1,
       "position": 275,
       "level": 0,
@@ -17216,7 +17216,7 @@
     },
     {
       "key": "strange-tooth",
-      "image": "strange-tooth.png",
+      "image": "strange-tooth.webp",
       "rarity": 3,
       "position": 314,
       "level": 0,
@@ -17229,7 +17229,7 @@
     },
     {
       "key": "sugar",
-      "image": "sugar.png",
+      "image": "sugar.webp",
       "rarity": 1,
       "position": 534,
       "level": 0,
@@ -17270,7 +17270,7 @@
     },
     {
       "key": "sumeru-rose",
-      "image": "sumeru-rose.png",
+      "image": "sumeru-rose.webp",
       "rarity": 1,
       "position": 336,
       "level": 0,
@@ -17283,7 +17283,7 @@
     },
     {
       "key": "sunsettia",
-      "image": "sunsettia.png",
+      "image": "sunsettia.webp",
       "rarity": 1,
       "position": 295,
       "level": 0,
@@ -17314,7 +17314,7 @@
     },
     {
       "key": "sweet-flower",
-      "image": "sweet-flower.png",
+      "image": "sweet-flower.webp",
       "rarity": 1,
       "position": 485,
       "level": 0,
@@ -17339,7 +17339,7 @@
     },
     {
       "key": "tofu",
-      "image": "tofu.png",
+      "image": "tofu.webp",
       "rarity": 1,
       "position": 513,
       "level": 0,
@@ -17352,7 +17352,7 @@
     },
     {
       "key": "tomato",
-      "image": "tomato.png",
+      "image": "tomato.webp",
       "rarity": 1,
       "position": 510,
       "level": 0,
@@ -17365,7 +17365,7 @@
     },
     {
       "key": "unagi-meat",
-      "image": "unagi-meat.png",
+      "image": "unagi-meat.webp",
       "rarity": 1,
       "position": 519,
       "level": 0,
@@ -17378,7 +17378,7 @@
     },
     {
       "key": "vitalized-dragontooth",
-      "image": "vitalized-dragontooth.png",
+      "image": "vitalized-dragontooth.webp",
       "rarity": 1,
       "position": 289,
       "level": 0,
@@ -17391,7 +17391,7 @@
     },
     {
       "key": "wheat",
-      "image": "wheat.png",
+      "image": "wheat.webp",
       "rarity": 1,
       "position": 298,
       "level": 0,
@@ -17414,7 +17414,7 @@
     },
     {
       "key": "white-iron-chunk",
-      "image": "white-iron-chunk.png",
+      "image": "white-iron-chunk.webp",
       "rarity": 1,
       "position": 272,
       "level": 0,
@@ -17444,7 +17444,7 @@
     },
     {
       "key": "zaytun-peach",
-      "image": "zaytun-peach.png",
+      "image": "zaytun-peach.webp",
       "rarity": 1,
       "position": 527,
       "level": 0,

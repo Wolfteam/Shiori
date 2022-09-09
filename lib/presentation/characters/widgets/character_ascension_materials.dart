@@ -39,7 +39,7 @@ class _MaterialItem extends StatelessWidget {
   Widget build(BuildContext context) {
     const double size = 23;
     if (image.isEmpty) {
-      return const Icon(Icons.question_mark_outlined, size: size);
+      return const Icon(Icons.question_mark_outlined, size: size, color: Colors.white);
     }
 
     return FadeInImage(

@@ -1,14 +1,30 @@
-import 'package:shiori/domain/assets.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/file/translation_file_service.dart';
 
-class TranslationFileServiceImpl implements TranslationFileService {
+class TranslationFileServiceImpl extends TranslationFileService {
   late TranslationFile _translationFile;
 
+  AppLanguageType? _currentLanguage;
+
+  AppLanguageType get currentLanguage => _currentLanguage!;
+
   @override
-  Future<void> init(AppLanguageType languageType) async {
-    final json = await Assets.getJsonFromPath(Assets.getTranslationPath(languageType));
+  TranslationFileService get translations => this;
+
+  @override
+  Future<void> init(String assetPath) {
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<void> initTranslations(AppLanguageType languageType, String assetPath) async {
+    if (_currentLanguage == languageType) {
+      return;
+    }
+    _currentLanguage = languageType;
+
+    final json = await readJson(assetPath);
     _translationFile = TranslationFile.fromJson(json);
   }
 

@@ -12138,38 +12138,38 @@
     },
     {
       "key": "bloom",
-      "name": "Bloom",
-      "effect": "Creates a Dendro Core that explode after 6 seconds, dealing AoE Dendro DMG in a 5m radius to both enemies and players.",
+      "name": "Бутонизация",
+      "effect": "Создается Дендро ядра которые взрывается через 6 сек., нанося Дендро урон по области в радиусе 5 метров включая варгов и игроков.",
       "description": null
     },
     {
       "key": "hyperbloom",
-      "name": "Hyperbloom",
-      "effect": "Triggered when applying Electro to a Dendro Core. Transforms the Dendro Core into a homing Sprawling Shot that deals increased AoE Dendro DMG in a much smaller AoE.",
+      "name": "Вегетация",
+      "effect": "Срабатывает при применении Электро к Дендро ядру. Превращает Дендро ядро в самонаводящийся Ползучие снаряды, который наносит увеличенный Дендро урон по области в гораздо меньшем радиусе.",
       "description": null
     },
     {
       "key": "burgeon",
-      "name": "Burgeon",
-      "effect": "Triggered when applying Pyro to a Dendro Core. Detonates the Dendro Core immediately, dealing increased AoE Dendro DMG.",
+      "name": "Цветения",
+      "effect": "Когда Дендро ядро входит в контакт с Пиро, возникает реакция Цветения, наносящая ещё больший Дендро урон по площади.",
       "description": null
     },
     {
       "key": "quicken",
-      "name": "Quicken",
-      "effect": "Applies a Quicken aura that decays over time.",
+      "name": "Стимуляции",
+      "effect": "Накладывает ауру Стимуляции, которая со временем исчезает.",
       "description": null
     },
     {
       "key": "aggravate",
-      "name": "Aggravate",
-      "effect": "Triggered when applying Electro to an entity with the Quicken aura. Adds Flat DMG Bonus to the attack that triggers this reaction.",
+      "name": "Обострение",
+      "effect": "Срабатывает при применении Электро к сущности с аурой Стимуляции. Добавляя жирный бонус урона к атаке, которая запускает эту реакцию.",
       "description": null
     },
     {
       "key": "spread",
-      "name": "Spread",
-      "effect": "Triggered when applying Dendro to an entity with the Quicken aura. Adds Flat DMG Bonus to the attack that triggers this reaction.",
+      "name": "Разрастание",
+      "effect": "Срабатывает при применении Дендро к сущности с аурой Стимуляции. Добавляя жирный бонус урона к атаке, которая запускает эту реакцию.",
       "description": null
     }
   ],
@@ -12182,31 +12182,31 @@
     },
     {
       "key": "fervent-flames",
-      "name": "Преданность Пиро",
+      "name": "Пылающий огонь",
       "effect": "Уменьшает длительность Крио эффекта на 40%, увеличивает силу атаки на 25%.",
       "description": null
     },
     {
       "key": "soothing-waters",
-      "name": "Лечение Гидро",
+      "name": "Успокаивающая вода",
       "effect": "Уменьшает длительность Пиро эффекта на 40%, увеличивает бонус получаемого лечения на 30%.",
       "description": null
     },
     {
       "key": "impetuous-winds",
-      "name": "Проворность Анемо",
+      "name": "Проворный ветер",
       "effect": "Уменьшает потребление выносливости на 15%. Увеличивает скорость передвижения на 10%. Уменьшает время отката навыков на 5%.",
       "description": null
     },
     {
       "key": "high-voltage",
-      "name": "Энергия Электро",
-      "effect": "Уменьшает длительность Гидро эффекта на 40%, Суперпроводник, Перегрузка и Заряжен имеют шанс в 100% создать элементальную частицу Электро (Уменьшение восстановления умения на 5%).",
+      "name": "Высокое напряжение",
+      "effect": "Уменьшает длительность Гидро эффекта на 40%. Статусы Сверхпроводник, Перегрузка, Заряжен, Стимуляция, Обострение и Вегетация имеют 100% шанс оставить элементальную частицу Электро (откат 5 сек.).",
       "description": null
     },
     {
       "key": "shattering-ice",
-      "name": "Разрушение Крио",
+      "name": "Расколотый лёд",
       "effect": "Уменьшает длительность Электро эффекта на 40%, увеличивает шанс критического урона по замороженным противникам или противникам с Крио эффектом на 15%.",
       "description": null
     },
@@ -12218,8 +12218,8 @@
     },
     {
       "key": "sprawling-greenery",
-      "name": "Sprawling Greenery",
-      "effect": "After triggering Burning, Quicken, or Bloom reactions, all nearby party members gain 30 Elemental Mastery for 6s. After triggering Aggravate, Spread, Hyperbloom, or Burgeon reactions, all nearby party members gain 20 Elemental Mastery for 6s. The durations of the aforementioned effects will be counted independently.",
+      "name": "Ползучая зелень",
+      "effect": "Увеличивает мастерство стихий на 50 ед. Статусы Горение, Стимуляция и Бутонизация увеличивают мастерство стихий всех членов отряда поблизости на 30 ед. на 6 сек. Статусы Обострение, Разрастание, Вегетация и Цветение увеличивают мастерство стихий всех членов отряда поблизости на 20 ед. на 6 сек. Длительность каждого из этих эффектов рассчитывается отдельно.",
       "description": null
     }
   ],

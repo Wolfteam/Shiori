@@ -55,7 +55,7 @@ void main() {
     when(settingsService.useTwentyFourHoursFormat).thenReturn(settings.useTwentyFourHoursFormat);
 
     final deviceInfoService = MockDeviceInfoService();
-    when(deviceInfoService.version).thenReturn(_appVersion);
+    when(deviceInfoService.versionWithBuildNumber).thenReturn(_appVersion);
     when(deviceInfoService.appName).thenReturn('Shiori');
 
     final purchaseService = MockPurchaseService();

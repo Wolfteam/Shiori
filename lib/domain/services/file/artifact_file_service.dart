@@ -2,7 +2,7 @@ import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/file/base_file_service.dart';
 
-abstract class ArtifactFileService implements BaseFileService {
+abstract class ArtifactFileService extends BaseFileService {
   List<ArtifactCardModel> getArtifactsForCard({ArtifactType? type});
 
   ArtifactCardModel getArtifactForCard(String key);

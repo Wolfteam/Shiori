@@ -21,6 +21,7 @@ void main() {
   late TelemetryService _telemetryService;
   late LoggingService _loggingService;
   late CustomBuildsBloc _customBuildsBloc;
+  late final String _dbPath;
 
   const _keqingKey = 'keqing';
   const _ganyuKey = 'ganyu';
@@ -39,18 +40,25 @@ void main() {
 
     return Future(() async {
       await _genshinService.init(AppLanguageType.english);
-      await _dataService.init(dir: _dbFolder);
+      _dbPath = await getDbPath(_dbFolder);
+      await _dataService.initForTests(_dbPath);
     });
   });
 
   tearDownAll(() {
     return Future(() async {
       await _dataService.closeThemAll();
-      await deleteDbFolder(_dbFolder);
+      await deleteDbFolder(_dbPath);
     });
   });
 
-  CustomBuildBloc _getBloc() => CustomBuildBloc(_genshinService, _dataService, _telemetryService, _loggingService, _customBuildsBloc);
+  CustomBuildBloc _getBloc() => CustomBuildBloc(
+        _genshinService,
+        _dataService,
+        _telemetryService,
+        _loggingService,
+        _customBuildsBloc,
+      );
 
   Future<CustomBuildModel> _saveCustomBuild(String charKey) async {
     final artifact = _genshinService.artifacts.getArtifactForCard(_thunderingFuryKey);

@@ -1,18 +1,20 @@
-import 'package:shiori/domain/assets.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/file/element_file_service.dart';
 import 'package:shiori/domain/services/file/translation_file_service.dart';
 
-class ElementFileServiceImpl implements ElementFileService {
+class ElementFileServiceImpl extends ElementFileService {
   final TranslationFileService _translations;
 
   late ElementsFile _elementsFile;
 
+  @override
+  TranslationFileService get translations => _translations;
+
   ElementFileServiceImpl(this._translations);
 
   @override
-  Future<void> init() async {
-    final json = await Assets.getJsonFromPath(Assets.elementsDbPath);
+  Future<void> init(String assetPath) async {
+    final json = await readJson(assetPath);
     _elementsFile = ElementsFile.fromJson(json);
   }
 

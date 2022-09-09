@@ -2,7 +2,7 @@ import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/file/base_file_service.dart';
 
-abstract class BannerHistoryFileService implements BaseFileService {
+abstract class BannerHistoryFileService extends BaseFileService {
   List<double> getBannerHistoryVersions(SortDirectionType type);
 
   List<BannerHistoryItemModel> getBannerHistory(BannerHistoryItemType type);

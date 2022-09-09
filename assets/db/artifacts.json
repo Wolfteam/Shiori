@@ -2,247 +2,247 @@
   "artifacts": [
     {
       "key": "adventurer",
-      "image": "adventurer_4.png",
+      "image": "adventurer_4.webp",
       "minRarity": 1,
       "maxRarity": 3
     },
     {
       "key": "archaic-petra",
-      "image": "archaic-petra_4.png",
+      "image": "archaic-petra_4.webp",
       "minRarity": 4,
       "maxRarity": 5
     },
     {
       "key": "berserker",
-      "image": "berserker_4.png",
+      "image": "berserker_4.webp",
       "minRarity": 3,
       "maxRarity": 4
     },
     {
       "key": "blizzard-strayer",
-      "image": "blizzard-strayer_4.png",
+      "image": "blizzard-strayer_4.webp",
       "minRarity": 4,
       "maxRarity": 5
     },
     {
       "key": "bloodstained-chivalry",
-      "image": "bloodstained-chivalry_4.png",
+      "image": "bloodstained-chivalry_4.webp",
       "minRarity": 4,
       "maxRarity": 5
     },
     {
       "key": "brave-heart",
-      "image": "brave-heart_4.png",
+      "image": "brave-heart_4.webp",
       "minRarity": 3,
       "maxRarity": 4
     },
     {
       "key": "crimson-witch-of-flames",
-      "image": "crimson-witch-of-flames_4.png",
+      "image": "crimson-witch-of-flames_4.webp",
       "minRarity": 4,
       "maxRarity": 5
     },
     {
       "key": "deepwood-memories",
-      "image": "deepwood-memories_4.png",
+      "image": "deepwood-memories_4.webp",
       "minRarity": 4,
       "maxRarity": 5
     },
     {
       "key": "defenders-will",
-      "image": "defenders-will_4.png",
+      "image": "defenders-will_4.webp",
       "minRarity": 3,
       "maxRarity": 4
     },
     {
       "key": "echoes-of-an-offering",
-      "image": "echoes-of-an-offering_4.png",
+      "image": "echoes-of-an-offering_4.webp",
       "minRarity": 4,
       "maxRarity": 5
     },
     {
       "key": "emblem-of-severed-fate",
-      "image": "emblem-of-severed-fate_4.png",
+      "image": "emblem-of-severed-fate_4.webp",
       "minRarity": 4,
       "maxRarity": 5
     },
     {
       "key": "gambler",
-      "image": "gambler_4.png",
+      "image": "gambler_4.webp",
       "minRarity": 3,
       "maxRarity": 4
     },
     {
       "key": "gilded-dreams",
-      "image": "gilded-dreams_4.png",
+      "image": "gilded-dreams_4.webp",
       "minRarity": 4,
       "maxRarity": 5
     },
     {
       "key": "gladiators-finale",
-      "image": "gladiators-finale_4.png",
+      "image": "gladiators-finale_4.webp",
       "minRarity": 4,
       "maxRarity": 5
     },
     {
       "key": "heart-of-depth",
-      "image": "heart-of-depth_4.png",
+      "image": "heart-of-depth_4.webp",
       "minRarity": 4,
       "maxRarity": 5
     },
     {
       "key": "husk-of-opulent-dreams",
-      "image": "husk-of-opulent-dreams_4.png",
+      "image": "husk-of-opulent-dreams_4.webp",
       "minRarity": 4,
       "maxRarity": 5
     },
     {
       "key": "instructor",
-      "image": "instructor_4.png",
+      "image": "instructor_4.webp",
       "minRarity": 3,
       "maxRarity": 4
     },
     {
       "key": "lavawalker",
-      "image": "lavawalker_4.png",
+      "image": "lavawalker_4.webp",
       "minRarity": 4,
       "maxRarity": 5
     },
     {
       "key": "lucky-dog",
-      "image": "lucky-dog_4.png",
+      "image": "lucky-dog_4.webp",
       "minRarity": 1,
       "maxRarity": 3
     },
     {
       "key": "maiden-beloved",
-      "image": "maiden-beloved_4.png",
+      "image": "maiden-beloved_4.webp",
       "minRarity": 4,
       "maxRarity": 5
     },
     {
       "key": "martial-artist",
-      "image": "martial-artist_4.png",
+      "image": "martial-artist_4.webp",
       "minRarity": 3,
       "maxRarity": 4
     },
     {
       "key": "noblesse-oblige",
-      "image": "noblesse-oblige_4.png",
+      "image": "noblesse-oblige_4.webp",
       "minRarity": 4,
       "maxRarity": 5
     },
     {
       "key": "ocean-hued-clam",
-      "image": "ocean-hued-clam_4.png",
+      "image": "ocean-hued-clam_4.webp",
       "minRarity": 4,
       "maxRarity": 5
     },
     {
       "key": "pale-flame",
-      "image": "pale-flame_4.png",
+      "image": "pale-flame_4.webp",
       "minRarity": 4,
       "maxRarity": 5
     },
     {
       "key": "prayers-for-destiny",
-      "image": "prayers-for-destiny_4.png",
+      "image": "prayers-for-destiny_4.webp",
       "minRarity": 3,
       "maxRarity": 4
     },
     {
       "key": "prayers-for-illumination",
-      "image": "prayers-for-illumination_4.png",
+      "image": "prayers-for-illumination_4.webp",
       "minRarity": 3,
       "maxRarity": 4
     },
     {
       "key": "prayers-for-wisdom",
-      "image": "prayers-for-wisdom_4.png",
+      "image": "prayers-for-wisdom_4.webp",
       "minRarity": 3,
       "maxRarity": 4
     },
     {
       "key": "prayers-to-springtime",
-      "image": "prayers-to-springtime_4.png",
+      "image": "prayers-to-springtime_4.webp",
       "minRarity": 3,
       "maxRarity": 4
     },
     {
       "key": "resolution-of-sojourner",
-      "image": "resolution-of-sojourner_4.png",
+      "image": "resolution-of-sojourner_4.webp",
       "minRarity": 3,
       "maxRarity": 4
     },
     {
       "key": "retracing-bolide",
-      "image": "retracing-bolide_4.png",
+      "image": "retracing-bolide_4.webp",
       "minRarity": 4,
       "maxRarity": 5
     },
     {
       "key": "scholar",
-      "image": "scholar_4.png",
+      "image": "scholar_4.webp",
       "minRarity": 3,
       "maxRarity": 4
     },
     {
       "key": "shimenawas-reminiscence",
-      "image": "shimenawas-reminiscence_4.png",
+      "image": "shimenawas-reminiscence_4.webp",
       "minRarity": 4,
       "maxRarity": 5
     },
     {
       "key": "tenacity-of-the-millelith",
-      "image": "tenacity-of-the-millelith_4.png",
+      "image": "tenacity-of-the-millelith_4.webp",
       "minRarity": 4,
       "maxRarity": 5
     },
     {
       "key": "the-exile",
-      "image": "the-exile_4.png",
+      "image": "the-exile_4.webp",
       "minRarity": 3,
       "maxRarity": 4
     },
     {
       "key": "thundering-fury",
-      "image": "thundering-fury_4.png",
+      "image": "thundering-fury_4.webp",
       "minRarity": 4,
       "maxRarity": 5
     },
     {
       "key": "thundersoother",
-      "image": "thundersoother_4.png",
+      "image": "thundersoother_4.webp",
       "minRarity": 4,
       "maxRarity": 5
     },
     {
       "key": "tiny-miracle",
-      "image": "tiny-miracle_4.png",
+      "image": "tiny-miracle_4.webp",
       "minRarity": 3,
       "maxRarity": 4
     },
     {
       "key": "traveling-doctor",
-      "image": "traveling-doctor_4.png",
+      "image": "traveling-doctor_4.webp",
       "minRarity": 1,
       "maxRarity": 3
     },
     {
       "key": "vermillion-hereafter",
-      "image": "vermillion-hereafter_4.png",
+      "image": "vermillion-hereafter_4.webp",
       "minRarity": 4,
       "maxRarity": 5
     },
     {
       "key": "viridescent-venerer",
-      "image": "viridescent-venerer_4.png",
+      "image": "viridescent-venerer_4.webp",
       "minRarity": 4,
       "maxRarity": 5
     },
     {
       "key": "wanderers-troupe",
-      "image": "wanderers-troupe_4.png",
+      "image": "wanderers-troupe_4.webp",
       "minRarity": 4,
       "maxRarity": 5
     }

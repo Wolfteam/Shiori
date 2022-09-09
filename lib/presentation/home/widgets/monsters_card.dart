@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shiori/domain/app_constants.dart';
 import 'package:shiori/domain/assets.dart';
 import 'package:shiori/generated/l10n.dart';
 import 'package:shiori/presentation/home/widgets/card_description.dart';
@@ -22,7 +23,7 @@ class MonstersCard extends StatelessWidget {
       onClick: (context) => _goToMonstersPage(context),
       iconToTheLeft: iconToTheLeft,
       icon: Image.asset(
-        Assets.getOtherMaterialPath('monster.png'),
+        Assets.getOtherMaterialPath('monster$imageFileExtension'),
         width: 60,
         height: 60,
         color: theme.colorScheme.secondary,
