@@ -340,6 +340,8 @@ void main() {
         for (final item in material.characters) {
           checkItemCommon(item);
         }
+        final travelerExists = material.characters.where((el) => el.key.startsWith('traveler')).isNotEmpty;
+        expect(travelerExists, isTrue);
       }
 
       if (day == DateTime.sunday) {

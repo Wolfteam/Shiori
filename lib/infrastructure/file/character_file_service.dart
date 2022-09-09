@@ -161,10 +161,15 @@ class CharacterFileServiceImpl extends CharacterFileService {
         final normalAscMaterial = char.ascensionMaterials.expand((m) => m.materials).where((m) => m.key == e.key).isNotEmpty ||
             char.talentAscensionMaterials.expand((m) => m.materials).where((m) => m.key == e.key).isNotEmpty;
 
-        //The travelers have different ascension materials, that's why we do the following
+        // The travelers have different ascension materials,
+        // and may not use the teachings-of-XXX directly,
+        // that's why we do the following
         var specialAscMaterial = false;
         if (char.multiTalentAscensionMaterials != null) {
-          final keyword = e.key;
+          // Since the key name always has the same starting words,
+          // we take the part that usually changes and use it to retrieve
+          // the corresponding materials for the current day
+          final keyword = e.key.split('-').last;
           final materials = char.multiTalentAscensionMaterials!
               .expand((m) => m.materials)
               .expand((m) => m.materials)
@@ -173,7 +178,7 @@ class CharacterFileServiceImpl extends CharacterFileService {
               .toSet()
               .toList();
 
-          specialAscMaterial = materials.any((m) => m == keyword);
+          specialAscMaterial = materials.any((m) => m.endsWith(keyword));
         }
 
         final materialIsBeingUsed = normalAscMaterial || specialAscMaterial;
