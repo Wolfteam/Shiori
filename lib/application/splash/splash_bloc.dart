@@ -53,7 +53,6 @@ class SplashBloc extends Bloc<SplashEvent, SplashState> {
         final downloadStream = _resourceService
             .downloadAndApplyUpdates(
               result.resourceVersion,
-              result.zipFileKeyName,
               result.jsonFileKeyName,
               keyNames: result.keyNames,
               onProgress: (value) => add(SplashEvent.progressChanged(progress: value)),
