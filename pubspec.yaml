@@ -29,7 +29,6 @@ dependencies:
   fl_chart: ^0.55.0
   flutter:
     sdk: flutter
-  flutter_archive: ^5.0.0
   flutter_bloc: ^7.3.1
   flutter_colorpicker: ^1.0.3
   flutter_inappwebview: ^5.4.3+7

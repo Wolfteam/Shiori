@@ -1,5 +1,8 @@
+import 'dart:io';
+
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
+import 'package:path/path.dart' as path;
 import 'package:shiori/domain/app_constants.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/models/dtos.dart';
@@ -11,6 +14,8 @@ import '../common.dart';
 import '../mocks.mocks.dart';
 
 void main() {
+  const allJson = 'all.json';
+
   group('Get json file types', () {
     test('translation not loaded due to missing language', () {
       final service = getResourceService(MockSettingsService());
@@ -128,7 +133,6 @@ void main() {
       expect(result.type == expectedResultType, isTrue);
       expect(result.resourceVersion == expectedResourceVersion, isTrue);
       expect(result.jsonFileKeyName, isNull);
-      expect(result.zipFileKeyName, isNull);
       expect(result.keyNames, isEmpty);
     }
 
@@ -142,7 +146,6 @@ void main() {
       expect(result.resourceVersion == expectedResourceVersion, isTrue);
       if (apiResponse != null) {
         expect(result.jsonFileKeyName == apiResponse.jsonFileKeyName, isTrue);
-        expect(result.zipFileKeyName == apiResponse.zipFileKeyName, isTrue);
         expect(result.keyNames, apiResponse.keyNames);
       } else {
         _checkEmptyUpdateResult(expectedResultType, expectedResourceVersion, result);
@@ -189,18 +192,6 @@ void main() {
       _checkEmptyUpdateResult(AppResourceUpdateResultType.noInternetConnectionForFirstInstall, -1, result);
     });
 
-    test('unsupported platform', () {
-      final service = ResourceServiceImpl(
-        MockLoggingService(),
-        MockSettingsService(),
-        MockNetworkService(),
-        MockApiService(),
-        usesJsonFile: false,
-        usesZipFile: false,
-      );
-      expect(() => service.checkForUpdates('1.0.0', -1), throwsA(isA<Exception>()));
-    });
-
     test('api returns that there is a new app version', () async {
       final service = _getService(
         isInternetAvailable: true,
@@ -237,8 +228,7 @@ void main() {
         result: ResourceDiffResponseDto(
           currentResourceVersion: 1,
           targetResourceVersion: 2,
-          zipFileKeyName: 'all.zip',
-          jsonFileKeyName: 'all.json',
+          jsonFileKeyName: allJson,
           keyNames: [],
         ),
       );
@@ -323,29 +313,8 @@ void main() {
     test('invalid target version', () {
       final service = ResourceServiceImpl(MockLoggingService(), MockSettingsService(), MockNetworkService(), MockApiService());
       expect(
-        () => service.downloadAndApplyUpdates(0, null, null),
+        () => service.downloadAndApplyUpdates(0, null),
         throwsA(isA<Exception>().having((ex) => ex.toString(), 'message', contains('The provided targetResourceVersion = 0 is not valid'))),
-      );
-    });
-
-    test('neither zip file nor keyNames were provided', () {
-      final service = ResourceServiceImpl(
-        MockLoggingService(),
-        MockSettingsService(),
-        MockNetworkService(),
-        MockApiService(),
-        usesZipFile: true,
-        usesJsonFile: false,
-      );
-      expect(
-        () => service.downloadAndApplyUpdates(1, null, null),
-        throwsA(
-          isA<Exception>().having(
-            (ex) => ex.toString(),
-            'message',
-            contains('This platform uses either a zipKeyName or multiple keyNames files but neither were provided'),
-          ),
-        ),
       );
     });
 
@@ -355,11 +324,9 @@ void main() {
         MockSettingsService(),
         MockNetworkService(),
         MockApiService(),
-        usesZipFile: false,
-        usesJsonFile: true,
       );
       expect(
-        () => service.downloadAndApplyUpdates(1, null, null),
+        () => service.downloadAndApplyUpdates(1, null),
         throwsA(
           isA<Exception>().having(
             (ex) => ex.toString(),
@@ -370,27 +337,12 @@ void main() {
       );
     });
 
-    test('unsupported platform', () {
-      final service = ResourceServiceImpl(
-        MockLoggingService(),
-        MockSettingsService(),
-        MockNetworkService(),
-        MockApiService(),
-        usesJsonFile: false,
-        usesZipFile: false,
-      );
-      expect(
-        () => service.downloadAndApplyUpdates(1, null, null),
-        throwsA(isA<Exception>().having((error) => error.toString(), 'message', contains('Unsupported platform'))),
-      );
-    });
-
     test('target resource version already applied', () {
       final settingsService = MockSettingsService();
       when(settingsService.resourceVersion).thenReturn(2);
       final service = ResourceServiceImpl(MockLoggingService(), settingsService, MockNetworkService(), MockApiService());
       expect(
-        () => service.downloadAndApplyUpdates(2, null, null, keyNames: ['characters/keqing$imageFileExtension']),
+        () => service.downloadAndApplyUpdates(2, null, keyNames: ['characters/keqing$imageFileExtension']),
         throwsA(isA<Exception>().having((error) => error.toString(), 'message', contains('The provided targetResourceVersion = 2 == 2'))),
       );
     });
@@ -400,31 +352,9 @@ void main() {
       when(settingsService.resourceVersion).thenReturn(2);
       final service = ResourceServiceImpl(MockLoggingService(), settingsService, MockNetworkService(), MockApiService());
       expect(
-        () => service.downloadAndApplyUpdates(1, null, null, keyNames: ['characters/keqing$imageFileExtension']),
+        () => service.downloadAndApplyUpdates(1, null, keyNames: ['characters/keqing$imageFileExtension']),
         throwsA(isA<Exception>().having((error) => error.toString(), 'message', contains('The provided targetResourceVersion = 1 < 2'))),
       );
-    });
-
-    test('download main zip file, cannot check for updates', () async {
-      final settingsService = MockSettingsService();
-      when(settingsService.lastResourcesCheckedDate).thenReturn(null);
-      when(settingsService.resourceVersion).thenReturn(-1);
-      final networkService = MockNetworkService();
-      when(networkService.isInternetAvailable()).thenAnswer((_) => Future.value(false));
-
-      final service = ResourceServiceImpl(
-        MockLoggingService(),
-        settingsService,
-        networkService,
-        MockApiService(),
-        usesZipFile: true,
-        usesJsonFile: false,
-      );
-      final appliedA = await service.downloadAndApplyUpdates(1, 'all.zip', null);
-      final appliedB = await service.downloadAndApplyUpdates(1, 'all.zip', null, keyNames: ['characters/keqing$imageFileExtension']);
-
-      expect(appliedA, isFalse);
-      expect(appliedB, isFalse);
     });
 
     test('download main json file, cannot check for updates', () async {
@@ -439,11 +369,9 @@ void main() {
         settingsService,
         networkService,
         MockApiService(),
-        usesZipFile: false,
-        usesJsonFile: true,
       );
-      final appliedA = await service.downloadAndApplyUpdates(1, null, 'all.json');
-      final appliedB = await service.downloadAndApplyUpdates(1, null, 'all.json', keyNames: ['characters/keqing$imageFileExtension']);
+      final appliedA = await service.downloadAndApplyUpdates(1, allJson);
+      final appliedB = await service.downloadAndApplyUpdates(1, allJson, keyNames: ['characters/keqing$imageFileExtension']);
 
       expect(appliedA, isFalse);
       expect(appliedB, isFalse);
@@ -461,13 +389,71 @@ void main() {
         settingsService,
         networkService,
         MockApiService(),
-        usesZipFile: false,
-        usesJsonFile: true,
       );
-      final applied = await service.downloadAndApplyUpdates(1, null, null, keyNames: ['characters/keqing$imageFileExtension']);
+      final applied = await service.downloadAndApplyUpdates(1, null, keyNames: ['characters/keqing$imageFileExtension']);
 
       expect(applied, isFalse);
     });
-    //todo: missing cases
+
+    test('download main json file, api throws exception while downloading', () async {
+      final tempDir = await Directory.systemTemp.createTemp('shiori_resources_${DateTime.now().millisecondsSinceEpoch}');
+      final dummyFile = File(path.join(tempDir.path, 'dummy.txt'));
+      await dummyFile.create();
+      final settingsService = MockSettingsService();
+      when(settingsService.lastResourcesCheckedDate).thenReturn(null);
+      when(settingsService.resourceVersion).thenReturn(-1);
+      final networkService = MockNetworkService();
+      when(networkService.isInternetAvailable()).thenAnswer((_) => Future.value(true));
+      final apiService = MockApiService();
+      when(apiService.downloadAsset(allJson, path.join(tempDir.path, allJson), null)).thenAnswer((_) => Future.value(false));
+
+      final service = ResourceServiceImpl(
+        MockLoggingService(),
+        settingsService,
+        networkService,
+        apiService,
+      );
+      service.initForTests(tempDir.path, path.join(tempDir.path, 'assets'));
+
+      final applied = await service.downloadAndApplyUpdates(1, allJson);
+      expect(applied, isFalse);
+      final dirExists = await tempDir.exists();
+      expect(dirExists, isFalse);
+    });
+
+    test('download partial files, api throws exception while downloading', () async {
+      final tempDir = await Directory.systemTemp.createTemp('shiori_resources_${DateTime.now().millisecondsSinceEpoch}');
+      final settingsService = MockSettingsService();
+      when(settingsService.lastResourcesCheckedDate).thenReturn(null);
+      when(settingsService.resourceVersion).thenReturn(-1);
+      final networkService = MockNetworkService();
+      when(networkService.isInternetAvailable()).thenAnswer((_) => Future.value(true));
+      final apiService = MockApiService();
+      const keyNames = [
+        'characters/keqing$imageFileExtension',
+        'characters/kamisato_ayaka$imageFileExtension',
+        'characters/ganyu$imageFileExtension',
+      ];
+
+      when(apiService.downloadAsset(keyNames[0], path.join(tempDir.path, keyNames[0]), null)).thenAnswer((_) => Future.value(true));
+      when(apiService.downloadAsset(keyNames[1], path.join(tempDir.path, keyNames[1]), null)).thenAnswer((_) => Future.value(true));
+      when(apiService.downloadAsset(keyNames[2], path.join(tempDir.path, keyNames[2]), null)).thenAnswer((_) => Future.value(false));
+
+      await File(path.join(path.join(tempDir.path, 'keqing$imageFileExtension'))).create();
+      await File(path.join(path.join(tempDir.path, 'kamisato_ayaka$imageFileExtension'))).create();
+
+      final service = ResourceServiceImpl(
+        MockLoggingService(),
+        settingsService,
+        networkService,
+        apiService,
+      );
+      service.initForTests(tempDir.path, path.join(tempDir.path, 'assets'));
+
+      final applied = await service.downloadAndApplyUpdates(1, allJson, keyNames: keyNames);
+      expect(applied, isFalse);
+      final dirExists = await tempDir.exists();
+      expect(dirExists, isFalse);
+    });
   });
 }

@@ -14,7 +14,6 @@ import '../../mocks.mocks.dart';
 void main() {
   const String _defaultAppVersion = '1.0.0';
   const int _defaultResourcesVersion = -1;
-  const String _zipFileKeyName = 'all.zip';
   const String _jsonFileKeyName = 'all.json';
   const List<String> _keyNames = ['characters/keqing.png'];
   final LanguageModel _language = languagesMap.entries.firstWhere((el) => el.key == AppLanguageType.english).value;
@@ -128,13 +127,12 @@ void main() {
         const result = CheckForUpdatesResult(
           resourceVersion: 2,
           type: AppResourceUpdateResultType.updatesAvailable,
-          zipFileKeyName: _zipFileKeyName,
           jsonFileKeyName: _jsonFileKeyName,
           keyNames: _keyNames,
         );
         final resourceService = MockResourceService();
         when(resourceService.checkForUpdates(_defaultAppVersion, _defaultResourcesVersion)).thenAnswer((_) => Future.value(result));
-        when(resourceService.downloadAndApplyUpdates(result.resourceVersion, _zipFileKeyName, _jsonFileKeyName, keyNames: _keyNames))
+        when(resourceService.downloadAndApplyUpdates(result.resourceVersion, _jsonFileKeyName, keyNames: _keyNames))
             .thenAnswer((_) => Future.value(true));
         return _getBloc(resourceService);
       },
@@ -148,13 +146,12 @@ void main() {
         const result = CheckForUpdatesResult(
           resourceVersion: 2,
           type: AppResourceUpdateResultType.updatesAvailable,
-          zipFileKeyName: _zipFileKeyName,
           jsonFileKeyName: _jsonFileKeyName,
           keyNames: _keyNames,
         );
         final resourceService = MockResourceService();
         when(resourceService.checkForUpdates(_defaultAppVersion, _defaultResourcesVersion)).thenAnswer((_) => Future.value(result));
-        when(resourceService.downloadAndApplyUpdates(result.resourceVersion, _zipFileKeyName, _jsonFileKeyName, keyNames: _keyNames))
+        when(resourceService.downloadAndApplyUpdates(result.resourceVersion, _jsonFileKeyName, keyNames: _keyNames))
             .thenAnswer((_) => Future.value(true));
         return _getBloc(resourceService);
       },
