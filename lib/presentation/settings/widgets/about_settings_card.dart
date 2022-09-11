@@ -141,7 +141,7 @@ class AboutSettingsCard extends StatelessWidget {
                           builder: (_) => ConfirmDialog(
                             title: s.information,
                             content: s.beforeSendingEmailMsg,
-                            onOk: () => _launchUrl('mailto:miraisoft20@gmail.com?subject=${s.subjectOfEmail}&body=${s.beforeSendingEmailMsg}'),
+                            onOk: () => _launchUrl('mailto:miraisoft20@gmail.com?subject=[${s.appName}]'),
                           ),
                         ),
                       ),

@@ -460,12 +460,13 @@
   "doNotCloseAppWhileUpdating": "Do not close the app while the update takes place",
   "unknownErrorWhileUpdating": "Unknown error occurred while checking updates",
   "newAppVersionInStore": "A new version of the app should be available in the store",
-  "subjectOfEmail": "The subject of the email",
-  "beforeSendingEmailMsg": "Before sending an email, make sure you write in either english or spanish.\nIf you write in any other language I will not answer you.",
+  "beforeSendingEmailMsg": "Before sending an email, make sure you write in either english or spanish.\nIf you write in any other language I may not answer you.",
   "checkForResourceUpdates": "Check for resource updates",
   "updatesAvailable": "Updates available",
   "noUpdatesAvailable": "No updates available",
   "tryAgainLater": "Please try again later",
   "applyUpdate": "Apply update",
-  "checkingForResourceUpdates": "Checking for resource updates..."
+  "checkingForResourceUpdates": "Checking for resource updates...",
+  "startingFromVersionUpdateMsg": "Starting from version 1.6.0, resources will be updated on demand",
+  "updateMayTakeMinutes": "Depending on your internet connection, the update may take some minutes to complete"
 }
