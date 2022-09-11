@@ -4,17 +4,23 @@ import 'package:shiori/generated/l10n.dart';
 class ConfirmDialog extends StatelessWidget {
   final String title;
   final String content;
-  final Function? onOk;
+  final VoidCallback? onOk;
+  final VoidCallback? onCancel;
   final String? okText;
   final String? cancelText;
+  final bool showOkButton;
+  final bool showCancelButton;
 
   const ConfirmDialog({
     Key? key,
     required this.title,
     required this.content,
     this.onOk,
+    this.onCancel,
     this.okText,
     this.cancelText,
+    this.showOkButton = true,
+    this.showCancelButton = true,
   }) : super(key: key);
 
   @override
@@ -25,17 +31,22 @@ class ConfirmDialog extends StatelessWidget {
       title: Text(title),
       content: Text(content),
       actions: [
-        OutlinedButton(
-          onPressed: () => Navigator.pop(context, false),
-          child: Text(cancelText ?? s.cancel, style: TextStyle(color: theme.primaryColor)),
-        ),
-        ElevatedButton(
-          onPressed: () {
-            onOk?.call();
-            Navigator.pop(context, true);
-          },
-          child: Text(okText ?? s.ok),
-        )
+        if (showCancelButton)
+          OutlinedButton(
+            onPressed: () {
+              onCancel?.call();
+              Navigator.pop(context, false);
+            },
+            child: Text(cancelText ?? s.cancel, style: TextStyle(color: theme.primaryColor)),
+          ),
+        if (showOkButton)
+          ElevatedButton(
+            onPressed: () {
+              onOk?.call();
+              Navigator.pop(context, true);
+            },
+            child: Text(okText ?? s.ok),
+          )
       ],
     );
   }
