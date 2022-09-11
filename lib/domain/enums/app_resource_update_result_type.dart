@@ -6,5 +6,6 @@ enum AppResourceUpdateResultType {
   noInternetConnectionForFirstInstall,
   retrying,
   updatesAvailable,
+  updating,
   updated,
 }
