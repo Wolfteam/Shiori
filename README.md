@@ -70,6 +70,9 @@ The {{x}} is a placeholder and the value shouldn't be changed, but the position 
 * To the [Genshin Helper Team](https://docs.google.com/spreadsheets/d/e/2PACX-1vRq-sQxkvdbvaJtQAGG6iVz2q2UN9FCKZ8Mkyis87QHFptcOU3ViLh0_PJyMxFSgwJZrd10kbYpQFl1/pubhtml) for their builds
 * The folk(s) that developed the [Map](https://genshin-impact-map.appsample.com/#/)
 * And the folks from [Honey Impact](https://genshin.honeyhunterworld), [Fandom Wiki](https://genshin-impact.fandom.com/wiki/Genshin_Impact), [Genshin.in](https://www.gensh.in/), [Genshin.Center](https://genshin-center.com/) that provide useful data
+* And to [JetBrains](https://www.jetbrains.com/) who provides an [Open Source License](https://www.jetbrains.com/community/opensource/#support) for this project.
+
+
 
 ### Translators
 

@@ -335,11 +335,13 @@ void main() {
         checkKey(material.key);
         checkAsset(material.image);
         expect(material.name, allOf([isNotNull, isNotEmpty]));
-        //expect(material.characters, isNotEmpty);
+        expect(material.characters, isNotEmpty);
         expect(material.days, isNotEmpty);
         for (final item in material.characters) {
           checkItemCommon(item);
         }
+        final travelerExists = material.characters.where((el) => el.key.startsWith('traveler')).isNotEmpty;
+        expect(travelerExists, isTrue);
       }
 
       if (day == DateTime.sunday) {
