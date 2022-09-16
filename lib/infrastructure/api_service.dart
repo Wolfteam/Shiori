@@ -17,7 +17,7 @@ class ApiServiceImpl implements ApiService {
   Future<String> getChangelog(String defaultValue) async {
     try {
       final url = '${Secrets.assetsBaseUrl}/changelog.md';
-      final response = await _dio.getUri<String>(Uri.parse(url));
+      final response = await _dio.getUri<String>(Uri.parse(url), options: Options(headers: Secrets.getCommonApiHeaders()));
       if (response.statusCode != 200) {
         _loggingService.warning(
           runtimeType,
@@ -63,6 +63,7 @@ class ApiServiceImpl implements ApiService {
       await _dio.downloadUri(
         Uri.parse(url),
         destPath,
+        options: Options(headers: Secrets.getCommonApiHeaders()),
         onReceiveProgress: (received, total) {
           if (total != -1) {
             final progress = received / total * 100;
