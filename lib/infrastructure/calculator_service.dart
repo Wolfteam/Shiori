@@ -3,12 +3,14 @@ import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/calculator_service.dart';
 import 'package:shiori/domain/services/genshin_service.dart';
+import 'package:shiori/domain/services/resources_service.dart';
 import 'package:tuple/tuple.dart';
 
 class CalculatorServiceImpl implements CalculatorService {
   final GenshinService _genshinService;
+  final ResourceService _resourceService;
 
-  CalculatorServiceImpl(this._genshinService);
+  CalculatorServiceImpl(this._genshinService, this._resourceService);
 
   @override
   List<AscensionMaterialsSummary> generateSummary(List<ItemAscensionMaterialModel> current) {
@@ -31,7 +33,7 @@ class CalculatorServiceImpl implements CalculatorService {
           position: material.position,
           level: material.level,
           hasSiblings: material.hasSiblings,
-          fullImagePath: material.fullImagePath,
+          fullImagePath: _resourceService.getMaterialImagePath(material.image, material.type),
           quantity: item.quantity,
           days: [],
         );
@@ -44,7 +46,7 @@ class CalculatorServiceImpl implements CalculatorService {
           position: material.position,
           level: material.level,
           hasSiblings: material.hasSiblings,
-          fullImagePath: material.fullImagePath,
+          fullImagePath: _resourceService.getMaterialImagePath(material.image, material.type),
           quantity: item.quantity,
           days: material.days,
         );
@@ -85,7 +87,7 @@ class CalculatorServiceImpl implements CalculatorService {
           position: material.position,
           level: material.level,
           hasSiblings: material.hasSiblings,
-          fullImagePath: material.fullImagePath,
+          fullImagePath: _resourceService.getMaterialImagePath(material.image, material.type),
           quantity: item.quantity,
           days: [],
         );
@@ -379,7 +381,7 @@ class CalculatorServiceImpl implements CalculatorService {
         ItemAscensionMaterialModel(
           key: material.key,
           type: material.type,
-          image: material.fullImagePath,
+          image: _resourceService.getMaterialImagePath(material.image, material.type),
           quantity: quantity,
         ),
       );
@@ -390,7 +392,7 @@ class CalculatorServiceImpl implements CalculatorService {
         ItemAscensionMaterialModel(
           key: moraMaterial.key,
           type: moraMaterial.type,
-          image: moraMaterial.fullImagePath,
+          image: _resourceService.getMaterialImagePath(moraMaterial.image, moraMaterial.type),
           quantity: requiredMora.round(),
         ),
       );

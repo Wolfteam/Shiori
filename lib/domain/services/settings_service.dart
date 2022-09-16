@@ -37,5 +37,13 @@ abstract class SettingsService {
   bool get useTwentyFourHoursFormat;
   set useTwentyFourHoursFormat(bool value);
 
+  DateTime? get lastResourcesCheckedDate;
+  set lastResourcesCheckedDate(DateTime? value);
+
+  int get resourceVersion;
+  set resourceVersion(int value);
+
+  bool get noResourcesHasBeenDownloaded;
+
   Future<void> init();
 }

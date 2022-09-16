@@ -6,14 +6,16 @@ import 'package:shiori/domain/models/game_codes/game_code_model.dart';
 import 'package:shiori/domain/models/items/item_ascension_material_model.dart';
 import 'package:shiori/domain/services/genshin_service.dart';
 import 'package:shiori/domain/services/persistence/game_codes_data_service.dart';
+import 'package:shiori/domain/services/resources_service.dart';
 
 class GameCodesDataServiceImpl implements GameCodesDataService {
   final GenshinService _genshinService;
+  final ResourceService _resourceService;
 
   late Box<GameCode> _gameCodesBox;
   late Box<GameCodeReward> _gameCodeRewardsBox;
 
-  GameCodesDataServiceImpl(this._genshinService);
+  GameCodesDataServiceImpl(this._genshinService, this._resourceService);
 
   @override
   Future<void> init() async {
@@ -32,7 +34,8 @@ class GameCodesDataServiceImpl implements GameCodesDataService {
     return _gameCodesBox.values.map((e) {
       final rewards = _gameCodeRewardsBox.values.where((el) => el.gameCodeKey == e.key).map((reward) {
         final material = _genshinService.materials.getMaterial(reward.itemKey);
-        return ItemAscensionMaterialModel(quantity: reward.quantity, key: material.key, type: material.type, image: material.fullImagePath);
+        final imagePath = _resourceService.getMaterialImagePath(material.image, material.type);
+        return ItemAscensionMaterialModel(quantity: reward.quantity, key: material.key, type: material.type, image: imagePath);
       }).toList();
       //Some codes don't have an expiration date, that's why we use this boolean here
       final expired = e.isExpired || (e.expiredOn?.isBefore(DateTime.now()) ?? false);

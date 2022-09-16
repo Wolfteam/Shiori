@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shiori/generated/l10n.dart';
+import 'package:shiori/presentation/home/widgets/card_item.dart';
 import 'package:shiori/presentation/settings/settings_page.dart';
-
-import 'card_item.dart';
 
 class SettingsCard extends StatelessWidget {
   final bool iconToTheLeft;

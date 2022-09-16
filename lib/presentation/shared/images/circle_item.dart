@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:transparent_image/transparent_image.dart';
 
@@ -35,7 +37,7 @@ class CircleItem extends StatelessWidget {
       child: ClipOval(
         child: FadeInImage(
           placeholder: MemoryImage(kTransparentImage),
-          image: AssetImage(image),
+          image: FileImage(File(image)),
           fit: fit,
           alignment: alignment,
           height: size,

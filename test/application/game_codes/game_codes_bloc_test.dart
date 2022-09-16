@@ -52,10 +52,11 @@ void main() {
     final settingsService = MockSettingsService();
     when(settingsService.language).thenReturn(AppLanguageType.english);
 
-    _genshinService = GenshinServiceImpl(LocaleServiceImpl(settingsService));
+    final resourceService = getResourceService(settingsService);
+    _genshinService = GenshinServiceImpl(resourceService, LocaleServiceImpl(settingsService));
     _gameCodeService = MockGameCodeService();
     when(_gameCodeService.getAllGameCodes()).thenAnswer((_) => Future.value(_defaultGameCodes));
-    _dataService = DataServiceImpl(_genshinService, CalculatorServiceImpl(_genshinService));
+    _dataService = DataServiceImpl(_genshinService, CalculatorServiceImpl(_genshinService, resourceService), resourceService);
     return Future(() async {
       await _genshinService.init(AppLanguageType.english);
       _dbPath = await getDbPath(_dbFolder);

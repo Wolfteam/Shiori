@@ -6,13 +6,12 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shiori/application/bloc.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/generated/l10n.dart';
+import 'package:shiori/presentation/settings/widgets/settings_card.dart';
 import 'package:shiori/presentation/shared/common_dropdown_button.dart';
 import 'package:shiori/presentation/shared/extensions/i18n_extensions.dart';
 import 'package:shiori/presentation/shared/loading.dart';
 import 'package:shiori/presentation/shared/styles.dart';
 import 'package:shiori/presentation/shared/utils/enum_utils.dart';
-
-import 'settings_card.dart';
 
 class ThemeSettingsCard extends StatelessWidget {
   const ThemeSettingsCard({Key? key}) : super(key: key);

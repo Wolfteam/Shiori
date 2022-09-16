@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-
-import 'search_box.dart';
-import 'shiori_icons.dart';
+import 'package:shiori/presentation/shared/search_box.dart';
+import 'package:shiori/presentation/shared/shiori_icons.dart';
 
 typedef OnPressed = void Function();
 

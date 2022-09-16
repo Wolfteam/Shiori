@@ -4,11 +4,10 @@ import 'package:shiori/application/bloc.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/extensions/weapon_type_extensions.dart';
 import 'package:shiori/generated/l10n.dart';
+import 'package:shiori/presentation/characters/widgets/character_ascension_materials.dart';
 import 'package:shiori/presentation/shared/extensions/i18n_extensions.dart';
 import 'package:shiori/presentation/shared/loading.dart';
 import 'package:transparent_image/transparent_image.dart';
-
-import 'character_ascension_materials.dart';
 
 class CharacterCardAscensionMaterialsBottom extends StatelessWidget {
   final WeaponType weaponType;

@@ -6,14 +6,13 @@ import 'package:shiori/domain/app_constants.dart';
 import 'package:shiori/domain/extensions/iterable_extensions.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/generated/l10n.dart';
+import 'package:shiori/presentation/calculator_asc_materials/widgets/skill_item.dart';
 import 'package:shiori/presentation/shared/ascension_level.dart';
 import 'package:shiori/presentation/shared/bottom_sheets/common_bottom_sheet.dart';
 import 'package:shiori/presentation/shared/bottom_sheets/common_button_bar.dart';
 import 'package:shiori/presentation/shared/bottom_sheets/right_bottom_sheet.dart';
 import 'package:shiori/presentation/shared/dialogs/number_picker_dialog.dart';
 import 'package:shiori/presentation/shared/loading.dart';
-
-import 'skill_item.dart';
 
 const _sessionKey = 'sessionKey';
 const _isAWeaponKey = 'isAWeapon';

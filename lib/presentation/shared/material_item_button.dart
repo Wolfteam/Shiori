@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:shiori/presentation/material/material_page.dart' as mp;
 
@@ -20,7 +22,7 @@ class MaterialItemButton extends StatelessWidget {
       iconSize: size,
       splashRadius: size * 0.6,
       constraints: const BoxConstraints(),
-      icon: Image.asset(image, width: size, height: size),
+      icon: Image.file(File(image), width: size, height: size),
       onPressed: () => _gotoMaterialPage(context),
     );
   }

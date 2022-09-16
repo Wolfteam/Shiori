@@ -8,6 +8,7 @@ import 'package:shiori/domain/services/locale_service.dart';
 import 'package:shiori/domain/services/settings_service.dart';
 import 'package:shiori/infrastructure/infrastructure.dart';
 
+import '../../common.dart';
 import '../../mocks.mocks.dart';
 
 void main() {
@@ -24,9 +25,10 @@ void main() {
     return Future(() async {
       _settingsService = MockSettingsService();
       when(_settingsService.language).thenReturn(AppLanguageType.english);
+      final resourceService = getResourceService(_settingsService);
 
       _localeService = LocaleServiceImpl(_settingsService);
-      _genshinService = GenshinServiceImpl(_localeService);
+      _genshinService = GenshinServiceImpl(resourceService, _localeService);
 
       await _genshinService.init(_settingsService.language);
     });

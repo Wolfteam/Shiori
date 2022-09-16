@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:shiori/generated/l10n.dart';
 import 'package:transparent_image/transparent_image.dart';
@@ -46,7 +48,7 @@ class _MaterialItem extends StatelessWidget {
       height: size,
       width: size,
       placeholder: MemoryImage(kTransparentImage),
-      image: AssetImage(image),
+      image: FileImage(File(image)),
     );
   }
 }

@@ -26,7 +26,7 @@ void main() {
     for (final monster in monsters) {
       final detail = service.getMonster(monster.key);
       checkKey(detail.key);
-      checkAsset(detail.fullImagePath);
+      checkAsset(service.resources.getMonsterImagePath(detail.image));
 
       for (final drop in detail.drops) {
         switch (drop.type) {

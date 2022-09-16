@@ -5,6 +5,7 @@ import 'package:shiori/application/bloc.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/generated/l10n.dart';
 import 'package:shiori/injection.dart';
+import 'package:shiori/presentation/game_codes/widgets/game_code_list_item.dart';
 import 'package:shiori/presentation/shared/dialogs/info_dialog.dart';
 import 'package:shiori/presentation/shared/item_description_detail.dart';
 import 'package:shiori/presentation/shared/loading.dart';
@@ -13,8 +14,6 @@ import 'package:shiori/presentation/shared/nothing_found_column.dart';
 import 'package:shiori/presentation/shared/styles.dart';
 import 'package:shiori/presentation/shared/utils/toast_utils.dart';
 import 'package:url_launcher/url_launcher.dart';
-
-import 'widgets/game_code_list_item.dart';
 
 class GameCodesPage extends StatefulWidget {
   const GameCodesPage({

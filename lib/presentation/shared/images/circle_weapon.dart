@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shiori/domain/models/models.dart';
+import 'package:shiori/presentation/shared/images/circle_item.dart';
 import 'package:shiori/presentation/weapon/weapon_page.dart';
-
-import 'circle_item.dart';
 
 class CircleWeapon extends StatelessWidget {
   final String itemKey;

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import 'styles.dart';
+import 'package:shiori/presentation/shared/styles.dart';
 
 class ItemDescription extends StatelessWidget {
   final String title;

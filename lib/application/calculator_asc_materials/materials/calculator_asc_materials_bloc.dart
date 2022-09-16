@@ -3,11 +3,11 @@ import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:shiori/application/bloc.dart';
-import 'package:shiori/domain/assets.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/calculator_service.dart';
 import 'package:shiori/domain/services/data_service.dart';
 import 'package:shiori/domain/services/genshin_service.dart';
+import 'package:shiori/domain/services/resources_service.dart';
 import 'package:shiori/domain/services/telemetry_service.dart';
 
 part 'calculator_asc_materials_bloc.freezed.dart';
@@ -21,6 +21,7 @@ class CalculatorAscMaterialsBloc extends Bloc<CalculatorAscMaterialsEvent, Calcu
   final TelemetryService _telemetryService;
   final CalculatorService _calculatorService;
   final DataService _dataService;
+  final ResourceService _resourceService;
 
   final CalculatorAscMaterialsSessionsBloc _calculatorAscMaterialsSessionsBloc;
 
@@ -31,6 +32,7 @@ class CalculatorAscMaterialsBloc extends Bloc<CalculatorAscMaterialsEvent, Calcu
     this._telemetryService,
     this._calculatorService,
     this._dataService,
+    this._resourceService,
     this._calculatorAscMaterialsSessionsBloc,
   ) : super(_initialState);
 
@@ -51,7 +53,7 @@ class CalculatorAscMaterialsBloc extends Bloc<CalculatorAscMaterialsEvent, Calcu
         final translation = _genshinService.translations.getCharacterTranslation(e.key);
         var newItem = ItemAscensionMaterials.forCharacters(
           key: e.key,
-          image: Assets.getCharacterPath(char.image),
+          image: _resourceService.getCharacterImagePath(char.image),
           position: currentState.items.length,
           elementType: char.elementType,
           name: translation.name,
@@ -84,7 +86,7 @@ class CalculatorAscMaterialsBloc extends Bloc<CalculatorAscMaterialsEvent, Calcu
         final translation = _genshinService.translations.getWeaponTranslation(e.key);
         var newItem = ItemAscensionMaterials.forWeapons(
           key: e.key,
-          image: weapon.fullImagePath,
+          image: _resourceService.getWeaponImagePath(weapon.image, weapon.type),
           position: currentState.items.length,
           name: translation.name,
           rarity: weapon.rarity,

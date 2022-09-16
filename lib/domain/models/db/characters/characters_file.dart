@@ -1,7 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-
-import 'character_file_model.dart';
+import 'package:shiori/domain/models/models.dart';
 
 part 'characters_file.freezed.dart';
 part 'characters_file.g.dart';

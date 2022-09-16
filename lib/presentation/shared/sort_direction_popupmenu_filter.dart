@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/generated/l10n.dart';
-
-import 'extensions/i18n_extensions.dart';
-import 'item_popupmenu_filter.dart';
+import 'package:shiori/presentation/shared/extensions/i18n_extensions.dart';
+import 'package:shiori/presentation/shared/item_popupmenu_filter.dart';
 
 class SortDirectionPopupMenuFilter extends StatelessWidget {
   final SortDirectionType selectedSortDirection;

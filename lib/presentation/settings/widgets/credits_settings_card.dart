@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:shiori/generated/l10n.dart';
+import 'package:shiori/presentation/settings/widgets/settings_card_content.dart';
 import 'package:shiori/presentation/shared/bullet_list.dart';
 import 'package:shiori/presentation/shared/styles.dart';
-
-import 'settings_card_content.dart';
 
 class CreditsSettingsCard extends StatelessWidget {
   @override

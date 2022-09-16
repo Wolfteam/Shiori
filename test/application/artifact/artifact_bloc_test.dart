@@ -23,11 +23,13 @@ void main() {
       _settingsService = MockSettingsService();
       when(_settingsService.language).thenReturn(AppLanguageType.english);
 
+      final resourceService = getResourceService(_settingsService);
+
       _localeService = LocaleServiceImpl(_settingsService);
-      _genshinService = GenshinServiceImpl(_localeService);
+      _genshinService = GenshinServiceImpl(resourceService, _localeService);
 
       await _genshinService.init(_settingsService.language);
-      _artifactBloc = ArtifactBloc(_genshinService, MockTelemetryService());
+      _artifactBloc = ArtifactBloc(_genshinService, MockTelemetryService(), resourceService);
     });
   });
 

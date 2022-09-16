@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:shiori/application/bloc.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/device_info_service.dart';
@@ -11,8 +12,6 @@ import 'package:shiori/domain/services/logging_service.dart';
 import 'package:shiori/domain/services/purchase_service.dart';
 import 'package:shiori/domain/services/settings_service.dart';
 import 'package:shiori/domain/services/telemetry_service.dart';
-
-import '../bloc.dart';
 
 part 'main_bloc.freezed.dart';
 part 'main_event.dart';
@@ -51,16 +50,21 @@ class MainBloc extends Bloc<MainEvent, MainState> {
   @override
   Stream<MainState> mapEventToState(MainEvent event) async* {
     final s = await event.when(
-      init: () async => _init(init: true),
+      init: (updateResult) async => _init(init: true, updateResult: updateResult),
       themeChanged: (theme) async => _loadThemeData(theme, _settingsService.accentColor),
       accentColorChanged: (accentColor) async => _loadThemeData(_settingsService.appTheme, accentColor),
       languageChanged: (language) async => _init(languageChanged: true),
       useDarkAmoledThemeChanged: (use) async => _loadThemeData(_settingsService.appTheme, _settingsService.accentColor),
+      restart: () async => const MainState.loading(),
     );
     yield s;
   }
 
-  Future<MainState> _init({bool languageChanged = false, bool init = false}) async {
+  Future<MainState> _init({
+    bool languageChanged = false,
+    bool init = false,
+    AppResourceUpdateResultType? updateResult,
+  }) async {
     _logger.info(runtimeType, '_init: Initializing all..');
     await _genshinService.init(_settingsService.language);
 
@@ -75,7 +79,7 @@ class MainBloc extends Bloc<MainEvent, MainState> {
     final settings = _settingsService.appSettings;
     await _telemetryService.trackInit(settings);
 
-    final state = _loadThemeData(settings.appTheme, settings.accentColor);
+    final state = _loadThemeData(settings.appTheme, settings.accentColor, updateResult: updateResult);
 
     if (init) {
       await Future.delayed(const Duration(milliseconds: 250));
@@ -88,6 +92,7 @@ class MainBloc extends Bloc<MainEvent, MainState> {
     AppThemeType theme,
     AppAccentColorType accentColor, {
     bool isInitialized = true,
+    AppResourceUpdateResultType? updateResult,
   }) async {
     _logger.info(
       runtimeType,
@@ -104,6 +109,7 @@ class MainBloc extends Bloc<MainEvent, MainState> {
       useDarkAmoledTheme: useDarkAmoledTheme,
       firstInstall: _settingsService.isFirstInstall,
       versionChanged: _deviceInfoService.versionChanged,
+      updateResult: updateResult,
     );
   }
 }

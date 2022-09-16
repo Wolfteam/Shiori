@@ -9,12 +9,14 @@ import 'package:shiori/domain/extensions/string_extensions.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/file/file_infrastructure.dart';
 import 'package:shiori/domain/services/locale_service.dart';
+import 'package:shiori/domain/services/resources_service.dart';
+import 'package:shiori/domain/services/settings_service.dart';
 import 'package:shiori/infrastructure/infrastructure.dart';
 
 import 'mocks.mocks.dart';
+import 'secrets.dart';
 
 Future<String> getDbPath(String subDir) async {
-  TestWidgetsFlutterBinding.ensureInitialized();
   final appDir = await Directory.systemTemp.createTemp(subDir);
   await Directory(appDir.path).create();
   return appDir.path;
@@ -55,7 +57,7 @@ Future<bool> _assetExists(String path) async {
 
 Future<bool> _fileExists(String path) => File(path).exists();
 
-void checkAsset(String path, {bool isAnAsset = true}) {
+void checkAsset(String path, {bool isAnAsset = false}) {
   expect(path, allOf([isNotEmpty, isNotNull]));
   if (isAnAsset) {
     expect(_assetExists(path), completion(equals(true)), reason: 'Asset = $path does not exist');
@@ -163,6 +165,12 @@ void checkTranslation(String? text, {bool canBeNull = true, bool checkForColor =
     final hasColor = text.contains('{color}') || text.contains('{/color}');
     expect(hasColor, isFalse);
   }
+}
+
+ResourceService getResourceService(SettingsService settingsService) {
+  final resourceService = ResourceServiceImpl(MockLoggingService(), settingsService, MockNetworkService(), MockApiService());
+  resourceService.initForTests(Secrets.testTempPath, Secrets.testAssetsPath);
+  return resourceService;
 }
 
 LocaleService getLocaleService(AppLanguageType language) {

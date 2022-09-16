@@ -13,6 +13,7 @@ class MainState with _$MainState {
     required bool initialized,
     required bool firstInstall,
     required bool versionChanged,
+    AppResourceUpdateResultType? updateResult,
   }) = _MainLoadedState;
 
   const MainState._();

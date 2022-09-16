@@ -54,7 +54,7 @@ class ToastUtils {
         throw Exception('Invalid toast type = $type');
     }
 
-    final widget = _buildToast(msg, textColor, bgColor, icon, toast.context);
+    final widget = _buildToast(msg, textColor, bgColor, icon);
     toast.showToast(
       child: widget,
       gravity: ToastGravity.BOTTOM,
@@ -62,7 +62,7 @@ class ToastUtils {
     );
   }
 
-  static Widget _buildToast(String msg, Color textColor, Color bgColor, Icon icon, BuildContext? context) {
+  static Widget _buildToast(String msg, Color textColor, Color bgColor, Icon icon) {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 12.0),
       decoration: BoxDecoration(

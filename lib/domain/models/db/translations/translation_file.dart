@@ -1,6 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-
-import '../../models.dart';
+import 'package:shiori/domain/models/models.dart';
 
 part 'translation_file.freezed.dart';
 part 'translation_file.g.dart';

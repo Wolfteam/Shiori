@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import 'nothing_found.dart';
+import 'package:shiori/presentation/shared/nothing_found.dart';
 
 class NothingFoundColumn extends StatelessWidget {
   final String? msg;
