@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shiori/generated/l10n.dart';
-
-import 'common_button_bar.dart';
+import 'package:shiori/presentation/shared/bottom_sheets/common_button_bar.dart';
 
 class CommonButtonSheetButtons extends StatelessWidget {
   final bool showCancelButton;

@@ -15,7 +15,7 @@ publish_to: "none" # Remove this line if you wish to publish to pub.dev
 # In iOS, build-name is used as CFBundleShortVersionString while build-number used as CFBundleVersion.
 # Read more about iOS versioning at
 # https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
-version: 1.4.7+71
+version: 1.6.0+100
 
 environment:
   sdk: '>=2.17.0 <3.0.0'
@@ -100,34 +100,9 @@ flutter:
   uses-material-design: true
 
   assets:
-    - assets/db/
-    - assets/artifacts/
-    - assets/characters/
-    - assets/characters_full/
     - assets/elements/
-    - assets/furniture/
-    - assets/gadgets/
-    - assets/i18n/
-    - assets/items/common/
-    - assets/items/currency/
-    - assets/items/elemental/
-    - assets/items/experience/
-    - assets/items/ingredients/
-    - assets/items/jewels/
-    - assets/items/local/
-    - assets/items/others/
-    - assets/items/talents/
-    - assets/items/weapon/
-    - assets/items/weapon_primary/
-    - assets/monsters/
     - assets/others/
-    - assets/skills/
-    - assets/weapons/
-    - assets/weapons/bows/
-    - assets/weapons/catalysts/
-    - assets/weapons/polearms/
-    - assets/weapons/claymores/
-    - assets/weapons/swords/
+    - assets/weapon_types/
     - assets/icon/icon.png
 
   fonts:

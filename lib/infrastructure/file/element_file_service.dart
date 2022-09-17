@@ -1,11 +1,15 @@
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/file/element_file_service.dart';
 import 'package:shiori/domain/services/file/translation_file_service.dart';
+import 'package:shiori/domain/services/resources_service.dart';
 
 class ElementFileServiceImpl extends ElementFileService {
   final TranslationFileService _translations;
 
   late ElementsFile _elementsFile;
+
+  @override
+  ResourceService get resources => throw UnimplementedError('Resource service is not required in this file');
 
   @override
   TranslationFileService get translations => _translations;

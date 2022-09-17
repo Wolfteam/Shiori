@@ -4,6 +4,9 @@ import 'package:shiori/application/bloc.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/generated/l10n.dart';
 import 'package:shiori/injection.dart';
+import 'package:shiori/presentation/calculator_asc_materials/widgets/add_edit_session_dialog.dart';
+import 'package:shiori/presentation/calculator_asc_materials/widgets/reoder_sessions_dialog.dart';
+import 'package:shiori/presentation/calculator_asc_materials/widgets/session_list_item.dart';
 import 'package:shiori/presentation/shared/app_fab.dart';
 import 'package:shiori/presentation/shared/dialogs/confirm_dialog.dart';
 import 'package:shiori/presentation/shared/dialogs/info_dialog.dart';
@@ -11,10 +14,6 @@ import 'package:shiori/presentation/shared/loading.dart';
 import 'package:shiori/presentation/shared/mixins/app_fab_mixin.dart';
 import 'package:shiori/presentation/shared/nothing_found_column.dart';
 import 'package:shiori/presentation/shared/styles.dart';
-
-import 'widgets/add_edit_session_dialog.dart';
-import 'widgets/reoder_sessions_dialog.dart';
-import 'widgets/session_list_item.dart';
 
 class CalculatorSessionsPage extends StatelessWidget {
   const CalculatorSessionsPage({Key? key}) : super(key: key);

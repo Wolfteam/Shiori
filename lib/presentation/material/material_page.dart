@@ -2,11 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shiori/application/bloc.dart' as bloc;
 import 'package:shiori/injection.dart';
+import 'package:shiori/presentation/material/widgets/material_detail_bottom.dart';
+import 'package:shiori/presentation/material/widgets/material_detail_top.dart';
 import 'package:shiori/presentation/shared/loading.dart';
 import 'package:shiori/presentation/shared/scaffold_with_fab.dart';
-
-import 'widgets/material_detail_bottom.dart';
-import 'widgets/material_detail_top.dart';
 
 class MaterialPage extends StatelessWidget {
   final String itemKey;

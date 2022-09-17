@@ -26,8 +26,9 @@ void main() {
     _telemetryService = MockTelemetryService();
     _loggingService = MockLoggingService();
     final settingsService = SettingsServiceImpl(_loggingService);
-    _genshinService = GenshinServiceImpl(LocaleServiceImpl(settingsService));
-    _dataService = DataServiceImpl(_genshinService, CalculatorServiceImpl(_genshinService));
+    final resourceService = getResourceService(settingsService);
+    _genshinService = GenshinServiceImpl(resourceService, LocaleServiceImpl(settingsService));
+    _dataService = DataServiceImpl(_genshinService, CalculatorServiceImpl(_genshinService, resourceService), resourceService);
 
     return Future(() async {
       await _genshinService.init(AppLanguageType.english);

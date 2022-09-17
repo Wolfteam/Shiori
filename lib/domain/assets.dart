@@ -1,214 +1,38 @@
-import 'dart:convert';
-
-import 'package:flutter/services.dart' show rootBundle;
+import 'package:shiori/domain/app_constants.dart';
 import 'package:shiori/domain/enums/enums.dart';
-import 'package:shiori/domain/extensions/string_extensions.dart';
 
 class Assets {
-  static String dbPath = 'assets/db';
-  static String charactersDbPath = '$dbPath/characters.json';
-  static String weaponsDbPath = '$dbPath/weapons.json';
-  static String artifactsDbPath = '$dbPath/artifacts.json';
-  static String materialsDbPath = '$dbPath/materials.json';
-  static String elementsDbPath = '$dbPath/elements.json';
-  static String monstersDbPath = '$dbPath/monsters.json';
-  static String gadgetsDbPath = '$dbPath/gadgets.json';
-  static String furnitureDbPath = '$dbPath/furniture.json';
-  static String bannerHistoryDbPath = '$dbPath/banners_history.json';
-  static String translationsBasePath = 'assets/i18n';
-
-  //General
-  static String artifactsBasePath = 'assets/artifacts';
-  static String charactersBasePath = 'assets/characters';
-  static String characterFullBasePath = 'assets/characters_full';
-  static String skillsBasePath = 'assets/skills';
   static String elementsBasePath = 'assets/elements';
-  static String noImageAvailableName = 'na.png';
-
-  //Weapons
-  static String weaponsBasePath = 'assets/weapons';
-  static String bowsBasePath = '$weaponsBasePath/bows';
-  static String catalystBasePath = '$weaponsBasePath/catalysts';
-  static String claymoresBasePath = '$weaponsBasePath/claymores';
-  static String polearmsBasePath = '$weaponsBasePath/polearms';
-  static String swordsBasePath = '$weaponsBasePath/swords';
-
-  //Items
-  static String itemsBasePath = 'assets/items';
-  static String commonBasePath = '$itemsBasePath/common';
-  static String elementalBasePath = '$itemsBasePath/elemental';
-  static String jewelsBasePath = '$itemsBasePath/jewels';
-  static String localBasePath = '$itemsBasePath/local';
-  static String talentBasePath = '$itemsBasePath/talents';
-  static String weaponBasePath = '$itemsBasePath/weapon';
-  static String weaponPrimaryBasePath = '$itemsBasePath/weapon_primary';
-  static String currencyBasePath = '$itemsBasePath/currency';
-  static String othersBasePath = '$itemsBasePath/others';
-  static String ingredientsBasePath = '$itemsBasePath/ingredients';
-  static String experienceBasePath = '$itemsBasePath/experience';
-
-  //Others
   static String otherImgsBasePath = 'assets/others';
-  static String noImageAvailablePath = '$othersBasePath/$noImageAvailableName';
+  static String weaponTypesBasePath = 'assets/weapon_types';
 
-  //Monsters
-  static String monstersImgsBasePath = 'assets/monsters';
+  static String noImageAvailablePath = '$otherImgsBasePath/na$imageFileExtension';
+  static String paimonImagePath = '$otherImgsBasePath/paimon$imageFileExtension';
+  static String bagIconPath = '$otherImgsBasePath/bag$imageFileExtension';
+  static String monsterIconPath = '$otherImgsBasePath/monster$imageFileExtension';
+  static String cakeIconPath = '$otherImgsBasePath/cake$imageFileExtension';
+  static String gachaIconPath = '$otherImgsBasePath/gacha$imageFileExtension';
+  static String starCrystalIconPath = '$otherImgsBasePath/mark_wind_crystal$imageFileExtension';
+  static String primogemIconPath = '$otherImgsBasePath/primogem$imageFileExtension';
 
-  //Gadgets
-  static String gadgetsBasePath = 'assets/gadgets';
-
-  //Furniture
-  static String furnitureBasePath = 'assets/furniture';
-
-  static String getArtifactPath(String name) => '$artifactsBasePath/$name';
-
-  static String getCharacterPath(String name) => '$charactersBasePath/$name';
-
-  static String getCharacterFullPath(String name) => '$characterFullBasePath/$name';
-
-  static String getSkillPath(String? name) {
-    if (name.isNullEmptyOrWhitespace) {
-      return '$othersBasePath/$noImageAvailableName';
-    }
-    return '$skillsBasePath/$name';
-  }
-
-  static String getOtherImgsPath(String name) => '$otherImgsBasePath/$name';
-
-  static String getMonsterImgPath(String name) => '$monstersImgsBasePath/$name';
-
-  static String getBowPath(String name) => '$bowsBasePath/$name';
-
-  static String getCatalystPath(String name) => '$catalystBasePath/$name';
-
-  static String getClaymorePath(String name) => '$claymoresBasePath/$name';
-
-  static String getPolearmPath(String name) => '$polearmsBasePath/$name';
-
-  static String getSwordPath(String name) => '$swordsBasePath/$name';
-
-  static String getCommonMaterialPath(String name) => '$commonBasePath/$name';
-
-  static String getElementalMaterialPath(String name) => '$elementalBasePath/$name';
-
-  static String getJewelMaterialPath(String name) => '$jewelsBasePath/$name';
-
-  static String getLocalMaterialPath(String name) => '$localBasePath/$name';
-
-  static String getTalentMaterialPath(String name) => '$talentBasePath/$name';
-
-  static String getWeaponMaterialPath(String name) => '$weaponBasePath/$name';
-
-  static String getWeaponPrimaryMaterialPath(String name) => '$weaponPrimaryBasePath/$name';
-
-  static String getCurrencyMaterialPath(String name) => '$currencyBasePath/$name';
-
-  static String getOtherMaterialPath(String name) => '$othersBasePath/$name';
-
-  static String getIngredientMaterialPath(String name) => '$ingredientsBasePath/$name';
-
-  static String getExperienceMaterialPath(String name) => '$experienceBasePath/$name';
-
-  static String getMaterialPath(String name, MaterialType type) {
-    switch (type) {
-      case MaterialType.common:
-        return getCommonMaterialPath(name);
-      case MaterialType.currency:
-        return getCurrencyMaterialPath(name);
-      case MaterialType.elementalStone:
-        return getElementalMaterialPath(name);
-      case MaterialType.jewels:
-        return getJewelMaterialPath(name);
-      case MaterialType.local:
-        return getLocalMaterialPath(name);
-      case MaterialType.talents:
-        return getTalentMaterialPath(name);
-      case MaterialType.weapon:
-        return getWeaponMaterialPath(name);
-      case MaterialType.weaponPrimary:
-        return getWeaponPrimaryMaterialPath(name);
-      case MaterialType.others:
-        return getOtherMaterialPath(name);
-      case MaterialType.ingredient:
-        return getIngredientMaterialPath(name);
-      case MaterialType.expCharacter:
-      case MaterialType.expWeapon:
-        return getExperienceMaterialPath(name);
-      default:
-        throw Exception('Invalid material type = $type');
-    }
-  }
-
-  static String getTranslationPath(AppLanguageType languageType) {
-    switch (languageType) {
-      case AppLanguageType.english:
-        return '$translationsBasePath/en.json';
-      case AppLanguageType.spanish:
-        return '$translationsBasePath/es.json';
-      case AppLanguageType.russian:
-        return '$translationsBasePath/ru.json';
-      case AppLanguageType.simplifiedChinese:
-        return '$translationsBasePath/zh_CN.json';
-      case AppLanguageType.portuguese:
-        return '$translationsBasePath/pt.json';
-      case AppLanguageType.italian:
-        return '$translationsBasePath/it.json';
-      case AppLanguageType.japanese:
-        return '$translationsBasePath/ja.json';
-      case AppLanguageType.vietnamese:
-        return '$translationsBasePath/vi.json';
-      case AppLanguageType.indonesian:
-        return '$translationsBasePath/id.json';
-      case AppLanguageType.deutsch:
-        return '$translationsBasePath/de.json';
-      case AppLanguageType.french:
-        return '$translationsBasePath/fr.json';
-      case AppLanguageType.traditionalChinese:
-        return '$translationsBasePath/zh_TW.json';
-      case AppLanguageType.korean:
-        return '$translationsBasePath/ko.json';
-      case AppLanguageType.thai:
-        return '$translationsBasePath/th.json';
-      default:
-        throw Exception('Invalid language = $languageType');
-    }
-  }
-
-  static String getWeaponPath(String name, WeaponType type) {
-    switch (type) {
-      case WeaponType.bow:
-        return getBowPath(name);
-      case WeaponType.catalyst:
-        return getCatalystPath(name);
-      case WeaponType.claymore:
-        return getClaymorePath(name);
-      case WeaponType.polearm:
-        return getPolearmPath(name);
-      case WeaponType.sword:
-        return getSwordPath(name);
-      default:
-        throw Exception('Invalid language = $type');
-    }
-  }
-
-  static String getElementPath(String name) => '$elementsBasePath/$name';
+  static String _getElementPath(String name) => '$elementsBasePath/$name';
 
   static String getElementPathFromType(ElementType type) {
     switch (type) {
       case ElementType.anemo:
-        return getElementPath('anemo.png');
+        return _getElementPath('anemo$imageFileExtension');
       case ElementType.cryo:
-        return getElementPath('cryo.png');
+        return _getElementPath('cryo$imageFileExtension');
       case ElementType.dendro:
-        return getElementPath('dendro.png');
+        return _getElementPath('dendro$imageFileExtension');
       case ElementType.electro:
-        return getElementPath('electro.png');
+        return _getElementPath('electro$imageFileExtension');
       case ElementType.geo:
-        return getElementPath('geo.png');
+        return _getElementPath('geo$imageFileExtension');
       case ElementType.hydro:
-        return getElementPath('hydro.png');
+        return _getElementPath('hydro$imageFileExtension');
       case ElementType.pyro:
-        return getElementPath('pyro.png');
+        return _getElementPath('pyro$imageFileExtension');
       default:
         throw Exception('Invalid element type = $type');
     }
@@ -221,29 +45,34 @@ class Assets {
   static String getArtifactPathFromType(ArtifactType type) {
     switch (type) {
       case ArtifactType.clock:
-        return getMaterialPath('clock.png', MaterialType.others);
+        return '$otherImgsBasePath/clock$imageFileExtension';
       case ArtifactType.crown:
-        return getMaterialPath('crown.png', MaterialType.others);
+        return '$otherImgsBasePath/crown$imageFileExtension';
       case ArtifactType.flower:
-        return getMaterialPath('flower.png', MaterialType.others);
+        return '$otherImgsBasePath/flower$imageFileExtension';
       case ArtifactType.goblet:
-        return getMaterialPath('goblet.png', MaterialType.others);
+        return '$otherImgsBasePath/goblet$imageFileExtension';
       case ArtifactType.plume:
-        return getMaterialPath('plume.png', MaterialType.others);
+        return '$otherImgsBasePath/plume$imageFileExtension';
       default:
         throw Exception('Invalid artifact type = $type');
     }
   }
 
-  static String getOriginalResinPath() => Assets.getCurrencyMaterialPath('fragile-resin.png');
-
-  static String getGadgetPath(String image) => '$gadgetsBasePath/$image';
-
-  static String getFurniturePath(String image) => '$furnitureBasePath/$image';
-
-  static Future<Map<String, dynamic>> getJsonFromPath(String path) async {
-    final jsonStr = await rootBundle.loadString(path);
-    final json = jsonDecode(jsonStr) as Map<String, dynamic>;
-    return json;
+  static String getWeaponTypePath(WeaponType type) {
+    switch (type) {
+      case WeaponType.bow:
+        return '$weaponTypesBasePath/bow$imageFileExtension';
+      case WeaponType.catalyst:
+        return '$weaponTypesBasePath/catalyst$imageFileExtension';
+      case WeaponType.claymore:
+        return '$weaponTypesBasePath/claymore$imageFileExtension';
+      case WeaponType.polearm:
+        return '$weaponTypesBasePath/polearm$imageFileExtension';
+      case WeaponType.sword:
+        return '$weaponTypesBasePath/sword$imageFileExtension';
+      default:
+        throw Exception('Invalid weapon type = $type');
+    }
   }
 }

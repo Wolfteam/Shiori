@@ -73,8 +73,8 @@ void main() {
       expect(detail.rarity, character.stars);
       expect(detail.weaponType, character.weaponType);
       expect(detail.elementType, character.elementType);
-      checkAsset(detail.fullImagePath);
-      checkAsset(detail.fullCharacterImagePath);
+      checkAsset(_service.resources.getCharacterImagePath(detail.image));
+      checkAsset(_service.resources.getCharacterFullImagePath(detail.fullImage));
       expect(detail.region, character.regionType);
       expect(detail.role, character.roleType);
       expect(detail.isComingSoon, character.isComingSoon);
@@ -86,7 +86,7 @@ void main() {
       }
 
       if (isTraveler) {
-        checkAsset(detail.fullSecondImagePath!);
+        checkAsset(_service.resources.getCharacterFullImagePath(detail.secondFullImage!));
       } else {
         expect(detail.birthday, allOf([isNotNull, isNotEmpty]));
 
@@ -123,13 +123,17 @@ void main() {
         expect(detail.stats, isNotEmpty);
       }
 
-      checkCharacterFileAscensionMaterialModel(_service.materials, detail.ascensionMaterials);
+      checkCharacterFileAscensionMaterialModel(_service.materials, detail.ascensionMaterials, checkMaterialType: !detail.isComingSoon);
       if (!isTraveler) {
-        checkCharacterFileTalentAscensionMaterialModel(_service.materials, detail.talentAscensionMaterials);
+        checkCharacterFileTalentAscensionMaterialModel(
+          _service.materials,
+          detail.talentAscensionMaterials,
+          checkMaterialTypeAndLength: !detail.isComingSoon,
+        );
       } else {
         for (final ascMaterial in detail.multiTalentAscensionMaterials!) {
           expect(ascMaterial.number, inInclusiveRange(1, 3));
-          checkCharacterFileTalentAscensionMaterialModel(_service.materials, ascMaterial.materials);
+          checkCharacterFileTalentAscensionMaterialModel(_service.materials, ascMaterial.materials, checkMaterialTypeAndLength: !detail.isComingSoon);
         }
       }
 
@@ -161,7 +165,7 @@ void main() {
       for (final skill in detail.skills) {
         checkKey(skill.key);
         if (!detail.isComingSoon) {
-          checkAsset(skill.fullImagePath);
+          checkAsset(_service.resources.getSkillImagePath(skill.image));
           expect(skill.stats, isNotEmpty);
           for (final stat in skill.stats) {
             switch (skill.type) {
@@ -191,7 +195,7 @@ void main() {
       for (final passive in detail.passives) {
         checkKey(passive.key);
         if (!detail.isComingSoon) {
-          checkAsset(passive.fullImagePath);
+          checkAsset(_service.resources.getSkillImagePath(passive.image));
         }
 
         expect(passive.unlockedAt, isIn([-1, 1, 4]));
@@ -200,7 +204,7 @@ void main() {
       for (final constellation in detail.constellations) {
         checkKey(constellation.key);
         if (!detail.isComingSoon) {
-          checkAsset(constellation.fullImagePath);
+          checkAsset(_service.resources.getSkillImagePath(constellation.image));
         }
         expect(constellation.number, inInclusiveRange(1, 6));
       }
@@ -336,6 +340,8 @@ void main() {
         for (final item in material.characters) {
           checkItemCommon(item);
         }
+        final travelerExists = material.characters.where((el) => el.key.startsWith('traveler')).isNotEmpty;
+        expect(travelerExists, isTrue);
       }
 
       if (day == DateTime.sunday) {

@@ -3,12 +3,12 @@ import 'dart:async';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:shiori/domain/app_constants.dart';
-import 'package:shiori/domain/assets.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/data_service.dart';
 import 'package:shiori/domain/services/genshin_service.dart';
 import 'package:shiori/domain/services/locale_service.dart';
+import 'package:shiori/domain/services/resources_service.dart';
 import 'package:shiori/domain/services/telemetry_service.dart';
 
 part 'character_bloc.freezed.dart';
@@ -20,12 +20,14 @@ class CharacterBloc extends Bloc<CharacterEvent, CharacterState> {
   final TelemetryService _telemetryService;
   final LocaleService _localeService;
   final DataService _dataService;
+  final ResourceService _resourceService;
 
   CharacterBloc(
     this._genshinService,
     this._telemetryService,
     this._localeService,
     this._dataService,
+    this._resourceService,
   ) : super(const CharacterState.loading());
 
   @override
@@ -60,7 +62,7 @@ class CharacterBloc extends Bloc<CharacterEvent, CharacterState> {
   }
 
   ItemAscensionMaterialModel _mapToItemAscensionModel(ItemAscensionMaterialFileModel m) {
-    final img = _genshinService.materials.getMaterial(m.key).fullImagePath;
+    final img = _genshinService.materials.getMaterialImg(m.key);
     return ItemAscensionMaterialModel(key: m.key, type: m.type, quantity: m.quantity, image: img);
   }
 
@@ -128,8 +130,8 @@ class CharacterBloc extends Bloc<CharacterEvent, CharacterState> {
       region: char.region,
       role: char.role,
       isFemale: char.isFemale,
-      fullImage: Assets.getCharacterFullPath(char.fullImage),
-      secondFullImage: char.secondFullImage != null ? Assets.getCharacterFullPath(char.secondFullImage!) : null,
+      fullImage: _resourceService.getCharacterFullImagePath(char.fullImage),
+      secondFullImage: char.secondFullImage != null ? _resourceService.getCharacterFullImagePath(char.secondFullImage!) : null,
       description: translation.description,
       rarity: char.rarity,
       birthday: birthday,
@@ -150,7 +152,7 @@ class CharacterBloc extends Bloc<CharacterEvent, CharacterState> {
         }).toList();
         final stats = _genshinService.characters.getCharacterSkillStats(skill.stats, e.stats);
         return CharacterSkillCardModel(
-          image: skill.fullImagePath,
+          image: _resourceService.getSkillImagePath(skill.image),
           stats: stats,
           title: e.title,
           type: skill.type,
@@ -162,7 +164,7 @@ class CharacterBloc extends Bloc<CharacterEvent, CharacterState> {
         final passive = char.passives.firstWhere((p) => p.key == e.key);
         return CharacterPassiveTalentModel(
           unlockedAt: passive.unlockedAt,
-          image: passive.fullImagePath,
+          image: _resourceService.getSkillImagePath(passive.image),
           title: e.title,
           description: e.description,
           descriptions: e.descriptions,
@@ -172,7 +174,7 @@ class CharacterBloc extends Bloc<CharacterEvent, CharacterState> {
         final constellation = char.constellations.firstWhere((c) => c.key == e.key);
         return CharacterConstellationModel(
           number: constellation.number,
-          image: constellation.fullImagePath,
+          image: _resourceService.getSkillImagePath(constellation.image),
           title: e.title,
           description: e.description,
           secondDescription: e.secondDescription,

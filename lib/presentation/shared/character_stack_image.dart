@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:shiori/presentation/shared/images/rarity.dart';
 import 'package:shiori/presentation/shared/styles.dart';
@@ -34,7 +36,7 @@ class CharacterStackImage extends StatelessWidget {
             placeholder: MemoryImage(kTransparentImage),
             height: height,
             fit: fit,
-            image: AssetImage(image),
+            image: FileImage(File(image)),
           ),
           Container(
             color: Colors.black.withOpacity(0.5),

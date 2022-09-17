@@ -1,13 +1,14 @@
 import 'package:shiori/domain/app_constants.dart';
-import 'package:shiori/domain/assets.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/file/file_infrastructure.dart';
 import 'package:shiori/domain/services/genshin_service.dart';
 import 'package:shiori/domain/services/locale_service.dart';
+import 'package:shiori/domain/services/resources_service.dart';
 import 'package:shiori/infrastructure/file/file_infrastructure.dart';
 
 class GenshinServiceImpl implements GenshinService {
+  final ResourceService _resourceService;
   final TranslationFileService _translations;
 
   late final ArtifactFileService _artifacts;
@@ -50,31 +51,31 @@ class GenshinServiceImpl implements GenshinService {
   @override
   TranslationFileService get translations => _translations;
 
-  GenshinServiceImpl(LocaleService localeService) : _translations = TranslationFileServiceImpl() {
-    _artifacts = ArtifactFileServiceImpl(_translations);
+  GenshinServiceImpl(this._resourceService, LocaleService localeService) : _translations = TranslationFileServiceImpl() {
+    _artifacts = ArtifactFileServiceImpl(_resourceService, _translations);
     _elements = ElementFileServiceImpl(_translations);
     _furniture = FurnitureFileServiceImpl();
     _gadgets = GadgetFileServiceImpl();
-    _materials = MaterialFileServiceImpl(_translations);
-    _monsters = MonsterFileServiceImpl(_translations);
-    _weapons = WeaponFileServiceImpl(_materials, _translations);
-    _characters = CharacterFileServiceImpl(localeService, _artifacts, _materials, _weapons, _translations);
-    _bannerHistory = BannerHistoryFileServiceImpl(_characters, _weapons);
+    _materials = MaterialFileServiceImpl(_resourceService, _translations);
+    _monsters = MonsterFileServiceImpl(_resourceService, _translations);
+    _weapons = WeaponFileServiceImpl(_resourceService, _materials, _translations);
+    _characters = CharacterFileServiceImpl(_resourceService, localeService, _artifacts, _materials, _weapons, _translations);
+    _bannerHistory = BannerHistoryFileServiceImpl(_resourceService, _characters, _weapons);
   }
 
   @override
   Future<void> init(AppLanguageType languageType) async {
     await Future.wait([
-      _artifacts.init(Assets.artifactsDbPath),
-      _bannerHistory.init(Assets.bannerHistoryDbPath),
-      _characters.init(Assets.charactersDbPath),
-      _elements.init(Assets.elementsDbPath),
-      _furniture.init(Assets.furnitureDbPath),
-      _gadgets.init(Assets.gadgetsDbPath),
-      _materials.init(Assets.materialsDbPath),
-      _monsters.init(Assets.monstersDbPath),
-      _weapons.init(Assets.weaponsDbPath),
-      _translations.initTranslations(languageType, Assets.getTranslationPath(languageType))
+      _artifacts.init(_resourceService.getJsonFilePath(AppJsonFileType.artifacts)),
+      _bannerHistory.init(_resourceService.getJsonFilePath(AppJsonFileType.bannerHistory)),
+      _characters.init(_resourceService.getJsonFilePath(AppJsonFileType.characters)),
+      _elements.init(_resourceService.getJsonFilePath(AppJsonFileType.elements)),
+      _furniture.init(_resourceService.getJsonFilePath(AppJsonFileType.furniture)),
+      _gadgets.init(_resourceService.getJsonFilePath(AppJsonFileType.gadgets)),
+      _materials.init(_resourceService.getJsonFilePath(AppJsonFileType.materials)),
+      _monsters.init(_resourceService.getJsonFilePath(AppJsonFileType.monsters)),
+      _weapons.init(_resourceService.getJsonFilePath(AppJsonFileType.weapons)),
+      _translations.initTranslations(languageType, _resourceService.getJsonFilePath(AppJsonFileType.translations, language: languageType))
     ]);
   }
 
@@ -146,22 +147,22 @@ class GenshinServiceImpl implements GenshinService {
       case AppNotificationType.expedition:
       case AppNotificationType.realmCurrency:
         final material = materials.getMaterial(itemKey);
-        return material.fullImagePath;
+        return _resourceService.getMaterialImagePath(material.image, material.type);
       case AppNotificationType.furniture:
         final furniture = this.furniture.getFurniture(itemKey);
-        return furniture.fullImagePath;
+        return _resourceService.getFurnitureImagePath(furniture.image);
       case AppNotificationType.gadget:
         final gadget = gadgets.getGadget(itemKey);
-        return gadget.fullImagePath;
+        return _resourceService.getGadgetImagePath(gadget.image);
       case AppNotificationType.farmingArtifacts:
         final artifact = artifacts.getArtifact(itemKey);
-        return artifact.fullImagePath;
+        return _resourceService.getArtifactImagePath(artifact.image);
       case AppNotificationType.farmingMaterials:
         final material = materials.getMaterial(itemKey);
-        return material.fullImagePath;
+        return _resourceService.getMaterialImagePath(material.image, material.type);
       case AppNotificationType.weeklyBoss:
         final monster = monsters.getMonster(itemKey);
-        return monster.fullImagePath;
+        return _resourceService.getMonsterImagePath(monster.image);
       case AppNotificationType.custom:
       case AppNotificationType.dailyCheckIn:
         return getItemImageFromNotificationItemType(itemKey, notificationItemType!);
@@ -175,19 +176,19 @@ class GenshinServiceImpl implements GenshinService {
     switch (notificationItemType) {
       case AppNotificationItemType.character:
         final character = characters.getCharacter(itemKey);
-        return character.fullImagePath;
+        return _resourceService.getCharacterImagePath(character.image);
       case AppNotificationItemType.weapon:
         final weapon = weapons.getWeapon(itemKey);
-        return weapon.fullImagePath;
+        return _resourceService.getWeaponImagePath(weapon.image, weapon.type);
       case AppNotificationItemType.artifact:
         final artifact = artifacts.getArtifact(itemKey);
-        return artifact.fullImagePath;
+        return _resourceService.getArtifactImagePath(artifact.image);
       case AppNotificationItemType.monster:
         final monster = monsters.getMonster(itemKey);
-        return monster.fullImagePath;
+        return _resourceService.getMonsterImagePath(monster.image);
       case AppNotificationItemType.material:
         final material = materials.getMaterial(itemKey);
-        return material.fullImagePath;
+        return _resourceService.getMaterialImagePath(material.image, material.type);
       default:
         throw Exception('The provided notification item type = $notificationItemType');
     }

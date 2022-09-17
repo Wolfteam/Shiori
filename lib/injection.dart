@@ -12,8 +12,10 @@ import 'package:shiori/domain/services/logging_service.dart';
 import 'package:shiori/domain/services/network_service.dart';
 import 'package:shiori/domain/services/notification_service.dart';
 import 'package:shiori/domain/services/purchase_service.dart';
+import 'package:shiori/domain/services/resources_service.dart';
 import 'package:shiori/domain/services/settings_service.dart';
 import 'package:shiori/domain/services/telemetry_service.dart';
+import 'package:shiori/infrastructure/api_service.dart';
 import 'package:shiori/infrastructure/infrastructure.dart';
 
 final GetIt getIt = GetIt.instance;
@@ -97,7 +99,8 @@ class Injection {
   static ArtifactBloc get artifactBloc {
     final genshinService = getIt<GenshinService>();
     final telemetryService = getIt<TelemetryService>();
-    return ArtifactBloc(genshinService, telemetryService);
+    final resourceService = getIt<ResourceService>();
+    return ArtifactBloc(genshinService, telemetryService, resourceService);
   }
 
   static MaterialsBloc get materialsBloc {
@@ -108,7 +111,8 @@ class Injection {
   static MaterialBloc get materialBloc {
     final genshinService = getIt<GenshinService>();
     final telemetryService = getIt<TelemetryService>();
-    return MaterialBloc(genshinService, telemetryService);
+    final resourceService = getIt<ResourceService>();
+    return MaterialBloc(genshinService, telemetryService, resourceService);
   }
 
   static CharacterBloc get characterBloc {
@@ -116,7 +120,8 @@ class Injection {
     final telemetryService = getIt<TelemetryService>();
     final localeService = getIt<LocaleService>();
     final dataService = getIt<DataService>();
-    return CharacterBloc(genshinService, telemetryService, localeService, dataService);
+    final resourceService = getIt<ResourceService>();
+    return CharacterBloc(genshinService, telemetryService, localeService, dataService, resourceService);
   }
 
   static InventoryBloc get inventoryBloc {
@@ -130,7 +135,8 @@ class Injection {
     final genshinService = getIt<GenshinService>();
     final telemetryService = getIt<TelemetryService>();
     final dataService = getIt<DataService>();
-    return WeaponBloc(genshinService, telemetryService, dataService);
+    final resourceService = getIt<ResourceService>();
+    return WeaponBloc(genshinService, telemetryService, dataService, resourceService);
   }
 
   static CustomBuildsBloc get customBuildsBloc {
@@ -215,6 +221,23 @@ class Injection {
     return CharactersPerRegionGenderBloc(genshinService);
   }
 
+  static SplashBloc get splashBloc {
+    final resourceService = getIt<ResourceService>();
+    final settingsService = getIt<SettingsService>();
+    final deviceInfoService = getIt<DeviceInfoService>();
+    final localeService = getIt<LocaleService>();
+    final telemetryService = getIt<TelemetryService>();
+    return SplashBloc(resourceService, settingsService, deviceInfoService, telemetryService, localeService);
+  }
+
+  static CheckForResourceUpdatesBloc get checkForResourceUpdatesBlocBloc {
+    final resourceService = getIt<ResourceService>();
+    final settingsService = getIt<SettingsService>();
+    final deviceInfoService = getIt<DeviceInfoService>();
+    final telemetryService = getIt<TelemetryService>();
+    return CheckForResourceUpdatesBloc(resourceService, settingsService, deviceInfoService, telemetryService);
+  }
+
   //TODO: USE THIS PROP
   // static CalculatorAscMaterialsItemBloc get calculatorAscMaterialsItemBloc {
   //   final genshinService = getIt<GenshinService>();
@@ -227,7 +250,8 @@ class Injection {
     final telemetryService = getIt<TelemetryService>();
     final calculatorService = getIt<CalculatorService>();
     final dataService = getIt<DataService>();
-    return CalculatorAscMaterialsBloc(genshinService, telemetryService, calculatorService, dataService, parentBloc);
+    final resourceService = getIt<ResourceService>();
+    return CalculatorAscMaterialsBloc(genshinService, telemetryService, calculatorService, dataService, resourceService, parentBloc);
   }
 
   static NotificationBloc getNotificationBloc(NotificationsBloc bloc) {
@@ -238,7 +262,18 @@ class Injection {
     final loggingService = getIt<LoggingService>();
     final telemetryService = getIt<TelemetryService>();
     final settingsService = getIt<SettingsService>();
-    return NotificationBloc(dataService, notificationService, genshinService, localeService, loggingService, telemetryService, settingsService, bloc);
+    final resourceService = getIt<ResourceService>();
+    return NotificationBloc(
+      dataService,
+      notificationService,
+      genshinService,
+      localeService,
+      loggingService,
+      telemetryService,
+      settingsService,
+      resourceService,
+      bloc,
+    );
   }
 
   static CalculatorAscMaterialsOrderBloc getCalculatorAscMaterialsOrderBloc(CalculatorAscMaterialsBloc bloc) {
@@ -256,7 +291,8 @@ class Injection {
     final dataService = getIt<DataService>();
     final telemetryService = getIt<TelemetryService>();
     final loggingService = getIt<LoggingService>();
-    return CustomBuildBloc(genshinService, dataService, telemetryService, loggingService, bloc);
+    final resourceService = getIt<ResourceService>();
+    return CustomBuildBloc(genshinService, dataService, telemetryService, loggingService, resourceService, bloc);
   }
 
   static Future<void> init() async {
@@ -282,11 +318,15 @@ class Injection {
     final apiService = ApiServiceImpl(loggingService);
     getIt.registerSingleton<ApiService>(apiService);
 
-    getIt.registerSingleton<LocaleService>(LocaleServiceImpl(getIt<SettingsService>()));
-    getIt.registerSingleton<GenshinService>(GenshinServiceImpl(getIt<LocaleService>()));
-    getIt.registerSingleton<CalculatorService>(CalculatorServiceImpl(getIt<GenshinService>()));
+    final resourcesService = ResourceServiceImpl(loggingService, settingsService, networkService, apiService);
+    await resourcesService.init();
+    getIt.registerSingleton<ResourceService>(resourcesService);
 
-    final dataService = DataServiceImpl(getIt<GenshinService>(), getIt<CalculatorService>());
+    getIt.registerSingleton<LocaleService>(LocaleServiceImpl(getIt<SettingsService>()));
+    getIt.registerSingleton<GenshinService>(GenshinServiceImpl(getIt<ResourceService>(), getIt<LocaleService>()));
+    getIt.registerSingleton<CalculatorService>(CalculatorServiceImpl(getIt<GenshinService>(), getIt<ResourceService>()));
+
+    final dataService = DataServiceImpl(getIt<GenshinService>(), getIt<CalculatorService>(), getIt<ResourceService>());
     await dataService.init();
     getIt.registerSingleton<DataService>(dataService);
 

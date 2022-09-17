@@ -1,18 +1,19 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shiori/application/bloc.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/generated/l10n.dart';
+import 'package:shiori/presentation/calculator_asc_materials/widgets/add_edit_item_bottom_sheet.dart';
+import 'package:shiori/presentation/calculator_asc_materials/widgets/material_item.dart';
 import 'package:shiori/presentation/shared/child_item_disabled.dart';
 import 'package:shiori/presentation/shared/extensions/element_type_extensions.dart';
 import 'package:shiori/presentation/shared/extensions/rarity_extensions.dart';
 import 'package:shiori/presentation/shared/styles.dart';
 import 'package:shiori/presentation/shared/utils/modal_bottom_sheet_utils.dart';
 import 'package:transparent_image/transparent_image.dart';
-
-import 'add_edit_item_bottom_sheet.dart';
-import 'material_item.dart';
 
 class ItemCard extends StatelessWidget {
   final int sessionKey;
@@ -75,7 +76,7 @@ class ItemCard extends StatelessWidget {
                   clipBehavior: Clip.hardEdge,
                   child: FadeInImage(
                     placeholder: MemoryImage(kTransparentImage),
-                    image: AssetImage(image),
+                    image: FileImage(File(image)),
                   ),
                 ),
               ),

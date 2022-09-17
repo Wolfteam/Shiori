@@ -12,20 +12,18 @@ import 'package:shiori/presentation/home/widgets/elements_card.dart';
 import 'package:shiori/presentation/home/widgets/game_codes_card.dart';
 import 'package:shiori/presentation/home/widgets/materials_card.dart';
 import 'package:shiori/presentation/home/widgets/monsters_card.dart';
+import 'package:shiori/presentation/home/widgets/my_inventory_card.dart';
 import 'package:shiori/presentation/home/widgets/notifications_card.dart';
 import 'package:shiori/presentation/home/widgets/settings_card.dart';
+import 'package:shiori/presentation/home/widgets/sliver_characters_birthday_card.dart';
+import 'package:shiori/presentation/home/widgets/sliver_main_title.dart';
+import 'package:shiori/presentation/home/widgets/sliver_today_char_ascension_materials.dart';
+import 'package:shiori/presentation/home/widgets/sliver_today_main_title.dart';
+import 'package:shiori/presentation/home/widgets/sliver_today_weapon_materials.dart';
 import 'package:shiori/presentation/home/widgets/tierlist_card.dart';
 import 'package:shiori/presentation/home/widgets/wish_simulator_card.dart';
 import 'package:shiori/presentation/shared/styles.dart';
 import 'package:shiori/presentation/today_materials/today_materials_page.dart';
-
-import 'widgets/my_inventory_card.dart';
-import 'widgets/sliver_characters_birthday_card.dart';
-import 'widgets/sliver_main_title.dart';
-import 'widgets/sliver_today_char_ascension_materials.dart';
-import 'widgets/sliver_today_main_title.dart';
-import 'widgets/sliver_today_weapon_materials.dart';
-import 'widgets/tierlist_card.dart';
 
 class HomePage extends StatefulWidget {
   @override

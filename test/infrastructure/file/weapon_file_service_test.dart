@@ -27,7 +27,7 @@ void main() {
     for (final weapon in weapons) {
       final detail = service.getWeapon(weapon.key);
       checkKey(detail.key);
-      checkAsset(detail.fullImagePath);
+      checkAsset(service.resources.getWeaponImagePath(detail.image, detail.type));
       expect(detail.type, equals(weapon.type));
       expect(detail.atk, equals(weapon.baseAtk));
       expect(detail.rarity, equals(weapon.rarity));
@@ -43,9 +43,18 @@ void main() {
         expect(detail.craftingMaterials, isEmpty);
       }
 
-      for (final ascMaterial in detail.ascensionMaterials) {
+      for (int i = 0; i < detail.ascensionMaterials.length; i++) {
+        final ascMaterial = detail.ascensionMaterials[i];
         expect(ascMaterial.level, inInclusiveRange(20, 80));
         checkItemAscensionMaterialFileModel(service.materials, ascMaterial.materials);
+        final expectedLength = i == 0 && detail.rarity == 1 ? 3 : 4;
+        expect(ascMaterial.materials.length, expectedLength);
+        expect(ascMaterial.materials.where((el) => el.type == MaterialType.weaponPrimary).length, 1);
+        expect(ascMaterial.materials.where((el) => el.type == MaterialType.weapon).length, 1);
+        expect(ascMaterial.materials.where((el) => el.type == MaterialType.common).length, 1);
+        if (expectedLength > 3) {
+          expect(ascMaterial.materials.where((el) => el.type == MaterialType.currency).length, 1);
+        }
       }
 
       final ascensionNumber = detail.stats.where((el) => el.isAnAscension).length;

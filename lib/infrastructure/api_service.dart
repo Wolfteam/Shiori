@@ -1,4 +1,9 @@
+import 'dart:convert';
+import 'dart:io';
+
+import 'package:dio/adapter.dart';
 import 'package:dio/dio.dart';
+import 'package:shiori/domain/models/dtos.dart';
 import 'package:shiori/domain/services/api_service.dart';
 import 'package:shiori/domain/services/logging_service.dart';
 import 'package:shiori/infrastructure/secrets.dart';
@@ -8,13 +13,23 @@ class ApiServiceImpl implements ApiService {
 
   final _dio = Dio();
 
-  ApiServiceImpl(this._loggingService);
+  ApiServiceImpl(this._loggingService) {
+    final adapter = _dio.httpClientAdapter as DefaultHttpClientAdapter;
+    final sc = SecurityContext.defaultContext;
+    final publicCert = utf8.encode(Secrets.publicKey);
+    final privateKey = utf8.encode(Secrets.privateKey);
+    sc.useCertificateChainBytes(publicCert);
+    sc.usePrivateKeyBytes(privateKey);
+    adapter.onHttpClientCreate = (client) {
+      return HttpClient(context: sc);
+    };
+  }
 
   @override
   Future<String> getChangelog(String defaultValue) async {
     try {
       final url = '${Secrets.assetsBaseUrl}/changelog.md';
-      final response = await _dio.getUri<String>(Uri.parse(url));
+      final response = await _dio.getUri<String>(Uri.parse(url), options: Options(headers: Secrets.getCommonApiHeaders()));
       if (response.statusCode != 200) {
         _loggingService.warning(
           runtimeType,
@@ -27,6 +42,52 @@ class ApiServiceImpl implements ApiService {
     } catch (e, s) {
       _loggingService.error(runtimeType, 'getChangelog: Unknown error occurred', e, s);
       return defaultValue;
+    }
+  }
+
+  @override
+  Future<ApiResponseDto<ResourceDiffResponseDto?>> checkForUpdates(String currentAppVersion, int currentResourcesVersion) async {
+    try {
+      String url = '${Secrets.apiBaseUrl}/api/resources/diff?AppVersion=$currentAppVersion';
+      if (currentResourcesVersion > 0) {
+        url += '&CurrentVersion=$currentResourcesVersion';
+      }
+
+      final response = await _dio.getUri<String>(Uri.parse(url), options: Options(headers: Secrets.getApiHeaders()));
+      final json = jsonDecode(response.data!) as Map<String, dynamic>;
+      final apiResponse = ApiResponseDto.fromJson(
+        json,
+        (data) => data == null ? null : ResourceDiffResponseDto.fromJson(data as Map<String, dynamic>),
+      );
+      return apiResponse;
+    } catch (e, s) {
+      _loggingService.error(runtimeType, 'checkForUpdates: Unknown error', e, s);
+      rethrow;
+    }
+  }
+
+  @override
+  Future<bool> downloadAsset(String keyName, String destPath, ProgressChanged? onProgress) async {
+    try {
+      // _loggingService.debug(runtimeType, '_downloadFile: Downloading file = $keyName...');
+      final url = '${Secrets.assetsBaseUrl}/$keyName';
+
+      await _dio.downloadUri(
+        Uri.parse(url),
+        destPath,
+        options: Options(headers: Secrets.getCommonApiHeaders()),
+        onReceiveProgress: (received, total) {
+          if (total != -1) {
+            final progress = received / total * 100;
+            onProgress?.call(progress);
+          }
+        },
+      );
+      // _loggingService.debug(runtimeType, '_downloadFile: File = $keyName was successfully downloaded');
+      return true;
+    } catch (e, s) {
+      _loggingService.error(runtimeType, 'downloadAsset: Unknown error', e, s);
+      return false;
     }
   }
 }

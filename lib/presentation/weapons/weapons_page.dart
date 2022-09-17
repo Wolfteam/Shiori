@@ -11,9 +11,8 @@ import 'package:shiori/presentation/shared/sliver_scaffold_with_fab.dart';
 import 'package:shiori/presentation/shared/utils/modal_bottom_sheet_utils.dart';
 import 'package:shiori/presentation/shared/utils/size_utils.dart';
 import 'package:shiori/presentation/weapons/widgets/weapon_bottom_sheet.dart';
+import 'package:shiori/presentation/weapons/widgets/weapon_card.dart';
 import 'package:waterfall_flow/waterfall_flow.dart';
-
-import 'widgets/weapon_card.dart';
 
 class WeaponsPage extends StatefulWidget {
   final bool isInSelectionMode;

@@ -9,6 +9,7 @@ import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/data_service.dart';
 import 'package:shiori/domain/services/genshin_service.dart';
 import 'package:shiori/domain/services/logging_service.dart';
+import 'package:shiori/domain/services/resources_service.dart';
 import 'package:shiori/domain/services/telemetry_service.dart';
 
 part 'custom_build_bloc.freezed.dart';
@@ -21,6 +22,7 @@ class CustomBuildBloc extends Bloc<CustomBuildEvent, CustomBuildState> {
   final TelemetryService _telemetryService;
   final CustomBuildsBloc _customBuildsBloc;
   final LoggingService _loggingService;
+  final ResourceService _resourceService;
 
   static int maxTitleLength = 40;
   static int maxNoteLength = 300;
@@ -39,6 +41,7 @@ class CustomBuildBloc extends Bloc<CustomBuildEvent, CustomBuildState> {
     this._dataService,
     this._telemetryService,
     this._loggingService,
+    this._resourceService,
     this._customBuildsBloc,
   ) : super(const CustomBuildState.loading());
 
@@ -278,7 +281,7 @@ class CustomBuildBloc extends Bloc<CustomBuildEvent, CustomBuildState> {
       index: state.weapons.length,
       refinement: getWeaponMaxRefinementLevel(weapon.rarity) <= 0 ? 0 : 1,
       name: translation.name,
-      image: weapon.fullImagePath,
+      image: _resourceService.getWeaponImagePath(weapon.image, weapon.type),
       rarity: weapon.rarity,
       subStatType: weapon.secondaryStat,
       stat: stat,
@@ -362,7 +365,12 @@ class CustomBuildBloc extends Bloc<CustomBuildEvent, CustomBuildState> {
 
     final fullArtifact = _genshinService.artifacts.getArtifact(e.key);
     final translation = _genshinService.translations.getArtifactTranslation(e.key);
-    final img = _genshinService.artifacts.getArtifactRelatedPart(fullArtifact.fullImagePath, fullArtifact.image, translation.bonus.length, e.type);
+    final img = _genshinService.artifacts.getArtifactRelatedPart(
+      _resourceService.getArtifactImagePath(fullArtifact.image),
+      fullArtifact.image,
+      translation.bonus.length,
+      e.type,
+    );
 
     final updatedArtifacts = [...state.artifacts];
     final old = state.artifacts.firstWhereOrNull((el) => el.type == e.type);

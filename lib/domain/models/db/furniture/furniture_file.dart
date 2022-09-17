@@ -1,6 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-
-import 'furniture_file_model.dart';
+import 'package:shiori/domain/models/models.dart';
 
 part 'furniture_file.freezed.dart';
 part 'furniture_file.g.dart';

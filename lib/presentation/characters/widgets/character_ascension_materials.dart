@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:shiori/generated/l10n.dart';
 import 'package:transparent_image/transparent_image.dart';
@@ -39,14 +41,14 @@ class _MaterialItem extends StatelessWidget {
   Widget build(BuildContext context) {
     const double size = 23;
     if (image.isEmpty) {
-      return const Icon(Icons.question_mark_outlined, size: size);
+      return const Icon(Icons.question_mark_outlined, size: size, color: Colors.white);
     }
 
     return FadeInImage(
       height: size,
       width: size,
       placeholder: MemoryImage(kTransparentImage),
-      image: AssetImage(image),
+      image: FileImage(File(image)),
     );
   }
 }

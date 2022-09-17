@@ -2,7 +2,9 @@ part of 'main_bloc.dart';
 
 @freezed
 class MainEvent with _$MainEvent {
-  const factory MainEvent.init() = _Init;
+  const factory MainEvent.init({
+    required AppResourceUpdateResultType? updateResultType,
+  }) = _Init;
 
   const factory MainEvent.themeChanged({
     required AppThemeType newValue,
@@ -19,6 +21,8 @@ class MainEvent with _$MainEvent {
   const factory MainEvent.languageChanged({
     required AppLanguageType newValue,
   }) = _LanguageChanged;
+
+  const factory MainEvent.restart() = _Restart;
 
   const MainEvent._();
 }

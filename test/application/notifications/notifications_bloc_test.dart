@@ -40,8 +40,9 @@ void main() {
     _notificationService = MockNotificationService();
     when(_notificationService.cancelNotification(any, any)).thenAnswer((_) => Future.value());
     when(_notificationService.scheduleNotification(any, any, any, any, any)).thenAnswer((_) => Future.value());
-    final genshinService = GenshinServiceImpl(LocaleServiceImpl(_settingsService));
-    _dataService = DataServiceImpl(genshinService, CalculatorServiceImpl(genshinService));
+    final resourceService = getResourceService(_settingsService);
+    final genshinService = GenshinServiceImpl(resourceService, LocaleServiceImpl(_settingsService));
+    _dataService = DataServiceImpl(genshinService, CalculatorServiceImpl(genshinService, resourceService), resourceService);
 
     return Future(() async {
       await genshinService.init(_settingsService.language);

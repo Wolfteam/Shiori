@@ -7,6 +7,7 @@ import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/data_service.dart';
 import 'package:shiori/domain/services/genshin_service.dart';
+import 'package:shiori/domain/services/resources_service.dart';
 import 'package:shiori/domain/services/telemetry_service.dart';
 
 part 'weapon_bloc.freezed.dart';
@@ -17,8 +18,9 @@ class WeaponBloc extends Bloc<WeaponEvent, WeaponState> {
   final GenshinService _genshinService;
   final TelemetryService _telemetryService;
   final DataService _dataService;
+  final ResourceService _resourceService;
 
-  WeaponBloc(this._genshinService, this._telemetryService, this._dataService) : super(const WeaponState.loading());
+  WeaponBloc(this._genshinService, this._telemetryService, this._dataService, this._resourceService) : super(const WeaponState.loading());
 
   @override
   Stream<WeaponState> mapEventToState(WeaponEvent event) async* {
@@ -55,7 +57,8 @@ class WeaponBloc extends Bloc<WeaponEvent, WeaponState> {
     final ascensionMaterials = weapon.ascensionMaterials.map((e) {
       final materials = e.materials.map((e) {
         final material = _genshinService.materials.getMaterial(e.key);
-        return ItemAscensionMaterialModel(key: material.key, type: material.type, quantity: e.quantity, image: material.fullImagePath);
+        final imagePath = _resourceService.getMaterialImagePath(material.image, material.type);
+        return ItemAscensionMaterialModel(key: material.key, type: material.type, quantity: e.quantity, image: imagePath);
       }).toList();
       return WeaponAscensionModel(level: e.level, materials: materials);
     }).toList();
@@ -64,13 +67,14 @@ class WeaponBloc extends Bloc<WeaponEvent, WeaponState> {
 
     final craftingMaterials = weapon.craftingMaterials.map((e) {
       final material = _genshinService.materials.getMaterial(e.key);
-      return ItemAscensionMaterialModel(key: e.key, type: material.type, quantity: e.quantity, image: material.fullImagePath);
+      final imagePath = _resourceService.getMaterialImagePath(material.image, material.type);
+      return ItemAscensionMaterialModel(key: e.key, type: material.type, quantity: e.quantity, image: imagePath);
     }).toList();
     return WeaponState.loaded(
       key: weapon.key,
       name: translation.name,
       weaponType: weapon.type,
-      fullImage: weapon.fullImagePath,
+      fullImage: _resourceService.getWeaponImagePath(weapon.image, weapon.type),
       rarity: weapon.rarity,
       atk: weapon.atk,
       secondaryStat: weapon.secondaryStat,

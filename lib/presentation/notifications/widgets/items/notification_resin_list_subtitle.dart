@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shiori/domain/app_constants.dart';
-
-import 'notification_list_subtitle.dart';
+import 'package:shiori/presentation/notifications/widgets/items/notification_list_subtitle.dart';
 
 class NotificationResinSubtitle extends StatelessWidget {
   final int initialResin;

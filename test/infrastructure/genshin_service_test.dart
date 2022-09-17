@@ -1,19 +1,28 @@
 import 'package:collection/collection.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:mockito/mockito.dart';
 import 'package:shiori/domain/app_constants.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/services/genshin_service.dart';
+import 'package:shiori/domain/services/resources_service.dart';
 import 'package:shiori/infrastructure/infrastructure.dart';
 
 import '../common.dart';
+import '../mocks.mocks.dart';
 
 //TODO: ADD TEST FOR FAIL CASES (E.G WEAPON NOT FOUND, IMAGE NOT FOUND ETC)
 
 void main() {
+  ResourceService _getResourceService(AppLanguageType language) {
+    final settings = MockSettingsService();
+    when(settings.language).thenReturn(language);
+    return getResourceService(settings);
+  }
+
   GenshinService _getService() {
-    TestWidgetsFlutterBinding.ensureInitialized();
     final localeService = getLocaleService(AppLanguageType.english);
-    final service = GenshinServiceImpl(localeService);
+    final resourceService = _getResourceService(AppLanguageType.english);
+    final service = GenshinServiceImpl(resourceService, localeService);
     return service;
   }
 

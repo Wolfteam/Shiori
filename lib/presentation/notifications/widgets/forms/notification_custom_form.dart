@@ -5,16 +5,15 @@ import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/utils/date_utils.dart' as utils;
 import 'package:shiori/generated/l10n.dart';
+import 'package:shiori/presentation/notifications/widgets/forms/notification_circle_item.dart';
+import 'package:shiori/presentation/notifications/widgets/forms/notification_dropdown_type.dart';
 import 'package:shiori/presentation/notifications/widgets/forms/notification_note.dart';
+import 'package:shiori/presentation/notifications/widgets/forms/notification_switch.dart';
+import 'package:shiori/presentation/notifications/widgets/forms/notification_title_body.dart';
 import 'package:shiori/presentation/shared/dropdown_button_with_title.dart';
 import 'package:shiori/presentation/shared/extensions/i18n_extensions.dart';
 import 'package:shiori/presentation/shared/utils/enum_utils.dart';
 import 'package:shiori/presentation/shared/utils/toast_utils.dart';
-
-import 'notification_circle_item.dart';
-import 'notification_dropdown_type.dart';
-import 'notification_switch.dart';
-import 'notification_title_body.dart';
 
 class NotificationCustomForm extends StatelessWidget {
   final AppNotificationItemType itemType;

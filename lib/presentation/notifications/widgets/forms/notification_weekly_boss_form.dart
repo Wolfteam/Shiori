@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/models/models.dart';
-
-import 'notification_circle_item.dart';
-import 'notification_dropdown_type.dart';
-import 'notification_note.dart';
-import 'notification_switch.dart';
-import 'notification_title_body.dart';
+import 'package:shiori/presentation/notifications/widgets/forms/notification_circle_item.dart';
+import 'package:shiori/presentation/notifications/widgets/forms/notification_dropdown_type.dart';
+import 'package:shiori/presentation/notifications/widgets/forms/notification_note.dart';
+import 'package:shiori/presentation/notifications/widgets/forms/notification_switch.dart';
+import 'package:shiori/presentation/notifications/widgets/forms/notification_title_body.dart';
 
 const _type = AppNotificationType.weeklyBoss;
 

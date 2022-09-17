@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import 'package:shiori/presentation/character/widgets/character_detail.dart';
+import 'package:shiori/presentation/shared/details/constants.dart';
 import 'package:shiori/presentation/shared/styles.dart';
-
-import 'constants.dart';
 
 class DetailBottomPortraitLayout extends StatelessWidget {
   final List<Widget> children;

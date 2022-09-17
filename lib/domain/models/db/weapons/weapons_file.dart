@@ -1,7 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-
-import '../../models.dart';
-import 'weapon_file_model.dart';
+import 'package:shiori/domain/models/models.dart';
 
 part 'weapons_file.freezed.dart';
 part 'weapons_file.g.dart';

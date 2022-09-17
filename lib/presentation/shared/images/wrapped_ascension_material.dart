@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import '../material_item_button.dart';
+import 'package:shiori/presentation/shared/material_item_button.dart';
 
 class WrappedAscensionMaterial extends StatelessWidget {
   final String itemKey;

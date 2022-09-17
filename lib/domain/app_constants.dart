@@ -1,16 +1,23 @@
 import 'package:darq/darq.dart';
 import 'package:shiori/domain/enums/enums.dart';
-
-import 'models/models.dart';
+import 'package:shiori/domain/models/models.dart';
 
 const na = 'N/A';
 const githubPage = 'https://github.com/Wolfteam/Shiori';
+const imageFileExtension = '.webp';
 
 //This order matches the one in the game, and the numbers represent each image
 const artifactOrder = [4, 2, 5, 1, 3];
 
 int getArtifactOrder(ArtifactType type) {
   return artifactOrder[type.index];
+}
+
+//This method is used to make sure we return the artifacts in the right order
+String getArtifactPathByOrder(int index, String currentPath) {
+  final order = artifactOrder[index];
+  final replaceDigitRegex = RegExp(r'_\d{1}');
+  return currentPath.replaceFirst(replaceDigitRegex, '_$order');
 }
 
 List<StatType> getArtifactPossibleMainStats(ArtifactType type) {

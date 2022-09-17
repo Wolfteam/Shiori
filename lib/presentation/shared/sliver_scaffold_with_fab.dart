@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-
-import 'extensions/focus_scope_node_extensions.dart';
-import 'mixins/app_fab_mixin.dart';
+import 'package:shiori/presentation/shared/extensions/focus_scope_node_extensions.dart';
+import 'package:shiori/presentation/shared/mixins/app_fab_mixin.dart';
 
 class SliverScaffoldWithFab extends StatefulWidget {
   final List<Widget> slivers;

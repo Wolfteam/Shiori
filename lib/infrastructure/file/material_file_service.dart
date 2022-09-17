@@ -1,18 +1,22 @@
-import 'package:shiori/domain/assets.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/file/material_file_service.dart';
 import 'package:shiori/domain/services/file/translation_file_service.dart';
+import 'package:shiori/domain/services/resources_service.dart';
 
 class MaterialFileServiceImpl extends MaterialFileService {
+  final ResourceService _resourceService;
   final TranslationFileService _translations;
 
   late MaterialsFile _materialsFile;
 
   @override
+  ResourceService get resources => _resourceService;
+
+  @override
   TranslationFileService get translations => _translations;
 
-  MaterialFileServiceImpl(this._translations);
+  MaterialFileServiceImpl(this._resourceService, this._translations);
 
   @override
   Future<void> init(String assetPath) async {
@@ -32,7 +36,7 @@ class MaterialFileServiceImpl extends MaterialFileService {
 
   @override
   MaterialFileModel getMaterialByImage(String image) {
-    return _materialsFile.materials.firstWhere((m) => Assets.getMaterialPath(m.image, m.type) == image);
+    return _materialsFile.materials.firstWhere((m) => _resourceService.getMaterialImagePath(m.image, m.type) == image);
   }
 
   @override
@@ -50,7 +54,8 @@ class MaterialFileServiceImpl extends MaterialFileService {
 
   @override
   String getMaterialImg(String key) {
-    return _materialsFile.materials.firstWhere((m) => m.key == key).fullImagePath;
+    final material = _materialsFile.materials.firstWhere((m) => m.key == key);
+    return _resourceService.getMaterialImagePath(material.image, material.type);
   }
 
   @override
@@ -121,7 +126,7 @@ class MaterialFileServiceImpl extends MaterialFileService {
     final translation = _translations.getMaterialTranslation(material.key);
     return MaterialCardModel.item(
       key: material.key,
-      image: material.fullImagePath,
+      image: _resourceService.getMaterialImagePath(material.image, material.type),
       rarity: material.rarity,
       position: material.position,
       type: material.type,

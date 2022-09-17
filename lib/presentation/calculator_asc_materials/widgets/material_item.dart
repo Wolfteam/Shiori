@@ -1,11 +1,12 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shiori/application/bloc.dart';
 import 'package:shiori/domain/enums/enums.dart' as app;
 import 'package:shiori/domain/utils/currency_utils.dart';
+import 'package:shiori/presentation/calculator_asc_materials/widgets/change_material_quantity_dialog.dart';
 import 'package:shiori/presentation/material/material_page.dart' as mp;
-
-import 'change_material_quantity_dialog.dart';
 
 class MaterialItem extends StatelessWidget {
   final app.MaterialType type;
@@ -35,7 +36,7 @@ class MaterialItem extends StatelessWidget {
           onLongPress: () => _showQuantityPickerDialog(context),
           borderRadius: BorderRadius.circular(30),
           child: IconButton(
-            icon: Image.asset(image),
+            icon: Image.file(File(image)),
             iconSize: 45,
             splashRadius: 30,
             constraints: const BoxConstraints(),

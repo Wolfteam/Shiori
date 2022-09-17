@@ -158,7 +158,6 @@ class _BottomTitle extends StatelessWidget {
         ),
       ),
     );
-    ;
   }
 }
 

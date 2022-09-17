@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import 'nothing_found_column.dart';
+import 'package:shiori/presentation/shared/nothing_found_column.dart';
 
 class SliverNothingFound extends StatelessWidget {
   final String? msg;

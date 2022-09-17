@@ -36,6 +36,7 @@ void main() {
     doubleBackToClose: true,
     useOfficialMap: false,
     useTwentyFourHoursFormat: true,
+    resourceVersion: 1,
   );
 
   SettingsBloc _getBloc({AppSettings? appSettings}) {
@@ -97,6 +98,7 @@ void main() {
         useOfficialMap: _defaultSettings.useOfficialMap,
         useTwentyFourHoursFormat: _defaultSettings.useTwentyFourHoursFormat,
         unlockedFeatures: AppUnlockedFeature.values,
+        resourceVersion: _defaultSettings.resourceVersion,
       ),
     ],
   );
@@ -131,6 +133,7 @@ void main() {
         useOfficialMap: !_defaultSettings.useOfficialMap,
         useTwentyFourHoursFormat: !_defaultSettings.useTwentyFourHoursFormat,
         unlockedFeatures: AppUnlockedFeature.values,
+        resourceVersion: _defaultSettings.resourceVersion,
       ),
     ],
   );
