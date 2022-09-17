@@ -221,7 +221,7 @@ class SettingsServiceImpl extends SettingsService {
       _logger.info(runtimeType, '_getDefaultLangToUse: Trying to retrieve device lang...');
       final deviceLocale = await Devicelocale.currentAsLocale;
       if (deviceLocale == null) {
-        _logger.warning(
+        _logger.info(
           runtimeType,
           "_getDefaultLangToUse: Couldn't retrieve the device locale, falling back to english",
         );
@@ -242,8 +242,7 @@ class SettingsServiceImpl extends SettingsService {
         '_getDefaultLangToUse: Found an appropriate language to use for = ${deviceLocale.languageCode}_${deviceLocale.countryCode}, that is = ${appLang.key}',
       );
       return appLang.key;
-    } catch (e, s) {
-      _logger.error(runtimeType, '_getDefaultLangToUse: Unknown error occurred', e, s);
+    } catch (e) {
       return AppLanguageType.english;
     }
   }

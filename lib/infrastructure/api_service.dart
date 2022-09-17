@@ -1,5 +1,7 @@
 import 'dart:convert';
+import 'dart:io';
 
+import 'package:dio/adapter.dart';
 import 'package:dio/dio.dart';
 import 'package:shiori/domain/models/dtos.dart';
 import 'package:shiori/domain/services/api_service.dart';
@@ -11,7 +13,17 @@ class ApiServiceImpl implements ApiService {
 
   final _dio = Dio();
 
-  ApiServiceImpl(this._loggingService);
+  ApiServiceImpl(this._loggingService) {
+    final adapter = _dio.httpClientAdapter as DefaultHttpClientAdapter;
+    final sc = SecurityContext.defaultContext;
+    final publicCert = utf8.encode(Secrets.publicKey);
+    final privateKey = utf8.encode(Secrets.privateKey);
+    sc.useCertificateChainBytes(publicCert);
+    sc.usePrivateKeyBytes(privateKey);
+    adapter.onHttpClientCreate = (client) {
+      return HttpClient(context: sc);
+    };
+  }
 
   @override
   Future<String> getChangelog(String defaultValue) async {
