@@ -16,8 +16,10 @@ class ApiServiceImpl implements ApiService {
   ApiServiceImpl(this._loggingService) {
     final adapter = _dio.httpClientAdapter as DefaultHttpClientAdapter;
     final sc = SecurityContext.defaultContext;
-    sc.useCertificateChainBytes(Env.publicKey);
-    sc.usePrivateKeyBytes(Env.privateKey);
+    final publicKeyBytes = utf8.encode(utf8.decode(base64.decode(Env.publicKey)));
+    final privateKeyBytes = utf8.encode(utf8.decode(base64.decode(Env.privateKey)));
+    sc.useCertificateChainBytes(publicKeyBytes);
+    sc.usePrivateKeyBytes(privateKeyBytes);
     adapter.onHttpClientCreate = (client) {
       return HttpClient(context: sc);
     };
