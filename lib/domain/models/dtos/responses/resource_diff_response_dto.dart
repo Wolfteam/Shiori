@@ -8,8 +8,6 @@ class ResourceDiffResponseDto {
 
   final int targetResourceVersion;
 
-  final String? zipFileKeyName;
-
   final String? jsonFileKeyName;
 
   final List<String> keyNames;
@@ -17,7 +15,6 @@ class ResourceDiffResponseDto {
   ResourceDiffResponseDto({
     required this.currentResourceVersion,
     required this.targetResourceVersion,
-    this.zipFileKeyName,
     this.jsonFileKeyName,
     required this.keyNames,
   });

@@ -8,7 +8,6 @@ class CheckForUpdatesResult with _$CheckForUpdatesResult {
   const factory CheckForUpdatesResult({
     required AppResourceUpdateResultType type,
     required int resourceVersion,
-    String? zipFileKeyName,
     String? jsonFileKeyName,
     @Default(<String>[]) List<String> keyNames,
   }) = _CheckForUpdatesResult;

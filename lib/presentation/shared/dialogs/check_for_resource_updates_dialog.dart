@@ -84,6 +84,7 @@ class CheckForResourceUpdatesDialog extends StatelessWidget {
       case AppResourceUpdateResultType.noInternetConnectionForFirstInstall:
       case AppResourceUpdateResultType.retrying:
       case AppResourceUpdateResultType.updated:
+      case AppResourceUpdateResultType.updating:
         return s.na;
     }
   }

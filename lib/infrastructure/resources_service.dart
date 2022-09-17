@@ -2,7 +2,6 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:flutter/foundation.dart';
-import 'package:flutter_archive/flutter_archive.dart';
 import 'package:path/path.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:shiori/domain/assets.dart';
@@ -24,21 +23,10 @@ class ResourceServiceImpl implements ResourceService {
   final NetworkService _networkService;
   final ApiService _apiService;
 
-  final bool _usesZipFile;
-  final bool _usesJsonFile;
-
   late final String _tempPath;
   late final String _assetsPath;
 
-  ResourceServiceImpl(
-    this._loggingService,
-    this._settingsService,
-    this._networkService,
-    this._apiService, {
-    @visibleForTesting bool? usesZipFile,
-    @visibleForTesting bool? usesJsonFile,
-  })  : _usesZipFile = usesZipFile ?? Platform.isAndroid || Platform.isIOS || Platform.isMacOS,
-        _usesJsonFile = usesJsonFile ?? Platform.isWindows || Platform.isLinux;
+  ResourceServiceImpl(this._loggingService, this._settingsService, this._networkService, this._apiService);
 
   Future<void> init() async {
     final temp = await getTemporaryDirectory();
@@ -225,10 +213,6 @@ class ResourceServiceImpl implements ResourceService {
       throw Exception('Invalid app version');
     }
 
-    if (!_usesZipFile && !_usesJsonFile) {
-      throw Exception('Unsupported platform');
-    }
-
     if (!_canCheckForUpdates()) {
       return CheckForUpdatesResult(type: AppResourceUpdateResultType.noUpdatesAvailable, resourceVersion: currentResourcesVersion);
     }
@@ -268,12 +252,10 @@ class ResourceServiceImpl implements ResourceService {
         return CheckForUpdatesResult(type: AppResourceUpdateResultType.noUpdatesAvailable, resourceVersion: currentResourcesVersion);
       }
 
-      final mainFilesMustBeDownloaded =
-          apiResponse.result!.jsonFileKeyName.isNotNullEmptyOrWhitespace || apiResponse.result!.zipFileKeyName.isNotNullEmptyOrWhitespace;
-
+      final mainFileMustBeDownloaded = apiResponse.result!.jsonFileKeyName.isNotNullEmptyOrWhitespace;
       final partialFilesMustBeDownloaded = apiResponse.result!.keyNames.isNotEmpty;
 
-      if (!mainFilesMustBeDownloaded && !partialFilesMustBeDownloaded) {
+      if (!mainFileMustBeDownloaded && !partialFilesMustBeDownloaded) {
         _loggingService.warning(runtimeType, 'checkForUpdates: We got a case were we do not have nothing to process. Error = ${apiResponse.message}');
         return CheckForUpdatesResult(type: AppResourceUpdateResultType.noUpdatesAvailable, resourceVersion: currentResourcesVersion);
       }
@@ -281,7 +263,6 @@ class ResourceServiceImpl implements ResourceService {
       return CheckForUpdatesResult(
         type: AppResourceUpdateResultType.updatesAvailable,
         resourceVersion: targetResourceVersion,
-        zipFileKeyName: apiResponse.result!.zipFileKeyName,
         jsonFileKeyName: apiResponse.result!.jsonFileKeyName,
         keyNames: apiResponse.result!.keyNames,
       );
@@ -289,7 +270,7 @@ class ResourceServiceImpl implements ResourceService {
       _loggingService.error(runtimeType, 'checkForUpdates: Unknown error', e, s);
       return CheckForUpdatesResult(type: AppResourceUpdateResultType.unknownError, resourceVersion: currentResourcesVersion);
     } finally {
-      if (canUpdateResourceCheckedDate) {
+      if (canUpdateResourceCheckedDate && !isFirstResourceCheck) {
         _settingsService.lastResourcesCheckedDate = DateTime.now();
       }
     }
@@ -298,7 +279,6 @@ class ResourceServiceImpl implements ResourceService {
   @override
   Future<bool> downloadAndApplyUpdates(
     int targetResourceVersion,
-    String? zipFileKeyName,
     String? jsonFileKeyName, {
     List<String> keyNames = const <String>[],
     ProgressChanged? onProgress,
@@ -307,21 +287,12 @@ class ResourceServiceImpl implements ResourceService {
       throw Exception('The provided targetResourceVersion = $targetResourceVersion is not valid');
     }
 
-    if (!_usesZipFile && !_usesJsonFile) {
-      throw Exception('Unsupported platform');
-    }
-
-    if (_usesZipFile && zipFileKeyName.isNullEmptyOrWhitespace && keyNames.isEmpty) {
-      throw Exception('This platform uses either a zipKeyName or multiple keyNames files but neither were provided');
-    }
-
-    if (_usesJsonFile && jsonFileKeyName.isNullEmptyOrWhitespace && keyNames.isEmpty) {
+    if (jsonFileKeyName.isNullEmptyOrWhitespace && keyNames.isEmpty) {
       throw Exception('This platform uses either a jsonKeyName or multiple keyNames files but neither were provided');
     }
 
     final partialFilesMustBeDownloaded = keyNames.isNotEmpty;
-    final mainFilesMustBeDownloaded =
-        !partialFilesMustBeDownloaded && (jsonFileKeyName.isNotNullEmptyOrWhitespace || zipFileKeyName.isNotNullEmptyOrWhitespace);
+    final mainFilesMustBeDownloaded = !partialFilesMustBeDownloaded && jsonFileKeyName.isNotNullEmptyOrWhitespace;
 
     if (!mainFilesMustBeDownloaded && !partialFilesMustBeDownloaded) {
       throw Exception('You need to either provide a main or partial files');
@@ -345,20 +316,17 @@ class ResourceServiceImpl implements ResourceService {
       if (mainFilesMustBeDownloaded) {
         _loggingService.info(runtimeType, 'downloadAndApplyUpdates: Downloading main files...');
         //we need to download the whole file
-        final destMainFilePath = join(_tempPath, _usesZipFile ? zipFileKeyName! : jsonFileKeyName!);
-        final downloaded = _usesZipFile
-            ? await _apiService.downloadAsset(zipFileKeyName!, destMainFilePath, onProgress)
-            : await _apiService.downloadAsset(jsonFileKeyName!, destMainFilePath, onProgress);
+        final destMainFilePath = join(_tempPath, jsonFileKeyName);
+        final downloaded = await _apiService.downloadAsset(jsonFileKeyName!, destMainFilePath, onProgress);
 
         if (!downloaded) {
           _loggingService.error(runtimeType, 'downloadAndApplyUpdates: Could not download the main file');
+          await _deleteDirectoryIfExists(_tempPath);
           return false;
         }
 
         _loggingService.info(runtimeType, 'downloadAndApplyUpdates: Processing files...');
-        final processed = _usesZipFile
-            ? await _processZipFile(destMainFilePath, _tempPath, _assetsPath)
-            : await _processVersionsJsonFile(destMainFilePath, _tempPath, _assetsPath, onProgress);
+        final processed = await _processVersionsJsonFile(destMainFilePath, _tempPath, _assetsPath, onProgress);
 
         if (!processed) {
           _loggingService.error(runtimeType, 'downloadAndApplyUpdates: Could not process the main file');
@@ -376,25 +344,12 @@ class ResourceServiceImpl implements ResourceService {
 
       _loggingService.info(runtimeType, 'downloadAndApplyUpdates: Update completed');
       _settingsService.resourceVersion = targetResourceVersion;
+      _settingsService.lastResourcesCheckedDate = DateTime.now();
       return true;
     } catch (e, s) {
       _loggingService.error(runtimeType, 'downloadAndApplyUpdates: Unknown error', e, s);
       return false;
     }
-  }
-
-  Future<bool> _processZipFile(String destMainFilePath, String tempFolder, String assetsFolder) async {
-    _loggingService.info(runtimeType, '_processZipFile: Processing main zip file...');
-    final extracted = await _extractZip(destMainFilePath, tempFolder);
-    await File(destMainFilePath).delete();
-    if (!extracted) {
-      _loggingService.error(runtimeType, '_processZipFile: Processing of main zip file failed');
-      await _deleteDirectoryIfExists(tempFolder);
-      return false;
-    }
-    await _afterMainFileWasProcessed(tempFolder, assetsFolder);
-    _loggingService.info(runtimeType, '_processZipFile: Main zip file was successfully processed');
-    return true;
   }
 
   Future<bool> _processVersionsJsonFile(String destMainFilePath, String tempFolder, String assetsFolder, ProgressChanged? onProgress) async {
@@ -435,7 +390,7 @@ class ResourceServiceImpl implements ResourceService {
     }
 
     _loggingService.info(runtimeType, '_downloadAssets: Processing ${keyNames.length} keyName(s)...');
-    const maxItemsPerBatch = 10;
+    const maxItemsPerBatch = 5;
     final total = keyNames.length;
     int processedItems = 0;
 
@@ -484,26 +439,6 @@ class ResourceServiceImpl implements ResourceService {
     final downloaded = await _apiService.downloadAsset(keyName, destPath, null);
     if (!downloaded) {
       throw Exception('Download of keyName = $keyName failed');
-    }
-  }
-
-  Future<bool> _extractZip(String zipFilePath, String destPath) async {
-    _loggingService.info(runtimeType, '_extractZip: Extracting zip file...');
-    final zipFile = File(zipFilePath);
-    final destinationDir = Directory(destPath);
-    try {
-      await ZipFile.extractToDirectory(
-        zipFile: zipFile,
-        destinationDir: destinationDir,
-        onExtracting: (zipEntry, progress) {
-          return ZipFileOperation.includeItem;
-        },
-      );
-      _loggingService.info(runtimeType, '_extractZip: Extracting completed');
-      return true;
-    } catch (e, s) {
-      _loggingService.error(runtimeType, '_extractZip: Unknown error', e, s);
-      return false;
     }
   }
 

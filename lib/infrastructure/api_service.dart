@@ -1,23 +1,33 @@
 import 'dart:convert';
+import 'dart:io';
 
+import 'package:dio/adapter.dart';
 import 'package:dio/dio.dart';
 import 'package:shiori/domain/models/dtos.dart';
 import 'package:shiori/domain/services/api_service.dart';
 import 'package:shiori/domain/services/logging_service.dart';
-import 'package:shiori/infrastructure/secrets.dart';
+import 'package:shiori/env.dart';
 
 class ApiServiceImpl implements ApiService {
   final LoggingService _loggingService;
 
   final _dio = Dio();
 
-  ApiServiceImpl(this._loggingService);
+  ApiServiceImpl(this._loggingService) {
+    final adapter = _dio.httpClientAdapter as DefaultHttpClientAdapter;
+    final sc = SecurityContext.defaultContext;
+    sc.useCertificateChainBytes(Env.publicKey);
+    sc.usePrivateKeyBytes(Env.privateKey);
+    adapter.onHttpClientCreate = (client) {
+      return HttpClient(context: sc);
+    };
+  }
 
   @override
   Future<String> getChangelog(String defaultValue) async {
     try {
-      final url = '${Secrets.assetsBaseUrl}/changelog.md';
-      final response = await _dio.getUri<String>(Uri.parse(url));
+      const url = '${Env.assetsBaseUrl}/changelog.md';
+      final response = await _dio.getUri<String>(Uri.parse(url), options: Options(headers: _getCommonApiHeaders()));
       if (response.statusCode != 200) {
         _loggingService.warning(
           runtimeType,
@@ -36,12 +46,12 @@ class ApiServiceImpl implements ApiService {
   @override
   Future<ApiResponseDto<ResourceDiffResponseDto?>> checkForUpdates(String currentAppVersion, int currentResourcesVersion) async {
     try {
-      String url = '${Secrets.apiBaseUrl}/api/resources/diff?AppVersion=$currentAppVersion';
+      String url = '${Env.apiBaseUrl}/api/resources/diff?AppVersion=$currentAppVersion';
       if (currentResourcesVersion > 0) {
         url += '&CurrentVersion=$currentResourcesVersion';
       }
 
-      final response = await _dio.getUri<String>(Uri.parse(url), options: Options(headers: Secrets.getApiHeaders()));
+      final response = await _dio.getUri<String>(Uri.parse(url), options: Options(headers: _getApiHeaders()));
       final json = jsonDecode(response.data!) as Map<String, dynamic>;
       final apiResponse = ApiResponseDto.fromJson(
         json,
@@ -58,11 +68,12 @@ class ApiServiceImpl implements ApiService {
   Future<bool> downloadAsset(String keyName, String destPath, ProgressChanged? onProgress) async {
     try {
       // _loggingService.debug(runtimeType, '_downloadFile: Downloading file = $keyName...');
-      final url = '${Secrets.assetsBaseUrl}/$keyName';
+      final url = '${Env.assetsBaseUrl}/$keyName';
 
       await _dio.downloadUri(
         Uri.parse(url),
         destPath,
+        options: Options(headers: _getCommonApiHeaders()),
         onReceiveProgress: (received, total) {
           if (total != -1) {
             final progress = received / total * 100;
@@ -77,4 +88,14 @@ class ApiServiceImpl implements ApiService {
       return false;
     }
   }
+
+  Map<String, String> _getApiHeaders() {
+    final headers = {Env.apiHeaderName: Env.apiHeaderValue};
+    headers.addAll(_getCommonApiHeaders());
+    return headers;
+  }
+
+  Map<String, String> _getCommonApiHeaders() => {
+        Env.commonHeaderName: 'true',
+      };
 }

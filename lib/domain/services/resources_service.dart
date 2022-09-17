@@ -27,7 +27,6 @@ abstract class ResourceService {
 
   Future<bool> downloadAndApplyUpdates(
     int targetResourceVersion,
-    String? zipFileKeyName,
     String? jsonFileKeyName, {
     List<String> keyNames = const <String>[],
     ProgressChanged? onProgress,

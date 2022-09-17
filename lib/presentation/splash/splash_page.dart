@@ -3,8 +3,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shiori/application/bloc.dart';
 import 'package:shiori/domain/assets.dart';
 import 'package:shiori/domain/enums/enums.dart';
+import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/generated/l10n.dart';
 import 'package:shiori/injection.dart';
+import 'package:shiori/presentation/shared/dialogs/confirm_dialog.dart';
+import 'package:shiori/presentation/shared/extensions/app_theme_type_extensions.dart';
 import 'package:shiori/presentation/shared/styles.dart';
 
 class SplashPage extends StatelessWidget {
@@ -19,52 +22,26 @@ class SplashPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider<SplashBloc>(
       create: (context) => Injection.splashBloc..add(const SplashEvent.init()),
-      child: BlocConsumer<SplashBloc, SplashState>(
-        listener: (context, state) {
-          state.maybeMap(
-            loaded: (state) => _handleLoadedChange(state.updateResultType, context),
-            orElse: () {},
-          );
-        },
+      child: BlocBuilder<SplashBloc, SplashState>(
         builder: (context, state) => MaterialApp(
+          theme: AppAccentColorType.orange.getThemeData(AppThemeType.dark, false),
           themeMode: ThemeMode.dark,
           home: _SplashPage(
-            updateResultType: state.whenOrNull(loaded: (updateResultType, _, __) => updateResultType),
+            updateResultType: state.maybeMap(loaded: (state) => state.updateResultType, orElse: () => null),
+            noResourcesHasBeenDownloaded: state.maybeMap(loaded: (state) => state.noResourcesHasBeenDownloaded, orElse: () => true),
           ),
-          locale: state.whenOrNull(loaded: (_, language, __) => Locale(language.code, language.countryCode)),
+          locale: state.maybeMap(loaded: (state) => Locale(state.language.code, state.language.countryCode), orElse: () => null),
           localizationsDelegates: delegates,
           supportedLocales: S.delegate.supportedLocales,
         ),
       ),
     );
   }
-
-  void _handleLoadedChange(AppResourceUpdateResultType updateResultType, BuildContext context) {
-    bool initMain = false;
-    switch (updateResultType) {
-      case AppResourceUpdateResultType.unknownError:
-      case AppResourceUpdateResultType.needsLatestAppVersion:
-      case AppResourceUpdateResultType.noUpdatesAvailable:
-      case AppResourceUpdateResultType.updated:
-        initMain = true;
-        break;
-      case AppResourceUpdateResultType.updatesAvailable:
-        // Applying update
-        break;
-      case AppResourceUpdateResultType.retrying:
-      case AppResourceUpdateResultType.noInternetConnectionForFirstInstall:
-      case AppResourceUpdateResultType.unknownErrorOnFirstInstall:
-        break;
-    }
-
-    if (initMain) {
-      context.read<MainBloc>().add(MainEvent.init(updateResultType: updateResultType));
-    }
-  }
 }
 
 class _SplashPage extends StatelessWidget {
   final AppResourceUpdateResultType? updateResultType;
+  final bool noResourcesHasBeenDownloaded;
 
   bool get isLoading =>
       updateResultType == null ||
@@ -73,7 +50,7 @@ class _SplashPage extends StatelessWidget {
       updateResultType == AppResourceUpdateResultType.retrying ||
       updateResultType == AppResourceUpdateResultType.updated;
 
-  bool get isUpdating => updateResultType == AppResourceUpdateResultType.updatesAvailable;
+  bool get isUpdating => updateResultType == AppResourceUpdateResultType.updating;
 
   bool get updateFailed =>
       updateResultType == AppResourceUpdateResultType.unknownError ||
@@ -82,39 +59,103 @@ class _SplashPage extends StatelessWidget {
 
   bool get noInternetConnectionOnFirstInstall => updateResultType == AppResourceUpdateResultType.noInternetConnectionForFirstInstall;
 
-  bool get canContinue => updateResultType != AppResourceUpdateResultType.unknownErrorOnFirstInstall && !noInternetConnectionOnFirstInstall;
+  bool get canContinue =>
+      updateResultType != AppResourceUpdateResultType.unknownErrorOnFirstInstall &&
+      !noInternetConnectionOnFirstInstall &&
+      !noResourcesHasBeenDownloaded;
 
   const _SplashPage({
     Key? key,
     this.updateResultType,
+    required this.noResourcesHasBeenDownloaded,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          Expanded(
-            child: Container(
-              margin: Styles.edgeInsetAll10,
-              child: Image.asset(
-                Assets.paimonImagePath,
-                fit: BoxFit.scaleDown,
+    return BlocListener<SplashBloc, SplashState>(
+      listener: (context, state) {
+        state.maybeMap(
+          loaded: (state) => _handleLoadedChange(state.noResourcesHasBeenDownloaded, state.updateResultType, state.result, context),
+          orElse: () {},
+        );
+      },
+      child: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Expanded(
+              child: Container(
+                margin: Styles.edgeInsetAll10,
+                child: Image.asset(
+                  Assets.paimonImagePath,
+                  fit: BoxFit.scaleDown,
+                ),
               ),
             ),
-          ),
-          if (isLoading)
-            Container(
-              margin: const EdgeInsets.only(bottom: 10),
-              child: const CircularProgressIndicator(valueColor: AlwaysStoppedAnimation<Color>(Colors.white)),
-            ),
-          if (isUpdating) const _Updating(),
-          if (updateFailed) _Buttons(updateResultType: updateResultType, canContinue: canContinue),
-        ],
+            if (isLoading)
+              Container(
+                margin: const EdgeInsets.only(bottom: 10),
+                child: const CircularProgressIndicator(valueColor: AlwaysStoppedAnimation<Color>(Colors.white)),
+              ),
+            if (isUpdating) const _Updating(),
+            if (updateFailed) _Buttons(updateResultType: updateResultType, canContinue: canContinue),
+          ],
+        ),
       ),
     );
   }
+
+  void _handleLoadedChange(
+    bool noResourcesHasBeenDownloaded,
+    AppResourceUpdateResultType updateResultType,
+    CheckForUpdatesResult? result,
+    BuildContext context,
+  ) {
+    bool initMain = false;
+    switch (updateResultType) {
+      case AppResourceUpdateResultType.needsLatestAppVersion:
+      case AppResourceUpdateResultType.noUpdatesAvailable:
+      case AppResourceUpdateResultType.updated:
+        initMain = true;
+        break;
+      case AppResourceUpdateResultType.updatesAvailable:
+        //Only show the msg if it is the first update, otherwise auto apply the update
+        if (!noResourcesHasBeenDownloaded) {
+          _applyUpdate(result!, context);
+          return;
+        }
+        final s = S.of(context);
+        final msg = '${s.startingFromVersionUpdateMsg}\n\n${s.internetRequiredToUpdate}\n\n${s.doNotCloseAppWhileUpdating}';
+        showDialog<bool?>(
+          context: context,
+          barrierDismissible: false,
+          builder: (_) => ConfirmDialog(
+            title: s.information,
+            content: msg,
+            okText: s.applyUpdate,
+            onOk: () => _applyUpdate(result!, context),
+            cancelText: s.continueLabel,
+            onCancel: () => _initMain(AppResourceUpdateResultType.noUpdatesAvailable, context),
+            showCancelButton: !noResourcesHasBeenDownloaded,
+          ),
+        );
+        break;
+      case AppResourceUpdateResultType.updating:
+      case AppResourceUpdateResultType.retrying:
+      case AppResourceUpdateResultType.noInternetConnectionForFirstInstall:
+      case AppResourceUpdateResultType.unknownErrorOnFirstInstall:
+      case AppResourceUpdateResultType.unknownError:
+        break;
+    }
+
+    if (initMain) {
+      _initMain(updateResultType, context);
+    }
+  }
+
+  void _initMain(AppResourceUpdateResultType result, BuildContext context) => context.read<MainBloc>().add(MainEvent.init(updateResultType: result));
+
+  void _applyUpdate(CheckForUpdatesResult result, BuildContext context) => context.read<SplashBloc>().add(SplashEvent.applyUpdate(result: result));
 }
 
 class _Buttons extends StatelessWidget {
@@ -214,7 +255,7 @@ class _Updating extends StatelessWidget {
           Container(
             margin: const EdgeInsets.only(top: 10, bottom: 10),
             child: Text(
-              s.doNotCloseAppWhileUpdating,
+              '${s.doNotCloseAppWhileUpdating}\n${s.updateMayTakeMinutes}',
               textAlign: TextAlign.center,
               style: theme.textTheme.labelMedium!.copyWith(color: Colors.white),
             ),

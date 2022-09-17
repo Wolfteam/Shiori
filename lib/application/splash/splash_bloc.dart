@@ -35,37 +35,51 @@ class SplashBloc extends Bloc<SplashEvent, SplashState> {
   @override
   Stream<SplashState> mapEventToState(SplashEvent event) async* {
     if (event is _Init) {
+      final noResourcesHasBeenDownloaded = _settingsService.noResourcesHasBeenDownloaded;
       //This is just to trigger a change in the ui
       if (event.retry) {
-        yield SplashState.loaded(updateResultType: AppResourceUpdateResultType.retrying, language: _language);
-        await Future.delayed(const Duration(seconds: 2));
+        yield SplashState.loaded(
+          updateResultType: AppResourceUpdateResultType.retrying,
+          language: _language,
+          noResourcesHasBeenDownloaded: noResourcesHasBeenDownloaded,
+        );
+        await Future.delayed(const Duration(seconds: 1));
       }
 
       final result = await _resourceService.checkForUpdates(_deviceInfoService.version, _settingsService.resourceVersion);
       final unknownErrorOnFirstInstall = result.type == AppResourceUpdateResultType.unknownError && _settingsService.noResourcesHasBeenDownloaded;
       final resultType = unknownErrorOnFirstInstall ? AppResourceUpdateResultType.unknownErrorOnFirstInstall : result.type;
       await _telemetryService.trackCheckForResourceUpdates(resultType);
-      yield SplashState.loaded(updateResultType: resultType, language: _language);
-
-      if (result.type == AppResourceUpdateResultType.updatesAvailable) {
-        await _telemetryService.trackResourceUpdateDownload(result.resourceVersion);
-        //the stream is required to avoid blocking the bloc
-        final downloadStream = _resourceService
-            .downloadAndApplyUpdates(
-              result.resourceVersion,
-              result.zipFileKeyName,
-              result.jsonFileKeyName,
-              keyNames: result.keyNames,
-              onProgress: (value) => add(SplashEvent.progressChanged(progress: value)),
-            )
-            .asStream();
-
-        await _downloadStream?.cancel();
-        _downloadStream = downloadStream.listen(
-          (applied) => add(SplashEvent.updateCompleted(applied: applied, resourceVersion: result.resourceVersion)),
-        );
-      }
+      yield SplashState.loaded(
+        updateResultType: resultType,
+        language: _language,
+        result: result,
+        noResourcesHasBeenDownloaded: noResourcesHasBeenDownloaded,
+      );
       return;
+    }
+
+    if (event is _ApplyUpdate) {
+      assert(state is _LoadedState, 'The current state should be loaded');
+      final currentState = state as _LoadedState;
+      assert(currentState.result != null, 'The update result must not be null');
+      yield currentState.copyWith(updateResultType: AppResourceUpdateResultType.updating);
+
+      //the stream is required to avoid blocking the bloc
+      final result = currentState.result!;
+      final downloadStream = _resourceService
+          .downloadAndApplyUpdates(
+            result.resourceVersion,
+            result.jsonFileKeyName,
+            keyNames: result.keyNames,
+            onProgress: (value) => add(SplashEvent.progressChanged(progress: value)),
+          )
+          .asStream();
+
+      await _downloadStream?.cancel();
+      _downloadStream = downloadStream.listen(
+        (applied) => add(SplashEvent.updateCompleted(applied: applied, resourceVersion: result.resourceVersion)),
+      );
     }
 
     if (event is _ProgressChanged) {
@@ -93,12 +107,13 @@ class SplashBloc extends Bloc<SplashEvent, SplashState> {
           : _settingsService.noResourcesHasBeenDownloaded
               ? AppResourceUpdateResultType.unknownErrorOnFirstInstall
               : AppResourceUpdateResultType.unknownError;
-      if (!event.applied) {
-        _settingsService.lastResourcesCheckedDate = null;
-      }
-
       await _telemetryService.trackResourceUpdateCompleted(event.applied, event.resourceVersion);
-      yield SplashState.loaded(updateResultType: appliedResult, language: _language, progress: 100);
+      yield SplashState.loaded(
+        updateResultType: appliedResult,
+        language: _language,
+        progress: 100,
+        noResourcesHasBeenDownloaded: _settingsService.noResourcesHasBeenDownloaded,
+      );
     }
   }
 

@@ -9,7 +9,7 @@ import 'package:shiori/domain/extensions/string_extensions.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/logging_service.dart';
 import 'package:shiori/domain/services/purchase_service.dart';
-import 'package:shiori/infrastructure/secrets.dart';
+import 'package:shiori/env.dart';
 
 class PurchaseServiceImpl implements PurchaseService {
   final LoggingService _loggingService;
@@ -38,7 +38,7 @@ class PurchaseServiceImpl implements PurchaseService {
         await Purchases.setDebugLogsEnabled(true);
       }
 
-      final key = Platform.isAndroid ? Secrets.androidPurchasesKey : throw Exception('Platform not supported');
+      final key = Platform.isAndroid ? Env.androidPurchasesKey : throw Exception('Platform not supported');
       await Purchases.setup(key);
       _initialized = true;
       return true;
@@ -158,7 +158,7 @@ class PurchaseServiceImpl implements PurchaseService {
 
   Future<List<AppUnlockedFeature>> _getUnlockedFeatures({String? entitlementIdentifier}) async {
     try {
-      if (_unlockedFeatures != null){
+      if (_unlockedFeatures != null) {
         return _unlockedFeatures!;
       }
 

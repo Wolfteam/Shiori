@@ -6,6 +6,7 @@
 *.freezed.dart
 /lib/generated/**
 *.mocks.dart
+*.env
 
 # Miscellaneous
 *.class

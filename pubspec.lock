@@ -288,6 +288,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "4.0.6"
+  dotenv:
+    dependency: transitive
+    description:
+      name: dotenv
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "3.0.0"
   enum_to_string:
     dependency: "direct main"
     description:
@@ -295,6 +302,20 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.0.1"
+  envify:
+    dependency: "direct main"
+    description:
+      name: envify
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.0.2"
+  envify_generator:
+    dependency: "direct dev"
+    description:
+      name: envify_generator
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.0.2"
   equatable:
     dependency: transitive
     description:
@@ -349,13 +370,6 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
-  flutter_archive:
-    dependency: "direct main"
-    description:
-      name: flutter_archive
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "5.0.0"
   flutter_bloc:
     dependency: "direct main"
     description:

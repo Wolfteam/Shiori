@@ -1,8 +1,11 @@
 # Changelog
 
+## 1.4.8+74 (08/09/2022)
+- The cooler Diona
+
+
 ## 1.4.6+70 (23/08/2022)
-- Collei
-- Tighnari
+- Sumeru
 
 
 ## 1.4.5+65 (13/07/2022)
