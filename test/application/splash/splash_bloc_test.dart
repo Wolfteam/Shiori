@@ -30,6 +30,7 @@ void main() {
     final settings = settingsService ?? MockSettingsService();
     if (settingsService == null) {
       when(settings.resourceVersion).thenReturn(currentResourcesVersion);
+      when(settings.noResourcesHasBeenDownloaded).thenReturn(false);
     }
 
     final localeService = getLocaleService(AppLanguageType.english);
@@ -408,7 +409,7 @@ void main() {
           updateResultType: AppResourceUpdateResultType.unknownErrorOnFirstInstall,
           language: _language,
           progress: 100,
-          noResourcesHasBeenDownloaded: false,
+          noResourcesHasBeenDownloaded: true,
         ),
       ],
     );
