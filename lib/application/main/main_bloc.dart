@@ -43,7 +43,7 @@ class MainBloc extends Bloc<MainEvent, MainState> {
     this._weaponsBloc,
     this._homeBloc,
     this._artifactsBloc,
-  ) : super(const MainState.loading());
+  ) : super(MainState.loading(language: _localeService.getLocaleWithoutLang()));
 
   _MainLoadedState get currentState => state as _MainLoadedState;
 
@@ -55,7 +55,7 @@ class MainBloc extends Bloc<MainEvent, MainState> {
       accentColorChanged: (accentColor) async => _loadThemeData(_settingsService.appTheme, accentColor),
       languageChanged: (language) async => _init(languageChanged: true),
       useDarkAmoledThemeChanged: (use) async => _loadThemeData(_settingsService.appTheme, _settingsService.accentColor),
-      restart: () async => const MainState.loading(),
+      restart: () async => MainState.loading(language: _localeService.getLocaleWithoutLang()),
     );
     yield s;
   }
