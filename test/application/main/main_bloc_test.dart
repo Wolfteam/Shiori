@@ -128,7 +128,7 @@ void main() {
 
   test('Initial state', () {
     final bloc = _getBloc();
-    expect(bloc.state, const MainState.loading());
+    expect(bloc.state, MainState.loading(language: languagesMap.entries.firstWhere((el) => el.key == AppLanguageType.english).value));
   });
 
   group('Init', () {
