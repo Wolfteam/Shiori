@@ -2,7 +2,7 @@ part of 'main_bloc.dart';
 
 @freezed
 class MainState with _$MainState {
-  const factory MainState.loading() = _MainLoadingState;
+  const factory MainState.loading({required LanguageModel language}) = _MainLoadingState;
 
   const factory MainState.loaded({
     required String appTitle,
