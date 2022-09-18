@@ -33,7 +33,7 @@ class DeviceInfoServiceImpl implements DeviceInfoService {
 
   //TODO: COMPLETE THIS
   @override
-  String? get userAgent => Platform.isWindows ? null : FkUserAgent.webViewUserAgent!.replaceAll(RegExp(r'wv'), '');
+  String? get userAgent => Platform.isWindows || Platform.isMacOS ? null : FkUserAgent.webViewUserAgent!.replaceAll(RegExp(r'wv'), '');
 
   @override
   Future<void> init() async {
@@ -60,7 +60,11 @@ class DeviceInfoServiceImpl implements DeviceInfoService {
         await _initForIOs();
       }
 
-      if (!Platform.isWindows) {
+      if (Platform.isMacOS) {
+        await _initForMac();
+      }
+
+      if (!Platform.isWindows && !Platform.isMacOS) {
         await FkUserAgent.init();
       }
     } catch (ex) {
@@ -92,6 +96,14 @@ class DeviceInfoServiceImpl implements DeviceInfoService {
     _setOtherDeviceInfoProps(info.isPhysicalDevice);
   }
 
+  Future<void> _initForMac() async {
+    final deviceInfo = DeviceInfoPlugin();
+    final info = await deviceInfo.macOsInfo;
+    final model = 'Model: ${info.model} --- Name: ${info.computerName}';
+    final osVersion = '${info.hostName} : ${info.osRelease}';
+    _setDefaultDeviceInfoProps(model, osVersion);
+  }
+
   Future<void> _initVersionTracker() async {
     final vt = VersionTracker();
     await vt.track();
@@ -106,8 +118,10 @@ class DeviceInfoServiceImpl implements DeviceInfoService {
   }
 
   Future<void> _setOtherDeviceInfoProps(bool? isPhysicalDevice) async {
-    final installationSource = await StoreChecker.getSource;
     _deviceInfo.putIfAbsent('IsPhysicalDevice', () => '${isPhysicalDevice ?? na}');
-    _deviceInfo.putIfAbsent('InstallationSource', () => installationSource.name);
+    if (Platform.isAndroid || Platform.isIOS) {
+      final installationSource = await StoreChecker.getSource;
+      _deviceInfo.putIfAbsent('InstallationSource', () => installationSource.name);
+    }
   }
 }

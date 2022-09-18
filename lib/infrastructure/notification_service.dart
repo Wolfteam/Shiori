@@ -19,6 +19,8 @@ const _largeIcon = 'shiori';
 const _fallbackTimeZone = 'Africa/Accra';
 
 class NotificationServiceImpl implements NotificationService {
+  static bool isPlatformSupported = [Platform.isAndroid, Platform.isIOS, Platform.isMacOS].any((el) => el);
+
   final LoggingService _loggingService;
 
   final _flutterLocalNotificationsPlugin = FlutterLocalNotificationsPlugin();
@@ -30,7 +32,7 @@ class NotificationServiceImpl implements NotificationService {
   Future<void> init() async {
     try {
       //TODO: TIMEZONES ON WINDWS
-      if (Platform.isWindows) {
+      if (!isPlatformSupported) {
         return;
       }
       tz.initializeTimeZones();
@@ -53,12 +55,13 @@ class NotificationServiceImpl implements NotificationService {
     SelectNotificationCallback? onSelectNotification,
   }) async {
     try {
-      if (Platform.isWindows) {
+      if (!isPlatformSupported) {
         return Future.value();
       }
-      const initializationSettingsAndroid = AndroidInitializationSettings('ic_notification');
-      final initializationSettingsIOS = IOSInitializationSettings(onDidReceiveLocalNotification: onIosReceiveLocalNotification);
-      final initializationSettings = InitializationSettings(android: initializationSettingsAndroid, iOS: initializationSettingsIOS);
+      const android = AndroidInitializationSettings('ic_notification');
+      final iOS = IOSInitializationSettings(onDidReceiveLocalNotification: onIosReceiveLocalNotification);
+      const macOS = MacOSInitializationSettings();
+      final initializationSettings = InitializationSettings(android: android, iOS: iOS, macOS: macOS);
       await _flutterLocalNotificationsPlugin.initialize(initializationSettings, onSelectNotification: onSelectNotification);
     } catch (e, s) {
       _loggingService.error(runtimeType, 'registerCallBacks: Unknown error occurred', e, s);
@@ -79,7 +82,7 @@ class NotificationServiceImpl implements NotificationService {
 
   @override
   Future<void> showNotification(int id, AppNotificationType type, String title, String body, {String? payload}) {
-    if (Platform.isWindows) {
+    if (!isPlatformSupported) {
       return Future.value();
     }
     final specifics = _getPlatformChannelSpecifics(type, body);
@@ -89,7 +92,7 @@ class NotificationServiceImpl implements NotificationService {
 
   @override
   Future<void> cancelNotification(int id, AppNotificationType type) {
-    if (Platform.isWindows) {
+    if (!isPlatformSupported) {
       return Future.value();
     }
     final realId = _generateUniqueId(id, type);
@@ -98,7 +101,7 @@ class NotificationServiceImpl implements NotificationService {
 
   @override
   Future<void> cancelAllNotifications() {
-    if (Platform.isWindows) {
+    if (!isPlatformSupported) {
       return Future.value();
     }
     return _flutterLocalNotificationsPlugin.cancelAll();
@@ -106,7 +109,7 @@ class NotificationServiceImpl implements NotificationService {
 
   @override
   Future<void> scheduleNotification(int id, AppNotificationType type, String title, String body, DateTime toBeDeliveredOn) async {
-    if (Platform.isWindows) {
+    if (!isPlatformSupported) {
       return;
     }
     final now = DateTime.now();
