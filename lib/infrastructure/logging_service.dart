@@ -1,4 +1,5 @@
 import 'package:flutter/foundation.dart';
+import 'package:intl/intl.dart';
 import 'package:logger/logger.dart';
 import 'package:shiori/domain/extensions/string_extensions.dart';
 import 'package:shiori/domain/services/device_info_service.dart';
@@ -10,6 +11,7 @@ class LoggingServiceImpl implements LoggingService {
   final TelemetryService _telemetryService;
   final DeviceInfoService _deviceInfoService;
   final _logger = Logger();
+  final _formatter = DateFormat('yyyy-MM-dd');
 
   LoggingServiceImpl(this._telemetryService, this._deviceInfoService);
 
@@ -45,7 +47,7 @@ class LoggingServiceImpl implements LoggingService {
     _logger.w('$tag - ${_formatEx(msg, ex)}', ex, trace);
 
     if (kReleaseMode) {
-      _trackWarning(tag, msg, ex, trace);
+      _trackWarningOrError(tag, msg, ex, trace);
     }
   }
 
@@ -56,7 +58,7 @@ class LoggingServiceImpl implements LoggingService {
     _logger.e('$tag - ${_formatEx(msg, ex)}', ex, trace);
 
     if (kReleaseMode) {
-      _trackError(tag, msg, ex, trace);
+      _trackWarningOrError(tag, msg, ex, trace, true);
     }
   }
 
@@ -67,26 +69,29 @@ class LoggingServiceImpl implements LoggingService {
     return '$msg \n No exception available';
   }
 
-  void _trackError(String tag, String msg, [dynamic ex, StackTrace? trace]) {
-    final map = _buildError(tag, msg, ex, trace);
-    _telemetryService.trackEventAsync('Error - ${DateTime.now()}', map);
+  void _trackWarningOrError(String tag, String msg, [dynamic ex, StackTrace? trace, bool isError = false]) {
+    final map = _buildWarningOrErrorMap(tag, msg, ex, trace);
+    final dateString = _getDateString();
+    final type = isError ? 'Error' : 'Warning';
+    _telemetryService.trackEventAsync('$type - $dateString', map);
   }
 
-  void _trackWarning(String tag, String msg, [dynamic ex, StackTrace? trace]) {
-    final map = _buildError(tag, msg, ex, trace);
-    _telemetryService.trackEventAsync('Warning - ${DateTime.now()}', map);
-  }
-
-  Map<String, String> _buildError(String tag, String msg, [dynamic ex, StackTrace? trace]) {
+  Map<String, String> _buildWarningOrErrorMap(String tag, String msg, [dynamic ex, StackTrace? trace]) {
+    final now = DateTime.now().toUtc();
     final map = {
-      'Tag': tag,
-      'Msg': msg,
-      'Ex': ex?.toString() ?? 'No exception available',
-      'Trace': trace?.toString() ?? 'No trace available',
+      'Tag-$now': tag,
+      'Msg-$now': msg,
+      'Ex-$now': ex?.toString() ?? 'No exception available',
+      'Trace-$now': trace?.toString() ?? 'No trace available',
     };
 
     map.addAll(_deviceInfoService.deviceInfo);
 
     return map;
+  }
+
+  String _getDateString() {
+    final now = DateTime.now().toUtc();
+    return _formatter.format(now);
   }
 }
