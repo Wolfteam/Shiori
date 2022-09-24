@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:enum_to_string/enum_to_string.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/models/models.dart';
@@ -14,7 +16,12 @@ class TelemetryServiceImpl implements TelemetryService {
   //Only call this function from the main.dart
   @override
   Future<void> initTelemetry() async {
-    await AppCenter.startAsync(appSecretAndroid: Env.androidAppCenterKey, appSecretIOS: '');
+    final secret = Platform.isAndroid
+        ? Env.androidAppCenterKey
+        : Platform.isIOS
+            ? Env.iosAppCenterKey
+            : '';
+    await AppCenter.startAsync(appSecret: secret);
   }
 
   @override

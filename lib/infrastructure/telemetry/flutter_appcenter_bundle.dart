@@ -8,31 +8,20 @@ const _methodChannel = MethodChannel(_methodChannelName);
 
 /// Static class that provides AppCenter APIs
 class AppCenter {
-  static bool isPlatformSupported = [Platform.isAndroid].any((el) => el);
+  static bool isPlatformSupported = [Platform.isAndroid, Platform.isIOS].any((el) => el);
 
   /// Start appcenter functionalities
   static Future<void> startAsync({
-    required String appSecretAndroid,
-    required String appSecretIOS,
+    required String appSecret,
     bool enableAnalytics = true,
     bool enableCrashes = true,
-    bool enableDistribute = false,
     bool usePrivateDistributeTrack = false,
   }) async {
-    String appSecret;
     if (!isPlatformSupported) {
       return;
     }
-    if (Platform.isAndroid) {
-      appSecret = appSecretAndroid;
-    } else if (Platform.isIOS) {
-      appSecret = appSecretIOS;
-    } else {
-      throw UnsupportedError('Current platform is not supported.');
-    }
-
     if (appSecret.isEmpty) {
-      return;
+      throw Exception('You need to provide the app center key');
     }
 
     await configureAnalyticsAsync(enabled: enableAnalytics);
