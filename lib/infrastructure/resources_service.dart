@@ -390,10 +390,13 @@ class ResourceServiceImpl implements ResourceService {
     }
 
     _loggingService.info(runtimeType, '_downloadAssets: Processing ${keyNames.length} keyName(s)...');
-    const maxItemsPerBatch = 5;
-    final total = keyNames.length;
-    int processedItems = 0;
+    const int maxRetryAttempts = 3;
 
+    int maxItemsPerBatch = 5;
+    int processedItems = 0;
+    int retryAttempts = 0;
+
+    final total = keyNames.length;
     final keyNamesCopy = [...keyNames];
     while (keyNamesCopy.isNotEmpty) {
       // _loggingService.debug(runtimeType, '_downloadAssets: Remaining = ${keyNamesCopy.length}');
@@ -414,6 +417,13 @@ class ResourceServiceImpl implements ResourceService {
         }
       } catch (e, s) {
         _loggingService.error(runtimeType, '_downloadAssets: One or more keyNames failed...', e, s);
+        maxItemsPerBatch--;
+        retryAttempts++;
+        if (retryAttempts <= maxRetryAttempts && maxItemsPerBatch > 0) {
+          keyNamesCopy.addAll(taken);
+          await Future.delayed(Duration(seconds: retryAttempts + maxRetryAttempts));
+          continue;
+        }
         await _deleteDirectoryIfExists(tempFolder);
         return false;
       }
@@ -436,6 +446,10 @@ class ResourceServiceImpl implements ResourceService {
     await _createDirectoryIfItDoesntExist(dir);
 
     final destPath = join(dir, split.last);
+    final file = File(destPath);
+    if (await file.exists()) {
+      await file.delete();
+    }
     final downloaded = await _apiService.downloadAsset(keyName, destPath, null);
     if (!downloaded) {
       throw Exception('Download of keyName = $keyName failed');

@@ -3,6 +3,7 @@ import 'dart:io';
 
 import 'package:dio/adapter.dart';
 import 'package:dio/dio.dart';
+import 'package:shiori/domain/app_constants.dart';
 import 'package:shiori/domain/models/dtos.dart';
 import 'package:shiori/domain/services/api_service.dart';
 import 'package:shiori/domain/services/logging_service.dart';
@@ -40,7 +41,7 @@ class ApiServiceImpl implements ApiService {
 
       return response.data!;
     } catch (e, s) {
-      _loggingService.error(runtimeType, 'getChangelog: Unknown error occurred', e, s);
+      _handleError('getChangelog', e, s);
       return defaultValue;
     }
   }
@@ -61,7 +62,7 @@ class ApiServiceImpl implements ApiService {
       );
       return apiResponse;
     } catch (e, s) {
-      _loggingService.error(runtimeType, 'checkForUpdates: Unknown error', e, s);
+      _handleError('checkForUpdates', e, s);
       rethrow;
     }
   }
@@ -86,7 +87,7 @@ class ApiServiceImpl implements ApiService {
       // _loggingService.debug(runtimeType, '_downloadFile: File = $keyName was successfully downloaded');
       return true;
     } catch (e, s) {
-      _loggingService.error(runtimeType, 'downloadAsset: Unknown error', e, s);
+      _handleError('downloadAsset', e, s);
       return false;
     }
   }
@@ -97,7 +98,14 @@ class ApiServiceImpl implements ApiService {
     return headers;
   }
 
-  Map<String, String> _getCommonApiHeaders() => {
-        Env.commonHeaderName: 'true',
-      };
+  Map<String, String> _getCommonApiHeaders() => {Env.commonHeaderName: 'true'};
+
+  void _handleError(String caller, Object e, StackTrace s) {
+    if (e is DioError) {
+      final msg = 'SC = ${e.response?.statusCode ?? na} - Msg = ${e.response?.statusMessage ?? na}';
+      _loggingService.error(runtimeType, '$caller: Dio error = $msg. ${e.message}');
+    } else {
+      _loggingService.error(runtimeType, '$caller: Unknown error', e, s);
+    }
+  }
 }

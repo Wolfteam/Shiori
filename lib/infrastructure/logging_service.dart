@@ -11,7 +11,7 @@ class LoggingServiceImpl implements LoggingService {
   final TelemetryService _telemetryService;
   final DeviceInfoService _deviceInfoService;
   final _logger = Logger();
-  final _formatter = DateFormat('yyyy-MM-dd');
+  final _formatter = DateFormat('yyyy-MM-dd-hh');
 
   LoggingServiceImpl(this._telemetryService, this._deviceInfoService);
 

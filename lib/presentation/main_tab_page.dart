@@ -101,7 +101,7 @@ class _MainTabPageState extends State<MainTabPage> with SingleTickerProviderStat
     );
 
     //TODO: RATE THE APP ON WINDOWS
-    if (Platform.isWindows) {
+    if (Platform.isWindows || Platform.isMacOS || Platform.isLinux) {
       return child;
     }
 
