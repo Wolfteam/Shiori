@@ -24788,6 +24788,256 @@
       ]
     },
     {
+      "key": "makhaira-aquamarine",
+      "image": "makhaira-aquamarine.webp",
+      "type": "claymore",
+      "atk": 42.0,
+      "rarity": 4,
+      "secondaryStat": "elementalMastery",
+      "secondaryStatValue": 36.0,
+      "location": "gacha",
+      "isComingSoon": false,
+      "ascensionMaterials": [
+        {
+          "level": 20,
+          "materials": [
+            {
+              "key": "echo-of-scorching-might",
+              "quantity": 3,
+              "type": "weaponPrimary"
+            },
+            {
+              "key": "chaos-storage",
+              "quantity": 3,
+              "type": "weapon"
+            },
+            {
+              "key": "treasure-hoarder-insignia",
+              "quantity": 2,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 5000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "level": 40,
+          "materials": [
+            {
+              "key": "remnant-glow-of-scorching-might",
+              "quantity": 3,
+              "type": "weaponPrimary"
+            },
+            {
+              "key": "chaos-storage",
+              "quantity": 12,
+              "type": "weapon"
+            },
+            {
+              "key": "treasure-hoarder-insignia",
+              "quantity": 8,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 15000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "level": 50,
+          "materials": [
+            {
+              "key": "remnant-glow-of-scorching-might",
+              "quantity": 6,
+              "type": "weaponPrimary"
+            },
+            {
+              "key": "chaos-module",
+              "quantity": 6,
+              "type": "weapon"
+            },
+            {
+              "key": "silver-raven-insignia",
+              "quantity": 6,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 20000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "level": 60,
+          "materials": [
+            {
+              "key": "dream-of-scorching-might",
+              "quantity": 3,
+              "type": "weaponPrimary"
+            },
+            {
+              "key": "chaos-module",
+              "quantity": 12,
+              "type": "weapon"
+            },
+            {
+              "key": "silver-raven-insignia",
+              "quantity": 9,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 30000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "level": 70,
+          "materials": [
+            {
+              "key": "dream-of-scorching-might",
+              "quantity": 6,
+              "type": "weaponPrimary"
+            },
+            {
+              "key": "chaos-bolt",
+              "quantity": 9,
+              "type": "weapon"
+            },
+            {
+              "key": "golden-raven-insignia",
+              "quantity": 6,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 35000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "level": 80,
+          "materials": [
+            {
+              "key": "olden-days-of-scorching-might",
+              "quantity": 4,
+              "type": "weaponPrimary"
+            },
+            {
+              "key": "chaos-bolt",
+              "quantity": 18,
+              "type": "weapon"
+            },
+            {
+              "key": "golden-raven-insignia",
+              "quantity": 12,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 45000,
+              "type": "currency"
+            }
+          ]
+        }
+      ],
+      "craftingMaterials": [],
+      "stats": [
+        {
+          "level": 1,
+          "baseAtk": 42.0,
+          "statValue": 36.0,
+          "isAnAscension": false
+        },
+        {
+          "level": 20,
+          "baseAtk": 109.0,
+          "statValue": 64.0,
+          "isAnAscension": false
+        },
+        {
+          "level": 20,
+          "baseAtk": 135.0,
+          "statValue": 64.0,
+          "isAnAscension": true
+        },
+        {
+          "level": 40,
+          "baseAtk": 205.0,
+          "statValue": 93.0,
+          "isAnAscension": false
+        },
+        {
+          "level": 40,
+          "baseAtk": 231.0,
+          "statValue": 93.0,
+          "isAnAscension": true
+        },
+        {
+          "level": 50,
+          "baseAtk": 266.0,
+          "statValue": 107.0,
+          "isAnAscension": false
+        },
+        {
+          "level": 50,
+          "baseAtk": 292.0,
+          "statValue": 107.0,
+          "isAnAscension": true
+        },
+        {
+          "level": 60,
+          "baseAtk": 327.0,
+          "statValue": 122.0,
+          "isAnAscension": false
+        },
+        {
+          "level": 60,
+          "baseAtk": 353.0,
+          "statValue": 122.0,
+          "isAnAscension": true
+        },
+        {
+          "level": 70,
+          "baseAtk": 388.0,
+          "statValue": 136.0,
+          "isAnAscension": false
+        },
+        {
+          "level": 70,
+          "baseAtk": 414.0,
+          "statValue": 136.0,
+          "isAnAscension": true
+        },
+        {
+          "level": 80,
+          "baseAtk": 449.0,
+          "statValue": 151.0,
+          "isAnAscension": false
+        },
+        {
+          "level": 80,
+          "baseAtk": 475.0,
+          "statValue": 151.0,
+          "isAnAscension": true
+        },
+        {
+          "level": 90,
+          "baseAtk": 510.0,
+          "statValue": 165.0,
+          "isAnAscension": false
+        }
+      ]
+    },
+    {
       "key": "old-mercs-pal",
       "image": "old-mercs-pal.webp",
       "type": "claymore",
@@ -32330,6 +32580,256 @@
       ]
     },
     {
+      "key": "missive-windspear",
+      "image": "missive-windspear.webp",
+      "type": "polearm",
+      "atk": 42.0,
+      "rarity": 4,
+      "secondaryStat": "atkPercentage",
+      "secondaryStatValue": 9.0,
+      "location": "quest",
+      "isComingSoon": false,
+      "ascensionMaterials": [
+        {
+          "level": 20,
+          "materials": [
+            {
+              "key": "boreal-wolfs-milk-tooth",
+              "quantity": 3,
+              "type": "weaponPrimary"
+            },
+            {
+              "key": "gloomy-statuette",
+              "quantity": 3,
+              "type": "weapon"
+            },
+            {
+              "key": "slime-condensate",
+              "quantity": 2,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 5000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "level": 40,
+          "materials": [
+            {
+              "key": "boreal-wolfs-cracked-tooth",
+              "quantity": 3,
+              "type": "weaponPrimary"
+            },
+            {
+              "key": "gloomy-statuette",
+              "quantity": 12,
+              "type": "weapon"
+            },
+            {
+              "key": "slime-condensate",
+              "quantity": 8,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 15000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "level": 50,
+          "materials": [
+            {
+              "key": "boreal-wolfs-cracked-tooth",
+              "quantity": 6,
+              "type": "weaponPrimary"
+            },
+            {
+              "key": "dark-statuette",
+              "quantity": 6,
+              "type": "weapon"
+            },
+            {
+              "key": "slime-secretions",
+              "quantity": 6,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 20000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "level": 60,
+          "materials": [
+            {
+              "key": "boreal-wolfs-broken-fang",
+              "quantity": 3,
+              "type": "weaponPrimary"
+            },
+            {
+              "key": "dark-statuette",
+              "quantity": 12,
+              "type": "weapon"
+            },
+            {
+              "key": "slime-secretions",
+              "quantity": 9,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 30000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "level": 70,
+          "materials": [
+            {
+              "key": "boreal-wolfs-broken-fang",
+              "quantity": 6,
+              "type": "weaponPrimary"
+            },
+            {
+              "key": "deathly-statuette",
+              "quantity": 9,
+              "type": "weapon"
+            },
+            {
+              "key": "slime-concentrate",
+              "quantity": 6,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 35000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "level": 80,
+          "materials": [
+            {
+              "key": "boreal-wolfs-nostalgia",
+              "quantity": 4,
+              "type": "weaponPrimary"
+            },
+            {
+              "key": "deathly-statuette",
+              "quantity": 18,
+              "type": "weapon"
+            },
+            {
+              "key": "slime-concentrate",
+              "quantity": 12,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 45000,
+              "type": "currency"
+            }
+          ]
+        }
+      ],
+      "craftingMaterials": [],
+      "stats": [
+        {
+          "level": 1,
+          "baseAtk": 42.0,
+          "statValue": 9.0,
+          "isAnAscension": false
+        },
+        {
+          "level": 20,
+          "baseAtk": 109.0,
+          "statValue": 15.9,
+          "isAnAscension": false
+        },
+        {
+          "level": 20,
+          "baseAtk": 135.0,
+          "statValue": 15.9,
+          "isAnAscension": true
+        },
+        {
+          "level": 40,
+          "baseAtk": 205.0,
+          "statValue": 23.2,
+          "isAnAscension": false
+        },
+        {
+          "level": 40,
+          "baseAtk": 231.0,
+          "statValue": 23.2,
+          "isAnAscension": true
+        },
+        {
+          "level": 50,
+          "baseAtk": 266.0,
+          "statValue": 26.8,
+          "isAnAscension": false
+        },
+        {
+          "level": 50,
+          "baseAtk": 292.0,
+          "statValue": 26.8,
+          "isAnAscension": true
+        },
+        {
+          "level": 60,
+          "baseAtk": 327.0,
+          "statValue": 30.4,
+          "isAnAscension": false
+        },
+        {
+          "level": 60,
+          "baseAtk": 353.0,
+          "statValue": 30.4,
+          "isAnAscension": true
+        },
+        {
+          "level": 70,
+          "baseAtk": 388.0,
+          "statValue": 34.1,
+          "isAnAscension": false
+        },
+        {
+          "level": 70,
+          "baseAtk": 414.0,
+          "statValue": 34.1,
+          "isAnAscension": true
+        },
+        {
+          "level": 80,
+          "baseAtk": 449.0,
+          "statValue": 37.7,
+          "isAnAscension": false
+        },
+        {
+          "level": 80,
+          "baseAtk": 475.0,
+          "statValue": 37.7,
+          "isAnAscension": true
+        },
+        {
+          "level": 90,
+          "baseAtk": 510.0,
+          "statValue": 41.4,
+          "isAnAscension": false
+        }
+      ]
+    },
+    {
       "key": "moonpiercer",
       "image": "moonpiercer.webp",
       "type": "polearm",
@@ -33857,6 +34357,256 @@
           "level": 90,
           "baseAtk": 608.0,
           "statValue": 66.2,
+          "isAnAscension": false
+        }
+      ]
+    },
+    {
+      "key": "staff-of-the-scarlet-sands",
+      "image": "staff-of-the-scarlet-sands.webp",
+      "type": "polearm",
+      "atk": 44.0,
+      "rarity": 5,
+      "secondaryStat": "critRatePercentage",
+      "secondaryStatValue": 9.6,
+      "location": "gacha",
+      "isComingSoon": false,
+      "ascensionMaterials": [
+        {
+          "level": 20,
+          "materials": [
+            {
+              "key": "oasis-gardens-reminiscence",
+              "quantity": 5,
+              "type": "weaponPrimary"
+            },
+            {
+              "key": "chaos-storage",
+              "quantity": 5,
+              "type": "weapon"
+            },
+            {
+              "key": "fungal-spores",
+              "quantity": 3,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 10000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "level": 40,
+          "materials": [
+            {
+              "key": "oasis-gardens-kindness",
+              "quantity": 5,
+              "type": "weaponPrimary"
+            },
+            {
+              "key": "chaos-storage",
+              "quantity": 18,
+              "type": "weapon"
+            },
+            {
+              "key": "fungal-spores",
+              "quantity": 12,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 20000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "level": 50,
+          "materials": [
+            {
+              "key": "oasis-gardens-kindness",
+              "quantity": 9,
+              "type": "weaponPrimary"
+            },
+            {
+              "key": "chaos-module",
+              "quantity": 9,
+              "type": "weapon"
+            },
+            {
+              "key": "luminescent-pollen",
+              "quantity": 9,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 30000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "level": 60,
+          "materials": [
+            {
+              "key": "oasis-gardens-mourning",
+              "quantity": 5,
+              "type": "weaponPrimary"
+            },
+            {
+              "key": "chaos-module",
+              "quantity": 18,
+              "type": "weapon"
+            },
+            {
+              "key": "luminescent-pollen",
+              "quantity": 14,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 45000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "level": 70,
+          "materials": [
+            {
+              "key": "oasis-gardens-mourning",
+              "quantity": 9,
+              "type": "weaponPrimary"
+            },
+            {
+              "key": "chaos-bolt",
+              "quantity": 14,
+              "type": "weapon"
+            },
+            {
+              "key": "crystalline-cyst-dust",
+              "quantity": 9,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 55000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "level": 80,
+          "materials": [
+            {
+              "key": "oasis-gardens-truth",
+              "quantity": 6,
+              "type": "weaponPrimary"
+            },
+            {
+              "key": "chaos-bolt",
+              "quantity": 27,
+              "type": "weapon"
+            },
+            {
+              "key": "crystalline-cyst-dust",
+              "quantity": 18,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 65000,
+              "type": "currency"
+            }
+          ]
+        }
+      ],
+      "craftingMaterials": [],
+      "stats": [
+        {
+          "level": 1,
+          "baseAtk": 44.0,
+          "statValue": 9.6,
+          "isAnAscension": false
+        },
+        {
+          "level": 20,
+          "baseAtk": 110.0,
+          "statValue": 17.0,
+          "isAnAscension": false
+        },
+        {
+          "level": 20,
+          "baseAtk": 141.0,
+          "statValue": 17.0,
+          "isAnAscension": true
+        },
+        {
+          "level": 40,
+          "baseAtk": 210.0,
+          "statValue": 24.7,
+          "isAnAscension": false
+        },
+        {
+          "level": 40,
+          "baseAtk": 241.0,
+          "statValue": 24.7,
+          "isAnAscension": true
+        },
+        {
+          "level": 50,
+          "baseAtk": 275.0,
+          "statValue": 28.6,
+          "isAnAscension": false
+        },
+        {
+          "level": 50,
+          "baseAtk": 307.0,
+          "statValue": 28.6,
+          "isAnAscension": true
+        },
+        {
+          "level": 60,
+          "baseAtk": 341.0,
+          "statValue": 32.5,
+          "isAnAscension": false
+        },
+        {
+          "level": 60,
+          "baseAtk": 373.0,
+          "statValue": 32.5,
+          "isAnAscension": true
+        },
+        {
+          "level": 70,
+          "baseAtk": 408.0,
+          "statValue": 36.4,
+          "isAnAscension": false
+        },
+        {
+          "level": 70,
+          "baseAtk": 439.0,
+          "statValue": 36.4,
+          "isAnAscension": true
+        },
+        {
+          "level": 80,
+          "baseAtk": 475.0,
+          "statValue": 40.2,
+          "isAnAscension": false
+        },
+        {
+          "level": 80,
+          "baseAtk": 506.0,
+          "statValue": 40.2,
+          "isAnAscension": true
+        },
+        {
+          "level": 90,
+          "baseAtk": 542.0,
+          "statValue": 44.1,
           "isAnAscension": false
         }
       ]
