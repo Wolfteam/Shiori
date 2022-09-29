@@ -7711,13 +7711,13 @@
       "image": "candace.webp",
       "fullImage": "candace.webp",
       "secondFullImage": null,
-      "isComingSoon": true,
-      "isNew": false,
-      "isFemale": false,
+      "isComingSoon": false,
+      "isNew": true,
+      "isFemale": true,
       "region": "sumeru",
-      "role": "na",
-      "tier": "na",
-      "birthday": "01/01",
+      "role": "burstSupport",
+      "tier": "a",
+      "birthday": "05/03",
       "subStatType": "hpPercentage",
       "ascensionMaterials": [
         {
@@ -7728,6 +7728,11 @@
               "key": "varunada-lazurite-sliver",
               "quantity": 1,
               "type": "jewels"
+            },
+            {
+              "key": "redcrest",
+              "quantity": 3,
+              "type": "local"
             },
             {
               "key": "faded-red-satin",
@@ -7751,6 +7756,16 @@
               "type": "jewels"
             },
             {
+              "key": "light-guiding-tetrahedron",
+              "quantity": 2,
+              "type": "elementalStone"
+            },
+            {
+              "key": "redcrest",
+              "quantity": 10,
+              "type": "local"
+            },
+            {
               "key": "faded-red-satin",
               "quantity": 15,
               "type": "common"
@@ -7770,6 +7785,16 @@
               "key": "varunada-lazurite-fragment",
               "quantity": 6,
               "type": "jewels"
+            },
+            {
+              "key": "light-guiding-tetrahedron",
+              "quantity": 4,
+              "type": "elementalStone"
+            },
+            {
+              "key": "redcrest",
+              "quantity": 20,
+              "type": "local"
             },
             {
               "key": "trimmed-red-silk",
@@ -7793,6 +7818,16 @@
               "type": "jewels"
             },
             {
+              "key": "light-guiding-tetrahedron",
+              "quantity": 8,
+              "type": "elementalStone"
+            },
+            {
+              "key": "redcrest",
+              "quantity": 30,
+              "type": "local"
+            },
+            {
               "key": "trimmed-red-silk",
               "quantity": 18,
               "type": "common"
@@ -7814,6 +7849,16 @@
               "type": "jewels"
             },
             {
+              "key": "light-guiding-tetrahedron",
+              "quantity": 12,
+              "type": "elementalStone"
+            },
+            {
+              "key": "redcrest",
+              "quantity": 45,
+              "type": "local"
+            },
+            {
               "key": "rich-red-brocade",
               "quantity": 12,
               "type": "common"
@@ -7833,6 +7878,16 @@
               "key": "varunada-lazurite-gemstone",
               "quantity": 6,
               "type": "jewels"
+            },
+            {
+              "key": "light-guiding-tetrahedron",
+              "quantity": 20,
+              "type": "elementalStone"
+            },
+            {
+              "key": "redcrest",
+              "quantity": 60,
+              "type": "local"
             },
             {
               "key": "rich-red-brocade",
@@ -8063,101 +8118,101 @@
             {
               "key": "param1",
               "values": [
-                63.38,
-                68.54,
-                73.7,
-                81.07,
-                86.23,
-                92.12,
-                100.23,
-                108.34,
-                116.45,
-                125.29,
-                134.13,
-                142.98,
-                151.82,
-                160.67,
-                169.51
+                60.8,
+                65.75,
+                70.7,
+                77.77,
+                82.72,
+                88.38,
+                96.15,
+                103.93,
+                111.71,
+                120.19,
+                128.67,
+                137.16,
+                145.64,
+                154.13,
+                162.61
               ]
             },
             {
               "key": "param2",
               "values": [
-                63.3,
-                68.45,
-                73.6,
-                80.96,
-                86.11,
-                92.0,
-                100.1,
-                108.19,
-                116.29,
-                125.12,
-                133.95,
-                142.78,
-                151.62,
-                160.45,
-                169.28
+                61.15,
+                66.12,
+                71.1,
+                78.21,
+                83.19,
+                88.88,
+                96.7,
+                104.52,
+                112.34,
+                120.87,
+                129.4,
+                137.93,
+                146.47,
+                155.0,
+                163.53
               ]
             },
             {
               "key": "param3",
               "values": [
-                36.53,
-                39.51,
-                42.48,
-                46.73,
-                49.7,
-                53.1,
-                57.77,
-                62.45,
-                67.12,
-                72.22,
-                77.31,
-                82.41,
-                87.51,
-                92.61,
-                97.7
+                35.49,
+                38.38,
+                41.26,
+                45.39,
+                48.28,
+                51.58,
+                56.12,
+                60.66,
+                65.2,
+                70.15,
+                75.1,
+                80.05,
+                85.01,
+                89.96,
+                94.91
               ]
             },
             {
               "key": "param4",
               "values": [
-                44.65,
-                48.29,
-                51.92,
-                57.11,
-                60.75,
-                64.9,
-                70.61,
-                76.32,
-                82.03,
-                88.26,
-                94.49,
-                100.72,
-                106.96,
-                113.19,
-                119.42
+                43.37,
+                46.9,
+                50.44,
+                55.48,
+                59.01,
+                63.04,
+                68.59,
+                74.14,
+                79.69,
+                85.74,
+                91.79,
+                97.84,
+                103.9,
+                109.95,
+                116.0
               ]
             },
             {
               "key": "param5",
               "values": [
-                99.76,
-                107.88,
-                116.0,
-                127.6,
-                135.72,
-                145.0,
-                157.76,
-                170.52,
-                183.28,
-                197.2,
-                211.12,
-                225.04,
-                238.96,
-                252.88,
-                266.8
+                94.94,
+                102.67,
+                110.4,
+                121.44,
+                129.17,
+                138.0,
+                150.14,
+                162.29,
+                174.43,
+                187.68,
+                200.93,
+                214.18,
+                227.42,
+                240.67,
+                253.92
               ]
             },
             {
@@ -8310,41 +8365,41 @@
             {
               "key": "param3",
               "values": [
-                12.43,
-                13.36,
-                14.29,
-                15.53,
-                16.46,
-                17.4,
-                18.64,
-                19.88,
-                21.12,
-                22.37,
-                23.61,
-                24.85,
-                26.41,
-                27.96,
-                29.51
+                12.0,
+                12.9,
+                13.8,
+                15.0,
+                15.9,
+                16.8,
+                18.0,
+                19.2,
+                20.4,
+                21.6,
+                22.8,
+                24.0,
+                25.5,
+                27.0,
+                28.5
               ]
             },
             {
               "key": "param4",
               "values": [
-                20.43,
-                21.96,
-                23.49,
-                25.53,
-                27.06,
-                28.6,
-                30.64,
-                32.68,
-                34.72,
-                36.77,
-                38.81,
-                40.85,
-                43.41,
-                45.96,
-                48.51
+                19.04,
+                20.47,
+                21.9,
+                23.8,
+                25.23,
+                26.66,
+                28.56,
+                30.46,
+                32.37,
+                34.27,
+                36.18,
+                38.08,
+                40.46,
+                42.84,
+                45.22
               ]
             },
             {
@@ -8399,7 +8454,7 @@
               "values": [
                 6.61,
                 7.11,
-                8.26,
+                7.6,
                 8.26,
                 8.76,
                 9.25,
@@ -8459,7 +8514,7 @@
               "values": [
                 6.61,
                 7.11,
-                8.26,
+                7.6,
                 8.26,
                 8.76,
                 9.25,
@@ -8586,7 +8641,107 @@
           "image": "candace_c6.webp"
         }
       ],
-      "builds": [],
+      "builds": [
+        {
+          "isRecommended": true,
+          "type": "burstSupport",
+          "subType": "none",
+          "skillPriorities": [
+            "elementalBurst",
+            "elementalSkill"
+          ],
+          "weaponKeys": [
+            "black-tassel",
+            "staff-of-homa",
+            "favonius-lance"
+          ],
+          "artifacts": [
+            {
+              "oneKey": "noblesse-oblige",
+              "multiples": [],
+              "stats": [
+                "hp",
+                "atk",
+                "hpPercentage",
+                "hpPercentage",
+                "hpPercentage"
+              ]
+            },
+            {
+              "oneKey": null,
+              "multiples": [
+                {
+                  "key": "tenacity-of-the-millelith",
+                  "quantity": 2
+                },
+                {
+                  "key": "emblem-of-severed-fate",
+                  "quantity": 2
+                }
+              ],
+              "stats": [
+                "hp",
+                "atk",
+                "hpPercentage",
+                "hpPercentage",
+                "hpPercentage"
+              ]
+            }
+          ],
+          "subStatsToFocus": [
+            "hpPercentage",
+            "hp",
+            "energyRechargePercentage"
+          ]
+        },
+        {
+          "isRecommended": false,
+          "type": "dps",
+          "subType": "hydro",
+          "skillPriorities": [
+            "normalAttack",
+            "elementalBurst",
+            "elementalSkill"
+          ],
+          "weaponKeys": [
+            "staff-of-homa",
+            "primordial-jade-winged-spear",
+            "blackcliff-pole",
+            "missive-windspear",
+            "prototype-starglitter"
+          ],
+          "artifacts": [
+            {
+              "oneKey": "heart-of-depth",
+              "multiples": [],
+              "stats": [
+                "hp",
+                "atk",
+                "atkPercentage",
+                "hydroDmgBonusPercentage",
+                "critRatePercentage"
+              ]
+            },
+            {
+              "oneKey": "gladiators-finale",
+              "multiples": [],
+              "stats": [
+                "hp",
+                "atk",
+                "atkPercentage",
+                "hydroDmgBonusPercentage",
+                "critRatePercentage"
+              ]
+            }
+          ],
+          "subStatsToFocus": [
+            "critDmgPercentage",
+            "critRatePercentage",
+            "atkPercentage",
+            "hpPercentage"
+          ]
+        }
+      ],
       "stats": [
         {
           "level": 1,
@@ -10658,13 +10813,13 @@
       "image": "cyno.webp",
       "fullImage": "cyno.webp",
       "secondFullImage": null,
-      "isComingSoon": true,
-      "isNew": false,
+      "isComingSoon": false,
+      "isNew": true,
       "isFemale": false,
       "region": "sumeru",
-      "role": "na",
-      "tier": "na",
-      "birthday": "01/01",
+      "role": "dps",
+      "tier": "s",
+      "birthday": "06/23",
       "subStatType": "critDmgPercentage",
       "ascensionMaterials": [
         {
@@ -10675,6 +10830,11 @@
               "key": "vajrada-amethyst-sliver",
               "quantity": 1,
               "type": "jewels"
+            },
+            {
+              "key": "scarab",
+              "quantity": 3,
+              "type": "local"
             },
             {
               "key": "divining-scroll",
@@ -10703,6 +10863,11 @@
               "type": "elementalStone"
             },
             {
+              "key": "scarab",
+              "quantity": 10,
+              "type": "local"
+            },
+            {
               "key": "divining-scroll",
               "quantity": 15,
               "type": "common"
@@ -10727,6 +10892,11 @@
               "key": "thunderclap-fruitcore",
               "quantity": 4,
               "type": "elementalStone"
+            },
+            {
+              "key": "scarab",
+              "quantity": 20,
+              "type": "local"
             },
             {
               "key": "sealed-scroll",
@@ -10755,6 +10925,11 @@
               "type": "elementalStone"
             },
             {
+              "key": "scarab",
+              "quantity": 30,
+              "type": "local"
+            },
+            {
               "key": "sealed-scroll",
               "quantity": 18,
               "type": "common"
@@ -10781,6 +10956,11 @@
               "type": "elementalStone"
             },
             {
+              "key": "scarab",
+              "quantity": 45,
+              "type": "local"
+            },
+            {
               "key": "forbidden-curse-scroll",
               "quantity": 12,
               "type": "common"
@@ -10805,6 +10985,11 @@
               "key": "thunderclap-fruitcore",
               "quantity": 20,
               "type": "elementalStone"
+            },
+            {
+              "key": "scarab",
+              "quantity": 60,
+              "type": "local"
             },
             {
               "key": "forbidden-curse-scroll",
@@ -11135,21 +11320,21 @@
             {
               "key": "param6",
               "values": [
-                116.1,
-                125.55,
-                135.0,
-                148.5,
-                157.95,
-                168.75,
-                183.6,
-                198.45,
-                213.3,
-                229.5,
-                245.7,
-                261.9,
-                278.1,
-                294.3,
-                310.5
+                122.38,
+                132.34,
+                142.3,
+                156.53,
+                166.49,
+                177.87,
+                193.53,
+                209.18,
+                224.83,
+                241.91,
+                258.99,
+                276.06,
+                293.14,
+                310.21,
+                327.29
               ]
             },
             {
@@ -11349,121 +11534,121 @@
             {
               "key": "param1",
               "values": [
-                73.03,
-                78.97,
-                84.92,
-                93.41,
-                99.35,
-                106.14,
-                115.48,
-                124.83,
-                134.17,
-                144.36,
-                154.55,
-                164.74,
-                174.92,
-                185.11,
-                195.3
+                78.28,
+                84.66,
+                91.03,
+                100.13,
+                106.5,
+                113.78,
+                123.8,
+                133.81,
+                143.82,
+                154.75,
+                165.67,
+                176.59,
+                187.52,
+                198.44,
+                209.36
               ]
             },
             {
               "key": "param2",
               "values": [
-                76.94,
-                83.2,
-                89.47,
-                98.41,
-                104.68,
-                111.83,
-                121.67,
-                131.52,
-                141.36,
-                152.09,
-                162.83,
-                173.56,
-                184.3,
-                195.04,
-                205.77
+                82.47,
+                89.18,
+                95.89,
+                105.48,
+                112.2,
+                119.87,
+                130.42,
+                140.96,
+                151.51,
+                163.02,
+                174.53,
+                186.03,
+                197.54,
+                209.05,
+                220.56
               ]
             },
             {
               "key": "param3",
               "values": [
-                97.66,
-                105.6,
-                113.55,
-                124.91,
-                132.86,
-                141.94,
-                154.43,
-                166.92,
-                179.41,
-                193.04,
-                206.67,
-                220.29,
-                233.92,
-                247.55,
-                261.17
+                104.63,
+                113.15,
+                121.67,
+                133.83,
+                142.35,
+                152.08,
+                165.47,
+                178.85,
+                192.23,
+                206.83,
+                221.43,
+                236.03,
+                250.63,
+                265.23,
+                279.83
               ]
             },
             {
               "key": "param4",
               "values": [
-                48.3,
-                52.23,
-                56.17,
-                61.78,
-                65.71,
-                70.21,
-                76.39,
-                82.56,
-                88.74,
-                95.48,
-                102.22,
-                108.96,
-                115.7,
-                122.44,
-                129.18
+                51.69,
+                55.9,
+                60.11,
+                66.12,
+                70.33,
+                75.14,
+                81.75,
+                88.36,
+                94.97,
+                102.19,
+                109.4,
+                116.61,
+                123.83,
+                131.04,
+                138.25
               ]
             },
             {
               "key": "param5",
               "values": [
-                48.3,
-                52.23,
-                56.17,
-                61.78,
-                65.71,
-                70.21,
-                76.39,
-                82.56,
-                88.74,
-                95.48,
-                102.22,
-                108.96,
-                115.7,
-                122.44,
-                129.18
+                51.69,
+                55.9,
+                60.11,
+                66.12,
+                70.33,
+                75.14,
+                81.75,
+                88.36,
+                94.97,
+                102.19,
+                109.4,
+                116.61,
+                123.83,
+                131.04,
+                138.25
               ]
             },
             {
               "key": "param6",
               "values": [
-                122.09,
-                132.03,
-                141.97,
-                156.17,
-                166.1,
-                177.46,
-                193.08,
-                208.69,
-                224.31,
-                241.35,
-                258.38,
-                275.42,
-                292.46,
-                309.49,
-                326.53
+                130.84,
+                141.49,
+                152.15,
+                167.36,
+                178.01,
+                190.18,
+                206.92,
+                223.65,
+                240.39,
+                258.65,
+                276.9,
+                295.16,
+                313.42,
+                331.68,
+                349.93
               ]
             },
             {
@@ -11698,7 +11883,56 @@
           "image": "cyno_c6.webp"
         }
       ],
-      "builds": [],
+      "builds": [
+        {
+          "isRecommended": true,
+          "type": "dps",
+          "subType": "none",
+          "skillPriorities": [
+            "normalAttack",
+            "elementalSkill",
+            "elementalBurst"
+          ],
+          "weaponKeys": [
+            "staff-of-the-scarlet-sands",
+            "primordial-jade-winged-spear",
+            "calamity-queller",
+            "missive-windspear",
+            "kitain-cross-spear",
+            "moonpiercer"
+          ],
+          "artifacts": [
+            {
+              "oneKey": "gilded-dreams",
+              "multiples": [],
+              "stats": [
+                "hp",
+                "atk",
+                "atkPercentage",
+                "electroDmgBonusPercentage",
+                "critRatePercentage"
+              ]
+            },
+            {
+              "oneKey": "thundering-fury",
+              "multiples": [],
+              "stats": [
+                "hp",
+                "atk",
+                "elementalMastery",
+                "electroDmgBonusPercentage",
+                "critRatePercentage"
+              ]
+            }
+          ],
+          "subStatsToFocus": [
+            "critDmgPercentage",
+            "critRatePercentage",
+            "atkPercentage",
+            "elementalMastery"
+          ]
+        }
+      ],
       "stats": [
         {
           "level": 1,
@@ -13981,7 +14215,7 @@
       "fullImage": "dori.webp",
       "secondFullImage": null,
       "isComingSoon": false,
-      "isNew": true,
+      "isNew": false,
       "isFemale": true,
       "region": "sumeru",
       "role": "support",
@@ -32683,6 +32917,11 @@
               "type": "jewels"
             },
             {
+              "key": "perpetual-caliber",
+              "quantity": 2,
+              "type": "elementalStone"
+            },
+            {
               "key": "padisarah",
               "quantity": 10,
               "type": "local"
@@ -32707,6 +32946,11 @@
               "key": "varunada-lazurite-fragment",
               "quantity": 6,
               "type": "jewels"
+            },
+            {
+              "key": "perpetual-caliber",
+              "quantity": 4,
+              "type": "elementalStone"
             },
             {
               "key": "padisarah",
@@ -32735,6 +32979,11 @@
               "type": "jewels"
             },
             {
+              "key": "perpetual-caliber",
+              "quantity": 8,
+              "type": "elementalStone"
+            },
+            {
               "key": "padisarah",
               "quantity": 30,
               "type": "local"
@@ -32761,6 +33010,11 @@
               "type": "jewels"
             },
             {
+              "key": "perpetual-caliber",
+              "quantity": 12,
+              "type": "elementalStone"
+            },
+            {
               "key": "padisarah",
               "quantity": 45,
               "type": "local"
@@ -32785,6 +33039,11 @@
               "key": "varunada-lazurite-gemstone",
               "quantity": 6,
               "type": "jewels"
+            },
+            {
+              "key": "perpetual-caliber",
+              "quantity": 20,
+              "type": "elementalStone"
             },
             {
               "key": "padisarah",
@@ -33434,41 +33693,41 @@
             {
               "key": "param1",
               "values": [
-                24.58,
-                26.42,
-                28.26,
-                30.72,
-                32.56,
-                34.41,
+                18.43,
+                19.81,
+                21.2,
+                23.04,
+                24.42,
+                25.8,
+                27.65,
+                29.49,
+                31.33,
+                33.18,
+                35.02,
                 36.86,
-                39.32,
-                41.78,
-                44.24,
-                46.69,
-                49.15,
-                52.22,
-                55.3,
-                58.37
+                39.17,
+                41.47,
+                43.78
               ]
             },
             {
               "key": "param2",
               "values": [
-                30.04,
-                32.29,
-                34.54,
-                37.55,
-                39.8,
-                42.05,
+                22.53,
+                24.22,
+                25.91,
+                28.16,
+                29.85,
+                31.54,
+                33.79,
+                36.04,
+                38.3,
+                40.55,
+                42.8,
                 45.06,
-                48.06,
-                51.06,
-                54.07,
-                57.07,
-                60.07,
-                63.83,
-                67.58,
-                71.34
+                47.87,
+                50.69,
+                53.5
               ]
             },
             {
@@ -33563,7 +33822,50 @@
           "image": "nilou_c6.webp"
         }
       ],
-      "builds": [],
+      "builds": [
+        {
+          "isRecommended": true,
+          "type": "offFieldDps",
+          "subType": "none",
+          "skillPriorities": [
+            "elementalSkill",
+            "elementalBurst"
+          ],
+          "weaponKeys": [
+            "primordial-jade-cutter",
+            "freedom-sworn",
+            "iron-sting"
+          ],
+          "artifacts": [
+            {
+              "oneKey": null,
+              "multiples": [
+                {
+                  "key": "tenacity-of-the-millelith",
+                  "quantity": 2
+                },
+                {
+                  "key": "heart-of-depth",
+                  "quantity": 2
+                }
+              ],
+              "stats": [
+                "hp",
+                "atk",
+                "hpPercentage",
+                "hpPercentage",
+                "hpPercentage"
+              ]
+            }
+          ],
+          "subStatsToFocus": [
+            "hpPercentage",
+            "hp",
+            "elementalMastery",
+            "energyRechargePercentage"
+          ]
+        }
+      ],
       "stats": [
         {
           "level": 1,

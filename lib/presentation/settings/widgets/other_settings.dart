@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shiori/application/bloc.dart';
@@ -54,12 +56,13 @@ class OtherSettings extends StatelessWidget {
                       value: settingsState.showWeaponDetails,
                       onChanged: (newVal) => context.read<SettingsBloc>().add(SettingsEvent.showWeaponDetailsChanged(newValue: newVal)),
                     ),
-                    SwitchListTile(
-                      activeColor: theme.colorScheme.secondary,
-                      title: Text(s.pressOnceAgainToExit),
-                      value: settingsState.doubleBackToClose,
-                      onChanged: (newVal) => context.read<SettingsBloc>().add(SettingsEvent.doubleBackToCloseChanged(newValue: newVal)),
-                    ),
+                    if (Platform.isAndroid)
+                      SwitchListTile(
+                        activeColor: theme.colorScheme.secondary,
+                        title: Text(s.pressOnceAgainToExit),
+                        value: settingsState.doubleBackToClose,
+                        onChanged: (newVal) => context.read<SettingsBloc>().add(SettingsEvent.doubleBackToCloseChanged(newValue: newVal)),
+                      ),
                     SwitchListTile(
                       activeColor: theme.colorScheme.secondary,
                       title: Text(s.useOfficialMap),

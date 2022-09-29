@@ -1037,6 +1037,45 @@
         "rust"
       ],
       "version": 3.0
+    },
+    {
+      "type": "character",
+      "from": "2022-09-28T00:00:00",
+      "until": "2022-10-14T00:00:00",
+      "itemKeys": [
+        "cyno",
+        "candace",
+        "kuki-shinobu",
+        "sayu"
+      ],
+      "version": 3.1
+    },
+    {
+      "type": "character",
+      "from": "2022-09-28T00:00:00",
+      "until": "2022-10-14T00:00:00",
+      "itemKeys": [
+        "venti",
+        "candace",
+        "kuki-shinobu",
+        "sayu"
+      ],
+      "version": 3.1
+    },
+    {
+      "type": "weapon",
+      "from": "2022-09-28T00:00:00",
+      "until": "2022-10-14T00:00:00",
+      "itemKeys": [
+        "staff-of-the-scarlet-sands",
+        "elegy-for-the-end",
+        "makhaira-aquamarine",
+        "lions-roar",
+        "favonius-lance",
+        "sacrificial-fragments",
+        "favonius-warbow"
+      ],
+      "version": 3.1
     }
   ]
 }
