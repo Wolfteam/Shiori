@@ -3036,6 +3036,33 @@
       "attributes": null
     },
     {
+      "key": "damaged-prism",
+      "image": "damaged-prism.webp",
+      "rarity": 2,
+      "position": 241,
+      "level": 1,
+      "type": "weapon",
+      "hasSiblings": true,
+      "days": [],
+      "recipes": [
+        {
+          "createsMaterialKey": "turbid-prism",
+          "needs": [
+            {
+              "key": "damaged-prism",
+              "quantity": 3
+            },
+            {
+              "key": "mora",
+              "quantity": 50
+            }
+          ]
+        }
+      ],
+      "obtainedFrom": [],
+      "attributes": null
+    },
+    {
       "key": "dark-statuette",
       "image": "dark-statuette.webp",
       "rarity": 3,
@@ -3578,6 +3605,33 @@
       "attributes": null
     },
     {
+      "key": "radiant-prism",
+      "image": "radiant-prism.webp",
+      "rarity": 4,
+      "position": 243,
+      "level": 3,
+      "type": "weapon",
+      "hasSiblings": true,
+      "days": [],
+      "recipes": [],
+      "obtainedFrom": [
+        {
+          "createsMaterialKey": "radiant-prism",
+          "needs": [
+            {
+              "key": "turbid-prism",
+              "quantity": 3
+            },
+            {
+              "key": "mora",
+              "quantity": 125
+            }
+          ]
+        }
+      ],
+      "attributes": null
+    },
+    {
       "key": "robust-fungal-nucleus",
       "image": "robust-fungal-nucleus.webp",
       "rarity": 4,
@@ -3718,6 +3772,47 @@
             {
               "key": "mora",
               "quantity": 25
+            }
+          ]
+        }
+      ],
+      "attributes": null
+    },
+    {
+      "key": "turbid-prism",
+      "image": "turbid-prism.webp",
+      "rarity": 3,
+      "position": 242,
+      "level": 2,
+      "type": "weapon",
+      "hasSiblings": true,
+      "days": [],
+      "recipes": [
+        {
+          "createsMaterialKey": "radiant-prism",
+          "needs": [
+            {
+              "key": "turbid-prism",
+              "quantity": 3
+            },
+            {
+              "key": "mora",
+              "quantity": 125
+            }
+          ]
+        }
+      ],
+      "obtainedFrom": [
+        {
+          "createsMaterialKey": "turbid-prism",
+          "needs": [
+            {
+              "key": "damaged-prism",
+              "quantity": 3
+            },
+            {
+              "key": "mora",
+              "quantity": 50
             }
           ]
         }
@@ -6732,6 +6827,19 @@
       "attributes": null
     },
     {
+      "key": "light-guiding-tetrahedron",
+      "image": "light-guiding-tetrahedron.webp",
+      "rarity": 4,
+      "position": 86,
+      "level": 0,
+      "type": "elementalStone",
+      "hasSiblings": false,
+      "days": [],
+      "recipes": [],
+      "obtainedFrom": [],
+      "attributes": null
+    },
+    {
       "key": "lightning-prism",
       "image": "lightning-prism.webp",
       "rarity": 4,
@@ -6762,6 +6870,19 @@
       "image": "majestic-hooked-beak.webp",
       "rarity": 4,
       "position": 83,
+      "level": 0,
+      "type": "elementalStone",
+      "hasSiblings": false,
+      "days": [],
+      "recipes": [],
+      "obtainedFrom": [],
+      "attributes": null
+    },
+    {
+      "key": "perpetual-caliber",
+      "image": "perpetual-caliber.webp",
+      "rarity": 4,
+      "position": 85,
       "level": 0,
       "type": "elementalStone",
       "hasSiblings": false,
@@ -12494,6 +12615,21 @@
       }
     },
     {
+      "key": "redcrest",
+      "image": "redcrest.webp",
+      "rarity": 1,
+      "position": 148,
+      "level": 0,
+      "type": "local",
+      "hasSiblings": false,
+      "days": [],
+      "recipes": [],
+      "obtainedFrom": [],
+      "attributes": {
+        "farmingRespawnTime": 48
+      }
+    },
+    {
       "key": "rukkhashava-mushrooms",
       "image": "rukkhashava-mushrooms.webp",
       "rarity": 1,
@@ -12528,6 +12664,21 @@
       "image": "sango-pearl.webp",
       "rarity": 1,
       "position": 139,
+      "level": 0,
+      "type": "local",
+      "hasSiblings": false,
+      "days": [],
+      "recipes": [],
+      "obtainedFrom": [],
+      "attributes": {
+        "farmingRespawnTime": 48
+      }
+    },
+    {
+      "key": "scarab",
+      "image": "scarab.webp",
+      "rarity": 1,
+      "position": 149,
       "level": 0,
       "type": "local",
       "hasSiblings": false,
@@ -12839,6 +12990,19 @@
     }
   ],
   "ingredient": [
+    {
+      "key": "ajilenakh-nut",
+      "image": "ajilenakh-nut.webp",
+      "rarity": 1,
+      "position": 576,
+      "level": 0,
+      "type": "ingredient",
+      "hasSiblings": false,
+      "days": [],
+      "recipes": [],
+      "obtainedFrom": [],
+      "attributes": null
+    },
     {
       "key": "almond",
       "image": "almond.webp",

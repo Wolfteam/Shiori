@@ -145,6 +145,142 @@
       ]
     },
     {
+      "key": "aeonblight-drake",
+      "image": "aeonblight-drake.webp",
+      "type": "automaton",
+      "isComingSoon": false,
+      "drops": [
+        {
+          "key": "berserker",
+          "type": "artifact"
+        },
+        {
+          "key": "gladiators-finale",
+          "type": "artifact"
+        },
+        {
+          "key": "mora",
+          "type": "material"
+        },
+        {
+          "key": "perpetual-caliber",
+          "type": "material"
+        },
+        {
+          "key": "prayers-to-springtime",
+          "type": "artifact"
+        },
+        {
+          "key": "shivada-jade-chunk",
+          "type": "material"
+        },
+        {
+          "key": "shivada-jade-fragment",
+          "type": "material"
+        },
+        {
+          "key": "shivada-jade-gemstone",
+          "type": "material"
+        },
+        {
+          "key": "shivada-jade-sliver",
+          "type": "material"
+        },
+        {
+          "key": "the-exile",
+          "type": "artifact"
+        },
+        {
+          "key": "varunada-lazurite-chunk",
+          "type": "material"
+        },
+        {
+          "key": "varunada-lazurite-fragment",
+          "type": "material"
+        },
+        {
+          "key": "varunada-lazurite-gemstone",
+          "type": "material"
+        },
+        {
+          "key": "varunada-lazurite-sliver",
+          "type": "material"
+        },
+        {
+          "key": "wanderers-troupe",
+          "type": "artifact"
+        }
+      ]
+    },
+    {
+      "key": "algorithm-of-semi-intransient-matrix-of-overseer-network",
+      "image": "algorithm-of-semi-intransient-matrix-of-overseer-network.webp",
+      "type": "automaton",
+      "isComingSoon": false,
+      "drops": [
+        {
+          "key": "agnidus-agate-chunk",
+          "type": "material"
+        },
+        {
+          "key": "agnidus-agate-fragment",
+          "type": "material"
+        },
+        {
+          "key": "agnidus-agate-gemstone",
+          "type": "material"
+        },
+        {
+          "key": "agnidus-agate-sliver",
+          "type": "material"
+        },
+        {
+          "key": "berserker",
+          "type": "artifact"
+        },
+        {
+          "key": "gladiators-finale",
+          "type": "artifact"
+        },
+        {
+          "key": "instructor",
+          "type": "artifact"
+        },
+        {
+          "key": "light-guiding-tetrahedron",
+          "type": "material"
+        },
+        {
+          "key": "mora",
+          "type": "material"
+        },
+        {
+          "key": "prayers-for-illumination",
+          "type": "artifact"
+        },
+        {
+          "key": "vayuda-turquoise-chunk",
+          "type": "material"
+        },
+        {
+          "key": "vayuda-turquoise-fragment",
+          "type": "material"
+        },
+        {
+          "key": "vayuda-turquoise-gemstone",
+          "type": "material"
+        },
+        {
+          "key": "vayuda-turquoise-sliver",
+          "type": "material"
+        },
+        {
+          "key": "wanderers-troupe",
+          "type": "artifact"
+        }
+      ]
+    },
+    {
       "key": "anemo-hypostasis",
       "image": "anemo-hypostasis.webp",
       "type": "elementalLifeForm",
@@ -1594,6 +1730,13 @@
       ]
     },
     {
+      "key": "eremite-galehunter",
+      "image": "eremite-galehunter.webp",
+      "type": "human",
+      "isComingSoon": false,
+      "drops": []
+    },
+    {
       "key": "eremite-linebreaker",
       "image": "eremite-linebreaker.webp",
       "type": "human",
@@ -1640,6 +1783,13 @@
           "type": "material"
         }
       ]
+    },
+    {
+      "key": "eremite-stone-enchanter",
+      "image": "eremite-stone-enchanter.webp",
+      "type": "human",
+      "isComingSoon": false,
+      "drops": []
     },
     {
       "key": "eremite-sunfrost",
@@ -1983,6 +2133,13 @@
           "type": "material"
         }
       ]
+    },
+    {
+      "key": "floating-anemo-fungus",
+      "image": "floating-anemo-fungus.webp",
+      "type": "magicalBeast",
+      "isComingSoon": false,
+      "drops": []
     },
     {
       "key": "floating-dendro-fungus",
@@ -2347,6 +2504,13 @@
           "type": "artifact"
         }
       ]
+    },
+    {
+      "key": "grounded-geoshroom",
+      "image": "grounded-geoshroom.webp",
+      "type": "magicalBeast",
+      "isComingSoon": false,
+      "drops": []
     },
     {
       "key": "grounded-hydroshroom",
@@ -3753,6 +3917,114 @@
       ]
     },
     {
+      "key": "primal-construct-prospector",
+      "image": "primal-construct-prospector.webp",
+      "type": "automaton",
+      "isComingSoon": false,
+      "drops": [
+        {
+          "key": "berserker",
+          "type": "artifact"
+        },
+        {
+          "key": "damaged-prism",
+          "type": "material"
+        },
+        {
+          "key": "instructor",
+          "type": "artifact"
+        },
+        {
+          "key": "mora",
+          "type": "material"
+        },
+        {
+          "key": "radiant-prism",
+          "type": "material"
+        },
+        {
+          "key": "the-exile",
+          "type": "artifact"
+        },
+        {
+          "key": "turbid-prism",
+          "type": "material"
+        }
+      ]
+    },
+    {
+      "key": "primal-construct-repulsor",
+      "image": "primal-construct-repulsor.webp",
+      "type": "automaton",
+      "isComingSoon": false,
+      "drops": [
+        {
+          "key": "berserker",
+          "type": "artifact"
+        },
+        {
+          "key": "damaged-prism",
+          "type": "material"
+        },
+        {
+          "key": "instructor",
+          "type": "artifact"
+        },
+        {
+          "key": "mora",
+          "type": "material"
+        },
+        {
+          "key": "radiant-prism",
+          "type": "material"
+        },
+        {
+          "key": "the-exile",
+          "type": "artifact"
+        },
+        {
+          "key": "turbid-prism",
+          "type": "material"
+        }
+      ]
+    },
+    {
+      "key": "primal-construct-reshaper",
+      "image": "primal-construct-reshaper.webp",
+      "type": "automaton",
+      "isComingSoon": false,
+      "drops": [
+        {
+          "key": "berserker",
+          "type": "artifact"
+        },
+        {
+          "key": "damaged-prism",
+          "type": "material"
+        },
+        {
+          "key": "instructor",
+          "type": "artifact"
+        },
+        {
+          "key": "mora",
+          "type": "material"
+        },
+        {
+          "key": "radiant-prism",
+          "type": "material"
+        },
+        {
+          "key": "the-exile",
+          "type": "artifact"
+        },
+        {
+          "key": "turbid-prism",
+          "type": "material"
+        }
+      ]
+    },
+    {
       "key": "primo-geovishap",
       "image": "primo-geovishap.webp",
       "type": "magicalBeast",
@@ -4945,6 +5217,20 @@
       "drops": []
     },
     {
+      "key": "spirit-of-omen-stone-drake",
+      "image": "spirit-of-omen-stone-drake.webp",
+      "type": "na",
+      "isComingSoon": false,
+      "drops": []
+    },
+    {
+      "key": "spirit-of-omen-wind-glede",
+      "image": "spirit-of-omen-wind-glede.webp",
+      "type": "na",
+      "isComingSoon": false,
+      "drops": []
+    },
+    {
       "key": "stonehide-lawachurl",
       "image": "stonehide-lawachurl.webp",
       "type": "hilichurl",
@@ -5143,6 +5429,13 @@
           "type": "material"
         }
       ]
+    },
+    {
+      "key": "stretchy-electro-fungus",
+      "image": "stretchy-electro-fungus.webp",
+      "type": "magicalBeast",
+      "isComingSoon": false,
+      "drops": []
     },
     {
       "key": "stretchy-geo-fungus",
@@ -5774,6 +6067,13 @@
           "type": "material"
         }
       ]
+    },
+    {
+      "key": "whirling-pyro-fungus",
+      "image": "whirling-pyro-fungus.webp",
+      "type": "magicalBeast",
+      "isComingSoon": false,
+      "drops": []
     },
     {
       "key": "winged-cryoshroom",

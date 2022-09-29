@@ -1024,86 +1024,146 @@
     {
       "key": "candace",
       "name": "Candace",
-      "title": "？？？",
-      "description": "？？？",
+      "title": "Golden Vow",
+      "description": "Keturunan Raja Deshret yang memiliki mata kiri berwarna kuning keemasan. Pelindung Desa Aaru.",
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Gleaming Spear – Guardian Stance",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Normal Attack",
+              "description": "Melancarkan hingga 4 serangan tombak berturut-turut.\n",
+              "descriptions": []
+            },
+            {
+              "name": "Charged Attack",
+              "description": "Mengonsumsi sejumlah Stamina untuk menerjang ke depan dan mengakibatkan DMG pada musuh di jalur terjangan.\n",
+              "descriptions": []
+            },
+            {
+              "name": "Plunging Attack",
+              "description": "Menerjang dari udara untuk menghantam tanah, mengakibatkan DMG pada musuh di jalur terjangan dan mengakibatkan DMG area saat mendarat.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "DMG Tahap 1|{param1}%",
+            "DMG Tahap 2|{param2}%",
+            "DMG Tahap 3|{param3}% + {param4}%",
+            "DMG Tahap 4|{param5}%",
+            "DMG Charged Attack|{param6}%",
+            "Konsumsi Stamina Charged Attack|{param7} pt",
+            "DMG Selama Plunging|{param8}%",
+            "DMG Plunging Attack Min./Maks.|{param9}% / {param10}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Sacred Rite: Heron’s Sanctum",
+          "description": "Gaya bertempur Candace mampu menahan gelombang serbuan musuh.\n\n",
+          "abilities": [
+            {
+              "name": "Mode Tekan",
+              "description": "Menerjang ke depan dengan tamengnya dan mengakibatkan Hydro DMG.\n",
+              "descriptions": []
+            },
+            {
+              "name": "Mode Tahan",
+              "description": "Mengangkat tameng untuk menahan serangan musuh di sekitar dan membuat perisai yang dapat menyerap DMG berdasarkan Max HP Candace, perisai juga memiliki 250% pertahanan terhadap Hydro DMG. Perisai akan terus aktif hingga Elemental Skill selesai dilancarkan.\nCandace akan selesai mengisi energi setelah tombol skill ditahan sampai waktu tertentu, dan ketika tombol skill dilepaskan, durasi skill selesai, atau perisainya hancur, Candace akan melakukan sebuah serangan melompat yang mengakibatkan Hydro DMG terhadap musuh di depannya.\n",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "Pertahanan Perisai|{param1}% Max HP + {param2}",
+            "DMG Dasar|{param3}% Max HP",
+            "DMG Charge Penuh|{param4}% Max HP",
+            "Cooldown Mode Tekan|{param5} dtk",
+            "Cooldown Mode Tahan|{param6} dtk"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Sacred Rite: Wagtail’s Tide",
+          "description": "Mengangkat senjata dan meminta perlindungan dewa, mengakibatkan Hydro DMG Area berdasarkan Max HP Candace, sekaligus memberikan status Prayer of the Crimson Crown kepada Karakter aktif.\n\n",
+          "abilities": [
+            {
+              "name": "Prayer of the Crimson Crown",
+              "description": "Memberikan efek sebagai berikut:\n",
+              "descriptions": [
+                "Meningkatkan Elemental DMG yang diakibatkan Normal Attack Karakter;",
+                "Saat Karakter memasuki medan pertempuran, akan menghasilkan sebuah gelombang riak yang mengakibatkan Hydro DMG terhadap musuh di sekitar. Jumlah gelombang riak yang bisa terpicu selama durasi skill ini bersifat terbatas;",
+                "Karakter yang menggunakan Senjata Sword, Claymore, dan Polearm akan mendapatkan Hydro Infusion selama berada dalam status ini."
+              ]
+            }
+          ],
+          "stats": [
+            "DMG Skill|{param1}% Max HP",
+            "Durasi|{param2} detik",
+            "Bonus DMG|{param3}%",
+            "DMG Gelombang Air|{param4}% Max HP",
+            "Pemicu Gelombang Air|{param5} kali",
+            "Cooldown|{param6} detik",
+            "Konsumsi Energy|{param7}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "To Dawn’s First Light",
+          "description": "Mengurangi 20% konsumsi Stamina anggota party saat memanjat.\nTidak dapat ditumpuk dengan Talenta Pasif dengan efek yang sama.\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
+          "title": "Aegis of Crossed Arrows",
+          "description": "Jika Candace terkena serangan ketika dalam durasi Mode Tahan Skill Sacred Rite: Heron’s Sanctum, maka durasi Charge Skill tersebut akan langsung selesai.\n",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "NA",
-          "description": "",
+          "title": "Celestial Dome of Sand",
+          "description": "Ketika Karakter berada dalam pengaruh Prayer of the Crimson Crown dari Skill Sacred Rite: Wagtail’s Tide, maka untuk setiap 1000 poin Max HP yang dimiliki Candace, Elemental DMG yang diakibatkan oleh Normal Attack Karakter tersebut akan meningkat sebanyak 0.5%.\n",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "Returning Heiress of the Scarlet Sands",
+          "description": "Durasi Prayer of the Crimson Crown yang terpicu oleh skill Sacred Rite: Wagtail’s Tide bertambah 3 detik.\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "Moon-Piercing Brilliance",
+          "description": "Saat Sacred Rite: Heron’s Sanctum mengenai musuh, akan meningkatkan 20% Max HP Candace selama 15 detik.\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "Hunter’s Supplication",
+          "description": "Meningkatkan 3 level Sacred Rite: Wagtail’s Tide.\nMaksimum: Lv. 15.\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "Sentinel Oath",
+          "description": "Mengurangi CD Mode Tahan Sacred Rite: Heron’s Sanctum, menjadikannya sama dengan CD Mode Tekan.\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "Heterochromatic Gaze",
+          "description": "Meningkatkan 3 level Sacred Rite: Heron’s Sanctum.\nMaksimum: Lv. 15.\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
+          "title": "The Overflow",
+          "description": "Saat Karakter (kecuali Candace sendiri) yang terpengaruh efek Prayer of the Crimson Crown yang disebabkan oleh Sacred Rite: Wagtail’s Tide mengakibatkan Elemental DMG terhadap musuh dengan menggunakan Normal Attack, sebuah serangan gelombang yang mengakibatkan Hydro DMG Area yang setara dengan 15% Max HP Candace akan dilancarkan.\nEfek ini dapat terpicu setiap 2,3 detik, dan DMG yang diakibatkan akan dianggap sebagai DMG Elemental Burst.\n",
           "descriptions": []
         }
       ]
@@ -1360,86 +1420,146 @@
     {
       "key": "cyno",
       "name": "Cyno",
-      "title": "？？？",
-      "description": "？？？",
+      "title": "Judicator of Secrets",
+      "description": "“Mahamatra Umum” yang mengawasi para peneliti di Akademiya. Saat bekerja, lebih efisien daripada “Vayuvyastra Agung” buatan Kshahrewar.",
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Invoker’s Spear",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Normal Attack",
+              "description": "Melancarkan hingga 4 serangan tombak berturut-turut.\n",
+              "descriptions": []
+            },
+            {
+              "name": "Charged Attack",
+              "description": "Mengonsumsi sejumlah Stamina untuk menerjang ke depan dan mengakibatkan DMG pada musuh di jalur terjangan.\n",
+              "descriptions": []
+            },
+            {
+              "name": "Plunging Attack",
+              "description": "Menerjang dari udara untuk menghantam tanah, mengakibatkan DMG pada musuh di jalur terjangan dan mengakibatkan DMG area saat mendarat.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "DMG Tahap 1|{param1}%",
+            "DMG Tahap 2|{param2}%",
+            "DMG Tahap 3|{param3}% + {param4}%",
+            "DMG Tahap 4|{param5}%",
+            "DMG Charged Attack|{param6}%",
+            "Konsumsi Stamina Charged Attack|{param7} pt",
+            "DMG Selama Plunging|{param8}%",
+            "DMG Plunging Attack Min./Maks.|{param9}% / {param10}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Secret Rite: Chasmic Soulfarer",
+          "description": "Menerjang ke arah depan dan mengakibatkan Electro DMG terhadap musuh di dalam jalurnya.\n\nSaat Cyno berada dalam status Pactsworn Pathclearer yang terpicu oleh Elemental Burst Sacred Rite: Wolf’s Swiftness, sebagai gantinya, Cyno akan melepaskan sebuah ",
+          "abilities": [
+            {
+              "name": "Mortuary Rite yang akan melepaskan kekuatan petir yang sangat kuat dan mengakibatkan",
+              "description": "Electro DMG Area serta memperpanjang durasi Pactsworn Pathclearer.\n",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "DMG Skill|{param1}%",
+            "DMG Mortuary Rite|{param2}%",
+            "Bonus Durasi Pactsworn Pathclearer|{param3} dtk",
+            "Cooldown|{param4} dtk",
+            "Cooldown Mortuary Rite|{param5} dtk"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Sacred Rite: Wolf’s Swiftness",
+          "description": "Memanggil sebuah roh yang suci untuk mengambil alih dirinya dan berubah menjadi Pactsworn Pathclearer.\n\n",
+          "abilities": [
+            {
+              "name": "Pactsworn Pathclearer",
+              "description": "DMG yang diakibatkan oleh Normal Attack, Charged Attack, dan Plunging Attack Cyno akan dikonversi menjadi Electro DMG yang tidak bisa ditimpa Elemental Infusion lainnya.\nElemental Mastery dan ketahanan terhadap interupsi Cyno akan meningkat, Cyno juga menjadi kebal terhadap DMG yang diakibatkan oleh reaksi Electro-Charged.\nEfek ini akan hilang saat Cyno meninggalkan medan pertempuran, dan bisa berlangsung selama maksimal 18 detik.\n",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "DMG Tahap 1|{param1}%",
+            "DMG Tahap 2|{param2}%",
+            "DMG Tahap 3|{param3}%",
+            "DMG Tahap 4|{param4}% + {param5}%",
+            "DMG Tahap 5|{param6}%",
+            "DMG Charged Attack|{param7}%",
+            "Konsumsi Stamina Charged Attack|{param8} pt",
+            "DMG Selama Plunging|{param9}%",
+            "DMG Plunging Attack Min./Maks.|{param10}% / {param11}%",
+            "Bonus Elemental Mastery|{param12}",
+            "Durasi Awal|{param13} dtk",
+            "Cooldown|{param14} dtk",
+            "Konsumsi Energy|{param15}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "The Gift of Silence",
+          "description": "Ketika dikirim untuk melakukan ekspedisi di Sumeru selama 20 jam, hadiah yang didapatkan akan bertambah 25%.\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
+          "title": "Featherfall Judgment",
+          "description": "Ketika Cyno ada dalam kondisi Pactsworn Pathclearer yang diaktifkan oleh skill Sacred Rite: Wolf’s Swiftness, Cyno akan memasuki kondisi Endseer dengan interval tertentu. Jika dia mengaktifkan Secret Rite: Chasmic Soulfarer saat berada dalam kondisi tersebut, maka efek Judication akan terpicu, DMG yang diakibatkan Secret Rite: Chasmic Soulfarer akan meningkat sebanyak 35%, dan 3 buah Duststalker Bolt yang mengakibatkan Electro DMG sejumlah 100% ATK Cyno akan ditembakkan.\nDMG Duststalker Bolt dianggap sebagai DMG Elemental Skill.\n",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
+          "title": "Authority Over the Nine Bows",
+          "description": "DMG yang diakibatkan Cyno akan meningkat berdasarkan jumlah Elemental Mastery diri sendiri, dengan peningkatan sebagai berikut:\n",
+          "descriptions": [
+            "DMG Normal Attack Pactsworn Pathclearer akan meningkat sebanyak 150% jumlah Elemental Mastery.",
+            "DMG Duststalker Bolt dari Talenta Pasif Featherfall Judgment akan meningkat sebanyak 250% Elemental Mastery."
+          ]
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "Ordinance: Unceasing Vigil",
+          "description": "Setelah menggunakan Sacred Rite: Wolf’s Swiftness, akan meningkatkan 20% Normal Attack SPD Cyno selama 10 detik. Jika efek Judication dari Talenta Pasif Featherfall Judgment terpicu selama Secret Rite: Chasmic Soulfarer, maka durasi kenaikan ini akan diperbarui.\nHarus membuka Talenta Pasif “Featherfall Judgment” terlebih dahulu.\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "Ceremony: Homecoming of Spirits",
+          "description": "Setelah Normal Attack Cyno mengenai musuh, Electro DMG Bonus akan meningkat 10% selama 4 detik. Efek ini dapat terpicu setiap 0,1 detik, maksimum 5 lapis.\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "Precept: Lawful Enforcer",
+          "description": "Meningkatkan 3 level Sacred Rite: Wolf’s Swiftness.\nMaksimum: Lv. 15.\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "Austerity: Forbidding Guard",
+          "description": "Saat Cyno berada dalam status Pactsworn Pathclearer yang terpicu oleh Sacred Rite: Wolf’s Swiftness, setelah dia memicu Electro-Charged, Superconduct, Overloaded, Quicken, Aggravate, Hyperbloom, atau reaksi Electro Swirl, Cyno akan memulihkan 3 Elemental Energy untuk semua anggota party di sekitar (kecuali Cyno sendiri.)\nEfek ini dapat muncul 5 kali dalam satu kali penggunaan Sacred Rite: Wolf’s Swiftness.\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "Funerary Rite: The Passing of Starlight",
+          "description": "Meningkatkan 3 level Secret Rite: Chasmic Soulfarer.\nMaksimum: Lv. 15.\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
+          "title": "Raiment: Just Scales",
+          "description": "Setelah melancarkan Sacred Rite: Wolf’s Swiftness atau memicu Judication dari Talenta Pasif Featherfall Judgment, Cyno akan mendapatkan 4 lapis efek “Day of the Jackal”. Saat Normal Attack Cyno mengenai musuh, akan mengonsumsi 1 lapis “Day of the Jackal” dan menembakkan 1 Duststalker Bolt.\nDay of the Jackal berlangsung selama 8 detik, dapat ditumpuk sampai 8 lapis, dan akan hilang pada saat status Pactsworn Pathclearer dari Sacred Rite: Wolf’s Swiftness berakhir.\nDuststalker Bolt yang dapat ditembakkan dengan cara ini adalah maksimal satu setiap 0,4 detik.\nHarus membuka Talenta Pasif “Featherfall Judgment” terlebih dahulu.\n",
           "descriptions": []
         }
       ]
@@ -9131,6 +9251,18 @@
       ]
     },
     {
+      "key": "makhaira-aquamarine",
+      "name": "Makhaira Aquamarine",
+      "description": "Sebuah pedang besar kuno yang berkilau seperti air. Erosi pasir selama ribuan tahun sama sekali tidak menumpulkan bilahnya yang tajam.",
+      "refinements": [
+        "Efek berikut akan dihasilkan setiap 10 detik: Meningkatkan ATK Karakter ini berdasarkan {color}24{/color}% Elemental Mastery Karakter yang mengenakan, sementara anggota party lain di sekitar mendapatkan peningkatan ATK sebesar 30% dari peningkatan tersebut, bertahan selama 12 detik. Saat efek ini dihasilkan oleh lebih dari satu Senjata dengan nama yang sama, efek akan bisa ditumpuk. Efek ini tetap dapat terpicu meskipun Karakter penggunanya ada dalam party namun sedang tidak berada di medan pertempuran.",
+        "Efek berikut akan dihasilkan setiap 10 detik: Meningkatkan ATK Karakter ini berdasarkan {color}30{/color}% Elemental Mastery Karakter yang mengenakan, sementara anggota party lain di sekitar mendapatkan peningkatan ATK sebesar 30% dari peningkatan tersebut, bertahan selama 12 detik. Saat efek ini dihasilkan oleh lebih dari satu Senjata dengan nama yang sama, efek akan bisa ditumpuk. Efek ini tetap dapat terpicu meskipun Karakter penggunanya ada dalam party namun sedang tidak berada di medan pertempuran.",
+        "Efek berikut akan dihasilkan setiap 10 detik: Meningkatkan ATK Karakter ini berdasarkan {color}36{/color}% Elemental Mastery Karakter yang mengenakan, sementara anggota party lain di sekitar mendapatkan peningkatan ATK sebesar 30% dari peningkatan tersebut, bertahan selama 12 detik. Saat efek ini dihasilkan oleh lebih dari satu Senjata dengan nama yang sama, efek akan bisa ditumpuk. Efek ini tetap dapat terpicu meskipun Karakter penggunanya ada dalam party namun sedang tidak berada di medan pertempuran.",
+        "Efek berikut akan dihasilkan setiap 10 detik: Meningkatkan ATK Karakter ini berdasarkan {color}42{/color}% Elemental Mastery Karakter yang mengenakan, sementara anggota party lain di sekitar mendapatkan peningkatan ATK sebesar 30% dari peningkatan tersebut, bertahan selama 12 detik. Saat efek ini dihasilkan oleh lebih dari satu Senjata dengan nama yang sama, efek akan bisa ditumpuk. Efek ini tetap dapat terpicu meskipun Karakter penggunanya ada dalam party namun sedang tidak berada di medan pertempuran.",
+        "Efek berikut akan dihasilkan setiap 10 detik: Meningkatkan ATK Karakter ini berdasarkan {color}48{/color}% Elemental Mastery Karakter yang mengenakan, sementara anggota party lain di sekitar mendapatkan peningkatan ATK sebesar 30% dari peningkatan tersebut, bertahan selama 12 detik. Saat efek ini dihasilkan oleh lebih dari satu Senjata dengan nama yang sama, efek akan bisa ditumpuk. Efek ini tetap dapat terpicu meskipun Karakter penggunanya ada dalam party namun sedang tidak berada di medan pertempuran."
+      ]
+    },
+    {
       "key": "mappa-mare",
       "name": "Mappa Mare",
       "description": "Grafik petunjuk untuk berlayar di laut, menunjukkan arus dan iklim di sekitar, mencapai Liyue melalui tangan para pedagang.",
@@ -9164,6 +9296,18 @@
         "Saat Charged Attack mengenai titik kelemahan musuh, akan mengakibatkan tambahan DMG sebesar {color}150{/color}% ATK sebagai CRIT DMG. Dapat terpicu setiap 10 detik.",
         "Saat Charged Attack mengenai titik kelemahan musuh, akan mengakibatkan tambahan DMG sebesar {color}175{/color}% ATK sebagai CRIT DMG. Dapat terpicu setiap 10 detik.",
         "Saat Charged Attack mengenai titik kelemahan musuh, akan mengakibatkan tambahan DMG sebesar {color}200{/color}% ATK sebagai CRIT DMG. Dapat terpicu setiap 10 detik."
+      ]
+    },
+    {
+      "key": "missive-windspear",
+      "name": "Missive Windspear",
+      "description": "Sebuah mercusuar yang menunjukkan arah angin. Tidak setiap syair yang terbawa angin akan menjadi sesuatu yang lembut ….",
+      "refinements": [
+        "Selama 10 detik setelah Reaksi Elemental terpicu, ATK meningkat {color}12{/color}%, Elemental Mastery meningkat {color}48{/color} poin.",
+        "Selama 10 detik setelah Reaksi Elemental terpicu, ATK meningkat {color}15{/color}%, Elemental Mastery meningkat {color}60{/color} poin.",
+        "Selama 10 detik setelah Reaksi Elemental terpicu, ATK meningkat {color}18{/color}%, Elemental Mastery meningkat {color}72{/color} poin.",
+        "Selama 10 detik setelah Reaksi Elemental terpicu, ATK meningkat {color}21{/color}%, Elemental Mastery meningkat {color}84{/color} poin.",
+        "Selama 10 detik setelah Reaksi Elemental terpicu, ATK meningkat {color}24{/color}%, Elemental Mastery meningkat {color}96{/color} poin."
       ]
     },
     {
@@ -9712,6 +9856,18 @@
         "Meningkatkan {color}30{/color}% Max HP, dan memberikan Bonus ATK sebesar {color}1{/color},2% dari Max HP pengguna. Saat HP pengguna kurang dari 50%, maka pengguna akan mendapatkan Bonus ATK tambahan sebesar {color}1{/color},4% dari Max HP.",
         "Meningkatkan {color}35{/color}% Max HP, dan memberikan Bonus ATK sebesar {color}1{/color},4% dari Max HP pengguna. Saat HP pengguna kurang dari 50%, maka pengguna akan mendapatkan Bonus ATK tambahan sebesar {color}1{/color},6% dari Max HP.",
         "Meningkatkan {color}40{/color}% Max HP, dan memberikan Bonus ATK sebesar {color}1{/color},6% dari Max HP pengguna. Saat HP pengguna kurang dari 50%, maka pengguna akan mendapatkan Bonus ATK tambahan sebesar {color}1{/color},8% dari Max HP."
+      ]
+    },
+    {
+      "key": "staff-of-the-scarlet-sands",
+      "name": "Staff of the Scarlet Sands",
+      "description": "Salah satu dari sepasang tongkat yang dibuat dari obsidian. Legenda mengatakan bahwa tongkat ini memberikan hak untuk memerintah penduduk padang pasir, tetapi sekarang tidak ada punggawa yang dapat membedakan penampilan yang tepat dari senjata raja ini ….",
+      "refinements": [
+        "Mendapatkan Bonus ATK berdasarkan {color}52{/color}% Elemental Mastery Karakter yang mengenakan. Saat Elemental Skill mengenai musuh, akan menghasilkan efek Dream of the Scarlet Sands yang bertahan 10 detik: Mendapatkan Bonus ATK berdasarkan {color}28{/color}% Elemental Mastery Karakter yang mengenakan, efek ini dapat ditumpuk sampai 3 lapis.",
+        "Mendapatkan Bonus ATK berdasarkan {color}65{/color}% Elemental Mastery Karakter yang mengenakan. Saat Elemental Skill mengenai musuh, akan menghasilkan efek Dream of the Scarlet Sands yang bertahan 10 detik: Mendapatkan Bonus ATK berdasarkan {color}35{/color}% Elemental Mastery Karakter yang mengenakan, efek ini dapat ditumpuk sampai 3 lapis.",
+        "Mendapatkan Bonus ATK berdasarkan {color}78{/color}% Elemental Mastery Karakter yang mengenakan. Saat Elemental Skill mengenai musuh, akan menghasilkan efek Dream of the Scarlet Sands yang bertahan 10 detik: Mendapatkan Bonus ATK berdasarkan {color}42{/color}% Elemental Mastery Karakter yang mengenakan, efek ini dapat ditumpuk sampai 3 lapis.",
+        "Mendapatkan Bonus ATK berdasarkan {color}91{/color}% Elemental Mastery Karakter yang mengenakan. Saat Elemental Skill mengenai musuh, akan menghasilkan efek Dream of the Scarlet Sands yang bertahan 10 detik: Mendapatkan Bonus ATK berdasarkan {color}49{/color}% Elemental Mastery Karakter yang mengenakan, efek ini dapat ditumpuk sampai 3 lapis.",
+        "Mendapatkan Bonus ATK berdasarkan {color}104{/color}% Elemental Mastery Karakter yang mengenakan. Saat Elemental Skill mengenai musuh, akan menghasilkan efek Dream of the Scarlet Sands yang bertahan 10 detik: Mendapatkan Bonus ATK berdasarkan {color}56{/color}% Elemental Mastery Karakter yang mengenakan, efek ini dapat ditumpuk sampai 3 lapis."
       ]
     },
     {
@@ -10356,6 +10512,11 @@
       "description": "Material Ascension Karakter."
     },
     {
+      "key": "ajilenakh-nut",
+      "name": "Ajilenakh Nut",
+      "description": "Buah yang tumbuh dari pohon yang selalu berwarna hijau di oasis padang pasir. Buah yang terletak di bawah permukaan kulitnya yang keras dan tebal terasa manis dan lezat. Merupakan sumber makanan yang sangat penting bagi penduduk padang pasir."
+    },
+    {
       "key": "almond",
       "name": "Almond",
       "description": "Biji dengan bau yang unik, memberikan makanan rasa yang menyegarkan."
@@ -10649,6 +10810,11 @@
       "key": "damaged-mask",
       "name": "Damaged Mask",
       "description": "Topeng tulang retak yang tadinya milik seorang Hilichurl.\r\nLebih banyak retaknya daripada tidak, yang berarti sudah tidak berguna untuk fungsi utamanya."
+    },
+    {
+      "key": "damaged-prism",
+      "name": "Damaged Prism",
+      "description": "Komponen tidak utuh yang diperoleh dengan cara mengalahkan Primal Construct.\nMesin berbentuk unik ini adalah penjaga abadi reruntuhan gurun, dan memiliki kekuatan untuk menembus gunung dan membentuk kembali bebatuan. Prinsip yang sama yang memberi kekuatan kepada berbagai perangkat misterius yang ada di atas dan di bawah bumi ini juga digunakan untuk memberi kekuatan kepada mesin ini."
     },
     {
       "key": "dandelion-seed",
@@ -11091,6 +11257,11 @@
       "description": "Sebuah lencana yang menandakan jabatan letnan. Fatui memiliki pasukan yang sangat besar, pastinya yang menjabat sebagai letnan memiliki kualitas yang luar biasa."
     },
     {
+      "key": "light-guiding-tetrahedron",
+      "name": "Light Guiding Tetrahedron",
+      "description": "Komponen inti yang diperoleh dengan mengalahkan mesin penghancur misterius.\nBahkan sampai hari ini, perangkat kuno ini tidak juga melupakan impian tuannya atau tugas mereka sendiri, yaitu membangun 1.000 istana, memberikan perintah terhadap 3.000 mesin, menanam 10.000 bunga yang tidak akan pernah mekar lagi, dan untuk menciptakan kembali tanah kegembiraan yang sekarang terkubur di bawah padang pasir demi semua yang hidup di dunia ini.\nBahkan jika sang penguasa padang pasir kini sudah tiada dan mimpi itu dirusak oleh bisikan dosa yang dalam; bahkan jika semua pilar sihir sudah benar-benar hancur dan runtuh, hewan buas raksasa yang dulu menjadi kesukaan sang penguasa masih tersembunyi di dalam badai pasir panas yang membakar."
+    },
+    {
       "key": "lightning-prism",
       "name": "Lightning Prism",
       "description": "Sebuah Electro Hypostasis digunakan untuk mengumpulkan dan memperbaiki unsur elemen yang rusak. Ia mengandung unsur energi Electro.\r\nPrisma biasa dapat memisahkan cahaya putih menjadi warna-warna komponennya, tapi prisma petir ini dapat menyalurkan energi dan membentuknya menjadi petir. Dia akan terus melakukannya bahkan setelah Electro Hypostasis telah dikalahkan."
@@ -11411,6 +11582,11 @@
       "description": "Bumbu rempah yang memiliki rasa dominan. Rasanya dapat menghapus rasa makanan yang terlalu berminyak atau berlemak, serta dapat mengaktifkan indra perasa di lidah. Sangat cocok dipadukan dengan daging."
     },
     {
+      "key": "perpetual-caliber",
+      "name": "Perpetual Caliber",
+      "description": "Mekanisme daya yang diambil dari mesin ruin misterius.\nSekalipun tubuh yang ditenagainya telah dihancurkan, namun ia tetap beroperasi.\nSeharusnya tidak ada energi tak terbatas yang mampu terus menerus beroperasi di dunia ini, di sisi lain sebagian besar hasil penelitian yang pernah dipublikasikan terkait “pergerakan abadi” juga merupakan sesuatu yang sudah dipalsukan. Namun, perangkat ini membuktikan bahwa peradaban yang kini sudah musnah, dulu pernah mencapai ketinggian yang tidak dapat dicapai oleh umat manusia …."
+    },
+    {
       "key": "perpetual-heart",
       "name": "Perpetual Heart",
       "description": "Inti yang menggerakkan Perpetual Mechanical Array.\r\nBeberapa orang berspekulasi bahwa simbol pada inti ini ditulis dengan kecerdasan dan logika yang bahasanya tidak dapat dilihat dengan mata telanjang. Ada juga yang berspekulasi bahwa mesin Ruin yang memiliki inti besar dan pola rumit ini berinisiatif sendiri untuk meninggalkan wujud biomimetis mereka, demi mengejar kinerja dan fungsi yang lebih kuat."
@@ -11531,6 +11707,11 @@
       "description": "Bunga putih transparan yang hanya tumbuh di dataran batu tertinggi. Bunganya menolak kehangatan dan kelembaban dataran rendah untuk menatap kejauhan di puncak gunung sendirian."
     },
     {
+      "key": "radiant-prism",
+      "name": "Radiant Prism",
+      "description": "Komponen tidak utuh yang diperoleh dengan cara mengalahkan Primal Construct.\nPenguasa padang pasir yang tandus suatu kali pernah bermimpi, juga pernah banyak berjanji.\nDalam sebuah legenda padang pasir, konon katanya mesin ini awalnya adalah kendaraan untuk janji-janji yang tidak diketahui ini. Sekarang semuanya hanya hidup di dalam bank memori mekanis mereka."
+    },
+    {
       "key": "radish",
       "name": "Radish",
       "description": "Sayuran yang kaya akan nutrisi dan serat. Mudah untuk ditanam dan dipanen."
@@ -11549,6 +11730,11 @@
       "key": "recruits-insignia",
       "name": "Recruit's Insignia",
       "description": "Sebuah lencana untuk menandai anggota baru. Entah siapa pemilik lencana ini, dan apa logika yang mereka miliki sampai mau bergabung dengan mesin perang Fatui."
+    },
+    {
+      "key": "redcrest",
+      "name": "Redcrest",
+      "description": "Buah yang tumbuh bahkan di lingkungan padang pasir yang paling kejam sekalipun. Warna merahnya benar-benar terlihat sangat menyentuh jika dipadukan dengan latar pasir berwarna kuning di belakangnya."
     },
     {
       "key": "relic-from-guyun",
@@ -11614,6 +11800,11 @@
       "key": "sausage",
       "name": "Sausage",
       "description": "Daging cincang yang dibentuk dan dibungkus. Bentuknya yang sangat mudah disimpan menjadikan ini salah satu makanan favorit pecinta daging."
+    },
+    {
+      "key": "scarab",
+      "name": "Scarab",
+      "description": "Kumbang tangguh yang menghuni lautan pasir yang luas. Di atas cangkangnya terdapat pola yang menyerupai reruntuhan kuno di padang pasir, seolah menunjukkan bahwa ada kaitan erat di antara keduanya."
     },
     {
       "key": "scattered-piece-of-decarabians-dream",
@@ -11924,6 +12115,11 @@
       "key": "trimmed-red-silk",
       "name": "Trimmed Red Silk",
       "description": "Sepotong sutra merah yang dipangkas dengan dekorasi yang sederhana.\nSeorang prajurit berpengalaman dapat mendeteksi kelemahan dari mata musuh mereka dan memanfaatkannya. Pasukan di Eremite telah lama kehilangan seorang tuan untuk dilayani, dan sekarang mereka tidak memiliki siapa pun untuk dipercaya selain diri mereka sendiri. Dikatakan bahwa mereka sangat yakin kalau segala sesuatu bisa berkhianat, termasuk mata mereka sendiri."
+    },
+    {
+      "key": "turbid-prism",
+      "name": "Turbid Prism",
+      "description": "Komponen tidak utuh yang diperoleh dengan cara mengalahkan Primal Construct.\nKonon katanya mesin-mesin ini berbeda dari mesin ruin yang berasal dari jauh di dalam gurun, karena mesin-mesin ini tidak terlihat dibuat sebagai pembawa berita kehancuran atau penaklukan."
     },
     {
       "key": "tusk-of-monoceros-caeli",
@@ -12245,6 +12441,14 @@
       "name": "Abyss Lector: Violet Lightning"
     },
     {
+      "key": "aeonblight-drake",
+      "name": "Aeonblight Drake"
+    },
+    {
+      "key": "algorithm-of-semi-intransient-matrix-of-overseer-network",
+      "name": "Algorithm of Semi-Intransient Matrix of Overseer Network"
+    },
+    {
       "key": "anemo-hypostasis",
       "name": "Anemo Hypostasis"
     },
@@ -12401,12 +12605,20 @@
       "name": "Eremite Desert Clearwater"
     },
     {
+      "key": "eremite-galehunter",
+      "name": "Eremite Galehunter"
+    },
+    {
       "key": "eremite-linebreaker",
       "name": "Eremite Linebreaker"
     },
     {
       "key": "eremite-ravenbeak-halberdier",
       "name": "Eremite Ravenbeak Halberdier"
+    },
+    {
+      "key": "eremite-stone-enchanter",
+      "name": "Eremite Stone Enchanter"
     },
     {
       "key": "eremite-sunfrost",
@@ -12457,6 +12669,10 @@
       "name": "Fatui Skirmisher - Pyroslinger Bracer"
     },
     {
+      "key": "floating-anemo-fungus",
+      "name": "Floating Anemo Fungus"
+    },
+    {
       "key": "floating-dendro-fungus",
       "name": "Floating Dendro Fungus"
     },
@@ -12495,6 +12711,10 @@
     {
       "key": "golden-wolflord",
       "name": "Golden Wolflord"
+    },
+    {
+      "key": "grounded-geoshroom",
+      "name": "Grounded Geoshroom"
     },
     {
       "key": "grounded-hydroshroom",
@@ -12697,6 +12917,18 @@
       "name": "Perpetual Mechanical Array"
     },
     {
+      "key": "primal-construct-prospector",
+      "name": "Primal Construct: Prospector"
+    },
+    {
+      "key": "primal-construct-repulsor",
+      "name": "Primal Construct: Repulsor"
+    },
+    {
+      "key": "primal-construct-reshaper",
+      "name": "Primal Construct: Reshaper"
+    },
+    {
       "key": "primo-geovishap",
       "name": "Primo Geovishap"
     },
@@ -12829,6 +13061,14 @@
       "name": "Shogunate Infantry Captain"
     },
     {
+      "key": "spirit-of-omen-stone-drake",
+      "name": "Spirit of Omen: Stone Drake"
+    },
+    {
+      "key": "spirit-of-omen-wind-glede",
+      "name": "Spirit of Omen: Wind Glede"
+    },
+    {
       "key": "stonehide-lawachurl",
       "name": "Stonehelm, Hilichurl Chieftain"
     },
@@ -12839,6 +13079,10 @@
     {
       "key": "stretchy-anemo-fungus",
       "name": "Stretchy Anemo Fungus"
+    },
+    {
+      "key": "stretchy-electro-fungus",
+      "name": "Stretch Electro Fungus"
     },
     {
       "key": "stretchy-geo-fungus",
@@ -12943,6 +13187,10 @@
     {
       "key": "whirling-electro-fungus",
       "name": "Whirling Electro Fungus"
+    },
+    {
+      "key": "whirling-pyro-fungus",
+      "name": "Whirling Pyro Fungus"
     },
     {
       "key": "winged-cryoshroom",

@@ -1021,86 +1021,146 @@
     {
       "key": "candace",
       "name": "Candace",
-      "title": "？？？",
-      "description": "？？？",
+      "title": "Golden Vow",
+      "description": "A descendant of King Deshret with an amber left eye. The defender of Aaru Village.",
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Gleaming Spear – Guardian Stance",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Normal Attack",
+              "description": "Performs up to 4 consecutive spear strikes.\n",
+              "descriptions": []
+            },
+            {
+              "name": "Charged Attack",
+              "description": "Consumes a certain amount of Stamina to lunge forward, dealing damage to opponents along the way.\n",
+              "descriptions": []
+            },
+            {
+              "name": "Plunging Attack",
+              "description": "Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "1-Hit DMG|{param1}%",
+            "2-Hit DMG|{param2}%",
+            "3-Hit DMG|{param3}% + {param4}%",
+            "4-Hit DMG|{param5}%",
+            "Charged Attack DMG|{param6}%",
+            "Charged Attack Stamina Cost|{param7}",
+            "Plunge DMG|{param8}%",
+            "Low/High Plunge DMG|{param9}% / {param10}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Sacred Rite: Heron’s Sanctum",
+          "description": "Candace’s fighting style is capable of warding off an entire tide of foes.\n\n",
+          "abilities": [
+            {
+              "name": "Tap",
+              "description": "Rushes forward with her shield, dealing Hydro DMG to opponents in front of her.\n",
+              "descriptions": []
+            },
+            {
+              "name": "Hold",
+              "description": "Raises her shield to block incoming attacks from nearby opponents, forming a barrier that absorbs DMG based on her Max HP and absorbs Hydro DMG 250% more effectively. This barrier lasts until the Elemental Skill is unleashed.\nAfter holding for a certain period of time, Candace will finish charging, and when the skill button is released, the skill duration expires, or when the barrier is broken, she will perform a leaping strike that deals Hydro DMG to opponents in front of her.\n",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "Shield DMG Absorption|{param1}% Max HP + {param2}",
+            "Basic DMG|{param3}% Max HP",
+            "Charged Up DMG|{param4}% Max HP",
+            "Press CD|{param5}s",
+            "Holding CD|{param6}s"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Sacred Rite: Wagtail’s Tide",
+          "description": "Raising her weapon on high, Candace calls upon a divine blessing that deals AoE Hydro DMG based on her Max HP and continuously confers the Prayer of the Crimson Crown on your active character.\n\n",
+          "abilities": [
+            {
+              "name": "Prayer of the Crimson Crown",
+              "description": "This effect has the following properties:\n",
+              "descriptions": [
+                "Characters deal increased Elemental DMG with their Normal Attacks.",
+                "Whenever a character takes the field, they will unleash a rippling wave of water that deals Hydro DMG to nearby opponents. There is a limited number of waves that can be triggered in the duration of this skill.",
+                "Sword, Claymore, and Polearm-wielding characters under this effect will obtain a Hydro Infusion."
+              ]
+            }
+          ],
+          "stats": [
+            "Skill DMG|{param1}% Max HP",
+            "Duration|{param2}s",
+            "DMG Bonus|{param3}%",
+            "Wave Impact DMG|{param4}% Max HP",
+            "Wave Instances|{param5}",
+            "CD|{param6}s",
+            "Energy Cost|{param7}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "To Dawn’s First Light",
+          "description": "Decreases climbing Stamina consumption for your own party members by 20%.\nNot stackable with Passive Talents that provide the exact same effects.\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
+          "title": "Aegis of Crossed Arrows",
+          "description": "If Candace is hit by an attack in the Hold duration of Sacred Rite: Heron’s Sanctum, that skill will finish charging instantly.\n",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "NA",
-          "description": "",
+          "title": "Celestial Dome of Sand",
+          "description": "Characters affected by the Prayer of the Crimson Crown caused by Sacred Rite: Wagtail’s Tide will deal 0.5% increased DMG to opponents for every 1,000 points of Candace’s Max HP when they deal Elemental DMG with their Normal Attacks.\n",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "Returning Heiress of the Scarlet Sands",
+          "description": "The duration of Prayer of the Crimson Crown effect triggered by Sacred Rite: Wagtail’s Tide is increased by 3s.\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "Moon-Piercing Brilliance",
+          "description": "When Sacred Rite: Heron’s Sanctum hits opponents, Candace’s Max HP will be increased by 20% for 15s.\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "Hunter’s Supplication",
+          "description": "Increases the Level of Sacred Rite: Wagtail’s Tide by 3.\nMaximum upgrade level is 15.\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "Sentinel Oath",
+          "description": "Shortens the Hold CD of Sacred Rite: Heron’s Sanctum to be the same as that of the Tapping CD.\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "Heterochromatic Gaze",
+          "description": "Increases the Level of Sacred Rite: Heron’s Sanctum by 3.\nMaximum upgrade level is 15.\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
+          "title": "The Overflow",
+          "description": "When characters (excluding Candace herself) affected by the Prayer of the Crimson Crown caused by Sacred Rite: Wagtail’s Tide deal Elemental DMG to opponents using Normal Attacks, an attack wave will be unleashed that deals AoE Hydro DMG equal to 15% of Candace’s Max HP.\nThis effect can trigger once every 2.3s and is considered Elemental Burst DMG.\n",
           "descriptions": []
         }
       ]
@@ -1357,86 +1417,149 @@
     {
       "key": "cyno",
       "name": "Cyno",
-      "title": "？？？",
-      "description": "？？？",
+      "title": "Judicator of Secrets",
+      "description": "The General Mahamatra in charge of supervising the researchers of the Akademiya. It is said that when he gets down to work, the General Mahamatra is even more efficient than the “Great Vayuvyastra” made by the Kshahrewar.",
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Invoker’s Spear",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Normal Attack",
+              "description": "Performs up to 4 consecutive spear strikes.\n",
+              "descriptions": []
+            },
+            {
+              "name": "Charged Attack",
+              "description": "Consumes a certain amount of Stamina to lunge forward, dealing damage to opponents along the way.\n",
+              "descriptions": []
+            },
+            {
+              "name": "Plunging Attack",
+              "description": "Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "1-Hit DMG|{param1}%",
+            "2-Hit DMG|{param2}%",
+            "3-Hit DMG|{param3}% + {param4}%",
+            "4-Hit DMG|{param5}%",
+            "Charged Attack DMG|{param6}%",
+            "Charged Attack Stamina Cost|{param7}",
+            "Plunge DMG|{param8}%",
+            "Low/High Plunge DMG|{param9}% / {param10}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Secret Rite: Chasmic Soulfarer",
+          "description": "Performs a swift thrust, dealing Electro DMG to opponents along the path.\n\nWhen Cyno is under the Pactsworn Pathclearer state triggered by Sacred Rite: Wolf’s Swiftness, he will instead unleash a ",
+          "abilities": [
+            {
+              "name": "Mortuary Rite that deals thunderous",
+              "description": "AoE Electro DMG and extends the duration of Pactsworn Pathclearer.\n",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "Skill DMG|{param1}%",
+            "Mortuary Rite DMG|{param2}%",
+            "Pactsworn Pathclearer Duration Bonus|{param3}s",
+            "CD|{param4}s",
+            "Mortuary Rite CD|{param5}s"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Sacred Rite: Wolf’s Swiftness",
+          "description": "Calls upon a divine spirit to indwell him, morphing into the Pactsworn Pathclearer.\n\n",
+          "abilities": [
+            {
+              "name": "Pactsworn Pathclearer",
+              "description": "Cyno’s Normal, Charged, and Plunging Attacks will be converted to Electro DMG that cannot be overridden.\n",
+              "descriptions": [
+                "Cyno’s Elemental Mastery and resistance to interruption will increase, and he gains immunity to Electro-Charged DMG.",
+                "This effect will be canceled when Cyno leaves the field and lasts a maximum of 18s."
+              ]
+            }
+          ],
+          "stats": [
+            "1-Hit DMG|{param1}%",
+            "2-Hit DMG|{param2}%",
+            "3-Hit DMG|{param3}%",
+            "4-Hit DMG|{param4}% + {param5}%",
+            "5-Hit DMG|{param6}%",
+            "Charged Attack DMG|{param7}%",
+            "Charged Attack Stamina Cost|{param8}",
+            "Plunge DMG|{param9}%",
+            "Low/High Plunge DMG|{param10}% / {param11}%",
+            "Elemental Mastery Bonus|{param12}",
+            "Basic Duration|{param13}s",
+            "CD|{param14}s",
+            "Energy Cost|{param15}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "The Gift of Silence",
+          "description": "Gains 25% more rewards when dispatched on a Sumeru Expedition for 20 hours.\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
+          "title": "Featherfall Judgment",
+          "description": "When Cyno is in the Pactsworn Pathclearer state activated by Sacred Rite: Wolf’s Swiftness, Cyno will enter the Endseer stance at intervals. If he activates Secret Rite: Chasmic Soulfarer while affected by this stance, he will activate the Judication effect, increasing the DMG of this Secret Rite: Chasmic Soulfarer by 35%, and firing off 3 Duststalker Bolts that deal 100% of Cyno’s ATK as Electro DMG.\nDuststalker Bolt DMG is considered Elemental Skill DMG.\n",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
+          "title": "Authority Over the Nine Bows",
+          "description": "Cyno’s DMG values will be increased based on his Elemental Mastery as follows:\n",
+          "descriptions": [
+            "Pactsworn Pathclearer’s Normal Attack DMG is increased by 150% of his Elemental Mastery.",
+            "Duststalker Bolt DMG from his Passive Talent Featherfall Judgment is increased by 250% of his Elemental Mastery."
+          ]
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "Ordinance: Unceasing Vigil",
+          "description": "After using Sacred Rite: Wolf’s Swiftness, Cyno’s Normal Attack SPD will be increased by 20% for 10s. If the Judication effect of his Passive Talent Featherfall Judgment is triggered during Secret Rite: Chasmic Soulfarer, the duration of this increase will be refreshed.\nYou need to unlock the Passive Talent “Featherfall Judgment.”\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "Ceremony: Homecoming of Spirits",
+          "description": "When Cyno’s Normal Attacks hit opponents, his Electro DMG Bonus will increase by 10% for 4s. This effect can be triggered once every 0.1s. Max 5 stacks.\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "Precept: Lawful Enforcer",
+          "description": "Increases the Level of Sacred Rite: Wolf’s Swiftness by 3.\nMaximum upgrade level is 15.\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "Austerity: Forbidding Guard",
+          "description": "When Cyno is in the Pactsworn Pathclearer state triggered by Sacred Rite: Wolf’s Swiftness, after he triggers Electro-Charged, Superconduct, Overloaded, Quicken, Aggravate, Hyperbloom, or an Electro Swirl reaction, he will restore 3 Elemental Energy for all nearby party members (except himself.)\nThis effect can occur 5 times within one use of Sacred Rite: Wolf’s Swiftness.\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "Funerary Rite: The Passing of Starlight",
+          "description": "Increases the Level of Secret Rite: Chasmic Soulfarer by 3.\nMaximum upgrade level is 15.\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
+          "title": "Raiment: Just Scales",
+          "description": "After using Sacred Rite: Wolf’s Swiftness or triggering the Judication effect of the Passive Talent “Featherfall Judgment,” Cyno will gain 4 stacks of the “Day of the Jackal” effect. When he hits opponents with Normal Attacks, he will consume 1 stack of “Day of the Jackal” to fire off one Duststalker Bolt.\n“Day of the Jackal” lasts for 8s. Max 8 stacks. It will be canceled once Pactsworn Pathclearer ends.\nA maximum of 1 Duststalker Bolt can be unleashed this way every 0.4s.\nYou must first unlock the Passive Talent “Featherfall Judgment.”\n",
           "descriptions": []
         }
       ]
@@ -1720,7 +1843,7 @@
       "key": "dori",
       "name": "Dori",
       "title": "Treasure of Dream Garden",
-      "description": "An elusive merchant who has a fondness for glittering Mora.",
+      "description": "Una mercante inafferrabile che ha un debole per i sfavillanti Mora.",
       "skills": [
         {
           "key": "s1",
@@ -1728,68 +1851,68 @@
           "description": "",
           "abilities": [
             {
-              "name": "Normal Attack",
-              "description": "Perform up to 3 consecutive strikes.\n",
+              "name": "Attacco Normale",
+              "description": "Esegue fino a 3 attacchi rapidi.\n",
               "descriptions": []
             },
             {
-              "name": "Charged Attack",
-              "description": "Drains Stamina over time to perform continuous spinning attacks against all nearby opponents.\nAt the end of the sequence, performs a more powerful slash. \n",
+              "name": "Attacco Caricato",
+              "description": "Consuma Stamina nel tempo per eseguire un attacco circolare continuo contro tutti i nemici vicini.\r\nAlla fine della sequenza infligge un colpo molto più potente. \n",
               "descriptions": []
             },
             {
-              "name": "Plunging Attack",
-              "description": "Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
+              "name": "Attacco in Picchiata",
+              "description": "Si lancia in picchiata da mezz'aria per colpire il terreno sottostante e infliggere AoE DMG all'impatto.",
               "descriptions": []
             }
           ],
           "stats": [
-            "1-Hit DMG|{param1}%",
-            "2-Hit DMG|{param2}% + {param3}%",
-            "3-Hit DMG|{param4}%",
-            "Charged Attack Spinning DMG|{param5}%",
-            "Charged Attack Final DMG|{param6}%",
-            "Charged Attack Stamina Cost|{param7} / s",
-            "Max Duration|{param8}s",
-            "Plunge DMG|{param9}%",
-            "Low/High Plunge DMG|{param10}% / {param11}%"
+            "DMG 1° Colpo|{param1}%",
+            "DMG 2° Colpo|{param2}% + {param3}%",
+            "DMG 3° Colpo|{param4}%",
+            "DMG Attacco Caricato circolare|{param5}%",
+            "DMG Attacco Caricato finale|{param6}%",
+            "Costo in Stamina Attacco Caricato|{param7} / s",
+            "Durata Max|{param8}s",
+            "DMG Attacco in Picchiata|{param9}%",
+            "DMG Att. in Picchiata per altezze Basse/Elevate|{param10}% / {param11}%"
           ]
         },
         {
           "key": "s2",
           "title": "Spirit-Warding Lamp: Troubleshooter Cannon",
-          "description": "Directs a Spirit-Warding Lamp to fire off a Troubleshooter Shot at opponents, dealing Electro DMG.\nAfter the Troubleshooter Shot hits, it will create 2 After-Sales Service Rounds that will automatically track opponents and deal Electro DMG.\n\n",
+          "description": "Impugna la Lampada di Spirit-Warding per sparare un Troubleshooter Shot ai nemici che infligge Electro DMG.\nQuando un Troubleshooter Shot va a segno rilascerà 2 ulteriori colpi (After-Sales Service Rounds) che inseguiranno automaticamente i nemici per infliggere Electro DMG.\n\n",
           "abilities": [],
           "stats": [
             "Troubleshooter Shot DMG|{param1}%",
             "After-Sales Service Round DMG|{param2}%",
-            "CD|{param3}s"
+            "CD (Tempo Ricarica)|{param3}s"
           ]
         },
         {
           "key": "s3",
           "title": "Alcazarzaray’s Exactitude",
-          "description": "Summons forth the Jinni within the lamp to give the client various kinds of aid.\n\n",
+          "description": "Evoca il Jinni rinchiuso nella lampada per servire il cliente in vari modi.\n\n",
           "abilities": [
             {
               "name": "Jinni",
-              "description": "Connects to a nearby character. The connected character will:\n",
+              "description": "Si connette al personaggio vicino che otterrà:\n",
               "descriptions": [
-                "Continuously restore HP based on Dori’s Max HP.",
-                "Continuously regenerate Energy.",
-                "Be affected by Electro.",
-                "When the connector between the Jinni and the character touches opponents, it will deal one instance of Electro DMG to them every 0.4s.",
-                "Only one Jinni can exist at one time."
+                "Rigenerazione continua di HP calcolata sui Max HP di Dori.",
+                "Rigenerazione continua di Energy.",
+                "Affezione Electro.",
+                "Quando attraversano il collegamento, i nemici subiranno una istanza di Electro DMG ogni 0.4s.",
+                "Può esistere un solo Jinni per volta."
               ]
             }
           ],
           "stats": [
-            "Connector DMG|{param1}%",
-            "Continuous Healing|{param2}% Max HP + {param3}",
-            "Energy Regeneration|{param4}",
-            "Duration|{param5}s",
-            "CD|{param6}s",
-            "Energy Cost|{param7}"
+            "DMG Collegamento|{param1}%",
+            "Rigenerazione continua di HP|{param2}% Max HP + {param3}",
+            "Rigenerazione di Energy|{param4}",
+            "Durata|{param5}s",
+            "CD (Tempo Ricarica)|{param6}s",
+            "Costo Energy|{param7}"
           ]
         }
       ],
@@ -1797,19 +1920,19 @@
         {
           "key": "p1",
           "title": "Unexpected Order",
-          "description": "Has a 25% chance to recover some of the materials used when crafting Character and Weapon Materials.\n",
+          "description": "Ha il 25% di probabilità di ricevere indietro parte dei materiali usati per la creazione di Materiali per Personaggi e Armi.\n",
           "descriptions": []
         },
         {
           "key": "p2",
           "title": "An Eye for Gold",
-          "description": "After a character connected to the Jinni triggers an Electro-Charged, Superconduct, Overloaded, Quicken, Aggravate, Hyperbloom, or an Electro Swirl or Crystallize reaction, the CD of Spirit-Warding Lamp: Troubleshooter Cannon is decreased by 1s.\nThis effect can be triggered once every 3s.\n",
+          "description": "Quando un personaggio connesso al Jinni provoca una reazione Electro-Charged, Superconduct, Overloaded, Quicken, Aggravate, Hyperbloom, Electro Swirl oppure Crystallize, il CD di Spirit-Warding Lamp: Troubleshooter Cannon si riduce di 1s.\nQuesto effetto si può attivare solo una volta ogni 3s.\n",
           "descriptions": []
         },
         {
           "key": "p3",
           "title": "Compound Interest",
-          "description": "When the Troubleshooter Shots or After-Sales Service Rounds from Spirit-Warding Lamp: Troubleshooter Cannon hit opponents, Dori will restore 5 Elemental Energy for every 100% Energy Recharge possessed.\nPer Spirit-Warding Lamp: Troubleshooter Cannon, only one instance of Energy restoration can be triggered and a maximum of 15 Energy can be restored this way.\n",
+          "description": "Quando un colpo di Troubleshooter Shots oppure di After-Sales Service Rounds (Spirit-Warding Lamp: Troubleshooter Cannon) colpisce nemici, Dori riceverà 5 Elemental Energy per ogni 100% di Energy Recharge che si possiede.\nPer ogni Spirit-Warding Lamp: Troubleshooter Cannon, questa rigenerazione di Energy può avvenire solo una volta e per un massimo di 15 Energy.\n",
           "descriptions": []
         }
       ],
@@ -1817,43 +1940,43 @@
         {
           "key": "c1",
           "title": "Additional Investment",
-          "description": "The number of After-Sales Service Rounds created by Troubleshooter Shots is increased by 1.\n",
+          "description": "Il numero di colpi di After-Sales Service Rounds (Troubleshooter Shots) aumenta di 1.\n",
           "descriptions": []
         },
         {
           "key": "c2",
           "title": "Special Franchise",
-          "description": "When you are in combat and the Jinni heals the character it is connected to, it will fire a Jinni Toop from that character’s position that deals 50% of Dori’s ATK DMG.\n",
+          "description": "Quando sei in combattimento e il Jinni cura il personaggio a cui è collegato, dalla posizione di quel personaggio verrà sparato un Jinni Toop che infligge un danno pari al 50% dell’ATK di Dori.\n",
           "descriptions": []
         },
         {
           "key": "c3",
           "title": "Wonders Never Cease",
-          "description": "Increases the Level of Alcazarzaray’s Exactitude by 3.\nMaximum upgrade level is 15.\n",
+          "description": "Aumenta di 3 il livello di Alcazarzaray’s Exactitude.\nOra il massimo livello di upgrade è 15.\n",
           "descriptions": []
         },
         {
           "key": "c4",
           "title": "Discretionary Supplement",
-          "description": "The character connected to the Jinni will obtain the following buffs based on their current HP and Energy:\n",
+          "description": "Il personaggio collegato al Jinni otterrà i seguenti potenziamenti in base ai suoi attuali HP e Energy:\n",
           "descriptions": [
-            "When their HP is lower than 50%, they gain 50% Incoming Healing Bonus.",
-            "When their Energy is less than 50%, they gain 30% Energy Recharge."
+            "Quando ha HP < 50%, otterrà Incoming Healing Bonus +50%.",
+            "Quando ha Energy < 50%, otterrà Energy Recharge +30%."
           ]
         },
         {
           "key": "c5",
           "title": "Value for Mora",
-          "description": "Increases the Level of Spirit-Warding Lamp: Troubleshooter Cannon by 3.\nMaximum upgrade level is 15.\n",
+          "description": "Aumenta di 3 il livello di Spirit-Warding Lamp: Troubleshooter Cannon.\nOra il massimo livello di upgrade è 15.\n",
           "descriptions": []
         },
         {
           "key": "c6",
           "title": "Sprinkling Weight",
-          "description": "Dori gains the following effects for 3s after using Spirit-Warding Lamp: Troubleshooter Cannon:\n",
+          "description": "Dopo aver usato Spirit-Warding Lamp: Troubleshooter Cannon, Dori otterrà i seguenti effetti per 3s:\n",
           "descriptions": [
-            "Electro Infusion.",
-            "When Normal Attacks hit opponents, all nearby party members will heal HP equivalent to 4% of Dori’s Max HP. This type of healing can occur once every 0.1s."
+            "Infusione Electro.",
+            "Quando un suo Attacco Normale colpisce nemici, tutti i membri del party vicini riceveranno HP pari al 4% dei Max HP di Dori. Questo tipo di cura può avvenire ogni 0.1s."
           ]
         }
       ]
@@ -8689,13 +8812,13 @@
     {
       "key": "end-of-the-line",
       "name": "End of the Line",
-      "description": "This seems to be a now-extinct fish. Its body is sufficiently elastic that a string may be attached to it to let it serve as a bow.",
+      "description": "Questa sembra essere un pesce ora estinto. Il suo corpo è talmente elastico che si potrebbe attaccare una corda per usarlo come arco.",
       "refinements": [
-        "Triggers the Flowrider effect after using an Elemental Skill, dealing {color}80{/color}% ATK as AoE DMG upon hitting an opponent with an attack. Flowrider will be removed after 15s or after causing 3 instances of AoE DMG. Only 1 instance of AoE DMG can be caused every 2s in this way. Flowrider can be triggered once every 12s.",
-        "Triggers the Flowrider effect after using an Elemental Skill, dealing {color}100{/color}% ATK as AoE DMG upon hitting an opponent with an attack. Flowrider will be removed after 15s or after causing 3 instances of AoE DMG. Only 1 instance of AoE DMG can be caused every 2s in this way. Flowrider can be triggered once every 12s.",
-        "Triggers the Flowrider effect after using an Elemental Skill, dealing {color}120{/color}% ATK as AoE DMG upon hitting an opponent with an attack. Flowrider will be removed after 15s or after causing 3 instances of AoE DMG. Only 1 instance of AoE DMG can be caused every 2s in this way. Flowrider can be triggered once every 12s.",
-        "Triggers the Flowrider effect after using an Elemental Skill, dealing {color}140{/color}% ATK as AoE DMG upon hitting an opponent with an attack. Flowrider will be removed after 15s or after causing 3 instances of AoE DMG. Only 1 instance of AoE DMG can be caused every 2s in this way. Flowrider can be triggered once every 12s.",
-        "Triggers the Flowrider effect after using an Elemental Skill, dealing {color}160{/color}% ATK as AoE DMG upon hitting an opponent with an attack. Flowrider will be removed after 15s or after causing 3 instances of AoE DMG. Only 1 instance of AoE DMG can be caused every 2s in this way. Flowrider can be triggered once every 12s."
+        "Attiva l’effetto Flowrider dopo aver usato una Elemental Skill, infliggendo {color}80{/color}% ATK come AoE DMG quando colpisce un avversario con un attacco. Flowrider sarà rimosso dopo 15s o dopo aver causato 3 casi di AoE DMG. Solo 1 caso di AoE DMG può essere causato ogni 2s in questo modo. Flowrider può essere attivato ogni 12s.",
+        "Attiva l’effetto Flowrider dopo aver usato una Elemental Skill, infliggendo {color}100{/color}% ATK come AoE DMG quando colpisce un avversario con un attacco. Flowrider sarà rimosso dopo 15s o dopo aver causato 3 casi di AoE DMG. Solo 1 caso di AoE DMG può essere causato ogni 2s in questo modo. Flowrider può essere attivato ogni 12s.",
+        "Attiva l’effetto Flowrider dopo aver usato una Elemental Skill, infliggendo {color}120{/color}% ATK come AoE DMG quando colpisce un avversario con un attacco. Flowrider sarà rimosso dopo 15s o dopo aver causato 3 casi di AoE DMG. Solo 1 caso di AoE DMG può essere causato ogni 2s in questo modo. Flowrider può essere attivato ogni 12s.",
+        "Attiva l’effetto Flowrider dopo aver usato una Elemental Skill, infliggendo {color}140{/color}% ATK come AoE DMG quando colpisce un avversario con un attacco. Flowrider sarà rimosso dopo 15s o dopo aver causato 3 casi di AoE DMG. Solo 1 caso di AoE DMG può essere causato ogni 2s in questo modo. Flowrider può essere attivato ogni 12s.",
+        "Attiva l’effetto Flowrider dopo aver usato una Elemental Skill, infliggendo {color}160{/color}% ATK come AoE DMG quando colpisce un avversario con un attacco. Flowrider sarà rimosso dopo 15s o dopo aver causato 3 casi di AoE DMG. Solo 1 caso di AoE DMG può essere causato ogni 2s in questo modo. Flowrider può essere attivato ogni 12s."
       ]
     },
     {
@@ -8845,13 +8968,13 @@
     {
       "key": "forest-regalia",
       "name": "Forest Regalia",
-      "description": "A weapon you obtained from an Aranara tale. It has taken on the shape of a greatsword that shall cut down the foes of the forest.",
+      "description": "Un’arma ottenuta da una favola degli Aranara. Ha preso la forma di una greatsword in grado di tagliare i nemici della foresta.",
       "refinements": [
-        "After triggering Burning, Quicken, Aggravate, Spread, Bloom, Hyperbloom, or Burgeon, a Leaf of Consciousness will be created around the character for a maximum of 10s. When picked up, the Leaf will grant the character {color}60{/color} Elemental Mastery for 12s. Only 1 Leaf can be generated this way every 20s. This effect can still be triggered if the character is not on the field. The Leaf of Consciousness’ effect cannot stack.",
-        "After triggering Burning, Quicken, Aggravate, Spread, Bloom, Hyperbloom, or Burgeon, a Leaf of Consciousness will be created around the character for a maximum of 10s. When picked up, the Leaf will grant the character {color}75{/color} Elemental Mastery for 12s. Only 1 Leaf can be generated this way every 20s. This effect can still be triggered if the character is not on the field. The Leaf of Consciousness’ effect cannot stack.",
-        "After triggering Burning, Quicken, Aggravate, Spread, Bloom, Hyperbloom, or Burgeon, a Leaf of Consciousness will be created around the character for a maximum of 10s. When picked up, the Leaf will grant the character {color}90{/color} Elemental Mastery for 12s. Only 1 Leaf can be generated this way every 20s. This effect can still be triggered if the character is not on the field. The Leaf of Consciousness’ effect cannot stack.",
-        "After triggering Burning, Quicken, Aggravate, Spread, Bloom, Hyperbloom, or Burgeon, a Leaf of Consciousness will be created around the character for a maximum of 10s. When picked up, the Leaf will grant the character {color}105{/color} Elemental Mastery for 12s. Only 1 Leaf can be generated this way every 20s. This effect can still be triggered if the character is not on the field. The Leaf of Consciousness’ effect cannot stack.",
-        "After triggering Burning, Quicken, Aggravate, Spread, Bloom, Hyperbloom, or Burgeon, a Leaf of Consciousness will be created around the character for a maximum of 10s. When picked up, the Leaf will grant the character {color}120{/color} Elemental Mastery for 12s. Only 1 Leaf can be generated this way every 20s. This effect can still be triggered if the character is not on the field. The Leaf of Consciousness’ effect cannot stack."
+        "Dopo aver attivato Burning, Quicken, Aggravate, Spread, Bloom, Hyperbloom, o Burgeon, una Leaf of Consciousness sarà creata attorno al personaggio per un massimo di 10s. Quando raccolta, la Leaf garantirà al personaggio {color}60{/color} Elemental Mastery per 12s. Solo 1 Leaf può essere generata in questo modo ogni 20s. Questo effetto può essere attivato anche se il personaggio non è in campo. L’effetto della Leaf of Consciousness non può essere accumulato.",
+        "Dopo aver attivato Burning, Quicken, Aggravate, Spread, Bloom, Hyperbloom, o Burgeon, una Leaf of Consciousness sarà creata attorno al personaggio per un massimo di 10s. Quando raccolta, la Leaf garantirà al personaggio {color}75{/color} Elemental Mastery per 12s. Solo 1 Leaf può essere generata in questo modo ogni 20s. Questo effetto può essere attivato anche se il personaggio non è in campo. L’effetto della Leaf of Consciousness non può essere accumulato.",
+        "Dopo aver attivato Burning, Quicken, Aggravate, Spread, Bloom, Hyperbloom, o Burgeon, una Leaf of Consciousness sarà creata attorno al personaggio per un massimo di 10s. Quando raccolta, la Leaf garantirà al personaggio {color}90{/color} Elemental Mastery per 12s. Solo 1 Leaf può essere generata in questo modo ogni 20s. Questo effetto può essere attivato anche se il personaggio non è in campo. L’effetto della Leaf of Consciousness non può essere accumulato.",
+        "Dopo aver attivato Burning, Quicken, Aggravate, Spread, Bloom, Hyperbloom, o Burgeon, una Leaf of Consciousness sarà creata attorno al personaggio per un massimo di 10s. Quando raccolta, la Leaf garantirà al personaggio {color}105{/color} Elemental Mastery per 12s. Solo 1 Leaf può essere generata in questo modo ogni 20s. Questo effetto può essere attivato anche se il personaggio non è in campo. L’effetto della Leaf of Consciousness non può essere accumulato.",
+        "Dopo aver attivato Burning, Quicken, Aggravate, Spread, Bloom, Hyperbloom, o Burgeon, una Leaf of Consciousness sarà creata attorno al personaggio per un massimo di 10s. Quando raccolta, la Leaf garantirà al personaggio {color}120{/color} Elemental Mastery per 12s. Solo 1 Leaf può essere generata in questo modo ogni 20s. Questo effetto può essere attivato anche se il personaggio non è in campo. L’effetto della Leaf of Consciousness non può essere accumulato."
       ]
     },
     {
@@ -8881,13 +9004,13 @@
     {
       "key": "fruit-of-fulfillment",
       "name": "Fruit of Fulfillment",
-      "description": "A fruit you obtained from an Aranara tale. It holds the potential to conquer any crisis.",
+      "description": "Un frutto ottenuto da una favola degli Aranara. Ha il potenziale di superare ogni crisi.",
       "refinements": [
-        "Obtain the “Wax and Wane” effect after an Elemental Reaction is triggered, gaining {color}24{/color} Elemental Mastery while losing 5% ATK. For every 0.3s, 1 stack of Wax and Wane can be gained. Max 5 stacks. For every 6s that go by without an Elemental Reaction being triggered, 1 stack will be lost. This effect can be triggered even when the character is off-field.",
-        "Obtain the “Wax and Wane” effect after an Elemental Reaction is triggered, gaining {color}27{/color} Elemental Mastery while losing 5% ATK. For every 0.3s, 1 stack of Wax and Wane can be gained. Max 5 stacks. For every 6s that go by without an Elemental Reaction being triggered, 1 stack will be lost. This effect can be triggered even when the character is off-field.",
-        "Obtain the “Wax and Wane” effect after an Elemental Reaction is triggered, gaining {color}30{/color} Elemental Mastery while losing 5% ATK. For every 0.3s, 1 stack of Wax and Wane can be gained. Max 5 stacks. For every 6s that go by without an Elemental Reaction being triggered, 1 stack will be lost. This effect can be triggered even when the character is off-field.",
-        "Obtain the “Wax and Wane” effect after an Elemental Reaction is triggered, gaining {color}33{/color} Elemental Mastery while losing 5% ATK. For every 0.3s, 1 stack of Wax and Wane can be gained. Max 5 stacks. For every 6s that go by without an Elemental Reaction being triggered, 1 stack will be lost. This effect can be triggered even when the character is off-field.",
-        "Obtain the “Wax and Wane” effect after an Elemental Reaction is triggered, gaining {color}36{/color} Elemental Mastery while losing 5% ATK. For every 0.3s, 1 stack of Wax and Wane can be gained. Max 5 stacks. For every 6s that go by without an Elemental Reaction being triggered, 1 stack will be lost. This effect can be triggered even when the character is off-field."
+        "Ottieni l’effetto “Wax and Wane” dopo aver attivato una Elemental Reaction, guadagnando {color}24{/color} Elemental Mastery mentre perdi 5% ATK. Per ogni 0.3s, 1 stack di Wax and Wane può essere ottenuta. Massimo 5 stacks. Per ogni 6s che passano senza attivare una Elemental Reaction, 1 stack sarà persa. Questo effetto può essere attivato anche quando il personaggio non è in campo.",
+        "Ottieni l’effetto “Wax and Wane” dopo aver attivato una Elemental Reaction, guadagnando {color}27{/color}  Elemental Mastery mentre perdi 5% ATK. Per ogni 0.3s, 1 stack di Wax and Wane può essere ottenuta. Massimo 5 stacks. Per ogni 6s che passano senza attivare una Elemental Reaction, 1 stack sarà persa. Questo effetto può essere attivato anche quando il personaggio non è in campo.",
+        "Ottieni l’effetto “Wax and Wane” dopo aver attivato una Elemental Reaction, guadagnando {color}30{/color}  Elemental Mastery mentre perdi 5% ATK. Per ogni 0.3s, 1 stack di Wax and Wane può essere ottenuta. Massimo 5 stacks. Per ogni 6s che passano senza attivare una Elemental Reaction, 1 stack sarà persa. Questo effetto può essere attivato anche quando il personaggio non è in campo.",
+        "Ottieni l’effetto “Wax and Wane” dopo aver attivato una Elemental Reaction, guadagnando {color}33{/color}  Elemental Mastery mentre perdi 5% ATK. Per ogni 0.3s, 1 stack di Wax and Wane può essere ottenuta. Massimo 5 stacks. Per ogni 6s che passano senza attivare una Elemental Reaction, 1 stack sarà persa. Questo effetto può essere attivato anche quando il personaggio non è in campo.",
+        "Ottieni l’effetto “Wax and Wane” dopo aver attivato una Elemental Reaction, guadagnando {color}36{/color}  Elemental Mastery mentre perdi 5% ATK. Per ogni 0.3s, 1 stack di Wax and Wane può essere ottenuta. Massimo 5 stacks. Per ogni 6s che passano senza attivare una Elemental Reaction, 1 stack sarà persa. Questo effetto può essere attivato anche quando il personaggio non è in campo."
       ]
     },
     {
@@ -8959,13 +9082,13 @@
     {
       "key": "hunters-path",
       "name": "Hunter’s Path",
-      "description": "This gilded bow was made using precious white branches. It has felled countless wicked beasts attempting to infiltrate the woods.",
+      "description": "Questo arco dorato è stato fatto usando preziosi rami bianchi. Ha abbattuto innumerevoli bestie malvagie che cercavano di infiltrarsi nelle foreste.",
       "refinements": [
-        "Gain {color}12{/color}% All Elemental DMG Bonus. Obtain the Tireless Hunt effect after hitting an opponent with a Charged Attack. This effect increases Charged Attack DMG by {color}160{/color}% of Elemental Mastery. This effect will be removed after 12 Charged Attacks or 10s. Only 1 instance of Tireless Hunt can be gained every 12s.",
-        "Gain {color}15{/color}% All Elemental DMG Bonus. Obtain the Tireless Hunt effect after hitting an opponent with a Charged Attack. This effect increases Charged Attack DMG by {color}200{/color}% of Elemental Mastery. This effect will be removed after 12 Charged Attacks or 10s. Only 1 instance of Tireless Hunt can be gained every 12s.",
-        "Gain {color}18{/color}% All Elemental DMG Bonus. Obtain the Tireless Hunt effect after hitting an opponent with a Charged Attack. This effect increases Charged Attack DMG by {color}240{/color}% of Elemental Mastery. This effect will be removed after 12 Charged Attacks or 10s. Only 1 instance of Tireless Hunt can be gained every 12s.",
-        "Gain {color}21{/color}% All Elemental DMG Bonus. Obtain the Tireless Hunt effect after hitting an opponent with a Charged Attack. This effect increases Charged Attack DMG by {color}280{/color}% of Elemental Mastery. This effect will be removed after 12 Charged Attacks or 10s. Only 1 instance of Tireless Hunt can be gained every 12s.",
-        "Gain {color}24{/color}% All Elemental DMG Bonus. Obtain the Tireless Hunt effect after hitting an opponent with a Charged Attack. This effect increases Charged Attack DMG by {color}320{/color}% of Elemental Mastery. This effect will be removed after 12 Charged Attacks or 10s. Only 1 instance of Tireless Hunt can be gained every 12s."
+        "Ottieni {color}12{/color}% All Elemental DMG Bonus. Ottieni l’effetto Tireless Hunt dopo aver colpito un nemico con un Attacco Caricato. Questo effetto aumenta il DMG dell’Attacco Caricato del {color}160{/color}% dell’Elemental Mastery. Questo effetto sarà rimosso dopo 12 Attacchi Caricati o 10s. Solo 1 caso di Tireless Hunt può essere ottenuto ogni 12s.",
+        "Ottieni {color}15{/color}% All Elemental DMG Bonus. Ottieni l’effetto Tireless Hunt dopo aver colpito un nemico con un Attacco Caricato. Questo effetto aumenta il DMG dell’Attacco Caricato del {color}200{/color}% dell’Elemental Mastery. Questo effetto sarà rimosso dopo 12 Attacchi Caricati o 10s. Solo 1 caso di Tireless Hunt può essere ottenuto ogni 12s.",
+        "Ottieni {color}18{/color}% All Elemental DMG Bonus. Ottieni l’effetto Tireless Hunt dopo aver colpito un nemico con un Attacco Caricato. Questo effetto aumenta il DMG dell’Attacco Caricato del {color}240{/color}% dell’Elemental Mastery. Questo effetto sarà rimosso dopo 12 Attacchi Caricati o 10s. Solo 1 caso di Tireless Hunt può essere ottenuto ogni 12s.",
+        "Ottieni {color}21{/color}% All Elemental DMG Bonus. Ottieni l’effetto Tireless Hunt dopo aver colpito un nemico con un Attacco Caricato. Questo effetto aumenta il DMG dell’Attacco Caricato del {color}280{/color}% dell’Elemental Mastery. Questo effetto sarà rimosso dopo 12 Attacchi Caricati o 10s. Solo 1 caso di Tireless Hunt può essere ottenuto ogni 12s.",
+        "Ottieni {color}24{/color}% All Elemental DMG Bonus. Ottieni l’effetto Tireless Hunt dopo aver colpito un nemico con un Attacco Caricato. Questo effetto aumenta il DMG dell’Attacco Caricato del {color}320{/color}% dell’Elemental Mastery. Questo effetto sarà rimosso dopo 12 Attacchi Caricati o 10s. Solo 1 caso di Tireless Hunt può essere ottenuto ogni 12s."
       ]
     },
     {
@@ -9021,13 +9144,13 @@
     {
       "key": "kings-squire",
       "name": "King’s Squire",
-      "description": "A weapon you obtained from an Aranara tale. It has taken on the shape of a bow that can shoot the enemies of the forest down.",
+      "description": "Un arma ottenuta da una fiaba degli Aranara. Ha preso la forma di un arco in grado di abbattere i nemici della foresta.",
       "refinements": [
-        "Obtain the Teachings of the Forest effect when unleashing Elemental Skills and Bursts, increasing Elemental Mastery by {color}60{/color} for 12s. This effect will be removed when switching characters. When the Teachings of the Forest effect ends or is removed, it will deal {color}100{/color}% of ATK as DMG to 1 nearby opponent. The Teachings of the Forest effect can be triggered once every 20s.",
-        "Obtain the Teachings of the Forest effect when unleashing Elemental Skills and Bursts, increasing Elemental Mastery by {color}80{/color} for 12s. This effect will be removed when switching characters. When the Teachings of the Forest effect ends or is removed, it will deal {color}120{/color}% of ATK as DMG to 1 nearby opponent. The Teachings of the Forest effect can be triggered once every 20s.",
-        "Obtain the Teachings of the Forest effect when unleashing Elemental Skills and Bursts, increasing Elemental Mastery by {color}100{/color} for 12s. This effect will be removed when switching characters. When the Teachings of the Forest effect ends or is removed, it will deal {color}140{/color}% of ATK as DMG to 1 nearby opponent. The Teachings of the Forest effect can be triggered once every 20s.",
-        "Obtain the Teachings of the Forest effect when unleashing Elemental Skills and Bursts, increasing Elemental Mastery by {color}120{/color} for 12s. This effect will be removed when switching characters. When the Teachings of the Forest effect ends or is removed, it will deal {color}160{/color}% of ATK as DMG to 1 nearby opponent. The Teachings of the Forest effect can be triggered once every 20s.",
-        "Obtain the Teachings of the Forest effect when unleashing Elemental Skills and Bursts, increasing Elemental Mastery by {color}140{/color} for 12s. This effect will be removed when switching characters. When the Teachings of the Forest effect ends or is removed, it will deal {color}180{/color}% of ATK as DMG to 1 nearby opponent. The Teachings of the Forest effect can be triggered once every 20s."
+        "Ottieni l’effetto Teachings of the Forest quando scateni una Elemental Skills e Bursts, aumentando l’Elemental Mastery di {color}60{/color} per 12s. Questo effetto sarà rimosso quando cambi personaggio. Quando l’effetto Teachings of the Forest finisce o viene rimosso, infliggerà {color}100{/color}% dell’ATK come DMG a un nemico adiacente. L’effetto Teachings of the Forest può essere attivato una volta ogni 20s.",
+        "Ottieni l’effetto Teachings of the Forest quando scateni una Elemental Skills e Bursts, aumentando l’Elemental Mastery di {color}80{/color} per 12s. Questo effetto sarà rimosso quando cambi personaggio. Quando l’effetto Teachings of the Forest finisce o viene rimosso, infliggerà {color}120{/color}% dell’ATK come DMG a un nemico adiacente. L’effetto Teachings of the Forest può essere attivato una volta ogni 20s.",
+        "Ottieni l’effetto Teachings of the Forest quando scateni una Elemental Skills e Bursts, aumentando l’Elemental Mastery di {color}100{/color} per 12s. Questo effetto sarà rimosso quando cambi personaggio. Quando l’effetto Teachings of the Forest finisce o viene rimosso, infliggerà {color}140{/color}% dell’ATK come DMG a un nemico adiacente. L’effetto Teachings of the Forest può essere attivato una volta ogni 20s.",
+        "Ottieni l’effetto Teachings of the Forest quando scateni una Elemental Skills e Bursts, aumentando l’Elemental Mastery di {color}120{/color} per 12s. Questo effetto sarà rimosso quando cambi personaggio. Quando l’effetto Teachings of the Forest finisce o viene rimosso, infliggerà {color}160{/color}% dell’ATK come DMG a un nemico adiacente. L’effetto Teachings of the Forest può essere attivato una volta ogni 20s.",
+        "Ottieni l’effetto Teachings of the Forest quando scateni una Elemental Skills e Bursts, aumentando l’Elemental Mastery di {color}140{/color} per 12s. Questo effetto sarà rimosso quando cambi personaggio. Quando l’effetto Teachings of the Forest finisce o viene rimosso, infliggerà {color}180{/color}% dell’ATK come DMG a un nemico adiacente. L’effetto Teachings of the Forest può essere attivato una volta ogni 20s."
       ]
     },
     {
@@ -9115,6 +9238,18 @@
       ]
     },
     {
+      "key": "makhaira-aquamarine",
+      "name": "Makhaira Aquamarine",
+      "description": "An ancient greatsword that gleams like the waters themselves. A thousand years of sand erosion has not dulled its unnaturally sharp edge one bit.",
+      "refinements": [
+        "The following effect will trigger every 10s: The equipping character will gain {color}24{/color}% of their Elemental Mastery as bonus ATK for 12s, with nearby party members gaining 30% of this buff for the same duration. Multiple instances of this weapon can allow this buff to stack. This effect will still trigger even if the character is not on the field.",
+        "The following effect will trigger every 10s: The equipping character will gain {color}30{/color}% of their Elemental Mastery as bonus ATK for 12s, with nearby party members gaining 30% of this buff for the same duration. Multiple instances of this weapon can allow this buff to stack. This effect will still trigger even if the character is not on the field.",
+        "The following effect will trigger every 10s: the equipping character will gain {color}36{/color}% of their Elemental Mastery as bonus ATK for 12s, with nearby party members gaining 30% of this buff for the same duration. Multiple instances of this weapon can allow this buff to stack. This effect will still trigger even if the character is not on the field.",
+        "The following effect will trigger every 10s: The equipping character will gain {color}42{/color}% of their Elemental Mastery as bonus ATK for 12s, with nearby party members gaining 30% of this buff for the same duration. Multiple instances of this weapon can allow this buff to stack. This effect will still trigger even if the character is not on the field.",
+        "The following effect will trigger every 10s: The equipping character will gain {color}48{/color}% of their Elemental Mastery as bonus ATK for 12s, with nearby party members gaining 30% of this buff for the same duration. Multiple instances of this weapon can allow this buff to stack. This effect will still trigger even if the character is not on the field."
+      ]
+    },
+    {
       "key": "mappa-mare",
       "name": "Mappa Mare",
       "description": "Una carta nautica che mostra le correnti e i climi vicini; in qualche modo è arrivato a Liyue tramite commercianti stranieri.",
@@ -9151,6 +9286,18 @@
       ]
     },
     {
+      "key": "missive-windspear",
+      "name": "Missive Windspear",
+      "description": "A beacon that shows the direction of the wind. Not every idyll carried on the breeze remains a gentle thing…",
+      "refinements": [
+        "Within 10s after an Elemental Reaction is triggered, ATK is increased by {color}12{/color}% and Elemental Mastery is increased by {color}48{/color}",
+        "Within 10s after an Elemental Reaction is triggered, ATK is increased by {color}15{/color}% and Elemental Mastery is increased by {color}60{/color}",
+        "Within 10s after an Elemental Reaction is triggered, ATK is increased by {color}18{/color}% and Elemental Mastery is increased by {color}72{/color}",
+        "Within 10s after an Elemental Reaction is triggered, ATK is increased by {color}21{/color}% and Elemental Mastery is increased by {color}84{/color}",
+        "Within 10s after an Elemental Reaction is triggered, ATK is increased by {color}24{/color}% and Elemental Mastery is increased by {color}96{/color}"
+      ]
+    },
+    {
       "key": "mistsplitter-reforged",
       "name": "Mistsplitter Reforged",
       "description": "Una spada che risplende di una feroce luce viola. Il titolo \"Reforged\" deriva dal fatto che è stata distrutta già una volta.",
@@ -9177,13 +9324,13 @@
     {
       "key": "moonpiercer",
       "name": "Moonpiercer",
-      "description": "A weapon you obtained from an Aranara tale. It is shaped like a giant arrow and can be used as a spear.",
+      "description": "Un arma ottenuta da una fiaba degli Aranara. Ha la forma di una freccia gigante e può essere usata come lancia.",
       "refinements": [
-        "After triggering Burning, Quicken, Aggravate, Spread, Bloom, Hyperbloom, or Burgeon, a Leaf of Revival will be created around the character for a maximum of 10s. When picked up, the Leaf will grant the character {color}16{/color}% ATK for 12s. Only 1 Leaf can be generated this way every 20s. This effect can still be triggered if the character is not on the field.",
-        "After triggering Burning, Quicken, Aggravate, Spread, Bloom, Hyperbloom, or Burgeon, a Leaf of Revival will be created around the character for a maximum of 10s. When picked up, the Leaf will grant the character {color}20{/color}% ATK for 12s. Only 1 Leaf can be generated this way every 20s. This effect can still be triggered if the character is not on the field.",
-        "After triggering Burning, Quicken, Aggravate, Spread, Bloom, Hyperbloom, or Burgeon, a Leaf of Revival will be created around the character for a maximum of 10s. When picked up, the Leaf will grant the character {color}24{/color}% ATK for 12s. Only 1 Leaf can be generated this way every 20s. This effect can still be triggered if the character is not on the field.",
-        "After triggering Burning, Quicken, Aggravate, Spread, Bloom, Hyperbloom, or Burgeon, a Leaf of Revival will be created around the character for a maximum of 10s. When picked up, the Leaf will grant the character {color}28{/color}% ATK for 12s. Only 1 Leaf can be generated this way every 20s. This effect can still be triggered if the character is not on the field.",
-        "After triggering Burning, Quicken, Aggravate, Spread, Bloom, Hyperbloom, or Burgeon, a Leaf of Revival will be created around the character for a maximum of 10s. When picked up, the Leaf will grant the character {color}32{/color}% ATK for 12s. Only 1 Leaf can be generated this way every 20s. This effect can still be triggered if the character is not on the field."
+        "Dopo aver attivato Burning, Quicken, Aggravate, Spread, Bloom, Hyperbloom, o Burgeon, una Leaf of Revival sarà creata attorno al personaggio per un massimo di 10s. Quando raccolta, la Leaf garantirà al personaggio {color}16{/color}% ATK per 12s. Solo 1 Leaf può essere generata in questo modo ogni 20s. Questo effetto può essere attivato anche se il personaggio non è in campo.",
+        "Dopo aver attivato Burning, Quicken, Aggravate, Spread, Bloom, Hyperbloom, o Burgeon, a Leaf of Revival  sarà creata attorno al personaggio per un massimo di 10s. Quando raccolta, la Leaf garantirà al personaggio {color}20{/color}% ATK per 12s. Solo 1 Leaf può essere generata in questo modo ogni 20s. Questo effetto può essere attivato anche se il personaggio non è in campo.",
+        "Dopo aver attivato Burning, Quicken, Aggravate, Spread, Bloom, Hyperbloom, o Burgeon, a Leaf of Revival sarà creata attorno al personaggio per un massimo di 10s. Quando raccolta, la Leaf garantirà al personaggio {color}24{/color}% ATK per 12s. Solo 1 Leaf può essere generata in questo modo ogni 20s. Questo effetto può essere attivato anche se il personaggio non è in campo.",
+        "Dopo aver attivato Burning, Quicken, Aggravate, Spread, Bloom, Hyperbloom, or Burgeon, a Leaf of Revival sarà creata attorno al personaggio per un massimo di 10s. Quando raccolta, la Leaf garantirà al personaggio {color}28{/color}% ATK per 12s. Solo 1 Leaf può essere generata in questo modo ogni 20s. Questo effetto può essere attivato anche se il personaggio non è in campo.",
+        "Dopo aver attivato Burning, Quicken, Aggravate, Spread, Bloom, Hyperbloom, o Burgeon, a Leaf of Reviva sarà creata attorno al personaggio per un massimo di 10s. Quando raccolta, la Leaf garantirà al personaggio {color}32{/color}% ATK per 12s. Solo 1 Leaf può essere generata in questo modo ogni 20s. Questo effetto può essere attivato anche se il personaggio non è in campo."
       ]
     },
     {
@@ -9509,13 +9656,13 @@
     {
       "key": "sapwood-blade",
       "name": "Sapwood Blade",
-      "description": "A weapon you obtained from an Aranara tale. It has taken on the shape of a blade that can cut down the foes of the forest.",
+      "description": "Un arma ottenuta da una fiaba degli Aranara. Ha preso la forma di una spada in grado di tagliare i nemici della foresta.",
       "refinements": [
-        "After triggering Burning, Quicken, Aggravate, Spread, Bloom, Hyperbloom, or Burgeon, a Leaf of Consciousness will be created around the character for a maximum of 10s. When picked up, the Leaf will grant the character {color}60{/color} Elemental Mastery for 12s. Only 1 Leaf can be generated this way every 20s. This effect can still be triggered if the character is not on the field. The Leaf of Consciousness’ effect cannot stack.",
-        "After triggering Burning, Quicken, Aggravate, Spread, Bloom, Hyperbloom, or Burgeon, a Leaf of Consciousness will be created around the character for a maximum of 10s. When picked up, the Leaf will grant the character {color}75{/color} Elemental Mastery for 12s. Only 1 Leaf can be generated this way every 20s. This effect can still be triggered if the character is not on the field. The Leaf of Consciousness’ effect cannot stack.",
-        "After triggering Burning, Quicken, Aggravate, Spread, Bloom, Hyperbloom, or Burgeon, a Leaf of Consciousness will be created around the character for a maximum of 10s. When picked up, the Leaf will grant the character {color}90{/color} Elemental Mastery for 12s. Only 1 Leaf can be generated this way every 20s. This effect can still be triggered if the character is not on the field. The Leaf of Consciousness’ effect cannot stack.",
-        "After triggering Burning, Quicken, Aggravate, Spread, Bloom, Hyperbloom, or Burgeon, a Leaf of Consciousness will be created around the character for a maximum of 10s. When picked up, the Leaf will grant the character {color}105{/color} Elemental Mastery for 12s. Only 1 Leaf can be generated this way every 20s. This effect can still be triggered if the character is not on the field. The Leaf of Consciousness’ effect cannot stack.",
-        "After triggering Burning, Quicken, Aggravate, Spread, Bloom, Hyperbloom, or Burgeon, a Leaf of Consciousness will be created around the character for a maximum of 10s. When picked up, the Leaf will grant the character {color}120{/color} Elemental Mastery for 12s. Only 1 Leaf can be generated this way every 20s. This effect can still be triggered if the character is not on the field. The Leaf of Consciousness’ effect cannot stack."
+        "Dopo aver attivato Burning, Quicken, Aggravate, Spread, Bloom, Hyperbloom, o Burgeon, una Leaf of Consciousness sarà creata attorno al personaggio per un massimo di 10s. Quando raccolta, la Leaf garantirà al personaggio {color}60{/color} Elemental Mastery per 12s. Solo 1 Leaf può essere generata in questo modo ogni 20s. Questo effetto può essere attivato anche se il personaggio non è in campo. L’effetto della Leaf of Consciousness non può essere accumulato.",
+        "Dopo aver attivato Burning, Quicken, Aggravate, Spread, Bloom, Hyperbloom, o Burgeon, una Leaf of Consciousness sarà creata attorno al personaggio per un massimo di 10s. Quando raccolta, la Leaf garantirà al personaggio {color}75{/color} Elemental Mastery per 12s. Solo 1 Leaf può essere generata in questo modo ogni 20s. Questo effetto può essere attivato anche se il personaggio non è in campo. L’effetto della Leaf of Consciousness non può essere accumulato.",
+        "Dopo aver attivato Burning, Quicken, Aggravate, Spread, Bloom, Hyperbloom, o Burgeon, una Leaf of Consciousness sarà creata attorno al personaggio per un massimo di 10s. Quando raccolta, la Leaf garantirà al personaggio {color}90{/color} Elemental Mastery per 12s. Solo 1 Leaf può essere generata in questo modo ogni 20s. Questo effetto può essere attivato anche se il personaggio non è in campo. L’effetto della Leaf of Consciousness non può essere accumulato.",
+        "Dopo aver attivato Burning, Quicken, Aggravate, Spread, Bloom, Hyperbloom, o Burgeon, una Leaf of Consciousness sarà creata attorno al personaggio per un massimo di 10s. Quando raccolta, la Leaf garantirà al personaggio {color}105{/color} Elemental Mastery per 12s. Solo 1 Leaf può essere generata in questo modo ogni 20s. Questo effetto può essere attivato anche se il personaggio non è in campo. L’effetto della Leaf of Consciousness non può essere accumulato.",
+        "Dopo aver attivato Burning, Quicken, Aggravate, Spread, Bloom, Hyperbloom, o Burgeon, una Leaf of Consciousness sarà creata attorno al personaggio per un massimo di 10s. Quando raccolta, la Leaf garantirà al personaggio {color}120{/color} Elemental Mastery per 12s. Solo 1 Leaf può essere generata in questo modo ogni 20s. Questo effetto può essere attivato anche se il personaggio non è in campo. L’effetto della Leaf of Consciousness non può essere accumulato."
       ]
     },
     {
@@ -9696,6 +9843,18 @@
         "Gli HP aumentano del {color}30{/color}%. Inoltre, conferisce un ATK Bonus in base al {color}1.2{/color}% dei Max HP del personaggio che la equipaggia. Se chi lo usa ha HP < 50%, l’ATK Bonus aumenta di un ulteriore {color}1.4{/color}% dei Max HP.",
         "Gli HP aumentano del {color}35{/color}%. Inoltre, conferisce un ATK Bonus in base al {color}1.4{/color}% dei Max HP del personaggio che la equipaggia. Se chi lo usa ha HP < 50%, l’ATK Bonus aumenta di un ulteriore {color}1.6{/color}% dei Max HP.",
         "Gli HP aumentano del {color}40{/color}%. Inoltre, conferisce un ATK Bonus in base al {color}1.6{/color}% dei Max HP del personaggio che la equipaggia. Se chi lo usa ha HP < 50%, l’ATK Bonus aumenta di un ulteriore {color}1.8{/color}% dei Max HP."
+      ]
+    },
+    {
+      "key": "staff-of-the-scarlet-sands",
+      "name": "Staff of the Scarlet Sands",
+      "description": "One of a paired set of scepters fashioned from obsidian. Legend has it that these staves grant the right to lead the people of the desert, but no retainer now lives who can verify the proper appearance of these regalia.",
+      "refinements": [
+        "The equipping character gains {color}52{/color}% of their Elemental Mastery as bonus ATK. When an Elemental Skill hits opponents, the Dream of the Scarlet Sands effect will be gained for 10s: The equipping character will gain {color}28{/color}% of their Elemental Mastery as bonus ATK. Max 3 stacks.",
+        "The equipping character gains {color}65{/color}% of their Elemental Mastery as bonus ATK. When an Elemental Skill hits opponents, the Dream of the Scarlet Sands effect will be gained for 10s: The equipping character will gain {color}35{/color}% of their Elemental Mastery as bonus ATK. Max 3 stacks.",
+        "The equipping character gains {color}78{/color}% of their Elemental Mastery as bonus ATK. When an Elemental Skill hits opponents, the Dream of the Scarlet Sands effect will be gained for 10s: The equipping character will gain {color}42{/color}% of their Elemental Mastery as bonus ATK. Max 3 stacks.",
+        "The equipping character gains {color}91{/color}% of their Elemental Mastery as bonus ATK. When an Elemental Skill hits opponents, the Dream of the Scarlet Sands effect will be gained for 10s: The equipping character will gain {color}49{/color}% of their Elemental Mastery as bonus ATK. Max 3 stacks.",
+        "The equipping character gains {color}104{/color}% of their Elemental Mastery as bonus ATK. When an Elemental Skill hits opponents, the Dream of the Scarlet Sands effect will be gained for 10s: The equipping character will gain {color}56{/color}% of their Elemental Mastery as bonus ATK. Max 3 stacks."
       ]
     },
     {
@@ -10039,7 +10198,7 @@
       "name": "Deepwood Memories",
       "bonus": [
         "Dendro DMG Bonus +15%.",
-        "After Elemental Skills or Bursts hit opponents, the targets' Dendro RES will be decreased by 30% for 8s. This effect can be triggered even if the equipping character is not on the field."
+        "Dopo che una Elemental Skills o Bursts colpisce dei nemici, la Dendro RES dell’obiettivo diminuirà del 30% per 8s. Questo effetto può essere attivato anche se il personaggio equipaggiato con l’artefatto non è in campo."
       ]
     },
     {
@@ -10079,7 +10238,7 @@
       "name": "Gilded Dreams",
       "bonus": [
         "Elemental Mastery +80.",
-        "Within 8s of triggering an Elemental Reaction, the character equipping this will obtain buffs based on the Elemental Type of the other party members. ATK is increased by 14% for each party member whose Elemental Type is the same as the equipping character, and Elemental Mastery is increased by 50 for every party member with a different Elemental Type. Each of the aforementioned buffs will count up to 3 characters. This effect can be triggered once every 8s. The character who equips this can still trigger its effects when not on the field."
+        "Per 8s dopo aver attivato una Elemental Reaction, il personaggio con l’artefatto equipaggiato otterrà dei buff in base all’Elemental Type degli altri membri del party. L’ATK è aumentato del 14% per ogni membro del party con lo stesso Elemental Type del personaggio in uso, e l’Elemental Mastery è aumentata di  50 per ogni membro del party con un differente  Elemental Type.Ogni buff sopracitato varrà fino a 3 personaggi. Questo effetto può essere attivato ogni 8s. Il personaggio che equipaggia questo artefatto può attivare i suoi effetti anche quando non è in campo."
       ]
     },
     {
@@ -10355,6 +10514,11 @@
       "description": "Materiale per l'Ascensione di personaggi."
     },
     {
+      "key": "ajilenakh-nut",
+      "name": "Ajilenakh Nut",
+      "description": "A fruit that grows on evergreen trees within desert oases. The flesh under the tough skin is thick, sweet, and delicious, making it an important food source amongst the desert peoples."
+    },
+    {
       "key": "almond",
       "name": "Almond",
       "description": "Un seme dal profumo particolare che dona al cibo un gusto rinfrescante."
@@ -10582,7 +10746,7 @@
     {
       "key": "copper-talisman-of-the-forest-dew",
       "name": "Copper Talisman of the Forest Dew",
-      "description": "Materiale per l'Ascensione di armi.\nSotto le istruzioni del Primo Saggio (First Sage), gli antenati del popolo della foresta realizzarono questi talismani usando alberi appassiti per commemorare il Signore della Vegetazione (Lord of Verdure).\nLa forma del talismano è ispirata alla rugiada della foresta. Simboleggia la permeazione della saggezza nelle menti mortali."
+      "description": "Materiale per l'Ascensione di armi.\nSotto le istruzioni del Primo Saggio (First Sage), gli antenati del popolo della foresta realizzarono questi talismani usando alberi appassiti per commemorare la Signora della Vegetazione (Lord of Verdure).\nLa forma del talismano è ispirata alla rugiada della foresta. Simboleggia la permeazione della saggezza nelle menti mortali."
     },
     {
       "key": "cor-lapis",
@@ -10648,6 +10812,11 @@
       "key": "damaged-mask",
       "name": "Damaged Mask",
       "description": "Una maschera d'ossa danneggiata che una volta apparteneva a qualche hilichurl.\r\nOra più rotta che intera, non può più svolgere la sua funzione primaria."
+    },
+    {
+      "key": "damaged-prism",
+      "name": "Damaged Prism",
+      "description": "A damaged component obtained from defeating a Primal Construct.\nThese uniquely-shaped machines are the eternal sentinels of the desert ruins, and they possess the power to pierce the mountains and reshape rocks. The same principles that power many mysterious devices above and beneath the earth also power these machines."
     },
     {
       "key": "dandelion-seed",
@@ -11037,7 +11206,7 @@
     {
       "key": "iron-talisman-of-the-forest-dew",
       "name": "Iron Talisman of the Forest Dew",
-      "description": "Materiale per l'Ascensione di armi.\nPiù tardi, il Signore della Vegetazione (Lord of Verdure) insegnò alle persone il mistero della forgiatura del ferro nero. Fu così che innocenti mortali appresero la conoscenza dell’uso del fuoco per forgiare lame.\nIl Signore della Vegetazione (Lord of Verdure) accolse con piacere questa loro conoscenza — per quanto il fuoco e le lame fossero letali per lei, rendevano potenti le persone comuni."
+      "description": "Materiale per l'Ascensione di armi.\nPiù tardi, la Signora della Vegetazione (Lord of Verdure) insegnò alle persone il mistero della forgiatura del ferro nero. Fu così che innocenti mortali appresero la conoscenza dell’uso del fuoco per forgiare lame.\nLa Signora della Vegetazione (Lord of Verdure) accolse con piacere questa loro conoscenza — per quanto il fuoco e le lame fossero letali per lei, rendevano potenti le persone comuni."
     },
     {
       "key": "jade-branch-of-a-distant-sea",
@@ -11088,6 +11257,11 @@
       "key": "lieutenants-insignia",
       "name": "Lieutenant's Insignia",
       "description": "Una fascia sul braccio per identificare gli ufficiali. I Fatui controllano una colossale armata, quindi chi ha conseguito questo grado all'interno dell'esercito deve avere qualcosa di straordinario."
+    },
+    {
+      "key": "light-guiding-tetrahedron",
+      "name": "Light Guiding Tetrahedron",
+      "description": "A core component obtained via defeating a mysterious ruin machine.\nTo this day, these ancient devices have not forgotten the dreams of their masters or their own duties: to build a thousand palaces, to administrate three thousand machines, to sow ten thousand flowers that shall never bloom again, and to recreate a paradise now buried beneath the desert sands for the sake of all who live in this world.\nThough the lord of the desert no longer lives, and those dreams have long been corrupted by sinful whispers, and though all the magical pillars have been broken and have collapsed, the great beast once favored by the king hides still within the great searing storm."
     },
     {
       "key": "lightning-prism",
@@ -11377,7 +11551,7 @@
     {
       "key": "olden-days-of-scorching-might",
       "name": "Olden Days of Scorching Might",
-      "description": "Weapon Ascension Material.\nIn the era when the ignorant Lord of Deserts ruled, his power descended upon every inch of the land like the scorching sun.\nAncient stone tablets record that he turned his power into seven rays of blinding light or seven pillars, which he granted equally and mercifully to everyone. No one was neglected, nor was anyone discontented.\nThat was a forgotten golden era, an era when the Lord of Flowers had faded into the sands and the Lord of Verdure was determined to leave. Only the descendants in the yellow sand chose to follow their god. Even as the grim shadow of calamity loomed, the power in which they had faith shone brightly like amber and gold.\nYet calamity befell nonetheless, and the golden insectoid insignias were buried beneath the depths of shrine and palace, under collapsed pillars engraved with images of eagles and bulls."
+      "description": "Materiale per l'Ascensione di armi.\nNell’era in cui regnava l’ignorante Signore dei Deserti (Lord of Deserts), il suo potere rivestiva ogni centimetro di terra come un sole ardente.\nAntiche tavole di pietra ricordano che trasformò il suo potere in sette raggi di luce accecanti o sette pilastri, che concesse senza distinzioni e con misericordia a tutti. Nessuno fu trascurato o insoddisfatto.\nQuella fu un’epoca d’oro dimenticata, un’epoca che vide la Signora dei Fiori (Lord of Flowers) scomparire nelle sabbie e la Signora della Vegetazione (Lord of Verdure) determinata ad andarsene. Solo i discendenti della sabbia dorata scelsero di seguire il loro dio. Anche se la cupa ombra della calamità incombeva, il potere in cui avevano fede brillava luminoso come l’ambra e l’oro.\nEppure la calamità accadde comunque e le insegne d’oro a forma di insetto furono sepolte sotto le profondità del santuario e del palazzo, sotto pilastri crollati con incise immagini di aquile e tori."
     },
     {
       "key": "ominous-mask",
@@ -11402,12 +11576,17 @@
     {
       "key": "padisarah",
       "name": "Padisarah",
-      "description": "A holy and noble plant. The conditions for growth in its environment are very demanding. The flower buds can be processed to make valuable spices."
+      "description": "Una pianta sacra e nobile. Le condizioni dell’ambiente in cui cresce sono molto esigenti. I boccioli di fiori possono essere lavorati per produrre spezie preziose. "
     },
     {
       "key": "pepper",
       "name": "Pepper",
       "description": "Pepato. Taglia i sapori oleosi ed eccita le papille gustative. Va meglio sulla carne."
+    },
+    {
+      "key": "perpetual-caliber",
+      "name": "Perpetual Caliber",
+      "description": "A motive device obtained from a mysterious ruin machine.\nThe machine it once powered may have been destroyed, but it continues to rotate all the same.\nThere should be no such thing as an energy source that can sustain itself forever in this world, and most research results obtained in the field of “perpetual motion” have been eventually proved false. Yet, this device is proof that a now-destroyed civilization once reached heights that present-day nations could not hope to match…"
     },
     {
       "key": "perpetual-heart",
@@ -11422,7 +11601,7 @@
     {
       "key": "philosophies-of-admonition",
       "name": "Philosophies of Admonition",
-      "description": "Talent Level-Up material.\nAdmonition is the branches of the nation of wisdom.\nAdmonition is completed by good deeds. What is done confers real meaning upon what is said. When one’s mind, words, and deeds are aligned, their nourishment shall guarantee the fruition of wisdom’s tree."
+      "description": "Materiale per aumentare il livello di Talenti.\nIl rimprovero è il ramo della nazione della saggezza.\nIl rimprovero si completa con buone azioni. Ciò che si fà conferisce un significato reale a ciò che si dice. Quando la mente, le parole e le azioni sono allineate, il loro alimento garantirà la fruizione dell’albero della saggezza."
     },
     {
       "key": "philosophies-of-ballad",
@@ -11452,7 +11631,7 @@
     {
       "key": "philosophies-of-ingenuity",
       "name": "Philosophies of Ingenuity",
-      "description": "Talent Level-Up material.\nIngenuity is the leaf-veins of the nation of wisdom.\nIngenuity is completed by harmonious conduct. What is done completes what is thought. Wisdom blooms where the mind, words, and practice converge."
+      "description": "Materiale per aumentare il livello di Talenti.\nL’ingegno costituisce le nervature delle foglie della nazione della saggezza.\nL’ingegno si completa con una condotta armoniosa. Ciò che si fa completa ciò che si pensa. La sagegzza sboccia dove convergono la mente, le parole e la pratica."
     },
     {
       "key": "philosophies-of-light",
@@ -11462,7 +11641,7 @@
     {
       "key": "philosophies-of-praxis",
       "name": "Philosophies of Praxis",
-      "description": "Talent Level-Up material.\nPraxes are the roots of the nation of wisdom.\nPraxes bring forth the fruit of wisdom. Practice grants itself meaning, and it is only by treading a path that unites action, speech, and thought that the wise may reach perfection."
+      "description": "Materiale per aumentare il livello di Talenti.\nLa prassi forma le radici della nazione della saggezza.\nLa prassi porta il frutto della saggezza. La pratica si autoconcede significato e il saggio può raggiungere la perfezione solo percorrendo un cammino che unisce azione, parola e pensiero."
     },
     {
       "key": "philosophies-of-prosperity",
@@ -11530,6 +11709,11 @@
       "description": "Un fiore bianco traslucido che cresce solo sui picchi rocciosi più alti. Rifugge il calore e l'umidità delle pianure per guardare lontano dalle cime solitarie delle montagne."
     },
     {
+      "key": "radiant-prism",
+      "name": "Radiant Prism",
+      "description": "An exquisite component obtained from defeating a Primal Construct.\nThe lord of the barren desert once had a dream, and once made a great many promises.\nThe legends of the desert say that these machines were originally vehicles for these unknown promises, which now live on only within their mechanical memory banks."
+    },
+    {
       "key": "radish",
       "name": "Radish",
       "description": "Ricco di fibre e sostanze nutritive. Facile da coltivare e raccogliere."
@@ -11550,6 +11734,11 @@
       "description": "Un'insegna per identificare le reclute. Fa pensare a cosa stessero pensando quando si sono uniti all'organizzazione dei Fatui."
     },
     {
+      "key": "redcrest",
+      "name": "Redcrest",
+      "description": "A fruit that grows even in the most hostile of desert environments. Its vibrant crimson fruits are made even more lovely against a backdrop of yellow sand."
+    },
+    {
       "key": "relic-from-guyun",
       "name": "Relic from Guyun",
       "description": "Materiale per l'Ascensione di armi.\r\nLa lancia di pietra contiene un nucleo scintillante formato dal potere delle divinità sconfitte. Il loro odio non è diretto a Morax, tuttavia, perché si sono perse molto tempo fa e sono incapaci di nutrire rancori personali."
@@ -11557,7 +11746,7 @@
     {
       "key": "remnant-glow-of-scorching-might",
       "name": "Remnant Glow of Scorching Might",
-      "description": "Weapon Ascension Material.\nTo weave together myriad thoughts and reign over countless souls — this is the essence of power.\nHowever, power is not cold-blooded tyranny. Its true ideal, at its heart, is to create a utopia free of worry, schemes, and slavery.\nIt was just as the silent lord saw in the crystal’s secrets, and just as the lost companion had once taught.\nThe dark insect insignia and the steel judgment thus laid the foundations of the kingdom’s rules."
+      "description": "Materiale per l'Ascensione di armi.\nIntrecciare insieme una miriade di pensieri e regnare su innumerevoli anime: questa è l’essenza del potere.\nIl potere, tuttavia, non è una tirannia a sangue freddo. Il suo vero ideale, dal profondo del suo cuore, è creare un’utopia libera da preoccupazioni, schemi e schiavitù.\nEra proprio ciò che il silenzioso signore vedeva nei segreti del cristallo e ciò che il compagno perduto gli aveva insegnato una volta.\nLa scura insegna a forma di insetto e il giudizio d’acciaio gettarono così le basi delle regole del regno."
     },
     {
       "key": "rice",
@@ -11567,12 +11756,12 @@
     {
       "key": "rich-red-brocade",
       "name": "Rich Red Brocade",
-      "description": "A piece of red brocade woven with golden thread.\nThose born in the gilded desert under the sun occasionally sing a song, of which the meaning has been forgotten. They would praise the scorching sun that illuminates the earth as equally as ever and bewail the afterglow at the end of the dusk. Some unfamiliar words recur at the end of the song, which are said to be the names of ancient gods. Legend has it that when the King of the Desert was still alive, his people chose to cover their eyes as they dared not look upon him, whose brilliance was beyond that of the sun."
+      "description": "Un pezzo di broccato rosso intrecciato con filo d’oro.\nI nati del deserto dorato ogni tanto sotto il sole cantano una canzone di cui si è dimenticato il significato. Come sempre loderebbero il sole ardente che illumina la terra e piangerebbero il crepuscolo alla fine del tramonto. Alcune parole sconosciute ricorrono alla fine della canzone e si dice che siano i nomi di antichi dei. La leggenda vuole che quando il Re del Deserto era ancora vivo il suo popolo scelse di coprirsi gli occhi perché non osava guardarlo, il suo splendore andava oltre quella del sole."
     },
     {
       "key": "riftborn-regalia",
       "name": "Riftborn Regalia",
-      "description": "A broken horn that you obtained from defeating the Wolflord. That said, it should not have left anything behind after your hunt.\r\nEven a lord among the Riftwolves is nothing before monsters of a higher pedigree.\r\n\"Gold\" mass-produced these malformed wolf packs almost as if by accident, like shrunken drawings on discarded sheets of paper, and the horns on this one represent its authority to command its dark brood to dissolve space itself."
+      "description": "Un corno rotto che hai ottenuto sconfiggendo il Wolflord. Detto questo, dopo la tua caccia non avrebbe dovuto lasciarsi dietro nulla.\r\nAnche il migliore tra i Riftwolves non è nulla davanti a mostri di genealogia superiore.\r\n\"Gold\" produsse questi lupi malformati quasi come se fosse stato un incidente, come disegni raggrinziti di fogli di carta gettati via, le corna di questo lupo rappresentano la sua autorità di comandare al suo branco oscuro di dissolvere lo spazio stesso."
     },
     {
       "key": "ring-of-boreas",
@@ -11582,17 +11771,17 @@
     {
       "key": "robust-fungal-nucleus",
       "name": "Robust Fungal Nucleus",
-      "description": "Body tissue left behind by a Fungus that has been exposed to intense elemental stimulation.\nIt is generally believed that the Fungi evolved into more mobile forms to better disperse their spores.\nA poet once depicted a shared dream of the Fungi in which their spores covered every inch of the mountains and oceans. The world had never been more tranquil. Then the Fungi turned into fish, birds, beasts, men, and gods, relying on rainfall, land, and their own kind who had returned to the earth."
+      "description": "Tessuto corporeo lasciato da un Fungus che è stato sottoposto a intensa stimolazione elementale.\nIn genere si ritiene che i Fungi si siano evoluti in forme sempre più mobili per disperdere meglio le loro spore.\nUn poeta una volta descrisse un sogno condiviso sui Fungi dove le loro spore coprivano ogni centimentro delle montagne e degli oceani. Il mondo non era mai stato così tranquillo. Poi i Fungi si trasformarono in pesci, uccelli, bestie, uomini e divinità grazie alla pioggia, alla terra e ai loro simili che erano ritornati alla terra."
     },
     {
       "key": "rukkhashava-mushrooms",
       "name": "Rukkhashava Mushrooms",
-      "description": "A fungus that grows in layers upon layers, like a sea of clouds, and which mostly grows on trees deep in the rainforest. Therefore, they are considered by the people of Sumeru to be the holy crystallization of Rukkhadevata’s legacy."
+      "description": "Un fungo che cresce a strati su strati, come un mare di nuvole, e che cresce principalmente sugli alberi delle profondità della foresta pluviale. Per questo motivo sono considerati dal popolo di Sumeru la sacra cristallizzazione dell’eredità di Rukkhadevata."
     },
     {
       "key": "runic-fang",
       "name": "Runic Fang",
-      "description": "Una \"zanna\" con la quale la misteriosa with which the mysterious, snakelike machine of old dug into mountains' depths. There are many ominous runes carved on it.\r\nIt is said that giant serpents lurk in the dark fissures deep beneath the ground. Burning with eternal resentment and malice toward the world above, they throw themselves into digging great tunnels, yet none know what their malicious purposes are..."
+      "description": "Una \"zanna\" con la quale la misteriosa macchina serpentiforme del passato ha scavato nelle profondità delle montagne. Ci sono scolpite molte rune minacciose.\r\nSi dice che serpenti giganti si nascondano nelle oscure fessure delle profondità del sottosuolo. Bruciando di eterno risentimento e malizia verso il mondo al di sopra, si gettano a scavare grandi tunnel ma nessuno sa quali siano i loro scopi malvagi…"
     },
     {
       "key": "sakura-bloom",
@@ -11613,6 +11802,11 @@
       "key": "sausage",
       "name": "Sausage",
       "description": "Carne macinata finemente avvolta in una pelle. Un alimento base della dieta quotidiana di ogni amante della carne."
+    },
+    {
+      "key": "scarab",
+      "name": "Scarab",
+      "description": "A tenacious beetle that finds repose within the vast ocean of desert sand. The golden pattern on such beetles’ shells hints at some deep relationship between them and the ancient ruins that dot the desert."
     },
     {
       "key": "scattered-piece-of-decarabians-dream",
@@ -11702,7 +11896,7 @@
     {
       "key": "silver-talisman-of-the-forest-dew",
       "name": "Silver Talisman of the Forest Dew",
-      "description": "Weapon Ascension Material.\nIn the myriad lore of the forest, the one in the striped cape that resembled blazing flames was the Greater Lord of the Labyrinths and the Owner of the Moon-Mirrored Spring.\nWhen he bowed his head and struck up a friendship with the Lord of Verdure, the tokens of their friendship were the gems that glimmered like water and silver that gleamed like the moonlight.\nTo repay such a gesture, the Lord of Verdure promised to keep secrets for the Greater Lord of the Labyrinths and safeguard the intricate and beautiful dreams of the rainforest.\nNo one could have foretold that the magnificent mansion of secrets and dreams would later fade away amidst the shroud of the dark flame of oblivion, after which its ash returned to the soil and became nutrients for the virgin rainforests."
+      "description": "Materiale per l'Ascensione di armi.\nNella miriade di tradizioni della foresta, quello con il mantello a strisce che rappresentava fiamme ardenti era il Grande Signore dei Labirinti (Greater Lord of the Labyrinths) e il Proprietario della Sorgente dello Specchio di Luna.\nQuando chinò il capo e strinse amicizia con la Signora della Vegetazione (Lord of Verdure), i segni della loro amicizia erano le gemme che risplendevano come l’acqua e il brillante argento del chiaro di luna.\nPer ripagare tale gesto, la Signora della Vegetazione promise di custodire segreti per il Grande Signore dei Labirinti e di salvaguardare gli intricati e fantastici sogni della foresta pluviale.\nNessuno avrebbe potuto immaginare che la magnifica dimora dei segreti e dei sogni sarebbe poi svanita nel velo della fiamma oscura dell’oblio, e che successivamente la sua cenere sarebbe ritornata al suolo diventando nutrimento per le vergini foreste pluviali."
     },
     {
       "key": "slime-concentrate",
@@ -11757,7 +11951,7 @@
     {
       "key": "spice",
       "name": "Spice",
-      "description": "A seasoning with varied flavors. It is made from dried Harra Fruits and can enrich the taste of a dish. Therefore, Sumeru locals say, “Spice goes well with anything.”"
+      "description": "Un condimento dai vari gusti. È a base di Harra Fruit secca e può arricchire il gusto di un piatto. Per questo i locali di Sumeru dicono: “Le spezie si sposano bene con qualsiasi cosa.”"
     },
     {
       "key": "spirit-locket-of-boreas",
@@ -11777,7 +11971,7 @@
     {
       "key": "starshroom",
       "name": "Starshroom",
-      "description": "A fungus with a cap that resembles a five-pointed star. It is quite hardy indeed. Once it matures, the center of the cap will split open."
+      "description": "Un fungo con un cappello che ricorda una stella a cinque punte. È davvero molto resistente. Una volta maturato, il centro del cappello si aprirà."
     },
     {
       "key": "starsilver",
@@ -11807,7 +12001,7 @@
     {
       "key": "sumeru-rose",
       "name": "Sumeru Rose",
-      "description": "Bright and beautiful, these pure purple flowers give off a pleasant fragrance that will give any passerby pause. While some like to call this a type of “rambler rose,” its relative lack of multiple flowers means that it falls under a different floral classification."
+      "description": "Luminosi e belli, questi fiori viola puro emanano una piacevole fragranza che attirerà l’attenzione di qualsiasi passante. Mentre ad alcuni piace chiamarlo una sorta di “rosa rampicante,” la sua relativa mancanza di molti fiori significa che rientra in una diversa classificazione floreale."
     },
     {
       "key": "sunsettia",
@@ -11827,7 +12021,7 @@
     {
       "key": "teachings-of-admonition",
       "name": "Teachings of Admonition",
-      "description": "Talent Level-Up material.\nAdmonition is the branches of the nation of wisdom.\nAdmonition comes from a pure heart. Only sensible words of goodwill can express profound wisdom and free the sprout of knowledge from the shackles of arrogance."
+      "description": "Materiale per aumentare il livello di Talenti.\nIl rimprovero è il ramo della nazione della saggezza.\nIl rimprovero nasce da un cuore puro. Solo sensate parole di buona volontà possono esprimere profonda saggezza e liberare il germoglio della conoscenza dalle catene dell’arroganza."
     },
     {
       "key": "teachings-of-ballad",
@@ -11857,7 +12051,7 @@
     {
       "key": "teachings-of-ingenuity",
       "name": "Teachings of Ingenuity",
-      "description": "Talent Level-Up material.\nIngenuity is the leaf-veins of the nation of wisdom.\nIngenuity springs forth from benevolent consideration. They say that “a poisonous tree bears no kind fruit.” Similarly, ingenious nascent ideas are always born from determined and benign minds, for only they are worthy bearers of wisdom."
+      "description": "Materiale per aumentare il livello di Talenti.\nL’ingegno costituisce le nervature delle foglie della nazione della saggezza.\nL’ingegno nasce da una buona considerazione. Dicono che “un albero velenoso non porta frutti buoni”. Allo stesso modo, le nuove idee nascono sempre da menti determinate e benigne, in quanto loro soltanto sono degne portatrici di saggezza."
     },
     {
       "key": "teachings-of-light",
@@ -11867,7 +12061,7 @@
     {
       "key": "teachings-of-praxis",
       "name": "Teachings of Praxis",
-      "description": "Talent Level-Up material.\nPraxes are the roots of the nation of wisdom.\nPraxes stem from an unwavering will. All wisdom is manifested through the unyielding pursuit of goodness. Where goodness is not practiced, ingenuity and eloquence wither."
+      "description": "Materiale per aumentare il livello di Talenti.\nLa prassi forma le radici della nazione della saggezza.\nLa prassi deriva da una salda volontà. Tutta la saggezza si manifesta attraverso la ricerca inflessibile del bene. Dove non si pratica la bontà, appassiscono ingegno ed eloquenza."
     },
     {
       "key": "teachings-of-prosperity",
@@ -11892,12 +12086,12 @@
     {
       "key": "the-meaning-of-aeons",
       "name": "The Meaning of Aeons",
-      "description": "Un piccolo pezzo di un copricapo ottenuto quando si son calmatte le acque nel Plane of Euthymia.\r\nUn pensiero potrebbe terminare tutte le calamità, e ci saranno sempre dei pensieri in grado di trascendere il tempo.\r\nTra tutto questo, uno si chiede se il vero significato di Makoto sia stato comunicato con successo o meno."
+      "description": "Un piccolo pezzo di un copricapo ottenuto quando si sono calmate le acque nel Plane of Euthymia.\r\nUn pensiero potrebbe terminare tutte le calamità, e ci saranno sempre dei pensieri in grado di trascendere il tempo.\r\nTra tutto questo, uno si chiede se il vero significato di Makoto sia stato comunicato con successo o meno."
     },
     {
       "key": "thunderclap-fruitcore",
       "name": "Thunderclap Fruitcore",
-      "description": "The core of an Electro Regisvine, wrapped in razor-sharp leaves, wantonly emits Electro energy.\nThe roaring energy rampaging deep within the earth is eager to pour out its rage, thus even tainting these unfortunate vines with its mania, causing them to wail and flail their branches frantically. One can hardly tell whether it longs for others to taste the pain of being continuously electrocuted and charred or if it is struggling, looking forward to its inevitable doom."
+      "description": "Il nucleo di una Electro Regisvine avvolto in foglie affilate come rasoi, emette senza motivo energia Electro.\nL’energia ruggente che infuria nelle profondità della terra è ansiosa di sfogare la sua rabbia, contaminando così anche queste sfortunate viti con la sua mania che le forza a gemere e ad agitare freneticamente i loro rami."
     },
     {
       "key": "tile-of-decarabians-tower",
@@ -11922,7 +12116,12 @@
     {
       "key": "trimmed-red-silk",
       "name": "Trimmed Red Silk",
-      "description": "A piece of red silk trimmed with simple decorations.\nA seasoned warrior can detect weaknesses from their foe’s eyes and thus take advantage. The Eremites have long since lost a master to serve, and now they have no one to trust but themselves. Word has it that they are more than convinced that all things betray, even their own eyes."
+      "description": "Un pezzo di seta rossa rifinito con semplici decorazioni.\nUn guerriero esperto può rilevare le debolezze dagli occhi del nemico e quindi prendere il sopravvento. Gli eremiti hanno perso da tempo un padrone da servire e ora non si fidano di nessuno ma solo di sé stessi."
+    },
+    {
+      "key": "turbid-prism",
+      "name": "Turbid Prism",
+      "description": "An old component obtained from defeating a Primal Construct.\nIt is said that these machines are different from those ruin machines that come from deep within the desert, for they were not made as heralds of destruction or conquest."
     },
     {
       "key": "tusk-of-monoceros-caeli",
@@ -12047,7 +12246,7 @@
     {
       "key": "zaytun-peach",
       "name": "Zaytun Peach",
-      "description": "The fruit of a forest shrub. Its flesh is firm and sweet. It is said to have a calming effect on the mind."
+      "description": "Il frutto di un arbusto della foresta. La sua polpa è dura e dolce. Si dice che abbia effetti calmanti sulla mente."
     }
   ],
   "debuffs": [
@@ -12244,6 +12443,14 @@
       "name": "Abyss Lector: Violet Lightning"
     },
     {
+      "key": "aeonblight-drake",
+      "name": "Aeonblight Drake"
+    },
+    {
+      "key": "algorithm-of-semi-intransient-matrix-of-overseer-network",
+      "name": "Algorithm of Semi-Intransient Matrix of Overseer Network"
+    },
+    {
       "key": "anemo-hypostasis",
       "name": "Anemo Hypostasis"
     },
@@ -12400,12 +12607,20 @@
       "name": "Eremite Desert Clearwater"
     },
     {
+      "key": "eremite-galehunter",
+      "name": "Eremite Galehunter"
+    },
+    {
       "key": "eremite-linebreaker",
       "name": "Eremite Linebreaker"
     },
     {
       "key": "eremite-ravenbeak-halberdier",
       "name": "Eremite Ravenbeak Halberdier"
+    },
+    {
+      "key": "eremite-stone-enchanter",
+      "name": "Eremite Stone Enchanter"
     },
     {
       "key": "eremite-sunfrost",
@@ -12456,6 +12671,10 @@
       "name": "Fatui Skirmisher - Pyroslinger Bracer"
     },
     {
+      "key": "floating-anemo-fungus",
+      "name": "Floating Anemo Fungus"
+    },
+    {
       "key": "floating-dendro-fungus",
       "name": "Floating Dendro Fungus"
     },
@@ -12494,6 +12713,10 @@
     {
       "key": "golden-wolflord",
       "name": "Golden Wolflord"
+    },
+    {
+      "key": "grounded-geoshroom",
+      "name": "Grounded Geoshroom"
     },
     {
       "key": "grounded-hydroshroom",
@@ -12696,6 +12919,18 @@
       "name": "Perpetual Mechanical Array"
     },
     {
+      "key": "primal-construct-prospector",
+      "name": "Primal Construct: Prospector"
+    },
+    {
+      "key": "primal-construct-repulsor",
+      "name": "Primal Construct: Repulsor"
+    },
+    {
+      "key": "primal-construct-reshaper",
+      "name": "Primal Construct: Reshaper"
+    },
+    {
       "key": "primo-geovishap",
       "name": "Primo Geovishap"
     },
@@ -12828,6 +13063,14 @@
       "name": "Shogunate Infantry Captain"
     },
     {
+      "key": "spirit-of-omen-stone-drake",
+      "name": "Spirit of Omen: Stone Drake"
+    },
+    {
+      "key": "spirit-of-omen-wind-glede",
+      "name": "Spirit of Omen: Wind Glede"
+    },
+    {
       "key": "stonehide-lawachurl",
       "name": "Stonehide Lawachurl"
     },
@@ -12838,6 +13081,10 @@
     {
       "key": "stretchy-anemo-fungus",
       "name": "Stretchy Anemo Fungus"
+    },
+    {
+      "key": "stretchy-electro-fungus",
+      "name": "Stretchy Electro Fungus"
     },
     {
       "key": "stretchy-geo-fungus",
@@ -12942,6 +13189,10 @@
     {
       "key": "whirling-electro-fungus",
       "name": "Whirling Electro Fungus"
+    },
+    {
+      "key": "whirling-pyro-fungus",
+      "name": "Whirling Pyro Fungus"
     },
     {
       "key": "winged-cryoshroom",

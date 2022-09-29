@@ -1028,86 +1028,146 @@
     {
       "key": "candace",
       "name": "Candace",
-      "title": "？？？",
-      "description": "？？？",
+      "title": "Serment doré",
+      "description": "Descendante du roi Deshret avec un œil gauche de couleur ambre, c’est la protectrice du Village d’Aaru.",
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Lance étincelante (Posture protectrice)",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Attaque normale",
+              "description": "Enchaîne jusqu’à 4 coups de lance.\n",
+              "descriptions": []
+            },
+            {
+              "name": "Attaque chargée",
+              "description": "Consomme de l’endurance pour charger en ligne droite et infliger des DGT aux ennemis sur la route.\n",
+              "descriptions": []
+            },
+            {
+              "name": "Attaque plongeante",
+              "description": "Plonge depuis les airs pour frapper le sol, infligeant des DGT aux ennemis sur la route et des DGT de zone à l’impact.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "DGT 1er coup|{param1}%",
+            "DGT 2e coup|{param2}%",
+            "DGT 3e coup|{param3}% + {param4}%",
+            "DGT 4e coup|{param5}%",
+            "DGT attaque chargée|{param6}%",
+            "Coût d’endurance attaque chargée|{param7} pts",
+            "DGT durant la chute|{param8}%",
+            "DGT chute basse/élevée|{param9}% / {param10}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Liturgie : Sanctuaire de la héronne",
+          "description": "Le style de combat de Candace est capable de repousser toute une marée d’ennemis.\n\n",
+          "abilities": [
+            {
+              "name": "Appui simple",
+              "description": "Se précipite avec son bouclier, infligeant des DGT Hydro.\n",
+              "descriptions": []
+            },
+            {
+              "name": "Appui long",
+              "description": "Brandit son bouclier pour bloquer les attaques des ennemis proches, formant un bouclier qui absorbe les DGT selon ses PV max et est efficace à 250 % contre les DGT Hydro. Le bouclier dure jusqu’à ce qu’elle finisse de libérer sa compétence élémentaire.\nCandace se charge après avoir appuyé pendant un certain temps, puis effectue une frappe bondissante qui inflige des DGT Hydro aux ennemis devant elle lorsque vous relâchez la compétence, que la durée prend fin ou que le bouclier est détruit.\n",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "PV du bouclier|{param1}% PV max + {param2} PV",
+            "DGT de base|{param3}% PV max",
+            "DGT charge complète|{param4}% PV max",
+            "TdR appui simple|{param5} s",
+            "TdR appui long|{param6} s"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Liturgie : Marée de la bergeronnette",
+          "description": "Brandissant son arme en l’air, Candace invoque une bénédiction divine qui inflige des DGT Hydro de zone selon ses PV max et confère l’état de Prière de couronne cramoisie à votre personnage déployé.\n\n",
+          "abilities": [
+            {
+              "name": "Prière de couronne cramoisie",
+              "description": "Les caractéristiques suivantes s’appliquent :\n",
+              "descriptions": [
+                "Lorsque l’attaque normale d’un personnage inflige des DGT élémentaires à un ennemi, les DGT infligés augmentent.",
+                "Lorsqu’un personnage est déployé au combat, un impact hydrique est déclenché, infligeant des DGT Hydro aux ennemis proches. Le nombre d’impacts pouvant être déclenchés pendant la durée de cette compétence est limité.",
+                "Sous l’effet de cet état, les personnages maniant une épée à une ou deux mains ou une arme d’hast obtiennent un enchantement Hydro."
+              ]
+            }
+          ],
+          "stats": [
+            "DGT compétence|{param1}% PV max",
+            "Durée|{param2} s",
+            "Bonus DGT|{param3}%",
+            "DGT impact hydrique|{param4}% PV max",
+            "Max d’activations Impact hydrique|{param5}",
+            "Temps de recharge|{param6} s",
+            "Énergie élémentaire|{param7}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "Aux premières lueurs de l’aube",
+          "description": "Réduit la consommation d’endurance de vos personnages dans l’équipe de 20 % lors de l’escalade.\nNe peut pas être cumulé avec d’autres aptitudes passives aux effets identiques.\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
+          "title": "Égide des flèches croisées",
+          "description": "Si Candace est touchée par une attaque pendant l’appui long de Liturgie : Sanctuaire de la héronne, la charge se complète immédiatement.\n",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "NA",
-          "description": "",
+          "title": "Dôme céleste de sable",
+          "description": "Lorsqu’un personnage affecté par l’état de Prière de couronne cramoisie de Liturgie : Marée de la bergeronnette inflige des DGT élémentaires à un ennemi avec une attaque normale, les DGT augmentent de 0,5 % pour chaque tranche de 1000 PV max de Candace.\n",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "Retour de l’héritière des sables écarlates",
+          "description": "La durée de l’état de Prière de couronne cramoisie de Liturgie : Marée de la bergeronnette augmente de 3 s.\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "Brillance perçant la lune",
+          "description": "Lorsque Liturgie : Sanctuaire de la héronne touche un ennemi, les PV max de Candace augmentent de 20 % pendant 15 s.\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "Supplication du chasseur",
+          "description": "Niveau d’aptitude Liturgie : Marée de la bergeronnette +3.\nNiveau max : 15\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "Serment de la sentinelle",
+          "description": "Réduit le TdR de l’appui long de Liturgie : Sanctuaire de la héronne pour correspondre à celui de l’appui simple.\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "Regard hétérochromatique",
+          "description": "Niveau d’aptitude Liturgie : Sanctuaire de la héronne +3.\nNiveau max : 15\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
+          "title": "Débordement",
+          "description": "Lorsqu’un personnage déployé (hormis Candace) affecté par l’état de Prière de couronne cramoisie de Liturgie : Marée de la bergeronnette inflige des DGT élémentaires à un ennemi avec une attaque normale, il déclenche une marée d’impact, infligeant des DGT Hydro de zone d’une valeur équivalant à 15 % des PV max de Candace.\nCet effet peut être déclenché une fois toutes les 2,3 s. Les DGT infligés sont considérés comme des DGT de déchaînement élémentaire.\n",
           "descriptions": []
         }
       ]
@@ -1364,86 +1424,150 @@
     {
       "key": "cyno",
       "name": "Cyno",
-      "title": "？？？",
-      "description": "？？？",
+      "title": "Juge des secrets",
+      "description": "Le général mahamatra chargé de superviser les chercheurs de l’Académie. On dit que lorsqu’il se met au travail, il est encore plus efficace que le grand vayuvyastra fabriqué par le Kshahrewar.",
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Lance d’invocation",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Attaque normale",
+              "description": "Enchaîne jusqu’à 4 coups de lance.\n",
+              "descriptions": []
+            },
+            {
+              "name": "Attaque chargée",
+              "description": "Consomme de l’endurance pour charger en ligne droite et infliger des DGT aux ennemis sur la route.\n",
+              "descriptions": []
+            },
+            {
+              "name": "Attaque plongeante",
+              "description": "Plonge depuis les airs pour frapper le sol, infligeant des DGT aux ennemis sur la route et des DGT de zone à l’impact.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "DGT 1er coup|{param1}%",
+            "DGT 2e coup|{param2}%",
+            "DGT 3e coup|{param3}% + {param4}%",
+            "DGT 4e coup|{param5}%",
+            "DGT attaque chargée|{param6}%",
+            "Coût d’endurance attaque chargée|{param7} pts",
+            "DGT durant la chute|{param8}%",
+            "DGT chute basse/élevée|{param9}% / {param10}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Rite : Traversée abyssale",
+          "description": "Effectue un assaut rapide, infligeant des DGT Électro aux ennemis en chemin.\n\nLorsque Cyno est sous l’effet d’éclaireur sermenté de son déchaînement élémentaire « Liturgie : Rapidité lupine », il déclenche à la place un ",
+          "abilities": [
+            {
+              "name": "rite mortuaire qui inflige de tonitruants",
+              "description": "DGT Électro de zone et prolonge la durée d’éclaireur sermenté.\n",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "DGT compétence|{param1}%",
+            "DGT rite mortuaire|{param2}%",
+            "Prolongation d’éclaireur sermenté|{param3} s",
+            "Temps de recharge|{param4} s",
+            "TdR rite mortuaire|{param5} s"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Liturgie : Rapidité lupine",
+          "description": "Invoque un esprit divin pour le posséder, se transformant en éclaireur sermenté.\n\n",
+          "abilities": [
+            {
+              "name": "Éclaireur sermenté",
+              "description": "",
+              "descriptions": [
+                "Les DGT infligés par les attaques normales, chargées ou plongeantes de Cyno seront convertis en DGT Électro ne pouvant pas être enchantés.",
+                "La maîtrise élémentaire et la RÉS à l’interruption de Cyno augmentent et il devient immunisé contre les DGT infligés par les réactions d’Électrocution.",
+                "Ces effets cessent lorsque Cyno quitte le champ de bataille ou après une durée de 18 s."
+              ]
+            }
+          ],
+          "stats": [
+            "DGT 1er coup|{param1}%",
+            "DGT 2e coup|{param2}%",
+            "DGT 3e coup|{param3}%",
+            "DGT 4e coup|{param4}% + {param5}%",
+            "DGT 5e coup|{param6}%",
+            "DGT attaque chargée|{param7}%",
+            "Coût d’endurance attaque chargée|{param8} pts",
+            "DGT durant la chute|{param9}%",
+            "DGT chute basse/élevée|{param10}% / {param11}%",
+            "Augmentation de maîtrise élémentaire|{param12} pts",
+            "Durée de base|{param13} s",
+            "Temps de recharge|{param14} s",
+            "Énergie élémentaire|{param15}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "Le don du silence",
+          "description": "Augmente les récompenses d’une expédition de 20 h à Sumeru de 25 %.\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
+          "title": "Jugement des plumes",
+          "description": "Lorsque Cyno est sous l’effet d’éclaireur sermenté de Liturgie : Rapidité lupine, il entre en posture de prophète final de façon intermittente. S’il utilise Rite : Traversée abyssale dans cette posture, il active l’effet Ordalie, augmentant les DGT infligés par cette utilisation de Rite : Traversée abyssale de 35 % et tirant vers l’avant 3 éclairs de sable qui infligent des DGT Électro d’une valeur équivalant à 100 % de son ATQ.\nLes DGT infligés par les éclairs de sable sont considérés comme des DGT de compétence élémentaire.\n",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
+          "title": "Autorité sur les neuf arcs",
+          "description": "Les DGT de certaines attaques de Cyno augmentent selon sa maîtrise élémentaire :\n",
+          "descriptions": [
+            "Les DGT de ses attaques normales sous l’effet d’éclaireur sermenté augmentent d’une valeur équivalant à 150 % de sa maîtrise élémentaire.",
+            "Les DGT des éclairs de sable de son aptitude passive « Jugement des plumes » augmentent d’une valeur équivalant à 250 % de sa maîtrise élémentaire."
+          ]
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "Sacrement : Vigile incessante",
+          "description": "Après avoir utilisé Liturgie : Rapidité lupine, la VIT d’attaque des attaques normales de Cyno augmente de 20 % pendant 10 s. Si l’effet Ordalie de l’aptitude passive « Jugement des plumes » est déclenché pendant Rite : Traversée abyssale, la durée de cette augmentation est actualisée.\nL’aptitude passive « Jugement des plumes » doit être déjà débloquée.\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "Cérémonie : Retour des esprits",
+          "description": "Lorsque l’attaque normale de Cyno a touché un ennemi, son bonus de DGT Électro augmente de 10 % pendant 4 s. Cet effet peut être déclenché une fois toutes les 0,1 s et cumulé 5 fois maximum.\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "Ordonnance : Exécution légale",
+          "description": "Niveau d’aptitude Liturgie : Rapidité lupine +3.\nNiveau max : 15\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "Protocole : Garde d’interdiction",
+          "description": "Sous l’effet d’éclaireur sermenté de Liturgie : Rapidité lupine, lorsque Cyno a déclenché une réaction d’Électrocution, de Supraconduction, de Surcharge, de Stimulation, de Suractivation, d’Exubérance ou de Dispersion Électro, tous les personnages de l’équipe à proximité (hormis Cyno) récupèrent 3 pts d’énergie élémentaire.\nCet effet peut être déclenché 5 fois par utilisation de Liturgie : Rapidité lupine.\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "Funéraille : Passage de la lumière stellaire",
+          "description": "Niveau d’aptitude Rite : Traversée abyssale +3.\nNiveau max : 15\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
+          "title": "Ascension : Balance de justice",
+          "description": "Après avoir utilisé Liturgie : Rapidité lupine ou déclenché l’effet Ordalie de l’aptitude passive « Jugement des plumes », Cyno obtient 4 cumuls de Rite charognard. En touchant un ennemi avec une attaque normale, Cyno consomme 1 cumul pour tirer un éclair de sable.\nL’effet Rite charognard dure 8 s, peut être cumulé 8 fois maximum, et est annulé à la fin de l’effet d’éclaireur sermenté de « Liturgie: Rapidité lupine ».\nL’éclair de sable peut être déclenché une fois toutes les 0,4s de cette manière.\nL’aptitude passive « Jugement des plumes » doit être déjà débloquée.\n",
           "descriptions": []
         }
       ]
@@ -9137,6 +9261,18 @@
       ]
     },
     {
+      "key": "makhaira-aquamarine",
+      "name": "Aigue-marine de Makhaira",
+      "description": "Un ancien espadon qui brille comme les eaux elles-mêmes. Un millier d’années d’érosion par le sable n’ont pas du tout émoussé son bord anormalement tranchant.",
+      "refinements": [
+        "L’effet suivant se déclenche toutes les 10 s : l’ATQ du personnage équipé de l’arme augmente d’une valeur équivalant à {color}24{/color} % de sa maîtrise élémentaire pendant 12 s, alors que les autres personnages de l’équipe à proximité obtiennent 30 % de ce bonus. Plusieurs armes du même nom peuvent permettre à ce bonus de se cumuler. L’effet peut être déclenché même lorsque le personnage fait partie de l’équipe mais n’est pas déployé.",
+        "L’effet suivant se déclenche toutes les 10 s : l’ATQ du personnage équipé de l’arme augmente d’une valeur équivalant à {color}30{/color} % de sa maîtrise élémentaire pendant 12 s, alors que les autres personnages de l’équipe à proximité obtiennent 30 % de ce bonus. Plusieurs armes du même nom peuvent permettre à ce bonus de se cumuler. L’effet peut être déclenché même lorsque le personnage fait partie de l’équipe mais n’est pas déployé.",
+        "L’effet suivant se déclenche toutes les 10 s : l’ATQ du personnage équipé de l’arme augmente d’une valeur équivalant à {color}36{/color} % de sa maîtrise élémentaire pendant 12 s, alors que les autres personnages de l’équipe à proximité obtiennent 30 % de ce bonus. Plusieurs armes du même nom peuvent permettre à ce bonus de se cumuler. L’effet peut être déclenché même lorsque le personnage fait partie de l’équipe mais n’est pas déployé.",
+        "L’effet suivant se déclenche toutes les 10 s : l’ATQ du personnage équipé de l’arme augmente d’une valeur équivalant à {color}42{/color} % de sa maîtrise élémentaire pendant 12 s, alors que les autres personnages de l’équipe à proximité obtiennent 30 % de ce bonus. Plusieurs armes du même nom peuvent permettre à ce bonus de se cumuler. L’effet peut être déclenché même lorsque le personnage fait partie de l’équipe mais n’est pas déployé.",
+        "L’effet suivant se déclenche toutes les 10 s : l’ATQ du personnage équipé de l’arme augmente d’une valeur équivalant à {color}48{/color} % de sa maîtrise élémentaire pendant 12 s, alors que les autres personnages de l’équipe à proximité obtiennent 30 % de ce bonus. Plusieurs armes du même nom peuvent permettre à ce bonus de se cumuler. L’effet peut être déclenché même lorsque le personnage fait partie de l’équipe mais n’est pas déployé."
+      ]
+    },
+    {
       "key": "mappa-mare",
       "name": "Atlas des terres et des mers",
       "description": "Une carte marine très détaillée des courants et du climat de Teyvat. Un document étonnant, arrivé à Liyue par voie commerciale.",
@@ -9170,6 +9306,18 @@
         "Les attaques chargées touchant les points faibles infligent un bonus de DGT CRIT équivalant à {color}150{/color} % de l'ATQ. Cet effet peut être déclenché une fois toutes les 10 s.",
         "Les attaques chargées touchant les points faibles infligent un bonus de DGT CRIT équivalant à {color}175{/color} % de l'ATQ. Cet effet peut être déclenché une fois toutes les 10 s.",
         "Les attaques chargées touchant les points faibles infligent un bonus de DGT CRIT équivalant à {color}200{/color} % de l'ATQ. Cet effet peut être déclenché une fois toutes les 10 s."
+      ]
+    },
+    {
+      "key": "missive-windspear",
+      "name": "Lance du vent saisonnier",
+      "description": "Une girouette qui peut guider le vent. Les idylles portées par la brise ne restent pas forcément douces…",
+      "refinements": [
+        "Déclencher une réaction élémentaire augmente pendant 10 s l’ATQ de {color}12{/color} % et la maîtrise élémentaire de {color}48{/color} pts.",
+        "Déclencher une réaction élémentaire augmente pendant 10 s l’ATQ de {color}15{/color} % et la maîtrise élémentaire de {color}60{/color} pts.",
+        "Déclencher une réaction élémentaire augmente pendant 10 s l’ATQ de {color}18{/color} % et la maîtrise élémentaire de {color}72{/color} pts.",
+        "Déclencher une réaction élémentaire augmente pendant 10 s l’ATQ de {color}21{/color} % et la maîtrise élémentaire de {color}84{/color} pts.",
+        "Déclencher une réaction élémentaire augmente pendant 10 s l’ATQ de {color}24{/color} % et la maîtrise élémentaire de {color}96{/color} pts."
       ]
     },
     {
@@ -9718,6 +9866,18 @@
         "Les PV sont augmentés de {color}30{/color} %. Le personnage équipé de l'arme obtient également un bonus d'ATQ équivalant à {color}1{/color},2 % de ses PV max, et lorsque ses PV sont inférieurs à 50 %, il obtient un bonus d'ATQ supplémentaire équivalant à {color}1{/color},4 % de ses PV max.",
         "Les PV sont augmentés de {color}35{/color} %. Le personnage équipé de l'arme obtient également un bonus d'ATQ équivalant à {color}1{/color},4 % de ses PV max, et lorsque ses PV sont inférieurs à 50 %, il obtient un bonus d'ATQ supplémentaire équivalant à {color}1{/color},6 % de ses PV max.",
         "Les PV sont augmentés de {color}40{/color} %. Le personnage équipé de l'arme obtient également un bonus d'ATQ équivalant à {color}1{/color},6 % de ses PV max, et lorsque ses PV sont inférieurs à 50 %, il obtient un bonus d'ATQ supplémentaire équivalant à {color}1{/color},8 % de ses PV max."
+      ]
+    },
+    {
+      "key": "staff-of-the-scarlet-sands",
+      "name": "Bâton des sables écarlates",
+      "description": "L’un des sceptres d’une paire fabriquée à partir d’obsidiennes. La légende raconte que ces bâtons accordent le droit de gouverner les peuples du désert, mais aucun courtisan pouvant vérifier la bonne apparence de ces parures ne vit aujourd’hui…",
+      "refinements": [
+        "Le personnage équipé de l’arme obtient un bonus d’ATQ équivalant à {color}52{/color} % de sa maîtrise élémentaire. Lorsqu’une compétence élémentaire touche un ennemi, un effet de Rêve des sables rouges de 10 s est généré : le personnage équipé de l’arme obtient un bonus d’ATQ équivalant à {color}28{/color}% de sa maîtrise élémentaire, cet effet pouvant être cumulé 3 fois maximum.",
+        "Le personnage équipé de l’arme obtient un bonus d’ATQ équivalant à {color}65{/color} % de sa maîtrise élémentaire. Lorsqu’une compétence élémentaire touche un ennemi, un effet de Rêve des sables rouges de 10 s est généré : le personnage équipé de l’arme obtient un bonus d’ATQ équivalant à {color}35{/color}% de sa maîtrise élémentaire, cet effet pouvant être cumulé 3 fois maximum.",
+        "Le personnage équipé de l’arme obtient un bonus d’ATQ équivalant à {color}78{/color} % de sa maîtrise élémentaire. Lorsqu’une compétence élémentaire touche un ennemi, un effet de Rêve des sables rouges de 10 s est généré : le personnage équipé de l’arme obtient un bonus d’ATQ équivalant à {color}42{/color}% de sa maîtrise élémentaire, cet effet pouvant être cumulé 3 fois maximum.",
+        "Le personnage équipé de l’arme obtient un bonus d’ATQ équivalant à {color}91{/color} % de sa maîtrise élémentaire. Lorsqu’une compétence élémentaire touche un ennemi, un effet de Rêve des sables rouges de 10 s est généré : le personnage équipé de l’arme obtient un bonus d’ATQ équivalant à {color}49{/color}% de sa maîtrise élémentaire, cet effet pouvant être cumulé 3 fois maximum.",
+        "Le personnage équipé de l’arme obtient un bonus d’ATQ équivalant à {color}104{/color} % de sa maîtrise élémentaire. Lorsqu’une compétence élémentaire touche un ennemi, un effet de Rêve des sables rouges de 10 s est généré : le personnage équipé de l’arme obtient un bonus d’ATQ équivalant à {color}56{/color}% de sa maîtrise élémentaire, cet effet pouvant être cumulé 3 fois maximum."
       ]
     },
     {
@@ -10362,6 +10522,11 @@
       "description": "Matériau d'élévation de personnage."
     },
     {
+      "key": "ajilenakh-nut",
+      "name": "Noix d’ajilenakh",
+      "description": "Un fruit qui pousse sur les arbres à feuilles persistantes dans les oasis du désert. La chair sous sa peau dure est épaisse, sucrée et délicieuse, ce qui en fait une source de nourriture importante parmi les peuples du désert."
+    },
+    {
       "key": "almond",
       "name": "Amande",
       "description": "Une graine avec un arôme spécial qui peut donner une toute nouvelle saveur fraîche et différente aux plats."
@@ -10655,6 +10820,11 @@
       "key": "damaged-mask",
       "name": "Masque endommagé",
       "description": "Un masque en os fissuré qui a appartenu à un Brutocollinus.\r\nIl est tellement endommagé qu'on ne peut plus vraiment appeler ça un masque."
+    },
+    {
+      "key": "damaged-prism",
+      "name": "Prisme endommagé",
+      "description": "Un composant endommagé que vous avez obtenu après avoir vaincu une Structure primale.\nCes machines aux formes singulières sont les protectrices éternelles des ruines du désert et sont assez puissante pour percer les montagnes et remodeler les rochers. Les principes de fonctionnement de ces machines sont similaires aux nombreux mécanismes mystérieux à la surface et sous terre."
     },
     {
       "key": "dandelion-seed",
@@ -11097,6 +11267,11 @@
       "description": "Un insigne servant à identifier les officiers. Compte tenu de la taille de l'armée des Fatui, ceux qui parviennent à atteindre le rang d'officier doivent sûrement être un minimum doués."
     },
     {
+      "key": "light-guiding-tetrahedron",
+      "name": "Tétraèdre de lumière",
+      "description": "Un composant essentiel que vous avez obtenu après avoir vaincu un mystérieux ensemble de mécanismes.\nJusqu’à nos jours, ces anciennes machines n’ont pas oublié les rêves de leurs maîtres ni leurs devoirs : construire mille palais, administrer trois mille machines, semer dix mille fleurs qui ne fleuriront plus jamais, et recréer un paradis désormais enfoui sous les sables du désert pour le bien de tous ceux qui vivent dans ce monde.\nBien que le roi du désert ne soit plus, que son rêve ait été depuis longtemps corrompu par des murmures impies et que tous les piliers magiques aient été brisés avant de s’effondrer, l’immense créature des temps anciens que le roi appréciait tant se cache toujours au sein des tempêtes de sable brûlantes."
+    },
+    {
       "key": "lightning-prism",
       "name": "Prisme d'éclair",
       "description": "Un matériel élémentaire utilisé par des Hypostases Électro pour faire converger les éléments à proximité et réparer les dommages. Il contient un pouvoir Électro d'une grande pureté.\r\nUn prisme commun peut distinguer les couleurs qui composent la lumière blanche, tandis que un prisme d'éclair peut faire converger les flux énergiques en un pur éclair. Bien que l'Hypostase Électro a été vaincue, les éléments Électro continuent de converger vers ce prisme."
@@ -11417,6 +11592,11 @@
       "description": "Cet assaisonnement pique légèrement vos papilles et fait des merveilles sur de la viande."
     },
     {
+      "key": "perpetual-caliber",
+      "name": "Calibre perpétuel",
+      "description": "Un mécanisme moteur que vous avez trouvé dans les Ruines mystérieuses.\nBien que la machine qu’il alimentait autrefois a été détruite, il continue de tourner.\nUne source d’énergie capable de se maintenir éternellement n’est pas censée exister dans notre monde, et les résultats de la plupart des travaux de recherche sur le mouvement perpétuel ont fini par être prouvés faux. Pourtant, cet appareil est la preuve qu’une civilisation aujourd’hui disparue a atteint des sommets que les nations actuelles ne peuvent espérer égaler…"
+    },
+    {
       "key": "perpetual-heart",
       "name": "Cœur perpétuel",
       "description": "Le noyau qui alimente les mouvements autonomes de la Matrice mécanique perpétuelle.\r\nCertains spéculent que les symboles sur ces noyaux ont été inscrits avec une intelligence et une logique d'un langage invisible à l'œil nu. Certains vont plus loin et pensent que ces machines des ruines uniques ont décidé de manière autonome d'abandonner leur forme biomimétique pour rechercher plus de puissance du fait de leurs noyaux particulièrement volumineux et de leurs inscriptions complexes."
@@ -11537,6 +11717,11 @@
       "description": "Une fleur blanche translucide qui ne pousse que sur les sommets des montagnes les plus hautes. Au lieu de grandir dans les plaines riches et humides, elle choisit de regarder au loin depuis les sommets des montagnes les plus solitaires."
     },
     {
+      "key": "radiant-prism",
+      "name": "Prisme radieux",
+      "description": "Un composant de fabrication subtile que vous avez obtenu après avoir vaincu une Structure primale.\nLe roi du désert a autrefois fait un rêve et a jadis formulé beaucoup de promesses.\nIl est dit dans les légendes du désert que ces machines avaient à l’origine été créées pour réaliser ces promesses. Aujourd’hui, cependant, ces promesses et ce rêve ont été oubliés et ne survivent qu’à l’intérieur de la mémoire mécanique de ces engins."
+    },
+    {
       "key": "radish",
       "name": "Radis",
       "description": "Un légume riche en fibres et en nutriments. Facile à cultiver et à récolter."
@@ -11555,6 +11740,11 @@
       "key": "recruits-insignia",
       "name": "Insigne de nouvelle recrue",
       "description": "Un insigne servant à identifier les nouvelles recrues. Personne ne sait ni à qui il appartient, ni pourquoi cette personne a décidé de rejoindre l'armée des Fatui."
+    },
+    {
+      "key": "redcrest",
+      "name": "Quandong",
+      "description": "Un fruit qui pousse même dans les environnements désertiques les plus hostiles. Ces fruits pourpres vibrants sont rendus encore plus beaux sur un fond de sable jaune."
     },
     {
       "key": "relic-from-guyun",
@@ -11620,6 +11810,11 @@
       "key": "sausage",
       "name": "Saucisse",
       "description": "Viande hachée enfermée dans un boyau. Sa durée de conservation permet de satisfaire les besoins des férus de viande sur une longue durée."
+    },
+    {
+      "key": "scarab",
+      "name": "Scarabée",
+      "description": "Un coléoptère tenace qui trouve le repos dans le vaste océan de sable du désert. Le motif doré sur la coquille de ces coléoptères fait allusion à une relation profonde entre ces derniers et les ruines antiques qui parsèment le désert."
     },
     {
       "key": "scattered-piece-of-decarabians-dream",
@@ -11930,6 +12125,11 @@
       "key": "trimmed-red-silk",
       "name": "Soie rouge brodée",
       "description": "Un morceau de soie rouge garni de décorations simples.\nUn guerrier aguerri peut détecter les faiblesses dans les yeux de son ennemi et en tirer ainsi profit. Les Érémites ont perdu leur maître il y a fort longtemps, et aujourd’hui, ils ne font plus confiance qu’à eux-mêmes. On dit qu’ils sont plus que convaincus que toutes les choses du monde les trahissent, même leurs propres yeux."
+    },
+    {
+      "key": "turbid-prism",
+      "name": "Prisme trouble",
+      "description": "Un composant usé que vous avez obtenu après avoir vaincu une Structure primale.\nOn dit que ces machines sont différentes des mécanismes des ruines des profondeurs du désert en ce qu’elles n’ont pas été créées pour conquérir ou amener la destruction."
     },
     {
       "key": "tusk-of-monoceros-caeli",
@@ -12251,6 +12451,14 @@
       "name": "Chantre de l'Abîme - Foudre pourpre"
     },
     {
+      "key": "aeonblight-drake",
+      "name": "Dragon cataclysmique"
+    },
+    {
+      "key": "algorithm-of-semi-intransient-matrix-of-overseer-network",
+      "name": "Algorithme de semi-intransition matriciaire d'observation en néo-réseau"
+    },
+    {
       "key": "anemo-hypostasis",
       "name": "Hypostase Anémo"
     },
@@ -12407,12 +12615,20 @@
       "name": "Ablutionneuse des Érémites"
     },
     {
+      "key": "eremite-galehunter",
+      "name": "Chasseuse éventée des Érémites"
+    },
+    {
       "key": "eremite-linebreaker",
       "name": "Brise-formation des Érémites"
     },
     {
       "key": "eremite-ravenbeak-halberdier",
       "name": "Hallebardier des Érémites"
+    },
+    {
+      "key": "eremite-stone-enchanter",
+      "name": "Enchanteur graveleux des Érémites"
     },
     {
       "key": "eremite-sunfrost",
@@ -12463,6 +12679,10 @@
       "name": "Tirailleur Fatui - Mercenaire Pyro"
     },
     {
+      "key": "floating-anemo-fungus",
+      "name": "Fongus Anémo flottant"
+    },
+    {
       "key": "floating-dendro-fungus",
       "name": "Fongus Dendro flottant"
     },
@@ -12501,6 +12721,10 @@
     {
       "key": "golden-wolflord",
       "name": "Loup alpha doré"
+    },
+    {
+      "key": "grounded-geoshroom",
+      "name": "Champigéo terré"
     },
     {
       "key": "grounded-hydroshroom",
@@ -12703,6 +12927,18 @@
       "name": "Matrice mécanique perpétuelle"
     },
     {
+      "key": "primal-construct-prospector",
+      "name": "Structure primale : Prospecteur"
+    },
+    {
+      "key": "primal-construct-repulsor",
+      "name": "Structure primale : Répulseur"
+    },
+    {
+      "key": "primal-construct-reshaper",
+      "name": "Structure primale : Remodeleur"
+    },
+    {
       "key": "primo-geovishap",
       "name": "Géosaure antique"
     },
@@ -12835,6 +13071,14 @@
       "name": "Ashigaru en chef du Shogunat"
     },
     {
+      "key": "spirit-of-omen-stone-drake",
+      "name": "Esprit sinistre du varan de pierre"
+    },
+    {
+      "key": "spirit-of-omen-wind-glede",
+      "name": "Esprit sinistre de la harpie ventée"
+    },
+    {
       "key": "stonehide-lawachurl",
       "name": "Chef Brutorocheux"
     },
@@ -12845,6 +13089,10 @@
     {
       "key": "stretchy-anemo-fungus",
       "name": "Fongus Anémo extensible"
+    },
+    {
+      "key": "stretchy-electro-fungus",
+      "name": "Fongus Électro extensible"
     },
     {
       "key": "stretchy-geo-fungus",
@@ -12949,6 +13197,10 @@
     {
       "key": "whirling-electro-fungus",
       "name": "Fongus Électro tournoyant"
+    },
+    {
+      "key": "whirling-pyro-fungus",
+      "name": "Fongus Pyro tournoyant"
     },
     {
       "key": "winged-cryoshroom",
