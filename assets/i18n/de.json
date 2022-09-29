@@ -1027,86 +1027,146 @@
     {
       "key": "candace",
       "name": "Candace",
-      "title": "？？？",
-      "description": "？？？",
+      "title": "Gelübde beim treibenden Gold",
+      "description": "Beschützerin des Aaru-Dorfs, die Nachfahrin von König Deshret, deren linkes Auge golden wie Bernstein strahlt.",
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Funkelnde Speertechnik – Abwehr",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Standardangriff",
+              "description": "Führt bis zu 4 Lanzenstiche hintereinander aus.\n",
+              "descriptions": []
+            },
+            {
+              "name": "Heftiger Schlag",
+              "description": "Verbraucht eine gewisse Menge Ausdauer, sticht geschwind nach vorn und fügt den Gegnern in der Bahn Schaden zu.\n",
+              "descriptions": []
+            },
+            {
+              "name": "Angriff aus dem Fall",
+              "description": "Schlägt beim Fallen aus der Luft auf den Boden, greift alle Gegner in der Bahn an und verursacht beim Aufkommen Flächenschaden.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "SCH Phase 1|{param1}%",
+            "SCH Phase 2|{param2}%",
+            "SCH Phase 3|{param3}% + {param4}%",
+            "SCH Phase 4|{param5}%",
+            "Heftige Schläge|{param6}%",
+            "Ausdauerverbrauch heftiger Schläge|{param7} Punkte",
+            "SCH beim Fallen|{param8}%",
+            "SCH beim Fallen aus niedriger/großer Höhe|{param9}% / {param10}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Heiliger Ritus – Heiligtum des Reihers",
+          "description": "Candaces Kampfstil ist in der Lage, eine ganze Flut von Gegnern abzuwehren.\n\n",
+          "abilities": [
+            {
+              "name": "Drücken",
+              "description": "Stürmt mit ihrem Schild nach vorn und verursacht Hydro-Schaden.\n",
+              "descriptions": []
+            },
+            {
+              "name": "Gedrückt halten",
+              "description": "Hebt ihren Schild, um Angriffe von Gegnern in der Umgebung abzuwehren, und erschafft einen Schutzschild, der Schaden basierend auf Candaces max. LP und bei Hydro-Schaden 250 % abhält. Der Schutzschild hält bis zum Ende der Elementarfähigkeit.\nNach einem eine gewisse Zeit langen Gedrückthalten wird das Aufladen der Elementarfähigkeit abgeschlossen. Candace wird beim Loslassen der Fähigkeit, beim Ende der Fähigkeitsdauer oder dann, wenn der Schild zerstört wird, ihren Sprungangriff ausführen und den Gegnern vor ihr Hydro-Schaden zufügen.\n",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "Schildstärke|{param1}% der max. LP + {param2}",
+            "Basis-SCH|{param3}% der max. LP",
+            "SCH bei voller Aufladung|{param4}% der max. LP",
+            "Abklingzeit für Drücken|{param5} s",
+            "Abklingzeit für Gedrückthalten|{param6} s"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Heiliger Ritus – Bachstelzenflut",
+          "description": "Candace erhebt ihre Waffe und ruft den göttlichen Segen herbei. Verursacht Hydro-Flächenschaden basierend auf Candaces max. LP und verleiht fortlaufend der eigenen aktuellen Figur den Effekt „Gebet der roten Krone“.\n\n",
+          "abilities": [
+            {
+              "name": "Gebet der roten Krone",
+              "description": "Merkmale:\n",
+              "descriptions": [
+                "Verursachen Figuren mit ihren Standardangriffen Elementar-Schaden, wird der Schaden erhöht.",
+                "Wird eine Figur eingewechselt, löst sie einen Wellenstoß aus, der den Gegnern in der Nähe Hydro-Schaden zufügt. Die Anzahl der auslösbaren Wellenstöße während der Effektdauer ist begrenzt.",
+                "Verleiht den Figuren mit Einhänder, Zweihänder und Stangenwaffe, die unter diesem Effekt stehen, das Hydro-Attribut."
+              ]
+            }
+          ],
+          "stats": [
+            "Fähigkeits-SCH|{param1}% der max. LP",
+            "Dauer|{param2} s",
+            "SCH-Bonus|{param3}%",
+            "SCH des Wellenstoßes|{param4}% der max. LP",
+            "Anzahl der Auslösungen des Wellenstoßes|{param5}",
+            "Abklingzeit|{param6} s",
+            "Elementarenergie|{param7}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "In Richtung Sonnenaufgang",
+          "description": "Verringert die beim Klettern verbrauchte Ausdauer aller eigenen Truppenmitglieder um 20 %.\nNicht mit passiven Talenten mit völlig gleichen Effekten stapelbar.\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
+          "title": "Schutz des Federflusses",
+          "description": "Wird Candace beim Gedrückthalten der Elementarfähigkeit Heiliger Ritus: Heiligtum des Reihers angegriffen, wird das Aufladen der Fähigkeit sofort abgeschlossen.\n",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "NA",
-          "description": "",
+          "title": "Himmelsgewölbe im Sand",
+          "description": "Erhöht den Schaden des Standardangriffes der Figuren unter dem Effekt „Gebet der roten Krone“ der Spezialfähigkeit Heiliger Ritus: Bachstelzenflut um 0,5 % für je 1.000 Punkte von Candaces max. LP, wenn dieser Standardangriff einem Gegner Elementar-Schaden zufügt.\n",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "Wiederkehrende Erbin der roten Sande",
+          "description": "Verlängert die Dauer des Effekts „Gebet der roten Krone“ der Fähigkeit Heiliger Ritus – Bachstelzenflut um 3 s.\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "Monddurchdringender Glanz",
+          "description": "Erhöht Candaces max. LP beim Treffen von Gegnern mit der Fähigkeit Heiliger Ritus – Heiligtum des Reihers um 20 %, hält 15 s.\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "Bittgesuch der Jäger",
+          "description": "Erhöht die Stufe der Fähigkeit Heiliger Ritus – Bachstelzenflut um 3.\nHöchststufe 15.\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "Eid der Grenzwächter",
+          "description": "Verringert die Abklingzeit für Gedrückthalten von Heiliger Ritus – Heiligtum des Reihers, sodass sie ebenso lang wie die bei normalem Drücken ist.\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "Goldene Iris",
+          "description": "Erhöht die Stufe der Fähigkeit Heiliger Ritus – Heiligtum des Reihers um 3.\nHöchststufe 15.\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
+          "title": "Überlaufende Abendflut",
+          "description": "Verursacht die aktuelle Figur (außer Candace) unter dem Effekt „Gebet der roten Krone“ der Fähigkeit Heiliger Ritus – Bachstelzenflut mit Standardangriffen Elementar-Schaden, wird ein Flutstoß ausgelöst, der Hydro-Flächenschaden in Höhe von 15 % der max. LP von Candace verursacht.\n2,3 s Abklingzeit. Der damit verursachte Schaden gilt als Schaden der Spezialfähigkeit.\n",
           "descriptions": []
         }
       ]
@@ -1363,86 +1423,149 @@
     {
       "key": "cyno",
       "name": "Cyno",
-      "title": "？？？",
-      "description": "？？？",
+      "title": "Richter über Geheimnisse",
+      "description": "Mahamatra an der Akademie, der die Arbeit der Gelehrten beaufsichtigt. Bei seiner Arbeit ist er effizienter als das „Große Vayuvyastra“, das das Kshahrewar-Institut geschaffen hat.",
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Speertechnik der Beschwörer",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Standardangriff",
+              "description": "Führt bis zu 4 Lanzenstiche hintereinander aus.\n",
+              "descriptions": []
+            },
+            {
+              "name": "Heftiger Schlag",
+              "description": "Verbraucht eine gewisse Menge Ausdauer, sticht geschwind nach vorn und fügt den Gegnern in der Bahn Schaden zu.\n",
+              "descriptions": []
+            },
+            {
+              "name": "Angriff aus dem Fall",
+              "description": "Schlägt beim Fallen aus der Luft auf den Boden, greift alle Gegner in der Bahn an und verursacht beim Aufkommen Flächenschaden.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "SCH Phase 1|{param1}%",
+            "SCH Phase 2|{param2}%",
+            "SCH Phase 3|{param3}% + {param4}%",
+            "SCH Phase 4|{param5}%",
+            "Heftige Schläge|{param6}%",
+            "Ausdauerverbrauch heftiger Schläge|{param7} Punkte",
+            "SCH beim Fallen|{param8}%",
+            "SCH beim Fallen aus niedriger/großer Höhe|{param9}% / {param10}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Geheimer Ritus – Abgründiger Seelenwanderer",
+          "description": "Führt blitzschnell einen Stoß aus, der den Gegnern in der Bahn Elektro-Schaden zufügt.\n\nWenn Cyno sich im Modus „Paktverschworener Pfadklärer“ befindet, den die Spezialfähigkeit „Heiliger Ritus – Schnelligkeit des Wolfs“ ausgelöst hat, führt er stattdessen den ",
+          "abilities": [
+            {
+              "name": "Bestattungsritus aus, der donnernd",
+              "description": "Elektro-Flächenschaden verursacht und die Dauer des Modus „Paktverschworener Pfadklärer“ verlängert.\n",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "Fähigkeits-SCH|{param1}%",
+            "SCH des Bestattungsritus|{param2}%",
+            "Dauerbonus für „Paktverschworener Pfadklärer“|{param3} s",
+            "Abklingzeit|{param4} s",
+            "Abklingzeit des Bestattungsritus|{param5} s"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Heiliger Ritus – Schnelligkeit des Wolfs",
+          "description": "Beschwört einen göttlichen Geist, der Cyno in den „Paktverschworenen Pfadklärer“ verwandelt.\n\n",
+          "abilities": [
+            {
+              "name": "Paktverschworener Pfadklärer",
+              "description": "Wandelt den durch Cynos Standardangriffe, heftige Schläge und Angriffe aus dem Fall verursachten Schaden in Elektro-Schaden um, der nicht von anderen Elementen überdeckt werden kann.\n",
+              "descriptions": [
+                "Erhöht Cynos Elementarkunde und Unterbrechungs-WDS. Verleiht ihm zugleich Immunität gegen Schaden, den die Reaktion „Unter Strom“ verursacht.",
+                "Diese Effekte halten bis zu 18 s und werden entfernt, sobald Cyno ausgewechselt wird."
+              ]
+            }
+          ],
+          "stats": [
+            "SCH Phase 1|{param1}%",
+            "SCH Phase 2|{param2}%",
+            "SCH Phase 3|{param3}%",
+            "SCH Phase 4|{param4}% + {param5}%",
+            "SCH Phase 5|{param6}%",
+            "SCH heftiger Schläge|{param7}%",
+            "Ausdauerverbrauch heftiger Schläge|{param8} Punkte",
+            "SCH beim Fallen|{param9}%",
+            "SCH beim Fallen aus niedriger/großer Höhe|{param10}% / {param11}%",
+            "Elementarkunde-Bonus|{param12} Punkte",
+            "Basisdauer|{param13} s",
+            "Abklingzeit|{param14} s",
+            "Elementarenergie|{param15}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "Gnade der Stille",
+          "description": "Bringt bei 20-stündigen Erkundungsentsendungen in Sumeru 25 % mehr Belohnungen.\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
+          "title": "Urteil der Federn",
+          "description": "Befindet sich Cyno im Modus „Paktverschworener Pfadklärer“ der Spezialfähigkeit Heiliger Ritus – Schnelligkeit des Wolfs, wird er in Intervallen den Zustand „Prophet des Endes“ einnehmen. Wendet er in diesem Zustand die Elementarfähigkeit Geheimer Ritus – Abgründiger Seelenwanderer an, wird der Effekt „Zumessung“ ausgelöst, der den diesmaligen Schaden von „Geheimer Ritus – Abgründiger Seelenwanderer“ um 35 % erhöht und 3 Staubblitze nach vorn abfeuert, die Elektro-Schaden  in Höhe von 100 % von Cynos ANG verursachen.\nSchaden der Staubblitze gilt als Schaden der Elementarfähigkeit.\n",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
+          "title": "Autorität der neun Bögen",
+          "description": "Erhöht den Schaden Cynos folgender Angriffe basierend auf seiner Elementarkunde:\n",
+          "descriptions": [
+            "Standardangriff im Modus „Paktverschworener Pfadklärer“: um 150 % seiner Elementarkunde.",
+            "Staubblitze des passiven Talents „Urteil der Federn“: um 250 % seiner Elementarkunde."
+          ]
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "Ordnungsritus – Unermüdliche Wachsamkeit",
+          "description": "Erhöht 10 s lang nach Anwenden der Fähigkeit Heiliger Ritus – Schnelligkeit des Wolfs Cynos Geschwindigkeit der Standardangriffe um 20 %. Wenn der Effekt „Zumessung“ des passiven Talents „Urteil der Federn“ beim Anwenden der Fähigkeit Geheimer Ritus – Abgründiger Seelenwanderer ausgelöst wird, wird die Dauer dieses Bonus aktualisiert.\nDas passive Talent „Urteil der Federn“ muss zuerst freigeschaltet werden.\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "Zeremonienritus – Heimkehrende Seelen",
+          "description": "Erhöht 4 s lang nach Treffen von Gegnern mit Cynos Standardangriffen Cynos Elektro-SCH um 10 %. 0,1 s Abklingzeit. 5-fach stapelbar.\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "Gebotsritus – Gesetzestreuer Vollstrecker",
+          "description": "Erhöht die Stufe der Fähigkeit Heiliger Ritus – Schnelligkeit des Wolfs um 3.\nHöchststufe 15.\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "Austeritätsritus – Beschützender Verbotswächter",
+          "description": "Befindet sich Cyno im Modus „Paktverschworener Pfadklärer“ der Spezialfähigkeit Heiliger Ritus – Schnelligkeit des Wolfs, stellt er nach Auslösen der Reaktionen wie „Unter Strom“, „Supraleiter“, „Überladen“, „Urwuchs“, „Suprawuchs“, „Supraspross“ oder „Elektro-Verwirbelung“ allen Truppenmitgliedern in der Nähe (außer Cyno) 3 Punkte Elementarenergie wieder her.\n5-mal während der Wirkungsdauer der Spezialfähigkeit Heiliger Ritus – Schnelligkeit des Wolfs auslösbar.\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "Grabritus – Vergehendes Sternenlicht",
+          "description": "Erhöht die Stufe der Fähigkeit Geheimer Ritus – Abgründiger Seelenwanderer um 3.\nHöchststufe 15.\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
+          "title": "Federritus – Gerechte Waage",
+          "description": "Cyno erhält beim Anwenden der Spezialfähigkeit Heiliger Ritus – Schnelligkeit des Wolfs oder nach Auslösen des Effekts „Zumessung“ des passiven Talents „Urteil der Federn“ 4 Stapelungen des Effekts „Opfer des Schakals“. Bei einem Treffer mit Cynos Standardangriff verbraucht er 1 Stapelung von „Opfer des Schakals“, um einen Staubblitz auszulösen.\nDer Effekt „Opfer des Schakals“ hält 8 s, 8-fach stapelbar. „Opfer des Schakals“ wird entfernt, sobald der Modus „Paktverschworener Pfadklärer“ der Fähigkeit „Heiliger Ritus – Schnelligkeit des Wolfs“ endet.\n0,4 s Abklingzeit für das Auslösen solch eines Staubblitzes.\nDas passive Talent „Urteil der Federn“ muss zuerst freigeschaltet werden.\n",
           "descriptions": []
         }
       ]
@@ -9135,6 +9258,18 @@
       ]
     },
     {
+      "key": "makhaira-aquamarine",
+      "name": "Makhaira-Aquamarin",
+      "description": "Ein uraltes Großschwert, das glänzt wie das Wasser selbst. Tausend Jahre Sanderosion haben seine unnatürlich scharfe Klinge kein bisschen stumpf werden lassen.",
+      "refinements": [
+        "Löst alle 10 s den folgenden Effekt aus, der 12 s hält: Erhöht den ANG der damit ausgerüsteten Figur um {color}24{/color} % der Elementarkunde, die sie besitzt. Verleiht zugleich den anderen Truppenmitgliedern in der Nähe 30 % dieses Bonus. Der Effekt mehrerer gleicher Waffen ist stapelbar. Er tritt auch in Kraft, wenn sich die Figur inaktiv in der Truppe befindet.",
+        "Löst alle 10 s den folgenden Effekt aus, der 12 s hält: Erhöht den ANG der damit ausgerüsteten Figur um {color}30{/color} % der Elementarkunde, die sie besitzt. Verleiht zugleich den anderen Truppenmitgliedern in der Nähe 30 % dieses Bonus. Der Effekt mehrerer gleicher Waffen ist stapelbar. Er tritt auch in Kraft, wenn sich die Figur inaktiv in der Truppe befindet.",
+        "Löst alle 10 s den folgenden Effekt aus, der 12 s hält: Erhöht den ANG der damit ausgerüsteten Figur um {color}36{/color} % der Elementarkunde, die sie besitzt. Verleiht zugleich den anderen Truppenmitgliedern in der Nähe 30 % dieses Bonus. Der Effekt mehrerer gleicher Waffen ist stapelbar. Er tritt auch in Kraft, wenn sich die Figur inaktiv in der Truppe befindet.",
+        "Löst alle 10 s den folgenden Effekt aus, der 12 s hält: Erhöht den ANG der damit ausgerüsteten Figur um {color}42{/color} % der Elementarkunde, die sie besitzt. Verleiht zugleich den anderen Truppenmitgliedern in der Nähe 30 % dieses Bonus. Der Effekt mehrerer gleicher Waffen ist stapelbar. Er tritt auch in Kraft, wenn sich die Figur inaktiv in der Truppe befindet.",
+        "Löst alle 10 s den folgenden Effekt aus, der 12 s hält: Erhöht den ANG der damit ausgerüsteten Figur um {color}48{/color} % der Elementarkunde, die sie besitzt. Verleiht zugleich den anderen Truppenmitgliedern in der Nähe 30 % dieses Bonus. Der Effekt mehrerer gleicher Waffen ist stapelbar. Er tritt auch in Kraft, wenn sich die Figur inaktiv in der Truppe befindet."
+      ]
+    },
+    {
       "key": "mappa-mare",
       "name": "Illustrationen von Landen und Wassern",
       "description": "Eine sehr detailreiche Seekarte mit den Gewässern rund um Teyvat. Es gehört zu den wundersamen Dokumenten, die über Handelswege nach Liyue gelangt sind.",
@@ -9168,6 +9303,18 @@
         "Verursacht beim Treffen von Schwachstellen mit heftigen Schlägen zusätzlichen Schaden in Höhe von {color}150{/color} % ANG sowie auf jeden Fall einen KT. 10 s Abklingzeit.",
         "Verursacht beim Treffen von Schwachstellen mit heftigen Schlägen zusätzlichen Schaden in Höhe von {color}175{/color} % ANG sowie auf jeden Fall einen KT. 10 s Abklingzeit.",
         "Verursacht beim Treffen von Schwachstellen mit heftigen Schlägen zusätzlichen Schaden in Höhe von {color}200{/color} % ANG sowie auf jeden Fall einen KT. 10 s Abklingzeit."
+      ]
+    },
+    {
+      "key": "missive-windspear",
+      "name": "Spitze der klingenden Winde",
+      "description": "Eine Wetterfahne, die die Windrichtung anzeigt. Die Idylle der Winde bleibt nicht immer sanft …",
+      "refinements": [
+        "Erhöht 10 s lang nach Auslösen einer Elementarreaktion den ANG um {color}12{/color} % und die Elementarkunde um {color}48{/color} Punkte.",
+        "Erhöht 10 s lang nach Auslösen einer Elementarreaktion den ANG um {color}15{/color} % und die Elementarkunde um {color}60{/color} Punkte.",
+        "Erhöht 10 s lang nach Auslösen einer Elementarreaktion den ANG um {color}18{/color} % und die Elementarkunde um {color}72{/color} Punkte.",
+        "Erhöht 10 s lang nach Auslösen einer Elementarreaktion den ANG um {color}21{/color} % und die Elementarkunde um {color}84{/color} Punkte.",
+        "Erhöht 10 s lang nach Auslösen einer Elementarreaktion den ANG um {color}24{/color} % und die Elementarkunde um {color}96{/color} Punkte."
       ]
     },
     {
@@ -9716,6 +9863,18 @@
         "Erhöht die LP um {color}30{/color} %. Erhöht den ANG um {color}1,2{/color} % der max. LP der mit dieser Waffe ausgerüsteten Figur. Erhöht den ANG bei weniger als 50 % LP der mit dieser Waffe ausgerüsteten Figur um weitere {color}1,4{/color} % der max. LP.",
         "Erhöht die LP um {color}35{/color} %. Erhöht den ANG um {color}1,4{/color} % der max. LP der mit dieser Waffe ausgerüsteten Figur. Erhöht den ANG bei weniger als 50 % LP der mit dieser Waffe ausgerüsteten Figur um weitere {color}1,6{/color} % der max. LP.",
         "Erhöht die LP um {color}40{/color} %. Erhöht den ANG um {color}1,6{/color} % der max. LP der mit dieser Waffe ausgerüsteten Figur. Erhöht den ANG bei weniger als 50 % LP der mit dieser Waffe ausgerüsteten Figur um weitere {color}1,8{/color} % der max. LP."
+      ]
+    },
+    {
+      "key": "staff-of-the-scarlet-sands",
+      "name": "Stab der roten Sande",
+      "description": "Eines der zwei Szepter, die aus Obsidian gefertigt wurden. In der Legende verleiht es seinem Besitzer das Recht, die Wüstenbewohner zu führen, aber heute lebt kein Untergebener mehr, der das Königsszepter wieder erkennen kann.",
+      "refinements": [
+        "Verleiht der damit ausgerüsteten Figur einen ANG-Bonus in Höhe von {color}52{/color} % der Elementarkunde, die sie besitzt. Löst nach Treffern mit der Elementarfähigkeit den Effekt „Traum roter Sande“ aus, der 10 s hält: Verleiht der damit ausgerüsteten Figur einen ANG-Bonus in Höhe von {color}28{/color} % der Elementarkunde, die sie besitzt, dieser Effekt ist 3-fach stapelbar.",
+        "Verleiht der damit ausgerüsteten Figur einen ANG-Bonus in Höhe von {color}65{/color} % der Elementarkunde, die sie besitzt. Löst nach Treffern mit der Elementarfähigkeit den Effekt „Traum roter Sande“ aus, der 10 s hält: Verleiht der damit ausgerüsteten Figur einen ANG-Bonus in Höhe von {color}35{/color} % der Elementarkunde, die sie besitzt, dieser Effekt ist 3-fach stapelbar.",
+        "Verleiht der damit ausgerüsteten Figur einen ANG-Bonus in Höhe von {color}78{/color} % der Elementarkunde, die sie besitzt. Löst nach Treffern mit der Elementarfähigkeit den Effekt „Traum roter Sande“ aus, der 10 s hält: Verleiht der damit ausgerüsteten Figur einen ANG-Bonus in Höhe von {color}42{/color} % der Elementarkunde, die sie besitzt, dieser Effekt ist 3-fach stapelbar.",
+        "Verleiht der damit ausgerüsteten Figur einen ANG-Bonus in Höhe von {color}91{/color} % der Elementarkunde, die sie besitzt. Löst nach Treffern mit der Elementarfähigkeit den Effekt „Traum roter Sande“ aus, der 10 s hält: Verleiht der damit ausgerüsteten Figur einen ANG-Bonus in Höhe von {color}49{/color} % der Elementarkunde, die sie besitzt, dieser Effekt ist 3-fach stapelbar.",
+        "Verleiht der damit ausgerüsteten Figur einen ANG-Bonus in Höhe von {color}104{/color} % der Elementarkunde, die sie besitzt. Löst nach Treffern mit der Elementarfähigkeit den Effekt „Traum roter Sande“ aus, der 10 s hält: Verleiht der damit ausgerüsteten Figur einen ANG-Bonus in Höhe von {color}56{/color} % der Elementarkunde, die sie besitzt, dieser Effekt ist 3-fach stapelbar."
       ]
     },
     {
@@ -10375,6 +10534,11 @@
       "description": "Material für den Figurenaufstieg."
     },
     {
+      "key": "ajilenakh-nut",
+      "name": "Dattel",
+      "description": "Früchte immergrüner Bäume, die in Wüstenoasen wachsen. Unter der harten Fruchtschale findet sich seidenweiches, üppiges, wohlschmeckend süßes Fruchtfleisch. Für die Bewohner des Sandmeeres ist diese Art von Frucht eine bedeutende Nahrungsquelle."
+    },
+    {
       "key": "almond",
       "name": "Mandeln",
       "description": "Ein Samen mit einem kräftigen Geschmack, der Gerichten eine frische Note verleihen kann."
@@ -10668,6 +10832,11 @@
       "key": "damaged-mask",
       "name": "Zerbrochene Maske",
       "description": "Eine zerbrochene Maske von Hilichurlen, gemacht aus Knochen.\r\nKaum etwas an ihr ist noch ganz, sodass sie ihren Zweck nicht mehr erfüllen kann."
+    },
+    {
+      "key": "damaged-prism",
+      "name": "Zerbrochenes Prisma",
+      "description": "Ein nach dem Besiegen eines Urkonstrukts erhaltenes zerbrochenes Teil.\nDiese ungewöhnlich geformte Maschine ist der ewige Wächter der Ruinen der Wüste mit der Kraft, Felsen zu durchschlagen und wieder zusammenzusetzen. Der Mechanismus dieser Maschinen ähnelt dem von vielen geheimen oberirdischen und unterirdischen Apparaten."
     },
     {
       "key": "dandelion-seed",
@@ -11110,6 +11279,11 @@
       "description": "Ein Abzeichen, das anzeigt, dass man Offizier ist. Die Fatui kontrollieren eine gewaltige Armee. Man muss also schon etwas Großes geleistet haben, um darin als Offizier dienen zu können."
     },
     {
+      "key": "light-guiding-tetrahedron",
+      "name": "Lichtgesteuerter Tetraeder",
+      "description": "Ein nach dem Besiegen einer mysteriösen Kombination von Vorrichtungen erhaltener Kernbestandteil.\nNoch heute haben diese antiken Maschinen weder den Traum ihres Herrn noch ihre eigenen Pflichten vergessen: Eintausend Paläste errichten, dreitausend Maschinen beherrschen, zehntausend Blumen einer heute verlorenen Art pflanzen, für alle Seelen der Erde das im Wüstenmeer untergegangene „Paradies“ wiederaufleben lassen.\nAuch wenn der König der Wüste nicht mehr existieren mag und der Traum aufgrund der tiefen Schuld nur noch geflüstert wird und verdorben ist, auch wenn alle monströsen Säulen gebrochen und niedergeworfen wurden und die einst von der Gnade des Königs beglückten riesigen Bestien längst im heißen Sandsturm verschwunden sind."
+    },
+    {
       "key": "lightning-prism",
       "name": "Blitzprisma",
       "description": "Mit diesem elementaren Stoff konzentriert eine Elektro-Hypostase ihre Energie und heilt ihre Verletzungen. Darin enthalten ist reine Elektro-Kraft.\r\nEin herkömmliches Prisma kann das Farbspektrum des Lichts auseinandernehmen, während ein Blitzprisma fließende Energie in einen Blitzschlag bündeln kann. Die Elektro-Hypostase mag zwar besiegt sein, die Elektro-Kraft in diesem Prisma ist aber noch vollständig vorhanden."
@@ -11430,6 +11604,11 @@
       "description": "Schmeckt nach Pfeffer. Bringt den Geschmack fettreicher Speisen gut hervor und passt besonders gut zu Fleisch."
     },
     {
+      "key": "perpetual-caliber",
+      "name": "Ewiges Uhrwerk",
+      "description": "Eine Antriebsvorrichtung, die einer mysteriösen Ruinenmaschine entnommen wurde.\nAlle von ihm angetriebenen Körperteile wurden bereits zerstört, doch es dreht sich unaufhörlich weiter.\nAuf der Erde sollte es eigentlich keine unerschöpflichen Energiequellen geben und alle Forschungsergebnisse, die die „unendliche Bewegung“ zeigten, erwiesen sich zuletzt als falsch. Doch dieses Uhrwerk zeigt, dass längst untergegangene Zivilisationen zu Dingen in Stande waren, die den Menschen verwehrt bleiben."
+    },
+    {
       "key": "perpetual-heart",
       "name": "Ewiges Herz",
       "description": "Der Kern, der die autonomen Bewegungen der Anordnung immerwährender Vorrichtungen antreibt.\r\nEinige Theorien besagen, dass den Symbolen auf diesen Kernen Wissen und Logik in einer Sprache eingeschrieben sind, die das Auge nicht wahrnehmen kann. Einige gehen noch einen Schritt weiter und glauben, dass diese einzigartigen Ruinenmaschinen aufgrund ihrer besonders großen Kerne und komplexen Inschriften autonom beschlossen haben, eine biomimetische Form aufzugeben, um nach Funktionsstärke zu streben."
@@ -11550,6 +11729,11 @@
       "description": "Eine Blume mit weißen, fast durchsichtigen Blüten, die nur auf hohen Gipfeln wächst. Sie kann nichts mit der Wärme und Feuchtigkeit der tieferen Ebenen anfangen und zieht es vor, auf den eisigen Gipfeln der Berge in die Ferne zu schauen."
     },
     {
+      "key": "radiant-prism",
+      "name": "Leuchtendes Prisma",
+      "description": "Ein nach dem Besiegen eines Urkonstrukts erhaltenes elaboriertes Teil.\nDer König der Wüste hatte einst einen Traum und gab viele Versprechen ab.\nIn den Legenden der Wüste waren diese Maschinen geschaffen worden, um diese Versprechen einzulösen. Heute sind der Traum und diese Versprechen jedoch in Vergessenheit geraten und verbleiben wohl nur noch eingeprägt im Arbeitsspeicher der Maschinen."
+    },
+    {
       "key": "radish",
       "name": "Rettich",
       "description": "Eine sehr fasrige Wurzel. Sie ist sehr einfach anzubauen und zu ernten. Außerdem ist sie reich an Ballast- und Nährstoffen."
@@ -11568,6 +11752,11 @@
       "key": "recruits-insignia",
       "name": "Abzeichen für neue Rekruten",
       "description": "Ein Abzeichen, das anzeigt, dass man noch neu ist. Wer weiß, was der ursprüngliche Besitzer einmal dachte, als er der Kriegsmaschinerie der Fatui beitrat."
+    },
+    {
+      "key": "redcrest",
+      "name": "Rotdornfrucht",
+      "description": "Die Früchte einer Pflanze, die auch unter den widrigen Bedingungen der Wüste überleben kann. Der starke Kontrast zwischen gelbem Wüstensand und kräftig roten Früchten rührt die Betrachter sehr."
     },
     {
       "key": "relic-from-guyun",
@@ -11633,6 +11822,11 @@
       "key": "sausage",
       "name": "Wurst",
       "description": "In Tierdärme gefülltes Hackfleisch. Lange haltbar und nicht nur deswegen sehr beliebt auf der Speisekarte vieler Gegenden."
+    },
+    {
+      "key": "scarab",
+      "name": "Skarabäus",
+      "description": "Ein in den Weiten des Sandmeeres lebender, hartnäckiger Käfer. Die goldenen Muster auf seinem Panzer scheinen auf eine enge Verbindung mit den überall in der Wüste verstreuten uralten Ruinen hinzudeuten."
     },
     {
       "key": "scattered-piece-of-decarabians-dream",
@@ -11943,6 +12137,11 @@
       "key": "trimmed-red-silk",
       "name": "Geränderte rote Seide",
       "description": "Rote Seide mit einfachen Verzierungen an den Rändern.\nErfahrene Kämpfer können anhand der Bewegungen der Augen ihres Kontrahenten die Gelegenheit zum Zuschlagen erkennen. Die Goldbrigaden haben schon seit Langem den Herren verloren, dem sie die Treue schwören können, und können nur sich selbst vertrauen. Es heißt, sie vertrauten darauf, dass alle Dinge sie verraten könnten und sie machen dabei selbst bei ihren Augen keine Ausnahme."
+    },
+    {
+      "key": "turbid-prism",
+      "name": "Trübes Prisma",
+      "description": "Ein nach dem Besiegen eines Urkonstrukts erhaltenes altes Teil.\nEs heißt, diese Maschinen seien anders als andere „Ruinenmaschinen“ in der Tiefe der Wüste und seien gar nicht zur Eroberung und Vernichtung geschaffen worden."
     },
     {
       "key": "tusk-of-monoceros-caeli",
@@ -12264,6 +12463,14 @@
       "name": "Abgrundsänger – Lila Blitze"
     },
     {
+      "key": "aeonblight-drake",
+      "name": "Omendrache"
+    },
+    {
+      "key": "algorithm-of-semi-intransient-matrix-of-overseer-network",
+      "name": "Algorithmus der semi-inkonstanten Matrix des Observierer-Netzwerks"
+    },
+    {
       "key": "anemo-hypostasis",
       "name": "Anemo-Hypostase"
     },
@@ -12420,12 +12627,20 @@
       "name": "Goldbrigade – Wüstenwasser"
     },
     {
+      "key": "eremite-galehunter",
+      "name": "Goldbrigade – Böenjägerin"
+    },
+    {
       "key": "eremite-linebreaker",
       "name": "Goldbrigade – Formationsbrecher"
     },
     {
       "key": "eremite-ravenbeak-halberdier",
       "name": "Goldbrigade – Hellebardist"
+    },
+    {
+      "key": "eremite-stone-enchanter",
+      "name": "Goldbrigade – Felszauberer"
     },
     {
       "key": "eremite-sunfrost",
@@ -12476,6 +12691,10 @@
       "name": "Fatui-Plänkler – Pyro-Kanonen-Freischärler"
     },
     {
+      "key": "floating-anemo-fungus",
+      "name": "Schwebende Anemo-Pilzbestie"
+    },
+    {
       "key": "floating-dendro-fungus",
       "name": "Schwebende Dendro-Pilzbestie"
     },
@@ -12514,6 +12733,10 @@
     {
       "key": "golden-wolflord",
       "name": "Goldener Garmfürst"
+    },
+    {
+      "key": "grounded-geoshroom",
+      "name": "Laufender Geo-Pilz"
     },
     {
       "key": "grounded-hydroshroom",
@@ -12716,6 +12939,18 @@
       "name": "Anordnung immerwährender Vorrichtungen"
     },
     {
+      "key": "primal-construct-prospector",
+      "name": "Urkonstrukt – Sonde"
+    },
+    {
+      "key": "primal-construct-repulsor",
+      "name": "Urkonstrukt – Kraftfelderzeuger"
+    },
+    {
+      "key": "primal-construct-reshaper",
+      "name": "Urkonstrukt – Umformer"
+    },
+    {
       "key": "primo-geovishap",
       "name": "Alte Geo-Drachenechse"
     },
@@ -12848,6 +13083,14 @@
       "name": "Bakufu-Truppenführer"
     },
     {
+      "key": "spirit-of-omen-stone-drake",
+      "name": "Geist – Felsechse"
+    },
+    {
+      "key": "spirit-of-omen-wind-glede",
+      "name": "Geist – Windmilan"
+    },
+    {
       "key": "stonehide-lawachurl",
       "name": "Steinhaut-Lawachurl"
     },
@@ -12858,6 +13101,10 @@
     {
       "key": "stretchy-anemo-fungus",
       "name": "Dehnbare Anemo-Pilzbestie"
+    },
+    {
+      "key": "stretchy-electro-fungus",
+      "name": "Dehnbare Elektro-Pilzbestie"
     },
     {
       "key": "stretchy-geo-fungus",
@@ -12962,6 +13209,10 @@
     {
       "key": "whirling-electro-fungus",
       "name": "Wirbelnde Elektro-Pilzbestie"
+    },
+    {
+      "key": "whirling-pyro-fungus",
+      "name": "Wirbelnde Pyro-Pilzbestie"
     },
     {
       "key": "winged-cryoshroom",

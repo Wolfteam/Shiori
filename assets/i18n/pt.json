@@ -991,86 +991,146 @@
     {
       "key": "candace",
       "name": "Candace",
-      "title": "？？？",
-      "description": "？？？",
+      "title": "Promessa Dourada",
+      "description": "Guardiã da Vila Aaru, descendente do Rei Deshret, seu olho esquerdo é da cor do âmbar.",
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Lança Reluzente – Postura Guardiã",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Ataque Normal",
+              "description": "Realiza até 4 golpes com a lança.\n",
+              "descriptions": []
+            },
+            {
+              "name": "Ataque Carregado",
+              "description": "Consome uma certa quantidade de Stamina para se lançar para a frente, infligindo Dano em seu trajeto.\n",
+              "descriptions": []
+            },
+            {
+              "name": "Ataque Imersivo",
+              "description": "Mergulha em pleno ar para golpear o chão, causando dano aos inimigos ao longo do caminho e infligindo Dano em uma AdE durante o impacto.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "Dano do 1° Golpe|{param1}%",
+            "Dano do 2° Golpe|{param2}%",
+            "Dano do 3° Golpe|{param3}% + {param4}%",
+            "Dano do 4° Golpe|{param5}%",
+            "Dano de Ataque Carregado|{param6}%",
+            "Consumo de Stamina do Ataque Carregado|{param7}",
+            "Dano Durante a Queda|{param8}%",
+            "Dano de Queda de Baixa/Alta Altitude|{param9}% / {param10}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Ritual Sagrado: Garça Guardiã",
+          "description": "O estilo de luta de Candace é capaz de resistir a uma onda de inimigos.\n\n",
+          "abilities": [
+            {
+              "name": "Pressionar",
+              "description": "Ataca avançando com seu escudo, infligindo Dano Hydro contra os inimigos em sua frente.\n",
+              "descriptions": []
+            },
+            {
+              "name": "Manter Pressionado",
+              "description": "Ergue seu escudo para bloquear o ataque dos inimigos, formando um Escudo que absorve Dano baseado na Vida Máxima de Candace e possui 250% de eficiência contra Dano Hydro. O Escudo dura até o fim da Habilidade Elemental.\nAo Manter Pressionado por um certo tempo, Candace completará o carregamento, e quando lançar a habilidade, a duração acabar ou o escudo for destruído, realizará um ataque de salto que infligirá Dano Hydro contra os inimigos em sua frente.\n",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "Absorção de Dano de Escudo|{param1}% da Vida Máxima + {param2}",
+            "Dano Básico|{param3}% da Vida Máxima",
+            "Dano de Carga Completa|{param4}% da Vida Máxima",
+            "Recarga de Pressionar|{param5}s",
+            "Recarga de Manter Pressionado|{param6}s"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Ritual Sagrado: Maré dos Alvéolas",
+          "description": "Candace ergue sua arma e invoca uma bênção divina que inflige Dano Hydro em AdE baseado em sua Vida Máxima, e aplica continuamente o estado “Súplica da Coroa Escarlate” no seu personagem ativo no campo de batalha.\n\n",
+          "abilities": [
+            {
+              "name": "Súplica da Coroa Escarlate",
+              "description": "Possui as seguintes características:\n",
+              "descriptions": [
+                "Quando o Ataque Normal do personagem inflige Dano Elemental contra os inimigos, aumenta o Dano infligido;",
+                "Quando um personagem se torna o ativo no campo de batalha, lança uma Onda do Dilúvio que inflige Dano Hydro contra os inimigos próximos. Esse efeito possui um limite de vezes que pode ser desencadeado dentro da duração dessa habilidade;",
+                "Personagens sob esse efeito que usem Espada, Espadão ou Lança obterão Encantamento Hydro."
+              ]
+            }
+          ],
+          "stats": [
+            "Dano de Habilidade|{param1}% da Vida Máxima",
+            "Duração|{param2}s",
+            "Bônus de Dano|{param3}%",
+            "Dano da Onda do Dilúvio|{param4}% da Vida Máxima",
+            "Ativações da Onda do Dilúvio|{param5}",
+            "Tempo de Recarga|{param6}s",
+            "Energia Elemental|{param7}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "Aurora Primordial",
+          "description": "Diminui o consumo de Stamina ao Escalar de todos os seus próprios personagens da equipe em 20%.\nNão acumulável com Talentos Passivos que concedem exatamente os mesmos efeitos.\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
+          "title": "Proteção Plúmea",
+          "description": "Se Candace sofrer um ataque durante o Manter Pressionado de Ritual Sagrado: Garça Guardiã, carregará a habilidade completamente.\n",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "NA",
-          "description": "",
+          "title": "Arco das Areias",
+          "description": "Personagens sob estado Súplica da Coroa Escarlate causado por Ritual Sagrado: Maré dos Alvéolas aumentam o Dano infligido contra os oponentes em 0,5% para cada 1.000 pontos de Vida Máxima de Candace quando causam Dano Elemental com seus Ataques Normais.\n",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "Herdeira das Areias Escarlates Ressurgida",
+          "description": "Estende a duração do estado Súplica da Coroa Escarlate de Ritual Sagrado: Maré dos Alvéolas em 3s.\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "Brilho Perfura-Luas",
+          "description": "Quando Ritual Sagrado: Garça Guardiã atinge os inimigos, a Vida Máxima de Candace aumenta 20% por 15s.\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "Devoção à Caça",
+          "description": "Aumenta o nível de Ritual Sagrado: Maré dos Alvéolas em 3.\nO nível máximo de elevação é 15.\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "Juramento da Sentinela",
+          "description": "A recarga do Manter Pressionado de Ritual Sagrado: Garça Guardiã é reduzida para a mesma recarga do Pressionar.\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "Olhos Dourados",
+          "description": "Aumenta o nível do Ritual Sagrado: Garça Guardiã em 3.\nO nível máximo de elevação é 15.\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
+          "title": "Inundação",
+          "description": "Quando o personagem ativo no campo de batalha estiver sob o estado Súplica da Coroa Escarlate de Ritual Sagrado: Maré dos Alvéolas (exceto a própria Candace) e infligir Dano Elemental contra um inimigo com um Ataque Normal, lançará uma Onda Torrencial que infligirá Dano Hydro em AdE equivalente a 15% da Vida Máxima de Candace.\nEsse efeito só pode ser desencadeado uma vez a cada 2.3s, e o Dano infligido é considerado Dano de Supremo.\n",
           "descriptions": []
         }
       ]
@@ -1327,86 +1387,149 @@
     {
       "key": "cyno",
       "name": "Cyno",
-      "title": "？？？",
-      "description": "？？？",
+      "title": "Juiz dos Segredos",
+      "description": "O General Mahamatra responsável por supervisionar os pesquisadores da Academia.Dizem que quando ele está trabalhando, o General Mahamatra é ainda mais eficiente do que o “Grande Vayuvyastra” feito pelos Kshahrewar.",
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Lança da Invocação",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Ataque Normal",
+              "description": "Realiza até 4 golpes com a lança.\n",
+              "descriptions": []
+            },
+            {
+              "name": "Ataque Carregado",
+              "description": "Consome uma certa quantidade de Stamina para se lançar para frente, infligindo Dano em seu trajeto.\n",
+              "descriptions": []
+            },
+            {
+              "name": "Ataque Imersivo",
+              "description": "Mergulha em pleno ar para golpear o chão, causando dano aos inimigos ao longo do caminho e infligindo Dano em uma AdE durante o impacto.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "Dano do 1° Golpe|{param1}%",
+            "Dano do 2° Golpe|{param2}%",
+            "Dano do 3° Golpe|{param3}% + {param4}%",
+            "Dano do 4° Golpe|{param5}%",
+            "Dano de Ataque Carregado|{param6}%",
+            "Consumo de Stamina do Ataque Carregado|{param7}",
+            "Dano Durante a Queda|{param8}%",
+            "Dano de Queda de Baixa/Alta Altitude|{param9}% / {param10}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Ritual Secreto: Travessia Abissal",
+          "description": "Avança rapidamente, infligindo Dano Electro contra os inimigos no caminho.\n\nQuando Cyno está sob o estado “Juramento Desbravador” de seu Supremo “Ritual Sagrado: Agilidade Lupina”, lançará ",
+          "abilities": [
+            {
+              "name": "Ritual Mortuário, usando o poder dos raios para infligir",
+              "description": "Dano Electro em AdE, e prolongar a duração de “Juramento Desbravador”.\n",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "Dano de Habilidade|{param1}%",
+            "Dano de Ritual Mortuário|{param2}%",
+            "Extensão da duração do Juramento Desbravador|{param3}s",
+            "Recarga|{param4}",
+            "Recarga de Ritual Mortuário|{param5}s"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Ritual Sagrado: Agilidade Lupina",
+          "description": "Invoca um espírito divino para possuí-lo, transformando-o no Juramento Desbravador.\n\n",
+          "abilities": [
+            {
+              "name": "Juramento Desbravador",
+              "description": "O Dano que Cyno inflige por Ataques Normais, Carregados e Imersivos é convertido para Dano Electro que não pode ser substituído;\n",
+              "descriptions": [
+                "Aumenta a Proficiência Elemental de Cyno, aumenta sua Resistência contra Interrupção e o torna imune ao Dano infligido pela reação Eletricamente Carregado.",
+                "Esse efeito desaparecerá quando Cyno sair do campo de batalha, e dura até 18s."
+              ]
+            }
+          ],
+          "stats": [
+            "Dano do 1° Golpe|{param1}%",
+            "Dano do 2° Golpe|{param2}%",
+            "Dano do 3° Golpe|{param3}%",
+            "Dano do 4° Golpe|{param4}% + {param5}%",
+            "Dano do 5° Golpe|{param6}%",
+            "Dano de Ataque Carregado|{param7}%",
+            "Consumo de Stamina de Ataque Carregado|{param8}",
+            "Dano Durante a Queda|{param9}%",
+            "Dano de Queda de Baixa/Alta Altitude|{param10}% / {param11}%",
+            "Bônus de Proficiência Elemental|{param12}",
+            "Duração Básica|{param13}s",
+            "Tempo de Recarga|{param14}s",
+            "Energia Elemental|{param15}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "O Dom do Silêncio",
+          "description": "Ganha 25% a mais de recompensas quando enviado numa Expedição em Sumeru por 20 horas.\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
+          "title": "Julgamento das Plumas",
+          "description": "Quando Cyno está com o estado Juramento Desbravador ativado pelo Ritual Sagrado: Agilidade Lupina, Cyno entrará periodicamente no estado “Vidente do Fim”. Se ele lançar Ritual Secreto: Travessia Abissal enquanto estiver neste estado, desencadeará o efeito “Adjudicação”, aumentando o Dano deste Ritual Secreto: Travessia Abissal em 35%, e disparando 3 Raios da Desolação que infligem 100% do ATQ de Cyno como Dano Electro.\nO Dano do Raio da Desolação é considerado Dano de Habilidade Elemental.\n",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
+          "title": "Soberania dos Nove Arcos",
+          "description": "Os valores de Dano de Cyno aumentam baseados na Proficiência Elemental do seguinte modo:\n",
+          "descriptions": [
+            "O Dano de Ataque Normal no estado Juramento Desbravador é aumentado em 150% da Proficiência Elemental.",
+            "O Dano do Raio da Desolação do seu Talento Passivo “Julgamento das Plumas” é aumentado em 250% da Proficiência Elemental."
+          ]
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "Decreto: Vigilância Incansável",
+          "description": "Ao lançar Ritual Sagrado: Agilidade Lupina, aumenta a Vel. de ATQ do Ataque Normal de Cyno em 20% por 10s. Se ao lançar Ritual Secreto: Travessia Abissal desencadear o efeito “Adjudicação” do Talento Passivo “Julgamento das Plumas”, redefinirá a duração do efeito de aumento da Vel. de ATQ do Ataque Normal.\nVocê deve desbloquear o Talento Passivo “Julgamento das Plumas” primeiro.\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "Cerimônia: Retorno das Almas",
+          "description": "Quando os Ataques Normais de Cyno acertam os oponentes, seu Bônus de Dano Electro irá aumentar em 10% por 4s. Esse efeito pode ser desencadeado uma vez a cada 0.1s. Máximo de 5 acúmulos.\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "Édito: Punição da Lei",
+          "description": "Aumenta o nível de Ritual Sagrado: Agilidade Lupina em 3.\nO nível máximo de elevação é 15.\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "Austeridade: Defesa Intimidante",
+          "description": "Quando Cyno está no estado Juramento Desbravador de Ritual Sagrado: Agilidade Lupina, ao desencadear as reações de Eletricamente Carregado, Supercondutor, Sobrecarga, Aceleração, Intensificação, Superflorescimento e Redemoinho Electro, regenerará 3 de Energia Elemental para todos os membros próximos da equipe (com exceção do próprio Cyno).\nEsse efeito pode ser desencadeado até 5 vezes por uso de Ritual Sagrado: Agilidade Lupina.\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "Ritual Funerário: Passagem da Aura Estelar",
+          "description": "Aumenta o Nível de Ritual Secreto: Travessia Abissal em 3.\nO aumento máximo de nível é 15.\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
+          "title": "Vestes: Balança da Justiça",
+          "description": "Após usar Ritual Sagrado: Agilidade Lupina ou desencadear o efeito “Adjudicação” do Talento Passivo “Julgamento das Plumas”, Cyno ganha 4 acúmulos do efeito “Dia do Chacal”. Quando Cyno acerta oponentes com Ataques Normais, será consumido 1 acúmulo de “Dia do Chacal” para lançar um Raio da Desolação.\nO “Dia do Chacal” dura por 8s, e possui no máximo 8 acúmulos. Ele será cancelado quando o estado Juramento Desbravador do “Ritual Sagrado: Agilidade Lupina” acabar.\nO máximo de 1 Raio da Desolação pode ser lançado a cada 0,4s.\nVocê precisa desbloquear o Talento Passivo “Julgamento das Plumas” primeiro.\n",
           "descriptions": []
         }
       ]
@@ -9019,6 +9142,18 @@
       ]
     },
     {
+      "key": "makhaira-aquamarine",
+      "name": "Água-marinha de Mahara",
+      "description": "Um espadão antigo que brilha como a própria água. Nem mesmo os milhares de anos de erosão da areia conseguiram tirar o fio impecável de sua lâmina.",
+      "refinements": [
+        "A cada 10s, gera os seguintes efeitos: aumenta o ATQ do personagem que está com essa arma equipada baseado em {color}24{/color}% da sua Proficiência Elemental. Os demais personagens próximos da equipe ganham 30% desse bônus. Esses efeitos duram 12s. É possível acumular esses efeitos equipando vários exemplares desta mesma arma. Esse efeito será desencadeado mesmo que o personagem não esteja ativo no campo de batalha.",
+        "A cada 10s, gera os seguintes efeitos: aumenta o ATQ do personagem que está com essa arma equipada baseado em {color}30{/color}% da sua Proficiência Elemental. Os demais personagens próximos da equipe ganham 30% desse bônus. Esses efeitos duram 12s. É possível acumular esses efeitos equipando vários exemplares desta mesma arma. Esse efeito será desencadeado mesmo que o personagem não esteja ativo no campo de batalha.",
+        "A cada 10s, gera os seguintes efeitos: aumenta o ATQ do personagem que está com essa arma equipada baseado em {color}36{/color}% da sua Proficiência Elemental. Os demais personagens próximos da equipe ganham 30% desse bônus. Esses efeitos duram 12s. É possível acumular esses efeitos equipando vários exemplares desta mesma arma. Esse efeito será desencadeado mesmo que o personagem não esteja ativo no campo de batalha.",
+        "A cada 10s, gera os seguintes efeitos: aumenta o ATQ do personagem que está com essa arma equipada baseado em {color}42{/color}% da sua Proficiência Elemental. Os demais personagens próximos da equipe ganham 30% desse bônus. Esses efeitos duram 12s. É possível acumular esses efeitos equipando vários exemplares desta mesma arma. Esse efeito será desencadeado mesmo que o personagem não esteja ativo no campo de batalha.",
+        "A cada 10s, gera os seguintes efeitos: aumenta o ATQ do personagem que está com essa arma equipada baseado em {color}48{/color}% da sua Proficiência Elemental. Os demais personagens próximos da equipe ganham 30% desse bônus. Esses efeitos duram 12s. É possível acumular esses efeitos equipando vários exemplares desta mesma arma. Esse efeito será desencadeado mesmo que o personagem não esteja ativo no campo de batalha."
+      ]
+    },
+    {
       "key": "mappa-mare",
       "name": "Mappa Mare",
       "description": "Um mapa bastante detalhado sobre as águas ao redor de Teyvat. É um documento valioso que apareceu nas rotas comerciais de Liyue.",
@@ -9052,6 +9187,18 @@
         "Ao acertar um ponto fraco com Ataque Carregado, causa um adicional de {color}150{/color}% de Dano de ATQ como Dano Crítico. Este efeito pode ser ativado uma vez a cada 10s.",
         "Ao acertar um ponto fraco com Ataque Carregado, causa um adicional de {color}175{/color}% de Dano de ATQ como Dano Crítico. Este efeito pode ser ativado uma vez a cada 10s.",
         "Ao acertar um ponto fraco com Ataque Carregado, causa um adicional de {color}200{/color}% de Dano de ATQ como Dano Crítico. Este efeito pode ser ativado uma vez a cada 10s."
+      ]
+    },
+    {
+      "key": "missive-windspear",
+      "name": "Lâmina do Vento Mensageiro",
+      "description": "Um estandarte que pode guiar os ventos. Os ventos que sopram por lugares idílicos nem sempre são suaves.",
+      "refinements": [
+        "Nos 10s depois de desencadear uma Reação Elemental, aumenta o ATQ em {color}12{/color}% e a Proficiência Elemental em {color}48{/color} pontos.",
+        "Nos 10s depois de desencadear uma Reação Elemental, aumenta o ATQ em {color}15{/color}% e a Proficiência Elemental em {color}60{/color} pontos.",
+        "Nos 10s depois de desencadear uma Reação Elemental, aumenta o ATQ em {color}18{/color}% e a Proficiência Elemental em {color}72{/color} pontos.",
+        "Nos 10s depois de desencadear uma Reação Elemental, aumenta o ATQ em {color}21{/color}% e a Proficiência Elemental em {color}84{/color} pontos.",
+        "Nos 10s depois de desencadear uma Reação Elemental, aumenta o ATQ em {color}24{/color}% e a Proficiência Elemental em {color}96{/color} pontos."
       ]
     },
     {
@@ -9600,6 +9747,18 @@
         "Aumenta a Vida em {color}30{/color}%. Além disso, o Personagem que equipar esta arma terá um Bônus de ATQ de {color}1.2{/color}% com base na Vida Máxima. Quando a Vida do Personagem que equipar essa arma cair para abaixo de 50%, seu ATQ aumentará {color}1.4{/color}% com base em sua Vida Máxima.",
         "Aumenta a Vida em {color}35{/color}%. Além disso, o Personagem que equipar esta arma terá um Bônus de ATQ de {color}1.4{/color}% com base na Vida Máxima. Quando a Vida do Personagem que equipar essa arma cair para abaixo de 50%, seu ATQ aumentará {color}1.6{/color}% com base em sua Vida Máxima.",
         "Aumenta a Vida em {color}40{/color}%. Além disso, o Personagem que equipar esta arma terá um Bônus de ATQ de {color}1.6{/color}% com base na Vida Máxima. Quando a Vida do Personagem que equipar essa arma cair para abaixo de 50%, seu ATQ aumentará {color}1.8{/color}% com base em sua Vida Máxima."
+      ]
+    },
+    {
+      "key": "staff-of-the-scarlet-sands",
+      "name": "Báculo das Areias Escarlates",
+      "description": "Um dos pares de cetros feitos com obsidiana. Dizem que esses artefatos eram usados para guiar o povo do deserto, mas hoje em dia não há ninguém capaz de distinguir a aparência real desta relíquia.",
+      "refinements": [
+        "Obtém Bônus de ATQ baseado em {color}52{/color}% da Proficiência Elemental do personagem que está com essa arma equipada. Quando a Habilidade Elemental atinge um inimigo, gera por 10s o efeito “Sonhos de Areias Escarlates”: obtém Bônus de ATQ baseado em {color}28{/color}% da Proficiência Elemental do personagem que está com essa arma equipada. Esse efeito pode ser acumulado até 3 vezes.",
+        "Obtém Bônus de ATQ baseado em {color}65{/color}% da Proficiência Elemental do personagem que está com essa arma equipada. Quando a Habilidade Elemental atinge um inimigo, gera por 10s o efeito “Sonhos de Areias Escarlates”: obtém Bônus de ATQ baseado em {color}35{/color}% da Proficiência Elemental do personagem que está com essa arma equipada. Esse efeito pode ser acumulado até 3 vezes.",
+        "Obtém Bônus de ATQ baseado em {color}78{/color}% da Proficiência Elemental do personagem que está com essa arma equipada. Quando a Habilidade Elemental atinge um inimigo, gera por 10s o efeito “Sonhos de Areias Escarlates”: obtém Bônus de ATQ baseado em {color}42{/color}% da Proficiência Elemental do personagem que está com essa arma equipada. Esse efeito pode ser acumulado até 3 vezes.",
+        "Obtém Bônus de ATQ baseado em {color}91{/color}% da Proficiência Elemental do personagem que está com essa arma equipada. Quando a Habilidade Elemental atinge um inimigo, gera por 10s o efeito “Sonhos de Areias Escarlates”: obtém Bônus de ATQ baseado em {color}49{/color}% da Proficiência Elemental do personagem que está com essa arma equipada. Esse efeito pode ser acumulado até 3 vezes.",
+        "Obtém Bônus de ATQ baseado em {color}104{/color}% da Proficiência Elemental do personagem que está com essa arma equipada. Quando a Habilidade Elemental atinge um inimigo, gera por 10s o efeito “Sonhos de Areias Escarlates”: obtém Bônus de ATQ baseado em {color}56{/color}% da Proficiência Elemental do personagem que está com essa arma equipada. Esse efeito pode ser acumulado até 3 vezes."
       ]
     },
     {
@@ -10244,6 +10403,11 @@
       "description": "Material de Ascensão de Personagem."
     },
     {
+      "key": "ajilenakh-nut",
+      "name": "Tâmara",
+      "description": "A fruta das árvores verdejantes dos oásis no deserto. A carne sob sua espessa casca é doce e deliciosa, fazendo dela uma importante fonte de alimento entre o povo das areias."
+    },
+    {
       "key": "almond",
       "name": "Amêndoa",
       "description": "Uma semente com fragrância peculiar que dá um sabor refrescante à comida."
@@ -10537,6 +10701,11 @@
       "key": "damaged-mask",
       "name": "Máscara Danificada",
       "description": "Máscara de Ossos quebrada que pertencia a algum Hilichurl.\r\nHá mais partes danificadas do que intactas, perdendo totalmente a sua utilidade."
+    },
+    {
+      "key": "damaged-prism",
+      "name": "Prisma Danificado",
+      "description": "Um componente danificado obtido após derrotar a Estrutura Primordial.\nEssas máquinas de formas únicas são as sentinelas eternas das ruínas do deserto, e possuem o poder para perfurarem montanhas e mudarem a forma de rochas gigantes. Os mesmos princípios que energizam muitos dispositivos misteriosos sobre e sob a superfície também energizam essas máquinas."
     },
     {
       "key": "dandelion-seed",
@@ -10979,6 +11148,11 @@
       "description": "Uma insígnia para identificar os oficiais. Os Fatui possuem um exército colossal, portanto, deve haver algo extraordinário naqueles que alcançaram essa classificação dentro do grupo."
     },
     {
+      "key": "light-guiding-tetrahedron",
+      "name": "Tetraedro da Luz Guiadora",
+      "description": "Um componente de núcleo obtido após derrotar um misterioso mecanismo das ruínas.\nAté hoje, esses dispositivos não esqueceram os sonhos de seus mestres, ou os seus deveres; construir mil palácios, administrar três mil máquinas, cultivar dez mil flores que nunca desabrocharão, e recriar um paraíso agora enterrado sob as areias do deserto pelo bem de todos que vivem nesse mundo.\nApesar do senhor do deserto não estar mais vivo, e esses sonhos terem sido corrompidos por sussurros pecaminosos, e por todos os pilares mágicos terem quebrado ou colapsado, a grande besta agraciada pelo rei ainda se esconde na grande tempestade."
+    },
+    {
       "key": "lightning-prism",
       "name": "Prisma do Relâmpago",
       "description": "Uma Hypostasis Electro canaliza energia elemental para curar entidades elementais danificadas. Ela contém a essência da energia elétrica.\r\nUm prisma comum separa a luz branca em suas cores componentes. Um prisma relâmpago, no entanto, canaliza a energia que flui e as transforma em raios. Isso continuará assim mesmo após a derrota da Hypostasis Electro."
@@ -11299,6 +11473,11 @@
       "description": "Picante. Ela pode tirar os sabores enjoativos e deixar tudo mais cheiroso. Combina bem com carnes."
     },
     {
+      "key": "perpetual-caliber",
+      "name": "Calibre Perpétuo",
+      "description": "Um mecanismo de mobilidade obtido de uma Máquina das Ruínas misteriosa.\nA máquina que o energizava foi destruída, mas ele continua a girar.\nNesse mundo não deveria existir uma fonte de energia que possa se sustentar eternamente, e a maioria dos resultados de pesquisas no campo de “movimento perpétuo” foi, mais cedo ou mais tarde, provado falso. Ainda assim, esse dispositivo é prova que a civilização destruída alcançou o que nações atuais sequer poderiam sonhar…"
+    },
+    {
       "key": "perpetual-heart",
       "name": "Coração do Mecanismo Contínuo",
       "description": "O núcleo que energiza os movimentos autônomos da Formação Mecânica Perpétua.\r\nAlguns teorizam que os símbolos nesse núcleos possuem conhecimento e lógica em uma língua que os olhos não são capazes de perceber. Alguns vão um passo além e acreditam que essas máquinas das Ruínas decidiram autonomamente renegar uma forma biomimética para perseguir a força através de seus núcleos gigantes e inscrições complexas."
@@ -11419,6 +11598,11 @@
       "description": "Uma flor branca translúcida que cresce apenas em picos de pedra mais altos. Recusa a oferta do calor e da umidade das planícies para contemplar longe dos picos das montanhas solitárias."
     },
     {
+      "key": "radiant-prism",
+      "name": "Prisma Radiante",
+      "description": "Um componente danificado obtido após derrotar a Estrutura Primordial.\nO senhor do deserto desolado tinha um sonho, e fez muitas promessas.\nAs lendas do deserto dizem que essas máquinas eram ferramentas para essas promessas desconhecidas que agora vivem somente nas suas memórias de armazenamento mecânicas."
+    },
+    {
       "key": "radish",
       "name": "Rabanete Branco",
       "description": "Rico em fibras e nutrientes. Fácil de plantar e colher."
@@ -11437,6 +11621,11 @@
       "key": "recruits-insignia",
       "name": "Insígnia de Recruta",
       "description": "Uma insígnia para identificar os recrutas. Faz com que alguém se pergunte o que estava pensando quando se uniram à máquina de guerra dos Fatui."
+    },
+    {
+      "key": "redcrest",
+      "name": "Bagas de Espinheiro",
+      "description": "Uma fruta que cresce mesmo no ambiente hostil do deserto. Este fruto escarlate fica ainda mais impressionante sob o contrates das areias douradas do deserto."
     },
     {
       "key": "relic-from-guyun",
@@ -11502,6 +11691,11 @@
       "key": "sausage",
       "name": "Salsicha",
       "description": "Enchido de carne moída. É conveniente para se armazenar e atende a todas as necessidades de um amante de carnes."
+    },
+    {
+      "key": "scarab",
+      "name": "Escaravelho Dourado",
+      "description": "Um besouro tenaz que habita o vasto mar de areia do deserto. Os padrões dourados em sua carapaça parecem ter alguma conexão com as antigas ruínas espalhadas pelo deserto."
     },
     {
       "key": "scattered-piece-of-decarabians-dream",
@@ -11812,6 +12006,11 @@
       "key": "trimmed-red-silk",
       "name": "Seda Vermelha Bordada",
       "description": "Cetim vermelho com enfeites simples incrustados.\nGuerreiros experientes podem encontrar falhas até mesmo em um olhar do oponente para obter uma oportunidade. Os Eremitas estão sem seu líder há muito tempo, e só podem confiar em si mesmos. Dizem que eles acreditam firmemente que tudo trai, até mesmo seus próprios olhos."
+    },
+    {
+      "key": "turbid-prism",
+      "name": "Prisma Turvo",
+      "description": "Um componente danificado obtido após derrotar a Estrutura Primordial.\nDizem que essas máquinas são diferentes das Máquinas das Ruínas oriundas das profundezas do deserto, pois não foram feitas como emissárias da destruição ou conquistas."
     },
     {
       "key": "tusk-of-monoceros-caeli",
@@ -12133,6 +12332,14 @@
       "name": "Bardo do Abismo - Trovão Violeta"
     },
     {
+      "key": "aeonblight-drake",
+      "name": "Dragão Calamitoso"
+    },
+    {
+      "key": "algorithm-of-semi-intransient-matrix-of-overseer-network",
+      "name": "Matriz de Controle Semi-perpétua"
+    },
+    {
       "key": "anemo-hypostasis",
       "name": "Hypostasis Anemo"
     },
@@ -12289,12 +12496,20 @@
       "name": "Eremita - Águas Cristalinas"
     },
     {
+      "key": "eremite-galehunter",
+      "name": "Eremita Caçador de Ventos"
+    },
+    {
       "key": "eremite-linebreaker",
       "name": "Eremita - Demolidores de Linhas"
     },
     {
       "key": "eremite-ravenbeak-halberdier",
       "name": "Eremita - Alabardeiro"
+    },
+    {
+      "key": "eremite-stone-enchanter",
+      "name": "Eremita Encantador de Pedras"
     },
     {
       "key": "eremite-sunfrost",
@@ -12345,6 +12560,10 @@
       "name": "Soldado dos Fatui - Guerrilheiro de Canhão Pyro"
     },
     {
+      "key": "floating-anemo-fungus",
+      "name": "Cogumelo Flutuante Anemo"
+    },
+    {
       "key": "floating-dendro-fungus",
       "name": "Cogumelo Flutuante Dendro"
     },
@@ -12383,6 +12602,10 @@
     {
       "key": "golden-wolflord",
       "name": "Rei Canino Dourado"
+    },
+    {
+      "key": "grounded-geoshroom",
+      "name": "Cogumelo Terrestre Geo"
     },
     {
       "key": "grounded-hydroshroom",
@@ -12585,6 +12808,18 @@
       "name": "Formação Mecânica Perpétua"
     },
     {
+      "key": "primal-construct-prospector",
+      "name": "Estrutura Primordial: Prospector"
+    },
+    {
+      "key": "primal-construct-repulsor",
+      "name": "Estrutura Primordial: Repulsor"
+    },
+    {
+      "key": "primal-construct-reshaper",
+      "name": "Estrutura Primordial: Remodelador"
+    },
+    {
       "key": "primo-geovishap",
       "name": "Dragarto Primordial"
     },
@@ -12717,6 +12952,14 @@
       "name": "Capitão Ashigaru do Shogunato"
     },
     {
+      "key": "spirit-of-omen-stone-drake",
+      "name": "Espírito Ominoso: Dragão de Pedra"
+    },
+    {
+      "key": "spirit-of-omen-wind-glede",
+      "name": "Espírito Ominoso: Retentor do Vento"
+    },
+    {
       "key": "stonehide-lawachurl",
       "name": "Lawachurl da Pedra Oculta"
     },
@@ -12727,6 +12970,10 @@
     {
       "key": "stretchy-anemo-fungus",
       "name": "Cogumelo Flexível Anemo"
+    },
+    {
+      "key": "stretchy-electro-fungus",
+      "name": "Cogumelo Flexível Electro"
     },
     {
       "key": "stretchy-geo-fungus",
@@ -12831,6 +13078,10 @@
     {
       "key": "whirling-electro-fungus",
       "name": "Cogumelo Rodopiante Electro"
+    },
+    {
+      "key": "whirling-pyro-fungus",
+      "name": "Cogumelo Rodopiante Pyro"
     },
     {
       "key": "winged-cryoshroom",

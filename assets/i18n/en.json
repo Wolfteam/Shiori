@@ -1023,86 +1023,146 @@
     {
       "key": "candace",
       "name": "Candace",
-      "title": "？？？",
-      "description": "？？？",
+      "title": "Golden Vow",
+      "description": "A descendant of King Deshret with an amber left eye. The defender of Aaru Village.",
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Gleaming Spear – Guardian Stance",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Normal Attack",
+              "description": "Performs up to 4 consecutive spear strikes.\n",
+              "descriptions": []
+            },
+            {
+              "name": "Charged Attack",
+              "description": "Consumes a certain amount of Stamina to lunge forward, dealing damage to opponents along the way.\n",
+              "descriptions": []
+            },
+            {
+              "name": "Plunging Attack",
+              "description": "Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "1-Hit DMG|{param1}%",
+            "2-Hit DMG|{param2}%",
+            "3-Hit DMG|{param3}% + {param4}%",
+            "4-Hit DMG|{param5}%",
+            "Charged Attack DMG|{param6}%",
+            "Charged Attack Stamina Cost|{param7}",
+            "Plunge DMG|{param8}%",
+            "Low/High Plunge DMG|{param9}% / {param10}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Sacred Rite: Heron’s Sanctum",
+          "description": "Candace’s fighting style is capable of warding off an entire tide of foes.\n\n",
+          "abilities": [
+            {
+              "name": "Tap",
+              "description": "Rushes forward with her shield, dealing Hydro DMG to opponents in front of her.\n",
+              "descriptions": []
+            },
+            {
+              "name": "Hold",
+              "description": "Raises her shield to block incoming attacks from nearby opponents, forming a barrier that absorbs DMG based on her Max HP and absorbs Hydro DMG 250% more effectively. This barrier lasts until the Elemental Skill is unleashed.\nAfter holding for a certain period of time, Candace will finish charging, and when the skill button is released, the skill duration expires, or when the barrier is broken, she will perform a leaping strike that deals Hydro DMG to opponents in front of her.\n",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "Shield DMG Absorption|{param1}% Max HP + {param2}",
+            "Basic DMG|{param3}% Max HP",
+            "Charged Up DMG|{param4}% Max HP",
+            "Press CD|{param5}s",
+            "Holding CD|{param6}s"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Sacred Rite: Wagtail’s Tide",
+          "description": "Raising her weapon on high, Candace calls upon a divine blessing that deals AoE Hydro DMG based on her Max HP and continuously confers the Prayer of the Crimson Crown on your active character.\n\n",
+          "abilities": [
+            {
+              "name": "Prayer of the Crimson Crown",
+              "description": "This effect has the following properties:\n",
+              "descriptions": [
+                "Characters deal increased Elemental DMG with their Normal Attacks.",
+                "Whenever a character takes the field, they will unleash a rippling wave of water that deals Hydro DMG to nearby opponents. There is a limited number of waves that can be triggered in the duration of this skill.",
+                "Sword, Claymore, and Polearm-wielding characters under this effect will obtain a Hydro Infusion."
+              ]
+            }
+          ],
+          "stats": [
+            "Skill DMG|{param1}% Max HP",
+            "Duration|{param2}s",
+            "DMG Bonus|{param3}%",
+            "Wave Impact DMG|{param4}% Max HP",
+            "Wave Instances|{param5}",
+            "CD|{param6}s",
+            "Energy Cost|{param7}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "To Dawn’s First Light",
+          "description": "Decreases climbing Stamina consumption for your own party members by 20%.\nNot stackable with Passive Talents that provide the exact same effects.\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
+          "title": "Aegis of Crossed Arrows",
+          "description": "If Candace is hit by an attack in the Hold duration of Sacred Rite: Heron’s Sanctum, that skill will finish charging instantly.\n",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "NA",
-          "description": "",
+          "title": "Celestial Dome of Sand",
+          "description": "Characters affected by the Prayer of the Crimson Crown caused by Sacred Rite: Wagtail’s Tide will deal 0.5% increased DMG to opponents for every 1,000 points of Candace’s Max HP when they deal Elemental DMG with their Normal Attacks.\n",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "Returning Heiress of the Scarlet Sands",
+          "description": "The duration of Prayer of the Crimson Crown effect triggered by Sacred Rite: Wagtail’s Tide is increased by 3s.\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "Moon-Piercing Brilliance",
+          "description": "When Sacred Rite: Heron’s Sanctum hits opponents, Candace’s Max HP will be increased by 20% for 15s.\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "Hunter’s Supplication",
+          "description": "Increases the Level of Sacred Rite: Wagtail’s Tide by 3.\nMaximum upgrade level is 15.\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "Sentinel Oath",
+          "description": "Shortens the Hold CD of Sacred Rite: Heron’s Sanctum to be the same as that of the Tapping CD.\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "Heterochromatic Gaze",
+          "description": "Increases the Level of Sacred Rite: Heron’s Sanctum by 3.\nMaximum upgrade level is 15.\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
+          "title": "The Overflow",
+          "description": "When characters (excluding Candace herself) affected by the Prayer of the Crimson Crown caused by Sacred Rite: Wagtail’s Tide deal Elemental DMG to opponents using Normal Attacks, an attack wave will be unleashed that deals AoE Hydro DMG equal to 15% of Candace’s Max HP.\nThis effect can trigger once every 2.3s and is considered Elemental Burst DMG.\n",
           "descriptions": []
         }
       ]
@@ -1359,86 +1419,149 @@
     {
       "key": "cyno",
       "name": "Cyno",
-      "title": "？？？",
-      "description": "？？？",
+      "title": "Judicator of Secrets",
+      "description": "The General Mahamatra in charge of supervising the researchers of the Akademiya. It is said that when he gets down to work, the General Mahamatra is even more efficient than the “Great Vayuvyastra” made by the Kshahrewar.",
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Invoker’s Spear",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Normal Attack",
+              "description": "Performs up to 4 consecutive spear strikes.\n",
+              "descriptions": []
+            },
+            {
+              "name": "Charged Attack",
+              "description": "Consumes a certain amount of Stamina to lunge forward, dealing damage to opponents along the way.\n",
+              "descriptions": []
+            },
+            {
+              "name": "Plunging Attack",
+              "description": "Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "1-Hit DMG|{param1}%",
+            "2-Hit DMG|{param2}%",
+            "3-Hit DMG|{param3}% + {param4}%",
+            "4-Hit DMG|{param5}%",
+            "Charged Attack DMG|{param6}%",
+            "Charged Attack Stamina Cost|{param7}",
+            "Plunge DMG|{param8}%",
+            "Low/High Plunge DMG|{param9}% / {param10}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Secret Rite: Chasmic Soulfarer",
+          "description": "Performs a swift thrust, dealing Electro DMG to opponents along the path.\n\nWhen Cyno is under the Pactsworn Pathclearer state triggered by Sacred Rite: Wolf’s Swiftness, he will instead unleash a ",
+          "abilities": [
+            {
+              "name": "Mortuary Rite that deals thunderous",
+              "description": "AoE Electro DMG and extends the duration of Pactsworn Pathclearer.\n",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "Skill DMG|{param1}%",
+            "Mortuary Rite DMG|{param2}%",
+            "Pactsworn Pathclearer Duration Bonus|{param3}s",
+            "CD|{param4}s",
+            "Mortuary Rite CD|{param5}s"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Sacred Rite: Wolf’s Swiftness",
+          "description": "Calls upon a divine spirit to indwell him, morphing into the Pactsworn Pathclearer.\n\n",
+          "abilities": [
+            {
+              "name": "Pactsworn Pathclearer",
+              "description": "Cyno’s Normal, Charged, and Plunging Attacks will be converted to Electro DMG that cannot be overridden.\n",
+              "descriptions": [
+                "Cyno’s Elemental Mastery and resistance to interruption will increase, and he gains immunity to Electro-Charged DMG.",
+                "This effect will be canceled when Cyno leaves the field and lasts a maximum of 18s."
+              ]
+            }
+          ],
+          "stats": [
+            "1-Hit DMG|{param1}%",
+            "2-Hit DMG|{param2}%",
+            "3-Hit DMG|{param3}%",
+            "4-Hit DMG|{param4}% + {param5}%",
+            "5-Hit DMG|{param6}%",
+            "Charged Attack DMG|{param7}%",
+            "Charged Attack Stamina Cost|{param8}",
+            "Plunge DMG|{param9}%",
+            "Low/High Plunge DMG|{param10}% / {param11}%",
+            "Elemental Mastery Bonus|{param12}",
+            "Basic Duration|{param13}s",
+            "CD|{param14}s",
+            "Energy Cost|{param15}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "The Gift of Silence",
+          "description": "Gains 25% more rewards when dispatched on a Sumeru Expedition for 20 hours.\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
+          "title": "Featherfall Judgment",
+          "description": "When Cyno is in the Pactsworn Pathclearer state activated by Sacred Rite: Wolf’s Swiftness, Cyno will enter the Endseer stance at intervals. If he activates Secret Rite: Chasmic Soulfarer while affected by this stance, he will activate the Judication effect, increasing the DMG of this Secret Rite: Chasmic Soulfarer by 35%, and firing off 3 Duststalker Bolts that deal 100% of Cyno’s ATK as Electro DMG.\nDuststalker Bolt DMG is considered Elemental Skill DMG.\n",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
+          "title": "Authority Over the Nine Bows",
+          "description": "Cyno’s DMG values will be increased based on his Elemental Mastery as follows:\n",
+          "descriptions": [
+            "Pactsworn Pathclearer’s Normal Attack DMG is increased by 150% of his Elemental Mastery.",
+            "Duststalker Bolt DMG from his Passive Talent Featherfall Judgment is increased by 250% of his Elemental Mastery."
+          ]
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "Ordinance: Unceasing Vigil",
+          "description": "After using Sacred Rite: Wolf’s Swiftness, Cyno’s Normal Attack SPD will be increased by 20% for 10s. If the Judication effect of his Passive Talent Featherfall Judgment is triggered during Secret Rite: Chasmic Soulfarer, the duration of this increase will be refreshed.\nYou need to unlock the Passive Talent “Featherfall Judgment.”\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "Ceremony: Homecoming of Spirits",
+          "description": "When Cyno’s Normal Attacks hit opponents, his Electro DMG Bonus will increase by 10% for 4s. This effect can be triggered once every 0.1s. Max 5 stacks.\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "Precept: Lawful Enforcer",
+          "description": "Increases the Level of Sacred Rite: Wolf’s Swiftness by 3.\nMaximum upgrade level is 15.\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "Austerity: Forbidding Guard",
+          "description": "When Cyno is in the Pactsworn Pathclearer state triggered by Sacred Rite: Wolf’s Swiftness, after he triggers Electro-Charged, Superconduct, Overloaded, Quicken, Aggravate, Hyperbloom, or an Electro Swirl reaction, he will restore 3 Elemental Energy for all nearby party members (except himself.)\nThis effect can occur 5 times within one use of Sacred Rite: Wolf’s Swiftness.\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "Funerary Rite: The Passing of Starlight",
+          "description": "Increases the Level of Secret Rite: Chasmic Soulfarer by 3.\nMaximum upgrade level is 15.\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
+          "title": "Raiment: Just Scales",
+          "description": "After using Sacred Rite: Wolf’s Swiftness or triggering the Judication effect of the Passive Talent “Featherfall Judgment,” Cyno will gain 4 stacks of the “Day of the Jackal” effect. When he hits opponents with Normal Attacks, he will consume 1 stack of “Day of the Jackal” to fire off one Duststalker Bolt.\n“Day of the Jackal” lasts for 8s. Max 8 stacks. It will be canceled once Pactsworn Pathclearer ends.\nA maximum of 1 Duststalker Bolt can be unleashed this way every 0.4s.\nYou must first unlock the Passive Talent “Featherfall Judgment.”\n",
           "descriptions": []
         }
       ]
@@ -9128,6 +9251,18 @@
       ]
     },
     {
+      "key": "makhaira-aquamarine",
+      "name": "Makhaira Aquamarine",
+      "description": "An ancient greatsword that gleams like the waters themselves. A thousand years of sand erosion has not dulled its unnaturally sharp edge one bit.",
+      "refinements": [
+        "The following effect will trigger every 10s: The equipping character will gain {color}24{/color}% of their Elemental Mastery as bonus ATK for 12s, with nearby party members gaining 30% of this buff for the same duration. Multiple instances of this weapon can allow this buff to stack. This effect will still trigger even if the character is not on the field.",
+        "The following effect will trigger every 10s: The equipping character will gain {color}30{/color}% of their Elemental Mastery as bonus ATK for 12s, with nearby party members gaining 30% of this buff for the same duration. Multiple instances of this weapon can allow this buff to stack. This effect will still trigger even if the character is not on the field.",
+        "The following effect will trigger every 10s: the equipping character will gain {color}36{/color}% of their Elemental Mastery as bonus ATK for 12s, with nearby party members gaining 30% of this buff for the same duration. Multiple instances of this weapon can allow this buff to stack. This effect will still trigger even if the character is not on the field.",
+        "The following effect will trigger every 10s: The equipping character will gain {color}42{/color}% of their Elemental Mastery as bonus ATK for 12s, with nearby party members gaining 30% of this buff for the same duration. Multiple instances of this weapon can allow this buff to stack. This effect will still trigger even if the character is not on the field.",
+        "The following effect will trigger every 10s: The equipping character will gain {color}48{/color}% of their Elemental Mastery as bonus ATK for 12s, with nearby party members gaining 30% of this buff for the same duration. Multiple instances of this weapon can allow this buff to stack. This effect will still trigger even if the character is not on the field."
+      ]
+    },
+    {
       "key": "mappa-mare",
       "name": "Mappa Mare",
       "description": "A nautical chart featuring nearby currents and climates that somehow found its way into Liyue via foreign traders.",
@@ -9161,6 +9296,18 @@
         "Charged Attack hits on weak points deal an additional {color}150{/color}% ATK DMG as CRIT DMG. Can only occur once every 10s.",
         "Charged Attack hits on weak points deal an additional {color}175{/color}% ATK DMG as CRIT DMG. Can only occur once every 10s.",
         "Charged Attack hits on weak points deal an additional {color}200{/color}% ATK DMG as CRIT DMG. Can only occur once every 10s."
+      ]
+    },
+    {
+      "key": "missive-windspear",
+      "name": "Missive Windspear",
+      "description": "A beacon that shows the direction of the wind. Not every idyll carried on the breeze remains a gentle thing…",
+      "refinements": [
+        "Within 10s after an Elemental Reaction is triggered, ATK is increased by {color}12{/color}% and Elemental Mastery is increased by {color}48{/color}",
+        "Within 10s after an Elemental Reaction is triggered, ATK is increased by {color}15{/color}% and Elemental Mastery is increased by {color}60{/color}",
+        "Within 10s after an Elemental Reaction is triggered, ATK is increased by {color}18{/color}% and Elemental Mastery is increased by {color}72{/color}",
+        "Within 10s after an Elemental Reaction is triggered, ATK is increased by {color}21{/color}% and Elemental Mastery is increased by {color}84{/color}",
+        "Within 10s after an Elemental Reaction is triggered, ATK is increased by {color}24{/color}% and Elemental Mastery is increased by {color}96{/color}"
       ]
     },
     {
@@ -9709,6 +9856,18 @@
         "HP increased by {color}30{/color}%. Additionally, provides an ATK Bonus based on {color}1.2{/color}% of the wielder's Max HP. When the wielder's HP is less than 50%, this ATK Bonus is increased by an additional {color}1.4{/color}% of Max HP.",
         "HP increased by {color}35{/color}%. Additionally, provides an ATK Bonus based on {color}1.4{/color}% of the wielder's Max HP. When the wielder's HP is less than 50%, this ATK Bonus is increased by an additional {color}1.6{/color}% of Max HP.",
         "HP increased by {color}40{/color}%. Additionally, provides an ATK Bonus based on {color}1.6{/color}% of the wielder's Max HP. When the wielder's HP is less than 50%, this ATK Bonus is increased by an additional {color}1.8{/color}% of Max HP."
+      ]
+    },
+    {
+      "key": "staff-of-the-scarlet-sands",
+      "name": "Staff of the Scarlet Sands",
+      "description": "One of a paired set of scepters fashioned from obsidian. Legend has it that these staves grant the right to lead the people of the desert, but no retainer now lives who can verify the proper appearance of these regalia.",
+      "refinements": [
+        "The equipping character gains {color}52{/color}% of their Elemental Mastery as bonus ATK. When an Elemental Skill hits opponents, the Dream of the Scarlet Sands effect will be gained for 10s: The equipping character will gain {color}28{/color}% of their Elemental Mastery as bonus ATK. Max 3 stacks.",
+        "The equipping character gains {color}65{/color}% of their Elemental Mastery as bonus ATK. When an Elemental Skill hits opponents, the Dream of the Scarlet Sands effect will be gained for 10s: The equipping character will gain {color}35{/color}% of their Elemental Mastery as bonus ATK. Max 3 stacks.",
+        "The equipping character gains {color}78{/color}% of their Elemental Mastery as bonus ATK. When an Elemental Skill hits opponents, the Dream of the Scarlet Sands effect will be gained for 10s: The equipping character will gain {color}42{/color}% of their Elemental Mastery as bonus ATK. Max 3 stacks.",
+        "The equipping character gains {color}91{/color}% of their Elemental Mastery as bonus ATK. When an Elemental Skill hits opponents, the Dream of the Scarlet Sands effect will be gained for 10s: The equipping character will gain {color}49{/color}% of their Elemental Mastery as bonus ATK. Max 3 stacks.",
+        "The equipping character gains {color}104{/color}% of their Elemental Mastery as bonus ATK. When an Elemental Skill hits opponents, the Dream of the Scarlet Sands effect will be gained for 10s: The equipping character will gain {color}56{/color}% of their Elemental Mastery as bonus ATK. Max 3 stacks."
       ]
     },
     {
@@ -10368,6 +10527,11 @@
       "description": "Character Ascension Material."
     },
     {
+      "key": "ajilenakh-nut",
+      "name": "Ajilenakh Nut",
+      "description": "A fruit that grows on evergreen trees within desert oases. The flesh under the tough skin is thick, sweet, and delicious, making it an important food source amongst the desert peoples."
+    },
+    {
       "key": "almond",
       "name": "Almond",
       "description": "A seed with a peculiar fragrance that gives food a refreshing taste."
@@ -10661,6 +10825,11 @@
       "key": "damaged-mask",
       "name": "Damaged Mask",
       "description": "A broken bone mask that once belonged to some hilichurl.\r\nNow more broken than complete, it can no longer perform its primary function."
+    },
+    {
+      "key": "damaged-prism",
+      "name": "Damaged Prism",
+      "description": "A damaged component obtained from defeating a Primal Construct.\nThese uniquely-shaped machines are the eternal sentinels of the desert ruins, and they possess the power to pierce the mountains and reshape rocks. The same principles that power many mysterious devices above and beneath the earth also power these machines."
     },
     {
       "key": "dandelion-seed",
@@ -11103,6 +11272,11 @@
       "description": "An armband to identify officers. The Fatui possess a colossal army, so there must be something extraordinary about the ones who achieved this rank within the group."
     },
     {
+      "key": "light-guiding-tetrahedron",
+      "name": "Light Guiding Tetrahedron",
+      "description": "A core component obtained via defeating a mysterious ruin machine.\nTo this day, these ancient devices have not forgotten the dreams of their masters or their own duties: to build a thousand palaces, to administrate three thousand machines, to sow ten thousand flowers that shall never bloom again, and to recreate a paradise now buried beneath the desert sands for the sake of all who live in this world.\nThough the lord of the desert no longer lives, and those dreams have long been corrupted by sinful whispers, and though all the magical pillars have been broken and have collapsed, the great beast once favored by the king hides still within the great searing storm."
+    },
+    {
       "key": "lightning-prism",
       "name": "Lightning Prism",
       "description": "An Electro Hypostasis channels nearby elemental energy to repair damaged elemental entities. Contains the essence of Electro energy.\r\nAn ordinary prism separates white light into its component colors; a Lightning Prism, however, channels flowing energies and weaves them into lightning. It will continue to do so even after the Electro Hypostasis has been defeated."
@@ -11423,6 +11597,11 @@
       "description": "Peppery. Cuts through oily flavors and excites the taste buds. Goes best on meat."
     },
     {
+      "key": "perpetual-caliber",
+      "name": "Perpetual Caliber",
+      "description": "A motive device obtained from a mysterious ruin machine.\nThe machine it once powered may have been destroyed, but it continues to rotate all the same.\nThere should be no such thing as an energy source that can sustain itself forever in this world, and most research results obtained in the field of “perpetual motion” have been eventually proved false. Yet, this device is proof that a now-destroyed civilization once reached heights that present-day nations could not hope to match…"
+    },
+    {
       "key": "perpetual-heart",
       "name": "Perpetual Heart",
       "description": "The core that powers the autonomous movements of the Perpetual Mechanical Array.\r\nSome theorize that the symbols on these cores have knowledge and logic inscribed upon them in a language that eyes cannot perceive. Some go a step further and believe that these unique Ruin machines autonomously decided to forsake a biomimetic form to pursue strength of function on account of their especially large cores and complex inscriptions."
@@ -11543,6 +11722,11 @@
       "description": "A translucent white flower that only grows on the highest stone peaks. It eschews the warmth and moisture of the plains to gaze out afar from the solitary mountaintops."
     },
     {
+      "key": "radiant-prism",
+      "name": "Radiant Prism",
+      "description": "An exquisite component obtained from defeating a Primal Construct.\nThe lord of the barren desert once had a dream, and once made a great many promises.\nThe legends of the desert say that these machines were originally vehicles for these unknown promises, which now live on only within their mechanical memory banks."
+    },
+    {
       "key": "radish",
       "name": "Radish",
       "description": "Rich in fiber and nutrients. Easy to grow and harvest."
@@ -11561,6 +11745,11 @@
       "key": "recruits-insignia",
       "name": "Recruit's Insignia",
       "description": "An insignia to identify the recruits. Makes one wonder about what the ones joining the Fatui's war machine were thinking."
+    },
+    {
+      "key": "redcrest",
+      "name": "Redcrest",
+      "description": "A fruit that grows even in the most hostile of desert environments. Its vibrant crimson fruits are made even more lovely against a backdrop of yellow sand."
     },
     {
       "key": "relic-from-guyun",
@@ -11626,6 +11815,11 @@
       "key": "sausage",
       "name": "Sausage",
       "description": "Finely minced meat wrapped in a skin. A staple of every meat lover's daily diet."
+    },
+    {
+      "key": "scarab",
+      "name": "Scarab",
+      "description": "A tenacious beetle that finds repose within the vast ocean of desert sand. The golden pattern on such beetles’ shells hints at some deep relationship between them and the ancient ruins that dot the desert."
     },
     {
       "key": "scattered-piece-of-decarabians-dream",
@@ -11936,6 +12130,11 @@
       "key": "trimmed-red-silk",
       "name": "Trimmed Red Silk",
       "description": "A piece of red silk trimmed with simple decorations.\nA seasoned warrior can detect weaknesses from their foe’s eyes and thus take advantage. The Eremites have long since lost a master to serve, and now they have no one to trust but themselves. Word has it that they are more than convinced that all things betray, even their own eyes."
+    },
+    {
+      "key": "turbid-prism",
+      "name": "Turbid Prism",
+      "description": "An old component obtained from defeating a Primal Construct.\nIt is said that these machines are different from those ruin machines that come from deep within the desert, for they were not made as heralds of destruction or conquest."
     },
     {
       "key": "tusk-of-monoceros-caeli",
@@ -12257,6 +12456,14 @@
       "name": "Abyss Lector: Violet Lightning"
     },
     {
+      "key": "aeonblight-drake",
+      "name": "Aeonblight Drake"
+    },
+    {
+      "key": "algorithm-of-semi-intransient-matrix-of-overseer-network",
+      "name": "Algorithm of Semi-Intransient Matrix of Overseer Network"
+    },
+    {
       "key": "anemo-hypostasis",
       "name": "Anemo Hypostasis"
     },
@@ -12413,12 +12620,20 @@
       "name": "Eremite Desert Clearwater"
     },
     {
+      "key": "eremite-galehunter",
+      "name": "Eremite Galehunter"
+    },
+    {
       "key": "eremite-linebreaker",
       "name": "Eremite Linebreaker"
     },
     {
       "key": "eremite-ravenbeak-halberdier",
       "name": "Eremite Ravenbeak Halberdier"
+    },
+    {
+      "key": "eremite-stone-enchanter",
+      "name": "Eremite Stone Enchanter"
     },
     {
       "key": "eremite-sunfrost",
@@ -12469,6 +12684,10 @@
       "name": "Fatui Skirmisher - Pyroslinger Bracer"
     },
     {
+      "key": "floating-anemo-fungus",
+      "name": "Floating Anemo Fungus"
+    },
+    {
       "key": "floating-dendro-fungus",
       "name": "Floating Dendro Fungus"
     },
@@ -12507,6 +12726,10 @@
     {
       "key": "golden-wolflord",
       "name": "Golden Wolflord"
+    },
+    {
+      "key": "grounded-geoshroom",
+      "name": "Grounded Geoshroom"
     },
     {
       "key": "grounded-hydroshroom",
@@ -12709,6 +12932,18 @@
       "name": "Perpetual Mechanical Array"
     },
     {
+      "key": "primal-construct-prospector",
+      "name": "Primal Construct: Prospector"
+    },
+    {
+      "key": "primal-construct-repulsor",
+      "name": "Primal Construct: Repulsor"
+    },
+    {
+      "key": "primal-construct-reshaper",
+      "name": "Primal Construct: Reshaper"
+    },
+    {
       "key": "primo-geovishap",
       "name": "Primo Geovishap"
     },
@@ -12841,6 +13076,14 @@
       "name": "Shogunate Infantry Captain"
     },
     {
+      "key": "spirit-of-omen-stone-drake",
+      "name": "Spirit of Omen: Stone Drake"
+    },
+    {
+      "key": "spirit-of-omen-wind-glede",
+      "name": "Spirit of Omen: Wind Glede"
+    },
+    {
       "key": "stonehide-lawachurl",
       "name": "Stonehide Lawachurl"
     },
@@ -12851,6 +13094,10 @@
     {
       "key": "stretchy-anemo-fungus",
       "name": "Stretchy Anemo Fungus"
+    },
+    {
+      "key": "stretchy-electro-fungus",
+      "name": "Stretchy Electro Fungus"
     },
     {
       "key": "stretchy-geo-fungus",
@@ -12955,6 +13202,10 @@
     {
       "key": "whirling-electro-fungus",
       "name": "Whirling Electro Fungus"
+    },
+    {
+      "key": "whirling-pyro-fungus",
+      "name": "Whirling Pyro Fungus"
     },
     {
       "key": "winged-cryoshroom",

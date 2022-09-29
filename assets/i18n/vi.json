@@ -1022,86 +1022,146 @@
     {
       "key": "candace",
       "name": "Candace",
-      "title": "？？？",
-      "description": "？？？",
+      "title": "Thề Nguyện Ánh Kim",
+      "description": "Hậu duệ của Vua Deshret với con mắt bên trái màu hổ phách, là người thủ hộ của Làng Aaru.",
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Tấn Công Thường – Thương Thuật Lấp Lánh – Thế Thủ",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Tấn Công Thường",
+              "description": "Thực hiện tối đa 4 lần đánh liên tiếp.\n",
+              "descriptions": []
+            },
+            {
+              "name": "Trọng Kích",
+              "description": "Tiêu hao thể lực nhất định, xông về phía trước, gây sát thương cho địch trên đường đi.\n",
+              "descriptions": []
+            },
+            {
+              "name": "Tấn Công Khi Đáp",
+              "description": "Đáp xuống đất từ trên không, tấn công kẻ địch trên đường và gây sát thương phạm vi khi chạm đất.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "Sát Thương Lần 1|{param1}%",
+            "Sát Thương Lần 2|{param2}%",
+            "Sát Thương Lần 3|{param3}% + {param4}%",
+            "Sát Thương Lần 4|{param5}%",
+            "Sát Thương Trọng Kích|{param6}%",
+            "Thể lực Trọng Kích tiêu hao|{param7} điểm",
+            "Sát Thương Khi Rơi|{param8}%",
+            "Sát Thương Khi Rơi Từ Độ Cao Thấp/Cao|{param9}% / {param10}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Nghi Thức Thần Thánh – Vạc Trời Bảo Hộ",
+          "description": "Phong cách chiến đấu của Candace, như thế trận chống lại đại hồng thủy.\n\n",
+          "abilities": [
+            {
+              "name": "Nhấn",
+              "description": "Xung kích bằng khiên, gây Sát Thương Nguyên Tố Thủy về phía trước.\n",
+              "descriptions": []
+            },
+            {
+              "name": "Nhấn giữ",
+              "description": "Giơ khiên chống đỡ đòn tấn công của kẻ địch xung quanh, tạo thành lá chắn hấp thụ sát thương dựa vào giới hạn HP của Candace, đồng thời có 250% khả năng hấp thụ Sát Thương Nguyên Tố Thủy. Lá chắn duy trì đến khi kết thúc Kỹ Năng Nguyên Tố.\nSau khi nhấn giữ một thời gian, Candace sẽ hoàn thành tụ lực, khi thả kỹ năng, kết thúc thời gian duy trì hoặc lá chắn bị phá, Candace sẽ nhảy lên tấn công, gây Sát Thương Nguyên Tố Thủy lên kẻ địch phía trước.\n",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "Khiên hấp thụ|{param1}% HP tối đa + {param2}",
+            "Sát Thương Cơ Bản|{param3}% Giới Hạn HP",
+            "Sát Thương Hoàn Thành Tụ Lực|{param4}% Giới Hạn HP",
+            "CD Nhấn|{param5}s",
+            "CD Nhấn Giữ|{param6}s"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Nghi Thức Thần Thánh – Thủy Triều Chìa Vôi",
+          "description": "Giơ cao vũ khí, triệu hồi lời cầu phúc thần thánh, gây Sát Thương Phạm Vi Nguyên Tố Thủy dựa vào giới hạn HP của Candace, đồng thời liên tục cung cấp trạng thái “Lời Chúc Vương Miện Đỏ” cho nhân vật của bản thân đang trong trận.\n\n",
+          "abilities": [
+            {
+              "name": "Lời Chúc Vương Miện Đỏ",
+              "description": "Có đặc tính sau:\n",
+              "descriptions": [
+                "Đòn đánh thường của nhân vật khi gây sát thương nguyên tố cho kẻ địch sẽ gia tăng sát thương gây ra;",
+                "Khi nhân vật ra trận sẽ phát động Sóng Nước Xung Kích, gây Sát Thương Nguyên Tố Thủy cho kẻ địch xung quanh. Số lần kích hoạt trong thời gian duy trì hiệu quả này là có giới hạn;",
+                "Nhân vật sử dụng kiếm đơn, trọng kiếm, vũ khí cán dài khi ở trong trạng thái này sẽ nhận được đính kèm Nguyên Tố Thủy."
+              ]
+            }
+          ],
+          "stats": [
+            "Sát Thương Kỹ Năng|{param1}% Giới Hạn HP",
+            "Thời Gian Kéo Dài|{param2}s",
+            "Tăng Sát Thương|{param3}%",
+            "Sát Thương Sóng Nước Xung Kích|{param4}% Giới Hạn HP",
+            "Số Lần Kích Hoạt Sóng Nước Xung Kích|{param5} lần",
+            "CD|{param6}s",
+            "Năng Lượng Nguyên Tố|{param7}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "Tia Sáng Hừng Đông",
+          "description": "Giảm 20% tiêu hao thể lực khi leo trèo cho nhân vật trong đội của bản thân.\nKhông thể cộng dồn với buff thiên phú cố định có cùng hiệu quả.\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
+          "title": "Lá Chắn Lông Vũ",
+          "description": "Khi Candace bị tấn công trong lúc nhấn giữ Nghi Thức Thần Thánh – Vạc Trời Bảo Hộ sẽ hoàn thành tụ lực ngay.\n",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "NA",
-          "description": "",
+          "title": "Cát Chảy Uốn Lượn",
+          "description": "Nhân vật trong trạng thái Lời Chúc Vương Miện Đỏ của kỹ năng Nghi Thức Thần Thánh – Thủy Triều Chìa Vôi, đòn đánh thường gây Sát Thương Nguyên Tố cho kẻ địch sẽ tăng 0.5% sát thương dựa trên mỗi 1000 giới hạn HP của Candace.\n",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "Hậu Duệ Cát Đỏ",
+          "description": "Thời gian duy trì trạng thái Lời Chúc Vương Miện Đỏ của Nghi Thức Thần Thánh – Thủy Triều Chìa Vôi kéo dài thêm 3s.\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "Tia Sáng Xuyên Trăng",
+          "description": "Nghi Thức Thần Thánh – Vạc Trời Bảo Hộ khi đánh trúng kẻ địch, giới hạn HP của Candace sẽ tăng 20%, duy trì 15s.\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "Tế Lễ Thợ Săn",
+          "description": "Cấp kỹ năng Nghi Thức Thần Thánh – Thủy Triều Chìa Vôi +3.\nTăng tối đa đến cấp 15.\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "Lời Thề Thủ Hộ",
+          "description": "Rút ngắn thời gian chờ Nhấn Giữ của kỹ năng Nghi Thức Thần Thánh – Vạc Trời Bảo Hộ đến tương đồng với thời gian chờ của Nhấn.\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "Con Ngươi Ánh Vàng",
+          "description": "Cấp kỹ năng Nghi Thức Thần Thánh – Vạc Trời Bảo Hộ +3.\nTăng tối đa đến cấp 15.\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
+          "title": "Thủy Triều Dâng Trào",
+          "description": "Nhân vật đang trong trận hiện tại khi trong trạng thái Lời Chúc Vương Miện Đỏ của Nghi Thức Thần Thánh – Thủy Triều Chìa Vôi (không bao gồm bản thân Candace), nếu tấn công thường trúng kẻ địch gây sát thương nguyên tố, sẽ thi triển Thủy Triều Xung Kích, gây Sát Thương Phạm Vi Nguyên Tố Thủy tương đương 15% giới hạn HP của Candace.\nHiệu quả này mỗi 2.3s tối đa kích hoạt một lần, sát thương gây ra được tính là sát thương kỹ năng nộ.\n",
           "descriptions": []
         }
       ]
@@ -1358,86 +1418,149 @@
     {
       "key": "cyno",
       "name": "Cyno",
-      "title": "？？？",
-      "description": "？？？",
+      "title": "Phán Quyết Ẩn Mật",
+      "description": "“Tổng Quản Mahamatra”, phụ trách giám sát các học giả trong Giáo Viện. Hiệu suất trong lúc làm việc sẽ còn hiệu quả hơn “Vayuvyastra Vĩ Đại” của Học Phái Kshahrewar.",
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Tấn Công Thường – Thất Thánh Thương Thuật",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Tấn Công Thường",
+              "description": "Thực hiện tối đa 4 lần đánh liên tiếp.\n",
+              "descriptions": []
+            },
+            {
+              "name": "Trọng Kích",
+              "description": "Tiêu hao thể lực nhất định, xông về phía trước, gây sát thương cho địch trên đường đi.\n",
+              "descriptions": []
+            },
+            {
+              "name": "Tấn Công Khi Đáp",
+              "description": "Đáp xuống đất từ trên không, tấn công kẻ địch trên đường và gây sát thương phạm vi khi chạm đất.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "Sát Thương Lần 1|{param1}%",
+            "Sát Thương Lần 2|{param2}%",
+            "Sát Thương Lần 3|{param3}% + {param4}%",
+            "Sát Thương Lần 4|{param5}%",
+            "Sát Thương Trọng Kích|{param6}%",
+            "Thể lực Trọng Kích tiêu hao|{param7} điểm",
+            "Sát Thương Khi Rơi|{param8}%",
+            "Sát Thương Khi Rơi Từ Độ Cao Thấp/Cao|{param9}% / {param10}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Nghi Thức Bí Ẩn – Dẫn Hồn Đáy Vực",
+          "description": "Đột kích siêu tốc, gây Sát Thương Nguyên Tố Lôi cho kẻ địch trên đường.\n\nKhi Cyno trong trạng thái Sứ Giả Dẫn Lối của Kỹ Năng Nộ “Nghi Thức Thần Thánh – Nhanh Như Sói” sẽ thi triển trạng thái ",
+          "abilities": [
+            {
+              "name": "Tang Lễ, giải phóng sức mạnh sấm sét, gây",
+              "description": "Sát Thương Phạm Vi Nguyên Tố Lôi, đồng thời kéo dài thời gian duy trì trạng thái Sứ Giả Dẫn Lối.\n",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "Sát Thương Kỹ Năng|{param1}%",
+            "Sát Thương Tang Lễ|{param2}%",
+            "Thời Gian Sứ Giả Dẫn Lối|{param3}s",
+            "CD|{param4}s",
+            "CD Tang Lễ|{param5}s"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Nghi Thức Thần Thánh – Nhanh Như Sói",
+          "description": "Triệu hồi linh hồn hộ thể, hóa thân thành “Sứ Giả Dẫn Lối”.\n\n",
+          "abilities": [
+            {
+              "name": "Sứ Giả Dẫn Lối",
+              "description": "Sát thương đánh thường, trọng kích, tấn công khi đáp của Cyno sẽ chuyển hóa thành Sát Thương Nguyên Tố Lôi không thể bị thay thế;\n",
+              "descriptions": [
+                "Khiến Cyno tăng Tinh Thông Nguyên Tố, kháng gián đoạn và miễn dịch sát thương phản ứng Điện Cảm.",
+                "Hiệu quả sẽ biến mất khi Cyno rời trận, tối đa duy trì 18s."
+              ]
+            }
+          ],
+          "stats": [
+            "Sát Thương Lần 1|{param1}%",
+            "Sát Thương Lần 2|{param2}%",
+            "Sát Thương Lần 3|{param3}%",
+            "Sát Thương Lần 4|{param4}% + {param5}%",
+            "Sát Thương Lần 5|{param6}%",
+            "Sát Thương Trọng Kích|{param7}%",
+            "Thể lực Trọng Kích tiêu hao|{param8} điểm",
+            "Sát Thương Khi Đáp|{param9}%",
+            "ST Khi Rơi Từ Độ Cao Thấp/Cao|{param10}% / {param11}%",
+            "Tăng Tinh Thông Nguyên Tố|{param12}",
+            "Thời Gian Duy Trì Cơ Bản|{param13}s",
+            "CD|{param14}s",
+            "Năng Lượng Nguyên Tố|{param15}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "Ân Điển Của Lặng Im",
+          "description": "Khi làm nhiệm vụ Phái Đi Thám Hiểm có thời gian là 20 giờ ở Sumeru, phần thưởng nhận được tăng 25%.\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
+          "title": "Lạc Vũ Phán Quyết",
+          "description": "Khi trong trạng thái Sứ Giả Dẫn Lối của Nghi Thức Thần Thánh – Nhanh Như Sói, Cyno sẽ vào trạng thái Soi Thấu Đường Cùng trong từng khoảng thời gian. Nếu thi triển Nghi Thức Bí Ẩn – Dẫn Hồn Đáy Vực trong trạng thái này sẽ kích hoạt hiệu quả “Phán Quyết”, tăng 35% sát thương Nghi Thức Bí Ẩn – Dẫn Hồn Đáy Vực lần đó gây ra, đồng thời bắn về phía trước 3 luồng Tia Sét Xuyên Thấu, gây Sát Thương Nguyên Tố Lôi bằng 100% sức tấn công của Cyno.\nSát thương Tia Sét Xuyên Thấu gây ra được tính là sát thương Kỹ Năng Nguyên Tố.\n",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
+          "title": "Cửu Cung Chấp Mệnh",
+          "description": "Sát thương từ tấn công của bản thân sẽ tăng dựa vào Tinh Thông Nguyên Tố của Cyno như sau:\n",
+          "descriptions": [
+            "Đánh thường trong trạng thái Sứ Giả Dẫn Lối: Tăng 150% dựa vào Tinh Thông Nguyên Tố;",
+            "Tia Sét Xuyên Thấu của thiên phú “Lạc Vũ Phán Quyết”: Tăng 250% dựa vào Tinh Thông Nguyên Tố."
+          ]
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "Lập Nghi – Phủ Lãm Trú Minh",
+          "description": "Sau khi thi triển Nghi Thức Thần Thánh – Nhanh Như Sói, tốc độ đánh thường của Cyno tăng 20%, duy trì 10s. Nếu kích hoạt hiệu quả “Phán Quyết” của thiên phú Lạc Vũ Phán Quyết khi thi triển Nghi Thức Bí Ẩn – Dẫn Hồn Đáy Vực, sẽ làm mới thời gian duy trì hiệu quả này.\nCần mở khóa thiên phú cố định “Lạc Vũ Phán Quyết”.\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "Lệnh Nghi – Dẫn Yết Quy Linh",
+          "description": "Sau khi Cyno dùng tấn công thường đánh trúng kẻ địch, sẽ tăng 10% buff Sát Thương Nguyên Tố Lôi, duy trì 4s. Hiệu quả này mỗi 0.1s tối đa kích hoạt một lần, tối đa cộng dồn 5 tầng.\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "Luật Nghi – Hành Độ Thệ Trừng",
+          "description": "Cấp kỹ năng Nghi Thức Thần Thánh – Nhanh Như Sói +3.\nTăng tối đa đến cấp 15.\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "Tuần Nghi – Siển Hộ Cấm Võng",
+          "description": "Khi Cyno trong trạng thái Sứ Giả Dẫn Lối của Nghi Thức Thần Thánh – Nhanh Như Sói, sau khi kích hoạt phản ứng Điện Cảm, Siêu Dẫn, Quá Tải, Sinh Trưởng, Tăng Cường, Nở Rộ, Khuếch Tán Nguyên Tố Lôi, sẽ khiến tất cả nhân vật trong đội gần đó (trừ bản thân Cyno) hồi phục 3 điểm Năng Lượng Nguyên Tố.\nHiệu quả này trong một lần Nghi Thức Thần Thánh – Nhanh Như Sói tối đa kích hoạt 5 lần.\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "U Nghi – Thệ Vãng Tinh Mang",
+          "description": "Cấp kỹ năng Nghi Thức Bí Ẩn – Dẫn Hồn Đáy Vực +3.\nTăng tối đa đến cấp 15.\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
+          "title": "Vũ Nghi – Tài Lạc Quân Hành",
+          "description": "Sau khi thi triển Nghi Thức Thần Thánh – Nhanh Như Sói hoặc kích hoạt hiệu quả “Phán Quyết” của thiên phú cố định “Lạc Vũ Phán Quyết”, Cyno sẽ nhận được 4 tầng hiệu quả “Nghi Thức Sói”. Khi tấn công thường của Cyno đánh trúng kẻ địch, sẽ tiêu hao một tầng “Nghi Thức Sói”, và bắn ra một Tia Sét Xuyên Thấu.\nHiệu quả “Nghi Thức Sói” duy trì 8s, tối đa cộng dồn 8 tầng, đồng thời sẽ xóa bỏ sau khi trạng thái Sứ Giả Dẫn Lối của Nghi Thức Thần Thánh – Nhanh Như Sói kết thúc.\nMỗi 0.4s tối đa bắn ra một Tia Sét Xuyên Thấu bằng cách này.\nCần mở khóa thiên phú cố định “Lạc Vũ Phán Quyết”.\n",
           "descriptions": []
         }
       ]
@@ -9130,6 +9253,18 @@
       ]
     },
     {
+      "key": "makhaira-aquamarine",
+      "name": "Sắc Nước Makhaira",
+      "description": "Một thanh đại kiếm ánh lên sắc nước, đã trải qua ngàn năm trong cát nhưng vẫn sắc bén lạ thường.",
+      "refinements": [
+        "Mỗi 10s sẽ sản sinh hiệu quả sau: Tăng tấn công dựa vào {color}24{/color}% Tinh Thông Nguyên Tố của nhân vật trang bị vũ khí này, đồng thời tăng 30% tấn công dựa vào hiệu quả trên cho nhân vật trong đội gần đó, duy trì 12s, hiệu ứng này có thể cộng dồn từ nhiều vũ khí cùng tên. Nhân vật khi không ra trận cũng có thể kích hoạt hiệu ứng.",
+        "Mỗi 10s sẽ sản sinh hiệu quả sau: Tăng tấn công dựa vào {color}30{/color}% Tinh Thông Nguyên Tố của nhân vật trang bị vũ khí này, đồng thời tăng 30% tấn công dựa vào hiệu quả trên cho nhân vật trong đội gần đó, duy trì 12s, hiệu ứng này có thể cộng dồn từ nhiều vũ khí cùng tên. Nhân vật khi không ra trận cũng có thể kích hoạt hiệu ứng.",
+        "Mỗi 10s sẽ sản sinh hiệu quả sau: Tăng tấn công dựa vào {color}36{/color}% Tinh Thông Nguyên Tố của nhân vật trang bị vũ khí này, đồng thời tăng 30% tấn công dựa vào hiệu quả trên cho nhân vật trong đội gần đó, duy trì 12s, hiệu ứng này có thể cộng dồn từ nhiều vũ khí cùng tên. Nhân vật khi không ra trận cũng có thể kích hoạt hiệu ứng.",
+        "Mỗi 10s sẽ sản sinh hiệu quả sau: Tăng tấn công dựa vào {color}42{/color}% Tinh Thông Nguyên Tố của nhân vật trang bị vũ khí này, đồng thời tăng 30% tấn công dựa vào hiệu quả trên cho nhân vật trong đội gần đó, duy trì 12s, hiệu ứng này có thể cộng dồn từ nhiều vũ khí cùng tên. Nhân vật khi không ra trận cũng có thể kích hoạt hiệu ứng.",
+        "Mỗi 10s sẽ sản sinh hiệu quả sau: Tăng tấn công dựa vào {color}48{/color}% Tinh Thông Nguyên Tố của nhân vật trang bị vũ khí này, đồng thời tăng 30% tấn công dựa vào hiệu quả trên cho nhân vật trong đội gần đó, duy trì 12s, hiệu ứng này có thể cộng dồn từ nhiều vũ khí cùng tên. Nhân vật khi không ra trận cũng có thể kích hoạt hiệu ứng."
+      ]
+    },
+    {
       "key": "mappa-mare",
       "name": "Hải Đồ Vạn Quốc",
       "description": "Hải đồ ghi lại chi tiết vùng khí hậu hải lưu xung quanh đại lục, từ dị quốc qua tay thương nhân lưu lạc đến Liyue.",
@@ -9163,6 +9298,18 @@
         "Nếu trọng kích đánh trúng điểm yếu, sẽ tạo thành thêm sát thương bằng {color}150{/color}% tấn công, sát thương này chắc chắn bạo kích. Mỗi 10s chỉ có hiệu quả 1 lần.",
         "Nếu trọng kích đánh trúng điểm yếu, sẽ tạo thành thêm sát thương bằng {color}175{/color}% tấn công, sát thương này chắc chắn bạo kích. Mỗi 10s chỉ có hiệu quả 1 lần.",
         "Nếu trọng kích đánh trúng điểm yếu, sẽ tạo thành thêm sát thương bằng {color}200{/color}% tấn công, sát thương này chắc chắn bạo kích. Mỗi 10s chỉ có hiệu quả 1 lần."
+      ]
+    },
+    {
+      "key": "missive-windspear",
+      "name": "Mũi Nhọn Của Gió",
+      "description": "Tín hiệu dẫn đường cho gió. Bài ca du mục của gió không phải lúc nào cũng dịu dàng như thuở ban đầu…",
+      "refinements": [
+        "Trong 10s sau khi kích hoạt phản ứng nguyên tố, tấn công tăng {color}12{/color}%, Tinh Thông Nguyên Tố tăng {color}48{/color} điểm.",
+        "Trong 10s sau khi kích hoạt phản ứng nguyên tố, tấn công tăng {color}15{/color}%, Tinh Thông Nguyên Tố tăng {color}60{/color} điểm.",
+        "Trong 10s sau khi kích hoạt phản ứng nguyên tố, tấn công tăng {color}18{/color}%, Tinh Thông Nguyên Tố tăng {color}72{/color} điểm.",
+        "Trong 10s sau khi kích hoạt phản ứng nguyên tố, tấn công tăng {color}21{/color}%, Tinh Thông Nguyên Tố tăng {color}84{/color} điểm.",
+        "Trong 10s sau khi kích hoạt phản ứng nguyên tố, tấn công tăng {color}24{/color}%, Tinh Thông Nguyên Tố tăng {color}96{/color} điểm."
       ]
     },
     {
@@ -9711,6 +9858,18 @@
         "HP tăng {color}30{/color}%. Ngoài ra, nhận được buff tấn công bằng {color}1.2{/color}% giới hạn HP của nhân vật trang bị vũ khí này. Khi HP của nhân vật trang bị vũ khí này dưới 50%, sẽ nhận thêm buff tấn công bằng {color}1.4{/color}% giới hạn HP.",
         "HP tăng {color}35{/color}%. Ngoài ra, nhận được buff tấn công bằng {color}1.4{/color}% giới hạn HP của nhân vật trang bị vũ khí này. Khi HP của nhân vật trang bị vũ khí này dưới 50%, sẽ nhận thêm buff tấn công bằng {color}1.6{/color}% giới hạn HP.",
         "HP tăng {color}40{/color}%. Ngoài ra, nhận được buff tấn công bằng {color}1.6{/color}% giới hạn HP của nhân vật trang bị vũ khí này. Khi HP của nhân vật trang bị vũ khí này dưới 50%, sẽ nhận thêm buff tấn công bằng {color}1.8{/color}% giới hạn HP."
+      ]
+    },
+    {
+      "key": "staff-of-the-scarlet-sands",
+      "name": "Quyền Trượng Cát Đỏ",
+      "description": "Một món trong bộ đôi quyền trượng tạo nên từ Hắc Diệu Thạch. Trong truyền thuyết, sở hữu quyền năng dẫn dắt con dân của cát, nhưng hiện giờ đã không còn thần tử nào có thể phân biệt được hình dạng của vương khí này rồi.",
+      "refinements": [
+        "Tăng tấn công dựa trên {color}52{/color}% Tinh Thông Nguyên Tố của người trang bị vũ khí này. Khi Kỹ Năng Nguyên Tố đánh trúng kẻ địch sẽ nhận hiệu ứng “Giấc Mộng Cát Đỏ” duy trì 10s: Tăng tấn công dựa trên {color}28{/color}% Tinh Thông Nguyên Tố của người trang bị vũ khí này, hiệu quả này tối đa cộng dồn 3 tầng.",
+        "Tăng tấn công dựa trên {color}65{/color}% Tinh Thông Nguyên Tố của người trang bị vũ khí này. Khi Kỹ Năng Nguyên Tố đánh trúng kẻ địch sẽ nhận hiệu ứng “Giấc Mộng Cát Đỏ” duy trì 10s: Tăng tấn công dựa trên {color}35{/color}% Tinh Thông Nguyên Tố của người trang bị vũ khí này, hiệu quả này tối đa cộng dồn 3 tầng.",
+        "Tăng tấn công dựa trên {color}78{/color}% Tinh Thông Nguyên Tố của người trang bị vũ khí này. Khi Kỹ Năng Nguyên Tố đánh trúng kẻ địch sẽ nhận hiệu ứng “Giấc Mộng Cát Đỏ” duy trì 10s: Tăng tấn công dựa trên {color}42{/color}% Tinh Thông Nguyên Tố của người trang bị vũ khí này, hiệu quả này tối đa cộng dồn 3 tầng.",
+        "Tăng tấn công dựa trên {color}91{/color}% Tinh Thông Nguyên Tố của người trang bị vũ khí này. Khi Kỹ Năng Nguyên Tố đánh trúng kẻ địch sẽ nhận hiệu ứng “Giấc Mộng Cát Đỏ” duy trì 10s: Tăng tấn công dựa trên {color}49{/color}% Tinh Thông Nguyên Tố của người trang bị vũ khí này, hiệu quả này tối đa cộng dồn 3 tầng.",
+        "Tăng tấn công dựa trên {color}104{/color}% Tinh Thông Nguyên Tố của người trang bị vũ khí này. Khi Kỹ Năng Nguyên Tố đánh trúng kẻ địch sẽ nhận hiệu ứng “Giấc Mộng Cát Đỏ” duy trì 10s: Tăng tấn công dựa trên {color}56{/color}% Tinh Thông Nguyên Tố của người trang bị vũ khí này, hiệu quả này tối đa cộng dồn 3 tầng."
       ]
     },
     {
@@ -10355,6 +10514,11 @@
       "description": "Nguyên Liệu Đột Phá Nhân Vật"
     },
     {
+      "key": "ajilenakh-nut",
+      "name": "Quả Ajilenakh",
+      "description": "Quả của cây thường xanh trong ốc đảo sa mạc. Dưới lớp vỏ cứng là lớp thịt dày, ngọt và thơm ngon, là nguồn lương thực quan trọng của người dân nơi biển cát."
+    },
+    {
       "key": "almond",
       "name": "Hạnh Nhân",
       "description": "Hạt giống có hương thơm đặc biệt. Có thể đem lại mùi vị tươi mới cho món ăn."
@@ -10648,6 +10812,11 @@
       "key": "damaged-mask",
       "name": "Mặt Nạ Vỡ",
       "description": "Mặt nạ từ xương bị vỡ, từng thuộc về Hilichurl.\r\nPhần bị hỏng nhiều hơn phần còn nguyên, đã mất đi tính năng vốn có của mặt nạ."
+    },
+    {
+      "key": "damaged-prism",
+      "name": "Lăng Kính Hỏng Hóc",
+      "description": "Linh kiện vỡ vụn thu được sau khi đánh bại kết cấu năng lượng.\nNhững cỗ máy có hình thù kỳ dị này là những người bảo vệ di tích sa mạc vĩnh hằng, có đủ sức mạnh để đâm xuyên qua núi đá và tái tạo lại các tảng đá. Nguyên tắc điều khiển những cỗ máy này tương tự như nhiều cơ quan bí ẩn trên và dưới mặt đất."
     },
     {
       "key": "dandelion-seed",
@@ -11090,6 +11259,11 @@
       "description": "Phù hiệu thể hiện thân phận hiệu úy. Fatui có quân đội hùng mạnh, có thể đảm nhận chức vụ hiệu úy cũng là hơn người."
     },
     {
+      "key": "light-guiding-tetrahedron",
+      "name": "Khối Tứ Diện Dẫn Sáng",
+      "description": "Hạt nhân nhận được sau khi đánh bại tổ hợp cơ quan thần bí.\nCho đến bây giờ, cỗ máy cổ xưa vẫn không bao giờ quên ước mơ của chủ nhân và trách nhiệm của nó: Xây dựng một nghìn cung điện, cai trị hơn ba nghìn cỗ máy, trồng mười nghìn bông hoa bây giờ không còn nở nữa, tái hiện “thiên đường” bị chôn vùi trong biển cát cho tất cả các linh hồn trên mặt đất.\nNgay cả khi vị vua của sa mạc không còn nữa, những giấc mơ bị hủy hoại bởi những lời thì thầm của tội lỗi sâu thẳm; Ngay cả khi tất cả các trụ cột ma thuật hoàn toàn bị phá vỡ và sụp đổ, con thú từng được nhà vua sủng ái vẫn ẩn mình trong cơn bão cát nóng."
+    },
+    {
       "key": "lightning-prism",
       "name": "Lăng Kính Sấm Sét",
       "description": "Lôi Nguyên Bản dùng để hội tụ Nguyên Tố, Nguyên Tố khôi phục tổn thất. Trong đó chứa sức mạnh Lôi thuần túy.\r\nLăng kính có thể phân biệt màu sắc tạo nên ánh sáng, Lăng Kính Sấm Sét dệt sức mạnh tuôn trào thành sấm sét thuần khiết. Cho dù Lôi Nguyên Bản đã bị đánh bại, Nguyên Tố Lôi vẫn tiếp tục hội tụ trong lăng kính."
@@ -11410,6 +11584,11 @@
       "description": "Gia vị có mùi hương cay. Có thể kích thích vị giác và giảm độ ngấy cho món ăn, dùng với thịt là ngon nhất."
     },
     {
+      "key": "perpetual-caliber",
+      "name": "Lõi Chuyển Động Vĩnh Viễn",
+      "description": "Một cơ quan động lực lấy từ máy móc di tích thần bí.\nNgay cả khi cơ thể mà nó điều khiển đã bị phá hủy, thì nó vẫn tiếp tục hoạt động.\nTheo lý thì trên mặt đất không tồn tại năng lượng vô hạn và liên tục, hầu hết các kết quả nghiên cứu được công bố về “chuyển động vĩnh viễn” cũng đã bị làm sai lệch. Tuy nhiên, từ chiếc lõi này có thể thấy nền văn minh đã bị hủy diệt từng chạm đến những khu vực mà con người không thể tiếp cận."
+    },
+    {
       "key": "perpetual-heart",
       "name": "Lõi Động Cơ Vĩnh Cửu",
       "description": "Hạt nhân thúc đẩy cơ chế hoạt động của Mô Hình Động Cơ Vĩnh Cửu.\r\nCó người nghĩ rằng những văn tự trên đó có trí thông minh và tính logic riêng, nhưng cũng có người cho rằng chính vì chúng phức tạp như vậy nên chúng đã tự chuyển hóa để truy cầu những tính năng to lớn hơn."
@@ -11530,6 +11709,11 @@
       "description": "Loài hoa trắng trong suốt chỉ có ở đỉnh núi cô độc. Không chịu được độ ẩm và ánh sáng của đồng bằng, chỉ muốn ở đỉnh núi lạnh lẽo hướng về nơi xa."
     },
     {
+      "key": "radiant-prism",
+      "name": "Lăng Kính Phát Sáng",
+      "description": "Linh kiện tinh xảo thu được sau khi đánh bại kết cấu năng lượng.\nVị vua của sa mạc đã từng có một giấc mơ và hứa hẹn nhiều điều.\nTrong truyền thuyết về sa mạc, những sáng tạo máy móc này ban đầu là đạo cụ để thực hiện lời hứa của họ, và bây giờ chỉ có ký ức máy móc của chúng là khắc ghi những giấc mơ và lời hứa mà không ai có thể nhớ được."
+    },
+    {
       "key": "radish",
       "name": "Củ Cải Trắng",
       "description": "Là thực vật có nhiều dinh dưỡng. Dễ trồng và thu hoạch, có hàm lượng vitamin cao."
@@ -11548,6 +11732,11 @@
       "key": "recruits-insignia",
       "name": "Phù Hiệu Tân Binh",
       "description": "Phù hiệu thể hiện thân phận tân binh. Không biết khi gia nhập cỗ máy chiến tranh của Fatui, người đeo nó có cảm giác gì."
+    },
+    {
+      "key": "redcrest",
+      "name": "Quả Xích Niệm",
+      "description": "Quả của một loại cây có thể sinh tồn trong môi trường khắc nghiệt của sa mạc, những trái màu đỏ thẫm rực rỡ của nó càng trở nên bắt mắt hơn trên nền cát vàng."
     },
     {
       "key": "relic-from-guyun",
@@ -11613,6 +11802,11 @@
       "key": "sausage",
       "name": "Xúc Xích",
       "description": "Thịt được nhồi trong lòng dài. Rất tiện để lưu trữ, có thể đáp ứng nhu cầu người thích ăn thịt."
+    },
+    {
+      "key": "scarab",
+      "name": "Bọ Thánh Kim",
+      "description": "Một loài bọ cánh cứng ngoan cường sống trên biển cát rộng lớn. Đường vân màu vàng trên vỏ dường như gợi ý một số liên quan đến các di tích cổ nằm rải rác trên sa mạc."
     },
     {
       "key": "scattered-piece-of-decarabians-dream",
@@ -11923,6 +12117,11 @@
       "key": "trimmed-red-silk",
       "name": "Băng Đỏ Viền Vàng",
       "description": "Dải lụa đỏ được khảm trang sức đơn giản.\nNhững chiến sĩ lão luyện có thể tìm ra sơ hở trong mắt đối thủ. Eremite đã mất đi chủ nhân để có thể trung thành từ lâu, chỉ có thể tin vào chính mình. Nghe nói, họ tin chắc rằng tất cả mọi thứ đều phản bội, ngay cả chính đôi mắt của mình cũng không ngoại lệ."
+    },
+    {
+      "key": "turbid-prism",
+      "name": "Lăng Kính Vẩn Đục",
+      "description": "Linh kiện cũ thu được sau khi đánh bại kết cấu năng lượng.\nNghe nói những cỗ máy này không được tạo ra để làm sứ giả của sự hủy diệt và chinh phục, không giống như những “Cơ Quan Di Tích” khác nơi sâu trong sa mạc."
     },
     {
       "key": "tusk-of-monoceros-caeli",
@@ -12244,6 +12443,14 @@
       "name": "Học Sĩ Vực Sâu - Tử Điện"
     },
     {
+      "key": "aeonblight-drake",
+      "name": "Rồng Điềm Báo Vạn Kiếp"
+    },
+    {
+      "key": "algorithm-of-semi-intransient-matrix-of-overseer-network",
+      "name": "Ma Trận Điều Hành Bán Vĩnh Cửu"
+    },
+    {
       "key": "anemo-hypostasis",
       "name": "Phong Nguyên Bản"
     },
@@ -12400,12 +12607,20 @@
       "name": "Eremite - Nước Giữa Sa Mạc"
     },
     {
+      "key": "eremite-galehunter",
+      "name": "Eremite - Thợ Săn Gió"
+    },
+    {
       "key": "eremite-linebreaker",
       "name": "Eremite - Phá Trận"
     },
     {
       "key": "eremite-ravenbeak-halberdier",
       "name": "Eremite - Kích Thủ"
+    },
+    {
+      "key": "eremite-stone-enchanter",
+      "name": "Eremite - Kẻ Gọi Đá"
     },
     {
       "key": "eremite-sunfrost",
@@ -12456,6 +12671,10 @@
       "name": "Đội tiên phong Fatui - Quân du kích Hỏa"
     },
     {
+      "key": "floating-anemo-fungus",
+      "name": "Nấm Quỷ Phù Du - Phong"
+    },
+    {
       "key": "floating-dendro-fungus",
       "name": "Nấm Quỷ Phù Du - Thảo"
     },
@@ -12494,6 +12713,10 @@
     {
       "key": "golden-wolflord",
       "name": "Vua Thú Hoàng Kim"
+    },
+    {
+      "key": "grounded-geoshroom",
+      "name": "Nấm Quỷ Đi Bộ - Nham"
     },
     {
       "key": "grounded-hydroshroom",
@@ -12696,6 +12919,18 @@
       "name": "Mô Hình Động Cơ Vĩnh Cửu"
     },
     {
+      "key": "primal-construct-prospector",
+      "name": "Kết Cấu Nguyên Thủy - Thăm Dò"
+    },
+    {
+      "key": "primal-construct-repulsor",
+      "name": "Kết Cấu Nguyên Thủy - Tạo Lực"
+    },
+    {
+      "key": "primal-construct-reshaper",
+      "name": "Kết Cấu Nguyên Thủy - Tái Tạo"
+    },
+    {
       "key": "primo-geovishap",
       "name": "Rồng Đất Cổ - Nham"
     },
@@ -12828,6 +13063,14 @@
       "name": "Bộ Binh Trưởng Shogunate"
     },
     {
+      "key": "spirit-of-omen-stone-drake",
+      "name": "Ách Linh - Thằn Lằn Nham Thạch"
+    },
+    {
+      "key": "spirit-of-omen-wind-glede",
+      "name": "Ách Linh - Diều Hâu Gió Bão"
+    },
+    {
       "key": "stonehide-lawachurl",
       "name": "Vua Mũ Đá Hilichurl"
     },
@@ -12838,6 +13081,10 @@
     {
       "key": "stretchy-anemo-fungus",
       "name": "Nấm Quỷ Đàn Hồi - Phong"
+    },
+    {
+      "key": "stretchy-electro-fungus",
+      "name": "Nấm Quỷ Đàn Hồi - Lôi"
     },
     {
       "key": "stretchy-geo-fungus",
@@ -12942,6 +13189,10 @@
     {
       "key": "whirling-electro-fungus",
       "name": "Nấm Quỷ Xoay Tròn - Lôi"
+    },
+    {
+      "key": "whirling-pyro-fungus",
+      "name": "Nấm Quỷ Xoay Tròn - Hỏa"
     },
     {
       "key": "winged-cryoshroom",

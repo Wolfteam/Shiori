@@ -1023,86 +1023,146 @@
     {
       "key": "candace",
       "name": "Candace",
-      "title": "？？？",
-      "description": "？？？",
+      "title": "La Devota Áurea",
+      "description": "Custodia de la Aldea Aaru. Esta muchacha con un ojo color ámbar es descendiente del Rey Deshret.",
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Lanza radiante – En guardia",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Ataque Normal",
+              "description": "Realiza hasta 4 ataques rápidos con lanza.\n",
+              "descriptions": []
+            },
+            {
+              "name": "Ataque Cargado",
+              "description": "Consume una cierta cantidad de Aguante para lanzarse al frente, infligiendo daño a los enemigos en el camino.\n",
+              "descriptions": []
+            },
+            {
+              "name": "Ataque Descendente",
+              "description": "Se lanza desde el aire para golpear el suelo, dañando a los enemigos cercanos e infligiendo Daño en el AdE en el momento del impacto.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "Daño de 1er golpe|{param1}%",
+            "Daño de 2.º golpe|{param2}%",
+            "Daño de 3er golpe|{param3}% + {param4}%",
+            "Daño de 4.º golpe|{param5}%",
+            "Daño de ATQ Cargado|{param6}%",
+            "Coste de Aguante de ATQ Cargado|{param7} pts.",
+            "Daño de Caída|{param8}%",
+            "Daño de impacto de caída baja/alta|{param9}% / {param10}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Rito sagrado: Garza guardiana",
+          "description": "Con su estilo de combate, Candace es capaz de resistir contra toda una marea de enemigos.\n\n",
+          "abilities": [
+            {
+              "name": "Pulsar una vez",
+              "description": "Ataca con su escudo para infligir Daño Hydro contra los enemigos frente a ella.\n",
+              "descriptions": []
+            },
+            {
+              "name": "Mantener pulsado",
+              "description": "Usa su escudo para resistir los ataques de los enemigos de alrededor, lo que crea un escudo que absorbe daño en función de la Vida Máx. de Candance. Dicho escudo tiene un 250% de efectividad de absorción de Daño Hydro y dura hasta que se libera la Habilidad Elemental.\nTras mantener pulsado durante cierto tiempo, el escudo se carga por completo y, al dejar de mantener pulsada la habilidad, cuando termine su duración o cuando el escudo se rompa, Candace ejecuta un salto ofensivo que inflige Daño Hydro contra los enemigos frente a ella.\n",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "Absorción de daño del escudo|{param1}% de Vida Máx. + {param2}",
+            "Daño básico|{param3}% de Vida Máx.",
+            "Daño de carga completa|{param4}% de Vida Máx.",
+            "TdE al pulsar una vez |{param5} s",
+            "TdE de mantener pulsado|{param6} s"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Rito sagrado: Marea de aguzanieves",
+          "description": "Candace alza su arma para implorar una bendición divina que inflige Daño Hydro en el AdE en función de su Vida Máx. y otorga continuamente el estado de “oración de la corona escarlata” al personaje en uso.\n\n",
+          "abilities": [
+            {
+              "name": "Oración de la corona escarlata",
+              "description": "Tiene las siguientes propiedades:\n",
+              "descriptions": [
+                "Aumenta el Daño Elemental que infligen los personajes con sus Ataques Normales.",
+                "Cuando un personaje entra en el campo de batalla, libera una onda de agua que inflige Daño Hydro contra los enemigos cercanos. Esto solo se puede activar un determinado número de veces mientras este efecto está activo.",
+                "Imbuye del elemento Hydro a los personajes que utilizan espada ligera, mandoble o lanza y que están bajo los efectos de este estado."
+              ]
+            }
+          ],
+          "stats": [
+            "Daño de habilidad|{param1}% de Vida Máx.",
+            "Duración|{param2} s",
+            "Bono de daño|{param3}%",
+            "Daño de onda de agua|{param4}% de Vida Máx.",
+            "Activaciones de onda de agua|{param5}",
+            "TdE|{param6} s",
+            "Energía Elemental|{param7}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "Luz del alba",
+          "description": "Disminuye en un 20% el Coste de Aguante al escalar de todos los miembros de tu equipo.\nNo se puede acumular con otros talentos pasivos que tengan los mismos efectos.\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
+          "title": "Escudo antiflechas",
+          "description": "Si Candace recibe un ataque mientras mantiene pulsado Rito sagrado: Garza guardiana, la habilidad se cargará por completo inmediatamente.\n",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "NA",
-          "description": "",
+          "title": "Bóveda celestial de las arenas",
+          "description": "Cuando un personaje en el estado de oración de la corona escarlata de Rito sagrado: Marea de aguzanieves inflige Daño Elemental contra un enemigo con un Ataque Normal, este daño aumenta en un 0.5% por cada 1000 pts. de Vida Máx. que tenga Candace.\n",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "Heredera de las arenas escarlata",
+          "description": "Aumenta en 3s la duración del estado de oración de la corona escarlata de Rito sagrado: Marea de aguzanieves.\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "Brillo perforalunas",
+          "description": "Al golpear a un enemigo con Rito sagrado: Garza guardiana, la Vida Máx. de Candace aumenta en un 20% durante 15 s.\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "Devoción por la caza",
+          "description": "Aumenta el nivel de habilidad de Rito sagrado: Marea de aguzanieves +3.\nPuede ser aumentado hasta Niv. 15.\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "Juramento de la guardiana",
+          "description": "Reduce el TdE de mantener pulsado Rito sagrado: Garza guardiana hasta el mismo que el de Pulsar una vez.",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "Mirada heterocromática",
+          "description": "Aumenta el nivel de habilidad de Rito sagrado: Garza guardiana +3.\nPuede ser aumentado hasta Niv. 15.\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
+          "title": "Marea inundatoria",
+          "description": "Cuando un personaje en uso (a excepción de Candace) que está en el estado de oración de la corona escarlata de Rito sagrado: Marea de aguzanieves inflige Daño Elemental con un Ataque Normal contra un enemigo, se libera una onda de agua de Rito sagrado: Marea de aguzanieves que inflige Daño Hydro en el AdE en una cantidad equivalente al 15% de la Vida Máx. de Candace.\nEste efecto solo se puede activar una vez cada 2.3s y su daño se considera daño de Habilidad Definitiva.\n",
           "descriptions": []
         }
       ]
@@ -1359,86 +1419,150 @@
     {
       "key": "cyno",
       "name": "Cyno",
-      "title": "？？？",
-      "description": "？？？",
+      "title": "El Magistrado de lo Arcano",
+      "description": "Gran Juez de la matra y supervisor de los eruditos de la Academia de Sumeru. Cuando trabaja, es incluso más eficiente que la “Gran Vayuvyastra” creada por la Facultad Kshahrewar.",
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Lanza de la invocación",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Ataque Normal",
+              "description": "Realiza hasta 4 ataques rápidos con lanza.\n",
+              "descriptions": []
+            },
+            {
+              "name": "Ataque Cargado",
+              "description": "Consume una cierta cantidad de Aguante para lanzarse al frente, e infligir daño a los enemigos en el camino.\n",
+              "descriptions": []
+            },
+            {
+              "name": "Ataque Descendente",
+              "description": "Se lanza desde el aire para golpear el suelo, dañando a los enemigos cercanos e infligiendo Daño en el AdE en el momento del impacto.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "Daño de 1er golpe|{param1}%",
+            "Daño de 2.º golpe|{param2}%",
+            "Daño de 3er golpe|{param3}% + {param4}%",
+            "Daño de 4.º golpe|{param5}%",
+            "Daño de ATQ Cargado|{param6}%",
+            "Coste de Aguante de ATQ Cargado|{param7} pts.",
+            "Daño de Caída|{param8}%",
+            "Daño de impacto de caída baja/alta|{param9}% / {param10}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Rito secreto: Guía de las almas abismales",
+          "description": "Se arroja rápidamente hacia delante para infligir Daño Electro contra los enemigos en el camino.\n\nCuando Cyno está en el estado de abrecaminos del juramento de su Habilidad Definitiva, Rito sagrado: Celeridad lupina, realizará una ",
+          "abilities": [
+            {
+              "name": "ofrenda mortuoria que libera el poder del rayo para infligir",
+              "description": "Daño Electro en el AdE y prolongar la duración de abrecaminos del juramento.\n",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "Daño de habilidad|{param1}%",
+            "Daño de ofrenda mortuoria|{param2}%",
+            "Prolongación de abrecaminos del juramento|{param3} s",
+            "TdE|{param4} s",
+            "TdE de ofrenda mortuoria|{param5} s"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Rito sagrado: Celeridad lupina",
+          "description": "Invoca a un espíritu divino para que lo posea y se transforma en el abrecaminos del juramento.\n\n",
+          "abilities": [
+            {
+              "name": "Abrecaminos del juramento",
+              "description": "",
+              "descriptions": [
+                "Transforma el daño de los Ataques Normales, Cargados y Descendentes de Cyno en Daño Electro, el cual no puede sustituirse imbuyéndose de otro elemento.",
+                "Aumenta la Maestría Elemental y la RES a interrupción de Cyno y lo vuelve inmune al daño de Electrocargado.",
+                "Este efecto dura un máximo de 18s y desaparece cuando Cyno es retirado de combate."
+              ]
+            }
+          ],
+          "stats": [
+            "Daño de 1er golpe|{param1}%",
+            "Daño de 2.º golpe|{param2}%",
+            "Daño de 3er golpe|{param3}%",
+            "Daño de 4.º golpe|{param4}% + {param5}%",
+            "Daño de 5.º golpe|{param6}%",
+            "Daño de ATQ Cargado|{param7}%",
+            "Coste de Aguante de ATQ Cargado|{param8} pts.",
+            "Daño de Caída|{param9}%",
+            "Daño de impacto de caída baja/alta|{param10}% / {param11}%",
+            "Aumento de Maestría Elemental|{param12} pts.",
+            "Duración básica|{param13} s",
+            "TdE|{param14} s",
+            "Energía Elemental|{param15}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "Gracia del silencio",
+          "description": "Aumenta en un 25% las recompensas de las expediciones de 20h en Sumeru.\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
+          "title": "Juicio de la pluma",
+          "description": "Mientras está en el estado de abrecaminos del juramento de Rito sagrado: Celeridad lupina, Cyno entrará cada cierto tiempo en el estado de “profeta del fin”. Cuando usa Rito secreto: Guía de las almas abismales mientras está en ese estado, provocará el efecto de “sentencia”, el cual aumenta en un 35% el daño infligido con dicha habilidad y dispara hacia delante 3 rayos catastróficos que infligen Daño Electro equivalente al 100% del ATQ de Cyno.\nEl daño de los rayos catastróficos se considera daño de Habilidad Elemental.\n",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
+          "title": "Potestad de los Nueve Arcos",
+          "description": "Aumenta el daño de los siguientes ataques de Cyno en función de su Maestría Elemental:\n",
+          "descriptions": [
+            "El daño de los Ataques Normales ejecutados en el estado de abrecaminos del juramento aumenta en un 150% de la Maestría Elemental.",
+            "El daño de los rayos catastróficos del talento pasivo “Juicio de la pluma” aumenta en un 250% de la Maestría Elemental."
+          ]
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "Decreto: Vigilancia incansable",
+          "description": "Tras usar Rito sagrado: Celeridad lupina, la Vel. de Ataque Normal de Cyno aumenta en un 20% durante 10 s. Además, si al usar Rito secreto: Guía de las almas abismales se activa el efecto de “sentencia” del talento pasivo “Juicio de la pluma”, la duración del aumento de Vel. de Ataque Normal se reiniciará.\nEs necesario desbloquear el talento pasivo “Juicio de la pluma”.\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "Ceremonia: Retorno de las almas",
+          "description": "Cuando Cyno golpea a un enemigo con un Ataque Normal, su Bono de Daño Electro aumenta en un 10% durante 4 s. Este efecto solo se puede activar una vez cada 0.1 s y puede acumularse un máximo de 5 veces.\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "Edicto: Castigo de la ley",
+          "description": "Aumenta el nivel de habilidad de Rito sagrado: Celeridad lupina +3.\nPuede ser aumentado hasta Niv. 15.\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "Inspección: Defensa intimidante",
+          "description": "Cuando Cyno está en el estado de “abrecaminos del juramento” de Rito sagrado: Celeridad lupina y causa una reacción de Electrocargado, Superconductor, Sobrecarga, Aceleración, Intensificación, Sobreflorecimiento o Torbellino Electro, todos los miembros del equipo cercanos (a excepción de Cyno) recuperan 3 pts. de Energía Elemental.\nEste efecto solo puede ocurrir 5 veces por cada uso de Rito sagrado: Celeridad lupina.\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "Exequias: Luz del tránsito",
+          "description": "Aumenta el nivel de habilidad de Rito secreto: Guía de las almas abismales +3.\nPuede ser aumentado hasta Niv.15.\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
+          "title": "Liturgia: Balanza del juicio",
+          "description": "Tras usar Rito sagrado: Celeridad lupina o tras activar el efecto de sentencia del talento pasivo “Juicio de la pluma”, Cyno obtiene 4 cargas del efecto “rito chacálico”. Al golpear a un enemigo con un Ataque Normal, consume una carga y lanza un rayo catastrófico.\nRito chacálico dura 8s, puede acumularse un máximo de 8 veces y se anulará cuando termine la duración del estado de abrecaminos del juramento de Rito sagrado: Celeridad lupina.\nComo máximo, puede lanzar un rayo catastrófico cada 0.4s de esta manera.\nEs necesario desbloquear el talento pasivo “Juicio de la pluma”.\n",
           "descriptions": []
         }
       ]
@@ -9121,6 +9245,18 @@
       ]
     },
     {
+      "key": "makhaira-aquamarine",
+      "name": "Májaira Aguamarina",
+      "description": "Un antiguo mandoble que brilla como el agua. A pesar de haber sufrido la erosión de la arena durante tanto tiempo, su hoja no ha perdido el filo.",
+      "refinements": [
+        "Cada 10s, el ATQ del personaje que lleve esta arma equipada aumenta durante 12s en un {color}24{/color}% de su Maestría Elemental, y los personajes del equipo cercanos obtienen un 30% de este bono. Este efecto se puede acumular con los de otros personajes del equipo que lleven esta arma equipada, y se puede activar incluso cuando el personaje está en tu equipo pero no en combate.",
+        "Cada 10s, el ATQ del personaje que lleve esta arma equipada aumenta durante 12s en un {color}30{/color}% de su Maestría Elemental, y los personajes del equipo cercanos obtienen un 30% de este bono. Este efecto se puede acumular con los de otros personajes del equipo que lleven esta arma equipada, y se puede activar incluso cuando el personaje está en tu equipo pero no en combate.",
+        "Cada 10s, el ATQ del personaje que lleve esta arma equipada aumenta durante 12s en un {color}36{/color}% de su Maestría Elemental, y los personajes del equipo cercanos obtienen un 30% de este bono. Este efecto se puede acumular con los de otros personajes del equipo que lleven esta arma equipada, y se puede activar incluso cuando el personaje está en tu equipo pero no en combate.",
+        "Cada 10s, el ATQ del personaje que lleve esta arma equipada aumenta durante 12s en un {color}42{/color}% de su Maestría Elemental, y los personajes del equipo cercanos obtienen un 30% de este bono. Este efecto se puede acumular con los de otros personajes del equipo que lleven esta arma equipada, y se puede activar incluso cuando el personaje está en tu equipo pero no en combate.",
+        "Cada 10s, el ATQ del personaje que lleve esta arma equipada aumenta durante 12s en un {color}48{/color}% de su Maestría Elemental, y los personajes del equipo cercanos obtienen un 30% de este bono. Este efecto se puede acumular con los de otros personajes del equipo que lleven esta arma equipada, y se puede activar incluso cuando el personaje está en tu equipo pero no en combate."
+      ]
+    },
+    {
       "key": "mappa-mare",
       "name": "Carta Náutica",
       "description": "Un mapa muy detallado de las aguas alrededor de Teyvat. Este es uno de los maravillosos documentos que llegaron a través de las rutas comerciales de Liyue.",
@@ -9154,6 +9290,18 @@
         "Al golpear un punto débil con un Ataque Cargado, inflige un {color}150{/color}% adicional de daño de ATQ como Daño CRIT. Este efecto puede activarse una vez cada 10 s.",
         "Al golpear un punto débil con un Ataque Cargado, inflige un {color}175{/color}% adicional de daño de ATQ como Daño CRIT. Este efecto puede activarse una vez cada 10 s.",
         "Al golpear un punto débil con un Ataque Cargado, inflige un {color}200{/color}% adicional de daño de ATQ como Daño CRIT. Este efecto puede activarse una vez cada 10 s."
+      ]
+    },
+    {
+      "key": "missive-windspear",
+      "name": "Alabarda del Viento Epistolar",
+      "description": "Un estandarte que puede guiar hacia el viento. Los vientos que soplan por lugares idílicos no siempre son gentiles.",
+      "refinements": [
+        "Tras causar una Reacción Elemental, el ATQ aumenta en un {color}12{/color}% y la Maestría Elemental aumenta en {color}48{/color} pts. durante 10s.",
+        "Tras causar una Reacción Elemental, el ATQ aumenta en un {color}15{/color}% y la Maestría Elemental aumenta en {color}60{/color} pts. durante 10s.",
+        "Tras causar una Reacción Elemental, el ATQ aumenta en un {color}18{/color}% y la Maestría Elemental aumenta en {color}72{/color} pts. durante 10s.",
+        "Tras causar una Reacción Elemental, el ATQ aumenta en un {color}21{/color}% y la Maestría Elemental aumenta en {color}84{/color} pts. durante 10s.",
+        "Tras causar una Reacción Elemental, el ATQ aumenta en un {color}24{/color}% y la Maestría Elemental aumenta en {color}96{/color} pts. durante 10s."
       ]
     },
     {
@@ -9702,6 +9850,18 @@
         "Aumenta la Vida en un {color}30{/color}%. Además, el personaje que lleve esta arma equipada obtendrá un {color}1.2{/color}% de Bono de ATQ en proporción a su Vida Máx. Cuando la Vida de dicho personaje esté por debajo del 50%, el ATQ aumentará en un {color}1.4{/color}% adicional en proporción a su Vida Máx.",
         "Aumenta la Vida en un {color}35{/color}%. Además, el personaje que lleve esta arma equipada obtendrá un {color}1.4{/color}% de Bono de ATQ en proporción a su Vida Máx. Cuando la Vida de dicho personaje esté por debajo del 50%, el ATQ aumentará en un {color}1.6{/color}% adicional en proporción a su Vida Máx.",
         "Aumenta la Vida en un {color}40{/color}%. Además, el personaje que lleve esta arma equipada obtendrá un {color}1.6{/color}% de Bono de ATQ en proporción a su Vida Máx. Cuando la Vida de dicho personaje esté por debajo del 50%, el ATQ aumentará en un {color}1.8{/color}% adicional en proporción a su Vida Máx."
+      ]
+    },
+    {
+      "key": "staff-of-the-scarlet-sands",
+      "name": "Báculo de las Arenas Escarlatas",
+      "description": "Un báculo que venía junto a un cetro y que está hecho de obsidiana. En las leyendas, tiene el poder de guiar a los habitantes del desierto, pero hoy en día ya no vive ningún subordinado capaz de corroborar el auténtico aspecto de este objeto de la realeza.",
+      "refinements": [
+        "Otorga al portador de esta arma un Bono de ATQ del {color}52{/color}% de su Maestría Elemental. Al golpear a un enemigo con una Habilidad Elemental, se crea durante 10s el efecto de “sueño del desierto escarlata”, el cual otorga al personaje que porte esta arma un Bono de ATQ del {color}28{/color}% de su Maestría Elemental. Este efecto puede acumularse un máximo de 3 veces.",
+        "Otorga al portador de esta arma un Bono de ATQ del {color}65{/color}% de su Maestría Elemental. Al golpear a un enemigo con una Habilidad Elemental, se crea durante 10s el efecto de “sueño del desierto escarlata”, el cual otorga al personaje que porte esta arma un Bono de ATQ del {color}35{/color}% de su Maestría Elemental. Este efecto puede acumularse un máximo de 3 veces.",
+        "Otorga al portador de esta arma un Bono de ATQ del {color}78{/color}% de su Maestría Elemental. Al golpear a un enemigo con una Habilidad Elemental, se crea durante 10s el efecto de “sueño del desierto escarlata”, el cual otorga al personaje que porte esta arma un Bono de ATQ del {color}42{/color}% de su Maestría Elemental. Este efecto puede acumularse un máximo de 3 veces.",
+        "Otorga al portador de esta arma un Bono de ATQ del {color}91{/color}% de su Maestría Elemental. Al golpear a un enemigo con una Habilidad Elemental, se crea durante 10s el efecto de “sueño del desierto escarlata”, el cual otorga al personaje que porte esta arma un Bono de ATQ del {color}49{/color}% de su Maestría Elemental. Este efecto puede acumularse un máximo de 3 veces.",
+        "Otorga al portador de esta arma un Bono de ATQ del {color}104{/color}% de su Maestría Elemental. Al golpear a un enemigo con una Habilidad Elemental, se crea durante 10s el efecto de “sueño del desierto escarlata”, el cual otorga al personaje que porte esta arma un Bono de ATQ del {color}56{/color}% de su Maestría Elemental. Este efecto puede acumularse un máximo de 3 veces."
       ]
     },
     {
@@ -10346,6 +10506,11 @@
       "description": "Material de ascensión de personaje"
     },
     {
+      "key": "ajilenakh-nut",
+      "name": "Dátil",
+      "description": "El fruto de un árbol de hoja perenne que crece en los oasis del desierto. La carne que se encuentra bajo su dura piel es gruesa, dulce y deliciosa. Es una importante fuente de alimento para los habitantes del desierto."
+    },
+    {
       "key": "almond",
       "name": "Almendra",
       "description": "Un fruto seco con un sabor muy intenso que puede dar un toque diferente a cualquier plato."
@@ -10639,6 +10804,11 @@
       "key": "damaged-mask",
       "name": "Máscara dañada",
       "description": "Máscara de huesos dañada que perteneció a algún Hilichurl.\r\nHay más piezas dañadas que intactas, por lo que ha perdido totalmente su utilidad."
+    },
+    {
+      "key": "damaged-prism",
+      "name": "Prisma dañado",
+      "description": "Una pieza dañada obtenida tras derrotar a una Creación Primigenia.\nEstas máquinas de forma extraña son las guardianas eternas de las ruinas del desierto y tienen el poder de perforar las montañas y moldear las rocas. Los principios de funcionamiento de estas máquinas son similares a muchos de los misteriosos mecanismos que hay sobre y bajo la tierra."
     },
     {
       "key": "dandelion-seed",
@@ -11081,6 +11251,11 @@
       "description": "Una insignia para identificar a los oficiales. Los Fatui poseen un ejército colosal, por lo que los que alcanzaron este rango deben tener algo extraordinario."
     },
     {
+      "key": "light-guiding-tetrahedron",
+      "name": "Tetraedro guialuz",
+      "description": "Un componente principal obtenido tras derrotar a una misteriosa combinación de mecanismos.\nA día de hoy, estas antiguas máquinas no han olvidado los sueños de sus dueños ni sus propios deberes: construir mil palacios, comandar tres mil máquinas, plantar diez mil flores que ya no florecen y recrear el paraíso enterrado en la arena del desierto para todos aquellos que habitan este mundo.\nAunque el rey del desierto ya no exista y su sueño haya sido corrompido por los susurros de sus pecados, aunque todos los pilares mágicos estén completamente destruidos y se hayan derribado, la criatura gigante que antaño fue la favorita del rey ahora se encuentra oculta en una tormenta de arena ardiente."
+    },
+    {
       "key": "lightning-prism",
       "name": "Prisma del relámpago",
       "description": "Utilizado por el Hipostasis Electro para concentrar poder elemental. Contiene poder Electro puro.\r\nLos prismas pueden descomponer la luz en colores, así como el Prisma del relámpago entrelaza la energía que fluye en rayos puros. Aunque el Hipostasis Electro haya sido derrotado, el elemento Electro continúa concentrado en este prisma."
@@ -11401,6 +11576,11 @@
       "description": "Un condimento ligeramente picante. Disminuye la pesadez de la grasa y potencia el sabor de los alimentos. Perfecto para combinar con la carne."
     },
     {
+      "key": "perpetual-caliber",
+      "name": "Resorte perpetuo",
+      "description": "Un dispositivo motriz extraído de una misteriosa máquina de las ruinas.\nContinúa girando aunque la máquina a la que le daba energía ya ha sido destruida.\nSe supone que no existe ninguna fuente de energía continua e infinita en el mundo. De hecho, la mayoría de investigaciones sobre el movimiento perpetuo han sido refutadas. Sin embargo, este dispositivo demuestra que una civilización que desapareció hace tiempo alcanzó niveles que hoy en día parecen imposibles de igualar."
+    },
+    {
       "key": "perpetual-heart",
       "name": "Corazón de la eternidad",
       "description": "El núcleo que permite moverse de manera autónoma a la Maquinaria Eterna.\r\nSegún algunas teorías, los patrones de estos núcleos tienen la sabiduría y la lógica inscritas en ellos mediante un lenguaje imperceptible para el ojo humano. Algunas personas van más allá y creen que, debido al enorme tamaño de estos núcleos y sus complicadas inscripciones, estas máquinas decidieron abandonar su forma biomimética en pos de un mayor poder y funcionalidad."
@@ -11521,6 +11701,11 @@
       "description": "Una flor blanca traslúcida que solo crece en los picos rocosos más altos. No se adapta bien al calor y a la humedad de las llanuras, sino que prefiere contemplar el horizonte desde los terrenos elevados."
     },
     {
+      "key": "radiant-prism",
+      "name": "Prisma radiante",
+      "description": "Una pieza de exquisita elaboración obtenida tras derrotar a una Creación Primigenia.\nEn el pasado, el rey del desierto tuvo un sueño e hizo muchas promesas.\nCuentan las leyendas del desierto que estas máquinas fueron creadas para cumplir esas promesas. Sin embargo, hoy en día, tanto el sueño como las promesas han sido olvidados y solo viven en la memoria mecánica de estas máquinas."
+    },
+    {
       "key": "radish",
       "name": "Rábano",
       "description": "Rico en fibra y nutrientes, y muy fácil de cultivar y cosechar."
@@ -11539,6 +11724,11 @@
       "key": "recruits-insignia",
       "name": "Insignia del recluta",
       "description": "Una insignia para identificar a los reclutas. Hace que uno se pregunte en qué estaban pensando aquellos que se unieron a la máquina de guerra de los Fatui."
+    },
+    {
+      "key": "redcrest",
+      "name": "Añoraescarlata",
+      "description": "El fruto de una planta que es capaz de sobrevivir hasta en el inhóspito entorno del desierto. Este fruto escarlata se ve incluso más impresionante con el contraste de las arenas doradas del desierto."
     },
     {
       "key": "relic-from-guyun",
@@ -11604,6 +11794,11 @@
       "key": "sausage",
       "name": "Salchicha",
       "description": "Carne picada y compactada en una forma alargada. Gracias a su fácil conservación, satisface las necesidades diarias de cualquier amante de la carne."
+    },
+    {
+      "key": "scarab",
+      "name": "Escarabajo dorado",
+      "description": "Un tenaz escarabajo que habita en el vasto mar de arena del desierto. Los patrones dorados de su caparazón parecen tener cierta conexión con las antiguas ruinas distribuidas por todo el desierto."
     },
     {
       "key": "scattered-piece-of-decarabians-dream",
@@ -11914,6 +12109,11 @@
       "key": "trimmed-red-silk",
       "name": "Seda roja bordada",
       "description": "Un trozo de seda roja recortada con adornos sencillos.\nUn guerrero experimentado es capaz de detectar la debilidad en los ojos de su adversario y tomar ventaja de ella. Desde hace tiempo, Los Eremitas no tienen un maestro al que servir, y ahora no confían en nadie más que en sí mismos. Están convencidos de que cualquier cosa te puede traicionar, incluso tus propios ojos."
+    },
+    {
+      "key": "turbid-prism",
+      "name": "Prisma enturbiado",
+      "description": "Una pieza antigua obtenida tras derrotar a una Creación Primigenia.\nSe dice que estas máquinas no fueron creadas para la destrucción o la conquista, a diferencia de las máquinas de las ruinas que provienen de las profundidades del desierto."
     },
     {
       "key": "tusk-of-monoceros-caeli",
@@ -12235,6 +12435,14 @@
       "name": "Bardo del Abismo - Trueno púrpura"
     },
     {
+      "key": "aeonblight-drake",
+      "name": "Dragón Aciagoeterno"
+    },
+    {
+      "key": "algorithm-of-semi-intransient-matrix-of-overseer-network",
+      "name": "Algoritmo de Semi-Incesante Matriz de Observación Navegadora"
+    },
+    {
       "key": "anemo-hypostasis",
       "name": "Hipostasis Anemo"
     },
@@ -12391,12 +12599,20 @@
       "name": "Eremita Ablucionadora"
     },
     {
+      "key": "eremite-galehunter",
+      "name": "Eremita Cazavientos"
+    },
+    {
       "key": "eremite-linebreaker",
       "name": "Eremita Rompefilas"
     },
     {
       "key": "eremite-ravenbeak-halberdier",
       "name": "Eremita Alabardero"
+    },
+    {
+      "key": "eremite-stone-enchanter",
+      "name": "Eremita Hechizarrocas"
     },
     {
       "key": "eremite-sunfrost",
@@ -12447,6 +12663,10 @@
       "name": "Soldado Fatui - Guerrillero con Cañón Pyro"
     },
     {
+      "key": "floating-anemo-fungus",
+      "name": "Flotihongo Anemo"
+    },
+    {
       "key": "floating-dendro-fungus",
       "name": "Flotihongo Dendro"
     },
@@ -12485,6 +12705,10 @@
     {
       "key": "golden-wolflord",
       "name": "Rey Acechador Dorado"
+    },
+    {
+      "key": "grounded-geoshroom",
+      "name": "Geohongo Terrestre"
     },
     {
       "key": "grounded-hydroshroom",
@@ -12687,6 +12911,18 @@
       "name": "Maquinaria Eterna"
     },
     {
+      "key": "primal-construct-prospector",
+      "name": "Creación Primigenia - Prospectora"
+    },
+    {
+      "key": "primal-construct-repulsor",
+      "name": "Constructor Primigenio - Repulsora"
+    },
+    {
+      "key": "primal-construct-reshaper",
+      "name": "Creación Primigenia - Remodeladora"
+    },
+    {
       "key": "primo-geovishap",
       "name": "Protodragarto Geo"
     },
@@ -12819,6 +13055,14 @@
       "name": "Capitán Ashigaru del shogunato"
     },
     {
+      "key": "spirit-of-omen-stone-drake",
+      "name": "Ominoespíritu - Dragón rocoso"
+    },
+    {
+      "key": "spirit-of-omen-wind-glede",
+      "name": "Ominoespíritu - Milano de viento"
+    },
+    {
       "key": "stonehide-lawachurl",
       "name": "Lawachurl Acorazado"
     },
@@ -12829,6 +13073,10 @@
     {
       "key": "stretchy-anemo-fungus",
       "name": "Flexihongo Anemo"
+    },
+    {
+      "key": "stretchy-electro-fungus",
+      "name": "Flexihongo Electro"
     },
     {
       "key": "stretchy-geo-fungus",
@@ -12933,6 +13181,10 @@
     {
       "key": "whirling-electro-fungus",
       "name": "Girohongo Electro"
+    },
+    {
+      "key": "whirling-pyro-fungus",
+      "name": "Girohongo Pyro"
     },
     {
       "key": "winged-cryoshroom",

@@ -1025,86 +1025,146 @@
     {
       "key": "candace",
       "name": "坎蒂丝",
-      "title": "？？？",
-      "description": "测试角色",
+      "title": "浮金的誓愿",
+      "description": "有着琥珀色左眼的赤王后裔，阿如村的守护者。",
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "普通攻击·流耀枪术·守势",
+          "description": "",
+          "abilities": [
+            {
+              "name": "普通攻击",
+              "description": "进行至多四段的连续枪击。\n",
+              "descriptions": []
+            },
+            {
+              "name": "重击",
+              "description": "消耗一定体力，向前方突进，对路径上的敌人造成伤害。\n",
+              "descriptions": []
+            },
+            {
+              "name": "下落攻击",
+              "description": "从空中下坠冲击地面，攻击下落路径上的敌人，并在落地时造成范围伤害。",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "一段伤害|{param1}%",
+            "二段伤害|{param2}%",
+            "三段伤害|{param3}% + {param4}%",
+            "四段伤害|{param5}%",
+            "重击伤害|{param6}%",
+            "重击体力消耗|{param7}点",
+            "下坠期间伤害|{param8}%",
+            "低空/高空坠地冲击伤害|{param9}% / {param10}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "圣仪·苍鹭庇卫",
+          "description": "坎蒂丝的战斗风格，是能抵御洪水一般的军势的。\n\n",
+          "abilities": [
+            {
+              "name": "点按",
+              "description": "以盾牌进行冲击，向前方造成水元素伤害。\n",
+              "descriptions": []
+            },
+            {
+              "name": "长按",
+              "description": "举起盾牌抵挡周围敌人的攻击，形成护盾，伤害吸收量受益于坎蒂丝的生命值上限，并且对水元素伤害有250%的吸收效果。护盾持续至元素战技施放完毕。\n长按一段时间后，坎蒂丝将完成蓄力，并在松开技能、持续时间结束，或护盾被破坏时，进行跳跃攻击，对前方的敌人造成水元素伤害。\n",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "护盾吸收量|{param1}%生命值上限 + {param2}",
+            "基础伤害|{param3}%生命值上限",
+            "蓄力完成伤害|{param4}%生命值上限",
+            "点按冷却时间|{param5}秒",
+            "长按冷却时间|{param6}秒"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "圣仪·灰鸰衒潮",
+          "description": "高举武器，召请神佑，基于坎蒂丝的生命值上限，造成水元素范围伤害，并持续为当前场上自己的角色赋予「赤冕祝祷」状态。\n\n",
+          "abilities": [
+            {
+              "name": "赤冕祝祷",
+              "description": "具有如下特性：\n",
+              "descriptions": [
+                "角色的普通攻击对敌人造成元素伤害时，提高造成的伤害；",
+                "角色登场时，会发动水波冲击，对周围的敌人造成水元素伤害。该效果在持续时间内触发的次数有限；",
+                "处于这种状态下的单手剑、双手剑、长柄武器角色会获得水元素附魔。"
+              ]
+            }
+          ],
+          "stats": [
+            "技能伤害|{param1}%生命值上限",
+            "持续时间|{param2}秒",
+            "伤害加成|{param3}%",
+            "水波冲击伤害|{param4}%生命值上限",
+            "水波冲击触发次数|{param5}次",
+            "冷却时间|{param6}秒",
+            "元素能量|{param7}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "向拂晓的初光",
+          "description": "队伍中自己的角色攀爬消耗的体力降低20%。\n无法与效果完全相同的固有天赋叠加。\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
+          "title": "流羽交护",
+          "description": "若坎蒂丝在圣仪·苍鹭庇卫长按期间受到攻击，会立即完成蓄力。\n",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "NA",
-          "description": "",
+          "title": "漫沙陨穹",
+          "description": "处于圣仪·灰鸰衒潮的赤冕祝祷状态下的角色，普通攻击对敌人造成元素伤害时，坎蒂丝每1000点生命值上限会使这次伤害提高0.5%。\n",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "赤沙的归嗣",
+          "description": "圣仪·灰鸰衒潮的赤冕祝祷状态持续时间延长3秒。\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "贯月的耀锋",
+          "description": "圣仪·苍鹭庇卫命中敌人时，坎蒂丝的生命值上限提升20%，持续15秒。\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "织狩的奉祀",
+          "description": "圣仪·灰鸰衒潮的技能等级提高3级。\n至多提升至15级。\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "守戍的誓命",
+          "description": "缩短圣仪·苍鹭庇卫长按的冷却时间，使其降低至与点按的冷却时间相同。\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "萦金的苍瞳",
+          "description": "圣仪·苍鹭庇卫的技能等级提高3级。\n至多提升至15级。\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
+          "title": "衍溢的汐潮",
+          "description": "处于圣仪·灰鸰衒潮的赤冕祝祷状态下的当前场上角色（不包括坎蒂丝自己），在普通攻击对敌人造成元素伤害时，将释放衍潮冲击，造成相当于坎蒂丝生命值上限15%水元素范围伤害。\n该效果每2.3秒至多触发一次，造成的伤害视为元素爆发伤害。\n",
           "descriptions": []
         }
       ]
@@ -1361,87 +1421,154 @@
     {
       "key": "cyno",
       "name": "赛诺",
-      "title": "？？？",
-      "description": "测试角色",
+      "title": "缄秘的裁遣",
+      "description": "教令院内负责监管学者们的「大风纪官」。工作时比刹诃伐罗学院制作的「大风机关」更有效率。",
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "普通攻击·七圣枪术",
+          "description": "",
+          "abilities": [
+            {
+              "name": "普通攻击",
+              "description": "进行至多四段的连续枪击。\n",
+              "descriptions": []
+            },
+            {
+              "name": "重击",
+              "description": "消耗一定体力，向前方突进，对路径上的敌人造成伤害。\n",
+              "descriptions": []
+            },
+            {
+              "name": "下落攻击",
+              "description": "从空中下坠冲击地面，攻击下落路径上的敌人，并在落地时造成范围伤害。",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "一段伤害|{param1}%",
+            "二段伤害|{param2}%",
+            "三段伤害|{param3}% + {param4}%",
+            "四段伤害|{param5}%",
+            "重击伤害|{param6}%",
+            "重击体力消耗|{param7}点",
+            "下坠期间伤害|{param8}%",
+            "低空/高空坠地冲击伤害|{param9}% / {param10}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "秘仪·律渊渡魂",
+          "description": "疾速突进，对路径上的敌人造成雷元素伤害。\n\n当赛诺处于元素爆发「圣仪·煟煌随狼行」的启途誓使状态下时，将转而施展",
+          "abilities": [
+            {
+              "name": "冥祭，释放惊雷的力量，造成",
+              "description": "雷元素范围伤害，并延长启途誓使状态的持续时间。\n",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "技能伤害|{param1}%",
+            "冥祭伤害|{param2}%",
+            "启途誓使时间延长|{param3}秒",
+            "冷却时间|{param4}秒",
+            "冥祭冷却时间|{param5}秒"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "圣仪·煟煌随狼行",
+          "description": "唤请神灵凭依，化身「启途誓使」。\n\n",
+          "abilities": [
+            {
+              "name": "启途誓使",
+              "description": "将赛诺的普通攻击、重击与下落攻击造成的伤害转为无法被附魔覆盖的雷元素伤害；\n",
+              "descriptions": [
+                "赛诺的元素精通提升，抗打断能力提高，并免疫感电反应造成的伤害。",
+                "效果将在赛诺退场时解除，至多持续18秒。"
+              ]
+            }
+          ],
+          "stats": [
+            "一段伤害|{param1}%",
+            "二段伤害|{param2}%",
+            "三段伤害|{param3}%",
+            "四段伤害|{param4}% + {param5}%",
+            "五段伤害|{param6}%",
+            "重击伤害|{param7}%",
+            "重击体力消耗|{param8}点",
+            "下坠期间伤害|{param9}%",
+            "低空/高空坠地冲击伤害|{param10}% / {param11}%",
+            "元素精通提升|{param12}点",
+            "基础持续时间|{param13}秒",
+            "冷却时间|{param14}秒",
+            "元素能量|{param15}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "缄默的惠赐",
+          "description": "在须弥执行时长为20小时的探索派遣任务时，获得的奖励增加25%。\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
+          "title": "落羽的裁择",
+          "description": "在圣仪·煟煌随狼行的启途誓使状态下时，赛诺将间歇性处于「末途真眼」状态下。在该状态期间施放秘仪·律渊渡魂时，将触发「裁定」效果，使此次秘仪·律渊渡魂造成的伤害提升35%，并向前方发射3道渡荒之雷，造成等同于赛诺攻击力100%的雷元素伤害。\n渡荒之雷造成的伤害视为元素战技伤害。\n",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
+          "title": "九弓的执命",
+          "description": "基于赛诺的元素精通，提高自身以下攻击造成的伤害值：\n",
+          "descriptions": [
+            "启途誓使状态下的普通攻击：元素精通的150%；",
+            "固有天赋「落羽的裁择」的渡荒之雷：元素精通的250%。"
+          ]
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "立仪·俯览昼冥",
+          "description": "施放圣仪·煟煌随狼行后，赛诺普通攻击的攻击速度提升20%，持续10秒。若施放秘仪·律渊渡魂时触发了固有天赋「落羽的裁择」的「裁定」效果，将刷新该效果的持续时间。\n需要解锁固有天赋「落羽的裁择」。\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "令仪·引谒归灵",
+          "description": "赛诺的普通攻击命中敌人后，雷元素伤害加成提升10%，持续4秒。该效果每0.1秒至多触发一次，至多叠加5层。\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "律仪·行度誓惩",
+          "description": "圣仪·煟煌随狼行的技能等级提高3级。\n至多提升至15级。\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "巡仪·蒇护禁罔",
+          "description": "赛诺处于圣仪·煟煌随狼行的启途誓使状态下时，触发感电、超导、超载、原激化、超激化、超绽放、雷元素扩散反应后，将为队伍中附近的所有角色（除了赛诺自己）恢复3点元素能量。\n该效果在一次圣仪·煟煌随狼行中，至多触发5次。\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "幽仪·逝往星芒",
+          "description": "秘仪·律渊渡魂的技能等级提高3级。\n至多提升至15级。\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
+          "title": "羽仪·裁落钧衡",
+          "description": "施放圣仪·煟煌随狼行或触发固有天赋「落羽的裁择」的「裁定」后，赛诺将获得4层「豺祭」效果。赛诺的普通攻击命中敌人时，将消耗一层「豺祭」效果，并发射一道渡荒之雷。\n",
+          "descriptions": [
+            "「豺祭」持续8秒，至多叠加8层，并将在圣仪煟煌随狼行的启途誓使状态结束后移除。",
+            "每0.4秒至多通过这种方式发射一道渡荒之雷。",
+            "需要解锁固有天赋「落羽的裁择」。"
+          ]
         }
       ]
     },
@@ -9120,6 +9247,18 @@
       ]
     },
     {
+      "key": "makhaira-aquamarine",
+      "name": "玛海菈的水色",
+      "description": "一柄光泽如水的古老大剑，经过千年流沙磨洗，锋刃依然锐利异常。",
+      "refinements": [
+        "每10秒，产生如下效果：基于装备者的元素精通的{color}24{/color}%，提升该角色的攻击力，并基于该提升的30%为队伍中附近的其他角色提升攻击力，持续12秒，多件同名武器产生的此效果可以叠加。角色处于队伍后台时也能触发效果。",
+        "每10秒，产生如下效果：基于装备者的元素精通的{color}30{/color}%，提升该角色的攻击力，并基于该提升的30%为队伍中附近的其他角色提升攻击力，持续12秒，多件同名武器产生的此效果可以叠加。角色处于队伍后台时也能触发效果。",
+        "每10秒，产生如下效果：基于装备者的元素精通的{color}36{/color}%，提升该角色的攻击力，并基于该提升的30%为队伍中附近的其他角色提升攻击力，持续12秒，多件同名武器产生的此效果可以叠加。角色处于队伍后台时也能触发效果。",
+        "每10秒，产生如下效果：基于装备者的元素精通的{color}42{/color}%，提升该角色的攻击力，并基于该提升的30%为队伍中附近的其他角色提升攻击力，持续12秒，多件同名武器产生的此效果可以叠加。角色处于队伍后台时也能触发效果。",
+        "每10秒，产生如下效果：基于装备者的元素精通的{color}48{/color}%，提升该角色的攻击力，并基于该提升的30%为队伍中附近的其他角色提升攻击力，持续12秒，多件同名武器产生的此效果可以叠加。角色处于队伍后台时也能触发效果。"
+      ]
+    },
+    {
       "key": "mappa-mare",
       "name": "万国诸海图谱",
       "description": "详尽记载了大陆周边海流气候的海图，是从异国经由商路流落到璃月的奇异典籍。",
@@ -9153,6 +9292,18 @@
         "重击若命中要害，则额外造成{color}150{/color}%攻击力的伤害，该伤害必定暴击。此效果每10秒只能触发一次。",
         "重击若命中要害，则额外造成{color}175{/color}%攻击力的伤害，该伤害必定暴击。此效果每10秒只能触发一次。",
         "重击若命中要害，则额外造成{color}200{/color}%攻击力的伤害，该伤害必定暴击。此效果每10秒只能触发一次。"
+      ]
+    },
+    {
+      "key": "missive-windspear",
+      "name": "风信之锋",
+      "description": "导示长风的标鹄。风的牧歌并不总是轻柔如初…",
+      "refinements": [
+        "触发元素反应后的10秒内，攻击力提升{color}12{/color}%，元素精通提升{color}48{/color}点。",
+        "触发元素反应后的10秒内，攻击力提升{color}15{/color}%，元素精通提升{color}60{/color}点。",
+        "触发元素反应后的10秒内，攻击力提升{color}18{/color}%，元素精通提升{color}72{/color}点。",
+        "触发元素反应后的10秒内，攻击力提升{color}21{/color}%，元素精通提升{color}84{/color}点。",
+        "触发元素反应后的10秒内，攻击力提升{color}24{/color}%，元素精通提升{color}96{/color}点。"
       ]
     },
     {
@@ -9701,6 +9852,18 @@
         "生命值提升{color}30{/color}%。此外，基于装备该武器的角色生命值上限的{color}1.2{/color}%，获得攻击力加成。当装备该武器的角色生命值低于50%时，进一步获得{color}1.4{/color}%基于生命值上限的攻击力提升。",
         "生命值提升{color}35{/color}%。此外，基于装备该武器的角色生命值上限的{color}1.4{/color}%，获得攻击力加成。当装备该武器的角色生命值低于50%时，进一步获得{color}1.6{/color}%基于生命值上限的攻击力提升。",
         "生命值提升{color}40{/color}%。此外，基于装备该武器的角色生命值上限的{color}1.6{/color}%，获得攻击力加成。当装备该武器的角色生命值低于50%时，进一步获得{color}1.8{/color}%基于生命值上限的攻击力提升。"
+      ]
+    },
+    {
+      "key": "staff-of-the-scarlet-sands",
+      "name": "赤沙之杖",
+      "description": "黑曜石塑造的一对的权杖中的一件。在传说中，具有引领沙之民的权威，但如今已经没有能辨别出这件王器形象的臣子了。",
+      "refinements": [
+        "基于装备者元素精通的{color}52{/color}%，获得攻击力加成。元素战技命中敌人时，将产生持续10秒的「赤沙之梦」效果：基于装备者元素精通的{color}28{/color}%，获得攻击力加成，该效果至多叠加3层。",
+        "基于装备者元素精通的{color}65{/color}%，获得攻击力加成。元素战技命中敌人时，将产生持续10秒的「赤沙之梦」效果：基于装备者元素精通的{color}35{/color}%，获得攻击力加成，该效果至多叠加3层。",
+        "基于装备者元素精通的{color}78{/color}%，获得攻击力加成。元素战技命中敌人时，将产生持续10秒的「赤沙之梦」效果：基于装备者元素精通的{color}42{/color}%，获得攻击力加成，该效果至多叠加3层。",
+        "基于装备者元素精通的{color}91{/color}%，获得攻击力加成。元素战技命中敌人时，将产生持续10秒的「赤沙之梦」效果：基于装备者元素精通的{color}49{/color}%，获得攻击力加成，该效果至多叠加3层。",
+        "基于装备者元素精通的{color}104{/color}%，获得攻击力加成。元素战技命中敌人时，将产生持续10秒的「赤沙之梦」效果：基于装备者元素精通的{color}56{/color}%，获得攻击力加成，该效果至多叠加3层。"
       ]
     },
     {
@@ -10360,6 +10523,11 @@
       "description": "角色突破素材。"
     },
     {
+      "key": "ajilenakh-nut",
+      "name": "枣椰",
+      "description": "沙漠绿洲中的常绿乔木结出的果实。坚硬果皮下的果肉肉质绵厚，甘甜可口，对沙海子民而言是重要的食物来源。"
+    },
+    {
       "key": "almond",
       "name": "杏仁",
       "description": "有着奇特香味的种子。能给食物带来全然不同的清新风味。"
@@ -10653,6 +10821,11 @@
       "key": "damaged-mask",
       "name": "破损的面具",
       "description": "破碎的骨质面具，曾经属于某个丘丘人。\r\n破损的部分比完整的部分更多，已经失去了假面应有的功能。"
+    },
+    {
+      "key": "damaged-prism",
+      "name": "破缺棱晶",
+      "description": "打倒元能构装体后获得的破碎零件。\n这些造型特异的机械是沙漠遗迹永恒的守护者，具有足以凿穿岩山，重塑巨石的力量。驱动这些机械运作的原理与地上、地下许多神秘的机关相似。"
     },
     {
       "key": "dandelion-seed",
@@ -11095,6 +11268,11 @@
       "description": "标识着尉官身份的徽记。愚人众拥有庞大的军队，能在其中担任尉官者，想必是有过人之处吧。"
     },
     {
+      "key": "light-guiding-tetrahedron",
+      "name": "导光四面体",
+      "description": "击败神秘的机关组合后，获得的核心部件。\n即使到今日，古老的机械也从未遗忘主人的梦与自己的职责：构筑一千座宫殿、统辖三千台机械、种下一万朵如今已经不再开放的花，为地上一切有灵者重现埋没在沙海中的「乐园」。\n即使荒漠的王者已经不再，梦想也因为深罪的低语而腐败；即使所有魔柱都完全折断、倒塌，原本受王青睐的巨兽隐入热砂的风暴中。"
+    },
+    {
       "key": "lightning-prism",
       "name": "雷光棱镜",
       "description": "无相之雷用于汇聚元素，修复损伤的元素物质。其中蕴含着至纯的雷之力。\r\n棱镜能将构成光的色彩区分，而雷光棱镜将奔流的能量编织成纯粹的雷光。即使无相之雷已经被击败，雷元素也持续在这只棱镜中汇聚。"
@@ -11415,6 +11593,11 @@
       "description": "带有香辛味的调味剂。能够解腻并激发食材的香味，和肉搭配在一起最佳。"
     },
     {
+      "key": "perpetual-caliber",
+      "name": "永续机芯",
+      "description": "从神秘的遗迹机械上取来的动力机关。\n即使它所驱动的机体已经被摧毁，仍在持续运转着。\n地上理应不存在无限持续的能源，关于「永动」的研究成果发表也大多被证伪。然而从这枚机芯可以看出，如今已经覆灭的文明曾经一度触及人所不能抵达的领域。"
+    },
+    {
       "key": "perpetual-heart",
       "name": "恒常机关之心",
       "description": "驱使恒常机关阵列自律行动的核心。\r\n有人推测这种核心上的纹样当中以肉眼不可见的语言写上了智能与逻辑，也有人进一步认为这种特殊的遗迹机关因为格外庞大的核心与复杂的纹样，自发选择抛弃了生物的姿态，转而追求性能的强大。"
@@ -11535,6 +11718,11 @@
       "description": "只生长在孤高石峰的通透白花。不愿接受平原的温暖与湿润，宁可在清冷的尖峰眺望远方。"
     },
     {
+      "key": "radiant-prism",
+      "name": "辉光棱晶",
+      "description": "打倒元能构装体后获得的精巧零件。\n荒漠的王曾经做过一个梦，也做出过许多许诺。\n在荒漠的传说中，这些机械的造物原本是践行诺言的道具，如今也只有它们的机械记忆体中刻写着无人记得的梦与承诺吧。"
+    },
+    {
       "key": "radish",
       "name": "白萝卜",
       "description": "纤维分明的草本植物。易于种植与收获的作物，富含纤维与营养。"
@@ -11553,6 +11741,11 @@
       "key": "recruits-insignia",
       "name": "新兵的徽记",
       "description": "标识着新兵身份的徽记。不知曾经带着它的人，是怀着何种心情加入愚人众的战争机器的呢。"
+    },
+    {
+      "key": "redcrest",
+      "name": "赤念果",
+      "description": "在恶劣的沙漠环境中也能存活的植物所结的果子，赤红的果实在黄沙映衬下显得格外动人。"
     },
     {
       "key": "relic-from-guyun",
@@ -11618,6 +11811,11 @@
       "key": "sausage",
       "name": "香肠",
       "description": "灌入肠衣后制成的条状兽肉。便于储存的特性，极大地满足了肉食爱好者的日常需要。"
+    },
+    {
+      "key": "scarab",
+      "name": "圣金虫",
+      "description": "栖息在浩瀚沙海之中的顽强甲虫。甲壳上的金色纹路似乎暗示着它们与遍布沙漠的古老遗迹间存在某种渊源。"
     },
     {
       "key": "scattered-piece-of-decarabians-dream",
@@ -11928,6 +12126,11 @@
       "key": "trimmed-red-silk",
       "name": "镶边红绸",
       "description": "镶有简单装饰的红色绸缎。\n老练的战士能够从对手眼神中的破绽，找到先机。镀金旅团早已失去了可效忠的主，能够相信的只有自己。据说，他们坚信万物皆会背叛，连自己的双眼也不例外。"
+    },
+    {
+      "key": "turbid-prism",
+      "name": "混浊棱晶",
+      "description": "打倒元能构装体后获得的老旧零件。\n据说这些机械与同样来自沙海深处的「遗迹机关」不同，并不是作为歼灭与征服的使者被制造出来的。"
     },
     {
       "key": "tusk-of-monoceros-caeli",
@@ -12249,6 +12452,14 @@
       "name": "深渊咏者·紫电"
     },
     {
+      "key": "aeonblight-drake",
+      "name": "兆载永劫龙兽"
+    },
+    {
+      "key": "algorithm-of-semi-intransient-matrix-of-overseer-network",
+      "name": "半永恒统辖矩阵"
+    },
+    {
       "key": "anemo-hypostasis",
       "name": "无相之风"
     },
@@ -12405,12 +12616,20 @@
       "name": "镀金旅团·沙中净水"
     },
     {
+      "key": "eremite-galehunter",
+      "name": "镀金旅团·灵风猎手"
+    },
+    {
       "key": "eremite-linebreaker",
       "name": "镀金旅团·破阵者"
     },
     {
       "key": "eremite-ravenbeak-halberdier",
       "name": "镀金旅团·鸦喙戟手"
+    },
+    {
+      "key": "eremite-stone-enchanter",
+      "name": "镀金旅团·魔岩役使"
     },
     {
       "key": "eremite-sunfrost",
@@ -12461,6 +12680,10 @@
       "name": "愚人众先遣队·火铳游击兵"
     },
     {
+      "key": "floating-anemo-fungus",
+      "name": "浮游风蕈兽"
+    },
+    {
       "key": "floating-dendro-fungus",
       "name": "浮游草蕈兽"
     },
@@ -12499,6 +12722,10 @@
     {
       "key": "golden-wolflord",
       "name": "黄金王兽"
+    },
+    {
+      "key": "grounded-geoshroom",
+      "name": "陆行岩本真蕈"
     },
     {
       "key": "grounded-hydroshroom",
@@ -12701,6 +12928,18 @@
       "name": "恒常机关阵列"
     },
     {
+      "key": "primal-construct-prospector",
+      "name": "元能构装体·勘探机"
+    },
+    {
+      "key": "primal-construct-repulsor",
+      "name": "元能构装体·力场发生器"
+    },
+    {
+      "key": "primal-construct-reshaper",
+      "name": "元能构装体·重塑仪"
+    },
+    {
       "key": "primo-geovishap",
       "name": "古岩龙蜥"
     },
@@ -12833,6 +13072,14 @@
       "name": "幕府足轻头"
     },
     {
+      "key": "spirit-of-omen-stone-drake",
+      "name": "厄灵·岩之魔蜥"
+    },
+    {
+      "key": "spirit-of-omen-wind-glede",
+      "name": "厄灵·风之魔鸢"
+    },
+    {
       "key": "stonehide-lawachurl",
       "name": "丘丘岩盔王"
     },
@@ -12843,6 +13090,10 @@
     {
       "key": "stretchy-anemo-fungus",
       "name": "伸缩风蕈兽"
+    },
+    {
+      "key": "stretchy-electro-fungus",
+      "name": "伸缩雷蕈兽"
     },
     {
       "key": "stretchy-geo-fungus",
@@ -12947,6 +13198,10 @@
     {
       "key": "whirling-electro-fungus",
       "name": "旋转雷蕈兽"
+    },
+    {
+      "key": "whirling-pyro-fungus",
+      "name": "旋转火蕈兽"
     },
     {
       "key": "winged-cryoshroom",
