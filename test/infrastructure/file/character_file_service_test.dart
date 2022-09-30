@@ -209,7 +209,12 @@ void main() {
         expect(constellation.number, inInclusiveRange(1, 6));
       }
 
-      expect(detail.stats.where((e) => e.isAnAscension).length == 6, isTrue);
+      final statAscCount = detail.stats.where((e) => e.isAnAscension).length;
+      if (!detail.isComingSoon) {
+        expect(statAscCount == 6, isTrue);
+      } else {
+        expect(statAscCount <= 6, isTrue);
+      }
       var repetitionCount = 0;
       for (var i = 0; i < detail.stats.length; i++) {
         final stat = detail.stats[i];
