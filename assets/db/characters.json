@@ -30700,6 +30700,439 @@
       ]
     },
     {
+      "key": "layla",
+      "rarity": 5,
+      "weaponType": "sword",
+      "elementType": "cryo",
+      "image": "layla.webp",
+      "fullImage": "layla.webp",
+      "secondFullImage": null,
+      "isComingSoon": true,
+      "isNew": false,
+      "isFemale": true,
+      "region": "sumeru",
+      "role": "na",
+      "tier": "na",
+      "birthday": "01/01",
+      "subStatType": "hpPercentage",
+      "ascensionMaterials": [
+        {
+          "rank": 1,
+          "level": 20,
+          "materials": [
+            {
+              "key": "shivada-jade-sliver",
+              "quantity": 1,
+              "type": "jewels"
+            },
+            {
+              "key": "nilotpala-lotus",
+              "quantity": 3,
+              "type": "local"
+            },
+            {
+              "key": "divining-scroll",
+              "quantity": 3,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 20000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "rank": 2,
+          "level": 40,
+          "materials": [
+            {
+              "key": "shivada-jade-fragment",
+              "quantity": 3,
+              "type": "jewels"
+            },
+            {
+              "key": "nilotpala-lotus",
+              "quantity": 10,
+              "type": "local"
+            },
+            {
+              "key": "divining-scroll",
+              "quantity": 15,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 40000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "rank": 3,
+          "level": 50,
+          "materials": [
+            {
+              "key": "shivada-jade-fragment",
+              "quantity": 6,
+              "type": "jewels"
+            },
+            {
+              "key": "nilotpala-lotus",
+              "quantity": 20,
+              "type": "local"
+            },
+            {
+              "key": "sealed-scroll",
+              "quantity": 12,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 60000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "rank": 4,
+          "level": 60,
+          "materials": [
+            {
+              "key": "shivada-jade-chunk",
+              "quantity": 3,
+              "type": "jewels"
+            },
+            {
+              "key": "nilotpala-lotus",
+              "quantity": 30,
+              "type": "local"
+            },
+            {
+              "key": "sealed-scroll",
+              "quantity": 18,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 80000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "rank": 5,
+          "level": 70,
+          "materials": [
+            {
+              "key": "shivada-jade-chunk",
+              "quantity": 6,
+              "type": "jewels"
+            },
+            {
+              "key": "nilotpala-lotus",
+              "quantity": 45,
+              "type": "local"
+            },
+            {
+              "key": "forbidden-curse-scroll",
+              "quantity": 12,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 100000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "rank": 6,
+          "level": 80,
+          "materials": [
+            {
+              "key": "shivada-jade-gemstone",
+              "quantity": 6,
+              "type": "jewels"
+            },
+            {
+              "key": "nilotpala-lotus",
+              "quantity": 60,
+              "type": "local"
+            },
+            {
+              "key": "forbidden-curse-scroll",
+              "quantity": 24,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 120000,
+              "type": "currency"
+            }
+          ]
+        }
+      ],
+      "talentAscensionMaterials": [
+        {
+          "level": 2,
+          "materials": [
+            {
+              "key": "teachings-of-ingenuity",
+              "quantity": 3,
+              "type": "talents"
+            },
+            {
+              "key": "divining-scroll",
+              "quantity": 6,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 12500,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "level": 3,
+          "materials": [
+            {
+              "key": "guide-to-ingenuity",
+              "quantity": 2,
+              "type": "talents"
+            },
+            {
+              "key": "sealed-scroll",
+              "quantity": 3,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 17500,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "materials": [
+            {
+              "key": "guide-to-ingenuity",
+              "quantity": 4,
+              "type": "talents"
+            },
+            {
+              "key": "sealed-scroll",
+              "quantity": 4,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 25000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "materials": [
+            {
+              "key": "guide-to-ingenuity",
+              "quantity": 6,
+              "type": "talents"
+            },
+            {
+              "key": "sealed-scroll",
+              "quantity": 6,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 30000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "level": 6,
+          "materials": [
+            {
+              "key": "guide-to-ingenuity",
+              "quantity": 9,
+              "type": "talents"
+            },
+            {
+              "key": "sealed-scroll",
+              "quantity": 9,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 37500,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "level": 7,
+          "materials": [
+            {
+              "key": "philosophies-of-ingenuity",
+              "quantity": 4,
+              "type": "talents"
+            },
+            {
+              "key": "forbidden-curse-scroll",
+              "quantity": 4,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 120000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "level": 8,
+          "materials": [
+            {
+              "key": "philosophies-of-ingenuity",
+              "quantity": 6,
+              "type": "talents"
+            },
+            {
+              "key": "forbidden-curse-scroll",
+              "quantity": 6,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 260000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "level": 9,
+          "materials": [
+            {
+              "key": "philosophies-of-ingenuity",
+              "quantity": 12,
+              "type": "talents"
+            },
+            {
+              "key": "forbidden-curse-scroll",
+              "quantity": 9,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 450000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "level": 10,
+          "materials": [
+            {
+              "key": "philosophies-of-ingenuity",
+              "quantity": 16,
+              "type": "talents"
+            },
+            {
+              "key": "forbidden-curse-scroll",
+              "quantity": 12,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 700000,
+              "type": "currency"
+            },
+            {
+              "key": "crown-of-insight",
+              "quantity": 1,
+              "type": "talents"
+            }
+          ]
+        }
+      ],
+      "skills": [
+        {
+          "key": "s1",
+          "image": null,
+          "type": "normalAttack",
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "image": null,
+          "type": "elementalSkill",
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "image": null,
+          "type": "elementalBurst",
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "image": null,
+          "unlockedAt": -1
+        },
+        {
+          "key": "p2",
+          "image": null,
+          "unlockedAt": 1
+        },
+        {
+          "key": "p3",
+          "image": null,
+          "unlockedAt": 4
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "number": 1,
+          "image": null
+        },
+        {
+          "key": "c2",
+          "number": 2,
+          "image": null
+        },
+        {
+          "key": "c3",
+          "number": 3,
+          "image": null
+        },
+        {
+          "key": "c4",
+          "number": 4,
+          "image": null
+        },
+        {
+          "key": "c5",
+          "number": 5,
+          "image": null
+        },
+        {
+          "key": "c6",
+          "number": 6,
+          "image": null
+        }
+      ],
+      "builds": [],
+      "stats": []
+    },
+    {
       "key": "lisa",
       "rarity": 4,
       "weaponType": "catalyst",
@@ -32865,6 +33298,439 @@
       ]
     },
     {
+      "key": "nahida",
+      "rarity": 5,
+      "weaponType": "catalyst",
+      "elementType": "dendro",
+      "image": "nahida.webp",
+      "fullImage": "nahida.webp",
+      "secondFullImage": null,
+      "isComingSoon": true,
+      "isNew": false,
+      "isFemale": true,
+      "region": "sumeru",
+      "role": "na",
+      "tier": "na",
+      "birthday": "01/01",
+      "subStatType": "elementalMastery",
+      "ascensionMaterials": [
+        {
+          "rank": 1,
+          "level": 20,
+          "materials": [
+            {
+              "key": "nagadus-emerald-sliver",
+              "quantity": 1,
+              "type": "jewels"
+            },
+            {
+              "key": "kalpalata-lotus",
+              "quantity": 3,
+              "type": "local"
+            },
+            {
+              "key": "fungal-spores",
+              "quantity": 3,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 20000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "rank": 2,
+          "level": 40,
+          "materials": [
+            {
+              "key": "nagadus-emerald-fragment",
+              "quantity": 3,
+              "type": "jewels"
+            },
+            {
+              "key": "kalpalata-lotus",
+              "quantity": 10,
+              "type": "local"
+            },
+            {
+              "key": "fungal-spores",
+              "quantity": 15,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 40000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "rank": 3,
+          "level": 50,
+          "materials": [
+            {
+              "key": "nagadus-emerald-fragment",
+              "quantity": 6,
+              "type": "jewels"
+            },
+            {
+              "key": "kalpalata-lotus",
+              "quantity": 20,
+              "type": "local"
+            },
+            {
+              "key": "luminescent-pollen",
+              "quantity": 12,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 60000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "rank": 4,
+          "level": 60,
+          "materials": [
+            {
+              "key": "nagadus-emerald-chunk",
+              "quantity": 3,
+              "type": "jewels"
+            },
+            {
+              "key": "kalpalata-lotus",
+              "quantity": 30,
+              "type": "local"
+            },
+            {
+              "key": "luminescent-pollen",
+              "quantity": 18,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 80000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "rank": 5,
+          "level": 70,
+          "materials": [
+            {
+              "key": "nagadus-emerald-chunk",
+              "quantity": 6,
+              "type": "jewels"
+            },
+            {
+              "key": "kalpalata-lotus",
+              "quantity": 45,
+              "type": "local"
+            },
+            {
+              "key": "crystalline-cyst-dust",
+              "quantity": 12,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 100000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "rank": 6,
+          "level": 80,
+          "materials": [
+            {
+              "key": "nagadus-emerald-gemstone",
+              "quantity": 6,
+              "type": "jewels"
+            },
+            {
+              "key": "kalpalata-lotus",
+              "quantity": 60,
+              "type": "local"
+            },
+            {
+              "key": "crystalline-cyst-dust",
+              "quantity": 24,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 120000,
+              "type": "currency"
+            }
+          ]
+        }
+      ],
+      "talentAscensionMaterials": [
+        {
+          "level": 2,
+          "materials": [
+            {
+              "key": "teachings-of-ingenuity",
+              "quantity": 3,
+              "type": "talents"
+            },
+            {
+              "key": "fungal-spores",
+              "quantity": 6,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 12500,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "level": 3,
+          "materials": [
+            {
+              "key": "guide-to-ingenuity",
+              "quantity": 2,
+              "type": "talents"
+            },
+            {
+              "key": "luminescent-pollen",
+              "quantity": 3,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 17500,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "materials": [
+            {
+              "key": "guide-to-ingenuity",
+              "quantity": 4,
+              "type": "talents"
+            },
+            {
+              "key": "luminescent-pollen",
+              "quantity": 4,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 25000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "materials": [
+            {
+              "key": "guide-to-ingenuity",
+              "quantity": 6,
+              "type": "talents"
+            },
+            {
+              "key": "luminescent-pollen",
+              "quantity": 6,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 30000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "level": 6,
+          "materials": [
+            {
+              "key": "guide-to-ingenuity",
+              "quantity": 9,
+              "type": "talents"
+            },
+            {
+              "key": "luminescent-pollen",
+              "quantity": 9,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 37500,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "level": 7,
+          "materials": [
+            {
+              "key": "philosophies-of-ingenuity",
+              "quantity": 4,
+              "type": "talents"
+            },
+            {
+              "key": "crystalline-cyst-dust",
+              "quantity": 4,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 120000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "level": 8,
+          "materials": [
+            {
+              "key": "philosophies-of-ingenuity",
+              "quantity": 6,
+              "type": "talents"
+            },
+            {
+              "key": "crystalline-cyst-dust",
+              "quantity": 6,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 260000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "level": 9,
+          "materials": [
+            {
+              "key": "philosophies-of-ingenuity",
+              "quantity": 12,
+              "type": "talents"
+            },
+            {
+              "key": "crystalline-cyst-dust",
+              "quantity": 9,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 450000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "level": 10,
+          "materials": [
+            {
+              "key": "philosophies-of-ingenuity",
+              "quantity": 16,
+              "type": "talents"
+            },
+            {
+              "key": "crystalline-cyst-dust",
+              "quantity": 12,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 700000,
+              "type": "currency"
+            },
+            {
+              "key": "crown-of-insight",
+              "quantity": 1,
+              "type": "talents"
+            }
+          ]
+        }
+      ],
+      "skills": [
+        {
+          "key": "s1",
+          "image": null,
+          "type": "normalAttack",
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "image": null,
+          "type": "elementalSkill",
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "image": null,
+          "type": "elementalBurst",
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "image": null,
+          "unlockedAt": -1
+        },
+        {
+          "key": "p2",
+          "image": null,
+          "unlockedAt": 1
+        },
+        {
+          "key": "p3",
+          "image": null,
+          "unlockedAt": 4
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "number": 1,
+          "image": null
+        },
+        {
+          "key": "c2",
+          "number": 2,
+          "image": null
+        },
+        {
+          "key": "c3",
+          "number": 3,
+          "image": null
+        },
+        {
+          "key": "c4",
+          "number": 4,
+          "image": null
+        },
+        {
+          "key": "c5",
+          "number": 5,
+          "image": null
+        },
+        {
+          "key": "c6",
+          "number": 6,
+          "image": null
+        }
+      ],
+      "builds": [],
+      "stats": []
+    },
+    {
       "key": "nilou",
       "rarity": 5,
       "weaponType": "sword",
@@ -32874,7 +33740,7 @@
       "secondFullImage": null,
       "isComingSoon": true,
       "isNew": false,
-      "isFemale": false,
+      "isFemale": true,
       "region": "sumeru",
       "role": "na",
       "tier": "na",
