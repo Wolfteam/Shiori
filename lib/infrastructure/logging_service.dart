@@ -11,7 +11,7 @@ class LoggingServiceImpl implements LoggingService {
   final TelemetryService _telemetryService;
   final DeviceInfoService _deviceInfoService;
   final _logger = Logger();
-  final _formatter = DateFormat('yyyy-MM-dd-hh');
+  final _formatter = DateFormat('yyyy-MM-dd-HH');
 
   LoggingServiceImpl(this._telemetryService, this._deviceInfoService);
 
@@ -77,12 +77,11 @@ class LoggingServiceImpl implements LoggingService {
   }
 
   Map<String, String> _buildWarningOrErrorMap(String tag, String msg, [dynamic ex, StackTrace? trace]) {
-    final now = DateTime.now().toUtc();
     final map = {
-      'Tag-$now': tag,
-      'Msg-$now': msg,
-      'Ex-$now': ex?.toString() ?? 'No exception available',
-      'Trace-$now': trace?.toString() ?? 'No trace available',
+      'Tag': tag,
+      'Msg': msg,
+      'Ex': ex?.toString() ?? 'No exception available',
+      'Trace': trace?.toString() ?? 'No trace available',
     };
 
     map.addAll(_deviceInfoService.deviceInfo);

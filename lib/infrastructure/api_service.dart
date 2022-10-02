@@ -102,8 +102,10 @@ class ApiServiceImpl implements ApiService {
 
   void _handleError(String caller, Object e, StackTrace s) {
     if (e is DioError) {
-      final msg = 'SC = ${e.response?.statusCode ?? na} - Msg = ${e.response?.statusMessage ?? na}';
-      _loggingService.error(runtimeType, '$caller: Dio error = $msg. ${e.message}');
+      final msg = 'Type = ${e.type} - SC = ${e.response?.statusCode ?? na} - Msg = ${e.response?.statusMessage ?? na}';
+      _loggingService.error(runtimeType, '$caller: Dio: $msg');
+      _loggingService.error(runtimeType, '$caller: Dio: ${e.message}');
+      _loggingService.error(runtimeType, '$caller: Dio:', e.error, e.stackTrace);
     } else {
       _loggingService.error(runtimeType, '$caller: Unknown error', e, s);
     }

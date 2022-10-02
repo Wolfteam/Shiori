@@ -274,7 +274,8 @@ class ResourceServiceImpl implements ResourceService {
       _loggingService.error(runtimeType, 'checkForUpdates: Unknown error', e, s);
       return CheckForUpdatesResult(type: AppResourceUpdateResultType.unknownError, resourceVersion: currentResourcesVersion);
     } finally {
-      if (canUpdateResourceCheckedDate && !isFirstResourceCheck && updateResourceCheckedDate) {
+      final updateDate = canUpdateResourceCheckedDate && !isFirstResourceCheck && updateResourceCheckedDate;
+      if (updateDate) {
         _settingsService.lastResourcesCheckedDate = DateTime.now();
       }
     }
