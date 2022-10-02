@@ -203,7 +203,11 @@ class ResourceServiceImpl implements ResourceService {
   }
 
   @override
-  Future<CheckForUpdatesResult> checkForUpdates(String currentAppVersion, int currentResourcesVersion) async {
+  Future<CheckForUpdatesResult> checkForUpdates(
+    String currentAppVersion,
+    int currentResourcesVersion, {
+    bool updateResourceCheckedDate = true,
+  }) async {
     if (currentAppVersion.isNullEmptyOrWhitespace) {
       throw Exception('Invalid app version');
     }
@@ -270,7 +274,7 @@ class ResourceServiceImpl implements ResourceService {
       _loggingService.error(runtimeType, 'checkForUpdates: Unknown error', e, s);
       return CheckForUpdatesResult(type: AppResourceUpdateResultType.unknownError, resourceVersion: currentResourcesVersion);
     } finally {
-      if (canUpdateResourceCheckedDate && !isFirstResourceCheck) {
+      if (canUpdateResourceCheckedDate && !isFirstResourceCheck && updateResourceCheckedDate) {
         _settingsService.lastResourcesCheckedDate = DateTime.now();
       }
     }
