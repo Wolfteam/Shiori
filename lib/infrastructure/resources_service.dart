@@ -22,11 +22,20 @@ class ResourceServiceImpl implements ResourceService {
   final SettingsService _settingsService;
   final NetworkService _networkService;
   final ApiService _apiService;
+  final int maxRetryAttempts;
+  final int maxItemsPerBatch;
 
   late final String _tempPath;
   late final String _assetsPath;
 
-  ResourceServiceImpl(this._loggingService, this._settingsService, this._networkService, this._apiService);
+  ResourceServiceImpl(
+    this._loggingService,
+    this._settingsService,
+    this._networkService,
+    this._apiService, {
+    this.maxRetryAttempts = 5,
+    this.maxItemsPerBatch = 5,
+  });
 
   Future<void> init() async {
     final temp = await getTemporaryDirectory();
@@ -397,16 +406,15 @@ class ResourceServiceImpl implements ResourceService {
     _loggingService.info(runtimeType, '_downloadAssets: Processing ${keyNames.length} keyName(s)...');
     final Map<String, String> destPaths = await _createTempDirectories(tempFolder, keyNames);
 
-    const int maxRetryAttempts = 5;
-    int maxItemsPerBatch = 5;
+    int itemsPerBatch = maxItemsPerBatch;
     int processedItems = 0;
     int retryAttempts = 0;
 
     final total = keyNames.length;
     final keyNamesCopy = [...keyNames];
     while (keyNamesCopy.isNotEmpty) {
-      final taken = keyNamesCopy.take(maxItemsPerBatch).toList();
-      for (int i = 0; i < maxItemsPerBatch; i++) {
+      final taken = keyNamesCopy.take(itemsPerBatch).toList();
+      for (int i = 0; i < itemsPerBatch; i++) {
         if (keyNamesCopy.isEmpty) {
           break;
         }
@@ -425,9 +433,9 @@ class ResourceServiceImpl implements ResourceService {
         }
       } catch (e, s) {
         _loggingService.error(runtimeType, '_downloadAssets: One or more keyNames failed... RetryAttempts = $retryAttempts', e, s);
-        maxItemsPerBatch--;
+        itemsPerBatch--;
         retryAttempts++;
-        if (retryAttempts <= maxRetryAttempts && maxItemsPerBatch > 0) {
+        if (retryAttempts <= maxRetryAttempts && itemsPerBatch > 0) {
           keyNamesCopy.addAll(taken);
           await Future.delayed(Duration(seconds: retryAttempts + maxRetryAttempts));
           continue;
