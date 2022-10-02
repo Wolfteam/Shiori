@@ -432,6 +432,8 @@ void main() {
         settingsService,
         networkService,
         apiService,
+        maxItemsPerBatch: 1,
+        maxRetryAttempts: 1,
       );
       service.initForTests(tempDir.path, path.join(tempDir.path, 'assets'));
 
@@ -467,6 +469,8 @@ void main() {
         settingsService,
         networkService,
         apiService,
+        maxItemsPerBatch: 1,
+        maxRetryAttempts: 1,
       );
       service.initForTests(tempDir.path, path.join(tempDir.path, 'assets'));
 
