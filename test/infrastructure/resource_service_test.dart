@@ -307,6 +307,26 @@ void main() {
       final result = await service.checkForUpdates('1.0.0', 1);
       _checkUpdateResult(AppResourceUpdateResultType.unknownError, 1, result, null);
     });
+
+    test('last resources checked date is not updated', () async {
+      final settingsService = MockSettingsService();
+      final now = DateTime.now().subtract(const Duration(days: 7));
+      when(settingsService.lastResourcesCheckedDate).thenReturn(now);
+      when(settingsService.noResourcesHasBeenDownloaded).thenReturn(false);
+      final networkService = MockNetworkService();
+      when(networkService.isInternetAvailable()).thenAnswer((_) => Future.value(true));
+      final apiService = MockApiService();
+      when(apiService.checkForUpdates('1.0.0', -1)).thenAnswer(
+        (_) => Future.value(
+          ApiResponseDto<ResourceDiffResponseDto?>(succeed: true, messageId: '4'),
+        ),
+      );
+
+      final service = ResourceServiceImpl(MockLoggingService(), settingsService, networkService, apiService);
+      await service.checkForUpdates('1.0.0', -1, updateResourceCheckedDate: false);
+      await service.checkForUpdates('1.0.0', -1, updateResourceCheckedDate: false);
+      expect(settingsService.lastResourcesCheckedDate == now, isTrue);
+    });
   });
 
   group('Download and apply updates', () {

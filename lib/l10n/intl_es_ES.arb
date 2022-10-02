@@ -453,6 +453,7 @@
   "newResourcesVersion": "Nueva versión de los recursos: {version}",
   "retry": "Reintentar",
   "continueLabel": "Continuar",
+  "check": "Comprobar",
   "updatingResources": "Actualizando recursos",
   "resourceUpdateFailed": "La actualización de recursos falló",
   "resourceUpdateCompleted": "La actualización de recursos fue aplicada exitósamente",

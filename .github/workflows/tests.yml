@@ -36,4 +36,4 @@ jobs:
         run: flutter analyze --no-fatal-infos --no-fatal-warnings
 
       - name: Run tests
-        run: flutter test --coverage
+        run: flutter test -j 2 -r expanded --coverage

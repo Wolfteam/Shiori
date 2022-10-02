@@ -9,21 +9,24 @@ import 'package:shiori/domain/services/api_service.dart';
 import 'package:shiori/domain/services/logging_service.dart';
 import 'package:shiori/env.dart';
 
+const int _timeoutInMs = 5000;
+
 class ApiServiceImpl implements ApiService {
   final LoggingService _loggingService;
 
-  final _dio = Dio();
+  final _dio = Dio(BaseOptions(connectTimeout: _timeoutInMs, receiveTimeout: _timeoutInMs));
+  late final HttpClient _httpClient;
 
   ApiServiceImpl(this._loggingService) {
-    final adapter = _dio.httpClientAdapter as DefaultHttpClientAdapter;
     final sc = SecurityContext.defaultContext;
     final publicKeyBytes = utf8.encode(utf8.decode(base64.decode(Env.publicKey)));
     final privateKeyBytes = utf8.encode(utf8.decode(base64.decode(Env.privateKey)));
     sc.useCertificateChainBytes(publicKeyBytes);
     sc.usePrivateKeyBytes(privateKeyBytes);
-    adapter.onHttpClientCreate = (client) {
-      return HttpClient(context: sc);
-    };
+    _httpClient = HttpClient(context: sc);
+
+    final adapter = _dio.httpClientAdapter as DefaultHttpClientAdapter;
+    adapter.onHttpClientCreate = (client) => _httpClient;
   }
 
   @override
@@ -102,8 +105,10 @@ class ApiServiceImpl implements ApiService {
 
   void _handleError(String caller, Object e, StackTrace s) {
     if (e is DioError) {
-      final msg = 'SC = ${e.response?.statusCode ?? na} - Msg = ${e.response?.statusMessage ?? na}';
-      _loggingService.error(runtimeType, '$caller: Dio error = $msg. ${e.message}');
+      final msg = 'Type = ${e.type} - SC = ${e.response?.statusCode ?? na} - Msg = ${e.response?.statusMessage ?? na}';
+      _loggingService.error(runtimeType, '$caller: Dio: $msg');
+      _loggingService.error(runtimeType, '$caller: Dio: ${e.message}');
+      _loggingService.error(runtimeType, '$caller: Dio:', e.error, e.stackTrace);
     } else {
       _loggingService.error(runtimeType, '$caller: Unknown error', e, s);
     }
