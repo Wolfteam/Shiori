@@ -203,7 +203,11 @@ class ResourceServiceImpl implements ResourceService {
   }
 
   @override
-  Future<CheckForUpdatesResult> checkForUpdates(String currentAppVersion, int currentResourcesVersion) async {
+  Future<CheckForUpdatesResult> checkForUpdates(
+    String currentAppVersion,
+    int currentResourcesVersion, {
+    bool updateResourceCheckedDate = true,
+  }) async {
     if (currentAppVersion.isNullEmptyOrWhitespace) {
       throw Exception('Invalid app version');
     }
@@ -270,7 +274,8 @@ class ResourceServiceImpl implements ResourceService {
       _loggingService.error(runtimeType, 'checkForUpdates: Unknown error', e, s);
       return CheckForUpdatesResult(type: AppResourceUpdateResultType.unknownError, resourceVersion: currentResourcesVersion);
     } finally {
-      if (canUpdateResourceCheckedDate && !isFirstResourceCheck) {
+      final updateDate = canUpdateResourceCheckedDate && !isFirstResourceCheck && updateResourceCheckedDate;
+      if (updateDate) {
         _settingsService.lastResourcesCheckedDate = DateTime.now();
       }
     }
@@ -390,8 +395,9 @@ class ResourceServiceImpl implements ResourceService {
     }
 
     _loggingService.info(runtimeType, '_downloadAssets: Processing ${keyNames.length} keyName(s)...');
-    const int maxRetryAttempts = 3;
+    final Map<String, String> destPaths = await _createTempDirectories(tempFolder, keyNames);
 
+    const int maxRetryAttempts = 5;
     int maxItemsPerBatch = 5;
     int processedItems = 0;
     int retryAttempts = 0;
@@ -399,7 +405,6 @@ class ResourceServiceImpl implements ResourceService {
     final total = keyNames.length;
     final keyNamesCopy = [...keyNames];
     while (keyNamesCopy.isNotEmpty) {
-      // _loggingService.debug(runtimeType, '_downloadAssets: Remaining = ${keyNamesCopy.length}');
       final taken = keyNamesCopy.take(maxItemsPerBatch).toList();
       for (int i = 0; i < maxItemsPerBatch; i++) {
         if (keyNamesCopy.isEmpty) {
@@ -410,13 +415,16 @@ class ResourceServiceImpl implements ResourceService {
 
       try {
         if (taken.isNotEmpty) {
-          await Future.wait(taken.map((e) => _downloadAsset(tempFolder, e)).toList(), eagerError: true);
+          if (retryAttempts > 0) {
+            await Future.delayed(const Duration(seconds: 1));
+          }
+          await Future.wait(taken.map((e) => _downloadAsset(destPaths[e]!, e)).toList(), eagerError: true);
           processedItems += taken.length;
           final progress = processedItems * 100 / total;
           onProgress?.call(progress);
         }
       } catch (e, s) {
-        _loggingService.error(runtimeType, '_downloadAssets: One or more keyNames failed...', e, s);
+        _loggingService.error(runtimeType, '_downloadAssets: One or more keyNames failed... RetryAttempts = $retryAttempts', e, s);
         maxItemsPerBatch--;
         retryAttempts++;
         if (retryAttempts <= maxRetryAttempts && maxItemsPerBatch > 0) {
@@ -433,19 +441,7 @@ class ResourceServiceImpl implements ResourceService {
     return true;
   }
 
-  Future<void> _downloadAsset(String tempFolder, String keyName) async {
-    final split = keyName.split('/');
-    //the last item is the filename
-    final partA = split.take(split.length - 1).fold<String>('', (previousValue, element) {
-      if (previousValue.isEmpty) {
-        return element;
-      }
-      return join(previousValue, element);
-    });
-    final dir = join(tempFolder, partA);
-    await _createDirectoryIfItDoesntExist(dir);
-
-    final destPath = join(dir, split.last);
+  Future<void> _downloadAsset(String destPath, String keyName) async {
     final file = File(destPath);
     if (await file.exists()) {
       await file.delete();
@@ -464,6 +460,33 @@ class ResourceServiceImpl implements ResourceService {
     }
     await _moveFolder(tempFolder, assetsFolder, _tempDirName);
     await _deleteDirectoryIfExists(tempFolder);
+  }
+
+  Future<Map<String, String>> _createTempDirectories(String tempFolder, List<String> keyNames) async {
+    final destPaths = <String, String>{};
+    final allDirs = <String>[];
+    for (final keyName in keyNames) {
+      final split = keyName.split('/');
+      //the last item is the filename
+      final partA = split.take(split.length - 1).fold<String>('', (previousValue, element) {
+        if (previousValue.isEmpty) {
+          return element;
+        }
+        return join(previousValue, element);
+      });
+      final dir = join(tempFolder, partA);
+      allDirs.add(dir);
+
+      final destPath = join(dir, split.last);
+      destPaths.putIfAbsent(keyName, () => destPath);
+    }
+
+    final dirs = allDirs.toSet();
+    for (final dir in dirs) {
+      await _createDirectoryIfItDoesntExist(dir);
+    }
+
+    return destPaths;
   }
 
   Future<void> _createDirectoryIfItDoesntExist(String path) async {
