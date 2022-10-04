@@ -3,6 +3,7 @@ set -e
 
 while [[ "$#" -gt 0 ]]; do
     case $1 in
+        --all) clean=1; pub_get=1; delete_conflicting_outputs=1; ;;
         --clean) clean=1; ;;
         --pub_get) pub_get=1; ;;
         --delete_conflicting_outputs) delete_conflicting_outputs=1; ;;
