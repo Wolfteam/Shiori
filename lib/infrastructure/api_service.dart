@@ -9,12 +9,10 @@ import 'package:shiori/domain/services/api_service.dart';
 import 'package:shiori/domain/services/logging_service.dart';
 import 'package:shiori/env.dart';
 
-const int _timeoutInMs = 5000;
-
 class ApiServiceImpl implements ApiService {
   final LoggingService _loggingService;
 
-  final _dio = Dio(BaseOptions(connectTimeout: _timeoutInMs, receiveTimeout: _timeoutInMs));
+  final _dio = Dio();
   late final HttpClient _httpClient;
 
   ApiServiceImpl(this._loggingService) {
