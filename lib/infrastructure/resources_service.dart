@@ -440,6 +440,9 @@ class ResourceServiceImpl implements ResourceService {
           await Future.delayed(Duration(seconds: retryAttempts + maxRetryAttempts));
           continue;
         }
+
+        final remaining = keyNamesCopy.length;
+        _loggingService.error(runtimeType, '_downloadAssets: Reached maxRetryAttempts = $maxRetryAttempts with remaining items = $remaining', e, s);
         await _deleteDirectoryIfExists(tempFolder);
         return false;
       }

@@ -77,12 +77,15 @@ class LoggingServiceImpl implements LoggingService {
   }
 
   Map<String, String> _buildWarningOrErrorMap(String tag, String msg, [dynamic ex, StackTrace? trace]) {
-    final map = {
-      'Tag': tag,
-      'Msg': msg,
-      'Ex': ex?.toString() ?? 'No exception available',
-      'Trace': trace?.toString() ?? 'No trace available',
-    };
+    final map = {'Tag': tag, 'Msg': msg};
+
+    if (ex != null) {
+      map.putIfAbsent('Ex', () => ex.toString());
+    }
+
+    if (trace != null) {
+      map.putIfAbsent('Trace', () => trace.toString());
+    }
 
     map.addAll(_deviceInfoService.deviceInfo);
 
