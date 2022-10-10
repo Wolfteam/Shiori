@@ -4,17 +4,16 @@ import 'dart:io';
 import 'package:dio/adapter.dart';
 import 'package:dio/dio.dart';
 import 'package:shiori/domain/app_constants.dart';
+import 'package:shiori/domain/extensions/string_extensions.dart';
 import 'package:shiori/domain/models/dtos.dart';
 import 'package:shiori/domain/services/api_service.dart';
 import 'package:shiori/domain/services/logging_service.dart';
 import 'package:shiori/env.dart';
 
-const int _timeoutInMs = 5000;
-
 class ApiServiceImpl implements ApiService {
   final LoggingService _loggingService;
 
-  final _dio = Dio(BaseOptions(connectTimeout: _timeoutInMs, receiveTimeout: _timeoutInMs));
+  final _dio = Dio();
   late final HttpClient _httpClient;
 
   ApiServiceImpl(this._loggingService) {
@@ -106,11 +105,15 @@ class ApiServiceImpl implements ApiService {
   void _handleError(String caller, Object e, StackTrace s) {
     if (e is DioError) {
       final msg = 'Type = ${e.type} - SC = ${e.response?.statusCode ?? na} - Msg = ${e.response?.statusMessage ?? na}';
-      _loggingService.error(runtimeType, '$caller: Dio: $msg');
-      _loggingService.error(runtimeType, '$caller: Dio: ${e.message}');
-      _loggingService.error(runtimeType, '$caller: Dio:', e.error, e.stackTrace);
+      _loggingService.error(runtimeType, '$caller: Dio error = $msg');
+      if (e.message.isNotNullEmptyOrWhitespace) {
+        _loggingService.error(runtimeType, '$caller: Dio error = ${e.message}');
+      }
+      if (e.error != null || e.stackTrace != null) {
+        _loggingService.error(runtimeType, '$caller: Dio error = ${e.error ?? na} - ST = ${e.stackTrace ?? na}', e.error, e.stackTrace);
+      }
     } else {
-      _loggingService.error(runtimeType, '$caller: Unknown error', e, s);
+      _loggingService.error(runtimeType, '$caller: Unknown api error', e, s);
     }
   }
 }
