@@ -72,6 +72,7 @@ dependencies:
   tuple: ^2.0.0
   url_launcher: ^6.1.4
   version_tracker: ^2.1.1
+  wakelock: ^0.6.2
   waterfall_flow: ^3.0.2
   webview_windows: 0.1.6
   window_size:
