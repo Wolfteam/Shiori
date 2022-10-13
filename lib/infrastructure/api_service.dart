@@ -22,6 +22,14 @@ class ApiServiceImpl implements ApiService {
     final privateKeyBytes = utf8.encode(utf8.decode(base64.decode(Env.privateKey)));
     sc.useCertificateChainBytes(publicKeyBytes);
     sc.usePrivateKeyBytes(privateKeyBytes);
+    try {
+      //https://github.com/dart-lang/http/issues/627
+      //The LetsEncrypt Intermediate CA R3 + ISRG Root CA X1
+      final letsEncryptKeyBytes = utf8.encode(utf8.decode(base64.decode(Env.letsEncryptKey)));
+      sc.setTrustedCertificatesBytes(letsEncryptKeyBytes);
+    } catch (e) {
+      //the cert may be already added
+    }
     _httpClient = HttpClient(context: sc);
 
     final adapter = _dio.httpClientAdapter as DefaultHttpClientAdapter;
