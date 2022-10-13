@@ -15,4 +15,5 @@ abstract class Env {
 
   static const publicKey = _Env.publicKey;
   static const privateKey = _Env.privateKey;
+  static const letsEncryptKey = _Env.letsEncryptKey;
 }

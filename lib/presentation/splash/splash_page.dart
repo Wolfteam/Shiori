@@ -9,6 +9,7 @@ import 'package:shiori/injection.dart';
 import 'package:shiori/presentation/shared/dialogs/confirm_dialog.dart';
 import 'package:shiori/presentation/shared/extensions/app_theme_type_extensions.dart';
 import 'package:shiori/presentation/shared/styles.dart';
+import 'package:wakelock/wakelock.dart';
 
 class SplashPage extends StatelessWidget {
   final LanguageModel language;
@@ -95,9 +96,15 @@ class SplashPage extends StatelessWidget {
     }
   }
 
-  void _initMain(AppResourceUpdateResultType result, BuildContext context) => context.read<MainBloc>().add(MainEvent.init(updateResultType: result));
+  void _initMain(AppResourceUpdateResultType result, BuildContext context) {
+    Wakelock.disable();
+    context.read<MainBloc>().add(MainEvent.init(updateResultType: result));
+  }
 
-  void _applyUpdate(CheckForUpdatesResult result, BuildContext context) => context.read<SplashBloc>().add(SplashEvent.applyUpdate(result: result));
+  void _applyUpdate(CheckForUpdatesResult result, BuildContext context) {
+    Wakelock.enable();
+    context.read<SplashBloc>().add(SplashEvent.applyUpdate(result: result));
+  }
 }
 
 class _SplashPage extends StatelessWidget {
