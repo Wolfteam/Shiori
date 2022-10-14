@@ -156,11 +156,12 @@ void main() {
       String appVersion = '1.0.0',
       int currentResourceVersion = -1,
       bool isInternetAvailable = false,
+      bool noResourcesHasBeenDownloaded = true,
       ApiResponseDto<ResourceDiffResponseDto?>? apiResult,
     }) {
       final settingsService = MockSettingsService();
       when(settingsService.lastResourcesCheckedDate).thenReturn(null);
-      when(settingsService.noResourcesHasBeenDownloaded).thenReturn(true);
+      when(settingsService.noResourcesHasBeenDownloaded).thenReturn(noResourcesHasBeenDownloaded);
 
       final networkService = MockNetworkService();
       when(networkService.isInternetAvailable()).thenAnswer((_) => Future.value(isInternetAvailable));
@@ -184,6 +185,12 @@ void main() {
 
       final result = await service.checkForUpdates('1.0.0', -1);
       _checkEmptyUpdateResult(AppResourceUpdateResultType.noUpdatesAvailable, -1, result);
+    });
+
+    test('no internet connection', () async {
+      final service = _getService(currentResourceVersion: 1, noResourcesHasBeenDownloaded: false);
+      final result = await service.checkForUpdates('1.0.0', 1);
+      _checkEmptyUpdateResult(AppResourceUpdateResultType.noInternetConnection, 1, result);
     });
 
     test('no internet connection on first install', () async {
