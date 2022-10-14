@@ -3,6 +3,7 @@ enum AppResourceUpdateResultType {
   unknownErrorOnFirstInstall,
   noUpdatesAvailable,
   needsLatestAppVersion,
+  noInternetConnection,
   noInternetConnectionForFirstInstall,
   retrying,
   updatesAvailable,
