@@ -85,6 +85,7 @@ class SplashPage extends StatelessWidget {
         break;
       case AppResourceUpdateResultType.updating:
       case AppResourceUpdateResultType.retrying:
+      case AppResourceUpdateResultType.noInternetConnection:
       case AppResourceUpdateResultType.noInternetConnectionForFirstInstall:
       case AppResourceUpdateResultType.unknownErrorOnFirstInstall:
       case AppResourceUpdateResultType.unknownError:
@@ -123,6 +124,7 @@ class _SplashPage extends StatelessWidget {
   bool get updateFailed =>
       updateResultType == AppResourceUpdateResultType.unknownError ||
       updateResultType == AppResourceUpdateResultType.unknownErrorOnFirstInstall ||
+      updateResultType == AppResourceUpdateResultType.noInternetConnection ||
       noInternetConnectionOnFirstInstall;
 
   bool get noInternetConnectionOnFirstInstall => updateResultType == AppResourceUpdateResultType.noInternetConnectionForFirstInstall;
