@@ -1,10 +1,12 @@
 #Secrets
 /lib/infrastructure/secrets.dart
+/test/secrets.dart
 /android/key.properties
 *.g.dart
 *.freezed.dart
 /lib/generated/**
 *.mocks.dart
+*.env
 
 # Miscellaneous
 *.class
