@@ -236,6 +236,10 @@ class ResourceServiceImpl implements ResourceService {
       return CheckForUpdatesResult(type: AppResourceUpdateResultType.noInternetConnectionForFirstInstall, resourceVersion: currentResourcesVersion);
     }
 
+    if (!isInternetAvailable) {
+      return CheckForUpdatesResult(type: AppResourceUpdateResultType.noInternetConnection, resourceVersion: currentResourcesVersion);
+    }
+
     bool canUpdateResourceCheckedDate = false;
 
     try {
@@ -426,13 +430,13 @@ class ResourceServiceImpl implements ResourceService {
           if (retryAttempts > 0) {
             await Future.delayed(const Duration(seconds: 1));
           }
-          await Future.wait(taken.map((e) => _downloadAsset(destPaths[e]!, e)).toList(), eagerError: true);
+          await Future.wait(taken.map((e) => _downloadAsset(destPaths[e]!, e)).toList());
           processedItems += taken.length;
           final progress = processedItems * 100 / total;
           onProgress?.call(progress);
         }
       } catch (e, s) {
-        _loggingService.error(runtimeType, '_downloadAssets: One or more keyNames failed... RetryAttempts = $retryAttempts', e, s);
+        _loggingService.error(runtimeType, '_downloadAssets: One or more keyNames failed... RetryAttempts = $retryAttempts');
         itemsPerBatch--;
         retryAttempts++;
         if (retryAttempts <= maxRetryAttempts && itemsPerBatch > 0) {

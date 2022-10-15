@@ -80,6 +80,9 @@ class CheckForResourceUpdatesDialog extends StatelessWidget {
         return s.newAppVersionInStore;
       case AppResourceUpdateResultType.updatesAvailable:
         return s.updatesAvailable;
+      case AppResourceUpdateResultType.noInternetConnection:
+        return s.noInternetConnection;
+      //below ones should not be shown in this dialog
       case AppResourceUpdateResultType.noInternetConnectionForFirstInstall:
       case AppResourceUpdateResultType.retrying:
       case AppResourceUpdateResultType.updated:
