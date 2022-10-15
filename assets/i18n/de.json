@@ -4443,86 +4443,143 @@
     {
       "key": "nilou",
       "name": "Nilou",
-      "title": "？？？",
-      "description": "？？？",
+      "title": "Lotoslicht auf der Tanzbühne",
+      "description": "Die berühmte Tänzerin des Theaters Zubayr. Sie hat ein reines Herz und ist voller Wärme. Ihre Tänze sind elegant und anmutig.",
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Samser-Tanz",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Standardangriff",
+              "description": "Führt bis zu 3 Schwerthiebe hintereinander aus.\n",
+              "descriptions": []
+            },
+            {
+              "name": "Heftiger Schlag",
+              "description": "Verbraucht eine gewisse Menge Ausdauer und führt drehend einen Hieb aus.\n",
+              "descriptions": []
+            },
+            {
+              "name": "Angriff aus dem Fall",
+              "description": "Schlägt beim Fallen aus der Luft auf den Boden, greift alle Gegner in der Bahn an und verursacht beim Aufkommen Flächenschaden.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "SCH Phase 1|{param1}%",
+            "SCH Phase 2|{param2}%",
+            "SCH Phase 3|{param3}%",
+            "SCH heftiger Schläge|{param4}% + {param5}%",
+            "Ausdauerverbrauch heftiger Schläge|{param6} Punkte",
+            "SCH beim Fallen|{param7}%",
+            "SCH beim Fallen aus niedriger/großer Höhe|{param8}% / {param9}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Haftkarsvar-Tanz",
+          "description": "Wechselt in den Pirouetten-Modus und fügt den Gegnern in der Nähe basierend auf Nilous max. LP Hydro-Schaden zu.\nIm Pirouetten-Modus werden Nilous Standardangriffe und Elementarfähigkeit jeweils in „Schwerttanzschritte“ und „Wirbeltanzschritte“ umgewandelt, die Hydro-Schaden verursachen, der nicht von anderen Elementen überdeckt werden kann und als Schaden der Elementarfähigkeit gilt.\n\n",
+          "abilities": [
+            {
+              "name": "",
+              "description": "Dabei beendet Nilous dritter Tanzschritt den Pirouetten-Modus und bewirkt je nach dem Typ dieses Tanzschritts folgende Effekte:\n",
+              "descriptions": [
+                "Schwerttanzschritt: Entfesselt einen Wassermond, der den Gegnern, die er berührt, Hydro-Schaden zufügt und Nilou in den Mondgebets-Modus versetzt. In diesem Modus werden Nilous Standardangriffe in Schwerttanzschritte umgewandelt und ihr letzter Hieb entfesselt einen neuen Wassermond.",
+                "Wirbeltanzschritt: Entfesselt ein reinigendes Wasserrad, das Hydro-Flächenschaden verursacht und eine Gelassenheits-Aura erzeugt, die der aktuellen Figur der eigenen Truppe folgt und die Gegner in ihrem Wirkungsbereich fortlaufend in den Zustand Nass versetzt.",
+                "Nilou kann keine heftigen Schläge ausführen, wenn sie sich im Pirouetten-Modus oder im Mondgebets-Modus befindet. Diese Modi werden entfernt, sobald Nilou ausgewechselt wird."
+              ]
+            }
+          ],
+          "stats": [
+            "Fähigkeits-SCH|{param1}% der max. LP",
+            "SCH Phase 1 der Schwert-/Wirbeltanzschritte|{param2}% / {param3}% der max. LP",
+            "SCH Phase 2 der Schwert-/Wirbeltanzschritte|{param4}% / {param5}% der max. LP",
+            "SCH des Wassermonds/Wasserrads|{param6}% / {param7}% der max. LP",
+            "Dauer des Pirouetten-Modus|{param8} s",
+            "Dauer des Mondgebets-Modus|{param9} s",
+            "Dauer der Gelassenheits-Aura|{param10} s",
+            "Abklingzeit|{param11} s"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
+          "title": "Abzendegi-Tanz – Ferner Traum am Bach",
+          "description": "Beginnt den Tanz des fernen Traums am Bach und lässt den Lotos des fernen Gewässers erblühen. Verursacht Hydro-Flächenschaden basierend auf Nilous max. LP und versetzt alle davon getroffenen Gegner in den Zustand „Fließende Äonen“.\nNach einem kurzen Intervall erleiden die von diesem Zustand betroffenen Gegner Hydro-Schaden.\n\n",
           "abilities": [],
-          "stats": []
+          "stats": [
+            "Fähigkeits-SCH|{param1}% der max. LP",
+            "SCH von „Fließende Äonen“|{param2}% der max. LP",
+            "Abklingzeit|{param3} s",
+            "Elementarenergie|{param4}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "Weißer Jadelotos",
+          "description": "Stellt bei der perfekten Zubereitung eines Gerichts mit Abenteuer-Funktion mit einer Wahrscheinlichkeit von 12 % den 2-fachen Ertrag her.\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
+          "title": "Hof der wirbelnden Blüten",
+          "description": "Ist der Elementartyp aller Truppenmitglieder entweder Dendro oder Hydro und gibt es mindestens jeweils eine Dendro- und eine Hydro-Figur:\n",
+          "descriptions": [
+            "Verleiht beim dritten abgeschlossenen Tanzschritt von Nilous Haftkarsvar-Tanz allen Figuren in der Nähe 30 s lang den Effekt „Überfluss im goldenen Kelch“.",
+            "Erhöht 10 s lang die Elementarkunde aller Figuren in der Nähe um 100 Punkte, wenn die Figur unter dem Effekt „Überfluss im goldenen Kelch“ Dendro-Angriffe erlitten hat. Außerdem werden durch die Reaktion „Sprießen“ Kerne der Fülle anstelle der Dendro-Kerne erschaffen.",
+            "Anders als Dendro-Kerne explodieren Kerne der Fülle schneller, sobald sie erschaffen werden, und verursachen auch umfangreicheren Flächenschaden.",
+            "Kerne der Fülle können weder „Flammenspross“ noch „Supraspross“ auslösen und sie teilen das Anzahllimit der Dendro-Kerne. Angriff der Kerne der Fülle gilt als Angriff der Dendro-Kerne durch die Reaktion „Sprießen“.",
+            "Sollten die Elementartypen in der Truppe die Bedingungen für dieses passive Talent nicht erfüllen, wird der bestehende Effekt „Überfluss im goldenen Kelch“ entfernt."
+          ]
         },
         {
           "key": "p3",
-          "title": "NA",
-          "description": "",
+          "title": "Äonischer Traumtanz",
+          "description": "Erhöht je 1.000 Punkte der max. LP von Nilou über 30.000 den Schaden durch Kerne der Fülle, den die Figuren unter dem Effekt „Überfluss im goldenen Kelch“ ausgelöst haben, um 9 %.\nAuf diese Weise kann der durch Kerne der Fülle verursachte Schaden maximal um 400 % erhöht werden.\n",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
+          "title": "Tanz des abnehmenden Mondes",
+          "description": "Verleiht der Elementarfähigkeit Haftkarsvar-Tanz folgende Boni:\n",
+          "descriptions": [
+            "Erhöht den Schaden des Wassermonds um 65 %.",
+            "Verlängert die Dauer der Gelassenheits-Aura um 6 s."
+          ]
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "Blumenregen des Sternenhimmels",
+          "description": "Verringert den Hydro-WDS des Gegners 10 s lang um 35 %, nachdem diesem Gegner Hydro-Schaden durch Figuren unter dem Effekt „Überfluss im goldenen Kelch“ zugefügt worden ist. Verringert den Dendro-WDS des Gegners 10 s lang um 35 %, nachdem die Reaktion „Sprießen“ diesem Gegner Schaden zugefügt hat.\nDas passive Talent „Hof der wirbelnden Blüten“ muss zuerst freigeschaltet werden.\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "Schattenschritt des Lotos",
+          "description": "Erhöht die Stufe der Fähigkeit Abzendegi-Tanz – Ferner Traum am Bach um 3.\nHöchststufe 15.\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "Ruckender Rhythmus",
+          "description": "Stellt Nilou 15 Punkte Elementarenergie wieder her, wenn der dritte Tanzschritt im Pirouetten-Modus der Elementarfähigkeit Haftkarsvar-Tanz Gegner trifft, und erhöht den Schaden ihrer Spezialfähigkeit Abzendegi-Tanz – Ferner Traum am Bach 8 s lang um 50 %.\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "Glanz der Pirouette",
+          "description": "Erhöht die Stufe der Fähigkeit Haftkarsvar-Tanz um 3.\nHöchststufe 15.\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
+          "title": "Melodie des Frostbrechers",
+          "description": "Erhöht je 1.000 Punkte von Nilous max. LP ihre KT bzw. ihren KSCH jeweils um 0,6 % bzw. 1,2 %.\nAuf diese Weise können KT und KSCH maximal jeweils um 30 % bzw. 60 % erhöht werden.\n",
           "descriptions": []
         }
       ]
@@ -9336,6 +9393,18 @@
       ]
     },
     {
+      "key": "key-of-khaj-nisut",
+      "name": "Khaj-Nisut-Schlüssel",
+      "description": "Eines der zwei Szepter, die aus Obsidian gefertigt wurden. In der Legende kann es als Schlüssel verwendet werden, um das Tor zu einem Paradies zu öffnen, das am Ende des Sandmeeres liegt.",
+      "refinements": [
+        "Erhöht die LP um {color}20{/color} %. Löst nach dem Treffen von Gegnern mit der Elementarfähigkeit den Effekt „Grandiose Verse“ aus, der 20 s hält: Erhöht die Elementarkunde der damit ausgerüsteten Figur um {color}0,12{/color} % ihrer max. LP, 0,3 s Abklingzeit, 3-fach stapelbar. Erhöht bei 3 Stapelungen oder der Aktualisierung der Wirkungsdauer der dritten Stapelung die Elementarkunde aller Truppenmitglieder in der Nähe um {color}0,2{/color} % der max. LP der damit ausgerüsteten Figur, hält 20 s.",
+        "Erhöht die LP um {color}25{/color} %. Löst nach dem Treffen von Gegnern mit der Elementarfähigkeit den Effekt „Grandiose Verse“ aus, der 20 s hält: Erhöht die Elementarkunde der damit ausgerüsteten Figur um {color}0,15{/color} % ihrer max. LP, 0,3 s Abklingzeit, 3-fach stapelbar. Erhöht bei 3 Stapelungen oder der Aktualisierung der Wirkungsdauer der dritten Stapelung die Elementarkunde aller Truppenmitglieder in der Nähe um {color}0,25{/color} % der max. LP der damit ausgerüsteten Figur, hält 20 s.",
+        "Erhöht die LP um {color}30{/color} %. Löst nach dem Treffen von Gegnern mit der Elementarfähigkeit den Effekt „Grandiose Verse“ aus, der 20 s hält: Erhöht die Elementarkunde der damit ausgerüsteten Figur um {color}0,18{/color} % ihrer max. LP, 0,3 s Abklingzeit, 3-fach stapelbar. Erhöht bei 3 Stapelungen oder der Aktualisierung der Wirkungsdauer der dritten Stapelung die Elementarkunde aller Truppenmitglieder in der Nähe um {color}0,3{/color} % der max. LP der damit ausgerüsteten Figur, hält 20 s.",
+        "Erhöht die LP um {color}35{/color} %. Löst nach dem Treffen von Gegnern mit der Elementarfähigkeit den Effekt „Grandiose Verse“ aus, der 20 s hält: Erhöht die Elementarkunde der damit ausgerüsteten Figur um {color}0,21{/color} % ihrer max. LP, 0,3 s Abklingzeit, 3-fach stapelbar. Erhöht bei 3 Stapelungen oder der Aktualisierung der Wirkungsdauer der dritten Stapelung die Elementarkunde aller Truppenmitglieder in der Nähe um {color}0,35{/color} % der max. LP der damit ausgerüsteten Figur, hält 20 s.",
+        "Erhöht die LP um {color}40{/color} %. Löst nach dem Treffen von Gegnern mit der Elementarfähigkeit den Effekt „Grandiose Verse“ aus, der 20 s hält: Erhöht die Elementarkunde der damit ausgerüsteten Figur um {color}0,24{/color} % ihrer max. LP, 0,3 s Abklingzeit, 3-fach stapelbar. Erhöht bei 3 Stapelungen oder der Aktualisierung der Wirkungsdauer der dritten Stapelung die Elementarkunde aller Truppenmitglieder in der Nähe um {color}0,4{/color} % der max. LP der damit ausgerüsteten Figur, hält 20 s."
+      ]
+    },
+    {
       "key": "kings-squire",
       "name": "Gefolgsfrau des Königs",
       "description": "Eine Waffe, die du aus einer Geschichte über die Aranara erhalten hast. Sie hat die Form eines Bogens angenommen, mit dem man die Gegner des Waldes niederschießen kann.",
@@ -10240,6 +10309,18 @@
       ]
     },
     {
+      "key": "wandering-evenstar",
+      "name": "Wandernder Abendstern",
+      "description": "Ursprünglich war dies ein uraltes Gerät, das von Forschern zur Beobachtung und Berechnung von Himmelserscheinungen verwendet wurde. Es kann Energien leiten und als Katalysator dienen.",
+      "refinements": [
+        "Löst alle 10 s den folgenden Effekt aus, der 12 s hält: Erhöht den ANG der damit ausgerüsteten Figur um {color}24{/color} % der Elementarkunde, die sie besitzt. Verleiht zugleich den anderen Truppenmitgliedern in der Nähe 30 % dieses Bonus. Der Effekt mehrerer gleicher Waffen ist stapelbar. Er tritt auch in Kraft, wenn sich die Figur inaktiv in der Truppe befindet.",
+        "Löst alle 10 s den folgenden Effekt aus, der 12 s hält: Erhöht den ANG der damit ausgerüsteten Figur um {color}30{/color} % der Elementarkunde, die sie besitzt. Verleiht zugleich den anderen Truppenmitgliedern in der Nähe 30 % dieses Bonus. Der Effekt mehrerer gleicher Waffen ist stapelbar. Er tritt auch in Kraft, wenn sich die Figur inaktiv in der Truppe befindet.",
+        "Löst alle 10 s den folgenden Effekt aus, der 12 s hält: Erhöht den ANG der damit ausgerüsteten Figur um {color}36{/color} % der Elementarkunde, die sie besitzt. Verleiht zugleich den anderen Truppenmitgliedern in der Nähe 30 % dieses Bonus. Der Effekt mehrerer gleicher Waffen ist stapelbar. Er tritt auch in Kraft, wenn sich die Figur inaktiv in der Truppe befindet.",
+        "Löst alle 10 s den folgenden Effekt aus, der 12 s hält: Erhöht den ANG der damit ausgerüsteten Figur um {color}42{/color} % der Elementarkunde, die sie besitzt. Verleiht zugleich den anderen Truppenmitgliedern in der Nähe 30 % dieses Bonus. Der Effekt mehrerer gleicher Waffen ist stapelbar. Er tritt auch in Kraft, wenn sich die Figur inaktiv in der Truppe befindet.",
+        "Löst alle 10 s den folgenden Effekt aus, der 12 s hält: Erhöht den ANG der damit ausgerüsteten Figur um {color}48{/color} % der Elementarkunde, die sie besitzt. Verleiht zugleich den anderen Truppenmitgliedern in der Nähe 30 % dieses Bonus. Der Effekt mehrerer gleicher Waffen ist stapelbar. Er tritt auch in Kraft, wenn sich die Figur inaktiv in der Truppe befindet."
+      ]
+    },
+    {
       "key": "waster-greatsword",
       "name": "Übungsgroßschwert",
       "description": "Lediglich eine dicke Platte aus Eisen in der Form eines Schwertes. Mit genügend Willenskraft kann man damit immer noch Berge spalten.",
@@ -10327,6 +10408,18 @@
         "Erhöht den ANG um {color}30{/color} %. Erhöht den ANG aller Truppenmitglieder beim Treffen eines Gegners mit weniger als 30 % LP 12 s lang um {color}60{/color} %. 30 s Abklingzeit.",
         "Erhöht den ANG um {color}35{/color} %. Erhöht den ANG aller Truppenmitglieder beim Treffen eines Gegners mit weniger als 30 % LP 12 s lang um {color}70{/color} %. 30 s Abklingzeit.",
         "Erhöht den ANG um {color}40{/color} %. Erhöht den ANG aller Truppenmitglieder beim Treffen eines Gegners mit weniger als 30 % LP 12 s lang um {color}80{/color} %. 30 s Abklingzeit."
+      ]
+    },
+    {
+      "key": "xiphos-moonlight",
+      "name": "Mondlicht von Xiphos",
+      "description": "Dieses alte zweischneidige Schwert schimmert im Mondlicht. Es heißt, ein heute schweigender Dschinn wohne in ihm.",
+      "refinements": [
+        "Löst alle 10 s den folgenden Effekt aus, der 12 s hält: Erhöht die Aufladerate der damit ausgerüsteten Figur um {color}0,036{/color} % für jeden Punkt der Elementarkunde, die sie besitzt. Verleiht zugleich den anderen Truppenmitgliedern in der Nähe 30 % dieses Bonus. Der Effekt mehrerer gleicher Waffen ist stapelbar. Er tritt auch in Kraft, wenn sich die Figur inaktiv in der Truppe befindet.",
+        "Löst alle 10 s den folgenden Effekt aus, der 12 s hält: Erhöht die Aufladerate der damit ausgerüsteten Figur um {color}0,045{/color} % für jeden Punkt der Elementarkunde, die sie besitzt. Verleiht zugleich den anderen Truppenmitgliedern in der Nähe 30 % dieses Bonus. Der Effekt mehrerer gleicher Waffen ist stapelbar. Er tritt auch in Kraft, wenn sich die Figur inaktiv in der Truppe befindet.",
+        "Löst alle 10 s den folgenden Effekt aus, der 12 s hält: Erhöht die Aufladerate der damit ausgerüsteten Figur um {color}0,054{/color} % für jeden Punkt der Elementarkunde, die sie besitzt. Verleiht zugleich den anderen Truppenmitgliedern in der Nähe 30 % dieses Bonus. Der Effekt mehrerer gleicher Waffen ist stapelbar. Er tritt auch in Kraft, wenn sich die Figur inaktiv in der Truppe befindet.",
+        "Löst alle 10 s den folgenden Effekt aus, der 12 s hält: Erhöht die Aufladerate der damit ausgerüsteten Figur um {color}0,063{/color} % für jeden Punkt der Elementarkunde, die sie besitzt. Verleiht zugleich den anderen Truppenmitgliedern in der Nähe 30 % dieses Bonus. Der Effekt mehrerer gleicher Waffen ist stapelbar. Er tritt auch in Kraft, wenn sich die Figur inaktiv in der Truppe befindet.",
+        "Löst alle 10 s den folgenden Effekt aus, der 12 s hält: Erhöht die Aufladerate der damit ausgerüsteten Figur um {color}0,072{/color} % für jeden Punkt der Elementarkunde, die sie besitzt. Verleiht zugleich den anderen Truppenmitgliedern in der Nähe 30 % dieses Bonus. Der Effekt mehrerer gleicher Waffen ist stapelbar. Er tritt auch in Kraft, wenn sich die Figur inaktiv in der Truppe befindet."
       ]
     }
   ],

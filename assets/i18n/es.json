@@ -4439,86 +4439,137 @@
     {
       "key": "nilou",
       "name": "Nilou",
-      "title": "？？？",
-      "description": "？？？",
+      "title": "La Bailarina de los Lotos",
+      "description": "La famosa bailarina del Teatro Zubayr. Su estilo de danza es elegante y agraciado, y posee un carácter puro y bondadoso.",
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Danza de la media luna",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Ataque Normal",
+              "description": "Realiza hasta 3 ataques rápidos.\n",
+              "descriptions": []
+            },
+            {
+              "name": "Ataque Cargado",
+              "description": "Consume una cierta cantidad de Aguante para ejecutar un golpe giratorio.\n",
+              "descriptions": []
+            },
+            {
+              "name": "Ataque Descendiente",
+              "description": "Se lanza desde el aire para golpear el suelo, dañando a los enemigos cercanos e infligiendo Daño en el AdE en el momento del impacto.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "Daño de 1er golpe|{param1}%",
+            "Daño de 2.º golpe|{param2}%",
+            "Daño de 3er golpe|{param3}%",
+            "Daño de ATQ Cargado|{param4}% + {param5}%",
+            "Coste de Aguante de ATQ Cargado|{param6} pts.",
+            "Daño de Caída|{param7}%",
+            "Daño de impacto de caída baja/alta|{param8}% / {param9}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Danza de los siete reinos",
+          "description": "Nilou entra en el estado de “pirueta” e inflige Daño Hydro contra los enemigos cercanos en función de su Vida Máx.\nAdemás, cuando Nilou ejecuta un Ataque Normal o una Habilidad Elemental mientras está en este estado, entra respectivamente en los estados de “danza de espadas” y “danza espiral”, con los que inflige un Daño Hydro que no puede sustituirse imbuyéndose de otro elemento y que se considera daño de Habilidad Elemental.\n\n",
+          "abilities": [
+            {
+              "name": "",
+              "description": "Mientras estos estados estén activos, el tercer paso de baile de Nilou anulará el estado de pirueta y dará lugar a varios efectos distintos dependiendo del tipo del tercer paso de baile:\n",
+              "descriptions": [
+                "Danza de espadas: libera una luna de agua que inflige Daño Hydro contra los enemigos con los que colisiona y hace que Nilou entre en el estado de “rezo de la luna”. Los Ataques Normales que ejecute en este estado se convertirán en danza de espadas, y el último golpe liberará una luna de agua.",
+                "Danza espiral: libera una rueda de agua purificadora que inflige Daño Hydro en el AdE y crea un aura de quietud que sigue a tu personaje en uso y que aplica continuamente sobre él el estado de Mojado.",
+                "En los estados de pirueta y rezo lunar, Nilou no puede ejecutar Ataques Cargados. Dichos estados se anulan si es retirada de combate."
+              ]
+            }
+          ],
+          "stats": [
+            "Daño de habilidad|{param1}% de Vida Máx.",
+            "Daño de 1er golpe de danza de espadas/danza espiral|{param2}% / {param3}% de Vida Máx.",
+            "Daño de 2.º golpe de danza de espadas/danza espiral|{param4}% / {param5}% de Vida Máx.",
+            "Daño de luna de agua/rueda de agua|{param6}% / {param7}% de Vida Máx.",
+            "Duración de pirueta|{param8} s",
+            "Duración de rezo de la luna|{param9} s",
+            "Duración de aura de quietud|{param10} s",
+            "TdE|{param11} s"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
+          "title": "Danza del loto: Manantial onírico",
+          "description": "Interpreta la danza del manantial onírico y hace que florezca un loto de aguas lejanas para infligir Daño Hydro en el AdE en función de la Vida Máx. de Nilou y aplicar el estado de “eón perpetuo” sobre los enemigos golpeados.\nTras un breve lapso de tiempo, los enemigos afectados por el estado de eón perpetuo reciben Daño Hydro.\n\n",
           "abilities": [],
-          "stats": []
+          "stats": [
+            "Daño de habilidad|{param1}% de Vida Máx.",
+            "Daño de eón perpetuo|{param2}% de Vida Máx.",
+            "TdE|{param3} s",
+            "Energía Elemental|{param4}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "Loto de jade blanco",
+          "description": "Al lograr un “Perfecto” en un plato con efectos de ayuda a la aventura, hay una probabilidad del 12% de obtener el doble.\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
+          "title": "Corte de los pétalos danzantes",
+          "description": "Si el equipo está formado únicamente por personajes Dendro o Hydro y hay al menos un personaje Dendro y uno Hydro en él, cuando Nilou completa el tercer paso de baile de Danza de los siete reinos, otorga a los personajes cercanos el estado de “cáliz de la abundancia” durante 30 s.\nCuando un personaje bajo el estado de cáliz de la abundancia recibe un ataque Dendro, la Maestría Elemental de todos los personajes cercanos aumenta en 100 pts. durante 10 s. Además, al causar una reacción de Florecimiento, se crearán núcleos feraces en lugar de núcleos Dendro.\nA diferencia de estos últimos, los núcleos feraces explotan rápidamente tras ser creados y tienen una mayor AdE.\nSin embargo, estos núcleos no pueden activar las reacciones de Sobreflorecimiento y Crepitar y comparten la misma limitación de cantidad que los núcleos Dendro. Los ataques de los núcleos feraces se consideran ataques de núcleos Dendro causados por la reacción de Florecimiento.\nCuando el equipo no cumple con los requisitos de los tipos elementales necesarios para este talento pasivo, se eliminarán los efectos de cáliz de la abundancia existentes.\n",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "NA",
-          "description": "",
+          "title": "Sueño de la danza eónica",
+          "description": "Por cada 1000 pts. de Vida Máx. que Nilou tenga una vez superados los 30000 pts. de Vida Máx., el daño de los núcleos feraces creados por los personajes en el estado de cáliz de la abundancia aumenta en un 9%.\nEl daño infligido con los núcleos feraces solo puede aumentar un máximo del 400% de esta manera.\n",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
+          "title": "Danza de la luna menguante",
+          "description": "Danza de los siete reinos obtiene los siguientes fortalecimientos:\n",
+          "descriptions": [
+            "Aumenta en un 65% el daño infligido con la luna de agua.",
+            "Aumenta en 6 s la duración del aura de quietud."
+          ]
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "Lluvia florestelar",
+          "description": "Cuando un personaje en el estado de cáliz de la abundancia inflige Daño Hydro contra un enemigo, la RES Hydro de dicho enemigo se reduce en un 35% durante 10 s. Además, tras infligir daño contra un enemigo con una reacción de Florecimiento, la RES Dendro de dicho enemigo también se reduce en un 35% durante 10 s.\nEs necesario desbloquear el talento pasivo “Corte de los pétalos danzantes”.\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "Loto embelesador",
+          "description": "Aumenta el nivel de habilidad de Danza del loto: Manantial onírico +3.\nPuede ser aumentado hasta Niv. 15.\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "Sonido ondulante",
+          "description": "Al golpear a un enemigo con el tercer paso de baile del estado de pirueta de Danza de los siete reinos, Nilou recupera 15 pts. de Energía Elemental, y el daño de Danza del loto: Manantial onírico aumenta en un 50% durante 8 s.\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "Pirueta luminosa",
+          "description": "Aumenta el nivel de habilidad de Danza de los siete reinos +3.\nPuede ser aumentado hasta Niv. 15.\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
+          "title": "Canción rompescarcha",
+          "description": "Por cada 1000 pts. de Vida Máx. que tenga Nilou, su Prob. CRIT aumenta en un 0.6% y su Daño CRIT aumenta en un 1.2%.\nEl aumento máximo que se puede conseguir de esta manera es del 30% para la Prob. CRIT y del 60% para el Daño CRIT.\n",
           "descriptions": []
         }
       ]
@@ -9323,6 +9374,18 @@
       ]
     },
     {
+      "key": "key-of-khaj-nisut",
+      "name": "Llave de la Coronación",
+      "description": "Un cetro que venía junto a un báculo y que está hecho de obsidiana. Cuenta la leyenda que la puerta del paraíso oculto en los confines del desierto se abre con esta misteriosa llave.",
+      "refinements": [
+        "Aumenta la Vida en un {color}20{/color}%. Golpear a un enemigo con una Habilidad Elemental activa el efecto de “gran poema”, el cual dura 20s. Mientras este efecto está activo, la Maestría Elemental del personaje que lleva esta arma equipada aumenta en una cantidad equivalente al {color}0.12%{/color} de su Vida Máx. Este efecto solo puede activarse una vez cada 0.3s y acumularse un máximo de 3 veces. Al alcanzar 3 acumulaciones o cuando se reinicia la duración de la tercera, la Maestría Elemental de todos los miembros del equipo cercanos aumenta durante 20s en una cantidad equivalente al {color}0.2%{/color} de la Vida Máx. del personaje que porta esta arma.",
+        "Aumenta la Vida en un {color}25{/color}%. Golpear a un enemigo con una Habilidad Elemental activa el efecto de “gran poema”, el cual dura 20s. Mientras este efecto está activo, la Maestría Elemental del personaje que lleva esta arma equipada aumenta en una cantidad equivalente al {color}0.15%{/color} de su Vida Máx. Este efecto solo puede activarse una vez cada 0.3s y acumularse un máximo de 3 veces. Al alcanzar 3 acumulaciones o cuando se reinicia la duración de la tercera, la Maestría Elemental de todos los miembros del equipo cercanos aumenta durante 20s en una cantidad equivalente al {color}0.25%{/color} de la Vida Máx. del personaje que porta esta arma.",
+        "Aumenta la Vida en un {color}30{/color}%. Golpear a un enemigo con una Habilidad Elemental activa el efecto de “gran poema”, el cual dura 20s. Mientras este efecto está activo, la Maestría Elemental del personaje que lleva esta arma equipada aumenta en una cantidad equivalente al {color}0.18%{/color} de su Vida Máx. Este efecto solo puede activarse una vez cada 0.3s y acumularse un máximo de 3 veces. Al alcanzar 3 acumulaciones o cuando se reinicia la duración de la tercera, la Maestría Elemental de todos los miembros del equipo cercanos aumenta durante 20s en una cantidad equivalente al {color}0.3%{/color} de la Vida Máx. del personaje que porta esta arma.",
+        "Aumenta la Vida en un {color}35{/color}%. Golpear a un enemigo con una Habilidad Elemental activa el efecto de “gran poema”, el cual dura 20s. Mientras este efecto está activo, la Maestría Elemental del personaje que lleva esta arma equipada aumenta en una cantidad equivalente al {color}0.21%{/color} de su Vida Máx. Este efecto solo puede activarse una vez cada 0.3s y acumularse un máximo de 3 veces. Al alcanzar 3 acumulaciones o cuando se reinicia la duración de la tercera, la Maestría Elemental de todos los miembros del equipo cercanos aumenta durante 20s en una cantidad equivalente al {color}0.35%{/color} de la Vida Máx. del personaje que porta esta arma.",
+        "Aumenta la Vida en un {color}40{/color}%. Golpear a un enemigo con una Habilidad Elemental activa el efecto de “gran poema”, el cual dura 20s. Mientras este efecto está activo, la Maestría Elemental del personaje que lleva esta arma equipada aumenta en una cantidad equivalente al {color}0.24%{/color} de su Vida Máx. Este efecto solo puede activarse una vez cada 0.3s y acumularse un máximo de 3 veces. Al alcanzar 3 acumulaciones o cuando se reinicia la duración de la tercera, la Maestría Elemental de todos los miembros del equipo cercanos aumenta durante 20s en una cantidad equivalente al {color}0.4%{/color} de la Vida Máx. del personaje que porta esta arma."
+      ]
+    },
+    {
       "key": "kings-squire",
       "name": "Vasalla del Rey",
       "description": "Un arma obtenida a través de una de las historias de los aranara. Tiene forma de arco y, con sus flechas, es capaz de derribar a cualquier enemigo del bosque.",
@@ -10227,6 +10290,18 @@
       ]
     },
     {
+      "key": "wandering-evenstar",
+      "name": "Estrella Errabunda",
+      "description": "En su origen, era un antiguo artilugio con el que los eruditos observaban y hacían cálculos de los fenómenos astronómicos. Ahora sirve como canalizador de energía y como catalizador.",
+      "refinements": [
+        "Cada 10s, el ATQ del personaje que lleve esta arma equipada aumenta durante 12s en un {color}24{/color}% de su Maestría Elemental, y los personajes del equipo cercanos obtienen un 30% de este bono. Este efecto se puede acumular con los de otros personajes del equipo que lleven esta arma equipada, y se puede activar incluso cuando el personaje está en tu equipo pero no en combate.",
+        "Cada 10s, el ATQ del personaje que lleve esta arma equipada aumenta durante 12s en un {color}30{/color}% de su Maestría Elemental, y los personajes del equipo cercanos obtienen un 30% de este bono. Este efecto se puede acumular con los de otros personajes del equipo que lleven esta arma equipada, y se puede activar incluso cuando el personaje está en tu equipo pero no en combate.",
+        "Cada 10s, el ATQ del personaje que lleve esta arma equipada aumenta durante 12s en un {color}36{/color}% de su Maestría Elemental, y los personajes del equipo cercanos obtienen un 30% de este bono. Este efecto se puede acumular con los de otros personajes del equipo que lleven esta arma equipada, y se puede activar incluso cuando el personaje está en tu equipo pero no en combate.",
+        "Cada 10s, el ATQ del personaje que lleve esta arma equipada aumenta durante 12s en un {color}42{/color}% de su Maestría Elemental, y los personajes del equipo cercanos obtienen un 30% de este bono. Este efecto se puede acumular con los de otros personajes del equipo que lleven esta arma equipada, y se puede activar incluso cuando el personaje está en tu equipo pero no en combate.",
+        "Cada 10s, el ATQ del personaje que lleve esta arma equipada aumenta durante 12s en un {color}48{/color}% de su Maestría Elemental, y los personajes del equipo cercanos obtienen un 30% de este bono. Este efecto se puede acumular con los de otros personajes del equipo que lleven esta arma equipada, y se puede activar incluso cuando el personaje está en tu equipo pero no en combate."
+      ]
+    },
+    {
       "key": "waster-greatsword",
       "name": "Gran Espada del Guerrero",
       "description": "Una plancha de hierro resistente que, con la fuerza de voluntad de la persona que la empuñe, puede ser lo suficientemente potente como para romper montañas.",
@@ -10314,6 +10389,18 @@
         "Aumenta el ATQ en un {color}30{/color}%. Al atacar a enemigos con menos del 30% de su Vida, aumenta el ATQ de todos los miembros del equipo en un {color}60{/color}% durante 12 s. Este efecto solo puede ocurrir una vez cada 30 s.",
         "Aumenta el ATQ en un {color}35{/color}%. Al atacar a enemigos con menos del 30% de su Vida, aumenta el ATQ de todos los miembros del equipo en un {color}70{/color}% durante 12 s. Este efecto solo puede ocurrir una vez cada 30 s.",
         "Aumenta el ATQ en un {color}40{/color}%. Al atacar a enemigos con menos del 30% de su Vida, aumenta el ATQ de todos los miembros del equipo en un {color}80{/color}% durante 12 s. Este efecto solo puede ocurrir una vez cada 30 s."
+      ]
+    },
+    {
+      "key": "xiphos-moonlight",
+      "name": "Luz Lunar de Xifos",
+      "description": "Una espada de doble filo que emite un brillo similar al de la luna. Según la leyenda, en ella reside un genio que ahora permanece en silencio.",
+      "refinements": [
+        "Cada 10s, la Recarga de Energía del personaje que lleve esta arma equipada aumenta durante 12s en un {color}0.036%{/color} por cada punto de Maestría Elemental que tenga, y los personajes del equipo cercanos obtienen un 30% de este bono. Este efecto se puede acumular con los de otros personajes del equipo que lleven esta arma equipada, y se puede activar incluso cuando el personaje está en tu equipo pero no en combate.",
+        "Cada 10s, la Recarga de Energía del personaje que lleve esta arma equipada aumenta durante 12s en un {color}0.045%{/color} por cada punto de Maestría Elemental que tenga, y los personajes del equipo cercanos obtienen un 30% de este bono. Este efecto se puede acumular con los de otros personajes del equipo que lleven esta arma equipada, y se puede activar incluso cuando el personaje está en tu equipo pero no en combate.",
+        "Cada 10s, la Recarga de Energía del personaje que lleve esta arma equipada aumenta durante 12s en un {color}0.054%{/color} por cada punto de Maestría Elemental que tenga, y los personajes del equipo cercanos obtienen un 30% de este bono. Este efecto se puede acumular con los de otros personajes del equipo que lleven esta arma equipada, y se puede activar incluso cuando el personaje está en tu equipo pero no en combate.",
+        "Cada 10s, la Recarga de Energía del personaje que lleve esta arma equipada aumenta durante 12s en un {color}0.063%{/color} por cada punto de Maestría Elemental que tenga, y los personajes del equipo cercanos obtienen un 30% de este bono. Este efecto se puede acumular con los de otros personajes del equipo que lleven esta arma equipada, y se puede activar incluso cuando el personaje está en tu equipo pero no en combate.",
+        "Cada 10s, la Recarga de Energía del personaje que lleve esta arma equipada aumenta durante 12s en un {color}0.072%{/color} por cada punto de Maestría Elemental que tenga, y los personajes del equipo cercanos obtienen un 30% de este bono. Este efecto se puede acumular con los de otros personajes del equipo que lleven esta arma equipada, y se puede activar incluso cuando el personaje está en tu equipo pero no en combate."
       ]
     }
   ],

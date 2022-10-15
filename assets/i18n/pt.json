@@ -4372,86 +4372,143 @@
     {
       "key": "nilou",
       "name": "Nilou",
-      "title": "？？？",
-      "description": "？？？",
+      "title": "Dança da Luz de Lótus",
+      "description": "A Estrela do Teatro Zubayr, ela é bondosa e inocente. Seu estilo de dança é alegre e elegante.",
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Dança da Meia-Lua",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Ataque Normal",
+              "description": "Realiza até 3 golpes rápidos.\n",
+              "descriptions": []
+            },
+            {
+              "name": "Ataque Carregado",
+              "description": "Consome uma certa quantidade de Stamina para desferir um golpe giratório.\n",
+              "descriptions": []
+            },
+            {
+              "name": "Ataque Imersivo",
+              "description": "Mergulha em pleno ar para golpear o chão, causando dano aos inimigos ao longo do caminho e infligindo Dano em uma AdE durante o impacto.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "Dano do 1° Golpe|{param1}%",
+            "Dano do 2° Golpe|{param2}%",
+            "Dano do 3° Golpe|{param3}%",
+            "Dano de Ataque Carregado|{param4}% + {param5}%",
+            "Consumo de Stamina de Ataque Carregado|{param6}",
+            "Dano Durante a Queda|{param7}%",
+            "Dano de Queda de Baixa/Alta Altitude|{param8}% / {param9}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Dança dos Sete Reinos",
+          "description": "Entra no estado de “Pirueta”, infligindo Dano Hydro baseado na Vida Máxima de Nilou.\nEnquanto estiver no estado de Pirueta, ao desferir Ataques Normais ou lançar sua Habilidade Elemental, Nilou entrará nas posições “Dança de Espadas” e “Dança Rodopiante” respectivamente, fazendo com que o Dano infligido seja convertido em Dano Hydro que não pode ser substituído, e é considerado Dano de Habilidade Elemental.\n\n",
+          "abilities": [
+            {
+              "name": "",
+              "description": "Nesse estado, o terceiro passo da dança de Nilou eliminará o estado de Pirueta e, de acordo com o tipo do terceiro passo, desencadeará os seguintes efeitos:\n",
+              "descriptions": [
+                "Dança de Espadas: lança uma Lua Aquática, que inflige Dano Hydro contra os inimigos que atinge e faz Nilou entrar no estado “Súplica Lunar”. Nesse estado, ao realizar Ataques Normais, eles serão convertidos em Dança de Espadas e, ao realizar o último ataque, será lançada uma Lua Aquática;",
+                "Dança Rodopiante: lança uma Roda d’Água, infligindo Dano Hydro em AdE, e gerando uma “Aura da Tranquilidade” que segue o personagem ativo, continuamente aplicando o estado Molhado aos oponentes.",
+                "Enquanto Nilou estiver no estado de Pirueta ou da Súplica Lunar, ela não poderá desferir Ataques Carregados; esses estados serão eliminados quando Nilou sair do campo de batalha."
+              ]
+            }
+          ],
+          "stats": [
+            "Dano de Habilidade|{param1}% da Vida Máxima",
+            "Dano do 1° Golpe da Dança de Espadas/Dança Rodopiante|{param2}% / {param3}% da Vida Máxima",
+            "Dano do 2º Golpe da Dança de Espadas/Dança Rodopiante|{param4}% / {param5}% da Vida Máxima",
+            "Dano de Lua Aquática/Roda d’Água|{param6}% / {param7}% da Vida Máxima",
+            "Duração de Pirueta|{param8}s",
+            "Duração da Súplica Lunar|{param9}s",
+            "Duração da Aura da Tranquilidade|{param10}s",
+            "Recarga|{param11}s"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
+          "title": "Dança da Lótus: Nascente Longínqua Onírica",
+          "description": "Inicia a Dança da Nascente Longínqua Onírica, desabrochando a Lótus de Águas Longínquas, que inflige Dano Hydro em AdE baseado na Vida Máxima de Nilou e aplicando o estado “Inundação Eterna” aos inimigos atingidos.\nApós um curto intervalo, inimigos sob o estado Inundação Eterna sofrerão Dano Hydro.\n\n",
           "abilities": [],
-          "stats": []
+          "stats": [
+            "Dano de Habilidade|{param1}% da Vida Máxima",
+            "Dano da Inundação Eterna|{param2}% da Vida Máxima",
+            "Recarga|{param3}s",
+            "Energia Elemental|{param4}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "Lótus da Jade Branca",
+          "description": "Ao fazer uma comida Perfeita relacionada a efeitos de Aventura, há 12% de chance de se obter o dobro de produção.\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
+          "title": "Corte das Pétalas Dançantes",
+          "description": "Quando todos os personagens da equipe são do tipo elemental Dendro e Hydro, e quando há pelo menos um personagem Dendro e Hydro:\n",
+          "descriptions": [
+            "Ao completar a terceira etapa da Dança dos Sete Reinos, Nilou concede a todos os membros próximos da equipe o estado “Recompensa do Cálice Dourado” que dura por 30s.",
+            "Personagens que estão sob o estado Recompensa do Cálice Dourado, ao sofrerem um Ataque Dendro, aumentarão a Proficiência Elemental de todos os personagens próximos em 100 por 10s; além disso, ao desencadearem a reação de Florescimento, substituirão a criação de um Núcleo Dendro por um “Núcleo da Riqueza”.",
+            "Diferente do Núcleo Dendro, o Núcleo da Riqueza explode rapidamente e tem uma AdE maior.",
+            "O Núcleo da Riqueza não pode desencadear as reações de Germinação e Superflorescimento, e compartilha o limite de quantidade com os Núcleos Dendro. O Dano do Núcleo da Riqueza é considerado como Dano de Núcleo Dendro criado pela reação de Florescimento.",
+            "Quando os requisitos de Talento Passivo do tipo de elementos dos personagens da equipe não forem atendidos, os efeitos da Recompensa do Cálice Dourado existentes serão removidos."
+          ]
         },
         {
           "key": "p3",
-          "title": "NA",
-          "description": "",
+          "title": "Sonhos da Dança de Eras",
+          "description": "Para cada 1.000 pontos de Vida Máxima de Nilou acima de 30.000, aumenta o Dano infligido pelos Núcleos da Riqueza criados pelos personagens sob o estado de “Recompensa do Cálice Dourado” em 9%.\nO aumento de Dano infligido pelos Núcleos da Riqueza desta forma pode ser de até 400%.\n",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
+          "title": "Dança da Lua Minguante",
+          "description": "A Dança dos Sete Reinos obtém os seguintes fortalecimentos:\n",
+          "descriptions": [
+            "Aumenta o Dano CRIT de Lua Aquática em 65%.",
+            "A Duração da Aura da Tranquilidade é aumentada em 6s."
+          ]
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "Chuva Florestelar",
+          "description": "Quando um personagem que foi afetado pelo efeito de “Recompensa do Cálice Dourado” inflige Dano Hydro contra um inimigo, a RES Hydro desse inimigo será reduzida em 35% por 10s. Quando um inimigo sofre Dano de uma reação de Florescimento, a RES Dendro dele é reduzida em 35% por 10s.\nÉ necessário ter desbloqueado o Talento “Corte das Pétalas Dançantes”.\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "Silhueta dos Passos de Lótus",
+          "description": "Aumenta o nível da Dança da Lótus: Nascente Longínqua Onírica em 3.\nO nível máximo de elevação é 15.\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "Pulso Sibilante",
+          "description": "Após o terceiro passo do estado Pirueta da Dança dos Sete Reinos acertar o oponente, Nilou regenerará 15 de Energia Elemental, e o Dano de sua Dança da Lótus: Nascente Longínqua Onírica aumentará em 50% por 8s.\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "Luz Rodopiante",
+          "description": "Aumenta o nível da Dança dos Sete Reinos em 3.\nO nível máximo de elevação é 15.\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
+          "title": "Melodia Rompegelo",
+          "description": "A cada 1.000 pontos de Vida Máxima de Nilou, aumenta a sua Taxa CRIT em 0.6% e seu Dano CRIT em 1.2%.\nO aumento máximo de Taxa CRIT é de 30% e de Dano CRIT é de 60%.\n",
           "descriptions": []
         }
       ]
@@ -9220,6 +9277,18 @@
       ]
     },
     {
+      "key": "key-of-khaj-nisut",
+      "name": "Chave de Hierofania",
+      "description": "Um dos pares de cetros feitos com obsidiana. Dizem que pode ser usado como chave para abrir a porta do paraíso escondido sob o mar de areia.",
+      "refinements": [
+        "Aumenta a Vida em {color}20{/color}%. Quando uma Habilidade Elemental acerta os oponentes, gera o efeito “Grande Poema” que dura 20s. Esse efeito aumenta a Proficiência Elemental do personagem que está com essa arma equipada baseada em {color}0.12%{/color} de sua Vida Máxima. Esse efeito pode ser desencadeado uma vez a cada 0.3s, acumulando até 3 vezes. Quando acumular 3 vezes ou quando a duração do 3º acúmulo for redefinida, aumentará a Proficiência Elemental de todos os personagens da equipe próximos baseada em {color}0.2%{/color} da Vida Máxima do personagem que está com essa arma equipada por 20s.",
+        "Aumenta a Vida em {color}25{/color}%. Quando uma Habilidade Elemental acerta os oponentes, gera o efeito “Grande Poema” que dura 20s. Esse efeito aumenta a Proficiência Elemental do personagem que está com essa arma equipada baseada em {color}0.15%{/color} de sua Vida Máxima. Esse efeito pode ser desencadeado uma vez a cada 0.3s, acumulando até 3 vezes. Quando acumular 3 vezes ou quando a duração do 3º acúmulo for redefinida, aumentará a Proficiência Elemental de todos os personagens da equipe próximos baseada em {color}0.25%{/color} da Vida Máxima do personagem que está com essa arma equipada por 20s.",
+        "Aumenta a Vida em {color}30{/color}%. Quando uma Habilidade Elemental acerta os oponentes, gera o efeito “Grande Poema” que dura 20s. Esse efeito aumenta a Proficiência Elemental do personagem que está com essa arma equipada baseada em {color}0.18%{/color} de sua Vida Máxima. Esse efeito pode ser desencadeado uma vez a cada 0.3s, acumulando até 3 vezes. Quando acumular 3 vezes ou quando a duração do 3º acúmulo for redefinida, aumentará a Proficiência Elemental de todos os personagens da equipe próximos baseada em {color}0.3%{/color} da Vida Máxima do personagem que está com essa arma equipada por 20s.",
+        "Aumenta a Vida em {color}35{/color}%. Quando uma Habilidade Elemental acerta os oponentes, gera o efeito “Grande Poema” que dura 20s. Esse efeito aumenta a Proficiência Elemental do personagem que está com essa arma equipada baseada em {color}0.21%{/color} de sua Vida Máxima. Esse efeito pode ser desencadeado uma vez a cada 0.3s, acumulando até 3 vezes. Quando acumular 3 vezes ou quando a duração do 3º acúmulo for redefinida, aumentará a Proficiência Elemental de todos os personagens da equipe próximos baseada em {color}0.35%{/color} da Vida Máxima do personagem que está com essa arma equipada por 20s.",
+        "Aumenta a Vida em {color}40{/color}%. Quando uma Habilidade Elemental acerta os oponentes, gera o efeito “Grande Poema” que dura 20s. Esse efeito aumenta a Proficiência Elemental do personagem que está com essa arma equipada baseada em {color}0.24%{/color} de sua Vida Máxima. Esse efeito pode ser desencadeado uma vez a cada 0.3s, acumulando até 3 vezes. Quando acumular 3 vezes ou quando a duração do 3º acúmulo for redefinida, aumentará a Proficiência Elemental de todos os personagens da equipe próximos baseada em {color}0.4%{/color} da Vida Máxima do personagem que está com essa arma equipada por 20s."
+      ]
+    },
+    {
       "key": "kings-squire",
       "name": "Vassalo do Rei",
       "description": "Uma arma obtida através de uma das histórias dos Aranara. Ela tomou a forma de um arco que é capaz de perfurar os inimigos da floresta.",
@@ -10124,6 +10193,18 @@
       ]
     },
     {
+      "key": "wandering-evenstar",
+      "name": "Estrela Itinerante",
+      "description": "Originalmente, era um dispositivo antigo com o qual os estudiosos observavam e faziam cálculos de fenômenos astronômicos. Agora serve como um canal de energia e um catalisador.",
+      "refinements": [
+        "A cada 10s, gera os seguintes efeitos: aumenta o ATQ do personagem que está com essa arma equipada baseado em {color}24{/color}% da sua Proficiência Elemental. Os demais personagens próximos da equipe ganham 30% desse bônus. Esses efeitos duram 12s. É possível acumular esses efeitos equipando vários exemplares desta mesma arma. Esse efeito será desencadeado mesmo que o personagem não esteja ativo no campo de batalha.",
+        "A cada 10s, gera os seguintes efeitos: aumenta o ATQ do personagem que está com essa arma equipada baseado em {color}30{/color}% da sua Proficiência Elemental. Os demais personagens próximos da equipe ganham 30% desse bônus. Esses efeitos duram 12s. É possível acumular esses efeitos equipando vários exemplares desta mesma arma. Esse efeito será desencadeado mesmo que o personagem não esteja ativo no campo de batalha.",
+        "A cada 10s, gera os seguintes efeitos: aumenta o ATQ do personagem que está com essa arma equipada baseado em {color}36{/color}% da sua Proficiência Elemental. Os demais personagens próximos da equipe ganham 30% desse bônus. Esses efeitos duram 12s. É possível acumular esses efeitos equipando vários exemplares desta mesma arma. Esse efeito será desencadeado mesmo que o personagem não esteja ativo no campo de batalha.",
+        "A cada 10s, gera os seguintes efeitos: aumenta o ATQ do personagem que está com essa arma equipada baseado em {color}42{/color}% da sua Proficiência Elemental. Os demais personagens próximos da equipe ganham 30% desse bônus. Esses efeitos duram 12s. É possível acumular esses efeitos equipando vários exemplares desta mesma arma. Esse efeito será desencadeado mesmo que o personagem não esteja ativo no campo de batalha.",
+        "A cada 10s, gera os seguintes efeitos: aumenta o ATQ do personagem que está com essa arma equipada baseado em {color}48{/color}% da sua Proficiência Elemental. Os demais personagens próximos da equipe ganham 30% desse bônus. Esses efeitos duram 12s. É possível acumular esses efeitos equipando vários exemplares desta mesma arma. Esse efeito será desencadeado mesmo que o personagem não esteja ativo no campo de batalha."
+      ]
+    },
+    {
       "key": "waster-greatsword",
       "name": "Espadão do Julgamento",
       "description": "Uma chapa de ferro resistente, que pode ser boa o suficiente para separar montanhas com força de vontade suficiente.",
@@ -10211,6 +10292,18 @@
         "Aumenta o ATQ em {color}30{/color}%. Ao acertar o ataque em oponentes com menos de 30% de sua Vida, aumenta o ATQ de todos os companheiros em {color}60{/color}% por 12s. Este efeito pode ser ativado uma vez a cada 30s.",
         "Aumenta o ATQ em {color}35{/color}%. Ao acertar o ataque em oponentes com menos de 30% de sua Vida, aumenta o ATQ de todos os companheiros em {color}70{/color}% por 12s. Este efeito pode ser ativado uma vez a cada 30s.",
         "Aumenta o ATQ em {color}40{/color}%. Ao acertar o ataque em oponentes com Vida inferior a 30%, aumenta o ATQ de todos os companheiros em {color}80{/color}% por 12s. Este efeito pode ser ativado uma vez a cada 30s."
+      ]
+    },
+    {
+      "key": "xiphos-moonlight",
+      "name": "Luz Lunar de Xiphos",
+      "description": "Uma espada de dois gumes que emite um brilho semelhante ao da lua. Segundo as lendas, nela reside um Jinni que aguarda em silêncio.",
+      "refinements": [
+        "Os seguintes efeitos serão desencadeados a cada 10s: o personagem com esta arma equipada terá sua Recarga de Energia aumentada em {color}0.036%{/color} para cada ponto de Proficiência Elemental que ele possuir, com os membros da equipe próximos ganhando 30% desse bônus, esses efeitos duram 12s. É possível acumular esse efeito ao equipar vários exemplares desta arma. Esse efeito será desencadeado mesmo que o personagem não esteja ativo no campo de batalha.",
+        "Os seguintes efeitos serão desencadeados a cada 10s: o personagem com esta arma equipada terá sua Recarga de Energia aumentada em {color}0.045%{/color} para cada ponto de Proficiência Elemental que ele possuir, com os membros da equipe próximos ganhando 30% desse bônus, esses efeitos duram 12s. É possível acumular esse efeito ao equipar vários exemplares desta arma. Esse efeito será desencadeado mesmo que o personagem não esteja ativo no campo de batalha.",
+        "Os seguintes efeitos serão desencadeados a cada 10s: o personagem com esta arma equipada terá sua Recarga de Energia aumentada em {color}0.054%{/color} para cada ponto de Proficiência Elemental que ele possuir, com os membros da equipe próximos ganhando 30% desse bônus, esses efeitos duram 12s. É possível acumular esse efeito ao equipar vários exemplares desta arma. Esse efeito será desencadeado mesmo que o personagem não esteja ativo no campo de batalha.",
+        "Os seguintes efeitos serão desencadeados a cada 10s: o personagem com esta arma equipada terá sua Recarga de Energia aumentada em {color}0.063%{/color} para cada ponto de Proficiência Elemental que ele possuir, com os membros da equipe próximos ganhando 30% desse bônus, esses efeitos duram 12s. É possível acumular esse efeito ao equipar vários exemplares desta arma. Esse efeito será desencadeado mesmo que o personagem não esteja ativo no campo de batalha.",
+        "Os seguintes efeitos serão desencadeados a cada 10s: o personagem com esta arma equipada terá sua Recarga de Energia aumentada em {color}0.072%{/color} para cada ponto de Proficiência Elemental que ele possuir, com os membros da equipe próximos ganhando 30% desse bônus, esses efeitos duram 12s. É possível acumular esse efeito ao equipar vários exemplares desta arma. Esse efeito será desencadeado mesmo que o personagem não esteja ativo no campo de batalha."
       ]
     }
   ],
