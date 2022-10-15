@@ -11617,6 +11617,256 @@
       ]
     },
     {
+      "key": "key-of-khaj-nisut",
+      "image": "key-of-khaj-nisut.webp",
+      "type": "sword",
+      "atk": 44.0,
+      "rarity": 5,
+      "secondaryStat": "hpPercentage",
+      "secondaryStatValue": 14.4,
+      "location": "gacha",
+      "isComingSoon": false,
+      "ascensionMaterials": [
+        {
+          "level": 20,
+          "materials": [
+            {
+              "key": "copper-talisman-of-the-forest-dew",
+              "quantity": 5,
+              "type": "weaponPrimary"
+            },
+            {
+              "key": "damaged-prism",
+              "quantity": 5,
+              "type": "weapon"
+            },
+            {
+              "key": "faded-red-satin",
+              "quantity": 3,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 10000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "level": 40,
+          "materials": [
+            {
+              "key": "iron-talisman-of-the-forest-dew",
+              "quantity": 5,
+              "type": "weaponPrimary"
+            },
+            {
+              "key": "damaged-prism",
+              "quantity": 18,
+              "type": "weapon"
+            },
+            {
+              "key": "faded-red-satin",
+              "quantity": 12,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 20000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "level": 50,
+          "materials": [
+            {
+              "key": "iron-talisman-of-the-forest-dew",
+              "quantity": 9,
+              "type": "weaponPrimary"
+            },
+            {
+              "key": "turbid-prism",
+              "quantity": 9,
+              "type": "weapon"
+            },
+            {
+              "key": "trimmed-red-silk",
+              "quantity": 9,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 30000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "level": 60,
+          "materials": [
+            {
+              "key": "silver-talisman-of-the-forest-dew",
+              "quantity": 5,
+              "type": "weaponPrimary"
+            },
+            {
+              "key": "turbid-prism",
+              "quantity": 18,
+              "type": "weapon"
+            },
+            {
+              "key": "trimmed-red-silk",
+              "quantity": 14,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 45000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "level": 70,
+          "materials": [
+            {
+              "key": "silver-talisman-of-the-forest-dew",
+              "quantity": 9,
+              "type": "weaponPrimary"
+            },
+            {
+              "key": "radiant-prism",
+              "quantity": 14,
+              "type": "weapon"
+            },
+            {
+              "key": "rich-red-brocade",
+              "quantity": 9,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 55000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "level": 80,
+          "materials": [
+            {
+              "key": "golden-talisman-of-the-forest-dew",
+              "quantity": 6,
+              "type": "weaponPrimary"
+            },
+            {
+              "key": "radiant-prism",
+              "quantity": 27,
+              "type": "weapon"
+            },
+            {
+              "key": "rich-red-brocade",
+              "quantity": 18,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 65000,
+              "type": "currency"
+            }
+          ]
+        }
+      ],
+      "craftingMaterials": [],
+      "stats": [
+        {
+          "level": 1,
+          "baseAtk": 44.0,
+          "statValue": 14.4,
+          "isAnAscension": false
+        },
+        {
+          "level": 20,
+          "baseAtk": 110.0,
+          "statValue": 25.4,
+          "isAnAscension": false
+        },
+        {
+          "level": 20,
+          "baseAtk": 141.0,
+          "statValue": 25.4,
+          "isAnAscension": true
+        },
+        {
+          "level": 40,
+          "baseAtk": 210.0,
+          "statValue": 37.1,
+          "isAnAscension": false
+        },
+        {
+          "level": 40,
+          "baseAtk": 241.0,
+          "statValue": 37.1,
+          "isAnAscension": true
+        },
+        {
+          "level": 50,
+          "baseAtk": 275.0,
+          "statValue": 42.9,
+          "isAnAscension": false
+        },
+        {
+          "level": 50,
+          "baseAtk": 307.0,
+          "statValue": 42.9,
+          "isAnAscension": true
+        },
+        {
+          "level": 60,
+          "baseAtk": 341.0,
+          "statValue": 48.7,
+          "isAnAscension": false
+        },
+        {
+          "level": 60,
+          "baseAtk": 373.0,
+          "statValue": 48.7,
+          "isAnAscension": true
+        },
+        {
+          "level": 70,
+          "baseAtk": 408.0,
+          "statValue": 54.5,
+          "isAnAscension": false
+        },
+        {
+          "level": 70,
+          "baseAtk": 439.0,
+          "statValue": 54.5,
+          "isAnAscension": true
+        },
+        {
+          "level": 80,
+          "baseAtk": 475.0,
+          "statValue": 60.3,
+          "isAnAscension": false
+        },
+        {
+          "level": 80,
+          "baseAtk": 506.0,
+          "statValue": 60.3,
+          "isAnAscension": true
+        },
+        {
+          "level": 90,
+          "baseAtk": 542.0,
+          "statValue": 66.2,
+          "isAnAscension": false
+        }
+      ]
+    },
+    {
       "key": "lions-roar",
       "image": "lions-roar.webp",
       "type": "sword",
@@ -15570,6 +15820,256 @@
           "level": 90,
           "baseAtk": 448.0,
           "statValue": 29.3,
+          "isAnAscension": false
+        }
+      ]
+    },
+    {
+      "key": "xiphos-moonlight",
+      "image": "xiphos-moonlight.webp",
+      "type": "sword",
+      "atk": 42.0,
+      "rarity": 4,
+      "secondaryStat": "elementalMastery",
+      "secondaryStatValue": 36.0,
+      "location": "gacha",
+      "isComingSoon": false,
+      "ascensionMaterials": [
+        {
+          "level": 20,
+          "materials": [
+            {
+              "key": "copper-talisman-of-the-forest-dew",
+              "quantity": 3,
+              "type": "weaponPrimary"
+            },
+            {
+              "key": "damaged-prism",
+              "quantity": 3,
+              "type": "weapon"
+            },
+            {
+              "key": "faded-red-satin",
+              "quantity": 2,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 5000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "level": 40,
+          "materials": [
+            {
+              "key": "iron-talisman-of-the-forest-dew",
+              "quantity": 3,
+              "type": "weaponPrimary"
+            },
+            {
+              "key": "damaged-prism",
+              "quantity": 12,
+              "type": "weapon"
+            },
+            {
+              "key": "faded-red-satin",
+              "quantity": 8,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 15000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "level": 50,
+          "materials": [
+            {
+              "key": "iron-talisman-of-the-forest-dew",
+              "quantity": 6,
+              "type": "weaponPrimary"
+            },
+            {
+              "key": "turbid-prism",
+              "quantity": 6,
+              "type": "weapon"
+            },
+            {
+              "key": "trimmed-red-silk",
+              "quantity": 6,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 20000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "level": 60,
+          "materials": [
+            {
+              "key": "silver-talisman-of-the-forest-dew",
+              "quantity": 3,
+              "type": "weaponPrimary"
+            },
+            {
+              "key": "turbid-prism",
+              "quantity": 12,
+              "type": "weapon"
+            },
+            {
+              "key": "trimmed-red-silk",
+              "quantity": 9,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 30000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "level": 70,
+          "materials": [
+            {
+              "key": "silver-talisman-of-the-forest-dew",
+              "quantity": 6,
+              "type": "weaponPrimary"
+            },
+            {
+              "key": "radiant-prism",
+              "quantity": 9,
+              "type": "weapon"
+            },
+            {
+              "key": "rich-red-brocade",
+              "quantity": 6,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 35000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "level": 80,
+          "materials": [
+            {
+              "key": "golden-talisman-of-the-forest-dew",
+              "quantity": 4,
+              "type": "weaponPrimary"
+            },
+            {
+              "key": "radiant-prism",
+              "quantity": 18,
+              "type": "weapon"
+            },
+            {
+              "key": "rich-red-brocade",
+              "quantity": 12,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 45000,
+              "type": "currency"
+            }
+          ]
+        }
+      ],
+      "craftingMaterials": [],
+      "stats": [
+        {
+          "level": 1,
+          "baseAtk": 42.0,
+          "statValue": 36.0,
+          "isAnAscension": false
+        },
+        {
+          "level": 20,
+          "baseAtk": 109.0,
+          "statValue": 64.0,
+          "isAnAscension": false
+        },
+        {
+          "level": 20,
+          "baseAtk": 135.0,
+          "statValue": 64.0,
+          "isAnAscension": true
+        },
+        {
+          "level": 40,
+          "baseAtk": 205.0,
+          "statValue": 93.0,
+          "isAnAscension": false
+        },
+        {
+          "level": 40,
+          "baseAtk": 231.0,
+          "statValue": 93.0,
+          "isAnAscension": true
+        },
+        {
+          "level": 50,
+          "baseAtk": 266.0,
+          "statValue": 107.0,
+          "isAnAscension": false
+        },
+        {
+          "level": 50,
+          "baseAtk": 292.0,
+          "statValue": 107.0,
+          "isAnAscension": true
+        },
+        {
+          "level": 60,
+          "baseAtk": 327.0,
+          "statValue": 122.0,
+          "isAnAscension": false
+        },
+        {
+          "level": 60,
+          "baseAtk": 353.0,
+          "statValue": 122.0,
+          "isAnAscension": true
+        },
+        {
+          "level": 70,
+          "baseAtk": 388.0,
+          "statValue": 136.0,
+          "isAnAscension": false
+        },
+        {
+          "level": 70,
+          "baseAtk": 414.0,
+          "statValue": 136.0,
+          "isAnAscension": true
+        },
+        {
+          "level": 80,
+          "baseAtk": 449.0,
+          "statValue": 151.0,
+          "isAnAscension": false
+        },
+        {
+          "level": 80,
+          "baseAtk": 475.0,
+          "statValue": 151.0,
+          "isAnAscension": true
+        },
+        {
+          "level": 90,
+          "baseAtk": 510.0,
+          "statValue": 165.0,
           "isAnAscension": false
         }
       ]
@@ -21999,6 +22499,256 @@
           "level": 90,
           "baseAtk": 448.0,
           "statValue": 15.6,
+          "isAnAscension": false
+        }
+      ]
+    },
+    {
+      "key": "wandering-evenstar",
+      "image": "wandering-evenstar.webp",
+      "type": "catalyst",
+      "atk": 42.0,
+      "rarity": 4,
+      "secondaryStat": "elementalMastery",
+      "secondaryStatValue": 36.0,
+      "location": "gacha",
+      "isComingSoon": false,
+      "ascensionMaterials": [
+        {
+          "level": 20,
+          "materials": [
+            {
+              "key": "oasis-gardens-reminiscence",
+              "quantity": 3,
+              "type": "weaponPrimary"
+            },
+            {
+              "key": "inactivated-fungal-nucleus",
+              "quantity": 3,
+              "type": "weapon"
+            },
+            {
+              "key": "fungal-spores",
+              "quantity": 2,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 5000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "level": 40,
+          "materials": [
+            {
+              "key": "oasis-gardens-kindness",
+              "quantity": 3,
+              "type": "weaponPrimary"
+            },
+            {
+              "key": "inactivated-fungal-nucleus",
+              "quantity": 12,
+              "type": "weapon"
+            },
+            {
+              "key": "fungal-spores",
+              "quantity": 8,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 15000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "level": 50,
+          "materials": [
+            {
+              "key": "oasis-gardens-kindness",
+              "quantity": 6,
+              "type": "weaponPrimary"
+            },
+            {
+              "key": "dormant-fungal-nucleus",
+              "quantity": 6,
+              "type": "weapon"
+            },
+            {
+              "key": "luminescent-pollen",
+              "quantity": 6,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 20000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "level": 60,
+          "materials": [
+            {
+              "key": "oasis-gardens-mourning",
+              "quantity": 3,
+              "type": "weaponPrimary"
+            },
+            {
+              "key": "dormant-fungal-nucleus",
+              "quantity": 12,
+              "type": "weapon"
+            },
+            {
+              "key": "luminescent-pollen",
+              "quantity": 9,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 30000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "level": 70,
+          "materials": [
+            {
+              "key": "oasis-gardens-mourning",
+              "quantity": 6,
+              "type": "weaponPrimary"
+            },
+            {
+              "key": "robust-fungal-nucleus",
+              "quantity": 9,
+              "type": "weapon"
+            },
+            {
+              "key": "crystalline-cyst-dust",
+              "quantity": 6,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 35000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "level": 80,
+          "materials": [
+            {
+              "key": "oasis-gardens-truth",
+              "quantity": 4,
+              "type": "weaponPrimary"
+            },
+            {
+              "key": "robust-fungal-nucleus",
+              "quantity": 18,
+              "type": "weapon"
+            },
+            {
+              "key": "crystalline-cyst-dust",
+              "quantity": 12,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 45000,
+              "type": "currency"
+            }
+          ]
+        }
+      ],
+      "craftingMaterials": [],
+      "stats": [
+        {
+          "level": 1,
+          "baseAtk": 42.0,
+          "statValue": 36.0,
+          "isAnAscension": false
+        },
+        {
+          "level": 20,
+          "baseAtk": 109.0,
+          "statValue": 64.0,
+          "isAnAscension": false
+        },
+        {
+          "level": 20,
+          "baseAtk": 135.0,
+          "statValue": 64.0,
+          "isAnAscension": true
+        },
+        {
+          "level": 40,
+          "baseAtk": 205.0,
+          "statValue": 93.0,
+          "isAnAscension": false
+        },
+        {
+          "level": 40,
+          "baseAtk": 231.0,
+          "statValue": 93.0,
+          "isAnAscension": true
+        },
+        {
+          "level": 50,
+          "baseAtk": 266.0,
+          "statValue": 107.0,
+          "isAnAscension": false
+        },
+        {
+          "level": 50,
+          "baseAtk": 292.0,
+          "statValue": 107.0,
+          "isAnAscension": true
+        },
+        {
+          "level": 60,
+          "baseAtk": 327.0,
+          "statValue": 122.0,
+          "isAnAscension": false
+        },
+        {
+          "level": 60,
+          "baseAtk": 353.0,
+          "statValue": 122.0,
+          "isAnAscension": true
+        },
+        {
+          "level": 70,
+          "baseAtk": 388.0,
+          "statValue": 136.0,
+          "isAnAscension": false
+        },
+        {
+          "level": 70,
+          "baseAtk": 414.0,
+          "statValue": 136.0,
+          "isAnAscension": true
+        },
+        {
+          "level": 80,
+          "baseAtk": 449.0,
+          "statValue": 151.0,
+          "isAnAscension": false
+        },
+        {
+          "level": 80,
+          "baseAtk": 475.0,
+          "statValue": 151.0,
+          "isAnAscension": true
+        },
+        {
+          "level": 90,
+          "baseAtk": 510.0,
+          "statValue": 165.0,
           "isAnAscension": false
         }
       ]

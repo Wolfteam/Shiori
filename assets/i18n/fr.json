@@ -4449,86 +4449,143 @@
     {
       "key": "nilou",
       "name": "Nilou",
-      "title": "？？？",
-      "description": "？？？",
+      "title": "Danseuse du lotus lumineux",
+      "description": "La star du théâtre Zubayr. Pleine de chaleur et d’innocence, ses danses sont vives et élégantes.",
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Danse de shamshir",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Attaque normale",
+              "description": "Enchaîne jusqu’à 3 coups d’épée.\n",
+              "descriptions": []
+            },
+            {
+              "name": "Attaque chargée",
+              "description": "Consomme de l’endurance pour exécuter une entaille tournoyante.\n",
+              "descriptions": []
+            },
+            {
+              "name": "Attaque plongeante",
+              "description": "Plonge depuis les airs pour frapper le sol, infligeant des DGT aux ennemis sur la route et des DGT de zone à l’impact.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "DGT 1er coup|{param1}%",
+            "DGT 2e coup|{param2}%",
+            "DGT 3e coup|{param3}%",
+            "DGT attaque chargée|{param4}% + {param5}%",
+            "Coût d’endurance attaque chargée|{param6} pts",
+            "DGT durant la chute|{param7}%",
+            "DGT chute basse/élevée|{param8}% / {param9}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Danse des haftkarsvars",
+          "description": "Active l’état Pirouette, infligeant des DGT Hydro aux ennemis proches selon les PV max de Nilou.\nDans l’état Pirouette, les attaques normales et les compétences élémentaires de Nilou la feront entrer respectivement dans les postures de Danse d’épée et de Danse de tourbillon, provoquant la conversion de ses DGT en DGT Hydro ne pouvant pas être enchantés et étant considérés comme des DGT de compétence élémentaire.\n\n",
+          "abilities": [
+            {
+              "name": "",
+              "description": "Dans ces postures, le troisième pas de danse de Nilou annule l’état Pirouette tout en ayant les effets suivants selon la posture :\n",
+              "descriptions": [
+                "Danse d’épée : Nilou libère une lune aqueuse qui inflige des DGT Hydro aux ennemis qu’elle touche et accorde à Nilou l’effet Prière lunaire. Avec cet effet, les attaques normales de Nilou sont converties en techniques de la Danse d’épée et son coup final déclenche une lune aqueuse.",
+                "Danse de tourbillon : Nilou déchaîne une roue à eau qui inflige des DGT Hydro de zone et crée une aura de tranquillité qui suit votre personnage déployé et applique de façon continue l’état Trempé aux ennemis à portée.",
+                "Nilou ne peut pas utiliser d’attaques chargées lorsqu’elle est sous les effets de Pirouette ou de Prière lunaire. Ces effets cessent lorsque Nilou quitte le champ de bataille."
+              ]
+            }
+          ],
+          "stats": [
+            "DGT compétence|{param1}% PV max",
+            "DGT 1er coup (Danse d’épée/Danse de tourbillon)|{param2}% / {param3}% PV max",
+            "DGT 2e coup (Danse d’épée/Danse de tourbillon)|{param4}% / {param5}% PV max",
+            "DGT lune aqueuse/roue à eau|{param6}% / {param7}% PV max",
+            "Durée de pirouette|{param8} s",
+            "Durée de prière lunaire|{param9} s",
+            "Durée d’aura de tranquillité|{param10} s",
+            "Temps de recharge|{param11} s"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
+          "title": "Danse d’abzendegi : Ruisseau des rêves lointains",
+          "description": "Commence la danse des rêves éloignés et des sources à l’écoute, faisant ainsi fleurir un lotus des eaux lointaines infligeant des DGT Hydro de zone selon les PV max de Nilou et affligeant l’effet Éon persistant aux ennemis touchés.\nAprès un court délai, les ennemis affectés par Éon persistant subissent des DGT Hydro.\n\n",
           "abilities": [],
-          "stats": []
+          "stats": [
+            "DGT compétence|{param1}% PV max",
+            "DGT éon persistant|{param2}% PV max",
+            "Temps de recharge|{param3} s",
+            "Énergie élémentaire|{param4}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "Lotus de jade blanc",
+          "description": "12 % de chances d’obtenir un plat supplémentaire lorsque vous cuisinez un plat parfait qui a des effets sur l’exploration.\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
+          "title": "Cour des pétales dansants",
+          "description": "Lorsque les personnages de l’équipe sont de l’élément Dendro ou Hydro et qu’il y a au moins un personnage Dendro et un personnage Hydro :\n",
+          "descriptions": [
+            "La complétion du troisième pas de la Danse des haftkarsvars de Nilou accorde à tous les personnages à proximité l’effet Prime du calice d’or pendant 30s.",
+            "Lorsqu’un personnage sous l’effet de Prime du calice d’or subit une attaque Dendro, la maîtrise élémentaire de tous les personnages à proximité augmente de 100 pts pendant 10 s. De plus, déclencher une réaction de Fleurissement permet de créer des noyaux d’abondance au lieu de noyaux Dendro.",
+            "Comparés aux noyaux Dendro, ces noyaux d’abondance éclatent très rapidement après avoir été créés et possèdent une zone d’effet plus grande.",
+            "Les noyaux d’abondance ne peuvent pas déclencher de réactions d’Exubérance ou de Bourgeonnement et partagent une limite avec les noyaux Dendro. Les attaques des noyaux d’abondance sont considérées comme étant des attaques infligées par les noyaux Dendro générés par la réaction de Fleurissement.",
+            "Quand le type élémentaire des personnages de l’équipe ne remplit pas les conditions de cette aptitude passive, tous les effets existants de Prime du calice d’or sont annulés."
+          ]
         },
         {
           "key": "p3",
-          "title": "NA",
-          "description": "",
+          "title": "Danse onirique des éons",
+          "description": "Pour chaque tranche de 1 000 au-dessus de 30 000 PV max que Nilou possède, les DGT infligés par les noyaux d’abondance déclenchés par les personnages sous l’effet de Prime du calice d’or augmentent de 9 %.\nLes DGT des noyaux d’abondance peuvent être augmentés d’un maximum de 400 % de cette manière.\n",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
+          "title": "Danse de la lune décroissante",
+          "description": "Danse des haftkarsvars bénéficie des améliorations suivantes :\n",
+          "descriptions": [
+            "Les DGT infligés par la lune aqueuse augmentent de 65 %.",
+            "La durée de l’aura de tranquillité augmente de 6 s."
+          ]
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "Pluie de fleurs du ciel étoilé",
+          "description": "Lorsqu’un personnage sous l’effet de Prime du calice d’or a infligé des DGT Hydro à un ennemi, la RÉS Hydro de ce dernier diminue de 35 % pendant 10 s. Lorsqu’une réaction de Fleurissement a infligé des DGT à un ennemi, la RÉS Dendro de ce dernier diminue de 35 % pendant 10 s.\nL’aptitude passive « Cour des pétales dansants » doit être déjà débloquée.\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "Pas d’ombre séduisant",
+          "description": "Niveau d’aptitude Danse d’abzendegi : Ruisseau des rêves lointains +3.\nNiveau max : 15\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "Impulsion fricative",
+          "description": "Lorsque le troisième pas de danse de l’état Pirouette de Danse des haftkarsvars a touché un ennemi, Nilou récupère 15 pts d’énergie élémentaire et les DGT qu’elle inflige en utilisant Danse d’abzendegi : Ruisseau des rêves lointains augmentent de 50 % pendant 8 s.\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "Lumière tourbillonnante",
+          "description": "Niveau d’aptitude Danse des haftkarsvars +3.\nNiveau max : 15\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
+          "title": "Mélodie de brise-givre",
+          "description": "Pour chaque tranche de 1 000 PV max, le taux CRIT de Nilou augmente de 0,6 % et ses DGT CRIT de 1,2 %.\nLe taux CRIT de Nilou peut être augmenté d’un maximum de 30 % et ses DGT CRIT d’un maximum de 60 % de cette manière.\n",
           "descriptions": []
         }
       ]
@@ -9339,6 +9396,18 @@
       ]
     },
     {
+      "key": "key-of-khaj-nisut",
+      "name": "Clé de Khaj-Nisut",
+      "description": "L’un des sceptres d’une paire fabriquée à partir d’obsidiennes. On raconte qu’elle peut être utilisée comme clé pour ouvrir la porte d’un paradis qui se trouve tout au bout de l’océan de sable.",
+      "refinements": [
+        "Les PV sont augmentés de {color}20{/color} %. Lorsqu’une compétence élémentaire touche un ennemi, un effet de Rhapsodie de 20 s est généré : augmente la maîtrise élémentaire d’une valeur équivalant à {color}0,12{/color} % des PV max du personnage équipé de l’arme. Cet effet peut être déclenché une fois toutes les 0,3 s et cumulé 3 fois maximum. Lorsque cet effet gagne 3 cumuls ou que la durée du 3e cumul est actualisée, la maîtrise élémentaire de tous les personnages de l’équipe à proximité augmente d’une valeur équivalant à {color}0,2{/color} % des PV max du personnage équipé de l’arme pendant 20 s.",
+        "Les PV sont augmentés de {color}25{/color} %. Lorsqu’une compétence élémentaire touche un ennemi, un effet de Rhapsodie de 20 s est généré : augmente la maîtrise élémentaire d’une valeur équivalant à {color}0,15{/color} % des PV max du personnage équipé de l’arme. Cet effet peut être déclenché une fois toutes les 0,3 s et cumulé 3 fois maximum. Lorsque cet effet gagne 3 cumuls ou que la durée du 3e cumul est actualisée, la maîtrise élémentaire de tous les personnages de l’équipe à proximité augmente d’une valeur équivalant à {color}0,25{/color} % des PV max du personnage équipé de l’arme pendant 20 s.",
+        "Les PV sont augmentés de {color}30{/color} %. Lorsqu’une compétence élémentaire touche un ennemi, un effet de Rhapsodie de 20 s est généré : augmente la maîtrise élémentaire d’une valeur équivalant à {color}0,18{/color} % des PV max du personnage équipé de l’arme. Cet effet peut être déclenché une fois toutes les 0,3 s et cumulé 3 fois maximum. Lorsque cet effet gagne 3 cumuls ou que la durée du 3e cumul est actualisée, la maîtrise élémentaire de tous les personnages de l’équipe à proximité augmente d’une valeur équivalant à {color}0,3{/color} % des PV max du personnage équipé de l’arme pendant 20 s.",
+        "Les PV sont augmentés de {color}35{/color} %. Lorsqu’une compétence élémentaire touche un ennemi, un effet de Rhapsodie de 20 s est généré : augmente la maîtrise élémentaire d’une valeur équivalant à {color}0,21{/color} % des PV max du personnage équipé de l’arme. Cet effet peut être déclenché une fois toutes les 0,3 s et cumulé 3 fois maximum. Lorsque cet effet gagne 3 cumuls ou que la durée du 3e cumul est actualisée, la maîtrise élémentaire de tous les personnages de l’équipe à proximité augmente d’une valeur équivalant à {color}0,35{/color} % des PV max du personnage équipé de l’arme pendant 20 s.",
+        "Les PV sont augmentés de {color}40{/color} %. Lorsqu’une compétence élémentaire touche un ennemi, un effet de Rhapsodie de 20 s est généré : augmente la maîtrise élémentaire d’une valeur équivalant à {color}0,24{/color} % des PV max du personnage équipé de l’arme. Cet effet peut être déclenché une fois toutes les 0,3 s et cumulé 3 fois maximum. Lorsque cet effet gagne 3 cumuls ou que la durée du 3e cumul est actualisée, la maîtrise élémentaire de tous les personnages de l’équipe à proximité augmente d’une valeur équivalant à {color}0,4{/color} % des PV max du personnage équipé de l’arme pendant 20 s."
+      ]
+    },
+    {
       "key": "kings-squire",
       "name": "Le valet du roi",
       "description": "Une arme que vous avez obtenue dans un conte d’aranara. Elle a pris la forme d’un arc qui peut abattre les ennemis de la forêt.",
@@ -10243,6 +10312,18 @@
       ]
     },
     {
+      "key": "wandering-evenstar",
+      "name": "Étoile du soir errante",
+      "description": "Il s’agissait à l’origine d’un appareil utilisé par les chercheurs pour observer et effectuer des calculs sur les phénomènes célestes. Il sert maintenant de conduit et de catalyseur.",
+      "refinements": [
+        "L’effet suivant se déclenche toutes les 10 s : l’ATQ du personnage équipé de l’arme augmente d’une valeur équivalant à {color}24{/color} % de sa maîtrise élémentaire pendant 12 s, alors que les autres personnages de l’équipe à proximité obtiennent 30 % de ce bonus. Plusieurs armes du même nom peuvent permettre à ce bonus de se cumuler. L’effet peut être déclenché même lorsque le personnage fait partie de l’équipe mais n’est pas déployé.",
+        "L’effet suivant se déclenche toutes les 10 s : l’ATQ du personnage équipé de l’arme augmente d’une valeur équivalant à {color}30{/color} % de sa maîtrise élémentaire pendant 12 s, alors que les autres personnages de l’équipe à proximité obtiennent 30 % de ce bonus. Plusieurs armes du même nom peuvent permettre à ce bonus de se cumuler. L’effet peut être déclenché même lorsque le personnage fait partie de l’équipe mais n’est pas déployé.",
+        "L’effet suivant se déclenche toutes les 10 s : l’ATQ du personnage équipé de l’arme augmente d’une valeur équivalant à {color}36{/color} % de sa maîtrise élémentaire pendant 12 s, alors que les autres personnages de l’équipe à proximité obtiennent 30 % de ce bonus. Plusieurs armes du même nom peuvent permettre à ce bonus de se cumuler. L’effet peut être déclenché même lorsque le personnage fait partie de l’équipe mais n’est pas déployé.",
+        "L’effet suivant se déclenche toutes les 10 s : l’ATQ du personnage équipé de l’arme augmente d’une valeur équivalant à {color}42{/color} % de sa maîtrise élémentaire pendant 12 s, alors que les autres personnages de l’équipe à proximité obtiennent 30 % de ce bonus. Plusieurs armes du même nom peuvent permettre à ce bonus de se cumuler. L’effet peut être déclenché même lorsque le personnage fait partie de l’équipe mais n’est pas déployé.",
+        "L’effet suivant se déclenche toutes les 10 s : l’ATQ du personnage équipé de l’arme augmente d’une valeur équivalant à {color}48{/color} % de sa maîtrise élémentaire pendant 12 s, alors que les autres personnages de l’équipe à proximité obtiennent 30 % de ce bonus. Plusieurs armes du même nom peuvent permettre à ce bonus de se cumuler. L’effet peut être déclenché même lorsque le personnage fait partie de l’équipe mais n’est pas déployé."
+      ]
+    },
+    {
       "key": "waster-greatsword",
       "name": "Épée d'entraînement",
       "description": "Une épée façonnée à partir d'une lame de fer épaisse et solide. Capable de briser des montagnes si son propriétaire est suffisamment motivé.",
@@ -10330,6 +10411,18 @@
         "Augmente l'ATQ de {color}30{/color} %. Les attaques touchant les ennemis ayant moins de 30 % de PV augmentent l'ATQ de tous les membres de l'équipe de {color}60{/color} % pendant 12 s. Cet effet peut être déclenché une fois toutes les 30 s.",
         "Augmente l'ATQ de {color}35{/color} %. Les attaques touchant les ennemis ayant moins de 30 % de PV augmentent l'ATQ de tous les membres de l'équipe de {color}70{/color} % pendant 12 s. Cet effet peut être déclenché une fois toutes les 30 s.",
         "Augmente l'ATQ de {color}40{/color} %. Les attaques touchant les ennemis ayant moins de 30 % de PV augmentent l'ATQ de tous les membres de l'équipe de {color}80{/color} % pendant 12 s. Cet effet peut être déclenché une fois toutes les 30 s."
+      ]
+    },
+    {
+      "key": "xiphos-moonlight",
+      "name": "Clair de lune de Xiphos",
+      "description": "Cette ancienne épée à double tranchant brille au clair de lune. On dit qu’un djinn maintenant silencieux l’habite…",
+      "refinements": [
+        "L’effet suivant se déclenche toutes les 10 s : le personnage équipé de l’arme obtient {color}0,036{/color} % de recharge d’énergie pour chaque point de maîtrise élémentaire qu’il possède pendant 12 s, alors que les autres personnages de l’équipe à proximité obtiennent 30 % de ce bonus. Plusieurs armes du même nom peuvent permettre à ce bonus de se cumuler. L’effet peut être déclenché même lorsque le personnage fait partie de l’équipe mais n’est pas déployé.",
+        "L’effet suivant se déclenche toutes les 10 s : le personnage équipé de l’arme obtient {color}0,045{/color} % de recharge d’énergie pour chaque point de maîtrise élémentaire qu’il possède pendant 12 s, alors que les autres personnages de l’équipe à proximité obtiennent 30 % de ce bonus. Plusieurs armes du même nom peuvent permettre à ce bonus de se cumuler. L’effet peut être déclenché même lorsque le personnage fait partie de l’équipe mais n’est pas déployé.",
+        "L’effet suivant se déclenche toutes les 10 s : le personnage équipé de l’arme obtient {color}0,054{/color} % de recharge d’énergie pour chaque point de maîtrise élémentaire qu’il possède pendant 12 s, alors que les autres personnages de l’équipe à proximité obtiennent 30 % de ce bonus. Plusieurs armes du même nom peuvent permettre à ce bonus de se cumuler. L’effet peut être déclenché même lorsque le personnage fait partie de l’équipe mais n’est pas déployé.",
+        "L’effet suivant se déclenche toutes les 10 s : le personnage équipé de l’arme obtient {color}0,063{/color} % de recharge d’énergie pour chaque point de maîtrise élémentaire qu’il possède pendant 12 s, alors que les autres personnages de l’équipe à proximité obtiennent 30 % de ce bonus. Plusieurs armes du même nom peuvent permettre à ce bonus de se cumuler. L’effet peut être déclenché même lorsque le personnage fait partie de l’équipe mais n’est pas déployé.",
+        "L’effet suivant se déclenche toutes les 10 s : le personnage équipé de l’arme obtient {color}0,072{/color} % de recharge d’énergie pour chaque point de maîtrise élémentaire qu’il possède pendant 12 s, alors que les autres personnages de l’équipe à proximité obtiennent 30 % de ce bonus. Plusieurs armes du même nom peuvent permettre à ce bonus de se cumuler. L’effet peut être déclenché même lorsque le personnage fait partie de l’équipe mais n’est pas déployé."
       ]
     }
   ],

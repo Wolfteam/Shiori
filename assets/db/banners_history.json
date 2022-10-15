@@ -1076,6 +1076,45 @@
         "favonius-warbow"
       ],
       "version": 3.1
+    },
+    {
+      "type": "character",
+      "from": "2022-10-14T00:00:00",
+      "until": "2022-10-31T00:00:00",
+      "itemKeys": [
+        "nilou",
+        "barbara",
+        "beidou",
+        "xiangling"
+      ],
+      "version": 3.1
+    },
+    {
+      "type": "character",
+      "from": "2022-10-14T00:00:00",
+      "until": "2022-10-31T00:00:00",
+      "itemKeys": [
+        "albedo",
+        "barbara",
+        "beidou",
+        "xiangling"
+      ],
+      "version": 3.1
+    },
+    {
+      "type": "weapon",
+      "from": "2022-10-14T00:00:00",
+      "until": "2022-10-31T00:00:00",
+      "itemKeys": [
+        "key-of-khaj-nisut",
+        "primordial-jade-cutter",
+        "xiphos-moonlight",
+        "wandering-evenstar",
+        "rainslasher",
+        "dragons-bane",
+        "sacrificial-bow"
+      ],
+      "version": 3.1
     }
   ]
 }

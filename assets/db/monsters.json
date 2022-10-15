@@ -45,6 +45,10 @@
         {
           "key": "the-exile",
           "type": "artifact"
+        },
+        {
+          "key": "traveling-doctor",
+          "type": "artifact"
         }
       ]
     },
@@ -92,6 +96,10 @@
         },
         {
           "key": "the-exile",
+          "type": "artifact"
+        },
+        {
+          "key": "traveling-doctor",
           "type": "artifact"
         }
       ]
@@ -141,6 +149,10 @@
         {
           "key": "the-exile",
           "type": "artifact"
+        },
+        {
+          "key": "traveling-doctor",
+          "type": "artifact"
         }
       ]
     },
@@ -156,6 +168,10 @@
         },
         {
           "key": "gladiators-finale",
+          "type": "artifact"
+        },
+        {
+          "key": "lucky-dog",
           "type": "artifact"
         },
         {
@@ -218,6 +234,10 @@
       "type": "automaton",
       "isComingSoon": false,
       "drops": [
+        {
+          "key": "adventurer",
+          "type": "artifact"
+        },
         {
           "key": "agnidus-agate-chunk",
           "type": "material"
@@ -300,6 +320,10 @@
         },
         {
           "key": "instructor",
+          "type": "artifact"
+        },
+        {
+          "key": "lucky-dog",
           "type": "artifact"
         },
         {
@@ -600,6 +624,10 @@
         {
           "key": "the-exile",
           "type": "artifact"
+        },
+        {
+          "key": "traveling-doctor",
+          "type": "artifact"
         }
       ]
     },
@@ -648,6 +676,10 @@
         {
           "key": "the-exile",
           "type": "artifact"
+        },
+        {
+          "key": "traveling-doctor",
+          "type": "artifact"
         }
       ]
     },
@@ -667,6 +699,10 @@
         },
         {
           "key": "gladiators-finale",
+          "type": "artifact"
+        },
+        {
+          "key": "lucky-dog",
           "type": "artifact"
         },
         {
@@ -751,6 +787,10 @@
         },
         {
           "key": "the-exile",
+          "type": "artifact"
+        },
+        {
+          "key": "traveling-doctor",
           "type": "artifact"
         }
       ]
@@ -916,6 +956,10 @@
         {
           "key": "the-exile",
           "type": "artifact"
+        },
+        {
+          "key": "traveling-doctor",
+          "type": "artifact"
         }
       ]
     },
@@ -951,6 +995,10 @@
         },
         {
           "key": "the-exile",
+          "type": "artifact"
+        },
+        {
+          "key": "traveling-doctor",
           "type": "artifact"
         }
       ]
@@ -1041,6 +1089,10 @@
           "type": "artifact"
         },
         {
+          "key": "lucky-dog",
+          "type": "artifact"
+        },
+        {
           "key": "mora",
           "type": "material"
         },
@@ -1091,6 +1143,10 @@
         {
           "key": "hoarfrost-core",
           "type": "material"
+        },
+        {
+          "key": "lucky-dog",
+          "type": "artifact"
         },
         {
           "key": "mora",
@@ -1351,6 +1407,10 @@
         {
           "key": "the-exile",
           "type": "artifact"
+        },
+        {
+          "key": "traveling-doctor",
+          "type": "artifact"
         }
       ]
     },
@@ -1452,6 +1512,10 @@
           "type": "artifact"
         },
         {
+          "key": "traveling-doctor",
+          "type": "artifact"
+        },
+        {
           "key": "vajrada-amethyst-chunk",
           "type": "material"
         },
@@ -1502,6 +1566,10 @@
         {
           "key": "thunderclap-fruitcore",
           "type": "material"
+        },
+        {
+          "key": "traveling-doctor",
+          "type": "artifact"
         },
         {
           "key": "vajrada-amethyst-chunk",
@@ -1891,6 +1959,10 @@
         {
           "key": "the-exile",
           "type": "artifact"
+        },
+        {
+          "key": "traveling-doctor",
+          "type": "artifact"
         }
       ]
     },
@@ -1939,6 +2011,10 @@
         {
           "key": "the-exile",
           "type": "artifact"
+        },
+        {
+          "key": "traveling-doctor",
+          "type": "artifact"
         }
       ]
     },
@@ -1986,6 +2062,10 @@
         },
         {
           "key": "the-exile",
+          "type": "artifact"
+        },
+        {
+          "key": "traveling-doctor",
           "type": "artifact"
         }
       ]
@@ -2250,6 +2330,10 @@
         {
           "key": "the-exile",
           "type": "artifact"
+        },
+        {
+          "key": "traveling-doctor",
+          "type": "artifact"
         }
       ]
     },
@@ -2293,6 +2377,10 @@
         },
         {
           "key": "the-exile",
+          "type": "artifact"
+        },
+        {
+          "key": "traveling-doctor",
           "type": "artifact"
         },
         {
@@ -2418,6 +2506,10 @@
         {
           "key": "the-exile",
           "type": "artifact"
+        },
+        {
+          "key": "traveling-doctor",
+          "type": "artifact"
         }
       ]
     },
@@ -2453,6 +2545,10 @@
         },
         {
           "key": "the-exile",
+          "type": "artifact"
+        },
+        {
+          "key": "traveling-doctor",
           "type": "artifact"
         }
       ]
@@ -2497,6 +2593,10 @@
         },
         {
           "key": "the-exile",
+          "type": "artifact"
+        },
+        {
+          "key": "traveling-doctor",
           "type": "artifact"
         },
         {
@@ -2713,6 +2813,10 @@
         {
           "key": "the-exile",
           "type": "artifact"
+        },
+        {
+          "key": "traveling-doctor",
+          "type": "artifact"
         }
       ]
     },
@@ -2729,6 +2833,10 @@
       "type": "elementalLifeForm",
       "isComingSoon": false,
       "drops": [
+        {
+          "key": "adventurer",
+          "type": "artifact"
+        },
         {
           "key": "berserker",
           "type": "artifact"
@@ -2984,6 +3092,10 @@
         {
           "key": "the-exile",
           "type": "artifact"
+        },
+        {
+          "key": "traveling-doctor",
+          "type": "artifact"
         }
       ]
     },
@@ -2993,6 +3105,10 @@
       "type": "magicalBeast",
       "isComingSoon": false,
       "drops": [
+        {
+          "key": "adventurer",
+          "type": "artifact"
+        },
         {
           "key": "berserker",
           "type": "artifact"
@@ -3570,6 +3686,10 @@
           "type": "artifact"
         },
         {
+          "key": "lucky-dog",
+          "type": "artifact"
+        },
+        {
           "key": "maguu-kishin",
           "type": "material"
         },
@@ -3683,6 +3803,10 @@
         {
           "key": "the-exile",
           "type": "artifact"
+        },
+        {
+          "key": "traveling-doctor",
+          "type": "artifact"
         }
       ]
     },
@@ -3789,6 +3913,10 @@
       "isComingSoon": false,
       "drops": [
         {
+          "key": "adventurer",
+          "type": "artifact"
+        },
+        {
           "key": "berserker",
           "type": "artifact"
         },
@@ -3860,6 +3988,10 @@
         },
         {
           "key": "gladiators-finale",
+          "type": "artifact"
+        },
+        {
+          "key": "lucky-dog",
           "type": "artifact"
         },
         {
@@ -3947,6 +4079,10 @@
           "type": "artifact"
         },
         {
+          "key": "traveling-doctor",
+          "type": "artifact"
+        },
+        {
           "key": "turbid-prism",
           "type": "material"
         }
@@ -3983,6 +4119,10 @@
           "type": "artifact"
         },
         {
+          "key": "traveling-doctor",
+          "type": "artifact"
+        },
+        {
           "key": "turbid-prism",
           "type": "material"
         }
@@ -4016,6 +4156,10 @@
         },
         {
           "key": "the-exile",
+          "type": "artifact"
+        },
+        {
+          "key": "traveling-doctor",
           "type": "artifact"
         },
         {
@@ -4065,6 +4209,22 @@
         {
           "key": "mora",
           "type": "material"
+        },
+        {
+          "key": "prayers-for-destiny",
+          "type": "artifact"
+        },
+        {
+          "key": "prayers-for-illumination",
+          "type": "artifact"
+        },
+        {
+          "key": "prayers-for-wisdom",
+          "type": "artifact"
+        },
+        {
+          "key": "prayers-to-springtime",
+          "type": "artifact"
         },
         {
           "key": "prithiva-topaz-chunk",
@@ -4173,6 +4333,10 @@
         {
           "key": "the-exile",
           "type": "artifact"
+        },
+        {
+          "key": "traveling-doctor",
+          "type": "artifact"
         }
       ]
     },
@@ -4209,6 +4373,10 @@
         {
           "key": "the-exile",
           "type": "artifact"
+        },
+        {
+          "key": "traveling-doctor",
+          "type": "artifact"
         }
       ]
     },
@@ -4244,6 +4412,10 @@
         },
         {
           "key": "the-exile",
+          "type": "artifact"
+        },
+        {
+          "key": "traveling-doctor",
           "type": "artifact"
         }
       ]
@@ -4290,6 +4462,10 @@
       "type": "elementalLifeForm",
       "isComingSoon": false,
       "drops": [
+        {
+          "key": "adventurer",
+          "type": "artifact"
+        },
         {
           "key": "agnidus-agate-chunk",
           "type": "material"
@@ -4342,6 +4518,10 @@
       "type": "magicalBeast",
       "isComingSoon": false,
       "drops": [
+        {
+          "key": "adventurer",
+          "type": "artifact"
+        },
         {
           "key": "agnidus-agate-chunk",
           "type": "material"
@@ -4486,6 +4666,10 @@
           "type": "artifact"
         },
         {
+          "key": "lucky-dog",
+          "type": "artifact"
+        },
+        {
           "key": "mora",
           "type": "material"
         },
@@ -4568,6 +4752,10 @@
         {
           "key": "the-exile",
           "type": "artifact"
+        },
+        {
+          "key": "traveling-doctor",
+          "type": "artifact"
         }
       ]
     },
@@ -4640,6 +4828,10 @@
         {
           "key": "the-exile",
           "type": "artifact"
+        },
+        {
+          "key": "traveling-doctor",
+          "type": "artifact"
         }
       ]
     },
@@ -4675,6 +4867,10 @@
         },
         {
           "key": "the-exile",
+          "type": "artifact"
+        },
+        {
+          "key": "traveling-doctor",
           "type": "artifact"
         }
       ]
@@ -4712,6 +4908,10 @@
         {
           "key": "the-exile",
           "type": "artifact"
+        },
+        {
+          "key": "traveling-doctor",
+          "type": "artifact"
         }
       ]
     },
@@ -4747,6 +4947,10 @@
         },
         {
           "key": "the-exile",
+          "type": "artifact"
+        },
+        {
+          "key": "traveling-doctor",
           "type": "artifact"
         }
       ]
@@ -4784,6 +4988,10 @@
         {
           "key": "the-exile",
           "type": "artifact"
+        },
+        {
+          "key": "traveling-doctor",
+          "type": "artifact"
         }
       ]
     },
@@ -4819,6 +5027,10 @@
         },
         {
           "key": "the-exile",
+          "type": "artifact"
+        },
+        {
+          "key": "traveling-doctor",
           "type": "artifact"
         }
       ]
@@ -4856,6 +5068,10 @@
         {
           "key": "the-exile",
           "type": "artifact"
+        },
+        {
+          "key": "traveling-doctor",
+          "type": "artifact"
         }
       ]
     },
@@ -4891,6 +5107,10 @@
         },
         {
           "key": "the-exile",
+          "type": "artifact"
+        },
+        {
+          "key": "traveling-doctor",
           "type": "artifact"
         }
       ]
@@ -4928,6 +5148,10 @@
         {
           "key": "the-exile",
           "type": "artifact"
+        },
+        {
+          "key": "traveling-doctor",
+          "type": "artifact"
         }
       ]
     },
@@ -4963,6 +5187,10 @@
         },
         {
           "key": "the-exile",
+          "type": "artifact"
+        },
+        {
+          "key": "traveling-doctor",
           "type": "artifact"
         }
       ]
@@ -5000,6 +5228,10 @@
         {
           "key": "the-exile",
           "type": "artifact"
+        },
+        {
+          "key": "traveling-doctor",
+          "type": "artifact"
         }
       ]
     },
@@ -5035,6 +5267,10 @@
         },
         {
           "key": "the-exile",
+          "type": "artifact"
+        },
+        {
+          "key": "traveling-doctor",
           "type": "artifact"
         }
       ]
@@ -5079,6 +5315,10 @@
         },
         {
           "key": "the-exile",
+          "type": "artifact"
+        },
+        {
+          "key": "traveling-doctor",
           "type": "artifact"
         },
         {
@@ -5127,6 +5367,10 @@
         {
           "key": "the-exile",
           "type": "artifact"
+        },
+        {
+          "key": "traveling-doctor",
+          "type": "artifact"
         }
       ]
     },
@@ -5163,6 +5407,10 @@
         {
           "key": "the-exile",
           "type": "artifact"
+        },
+        {
+          "key": "traveling-doctor",
+          "type": "artifact"
         }
       ]
     },
@@ -5198,6 +5446,10 @@
         },
         {
           "key": "the-exile",
+          "type": "artifact"
+        },
+        {
+          "key": "traveling-doctor",
           "type": "artifact"
         }
       ]
@@ -5274,6 +5526,10 @@
         },
         {
           "key": "the-exile",
+          "type": "artifact"
+        },
+        {
+          "key": "traveling-doctor",
           "type": "artifact"
         }
       ]
@@ -5540,6 +5796,10 @@
           "type": "artifact"
         },
         {
+          "key": "traveling-doctor",
+          "type": "artifact"
+        },
+        {
           "key": "vajrada-amethyst-chunk",
           "type": "material"
         },
@@ -5594,6 +5854,10 @@
         {
           "key": "the-exile",
           "type": "artifact"
+        },
+        {
+          "key": "traveling-doctor",
+          "type": "artifact"
         }
       ]
     },
@@ -5629,6 +5893,10 @@
         },
         {
           "key": "the-exile",
+          "type": "artifact"
+        },
+        {
+          "key": "traveling-doctor",
           "type": "artifact"
         }
       ]
@@ -5677,6 +5945,10 @@
         },
         {
           "key": "the-exile",
+          "type": "artifact"
+        },
+        {
+          "key": "traveling-doctor",
           "type": "artifact"
         }
       ]
@@ -6215,6 +6487,10 @@
         },
         {
           "key": "the-exile",
+          "type": "artifact"
+        },
+        {
+          "key": "traveling-doctor",
           "type": "artifact"
         }
       ]

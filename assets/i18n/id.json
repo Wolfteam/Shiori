@@ -4440,86 +4440,143 @@
     {
       "key": "nilou",
       "name": "Nilou",
-      "title": "？？？",
-      "description": "？？？",
+      "title": "Dance of Lotuslight",
+      "description": "Penari terkenal di Teater Zubayr. Tariannya elegan dan gemulai, pembawaannya ramah dan polos.",
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Dance of Samser",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Normal Attack",
+              "description": "Melancarkan maksimum hingga 3 serangan pedang beruntun.\n",
+              "descriptions": []
+            },
+            {
+              "name": "Charged Attack",
+              "description": "Mengonsumsi sejumlah Stamina untuk melakukan 1 tebasan memutar.\n",
+              "descriptions": []
+            },
+            {
+              "name": "Plunging Attack",
+              "description": "Menerjang dari udara untuk menghantam tanah di bawahnya, menyerang musuh di jalurnya dan mengakibatkan DMG area saat mendarat.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "DMG Tahap 1|{param1}%",
+            "DMG Tahap 2|{param2}%",
+            "DMG Tahap 3|{param3}%",
+            "DMG Charged Attack|{param4}% + {param5}%",
+            "Konsumsi Stamina Charged Attack|{param6} pt",
+            "DMG Selama Plunging|{param7}%",
+            "DMG Plunging Attack Min./Maks.|{param8}% / {param9}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Dance of Haftkarsvar",
+          "description": "Nilou memasuki status Pirouette dan mengakibatkan Hydro DMG terhadap musuh di sekitarnya berdasarkan Max HP-nya.\nSaat Nilou berada dalam status Pirouette dan melancarkan Normal Attack atau Elemental Skill, serangan tersebut akan dikonversi menjadi Sword Dance atau Whirling Steps sesuai jenis serangannya, DMG yang diakibatkan akan dikonversi menjadi Hydro DMG yang tidak bisa ditimpa Elemental Infusion lainnya, dan itu dianggap sebagai DMG Elemental Skill.\n\n",
+          "abilities": [
+            {
+              "name": "",
+              "description": "Dalam status ini, langkah tarian ketiga Nilou akan mengakhiri status Pirouette dan akan menghasilkan efek berikut sesuai dengan kategori langkah tarian ketiganya:\n",
+              "descriptions": [
+                "Sword Dance: Melepaskan Luminous Illusion yang akan mengakibatkan Hydro DMG terhadap musuh yang menyentuhnya dan memberikan status Lunar Prayer kepada Nilou. Dalam status ini, Normal Attack Nilou akan dikonversi menjadi Sword Dance, dan akan melepaskan Luminous Illusion saat melakukan serangan yang terakhir;",
+                "Whirling Steps: Melepaskan sebuah Whirling Water Wheel dan mengakibatkan Hydro DMG Area, juga akan menghasilkan sebuah Tranquility Aura yang akan bergerak mengikuti Karakter aktif dan memberikan status Wet terhadap musuh yang berada di dalamnya.",
+                "Saat berada dalam status Pirouette dan Lunar Prayer, Nilou tidak akan bisa melancarkan Charged Attack; Semua status ini akan hilang setelah Nilou meninggalkan medan pertempuran."
+              ]
+            }
+          ],
+          "stats": [
+            "DMG Skill|{param1}% Max HP",
+            "DMG Tahap 1 Sword Dance/Whirling Steps|{param2}% / {param3}% Max HP",
+            "DMG Tahap 2 Sword Dance/Whirling Steps|{param4}% / {param5}% Max HP",
+            "DMG Luminous Illusion/Water Wheel|{param6}% / {param7}% Max HP",
+            "Durasi Pirouette|{param8} dtk",
+            "Durasi Lunar Prayer|{param9} dtk",
+            "Durasi Tranquility Aura|{param10} dtk",
+            "Cooldown|{param11} dtk"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
+          "title": "Dance of Abzendegi: Distant Dreams, Listening Spring",
+          "description": "Memulai tarian mimpi nan jauh dan sumber mata air yang bisa didengar dan menyebabkan sebuah Lotus of Distant Water mekar, mengakibatkan Hydro DMG Area berdasarkan Max HP Nilou dan memberikan status “Lingering Aeon” kepada musuh yang terkena.\nSetelah waktu singkat, musuh yang berada dalam status Lingering Aeon akan menerima Hydro DMG.\n\n",
           "abilities": [],
-          "stats": []
+          "stats": [
+            "DMG Skill|{param1}% Max HP",
+            "DMG Lingering Aeon|{param2}% Max HP",
+            "Cooldown|{param3} dtk",
+            "Konsumsi Energy|{param4}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "White Jade Lotus",
+          "description": "Saat masakan jenis petualangan dimasak dengan sempurna, terdapat 12% kemungkinan mendapatkan hasil 2 kali lipat.\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
+          "title": "Court of Dancing Petals",
+          "description": "Saat seluruh anggota party adalah Karakter Dendro dan Hydro, serta memiliki minimal 1 Karakter Dendro dan 1 Karakter Hydro:\n",
+          "descriptions": [
+            "Saat Nilou menyelesaikan langkah tarian ketiga Dance of Haftkarsvar, Nilou akan memberikan status Golden Chalice’s Bounty yang bertahan 30 detik kepada seluruh Karakter di sekitar.",
+            "Setelah Karakter yang berada dalam status Golden Chalice’s Bounty menerima serangan Dendro, Elemental Mastery seluruh Karakter di sekitar meningkat 100 poin selama 10 detik; Selain itu, saat memicu reaksi Bloom, akan menghasilkan Bountiful Core yang akan menggantikan Dendro Core.",
+            "Jika dibandingkan dengan Dendro Core, Bountiful Core akan meledak dengan sangat cepat setelah diciptakan dan memiliki cakupan area yang lebih luas.",
+            "Bountiful Core tidak akan bisa memicu reaksi Hyperbloom atau Burgeon, dan memiliki batas jumlah yang sama dengan Dendro Core. Serangan Bountiful Core akan dianggap sebagai serangan Dendro Core dari reaksi Bloom.",
+            "Saat jenis elemen Karakter di dalam party tidak cukup untuk memicu Talenta Pasif, maka efek Golden Chalice’s Bounty yang sudah dimiliki akan dihapus."
+          ]
         },
         {
           "key": "p3",
-          "title": "NA",
-          "description": "",
+          "title": "Dreamy Dance of Aeons",
+          "description": "Untuk setiap kelebihan 1.000 poin Max HP di atas 30.000 poin Max HP yang dimiliki Nilou, akan membuat DMG Bountiful Core yang diakibatkan Karakter yang berada dalam status Golden Chalice’s Bounty meningkat 9%.\nBatas maksimum peningkatan DMG yang diakibatkan Bountiful Core dengan cara ini adalah 400%.\n",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
+          "title": "Dance of the Waning Moon",
+          "description": "Dance of Haftkarsvar mendapatkan penguatan berikut:\n",
+          "descriptions": [
+            "DMG yang diakibatkan Luminous Illusion meningkat sebesar 65%;",
+            "Durasi Tranquility Aura diperpanjang 6 detik."
+          ]
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "The Starry Skies Their Flowers Rain",
+          "description": "Setelah Karakter yang berada dalam status “Golden Chalice’s Bounty” mengakibatkan Hydro DMG kepada musuh, mengurangi 35% Hydro RES musuh tersebut selama 10 detik. Setelah memicu reaksi Bloom yang mengakibatkan DMG kepada musuh, mengurangi 35% Dendro RES musuh selama 10 detik.\nKamu harus membuka Talenta Pasif “Court of Dancing Petals” terlebih dahulu.\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "Beguiling Shadowstep",
+          "description": "Meningkatkan 3 level Dance of Abzendegi: Distant Dreams, Listening Spring.\nMaksimum: Lv. 15.\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "Fricative Pulse",
+          "description": "Setelah langkah tarian ketiga dalam status Pirouette dari Dance of Haftkarsvar mengenai musuh, Nilou akan memulihkan 15 Energy, meningkatkan 50% DMG Dance of Abzendegi: Distant Dreams, Listening Spring-nya selama 8 detik.\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "Twirling Light",
+          "description": "Meningkatkan 3 level Dance of Haftkarsvar.\nMaksimum: Lv. 15.\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
+          "title": "Frostbreaker’s Melody",
+          "description": "Untuk setiap 1.000 poin Max HP, akan meningkakan CRIT Rate dan CRIT DMG Nilou masing-masing sebesar 0,6% dan 1,2%.\nKenaikan maksimum CRIT Rate dan CRIT DMG masing-masing adalah 30% dan 60%.\n",
           "descriptions": []
         }
       ]
@@ -9329,6 +9386,18 @@
       ]
     },
     {
+      "key": "key-of-khaj-nisut",
+      "name": "Key of Khaj-Nisut",
+      "description": "Salah satu dari sepasang tongkat yang dibuat dari obsidian. Legenda mengatakan, tongkat ini bisa digunakan sebagai kunci untuk membuka pintu tanah kebahagiaan yang tersembunyi di ujung lautan pasir.",
+      "refinements": [
+        "HP meningkat {color}20{/color}%. Saat Elemental Skill mengenai musuh, akan menghasilkan efek Grand Hymn yang berlangsung selama 20 detik: Mendapatkan peningkatan Elemental Mastery berdasarkan {color}0,12%{/color} Max HP Karakter yang mengenakan, efek ini bisa terpicu setiap 0,3 detik dan dapat ditumpuk sampai 3 lapis. Saat efek ini ditumpuk sampai 3 lapis atau durasi 3 lapis diperbarui, akan meningkatkan Elemental Mastery seluruh Karakter party di sekitar sebesar {color}0,2%{/color} Max HP Karakter yang mengenakan, berlangsung 20 detik.",
+        "HP meningkat {color}25{/color}%. Saat Elemental Skill mengenai musuh, akan menghasilkan efek Grand Hymn yang berlangsung selama 20 detik: Mendapatkan peningkatan Elemental Mastery berdasarkan {color}0.15%{/color} Max HP Karakter yang mengenakan, efek ini bisa terpicu setiap 0.3 detik dan dapat ditumpuk sampai 3 lapis. Saat efek ini ditumpuk sampai 3 lapis atau durasi 3 lapis diperbarui, akan meningkatkan Elemental Mastery seluruh Karakter party di sekitar sebesar {color}0.25%{/color} Max HP Karakter yang mengenakan, berlangsung 20 detik.",
+        "HP meningkat {color}30{/color}%. Saat Elemental Skill mengenai musuh, akan menghasilkan efek Grand Hymn yang berlangsung selama 20 detik: Mendapatkan peningkatan Elemental Mastery berdasarkan {color}0,18%{/color} Max HP Karakter yang mengenakan, efek ini bisa terpicu setiap 0,3 detik dan dapat ditumpuk sampai 3 lapis. Saat efek ini ditumpuk sampai 3 lapis atau durasi 3 lapis diperbarui, akan meningkatkan Elemental Mastery seluruh Karakter party di sekitar sebesar {color}0,3%{/color} Max HP Karakter yang mengenakan, berlangsung 20 detik.",
+        "HP meningkat {color}35{/color}%. Saat Elemental Skill mengenai musuh, akan menghasilkan efek Grand Hymn yang berlangsung selama 20 detik: Mendapatkan peningkatan Elemental Mastery berdasarkan {color}0,21%{/color} Max HP Karakter yang mengenakan, efek ini bisa terpicu setiap 0,3 detik dan dapat ditumpuk sampai 3 lapis. Saat efek ini ditumpuk sampai 3 lapis atau durasi 3 lapis diperbarui, akan meningkatkan Elemental Mastery seluruh Karakter party di sekitar sebesar {color}0,35%{/color} Max HP Karakter yang mengenakan, berlangsung 20 detik.",
+        "HP meningkat {color}40{/color}%. Saat Elemental Skill mengenai musuh, akan menghasilkan efek Grand Hymn yang berlangsung selama 20 detik: Mendapatkan peningkatan Elemental Mastery berdasarkan {color}0,24%{/color} Max HP Karakter yang mengenakan, efek ini bisa terpicu setiap 0,3 detik dan dapat ditumpuk sampai 3 lapis. Saat efek ini ditumpuk sampai 3 lapis atau durasi 3 lapis diperbarui, akan meningkatkan Elemental Mastery seluruh Karakter party di sekitar sebesar {color}0,4%{/color} Max HP Karakter yang mengenakan, berlangsung 20 detik."
+      ]
+    },
+    {
       "key": "kings-squire",
       "name": "King’s Squire",
       "description": "Senjata yang didapat dari cerita Aranara. Senjata dengan bentuk busur ini dapat menembak jatuh musuh hutan.",
@@ -10233,6 +10302,18 @@
       ]
     },
     {
+      "key": "wandering-evenstar",
+      "name": "Wandering Evenstar",
+      "description": "Awalnya adalah perangkat kuno yang digunakan oleh para pelajar untuk mengamati dan melakukan perhitungan pada fenomena langit. Memiliki kemampuan untuk mengirim kekuatan dan menjadi Catalyst.",
+      "refinements": [
+        "Efek berikut akan dihasilkan setiap 10 detik: Meningkatkan ATK Karakter ini berdasarkan {color}24{/color}% Elemental Mastery Karakter yang mengenakan, sementara anggota party lain di sekitar mendapatkan peningkatan ATK sebesar 30% dari peningkatan tersebut, bertahan selama 12 detik. Saat efek ini dihasilkan oleh lebih dari satu Senjata dengan nama yang sama, efek akan bisa ditumpuk. Efek ini tetap dapat terpicu meskipun Karakter penggunanya ada dalam party namun sedang tidak berada di medan pertempuran.",
+        "Efek berikut akan dihasilkan setiap 10 detik: Meningkatkan ATK Karakter ini berdasarkan {color}30{/color}% Elemental Mastery Karakter yang mengenakan, sementara anggota party lain di sekitar mendapatkan peningkatan ATK sebesar 30% dari peningkatan tersebut, bertahan selama 12 detik. Saat efek ini dihasilkan oleh lebih dari satu Senjata dengan nama yang sama, efek akan bisa ditumpuk. Efek ini tetap dapat terpicu meskipun Karakter penggunanya ada dalam party namun sedang tidak berada di medan pertempuran.",
+        "Efek berikut akan dihasilkan setiap 10 detik: Meningkatkan ATK Karakter ini berdasarkan {color}36{/color}% Elemental Mastery Karakter yang mengenakan, sementara anggota party lain di sekitar mendapatkan peningkatan ATK sebesar 30% dari peningkatan tersebut, bertahan selama 12 detik. Saat efek ini dihasilkan oleh lebih dari satu Senjata dengan nama yang sama, efek akan bisa ditumpuk. Efek ini tetap dapat terpicu meskipun Karakter penggunanya ada dalam party namun sedang tidak berada di medan pertempuran.",
+        "Efek berikut akan dihasilkan setiap 10 detik: Meningkatkan ATK Karakter ini berdasarkan {color}42{/color}% Elemental Mastery Karakter yang mengenakan, sementara anggota party lain di sekitar mendapatkan peningkatan ATK sebesar 30% dari peningkatan tersebut, bertahan selama 12 detik. Saat efek ini dihasilkan oleh lebih dari satu Senjata dengan nama yang sama, efek akan bisa ditumpuk. Efek ini tetap dapat terpicu meskipun Karakter penggunanya ada dalam party namun sedang tidak berada di medan pertempuran.",
+        "Efek berikut akan dihasilkan setiap 10 detik: Meningkatkan ATK Karakter ini berdasarkan {color}48{/color}% Elemental Mastery Karakter yang mengenakan, sementara anggota party lain di sekitar mendapatkan peningkatan ATK sebesar 30% dari peningkatan tersebut, bertahan selama 12 detik. Saat efek ini dihasilkan oleh lebih dari satu Senjata dengan nama yang sama, efek akan bisa ditumpuk. Efek ini tetap dapat terpicu meskipun Karakter penggunanya ada dalam party namun sedang tidak berada di medan pertempuran."
+      ]
+    },
+    {
       "key": "waster-greatsword",
       "name": "Waster Greatsword",
       "description": "Lempengan besi tebal yang sangat kokoh, dengan tekad yang cukup kuat, pedang ini terlihat dapat membelah bahkan gunung sekalipun.",
@@ -10320,6 +10401,18 @@
         "Meningkatkan {color}30{/color}% ATK. Saat berhasil mengenai musuh dengan HP kurang dari 30%, meningkatkan {color}60{/color}% ATK seluruh anggota party selama 12 detik. Dapat terpicu setiap 30 detik.",
         "Meningkatkan {color}35{/color}% ATK. Saat berhasil mengenai musuh dengan HP kurang dari 30%, meningkatkan {color}70{/color}% ATK seluruh anggota party selama 12 detik. Dapat terpicu setiap 30 detik.",
         "Meningkatkan {color}40{/color}% ATK. Saat berhasil mengenai musuh dengan HP kurang dari 30%, meningkatkan {color}80{/color}% ATK seluruh anggota party selama 12 detik. Dapat terpicu setiap 30 detik."
+      ]
+    },
+    {
+      "key": "xiphos-moonlight",
+      "name": "Xiphos’ Moonlight",
+      "description": "Pedang kuno bermata dua yang memancarkan cahaya seperti bulan. Menurut legenda, ada Jinni yang menunggu dalam diam.",
+      "refinements": [
+        "Efek berikut akan dihasilkan setiap 10 detik: Untuk setiap poin Elemental Mastery Karakter yang mengenakan, akan meningkatkan {color}0,036%{/color} Energy Recharge Karakter ini, sedangkan anggota party lain di sekitar mendapatkan peningkatan Energy Recharge sebesar 30% dari peningkatan tersebut, bertahan selama 12 detik. Saat efek ini dihasilkan oleh lebih dari satu Senjata dengan nama yang sama, efek akan bisa ditumpuk. Efek ini tetap dapat terpicu meskipun Karakter penggunanya ada dalam party namun sedang tidak berada di medan pertempuran.",
+        "Efek berikut akan dihasilkan setiap 10 detik: Untuk setiap poin Elemental Mastery Karakter yang mengenakan, akan meningkatkan {color}0,045%{/color} Energy Recharge Karakter ini, sedangkan anggota party lain di sekitar mendapatkan peningkatan Energy Recharge sebesar 30% dari peningkatan tersebut, bertahan selama 12 detik. Saat efek ini dihasilkan oleh lebih dari satu Senjata dengan nama yang sama, efek akan bisa ditumpuk. Efek ini tetap dapat terpicu meskipun Karakter penggunanya ada dalam party namun sedang tidak berada di medan pertempuran.",
+        "Efek berikut akan dihasilkan setiap 10 detik: Untuk setiap poin Elemental Mastery Karakter yang mengenakan, akan meningkatkan {color}0,054%{/color} Energy Recharge Karakter ini, sedangkan anggota party lain di sekitar mendapatkan peningkatan Energy Recharge sebesar 30% dari peningkatan tersebut, bertahan selama 12 detik. Saat efek ini dihasilkan oleh lebih dari satu Senjata dengan nama yang sama, efek akan bisa ditumpuk. Efek ini tetap dapat terpicu meskipun Karakter penggunanya ada dalam party namun sedang tidak berada di medan pertempuran.",
+        "Efek berikut akan dihasilkan setiap 10 detik: Untuk setiap poin Elemental Mastery Karakter yang mengenakan, akan meningkatkan {color}0,063%{/color} Energy Recharge Karakter ini, sedangkan anggota party lain di sekitar mendapatkan peningkatan Energy Recharge sebesar 30% dari peningkatan tersebut, bertahan selama 12 detik. Saat efek ini dihasilkan oleh lebih dari satu Senjata dengan nama yang sama, efek akan bisa ditumpuk. Efek ini tetap dapat terpicu meskipun Karakter penggunanya ada dalam party namun sedang tidak berada di medan pertempuran.",
+        "Efek berikut akan dihasilkan setiap 10 detik: Untuk setiap poin Elemental Mastery Karakter yang mengenakan, akan meningkatkan {color}0,072%{/color} Energy Recharge Karakter ini, sedangkan anggota party lain di sekitar mendapatkan peningkatan Energy Recharge sebesar 30% dari peningkatan tersebut, bertahan selama 12 detik. Saat efek ini dihasilkan oleh lebih dari satu Senjata dengan nama yang sama, efek akan bisa ditumpuk. Efek ini tetap dapat terpicu meskipun Karakter penggunanya ada dalam party namun sedang tidak berada di medan pertempuran."
       ]
     }
   ],

@@ -4435,86 +4435,143 @@
     {
       "key": "nilou",
       "name": "Nilou",
-      "title": "？？？",
-      "description": "？？？",
+      "title": "Vũ Điệu Ánh Sen",
+      "description": "Vũ công nổi danh của Nhà Hát Zubayr, điệu nhảy sống động và tính cách hồn nhiên ấm áp.",
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Tấn Công Thường – Vũ Điệu Samser",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Tấn Công Thường",
+              "description": "Thực hiện tối đa 3 lần đánh liên tiếp.\n",
+              "descriptions": []
+            },
+            {
+              "name": "Trọng Kích",
+              "description": "Tiêu hao thể lực nhất định để thi triển một lần chém xoáy.\n",
+              "descriptions": []
+            },
+            {
+              "name": "Tấn Công Khi Đáp",
+              "description": "Đáp xuống đất từ trên không, tấn công kẻ địch trên đường và gây sát thương phạm vi khi chạm đất.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "Sát Thương Lần 1|{param1}%",
+            "Sát Thương Lần 2|{param2}%",
+            "Sát Thương Lần 3|{param3}%",
+            "Sát Thương Trọng Kích|{param4}% + {param5}%",
+            "Thể Lực Trọng Kích Tiêu Hao|{param6} điểm",
+            "Sát Thương Khi Rơi|{param7}%",
+            "Sát Thương Khi Rơi Từ Độ Cao Thấp/Cao|{param8}% / {param9}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Vũ Điệu Haftkarsvar",
+          "description": "Vào trạng thái “Xoay Người”, gây Sát Thương Nguyên Tố Thủy cho kẻ địch xung quanh dựa vào giới hạn HP của Nilou.\nTrong trạng thái Xoay Người, Nilou đánh thường hoặc dùng Kỹ Năng Nguyên Tố sẽ lần lượt chuyển thành thi triển “Vũ Điệu Bão Kiếm” và “Vũ Điệu Xoay Vòng” tương ứng, sát thương gây ra sẽ được tính là Sát Thương Nguyên Tố Thủy của Kỹ Năng Nguyên Tố và không thể bị thay thế.\n\n",
+          "abilities": [
+            {
+              "name": "",
+              "description": "Trong trạng thái này, Vũ Điệu thứ ba của Nilou sẽ hóa giải trạng thái “Xoay Người”, đồng thời căn cứ vào loại hình của Vũ Điệu thứ ba để sản sinh các hiệu quả sau:\n",
+              "descriptions": [
+                "Vũ Điệu Bão Kiếm: Thi triển một đòn Thủy Nguyệt, gây Sát Thương Nguyên Tố Thủy cho kẻ địch trúng đòn, đồng thời cung cấp trạng thái Ánh Trăng Cầu Nguyện cho Nilou. Trong trạng thái này, đòn đánh thường của Nilou sẽ chuyển hóa thành Vũ Điệu Bão Kiếm, đòn cuối cùng sẽ thi triển Thủy Nguyệt;",
+                "Vũ Điệu Xoay Vòng: Thi triển một đòn Thủy Luân, gây Sát Thương Phạm Vi Nguyên Tố Thủy, đồng thời tạo ra Vòng Nước Thanh Tẩy đi theo nhân vật của bản thân đang trong trận, liên tục gây trạng thái Ẩm Ướt cho kẻ địch trong đó.",
+                "Khi trong trạng thái Xoay Người hoặc Ánh Trăng Cầu Nguyện, Nilou sẽ không thể trọng kích, những trạng thái này sẽ xóa khi Nilou rời trận."
+              ]
+            }
+          ],
+          "stats": [
+            "Sát Thương Kỹ Năng|{param1}% Giới Hạn HP",
+            "Sát Thương Vũ Điệu Bão Kiếm/Vũ Điệu Xoay Vòng Lần 1|{param2}% / {param3}% Giới Hạn HP",
+            "Sát Thương Vũ Điệu Bão Kiếm/Vũ Điệu Xoay Vòng Lần 2|{param4}% / {param5}% Giới Hạn HP",
+            "Sát Thương Thủy Nguyệt/Thủy Luân|{param6}% / {param7}% Giới Hạn HP",
+            "Thời Gian Duy Trì Xoay Người|{param8}s",
+            "Thời Gian Duy Trì Ánh Trăng Cầu Nguyện|{param9}s",
+            "Thời Gian Duy Trì Vòng Nước Thanh Tẩy|{param10}s",
+            "CD|{param11}s"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
+          "title": "Vũ Điệu Abzendegi – Viễn Mộng Linh Tuyền",
+          "description": "Bắt đầu vũ điệu của giấc mơ và dòng suối xa để triệu hồi Hoa Sen Nước, gây Sát Thương Phạm Vi Nguyên Tố Thủy dựa vào giới hạn HP của Nilou, kẻ địch trúng đòn sẽ nhận trạng thái “Dòng Nước Vĩnh Hằng”.\nSau một thời gian ngắn, kẻ địch trong trạng thái Dòng Nước Vĩnh Hằng sẽ chịu Sát Thương Nguyên Tố Thủy.\n\n",
           "abilities": [],
-          "stats": []
+          "stats": [
+            "Sát Thương Kỹ Năng|{param1}% Giới Hạn HP",
+            "Sát Thương Dòng Nước Vĩnh Hằng|{param2}% Giới Hạn HP",
+            "CD|{param3}s",
+            "Năng Lượng Nguyên Tố|{param4}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "Sen Ngọc Tinh Khôi",
+          "description": "Khi nấu ăn hoàn mỹ các món thuộc loại thám hiểm, có tỷ lệ 12% được x2 thành phẩm.\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
+          "title": "Sảnh Đường Ngân Nga",
+          "description": "Khi loại nguyên tố của toàn bộ nhân vật trong đội là Thảo và Thủy, đồng thời có ít nhất một nhân vật nguyên tố Thảo, một nhân vật nguyên tố Thủy:\n",
+          "descriptions": [
+            "Nilou hoàn thành Vũ Điệu thứ ba từ Vũ Điệu Haftkarsvar sẽ cung cấp trạng thái Phước Lành Ly Vàng cho tất cả nhân vật gần đó trong 30s.",
+            "Nhân vật trong trạng thái Phước Lành Ly Vàng khi chịu phải tấn công Nguyên Tố Thảo sẽ khiến tất cả nhân vật gần đó tăng 100 Tinh Thông Nguyên Tố trong 10s; Ngoài ra, khi kích hoạt phản ứng Sum Suê, Hạt Nhân Thảo sẽ được thay thế bằng “Hạt Nhân Căng Tràn”.",
+            "So với Hạt Nhân Thảo thì Hạt Nhân Căng Tràn sẽ phát nổ nhanh hơn và phạm vi ảnh hưởng cũng rộng hơn.",
+            "Hạt Nhân Căng Tràn sẽ không thể kích hoạt được phản ứng Nở Rộ và Bung Tỏa, số lượng tồn tại giới hạn sẽ dùng chung với Hạt Nhân Thảo. Sát thương của Hạt Nhân Căng Tràn sẽ được tính là sát thương phản ứng Sum Suê của Hạt Nhân Thảo.",
+            "Khi loại nguyên tố của nhân vật trong đội không đáp ứng yêu cầu của thiên phú, sẽ giải trừ hiệu quả Phước Lành Ly Vàng đã có."
+          ]
         },
         {
           "key": "p3",
-          "title": "NA",
-          "description": "",
+          "title": "Giấc Mơ Ca Múa Ngàn Đời",
+          "description": "Căn cứ vào phần dư ra của 30.000 giới hạn HP của Nilou, cứ mỗi 1000 giới hạn HP sẽ tăng 9% sát thương của Hạt Nhân Căng Tràn do nhân vật đang trong thái “Phước Lành Ly Vàng” kích hoạt gây ra.\nSát thương Hạt Nhân Căng Tràn gây ra tối đa tăng đến 400% bằng cách này.\n",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
+          "title": "Bước Dạo Trăng Khuyết",
+          "description": "Vũ Điệu Haftkarsvar nhận được cường hóa sau:\n",
+          "descriptions": [
+            "Sát thương Thủy Nguyệt gây ra tăng 65%;",
+            "Thời gian duy trì Vòng Nước Thanh Tẩy kéo dài thêm 6s."
+          ]
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "Mưa Hoa Trời Sao",
+          "description": "Nhân vật trong trạng thái “Phước Lành Ly Vàng” sau khi gây Sát Thương Nguyên Tố Thủy lên kẻ địch sẽ khiến kẻ địch đó giảm 35% Kháng Nguyên Tố Thủy, duy trì 10s. Sau khi kích hoạt phản ứng Sum Suê gây sát thương cho kẻ địch sẽ khiến kẻ địch đó giảm 35% Kháng Nguyên Tố Thảo, duy trì 10s.\nCần phải mở khóa thiên phú cố định “Sảnh Đường Ngân Nga”.\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "Vũ Đạo Phản Chiếu",
+          "description": "Cấp kỹ năng Vũ Điệu Abzendegi – Viễn Mộng Linh Tuyền +3.\nTăng tối đa đến cấp 15.\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "Tiết Tấu Sóng Gợn",
+          "description": "Vũ Điệu thứ ba trong trạng thái “Xoay Người” của Vũ Điệu Haftkarsvar sau khi đánh trúng kẻ địch sẽ hồi 15 điểm Năng Lượng Nguyên Tố cho Nilou, đồng thời tăng 50% sát thương do Vũ Điệu Abzendegi – Viễn Mộng Linh Tuyền của Nilou gây ra, duy trì 8s.\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "Ánh Sáng Xoay Vần",
+          "description": "Cấp kỹ năng Vũ Điệu Haftkarsvar +3.\nTăng tối đa đến cấp 15.\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
+          "title": "Cung Đàn Ngăn Sương",
+          "description": "Mỗi 1000 điểm Giới Hạn HP sẽ tăng 0.6% Tỷ Lệ Bạo Kích, tăng 1.2% Sát Thương Bạo Kích cho Nilou.\nTăng tối đa 30% Tỷ Lệ Bạo Kích và 60% Sát Thương Bạo Kích cho Nilou thông qua cách này.\n",
           "descriptions": []
         }
       ]
@@ -9331,6 +9388,18 @@
       ]
     },
     {
+      "key": "key-of-khaj-nisut",
+      "name": "Chìa Khóa Khaj-Nisut",
+      "description": "Một món trong bộ đôi quyền trượng tạo nên từ Hắc Diệu Thạch. Trong truyền thuyết, đây chính là chìa khóa để mở cánh cửa dẫn đến thiên đường trong tận cùng biển cát.",
+      "refinements": [
+        "HP tăng {color}20{/color}%. Khi Kỹ Năng Nguyên Tố đánh trúng kẻ địch sẽ sản sinh hiệu ứng “Áng Thơ Vĩ Đại” trong 20s: Tăng Tinh Thông Nguyên Tố dựa trên {color}0.12%{/color} giới hạn HP của nhân vật trang bị vũ khí này, hiệu ứng này mỗi 0.3s tối đa kích hoạt một lần, tối đa cộng dồn 3 tầng. Khi hiệu quả cộng dồn đến tầng thứ ba hoặc thời gian duy trì của tầng thứ ba được làm mới, sẽ tăng Tinh Thông Nguyên Tố cho tất cả nhân vật trong đội gần đó dựa theo {color}0.2%{/color} giới hạn HP của nhân vật trang bị vũ khí này, duy trì 20s.",
+        "HP tăng {color}25{/color}%. Khi Kỹ Năng Nguyên Tố đánh trúng kẻ địch sẽ sản sinh hiệu ứng “Áng Thơ Vĩ Đại” trong 20s: Tăng Tinh Thông Nguyên Tố dựa trên {color}0.15%{/color} giới hạn HP của nhân vật trang bị vũ khí này, hiệu ứng này mỗi 0.3s tối đa kích hoạt một lần, tối đa cộng dồn 3 tầng. Khi hiệu quả cộng dồn đến tầng thứ ba hoặc thời gian duy trì của tầng thứ ba được làm mới, sẽ tăng Tinh Thông Nguyên Tố cho tất cả nhân vật trong đội gần đó dựa theo {color}0.25%{/color} giới hạn HP của nhân vật trang bị vũ khí này, duy trì 20s.",
+        "HP tăng {color}30{/color}%. Khi Kỹ Năng Nguyên Tố đánh trúng kẻ địch sẽ sản sinh hiệu ứng “Áng Thơ Vĩ Đại” trong 20s: Tăng Tinh Thông Nguyên Tố dựa trên {color}0.18%{/color} giới hạn HP của nhân vật trang bị vũ khí này, hiệu ứng này mỗi 0.3s tối đa kích hoạt một lần, tối đa cộng dồn 3 tầng. Khi hiệu quả cộng dồn đến tầng thứ ba hoặc thời gian duy trì của tầng thứ ba được làm mới, sẽ tăng Tinh Thông Nguyên Tố cho tất cả nhân vật trong đội gần đó dựa theo {color}0.3%{/color} giới hạn HP của nhân vật trang bị vũ khí này, duy trì 20s.",
+        "HP tăng {color}35{/color}%. Khi Kỹ Năng Nguyên Tố đánh trúng kẻ địch sẽ sản sinh hiệu ứng “Áng Thơ Vĩ Đại” trong 20s: Tăng Tinh Thông Nguyên Tố dựa trên {color}0.21%{/color} giới hạn HP của nhân vật trang bị vũ khí này, hiệu ứng này mỗi 0.3s tối đa kích hoạt một lần, tối đa cộng dồn 3 tầng. Khi hiệu quả cộng dồn đến tầng thứ ba hoặc thời gian duy trì của tầng thứ ba được làm mới, sẽ tăng Tinh Thông Nguyên Tố cho tất cả nhân vật trong đội gần đó dựa theo {color}0.35%{/color} giới hạn HP của nhân vật trang bị vũ khí này, duy trì 20s.",
+        "HP tăng {color}40{/color}%. Khi Kỹ Năng Nguyên Tố đánh trúng kẻ địch sẽ sản sinh hiệu ứng “Áng Thơ Vĩ Đại” trong 20s: Tăng Tinh Thông Nguyên Tố dựa trên {color}0.24%{/color} giới hạn HP của nhân vật trang bị vũ khí này, hiệu ứng này mỗi 0.3s tối đa kích hoạt một lần, tối đa cộng dồn 3 tầng. Khi hiệu quả cộng dồn đến tầng thứ ba hoặc thời gian duy trì của tầng thứ ba được làm mới, sẽ tăng Tinh Thông Nguyên Tố cho tất cả nhân vật trong đội gần đó dựa theo {color}0.4%{/color} giới hạn HP của nhân vật trang bị vũ khí này, duy trì 20s."
+      ]
+    },
+    {
       "key": "kings-squire",
       "name": "Cận Vệ Nhà Vua",
       "description": "Vũ khí nhận được từ câu chuyện của Aranara. Có tạo hình của chiếc cung, có thể bắn rơi kẻ địch trong rừng.",
@@ -10235,6 +10304,18 @@
       ]
     },
     {
+      "key": "wandering-evenstar",
+      "name": "Sao Đêm Rong Ruổi",
+      "description": "Vốn là món đồ được các học giả sử dụng để quan trắc và tính toán thiên tượng. Có năng lực truyền dẫn sức mạnh để làm pháp khí.",
+      "refinements": [
+        "Mỗi 10s sẽ sản sinh hiệu quả sau: Tăng tấn công dựa vào {color}24{/color}% Tinh Thông Nguyên Tố của nhân vật trang bị vũ khí này, đồng thời tăng 30% tấn công dựa vào hiệu quả trên cho nhân vật trong đội gần đó, duy trì 12s, hiệu ứng này có thể cộng dồn từ nhiều vũ khí cùng tên. Nhân vật khi không ra trận cũng có thể kích hoạt hiệu ứng.",
+        "Mỗi 10s sẽ sản sinh hiệu quả sau: Tăng tấn công dựa vào {color}30{/color}% Tinh Thông Nguyên Tố của nhân vật trang bị vũ khí này, đồng thời tăng 30% tấn công dựa vào hiệu quả trên cho nhân vật trong đội gần đó, duy trì 12s, hiệu ứng này có thể cộng dồn từ nhiều vũ khí cùng tên. Nhân vật khi không ra trận cũng có thể kích hoạt hiệu ứng.",
+        "Mỗi 10s sẽ sản sinh hiệu quả sau: Tăng tấn công dựa vào {color}36{/color}% Tinh Thông Nguyên Tố của nhân vật trang bị vũ khí này, đồng thời tăng 30% tấn công dựa vào hiệu quả trên cho nhân vật trong đội gần đó, duy trì 12s, hiệu ứng này có thể cộng dồn từ nhiều vũ khí cùng tên. Nhân vật khi không ra trận cũng có thể kích hoạt hiệu ứng.",
+        "Mỗi 10s sẽ sản sinh hiệu quả sau: Tăng tấn công dựa vào {color}42{/color}% Tinh Thông Nguyên Tố của nhân vật trang bị vũ khí này, đồng thời tăng 30% tấn công dựa vào hiệu quả trên cho nhân vật trong đội gần đó, duy trì 12s, hiệu ứng này có thể cộng dồn từ nhiều vũ khí cùng tên. Nhân vật khi không ra trận cũng có thể kích hoạt hiệu ứng.",
+        "Mỗi 10s sẽ sản sinh hiệu quả sau: Tăng tấn công dựa vào {color}48{/color}% Tinh Thông Nguyên Tố của nhân vật trang bị vũ khí này, đồng thời tăng 30% tấn công dựa vào hiệu quả trên cho nhân vật trong đội gần đó, duy trì 12s, hiệu ứng này có thể cộng dồn từ nhiều vũ khí cùng tên. Nhân vật khi không ra trận cũng có thể kích hoạt hiệu ứng."
+      ]
+    },
+    {
       "key": "waster-greatsword",
       "name": "Kiếm Huấn Luyện",
       "description": "Một thanh sắt được mài thành hình kiếm. Khi ở trong tay người có ý chí, thì cũng có được sức mạnh xẻ đá phá rừng.",
@@ -10322,6 +10403,18 @@
         "Tấn công tăng {color}30{/color}%; Khi đánh trúng kẻ địch có HP dưới 30%, lực tấn công của tất cả thành viên đội tăng {color}60{/color}%, kéo dài 12s. Mỗi 30s mới thi triển 1 lần.",
         "Tấn công tăng {color}35{/color}%; Khi tấn công đánh trúng kẻ địch có HP dưới 30%, lực tấn công của tất cả thành viên đội tăng {color}70{/color}%, kéo dài 12s. Mỗi 30s mới thi triển 1 lần.",
         "Tấn công tăng {color}40{/color}%; Khi đánh trúng kẻ địch có HP dưới 30%, lực tấn công của tất cả thành viên đội tăng {color}80{/color}%, kéo dài 12s. Mỗi 30s mới thi triển 1 lần."
+      ]
+    },
+    {
+      "key": "xiphos-moonlight",
+      "name": "Ánh Trăng Xiphos",
+      "description": "Kiếm hai lưỡi ánh lên màu sắc của mặt trăng. Nghe nói bên trong có trấn linh cư ngụ.",
+      "refinements": [
+        "Mỗi 10s sẽ sản sinh hiệu ứng sau: Mỗi điểm Tinh Thông Nguyên Tố của nhân vật trang bị vũ khí này sẽ tăng {color}0.036%{/color} Hiệu Quả Nạp Nguyên Tố cho nhân vật đó, đồng thời tăng 30% Hiệu Quả Nạp Nguyên Tố dựa vào hiệu quả trên cho nhân vật trong đội gần đó, duy trì 12s, hiệu ứng này có thể cộng dồn từ nhiều vũ khí cùng tên. Nhân vật khi không ra trận cũng có thể kích hoạt hiệu ứng.",
+        "Mỗi 10s sẽ sản sinh hiệu ứng sau: Mỗi điểm Tinh Thông Nguyên Tố của nhân vật trang bị vũ khí này sẽ tăng {color}0.045%{/color} Hiệu Quả Nạp Nguyên Tố cho nhân vật đó, đồng thời tăng 30% Hiệu Quả Nạp Nguyên Tố dựa vào hiệu quả trên cho nhân vật trong đội gần đó, duy trì 12s, hiệu ứng này có thể cộng dồn từ nhiều vũ khí cùng tên. Nhân vật khi không ra trận cũng có thể kích hoạt hiệu ứng.",
+        "Mỗi 10s sẽ sản sinh hiệu ứng sau: Mỗi điểm Tinh Thông Nguyên Tố của nhân vật trang bị vũ khí này sẽ tăng {color}0.054%{/color} Hiệu Quả Nạp Nguyên Tố cho nhân vật đó, đồng thời tăng 30% Hiệu Quả Nạp Nguyên Tố dựa vào hiệu quả trên cho nhân vật trong đội gần đó, duy trì 12s, hiệu ứng này có thể cộng dồn từ nhiều vũ khí cùng tên. Nhân vật khi không ra trận cũng có thể kích hoạt hiệu ứng.",
+        "Mỗi 10s sẽ sản sinh hiệu ứng sau: Mỗi điểm Tinh Thông Nguyên Tố của nhân vật trang bị vũ khí này sẽ tăng {color}0.063%{/color} Hiệu Quả Nạp Nguyên Tố cho nhân vật đó, đồng thời tăng 30% Hiệu Quả Nạp Nguyên Tố dựa vào hiệu quả trên cho nhân vật trong đội gần đó, duy trì 12s, hiệu ứng này có thể cộng dồn từ nhiều vũ khí cùng tên. Nhân vật khi không ra trận cũng có thể kích hoạt hiệu ứng.",
+        "Mỗi 10s sẽ sản sinh hiệu ứng sau: Mỗi điểm Tinh Thông Nguyên Tố của nhân vật trang bị vũ khí này sẽ tăng {color}0.072%{/color} Hiệu Quả Nạp Nguyên Tố cho nhân vật đó, đồng thời tăng 30% Hiệu Quả Nạp Nguyên Tố dựa vào hiệu quả trên cho nhân vật trong đội gần đó, duy trì 12s, hiệu ứng này có thể cộng dồn từ nhiều vũ khí cùng tên. Nhân vật khi không ra trận cũng có thể kích hoạt hiệu ứng."
       ]
     }
   ],

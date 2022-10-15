@@ -7712,7 +7712,7 @@
       "fullImage": "candace.webp",
       "secondFullImage": null,
       "isComingSoon": false,
-      "isNew": true,
+      "isNew": false,
       "isFemale": true,
       "region": "sumeru",
       "role": "burstSupport",
@@ -10814,7 +10814,7 @@
       "fullImage": "cyno.webp",
       "secondFullImage": null,
       "isComingSoon": false,
-      "isNew": true,
+      "isNew": false,
       "isFemale": false,
       "region": "sumeru",
       "role": "dps",
@@ -34995,13 +34995,13 @@
       "image": "nilou.webp",
       "fullImage": "nilou.webp",
       "secondFullImage": null,
-      "isComingSoon": true,
-      "isNew": false,
+      "isComingSoon": false,
+      "isNew": true,
       "isFemale": true,
       "region": "sumeru",
-      "role": "na",
-      "tier": "na",
-      "birthday": "01/01",
+      "role": "offFieldDps",
+      "tier": "s",
+      "birthday": "12/03",
       "subStatType": "hpPercentage",
       "ascensionMaterials": [
         {
@@ -35955,23 +35955,28 @@
             "elementalBurst"
           ],
           "weaponKeys": [
+            "key-of-khaj-nisut",
             "primordial-jade-cutter",
             "freedom-sworn",
+            "favonius-sword",
+            "xiphos-moonlight",
             "iron-sting"
           ],
           "artifacts": [
             {
-              "oneKey": null,
-              "multiples": [
-                {
-                  "key": "tenacity-of-the-millelith",
-                  "quantity": 2
-                },
-                {
-                  "key": "heart-of-depth",
-                  "quantity": 2
-                }
-              ],
+              "oneKey": "tenacity-of-the-millelith",
+              "multiples": [],
+              "stats": [
+                "hp",
+                "atk",
+                "hpPercentage",
+                "hpPercentage",
+                "hpPercentage"
+              ]
+            },
+            {
+              "oneKey": "gilded-dreams",
+              "multiples": [],
               "stats": [
                 "hp",
                 "atk",
