@@ -7,5 +7,5 @@ abstract class ApiService {
 
   Future<ApiResponseDto<ResourceDiffResponseDto?>> checkForUpdates(String currentAppVersion, int currentResourcesVersion);
 
-  Future<bool> downloadAsset(String keyName, String destPath, ProgressChanged? onProgress);
+  Future<bool> downloadAsset(String keyName, String destPath);
 }

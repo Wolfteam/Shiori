@@ -33,8 +33,8 @@ class ResourceServiceImpl implements ResourceService {
     this._settingsService,
     this._networkService,
     this._apiService, {
-    this.maxRetryAttempts = 5,
-    this.maxItemsPerBatch = 5,
+    this.maxRetryAttempts = 10,
+    this.maxItemsPerBatch = 10,
   });
 
   Future<void> init() async {
@@ -335,7 +335,7 @@ class ResourceServiceImpl implements ResourceService {
         _loggingService.info(runtimeType, 'downloadAndApplyUpdates: Downloading main files...');
         //we need to download the whole file
         final destMainFilePath = join(_tempPath, jsonFileKeyName);
-        final downloaded = await _apiService.downloadAsset(jsonFileKeyName!, destMainFilePath, onProgress);
+        final downloaded = await _apiService.downloadAsset(jsonFileKeyName!, destMainFilePath);
 
         if (!downloaded) {
           _loggingService.error(runtimeType, 'downloadAndApplyUpdates: Could not download the main file');
@@ -441,7 +441,11 @@ class ResourceServiceImpl implements ResourceService {
         retryAttempts++;
         if (retryAttempts <= maxRetryAttempts && itemsPerBatch > 0) {
           keyNamesCopy.addAll(taken);
-          await Future.delayed(Duration(seconds: retryAttempts + maxRetryAttempts));
+          int seconds = retryAttempts + maxRetryAttempts;
+          if (seconds > 5) {
+            seconds = 5;
+          }
+          await Future.delayed(Duration(seconds: seconds));
           continue;
         }
 
@@ -457,11 +461,7 @@ class ResourceServiceImpl implements ResourceService {
   }
 
   Future<void> _downloadAsset(String destPath, String keyName) async {
-    final file = File(destPath);
-    if (await file.exists()) {
-      await file.delete();
-    }
-    final downloaded = await _apiService.downloadAsset(keyName, destPath, null);
+    final downloaded = await _apiService.downloadAsset(keyName, destPath);
     if (!downloaded) {
       throw Exception('Download of keyName = $keyName failed');
     }
