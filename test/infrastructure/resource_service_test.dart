@@ -156,11 +156,12 @@ void main() {
       String appVersion = '1.0.0',
       int currentResourceVersion = -1,
       bool isInternetAvailable = false,
+      bool noResourcesHasBeenDownloaded = true,
       ApiResponseDto<ResourceDiffResponseDto?>? apiResult,
     }) {
       final settingsService = MockSettingsService();
       when(settingsService.lastResourcesCheckedDate).thenReturn(null);
-      when(settingsService.noResourcesHasBeenDownloaded).thenReturn(true);
+      when(settingsService.noResourcesHasBeenDownloaded).thenReturn(noResourcesHasBeenDownloaded);
 
       final networkService = MockNetworkService();
       when(networkService.isInternetAvailable()).thenAnswer((_) => Future.value(isInternetAvailable));
@@ -184,6 +185,12 @@ void main() {
 
       final result = await service.checkForUpdates('1.0.0', -1);
       _checkEmptyUpdateResult(AppResourceUpdateResultType.noUpdatesAvailable, -1, result);
+    });
+
+    test('no internet connection', () async {
+      final service = _getService(currentResourceVersion: 1, noResourcesHasBeenDownloaded: false);
+      final result = await service.checkForUpdates('1.0.0', 1);
+      _checkEmptyUpdateResult(AppResourceUpdateResultType.noInternetConnection, 1, result);
     });
 
     test('no internet connection on first install', () async {
@@ -425,7 +432,7 @@ void main() {
       final networkService = MockNetworkService();
       when(networkService.isInternetAvailable()).thenAnswer((_) => Future.value(true));
       final apiService = MockApiService();
-      when(apiService.downloadAsset(allJson, path.join(tempDir.path, allJson), null)).thenAnswer((_) => Future.value(false));
+      when(apiService.downloadAsset(allJson, path.join(tempDir.path, allJson))).thenAnswer((_) => Future.value(false));
 
       final service = ResourceServiceImpl(
         MockLoggingService(),
@@ -457,9 +464,9 @@ void main() {
         'characters/ganyu$imageFileExtension',
       ];
 
-      when(apiService.downloadAsset(keyNames[0], path.join(tempDir.path, keyNames[0]), null)).thenAnswer((_) => Future.value(true));
-      when(apiService.downloadAsset(keyNames[1], path.join(tempDir.path, keyNames[1]), null)).thenAnswer((_) => Future.value(true));
-      when(apiService.downloadAsset(keyNames[2], path.join(tempDir.path, keyNames[2]), null)).thenAnswer((_) => Future.value(false));
+      when(apiService.downloadAsset(keyNames[0], path.join(tempDir.path, keyNames[0]))).thenAnswer((_) => Future.value(true));
+      when(apiService.downloadAsset(keyNames[1], path.join(tempDir.path, keyNames[1]))).thenAnswer((_) => Future.value(true));
+      when(apiService.downloadAsset(keyNames[2], path.join(tempDir.path, keyNames[2]))).thenAnswer((_) => Future.value(false));
 
       await File(path.join(path.join(tempDir.path, 'keqing$imageFileExtension'))).create();
       await File(path.join(path.join(tempDir.path, 'kamisato_ayaka$imageFileExtension'))).create();

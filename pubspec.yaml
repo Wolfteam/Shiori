@@ -24,7 +24,6 @@ dependencies:
   darq: ^1.2.1
   device_info_plus: ^4.0.0
   devicelocale: ^0.5.4
-  dio: ^4.0.6
   enum_to_string: ^2.0.1
   envify: ^2.0.2
   fl_chart: ^0.55.0
@@ -47,7 +46,7 @@ dependencies:
   hive: ^2.2.3
   hive_flutter: ^1.1.0
   html: ^0.15.0
-  http: ^0.13.4
+  http: ^0.13.5
   image_gallery_saver: ^1.7.1
   infinite_listview: ^1.1.0
   internet_connection_checker: ^0.0.1+3
