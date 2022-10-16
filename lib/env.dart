@@ -6,6 +6,7 @@ part 'env.g.dart';
 class Env {
   static const androidAppCenterKey = CommonEnv.androidAppCenterKey;
   static const androidPurchasesKey = CommonEnv.androidPurchasesKey;
+  static const iosAppCenterKey = CommonEnv.iosAppCenterKey;
 
   static const commonHeaderName = CommonEnv.commonHeaderName;
   static const apiHeaderName = CommonEnv.apiHeaderName;
@@ -40,6 +41,7 @@ abstract class ProdEnv {
 @Envify(path: '.env.common')
 abstract class CommonEnv {
   static const androidAppCenterKey = _CommonEnv.androidAppCenterKey;
+  static const iosAppCenterKey = _CommonEnv.iosAppCenterKey;
   static const androidPurchasesKey = _CommonEnv.androidPurchasesKey;
 
   static const commonHeaderName = _CommonEnv.commonHeaderName;
