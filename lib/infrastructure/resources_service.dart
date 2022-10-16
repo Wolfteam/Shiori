@@ -33,8 +33,8 @@ class ResourceServiceImpl implements ResourceService {
     this._settingsService,
     this._networkService,
     this._apiService, {
-    this.maxRetryAttempts = 5,
-    this.maxItemsPerBatch = 5,
+    this.maxRetryAttempts = 10,
+    this.maxItemsPerBatch = 10,
   });
 
   Future<void> init() async {
