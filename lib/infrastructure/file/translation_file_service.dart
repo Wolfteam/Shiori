@@ -6,9 +6,9 @@ import 'package:shiori/domain/services/resources_service.dart';
 class TranslationFileServiceImpl extends TranslationFileService {
   late TranslationFile _translationFile;
 
-  AppLanguageType? _currentLanguage;
+  late AppLanguageType _currentLanguage;
 
-  AppLanguageType get currentLanguage => _currentLanguage!;
+  AppLanguageType get currentLanguage => _currentLanguage;
 
   @override
   ResourceService get resources => throw UnimplementedError('Resource service is not required in this file');
@@ -24,9 +24,6 @@ class TranslationFileServiceImpl extends TranslationFileService {
 
   @override
   Future<void> initTranslations(AppLanguageType languageType, String assetPath) async {
-    if (_currentLanguage == languageType) {
-      return;
-    }
     _currentLanguage = languageType;
 
     final json = await readJson(assetPath);
