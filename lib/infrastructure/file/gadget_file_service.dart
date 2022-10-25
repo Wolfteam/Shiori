@@ -1,8 +1,12 @@
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/file/file_infrastructure.dart';
+import 'package:shiori/domain/services/resources_service.dart';
 
 class GadgetFileServiceImpl extends GadgetFileService {
   late GadgetsFile _gadgetsFile;
+
+  @override
+  ResourceService get resources => throw UnimplementedError('Resource service is not required in this file');
 
   @override
   TranslationFileService get translations => throw UnimplementedError('Translations are not required in this file');

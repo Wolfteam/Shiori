@@ -9,6 +9,10 @@ import 'package:shiori/domain/extensions/string_extensions.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/generated/l10n.dart';
 import 'package:shiori/injection.dart';
+import 'package:shiori/presentation/calculator_asc_materials/widgets/add_edit_item_bottom_sheet.dart';
+import 'package:shiori/presentation/calculator_asc_materials/widgets/ascension_materials_summary.dart';
+import 'package:shiori/presentation/calculator_asc_materials/widgets/item_card.dart';
+import 'package:shiori/presentation/calculator_asc_materials/widgets/reorder_items_dialog.dart';
 import 'package:shiori/presentation/characters/characters_page.dart';
 import 'package:shiori/presentation/shared/dialogs/confirm_dialog.dart';
 import 'package:shiori/presentation/shared/extensions/i18n_extensions.dart';
@@ -19,11 +23,6 @@ import 'package:shiori/presentation/shared/shiori_icons.dart';
 import 'package:shiori/presentation/shared/styles.dart';
 import 'package:shiori/presentation/shared/utils/modal_bottom_sheet_utils.dart';
 import 'package:shiori/presentation/weapons/weapons_page.dart';
-
-import 'widgets/add_edit_item_bottom_sheet.dart';
-import 'widgets/ascension_materials_summary.dart';
-import 'widgets/item_card.dart';
-import 'widgets/reorder_items_dialog.dart';
 
 class CalculatorAscensionMaterialsPage extends StatelessWidget {
   final int sessionKey;

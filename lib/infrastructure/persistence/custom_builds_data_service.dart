@@ -4,9 +4,11 @@ import 'package:shiori/domain/models/entities.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/genshin_service.dart';
 import 'package:shiori/domain/services/persistence/custom_builds_data_service.dart';
+import 'package:shiori/domain/services/resources_service.dart';
 
 class CustomBuildsDataServiceImpl implements CustomBuildsDataService {
   final GenshinService _genshinService;
+  final ResourceService _resourceService;
 
   late Box<CustomBuild> _buildsBox;
   late Box<CustomBuildWeapon> _weaponsBox;
@@ -14,7 +16,7 @@ class CustomBuildsDataServiceImpl implements CustomBuildsDataService {
   late Box<CustomBuildNote> _notesBox;
   late Box<CustomBuildTeamCharacter> _teamCharactersBox;
 
-  CustomBuildsDataServiceImpl(this._genshinService);
+  CustomBuildsDataServiceImpl(this._genshinService, this._resourceService);
 
   @override
   Future<void> init() async {
@@ -239,7 +241,7 @@ class CustomBuildsDataServiceImpl implements CustomBuildsDataService {
       final fullArtifact = _genshinService.artifacts.getArtifact(e.itemKey);
       final translation = _genshinService.translations.getArtifactTranslation(e.itemKey);
       final image = _genshinService.artifacts.getArtifactRelatedPart(
-        fullArtifact.fullImagePath,
+        _resourceService.getArtifactImagePath(fullArtifact.image),
         fullArtifact.image,
         translation.bonus.length,
         ArtifactType.values[e.type],
@@ -272,7 +274,7 @@ class CustomBuildsDataServiceImpl implements CustomBuildsDataService {
           index: e.index,
           refinement: e.refinement,
           name: translation.name,
-          image: weapon.fullImagePath,
+          image: _resourceService.getWeaponImagePath(weapon.image, weapon.type),
           rarity: weapon.rarity,
           subStatType: weapon.secondaryStat,
           stat: stat,

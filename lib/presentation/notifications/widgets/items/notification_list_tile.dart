@@ -7,13 +7,12 @@ import 'package:shiori/domain/extensions/duration_extensions.dart';
 import 'package:shiori/domain/models/models.dart' as models;
 import 'package:shiori/generated/l10n.dart';
 import 'package:shiori/injection.dart';
+import 'package:shiori/presentation/notifications/widgets/add_edit_notification_bottom_sheet.dart';
 import 'package:shiori/presentation/shared/dialogs/number_picker_dialog.dart';
 import 'package:shiori/presentation/shared/images/circle_item.dart';
 import 'package:shiori/presentation/shared/styles.dart';
 import 'package:shiori/presentation/shared/utils/modal_bottom_sheet_utils.dart';
 import 'package:shiori/presentation/shared/utils/size_utils.dart';
-
-import '../add_edit_notification_bottom_sheet.dart';
 
 class NotificationListTitle extends StatelessWidget {
   final int itemKey;

@@ -30,7 +30,7 @@ void main() {
     for (final material in materials) {
       final detail = service.getMaterial(material.key);
       checkKey(detail.key);
-      checkAsset(detail.fullImagePath);
+      checkAsset(service.resources.getMaterialImagePath(detail.image, detail.type));
       expect(detail.rarity, equals(material.rarity));
       expect(detail.type, equals(material.type));
 

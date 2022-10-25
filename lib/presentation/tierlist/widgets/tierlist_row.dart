@@ -6,9 +6,8 @@ import 'package:shiori/generated/l10n.dart';
 import 'package:shiori/presentation/shared/images/circle_character.dart';
 import 'package:shiori/presentation/shared/styles.dart';
 import 'package:shiori/presentation/shared/utils/size_utils.dart';
-
-import 'rename_tierlist_dialog.dart';
-import 'tierlist_row_color_picker.dart';
+import 'package:shiori/presentation/tierlist/widgets/rename_tierlist_dialog.dart';
+import 'package:shiori/presentation/tierlist/widgets/tierlist_row_color_picker.dart';
 
 enum TierListRowOptionsType {
   addRowAbove,

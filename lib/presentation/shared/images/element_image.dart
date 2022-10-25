@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shiori/domain/assets.dart';
 import 'package:shiori/domain/enums/enums.dart';
-
-import '../extensions/element_type_extensions.dart';
+import 'package:shiori/presentation/shared/extensions/element_type_extensions.dart';
 
 class ElementImage extends StatelessWidget {
   final ElementType type;
@@ -15,7 +14,7 @@ class ElementImage extends StatelessWidget {
     required this.type,
     this.useDarkForBackgroundColor = false,
     this.radius = 25,
-  })  : path = type.getElementAsssetPath(),
+  })  : path = type.getElementAssetPath(),
         super(key: key);
 
   ElementImage.fromPath({

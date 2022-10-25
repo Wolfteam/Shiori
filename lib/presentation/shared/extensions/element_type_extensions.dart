@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-
-import '../../../domain/assets.dart';
-import '../../../domain/enums/enums.dart';
+import 'package:shiori/domain/assets.dart';
+import 'package:shiori/domain/enums/enums.dart';
 
 extension ElementTypeExtensions on ElementType {
-  String getElementAsssetPath() {
+  String getElementAssetPath() {
     return Assets.getElementPathFromType(this);
   }
 

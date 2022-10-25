@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shiori/generated/l10n.dart';
-
-import 'utils/enum_utils.dart';
+import 'package:shiori/presentation/shared/utils/enum_utils.dart';
 
 typedef PopupMenuItemText<T> = String Function(T value, int index);
 typedef ChildBuilder<T> = Widget Function(TranslatedEnum<T> value);

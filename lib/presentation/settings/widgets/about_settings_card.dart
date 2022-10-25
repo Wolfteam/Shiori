@@ -9,6 +9,8 @@ import 'package:shiori/generated/l10n.dart';
 import 'package:shiori/presentation/donations/donations_bottom_sheet.dart';
 import 'package:shiori/presentation/settings/widgets/settings_card.dart';
 import 'package:shiori/presentation/shared/dialogs/changelog_dialog.dart';
+import 'package:shiori/presentation/shared/dialogs/check_for_resource_updates_dialog.dart';
+import 'package:shiori/presentation/shared/dialogs/confirm_dialog.dart';
 import 'package:shiori/presentation/shared/loading.dart';
 import 'package:shiori/presentation/shared/shiori_icons.dart';
 import 'package:shiori/presentation/shared/styles.dart';
@@ -97,6 +99,14 @@ class AboutSettingsCard extends StatelessWidget {
                       ),
                     ),
                     Tooltip(
+                      message: s.checkForResourceUpdates,
+                      child: IconButton(
+                        splashRadius: Styles.mediumButtonSplashRadius,
+                        icon: const Icon(Icons.refresh, color: Styles.paimonColor),
+                        onPressed: () => showDialog(context: context, builder: (_) => const CheckForResourceUpdatesDialog()),
+                      ),
+                    ),
+                    Tooltip(
                       message: 'Twitter',
                       child: IconButton(
                         splashRadius: Styles.mediumButtonSplashRadius,
@@ -126,8 +136,13 @@ class AboutSettingsCard extends StatelessWidget {
                       child: IconButton(
                         splashRadius: Styles.mediumButtonSplashRadius,
                         icon: const Icon(Icons.email, color: Colors.blue),
-                        onPressed: () => _launchUrl(
-                          'mailto:miraisoft20@gmail.com?subject=The subject of the email&body=Please write your email in english / spanish',
+                        onPressed: () => showDialog(
+                          context: context,
+                          builder: (_) => ConfirmDialog(
+                            title: s.information,
+                            content: s.beforeSendingEmailMsg,
+                            onOk: () => _launchUrl('mailto:miraisoft20@gmail.com?subject=[${s.appName}]'),
+                          ),
                         ),
                       ),
                     ),

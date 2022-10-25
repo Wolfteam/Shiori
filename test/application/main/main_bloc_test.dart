@@ -8,6 +8,7 @@ import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/infrastructure/infrastructure.dart';
 
+import '../../common.dart';
 import '../../mocks.mocks.dart';
 
 class MockCharactersBloc extends MockBloc<CharactersEvent, CharactersState> implements CharactersBloc {}
@@ -57,6 +58,7 @@ void main() {
     doubleBackToClose: true,
     useOfficialMap: true,
     useTwentyFourHoursFormat: true,
+    resourceVersion: 1,
   );
 
   setUpAll(() {
@@ -88,7 +90,8 @@ void main() {
     final telemetryService = MockTelemetryService();
     final deviceInfoService = MockDeviceInfoService();
     final localeService = LocaleServiceImpl(settingsService);
-    final genshinService = GenshinServiceImpl(localeService);
+    final resourceService = getResourceService(settingsService);
+    final genshinService = GenshinServiceImpl(resourceService, localeService);
     final purchaseService = MockPurchaseService();
     when(purchaseService.getUnlockedFeatures()).thenAnswer((_) => Future.value(unlockedFeatures));
     for (final feature in unlockedFeatures) {
@@ -125,14 +128,14 @@ void main() {
 
   test('Initial state', () {
     final bloc = _getBloc();
-    expect(bloc.state, const MainState.loading());
+    expect(bloc.state, MainState.loading(language: languagesMap.entries.firstWhere((el) => el.key == AppLanguageType.english).value));
   });
 
   group('Init', () {
     blocTest<MainBloc, MainState>(
       'emits init state',
       build: () => _getBloc(),
-      act: (bloc) => bloc.add(const MainEvent.init()),
+      act: (bloc) => bloc.add(const MainEvent.init(updateResultType: null)),
       expect: () => [
         MainState.loaded(
           appTitle: _defaultAppName,
@@ -153,7 +156,7 @@ void main() {
       'updates the theme in the state',
       build: () => _getBloc(),
       act: (bloc) => bloc
-        ..add(const MainEvent.init())
+        ..add(const MainEvent.init(updateResultType: null))
         ..add(const MainEvent.themeChanged(newValue: AppThemeType.light)),
       skip: 1,
       expect: () => [
@@ -174,7 +177,7 @@ void main() {
       'updates the accent color in the state',
       build: () => _getBloc(),
       act: (bloc) => bloc
-        ..add(const MainEvent.init())
+        ..add(const MainEvent.init(updateResultType: null))
         ..add(const MainEvent.accentColorChanged(newValue: AppAccentColorType.blueGrey)),
       skip: 1,
       expect: () => [
@@ -215,7 +218,7 @@ void main() {
       'updates the language in the state',
       build: () => _getBloc(appSettings: _defaultAppSettings.copyWith.call(appLanguage: AppLanguageType.russian)),
       act: (bloc) => bloc
-        ..add(const MainEvent.init())
+        ..add(const MainEvent.init(updateResultType: null))
         ..add(const MainEvent.languageChanged(newValue: AppLanguageType.russian)),
       expect: () => [
         MainState.loaded(

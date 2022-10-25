@@ -1,7 +1,8 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:responsive_builder/responsive_builder.dart';
-
-import 'constants.dart';
+import 'package:shiori/presentation/shared/details/constants.dart';
 
 class DetailTopLayout extends StatelessWidget {
   final String fullImage;
@@ -55,8 +56,8 @@ class DetailTopLayout extends StatelessWidget {
             ),
           Align(
             alignment: imgAlignment,
-            child: Image.asset(
-              fullImage,
+            child: Image.file(
+              File(fullImage),
               fit: BoxFit.contain,
               filterQuality: FilterQuality.high,
             ),
@@ -102,8 +103,8 @@ class ShadowImage extends StatelessWidget {
         alignment: Alignment.topRight,
         child: Opacity(
           opacity: 0.5,
-          child: Image.asset(
-            secondFullImage ?? fullImage,
+          child: Image.file(
+            File(secondFullImage ?? fullImage),
             fit: BoxFit.contain,
             filterQuality: FilterQuality.high,
           ),
@@ -116,8 +117,8 @@ class ShadowImage extends StatelessWidget {
         transform: Matrix4.translationValues(isAnSmallImage ? 30 : 60, isAnSmallImage ? -10 : -30, 0.0),
         child: Opacity(
           opacity: 0.5,
-          child: Image.asset(
-            secondFullImage ?? fullImage,
+          child: Image.file(
+            File(secondFullImage ?? fullImage),
             fit: BoxFit.contain,
             filterQuality: FilterQuality.high,
           ),

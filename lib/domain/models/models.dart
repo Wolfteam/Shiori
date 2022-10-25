@@ -44,6 +44,8 @@ export 'db/materials/material_file_model.dart';
 export 'db/materials/materials_file.dart';
 export 'db/monsters/monster_file_model.dart';
 export 'db/monsters/monsters_file.dart';
+export 'db/resources/check_for_updates_result.dart';
+export 'db/resources/json_versions_file.dart';
 export 'db/translations/translation_artifact_file.dart';
 export 'db/translations/translation_character_file.dart';
 export 'db/translations/translation_element_file.dart';

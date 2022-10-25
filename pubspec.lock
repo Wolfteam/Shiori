@@ -281,13 +281,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.4.1"
-  dio:
-    dependency: "direct main"
+  dotenv:
+    dependency: transitive
     description:
-      name: dio
+      name: dotenv
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "4.0.6"
+    version: "3.0.0"
   enum_to_string:
     dependency: "direct main"
     description:
@@ -295,6 +295,20 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.0.1"
+  envify:
+    dependency: "direct main"
+    description:
+      name: envify
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.0.2"
+  envify_generator:
+    dependency: "direct dev"
+    description:
+      name: envify_generator
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.0.2"
   equatable:
     dependency: transitive
     description:
@@ -538,7 +552,7 @@ packages:
       name: http
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.13.4"
+    version: "0.13.5"
   http_multi_server:
     dependency: transitive
     description:
@@ -1272,6 +1286,41 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "7.5.0"
+  wakelock:
+    dependency: "direct main"
+    description:
+      name: wakelock
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.6.2"
+  wakelock_macos:
+    dependency: transitive
+    description:
+      name: wakelock_macos
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.4.0"
+  wakelock_platform_interface:
+    dependency: transitive
+    description:
+      name: wakelock_platform_interface
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.3.0"
+  wakelock_web:
+    dependency: transitive
+    description:
+      name: wakelock_web
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.4.0"
+  wakelock_windows:
+    dependency: transitive
+    description:
+      name: wakelock_windows
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.2.0"
   watcher:
     dependency: transitive
     description:

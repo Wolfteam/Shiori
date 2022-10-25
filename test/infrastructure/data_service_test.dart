@@ -7,6 +7,7 @@ import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/calculator_service.dart';
 import 'package:shiori/domain/services/data_service.dart';
 import 'package:shiori/domain/services/genshin_service.dart';
+import 'package:shiori/domain/services/resources_service.dart';
 import 'package:shiori/infrastructure/infrastructure.dart';
 
 import '../common.dart';
@@ -18,6 +19,7 @@ void main() {
   late final DataService _dataService;
   late final CalculatorService _calculatorService;
   late final GenshinService _genshinService;
+  late final ResourceService _resourceService;
   late final String _dbPath;
 
   setUp(() {
@@ -26,9 +28,10 @@ void main() {
     when(settings.language).thenReturn(AppLanguageType.english);
     final localeService = LocaleServiceImpl(settings);
 
-    _genshinService = GenshinServiceImpl(localeService);
-    _calculatorService = CalculatorServiceImpl(_genshinService);
-    _dataService = DataServiceImpl(_genshinService, _calculatorService);
+    _resourceService = getResourceService(settings);
+    _genshinService = GenshinServiceImpl(_resourceService, localeService);
+    _calculatorService = CalculatorServiceImpl(_genshinService, _resourceService);
+    _dataService = DataServiceImpl(_genshinService, _calculatorService, _resourceService);
 
     return Future(() async {
       await _genshinService.init(AppLanguageType.english);
@@ -93,7 +96,7 @@ void main() {
           name: 'Keqing',
           elementType: char.elementType,
           position: 0,
-          image: char.fullImagePath,
+          image: _resourceService.getCharacterImagePath(char.image),
           rarity: char.rarity,
           materials: materials,
           currentLevel: 20,

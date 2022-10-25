@@ -22,8 +22,9 @@ void main() {
       final settingsService = MockSettingsService();
       when(settingsService.language).thenReturn(AppLanguageType.english);
 
+      final resourceService = getResourceService(settingsService);
       final localeService = LocaleServiceImpl(settingsService);
-      _genshinService = GenshinServiceImpl(localeService);
+      _genshinService = GenshinServiceImpl(resourceService, localeService);
 
       await _genshinService.init(settingsService.language);
     });

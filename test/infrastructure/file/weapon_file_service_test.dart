@@ -27,7 +27,7 @@ void main() {
     for (final weapon in weapons) {
       final detail = service.getWeapon(weapon.key);
       checkKey(detail.key);
-      checkAsset(detail.fullImagePath);
+      checkAsset(service.resources.getWeaponImagePath(detail.image, detail.type));
       expect(detail.type, equals(weapon.type));
       expect(detail.atk, equals(weapon.baseAtk));
       expect(detail.rarity, equals(weapon.rarity));

@@ -1,4 +1,4 @@
-import '../../enums/character_skill_type.dart';
+import 'package:shiori/domain/enums/enums.dart';
 
 class CharacterSkillCardModel {
   final String image;

@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/extensions/weapon_type_extensions.dart';
 import 'package:shiori/generated/l10n.dart';
-
-import 'extensions/i18n_extensions.dart';
+import 'package:shiori/presentation/shared/extensions/i18n_extensions.dart';
 
 class WeaponsButtonBar extends StatelessWidget {
   final List<WeaponType> selectedValues;

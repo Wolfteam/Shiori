@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/generated/l10n.dart';
-
-import 'extensions/element_type_extensions.dart';
-import 'extensions/i18n_extensions.dart';
+import 'package:shiori/presentation/shared/extensions/element_type_extensions.dart';
+import 'package:shiori/presentation/shared/extensions/i18n_extensions.dart';
 
 class ElementsButtonBar extends StatelessWidget {
   final List<ElementType> selectedValues;
@@ -35,7 +34,7 @@ class ElementsButtonBar extends StatelessWidget {
       iconSize: iconSize,
       icon: Opacity(
         opacity: !isSelected ? 1 : 0.2,
-        child: Image.asset(value.getElementAsssetPath()),
+        child: Image.asset(value.getElementAssetPath()),
       ),
       onPressed: () => onClick(value),
       tooltip: tooltip,

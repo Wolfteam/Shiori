@@ -26,8 +26,9 @@ void main() {
     TestWidgetsFlutterBinding.ensureInitialized();
     final settingsService = SettingsServiceImpl(MockLoggingService());
     final localeService = LocaleServiceImpl(settingsService);
-    _genshinService = GenshinServiceImpl(localeService);
-    _dataService = DataServiceImpl(_genshinService, CalculatorServiceImpl(_genshinService));
+    final resourceService = getResourceService(settingsService);
+    _genshinService = GenshinServiceImpl(resourceService, localeService);
+    _dataService = DataServiceImpl(_genshinService, CalculatorServiceImpl(_genshinService, resourceService), resourceService);
 
     return Future(() async {
       await _genshinService.init(AppLanguageType.english);

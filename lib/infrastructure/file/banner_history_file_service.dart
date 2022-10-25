@@ -6,17 +6,22 @@ import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/extensions/double_extensions.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/file/file_infrastructure.dart';
+import 'package:shiori/domain/services/resources_service.dart';
 
 class BannerHistoryFileServiceImpl extends BannerHistoryFileService {
+  final ResourceService _resourceService;
   final CharacterFileService _characters;
   final WeaponFileService _weapons;
 
   late BannerHistoryFile _bannerHistoryFile;
 
   @override
+  ResourceService get resources => _resourceService;
+
+  @override
   TranslationFileService get translations => throw UnimplementedError('Translations are not required in this file');
 
-  BannerHistoryFileServiceImpl(this._characters, this._weapons);
+  BannerHistoryFileServiceImpl(this._resourceService, this._characters, this._weapons);
 
   @override
   Future<void> init(String assetPath) async {
@@ -118,13 +123,13 @@ class BannerHistoryFileServiceImpl extends BannerHistoryFileService {
                 case BannerHistoryItemType.character:
                   final character = _characters.getCharacter(key);
                   rarity = character.rarity;
-                  imagePath = character.fullImagePath;
+                  imagePath = _resourceService.getCharacterImagePath(character.image);
                   type = ItemType.character;
                   break;
                 case BannerHistoryItemType.weapon:
                   final weapon = _weapons.getWeapon(key);
                   rarity = weapon.rarity;
-                  imagePath = weapon.fullImagePath;
+                  imagePath = _resourceService.getWeaponImagePath(weapon.image, weapon.type);
                   type = ItemType.weapon;
                   break;
                 default:

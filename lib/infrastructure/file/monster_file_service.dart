@@ -2,16 +2,21 @@ import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/file/monster_file_service.dart';
 import 'package:shiori/domain/services/file/translation_file_service.dart';
+import 'package:shiori/domain/services/resources_service.dart';
 
 class MonsterFileServiceImpl extends MonsterFileService {
+  final ResourceService _resourceService;
   final TranslationFileService _translations;
 
   late MonstersFile _monstersFile;
 
   @override
+  ResourceService get resources => _resourceService;
+
+  @override
   TranslationFileService get translations => _translations;
 
-  MonsterFileServiceImpl(this._translations);
+  MonsterFileServiceImpl(this._resourceService, this._translations);
 
   @override
   Future<void> init(String assetPath) async {
@@ -44,7 +49,7 @@ class MonsterFileServiceImpl extends MonsterFileService {
   List<ItemCommon> getRelatedMonsterToMaterialForItems(String key) {
     return _monstersFile.monsters
         .where((monster) => monster.drops.any((el) => el.type == MonsterDropType.material && el.key == key))
-        .map((monster) => ItemCommon(monster.key, monster.fullImagePath))
+        .map((monster) => ItemCommon(monster.key, _resourceService.getMonsterImagePath(monster.image)))
         .toList();
   }
 
@@ -52,7 +57,7 @@ class MonsterFileServiceImpl extends MonsterFileService {
   List<ItemCommon> getRelatedMonsterToArtifactForItems(String key) {
     return _monstersFile.monsters
         .where((monster) => monster.drops.any((el) => el.type == MonsterDropType.artifact && el.key == key))
-        .map((monster) => ItemCommon(monster.key, monster.fullImagePath))
+        .map((monster) => ItemCommon(monster.key, _resourceService.getMonsterImagePath(monster.image)))
         .toList();
   }
 
@@ -60,7 +65,7 @@ class MonsterFileServiceImpl extends MonsterFileService {
     final translation = _translations.getMonsterTranslation(monster.key);
     return MonsterCardModel(
       key: monster.key,
-      image: monster.fullImagePath,
+      image: _resourceService.getMonsterImagePath(monster.image),
       name: translation.name,
       type: monster.type,
       isComingSoon: monster.isComingSoon,

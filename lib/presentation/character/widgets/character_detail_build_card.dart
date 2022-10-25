@@ -213,9 +213,8 @@ class _ArtifactRow extends StatelessWidget {
           scrollDirection: Axis.horizontal,
           itemCount: artifactOrder.length,
           itemBuilder: (ctx, index) {
-            final digit = artifactOrder[index];
             final stat = item.stats[index];
-            final path = item.one!.image.replaceFirst(replaceDigitRegex, '$digit');
+            final path = getArtifactPathByOrder(index, item.one!.image);
             return ArtifactCard.withoutDetails(
               name: s.translateStatTypeWithoutValue(stat),
               image: path,
@@ -235,9 +234,8 @@ class _ArtifactRow extends StatelessWidget {
         itemCount: item.multiples.length,
         itemBuilder: (ctx, index) {
           final multi = item.multiples[index];
-          final digit = artifactOrder[index];
           final stat = item.stats[index];
-          final path = multi.image.replaceFirst(replaceDigitRegex, '$digit');
+          final path = getArtifactPathByOrder(index, multi.image);
           return ArtifactCard.withoutDetails(
             name: s.translateStatTypeWithoutValue(stat),
             image: path,

@@ -16,5 +16,6 @@ class SettingsState with _$SettingsState {
     required bool useOfficialMap,
     required bool useTwentyFourHoursFormat,
     required List<AppUnlockedFeature> unlockedFeatures,
+    required int resourceVersion,
   }) = _LoadedState;
 }

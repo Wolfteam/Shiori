@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shiori/application/bloc.dart';
@@ -122,7 +124,7 @@ class MaterialCard extends StatelessWidget {
                     width: imgWidth,
                     height: imgHeight,
                     placeholder: MemoryImage(kTransparentImage),
-                    image: AssetImage(image),
+                    image: FileImage(File(image)),
                   ),
                   if (usedQuantity > 0 && isInQuantityMode)
                     Align(

@@ -34,7 +34,7 @@ void main() {
     for (final artifact in artifacts) {
       final detail = service.getArtifact(artifact.key);
       checkKey(detail.key);
-      checkAsset(detail.fullImagePath);
+      checkAsset(service.resources.getArtifactImagePath(detail.image));
       expect(detail.minRarity, inInclusiveRange(1, 4));
       expect(detail.maxRarity, inInclusiveRange(3, 5));
     }

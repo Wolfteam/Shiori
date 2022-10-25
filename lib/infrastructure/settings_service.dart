@@ -3,6 +3,7 @@ import 'package:devicelocale/devicelocale.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:shiori/domain/app_constants.dart';
 import 'package:shiori/domain/enums/enums.dart';
+import 'package:shiori/domain/extensions/string_extensions.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/logging_service.dart';
 import 'package:shiori/domain/services/settings_service.dart';
@@ -19,6 +20,8 @@ class SettingsServiceImpl extends SettingsService {
   final _doubleBackToCloseKey = 'DoubleBackToCloseKey';
   final _useOfficialMapKey = 'UseOfficialMapKey';
   final _useTwentyFourHoursFormatKey = 'UseTwentyFourHoursFormat';
+  final _lastResourcesCheckedDate = 'LastResourcesCheckedDate';
+  final _resourcesVersion = 'ResourcesVersion';
 
   bool _initialized = false;
 
@@ -92,6 +95,37 @@ class SettingsServiceImpl extends SettingsService {
   set useTwentyFourHoursFormat(bool value) => _prefs.setBool(_useTwentyFourHoursFormatKey, value);
 
   @override
+  DateTime? get lastResourcesCheckedDate {
+    final val = _prefs.getString(_lastResourcesCheckedDate);
+    if (val.isNullEmptyOrWhitespace) {
+      return null;
+    }
+
+    final date = DateTime.tryParse(val!);
+    return date;
+  }
+
+  @override
+  set lastResourcesCheckedDate(DateTime? value) {
+    if (value == null) {
+      _prefs.setString(_lastResourcesCheckedDate, '');
+      return;
+    }
+
+    final val = value.toString();
+    _prefs.setString(_lastResourcesCheckedDate, val);
+  }
+
+  @override
+  int get resourceVersion => _prefs.getInt(_resourcesVersion)!;
+
+  @override
+  set resourceVersion(int value) => _prefs.setInt(_resourcesVersion, value);
+
+  @override
+  bool get noResourcesHasBeenDownloaded => resourceVersion <= 0 || lastResourcesCheckedDate == null;
+
+  @override
   AppSettings get appSettings => AppSettings(
         appTheme: appTheme,
         useDarkAmoled: useDarkAmoledTheme,
@@ -104,6 +138,7 @@ class SettingsServiceImpl extends SettingsService {
         doubleBackToClose: doubleBackToClose,
         useOfficialMap: useOfficialMap,
         useTwentyFourHoursFormat: useTwentyFourHoursFormat,
+        resourceVersion: resourceVersion,
       );
 
   SettingsServiceImpl(this._logger);
@@ -172,6 +207,11 @@ class SettingsServiceImpl extends SettingsService {
       useTwentyFourHoursFormat = false;
     }
 
+    if (_prefs.getInt(_resourcesVersion) == null) {
+      _logger.info(runtimeType, 'The default value for the resource version will be set');
+      resourceVersion = -1;
+    }
+
     _initialized = true;
     _logger.info(runtimeType, 'Settings were initialized successfully');
   }
@@ -181,7 +221,7 @@ class SettingsServiceImpl extends SettingsService {
       _logger.info(runtimeType, '_getDefaultLangToUse: Trying to retrieve device lang...');
       final deviceLocale = await Devicelocale.currentAsLocale;
       if (deviceLocale == null) {
-        _logger.warning(
+        _logger.info(
           runtimeType,
           "_getDefaultLangToUse: Couldn't retrieve the device locale, falling back to english",
         );
@@ -202,8 +242,7 @@ class SettingsServiceImpl extends SettingsService {
         '_getDefaultLangToUse: Found an appropriate language to use for = ${deviceLocale.languageCode}_${deviceLocale.countryCode}, that is = ${appLang.key}',
       );
       return appLang.key;
-    } catch (e, s) {
-      _logger.error(runtimeType, '_getDefaultLangToUse: Unknown error occurred', e, s);
+    } catch (e) {
       return AppLanguageType.english;
     }
   }

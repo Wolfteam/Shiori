@@ -7,6 +7,7 @@ import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/data_service.dart';
 import 'package:shiori/domain/services/genshin_service.dart';
 import 'package:shiori/domain/services/logging_service.dart';
+import 'package:shiori/domain/services/resources_service.dart';
 import 'package:shiori/domain/services/telemetry_service.dart';
 import 'package:shiori/infrastructure/infrastructure.dart';
 
@@ -21,6 +22,7 @@ void main() {
   late TelemetryService _telemetryService;
   late LoggingService _loggingService;
   late CustomBuildsBloc _customBuildsBloc;
+  late ResourceService _resourceService;
   late final String _dbPath;
 
   const _keqingKey = 'keqing';
@@ -32,8 +34,9 @@ void main() {
     TestWidgetsFlutterBinding.ensureInitialized();
     final settingsService = SettingsServiceImpl(MockLoggingService());
     final localeService = LocaleServiceImpl(settingsService);
-    _genshinService = GenshinServiceImpl(localeService);
-    _dataService = DataServiceImpl(_genshinService, CalculatorServiceImpl(_genshinService));
+    _resourceService = getResourceService(settingsService);
+    _genshinService = GenshinServiceImpl(_resourceService, localeService);
+    _dataService = DataServiceImpl(_genshinService, CalculatorServiceImpl(_genshinService, _resourceService), _resourceService);
     _telemetryService = MockTelemetryService();
     _loggingService = MockLoggingService();
     _customBuildsBloc = CustomBuildsBloc(_dataService);
@@ -57,6 +60,7 @@ void main() {
         _dataService,
         _telemetryService,
         _loggingService,
+        _resourceService,
         _customBuildsBloc,
       );
 

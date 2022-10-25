@@ -4,6 +4,7 @@ import 'package:mockito/mockito.dart';
 import 'package:shiori/application/bloc.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/services/genshin_service.dart';
+import 'package:shiori/domain/services/resources_service.dart';
 import 'package:shiori/domain/services/telemetry_service.dart';
 import 'package:shiori/infrastructure/infrastructure.dart';
 
@@ -13,6 +14,7 @@ import '../../mocks.mocks.dart';
 void main() {
   late final TelemetryService _telemetryService;
   late final GenshinService _genshinService;
+  late final ResourceService _resourceService;
 
   setUpAll(() {
     TestWidgetsFlutterBinding.ensureInitialized();
@@ -20,20 +22,21 @@ void main() {
     final settingsService = MockSettingsService();
     when(settingsService.language).thenReturn(AppLanguageType.english);
     final localeService = LocaleServiceImpl(settingsService);
-    _genshinService = GenshinServiceImpl(localeService);
+    _resourceService = getResourceService(settingsService);
+    _genshinService = GenshinServiceImpl(_resourceService, localeService);
 
     return Future(() async {
       await _genshinService.init(settingsService.language);
     });
   });
 
-  test('Initial state', () => expect(MaterialBloc(_genshinService, _telemetryService).state, const MaterialState.loading()));
+  test('Initial state', () => expect(MaterialBloc(_genshinService, _telemetryService, _resourceService).state, const MaterialState.loading()));
 
   group('Load from key', () {
     const key = 'slime-secretions';
     blocTest<MaterialBloc, MaterialState>(
       key,
-      build: () => MaterialBloc(_genshinService, _telemetryService),
+      build: () => MaterialBloc(_genshinService, _telemetryService, _resourceService),
       act: (bloc) => bloc.add(const MaterialEvent.loadFromKey(key: key)),
       verify: (bloc) {
         bloc.state.map(

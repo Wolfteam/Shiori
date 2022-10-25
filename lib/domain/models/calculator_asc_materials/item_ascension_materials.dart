@@ -1,8 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:shiori/domain/enums/enums.dart';
-
-import '../models.dart';
+import 'package:shiori/domain/models/models.dart';
 
 part 'item_ascension_materials.freezed.dart';
 

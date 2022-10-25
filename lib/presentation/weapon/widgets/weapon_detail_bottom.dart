@@ -9,11 +9,10 @@ import 'package:shiori/presentation/shared/images/circle_character.dart';
 import 'package:shiori/presentation/shared/item_description_detail.dart';
 import 'package:shiori/presentation/shared/styles.dart';
 import 'package:shiori/presentation/shared/utils/size_utils.dart';
+import 'package:shiori/presentation/weapon/widgets/weapon_detail_ascension_materials_card.dart';
+import 'package:shiori/presentation/weapon/widgets/weapon_detail_crafting_materials.dart';
+import 'package:shiori/presentation/weapon/widgets/weapon_detail_refinements_card.dart';
 import 'package:shiori/presentation/weapon/widgets/weapon_detail_stats_card.dart';
-
-import 'weapon_detail_ascension_materials_card.dart';
-import 'weapon_detail_crafting_materials.dart';
-import 'weapon_detail_refinements_card.dart';
 
 class WeaponDetailBottom extends StatelessWidget {
   final String description;

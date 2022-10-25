@@ -3,7 +3,7 @@ import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/device_info_service.dart';
 import 'package:shiori/domain/services/telemetry_service.dart';
-import 'package:shiori/infrastructure/secrets.dart';
+import 'package:shiori/env.dart';
 import 'package:shiori/infrastructure/telemetry/flutter_appcenter_bundle.dart';
 
 class TelemetryServiceImpl implements TelemetryService {
@@ -14,7 +14,7 @@ class TelemetryServiceImpl implements TelemetryService {
   //Only call this function from the main.dart
   @override
   Future<void> initTelemetry() async {
-    await AppCenter.startAsync(appSecretAndroid: Secrets.appCenterKey, appSecretIOS: '');
+    await AppCenter.startAsync(appSecretAndroid: Env.androidAppCenterKey, appSecretIOS: '');
   }
 
   @override
@@ -81,6 +81,7 @@ class TelemetryServiceImpl implements TelemetryService {
       'ServerResetTime': EnumToString.convertToString(settings.serverResetTime),
       'DoubleBackToClose': settings.doubleBackToClose.toString(),
       'UseOfficialMap': settings.useOfficialMap.toString(),
+      'ResourcesVersion': settings.resourceVersion.toString(),
     });
   }
 
@@ -174,4 +175,20 @@ class TelemetryServiceImpl implements TelemetryService {
 
   @override
   Future<void> trackBirthdaysPerMonthOpened(int month) => trackEventAsync('BirthdaysPerMonth-Opened', {'Month': '$month'});
+
+  @override
+  Future<void> trackCheckForResourceUpdates(AppResourceUpdateResultType result) =>
+      trackEventAsync('Resource-Updates-Check', {'Result': EnumToString.convertToString(result)});
+
+  @override
+  Future<void> trackResourceUpdateCompleted(bool applied, int targetResourceVersion) => trackEventAsync(
+        'Resource-Updates-Completed',
+        {'Applied': '$applied', 'TargetResourceVersion': '$targetResourceVersion'},
+      );
+
+  @override
+  Future<void> trackResourceUpdateDownload(int targetResourceVersion) => trackEventAsync(
+        'Resource-Updates-Download',
+        {'TargetResourceVersion': '$targetResourceVersion'},
+      );
 }

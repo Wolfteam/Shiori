@@ -23,7 +23,8 @@ void main() {
       when(_settingsService.language).thenReturn(AppLanguageType.english);
 
       _localeService = LocaleServiceImpl(_settingsService);
-      _genshinService = GenshinServiceImpl(_localeService);
+      final resourceService = getResourceService(_settingsService);
+      _genshinService = GenshinServiceImpl(resourceService, _localeService);
 
       await _genshinService.init(_settingsService.language);
     });
