@@ -23,7 +23,11 @@ abstract class ResourceService {
 
   String getMaterialImagePath(String filename, MaterialType type);
 
-  Future<CheckForUpdatesResult> checkForUpdates(String currentAppVersion, int currentResourcesVersion);
+  Future<CheckForUpdatesResult> checkForUpdates(
+    String currentAppVersion,
+    int currentResourcesVersion, {
+    bool updateResourceCheckedDate = true,
+  });
 
   Future<bool> downloadAndApplyUpdates(
     int targetResourceVersion,

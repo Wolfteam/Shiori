@@ -5,8 +5,8 @@ class CheckForResourceUpdatesState with _$CheckForResourceUpdatesState {
   const factory CheckForResourceUpdatesState.loading() = _LoadingState;
 
   const factory CheckForResourceUpdatesState.loaded({
-    required AppResourceUpdateResultType updateResultType,
     required int currentResourceVersion,
+    AppResourceUpdateResultType? updateResultType,
     int? targetResourceVersion,
   }) = _LoadedState;
 }

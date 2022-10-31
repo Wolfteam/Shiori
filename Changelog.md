@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.4.11+77 (15/10/2022)
+- Nilou
+
+
+## 1.4.9+75 (08/09/2022)
+- 5 star Razor
+- Phineas and Ferb sister
+
+
 ## 1.4.8+74 (08/09/2022)
 - The cooler Diona
 

@@ -22,8 +22,8 @@ class CheckForResourceUpdatesDialog extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               mainAxisSize: MainAxisSize.min,
               children: [
-                Text(_getMsgToShow(state.updateResultType, s)),
-                SizedBox.fromSize(size: const Size(10, 10)),
+                if (state.updateResultType != null) Text(_getMsgToShow(state.updateResultType!, s)),
+                if (state.updateResultType != null) SizedBox.fromSize(size: const Size(10, 10)),
                 Text(s.currentResourcesVersion(state.currentResourceVersion)),
                 if (state.targetResourceVersion != null) Text(s.newResourcesVersion(state.targetResourceVersion!)),
               ],
@@ -33,15 +33,14 @@ class CheckForResourceUpdatesDialog extends StatelessWidget {
                 onPressed: () => Navigator.pop(context, false),
                 child: Text(s.cancel, style: TextStyle(color: theme.primaryColor)),
               ),
+              ElevatedButton(
+                onPressed: () => context.read<CheckForResourceUpdatesBloc>().add(const CheckForResourceUpdatesEvent.checkForUpdates()),
+                child: Text(s.check),
+              ),
               if (state.updateResultType == AppResourceUpdateResultType.updatesAvailable)
                 ElevatedButton(
                   onPressed: () => context.read<MainBloc>().add(const MainEvent.restart()),
                   child: Text(s.applyUpdate),
-                )
-              else
-                ElevatedButton(
-                  onPressed: () => context.read<CheckForResourceUpdatesBloc>().add(const CheckForResourceUpdatesEvent.init()),
-                  child: Text(s.retry),
                 ),
             ],
           ),
@@ -81,6 +80,9 @@ class CheckForResourceUpdatesDialog extends StatelessWidget {
         return s.newAppVersionInStore;
       case AppResourceUpdateResultType.updatesAvailable:
         return s.updatesAvailable;
+      case AppResourceUpdateResultType.noInternetConnection:
+        return s.noInternetConnection;
+      //below ones should not be shown in this dialog
       case AppResourceUpdateResultType.noInternetConnectionForFirstInstall:
       case AppResourceUpdateResultType.retrying:
       case AppResourceUpdateResultType.updated:

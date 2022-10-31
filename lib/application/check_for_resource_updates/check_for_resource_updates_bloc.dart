@@ -21,14 +21,31 @@ class CheckForResourceUpdatesBloc extends Bloc<CheckForResourceUpdatesEvent, Che
 
   @override
   Stream<CheckForResourceUpdatesState> mapEventToState(CheckForResourceUpdatesEvent event) async* {
-    yield const CheckForResourceUpdatesState.loading();
-    await Future.delayed(const Duration(seconds: 1));
-    final s = await event.map(init: (_) => _init());
+    if (event is _CheckForUpdates) {
+      yield const CheckForResourceUpdatesState.loading();
+    }
+    final s = await event.map(
+      init: (_) => _init(),
+      checkForUpdates: (_) => _checkForUpdates(),
+    );
     yield s;
   }
 
-  Future<CheckForResourceUpdatesState> _init() async {
-    final result = await _resourceService.checkForUpdates(_deviceInfoService.version, _settingsService.resourceVersion);
+  Future<CheckForResourceUpdatesState> _init() {
+    final state = CheckForResourceUpdatesState.loaded(
+      currentResourceVersion: _settingsService.resourceVersion,
+    );
+
+    return Future.value(state);
+  }
+
+  Future<CheckForResourceUpdatesState> _checkForUpdates() async {
+    await Future.delayed(const Duration(seconds: 1));
+    final result = await _resourceService.checkForUpdates(
+      _deviceInfoService.version,
+      _settingsService.resourceVersion,
+      updateResourceCheckedDate: false,
+    );
     await _telemetryService.trackCheckForResourceUpdates(result.type);
     return CheckForResourceUpdatesState.loaded(
       updateResultType: result.type,

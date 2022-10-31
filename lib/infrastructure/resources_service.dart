@@ -22,11 +22,20 @@ class ResourceServiceImpl implements ResourceService {
   final SettingsService _settingsService;
   final NetworkService _networkService;
   final ApiService _apiService;
+  final int maxRetryAttempts;
+  final int maxItemsPerBatch;
 
   late final String _tempPath;
   late final String _assetsPath;
 
-  ResourceServiceImpl(this._loggingService, this._settingsService, this._networkService, this._apiService);
+  ResourceServiceImpl(
+    this._loggingService,
+    this._settingsService,
+    this._networkService,
+    this._apiService, {
+    this.maxRetryAttempts = 10,
+    this.maxItemsPerBatch = 10,
+  });
 
   Future<void> init() async {
     final temp = await getTemporaryDirectory();
@@ -203,7 +212,11 @@ class ResourceServiceImpl implements ResourceService {
   }
 
   @override
-  Future<CheckForUpdatesResult> checkForUpdates(String currentAppVersion, int currentResourcesVersion) async {
+  Future<CheckForUpdatesResult> checkForUpdates(
+    String currentAppVersion,
+    int currentResourcesVersion, {
+    bool updateResourceCheckedDate = true,
+  }) async {
     if (currentAppVersion.isNullEmptyOrWhitespace) {
       throw Exception('Invalid app version');
     }
@@ -221,6 +234,10 @@ class ResourceServiceImpl implements ResourceService {
     final isFirstResourceCheck = _settingsService.noResourcesHasBeenDownloaded;
     if (!isInternetAvailable && isFirstResourceCheck) {
       return CheckForUpdatesResult(type: AppResourceUpdateResultType.noInternetConnectionForFirstInstall, resourceVersion: currentResourcesVersion);
+    }
+
+    if (!isInternetAvailable) {
+      return CheckForUpdatesResult(type: AppResourceUpdateResultType.noInternetConnection, resourceVersion: currentResourcesVersion);
     }
 
     bool canUpdateResourceCheckedDate = false;
@@ -270,7 +287,8 @@ class ResourceServiceImpl implements ResourceService {
       _loggingService.error(runtimeType, 'checkForUpdates: Unknown error', e, s);
       return CheckForUpdatesResult(type: AppResourceUpdateResultType.unknownError, resourceVersion: currentResourcesVersion);
     } finally {
-      if (canUpdateResourceCheckedDate && !isFirstResourceCheck) {
+      final updateDate = canUpdateResourceCheckedDate && !isFirstResourceCheck && updateResourceCheckedDate;
+      if (updateDate) {
         _settingsService.lastResourcesCheckedDate = DateTime.now();
       }
     }
@@ -317,7 +335,7 @@ class ResourceServiceImpl implements ResourceService {
         _loggingService.info(runtimeType, 'downloadAndApplyUpdates: Downloading main files...');
         //we need to download the whole file
         final destMainFilePath = join(_tempPath, jsonFileKeyName);
-        final downloaded = await _apiService.downloadAsset(jsonFileKeyName!, destMainFilePath, onProgress);
+        final downloaded = await _apiService.downloadAsset(jsonFileKeyName!, destMainFilePath);
 
         if (!downloaded) {
           _loggingService.error(runtimeType, 'downloadAndApplyUpdates: Could not download the main file');
@@ -390,15 +408,17 @@ class ResourceServiceImpl implements ResourceService {
     }
 
     _loggingService.info(runtimeType, '_downloadAssets: Processing ${keyNames.length} keyName(s)...');
-    const maxItemsPerBatch = 5;
-    final total = keyNames.length;
-    int processedItems = 0;
+    final Map<String, String> destPaths = await _createTempDirectories(tempFolder, keyNames);
 
+    int itemsPerBatch = maxItemsPerBatch;
+    int processedItems = 0;
+    int retryAttempts = 0;
+
+    final total = keyNames.length;
     final keyNamesCopy = [...keyNames];
     while (keyNamesCopy.isNotEmpty) {
-      // _loggingService.debug(runtimeType, '_downloadAssets: Remaining = ${keyNamesCopy.length}');
-      final taken = keyNamesCopy.take(maxItemsPerBatch).toList();
-      for (int i = 0; i < maxItemsPerBatch; i++) {
+      final taken = keyNamesCopy.take(itemsPerBatch).toList();
+      for (int i = 0; i < itemsPerBatch; i++) {
         if (keyNamesCopy.isEmpty) {
           break;
         }
@@ -407,13 +427,30 @@ class ResourceServiceImpl implements ResourceService {
 
       try {
         if (taken.isNotEmpty) {
-          await Future.wait(taken.map((e) => _downloadAsset(tempFolder, e)).toList(), eagerError: true);
+          if (retryAttempts > 0) {
+            await Future.delayed(const Duration(seconds: 1));
+          }
+          await Future.wait(taken.map((e) => _downloadAsset(destPaths[e]!, e)).toList());
           processedItems += taken.length;
           final progress = processedItems * 100 / total;
           onProgress?.call(progress);
         }
       } catch (e, s) {
-        _loggingService.error(runtimeType, '_downloadAssets: One or more keyNames failed...', e, s);
+        _loggingService.error(runtimeType, '_downloadAssets: One or more keyNames failed... RetryAttempts = $retryAttempts');
+        itemsPerBatch--;
+        retryAttempts++;
+        if (retryAttempts <= maxRetryAttempts && itemsPerBatch > 0) {
+          keyNamesCopy.addAll(taken);
+          int seconds = retryAttempts + maxRetryAttempts;
+          if (seconds > 5) {
+            seconds = 5;
+          }
+          await Future.delayed(Duration(seconds: seconds));
+          continue;
+        }
+
+        final remaining = keyNamesCopy.length;
+        _loggingService.error(runtimeType, '_downloadAssets: Reached maxRetryAttempts = $maxRetryAttempts with remaining items = $remaining', e, s);
         await _deleteDirectoryIfExists(tempFolder);
         return false;
       }
@@ -423,20 +460,8 @@ class ResourceServiceImpl implements ResourceService {
     return true;
   }
 
-  Future<void> _downloadAsset(String tempFolder, String keyName) async {
-    final split = keyName.split('/');
-    //the last item is the filename
-    final partA = split.take(split.length - 1).fold<String>('', (previousValue, element) {
-      if (previousValue.isEmpty) {
-        return element;
-      }
-      return join(previousValue, element);
-    });
-    final dir = join(tempFolder, partA);
-    await _createDirectoryIfItDoesntExist(dir);
-
-    final destPath = join(dir, split.last);
-    final downloaded = await _apiService.downloadAsset(keyName, destPath, null);
+  Future<void> _downloadAsset(String destPath, String keyName) async {
+    final downloaded = await _apiService.downloadAsset(keyName, destPath);
     if (!downloaded) {
       throw Exception('Download of keyName = $keyName failed');
     }
@@ -450,6 +475,33 @@ class ResourceServiceImpl implements ResourceService {
     }
     await _moveFolder(tempFolder, assetsFolder, _tempDirName);
     await _deleteDirectoryIfExists(tempFolder);
+  }
+
+  Future<Map<String, String>> _createTempDirectories(String tempFolder, List<String> keyNames) async {
+    final destPaths = <String, String>{};
+    final allDirs = <String>[];
+    for (final keyName in keyNames) {
+      final split = keyName.split('/');
+      //the last item is the filename
+      final partA = split.take(split.length - 1).fold<String>('', (previousValue, element) {
+        if (previousValue.isEmpty) {
+          return element;
+        }
+        return join(previousValue, element);
+      });
+      final dir = join(tempFolder, partA);
+      allDirs.add(dir);
+
+      final destPath = join(dir, split.last);
+      destPaths.putIfAbsent(keyName, () => destPath);
+    }
+
+    final dirs = allDirs.toSet();
+    for (final dir in dirs) {
+      await _createDirectoryIfItDoesntExist(dir);
+    }
+
+    return destPaths;
   }
 
   Future<void> _createDirectoryIfItDoesntExist(String path) async {

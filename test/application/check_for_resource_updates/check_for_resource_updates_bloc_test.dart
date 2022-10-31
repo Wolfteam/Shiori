@@ -12,6 +12,7 @@ void main() {
     String appVersion = '1.0.0',
     int currentResourcesVersion = -1,
     CheckForUpdatesResult? checkForUpdateResult,
+    bool updateResourceCheckedDate = false,
   }) {
     final result = checkForUpdateResult ??
         CheckForUpdatesResult(
@@ -21,7 +22,8 @@ void main() {
     final deviceInfoService = MockDeviceInfoService();
     when(deviceInfoService.version).thenReturn(appVersion);
     final resourceService = MockResourceService();
-    when(resourceService.checkForUpdates(appVersion, currentResourcesVersion)).thenAnswer((_) => Future.value(result));
+    when(resourceService.checkForUpdates(appVersion, currentResourcesVersion, updateResourceCheckedDate: updateResourceCheckedDate))
+        .thenAnswer((_) => Future.value(result));
     final settingsService = MockSettingsService();
     when(settingsService.resourceVersion).thenReturn(currentResourcesVersion);
     return CheckForResourceUpdatesBloc(resourceService, settingsService, deviceInfoService, MockTelemetryService());
@@ -29,7 +31,21 @@ void main() {
 
   test('Initial state', () => expect(_getBloc().state, const CheckForResourceUpdatesState.loading()));
 
-  group('Init', () {
+  blocTest<CheckForResourceUpdatesBloc, CheckForResourceUpdatesState>(
+    'Init',
+    build: () => _getBloc(),
+    act: (bloc) => bloc.add(const CheckForResourceUpdatesEvent.init()),
+    verify: (bloc) => bloc.state.map(
+      loading: (_) => throw Exception('Invalid state'),
+      loaded: (state) {
+        expect(state.updateResultType, isNull);
+        expect(state.currentResourceVersion, -1);
+        expect(state.targetResourceVersion, isNull);
+      },
+    ),
+  );
+
+  group('Check for updates', () {
     void _checkState(
       CheckForResourceUpdatesState state,
       AppResourceUpdateResultType resultType,
@@ -54,14 +70,18 @@ void main() {
           resourceVersion: -1,
         ),
       ),
-      act: (bloc) => bloc.add(const CheckForResourceUpdatesEvent.init()),
+      act: (bloc) => bloc
+        ..add(const CheckForResourceUpdatesEvent.init())
+        ..add(const CheckForResourceUpdatesEvent.checkForUpdates()),
       verify: (bloc) => _checkState(bloc.state, AppResourceUpdateResultType.unknownError, -1),
     );
 
     blocTest<CheckForResourceUpdatesBloc, CheckForResourceUpdatesState>(
       'no updates available',
       build: () => _getBloc(),
-      act: (bloc) => bloc.add(const CheckForResourceUpdatesEvent.init()),
+      act: (bloc) => bloc
+        ..add(const CheckForResourceUpdatesEvent.init())
+        ..add(const CheckForResourceUpdatesEvent.checkForUpdates()),
       verify: (bloc) => _checkState(bloc.state, AppResourceUpdateResultType.noUpdatesAvailable, -1),
     );
 
@@ -73,7 +93,9 @@ void main() {
           resourceVersion: 2,
         ),
       ),
-      act: (bloc) => bloc.add(const CheckForResourceUpdatesEvent.init()),
+      act: (bloc) => bloc
+        ..add(const CheckForResourceUpdatesEvent.init())
+        ..add(const CheckForResourceUpdatesEvent.checkForUpdates()),
       verify: (bloc) => _checkState(bloc.state, AppResourceUpdateResultType.needsLatestAppVersion, -1, targetResourceVersion: 2),
     );
 
@@ -85,7 +107,9 @@ void main() {
           resourceVersion: 2,
         ),
       ),
-      act: (bloc) => bloc.add(const CheckForResourceUpdatesEvent.init()),
+      act: (bloc) => bloc
+        ..add(const CheckForResourceUpdatesEvent.init())
+        ..add(const CheckForResourceUpdatesEvent.checkForUpdates()),
       verify: (bloc) => _checkState(bloc.state, AppResourceUpdateResultType.noInternetConnectionForFirstInstall, -1, targetResourceVersion: 2),
     );
 
@@ -97,7 +121,9 @@ void main() {
           resourceVersion: 2,
         ),
       ),
-      act: (bloc) => bloc.add(const CheckForResourceUpdatesEvent.init()),
+      act: (bloc) => bloc
+        ..add(const CheckForResourceUpdatesEvent.init())
+        ..add(const CheckForResourceUpdatesEvent.checkForUpdates()),
       verify: (bloc) => _checkState(bloc.state, AppResourceUpdateResultType.updatesAvailable, -1, targetResourceVersion: 2),
     );
   });

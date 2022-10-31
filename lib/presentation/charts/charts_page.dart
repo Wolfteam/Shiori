@@ -750,7 +750,7 @@ class _Genders extends StatelessWidget {
             loaded: (state) => state.genders.isEmpty
                 ? NothingFoundColumn(msg: s.nothingToShow)
                 : VerticalBarChart(
-                    items: state.genders.mapIndex((e, i) => VerticalBarDataModel(i, theme.colorScheme.primary, e.regionType.index, 0)).toList(),
+                    items: state.genders.mapIndex((e, i) => VerticalBarDataModel(i, theme.colorScheme.primary, i, 0)).toList(),
                     maxY: state.maxCount.toDouble(),
                     interval: (state.maxCount * 0.2).roundToDouble(),
                     tooltipColor: _tooltipColor,

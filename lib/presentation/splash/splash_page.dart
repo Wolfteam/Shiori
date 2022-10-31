@@ -9,97 +9,40 @@ import 'package:shiori/injection.dart';
 import 'package:shiori/presentation/shared/dialogs/confirm_dialog.dart';
 import 'package:shiori/presentation/shared/extensions/app_theme_type_extensions.dart';
 import 'package:shiori/presentation/shared/styles.dart';
+import 'package:wakelock/wakelock.dart';
 
 class SplashPage extends StatelessWidget {
+  final LanguageModel language;
   final List<LocalizationsDelegate> delegates;
 
   const SplashPage({
     Key? key,
+    required this.language,
     required this.delegates,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final locale = Locale(language.code, language.countryCode);
     return BlocProvider<SplashBloc>(
       create: (context) => Injection.splashBloc..add(const SplashEvent.init()),
-      child: BlocBuilder<SplashBloc, SplashState>(
-        builder: (context, state) => MaterialApp(
-          theme: AppAccentColorType.orange.getThemeData(AppThemeType.dark, false),
-          themeMode: ThemeMode.dark,
-          home: _SplashPage(
+      child: MaterialApp(
+        theme: AppAccentColorType.orange.getThemeData(AppThemeType.dark, false),
+        themeMode: ThemeMode.dark,
+        locale: locale,
+        localizationsDelegates: delegates,
+        supportedLocales: S.delegate.supportedLocales,
+        home: BlocConsumer<SplashBloc, SplashState>(
+          listener: (context, state) {
+            state.maybeMap(
+              loaded: (state) => _handleLoadedChange(state.noResourcesHasBeenDownloaded, state.updateResultType, state.result, context),
+              orElse: () {},
+            );
+          },
+          builder: (context, state) => _SplashPage(
             updateResultType: state.maybeMap(loaded: (state) => state.updateResultType, orElse: () => null),
             noResourcesHasBeenDownloaded: state.maybeMap(loaded: (state) => state.noResourcesHasBeenDownloaded, orElse: () => true),
           ),
-          locale: state.maybeMap(loaded: (state) => Locale(state.language.code, state.language.countryCode), orElse: () => null),
-          localizationsDelegates: delegates,
-          supportedLocales: S.delegate.supportedLocales,
-        ),
-      ),
-    );
-  }
-}
-
-class _SplashPage extends StatelessWidget {
-  final AppResourceUpdateResultType? updateResultType;
-  final bool noResourcesHasBeenDownloaded;
-
-  bool get isLoading =>
-      updateResultType == null ||
-      updateResultType == AppResourceUpdateResultType.noUpdatesAvailable ||
-      updateResultType == AppResourceUpdateResultType.needsLatestAppVersion ||
-      updateResultType == AppResourceUpdateResultType.retrying ||
-      updateResultType == AppResourceUpdateResultType.updated;
-
-  bool get isUpdating => updateResultType == AppResourceUpdateResultType.updating;
-
-  bool get updateFailed =>
-      updateResultType == AppResourceUpdateResultType.unknownError ||
-      updateResultType == AppResourceUpdateResultType.unknownErrorOnFirstInstall ||
-      noInternetConnectionOnFirstInstall;
-
-  bool get noInternetConnectionOnFirstInstall => updateResultType == AppResourceUpdateResultType.noInternetConnectionForFirstInstall;
-
-  bool get canContinue =>
-      updateResultType != AppResourceUpdateResultType.unknownErrorOnFirstInstall &&
-      !noInternetConnectionOnFirstInstall &&
-      !noResourcesHasBeenDownloaded;
-
-  const _SplashPage({
-    Key? key,
-    this.updateResultType,
-    required this.noResourcesHasBeenDownloaded,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return BlocListener<SplashBloc, SplashState>(
-      listener: (context, state) {
-        state.maybeMap(
-          loaded: (state) => _handleLoadedChange(state.noResourcesHasBeenDownloaded, state.updateResultType, state.result, context),
-          orElse: () {},
-        );
-      },
-      child: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Expanded(
-              child: Container(
-                margin: Styles.edgeInsetAll10,
-                child: Image.asset(
-                  Assets.paimonImagePath,
-                  fit: BoxFit.scaleDown,
-                ),
-              ),
-            ),
-            if (isLoading)
-              Container(
-                margin: const EdgeInsets.only(bottom: 10),
-                child: const CircularProgressIndicator(valueColor: AlwaysStoppedAnimation<Color>(Colors.white)),
-              ),
-            if (isUpdating) const _Updating(),
-            if (updateFailed) _Buttons(updateResultType: updateResultType, canContinue: canContinue),
-          ],
         ),
       ),
     );
@@ -142,6 +85,7 @@ class _SplashPage extends StatelessWidget {
         break;
       case AppResourceUpdateResultType.updating:
       case AppResourceUpdateResultType.retrying:
+      case AppResourceUpdateResultType.noInternetConnection:
       case AppResourceUpdateResultType.noInternetConnectionForFirstInstall:
       case AppResourceUpdateResultType.unknownErrorOnFirstInstall:
       case AppResourceUpdateResultType.unknownError:
@@ -153,9 +97,75 @@ class _SplashPage extends StatelessWidget {
     }
   }
 
-  void _initMain(AppResourceUpdateResultType result, BuildContext context) => context.read<MainBloc>().add(MainEvent.init(updateResultType: result));
+  void _initMain(AppResourceUpdateResultType result, BuildContext context) {
+    Wakelock.disable();
+    context.read<MainBloc>().add(MainEvent.init(updateResultType: result));
+  }
 
-  void _applyUpdate(CheckForUpdatesResult result, BuildContext context) => context.read<SplashBloc>().add(SplashEvent.applyUpdate(result: result));
+  void _applyUpdate(CheckForUpdatesResult result, BuildContext context) {
+    Wakelock.enable();
+    context.read<SplashBloc>().add(SplashEvent.applyUpdate(result: result));
+  }
+}
+
+class _SplashPage extends StatelessWidget {
+  final AppResourceUpdateResultType? updateResultType;
+  final bool noResourcesHasBeenDownloaded;
+
+  bool get isLoading =>
+      updateResultType == null ||
+      updateResultType == AppResourceUpdateResultType.noUpdatesAvailable ||
+      updateResultType == AppResourceUpdateResultType.needsLatestAppVersion ||
+      updateResultType == AppResourceUpdateResultType.retrying ||
+      updateResultType == AppResourceUpdateResultType.updated;
+
+  bool get isUpdating => updateResultType == AppResourceUpdateResultType.updating;
+
+  bool get updateFailed =>
+      updateResultType == AppResourceUpdateResultType.unknownError ||
+      updateResultType == AppResourceUpdateResultType.unknownErrorOnFirstInstall ||
+      updateResultType == AppResourceUpdateResultType.noInternetConnection ||
+      noInternetConnectionOnFirstInstall;
+
+  bool get noInternetConnectionOnFirstInstall => updateResultType == AppResourceUpdateResultType.noInternetConnectionForFirstInstall;
+
+  bool get canContinue =>
+      updateResultType != AppResourceUpdateResultType.unknownErrorOnFirstInstall &&
+      !noInternetConnectionOnFirstInstall &&
+      !noResourcesHasBeenDownloaded;
+
+  const _SplashPage({
+    Key? key,
+    this.updateResultType,
+    required this.noResourcesHasBeenDownloaded,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          Expanded(
+            child: Container(
+              margin: Styles.edgeInsetAll10,
+              child: Image.asset(
+                Assets.paimonImagePath,
+                fit: BoxFit.scaleDown,
+              ),
+            ),
+          ),
+          if (isLoading)
+            Container(
+              margin: const EdgeInsets.only(bottom: 10),
+              child: const CircularProgressIndicator(valueColor: AlwaysStoppedAnimation<Color>(Colors.white)),
+            ),
+          if (isUpdating) const _Updating(),
+          if (updateFailed) _Buttons(updateResultType: updateResultType, canContinue: canContinue),
+        ],
+      ),
+    );
+  }
 }
 
 class _Buttons extends StatelessWidget {
