@@ -8,6 +8,7 @@
 *.mocks.dart
 *.env
 *.env.*
+.fvm/flutter_sdk
 
 # Miscellaneous
 *.class
