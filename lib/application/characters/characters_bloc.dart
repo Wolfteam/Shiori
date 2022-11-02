@@ -14,6 +14,7 @@ part 'characters_state.dart';
 class CharactersBloc extends Bloc<CharactersEvent, CharactersState> {
   final GenshinService _genshinService;
   final SettingsService _settingsService;
+  final List<CharacterCardModel> _allCharacters = [];
 
   CharactersBloc(this._genshinService, this._settingsService) : super(const CharactersState.loading());
 
@@ -22,7 +23,13 @@ class CharactersBloc extends Bloc<CharactersEvent, CharactersState> {
   @override
   Stream<CharactersState> mapEventToState(CharactersEvent event) async* {
     final s = event.map(
-      init: (e) => _buildInitialState(excludeKeys: e.excludeKeys, elementTypes: ElementType.values, weaponTypes: WeaponType.values),
+      init: (e) {
+        if (_allCharacters.isEmpty) {
+          _allCharacters.addAll(_genshinService.characters.getCharactersForCard());
+        }
+
+        return _buildInitialState(excludeKeys: e.excludeKeys, elementTypes: ElementType.values, weaponTypes: WeaponType.values);
+      },
       characterFilterTypeChanged: (e) => currentState.copyWith.call(tempCharacterFilterType: e.characterFilterType),
       elementTypeChanged: (e) {
         var types = <ElementType>[];
@@ -103,7 +110,7 @@ class CharactersBloc extends Bloc<CharactersEvent, CharactersState> {
     RegionType? regionType,
   }) {
     final isLoaded = state is _LoadedState;
-    var characters = _genshinService.characters.getCharactersForCard();
+    var characters = [..._allCharacters];
     if (excludeKeys.isNotEmpty) {
       characters = characters.where((el) => !excludeKeys.contains(el.key)).toList();
     }
