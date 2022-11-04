@@ -356,10 +356,6 @@ class CustomBuildBloc extends Bloc<CustomBuildEvent, CustomBuildState> {
   }
 
   CustomBuildState _addArtifact(_AddArtifact e, _LoadedState state) {
-    if (state.artifacts.length + 1 > ArtifactType.values.length) {
-      throw Exception('Cannot add more than = ${ArtifactType.values.length} artifacts to the state');
-    }
-
     final fullArtifact = _genshinService.artifacts.getArtifact(e.key);
     final translation = _genshinService.translations.getArtifactTranslation(e.key);
     final img = _genshinService.artifacts.getArtifactRelatedPart(
