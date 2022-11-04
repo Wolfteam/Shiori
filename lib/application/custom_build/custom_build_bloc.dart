@@ -176,7 +176,7 @@ class CustomBuildBloc extends Bloc<CustomBuildEvent, CustomBuildState> {
         weapons: build.weapons,
         notes: build.notes,
         skillPriorities: build.skillPriorities,
-        artifacts: build.artifacts..sort((x, y) => x.type.index.compareTo(y.type.index)),
+        artifacts: build.artifacts,
         teamCharacters: build.teamCharacters,
         subStatsSummary: _genshinService.artifacts.generateSubStatSummary(build.artifacts),
         readyForScreenshot: false,
@@ -244,16 +244,13 @@ class CustomBuildBloc extends Bloc<CustomBuildEvent, CustomBuildState> {
       return state;
     }
     final newCharacter = _genshinService.characters.getCharacterForCard(e.newKey);
-    _LoadedState updatedState = state.copyWith.call(character: newCharacter, readyForScreenshot: false);
-    if (newCharacter.weaponType != state.character.weaponType) {
-      updatedState = updatedState.copyWith.call(weapons: []);
+    final weapons = newCharacter.weaponType != state.character.weaponType ? <CustomBuildWeaponModel>[] : state.weapons;
+    final teamCharacters = [...state.teamCharacters];
+    if (state.teamCharacters.any((el) => el.key == e.newKey)) {
+      teamCharacters.removeWhere((el) => el.key == e.newKey);
     }
 
-    if (updatedState.teamCharacters.any((el) => el.key == e.newKey)) {
-      updatedState.teamCharacters.removeWhere((el) => el.key == e.newKey);
-    }
-
-    return updatedState;
+    return state.copyWith.call(character: newCharacter, readyForScreenshot: false, weapons: weapons, teamCharacters: teamCharacters);
   }
 
   CustomBuildState _addWeapon(_AddWeapon e, _LoadedState state) {

@@ -192,6 +192,20 @@ class BannerHistoryFileServiceImpl extends BannerHistoryFileService {
     final usedChars = <double, List<String>>{};
     const double incrementY = 1;
 
+    final elements = ElementType.values.toList()..sort((x, y) => x.index.compareTo(y.index));
+    double from = fromVersion;
+    for (final element in elements) {
+      final points = <Point<double>>[];
+      while (from <= untilVersion) {
+        final point = Point<double>(from, 0);
+        points.add(point);
+        from = (from + gameVersionIncrementsBy).truncateToDecimalPlaces();
+      }
+      final item = ChartElementItemModel(type: element, points: points);
+      charts.add(item);
+      from = fromVersion;
+    }
+
     for (final banner in banners) {
       for (final key in banner.itemKeys) {
         final bannerHasAlreadyBeenAdded = usedChars.containsKey(banner.version);
@@ -205,18 +219,12 @@ class BannerHistoryFileServiceImpl extends BannerHistoryFileService {
         }
 
         final char = characters.firstWhere((el) => el.key == key);
-        final existing = charts.firstWhereOrNull((el) => el.type == char.elementType);
-        final points = existing?.points ?? [];
+        final existing = charts.firstWhere((el) => el.type == char.elementType);
+        final points = [...existing.points];
         final existingPoint = points.firstWhereOrNull((el) => el.x == banner.version);
         final newPoint = existingPoint != null
             ? Point<double>(existingPoint.x, (existingPoint.y + incrementY).truncateToDecimalPlaces())
             : Point<double>(banner.version, incrementY);
-
-        if (existing == null) {
-          final newItem = ChartElementItemModel(type: char.elementType, points: [newPoint]);
-          charts.add(newItem);
-          continue;
-        }
 
         if (existingPoint != null) {
           final index = points.indexOf(existingPoint);
@@ -232,23 +240,8 @@ class BannerHistoryFileServiceImpl extends BannerHistoryFileService {
       }
     }
 
-    double from = fromVersion;
-    while (from <= untilVersion) {
-      for (final chart in charts) {
-        if (!chart.points.any((el) => el.x == from)) {
-          chart.points.add(Point<double>(from, 0));
-        }
-      }
-      from = (from + gameVersionIncrementsBy).truncateToDecimalPlaces();
-    }
-
-    for (final chart in charts) {
-      chart.points.sort((x, y) => x.x.compareTo(y.x));
-    }
-
     assert(charts.isNotEmpty, 'Element chart items must not be empty');
-
-    return charts..sort((x, y) => x.type.index.compareTo(y.type.index));
+    return charts;
   }
 
   @override

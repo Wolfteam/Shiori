@@ -160,13 +160,14 @@ class BannerHistoryBloc extends Bloc<BannerHistoryEvent, BannerHistoryState> {
       return versions;
     }
 
+    final versionsCopy = [...versions];
     switch (sortType) {
       case BannerHistorySortType.nameAsc:
       case BannerHistorySortType.nameDesc:
       case BannerHistorySortType.versionAsc:
-        return versions..sort((x, y) => x.compareTo(y));
+        return versionsCopy..sort((x, y) => x.compareTo(y));
       case BannerHistorySortType.versionDesc:
-        return versions..sort((x, y) => y.compareTo(x));
+        return versionsCopy..sort((x, y) => y.compareTo(x));
     }
   }
 

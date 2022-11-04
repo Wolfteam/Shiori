@@ -4,7 +4,7 @@ import 'package:shiori/domain/models/models.dart';
 
 part 'custom_build_model.freezed.dart';
 
-@Freezed(makeCollectionsUnmodifiable: false)
+@freezed
 class CustomBuildModel with _$CustomBuildModel {
   const factory CustomBuildModel({
     required int key,
