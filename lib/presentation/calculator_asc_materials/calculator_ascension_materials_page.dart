@@ -1,3 +1,4 @@
+import 'package:darq/darq.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:responsive_builder/responsive_builder.dart';
@@ -157,9 +158,10 @@ class _FabMenu extends StatelessWidget {
   }
 
   List<AscensionMaterialsSummaryWidget> _buildSummary(S s, List<AscensionMaterialsSummary> items) {
-    items.sort((x, y) => s.translateAscensionSummaryType(x.type).compareTo(s.translateAscensionSummaryType(y.type)));
-
-    return items.map((e) => AscensionMaterialsSummaryWidget(summary: e, sessionKey: sessionKey)).toList();
+    return items
+        .orderBy((x) => s.translateAscensionSummaryType(x.type))
+        .map((e) => AscensionMaterialsSummaryWidget(summary: e, sessionKey: sessionKey))
+        .toList();
   }
 
   Future<void> _openCharacterPage(BuildContext context) async {

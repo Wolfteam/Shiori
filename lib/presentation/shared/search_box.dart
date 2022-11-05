@@ -23,11 +23,13 @@ class SearchBox extends StatefulWidget {
 
 class _SearchBoxState extends State<SearchBox> {
   final _searchFocusNode = FocusNode();
+  late String? _currentValue;
   late TextEditingController _searchBoxTextController;
 
   @override
   void initState() {
     super.initState();
+    _currentValue = widget.value ?? '';
     _searchBoxTextController = TextEditingController(text: widget.value);
     _searchBoxTextController.addListener(_onSearchTextChanged);
   }
@@ -86,7 +88,14 @@ class _SearchBoxState extends State<SearchBox> {
     );
   }
 
-  void _onSearchTextChanged() => widget.searchChanged(_searchBoxTextController.text);
+  void _onSearchTextChanged() {
+    //Focusing the text field triggers text changed, that why we used it like this
+    if (_currentValue == _searchBoxTextController.text) {
+      return;
+    }
+    _currentValue = _searchBoxTextController.text;
+    widget.searchChanged(_searchBoxTextController.text);
+  }
 
   void _cleanSearchText() {
     _searchFocusNode.requestFocus();

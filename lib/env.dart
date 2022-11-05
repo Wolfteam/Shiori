@@ -1,5 +1,5 @@
-import 'package:envify/envify.dart';
 import 'package:flutter/foundation.dart';
+import 'package:flutter_envify/flutter_envify.dart';
 
 part 'env.g.dart';
 

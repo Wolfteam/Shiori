@@ -121,7 +121,7 @@ void main() {
       build: () => CharactersBloc(_genshinService, _settingsService),
       act: (bloc) => bloc
         ..add(const CharactersEvent.init())
-        ..add(const CharactersEvent.searchChanged(search: 'Wanderer')),
+        ..add(const CharactersEvent.searchChanged(search: 'Github')),
       skip: 1,
       expect: () => [
         CharactersState.loaded(
@@ -137,7 +137,7 @@ void main() {
           tempCharacterFilterType: CharacterFilterType.name,
           sortDirectionType: SortDirectionType.asc,
           tempSortDirectionType: SortDirectionType.asc,
-          search: 'Wanderer',
+          search: 'Github',
         )
       ],
     );

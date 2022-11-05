@@ -14,6 +14,7 @@ part 'materials_state.dart';
 
 class MaterialsBloc extends Bloc<MaterialsEvent, MaterialsState> {
   final GenshinService _genshinService;
+  final List<MaterialCardModel> _allMaterials = [];
 
   _LoadedState get currentState => state as _LoadedState;
 
@@ -22,7 +23,13 @@ class MaterialsBloc extends Bloc<MaterialsEvent, MaterialsState> {
   @override
   Stream<MaterialsState> mapEventToState(MaterialsEvent event) async* {
     final s = event.map(
-      init: (e) => _buildInitialState(excludeKeys: e.excludeKeys),
+      init: (e) {
+        if (_allMaterials.isEmpty) {
+          _allMaterials.addAll(_genshinService.materials.getAllMaterialsForCard());
+        }
+
+        return _buildInitialState(excludeKeys: e.excludeKeys);
+      },
       rarityChanged: (e) => currentState.copyWith.call(tempRarity: e.rarity),
       sortDirectionTypeChanged: (e) => currentState.copyWith.call(tempSortDirectionType: e.sortDirectionType),
       typeChanged: (e) => currentState.copyWith.call(tempType: e.type),
@@ -64,7 +71,7 @@ class MaterialsBloc extends Bloc<MaterialsEvent, MaterialsState> {
     SortDirectionType sortDirectionType = SortDirectionType.asc,
   }) {
     final isLoaded = state is _LoadedState;
-    var data = _genshinService.materials.getAllMaterialsForCard();
+    var data = [..._allMaterials];
     if (excludeKeys.isNotEmpty) {
       data = data.where((el) => !excludeKeys.contains(el.key)).toList();
     }

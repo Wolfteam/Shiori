@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:math';
 
 import 'package:bloc/bloc.dart';
+import 'package:collection/collection.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/models/models.dart';
@@ -159,13 +160,14 @@ class BannerHistoryBloc extends Bloc<BannerHistoryEvent, BannerHistoryState> {
       return versions;
     }
 
+    final versionsCopy = [...versions];
     switch (sortType) {
       case BannerHistorySortType.nameAsc:
       case BannerHistorySortType.nameDesc:
       case BannerHistorySortType.versionAsc:
-        return versions..sort((x, y) => x.compareTo(y));
+        return versionsCopy..sort((x, y) => x.compareTo(y));
       case BannerHistorySortType.versionDesc:
-        return versions..sort((x, y) => y.compareTo(x));
+        return versionsCopy..sort((x, y) => y.compareTo(x));
     }
   }
 

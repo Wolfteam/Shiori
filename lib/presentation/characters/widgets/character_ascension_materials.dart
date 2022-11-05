@@ -17,16 +17,17 @@ class CharacterAscensionMaterials extends StatelessWidget {
     final s = S.of(context);
     const minNumberOfMaterialsShown = 7;
     final needsDummyItems = images.length < minNumberOfMaterialsShown;
+    final imgsToRender = [...images];
     if (needsDummyItems) {
       final diff = minNumberOfMaterialsShown - images.length;
-      images.addAll(List.generate(diff, (index) => ''));
+      imgsToRender.addAll(List.generate(diff, (index) => ''));
     }
     return Tooltip(
       message: s.ascensionMaterials,
       child: Wrap(
         alignment: WrapAlignment.spaceEvenly,
         crossAxisAlignment: WrapCrossAlignment.center,
-        children: images.map((e) => _MaterialItem(image: e)).toList(),
+        children: imgsToRender.map((e) => _MaterialItem(image: e)).toList(),
       ),
     );
   }

@@ -553,6 +553,7 @@ class _Birthdays extends StatelessWidget {
     final theme = Theme.of(context);
     final s = S.of(context);
     final mq = MediaQuery.of(context);
+    final currentMonth = DateTime.now().month;
     return _Chart(
       title: s.birthdays,
       chart: ChartCard(
@@ -569,7 +570,14 @@ class _Birthdays extends StatelessWidget {
               final maxYValueForBirthdays = state.birthdays.map((e) => e.items.length).reduce(max).toDouble();
               return VerticalBarChart(
                 items: state.birthdays
-                    .mapIndex((e, i) => VerticalBarDataModel(i, theme.colorScheme.primary, e.month, e.items.length.toDouble()))
+                    .mapIndex(
+                      (e, i) => VerticalBarDataModel(
+                        i,
+                        currentMonth == e.month ? theme.colorScheme.primary : theme.colorScheme.primary.withOpacity(0.65),
+                        e.month,
+                        e.items.length.toDouble(),
+                      ),
+                    )
                     .toList(),
                 maxY: maxYValueForBirthdays,
                 interval: (maxYValueForBirthdays ~/ 5).toDouble(),
@@ -750,7 +758,7 @@ class _Genders extends StatelessWidget {
             loaded: (state) => state.genders.isEmpty
                 ? NothingFoundColumn(msg: s.nothingToShow)
                 : VerticalBarChart(
-                    items: state.genders.mapIndex((e, i) => VerticalBarDataModel(i, theme.colorScheme.primary, e.regionType.index, 0)).toList(),
+                    items: state.genders.mapIndex((e, i) => VerticalBarDataModel(i, theme.colorScheme.primary, i, 0)).toList(),
                     maxY: state.maxCount.toDouble(),
                     interval: (state.maxCount * 0.2).roundToDouble(),
                     tooltipColor: _tooltipColor,
