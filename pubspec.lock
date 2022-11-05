@@ -295,6 +295,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.1"
+  fk_user_agent:
+    dependency: "direct main"
+    description:
+      name: fk_user_agent
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.1.0"
   fl_chart:
     dependency: "direct main"
     description:
@@ -408,13 +415,6 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
-  flutter_user_agentx:
-    dependency: "direct main"
-    description:
-      name: flutter_user_agentx
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "1.2.4"
   flutter_web_plugins:
     dependency: transitive
     description: flutter
