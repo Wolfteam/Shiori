@@ -38,11 +38,10 @@ class ResourceServiceImpl implements ResourceService {
   });
 
   Future<void> init() async {
-    final temp = await getTemporaryDirectory();
-    final support = await getApplicationSupportDirectory();
+    final dir = await getApplicationSupportDirectory();
 
-    _tempPath = join(temp.path, _tempDirName);
-    _assetsPath = join(support.path, _tempAssetsDirName);
+    _tempPath = join(dir.path, _tempDirName);
+    _assetsPath = join(dir.path, _tempAssetsDirName);
     await _deleteDirectoryIfExists(_tempPath);
   }
 
