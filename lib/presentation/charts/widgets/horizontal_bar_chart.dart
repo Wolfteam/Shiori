@@ -40,7 +40,7 @@ class HorizontalBarChart extends StatelessWidget {
   final int leftTextMaxLength;
 
   const HorizontalBarChart({
-    Key? key,
+    super.key,
     required this.items,
     required this.canValueBeRendered,
     this.onPointTap,
@@ -55,7 +55,7 @@ class HorizontalBarChart extends StatelessWidget {
     this.toolTipBgColor,
     this.bottomTextMaxLength = 10,
     this.leftTextMaxLength = 10,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -135,11 +135,10 @@ class _BottomTitle extends StatelessWidget {
   final double value;
   final int bottomTextMaxLength;
   const _BottomTitle({
-    Key? key,
     required this.getBottomText,
     required this.value,
     required this.bottomTextMaxLength,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -167,11 +166,10 @@ class _LeftTitle extends StatelessWidget {
   final int leftTextMaxLength;
 
   const _LeftTitle({
-    Key? key,
     required this.getLeftText,
     required this.value,
     required this.leftTextMaxLength,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

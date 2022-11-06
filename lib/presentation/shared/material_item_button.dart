@@ -9,11 +9,11 @@ class MaterialItemButton extends StatelessWidget {
   final double size;
 
   const MaterialItemButton({
-    Key? key,
+    super.key,
     required this.itemKey,
     required this.image,
     this.size = 30,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

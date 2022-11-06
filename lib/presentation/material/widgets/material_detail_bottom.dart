@@ -24,7 +24,7 @@ class MaterialDetailBottom extends StatelessWidget {
   final List<ItemCommon> droppedBy;
 
   const MaterialDetailBottom({
-    Key? key,
+    super.key,
     this.description,
     required this.rarity,
     required this.characters,
@@ -32,7 +32,7 @@ class MaterialDetailBottom extends StatelessWidget {
     required this.obtainedFrom,
     required this.relatedTo,
     required this.droppedBy,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -63,7 +63,7 @@ class _ObtainedFromItem extends StatelessWidget {
   final ItemObtainedFrom from;
   final bool showDivider;
 
-  const _ObtainedFromItem({Key? key, required this.from, this.showDivider = true}) : super(key: key);
+  const _ObtainedFromItem({required this.from, this.showDivider = true});
 
   @override
   Widget build(BuildContext context) {
@@ -91,7 +91,6 @@ class _PortraitLayout extends StatelessWidget {
   final List<ItemCommon> droppedBy;
 
   const _PortraitLayout({
-    Key? key,
     this.description,
     required this.rarity,
     required this.characters,
@@ -99,7 +98,7 @@ class _PortraitLayout extends StatelessWidget {
     required this.obtainedFrom,
     required this.relatedTo,
     required this.droppedBy,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -177,7 +176,6 @@ class _LandscapeLayout extends StatelessWidget {
   final List<ItemCommon> droppedBy;
 
   const _LandscapeLayout({
-    Key? key,
     this.description,
     required this.rarity,
     required this.characters,
@@ -185,7 +183,7 @@ class _LandscapeLayout extends StatelessWidget {
     required this.obtainedFrom,
     required this.relatedTo,
     required this.droppedBy,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

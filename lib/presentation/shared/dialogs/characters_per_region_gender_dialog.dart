@@ -15,10 +15,10 @@ class CharactersPerRegionGenderDialog extends StatelessWidget {
   final bool onlyFemales;
 
   const CharactersPerRegionGenderDialog({
-    Key? key,
+    super.key,
     required this.regionType,
     required this.onlyFemales,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

@@ -15,7 +15,7 @@ class CommonBottomSheet extends StatelessWidget {
   final bool showCancelButton;
 
   const CommonBottomSheet({
-    Key? key,
+    super.key,
     required this.title,
     required this.titleIcon,
     this.onOk,
@@ -24,7 +24,7 @@ class CommonBottomSheet extends StatelessWidget {
     this.iconSize = 25,
     this.showOkButton = true,
     this.showCancelButton = true,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

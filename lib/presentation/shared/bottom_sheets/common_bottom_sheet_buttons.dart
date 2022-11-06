@@ -12,14 +12,14 @@ class CommonButtonSheetButtons extends StatelessWidget {
   final String? okText;
 
   const CommonButtonSheetButtons({
-    Key? key,
+    super.key,
     this.showCancelButton = true,
     this.showOkButton = true,
     this.onOk,
     this.onCancel,
     this.cancelText,
     this.okText,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

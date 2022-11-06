@@ -17,7 +17,7 @@ class DetailTopLayout extends StatelessWidget {
   final double charDescriptionHeight;
 
   const DetailTopLayout({
-    Key? key,
+    super.key,
     required this.fullImage,
     this.secondFullImage,
     this.color,
@@ -27,7 +27,7 @@ class DetailTopLayout extends StatelessWidget {
     this.isAnSmallImage = false,
     this.showShadowImage = true,
     this.charDescriptionHeight = 240,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -88,11 +88,11 @@ class ShadowImage extends StatelessWidget {
   final bool isAnSmallImage;
 
   const ShadowImage({
-    Key? key,
+    super.key,
     required this.fullImage,
     this.secondFullImage,
     this.isAnSmallImage = false,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

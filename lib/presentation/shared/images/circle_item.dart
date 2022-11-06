@@ -15,7 +15,7 @@ class CircleItem extends StatelessWidget {
   final Gradient? gradient;
 
   const CircleItem({
-    Key? key,
+    super.key,
     required this.image,
     this.radius = 35,
     this.forDrag = false,
@@ -25,7 +25,7 @@ class CircleItem extends StatelessWidget {
     this.alignment = Alignment.topCenter,
     this.backgroundColor = Colors.transparent,
     this.gradient,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

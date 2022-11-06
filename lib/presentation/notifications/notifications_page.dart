@@ -119,10 +119,9 @@ class _NotificationItem extends StatelessWidget {
   final models.NotificationItem element;
 
   const _NotificationItem({
-    Key? key,
     required this.useTwentyFourHoursFormat,
     required this.element,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

@@ -14,7 +14,7 @@ class Content extends StatefulWidget {
   final int maxNumberOfItems;
 
   const Content({
-    Key? key,
+    super.key,
     required this.banners,
     required this.versions,
     required this.margin,
@@ -23,7 +23,7 @@ class Content extends StatefulWidget {
     required this.verticalController,
     required this.horizontalControllerGroup,
     required this.maxNumberOfItems,
-  }) : super(key: key);
+  });
 
   @override
   State<Content> createState() => _ContentState();
@@ -91,7 +91,6 @@ class _ContentCard extends StatelessWidget {
   final double version;
 
   const _ContentCard({
-    Key? key,
     required this.banner,
     required this.margin,
     required this.cellWidth,
@@ -99,7 +98,7 @@ class _ContentCard extends StatelessWidget {
     this.number,
     this.iconSize = 45,
     required this.version,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

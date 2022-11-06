@@ -19,12 +19,11 @@ class VersionDetailsDialog extends StatelessWidget {
   final bool showCharacters;
 
   const VersionDetailsDialog({
-    Key? key,
+    super.key,
     required this.version,
     this.showCharacters = true,
     this.showWeapons = true,
-  })  : assert(!(showCharacters == false && showWeapons == false), 'You must show either characters, weapons or both'),
-        super(key: key);
+  }) : assert(!(showCharacters == false && showWeapons == false), 'You must show either characters, weapons or both');
 
   @override
   Widget build(BuildContext context) {
@@ -79,13 +78,12 @@ class _VersionDetailPeriod extends StatelessWidget {
   final bool showCharacters;
 
   const _VersionDetailPeriod({
-    Key? key,
     required this.from,
     required this.until,
     required this.items,
     required this.showCharacters,
     required this.showWeapons,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -132,10 +130,9 @@ class _Items extends StatelessWidget {
   final List<ItemCommonWithRarityAndType> items;
 
   const _Items({
-    Key? key,
     required this.type,
     required this.items,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -168,11 +165,10 @@ class _DetailDates extends StatelessWidget {
   final bool useRow;
 
   const _DetailDates({
-    Key? key,
     required this.from,
     required this.until,
     required this.useRow,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

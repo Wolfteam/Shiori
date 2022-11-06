@@ -8,11 +8,11 @@ class ItemDescriptionDetail extends StatelessWidget {
   final Color textColor;
 
   const ItemDescriptionDetail({
-    Key? key,
+    super.key,
     required this.title,
     this.body,
     required this.textColor,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -31,10 +31,10 @@ class ItemDescriptionTitle extends StatelessWidget {
   final Color textColor;
 
   const ItemDescriptionTitle({
-    Key? key,
+    super.key,
     required this.title,
     required this.textColor,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

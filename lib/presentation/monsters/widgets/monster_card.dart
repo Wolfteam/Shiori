@@ -18,25 +18,24 @@ class MonsterCard extends StatelessWidget {
   final bool isInSelectionMode;
 
   const MonsterCard({
-    Key? key,
+    super.key,
     required this.itemKey,
     required this.image,
     required this.name,
     required this.type,
     required this.isComingSoon,
     this.isInSelectionMode = false,
-  }) : super(key: key);
+  });
 
   MonsterCard.item({
-    Key? key,
+    super.key,
     required MonsterCardModel item,
     this.isInSelectionMode = false,
   })  : itemKey = item.key,
         type = item.type,
         name = item.name,
         image = item.image,
-        isComingSoon = item.isComingSoon,
-        super(key: key);
+        isComingSoon = item.isComingSoon;
 
   @override
   Widget build(BuildContext context) {

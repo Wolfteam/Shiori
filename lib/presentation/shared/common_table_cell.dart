@@ -10,20 +10,18 @@ class CommonTableCell extends StatelessWidget {
   final Widget? child;
 
   const CommonTableCell({
-    Key? key,
+    super.key,
     required this.text,
     this.textAlign = TextAlign.center,
     this.padding = Styles.edgeInsetVertical5,
-  })  : child = null,
-        super(key: key);
+  }) : child = null;
 
   const CommonTableCell.child({
-    Key? key,
+    super.key,
     required this.child,
   })  : text = null,
         textAlign = null,
-        padding = Styles.edgeInsetVertical5,
-        super(key: key);
+        padding = Styles.edgeInsetVertical5;
 
   @override
   Widget build(BuildContext context) {

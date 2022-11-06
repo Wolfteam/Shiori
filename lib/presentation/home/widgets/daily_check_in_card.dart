@@ -8,9 +8,9 @@ class DailyCheckInCard extends StatelessWidget {
   final bool iconToTheLeft;
 
   const DailyCheckInCard({
-    Key? key,
+    super.key,
     required this.iconToTheLeft,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

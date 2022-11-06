@@ -7,9 +7,9 @@ class InfoDialog extends StatelessWidget {
   final List<String> explanations;
 
   const InfoDialog({
-    Key? key,
+    super.key,
     required this.explanations,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

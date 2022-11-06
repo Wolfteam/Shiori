@@ -10,9 +10,9 @@ class CharacterStatsDialog extends StatefulWidget {
   final List<CharacterSkillStatModel> stats;
 
   const CharacterStatsDialog({
-    Key? key,
+    super.key,
     required this.stats,
-  }) : super(key: key);
+  });
 
   @override
   _CharacterStatsDialogState createState() => _CharacterStatsDialogState();

@@ -23,9 +23,9 @@ class WeaponBottomSheet extends StatelessWidget {
   final bool areWeaponTypesEnabled;
 
   const WeaponBottomSheet({
-    Key? key,
+    super.key,
     required this.areWeaponTypesEnabled,
-  }) : super(key: key);
+  });
 
   static Map<String, dynamic> buildNavigationArgs({bool areWeaponTypesEnabled = true}) =>
       <String, dynamic>{_areWeaponTypesEnabledKey: areWeaponTypesEnabled};
@@ -121,13 +121,12 @@ class _OtherFilters extends StatelessWidget {
   final bool forEndDrawer;
 
   const _OtherFilters({
-    Key? key,
     required this.tempWeaponLocationType,
     required this.tempWeaponSubStatType,
     required this.tempWeaponFilterType,
     required this.tempSortDirectionType,
     this.forEndDrawer = false,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -174,9 +173,8 @@ class _ButtonBar extends StatelessWidget {
   final bool isResetEnabled;
 
   const _ButtonBar({
-    Key? key,
     required this.isResetEnabled,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

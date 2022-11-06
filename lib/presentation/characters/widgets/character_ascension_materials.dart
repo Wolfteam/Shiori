@@ -8,9 +8,9 @@ class CharacterAscensionMaterials extends StatelessWidget {
   final List<String> images;
 
   const CharacterAscensionMaterials({
-    Key? key,
+    super.key,
     required this.images,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +36,7 @@ class CharacterAscensionMaterials extends StatelessWidget {
 class _MaterialItem extends StatelessWidget {
   final String image;
 
-  const _MaterialItem({Key? key, required this.image}) : super(key: key);
+  const _MaterialItem({required this.image});
 
   @override
   Widget build(BuildContext context) {

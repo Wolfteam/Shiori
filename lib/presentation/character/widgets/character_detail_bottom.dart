@@ -10,7 +10,7 @@ import 'package:shiori/presentation/shared/item_description_detail.dart';
 import 'package:shiori/presentation/shared/loading.dart';
 
 class CharacterDetailBottom extends StatelessWidget {
-  const CharacterDetailBottom({Key? key}) : super(key: key);
+  const CharacterDetailBottom({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +21,7 @@ class CharacterDetailBottom extends StatelessWidget {
 }
 
 class _PortraitLayout extends StatelessWidget {
-  const _PortraitLayout({Key? key}) : super(key: key);
+  const _PortraitLayout();
 
   @override
   Widget build(BuildContext context) {
@@ -93,7 +93,7 @@ class _PortraitLayout extends StatelessWidget {
 }
 
 class _LandscapeLayout extends StatelessWidget {
-  const _LandscapeLayout({Key? key}) : super(key: key);
+  const _LandscapeLayout();
 
   @override
   Widget build(BuildContext context) {

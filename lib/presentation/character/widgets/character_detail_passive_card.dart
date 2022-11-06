@@ -16,10 +16,10 @@ class CharacterDetailPassiveCard extends StatelessWidget {
   final List<CharacterPassiveTalentModel> passives;
 
   const CharacterDetailPassiveCard({
-    Key? key,
+    super.key,
     required this.elementType,
     required this.passives,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -48,10 +48,9 @@ class _PassiveCard extends StatelessWidget {
   final ElementType elementType;
 
   const _PassiveCard({
-    Key? key,
     required this.model,
     required this.elementType,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

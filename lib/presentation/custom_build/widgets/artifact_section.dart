@@ -20,10 +20,10 @@ class ArtifactSection extends StatelessWidget {
   final bool useBoxDecoration;
 
   const ArtifactSection({
-    Key? key,
+    super.key,
     required this.maxItemImageWidth,
     required this.useBoxDecoration,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

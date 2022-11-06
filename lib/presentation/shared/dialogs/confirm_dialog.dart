@@ -12,7 +12,7 @@ class ConfirmDialog extends StatelessWidget {
   final bool showCancelButton;
 
   const ConfirmDialog({
-    Key? key,
+    super.key,
     required this.title,
     required this.content,
     this.onOk,
@@ -21,7 +21,7 @@ class ConfirmDialog extends StatelessWidget {
     this.cancelText,
     this.showOkButton = true,
     this.showCancelButton = true,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

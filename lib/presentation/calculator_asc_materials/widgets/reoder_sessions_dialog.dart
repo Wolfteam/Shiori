@@ -10,7 +10,7 @@ import 'package:shiori/presentation/shared/utils/toast_utils.dart';
 class ReorderSessionsDialog extends StatelessWidget {
   final List<CalculatorSessionModel> sessions;
 
-  const ReorderSessionsDialog({Key? key, required this.sessions}) : super(key: key);
+  const ReorderSessionsDialog({super.key, required this.sessions});
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +23,7 @@ class ReorderSessionsDialog extends StatelessWidget {
 }
 
 class _Body extends StatelessWidget {
-  const _Body({Key? key}) : super(key: key);
+  const _Body();
 
   @override
   Widget build(BuildContext context) {

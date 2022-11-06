@@ -7,11 +7,11 @@ class BottomSheetTitle extends StatelessWidget {
   final double iconSize;
 
   const BottomSheetTitle({
-    Key? key,
+    super.key,
     required this.title,
     required this.icon,
     this.iconSize = 25,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

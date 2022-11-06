@@ -25,7 +25,7 @@ class NotificationExpeditionForm extends StatelessWidget {
   final bool showOtherImages;
 
   const NotificationExpeditionForm({
-    Key? key,
+    super.key,
     required this.title,
     required this.body,
     required this.note,
@@ -35,7 +35,7 @@ class NotificationExpeditionForm extends StatelessWidget {
     required this.isInEditMode,
     required this.images,
     required this.showOtherImages,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

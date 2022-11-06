@@ -31,9 +31,9 @@ class CharactersPage extends StatefulWidget {
   }
 
   const CharactersPage({
-    Key? key,
+    super.key,
     this.isInSelectionMode = false,
-  }) : super(key: key);
+  });
 
   @override
   _CharactersPageState createState() => _CharactersPageState();

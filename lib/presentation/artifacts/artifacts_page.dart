@@ -31,9 +31,9 @@ class ArtifactsPage extends StatefulWidget {
   }
 
   const ArtifactsPage({
-    Key? key,
+    super.key,
     this.isInSelectionMode = false,
-  }) : super(key: key);
+  });
 
   @override
   _ArtifactsPageState createState() => _ArtifactsPageState();

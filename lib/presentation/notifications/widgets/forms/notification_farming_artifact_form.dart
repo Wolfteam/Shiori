@@ -26,7 +26,7 @@ class NotificationFarmingArtifactForm extends StatelessWidget {
   final bool showOtherImages;
 
   const NotificationFarmingArtifactForm({
-    Key? key,
+    super.key,
     required this.title,
     required this.body,
     required this.note,
@@ -35,7 +35,7 @@ class NotificationFarmingArtifactForm extends StatelessWidget {
     required this.isInEditMode,
     required this.images,
     required this.showOtherImages,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

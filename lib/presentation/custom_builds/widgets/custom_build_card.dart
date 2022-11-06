@@ -18,9 +18,9 @@ class CustomBuildCard extends StatelessWidget {
   final CustomBuildModel item;
 
   const CustomBuildCard({
-    Key? key,
+    super.key,
     required this.item,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

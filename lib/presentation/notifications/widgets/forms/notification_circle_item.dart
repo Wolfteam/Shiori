@@ -20,20 +20,18 @@ class NotificationCircleItem extends StatelessWidget {
   NotificationItemImage get selected => images.firstWhere((el) => el.isSelected);
 
   const NotificationCircleItem({
-    Key? key,
+    super.key,
     required this.type,
     required this.images,
     this.showOtherImages = false,
-  })  : itemType = null,
-        super(key: key);
+  }) : itemType = null;
 
   const NotificationCircleItem.custom({
-    Key? key,
+    super.key,
     required this.itemType,
     required this.images,
     this.showOtherImages = false,
-  })  : type = AppNotificationType.custom,
-        super(key: key);
+  }) : type = AppNotificationType.custom;
 
   @override
   Widget build(BuildContext context) {

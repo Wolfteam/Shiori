@@ -58,7 +58,7 @@ class NumberPicker extends StatefulWidget {
   final bool infiniteLoop;
 
   const NumberPicker({
-    Key? key,
+    super.key,
     required this.minValue,
     required this.maxValue,
     required this.value,
@@ -76,8 +76,7 @@ class NumberPicker extends StatefulWidget {
     this.textMapper,
     this.infiniteLoop = false,
   })  : assert(minValue <= value),
-        assert(value <= maxValue),
-        super(key: key);
+        assert(value <= maxValue);
 
   @override
   _NumberPickerState createState() => _NumberPickerState();
@@ -248,11 +247,10 @@ class _NumberPickerSelectedItemDecoration extends StatelessWidget {
   final Decoration? decoration;
 
   const _NumberPickerSelectedItemDecoration({
-    Key? key,
     required this.axis,
     required this.itemExtent,
     required this.decoration,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

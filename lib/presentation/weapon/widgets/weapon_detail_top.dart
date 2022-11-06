@@ -19,7 +19,7 @@ class WeaponDetailTop extends StatelessWidget {
   final String image;
 
   const WeaponDetailTop({
-    Key? key,
+    super.key,
     required this.name,
     required this.atk,
     required this.rarity,
@@ -28,7 +28,7 @@ class WeaponDetailTop extends StatelessWidget {
     required this.type,
     required this.locationType,
     required this.image,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

@@ -8,18 +8,17 @@ class TextLink extends StatelessWidget {
   final Function? onTap;
 
   const TextLink({
-    Key? key,
+    super.key,
     required this.text,
     required this.url,
     this.onTap,
-  }) : super(key: key);
+  });
 
   const TextLink.withoutLink({
-    Key? key,
+    super.key,
     required this.text,
     required this.onTap,
-  })  : url = '',
-        super(key: key);
+  }) : url = '';
 
   @override
   Widget build(BuildContext context) {

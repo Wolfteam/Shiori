@@ -12,12 +12,12 @@ class ItemQuantityDialog extends StatelessWidget {
   final VoidCallback? onClose;
 
   const ItemQuantityDialog({
-    Key? key,
+    super.key,
     required this.quantity,
     this.quantityLength = 10,
     this.onSave,
     this.onClose,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -35,12 +35,11 @@ class _Body extends StatefulWidget {
   final VoidCallback? onClose;
 
   const _Body({
-    Key? key,
     required this.quantity,
     required this.quantityLength,
     this.onSave,
     this.onClose,
-  }) : super(key: key);
+  });
 
   @override
   _BodyState createState() => _BodyState();

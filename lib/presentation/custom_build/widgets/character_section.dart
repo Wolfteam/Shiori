@@ -19,7 +19,7 @@ import 'package:shiori/presentation/shared/styles.dart';
 import 'package:shiori/presentation/shared/utils/enum_utils.dart';
 
 class CharacterSection extends StatelessWidget {
-  const CharacterSection({Key? key}) : super(key: key);
+  const CharacterSection({super.key});
 
   //TODO: FIGURE OUT A WAY TO SHOW THE IMAGE PROPERLY
   @override
@@ -210,10 +210,9 @@ class _TalentPriorityRow extends StatelessWidget {
   final bool readyToShare;
 
   const _TalentPriorityRow({
-    Key? key,
     required this.skillPriorities,
     required this.readyToShare,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -273,10 +272,9 @@ class _NoteRow extends StatelessWidget {
   final bool readyToShare;
 
   const _NoteRow({
-    Key? key,
     required this.notes,
     required this.readyToShare,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

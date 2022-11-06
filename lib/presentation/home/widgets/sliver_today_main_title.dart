@@ -8,7 +8,7 @@ import 'package:shiori/presentation/shared/loading.dart';
 import 'package:shiori/presentation/shared/styles.dart';
 
 class SliverTodayMainTitle extends StatelessWidget {
-  const SliverTodayMainTitle({Key? key}) : super(key: key);
+  const SliverTodayMainTitle({super.key});
 
   @override
   Widget build(BuildContext context) {

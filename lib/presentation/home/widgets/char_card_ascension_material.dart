@@ -13,24 +13,22 @@ class CharCardAscensionMaterial extends StatelessWidget {
   final List<int> days;
 
   const CharCardAscensionMaterial.fromDays({
-    Key? key,
+    super.key,
     required this.itemKey,
     required this.name,
     required this.image,
     required this.days,
     required this.charImgs,
-  })  : bossName = null,
-        super(key: key);
+  }) : bossName = null;
 
   const CharCardAscensionMaterial.fromBoss({
-    Key? key,
+    super.key,
     required this.itemKey,
     required this.name,
     required this.image,
     required this.bossName,
     required this.charImgs,
-  })  : days = const [],
-        super(key: key);
+  }) : days = const [];
 
   @override
   Widget build(BuildContext context) {

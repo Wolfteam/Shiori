@@ -8,9 +8,9 @@ class BannerHistoryCard extends StatelessWidget {
   final bool iconToTheLeft;
 
   const BannerHistoryCard({
-    Key? key,
+    super.key,
     required this.iconToTheLeft,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

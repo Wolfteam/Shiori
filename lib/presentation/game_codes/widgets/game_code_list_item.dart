@@ -24,7 +24,7 @@ class GameCodeListItem extends StatelessWidget {
   final List<ItemAscensionMaterialModel> rewards;
 
   GameCodeListItem({
-    Key? key,
+    super.key,
     required GameCodeModel item,
   })  : code = item.code,
         discoveredOn = item.discoveredOn,
@@ -32,8 +32,7 @@ class GameCodeListItem extends StatelessWidget {
         isUsed = item.isUsed,
         isExpired = item.isExpired,
         region = item.region,
-        rewards = item.rewards,
-        super(key: key);
+        rewards = item.rewards;
 
   @override
   Widget build(BuildContext context) {

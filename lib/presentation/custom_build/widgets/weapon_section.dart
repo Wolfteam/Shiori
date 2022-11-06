@@ -18,10 +18,10 @@ class WeaponSection extends StatelessWidget {
   final bool useBoxDecoration;
 
   const WeaponSection({
-    Key? key,
+    super.key,
     required this.maxItemImageWidth,
     required this.useBoxDecoration,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

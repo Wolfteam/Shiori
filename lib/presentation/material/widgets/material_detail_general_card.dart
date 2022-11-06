@@ -13,12 +13,12 @@ class MaterialDetailGeneralCard extends StatelessWidget {
   final List<int> days;
 
   const MaterialDetailGeneralCard({
-    Key? key,
+    super.key,
     required this.name,
     required this.rarity,
     required this.type,
     required this.days,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

@@ -10,13 +10,13 @@ class NotificationSubtitle extends StatelessWidget {
   final bool useTwentyFourHoursFormat;
 
   const NotificationSubtitle({
-    Key? key,
+    super.key,
     required this.createdAt,
     required this.completesAt,
     required this.useTwentyFourHoursFormat,
     this.note,
     this.children = const [],
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

@@ -19,9 +19,9 @@ class TeamSection extends StatelessWidget {
   final bool useBoxDecoration;
 
   const TeamSection({
-    Key? key,
+    super.key,
     required this.useBoxDecoration,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

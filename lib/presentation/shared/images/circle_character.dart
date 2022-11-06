@@ -12,25 +12,24 @@ class CircleCharacter extends StatelessWidget {
   final Gradient? gradient;
 
   const CircleCharacter({
-    Key? key,
+    super.key,
     required this.itemKey,
     required this.image,
     this.radius = 35,
     this.forDrag = false,
     this.onTap,
     this.gradient,
-  }) : super(key: key);
+  });
 
   CircleCharacter.fromItem({
-    Key? key,
+    super.key,
     required ItemCommon item,
     this.radius = 35,
     this.forDrag = false,
     this.onTap,
     this.gradient,
   })  : itemKey = item.key,
-        image = item.image,
-        super(key: key);
+        image = item.image;
 
   @override
   Widget build(BuildContext context) {

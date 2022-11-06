@@ -63,7 +63,7 @@ class _TierListPageState extends State<TierListPage> {
 class _AppBar extends StatelessWidget implements PreferredSizeWidget {
   final ScreenshotController screenshotController;
 
-  const _AppBar({Key? key, required this.screenshotController}) : super(key: key);
+  const _AppBar({required this.screenshotController});
 
   @override
   Widget build(BuildContext context) {

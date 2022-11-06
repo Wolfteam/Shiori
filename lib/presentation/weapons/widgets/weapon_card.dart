@@ -35,7 +35,7 @@ class WeaponCard extends StatelessWidget {
   final bool withShape;
 
   const WeaponCard({
-    Key? key,
+    super.key,
     required this.keyName,
     required this.image,
     required this.name,
@@ -50,11 +50,10 @@ class WeaponCard extends StatelessWidget {
     this.isInSelectionMode = false,
     this.withElevation = true,
     this.withShape = true,
-  })  : withoutDetails = false,
-        super(key: key);
+  }) : withoutDetails = false;
 
   const WeaponCard.withoutDetails({
-    Key? key,
+    super.key,
     required this.keyName,
     required this.image,
     required this.name,
@@ -69,11 +68,10 @@ class WeaponCard extends StatelessWidget {
         subStatValue = null,
         withoutDetails = true,
         isInSelectionMode = false,
-        withElevation = false,
-        super(key: key);
+        withElevation = false;
 
   WeaponCard.item({
-    Key? key,
+    super.key,
     required WeaponCardModel weapon,
     this.imgWidth = 160,
     this.imgHeight = 140,
@@ -89,8 +87,7 @@ class WeaponCard extends StatelessWidget {
         subStatType = weapon.subStatType,
         subStatValue = weapon.subStatValue,
         isComingSoon = weapon.isComingSoon,
-        withoutDetails = false,
-        super(key: key);
+        withoutDetails = false;
 
   @override
   Widget build(BuildContext context) {

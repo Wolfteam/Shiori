@@ -15,14 +15,13 @@ class DialogListItemRow extends StatelessWidget {
   final RowEndWidget? getRowEndWidget;
 
   const DialogListItemRow({
-    Key? key,
+    super.key,
     required this.itemType,
     required this.itemKey,
     required this.image,
     required this.name,
     this.getRowEndWidget,
-  })  : assert(itemType == ItemType.character || itemType == ItemType.weapon),
-        super(key: key);
+  }) : assert(itemType == ItemType.character || itemType == ItemType.weapon);
 
   DialogListItemRow.fromItem({
     Key? key,

@@ -9,9 +9,9 @@ class MonstersCard extends StatelessWidget {
   final bool iconToTheLeft;
 
   const MonstersCard({
-    Key? key,
+    super.key,
     required this.iconToTheLeft,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

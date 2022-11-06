@@ -10,12 +10,12 @@ class RightBottomSheet extends StatelessWidget {
   final String? title;
 
   const RightBottomSheet({
-    Key? key,
+    super.key,
     required this.children,
     required this.bottom,
     this.icon = Shiori.filter,
     this.title,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

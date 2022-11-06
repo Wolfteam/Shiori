@@ -30,7 +30,7 @@ class TierListFab extends StatelessWidget {
 
 class _DraggableItem extends StatelessWidget {
   final ItemCommon item;
-  const _DraggableItem({Key? key, required this.item}) : super(key: key);
+  const _DraggableItem({required this.item});
 
   @override
   Widget build(BuildContext context) {

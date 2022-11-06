@@ -39,7 +39,7 @@ class PurchaseServiceImpl implements PurchaseService {
       }
 
       final key = Platform.isAndroid ? Env.androidPurchasesKey : throw Exception('Platform not supported');
-      await Purchases.setup(key);
+      await Purchases.configure(PurchasesConfiguration(key));
       _initialized = true;
       return true;
     } catch (e, s) {

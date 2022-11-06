@@ -13,11 +13,11 @@ class NotificationDropdownType extends StatelessWidget {
   final bool isExpanded;
 
   const NotificationDropdownType({
-    Key? key,
+    super.key,
     required this.selectedValue,
     required this.isInEditMode,
     this.isExpanded = true,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

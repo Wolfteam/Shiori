@@ -12,7 +12,7 @@ import 'package:shiori/presentation/shared/styles.dart';
 import 'package:waterfall_flow/waterfall_flow.dart';
 
 class CustomBuildsPage extends StatelessWidget {
-  const CustomBuildsPage({Key? key}) : super(key: key);
+  const CustomBuildsPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +24,7 @@ class CustomBuildsPage extends StatelessWidget {
 }
 
 class _Page extends StatefulWidget {
-  const _Page({Key? key}) : super(key: key);
+  const _Page();
 
   @override
   _PageState createState() => _PageState();

@@ -29,9 +29,9 @@ class AddEditNotificationBottomSheet extends StatelessWidget {
   final bool isInEditMode;
 
   const AddEditNotificationBottomSheet({
-    Key? key,
+    super.key,
     required this.isInEditMode,
-  }) : super(key: key);
+  });
 
   static Map<String, dynamic> buildNavigationArgsForAdd(String title, String body) =>
       <String, dynamic>{_isInEditModeKey: false, _titleKey: title, _bodyKey: body};
@@ -89,7 +89,7 @@ class AddEditNotificationBottomSheet extends StatelessWidget {
 class _FormWidget extends StatelessWidget {
   final bool isInEditMode;
 
-  const _FormWidget({Key? key, required this.isInEditMode}) : super(key: key);
+  const _FormWidget({required this.isInEditMode});
 
   @override
   Widget build(BuildContext context) {

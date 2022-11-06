@@ -37,10 +37,10 @@ class WeaponsPage extends StatefulWidget {
   }
 
   const WeaponsPage({
-    Key? key,
+    super.key,
     this.isInSelectionMode = false,
     this.areWeaponTypesEnabled = true,
-  }) : super(key: key);
+  });
 
   @override
   _WeaponsPageState createState() => _WeaponsPageState();

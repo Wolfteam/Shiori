@@ -14,14 +14,14 @@ class CharacterStackImage extends StatelessWidget {
   final BoxFit fit;
 
   const CharacterStackImage({
-    Key? key,
+    super.key,
     required this.name,
     required this.image,
     required this.rarity,
     this.onTap,
     this.height = 280,
     this.fit = BoxFit.fitHeight,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
