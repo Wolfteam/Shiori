@@ -67,6 +67,12 @@ void main() {
           language: _language,
           result: _getUpdateResult(AppResourceUpdateResultType.unknownError),
           noResourcesHasBeenDownloaded: false,
+          isLoading: false,
+          isUpdating: false,
+          updateFailed: true,
+          canSkipUpdate: true,
+          noInternetConnectionOnFirstInstall: false,
+          needsLatestAppVersionOnFirstInstall: false,
         )
       ],
     );
@@ -89,6 +95,12 @@ void main() {
           language: _language,
           result: _getUpdateResult(AppResourceUpdateResultType.unknownError),
           noResourcesHasBeenDownloaded: true,
+          isLoading: false,
+          isUpdating: false,
+          updateFailed: true,
+          canSkipUpdate: false,
+          noInternetConnectionOnFirstInstall: false,
+          needsLatestAppVersionOnFirstInstall: false,
         )
       ],
     );
@@ -111,6 +123,12 @@ void main() {
           language: _language,
           result: _getUpdateResult(AppResourceUpdateResultType.noUpdatesAvailable),
           noResourcesHasBeenDownloaded: false,
+          isLoading: true,
+          isUpdating: false,
+          updateFailed: false,
+          canSkipUpdate: true,
+          noInternetConnectionOnFirstInstall: false,
+          needsLatestAppVersionOnFirstInstall: false,
         )
       ],
     );
@@ -133,6 +151,40 @@ void main() {
           language: _language,
           result: _getUpdateResult(AppResourceUpdateResultType.needsLatestAppVersion),
           noResourcesHasBeenDownloaded: false,
+          isLoading: false,
+          isUpdating: false,
+          updateFailed: false,
+          canSkipUpdate: true,
+          noInternetConnectionOnFirstInstall: false,
+          needsLatestAppVersionOnFirstInstall: false,
+        )
+      ],
+    );
+
+    blocTest<SplashBloc, SplashState>(
+      'needs latest app version on first install',
+      build: () {
+        final result = _getUpdateResult(AppResourceUpdateResultType.needsLatestAppVersion);
+        final resourceService = MockResourceService();
+        when(resourceService.checkForUpdates(_defaultAppVersion, _defaultResourcesVersion)).thenAnswer((_) => Future.value(result));
+        final settingsService = MockSettingsService();
+        when(settingsService.noResourcesHasBeenDownloaded).thenReturn(true);
+        when(settingsService.resourceVersion).thenReturn(_defaultResourcesVersion);
+        return _getBloc(resourceService, settingsService: settingsService);
+      },
+      act: (bloc) => bloc.add(const SplashEvent.init()),
+      expect: () => [
+        SplashState.loaded(
+          updateResultType: AppResourceUpdateResultType.needsLatestAppVersion,
+          language: _language,
+          result: _getUpdateResult(AppResourceUpdateResultType.needsLatestAppVersion),
+          noResourcesHasBeenDownloaded: true,
+          isLoading: false,
+          isUpdating: false,
+          updateFailed: true,
+          canSkipUpdate: false,
+          noInternetConnectionOnFirstInstall: false,
+          needsLatestAppVersionOnFirstInstall: true,
         )
       ],
     );
@@ -144,7 +196,7 @@ void main() {
         final resourceService = MockResourceService();
         when(resourceService.checkForUpdates(_defaultAppVersion, _defaultResourcesVersion)).thenAnswer((_) => Future.value(result));
         final settingsService = MockSettingsService();
-        when(settingsService.noResourcesHasBeenDownloaded).thenReturn(false);
+        when(settingsService.noResourcesHasBeenDownloaded).thenReturn(true);
         when(settingsService.resourceVersion).thenReturn(_defaultResourcesVersion);
         return _getBloc(resourceService, settingsService: settingsService);
       },
@@ -154,7 +206,13 @@ void main() {
           updateResultType: AppResourceUpdateResultType.noInternetConnectionForFirstInstall,
           language: _language,
           result: _getUpdateResult(AppResourceUpdateResultType.noInternetConnectionForFirstInstall),
-          noResourcesHasBeenDownloaded: false,
+          noResourcesHasBeenDownloaded: true,
+          isLoading: false,
+          isUpdating: false,
+          updateFailed: true,
+          canSkipUpdate: false,
+          noInternetConnectionOnFirstInstall: true,
+          needsLatestAppVersionOnFirstInstall: false,
         )
       ],
     );
@@ -189,6 +247,12 @@ void main() {
             keyNames: _keyNames,
           ),
           noResourcesHasBeenDownloaded: false,
+          isLoading: false,
+          isUpdating: false,
+          updateFailed: false,
+          canSkipUpdate: true,
+          noInternetConnectionOnFirstInstall: false,
+          needsLatestAppVersionOnFirstInstall: false,
         )
       ],
     );
@@ -221,6 +285,12 @@ void main() {
           keyNames: _keyNames,
         ),
         noResourcesHasBeenDownloaded: false,
+        isLoading: false,
+        isUpdating: false,
+        updateFailed: false,
+        canSkipUpdate: true,
+        noInternetConnectionOnFirstInstall: false,
+        needsLatestAppVersionOnFirstInstall: false,
       ),
       act: (bloc) => bloc.add(const SplashEvent.init(retry: true)),
       expect: () => [
@@ -228,6 +298,12 @@ void main() {
           updateResultType: AppResourceUpdateResultType.retrying,
           language: _language,
           noResourcesHasBeenDownloaded: false,
+          isLoading: true,
+          isUpdating: false,
+          updateFailed: false,
+          canSkipUpdate: true,
+          noInternetConnectionOnFirstInstall: false,
+          needsLatestAppVersionOnFirstInstall: false,
         ),
         SplashState.loaded(
           updateResultType: AppResourceUpdateResultType.updatesAvailable,
@@ -239,6 +315,12 @@ void main() {
             keyNames: _keyNames,
           ),
           noResourcesHasBeenDownloaded: false,
+          isLoading: false,
+          isUpdating: false,
+          updateFailed: false,
+          canSkipUpdate: true,
+          noInternetConnectionOnFirstInstall: false,
+          needsLatestAppVersionOnFirstInstall: false,
         ),
       ],
     );
@@ -252,6 +334,12 @@ void main() {
         language: _language,
         result: _getUpdateResult(AppResourceUpdateResultType.updatesAvailable),
         noResourcesHasBeenDownloaded: false,
+        isLoading: false,
+        isUpdating: false,
+        updateFailed: false,
+        canSkipUpdate: false,
+        noInternetConnectionOnFirstInstall: false,
+        needsLatestAppVersionOnFirstInstall: false,
       ),
       build: () => _getBloc(MockResourceService()),
       act: (bloc) => bloc
@@ -265,6 +353,12 @@ void main() {
           progress: 10,
           result: _getUpdateResult(AppResourceUpdateResultType.updatesAvailable),
           noResourcesHasBeenDownloaded: false,
+          isLoading: false,
+          isUpdating: false,
+          updateFailed: false,
+          canSkipUpdate: false,
+          noInternetConnectionOnFirstInstall: false,
+          needsLatestAppVersionOnFirstInstall: false,
         ),
         SplashState.loaded(
           updateResultType: AppResourceUpdateResultType.updatesAvailable,
@@ -272,6 +366,12 @@ void main() {
           progress: 50,
           result: _getUpdateResult(AppResourceUpdateResultType.updatesAvailable),
           noResourcesHasBeenDownloaded: false,
+          isLoading: false,
+          isUpdating: false,
+          updateFailed: false,
+          canSkipUpdate: false,
+          noInternetConnectionOnFirstInstall: false,
+          needsLatestAppVersionOnFirstInstall: false,
         ),
         SplashState.loaded(
           updateResultType: AppResourceUpdateResultType.updatesAvailable,
@@ -279,6 +379,12 @@ void main() {
           progress: 100,
           result: _getUpdateResult(AppResourceUpdateResultType.updatesAvailable),
           noResourcesHasBeenDownloaded: false,
+          isLoading: false,
+          isUpdating: false,
+          updateFailed: false,
+          canSkipUpdate: false,
+          noInternetConnectionOnFirstInstall: false,
+          needsLatestAppVersionOnFirstInstall: false,
         ),
       ],
     );
@@ -290,6 +396,12 @@ void main() {
         language: _language,
         result: _getUpdateResult(AppResourceUpdateResultType.updatesAvailable),
         noResourcesHasBeenDownloaded: false,
+        isLoading: false,
+        isUpdating: false,
+        updateFailed: false,
+        canSkipUpdate: false,
+        noInternetConnectionOnFirstInstall: false,
+        needsLatestAppVersionOnFirstInstall: false,
       ),
       build: () => _getBloc(MockResourceService()),
       act: (bloc) => bloc
@@ -302,6 +414,12 @@ void main() {
           progress: 100,
           result: _getUpdateResult(AppResourceUpdateResultType.updatesAvailable),
           noResourcesHasBeenDownloaded: false,
+          isLoading: false,
+          isUpdating: false,
+          updateFailed: false,
+          canSkipUpdate: false,
+          noInternetConnectionOnFirstInstall: false,
+          needsLatestAppVersionOnFirstInstall: false,
         )
       ],
     );
@@ -313,6 +431,12 @@ void main() {
         language: _language,
         result: _getUpdateResult(AppResourceUpdateResultType.updatesAvailable),
         noResourcesHasBeenDownloaded: false,
+        isLoading: false,
+        isUpdating: false,
+        updateFailed: false,
+        canSkipUpdate: false,
+        noInternetConnectionOnFirstInstall: false,
+        needsLatestAppVersionOnFirstInstall: false,
       ),
       build: () => _getBloc(MockResourceService()),
       act: (bloc) => bloc
@@ -325,6 +449,12 @@ void main() {
           progress: 10,
           result: _getUpdateResult(AppResourceUpdateResultType.updatesAvailable),
           noResourcesHasBeenDownloaded: false,
+          isLoading: false,
+          isUpdating: false,
+          updateFailed: false,
+          canSkipUpdate: false,
+          noInternetConnectionOnFirstInstall: false,
+          needsLatestAppVersionOnFirstInstall: false,
         )
       ],
     );
@@ -336,6 +466,12 @@ void main() {
         language: _language,
         result: _getUpdateResult(AppResourceUpdateResultType.updatesAvailable),
         noResourcesHasBeenDownloaded: false,
+        isLoading: false,
+        isUpdating: false,
+        updateFailed: false,
+        canSkipUpdate: false,
+        noInternetConnectionOnFirstInstall: false,
+        needsLatestAppVersionOnFirstInstall: false,
       ),
       build: () => _getBloc(MockResourceService()),
       act: (bloc) => bloc.add(const SplashEvent.progressChanged(progress: -1)),
@@ -351,6 +487,12 @@ void main() {
         language: _language,
         result: _getUpdateResult(AppResourceUpdateResultType.updatesAvailable, resourceVersion: 2),
         noResourcesHasBeenDownloaded: false,
+        isLoading: false,
+        isUpdating: false,
+        updateFailed: false,
+        canSkipUpdate: false,
+        noInternetConnectionOnFirstInstall: false,
+        needsLatestAppVersionOnFirstInstall: false,
       ),
       build: () => _getBloc(MockResourceService()),
       act: (bloc) => bloc.add(const SplashEvent.updateCompleted(applied: true, resourceVersion: 2)),
@@ -360,6 +502,12 @@ void main() {
           language: _language,
           progress: 100,
           noResourcesHasBeenDownloaded: false,
+          isLoading: true,
+          isUpdating: false,
+          updateFailed: false,
+          canSkipUpdate: true,
+          noInternetConnectionOnFirstInstall: false,
+          needsLatestAppVersionOnFirstInstall: false,
         )
       ],
     );
@@ -371,6 +519,12 @@ void main() {
         language: _language,
         result: _getUpdateResult(AppResourceUpdateResultType.updatesAvailable, resourceVersion: 2),
         noResourcesHasBeenDownloaded: false,
+        isLoading: false,
+        isUpdating: false,
+        updateFailed: false,
+        canSkipUpdate: false,
+        noInternetConnectionOnFirstInstall: false,
+        needsLatestAppVersionOnFirstInstall: false,
       ),
       build: () {
         final settingsService = MockSettingsService();
@@ -385,6 +539,12 @@ void main() {
           language: _language,
           progress: 100,
           noResourcesHasBeenDownloaded: false,
+          isLoading: false,
+          isUpdating: false,
+          updateFailed: true,
+          canSkipUpdate: true,
+          noInternetConnectionOnFirstInstall: false,
+          needsLatestAppVersionOnFirstInstall: false,
         )
       ],
     );
@@ -396,6 +556,12 @@ void main() {
         language: _language,
         result: _getUpdateResult(AppResourceUpdateResultType.updatesAvailable, resourceVersion: 2),
         noResourcesHasBeenDownloaded: true,
+        isLoading: false,
+        isUpdating: false,
+        updateFailed: false,
+        canSkipUpdate: false,
+        noInternetConnectionOnFirstInstall: false,
+        needsLatestAppVersionOnFirstInstall: false,
       ),
       build: () {
         final settingsService = MockSettingsService();
@@ -410,6 +576,12 @@ void main() {
           language: _language,
           progress: 100,
           noResourcesHasBeenDownloaded: true,
+          isLoading: false,
+          isUpdating: false,
+          updateFailed: true,
+          canSkipUpdate: false,
+          noInternetConnectionOnFirstInstall: false,
+          needsLatestAppVersionOnFirstInstall: false,
         ),
       ],
     );

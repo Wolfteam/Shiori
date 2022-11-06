@@ -9,4 +9,5 @@ enum AppResourceUpdateResultType {
   updatesAvailable,
   updating,
   updated,
+  apiIsUnavailable,
 }

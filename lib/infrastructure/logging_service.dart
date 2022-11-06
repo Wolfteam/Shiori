@@ -80,16 +80,52 @@ class LoggingServiceImpl implements LoggingService {
     final map = {'Tag': tag, 'Msg': msg};
 
     if (ex != null) {
-      map.putIfAbsent('Ex', () => ex.toString());
+      const title = 'Ex';
+      final exMsg = ex.toString();
+      final exMsgs = _splitMsgIfNeeded(exMsg);
+      for (int i = 0; i < exMsgs.length; i++) {
+        final msg = exMsgs[i];
+        final key = exMsgs.length == 1 ? title : '$title-$i';
+        map.putIfAbsent(key, () => msg);
+      }
     }
 
     if (trace != null) {
-      map.putIfAbsent('Trace', () => trace.toString());
+      const title = 'Trace';
+      final traceMsg = trace.toString();
+      final traceMsgs = _splitMsgIfNeeded(traceMsg);
+      for (int i = 0; i < traceMsgs.length; i++) {
+        final msg = traceMsgs[i];
+        final key = traceMsgs.length == 1 ? title : '$title-$i';
+        map.putIfAbsent(key, () => msg);
+      }
     }
 
     map.addAll(_deviceInfoService.deviceInfo);
 
     return map;
+  }
+
+  List<String> _splitMsgIfNeeded(String msg) {
+    const int maxMsgSize = 100;
+    if (msg.length <= maxMsgSize) {
+      return [msg];
+    }
+
+    final msgs = <String>[];
+    int currentIndex = 0;
+    int remaining = msg.length;
+    while (remaining > 0) {
+      int end = currentIndex + maxMsgSize;
+      if (end > msg.length) {
+        end = msg.length;
+      }
+      final sub = msg.substring(currentIndex, end);
+      msgs.add(sub);
+      currentIndex += maxMsgSize;
+      remaining -= maxMsgSize;
+    }
+    return msgs;
   }
 
   String _getDateString() {

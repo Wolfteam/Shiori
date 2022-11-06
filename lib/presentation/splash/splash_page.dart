@@ -41,7 +41,12 @@ class SplashPage extends StatelessWidget {
           },
           builder: (context, state) => _SplashPage(
             updateResultType: state.maybeMap(loaded: (state) => state.updateResultType, orElse: () => null),
-            noResourcesHasBeenDownloaded: state.maybeMap(loaded: (state) => state.noResourcesHasBeenDownloaded, orElse: () => true),
+            isUpdating: state.maybeMap(loaded: (state) => state.isUpdating, orElse: () => false),
+            isLoading: state.maybeMap(loaded: (state) => state.isLoading, orElse: () => true),
+            updateFailed: state.maybeMap(loaded: (state) => state.updateFailed, orElse: () => false),
+            canSkipUpdate: state.maybeMap(loaded: (state) => state.canSkipUpdate, orElse: () => false),
+            needsLatestAppVersionOnFirstInstall: state.maybeMap(loaded: (state) => state.needsLatestAppVersionOnFirstInstall, orElse: () => false),
+            noInternetConnectionOnFirstInstall: state.maybeMap(loaded: (state) => state.noInternetConnectionOnFirstInstall, orElse: () => false),
           ),
         ),
       ),
@@ -57,6 +62,11 @@ class SplashPage extends StatelessWidget {
     bool initMain = false;
     switch (updateResultType) {
       case AppResourceUpdateResultType.needsLatestAppVersion:
+        if (noResourcesHasBeenDownloaded) {
+          break;
+        }
+        initMain = true;
+        break;
       case AppResourceUpdateResultType.noUpdatesAvailable:
       case AppResourceUpdateResultType.updated:
         initMain = true;
@@ -89,6 +99,7 @@ class SplashPage extends StatelessWidget {
       case AppResourceUpdateResultType.noInternetConnectionForFirstInstall:
       case AppResourceUpdateResultType.unknownErrorOnFirstInstall:
       case AppResourceUpdateResultType.unknownError:
+      case AppResourceUpdateResultType.apiIsUnavailable:
         break;
     }
 
@@ -110,34 +121,22 @@ class SplashPage extends StatelessWidget {
 
 class _SplashPage extends StatelessWidget {
   final AppResourceUpdateResultType? updateResultType;
-  final bool noResourcesHasBeenDownloaded;
-
-  bool get isLoading =>
-      updateResultType == null ||
-      updateResultType == AppResourceUpdateResultType.noUpdatesAvailable ||
-      updateResultType == AppResourceUpdateResultType.needsLatestAppVersion ||
-      updateResultType == AppResourceUpdateResultType.retrying ||
-      updateResultType == AppResourceUpdateResultType.updated;
-
-  bool get isUpdating => updateResultType == AppResourceUpdateResultType.updating;
-
-  bool get updateFailed =>
-      updateResultType == AppResourceUpdateResultType.unknownError ||
-      updateResultType == AppResourceUpdateResultType.unknownErrorOnFirstInstall ||
-      updateResultType == AppResourceUpdateResultType.noInternetConnection ||
-      noInternetConnectionOnFirstInstall;
-
-  bool get noInternetConnectionOnFirstInstall => updateResultType == AppResourceUpdateResultType.noInternetConnectionForFirstInstall;
-
-  bool get canContinue =>
-      updateResultType != AppResourceUpdateResultType.unknownErrorOnFirstInstall &&
-      !noInternetConnectionOnFirstInstall &&
-      !noResourcesHasBeenDownloaded;
+  final bool isLoading;
+  final bool isUpdating;
+  final bool updateFailed;
+  final bool noInternetConnectionOnFirstInstall;
+  final bool needsLatestAppVersionOnFirstInstall;
+  final bool canSkipUpdate;
 
   const _SplashPage({
     Key? key,
     this.updateResultType,
-    required this.noResourcesHasBeenDownloaded,
+    required this.isLoading,
+    required this.isUpdating,
+    required this.updateFailed,
+    required this.noInternetConnectionOnFirstInstall,
+    required this.needsLatestAppVersionOnFirstInstall,
+    required this.canSkipUpdate,
   }) : super(key: key);
 
   @override
@@ -161,7 +160,7 @@ class _SplashPage extends StatelessWidget {
               child: const CircularProgressIndicator(valueColor: AlwaysStoppedAnimation<Color>(Colors.white)),
             ),
           if (isUpdating) const _Updating(),
-          if (updateFailed) _Buttons(updateResultType: updateResultType, canContinue: canContinue),
+          if (updateFailed) _Buttons(updateResultType: updateResultType, canSkipUpdate: canSkipUpdate),
         ],
       ),
     );
@@ -170,12 +169,12 @@ class _SplashPage extends StatelessWidget {
 
 class _Buttons extends StatelessWidget {
   final AppResourceUpdateResultType? updateResultType;
-  final bool canContinue;
+  final bool canSkipUpdate;
 
   const _Buttons({
     Key? key,
     this.updateResultType,
-    required this.canContinue,
+    required this.canSkipUpdate,
   }) : super(key: key);
 
   @override
@@ -195,9 +194,7 @@ class _Buttons extends StatelessWidget {
             style: theme.textTheme.subtitle1!.copyWith(color: Colors.white, fontWeight: FontWeight.bold),
           ),
           Text(
-            updateResultType == AppResourceUpdateResultType.unknownError || updateResultType == AppResourceUpdateResultType.unknownErrorOnFirstInstall
-                ? s.unknownErrorWhileUpdating
-                : s.internetRequiredToUpdate,
+            _getErrorMsg(s),
             textAlign: TextAlign.center,
             style: theme.textTheme.labelMedium!.copyWith(color: Colors.white),
           ),
@@ -210,7 +207,7 @@ class _Buttons extends StatelessWidget {
                 label: Text(s.retry, style: const TextStyle(color: Colors.white)),
                 style: buttonStyle,
               ),
-              if (canContinue)
+              if (canSkipUpdate)
                 OutlinedButton.icon(
                   onPressed: () => context.read<MainBloc>().add(MainEvent.init(updateResultType: updateResultType)),
                   icon: const Icon(Icons.arrow_right_alt, color: Colors.white),
@@ -222,6 +219,22 @@ class _Buttons extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  String _getErrorMsg(S s) {
+    if (updateResultType == AppResourceUpdateResultType.unknownError || updateResultType == AppResourceUpdateResultType.unknownErrorOnFirstInstall) {
+      return '${s.unknownErrorWhileUpdating}\n${s.tryAgainLater}';
+    }
+
+    if (updateResultType == AppResourceUpdateResultType.apiIsUnavailable) {
+      return s.tryAgainLater;
+    }
+
+    if (updateResultType == AppResourceUpdateResultType.needsLatestAppVersion) {
+      return '${s.newAppVersionInStore}\n${s.tryAgainLater}';
+    }
+
+    return s.internetRequiredToUpdate;
   }
 }
 
