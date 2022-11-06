@@ -75,9 +75,9 @@ class DeviceInfoServiceImpl implements DeviceInfoService {
     final deviceInfo = DeviceInfoPlugin();
     final info = await deviceInfo.androidInfo;
     final installationSource = await StoreChecker.getSource;
-    final model = 'Model: ${info.model ?? na} --- Device: ${info.device ?? na} --- Manufacturer: ${info.manufacturer ?? na}';
+    final model = 'Model: ${info.model} --- Device: ${info.device} --- Manufacturer: ${info.manufacturer}';
     _setDefaultDeviceInfoProps(model, '${info.version.sdkInt}');
-    _deviceInfo.putIfAbsent('IsPhysicalDevice', () => '${info.isPhysicalDevice ?? na}');
+    _deviceInfo.putIfAbsent('IsPhysicalDevice', () => '${info.isPhysicalDevice}');
     _deviceInfo.putIfAbsent('InstallationSource', () => installationSource.name);
   }
 
