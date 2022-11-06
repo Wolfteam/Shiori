@@ -10,7 +10,7 @@ class CharacterStackImage extends StatelessWidget {
   final String image;
   final int rarity;
   final double height;
-  final Function? onTap;
+  final VoidCallback? onTap;
   final BoxFit fit;
 
   const CharacterStackImage({

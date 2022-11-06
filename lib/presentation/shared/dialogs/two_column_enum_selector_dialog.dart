@@ -317,8 +317,8 @@ class _TwoColumnEnumSelectorDialogState<TEnum> extends State<TwoColumnEnumSelect
 
 class _Buttons<TEnum> extends StatelessWidget {
   final bool useRow;
-  final Function? onLeftTap;
-  final Function? onRightTap;
+  final VoidCallback? onLeftTap;
+  final VoidCallback? onRightTap;
 
   const _Buttons({
     super.key,

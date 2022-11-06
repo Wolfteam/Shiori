@@ -72,8 +72,9 @@ class _GameCodesPageState extends State<GameCodesPage> with SingleTickerProvider
   }
 
   Future<void> _launchUrl(String url) async {
-    if (await canLaunch(url)) {
-      await launch(url);
+    final uri = Uri.parse(url);
+    if (await canLaunchUrl(uri)) {
+      await launchUrl(uri);
     }
   }
 

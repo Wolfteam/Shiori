@@ -23,7 +23,7 @@ class ChartLegendIndicator extends StatelessWidget {
   final Color color;
   final String text;
   final double size;
-  final Function? tap;
+  final VoidCallback? tap;
   final bool expandText;
   final bool selected;
   final double? width;

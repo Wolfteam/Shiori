@@ -8,8 +8,8 @@ class CommonBottomSheet extends StatelessWidget {
   final String title;
   final IconData titleIcon;
   final Widget child;
-  final Function? onOk;
-  final Function? onCancel;
+  final VoidCallback? onOk;
+  final VoidCallback? onCancel;
   final double iconSize;
   final bool showOkButton;
   final bool showCancelButton;
