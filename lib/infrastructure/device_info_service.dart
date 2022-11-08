@@ -33,7 +33,7 @@ class DeviceInfoServiceImpl implements DeviceInfoService {
 
   //TODO: COMPLETE THIS
   @override
-  String? get userAgent => Platform.isWindows || Platform.isMacOS ? null : FkUserAgent.webViewUserAgent!.replaceAll(RegExp(r'wv'), '');
+  String? get userAgent => Platform.isWindows || Platform.isMacOS ? null : FkUserAgent.webViewUserAgent!.replaceAll(RegExp('wv'), '');
 
   @override
   Future<void> init() async {
@@ -82,7 +82,7 @@ class DeviceInfoServiceImpl implements DeviceInfoService {
   Future<void> _initForAndroid() async {
     final deviceInfo = DeviceInfoPlugin();
     final info = await deviceInfo.androidInfo;
-    final model = 'Model: ${info.model ?? na} --- Device: ${info.device ?? na} --- Manufacturer: ${info.manufacturer ?? na}';
+    final model = 'Model: ${info.model} --- Device: ${info.device} --- Manufacturer: ${info.manufacturer}';
     _setDefaultDeviceInfoProps(model, '${info.version.sdkInt}');
     _setOtherDeviceInfoProps(info.isPhysicalDevice);
   }
