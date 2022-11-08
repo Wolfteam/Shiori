@@ -80,7 +80,7 @@ class ItemCard extends StatelessWidget {
                   ),
                 ),
               ),
-              Container(
+              DecoratedBox(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.only(
                     bottomLeft: Radius.circular(Styles.cardBottomRadius),

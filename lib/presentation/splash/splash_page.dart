@@ -257,12 +257,9 @@ class _Updating extends StatelessWidget {
               style: theme.textTheme.subtitle1!.copyWith(color: Colors.white, fontWeight: FontWeight.bold),
             ),
           ),
-          Container(
+          DecoratedBox(
             decoration: BoxDecoration(
-              border: Border.all(
-                color: Styles.paimonColor,
-                width: 0.5,
-              ),
+              border: Border.all(color: Styles.paimonColor, strokeAlign: StrokeAlign.center),
             ),
             child: BlocBuilder<SplashBloc, SplashState>(
               builder: (context, state) => LinearProgressIndicator(

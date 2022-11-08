@@ -22,12 +22,13 @@ class _TierListPageState extends State<TierListPage> {
 
   @override
   Widget build(BuildContext context) {
+    const double fabHeight = 100;
     return BlocProvider<TierListBloc>(
       create: (ctx) => Injection.tierListBloc..add(const TierListEvent.init()),
       child: Scaffold(
         appBar: _AppBar(screenshotController: screenshotController),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-        floatingActionButton: TierListFab(),
+        floatingActionButton: const TierListFab(height: fabHeight),
         body: SafeArea(
           child: SingleChildScrollView(
             child: Screenshot(
@@ -35,21 +36,25 @@ class _TierListPageState extends State<TierListPage> {
               child: BlocBuilder<TierListBloc, TierListState>(
                 builder: (ctx, state) => Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: state.rows
-                      .mapIndex(
-                        (e, index) => TierListRow(
-                          index: index,
-                          title: e.tierText,
-                          color: Color(e.tierColor),
-                          items: e.items,
-                          isUpButtonEnabled: index != 0,
-                          isDownButtonEnabled: index != state.rows.length - 1,
-                          numberOfRows: state.rows.length,
-                          showButtons: !state.readyToSave,
-                          isTheLastRow: state.rows.length == 1,
-                        ),
+                  children: [
+                    ...state.rows.mapIndex(
+                      (e, index) => TierListRow(
+                        index: index,
+                        title: e.tierText,
+                        color: Color(e.tierColor),
+                        items: e.items,
+                        isUpButtonEnabled: index != 0,
+                        isDownButtonEnabled: index != state.rows.length - 1,
+                        numberOfRows: state.rows.length,
+                        showButtons: !state.readyToSave,
+                        isTheLastRow: state.rows.length == 1,
+                      ),
+                    ),
+                    if (!state.readyToSave && state.charsAvailable.isNotEmpty)
+                      SizedBox.fromSize(
+                        size: const Size.fromHeight(fabHeight),
                       )
-                      .toList(),
+                  ],
                 ),
               ),
             ),

@@ -72,4 +72,10 @@ class Styles {
   }
 
   static const Color paimonColor = Color.fromARGB(255, 191, 138, 104);
+
+  static LinearGradient blackGradientForCircleItems = LinearGradient(
+    colors: [Colors.black.withOpacity(0.6), Colors.black.withOpacity(0.8)],
+    begin: Alignment.topLeft,
+    end: Alignment.bottomRight,
+  );
 }

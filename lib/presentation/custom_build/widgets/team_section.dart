@@ -30,11 +30,7 @@ class TeamSection extends StatelessWidget {
     return BlocBuilder<CustomBuildBloc, CustomBuildState>(
       builder: (context, state) => state.maybeMap(
         loaded: (state) {
-          final color = theme.brightness == Brightness.dark
-              ? state.character.elementType.getElementColorFromContext(
-                  context,
-                )
-              : theme.colorScheme.secondary;
+          final color = state.character.elementType.getElementColorFromContext(context);
           return Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             mainAxisAlignment: MainAxisAlignment.center,

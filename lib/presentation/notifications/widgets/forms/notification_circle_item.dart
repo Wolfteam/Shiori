@@ -67,7 +67,11 @@ class NotificationCircleItem extends StatelessWidget {
   }
 
   Widget _buildSelectableImage(BuildContext context, String theImage, {bool isSelected = false}) {
-    final circleItem = CircleItem(image: theImage, onTap: (_) => _changeSelectedImg(theImage, context));
+    final circleItem = CircleItem(
+      image: theImage,
+      fit: BoxFit.contain,
+      onTap: (_) => _changeSelectedImg(theImage, context),
+    );
     if (!isSelected) {
       return Center(child: circleItem);
     }
@@ -75,8 +79,19 @@ class NotificationCircleItem extends StatelessWidget {
       child: Stack(
         alignment: Alignment.center,
         children: [
-          const Positioned(top: 0, right: 0, child: Icon(Icons.check, color: Colors.green)),
-          CircleItem(image: theImage, onTap: (_) => _changeSelectedImg(theImage, context)),
+          circleItem,
+          Positioned(
+            top: 0,
+            right: 0,
+            child: DecoratedBox(
+              decoration: BoxDecoration(
+                color: Colors.green.withOpacity(0.8),
+                border: Border.all(color: Colors.green),
+                borderRadius: BorderRadius.circular(20),
+              ),
+              child: const Icon(Icons.check, color: Colors.white),
+            ),
+          ),
         ],
       ),
     );

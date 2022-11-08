@@ -65,7 +65,7 @@ class TierListRow extends StatelessWidget {
                 Flexible(
                   fit: FlexFit.tight,
                   flex: flexA,
-                  child: Container(
+                  child: ColoredBox(
                     color: color,
                     child: Center(
                       child: Text(

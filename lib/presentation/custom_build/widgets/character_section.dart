@@ -46,8 +46,8 @@ class CharacterSection extends StatelessWidget {
 
     return BlocBuilder<CustomBuildBloc, CustomBuildState>(
       builder: (context, state) => state.maybeMap(
-        loaded: (state) => Container(
-          color: theme.brightness == Brightness.dark ? state.character.elementType.getElementColorFromContext(context) : theme.colorScheme.secondary,
+        loaded: (state) => ColoredBox(
+          color: state.character.elementType.getElementColorFromContext(context),
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
