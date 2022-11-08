@@ -7,9 +7,9 @@ class NotificationSwitch extends StatelessWidget {
   final bool showNotification;
 
   const NotificationSwitch({
-    Key? key,
+    super.key,
     required this.showNotification,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

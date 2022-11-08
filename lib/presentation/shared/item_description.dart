@@ -8,20 +8,19 @@ class ItemDescription extends StatelessWidget {
   final Widget? widget;
 
   const ItemDescription({
-    Key? key,
+    super.key,
     required this.title,
     this.useColumn = true,
     this.subTitle,
     this.widget,
-  }) : super(key: key);
+  });
 
   const ItemDescription.row({
-    Key? key,
+    super.key,
     this.widget,
   })  : title = '',
         useColumn = false,
-        subTitle = null,
-        super(key: key);
+        subTitle = null;
 
   @override
   Widget build(BuildContext context) {

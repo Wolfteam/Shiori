@@ -25,7 +25,7 @@ class WeaponDetailBottom extends StatelessWidget {
   final List<ItemCommon> charImgs;
 
   const WeaponDetailBottom({
-    Key? key,
+    super.key,
     required this.description,
     required this.rarity,
     required this.secondaryStatType,
@@ -34,7 +34,7 @@ class WeaponDetailBottom extends StatelessWidget {
     required this.refinements,
     required this.stats,
     required this.charImgs,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -74,7 +74,6 @@ class _PortraitLayout extends StatelessWidget {
   final List<ItemCommon> charImgs;
 
   const _PortraitLayout({
-    Key? key,
     required this.description,
     required this.rarity,
     required this.secondaryStatType,
@@ -83,7 +82,7 @@ class _PortraitLayout extends StatelessWidget {
     required this.refinements,
     required this.stats,
     required this.charImgs,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -145,7 +144,6 @@ class _LandscapeLayout extends StatelessWidget {
   final List<ItemCommon> charImgs;
 
   const _LandscapeLayout({
-    Key? key,
     required this.description,
     required this.rarity,
     required this.secondaryStatType,
@@ -154,7 +152,7 @@ class _LandscapeLayout extends StatelessWidget {
     required this.refinements,
     required this.stats,
     required this.charImgs,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

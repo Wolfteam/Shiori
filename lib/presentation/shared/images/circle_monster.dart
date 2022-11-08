@@ -10,12 +10,12 @@ class CircleMonster extends StatelessWidget {
   final Function(String)? onTap;
 
   const CircleMonster({
-    Key? key,
+    super.key,
     required this.itemKey,
     required this.image,
     this.radius = 35,
     this.onTap,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

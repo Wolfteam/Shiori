@@ -18,7 +18,7 @@ class ItemPopupMenuFilter<TEnum> extends StatelessWidget {
   final ItemEnabled<TEnum>? isItemEnabled;
 
   const ItemPopupMenuFilter({
-    Key? key,
+    super.key,
     required this.tooltipText,
     required this.selectedValue,
     required this.values,
@@ -28,10 +28,10 @@ class ItemPopupMenuFilter<TEnum> extends StatelessWidget {
     this.icon = const Icon(Icons.filter_list),
     this.childBuilder,
     this.isItemEnabled,
-  }) : super(key: key);
+  });
 
   const ItemPopupMenuFilter.withoutSelectedValue({
-    Key? key,
+    super.key,
     required this.tooltipText,
     required this.values,
     this.onSelected,
@@ -40,8 +40,7 @@ class ItemPopupMenuFilter<TEnum> extends StatelessWidget {
     this.icon = const Icon(Icons.filter_list),
     this.childBuilder,
     this.isItemEnabled,
-  })  : selectedValue = null,
-        super(key: key);
+  }) : selectedValue = null;
 
   @override
   Widget build(BuildContext context) {
@@ -94,21 +93,16 @@ class ItemPopupMenuFilterWithAllValue extends ItemPopupMenuFilter<int> {
   final Function(int?)? onAllOrValueSelected;
 
   ItemPopupMenuFilterWithAllValue({
-    Key? key,
-    required String tooltipText,
+    super.key,
+    required super.tooltipText,
     int? selectedValue,
     this.onAllOrValueSelected,
     required List<int> values,
-    required PopupMenuItemText<int> itemText,
-    List<int> exclude = const [],
-    Icon icon = const Icon(Icons.filter_list),
+    required super.itemText,
+    super.exclude = const [],
+    super.icon,
   }) : super(
-          key: key,
-          tooltipText: tooltipText,
           selectedValue: selectedValue ?? allValue,
-          itemText: itemText,
-          exclude: exclude,
-          icon: icon,
           values: values..add(allValue),
         );
 

@@ -57,7 +57,7 @@ final _tooltipColor = Colors.black.withOpacity(0.7);
 final _monthNames = date_utils.DateUtils.getAllMonthsName();
 
 class ChartsPage extends StatelessWidget {
-  const ChartsPage({Key? key}) : super(key: key);
+  const ChartsPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -92,7 +92,7 @@ class ChartsPage extends StatelessWidget {
 }
 
 class _Body extends StatefulWidget {
-  const _Body({Key? key}) : super(key: key);
+  const _Body();
 
   @override
   State<_Body> createState() => _BodyState();
@@ -127,10 +127,9 @@ class _PortraitLayout extends StatelessWidget {
   final ScrollController controller;
 
   const _PortraitLayout({
-    Key? key,
     required this.maxNumberOfColumns,
     required this.controller,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -168,10 +167,9 @@ class _LandscapeLayout extends StatelessWidget {
   final ScrollController controller;
 
   const _LandscapeLayout({
-    Key? key,
     required this.maxNumberOfColumns,
     required this.controller,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -226,7 +224,6 @@ class _ChartPagination extends StatelessWidget {
   final VoidCallback onLastPagePressed;
 
   const _ChartPagination({
-    Key? key,
     required this.canGoToFirstPage,
     required this.canGoToPreviousPage,
     required this.canGoToNextPage,
@@ -235,7 +232,7 @@ class _ChartPagination extends StatelessWidget {
     required this.onPreviousPagePressed,
     required this.onNextPagePressed,
     required this.onLastPagePressed,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -283,10 +280,9 @@ class _Chart extends StatelessWidget {
   final Widget chart;
 
   const _Chart({
-    Key? key,
     required this.title,
     required this.chart,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -302,7 +298,7 @@ class _Chart extends StatelessWidget {
 }
 
 class _TopCharacters extends StatelessWidget {
-  const _TopCharacters({Key? key}) : super(key: key);
+  const _TopCharacters();
 
   @override
   Widget build(BuildContext context) {
@@ -373,7 +369,7 @@ class _TopCharacters extends StatelessWidget {
 }
 
 class _TopWeapons extends StatelessWidget {
-  const _TopWeapons({Key? key}) : super(key: key);
+  const _TopWeapons();
 
   @override
   Widget build(BuildContext context) {
@@ -444,7 +440,7 @@ class _TopWeapons extends StatelessWidget {
 }
 
 class _Elements extends StatelessWidget {
-  const _Elements({Key? key}) : super(key: key);
+  const _Elements();
 
   @override
   Widget build(BuildContext context) {
@@ -518,9 +514,8 @@ class _ElementsWrap extends StatelessWidget {
   final List<ElementType> selectedElementTypes;
 
   const _ElementsWrap({
-    Key? key,
     required this.selectedElementTypes,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -546,7 +541,7 @@ class _ElementsWrap extends StatelessWidget {
 }
 
 class _Birthdays extends StatelessWidget {
-  const _Birthdays({Key? key}) : super(key: key);
+  const _Birthdays();
 
   @override
   Widget build(BuildContext context) {
@@ -603,9 +598,8 @@ class _AscensionStats extends StatelessWidget {
   final int maxNumberOfColumns;
 
   const _AscensionStats({
-    Key? key,
     required this.maxNumberOfColumns,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -689,7 +683,7 @@ class _AscensionStats extends StatelessWidget {
 }
 
 class _Regions extends StatelessWidget {
-  const _Regions({Key? key}) : super(key: key);
+  const _Regions();
 
   @override
   Widget build(BuildContext context) {
@@ -739,7 +733,7 @@ class _Regions extends StatelessWidget {
 }
 
 class _Genders extends StatelessWidget {
-  const _Genders({Key? key}) : super(key: key);
+  const _Genders();
 
   @override
   Widget build(BuildContext context) {

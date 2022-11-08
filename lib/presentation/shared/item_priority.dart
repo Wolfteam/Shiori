@@ -10,15 +10,14 @@ class ItemPriority<TEnum> extends StatelessWidget {
   final String Function(TEnum item) textResolver;
 
   const ItemPriority({
-    Key? key,
+    super.key,
     required this.title,
     required this.items,
     required this.color,
     required this.textResolver,
     this.margin = Styles.edgeInsetHorizontal5,
     this.fontSize = 12,
-  })  : assert(items.length > 0),
-        super(key: key);
+  }) : assert(items.length > 0);
 
   @override
   Widget build(BuildContext context) {

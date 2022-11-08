@@ -6,11 +6,11 @@ class Rarity extends StatelessWidget {
   final MainAxisAlignment alignment;
 
   const Rarity({
-    Key? key,
+    super.key,
     required this.stars,
     this.starSize = 20,
     this.alignment = MainAxisAlignment.center,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

@@ -5,21 +5,21 @@ import 'package:shiori/presentation/shared/bottom_sheets/common_button_bar.dart'
 class CommonButtonSheetButtons extends StatelessWidget {
   final bool showCancelButton;
   final bool showOkButton;
-  final Function? onOk;
-  final Function? onCancel;
+  final VoidCallback? onOk;
+  final VoidCallback? onCancel;
 
   final String? cancelText;
   final String? okText;
 
   const CommonButtonSheetButtons({
-    Key? key,
+    super.key,
     this.showCancelButton = true,
     this.showOkButton = true,
     this.onOk,
     this.onCancel,
     this.cancelText,
     this.okText,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

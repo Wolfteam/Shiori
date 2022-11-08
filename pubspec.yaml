@@ -53,7 +53,7 @@ dependencies:
   json_annotation: ^4.7.0
   linked_scroll_controller: ^0.2.0
   logger: ^1.1.0
-  package_info_plus: ^1.4.3+1
+  package_info_plus: ^3.0.1
   path: ^1.8.1
   path_provider: ^2.0.8
   permission_handler: ^10.2.0
@@ -70,7 +70,10 @@ dependencies:
   transparent_image: 2.0.0
   tuple: ^2.0.1
   url_launcher: ^6.1.6
-  version_tracker: ^2.1.1
+  #This is until my pr gets merged
+  version_tracker:
+    git:
+      url: https://github.com/Wolfteam/version_tracker
   wakelock: ^0.6.2
   waterfall_flow: ^3.0.2
   webview_windows: 0.1.6

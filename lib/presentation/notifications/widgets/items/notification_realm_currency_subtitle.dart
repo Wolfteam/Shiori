@@ -15,7 +15,7 @@ class NotificationRealmCurrencySubtitle extends StatelessWidget {
   final bool useTwentyFourHoursFormat;
 
   const NotificationRealmCurrencySubtitle({
-    Key? key,
+    super.key,
     required this.initialRealmCurrency,
     required this.currentRankType,
     required this.currentTrustRank,
@@ -23,7 +23,7 @@ class NotificationRealmCurrencySubtitle extends StatelessWidget {
     required this.completesAt,
     required this.useTwentyFourHoursFormat,
     this.note,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

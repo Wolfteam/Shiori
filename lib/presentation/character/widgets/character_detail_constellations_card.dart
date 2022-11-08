@@ -16,10 +16,10 @@ class CharacterDetailConstellationsCard extends StatelessWidget {
   final List<CharacterConstellationModel> constellations;
 
   const CharacterDetailConstellationsCard({
-    Key? key,
+    super.key,
     required this.elementType,
     required this.constellations,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -44,10 +44,9 @@ class _ConstellationCard extends StatelessWidget {
   final ElementType elementType;
 
   const _ConstellationCard({
-    Key? key,
     required this.model,
     required this.elementType,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

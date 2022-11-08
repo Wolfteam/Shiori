@@ -12,12 +12,12 @@ class CharacterSkillPriority extends StatelessWidget {
   final double fontSize;
 
   const CharacterSkillPriority({
-    Key? key,
+    super.key,
     required this.skillPriorities,
     required this.color,
     this.margin = Styles.edgeInsetHorizontal5,
     this.fontSize = 12,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

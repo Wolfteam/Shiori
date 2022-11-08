@@ -16,9 +16,7 @@ import 'package:shiori/presentation/shared/utils/toast_utils.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class GameCodesPage extends StatefulWidget {
-  const GameCodesPage({
-    Key? key,
-  }) : super(key: key);
+  const GameCodesPage({super.key});
 
   @override
   _GameCodesPageState createState() => _GameCodesPageState();
@@ -74,8 +72,9 @@ class _GameCodesPageState extends State<GameCodesPage> with SingleTickerProvider
   }
 
   Future<void> _launchUrl(String url) async {
-    if (await canLaunch(url)) {
-      await launch(url);
+    final uri = Uri.parse(url);
+    if (await canLaunchUrl(uri)) {
+      await launchUrl(uri);
     }
   }
 
@@ -96,12 +95,11 @@ class _Layout extends StatelessWidget {
   final ScrollController scrollController;
 
   const _Layout({
-    Key? key,
     required this.working,
     required this.expired,
     required this.isBusy,
     required this.scrollController,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -117,7 +115,7 @@ class _Layout extends StatelessWidget {
 }
 
 class _NothingHasBeenLoaded extends StatefulWidget {
-  const _NothingHasBeenLoaded({Key? key}) : super(key: key);
+  const _NothingHasBeenLoaded();
 
   @override
   __NothingHasBeenLoadedState createState() => __NothingHasBeenLoadedState();
@@ -159,11 +157,10 @@ class _PortraitLayout extends StatefulWidget {
   final ScrollController scrollController;
 
   const _PortraitLayout({
-    Key? key,
     required this.working,
     required this.expired,
     required this.scrollController,
-  }) : super(key: key);
+  });
 
   @override
   __PortraitLayoutState createState() => __PortraitLayoutState();
@@ -244,11 +241,10 @@ class _LandScapeLayout extends StatefulWidget {
   final ScrollController scrollController;
 
   const _LandScapeLayout({
-    Key? key,
     required this.working,
     required this.expired,
     required this.scrollController,
-  }) : super(key: key);
+  });
 
   @override
   __LandScapeLayoutState createState() => __LandScapeLayoutState();

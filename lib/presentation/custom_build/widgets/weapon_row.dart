@@ -27,13 +27,13 @@ class WeaponRow extends StatelessWidget {
   final bool readyForScreenshot;
 
   const WeaponRow({
-    Key? key,
+    super.key,
     required this.weapon,
     required this.color,
     required this.maxImageWidth,
     required this.weaponCount,
     required this.readyForScreenshot,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -216,20 +216,16 @@ class _TopDecoration extends StatelessWidget {
   final Alignment alignment;
 
   const _TopDecoration.right({
-    Key? key,
     required this.color,
     required this.tooltip,
     required this.text,
-  })  : alignment = Alignment.topRight,
-        super(key: key);
+  }) : alignment = Alignment.topRight;
 
   const _TopDecoration.left({
-    Key? key,
     required this.color,
     required this.tooltip,
     required this.text,
-  })  : alignment = Alignment.topLeft,
-        super(key: key);
+  }) : alignment = Alignment.topLeft;
 
   @override
   Widget build(BuildContext context) {
@@ -273,11 +269,10 @@ class _LevelDialog extends StatefulWidget {
   final List<WeaponFileStatModel> stats;
 
   const _LevelDialog({
-    Key? key,
     required this.statType,
     required this.stat,
     required this.stats,
-  }) : super(key: key);
+  });
 
   @override
   _LevelDialogState createState() => _LevelDialogState();

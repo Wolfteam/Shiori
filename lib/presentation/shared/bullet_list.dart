@@ -13,7 +13,7 @@ class BulletList extends StatelessWidget {
   final bool addTooltip;
 
   const BulletList({
-    Key? key,
+    super.key,
     required this.items,
     this.icon = Icons.fiber_manual_record,
     this.iconSize = 15,
@@ -22,7 +22,7 @@ class BulletList extends StatelessWidget {
     this.onDelete,
     this.padding = Styles.edgeInsetAll5,
     this.addTooltip = true,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -59,7 +59,6 @@ class _ListItem extends StatelessWidget {
   final bool addTooltip;
 
   const _ListItem({
-    Key? key,
     required this.index,
     required this.title,
     required this.icon,
@@ -69,7 +68,7 @@ class _ListItem extends StatelessWidget {
     this.onDelete,
     required this.padding,
     required this.addTooltip,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

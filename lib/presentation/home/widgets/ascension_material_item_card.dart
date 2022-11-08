@@ -12,13 +12,13 @@ class AscensionMaterialItemCard extends StatelessWidget {
   final Widget child;
 
   const AscensionMaterialItemCard({
-    Key? key,
+    super.key,
     required this.itemKey,
     required this.name,
     required this.image,
     required this.days,
     required this.child,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

@@ -33,7 +33,7 @@ class NotificationListTitle extends StatelessWidget {
   }
 
   NotificationListTitle({
-    Key? key,
+    super.key,
     required models.NotificationItem item,
     required this.subtitle,
   })  : itemKey = item.key,
@@ -43,8 +43,7 @@ class NotificationListTitle extends StatelessWidget {
         createdAt = item.createdAt,
         completesAt = item.completesAt,
         note = item.note,
-        showNotification = item.showNotification,
-        super(key: key);
+        showNotification = item.showNotification;
 
   @override
   Widget build(BuildContext context) {

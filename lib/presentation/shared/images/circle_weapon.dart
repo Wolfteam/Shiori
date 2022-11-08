@@ -12,25 +12,24 @@ class CircleWeapon extends StatelessWidget {
   final Gradient? gradient;
 
   const CircleWeapon({
-    Key? key,
+    super.key,
     required this.itemKey,
     required this.image,
     this.radius = 30,
     this.forDrag = false,
     this.onTap,
     this.gradient,
-  }) : super(key: key);
+  });
 
   CircleWeapon.fromItem({
-    Key? key,
+    super.key,
     required ItemCommon item,
     this.radius = 30,
     this.forDrag = false,
     this.onTap,
     this.gradient,
   })  : itemKey = item.key,
-        image = item.image,
-        super(key: key);
+        image = item.image;
 
   @override
   Widget build(BuildContext context) {

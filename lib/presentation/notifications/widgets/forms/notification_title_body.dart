@@ -9,10 +9,10 @@ class NotificationTitleBody extends StatefulWidget {
   final String body;
 
   const NotificationTitleBody({
-    Key? key,
+    super.key,
     required this.title,
     required this.body,
-  }) : super(key: key);
+  });
 
   @override
   _NotificationTitleBodyState createState() => _NotificationTitleBodyState();

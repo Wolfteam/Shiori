@@ -16,7 +16,7 @@ import 'package:shiori/presentation/shared/nothing_found_column.dart';
 import 'package:shiori/presentation/shared/styles.dart';
 
 class CalculatorSessionsPage extends StatelessWidget {
-  const CalculatorSessionsPage({Key? key}) : super(key: key);
+  const CalculatorSessionsPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +28,7 @@ class CalculatorSessionsPage extends StatelessWidget {
 }
 
 class _Body extends StatefulWidget {
-  const _Body({Key? key}) : super(key: key);
+  const _Body();
 
   @override
   _BodyState createState() => _BodyState();

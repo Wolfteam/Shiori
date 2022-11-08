@@ -23,7 +23,7 @@ import 'package:shiori/presentation/shared/utils/size_utils.dart';
 class ArtifactPage extends StatelessWidget {
   final String itemKey;
 
-  const ArtifactPage({Key? key, required this.itemKey}) : super(key: key);
+  const ArtifactPage({super.key, required this.itemKey});
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +36,7 @@ class ArtifactPage extends StatelessWidget {
 }
 
 class _PortraitLayout extends StatelessWidget {
-  const _PortraitLayout({Key? key}) : super(key: key);
+  const _PortraitLayout();
 
   @override
   Widget build(BuildContext context) {
@@ -125,7 +125,7 @@ class _PortraitLayout extends StatelessWidget {
 }
 
 class _LandscapeLayout extends StatelessWidget {
-  const _LandscapeLayout({Key? key}) : super(key: key);
+  const _LandscapeLayout();
 
   @override
   Widget build(BuildContext context) {

@@ -18,14 +18,14 @@ class AppWebView extends StatelessWidget {
   final AppBar? appBar;
 
   const AppWebView({
-    Key? key,
+    super.key,
     required this.url,
     required this.userAgent,
     required this.hasInternetConnection,
     this.isLoading = false,
     this.script,
     this.appBar,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -59,14 +59,13 @@ class _MobileWebView extends StatefulWidget {
   final AppBar? appBar;
 
   const _MobileWebView({
-    Key? key,
     required this.url,
     required this.userAgent,
     required this.hasInternetConnection,
     this.isLoading = false,
     this.script,
     this.appBar,
-  }) : super(key: key);
+  });
 
   @override
   _MobileWebViewState createState() => _MobileWebViewState();
@@ -126,13 +125,12 @@ class _DesktopWebView extends StatefulWidget {
   final AppBar? appBar;
 
   const _DesktopWebView({
-    Key? key,
     required this.url,
     required this.hasInternetConnection,
     this.isLoading = false,
     this.script,
     this.appBar,
-  }) : super(key: key);
+  });
 
   @override
   _DesktopWebViewState createState() => _DesktopWebViewState();

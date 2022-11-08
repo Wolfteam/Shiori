@@ -11,12 +11,12 @@ class SliverPageFilter extends StatelessWidget {
   final Function(String) searchChanged;
 
   const SliverPageFilter({
-    Key? key,
+    super.key,
     required this.title,
     this.search,
     required this.onPressed,
     required this.searchChanged,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

@@ -17,10 +17,10 @@ class MainTabPage extends StatefulWidget {
   final AppResourceUpdateResultType? updateResult;
 
   const MainTabPage({
-    Key? key,
+    super.key,
     required this.showChangelog,
     this.updateResult,
-  }) : super(key: key);
+  });
 
   @override
   _MainTabPageState createState() => _MainTabPageState();
@@ -56,13 +56,13 @@ class _MainTabPageState extends State<MainTabPage> with SingleTickerProviderStat
     context.read<SettingsBloc>().add(const SettingsEvent.init());
 
     if (widget.showChangelog) {
-      WidgetsBinding.instance?.addPostFrameCallback((_) {
+      WidgetsBinding.instance.addPostFrameCallback((_) {
         showDialog(context: context, builder: (ctx) => const ChangelogDialog());
       });
     }
 
     if (widget.updateResult != null) {
-      WidgetsBinding.instance?.addPostFrameCallback((_) {
+      WidgetsBinding.instance.addPostFrameCallback((_) {
         final toast = ToastUtils.of(context);
         final s = S.of(context);
         switch (widget.updateResult) {

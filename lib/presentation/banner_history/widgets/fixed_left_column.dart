@@ -23,13 +23,13 @@ class FixedLeftColumn extends StatelessWidget {
   final ScrollController controller;
 
   const FixedLeftColumn({
-    Key? key,
+    super.key,
     required this.items,
     required this.margin,
     required this.cellWidth,
     required this.cellHeight,
     required this.controller,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -69,7 +69,6 @@ class _ItemCard extends StatelessWidget {
   final double cellHeight;
 
   const _ItemCard({
-    Key? key,
     required this.itemKey,
     required this.type,
     required this.name,
@@ -79,7 +78,7 @@ class _ItemCard extends StatelessWidget {
     required this.margin,
     required this.cellWidth,
     required this.cellHeight,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -174,7 +173,7 @@ class _ItemCard extends StatelessWidget {
 }
 
 class _OptionsDialog extends StatelessWidget {
-  const _OptionsDialog({Key? key}) : super(key: key);
+  const _OptionsDialog();
 
   @override
   Widget build(BuildContext context) {

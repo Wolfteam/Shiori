@@ -23,9 +23,9 @@ class CustomBuildPage extends StatefulWidget {
   final int? itemKey;
 
   const CustomBuildPage({
-    Key? key,
+    super.key,
     this.itemKey,
-  }) : super(key: key);
+  });
 
   @override
   State<CustomBuildPage> createState() => _CustomBuildPageState();
@@ -70,10 +70,9 @@ class _AppBar extends StatelessWidget implements PreferredSizeWidget {
   final ScreenshotController screenshotController;
 
   const _AppBar({
-    Key? key,
     required this.newBuild,
     required this.screenshotController,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -212,7 +211,7 @@ class _AppBar extends StatelessWidget implements PreferredSizeWidget {
 }
 
 class _PortraitLayout extends StatelessWidget {
-  const _PortraitLayout({Key? key}) : super(key: key);
+  const _PortraitLayout();
 
   @override
   Widget build(BuildContext context) {
@@ -234,7 +233,7 @@ class _PortraitLayout extends StatelessWidget {
 }
 
 class _LandscapeLayout extends StatelessWidget {
-  const _LandscapeLayout({Key? key}) : super(key: key);
+  const _LandscapeLayout();
 
   @override
   Widget build(BuildContext context) {
@@ -279,9 +278,8 @@ class _WeaponsAndArtifacts extends StatelessWidget {
   final bool useColumn;
 
   const _WeaponsAndArtifacts({
-    Key? key,
     this.useColumn = false,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

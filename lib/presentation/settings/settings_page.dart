@@ -26,7 +26,7 @@ class SettingsPage extends StatelessWidget {
 }
 
 class _MobileLayout extends StatelessWidget {
-  const _MobileLayout({Key? key}) : super(key: key);
+  const _MobileLayout();
 
   @override
   Widget build(BuildContext context) {
@@ -46,7 +46,7 @@ class _MobileLayout extends StatelessWidget {
 }
 
 class _DesktopTabletLayout extends StatelessWidget {
-  const _DesktopTabletLayout({Key? key}) : super(key: key);
+  const _DesktopTabletLayout();
 
   @override
   Widget build(BuildContext context) {

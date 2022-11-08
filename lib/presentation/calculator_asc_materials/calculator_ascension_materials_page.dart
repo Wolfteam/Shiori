@@ -29,9 +29,9 @@ class CalculatorAscensionMaterialsPage extends StatelessWidget {
   final int sessionKey;
 
   const CalculatorAscensionMaterialsPage({
-    Key? key,
+    super.key,
     required this.sessionKey,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -51,7 +51,7 @@ class CalculatorAscensionMaterialsPage extends StatelessWidget {
 class _AppBar extends StatelessWidget implements PreferredSizeWidget {
   final int sessionKey;
 
-  const _AppBar({Key? key, required this.sessionKey}) : super(key: key);
+  const _AppBar({required this.sessionKey});
 
   @override
   Widget build(BuildContext context) {
@@ -106,7 +106,7 @@ class _AppBar extends StatelessWidget implements PreferredSizeWidget {
 class _FabMenu extends StatelessWidget {
   final int sessionKey;
 
-  const _FabMenu({Key? key, required this.sessionKey}) : super(key: key);
+  const _FabMenu({required this.sessionKey});
 
   @override
   Widget build(BuildContext context) {
@@ -213,11 +213,10 @@ class _PortraitLayout extends StatelessWidget {
   final List<Widget> summary;
 
   const _PortraitLayout({
-    Key? key,
     required this.sessionKey,
     required this.items,
     required this.summary,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -286,11 +285,10 @@ class _LandscapeLayout extends StatefulWidget {
   final List<Widget> summary;
 
   const _LandscapeLayout({
-    Key? key,
     required this.sessionKey,
     required this.items,
     required this.summary,
-  }) : super(key: key);
+  });
 
   @override
   State<_LandscapeLayout> createState() => _LandscapeLayoutState();

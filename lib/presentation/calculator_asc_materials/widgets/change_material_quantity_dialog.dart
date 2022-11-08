@@ -10,10 +10,10 @@ class ChangeMaterialQuantityDialog extends StatelessWidget {
   final String itemKey;
 
   const ChangeMaterialQuantityDialog({
-    Key? key,
+    super.key,
     this.sessionKey,
     required this.itemKey,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +27,7 @@ class ChangeMaterialQuantityDialog extends StatelessWidget {
 class _Body extends StatelessWidget {
   final int? sessionKey;
 
-  const _Body({Key? key, this.sessionKey}) : super(key: key);
+  const _Body({this.sessionKey});
 
   @override
   Widget build(BuildContext context) {

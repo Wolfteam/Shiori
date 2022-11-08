@@ -5,21 +5,20 @@ import 'package:url_launcher/url_launcher.dart';
 class TextLink extends StatelessWidget {
   final String text;
   final String url;
-  final Function? onTap;
+  final VoidCallback? onTap;
 
   const TextLink({
-    Key? key,
+    super.key,
     required this.text,
     required this.url,
     this.onTap,
-  }) : super(key: key);
+  });
 
   const TextLink.withoutLink({
-    Key? key,
+    super.key,
     required this.text,
     required this.onTap,
-  })  : url = '',
-        super(key: key);
+  }) : url = '';
 
   @override
   Widget build(BuildContext context) {
@@ -47,8 +46,9 @@ class TextLink extends StatelessWidget {
   }
 
   Future<void> _launchUrl(String url) async {
-    if (await canLaunch(url)) {
-      await launch(url);
+    final uri = Uri.parse(url);
+    if (await canLaunchUrl(uri)) {
+      await launchUrl(uri);
     }
   }
 }

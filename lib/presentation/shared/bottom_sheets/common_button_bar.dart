@@ -10,13 +10,13 @@ class CommonButtonBar extends StatelessWidget {
   final double spacing;
 
   const CommonButtonBar({
-    Key? key,
+    super.key,
     required this.children,
     this.alignment = WrapAlignment.end,
     this.margin = Styles.edgeInsetVertical5,
     this.runSpacing,
     this.spacing = 10,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

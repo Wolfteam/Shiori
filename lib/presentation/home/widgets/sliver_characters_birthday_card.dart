@@ -47,9 +47,8 @@ class _CakeCard extends StatelessWidget {
   final ItemCommon item;
 
   const _CakeCard({
-    Key? key,
     required this.item,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

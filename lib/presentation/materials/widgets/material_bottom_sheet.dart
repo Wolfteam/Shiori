@@ -23,7 +23,7 @@ final _ignoredSubStats = [
 ];
 
 class MaterialBottomSheet extends StatelessWidget {
-  const MaterialBottomSheet({Key? key}) : super(key: key);
+  const MaterialBottomSheet({super.key});
 
   static Widget route(BuildContext context) {
     return BlocProvider.value(
@@ -102,12 +102,11 @@ class _OtherFilters extends StatelessWidget {
   final bool forEndDrawer;
 
   const _OtherFilters({
-    Key? key,
     required this.tempType,
     required this.tempFilterType,
     required this.tempSortDirectionType,
     required this.forEndDrawer,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -142,7 +141,7 @@ class _OtherFilters extends StatelessWidget {
 }
 
 class _ButtonBar extends StatelessWidget {
-  const _ButtonBar({Key? key}) : super(key: key);
+  const _ButtonBar();
 
   @override
   Widget build(BuildContext context) {

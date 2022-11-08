@@ -12,13 +12,13 @@ class AscensionLevel extends StatelessWidget {
   final OnSave onSave;
 
   const AscensionLevel({
-    Key? key,
+    super.key,
     required this.level,
     this.maxValue = maxAscensionLevel,
     this.minValue = minAscensionLevel,
     required this.onSave,
     this.iconSize = 24,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

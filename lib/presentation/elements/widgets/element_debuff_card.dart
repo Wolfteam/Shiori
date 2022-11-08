@@ -8,11 +8,11 @@ class ElementDebuffCard extends StatelessWidget {
   final String effect;
 
   const ElementDebuffCard({
-    Key? key,
+    super.key,
     required this.image,
     required this.name,
     required this.effect,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

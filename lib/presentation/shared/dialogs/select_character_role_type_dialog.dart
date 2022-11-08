@@ -11,11 +11,11 @@ class SelectCharacterRoleTypeDialog extends StatelessWidget {
   final Function(CharacterRoleType?)? onSave;
 
   const SelectCharacterRoleTypeDialog({
-    Key? key,
+    super.key,
     this.excluded = const <CharacterRoleType>[],
     this.selectedValues = const <CharacterRoleType>[],
     this.onSave,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

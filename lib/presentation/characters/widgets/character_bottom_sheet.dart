@@ -18,7 +18,7 @@ import 'package:shiori/presentation/shared/styles.dart';
 import 'package:shiori/presentation/shared/weapons_button_bar.dart';
 
 class CharacterBottomSheet extends StatelessWidget {
-  const CharacterBottomSheet({Key? key}) : super(key: key);
+  const CharacterBottomSheet({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -117,14 +117,13 @@ class _OtherFilters extends StatelessWidget {
   final bool forEndDrawer;
 
   const _OtherFilters({
-    Key? key,
     required this.tempStatusType,
     required this.tempRoleType,
     this.tempRegionType,
     required this.tempCharacterFilterType,
     required this.tempSortDirectionType,
     this.forEndDrawer = false,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -178,7 +177,7 @@ class _OtherFilters extends StatelessWidget {
 }
 
 class _ButtonBar extends StatelessWidget {
-  const _ButtonBar({Key? key}) : super(key: key);
+  const _ButtonBar();
 
   @override
   Widget build(BuildContext context) {
