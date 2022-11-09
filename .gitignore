@@ -9,6 +9,7 @@
 *.env
 *.env.*
 .fvm/flutter_sdk
+/local.properties
 
 # Below was taken from https://github.com/flutter/flutter/blob/master/.gitignore
 
