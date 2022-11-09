@@ -15,7 +15,7 @@ class SkillItem extends StatelessWidget {
   final bool isDesiredDecEnabled;
 
   const SkillItem({
-    Key? key,
+    super.key,
     required this.index,
     required this.name,
     required this.currentLevel,
@@ -24,7 +24,7 @@ class SkillItem extends StatelessWidget {
     required this.isCurrentDecEnabled,
     required this.isDesiredIncEnabled,
     required this.isDesiredDecEnabled,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

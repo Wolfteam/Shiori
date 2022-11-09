@@ -17,14 +17,14 @@ class MaterialItem extends StatelessWidget {
   final int sessionKey;
 
   const MaterialItem({
-    Key? key,
+    super.key,
     required this.itemKey,
     required this.type,
     required this.image,
     required this.quantity,
     required this.sessionKey,
     this.textColor,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

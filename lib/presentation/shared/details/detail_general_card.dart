@@ -9,12 +9,12 @@ class DetailGeneralCard extends StatelessWidget {
   final List<Widget> children;
 
   const DetailGeneralCard({
-    Key? key,
+    super.key,
     required this.itemName,
     required this.color,
     required this.rarity,
     this.children = const [],
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

@@ -5,7 +5,7 @@ import 'package:shiori/generated/l10n.dart';
 import 'package:shiori/presentation/shared/extensions/media_query_extensions.dart';
 
 class ClearAllDialog extends StatefulWidget {
-  const ClearAllDialog({Key? key}) : super(key: key);
+  const ClearAllDialog({super.key});
 
   @override
   _ClearAllDialogState createState() => _ClearAllDialogState();

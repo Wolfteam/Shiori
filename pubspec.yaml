@@ -15,62 +15,65 @@ publish_to: "none" # Remove this line if you wish to publish to pub.dev
 # In iOS, build-name is used as CFBundleShortVersionString while build-number used as CFBundleVersion.
 # Read more about iOS versioning at
 # https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
-version: 1.6.0+107
+version: 1.6.2+109
 
 environment:
-  sdk: '>=2.15.1 <3.0.0'
+  sdk: '>=2.17.0 <3.0.0'
 
 dependencies:
   darq: ^1.2.1
-  device_info_plus: ^4.0.0
-  devicelocale: ^0.5.4
+  device_info_plus: ^8.0.0
+  devicelocale: ^0.5.5
   enum_to_string: ^2.0.1
-  envify: ^2.0.2
-  fl_chart: ^0.55.0
+  fl_chart: ^0.55.2
   flutter:
     sdk: flutter
   flutter_bloc: ^7.3.1
   flutter_colorpicker: ^1.0.3
-  flutter_inappwebview: ^5.4.3+7
+  flutter_envify: ^3.0.1
+  flutter_inappwebview: ^5.7.1
   flutter_local_notifications: ^9.5.3+1
   flutter_localizations:
     sdk: flutter
-  flutter_markdown: ^0.6.9
+  flutter_markdown: ^0.6.13
   flutter_native_timezone: ^2.0.0
-  flutter_slidable: 1.3.0
+  flutter_slidable: 2.0.0
   flutter_user_agentx: ^1.2.4
-  fluttertoast: ^8.0.9
-  freezed_annotation: ^1.1.0
+  fluttertoast: ^8.1.1
+  freezed_annotation: ^2.2.0
   get_it: ^7.2.0
   grouped_list: ^5.1.2
   hive: ^2.2.3
   hive_flutter: ^1.1.0
-  html: ^0.15.0
+  html: ^0.15.1
   http: ^0.13.5
   image_gallery_saver: ^1.7.1
   infinite_listview: ^1.1.0
-  internet_connection_checker: ^0.0.1+3
-  json_annotation: ^4.4.0
+  internet_connection_checker: ^0.0.1+4
+  json_annotation: ^4.7.0
   linked_scroll_controller: ^0.2.0
   logger: ^1.1.0
-  package_info_plus: ^1.4.2
-  path: ^1.8.0
-  path_provider: ^2.0.8
-  permission_handler: ^10.0.0
+  package_info_plus: ^3.0.1
+  path: ^1.8.2
+  path_provider: ^2.0.11
+  permission_handler: ^10.2.0
   pull_to_refresh: ^2.0.0
-  purchases_flutter: ^3.10.0
-  rate_my_app: ^1.1.2
-  responsive_builder: ^0.4.2
+  purchases_flutter: ^4.3.2
+  rate_my_app: ^1.1.3
+  responsive_builder: ^0.4.3
   responsive_grid: ^2.1.0
   screenshot: ^1.2.3
   shared_preferences: ^2.0.15
-  sprintf: ^6.0.0
-  store_checker: ^1.0.0
-  synchronized: ^3.0.0+2
+  sprintf: ^7.0.0
+  store_checker: ^1.1.0
+  synchronized: ^3.0.0+3
   transparent_image: 2.0.0
-  tuple: ^2.0.0
-  url_launcher: ^6.1.4
-  version_tracker: ^2.1.1
+  tuple: ^2.0.1
+  url_launcher: ^6.1.6
+  #This is until my pr gets merged
+  version_tracker:
+    git:
+      url: https://github.com/Wolfteam/version_tracker
   wakelock: ^0.6.2
   waterfall_flow: ^3.0.2
   webview_windows: 0.1.6
@@ -82,16 +85,21 @@ dependencies:
 dev_dependencies:
   bloc_test: ^8.5.0
   build_runner:
-  envify_generator: ^2.0.2
-  flutter_launcher_icons: ^0.9.3
+  flutter_envify_generator: ^3.0.1
+  flutter_launcher_icons: ^0.10.0
   flutter_test:
     sdk: flutter
-  freezed: ^1.1.0
-  hive_generator: ^1.1.3
-  json_serializable: ^6.1.3
-  lint: ^1.7.2
-  mockito: ^5.0.16
-  msix: ^3.6.2
+  freezed: ^2.2.1
+  hive_generator: ^2.0.0
+  json_serializable: ^6.5.4
+  lint: ^1.10.0
+  mockito: ^5.3.2
+  msix: ^3.7.0
+
+# Just to make the flutter_test + hive_generator work....
+dependency_overrides:
+  analyzer: ">=4.6.0 <6.0.0"
+  test: ^1.17.11
 
 flutter_icons:
   android: "launcher_icon"

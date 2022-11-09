@@ -19,7 +19,7 @@ class NotificationWeeklyBossForm extends StatelessWidget {
   final bool showOtherImages;
 
   const NotificationWeeklyBossForm({
-    Key? key,
+    super.key,
     required this.title,
     required this.body,
     required this.note,
@@ -27,7 +27,7 @@ class NotificationWeeklyBossForm extends StatelessWidget {
     required this.isInEditMode,
     required this.images,
     required this.showOtherImages,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

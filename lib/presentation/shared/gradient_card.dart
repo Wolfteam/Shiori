@@ -13,7 +13,7 @@ class GradientCard extends StatelessWidget {
   final Color? shadowColor;
 
   const GradientCard({
-    Key? key,
+    super.key,
     required this.gradient,
     this.shape,
     this.margin = const EdgeInsets.all(4),
@@ -22,7 +22,7 @@ class GradientCard extends StatelessWidget {
     this.elevation,
     this.shadowColor,
     this.semanticContainer = true,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

@@ -10,10 +10,10 @@ class WeaponCraftingMaterials extends StatelessWidget {
   final Color rarityColor;
 
   const WeaponCraftingMaterials({
-    Key? key,
+    super.key,
     required this.materials,
     required this.rarityColor,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

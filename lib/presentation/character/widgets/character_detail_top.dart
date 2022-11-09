@@ -12,8 +12,8 @@ import 'package:shiori/presentation/shared/styles.dart';
 
 class CharacterDetailTop extends StatelessWidget {
   const CharacterDetailTop({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {

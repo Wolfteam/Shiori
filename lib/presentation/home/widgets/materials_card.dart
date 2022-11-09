@@ -9,9 +9,9 @@ class MaterialsCard extends StatelessWidget {
   final bool iconToTheLeft;
 
   const MaterialsCard({
-    Key? key,
+    super.key,
     required this.iconToTheLeft,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

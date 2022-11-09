@@ -19,7 +19,7 @@ class NotificationFarmingMaterialForm extends StatelessWidget {
   final bool showOtherImages;
 
   const NotificationFarmingMaterialForm({
-    Key? key,
+    super.key,
     required this.title,
     required this.body,
     this.note,
@@ -27,7 +27,7 @@ class NotificationFarmingMaterialForm extends StatelessWidget {
     required this.isInEditMode,
     required this.images,
     required this.showOtherImages,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

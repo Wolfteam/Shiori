@@ -7,10 +7,10 @@ class SliverScaffoldWithFab extends StatefulWidget {
   final PreferredSizeWidget? appbar;
 
   const SliverScaffoldWithFab({
-    Key? key,
+    super.key,
     required this.slivers,
     this.appbar,
-  }) : super(key: key);
+  });
 
   @override
   _SliverScaffoldWithFabState createState() => _SliverScaffoldWithFabState();

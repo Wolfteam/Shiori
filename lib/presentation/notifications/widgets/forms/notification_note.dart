@@ -7,7 +7,7 @@ import 'package:shiori/generated/l10n.dart';
 class NotificationNote extends StatefulWidget {
   final String? note;
 
-  const NotificationNote({Key? key, required this.note}) : super(key: key);
+  const NotificationNote({super.key, required this.note});
 
   @override
   _NotificationNoteState createState() => _NotificationNoteState();

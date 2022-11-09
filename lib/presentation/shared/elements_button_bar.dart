@@ -10,11 +10,11 @@ class ElementsButtonBar extends StatelessWidget {
   final double iconSize;
 
   const ElementsButtonBar({
-    Key? key,
+    super.key,
     required this.onClick,
     this.selectedValues = const [],
     this.iconSize = 24,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

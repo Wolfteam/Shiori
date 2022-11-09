@@ -10,10 +10,10 @@ class SliverWeaponAscensionMaterials extends StatelessWidget {
   final bool useListView;
 
   const SliverWeaponAscensionMaterials({
-    Key? key,
+    super.key,
     required this.weaponAscMaterials,
     this.useListView = true,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

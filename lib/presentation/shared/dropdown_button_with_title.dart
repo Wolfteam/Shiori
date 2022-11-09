@@ -11,14 +11,14 @@ class DropdownButtonWithTitle<T> extends StatelessWidget {
   final EdgeInsets margin;
 
   const DropdownButtonWithTitle({
-    Key? key,
+    super.key,
     required this.title,
     required this.currentValue,
     required this.items,
     this.onChanged,
     this.isExpanded = true,
     this.margin = const EdgeInsets.only(bottom: 15, top: 10),
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

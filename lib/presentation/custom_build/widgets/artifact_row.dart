@@ -28,12 +28,12 @@ class ArtifactRow extends StatelessWidget {
   final bool readyForScreenshot;
 
   const ArtifactRow({
-    Key? key,
+    super.key,
     required this.artifact,
     required this.color,
     required this.maxImageWidth,
     required this.readyForScreenshot,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

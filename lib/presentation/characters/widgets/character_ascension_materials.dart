@@ -8,25 +8,26 @@ class CharacterAscensionMaterials extends StatelessWidget {
   final List<String> images;
 
   const CharacterAscensionMaterials({
-    Key? key,
+    super.key,
     required this.images,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
     final s = S.of(context);
     const minNumberOfMaterialsShown = 7;
     final needsDummyItems = images.length < minNumberOfMaterialsShown;
+    final imgsToRender = [...images];
     if (needsDummyItems) {
       final diff = minNumberOfMaterialsShown - images.length;
-      images.addAll(List.generate(diff, (index) => ''));
+      imgsToRender.addAll(List.generate(diff, (index) => ''));
     }
     return Tooltip(
       message: s.ascensionMaterials,
       child: Wrap(
         alignment: WrapAlignment.spaceEvenly,
         crossAxisAlignment: WrapCrossAlignment.center,
-        children: images.map((e) => _MaterialItem(image: e)).toList(),
+        children: imgsToRender.map((e) => _MaterialItem(image: e)).toList(),
       ),
     );
   }
@@ -35,7 +36,7 @@ class CharacterAscensionMaterials extends StatelessWidget {
 class _MaterialItem extends StatelessWidget {
   final String image;
 
-  const _MaterialItem({Key? key, required this.image}) : super(key: key);
+  const _MaterialItem({required this.image});
 
   @override
   Widget build(BuildContext context) {

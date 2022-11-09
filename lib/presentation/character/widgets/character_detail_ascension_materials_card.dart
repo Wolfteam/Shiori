@@ -13,10 +13,10 @@ class CharacterDetailAscensionMaterialsCard extends StatelessWidget {
   final List<CharacterAscensionModel> ascensionMaterials;
 
   const CharacterDetailAscensionMaterialsCard({
-    Key? key,
+    super.key,
     required this.elementType,
     required this.ascensionMaterials,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

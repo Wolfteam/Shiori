@@ -13,13 +13,13 @@ class MaterialDetailTop extends StatelessWidget {
   final List<int> days;
 
   const MaterialDetailTop({
-    Key? key,
+    super.key,
     required this.name,
     required this.rarity,
     required this.type,
     required this.image,
     required this.days,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

@@ -8,6 +8,7 @@ import 'package:shiori/domain/models/models.dart' as models;
 import 'package:shiori/generated/l10n.dart';
 import 'package:shiori/injection.dart';
 import 'package:shiori/presentation/notifications/widgets/add_edit_notification_bottom_sheet.dart';
+import 'package:shiori/presentation/shared/dialogs/confirm_dialog.dart';
 import 'package:shiori/presentation/shared/dialogs/number_picker_dialog.dart';
 import 'package:shiori/presentation/shared/images/circle_item.dart';
 import 'package:shiori/presentation/shared/styles.dart';
@@ -26,8 +27,13 @@ class NotificationListTitle extends StatelessWidget {
 
   final Widget subtitle;
 
+  bool get isCompleted {
+    final diff = completesAt.difference(DateTime.now());
+    return diff.inSeconds <= 0;
+  }
+
   NotificationListTitle({
-    Key? key,
+    super.key,
     required models.NotificationItem item,
     required this.subtitle,
   })  : itemKey = item.key,
@@ -37,8 +43,7 @@ class NotificationListTitle extends StatelessWidget {
         createdAt = item.createdAt,
         completesAt = item.completesAt,
         note = item.note,
-        showNotification = item.showNotification,
-        super(key: key);
+        showNotification = item.showNotification;
 
   @override
   Widget build(BuildContext context) {
@@ -56,18 +61,26 @@ class NotificationListTitle extends StatelessWidget {
           extentRatio: extentRatio,
           motion: const ScrollMotion(),
           children: [
-            SlidableAction(
-              label: s.stop,
-              backgroundColor: Colors.deepOrange,
-              icon: Icons.stop,
-              foregroundColor: Colors.white,
-              onPressed: (_) => context.read<NotificationsBloc>().add(NotificationsEvent.stop(id: itemKey, type: type)),
-            ),
+            if (!isCompleted)
+              SlidableAction(
+                label: s.stop,
+                backgroundColor: Colors.deepOrange,
+                icon: Icons.stop,
+                foregroundColor: Colors.white,
+                onPressed: (_) => context.read<NotificationsBloc>().add(NotificationsEvent.stop(id: itemKey, type: type)),
+              ),
             SlidableAction(
               label: s.delete,
               backgroundColor: Colors.red,
               icon: Icons.delete,
-              onPressed: (_) => context.read<NotificationsBloc>().add(NotificationsEvent.delete(id: itemKey, type: type)),
+              onPressed: (_) => showDialog(
+                context: context,
+                builder: (_) => ConfirmDialog(
+                  title: s.delete,
+                  content: s.confirmQuestion,
+                  onOk: () => context.read<NotificationsBloc>().add(NotificationsEvent.delete(id: itemKey, type: type)),
+                ),
+              ),
             ),
           ],
         ),

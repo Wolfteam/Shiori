@@ -11,13 +11,13 @@ class WeaponCardAscensionMaterial extends StatelessWidget {
   final List<ItemCommon> weapons;
 
   const WeaponCardAscensionMaterial({
-    Key? key,
+    super.key,
     required this.itemKey,
     required this.name,
     required this.image,
     required this.days,
     required this.weapons,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

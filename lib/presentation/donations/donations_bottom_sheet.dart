@@ -15,7 +15,7 @@ import 'package:shiori/presentation/shared/styles.dart';
 import 'package:shiori/presentation/shared/utils/toast_utils.dart';
 
 class DonationsBottomSheet extends StatelessWidget {
-  const DonationsBottomSheet({Key? key}) : super(key: key);
+  const DonationsBottomSheet({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +34,7 @@ class DonationsBottomSheet extends StatelessWidget {
 }
 
 class _Body extends StatefulWidget {
-  const _Body({Key? key}) : super(key: key);
+  const _Body();
 
   @override
   _BodyState createState() => _BodyState();
@@ -164,11 +164,10 @@ class _DonationItem extends StatelessWidget {
   final GestureTapCallback onTap;
 
   const _DonationItem({
-    Key? key,
     required this.item,
     required this.isSelected,
     required this.onTap,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -180,8 +179,8 @@ class _DonationItem extends StatelessWidget {
         color: isSelected
             ? theme.colorScheme.primary.withOpacity(0.5)
             : theme.scaffoldBackgroundColor == Colors.black
-              ? theme.cardColor.withOpacity(0.5)
-              : theme.cardColor,
+                ? theme.cardColor.withOpacity(0.5)
+                : theme.cardColor,
         margin: Styles.edgeInsetAll10,
         child: Padding(
           padding: Styles.edgeInsetAll10,
@@ -202,11 +201,10 @@ class _Error extends StatelessWidget {
   final bool canMakePurchases;
 
   const _Error({
-    Key? key,
     required this.noInternetConnection,
     required this.isInitialized,
     required this.canMakePurchases,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

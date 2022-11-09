@@ -126,7 +126,10 @@ class ApiServiceImpl implements ApiService {
     return headers;
   }
 
-  Map<String, String> _getCommonApiHeaders() => {Env.commonHeaderName: 'true'};
+  Map<String, String> _getCommonApiHeaders() => {
+        Env.commonHeaderName: 'true',
+        'x-shiori-os': Platform.operatingSystem,
+      };
 
   void _handleError(String caller, Object e, StackTrace s) {
     if (e is http.ClientException) {

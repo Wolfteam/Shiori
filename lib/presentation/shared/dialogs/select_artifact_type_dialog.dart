@@ -11,11 +11,11 @@ class SelectArtifactTypeDialog extends StatelessWidget {
   final Function(ArtifactType?)? onSave;
 
   const SelectArtifactTypeDialog({
-    Key? key,
+    super.key,
     this.excluded = const <ArtifactType>[],
     this.selectedValues = const <ArtifactType>[],
     this.onSave,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

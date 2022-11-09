@@ -30,7 +30,7 @@ class NotificationRealmCurrency extends StatelessWidget {
   final int currentTrustRank;
 
   const NotificationRealmCurrency({
-    Key? key,
+    super.key,
     required this.title,
     required this.body,
     required this.currentRealmCurrency,
@@ -41,7 +41,7 @@ class NotificationRealmCurrency extends StatelessWidget {
     required this.showOtherImages,
     required this.currentRankType,
     required this.currentTrustRank,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

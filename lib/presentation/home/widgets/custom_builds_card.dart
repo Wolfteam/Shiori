@@ -8,9 +8,9 @@ class CustomBuildsCard extends StatelessWidget {
   final bool iconToTheLeft;
 
   const CustomBuildsCard({
-    Key? key,
+    super.key,
     required this.iconToTheLeft,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

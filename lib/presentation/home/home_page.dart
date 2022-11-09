@@ -149,7 +149,7 @@ class _HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin<
     }
   }
 
-  Widget _buildClickableTitle(String title, String? buttonText, BuildContext context, {Function? onClick}) {
+  Widget _buildClickableTitle(String title, String? buttonText, BuildContext context, {VoidCallback? onClick}) {
     final theme = Theme.of(context);
     final row = buttonText != null
         ? Row(

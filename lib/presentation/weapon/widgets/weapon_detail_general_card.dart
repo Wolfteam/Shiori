@@ -16,7 +16,7 @@ class WeaponDetailGeneralCard extends StatelessWidget {
   final ItemLocationType locationType;
 
   const WeaponDetailGeneralCard({
-    Key? key,
+    super.key,
     required this.name,
     required this.atk,
     required this.rarity,
@@ -24,7 +24,7 @@ class WeaponDetailGeneralCard extends StatelessWidget {
     required this.secondaryStatValue,
     required this.type,
     required this.locationType,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

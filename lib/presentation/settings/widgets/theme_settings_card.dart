@@ -14,7 +14,7 @@ import 'package:shiori/presentation/shared/styles.dart';
 import 'package:shiori/presentation/shared/utils/enum_utils.dart';
 
 class ThemeSettingsCard extends StatelessWidget {
-  const ThemeSettingsCard({Key? key}) : super(key: key);
+  const ThemeSettingsCard({super.key});
 
   @override
   Widget build(BuildContext context) {

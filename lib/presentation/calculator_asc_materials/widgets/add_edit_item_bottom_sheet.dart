@@ -30,24 +30,22 @@ class AddEditItemBottomSheet extends StatelessWidget {
   final bool isActive;
 
   const AddEditItemBottomSheet.toAddItem({
-    Key? key,
+    super.key,
     required this.sessionKey,
     required this.keyName,
     required this.isAWeapon,
   })  : index = null,
         isInEditMode = false,
-        isActive = true,
-        super(key: key);
+        isActive = true;
 
   const AddEditItemBottomSheet.toEditItem({
-    Key? key,
+    super.key,
     required this.sessionKey,
     required this.index,
     required this.isAWeapon,
     required this.isActive,
   })  : keyName = null,
-        isInEditMode = true,
-        super(key: key);
+        isInEditMode = true;
 
   static Map<String, dynamic> buildNavigationArgsToAddItem(int sessionKey, String keyName, {bool isAWeapon = false}) =>
       <String, dynamic>{_sessionKey: sessionKey, _keyNameKey: keyName, _isAWeaponKey: isAWeapon, _editKey: false};
@@ -270,9 +268,8 @@ class _UseMaterialsFromInventoryToggleButton extends StatelessWidget {
   final bool useMaterialsFromInventory;
 
   const _UseMaterialsFromInventoryToggleButton({
-    Key? key,
     required this.useMaterialsFromInventory,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -324,7 +321,6 @@ class _ButtonBar extends StatelessWidget {
   final List<CharacterSkill> skills;
 
   const _ButtonBar({
-    Key? key,
     required this.sessionKey,
     this.index,
     this.keyName,
@@ -337,7 +333,7 @@ class _ButtonBar extends StatelessWidget {
     required this.desiredAscensionLevel,
     required this.useMaterialsFromInventory,
     required this.skills,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

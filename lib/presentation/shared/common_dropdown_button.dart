@@ -10,14 +10,14 @@ class CommonDropdownButton<T> extends StatelessWidget {
   final bool withoutUnderLine;
 
   const CommonDropdownButton({
-    Key? key,
+    super.key,
     required this.hint,
     this.currentValue,
     required this.values,
     this.onChanged,
     this.isExpanded = true,
     this.withoutUnderLine = true,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

@@ -7,10 +7,10 @@ class ItemDescriptionCard extends StatelessWidget {
   final List<Widget> widgets;
 
   const ItemDescriptionCard({
-    Key? key,
+    super.key,
     required this.description,
     this.widgets = const [],
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

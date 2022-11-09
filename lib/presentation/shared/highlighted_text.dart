@@ -12,21 +12,20 @@ class HighlightedText extends StatelessWidget {
   final EdgeInsets padding;
 
   const HighlightedText({
-    Key? key,
+    super.key,
     required this.text,
     required this.highlightedStyle,
     this.textAlign = TextAlign.center,
     this.padding = Styles.edgeInsetAll10,
-  }) : super(key: key);
+  });
 
   HighlightedText.color({
-    Key? key,
+    super.key,
     required this.text,
     required Color color,
     this.textAlign = TextAlign.center,
     this.padding = Styles.edgeInsetAll10,
-  })  : highlightedStyle = TextStyle(color: color, fontWeight: FontWeight.bold),
-        super(key: key);
+  }) : highlightedStyle = TextStyle(color: color, fontWeight: FontWeight.bold);
 
   @override
   Widget build(BuildContext context) {

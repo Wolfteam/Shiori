@@ -15,9 +15,9 @@ class BirthdaysPerMonthDialog extends StatelessWidget {
   final int month;
 
   const BirthdaysPerMonthDialog({
-    Key? key,
+    super.key,
     required this.month,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -80,9 +80,8 @@ class _RowEndColumn extends StatelessWidget {
   final CharacterBirthdayModel character;
 
   const _RowEndColumn({
-    Key? key,
     required this.character,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

@@ -8,14 +8,14 @@ class CommonBottomSheet extends StatelessWidget {
   final String title;
   final IconData titleIcon;
   final Widget child;
-  final Function? onOk;
-  final Function? onCancel;
+  final VoidCallback? onOk;
+  final VoidCallback? onCancel;
   final double iconSize;
   final bool showOkButton;
   final bool showCancelButton;
 
   const CommonBottomSheet({
-    Key? key,
+    super.key,
     required this.title,
     required this.titleIcon,
     this.onOk,
@@ -24,7 +24,7 @@ class CommonBottomSheet extends StatelessWidget {
     this.iconSize = 25,
     this.showOkButton = true,
     this.showCancelButton = true,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

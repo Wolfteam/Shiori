@@ -8,7 +8,7 @@ import 'package:shiori/presentation/shared/extensions/media_query_extensions.dar
 import 'package:shiori/presentation/shared/loading.dart';
 
 class ChangelogDialog extends StatelessWidget {
-  const ChangelogDialog({Key? key}) : super(key: key);
+  const ChangelogDialog({super.key});
 
   @override
   Widget build(BuildContext context) {

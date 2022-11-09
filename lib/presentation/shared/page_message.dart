@@ -6,11 +6,11 @@ class PageMessage extends StatelessWidget {
   final List<Widget> children;
 
   const PageMessage({
-    Key? key,
+    super.key,
     required this.text,
     this.useScaffold = true,
     this.children = const [],
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

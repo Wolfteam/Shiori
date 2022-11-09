@@ -17,7 +17,7 @@ class SelectEnumDialog<TEnum> extends StatefulWidget {
   final OnSave<TEnum> onSave;
 
   const SelectEnumDialog({
-    Key? key,
+    super.key,
     required this.title,
     required this.values,
     required this.selectedValues,
@@ -26,7 +26,7 @@ class SelectEnumDialog<TEnum> extends StatefulWidget {
     required this.textResolver,
     this.lineThroughOnSelectedValues = false,
     required this.onSave,
-  }) : super(key: key);
+  });
 
   @override
   _SelectEnumDialogState<TEnum> createState() => _SelectEnumDialogState<TEnum>();

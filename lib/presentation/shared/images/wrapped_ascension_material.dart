@@ -8,12 +8,12 @@ class WrappedAscensionMaterial extends StatelessWidget {
   final double size;
 
   const WrappedAscensionMaterial({
-    Key? key,
+    super.key,
     required this.itemKey,
     required this.image,
     required this.quantity,
     this.size = 30,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

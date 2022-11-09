@@ -11,13 +11,13 @@ class AppFab extends StatelessWidget {
   final OnClick? onPressed;
 
   const AppFab({
-    Key? key,
+    super.key,
     required this.scrollController,
     required this.hideFabAnimController,
     this.icon = const Icon(Icons.arrow_upward),
     this.mini = true,
     this.onPressed,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

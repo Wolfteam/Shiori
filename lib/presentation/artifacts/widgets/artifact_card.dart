@@ -26,7 +26,7 @@ class ArtifactCard extends StatelessWidget {
   final bool withTextOverflow;
 
   const ArtifactCard({
-    Key? key,
+    super.key,
     required this.keyName,
     required this.name,
     required this.image,
@@ -38,11 +38,10 @@ class ArtifactCard extends StatelessWidget {
     this.isInSelectionMode = false,
     this.withShape = true,
     this.withTextOverflow = false,
-  })  : withoutDetails = false,
-        super(key: key);
+  }) : withoutDetails = false;
 
   const ArtifactCard.withoutDetails({
-    Key? key,
+    super.key,
     required this.keyName,
     required this.name,
     required this.image,
@@ -54,11 +53,10 @@ class ArtifactCard extends StatelessWidget {
     this.withTextOverflow = false,
   })  : bonus = const [],
         withoutDetails = true,
-        withElevation = false,
-        super(key: key);
+        withElevation = false;
 
   ArtifactCard.item({
-    Key? key,
+    super.key,
     required ArtifactCardModel item,
     this.imgWidth = 140,
     this.imgHeight = 120,
@@ -71,8 +69,7 @@ class ArtifactCard extends StatelessWidget {
         name = item.name,
         image = item.image,
         rarity = item.rarity,
-        bonus = item.bonus,
-        super(key: key);
+        bonus = item.bonus;
 
   @override
   Widget build(BuildContext context) {

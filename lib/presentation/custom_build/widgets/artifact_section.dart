@@ -20,10 +20,10 @@ class ArtifactSection extends StatelessWidget {
   final bool useBoxDecoration;
 
   const ArtifactSection({
-    Key? key,
+    super.key,
     required this.maxItemImageWidth,
     required this.useBoxDecoration,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -32,11 +32,7 @@ class ArtifactSection extends StatelessWidget {
     return BlocBuilder<CustomBuildBloc, CustomBuildState>(
       builder: (context, state) => state.maybeMap(
         loaded: (state) {
-          final color = theme.brightness == Brightness.dark
-              ? state.character.elementType.getElementColorFromContext(
-                  context,
-                )
-              : theme.colorScheme.secondary;
+          final color = state.character.elementType.getElementColorFromContext(context);
           return Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             mainAxisAlignment: MainAxisAlignment.center,

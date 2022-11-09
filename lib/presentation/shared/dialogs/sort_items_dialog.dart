@@ -9,10 +9,10 @@ class SortItemsDialog extends StatefulWidget {
   final void Function(SortResult result) onSave;
 
   const SortItemsDialog({
-    Key? key,
+    super.key,
     required this.items,
     required this.onSave,
-  }) : super(key: key);
+  });
 
   @override
   State<SortItemsDialog> createState() => _SortItemsDialogState();

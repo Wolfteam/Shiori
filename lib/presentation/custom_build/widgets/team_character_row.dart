@@ -23,12 +23,12 @@ class TeamCharacterRow extends StatelessWidget {
   final bool readyToShare;
 
   const TeamCharacterRow({
-    Key? key,
+    super.key,
     required this.character,
     required this.teamCount,
     required this.color,
     required this.readyToShare,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

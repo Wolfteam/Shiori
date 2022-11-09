@@ -22,7 +22,7 @@ class CharacterDetailGeneralCard extends StatelessWidget {
   final String? birthday;
 
   const CharacterDetailGeneralCard({
-    Key? key,
+    super.key,
     required this.name,
     required this.rarity,
     required this.elementType,
@@ -31,7 +31,7 @@ class CharacterDetailGeneralCard extends StatelessWidget {
     required this.role,
     required this.isFemale,
     this.birthday,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

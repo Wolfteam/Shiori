@@ -8,19 +8,18 @@ class ArtifactImageType extends StatelessWidget {
   final double height;
 
   const ArtifactImageType({
-    Key? key,
+    super.key,
     required this.index,
     this.width = 24,
     this.height = 24,
-  }) : super(key: key);
+  });
 
   ArtifactImageType.fromType({
-    Key? key,
+    super.key,
     required ArtifactType type,
     this.width = 24,
     this.height = 24,
-  })  : index = type.index,
-        super(key: key);
+  }) : index = type.index;
 
   @override
   Widget build(BuildContext context) {

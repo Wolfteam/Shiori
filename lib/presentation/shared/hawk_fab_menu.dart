@@ -168,7 +168,7 @@ class _MenuItemWidget extends StatelessWidget {
   final HawkFabMenuItem item;
 
   /// A callback that toggles the menu
-  final Function toggleMenu;
+  final VoidCallback toggleMenu;
 
   const _MenuItemWidget({
     required this.item,
@@ -225,7 +225,7 @@ class HawkFabMenuItem {
   Icon icon;
 
   /// Action that is to be performed on tapping the menu item
-  Function ontap;
+  VoidCallback ontap;
 
   /// Background color for icon
   Color? color;

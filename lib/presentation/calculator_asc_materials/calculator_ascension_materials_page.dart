@@ -1,3 +1,4 @@
+import 'package:darq/darq.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:responsive_builder/responsive_builder.dart';
@@ -28,9 +29,9 @@ class CalculatorAscensionMaterialsPage extends StatelessWidget {
   final int sessionKey;
 
   const CalculatorAscensionMaterialsPage({
-    Key? key,
+    super.key,
     required this.sessionKey,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -50,7 +51,7 @@ class CalculatorAscensionMaterialsPage extends StatelessWidget {
 class _AppBar extends StatelessWidget implements PreferredSizeWidget {
   final int sessionKey;
 
-  const _AppBar({Key? key, required this.sessionKey}) : super(key: key);
+  const _AppBar({required this.sessionKey});
 
   @override
   Widget build(BuildContext context) {
@@ -105,7 +106,7 @@ class _AppBar extends StatelessWidget implements PreferredSizeWidget {
 class _FabMenu extends StatelessWidget {
   final int sessionKey;
 
-  const _FabMenu({Key? key, required this.sessionKey}) : super(key: key);
+  const _FabMenu({required this.sessionKey});
 
   @override
   Widget build(BuildContext context) {
@@ -157,9 +158,10 @@ class _FabMenu extends StatelessWidget {
   }
 
   List<AscensionMaterialsSummaryWidget> _buildSummary(S s, List<AscensionMaterialsSummary> items) {
-    items.sort((x, y) => s.translateAscensionSummaryType(x.type).compareTo(s.translateAscensionSummaryType(y.type)));
-
-    return items.map((e) => AscensionMaterialsSummaryWidget(summary: e, sessionKey: sessionKey)).toList();
+    return items
+        .orderBy((x) => s.translateAscensionSummaryType(x.type))
+        .map((e) => AscensionMaterialsSummaryWidget(summary: e, sessionKey: sessionKey))
+        .toList();
   }
 
   Future<void> _openCharacterPage(BuildContext context) async {
@@ -211,11 +213,10 @@ class _PortraitLayout extends StatelessWidget {
   final List<Widget> summary;
 
   const _PortraitLayout({
-    Key? key,
     required this.sessionKey,
     required this.items,
     required this.summary,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -284,11 +285,10 @@ class _LandscapeLayout extends StatefulWidget {
   final List<Widget> summary;
 
   const _LandscapeLayout({
-    Key? key,
     required this.sessionKey,
     required this.items,
     required this.summary,
-  }) : super(key: key);
+  });
 
   @override
   State<_LandscapeLayout> createState() => _LandscapeLayoutState();

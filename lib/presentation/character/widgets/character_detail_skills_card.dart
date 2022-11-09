@@ -19,10 +19,10 @@ class CharacterDetailSkillsCard extends StatelessWidget {
   final List<CharacterSkillCardModel> skills;
 
   const CharacterDetailSkillsCard({
-    Key? key,
+    super.key,
     required this.elementType,
     required this.skills,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -47,11 +47,10 @@ class _SkillCard extends StatelessWidget {
   final ElementType elementType;
 
   const _SkillCard({
-    Key? key,
     required this.model,
     required this.isEven,
     required this.elementType,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -99,14 +98,13 @@ class _SkillHeader extends StatelessWidget {
   final List<CharacterSkillStatModel> stats;
 
   const _SkillHeader({
-    Key? key,
     required this.elementType,
     required this.title,
     required this.image,
     required this.isEven,
     required this.type,
     required this.stats,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -177,13 +175,12 @@ class _SkillAbility extends StatelessWidget {
   final ElementType elementType;
 
   const _SkillAbility({
-    Key? key,
     this.name,
     this.description,
     this.secondDescription,
     required this.descriptions,
     required this.elementType,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

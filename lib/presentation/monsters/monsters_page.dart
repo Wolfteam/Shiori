@@ -27,10 +27,10 @@ class MonstersPage extends StatelessWidget {
   }
 
   const MonstersPage({
-    Key? key,
+    super.key,
     this.isInSelectionMode = false,
     this.excludeKeys = const [],
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

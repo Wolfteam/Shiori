@@ -28,7 +28,7 @@ class ItemCard extends StatelessWidget {
   final ElementType? elementType;
 
   const ItemCard({
-    Key? key,
+    super.key,
     required this.sessionKey,
     required this.index,
     required this.itemKey,
@@ -39,7 +39,7 @@ class ItemCard extends StatelessWidget {
     required this.materials,
     required this.isActive,
     this.elementType,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -80,7 +80,7 @@ class ItemCard extends StatelessWidget {
                   ),
                 ),
               ),
-              Container(
+              DecoratedBox(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.only(
                     bottomLeft: Radius.circular(Styles.cardBottomRadius),
