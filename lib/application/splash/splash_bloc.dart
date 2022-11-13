@@ -38,16 +38,23 @@ class SplashBloc extends Bloc<SplashEvent, SplashState> {
       final noResourcesHasBeenDownloaded = _settingsService.noResourcesHasBeenDownloaded;
       //This is just to trigger a change in the ui
       if (event.retry) {
+        const type = AppResourceUpdateResultType.retrying;
         yield SplashState.loaded(
-          updateResultType: AppResourceUpdateResultType.retrying,
+          updateResultType: type,
           language: _language,
           noResourcesHasBeenDownloaded: noResourcesHasBeenDownloaded,
+          isUpdating: _isUpdating(type),
+          isLoading: _isLoading(type),
+          updateFailed: _updateFailed(type),
+          canSkipUpdate: _canSkipUpdate(type),
+          noInternetConnectionOnFirstInstall: _noInternetConnectionOnFirstInstall(type),
+          needsLatestAppVersionOnFirstInstall: _needsLatestAppVersionOnFirstInstall(type),
         );
         await Future.delayed(const Duration(seconds: 1));
       }
 
       final result = await _resourceService.checkForUpdates(_deviceInfoService.version, _settingsService.resourceVersion);
-      final unknownErrorOnFirstInstall = result.type == AppResourceUpdateResultType.unknownError && _settingsService.noResourcesHasBeenDownloaded;
+      final unknownErrorOnFirstInstall = _unknownErrorOnFirstInstall(result.type);
       final resultType = unknownErrorOnFirstInstall ? AppResourceUpdateResultType.unknownErrorOnFirstInstall : result.type;
       await _telemetryService.trackCheckForResourceUpdates(resultType);
       yield SplashState.loaded(
@@ -55,6 +62,12 @@ class SplashBloc extends Bloc<SplashEvent, SplashState> {
         language: _language,
         result: result,
         noResourcesHasBeenDownloaded: noResourcesHasBeenDownloaded,
+        isUpdating: _isUpdating(resultType),
+        isLoading: _isLoading(resultType),
+        updateFailed: _updateFailed(resultType),
+        canSkipUpdate: _canSkipUpdate(resultType),
+        noInternetConnectionOnFirstInstall: _noInternetConnectionOnFirstInstall(resultType),
+        needsLatestAppVersionOnFirstInstall: _needsLatestAppVersionOnFirstInstall(resultType),
       );
       return;
     }
@@ -63,7 +76,17 @@ class SplashBloc extends Bloc<SplashEvent, SplashState> {
       assert(state is _LoadedState, 'The current state should be loaded');
       final currentState = state as _LoadedState;
       assert(currentState.result != null, 'The update result must not be null');
-      yield currentState.copyWith(updateResultType: AppResourceUpdateResultType.updating);
+
+      const type = AppResourceUpdateResultType.updating;
+      yield currentState.copyWith(
+        updateResultType: type,
+        isUpdating: _isUpdating(type),
+        isLoading: _isLoading(type),
+        updateFailed: _updateFailed(type),
+        canSkipUpdate: _canSkipUpdate(type),
+        noInternetConnectionOnFirstInstall: _noInternetConnectionOnFirstInstall(type),
+        needsLatestAppVersionOnFirstInstall: _needsLatestAppVersionOnFirstInstall(type),
+      );
 
       //the stream is required to avoid blocking the bloc
       final result = currentState.result!;
@@ -113,6 +136,12 @@ class SplashBloc extends Bloc<SplashEvent, SplashState> {
         language: _language,
         progress: 100,
         noResourcesHasBeenDownloaded: _settingsService.noResourcesHasBeenDownloaded,
+        isUpdating: _isUpdating(appliedResult),
+        isLoading: _isLoading(appliedResult),
+        updateFailed: _updateFailed(appliedResult),
+        canSkipUpdate: _canSkipUpdate(appliedResult),
+        noInternetConnectionOnFirstInstall: _noInternetConnectionOnFirstInstall(appliedResult),
+        needsLatestAppVersionOnFirstInstall: _needsLatestAppVersionOnFirstInstall(appliedResult),
       );
     }
   }
@@ -121,5 +150,42 @@ class SplashBloc extends Bloc<SplashEvent, SplashState> {
   Future<void> close() async {
     await _downloadStream?.cancel();
     return super.close();
+  }
+
+  bool _isLoading(AppResourceUpdateResultType type) {
+    return type == AppResourceUpdateResultType.noUpdatesAvailable ||
+        type == AppResourceUpdateResultType.retrying ||
+        type == AppResourceUpdateResultType.updated;
+  }
+
+  bool _isUpdating(AppResourceUpdateResultType type) => type == AppResourceUpdateResultType.updating;
+
+  bool _updateFailed(AppResourceUpdateResultType type) {
+    return type == AppResourceUpdateResultType.unknownError ||
+        type == AppResourceUpdateResultType.unknownErrorOnFirstInstall ||
+        type == AppResourceUpdateResultType.noInternetConnection ||
+        type == AppResourceUpdateResultType.apiIsUnavailable ||
+        _noInternetConnectionOnFirstInstall(type) ||
+        _needsLatestAppVersionOnFirstInstall(type);
+  }
+
+  bool _noInternetConnectionOnFirstInstall(AppResourceUpdateResultType type) {
+    return type == AppResourceUpdateResultType.noInternetConnectionForFirstInstall ||
+        (_settingsService.noResourcesHasBeenDownloaded && type == AppResourceUpdateResultType.noInternetConnection);
+  }
+
+  bool _needsLatestAppVersionOnFirstInstall(AppResourceUpdateResultType type) =>
+      _settingsService.noResourcesHasBeenDownloaded && type == AppResourceUpdateResultType.needsLatestAppVersion;
+
+  bool _canSkipUpdate(AppResourceUpdateResultType type) {
+    return type != AppResourceUpdateResultType.unknownErrorOnFirstInstall &&
+        !_noInternetConnectionOnFirstInstall(type) &&
+        !_needsLatestAppVersionOnFirstInstall(type) &&
+        !_settingsService.noResourcesHasBeenDownloaded;
+  }
+
+  bool _unknownErrorOnFirstInstall(AppResourceUpdateResultType type) {
+    return (type == AppResourceUpdateResultType.unknownError || type == AppResourceUpdateResultType.apiIsUnavailable) &&
+        _settingsService.noResourcesHasBeenDownloaded;
   }
 }

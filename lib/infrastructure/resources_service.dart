@@ -250,6 +250,8 @@ class ResourceServiceImpl implements ResourceService {
           return CheckForUpdatesResult(type: AppResourceUpdateResultType.needsLatestAppVersion, resourceVersion: currentResourcesVersion);
         case '4':
           return CheckForUpdatesResult(type: AppResourceUpdateResultType.noUpdatesAvailable, resourceVersion: currentResourcesVersion);
+        case '5':
+          return CheckForUpdatesResult(type: AppResourceUpdateResultType.apiIsUnavailable, resourceVersion: currentResourcesVersion);
         case null:
           break;
         default: // Unknown error

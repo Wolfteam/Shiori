@@ -74,6 +74,7 @@ class CheckForResourceUpdatesDialog extends StatelessWidget {
       case AppResourceUpdateResultType.unknownError:
       case AppResourceUpdateResultType.unknownErrorOnFirstInstall:
         return s.unknownError;
+      case AppResourceUpdateResultType.apiIsUnavailable:
       case AppResourceUpdateResultType.noUpdatesAvailable:
         return '${s.noUpdatesAvailable}\n${s.tryAgainLater}';
       case AppResourceUpdateResultType.needsLatestAppVersion:
