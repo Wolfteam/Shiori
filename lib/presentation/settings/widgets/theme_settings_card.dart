@@ -11,6 +11,7 @@ import 'package:shiori/presentation/shared/common_dropdown_button.dart';
 import 'package:shiori/presentation/shared/extensions/i18n_extensions.dart';
 import 'package:shiori/presentation/shared/loading.dart';
 import 'package:shiori/presentation/shared/styles.dart';
+import 'package:shiori/presentation/shared/unlock_with_donation_text.dart';
 import 'package:shiori/presentation/shared/utils/enum_utils.dart';
 
 class ThemeSettingsCard extends StatelessWidget {
@@ -60,14 +61,7 @@ class ThemeSettingsCard extends StatelessWidget {
                   activeColor: theme.colorScheme.secondary,
                   title: Text(s.useDarkAmoledTheme),
                   value: state.useDarkAmoledTheme,
-                  subtitle: state.unlockedFeatures.contains(AppUnlockedFeature.darkAmoledTheme)
-                      ? null
-                      : Text(
-                          s.unlockedWithDonation,
-                          overflow: TextOverflow.ellipsis,
-                          maxLines: 2,
-                          style: theme.textTheme.caption!.copyWith(color: theme.primaryColor, fontStyle: FontStyle.italic),
-                        ),
+                  subtitle: state.unlockedFeatures.contains(AppUnlockedFeature.darkAmoledTheme) ? null : const UnlockWithDonationText(),
                   onChanged: !state.unlockedFeatures.contains(AppUnlockedFeature.darkAmoledTheme)
                       ? null
                       : (newVal) => context.read<SettingsBloc>().add(SettingsEvent.useDarkAmoledTheme(newValue: newVal)),
