@@ -11,10 +11,10 @@ class AscensionMaterialsSummaryWidget extends StatelessWidget {
   final AscensionMaterialsSummary summary;
 
   const AscensionMaterialsSummaryWidget({
-    Key? key,
+    super.key,
     required this.sessionKey,
     required this.summary,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

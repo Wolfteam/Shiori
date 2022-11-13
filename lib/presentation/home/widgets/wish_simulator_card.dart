@@ -9,9 +9,9 @@ class WishSimulatorCard extends StatelessWidget {
   final bool iconToTheLeft;
 
   const WishSimulatorCard({
-    Key? key,
+    super.key,
     required this.iconToTheLeft,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

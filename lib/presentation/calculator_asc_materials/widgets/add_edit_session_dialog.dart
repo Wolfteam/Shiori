@@ -9,16 +9,15 @@ class AddEditSessionDialog extends StatelessWidget {
   final String? name;
 
   const AddEditSessionDialog.create({
-    Key? key,
+    super.key,
   })  : sessionKey = null,
-        name = '',
-        super(key: key);
+        name = '';
 
   const AddEditSessionDialog.update({
-    Key? key,
+    super.key,
     required this.sessionKey,
     required this.name,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +32,7 @@ class _Body extends StatefulWidget {
   final int? sessionKey;
   final String? name;
 
-  const _Body({Key? key, this.sessionKey, this.name}) : super(key: key);
+  const _Body({this.sessionKey, this.name});
 
   @override
   State<_Body> createState() => _BodyState();

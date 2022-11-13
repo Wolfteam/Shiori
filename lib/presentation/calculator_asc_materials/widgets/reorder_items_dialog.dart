@@ -11,7 +11,7 @@ class ReorderItemsDialog extends StatelessWidget {
   final int sessionKey;
   final List<ItemAscensionMaterials> items;
 
-  const ReorderItemsDialog({Key? key, required this.sessionKey, required this.items}) : super(key: key);
+  const ReorderItemsDialog({super.key, required this.sessionKey, required this.items});
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +24,7 @@ class ReorderItemsDialog extends StatelessWidget {
 }
 
 class _Body extends StatelessWidget {
-  const _Body({Key? key}) : super(key: key);
+  const _Body();
 
   @override
   Widget build(BuildContext context) {

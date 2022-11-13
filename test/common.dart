@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:intl/date_symbol_data_local.dart';
 import 'package:mockito/mockito.dart';
+import 'package:path/path.dart' as p;
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/extensions/string_extensions.dart';
 import 'package:shiori/domain/models/models.dart';
@@ -59,11 +60,30 @@ Future<bool> _fileExists(String path) => File(path).exists();
 
 void checkAsset(String path, {bool isAnAsset = false}) {
   expect(path, allOf([isNotEmpty, isNotNull]));
+  final ext = p.extension(path);
   if (isAnAsset) {
     expect(_assetExists(path), completion(equals(true)), reason: 'Asset = $path does not exist');
   } else {
     expect(_fileExists(path), completion(equals(true)), reason: 'File = $path does not exist');
   }
+  if (ext.toLowerCase() == '.webp') {
+    isValidWebp(path);
+  }
+}
+
+void isValidWebp(String path) {
+  //https://developers.google.com/speed/webp/docs/riff_container
+  final raf = File(path).openSync();
+  final bytes = raf.readSync(12).toList();
+  raf.closeSync();
+  expect(bytes.length, 12);
+
+  //RIFF
+  final first = bytes.take(4).join(',');
+  expect(first == '82,73,70,70', isTrue, reason: 'File = $path is not a valid webp');
+  //WEBP
+  final last = bytes.skip(8).join(',');
+  expect(last == '87,69,66,80', isTrue, reason: 'File = $path is not a valid webp');
 }
 
 void checkAssets(List<String> paths, {bool isAnAsset = false}) {

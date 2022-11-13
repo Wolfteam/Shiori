@@ -26,10 +26,10 @@ class MaterialsPage extends StatelessWidget {
   }
 
   const MaterialsPage({
-    Key? key,
+    super.key,
     this.isInSelectionMode = false,
     this.excludeKeys = const [],
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

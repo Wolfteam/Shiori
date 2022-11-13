@@ -11,12 +11,12 @@ class TopPieChart extends StatelessWidget {
   final OnSectionTap? onSectionTap;
 
   const TopPieChart({
-    Key? key,
+    super.key,
     required this.items,
     required this.colors,
     this.radius = 110,
     this.onSectionTap,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

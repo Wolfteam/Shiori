@@ -27,7 +27,7 @@ class CharacterDetailBuildCard extends StatelessWidget {
   final bool isCustomBuild;
 
   const CharacterDetailBuildCard({
-    Key? key,
+    super.key,
     required this.isRecommended,
     required this.elementType,
     required this.type,
@@ -37,7 +37,7 @@ class CharacterDetailBuildCard extends StatelessWidget {
     required this.artifacts,
     required this.subStatsToFocus,
     required this.isCustomBuild,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -105,12 +105,11 @@ class _Title extends StatelessWidget {
   final Color color;
 
   const _Title({
-    Key? key,
     required this.title,
     required this.isRecommended,
     required this.isCustomBuild,
     required this.color,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -161,10 +160,9 @@ class _Weapons extends StatelessWidget {
   final Color color;
 
   const _Weapons({
-    Key? key,
     required this.weapons,
     required this.color,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -198,9 +196,8 @@ class _ArtifactRow extends StatelessWidget {
   final CharacterBuildArtifactModel item;
 
   const _ArtifactRow({
-    Key? key,
     required this.item,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

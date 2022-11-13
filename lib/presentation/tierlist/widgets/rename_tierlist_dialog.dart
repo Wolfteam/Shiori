@@ -10,10 +10,10 @@ class RenameTierListRowDialog extends StatelessWidget {
   final String title;
 
   const RenameTierListRowDialog({
-    Key? key,
+    super.key,
     required this.index,
     required this.title,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +28,7 @@ class _Body extends StatefulWidget {
   final int index;
   final String title;
 
-  const _Body({Key? key, required this.index, required this.title}) : super(key: key);
+  const _Body({required this.index, required this.title});
 
   @override
   _BodyState createState() => _BodyState();

@@ -17,7 +17,7 @@ class NotificationDailyCheckIn extends StatelessWidget {
   final bool showOtherImages;
 
   const NotificationDailyCheckIn({
-    Key? key,
+    super.key,
     required this.title,
     required this.body,
     required this.note,
@@ -25,7 +25,7 @@ class NotificationDailyCheckIn extends StatelessWidget {
     required this.isInEditMode,
     required this.images,
     required this.showOtherImages,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

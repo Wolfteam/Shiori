@@ -12,6 +12,7 @@ part 'artifacts_state.dart';
 
 class ArtifactsBloc extends Bloc<ArtifactsEvent, ArtifactsState> {
   final GenshinService _genshinService;
+  final List<ArtifactCardModel> _allArtifacts = [];
 
   ArtifactsBloc(this._genshinService) : super(const ArtifactsState.loading());
 
@@ -20,7 +21,13 @@ class ArtifactsBloc extends Bloc<ArtifactsEvent, ArtifactsState> {
   @override
   Stream<ArtifactsState> mapEventToState(ArtifactsEvent event) async* {
     final s = event.map(
-      init: (e) => _buildInitialState(excludeKeys: e.excludeKeys, type: e.type),
+      init: (e) {
+        if (_allArtifacts.isEmpty) {
+          _allArtifacts.addAll(_genshinService.artifacts.getArtifactsForCard());
+        }
+
+        return _buildInitialState(excludeKeys: e.excludeKeys, type: e.type);
+      },
       artifactFilterTypeChanged: (e) => currentState.copyWith.call(tempArtifactFilterType: e.artifactFilterType),
       rarityChanged: (e) => currentState.copyWith.call(tempRarity: e.rarity),
       sortDirectionTypeChanged: (e) => currentState.copyWith.call(tempSortDirectionType: e.sortDirectionType),
@@ -66,7 +73,7 @@ class ArtifactsBloc extends Bloc<ArtifactsEvent, ArtifactsState> {
     ArtifactType? type,
   }) {
     final isLoaded = state is _LoadedState;
-    var data = _genshinService.artifacts.getArtifactsForCard(type: type);
+    var data = [..._allArtifacts];
     if (excludeKeys.isNotEmpty) {
       data = data.where((el) => !excludeKeys.contains(el.key)).toList();
     }

@@ -10,11 +10,11 @@ class SortDirectionPopupMenuFilter extends StatelessWidget {
   final Icon icon;
 
   const SortDirectionPopupMenuFilter({
-    Key? key,
+    super.key,
     required this.selectedSortDirection,
     required this.onSelected,
     this.icon = const Icon(Icons.sort),
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

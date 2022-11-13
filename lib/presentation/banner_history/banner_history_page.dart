@@ -25,7 +25,7 @@ const double _mobileCellWidth = 80;
 const double _cellHeight = 120;
 
 class BannerHistoryPage extends StatefulWidget {
-  const BannerHistoryPage({Key? key}) : super(key: key);
+  const BannerHistoryPage({super.key});
 
   @override
   State<BannerHistoryPage> createState() => _BannerHistoryPageState();
@@ -136,7 +136,7 @@ class _BannerHistoryPageState extends State<BannerHistoryPage> with SingleTicker
 }
 
 class _AppBar extends StatelessWidget implements PreferredSizeWidget {
-  const _AppBar({Key? key}) : super(key: key);
+  const _AppBar();
 
   @override
   Widget build(BuildContext context) {

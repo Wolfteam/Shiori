@@ -245,7 +245,7 @@ void main() {
         apiResult: apiResult,
       );
       final result = await service.checkForUpdates('1.0.0', 1);
-      _checkUpdateResult(AppResourceUpdateResultType.updatesAvailable, 2, result, apiResult.result!);
+      _checkUpdateResult(AppResourceUpdateResultType.updatesAvailable, 2, result, apiResult.result);
     });
 
     test('api returns that partial files must be downloaded', () async {
@@ -259,7 +259,7 @@ void main() {
         apiResult: apiResult,
       );
       final result = await service.checkForUpdates('1.0.0', 1);
-      _checkUpdateResult(AppResourceUpdateResultType.updatesAvailable, 2, result, apiResult.result!);
+      _checkUpdateResult(AppResourceUpdateResultType.updatesAvailable, 2, result, apiResult.result);
     });
 
     test('api returns no files to be downloaded, hence no updates available', () async {
@@ -273,7 +273,7 @@ void main() {
         apiResult: apiResult,
       );
       final result = await service.checkForUpdates('1.0.0', 1);
-      _checkUpdateResult(AppResourceUpdateResultType.noUpdatesAvailable, 1, result, apiResult.result!);
+      _checkUpdateResult(AppResourceUpdateResultType.noUpdatesAvailable, 1, result, apiResult.result);
     });
 
     test('api returns same resource version, hence no updates available', () async {
@@ -287,7 +287,7 @@ void main() {
         apiResult: apiResult,
       );
       final result = await service.checkForUpdates('1.0.0', 1);
-      _checkUpdateResult(AppResourceUpdateResultType.noUpdatesAvailable, 1, result, apiResult.result!);
+      _checkUpdateResult(AppResourceUpdateResultType.noUpdatesAvailable, 1, result, apiResult.result);
     });
 
     test('api returns lower resource version, hence no updates available', () async {

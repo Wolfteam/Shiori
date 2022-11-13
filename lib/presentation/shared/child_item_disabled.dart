@@ -5,10 +5,10 @@ class ChildItemDisabled extends StatelessWidget {
   final bool isDisabled;
 
   const ChildItemDisabled({
-    Key? key,
+    super.key,
     required this.child,
     this.isDisabled = true,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

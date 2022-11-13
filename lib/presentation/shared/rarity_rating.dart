@@ -8,12 +8,12 @@ class RarityRating extends StatelessWidget {
   final Function(int) onRated;
 
   const RarityRating({
-    Key? key,
+    super.key,
     required this.rarity,
     required this.onRated,
     this.size = 35.0,
     this.stars = 5,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

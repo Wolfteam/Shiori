@@ -12,12 +12,12 @@ class SelectStatTypeDialog extends StatelessWidget {
   final String? title;
 
   const SelectStatTypeDialog({
-    Key? key,
+    super.key,
     required this.values,
     this.excluded = const <StatType>[],
     this.onSave,
     this.title,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

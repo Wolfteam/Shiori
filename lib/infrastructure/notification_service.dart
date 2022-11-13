@@ -137,7 +137,7 @@ class NotificationServiceImpl implements NotificationService {
 
   NotificationDetails _getPlatformChannelSpecifics(AppNotificationType type, String body) {
     final style = body.length < 40 ? null : BigTextStyleInformation(body);
-    final _androidPlatformChannelSpecifics = AndroidNotificationDetails(
+    final androidPlatformChannelSpecifics = AndroidNotificationDetails(
       _channelId,
       _channelName,
       channelDescription: _channelDescription,
@@ -149,9 +149,9 @@ class NotificationServiceImpl implements NotificationService {
       largeIcon: const DrawableResourceAndroidBitmap(_largeIcon),
       tag: _getTagFromNotificationType(type),
     );
-    const _iOSPlatformChannelSpecifics = IOSNotificationDetails();
+    const iOSPlatformChannelSpecifics = IOSNotificationDetails();
 
-    return NotificationDetails(android: _androidPlatformChannelSpecifics, iOS: _iOSPlatformChannelSpecifics);
+    return NotificationDetails(android: androidPlatformChannelSpecifics, iOS: iOSPlatformChannelSpecifics);
   }
 
   String _getTagFromNotificationType(AppNotificationType type) {

@@ -40,7 +40,7 @@ class VerticalBarChart extends StatelessWidget {
   final bool rotateBottomText;
 
   const VerticalBarChart({
-    Key? key,
+    super.key,
     required this.items,
     required this.getLeftText,
     required this.getBottomText,
@@ -52,7 +52,7 @@ class VerticalBarChart extends StatelessWidget {
     this.bottomTextMaxLength = 10,
     this.leftTextMaxLength = 10,
     this.rotateBottomText = false,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -132,12 +132,11 @@ class _BottomTitles extends StatelessWidget {
   final bool rotateBottomText;
 
   const _BottomTitles({
-    Key? key,
     required this.getBottomText,
     required this.value,
     required this.bottomTextMaxLength,
     required this.rotateBottomText,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -176,11 +175,10 @@ class _LeftTitle extends StatelessWidget {
   final int leftTextMaxLength;
 
   const _LeftTitle({
-    Key? key,
     required this.getLeftText,
     required this.value,
     required this.leftTextMaxLength,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

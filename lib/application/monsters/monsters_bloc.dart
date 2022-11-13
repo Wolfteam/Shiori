@@ -13,6 +13,7 @@ part 'monsters_state.dart';
 
 class MonstersBloc extends Bloc<MonstersEvent, MonstersState> {
   final GenshinService _genshinService;
+  final List<MonsterCardModel> _allMonsters = [];
 
   _LoadedState get currentState => state as _LoadedState;
 
@@ -21,7 +22,13 @@ class MonstersBloc extends Bloc<MonstersEvent, MonstersState> {
   @override
   Stream<MonstersState> mapEventToState(MonstersEvent event) async* {
     final s = event.map(
-      init: (e) => _buildInitialState(excludeKeys: e.excludeKeys),
+      init: (e) {
+        if (_allMonsters.isEmpty) {
+          _allMonsters.addAll(_genshinService.monsters.getAllMonstersForCard());
+        }
+
+        return _buildInitialState(excludeKeys: e.excludeKeys);
+      },
       sortDirectionTypeChanged: (e) => currentState.copyWith.call(tempSortDirectionType: e.sortDirectionType),
       typeChanged: (e) => currentState.copyWith.call(tempType: e.type),
       filterTypeChanged: (e) => currentState.copyWith.call(tempFilterType: e.type),
@@ -58,7 +65,7 @@ class MonstersBloc extends Bloc<MonstersEvent, MonstersState> {
     SortDirectionType sortDirectionType = SortDirectionType.asc,
   }) {
     final isLoaded = state is _LoadedState;
-    var data = _genshinService.monsters.getAllMonstersForCard();
+    var data = [..._allMonsters];
     if (excludeKeys.isNotEmpty) {
       data = data.where((el) => !excludeKeys.contains(el.key)).toList();
     }

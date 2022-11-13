@@ -7,12 +7,12 @@ class DetailTabLandscapeLayout extends StatelessWidget {
   final EdgeInsets padding;
 
   const DetailTabLandscapeLayout({
-    Key? key,
+    super.key,
     required this.color,
     required this.tabs,
     required this.children,
     this.padding = const EdgeInsets.symmetric(horizontal: 25),
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

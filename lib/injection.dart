@@ -15,7 +15,6 @@ import 'package:shiori/domain/services/purchase_service.dart';
 import 'package:shiori/domain/services/resources_service.dart';
 import 'package:shiori/domain/services/settings_service.dart';
 import 'package:shiori/domain/services/telemetry_service.dart';
-import 'package:shiori/infrastructure/api_service.dart';
 import 'package:shiori/infrastructure/infrastructure.dart';
 
 final GetIt getIt = GetIt.instance;

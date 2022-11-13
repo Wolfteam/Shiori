@@ -29,7 +29,7 @@ class NotificationCustomForm extends StatelessWidget {
   final bool useTwentyFourHoursFormat;
 
   const NotificationCustomForm({
-    Key? key,
+    super.key,
     required this.itemType,
     required this.title,
     required this.body,
@@ -41,7 +41,7 @@ class NotificationCustomForm extends StatelessWidget {
     required this.scheduledDate,
     required this.language,
     required this.useTwentyFourHoursFormat,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

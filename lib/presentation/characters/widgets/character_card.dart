@@ -29,7 +29,7 @@ class CharacterCard extends StatelessWidget {
   final bool showMaterials;
 
   const CharacterCard({
-    Key? key,
+    super.key,
     required this.keyName,
     required this.image,
     required this.name,
@@ -41,10 +41,10 @@ class CharacterCard extends StatelessWidget {
     required this.materials,
     this.isInSelectionMode = false,
     this.showMaterials = true,
-  }) : super(key: key);
+  });
 
   CharacterCard.item({
-    Key? key,
+    super.key,
     required CharacterCardModel char,
     this.isInSelectionMode = false,
     this.showMaterials = true,
@@ -56,8 +56,7 @@ class CharacterCard extends StatelessWidget {
         name = char.name,
         rarity = char.stars,
         weaponType = char.weaponType,
-        materials = char.materials,
-        super(key: key);
+        materials = char.materials;
 
   @override
   Widget build(BuildContext context) {

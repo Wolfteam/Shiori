@@ -30,7 +30,7 @@ class TierListRow extends StatelessWidget {
   final bool isTheLastRow;
 
   const TierListRow({
-    Key? key,
+    super.key,
     required this.index,
     required this.title,
     required this.color,
@@ -40,7 +40,7 @@ class TierListRow extends StatelessWidget {
     this.showButtons = true,
     this.isUpButtonEnabled = true,
     this.isDownButtonEnabled = true,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -65,7 +65,7 @@ class TierListRow extends StatelessWidget {
                 Flexible(
                   fit: FlexFit.tight,
                   flex: flexA,
-                  child: Container(
+                  child: ColoredBox(
                     color: color,
                     child: Center(
                       child: Text(

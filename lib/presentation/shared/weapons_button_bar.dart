@@ -11,12 +11,12 @@ class WeaponsButtonBar extends StatelessWidget {
   final bool enabled;
 
   const WeaponsButtonBar({
-    Key? key,
+    super.key,
     required this.onClick,
     this.selectedValues = const [],
     this.iconSize = 24,
     this.enabled = true,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

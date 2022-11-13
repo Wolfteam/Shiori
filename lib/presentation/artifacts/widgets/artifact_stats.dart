@@ -8,11 +8,11 @@ class ArtifactStats extends StatelessWidget {
   final int? maxLines;
 
   const ArtifactStats({
-    Key? key,
+    super.key,
     required this.bonus,
     this.textColor,
     this.maxLines,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

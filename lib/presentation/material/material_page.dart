@@ -10,7 +10,7 @@ import 'package:shiori/presentation/shared/scaffold_with_fab.dart';
 class MaterialPage extends StatelessWidget {
   final String itemKey;
 
-  const MaterialPage({Key? key, required this.itemKey}) : super(key: key);
+  const MaterialPage({super.key, required this.itemKey});
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +23,7 @@ class MaterialPage extends StatelessWidget {
 }
 
 class _PortraitLayout extends StatelessWidget {
-  const _PortraitLayout({Key? key}) : super(key: key);
+  const _PortraitLayout();
 
   @override
   Widget build(BuildContext context) {
@@ -63,7 +63,7 @@ class _PortraitLayout extends StatelessWidget {
 }
 
 class _LandscapeLayout extends StatelessWidget {
-  const _LandscapeLayout({Key? key}) : super(key: key);
+  const _LandscapeLayout();
 
   @override
   Widget build(BuildContext context) {

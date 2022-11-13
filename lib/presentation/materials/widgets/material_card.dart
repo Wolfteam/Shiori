@@ -33,7 +33,7 @@ class MaterialCard extends StatelessWidget {
   final int usedQuantity;
 
   const MaterialCard({
-    Key? key,
+    super.key,
     required this.keyName,
     required this.name,
     required this.image,
@@ -46,11 +46,10 @@ class MaterialCard extends StatelessWidget {
   })  : withoutDetails = false,
         isInQuantityMode = false,
         quantity = -1,
-        usedQuantity = -1,
-        super(key: key);
+        usedQuantity = -1;
 
   MaterialCard.item({
-    Key? key,
+    super.key,
     required MaterialCardModel item,
     this.imgWidth = defaultWidth,
     this.imgHeight = defaultHeight,
@@ -64,11 +63,10 @@ class MaterialCard extends StatelessWidget {
         isInQuantityMode = false,
         quantity = -1,
         usedQuantity = -1,
-        type = item.type,
-        super(key: key);
+        type = item.type;
 
   const MaterialCard.withoutDetails({
-    Key? key,
+    super.key,
     required this.keyName,
     required this.image,
     required this.rarity,
@@ -81,11 +79,10 @@ class MaterialCard extends StatelessWidget {
         withElevation = false,
         isInQuantityMode = false,
         quantity = -1,
-        usedQuantity = -1,
-        super(key: key);
+        usedQuantity = -1;
 
   MaterialCard.quantity({
-    Key? key,
+    super.key,
     required MaterialCardModel item,
     this.isInSelectionMode = false,
   })  : keyName = item.key,
@@ -99,8 +96,7 @@ class MaterialCard extends StatelessWidget {
         withElevation = false,
         isInQuantityMode = true,
         type = item.type,
-        usedQuantity = item.usedQuantity,
-        super(key: key);
+        usedQuantity = item.usedQuantity;
 
   @override
   Widget build(BuildContext context) {

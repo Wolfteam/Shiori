@@ -21,7 +21,7 @@ class TwoColumnEnumSelectorDialog<TEnum> extends StatefulWidget {
   final bool showMaxNumberOfSelectionsOnTitle;
 
   const TwoColumnEnumSelectorDialog({
-    Key? key,
+    super.key,
     required this.title,
     required this.leftTitle,
     required this.rightTitle,
@@ -32,8 +32,7 @@ class TwoColumnEnumSelectorDialog<TEnum> extends StatefulWidget {
     required this.onOk,
     this.showMaxNumberOfSelectionsOnTitle = true,
   })  : assert(all.length > 0),
-        assert(maxNumberOfSelections > 0),
-        super(key: key);
+        assert(maxNumberOfSelections > 0);
 
   @override
   State<TwoColumnEnumSelectorDialog> createState() => _TwoColumnEnumSelectorDialogState<TEnum>();
@@ -318,15 +317,15 @@ class _TwoColumnEnumSelectorDialogState<TEnum> extends State<TwoColumnEnumSelect
 
 class _Buttons<TEnum> extends StatelessWidget {
   final bool useRow;
-  final Function? onLeftTap;
-  final Function? onRightTap;
+  final VoidCallback? onLeftTap;
+  final VoidCallback? onRightTap;
 
   const _Buttons({
-    Key? key,
+    super.key,
     required this.useRow,
     required this.onLeftTap,
     required this.onRightTap,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

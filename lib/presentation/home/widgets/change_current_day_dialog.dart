@@ -6,9 +6,9 @@ class ChangeCurrentDayDialog extends StatefulWidget {
   final int currentSelectedDay;
 
   const ChangeCurrentDayDialog({
-    Key? key,
+    super.key,
     required this.currentSelectedDay,
-  }) : super(key: key);
+  });
 
   @override
   _ChangeCurrentDayDialogState createState() => _ChangeCurrentDayDialogState();

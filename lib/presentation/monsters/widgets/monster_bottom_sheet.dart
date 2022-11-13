@@ -15,7 +15,7 @@ import 'package:shiori/presentation/shared/sort_direction_popupmenu_filter.dart'
 import 'package:shiori/presentation/shared/styles.dart';
 
 class MonsterBottomSheet extends StatelessWidget {
-  const MonsterBottomSheet({Key? key}) : super(key: key);
+  const MonsterBottomSheet({super.key});
 
   static Widget route(BuildContext context) {
     return BlocProvider.value(
@@ -84,12 +84,11 @@ class _OtherFilters extends StatelessWidget {
   final bool forEndDrawer;
 
   const _OtherFilters({
-    Key? key,
     required this.tempType,
     required this.tempFilterType,
     required this.tempSortDirectionType,
     required this.forEndDrawer,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -124,7 +123,7 @@ class _OtherFilters extends StatelessWidget {
 }
 
 class _ButtonBar extends StatelessWidget {
-  const _ButtonBar({Key? key}) : super(key: key);
+  const _ButtonBar();
 
   @override
   Widget build(BuildContext context) {

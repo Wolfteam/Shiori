@@ -6,7 +6,7 @@ import 'package:shiori/generated/l10n.dart';
 import 'package:shiori/injection.dart';
 
 class CheckForResourceUpdatesDialog extends StatelessWidget {
-  const CheckForResourceUpdatesDialog({Key? key}) : super(key: key);
+  const CheckForResourceUpdatesDialog({super.key});
 
   @override
   Widget build(BuildContext context) {

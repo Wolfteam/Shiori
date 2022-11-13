@@ -9,13 +9,13 @@ class ItemExpansionPanel extends StatelessWidget {
   final Function(bool)? expansionCallback;
 
   const ItemExpansionPanel({
-    Key? key,
+    super.key,
     required this.title,
     required this.body,
     this.icon = const Icon(Icons.settings),
     this.isCollapsed = false,
     this.expansionCallback,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

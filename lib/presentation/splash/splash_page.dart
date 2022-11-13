@@ -16,10 +16,10 @@ class SplashPage extends StatelessWidget {
   final List<LocalizationsDelegate> delegates;
 
   const SplashPage({
-    Key? key,
+    super.key,
     required this.language,
     required this.delegates,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -129,7 +129,6 @@ class _SplashPage extends StatelessWidget {
   final bool canSkipUpdate;
 
   const _SplashPage({
-    Key? key,
     this.updateResultType,
     required this.isLoading,
     required this.isUpdating,
@@ -137,7 +136,7 @@ class _SplashPage extends StatelessWidget {
     required this.noInternetConnectionOnFirstInstall,
     required this.needsLatestAppVersionOnFirstInstall,
     required this.canSkipUpdate,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -172,10 +171,9 @@ class _Buttons extends StatelessWidget {
   final bool canSkipUpdate;
 
   const _Buttons({
-    Key? key,
     this.updateResultType,
     required this.canSkipUpdate,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -239,7 +237,7 @@ class _Buttons extends StatelessWidget {
 }
 
 class _Updating extends StatelessWidget {
-  const _Updating({Key? key}) : super(key: key);
+  const _Updating();
 
   @override
   Widget build(BuildContext context) {
@@ -259,12 +257,9 @@ class _Updating extends StatelessWidget {
               style: theme.textTheme.subtitle1!.copyWith(color: Colors.white, fontWeight: FontWeight.bold),
             ),
           ),
-          Container(
+          DecoratedBox(
             decoration: BoxDecoration(
-              border: Border.all(
-                color: Styles.paimonColor,
-                width: 0.5,
-              ),
+              border: Border.all(color: Styles.paimonColor, strokeAlign: StrokeAlign.center),
             ),
             child: BlocBuilder<SplashBloc, SplashState>(
               builder: (context, state) => LinearProgressIndicator(

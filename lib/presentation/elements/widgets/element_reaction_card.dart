@@ -12,26 +12,24 @@ class ElementReactionCard extends StatelessWidget {
   final String? description;
 
   const ElementReactionCard.withImages({
-    Key? key,
+    super.key,
     required this.name,
     required this.effect,
     required this.principal,
     required this.secondary,
     this.showPlusIcon = true,
   })  : showImages = true,
-        description = null,
-        super(key: key);
+        description = null;
 
   const ElementReactionCard.withoutImage({
-    Key? key,
+    super.key,
     required this.name,
     required this.effect,
     required this.description,
     this.showPlusIcon = true,
   })  : principal = const [],
         secondary = const [],
-        showImages = false,
-        super(key: key);
+        showImages = false;
 
   @override
   Widget build(BuildContext context) {

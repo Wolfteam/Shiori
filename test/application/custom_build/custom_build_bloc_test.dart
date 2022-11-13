@@ -670,6 +670,71 @@ void main() {
     );
 
     blocTest<CustomBuildBloc, CustomBuildState>(
+      'add all types',
+      build: () => _getBloc(),
+      act: (bloc) => bloc
+        ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
+        ..add(const CustomBuildEvent.addArtifact(key: _thunderingFuryKey, type: ArtifactType.flower, statType: StatType.hp))
+        ..add(const CustomBuildEvent.addArtifact(key: _thunderingFuryKey, type: ArtifactType.plume, statType: StatType.atk))
+        ..add(const CustomBuildEvent.addArtifact(key: _thunderingFuryKey, type: ArtifactType.clock, statType: StatType.atkPercentage))
+        ..add(const CustomBuildEvent.addArtifact(key: _thunderingFuryKey, type: ArtifactType.goblet, statType: StatType.electroDmgBonusPercentage))
+        ..add(const CustomBuildEvent.addArtifact(key: _thunderingFuryKey, type: ArtifactType.crown, statType: StatType.critRatePercentage)),
+      verify: (bloc) => bloc.state.maybeMap(
+        loaded: (state) {
+          expect(state.artifacts.length == 5, true);
+          final expectedStatTypes = [
+            StatType.hp,
+            StatType.atk,
+            StatType.atkPercentage,
+            StatType.electroDmgBonusPercentage,
+            StatType.critRatePercentage,
+          ];
+          for (var i = 0; i < state.artifacts.length; i++) {
+            final artifact = state.artifacts[i];
+            expect(artifact.key == _thunderingFuryKey, true);
+            expect(artifact.type == ArtifactType.values[i], true);
+            expect(artifact.statType == expectedStatTypes[i], true);
+            expect(artifact.subStats.isEmpty, true);
+          }
+        },
+        orElse: () => throw Exception('Invalid custom build state'),
+      ),
+    );
+
+    blocTest<CustomBuildBloc, CustomBuildState>(
+      'add all types but updated the last one',
+      build: () => _getBloc(),
+      act: (bloc) => bloc
+        ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
+        ..add(const CustomBuildEvent.addArtifact(key: _thunderingFuryKey, type: ArtifactType.flower, statType: StatType.hp))
+        ..add(const CustomBuildEvent.addArtifact(key: _thunderingFuryKey, type: ArtifactType.plume, statType: StatType.atk))
+        ..add(const CustomBuildEvent.addArtifact(key: _thunderingFuryKey, type: ArtifactType.clock, statType: StatType.atkPercentage))
+        ..add(const CustomBuildEvent.addArtifact(key: _thunderingFuryKey, type: ArtifactType.goblet, statType: StatType.electroDmgBonusPercentage))
+        ..add(const CustomBuildEvent.addArtifact(key: _thunderingFuryKey, type: ArtifactType.crown, statType: StatType.critRatePercentage))
+        ..add(const CustomBuildEvent.addArtifact(key: _thunderingFuryKey, type: ArtifactType.crown, statType: StatType.critDmgPercentage)),
+      verify: (bloc) => bloc.state.maybeMap(
+        loaded: (state) {
+          expect(state.artifacts.length == 5, true);
+          final expectedStatTypes = [
+            StatType.hp,
+            StatType.atk,
+            StatType.atkPercentage,
+            StatType.electroDmgBonusPercentage,
+            StatType.critDmgPercentage,
+          ];
+          for (var i = 0; i < state.artifacts.length; i++) {
+            final artifact = state.artifacts[i];
+            expect(artifact.key == _thunderingFuryKey, true);
+            expect(artifact.type == ArtifactType.values[i], true);
+            expect(artifact.statType == expectedStatTypes[i], true);
+            expect(artifact.subStats.isEmpty, true);
+          }
+        },
+        orElse: () => throw Exception('Invalid custom build state'),
+      ),
+    );
+
+    blocTest<CustomBuildBloc, CustomBuildState>(
       'add sub stats',
       build: () => _getBloc(),
       act: (bloc) => bloc

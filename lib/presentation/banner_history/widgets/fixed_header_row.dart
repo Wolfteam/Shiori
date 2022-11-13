@@ -19,7 +19,7 @@ class FixedHeaderRow extends StatelessWidget {
   final ScrollController controller;
 
   const FixedHeaderRow({
-    Key? key,
+    super.key,
     required this.type,
     required this.versions,
     required this.selectedVersions,
@@ -29,7 +29,7 @@ class FixedHeaderRow extends StatelessWidget {
     required this.cellWidth,
     required this.cellHeight,
     required this.controller,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -60,12 +60,11 @@ class _VersionsCharactersCell extends StatelessWidget {
   final double cellHeight;
 
   const _VersionsCharactersCell({
-    Key? key,
     required this.type,
     required this.margin,
     required this.cellWidth,
     required this.cellHeight,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -120,13 +119,12 @@ class _VersionCard extends StatelessWidget {
   final double cellHeight;
 
   const _VersionCard({
-    Key? key,
     required this.version,
     required this.isSelected,
     required this.margin,
     required this.cellWidth,
     required this.cellHeight,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

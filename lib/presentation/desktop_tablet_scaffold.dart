@@ -18,10 +18,10 @@ class DesktopTabletScaffold extends StatelessWidget {
   final TabController tabController;
 
   const DesktopTabletScaffold({
-    Key? key,
+    super.key,
     required this.defaultIndex,
     required this.tabController,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -59,11 +59,10 @@ class _NavigationRail extends StatefulWidget {
   final TabController tabController;
 
   const _NavigationRail({
-    Key? key,
     required this.defaultIndex,
     required this.extended,
     required this.tabController,
-  }) : super(key: key);
+  });
 
   @override
   State<_NavigationRail> createState() => _NavigationRailState();

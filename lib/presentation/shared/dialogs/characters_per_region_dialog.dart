@@ -14,9 +14,9 @@ class CharactersPerRegionDialog extends StatelessWidget {
   final RegionType regionType;
 
   const CharactersPerRegionDialog({
-    Key? key,
+    super.key,
     required this.regionType,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

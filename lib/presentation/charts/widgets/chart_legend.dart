@@ -5,9 +5,9 @@ class ChartLegend extends StatelessWidget {
   final List<ChartLegendIndicator> indicators;
 
   const ChartLegend({
-    Key? key,
+    super.key,
     required this.indicators,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -23,13 +23,13 @@ class ChartLegendIndicator extends StatelessWidget {
   final Color color;
   final String text;
   final double size;
-  final Function? tap;
+  final VoidCallback? tap;
   final bool expandText;
   final bool selected;
   final double? width;
 
   const ChartLegendIndicator({
-    Key? key,
+    super.key,
     required this.color,
     required this.text,
     this.size = 16,
@@ -37,7 +37,7 @@ class ChartLegendIndicator extends StatelessWidget {
     this.expandText = true,
     this.selected = false,
     this.width,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

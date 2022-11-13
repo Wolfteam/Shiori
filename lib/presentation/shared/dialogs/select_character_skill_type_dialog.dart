@@ -11,11 +11,11 @@ class SelectCharacterSkillTypeDialog extends StatelessWidget {
   final Function(CharacterSkillType?)? onSave;
 
   const SelectCharacterSkillTypeDialog({
-    Key? key,
+    super.key,
     this.excluded = const <CharacterSkillType>[],
     this.selectedValues = const <CharacterSkillType>[],
     this.onSave,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

@@ -15,7 +15,7 @@ class TextDialog extends StatefulWidget {
   final String? regexPattern;
 
   const TextDialog.create({
-    Key? key,
+    super.key,
     this.title,
     required this.hintText,
     required this.onSave,
@@ -23,11 +23,10 @@ class TextDialog extends StatefulWidget {
     this.regexPattern,
     this.child,
   })  : value = '',
-        isInEditMode = false,
-        super(key: key);
+        isInEditMode = false;
 
   const TextDialog.update({
-    Key? key,
+    super.key,
     this.title,
     required this.hintText,
     required this.value,
@@ -35,8 +34,7 @@ class TextDialog extends StatefulWidget {
     required this.onSave,
     this.regexPattern,
     this.child,
-  })  : isInEditMode = true,
-        super(key: key);
+  }) : isInEditMode = true;
 
   @override
   State<TextDialog> createState() => _TextDialogState();

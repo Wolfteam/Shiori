@@ -7,10 +7,10 @@ class ScaffoldWithFab extends StatefulWidget {
   final PreferredSizeWidget? appbar;
 
   const ScaffoldWithFab({
-    Key? key,
+    super.key,
     required this.child,
     this.appbar,
-  }) : super(key: key);
+  });
 
   @override
   _ScaffoldWithFabState createState() => _ScaffoldWithFabState();

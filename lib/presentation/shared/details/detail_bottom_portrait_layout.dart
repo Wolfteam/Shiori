@@ -9,10 +9,10 @@ class DetailBottomPortraitLayout extends StatelessWidget {
   final bool isAnSmallImage;
 
   const DetailBottomPortraitLayout({
-    Key? key,
+    super.key,
     required this.children,
     this.isAnSmallImage = true,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

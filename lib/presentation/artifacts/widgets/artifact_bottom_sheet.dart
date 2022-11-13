@@ -17,8 +17,8 @@ import 'package:shiori/presentation/shared/styles.dart';
 
 class ArtifactBottomSheet extends StatelessWidget {
   const ArtifactBottomSheet({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -85,11 +85,10 @@ class _OtherFilters extends StatelessWidget {
   final bool forEndDrawer;
 
   const _OtherFilters({
-    Key? key,
     required this.tempArtifactFilterType,
     required this.tempSortDirectionType,
     this.forEndDrawer = false,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -116,7 +115,7 @@ class _OtherFilters extends StatelessWidget {
 }
 
 class _ButtonBar extends StatelessWidget {
-  const _ButtonBar({Key? key}) : super(key: key);
+  const _ButtonBar();
 
   @override
   Widget build(BuildContext context) {

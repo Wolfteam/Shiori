@@ -17,11 +17,11 @@ class ItemReleaseHistoryDialog extends StatelessWidget {
   final double? selectedVersion;
 
   const ItemReleaseHistoryDialog({
-    Key? key,
+    super.key,
     required this.itemKey,
     required this.itemName,
     this.selectedVersion,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -75,12 +75,11 @@ class _ReleasedOn extends StatelessWidget {
   final int index;
 
   const _ReleasedOn({
-    Key? key,
     required this.history,
     required this.selected,
     required this.lastItem,
     required this.index,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

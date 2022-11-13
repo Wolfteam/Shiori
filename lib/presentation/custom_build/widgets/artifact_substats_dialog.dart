@@ -15,12 +15,12 @@ class ArtifactSubStatsDialog extends StatelessWidget {
   final List<StatType> selectedSubStats;
 
   const ArtifactSubStatsDialog({
-    Key? key,
+    super.key,
     required this.type,
     required this.mainStat,
     required this.rarity,
     required this.selectedSubStats,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

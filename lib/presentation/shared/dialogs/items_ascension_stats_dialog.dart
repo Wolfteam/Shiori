@@ -15,11 +15,10 @@ class ItemsAscensionStatsDialog extends StatelessWidget {
   final StatType statType;
 
   const ItemsAscensionStatsDialog({
-    Key? key,
+    super.key,
     required this.itemType,
     required this.statType,
-  })  : assert(itemType == ItemType.character || itemType == ItemType.weapon),
-        super(key: key);
+  }) : assert(itemType == ItemType.character || itemType == ItemType.weapon);
 
   @override
   Widget build(BuildContext context) {

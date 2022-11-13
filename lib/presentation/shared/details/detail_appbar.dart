@@ -4,9 +4,9 @@ class DetailAppBar extends StatelessWidget {
   final List<Widget> actions;
 
   const DetailAppBar({
-    Key? key,
+    super.key,
     this.actions = const [],
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

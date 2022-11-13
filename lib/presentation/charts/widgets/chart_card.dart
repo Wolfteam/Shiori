@@ -10,14 +10,14 @@ class ChartCard extends StatelessWidget {
   final EdgeInsets titleMargin;
 
   const ChartCard({
-    Key? key,
+    super.key,
     required this.title,
     required this.child,
     required this.width,
     required this.height,
     this.bottom,
     this.titleMargin = const EdgeInsets.only(bottom: 10),
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

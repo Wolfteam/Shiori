@@ -10,10 +10,10 @@ class SliverCharacterAscensionMaterials extends StatelessWidget {
   final bool useListView;
 
   const SliverCharacterAscensionMaterials({
-    Key? key,
+    super.key,
     required this.charAscMaterials,
     this.useListView = true,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

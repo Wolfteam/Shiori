@@ -9,13 +9,13 @@ class CardItem extends StatelessWidget {
   final Function(BuildContext) onClick;
 
   const CardItem({
-    Key? key,
+    super.key,
     required this.title,
     required this.icon,
     required this.onClick,
     required this.children,
     this.iconToTheLeft = false,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -55,10 +55,9 @@ class _LeftLayout extends StatelessWidget {
   final List<Widget> children;
 
   const _LeftLayout({
-    Key? key,
     required this.icon,
     required this.children,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -88,10 +87,9 @@ class _RightLayout extends StatelessWidget {
   final List<Widget> children;
 
   const _RightLayout({
-    Key? key,
     required this.icon,
     required this.children,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

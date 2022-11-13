@@ -14,6 +14,7 @@ part 'weapons_state.dart';
 class WeaponsBloc extends Bloc<WeaponsEvent, WeaponsState> {
   final GenshinService _genshinService;
   final SettingsService _settingsService;
+  final List<WeaponCardModel> _allWeapons = [];
 
   WeaponsBloc(this._genshinService, this._settingsService) : super(const WeaponsState.loading());
 
@@ -22,11 +23,17 @@ class WeaponsBloc extends Bloc<WeaponsEvent, WeaponsState> {
   @override
   Stream<WeaponsState> mapEventToState(WeaponsEvent event) async* {
     final s = event.map(
-      init: (e) => _buildInitialState(
-        excludeKeys: e.excludeKeys,
-        weaponTypes: e.weaponTypes.isEmpty ? WeaponType.values : e.weaponTypes,
-        areWeaponTypesEnabled: e.areWeaponTypesEnabled,
-      ),
+      init: (e) {
+        if (_allWeapons.isEmpty) {
+          _allWeapons.addAll(_genshinService.weapons.getWeaponsForCard());
+        }
+
+        return _buildInitialState(
+          excludeKeys: e.excludeKeys,
+          weaponTypes: e.weaponTypes.isEmpty ? WeaponType.values : e.weaponTypes,
+          areWeaponTypesEnabled: e.areWeaponTypesEnabled,
+        );
+      },
       weaponFilterTypeChanged: (e) => currentState.copyWith.call(tempWeaponFilterType: e.filterType),
       rarityChanged: (e) => currentState.copyWith.call(tempRarity: e.rarity),
       sortDirectionTypeChanged: (e) => currentState.copyWith.call(tempSortDirectionType: e.sortDirectionType),
@@ -94,7 +101,7 @@ class WeaponsBloc extends Bloc<WeaponsEvent, WeaponsState> {
     bool areWeaponTypesEnabled = true,
   }) {
     final isLoaded = state is _LoadedState;
-    var data = _genshinService.weapons.getWeaponsForCard();
+    var data = [..._allWeapons];
     if (excludeKeys.isNotEmpty) {
       data = data.where((el) => !excludeKeys.contains(el.key)).toList();
     }

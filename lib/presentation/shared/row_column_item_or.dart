@@ -8,11 +8,11 @@ class RowColumnItemOr extends StatelessWidget {
   final bool useColumn;
 
   const RowColumnItemOr({
-    Key? key,
+    super.key,
     required this.widget,
     required this.color,
     this.useColumn = false,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -33,9 +33,8 @@ class _OrWidget extends StatelessWidget {
   final Color color;
 
   const _OrWidget({
-    Key? key,
     required this.color,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

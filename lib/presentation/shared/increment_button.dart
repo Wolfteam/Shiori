@@ -10,14 +10,14 @@ class IncrementButton extends StatelessWidget {
   final Function(int) onAdd;
 
   const IncrementButton({
-    Key? key,
+    super.key,
     required this.title,
     required this.value,
     required this.onMinus,
     required this.onAdd,
     this.incrementIsDisabled = false,
     this.decrementIsDisabled = false,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
