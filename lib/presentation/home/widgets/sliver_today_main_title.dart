@@ -1,4 +1,3 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shiori/application/bloc.dart';
@@ -22,17 +21,22 @@ class SliverTodayMainTitle extends StatelessWidget {
             loading: (_) => const Loading(useScaffold: false),
             loaded: (state) => Container(
               margin: Styles.edgeInsetHorizontal16,
-              child: RichText(
-                text: TextSpan(
-                  text: s.todayAscensionMaterials,
-                  style: theme.textTheme.headline6!.copyWith(fontWeight: FontWeight.bold),
-                  children: <TextSpan>[
-                    TextSpan(
-                      text: ' [ ${state.dayName} ]',
-                      style: theme.textTheme.caption,
-                      recognizer: TapGestureRecognizer()..onTap = () => _openDayWeekDialog(state.day, context),
-                    ),
-                  ],
+              child: GestureDetector(
+                onTap: () => _openDayWeekDialog(state.day, context),
+                child: RichText(
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
+                  softWrap: false,
+                  text: TextSpan(
+                    text: s.todayAscensionMaterials,
+                    style: theme.textTheme.headline6!.copyWith(fontWeight: FontWeight.bold),
+                    children: <TextSpan>[
+                      TextSpan(
+                        text: ' [ ${state.dayName} ]',
+                        style: theme.textTheme.caption,
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),
