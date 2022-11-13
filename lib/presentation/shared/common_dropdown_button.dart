@@ -8,6 +8,7 @@ class CommonDropdownButton<T> extends StatelessWidget {
   final Function(T, BuildContext)? onChanged;
   final bool isExpanded;
   final bool withoutUnderLine;
+  final Widget Function(T)? leadingIconBuilder;
 
   const CommonDropdownButton({
     super.key,
@@ -17,6 +18,7 @@ class CommonDropdownButton<T> extends StatelessWidget {
     this.onChanged,
     this.isExpanded = true,
     this.withoutUnderLine = true,
+    this.leadingIconBuilder,
   });
 
   @override
@@ -49,8 +51,9 @@ class CommonDropdownButton<T> extends StatelessWidget {
                 children: [
                   Container(
                     margin: const EdgeInsets.symmetric(horizontal: 20),
-                    child: lang.enumValue != currentValue ? const SizedBox(width: 20) : const Center(child: Icon(Icons.check)),
+                    child: lang.enumValue != currentValue ? const SizedBox(width: 20) : const Center(child: Icon(Icons.check, size: 20)),
                   ),
+                  if (leadingIconBuilder != null) leadingIconBuilder!.call(lang.enumValue),
                   Expanded(
                     child: Text(
                       lang.translation,
