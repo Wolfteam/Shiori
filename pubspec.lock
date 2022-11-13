@@ -1200,10 +1200,10 @@ packages:
     description:
       path: "."
       ref: HEAD
-      resolved-ref: a53244c9eb0bb732cf33da285c869d5b4397aa4f
+      resolved-ref: "03d2d2c813e46895d166df37c3361b5b2dcb25d3"
       url: "https://github.com/Wolfteam/version_tracker"
     source: git
-    version: "2.1.1"
+    version: "2.2.0"
   vm_service:
     dependency: transitive
     description:
@@ -1287,13 +1287,13 @@ packages:
       name: win32
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "3.0.1"
+    version: "3.1.1"
   window_size:
     dependency: "direct main"
     description:
       path: "plugins/window_size"
       ref: HEAD
-      resolved-ref: "17d4710c17f4913137e7ec931f6e71eaef443363"
+      resolved-ref: "12decbe0f592e14e03223f6f2c0c7e0e2dbd70a1"
       url: "https://github.com/google/flutter-desktop-embedding"
     source: git
     version: "0.1.0"
