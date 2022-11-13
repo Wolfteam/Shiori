@@ -2,4 +2,4 @@
 set -e
 
 echo 'Running tests...'
-flutter test
+fvm flutter test

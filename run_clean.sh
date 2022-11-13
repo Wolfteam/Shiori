@@ -2,13 +2,13 @@
 set -e
 
 echo 'Cleaning project...'
-flutter clean
+fvm flutter clean
 
 echo 'Retrieving packages...'
-flutter pub get
+fvm flutter pub get
 
 echo 'Deleting conflicting outputs...'
-flutter pub run build_runner clean
-flutter pub run build_runner build --delete-conflicting-outputs
+fvm flutter pub run build_runner clean
+fvm flutter pub run build_runner build --delete-conflicting-outputs
 
 echo 'Clean completed'

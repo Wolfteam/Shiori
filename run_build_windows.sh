@@ -2,7 +2,7 @@
 set -e
 
 echo 'Building windows app...'
-flutter build windows
+fvm flutter build windows
 
 echo 'Creating windows installer...'
-flutter pub run msix:create --build-windows false
+fvm flutter pub run msix:create --build-windows false
