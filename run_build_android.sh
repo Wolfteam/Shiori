@@ -2,4 +2,4 @@
 set -e
 
 echo 'Creating android bundle...'
-flutter build appbundle
+fvm flutter build appbundle
