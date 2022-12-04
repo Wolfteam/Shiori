@@ -583,6 +583,7 @@ class ResourceServiceImpl implements ResourceService {
   String _getJsonTranslationFilename(AppLanguageType languageType) {
     switch (languageType) {
       case AppLanguageType.english:
+      case AppLanguageType.ukrainian:
         return 'en.json';
       case AppLanguageType.spanish:
         return 'es.json';
