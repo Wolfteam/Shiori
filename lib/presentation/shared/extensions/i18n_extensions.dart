@@ -45,7 +45,7 @@ extension I18nExtensions on S {
       case AppLanguageType.thai:
         return 'ภาษาไทย';
       case AppLanguageType.ukrainian:
-        return 'Українська';
+        return 'Українська ($unofficial)';
       default:
         throw Exception('The provided app lang = $lang is not valid');
     }
