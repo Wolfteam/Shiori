@@ -17,33 +17,35 @@ extension I18nExtensions on S {
   String translateAppLanguageType(AppLanguageType lang) {
     switch (lang) {
       case AppLanguageType.english:
-        return english;
+        return 'English';
       case AppLanguageType.spanish:
-        return spanish;
+        return 'Español';
       case AppLanguageType.russian:
-        return russian;
+        return 'Русский';
       case AppLanguageType.simplifiedChinese:
-        return simplifiedChinese;
+        return '简体中文';
       case AppLanguageType.portuguese:
-        return portuguese;
+        return 'Português';
       case AppLanguageType.italian:
-        return '$italian ($unofficial)';
+        return 'Italiano';
       case AppLanguageType.japanese:
-        return japanese;
+        return '日本';
       case AppLanguageType.vietnamese:
-        return vietnamese;
+        return 'Tiếng Việt';
       case AppLanguageType.indonesian:
-        return indonesian;
+        return 'Bahasa Indonesia';
       case AppLanguageType.deutsch:
-        return deutsch;
+        return 'Deutsch';
       case AppLanguageType.french:
-        return french;
+        return 'Français';
       case AppLanguageType.traditionalChinese:
-        return traditionalChinese;
+        return '繁體中文';
       case AppLanguageType.korean:
-        return korean;
+        return '한국어';
       case AppLanguageType.thai:
-        return thai;
+        return 'ภาษาไทย';
+      case AppLanguageType.ukrainian:
+        return 'Українська ($unofficial)';
       default:
         throw Exception('The provided app lang = $lang is not valid');
     }
