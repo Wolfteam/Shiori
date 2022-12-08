@@ -42,7 +42,7 @@ void main() {
       build: () => CharactersBloc(_genshinService, _settingsService),
       act: (bloc) => bloc.add(const CharactersEvent.init()),
       expect: () {
-        final characters = _genshinService.characters.getCharactersForCard();
+        final characters = _genshinService.characters.getCharactersForCard()..sort((x, y) => x.name.compareTo(y.name));
         return [
           CharactersState.loaded(
             characters: characters,
@@ -71,7 +71,8 @@ void main() {
         emittedState.map(
           loading: (_) => throw Exception('Invalid artifact state'),
           loaded: (state) {
-            final characters = _genshinService.characters.getCharactersForCard().where((el) => !excludedKeys.contains(el.key)).toList();
+            final characters = _genshinService.characters.getCharactersForCard().where((el) => !excludedKeys.contains(el.key)).toList()
+              ..sort((x, y) => x.name.compareTo(y.name));
             expect(state.characters.length, characters.length);
             expect(state.showCharacterDetails, true);
             expect(state.rarity, 0);
@@ -256,7 +257,7 @@ void main() {
         ..add(const CharactersEvent.resetFilters()),
       skip: 10,
       expect: () {
-        final characters = _genshinService.characters.getCharactersForCard();
+        final characters = _genshinService.characters.getCharactersForCard()..sort((x, y) => x.name.compareTo(y.name));
         return [
           CharactersState.loaded(
             characters: characters,
