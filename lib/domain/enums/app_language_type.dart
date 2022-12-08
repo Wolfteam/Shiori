@@ -13,5 +13,6 @@ enum AppLanguageType {
   traditionalChinese,
   korean,
   thai,
+  turkish,
   ukrainian,
 }

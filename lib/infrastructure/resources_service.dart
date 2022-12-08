@@ -611,6 +611,8 @@ class ResourceServiceImpl implements ResourceService {
         return 'ko.json';
       case AppLanguageType.thai:
         return 'th.json';
+      case AppLanguageType.turkish:
+        return 'tr.json';
       default:
         throw Exception('Invalid language = $languageType');
     }

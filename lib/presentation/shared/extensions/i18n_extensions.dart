@@ -44,6 +44,8 @@ extension I18nExtensions on S {
         return '한국어';
       case AppLanguageType.thai:
         return 'ภาษาไทย';
+      case AppLanguageType.turkish:
+        return 'Türkçe';
       case AppLanguageType.ukrainian:
         return 'Українська ($unofficial)';
       default:
