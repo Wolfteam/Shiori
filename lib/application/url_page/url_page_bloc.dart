@@ -16,7 +16,7 @@ class UrlPageBloc extends Bloc<UrlPageEvent, UrlPageState> {
   final wishSimulatorUrl = 'https://gi-wish-simulator.uzairashraf.dev';
   final officialMapUrl = 'https://act.hoyolab.com/ys/app/interactive-map/index.html';
   final unofficialMapUrl = 'https://genshin-impact-map.appsample.com';
-  final dailyCheckInUrl = 'https://webstatic-sea.mihoyo.com/ys/event/signin-sea/index.html?act_id=e202102251931481';
+  final dailyCheckInUrl = 'https://act.hoyolab.com/ys/event/signin-sea-v3/index.html?act_id=e202102251931481';
 
   final NetworkService _networkService;
   final TelemetryService _telemetryService;
@@ -78,6 +78,18 @@ class UrlPageBloc extends Bloc<UrlPageEvent, UrlPageState> {
         return 'vi-vn';
       case AppLanguageType.indonesian:
         return 'id-id';
+      case AppLanguageType.italian:
+        return 'it-it';
+      case AppLanguageType.deutsch:
+        return 'de-de';
+      case AppLanguageType.traditionalChinese:
+        return 'zh-tw';
+      case AppLanguageType.korean:
+        return 'ko-kr';
+      case AppLanguageType.thai:
+        return 'th-th';
+      case AppLanguageType.turkish:
+        return 'tr-tr';
       default:
         return 'en-us';
     }
