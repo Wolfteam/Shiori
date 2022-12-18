@@ -78,6 +78,18 @@ class UrlPageBloc extends Bloc<UrlPageEvent, UrlPageState> {
         return 'vi-vn';
       case AppLanguageType.indonesian:
         return 'id-id';
+      case AppLanguageType.italian:
+        return 'it-it';
+      case AppLanguageType.deutsch:
+        return 'de-de';
+      case AppLanguageType.traditionalChinese:
+        return 'zh-tw';
+      case AppLanguageType.korean:
+        return 'ko-kr';
+      case AppLanguageType.thai:
+        return 'th-th';
+      case AppLanguageType.turkish:
+        return 'tr-tr';
       default:
         return 'en-us';
     }
