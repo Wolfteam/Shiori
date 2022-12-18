@@ -28,7 +28,7 @@ class DailyCheckInCard extends StatelessWidget {
   }
 
   Future<void> _goToPageDailyCheckInPage(BuildContext context) async {
-    final route = MaterialPageRoute(builder: (c) => DailyCheckInPage());
+    final route = MaterialPageRoute(fullscreenDialog: true, builder: (c) => DailyCheckInPage());
     await Navigator.push(context, route);
     await route.completed;
   }
