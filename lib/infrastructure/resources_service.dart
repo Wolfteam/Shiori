@@ -335,8 +335,8 @@ class ResourceServiceImpl implements ResourceService {
       if (mainFilesMustBeDownloaded) {
         _loggingService.info(runtimeType, 'downloadAndApplyUpdates: Downloading main files...');
         //we need to download the whole file
-        final destMainFilePath = join(_tempPath, jsonFileKeyName);
-        final downloaded = await _apiService.downloadAsset(jsonFileKeyName!, destMainFilePath);
+        final destMainFilePath = join(_tempPath, _removeVersionFromKeyName(jsonFileKeyName!));
+        final downloaded = await _apiService.downloadAsset(jsonFileKeyName, destMainFilePath);
 
         if (!downloaded) {
           _loggingService.error(runtimeType, 'downloadAndApplyUpdates: Could not download the main file');
@@ -408,14 +408,13 @@ class ResourceServiceImpl implements ResourceService {
       return true;
     }
 
-    _loggingService.info(runtimeType, '_downloadAssets: Processing ${keyNames.length} keyName(s)...');
+    final total = keyNames.length;
+    _loggingService.info(runtimeType, '_downloadAssets: Processing $total keyName(s)...');
     final Map<String, String> destPaths = await _createTempDirectories(tempFolder, keyNames);
 
     int itemsPerBatch = maxItemsPerBatch;
     int processedItems = 0;
     int retryAttempts = 0;
-
-    final total = keyNames.length;
     final keyNamesCopy = [...keyNames];
     while (keyNamesCopy.isNotEmpty) {
       final taken = keyNamesCopy.take(itemsPerBatch).toList();
@@ -431,7 +430,7 @@ class ResourceServiceImpl implements ResourceService {
           if (retryAttempts > 0) {
             await Future.delayed(const Duration(seconds: 1));
           }
-          await Future.wait(taken.map((e) => _downloadAsset(destPaths[e]!, e)).toList());
+          await Future.wait(taken.map((e) => _downloadAsset(destPaths[_removeVersionFromKeyName(e)]!, e)).toList());
           processedItems += taken.length;
           final progress = processedItems * 100 / total;
           onProgress?.call(progress);
@@ -457,7 +456,7 @@ class ResourceServiceImpl implements ResourceService {
       }
     }
 
-    _loggingService.info(runtimeType, '_downloadAssets: ${keyNames.length} keyName(s) were successfully downloaded');
+    _loggingService.info(runtimeType, '_downloadAssets: $total keyName(s) were successfully downloaded');
     return true;
   }
 
@@ -482,7 +481,8 @@ class ResourceServiceImpl implements ResourceService {
     final destPaths = <String, String>{};
     final allDirs = <String>[];
     for (final keyName in keyNames) {
-      final split = keyName.split('/');
+      final updatedKeyName = _removeVersionFromKeyName(keyName);
+      final split = updatedKeyName.split('/');
       //the last item is the filename
       final partA = split.take(split.length - 1).fold<String>('', (previousValue, element) {
         if (previousValue.isEmpty) {
@@ -494,7 +494,7 @@ class ResourceServiceImpl implements ResourceService {
       allDirs.add(dir);
 
       final destPath = join(dir, split.last);
-      destPaths.putIfAbsent(keyName, () => destPath);
+      destPaths.putIfAbsent(updatedKeyName, () => destPath);
     }
 
     final dirs = allDirs.toSet();
@@ -578,6 +578,11 @@ class ResourceServiceImpl implements ResourceService {
     }
 
     throw Exception('Could not move from = $from to = $to');
+  }
+
+  String _removeVersionFromKeyName(String keyName) {
+    final versionRegex = RegExp('(versions).*?(v[0-9]+)/');
+    return keyName.replaceAll(versionRegex, '');
   }
 
   String _getJsonTranslationFilename(AppLanguageType languageType) {
