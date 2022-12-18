@@ -134,8 +134,7 @@ List<StatType> getCharacterPossibleAscensionStats() {
     StatType.physDmgPercentage,
     StatType.atkPercentage,
     StatType.defPercentage,
-    //TODO: UNCOMMENT THIS ONE ON 3.0
-    // StatType.dendroDmgBonusPercentage,
+    StatType.dendroDmgBonusPercentage,
   ];
 }
 
@@ -153,7 +152,9 @@ const languagesMap = {
   AppLanguageType.french: LanguageModel('fr', 'FR'),
   AppLanguageType.traditionalChinese: LanguageModel('zh', 'TW'),
   AppLanguageType.korean: LanguageModel('ko', 'KO'),
-  AppLanguageType.thai: LanguageModel('th', 'th'),
+  AppLanguageType.thai: LanguageModel('th', 'TH'),
+  AppLanguageType.turkish: LanguageModel('tr', 'TR'),
+  AppLanguageType.ukrainian: LanguageModel('uk', 'UA'),
 };
 
 const int minSkillLevel = 1;

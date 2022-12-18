@@ -583,6 +583,7 @@ class ResourceServiceImpl implements ResourceService {
   String _getJsonTranslationFilename(AppLanguageType languageType) {
     switch (languageType) {
       case AppLanguageType.english:
+      case AppLanguageType.ukrainian:
         return 'en.json';
       case AppLanguageType.spanish:
         return 'es.json';
@@ -610,6 +611,8 @@ class ResourceServiceImpl implements ResourceService {
         return 'ko.json';
       case AppLanguageType.thai:
         return 'th.json';
+      case AppLanguageType.turkish:
+        return 'tr.json';
       default:
         throw Exception('Invalid language = $languageType');
     }
