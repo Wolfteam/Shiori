@@ -24,7 +24,8 @@ class CharactersBloc extends Bloc<CharactersEvent, CharactersState> {
   Stream<CharactersState> mapEventToState(CharactersEvent event) async* {
     final s = event.map(
       init: (e) {
-        if (_allCharacters.isEmpty) {
+        if (_allCharacters.isEmpty || e.force) {
+          _allCharacters.clear();
           _allCharacters.addAll(_genshinService.characters.getCharactersForCard());
         }
 

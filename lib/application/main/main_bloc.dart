@@ -70,10 +70,10 @@ class MainBloc extends Bloc<MainEvent, MainState> {
 
     if (languageChanged) {
       _logger.info(runtimeType, '_init: Language changed, reloading all the required blocs...');
-      _charactersBloc.add(const CharactersEvent.init());
-      _weaponsBloc.add(const WeaponsEvent.init());
+      _charactersBloc.add(const CharactersEvent.init(force: true));
+      _weaponsBloc.add(const WeaponsEvent.init(force: true));
       _homeBloc.add(const HomeEvent.init());
-      _artifactsBloc.add(const ArtifactsEvent.init());
+      _artifactsBloc.add(const ArtifactsEvent.init(force: true));
     }
 
     final settings = _settingsService.appSettings;

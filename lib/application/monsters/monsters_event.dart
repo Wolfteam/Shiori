@@ -2,7 +2,10 @@ part of 'monsters_bloc.dart';
 
 @freezed
 class MonstersEvent with _$MonstersEvent {
-  const factory MonstersEvent.init({@Default(<String>[]) List<String> excludeKeys}) = _Init;
+  const factory MonstersEvent.init({
+    @Default(false) bool force,
+    @Default(<String>[]) List<String> excludeKeys,
+  }) = _Init;
 
   const factory MonstersEvent.searchChanged({
     required String search,

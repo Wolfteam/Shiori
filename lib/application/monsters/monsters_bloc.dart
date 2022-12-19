@@ -23,7 +23,8 @@ class MonstersBloc extends Bloc<MonstersEvent, MonstersState> {
   Stream<MonstersState> mapEventToState(MonstersEvent event) async* {
     final s = event.map(
       init: (e) {
-        if (_allMonsters.isEmpty) {
+        if (_allMonsters.isEmpty || e.force) {
+          _allMonsters.clear();
           _allMonsters.addAll(_genshinService.monsters.getAllMonstersForCard());
         }
 

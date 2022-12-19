@@ -2,7 +2,10 @@ part of 'materials_bloc.dart';
 
 @freezed
 class MaterialsEvent with _$MaterialsEvent {
-  const factory MaterialsEvent.init({@Default(<String>[]) List<String> excludeKeys}) = _Init;
+  const factory MaterialsEvent.init({
+    @Default(false) bool force,
+    @Default(<String>[]) List<String> excludeKeys,
+  }) = _Init;
 
   const factory MaterialsEvent.searchChanged({
     required String search,

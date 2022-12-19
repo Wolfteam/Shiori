@@ -3,6 +3,7 @@ part of 'weapons_bloc.dart';
 @freezed
 class WeaponsEvent with _$WeaponsEvent {
   const factory WeaponsEvent.init({
+    @Default(false) bool force,
     @Default(<String>[]) List<String> excludeKeys,
     @Default(<WeaponType>[]) List<WeaponType> weaponTypes,
     @Default(true) bool areWeaponTypesEnabled,

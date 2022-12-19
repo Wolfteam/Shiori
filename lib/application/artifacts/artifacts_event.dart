@@ -3,6 +3,7 @@ part of 'artifacts_bloc.dart';
 @freezed
 class ArtifactsEvent with _$ArtifactsEvent {
   const factory ArtifactsEvent.init({
+    @Default(false) bool force,
     @Default(<String>[]) List<String> excludeKeys,
     ArtifactType? type,
   }) = _Init;

@@ -24,7 +24,8 @@ class MaterialsBloc extends Bloc<MaterialsEvent, MaterialsState> {
   Stream<MaterialsState> mapEventToState(MaterialsEvent event) async* {
     final s = event.map(
       init: (e) {
-        if (_allMaterials.isEmpty) {
+        if (_allMaterials.isEmpty || e.force) {
+          _allMaterials.clear();
           _allMaterials.addAll(_genshinService.materials.getAllMaterialsForCard());
         }
 
