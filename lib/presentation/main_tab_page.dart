@@ -50,9 +50,9 @@ class _MainTabPageState extends State<MainTabPage> with SingleTickerProviderStat
     if (_didChangeDependencies) return;
     _didChangeDependencies = true;
     context.read<HomeBloc>().add(const HomeEvent.init());
-    context.read<CharactersBloc>().add(const CharactersEvent.init());
-    context.read<WeaponsBloc>().add(const WeaponsEvent.init());
-    context.read<ArtifactsBloc>().add(const ArtifactsEvent.init());
+    context.read<CharactersBloc>().add(const CharactersEvent.init(force: true));
+    context.read<WeaponsBloc>().add(const WeaponsEvent.init(force: true));
+    context.read<ArtifactsBloc>().add(const ArtifactsEvent.init(force: true));
     context.read<SettingsBloc>().add(const SettingsEvent.init());
 
     if (widget.showChangelog) {

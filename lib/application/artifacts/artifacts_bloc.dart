@@ -22,7 +22,8 @@ class ArtifactsBloc extends Bloc<ArtifactsEvent, ArtifactsState> {
   Stream<ArtifactsState> mapEventToState(ArtifactsEvent event) async* {
     final s = event.map(
       init: (e) {
-        if (_allArtifacts.isEmpty) {
+        if (_allArtifacts.isEmpty || e.force) {
+          _allArtifacts.clear();
           _allArtifacts.addAll(_genshinService.artifacts.getArtifactsForCard());
         }
 

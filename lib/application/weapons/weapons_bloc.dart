@@ -24,7 +24,8 @@ class WeaponsBloc extends Bloc<WeaponsEvent, WeaponsState> {
   Stream<WeaponsState> mapEventToState(WeaponsEvent event) async* {
     final s = event.map(
       init: (e) {
-        if (_allWeapons.isEmpty) {
+        if (_allWeapons.isEmpty || e.force) {
+          _allWeapons.clear();
           _allWeapons.addAll(_genshinService.weapons.getWeaponsForCard());
         }
 

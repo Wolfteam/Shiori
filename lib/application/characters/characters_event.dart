@@ -3,6 +3,7 @@ part of 'characters_bloc.dart';
 @freezed
 class CharactersEvent with _$CharactersEvent {
   const factory CharactersEvent.init({
+    @Default(false) bool force,
     @Default(<String>[]) List<String> excludeKeys,
   }) = _Init;
 
