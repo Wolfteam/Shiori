@@ -43,14 +43,14 @@
 * After running the command you should see an output like this:
 
 ```
-  info: Microsoft.Hosting.Lifetime[14]
-  Now listening on: http://localhost:5000
-  info: Microsoft.Hosting.Lifetime[14]
-  Now listening on: https://localhost:5001
-  info: Microsoft.Hosting.Lifetime[0]
-  Application started. Press Ctrl+C to shut down.
-  info: Microsoft.Hosting.Lifetime[0]
-  Hosting environment: Production
+info: Microsoft.Hosting.Lifetime[14]
+Now listening on: http://localhost:5000
+info: Microsoft.Hosting.Lifetime[14]
+Now listening on: https://localhost:5001
+info: Microsoft.Hosting.Lifetime[0]
+Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+Hosting environment: Production
 ```
 
 * Take note of the url's port, since you will need it later
@@ -63,13 +63,13 @@
 * Create a **.env.common** file with the following content, the values can be anything:
 
 ```
-    ANDROID_APP_CENTER_KEY = xxxx
-    ANDROID_PURCHASES_KEY = yyyyy
-    COMMON_HEADER_NAME = header
-    API_HEADER_NAME = key
-    PUBLIC_KEY = xxxzzzzz
-    PRIVATE_KEY = xxxxzzz
-    LETS_ENCRYPT_KEY = xxxzzzzxxx
+ANDROID_APP_CENTER_KEY = xxxx
+ANDROID_PURCHASES_KEY = yyyyy
+COMMON_HEADER_NAME = header
+API_HEADER_NAME = key
+PUBLIC_KEY = xxxzzzzz
+PRIVATE_KEY = xxxxzzz
+LETS_ENCRYPT_KEY = xxxzzzzxxx
 ```
 
 * Create a **.env.dev** and a copy named **.env.prod** with the following content
