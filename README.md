@@ -31,16 +31,63 @@
 
 > Before contributing, please ask me if whatever you are planning to do / add / improve is valid for this project.
 
-You can build and run this thing by following these steps:
+#### To run the server:
+
+* Install the .net 6 runtime [HERE](https://dotnet.microsoft.com/en-us/download/dotnet/6.0)
+* Download and extract
+  the [server.zip](https://github.com/Wolfteam/Shiori/releases/download/1.6.7%2B113/server.zip)
+* Open a terminal and run one of the following commands (depending on the OS / shell the command may
+  vary)
+    * ``dotnet ShioriAssets.dll``
+    * ``./ShioriAssets``
+* After running the command you should see an output like this:
+
+```
+  info: Microsoft.Hosting.Lifetime[14]
+  Now listening on: http://localhost:5000
+  info: Microsoft.Hosting.Lifetime[14]
+  Now listening on: https://localhost:5001
+  info: Microsoft.Hosting.Lifetime[0]
+  Application started. Press Ctrl+C to shut down.
+  info: Microsoft.Hosting.Lifetime[0]
+  Hosting environment: Production
+```
+
+* Take note of the url's port, since you will need it later
+* Copy the url and open it in your browser, you should see an ``It works!`` text
+
+#### To run the app:
 
 * Clone this repository
 * Checkout the **develop** branch
-* Run ``flutter pub get``
-* Run ``flutter pub run build_runner build --delete-conflicting-outputs``
+* Create a **.env.common** file with the following content, the values can be anything:
+
+```
+    ANDROID_APP_CENTER_KEY = xxxx
+    ANDROID_PURCHASES_KEY = yyyyy
+    COMMON_HEADER_NAME = header
+    API_HEADER_NAME = key
+    PUBLIC_KEY = xxxzzzzz
+    PRIVATE_KEY = xxxxzzz
+    LETS_ENCRYPT_KEY = xxxzzzzxxx
+```
+
+* Create a **.env.dev** and a copy named **.env.prod** with the following content
+  (The url is the one used for the server, should work if you are using an android emulator)
+
+```
+API_BASE_URL = https://10.0.2.2:5001
+ASSETS_BASE_URL = https://10.0.2.2:5001
+API_HEADER_VALUE = value
+```
+
 * Install the ``Flutter Intl extension`` (It is available in Vs Code and Android Studio)
 * Run the ``flutter intl initialize`` command from your IDE
-* Create a ``Secrets`` class in the infrastructure/telemetry folder and add a static property
-  called ``appCenterKey`` (You could also comment the related code)
+* Comment the lines 19 to 30 in the ``infrastructure/api_service.dart`` and add the following behind
+  line
+  31 ``httpClient.badCertificateCallback = (X509Certificate cert, String host, int port) => true;``
+* If you have fvm configured, run the script ``sh run_clean.sh``, otherwise manually run each
+  sentence without the fvm prefix
 * Profit
 
 ### Translations
