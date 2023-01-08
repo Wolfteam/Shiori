@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:image_gallery_saver/image_gallery_saver.dart';
-import 'package:permission_handler/permission_handler.dart';
 import 'package:screenshot/screenshot.dart';
 import 'package:shiori/application/bloc.dart';
 import 'package:shiori/domain/extensions/iterable_extensions.dart';
 import 'package:shiori/generated/l10n.dart';
 import 'package:shiori/injection.dart';
 import 'package:shiori/presentation/shared/styles.dart';
-import 'package:shiori/presentation/shared/utils/toast_utils.dart';
+import 'package:shiori/presentation/shared/utils/screenshot_utils.dart';
 import 'package:shiori/presentation/tierlist/widgets/tierlist_fab.dart';
 import 'package:shiori/presentation/tierlist/widgets/tierlist_row.dart';
 
@@ -127,24 +125,16 @@ class _AppBar extends StatelessWidget implements PreferredSizeWidget {
     );
   }
 
-  Future<void> _takeScreenshot(BuildContext context) async {
-    final s = S.of(context);
-    final fToast = ToastUtils.of(context);
-    final bloc = context.read<TierListBloc>();
-    try {
-      if (!await Permission.storage.request().isGranted) {
-        ToastUtils.showInfoToast(fToast, s.acceptToSaveImg);
-        return;
+  Future<void> _takeScreenshot(BuildContext context) {
+    return ScreenshotUtils.takeScreenshot(screenshotController, context).then((taken) {
+      if (taken) {
+        final bloc = context.read<TierListBloc>();
+        bloc.add(const TierListEvent.screenshotTaken(succeed: true));
       }
-
-      final bytes = await screenshotController.capture(pixelRatio: 1.5);
-      await ImageGallerySaver.saveImage(bytes!, quality: 100);
-      ToastUtils.showSucceedToast(fToast, s.imgSavedSuccessfully);
-      bloc.add(const TierListEvent.screenshotTaken(succeed: true));
-    } catch (e, trace) {
-      ToastUtils.showErrorToast(fToast, s.unknownError);
-      bloc.add(TierListEvent.screenshotTaken(succeed: false, ex: e, trace: trace));
-    }
+    }).catchError((Object ex, StackTrace trace) {
+      final bloc = context.read<TierListBloc>();
+      bloc.add(TierListEvent.screenshotTaken(succeed: false, ex: ex, trace: trace));
+    });
   }
 
   @override
