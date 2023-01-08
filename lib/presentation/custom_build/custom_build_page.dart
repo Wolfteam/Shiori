@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:image_gallery_saver/image_gallery_saver.dart';
-import 'package:permission_handler/permission_handler.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import 'package:screenshot/screenshot.dart';
 import 'package:shiori/application/bloc.dart';
@@ -15,6 +13,7 @@ import 'package:shiori/presentation/custom_build/widgets/weapon_section.dart';
 import 'package:shiori/presentation/shared/dialogs/confirm_dialog.dart';
 import 'package:shiori/presentation/shared/extensions/element_type_extensions.dart';
 import 'package:shiori/presentation/shared/styles.dart';
+import 'package:shiori/presentation/shared/utils/screenshot_utils.dart';
 import 'package:shiori/presentation/shared/utils/toast_utils.dart';
 
 const double _maxItemImageWidth = 130;
@@ -168,24 +167,16 @@ class _AppBar extends StatelessWidget implements PreferredSizeWidget {
     ToastUtils.showSucceedToast(ToastUtils.of(context), s.changeWereSuccessfullySaved);
   }
 
-  Future<void> _takeScreenshot(BuildContext context) async {
-    final s = S.of(context);
-    final fToast = ToastUtils.of(context);
-    final bloc = context.read<CustomBuildBloc>();
-    try {
-      if (!await Permission.storage.request().isGranted) {
-        ToastUtils.showInfoToast(fToast, s.acceptToSaveImg);
-        return;
+  Future<void> _takeScreenshot(BuildContext context) {
+    return ScreenshotUtils.takeScreenshot(screenshotController, context).then((taken) {
+      if (taken) {
+        final bloc = context.read<CustomBuildBloc>();
+        bloc.add(const CustomBuildEvent.screenshotWasTaken(succeed: true));
       }
-
-      final bytes = await screenshotController.capture(pixelRatio: 1.5);
-      await ImageGallerySaver.saveImage(bytes!, quality: 100);
-      ToastUtils.showSucceedToast(fToast, s.imgSavedSuccessfully);
-      bloc.add(const CustomBuildEvent.screenshotWasTaken(succeed: true));
-    } catch (e, trace) {
-      ToastUtils.showErrorToast(fToast, s.unknownError);
-      bloc.add(CustomBuildEvent.screenshotWasTaken(succeed: false, ex: e, trace: trace));
-    }
+    }).catchError((Object ex, StackTrace trace) {
+      final bloc = context.read<CustomBuildBloc>();
+      bloc.add(CustomBuildEvent.screenshotWasTaken(succeed: false, ex: ex, trace: trace));
+    });
   }
 
   Future<void> _showDeleteDialog(BuildContext context, int? buildKey) {
