@@ -60,8 +60,24 @@ class GameCodesBloc extends Bloc<GameCodesEvent, GameCodesState> {
     final gameCodes = _dataService.gameCodes.getAllGameCodes();
 
     return GameCodesState.loaded(
-      workingGameCodes: gameCodes.where((code) => !code.isExpired).toList(),
-      expiredGameCodes: gameCodes.where((code) => code.isExpired).toList(),
+      workingGameCodes: gameCodes.where((code) => !code.isExpired).toList()..sort(_sortGameCodes),
+      expiredGameCodes: gameCodes.where((code) => code.isExpired).toList()..sort(_sortGameCodes),
     );
+  }
+
+  int _sortGameCodes(GameCodeModel x, GameCodeModel y) {
+    if (y.discoveredOn == null && x.discoveredOn == null) {
+      return 0;
+    }
+
+    if (y.discoveredOn != null && x.discoveredOn != null) {
+      return y.discoveredOn!.compareTo(x.discoveredOn!);
+    }
+
+    if (y.discoveredOn != null) {
+      return 1;
+    }
+
+    return -1;
   }
 }
