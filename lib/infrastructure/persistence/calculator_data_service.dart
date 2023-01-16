@@ -234,6 +234,47 @@ class CalculatorDataServiceImpl implements CalculatorDataService {
     }
   }
 
+  @override
+  List<CalculatorAscMaterialsSessionModel> getDataForBackup() {
+    final sessions = _sessionBox.values.toList();
+    final backup = <CalculatorAscMaterialsSessionModel>[];
+    for (final session in sessions) {
+      final calcItems = _calcItemBox.values.where((el) => el.sessionKey == session.key).map(
+        (calcItem) {
+          final charSkills = _calcItemSkillBox.values
+              .where((el) => el.calculatorItemKey == calcItem.key as int)
+              .map(
+                (e) => CalculatorAscMaterialsSessionCharSkillItemModel(
+                  skillKey: e.skillKey,
+                  currentLevel: e.currentLevel,
+                  desiredLevel: e.desiredLevel,
+                  position: e.position,
+                ),
+              )
+              .toList();
+          final usedInventoryItems = _inventory.getUsedDataForBackup(calcItem.key as int);
+          return CalculatorAscMaterialsSessionItemModel(
+            itemKey: calcItem.itemKey,
+            currentAscensionLevel: calcItem.currentAscensionLevel,
+            currentLevel: calcItem.currentLevel,
+            desiredAscensionLevel: calcItem.desiredAscensionLevel,
+            desiredLevel: calcItem.desiredLevel,
+            isActive: calcItem.isActive,
+            isCharacter: calcItem.isCharacter,
+            isWeapon: calcItem.isWeapon,
+            position: calcItem.position,
+            useMaterialsFromInventory: calcItem.useMaterialsFromInventory,
+            characterSkills: charSkills,
+            inventoryUsedItems: usedInventoryItems,
+          );
+        },
+      ).toList();
+      final bk = CalculatorAscMaterialsSessionModel(name: session.name, position: session.position, createdAt: session.createdAt, items: calcItems);
+      backup.add(bk);
+    }
+    return backup;
+  }
+
   CalculatorItem _toCalculatorItem(int sessionKey, ItemAscensionMaterials item) {
     return CalculatorItem(
       sessionKey,
@@ -346,7 +387,7 @@ class CalculatorDataServiceImpl implements CalculatorDataService {
     );
   }
 
-  /// This method checks if the [calculatorItemKey] has used inventory items, it it does, it will update the quantity
+  /// This method checks if the [calculatorItemKey] has used inventory items, if it does, it will update the quantity
   /// of each used material passed, otherwise it will return the same material unchanged
   ///
   /// Keep in mind that this method must be called in order based on the [calculatorItemKey]

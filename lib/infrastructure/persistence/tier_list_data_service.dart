@@ -48,4 +48,9 @@ class TierListDataServiceImpl implements TierListDataService {
     final keys = _tierListBox.values.map((e) => e.key);
     await _tierListBox.deleteAll(keys);
   }
+
+  @override
+  List<BackupTierListModel> getDataForBackup() {
+    return _tierListBox.values.map((e) => BackupTierListModel(text: e.text, position: e.position, color: e.color, charKeys: e.charKeys)).toList();
+  }
 }

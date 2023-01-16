@@ -327,6 +327,22 @@ class InventoryDataServiceImpl implements InventoryDataService {
         .toList();
   }
 
+  @override
+  List<BackupInventoryModel> getDataForBackup() {
+    return _inventoryBox.values
+        .where((e) => e.quantity > 0)
+        .map((e) => BackupInventoryModel(itemKey: e.itemKey, type: e.type, quantity: e.quantity))
+        .toList();
+  }
+
+  @override
+  List<BackupInventoryUsedItemModel> getUsedDataForBackup(int calcItemKey) {
+    return _inventoryUsedItemsBox.values
+        .where((e) => e.calculatorItemKey == calcItemKey)
+        .map((e) => BackupInventoryUsedItemModel(itemKey: e.itemKey, type: e.type, usedQuantity: e.usedQuantity))
+        .toList();
+  }
+
   InventoryItem? _getItemFromInventory(String key, ItemType type) {
     return _inventoryBox.values.firstWhereOrNull((el) => el.itemKey == key && el.type == type.index);
   }

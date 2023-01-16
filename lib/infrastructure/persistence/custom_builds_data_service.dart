@@ -160,6 +160,55 @@ class CustomBuildsDataServiceImpl implements CustomBuildsDataService {
     }).toList();
   }
 
+  @override
+  List<BackupCustomBuildModel> getDataForBackup() {
+    return _buildsBox.values.map((build) {
+      final buildKey = build.key as int;
+      final notes = _notesBox.values
+          .where((e) => e.buildItemKey == buildKey)
+          .map(
+            (e) => BackupCustomBuildNoteModel(
+              note: e.note,
+              index: e.index,
+            ),
+          )
+          .toList();
+      final weapons = _weaponsBox.values
+          .where((e) => e.buildItemKey == buildKey)
+          .map(
+            (e) => BackupCustomBuildWeaponModel(
+              weaponKey: e.weaponKey,
+              index: e.index,
+              level: e.level,
+              isAnAscension: e.isAnAscension,
+              refinement: e.refinement,
+            ),
+          )
+          .toList();
+      final artifacts = _artifactsBox.values
+          .where((e) => e.buildItemKey == buildKey)
+          .map((e) => BackupCustomBuildArtifactModel(itemKey: e.itemKey, type: e.type, statType: e.statType, subStats: e.subStats))
+          .toList();
+      final team = _teamCharactersBox.values
+          .where((e) => e.buildItemKey == buildKey)
+          .map((e) => BackupCustomBuildTeamCharacterModel(characterKey: e.characterKey, index: e.index, roleType: e.roleType, subType: e.subType))
+          .toList();
+      return BackupCustomBuildModel(
+        characterKey: build.characterKey,
+        title: build.title,
+        isRecommended: build.isRecommended,
+        showOnCharacterDetail: build.showOnCharacterDetail,
+        roleType: build.roleType,
+        roleSubType: build.roleSubType,
+        skillPriorities: build.skillPriorities,
+        notes: notes,
+        weapons: weapons,
+        artifacts: artifacts,
+        team: team,
+      );
+    }).toList();
+  }
+
   Future<void> _deleteCustomBuildRelatedParts(int key) {
     return Future.wait([
       _deleteWeapons(key),

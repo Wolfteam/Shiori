@@ -648,6 +648,165 @@ class NotificationsDataServiceImpl implements NotificationsDataService {
     return _updateNotification(item, item.title, item.body, item.note, item.showNotification);
   }
 
+  @override
+  BackupNotificationsModel getDataForBackup() {
+    final custom = _notificationsCustomBox.values
+        .map(
+          (e) => BackupCustomNotificationModel(
+            itemKey: e.itemKey,
+            type: e.type,
+            createdAt: e.createdAt,
+            title: e.title,
+            body: e.body,
+            note: e.note,
+            completesAt: e.completesAt,
+            originalScheduledDate: e.originalScheduledDate,
+            showNotification: e.showNotification,
+            notificationItemType: e.notificationItemType,
+          ),
+        )
+        .toList();
+    final expedition = _notificationsExpeditionBox.values
+        .map(
+          (e) => BackupExpeditionNotificationModel(
+            itemKey: e.itemKey,
+            type: e.type,
+            createdAt: e.createdAt,
+            title: e.title,
+            body: e.body,
+            note: e.note,
+            completesAt: e.completesAt,
+            originalScheduledDate: e.originalScheduledDate,
+            showNotification: e.showNotification,
+            expeditionTimeType: e.expeditionTimeType,
+            withTimeReduction: e.withTimeReduction,
+          ),
+        )
+        .toList();
+    final farmingArtifact = _notificationsFarmingArtifactBox.values
+        .map(
+          (e) => BackupFarmingArtifactNotificationModel(
+            itemKey: e.itemKey,
+            type: e.type,
+            createdAt: e.createdAt,
+            title: e.title,
+            body: e.body,
+            note: e.note,
+            completesAt: e.completesAt,
+            originalScheduledDate: e.originalScheduledDate,
+            showNotification: e.showNotification,
+            artifactFarmingTimeType: e.artifactFarmingTimeType,
+          ),
+        )
+        .toList();
+    final farmingMaterial = _notificationsFarmingMaterialBox.values
+        .map(
+          (e) => BackupFarmingMaterialNotificationModel(
+            itemKey: e.itemKey,
+            type: e.type,
+            createdAt: e.createdAt,
+            title: e.title,
+            body: e.body,
+            note: e.note,
+            completesAt: e.completesAt,
+            originalScheduledDate: e.originalScheduledDate,
+            showNotification: e.showNotification,
+          ),
+        )
+        .toList();
+    final furniture = _notificationsFurnitureBox.values
+        .map(
+          (e) => BackupFurnitureNotificationModel(
+            itemKey: e.itemKey,
+            type: e.type,
+            createdAt: e.createdAt,
+            title: e.title,
+            body: e.body,
+            note: e.note,
+            completesAt: e.completesAt,
+            originalScheduledDate: e.originalScheduledDate,
+            showNotification: e.showNotification,
+            furnitureCraftingTimeType: e.furnitureCraftingTimeType,
+          ),
+        )
+        .toList();
+    final gadget = _notificationsGadgetBox.values
+        .map(
+          (e) => BackupGadgetNotificationModel(
+            itemKey: e.itemKey,
+            type: e.type,
+            createdAt: e.createdAt,
+            title: e.title,
+            body: e.body,
+            note: e.note,
+            completesAt: e.completesAt,
+            originalScheduledDate: e.originalScheduledDate,
+            showNotification: e.showNotification,
+          ),
+        )
+        .toList();
+    final realmCurrency = _notificationsRealmCurrencyBox.values
+        .map(
+          (e) => BackupRealmCurrencyNotificationModel(
+            itemKey: e.itemKey,
+            type: e.type,
+            createdAt: e.createdAt,
+            title: e.title,
+            body: e.body,
+            note: e.note,
+            completesAt: e.completesAt,
+            originalScheduledDate: e.originalScheduledDate,
+            showNotification: e.showNotification,
+            realmCurrency: e.realmCurrency,
+            realmRankType: e.realmRankType,
+            realmTrustRank: e.realmTrustRank,
+          ),
+        )
+        .toList();
+    final resin = _notificationsResinBox.values
+        .map(
+          (e) => BackupResinNotificationModel(
+            itemKey: e.itemKey,
+            type: e.type,
+            createdAt: e.createdAt,
+            title: e.title,
+            body: e.body,
+            note: e.note,
+            completesAt: e.completesAt,
+            originalScheduledDate: e.originalScheduledDate,
+            showNotification: e.showNotification,
+            currentResinValue: e.currentResinValue,
+          ),
+        )
+        .toList();
+    final weeklyBoss = _notificationsWeeklyBossBox.values
+        .map(
+          (e) => BackupWeeklyBossNotificationModel(
+            itemKey: e.itemKey,
+            type: e.type,
+            createdAt: e.createdAt,
+            title: e.title,
+            body: e.body,
+            note: e.note,
+            completesAt: e.completesAt,
+            originalScheduledDate: e.originalScheduledDate,
+            showNotification: e.showNotification,
+          ),
+        )
+        .toList();
+    return BackupNotificationsModel(
+      custom: custom,
+      expeditions: expedition,
+      farmingArtifact: farmingArtifact,
+      farmingMaterial: farmingMaterial,
+      furniture: furniture,
+      gadgets: gadget,
+      realmCurrency: realmCurrency,
+      resin: resin,
+      weeklyBosses: weeklyBoss,
+    );
+  }
+
   T _getNotification<T extends NotificationBase>(int key, AppNotificationType type) {
     switch (type) {
       case AppNotificationType.resin:
