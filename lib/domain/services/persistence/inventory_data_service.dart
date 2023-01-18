@@ -64,4 +64,8 @@ abstract class InventoryDataService implements BaseDataService {
   int getRemainingQuantity(int calculatorItemKey, String itemKey, int current, ItemType type);
 
   List<ItemCommonWithQuantity> getItemsForRedistribution(ItemType type);
+
+  List<BackupInventoryModel> getDataForBackup();
+
+  List<BackupInventoryUsedItemModel> getUsedDataForBackup(int calcItemKey);
 }

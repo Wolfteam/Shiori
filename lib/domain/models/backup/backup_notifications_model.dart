@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:shiori/domain/models/entities.dart';
 
 part 'backup_notifications_model.freezed.dart';
 part 'backup_notifications_model.g.dart';
@@ -23,7 +22,6 @@ class BackupNotificationsModel with _$BackupNotificationsModel {
 
 @freezed
 class BackupCustomNotificationModel with _$BackupCustomNotificationModel {
-  @Implements<NotificationBase>()
   const factory BackupCustomNotificationModel({
     required String itemKey,
     required DateTime createdAt,
@@ -42,7 +40,6 @@ class BackupCustomNotificationModel with _$BackupCustomNotificationModel {
 
 @freezed
 class BackupExpeditionNotificationModel with _$BackupExpeditionNotificationModel {
-  @Implements<NotificationBase>()
   const factory BackupExpeditionNotificationModel({
     required String itemKey,
     required DateTime createdAt,
@@ -62,7 +59,6 @@ class BackupExpeditionNotificationModel with _$BackupExpeditionNotificationModel
 
 @freezed
 class BackupFarmingArtifactNotificationModel with _$BackupFarmingArtifactNotificationModel {
-  @Implements<NotificationBase>()
   const factory BackupFarmingArtifactNotificationModel({
     required String itemKey,
     required DateTime createdAt,
@@ -81,7 +77,6 @@ class BackupFarmingArtifactNotificationModel with _$BackupFarmingArtifactNotific
 
 @freezed
 class BackupFarmingMaterialNotificationModel with _$BackupFarmingMaterialNotificationModel {
-  @Implements<NotificationBase>()
   const factory BackupFarmingMaterialNotificationModel({
     required String itemKey,
     required DateTime createdAt,
@@ -99,7 +94,6 @@ class BackupFarmingMaterialNotificationModel with _$BackupFarmingMaterialNotific
 
 @freezed
 class BackupFurnitureNotificationModel with _$BackupFurnitureNotificationModel {
-  @Implements<NotificationBase>()
   const factory BackupFurnitureNotificationModel({
     required String itemKey,
     required DateTime createdAt,
@@ -118,7 +112,6 @@ class BackupFurnitureNotificationModel with _$BackupFurnitureNotificationModel {
 
 @freezed
 class BackupGadgetNotificationModel with _$BackupGadgetNotificationModel {
-  @Implements<NotificationBase>()
   const factory BackupGadgetNotificationModel({
     required String itemKey,
     required DateTime createdAt,
@@ -136,7 +129,6 @@ class BackupGadgetNotificationModel with _$BackupGadgetNotificationModel {
 
 @freezed
 class BackupRealmCurrencyNotificationModel with _$BackupRealmCurrencyNotificationModel {
-  @Implements<NotificationBase>()
   const factory BackupRealmCurrencyNotificationModel({
     required String itemKey,
     required DateTime createdAt,
@@ -157,7 +149,6 @@ class BackupRealmCurrencyNotificationModel with _$BackupRealmCurrencyNotificatio
 
 @freezed
 class BackupResinNotificationModel with _$BackupResinNotificationModel {
-  @Implements<NotificationBase>()
   const factory BackupResinNotificationModel({
     required String itemKey,
     required DateTime createdAt,
@@ -176,7 +167,6 @@ class BackupResinNotificationModel with _$BackupResinNotificationModel {
 
 @freezed
 class BackupWeeklyBossNotificationModel with _$BackupWeeklyBossNotificationModel {
-  @Implements<NotificationBase>()
   const factory BackupWeeklyBossNotificationModel({
     required String itemKey,
     required DateTime createdAt,

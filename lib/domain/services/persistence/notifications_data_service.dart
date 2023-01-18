@@ -206,4 +206,6 @@ abstract class NotificationsDataService implements BaseDataService {
   });
 
   Future<NotificationItem> reduceNotificationHours(int key, AppNotificationType type, int hours);
+
+  BackupNotificationsModel getDataForBackup();
 }

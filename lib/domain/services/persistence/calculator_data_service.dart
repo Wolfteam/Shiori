@@ -54,4 +54,6 @@ abstract class CalculatorDataService implements BaseDataService {
   /// E.g: If we now have more, we may update the used quantity in a [InventoryUsedItem] to use more,
   /// otherwise we may reduce the used quantity or even delete the whole thing
   Future<void> redistributeInventoryMaterial(String itemKey, int newQuantity);
+
+  List<CalculatorAscMaterialsSessionModel> getDataForBackup();
 }
