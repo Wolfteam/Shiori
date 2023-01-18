@@ -1,6 +1,7 @@
 import 'package:get_it/get_it.dart';
 import 'package:shiori/application/bloc.dart';
 import 'package:shiori/domain/services/api_service.dart';
+import 'package:shiori/domain/services/backup_restore_service.dart';
 import 'package:shiori/domain/services/calculator_service.dart';
 import 'package:shiori/domain/services/changelog_provider.dart';
 import 'package:shiori/domain/services/data_service.dart';
@@ -237,6 +238,12 @@ class Injection {
     return CheckForResourceUpdatesBloc(resourceService, settingsService, deviceInfoService, telemetryService);
   }
 
+  static BackupRestoreBloc get backupRestoreBloc {
+    final backupRestoreService = getIt<BackupRestoreService>();
+    final telemetryService = getIt<TelemetryService>();
+    return BackupRestoreBloc(backupRestoreService, telemetryService);
+  }
+
   //TODO: USE THIS PROP
   // static CalculatorAscMaterialsItemBloc get calculatorAscMaterialsItemBloc {
   //   final genshinService = getIt<GenshinService>();
@@ -341,5 +348,8 @@ class Injection {
     final purchaseService = PurchaseServiceImpl(loggingService);
     await purchaseService.init();
     getIt.registerSingleton<PurchaseService>(purchaseService);
+
+    final bkService = BackupRestoreServiceImpl(loggingService, settingsService, deviceInfoService, dataService);
+    getIt.registerSingleton<BackupRestoreService>(bkService);
   }
 }
