@@ -28,10 +28,19 @@ class BackupRestoreBloc extends Bloc<BackupRestoreEvent, BackupRestoreState> {
 
   Future<BackupRestoreState> _createBackup() async {
     final result = await _backupRestoreService.createBackup();
+    await _telemetryService.backupCreated(result.succeed);
     return BackupRestoreState.backupCreated(result: result);
   }
 
   Future<BackupRestoreState> _restoreBackup(String filePath) async {
-    return BackupRestoreState.loaded();
+    final bk = await _backupRestoreService.readBackup(filePath);
+    if (bk == null) {
+      await _telemetryService.backupRestored(false);
+      return const BackupRestoreState.readBackupFailed();
+    }
+
+    final restored = await _backupRestoreService.restoreBackup(bk);
+    await _telemetryService.backupRestored(restored);
+    return BackupRestoreState.restoreCompleted(succeed: restored);
   }
 }
