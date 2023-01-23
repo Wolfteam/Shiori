@@ -349,7 +349,7 @@ class Injection {
     await purchaseService.init();
     getIt.registerSingleton<PurchaseService>(purchaseService);
 
-    final bkService = BackupRestoreServiceImpl(loggingService, settingsService, deviceInfoService, dataService);
+    final bkService = BackupRestoreServiceImpl(loggingService, settingsService, deviceInfoService, dataService, notificationService);
     getIt.registerSingleton<BackupRestoreService>(bkService);
   }
 }
