@@ -9,4 +9,6 @@ abstract class TierListDataService implements BaseDataService {
   Future<void> deleteTierList();
 
   List<BackupTierListModel> getDataForBackup();
+
+  Future<void> restoreFromBackup(List<BackupTierListModel> data);
 }

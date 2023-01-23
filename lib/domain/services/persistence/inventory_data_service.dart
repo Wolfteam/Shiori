@@ -67,5 +67,5 @@ abstract class InventoryDataService implements BaseDataService {
 
   List<BackupInventoryModel> getDataForBackup();
 
-  List<BackupInventoryUsedItemModel> getUsedDataForBackup(int calcItemKey);
+  Future<void> restoreFromBackup(List<BackupInventoryModel> data);
 }

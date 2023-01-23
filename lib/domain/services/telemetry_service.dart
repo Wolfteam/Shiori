@@ -77,4 +77,8 @@ abstract class TelemetryService {
   Future<void> trackResourceUpdateDownload(int targetResourceVersion);
 
   Future<void> trackResourceUpdateCompleted(bool applied, int targetResourceVersion);
+
+  Future<void> backupCreated(bool succeed);
+
+  Future<void> backupRestored(bool succeed);
 }

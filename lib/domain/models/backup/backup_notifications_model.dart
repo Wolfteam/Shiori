@@ -24,7 +24,6 @@ class BackupNotificationsModel with _$BackupNotificationsModel {
 class BackupCustomNotificationModel with _$BackupCustomNotificationModel {
   const factory BackupCustomNotificationModel({
     required String itemKey,
-    required DateTime createdAt,
     required DateTime completesAt,
     String? note,
     required bool showNotification,
@@ -32,7 +31,6 @@ class BackupCustomNotificationModel with _$BackupCustomNotificationModel {
     required String body,
     required int notificationItemType,
     required int type,
-    required DateTime originalScheduledDate,
   }) = _BackupCustomNotificationModel;
 
   factory BackupCustomNotificationModel.fromJson(Map<String, dynamic> json) => _$BackupCustomNotificationModelFromJson(json);
@@ -42,14 +40,12 @@ class BackupCustomNotificationModel with _$BackupCustomNotificationModel {
 class BackupExpeditionNotificationModel with _$BackupExpeditionNotificationModel {
   const factory BackupExpeditionNotificationModel({
     required String itemKey,
-    required DateTime createdAt,
     required DateTime completesAt,
     String? note,
     required bool showNotification,
     required String title,
     required String body,
     required int type,
-    required DateTime originalScheduledDate,
     required int expeditionTimeType,
     required bool withTimeReduction,
   }) = _BackupExpeditionNotificationModel;
@@ -61,14 +57,12 @@ class BackupExpeditionNotificationModel with _$BackupExpeditionNotificationModel
 class BackupFarmingArtifactNotificationModel with _$BackupFarmingArtifactNotificationModel {
   const factory BackupFarmingArtifactNotificationModel({
     required String itemKey,
-    required DateTime createdAt,
     required DateTime completesAt,
     String? note,
     required bool showNotification,
     required String title,
     required String body,
     required int type,
-    required DateTime originalScheduledDate,
     required int artifactFarmingTimeType,
   }) = _BackupFarmingArtifactNotificationModel;
 
@@ -79,14 +73,12 @@ class BackupFarmingArtifactNotificationModel with _$BackupFarmingArtifactNotific
 class BackupFarmingMaterialNotificationModel with _$BackupFarmingMaterialNotificationModel {
   const factory BackupFarmingMaterialNotificationModel({
     required String itemKey,
-    required DateTime createdAt,
     required DateTime completesAt,
     String? note,
     required bool showNotification,
     required String title,
     required String body,
     required int type,
-    required DateTime originalScheduledDate,
   }) = _BackupFarmingMaterialNotificationModel;
 
   factory BackupFarmingMaterialNotificationModel.fromJson(Map<String, dynamic> json) => _$BackupFarmingMaterialNotificationModelFromJson(json);
@@ -96,14 +88,12 @@ class BackupFarmingMaterialNotificationModel with _$BackupFarmingMaterialNotific
 class BackupFurnitureNotificationModel with _$BackupFurnitureNotificationModel {
   const factory BackupFurnitureNotificationModel({
     required String itemKey,
-    required DateTime createdAt,
     required DateTime completesAt,
     String? note,
     required bool showNotification,
     required String title,
     required String body,
     required int type,
-    required DateTime originalScheduledDate,
     required int furnitureCraftingTimeType,
   }) = _BackupFurnitureNotificationModel;
 
@@ -114,14 +104,12 @@ class BackupFurnitureNotificationModel with _$BackupFurnitureNotificationModel {
 class BackupGadgetNotificationModel with _$BackupGadgetNotificationModel {
   const factory BackupGadgetNotificationModel({
     required String itemKey,
-    required DateTime createdAt,
     required DateTime completesAt,
     String? note,
     required bool showNotification,
     required String title,
     required String body,
     required int type,
-    required DateTime originalScheduledDate,
   }) = _BackupGadgetNotificationModel;
 
   factory BackupGadgetNotificationModel.fromJson(Map<String, dynamic> json) => _$BackupGadgetNotificationModelFromJson(json);
@@ -131,14 +119,12 @@ class BackupGadgetNotificationModel with _$BackupGadgetNotificationModel {
 class BackupRealmCurrencyNotificationModel with _$BackupRealmCurrencyNotificationModel {
   const factory BackupRealmCurrencyNotificationModel({
     required String itemKey,
-    required DateTime createdAt,
     required DateTime completesAt,
     String? note,
     required bool showNotification,
     required String title,
     required String body,
     required int type,
-    required DateTime originalScheduledDate,
     required int realmTrustRank,
     required int realmRankType,
     required int realmCurrency,
@@ -151,14 +137,12 @@ class BackupRealmCurrencyNotificationModel with _$BackupRealmCurrencyNotificatio
 class BackupResinNotificationModel with _$BackupResinNotificationModel {
   const factory BackupResinNotificationModel({
     required String itemKey,
-    required DateTime createdAt,
     required DateTime completesAt,
     String? note,
     required bool showNotification,
     required String title,
     required String body,
     required int type,
-    required DateTime originalScheduledDate,
     required int currentResinValue,
   }) = _BackupResinNotificationModel;
 
@@ -169,14 +153,12 @@ class BackupResinNotificationModel with _$BackupResinNotificationModel {
 class BackupWeeklyBossNotificationModel with _$BackupWeeklyBossNotificationModel {
   const factory BackupWeeklyBossNotificationModel({
     required String itemKey,
-    required DateTime createdAt,
     required DateTime completesAt,
     String? note,
     required bool showNotification,
     required String title,
     required String body,
     required int type,
-    required DateTime originalScheduledDate,
   }) = _BackupWeeklyBossNotificationModel;
 
   factory BackupWeeklyBossNotificationModel.fromJson(Map<String, dynamic> json) => _$BackupWeeklyBossNotificationModelFromJson(json);

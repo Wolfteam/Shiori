@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:shiori/domain/models/backup/backup_inventory_model.dart';
 
 part 'backup_calculator_asc_materials_model.freezed.dart';
 part 'backup_calculator_asc_materials_model.g.dart';
@@ -30,7 +29,6 @@ class CalculatorAscMaterialsSessionItemModel with _$CalculatorAscMaterialsSessio
     required bool isActive,
     required bool useMaterialsFromInventory,
     @Default(<CalculatorAscMaterialsSessionCharSkillItemModel>[]) List<CalculatorAscMaterialsSessionCharSkillItemModel> characterSkills,
-    @Default(<BackupInventoryUsedItemModel>[]) List<BackupInventoryUsedItemModel> inventoryUsedItems,
   }) = _CalculatorItemDataModel;
 
   factory CalculatorAscMaterialsSessionItemModel.fromJson(Map<String, dynamic> json) => _$CalculatorAscMaterialsSessionItemModelFromJson(json);

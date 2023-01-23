@@ -13,14 +13,3 @@ class BackupInventoryModel with _$BackupInventoryModel {
 
   factory BackupInventoryModel.fromJson(Map<String, dynamic> json) => _$BackupInventoryModelFromJson(json);
 }
-
-@freezed
-class BackupInventoryUsedItemModel with _$BackupInventoryUsedItemModel {
-  const factory BackupInventoryUsedItemModel({
-    required String itemKey,
-    required int usedQuantity,
-    required int type,
-  }) = _BackupInventoryUsedItemModel;
-
-  factory BackupInventoryUsedItemModel.fromJson(Map<String, dynamic> json) => _$BackupInventoryUsedItemModelFromJson(json);
-}
