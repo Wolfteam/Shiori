@@ -55,6 +55,7 @@ class _BodyState extends State<_Body> {
     final theme = Theme.of(context);
     final s = S.of(context);
     return AlertDialog(
+      scrollable: true,
       title: Text(widget.sessionKey != null ? s.editSession : s.addSession),
       content: BlocBuilder<CalculatorAscMaterialsSessionFormBloc, CalculatorAscMaterialsSessionFormState>(
         builder: (ctx, state) => TextField(
