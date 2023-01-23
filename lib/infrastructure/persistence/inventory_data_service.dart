@@ -336,11 +336,24 @@ class InventoryDataServiceImpl implements InventoryDataService {
   }
 
   @override
-  List<BackupInventoryUsedItemModel> getUsedDataForBackup(int calcItemKey) {
-    return _inventoryUsedItemsBox.values
-        .where((e) => e.calculatorItemKey == calcItemKey)
-        .map((e) => BackupInventoryUsedItemModel(itemKey: e.itemKey, type: e.type, usedQuantity: e.usedQuantity))
-        .toList();
+  Future<void> restoreFromBackup(List<BackupInventoryModel> data) async {
+    await deleteThemAll();
+    for (final item in data) {
+      final type = ItemType.values[item.type];
+      switch (type) {
+        case ItemType.character:
+          await addCharacterToInventory(item.itemKey, raiseEvent: false);
+          break;
+        case ItemType.weapon:
+          await addWeaponToInventory(item.itemKey, raiseEvent: false);
+          break;
+        case ItemType.material:
+          await addItemToInventory(item.itemKey, type, item.quantity, raiseEvent: false);
+          break;
+        default:
+          break;
+      }
+    }
   }
 
   InventoryItem? _getItemFromInventory(String key, ItemType type) {

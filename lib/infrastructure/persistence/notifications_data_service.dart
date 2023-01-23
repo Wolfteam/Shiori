@@ -655,12 +655,10 @@ class NotificationsDataServiceImpl implements NotificationsDataService {
           (e) => BackupCustomNotificationModel(
             itemKey: e.itemKey,
             type: e.type,
-            createdAt: e.createdAt,
             title: e.title,
             body: e.body,
             note: e.note,
             completesAt: e.completesAt,
-            originalScheduledDate: e.originalScheduledDate,
             showNotification: e.showNotification,
             notificationItemType: e.notificationItemType,
           ),
@@ -671,12 +669,10 @@ class NotificationsDataServiceImpl implements NotificationsDataService {
           (e) => BackupExpeditionNotificationModel(
             itemKey: e.itemKey,
             type: e.type,
-            createdAt: e.createdAt,
             title: e.title,
             body: e.body,
             note: e.note,
             completesAt: e.completesAt,
-            originalScheduledDate: e.originalScheduledDate,
             showNotification: e.showNotification,
             expeditionTimeType: e.expeditionTimeType,
             withTimeReduction: e.withTimeReduction,
@@ -688,12 +684,10 @@ class NotificationsDataServiceImpl implements NotificationsDataService {
           (e) => BackupFarmingArtifactNotificationModel(
             itemKey: e.itemKey,
             type: e.type,
-            createdAt: e.createdAt,
             title: e.title,
             body: e.body,
             note: e.note,
             completesAt: e.completesAt,
-            originalScheduledDate: e.originalScheduledDate,
             showNotification: e.showNotification,
             artifactFarmingTimeType: e.artifactFarmingTimeType,
           ),
@@ -704,12 +698,10 @@ class NotificationsDataServiceImpl implements NotificationsDataService {
           (e) => BackupFarmingMaterialNotificationModel(
             itemKey: e.itemKey,
             type: e.type,
-            createdAt: e.createdAt,
             title: e.title,
             body: e.body,
             note: e.note,
             completesAt: e.completesAt,
-            originalScheduledDate: e.originalScheduledDate,
             showNotification: e.showNotification,
           ),
         )
@@ -719,12 +711,10 @@ class NotificationsDataServiceImpl implements NotificationsDataService {
           (e) => BackupFurnitureNotificationModel(
             itemKey: e.itemKey,
             type: e.type,
-            createdAt: e.createdAt,
             title: e.title,
             body: e.body,
             note: e.note,
             completesAt: e.completesAt,
-            originalScheduledDate: e.originalScheduledDate,
             showNotification: e.showNotification,
             furnitureCraftingTimeType: e.furnitureCraftingTimeType,
           ),
@@ -735,12 +725,10 @@ class NotificationsDataServiceImpl implements NotificationsDataService {
           (e) => BackupGadgetNotificationModel(
             itemKey: e.itemKey,
             type: e.type,
-            createdAt: e.createdAt,
             title: e.title,
             body: e.body,
             note: e.note,
             completesAt: e.completesAt,
-            originalScheduledDate: e.originalScheduledDate,
             showNotification: e.showNotification,
           ),
         )
@@ -750,12 +738,10 @@ class NotificationsDataServiceImpl implements NotificationsDataService {
           (e) => BackupRealmCurrencyNotificationModel(
             itemKey: e.itemKey,
             type: e.type,
-            createdAt: e.createdAt,
             title: e.title,
             body: e.body,
             note: e.note,
             completesAt: e.completesAt,
-            originalScheduledDate: e.originalScheduledDate,
             showNotification: e.showNotification,
             realmCurrency: e.realmCurrency,
             realmRankType: e.realmRankType,
@@ -768,12 +754,10 @@ class NotificationsDataServiceImpl implements NotificationsDataService {
           (e) => BackupResinNotificationModel(
             itemKey: e.itemKey,
             type: e.type,
-            createdAt: e.createdAt,
             title: e.title,
             body: e.body,
             note: e.note,
             completesAt: e.completesAt,
-            originalScheduledDate: e.originalScheduledDate,
             showNotification: e.showNotification,
             currentResinValue: e.currentResinValue,
           ),
@@ -784,12 +768,10 @@ class NotificationsDataServiceImpl implements NotificationsDataService {
           (e) => BackupWeeklyBossNotificationModel(
             itemKey: e.itemKey,
             type: e.type,
-            createdAt: e.createdAt,
             title: e.title,
             body: e.body,
             note: e.note,
             completesAt: e.completesAt,
-            originalScheduledDate: e.originalScheduledDate,
             showNotification: e.showNotification,
           ),
         )
@@ -805,6 +787,111 @@ class NotificationsDataServiceImpl implements NotificationsDataService {
       resin: resin,
       weeklyBosses: weeklyBoss,
     );
+  }
+
+  @override
+  Future<void> restoreFromBackup(BackupNotificationsModel data, AppServerResetTimeType serverResetTimeType) async {
+    await deleteThemAll();
+    for (final notif in data.custom) {
+      await saveCustomNotification(
+        notif.itemKey,
+        notif.title,
+        notif.body,
+        notif.completesAt,
+        AppNotificationItemType.values[notif.notificationItemType],
+        note: notif.note,
+        showNotification: notif.showNotification,
+      );
+    }
+
+    for (final notif in data.expeditions) {
+      await saveExpeditionNotification(
+        notif.itemKey,
+        notif.title,
+        notif.body,
+        ExpeditionTimeType.values[notif.expeditionTimeType],
+        note: notif.note,
+        showNotification: notif.showNotification,
+        withTimeReduction: notif.withTimeReduction,
+      );
+
+      for (final notif in data.farmingArtifact) {
+        await saveFarmingArtifactNotification(
+          notif.itemKey,
+          ArtifactFarmingTimeType.values[notif.artifactFarmingTimeType],
+          notif.title,
+          notif.body,
+          note: notif.note,
+          showNotification: notif.showNotification,
+        );
+      }
+
+      for (final notif in data.farmingMaterial) {
+        await saveFarmingMaterialNotification(
+          notif.itemKey,
+          notif.title,
+          notif.body,
+          note: notif.note,
+          showNotification: notif.showNotification,
+        );
+      }
+
+      for (final notif in data.furniture) {
+        await saveFurnitureNotification(
+          notif.itemKey,
+          FurnitureCraftingTimeType.values[notif.furnitureCraftingTimeType],
+          notif.title,
+          notif.body,
+          note: notif.note,
+          showNotification: notif.showNotification,
+        );
+      }
+
+      for (final notif in data.gadgets) {
+        await saveGadgetNotification(
+          notif.itemKey,
+          notif.title,
+          notif.body,
+          note: notif.note,
+          showNotification: notif.showNotification,
+        );
+      }
+
+      for (final notif in data.realmCurrency) {
+        await saveRealmCurrencyNotification(
+          notif.itemKey,
+          RealmRankType.values[notif.realmRankType],
+          notif.realmTrustRank,
+          notif.realmCurrency,
+          notif.title,
+          notif.body,
+          note: notif.note,
+          showNotification: notif.showNotification,
+        );
+      }
+
+      for (final notif in data.resin) {
+        await saveResinNotification(
+          notif.itemKey,
+          notif.title,
+          notif.body,
+          notif.currentResinValue,
+          note: notif.note,
+          showNotification: notif.showNotification,
+        );
+      }
+
+      for (final notif in data.weeklyBosses) {
+        await saveWeeklyBossNotification(
+          notif.itemKey,
+          serverResetTimeType,
+          notif.title,
+          notif.body,
+          note: notif.note,
+          showNotification: notif.showNotification,
+        );
+      }
+    }
   }
 
   T _getNotification<T extends NotificationBase>(int key, AppNotificationType type) {

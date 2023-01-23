@@ -117,9 +117,11 @@ class CalculatorDataServiceImpl implements CalculatorDataService {
   }
 
   @override
-  Future<void> addCalAscMatSessionItems(int sessionKey, List<ItemAscensionMaterials> items) async {
-    for (final item in items) {
-      await addCalAscMatSessionItem(sessionKey, item);
+  Future<void> addCalAscMatSessionItems(int sessionKey, List<ItemAscensionMaterials> items, {bool redistributeAtTheEnd = true}) async {
+    for (int i = 0; i < items.length; i++) {
+      final item = items[i];
+      final redistribute = i + 1 == items.length && redistributeAtTheEnd;
+      await addCalAscMatSessionItem(sessionKey, item, redistribute: redistribute);
     }
   }
 
@@ -252,7 +254,6 @@ class CalculatorDataServiceImpl implements CalculatorDataService {
                 ),
               )
               .toList();
-          final usedInventoryItems = _inventory.getUsedDataForBackup(calcItem.key as int);
           return CalculatorAscMaterialsSessionItemModel(
             itemKey: calcItem.itemKey,
             currentAscensionLevel: calcItem.currentAscensionLevel,
@@ -265,7 +266,6 @@ class CalculatorDataServiceImpl implements CalculatorDataService {
             position: calcItem.position,
             useMaterialsFromInventory: calcItem.useMaterialsFromInventory,
             characterSkills: charSkills,
-            inventoryUsedItems: usedInventoryItems,
           );
         },
       ).toList();
@@ -273,6 +273,95 @@ class CalculatorDataServiceImpl implements CalculatorDataService {
       backup.add(bk);
     }
     return backup;
+  }
+
+  @override
+  Future<void> restoreFromBackup(List<CalculatorAscMaterialsSessionModel> data) async {
+    await deleteThemAll();
+    for (final session in data) {
+      final id = await createCalAscMatSession(session.name, session.position);
+      final items = session.items.map((e) {
+        if (e.isCharacter) {
+          final skills = e.characterSkills
+              .map(
+                (s) => CharacterSkill.skill(
+                  key: s.skillKey,
+                  name: '',
+                  position: s.position,
+                  desiredLevel: s.desiredLevel,
+                  currentLevel: s.currentLevel,
+                  isCurrentDecEnabled: false,
+                  isCurrentIncEnabled: false,
+                  isDesiredDecEnabled: false,
+                  isDesiredIncEnabled: false,
+                ),
+              )
+              .toList();
+          final char = _genshinService.characters.getCharacter(e.itemKey);
+          final charMaterials = _calculatorService.getCharacterMaterialsToUse(
+            char,
+            e.currentLevel,
+            e.desiredLevel,
+            e.currentAscensionLevel,
+            e.desiredAscensionLevel,
+            skills,
+          );
+          return ItemAscensionMaterials.forCharacters(
+            key: e.itemKey,
+            name: '',
+            position: e.position,
+            image: '',
+            rarity: 0,
+            materials: charMaterials,
+            currentLevel: e.currentLevel,
+            desiredLevel: e.desiredLevel,
+            currentAscensionLevel: e.currentAscensionLevel,
+            desiredAscensionLevel: e.desiredAscensionLevel,
+            useMaterialsFromInventory: e.useMaterialsFromInventory,
+            skills: e.characterSkills
+                .map(
+                  (s) => CharacterSkill.skill(
+                    key: s.skillKey,
+                    name: '',
+                    position: s.position,
+                    desiredLevel: s.desiredLevel,
+                    currentLevel: s.currentLevel,
+                    isCurrentDecEnabled: false,
+                    isCurrentIncEnabled: false,
+                    isDesiredDecEnabled: false,
+                    isDesiredIncEnabled: false,
+                  ),
+                )
+                .toList(),
+          );
+        }
+
+        final weapon = _genshinService.weapons.getWeapon(e.itemKey);
+        final weaponMaterials = _calculatorService.getWeaponMaterialsToUse(
+          weapon,
+          e.currentLevel,
+          e.desiredLevel,
+          e.currentAscensionLevel,
+          e.desiredAscensionLevel,
+        );
+        return ItemAscensionMaterials.forWeapons(
+          key: e.itemKey,
+          name: '',
+          position: e.position,
+          image: '',
+          rarity: 0,
+          materials: weaponMaterials,
+          currentLevel: e.currentLevel,
+          desiredLevel: e.desiredLevel,
+          currentAscensionLevel: e.currentAscensionLevel,
+          desiredAscensionLevel: e.desiredAscensionLevel,
+          useMaterialsFromInventory: e.useMaterialsFromInventory,
+        );
+      }).toList();
+      await addCalAscMatSessionItems(id, items, redistributeAtTheEnd: false);
+    }
+
+    await redistributeAllInventoryMaterials();
   }
 
   CalculatorItem _toCalculatorItem(int sessionKey, ItemAscensionMaterials item) {
