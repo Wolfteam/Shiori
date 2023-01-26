@@ -1,5 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:path/path.dart';
+import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/models/models.dart';
 
 part 'backup_model.freezed.dart';
@@ -12,12 +13,13 @@ class BackupModel with _$BackupModel {
     required int resourceVersion,
     required DateTime createdAt,
     required Map<String, String> deviceInfo,
-    required AppSettings settings,
-    required List<BackupInventoryModel> inventory,
-    required List<CalculatorAscMaterialsSessionModel> calculatorAscMaterials,
-    required List<BackupCustomBuildModel> customBuilds,
-    required List<BackupTierListModel> tierList,
-    required BackupNotificationsModel notifications,
+    required List<AppBackupDataType> dataTypes,
+    AppSettings? settings,
+    List<BackupInventoryModel>? inventory,
+    List<CalculatorAscMaterialsSessionModel>? calculatorAscMaterials,
+    List<BackupCustomBuildModel>? customBuilds,
+    List<BackupTierListModel>? tierList,
+    BackupNotificationsModel? notifications,
   }) = _BackupModel;
 
   factory BackupModel.fromJson(Map<String, dynamic> json) => _$BackupModelFromJson(json);
@@ -32,6 +34,7 @@ class BackupFileItemModel with _$BackupFileItemModel {
     required int resourceVersion,
     required DateTime createdAt,
     required String filePath,
+    required List<AppBackupDataType> dataTypes,
   }) = _BackupFileItemModel;
 
   const BackupFileItemModel._();
