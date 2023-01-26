@@ -4,11 +4,20 @@ part of 'backup_restore_bloc.dart';
 class BackupRestoreEvent with _$BackupRestoreEvent {
   const factory BackupRestoreEvent.init() = _Init;
 
-  const factory BackupRestoreEvent.create() = _Create;
+  const factory BackupRestoreEvent.create({
+    required List<AppBackupDataType> dataTypes,
+  }) = _Create;
 
-  const factory BackupRestoreEvent.read(String filePath) = _Read;
+  const factory BackupRestoreEvent.read({
+    required String filePath,
+  }) = _Read;
 
-  const factory BackupRestoreEvent.restore(String filePath) = _Restore;
+  const factory BackupRestoreEvent.restore({
+    required String filePath,
+    required List<AppBackupDataType> dataTypes,
+  }) = _Restore;
 
-  const factory BackupRestoreEvent.delete(String filePath) = _Delete;
+  const factory BackupRestoreEvent.delete({
+    required String filePath,
+  }) = _Delete;
 }

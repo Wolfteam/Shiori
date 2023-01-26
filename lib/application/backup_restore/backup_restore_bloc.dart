@@ -1,6 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:path/path.dart';
+import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/backup_restore_service.dart';
 import 'package:shiori/domain/services/telemetry_service.dart';
@@ -22,8 +23,8 @@ class BackupRestoreBloc extends Bloc<BackupRestoreEvent, BackupRestoreState> {
     final s = await event.map(
       init: (e) => _init(),
       read: (e) => _read(e.filePath),
-      create: (_) => _create(),
-      restore: (e) => _restore(e.filePath),
+      create: (e) => _create(e.dataTypes),
+      restore: (e) => _restore(e.filePath, e.dataTypes),
       delete: (e) => _delete(e.filePath),
     );
 
@@ -51,40 +52,57 @@ class BackupRestoreBloc extends Bloc<BackupRestoreEvent, BackupRestoreState> {
     }
     final filename = basename(filePath);
     final bk = await _backupRestoreService.readBackup(filePath);
-    return currentState.copyWith.call(readResult: BackupOperationResultModel(name: filename, path: filePath, succeed: bk != null));
+    final result = BackupOperationResultModel(
+      name: filename,
+      path: filePath,
+      succeed: bk != null,
+      dataTypes: bk?.dataTypes ?? [],
+    );
+    return currentState.copyWith.call(readResult: result);
   }
 
-  Future<BackupRestoreState> _create() async {
+  Future<BackupRestoreState> _create(List<AppBackupDataType> dataTypes) async {
     if (state is! _LoadedState) {
       throw Exception('Invalid state');
     }
-    final result = await _backupRestoreService.createBackup();
+    final result = await _backupRestoreService.createBackup(dataTypes);
     await _telemetryService.backupCreated(result.succeed);
     if (result.succeed) {
       final bk = await _backupRestoreService.readBackup(result.path);
       final backups = [...currentState.backups];
       backups.insert(
         0,
-        BackupFileItemModel(appVersion: bk!.appVersion, resourceVersion: bk.resourceVersion, createdAt: bk.createdAt, filePath: result.path),
+        BackupFileItemModel(
+          appVersion: bk!.appVersion,
+          resourceVersion: bk.resourceVersion,
+          createdAt: bk.createdAt,
+          filePath: result.path,
+          dataTypes: bk.dataTypes,
+        ),
       );
       return currentState.copyWith.call(backups: backups, createResult: result);
     }
     return currentState.copyWith.call(createResult: result);
   }
 
-  Future<BackupRestoreState> _restore(String filePath) async {
+  Future<BackupRestoreState> _restore(String filePath, List<AppBackupDataType> dataTypes) async {
     if (state is! _LoadedState) {
       throw Exception('Invalid state');
     }
     final filename = basename(filePath);
     final bk = await _backupRestoreService.readBackup(filePath);
-    final result = BackupOperationResultModel(name: filename, path: filePath, succeed: bk != null);
+    final result = BackupOperationResultModel(
+      name: filename,
+      path: filePath,
+      succeed: bk != null,
+      dataTypes: bk?.dataTypes ?? [],
+    );
     if (bk == null) {
       await _telemetryService.backupRestored(false);
       return currentState.copyWith.call(restoreResult: result);
     }
 
-    final restored = await _backupRestoreService.restoreBackup(bk);
+    final restored = await _backupRestoreService.restoreBackup(bk, dataTypes);
     await _telemetryService.backupRestored(restored);
     return currentState.copyWith.call(restoreResult: result);
   }
@@ -95,7 +113,7 @@ class BackupRestoreBloc extends Bloc<BackupRestoreEvent, BackupRestoreState> {
     }
     final deleted = await _backupRestoreService.deleteBackup(filePath);
     final filename = basename(filePath);
-    final result = BackupOperationResultModel(name: filename, path: filePath, succeed: deleted);
+    final result = BackupOperationResultModel(name: filename, path: filePath, succeed: deleted, dataTypes: []);
     if (deleted) {
       final backups = [...currentState.backups.where((bk) => bk.filePath != filePath)]..sort(_sortBackups);
       return currentState.copyWith(backups: backups, deleteResult: result);
