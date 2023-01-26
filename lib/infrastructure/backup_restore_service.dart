@@ -1,8 +1,10 @@
+import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
 
 import 'package:path/path.dart' as path;
 import 'package:path_provider/path_provider.dart';
+import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/backup_restore_service.dart';
 import 'package:shiori/domain/services/data_service.dart';
@@ -24,31 +26,53 @@ class BackupRestoreServiceImpl implements BackupRestoreService {
   BackupRestoreServiceImpl(this._loggingService, this._settingsService, this._deviceInfoService, this._dataService, this._notificationService);
 
   @override
-  Future<BackupOperationResultModel> createBackup() async {
+  Future<BackupOperationResultModel> createBackup(List<AppBackupDataType> dataTypes) async {
+    if (dataTypes.isEmpty) {
+      throw Exception('You must provide at least one bk data type');
+    }
+
     final filename = 'shiori_backup_${DateTime.now().millisecondsSinceEpoch}$_fileExtension';
     final dirPath = await _getBackupDir();
     final filePath = path.join(dirPath, filename);
     try {
       _loggingService.info(runtimeType, 'createBackup: Retrieving the data that will be used for bk = $filename ...');
-      final settings = _settingsService.appSettings;
+
       final deviceInfo = _deviceInfoService.deviceInfo;
-      final calcAscMat = _dataService.calculator.getDataForBackup();
-      final inventory = _dataService.inventory.getDataForBackup();
-      final tierList = _dataService.tierList.getDataForBackup();
-      final customBuilds = _dataService.customBuilds.getDataForBackup();
-      final notifications = _dataService.notifications.getDataForBackup();
-      final bk = BackupModel(
+      var bk = BackupModel(
         appVersion: _deviceInfoService.version,
-        resourceVersion: settings.resourceVersion,
+        resourceVersion: _settingsService.resourceVersion,
         createdAt: DateTime.now(),
         deviceInfo: deviceInfo,
-        settings: settings,
-        inventory: inventory,
-        calculatorAscMaterials: calcAscMat,
-        tierList: tierList,
-        customBuilds: customBuilds,
-        notifications: notifications,
+        dataTypes: dataTypes,
       );
+      for (final type in dataTypes) {
+        switch (type) {
+          case AppBackupDataType.settings:
+            final settings = _settingsService.appSettings;
+            bk = bk.copyWith(settings: settings);
+            break;
+          case AppBackupDataType.inventory:
+            final inventory = _dataService.inventory.getDataForBackup();
+            bk = bk.copyWith(inventory: inventory);
+            break;
+          case AppBackupDataType.calculatorAscMaterials:
+            final calcAscMat = _dataService.calculator.getDataForBackup();
+            bk = bk.copyWith(calculatorAscMaterials: calcAscMat);
+            break;
+          case AppBackupDataType.tierList:
+            final tierList = _dataService.tierList.getDataForBackup();
+            bk = bk.copyWith(tierList: tierList);
+            break;
+          case AppBackupDataType.customBuilds:
+            final customBuilds = _dataService.customBuilds.getDataForBackup();
+            bk = bk.copyWith(customBuilds: customBuilds);
+            break;
+          case AppBackupDataType.notifications:
+            final notifications = _dataService.notifications.getDataForBackup();
+            bk = bk.copyWith(notifications: notifications);
+            break;
+        }
+      }
 
       _loggingService.info(runtimeType, 'createBackup: Creating json...');
       final jsonMap = bk.toJson();
@@ -64,10 +88,10 @@ class BackupRestoreServiceImpl implements BackupRestoreService {
       await file.writeAsString(jsonString);
 
       _loggingService.info(runtimeType, 'createBackup: Bk = $filePath was successfully created');
-      return BackupOperationResultModel(name: filename, path: filePath, succeed: true);
+      return BackupOperationResultModel(name: filename, path: filePath, succeed: true, dataTypes: dataTypes);
     } catch (e, s) {
       _loggingService.error(runtimeType, 'createBackup: Error creating bk = $filePath', e, s);
-      return BackupOperationResultModel(name: filename, path: filePath, succeed: false);
+      return BackupOperationResultModel(name: filename, path: filePath, succeed: false, dataTypes: dataTypes);
     }
   }
 
@@ -80,7 +104,14 @@ class BackupRestoreServiceImpl implements BackupRestoreService {
     for (final file in files) {
       final bk = await readBackup(file.path);
       if (bk != null) {
-        bks.add(BackupFileItemModel(filePath: file.path, appVersion: bk.appVersion, resourceVersion: bk.resourceVersion, createdAt: bk.createdAt));
+        final flattened = BackupFileItemModel(
+          filePath: file.path,
+          appVersion: bk.appVersion,
+          resourceVersion: bk.resourceVersion,
+          createdAt: bk.createdAt,
+          dataTypes: bk.dataTypes,
+        );
+        bks.add(flattened);
       }
     }
     return bks;
@@ -113,9 +144,10 @@ class BackupRestoreServiceImpl implements BackupRestoreService {
   }
 
   @override
-  Future<bool> restoreBackup(BackupModel bk) async {
-    _loggingService.info(runtimeType, 'restoreBackup: Cancelling all notifications...');
-    await _notificationService.cancelAllNotifications();
+  Future<bool> restoreBackup(BackupModel bk, List<AppBackupDataType> dataTypes) async {
+    if (dataTypes.isEmpty) {
+      throw Exception('You must provide at least one bk data type');
+    }
 
     if (!canBackupBeRestored(bk.appVersion)) {
       return false;
@@ -123,18 +155,34 @@ class BackupRestoreServiceImpl implements BackupRestoreService {
 
     try {
       _loggingService.info(runtimeType, 'restoreBackup: Restoring from backup...');
-      _settingsService.restoreFromBackup(bk.settings);
-
-      await _dataService.tierList.restoreFromBackup(bk.tierList);
-
-      await _dataService.notifications.restoreFromBackup(bk.notifications, bk.settings.serverResetTime);
-
-      await _dataService.customBuilds.restoreFromBackup(bk.customBuilds);
-
-      await _dataService.inventory.restoreFromBackup(bk.inventory);
-
-      await _dataService.calculator.restoreFromBackup(bk.calculatorAscMaterials);
-
+      for (final type in dataTypes) {
+        if (!bk.dataTypes.contains(type)) {
+          continue;
+        }
+        switch (type) {
+          case AppBackupDataType.settings:
+            _settingsService.restoreFromBackup(bk.settings!);
+            break;
+          case AppBackupDataType.inventory:
+            await _dataService.inventory.restoreFromBackup(bk.inventory!);
+            break;
+          case AppBackupDataType.calculatorAscMaterials:
+            await _dataService.calculator.restoreFromBackup(bk.calculatorAscMaterials!);
+            break;
+          case AppBackupDataType.tierList:
+            await _dataService.tierList.restoreFromBackup(bk.tierList!);
+            break;
+          case AppBackupDataType.customBuilds:
+            await _dataService.customBuilds.restoreFromBackup(bk.customBuilds!);
+            break;
+          case AppBackupDataType.notifications:
+            _loggingService.info(runtimeType, 'restoreBackup: Cancelling all notifications...');
+            await _notificationService.cancelAllNotifications();
+            final serverResetTime = bk.settings?.serverResetTime ?? _settingsService.serverResetTime;
+            await _dataService.notifications.restoreFromBackup(bk.notifications!, serverResetTime);
+            break;
+        }
+      }
       _loggingService.info(runtimeType, 'restoreBackup: Process completed');
       return true;
     } catch (e, s) {
@@ -160,15 +208,22 @@ class BackupRestoreServiceImpl implements BackupRestoreService {
     }
   }
 
-  //TODO: PERHAPS CREATE A BK FOLDER ?
   Future<String> _getBackupDir() async {
+    String dirPath;
     if (Platform.isIOS) {
       final dir = await getApplicationDocumentsDirectory();
-      return dir.path;
+      dirPath = dir.path;
+    } else {
+      final dir = await getExternalStorageDirectory();
+      dirPath = dir!.path;
     }
 
-    final dir = await getExternalStorageDirectory();
-    return dir!.path;
+    final dir = Directory(path.join(dirPath, 'backups'));
+    if (!await dir.exists()) {
+      await dir.create();
+    }
+
+    return dir.path;
   }
 
   Future<Map<String, dynamic>?> _readBackupAsJson(String filePath) async {
