@@ -669,4 +669,21 @@ extension I18nExtensions on S {
         return birthdaysPerMonth;
     }
   }
+
+  String translateAppBackupDataType(AppBackupDataType type) {
+    switch (type) {
+      case AppBackupDataType.settings:
+        return settings;
+      case AppBackupDataType.inventory:
+        return myInventory;
+      case AppBackupDataType.calculatorAscMaterials:
+        return calculators;
+      case AppBackupDataType.tierList:
+        return tierListBuilder;
+      case AppBackupDataType.customBuilds:
+        return customBuilds;
+      case AppBackupDataType.notifications:
+        return notifications;
+    }
+  }
 }
