@@ -24,12 +24,12 @@ class BackupRestoreServiceImpl implements BackupRestoreService {
   BackupRestoreServiceImpl(this._loggingService, this._settingsService, this._deviceInfoService, this._dataService, this._notificationService);
 
   @override
-  Future<CreateBackupResultModel> createBackup() async {
-    final filename = path.join('shiori_backup_', '${DateTime.now().millisecondsSinceEpoch}', _fileExtension);
+  Future<BackupOperationResultModel> createBackup() async {
+    final filename = 'shiori_backup_${DateTime.now().millisecondsSinceEpoch}$_fileExtension';
     final dirPath = await _getBackupDir();
     final filePath = path.join(dirPath, filename);
     try {
-      _loggingService.info(runtimeType, 'Retrieving the data that will be used for bk = $filename ...');
+      _loggingService.info(runtimeType, 'createBackup: Retrieving the data that will be used for bk = $filename ...');
       final settings = _settingsService.appSettings;
       final deviceInfo = _deviceInfoService.deviceInfo;
       final calcAscMat = _dataService.calculator.getDataForBackup();
@@ -50,7 +50,7 @@ class BackupRestoreServiceImpl implements BackupRestoreService {
         notifications: notifications,
       );
 
-      _loggingService.info(runtimeType, 'Creating json...');
+      _loggingService.info(runtimeType, 'createBackup: Creating json...');
       final jsonMap = bk.toJson();
 
       final file = File(filePath);
@@ -59,35 +59,46 @@ class BackupRestoreServiceImpl implements BackupRestoreService {
       }
       final jsonString = json.encode(jsonMap);
 
-      _loggingService.info(runtimeType, 'Saving file...');
+      _loggingService.info(runtimeType, 'createBackup: Saving file...');
       await file.create();
       await file.writeAsString(jsonString);
 
-      _loggingService.info(runtimeType, 'Bk = $filePath was successfully created');
-      return CreateBackupResultModel(name: filename, path: filePath, succeed: true);
+      _loggingService.info(runtimeType, 'createBackup: Bk = $filePath was successfully created');
+      return BackupOperationResultModel(name: filename, path: filePath, succeed: true);
     } catch (e, s) {
-      _loggingService.error(runtimeType, 'Error creating bk = $filePath', e, s);
-      return CreateBackupResultModel(name: filename, path: filePath, succeed: false);
+      _loggingService.error(runtimeType, 'createBackup: Error creating bk = $filePath', e, s);
+      return BackupOperationResultModel(name: filename, path: filePath, succeed: false);
     }
   }
 
   @override
+  Future<List<BackupFileItemModel>> readBackups() async {
+    final bks = <BackupFileItemModel>[];
+    final dirPath = await _getBackupDir();
+    final dir = Directory(dirPath);
+    final files = await dir.list().toList();
+    for (final file in files) {
+      final bk = await readBackup(file.path);
+      if (bk != null) {
+        bks.add(BackupFileItemModel(filePath: file.path, appVersion: bk.appVersion, resourceVersion: bk.resourceVersion, createdAt: bk.createdAt));
+      }
+    }
+    return bks;
+  }
+
+//TODO: IF THE FILE IS IN A DIFFERENT FOLDER THAN THE BACKUPS ONE, MAKE A COPY OF IT
+  @override
   Future<BackupModel?> readBackup(String filePath) async {
     _loggingService.info(runtimeType, 'readBackup: Trying to read file = $filePath');
-    final file = File(filePath);
-    if (!await file.exists()) {
-      _loggingService.warning(runtimeType, 'readBackup: File = $filePath does not exist');
-      return null;
-    }
-
     try {
-      final jsonString = await file.readAsString();
-      final jsonMap = json.decode(jsonString) as Map<String, dynamic>;
-      return BackupModel.fromJson(jsonMap);
+      final jsonMap = await _readBackupAsJson(filePath);
+      if (jsonMap != null) {
+        return BackupModel.fromJson(jsonMap);
+      }
     } catch (e, s) {
       _loggingService.error(runtimeType, 'readBackup: Error reading file = $filePath', e, s);
-      return null;
     }
+    return null;
   }
 
   @override
@@ -103,6 +114,7 @@ class BackupRestoreServiceImpl implements BackupRestoreService {
 
   @override
   Future<bool> restoreBackup(BackupModel bk) async {
+    _loggingService.info(runtimeType, 'restoreBackup: Cancelling all notifications...');
     await _notificationService.cancelAllNotifications();
 
     if (!canBackupBeRestored(bk.appVersion)) {
@@ -110,6 +122,7 @@ class BackupRestoreServiceImpl implements BackupRestoreService {
     }
 
     try {
+      _loggingService.info(runtimeType, 'restoreBackup: Restoring from backup...');
       _settingsService.restoreFromBackup(bk.settings);
 
       await _dataService.tierList.restoreFromBackup(bk.tierList);
@@ -122,9 +135,27 @@ class BackupRestoreServiceImpl implements BackupRestoreService {
 
       await _dataService.calculator.restoreFromBackup(bk.calculatorAscMaterials);
 
+      _loggingService.info(runtimeType, 'restoreBackup: Process completed');
       return true;
     } catch (e, s) {
       _loggingService.error(runtimeType, 'restoreBackup: Error restoring bk', e, s);
+      return false;
+    }
+  }
+
+  @override
+  Future<bool> deleteBackup(String filePath) async {
+    try {
+      _loggingService.info(runtimeType, 'deleteBackup: Deleting file = $filePath');
+      final file = File(filePath);
+      if (!await file.exists()) {
+        return true;
+      }
+
+      await file.delete();
+      return true;
+    } catch (e, s) {
+      _loggingService.error(runtimeType, 'deleteBackup: Error deleting file = $filePath', e, s);
       return false;
     }
   }
@@ -138,5 +169,22 @@ class BackupRestoreServiceImpl implements BackupRestoreService {
 
     final dir = await getExternalStorageDirectory();
     return dir!.path;
+  }
+
+  Future<Map<String, dynamic>?> _readBackupAsJson(String filePath) async {
+    _loggingService.info(runtimeType, '_readBackup: Trying to read file = $filePath');
+    final file = File(filePath);
+    if (!await file.exists()) {
+      _loggingService.warning(runtimeType, '_readBackup: File = $filePath does not exist');
+      return null;
+    }
+
+    try {
+      final jsonString = await file.readAsString();
+      return json.decode(jsonString) as Map<String, dynamic>;
+    } catch (e, s) {
+      _loggingService.error(runtimeType, '_readBackup: Error reading file = $filePath', e, s);
+      return null;
+    }
   }
 }
