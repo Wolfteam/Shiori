@@ -1,9 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
-import 'package:shiori/application/backup_restore/backup_restore_bloc.dart';
+import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/generated/l10n.dart';
+import 'package:shiori/presentation/backups/widgets/restore_backup_warning_msg.dart';
+import 'package:shiori/presentation/shared/extensions/i18n_extensions.dart';
+import 'package:shiori/presentation/shared/utils/enum_utils.dart';
+
+enum OperationType {
+  delete,
+  restore,
+}
 
 class BackupDetailsDialog extends StatelessWidget {
   final BackupFileItemModel backup;
@@ -26,27 +33,36 @@ class BackupDetailsDialog extends StatelessWidget {
         children: [
           Text(backup.filename, style: theme.textTheme.subtitle1),
           Text(s.appVersion(backup.appVersion)),
-          Text('Date: ${DateFormat.yMd().add_Hm().format(backup.createdAt)}'),
-          Container(
-            margin: const EdgeInsets.only(top: 10),
-            child: Text(
-              'Keep in mind that restoring a backup will replace all your existing data and configuration',
-              style: theme.textTheme.subtitle2!.copyWith(fontStyle: FontStyle.italic, color: theme.primaryColor),
+          Text(s.dateX(DateFormat.yMd().add_Hm().format(backup.createdAt))),
+          ...EnumUtils.getTranslatedAndSortedEnum<AppBackupDataType>(
+            backup.dataTypes,
+            (value, index) => s.translateAppBackupDataType(value),
+          ).map(
+            (e) => CheckboxListTile(
+              controlAffinity: ListTileControlAffinity.leading,
+              contentPadding: EdgeInsets.zero,
+              visualDensity: VisualDensity.compact,
+              title: Text(e.translation),
+              activeColor: theme.primaryColor,
+              value: true,
+              enabled: false,
+              onChanged: (_) {},
             ),
           ),
+          const RestoreBackupWarningMsg(),
         ],
       ),
       actions: [
         OutlinedButton(
-          onPressed: () => Navigator.pop(context, false),
+          onPressed: () => Navigator.pop(context),
           child: Text(s.cancel, style: TextStyle(color: theme.primaryColor)),
         ),
-        ElevatedButton(
-          onPressed: () => context.read<BackupRestoreBloc>().add(BackupRestoreEvent.delete(backup.filePath)),
+        OutlinedButton(
+          onPressed: () => Navigator.pop(context, OperationType.delete),
           child: Text(s.delete),
         ),
         ElevatedButton(
-          onPressed: () => context.read<BackupRestoreBloc>().add(BackupRestoreEvent.restore(backup.filePath)),
+          onPressed: () => Navigator.pop(context, OperationType.restore),
           child: Text(s.restore),
         ),
       ],

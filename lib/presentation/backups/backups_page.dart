@@ -1,59 +1,32 @@
+import 'package:darq/darq.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:intl/intl.dart';
 import 'package:shiori/application/bloc.dart';
+import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/extensions/string_extensions.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/generated/l10n.dart';
 import 'package:shiori/injection.dart';
+import 'package:shiori/presentation/backups/widgets/backup_data_types_selector_dialog.dart';
 import 'package:shiori/presentation/backups/widgets/backup_list_item.dart';
-import 'package:shiori/presentation/shared/app_fab.dart';
-import 'package:shiori/presentation/shared/dialogs/confirm_dialog.dart';
 import 'package:shiori/presentation/shared/loading.dart';
-import 'package:shiori/presentation/shared/mixins/app_fab_mixin.dart';
 import 'package:shiori/presentation/shared/nothing_found_column.dart';
 import 'package:shiori/presentation/shared/styles.dart';
 import 'package:shiori/presentation/shared/utils/toast_utils.dart';
 
-class BackupsPage extends StatefulWidget {
+class BackupsPage extends StatelessWidget {
   const BackupsPage({super.key});
-
-  @override
-  State<BackupsPage> createState() => _BackupsPageState();
-}
-
-class _BackupsPageState extends State<BackupsPage> with SingleTickerProviderStateMixin, AppFabMixin {
-  @override
-  bool get isInitiallyVisible => true;
-
-  @override
-  bool get hideOnTop => false;
 
   @override
   Widget build(BuildContext context) {
     final s = S.of(context);
+    final theme = Theme.of(context);
     return BlocProvider<BackupRestoreBloc>(
       create: (context) => Injection.backupRestoreBloc..add(const BackupRestoreEvent.init()),
       child: Scaffold(
-        appBar: AppBar(
-          title: Text('Backups'),
-          actions: [
-            BlocBuilder<BackupRestoreBloc, BackupRestoreState>(
-              builder: (context, state) => state.maybeMap(loaded: (_) => false, orElse: () => true)
-                  ? const SizedBox.shrink()
-                  : Tooltip(
-                      message: 'Import',
-                      child: IconButton(
-                        splashRadius: Styles.mediumButtonSplashRadius,
-                        icon: const Icon(Icons.upload),
-                        onPressed: () => FilePicker.platform
-                            .pickFiles(dialogTitle: 'Choose a file', lockParentWindow: true)
-                            .then((result) => _handlePickerResult(context, result)),
-                      ),
-                    ),
-            ),
-          ],
-        ),
+        appBar: AppBar(title: Text(s.backups)),
         body: SafeArea(
           child: BlocConsumer<BackupRestoreBloc, BackupRestoreState>(
             listener: (context, state) {
@@ -71,33 +44,38 @@ class _BackupsPageState extends State<BackupsPage> with SingleTickerProviderStat
               );
             },
             builder: (context, state) => state.maybeMap(
-              loaded: (state) => state.backups.isEmpty
-                  ? const NothingFoundColumn()
-                  : ListView.builder(
-                      itemCount: state.backups.length,
-                      itemBuilder: (context, index) => BackupListItem(backup: state.backups[index]),
+              loaded: (state) => CustomScrollView(
+                slivers: [
+                  SliverToBoxAdapter(
+                    child: _Header(
+                      backupCount: state.backups.length,
+                      latestBackupDate: state.backups.firstOrDefault()?.createdAt,
                     ),
+                  ),
+                  if (state.backups.isNotEmpty)
+                    SliverToBoxAdapter(
+                      child: Container(
+                        margin: const EdgeInsets.only(left: 16),
+                        child: Text(s.backups, style: theme.textTheme.headline6),
+                      ),
+                    ),
+                  if (state.backups.isNotEmpty)
+                    SliverList(
+                      delegate: SliverChildBuilderDelegate(
+                        (context, index) => BackupListItem(backup: state.backups[index]),
+                        childCount: state.backups.length,
+                      ),
+                    ),
+                  if (state.backups.isEmpty)
+                    const SliverFillRemaining(
+                      hasScrollBody: false,
+                      fillOverscroll: true,
+                      child: NothingFoundColumn(),
+                    ),
+                ],
+              ),
               orElse: () => const Loading(useScaffold: false),
             ),
-          ),
-        ),
-        floatingActionButton: Builder(
-          builder: (context) => AppFab(
-            icon: const Icon(Icons.add),
-            hideFabAnimController: hideFabAnimController,
-            scrollController: scrollController,
-            mini: false,
-            onPressed: () => showDialog<bool?>(
-              context: context,
-              builder: (context) => ConfirmDialog(
-                title: s.confirm,
-                content: 'Would you like to create a backup of all your data and configuration ?',
-              ),
-            ).then((confirmed) {
-              if (confirmed == true) {
-                context.read<BackupRestoreBloc>().add(const BackupRestoreEvent.create());
-              }
-            }),
           ),
         ),
       ),
@@ -119,7 +97,7 @@ class _BackupsPageState extends State<BackupsPage> with SingleTickerProviderStat
     }
 
     final s = S.of(context);
-    final msg = result.succeed ? 'Backup = ${result.name} was successfully created' : 'Could not create backup';
+    final msg = result.succeed ? s.backupWasCreated(result.name) : s.couldNotCreateBackup;
     _showToastMsg(msg, result.succeed, context);
   }
 
@@ -129,7 +107,7 @@ class _BackupsPageState extends State<BackupsPage> with SingleTickerProviderStat
     }
 
     final s = S.of(context);
-    final msg = result.succeed ? 'Backup = ${result.name} was successfully restored.\nRestarting...' : 'Could not restore file = ${result.name}';
+    final msg = result.succeed ? s.backupWasRestored(result.name) : s.couldNotRestoreBackup;
     _showToastMsg(msg, result.succeed, context);
     if (result.succeed) {
       Future.delayed(const Duration(seconds: 1)).then((value) => context.read<MainBloc>().add(const MainEvent.restart()));
@@ -143,17 +121,106 @@ class _BackupsPageState extends State<BackupsPage> with SingleTickerProviderStat
 
     final s = S.of(context);
     if (result.succeed) {
-      showDialog<bool>(
+      showDialog<List<AppBackupDataType>?>(
         context: context,
-        builder: (_) => ConfirmDialog(title: s.confirm, content: 'Would you like to restore backup = ${result.name} ?'),
-      ).then((confirmed) {
-        if (confirmed == true) {
-          context.read<BackupRestoreBloc>().add(BackupRestoreEvent.restore(result.path));
+        builder: (_) => BackupDataTypesSelectorDialog(
+          content: s.restoreBackupConfirmation(result.name),
+          dataTypes: result.dataTypes,
+        ),
+      ).then((dataTypes) {
+        if (dataTypes?.isNotEmpty == true) {
+          context.read<BackupRestoreBloc>().add(BackupRestoreEvent.restore(filePath: result.path, dataTypes: dataTypes!));
         }
       });
     } else {
-      _showToastMsg('File = ${result.name} could not be read.\nMake sure you have selected the appropriate one.', false, context);
+      _showToastMsg(s.fileCouldNotBeRead(result.name), false, context);
     }
+  }
+}
+
+class _Header extends StatelessWidget {
+  final int backupCount;
+  final DateTime? latestBackupDate;
+
+  const _Header({
+    required this.backupCount,
+    this.latestBackupDate,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final s = S.of(context);
+    final theme = Theme.of(context);
+    return Card(
+      margin: Styles.edgeInsetAll15,
+      child: Padding(
+        padding: Styles.edgeInsetAll10,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Row(
+              children: [
+                Container(
+                  decoration: BoxDecoration(
+                    border: Border.all(color: theme.primaryColor.withOpacity(0.5)),
+                    borderRadius: const BorderRadius.all(Radius.circular(10)),
+                  ),
+                  padding: Styles.edgeInsetAll5,
+                  child: Icon(Icons.backup, size: 48, color: theme.primaryColor),
+                ),
+                Expanded(
+                  child: Container(
+                    margin: const EdgeInsets.only(left: 10),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                      children: [
+                        Text(
+                          s.lastBackup(
+                            latestBackupDate == null ? s.na : DateFormat.yMd().add_Hm().format(latestBackupDate!),
+                          ),
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                        Text(
+                          s.totalX(backupCount),
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            Text(s.createBackupMsgInfoA),
+            Text(s.createBackupMsgInfoB),
+            Text(s.restoreBackupMsgWarning),
+            ButtonBar(
+              children: [
+                ElevatedButton(
+                  onPressed: () => showDialog<List<AppBackupDataType>?>(
+                    context: context,
+                    builder: (context) => BackupDataTypesSelectorDialog(
+                      content: s.createBackupConfirmation,
+                      dataTypes: AppBackupDataType.values,
+                    ),
+                  ).then((dataTypes) {
+                    if (dataTypes?.isNotEmpty == true) {
+                      context.read<BackupRestoreBloc>().add(BackupRestoreEvent.create(dataTypes: dataTypes!));
+                    }
+                  }),
+                  child: Text(s.backup),
+                ),
+                OutlinedButton(
+                  onPressed: () => FilePicker.platform
+                      .pickFiles(dialogTitle: s.chooseFile, lockParentWindow: true)
+                      .then((result) => _handlePickerResult(context, result)),
+                  child: Text(s.import),
+                ),
+              ],
+            )
+          ],
+        ),
+      ),
+    );
   }
 
   void _handlePickerResult(BuildContext context, FilePickerResult? result) {
@@ -165,6 +232,6 @@ class _BackupsPageState extends State<BackupsPage> with SingleTickerProviderStat
       return;
     }
 
-    context.read<BackupRestoreBloc>().add(BackupRestoreEvent.read(path!));
+    context.read<BackupRestoreBloc>().add(BackupRestoreEvent.read(filePath: path!));
   }
 }
