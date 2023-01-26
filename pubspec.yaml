@@ -25,6 +25,7 @@ dependencies:
   device_info_plus: ^8.0.0
   devicelocale: ^0.5.5
   enum_to_string: ^2.0.1
+  file_picker: ^5.2.5
   fl_chart: ^0.55.2
   flutter:
     sdk: flutter
@@ -50,6 +51,7 @@ dependencies:
   image_gallery_saver: ^1.7.1
   infinite_listview: ^1.1.0
   internet_connection_checker: ^0.0.1+4
+  intl: ^0.17.0
   json_annotation: ^4.7.0
   linked_scroll_controller: ^0.2.0
   logger: ^1.1.0
