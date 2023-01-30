@@ -97,7 +97,7 @@ class BackupsPage extends StatelessWidget {
     }
 
     final s = S.of(context);
-    final msg = result.succeed ? s.backupWasCreated(result.name) : s.couldNotCreateBackup;
+    final msg = result.succeed ? s.backupWasCreated(result.filename) : s.couldNotCreateBackup;
     _showToastMsg(msg, result.succeed, context);
   }
 
@@ -107,7 +107,7 @@ class BackupsPage extends StatelessWidget {
     }
 
     final s = S.of(context);
-    final msg = result.succeed ? s.backupWasRestored(result.name) : s.couldNotRestoreBackup;
+    final msg = result.succeed ? s.backupWasRestored(result.filename) : s.couldNotRestoreBackup;
     _showToastMsg(msg, result.succeed, context);
     if (result.succeed) {
       Future.delayed(const Duration(seconds: 1)).then((value) => context.read<MainBloc>().add(const MainEvent.restart()));
@@ -124,16 +124,16 @@ class BackupsPage extends StatelessWidget {
       showDialog<List<AppBackupDataType>?>(
         context: context,
         builder: (_) => BackupDataTypesSelectorDialog(
-          content: s.restoreBackupConfirmation(result.name),
+          content: s.restoreBackupConfirmation(result.filename),
           dataTypes: result.dataTypes,
         ),
       ).then((dataTypes) {
         if (dataTypes?.isNotEmpty == true) {
-          context.read<BackupRestoreBloc>().add(BackupRestoreEvent.restore(filePath: result.path, dataTypes: dataTypes!));
+          context.read<BackupRestoreBloc>().add(BackupRestoreEvent.restore(filePath: result.path, dataTypes: dataTypes!, imported: true));
         }
       });
     } else {
-      _showToastMsg(s.fileCouldNotBeRead(result.name), false, context);
+      _showToastMsg(s.fileCouldNotBeRead(result.filename), false, context);
     }
   }
 }

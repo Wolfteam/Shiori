@@ -94,8 +94,8 @@ class OtherSettings extends StatelessWidget {
                       ),
                     ),
                     ListTile(
-                      title: Text('Backup / Restore'),
-                      subtitle: Text('Last backup: 01/07/2023 23:58:59'),
+                      title: Text(s.backups),
+                      subtitle: Text(s.createAndRestoreLocalBackups),
                       onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const BackupsPage())),
                     ),
                   ],
