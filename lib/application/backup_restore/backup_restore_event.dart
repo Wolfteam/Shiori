@@ -15,6 +15,7 @@ class BackupRestoreEvent with _$BackupRestoreEvent {
   const factory BackupRestoreEvent.restore({
     required String filePath,
     required List<AppBackupDataType> dataTypes,
+    @Default(false) bool imported,
   }) = _Restore;
 
   const factory BackupRestoreEvent.delete({

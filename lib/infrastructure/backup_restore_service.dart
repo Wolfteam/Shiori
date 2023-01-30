@@ -31,11 +31,9 @@ class BackupRestoreServiceImpl implements BackupRestoreService {
       throw Exception('You must provide at least one bk data type');
     }
 
-    final filename = 'shiori_backup_${DateTime.now().millisecondsSinceEpoch}$_fileExtension';
-    final dirPath = await _getBackupDir();
-    final filePath = path.join(dirPath, filename);
+    final filePath = await _generateFilePath();
     try {
-      _loggingService.info(runtimeType, 'createBackup: Retrieving the data that will be used for bk = $filename ...');
+      _loggingService.info(runtimeType, 'createBackup: Retrieving the data that will be used for bk = $filePath ...');
 
       final deviceInfo = _deviceInfoService.deviceInfo;
       var bk = BackupModel(
@@ -88,10 +86,10 @@ class BackupRestoreServiceImpl implements BackupRestoreService {
       await file.writeAsString(jsonString);
 
       _loggingService.info(runtimeType, 'createBackup: Bk = $filePath was successfully created');
-      return BackupOperationResultModel(name: filename, path: filePath, succeed: true, dataTypes: dataTypes);
+      return BackupOperationResultModel(path: filePath, succeed: true, dataTypes: dataTypes);
     } catch (e, s) {
       _loggingService.error(runtimeType, 'createBackup: Error creating bk = $filePath', e, s);
-      return BackupOperationResultModel(name: filename, path: filePath, succeed: false, dataTypes: dataTypes);
+      return BackupOperationResultModel(path: filePath, succeed: false, dataTypes: dataTypes);
     }
   }
 
@@ -117,7 +115,6 @@ class BackupRestoreServiceImpl implements BackupRestoreService {
     return bks;
   }
 
-//TODO: IF THE FILE IS IN A DIFFERENT FOLDER THAN THE BACKUPS ONE, MAKE A COPY OF IT
   @override
   Future<BackupModel?> readBackup(String filePath) async {
     _loggingService.info(runtimeType, 'readBackup: Trying to read file = $filePath');
@@ -208,6 +205,35 @@ class BackupRestoreServiceImpl implements BackupRestoreService {
     }
   }
 
+  @override
+  Future<bool> copyImportedFile(String filePath) async {
+    try {
+      final file = File(filePath);
+      if (!await file.exists()) {
+        return false;
+      }
+
+      final filename = path.basename(filePath);
+      final newFilePath = await _generateFilePath(customFilename: filename);
+      await file.copy(newFilePath);
+      return true;
+    } catch (e, s) {
+      _loggingService.error(runtimeType, 'copyImportedBackup: Error copying file = $filePath', e, s);
+      return false;
+    }
+  }
+
+  Future<String> _generateFilePath({String? customFilename}) async {
+    final filename = customFilename ?? 'shiori_backup_${DateTime.now().millisecondsSinceEpoch}$_fileExtension';
+    final dirPath = await _getBackupDir();
+    final filePath = path.join(dirPath, filename);
+    final file = File(filePath);
+    if (await file.exists()) {
+      await file.delete();
+    }
+    return filePath;
+  }
+
   Future<String> _getBackupDir() async {
     String dirPath;
     if (Platform.isIOS) {
@@ -236,7 +262,8 @@ class BackupRestoreServiceImpl implements BackupRestoreService {
 
     try {
       final jsonString = await file.readAsString();
-      return json.decode(jsonString) as Map<String, dynamic>;
+      final decodedJson = json.decode(jsonString);
+      return decodedJson as Map<String, dynamic>;
     } catch (e, s) {
       _loggingService.error(runtimeType, '_readBackup: Error reading file = $filePath', e, s);
       return null;

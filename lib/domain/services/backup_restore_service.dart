@@ -13,4 +13,6 @@ abstract class BackupRestoreService {
   Future<bool> restoreBackup(BackupModel bk, List<AppBackupDataType> dataTypes);
 
   Future<bool> deleteBackup(String filePath);
+
+  Future<bool> copyImportedFile(String filePath);
 }
