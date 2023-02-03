@@ -16,7 +16,7 @@ class BackupModel with _$BackupModel {
     required List<AppBackupDataType> dataTypes,
     AppSettings? settings,
     List<BackupInventoryModel>? inventory,
-    List<CalculatorAscMaterialsSessionModel>? calculatorAscMaterials,
+    List<BackupCalculatorAscMaterialsSessionModel>? calculatorAscMaterials,
     List<BackupCustomBuildModel>? customBuilds,
     List<BackupTierListModel>? tierList,
     BackupNotificationsModel? notifications,

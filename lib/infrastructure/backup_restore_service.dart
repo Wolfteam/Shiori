@@ -2,9 +2,11 @@ import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
 
+import 'package:flutter/foundation.dart';
 import 'package:path/path.dart' as path;
 import 'package:path_provider/path_provider.dart';
 import 'package:shiori/domain/enums/enums.dart';
+import 'package:shiori/domain/extensions/string_extensions.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/backup_restore_service.dart';
 import 'package:shiori/domain/services/data_service.dart';
@@ -22,8 +24,30 @@ class BackupRestoreServiceImpl implements BackupRestoreService {
   final DeviceInfoService _deviceInfoService;
   final DataService _dataService;
   final NotificationService _notificationService;
+  final String? _dirPath;
 
-  BackupRestoreServiceImpl(this._loggingService, this._settingsService, this._deviceInfoService, this._dataService, this._notificationService);
+  BackupRestoreServiceImpl(
+    this._loggingService,
+    this._settingsService,
+    this._deviceInfoService,
+    this._dataService,
+    this._notificationService,
+  ) : _dirPath = null;
+
+  @visibleForTesting
+  BackupRestoreServiceImpl.forTesting(
+    LoggingService loggingService,
+    SettingsService settingsService,
+    DeviceInfoService deviceInfoService,
+    DataService dataService,
+    NotificationService notificationService,
+    String dirPath,
+  )   : _loggingService = loggingService,
+        _settingsService = settingsService,
+        _deviceInfoService = deviceInfoService,
+        _dataService = dataService,
+        _notificationService = notificationService,
+        _dirPath = dirPath;
 
   @override
   Future<BackupOperationResultModel> createBackup(List<AppBackupDataType> dataTypes) async {
@@ -236,7 +260,11 @@ class BackupRestoreServiceImpl implements BackupRestoreService {
 
   Future<String> _getBackupDir() async {
     String dirPath;
-    if (Platform.isIOS) {
+    if (_dirPath.isNotNullEmptyOrWhitespace) {
+      return _dirPath!;
+    }
+
+    if (Platform.isIOS || Platform.isMacOS) {
       final dir = await getApplicationDocumentsDirectory();
       dirPath = dir.path;
     } else {

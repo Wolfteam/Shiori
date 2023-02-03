@@ -237,16 +237,16 @@ class CalculatorDataServiceImpl implements CalculatorDataService {
   }
 
   @override
-  List<CalculatorAscMaterialsSessionModel> getDataForBackup() {
+  List<BackupCalculatorAscMaterialsSessionModel> getDataForBackup() {
     final sessions = _sessionBox.values.toList();
-    final backup = <CalculatorAscMaterialsSessionModel>[];
+    final backup = <BackupCalculatorAscMaterialsSessionModel>[];
     for (final session in sessions) {
       final calcItems = _calcItemBox.values.where((el) => el.sessionKey == session.key).map(
         (calcItem) {
           final charSkills = _calcItemSkillBox.values
               .where((el) => el.calculatorItemKey == calcItem.key as int)
               .map(
-                (e) => CalculatorAscMaterialsSessionCharSkillItemModel(
+                (e) => BackupCalculatorAscMaterialsSessionCharSkillItemModel(
                   skillKey: e.skillKey,
                   currentLevel: e.currentLevel,
                   desiredLevel: e.desiredLevel,
@@ -254,7 +254,7 @@ class CalculatorDataServiceImpl implements CalculatorDataService {
                 ),
               )
               .toList();
-          return CalculatorAscMaterialsSessionItemModel(
+          return BackupCalculatorAscMaterialsSessionItemModel(
             itemKey: calcItem.itemKey,
             currentAscensionLevel: calcItem.currentAscensionLevel,
             currentLevel: calcItem.currentLevel,
@@ -269,14 +269,15 @@ class CalculatorDataServiceImpl implements CalculatorDataService {
           );
         },
       ).toList();
-      final bk = CalculatorAscMaterialsSessionModel(name: session.name, position: session.position, createdAt: session.createdAt, items: calcItems);
+      final bk =
+          BackupCalculatorAscMaterialsSessionModel(name: session.name, position: session.position, createdAt: session.createdAt, items: calcItems);
       backup.add(bk);
     }
     return backup;
   }
 
   @override
-  Future<void> restoreFromBackup(List<CalculatorAscMaterialsSessionModel> data) async {
+  Future<void> restoreFromBackup(List<BackupCalculatorAscMaterialsSessionModel> data) async {
     await deleteThemAll();
     for (final session in data) {
       final id = await createCalAscMatSession(session.name, session.position);

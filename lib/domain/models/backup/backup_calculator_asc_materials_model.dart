@@ -4,20 +4,20 @@ part 'backup_calculator_asc_materials_model.freezed.dart';
 part 'backup_calculator_asc_materials_model.g.dart';
 
 @freezed
-class CalculatorAscMaterialsSessionModel with _$CalculatorAscMaterialsSessionModel {
-  const factory CalculatorAscMaterialsSessionModel({
+class BackupCalculatorAscMaterialsSessionModel with _$BackupCalculatorAscMaterialsSessionModel {
+  const factory BackupCalculatorAscMaterialsSessionModel({
     required String name,
     required int position,
     required DateTime createdAt,
-    required List<CalculatorAscMaterialsSessionItemModel> items,
-  }) = _CalculatorDataModel;
+    required List<BackupCalculatorAscMaterialsSessionItemModel> items,
+  }) = _BackupCalculatorAscMaterialsSessionModel;
 
-  factory CalculatorAscMaterialsSessionModel.fromJson(Map<String, dynamic> json) => _$CalculatorAscMaterialsSessionModelFromJson(json);
+  factory BackupCalculatorAscMaterialsSessionModel.fromJson(Map<String, dynamic> json) => _$BackupCalculatorAscMaterialsSessionModelFromJson(json);
 }
 
 @freezed
-class CalculatorAscMaterialsSessionItemModel with _$CalculatorAscMaterialsSessionItemModel {
-  const factory CalculatorAscMaterialsSessionItemModel({
+class BackupCalculatorAscMaterialsSessionItemModel with _$BackupCalculatorAscMaterialsSessionItemModel {
+  const factory BackupCalculatorAscMaterialsSessionItemModel({
     required String itemKey,
     required int position,
     required int currentLevel,
@@ -28,21 +28,22 @@ class CalculatorAscMaterialsSessionItemModel with _$CalculatorAscMaterialsSessio
     required bool isWeapon,
     required bool isActive,
     required bool useMaterialsFromInventory,
-    @Default(<CalculatorAscMaterialsSessionCharSkillItemModel>[]) List<CalculatorAscMaterialsSessionCharSkillItemModel> characterSkills,
-  }) = _CalculatorItemDataModel;
+    @Default(<BackupCalculatorAscMaterialsSessionCharSkillItemModel>[]) List<BackupCalculatorAscMaterialsSessionCharSkillItemModel> characterSkills,
+  }) = _BackupCalculatorAscMaterialsSessionItemModel;
 
-  factory CalculatorAscMaterialsSessionItemModel.fromJson(Map<String, dynamic> json) => _$CalculatorAscMaterialsSessionItemModelFromJson(json);
+  factory BackupCalculatorAscMaterialsSessionItemModel.fromJson(Map<String, dynamic> json) =>
+      _$BackupCalculatorAscMaterialsSessionItemModelFromJson(json);
 }
 
 @freezed
-class CalculatorAscMaterialsSessionCharSkillItemModel with _$CalculatorAscMaterialsSessionCharSkillItemModel {
-  const factory CalculatorAscMaterialsSessionCharSkillItemModel({
+class BackupCalculatorAscMaterialsSessionCharSkillItemModel with _$BackupCalculatorAscMaterialsSessionCharSkillItemModel {
+  const factory BackupCalculatorAscMaterialsSessionCharSkillItemModel({
     required String skillKey,
     required int currentLevel,
     required int desiredLevel,
     required int position,
-  }) = _CalculatorCharacterSkillItemDataModel;
+  }) = _BackupCalculatorAscMaterialsSessionCharSkillItemModel;
 
-  factory CalculatorAscMaterialsSessionCharSkillItemModel.fromJson(Map<String, dynamic> json) =>
-      _$CalculatorAscMaterialsSessionCharSkillItemModelFromJson(json);
+  factory BackupCalculatorAscMaterialsSessionCharSkillItemModel.fromJson(Map<String, dynamic> json) =>
+      _$BackupCalculatorAscMaterialsSessionCharSkillItemModelFromJson(json);
 }
