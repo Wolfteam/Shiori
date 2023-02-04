@@ -46,4 +46,6 @@ abstract class SettingsService {
   bool get noResourcesHasBeenDownloaded;
 
   Future<void> init();
+
+  void restoreFromBackup(AppSettings settings);
 }

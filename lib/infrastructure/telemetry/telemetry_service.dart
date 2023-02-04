@@ -198,4 +198,10 @@ class TelemetryServiceImpl implements TelemetryService {
         'Resource-Updates-Download',
         {'TargetResourceVersion': '$targetResourceVersion'},
       );
+
+  @override
+  Future<void> backupCreated(bool succeed) => trackEventAsync('Backup-Created', {'Succeed': '$succeed'});
+
+  @override
+  Future<void> backupRestored(bool succeed) => trackEventAsync('Backup-Restored', {'Succeed': '$succeed'});
 }

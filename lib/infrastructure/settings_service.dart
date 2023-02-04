@@ -216,6 +216,21 @@ class SettingsServiceImpl extends SettingsService {
     _logger.info(runtimeType, 'Settings were initialized successfully');
   }
 
+  @override
+  void restoreFromBackup(AppSettings settings) {
+    appTheme = settings.appTheme;
+    useDarkAmoledTheme = settings.useDarkAmoled;
+    accentColor = settings.accentColor;
+    language = settings.appLanguage;
+    showCharacterDetails = settings.showCharacterDetails;
+    showWeaponDetails = settings.showWeaponDetails;
+    isFirstInstall = settings.isFirstInstall;
+    serverResetTime = settings.serverResetTime;
+    doubleBackToClose = settings.doubleBackToClose;
+    useOfficialMap = settings.useOfficialMap;
+    useTwentyFourHoursFormat = settings.useTwentyFourHoursFormat;
+  }
+
   Future<AppLanguageType> _getDefaultLangToUse() async {
     try {
       _logger.info(runtimeType, '_getDefaultLangToUse: Trying to retrieve device lang...');

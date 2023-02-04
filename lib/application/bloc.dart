@@ -1,5 +1,6 @@
 export 'artifact/artifact_bloc.dart';
 export 'artifacts/artifacts_bloc.dart';
+export 'backup_restore/backup_restore_bloc.dart';
 export 'banner_history/banner_history_bloc.dart';
 export 'banner_history_item/banner_history_item_bloc.dart';
 export 'calculator_asc_materials/material_item/calculator_asc_materials_item_bloc.dart';

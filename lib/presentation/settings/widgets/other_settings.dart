@@ -6,11 +6,11 @@ import 'package:shiori/application/bloc.dart';
 import 'package:shiori/application/settings/settings_bloc.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/generated/l10n.dart';
+import 'package:shiori/presentation/backups/backups_page.dart';
 import 'package:shiori/presentation/settings/widgets/settings_card.dart';
 import 'package:shiori/presentation/shared/common_dropdown_button.dart';
 import 'package:shiori/presentation/shared/extensions/i18n_extensions.dart';
 import 'package:shiori/presentation/shared/loading.dart';
-import 'package:shiori/presentation/shared/styles.dart';
 import 'package:shiori/presentation/shared/utils/enum_utils.dart';
 
 class OtherSettings extends StatelessWidget {
@@ -76,33 +76,27 @@ class OtherSettings extends StatelessWidget {
                       onChanged: (newVal) => context.read<SettingsBloc>().add(SettingsEvent.useTwentyFourHoursFormat(newValue: newVal)),
                     ),
                     ListTile(
-                      dense: true,
-                      contentPadding: EdgeInsets.zero,
-                      title: Padding(
-                        padding: Styles.edgeInsetHorizontal16,
-                        child: CommonDropdownButton<AppServerResetTimeType>(
-                          hint: s.chooseServer,
-                          currentValue: settingsState.serverResetTime,
-                          values: EnumUtils.getTranslatedAndSortedEnum<AppServerResetTimeType>(
-                            AppServerResetTimeType.values,
-                            (val, _) => s.translateServerResetTimeType(val),
-                          ),
-                          onChanged: (v, context) => context.read<SettingsBloc>().add(SettingsEvent.serverResetTimeChanged(newValue: v)),
+                      title: CommonDropdownButton<AppServerResetTimeType>(
+                        hint: s.chooseServer,
+                        currentValue: settingsState.serverResetTime,
+                        values: EnumUtils.getTranslatedAndSortedEnum<AppServerResetTimeType>(
+                          AppServerResetTimeType.values,
+                          (val, _) => s.translateServerResetTimeType(val),
+                        ),
+                        onChanged: (v, context) => context.read<SettingsBloc>().add(SettingsEvent.serverResetTimeChanged(newValue: v)),
+                      ),
+                      subtitle: Transform.translate(
+                        offset: const Offset(0, -10),
+                        child: Align(
+                          alignment: Alignment.centerLeft,
+                          child: Text(s.serverWhereYouPlay),
                         ),
                       ),
-                      subtitle: Container(
-                        margin: const EdgeInsets.only(left: 25),
-                        child: Transform.translate(
-                          offset: const Offset(0, -10),
-                          child: Align(
-                            alignment: Alignment.centerLeft,
-                            child: Text(
-                              s.serverWhereYouPlay,
-                              style: const TextStyle(color: Colors.grey),
-                            ),
-                          ),
-                        ),
-                      ),
+                    ),
+                    ListTile(
+                      title: Text(s.backups),
+                      subtitle: Text(s.createAndRestoreLocalBackups),
+                      onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const BackupsPage())),
                     ),
                   ],
                 ),

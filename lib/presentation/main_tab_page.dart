@@ -164,7 +164,7 @@ class _MainTabPageState extends State<MainTabPage> with SingleTickerProviderStat
 
     final s = S.of(context);
     final now = DateTime.now();
-    final mustWait = backButtonPressTime == null || now.difference(backButtonPressTime!) > ToastUtils.toastDuration;
+    final mustWait = backButtonPressTime == null || now.difference(backButtonPressTime!) > ToastUtils.defaultToastDuration;
 
     if (mustWait) {
       backButtonPressTime = now;
