@@ -59,6 +59,7 @@ void main() {
     useOfficialMap: true,
     useTwentyFourHoursFormat: true,
     resourceVersion: 1,
+    checkForUpdatesOnStartup: true,
   );
 
   setUpAll(() {

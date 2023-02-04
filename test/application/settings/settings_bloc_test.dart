@@ -37,6 +37,7 @@ void main() {
     useOfficialMap: false,
     useTwentyFourHoursFormat: true,
     resourceVersion: 1,
+    checkForUpdatesOnStartup: true,
   );
 
   SettingsBloc _getBloc({AppSettings? appSettings}) {
@@ -54,6 +55,7 @@ void main() {
     when(settingsService.doubleBackToClose).thenReturn(settings.doubleBackToClose);
     when(settingsService.useOfficialMap).thenReturn(settings.useOfficialMap);
     when(settingsService.useTwentyFourHoursFormat).thenReturn(settings.useTwentyFourHoursFormat);
+    when(settingsService.checkForUpdatesOnStartup).thenReturn(settings.checkForUpdatesOnStartup);
 
     final deviceInfoService = MockDeviceInfoService();
     when(deviceInfoService.versionWithBuildNumber).thenReturn(_appVersion);
@@ -99,6 +101,7 @@ void main() {
         useTwentyFourHoursFormat: _defaultSettings.useTwentyFourHoursFormat,
         unlockedFeatures: AppUnlockedFeature.values,
         resourceVersion: _defaultSettings.resourceVersion,
+        checkForUpdatesOnStartup: _defaultSettings.checkForUpdatesOnStartup,
       ),
     ],
   );
@@ -117,8 +120,9 @@ void main() {
       ..add(const SettingsEvent.serverResetTimeChanged(newValue: AppServerResetTimeType.northAmerica))
       ..add(SettingsEvent.doubleBackToCloseChanged(newValue: !_defaultSettings.doubleBackToClose))
       ..add(SettingsEvent.useOfficialMapChanged(newValue: !_defaultSettings.useOfficialMap))
-      ..add(SettingsEvent.useTwentyFourHoursFormat(newValue: !_defaultSettings.useTwentyFourHoursFormat)),
-    skip: 10,
+      ..add(SettingsEvent.useTwentyFourHoursFormat(newValue: !_defaultSettings.useTwentyFourHoursFormat))
+      ..add(SettingsEvent.checkForUpdatesOnStartup(newValue: !_defaultSettings.checkForUpdatesOnStartup)),
+    skip: 11,
     expect: () => [
       SettingsState.loaded(
         currentTheme: AppThemeType.light,
@@ -134,6 +138,7 @@ void main() {
         useTwentyFourHoursFormat: !_defaultSettings.useTwentyFourHoursFormat,
         unlockedFeatures: AppUnlockedFeature.values,
         resourceVersion: _defaultSettings.resourceVersion,
+        checkForUpdatesOnStartup: !_defaultSettings.checkForUpdatesOnStartup,
       ),
     ],
   );
