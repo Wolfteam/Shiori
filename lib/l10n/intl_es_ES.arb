@@ -475,5 +475,6 @@
   "createBackupConfirmation": "¿ Deseas crear un respaldo con toda tu configuración y datos ?",
   "restoreBackupConfirmation": "¿ Deseas restaurar el respaldo: {file} ?",
   "deleteBackupConfirmation": "¿ Deseas eliminar el respaldo: {file} ?",
-  "fileCouldNotBeRead": "El archivo: {file} no pudo ser leído"
+  "fileCouldNotBeRead": "El archivo: {file} no pudo ser leído",
+  "checkForUpdatesOnStartup": "Comprobar actualizaciones al inicio"
 }

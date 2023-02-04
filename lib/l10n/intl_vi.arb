@@ -475,5 +475,6 @@
   "createBackupConfirmation": "Would you like to create a backup with all your data and configuration ?",
   "restoreBackupConfirmation": "Would you like to restore backup: {file} ?",
   "deleteBackupConfirmation": "Would you like to delete backup: {file} ?",
-  "fileCouldNotBeRead": "File: {file} could not be read"
+  "fileCouldNotBeRead": "File: {file} could not be read",
+  "checkForUpdatesOnStartup": "Check for updates on startup"
 }
