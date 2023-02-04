@@ -230,18 +230,55 @@ class SettingsServiceImpl extends SettingsService {
   }
 
   @override
-  void restoreFromBackup(AppSettings settings) {
-    appTheme = settings.appTheme;
-    useDarkAmoledTheme = settings.useDarkAmoled;
-    accentColor = settings.accentColor;
-    language = settings.appLanguage;
-    showCharacterDetails = settings.showCharacterDetails;
-    showWeaponDetails = settings.showWeaponDetails;
-    isFirstInstall = settings.isFirstInstall;
-    serverResetTime = settings.serverResetTime;
-    doubleBackToClose = settings.doubleBackToClose;
-    useOfficialMap = settings.useOfficialMap;
-    useTwentyFourHoursFormat = settings.useTwentyFourHoursFormat;
+  BackupAppSettingsModel getDataForBackup() {
+    final settings = appSettings;
+    return BackupAppSettingsModel(
+      appTheme: settings.appTheme,
+      useDarkAmoled: settings.useDarkAmoled,
+      accentColor: settings.accentColor,
+      appLanguage: settings.appLanguage,
+      showCharacterDetails: settings.showCharacterDetails,
+      showWeaponDetails: settings.showWeaponDetails,
+      serverResetTime: settings.serverResetTime,
+      doubleBackToClose: settings.doubleBackToClose,
+      useOfficialMap: settings.useOfficialMap,
+      useTwentyFourHoursFormat: settings.useTwentyFourHoursFormat,
+      checkForUpdatesOnStartup: settings.checkForUpdatesOnStartup,
+    );
+  }
+
+  @override
+  void restoreFromBackup(BackupAppSettingsModel settings) {
+    if (settings.appTheme != null) {
+      appTheme = settings.appTheme!;
+    }
+    if (settings.useDarkAmoled != null) {
+      useDarkAmoledTheme = settings.useDarkAmoled!;
+    }
+    if (settings.accentColor != null) {
+      accentColor = settings.accentColor!;
+    }
+    if (settings.appLanguage != null) {
+      language = settings.appLanguage!;
+    }
+    if (settings.showCharacterDetails != null) {
+      showCharacterDetails = settings.showCharacterDetails!;
+    }
+    if (settings.showWeaponDetails != null) {
+      showWeaponDetails = settings.showWeaponDetails!;
+    }
+    if (settings.serverResetTime != null) {
+      serverResetTime = settings.serverResetTime!;
+    }
+    if (settings.doubleBackToClose != null) {
+      doubleBackToClose = settings.doubleBackToClose!;
+    }
+    if (settings.useOfficialMap != null) {
+      useOfficialMap = settings.useOfficialMap!;
+    }
+    if (settings.useTwentyFourHoursFormat != null) {
+      useTwentyFourHoursFormat = settings.useTwentyFourHoursFormat!;
+    }
   }
 
   Future<AppLanguageType> _getDefaultLangToUse() async {

@@ -4,7 +4,7 @@ part of 'splash_bloc.dart';
 class SplashEvent with _$SplashEvent {
   const factory SplashEvent.init({
     @Default(false) bool retry,
-    @Default(false) restarted,
+    @Default(false) bool restarted,
   }) = _Init;
 
   const factory SplashEvent.applyUpdate({required CheckForUpdatesResult result}) = _ApplyUpdate;

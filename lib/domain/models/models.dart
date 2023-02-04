@@ -1,4 +1,5 @@
 export 'artifacts/artifact_card_model.dart';
+export 'backup/backup_app_settings_model.dart';
 export 'backup/backup_calculator_asc_materials_model.dart';
 export 'backup/backup_custom_builds_model.dart';
 export 'backup/backup_inventory_model.dart';
