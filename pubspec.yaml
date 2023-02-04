@@ -40,7 +40,6 @@ dependencies:
   flutter_markdown: ^0.6.13
   flutter_native_timezone: ^2.0.0
   flutter_slidable: 2.0.0
-  flutter_user_agentx: ^1.2.4
   fluttertoast: ^8.1.1
   freezed_annotation: ^2.2.0
   get_it: ^7.2.0
