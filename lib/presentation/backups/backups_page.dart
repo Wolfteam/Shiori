@@ -207,7 +207,7 @@ class _Header extends StatelessWidget {
                       context.read<BackupRestoreBloc>().add(BackupRestoreEvent.create(dataTypes: dataTypes!));
                     }
                   }),
-                  child: Text(s.backup),
+                  child: Text(s.create),
                 ),
                 OutlinedButton(
                   onPressed: () => FilePicker.platform

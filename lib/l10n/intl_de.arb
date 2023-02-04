@@ -460,6 +460,7 @@
   "totalX": "Total: {total}",
   "backups": "Backups",
   "backup": "Backup",
+  "create": "Create",
   "import": "Import",
   "chooseFile": "Choose a file",
   "lastBackup": "Last backup: {date}",
