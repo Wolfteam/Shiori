@@ -8,7 +8,6 @@ class BackupCalculatorAscMaterialsSessionModel with _$BackupCalculatorAscMateria
   const factory BackupCalculatorAscMaterialsSessionModel({
     required String name,
     required int position,
-    required DateTime createdAt,
     required List<BackupCalculatorAscMaterialsSessionItemModel> items,
   }) = _BackupCalculatorAscMaterialsSessionModel;
 

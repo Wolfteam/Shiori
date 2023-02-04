@@ -3,6 +3,22 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'backup_notifications_model.freezed.dart';
 part 'backup_notifications_model.g.dart';
 
+abstract class BaseBackupNotificationModel {
+  int get type;
+
+  String get itemKey;
+
+  DateTime get completesAt;
+
+  bool get showNotification;
+
+  String? get note;
+
+  String get title;
+
+  String get body;
+}
+
 @freezed
 class BackupNotificationsModel with _$BackupNotificationsModel {
   const factory BackupNotificationsModel({
@@ -21,8 +37,9 @@ class BackupNotificationsModel with _$BackupNotificationsModel {
 }
 
 @freezed
-class BackupCustomNotificationModel with _$BackupCustomNotificationModel {
-  const factory BackupCustomNotificationModel({
+class BackupNotificationModel with _$BackupNotificationModel {
+  @Implements<BaseBackupNotificationModel>()
+  const factory BackupNotificationModel.custom({
     required String itemKey,
     required DateTime completesAt,
     String? note,
@@ -31,14 +48,10 @@ class BackupCustomNotificationModel with _$BackupCustomNotificationModel {
     required String body,
     required int notificationItemType,
     required int type,
-  }) = _BackupCustomNotificationModel;
+  }) = BackupCustomNotificationModel;
 
-  factory BackupCustomNotificationModel.fromJson(Map<String, dynamic> json) => _$BackupCustomNotificationModelFromJson(json);
-}
-
-@freezed
-class BackupExpeditionNotificationModel with _$BackupExpeditionNotificationModel {
-  const factory BackupExpeditionNotificationModel({
+  @Implements<BaseBackupNotificationModel>()
+  const factory BackupNotificationModel.expedition({
     required String itemKey,
     required DateTime completesAt,
     String? note,
@@ -48,14 +61,10 @@ class BackupExpeditionNotificationModel with _$BackupExpeditionNotificationModel
     required int type,
     required int expeditionTimeType,
     required bool withTimeReduction,
-  }) = _BackupExpeditionNotificationModel;
+  }) = BackupExpeditionNotificationModel;
 
-  factory BackupExpeditionNotificationModel.fromJson(Map<String, dynamic> json) => _$BackupExpeditionNotificationModelFromJson(json);
-}
-
-@freezed
-class BackupFarmingArtifactNotificationModel with _$BackupFarmingArtifactNotificationModel {
-  const factory BackupFarmingArtifactNotificationModel({
+  @Implements<BaseBackupNotificationModel>()
+  const factory BackupNotificationModel.farmingArtifact({
     required String itemKey,
     required DateTime completesAt,
     String? note,
@@ -64,14 +73,10 @@ class BackupFarmingArtifactNotificationModel with _$BackupFarmingArtifactNotific
     required String body,
     required int type,
     required int artifactFarmingTimeType,
-  }) = _BackupFarmingArtifactNotificationModel;
+  }) = BackupFarmingArtifactNotificationModel;
 
-  factory BackupFarmingArtifactNotificationModel.fromJson(Map<String, dynamic> json) => _$BackupFarmingArtifactNotificationModelFromJson(json);
-}
-
-@freezed
-class BackupFarmingMaterialNotificationModel with _$BackupFarmingMaterialNotificationModel {
-  const factory BackupFarmingMaterialNotificationModel({
+  @Implements<BaseBackupNotificationModel>()
+  const factory BackupNotificationModel.farmingMaterial({
     required String itemKey,
     required DateTime completesAt,
     String? note,
@@ -79,14 +84,10 @@ class BackupFarmingMaterialNotificationModel with _$BackupFarmingMaterialNotific
     required String title,
     required String body,
     required int type,
-  }) = _BackupFarmingMaterialNotificationModel;
+  }) = BackupFarmingMaterialNotificationModel;
 
-  factory BackupFarmingMaterialNotificationModel.fromJson(Map<String, dynamic> json) => _$BackupFarmingMaterialNotificationModelFromJson(json);
-}
-
-@freezed
-class BackupFurnitureNotificationModel with _$BackupFurnitureNotificationModel {
-  const factory BackupFurnitureNotificationModel({
+  @Implements<BaseBackupNotificationModel>()
+  const factory BackupNotificationModel.furniture({
     required String itemKey,
     required DateTime completesAt,
     String? note,
@@ -95,14 +96,10 @@ class BackupFurnitureNotificationModel with _$BackupFurnitureNotificationModel {
     required String body,
     required int type,
     required int furnitureCraftingTimeType,
-  }) = _BackupFurnitureNotificationModel;
+  }) = BackupFurnitureNotificationModel;
 
-  factory BackupFurnitureNotificationModel.fromJson(Map<String, dynamic> json) => _$BackupFurnitureNotificationModelFromJson(json);
-}
-
-@freezed
-class BackupGadgetNotificationModel with _$BackupGadgetNotificationModel {
-  const factory BackupGadgetNotificationModel({
+  @Implements<BaseBackupNotificationModel>()
+  const factory BackupNotificationModel.gadget({
     required String itemKey,
     required DateTime completesAt,
     String? note,
@@ -110,14 +107,10 @@ class BackupGadgetNotificationModel with _$BackupGadgetNotificationModel {
     required String title,
     required String body,
     required int type,
-  }) = _BackupGadgetNotificationModel;
+  }) = BackupGadgetNotificationModel;
 
-  factory BackupGadgetNotificationModel.fromJson(Map<String, dynamic> json) => _$BackupGadgetNotificationModelFromJson(json);
-}
-
-@freezed
-class BackupRealmCurrencyNotificationModel with _$BackupRealmCurrencyNotificationModel {
-  const factory BackupRealmCurrencyNotificationModel({
+  @Implements<BaseBackupNotificationModel>()
+  const factory BackupNotificationModel.realmCurrency({
     required String itemKey,
     required DateTime completesAt,
     String? note,
@@ -128,14 +121,10 @@ class BackupRealmCurrencyNotificationModel with _$BackupRealmCurrencyNotificatio
     required int realmTrustRank,
     required int realmRankType,
     required int realmCurrency,
-  }) = _BackupRealmCurrencyNotificationModel;
+  }) = BackupRealmCurrencyNotificationModel;
 
-  factory BackupRealmCurrencyNotificationModel.fromJson(Map<String, dynamic> json) => _$BackupRealmCurrencyNotificationModelFromJson(json);
-}
-
-@freezed
-class BackupResinNotificationModel with _$BackupResinNotificationModel {
-  const factory BackupResinNotificationModel({
+  @Implements<BaseBackupNotificationModel>()
+  const factory BackupNotificationModel.resin({
     required String itemKey,
     required DateTime completesAt,
     String? note,
@@ -144,14 +133,10 @@ class BackupResinNotificationModel with _$BackupResinNotificationModel {
     required String body,
     required int type,
     required int currentResinValue,
-  }) = _BackupResinNotificationModel;
+  }) = BackupResinNotificationModel;
 
-  factory BackupResinNotificationModel.fromJson(Map<String, dynamic> json) => _$BackupResinNotificationModelFromJson(json);
-}
-
-@freezed
-class BackupWeeklyBossNotificationModel with _$BackupWeeklyBossNotificationModel {
-  const factory BackupWeeklyBossNotificationModel({
+  @Implements<BaseBackupNotificationModel>()
+  const factory BackupNotificationModel.weeklyBoss({
     required String itemKey,
     required DateTime completesAt,
     String? note,
@@ -159,7 +144,7 @@ class BackupWeeklyBossNotificationModel with _$BackupWeeklyBossNotificationModel
     required String title,
     required String body,
     required int type,
-  }) = _BackupWeeklyBossNotificationModel;
+  }) = BackupWeeklyBossNotificationModel;
 
-  factory BackupWeeklyBossNotificationModel.fromJson(Map<String, dynamic> json) => _$BackupWeeklyBossNotificationModelFromJson(json);
+  factory BackupNotificationModel.fromJson(Map<String, dynamic> json) => _$BackupNotificationModelFromJson(json);
 }
