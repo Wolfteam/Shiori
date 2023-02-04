@@ -65,6 +65,7 @@ dependencies:
   responsive_builder: ^0.4.3
   responsive_grid: ^2.1.0
   screenshot: ^1.2.3
+  share_plus: ^6.3.0
   shared_preferences: ^2.0.15
   sprintf: ^7.0.0
   store_checker: ^1.1.0

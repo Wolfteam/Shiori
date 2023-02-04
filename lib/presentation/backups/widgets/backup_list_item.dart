@@ -1,6 +1,9 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
+import 'package:share_plus/share_plus.dart';
 import 'package:shiori/application/bloc.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/models/models.dart';
@@ -46,13 +49,14 @@ class BackupListItem extends StatelessWidget {
               tooltip: s.restore,
               onPressed: () => _restore(s, context),
             ),
-/*            IconButton(
-              splashRadius: Styles.smallButtonSplashRadius,
-              icon: const Icon(Icons.share, color: Colors.green),
-              visualDensity: VisualDensity.compact,
-              tooltip: s.share,
-              onPressed: () {},
-            ),*/
+            if (Platform.isAndroid || Platform.isIOS)
+              IconButton(
+                splashRadius: Styles.smallButtonSplashRadius,
+                icon: const Icon(Icons.share, color: Colors.green),
+                visualDensity: VisualDensity.compact,
+                tooltip: s.share,
+                onPressed: () => _share(s, context),
+              ),
             IconButton(
               splashRadius: Styles.smallButtonSplashRadius,
               icon: const Icon(Icons.delete, color: Colors.red),
@@ -108,5 +112,14 @@ class BackupListItem extends StatelessWidget {
         context.read<BackupRestoreBloc>().add(BackupRestoreEvent.delete(filePath: backup.filePath));
       }
     });
+  }
+
+  Future<void> _share(S s, BuildContext context) {
+    final box = context.findRenderObject() as RenderBox?;
+    return Share.shareXFiles(
+      [XFile(backup.filePath)],
+      text: s.backup,
+      sharePositionOrigin: box != null ? box.localToGlobal(Offset.zero) & box.size : null,
+    );
   }
 }

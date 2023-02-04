@@ -1,7 +1,7 @@
 {
   "appName": "Shiori",
-  "dark": "Темна",
-  "light": "Світла",
+  "dark": "Dark",
+  "light": "Light",
   "bow": "Bow",
   "claymore": "Claymore",
   "sword": "Sword",
