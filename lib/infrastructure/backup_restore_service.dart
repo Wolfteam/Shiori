@@ -158,7 +158,7 @@ class BackupRestoreServiceImpl implements BackupRestoreService {
     try {
       final bkVersion = Version.parse(bkAppVersion);
       final appVersion = Version.parse(_deviceInfoService.version);
-      return bkVersion <= appVersion;
+      return appVersion >= bkVersion;
     } catch (_) {
       return false;
     }
@@ -218,7 +218,7 @@ class BackupRestoreServiceImpl implements BackupRestoreService {
       _loggingService.info(runtimeType, 'deleteBackup: Deleting file = $filePath');
       final file = File(filePath);
       if (!await file.exists()) {
-        return true;
+        return false;
       }
 
       await file.delete();

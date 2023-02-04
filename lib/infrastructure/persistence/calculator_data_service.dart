@@ -269,8 +269,7 @@ class CalculatorDataServiceImpl implements CalculatorDataService {
           );
         },
       ).toList();
-      final bk =
-          BackupCalculatorAscMaterialsSessionModel(name: session.name, position: session.position, createdAt: session.createdAt, items: calcItems);
+      final bk = BackupCalculatorAscMaterialsSessionModel(name: session.name, position: session.position, items: calcItems);
       backup.add(bk);
     }
     return backup;
