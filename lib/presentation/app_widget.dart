@@ -22,7 +22,7 @@ class AppWidget extends StatelessWidget {
     ];
     return BlocBuilder<MainBloc, MainState>(
       builder: (ctx, state) => state.map<Widget>(
-        loading: (s) => SplashPage(language: s.language, delegates: delegates),
+        loading: (s) => SplashPage(language: s.language, delegates: delegates, restarted: s.restarted),
         loaded: (s) {
           final locale = Locale(s.language.code, s.language.countryCode);
           return MaterialApp(

@@ -75,6 +75,12 @@ class OtherSettings extends StatelessWidget {
                       value: settingsState.useTwentyFourHoursFormat,
                       onChanged: (newVal) => context.read<SettingsBloc>().add(SettingsEvent.useTwentyFourHoursFormat(newValue: newVal)),
                     ),
+                    SwitchListTile(
+                      activeColor: theme.colorScheme.secondary,
+                      title: Text(s.checkForUpdatesOnStartup),
+                      value: settingsState.checkForUpdatesOnStartup,
+                      onChanged: (newVal) => context.read<SettingsBloc>().add(SettingsEvent.checkForUpdatesOnStartup(newValue: newVal)),
+                    ),
                     ListTile(
                       title: CommonDropdownButton<AppServerResetTimeType>(
                         hint: s.chooseServer,

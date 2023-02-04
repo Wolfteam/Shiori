@@ -14,7 +14,7 @@ class BackupModel with _$BackupModel {
     required DateTime createdAt,
     required Map<String, String> deviceInfo,
     required List<AppBackupDataType> dataTypes,
-    AppSettings? settings,
+    BackupAppSettingsModel? settings,
     List<BackupInventoryModel>? inventory,
     List<BackupCalculatorAscMaterialsSessionModel>? calculatorAscMaterials,
     List<BackupCustomBuildModel>? customBuilds,

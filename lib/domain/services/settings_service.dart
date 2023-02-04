@@ -45,7 +45,12 @@ abstract class SettingsService {
 
   bool get noResourcesHasBeenDownloaded;
 
+  bool get checkForUpdatesOnStartup;
+  set checkForUpdatesOnStartup(bool value);
+
   Future<void> init();
 
-  void restoreFromBackup(AppSettings settings);
+  BackupAppSettingsModel getDataForBackup();
+
+  void restoreFromBackup(BackupAppSettingsModel settings);
 }

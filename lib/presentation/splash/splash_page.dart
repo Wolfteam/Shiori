@@ -14,18 +14,20 @@ import 'package:wakelock/wakelock.dart';
 class SplashPage extends StatelessWidget {
   final LanguageModel language;
   final List<LocalizationsDelegate> delegates;
+  final bool restarted;
 
   const SplashPage({
     super.key,
     required this.language,
     required this.delegates,
+    required this.restarted,
   });
 
   @override
   Widget build(BuildContext context) {
     final locale = Locale(language.code, language.countryCode);
     return BlocProvider<SplashBloc>(
-      create: (context) => Injection.splashBloc..add(const SplashEvent.init()),
+      create: (context) => Injection.splashBloc..add(SplashEvent.init(restarted: restarted)),
       child: MaterialApp(
         theme: AppAccentColorType.orange.getThemeData(AppThemeType.dark, false),
         themeMode: ThemeMode.dark,

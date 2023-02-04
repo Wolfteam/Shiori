@@ -17,19 +17,18 @@ import '../mocks.mocks.dart';
 void main() {
   late final String backupDirPath;
 
-  final settings = AppSettings(
+  const settings = BackupAppSettingsModel(
     appTheme: AppThemeType.dark,
     useDarkAmoled: false,
     accentColor: AppAccentColorType.blue,
     appLanguage: AppLanguageType.english,
     showCharacterDetails: true,
     showWeaponDetails: true,
-    isFirstInstall: true,
     serverResetTime: AppServerResetTimeType.northAmerica,
     doubleBackToClose: true,
     useOfficialMap: false,
     useTwentyFourHoursFormat: true,
-    resourceVersion: 1,
+    checkForUpdatesOnStartup: true,
   );
 
   final inventoryData = [
@@ -316,7 +315,7 @@ void main() {
   });
 
   BackupRestoreService getService(
-    AppSettings appSettings, {
+    BackupAppSettingsModel appSettings, {
     DataService? dataService,
     SettingsService? settingsService,
     NotificationService? notificationService,
@@ -325,7 +324,7 @@ void main() {
     final settings = settingsService ?? MockSettingsService();
     when(settings.language).thenReturn(AppLanguageType.english);
     when(settings.resourceVersion).thenReturn(1);
-    when(settings.appSettings).thenReturn(appSettings);
+    when(settings.getDataForBackup()).thenReturn(appSettings);
     final deviceInfo = MockDeviceInfoService();
     when(deviceInfo.version).thenReturn(appVersion);
     when(deviceInfo.deviceInfo).thenReturn({'Model': 'Test', 'AppVersion': '1.6.8+37'});
@@ -339,19 +338,17 @@ void main() {
     );
   }
 
-  void checkSettings(AppSettings got, AppSettings expected) {
+  void checkSettings(BackupAppSettingsModel got, BackupAppSettingsModel expected) {
     expect(got.appTheme, expected.appTheme);
     expect(got.useDarkAmoled, expected.useDarkAmoled);
     expect(got.accentColor, expected.accentColor);
     expect(got.appLanguage, expected.appLanguage);
     expect(got.showCharacterDetails, expected.showCharacterDetails);
     expect(got.showWeaponDetails, expected.showWeaponDetails);
-    expect(got.isFirstInstall, expected.isFirstInstall);
     expect(got.serverResetTime, expected.serverResetTime);
     expect(got.doubleBackToClose, expected.doubleBackToClose);
     expect(got.useOfficialMap, expected.useOfficialMap);
     expect(got.useTwentyFourHoursFormat, expected.useTwentyFourHoursFormat);
-    expect(got.resourceVersion, expected.resourceVersion);
   }
 
   void checkInventory(BackupInventoryModel got, BackupInventoryModel expected) {

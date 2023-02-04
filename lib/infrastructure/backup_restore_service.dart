@@ -70,7 +70,7 @@ class BackupRestoreServiceImpl implements BackupRestoreService {
       for (final type in dataTypes) {
         switch (type) {
           case AppBackupDataType.settings:
-            final settings = _settingsService.appSettings;
+            final settings = _settingsService.getDataForBackup();
             bk = bk.copyWith(settings: settings);
             break;
           case AppBackupDataType.inventory:
