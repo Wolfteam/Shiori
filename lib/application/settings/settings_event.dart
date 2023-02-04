@@ -43,4 +43,8 @@ class SettingsEvent with _$SettingsEvent {
   const factory SettingsEvent.useTwentyFourHoursFormat({
     required bool newValue,
   }) = _UseTwentyFourHoursFormat;
+
+  const factory SettingsEvent.checkForUpdatesOnStartup({
+    required bool newValue,
+  }) = _CheckForUpdatesOnStartup;
 }

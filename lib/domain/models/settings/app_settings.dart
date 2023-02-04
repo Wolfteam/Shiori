@@ -20,6 +20,7 @@ class AppSettings with _$AppSettings {
     required bool useOfficialMap,
     required bool useTwentyFourHoursFormat,
     required int resourceVersion,
+    required bool checkForUpdatesOnStartup,
   }) = _AppSettings;
   const AppSettings._();
 

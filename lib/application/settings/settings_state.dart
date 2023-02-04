@@ -17,5 +17,6 @@ class SettingsState with _$SettingsState {
     required bool useTwentyFourHoursFormat,
     required List<AppUnlockedFeature> unlockedFeatures,
     required int resourceVersion,
+    required bool checkForUpdatesOnStartup,
   }) = _LoadedState;
 }

@@ -53,6 +53,22 @@ class SplashBloc extends Bloc<SplashEvent, SplashState> {
         await Future.delayed(const Duration(seconds: 1));
       }
 
+      final skipCheck = !noResourcesHasBeenDownloaded && !_settingsService.checkForUpdatesOnStartup;
+      if (skipCheck) {
+        const resultType = AppResourceUpdateResultType.noUpdatesAvailable;
+        yield SplashState.loaded(
+          updateResultType: resultType,
+          language: _language,
+          noResourcesHasBeenDownloaded: noResourcesHasBeenDownloaded,
+          isUpdating: _isUpdating(resultType),
+          isLoading: _isLoading(resultType),
+          updateFailed: _updateFailed(resultType),
+          canSkipUpdate: _canSkipUpdate(resultType),
+          noInternetConnectionOnFirstInstall: _noInternetConnectionOnFirstInstall(resultType),
+          needsLatestAppVersionOnFirstInstall: _needsLatestAppVersionOnFirstInstall(resultType),
+        );
+      }
+
       final result = await _resourceService.checkForUpdates(_deviceInfoService.version, _settingsService.resourceVersion);
       final unknownErrorOnFirstInstall = _unknownErrorOnFirstInstall(result.type);
       final resultType = unknownErrorOnFirstInstall ? AppResourceUpdateResultType.unknownErrorOnFirstInstall : result.type;
