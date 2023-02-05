@@ -19,6 +19,7 @@ class BackupModel with _$BackupModel {
     List<BackupCalculatorAscMaterialsSessionModel>? calculatorAscMaterials,
     List<BackupCustomBuildModel>? customBuilds,
     List<BackupTierListModel>? tierList,
+    List<BackupGameCodeModel>? gameCodes,
     BackupNotificationsModel? notifications,
   }) = _BackupModel;
 

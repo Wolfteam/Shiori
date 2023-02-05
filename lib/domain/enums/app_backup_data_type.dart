@@ -4,5 +4,6 @@ enum AppBackupDataType {
   calculatorAscMaterials,
   tierList,
   customBuilds,
+  gameCodes,
   notifications,
 }

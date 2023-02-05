@@ -2,6 +2,7 @@ export 'artifacts/artifact_card_model.dart';
 export 'backup/backup_app_settings_model.dart';
 export 'backup/backup_calculator_asc_materials_model.dart';
 export 'backup/backup_custom_builds_model.dart';
+export 'backup/backup_game_code_model.dart';
 export 'backup/backup_inventory_model.dart';
 export 'backup/backup_model.dart';
 export 'backup/backup_notifications_model.dart';
