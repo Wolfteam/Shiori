@@ -117,7 +117,7 @@ class OtherSettings extends StatelessWidget {
                         if (confirmed == true) {
                           final toast = ToastUtils.of(context);
                           ToastUtils.showInfoToast(toast, s.deletingAllDataMsg);
-                          context.read<MainBloc>().add(const MainEvent.deleteAllData());
+                          Future.delayed(const Duration(seconds: 1)).then((value) => context.read<MainBloc>().add(const MainEvent.deleteAllData()));
                         }
                       }),
                     ),
