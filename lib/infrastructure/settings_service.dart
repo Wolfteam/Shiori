@@ -281,6 +281,21 @@ class SettingsServiceImpl extends SettingsService {
     }
   }
 
+  @override
+  Future<void> resetSettings() async {
+    language = await _getDefaultLangToUse();
+    appTheme = AppThemeType.light;
+    useDarkAmoledTheme = false;
+    accentColor = AppAccentColorType.red;
+    showCharacterDetails = true;
+    showWeaponDetails = true;
+    serverResetTime = AppServerResetTimeType.northAmerica;
+    doubleBackToClose = true;
+    useOfficialMap = true;
+    useTwentyFourHoursFormat = false;
+    checkForUpdatesOnStartup = true;
+  }
+
   Future<AppLanguageType> _getDefaultLangToUse() async {
     try {
       _logger.info(runtimeType, '_getDefaultLangToUse: Trying to retrieve device lang...');

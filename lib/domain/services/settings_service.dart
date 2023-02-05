@@ -53,4 +53,6 @@ abstract class SettingsService {
   BackupAppSettingsModel getDataForBackup();
 
   void restoreFromBackup(BackupAppSettingsModel settings);
+
+  Future<void> resetSettings();
 }
