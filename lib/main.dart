@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shiori/application/bloc.dart';
 import 'package:shiori/domain/services/calculator_service.dart';
+import 'package:shiori/domain/services/data_service.dart';
 import 'package:shiori/domain/services/device_info_service.dart';
 import 'package:shiori/domain/services/genshin_service.dart';
 import 'package:shiori/domain/services/locale_service.dart';
@@ -88,6 +89,8 @@ class MyApp extends StatelessWidget {
             final telemetryService = getIt<TelemetryService>();
             final deviceInfoService = getIt<DeviceInfoService>();
             final purchaseService = getIt<PurchaseService>();
+            final dataService = getIt<DataService>();
+            final notificationService = getIt<NotificationService>();
             return MainBloc(
               loggingService,
               genshinService,
@@ -96,6 +99,8 @@ class MyApp extends StatelessWidget {
               telemetryService,
               deviceInfoService,
               purchaseService,
+              dataService,
+              notificationService,
               ctx.read<CharactersBloc>(),
               ctx.read<WeaponsBloc>(),
               ctx.read<HomeBloc>(),
