@@ -11,4 +11,8 @@ abstract class GameCodesDataService implements BaseDataService {
   Future<void> deleteAllGameCodeRewards(int gameCodeKey);
 
   Future<void> markCodeAsUsed(String code, {bool wasUsed = true});
+
+  List<BackupGameCodeModel> getDataForBackup();
+
+  Future<void> restoreFromBackup(List<BackupGameCodeModel> data);
 }
