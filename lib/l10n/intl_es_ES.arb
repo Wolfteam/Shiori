@@ -476,5 +476,8 @@
   "restoreBackupConfirmation": "¿ Deseas restaurar el respaldo: {file} ?",
   "deleteBackupConfirmation": "¿ Deseas eliminar el respaldo: {file} ?",
   "fileCouldNotBeRead": "El archivo: {file} no pudo ser leído",
-  "checkForUpdatesOnStartup": "Comprobar actualizaciones al inicio"
+  "checkForUpdatesOnStartup": "Comprobar actualizaciones al inicio",
+  "deleteAllData": "Borrar toda la data del usuario",
+  "deleteAllDataWarningMsg": "Esto borrará toda tu data y restaurará tu configuración",
+  "deletingAllDataMsg": "Borrando toda la data del usuario..."
 }
