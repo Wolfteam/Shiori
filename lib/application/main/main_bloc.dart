@@ -5,10 +5,12 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:shiori/application/bloc.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/models/models.dart';
+import 'package:shiori/domain/services/data_service.dart';
 import 'package:shiori/domain/services/device_info_service.dart';
 import 'package:shiori/domain/services/genshin_service.dart';
 import 'package:shiori/domain/services/locale_service.dart';
 import 'package:shiori/domain/services/logging_service.dart';
+import 'package:shiori/domain/services/notification_service.dart';
 import 'package:shiori/domain/services/purchase_service.dart';
 import 'package:shiori/domain/services/settings_service.dart';
 import 'package:shiori/domain/services/telemetry_service.dart';
@@ -25,6 +27,8 @@ class MainBloc extends Bloc<MainEvent, MainState> {
   final TelemetryService _telemetryService;
   final DeviceInfoService _deviceInfoService;
   final PurchaseService _purchaseService;
+  final DataService _dataService;
+  final NotificationService _notificationService;
 
   final CharactersBloc _charactersBloc;
   final WeaponsBloc _weaponsBloc;
@@ -39,6 +43,8 @@ class MainBloc extends Bloc<MainEvent, MainState> {
     this._telemetryService,
     this._deviceInfoService,
     this._purchaseService,
+    this._dataService,
+    this._notificationService,
     this._charactersBloc,
     this._weaponsBloc,
     this._homeBloc,
@@ -56,6 +62,7 @@ class MainBloc extends Bloc<MainEvent, MainState> {
       languageChanged: (language) async => _init(languageChanged: true),
       useDarkAmoledThemeChanged: (use) async => _loadThemeData(_settingsService.appTheme, _settingsService.accentColor),
       restart: () async => MainState.loading(language: _localeService.getLocaleWithoutLang(), restarted: true),
+      deleteAllData: () async => _deleteAllData(),
     );
     yield s;
   }
@@ -96,7 +103,7 @@ class MainBloc extends Bloc<MainEvent, MainState> {
   }) async {
     _logger.info(
       runtimeType,
-      '_init: Is first install = ${_settingsService.isFirstInstall} ' + '-- versionChanged = ${_deviceInfoService.versionChanged}',
+      '_loadThemeData: Is first install = ${_settingsService.isFirstInstall} ' + '-- versionChanged = ${_deviceInfoService.versionChanged}',
     );
 
     final useDarkAmoledTheme = _settingsService.useDarkAmoledTheme && await _purchaseService.isFeatureUnlocked(AppUnlockedFeature.darkAmoledTheme);
@@ -111,5 +118,13 @@ class MainBloc extends Bloc<MainEvent, MainState> {
       versionChanged: _deviceInfoService.versionChanged,
       updateResult: updateResult,
     );
+  }
+
+  Future<MainState> _deleteAllData() async {
+    await _settingsService.resetSettings();
+    await _dataService.deleteThemAll();
+    await _notificationService.cancelAllNotifications();
+
+    return MainState.loading(language: _localeService.getLocaleWithoutLang(), restarted: true);
   }
 }

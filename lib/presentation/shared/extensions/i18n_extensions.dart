@@ -682,6 +682,8 @@ extension I18nExtensions on S {
         return tierListBuilder;
       case AppBackupDataType.customBuilds:
         return customBuilds;
+      case AppBackupDataType.gameCodes:
+        return gameCodes;
       case AppBackupDataType.notifications:
         return notifications;
     }

@@ -476,5 +476,8 @@
   "restoreBackupConfirmation": "Would you like to restore backup: {file} ?",
   "deleteBackupConfirmation": "Would you like to delete backup: {file} ?",
   "fileCouldNotBeRead": "File: {file} could not be read",
-  "checkForUpdatesOnStartup": "Check for updates on startup"
+  "checkForUpdatesOnStartup": "Check for updates on startup",
+  "deleteAllData": "Delete all user data",
+  "deleteAllDataWarningMsg": "This will delete all your data and it will reset your settings",
+  "deletingAllDataMsg": "Deleting all user data..."
 }

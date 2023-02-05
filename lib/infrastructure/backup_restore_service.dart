@@ -89,6 +89,10 @@ class BackupRestoreServiceImpl implements BackupRestoreService {
             final customBuilds = _dataService.customBuilds.getDataForBackup();
             bk = bk.copyWith(customBuilds: customBuilds);
             break;
+          case AppBackupDataType.gameCodes:
+            final gameCodes = _dataService.gameCodes.getDataForBackup();
+            bk = bk.copyWith(gameCodes: gameCodes);
+            break;
           case AppBackupDataType.notifications:
             final notifications = _dataService.notifications.getDataForBackup();
             bk = bk.copyWith(notifications: notifications);
@@ -195,6 +199,9 @@ class BackupRestoreServiceImpl implements BackupRestoreService {
             break;
           case AppBackupDataType.customBuilds:
             await _dataService.customBuilds.restoreFromBackup(bk.customBuilds!);
+            break;
+          case AppBackupDataType.gameCodes:
+            await _dataService.gameCodes.restoreFromBackup(bk.gameCodes!);
             break;
           case AppBackupDataType.notifications:
             _loggingService.info(runtimeType, 'restoreBackup: Cancelling all notifications...');

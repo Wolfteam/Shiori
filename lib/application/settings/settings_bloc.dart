@@ -111,11 +111,11 @@ class SettingsBloc extends Bloc<SettingsEvent, SettingsState> {
         _settingsService.useOfficialMap = event.newValue;
         return currentState.copyWith.call(useOfficialMap: event.newValue);
       },
-      useTwentyFourHoursFormat: (event) async {
+      useTwentyFourHoursFormatChanged: (event) async {
         _settingsService.useTwentyFourHoursFormat = event.newValue;
         return currentState.copyWith.call(useTwentyFourHoursFormat: event.newValue);
       },
-      checkForUpdatesOnStartup: (event) async {
+      checkForUpdatesOnStartupChanged: (event) async {
         _settingsService.checkForUpdatesOnStartup = event.newValue;
         return currentState.copyWith.call(checkForUpdatesOnStartup: event.newValue);
       },

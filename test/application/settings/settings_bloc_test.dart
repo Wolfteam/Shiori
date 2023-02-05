@@ -120,8 +120,8 @@ void main() {
       ..add(const SettingsEvent.serverResetTimeChanged(newValue: AppServerResetTimeType.northAmerica))
       ..add(SettingsEvent.doubleBackToCloseChanged(newValue: !_defaultSettings.doubleBackToClose))
       ..add(SettingsEvent.useOfficialMapChanged(newValue: !_defaultSettings.useOfficialMap))
-      ..add(SettingsEvent.useTwentyFourHoursFormat(newValue: !_defaultSettings.useTwentyFourHoursFormat))
-      ..add(SettingsEvent.checkForUpdatesOnStartup(newValue: !_defaultSettings.checkForUpdatesOnStartup)),
+      ..add(SettingsEvent.useTwentyFourHoursFormatChanged(newValue: !_defaultSettings.useTwentyFourHoursFormat))
+      ..add(SettingsEvent.checkForUpdatesOnStartupChanged(newValue: !_defaultSettings.checkForUpdatesOnStartup)),
     skip: 11,
     expect: () => [
       SettingsState.loaded(
