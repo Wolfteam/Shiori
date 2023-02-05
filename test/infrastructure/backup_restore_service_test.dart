@@ -184,6 +184,26 @@ void main() {
     ),
   ];
 
+  final gameCodesData = [
+    BackupGameCodeModel(
+      code: 'xxxzzz',
+      isExpired: true,
+      expiredOn: DateTime.now().subtract(const Duration(days: 1)),
+      region: AppServerResetTimeType.asia.index,
+      discoveredOn: DateTime.now().subtract(const Duration(days: 3)),
+      usedOn: DateTime.now().subtract(const Duration(days: 2)),
+      rewards: const [
+        BackupGameCodeRewardModel(itemKey: 'primogem', quantity: 20),
+        BackupGameCodeRewardModel(itemKey: 'mora', quantity: 10000),
+      ],
+    ),
+    BackupGameCodeModel(
+      code: 'wwwqqqeee',
+      isExpired: false,
+      discoveredOn: DateTime.now().subtract(const Duration(days: 1)),
+    ),
+  ];
+
   final notificationsData = BackupNotificationsModel(
     custom: [
       BackupCustomNotificationModel(
@@ -453,6 +473,24 @@ void main() {
     }
   }
 
+  void checkGameCodeReward(BackupGameCodeRewardModel got, BackupGameCodeRewardModel expected) {
+    expect(got.itemKey, expected.itemKey);
+    expect(got.quantity, expected.quantity);
+  }
+
+  void checkGameCode(BackupGameCodeModel got, BackupGameCodeModel expected) {
+    expect(got.code, expected.code);
+    expect(got.usedOn, expected.usedOn);
+    expect(got.discoveredOn, expected.discoveredOn);
+    expect(got.expiredOn, expected.expiredOn);
+    expect(got.isExpired, expected.isExpired);
+    expect(got.region, expected.region);
+    expect(got.rewards.length, expected.rewards.length);
+    for (var i = 0; i < got.rewards.length; i++) {
+      checkGameCodeReward(got.rewards[i], expected.rewards[i]);
+    }
+  }
+
   void checkNotification(BaseBackupNotificationModel got, BaseBackupNotificationModel expected) {
     expect(got.itemKey, expected.itemKey);
     expect(got.completesAt, expected.completesAt);
@@ -535,6 +573,11 @@ void main() {
           when(customBuildsMock.getDataForBackup()).thenReturn(customBuildsData);
           when(dataService.customBuilds).thenReturn(customBuildsMock);
           break;
+        case AppBackupDataType.gameCodes:
+          final gameCodesMock = MockGameCodesDataService();
+          when(gameCodesMock.getDataForBackup()).thenReturn(gameCodesData);
+          when(dataService.gameCodes).thenReturn(gameCodesMock);
+          break;
         case AppBackupDataType.notifications:
           final notificationsMock = MockNotificationsDataService();
           when(notificationsMock.getDataForBackup()).thenReturn(notificationsData);
@@ -605,6 +648,7 @@ void main() {
       expect(bk.calculatorAscMaterials, isNotNull);
       expect(bk.tierList, isNotNull);
       expect(bk.customBuilds, isNotNull);
+      expect(bk.gameCodes, isNotNull);
       expect(bk.notifications, isNotNull);
 
       checkSettings(bk.settings!, settings);
@@ -628,6 +672,11 @@ void main() {
       for (var i = 0; i < bk.customBuilds!.length; i++) {
         final item = bk.customBuilds![i];
         checkCustomBuild(item, customBuildsData[i]);
+      }
+      expect(bk.gameCodes!.length, gameCodesData.length);
+      for (var i = 0; i < bk.gameCodes!.length; i++) {
+        final item = bk.gameCodes![i];
+        checkGameCode(item, gameCodesData[i]);
       }
       expect(bk.notifications, isNotNull);
       expect(bk.notifications!.custom.length, notificationsData.custom.length);
@@ -750,6 +799,7 @@ void main() {
         customBuilds: customBuildsData,
         inventory: inventoryData,
         tierList: tierListData,
+        gameCodes: gameCodesData,
       );
 
       final settingsService = MockSettingsService();
@@ -762,6 +812,8 @@ void main() {
       when(dataServiceMock.tierList).thenReturn(tierList);
       final customBuilds = MockCustomBuildsDataService();
       when(dataServiceMock.customBuilds).thenReturn(customBuilds);
+      final gameCodes = MockGameCodesDataService();
+      when(dataServiceMock.gameCodes).thenReturn(gameCodes);
       final notifications = MockNotificationsDataService();
       when(dataServiceMock.notifications).thenReturn(notifications);
       final notificationService = MockNotificationService();
@@ -775,6 +827,7 @@ void main() {
       verify(calAscMat.restoreFromBackup(bk.calculatorAscMaterials)).called(1);
       verify(tierList.restoreFromBackup(bk.tierList)).called(1);
       verify(customBuilds.restoreFromBackup(bk.customBuilds)).called(1);
+      verify(gameCodes.restoreFromBackup(bk.gameCodes)).called(1);
       verify(notificationService.cancelAllNotifications()).called(1);
       verify(notifications.restoreFromBackup(bk.notifications, settings.serverResetTime)).called(1);
     });
