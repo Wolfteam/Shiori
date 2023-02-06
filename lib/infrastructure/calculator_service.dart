@@ -98,8 +98,6 @@ class CalculatorServiceImpl implements CalculatorService {
       } else {
         summary.putIfAbsent(key, () => [newValue]);
       }
-
-      summary[key]!.sort((x, y) => x.key.compareTo(y.key));
     }
 
     return summary.entries
@@ -337,7 +335,8 @@ class CalculatorServiceImpl implements CalculatorService {
 
   List<ItemAscensionMaterialModel> _flatMaterialsList(List<ItemAscensionMaterialModel> current) {
     final materials = <ItemAscensionMaterialModel>[];
-    for (final key in current.map((e) => e.key).toSet().toList()) {
+    final keys = current.map((e) => e.key).toSet();
+    for (final key in keys) {
       final item = current.firstWhere((m) => m.key == key);
       final int quantity = current.where((m) => m.key == key).map((e) => e.quantity).fold(0, (previous, current) => previous + current);
 

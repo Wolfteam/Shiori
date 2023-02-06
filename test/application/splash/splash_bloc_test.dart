@@ -31,6 +31,7 @@ void main() {
     if (settingsService == null) {
       when(settings.resourceVersion).thenReturn(currentResourcesVersion);
       when(settings.noResourcesHasBeenDownloaded).thenReturn(false);
+      when(settings.checkForUpdatesOnStartup).thenReturn(true);
     }
 
     final localeService = getLocaleService(AppLanguageType.english);
@@ -56,6 +57,7 @@ void main() {
         final settingsService = MockSettingsService();
         when(settingsService.resourceVersion).thenReturn(_defaultResourcesVersion);
         when(settingsService.noResourcesHasBeenDownloaded).thenReturn(false);
+        when(settingsService.checkForUpdatesOnStartup).thenReturn(true);
         final resourceService = MockResourceService();
         when(resourceService.checkForUpdates(_defaultAppVersion, _defaultResourcesVersion)).thenAnswer((_) => Future.value(result));
         return _getBloc(resourceService, settingsService: settingsService);
@@ -84,6 +86,7 @@ void main() {
         final settingsService = MockSettingsService();
         when(settingsService.resourceVersion).thenReturn(_defaultResourcesVersion);
         when(settingsService.noResourcesHasBeenDownloaded).thenReturn(true);
+        when(settingsService.checkForUpdatesOnStartup).thenReturn(true);
         final resourceService = MockResourceService();
         when(resourceService.checkForUpdates(_defaultAppVersion, _defaultResourcesVersion)).thenAnswer((_) => Future.value(result));
         return _getBloc(resourceService, settingsService: settingsService);
@@ -114,6 +117,7 @@ void main() {
         final settingsService = MockSettingsService();
         when(settingsService.noResourcesHasBeenDownloaded).thenReturn(false);
         when(settingsService.resourceVersion).thenReturn(_defaultResourcesVersion);
+        when(settingsService.checkForUpdatesOnStartup).thenReturn(true);
         return _getBloc(resourceService, settingsService: settingsService);
       },
       act: (bloc) => bloc.add(const SplashEvent.init()),
@@ -142,6 +146,7 @@ void main() {
         final settingsService = MockSettingsService();
         when(settingsService.noResourcesHasBeenDownloaded).thenReturn(false);
         when(settingsService.resourceVersion).thenReturn(_defaultResourcesVersion);
+        when(settingsService.checkForUpdatesOnStartup).thenReturn(true);
         return _getBloc(resourceService, settingsService: settingsService);
       },
       act: (bloc) => bloc.add(const SplashEvent.init()),
@@ -170,6 +175,7 @@ void main() {
         final settingsService = MockSettingsService();
         when(settingsService.noResourcesHasBeenDownloaded).thenReturn(true);
         when(settingsService.resourceVersion).thenReturn(_defaultResourcesVersion);
+        when(settingsService.checkForUpdatesOnStartup).thenReturn(true);
         return _getBloc(resourceService, settingsService: settingsService);
       },
       act: (bloc) => bloc.add(const SplashEvent.init()),
@@ -198,6 +204,7 @@ void main() {
         final settingsService = MockSettingsService();
         when(settingsService.noResourcesHasBeenDownloaded).thenReturn(true);
         when(settingsService.resourceVersion).thenReturn(_defaultResourcesVersion);
+        when(settingsService.checkForUpdatesOnStartup).thenReturn(true);
         return _getBloc(resourceService, settingsService: settingsService);
       },
       act: (bloc) => bloc.add(const SplashEvent.init()),
@@ -233,6 +240,7 @@ void main() {
         final settingsService = MockSettingsService();
         when(settingsService.noResourcesHasBeenDownloaded).thenReturn(false);
         when(settingsService.resourceVersion).thenReturn(_defaultResourcesVersion);
+        when(settingsService.checkForUpdatesOnStartup).thenReturn(true);
         return _getBloc(resourceService, settingsService: settingsService);
       },
       act: (bloc) => bloc.add(const SplashEvent.init()),
@@ -273,6 +281,7 @@ void main() {
         final settingsService = MockSettingsService();
         when(settingsService.noResourcesHasBeenDownloaded).thenReturn(false);
         when(settingsService.resourceVersion).thenReturn(_defaultResourcesVersion);
+        when(settingsService.checkForUpdatesOnStartup).thenReturn(true);
         return _getBloc(resourceService, settingsService: settingsService);
       },
       seed: () => SplashState.loaded(
@@ -322,6 +331,64 @@ void main() {
           noInternetConnectionOnFirstInstall: false,
           needsLatestAppVersionOnFirstInstall: false,
         ),
+      ],
+    );
+
+    blocTest<SplashBloc, SplashState>(
+      'resources have been downloaded and the setting to check for updates is enabled thus update check is skipped',
+      build: () {
+        final result = _getUpdateResult(AppResourceUpdateResultType.noUpdatesAvailable);
+        final resourceService = MockResourceService();
+        when(resourceService.checkForUpdates(_defaultAppVersion, _defaultResourcesVersion)).thenAnswer((_) => Future.value(result));
+        final settingsService = MockSettingsService();
+        when(settingsService.noResourcesHasBeenDownloaded).thenReturn(true);
+        when(settingsService.resourceVersion).thenReturn(_defaultResourcesVersion);
+        when(settingsService.checkForUpdatesOnStartup).thenReturn(true);
+        return _getBloc(resourceService, settingsService: settingsService);
+      },
+      act: (bloc) => bloc.add(const SplashEvent.init(restarted: true)),
+      expect: () => [
+        SplashState.loaded(
+          updateResultType: AppResourceUpdateResultType.noUpdatesAvailable,
+          language: _language,
+          result: _getUpdateResult(AppResourceUpdateResultType.noUpdatesAvailable),
+          noResourcesHasBeenDownloaded: true,
+          isLoading: true,
+          isUpdating: false,
+          updateFailed: false,
+          canSkipUpdate: false,
+          noInternetConnectionOnFirstInstall: false,
+          needsLatestAppVersionOnFirstInstall: false,
+        )
+      ],
+    );
+
+    blocTest<SplashBloc, SplashState>(
+      'no resources have been downloaded and the setting to check for updates is disabled thus updates are available',
+      build: () {
+        final result = _getUpdateResult(AppResourceUpdateResultType.updatesAvailable);
+        final resourceService = MockResourceService();
+        when(resourceService.checkForUpdates(_defaultAppVersion, _defaultResourcesVersion)).thenAnswer((_) => Future.value(result));
+        final settingsService = MockSettingsService();
+        when(settingsService.noResourcesHasBeenDownloaded).thenReturn(true);
+        when(settingsService.resourceVersion).thenReturn(_defaultResourcesVersion);
+        when(settingsService.checkForUpdatesOnStartup).thenReturn(false);
+        return _getBloc(resourceService, settingsService: settingsService);
+      },
+      act: (bloc) => bloc.add(const SplashEvent.init(restarted: true)),
+      expect: () => [
+        SplashState.loaded(
+          updateResultType: AppResourceUpdateResultType.updatesAvailable,
+          language: _language,
+          result: _getUpdateResult(AppResourceUpdateResultType.updatesAvailable),
+          noResourcesHasBeenDownloaded: true,
+          isLoading: false,
+          isUpdating: false,
+          updateFailed: false,
+          canSkipUpdate: false,
+          noInternetConnectionOnFirstInstall: false,
+          needsLatestAppVersionOnFirstInstall: false,
+        )
       ],
     );
   });

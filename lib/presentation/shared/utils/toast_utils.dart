@@ -8,8 +8,13 @@ enum ToastType {
   error,
 }
 
+enum ToastDurationType {
+  normal,
+  long,
+}
+
 class ToastUtils {
-  static Duration toastDuration = const Duration(seconds: 2);
+  static const Duration defaultToastDuration = Duration(seconds: 2);
 
   static FToast of(BuildContext context) {
     final fToast = FToast();
@@ -17,20 +22,55 @@ class ToastUtils {
     return fToast;
   }
 
-  static void showSucceedToast(FToast toast, String msg) => _showToast(toast, msg, Colors.white, ToastType.succeed);
+  static void showSucceedToast(FToast toast, String msg, {ToastDurationType durationType = ToastDurationType.normal}) =>
+      _showToast(toast, msg, Colors.white, ToastType.succeed, durationType);
 
-  static void showInfoToast(FToast toast, String msg) => _showToast(toast, msg, Colors.white, ToastType.info);
+  static void showInfoToast(FToast toast, String msg, {ToastDurationType durationType = ToastDurationType.normal}) =>
+      _showToast(toast, msg, Colors.white, ToastType.info, durationType);
 
-  static void showWarningToast(FToast toast, String msg) => _showToast(toast, msg, Colors.white, ToastType.warning);
+  static void showWarningToast(FToast toast, String msg, {ToastDurationType durationType = ToastDurationType.normal}) =>
+      _showToast(toast, msg, Colors.white, ToastType.warning, durationType);
 
-  static void showErrorToast(FToast toast, String msg) => _showToast(toast, msg, Colors.white, ToastType.error);
+  static void showErrorToast(FToast toast, String msg, {ToastDurationType durationType = ToastDurationType.normal}) =>
+      _showToast(toast, msg, Colors.white, ToastType.error, durationType);
 
   static void _showToast(
     FToast toast,
     String msg,
     Color textColor,
     ToastType type,
+    ToastDurationType durationType,
   ) {
+    Duration duration;
+    switch (durationType) {
+      case ToastDurationType.normal:
+        duration = defaultToastDuration;
+        break;
+      case ToastDurationType.long:
+        duration = Duration(seconds: defaultToastDuration.inSeconds * 2);
+        break;
+    }
+    toast.showToast(
+      child: _ToastBody(msg: msg, textColor: textColor, type: type),
+      gravity: ToastGravity.BOTTOM,
+      toastDuration: duration,
+    );
+  }
+}
+
+class _ToastBody extends StatelessWidget {
+  final String msg;
+  final Color textColor;
+  final ToastType type;
+
+  const _ToastBody({
+    required this.msg,
+    required this.textColor,
+    required this.type,
+  });
+
+  @override
+  Widget build(BuildContext context) {
     Color bgColor;
     Icon icon;
     switch (type) {
@@ -53,16 +93,6 @@ class ToastUtils {
       default:
         throw Exception('Invalid toast type = $type');
     }
-
-    final widget = _buildToast(msg, textColor, bgColor, icon);
-    toast.showToast(
-      child: widget,
-      gravity: ToastGravity.BOTTOM,
-      toastDuration: toastDuration,
-    );
-  }
-
-  static Widget _buildToast(String msg, Color textColor, Color bgColor, Icon icon) {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 12.0),
       decoration: BoxDecoration(

@@ -59,6 +59,7 @@ void main() {
     useOfficialMap: true,
     useTwentyFourHoursFormat: true,
     resourceVersion: 1,
+    checkForUpdatesOnStartup: true,
   );
 
   setUpAll(() {
@@ -97,6 +98,8 @@ void main() {
     for (final feature in unlockedFeatures) {
       when(purchaseService.isFeatureUnlocked(feature)).thenAnswer((_) => Future.value(true));
     }
+    final dataService = MockDataService();
+    final notificationService = MockNotificationService();
 
     final charactersBloc = MockCharactersBloc();
     final weaponsBloc = MockWeaponsBloc();
@@ -119,6 +122,8 @@ void main() {
       telemetryService,
       deviceInfoService,
       purchaseService,
+      dataService,
+      notificationService,
       charactersBloc,
       weaponsBloc,
       homeBloc,

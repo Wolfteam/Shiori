@@ -2,8 +2,7 @@ import 'package:collection/collection.dart' show IterableExtension;
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/models/entities.dart';
-import 'package:shiori/domain/models/game_codes/game_code_model.dart';
-import 'package:shiori/domain/models/items/item_ascension_material_model.dart';
+import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/genshin_service.dart';
 import 'package:shiori/domain/services/persistence/game_codes_data_service.dart';
 import 'package:shiori/domain/services/resources_service.dart';
@@ -77,11 +76,7 @@ class GameCodesDataServiceImpl implements GameCodesDataService {
 
   @override
   Future<void> saveGameCodeRewards(int gameCodeKey, List<ItemAscensionMaterialModel> rewards) {
-    final rewardsToSave = rewards
-        .map(
-          (e) => GameCodeReward(gameCodeKey, _genshinService.materials.getMaterial(e.key).key, e.quantity),
-        )
-        .toList();
+    final rewardsToSave = rewards.map((e) => GameCodeReward(gameCodeKey, _genshinService.materials.getMaterial(e.key).key, e.quantity)).toList();
     return _gameCodeRewardsBox.addAll(rewardsToSave);
   }
 
@@ -96,5 +91,34 @@ class GameCodesDataServiceImpl implements GameCodesDataService {
     final usedGameCode = _gameCodesBox.values.firstWhereOrNull((el) => el.code == code)!;
     usedGameCode.usedOn = wasUsed ? DateTime.now() : null;
     await usedGameCode.save();
+  }
+
+  @override
+  List<BackupGameCodeModel> getDataForBackup() {
+    return _gameCodesBox.values.map((gameCode) {
+      final rewards = _gameCodeRewardsBox.values.where((el) => el.gameCodeKey == gameCode.key).toList();
+      return BackupGameCodeModel(
+        code: gameCode.code,
+        isExpired: gameCode.isExpired,
+        discoveredOn: gameCode.discoveredOn,
+        expiredOn: gameCode.expiredOn,
+        region: gameCode.region,
+        usedOn: gameCode.usedOn,
+        rewards: rewards.map((e) => BackupGameCodeRewardModel(itemKey: e.itemKey, quantity: e.quantity)).toList(),
+      );
+    }).toList();
+  }
+
+  @override
+  Future<void> restoreFromBackup(List<BackupGameCodeModel> data) async {
+    await deleteThemAll();
+    for (final gameCode in data) {
+      final gc = GameCode(gameCode.code, gameCode.usedOn, gameCode.discoveredOn, gameCode.expiredOn, gameCode.isExpired, gameCode.region);
+      await _gameCodesBox.add(gc);
+      final rewards = gameCode.rewards
+          .map((e) => ItemAscensionMaterialModel(key: e.itemKey, quantity: e.quantity, image: '', type: MaterialType.others))
+          .toList();
+      await saveGameCodeRewards(gc.key as int, rewards);
+    }
   }
 }

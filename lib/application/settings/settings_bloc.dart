@@ -52,6 +52,7 @@ class SettingsBloc extends Bloc<SettingsEvent, SettingsState> {
           useTwentyFourHoursFormat: settings.useTwentyFourHoursFormat,
           unlockedFeatures: features,
           resourceVersion: settings.resourceVersion,
+          checkForUpdatesOnStartup: settings.checkForUpdatesOnStartup,
         );
       },
       themeChanged: (event) async {
@@ -110,9 +111,13 @@ class SettingsBloc extends Bloc<SettingsEvent, SettingsState> {
         _settingsService.useOfficialMap = event.newValue;
         return currentState.copyWith.call(useOfficialMap: event.newValue);
       },
-      useTwentyFourHoursFormat: (event) async {
+      useTwentyFourHoursFormatChanged: (event) async {
         _settingsService.useTwentyFourHoursFormat = event.newValue;
         return currentState.copyWith.call(useTwentyFourHoursFormat: event.newValue);
+      },
+      checkForUpdatesOnStartupChanged: (event) async {
+        _settingsService.checkForUpdatesOnStartup = event.newValue;
+        return currentState.copyWith.call(checkForUpdatesOnStartup: event.newValue);
       },
     );
 

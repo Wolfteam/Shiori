@@ -16,6 +16,7 @@ class ItemPopupMenuFilter<TEnum> extends StatelessWidget {
   final PopupMenuItemText<TEnum> itemText;
   final ChildBuilder<TEnum>? childBuilder;
   final ItemEnabled<TEnum>? isItemEnabled;
+  final double? splashRadius;
 
   const ItemPopupMenuFilter({
     super.key,
@@ -28,6 +29,7 @@ class ItemPopupMenuFilter<TEnum> extends StatelessWidget {
     this.icon = const Icon(Icons.filter_list),
     this.childBuilder,
     this.isItemEnabled,
+    this.splashRadius,
   });
 
   const ItemPopupMenuFilter.withoutSelectedValue({
@@ -40,6 +42,7 @@ class ItemPopupMenuFilter<TEnum> extends StatelessWidget {
     this.icon = const Icon(Icons.filter_list),
     this.childBuilder,
     this.isItemEnabled,
+    this.splashRadius,
   }) : selectedValue = null;
 
   @override
@@ -54,6 +57,7 @@ class ItemPopupMenuFilter<TEnum> extends StatelessWidget {
         return getValuesToUse(translatedValues);
       },
       tooltip: tooltipText,
+      splashRadius: splashRadius,
     );
   }
 

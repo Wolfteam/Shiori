@@ -16,6 +16,7 @@ import 'package:shiori/presentation/shared/extensions/i18n_extensions.dart';
 import 'package:shiori/presentation/shared/item_popupmenu_filter.dart';
 import 'package:shiori/presentation/shared/mixins/app_fab_mixin.dart';
 import 'package:shiori/presentation/shared/nothing_found_column.dart';
+import 'package:shiori/presentation/shared/styles.dart';
 
 const double _tabletFirstCellWidth = 150;
 const double _mobileFirstCellWidth = 120;
@@ -147,6 +148,7 @@ class _AppBar extends StatelessWidget implements PreferredSizeWidget {
         actions: [
           IconButton(
             icon: const Icon(Icons.search),
+            splashRadius: Styles.mediumButtonSplashRadius,
             onPressed: () => showSearch<List<String>>(
               context: context,
               delegate: _AppBarSearchDelegate(
@@ -167,6 +169,7 @@ class _AppBar extends StatelessWidget implements PreferredSizeWidget {
             onSelected: (val) => context.read<BannerHistoryBloc>().add(BannerHistoryEvent.typeChanged(type: val)),
             icon: const Icon(Icons.swap_horiz),
             itemText: (val, _) => s.translateBannerHistoryItemType(val),
+            splashRadius: Styles.mediumButtonSplashRadius,
           ),
           ItemPopupMenuFilter<BannerHistorySortType>(
             tooltipText: s.sortType,
@@ -175,6 +178,7 @@ class _AppBar extends StatelessWidget implements PreferredSizeWidget {
             onSelected: (val) => context.read<BannerHistoryBloc>().add(BannerHistoryEvent.sortTypeChanged(type: val)),
             icon: const Icon(Icons.sort),
             itemText: (val, _) => s.translateBannerHistorySortType(val),
+            splashRadius: Styles.mediumButtonSplashRadius,
           ),
         ],
       ),
