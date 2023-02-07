@@ -191,7 +191,7 @@ class _Buttons extends StatelessWidget {
           Text(
             s.resourceUpdateFailed,
             textAlign: TextAlign.center,
-            style: theme.textTheme.subtitle1!.copyWith(color: Colors.white, fontWeight: FontWeight.bold),
+            style: theme.textTheme.titleMedium!.copyWith(color: Colors.white, fontWeight: FontWeight.bold),
           ),
           Text(
             _getErrorMsg(s),
@@ -256,12 +256,12 @@ class _Updating extends StatelessWidget {
             child: Text(
               s.updatingResources,
               textAlign: TextAlign.center,
-              style: theme.textTheme.subtitle1!.copyWith(color: Colors.white, fontWeight: FontWeight.bold),
+              style: theme.textTheme.titleMedium!.copyWith(color: Colors.white, fontWeight: FontWeight.bold),
             ),
           ),
           DecoratedBox(
             decoration: BoxDecoration(
-              border: Border.all(color: Styles.paimonColor, strokeAlign: StrokeAlign.center),
+              border: Border.all(color: Styles.paimonColor, strokeAlign: BorderSide.strokeAlignCenter),
             ),
             child: BlocBuilder<SplashBloc, SplashState>(
               builder: (context, state) => LinearProgressIndicator(
