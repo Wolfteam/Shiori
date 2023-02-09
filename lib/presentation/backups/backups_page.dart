@@ -5,6 +5,7 @@ import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
+import 'package:responsive_builder/responsive_builder.dart';
 import 'package:shiori/application/bloc.dart';
 import 'package:shiori/domain/app_constants.dart';
 import 'package:shiori/domain/enums/enums.dart';
@@ -17,6 +18,7 @@ import 'package:shiori/presentation/backups/widgets/backup_list_item.dart';
 import 'package:shiori/presentation/shared/loading.dart';
 import 'package:shiori/presentation/shared/nothing_found_column.dart';
 import 'package:shiori/presentation/shared/styles.dart';
+import 'package:shiori/presentation/shared/utils/size_utils.dart';
 import 'package:shiori/presentation/shared/utils/toast_utils.dart';
 
 class BackupsPage extends StatelessWidget {
@@ -26,6 +28,7 @@ class BackupsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final s = S.of(context);
     final theme = Theme.of(context);
+    final isPortrait = MediaQuery.of(context).orientation == Orientation.portrait;
     return BlocProvider<BackupRestoreBloc>(
       create: (context) => Injection.backupRestoreBloc..add(const BackupRestoreEvent.init()),
       child: Scaffold(
@@ -47,35 +50,84 @@ class BackupsPage extends StatelessWidget {
               );
             },
             builder: (context, state) => state.maybeMap(
-              loaded: (state) => CustomScrollView(
-                slivers: [
-                  SliverToBoxAdapter(
-                    child: _Header(
-                      backupCount: state.backups.length,
-                      latestBackupDate: state.backups.firstOrDefault()?.createdAt,
-                    ),
-                  ),
-                  if (state.backups.isNotEmpty)
-                    SliverToBoxAdapter(
-                      child: Container(
-                        margin: const EdgeInsets.only(left: 16),
-                        child: Text(s.backups, style: theme.textTheme.headline6),
+              loaded: (state) => ResponsiveBuilder(
+                builder: (ctx, size) {
+                  if (!isPortrait && size.screenSize.width > SizeUtils.minWidthOnDesktop) {
+                    return Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const Spacer(),
+                        Expanded(
+                          flex: 30,
+                          child: _Header(
+                            backupCount: state.backups.length,
+                            latestBackupDate: state.backups.firstOrDefault()?.createdAt,
+                          ),
+                        ),
+                        const Spacer(),
+                        Expanded(
+                          flex: 45,
+                          child: CustomScrollView(
+                            slivers: [
+                              if (state.backups.isNotEmpty)
+                                SliverToBoxAdapter(
+                                  child: Container(
+                                    margin: const EdgeInsets.only(top: 10, left: 16),
+                                    child: Text(s.backups, style: theme.textTheme.headline6),
+                                  ),
+                                ),
+                              if (state.backups.isNotEmpty)
+                                SliverList(
+                                  delegate: SliverChildBuilderDelegate(
+                                    (context, index) => BackupListItem(backup: state.backups[index]),
+                                    childCount: state.backups.length,
+                                  ),
+                                ),
+                              if (state.backups.isEmpty)
+                                const SliverFillRemaining(
+                                  hasScrollBody: false,
+                                  fillOverscroll: true,
+                                  child: NothingFoundColumn(),
+                                ),
+                            ],
+                          ),
+                        ),
+                        const Spacer(),
+                      ],
+                    );
+                  }
+                  return CustomScrollView(
+                    slivers: [
+                      SliverToBoxAdapter(
+                        child: _Header(
+                          backupCount: state.backups.length,
+                          latestBackupDate: state.backups.firstOrDefault()?.createdAt,
+                        ),
                       ),
-                    ),
-                  if (state.backups.isNotEmpty)
-                    SliverList(
-                      delegate: SliverChildBuilderDelegate(
-                        (context, index) => BackupListItem(backup: state.backups[index]),
-                        childCount: state.backups.length,
-                      ),
-                    ),
-                  if (state.backups.isEmpty)
-                    const SliverFillRemaining(
-                      hasScrollBody: false,
-                      fillOverscroll: true,
-                      child: NothingFoundColumn(),
-                    ),
-                ],
+                      if (state.backups.isNotEmpty)
+                        SliverToBoxAdapter(
+                          child: Container(
+                            margin: const EdgeInsets.only(left: 16),
+                            child: Text(s.backups, style: theme.textTheme.headline6),
+                          ),
+                        ),
+                      if (state.backups.isNotEmpty)
+                        SliverList(
+                          delegate: SliverChildBuilderDelegate(
+                            (context, index) => BackupListItem(backup: state.backups[index]),
+                            childCount: state.backups.length,
+                          ),
+                        ),
+                      if (state.backups.isEmpty)
+                        const SliverFillRemaining(
+                          hasScrollBody: false,
+                          fillOverscroll: true,
+                          child: NothingFoundColumn(),
+                        ),
+                    ],
+                  );
+                },
               ),
               orElse: () => const Loading(useScaffold: false),
             ),
@@ -160,6 +212,7 @@ class _Header extends StatelessWidget {
         padding: Styles.edgeInsetAll10,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
+          mainAxisSize: MainAxisSize.min,
           children: [
             Row(
               children: [
