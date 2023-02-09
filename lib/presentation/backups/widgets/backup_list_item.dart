@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
@@ -49,14 +47,13 @@ class BackupListItem extends StatelessWidget {
               tooltip: s.restore,
               onPressed: () => _restore(s, context),
             ),
-            if (Platform.isAndroid || Platform.isIOS)
-              IconButton(
-                splashRadius: Styles.smallButtonSplashRadius,
-                icon: const Icon(Icons.share, color: Colors.green),
-                visualDensity: VisualDensity.compact,
-                tooltip: s.share,
-                onPressed: () => _share(s, context),
-              ),
+            IconButton(
+              splashRadius: Styles.smallButtonSplashRadius,
+              icon: const Icon(Icons.share, color: Colors.green),
+              visualDensity: VisualDensity.compact,
+              tooltip: s.share,
+              onPressed: () => _share(s, context),
+            ),
             IconButton(
               splashRadius: Styles.smallButtonSplashRadius,
               icon: const Icon(Icons.delete, color: Colors.red),

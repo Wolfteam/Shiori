@@ -1,9 +1,12 @@
+import 'dart:io';
+
 import 'package:darq/darq.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
 import 'package:shiori/application/bloc.dart';
+import 'package:shiori/domain/app_constants.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/extensions/string_extensions.dart';
 import 'package:shiori/domain/models/models.dart';
@@ -210,9 +213,7 @@ class _Header extends StatelessWidget {
                   child: Text(s.create),
                 ),
                 OutlinedButton(
-                  onPressed: () => FilePicker.platform
-                      .pickFiles(dialogTitle: s.chooseFile, lockParentWindow: true)
-                      .then((result) => _handlePickerResult(context, result)),
+                  onPressed: () => _pickFile(s, context),
                   child: Text(s.import),
                 ),
               ],
@@ -221,6 +222,18 @@ class _Header extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  Future<void> _pickFile(S s, BuildContext context) {
+    final customFile = Platform.isWindows;
+    return FilePicker.platform
+        .pickFiles(
+          dialogTitle: s.chooseFile,
+          lockParentWindow: true,
+          type: customFile ? FileType.custom : FileType.any,
+          allowedExtensions: customFile ? [backupFileExtension.replaceAll('.', '')] : null,
+        )
+        .then((result) => _handlePickerResult(context, result));
   }
 
   void _handlePickerResult(BuildContext context, FilePickerResult? result) {
