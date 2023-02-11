@@ -60,9 +60,11 @@ class BackupsPage extends StatelessWidget {
                         const Spacer(),
                         Expanded(
                           flex: 30,
-                          child: _Header(
-                            backupCount: state.backups.length,
-                            latestBackupDate: state.backups.firstOrDefault()?.createdAt,
+                          child: SingleChildScrollView(
+                            child: _Header(
+                              backupCount: state.backups.length,
+                              latestBackupDate: state.backups.firstOrDefault()?.createdAt,
+                            ),
                           ),
                         ),
                         const Spacer(),
