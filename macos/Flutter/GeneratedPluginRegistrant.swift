@@ -10,10 +10,10 @@ import devicelocale
 import flutter_local_notifications
 import flutter_native_timezone
 import package_info_plus
-import path_provider_macos
+import path_provider_foundation
 import purchases_flutter
 import share_plus
-import shared_preferences_macos
+import shared_preferences_foundation
 import url_launcher_macos
 import wakelock_macos
 import window_size
