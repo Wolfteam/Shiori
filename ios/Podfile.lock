@@ -1,11 +1,11 @@
 PODS:
-  - AppCenter (4.4.3):
-    - AppCenter/Analytics (= 4.4.3)
-    - AppCenter/Crashes (= 4.4.3)
-  - AppCenter/Analytics (4.4.3):
+  - AppCenter (5.0.1):
+    - AppCenter/Analytics (= 5.0.1)
+    - AppCenter/Crashes (= 5.0.1)
+  - AppCenter/Analytics (5.0.1):
     - AppCenter/Core
-  - AppCenter/Core (4.4.3)
-  - AppCenter/Crashes (4.4.3):
+  - AppCenter/Core (5.0.1)
+  - AppCenter/Crashes (5.0.1):
     - AppCenter/Core
   - device_info_plus (0.0.1):
     - Flutter
@@ -67,25 +67,27 @@ PODS:
   - OrderedSet (5.0.0)
   - package_info_plus (0.4.5):
     - Flutter
-  - path_provider_ios (0.0.1):
+  - path_provider_foundation (0.0.1):
     - Flutter
+    - FlutterMacOS
   - permission_handler_apple (9.0.4):
     - Flutter
-  - purchases_flutter (4.3.2):
+  - purchases_flutter (4.9.1):
     - Flutter
-    - PurchasesHybridCommon (= 4.3.6)
-  - PurchasesHybridCommon (4.3.6):
-    - RevenueCat (= 4.13.4)
+    - PurchasesHybridCommon (= 4.12.1)
+  - PurchasesHybridCommon (4.12.1):
+    - RevenueCat (= 4.17.4)
   - rate_my_app (1.1.3):
     - Flutter
-  - RevenueCat (4.13.4)
-  - SDWebImage (5.15.0):
-    - SDWebImage/Core (= 5.15.0)
-  - SDWebImage/Core (5.15.0)
+  - RevenueCat (4.17.4)
+  - SDWebImage (5.15.2):
+    - SDWebImage/Core (= 5.15.2)
+  - SDWebImage/Core (5.15.2)
   - share_plus (0.0.1):
     - Flutter
-  - shared_preferences_ios (0.0.1):
+  - shared_preferences_foundation (0.0.1):
     - Flutter
+    - FlutterMacOS
   - store_checker (0.0.1):
     - Flutter
   - SwiftyGif (5.4.4)
@@ -108,12 +110,12 @@ DEPENDENCIES:
   - fluttertoast (from `.symlinks/plugins/fluttertoast/ios`)
   - image_gallery_saver (from `.symlinks/plugins/image_gallery_saver/ios`)
   - package_info_plus (from `.symlinks/plugins/package_info_plus/ios`)
-  - path_provider_ios (from `.symlinks/plugins/path_provider_ios/ios`)
+  - path_provider_foundation (from `.symlinks/plugins/path_provider_foundation/ios`)
   - permission_handler_apple (from `.symlinks/plugins/permission_handler_apple/ios`)
   - purchases_flutter (from `.symlinks/plugins/purchases_flutter/ios`)
   - rate_my_app (from `.symlinks/plugins/rate_my_app/ios`)
   - share_plus (from `.symlinks/plugins/share_plus/ios`)
-  - shared_preferences_ios (from `.symlinks/plugins/shared_preferences_ios/ios`)
+  - shared_preferences_foundation (from `.symlinks/plugins/shared_preferences_foundation/ios`)
   - store_checker (from `.symlinks/plugins/store_checker/ios`)
   - url_launcher_ios (from `.symlinks/plugins/url_launcher_ios/ios`)
   - wakelock (from `.symlinks/plugins/wakelock/ios`)
@@ -153,8 +155,8 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/image_gallery_saver/ios"
   package_info_plus:
     :path: ".symlinks/plugins/package_info_plus/ios"
-  path_provider_ios:
-    :path: ".symlinks/plugins/path_provider_ios/ios"
+  path_provider_foundation:
+    :path: ".symlinks/plugins/path_provider_foundation/ios"
   permission_handler_apple:
     :path: ".symlinks/plugins/permission_handler_apple/ios"
   purchases_flutter:
@@ -163,8 +165,8 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/rate_my_app/ios"
   share_plus:
     :path: ".symlinks/plugins/share_plus/ios"
-  shared_preferences_ios:
-    :path: ".symlinks/plugins/shared_preferences_ios/ios"
+  shared_preferences_foundation:
+    :path: ".symlinks/plugins/shared_preferences_foundation/ios"
   store_checker:
     :path: ".symlinks/plugins/store_checker/ios"
   url_launcher_ios:
@@ -173,7 +175,7 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/wakelock/ios"
 
 SPEC CHECKSUMS:
-  AppCenter: 3fd04aa1b166e16fdb03ec81dabe488aece83fbd
+  AppCenter: 18153bb6bc4241d14c8cce57466ac1c88136b476
   device_info_plus: e5c5da33f982a436e103237c0c85f9031142abed
   devicelocale: b22617f40038496deffba44747101255cee005b0
   DKImagePickerController: b512c28220a2b8ac7419f21c491fc8534b7601ac
@@ -184,19 +186,19 @@ SPEC CHECKSUMS:
   flutter_inappwebview: bfd58618f49dc62f2676de690fc6dcda1d6c3721
   flutter_local_notifications: 0c0b1ae97e741e1521e4c1629a459d04b9aec743
   flutter_native_timezone: 5f05b2de06c9776b4cc70e1839f03de178394d22
-  fluttertoast: 74526702fea2c060ea55dde75895b7e1bde1c86b
+  fluttertoast: eb263d302cc92e04176c053d2385237e9f43fad0
   image_gallery_saver: 259eab68fb271cfd57d599904f7acdc7832e7ef2
   OrderedSet: aaeb196f7fef5a9edf55d89760da9176ad40b93c
   package_info_plus: 6c92f08e1f853dc01228d6f553146438dafcd14e
-  path_provider_ios: 14f3d2fd28c4fdb42f44e0f751d12861c43cee02
+  path_provider_foundation: 37748e03f12783f9de2cb2c4eadfaa25fe6d4852
   permission_handler_apple: 44366e37eaf29454a1e7b1b7d736c2cceaeb17ce
-  purchases_flutter: 89a079c30af2a1eb9f920d8993dd498736b484de
-  PurchasesHybridCommon: d774e438e9aa1693f4e67d5874dfdd899cf87fc6
+  purchases_flutter: 35823ed62a8eca74af719872b27c2faf7c625ab8
+  PurchasesHybridCommon: 6e262ca1090bd9f99e85cf604a12d0866b9b80b2
   rate_my_app: 96f658ddb7f0a8d2f46d54452583f084760aef57
-  RevenueCat: afa482ccddf042ac00f138efd1fa57bca3e805af
-  SDWebImage: 9bec4c5cdd9579e1f57104735ee0c37df274d593
+  RevenueCat: 3411bc79fc724c5c130035c92959a802c6d6f5b2
+  SDWebImage: 8ab87d4b3e5cc4927bd47f78db6ceb0b94442577
   share_plus: 056a1e8ac890df3e33cb503afffaf1e9b4fbae68
-  shared_preferences_ios: 548a61f8053b9b8a49ac19c1ffbc8b92c50d68ad
+  shared_preferences_foundation: 297b3ebca31b34ec92be11acd7fb0ba932c822ca
   store_checker: 359c5051d9ec30ff0a8fa39eb5ec9df021bb745d
   SwiftyGif: 93a1cc87bf3a51916001cf8f3d63835fb64c819f
   Toast: 91b396c56ee72a5790816f40d3a94dd357abc196

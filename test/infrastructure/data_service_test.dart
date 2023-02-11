@@ -16,11 +16,11 @@ import '../mocks.mocks.dart';
 const _dbFolder = 'shiori_data_service_tests';
 
 void main() {
-  late final DataService _dataService;
-  late final CalculatorService _calculatorService;
-  late final GenshinService _genshinService;
-  late final ResourceService _resourceService;
-  late final String _dbPath;
+  late final DataService dataService;
+  late final CalculatorService calculatorService;
+  late final GenshinService genshinService;
+  late final ResourceService resourceService;
+  late final String dbPath;
 
   setUp(() {
     TestWidgetsFlutterBinding.ensureInitialized();
@@ -28,39 +28,39 @@ void main() {
     when(settings.language).thenReturn(AppLanguageType.english);
     final localeService = LocaleServiceImpl(settings);
 
-    _resourceService = getResourceService(settings);
-    _genshinService = GenshinServiceImpl(_resourceService, localeService);
-    _calculatorService = CalculatorServiceImpl(_genshinService, _resourceService);
-    _dataService = DataServiceImpl(_genshinService, _calculatorService, _resourceService);
+    resourceService = getResourceService(settings);
+    genshinService = GenshinServiceImpl(resourceService, localeService);
+    calculatorService = CalculatorServiceImpl(genshinService, resourceService);
+    dataService = DataServiceImpl(genshinService, calculatorService, resourceService);
 
     return Future(() async {
-      await _genshinService.init(AppLanguageType.english);
-      _dbPath = await getDbPath(_dbFolder);
-      await _dataService.initForTests(_dbPath);
+      await genshinService.init(AppLanguageType.english);
+      dbPath = await getDbPath(_dbFolder);
+      await dataService.initForTests(dbPath);
     });
   });
 
   tearDown(() {
     return Future(() async {
-      await _dataService.closeThemAll();
-      await deleteDbFolder(_dbPath);
+      await dataService.closeThemAll();
+      await deleteDbFolder(dbPath);
     });
   });
 
   group('Sessions', () {
     test('create 1 session with 1 item', () async {
-      final existingSessions = _dataService.calculator.getAllCalAscMatSessions();
+      final existingSessions = dataService.calculator.getAllCalAscMatSessions();
       expect(existingSessions.length, equals(0));
 
       const sessionName = 'Keqing session';
-      final sessionKey = await _dataService.calculator.createCalAscMatSession(sessionName, 0);
-      final char = _genshinService.characters.getCharacter('keqing');
+      final sessionKey = await dataService.calculator.createCalAscMatSession(sessionName, 0);
+      final char = genshinService.characters.getCharacter('keqing');
       const currentAscensionLevel = 1;
       const desiredAscensionLevel = 5;
-      final currentSkillLevel = _calculatorService.getSkillLevelToUse(currentAscensionLevel, 1);
-      final desiredSkillLevel = _calculatorService.getSkillLevelToUse(desiredAscensionLevel, 7);
+      final currentSkillLevel = calculatorService.getSkillLevelToUse(currentAscensionLevel, 1);
+      final desiredSkillLevel = calculatorService.getSkillLevelToUse(desiredAscensionLevel, 7);
       final skills = char.skills.where((e) => e.type != CharacterSkillType.others).mapIndex((e, index) {
-        final enableTuple = _calculatorService.isSkillEnabled(
+        final enableTuple = calculatorService.isSkillEnabled(
           currentSkillLevel,
           desiredSkillLevel,
           currentAscensionLevel,
@@ -80,7 +80,7 @@ void main() {
           isDesiredIncEnabled: enableTuple.item4,
         );
       }).toList();
-      final materials = _calculatorService.getCharacterMaterialsToUse(
+      final materials = calculatorService.getCharacterMaterialsToUse(
         char,
         currentSkillLevel,
         desiredSkillLevel,
@@ -96,7 +96,7 @@ void main() {
           name: 'Keqing',
           elementType: char.elementType,
           position: 0,
-          image: _resourceService.getCharacterImagePath(char.image),
+          image: resourceService.getCharacterImagePath(char.image),
           rarity: char.rarity,
           materials: materials,
           currentLevel: 20,
@@ -107,9 +107,9 @@ void main() {
           useMaterialsFromInventory: false,
         ),
       );
-      await _dataService.calculator.addCalAscMatSessionItems(sessionKey, items);
+      await dataService.calculator.addCalAscMatSessionItems(sessionKey, items);
 
-      final created = _dataService.calculator.getCalcAscMatSession(sessionKey);
+      final created = dataService.calculator.getCalcAscMatSession(sessionKey);
       expect(created.key, sessionKey);
       expect(created.name, equals(sessionName));
       expect(created.items, isNotEmpty);

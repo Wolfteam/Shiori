@@ -11,28 +11,28 @@ import '../../common.dart';
 import '../../mocks.mocks.dart';
 
 void main() {
-  late GenshinService _genshinService;
-  late TelemetryService _telemetryService;
+  late GenshinService genshinService;
+  late TelemetryService telemetryService;
 
   setUpAll(() {
     TestWidgetsFlutterBinding.ensureInitialized();
     return Future(() async {
-      _telemetryService = MockTelemetryService();
+      telemetryService = MockTelemetryService();
       final settingsService = MockSettingsService();
       when(settingsService.language).thenReturn(AppLanguageType.english);
 
       final localeService = LocaleServiceImpl(settingsService);
       final resourceService = getResourceService(settingsService);
-      _genshinService = GenshinServiceImpl(resourceService, localeService);
+      genshinService = GenshinServiceImpl(resourceService, localeService);
 
-      await _genshinService.init(settingsService.language);
+      await genshinService.init(settingsService.language);
     });
   });
 
   test(
     'Initial state',
     () => expect(
-      ItemReleaseHistoryBloc(_genshinService, _telemetryService).state,
+      ItemReleaseHistoryBloc(genshinService, telemetryService).state,
       const ItemReleaseHistoryState.loading(),
     ),
   );
@@ -40,7 +40,7 @@ void main() {
   group('Init', () {
     blocTest<ItemReleaseHistoryBloc, ItemReleaseHistoryState>(
       'valid item key',
-      build: () => ItemReleaseHistoryBloc(_genshinService, _telemetryService),
+      build: () => ItemReleaseHistoryBloc(genshinService, telemetryService),
       act: (bloc) => bloc.add(const ItemReleaseHistoryEvent.init(itemKey: 'keqing')),
       verify: (bloc) => bloc.state.map(
         loading: (_) => throw Exception('Invalid state'),
@@ -59,7 +59,7 @@ void main() {
 
     blocTest<ItemReleaseHistoryBloc, ItemReleaseHistoryState>(
       'invalid item key',
-      build: () => ItemReleaseHistoryBloc(_genshinService, _telemetryService),
+      build: () => ItemReleaseHistoryBloc(genshinService, telemetryService),
       act: (bloc) => bloc.add(const ItemReleaseHistoryEvent.init(itemKey: 'no-existent-item')),
       errors: () => [isA<Exception>()],
     );

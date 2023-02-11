@@ -77,21 +77,21 @@ class _PassiveCard extends StatelessWidget {
               message: model.title,
               child: Text(
                 model.title,
-                style: theme.textTheme.subtitle1!.copyWith(color: elementType.getElementColorFromContext(context)),
+                style: theme.textTheme.titleMedium!.copyWith(color: elementType.getElementColorFromContext(context)),
                 textAlign: TextAlign.center,
               ),
             ),
             Text(
               unlockedAt,
               textAlign: TextAlign.center,
-              style: theme.textTheme.subtitle2,
+              style: theme.textTheme.titleSmall,
             ),
             Container(
               margin: const EdgeInsets.only(top: 10),
               child: Text(
                 model.description,
                 textAlign: TextAlign.center,
-                style: theme.textTheme.bodyText2!.copyWith(fontSize: 12),
+                style: theme.textTheme.bodyMedium!.copyWith(fontSize: 12),
               ),
             ),
             if (model.descriptions.isNotEmpty) BulletList(items: model.descriptions)

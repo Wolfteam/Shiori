@@ -15,39 +15,39 @@ import '../../mocks.mocks.dart';
 const _dbFolder = 'shiori_tier_list_bloc_tests';
 
 void main() {
-  late final TelemetryService _telemetryService;
-  late final LoggingService _loggingService;
-  late final GenshinService _genshinService;
-  late final DataService _dataService;
-  late final String _dbPath;
+  late final TelemetryService telemetryService;
+  late final LoggingService loggingService;
+  late final GenshinService genshinService;
+  late final DataService dataService;
+  late final String dbPath;
 
   setUpAll(() {
     TestWidgetsFlutterBinding.ensureInitialized();
-    _telemetryService = MockTelemetryService();
-    _loggingService = MockLoggingService();
-    final settingsService = SettingsServiceImpl(_loggingService);
+    telemetryService = MockTelemetryService();
+    loggingService = MockLoggingService();
+    final settingsService = SettingsServiceImpl(loggingService);
     final resourceService = getResourceService(settingsService);
-    _genshinService = GenshinServiceImpl(resourceService, LocaleServiceImpl(settingsService));
-    _dataService = DataServiceImpl(_genshinService, CalculatorServiceImpl(_genshinService, resourceService), resourceService);
+    genshinService = GenshinServiceImpl(resourceService, LocaleServiceImpl(settingsService));
+    dataService = DataServiceImpl(genshinService, CalculatorServiceImpl(genshinService, resourceService), resourceService);
 
     return Future(() async {
-      await _genshinService.init(AppLanguageType.english);
-      _dbPath = await getDbPath(_dbFolder);
-      await _dataService.initForTests(_dbPath);
+      await genshinService.init(AppLanguageType.english);
+      dbPath = await getDbPath(_dbFolder);
+      await dataService.initForTests(dbPath);
     });
   });
 
   tearDownAll(() {
     return Future(() async {
-      await _dataService.closeThemAll();
-      await deleteDbFolder(_dbPath);
+      await dataService.closeThemAll();
+      await deleteDbFolder(dbPath);
     });
   });
 
   test(
     'Initial state',
     () => expect(
-      TierListBloc(_genshinService, _dataService, _telemetryService, _loggingService).state,
+      TierListBloc(genshinService, dataService, telemetryService, loggingService).state,
       const TierListState.loaded(rows: [], charsAvailable: [], readyToSave: false),
     ),
   );
@@ -55,10 +55,10 @@ void main() {
   group('Init', () {
     blocTest<TierListBloc, TierListState>(
       'should return default tier list',
-      build: () => TierListBloc(_genshinService, _dataService, _telemetryService, _loggingService),
+      build: () => TierListBloc(genshinService, dataService, telemetryService, loggingService),
       act: (bloc) => bloc.add(const TierListEvent.init()),
       expect: () {
-        final defaultTierList = _genshinService.characters.getDefaultCharacterTierList(TierListBloc.defaultColors);
+        final defaultTierList = genshinService.characters.getDefaultCharacterTierList(TierListBloc.defaultColors);
         return [TierListState.loaded(rows: defaultTierList, charsAvailable: [], readyToSave: false)];
       },
       verify: (bloc) {
@@ -69,16 +69,16 @@ void main() {
     blocTest<TierListBloc, TierListState>(
       'should return custom tier list',
       setUp: () async {
-        final defaultTierList = _genshinService.characters.getDefaultCharacterTierList(TierListBloc.defaultColors);
-        await _dataService.tierList.saveTierList([
+        final defaultTierList = genshinService.characters.getDefaultCharacterTierList(TierListBloc.defaultColors);
+        await dataService.tierList.saveTierList([
           TierListRowModel.row(tierText: 'SSS', tierColor: TierListBloc.defaultColors.first, items: defaultTierList.first.items),
           TierListRowModel.row(tierText: 'SS', tierColor: TierListBloc.defaultColors[1], items: defaultTierList.last.items),
         ]);
       },
       tearDown: () async {
-        await _dataService.tierList.deleteTierList();
+        await dataService.tierList.deleteTierList();
       },
-      build: () => TierListBloc(_genshinService, _dataService, _telemetryService, _loggingService),
+      build: () => TierListBloc(genshinService, dataService, telemetryService, loggingService),
       act: (bloc) => bloc.add(const TierListEvent.init()),
       verify: (bloc) {
         expect(bloc.state.rows.length, 2);
@@ -91,16 +91,16 @@ void main() {
     blocTest<TierListBloc, TierListState>(
       'custom tier list exist but a reset is made',
       setUp: () async {
-        final defaultTierList = _genshinService.characters.getDefaultCharacterTierList(TierListBloc.defaultColors);
-        await _dataService.tierList.saveTierList([
+        final defaultTierList = genshinService.characters.getDefaultCharacterTierList(TierListBloc.defaultColors);
+        await dataService.tierList.saveTierList([
           TierListRowModel.row(tierText: 'SSS', tierColor: TierListBloc.defaultColors.first, items: defaultTierList.first.items),
           TierListRowModel.row(tierText: 'SS', tierColor: TierListBloc.defaultColors[1], items: defaultTierList.last.items),
         ]);
       },
-      build: () => TierListBloc(_genshinService, _dataService, _telemetryService, _loggingService),
+      build: () => TierListBloc(genshinService, dataService, telemetryService, loggingService),
       act: (bloc) => bloc.add(const TierListEvent.init(reset: true)),
       expect: () {
-        final defaultTierList = _genshinService.characters.getDefaultCharacterTierList(TierListBloc.defaultColors);
+        final defaultTierList = genshinService.characters.getDefaultCharacterTierList(TierListBloc.defaultColors);
         return [TierListState.loaded(rows: defaultTierList, charsAvailable: [], readyToSave: false)];
       },
       verify: (bloc) {
@@ -112,9 +112,9 @@ void main() {
   group('Row', () {
     blocTest<TierListBloc, TierListState>(
       'text changed',
-      build: () => TierListBloc(_genshinService, _dataService, _telemetryService, _loggingService),
+      build: () => TierListBloc(genshinService, dataService, telemetryService, loggingService),
       tearDown: () async {
-        await _dataService.tierList.deleteTierList();
+        await dataService.tierList.deleteTierList();
       },
       act: (bloc) => bloc
         ..add(const TierListEvent.init())
@@ -126,15 +126,15 @@ void main() {
 
     blocTest<TierListBloc, TierListState>(
       'position changed',
-      build: () => TierListBloc(_genshinService, _dataService, _telemetryService, _loggingService),
+      build: () => TierListBloc(genshinService, dataService, telemetryService, loggingService),
       tearDown: () async {
-        await _dataService.tierList.deleteTierList();
+        await dataService.tierList.deleteTierList();
       },
       act: (bloc) => bloc
         ..add(const TierListEvent.init())
         ..add(const TierListEvent.rowPositionChanged(index: 0, newIndex: 5)),
       verify: (bloc) {
-        final defaultTierList = _genshinService.characters.getDefaultCharacterTierList(TierListBloc.defaultColors);
+        final defaultTierList = genshinService.characters.getDefaultCharacterTierList(TierListBloc.defaultColors);
         final movedOne = defaultTierList.first;
         expect(movedOne.tierText, bloc.state.rows[5].tierText);
       },
@@ -142,9 +142,9 @@ void main() {
 
     blocTest<TierListBloc, TierListState>(
       'color changed',
-      build: () => TierListBloc(_genshinService, _dataService, _telemetryService, _loggingService),
+      build: () => TierListBloc(genshinService, dataService, telemetryService, loggingService),
       tearDown: () async {
-        await _dataService.tierList.deleteTierList();
+        await dataService.tierList.deleteTierList();
       },
       act: (bloc) => bloc
         ..add(const TierListEvent.init())
@@ -157,11 +157,11 @@ void main() {
     blocTest<TierListBloc, TierListState>(
       'add character',
       tearDown: () async {
-        await _dataService.tierList.deleteTierList();
+        await dataService.tierList.deleteTierList();
       },
-      build: () => TierListBloc(_genshinService, _dataService, _telemetryService, _loggingService),
+      build: () => TierListBloc(genshinService, dataService, telemetryService, loggingService),
       act: (bloc) {
-        final firstRow = _genshinService.characters.getDefaultCharacterTierList(TierListBloc.defaultColors).first;
+        final firstRow = genshinService.characters.getDefaultCharacterTierList(TierListBloc.defaultColors).first;
         return bloc
           ..add(const TierListEvent.init())
           ..add(const TierListEvent.clearRow(index: 0))
@@ -176,17 +176,17 @@ void main() {
     blocTest<TierListBloc, TierListState>(
       'delete character',
       tearDown: () async {
-        await _dataService.tierList.deleteTierList();
+        await dataService.tierList.deleteTierList();
       },
-      build: () => TierListBloc(_genshinService, _dataService, _telemetryService, _loggingService),
+      build: () => TierListBloc(genshinService, dataService, telemetryService, loggingService),
       act: (bloc) {
-        final firstRow = _genshinService.characters.getDefaultCharacterTierList(TierListBloc.defaultColors).first;
+        final firstRow = genshinService.characters.getDefaultCharacterTierList(TierListBloc.defaultColors).first;
         return bloc
           ..add(const TierListEvent.init())
           ..add(TierListEvent.deleteCharacterFromRow(index: 0, item: firstRow.items.first));
       },
       verify: (bloc) {
-        final firstRow = _genshinService.characters.getDefaultCharacterTierList(TierListBloc.defaultColors).first;
+        final firstRow = genshinService.characters.getDefaultCharacterTierList(TierListBloc.defaultColors).first;
         expect(bloc.state.rows.first.items.length, firstRow.items.length - 1);
         expect(bloc.state.charsAvailable.length, 1);
       },
@@ -196,15 +196,15 @@ void main() {
   group('Rows', () {
     blocTest<TierListBloc, TierListState>(
       'add new one above the first one',
-      build: () => TierListBloc(_genshinService, _dataService, _telemetryService, _loggingService),
+      build: () => TierListBloc(genshinService, dataService, telemetryService, loggingService),
       tearDown: () async {
-        await _dataService.tierList.deleteTierList();
+        await dataService.tierList.deleteTierList();
       },
       act: (bloc) => bloc
         ..add(const TierListEvent.init())
         ..add(const TierListEvent.addNewRow(index: 0, above: true)),
       verify: (bloc) {
-        final defaultTierList = _genshinService.characters.getDefaultCharacterTierList(TierListBloc.defaultColors);
+        final defaultTierList = genshinService.characters.getDefaultCharacterTierList(TierListBloc.defaultColors);
         expect(bloc.state.rows.length, defaultTierList.length + 1);
         expect(bloc.state.rows.first.tierText != defaultTierList.first.tierText, isTrue);
       },
@@ -212,15 +212,15 @@ void main() {
 
     blocTest<TierListBloc, TierListState>(
       'add new one below the first one',
-      build: () => TierListBloc(_genshinService, _dataService, _telemetryService, _loggingService),
+      build: () => TierListBloc(genshinService, dataService, telemetryService, loggingService),
       tearDown: () async {
-        await _dataService.tierList.deleteTierList();
+        await dataService.tierList.deleteTierList();
       },
       act: (bloc) => bloc
         ..add(const TierListEvent.init())
         ..add(const TierListEvent.addNewRow(index: 0, above: false)),
       verify: (bloc) {
-        final defaultTierList = _genshinService.characters.getDefaultCharacterTierList(TierListBloc.defaultColors);
+        final defaultTierList = genshinService.characters.getDefaultCharacterTierList(TierListBloc.defaultColors);
         expect(bloc.state.rows.length, defaultTierList.length + 1);
         expect(defaultTierList.any((el) => el.tierText == bloc.state.rows[1].tierText), isFalse);
       },
@@ -228,9 +228,9 @@ void main() {
 
     blocTest<TierListBloc, TierListState>(
       'clear',
-      build: () => TierListBloc(_genshinService, _dataService, _telemetryService, _loggingService),
+      build: () => TierListBloc(genshinService, dataService, telemetryService, loggingService),
       tearDown: () async {
-        await _dataService.tierList.deleteTierList();
+        await dataService.tierList.deleteTierList();
       },
       act: (bloc) => bloc
         ..add(const TierListEvent.init())
@@ -243,9 +243,9 @@ void main() {
 
     blocTest<TierListBloc, TierListState>(
       'clear all',
-      build: () => TierListBloc(_genshinService, _dataService, _telemetryService, _loggingService),
+      build: () => TierListBloc(genshinService, dataService, telemetryService, loggingService),
       tearDown: () async {
-        await _dataService.tierList.deleteTierList();
+        await dataService.tierList.deleteTierList();
       },
       act: (bloc) => bloc
         ..add(const TierListEvent.init())
@@ -260,9 +260,9 @@ void main() {
   group('Screenshot', () {
     blocTest<TierListBloc, TierListState>(
       'was successfully taken',
-      build: () => TierListBloc(_genshinService, _dataService, _telemetryService, _loggingService),
+      build: () => TierListBloc(genshinService, dataService, telemetryService, loggingService),
       tearDown: () async {
-        await _dataService.tierList.deleteTierList();
+        await dataService.tierList.deleteTierList();
       },
       act: (bloc) => bloc
         ..add(const TierListEvent.init())
@@ -275,9 +275,9 @@ void main() {
 
     blocTest<TierListBloc, TierListState>(
       'could not be taken',
-      build: () => TierListBloc(_genshinService, _dataService, _telemetryService, _loggingService),
+      build: () => TierListBloc(genshinService, dataService, telemetryService, loggingService),
       tearDown: () async {
-        await _dataService.tierList.deleteTierList();
+        await dataService.tierList.deleteTierList();
       },
       act: (bloc) => bloc
         ..add(const TierListEvent.init())

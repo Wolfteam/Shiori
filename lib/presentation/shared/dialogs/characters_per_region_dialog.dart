@@ -36,7 +36,7 @@ class CharactersPerRegionDialog extends StatelessWidget {
             Text(
               s.characters,
               overflow: TextOverflow.ellipsis,
-              style: theme.textTheme.caption,
+              style: theme.textTheme.bodySmall,
             ),
           ],
         ),

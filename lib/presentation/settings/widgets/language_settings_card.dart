@@ -27,7 +27,7 @@ class LanguageSettingsCard extends StatelessWidget {
                 margin: const EdgeInsets.only(left: 5),
                 child: Text(
                   s.language,
-                  style: theme.textTheme.headline6,
+                  style: theme.textTheme.titleLarge,
                 ),
               ),
             ],

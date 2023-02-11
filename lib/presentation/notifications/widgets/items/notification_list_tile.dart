@@ -139,7 +139,7 @@ class NotificationListTitle extends StatelessWidget {
           title: BlocBuilder<NotificationTimerBloc, NotificationTimerState>(
             builder: (ctx, state) => Text(
               state.remaining.formatDuration(negativeText: s.completed),
-              style: theme.textTheme.subtitle1,
+              style: theme.textTheme.titleMedium,
             ),
           ),
           subtitle: subtitle,

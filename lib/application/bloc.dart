@@ -19,7 +19,6 @@ export 'characters_per_region_gender/characters_per_region_gender_bloc.dart';
 export 'charts/ascension_stats/chart_ascension_stats_bloc.dart';
 export 'charts/birthdays/chart_birthdays_bloc.dart';
 export 'charts/elements/chart_elements_bloc.dart';
-export 'charts/elements/chart_elements_bloc.dart';
 export 'charts/genders/chart_genders_bloc.dart';
 export 'charts/regions/chart_regions_bloc.dart';
 export 'charts/tops/chart_tops_bloc.dart';

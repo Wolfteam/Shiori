@@ -64,7 +64,6 @@ class _SmoothStarRatingState extends State<SmoothStarRating> {
     return Material(
       color: Colors.transparent,
       child: Wrap(
-        alignment: WrapAlignment.start,
         spacing: widget.spacing,
         children: List.generate(widget.starCount, (index) => buildStar(context, index)),
       ),
@@ -109,8 +108,8 @@ class _SmoothStarRatingState extends State<SmoothStarRating> {
                 },
                 onHover: (event) {
                   final box = context.findRenderObject() as RenderBox;
-                  var _pos = box.globalToLocal(event.position);
-                  var i = _pos.dx / widget.size;
+                  final pos = box.globalToLocal(event.position);
+                  final i = pos.dx / widget.size;
                   var newRating = widget.allowHalfRating ? i : i.round().toDouble();
                   if (newRating > widget.starCount) {
                     newRating = widget.starCount.toDouble();
@@ -126,9 +125,9 @@ class _SmoothStarRatingState extends State<SmoothStarRating> {
                   onTapDown: (detail) {
                     isWidgetTapped = true;
 
-                    RenderBox box = context.findRenderObject() as RenderBox;
-                    var _pos = box.globalToLocal(detail.globalPosition);
-                    var i = ((_pos.dx - widget.spacing) / widget.size);
+                    final box = context.findRenderObject() as RenderBox;
+                    final pos = box.globalToLocal(detail.globalPosition);
+                    final i = (pos.dx - widget.spacing) / widget.size;
                     var newRating = widget.allowHalfRating ? i : i.round().toDouble();
                     if (newRating > widget.starCount) {
                       newRating = widget.starCount.toDouble();
@@ -146,9 +145,9 @@ class _SmoothStarRatingState extends State<SmoothStarRating> {
                   onHorizontalDragUpdate: (dragDetails) {
                     isWidgetTapped = true;
 
-                    RenderBox box = context.findRenderObject() as RenderBox;
-                    var _pos = box.globalToLocal(dragDetails.globalPosition);
-                    var i = _pos.dx / widget.size;
+                    final box = context.findRenderObject() as RenderBox;
+                    final pos = box.globalToLocal(dragDetails.globalPosition);
+                    final i = pos.dx / widget.size;
                     var newRating = widget.allowHalfRating ? i : i.round().toDouble();
                     if (newRating > widget.starCount) {
                       newRating = widget.starCount.toDouble();
@@ -172,9 +171,9 @@ class _SmoothStarRatingState extends State<SmoothStarRating> {
               )
             : GestureDetector(
                 onTapDown: (detail) {
-                  RenderBox box = context.findRenderObject() as RenderBox;
-                  var _pos = box.globalToLocal(detail.globalPosition);
-                  var i = ((_pos.dx - widget.spacing) / widget.size);
+                  final box = context.findRenderObject() as RenderBox;
+                  final pos = box.globalToLocal(detail.globalPosition);
+                  final i = (pos.dx - widget.spacing) / widget.size;
                   var newRating = widget.allowHalfRating ? i : i.round().toDouble();
                   if (newRating > widget.starCount) {
                     newRating = widget.starCount.toDouble();
@@ -191,9 +190,9 @@ class _SmoothStarRatingState extends State<SmoothStarRating> {
                   if (widget.onRated != null) widget.onRated!(currentRating);
                 },
                 onHorizontalDragUpdate: (dragDetails) {
-                  RenderBox box = context.findRenderObject() as RenderBox;
-                  var _pos = box.globalToLocal(dragDetails.globalPosition);
-                  var i = _pos.dx / widget.size;
+                  final box = context.findRenderObject() as RenderBox;
+                  final pos = box.globalToLocal(dragDetails.globalPosition);
+                  final i = pos.dx / widget.size;
                   var newRating = widget.allowHalfRating ? i : i.round().toDouble();
                   if (newRating > widget.starCount) {
                     newRating = widget.starCount.toDouble();
@@ -219,7 +218,7 @@ class _SmoothStarRatingState extends State<SmoothStarRating> {
   }
 
   double normalizeRating(double newRating) {
-    var k = newRating - newRating.floor();
+    final k = newRating - newRating.floor();
     if (k != 0) {
       //half stars
       if (k >= halfStarThreshold) {

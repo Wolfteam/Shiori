@@ -28,7 +28,7 @@ class NotificationSubtitle extends StatelessWidget {
         if (note.isNotNullEmptyOrWhitespace)
           Text(
             note!,
-            style: theme.textTheme.subtitle2,
+            style: theme.textTheme.titleSmall,
             overflow: TextOverflow.ellipsis,
           ),
         ...children,

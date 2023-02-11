@@ -37,7 +37,7 @@ class SliverPageFilter extends StatelessWidget {
                 Text(
                   title,
                   textAlign: TextAlign.start,
-                  style: Theme.of(context).textTheme.headline6,
+                  style: Theme.of(context).textTheme.titleLarge,
                 ),
                 IconButton(
                   icon: const Icon(Shiori.filter, size: 20),

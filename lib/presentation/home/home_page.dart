@@ -169,7 +169,7 @@ class _HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin<
           title: Text(
             title,
             textAlign: TextAlign.start,
-            style: theme.textTheme.subtitle1!.copyWith(fontWeight: FontWeight.bold, fontSize: 18),
+            style: theme.textTheme.titleMedium!.copyWith(fontWeight: FontWeight.bold, fontSize: 18),
           ),
         ),
       ),

@@ -88,7 +88,7 @@ class _ListItem extends StatelessWidget {
                       margin: const EdgeInsets.only(left: 5),
                       child: Text(
                         title,
-                        style: theme.textTheme.bodyText2!.copyWith(fontSize: fontSize),
+                        style: theme.textTheme.bodyMedium!.copyWith(fontSize: fontSize),
                       ),
                     ),
                   )
@@ -96,7 +96,7 @@ class _ListItem extends StatelessWidget {
                     margin: const EdgeInsets.only(left: 5),
                     child: Text(
                       title,
-                      style: theme.textTheme.bodyText2!.copyWith(fontSize: fontSize),
+                      style: theme.textTheme.bodyMedium!.copyWith(fontSize: fontSize),
                     ),
                   ),
           ),

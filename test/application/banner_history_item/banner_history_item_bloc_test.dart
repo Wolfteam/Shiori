@@ -12,34 +12,34 @@ import '../../common.dart';
 import '../../mocks.mocks.dart';
 
 void main() {
-  late GenshinService _genshinService;
-  late TelemetryService _telemetryService;
+  late GenshinService genshinService;
+  late TelemetryService telemetryService;
 
   setUpAll(() {
     TestWidgetsFlutterBinding.ensureInitialized();
     return Future(() async {
-      _telemetryService = MockTelemetryService();
+      telemetryService = MockTelemetryService();
       final settingsService = MockSettingsService();
       when(settingsService.language).thenReturn(AppLanguageType.english);
 
       final resourceService = getResourceService(settingsService);
       final localeService = LocaleServiceImpl(settingsService);
-      _genshinService = GenshinServiceImpl(resourceService, localeService);
+      genshinService = GenshinServiceImpl(resourceService, localeService);
 
-      await _genshinService.init(settingsService.language);
+      await genshinService.init(settingsService.language);
     });
   });
 
   test(
     'Initial state',
     () => expect(
-      BannerHistoryItemBloc(_genshinService, _telemetryService).state,
+      BannerHistoryItemBloc(genshinService, telemetryService).state,
       const BannerHistoryItemState.loading(),
     ),
   );
 
   group('Init', () {
-    void _validVersionCheck(BannerHistoryItemState state, double version) => state.map(
+    void validVersionCheck(BannerHistoryItemState state, double version) => state.map(
           loading: (_) => throw Exception('Invalid state'),
           loadedState: (state) {
             final validItemTypes = [ItemType.character, ItemType.weapon];
@@ -66,21 +66,21 @@ void main() {
 
     blocTest<BannerHistoryItemBloc, BannerHistoryItemState>(
       'valid version',
-      build: () => BannerHistoryItemBloc(_genshinService, _telemetryService),
+      build: () => BannerHistoryItemBloc(genshinService, telemetryService),
       act: (bloc) => bloc.add(const BannerHistoryItemEvent.init(version: 1.1)),
-      verify: (bloc) => _validVersionCheck(bloc.state, 1.1),
+      verify: (bloc) => validVersionCheck(bloc.state, 1.1),
     );
 
     blocTest<BannerHistoryItemBloc, BannerHistoryItemState>(
       'valid version, double banner',
-      build: () => BannerHistoryItemBloc(_genshinService, _telemetryService),
+      build: () => BannerHistoryItemBloc(genshinService, telemetryService),
       act: (bloc) => bloc.add(const BannerHistoryItemEvent.init(version: 2.4)),
-      verify: (bloc) => _validVersionCheck(bloc.state, 2.4),
+      verify: (bloc) => validVersionCheck(bloc.state, 2.4),
     );
 
     blocTest<BannerHistoryItemBloc, BannerHistoryItemState>(
       'invalid version',
-      build: () => BannerHistoryItemBloc(_genshinService, _telemetryService),
+      build: () => BannerHistoryItemBloc(genshinService, telemetryService),
       act: (bloc) => bloc.add(const BannerHistoryItemEvent.init(version: 0.5)),
       errors: () => [isA<Exception>()],
     );

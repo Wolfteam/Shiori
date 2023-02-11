@@ -12,9 +12,9 @@ import '../../common.dart';
 import '../../mocks.mocks.dart';
 
 void main() {
-  late LocaleService _localeService;
-  late SettingsService _settingsService;
-  late GenshinService _genshinService;
+  late LocaleService localeService;
+  late SettingsService settingsService;
+  late GenshinService genshinService;
 
   const search = 'Aquila Favonia';
   const key = 'aquila-favonia';
@@ -22,27 +22,27 @@ void main() {
 
   setUpAll(() {
     TestWidgetsFlutterBinding.ensureInitialized();
-    _settingsService = MockSettingsService();
-    when(_settingsService.language).thenReturn(AppLanguageType.english);
-    when(_settingsService.showWeaponDetails).thenReturn(true);
-    _localeService = LocaleServiceImpl(_settingsService);
-    final resourceService = getResourceService(_settingsService);
-    _genshinService = GenshinServiceImpl(resourceService, _localeService);
+    settingsService = MockSettingsService();
+    when(settingsService.language).thenReturn(AppLanguageType.english);
+    when(settingsService.showWeaponDetails).thenReturn(true);
+    localeService = LocaleServiceImpl(settingsService);
+    final resourceService = getResourceService(settingsService);
+    genshinService = GenshinServiceImpl(resourceService, localeService);
 
     return Future(() async {
-      await _genshinService.init(AppLanguageType.english);
+      await genshinService.init(AppLanguageType.english);
     });
   });
 
-  test('Initial state', () => expect(WeaponsBloc(_genshinService, _settingsService).state, const WeaponsState.loading()));
+  test('Initial state', () => expect(WeaponsBloc(genshinService, settingsService).state, const WeaponsState.loading()));
 
   group('Init', () {
     blocTest<WeaponsBloc, WeaponsState>(
       'emits loaded state',
-      build: () => WeaponsBloc(_genshinService, _settingsService),
+      build: () => WeaponsBloc(genshinService, settingsService),
       act: (bloc) => bloc.add(const WeaponsEvent.init()),
       expect: () {
-        final weapons = _genshinService.weapons.getWeaponsForCard()..sort((x, y) => x.rarity.compareTo(y.rarity));
+        final weapons = genshinService.weapons.getWeaponsForCard()..sort((x, y) => x.rarity.compareTo(y.rarity));
         return [
           WeaponsState.loaded(
             weapons: weapons,
@@ -62,13 +62,13 @@ void main() {
 
     blocTest<WeaponsBloc, WeaponsState>(
       'emits loaded state excluding one key',
-      build: () => WeaponsBloc(_genshinService, _settingsService),
+      build: () => WeaponsBloc(genshinService, settingsService),
       act: (bloc) => bloc.add(WeaponsEvent.init(excludeKeys: excludedKeys)),
       verify: (bloc) {
         bloc.state.map(
           loading: (_) => throw Exception('Invalid artifact state'),
           loaded: (state) {
-            final weapons = _genshinService.weapons.getWeaponsForCard().where((el) => !excludedKeys.contains(el.key)).toList();
+            final weapons = genshinService.weapons.getWeaponsForCard().where((el) => !excludedKeys.contains(el.key)).toList();
             expect(state.weapons.length, weapons.length);
             expect(state.showWeaponDetails, true);
             expect(state.rarity, 0);
@@ -86,13 +86,13 @@ void main() {
   group('Search changed', () {
     blocTest<WeaponsBloc, WeaponsState>(
       'should return only one item',
-      build: () => WeaponsBloc(_genshinService, _settingsService),
+      build: () => WeaponsBloc(genshinService, settingsService),
       act: (bloc) => bloc
         ..add(const WeaponsEvent.init())
         ..add(const WeaponsEvent.searchChanged(search: search)),
       skip: 1,
       expect: () {
-        final weapons = _genshinService.weapons.getWeaponsForCard().where((el) => el.key == key).toList();
+        final weapons = genshinService.weapons.getWeaponsForCard().where((el) => el.key == key).toList();
         return [
           WeaponsState.loaded(
             weapons: weapons,
@@ -113,7 +113,7 @@ void main() {
 
     blocTest<WeaponsBloc, WeaponsState>(
       'should not return any item',
-      build: () => WeaponsBloc(_genshinService, _settingsService),
+      build: () => WeaponsBloc(genshinService, settingsService),
       act: (bloc) => bloc
         ..add(const WeaponsEvent.init())
         ..add(const WeaponsEvent.searchChanged(search: 'Wanderer')),
@@ -139,7 +139,7 @@ void main() {
   group('Filters changed', () {
     blocTest<WeaponsBloc, WeaponsState>(
       'some filters are applied and should return 1 item',
-      build: () => WeaponsBloc(_genshinService, _settingsService),
+      build: () => WeaponsBloc(genshinService, settingsService),
       act: (bloc) => bloc
         ..add(const WeaponsEvent.init())
         ..add(const WeaponsEvent.searchChanged(search: search))
@@ -155,7 +155,7 @@ void main() {
         ..add(const WeaponsEvent.applyFilterChanges()),
       skip: 11,
       expect: () {
-        final weapons = _genshinService.weapons.getWeaponsForCard().where((el) => el.key == key).toList()
+        final weapons = genshinService.weapons.getWeaponsForCard().where((el) => el.key == key).toList()
           ..sort((x, y) => y.baseAtk.compareTo(x.baseAtk));
         return [
           WeaponsState.loaded(
@@ -181,7 +181,7 @@ void main() {
 
     blocTest<WeaponsBloc, WeaponsState>(
       'some filters are applied but they end up being cancelled',
-      build: () => WeaponsBloc(_genshinService, _settingsService),
+      build: () => WeaponsBloc(genshinService, settingsService),
       act: (bloc) => bloc
         ..add(const WeaponsEvent.init())
         ..add(const WeaponsEvent.rarityChanged(5))
@@ -199,7 +199,7 @@ void main() {
         ..add(const WeaponsEvent.cancelChanges()),
       skip: 13,
       expect: () {
-        final weapons = _genshinService.weapons.getWeaponsForCard().where((el) => el.subStatType == StatType.physDmgBonus && el.rarity == 5).toList()
+        final weapons = genshinService.weapons.getWeaponsForCard().where((el) => el.subStatType == StatType.physDmgBonus && el.rarity == 5).toList()
           ..sort((x, y) => y.subStatValue.compareTo(x.subStatValue));
         return [
           WeaponsState.loaded(
@@ -222,7 +222,7 @@ void main() {
 
     blocTest<WeaponsBloc, WeaponsState>(
       'filters are reseted',
-      build: () => WeaponsBloc(_genshinService, _settingsService),
+      build: () => WeaponsBloc(genshinService, settingsService),
       act: (bloc) => bloc
         ..add(const WeaponsEvent.init())
         ..add(const WeaponsEvent.searchChanged(search: search))
@@ -235,7 +235,7 @@ void main() {
         ..add(const WeaponsEvent.resetFilters()),
       skip: 8,
       expect: () {
-        final weapons = _genshinService.weapons.getWeaponsForCard()..sort((x, y) => x.rarity.compareTo(y.rarity));
+        final weapons = genshinService.weapons.getWeaponsForCard()..sort((x, y) => x.rarity.compareTo(y.rarity));
         return [
           WeaponsState.loaded(
             weapons: weapons,

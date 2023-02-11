@@ -14,46 +14,46 @@ import '../../../common.dart';
 import '../../../mocks.mocks.dart';
 
 void main() {
-  late LocaleService _localeService;
-  late SettingsService _settingsService;
-  late GenshinService _genshinService;
-  late List<double> _versions;
+  late LocaleService localeService;
+  late SettingsService settingsService;
+  late GenshinService genshinService;
+  late List<double> versions;
 
   setUpAll(() {
     TestWidgetsFlutterBinding.ensureInitialized();
-    _settingsService = MockSettingsService();
-    when(_settingsService.language).thenReturn(AppLanguageType.english);
-    when(_settingsService.showCharacterDetails).thenReturn(true);
-    _localeService = LocaleServiceImpl(_settingsService);
-    final resourceService = getResourceService(_settingsService);
-    _genshinService = GenshinServiceImpl(resourceService, _localeService);
+    settingsService = MockSettingsService();
+    when(settingsService.language).thenReturn(AppLanguageType.english);
+    when(settingsService.showCharacterDetails).thenReturn(true);
+    localeService = LocaleServiceImpl(settingsService);
+    final resourceService = getResourceService(settingsService);
+    genshinService = GenshinServiceImpl(resourceService, localeService);
 
     return Future(() async {
-      await _genshinService.init(AppLanguageType.english);
-      _versions = _genshinService.bannerHistory.getBannerHistoryVersions(SortDirectionType.asc);
+      await genshinService.init(AppLanguageType.english);
+      versions = genshinService.bannerHistory.getBannerHistoryVersions(SortDirectionType.asc);
     });
   });
 
   test(
     'Initial state',
-    () => expect(ChartElementsBloc(_genshinService).state, const ChartElementsState.loading()),
+    () => expect(ChartElementsBloc(genshinService).state, const ChartElementsState.loading()),
   );
 
   group('Init', () {
     blocTest<ChartElementsBloc, ChartElementsState>(
       'emits loaded state',
-      build: () => ChartElementsBloc(_genshinService),
+      build: () => ChartElementsBloc(genshinService),
       act: (bloc) => bloc
         ..add(const ChartElementsEvent.init(maxNumberOfColumns: 10))
         ..add(const ChartElementsEvent.init(maxNumberOfColumns: 8)),
       expect: () {
-        final firstLastVersion = _versions.first + 10 * gameVersionIncrementsBy;
-        final secondLastVersion = _versions.first + 8 * gameVersionIncrementsBy;
+        final firstLastVersion = versions.first + 10 * gameVersionIncrementsBy;
+        final secondLastVersion = versions.first + 8 * gameVersionIncrementsBy;
         return [
           ChartElementsState.loaded(
-            elements: _genshinService.bannerHistory.getElementsForCharts(_versions.first, firstLastVersion),
-            filteredElements: _genshinService.bannerHistory.getElementsForCharts(_versions.first, firstLastVersion),
-            firstVersion: _versions.first,
+            elements: genshinService.bannerHistory.getElementsForCharts(versions.first, firstLastVersion),
+            filteredElements: genshinService.bannerHistory.getElementsForCharts(versions.first, firstLastVersion),
+            firstVersion: versions.first,
             lastVersion: firstLastVersion,
             maxNumberOfColumns: 10,
             canGoToFirstPage: false,
@@ -62,9 +62,9 @@ void main() {
             canGoToPreviousPage: false,
           ),
           ChartElementsState.loaded(
-            elements: _genshinService.bannerHistory.getElementsForCharts(_versions.first, secondLastVersion),
-            filteredElements: _genshinService.bannerHistory.getElementsForCharts(_versions.first, secondLastVersion),
-            firstVersion: _versions.first,
+            elements: genshinService.bannerHistory.getElementsForCharts(versions.first, secondLastVersion),
+            filteredElements: genshinService.bannerHistory.getElementsForCharts(versions.first, secondLastVersion),
+            firstVersion: versions.first,
             lastVersion: secondLastVersion,
             maxNumberOfColumns: 8,
             canGoToFirstPage: false,
@@ -78,7 +78,7 @@ void main() {
 
     blocTest<ChartElementsBloc, ChartElementsState>(
       'loaded state does not change',
-      build: () => ChartElementsBloc(_genshinService),
+      build: () => ChartElementsBloc(genshinService),
       act: (bloc) => bloc
         ..add(const ChartElementsEvent.init(maxNumberOfColumns: 5))
         ..add(const ChartElementsEvent.init(maxNumberOfColumns: 5)),
@@ -88,7 +88,7 @@ void main() {
 
     blocTest<ChartElementsBloc, ChartElementsState>(
       'max number of columns is not valid',
-      build: () => ChartElementsBloc(_genshinService),
+      build: () => ChartElementsBloc(genshinService),
       act: (bloc) => bloc.add(const ChartElementsEvent.init(maxNumberOfColumns: 0)),
       errors: () => [isA<Exception>()],
     );
@@ -97,16 +97,16 @@ void main() {
   group('Element selected', () {
     blocTest<ChartElementsBloc, ChartElementsState>(
       'electro and anemo were selected',
-      build: () => ChartElementsBloc(_genshinService),
+      build: () => ChartElementsBloc(genshinService),
       act: (bloc) => bloc
         ..add(const ChartElementsEvent.init(maxNumberOfColumns: 4))
         ..add(const ChartElementsEvent.elementSelected(type: ElementType.electro))
         ..add(const ChartElementsEvent.elementSelected(type: ElementType.anemo)),
       skip: 2,
       expect: () {
-        final fromVersion = _versions.first;
+        final fromVersion = versions.first;
         final untilVersion = fromVersion + 4 * gameVersionIncrementsBy;
-        final elements = _genshinService.bannerHistory.getElementsForCharts(fromVersion, untilVersion);
+        final elements = genshinService.bannerHistory.getElementsForCharts(fromVersion, untilVersion);
         final filteredElements = elements.where((el) => el.type == ElementType.electro || el.type == ElementType.anemo).toList();
         return [
           ChartElementsState.loaded(
@@ -127,16 +127,16 @@ void main() {
 
     blocTest<ChartElementsBloc, ChartElementsState>(
       'electro was selected and deselected',
-      build: () => ChartElementsBloc(_genshinService),
+      build: () => ChartElementsBloc(genshinService),
       act: (bloc) => bloc
         ..add(const ChartElementsEvent.init(maxNumberOfColumns: 4))
         ..add(const ChartElementsEvent.elementSelected(type: ElementType.electro))
         ..add(const ChartElementsEvent.elementSelected(type: ElementType.electro)),
       skip: 2,
       expect: () {
-        final fromVersion = _versions.first;
+        final fromVersion = versions.first;
         final untilVersion = fromVersion + 4 * gameVersionIncrementsBy;
-        final elements = _genshinService.bannerHistory.getElementsForCharts(fromVersion, untilVersion);
+        final elements = genshinService.bannerHistory.getElementsForCharts(fromVersion, untilVersion);
         return [
           ChartElementsState.loaded(
             firstVersion: fromVersion,
@@ -157,15 +157,15 @@ void main() {
   group('Go to next page', () {
     blocTest<ChartElementsBloc, ChartElementsState>(
       'next page exists',
-      build: () => ChartElementsBloc(_genshinService),
+      build: () => ChartElementsBloc(genshinService),
       act: (bloc) => bloc
         ..add(const ChartElementsEvent.init(maxNumberOfColumns: 4))
         ..add(const ChartElementsEvent.goToNextPage()),
       skip: 1,
       expect: () {
-        final fromVersion = (_versions.first + gameVersionIncrementsBy).truncateToDecimalPlaces();
+        final fromVersion = (versions.first + gameVersionIncrementsBy).truncateToDecimalPlaces();
         final untilVersion = fromVersion + 4 * gameVersionIncrementsBy;
-        final elements = _genshinService.bannerHistory.getElementsForCharts(fromVersion, untilVersion);
+        final elements = genshinService.bannerHistory.getElementsForCharts(fromVersion, untilVersion);
         return [
           ChartElementsState.loaded(
             firstVersion: fromVersion,
@@ -184,7 +184,7 @@ void main() {
 
     blocTest<ChartElementsBloc, ChartElementsState>(
       'next page does not exist',
-      build: () => ChartElementsBloc(_genshinService),
+      build: () => ChartElementsBloc(genshinService),
       act: (bloc) => bloc
         ..add(const ChartElementsEvent.init(maxNumberOfColumns: 10000))
         ..add(const ChartElementsEvent.goToNextPage()),
@@ -194,7 +194,7 @@ void main() {
 
     blocTest<ChartElementsBloc, ChartElementsState>(
       'state is not valid',
-      build: () => ChartElementsBloc(_genshinService),
+      build: () => ChartElementsBloc(genshinService),
       act: (bloc) => bloc.add(const ChartElementsEvent.goToNextPage()),
       errors: () => [isA<Exception>()],
     );
@@ -203,16 +203,16 @@ void main() {
   group('Go to previous page', () {
     blocTest<ChartElementsBloc, ChartElementsState>(
       'previous page exists',
-      build: () => ChartElementsBloc(_genshinService),
+      build: () => ChartElementsBloc(genshinService),
       act: (bloc) => bloc
         ..add(const ChartElementsEvent.init(maxNumberOfColumns: 4))
         ..add(const ChartElementsEvent.goToNextPage())
         ..add(const ChartElementsEvent.goToPreviousPage()),
       skip: 2,
       expect: () {
-        final fromVersion = _versions.first;
+        final fromVersion = versions.first;
         final untilVersion = fromVersion + 4 * gameVersionIncrementsBy;
-        final elements = _genshinService.bannerHistory.getElementsForCharts(fromVersion, untilVersion);
+        final elements = genshinService.bannerHistory.getElementsForCharts(fromVersion, untilVersion);
         return [
           ChartElementsState.loaded(
             firstVersion: fromVersion,
@@ -231,7 +231,7 @@ void main() {
 
     blocTest<ChartElementsBloc, ChartElementsState>(
       'previous page does not exist',
-      build: () => ChartElementsBloc(_genshinService),
+      build: () => ChartElementsBloc(genshinService),
       act: (bloc) => bloc
         ..add(const ChartElementsEvent.init(maxNumberOfColumns: 1))
         ..add(const ChartElementsEvent.goToPreviousPage()),
@@ -241,7 +241,7 @@ void main() {
 
     blocTest<ChartElementsBloc, ChartElementsState>(
       'state is not valid',
-      build: () => ChartElementsBloc(_genshinService),
+      build: () => ChartElementsBloc(genshinService),
       act: (bloc) => bloc.add(const ChartElementsEvent.goToPreviousPage()),
       errors: () => [isA<Exception>()],
     );
@@ -250,7 +250,7 @@ void main() {
   group('Go to first page', () {
     blocTest<ChartElementsBloc, ChartElementsState>(
       'first page exists',
-      build: () => ChartElementsBloc(_genshinService),
+      build: () => ChartElementsBloc(genshinService),
       act: (bloc) => bloc
         ..add(const ChartElementsEvent.init(maxNumberOfColumns: 4))
         ..add(const ChartElementsEvent.goToNextPage())
@@ -258,9 +258,9 @@ void main() {
         ..add(const ChartElementsEvent.goToFirstPage()),
       skip: 3,
       expect: () {
-        final fromVersion = _versions.first;
+        final fromVersion = versions.first;
         final untilVersion = fromVersion + 4 * gameVersionIncrementsBy;
-        final elements = _genshinService.bannerHistory.getElementsForCharts(fromVersion, untilVersion);
+        final elements = genshinService.bannerHistory.getElementsForCharts(fromVersion, untilVersion);
         return [
           ChartElementsState.loaded(
             firstVersion: fromVersion,
@@ -279,7 +279,7 @@ void main() {
 
     blocTest<ChartElementsBloc, ChartElementsState>(
       'already on first page',
-      build: () => ChartElementsBloc(_genshinService),
+      build: () => ChartElementsBloc(genshinService),
       act: (bloc) => bloc
         ..add(const ChartElementsEvent.init(maxNumberOfColumns: 1))
         ..add(const ChartElementsEvent.goToFirstPage()),
@@ -289,7 +289,7 @@ void main() {
 
     blocTest<ChartElementsBloc, ChartElementsState>(
       'state is not valid',
-      build: () => ChartElementsBloc(_genshinService),
+      build: () => ChartElementsBloc(genshinService),
       act: (bloc) => bloc.add(const ChartElementsEvent.goToFirstPage()),
       errors: () => [isA<Exception>()],
     );
@@ -298,15 +298,15 @@ void main() {
   group('Go to last page', () {
     blocTest<ChartElementsBloc, ChartElementsState>(
       'last page exists',
-      build: () => ChartElementsBloc(_genshinService),
+      build: () => ChartElementsBloc(genshinService),
       act: (bloc) => bloc
         ..add(const ChartElementsEvent.init(maxNumberOfColumns: 4))
         ..add(const ChartElementsEvent.goToLastPage()),
       skip: 1,
       expect: () {
-        final fromVersion = _versions.last - 4 * gameVersionIncrementsBy;
-        final untilVersion = _versions.last;
-        final elements = _genshinService.bannerHistory.getElementsForCharts(fromVersion, untilVersion);
+        final fromVersion = versions.last - 4 * gameVersionIncrementsBy;
+        final untilVersion = versions.last;
+        final elements = genshinService.bannerHistory.getElementsForCharts(fromVersion, untilVersion);
         return [
           ChartElementsState.loaded(
             firstVersion: fromVersion,
@@ -325,7 +325,7 @@ void main() {
 
     blocTest<ChartElementsBloc, ChartElementsState>(
       'already on last page',
-      build: () => ChartElementsBloc(_genshinService),
+      build: () => ChartElementsBloc(genshinService),
       act: (bloc) => bloc
         ..add(const ChartElementsEvent.init(maxNumberOfColumns: 10000))
         ..add(const ChartElementsEvent.goToLastPage()),
@@ -335,7 +335,7 @@ void main() {
 
     blocTest<ChartElementsBloc, ChartElementsState>(
       'state is not valid',
-      build: () => ChartElementsBloc(_genshinService),
+      build: () => ChartElementsBloc(genshinService),
       act: (bloc) => bloc.add(const ChartElementsEvent.goToLastPage()),
       errors: () => [isA<Exception>()],
     );

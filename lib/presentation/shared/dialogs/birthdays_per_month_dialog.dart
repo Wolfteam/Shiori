@@ -37,7 +37,7 @@ class BirthdaysPerMonthDialog extends StatelessWidget {
             Text(
               s.birthdays,
               overflow: TextOverflow.ellipsis,
-              style: theme.textTheme.caption,
+              style: theme.textTheme.bodySmall,
             ),
           ],
         ),
@@ -93,7 +93,7 @@ class _RowEndColumn extends StatelessWidget {
         Text(
           character.name,
           overflow: TextOverflow.ellipsis,
-          style: theme.textTheme.subtitle1,
+          style: theme.textTheme.titleMedium,
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -101,12 +101,12 @@ class _RowEndColumn extends StatelessWidget {
             Text(
               character.birthdayString,
               overflow: TextOverflow.ellipsis,
-              style: theme.textTheme.caption,
+              style: theme.textTheme.bodySmall,
             ),
             Text(
               character.daysUntilBirthday > 0 ? s.inXDays(character.daysUntilBirthday) : s.today,
               overflow: TextOverflow.ellipsis,
-              style: theme.textTheme.caption!.copyWith(color: theme.colorScheme.primary, fontWeight: FontWeight.bold),
+              style: theme.textTheme.bodySmall!.copyWith(color: theme.colorScheme.primary, fontWeight: FontWeight.bold),
             ),
           ],
         ),

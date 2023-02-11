@@ -11,32 +11,32 @@ import 'package:shiori/domain/services/telemetry_service.dart';
 import '../../mocks.mocks.dart';
 
 void main() {
-  late final TelemetryService _telemetryService;
-  late final SettingsService _settingsService;
-  late final NetworkService _networkService;
-  late final DeviceInfoService _deviceInfoService;
+  late final TelemetryService telemetryService;
+  late final SettingsService settingsService;
+  late final NetworkService networkService;
+  late final DeviceInfoService deviceInfoService;
 
   setUpAll(() {
-    _telemetryService = MockTelemetryService();
-    _settingsService = MockSettingsService();
-    when(_settingsService.language).thenReturn(AppLanguageType.english);
-    when(_settingsService.useOfficialMap).thenReturn(true);
+    telemetryService = MockTelemetryService();
+    settingsService = MockSettingsService();
+    when(settingsService.language).thenReturn(AppLanguageType.english);
+    when(settingsService.useOfficialMap).thenReturn(true);
 
-    _networkService = MockNetworkService();
-    when(_networkService.isInternetAvailable()).thenAnswer((_) => Future.value(true));
+    networkService = MockNetworkService();
+    when(networkService.isInternetAvailable()).thenAnswer((_) => Future.value(true));
 
-    _deviceInfoService = MockDeviceInfoService();
-    when(_deviceInfoService.userAgent).thenReturn('Default user agent');
+    deviceInfoService = MockDeviceInfoService();
+    when(deviceInfoService.userAgent).thenReturn('Default user agent');
   });
 
   test(
     'Initial state',
-    () => expect(UrlPageBloc(_networkService, _telemetryService, _deviceInfoService, _settingsService).state, const UrlPageState.loading()),
+    () => expect(UrlPageBloc(networkService, telemetryService, deviceInfoService, settingsService).state, const UrlPageState.loading()),
   );
 
   blocTest<UrlPageBloc, UrlPageState>(
     'Init',
-    build: () => UrlPageBloc(_networkService, _telemetryService, _deviceInfoService, _settingsService),
+    build: () => UrlPageBloc(networkService, telemetryService, deviceInfoService, settingsService),
     act: (bloc) => bloc.add(const UrlPageEvent.init(loadMap: true, loadWishSimulator: true, loadDailyCheckIn: true)),
     verify: (bloc) {
       bloc.state.map(
@@ -46,7 +46,7 @@ void main() {
           expect(state.mapUrl.startsWith(bloc.officialMapUrl), true);
           expect(state.wishSimulatorUrl, bloc.wishSimulatorUrl);
           expect(state.dailyCheckInUrl.startsWith(bloc.dailyCheckInUrl), true);
-          expect(state.userAgent, _deviceInfoService.userAgent);
+          expect(state.userAgent, deviceInfoService.userAgent);
         },
       );
     },

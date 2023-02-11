@@ -8,17 +8,17 @@ import 'common_file.dart';
 //TODO: ADD TEST FOR FAIL CASES (E.G WEAPON NOT FOUND, IMAGE NOT FOUND ETC)
 
 void main() {
-  late final BannerHistoryFileService _service;
+  late final BannerHistoryFileService service;
 
   setUpAll(() {
     return Future(() async {
-      _service = await getBannerHistoryFileService(AppLanguageType.english);
+      service = await getBannerHistoryFileService(AppLanguageType.english);
     });
   });
 
   test('Get banner history', () async {
     for (final type in BannerHistoryItemType.values) {
-      final banners = _service.getBannerHistory(type);
+      final banners = service.getBannerHistory(type);
       expect(banners.length, banners.where((el) => el.type == type).length);
       for (final banner in banners) {
         checkItemKeyAndImage(banner.key, banner.image);
@@ -44,12 +44,12 @@ void main() {
 
   group('Get banners', () {
     test('valid versions', () async {
-      final versions = _service.getBannerHistoryVersions(SortDirectionType.asc);
+      final versions = service.getBannerHistoryVersions(SortDirectionType.asc);
       expect(versions.length, versions.toSet().length);
 
       final validItemTypes = [ItemType.character, ItemType.weapon];
       for (final version in versions) {
-        final banners = _service.getBanners(version);
+        final banners = service.getBanners(version);
         expect(banners.isNotEmpty, isTrue);
         for (final banner in banners) {
           expect(banner.version, version);
@@ -69,18 +69,18 @@ void main() {
     });
 
     test('version does not have any banner', () async {
-      final banners = _service.getBanners(1.7);
+      final banners = service.getBanners(1.7);
       expect(banners.isEmpty, isTrue);
     });
 
     test('invalid version', () async {
-      expect(() => _service.getBanners(0.1), throwsA(isA<Exception>()));
+      expect(() => service.getBanners(0.1), throwsA(isA<Exception>()));
     });
   });
 
   group('Get item release history', () {
     test('item exists', () async {
-      final history = _service.getItemReleaseHistory('keqing');
+      final history = service.getItemReleaseHistory('keqing');
       expect(history.isNotEmpty, isTrue);
 
       for (final item in history) {
@@ -90,16 +90,16 @@ void main() {
     });
 
     test('item does not exist', () async {
-      expect(() => _service.getItemReleaseHistory('the-item'), throwsA(isA<Exception>()));
+      expect(() => service.getItemReleaseHistory('the-item'), throwsA(isA<Exception>()));
     });
   });
 
   group('Get elements for charts', () {
     test('valid versions', () async {
-      final versions = _service.getBannerHistoryVersions(SortDirectionType.asc);
+      final versions = service.getBannerHistoryVersions(SortDirectionType.asc);
       final expectedLength = ElementType.values.length;
 
-      final elements = _service.getElementsForCharts(versions.first, versions.last);
+      final elements = service.getElementsForCharts(versions.first, versions.last);
       expect(elements.length, expectedLength);
       expect(elements.map((el) => el.type).toSet().length, expectedLength);
 
@@ -113,11 +113,11 @@ void main() {
     });
 
     test('invalid from version', () async {
-      expect(() => _service.getElementsForCharts(-1, 2.1), throwsA(isA<Exception>()));
+      expect(() => service.getElementsForCharts(-1, 2.1), throwsA(isA<Exception>()));
     });
 
     test('invalid until version', () async {
-      expect(() => _service.getElementsForCharts(1, -1), throwsA(isA<Exception>()));
+      expect(() => service.getElementsForCharts(1, -1), throwsA(isA<Exception>()));
     });
   });
 }

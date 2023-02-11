@@ -129,14 +129,14 @@ void main() {
   });
 
   group('Check for updates', () {
-    void _checkEmptyUpdateResult(AppResourceUpdateResultType expectedResultType, int expectedResourceVersion, CheckForUpdatesResult result) {
+    void checkEmptyUpdateResult(AppResourceUpdateResultType expectedResultType, int expectedResourceVersion, CheckForUpdatesResult result) {
       expect(result.type == expectedResultType, isTrue);
       expect(result.resourceVersion == expectedResourceVersion, isTrue);
       expect(result.jsonFileKeyName, isNull);
       expect(result.keyNames, isEmpty);
     }
 
-    void _checkUpdateResult(
+    void checkUpdateResult(
       AppResourceUpdateResultType expectedResultType,
       int expectedResourceVersion,
       CheckForUpdatesResult result,
@@ -148,11 +148,11 @@ void main() {
         expect(result.jsonFileKeyName == apiResponse.jsonFileKeyName, isTrue);
         expect(result.keyNames, apiResponse.keyNames);
       } else {
-        _checkEmptyUpdateResult(expectedResultType, expectedResourceVersion, result);
+        checkEmptyUpdateResult(expectedResultType, expectedResourceVersion, result);
       }
     }
 
-    ResourceService _getService({
+    ResourceService getService({
       String appVersion = '1.0.0',
       int currentResourceVersion = -1,
       bool isInternetAvailable = false,
@@ -184,49 +184,49 @@ void main() {
       final service = ResourceServiceImpl(MockLoggingService(), settingsService, MockNetworkService(), MockApiService());
 
       final result = await service.checkForUpdates('1.0.0', -1);
-      _checkEmptyUpdateResult(AppResourceUpdateResultType.noUpdatesAvailable, -1, result);
+      checkEmptyUpdateResult(AppResourceUpdateResultType.noUpdatesAvailable, -1, result);
     });
 
     test('no internet connection', () async {
-      final service = _getService(currentResourceVersion: 1, noResourcesHasBeenDownloaded: false);
+      final service = getService(currentResourceVersion: 1, noResourcesHasBeenDownloaded: false);
       final result = await service.checkForUpdates('1.0.0', 1);
-      _checkEmptyUpdateResult(AppResourceUpdateResultType.noInternetConnection, 1, result);
+      checkEmptyUpdateResult(AppResourceUpdateResultType.noInternetConnection, 1, result);
     });
 
     test('no internet connection on first install', () async {
-      final service = _getService();
+      final service = getService();
       final result = await service.checkForUpdates('1.0.0', -1);
-      _checkEmptyUpdateResult(AppResourceUpdateResultType.noInternetConnectionForFirstInstall, -1, result);
+      checkEmptyUpdateResult(AppResourceUpdateResultType.noInternetConnectionForFirstInstall, -1, result);
     });
 
     test('api returns that there is a new app version', () async {
-      final service = _getService(
+      final service = getService(
         isInternetAvailable: true,
         currentResourceVersion: 1,
         apiResult: ApiResponseDto<ResourceDiffResponseDto?>(succeed: true, messageId: '3'),
       );
       final result = await service.checkForUpdates('1.0.0', 1);
-      _checkEmptyUpdateResult(AppResourceUpdateResultType.needsLatestAppVersion, 1, result);
+      checkEmptyUpdateResult(AppResourceUpdateResultType.needsLatestAppVersion, 1, result);
     });
 
     test('api returns that there are no updates available', () async {
-      final service = _getService(
+      final service = getService(
         isInternetAvailable: true,
         currentResourceVersion: 1,
         apiResult: ApiResponseDto<ResourceDiffResponseDto?>(succeed: true, messageId: '4'),
       );
       final result = await service.checkForUpdates('1.0.0', 1);
-      _checkEmptyUpdateResult(AppResourceUpdateResultType.noUpdatesAvailable, 1, result);
+      checkEmptyUpdateResult(AppResourceUpdateResultType.noUpdatesAvailable, 1, result);
     });
 
     test('api returns unknown message id', () async {
-      final service = _getService(
+      final service = getService(
         isInternetAvailable: true,
         currentResourceVersion: 1,
         apiResult: ApiResponseDto<ResourceDiffResponseDto?>(succeed: true, messageId: 'XXX'),
       );
       final result = await service.checkForUpdates('1.0.0', 1);
-      _checkEmptyUpdateResult(AppResourceUpdateResultType.unknownError, 1, result);
+      checkEmptyUpdateResult(AppResourceUpdateResultType.unknownError, 1, result);
     });
 
     test('api returns that main files must be downloaded', () async {
@@ -239,13 +239,13 @@ void main() {
           keyNames: [],
         ),
       );
-      final service = _getService(
+      final service = getService(
         isInternetAvailable: true,
         currentResourceVersion: 1,
         apiResult: apiResult,
       );
       final result = await service.checkForUpdates('1.0.0', 1);
-      _checkUpdateResult(AppResourceUpdateResultType.updatesAvailable, 2, result, apiResult.result);
+      checkUpdateResult(AppResourceUpdateResultType.updatesAvailable, 2, result, apiResult.result);
     });
 
     test('api returns that partial files must be downloaded', () async {
@@ -253,13 +253,13 @@ void main() {
         succeed: true,
         result: ResourceDiffResponseDto(currentResourceVersion: 1, targetResourceVersion: 2, keyNames: ['characters/keqing$imageFileExtension']),
       );
-      final service = _getService(
+      final service = getService(
         isInternetAvailable: true,
         currentResourceVersion: 1,
         apiResult: apiResult,
       );
       final result = await service.checkForUpdates('1.0.0', 1);
-      _checkUpdateResult(AppResourceUpdateResultType.updatesAvailable, 2, result, apiResult.result);
+      checkUpdateResult(AppResourceUpdateResultType.updatesAvailable, 2, result, apiResult.result);
     });
 
     test('api returns no files to be downloaded, hence no updates available', () async {
@@ -267,13 +267,13 @@ void main() {
         succeed: true,
         result: ResourceDiffResponseDto(currentResourceVersion: 1, targetResourceVersion: 2, keyNames: []),
       );
-      final service = _getService(
+      final service = getService(
         isInternetAvailable: true,
         currentResourceVersion: 1,
         apiResult: apiResult,
       );
       final result = await service.checkForUpdates('1.0.0', 1);
-      _checkUpdateResult(AppResourceUpdateResultType.noUpdatesAvailable, 1, result, apiResult.result);
+      checkUpdateResult(AppResourceUpdateResultType.noUpdatesAvailable, 1, result, apiResult.result);
     });
 
     test('api returns same resource version, hence no updates available', () async {
@@ -281,13 +281,13 @@ void main() {
         succeed: true,
         result: ResourceDiffResponseDto(currentResourceVersion: 1, targetResourceVersion: 1, keyNames: []),
       );
-      final service = _getService(
+      final service = getService(
         isInternetAvailable: true,
         currentResourceVersion: 1,
         apiResult: apiResult,
       );
       final result = await service.checkForUpdates('1.0.0', 1);
-      _checkUpdateResult(AppResourceUpdateResultType.noUpdatesAvailable, 1, result, apiResult.result);
+      checkUpdateResult(AppResourceUpdateResultType.noUpdatesAvailable, 1, result, apiResult.result);
     });
 
     test('api returns lower resource version, hence no updates available', () async {
@@ -295,24 +295,24 @@ void main() {
         succeed: true,
         result: ResourceDiffResponseDto(currentResourceVersion: 1, targetResourceVersion: 0, keyNames: ['characters/keqing$imageFileExtension']),
       );
-      final service = _getService(
+      final service = getService(
         isInternetAvailable: true,
         currentResourceVersion: 1,
         apiResult: apiResult,
       );
       final result = await service.checkForUpdates('1.0.0', 1);
-      _checkUpdateResult(AppResourceUpdateResultType.noUpdatesAvailable, 1, result, null);
+      checkUpdateResult(AppResourceUpdateResultType.noUpdatesAvailable, 1, result, null);
     });
 
     test('api returns null result, hence no unknown error', () async {
       final apiResult = ApiResponseDto<ResourceDiffResponseDto?>(succeed: true);
-      final service = _getService(
+      final service = getService(
         isInternetAvailable: true,
         currentResourceVersion: 1,
         apiResult: apiResult,
       );
       final result = await service.checkForUpdates('1.0.0', 1);
-      _checkUpdateResult(AppResourceUpdateResultType.unknownError, 1, result, null);
+      checkUpdateResult(AppResourceUpdateResultType.unknownError, 1, result, null);
     });
 
     test('last resources checked date is not updated', () async {

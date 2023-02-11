@@ -12,28 +12,28 @@ import '../../common.dart';
 import '../../mocks.mocks.dart';
 
 void main() {
-  late LocaleService _localeService;
-  late SettingsService _settingsService;
-  late GenshinService _genshinService;
+  late LocaleService localeService;
+  late SettingsService settingsService;
+  late GenshinService genshinService;
 
   setUpAll(() {
     TestWidgetsFlutterBinding.ensureInitialized();
-    _settingsService = MockSettingsService();
-    when(_settingsService.language).thenReturn(AppLanguageType.english);
-    when(_settingsService.showCharacterDetails).thenReturn(true);
-    _localeService = LocaleServiceImpl(_settingsService);
-    final resourceService = getResourceService(_settingsService);
-    _genshinService = GenshinServiceImpl(resourceService, _localeService);
+    settingsService = MockSettingsService();
+    when(settingsService.language).thenReturn(AppLanguageType.english);
+    when(settingsService.showCharacterDetails).thenReturn(true);
+    localeService = LocaleServiceImpl(settingsService);
+    final resourceService = getResourceService(settingsService);
+    genshinService = GenshinServiceImpl(resourceService, localeService);
 
     return Future(() async {
-      await _genshinService.init(AppLanguageType.english);
+      await genshinService.init(AppLanguageType.english);
     });
   });
 
   test(
     'Initial state',
     () => expect(
-      CharactersPerRegionBloc(_genshinService).state,
+      CharactersPerRegionBloc(genshinService).state,
       const CharactersPerRegionState.loading(),
     ),
   );
@@ -41,17 +41,17 @@ void main() {
   group('Init', () {
     blocTest<CharactersPerRegionBloc, CharactersPerRegionState>(
       'emits loaded state',
-      build: () => CharactersPerRegionBloc(_genshinService),
+      build: () => CharactersPerRegionBloc(genshinService),
       act: (bloc) => bloc.add(const CharactersPerRegionEvent.init(type: RegionType.inazuma)),
       expect: () {
-        final items = _genshinService.characters.getCharactersForItemsByRegion(RegionType.inazuma);
+        final items = genshinService.characters.getCharactersForItemsByRegion(RegionType.inazuma);
         return [CharactersPerRegionState.loaded(regionType: RegionType.inazuma, items: items)];
       },
     );
 
     blocTest<CharactersPerRegionBloc, CharactersPerRegionState>(
       'invalid region',
-      build: () => CharactersPerRegionBloc(_genshinService),
+      build: () => CharactersPerRegionBloc(genshinService),
       act: (bloc) => bloc.add(const CharactersPerRegionEvent.init(type: RegionType.anotherWorld)),
       errors: () => [isA<Exception>()],
     );

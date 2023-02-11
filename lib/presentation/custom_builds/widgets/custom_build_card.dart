@@ -70,7 +70,7 @@ class CustomBuildCard extends StatelessWidget {
                                   item.title,
                                   maxLines: 2,
                                   overflow: TextOverflow.ellipsis,
-                                  style: theme.textTheme.headline5!.copyWith(fontWeight: FontWeight.bold, color: Colors.white),
+                                  style: theme.textTheme.headlineSmall!.copyWith(fontWeight: FontWeight.bold, color: Colors.white),
                                 ),
                               ),
                               Text(

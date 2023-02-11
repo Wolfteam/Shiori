@@ -21,10 +21,10 @@ class SettingsCard extends StatelessWidget {
       iconToTheLeft: iconToTheLeft,
       icon: Icon(Icons.settings, size: 60, color: theme.colorScheme.secondary),
       children: [
-        Text(s.theme, style: theme.textTheme.subtitle2),
-        Text(s.accentColor, style: theme.textTheme.subtitle2),
-        Text(s.language, style: theme.textTheme.subtitle2),
-        Text(s.others, style: theme.textTheme.subtitle2),
+        Text(s.theme, style: theme.textTheme.titleSmall),
+        Text(s.accentColor, style: theme.textTheme.titleSmall),
+        Text(s.language, style: theme.textTheme.titleSmall),
+        Text(s.others, style: theme.textTheme.titleSmall),
       ],
     );
   }

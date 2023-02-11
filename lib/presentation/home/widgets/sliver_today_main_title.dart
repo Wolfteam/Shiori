@@ -29,11 +29,11 @@ class SliverTodayMainTitle extends StatelessWidget {
                   softWrap: false,
                   text: TextSpan(
                     text: s.todayAscensionMaterials,
-                    style: theme.textTheme.headline6!.copyWith(fontWeight: FontWeight.bold),
+                    style: theme.textTheme.titleLarge!.copyWith(fontWeight: FontWeight.bold),
                     children: <TextSpan>[
                       TextSpan(
                         text: ' [ ${state.dayName} ]',
-                        style: theme.textTheme.caption,
+                        style: theme.textTheme.bodySmall,
                       ),
                     ],
                   ),

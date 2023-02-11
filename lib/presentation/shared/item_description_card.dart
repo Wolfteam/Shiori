@@ -31,7 +31,7 @@ class ItemDescriptionCard extends StatelessWidget {
               contentPadding: EdgeInsets.zero,
               title: Transform.translate(
                 offset: Styles.listItemWithIconOffset,
-                child: Text(s.description, style: theme.textTheme.headline6!.copyWith(color: Colors.amber)),
+                child: Text(s.description, style: theme.textTheme.titleLarge!.copyWith(color: Colors.amber)),
               ),
             ),
             Text(description, style: const TextStyle(fontSize: 12)),

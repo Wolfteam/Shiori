@@ -107,13 +107,13 @@ class _VersionDetailPeriod extends StatelessWidget {
             desktop: _DetailDates(from: from, until: until, useRow: true),
           ),
           Divider(color: theme.colorScheme.primary),
-          if (characters.isNotEmpty && showCharacters) Text(s.characters, style: theme.textTheme.subtitle1),
+          if (characters.isNotEmpty && showCharacters) Text(s.characters, style: theme.textTheme.titleMedium),
           if (characters.isNotEmpty && showCharacters)
             _Items(
               type: BannerHistoryItemType.character,
               items: characters,
             ),
-          if (weapons.isNotEmpty && showWeapons) Text(s.weapons, style: theme.textTheme.subtitle1),
+          if (weapons.isNotEmpty && showWeapons) Text(s.weapons, style: theme.textTheme.titleMedium),
           if (weapons.isNotEmpty && showWeapons)
             _Items(
               type: BannerHistoryItemType.weapon,
@@ -181,7 +181,7 @@ class _DetailDates extends StatelessWidget {
       child: Text(
         fromString,
         overflow: TextOverflow.ellipsis,
-        style: theme.textTheme.subtitle1!.copyWith(fontWeight: FontWeight.bold),
+        style: theme.textTheme.titleMedium!.copyWith(fontWeight: FontWeight.bold),
       ),
     );
     final untilWidget = Tooltip(
@@ -189,7 +189,7 @@ class _DetailDates extends StatelessWidget {
       child: Text(
         untilString,
         overflow: TextOverflow.ellipsis,
-        style: theme.textTheme.subtitle1!.copyWith(fontWeight: FontWeight.bold),
+        style: theme.textTheme.titleMedium!.copyWith(fontWeight: FontWeight.bold),
       ),
     );
     if (useRow) {
