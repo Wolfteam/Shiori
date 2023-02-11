@@ -32,7 +32,7 @@ class NotificationListSubtitleDates extends StatelessWidget {
                 ),
                 TextSpan(
                   text: utils.DateUtils.formatDateMilitaryTime(createdAt, useTwentyFourHoursFormat: useTwentyFourHoursFormat),
-                  style: theme.textTheme.caption,
+                  style: theme.textTheme.bodySmall,
                 ),
               ],
             ),
@@ -52,7 +52,7 @@ class NotificationListSubtitleDates extends StatelessWidget {
                 ),
                 TextSpan(
                   text: utils.DateUtils.formatDateMilitaryTime(completesAt, useTwentyFourHoursFormat: useTwentyFourHoursFormat),
-                  style: theme.textTheme.caption,
+                  style: theme.textTheme.bodySmall,
                 ),
               ],
             ),

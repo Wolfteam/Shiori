@@ -87,13 +87,13 @@ class WeaponRow extends StatelessWidget {
                   weapon.name,
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,
-                  style: theme.textTheme.subtitle1!.copyWith(fontWeight: FontWeight.bold),
+                  style: theme.textTheme.titleMedium!.copyWith(fontWeight: FontWeight.bold),
                 ),
                 Text(
                   '${s.translateStatTypeWithoutValue(StatType.atk)}: ${weapon.stat.baseAtk}',
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,
-                  style: theme.textTheme.subtitle2!.copyWith(
+                  style: theme.textTheme.titleSmall!.copyWith(
                     fontWeight: FontWeight.bold,
                     color: color,
                   ),
@@ -102,7 +102,7 @@ class WeaponRow extends StatelessWidget {
                   '${s.subStat}: ${s.translateStatType(weapon.subStatType, weapon.stat.statValue)}',
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,
-                  style: theme.textTheme.subtitle2!.copyWith(
+                  style: theme.textTheme.titleSmall!.copyWith(
                     fontWeight: FontWeight.bold,
                     color: color,
                   ),
@@ -254,7 +254,7 @@ class _TopDecoration extends StatelessWidget {
           message: tooltip,
           child: Text(
             text,
-            style: theme.textTheme.subtitle1!.copyWith(fontWeight: FontWeight.bold),
+            style: theme.textTheme.titleMedium!.copyWith(fontWeight: FontWeight.bold),
             textAlign: TextAlign.center,
           ),
         ),

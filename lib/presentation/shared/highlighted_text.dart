@@ -3,7 +3,7 @@ import 'package:shiori/domain/extensions/string_extensions.dart';
 import 'package:shiori/presentation/shared/styles.dart';
 
 //TODO: MOVE THIS TO AN UTIL ?
-final _regExp = RegExp(r'({color}).*?({\/color})', caseSensitive: false);
+final _regExp = RegExp('({color}).*?({/color})', caseSensitive: false);
 
 class HighlightedText extends StatelessWidget {
   final String text;
@@ -61,7 +61,7 @@ class HighlightedText extends StatelessWidget {
           message: replaceColorTags(text),
           child: RichText(
             textAlign: textAlign,
-            text: TextSpan(children: spans, style: theme.textTheme.bodyText2),
+            text: TextSpan(children: spans, style: theme.textTheme.bodyMedium),
           ),
         ),
       ),

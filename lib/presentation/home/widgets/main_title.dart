@@ -16,7 +16,7 @@ class MainTitle extends StatelessWidget {
       margin: Styles.edgeInsetHorizontal16,
       child: Text(
         title,
-        style: theme.textTheme.headline6!.copyWith(fontWeight: FontWeight.bold),
+        style: theme.textTheme.titleLarge!.copyWith(fontWeight: FontWeight.bold),
         overflow: TextOverflow.ellipsis,
       ),
     );

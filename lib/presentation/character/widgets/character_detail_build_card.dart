@@ -68,7 +68,7 @@ class CharacterDetailBuildCard extends StatelessWidget {
               margin: Styles.edgeInsetAll5,
               child: Text(
                 s.weapons,
-                style: theme.textTheme.subtitle2!.copyWith(fontWeight: FontWeight.bold),
+                style: theme.textTheme.titleSmall!.copyWith(fontWeight: FontWeight.bold),
               ),
             ),
             _Weapons(weapons: weapons, color: color),
@@ -76,7 +76,7 @@ class CharacterDetailBuildCard extends StatelessWidget {
               margin: Styles.edgeInsetAll5,
               child: Text(
                 s.artifacts,
-                style: theme.textTheme.subtitle2!.copyWith(fontWeight: FontWeight.bold),
+                style: theme.textTheme.titleSmall!.copyWith(fontWeight: FontWeight.bold),
               ),
             ),
             if (subStatsToFocus.isNotEmpty)
@@ -119,7 +119,7 @@ class _Title extends StatelessWidget {
       child: Text(
         title,
         overflow: TextOverflow.ellipsis,
-        style: theme.textTheme.headline6!.copyWith(color: color),
+        style: theme.textTheme.titleLarge!.copyWith(color: color),
       ),
     );
 

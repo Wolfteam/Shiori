@@ -35,7 +35,7 @@ class PurchaseServiceImpl implements PurchaseService {
       }
 
       if (!kReleaseMode) {
-        await Purchases.setDebugLogsEnabled(true);
+        await Purchases.setLogLevel(LogLevel.debug);
       }
 
       final key = Platform.isAndroid ? Env.androidPurchasesKey : throw Exception('Platform not supported');

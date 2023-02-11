@@ -76,7 +76,7 @@ class BackupsPage extends StatelessWidget {
                                 SliverToBoxAdapter(
                                   child: Container(
                                     margin: const EdgeInsets.only(top: 10, left: 16),
-                                    child: Text(s.backups, style: theme.textTheme.headline6),
+                                    child: Text(s.backups, style: theme.textTheme.titleLarge),
                                   ),
                                 ),
                               if (state.backups.isNotEmpty)
@@ -111,7 +111,7 @@ class BackupsPage extends StatelessWidget {
                         SliverToBoxAdapter(
                           child: Container(
                             margin: const EdgeInsets.only(left: 16),
-                            child: Text(s.backups, style: theme.textTheme.headline6),
+                            child: Text(s.backups, style: theme.textTheme.titleLarge),
                           ),
                         ),
                       if (state.backups.isNotEmpty)

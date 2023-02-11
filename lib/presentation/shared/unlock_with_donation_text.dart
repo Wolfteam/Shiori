@@ -25,7 +25,7 @@ class UnlockWithDonationText extends StatelessWidget {
         s.unlockedWithDonation,
         overflow: TextOverflow.ellipsis,
         maxLines: 2,
-        style: theme.textTheme.caption!.copyWith(color: theme.primaryColor, fontStyle: FontStyle.italic),
+        style: theme.textTheme.bodySmall!.copyWith(color: theme.primaryColor, fontStyle: FontStyle.italic),
       ),
     );
   }

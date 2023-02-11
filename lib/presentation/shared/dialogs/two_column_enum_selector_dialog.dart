@@ -86,14 +86,14 @@ class _TwoColumnEnumSelectorDialogState<TEnum> extends State<TwoColumnEnumSelect
                       child: Text(
                         widget.leftTitle,
                         textAlign: TextAlign.center,
-                        style: theme.textTheme.subtitle1!.copyWith(fontWeight: FontWeight.bold),
+                        style: theme.textTheme.titleMedium!.copyWith(fontWeight: FontWeight.bold),
                       ),
                     ),
                     Expanded(
                       child: Text(
                         '${widget.rightTitle} (${_selected.length} / ${widget.maxNumberOfSelections})',
                         textAlign: TextAlign.center,
-                        style: theme.textTheme.subtitle1!.copyWith(fontWeight: FontWeight.bold),
+                        style: theme.textTheme.titleMedium!.copyWith(fontWeight: FontWeight.bold),
                       ),
                     ),
                   ],
@@ -172,7 +172,7 @@ class _TwoColumnEnumSelectorDialogState<TEnum> extends State<TwoColumnEnumSelect
                   Text(
                     widget.leftTitle,
                     textAlign: TextAlign.center,
-                    style: theme.textTheme.subtitle1!.copyWith(fontWeight: FontWeight.bold),
+                    style: theme.textTheme.titleMedium!.copyWith(fontWeight: FontWeight.bold),
                   ),
                   Container(
                     height: dialogHeight / 3,
@@ -205,7 +205,7 @@ class _TwoColumnEnumSelectorDialogState<TEnum> extends State<TwoColumnEnumSelect
                   Text(
                     '${widget.rightTitle} (${_selected.length} / ${widget.maxNumberOfSelections})',
                     textAlign: TextAlign.center,
-                    style: theme.textTheme.subtitle1!.copyWith(fontWeight: FontWeight.bold),
+                    style: theme.textTheme.titleMedium!.copyWith(fontWeight: FontWeight.bold),
                   ),
                   if (_selected.isNotEmpty)
                     Container(

@@ -75,7 +75,7 @@ class CharacterSection extends StatelessWidget {
                               state.title,
                               maxLines: 3,
                               overflow: TextOverflow.ellipsis,
-                              style: theme.textTheme.headline5!.copyWith(fontWeight: FontWeight.bold),
+                              style: theme.textTheme.headlineSmall!.copyWith(fontWeight: FontWeight.bold),
                             ),
                           ),
                           Tooltip(
@@ -222,7 +222,7 @@ class _TalentPriorityRow extends StatelessWidget {
             Expanded(
               child: Text(
                 s.talentPriority,
-                style: theme.textTheme.subtitle1,
+                style: theme.textTheme.titleMedium,
               ),
             ),
             if (!readyToShare)
@@ -252,7 +252,7 @@ class _TalentPriorityRow extends StatelessWidget {
           BulletList(
             iconSize: 14,
             items: skillPriorities.map((e) => s.translateCharacterSkillType(e)).toList(),
-            iconResolver: (index) => Text('#${index + 1}', style: theme.textTheme.subtitle2!.copyWith(fontSize: 12)),
+            iconResolver: (index) => Text('#${index + 1}', style: theme.textTheme.titleSmall!.copyWith(fontSize: 12)),
             fontSize: 10,
             addTooltip: false,
             padding: const EdgeInsets.only(right: 16, left: 5, bottom: 5, top: 5),
@@ -285,7 +285,7 @@ class _NoteRow extends StatelessWidget {
             Expanded(
               child: Text(
                 s.notes,
-                style: theme.textTheme.subtitle1,
+                style: theme.textTheme.titleMedium,
               ),
             ),
             if (!readyToShare)

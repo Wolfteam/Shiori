@@ -47,7 +47,7 @@ class MaterialItem extends StatelessWidget {
           Text(
             type == app.MaterialType.currency ? CurrencyUtils.formatNumber(quantity) : '$quantity',
             textAlign: TextAlign.center,
-            style: textColor != null ? theme.textTheme.subtitle2!.copyWith(color: textColor) : theme.textTheme.subtitle2,
+            style: textColor != null ? theme.textTheme.titleSmall!.copyWith(color: textColor) : theme.textTheme.titleSmall,
           ),
         if (quantity == 0) const Icon(Icons.check, color: Colors.green, size: 18),
       ],

@@ -119,7 +119,7 @@ class _ItemCard extends StatelessWidget {
                       name,
                       overflow: TextOverflow.ellipsis,
                       textAlign: TextAlign.center,
-                      style: theme.textTheme.subtitle2!.copyWith(fontWeight: FontWeight.bold, color: Colors.white),
+                      style: theme.textTheme.titleSmall!.copyWith(fontWeight: FontWeight.bold, color: Colors.white),
                     ),
                   ),
                 ],
@@ -136,7 +136,7 @@ class _ItemCard extends StatelessWidget {
                       child: Text(
                         '$number',
                         overflow: TextOverflow.ellipsis,
-                        style: theme.textTheme.subtitle2!.copyWith(fontWeight: FontWeight.bold, color: Colors.white),
+                        style: theme.textTheme.titleSmall!.copyWith(fontWeight: FontWeight.bold, color: Colors.white),
                       ),
                     ),
                   ),

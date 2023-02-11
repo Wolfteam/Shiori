@@ -34,13 +34,13 @@ class ItemDescription extends StatelessWidget {
               child: Text(
                 title,
                 overflow: TextOverflow.ellipsis,
-                style: theme.textTheme.subtitle2!.copyWith(color: Colors.white),
+                style: theme.textTheme.titleSmall!.copyWith(color: Colors.white),
               ),
             ),
             Center(
               child: Text(
                 subTitle!,
-                style: theme.textTheme.bodyText2!.copyWith(fontSize: 12),
+                style: theme.textTheme.bodyMedium!.copyWith(fontSize: 12),
               ),
             ),
           ],
@@ -55,7 +55,7 @@ class ItemDescription extends StatelessWidget {
           children: [
             Text(
               '$title: ',
-              style: theme.textTheme.subtitle2!.copyWith(color: Colors.white),
+              style: theme.textTheme.titleSmall!.copyWith(color: Colors.white),
               overflow: TextOverflow.ellipsis,
             ),
             widget!,

@@ -42,7 +42,7 @@ class AscensionMaterialItemCard extends StatelessWidget {
                 name,
                 textAlign: TextAlign.center,
                 overflow: TextOverflow.ellipsis,
-                style: theme.textTheme.subtitle1!.copyWith(fontWeight: FontWeight.bold),
+                style: theme.textTheme.titleMedium!.copyWith(fontWeight: FontWeight.bold),
               ),
             ),
             Tooltip(
@@ -51,7 +51,7 @@ class AscensionMaterialItemCard extends StatelessWidget {
                 obtainOn,
                 textAlign: TextAlign.center,
                 overflow: TextOverflow.visible,
-                style: theme.textTheme.subtitle2!.copyWith(fontSize: 12),
+                style: theme.textTheme.titleSmall!.copyWith(fontSize: 12),
               ),
             ),
             child,

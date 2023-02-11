@@ -46,7 +46,7 @@ class TeamSection extends StatelessWidget {
                       ? s.teamComposition
                       : '${s.teamComposition} (${state.teamCharacters.length} / ${CustomBuildBloc.maxNumberOfTeamCharacters})',
                   textAlign: TextAlign.center,
-                  style: theme.textTheme.subtitle1!.copyWith(fontWeight: FontWeight.bold),
+                  style: theme.textTheme.titleMedium!.copyWith(fontWeight: FontWeight.bold),
                 ),
               ),
               if (!state.readyForScreenshot)

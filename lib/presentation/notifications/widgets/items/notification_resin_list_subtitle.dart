@@ -28,7 +28,7 @@ class NotificationResinSubtitle extends StatelessWidget {
       useTwentyFourHoursFormat: useTwentyFourHoursFormat,
       note: note,
       children: [
-        Text('$currentValue / $maxResinValue', style: theme.textTheme.bodyText2),
+        Text('$currentValue / $maxResinValue', style: theme.textTheme.bodyMedium),
       ],
     );
   }

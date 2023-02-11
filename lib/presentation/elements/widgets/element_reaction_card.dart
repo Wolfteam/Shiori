@@ -57,17 +57,17 @@ class ElementReactionCard extends StatelessWidget {
               Text(
                 description!,
                 textAlign: TextAlign.center,
-                style: theme.textTheme.subtitle1!.copyWith(fontWeight: FontWeight.bold),
+                style: theme.textTheme.titleMedium!.copyWith(fontWeight: FontWeight.bold),
               ),
             Text(
               name,
               textAlign: TextAlign.center,
-              style: theme.textTheme.subtitle1!.copyWith(fontWeight: FontWeight.bold),
+              style: theme.textTheme.titleMedium!.copyWith(fontWeight: FontWeight.bold),
             ),
             Text(
               effect,
               textAlign: TextAlign.center,
-              style: theme.textTheme.subtitle2!.copyWith(fontSize: 12),
+              style: theme.textTheme.titleSmall!.copyWith(fontSize: 12),
             )
           ],
         ),

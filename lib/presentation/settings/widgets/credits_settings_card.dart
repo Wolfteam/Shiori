@@ -74,7 +74,7 @@ class _TranslatorsRow extends StatelessWidget {
           margin: const EdgeInsets.only(top: 10),
           child: Text(
             s.translateAppLanguageType(language),
-            style: textTheme.subtitle1!.copyWith(fontWeight: FontWeight.bold),
+            style: textTheme.titleMedium!.copyWith(fontWeight: FontWeight.bold),
           ),
         ),
         if (translators.length <= 2)

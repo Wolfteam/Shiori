@@ -28,7 +28,7 @@ class OtherSettings extends StatelessWidget {
               const Icon(Icons.build),
               Container(
                 margin: const EdgeInsets.only(left: 5),
-                child: Text(s.others, style: Theme.of(context).textTheme.headline6),
+                child: Text(s.others, style: Theme.of(context).textTheme.titleLarge),
               ),
             ],
           ),
@@ -106,7 +106,7 @@ class OtherSettings extends StatelessWidget {
                       onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const BackupsPage())),
                     ),
                     ListTile(
-                      title: Text(s.deleteAllData, style: theme.textTheme.subtitle1!.copyWith(color: Colors.red, fontWeight: FontWeight.bold)),
+                      title: Text(s.deleteAllData, style: theme.textTheme.titleMedium!.copyWith(color: Colors.red, fontWeight: FontWeight.bold)),
                       onTap: () => showDialog<bool?>(
                         context: context,
                         builder: (_) => ConfirmDialog(

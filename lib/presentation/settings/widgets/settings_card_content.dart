@@ -27,7 +27,7 @@ class SettingsCardContent extends StatelessWidget {
               icon,
               Container(
                 margin: const EdgeInsets.only(left: 5),
-                child: Text(title, style: textTheme.headline6),
+                child: Text(title, style: textTheme.titleLarge),
               ),
             ],
           ),

@@ -51,7 +51,7 @@ class DialogListItemRow extends StatelessWidget {
                         name,
                         overflow: TextOverflow.ellipsis,
                         maxLines: 2,
-                        style: theme.textTheme.subtitle1,
+                        style: theme.textTheme.titleMedium,
                       ),
               ),
             ),

@@ -31,7 +31,7 @@ class DropdownButtonWithTitle<T> extends StatelessWidget {
         children: [
           Container(
             transform: Matrix4.translationValues(0.0, 5.0, 0.0),
-            child: Text(title, style: theme.textTheme.caption),
+            child: Text(title, style: theme.textTheme.bodySmall),
           ),
           CommonDropdownButton<T>(
             hint: title,

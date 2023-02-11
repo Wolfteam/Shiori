@@ -35,7 +35,7 @@ class DetailGeneralCard extends StatelessWidget {
               itemName,
               maxLines: 2,
               overflow: TextOverflow.ellipsis,
-              style: theme.textTheme.headline5!.copyWith(fontWeight: FontWeight.bold, color: Colors.white),
+              style: theme.textTheme.headlineSmall!.copyWith(fontWeight: FontWeight.bold, color: Colors.white),
             ),
             Rarity(stars: rarity, starSize: 25, alignment: MainAxisAlignment.start),
             ...children,

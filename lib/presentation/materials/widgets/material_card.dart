@@ -135,7 +135,7 @@ class MaterialCard extends StatelessWidget {
                           ),
                           child: Text(
                             ' - ${CurrencyUtils.formatNumber(usedQuantity)} ',
-                            style: theme.textTheme.subtitle2!.copyWith(color: Colors.white),
+                            style: theme.textTheme.titleSmall!.copyWith(color: Colors.white),
                           ),
                         ),
                       ),
@@ -147,7 +147,7 @@ class MaterialCard extends StatelessWidget {
                   margin: const EdgeInsets.only(bottom: 5),
                   child: Text(
                     CurrencyUtils.formatNumber(quantity),
-                    style: theme.textTheme.subtitle2!.copyWith(color: Colors.white),
+                    style: theme.textTheme.titleSmall!.copyWith(color: Colors.white),
                   ),
                 ),
               if (!withoutDetails && !isInQuantityMode)
@@ -157,7 +157,7 @@ class MaterialCard extends StatelessWidget {
                     child: Text(
                       name!,
                       textAlign: TextAlign.center,
-                      style: theme.textTheme.subtitle1!.copyWith(fontWeight: FontWeight.bold, color: Colors.white),
+                      style: theme.textTheme.titleMedium!.copyWith(fontWeight: FontWeight.bold, color: Colors.white),
                       overflow: TextOverflow.ellipsis,
                     ),
                   ),

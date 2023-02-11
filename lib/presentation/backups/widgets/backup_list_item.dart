@@ -31,12 +31,12 @@ class BackupListItem extends StatelessWidget {
             child: Text(
               backup.filename,
               overflow: TextOverflow.ellipsis,
-              style: theme.textTheme.subtitle2,
+              style: theme.textTheme.titleSmall,
             ),
           ),
           subtitle: Text(
             DateFormat.yMd().add_Hm().format(backup.createdAt),
-            style: theme.textTheme.caption,
+            style: theme.textTheme.bodySmall,
           ),
           trailing: Row(
             mainAxisAlignment: MainAxisAlignment.end,
