@@ -5,6 +5,7 @@ import 'dart:io';
 import 'package:flutter/foundation.dart';
 import 'package:path/path.dart' as path;
 import 'package:path_provider/path_provider.dart';
+import 'package:shiori/domain/app_constants.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/extensions/string_extensions.dart';
 import 'package:shiori/domain/models/models.dart';
@@ -15,8 +16,6 @@ import 'package:shiori/domain/services/logging_service.dart';
 import 'package:shiori/domain/services/notification_service.dart';
 import 'package:shiori/domain/services/settings_service.dart';
 import 'package:version/version.dart';
-
-const _fileExtension = '.bk';
 
 class BackupRestoreServiceImpl implements BackupRestoreService {
   final LoggingService _loggingService;
@@ -255,7 +254,7 @@ class BackupRestoreServiceImpl implements BackupRestoreService {
   }
 
   Future<String> _generateFilePath({String? customFilename}) async {
-    final filename = customFilename ?? 'shiori_backup_${DateTime.now().millisecondsSinceEpoch}$_fileExtension';
+    final filename = customFilename ?? 'shiori_backup_${DateTime.now().millisecondsSinceEpoch}$backupFileExtension';
     final dirPath = await _getBackupDir();
     final filePath = path.join(dirPath, filename);
     final file = File(filePath);
@@ -274,9 +273,14 @@ class BackupRestoreServiceImpl implements BackupRestoreService {
     if (Platform.isIOS || Platform.isMacOS) {
       final dir = await getApplicationDocumentsDirectory();
       dirPath = dir.path;
-    } else {
+    } else if (Platform.isAndroid) {
       final dir = await getExternalStorageDirectory();
       dirPath = dir!.path;
+    } else if (Platform.isWindows) {
+      final dir = await getApplicationSupportDirectory();
+      dirPath = dir.path;
+    } else {
+      throw Exception('Platform not supported');
     }
 
     final dir = Directory(path.join(dirPath, 'backups'));

@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
@@ -24,32 +22,33 @@ class BackupListItem extends StatelessWidget {
   Widget build(BuildContext context) {
     final s = S.of(context);
     final theme = Theme.of(context);
-    return Card(
-      child: ListTile(
-        title: Tooltip(
-          message: backup.filename,
-          child: Text(
-            backup.filename,
-            overflow: TextOverflow.ellipsis,
-            style: theme.textTheme.subtitle2,
-          ),
-        ),
-        subtitle: Text(
-          DateFormat.yMd().add_Hm().format(backup.createdAt),
-          style: theme.textTheme.caption,
-        ),
-        trailing: Row(
-          mainAxisAlignment: MainAxisAlignment.end,
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            IconButton(
-              splashRadius: Styles.smallButtonSplashRadius,
-              icon: const Icon(Icons.settings_backup_restore, color: Colors.blue),
-              visualDensity: VisualDensity.compact,
-              tooltip: s.restore,
-              onPressed: () => _restore(s, context),
+    return Padding(
+      padding: Styles.edgeInsetHorizontal10,
+      child: Card(
+        child: ListTile(
+          title: Tooltip(
+            message: backup.filename,
+            child: Text(
+              backup.filename,
+              overflow: TextOverflow.ellipsis,
+              style: theme.textTheme.subtitle2,
             ),
-            if (Platform.isAndroid || Platform.isIOS)
+          ),
+          subtitle: Text(
+            DateFormat.yMd().add_Hm().format(backup.createdAt),
+            style: theme.textTheme.caption,
+          ),
+          trailing: Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              IconButton(
+                splashRadius: Styles.smallButtonSplashRadius,
+                icon: const Icon(Icons.settings_backup_restore, color: Colors.blue),
+                visualDensity: VisualDensity.compact,
+                tooltip: s.restore,
+                onPressed: () => _restore(s, context),
+              ),
               IconButton(
                 splashRadius: Styles.smallButtonSplashRadius,
                 icon: const Icon(Icons.share, color: Colors.green),
@@ -57,35 +56,40 @@ class BackupListItem extends StatelessWidget {
                 tooltip: s.share,
                 onPressed: () => _share(s, context),
               ),
-            IconButton(
-              splashRadius: Styles.smallButtonSplashRadius,
-              icon: const Icon(Icons.delete, color: Colors.red),
-              visualDensity: VisualDensity.compact,
-              tooltip: s.delete,
-              onPressed: () => _delete(s, context),
-            ),
-          ],
-        ),
-        onTap: () => showDialog<OperationType?>(
-          context: context,
-          builder: (_) => BlocProvider<BackupRestoreBloc>.value(
-            value: context.read<BackupRestoreBloc>(),
-            child: BackupDetailsDialog(backup: backup),
+              IconButton(
+                splashRadius: Styles.smallButtonSplashRadius,
+                icon: const Icon(Icons.delete, color: Colors.red),
+                visualDensity: VisualDensity.compact,
+                tooltip: s.delete,
+                onPressed: () => _delete(s, context),
+              ),
+            ],
           ),
-        ).then((op) async {
-          switch (op) {
-            case OperationType.delete:
-              await _delete(s, context);
-              break;
-            case OperationType.restore:
-              await _restore(s, context);
-              break;
-            case null:
-              break;
-          }
-        }),
+          onTap: () => _showDetails(s, context),
+        ),
       ),
     );
+  }
+
+  Future<void> _showDetails(S s, BuildContext context) {
+    return showDialog<OperationType?>(
+      context: context,
+      builder: (_) => BlocProvider<BackupRestoreBloc>.value(
+        value: context.read<BackupRestoreBloc>(),
+        child: BackupDetailsDialog(backup: backup),
+      ),
+    ).then((op) async {
+      switch (op) {
+        case OperationType.delete:
+          await _delete(s, context);
+          break;
+        case OperationType.restore:
+          await _restore(s, context);
+          break;
+        case null:
+          break;
+      }
+    });
   }
 
   Future<void> _restore(S s, BuildContext context) {
