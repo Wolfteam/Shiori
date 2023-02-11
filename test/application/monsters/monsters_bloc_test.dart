@@ -10,11 +10,11 @@ import '../../common.dart';
 import '../../mocks.mocks.dart';
 
 void main() {
-  late final GenshinService _genshinService;
+  late final GenshinService genshinService;
 
-  const _search = 'Azhdaha';
-  const _key = 'azhdaha';
-  final _excludedKeys = [_key];
+  const search = 'Azhdaha';
+  const key = 'azhdaha';
+  final excludedKeys = [key];
 
   setUpAll(() {
     TestWidgetsFlutterBinding.ensureInitialized();
@@ -22,22 +22,22 @@ void main() {
     when(settingsService.language).thenReturn(AppLanguageType.english);
     final localeService = LocaleServiceImpl(settingsService);
     final resourceService = getResourceService(settingsService);
-    _genshinService = GenshinServiceImpl(resourceService, localeService);
+    genshinService = GenshinServiceImpl(resourceService, localeService);
 
     return Future(() async {
-      await _genshinService.init(settingsService.language);
+      await genshinService.init(settingsService.language);
     });
   });
 
-  test('Initial state', () => expect(MonstersBloc(_genshinService).state, const MonstersState.loading()));
+  test('Initial state', () => expect(MonstersBloc(genshinService).state, const MonstersState.loading()));
 
   group('Init', () {
     blocTest<MonstersBloc, MonstersState>(
       'emits loaded state',
-      build: () => MonstersBloc(_genshinService),
+      build: () => MonstersBloc(genshinService),
       act: (bloc) => bloc.add(const MonstersEvent.init()),
       expect: () {
-        final monsters = _genshinService.monsters.getAllMonstersForCard()..sort((x, y) => x.name.compareTo(y.name));
+        final monsters = genshinService.monsters.getAllMonstersForCard()..sort((x, y) => x.name.compareTo(y.name));
         return [
           MonstersState.loaded(
             monsters: monsters,
@@ -52,14 +52,14 @@ void main() {
 
     blocTest<MonstersBloc, MonstersState>(
       'emits loaded state excluding one key',
-      build: () => MonstersBloc(_genshinService),
-      act: (bloc) => bloc.add(MonstersEvent.init(excludeKeys: _excludedKeys)),
+      build: () => MonstersBloc(genshinService),
+      act: (bloc) => bloc.add(MonstersEvent.init(excludeKeys: excludedKeys)),
       verify: (bloc) {
         final emittedState = bloc.state;
         emittedState.map(
           loading: (_) => throw Exception('Invalid artifact state'),
           loaded: (state) {
-            final monsters = _genshinService.monsters.getAllMonstersForCard().where((el) => !_excludedKeys.contains(el.key)).toList();
+            final monsters = genshinService.monsters.getAllMonstersForCard().where((el) => !excludedKeys.contains(el.key)).toList();
 
             expect(state.monsters.length, monsters.length);
             expect(state.filterType, MonsterFilterType.name);
@@ -75,13 +75,13 @@ void main() {
   group('Search changed', () {
     blocTest<MonstersBloc, MonstersState>(
       'should return only one item',
-      build: () => MonstersBloc(_genshinService),
+      build: () => MonstersBloc(genshinService),
       act: (bloc) => bloc
         ..add(const MonstersEvent.init())
-        ..add(const MonstersEvent.searchChanged(search: _search)),
+        ..add(const MonstersEvent.searchChanged(search: search)),
       skip: 1,
       expect: () {
-        final monster = _genshinService.monsters.getMonsterForCard(_key);
+        final monster = genshinService.monsters.getMonsterForCard(key);
         return [
           MonstersState.loaded(
             monsters: [monster],
@@ -89,7 +89,7 @@ void main() {
             tempFilterType: MonsterFilterType.name,
             sortDirectionType: SortDirectionType.asc,
             tempSortDirectionType: SortDirectionType.asc,
-            search: _search,
+            search: search,
           )
         ];
       },
@@ -97,7 +97,7 @@ void main() {
 
     blocTest<MonstersBloc, MonstersState>(
       'should not return any item',
-      build: () => MonstersBloc(_genshinService),
+      build: () => MonstersBloc(genshinService),
       act: (bloc) => bloc
         ..add(const MonstersEvent.init())
         ..add(const MonstersEvent.searchChanged(search: 'Keqing')),
@@ -118,10 +118,10 @@ void main() {
   group('Filters changed', () {
     blocTest<MonstersBloc, MonstersState>(
       'some filters are applied and should return 1 item',
-      build: () => MonstersBloc(_genshinService),
+      build: () => MonstersBloc(genshinService),
       act: (bloc) => bloc
         ..add(const MonstersEvent.init())
-        ..add(const MonstersEvent.searchChanged(search: _search))
+        ..add(const MonstersEvent.searchChanged(search: search))
         ..add(const MonstersEvent.filterTypeChanged(MonsterFilterType.name))
         ..add(const MonstersEvent.typeChanged(MonsterType.boss))
         ..add(const MonstersEvent.sortDirectionTypeChanged(SortDirectionType.desc))
@@ -129,7 +129,7 @@ void main() {
       //I use 4 here cause MonsterFilterType.name does not emit a new state since it is the only value
       skip: 4,
       expect: () {
-        final monster = _genshinService.monsters.getMonsterForCard(_key);
+        final monster = genshinService.monsters.getMonsterForCard(key);
         return [
           MonstersState.loaded(
             monsters: [monster],
@@ -139,7 +139,7 @@ void main() {
             tempType: MonsterType.boss,
             sortDirectionType: SortDirectionType.desc,
             tempSortDirectionType: SortDirectionType.desc,
-            search: _search,
+            search: search,
           )
         ];
       },
@@ -147,7 +147,7 @@ void main() {
 
     blocTest<MonstersBloc, MonstersState>(
       'some filters are applied but they end up being cancelled',
-      build: () => MonstersBloc(_genshinService),
+      build: () => MonstersBloc(genshinService),
       act: (bloc) => bloc
         ..add(const MonstersEvent.init())
         ..add(const MonstersEvent.typeChanged(MonsterType.boss))
@@ -158,7 +158,7 @@ void main() {
         ..add(const MonstersEvent.cancelChanges()),
       skip: 6,
       expect: () {
-        final monsters = _genshinService.monsters.getAllMonstersForCard().where((el) => el.type == MonsterType.boss).toList()
+        final monsters = genshinService.monsters.getAllMonstersForCard().where((el) => el.type == MonsterType.boss).toList()
           ..sort((x, y) => y.name.compareTo(x.name));
         return [
           MonstersState.loaded(
@@ -176,16 +176,16 @@ void main() {
 
     blocTest<MonstersBloc, MonstersState>(
       'filters are reseted',
-      build: () => MonstersBloc(_genshinService),
+      build: () => MonstersBloc(genshinService),
       act: (bloc) => bloc
         ..add(const MonstersEvent.init())
-        ..add(const MonstersEvent.searchChanged(search: _search))
+        ..add(const MonstersEvent.searchChanged(search: search))
         ..add(const MonstersEvent.typeChanged(MonsterType.boss))
         ..add(const MonstersEvent.sortDirectionTypeChanged(SortDirectionType.desc))
         ..add(const MonstersEvent.resetFilters()),
       skip: 4,
       expect: () {
-        final monsters = _genshinService.monsters.getAllMonstersForCard()..sort((x, y) => x.name.compareTo(y.name));
+        final monsters = genshinService.monsters.getAllMonstersForCard()..sort((x, y) => x.name.compareTo(y.name));
         return [
           MonstersState.loaded(
             monsters: monsters,

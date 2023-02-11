@@ -12,35 +12,35 @@ import '../../../common.dart';
 import '../../../mocks.mocks.dart';
 
 void main() {
-  late LocaleService _localeService;
-  late SettingsService _settingsService;
-  late GenshinService _genshinService;
+  late LocaleService localeService;
+  late SettingsService settingsService;
+  late GenshinService genshinService;
 
   setUpAll(() {
     TestWidgetsFlutterBinding.ensureInitialized();
-    _settingsService = MockSettingsService();
-    when(_settingsService.language).thenReturn(AppLanguageType.english);
-    when(_settingsService.showCharacterDetails).thenReturn(true);
-    _localeService = LocaleServiceImpl(_settingsService);
-    final resourceService = getResourceService(_settingsService);
-    _genshinService = GenshinServiceImpl(resourceService, _localeService);
+    settingsService = MockSettingsService();
+    when(settingsService.language).thenReturn(AppLanguageType.english);
+    when(settingsService.showCharacterDetails).thenReturn(true);
+    localeService = LocaleServiceImpl(settingsService);
+    final resourceService = getResourceService(settingsService);
+    genshinService = GenshinServiceImpl(resourceService, localeService);
 
     return Future(() async {
-      await _genshinService.init(AppLanguageType.english);
+      await genshinService.init(AppLanguageType.english);
     });
   });
 
   test(
     'Initial state',
-    () => expect(ChartBirthdaysBloc(_genshinService).state, const ChartBirthdaysState.loading()),
+    () => expect(ChartBirthdaysBloc(genshinService).state, const ChartBirthdaysState.loading()),
   );
 
   blocTest<ChartBirthdaysBloc, ChartBirthdaysState>(
     'Init emits loaded state',
-    build: () => ChartBirthdaysBloc(_genshinService),
+    build: () => ChartBirthdaysBloc(genshinService),
     act: (bloc) => bloc.add(const ChartBirthdaysEvent.init()),
     expect: () {
-      final birthdays = _genshinService.characters.getCharacterBirthdaysForCharts();
+      final birthdays = genshinService.characters.getCharacterBirthdaysForCharts();
       return [ChartBirthdaysState.loaded(birthdays: birthdays)];
     },
   );

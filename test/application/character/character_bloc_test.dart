@@ -17,48 +17,48 @@ import '../../mocks.mocks.dart';
 const _dbFolder = 'shiori_character_bloc_tests';
 
 void main() {
-  late TelemetryService _telemetryService;
-  late LocaleService _localeService;
-  late SettingsService _settingsService;
-  late GenshinService _genshinService;
-  late DataService _dataService;
-  late ResourceService _resourceService;
-  late final String _dbPath;
+  late TelemetryService telemetryService;
+  late LocaleService localeService;
+  late SettingsService settingsService;
+  late GenshinService genshinService;
+  late DataService dataService;
+  late ResourceService resourceService;
+  late final String dbPath;
 
   setUpAll(() {
     TestWidgetsFlutterBinding.ensureInitialized();
-    _telemetryService = MockTelemetryService();
-    _settingsService = MockSettingsService();
-    when(_settingsService.language).thenReturn(AppLanguageType.english);
-    _localeService = LocaleServiceImpl(_settingsService);
-    _resourceService = getResourceService(_settingsService);
-    _genshinService = GenshinServiceImpl(_resourceService, _localeService);
-    _dataService = DataServiceImpl(_genshinService, CalculatorServiceImpl(_genshinService, _resourceService), _resourceService);
-    manuallyInitLocale(_localeService, AppLanguageType.english);
+    telemetryService = MockTelemetryService();
+    settingsService = MockSettingsService();
+    when(settingsService.language).thenReturn(AppLanguageType.english);
+    localeService = LocaleServiceImpl(settingsService);
+    resourceService = getResourceService(settingsService);
+    genshinService = GenshinServiceImpl(resourceService, localeService);
+    dataService = DataServiceImpl(genshinService, CalculatorServiceImpl(genshinService, resourceService), resourceService);
+    manuallyInitLocale(localeService, AppLanguageType.english);
     return Future(() async {
-      await _genshinService.init(AppLanguageType.english);
-      _dbPath = await getDbPath(_dbFolder);
-      await _dataService.initForTests(_dbPath);
+      await genshinService.init(AppLanguageType.english);
+      dbPath = await getDbPath(_dbFolder);
+      await dataService.initForTests(dbPath);
     });
   });
 
   tearDownAll(() {
     return Future(() async {
-      await _dataService.closeThemAll();
-      await deleteDbFolder(_dbPath);
+      await dataService.closeThemAll();
+      await deleteDbFolder(dbPath);
     });
   });
 
   test(
     'Initial state',
     () => expect(
-      CharacterBloc(_genshinService, _telemetryService, _localeService, _dataService, _resourceService).state,
+      CharacterBloc(genshinService, telemetryService, localeService, dataService, resourceService).state,
       const CharacterState.loading(),
     ),
   );
 
   group('Load from key', () {
-    void _checkKeqingState(CharacterState state, bool isInInventory) {
+    void checkKeqingState(CharacterState state, bool isInInventory) {
       state.map(
         loading: (_) => throw Exception('Invalid state'),
         loaded: (state) {
@@ -90,23 +90,23 @@ void main() {
 
     blocTest<CharacterBloc, CharacterState>(
       'keqing',
-      build: () => CharacterBloc(_genshinService, _telemetryService, _localeService, _dataService, _resourceService),
+      build: () => CharacterBloc(genshinService, telemetryService, localeService, dataService, resourceService),
       act: (bloc) => bloc.add(const CharacterEvent.loadFromKey(key: 'keqing')),
       //we skip 1 because since the event is not _AddedToInventory the bloc will emit a loading
       skip: 1,
-      verify: (bloc) => _checkKeqingState(bloc.state, false),
+      verify: (bloc) => checkKeqingState(bloc.state, false),
     );
 
     blocTest<CharacterBloc, CharacterState>(
       'keqing is in inventory',
-      build: () => CharacterBloc(_genshinService, _telemetryService, _localeService, _dataService, _resourceService),
+      build: () => CharacterBloc(genshinService, telemetryService, localeService, dataService, resourceService),
       setUp: () {
-        _dataService.inventory.addItemToInventory('keqing', ItemType.character, 1);
+        dataService.inventory.addItemToInventory('keqing', ItemType.character, 1);
       },
       act: (bloc) => bloc.add(const CharacterEvent.loadFromKey(key: 'keqing')),
       //we skip 1 because since the event is not _AddedToInventory the bloc will emit a loading
       skip: 1,
-      verify: (bloc) => _checkKeqingState(bloc.state, true),
+      verify: (bloc) => checkKeqingState(bloc.state, true),
     );
   });
 }

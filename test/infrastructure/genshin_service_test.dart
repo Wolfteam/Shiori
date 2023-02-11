@@ -13,21 +13,21 @@ import '../mocks.mocks.dart';
 //TODO: ADD TEST FOR FAIL CASES (E.G WEAPON NOT FOUND, IMAGE NOT FOUND ETC)
 
 void main() {
-  ResourceService _getResourceService(AppLanguageType language) {
+  ResourceService getCustomResourceService(AppLanguageType language) {
     final settings = MockSettingsService();
     when(settings.language).thenReturn(language);
     return getResourceService(settings);
   }
 
-  GenshinService _getService() {
+  GenshinService getService() {
     final localeService = getLocaleService(AppLanguageType.english);
-    final resourceService = _getResourceService(AppLanguageType.english);
+    final resourceService = getCustomResourceService(AppLanguageType.english);
     final service = GenshinServiceImpl(resourceService, localeService);
     return service;
   }
 
   test('Initialize all languages', () async {
-    final service = _getService();
+    final service = getService();
 
     for (final lang in AppLanguageType.values) {
       await expectLater(service.init(lang), completes);
@@ -37,7 +37,7 @@ void main() {
   group('Charts', () {
     test('check top charts', () async {
       final types = ChartType.values.where((el) => el != ChartType.characterBirthdays).toList();
-      final service = _getService();
+      final service = getService();
       await service.init(AppLanguageType.english);
       for (final type in types) {
         final tops = service.getTopCharts(type);
@@ -78,13 +78,13 @@ void main() {
     });
 
     test('check top charts, invalid type', () async {
-      final service = _getService();
+      final service = getService();
       await service.init(AppLanguageType.english);
       expect(() => service.getTopCharts(ChartType.characterBirthdays), throwsA(isA<Exception>()));
     });
 
     test('check item ascension stats', () async {
-      final service = _getService();
+      final service = getService();
       await service.init(AppLanguageType.english);
       const validTypes = [ItemType.character, ItemType.weapon];
       final validForCharacters = getCharacterPossibleAscensionStats();
@@ -109,7 +109,7 @@ void main() {
     });
 
     test('check item ascension stats, item type is not valid', () async {
-      final service = _getService();
+      final service = getService();
       await service.init(AppLanguageType.english);
       final types = ItemType.values.where((el) => el != ItemType.character && el != ItemType.weapon).toList();
       for (final type in types) {
@@ -120,7 +120,7 @@ void main() {
 
   group('Common', () {
     test('check items ascension stats', () async {
-      final service = _getService();
+      final service = getService();
       await service.init(AppLanguageType.english);
       final validForCharacters = getCharacterPossibleAscensionStats();
       final validForWeapons = getWeaponPossibleAscensionStats();
