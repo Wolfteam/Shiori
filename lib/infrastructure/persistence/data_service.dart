@@ -11,6 +11,7 @@ import 'package:shiori/domain/services/persistence/custom_builds_data_service.da
 import 'package:shiori/domain/services/persistence/game_codes_data_service.dart';
 import 'package:shiori/domain/services/persistence/inventory_data_service.dart';
 import 'package:shiori/domain/services/persistence/notifications_data_service.dart';
+import 'package:shiori/domain/services/persistence/pity_counter_data_service.dart';
 import 'package:shiori/domain/services/persistence/tier_list_data_service.dart';
 import 'package:shiori/domain/services/resources_service.dart';
 import 'package:shiori/infrastructure/persistence/calculator_data_service.dart';
@@ -18,10 +19,12 @@ import 'package:shiori/infrastructure/persistence/custom_builds_data_service.dar
 import 'package:shiori/infrastructure/persistence/game_codes_data_service.dart';
 import 'package:shiori/infrastructure/persistence/inventory_data_service.dart';
 import 'package:shiori/infrastructure/persistence/notifications_data_service.dart';
+import 'package:shiori/infrastructure/persistence/pity_counter_data_service.dart';
 import 'package:shiori/infrastructure/persistence/tier_list_data_service.dart';
 import 'package:synchronized/synchronized.dart';
 
 class DataServiceImpl implements DataService {
+  final PityCounterDataService _pityCounter;
   final InventoryDataService _inventory;
   final CustomBuildsDataService _builds;
   final NotificationsDataService _notifications;
@@ -32,6 +35,9 @@ class DataServiceImpl implements DataService {
 
   final _initLock = Lock();
   final _deleteAllLock = Lock();
+
+  @override
+  PityCounterDataService get pityCounter => _pityCounter;
 
   @override
   CalculatorDataService get calculator => _calculator;
@@ -52,7 +58,8 @@ class DataServiceImpl implements DataService {
   TierListDataService get tierList => _tierList;
 
   DataServiceImpl(GenshinService genshinService, CalculatorService calculatorService, ResourceService resourceService)
-      : _inventory = InventoryDataServiceImpl(genshinService),
+      : _pityCounter = PityCounterDataServiceImpl(),
+        _inventory = InventoryDataServiceImpl(genshinService),
         _builds = CustomBuildsDataServiceImpl(genshinService, resourceService),
         _notifications = NotificationsDataServiceImpl(genshinService),
         _gameCodes = GameCodesDataServiceImpl(genshinService, resourceService),
@@ -62,6 +69,7 @@ class DataServiceImpl implements DataService {
 
   Future<void> _init() async {
     _registerAdapters();
+    await _pityCounter.init();
     await _calculator.init();
     await _inventory.init();
     await _builds.init();
@@ -90,6 +98,7 @@ class DataServiceImpl implements DataService {
   @override
   Future<void> deleteThemAll() async {
     await _deleteAllLock.synchronized(() async {
+      await _pityCounter.deleteThemAll();
       await _calculator.deleteThemAll();
       await _inventory.deleteThemAll();
       await _builds.deleteThemAll();
