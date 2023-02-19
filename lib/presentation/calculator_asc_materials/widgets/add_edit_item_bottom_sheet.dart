@@ -99,7 +99,7 @@ class AddEditItemBottomSheet extends StatelessWidget {
                 Text(
                   s.level,
                   textAlign: TextAlign.center,
-                  style: theme.textTheme.subtitle2!.copyWith(fontWeight: FontWeight.bold),
+                  style: theme.textTheme.titleSmall!.copyWith(fontWeight: FontWeight.bold),
                 ),
                 Container(
                   margin: const EdgeInsets.only(bottom: 5),
@@ -117,12 +117,12 @@ class AddEditItemBottomSheet extends StatelessWidget {
                     ],
                   ),
                 ),
-                Text(s.currentAscension, textAlign: TextAlign.center, style: theme.textTheme.subtitle2),
+                Text(s.currentAscension, textAlign: TextAlign.center, style: theme.textTheme.titleSmall),
                 AscensionLevel(
                   level: state.currentAscensionLevel,
                   onSave: (newValue) => _ascensionLevelChanged(newValue, true, context),
                 ),
-                Text(s.desiredAscension, textAlign: TextAlign.center, style: theme.textTheme.subtitle2),
+                Text(s.desiredAscension, textAlign: TextAlign.center, style: theme.textTheme.titleSmall),
                 AscensionLevel(
                   level: state.desiredAscensionLevel,
                   onSave: (newValue) => _ascensionLevelChanged(newValue, false, context),
@@ -185,7 +185,7 @@ class AddEditItemBottomSheet extends StatelessWidget {
             Text(
               s.level,
               textAlign: TextAlign.center,
-              style: theme.textTheme.subtitle2!.copyWith(fontWeight: FontWeight.bold),
+              style: theme.textTheme.titleSmall!.copyWith(fontWeight: FontWeight.bold),
             ),
             Container(
               margin: const EdgeInsets.only(bottom: 5),
@@ -203,12 +203,12 @@ class AddEditItemBottomSheet extends StatelessWidget {
                 ],
               ),
             ),
-            Text(s.currentAscension, textAlign: TextAlign.center, style: theme.textTheme.subtitle2),
+            Text(s.currentAscension, textAlign: TextAlign.center, style: theme.textTheme.titleSmall),
             AscensionLevel(
               level: state.currentAscensionLevel,
               onSave: (newValue) => _ascensionLevelChanged(newValue, true, context),
             ),
-            Text(s.desiredAscension, textAlign: TextAlign.center, style: theme.textTheme.subtitle2),
+            Text(s.desiredAscension, textAlign: TextAlign.center, style: theme.textTheme.titleSmall),
             AscensionLevel(
               level: state.desiredAscensionLevel,
               onSave: (newValue) => _ascensionLevelChanged(newValue, false, context),
@@ -279,7 +279,7 @@ class _UseMaterialsFromInventoryToggleButton extends StatelessWidget {
       children: [
         Text(
           s.useMaterialsFromInventory,
-          style: theme.textTheme.subtitle2!.copyWith(fontWeight: FontWeight.bold),
+          style: theme.textTheme.titleSmall!.copyWith(fontWeight: FontWeight.bold),
         ),
         Container(
           margin: const EdgeInsets.only(top: 5),

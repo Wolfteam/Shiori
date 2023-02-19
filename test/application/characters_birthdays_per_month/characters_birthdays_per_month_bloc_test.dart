@@ -13,30 +13,30 @@ import '../../common.dart';
 import '../../mocks.mocks.dart';
 
 void main() {
-  late LocaleService _localeService;
-  late SettingsService _settingsService;
-  late GenshinService _genshinService;
-  late TelemetryService _telemetryService;
+  late LocaleService localeService;
+  late SettingsService settingsService;
+  late GenshinService genshinService;
+  late TelemetryService telemetryService;
 
   setUpAll(() {
     TestWidgetsFlutterBinding.ensureInitialized();
-    _settingsService = MockSettingsService();
-    when(_settingsService.language).thenReturn(AppLanguageType.english);
-    when(_settingsService.showCharacterDetails).thenReturn(true);
-    _localeService = LocaleServiceImpl(_settingsService);
-    final resourceService = getResourceService(_settingsService);
-    _genshinService = GenshinServiceImpl(resourceService, _localeService);
-    _telemetryService = MockTelemetryService();
+    settingsService = MockSettingsService();
+    when(settingsService.language).thenReturn(AppLanguageType.english);
+    when(settingsService.showCharacterDetails).thenReturn(true);
+    localeService = LocaleServiceImpl(settingsService);
+    final resourceService = getResourceService(settingsService);
+    genshinService = GenshinServiceImpl(resourceService, localeService);
+    telemetryService = MockTelemetryService();
 
     return Future(() async {
-      await _genshinService.init(AppLanguageType.english);
+      await genshinService.init(AppLanguageType.english);
     });
   });
 
   test(
     'Initial state',
     () => expect(
-      CharactersBirthdaysPerMonthBloc(_genshinService, _telemetryService).state,
+      CharactersBirthdaysPerMonthBloc(genshinService, telemetryService).state,
       const CharactersBirthdaysPerMonthState.loading(),
     ),
   );
@@ -44,17 +44,17 @@ void main() {
   group('Init', () {
     blocTest<CharactersBirthdaysPerMonthBloc, CharactersBirthdaysPerMonthState>(
       'emits loaded state',
-      build: () => CharactersBirthdaysPerMonthBloc(_genshinService, _telemetryService),
+      build: () => CharactersBirthdaysPerMonthBloc(genshinService, telemetryService),
       act: (bloc) => bloc.add(const CharactersBirthdaysPerMonthEvent.init(month: DateTime.january)),
       expect: () {
-        final characters = _genshinService.characters.getCharacterBirthdays(month: DateTime.january);
+        final characters = genshinService.characters.getCharacterBirthdays(month: DateTime.january);
         return [CharactersBirthdaysPerMonthState.loaded(characters: characters, month: DateTime.january)];
       },
     );
 
     blocTest<CharactersBirthdaysPerMonthBloc, CharactersBirthdaysPerMonthState>(
       'invalid month',
-      build: () => CharactersBirthdaysPerMonthBloc(_genshinService, _telemetryService),
+      build: () => CharactersBirthdaysPerMonthBloc(genshinService, telemetryService),
       act: (bloc) => bloc.add(const CharactersBirthdaysPerMonthEvent.init(month: 13)),
       errors: () => [isA<Exception>()],
     );

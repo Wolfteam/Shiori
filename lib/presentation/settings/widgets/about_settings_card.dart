@@ -34,7 +34,7 @@ class AboutSettingsCard extends StatelessWidget {
                 margin: const EdgeInsets.only(left: 5),
                 child: Text(
                   s.about,
-                  style: textTheme.headline6,
+                  style: textTheme.titleLarge,
                 ),
               ),
             ],
@@ -62,7 +62,7 @@ class AboutSettingsCard extends StatelessWidget {
                 Text(
                   s.appName,
                   textAlign: TextAlign.center,
-                  style: textTheme.subtitle2,
+                  style: textTheme.titleSmall,
                 ),
                 BlocBuilder<SettingsBloc, SettingsState>(
                   builder: (context, state) {
@@ -71,7 +71,7 @@ class AboutSettingsCard extends StatelessWidget {
                       loaded: (state) => Text(
                         s.appVersion(state.appVersion),
                         textAlign: TextAlign.center,
-                        style: textTheme.subtitle2,
+                        style: textTheme.titleSmall,
                       ),
                     );
                   },
@@ -160,7 +160,7 @@ class AboutSettingsCard extends StatelessWidget {
                   margin: const EdgeInsets.only(top: 10),
                   child: Text(
                     s.disclaimer,
-                    style: textTheme.subtitle1!.copyWith(fontWeight: FontWeight.bold),
+                    style: textTheme.titleMedium!.copyWith(fontWeight: FontWeight.bold),
                   ),
                 ),
                 Container(
@@ -171,7 +171,7 @@ class AboutSettingsCard extends StatelessWidget {
                   margin: const EdgeInsets.only(top: 10),
                   child: Text(
                     s.privacy,
-                    style: textTheme.subtitle1!.copyWith(fontWeight: FontWeight.bold),
+                    style: textTheme.titleMedium!.copyWith(fontWeight: FontWeight.bold),
                   ),
                 ),
                 Container(
@@ -188,7 +188,7 @@ class AboutSettingsCard extends StatelessWidget {
                   margin: const EdgeInsets.only(top: 10),
                   child: Text(
                     s.support,
-                    style: textTheme.subtitle1!.copyWith(fontWeight: FontWeight.bold),
+                    style: textTheme.titleMedium!.copyWith(fontWeight: FontWeight.bold),
                   ),
                 ),
                 Container(

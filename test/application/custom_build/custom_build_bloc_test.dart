@@ -17,57 +17,57 @@ import '../../mocks.mocks.dart';
 const _dbFolder = 'shiori_custom_build_bloc_tests';
 
 void main() {
-  late GenshinService _genshinService;
-  late DataService _dataService;
-  late TelemetryService _telemetryService;
-  late LoggingService _loggingService;
-  late CustomBuildsBloc _customBuildsBloc;
-  late ResourceService _resourceService;
-  late final String _dbPath;
+  late GenshinService genshinService;
+  late DataService dataService;
+  late TelemetryService telemetryService;
+  late LoggingService loggingService;
+  late CustomBuildsBloc customBuildsBloc;
+  late ResourceService resourceService;
+  late final String dbPath;
 
-  const _keqingKey = 'keqing';
-  const _ganyuKey = 'ganyu';
-  const _aquilaFavoniaKey = 'aquila-favonia';
-  const _thunderingFuryKey = 'thundering-fury';
+  const keqingKey = 'keqing';
+  const ganyuKey = 'ganyu';
+  const aquilaFavoniaKey = 'aquila-favonia';
+  const thunderingFuryKey = 'thundering-fury';
 
   setUpAll(() {
     TestWidgetsFlutterBinding.ensureInitialized();
     final settingsService = SettingsServiceImpl(MockLoggingService());
     final localeService = LocaleServiceImpl(settingsService);
-    _resourceService = getResourceService(settingsService);
-    _genshinService = GenshinServiceImpl(_resourceService, localeService);
-    _dataService = DataServiceImpl(_genshinService, CalculatorServiceImpl(_genshinService, _resourceService), _resourceService);
-    _telemetryService = MockTelemetryService();
-    _loggingService = MockLoggingService();
-    _customBuildsBloc = CustomBuildsBloc(_dataService);
+    resourceService = getResourceService(settingsService);
+    genshinService = GenshinServiceImpl(resourceService, localeService);
+    dataService = DataServiceImpl(genshinService, CalculatorServiceImpl(genshinService, resourceService), resourceService);
+    telemetryService = MockTelemetryService();
+    loggingService = MockLoggingService();
+    customBuildsBloc = CustomBuildsBloc(dataService);
 
     return Future(() async {
-      await _genshinService.init(AppLanguageType.english);
-      _dbPath = await getDbPath(_dbFolder);
-      await _dataService.initForTests(_dbPath);
+      await genshinService.init(AppLanguageType.english);
+      dbPath = await getDbPath(_dbFolder);
+      await dataService.initForTests(dbPath);
     });
   });
 
   tearDownAll(() {
     return Future(() async {
-      await _dataService.closeThemAll();
-      await deleteDbFolder(_dbPath);
+      await dataService.closeThemAll();
+      await deleteDbFolder(dbPath);
     });
   });
 
-  CustomBuildBloc _getBloc() => CustomBuildBloc(
-        _genshinService,
-        _dataService,
-        _telemetryService,
-        _loggingService,
-        _resourceService,
-        _customBuildsBloc,
+  CustomBuildBloc getBloc() => CustomBuildBloc(
+        genshinService,
+        dataService,
+        telemetryService,
+        loggingService,
+        resourceService,
+        customBuildsBloc,
       );
 
-  Future<CustomBuildModel> _saveCustomBuild(String charKey) async {
-    final artifact = _genshinService.artifacts.getArtifactForCard(_thunderingFuryKey);
-    final weapon = _genshinService.weapons.getWeapon(_aquilaFavoniaKey);
-    return _dataService.customBuilds.saveCustomBuild(
+  Future<CustomBuildModel> saveCustomBuild(String charKey) async {
+    final artifact = genshinService.artifacts.getArtifactForCard(thunderingFuryKey);
+    final weapon = genshinService.weapons.getWeapon(aquilaFavoniaKey);
+    return dataService.customBuilds.saveCustomBuild(
       charKey,
       '$charKey pro DPS',
       CharacterRoleType.dps,
@@ -188,17 +188,17 @@ void main() {
 
   test(
     'Initial state',
-    () => expect(_getBloc().state, const CustomBuildState.loading()),
+    () => expect(getBloc().state, const CustomBuildState.loading()),
   );
 
   group('Load', () {
     blocTest<CustomBuildBloc, CustomBuildState>(
       'create',
-      build: () => _getBloc(),
+      build: () => getBloc(),
       act: (bloc) => bloc.add(const CustomBuildEvent.load(initialTitle: 'DPS PRO')),
       verify: (bloc) => bloc.state.maybeMap(
         loaded: (state) {
-          final character = _genshinService.characters.getCharactersForCard().first;
+          final character = genshinService.characters.getCharactersForCard().first;
           expect(state.title, 'DPS PRO');
           expect(state.type, CharacterRoleType.dps);
           expect(state.subType, CharacterRoleSubType.none);
@@ -216,23 +216,23 @@ void main() {
       ),
     );
 
-    int _buildKey = 0;
+    int buildKey = 0;
     blocTest<CustomBuildBloc, CustomBuildState>(
-      'existing $_keqingKey build',
+      'existing $keqingKey build',
       setUp: () async {
-        final build = await _saveCustomBuild(_keqingKey);
-        _buildKey = build.key;
+        final build = await saveCustomBuild(keqingKey);
+        buildKey = build.key;
       },
-      build: () => _getBloc(),
-      act: (bloc) => bloc.add(CustomBuildEvent.load(initialTitle: 'XXX', key: _buildKey)),
+      build: () => getBloc(),
+      act: (bloc) => bloc.add(CustomBuildEvent.load(initialTitle: 'XXX', key: buildKey)),
       verify: (bloc) => bloc.state.maybeMap(
         loaded: (state) {
-          expect(state.title, '$_keqingKey pro DPS');
+          expect(state.title, '$keqingKey pro DPS');
           expect(state.type, CharacterRoleType.dps);
           expect(state.subType, CharacterRoleSubType.electro);
           expect(state.showOnCharacterDetail, true);
           expect(state.isRecommended, true);
-          expect(state.character.key, _keqingKey);
+          expect(state.character.key, keqingKey);
           expect(state.weapons.length == 1, true);
           expect(state.artifacts.length == 5, true);
           expect(state.teamCharacters.length == 3, true);
@@ -248,13 +248,13 @@ void main() {
   group('General', () {
     blocTest<CustomBuildBloc, CustomBuildState>(
       'character changed',
-      build: () => _getBloc(),
+      build: () => getBloc(),
       act: (bloc) => bloc
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
-        ..add(const CustomBuildEvent.characterChanged(newKey: _ganyuKey)),
+        ..add(const CustomBuildEvent.characterChanged(newKey: ganyuKey)),
       verify: (bloc) => bloc.state.maybeMap(
         loaded: (state) {
-          expect(state.character.key, _ganyuKey);
+          expect(state.character.key, ganyuKey);
         },
         orElse: () => throw Exception('Invalid custom build state'),
       ),
@@ -262,7 +262,7 @@ void main() {
 
     blocTest<CustomBuildBloc, CustomBuildState>(
       'title changed',
-      build: () => _getBloc(),
+      build: () => getBloc(),
       act: (bloc) => bloc
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
         ..add(const CustomBuildEvent.titleChanged(newValue: 'KEQING PRO')),
@@ -276,7 +276,7 @@ void main() {
 
     blocTest<CustomBuildBloc, CustomBuildState>(
       'role changed',
-      build: () => _getBloc(),
+      build: () => getBloc(),
       act: (bloc) => bloc
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
         ..add(const CustomBuildEvent.roleChanged(newValue: CharacterRoleType.offFieldDps)),
@@ -290,7 +290,7 @@ void main() {
 
     blocTest<CustomBuildBloc, CustomBuildState>(
       'sub role changed',
-      build: () => _getBloc(),
+      build: () => getBloc(),
       act: (bloc) => bloc
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
         ..add(const CustomBuildEvent.subRoleChanged(newValue: CharacterRoleSubType.cryo)),
@@ -304,7 +304,7 @@ void main() {
 
     blocTest<CustomBuildBloc, CustomBuildState>(
       'show on character detail changed',
-      build: () => _getBloc(),
+      build: () => getBloc(),
       act: (bloc) => bloc
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
         ..add(const CustomBuildEvent.showOnCharacterDetailChanged(newValue: false)),
@@ -318,7 +318,7 @@ void main() {
 
     blocTest<CustomBuildBloc, CustomBuildState>(
       'is recommended changed',
-      build: () => _getBloc(),
+      build: () => getBloc(),
       act: (bloc) => bloc
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
         ..add(const CustomBuildEvent.isRecommendedChanged(newValue: true)),
@@ -334,7 +334,7 @@ void main() {
   group('Notes', () {
     blocTest<CustomBuildBloc, CustomBuildState>(
       'add',
-      build: () => _getBloc(),
+      build: () => getBloc(),
       act: (bloc) => bloc
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
         ..add(const CustomBuildEvent.addNote(note: 'This build needs 200 ER'))
@@ -349,7 +349,7 @@ void main() {
 
     blocTest<CustomBuildBloc, CustomBuildState>(
       'add, note is not valid',
-      build: () => _getBloc(),
+      build: () => getBloc(),
       act: (bloc) => bloc
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
         ..add(const CustomBuildEvent.addNote(note: 'This build needs 200 ER'))
@@ -359,7 +359,7 @@ void main() {
 
     blocTest<CustomBuildBloc, CustomBuildState>(
       'delete',
-      build: () => _getBloc(),
+      build: () => getBloc(),
       act: (bloc) => bloc
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
         ..add(const CustomBuildEvent.addNote(note: 'This build needs 200 ER'))
@@ -374,7 +374,7 @@ void main() {
 
     blocTest<CustomBuildBloc, CustomBuildState>(
       'delete, index is not valid',
-      build: () => _getBloc(),
+      build: () => getBloc(),
       act: (bloc) => bloc
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
         ..add(const CustomBuildEvent.addNote(note: 'This build needs 200 ER'))
@@ -386,7 +386,7 @@ void main() {
   group('Skill priorities', () {
     blocTest<CustomBuildBloc, CustomBuildState>(
       'add',
-      build: () => _getBloc(),
+      build: () => getBloc(),
       act: (bloc) => bloc
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
         ..add(const CustomBuildEvent.addSkillPriority(type: CharacterSkillType.elementalBurst))
@@ -401,7 +401,7 @@ void main() {
 
     blocTest<CustomBuildBloc, CustomBuildState>(
       'add, skill already exist',
-      build: () => _getBloc(),
+      build: () => getBloc(),
       act: (bloc) => bloc
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
         ..add(const CustomBuildEvent.addSkillPriority(type: CharacterSkillType.elementalBurst))
@@ -417,7 +417,7 @@ void main() {
 
     blocTest<CustomBuildBloc, CustomBuildState>(
       'add, skill is not valid',
-      build: () => _getBloc(),
+      build: () => getBloc(),
       act: (bloc) => bloc
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
         ..add(const CustomBuildEvent.addSkillPriority(type: CharacterSkillType.elementalBurst))
@@ -427,7 +427,7 @@ void main() {
 
     blocTest<CustomBuildBloc, CustomBuildState>(
       'delete',
-      build: () => _getBloc(),
+      build: () => getBloc(),
       act: (bloc) => bloc
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
         ..add(const CustomBuildEvent.addSkillPriority(type: CharacterSkillType.elementalBurst))
@@ -443,7 +443,7 @@ void main() {
 
     blocTest<CustomBuildBloc, CustomBuildState>(
       'delete, index is not valid',
-      build: () => _getBloc(),
+      build: () => getBloc(),
       act: (bloc) => bloc
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
         ..add(const CustomBuildEvent.addSkillPriority(type: CharacterSkillType.elementalBurst))
@@ -456,14 +456,14 @@ void main() {
   group('Weapons', () {
     blocTest<CustomBuildBloc, CustomBuildState>(
       'add',
-      build: () => _getBloc(),
+      build: () => getBloc(),
       act: (bloc) => bloc
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
-        ..add(const CustomBuildEvent.addWeapon(key: _aquilaFavoniaKey)),
+        ..add(const CustomBuildEvent.addWeapon(key: aquilaFavoniaKey)),
       verify: (bloc) => bloc.state.maybeMap(
         loaded: (state) {
           expect(state.weapons.length == 1, true);
-          expect(state.weapons.first.key == _aquilaFavoniaKey, true);
+          expect(state.weapons.first.key == aquilaFavoniaKey, true);
         },
         orElse: () => throw Exception('Invalid custom build state'),
       ),
@@ -471,31 +471,31 @@ void main() {
 
     blocTest<CustomBuildBloc, CustomBuildState>(
       'add, weapon already exists',
-      build: () => _getBloc(),
+      build: () => getBloc(),
       act: (bloc) => bloc
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
-        ..add(const CustomBuildEvent.addWeapon(key: _aquilaFavoniaKey))
-        ..add(const CustomBuildEvent.addWeapon(key: _aquilaFavoniaKey)),
+        ..add(const CustomBuildEvent.addWeapon(key: aquilaFavoniaKey))
+        ..add(const CustomBuildEvent.addWeapon(key: aquilaFavoniaKey)),
       errors: () => [isA<Exception>()],
     );
 
     blocTest<CustomBuildBloc, CustomBuildState>(
       'add, weapon is not valid for current character',
-      build: () => _getBloc(),
+      build: () => getBloc(),
       act: (bloc) => bloc
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
-        ..add(const CustomBuildEvent.characterChanged(newKey: _ganyuKey))
-        ..add(const CustomBuildEvent.addWeapon(key: _aquilaFavoniaKey)),
+        ..add(const CustomBuildEvent.characterChanged(newKey: ganyuKey))
+        ..add(const CustomBuildEvent.addWeapon(key: aquilaFavoniaKey)),
       errors: () => [isA<Exception>()],
     );
 
     blocTest<CustomBuildBloc, CustomBuildState>(
       'refinement changed',
-      build: () => _getBloc(),
+      build: () => getBloc(),
       act: (bloc) => bloc
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
-        ..add(const CustomBuildEvent.addWeapon(key: _aquilaFavoniaKey))
-        ..add(const CustomBuildEvent.weaponRefinementChanged(key: _aquilaFavoniaKey, newValue: 5)),
+        ..add(const CustomBuildEvent.addWeapon(key: aquilaFavoniaKey))
+        ..add(const CustomBuildEvent.weaponRefinementChanged(key: aquilaFavoniaKey, newValue: 5)),
       verify: (bloc) => bloc.state.maybeMap(
         loaded: (state) {
           expect(state.weapons.first.refinement == 5, true);
@@ -506,21 +506,21 @@ void main() {
 
     blocTest<CustomBuildBloc, CustomBuildState>(
       'refinement changed, weapon does not exist',
-      build: () => _getBloc(),
+      build: () => getBloc(),
       act: (bloc) => bloc
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
-        ..add(const CustomBuildEvent.weaponRefinementChanged(key: _aquilaFavoniaKey, newValue: 5)),
+        ..add(const CustomBuildEvent.weaponRefinementChanged(key: aquilaFavoniaKey, newValue: 5)),
       errors: () => [isA<Exception>()],
     );
 
     blocTest<CustomBuildBloc, CustomBuildState>(
       'refinement changed, refinement has not changed',
-      build: () => _getBloc(),
+      build: () => getBloc(),
       act: (bloc) => bloc
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
-        ..add(const CustomBuildEvent.addWeapon(key: _aquilaFavoniaKey))
-        ..add(const CustomBuildEvent.weaponRefinementChanged(key: _aquilaFavoniaKey, newValue: 5))
-        ..add(const CustomBuildEvent.weaponRefinementChanged(key: _aquilaFavoniaKey, newValue: 5)),
+        ..add(const CustomBuildEvent.addWeapon(key: aquilaFavoniaKey))
+        ..add(const CustomBuildEvent.weaponRefinementChanged(key: aquilaFavoniaKey, newValue: 5))
+        ..add(const CustomBuildEvent.weaponRefinementChanged(key: aquilaFavoniaKey, newValue: 5)),
       verify: (bloc) => bloc.state.maybeMap(
         loaded: (state) {
           expect(state.weapons.first.refinement == 5, true);
@@ -531,20 +531,20 @@ void main() {
 
     blocTest<CustomBuildBloc, CustomBuildState>(
       'refinement changed, invalid value',
-      build: () => _getBloc(),
+      build: () => getBloc(),
       act: (bloc) => bloc
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
-        ..add(const CustomBuildEvent.weaponRefinementChanged(key: _aquilaFavoniaKey, newValue: 6)),
+        ..add(const CustomBuildEvent.weaponRefinementChanged(key: aquilaFavoniaKey, newValue: 6)),
       errors: () => [isA<Exception>()],
     );
 
     blocTest<CustomBuildBloc, CustomBuildState>(
       'delete',
-      build: () => _getBloc(),
+      build: () => getBloc(),
       act: (bloc) => bloc
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
-        ..add(const CustomBuildEvent.weaponRefinementChanged(key: _aquilaFavoniaKey, newValue: 5))
-        ..add(const CustomBuildEvent.deleteWeapon(key: _aquilaFavoniaKey)),
+        ..add(const CustomBuildEvent.weaponRefinementChanged(key: aquilaFavoniaKey, newValue: 5))
+        ..add(const CustomBuildEvent.deleteWeapon(key: aquilaFavoniaKey)),
       verify: (bloc) => bloc.state.maybeMap(
         loaded: (state) {
           expect(state.weapons.isEmpty, true);
@@ -555,22 +555,22 @@ void main() {
 
     blocTest<CustomBuildBloc, CustomBuildState>(
       'delete, weapon does not exist',
-      build: () => _getBloc(),
+      build: () => getBloc(),
       act: (bloc) => bloc
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
-        ..add(const CustomBuildEvent.addWeapon(key: _aquilaFavoniaKey))
-        ..add(const CustomBuildEvent.weaponRefinementChanged(key: _aquilaFavoniaKey, newValue: 5))
-        ..add(const CustomBuildEvent.deleteWeapon(key: _aquilaFavoniaKey))
-        ..add(const CustomBuildEvent.deleteWeapon(key: _aquilaFavoniaKey)),
+        ..add(const CustomBuildEvent.addWeapon(key: aquilaFavoniaKey))
+        ..add(const CustomBuildEvent.weaponRefinementChanged(key: aquilaFavoniaKey, newValue: 5))
+        ..add(const CustomBuildEvent.deleteWeapon(key: aquilaFavoniaKey))
+        ..add(const CustomBuildEvent.deleteWeapon(key: aquilaFavoniaKey)),
       errors: () => [isA<Exception>()],
     );
 
     blocTest<CustomBuildBloc, CustomBuildState>(
       'delete all weapons',
-      build: () => _getBloc(),
+      build: () => getBloc(),
       act: (bloc) => bloc
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
-        ..add(const CustomBuildEvent.addWeapon(key: _aquilaFavoniaKey))
+        ..add(const CustomBuildEvent.addWeapon(key: aquilaFavoniaKey))
         ..add(const CustomBuildEvent.deleteWeapons()),
       verify: (bloc) => bloc.state.maybeMap(
         loaded: (state) {
@@ -582,17 +582,17 @@ void main() {
 
     blocTest<CustomBuildBloc, CustomBuildState>(
       'order changed',
-      build: () => _getBloc(),
+      build: () => getBloc(),
       act: (bloc) => bloc
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
-        ..add(const CustomBuildEvent.characterChanged(newKey: _keqingKey))
-        ..add(const CustomBuildEvent.addWeapon(key: _aquilaFavoniaKey))
+        ..add(const CustomBuildEvent.characterChanged(newKey: keqingKey))
+        ..add(const CustomBuildEvent.addWeapon(key: aquilaFavoniaKey))
         ..add(const CustomBuildEvent.addWeapon(key: 'the-flute'))
         ..add(
           CustomBuildEvent.weaponsOrderChanged(
             weapons: [
               SortableItem('the-flute', 'The Flute'),
-              SortableItem(_aquilaFavoniaKey, 'Aquila Favonia'),
+              SortableItem(aquilaFavoniaKey, 'Aquila Favonia'),
             ],
           ),
         ),
@@ -600,7 +600,7 @@ void main() {
         loaded: (state) {
           expect(state.weapons.length == 2, true);
           expect(state.weapons.first.key == 'the-flute', true);
-          expect(state.weapons.last.key == _aquilaFavoniaKey, true);
+          expect(state.weapons.last.key == aquilaFavoniaKey, true);
         },
         orElse: () => throw Exception('Invalid custom build state'),
       ),
@@ -608,20 +608,20 @@ void main() {
 
     blocTest<CustomBuildBloc, CustomBuildState>(
       'stat changed',
-      build: () => _getBloc(),
+      build: () => getBloc(),
       act: (bloc) {
-        final weapon = _genshinService.weapons.getWeapon(_aquilaFavoniaKey);
+        final weapon = genshinService.weapons.getWeapon(aquilaFavoniaKey);
         return bloc
           ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
-          ..add(const CustomBuildEvent.characterChanged(newKey: _keqingKey))
-          ..add(const CustomBuildEvent.addWeapon(key: _aquilaFavoniaKey))
-          ..add(CustomBuildEvent.weaponStatChanged(key: _aquilaFavoniaKey, newValue: weapon.stats[3]));
+          ..add(const CustomBuildEvent.characterChanged(newKey: keqingKey))
+          ..add(const CustomBuildEvent.addWeapon(key: aquilaFavoniaKey))
+          ..add(CustomBuildEvent.weaponStatChanged(key: aquilaFavoniaKey, newValue: weapon.stats[3]));
       },
       verify: (bloc) => bloc.state.maybeMap(
         loaded: (state) {
-          final stat = _genshinService.weapons.getWeapon(_aquilaFavoniaKey).stats[3];
+          final stat = genshinService.weapons.getWeapon(aquilaFavoniaKey).stats[3];
           expect(state.weapons.length == 1, true);
-          expect(state.weapons.first.key == _aquilaFavoniaKey, true);
+          expect(state.weapons.first.key == aquilaFavoniaKey, true);
           expect(state.weapons.first.stat == stat, true);
         },
         orElse: () => throw Exception('Invalid custom build state'),
@@ -632,15 +632,15 @@ void main() {
   group('Artifacts', () {
     blocTest<CustomBuildBloc, CustomBuildState>(
       'add',
-      build: () => _getBloc(),
+      build: () => getBloc(),
       act: (bloc) => bloc
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
-        ..add(const CustomBuildEvent.addArtifact(key: _thunderingFuryKey, type: ArtifactType.flower, statType: StatType.hp)),
+        ..add(const CustomBuildEvent.addArtifact(key: thunderingFuryKey, type: ArtifactType.flower, statType: StatType.hp)),
       verify: (bloc) => bloc.state.maybeMap(
         loaded: (state) {
           expect(state.artifacts.length == 1, true);
           final artifact = state.artifacts.first;
-          expect(artifact.key == _thunderingFuryKey, true);
+          expect(artifact.key == thunderingFuryKey, true);
           expect(artifact.type == ArtifactType.flower, true);
           expect(artifact.statType == StatType.hp, true);
           expect(artifact.subStats.isEmpty, true);
@@ -651,16 +651,16 @@ void main() {
 
     blocTest<CustomBuildBloc, CustomBuildState>(
       'add, type already exists',
-      build: () => _getBloc(),
+      build: () => getBloc(),
       act: (bloc) => bloc
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
-        ..add(const CustomBuildEvent.addArtifact(key: _thunderingFuryKey, type: ArtifactType.crown, statType: StatType.hp))
-        ..add(const CustomBuildEvent.addArtifact(key: _thunderingFuryKey, type: ArtifactType.crown, statType: StatType.critDmgPercentage)),
+        ..add(const CustomBuildEvent.addArtifact(key: thunderingFuryKey, type: ArtifactType.crown, statType: StatType.hp))
+        ..add(const CustomBuildEvent.addArtifact(key: thunderingFuryKey, type: ArtifactType.crown, statType: StatType.critDmgPercentage)),
       verify: (bloc) => bloc.state.maybeMap(
         loaded: (state) {
           expect(state.artifacts.length == 1, true);
           final artifact = state.artifacts.first;
-          expect(artifact.key == _thunderingFuryKey, true);
+          expect(artifact.key == thunderingFuryKey, true);
           expect(artifact.type == ArtifactType.crown, true);
           expect(artifact.statType == StatType.critDmgPercentage, true);
           expect(artifact.subStats.isEmpty, true);
@@ -671,14 +671,14 @@ void main() {
 
     blocTest<CustomBuildBloc, CustomBuildState>(
       'add all types',
-      build: () => _getBloc(),
+      build: () => getBloc(),
       act: (bloc) => bloc
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
-        ..add(const CustomBuildEvent.addArtifact(key: _thunderingFuryKey, type: ArtifactType.flower, statType: StatType.hp))
-        ..add(const CustomBuildEvent.addArtifact(key: _thunderingFuryKey, type: ArtifactType.plume, statType: StatType.atk))
-        ..add(const CustomBuildEvent.addArtifact(key: _thunderingFuryKey, type: ArtifactType.clock, statType: StatType.atkPercentage))
-        ..add(const CustomBuildEvent.addArtifact(key: _thunderingFuryKey, type: ArtifactType.goblet, statType: StatType.electroDmgBonusPercentage))
-        ..add(const CustomBuildEvent.addArtifact(key: _thunderingFuryKey, type: ArtifactType.crown, statType: StatType.critRatePercentage)),
+        ..add(const CustomBuildEvent.addArtifact(key: thunderingFuryKey, type: ArtifactType.flower, statType: StatType.hp))
+        ..add(const CustomBuildEvent.addArtifact(key: thunderingFuryKey, type: ArtifactType.plume, statType: StatType.atk))
+        ..add(const CustomBuildEvent.addArtifact(key: thunderingFuryKey, type: ArtifactType.clock, statType: StatType.atkPercentage))
+        ..add(const CustomBuildEvent.addArtifact(key: thunderingFuryKey, type: ArtifactType.goblet, statType: StatType.electroDmgBonusPercentage))
+        ..add(const CustomBuildEvent.addArtifact(key: thunderingFuryKey, type: ArtifactType.crown, statType: StatType.critRatePercentage)),
       verify: (bloc) => bloc.state.maybeMap(
         loaded: (state) {
           expect(state.artifacts.length == 5, true);
@@ -691,7 +691,7 @@ void main() {
           ];
           for (var i = 0; i < state.artifacts.length; i++) {
             final artifact = state.artifacts[i];
-            expect(artifact.key == _thunderingFuryKey, true);
+            expect(artifact.key == thunderingFuryKey, true);
             expect(artifact.type == ArtifactType.values[i], true);
             expect(artifact.statType == expectedStatTypes[i], true);
             expect(artifact.subStats.isEmpty, true);
@@ -703,15 +703,15 @@ void main() {
 
     blocTest<CustomBuildBloc, CustomBuildState>(
       'add all types but updated the last one',
-      build: () => _getBloc(),
+      build: () => getBloc(),
       act: (bloc) => bloc
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
-        ..add(const CustomBuildEvent.addArtifact(key: _thunderingFuryKey, type: ArtifactType.flower, statType: StatType.hp))
-        ..add(const CustomBuildEvent.addArtifact(key: _thunderingFuryKey, type: ArtifactType.plume, statType: StatType.atk))
-        ..add(const CustomBuildEvent.addArtifact(key: _thunderingFuryKey, type: ArtifactType.clock, statType: StatType.atkPercentage))
-        ..add(const CustomBuildEvent.addArtifact(key: _thunderingFuryKey, type: ArtifactType.goblet, statType: StatType.electroDmgBonusPercentage))
-        ..add(const CustomBuildEvent.addArtifact(key: _thunderingFuryKey, type: ArtifactType.crown, statType: StatType.critRatePercentage))
-        ..add(const CustomBuildEvent.addArtifact(key: _thunderingFuryKey, type: ArtifactType.crown, statType: StatType.critDmgPercentage)),
+        ..add(const CustomBuildEvent.addArtifact(key: thunderingFuryKey, type: ArtifactType.flower, statType: StatType.hp))
+        ..add(const CustomBuildEvent.addArtifact(key: thunderingFuryKey, type: ArtifactType.plume, statType: StatType.atk))
+        ..add(const CustomBuildEvent.addArtifact(key: thunderingFuryKey, type: ArtifactType.clock, statType: StatType.atkPercentage))
+        ..add(const CustomBuildEvent.addArtifact(key: thunderingFuryKey, type: ArtifactType.goblet, statType: StatType.electroDmgBonusPercentage))
+        ..add(const CustomBuildEvent.addArtifact(key: thunderingFuryKey, type: ArtifactType.crown, statType: StatType.critRatePercentage))
+        ..add(const CustomBuildEvent.addArtifact(key: thunderingFuryKey, type: ArtifactType.crown, statType: StatType.critDmgPercentage)),
       verify: (bloc) => bloc.state.maybeMap(
         loaded: (state) {
           expect(state.artifacts.length == 5, true);
@@ -724,7 +724,7 @@ void main() {
           ];
           for (var i = 0; i < state.artifacts.length; i++) {
             final artifact = state.artifacts[i];
-            expect(artifact.key == _thunderingFuryKey, true);
+            expect(artifact.key == thunderingFuryKey, true);
             expect(artifact.type == ArtifactType.values[i], true);
             expect(artifact.statType == expectedStatTypes[i], true);
             expect(artifact.subStats.isEmpty, true);
@@ -736,17 +736,17 @@ void main() {
 
     blocTest<CustomBuildBloc, CustomBuildState>(
       'add sub stats',
-      build: () => _getBloc(),
+      build: () => getBloc(),
       act: (bloc) => bloc
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
-        ..add(const CustomBuildEvent.addArtifact(key: _thunderingFuryKey, type: ArtifactType.flower, statType: StatType.hp))
+        ..add(const CustomBuildEvent.addArtifact(key: thunderingFuryKey, type: ArtifactType.flower, statType: StatType.hp))
         ..add(
           const CustomBuildEvent.addArtifactSubStats(
             type: ArtifactType.flower,
             subStats: [StatType.critDmgPercentage, StatType.critRatePercentage, StatType.atkPercentage, StatType.atk],
           ),
         )
-        ..add(const CustomBuildEvent.addArtifact(key: _thunderingFuryKey, type: ArtifactType.plume, statType: StatType.atk))
+        ..add(const CustomBuildEvent.addArtifact(key: thunderingFuryKey, type: ArtifactType.plume, statType: StatType.atk))
         ..add(
           const CustomBuildEvent.addArtifactSubStats(
             type: ArtifactType.plume,
@@ -772,7 +772,7 @@ void main() {
 
     blocTest<CustomBuildBloc, CustomBuildState>(
       'add sub stats, artifact does not exist',
-      build: () => _getBloc(),
+      build: () => getBloc(),
       act: (bloc) => bloc
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
         ..add(
@@ -783,7 +783,7 @@ void main() {
 
     blocTest<CustomBuildBloc, CustomBuildState>(
       'add sub-stats, sub-stat is not valid',
-      build: () => _getBloc(),
+      build: () => getBloc(),
       act: (bloc) => bloc
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
         ..add(
@@ -794,7 +794,7 @@ void main() {
 
     blocTest<CustomBuildBloc, CustomBuildState>(
       'add sub-stats, sub-stat is not valid',
-      build: () => _getBloc(),
+      build: () => getBloc(),
       act: (bloc) => bloc
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
         ..add(
@@ -805,10 +805,10 @@ void main() {
 
     blocTest<CustomBuildBloc, CustomBuildState>(
       'delete',
-      build: () => _getBloc(),
+      build: () => getBloc(),
       act: (bloc) => bloc
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
-        ..add(const CustomBuildEvent.addArtifact(key: _thunderingFuryKey, type: ArtifactType.flower, statType: StatType.hp))
+        ..add(const CustomBuildEvent.addArtifact(key: thunderingFuryKey, type: ArtifactType.flower, statType: StatType.hp))
         ..add(const CustomBuildEvent.deleteArtifact(type: ArtifactType.flower)),
       verify: (bloc) => bloc.state.maybeMap(
         loaded: (state) {
@@ -821,21 +821,21 @@ void main() {
 
     blocTest<CustomBuildBloc, CustomBuildState>(
       'delete, type does not exist',
-      build: () => _getBloc(),
+      build: () => getBloc(),
       act: (bloc) => bloc
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
-        ..add(const CustomBuildEvent.addArtifact(key: _thunderingFuryKey, type: ArtifactType.flower, statType: StatType.hp))
+        ..add(const CustomBuildEvent.addArtifact(key: thunderingFuryKey, type: ArtifactType.flower, statType: StatType.hp))
         ..add(const CustomBuildEvent.deleteArtifact(type: ArtifactType.crown)),
       errors: () => [isA<Exception>()],
     );
 
     blocTest<CustomBuildBloc, CustomBuildState>(
       'delete all artifacts',
-      build: () => _getBloc(),
+      build: () => getBloc(),
       act: (bloc) => bloc
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
-        ..add(const CustomBuildEvent.addArtifact(key: _thunderingFuryKey, type: ArtifactType.flower, statType: StatType.hp))
-        ..add(const CustomBuildEvent.addArtifact(key: _thunderingFuryKey, type: ArtifactType.plume, statType: StatType.atk))
+        ..add(const CustomBuildEvent.addArtifact(key: thunderingFuryKey, type: ArtifactType.flower, statType: StatType.hp))
+        ..add(const CustomBuildEvent.addArtifact(key: thunderingFuryKey, type: ArtifactType.plume, statType: StatType.atk))
         ..add(const CustomBuildEvent.deleteArtifacts()),
       verify: (bloc) => bloc.state.maybeMap(
         loaded: (state) {
@@ -849,11 +849,11 @@ void main() {
   group('Team characters', () {
     blocTest<CustomBuildBloc, CustomBuildState>(
       'add',
-      build: () => _getBloc(),
+      build: () => getBloc(),
       act: (bloc) => bloc
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
         ..add(
-          const CustomBuildEvent.addTeamCharacter(key: _ganyuKey, roleType: CharacterRoleType.offFieldDps, subType: CharacterRoleSubType.electro),
+          const CustomBuildEvent.addTeamCharacter(key: ganyuKey, roleType: CharacterRoleType.offFieldDps, subType: CharacterRoleSubType.electro),
         ),
       verify: (bloc) => bloc.state.maybeMap(
         loaded: (state) {
@@ -868,26 +868,26 @@ void main() {
 
     blocTest<CustomBuildBloc, CustomBuildState>(
       'add, team character is the same as the main one',
-      build: () => _getBloc(),
+      build: () => getBloc(),
       act: (bloc) => bloc
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
-        ..add(const CustomBuildEvent.characterChanged(newKey: _ganyuKey))
+        ..add(const CustomBuildEvent.characterChanged(newKey: ganyuKey))
         ..add(
-          const CustomBuildEvent.addTeamCharacter(key: _ganyuKey, roleType: CharacterRoleType.offFieldDps, subType: CharacterRoleSubType.electro),
+          const CustomBuildEvent.addTeamCharacter(key: ganyuKey, roleType: CharacterRoleType.offFieldDps, subType: CharacterRoleSubType.electro),
         ),
       errors: () => [isA<Exception>()],
     );
 
     blocTest<CustomBuildBloc, CustomBuildState>(
       'add the same character multiple times',
-      build: () => _getBloc(),
+      build: () => getBloc(),
       act: (bloc) => bloc
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
         ..add(
-          const CustomBuildEvent.addTeamCharacter(key: _ganyuKey, roleType: CharacterRoleType.offFieldDps, subType: CharacterRoleSubType.electro),
+          const CustomBuildEvent.addTeamCharacter(key: ganyuKey, roleType: CharacterRoleType.offFieldDps, subType: CharacterRoleSubType.electro),
         )
         ..add(
-          const CustomBuildEvent.addTeamCharacter(key: _ganyuKey, roleType: CharacterRoleType.offFieldDps, subType: CharacterRoleSubType.electro),
+          const CustomBuildEvent.addTeamCharacter(key: ganyuKey, roleType: CharacterRoleType.offFieldDps, subType: CharacterRoleSubType.electro),
         ),
       verify: (bloc) => bloc.state.maybeMap(
         loaded: (state) {
@@ -899,20 +899,20 @@ void main() {
 
     blocTest<CustomBuildBloc, CustomBuildState>(
       'order changed',
-      build: () => _getBloc(),
+      build: () => getBloc(),
       act: (bloc) => bloc
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
         ..add(
-          const CustomBuildEvent.addTeamCharacter(key: _ganyuKey, roleType: CharacterRoleType.offFieldDps, subType: CharacterRoleSubType.cryo),
+          const CustomBuildEvent.addTeamCharacter(key: ganyuKey, roleType: CharacterRoleType.offFieldDps, subType: CharacterRoleSubType.cryo),
         )
         ..add(
-          const CustomBuildEvent.addTeamCharacter(key: _keqingKey, roleType: CharacterRoleType.dps, subType: CharacterRoleSubType.electro),
+          const CustomBuildEvent.addTeamCharacter(key: keqingKey, roleType: CharacterRoleType.dps, subType: CharacterRoleSubType.electro),
         )
         ..add(
           CustomBuildEvent.teamCharactersOrderChanged(
             characters: [
-              SortableItem(_keqingKey, 'Keqing'),
-              SortableItem(_ganyuKey, 'Ganyu'),
+              SortableItem(keqingKey, 'Keqing'),
+              SortableItem(ganyuKey, 'Ganyu'),
             ],
           ),
         ),
@@ -933,13 +933,13 @@ void main() {
 
     blocTest<CustomBuildBloc, CustomBuildState>(
       'delete',
-      build: () => _getBloc(),
+      build: () => getBloc(),
       act: (bloc) => bloc
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
         ..add(
-          const CustomBuildEvent.addTeamCharacter(key: _ganyuKey, roleType: CharacterRoleType.offFieldDps, subType: CharacterRoleSubType.electro),
+          const CustomBuildEvent.addTeamCharacter(key: ganyuKey, roleType: CharacterRoleType.offFieldDps, subType: CharacterRoleSubType.electro),
         )
-        ..add(const CustomBuildEvent.deleteTeamCharacter(key: _ganyuKey)),
+        ..add(const CustomBuildEvent.deleteTeamCharacter(key: ganyuKey)),
       verify: (bloc) => bloc.state.maybeMap(
         loaded: (state) {
           expect(state.teamCharacters.isEmpty, true);
@@ -950,10 +950,10 @@ void main() {
 
     blocTest<CustomBuildBloc, CustomBuildState>(
       'delete, team character does not exist',
-      build: () => _getBloc(),
+      build: () => getBloc(),
       act: (bloc) => bloc
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
-        ..add(const CustomBuildEvent.deleteTeamCharacter(key: _ganyuKey)),
+        ..add(const CustomBuildEvent.deleteTeamCharacter(key: ganyuKey)),
       errors: () => [isA<Exception>()],
     );
   });
@@ -961,21 +961,21 @@ void main() {
   group('Save', () {
     blocTest<CustomBuildBloc, CustomBuildState>(
       'all stuff was set',
-      build: () => _getBloc(),
+      build: () => getBloc(),
       act: (bloc) {
-        final weapon = _genshinService.weapons.getWeapon(_aquilaFavoniaKey);
+        final weapon = genshinService.weapons.getWeapon(aquilaFavoniaKey);
         return bloc
           ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
-          ..add(const CustomBuildEvent.characterChanged(newKey: _keqingKey))
+          ..add(const CustomBuildEvent.characterChanged(newKey: keqingKey))
           ..add(const CustomBuildEvent.isRecommendedChanged(newValue: true))
           ..add(const CustomBuildEvent.showOnCharacterDetailChanged(newValue: false))
           ..add(const CustomBuildEvent.addNote(note: 'You need C6'))
           ..add(const CustomBuildEvent.addSkillPriority(type: CharacterSkillType.elementalBurst))
-          ..add(const CustomBuildEvent.addArtifact(key: _thunderingFuryKey, type: ArtifactType.flower, statType: StatType.hp))
-          ..add(const CustomBuildEvent.addArtifact(key: _thunderingFuryKey, type: ArtifactType.plume, statType: StatType.atk))
-          ..add(const CustomBuildEvent.addArtifact(key: _thunderingFuryKey, type: ArtifactType.clock, statType: StatType.atkPercentage))
-          ..add(const CustomBuildEvent.addArtifact(key: _thunderingFuryKey, type: ArtifactType.goblet, statType: StatType.electroDmgBonusPercentage))
-          ..add(const CustomBuildEvent.addArtifact(key: _thunderingFuryKey, type: ArtifactType.crown, statType: StatType.critDmgPercentage))
+          ..add(const CustomBuildEvent.addArtifact(key: thunderingFuryKey, type: ArtifactType.flower, statType: StatType.hp))
+          ..add(const CustomBuildEvent.addArtifact(key: thunderingFuryKey, type: ArtifactType.plume, statType: StatType.atk))
+          ..add(const CustomBuildEvent.addArtifact(key: thunderingFuryKey, type: ArtifactType.clock, statType: StatType.atkPercentage))
+          ..add(const CustomBuildEvent.addArtifact(key: thunderingFuryKey, type: ArtifactType.goblet, statType: StatType.electroDmgBonusPercentage))
+          ..add(const CustomBuildEvent.addArtifact(key: thunderingFuryKey, type: ArtifactType.crown, statType: StatType.critDmgPercentage))
           ..add(
             const CustomBuildEvent.addArtifactSubStats(
               type: ArtifactType.crown,
@@ -986,17 +986,17 @@ void main() {
               ],
             ),
           )
-          ..add(const CustomBuildEvent.addWeapon(key: _aquilaFavoniaKey))
-          ..add(CustomBuildEvent.weaponStatChanged(key: _aquilaFavoniaKey, newValue: weapon.stats.first))
+          ..add(const CustomBuildEvent.addWeapon(key: aquilaFavoniaKey))
+          ..add(CustomBuildEvent.weaponStatChanged(key: aquilaFavoniaKey, newValue: weapon.stats.first))
           ..add(
-            const CustomBuildEvent.addTeamCharacter(key: _ganyuKey, roleType: CharacterRoleType.offFieldDps, subType: CharacterRoleSubType.cryo),
+            const CustomBuildEvent.addTeamCharacter(key: ganyuKey, roleType: CharacterRoleType.offFieldDps, subType: CharacterRoleSubType.cryo),
           )
           ..add(const CustomBuildEvent.saveChanges());
       },
       verify: (bloc) => bloc.state.maybeMap(
         loaded: (state) {
-          final stat = _genshinService.weapons.getWeapon(_aquilaFavoniaKey).stats.first;
-          expect(state.character.key, _keqingKey);
+          final stat = genshinService.weapons.getWeapon(aquilaFavoniaKey).stats.first;
+          expect(state.character.key, keqingKey);
           expect(state.isRecommended, true);
           expect(state.showOnCharacterDetail, false);
           expect(state.skillPriorities.length == 1, true);
@@ -1014,14 +1014,14 @@ void main() {
 
     blocTest<CustomBuildBloc, CustomBuildState>(
       'nothing was set',
-      build: () => _getBloc(),
+      build: () => getBloc(),
       act: (bloc) => bloc
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
-        ..add(const CustomBuildEvent.characterChanged(newKey: _keqingKey))
+        ..add(const CustomBuildEvent.characterChanged(newKey: keqingKey))
         ..add(const CustomBuildEvent.saveChanges()),
       verify: (bloc) => bloc.state.maybeMap(
         loaded: (state) {
-          expect(state.character.key, _keqingKey);
+          expect(state.character.key, keqingKey);
           expect(state.isRecommended, false);
           expect(state.showOnCharacterDetail, true);
           expect(state.skillPriorities.isEmpty, true);

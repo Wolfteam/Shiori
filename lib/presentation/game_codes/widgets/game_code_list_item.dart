@@ -39,8 +39,8 @@ class GameCodeListItem extends StatelessWidget {
     final s = S.of(context);
     final theme = Theme.of(context);
     final textCodeStyle = !isUsed
-        ? theme.textTheme.subtitle1
-        : theme.textTheme.subtitle1!.copyWith(
+        ? theme.textTheme.titleMedium
+        : theme.textTheme.titleMedium!.copyWith(
             decoration: TextDecoration.lineThrough,
             decorationColor: theme.colorScheme.secondary,
             decorationThickness: 3,
@@ -112,7 +112,7 @@ class GameCodeListItem extends StatelessWidget {
                           ),
                           Text(
                             s.onlyX(s.translateServerResetTimeType(region!)),
-                            style: theme.textTheme.caption,
+                            style: theme.textTheme.bodySmall,
                             overflow: TextOverflow.ellipsis,
                           ),
                         ],
@@ -163,7 +163,7 @@ class GameCodeListItem extends StatelessWidget {
           Expanded(
             child: Text(
               text,
-              style: theme.textTheme.caption,
+              style: theme.textTheme.bodySmall,
             ),
           ),
         ],

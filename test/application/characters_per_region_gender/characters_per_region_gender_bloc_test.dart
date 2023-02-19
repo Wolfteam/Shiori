@@ -12,28 +12,28 @@ import '../../common.dart';
 import '../../mocks.mocks.dart';
 
 void main() {
-  late LocaleService _localeService;
-  late SettingsService _settingsService;
-  late GenshinService _genshinService;
+  late LocaleService localeService;
+  late SettingsService settingsService;
+  late GenshinService genshinService;
 
   setUpAll(() {
     TestWidgetsFlutterBinding.ensureInitialized();
-    _settingsService = MockSettingsService();
-    when(_settingsService.language).thenReturn(AppLanguageType.english);
-    when(_settingsService.showCharacterDetails).thenReturn(true);
-    _localeService = LocaleServiceImpl(_settingsService);
-    final resourceService = getResourceService(_settingsService);
-    _genshinService = GenshinServiceImpl(resourceService, _localeService);
+    settingsService = MockSettingsService();
+    when(settingsService.language).thenReturn(AppLanguageType.english);
+    when(settingsService.showCharacterDetails).thenReturn(true);
+    localeService = LocaleServiceImpl(settingsService);
+    final resourceService = getResourceService(settingsService);
+    genshinService = GenshinServiceImpl(resourceService, localeService);
 
     return Future(() async {
-      await _genshinService.init(AppLanguageType.english);
+      await genshinService.init(AppLanguageType.english);
     });
   });
 
   test(
     'Initial state',
     () => expect(
-      CharactersPerRegionGenderBloc(_genshinService).state,
+      CharactersPerRegionGenderBloc(genshinService).state,
       const CharactersPerRegionGenderState.loading(),
     ),
   );
@@ -41,13 +41,13 @@ void main() {
   group('Init', () {
     blocTest<CharactersPerRegionGenderBloc, CharactersPerRegionGenderState>(
       'emits loaded state',
-      build: () => CharactersPerRegionGenderBloc(_genshinService),
+      build: () => CharactersPerRegionGenderBloc(genshinService),
       act: (bloc) => bloc
         ..add(const CharactersPerRegionGenderEvent.init(regionType: RegionType.inazuma, onlyFemales: true))
         ..add(const CharactersPerRegionGenderEvent.init(regionType: RegionType.inazuma, onlyFemales: false)),
       expect: () {
-        final females = _genshinService.characters.getCharactersForItemsByRegionAndGender(RegionType.inazuma, true);
-        final males = _genshinService.characters.getCharactersForItemsByRegionAndGender(RegionType.inazuma, false);
+        final females = genshinService.characters.getCharactersForItemsByRegionAndGender(RegionType.inazuma, true);
+        final males = genshinService.characters.getCharactersForItemsByRegionAndGender(RegionType.inazuma, false);
         return [
           CharactersPerRegionGenderState.loaded(regionType: RegionType.inazuma, onlyFemales: true, items: females),
           CharactersPerRegionGenderState.loaded(regionType: RegionType.inazuma, onlyFemales: false, items: males),
@@ -57,7 +57,7 @@ void main() {
 
     blocTest<CharactersPerRegionGenderBloc, CharactersPerRegionGenderState>(
       'invalid region',
-      build: () => CharactersPerRegionGenderBloc(_genshinService),
+      build: () => CharactersPerRegionGenderBloc(genshinService),
       act: (bloc) => bloc
         ..add(const CharactersPerRegionGenderEvent.init(regionType: RegionType.anotherWorld, onlyFemales: true))
         ..add(const CharactersPerRegionGenderEvent.init(regionType: RegionType.anotherWorld, onlyFemales: false)),

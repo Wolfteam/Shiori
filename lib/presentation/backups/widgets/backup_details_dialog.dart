@@ -31,7 +31,7 @@ class BackupDetailsDialog extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         mainAxisSize: MainAxisSize.min,
         children: [
-          Text(backup.filename, style: theme.textTheme.subtitle1),
+          Text(backup.filename, style: theme.textTheme.titleMedium),
           Text(s.appVersion(backup.appVersion)),
           Text(s.dateX(DateFormat.yMd().add_Hm().format(backup.createdAt))),
           ...EnumUtils.getTranslatedAndSortedEnum<AppBackupDataType>(

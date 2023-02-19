@@ -14,27 +14,27 @@ import '../../common.dart';
 import '../../mocks.mocks.dart';
 
 void main() {
-  late GenshinService _genshinService;
-  late TelemetryService _telemetryService;
+  late GenshinService genshinService;
+  late TelemetryService telemetryService;
 
-  final List<BannerHistoryItemModel> _characterBanners = [];
-  final List<BannerHistoryItemModel> _weaponBanners = [];
+  final List<BannerHistoryItemModel> characterBanners = [];
+  final List<BannerHistoryItemModel> weaponBanners = [];
 
   setUpAll(() {
     TestWidgetsFlutterBinding.ensureInitialized();
     return Future(() async {
-      _telemetryService = MockTelemetryService();
+      telemetryService = MockTelemetryService();
       final settingsService = MockSettingsService();
       when(settingsService.language).thenReturn(AppLanguageType.english);
 
       final resourceService = getResourceService(settingsService);
       final localeService = LocaleServiceImpl(settingsService);
-      _genshinService = GenshinServiceImpl(resourceService, localeService);
+      genshinService = GenshinServiceImpl(resourceService, localeService);
 
-      await _genshinService.init(settingsService.language);
+      await genshinService.init(settingsService.language);
 
-      _characterBanners.addAll(_genshinService.bannerHistory.getBannerHistory(BannerHistoryItemType.character));
-      _weaponBanners.addAll(_genshinService.bannerHistory.getBannerHistory(BannerHistoryItemType.weapon));
+      characterBanners.addAll(genshinService.bannerHistory.getBannerHistory(BannerHistoryItemType.character));
+      weaponBanners.addAll(genshinService.bannerHistory.getBannerHistory(BannerHistoryItemType.weapon));
     });
   });
 
@@ -90,14 +90,14 @@ void main() {
       expect(versions.length, selectedVersions.length);
     }
 
-    final maxCount = max(_characterBanners.length, _weaponBanners.length);
+    final maxCount = max(characterBanners.length, weaponBanners.length);
     expect(state.maxNumberOfItems, maxCount);
   }
 
   test(
     'Initial state',
     () => expect(
-      BannerHistoryBloc(_genshinService, _telemetryService).state,
+      BannerHistoryBloc(genshinService, telemetryService).state,
       const BannerHistoryState.initial(
         type: BannerHistoryItemType.character,
         sortType: BannerHistorySortType.versionAsc,
@@ -112,18 +112,18 @@ void main() {
 
   blocTest<BannerHistoryBloc, BannerHistoryState>(
     'Init',
-    build: () => BannerHistoryBloc(_genshinService, _telemetryService),
+    build: () => BannerHistoryBloc(genshinService, telemetryService),
     act: (bloc) => bloc.add(const BannerHistoryEvent.init()),
     verify: (bloc) => checkCommonState(bloc.state),
   );
 
   blocTest<BannerHistoryBloc, BannerHistoryState>(
     'Characters must exist in banner',
-    build: () => BannerHistoryBloc(_genshinService, _telemetryService),
+    build: () => BannerHistoryBloc(genshinService, telemetryService),
     act: (bloc) => bloc.add(const BannerHistoryEvent.init()),
     verify: (bloc) {
       final charsWithoutBanner = ['aloy', 'mona', 'qiqi', 'amber', 'kaeya', 'lisa', 'diluc', 'jean'];
-      final allCharsCount = _genshinService.characters
+      final allCharsCount = genshinService.characters
           .getCharactersForCard()
           .where((el) => !el.isComingSoon && !el.key.startsWith('traveler') && !charsWithoutBanner.contains(el.key))
           .length;
@@ -135,7 +135,7 @@ void main() {
   group('Type changed', () {
     blocTest<BannerHistoryBloc, BannerHistoryState>(
       'weapon selected',
-      build: () => BannerHistoryBloc(_genshinService, _telemetryService),
+      build: () => BannerHistoryBloc(genshinService, telemetryService),
       act: (bloc) => bloc
         ..add(const BannerHistoryEvent.init())
         ..add(const BannerHistoryEvent.typeChanged(type: BannerHistoryItemType.weapon)),
@@ -144,7 +144,7 @@ void main() {
 
     blocTest<BannerHistoryBloc, BannerHistoryState>(
       'no state change',
-      build: () => BannerHistoryBloc(_genshinService, _telemetryService),
+      build: () => BannerHistoryBloc(genshinService, telemetryService),
       act: (bloc) => bloc
         ..add(const BannerHistoryEvent.init())
         ..add(const BannerHistoryEvent.typeChanged(type: BannerHistoryItemType.character)),
@@ -156,7 +156,7 @@ void main() {
   group('Sort changed', () {
     blocTest<BannerHistoryBloc, BannerHistoryState>(
       'sorted by name desc.',
-      build: () => BannerHistoryBloc(_genshinService, _telemetryService),
+      build: () => BannerHistoryBloc(genshinService, telemetryService),
       act: (bloc) => bloc
         ..add(const BannerHistoryEvent.init())
         ..add(const BannerHistoryEvent.sortTypeChanged(type: BannerHistorySortType.nameDesc)),
@@ -172,7 +172,7 @@ void main() {
 
     blocTest<BannerHistoryBloc, BannerHistoryState>(
       'sorted by version desc.',
-      build: () => BannerHistoryBloc(_genshinService, _telemetryService),
+      build: () => BannerHistoryBloc(genshinService, telemetryService),
       act: (bloc) => bloc
         ..add(const BannerHistoryEvent.init())
         ..add(const BannerHistoryEvent.sortTypeChanged(type: BannerHistorySortType.versionDesc)),
@@ -188,7 +188,7 @@ void main() {
 
     blocTest<BannerHistoryBloc, BannerHistoryState>(
       'no state change',
-      build: () => BannerHistoryBloc(_genshinService, _telemetryService),
+      build: () => BannerHistoryBloc(genshinService, telemetryService),
       act: (bloc) => bloc
         ..add(const BannerHistoryEvent.init())
         ..add(const BannerHistoryEvent.sortTypeChanged(type: BannerHistorySortType.versionAsc)),
@@ -200,7 +200,7 @@ void main() {
   group('Version selected', () {
     blocTest<BannerHistoryBloc, BannerHistoryState>(
       'to 2.5 and 2.4',
-      build: () => BannerHistoryBloc(_genshinService, _telemetryService),
+      build: () => BannerHistoryBloc(genshinService, telemetryService),
       act: (bloc) => bloc
         ..add(const BannerHistoryEvent.init())
         ..add(const BannerHistoryEvent.versionSelected(version: 2.5))
@@ -210,7 +210,7 @@ void main() {
 
     blocTest<BannerHistoryBloc, BannerHistoryState>(
       'to 2.5 but it gets deselected',
-      build: () => BannerHistoryBloc(_genshinService, _telemetryService),
+      build: () => BannerHistoryBloc(genshinService, telemetryService),
       act: (bloc) => bloc
         ..add(const BannerHistoryEvent.init())
         ..add(const BannerHistoryEvent.versionSelected(version: 2.5))
@@ -220,7 +220,7 @@ void main() {
 
     blocTest<BannerHistoryBloc, BannerHistoryState>(
       'items was previously selected and should be cleared after version change',
-      build: () => BannerHistoryBloc(_genshinService, _telemetryService),
+      build: () => BannerHistoryBloc(genshinService, telemetryService),
       act: (bloc) => bloc
         ..add(const BannerHistoryEvent.init())
         ..add(const BannerHistoryEvent.itemsSelected(keys: ['keqing']))
@@ -230,7 +230,7 @@ void main() {
 
     blocTest<BannerHistoryBloc, BannerHistoryState>(
       'to 1.3, user did not select any item thus the banners should be kept',
-      build: () => BannerHistoryBloc(_genshinService, _telemetryService),
+      build: () => BannerHistoryBloc(genshinService, telemetryService),
       act: (bloc) => bloc
         ..add(const BannerHistoryEvent.init())
         ..add(const BannerHistoryEvent.versionSelected(version: 1.3))
@@ -243,7 +243,7 @@ void main() {
 
     blocTest<BannerHistoryBloc, BannerHistoryState>(
       'to 1.3, and user changes the banner type',
-      build: () => BannerHistoryBloc(_genshinService, _telemetryService),
+      build: () => BannerHistoryBloc(genshinService, telemetryService),
       act: (bloc) => bloc
         ..add(const BannerHistoryEvent.init())
         ..add(const BannerHistoryEvent.versionSelected(version: 1.3))
@@ -256,7 +256,7 @@ void main() {
 
     blocTest<BannerHistoryBloc, BannerHistoryState>(
       'to 1.3, user selects and deselects item key thus the items in the banners should be kept',
-      build: () => BannerHistoryBloc(_genshinService, _telemetryService),
+      build: () => BannerHistoryBloc(genshinService, telemetryService),
       act: (bloc) => bloc
         ..add(const BannerHistoryEvent.init())
         ..add(const BannerHistoryEvent.versionSelected(version: 1.3))
@@ -270,7 +270,7 @@ void main() {
 
     blocTest<BannerHistoryBloc, BannerHistoryState>(
       'to 1.0, user selects item key which is not released on this version thus the banners are empty',
-      build: () => BannerHistoryBloc(_genshinService, _telemetryService),
+      build: () => BannerHistoryBloc(genshinService, telemetryService),
       act: (bloc) => bloc
         ..add(const BannerHistoryEvent.init())
         ..add(const BannerHistoryEvent.versionSelected(version: 1.0))
@@ -285,7 +285,7 @@ void main() {
   group('Item selected', () {
     blocTest<BannerHistoryBloc, BannerHistoryState>(
       'to 2.5 but it gets deselected',
-      build: () => BannerHistoryBloc(_genshinService, _telemetryService),
+      build: () => BannerHistoryBloc(genshinService, telemetryService),
       act: (bloc) => bloc
         ..add(const BannerHistoryEvent.init())
         ..add(const BannerHistoryEvent.itemsSelected(keys: ['keqing', 'xiangling'])),
@@ -294,7 +294,7 @@ void main() {
 
     blocTest<BannerHistoryBloc, BannerHistoryState>(
       'empty array',
-      build: () => BannerHistoryBloc(_genshinService, _telemetryService),
+      build: () => BannerHistoryBloc(genshinService, telemetryService),
       act: (bloc) => bloc
         ..add(const BannerHistoryEvent.init())
         ..add(const BannerHistoryEvent.itemsSelected(keys: [])),
@@ -304,7 +304,7 @@ void main() {
 
   blocTest<BannerHistoryBloc, BannerHistoryState>(
     'Items for search',
-    build: () => BannerHistoryBloc(_genshinService, _telemetryService),
+    build: () => BannerHistoryBloc(genshinService, telemetryService),
     act: (bloc) => bloc
       ..add(const BannerHistoryEvent.init())
       ..add(const BannerHistoryEvent.sortTypeChanged(type: BannerHistorySortType.nameDesc))
@@ -313,7 +313,7 @@ void main() {
     verify: (bloc) {
       checkCommonState(bloc.state, type: BannerHistoryItemType.weapon, sortType: BannerHistorySortType.nameDesc, selectedVersions: [1.1]);
       final itemsForSearch = bloc.getItemsForSearch();
-      final banners = _genshinService.bannerHistory.getBanners(bloc.state.selectedVersions.first);
+      final banners = genshinService.bannerHistory.getBanners(bloc.state.selectedVersions.first);
       final expectedCount = banners.where((el) => el.type == BannerHistoryItemType.weapon).expand((el) => el.items).map((e) => e.key).toSet().length;
       final expectedItems = bloc.state.banners.map((e) => e.key).toSet().toList();
       expect(expectedCount, 14);

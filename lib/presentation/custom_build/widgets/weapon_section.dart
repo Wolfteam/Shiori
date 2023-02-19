@@ -44,7 +44,7 @@ class WeaponSection extends StatelessWidget {
                 child: Text(
                   state.readyForScreenshot ? s.weapons : '${s.weapons} (${state.weapons.length} / ${CustomBuildBloc.maxNumberOfWeapons})',
                   textAlign: TextAlign.center,
-                  style: theme.textTheme.subtitle1!.copyWith(fontWeight: FontWeight.bold),
+                  style: theme.textTheme.titleMedium!.copyWith(fontWeight: FontWeight.bold),
                 ),
               ),
               if (!state.readyForScreenshot)

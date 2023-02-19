@@ -107,7 +107,7 @@ class ArtifactCard extends StatelessWidget {
                   name,
                   textAlign: TextAlign.center,
                   overflow: withTextOverflow ? TextOverflow.ellipsis : null,
-                  style: theme.textTheme.subtitle1!.copyWith(fontWeight: FontWeight.bold, color: Colors.white),
+                  style: theme.textTheme.titleMedium!.copyWith(fontWeight: FontWeight.bold, color: Colors.white),
                 ),
               ),
               Rarity(stars: rarity),

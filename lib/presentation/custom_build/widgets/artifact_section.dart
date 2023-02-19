@@ -46,7 +46,7 @@ class ArtifactSection extends StatelessWidget {
                 child: Text(
                   state.readyForScreenshot ? s.artifacts : '${s.artifacts} (${state.artifacts.length} / ${ArtifactType.values.length})',
                   textAlign: TextAlign.center,
-                  style: theme.textTheme.subtitle1!.copyWith(fontWeight: FontWeight.bold),
+                  style: theme.textTheme.titleMedium!.copyWith(fontWeight: FontWeight.bold),
                 ),
               ),
               if (!state.readyForScreenshot)

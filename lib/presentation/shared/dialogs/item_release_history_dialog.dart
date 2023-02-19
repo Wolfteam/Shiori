@@ -34,7 +34,7 @@ class ItemReleaseHistoryDialog extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(s.releaseHistory),
-            Text(itemName, style: theme.textTheme.subtitle2),
+            Text(itemName, style: theme.textTheme.titleSmall),
           ],
         ),
         actions: [
@@ -94,7 +94,7 @@ class _ReleasedOn extends StatelessWidget {
           margin: const EdgeInsets.only(right: 10),
           child: Text(
             '${index + 1} -',
-            style: theme.textTheme.caption!.copyWith(fontSize: 18, color: selectedColor),
+            style: theme.textTheme.bodySmall!.copyWith(fontSize: 18, color: selectedColor),
           ),
         ),
         Expanded(

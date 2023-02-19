@@ -3,9 +3,9 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:shiori/application/bloc.dart';
 
 void main() {
-  const _defaultState = ItemQuantityFormState.loaded(quantity: 0, isQuantityDirty: false, isQuantityValid: true);
+  const defaultState = ItemQuantityFormState.loaded(quantity: 0, isQuantityDirty: false, isQuantityValid: true);
 
-  test('Initial state', () => expect(ItemQuantityFormBloc().state, _defaultState));
+  test('Initial state', () => expect(ItemQuantityFormBloc().state, defaultState));
 
   group('Quantity changed', () {
     blocTest<ItemQuantityFormBloc, ItemQuantityFormState>(

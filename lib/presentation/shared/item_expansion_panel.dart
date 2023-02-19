@@ -40,7 +40,7 @@ class ItemExpansionPanel extends StatelessWidget {
                     message: title,
                     child: Text(
                       title,
-                      style: theme.textTheme.headline6!.copyWith(color: theme.colorScheme.secondary),
+                      style: theme.textTheme.titleLarge!.copyWith(color: theme.colorScheme.secondary),
                       overflow: TextOverflow.ellipsis,
                     ),
                   ),

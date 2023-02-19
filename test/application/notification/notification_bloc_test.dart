@@ -19,62 +19,62 @@ import '../../mocks.mocks.dart';
 const _dbFolder = 'shiori_notification_bloc_tests';
 
 void main() {
-  late final TelemetryService _telemetryService;
-  late final LoggingService _loggingService;
-  late final NotificationService _notificationService;
-  late final SettingsService _settingsService;
-  late final LocaleService _localeService;
-  late final GenshinService _genshinService;
-  late final DataService _dataService;
-  late final NotificationsBloc _notificationsBloc;
-  late final ResourceService _resourceService;
-  late final String _dbPath;
+  late final TelemetryService telemetryService;
+  late final LoggingService loggingService;
+  late final NotificationService notificationService;
+  late final SettingsService settingsService;
+  late final LocaleService localeService;
+  late final GenshinService genshinService;
+  late final DataService dataService;
+  late final NotificationsBloc notificationsBloc;
+  late final ResourceService resourceService;
+  late final String dbPath;
 
-  const _defaultTitle = 'Notification title';
-  const _defaultBody = 'Notification body';
-  const _defaultNote = 'Notification note';
-  const _fragileResinKey = 'fragile-resin';
-  const _realmCurrency = 'realm-currency';
-  const _keqingKey = 'keqing';
-  const _primogemKey = 'primogem';
+  const defaultTitle = 'Notification title';
+  const defaultBody = 'Notification body';
+  const defaultNote = 'Notification note';
+  const fragileResinKey = 'fragile-resin';
+  const realmCurrency = 'realm-currency';
+  const keqingKey = 'keqing';
+  const primogemKey = 'primogem';
 
-  final _customNotificationCompletesAt = DateTime.now().add(const Duration(days: 1));
+  final customNotificationCompletesAt = DateTime.now().add(const Duration(days: 1));
 
   setUpAll(() {
     TestWidgetsFlutterBinding.ensureInitialized();
-    _loggingService = MockLoggingService();
-    _telemetryService = MockTelemetryService();
-    _notificationService = MockNotificationService();
-    _settingsService = MockSettingsService();
-    when(_settingsService.language).thenReturn(AppLanguageType.english);
-    when(_settingsService.useTwentyFourHoursFormat).thenReturn(true);
-    when(_settingsService.serverResetTime).thenReturn(AppServerResetTimeType.northAmerica);
-    _localeService = LocaleServiceImpl(_settingsService);
-    _resourceService = getResourceService(_settingsService);
-    _genshinService = GenshinServiceImpl(_resourceService, _localeService);
-    _dataService = DataServiceImpl(_genshinService, CalculatorServiceImpl(_genshinService, _resourceService), _resourceService);
-    _notificationsBloc = NotificationsBloc(_dataService, _notificationService, _settingsService, _telemetryService);
+    loggingService = MockLoggingService();
+    telemetryService = MockTelemetryService();
+    notificationService = MockNotificationService();
+    settingsService = MockSettingsService();
+    when(settingsService.language).thenReturn(AppLanguageType.english);
+    when(settingsService.useTwentyFourHoursFormat).thenReturn(true);
+    when(settingsService.serverResetTime).thenReturn(AppServerResetTimeType.northAmerica);
+    localeService = LocaleServiceImpl(settingsService);
+    resourceService = getResourceService(settingsService);
+    genshinService = GenshinServiceImpl(resourceService, localeService);
+    dataService = DataServiceImpl(genshinService, CalculatorServiceImpl(genshinService, resourceService), resourceService);
+    notificationsBloc = NotificationsBloc(dataService, notificationService, settingsService, telemetryService);
 
     return Future(() async {
-      await _genshinService.init(_settingsService.language);
-      _dbPath = await getDbPath(_dbFolder);
-      await _dataService.initForTests(_dbPath);
+      await genshinService.init(settingsService.language);
+      dbPath = await getDbPath(_dbFolder);
+      await dataService.initForTests(dbPath);
     });
   });
 
   tearDownAll(() {
     return Future(() async {
-      await _dataService.closeThemAll();
-      await deleteDbFolder(_dbPath);
+      await dataService.closeThemAll();
+      await deleteDbFolder(dbPath);
     });
   });
 
-  void _checkState(
+  void checkState(
     NotificationState state,
     AppNotificationType type, {
-    String title = _defaultTitle,
-    String body = _defaultBody,
-    String note = _defaultNote,
+    String title = defaultTitle,
+    String body = defaultBody,
+    String note = defaultNote,
     bool showNotification = true,
     bool checkKey = true,
     bool checkNote = false,
@@ -99,42 +99,42 @@ void main() {
     }
   }
 
-  void _checkNotDirtyFields(NotificationState state, {bool shouldBeDirty = true}) {
+  void checkNotDirtyFields(NotificationState state, {bool shouldBeDirty = true}) {
     expect(state.isTitleDirty, shouldBeDirty);
     expect(state.isNoteDirty, shouldBeDirty);
     expect(state.isBodyDirty, shouldBeDirty);
   }
 
-  NotificationBloc _buildBloc() {
+  NotificationBloc buildBloc() {
     return NotificationBloc(
-      _dataService,
-      _notificationService,
-      _genshinService,
-      _localeService,
-      _loggingService,
-      _telemetryService,
-      _settingsService,
-      _resourceService,
-      _notificationsBloc,
+      dataService,
+      notificationService,
+      genshinService,
+      localeService,
+      loggingService,
+      telemetryService,
+      settingsService,
+      resourceService,
+      notificationsBloc,
     );
   }
 
   test(
     'Initial state',
     () => expect(
-      _buildBloc().state,
+      buildBloc().state,
       const NotificationState.resin(currentResin: 0),
     ),
   );
 
   blocTest<NotificationBloc, NotificationState>(
     'Add should generated a default resin state',
-    build: () => _buildBloc(),
-    act: (bloc) => bloc.add(const NotificationEvent.add(defaultTitle: _defaultTitle, defaultBody: _defaultBody)),
+    build: () => buildBloc(),
+    act: (bloc) => bloc.add(const NotificationEvent.add(defaultTitle: defaultTitle, defaultBody: defaultBody)),
     verify: (bloc) => bloc.state.maybeMap(
       resin: (state) {
-        _checkState(state, AppNotificationType.resin, checkKey: false);
-        _checkNotDirtyFields(state, shouldBeDirty: false);
+        checkState(state, AppNotificationType.resin, checkKey: false);
+        checkNotDirtyFields(state, shouldBeDirty: false);
         expect(state.showOtherImages, false);
         expect(state.currentResin, 0);
       },
@@ -146,20 +146,20 @@ void main() {
     blocTest<NotificationBloc, NotificationState>(
       'a resin notification',
       setUp: () async {
-        await _dataService.notifications.saveResinNotification(_fragileResinKey, _defaultTitle, _defaultBody, 60, note: _defaultNote);
+        await dataService.notifications.saveResinNotification(fragileResinKey, defaultTitle, defaultBody, 60, note: defaultNote);
       },
       tearDown: () async {
-        await _dataService.deleteThemAll();
+        await dataService.deleteThemAll();
       },
-      build: () => _buildBloc(),
+      build: () => buildBloc(),
       act: (bloc) {
-        final notification = _dataService.notifications.getAllNotifications().first;
+        final notification = dataService.notifications.getAllNotifications().first;
         return bloc.add(NotificationEvent.edit(key: notification.key, type: AppNotificationType.resin));
       },
       verify: (bloc) => bloc.state.maybeMap(
         resin: (state) {
-          _checkState(state, AppNotificationType.resin, checkNote: true);
-          _checkNotDirtyFields(state);
+          checkState(state, AppNotificationType.resin, checkNote: true);
+          checkNotDirtyFields(state);
           expect(state.currentResin, 60);
         },
         orElse: () => throw Exception('Invalid state'),
@@ -169,28 +169,28 @@ void main() {
     blocTest<NotificationBloc, NotificationState>(
       'an expedition notification',
       setUp: () async {
-        final material = _genshinService.materials.getAllMaterialsThatCanBeObtainedFromAnExpedition().first;
-        await _dataService.notifications.saveExpeditionNotification(
+        final material = genshinService.materials.getAllMaterialsThatCanBeObtainedFromAnExpedition().first;
+        await dataService.notifications.saveExpeditionNotification(
           material.key,
-          _defaultTitle,
-          _defaultBody,
+          defaultTitle,
+          defaultBody,
           ExpeditionTimeType.twelveHours,
-          note: _defaultNote,
+          note: defaultNote,
           withTimeReduction: true,
         );
       },
       tearDown: () async {
-        await _dataService.deleteThemAll();
+        await dataService.deleteThemAll();
       },
-      build: () => _buildBloc(),
+      build: () => buildBloc(),
       act: (bloc) {
-        final notification = _dataService.notifications.getAllNotifications().first;
+        final notification = dataService.notifications.getAllNotifications().first;
         return bloc.add(NotificationEvent.edit(key: notification.key, type: AppNotificationType.expedition));
       },
       verify: (bloc) => bloc.state.maybeMap(
         expedition: (state) {
-          _checkState(state, AppNotificationType.expedition, checkNote: true);
-          _checkNotDirtyFields(state);
+          checkState(state, AppNotificationType.expedition, checkNote: true);
+          checkNotDirtyFields(state);
           expect(state.withTimeReduction, true);
           expect(state.expeditionTimeType, ExpeditionTimeType.twelveHours);
         },
@@ -201,27 +201,27 @@ void main() {
     blocTest<NotificationBloc, NotificationState>(
       'a farming artifact notification',
       setUp: () async {
-        final artifact = _genshinService.artifacts.getArtifactsForCard().first;
-        await _dataService.notifications.saveFarmingArtifactNotification(
+        final artifact = genshinService.artifacts.getArtifactsForCard().first;
+        await dataService.notifications.saveFarmingArtifactNotification(
           artifact.key,
           ArtifactFarmingTimeType.twelveHours,
-          _defaultTitle,
-          _defaultBody,
-          note: _defaultNote,
+          defaultTitle,
+          defaultBody,
+          note: defaultNote,
         );
       },
       tearDown: () async {
-        await _dataService.deleteThemAll();
+        await dataService.deleteThemAll();
       },
-      build: () => _buildBloc(),
+      build: () => buildBloc(),
       act: (bloc) {
-        final notification = _dataService.notifications.getAllNotifications().first;
+        final notification = dataService.notifications.getAllNotifications().first;
         return bloc.add(NotificationEvent.edit(key: notification.key, type: AppNotificationType.farmingArtifacts));
       },
       verify: (bloc) => bloc.state.maybeMap(
         farmingArtifact: (state) {
-          _checkState(state, AppNotificationType.farmingArtifacts, checkNote: true);
-          _checkNotDirtyFields(state);
+          checkState(state, AppNotificationType.farmingArtifacts, checkNote: true);
+          checkNotDirtyFields(state);
           expect(state.artifactFarmingTimeType, ArtifactFarmingTimeType.twelveHours);
         },
         orElse: () => throw Exception('Invalid state'),
@@ -231,21 +231,21 @@ void main() {
     blocTest<NotificationBloc, NotificationState>(
       'a farming material notification',
       setUp: () async {
-        final material = _genshinService.materials.getAllMaterialsThatHaveAFarmingRespawnDuration().first;
-        await _dataService.notifications.saveFarmingMaterialNotification(material.key, _defaultTitle, _defaultBody, note: _defaultNote);
+        final material = genshinService.materials.getAllMaterialsThatHaveAFarmingRespawnDuration().first;
+        await dataService.notifications.saveFarmingMaterialNotification(material.key, defaultTitle, defaultBody, note: defaultNote);
       },
       tearDown: () async {
-        await _dataService.deleteThemAll();
+        await dataService.deleteThemAll();
       },
-      build: () => _buildBloc(),
+      build: () => buildBloc(),
       act: (bloc) {
-        final notification = _dataService.notifications.getAllNotifications().first;
+        final notification = dataService.notifications.getAllNotifications().first;
         return bloc.add(NotificationEvent.edit(key: notification.key, type: AppNotificationType.farmingMaterials));
       },
       verify: (bloc) => bloc.state.maybeMap(
         farmingMaterial: (state) {
-          _checkState(state, AppNotificationType.farmingMaterials, checkNote: true);
-          _checkNotDirtyFields(state);
+          checkState(state, AppNotificationType.farmingMaterials, checkNote: true);
+          checkNotDirtyFields(state);
         },
         orElse: () => throw Exception('Invalid state'),
       ),
@@ -254,21 +254,21 @@ void main() {
     blocTest<NotificationBloc, NotificationState>(
       'a gadget notification',
       setUp: () async {
-        final gadget = _genshinService.gadgets.getAllGadgetsForNotifications().first;
-        await _dataService.notifications.saveGadgetNotification(gadget.key, _defaultTitle, _defaultBody, note: _defaultNote);
+        final gadget = genshinService.gadgets.getAllGadgetsForNotifications().first;
+        await dataService.notifications.saveGadgetNotification(gadget.key, defaultTitle, defaultBody, note: defaultNote);
       },
       tearDown: () async {
-        await _dataService.deleteThemAll();
+        await dataService.deleteThemAll();
       },
-      build: () => _buildBloc(),
+      build: () => buildBloc(),
       act: (bloc) {
-        final notification = _dataService.notifications.getAllNotifications().first;
+        final notification = dataService.notifications.getAllNotifications().first;
         return bloc.add(NotificationEvent.edit(key: notification.key, type: AppNotificationType.gadget));
       },
       verify: (bloc) => bloc.state.maybeMap(
         gadget: (state) {
-          _checkState(state, AppNotificationType.gadget, checkNote: true);
-          _checkNotDirtyFields(state);
+          checkState(state, AppNotificationType.gadget, checkNote: true);
+          checkNotDirtyFields(state);
         },
         orElse: () => throw Exception('Invalid state'),
       ),
@@ -277,27 +277,27 @@ void main() {
     blocTest<NotificationBloc, NotificationState>(
       'a furniture notification',
       setUp: () async {
-        final furniture = _genshinService.furniture.getDefaultFurnitureForNotifications();
-        await _dataService.notifications.saveFurnitureNotification(
+        final furniture = genshinService.furniture.getDefaultFurnitureForNotifications();
+        await dataService.notifications.saveFurnitureNotification(
           furniture.key,
           FurnitureCraftingTimeType.fourteenHours,
-          _defaultTitle,
-          _defaultBody,
-          note: _defaultNote,
+          defaultTitle,
+          defaultBody,
+          note: defaultNote,
         );
       },
       tearDown: () async {
-        await _dataService.deleteThemAll();
+        await dataService.deleteThemAll();
       },
-      build: () => _buildBloc(),
+      build: () => buildBloc(),
       act: (bloc) {
-        final notification = _dataService.notifications.getAllNotifications().first;
+        final notification = dataService.notifications.getAllNotifications().first;
         return bloc.add(NotificationEvent.edit(key: notification.key, type: AppNotificationType.furniture));
       },
       verify: (bloc) => bloc.state.maybeMap(
         furniture: (state) {
-          _checkState(state, AppNotificationType.furniture, checkNote: true);
-          _checkNotDirtyFields(state);
+          checkState(state, AppNotificationType.furniture, checkNote: true);
+          checkNotDirtyFields(state);
           expect(state.timeType, FurnitureCraftingTimeType.fourteenHours);
         },
         orElse: () => throw Exception('Invalid state'),
@@ -307,28 +307,28 @@ void main() {
     blocTest<NotificationBloc, NotificationState>(
       'a realm currency notification',
       setUp: () async {
-        await _dataService.notifications.saveRealmCurrencyNotification(
-          _realmCurrency,
+        await dataService.notifications.saveRealmCurrencyNotification(
+          realmCurrency,
           RealmRankType.luxury,
           7,
           100,
-          _defaultTitle,
-          _defaultBody,
-          note: _defaultNote,
+          defaultTitle,
+          defaultBody,
+          note: defaultNote,
         );
       },
       tearDown: () async {
-        await _dataService.deleteThemAll();
+        await dataService.deleteThemAll();
       },
-      build: () => _buildBloc(),
+      build: () => buildBloc(),
       act: (bloc) {
-        final notification = _dataService.notifications.getAllNotifications().first;
+        final notification = dataService.notifications.getAllNotifications().first;
         return bloc.add(NotificationEvent.edit(key: notification.key, type: AppNotificationType.realmCurrency));
       },
       verify: (bloc) => bloc.state.maybeMap(
         realmCurrency: (state) {
-          _checkState(state, AppNotificationType.realmCurrency, checkNote: true);
-          _checkNotDirtyFields(state);
+          checkState(state, AppNotificationType.realmCurrency, checkNote: true);
+          checkNotDirtyFields(state);
           expect(state.currentRealmRankType, RealmRankType.luxury);
           expect(state.currentTrustRank, 7);
           expect(state.currentRealmCurrency, 100);
@@ -340,27 +340,27 @@ void main() {
     blocTest<NotificationBloc, NotificationState>(
       'a weekly boss notification',
       setUp: () async {
-        final boss = _genshinService.monsters.getAllMonstersForCard().where((el) => el.type == MonsterType.boss).first;
-        await _dataService.notifications.saveWeeklyBossNotification(
+        final boss = genshinService.monsters.getAllMonstersForCard().where((el) => el.type == MonsterType.boss).first;
+        await dataService.notifications.saveWeeklyBossNotification(
           boss.key,
-          _settingsService.serverResetTime,
-          _defaultTitle,
-          _defaultBody,
-          note: _defaultNote,
+          settingsService.serverResetTime,
+          defaultTitle,
+          defaultBody,
+          note: defaultNote,
         );
       },
       tearDown: () async {
-        await _dataService.deleteThemAll();
+        await dataService.deleteThemAll();
       },
-      build: () => _buildBloc(),
+      build: () => buildBloc(),
       act: (bloc) {
-        final notification = _dataService.notifications.getAllNotifications().first;
+        final notification = dataService.notifications.getAllNotifications().first;
         return bloc.add(NotificationEvent.edit(key: notification.key, type: AppNotificationType.weeklyBoss));
       },
       verify: (bloc) => bloc.state.maybeMap(
         weeklyBoss: (state) {
-          _checkState(state, AppNotificationType.weeklyBoss, checkNote: true);
-          _checkNotDirtyFields(state);
+          checkState(state, AppNotificationType.weeklyBoss, checkNote: true);
+          checkNotDirtyFields(state);
         },
         orElse: () => throw Exception('Invalid state'),
       ),
@@ -369,20 +369,20 @@ void main() {
     blocTest<NotificationBloc, NotificationState>(
       'a daily check in notification',
       setUp: () async {
-        await _dataService.notifications.saveDailyCheckInNotification(_primogemKey, _defaultTitle, _defaultBody, note: _defaultNote);
+        await dataService.notifications.saveDailyCheckInNotification(primogemKey, defaultTitle, defaultBody, note: defaultNote);
       },
       tearDown: () async {
-        await _dataService.deleteThemAll();
+        await dataService.deleteThemAll();
       },
-      build: () => _buildBloc(),
+      build: () => buildBloc(),
       act: (bloc) {
-        final notification = _dataService.notifications.getAllNotifications().first;
+        final notification = dataService.notifications.getAllNotifications().first;
         return bloc.add(NotificationEvent.edit(key: notification.key, type: AppNotificationType.dailyCheckIn));
       },
       verify: (bloc) => bloc.state.maybeMap(
         dailyCheckIn: (state) {
-          _checkState(state, AppNotificationType.dailyCheckIn, checkNote: true);
-          _checkNotDirtyFields(state);
+          checkState(state, AppNotificationType.dailyCheckIn, checkNote: true);
+          checkNotDirtyFields(state);
         },
         orElse: () => throw Exception('Invalid state'),
       ),
@@ -398,38 +398,38 @@ void main() {
           var key = '';
           switch (type) {
             case AppNotificationItemType.character:
-              key = _keqingKey;
+              key = keqingKey;
               break;
             case AppNotificationItemType.weapon:
-              key = _genshinService.weapons.getWeaponsForCard().firstWhere((el) => el.rarity == 1).key;
+              key = genshinService.weapons.getWeaponsForCard().firstWhere((el) => el.rarity == 1).key;
               break;
             case AppNotificationItemType.artifact:
-              key = _genshinService.artifacts.getArtifactsForCard().first.key;
+              key = genshinService.artifacts.getArtifactsForCard().first.key;
               break;
             case AppNotificationItemType.monster:
-              key = _genshinService.monsters.getAllMonstersForCard().firstWhere((el) => el.type == MonsterType.abyssOrder).key;
+              key = genshinService.monsters.getAllMonstersForCard().firstWhere((el) => el.type == MonsterType.abyssOrder).key;
               break;
             case AppNotificationItemType.material:
-              key = _fragileResinKey;
+              key = fragileResinKey;
               break;
             default:
               throw Exception('Not mapped type');
           }
-          await _dataService.notifications
-              .saveCustomNotification(key, _defaultTitle, _defaultBody, _customNotificationCompletesAt, type, note: _defaultNote);
+          await dataService.notifications
+              .saveCustomNotification(key, defaultTitle, defaultBody, customNotificationCompletesAt, type, note: defaultNote);
         },
         tearDown: () async {
-          await _dataService.deleteThemAll();
+          await dataService.deleteThemAll();
         },
-        build: () => _buildBloc(),
+        build: () => buildBloc(),
         act: (bloc) {
-          final notification = _dataService.notifications.getAllNotifications().first;
+          final notification = dataService.notifications.getAllNotifications().first;
           return bloc.add(NotificationEvent.edit(key: notification.key, type: AppNotificationType.custom));
         },
         verify: (bloc) => bloc.state.maybeMap(
           custom: (state) {
-            _checkState(state, AppNotificationType.custom, checkNote: true);
-            _checkNotDirtyFields(state);
+            checkState(state, AppNotificationType.custom, checkNote: true);
+            checkNotDirtyFields(state);
             expect(state.itemType, type);
           },
           orElse: () => throw Exception('Invalid state'),
@@ -441,17 +441,17 @@ void main() {
   group('Common value changed', () {
     blocTest<NotificationBloc, NotificationState>(
       'on a not saved notification',
-      build: () => _buildBloc(),
+      build: () => buildBloc(),
       act: (bloc) => bloc
-        ..add(const NotificationEvent.add(defaultTitle: _defaultTitle, defaultBody: _defaultBody))
+        ..add(const NotificationEvent.add(defaultTitle: defaultTitle, defaultBody: defaultBody))
         ..add(const NotificationEvent.titleChanged(newValue: 'Title'))
         ..add(const NotificationEvent.bodyChanged(newValue: 'Body'))
         ..add(const NotificationEvent.noteChanged(newValue: 'Note'))
         ..add(const NotificationEvent.showNotificationChanged(show: false)),
       verify: (bloc) => bloc.state.maybeMap(
         resin: (state) {
-          _checkState(state, AppNotificationType.resin, title: 'Title', body: 'Body', note: 'Note', showNotification: false, checkKey: false);
-          _checkNotDirtyFields(state);
+          checkState(state, AppNotificationType.resin, title: 'Title', body: 'Body', note: 'Note', showNotification: false, checkKey: false);
+          checkNotDirtyFields(state);
         },
         orElse: () => throw Exception('Invalid state'),
       ),
@@ -459,15 +459,15 @@ void main() {
 
     blocTest<NotificationBloc, NotificationState>(
       'on an existing notification',
-      build: () => _buildBloc(),
+      build: () => buildBloc(),
       setUp: () async {
-        await _dataService.notifications.saveResinNotification(_fragileResinKey, _defaultTitle, _defaultBody, 60, note: _defaultNote);
+        await dataService.notifications.saveResinNotification(fragileResinKey, defaultTitle, defaultBody, 60, note: defaultNote);
       },
       tearDown: () async {
-        await _dataService.deleteThemAll();
+        await dataService.deleteThemAll();
       },
       act: (bloc) {
-        final notification = _dataService.notifications.getAllNotifications().first;
+        final notification = dataService.notifications.getAllNotifications().first;
         return bloc
           ..add(NotificationEvent.edit(key: notification.key, type: AppNotificationType.resin))
           ..add(const NotificationEvent.titleChanged(newValue: 'Title'))
@@ -477,8 +477,8 @@ void main() {
       },
       verify: (bloc) => bloc.state.maybeMap(
         resin: (state) {
-          _checkState(state, AppNotificationType.resin, title: 'Title', body: 'Body', note: 'Note', showNotification: false, checkKey: false);
-          _checkNotDirtyFields(state);
+          checkState(state, AppNotificationType.resin, title: 'Title', body: 'Body', note: 'Note', showNotification: false, checkKey: false);
+          checkNotDirtyFields(state);
         },
         orElse: () => throw Exception('Invalid state'),
       ),
@@ -488,14 +488,14 @@ void main() {
   group('Value changed - resin specific', () {
     blocTest<NotificationBloc, NotificationState>(
       'on a not saved notification',
-      build: () => _buildBloc(),
+      build: () => buildBloc(),
       act: (bloc) => bloc
-        ..add(const NotificationEvent.add(defaultTitle: _defaultTitle, defaultBody: _defaultBody))
+        ..add(const NotificationEvent.add(defaultTitle: defaultTitle, defaultBody: defaultBody))
         ..add(const NotificationEvent.resinChanged(newValue: 100)),
       verify: (bloc) => bloc.state.maybeMap(
         resin: (state) {
-          _checkState(state, AppNotificationType.resin, checkKey: false);
-          _checkNotDirtyFields(state, shouldBeDirty: false);
+          checkState(state, AppNotificationType.resin, checkKey: false);
+          checkNotDirtyFields(state, shouldBeDirty: false);
           expect(state.currentResin, 100);
         },
         orElse: () => throw Exception('Invalid state'),
@@ -504,23 +504,23 @@ void main() {
 
     blocTest<NotificationBloc, NotificationState>(
       'on an existing notification',
-      build: () => _buildBloc(),
+      build: () => buildBloc(),
       setUp: () async {
-        await _dataService.notifications.saveResinNotification(_fragileResinKey, _defaultTitle, _defaultBody, 60, note: _defaultNote);
+        await dataService.notifications.saveResinNotification(fragileResinKey, defaultTitle, defaultBody, 60, note: defaultNote);
       },
       tearDown: () async {
-        await _dataService.deleteThemAll();
+        await dataService.deleteThemAll();
       },
       act: (bloc) {
-        final notification = _dataService.notifications.getAllNotifications().first;
+        final notification = dataService.notifications.getAllNotifications().first;
         return bloc
           ..add(NotificationEvent.edit(key: notification.key, type: AppNotificationType.resin))
           ..add(const NotificationEvent.resinChanged(newValue: 100));
       },
       verify: (bloc) => bloc.state.maybeMap(
         resin: (state) {
-          _checkState(state, AppNotificationType.resin);
-          _checkNotDirtyFields(state);
+          checkState(state, AppNotificationType.resin);
+          checkNotDirtyFields(state);
           expect(state.currentResin, 100);
         },
         orElse: () => throw Exception('Invalid state'),
@@ -531,16 +531,16 @@ void main() {
   group('Value changed - expedition specific', () {
     blocTest<NotificationBloc, NotificationState>(
       'on a not saved notification',
-      build: () => _buildBloc(),
+      build: () => buildBloc(),
       act: (bloc) => bloc
-        ..add(const NotificationEvent.add(defaultTitle: _defaultTitle, defaultBody: _defaultBody))
+        ..add(const NotificationEvent.add(defaultTitle: defaultTitle, defaultBody: defaultBody))
         ..add(const NotificationEvent.typeChanged(newValue: AppNotificationType.expedition))
         ..add(const NotificationEvent.expeditionTimeTypeChanged(newValue: ExpeditionTimeType.fourHours))
         ..add(const NotificationEvent.timeReductionChanged(withTimeReduction: true)),
       verify: (bloc) => bloc.state.maybeMap(
         expedition: (state) {
-          _checkState(state, AppNotificationType.expedition, checkKey: false);
-          _checkNotDirtyFields(state, shouldBeDirty: false);
+          checkState(state, AppNotificationType.expedition, checkKey: false);
+          checkNotDirtyFields(state, shouldBeDirty: false);
           expect(state.expeditionTimeType, ExpeditionTimeType.fourHours);
           expect(state.withTimeReduction, true);
         },
@@ -550,22 +550,22 @@ void main() {
 
     blocTest<NotificationBloc, NotificationState>(
       'on an existing notification',
-      build: () => _buildBloc(),
+      build: () => buildBloc(),
       setUp: () async {
-        await _dataService.notifications.saveExpeditionNotification(
+        await dataService.notifications.saveExpeditionNotification(
           'mora',
-          _defaultTitle,
-          _defaultBody,
+          defaultTitle,
+          defaultBody,
           ExpeditionTimeType.fourHours,
-          note: _defaultNote,
+          note: defaultNote,
           withTimeReduction: true,
         );
       },
       tearDown: () async {
-        await _dataService.deleteThemAll();
+        await dataService.deleteThemAll();
       },
       act: (bloc) {
-        final notification = _dataService.notifications.getAllNotifications().first;
+        final notification = dataService.notifications.getAllNotifications().first;
         return bloc
           ..add(NotificationEvent.edit(key: notification.key, type: AppNotificationType.expedition))
           ..add(const NotificationEvent.expeditionTimeTypeChanged(newValue: ExpeditionTimeType.eightHours))
@@ -573,8 +573,8 @@ void main() {
       },
       verify: (bloc) => bloc.state.maybeMap(
         expedition: (state) {
-          _checkState(state, AppNotificationType.expedition, checkKey: false);
-          _checkNotDirtyFields(state);
+          checkState(state, AppNotificationType.expedition, checkKey: false);
+          checkNotDirtyFields(state);
           expect(state.expeditionTimeType, ExpeditionTimeType.eightHours);
           expect(state.withTimeReduction, false);
         },
@@ -586,15 +586,15 @@ void main() {
   group('Value changed - farming artifact specific', () {
     blocTest<NotificationBloc, NotificationState>(
       'on a not saved notification',
-      build: () => _buildBloc(),
+      build: () => buildBloc(),
       act: (bloc) => bloc
-        ..add(const NotificationEvent.add(defaultTitle: _defaultTitle, defaultBody: _defaultBody))
+        ..add(const NotificationEvent.add(defaultTitle: defaultTitle, defaultBody: defaultBody))
         ..add(const NotificationEvent.typeChanged(newValue: AppNotificationType.farmingArtifacts))
         ..add(const NotificationEvent.artifactFarmingTimeTypeChanged(newValue: ArtifactFarmingTimeType.twelveHours)),
       verify: (bloc) => bloc.state.maybeMap(
         farmingArtifact: (state) {
-          _checkState(state, AppNotificationType.farmingArtifacts, checkKey: false);
-          _checkNotDirtyFields(state, shouldBeDirty: false);
+          checkState(state, AppNotificationType.farmingArtifacts, checkKey: false);
+          checkNotDirtyFields(state, shouldBeDirty: false);
           expect(state.artifactFarmingTimeType, ArtifactFarmingTimeType.twelveHours);
         },
         orElse: () => throw Exception('Invalid state'),
@@ -603,30 +603,30 @@ void main() {
 
     blocTest<NotificationBloc, NotificationState>(
       'on an existing notification',
-      build: () => _buildBloc(),
+      build: () => buildBloc(),
       setUp: () async {
-        final artifact = _genshinService.artifacts.getArtifactsForCard().first;
-        await _dataService.notifications.saveFarmingArtifactNotification(
+        final artifact = genshinService.artifacts.getArtifactsForCard().first;
+        await dataService.notifications.saveFarmingArtifactNotification(
           artifact.key,
           ArtifactFarmingTimeType.twelveHours,
-          _defaultTitle,
-          _defaultBody,
-          note: _defaultNote,
+          defaultTitle,
+          defaultBody,
+          note: defaultNote,
         );
       },
       tearDown: () async {
-        await _dataService.deleteThemAll();
+        await dataService.deleteThemAll();
       },
       act: (bloc) {
-        final notification = _dataService.notifications.getAllNotifications().first;
+        final notification = dataService.notifications.getAllNotifications().first;
         return bloc
           ..add(NotificationEvent.edit(key: notification.key, type: AppNotificationType.farmingArtifacts))
           ..add(const NotificationEvent.artifactFarmingTimeTypeChanged(newValue: ArtifactFarmingTimeType.twentyFourHours));
       },
       verify: (bloc) => bloc.state.maybeMap(
         farmingArtifact: (state) {
-          _checkState(state, AppNotificationType.farmingArtifacts, checkKey: false);
-          _checkNotDirtyFields(state);
+          checkState(state, AppNotificationType.farmingArtifacts, checkKey: false);
+          checkNotDirtyFields(state);
           expect(state.artifactFarmingTimeType, ArtifactFarmingTimeType.twentyFourHours);
         },
         orElse: () => throw Exception('Invalid state'),
@@ -637,21 +637,21 @@ void main() {
   group('Value changed - farming materials specific', () {
     blocTest<NotificationBloc, NotificationState>(
       'on a not saved notification',
-      build: () => _buildBloc(),
+      build: () => buildBloc(),
       act: (bloc) {
-        final newMaterial = _genshinService.materials.getAllMaterialsThatHaveAFarmingRespawnDuration().last;
-        final imgPath = _resourceService.getMaterialImagePath(newMaterial.image, newMaterial.type);
+        final newMaterial = genshinService.materials.getAllMaterialsThatHaveAFarmingRespawnDuration().last;
+        final imgPath = resourceService.getMaterialImagePath(newMaterial.image, newMaterial.type);
         return bloc
-          ..add(const NotificationEvent.add(defaultTitle: _defaultTitle, defaultBody: _defaultBody))
+          ..add(const NotificationEvent.add(defaultTitle: defaultTitle, defaultBody: defaultBody))
           ..add(const NotificationEvent.typeChanged(newValue: AppNotificationType.farmingMaterials))
           ..add(NotificationEvent.imageChanged(newValue: imgPath));
       },
       verify: (bloc) => bloc.state.maybeMap(
         farmingMaterial: (state) {
-          _checkState(state, AppNotificationType.farmingMaterials, checkKey: false);
-          _checkNotDirtyFields(state, shouldBeDirty: false);
-          final newMaterial = _genshinService.materials.getAllMaterialsThatHaveAFarmingRespawnDuration().last;
-          final imgPath = _resourceService.getMaterialImagePath(newMaterial.image, newMaterial.type);
+          checkState(state, AppNotificationType.farmingMaterials, checkKey: false);
+          checkNotDirtyFields(state, shouldBeDirty: false);
+          final newMaterial = genshinService.materials.getAllMaterialsThatHaveAFarmingRespawnDuration().last;
+          final imgPath = resourceService.getMaterialImagePath(newMaterial.image, newMaterial.type);
           expect(state.images.any((el) => el.isSelected && el.image == imgPath), isTrue);
         },
         orElse: () => throw Exception('Invalid state'),
@@ -660,28 +660,28 @@ void main() {
 
     blocTest<NotificationBloc, NotificationState>(
       'on an existing notification',
-      build: () => _buildBloc(),
+      build: () => buildBloc(),
       setUp: () async {
-        final material = _genshinService.materials.getAllMaterialsThatHaveAFarmingRespawnDuration().first;
-        await _dataService.notifications.saveFarmingMaterialNotification(material.key, _defaultTitle, _defaultBody, note: _defaultNote);
+        final material = genshinService.materials.getAllMaterialsThatHaveAFarmingRespawnDuration().first;
+        await dataService.notifications.saveFarmingMaterialNotification(material.key, defaultTitle, defaultBody, note: defaultNote);
       },
       tearDown: () async {
-        await _dataService.deleteThemAll();
+        await dataService.deleteThemAll();
       },
       act: (bloc) {
-        final notification = _dataService.notifications.getAllNotifications().first;
-        final newMaterial = _genshinService.materials.getAllMaterialsThatHaveAFarmingRespawnDuration().last;
-        final imgPath = _resourceService.getMaterialImagePath(newMaterial.image, newMaterial.type);
+        final notification = dataService.notifications.getAllNotifications().first;
+        final newMaterial = genshinService.materials.getAllMaterialsThatHaveAFarmingRespawnDuration().last;
+        final imgPath = resourceService.getMaterialImagePath(newMaterial.image, newMaterial.type);
         return bloc
           ..add(NotificationEvent.edit(key: notification.key, type: AppNotificationType.farmingMaterials))
           ..add(NotificationEvent.imageChanged(newValue: imgPath));
       },
       verify: (bloc) => bloc.state.maybeMap(
         farmingMaterial: (state) {
-          _checkState(state, AppNotificationType.farmingMaterials, checkKey: false);
-          _checkNotDirtyFields(state);
-          final newMaterial = _genshinService.materials.getAllMaterialsThatHaveAFarmingRespawnDuration().last;
-          final imgPath = _resourceService.getMaterialImagePath(newMaterial.image, newMaterial.type);
+          checkState(state, AppNotificationType.farmingMaterials, checkKey: false);
+          checkNotDirtyFields(state);
+          final newMaterial = genshinService.materials.getAllMaterialsThatHaveAFarmingRespawnDuration().last;
+          final imgPath = resourceService.getMaterialImagePath(newMaterial.image, newMaterial.type);
           expect(state.images.any((el) => el.isSelected && el.image == imgPath), isTrue);
         },
         orElse: () => throw Exception('Invalid state'),
@@ -692,21 +692,21 @@ void main() {
   group('Value changed - gadgets specific', () {
     blocTest<NotificationBloc, NotificationState>(
       'on a not saved notification',
-      build: () => _buildBloc(),
+      build: () => buildBloc(),
       act: (bloc) {
-        final gadget = _genshinService.gadgets.getAllGadgetsForNotifications().last;
-        final imgPath = _resourceService.getGadgetImagePath(gadget.image);
+        final gadget = genshinService.gadgets.getAllGadgetsForNotifications().last;
+        final imgPath = resourceService.getGadgetImagePath(gadget.image);
         return bloc
-          ..add(const NotificationEvent.add(defaultTitle: _defaultTitle, defaultBody: _defaultBody))
+          ..add(const NotificationEvent.add(defaultTitle: defaultTitle, defaultBody: defaultBody))
           ..add(const NotificationEvent.typeChanged(newValue: AppNotificationType.gadget))
           ..add(NotificationEvent.imageChanged(newValue: imgPath));
       },
       verify: (bloc) => bloc.state.maybeMap(
         gadget: (state) {
-          _checkState(state, AppNotificationType.gadget, checkKey: false);
-          _checkNotDirtyFields(state, shouldBeDirty: false);
-          final gadget = _genshinService.gadgets.getAllGadgetsForNotifications().last;
-          final imgPath = _resourceService.getGadgetImagePath(gadget.image);
+          checkState(state, AppNotificationType.gadget, checkKey: false);
+          checkNotDirtyFields(state, shouldBeDirty: false);
+          final gadget = genshinService.gadgets.getAllGadgetsForNotifications().last;
+          final imgPath = resourceService.getGadgetImagePath(gadget.image);
           expect(state.images.any((el) => el.isSelected && el.image == imgPath), isTrue);
         },
         orElse: () => throw Exception('Invalid state'),
@@ -715,28 +715,28 @@ void main() {
 
     blocTest<NotificationBloc, NotificationState>(
       'on an existing notification',
-      build: () => _buildBloc(),
+      build: () => buildBloc(),
       setUp: () async {
-        final gadget = _genshinService.gadgets.getAllGadgetsForNotifications().first;
-        await _dataService.notifications.saveGadgetNotification(gadget.key, _defaultTitle, _defaultBody, note: _defaultNote);
+        final gadget = genshinService.gadgets.getAllGadgetsForNotifications().first;
+        await dataService.notifications.saveGadgetNotification(gadget.key, defaultTitle, defaultBody, note: defaultNote);
       },
       tearDown: () async {
-        await _dataService.deleteThemAll();
+        await dataService.deleteThemAll();
       },
       act: (bloc) {
-        final notification = _dataService.notifications.getAllNotifications().first;
-        final gadget = _genshinService.gadgets.getAllGadgetsForNotifications().last;
-        final imgPath = _resourceService.getGadgetImagePath(gadget.image);
+        final notification = dataService.notifications.getAllNotifications().first;
+        final gadget = genshinService.gadgets.getAllGadgetsForNotifications().last;
+        final imgPath = resourceService.getGadgetImagePath(gadget.image);
         return bloc
           ..add(NotificationEvent.edit(key: notification.key, type: AppNotificationType.gadget))
           ..add(NotificationEvent.imageChanged(newValue: imgPath));
       },
       verify: (bloc) => bloc.state.maybeMap(
         gadget: (state) {
-          _checkState(state, AppNotificationType.gadget, checkKey: false);
-          _checkNotDirtyFields(state);
-          final gadget = _genshinService.gadgets.getAllGadgetsForNotifications().last;
-          final imgPath = _resourceService.getGadgetImagePath(gadget.image);
+          checkState(state, AppNotificationType.gadget, checkKey: false);
+          checkNotDirtyFields(state);
+          final gadget = genshinService.gadgets.getAllGadgetsForNotifications().last;
+          final imgPath = resourceService.getGadgetImagePath(gadget.image);
           expect(state.images.any((el) => el.isSelected && el.image == imgPath), isTrue);
         },
         orElse: () => throw Exception('Invalid state'),
@@ -747,15 +747,15 @@ void main() {
   group('Value changed - furniture specific', () {
     blocTest<NotificationBloc, NotificationState>(
       'on a not saved notification',
-      build: () => _buildBloc(),
+      build: () => buildBloc(),
       act: (bloc) => bloc
-        ..add(const NotificationEvent.add(defaultTitle: _defaultTitle, defaultBody: _defaultBody))
+        ..add(const NotificationEvent.add(defaultTitle: defaultTitle, defaultBody: defaultBody))
         ..add(const NotificationEvent.typeChanged(newValue: AppNotificationType.furniture))
         ..add(const NotificationEvent.furnitureCraftingTimeTypeChanged(newValue: FurnitureCraftingTimeType.fourteenHours)),
       verify: (bloc) => bloc.state.maybeMap(
         furniture: (state) {
-          _checkState(state, AppNotificationType.furniture, checkKey: false);
-          _checkNotDirtyFields(state, shouldBeDirty: false);
+          checkState(state, AppNotificationType.furniture, checkKey: false);
+          checkNotDirtyFields(state, shouldBeDirty: false);
           expect(state.timeType, FurnitureCraftingTimeType.fourteenHours);
         },
         orElse: () => throw Exception('Invalid state'),
@@ -764,30 +764,30 @@ void main() {
 
     blocTest<NotificationBloc, NotificationState>(
       'on an existing notification',
-      build: () => _buildBloc(),
+      build: () => buildBloc(),
       setUp: () async {
-        final furniture = _genshinService.furniture.getDefaultFurnitureForNotifications();
-        await _dataService.notifications.saveFurnitureNotification(
+        final furniture = genshinService.furniture.getDefaultFurnitureForNotifications();
+        await dataService.notifications.saveFurnitureNotification(
           furniture.key,
           FurnitureCraftingTimeType.sixteenHours,
-          _defaultTitle,
-          _defaultBody,
-          note: _defaultNote,
+          defaultTitle,
+          defaultBody,
+          note: defaultNote,
         );
       },
       tearDown: () async {
-        await _dataService.deleteThemAll();
+        await dataService.deleteThemAll();
       },
       act: (bloc) {
-        final notification = _dataService.notifications.getAllNotifications().first;
+        final notification = dataService.notifications.getAllNotifications().first;
         return bloc
           ..add(NotificationEvent.edit(key: notification.key, type: AppNotificationType.furniture))
           ..add(const NotificationEvent.furnitureCraftingTimeTypeChanged(newValue: FurnitureCraftingTimeType.sixteenHours));
       },
       verify: (bloc) => bloc.state.maybeMap(
         furniture: (state) {
-          _checkState(state, AppNotificationType.furniture, checkKey: false);
-          _checkNotDirtyFields(state);
+          checkState(state, AppNotificationType.furniture, checkKey: false);
+          checkNotDirtyFields(state);
           expect(state.timeType, FurnitureCraftingTimeType.sixteenHours);
         },
         orElse: () => throw Exception('Invalid state'),
@@ -798,17 +798,17 @@ void main() {
   group('Value changed - realm currency specific', () {
     blocTest<NotificationBloc, NotificationState>(
       'on a not saved notification',
-      build: () => _buildBloc(),
+      build: () => buildBloc(),
       act: (bloc) => bloc
-        ..add(const NotificationEvent.add(defaultTitle: _defaultTitle, defaultBody: _defaultBody))
+        ..add(const NotificationEvent.add(defaultTitle: defaultTitle, defaultBody: defaultBody))
         ..add(const NotificationEvent.typeChanged(newValue: AppNotificationType.realmCurrency))
         ..add(const NotificationEvent.realmCurrencyChanged(newValue: 100))
         ..add(const NotificationEvent.realmTrustRankLevelChanged(newValue: 10))
         ..add(const NotificationEvent.realmRankTypeChanged(newValue: RealmRankType.luxury)),
       verify: (bloc) => bloc.state.maybeMap(
         realmCurrency: (state) {
-          _checkState(state, AppNotificationType.realmCurrency, checkKey: false);
-          _checkNotDirtyFields(state, shouldBeDirty: false);
+          checkState(state, AppNotificationType.realmCurrency, checkKey: false);
+          checkNotDirtyFields(state, shouldBeDirty: false);
           expect(state.currentRealmCurrency, 100);
           expect(state.currentTrustRank, 10);
           expect(state.currentRealmRankType, RealmRankType.luxury);
@@ -819,23 +819,23 @@ void main() {
 
     blocTest<NotificationBloc, NotificationState>(
       'on an existing notification',
-      build: () => _buildBloc(),
+      build: () => buildBloc(),
       setUp: () async {
-        await _dataService.notifications.saveRealmCurrencyNotification(
-          _realmCurrency,
+        await dataService.notifications.saveRealmCurrencyNotification(
+          realmCurrency,
           RealmRankType.luxury,
           10,
           100,
-          _defaultTitle,
-          _defaultBody,
-          note: _defaultNote,
+          defaultTitle,
+          defaultBody,
+          note: defaultNote,
         );
       },
       tearDown: () async {
-        await _dataService.deleteThemAll();
+        await dataService.deleteThemAll();
       },
       act: (bloc) {
-        final notification = _dataService.notifications.getAllNotifications().first;
+        final notification = dataService.notifications.getAllNotifications().first;
         return bloc
           ..add(NotificationEvent.edit(key: notification.key, type: AppNotificationType.realmCurrency))
           ..add(const NotificationEvent.realmCurrencyChanged(newValue: 1000))
@@ -844,8 +844,8 @@ void main() {
       },
       verify: (bloc) => bloc.state.maybeMap(
         realmCurrency: (state) {
-          _checkState(state, AppNotificationType.realmCurrency, checkKey: false);
-          _checkNotDirtyFields(state);
+          checkState(state, AppNotificationType.realmCurrency, checkKey: false);
+          checkNotDirtyFields(state);
           expect(state.currentRealmCurrency, 1000);
           expect(state.currentTrustRank, 9);
           expect(state.currentRealmRankType, RealmRankType.luxury);
@@ -858,14 +858,14 @@ void main() {
   group('Value changed - weekly boss specific', () {
     blocTest<NotificationBloc, NotificationState>(
       'on a not saved notification',
-      build: () => _buildBloc(),
+      build: () => buildBloc(),
       act: (bloc) => bloc
-        ..add(const NotificationEvent.add(defaultTitle: _defaultTitle, defaultBody: _defaultBody))
+        ..add(const NotificationEvent.add(defaultTitle: defaultTitle, defaultBody: defaultBody))
         ..add(const NotificationEvent.typeChanged(newValue: AppNotificationType.weeklyBoss)),
       verify: (bloc) => bloc.state.maybeMap(
         weeklyBoss: (state) {
-          _checkState(state, AppNotificationType.weeklyBoss, checkKey: false);
-          _checkNotDirtyFields(state, shouldBeDirty: false);
+          checkState(state, AppNotificationType.weeklyBoss, checkKey: false);
+          checkNotDirtyFields(state, shouldBeDirty: false);
         },
         orElse: () => throw Exception('Invalid state'),
       ),
@@ -873,32 +873,32 @@ void main() {
 
     blocTest<NotificationBloc, NotificationState>(
       'on an existing notification',
-      build: () => _buildBloc(),
+      build: () => buildBloc(),
       setUp: () async {
-        final boss = _genshinService.monsters.getAllMonstersForCard().firstWhere((el) => el.type == MonsterType.boss).key;
-        await _dataService.notifications.saveWeeklyBossNotification(
+        final boss = genshinService.monsters.getAllMonstersForCard().firstWhere((el) => el.type == MonsterType.boss).key;
+        await dataService.notifications.saveWeeklyBossNotification(
           boss,
           AppServerResetTimeType.northAmerica,
-          _defaultTitle,
-          _defaultBody,
-          note: _defaultNote,
+          defaultTitle,
+          defaultBody,
+          note: defaultNote,
         );
       },
       tearDown: () async {
-        await _dataService.deleteThemAll();
+        await dataService.deleteThemAll();
       },
       act: (bloc) {
-        final boss = _genshinService.monsters.getAllMonstersForCard().lastWhere((el) => el.type == MonsterType.boss);
-        final notification = _dataService.notifications.getAllNotifications().first;
+        final boss = genshinService.monsters.getAllMonstersForCard().lastWhere((el) => el.type == MonsterType.boss);
+        final notification = dataService.notifications.getAllNotifications().first;
         return bloc
           ..add(NotificationEvent.edit(key: notification.key, type: AppNotificationType.weeklyBoss))
           ..add(NotificationEvent.imageChanged(newValue: boss.image));
       },
       verify: (bloc) => bloc.state.maybeMap(
         weeklyBoss: (state) {
-          _checkState(state, AppNotificationType.weeklyBoss, checkKey: false);
-          _checkNotDirtyFields(state);
-          final boss = _genshinService.monsters.getAllMonstersForCard().lastWhere((el) => el.type == MonsterType.boss);
+          checkState(state, AppNotificationType.weeklyBoss, checkKey: false);
+          checkNotDirtyFields(state);
+          final boss = genshinService.monsters.getAllMonstersForCard().lastWhere((el) => el.type == MonsterType.boss);
           expect(state.images.any((el) => el.isSelected && el.image == boss.image), isTrue);
         },
         orElse: () => throw Exception('Invalid state'),
@@ -909,15 +909,15 @@ void main() {
   group('Value changed - custom specific', () {
     blocTest<NotificationBloc, NotificationState>(
       'on a not saved notification',
-      build: () => _buildBloc(),
+      build: () => buildBloc(),
       act: (bloc) => bloc
-        ..add(const NotificationEvent.add(defaultTitle: _defaultTitle, defaultBody: _defaultBody))
+        ..add(const NotificationEvent.add(defaultTitle: defaultTitle, defaultBody: defaultBody))
         ..add(const NotificationEvent.typeChanged(newValue: AppNotificationType.custom))
         ..add(const NotificationEvent.itemTypeChanged(newValue: AppNotificationItemType.character)),
       verify: (bloc) => bloc.state.maybeMap(
         custom: (state) {
-          _checkState(state, AppNotificationType.custom, checkKey: false);
-          _checkNotDirtyFields(state, shouldBeDirty: false);
+          checkState(state, AppNotificationType.custom, checkKey: false);
+          checkNotDirtyFields(state, shouldBeDirty: false);
           expect(state.itemType, AppNotificationItemType.character);
         },
         orElse: () => throw Exception('Invalid state'),
@@ -926,31 +926,31 @@ void main() {
 
     blocTest<NotificationBloc, NotificationState>(
       'on an existing notification',
-      build: () => _buildBloc(),
+      build: () => buildBloc(),
       setUp: () async {
-        final boss = _genshinService.monsters.getAllMonstersForCard().firstWhere((el) => el.type == MonsterType.boss).key;
-        await _dataService.notifications.saveCustomNotification(
+        final boss = genshinService.monsters.getAllMonstersForCard().firstWhere((el) => el.type == MonsterType.boss).key;
+        await dataService.notifications.saveCustomNotification(
           boss,
-          _defaultTitle,
-          _defaultBody,
-          _customNotificationCompletesAt,
+          defaultTitle,
+          defaultBody,
+          customNotificationCompletesAt,
           AppNotificationItemType.monster,
-          note: _defaultNote,
+          note: defaultNote,
         );
       },
       tearDown: () async {
-        await _dataService.deleteThemAll();
+        await dataService.deleteThemAll();
       },
       act: (bloc) {
-        final notification = _dataService.notifications.getAllNotifications().first;
+        final notification = dataService.notifications.getAllNotifications().first;
         return bloc
           ..add(NotificationEvent.edit(key: notification.key, type: AppNotificationType.custom))
           ..add(const NotificationEvent.itemTypeChanged(newValue: AppNotificationItemType.artifact));
       },
       verify: (bloc) => bloc.state.maybeMap(
         custom: (state) {
-          _checkState(state, AppNotificationType.custom, checkKey: false);
-          _checkNotDirtyFields(state);
+          checkState(state, AppNotificationType.custom, checkKey: false);
+          checkNotDirtyFields(state);
           expect(state.itemType, AppNotificationItemType.artifact);
         },
         orElse: () => throw Exception('Invalid state'),
@@ -961,14 +961,14 @@ void main() {
   group('Value changed - daily check in specific', () {
     blocTest<NotificationBloc, NotificationState>(
       'on a not saved notification',
-      build: () => _buildBloc(),
+      build: () => buildBloc(),
       act: (bloc) => bloc
-        ..add(const NotificationEvent.add(defaultTitle: _defaultTitle, defaultBody: _defaultBody))
+        ..add(const NotificationEvent.add(defaultTitle: defaultTitle, defaultBody: defaultBody))
         ..add(const NotificationEvent.typeChanged(newValue: AppNotificationType.dailyCheckIn)),
       verify: (bloc) => bloc.state.maybeMap(
         dailyCheckIn: (state) {
-          _checkState(state, AppNotificationType.dailyCheckIn, checkKey: false);
-          _checkNotDirtyFields(state, shouldBeDirty: false);
+          checkState(state, AppNotificationType.dailyCheckIn, checkKey: false);
+          checkNotDirtyFields(state, shouldBeDirty: false);
         },
         orElse: () => throw Exception('Invalid state'),
       ),
@@ -976,21 +976,21 @@ void main() {
 
     blocTest<NotificationBloc, NotificationState>(
       'on an existing notification',
-      build: () => _buildBloc(),
+      build: () => buildBloc(),
       setUp: () async {
-        await _dataService.notifications.saveDailyCheckInNotification(_primogemKey, _defaultTitle, _defaultBody, note: _defaultNote);
+        await dataService.notifications.saveDailyCheckInNotification(primogemKey, defaultTitle, defaultBody, note: defaultNote);
       },
       tearDown: () async {
-        await _dataService.deleteThemAll();
+        await dataService.deleteThemAll();
       },
       act: (bloc) {
-        final notification = _dataService.notifications.getAllNotifications().first;
+        final notification = dataService.notifications.getAllNotifications().first;
         return bloc.add(NotificationEvent.edit(key: notification.key, type: AppNotificationType.dailyCheckIn));
       },
       verify: (bloc) => bloc.state.maybeMap(
         dailyCheckIn: (state) {
-          _checkState(state, AppNotificationType.dailyCheckIn, checkKey: false);
-          _checkNotDirtyFields(state);
+          checkState(state, AppNotificationType.dailyCheckIn, checkKey: false);
+          checkNotDirtyFields(state);
         },
         orElse: () => throw Exception('Invalid state'),
       ),

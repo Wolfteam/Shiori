@@ -18,14 +18,14 @@ import '../../mocks.mocks.dart';
 const _dbFolder = 'shiori_game_codes_bloc_tests';
 
 void main() {
-  late final TelemetryService _telemetryService;
-  late final NetworkService _networkService;
-  late final GameCodeService _gameCodeService;
-  late final DataService _dataService;
-  late final GenshinService _genshinService;
-  late final String _dbPath;
+  late final TelemetryService telemetryService;
+  late final NetworkService networkService;
+  late final GameCodeService gameCodeService;
+  late final DataService dataService;
+  late final GenshinService genshinService;
+  late final String dbPath;
 
-  final _defaultGameCodes = [
+  final defaultGameCodes = [
     GameCodeModel(
       code: '12345',
       isExpired: true,
@@ -42,62 +42,62 @@ void main() {
     )
   ];
 
-  const _defaultState = GameCodesState.loaded(workingGameCodes: [], expiredGameCodes: []);
+  const defaultState = GameCodesState.loaded(workingGameCodes: [], expiredGameCodes: []);
 
   setUpAll(() {
     TestWidgetsFlutterBinding.ensureInitialized();
-    _telemetryService = MockTelemetryService();
-    _networkService = MockNetworkService();
-    when(_networkService.isInternetAvailable()).thenAnswer((_) => Future.value(true));
+    telemetryService = MockTelemetryService();
+    networkService = MockNetworkService();
+    when(networkService.isInternetAvailable()).thenAnswer((_) => Future.value(true));
     final settingsService = MockSettingsService();
     when(settingsService.language).thenReturn(AppLanguageType.english);
 
     final resourceService = getResourceService(settingsService);
-    _genshinService = GenshinServiceImpl(resourceService, LocaleServiceImpl(settingsService));
-    _gameCodeService = MockGameCodeService();
-    when(_gameCodeService.getAllGameCodes()).thenAnswer((_) => Future.value(_defaultGameCodes));
-    _dataService = DataServiceImpl(_genshinService, CalculatorServiceImpl(_genshinService, resourceService), resourceService);
+    genshinService = GenshinServiceImpl(resourceService, LocaleServiceImpl(settingsService));
+    gameCodeService = MockGameCodeService();
+    when(gameCodeService.getAllGameCodes()).thenAnswer((_) => Future.value(defaultGameCodes));
+    dataService = DataServiceImpl(genshinService, CalculatorServiceImpl(genshinService, resourceService), resourceService);
     return Future(() async {
-      await _genshinService.init(AppLanguageType.english);
-      _dbPath = await getDbPath(_dbFolder);
-      await _dataService.initForTests(_dbPath);
+      await genshinService.init(AppLanguageType.english);
+      dbPath = await getDbPath(_dbFolder);
+      await dataService.initForTests(dbPath);
     });
   });
 
   tearDownAll(() {
     return Future(() async {
-      await _dataService.closeThemAll();
-      await deleteDbFolder(_dbPath);
+      await dataService.closeThemAll();
+      await deleteDbFolder(dbPath);
     });
   });
 
   test(
     'Initial state',
-    () => expect(GameCodesBloc(_dataService, _telemetryService, _gameCodeService, _networkService).state, _defaultState),
+    () => expect(GameCodesBloc(dataService, telemetryService, gameCodeService, networkService).state, defaultState),
   );
 
   group('Init', () {
     blocTest<GameCodesBloc, GameCodesState>(
       'no game codes have been loaded',
-      build: () => GameCodesBloc(_dataService, _telemetryService, _gameCodeService, _networkService),
+      build: () => GameCodesBloc(dataService, telemetryService, gameCodeService, networkService),
       act: (bloc) => bloc.add(const GameCodesEvent.init()),
-      expect: () => const [_defaultState],
+      expect: () => const [defaultState],
     );
 
     blocTest<GameCodesBloc, GameCodesState>(
       'some game codes have been loaded',
-      build: () => GameCodesBloc(_dataService, _telemetryService, _gameCodeService, _networkService),
+      build: () => GameCodesBloc(dataService, telemetryService, gameCodeService, networkService),
       setUp: () async {
-        await _dataService.gameCodes.saveGameCodes(_defaultGameCodes);
+        await dataService.gameCodes.saveGameCodes(defaultGameCodes);
       },
       tearDown: () async {
-        await _dataService.deleteThemAll();
+        await dataService.deleteThemAll();
       },
       act: (bloc) => bloc.add(const GameCodesEvent.init()),
       expect: () => [
         GameCodesState.loaded(
-          workingGameCodes: _defaultGameCodes.where((el) => !el.isExpired).toList(),
-          expiredGameCodes: _defaultGameCodes.where((el) => el.isExpired).toList(),
+          workingGameCodes: defaultGameCodes.where((el) => !el.isExpired).toList(),
+          expiredGameCodes: defaultGameCodes.where((el) => el.isExpired).toList(),
         ),
       ],
     );
@@ -105,7 +105,7 @@ void main() {
 
   blocTest<GameCodesBloc, GameCodesState>(
     'Refresh',
-    build: () => GameCodesBloc(_dataService, _telemetryService, _gameCodeService, _networkService),
+    build: () => GameCodesBloc(dataService, telemetryService, gameCodeService, networkService),
     act: (bloc) => bloc.add(const GameCodesEvent.refresh()),
     skip: 1,
     verify: (bloc) {
@@ -122,18 +122,18 @@ void main() {
 
   blocTest<GameCodesBloc, GameCodesState>(
     'Mark as used',
-    build: () => GameCodesBloc(_dataService, _telemetryService, _gameCodeService, _networkService),
+    build: () => GameCodesBloc(dataService, telemetryService, gameCodeService, networkService),
     setUp: () async {
-      await _dataService.gameCodes.saveGameCodes(_defaultGameCodes);
+      await dataService.gameCodes.saveGameCodes(defaultGameCodes);
     },
     tearDown: () async {
-      await _dataService.deleteThemAll();
+      await dataService.deleteThemAll();
     },
     act: (bloc) => bloc.add(const GameCodesEvent.markAsUsed(code: '12345', wasUsed: true)),
     expect: () => [
       GameCodesState.loaded(
-        workingGameCodes: [_defaultGameCodes.last],
-        expiredGameCodes: [_defaultGameCodes.first.copyWith.call(isUsed: true)],
+        workingGameCodes: [defaultGameCodes.last],
+        expiredGameCodes: [defaultGameCodes.first.copyWith.call(isUsed: true)],
       ),
     ],
   );

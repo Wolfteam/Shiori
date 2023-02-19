@@ -39,7 +39,7 @@ extension ElementTypeExtensions on ElementType {
         color = useDarkColors ? const Color.fromARGB(alpha, 243, 124, 35) : const Color.fromARGB(alpha, 249, 163, 104);
         break;
       default:
-        throw Exception('Invalid element type = ${this}');
+        throw Exception('Invalid element type = $this');
     }
 
     return useDarkColors ? color : color.withOpacity(0.5);

@@ -186,8 +186,8 @@ class _NumberPickerState extends State<NumberPicker> {
 
   Widget _itemBuilder(BuildContext context, int index) {
     final themeData = Theme.of(context);
-    final defaultStyle = widget.textStyle ?? themeData.textTheme.bodyText2;
-    final selectedStyle = widget.selectedTextStyle ?? themeData.textTheme.headline5?.copyWith(color: themeData.colorScheme.secondary);
+    final defaultStyle = widget.textStyle ?? themeData.textTheme.bodyMedium;
+    final selectedStyle = widget.selectedTextStyle ?? themeData.textTheme.headlineSmall?.copyWith(color: themeData.colorScheme.secondary);
 
     final value = _intValueFromIndex(index % itemCount);
     final isExtra = !widget.infiniteLoop && (index < additionalItemsOnEachSide || index >= listItemsCount - additionalItemsOnEachSide);
@@ -225,7 +225,7 @@ class _NumberPickerState extends State<NumberPicker> {
 
   void _maybeCenterValue() {
     if (_scrollController.hasClients && !isScrolling) {
-      int diff = widget.value - widget.minValue;
+      final int diff = widget.value - widget.minValue;
       int index = diff ~/ widget.step;
       if (widget.infiniteLoop) {
         final offset = _scrollController.offset + 0.5 * itemExtent;

@@ -14,32 +14,32 @@ import '../../../common.dart';
 import '../../../mocks.mocks.dart';
 
 void main() {
-  late LocaleService _localeService;
-  late SettingsService _settingsService;
-  late GenshinService _genshinService;
+  late LocaleService localeService;
+  late SettingsService settingsService;
+  late GenshinService genshinService;
 
   setUpAll(() {
     TestWidgetsFlutterBinding.ensureInitialized();
-    _settingsService = MockSettingsService();
-    when(_settingsService.language).thenReturn(AppLanguageType.english);
-    when(_settingsService.showCharacterDetails).thenReturn(true);
-    _localeService = LocaleServiceImpl(_settingsService);
-    final resourceService = getResourceService(_settingsService);
-    _genshinService = GenshinServiceImpl(resourceService, _localeService);
+    settingsService = MockSettingsService();
+    when(settingsService.language).thenReturn(AppLanguageType.english);
+    when(settingsService.showCharacterDetails).thenReturn(true);
+    localeService = LocaleServiceImpl(settingsService);
+    final resourceService = getResourceService(settingsService);
+    genshinService = GenshinServiceImpl(resourceService, localeService);
 
     return Future(() async {
-      await _genshinService.init(AppLanguageType.english);
+      await genshinService.init(AppLanguageType.english);
     });
   });
 
-  test('Initial state', () => expect(ChartGendersBloc(_genshinService).state, const ChartGendersState.loading()));
+  test('Initial state', () => expect(ChartGendersBloc(genshinService).state, const ChartGendersState.loading()));
 
   blocTest<ChartGendersBloc, ChartGendersState>(
     'Init emits loaded state',
-    build: () => ChartGendersBloc(_genshinService),
+    build: () => ChartGendersBloc(genshinService),
     act: (bloc) => bloc.add(const ChartGendersEvent.init()),
     expect: () {
-      final items = _genshinService.characters.getCharacterGendersForCharts();
+      final items = genshinService.characters.getCharacterGendersForCharts();
       final maxCount = max<int>(items.map((e) => e.femaleCount).reduce(max), items.map((e) => e.maleCount).reduce(max));
       return [ChartGendersState.loaded(genders: items, maxCount: maxCount)];
     },

@@ -12,9 +12,9 @@ import '../../common.dart';
 import '../../mocks.mocks.dart';
 
 void main() {
-  late final GenshinService _genshinService;
-  late final SettingsService _settingsService;
-  late final LocaleService _localeService;
+  late final GenshinService genshinService;
+  late final SettingsService settingsService;
+  late final LocaleService localeService;
 
   const wandererSearch = 'Wanderer';
   const wanderersKey = 'wanderers-troupe';
@@ -23,26 +23,26 @@ void main() {
   setUpAll(() {
     TestWidgetsFlutterBinding.ensureInitialized();
     return Future(() async {
-      _settingsService = MockSettingsService();
-      when(_settingsService.language).thenReturn(AppLanguageType.english);
-      final resourceService = getResourceService(_settingsService);
+      settingsService = MockSettingsService();
+      when(settingsService.language).thenReturn(AppLanguageType.english);
+      final resourceService = getResourceService(settingsService);
 
-      _localeService = LocaleServiceImpl(_settingsService);
-      _genshinService = GenshinServiceImpl(resourceService, _localeService);
+      localeService = LocaleServiceImpl(settingsService);
+      genshinService = GenshinServiceImpl(resourceService, localeService);
 
-      await _genshinService.init(_settingsService.language);
+      await genshinService.init(settingsService.language);
     });
   });
 
-  test('Initial state', () => expect(ArtifactsBloc(_genshinService).state, const ArtifactsState.loading()));
+  test('Initial state', () => expect(ArtifactsBloc(genshinService).state, const ArtifactsState.loading()));
 
   group('Init', () {
     blocTest<ArtifactsBloc, ArtifactsState>(
       'emits loaded state',
-      build: () => ArtifactsBloc(_genshinService),
+      build: () => ArtifactsBloc(genshinService),
       act: (bloc) => bloc.add(const ArtifactsEvent.init()),
       expect: () {
-        final artifacts = _genshinService.artifacts.getArtifactsForCard();
+        final artifacts = genshinService.artifacts.getArtifactsForCard();
         return [
           ArtifactsState.loaded(
             artifacts: artifacts,
@@ -60,14 +60,14 @@ void main() {
 
     blocTest<ArtifactsBloc, ArtifactsState>(
       'emits loaded state excluding one key',
-      build: () => ArtifactsBloc(_genshinService),
+      build: () => ArtifactsBloc(genshinService),
       act: (bloc) => bloc.add(ArtifactsEvent.init(excludeKeys: excludedKeys)),
       verify: (bloc) {
         final emittedState = bloc.state;
         emittedState.map(
           loading: (_) => throw Exception('Invalid artifact state'),
           loaded: (state) {
-            final artifacts = _genshinService.artifacts.getArtifactsForCard().where((el) => !excludedKeys.contains(el.key)).toList();
+            final artifacts = genshinService.artifacts.getArtifactsForCard().where((el) => !excludedKeys.contains(el.key)).toList();
             expect(state.artifacts.length, artifacts.length);
             expect(state.collapseNotes, false);
             expect(state.rarity, 0);
@@ -85,13 +85,13 @@ void main() {
   group('Search changed', () {
     blocTest<ArtifactsBloc, ArtifactsState>(
       'should return only one item',
-      build: () => ArtifactsBloc(_genshinService),
+      build: () => ArtifactsBloc(genshinService),
       act: (bloc) => bloc
         ..add(const ArtifactsEvent.init())
         ..add(const ArtifactsEvent.searchChanged(search: wandererSearch)),
       skip: 1,
       expect: () {
-        final artifacts = _genshinService.artifacts.getArtifactsForCard().where((el) => el.key == wanderersKey).toList();
+        final artifacts = genshinService.artifacts.getArtifactsForCard().where((el) => el.key == wanderersKey).toList();
         return [
           ArtifactsState.loaded(
             artifacts: artifacts,
@@ -110,7 +110,7 @@ void main() {
 
     blocTest<ArtifactsBloc, ArtifactsState>(
       'should not return any item',
-      build: () => ArtifactsBloc(_genshinService),
+      build: () => ArtifactsBloc(genshinService),
       act: (bloc) => bloc
         ..add(const ArtifactsEvent.init())
         ..add(const ArtifactsEvent.searchChanged(search: 'Keqing')),
@@ -134,7 +134,7 @@ void main() {
   group('Filters changed', () {
     blocTest<ArtifactsBloc, ArtifactsState>(
       'some filters are applied and should return 1 item',
-      build: () => ArtifactsBloc(_genshinService),
+      build: () => ArtifactsBloc(genshinService),
       act: (bloc) => bloc
         ..add(const ArtifactsEvent.init())
         ..add(const ArtifactsEvent.searchChanged(search: wandererSearch))
@@ -145,7 +145,7 @@ void main() {
         ..add(const ArtifactsEvent.applyFilterChanges()),
       skip: 6,
       expect: () {
-        final artifacts = _genshinService.artifacts.getArtifactsForCard().where((el) => el.key == wanderersKey).toList();
+        final artifacts = genshinService.artifacts.getArtifactsForCard().where((el) => el.key == wanderersKey).toList();
         return [
           ArtifactsState.loaded(
             artifacts: artifacts,
@@ -164,7 +164,7 @@ void main() {
 
     blocTest<ArtifactsBloc, ArtifactsState>(
       'some filters are applied but they end up being cancelled',
-      build: () => ArtifactsBloc(_genshinService),
+      build: () => ArtifactsBloc(genshinService),
       act: (bloc) => bloc
         ..add(const ArtifactsEvent.init())
         ..add(const ArtifactsEvent.rarityChanged(5))
@@ -173,7 +173,7 @@ void main() {
         ..add(const ArtifactsEvent.cancelChanges()),
       skip: 4,
       expect: () {
-        final artifacts = _genshinService.artifacts.getArtifactsForCard().toList();
+        final artifacts = genshinService.artifacts.getArtifactsForCard().toList();
         return [
           ArtifactsState.loaded(
             artifacts: artifacts,
@@ -191,7 +191,7 @@ void main() {
 
     blocTest<ArtifactsBloc, ArtifactsState>(
       'filters are reseted',
-      build: () => ArtifactsBloc(_genshinService),
+      build: () => ArtifactsBloc(genshinService),
       act: (bloc) => bloc
         ..add(const ArtifactsEvent.init())
         ..add(const ArtifactsEvent.searchChanged(search: wandererSearch))
@@ -201,7 +201,7 @@ void main() {
         ..add(const ArtifactsEvent.resetFilters()),
       skip: 5,
       expect: () {
-        final artifacts = _genshinService.artifacts.getArtifactsForCard();
+        final artifacts = genshinService.artifacts.getArtifactsForCard();
         return [
           ArtifactsState.loaded(
             artifacts: artifacts,

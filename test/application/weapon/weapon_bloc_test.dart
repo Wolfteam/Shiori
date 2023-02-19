@@ -14,48 +14,48 @@ import '../../mocks.mocks.dart';
 const _dbFolder = 'shiori_weapon_bloc_tests';
 
 void main() {
-  late final TelemetryService _telemetryService;
-  late final GenshinService _genshinService;
-  late final DataService _dataService;
-  late final ResourceService _resourceService;
-  late final String _dbPath;
+  late final TelemetryService telemetryService;
+  late final GenshinService genshinService;
+  late final DataService dataService;
+  late final ResourceService resourceService;
+  late final String dbPath;
 
-  const _key = 'aquila-favonia';
+  const key = 'aquila-favonia';
 
   setUpAll(() {
     TestWidgetsFlutterBinding.ensureInitialized();
-    _telemetryService = MockTelemetryService();
+    telemetryService = MockTelemetryService();
     final settingsService = SettingsServiceImpl(MockLoggingService());
     final localeService = LocaleServiceImpl(settingsService);
-    _resourceService = getResourceService(settingsService);
-    _genshinService = GenshinServiceImpl(_resourceService, localeService);
-    _dataService = DataServiceImpl(_genshinService, CalculatorServiceImpl(_genshinService, _resourceService), _resourceService);
+    resourceService = getResourceService(settingsService);
+    genshinService = GenshinServiceImpl(resourceService, localeService);
+    dataService = DataServiceImpl(genshinService, CalculatorServiceImpl(genshinService, resourceService), resourceService);
 
     return Future(() async {
-      await _genshinService.init(AppLanguageType.english);
-      _dbPath = await getDbPath(_dbFolder);
-      await _dataService.initForTests(_dbPath);
+      await genshinService.init(AppLanguageType.english);
+      dbPath = await getDbPath(_dbFolder);
+      await dataService.initForTests(dbPath);
     });
   });
 
   tearDownAll(() {
     return Future(() async {
-      await _dataService.closeThemAll();
-      await deleteDbFolder(_dbPath);
+      await dataService.closeThemAll();
+      await deleteDbFolder(dbPath);
     });
   });
 
   test(
     'Initial state',
-    () => expect(WeaponBloc(_genshinService, _telemetryService, _dataService, _resourceService).state, const WeaponState.loading()),
+    () => expect(WeaponBloc(genshinService, telemetryService, dataService, resourceService).state, const WeaponState.loading()),
   );
 
   group('Load from key', () {
-    void _checkState(WeaponState state, bool isInInventory) {
+    void checkState(WeaponState state, bool isInInventory) {
       state.map(
         loading: (_) => throw Exception('Invalid state'),
         loaded: (state) {
-          expect(state.key, _key);
+          expect(state.key, key);
           expect(state.name, 'Aquila Favonia');
           checkAsset(state.fullImage);
           checkTranslation(state.description, canBeNull: false);
@@ -77,23 +77,23 @@ void main() {
 
     blocTest<WeaponBloc, WeaponState>(
       'keqing',
-      build: () => WeaponBloc(_genshinService, _telemetryService, _dataService, _resourceService),
-      act: (bloc) => bloc.add(const WeaponEvent.loadFromKey(key: _key)),
+      build: () => WeaponBloc(genshinService, telemetryService, dataService, resourceService),
+      act: (bloc) => bloc.add(const WeaponEvent.loadFromKey(key: key)),
       //we skip 1 because since the event is not _AddedToInventory the bloc will emit a loading
       skip: 1,
-      verify: (bloc) => _checkState(bloc.state, false),
+      verify: (bloc) => checkState(bloc.state, false),
     );
 
     blocTest<WeaponBloc, WeaponState>(
       'keqing is in inventory',
-      build: () => WeaponBloc(_genshinService, _telemetryService, _dataService, _resourceService),
+      build: () => WeaponBloc(genshinService, telemetryService, dataService, resourceService),
       setUp: () {
-        _dataService.inventory.addItemToInventory(_key, ItemType.weapon, 1);
+        dataService.inventory.addItemToInventory(key, ItemType.weapon, 1);
       },
-      act: (bloc) => bloc.add(const WeaponEvent.loadFromKey(key: _key)),
+      act: (bloc) => bloc.add(const WeaponEvent.loadFromKey(key: key)),
       //we skip 1 because since the event is not _AddedToInventory the bloc will emit a loading
       skip: 1,
-      verify: (bloc) => _checkState(bloc.state, true),
+      verify: (bloc) => checkState(bloc.state, true),
     );
   });
 }

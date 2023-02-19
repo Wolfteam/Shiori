@@ -11,11 +11,11 @@ import '../../common.dart';
 import '../../mocks.mocks.dart';
 
 void main() {
-  late final GenshinService _genshinService;
+  late final GenshinService genshinService;
 
-  const _search = 'Mora';
-  const _key = 'mora';
-  final _excludedKeys = [_key];
+  const search = 'Mora';
+  const key = 'mora';
+  final excludedKeys = [key];
 
   setUpAll(() {
     TestWidgetsFlutterBinding.ensureInitialized();
@@ -23,22 +23,22 @@ void main() {
     when(settingsService.language).thenReturn(AppLanguageType.english);
     final localeService = LocaleServiceImpl(settingsService);
     final resourceService = getResourceService(settingsService);
-    _genshinService = GenshinServiceImpl(resourceService, localeService);
+    genshinService = GenshinServiceImpl(resourceService, localeService);
 
     return Future(() async {
-      await _genshinService.init(AppLanguageType.english);
+      await genshinService.init(AppLanguageType.english);
     });
   });
 
-  test('Initial state', () => expect(MaterialsBloc(_genshinService).state, const MaterialsState.loading()));
+  test('Initial state', () => expect(MaterialsBloc(genshinService).state, const MaterialsState.loading()));
 
   group('Init', () {
     blocTest<MaterialsBloc, MaterialsState>(
       'emits loaded state',
-      build: () => MaterialsBloc(_genshinService),
+      build: () => MaterialsBloc(genshinService),
       act: (bloc) => bloc.add(const MaterialsEvent.init()),
       expect: () {
-        final materials = _genshinService.materials.getAllMaterialsForCard();
+        final materials = genshinService.materials.getAllMaterialsForCard();
         return [
           MaterialsState.loaded(
             materials: sortMaterialsByGrouping(materials, SortDirectionType.asc),
@@ -55,14 +55,14 @@ void main() {
 
     blocTest<MaterialsBloc, MaterialsState>(
       'emits loaded state excluding one key',
-      build: () => MaterialsBloc(_genshinService),
-      act: (bloc) => bloc.add(MaterialsEvent.init(excludeKeys: _excludedKeys)),
+      build: () => MaterialsBloc(genshinService),
+      act: (bloc) => bloc.add(MaterialsEvent.init(excludeKeys: excludedKeys)),
       verify: (bloc) {
         final emittedState = bloc.state;
         emittedState.map(
           loading: (_) => throw Exception('Invalid artifact state'),
           loaded: (state) {
-            final materials = _genshinService.materials.getAllMaterialsForCard().where((el) => !_excludedKeys.contains(el.key)).toList();
+            final materials = genshinService.materials.getAllMaterialsForCard().where((el) => !excludedKeys.contains(el.key)).toList();
 
             expect(state.materials.length, materials.length);
             expect(state.rarity, 0);
@@ -80,13 +80,13 @@ void main() {
   group('Search changed', () {
     blocTest<MaterialsBloc, MaterialsState>(
       'should return only one item',
-      build: () => MaterialsBloc(_genshinService),
+      build: () => MaterialsBloc(genshinService),
       act: (bloc) => bloc
         ..add(const MaterialsEvent.init())
-        ..add(const MaterialsEvent.searchChanged(search: _search)),
+        ..add(const MaterialsEvent.searchChanged(search: search)),
       skip: 1,
       expect: () {
-        final material = _genshinService.materials.getMaterialForCard(_key);
+        final material = genshinService.materials.getMaterialForCard(key);
         return [
           MaterialsState.loaded(
             materials: [material],
@@ -96,7 +96,7 @@ void main() {
             tempFilterType: MaterialFilterType.grouped,
             sortDirectionType: SortDirectionType.asc,
             tempSortDirectionType: SortDirectionType.asc,
-            search: _search,
+            search: search,
           )
         ];
       },
@@ -104,7 +104,7 @@ void main() {
 
     blocTest<MaterialsBloc, MaterialsState>(
       'should not return any item',
-      build: () => MaterialsBloc(_genshinService),
+      build: () => MaterialsBloc(genshinService),
       act: (bloc) => bloc
         ..add(const MaterialsEvent.init())
         ..add(const MaterialsEvent.searchChanged(search: 'Keqing')),
@@ -127,10 +127,10 @@ void main() {
   group('Filters changed', () {
     blocTest<MaterialsBloc, MaterialsState>(
       'some filters are applied and should return 1 item',
-      build: () => MaterialsBloc(_genshinService),
+      build: () => MaterialsBloc(genshinService),
       act: (bloc) => bloc
         ..add(const MaterialsEvent.init())
-        ..add(const MaterialsEvent.searchChanged(search: _search))
+        ..add(const MaterialsEvent.searchChanged(search: search))
         ..add(const MaterialsEvent.rarityChanged(3))
         ..add(const MaterialsEvent.filterTypeChanged(MaterialFilterType.rarity))
         ..add(const MaterialsEvent.typeChanged(MaterialType.currency))
@@ -138,7 +138,7 @@ void main() {
         ..add(const MaterialsEvent.applyFilterChanges()),
       skip: 6,
       expect: () {
-        final material = _genshinService.materials.getMaterialForCard(_key);
+        final material = genshinService.materials.getMaterialForCard(key);
         return [
           MaterialsState.loaded(
             materials: [material],
@@ -150,7 +150,7 @@ void main() {
             tempType: MaterialType.currency,
             sortDirectionType: SortDirectionType.desc,
             tempSortDirectionType: SortDirectionType.desc,
-            search: _search,
+            search: search,
           )
         ];
       },
@@ -158,7 +158,7 @@ void main() {
 
     blocTest<MaterialsBloc, MaterialsState>(
       'some filters are applied but they end up being cancelled',
-      build: () => MaterialsBloc(_genshinService),
+      build: () => MaterialsBloc(genshinService),
       act: (bloc) => bloc
         ..add(const MaterialsEvent.init())
         ..add(const MaterialsEvent.rarityChanged(5))
@@ -171,7 +171,7 @@ void main() {
       skip: 7,
       expect: () {
         final materials =
-            _genshinService.materials.getAllMaterialsForCard().where((el) => el.type == MaterialType.currency && el.rarity == 5).toList();
+            genshinService.materials.getAllMaterialsForCard().where((el) => el.type == MaterialType.currency && el.rarity == 5).toList();
         return [
           MaterialsState.loaded(
             materials: sortMaterialsByGrouping(materials, SortDirectionType.desc),
@@ -190,10 +190,10 @@ void main() {
 
     blocTest<MaterialsBloc, MaterialsState>(
       'filters are reseted',
-      build: () => MaterialsBloc(_genshinService),
+      build: () => MaterialsBloc(genshinService),
       act: (bloc) => bloc
         ..add(const MaterialsEvent.init())
-        ..add(const MaterialsEvent.searchChanged(search: _search))
+        ..add(const MaterialsEvent.searchChanged(search: search))
         ..add(const MaterialsEvent.rarityChanged(5))
         ..add(const MaterialsEvent.filterTypeChanged(MaterialFilterType.rarity))
         ..add(const MaterialsEvent.typeChanged(MaterialType.currency))
@@ -201,7 +201,7 @@ void main() {
         ..add(const MaterialsEvent.resetFilters()),
       skip: 6,
       expect: () {
-        final materials = _genshinService.materials.getAllMaterialsForCard();
+        final materials = genshinService.materials.getAllMaterialsForCard();
         return [
           MaterialsState.loaded(
             materials: sortMaterialsByGrouping(materials, SortDirectionType.asc),
