@@ -52,6 +52,7 @@ dependencies:
   infinite_listview: ^1.1.0
   internet_connection_checker: ^0.0.1+4
   intl: ^0.17.0
+  intl_utils: ^2.8.1
   json_annotation: ^4.7.0
   linked_scroll_controller: ^0.2.0
   logger: ^1.1.0
