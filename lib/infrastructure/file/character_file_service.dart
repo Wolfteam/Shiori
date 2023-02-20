@@ -358,6 +358,7 @@ class CharacterFileServiceImpl extends CharacterFileService {
     final statExp = RegExp('(?<={).+?(?=})');
     final maxLevel = skillStats.first.values.length;
     for (var i = 1; i <= maxLevel; i++) {
+      final titles = <String>[];
       final stat = CharacterSkillStatModel(level: i, descriptions: []);
       for (final translation in statsTranslations) {
         // "Curación continua|{param3}% Max HP + {param4}",
@@ -366,7 +367,11 @@ class CharacterFileServiceImpl extends CharacterFileService {
           continue;
         }
         final desc = splitted.first;
-        var toReplace = splitted[1];
+        if (titles.contains(desc)) {
+          continue;
+        }
+
+        String toReplace = splitted[1];
         final matches = statExp.allMatches(toReplace);
         for (final match in matches) {
           final val = match.group(0);
@@ -383,6 +388,7 @@ class CharacterFileServiceImpl extends CharacterFileService {
           toReplace = toReplace.replaceFirst('{$val}', '$statValue');
         }
 
+        titles.add(desc);
         stat.descriptions.add('$desc|$toReplace');
       }
 
