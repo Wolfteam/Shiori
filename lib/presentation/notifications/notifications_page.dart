@@ -67,7 +67,7 @@ class _NotificationsPageState extends State<NotificationsPage> with SingleTicker
                   groupSeparatorBuilder: (type) => Container(
                     color: theme.colorScheme.secondary.withOpacity(0.5),
                     padding: Styles.edgeInsetAll5,
-                    child: Text(type, style: theme.textTheme.headline6),
+                    child: Text(type, style: theme.textTheme.titleLarge),
                   ),
                 );
               },

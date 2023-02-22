@@ -1,4 +1,13 @@
 export 'artifacts/artifact_card_model.dart';
+export 'backup/backup_app_settings_model.dart';
+export 'backup/backup_calculator_asc_materials_model.dart';
+export 'backup/backup_custom_builds_model.dart';
+export 'backup/backup_game_code_model.dart';
+export 'backup/backup_inventory_model.dart';
+export 'backup/backup_model.dart';
+export 'backup/backup_notifications_model.dart';
+export 'backup/backup_tierlist_model.dart';
+export 'backup/create_backup_result_model.dart';
 export 'banner_history/banner_history_item_model.dart';
 export 'banner_history/banner_history_period_model.dart';
 export 'banner_history/item_release_history_model.dart';

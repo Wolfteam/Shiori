@@ -13,42 +13,42 @@ import '../../../common.dart';
 import '../../../mocks.mocks.dart';
 
 void main() {
-  late LocaleService _localeService;
-  late SettingsService _settingsService;
-  late GenshinService _genshinService;
-  late TelemetryService _telemetryService;
+  late LocaleService localeService;
+  late SettingsService settingsService;
+  late GenshinService genshinService;
+  late TelemetryService telemetryService;
 
   setUpAll(() {
     TestWidgetsFlutterBinding.ensureInitialized();
-    _settingsService = MockSettingsService();
-    when(_settingsService.language).thenReturn(AppLanguageType.english);
-    when(_settingsService.showCharacterDetails).thenReturn(true);
-    _localeService = LocaleServiceImpl(_settingsService);
-    final resourceService = getResourceService(_settingsService);
-    _genshinService = GenshinServiceImpl(resourceService, _localeService);
-    _telemetryService = MockTelemetryService();
+    settingsService = MockSettingsService();
+    when(settingsService.language).thenReturn(AppLanguageType.english);
+    when(settingsService.showCharacterDetails).thenReturn(true);
+    localeService = LocaleServiceImpl(settingsService);
+    final resourceService = getResourceService(settingsService);
+    genshinService = GenshinServiceImpl(resourceService, localeService);
+    telemetryService = MockTelemetryService();
 
     return Future(() async {
-      await _genshinService.init(AppLanguageType.english);
+      await genshinService.init(AppLanguageType.english);
     });
   });
 
-  test('Initial state', () => expect(ChartTopsBloc(_genshinService, _telemetryService).state, const ChartTopsState.loading()));
+  test('Initial state', () => expect(ChartTopsBloc(genshinService, telemetryService).state, const ChartTopsState.loading()));
 
   blocTest<ChartTopsBloc, ChartTopsState>(
     'Init emits loaded state',
-    build: () => ChartTopsBloc(_genshinService, _telemetryService),
+    build: () => ChartTopsBloc(genshinService, telemetryService),
     act: (bloc) => bloc.add(const ChartTopsEvent.init()),
     expect: () {
       final tops = [
-        ..._genshinService.getTopCharts(ChartType.topFiveStarCharacterMostReruns),
-        ..._genshinService.getTopCharts(ChartType.topFiveStarCharacterLeastReruns),
-        ..._genshinService.getTopCharts(ChartType.topFiveStarWeaponMostReruns),
-        ..._genshinService.getTopCharts(ChartType.topFiveStarWeaponLeastReruns),
-        ..._genshinService.getTopCharts(ChartType.topFourStarCharacterMostReruns),
-        ..._genshinService.getTopCharts(ChartType.topFourStarCharacterLeastReruns),
-        ..._genshinService.getTopCharts(ChartType.topFourStarWeaponMostReruns),
-        ..._genshinService.getTopCharts(ChartType.topFourStarWeaponLeastReruns),
+        ...genshinService.getTopCharts(ChartType.topFiveStarCharacterMostReruns),
+        ...genshinService.getTopCharts(ChartType.topFiveStarCharacterLeastReruns),
+        ...genshinService.getTopCharts(ChartType.topFiveStarWeaponMostReruns),
+        ...genshinService.getTopCharts(ChartType.topFiveStarWeaponLeastReruns),
+        ...genshinService.getTopCharts(ChartType.topFourStarCharacterMostReruns),
+        ...genshinService.getTopCharts(ChartType.topFourStarCharacterLeastReruns),
+        ...genshinService.getTopCharts(ChartType.topFourStarWeaponMostReruns),
+        ...genshinService.getTopCharts(ChartType.topFourStarWeaponLeastReruns),
       ];
 
       return [ChartTopsState.loaded(tops: tops)];

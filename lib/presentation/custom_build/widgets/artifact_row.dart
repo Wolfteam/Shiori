@@ -62,13 +62,13 @@ class ArtifactRow extends StatelessWidget {
               children: [
                 Text(
                   s.translateArtifactType(artifact.type),
-                  style: theme.textTheme.subtitle1!.copyWith(fontWeight: FontWeight.bold),
+                  style: theme.textTheme.titleMedium!.copyWith(fontWeight: FontWeight.bold),
                 ),
                 Text(
                   artifact.name,
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,
-                  style: theme.textTheme.subtitle1,
+                  style: theme.textTheme.titleMedium,
                 ),
                 if (artifact.subStats.isNotEmpty)
                   SubStatToFocus(

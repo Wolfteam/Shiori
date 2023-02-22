@@ -11,31 +11,31 @@ import '../../common.dart';
 import '../../mocks.mocks.dart';
 
 void main() {
-  late final TelemetryService _telemetryService;
-  late final GenshinService _genshinService;
+  late final TelemetryService telemetryService;
+  late final GenshinService genshinService;
 
   setUpAll(() {
     TestWidgetsFlutterBinding.ensureInitialized();
-    _telemetryService = MockTelemetryService();
+    telemetryService = MockTelemetryService();
     final settingsService = MockSettingsService();
     when(settingsService.language).thenReturn(AppLanguageType.english);
     final localeService = LocaleServiceImpl(settingsService);
     final resourceService = getResourceService(settingsService);
-    _genshinService = GenshinServiceImpl(resourceService, localeService);
+    genshinService = GenshinServiceImpl(resourceService, localeService);
 
     return Future(() async {
-      await _genshinService.init(settingsService.language);
+      await genshinService.init(settingsService.language);
     });
   });
 
   test(
     'Initial state',
-    () => expect(TodayMaterialsBloc(_genshinService, _telemetryService).state, const TodayMaterialsState.loading()),
+    () => expect(TodayMaterialsBloc(genshinService, telemetryService).state, const TodayMaterialsState.loading()),
   );
 
   blocTest<TodayMaterialsBloc, TodayMaterialsState>(
     'Init',
-    build: () => TodayMaterialsBloc(_genshinService, _telemetryService),
+    build: () => TodayMaterialsBloc(genshinService, telemetryService),
     act: (bloc) => bloc.add(const TodayMaterialsEvent.init()),
     verify: (bloc) {
       bloc.state.map(

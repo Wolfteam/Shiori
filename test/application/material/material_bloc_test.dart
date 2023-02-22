@@ -12,31 +12,31 @@ import '../../common.dart';
 import '../../mocks.mocks.dart';
 
 void main() {
-  late final TelemetryService _telemetryService;
-  late final GenshinService _genshinService;
-  late final ResourceService _resourceService;
+  late final TelemetryService telemetryService;
+  late final GenshinService genshinService;
+  late final ResourceService resourceService;
 
   setUpAll(() {
     TestWidgetsFlutterBinding.ensureInitialized();
-    _telemetryService = MockTelemetryService();
+    telemetryService = MockTelemetryService();
     final settingsService = MockSettingsService();
     when(settingsService.language).thenReturn(AppLanguageType.english);
     final localeService = LocaleServiceImpl(settingsService);
-    _resourceService = getResourceService(settingsService);
-    _genshinService = GenshinServiceImpl(_resourceService, localeService);
+    resourceService = getResourceService(settingsService);
+    genshinService = GenshinServiceImpl(resourceService, localeService);
 
     return Future(() async {
-      await _genshinService.init(settingsService.language);
+      await genshinService.init(settingsService.language);
     });
   });
 
-  test('Initial state', () => expect(MaterialBloc(_genshinService, _telemetryService, _resourceService).state, const MaterialState.loading()));
+  test('Initial state', () => expect(MaterialBloc(genshinService, telemetryService, resourceService).state, const MaterialState.loading()));
 
   group('Load from key', () {
     const key = 'slime-secretions';
     blocTest<MaterialBloc, MaterialState>(
       key,
-      build: () => MaterialBloc(_genshinService, _telemetryService, _resourceService),
+      build: () => MaterialBloc(genshinService, telemetryService, resourceService),
       act: (bloc) => bloc.add(const MaterialEvent.loadFromKey(key: key)),
       verify: (bloc) {
         bloc.state.map(

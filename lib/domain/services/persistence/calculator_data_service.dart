@@ -14,7 +14,7 @@ abstract class CalculatorDataService implements BaseDataService {
 
   Future<void> deleteAllCalAscMatSession();
 
-  Future<void> addCalAscMatSessionItems(int sessionKey, List<ItemAscensionMaterials> items);
+  Future<void> addCalAscMatSessionItems(int sessionKey, List<ItemAscensionMaterials> items, {bool redistributeAtTheEnd = true});
 
   /// Adds a new calc. item to the provided session by using the [sessionKey].
   ///
@@ -54,4 +54,8 @@ abstract class CalculatorDataService implements BaseDataService {
   /// E.g: If we now have more, we may update the used quantity in a [InventoryUsedItem] to use more,
   /// otherwise we may reduce the used quantity or even delete the whole thing
   Future<void> redistributeInventoryMaterial(String itemKey, int newQuantity);
+
+  List<BackupCalculatorAscMaterialsSessionModel> getDataForBackup();
+
+  Future<void> restoreFromBackup(List<BackupCalculatorAscMaterialsSessionModel> data);
 }

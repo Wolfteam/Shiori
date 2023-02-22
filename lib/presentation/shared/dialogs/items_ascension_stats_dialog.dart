@@ -38,7 +38,7 @@ class ItemsAscensionStatsDialog extends StatelessWidget {
             Text(
               itemType == ItemType.character ? s.characters : s.weapons,
               overflow: TextOverflow.ellipsis,
-              style: theme.textTheme.caption,
+              style: theme.textTheme.bodySmall,
             ),
           ],
         ),

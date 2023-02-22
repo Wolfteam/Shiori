@@ -27,7 +27,7 @@ class ItemPriority<TEnum> extends StatelessWidget {
       margin: margin,
       child: Text(
         '$title: $text',
-        style: theme.textTheme.subtitle2!.copyWith(
+        style: theme.textTheme.titleSmall!.copyWith(
           fontWeight: FontWeight.bold,
           color: color,
           fontSize: fontSize,

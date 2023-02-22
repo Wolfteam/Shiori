@@ -12,9 +12,9 @@ import '../../common.dart';
 import '../../mocks.mocks.dart';
 
 void main() {
-  late LocaleService _localeService;
-  late SettingsService _settingsService;
-  late GenshinService _genshinService;
+  late LocaleService localeService;
+  late SettingsService settingsService;
+  late GenshinService genshinService;
 
   const keqingSearch = 'Keqing';
   const keqingKey = 'keqing';
@@ -22,27 +22,27 @@ void main() {
 
   setUpAll(() {
     TestWidgetsFlutterBinding.ensureInitialized();
-    _settingsService = MockSettingsService();
-    when(_settingsService.language).thenReturn(AppLanguageType.english);
-    when(_settingsService.showCharacterDetails).thenReturn(true);
-    _localeService = LocaleServiceImpl(_settingsService);
-    final resourceService = getResourceService(_settingsService);
-    _genshinService = GenshinServiceImpl(resourceService, _localeService);
+    settingsService = MockSettingsService();
+    when(settingsService.language).thenReturn(AppLanguageType.english);
+    when(settingsService.showCharacterDetails).thenReturn(true);
+    localeService = LocaleServiceImpl(settingsService);
+    final resourceService = getResourceService(settingsService);
+    genshinService = GenshinServiceImpl(resourceService, localeService);
 
     return Future(() async {
-      await _genshinService.init(AppLanguageType.english);
+      await genshinService.init(AppLanguageType.english);
     });
   });
 
-  test('Initial state', () => expect(CharactersBloc(_genshinService, _settingsService).state, const CharactersState.loading()));
+  test('Initial state', () => expect(CharactersBloc(genshinService, settingsService).state, const CharactersState.loading()));
 
   group('Init', () {
     blocTest<CharactersBloc, CharactersState>(
       'emits loaded state',
-      build: () => CharactersBloc(_genshinService, _settingsService),
+      build: () => CharactersBloc(genshinService, settingsService),
       act: (bloc) => bloc.add(const CharactersEvent.init()),
       expect: () {
-        final characters = _genshinService.characters.getCharactersForCard()..sort((x, y) => x.name.compareTo(y.name));
+        final characters = genshinService.characters.getCharactersForCard()..sort((x, y) => x.name.compareTo(y.name));
         return [
           CharactersState.loaded(
             characters: characters,
@@ -64,14 +64,14 @@ void main() {
 
     blocTest<CharactersBloc, CharactersState>(
       'emits loaded state excluding one key',
-      build: () => CharactersBloc(_genshinService, _settingsService),
+      build: () => CharactersBloc(genshinService, settingsService),
       act: (bloc) => bloc.add(CharactersEvent.init(excludeKeys: excludedKeys)),
       verify: (bloc) {
         final emittedState = bloc.state;
         emittedState.map(
           loading: (_) => throw Exception('Invalid artifact state'),
           loaded: (state) {
-            final characters = _genshinService.characters.getCharactersForCard().where((el) => !excludedKeys.contains(el.key)).toList()
+            final characters = genshinService.characters.getCharactersForCard().where((el) => !excludedKeys.contains(el.key)).toList()
               ..sort((x, y) => x.name.compareTo(y.name));
             expect(state.characters.length, characters.length);
             expect(state.showCharacterDetails, true);
@@ -90,13 +90,13 @@ void main() {
   group('Search changed', () {
     blocTest<CharactersBloc, CharactersState>(
       'should return only one item',
-      build: () => CharactersBloc(_genshinService, _settingsService),
+      build: () => CharactersBloc(genshinService, settingsService),
       act: (bloc) => bloc
         ..add(const CharactersEvent.init())
         ..add(const CharactersEvent.searchChanged(search: keqingSearch)),
       skip: 1,
       expect: () {
-        final characters = _genshinService.characters.getCharactersForCard().where((el) => el.key == keqingKey).toList();
+        final characters = genshinService.characters.getCharactersForCard().where((el) => el.key == keqingKey).toList();
         return [
           CharactersState.loaded(
             characters: characters,
@@ -119,7 +119,7 @@ void main() {
 
     blocTest<CharactersBloc, CharactersState>(
       'should not return any item',
-      build: () => CharactersBloc(_genshinService, _settingsService),
+      build: () => CharactersBloc(genshinService, settingsService),
       act: (bloc) => bloc
         ..add(const CharactersEvent.init())
         ..add(const CharactersEvent.searchChanged(search: 'Github')),
@@ -147,7 +147,7 @@ void main() {
   group('Filters changed', () {
     blocTest<CharactersBloc, CharactersState>(
       'some filters are applied and should return 1 item',
-      build: () => CharactersBloc(_genshinService, _settingsService),
+      build: () => CharactersBloc(genshinService, settingsService),
       act: (bloc) => bloc
         ..add(const CharactersEvent.init())
         ..add(const CharactersEvent.searchChanged(search: keqingSearch))
@@ -170,7 +170,7 @@ void main() {
         ..add(const CharactersEvent.applyFilterChanges()),
       skip: 18,
       expect: () {
-        final characters = _genshinService.characters.getCharactersForCard().where((el) => el.key == keqingKey).toList();
+        final characters = genshinService.characters.getCharactersForCard().where((el) => el.key == keqingKey).toList();
         return [
           CharactersState.loaded(
             characters: characters,
@@ -199,7 +199,7 @@ void main() {
 
     blocTest<CharactersBloc, CharactersState>(
       'some filters are applied but they end up being cancelled',
-      build: () => CharactersBloc(_genshinService, _settingsService),
+      build: () => CharactersBloc(genshinService, settingsService),
       act: (bloc) => bloc
         ..add(const CharactersEvent.init())
         ..add(const CharactersEvent.rarityChanged(5))
@@ -220,7 +220,7 @@ void main() {
       skip: 15,
       expect: () {
         final characters =
-            _genshinService.characters.getCharactersForCard().where((el) => el.elementType == ElementType.electro && el.stars == 5).toList();
+            genshinService.characters.getCharactersForCard().where((el) => el.elementType == ElementType.electro && el.stars == 5).toList();
         return [
           CharactersState.loaded(
             characters: characters,
@@ -242,7 +242,7 @@ void main() {
 
     blocTest<CharactersBloc, CharactersState>(
       'filters are reseted',
-      build: () => CharactersBloc(_genshinService, _settingsService),
+      build: () => CharactersBloc(genshinService, settingsService),
       act: (bloc) => bloc
         ..add(const CharactersEvent.init())
         ..add(const CharactersEvent.searchChanged(search: keqingSearch))
@@ -257,7 +257,7 @@ void main() {
         ..add(const CharactersEvent.resetFilters()),
       skip: 10,
       expect: () {
-        final characters = _genshinService.characters.getCharactersForCard()..sort((x, y) => x.name.compareTo(y.name));
+        final characters = genshinService.characters.getCharactersForCard()..sort((x, y) => x.name.compareTo(y.name));
         return [
           CharactersState.loaded(
             characters: characters,

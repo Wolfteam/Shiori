@@ -56,7 +56,7 @@ class ItemDescriptionTitle extends StatelessWidget {
             children: [
               Text(
                 title,
-                style: theme.textTheme.headline5!.copyWith(color: textColor, fontWeight: FontWeight.bold),
+                style: theme.textTheme.headlineSmall!.copyWith(color: textColor, fontWeight: FontWeight.bold),
                 overflow: TextOverflow.ellipsis,
               ),
               Divider(color: textColor, thickness: 2),

@@ -14,32 +14,32 @@ import '../../../common.dart';
 import '../../../mocks.mocks.dart';
 
 void main() {
-  late LocaleService _localeService;
-  late SettingsService _settingsService;
-  late GenshinService _genshinService;
+  late LocaleService localeService;
+  late SettingsService settingsService;
+  late GenshinService genshinService;
 
   setUpAll(() {
     TestWidgetsFlutterBinding.ensureInitialized();
-    _settingsService = MockSettingsService();
-    when(_settingsService.language).thenReturn(AppLanguageType.english);
-    when(_settingsService.showCharacterDetails).thenReturn(true);
-    _localeService = LocaleServiceImpl(_settingsService);
-    final resourceService = getResourceService(_settingsService);
-    _genshinService = GenshinServiceImpl(resourceService, _localeService);
+    settingsService = MockSettingsService();
+    when(settingsService.language).thenReturn(AppLanguageType.english);
+    when(settingsService.showCharacterDetails).thenReturn(true);
+    localeService = LocaleServiceImpl(settingsService);
+    final resourceService = getResourceService(settingsService);
+    genshinService = GenshinServiceImpl(resourceService, localeService);
 
     return Future(() async {
-      await _genshinService.init(AppLanguageType.english);
+      await genshinService.init(AppLanguageType.english);
     });
   });
 
-  test('Initial state', () => expect(ChartRegionsBloc(_genshinService).state, const ChartRegionsState.loading()));
+  test('Initial state', () => expect(ChartRegionsBloc(genshinService).state, const ChartRegionsState.loading()));
 
   blocTest<ChartRegionsBloc, ChartRegionsState>(
     'Init emits loaded state',
-    build: () => ChartRegionsBloc(_genshinService),
+    build: () => ChartRegionsBloc(genshinService),
     act: (bloc) => bloc.add(const ChartRegionsEvent.init()),
     expect: () {
-      final items = _genshinService.characters.getCharacterRegionsForCharts();
+      final items = genshinService.characters.getCharacterRegionsForCharts();
       final maxCount = items.map((e) => e.quantity).reduce(max);
       return [ChartRegionsState.loaded(maxCount: maxCount, items: items)];
     },

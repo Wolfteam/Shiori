@@ -12,34 +12,34 @@ import '../../common.dart';
 import '../../mocks.mocks.dart';
 
 void main() {
-  late final GenshinService _genshinService;
-  late final SettingsService _settingsService;
-  late final LocaleService _localeService;
-  late final ArtifactBloc _artifactBloc;
+  late final GenshinService genshinService;
+  late final SettingsService settingsService;
+  late final LocaleService localeService;
+  late final ArtifactBloc artifactBloc;
 
   setUpAll(() {
     TestWidgetsFlutterBinding.ensureInitialized();
     return Future(() async {
-      _settingsService = MockSettingsService();
-      when(_settingsService.language).thenReturn(AppLanguageType.english);
+      settingsService = MockSettingsService();
+      when(settingsService.language).thenReturn(AppLanguageType.english);
 
-      final resourceService = getResourceService(_settingsService);
+      final resourceService = getResourceService(settingsService);
 
-      _localeService = LocaleServiceImpl(_settingsService);
-      _genshinService = GenshinServiceImpl(resourceService, _localeService);
+      localeService = LocaleServiceImpl(settingsService);
+      genshinService = GenshinServiceImpl(resourceService, localeService);
 
-      await _genshinService.init(_settingsService.language);
-      _artifactBloc = ArtifactBloc(_genshinService, MockTelemetryService(), resourceService);
+      await genshinService.init(settingsService.language);
+      artifactBloc = ArtifactBloc(genshinService, MockTelemetryService(), resourceService);
     });
   });
 
-  test('Initial state', () => expect(_artifactBloc.state, const ArtifactState.loading()));
+  test('Initial state', () => expect(artifactBloc.state, const ArtifactState.loading()));
 
   group('Load from key', () {
     const key = 'wanderers-troupe';
     blocTest<ArtifactBloc, ArtifactState>(
       key,
-      build: () => _artifactBloc,
+      build: () => artifactBloc,
       act: (bloc) => bloc.add(const ArtifactEvent.loadFromKey(key: key)),
       verify: (bloc) {
         bloc.state.map(

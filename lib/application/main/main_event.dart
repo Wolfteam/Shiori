@@ -24,5 +24,7 @@ class MainEvent with _$MainEvent {
 
   const factory MainEvent.restart() = _Restart;
 
+  const factory MainEvent.deleteAllData() = _DeleteAllData;
+
   const MainEvent._();
 }

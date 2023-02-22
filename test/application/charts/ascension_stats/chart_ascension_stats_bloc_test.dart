@@ -15,32 +15,32 @@ import '../../../common.dart';
 import '../../../mocks.mocks.dart';
 
 void main() {
-  late LocaleService _localeService;
-  late SettingsService _settingsService;
-  late GenshinService _genshinService;
-  late List<ChartAscensionStatModel> _charStats;
-  late List<ChartAscensionStatModel> _weaponStats;
+  late LocaleService localeService;
+  late SettingsService settingsService;
+  late GenshinService genshinService;
+  late List<ChartAscensionStatModel> charStats;
+  late List<ChartAscensionStatModel> weaponStats;
 
   setUpAll(() {
     TestWidgetsFlutterBinding.ensureInitialized();
-    _settingsService = MockSettingsService();
-    when(_settingsService.language).thenReturn(AppLanguageType.english);
-    when(_settingsService.showCharacterDetails).thenReturn(true);
-    _localeService = LocaleServiceImpl(_settingsService);
-    final resourceService = getResourceService(_settingsService);
-    _genshinService = GenshinServiceImpl(resourceService, _localeService);
+    settingsService = MockSettingsService();
+    when(settingsService.language).thenReturn(AppLanguageType.english);
+    when(settingsService.showCharacterDetails).thenReturn(true);
+    localeService = LocaleServiceImpl(settingsService);
+    final resourceService = getResourceService(settingsService);
+    genshinService = GenshinServiceImpl(resourceService, localeService);
 
     return Future(() async {
-      await _genshinService.init(AppLanguageType.english);
-      _charStats = _genshinService.getItemAscensionStatsForCharts(ItemType.character);
-      _weaponStats = _genshinService.getItemAscensionStatsForCharts(ItemType.weapon);
+      await genshinService.init(AppLanguageType.english);
+      charStats = genshinService.getItemAscensionStatsForCharts(ItemType.character);
+      weaponStats = genshinService.getItemAscensionStatsForCharts(ItemType.weapon);
     });
   });
 
   test(
     'Initial state',
     () => expect(
-      ChartAscensionStatsBloc(_genshinService).state,
+      ChartAscensionStatsBloc(genshinService).state,
       const ChartAscensionStatsState.loading(),
     ),
   );
@@ -48,14 +48,14 @@ void main() {
   group('Init', () {
     blocTest<ChartAscensionStatsBloc, ChartAscensionStatsState>(
       'emits loaded state',
-      build: () => ChartAscensionStatsBloc(_genshinService),
+      build: () => ChartAscensionStatsBloc(genshinService),
       act: (bloc) => bloc
         ..add(const ChartAscensionStatsEvent.init(type: ItemType.character, maxNumberOfColumns: 10))
         ..add(const ChartAscensionStatsEvent.init(type: ItemType.weapon, maxNumberOfColumns: 8)),
       expect: () => [
         ChartAscensionStatsState.loaded(
-          maxCount: _charStats.map((e) => e.quantity).reduce(max),
-          ascensionStats: _charStats.take(10).toList(),
+          maxCount: charStats.map((e) => e.quantity).reduce(max),
+          ascensionStats: charStats.take(10).toList(),
           maxNumberOfColumns: 10,
           itemType: ItemType.character,
           canGoToFirstPage: false,
@@ -63,11 +63,11 @@ void main() {
           canGoToNextPage: true,
           canGoToPreviousPage: false,
           currentPage: 1,
-          maxPage: (_charStats.length / 10).ceil(),
+          maxPage: (charStats.length / 10).ceil(),
         ),
         ChartAscensionStatsState.loaded(
-          maxCount: _weaponStats.map((e) => e.quantity).reduce(max),
-          ascensionStats: _weaponStats.take(8).toList(),
+          maxCount: weaponStats.map((e) => e.quantity).reduce(max),
+          ascensionStats: weaponStats.take(8).toList(),
           maxNumberOfColumns: 8,
           itemType: ItemType.weapon,
           canGoToFirstPage: false,
@@ -75,14 +75,14 @@ void main() {
           canGoToNextPage: true,
           canGoToPreviousPage: false,
           currentPage: 1,
-          maxPage: (_weaponStats.length / 8).ceil(),
+          maxPage: (weaponStats.length / 8).ceil(),
         ),
       ],
     );
 
     blocTest<ChartAscensionStatsBloc, ChartAscensionStatsState>(
       'loaded state does not change',
-      build: () => ChartAscensionStatsBloc(_genshinService),
+      build: () => ChartAscensionStatsBloc(genshinService),
       act: (bloc) => bloc
         ..add(const ChartAscensionStatsEvent.init(type: ItemType.character, maxNumberOfColumns: 10))
         ..add(const ChartAscensionStatsEvent.init(type: ItemType.character, maxNumberOfColumns: 10)),
@@ -92,7 +92,7 @@ void main() {
 
     blocTest<ChartAscensionStatsBloc, ChartAscensionStatsState>(
       'invalid item type',
-      build: () => ChartAscensionStatsBloc(_genshinService),
+      build: () => ChartAscensionStatsBloc(genshinService),
       act: (bloc) => bloc
         ..add(const ChartAscensionStatsEvent.init(type: ItemType.artifact, maxNumberOfColumns: 10))
         ..add(const ChartAscensionStatsEvent.init(type: ItemType.material, maxNumberOfColumns: 10)),
@@ -101,7 +101,7 @@ void main() {
 
     blocTest<ChartAscensionStatsBloc, ChartAscensionStatsState>(
       'max number of columns is not valid',
-      build: () => ChartAscensionStatsBloc(_genshinService),
+      build: () => ChartAscensionStatsBloc(genshinService),
       act: (bloc) => bloc.add(const ChartAscensionStatsEvent.init(type: ItemType.material, maxNumberOfColumns: 0)),
       errors: () => [isA<Exception>()],
     );
@@ -110,15 +110,15 @@ void main() {
   group('Go to next page', () {
     blocTest<ChartAscensionStatsBloc, ChartAscensionStatsState>(
       'next page exists',
-      build: () => ChartAscensionStatsBloc(_genshinService),
+      build: () => ChartAscensionStatsBloc(genshinService),
       act: (bloc) => bloc
         ..add(const ChartAscensionStatsEvent.init(type: ItemType.weapon, maxNumberOfColumns: 4))
         ..add(const ChartAscensionStatsEvent.goToNextPage()),
       skip: 1,
       expect: () => [
         ChartAscensionStatsState.loaded(
-          maxCount: _weaponStats.map((e) => e.quantity).reduce(max),
-          ascensionStats: _weaponStats.skip(4).take(4).toList(),
+          maxCount: weaponStats.map((e) => e.quantity).reduce(max),
+          ascensionStats: weaponStats.skip(4).take(4).toList(),
           maxNumberOfColumns: 4,
           itemType: ItemType.weapon,
           canGoToFirstPage: true,
@@ -126,14 +126,14 @@ void main() {
           canGoToNextPage: true,
           canGoToPreviousPage: true,
           currentPage: 2,
-          maxPage: (_weaponStats.length / 4).ceil(),
+          maxPage: (weaponStats.length / 4).ceil(),
         ),
       ],
     );
 
     blocTest<ChartAscensionStatsBloc, ChartAscensionStatsState>(
       'next page does not exist',
-      build: () => ChartAscensionStatsBloc(_genshinService),
+      build: () => ChartAscensionStatsBloc(genshinService),
       act: (bloc) => bloc
         ..add(const ChartAscensionStatsEvent.init(type: ItemType.character, maxNumberOfColumns: 10000))
         ..add(const ChartAscensionStatsEvent.goToNextPage()),
@@ -143,7 +143,7 @@ void main() {
 
     blocTest<ChartAscensionStatsBloc, ChartAscensionStatsState>(
       'state is not valid',
-      build: () => ChartAscensionStatsBloc(_genshinService),
+      build: () => ChartAscensionStatsBloc(genshinService),
       act: (bloc) => bloc.add(const ChartAscensionStatsEvent.goToNextPage()),
       errors: () => [isA<Exception>()],
     );
@@ -152,7 +152,7 @@ void main() {
   group('Go to previous page', () {
     blocTest<ChartAscensionStatsBloc, ChartAscensionStatsState>(
       'previous page exists',
-      build: () => ChartAscensionStatsBloc(_genshinService),
+      build: () => ChartAscensionStatsBloc(genshinService),
       act: (bloc) => bloc
         ..add(const ChartAscensionStatsEvent.init(type: ItemType.weapon, maxNumberOfColumns: 4))
         ..add(const ChartAscensionStatsEvent.goToNextPage())
@@ -160,8 +160,8 @@ void main() {
       skip: 2,
       expect: () => [
         ChartAscensionStatsState.loaded(
-          maxCount: _weaponStats.map((e) => e.quantity).reduce(max),
-          ascensionStats: _weaponStats.take(4).toList(),
+          maxCount: weaponStats.map((e) => e.quantity).reduce(max),
+          ascensionStats: weaponStats.take(4).toList(),
           maxNumberOfColumns: 4,
           itemType: ItemType.weapon,
           canGoToFirstPage: false,
@@ -169,14 +169,14 @@ void main() {
           canGoToNextPage: true,
           canGoToPreviousPage: false,
           currentPage: 1,
-          maxPage: (_weaponStats.length / 4).ceil(),
+          maxPage: (weaponStats.length / 4).ceil(),
         ),
       ],
     );
 
     blocTest<ChartAscensionStatsBloc, ChartAscensionStatsState>(
       'previous page does not exist',
-      build: () => ChartAscensionStatsBloc(_genshinService),
+      build: () => ChartAscensionStatsBloc(genshinService),
       act: (bloc) => bloc
         ..add(const ChartAscensionStatsEvent.init(type: ItemType.character, maxNumberOfColumns: 1))
         ..add(const ChartAscensionStatsEvent.goToPreviousPage()),
@@ -186,7 +186,7 @@ void main() {
 
     blocTest<ChartAscensionStatsBloc, ChartAscensionStatsState>(
       'state is not valid',
-      build: () => ChartAscensionStatsBloc(_genshinService),
+      build: () => ChartAscensionStatsBloc(genshinService),
       act: (bloc) => bloc.add(const ChartAscensionStatsEvent.goToPreviousPage()),
       errors: () => [isA<Exception>()],
     );
@@ -195,7 +195,7 @@ void main() {
   group('Go to first page', () {
     blocTest<ChartAscensionStatsBloc, ChartAscensionStatsState>(
       'first page exists',
-      build: () => ChartAscensionStatsBloc(_genshinService),
+      build: () => ChartAscensionStatsBloc(genshinService),
       act: (bloc) => bloc
         ..add(const ChartAscensionStatsEvent.init(type: ItemType.character, maxNumberOfColumns: 4))
         ..add(const ChartAscensionStatsEvent.goToNextPage())
@@ -204,8 +204,8 @@ void main() {
       skip: 3,
       expect: () => [
         ChartAscensionStatsState.loaded(
-          maxCount: _charStats.map((e) => e.quantity).reduce(max),
-          ascensionStats: _charStats.take(4).toList(),
+          maxCount: charStats.map((e) => e.quantity).reduce(max),
+          ascensionStats: charStats.take(4).toList(),
           maxNumberOfColumns: 4,
           itemType: ItemType.character,
           canGoToFirstPage: false,
@@ -213,14 +213,14 @@ void main() {
           canGoToNextPage: true,
           canGoToPreviousPage: false,
           currentPage: 1,
-          maxPage: (_charStats.length / 4).ceil(),
+          maxPage: (charStats.length / 4).ceil(),
         ),
       ],
     );
 
     blocTest<ChartAscensionStatsBloc, ChartAscensionStatsState>(
       'already on first page',
-      build: () => ChartAscensionStatsBloc(_genshinService),
+      build: () => ChartAscensionStatsBloc(genshinService),
       act: (bloc) => bloc
         ..add(const ChartAscensionStatsEvent.init(type: ItemType.character, maxNumberOfColumns: 1))
         ..add(const ChartAscensionStatsEvent.goToFirstPage()),
@@ -230,7 +230,7 @@ void main() {
 
     blocTest<ChartAscensionStatsBloc, ChartAscensionStatsState>(
       'state is not valid',
-      build: () => ChartAscensionStatsBloc(_genshinService),
+      build: () => ChartAscensionStatsBloc(genshinService),
       act: (bloc) => bloc.add(const ChartAscensionStatsEvent.goToFirstPage()),
       errors: () => [isA<Exception>()],
     );
@@ -239,17 +239,17 @@ void main() {
   group('Go to last page', () {
     blocTest<ChartAscensionStatsBloc, ChartAscensionStatsState>(
       'last page exists',
-      build: () => ChartAscensionStatsBloc(_genshinService),
+      build: () => ChartAscensionStatsBloc(genshinService),
       act: (bloc) => bloc
         ..add(const ChartAscensionStatsEvent.init(type: ItemType.character, maxNumberOfColumns: 4))
         ..add(const ChartAscensionStatsEvent.goToLastPage()),
       skip: 1,
       expect: () {
-        final maxPage = (_charStats.length / 4).ceil();
+        final maxPage = (charStats.length / 4).ceil();
         return [
           ChartAscensionStatsState.loaded(
-            maxCount: _charStats.map((e) => e.quantity).reduce(max),
-            ascensionStats: _charStats.skip((maxPage - 1) * 4).take(4).toList(),
+            maxCount: charStats.map((e) => e.quantity).reduce(max),
+            ascensionStats: charStats.skip((maxPage - 1) * 4).take(4).toList(),
             maxNumberOfColumns: 4,
             itemType: ItemType.character,
             canGoToFirstPage: true,
@@ -265,7 +265,7 @@ void main() {
 
     blocTest<ChartAscensionStatsBloc, ChartAscensionStatsState>(
       'already on last page',
-      build: () => ChartAscensionStatsBloc(_genshinService),
+      build: () => ChartAscensionStatsBloc(genshinService),
       act: (bloc) => bloc
         ..add(const ChartAscensionStatsEvent.init(type: ItemType.character, maxNumberOfColumns: 10000))
         ..add(const ChartAscensionStatsEvent.goToLastPage()),
@@ -275,7 +275,7 @@ void main() {
 
     blocTest<ChartAscensionStatsBloc, ChartAscensionStatsState>(
       'state is not valid',
-      build: () => ChartAscensionStatsBloc(_genshinService),
+      build: () => ChartAscensionStatsBloc(genshinService),
       act: (bloc) => bloc.add(const ChartAscensionStatsEvent.goToLastPage()),
       errors: () => [isA<Exception>()],
     );

@@ -38,4 +38,8 @@ abstract class CustomBuildsDataService implements BaseDataService {
   Future<void> deleteCustomBuild(int key);
 
   List<CharacterBuildCardModel> getCustomBuildsForCharacter(String charKey);
+
+  List<BackupCustomBuildModel> getDataForBackup();
+
+  Future<void> restoreFromBackup(List<BackupCustomBuildModel> data);
 }

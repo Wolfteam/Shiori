@@ -290,7 +290,7 @@ class _Chart extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        Text(title, style: theme.textTheme.headline5),
+        Text(title, style: theme.textTheme.headlineSmall),
         chart,
       ],
     );

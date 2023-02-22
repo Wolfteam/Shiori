@@ -84,7 +84,7 @@ class MonsterCard extends StatelessWidget {
                   child: Text(
                     name,
                     textAlign: TextAlign.center,
-                    style: theme.textTheme.subtitle1!.copyWith(fontWeight: FontWeight.bold),
+                    style: theme.textTheme.titleMedium!.copyWith(fontWeight: FontWeight.bold),
                   ),
                 ),
               ),

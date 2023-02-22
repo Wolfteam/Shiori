@@ -30,7 +30,7 @@ class NothingFound extends StatelessWidget {
             Text(
               msg ?? s.nothingToShow,
               textAlign: TextAlign.center,
-              style: theme.textTheme.headline6,
+              style: theme.textTheme.titleLarge,
             ),
           ],
         ),

@@ -13,41 +13,41 @@ import '../../mocks.mocks.dart';
 const _dbFolder = 'shiori_custom_builds_bloc_tests';
 
 void main() {
-  late DataService _dataService;
-  late GenshinService _genshinService;
-  late final String _dbPath;
+  late DataService dataService;
+  late GenshinService genshinService;
+  late final String dbPath;
 
-  const _keqingKey = 'keqing';
-  const _ganyuKey = 'ganyu';
-  const _aquilaFavoniaKey = 'aquila-favonia';
-  const _thunderingFuryKey = 'thundering-fury';
+  const keqingKey = 'keqing';
+  const ganyuKey = 'ganyu';
+  const aquilaFavoniaKey = 'aquila-favonia';
+  const thunderingFuryKey = 'thundering-fury';
 
   setUpAll(() {
     TestWidgetsFlutterBinding.ensureInitialized();
     final settingsService = SettingsServiceImpl(MockLoggingService());
     final localeService = LocaleServiceImpl(settingsService);
     final resourceService = getResourceService(settingsService);
-    _genshinService = GenshinServiceImpl(resourceService, localeService);
-    _dataService = DataServiceImpl(_genshinService, CalculatorServiceImpl(_genshinService, resourceService), resourceService);
+    genshinService = GenshinServiceImpl(resourceService, localeService);
+    dataService = DataServiceImpl(genshinService, CalculatorServiceImpl(genshinService, resourceService), resourceService);
 
     return Future(() async {
-      await _genshinService.init(AppLanguageType.english);
-      _dbPath = await getDbPath(_dbFolder);
-      await _dataService.initForTests(_dbPath);
+      await genshinService.init(AppLanguageType.english);
+      dbPath = await getDbPath(_dbFolder);
+      await dataService.initForTests(dbPath);
     });
   });
 
   tearDownAll(() {
     return Future(() async {
-      await _dataService.closeThemAll();
-      await deleteDbFolder(_dbPath);
+      await dataService.closeThemAll();
+      await deleteDbFolder(dbPath);
     });
   });
 
-  Future<CustomBuildModel> _saveCustomBuild(String charKey) async {
-    final artifact = _genshinService.artifacts.getArtifactForCard(_thunderingFuryKey);
-    final weapon = _genshinService.weapons.getWeapon(_aquilaFavoniaKey);
-    return _dataService.customBuilds.saveCustomBuild(
+  Future<CustomBuildModel> saveCustomBuild(String charKey) async {
+    final artifact = genshinService.artifacts.getArtifactForCard(thunderingFuryKey);
+    final weapon = genshinService.weapons.getWeapon(aquilaFavoniaKey);
+    return dataService.customBuilds.saveCustomBuild(
       charKey,
       '$charKey pro DPS',
       CharacterRoleType.dps,
@@ -166,21 +166,21 @@ void main() {
     );
   }
 
-  test('Initial state', () => expect(CustomBuildsBloc(_dataService).state, const CustomBuildsState.loaded(builds: [])));
+  test('Initial state', () => expect(CustomBuildsBloc(dataService).state, const CustomBuildsState.loaded(builds: [])));
 
   blocTest<CustomBuildsBloc, CustomBuildsState>(
-    'Create build for $_keqingKey',
+    'Create build for $keqingKey',
     setUp: () async {
-      await _saveCustomBuild(_keqingKey);
+      await saveCustomBuild(keqingKey);
     },
-    build: () => CustomBuildsBloc(_dataService),
+    build: () => CustomBuildsBloc(dataService),
     act: (bloc) => bloc.add(const CustomBuildsEvent.load()),
     verify: (bloc) {
       final state = bloc.state;
       expect(state.builds.length, 1);
 
       final build = state.builds.first;
-      expect(build.character.key, _keqingKey);
+      expect(build.character.key, keqingKey);
       expect(build.character.roleType, CharacterRoleType.dps);
       expect(build.type, CharacterRoleType.dps);
       expect(build.subType, CharacterRoleSubType.electro);
@@ -189,12 +189,12 @@ void main() {
       expect(build.weapons.length, 1);
 
       final weapon = build.weapons.first;
-      expect(weapon.key == _aquilaFavoniaKey, true);
+      expect(weapon.key == aquilaFavoniaKey, true);
       expect(weapon.refinement == 5, true);
 
       final artifacts = build.artifacts;
       expect(artifacts.length, 5);
-      expect(artifacts.every((el) => el.key == _thunderingFuryKey), true);
+      expect(artifacts.every((el) => el.key == thunderingFuryKey), true);
       expect(artifacts.every((el) => el.subStats.length > 2), true);
       expect(artifacts.map((e) => e.type).toSet().length == 5, true);
       expect(artifacts.map((e) => e.statType).toSet().length == 5, true);
@@ -208,10 +208,10 @@ void main() {
 
   int deleteKey = 0;
   blocTest<CustomBuildsBloc, CustomBuildsState>(
-    'Create and delete $_ganyuKey build',
-    build: () => CustomBuildsBloc(_dataService),
+    'Create and delete $ganyuKey build',
+    build: () => CustomBuildsBloc(dataService),
     setUp: () async {
-      final build = await _saveCustomBuild(_ganyuKey);
+      final build = await saveCustomBuild(ganyuKey);
       deleteKey = build.key;
     },
     act: (bloc) => bloc
@@ -219,7 +219,7 @@ void main() {
       ..add(CustomBuildsEvent.delete(key: deleteKey)),
     skip: 1,
     verify: (bloc) {
-      expect(bloc.state.builds.any((el) => el.character.key == _ganyuKey), false);
+      expect(bloc.state.builds.any((el) => el.character.key == ganyuKey), false);
     },
   );
 }

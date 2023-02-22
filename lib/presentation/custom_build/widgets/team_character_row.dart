@@ -51,20 +51,20 @@ class TeamCharacterRow extends StatelessWidget {
               children: [
                 Text(
                   character.name,
-                  style: theme.textTheme.subtitle1!.copyWith(fontWeight: FontWeight.bold),
+                  style: theme.textTheme.titleMedium!.copyWith(fontWeight: FontWeight.bold),
                 ),
                 Text(
                   '${s.role}: ${s.translateCharacterRoleType(character.roleType)}',
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,
-                  style: theme.textTheme.subtitle1!.copyWith(color: color),
+                  style: theme.textTheme.titleMedium!.copyWith(color: color),
                 ),
                 if (character.subType != CharacterRoleSubType.none)
                   Text(
                     '${s.subType}: ${s.translateCharacterRoleSubType(character.subType)}',
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
-                    style: theme.textTheme.subtitle1!.copyWith(color: color),
+                    style: theme.textTheme.titleMedium!.copyWith(color: color),
                   ),
               ],
             ),

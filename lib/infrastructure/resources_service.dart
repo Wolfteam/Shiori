@@ -335,7 +335,7 @@ class ResourceServiceImpl implements ResourceService {
       if (mainFilesMustBeDownloaded) {
         _loggingService.info(runtimeType, 'downloadAndApplyUpdates: Downloading main files...');
         //we need to download the whole file
-        final destMainFilePath = join(_tempPath, _removeVersionFromKeyName(jsonFileKeyName!));
+        final destMainFilePath = join(_tempPath, _cleanKeyName(jsonFileKeyName!));
         final downloaded = await _apiService.downloadAsset(jsonFileKeyName, destMainFilePath);
 
         if (!downloaded) {
@@ -430,7 +430,7 @@ class ResourceServiceImpl implements ResourceService {
           if (retryAttempts > 0) {
             await Future.delayed(const Duration(seconds: 1));
           }
-          await Future.wait(taken.map((e) => _downloadAsset(destPaths[_removeVersionFromKeyName(e)]!, e)).toList());
+          await Future.wait(taken.map((e) => _downloadAsset(destPaths[_cleanKeyName(e)]!, e)).toList());
           processedItems += taken.length;
           final progress = processedItems * 100 / total;
           onProgress?.call(progress);
@@ -481,19 +481,12 @@ class ResourceServiceImpl implements ResourceService {
     final destPaths = <String, String>{};
     final allDirs = <String>[];
     for (final keyName in keyNames) {
-      final updatedKeyName = _removeVersionFromKeyName(keyName);
-      final split = updatedKeyName.split('/');
-      //the last item is the filename
-      final partA = split.take(split.length - 1).fold<String>('', (previousValue, element) {
-        if (previousValue.isEmpty) {
-          return element;
-        }
-        return join(previousValue, element);
-      });
-      final dir = join(tempFolder, partA);
+      final updatedKeyName = _cleanKeyName(keyName);
+      final filename = basename(updatedKeyName);
+      final dir = join(tempFolder, dirname(updatedKeyName));
       allDirs.add(dir);
 
-      final destPath = join(dir, split.last);
+      final destPath = join(dir, filename);
       destPaths.putIfAbsent(updatedKeyName, () => destPath);
     }
 
@@ -583,6 +576,26 @@ class ResourceServiceImpl implements ResourceService {
   String _removeVersionFromKeyName(String keyName) {
     final versionRegex = RegExp('(versions).*?(v[0-9]+)/');
     return keyName.replaceAll(versionRegex, '');
+  }
+
+  String _removeTimestampFromKeyName(String keyName) {
+    const dot = '.';
+    final dir = dirname(keyName);
+    String filename = basename(keyName);
+    if (dot.allMatches(filename).length > 1) {
+      final splitFilename = filename.split(dot);
+      filename = '${splitFilename.first}.${splitFilename.last}';
+    }
+
+    if (dir == dot) {
+      return filename;
+    }
+
+    return join(dir, filename);
+  }
+
+  String _cleanKeyName(String keyName) {
+    return _removeTimestampFromKeyName(_removeVersionFromKeyName(keyName));
   }
 
   String _getJsonTranslationFilename(AppLanguageType languageType) {

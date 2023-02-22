@@ -1,3 +1,4 @@
+import 'package:darq/darq.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:shiori/domain/extensions/iterable_extensions.dart';
 import 'package:shiori/domain/models/entities.dart';
@@ -44,8 +45,22 @@ class TierListDataServiceImpl implements TierListDataService {
   }
 
   @override
-  Future<void> deleteTierList() async {
-    final keys = _tierListBox.values.map((e) => e.key);
-    await _tierListBox.deleteAll(keys);
+  Future<void> deleteTierList() {
+    return deleteThemAll();
+  }
+
+  @override
+  List<BackupTierListModel> getDataForBackup() {
+    return _tierListBox.values.map((e) => BackupTierListModel(text: e.text, position: e.position, color: e.color, charKeys: e.charKeys)).toList();
+  }
+
+  @override
+  Future<void> restoreFromBackup(List<BackupTierListModel> data) {
+    final tierList = data
+        .orderBy((e) => e.position)
+        .map((e) => TierListRowModel.row(tierText: e.text, items: e.charKeys.map((c) => ItemCommon(c, '')).toList(), tierColor: e.color))
+        .toList();
+
+    return saveTierList(tierList);
   }
 }

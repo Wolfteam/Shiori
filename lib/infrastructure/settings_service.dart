@@ -20,8 +20,9 @@ class SettingsServiceImpl extends SettingsService {
   final _doubleBackToCloseKey = 'DoubleBackToCloseKey';
   final _useOfficialMapKey = 'UseOfficialMapKey';
   final _useTwentyFourHoursFormatKey = 'UseTwentyFourHoursFormat';
-  final _lastResourcesCheckedDate = 'LastResourcesCheckedDate';
-  final _resourcesVersion = 'ResourcesVersion';
+  final _lastResourcesCheckedDateKey = 'LastResourcesCheckedDate';
+  final _resourcesVersionKey = 'ResourcesVersion';
+  final _checkForUpdatesOnStartupKey = 'CheckForUpdatesOnStartup';
 
   bool _initialized = false;
 
@@ -96,7 +97,7 @@ class SettingsServiceImpl extends SettingsService {
 
   @override
   DateTime? get lastResourcesCheckedDate {
-    final val = _prefs.getString(_lastResourcesCheckedDate);
+    final val = _prefs.getString(_lastResourcesCheckedDateKey);
     if (val.isNullEmptyOrWhitespace) {
       return null;
     }
@@ -108,22 +109,28 @@ class SettingsServiceImpl extends SettingsService {
   @override
   set lastResourcesCheckedDate(DateTime? value) {
     if (value == null) {
-      _prefs.setString(_lastResourcesCheckedDate, '');
+      _prefs.setString(_lastResourcesCheckedDateKey, '');
       return;
     }
 
     final val = value.toString();
-    _prefs.setString(_lastResourcesCheckedDate, val);
+    _prefs.setString(_lastResourcesCheckedDateKey, val);
   }
 
   @override
-  int get resourceVersion => _prefs.getInt(_resourcesVersion)!;
+  int get resourceVersion => _prefs.getInt(_resourcesVersionKey)!;
 
   @override
-  set resourceVersion(int value) => _prefs.setInt(_resourcesVersion, value);
+  set resourceVersion(int value) => _prefs.setInt(_resourcesVersionKey, value);
 
   @override
   bool get noResourcesHasBeenDownloaded => resourceVersion <= 0 || lastResourcesCheckedDate == null;
+
+  @override
+  bool get checkForUpdatesOnStartup => _prefs.getBool(_checkForUpdatesOnStartupKey)!;
+
+  @override
+  set checkForUpdatesOnStartup(bool value) => _prefs.setBool(_checkForUpdatesOnStartupKey, value);
 
   @override
   AppSettings get appSettings => AppSettings(
@@ -139,6 +146,7 @@ class SettingsServiceImpl extends SettingsService {
         useOfficialMap: useOfficialMap,
         useTwentyFourHoursFormat: useTwentyFourHoursFormat,
         resourceVersion: resourceVersion,
+        checkForUpdatesOnStartup: checkForUpdatesOnStartup,
       );
 
   SettingsServiceImpl(this._logger);
@@ -207,13 +215,85 @@ class SettingsServiceImpl extends SettingsService {
       useTwentyFourHoursFormat = false;
     }
 
-    if (_prefs.getInt(_resourcesVersion) == null) {
+    if (_prefs.getInt(_resourcesVersionKey) == null) {
       _logger.info(runtimeType, 'The default value for the resource version will be set');
       resourceVersion = -1;
     }
 
+    if (_prefs.getBool(_checkForUpdatesOnStartupKey) == null) {
+      _logger.info(runtimeType, 'Check for updates on startup will be set to its default (true)');
+      checkForUpdatesOnStartup = true;
+    }
+
     _initialized = true;
     _logger.info(runtimeType, 'Settings were initialized successfully');
+  }
+
+  @override
+  BackupAppSettingsModel getDataForBackup() {
+    final settings = appSettings;
+    return BackupAppSettingsModel(
+      appTheme: settings.appTheme,
+      useDarkAmoled: settings.useDarkAmoled,
+      accentColor: settings.accentColor,
+      appLanguage: settings.appLanguage,
+      showCharacterDetails: settings.showCharacterDetails,
+      showWeaponDetails: settings.showWeaponDetails,
+      serverResetTime: settings.serverResetTime,
+      doubleBackToClose: settings.doubleBackToClose,
+      useOfficialMap: settings.useOfficialMap,
+      useTwentyFourHoursFormat: settings.useTwentyFourHoursFormat,
+      checkForUpdatesOnStartup: settings.checkForUpdatesOnStartup,
+    );
+  }
+
+  @override
+  void restoreFromBackup(BackupAppSettingsModel settings) {
+    if (settings.appTheme != null) {
+      appTheme = settings.appTheme!;
+    }
+    if (settings.useDarkAmoled != null) {
+      useDarkAmoledTheme = settings.useDarkAmoled!;
+    }
+    if (settings.accentColor != null) {
+      accentColor = settings.accentColor!;
+    }
+    if (settings.appLanguage != null) {
+      language = settings.appLanguage!;
+    }
+    if (settings.showCharacterDetails != null) {
+      showCharacterDetails = settings.showCharacterDetails!;
+    }
+    if (settings.showWeaponDetails != null) {
+      showWeaponDetails = settings.showWeaponDetails!;
+    }
+    if (settings.serverResetTime != null) {
+      serverResetTime = settings.serverResetTime!;
+    }
+    if (settings.doubleBackToClose != null) {
+      doubleBackToClose = settings.doubleBackToClose!;
+    }
+    if (settings.useOfficialMap != null) {
+      useOfficialMap = settings.useOfficialMap!;
+    }
+    if (settings.useTwentyFourHoursFormat != null) {
+      useTwentyFourHoursFormat = settings.useTwentyFourHoursFormat!;
+    }
+  }
+
+  @override
+  Future<void> resetSettings() async {
+    language = await _getDefaultLangToUse();
+    appTheme = AppThemeType.light;
+    useDarkAmoledTheme = false;
+    accentColor = AppAccentColorType.red;
+    showCharacterDetails = true;
+    showWeaponDetails = true;
+    serverResetTime = AppServerResetTimeType.northAmerica;
+    doubleBackToClose = true;
+    useOfficialMap = true;
+    useTwentyFourHoursFormat = false;
+    checkForUpdatesOnStartup = true;
   }
 
   Future<AppLanguageType> _getDefaultLangToUse() async {

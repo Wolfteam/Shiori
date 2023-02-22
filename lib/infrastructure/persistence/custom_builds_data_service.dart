@@ -160,6 +160,117 @@ class CustomBuildsDataServiceImpl implements CustomBuildsDataService {
     }).toList();
   }
 
+  @override
+  List<BackupCustomBuildModel> getDataForBackup() {
+    return _buildsBox.values.map((build) {
+      final buildKey = build.key as int;
+      final notes = _notesBox.values
+          .where((e) => e.buildItemKey == buildKey)
+          .map(
+            (e) => BackupCustomBuildNoteModel(
+              note: e.note,
+              index: e.index,
+            ),
+          )
+          .toList();
+      final weapons = _weaponsBox.values
+          .where((e) => e.buildItemKey == buildKey)
+          .map(
+            (e) => BackupCustomBuildWeaponModel(
+              weaponKey: e.weaponKey,
+              index: e.index,
+              level: e.level,
+              isAnAscension: e.isAnAscension,
+              refinement: e.refinement,
+            ),
+          )
+          .toList();
+      final artifacts = _artifactsBox.values
+          .where((e) => e.buildItemKey == buildKey)
+          .map((e) => BackupCustomBuildArtifactModel(itemKey: e.itemKey, type: e.type, statType: e.statType, subStats: e.subStats))
+          .toList();
+      final team = _teamCharactersBox.values
+          .where((e) => e.buildItemKey == buildKey)
+          .map((e) => BackupCustomBuildTeamCharacterModel(characterKey: e.characterKey, index: e.index, roleType: e.roleType, subType: e.subType))
+          .toList();
+      return BackupCustomBuildModel(
+        characterKey: build.characterKey,
+        title: build.title,
+        isRecommended: build.isRecommended,
+        showOnCharacterDetail: build.showOnCharacterDetail,
+        roleType: build.roleType,
+        roleSubType: build.roleSubType,
+        skillPriorities: build.skillPriorities,
+        notes: notes,
+        weapons: weapons,
+        artifacts: artifacts,
+        team: team,
+      );
+    }).toList();
+  }
+
+  @override
+  Future<void> restoreFromBackup(List<BackupCustomBuildModel> data) async {
+    await deleteThemAll();
+    for (final build in data) {
+      final artifacts = build.artifacts
+          .map(
+            (e) => CustomBuildArtifactModel(
+              key: e.itemKey,
+              rarity: 0,
+              name: '',
+              image: '',
+              type: ArtifactType.values[e.type],
+              subStats: e.subStats.map((statType) => StatType.values[statType]).toList(),
+              statType: StatType.values[e.statType],
+            ),
+          )
+          .toList();
+      final weapons = build.weapons
+          .map(
+            (e) => CustomBuildWeaponModel(
+              key: e.weaponKey,
+              image: '',
+              name: '',
+              index: e.index,
+              refinement: e.refinement,
+              rarity: 0,
+              stat: WeaponFileStatModel(level: e.level, isAnAscension: e.isAnAscension, baseAtk: 0, statValue: 0),
+              stats: [],
+              subStatType: StatType.none,
+            ),
+          )
+          .toList();
+      final notes = build.notes.map((e) => CustomBuildNoteModel(index: e.index, note: e.note)).toList();
+      final skillPriorities = build.skillPriorities.map((e) => CharacterSkillType.values[e]).toList();
+      final teamCharacters = build.team
+          .map(
+            (e) => CustomBuildTeamCharacterModel(
+              key: e.characterKey,
+              image: '',
+              name: '',
+              index: e.index,
+              roleType: CharacterRoleType.values[e.roleType],
+              subType: CharacterRoleSubType.values[e.subType],
+            ),
+          )
+          .toList();
+      await saveCustomBuild(
+        build.characterKey,
+        build.title,
+        CharacterRoleType.values[build.roleType],
+        CharacterRoleSubType.values[build.roleSubType],
+        build.showOnCharacterDetail,
+        build.isRecommended,
+        notes,
+        weapons,
+        artifacts,
+        teamCharacters,
+        skillPriorities,
+      );
+    }
+  }
+
   Future<void> _deleteCustomBuildRelatedParts(int key) {
     return Future.wait([
       _deleteWeapons(key),

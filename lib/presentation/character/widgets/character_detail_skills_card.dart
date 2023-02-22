@@ -72,7 +72,7 @@ class _SkillCard extends StatelessWidget {
               isEven: isEven,
               stats: model.stats,
             ),
-            if (model.description != null) Text(model.description!, style: theme.textTheme.bodyText2!.copyWith(fontSize: 12)),
+            if (model.description != null) Text(model.description!, style: theme.textTheme.bodyMedium!.copyWith(fontSize: 12)),
             ...model.abilities.map(
               (e) => _SkillAbility(
                 name: e.name,
@@ -125,7 +125,7 @@ class _SkillHeader extends StatelessWidget {
             child: Text(
               title,
               overflow: TextOverflow.ellipsis,
-              style: theme.textTheme.headline6!.copyWith(color: elementType.getElementColorFromContext(context)),
+              style: theme.textTheme.titleLarge!.copyWith(color: elementType.getElementColorFromContext(context)),
             ),
           ),
           Tooltip(
@@ -194,11 +194,11 @@ class _SkillAbility extends StatelessWidget {
               name!,
               overflow: TextOverflow.ellipsis,
               textAlign: TextAlign.center,
-              style: theme.textTheme.subtitle1!.copyWith(color: elementType.getElementColorFromContext(context)),
+              style: theme.textTheme.titleMedium!.copyWith(color: elementType.getElementColorFromContext(context)),
             ),
-          if (description != null) Text(description!, style: theme.textTheme.bodyText2!.copyWith(fontSize: 12)),
+          if (description != null) Text(description!, style: theme.textTheme.bodyMedium!.copyWith(fontSize: 12)),
           if (descriptions.isNotEmpty) BulletList(items: descriptions),
-          if (secondDescription != null) Text(secondDescription!, style: theme.textTheme.bodyText2!.copyWith(fontSize: 12)),
+          if (secondDescription != null) Text(secondDescription!, style: theme.textTheme.bodyMedium!.copyWith(fontSize: 12)),
         ],
       ),
     );

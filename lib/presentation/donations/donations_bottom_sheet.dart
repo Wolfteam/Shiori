@@ -65,7 +65,7 @@ class _BodyState extends State<_Body> {
                   Text(
                     s.donationMsg,
                     textAlign: TextAlign.center,
-                    style: Theme.of(context).textTheme.subtitle1!.copyWith(fontWeight: FontWeight.bold),
+                    style: Theme.of(context).textTheme.titleMedium!.copyWith(fontWeight: FontWeight.bold),
                   ),
                   ...state.packages.map(
                     (e) => _DonationItem(
@@ -187,7 +187,7 @@ class _DonationItem extends StatelessWidget {
           child: Text(
             s.donateXAmount(item.priceString),
             textAlign: TextAlign.center,
-            style: theme.textTheme.subtitle1,
+            style: theme.textTheme.titleMedium,
           ),
         ),
       ),

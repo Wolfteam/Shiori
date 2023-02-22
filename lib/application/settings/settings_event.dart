@@ -40,7 +40,11 @@ class SettingsEvent with _$SettingsEvent {
     required bool newValue,
   }) = _UseOfficialMapChanged;
 
-  const factory SettingsEvent.useTwentyFourHoursFormat({
+  const factory SettingsEvent.useTwentyFourHoursFormatChanged({
     required bool newValue,
-  }) = _UseTwentyFourHoursFormat;
+  }) = _UseTwentyFourHoursFormatChanged;
+
+  const factory SettingsEvent.checkForUpdatesOnStartupChanged({
+    required bool newValue,
+  }) = _CheckForUpdatesOnStartupChanged;
 }

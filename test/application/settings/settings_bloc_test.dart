@@ -23,8 +23,8 @@ class FakeUrlPageBloc extends Fake implements UrlPageBloc {
 }
 
 void main() {
-  const String _appVersion = '1.0.0';
-  final _defaultSettings = AppSettings(
+  const String appVersion = '1.0.0';
+  final defaultSettings = AppSettings(
     appTheme: AppThemeType.dark,
     useDarkAmoled: true,
     accentColor: AppAccentColorType.blue,
@@ -37,10 +37,11 @@ void main() {
     useOfficialMap: false,
     useTwentyFourHoursFormat: true,
     resourceVersion: 1,
+    checkForUpdatesOnStartup: true,
   );
 
-  SettingsBloc _getBloc({AppSettings? appSettings}) {
-    final settings = appSettings ?? _defaultSettings;
+  SettingsBloc getBloc({AppSettings? appSettings}) {
+    final settings = appSettings ?? defaultSettings;
     final settingsService = MockSettingsService();
     when(settingsService.appSettings).thenReturn(settings);
     when(settingsService.appTheme).thenReturn(settings.appTheme);
@@ -54,9 +55,10 @@ void main() {
     when(settingsService.doubleBackToClose).thenReturn(settings.doubleBackToClose);
     when(settingsService.useOfficialMap).thenReturn(settings.useOfficialMap);
     when(settingsService.useTwentyFourHoursFormat).thenReturn(settings.useTwentyFourHoursFormat);
+    when(settingsService.checkForUpdatesOnStartup).thenReturn(settings.checkForUpdatesOnStartup);
 
     final deviceInfoService = MockDeviceInfoService();
-    when(deviceInfoService.versionWithBuildNumber).thenReturn(_appVersion);
+    when(deviceInfoService.versionWithBuildNumber).thenReturn(appVersion);
     when(deviceInfoService.appName).thenReturn('Shiori');
 
     final purchaseService = MockPurchaseService();
@@ -69,71 +71,74 @@ void main() {
 
   test(
     'Initial state',
-    () => expect(_getBloc().state, const SettingsState.loading()),
+    () => expect(getBloc().state, const SettingsState.loading()),
   );
 
   test(
     'Double back to close returns valid value',
     () => expect(
-      _getBloc().doubleBackToClose(),
-      _defaultSettings.doubleBackToClose,
+      getBloc().doubleBackToClose(),
+      defaultSettings.doubleBackToClose,
     ),
   );
 
   blocTest<SettingsBloc, SettingsState>(
     'Init',
-    build: () => _getBloc(),
+    build: () => getBloc(),
     act: (bloc) => bloc.add(const SettingsEvent.init()),
     expect: () => [
       SettingsState.loaded(
-        currentTheme: _defaultSettings.appTheme,
-        useDarkAmoledTheme: _defaultSettings.useDarkAmoled,
-        currentAccentColor: _defaultSettings.accentColor,
-        currentLanguage: _defaultSettings.appLanguage,
-        appVersion: _appVersion,
-        showCharacterDetails: _defaultSettings.showCharacterDetails,
-        showWeaponDetails: _defaultSettings.showWeaponDetails,
-        serverResetTime: _defaultSettings.serverResetTime,
-        doubleBackToClose: _defaultSettings.doubleBackToClose,
-        useOfficialMap: _defaultSettings.useOfficialMap,
-        useTwentyFourHoursFormat: _defaultSettings.useTwentyFourHoursFormat,
+        currentTheme: defaultSettings.appTheme,
+        useDarkAmoledTheme: defaultSettings.useDarkAmoled,
+        currentAccentColor: defaultSettings.accentColor,
+        currentLanguage: defaultSettings.appLanguage,
+        appVersion: appVersion,
+        showCharacterDetails: defaultSettings.showCharacterDetails,
+        showWeaponDetails: defaultSettings.showWeaponDetails,
+        serverResetTime: defaultSettings.serverResetTime,
+        doubleBackToClose: defaultSettings.doubleBackToClose,
+        useOfficialMap: defaultSettings.useOfficialMap,
+        useTwentyFourHoursFormat: defaultSettings.useTwentyFourHoursFormat,
         unlockedFeatures: AppUnlockedFeature.values,
-        resourceVersion: _defaultSettings.resourceVersion,
+        resourceVersion: defaultSettings.resourceVersion,
+        checkForUpdatesOnStartup: defaultSettings.checkForUpdatesOnStartup,
       ),
     ],
   );
 
   blocTest<SettingsBloc, SettingsState>(
     'Settings changed',
-    build: () => _getBloc(),
+    build: () => getBloc(),
     act: (bloc) => bloc
       ..add(const SettingsEvent.init())
       ..add(const SettingsEvent.themeChanged(newValue: AppThemeType.light))
       ..add(const SettingsEvent.useDarkAmoledTheme(newValue: false))
       ..add(const SettingsEvent.accentColorChanged(newValue: AppAccentColorType.cyan))
       ..add(const SettingsEvent.languageChanged(newValue: AppLanguageType.russian))
-      ..add(SettingsEvent.showCharacterDetailsChanged(newValue: !_defaultSettings.showCharacterDetails))
-      ..add(SettingsEvent.showWeaponDetailsChanged(newValue: !_defaultSettings.showWeaponDetails))
+      ..add(SettingsEvent.showCharacterDetailsChanged(newValue: !defaultSettings.showCharacterDetails))
+      ..add(SettingsEvent.showWeaponDetailsChanged(newValue: !defaultSettings.showWeaponDetails))
       ..add(const SettingsEvent.serverResetTimeChanged(newValue: AppServerResetTimeType.northAmerica))
-      ..add(SettingsEvent.doubleBackToCloseChanged(newValue: !_defaultSettings.doubleBackToClose))
-      ..add(SettingsEvent.useOfficialMapChanged(newValue: !_defaultSettings.useOfficialMap))
-      ..add(SettingsEvent.useTwentyFourHoursFormat(newValue: !_defaultSettings.useTwentyFourHoursFormat)),
-    skip: 10,
+      ..add(SettingsEvent.doubleBackToCloseChanged(newValue: !defaultSettings.doubleBackToClose))
+      ..add(SettingsEvent.useOfficialMapChanged(newValue: !defaultSettings.useOfficialMap))
+      ..add(SettingsEvent.useTwentyFourHoursFormatChanged(newValue: !defaultSettings.useTwentyFourHoursFormat))
+      ..add(SettingsEvent.checkForUpdatesOnStartupChanged(newValue: !defaultSettings.checkForUpdatesOnStartup)),
+    skip: 11,
     expect: () => [
       SettingsState.loaded(
         currentTheme: AppThemeType.light,
         useDarkAmoledTheme: false,
         currentAccentColor: AppAccentColorType.cyan,
         currentLanguage: AppLanguageType.russian,
-        appVersion: _appVersion,
-        showCharacterDetails: !_defaultSettings.showCharacterDetails,
-        showWeaponDetails: !_defaultSettings.showWeaponDetails,
+        appVersion: appVersion,
+        showCharacterDetails: !defaultSettings.showCharacterDetails,
+        showWeaponDetails: !defaultSettings.showWeaponDetails,
         serverResetTime: AppServerResetTimeType.northAmerica,
-        doubleBackToClose: !_defaultSettings.doubleBackToClose,
-        useOfficialMap: !_defaultSettings.useOfficialMap,
-        useTwentyFourHoursFormat: !_defaultSettings.useTwentyFourHoursFormat,
+        doubleBackToClose: !defaultSettings.doubleBackToClose,
+        useOfficialMap: !defaultSettings.useOfficialMap,
+        useTwentyFourHoursFormat: !defaultSettings.useTwentyFourHoursFormat,
         unlockedFeatures: AppUnlockedFeature.values,
-        resourceVersion: _defaultSettings.resourceVersion,
+        resourceVersion: defaultSettings.resourceVersion,
+        checkForUpdatesOnStartup: !defaultSettings.checkForUpdatesOnStartup,
       ),
     ],
   );

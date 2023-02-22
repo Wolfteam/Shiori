@@ -1,4 +1,5 @@
 export 'app_accent_color_type.dart';
+export 'app_backup_data_type.dart';
 export 'app_image_folder_type.dart';
 export 'app_json_file_type.dart';
 export 'app_language_type.dart';

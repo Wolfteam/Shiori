@@ -26,7 +26,7 @@ class AccentColorSettingsCard extends StatelessWidget {
                 margin: const EdgeInsets.only(left: 5),
                 child: Text(
                   s.accentColor,
-                  style: Theme.of(context).textTheme.headline6,
+                  style: Theme.of(context).textTheme.titleLarge,
                 ),
               ),
             ],

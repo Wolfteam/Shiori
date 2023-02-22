@@ -42,15 +42,15 @@ class FakeElementsState extends Fake implements ElementsState {}
 class FakeElementsEvent extends Fake implements ElementsEvent {}
 
 void main() {
-  const _defaultAppName = 'Shiori';
-  const _defaultLang = AppLanguageType.english;
-  const _defaultTheme = AppThemeType.dark;
-  const _defaultAccentColor = AppAccentColorType.red;
-  final _defaultAppSettings = AppSettings(
-    appTheme: _defaultTheme,
+  const defaultAppName = 'Shiori';
+  const defaultLang = AppLanguageType.english;
+  const defaultTheme = AppThemeType.dark;
+  const defaultAccentColor = AppAccentColorType.red;
+  final defaultAppSettings = AppSettings(
+    appTheme: defaultTheme,
     useDarkAmoled: false,
-    accentColor: _defaultAccentColor,
-    appLanguage: _defaultLang,
+    accentColor: defaultAccentColor,
+    appLanguage: defaultLang,
     showCharacterDetails: true,
     showWeaponDetails: true,
     isFirstInstall: true,
@@ -59,6 +59,7 @@ void main() {
     useOfficialMap: true,
     useTwentyFourHoursFormat: true,
     resourceVersion: 1,
+    checkForUpdatesOnStartup: true,
   );
 
   setUpAll(() {
@@ -75,8 +76,8 @@ void main() {
     registerFallbackValue(FakeElementsEvent());
   });
 
-  MainBloc _getBloc({
-    String appName = _defaultAppName,
+  MainBloc getBloc({
+    String appName = defaultAppName,
     // AppLanguageType language = _defaultLang,
     // AppThemeType theme = _defaultTheme,
     // AppAccentColorType accentColor = _defaultAccentColor,
@@ -84,7 +85,7 @@ void main() {
     bool versionChanged = false,
     List<AppUnlockedFeature> unlockedFeatures = AppUnlockedFeature.values,
   }) {
-    final settings = appSettings ?? _defaultAppSettings;
+    final settings = appSettings ?? defaultAppSettings;
     final logger = MockLoggingService();
     final settingsService = MockSettingsService();
     final telemetryService = MockTelemetryService();
@@ -97,6 +98,8 @@ void main() {
     for (final feature in unlockedFeatures) {
       when(purchaseService.isFeatureUnlocked(feature)).thenAnswer((_) => Future.value(true));
     }
+    final dataService = MockDataService();
+    final notificationService = MockNotificationService();
 
     final charactersBloc = MockCharactersBloc();
     final weaponsBloc = MockWeaponsBloc();
@@ -119,6 +122,8 @@ void main() {
       telemetryService,
       deviceInfoService,
       purchaseService,
+      dataService,
+      notificationService,
       charactersBloc,
       weaponsBloc,
       homeBloc,
@@ -127,24 +132,24 @@ void main() {
   }
 
   test('Initial state', () {
-    final bloc = _getBloc();
+    final bloc = getBloc();
     expect(bloc.state, MainState.loading(language: languagesMap.entries.firstWhere((el) => el.key == AppLanguageType.english).value));
   });
 
   group('Init', () {
     blocTest<MainBloc, MainState>(
       'emits init state',
-      build: () => _getBloc(),
+      build: () => getBloc(),
       act: (bloc) => bloc.add(const MainEvent.init(updateResultType: null)),
       expect: () => [
         MainState.loaded(
-          appTitle: _defaultAppName,
-          theme: _defaultTheme,
+          appTitle: defaultAppName,
+          theme: defaultTheme,
           useDarkAmoledTheme: false,
-          accentColor: _defaultAccentColor,
-          language: languagesMap.entries.firstWhere((kvp) => kvp.key == _defaultLang).value,
+          accentColor: defaultAccentColor,
+          language: languagesMap.entries.firstWhere((kvp) => kvp.key == defaultLang).value,
           initialized: true,
-          firstInstall: _defaultAppSettings.isFirstInstall,
+          firstInstall: defaultAppSettings.isFirstInstall,
           versionChanged: false,
         )
       ],
@@ -154,20 +159,20 @@ void main() {
   group('Theme changed', () {
     blocTest<MainBloc, MainState>(
       'updates the theme in the state',
-      build: () => _getBloc(),
+      build: () => getBloc(),
       act: (bloc) => bloc
         ..add(const MainEvent.init(updateResultType: null))
         ..add(const MainEvent.themeChanged(newValue: AppThemeType.light)),
       skip: 1,
       expect: () => [
         MainState.loaded(
-          appTitle: _defaultAppName,
+          appTitle: defaultAppName,
           theme: AppThemeType.light,
           useDarkAmoledTheme: false,
-          accentColor: _defaultAppSettings.accentColor,
-          language: languagesMap.entries.firstWhere((kvp) => kvp.key == _defaultLang).value,
+          accentColor: defaultAppSettings.accentColor,
+          language: languagesMap.entries.firstWhere((kvp) => kvp.key == defaultLang).value,
           initialized: true,
-          firstInstall: _defaultAppSettings.isFirstInstall,
+          firstInstall: defaultAppSettings.isFirstInstall,
           versionChanged: false,
         ),
       ],
@@ -175,20 +180,20 @@ void main() {
 
     blocTest<MainBloc, MainState>(
       'updates the accent color in the state',
-      build: () => _getBloc(),
+      build: () => getBloc(),
       act: (bloc) => bloc
         ..add(const MainEvent.init(updateResultType: null))
         ..add(const MainEvent.accentColorChanged(newValue: AppAccentColorType.blueGrey)),
       skip: 1,
       expect: () => [
         MainState.loaded(
-          appTitle: _defaultAppName,
-          theme: _defaultAppSettings.appTheme,
+          appTitle: defaultAppName,
+          theme: defaultAppSettings.appTheme,
           useDarkAmoledTheme: false,
           accentColor: AppAccentColorType.blueGrey,
-          language: languagesMap.entries.firstWhere((kvp) => kvp.key == _defaultLang).value,
+          language: languagesMap.entries.firstWhere((kvp) => kvp.key == defaultLang).value,
           initialized: true,
-          firstInstall: _defaultAppSettings.isFirstInstall,
+          firstInstall: defaultAppSettings.isFirstInstall,
           versionChanged: false,
         ),
       ],
@@ -196,17 +201,17 @@ void main() {
 
     blocTest<MainBloc, MainState>(
       'uses dark amoled',
-      build: () => _getBloc(appSettings: _defaultAppSettings.copyWith.call(useDarkAmoled: true)),
+      build: () => getBloc(appSettings: defaultAppSettings.copyWith.call(useDarkAmoled: true)),
       act: (bloc) => bloc..add(const MainEvent.useDarkAmoledThemeChanged(newValue: true)),
       expect: () => [
         MainState.loaded(
-          appTitle: _defaultAppName,
-          theme: _defaultAppSettings.appTheme,
+          appTitle: defaultAppName,
+          theme: defaultAppSettings.appTheme,
           useDarkAmoledTheme: true,
-          accentColor: _defaultAccentColor,
-          language: languagesMap.entries.firstWhere((kvp) => kvp.key == _defaultLang).value,
+          accentColor: defaultAccentColor,
+          language: languagesMap.entries.firstWhere((kvp) => kvp.key == defaultLang).value,
           initialized: true,
-          firstInstall: _defaultAppSettings.isFirstInstall,
+          firstInstall: defaultAppSettings.isFirstInstall,
           versionChanged: false,
         ),
       ],
@@ -216,19 +221,19 @@ void main() {
   group('Language changed', () {
     blocTest<MainBloc, MainState>(
       'updates the language in the state',
-      build: () => _getBloc(appSettings: _defaultAppSettings.copyWith.call(appLanguage: AppLanguageType.russian)),
+      build: () => getBloc(appSettings: defaultAppSettings.copyWith.call(appLanguage: AppLanguageType.russian)),
       act: (bloc) => bloc
         ..add(const MainEvent.init(updateResultType: null))
         ..add(const MainEvent.languageChanged(newValue: AppLanguageType.russian)),
       expect: () => [
         MainState.loaded(
-          appTitle: _defaultAppName,
-          theme: _defaultAppSettings.appTheme,
+          appTitle: defaultAppName,
+          theme: defaultAppSettings.appTheme,
           useDarkAmoledTheme: false,
-          accentColor: _defaultAppSettings.accentColor,
+          accentColor: defaultAppSettings.accentColor,
           language: languagesMap.entries.firstWhere((kvp) => kvp.key == AppLanguageType.russian).value,
           initialized: true,
-          firstInstall: _defaultAppSettings.isFirstInstall,
+          firstInstall: defaultAppSettings.isFirstInstall,
           versionChanged: false,
         ),
       ],

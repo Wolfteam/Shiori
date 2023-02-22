@@ -51,7 +51,7 @@ class _OrWidget extends StatelessWidget {
         child: Text(
           s.or,
           textAlign: TextAlign.center,
-          style: theme.textTheme.subtitle2!.copyWith(fontWeight: FontWeight.bold, color: Colors.white),
+          style: theme.textTheme.titleSmall!.copyWith(fontWeight: FontWeight.bold, color: Colors.white),
         ),
       ),
     );

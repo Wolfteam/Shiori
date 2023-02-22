@@ -1,5 +1,6 @@
 export 'artifact/artifact_bloc.dart';
 export 'artifacts/artifacts_bloc.dart';
+export 'backup_restore/backup_restore_bloc.dart';
 export 'banner_history/banner_history_bloc.dart';
 export 'banner_history_item/banner_history_item_bloc.dart';
 export 'calculator_asc_materials/material_item/calculator_asc_materials_item_bloc.dart';
@@ -17,7 +18,6 @@ export 'characters_per_region/characters_per_region_bloc.dart';
 export 'characters_per_region_gender/characters_per_region_gender_bloc.dart';
 export 'charts/ascension_stats/chart_ascension_stats_bloc.dart';
 export 'charts/birthdays/chart_birthdays_bloc.dart';
-export 'charts/elements/chart_elements_bloc.dart';
 export 'charts/elements/chart_elements_bloc.dart';
 export 'charts/genders/chart_genders_bloc.dart';
 export 'charts/regions/chart_regions_bloc.dart';

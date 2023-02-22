@@ -37,7 +37,7 @@ class ChartCard extends StatelessWidget {
                 margin: titleMargin,
                 child: Text(
                   title,
-                  style: theme.textTheme.headline6,
+                  style: theme.textTheme.titleLarge,
                 ),
               ),
               Expanded(child: child),
