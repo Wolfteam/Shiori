@@ -50,7 +50,9 @@ class CheckForResourceUpdatesBloc extends Bloc<CheckForResourceUpdatesEvent, Che
     return CheckForResourceUpdatesState.loaded(
       updateResultType: result.type,
       currentResourceVersion: _settingsService.resourceVersion,
-      targetResourceVersion: result.resourceVersion == _settingsService.resourceVersion ? null : result.resourceVersion,
+      targetResourceVersion: result.resourceVersion == _settingsService.resourceVersion || result.type != AppResourceUpdateResultType.updatesAvailable
+          ? null
+          : result.resourceVersion,
     );
   }
 }

@@ -96,7 +96,7 @@ void main() {
       act: (bloc) => bloc
         ..add(const CheckForResourceUpdatesEvent.init())
         ..add(const CheckForResourceUpdatesEvent.checkForUpdates()),
-      verify: (bloc) => checkState(bloc.state, AppResourceUpdateResultType.needsLatestAppVersion, -1, targetResourceVersion: 2),
+      verify: (bloc) => checkState(bloc.state, AppResourceUpdateResultType.needsLatestAppVersion, -1),
     );
 
     blocTest<CheckForResourceUpdatesBloc, CheckForResourceUpdatesState>(
@@ -110,7 +110,7 @@ void main() {
       act: (bloc) => bloc
         ..add(const CheckForResourceUpdatesEvent.init())
         ..add(const CheckForResourceUpdatesEvent.checkForUpdates()),
-      verify: (bloc) => checkState(bloc.state, AppResourceUpdateResultType.noInternetConnectionForFirstInstall, -1, targetResourceVersion: 2),
+      verify: (bloc) => checkState(bloc.state, AppResourceUpdateResultType.noInternetConnectionForFirstInstall, -1),
     );
 
     blocTest<CheckForResourceUpdatesBloc, CheckForResourceUpdatesState>(
