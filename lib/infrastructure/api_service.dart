@@ -49,10 +49,10 @@ class ApiServiceImpl implements ApiService {
     try {
       const url = '${Env.assetsBaseUrl}/changelog.md';
       final response = await _httpClient.get(Uri.parse(url), headers: _getCommonApiHeaders());
-      if (response.statusCode != 200) {
+      if (!_isSuccessStatusCode(response.statusCode)) {
         _loggingService.warning(
           runtimeType,
-          'getChangelog: Could not retrieve changelog, got status code = ${response.statusCode}, falling back to the default one',
+          'getChangelog: Got status code = ${response.statusCode}, falling back to the default one',
         );
         return defaultValue;
       }
@@ -73,14 +73,15 @@ class ApiServiceImpl implements ApiService {
       }
 
       final response = await _httpClient.get(Uri.parse(url), headers: _getApiHeaders());
-      final json = jsonDecode(response.body) as Map<String, dynamic>;
-      if (response.statusCode != 200) {
+      if (!_isSuccessStatusCode(response.statusCode)) {
         _loggingService.warning(
           runtimeType,
-          'checkForUpdates: Could not retrieve changelog, got status code = ${response.statusCode}',
+          'checkForUpdates: Got status code = ${response.statusCode}. Body = ${response.body}',
         );
+        return ApiResponseDto(succeed: false, message: 'Invalid status code = ${response.statusCode}');
       }
 
+      final json = jsonDecode(response.body) as Map<String, dynamic>;
       final apiResponse = ApiResponseDto.fromJson(
         json,
         (data) => data == null ? null : ResourceDiffResponseDto.fromJson(data as Map<String, dynamic>),
@@ -103,7 +104,7 @@ class ApiServiceImpl implements ApiService {
 
       final url = '${Env.assetsBaseUrl}/$keyName';
       final response = await _httpClient.get(Uri.parse(url), headers: _getCommonApiHeaders());
-      if (response.statusCode != 200) {
+      if (!_isSuccessStatusCode(response.statusCode)) {
         _loggingService.warning(
           runtimeType,
           'downloadAsset: Got status code = ${response.statusCode}. RP = ${response.reasonPhrase ?? na}',
@@ -139,5 +140,9 @@ class ApiServiceImpl implements ApiService {
     } else {
       _loggingService.error(runtimeType, '$caller: Unknown api error', e, s);
     }
+  }
+
+  bool _isSuccessStatusCode(int code) {
+    return code >= HttpStatus.ok && code <= 299;
   }
 }
