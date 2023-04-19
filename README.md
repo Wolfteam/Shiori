@@ -124,7 +124,7 @@ Translating the app to other languages won't have been possible without the foll
 |-----------|----------------|--------------|------------------------|---------------|---------------|--------------|---------------|
 | 2O48#9733 | SipTik#8026    | Brunoff#0261 | Reniel [Skidex ツ]#7982 | 𝕽𝖚𝖗𝖎#3080 | Ren Toky#5263 | Arctara#7162 | VALLER1Y#4726 |
 |           | KKTS#8567      | DanPS#4336   | Septenebris#7356       |||||
-|           | KlimeLime#7577 |||||||
+|           | pill#0039.     |||||||
 |           | Avantel#8880   |||||||
 |           | чебилин#5968   |||||||
 |           | Anixty#3279    |||||||
