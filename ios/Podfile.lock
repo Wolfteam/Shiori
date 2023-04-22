@@ -72,14 +72,14 @@ PODS:
     - FlutterMacOS
   - permission_handler_apple (9.0.4):
     - Flutter
-  - purchases_flutter (4.9.1):
+  - purchases_flutter (4.11.3):
     - Flutter
-    - PurchasesHybridCommon (= 4.12.1)
-  - PurchasesHybridCommon (4.12.1):
-    - RevenueCat (= 4.17.4)
+    - PurchasesHybridCommon (= 4.14.3)
+  - PurchasesHybridCommon (4.14.3):
+    - RevenueCat (= 4.17.11)
   - rate_my_app (1.1.3):
     - Flutter
-  - RevenueCat (4.17.4)
+  - RevenueCat (4.17.11)
   - SDWebImage (5.15.2):
     - SDWebImage/Core (= 5.15.2)
   - SDWebImage/Core (5.15.2)
@@ -192,10 +192,10 @@ SPEC CHECKSUMS:
   package_info_plus: 6c92f08e1f853dc01228d6f553146438dafcd14e
   path_provider_foundation: 37748e03f12783f9de2cb2c4eadfaa25fe6d4852
   permission_handler_apple: 44366e37eaf29454a1e7b1b7d736c2cceaeb17ce
-  purchases_flutter: 35823ed62a8eca74af719872b27c2faf7c625ab8
-  PurchasesHybridCommon: 6e262ca1090bd9f99e85cf604a12d0866b9b80b2
+  purchases_flutter: 7c0cd1ed4412ac8c9041200cf7f22806c6c4e714
+  PurchasesHybridCommon: be1e0089c51b4ee7b44914fd7a9ede271f96e4f5
   rate_my_app: 96f658ddb7f0a8d2f46d54452583f084760aef57
-  RevenueCat: 3411bc79fc724c5c130035c92959a802c6d6f5b2
+  RevenueCat: 0431c28e4d492c0c88d6cc5c89a289cd40a8b7ea
   SDWebImage: 8ab87d4b3e5cc4927bd47f78db6ceb0b94442577
   share_plus: 056a1e8ac890df3e33cb503afffaf1e9b4fbae68
   shared_preferences_foundation: 297b3ebca31b34ec92be11acd7fb0ba932c822ca
