@@ -1,6 +1,5 @@
 import 'dart:io';
 
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shiori/application/bloc.dart';
@@ -17,12 +16,14 @@ import 'package:shiori/presentation/shared/styles.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class AboutSettingsCard extends StatelessWidget {
+  final bool showDonationUI;
+
+  const AboutSettingsCard({required this.showDonationUI});
+
   @override
   Widget build(BuildContext context) {
     final s = S.of(context);
     final textTheme = Theme.of(context).textTheme;
-    final showDonationsButton = !kIsWeb && Platform.isAndroid;
-
     return SettingsCard(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -81,7 +82,7 @@ class AboutSettingsCard extends StatelessWidget {
                   alignment: WrapAlignment.center,
                   crossAxisAlignment: WrapCrossAlignment.center,
                   children: [
-                    if (showDonationsButton)
+                    if (showDonationUI)
                       Tooltip(
                         message: s.donations,
                         child: IconButton(

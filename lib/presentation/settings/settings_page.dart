@@ -1,3 +1,6 @@
+import 'dart:io';
+
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import 'package:shiori/generated/l10n.dart';
@@ -10,6 +13,8 @@ import 'package:shiori/presentation/settings/widgets/theme_settings_card.dart';
 import 'package:shiori/presentation/shared/styles.dart';
 
 class SettingsPage extends StatelessWidget {
+  final showDonationUI = !kIsWeb && (Platform.isAndroid || Platform.isIOS || Platform.isMacOS);
+
   @override
   Widget build(BuildContext context) {
     final s = S.of(context);
@@ -18,7 +23,7 @@ class SettingsPage extends StatelessWidget {
       appBar: AppBar(title: Text(s.settings)),
       body: SafeArea(
         child: ResponsiveBuilder(
-          builder: (ctx, size) => isPortrait ? const _MobileLayout() : const _DesktopTabletLayout(),
+          builder: (ctx, size) => isPortrait ? _MobileLayout(showDonationUI: showDonationUI) : _DesktopTabletLayout(showDonationUI: showDonationUI),
         ),
       ),
     );
@@ -26,7 +31,9 @@ class SettingsPage extends StatelessWidget {
 }
 
 class _MobileLayout extends StatelessWidget {
-  const _MobileLayout();
+  final bool showDonationUI;
+
+  const _MobileLayout({required this.showDonationUI});
 
   @override
   Widget build(BuildContext context) {
@@ -34,11 +41,11 @@ class _MobileLayout extends StatelessWidget {
       padding: Styles.edgeInsetAll10,
       shrinkWrap: true,
       children: [
-        const ThemeSettingsCard(),
+        ThemeSettingsCard(showDonationUI: showDonationUI),
         AccentColorSettingsCard(),
         LanguageSettingsCard(),
         OtherSettings(),
-        AboutSettingsCard(),
+        AboutSettingsCard(showDonationUI: showDonationUI),
         CreditsSettingsCard(),
       ],
     );
@@ -46,7 +53,9 @@ class _MobileLayout extends StatelessWidget {
 }
 
 class _DesktopTabletLayout extends StatelessWidget {
-  const _DesktopTabletLayout();
+  final bool showDonationUI;
+
+  const _DesktopTabletLayout({required this.showDonationUI});
 
   @override
   Widget build(BuildContext context) {
@@ -60,10 +69,10 @@ class _DesktopTabletLayout extends StatelessWidget {
             Expanded(
               child: Column(
                 children: [
-                  const ThemeSettingsCard(),
+                  ThemeSettingsCard(showDonationUI: showDonationUI),
                   AccentColorSettingsCard(),
                   LanguageSettingsCard(),
-                  AboutSettingsCard(),
+                  AboutSettingsCard(showDonationUI: showDonationUI),
                 ],
               ),
             ),
