@@ -38,7 +38,11 @@ class PurchaseServiceImpl implements PurchaseService {
         await Purchases.setLogLevel(LogLevel.debug);
       }
 
-      final key = Platform.isAndroid ? Env.androidPurchasesKey : throw Exception('Platform not supported');
+      final key = Platform.isAndroid
+          ? Env.androidPurchasesKey
+          : Platform.isIOS || Platform.isMacOS
+              ? Env.iosPurchasesKey
+              : throw Exception('Platform not supported');
       await Purchases.configure(PurchasesConfiguration(key));
       _initialized = true;
       return true;
@@ -54,7 +58,7 @@ class PurchaseServiceImpl implements PurchaseService {
       return Future.value(false);
     }
 
-    if (Platform.isAndroid) {
+    if (Platform.isAndroid || Platform.isIOS || Platform.isMacOS) {
       return Future.value(true);
     }
 
@@ -96,7 +100,7 @@ class PurchaseServiceImpl implements PurchaseService {
               productIdentifier: p.storeProduct.identifier,
             ),
           )
-          .toList();
+          .toList()..sort((x,y) => x.priceString.compareTo(y.priceString));
     } catch (e, s) {
       _handleError('getInAppPurchases', e, s);
       return [];
