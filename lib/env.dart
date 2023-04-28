@@ -6,6 +6,8 @@ part 'env.g.dart';
 class Env {
   static const androidAppCenterKey = CommonEnv.androidAppCenterKey;
   static const androidPurchasesKey = CommonEnv.androidPurchasesKey;
+  static const macosAppCenterKey = CommonEnv.macosAppCenterKey;
+
   static const iosPurchasesKey = CommonEnv.iosPurchasesKey;
   static const iosAppCenterKey = CommonEnv.iosAppCenterKey;
 
@@ -43,6 +45,8 @@ abstract class ProdEnv {
 abstract class CommonEnv {
   static const androidAppCenterKey = _CommonEnv.androidAppCenterKey;
   static const iosAppCenterKey = _CommonEnv.iosAppCenterKey;
+  static const macosAppCenterKey = _CommonEnv.macosAppCenterKey;
+
   static const androidPurchasesKey = _CommonEnv.androidPurchasesKey;
   static const iosPurchasesKey = _CommonEnv.iosPurchasesKey;
 

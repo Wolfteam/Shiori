@@ -16,11 +16,14 @@ class TelemetryServiceImpl implements TelemetryService {
   //Only call this function from the main.dart
   @override
   Future<void> initTelemetry() async {
-    final secret = Platform.isAndroid
-        ? Env.androidAppCenterKey
-        : Platform.isIOS
-            ? Env.iosAppCenterKey
-            : '';
+    String secret = '';
+    if (Platform.isAndroid) {
+      secret = Env.androidAppCenterKey;
+    } else if (Platform.isIOS) {
+      secret = Env.iosAppCenterKey;
+    } else if (Platform.isMacOS) {
+      secret = Env.macosAppCenterKey;
+    }
     await AppCenter.startAsync(appSecret: secret);
   }
 

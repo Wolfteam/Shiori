@@ -38,3 +38,5 @@ post_install do |installer|
     flutter_additional_macos_build_settings(target)
   end
 end
+
+pod 'AppCenter'

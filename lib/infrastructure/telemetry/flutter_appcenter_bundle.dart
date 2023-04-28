@@ -8,7 +8,7 @@ const _methodChannel = MethodChannel(_methodChannelName);
 
 /// Static class that provides AppCenter APIs
 class AppCenter {
-  static bool isPlatformSupported = [Platform.isAndroid, Platform.isIOS].any((el) => el);
+  static bool isPlatformSupported = [Platform.isAndroid, Platform.isIOS, Platform.isMacOS].any((el) => el);
 
   /// Start appcenter functionalities
   static Future<void> startAsync({
