@@ -198,6 +198,10 @@ class ResourceServiceImpl implements ResourceService {
       return true;
     }
 
+    if (_settingsService.noResourcesHasBeenDownloaded) {
+      return true;
+    }
+
     if (!checkDate) {
       return true;
     }
