@@ -28,10 +28,15 @@ Future<void> main() async {
     setWindowMaxSize(Size.infinite);
   }
   final notificationService = getIt<NotificationService>();
-  await notificationService.registerCallBacks(
+  final notifFuture = notificationService.registerCallBacks(
     onSelectNotification: _onSelectNotification,
     onIosReceiveLocalNotification: _onDidReceiveLocalNotification,
   );
+  //TODO: CHECK THE NOTIFICATION LOGIC
+  //TODO: WEBVIEW SUPPORT IN MACOS
+  if (!Platform.isMacOS) {
+    await notifFuture;
+  }
   runApp(MyApp());
 }
 
