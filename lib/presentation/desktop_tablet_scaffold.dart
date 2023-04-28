@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shiori/application/bloc.dart';
@@ -120,11 +122,12 @@ class _NavigationRailState extends State<_NavigationRail> {
             selectedIcon: const Icon(Shiori.overmind),
             label: Text(s.artifacts),
           ),
-          NavigationRailDestination(
-            icon: const Icon(Icons.map),
-            selectedIcon: const Icon(Icons.map),
-            label: Text(s.map),
-          ),
+          if (!Platform.isMacOS)
+            NavigationRailDestination(
+              icon: const Icon(Icons.map),
+              selectedIcon: const Icon(Icons.map),
+              label: Text(s.map),
+            ),
           NavigationRailDestination(
             icon: const Icon(Icons.settings),
             selectedIcon: const Icon(Icons.settings),
@@ -152,7 +155,7 @@ class _NavigationRailState extends State<_NavigationRail> {
       return;
     }
     final realIndex = newIndex - 1;
-    if (realIndex == 5) {
+    if (realIndex == 5 || (realIndex == 4 && Platform.isMacOS)) {
       await _gotoSettingsPage();
       return;
     }

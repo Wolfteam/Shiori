@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:responsive_builder/responsive_builder.dart';
@@ -139,10 +141,16 @@ class _HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin<
   Widget _buildOthersSectionMenu(int index) {
     switch (index) {
       case 0:
+        if (Platform.isMacOS) {
+          return const SizedBox.shrink();
+        }
         return const DailyCheckInCard(iconToTheLeft: true);
       case 1:
         return const GameCodesCard(iconToTheLeft: true);
       case 2:
+        if (Platform.isMacOS) {
+          return const SizedBox.shrink();
+        }
         return const WishSimulatorCard(iconToTheLeft: true);
       default:
         throw Exception('Invalid other section');
