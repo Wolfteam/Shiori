@@ -34,6 +34,7 @@ class CommonDropdownButton<T> extends StatelessWidget {
               color: Colors.transparent,
             )
           : null,
+      onTap: () => FocusScope.of(context).requestFocus(FocusNode()),
       onChanged: onChanged != null ? (v) => onChanged!(v as T, context) : null,
       selectedItemBuilder: (context) => values
           .map(
