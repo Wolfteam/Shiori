@@ -793,15 +793,27 @@ class NotificationsDataServiceImpl implements NotificationsDataService {
   Future<void> restoreFromBackup(BackupNotificationsModel data, AppServerResetTimeType serverResetTimeType) async {
     await deleteThemAll();
     for (final notif in data.custom) {
-      await saveCustomNotification(
-        notif.itemKey,
-        notif.title,
-        notif.body,
-        notif.completesAt,
-        AppNotificationItemType.values[notif.notificationItemType],
-        note: notif.note,
-        showNotification: notif.showNotification,
-      );
+      final isDailyCheckIn = AppNotificationType.values[notif.type] == AppNotificationType.dailyCheckIn;
+      if (isDailyCheckIn) {
+        await saveDailyCheckInNotification(
+          notif.itemKey,
+          notif.title,
+          notif.body,
+          note: notif.note,
+          showNotification: notif.showNotification,
+        );
+      }
+      else {
+        await saveCustomNotification(
+          notif.itemKey,
+          notif.title,
+          notif.body,
+          notif.completesAt,
+          AppNotificationItemType.values[notif.notificationItemType],
+          note: notif.note,
+          showNotification: notif.showNotification,
+        );
+      }
     }
 
     for (final notif in data.expeditions) {
@@ -814,83 +826,83 @@ class NotificationsDataServiceImpl implements NotificationsDataService {
         showNotification: notif.showNotification,
         withTimeReduction: notif.withTimeReduction,
       );
+    }
 
-      for (final notif in data.farmingArtifact) {
-        await saveFarmingArtifactNotification(
-          notif.itemKey,
-          ArtifactFarmingTimeType.values[notif.artifactFarmingTimeType],
-          notif.title,
-          notif.body,
-          note: notif.note,
-          showNotification: notif.showNotification,
-        );
-      }
+    for (final notif in data.farmingArtifact) {
+      await saveFarmingArtifactNotification(
+        notif.itemKey,
+        ArtifactFarmingTimeType.values[notif.artifactFarmingTimeType],
+        notif.title,
+        notif.body,
+        note: notif.note,
+        showNotification: notif.showNotification,
+      );
+    }
 
-      for (final notif in data.farmingMaterial) {
-        await saveFarmingMaterialNotification(
-          notif.itemKey,
-          notif.title,
-          notif.body,
-          note: notif.note,
-          showNotification: notif.showNotification,
-        );
-      }
+    for (final notif in data.farmingMaterial) {
+      await saveFarmingMaterialNotification(
+        notif.itemKey,
+        notif.title,
+        notif.body,
+        note: notif.note,
+        showNotification: notif.showNotification,
+      );
+    }
 
-      for (final notif in data.furniture) {
-        await saveFurnitureNotification(
-          notif.itemKey,
-          FurnitureCraftingTimeType.values[notif.furnitureCraftingTimeType],
-          notif.title,
-          notif.body,
-          note: notif.note,
-          showNotification: notif.showNotification,
-        );
-      }
+    for (final notif in data.furniture) {
+      await saveFurnitureNotification(
+        notif.itemKey,
+        FurnitureCraftingTimeType.values[notif.furnitureCraftingTimeType],
+        notif.title,
+        notif.body,
+        note: notif.note,
+        showNotification: notif.showNotification,
+      );
+    }
 
-      for (final notif in data.gadgets) {
-        await saveGadgetNotification(
-          notif.itemKey,
-          notif.title,
-          notif.body,
-          note: notif.note,
-          showNotification: notif.showNotification,
-        );
-      }
+    for (final notif in data.gadgets) {
+      await saveGadgetNotification(
+        notif.itemKey,
+        notif.title,
+        notif.body,
+        note: notif.note,
+        showNotification: notif.showNotification,
+      );
+    }
 
-      for (final notif in data.realmCurrency) {
-        await saveRealmCurrencyNotification(
-          notif.itemKey,
-          RealmRankType.values[notif.realmRankType],
-          notif.realmTrustRank,
-          notif.realmCurrency,
-          notif.title,
-          notif.body,
-          note: notif.note,
-          showNotification: notif.showNotification,
-        );
-      }
+    for (final notif in data.realmCurrency) {
+      await saveRealmCurrencyNotification(
+        notif.itemKey,
+        RealmRankType.values[notif.realmRankType],
+        notif.realmTrustRank,
+        notif.realmCurrency,
+        notif.title,
+        notif.body,
+        note: notif.note,
+        showNotification: notif.showNotification,
+      );
+    }
 
-      for (final notif in data.resin) {
-        await saveResinNotification(
-          notif.itemKey,
-          notif.title,
-          notif.body,
-          notif.currentResinValue,
-          note: notif.note,
-          showNotification: notif.showNotification,
-        );
-      }
+    for (final notif in data.resin) {
+      await saveResinNotification(
+        notif.itemKey,
+        notif.title,
+        notif.body,
+        notif.currentResinValue,
+        note: notif.note,
+        showNotification: notif.showNotification,
+      );
+    }
 
-      for (final notif in data.weeklyBosses) {
-        await saveWeeklyBossNotification(
-          notif.itemKey,
-          serverResetTimeType,
-          notif.title,
-          notif.body,
-          note: notif.note,
-          showNotification: notif.showNotification,
-        );
-      }
+    for (final notif in data.weeklyBosses) {
+      await saveWeeklyBossNotification(
+        notif.itemKey,
+        serverResetTimeType,
+        notif.title,
+        notif.body,
+        note: notif.note,
+        showNotification: notif.showNotification,
+      );
     }
   }
 
