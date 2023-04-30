@@ -53,7 +53,7 @@ class DonationsBloc extends Bloc<DonationsEvent, DonationsState> {
 
     final s = await event.map(
       init: (_) => _init(),
-      restorePurchases: (e) => _restorePurchases(e.userId),
+      restorePurchases: (e) => _restorePurchases(),
       purchase: (e) => _purchase(e),
     );
 
@@ -85,20 +85,13 @@ class DonationsBloc extends Bloc<DonationsEvent, DonationsState> {
     );
   }
 
-  Future<DonationsState> _restorePurchases(String userId) async {
-    if (!RegExp(appUserIdRegex).hasMatch(userId)) {
-      throw Exception('AppUserId is not valid');
-    }
-    final restored = await _purchaseService.restorePurchases(userId);
-    await _telemetryService.trackRestore(userId, restored);
+  Future<DonationsState> _restorePurchases() async {
+    final restored = await _purchaseService.restorePurchases();
+    await _telemetryService.trackRestore(restored);
     return DonationsState.restoreCompleted(error: !restored);
   }
 
   Future<DonationsState> _purchase(_Purchase e) async {
-    if (!RegExp(appUserIdRegex).hasMatch(e.userId)) {
-      throw Exception('AppUserId is not valid');
-    }
-
     if (e.identifier.isNullEmptyOrWhitespace) {
       throw Exception('Invalid package identifier');
     }
@@ -107,8 +100,8 @@ class DonationsBloc extends Bloc<DonationsEvent, DonationsState> {
       throw Exception('Invalid offering identifier');
     }
 
-    final succeed = await _purchaseService.purchase(e.userId, e.identifier, e.offeringIdentifier);
-    await _telemetryService.trackPurchase(e.userId, e.identifier, succeed);
+    final succeed = await _purchaseService.purchase(e.identifier, e.offeringIdentifier);
+    await _telemetryService.trackPurchase(e.identifier, succeed);
     return DonationsState.purchaseCompleted(error: !succeed);
   }
 }

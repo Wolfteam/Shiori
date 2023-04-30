@@ -6,8 +6,6 @@ import 'package:shiori/generated/l10n.dart';
 import 'package:shiori/injection.dart';
 import 'package:shiori/presentation/shared/bottom_sheets/common_bottom_sheet.dart';
 import 'package:shiori/presentation/shared/bottom_sheets/common_button_bar.dart';
-import 'package:shiori/presentation/shared/bullet_list.dart';
-import 'package:shiori/presentation/shared/dialogs/text_dialog.dart';
 import 'package:shiori/presentation/shared/loading.dart';
 import 'package:shiori/presentation/shared/nothing_found_column.dart';
 import 'package:shiori/presentation/shared/shiori_icons.dart';
@@ -82,12 +80,14 @@ class _BodyState extends State<_Body> {
                       ),
                       if (state.packages.isNotEmpty && state.isInitialized)
                         OutlinedButton(
-                          onPressed: () => _handleRestore(context),
+                          onPressed: () => context.read<DonationsBloc>().add(const DonationsEvent.restorePurchases()),
                           child: Text(s.restorePurchases, style: TextStyle(color: theme.primaryColor)),
                         ),
                       if (state.packages.isNotEmpty && state.isInitialized && _selected != null)
                         ElevatedButton(
-                          onPressed: () => _handleConfirm(context),
+                          onPressed: () => context
+                              .read<DonationsBloc>()
+                              .add(DonationsEvent.purchase(identifier: _selected!.identifier, offeringIdentifier: _selected!.offeringIdentifier)),
                           child: Text(s.confirm),
                         )
                     ],
@@ -95,46 +95,6 @@ class _BodyState extends State<_Body> {
                 ],
               ),
         orElse: () => const Loading(useScaffold: false),
-      ),
-    );
-  }
-
-  Future<void> _handleConfirm(BuildContext context) {
-    final s = S.of(context);
-    return showDialog(
-      context: context,
-      builder: (_) => TextDialog.create(
-        title: s.purchase,
-        hintText: s.userId,
-        maxLength: DonationsBloc.maxUserIdLength,
-        regexPattern: DonationsBloc.appUserIdRegex,
-        child: BulletList(
-          iconSize: 16,
-          addTooltip: false,
-          items: [s.purchaseMsgA, s.purchaseMsgB],
-        ),
-        onSave: (val) => context
-            .read<DonationsBloc>()
-            .add(DonationsEvent.purchase(userId: val, identifier: _selected!.identifier, offeringIdentifier: _selected!.offeringIdentifier)),
-      ),
-    );
-  }
-
-  Future<void> _handleRestore(BuildContext context) {
-    final s = S.of(context);
-    return showDialog(
-      context: context,
-      builder: (_) => TextDialog.create(
-        title: s.restorePurchases,
-        hintText: s.userId,
-        maxLength: DonationsBloc.maxUserIdLength,
-        regexPattern: DonationsBloc.appUserIdRegex,
-        child: BulletList(
-          iconSize: 16,
-          addTooltip: false,
-          items: [s.restorePurchaseMsgA],
-        ),
-        onSave: (val) => context.read<DonationsBloc>().add(DonationsEvent.restorePurchases(userId: val)),
       ),
     );
   }

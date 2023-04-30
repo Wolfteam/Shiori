@@ -10,13 +10,11 @@ abstract class PurchaseService {
 
   Future<bool> canMakePurchases();
 
-  Future<bool> logIn(String userId);
-
   Future<List<PackageItemModel>> getInAppPurchases();
 
-  Future<bool> purchase(String userId, String identifier, String offeringIdentifier);
+  Future<bool> purchase(String identifier, String offeringIdentifier);
 
-  Future<bool> restorePurchases(String userId, {String? entitlementIdentifier});
+  Future<bool> restorePurchases({String? entitlementIdentifier});
 
   Future<List<AppUnlockedFeature>> getUnlockedFeatures();
 
