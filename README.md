@@ -6,11 +6,24 @@
 
 > A Genshin Impact database kinda app
 
-> This app is not affiliated with or endorsed by miHoYo. Shiori is just a database app for the Genshin Impact game
+> This app is not affiliated with or endorsed by miHoYo. Shiori is just a database app for the
+> Genshin Impact game
 
 ![Tests](https://github.com/Wolfteam/Shiori/actions/workflows/tests.yml/badge.svg)
 <p align="center">
   <img src="images/banner.png">
+</p>
+
+<p align="center" width="100%">
+    <a href="https://play.google.com/store/apps/details?id=com.miraisoft.shiori">
+      <img style="height:100px;width:30%;max-width:250px;transform: scale(1.25);margin-right:20px" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" />
+    </a>
+    <a href="https://apps.apple.com/us/app/shiori-for-genshin-unofficial/id6448140103">
+      <img style="height:100px;width:30%;max-width:250px" src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" />
+    </a>
+    <a href="https://apps.microsoft.com/store/detail/shiori-for-genshin-unofficial/9PH29FZMQK7T">
+      <img style="height:100px;width:35%;max-width:250px" src="https://www.nexiahome.com/wp-content/uploads/2016/03/windows-store-button.png" />
+    </a>
 </p>
 
 ### Features
@@ -21,15 +34,17 @@
 * Materials
 * And many more to come
 
-[<img height="100" width="250" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" />](https://play.google.com/store/apps/details?id=com.miraisoft.shiori)
-
-[<img height="100" width="300" src="https://www.nexiahome.com/wp-content/uploads/2016/03/windows-store-button.png" />]([https://play.google.com/store/apps/details?id=com.miraisoft.shiori](https://apps.microsoft.com/store/detail/shiori-for-genshin-unofficial/9PH29FZMQK7T))
-
-[<img height="100" width="100" src="https://sparkcdnwus2.azureedge.net/sparkimageassets/XPDC2RH70K22MN-08afd558-a61c-4a63-9171-d3f199738e9f" />](https://discord.gg/A8SgudQMwP)
+### Discord
+<p align="left">
+    <a href="https://discord.gg/A8SgudQMwP">
+      <img height="100" width="100" src="https://sparkcdnwus2.azureedge.net/sparkimageassets/XPDC2RH70K22MN-08afd558-a61c-4a63-9171-d3f199738e9f" />
+    </a>
+</p>
 
 ### Contributing
 
-> Before contributing, please ask me if whatever you are planning to do / add / improve is valid for this project.
+> Before contributing, please ask me if whatever you are planning to do / add / improve is valid for
+> this project.
 
 #### To run the server:
 
@@ -64,7 +79,10 @@ Hosting environment: Production
 
 ```
 ANDROID_APP_CENTER_KEY = xxxx
+IOS_APP_CENTER_KEY = xxxx
+MACOS_APP_CENTER_KEY = xxxx
 ANDROID_PURCHASES_KEY = yyyyy
+IOS_PURCHASES_KEY = yyyyy
 COMMON_HEADER_NAME = header
 API_HEADER_NAME = key
 PUBLIC_KEY = xxxzzzzz

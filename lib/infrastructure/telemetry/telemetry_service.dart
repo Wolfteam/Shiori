@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:enum_to_string/enum_to_string.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/models/models.dart';
@@ -14,7 +16,15 @@ class TelemetryServiceImpl implements TelemetryService {
   //Only call this function from the main.dart
   @override
   Future<void> initTelemetry() async {
-    await AppCenter.startAsync(appSecretAndroid: Env.androidAppCenterKey, appSecretIOS: '');
+    String secret = '';
+    if (Platform.isAndroid) {
+      secret = Env.androidAppCenterKey;
+    } else if (Platform.isIOS) {
+      secret = Env.iosAppCenterKey;
+    } else if (Platform.isMacOS) {
+      secret = Env.macosAppCenterKey;
+    }
+    await AppCenter.startAsync(appSecret: secret);
   }
 
   @override
@@ -155,11 +165,11 @@ class TelemetryServiceImpl implements TelemetryService {
       );
 
   @override
-  Future<void> trackPurchase(String userId, String identifier, bool succeed) =>
-      trackEventAsync('Donations-Purchase', {'UserId_Identifier_Succeed': '${userId}_${identifier}_$succeed'});
+  Future<void> trackPurchase(String identifier, bool succeed) =>
+      trackEventAsync('Donations-Purchase', {'UserId_Identifier_Succeed': '${identifier}_$succeed'});
 
   @override
-  Future<void> trackRestore(String userId, bool succeed) => trackEventAsync('Donations-Restore', {'UserId_Succeed': '${userId}_$succeed'});
+  Future<void> trackRestore(bool succeed) => trackEventAsync('Donations-Restore', {'UserId_Succeed': '$succeed'});
 
   @override
   Future<void> trackBannerHistoryOpened() => trackEventAsync('Banner-History-Opened');

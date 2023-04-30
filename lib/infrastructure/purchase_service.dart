@@ -38,7 +38,11 @@ class PurchaseServiceImpl implements PurchaseService {
         await Purchases.setLogLevel(LogLevel.debug);
       }
 
-      final key = Platform.isAndroid ? Env.androidPurchasesKey : throw Exception('Platform not supported');
+      final key = Platform.isAndroid
+          ? Env.androidPurchasesKey
+          : Platform.isIOS || Platform.isMacOS
+              ? Env.iosPurchasesKey
+              : throw Exception('Platform not supported');
       await Purchases.configure(PurchasesConfiguration(key));
       _initialized = true;
       return true;
@@ -54,7 +58,7 @@ class PurchaseServiceImpl implements PurchaseService {
       return Future.value(false);
     }
 
-    if (Platform.isAndroid) {
+    if (Platform.isAndroid || Platform.isIOS || Platform.isMacOS) {
       return Future.value(true);
     }
 
@@ -67,17 +71,6 @@ class PurchaseServiceImpl implements PurchaseService {
       return await Purchases.canMakePayments();
     } catch (e, s) {
       _handleError('canMakePurchases', e, s);
-      return false;
-    }
-  }
-
-  @override
-  Future<bool> logIn(String userId) async {
-    try {
-      await Purchases.logIn(userId);
-      return true;
-    } catch (e, s) {
-      _handleError('logIn', e, s);
       return false;
     }
   }
@@ -96,7 +89,7 @@ class PurchaseServiceImpl implements PurchaseService {
               productIdentifier: p.storeProduct.identifier,
             ),
           )
-          .toList();
+          .toList()..sort((x,y) => x.priceString.compareTo(y.priceString));
     } catch (e, s) {
       _handleError('getInAppPurchases', e, s);
       return [];
@@ -104,17 +97,13 @@ class PurchaseServiceImpl implements PurchaseService {
   }
 
   @override
-  Future<bool> purchase(String userId, String identifier, String offeringIdentifier) async {
-    final loggedIn = await logIn(userId);
-    if (!loggedIn) {
-      return false;
-    }
+  Future<bool> purchase(String identifier, String offeringIdentifier) async {
     try {
       //behind the scenes, the purchase method just uses two params...
       //that's why I create dummy object to satisfy the constructor
       const dummyProduct = StoreProduct('', '', '', 0, '0', '');
       final package = Package(identifier, PackageType.lifetime, dummyProduct, offeringIdentifier);
-      await Purchases.purchasePackage(package);
+      final customerInfo = await Purchases.purchasePackage(package);
       return true;
     } catch (e, s) {
       _handleError('purchase', e, s);
@@ -123,14 +112,10 @@ class PurchaseServiceImpl implements PurchaseService {
   }
 
   @override
-  Future<bool> restorePurchases(String userId, {String? entitlementIdentifier}) async {
-    final loggedIn = await logIn(userId);
-    if (!loggedIn) {
-      return false;
-    }
-
+  Future<bool> restorePurchases({String? entitlementIdentifier}) async {
     try {
       _unlockedFeatures = null;
+      final transactions = await Purchases.restorePurchases();
       final features = await _getUnlockedFeatures(entitlementIdentifier: entitlementIdentifier);
       return features.isNotEmpty;
     } catch (e, s) {
@@ -166,18 +151,14 @@ class PurchaseServiceImpl implements PurchaseService {
         return [];
       }
 
-      if (await Purchases.isAnonymous) {
-        return [];
-      }
-
-      final transactions = await Purchases.restorePurchases();
+      final customerInfo = await Purchases.getCustomerInfo();
       if (entitlementIdentifier.isNullEmptyOrWhitespace) {
-        final activeEntitlements = transactions.entitlements.active.values.any((el) => el.isActive);
+        final activeEntitlements = customerInfo.entitlements.active.values.any((el) => el.isActive);
         _unlockedFeatures = activeEntitlements ? AppUnlockedFeature.values : [];
         return _unlockedFeatures!;
       }
 
-      final entitlement = transactions.entitlements.active.values.firstWhereOrNull((el) => el.identifier == entitlementIdentifier && el.isActive);
+      final entitlement = customerInfo.entitlements.active.values.firstWhereOrNull((el) => el.identifier == entitlementIdentifier && el.isActive);
       _unlockedFeatures = entitlement != null ? AppUnlockedFeature.values : [];
       return _unlockedFeatures!;
     } catch (e) {

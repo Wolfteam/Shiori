@@ -179,6 +179,7 @@ void main() {
 
     test('no updates available because not enough time has passed', () async {
       final settingsService = MockSettingsService();
+      when(settingsService.noResourcesHasBeenDownloaded).thenReturn(false);
       when(settingsService.lastResourcesCheckedDate).thenReturn(DateTime.now());
 
       final service = ResourceServiceImpl(MockLoggingService(), settingsService, MockNetworkService(), MockApiService());

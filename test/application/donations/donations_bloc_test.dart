@@ -7,7 +7,6 @@ import 'package:shiori/domain/models/models.dart';
 import '../../mocks.mocks.dart';
 
 void main() {
-  const validUserId = '12345_suffix';
   const packages = <PackageItemModel>[
     PackageItemModel(identifier: '123', offeringIdentifier: 'xyz', productIdentifier: 'xxx', priceString: '2\$'),
     PackageItemModel(identifier: '456', offeringIdentifier: 'xyz', productIdentifier: 'yyy', priceString: '5\$'),
@@ -125,24 +124,14 @@ void main() {
       when(purchaseService.init()).thenAnswer((_) => Future.value(true));
       when(purchaseService.canMakePurchases()).thenAnswer((_) => Future.value(true));
       when(purchaseService.getInAppPurchases()).thenAnswer((_) => Future.value(packages));
-      when(purchaseService.restorePurchases(validUserId)).thenAnswer((_) => Future.value(restoreSucceeds));
+      when(purchaseService.restorePurchases()).thenAnswer((_) => Future.value(restoreSucceeds));
       return DonationsBloc(purchaseService, networkService, MockTelemetryService());
     }
 
     blocTest<DonationsBloc, DonationsState>(
-      'invalid userid',
-      build: () => getBloc(),
-      act: (bloc) => bloc..add(const DonationsEvent.restorePurchases(userId: 'xxxx_1234')),
-      errors: () => [isA<Exception>()],
-      expect: () => const [
-        DonationsState.loading(),
-      ],
-    );
-
-    blocTest<DonationsBloc, DonationsState>(
       'succeeds',
       build: () => getBloc(),
-      act: (bloc) => bloc..add(const DonationsEvent.restorePurchases(userId: validUserId)),
+      act: (bloc) => bloc..add(const DonationsEvent.restorePurchases()),
       expect: () => const [
         DonationsState.loading(),
         DonationsState.restoreCompleted(error: false),
@@ -152,7 +141,7 @@ void main() {
     blocTest<DonationsBloc, DonationsState>(
       'fails',
       build: () => getBloc(restoreSucceeds: false),
-      act: (bloc) => bloc..add(const DonationsEvent.restorePurchases(userId: validUserId)),
+      act: (bloc) => bloc..add(const DonationsEvent.restorePurchases()),
       expect: () => const [
         DonationsState.loading(),
         DonationsState.restoreCompleted(error: true),
@@ -172,25 +161,14 @@ void main() {
       when(purchaseService.init()).thenAnswer((_) => Future.value(true));
       when(purchaseService.canMakePurchases()).thenAnswer((_) => Future.value(true));
       when(purchaseService.getInAppPurchases()).thenAnswer((_) => Future.value(packages));
-      when(purchaseService.purchase(validUserId, packages.first.identifier, packages.first.offeringIdentifier))
-          .thenAnswer((_) => Future.value(purchaseSucceeds));
+      when(purchaseService.purchase(packages.first.identifier, packages.first.offeringIdentifier)).thenAnswer((_) => Future.value(purchaseSucceeds));
       return DonationsBloc(purchaseService, networkService, telemetryService);
     }
 
     blocTest<DonationsBloc, DonationsState>(
-      'invalid user id',
-      build: () => getBloc(),
-      act: (bloc) => bloc..add(const DonationsEvent.purchase(userId: '123_xyz', identifier: '', offeringIdentifier: '')),
-      errors: () => [isA<Exception>()],
-      expect: () => const [
-        DonationsState.loading(),
-      ],
-    );
-
-    blocTest<DonationsBloc, DonationsState>(
       'invalid identifier',
       build: () => getBloc(),
-      act: (bloc) => bloc..add(const DonationsEvent.purchase(userId: validUserId, identifier: '', offeringIdentifier: '')),
+      act: (bloc) => bloc..add(const DonationsEvent.purchase(identifier: '', offeringIdentifier: '')),
       errors: () => [isA<Exception>()],
       expect: () => const [
         DonationsState.loading(),
@@ -200,7 +178,7 @@ void main() {
     blocTest<DonationsBloc, DonationsState>(
       'invalid offering identifier',
       build: () => getBloc(),
-      act: (bloc) => bloc..add(DonationsEvent.purchase(userId: validUserId, identifier: packages.first.identifier, offeringIdentifier: '')),
+      act: (bloc) => bloc..add(DonationsEvent.purchase(identifier: packages.first.identifier, offeringIdentifier: '')),
       errors: () => [isA<Exception>()],
       expect: () => const [
         DonationsState.loading(),
@@ -210,14 +188,7 @@ void main() {
     blocTest<DonationsBloc, DonationsState>(
       'succeed',
       build: () => getBloc(),
-      act: (bloc) => bloc
-        ..add(
-          DonationsEvent.purchase(
-            userId: validUserId,
-            identifier: packages.first.identifier,
-            offeringIdentifier: packages.first.offeringIdentifier,
-          ),
-        ),
+      act: (bloc) => bloc..add(DonationsEvent.purchase(identifier: packages.first.identifier, offeringIdentifier: packages.first.offeringIdentifier)),
       expect: () => const [
         DonationsState.loading(),
         DonationsState.purchaseCompleted(error: false),
@@ -227,14 +198,7 @@ void main() {
     blocTest<DonationsBloc, DonationsState>(
       'succeeds',
       build: () => getBloc(purchaseSucceeds: false),
-      act: (bloc) => bloc
-        ..add(
-          DonationsEvent.purchase(
-            userId: validUserId,
-            identifier: packages.first.identifier,
-            offeringIdentifier: packages.first.offeringIdentifier,
-          ),
-        ),
+      act: (bloc) => bloc..add(DonationsEvent.purchase(identifier: packages.first.identifier, offeringIdentifier: packages.first.offeringIdentifier)),
       expect: () => const [
         DonationsState.loading(),
         DonationsState.purchaseCompleted(error: true),

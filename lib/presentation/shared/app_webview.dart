@@ -6,6 +6,7 @@ import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import 'package:shiori/generated/l10n.dart';
 import 'package:shiori/presentation/shared/loading.dart';
+import 'package:shiori/presentation/shared/nothing_found_column.dart';
 import 'package:shiori/presentation/shared/page_message.dart';
 import 'package:webview_windows/webview_windows.dart';
 
@@ -39,13 +40,22 @@ class AppWebView extends StatelessWidget {
       );
     }
 
-    return _MobileWebView(
-      url: url,
-      userAgent: userAgent,
-      hasInternetConnection: hasInternetConnection,
+    if (Platform.isAndroid || Platform.isIOS) {
+      return _MobileWebView(
+        url: url,
+        userAgent: userAgent,
+        hasInternetConnection: hasInternetConnection,
+        appBar: appBar,
+        script: script,
+        isLoading: isLoading,
+      );
+    }
+
+    //TODO: BETA 6 of flutter_inappwebview should add support macos
+    final s = S.of(context);
+    return Scaffold(
       appBar: appBar,
-      script: script,
-      isLoading: isLoading,
+      body: NothingFoundColumn(msg: s.nothingToShow),
     );
   }
 }

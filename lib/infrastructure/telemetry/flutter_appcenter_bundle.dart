@@ -8,30 +8,20 @@ const _methodChannel = MethodChannel(_methodChannelName);
 
 /// Static class that provides AppCenter APIs
 class AppCenter {
+  static bool isPlatformSupported = [Platform.isAndroid, Platform.isIOS, Platform.isMacOS].any((el) => el);
+
   /// Start appcenter functionalities
   static Future<void> startAsync({
-    required String appSecretAndroid,
-    required String appSecretIOS,
+    required String appSecret,
     bool enableAnalytics = true,
     bool enableCrashes = true,
-    bool enableDistribute = false,
     bool usePrivateDistributeTrack = false,
   }) async {
-    String appSecret;
-    //TODO: COMPLETE THIS
-    if (Platform.isWindows) {
+    if (!isPlatformSupported) {
       return;
     }
-    if (Platform.isAndroid) {
-      appSecret = appSecretAndroid;
-    } else if (Platform.isIOS) {
-      appSecret = appSecretIOS;
-    } else {
-      throw UnsupportedError('Current platform is not supported.');
-    }
-
     if (appSecret.isEmpty) {
-      return;
+      throw Exception('You need to provide the app center key');
     }
 
     await configureAnalyticsAsync(enabled: enableAnalytics);
@@ -45,7 +35,7 @@ class AppCenter {
 
   /// Track events
   static Future<void> trackEventAsync(String name, [Map<String, String?>? properties]) async {
-    if (Platform.isWindows) {
+    if (!isPlatformSupported) {
       return;
     }
     await _methodChannel.invokeMethod('trackEvent', <String, dynamic>{
@@ -56,7 +46,7 @@ class AppCenter {
 
   /// Check whether analytics is enabled
   static Future<bool?> isAnalyticsEnabledAsync() async {
-    if (Platform.isWindows) {
+    if (!isPlatformSupported) {
       return false;
     }
     return _methodChannel.invokeMethod('isAnalyticsEnabled');
@@ -64,7 +54,7 @@ class AppCenter {
 
   /// Get app center installation id
   static Future<String> getInstallIdAsync() async {
-    if (Platform.isWindows) {
+    if (!isPlatformSupported) {
       return 'N/A';
     }
     return _methodChannel.invokeMethod('getInstallId').then((r) => r as String);
@@ -72,7 +62,7 @@ class AppCenter {
 
   /// Enable or disable analytics
   static Future configureAnalyticsAsync({required bool enabled}) async {
-    if (Platform.isWindows) {
+    if (!isPlatformSupported) {
       return;
     }
     await _methodChannel.invokeMethod('configureAnalytics', enabled);
@@ -80,7 +70,7 @@ class AppCenter {
 
   /// Check whether crashes is enabled
   static Future<bool?> isCrashesEnabledAsync() async {
-    if (Platform.isWindows) {
+    if (!isPlatformSupported) {
       return false;
     }
     return _methodChannel.invokeMethod('isCrashesEnabled');
@@ -88,7 +78,7 @@ class AppCenter {
 
   /// Enable or disable app center crash reports
   static Future configureCrashesAsync({required bool enabled}) async {
-    if (Platform.isWindows) {
+    if (!isPlatformSupported) {
       return;
     }
     await _methodChannel.invokeMethod('configureCrashes', enabled);
