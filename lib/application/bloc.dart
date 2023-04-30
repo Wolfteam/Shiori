@@ -1,3 +1,4 @@
+export 'app_bloc_observer.dart';
 export 'artifact/artifact_bloc.dart';
 export 'artifacts/artifacts_bloc.dart';
 export 'backup_restore/backup_restore_bloc.dart';

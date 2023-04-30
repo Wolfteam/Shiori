@@ -37,6 +37,8 @@ Future<void> main() async {
   if (!Platform.isMacOS) {
     await notifFuture;
   }
+
+  Bloc.observer = AppBlocObserver(getIt<LoggingService>());
   runApp(MyApp());
 }
 
