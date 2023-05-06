@@ -38,9 +38,20 @@ class AppWidget extends StatelessWidget {
             locale: locale,
             localizationsDelegates: delegates,
             supportedLocales: S.delegate.supportedLocales,
+            scrollBehavior: MyCustomScrollBehavior(),
           );
         },
       ),
     );
   }
+}
+
+// Since 2.5 the scroll behavior changed on desktop,
+// this keeps the old one working
+class MyCustomScrollBehavior extends MaterialScrollBehavior {
+  @override
+  Set<PointerDeviceKind> get dragDevices => {
+        PointerDeviceKind.touch,
+        PointerDeviceKind.mouse,
+      };
 }
