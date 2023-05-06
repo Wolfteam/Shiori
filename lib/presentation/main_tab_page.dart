@@ -87,10 +87,6 @@ class _MainTabPageState extends State<MainTabPage> with SingleTickerProviderStat
 
   @override
   void didChangeAppLifecycleState(AppLifecycleState state) {
-    if (!Platform.isIOS) {
-      return;
-    }
-
     if (state == AppLifecycleState.paused) {
       _pausedAt = DateTime.now();
       return;
