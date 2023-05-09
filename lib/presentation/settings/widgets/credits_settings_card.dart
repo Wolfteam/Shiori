@@ -11,7 +11,7 @@ class CreditsSettingsCard extends StatelessWidget {
     AppLanguageType.simplifiedChinese: ['2O48#9733'],
     AppLanguageType.russian: ['SipTik#1171', 'KKTS#8567', 'pill#0039', 'Avantel#8880', 'чебилин#5968', 'Anixty#3279'],
     AppLanguageType.portuguese: ['Brunoff#0261', 'DanPS#4336', 'JJlago#0406'],
-    AppLanguageType.italian: ['Reniel [Skidex ツ]#7982', 'Septenebris#7356'],
+    AppLanguageType.italian: ['Reniel [Skidex ツ]#7982', 'F'],
     AppLanguageType.japanese: ['Ruri#3080'],
     AppLanguageType.vietnamese: ['Ren Toky#5263'],
     AppLanguageType.indonesian: ['Arctara#7162'],
