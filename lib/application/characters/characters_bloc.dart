@@ -6,6 +6,7 @@ import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/genshin_service.dart';
 import 'package:shiori/domain/services/settings_service.dart';
+import 'package:shiori/domain/utils/filter_utils.dart';
 
 part 'characters_bloc.freezed.dart';
 part 'characters_event.dart';
@@ -32,27 +33,11 @@ class CharactersBloc extends Bloc<CharactersEvent, CharactersState> {
         return _buildInitialState(excludeKeys: e.excludeKeys, elementTypes: ElementType.values, weaponTypes: WeaponType.values);
       },
       characterFilterTypeChanged: (e) => currentState.copyWith.call(tempCharacterFilterType: e.characterFilterType),
-      elementTypeChanged: (e) {
-        var types = <ElementType>[];
-        if (currentState.tempElementTypes.contains(e.elementType)) {
-          types = currentState.tempElementTypes.where((t) => t != e.elementType).toList();
-        } else {
-          types = currentState.tempElementTypes + [e.elementType];
-        }
-        return currentState.copyWith.call(tempElementTypes: types);
-      },
+      elementTypeChanged: (e) => _elementTypeChanged(e.elementType),
       rarityChanged: (e) => currentState.copyWith.call(tempRarity: e.rarity),
       itemStatusChanged: (e) => currentState.copyWith.call(tempStatusType: e.statusType),
       sortDirectionTypeChanged: (e) => currentState.copyWith.call(tempSortDirectionType: e.sortDirectionType),
-      weaponTypeChanged: (e) {
-        var types = <WeaponType>[];
-        if (currentState.tempWeaponTypes.contains(e.weaponType)) {
-          types = currentState.tempWeaponTypes.where((t) => t != e.weaponType).toList();
-        } else {
-          types = currentState.tempWeaponTypes + [e.weaponType];
-        }
-        return currentState.copyWith.call(tempWeaponTypes: types);
-      },
+      weaponTypeChanged: (e) => _weaponTypeChanged(e.weaponType),
       roleTypeChanged: (e) => currentState.copyWith.call(tempRoleType: e.roleType),
       searchChanged: (e) => _buildInitialState(
         search: e.search,
@@ -96,6 +81,16 @@ class CharactersBloc extends Bloc<CharactersEvent, CharactersState> {
       ),
     );
     yield s;
+  }
+
+  CharactersState _elementTypeChanged(ElementType selectedValue) {
+    final List<ElementType> types = FilterUtils.handleTypeSelected(ElementType.values, currentState.tempElementTypes, selectedValue);
+    return currentState.copyWith.call(tempElementTypes: types);
+  }
+
+  CharactersState _weaponTypeChanged(WeaponType selectedValue) {
+    final List<WeaponType> types = FilterUtils.handleTypeSelected(WeaponType.values, currentState.tempWeaponTypes, selectedValue);
+    return currentState.copyWith.call(tempWeaponTypes: types);
   }
 
   CharactersState _buildInitialState({

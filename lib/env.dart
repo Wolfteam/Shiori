@@ -6,10 +6,11 @@ part 'env.g.dart';
 class Env {
   static const androidAppCenterKey = CommonEnv.androidAppCenterKey;
   static const androidPurchasesKey = CommonEnv.androidPurchasesKey;
-  static const macosAppCenterKey = CommonEnv.macosAppCenterKey;
 
   static const iosPurchasesKey = CommonEnv.iosPurchasesKey;
   static const iosAppCenterKey = CommonEnv.iosAppCenterKey;
+
+  static const macosAppCenterKey = CommonEnv.macosAppCenterKey;
 
   static const commonHeaderName = CommonEnv.commonHeaderName;
   static const apiHeaderName = CommonEnv.apiHeaderName;
