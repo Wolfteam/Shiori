@@ -244,6 +244,14 @@ class Injection {
     return BackupRestoreBloc(backupRestoreService, telemetryService);
   }
 
+  static WishSimulatorBloc get wishSimulatorBloc {
+    final backupRestoreService = getIt<BackupRestoreService>();
+    final telemetryService = getIt<TelemetryService>();
+    final genshinService = getIt<GenshinService>();
+    final resourceService = getIt<ResourceService>();
+    return WishSimulatorBloc(genshinService, resourceService);
+  }
+
   //TODO: USE THIS PROP
   // static CalculatorAscMaterialsItemBloc get calculatorAscMaterialsItemBloc {
   //   final genshinService = getIt<GenshinService>();

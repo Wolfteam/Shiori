@@ -148,9 +148,6 @@ class _HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin<
       case 1:
         return const GameCodesCard(iconToTheLeft: true);
       case 2:
-        if (Platform.isMacOS) {
-          return const SizedBox.shrink();
-        }
         return const WishSimulatorCard(iconToTheLeft: true);
       default:
         throw Exception('Invalid other section');
