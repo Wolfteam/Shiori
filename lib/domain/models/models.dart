@@ -86,3 +86,4 @@ export 'tierlist/tierlist_row_model.dart';
 export 'weapons/weapon_ascension_model.dart';
 export 'weapons/weapon_card_model.dart';
 export 'weapons/weapon_file_refinement_model.dart';
+export 'wish_simulator/wish_banner_item_model.dart';

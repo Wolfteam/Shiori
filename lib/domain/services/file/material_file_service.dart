@@ -35,4 +35,8 @@ abstract class MaterialFileService extends BaseFileService {
   MaterialFileModel getPrimogemMaterial();
 
   MaterialFileModel getFragileResinMaterial();
+
+  MaterialFileModel getIntertwinedFate();
+
+  MaterialFileModel getAcquaintFate();
 }

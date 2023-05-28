@@ -14,6 +14,18 @@ class Assets {
   static String gachaIconPath = '$otherImgsBasePath/gacha$imageFileExtension';
   static String starCrystalIconPath = '$otherImgsBasePath/mark_wind_crystal$imageFileExtension';
   static String primogemIconPath = '$otherImgsBasePath/primogem$imageFileExtension';
+  static String wishBannerBackgroundImgPath = '$otherImgsBasePath/wish_banner$imageFileExtension';
+  static String wishBannerButtonBackgroundImgPath = '$otherImgsBasePath/wish_banner_button$imageFileExtension';
+
+  static String testVentiImgPath = '$otherImgsBasePath/venti_icon$imageFileExtension';
+  static String testGanyuImgPath = '$otherImgsBasePath/ganyu_icon$imageFileExtension';
+
+  static List<String> test = [
+    '$otherImgsBasePath/1c$imageFileExtension',
+    '$otherImgsBasePath/2c$imageFileExtension',
+    '$otherImgsBasePath/1w$imageFileExtension',
+    '$otherImgsBasePath/2w$imageFileExtension'
+  ];
 
   static String _getElementPath(String name) => '$elementsBasePath/$name';
 

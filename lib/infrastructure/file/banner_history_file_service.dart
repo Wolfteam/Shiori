@@ -2,7 +2,9 @@ import 'dart:math';
 
 import 'package:collection/collection.dart';
 import 'package:shiori/domain/app_constants.dart';
+import 'package:shiori/domain/assets.dart';
 import 'package:shiori/domain/enums/enums.dart';
+import 'package:shiori/domain/extensions/datetime_extensions.dart';
 import 'package:shiori/domain/extensions/double_extensions.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/file/file_infrastructure.dart';
@@ -291,6 +293,53 @@ class BannerHistoryFileServiceImpl extends BannerHistoryFileService {
           ),
         )
         .toList();
+  }
+
+  @override
+  WishBannerItemsPerPeriodModel getWishBannerPerPeriod(double version, DateTime from, DateTime until) {
+    final banners = _bannerHistoryFile.banners
+        .where((el) => el.version == version && el.from.isAfterInclusive(from) && el.until.isBeforeInclusive(until))
+        .mapIndexed((index, e) {
+      final characters = <WishBannerCharacterModel>[];
+      final weapons = <WishBannerWeaponModel>[];
+      final promoted = <ItemCommon>[];
+      const int promotedRarity = 5;
+      for (final key in e.itemKeys) {
+        switch (e.type) {
+          case BannerHistoryItemType.character:
+            final character = _characters.getCharacter(key);
+            final imagePath =
+                index % 2 == 0 ? Assets.testVentiImgPath : Assets.testGanyuImgPath; //_resourceService.getCharacterImagePath(character.image);
+            characters.add(WishBannerCharacterModel(key: key, image: imagePath, elementType: character.elementType, rarity: character.rarity));
+            if (character.rarity == promotedRarity) {
+              promoted.add(ItemCommon(key, imagePath));
+            }
+            break;
+          case BannerHistoryItemType.weapon:
+            final weapon = _weapons.getWeapon(key);
+            final imagePath = _resourceService.getWeaponImagePath(weapon.image, weapon.type);
+            weapons.add(WishBannerWeaponModel(key: key, rarity: weapon.rarity, image: imagePath));
+            if (weapon.rarity == promotedRarity) {
+              promoted.add(ItemCommon(key, imagePath));
+            }
+            break;
+        }
+      }
+      return WishBannerItemModel(
+        type: BannerItemType.values[e.type.index],
+        image: Assets.test[index],
+        characters: characters,
+        weapons: weapons,
+        promotedItems: promoted,
+      );
+    }).toList();
+
+    return WishBannerItemsPerPeriodModel(
+      from: from,
+      until: until,
+      version: version,
+      banners: banners..sort((x, y) => x.type.index.compareTo(y.type.index)),
+    );
   }
 
   List<BannerHistoryItemVersionModel> _getBannerVersionsForItem(List<double> allVersions, List<double> releasedOn) {
