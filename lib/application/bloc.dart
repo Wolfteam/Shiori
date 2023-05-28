@@ -50,3 +50,4 @@ export 'today_materials/today_materials_bloc.dart';
 export 'url_page/url_page_bloc.dart';
 export 'weapon/weapon_bloc.dart';
 export 'weapons/weapons_bloc.dart';
+export 'wish_simulator/wish_simulator_bloc.dart';
