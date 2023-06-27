@@ -33,21 +33,21 @@ void main() {
   test(
     'Initial state',
     () => expect(
-      BannerHistoryItemBloc(genshinService, telemetryService).state,
-      const BannerHistoryItemState.loading(),
+      BannerVersionHistoryBloc(genshinService, telemetryService).state,
+      const BannerVersionHistoryState.loading(),
     ),
   );
 
   group('Init', () {
-    void validVersionCheck(BannerHistoryItemState state, double version) => state.map(
+    void validVersionCheck(BannerVersionHistoryState state, double version) => state.map(
           loading: (_) => throw Exception('Invalid state'),
           loadedState: (state) {
             final validItemTypes = [ItemType.character, ItemType.weapon];
             expect(state.version, version);
             expect(state.items.isNotEmpty, isTrue);
             for (final grouped in state.items) {
-              final from = DateFormat(BannerHistoryItemBloc.periodDateFormat).parse(grouped.from);
-              final until = DateFormat(BannerHistoryItemBloc.periodDateFormat).parse(grouped.until);
+              final from = DateFormat(BannerVersionHistoryBloc.periodDateFormat).parse(grouped.from);
+              final until = DateFormat(BannerVersionHistoryBloc.periodDateFormat).parse(grouped.until);
               expect(until.isAfter(from), isTrue);
               expect(grouped.items.isNotEmpty, isTrue);
 
@@ -64,24 +64,24 @@ void main() {
           },
         );
 
-    blocTest<BannerHistoryItemBloc, BannerHistoryItemState>(
+    blocTest<BannerVersionHistoryBloc, BannerVersionHistoryState>(
       'valid version',
-      build: () => BannerHistoryItemBloc(genshinService, telemetryService),
-      act: (bloc) => bloc.add(const BannerHistoryItemEvent.init(version: 1.1)),
+      build: () => BannerVersionHistoryBloc(genshinService, telemetryService),
+      act: (bloc) => bloc.add(const BannerVersionHistoryEvent.init(version: 1.1)),
       verify: (bloc) => validVersionCheck(bloc.state, 1.1),
     );
 
-    blocTest<BannerHistoryItemBloc, BannerHistoryItemState>(
+    blocTest<BannerVersionHistoryBloc, BannerVersionHistoryState>(
       'valid version, double banner',
-      build: () => BannerHistoryItemBloc(genshinService, telemetryService),
-      act: (bloc) => bloc.add(const BannerHistoryItemEvent.init(version: 2.4)),
+      build: () => BannerVersionHistoryBloc(genshinService, telemetryService),
+      act: (bloc) => bloc.add(const BannerVersionHistoryEvent.init(version: 2.4)),
       verify: (bloc) => validVersionCheck(bloc.state, 2.4),
     );
 
-    blocTest<BannerHistoryItemBloc, BannerHistoryItemState>(
+    blocTest<BannerVersionHistoryBloc, BannerVersionHistoryState>(
       'invalid version',
-      build: () => BannerHistoryItemBloc(genshinService, telemetryService),
-      act: (bloc) => bloc.add(const BannerHistoryItemEvent.init(version: 0.5)),
+      build: () => BannerVersionHistoryBloc(genshinService, telemetryService),
+      act: (bloc) => bloc.add(const BannerVersionHistoryEvent.init(version: 0.5)),
       errors: () => [isA<Exception>()],
     );
   });
