@@ -6,20 +6,20 @@ import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/genshin_service.dart';
 import 'package:shiori/domain/services/telemetry_service.dart';
 
-part 'banner_history_item_bloc.freezed.dart';
-part 'banner_history_item_event.dart';
-part 'banner_history_item_state.dart';
+part 'banner_version_history_bloc.freezed.dart';
+part 'banner_version_history_event.dart';
+part 'banner_version_history_state.dart';
 
-class BannerHistoryItemBloc extends Bloc<BannerHistoryItemEvent, BannerHistoryItemState> {
+class BannerVersionHistoryBloc extends Bloc<BannerVersionHistoryEvent, BannerVersionHistoryState> {
   final GenshinService _genshinService;
   final TelemetryService _telemetryService;
 
   static const periodDateFormat = 'yyyy/MM/dd';
 
-  BannerHistoryItemBloc(this._genshinService, this._telemetryService) : super(const BannerHistoryItemState.loading());
+  BannerVersionHistoryBloc(this._genshinService, this._telemetryService) : super(const BannerVersionHistoryState.loading());
 
   @override
-  Stream<BannerHistoryItemState> mapEventToState(BannerHistoryItemEvent event) async* {
+  Stream<BannerVersionHistoryState> mapEventToState(BannerVersionHistoryEvent event) async* {
     final s = await event.map(
       init: (e) => _init(e.version),
     );
@@ -27,7 +27,7 @@ class BannerHistoryItemBloc extends Bloc<BannerHistoryItemEvent, BannerHistoryIt
     yield s;
   }
 
-  Future<BannerHistoryItemState> _init(double version) async {
+  Future<BannerVersionHistoryState> _init(double version) async {
     await _telemetryService.trackBannerHistoryItemOpened(version);
     final banners = _genshinService.bannerHistory.getBanners(version);
     final grouped = banners
@@ -55,6 +55,6 @@ class BannerHistoryItemBloc extends Bloc<BannerHistoryItemEvent, BannerHistoryIt
         );
       },
     ).toList();
-    return BannerHistoryItemState.loadedState(version: version, items: grouped);
+    return BannerVersionHistoryState.loadedState(version: version, items: grouped);
   }
 }

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shiori/generated/l10n.dart';
-import 'package:shiori/presentation/banner_history/banner_history_page.dart';
+import 'package:shiori/presentation/banner_history_count/banner_history_count_page.dart';
 import 'package:shiori/presentation/home/widgets/card_description.dart';
 import 'package:shiori/presentation/home/widgets/card_item.dart';
 
@@ -28,7 +28,7 @@ class BannerHistoryCard extends StatelessWidget {
   }
 
   Future<void> _gotoBannerHistoryPage(BuildContext context) async {
-    final route = MaterialPageRoute(builder: (c) => const BannerHistoryPage());
+    final route = MaterialPageRoute(builder: (c) => const BannerHistoryCountPage());
     await Navigator.push(context, route);
     await route.completed;
   }

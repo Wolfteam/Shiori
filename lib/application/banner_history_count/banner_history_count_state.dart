@@ -1,8 +1,8 @@
-part of 'banner_history_bloc.dart';
+part of 'banner_history_count_bloc.dart';
 
 @freezed
-class BannerHistoryState with _$BannerHistoryState {
-  const factory BannerHistoryState.initial({
+class BannerHistoryCountState with _$BannerHistoryCountState {
+  const factory BannerHistoryCountState.initial({
     required BannerHistoryItemType type,
     required BannerHistorySortType sortType,
     required List<BannerHistoryItemModel> banners,

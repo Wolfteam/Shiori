@@ -7,12 +7,13 @@ import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/extensions/iterable_extensions.dart';
 import 'package:shiori/generated/l10n.dart';
 import 'package:shiori/injection.dart';
+import 'package:shiori/presentation/banner_history/banner_history_page.dart';
 import 'package:shiori/presentation/shared/extensions/element_type_extensions.dart';
 import 'package:shiori/presentation/shared/loading.dart';
 import 'package:shiori/presentation/shared/styles.dart';
-import 'package:shiori/presentation/wish_simulator/banner_main_image.dart';
-import 'package:shiori/presentation/wish_simulator/banner_top_image.dart';
-import 'package:shiori/presentation/wish_simulator/wish_button.dart';
+import 'package:shiori/presentation/wish_simulator/widgets/banner_main_image.dart';
+import 'package:shiori/presentation/wish_simulator/widgets/banner_top_image.dart';
+import 'package:shiori/presentation/wish_simulator/widgets/wish_button.dart';
 
 class WishSimulatorPage extends StatefulWidget {
   @override
@@ -83,7 +84,7 @@ class _WishSimulatorPageState extends State<WishSimulatorPage> {
                           child: Container(
                             margin: const EdgeInsets.only(bottom: 10),
                             child: IconButton(
-                              onPressed: () {},
+                              onPressed: () => _showBannerListSelector(context),
                               icon: const Icon(Icons.settings),
                               iconSize: 50,
                               color: Colors.black,
@@ -143,6 +144,13 @@ class _WishSimulatorPageState extends State<WishSimulatorPage> {
           ),
         ),
       ),
+    );
+  }
+
+  Future<void> _showBannerListSelector(BuildContext context) {
+    return Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => WishBannerHistoryPage()),
     );
   }
 

@@ -13,12 +13,12 @@ import 'package:shiori/presentation/shared/images/circle_weapon.dart';
 import 'package:shiori/presentation/shared/loading.dart';
 import 'package:shiori/presentation/shared/nothing_found_column.dart';
 
-class VersionDetailsDialog extends StatelessWidget {
+class BannerVersionHistoryDialog extends StatelessWidget {
   final double version;
   final bool showWeapons;
   final bool showCharacters;
 
-  const VersionDetailsDialog({
+  const BannerVersionHistoryDialog({
     super.key,
     required this.version,
     this.showCharacters = true,
@@ -29,14 +29,14 @@ class VersionDetailsDialog extends StatelessWidget {
   Widget build(BuildContext context) {
     final mq = MediaQuery.of(context);
     final s = S.of(context);
-    return BlocProvider<BannerHistoryItemBloc>(
-      create: (context) => Injection.bannerHistoryItemBloc..add(BannerHistoryItemEvent.init(version: version)),
+    return BlocProvider<BannerVersionHistoryBloc>(
+      create: (context) => Injection.bannerVersionHistory..add(BannerVersionHistoryEvent.init(version: version)),
       child: AlertDialog(
         title: Text(s.appVersion(version)),
         content: SizedBox(
           width: mq.getWidthForDialogs(),
           child: SingleChildScrollView(
-            child: BlocBuilder<BannerHistoryItemBloc, BannerHistoryItemState>(
+            child: BlocBuilder<BannerVersionHistoryBloc, BannerVersionHistoryState>(
               builder: (context, state) => state.maybeMap(
                 loadedState: (state) => state.items.isEmpty
                     ? const NothingFoundColumn(mainAxisSize: MainAxisSize.min)

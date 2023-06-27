@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import 'package:shiori/domain/assets.dart';
+import 'package:shiori/generated/l10n.dart';
 import 'package:shiori/presentation/shared/transform_tap_scale.dart';
 
 typedef WishButtonTap = void Function(int);
@@ -24,6 +25,8 @@ class WishButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final s = S.of(context);
+    final theme = Theme.of(context);
     final width = getValueForScreenType<double>(
       context: context,
       mobile: 170,
@@ -44,7 +47,10 @@ class WishButton extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text('Wish x${quantity}', style: Theme.of(context).textTheme.bodyLarge),
+            Text(
+              s.wishXQuantity(quantity),
+              style: theme.textTheme.bodyLarge!.copyWith(color: Colors.black),
+            ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [

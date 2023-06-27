@@ -5,7 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shiori/application/bloc.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/generated/l10n.dart';
-import 'package:shiori/presentation/shared/dialogs/version_details_dialog.dart';
+import 'package:shiori/presentation/shared/dialogs/banner_version_history_dialog.dart';
 
 class FixedHeaderRow extends StatelessWidget {
   final BannerHistoryItemType type;
@@ -130,8 +130,8 @@ class _VersionCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     return InkWell(
-      onTap: () => context.read<BannerHistoryBloc>().add(BannerHistoryEvent.versionSelected(version: version)),
-      onLongPress: () => showDialog(context: context, builder: (_) => VersionDetailsDialog(version: version)),
+      onTap: () => context.read<BannerHistoryCountBloc>().add(BannerHistoryCountEvent.versionSelected(version: version)),
+      onLongPress: () => showDialog(context: context, builder: (_) => BannerVersionHistoryDialog(version: version)),
       child: Card(
         margin: margin,
         color: isSelected ? theme.colorScheme.primary.withOpacity(0.45) : theme.colorScheme.primary,

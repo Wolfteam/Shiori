@@ -9,11 +9,11 @@ import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/genshin_service.dart';
 import 'package:shiori/domain/services/telemetry_service.dart';
 
-part 'banner_history_bloc.freezed.dart';
-part 'banner_history_event.dart';
-part 'banner_history_state.dart';
+part 'banner_history_count_bloc.freezed.dart';
+part 'banner_history_count_event.dart';
+part 'banner_history_count_state.dart';
 
-const _initialState = BannerHistoryState.initial(
+const _initialState = BannerHistoryCountState.initial(
   type: BannerHistoryItemType.character,
   sortType: BannerHistorySortType.versionAsc,
   banners: [],
@@ -21,16 +21,16 @@ const _initialState = BannerHistoryState.initial(
   maxNumberOfItems: 0,
 );
 
-class BannerHistoryBloc extends Bloc<BannerHistoryEvent, BannerHistoryState> {
+class BannerHistoryCountBloc extends Bloc<BannerHistoryCountEvent, BannerHistoryCountState> {
   final GenshinService _genshinService;
   final TelemetryService _telemetryService;
   final List<BannerHistoryItemModel> _characterBanners = [];
   final List<BannerHistoryItemModel> _weaponBanners = [];
 
-  BannerHistoryBloc(this._genshinService, this._telemetryService) : super(_initialState);
+  BannerHistoryCountBloc(this._genshinService, this._telemetryService) : super(_initialState);
 
   @override
-  Stream<BannerHistoryState> mapEventToState(BannerHistoryEvent event) async* {
+  Stream<BannerHistoryCountState> mapEventToState(BannerHistoryCountEvent event) async* {
     final s = await event.map(
       init: (e) async => _init(),
       typeChanged: (e) async => _typeChanged(e.type),
@@ -47,14 +47,14 @@ class BannerHistoryBloc extends Bloc<BannerHistoryEvent, BannerHistoryState> {
     return banners.map((e) => ItemCommonWithName(e.key, e.image, e.name)).toSet().toList();
   }
 
-  Future<BannerHistoryState> _init() async {
+  Future<BannerHistoryCountState> _init() async {
     await _telemetryService.trackBannerHistoryOpened();
     _characterBanners.addAll(_genshinService.bannerHistory.getBannerHistory(BannerHistoryItemType.character));
     _weaponBanners.addAll(_genshinService.bannerHistory.getBannerHistory(BannerHistoryItemType.weapon));
 
     final versions = _genshinService.bannerHistory.getBannerHistoryVersions(SortDirectionType.asc);
     final banners = _getFinalSortedBanners(_characterBanners, versions, state.sortType);
-    return BannerHistoryState.initial(
+    return BannerHistoryCountState.initial(
       type: BannerHistoryItemType.character,
       sortType: _initialState.sortType,
       banners: banners,
@@ -63,7 +63,7 @@ class BannerHistoryBloc extends Bloc<BannerHistoryEvent, BannerHistoryState> {
     );
   }
 
-  BannerHistoryState _typeChanged(BannerHistoryItemType type) {
+  BannerHistoryCountState _typeChanged(BannerHistoryItemType type) {
     if (type == state.type) {
       return state;
     }
@@ -89,7 +89,7 @@ class BannerHistoryBloc extends Bloc<BannerHistoryEvent, BannerHistoryState> {
     );
   }
 
-  BannerHistoryState _sortTypeChanged(BannerHistorySortType type) {
+  BannerHistoryCountState _sortTypeChanged(BannerHistorySortType type) {
     if (type == state.sortType) {
       return state;
     }
@@ -99,7 +99,7 @@ class BannerHistoryBloc extends Bloc<BannerHistoryEvent, BannerHistoryState> {
     return state.copyWith.call(banners: banners, versions: versions, sortType: type);
   }
 
-  BannerHistoryState _versionSelected(double version) {
+  BannerHistoryCountState _versionSelected(double version) {
     final selectedVersions = <double>[];
     if (state.selectedVersions.contains(version)) {
       selectedVersions.addAll(state.selectedVersions.where((value) => value != version));
@@ -118,7 +118,7 @@ class BannerHistoryBloc extends Bloc<BannerHistoryEvent, BannerHistoryState> {
     );
   }
 
-  BannerHistoryState _itemsSelected(List<String> keys) {
+  BannerHistoryCountState _itemsSelected(List<String> keys) {
     if (keys.equals(state.selectedItemKeys)) {
       return state;
     }

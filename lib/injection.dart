@@ -151,16 +151,16 @@ class Injection {
     return DonationsBloc(purchaseService, networkService, telemetryService);
   }
 
-  static BannerHistoryBloc get bannerHistoryBloc {
+  static BannerHistoryCountBloc get bannerHistoryCountBloc {
     final genshinService = getIt<GenshinService>();
     final telemetryService = getIt<TelemetryService>();
-    return BannerHistoryBloc(genshinService, telemetryService);
+    return BannerHistoryCountBloc(genshinService, telemetryService);
   }
 
-  static BannerHistoryItemBloc get bannerHistoryItemBloc {
+  static BannerVersionHistoryBloc get bannerVersionHistory {
     final genshinService = getIt<GenshinService>();
     final telemetryService = getIt<TelemetryService>();
-    return BannerHistoryItemBloc(genshinService, telemetryService);
+    return BannerVersionHistoryBloc(genshinService, telemetryService);
   }
 
   static ItemReleaseHistoryBloc get itemReleaseHistoryBloc {

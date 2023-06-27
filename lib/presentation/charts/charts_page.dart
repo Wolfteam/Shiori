@@ -16,12 +16,12 @@ import 'package:shiori/presentation/charts/widgets/chart_legend.dart';
 import 'package:shiori/presentation/charts/widgets/horizontal_bar_chart.dart';
 import 'package:shiori/presentation/charts/widgets/pie_chart.dart';
 import 'package:shiori/presentation/charts/widgets/vertical_bar_chart.dart';
+import 'package:shiori/presentation/shared/dialogs/banner_version_history_dialog.dart';
 import 'package:shiori/presentation/shared/dialogs/birthdays_per_month_dialog.dart';
 import 'package:shiori/presentation/shared/dialogs/characters_per_region_dialog.dart';
 import 'package:shiori/presentation/shared/dialogs/characters_per_region_gender_dialog.dart';
 import 'package:shiori/presentation/shared/dialogs/item_release_history_dialog.dart';
 import 'package:shiori/presentation/shared/dialogs/items_ascension_stats_dialog.dart';
-import 'package:shiori/presentation/shared/dialogs/version_details_dialog.dart';
 import 'package:shiori/presentation/shared/extensions/element_type_extensions.dart';
 import 'package:shiori/presentation/shared/extensions/i18n_extensions.dart';
 import 'package:shiori/presentation/shared/loading.dart';
@@ -496,7 +496,7 @@ class _Elements extends StatelessWidget {
                       ..sort((x, y) => x.text.compareTo(y.text)),
                     onPointTap: (value) => showDialog(
                       context: context,
-                      builder: (_) => VersionDetailsDialog(
+                      builder: (_) => BannerVersionHistoryDialog(
                         version: value,
                         showWeapons: false,
                       ),
