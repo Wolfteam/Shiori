@@ -42,3 +42,8 @@ class ItemCommonWithName with _$ItemCommonWithName {
   @Implements<ItemCommonBase>()
   const factory ItemCommonWithName(String key, String image, String name) = _ItemCommonWithName;
 }
+
+@freezed
+class ItemCommonWithNameOnly with _$ItemCommonWithNameOnly {
+  const factory ItemCommonWithNameOnly(String key, String name) = _ItemCommonWithNameOnly;
+}

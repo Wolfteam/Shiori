@@ -41,3 +41,4 @@ export 'sort_direction_type.dart';
 export 'stat_type.dart';
 export 'weapon_filter_type.dart';
 export 'weapon_type.dart';
+export 'wish_banner_grouped_type.dart';

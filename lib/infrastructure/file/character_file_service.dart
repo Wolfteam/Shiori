@@ -421,6 +421,11 @@ class CharacterFileServiceImpl extends CharacterFileService {
     }).toList();
   }
 
+  @override
+  List<ItemCommonWithName> getItemCommonWithName() {
+    return getCharactersForCard().map((e) => ItemCommonWithName(e.key, e.image, e.name)).toList();
+  }
+
   CharacterCardModel _toCharacterForCard(CharacterFileModel character) {
     final translation = _translations.getCharacterTranslation(character.key);
 

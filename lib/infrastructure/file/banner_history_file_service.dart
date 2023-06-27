@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:collection/collection.dart';
+import 'package:darq/darq.dart';
 import 'package:shiori/domain/app_constants.dart';
 import 'package:shiori/domain/assets.dart';
 import 'package:shiori/domain/enums/enums.dart';
@@ -9,6 +10,8 @@ import 'package:shiori/domain/extensions/double_extensions.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/file/file_infrastructure.dart';
 import 'package:shiori/domain/services/resources_service.dart';
+
+const int promotedRarity = 5;
 
 class BannerHistoryFileServiceImpl extends BannerHistoryFileService {
   final ResourceService _resourceService;
@@ -303,7 +306,6 @@ class BannerHistoryFileServiceImpl extends BannerHistoryFileService {
       final characters = <WishBannerCharacterModel>[];
       final weapons = <WishBannerWeaponModel>[];
       final promoted = <ItemCommon>[];
-      const int promotedRarity = 5;
       for (final key in e.itemKeys) {
         switch (e.type) {
           case BannerHistoryItemType.character:
@@ -340,6 +342,48 @@ class BannerHistoryFileServiceImpl extends BannerHistoryFileService {
       version: version,
       banners: banners..sort((x, y) => x.type.index.compareTo(y.type.index)),
     );
+  }
+
+  @override
+  List<WishBannerHistoryGroupedPeriodModel> getWishBannersHistoryGroupedByVersion() {
+    final promotedItems = _characters.getItemCommonWithNameByRarity(promotedRarity).concat(_weapons.getItemCommonWithNameByRarity(promotedRarity));
+    final grouped = _bannerHistoryFile.banners.groupListsBy((el) => el.version).entries.map((g1) {
+      final parts = g1.value.groupListsBy((d) => '${d.from}__${d.until}').entries.map((g2) {
+        final first = g2.value.first;
+        final promotedCharacters = <ItemCommonWithNameOnly>[];
+        final promotedWeapons = <ItemCommonWithNameOnly>[];
+        for (final item in g2.value) {
+          for (final key in item.itemKeys) {
+            switch (item.type) {
+              case BannerHistoryItemType.character:
+                final character = promotedItems.firstWhereOrNull((el) => el.key == key);
+                if (character != null) {
+                  promotedCharacters.add(ItemCommonWithNameOnly(key, character.name));
+                }
+                break;
+              case BannerHistoryItemType.weapon:
+                final weapon = promotedItems.firstWhereOrNull((el) => el.key == key);
+                if (weapon != null) {
+                  promotedWeapons.add(ItemCommonWithNameOnly(key, weapon.name));
+                }
+                break;
+            }
+          }
+        }
+        return WishBannerHistoryPartItemModel(
+          promotedCharacters: promotedCharacters,
+          promotedWeapons: promotedWeapons,
+          bannerImages: Assets.test,
+          from: first.from,
+          until: first.until,
+          version: g1.key,
+        );
+      }).toList();
+
+      return WishBannerHistoryGroupedPeriodModel(groupingTitle: g1.key.toString(), parts: parts);
+    }).toList();
+
+    return grouped;
   }
 
   List<BannerHistoryItemVersionModel> _getBannerVersionsForItem(List<double> allVersions, List<double> releasedOn) {
