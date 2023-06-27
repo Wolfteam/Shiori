@@ -4,8 +4,6 @@ import 'package:linked_scroll_controller/linked_scroll_controller.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import 'package:shiori/application/bloc.dart';
 import 'package:shiori/domain/enums/enums.dart';
-import 'package:shiori/domain/extensions/string_extensions.dart';
-import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/generated/l10n.dart';
 import 'package:shiori/injection.dart';
 import 'package:shiori/presentation/banner_history/widgets/content.dart';
@@ -13,6 +11,7 @@ import 'package:shiori/presentation/banner_history/widgets/fixed_header_row.dart
 import 'package:shiori/presentation/banner_history/widgets/fixed_left_column.dart';
 import 'package:shiori/presentation/shared/app_fab.dart';
 import 'package:shiori/presentation/shared/extensions/i18n_extensions.dart';
+import 'package:shiori/presentation/shared/item_common_with_name_appbar_search_delegate.dart';
 import 'package:shiori/presentation/shared/item_popupmenu_filter.dart';
 import 'package:shiori/presentation/shared/mixins/app_fab_mixin.dart';
 import 'package:shiori/presentation/shared/nothing_found_column.dart';
@@ -151,7 +150,7 @@ class _AppBar extends StatelessWidget implements PreferredSizeWidget {
             splashRadius: Styles.mediumButtonSplashRadius,
             onPressed: () => showSearch<List<String>>(
               context: context,
-              delegate: _AppBarSearchDelegate(
+              delegate: ItemCommonWithNameAppBarSearchDelegate(
                 ctx.read<BannerHistoryBloc>().getItemsForSearch(),
                 [...state.selectedItemKeys],
               ),
@@ -187,66 +186,4 @@ class _AppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Size get preferredSize => const Size.fromHeight(kToolbarHeight);
-}
-
-class _AppBarSearchDelegate extends SearchDelegate<List<String>> {
-  final List<ItemCommonWithName> items;
-  final List<String> selected;
-
-  _AppBarSearchDelegate(this.items, this.selected);
-
-  @override
-  List<Widget> buildActions(BuildContext context) => [
-        IconButton(
-          icon: const Icon(Icons.check, color: Colors.green),
-          onPressed: () => close(context, selected),
-        ),
-        IconButton(
-          icon: const Icon(Icons.clear, color: Colors.red),
-          onPressed: () {
-            if (query.isNullEmptyOrWhitespace) {
-              close(context, []);
-            } else {
-              query = '';
-            }
-          },
-        )
-      ];
-
-  @override
-  Widget buildLeading(BuildContext context) => IconButton(
-        icon: const Icon(Icons.arrow_back),
-        onPressed: () => close(context, selected),
-      );
-
-  @override
-  Widget buildResults(BuildContext context) => Text(query);
-
-  @override
-  Widget buildSuggestions(BuildContext context) {
-    final possibilities = query.isNullEmptyOrWhitespace ? items : items.where((el) => el.name.toLowerCase().contains(query.toLowerCase())).toList();
-    possibilities.sort((x, y) => x.name.compareTo(y.name));
-
-    return StatefulBuilder(
-      builder: (BuildContext context, StateSetter setState) => ListView.builder(
-        itemCount: possibilities.length,
-        itemBuilder: (ctx, index) {
-          final item = possibilities[index];
-          final isSelected = selected.any((el) => el == item.key);
-          return ListTile(
-            title: Text(item.name),
-            leading: isSelected ? const Icon(Icons.check) : null,
-            minLeadingWidth: 10,
-            onTap: () {
-              if (isSelected) {
-                setState(() => selected.remove(item.key));
-              } else {
-                setState(() => selected.add(item.key));
-              }
-            },
-          );
-        },
-      ),
-    );
-  }
 }

@@ -688,4 +688,15 @@ extension I18nExtensions on S {
         return notifications;
     }
   }
+
+  String translateWishBannerGroupedType(WishBannerGroupedType type) {
+    switch (type) {
+      case WishBannerGroupedType.version:
+        return versions;
+      case WishBannerGroupedType.character:
+        return characters;
+      case WishBannerGroupedType.weapon:
+        return weapons;
+    }
+  }
 }
