@@ -157,6 +157,8 @@ class ResourceServiceImpl implements ResourceService {
         }
       case AppImageFolderType.wishBannerHistory:
         return join(_assetsPath, 'wish_banners_history', filename);
+      case AppImageFolderType.charactersIcon:
+        return join(_assetsPath, 'characters_icon', filename);
     }
   }
 
@@ -195,6 +197,9 @@ class ResourceServiceImpl implements ResourceService {
 
   @override
   String getWishBannerHistoryImagePath(String filename) => _getImagePath(filename, AppImageFolderType.wishBannerHistory);
+
+  @override
+  String getCharacterIconImagePath(String filename) => _getImagePath(filename, AppImageFolderType.charactersIcon);
 
   bool _canCheckForUpdates({bool checkDate = true}) {
     _loggingService.info(runtimeType, '_canCheckForUpdates: Checking if we can check for resource updates...');

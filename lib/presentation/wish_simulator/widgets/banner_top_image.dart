@@ -42,7 +42,7 @@ class BannerTopImage extends StatelessWidget {
             Positioned(
               top: 0,
               child: imagesPath.length == 1
-                  ? Image.asset(imagesPath.first, scale: singleScale)
+                  ? Image.file(File(imagesPath.first), scale: singleScale)
                   : Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: imagesPath.map((path) => Image.file(File(path), scale: multiScale)).toList(),

@@ -3,7 +3,6 @@ import 'dart:math';
 import 'package:collection/collection.dart';
 import 'package:darq/darq.dart';
 import 'package:shiori/domain/app_constants.dart';
-import 'package:shiori/domain/assets.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/extensions/datetime_extensions.dart';
 import 'package:shiori/domain/extensions/double_extensions.dart';
@@ -310,8 +309,7 @@ class BannerHistoryFileServiceImpl extends BannerHistoryFileService {
         switch (e.type) {
           case BannerHistoryItemType.character:
             final character = _characters.getCharacter(key);
-            final imagePath =
-                index % 2 == 0 ? Assets.testVentiImgPath : Assets.testGanyuImgPath; //_resourceService.getCharacterImagePath(character.image);
+            final imagePath = _resourceService.getCharacterIconImagePath(character.iconImage);
             characters.add(WishBannerCharacterModel(key: key, image: imagePath, elementType: character.elementType, rarity: character.rarity));
             if (character.rarity == promotedRarity) {
               promoted.add(ItemCommon(key, imagePath));
@@ -327,9 +325,10 @@ class BannerHistoryFileServiceImpl extends BannerHistoryFileService {
             break;
         }
       }
+
       return WishBannerItemModel(
         type: BannerItemType.values[e.type.index],
-        image: Assets.test[index],
+        image: _resourceService.getWishBannerHistoryImagePath(e.imageFilename),
         characters: characters,
         weapons: weapons,
         promotedItems: promoted,

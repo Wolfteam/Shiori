@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:shiori/presentation/shared/styles.dart';
 
@@ -23,8 +25,8 @@ class BannerMainImage extends StatelessWidget {
       child: Stack(
         fit: StackFit.expand,
         children: [
-          Image.asset(
-            imagePath,
+          Image.file(
+            File(imagePath),
             width: imageWidth,
             fit: BoxFit.fill,
           ),

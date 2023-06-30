@@ -25,6 +25,8 @@ abstract class ResourceService {
 
   String getWishBannerHistoryImagePath(String filename);
 
+  String getCharacterIconImagePath(String filename);
+
   Future<CheckForUpdatesResult> checkForUpdates(
     String currentAppVersion,
     int currentResourcesVersion, {
