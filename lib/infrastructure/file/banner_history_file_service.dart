@@ -347,12 +347,12 @@ class BannerHistoryFileServiceImpl extends BannerHistoryFileService {
   @override
   List<WishBannerHistoryGroupedPeriodModel> getWishBannersHistoryGroupedByVersion() {
     final promotedItems = _characters.getItemCommonWithNameByRarity(promotedRarity).concat(_weapons.getItemCommonWithNameByRarity(promotedRarity));
-    final grouped = _bannerHistoryFile.banners.groupListsBy((el) => el.version).entries.map((g1) {
-      final parts = g1.value.groupListsBy((d) => '${d.from}__${d.until}').entries.map((g2) {
-        final first = g2.value.first;
+    final grouped = _bannerHistoryFile.banners.groupListsBy((el) => el.version).entries.map((versionGroup) {
+      final parts = versionGroup.value.groupListsBy((d) => '${d.from}__${d.until}').entries.map((dateGroup) {
+        final first = dateGroup.value.first;
         final promotedCharacters = <ItemCommonWithNameOnly>[];
         final promotedWeapons = <ItemCommonWithNameOnly>[];
-        for (final item in g2.value) {
+        for (final item in dateGroup.value) {
           for (final key in item.itemKeys) {
             switch (item.type) {
               case BannerHistoryItemType.character:
@@ -370,17 +370,18 @@ class BannerHistoryFileServiceImpl extends BannerHistoryFileService {
             }
           }
         }
+
         return WishBannerHistoryPartItemModel(
           promotedCharacters: promotedCharacters,
           promotedWeapons: promotedWeapons,
-          bannerImages: Assets.test,
+          bannerImages: dateGroup.value.map((e) => _resourceService.getWishBannerHistoryImagePath(e.imageFilename)).toList(),
           from: first.from,
           until: first.until,
-          version: g1.key,
+          version: versionGroup.key,
         );
       }).toList();
 
-      return WishBannerHistoryGroupedPeriodModel(groupingTitle: g1.key.toString(), parts: parts);
+      return WishBannerHistoryGroupedPeriodModel(groupingTitle: versionGroup.key.toString(), parts: parts);
     }).toList();
 
     return grouped;

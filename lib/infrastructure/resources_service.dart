@@ -155,6 +155,8 @@ class ResourceServiceImpl implements ResourceService {
           default:
             throw Exception('You must provide a weapon type');
         }
+      case AppImageFolderType.wishBannerHistory:
+        return join(_assetsPath, 'wish_banners_history', filename);
     }
   }
 
@@ -190,6 +192,9 @@ class ResourceServiceImpl implements ResourceService {
 
   @override
   String getMaterialImagePath(String filename, MaterialType type) => _getImagePath(filename, AppImageFolderType.items, materialType: type);
+
+  @override
+  String getWishBannerHistoryImagePath(String filename) => _getImagePath(filename, AppImageFolderType.wishBannerHistory);
 
   bool _canCheckForUpdates({bool checkDate = true}) {
     _loggingService.info(runtimeType, '_canCheckForUpdates: Checking if we can check for resource updates...');

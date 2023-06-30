@@ -23,6 +23,8 @@ abstract class ResourceService {
 
   String getMaterialImagePath(String filename, MaterialType type);
 
+  String getWishBannerHistoryImagePath(String filename);
+
   Future<CheckForUpdatesResult> checkForUpdates(
     String currentAppVersion,
     int currentResourcesVersion, {

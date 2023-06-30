@@ -12,6 +12,7 @@ class BannerHistoryPeriodFileModel with _$BannerHistoryPeriodFileModel {
     required DateTime until,
     required double version,
     required List<String> itemKeys,
+    required String imageFilename,
   }) = _BannerHistoryPeriodFileModel;
 
   factory BannerHistoryPeriodFileModel.fromJson(Map<String, dynamic> json) => _$BannerHistoryPeriodFileModelFromJson(json);
