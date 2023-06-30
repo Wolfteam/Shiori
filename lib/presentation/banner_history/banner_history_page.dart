@@ -80,6 +80,7 @@ class WishBannerHistoryPage extends StatelessWidget {
                 itemCount: state.filteredPeriods.length,
                 itemBuilder: (context, index) => BannerGroupedPeriod(
                   group: state.filteredPeriods[index],
+                  groupedType: state.groupedType,
                   forSelection: forSelection,
                 ),
               ),

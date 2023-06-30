@@ -1,8 +1,11 @@
+import 'dart:io';
+
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:shiori/domain/extensions/iterable_extensions.dart';
 import 'package:shiori/domain/models/models.dart';
+import 'package:shiori/generated/l10n.dart';
 import 'package:shiori/presentation/character/character_page.dart';
 import 'package:shiori/presentation/weapon/weapon_page.dart';
 
@@ -13,40 +16,60 @@ typedef OnGroupedBannerCardTap = void Function(WishBannerHistoryPartItemModel ba
 class GroupedBannerCard extends StatelessWidget {
   final WishBannerHistoryPartItemModel part;
   final double bannerImageWidth;
+  final double bannerImageHeight;
+  final bool showVersion;
   final OnGroupedBannerCardTap onTap;
 
   const GroupedBannerCard({
     required this.part,
     required this.bannerImageWidth,
+    required this.bannerImageHeight,
+    required this.showVersion,
     required this.onTap,
   });
 
   @override
   Widget build(BuildContext context) {
+    final s = S.of(context);
     final theme = Theme.of(context);
     return InkWell(
       onTap: () => onTap(part),
       child: Card(
         child: Column(
           children: [
-            Row(
-              mainAxisSize: MainAxisSize.min,
-              children: part.bannerImages.mapIndex((e, index) => Image.asset(e, width: bannerImageWidth)).toList(),
+            Expanded(
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: part.bannerImages
+                    .mapIndex(
+                      (e, index) => Image.file(
+                        File(e),
+                        width: bannerImageWidth,
+                        height: bannerImageHeight,
+                        fit: BoxFit.cover,
+                      ),
+                    )
+                    .toList(),
+              ),
             ),
             _ClickableText(
               characters: part.promotedCharacters,
               weapons: part.promotedWeapons,
-              style: theme.textTheme.headlineSmall!,
+              style: theme.textTheme.titleMedium!,
             ),
             Text(
               '${_dateFormat.format(part.from)} - ${_dateFormat.format(part.until)}',
               style: theme.textTheme.bodySmall,
               overflow: TextOverflow.ellipsis,
             ),
-            SizedBox(
-              width: bannerImageWidth * 0.75,
-              child: Divider(color: theme.colorScheme.primary),
-            ),
+            if (showVersion)
+              Text(
+                s.appVersion(part.version),
+                style: theme.textTheme.bodySmall,
+                overflow: TextOverflow.ellipsis,
+              ),
+            const SizedBox(height: 5),
           ],
         ),
       ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/presentation/banner_history/widgets/grouped_banner_card.dart';
 import 'package:shiori/presentation/shared/dialogs/banner_version_history_dialog.dart';
@@ -6,6 +7,7 @@ import 'package:shiori/presentation/shared/styles.dart';
 
 class BannerGroupedPeriod extends StatelessWidget {
   final WishBannerHistoryGroupedPeriodModel group;
+  final WishBannerGroupedType groupedType;
   final bool forSelection;
   final double bannerImageWidth;
   final double bannerImgHeight;
@@ -13,6 +15,7 @@ class BannerGroupedPeriod extends StatelessWidget {
   //TODO: MOVE THE IMAGE SIZE TO CONSTANTS
   const BannerGroupedPeriod({
     required this.group,
+    required this.groupedType,
     required this.forSelection,
     this.bannerImageWidth = 250,
     this.bannerImgHeight = 190,
@@ -36,7 +39,7 @@ class BannerGroupedPeriod extends StatelessWidget {
           ),
         ),
         Container(
-          height: bannerImgHeight,
+          height: bannerImgHeight + 50,
           margin: Styles.edgeInsetHorizontal16.copyWith(bottom: 15),
           child: ListView.separated(
             scrollDirection: Axis.horizontal,
@@ -47,6 +50,8 @@ class BannerGroupedPeriod extends StatelessWidget {
               return GroupedBannerCard(
                 part: part,
                 bannerImageWidth: bannerImageWidth,
+                bannerImageHeight: bannerImgHeight,
+                showVersion: groupedType != WishBannerGroupedType.version,
                 onTap: (part) => _onCardTap(context, part),
               );
             },
