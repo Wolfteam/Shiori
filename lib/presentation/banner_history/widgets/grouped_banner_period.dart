@@ -1,3 +1,4 @@
+import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/models/models.dart';
@@ -24,6 +25,9 @@ class BannerGroupedPeriod extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+    final title = group.groupingTitle;
+    final int? count = groupedType != WishBannerGroupedType.version ? group.parts.groupListsBy((el) => el.version).length : null;
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
@@ -31,11 +35,27 @@ class BannerGroupedPeriod extends StatelessWidget {
           color: theme.colorScheme.primary.withOpacity(0.5),
           child: Container(
             margin: const EdgeInsets.only(left: 5),
-            child: Text(
-              group.groupingTitle,
-              style: theme.textTheme.headlineSmall,
-              overflow: TextOverflow.ellipsis,
-            ),
+            child: count != null
+                ? RichText(
+                    text: TextSpan(
+                      style: theme.textTheme.headlineSmall!.copyWith(overflow: TextOverflow.ellipsis),
+                      children: [
+                        TextSpan(text: title),
+                        WidgetSpan(
+                          alignment: PlaceholderAlignment.middle,
+                          child: Text(
+                            ' [$count]',
+                            style: theme.textTheme.bodySmall,
+                          ),
+                        ),
+                      ],
+                    ),
+                  )
+                : Text(
+                    title,
+                    style: theme.textTheme.headlineSmall,
+                    overflow: TextOverflow.ellipsis,
+                  ),
           ),
         ),
         Container(

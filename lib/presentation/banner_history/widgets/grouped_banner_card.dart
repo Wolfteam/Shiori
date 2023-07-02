@@ -56,7 +56,7 @@ class GroupedBannerCard extends StatelessWidget {
             _ClickableText(
               characters: part.promotedCharacters,
               weapons: part.promotedWeapons,
-              style: theme.textTheme.titleMedium!,
+              style: theme.textTheme.titleMedium!.copyWith(overflow: TextOverflow.ellipsis),
             ),
             Text(
               '${_dateFormat.format(part.from)} - ${_dateFormat.format(part.until)}',
