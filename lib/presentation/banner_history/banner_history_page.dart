@@ -71,6 +71,13 @@ class WishBannerHistoryPage extends StatelessWidget {
                   icon: Icon(Icons.sort, size: Styles.getIconSizeForItemPopupMenuFilter(false, true)),
                 ),
               ),
+              if (state.maybeMap(loaded: (state) => state.selectedItemKeys.isNotEmpty, orElse: () => false))
+                IconButton(
+                  onPressed: () => context.read<WishBannerHistoryBloc>().add(const WishBannerHistoryEvent.itemsSelected(keys: [])),
+                  icon: Icon(Icons.clear_all, size: Styles.getIconSizeForItemPopupMenuFilter(false, true)),
+                  splashRadius: Styles.mediumButtonSplashRadius,
+                  tooltip: s.clearAll,
+                ),
             ],
           ),
           body: SafeArea(

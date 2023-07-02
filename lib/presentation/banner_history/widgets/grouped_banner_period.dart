@@ -4,6 +4,7 @@ import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/presentation/banner_history/widgets/grouped_banner_card.dart';
 import 'package:shiori/presentation/shared/dialogs/banner_version_history_dialog.dart';
+import 'package:shiori/presentation/shared/dialogs/item_release_history_dialog.dart';
 import 'package:shiori/presentation/shared/styles.dart';
 
 class BannerGroupedPeriod extends StatelessWidget {
@@ -36,25 +37,37 @@ class BannerGroupedPeriod extends StatelessWidget {
           child: Container(
             margin: const EdgeInsets.only(left: 5),
             child: count != null
-                ? RichText(
-                    text: TextSpan(
-                      style: theme.textTheme.headlineSmall!.copyWith(overflow: TextOverflow.ellipsis),
-                      children: [
-                        TextSpan(text: title),
-                        WidgetSpan(
-                          alignment: PlaceholderAlignment.middle,
-                          child: Text(
-                            ' [$count]',
-                            style: theme.textTheme.bodySmall,
+                ? InkWell(
+                    onTap: () => showDialog(
+                      context: context,
+                      builder: (context) => ItemReleaseHistoryDialog(itemKey: group.groupingKey, itemName: title),
+                    ),
+                    child: RichText(
+                      text: TextSpan(
+                        style: theme.textTheme.headlineSmall!.copyWith(overflow: TextOverflow.ellipsis),
+                        children: [
+                          TextSpan(text: title),
+                          WidgetSpan(
+                            alignment: PlaceholderAlignment.middle,
+                            child: Text(
+                              ' [$count]',
+                              style: theme.textTheme.bodySmall,
+                            ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   )
-                : Text(
-                    title,
-                    style: theme.textTheme.headlineSmall,
-                    overflow: TextOverflow.ellipsis,
+                : InkWell(
+                    onTap: () => showDialog(
+                      context: context,
+                      builder: (context) => BannerVersionHistoryDialog(version: group.parts.first.version),
+                    ),
+                    child: Text(
+                      title,
+                      style: theme.textTheme.headlineSmall,
+                      overflow: TextOverflow.ellipsis,
+                    ),
                   ),
           ),
         ),
