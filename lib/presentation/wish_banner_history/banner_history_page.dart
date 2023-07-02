@@ -4,13 +4,13 @@ import 'package:shiori/application/bloc.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/generated/l10n.dart';
 import 'package:shiori/injection.dart';
-import 'package:shiori/presentation/banner_history/widgets/grouped_banner_period.dart';
 import 'package:shiori/presentation/shared/extensions/i18n_extensions.dart';
 import 'package:shiori/presentation/shared/item_common_with_name_appbar_search_delegate.dart';
 import 'package:shiori/presentation/shared/item_popupmenu_filter.dart';
 import 'package:shiori/presentation/shared/loading.dart';
 import 'package:shiori/presentation/shared/sort_direction_popupmenu_filter.dart';
 import 'package:shiori/presentation/shared/styles.dart';
+import 'package:shiori/presentation/wish_banner_history/widgets/grouped_banner_period.dart';
 
 class WishBannerHistoryPage extends StatelessWidget {
   final bool forSelection;
@@ -85,7 +85,7 @@ class WishBannerHistoryPage extends StatelessWidget {
               loading: (_) => const Loading(useScaffold: false),
               loaded: (state) => ListView.builder(
                 itemCount: state.filteredPeriods.length,
-                itemBuilder: (context, index) => BannerGroupedPeriod(
+                itemBuilder: (context, index) => GroupedBannerPeriod(
                   group: state.filteredPeriods[index],
                   groupedType: state.groupedType,
                   forSelection: forSelection,

@@ -2,12 +2,12 @@ import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/models/models.dart';
-import 'package:shiori/presentation/banner_history/widgets/grouped_banner_card.dart';
 import 'package:shiori/presentation/shared/dialogs/banner_version_history_dialog.dart';
 import 'package:shiori/presentation/shared/dialogs/item_release_history_dialog.dart';
 import 'package:shiori/presentation/shared/styles.dart';
+import 'package:shiori/presentation/wish_banner_history/widgets/grouped_banner_card.dart';
 
-class BannerGroupedPeriod extends StatelessWidget {
+class GroupedBannerPeriod extends StatelessWidget {
   final WishBannerHistoryGroupedPeriodModel group;
   final WishBannerGroupedType groupedType;
   final bool forSelection;
@@ -15,7 +15,7 @@ class BannerGroupedPeriod extends StatelessWidget {
   final double bannerImgHeight;
 
   //TODO: MOVE THE IMAGE SIZE TO CONSTANTS
-  const BannerGroupedPeriod({
+  const GroupedBannerPeriod({
     required this.group,
     required this.groupedType,
     required this.forSelection,
