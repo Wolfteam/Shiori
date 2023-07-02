@@ -343,42 +343,87 @@ class BannerHistoryFileServiceImpl extends BannerHistoryFileService {
     );
   }
 
+  Tuple2<List<ItemCommonWithNameOnly>, List<ItemCommonWithNameOnly>> _getPromotedItemsFromBannerPeriod(
+    BannerHistoryPeriodFileModel period,
+    List<ItemCommonWithName> promotedItems,
+  ) {
+    final promotedCharacters = <ItemCommonWithNameOnly>[];
+    final promotedWeapons = <ItemCommonWithNameOnly>[];
+    for (final key in period.itemKeys) {
+      switch (period.type) {
+        case BannerHistoryItemType.character:
+          final character = promotedItems.firstWhereOrNull((el) => el.key == key);
+          if (character != null) {
+            promotedCharacters.add(ItemCommonWithNameOnly(key, character.name));
+          }
+          break;
+        case BannerHistoryItemType.weapon:
+          final weapon = promotedItems.firstWhereOrNull((el) => el.key == key);
+          if (weapon != null) {
+            promotedWeapons.add(ItemCommonWithNameOnly(key, weapon.name));
+          }
+          break;
+      }
+    }
+
+    return Tuple2<List<ItemCommonWithNameOnly>, List<ItemCommonWithNameOnly>>(promotedCharacters, promotedWeapons);
+  }
+
   @override
   List<WishBannerHistoryGroupedPeriodModel> getWishBannersHistoryGroupedByVersion() {
-    final promotedItems = _characters.getItemCommonWithNameByRarity(promotedRarity).concat(_weapons.getItemCommonWithNameByRarity(promotedRarity));
+    final possiblePromotedItems = _characters
+        .getItemCommonWithNameByRarity(promotedRarity)
+        .concat(
+          _weapons.getItemCommonWithNameByRarity(promotedRarity),
+        )
+        .toList();
     final grouped = _bannerHistoryFile.banners.groupListsBy((el) => el.version).entries.map((versionGroup) {
-      final parts = versionGroup.value.groupListsBy((d) => '${d.from}__${d.until}').entries.map((dateGroup) {
-        final first = dateGroup.value.first;
-        final promotedCharacters = <ItemCommonWithNameOnly>[];
-        final promotedWeapons = <ItemCommonWithNameOnly>[];
-        for (final item in dateGroup.value) {
-          for (final key in item.itemKeys) {
-            switch (item.type) {
-              case BannerHistoryItemType.character:
-                final character = promotedItems.firstWhereOrNull((el) => el.key == key);
-                if (character != null) {
-                  promotedCharacters.add(ItemCommonWithNameOnly(key, character.name));
-                }
-                break;
-              case BannerHistoryItemType.weapon:
-                final weapon = promotedItems.firstWhereOrNull((el) => el.key == key);
-                if (weapon != null) {
-                  promotedWeapons.add(ItemCommonWithNameOnly(key, weapon.name));
-                }
-                break;
-            }
+      final parts = <WishBannerHistoryPartItemModel>[];
+      final groupedChars = versionGroup.value
+          .where((el) => el.type == BannerHistoryItemType.character)
+          .orderBy((el) => el.from)
+          .groupListsBy((el) => '${el.from}_${el.until}')
+          .entries
+          .toList();
+      final groupedWeapons = versionGroup.value
+          .where((el) => el.type == BannerHistoryItemType.weapon)
+          .orderBy((el) => el.from)
+          .groupListsBy((el) => '${el.from}_${el.until}')
+          .entries
+          .toList();
+      for (int i = 0; i < groupedChars.length; i++) {
+        final groupedCharPeriod = groupedChars[i].value.first;
+        for (int j = 0; j < groupedWeapons.length; j++) {
+          final groupedWeaponPeriod = groupedWeapons[j].value.first;
+          final overlap = groupedCharPeriod.from.isBefore(groupedWeaponPeriod.until) && groupedCharPeriod.until.isAfter(groupedWeaponPeriod.from);
+          if (!overlap) {
+            continue;
           }
+          final from = groupedCharPeriod.from.isAfterInclusive(groupedWeaponPeriod.from) ? groupedCharPeriod.from : groupedWeaponPeriod.from;
+          final until = groupedCharPeriod.until.isBeforeInclusive(groupedWeaponPeriod.until) ? groupedCharPeriod.until : groupedWeaponPeriod.until;
+          final part = WishBannerHistoryPartItemModel(
+            promotedCharacters: groupedChars[i]
+                .value
+                .map((period) => _getPromotedItemsFromBannerPeriod(period, possiblePromotedItems).item0)
+                .selectMany((element, index) => element)
+                .toList(),
+            promotedWeapons: groupedWeapons[j]
+                .value
+                .map((period) => _getPromotedItemsFromBannerPeriod(period, possiblePromotedItems).item1)
+                .selectMany((element, index) => element)
+                .toList(),
+            bannerImages: groupedChars[i]
+                .value
+                .map((e) => _resourceService.getWishBannerHistoryImagePath(e.imageFilename))
+                .concat(groupedWeapons[j].value.map((e) => _resourceService.getWishBannerHistoryImagePath(e.imageFilename)))
+                .toList(),
+            from: from,
+            until: until,
+            version: versionGroup.key,
+          );
+          parts.add(part);
         }
-
-        return WishBannerHistoryPartItemModel(
-          promotedCharacters: promotedCharacters,
-          promotedWeapons: promotedWeapons,
-          bannerImages: dateGroup.value.map((e) => _resourceService.getWishBannerHistoryImagePath(e.imageFilename)).toList(),
-          from: first.from,
-          until: first.until,
-          version: versionGroup.key,
-        );
-      }).toList();
+      }
 
       return WishBannerHistoryGroupedPeriodModel(groupingTitle: versionGroup.key.toString(), parts: parts);
     }).toList();
