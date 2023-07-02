@@ -39,18 +39,7 @@ class WishBannerHistoryBloc extends Bloc<WishBannerHistoryEvent, WishBannerHisto
   List<ItemCommonWithNameOnly> getItemsForSearch() {
     return state.map(
       loading: (_) => throw Exception('Invalid state'),
-      loaded: (state) => state.filteredPeriods.map((e) {
-        switch (state.groupedType) {
-          case WishBannerGroupedType.version:
-            return ItemCommonWithNameOnly(e.groupingTitle, e.groupingTitle);
-          case WishBannerGroupedType.character:
-            final character = e.parts.first.promotedCharacters.firstWhere((el) => el.name == e.groupingTitle);
-            return ItemCommonWithNameOnly(character.key, character.name);
-          case WishBannerGroupedType.weapon:
-            final weapon = e.parts.first.promotedWeapons.firstWhere((el) => el.name == e.groupingTitle);
-            return ItemCommonWithNameOnly(weapon.key, weapon.name);
-        }
-      }).toList(),
+      loaded: (state) => state.filteredPeriods.map((e) => ItemCommonWithNameOnly(e.groupingKey, e.groupingTitle)).toList(),
     );
   }
 
@@ -106,7 +95,7 @@ class WishBannerHistoryBloc extends Bloc<WishBannerHistoryEvent, WishBannerHisto
       final parts = e.value..sort((x, y) => x.version.compareTo(y.version));
       final firstPart = parts.first;
       final groupingTitle = (groupByCharacter ? firstPart.promotedCharacters : firstPart.promotedWeapons).firstWhere((c) => c.key == e.key).name;
-      return WishBannerHistoryGroupedPeriodModel(groupingTitle: groupingTitle, parts: parts);
+      return WishBannerHistoryGroupedPeriodModel(groupingKey: e.key, groupingTitle: groupingTitle, parts: parts);
     }).toList();
   }
 
@@ -128,7 +117,7 @@ class WishBannerHistoryBloc extends Bloc<WishBannerHistoryEvent, WishBannerHisto
     if (keys.isNotEmpty) {
       switch (state.groupedType) {
         case WishBannerGroupedType.version:
-          filteredPeriods.addAll(state.allPeriods.where((el) => keys.contains(el.groupingTitle)));
+          filteredPeriods.addAll(state.allPeriods.where((el) => keys.contains(el.groupingKey)));
           break;
         case WishBannerGroupedType.character:
         case WishBannerGroupedType.weapon:
@@ -137,7 +126,7 @@ class WishBannerHistoryBloc extends Bloc<WishBannerHistoryEvent, WishBannerHisto
           for (final period in periods) {
             final firstPart = period.parts.first;
             final promotedItem = (groupByCharacter ? firstPart.promotedCharacters : firstPart.promotedWeapons).firstWhere(
-              (el) => el.name == period.groupingTitle,
+              (el) => el.key == period.groupingKey,
             );
             if (keys.contains(promotedItem.key)) {
               filteredPeriods.add(period);

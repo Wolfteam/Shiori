@@ -425,7 +425,8 @@ class BannerHistoryFileServiceImpl extends BannerHistoryFileService {
         }
       }
 
-      return WishBannerHistoryGroupedPeriodModel(groupingTitle: versionGroup.key.toString(), parts: parts);
+      final key = versionGroup.key.toString();
+      return WishBannerHistoryGroupedPeriodModel(groupingKey: key, groupingTitle: key, parts: parts);
     }).toList();
 
     return grouped;

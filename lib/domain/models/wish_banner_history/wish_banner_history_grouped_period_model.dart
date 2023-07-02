@@ -6,6 +6,7 @@ part 'wish_banner_history_grouped_period_model.freezed.dart';
 @freezed
 class WishBannerHistoryGroupedPeriodModel with _$WishBannerHistoryGroupedPeriodModel {
   const factory WishBannerHistoryGroupedPeriodModel({
+    required String groupingKey,
     required String groupingTitle,
     required List<WishBannerHistoryPartItemModel> parts,
   }) = _WishBannerHistoryGroupedPeriodModel;
