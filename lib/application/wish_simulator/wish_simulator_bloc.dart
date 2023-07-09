@@ -41,20 +41,22 @@ class WishSimulatorBloc extends Bloc<WishSimulatorEvent, WishSimulatorState> {
     final version = _genshinServiceImpl.bannerHistory.getBannerHistoryVersions(SortDirectionType.asc).last;
     final banner = _genshinServiceImpl.bannerHistory.getBanners(version).last;
     final period = _genshinServiceImpl.bannerHistory.getWishBannerPerPeriod(version, banner.from, banner.until);
+    final standardBanner = _genshinServiceImpl.bannerHistory.getWishStandardBanner();
     return WishSimulatorState.loaded(
       selectedBannerIndex: 0,
       wishIconImage: _getWishIconImage(period.banners.first.type),
-      period: period,
+      period: period.copyWith(banners: [...period.banners, standardBanner]),
     );
   }
 
   WishSimulatorState _periodChanged(double version, DateTime from, DateTime until) {
     _checkLoadedState();
     final period = _genshinServiceImpl.bannerHistory.getWishBannerPerPeriod(version, from, until);
+    final standardBanner = _genshinServiceImpl.bannerHistory.getWishStandardBanner();
     return WishSimulatorState.loaded(
       selectedBannerIndex: 0,
       wishIconImage: _getWishIconImage(period.banners.first.type),
-      period: period,
+      period: period.copyWith(banners: [...period.banners, standardBanner]),
     );
   }
 
