@@ -1,47 +1,53 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:shiori/presentation/shared/styles.dart';
+import 'package:shiori/domain/enums/enums.dart';
 
 class BannerMainImage extends StatelessWidget {
   final String topTitle;
   final Color topTitleColor;
   final String imagePath;
-  final double margin;
-  final double imageWidth;
+  final BannerItemType type;
 
   const BannerMainImage({
     required this.topTitle,
     required this.topTitleColor,
     required this.imagePath,
-    required this.margin,
-    required this.imageWidth,
+    required this.type,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: EdgeInsets.symmetric(horizontal: margin),
+    final isStandardBanner = type == BannerItemType.standard;
+    return Center(
       child: Stack(
-        fit: StackFit.expand,
         children: [
-          Image.file(
-            File(imagePath),
-            width: imageWidth,
-            fit: BoxFit.fill,
-          ),
-          Positioned(
+          if (isStandardBanner)
+            Image.asset(
+              imagePath,
+              fit: BoxFit.contain,
+            )
+          else
+            Image.file(
+              File(imagePath),
+              fit: BoxFit.contain,
+            ),
+          Positioned.directional(
             top: 0,
-            left: 0,
+            start: 0,
+            textDirection: TextDirection.ltr,
             child: Container(
               decoration: BoxDecoration(
                 color: topTitleColor,
-                borderRadius: const BorderRadius.only(bottomRight: Radius.circular(15)),
+                borderRadius: const BorderRadius.only(bottomRight: Radius.circular(20)),
               ),
-              padding: Styles.edgeInsetAll5,
+              padding: const EdgeInsets.symmetric(vertical: 2, horizontal: 10),
               child: Text(
                 topTitle,
-                style: Theme.of(context).textTheme.titleLarge!.copyWith(color: Colors.white),
+                style: Theme.of(context).textTheme.titleSmall!.copyWith(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                    ),
               ),
             ),
           ),

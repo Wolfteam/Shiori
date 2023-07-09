@@ -16,6 +16,7 @@ class Assets {
   static String primogemIconPath = '$otherImgsBasePath/primogem$imageFileExtension';
   static String wishBannerBackgroundImgPath = '$otherImgsBasePath/wish_banner$imageFileExtension';
   static String wishBannerButtonBackgroundImgPath = '$otherImgsBasePath/wish_banner_button$imageFileExtension';
+  static String wishBannerStandardImgPath = '$otherImgsBasePath/wish_banner_standard$imageFileExtension';
 
   static String _getElementPath(String name) => '$elementsBasePath/$name';
 

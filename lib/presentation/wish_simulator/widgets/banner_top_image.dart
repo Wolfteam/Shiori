@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/presentation/shared/styles.dart';
 import 'package:shiori/presentation/shared/transform_tap_scale.dart';
 
@@ -12,6 +13,7 @@ class BannerTopImage extends StatelessWidget {
   final double width;
   final double height;
   final bool selected;
+  final BannerItemType type;
   final BannerTopImageTap onTap;
 
   const BannerTopImage({
@@ -20,6 +22,7 @@ class BannerTopImage extends StatelessWidget {
     required this.width,
     required this.height,
     required this.selected,
+    required this.type,
     required this.onTap,
   });
 

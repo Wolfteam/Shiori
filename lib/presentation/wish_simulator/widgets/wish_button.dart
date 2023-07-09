@@ -19,7 +19,7 @@ class WishButton extends StatelessWidget {
     required this.quantity,
     required this.imagePath,
     required this.onTap,
-    this.height = 55,
+    required this.height,
     this.iconSize = 20,
   });
 

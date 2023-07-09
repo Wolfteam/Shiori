@@ -96,7 +96,7 @@ class GroupedBannerPeriod extends StatelessWidget {
 
   Future<void> _onCardTap(BuildContext context, WishBannerHistoryPartItemModel part) {
     if (forSelection) {
-      Navigator.pop(context);
+      Navigator.pop(context, part);
       return Future.value();
     }
     return showDialog(context: context, builder: (context) => BannerVersionHistoryDialog(version: part.version));
