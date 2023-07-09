@@ -41,10 +41,10 @@ class BannerMainImage extends StatelessWidget {
                 color: topTitleColor,
                 borderRadius: const BorderRadius.only(bottomRight: Radius.circular(20)),
               ),
-              padding: const EdgeInsets.symmetric(vertical: 2, horizontal: 10),
+              padding: const EdgeInsets.symmetric(vertical: 2, horizontal: 15),
               child: Text(
                 topTitle,
-                style: Theme.of(context).textTheme.titleSmall!.copyWith(
+                style: Theme.of(context).textTheme.titleMedium!.copyWith(
                       color: Colors.white,
                       fontWeight: FontWeight.bold,
                     ),
