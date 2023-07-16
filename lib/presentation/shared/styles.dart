@@ -78,4 +78,82 @@ class Styles {
     begin: Alignment.topLeft,
     end: Alignment.bottomRight,
   );
+
+  static const Color wishButtonBackgroundColor = Color(0xffe0ddd4);
+  static const Color fiveStarWishResultBackgroundColor = Color(0xfff9aa02);
+  static const Color fourStarWishResultBackgroundColor = Color(0xffb912d6);
+  static const Color commonStarWishResultBackgroundColor = Color.fromRGBO(170, 200, 241, 1);
+
+  static const LinearGradient fiveStarWishResultGradient = LinearGradient(
+    colors: [
+      fiveStarWishResultBackgroundColor,
+      Color.fromRGBO(255, 255, 255, 1),
+      fiveStarWishResultBackgroundColor,
+    ],
+    begin: Alignment.topLeft,
+    end: Alignment.bottomRight,
+  );
+
+  static const List<BoxShadow> fiveStarWishResultBoxShadow = [
+    BoxShadow(
+      color: Colors.white,
+      blurRadius: 20,
+      spreadRadius: -20,
+      blurStyle: BlurStyle.outer,
+    ),
+    BoxShadow(
+      color: Styles.fiveStarWishResultBackgroundColor,
+      blurRadius: 25,
+      spreadRadius: -20,
+      blurStyle: BlurStyle.outer,
+    ),
+    BoxShadow(
+      color: Styles.fiveStarWishResultBackgroundColor,
+      blurRadius: 15,
+      spreadRadius: -20,
+      blurStyle: BlurStyle.outer,
+    ),
+  ];
+
+  static const List<BoxShadow> fourStarWishResultBoxShadow = [
+    BoxShadow(
+      color: Colors.white,
+      blurRadius: 20,
+      spreadRadius: -20,
+      blurStyle: BlurStyle.outer,
+    ),
+    BoxShadow(
+      color: Styles.fourStarWishResultBackgroundColor,
+      blurRadius: 25,
+      spreadRadius: -20,
+      blurStyle: BlurStyle.outer,
+    ),
+    BoxShadow(
+      color: Styles.fourStarWishResultBackgroundColor,
+      blurRadius: 15,
+      spreadRadius: -20,
+      blurStyle: BlurStyle.outer,
+    ),
+  ];
+
+  static const List<BoxShadow> commonWishResultBoxShadow = [
+    BoxShadow(
+      color: Styles.commonStarWishResultBackgroundColor,
+      blurRadius: 25,
+      spreadRadius: -20,
+      blurStyle: BlurStyle.outer,
+    ),
+    BoxShadow(
+      color: Colors.white,
+      blurRadius: 10,
+      spreadRadius: -20,
+      blurStyle: BlurStyle.outer,
+    ),
+    BoxShadow(
+      color: Styles.commonStarWishResultBackgroundColor,
+      blurRadius: 15,
+      spreadRadius: -20,
+      blurStyle: BlurStyle.outer,
+    ),
+  ];
 }
