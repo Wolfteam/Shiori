@@ -14,6 +14,7 @@ import 'package:shiori/presentation/wish_banner_history/banner_history_page.dart
 import 'package:shiori/presentation/wish_simulator/widgets/banner_main_image.dart';
 import 'package:shiori/presentation/wish_simulator/widgets/banner_top_image.dart';
 import 'package:shiori/presentation/wish_simulator/widgets/wish_button.dart';
+import 'package:shiori/presentation/wish_simulator/wish_result_page.dart';
 
 class WishSimulatorPage extends StatefulWidget {
   @override
@@ -177,7 +178,14 @@ class _WishSimulatorPageState extends State<WishSimulatorPage> {
   }
 
   void _wish(BuildContext context, int index, int qty) {
-    context.read<WishSimulatorBloc>().add(WishSimulatorEvent.wish(index: index, quantity: qty));
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        fullscreenDialog: true,
+        builder: (contex) => WishResultPage(),
+      ),
+    );
+    //context.read<WishSimulatorBloc>().add(WishSimulatorEvent.wish(index: index, quantity: qty));
   }
 }
 
