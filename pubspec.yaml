@@ -119,6 +119,7 @@ flutter:
     - assets/others/
     - assets/weapon_types/
     - assets/icon/icon.png
+    - assets/weapon_normal_skill_types/
 
   fonts:
     - family: Shiori
