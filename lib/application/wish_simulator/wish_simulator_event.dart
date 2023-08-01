@@ -11,9 +11,4 @@ class WishSimulatorEvent with _$WishSimulatorEvent {
   }) = _PeriodChanged;
 
   const factory WishSimulatorEvent.bannerSelected({required int index}) = _BannerSelected;
-
-  const factory WishSimulatorEvent.wish({
-    required int index,
-    required int quantity,
-  }) = _Wish;
 }
