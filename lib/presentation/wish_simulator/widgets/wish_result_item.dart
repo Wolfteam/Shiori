@@ -69,58 +69,73 @@ class WishResultItem extends StatelessWidget {
                   ),
                   child: Image.file(
                     File(image),
-                    fit: BoxFit.cover,
+                    fit: BoxFit.fill,
                   ),
                 ),
               ),
             ),
-            ClipPath(
-              clipper: _WishResultImageClipper(),
-              child: Align(
-                alignment: Alignment.bottomCenter,
-                child: DecoratedBox(
-                  decoration: BoxDecoration(
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black.withOpacity(0.5),
-                        blurRadius: 25,
-                        spreadRadius: 20,
-                      ),
-                      BoxShadow(
-                        color: Colors.black.withOpacity(0.3),
-                        blurRadius: 25,
-                        spreadRadius: 30,
-                      ),
-                    ],
-                  ),
-                  child: Container(
-                    margin: const EdgeInsets.only(bottom: 45),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        FractionallySizedBox(
-                          widthFactor: 0.5,
-                          child: Image.asset(bottomImg),
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: List.generate(
-                            rarity,
-                            (index) => const Icon(
-                              Icons.star,
-                              size: 15,
-                              color: Colors.yellow,
-                            ),
-                          ),
-                        ),
-                      ],
+            _BottomPart(image: bottomImg, rarity: rarity),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class _BottomPart extends StatelessWidget {
+  final String image;
+  final int rarity;
+
+  const _BottomPart({
+    required this.image,
+    required this.rarity,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return ClipPath(
+      clipper: _WishResultImageClipper(),
+      child: Align(
+        alignment: Alignment.bottomCenter,
+        child: DecoratedBox(
+          decoration: BoxDecoration(
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withOpacity(0.5),
+                blurRadius: 25,
+                spreadRadius: 20,
+              ),
+              BoxShadow(
+                color: Colors.black.withOpacity(0.3),
+                blurRadius: 25,
+                spreadRadius: 30,
+              ),
+            ],
+          ),
+          child: Container(
+            margin: const EdgeInsets.only(bottom: 45),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                FractionallySizedBox(
+                  widthFactor: 0.5,
+                  child: Image.asset(image),
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: List.generate(
+                    rarity,
+                    (index) => const Icon(
+                      Icons.star,
+                      size: 15,
+                      color: Colors.yellow,
                     ),
                   ),
                 ),
-              ),
+              ],
             ),
-          ],
+          ),
         ),
       ),
     );

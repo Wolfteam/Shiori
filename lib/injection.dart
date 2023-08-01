@@ -252,6 +252,14 @@ class Injection {
     return WishSimulatorBloc(genshinService, resourceService);
   }
 
+  static WishSimulatorResultBloc get wishSimulatorResultBloc {
+    final backupRestoreService = getIt<BackupRestoreService>();
+    final telemetryService = getIt<TelemetryService>();
+    final genshinService = getIt<GenshinService>();
+    final resourceService = getIt<ResourceService>();
+    return WishSimulatorResultBloc(genshinService);
+  }
+
   static WishBannerHistoryBloc get wishBannerHistoryBloc {
     final genshinService = getIt<GenshinService>();
     return WishBannerHistoryBloc(genshinService);

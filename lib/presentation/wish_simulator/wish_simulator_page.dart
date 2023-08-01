@@ -5,6 +5,7 @@ import 'package:shiori/domain/assets.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/extensions/iterable_extensions.dart';
 import 'package:shiori/domain/models/models.dart';
+import 'package:shiori/domain/wish_banner_constants.dart';
 import 'package:shiori/generated/l10n.dart';
 import 'package:shiori/injection.dart';
 import 'package:shiori/presentation/shared/extensions/element_type_extensions.dart';
@@ -143,13 +144,13 @@ class _WishSimulatorPageState extends State<WishSimulatorPage> {
                               imagePath: state.wishIconImage,
                               quantity: 1,
                               height: wishIconHeight,
-                              onTap: (qty) => _wish(context, state.selectedBannerIndex, qty),
+                              onTap: (qty) => _wish(context, state.selectedBannerIndex, qty, state.period),
                             ),
                             WishButton(
                               imagePath: state.wishIconImage,
                               quantity: 10,
                               height: wishIconHeight,
-                              onTap: (qty) => _wish(context, state.selectedBannerIndex, qty),
+                              onTap: (qty) => _wish(context, state.selectedBannerIndex, qty, state.period),
                             ),
                           ],
                         ),
@@ -177,12 +178,12 @@ class _WishSimulatorPageState extends State<WishSimulatorPage> {
     });
   }
 
-  void _wish(BuildContext context, int index, int qty) {
+  void _wish(BuildContext context, int index, int qty, WishBannerItemsPerPeriodModel period) {
     Navigator.push(
       context,
       MaterialPageRoute(
         fullscreenDialog: true,
-        builder: (contex) => WishResultPage(),
+        builder: (_) => WishResultPage(index: index, qty: qty, period: period),
       ),
     );
     //context.read<WishSimulatorBloc>().add(WishSimulatorEvent.wish(index: index, quantity: qty));
@@ -211,7 +212,7 @@ class _CenterTopPageView extends StatelessWidget {
             final selected = selectedBannerIndex == index;
             return BannerTopImage(
               index: index,
-              imagesPath: e.promotedItems.map((e) => e.image).toList(),
+              imagesPath: e.promotedItems.where((el) => el.rarity == WishBannerConstants.promotedRarity).map((e) => e.image).toList(),
               width: 200,
               height: selected ? 70 : 60,
               selected: selected,
