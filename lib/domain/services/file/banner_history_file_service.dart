@@ -15,7 +15,7 @@ abstract class BannerHistoryFileService extends BaseFileService {
 
   List<ChartTopItemModel> getTopCharts(bool mostReruns, ChartType type, BannerHistoryItemType bannerType, List<ItemCommonWithName> items);
 
-  WishBannerItemsPerPeriodModel getWishBannerPerPeriod(double version, DateTime from, DateTime until);
+  WishBannerItemsPerPeriodModel getWishSimulatorBannerPerPeriod(double version, DateTime from, DateTime until);
 
   List<WishBannerHistoryGroupedPeriodModel> getWishBannersHistoryGroupedByVersion();
 

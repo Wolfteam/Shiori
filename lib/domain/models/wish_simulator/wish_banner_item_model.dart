@@ -19,7 +19,7 @@ class WishBannerItemModel with _$WishBannerItemModel {
   const factory WishBannerItemModel({
     required BannerItemType type,
     required String image,
-    required List<ItemCommon> promotedItems,
+    required List<ItemCommonWithRarityAndType> promotedItems,
     @Default(<WishBannerCharacterModel>[]) List<WishBannerCharacterModel> characters,
     @Default(<WishBannerWeaponModel>[]) List<WishBannerWeaponModel> weapons,
   }) = _WishBannerItemModel;
@@ -29,9 +29,9 @@ class WishBannerItemModel with _$WishBannerItemModel {
 class WishBannerCharacterModel with _$WishBannerCharacterModel {
   const factory WishBannerCharacterModel({
     required String key,
-    required ElementType elementType,
     required int rarity,
     required String image,
+    required ElementType elementType,
   }) = _WishBannerCharacterModel;
 }
 
@@ -41,5 +41,6 @@ class WishBannerWeaponModel with _$WishBannerWeaponModel {
     required String key,
     required int rarity,
     required String image,
+    required WeaponType weaponType,
   }) = _WishBannerWeaponModel;
 }

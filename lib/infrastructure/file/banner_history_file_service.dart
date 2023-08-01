@@ -10,8 +10,7 @@ import 'package:shiori/domain/extensions/double_extensions.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/file/file_infrastructure.dart';
 import 'package:shiori/domain/services/resources_service.dart';
-
-const int promotedRarity = 5;
+import 'package:shiori/domain/wish_banner_constants.dart';
 
 class BannerHistoryFileServiceImpl extends BannerHistoryFileService {
   final ResourceService _resourceService;
@@ -299,7 +298,25 @@ class BannerHistoryFileServiceImpl extends BannerHistoryFileService {
   }
 
   @override
-  WishBannerItemsPerPeriodModel getWishBannerPerPeriod(double version, DateTime from, DateTime until) {
+  WishBannerItemsPerPeriodModel getWishSimulatorBannerPerPeriod(double version, DateTime from, DateTime until) {
+    final otherCharacters = _characters
+        .getCharactersForCard()
+        .where(
+          (el) =>
+              !el.isComingSoon && !el.isNew && !WishBannerConstants.fourStarStandardBannerCharacterExclusiveKeys.contains(el.key) && el.stars == 4 ||
+              WishBannerConstants.commonFiveStarCharacterKeys.contains(el.key),
+        )
+        .map((el) {
+      final character = _characters.getCharacter(el.key);
+      final imagePath = _resourceService.getCharacterIconImagePath(character.iconImage);
+      return WishBannerCharacterModel(key: el.key, image: imagePath, rarity: character.rarity, elementType: character.elementType);
+    }).toList();
+    final otherWeapons = _weapons.getWeaponsForCard().where((el) => WishBannerConstants.commonWeaponKeys.contains(el.key)).map((el) {
+      final weapon = _weapons.getWeapon(el.key);
+      final imagePath = _resourceService.getWeaponImagePath(weapon.image, weapon.type);
+      return WishBannerWeaponModel(key: el.key, rarity: weapon.rarity, image: imagePath, weaponType: el.type);
+    }).toList();
+
     final banners = <WishBannerItemModel>[];
     final bannerPeriods = _bannerHistoryFile.banners.where((el) => el.version == version).toList();
     for (final BannerHistoryPeriodFileModel period in bannerPeriods) {
@@ -310,26 +327,48 @@ class BannerHistoryFileServiceImpl extends BannerHistoryFileService {
 
       final characters = <WishBannerCharacterModel>[];
       final weapons = <WishBannerWeaponModel>[];
-      final promoted = <ItemCommon>[];
+      final promoted = <ItemCommonWithRarityAndType>[];
       for (final key in period.itemKeys) {
         switch (period.type) {
           case BannerHistoryItemType.character:
             final character = _characters.getCharacter(key);
-            final imagePath = _resourceService.getCharacterIconImagePath(character.iconImage);
-            characters.add(WishBannerCharacterModel(key: key, image: imagePath, elementType: character.elementType, rarity: character.rarity));
-            if (character.rarity == promotedRarity) {
-              promoted.add(ItemCommon(key, imagePath));
-            }
+            final imagePath = _resourceService.getCharacterImagePath(character.image);
+            final promotedImagePath = _resourceService.getCharacterIconImagePath(character.iconImage);
+            characters.add(WishBannerCharacterModel(key: key, image: imagePath, rarity: character.rarity, elementType: character.elementType));
+            promoted.add(ItemCommonWithRarityAndType(key, promotedImagePath, character.rarity, ItemType.character));
             break;
           case BannerHistoryItemType.weapon:
             final weapon = _weapons.getWeapon(key);
             final imagePath = _resourceService.getWeaponImagePath(weapon.image, weapon.type);
-            weapons.add(WishBannerWeaponModel(key: key, rarity: weapon.rarity, image: imagePath));
-            if (weapon.rarity == promotedRarity) {
-              promoted.add(ItemCommon(key, imagePath));
-            }
+            weapons.add(WishBannerWeaponModel(key: key, rarity: weapon.rarity, image: imagePath, weaponType: weapon.type));
+            promoted.add(ItemCommonWithRarityAndType(key, imagePath, weapon.rarity, ItemType.weapon));
             break;
         }
+      }
+
+      final otherCharactersForThisBanner = period.type == BannerHistoryItemType.character
+          ? otherCharacters
+          : otherCharacters.where((el) => el.rarity != WishBannerConstants.promotedRarity).toList();
+
+      final otherWeaponsForThisBanner = period.type == BannerHistoryItemType.weapon
+          ? otherWeapons
+          : otherWeapons.where((el) => el.rarity != WishBannerConstants.promotedRarity).toList();
+
+      for (final char in otherCharactersForThisBanner) {
+        final alreadyAdded = characters.any((el) => el.key == char.key);
+        if (alreadyAdded) {
+          continue;
+        }
+        characters.add(char);
+      }
+
+      for (final weapon in otherWeaponsForThisBanner) {
+        final alreadyAdded = weapons.any((el) => el.key == weapon.key);
+        if (alreadyAdded) {
+          continue;
+        }
+
+        weapons.add(weapon);
       }
 
       final bannerItem = WishBannerItemModel(
@@ -346,6 +385,8 @@ class BannerHistoryFileServiceImpl extends BannerHistoryFileService {
       throw Exception('Either version = $version, from = $from or until = $until is not valid');
     }
 
+    banners.add(getWishStandardBanner());
+
     return WishBannerItemsPerPeriodModel(
       from: from,
       until: until,
@@ -357,9 +398,9 @@ class BannerHistoryFileServiceImpl extends BannerHistoryFileService {
   @override
   List<WishBannerHistoryGroupedPeriodModel> getWishBannersHistoryGroupedByVersion() {
     final possiblePromotedItems = _characters
-        .getItemCommonWithNameByRarity(promotedRarity)
+        .getItemCommonWithNameByRarity(WishBannerConstants.promotedRarity)
         .concat(
-          _weapons.getItemCommonWithNameByRarity(promotedRarity),
+          _weapons.getItemCommonWithNameByRarity(WishBannerConstants.promotedRarity),
         )
         .toList();
     final grouped = _bannerHistoryFile.banners.groupListsBy((el) => el.version).entries.map((versionGroup) {
@@ -422,90 +463,36 @@ class BannerHistoryFileServiceImpl extends BannerHistoryFileService {
     final allCharacters = _characters.getCharactersForCard();
     final allWeapons = _weapons.getWeaponsForCard();
 
-    final fiveStarCharacterKeys = [
-      'qiqi',
-      'jean',
-      'tighnari',
-      'keqing',
-      'mona',
-      'dehya',
-      'diluc',
-    ];
+    final weaponKeys = WishBannerConstants.commonFiveStarWeaponKeys
+        .concat(WishBannerConstants.commonFourStarWeaponKeys)
+        .concat(WishBannerConstants.commonThreeStarWeaponKeys)
+        .toList();
 
-    final fiveStarWeaponKeys = [
-      'amos-bow',
-      'skyward-harp',
-      'lost-prayer-to-the-sacred-winds',
-      'skyward-atlas',
-      'skyward-pride',
-      'wolfs-gravestone',
-      'primordial-jade-winged-spear',
-      'skyward-spine',
-      'aquila-favonia',
-      'skyward-blade',
-    ];
-
-    final fourStarWeaponKeys = [
-      'favonius-warbow',
-      'rust',
-      'sacrificial-bow',
-      'the-stringless',
-      'eye-of-perception',
-      'favonius-codex',
-      'sacrificial-fragments',
-      'the-widsith',
-      'favonius-greatsword',
-      'rainslasher',
-      'sacrificial-greatsword',
-      'the-bell',
-      'dragons-bane',
-      'favonius-lance',
-      'favonius-sword',
-      'lions-roar',
-      'sacrificial-sword',
-      'the-flute',
-    ];
-
-    final threeStarWeaponKeys = [
-      'raven-bow',
-      'sharpshooters-oath',
-      'slingshot',
-      'emerald-orb',
-      'magic-guide',
-      'thrilling-tales-of-dragon-slayers',
-      'bloodtainted-greatsword',
-      'debate-club',
-      'ferrous-shadow',
-      'black-tassel',
-      'cool-steel',
-      'harbinger-of-dawn',
-      'skyrider-sword',
-    ];
-
-    final weaponKeys = fiveStarWeaponKeys.concat(fourStarWeaponKeys).concat(threeStarWeaponKeys).toList();
+    final promotedCharKey = WishBannerConstants.commonFiveStarCharacterKeys.first;
+    final promoted = ItemCommonWithRarityAndType(
+      promotedCharKey,
+      _resourceService.getCharacterIconImagePath(_characters.getCharacter(promotedCharKey).iconImage),
+      WishBannerConstants.promotedRarity,
+      ItemType.character,
+    );
     return WishBannerItemModel(
       type: BannerItemType.standard,
       image: Assets.wishBannerStandardImgPath,
-      promotedItems: [
-        ItemCommon(
-          fiveStarCharacterKeys.first,
-          _resourceService.getCharacterIconImagePath(_characters.getCharacter(fiveStarCharacterKeys.first).iconImage),
-        )
-      ],
+      promotedItems: [promoted],
       characters: allCharacters
-          .where((el) => !el.isComingSoon && !el.isNew && el.stars == 4 || fiveStarCharacterKeys.contains(el.key))
+          .where((el) => !el.isComingSoon && !el.isNew && el.stars == 4 || WishBannerConstants.commonFiveStarCharacterKeys.contains(el.key))
           .map(
             (el) => WishBannerCharacterModel(
               key: el.key,
               rarity: el.stars,
-              elementType: el.elementType,
               image: el.image,
+              elementType: el.elementType,
             ),
           )
           .toList(),
       weapons: allWeapons
           .where((el) => weaponKeys.contains(el.key))
-          .map((el) => WishBannerWeaponModel(key: el.key, rarity: el.rarity, image: el.image))
+          .map((el) => WishBannerWeaponModel(key: el.key, rarity: el.rarity, image: el.image, weaponType: el.type))
           .toList(),
     );
   }
