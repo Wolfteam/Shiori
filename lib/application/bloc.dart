@@ -52,3 +52,4 @@ export 'weapon/weapon_bloc.dart';
 export 'weapons/weapons_bloc.dart';
 export 'wish_banner_history/wish_banner_history_bloc.dart';
 export 'wish_simulator/wish_simulator_bloc.dart';
+export 'wish_simulator_result/wish_simulator_result_bloc.dart';
