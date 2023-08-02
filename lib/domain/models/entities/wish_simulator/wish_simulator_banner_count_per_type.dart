@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:hive/hive.dart';
 import 'package:shiori/domain/enums/enums.dart';
 
@@ -9,16 +11,31 @@ class WishSimulatorBannerCountPerType extends HiveObject {
   final int type;
 
   @HiveField(1)
-  int totalWishCount = 0;
-  
+  int totalWishCount;
+
   @HiveField(2)
-  Map<int, int> totalXStarCount = {};
+  Map<int, int> totalXStarCount;
 
   @HiveField(3)
-  Map<int, int> currentXStarCount = {};
+  Map<int, int> currentXStarCount;
 
-  WishSimulatorBannerCountPerType({required BannerItemType type})
-      : type = type.index;
+  @HiveField(4)
+  Map<int, bool> fiftyFiftyXStarGuaranteed;
+
+  WishSimulatorBannerCountPerType(
+    this.type,
+    this.totalWishCount,
+    this.totalXStarCount,
+    this.currentXStarCount,
+    this.fiftyFiftyXStarGuaranteed,
+  );
+
+  WishSimulatorBannerCountPerType.newOne(BannerItemType type)
+      : type = type.index,
+        totalWishCount = 0,
+        totalXStarCount = {},
+        currentXStarCount = {},
+        fiftyFiftyXStarGuaranteed = {};
 
   bool isItemGuaranteed(int rarity, int guaranteedAt) {
     if (rarity <= 0) {
@@ -36,7 +53,7 @@ class WishSimulatorBannerCountPerType extends HiveObject {
     return current + 1 >= guaranteedAt;
   }
 
-  void pull(int rarity) {
+  Future<void> pull(int rarity, bool? gotFeaturedItem) {
     if (rarity <= 0) {
       throw Exception('The provided rarity = $rarity is not valid');
     }
@@ -46,5 +63,20 @@ class WishSimulatorBannerCountPerType extends HiveObject {
 
     int totalCountPerRarity = totalXStarCount[rarity] ?? 0;
     totalXStarCount[rarity] = totalCountPerRarity++;
+
+    if (gotFeaturedItem != null) {
+      //this means that we may've won the 50/50
+      fiftyFiftyXStarGuaranteed[rarity] = !gotFeaturedItem;
+    }
+
+    return save();
+  }
+
+  bool shouldWinFiftyFifty(int rarity) {
+    if (fiftyFiftyXStarGuaranteed[rarity] == true) {
+      return true;
+    }
+
+    return Random().nextBool();
   }
 }

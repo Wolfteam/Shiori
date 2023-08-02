@@ -49,9 +49,10 @@ class WishSimulatorResultBloc extends Bloc<WishSimulatorResultEvent, WishSimulat
     final bannerKey = _generateBannerKey(banner);
     final results = <WishBannerItemResultModel>[];
     for (int i = 1; i <= pulls; i++) {
-      final int rarity = _getRandomItemRarity(history, bannerRates);
-      //TODO: The history should contain a bool for this prop
-      final winsFiftyFifty = _random.nextBool();
+      final int randomRarity = bannerRates.getGuaranteedIfExists(history)?.rarity ??
+          _getRandomItemRarity(history.currentXStarCount, bannerRates);
+      final isRarityInPromoted = banner.promotedItems.any((el) => el.rarity == randomRarity);
+      final winsFiftyFifty = isRarityInPromoted && history.shouldWinFiftyFifty(randomRarity);
       final pool = [
         ...banner.characters.map(
           (e) => WishBannerItemResultModel.character(
@@ -70,21 +71,21 @@ class WishSimulatorResultBloc extends Bloc<WishSimulatorResultEvent, WishSimulat
           ),
         )
       ].where((el) {
-        if (el.rarity != rarity) {
+        if (el.rarity != randomRarity) {
           return false;
         }
 
-        if (winsFiftyFifty) {
-          return banner.promotedItems.any((p) => p.key == el.key);
+        if (!isRarityInPromoted) {
+          return true;
         }
 
-        return !banner.promotedItems.any((p) => p.key == el.key);
+        return banner.promotedItems.any((p) => winsFiftyFifty ? p.key == el.key : p.key != el.key);
       }).toList();
 
       final pickedItem = pool[_random.nextInt(pool.length)];
       results.add(pickedItem);
 
-      await history.save();
+      await history.pull(randomRarity, !isRarityInPromoted ? null : winsFiftyFifty);
 
       final itemType = pickedItem.map(character: (_) => ItemType.character, weapon: (_) => ItemType.weapon);
       await _dataService.wishSimulator.saveBannerItemPullHistory(bannerKey, pickedItem.key, itemType);
@@ -106,18 +107,11 @@ class WishSimulatorResultBloc extends Bloc<WishSimulatorResultEvent, WishSimulat
     }
   }
 
-  int _getRandomItemRarity(WishSimulatorBannerCountPerType history, _RatesPerBannerType bannerRates) {
-    final guaranteed = bannerRates.getGuaranteedIfExists(history);
-    if (guaranteed != null) {
-      history.pull(guaranteed.rarity);
-      return guaranteed.rarity;
-    }
-
+  int _getRandomItemRarity(Map<int, int> currentXStarCount, _RatesPerBannerType bannerRates) {
     final probs = <double>[];
     final randomRarities = <int>[];
-    final manuallyAddMinRarity =
-        !history.currentXStarCount.entries.any((el) => el.key == WishBannerConstants.minObtainableRarity);
-    for (final kvp in history.currentXStarCount.entries) {
+    final manuallyAddMinRarity = !currentXStarCount.containsKey(WishBannerConstants.minObtainableRarity);
+    for (final kvp in currentXStarCount.entries) {
       final rarity = kvp.key;
       final pullCount = kvp.value;
       final bannerRate = bannerRates.rates.firstWhere((el) => el.rarity == rarity);
@@ -136,9 +130,7 @@ class WishSimulatorResultBloc extends Bloc<WishSimulatorResultEvent, WishSimulat
 
     randomRarities.shuffle();
 
-    final int pickedRarity = randomRarities[_random.nextInt(randomRarities.length)];
-    history.pull(pickedRarity);
-    return pickedRarity;
+    return randomRarities[_random.nextInt(randomRarities.length)];
   }
 }
 
