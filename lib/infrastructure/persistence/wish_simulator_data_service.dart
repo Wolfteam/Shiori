@@ -3,6 +3,7 @@ import 'package:hive_flutter/hive_flutter.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/extensions/string_extensions.dart';
 import 'package:shiori/domain/models/entities.dart';
+import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/persistence/wish_simulator_data_service.dart';
 
 class WishSimulatorDataServiceImpl implements WishSimulatorDataService {
@@ -18,8 +19,11 @@ class WishSimulatorDataServiceImpl implements WishSimulatorDataService {
   }
 
   @override
-  Future<void> deleteThemAll() async {
-    await _bannerCountPerType.clear();
+  Future<void> deleteThemAll() {
+    return Future.wait([
+      _bannerCountPerType.clear(),
+      clearAllBannerItemPullHistory(),
+    ]);
   }
 
 //TODO: RENAME TO WishSimulatorBannerPullHistoryPerType
@@ -28,7 +32,7 @@ class WishSimulatorDataServiceImpl implements WishSimulatorDataService {
     WishSimulatorBannerCountPerType? value =
         _bannerCountPerType.values.firstWhereOrDefault((el) => el.type == type.index);
     if (value == null) {
-      value = WishSimulatorBannerCountPerType(type: type);
+      value = WishSimulatorBannerCountPerType.newOne(type);
       await _bannerCountPerType.add(value);
     }
     return value;
@@ -62,5 +66,41 @@ class WishSimulatorDataServiceImpl implements WishSimulatorDataService {
     value.itemCount++;
     value.pulledOnDates.add(DateTime.now().toUtc());
     return value.save();
+  }
+
+  @override
+  Future<void> clearBannerItemPullHistory(String bannerKey) async {
+    if (bannerKey.isNullEmptyOrWhitespace) {
+      throw Exception('Invalid bannerKey');
+    }
+
+    final keys = _bannerPullHistory.values.where((el) => el.bannerKey == bannerKey).map((e) => e.key).toList();
+    if (keys.isNotEmpty) {
+      await _bannerPullHistory.deleteAll(keys);
+    }
+  }
+
+  @override
+  Future<void> clearAllBannerItemPullHistory() {
+    return _bannerPullHistory.clear();
+  }
+
+  @override
+  List<WishSimulatorBannerItemPullHistoryModel> getBannerItemsPullFlatHistory(String bannerKey) {
+    if (bannerKey.isNullEmptyOrWhitespace) {
+      throw Exception('Invalid bannerKey');
+    }
+
+    final items = <WishSimulatorBannerItemPullHistoryModel>[];
+    final history = _bannerPullHistory.values.where((el) => el.bannerKey == bannerKey).toList();
+    for (final itemHistory in history) {
+      final key = itemHistory.itemKey;
+      final type = ItemType.values[itemHistory.itemType];
+      for (final date in itemHistory.pulledOnDates) {
+        items.add(WishSimulatorBannerItemPullHistoryModel(key: key, type: type, pulledOn: date));
+      }
+    }
+
+    return items..sort((x, y) => y.pulledOn.compareTo(x.pulledOn));
   }
 }

@@ -385,7 +385,7 @@ class BannerHistoryFileServiceImpl extends BannerHistoryFileService {
       throw Exception('Either version = $version, from = $from or until = $until is not valid');
     }
 
-    banners.add(getWishStandardBanner());
+    banners.add(getWishSimulatorStandardBanner());
 
     return WishBannerItemsPerPeriodModel(
       from: from,
@@ -459,7 +459,7 @@ class BannerHistoryFileServiceImpl extends BannerHistoryFileService {
   }
 
   @override
-  WishBannerItemModel getWishStandardBanner() {
+  WishBannerItemModel getWishSimulatorStandardBanner() {
     final allCharacters = _characters.getCharactersForCard();
     final allWeapons = _weapons.getWeaponsForCard();
 

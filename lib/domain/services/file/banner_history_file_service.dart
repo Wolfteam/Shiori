@@ -19,5 +19,5 @@ abstract class BannerHistoryFileService extends BaseFileService {
 
   List<WishBannerHistoryGroupedPeriodModel> getWishBannersHistoryGroupedByVersion();
 
-  WishBannerItemModel getWishStandardBanner();
+  WishBannerItemModel getWishSimulatorStandardBanner();
 }
