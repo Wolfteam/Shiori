@@ -12,6 +12,7 @@ import 'package:shiori/domain/services/persistence/game_codes_data_service.dart'
 import 'package:shiori/domain/services/persistence/inventory_data_service.dart';
 import 'package:shiori/domain/services/persistence/notifications_data_service.dart';
 import 'package:shiori/domain/services/persistence/tier_list_data_service.dart';
+import 'package:shiori/domain/services/persistence/wish_simulator_data_service.dart';
 import 'package:shiori/domain/services/resources_service.dart';
 import 'package:shiori/infrastructure/persistence/calculator_data_service.dart';
 import 'package:shiori/infrastructure/persistence/custom_builds_data_service.dart';
@@ -19,6 +20,7 @@ import 'package:shiori/infrastructure/persistence/game_codes_data_service.dart';
 import 'package:shiori/infrastructure/persistence/inventory_data_service.dart';
 import 'package:shiori/infrastructure/persistence/notifications_data_service.dart';
 import 'package:shiori/infrastructure/persistence/tier_list_data_service.dart';
+import 'package:shiori/infrastructure/persistence/wish_simulator_data_service.dart';
 import 'package:synchronized/synchronized.dart';
 
 class DataServiceImpl implements DataService {
@@ -27,6 +29,7 @@ class DataServiceImpl implements DataService {
   final NotificationsDataService _notifications;
   final GameCodesDataService _gameCodes;
   final TierListDataService _tierList;
+  final WishSimulatorDataService _wishSimulator;
 
   late final CalculatorDataService _calculator;
 
@@ -51,12 +54,16 @@ class DataServiceImpl implements DataService {
   @override
   TierListDataService get tierList => _tierList;
 
+  @override
+  WishSimulatorDataService get wishSimulator => _wishSimulator;
+
   DataServiceImpl(GenshinService genshinService, CalculatorService calculatorService, ResourceService resourceService)
       : _inventory = InventoryDataServiceImpl(genshinService),
         _builds = CustomBuildsDataServiceImpl(genshinService, resourceService),
         _notifications = NotificationsDataServiceImpl(genshinService),
         _gameCodes = GameCodesDataServiceImpl(genshinService, resourceService),
-        _tierList = TierListDataServiceImpl(genshinService, resourceService) {
+        _tierList = TierListDataServiceImpl(genshinService, resourceService),
+        _wishSimulator = WishSimulatorDataServiceImpl() {
     _calculator = CalculatorDataServiceImpl(genshinService, calculatorService, _inventory, resourceService);
   }
 
@@ -68,6 +75,7 @@ class DataServiceImpl implements DataService {
     await _notifications.init();
     await _gameCodes.init();
     await _tierList.init();
+    await _wishSimulator.init();
   }
 
   @override
@@ -96,6 +104,7 @@ class DataServiceImpl implements DataService {
       await _notifications.deleteThemAll();
       await _gameCodes.deleteThemAll();
       await _tierList.deleteThemAll();
+      await _wishSimulator.deleteThemAll();
     });
   }
 
@@ -130,5 +139,7 @@ class DataServiceImpl implements DataService {
     Hive.registerAdapter(NotificationRealmCurrencyAdapter());
     Hive.registerAdapter(NotificationResinAdapter());
     Hive.registerAdapter(NotificationWeeklyBossAdapter());
+    Hive.registerAdapter(WishSimulatorBannerCountPerTypeAdapter());
+    Hive.registerAdapter(WishSimulatorBannerPullHistoryAdapter());
   }
 }

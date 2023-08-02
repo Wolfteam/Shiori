@@ -1,5 +1,7 @@
 class WishBannerConstants {
+  //TODO: RENAME THIS VARIABLES
   static const int promotedRarity = 5;
+  static const int minObtainableRarity = 3;
 
   static const commonFiveStarCharacterKeys = [
     'qiqi',
@@ -63,5 +65,6 @@ class WishBannerConstants {
     'skyrider-sword',
   ];
 
-  static List<String> commonWeaponKeys = commonFiveStarWeaponKeys + commonFourStarWeaponKeys + commonFiveStarCharacterKeys;
+  static List<String> commonWeaponKeys =
+      commonFiveStarWeaponKeys + commonFourStarWeaponKeys + commonFiveStarCharacterKeys;
 }
