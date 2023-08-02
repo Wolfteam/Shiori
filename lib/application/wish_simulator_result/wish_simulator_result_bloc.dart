@@ -1,157 +1,234 @@
 import 'dart:math';
 
+import 'package:collection/collection.dart';
 import 'package:bloc/bloc.dart';
+import 'package:darq/darq.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:shiori/domain/enums/enums.dart';
+import 'package:shiori/domain/models/entities.dart';
 import 'package:shiori/domain/models/models.dart';
+import 'package:shiori/domain/services/data_service.dart';
 import 'package:shiori/domain/services/genshin_service.dart';
+import 'package:shiori/domain/extensions/double_extensions.dart';
+import 'package:shiori/domain/wish_banner_constants.dart';
 
 part 'wish_simulator_result_bloc.freezed.dart';
 part 'wish_simulator_result_event.dart';
 part 'wish_simulator_result_state.dart';
 
-class WishSimulatorResultBloc
-    extends Bloc<WishSimulatorResultEvent, WishSimulatorResultState> {
+class WishSimulatorResultBloc extends Bloc<WishSimulatorResultEvent, WishSimulatorResultState> {
   final GenshinService _genshinService;
-  final _random = Random();
+  final DataService _dataService;
+  final Random _random;
 
-  WishSimulatorResultBloc(this._genshinService)
-      : super(const WishSimulatorResultState.loading());
+  WishSimulatorResultBloc(this._genshinService, this._dataService)
+      : _random = Random(),
+        super(const WishSimulatorResultState.loading());
 
   @override
-  Stream<WishSimulatorResultState> mapEventToState(
-      WishSimulatorResultEvent event) async* {
-    final banner = event.period.banners[event.index];
-    final characters = banner.characters
-        .take(3)
-        .map((e) => WishBannerItemResultModel.character(
-            image: e.image, rarity: e.rarity, elementType: e.elementType))
-        .toList();
-    final weapons = banner.weapons
-        .take(7)
-        .map(
+  Stream<WishSimulatorResultState> mapEventToState(WishSimulatorResultEvent event) async* {
+    final s = await event.map(
+      init: (e) => _pull(e.qty, e.index, e.period),
+    );
+
+    yield s;
+  }
+
+  Future<WishSimulatorResultState> _pull(int pulls, int bannerIndex, WishBannerItemsPerPeriodModel period) async {
+    if (pulls <= 0) {
+      throw Exception('The provided pulls = $pulls is not valid');
+    }
+
+    if (bannerIndex < 0 || period.banners.elementAtOrNull(bannerIndex) == null) {
+      throw Exception('The provided bannerIndex = $bannerIndex is not valid');
+    }
+
+    final banner = period.banners[bannerIndex];
+    final history = await _dataService.wishSimulator.getBannerCountPerType(banner.type);
+    final bannerRates = _RatesPerBannerType(banner.type);
+    final bannerKey = _generateBannerKey(banner);
+    final results = <WishBannerItemResultModel>[];
+    for (int i = 1; i <= pulls; i++) {
+      final int rarity = _getRandomItemRarity(history, bannerRates);
+      //TODO: The history should contain a bool for this prop
+      final winsFiftyFifty = _random.nextBool();
+      final pool = [
+        ...banner.characters.map(
+          (e) => WishBannerItemResultModel.character(
+            key: e.key,
+            image: e.image,
+            rarity: e.rarity,
+            elementType: e.elementType,
+          ),
+        ),
+        ...banner.weapons.map(
           (e) => WishBannerItemResultModel.weapon(
-              image: e.image, rarity: e.rarity, weaponType: e.weaponType),
+            key: e.key,
+            image: e.image,
+            rarity: e.rarity,
+            weaponType: e.weaponType,
+          ),
         )
-        .toList();
+      ].where((el) {
+        if (el.rarity != rarity) {
+          return false;
+        }
 
-    yield WishSimulatorResultState.loaded(results: [...characters, ...weapons]);
+        if (winsFiftyFifty) {
+          return banner.promotedItems.any((p) => p.key == el.key);
+        }
+
+        return !banner.promotedItems.any((p) => p.key == el.key);
+      }).toList();
+
+      final pickedItem = pool[_random.nextInt(pool.length)];
+      results.add(pickedItem);
+
+      await history.save();
+
+      final itemType = pickedItem.map(character: (_) => ItemType.character, weapon: (_) => ItemType.weapon);
+      await _dataService.wishSimulator.saveBannerItemPullHistory(bannerKey, pickedItem.key, itemType);
+    }
+
+    results.sort((x, y) => y.rarity.compareTo(x.rarity));
+
+    return WishSimulatorResultState.loaded(results: results);
   }
 
-  int _rollRandom(int pullCount, BannerItemType type) {
-    BannerRate? fiveStarRate;
-    BannerRate? fourStarRate;
-    switch (type) {
+  String _generateBannerKey(WishBannerItemModel banner) {
+    switch (banner.type) {
       case BannerItemType.character:
-      case BannerItemType.standard:
-        fiveStarRate = BannerRate(5, 90, 0.6, 40, 74);
-        fourStarRate = BannerRate(4, 10, 5.1, 4, 7);
-        break;
       case BannerItemType.weapon:
-        fiveStarRate = BannerRate(5, 80, 0.7, 30, 64);
-        fourStarRate = BannerRate(4, 10, 6.0, 4, 7);
-        break;
-      default:
-        throw Exception('Invalid banner item type');
+        //TODO: THE KEY HERE
+        return '${banner.type}';
+      case BannerItemType.standard:
+        return '${banner.type}';
     }
-
-    final double fiveStarProb = _getProb(pullCount, fiveStarRate);
-    final double fourStarProb = _getProb(pullCount, fourStarRate);
-    final double threeStarProp =
-        dp(100 - (fiveStarProb - fourStarProb).abs(), 2);
-    print([threeStarProp, fourStarProb, fiveStarProb]);
-    final probs = [
-      ...List.filled(threeStarProp.toInt(), 3),
-      ...List.filled(fourStarProb.toInt(), 4),
-      ...List.filled(fiveStarProb.toInt(), 5)
-    ]..shuffle();
-
-    print('Picking random...');
-    final int picked = probs[Random().nextInt(probs.length)];
-    return picked;
   }
 
-  double _getProb(int i, BannerRate rate) {
-    double currentDelta = rate.initialRate / 100;
-    if (i >= rate.softRateIncreasesAt && i < rate.hardRateIncreasesAt) {
-      currentDelta *= 2;
-    } else if (i >= rate.hardRateIncreasesAt) {
-      currentDelta *= 4;
+  int _getRandomItemRarity(WishSimulatorBannerCountPerType history, _RatesPerBannerType bannerRates) {
+    final guaranteed = bannerRates.getGuaranteedIfExists(history);
+    if (guaranteed != null) {
+      history.pull(guaranteed.rarity);
+      return guaranteed.rarity;
     }
 
-    //At 40 pulls, the 5* rate increases to 1.18%, and at 75 pulls, the rate increases to 25%.
-    double x = -1 * i * currentDelta;
-    final maxX = log(1 - 0.99);
-    if (maxX > x) {
-      x = maxX;
+    final probs = <double>[];
+    final randomRarities = <int>[];
+    final manuallyAddMinRarity =
+        !history.currentXStarCount.entries.any((el) => el.key == WishBannerConstants.minObtainableRarity);
+    for (final kvp in history.currentXStarCount.entries) {
+      final rarity = kvp.key;
+      final pullCount = kvp.value;
+      final bannerRate = bannerRates.rates.firstWhere((el) => el.rarity == rarity);
+      final considerPullCount = pullCount > bannerRate.softRateIncreasesAt;
+      final double prob = bannerRate.getProb(pullCount, considerPullCount);
+      probs.add(prob);
+      randomRarities.addAll(List.filled(prob.round(), rarity));
     }
 
-    final double y = dp((1 - exp(x)) * 100, 4);
+    if (manuallyAddMinRarity) {
+      final remaingProb = (100 - probs.sum).round();
+      if (remaingProb > 0) {
+        randomRarities.addAll(List.filled(remaingProb, WishBannerConstants.minObtainableRarity));
+      }
+    }
+
+    randomRarities.shuffle();
+
+    final int pickedRarity = randomRarities[_random.nextInt(randomRarities.length)];
+    history.pull(pickedRarity);
+    return pickedRarity;
+  }
+}
+
+class _BannerRate {
+  final int rarity;
+  final int guaranteedAt;
+  final double initialRate;
+  final int softRateIncreasesAt;
+  final int hardRateIncreasesAt;
+
+  const _BannerRate(
+    this.rarity,
+    this.guaranteedAt,
+    this.initialRate,
+    this.softRateIncreasesAt,
+    this.hardRateIncreasesAt,
+  )   : assert(rarity >= WishBannerConstants.minObtainableRarity),
+        assert(guaranteedAt > 0 && guaranteedAt > hardRateIncreasesAt),
+        assert(initialRate > 0 && initialRate < 100),
+        assert(softRateIncreasesAt > 0 && softRateIncreasesAt < hardRateIncreasesAt);
+
+  double _getSoftRateMultiplier() {
+    if (rarity == WishBannerConstants.promotedRarity) {
+      return 0.5;
+    }
+
+    return 1.5;
+  }
+
+  double _getHardRateMultiplier() {
+    if (rarity == WishBannerConstants.promotedRarity) {
+      return 2;
+    }
+    return 3;
+  }
+
+  double _getRate(int pullCount) {
+    double rate = initialRate / 100;
+    if (pullCount >= softRateIncreasesAt && pullCount < hardRateIncreasesAt) {
+      rate *= _getSoftRateMultiplier();
+    } else if (pullCount >= hardRateIncreasesAt) {
+      rate *= _getHardRateMultiplier();
+    }
+
+    return rate;
+  }
+
+  double getProb(int pullCount, bool considerPullCount) {
+    final double rate = _getRate(pullCount);
+    double x = -1 * rate;
+    if (considerPullCount) {
+      x *= pullCount;
+    }
+
+    final double y = ((1 - exp(x)) * 100).truncateToDecimalPlaces(fractionalDigits: 4);
+    if (y > 100) {
+      return 100;
+    }
     return y;
   }
 }
 
-class WishSimulatorCountPerType {
-  BannerItemType type;
-  int wishCount;
-
-  WishSimulatorCountPerType({
-    required this.type,
-    required this.wishCount,
-  });
-}
-
-class BannerRate {
-  int rarity;
-  int maxPull;
-  double initialRate;
-  int softRateIncreasesAt;
-  int hardRateIncreasesAt;
-
-  BannerRate(this.rarity, this.maxPull, this.initialRate,
-      this.softRateIncreasesAt, this.hardRateIncreasesAt);
-}
-
-double dp(double val, int places) {
-  final mod = pow(10.0, places);
-  return (val * mod).round().toDouble() / mod;
-}
-
-class WishHistory {
+class _RatesPerBannerType {
   final BannerItemType type;
-  int totalCount;
-  int fourStarCount;
-  int fiveStarCount;
+  final List<_BannerRate> rates = [];
 
-  WishHistory(
-      this.type, this.totalCount, this.fourStarCount, this.fiveStarCount);
-
-  bool isFiveStarGuaranteed(int maxCount) {
-    return _isXStarGuaranteed(maxCount, fiveStarCount);
-  }
-
-  bool isFourStarGuaranteed(int maxCount) {
-    return _isXStarGuaranteed(maxCount, fourStarCount);
-  }
-
-  void pull(int rarity) {
-    totalCount++;
-    if (rarity == 4) {
-      fourStarCount = 0;
-    } else {
-      fourStarCount++;
+  _RatesPerBannerType(this.type) {
+    switch (type) {
+      case BannerItemType.character:
+      case BannerItemType.standard:
+        rates.add(const _BannerRate(5, 90, 0.6, 40, 74));
+        rates.add(const _BannerRate(4, 10, 5.1, 4, 7));
+        break;
+      case BannerItemType.weapon:
+        rates.add(const _BannerRate(5, 80, 0.7, 30, 64));
+        rates.add(const _BannerRate(4, 10, 6.0, 4, 7));
+        break;
     }
-    if (rarity == 5) {
-      fiveStarCount = 0;
-    } else {
-      fiveStarCount++;
+  }
+
+  _BannerRate? getGuaranteedIfExists(WishSimulatorBannerCountPerType history) {
+    if (history.type != type.index) {
+      throw Exception('The rates only apply to banners of type = $type');
+    }
+    for (final item in rates) {
+      if (history.isItemGuaranteed(item.rarity, item.guaranteedAt)) {
+        return item;
+      }
     }
 
-    print(
-        'totalCount = $totalCount - fourStarCount = $fourStarCount -- fiveStarCount = $fiveStarCount');
-  }
-
-  static bool _isXStarGuaranteed(int maxCount, int current) {
-    return current + 1 >= maxCount;
+    return null;
   }
 }
