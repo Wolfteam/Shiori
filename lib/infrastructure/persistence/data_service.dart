@@ -139,7 +139,7 @@ class DataServiceImpl implements DataService {
     Hive.registerAdapter(NotificationRealmCurrencyAdapter());
     Hive.registerAdapter(NotificationResinAdapter());
     Hive.registerAdapter(NotificationWeeklyBossAdapter());
-    Hive.registerAdapter(WishSimulatorBannerCountPerTypeAdapter());
+    Hive.registerAdapter(WishSimulatorBannerPullHistoryPerTypeAdapter());
     Hive.registerAdapter(WishSimulatorBannerPullHistoryAdapter());
   }
 }

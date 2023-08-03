@@ -7,14 +7,14 @@ import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/persistence/wish_simulator_data_service.dart';
 
 class WishSimulatorDataServiceImpl implements WishSimulatorDataService {
-  late final Box<WishSimulatorBannerCountPerType> _bannerCountPerType;
+  late final Box<WishSimulatorBannerPullHistoryPerType> _bannerCountPerType;
   late final Box<WishSimulatorBannerPullHistory> _bannerPullHistory;
 
   WishSimulatorDataServiceImpl();
 
   @override
   Future<void> init() async {
-    _bannerCountPerType = await Hive.openBox<WishSimulatorBannerCountPerType>('wishSimulatorBannerCountPerType');
+    _bannerCountPerType = await Hive.openBox<WishSimulatorBannerPullHistoryPerType>('wishSimulatorBannerCountPerType');
     _bannerPullHistory = await Hive.openBox<WishSimulatorBannerPullHistory>('wishSimulatorBannerPullHistory');
   }
 
@@ -26,16 +26,11 @@ class WishSimulatorDataServiceImpl implements WishSimulatorDataService {
     ]);
   }
 
-//TODO: RENAME TO WishSimulatorBannerPullHistoryPerType
   @override
-  Future<WishSimulatorBannerCountPerType> getBannerCountPerType(
-    BannerItemType type,
-    //TODO: YOU SHOULD NOT HAVE TO USE THIS PARAM HERE
-    Map<int, int> defaultXStarCount,
-  ) async {
-    WishSimulatorBannerCountPerType? value = _bannerCountPerType.values.firstWhereOrDefault((el) => el.type == type.index);
+  Future<WishSimulatorBannerPullHistoryPerType> getBannerPullHistoryPerType(BannerItemType type) async {
+    WishSimulatorBannerPullHistoryPerType? value = _bannerCountPerType.values.firstWhereOrDefault((el) => el.type == type.index);
     if (value == null) {
-      value = WishSimulatorBannerCountPerType.newOne(type, defaultXStarCount);
+      value = WishSimulatorBannerPullHistoryPerType.newOne(type);
       await _bannerCountPerType.add(value);
     }
     return value;

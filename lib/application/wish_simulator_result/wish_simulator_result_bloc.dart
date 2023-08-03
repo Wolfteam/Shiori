@@ -44,11 +44,11 @@ class WishSimulatorResultBloc extends Bloc<WishSimulatorResultEvent, WishSimulat
 
     final banner = period.banners[bannerIndex];
     final bannerRates = _RatesPerBannerType(banner.type);
-    final history = await _dataService.wishSimulator.getBannerCountPerType(banner.type, bannerRates.getDefaultXStarCount);
+    final history = await _dataService.wishSimulator.getBannerPullHistoryPerType(banner.type);
     final bannerKey = _generateBannerKey(banner);
     final results = <WishBannerItemResultModel>[];
     for (int i = 1; i <= pulls; i++) {
-      final int randomRarity = bannerRates.getGuaranteedIfExists(history)?.rarity ?? _getRandomItemRarity(history.currentXStarCount, bannerRates);
+      final int randomRarity = bannerRates.getRarityIfGuaranteed(history) ?? _getRandomItemRarity(history.currentXStarCount, bannerRates);
       final isRarityInPromoted = banner.promotedItems.any((el) => el.rarity == randomRarity);
       final winsFiftyFifty = isRarityInPromoted && history.shouldWinFiftyFifty(randomRarity);
       final pool = [
@@ -87,7 +87,7 @@ class WishSimulatorResultBloc extends Bloc<WishSimulatorResultEvent, WishSimulat
       await history.pull(randomRarity, !isRarityInPromoted ? null : winsFiftyFifty);
 
       final itemType = pickedItem.map(character: (_) => ItemType.character, weapon: (_) => ItemType.weapon);
-      //await _dataService.wishSimulator.saveBannerItemPullHistory(bannerKey, pickedItem.key, itemType);
+      await _dataService.wishSimulator.saveBannerItemPullHistory(bannerKey, pickedItem.key, itemType);
     }
 
     results.sort((x, y) => y.rarity.compareTo(x.rarity));
@@ -107,26 +107,21 @@ class WishSimulatorResultBloc extends Bloc<WishSimulatorResultEvent, WishSimulat
   }
 
   int _getRandomItemRarity(Map<int, int> currentXStarCount, _RatesPerBannerType bannerRates) {
-    assert(currentXStarCount.isNotEmpty);
+    assert(bannerRates.rates.isNotEmpty);
 
     final probs = <double>[];
     final randomRarities = <int>[];
-    final manuallyAddMinRarity = !currentXStarCount.containsKey(WishBannerConstants.minObtainableRarity);
-    for (final kvp in currentXStarCount.entries) {
-      final rarity = kvp.key;
-      final pullCount = kvp.value;
-      final bannerRate = bannerRates.rates.firstWhere((el) => el.rarity == rarity);
-      final considerPullCount = bannerRate.canBeGuaranteed && pullCount > bannerRate.softRateIncreasesAt;
-      final double prob = bannerRate.getProb(pullCount, considerPullCount);
-      probs.add(prob);
-      randomRarities.addAll(List.filled(prob.round(), rarity));
-    }
+    for (final rate in bannerRates.rates) {
+      final int pullCount = currentXStarCount[rate.rarity] ?? 0;
+      final considerPullCount = rate.canBeGuaranteed && pullCount > rate.softRateIncreasesAt;
+      final double prob = rate.getProb(pullCount, considerPullCount);
 
-    if (manuallyAddMinRarity) {
       final remainingProb = (100 - probs.sum).round();
-      if (remainingProb > 0) {
-        randomRarities.addAll(List.filled(remainingProb, WishBannerConstants.minObtainableRarity));
+      if (remainingProb <= 0) {
+        continue;
       }
+      probs.add(prob);
+      randomRarities.addAll(List.filled(prob.round(), rate.rarity));
     }
 
     randomRarities.shuffle();
@@ -227,7 +222,7 @@ class _RatesPerBannerType {
     }
   }
 
-  _BannerRate? getGuaranteedIfExists(WishSimulatorBannerCountPerType history) {
+  int? getRarityIfGuaranteed(WishSimulatorBannerPullHistoryPerType history) {
     if (history.type != type.index) {
       throw Exception('The rates only apply to banners of type = $type');
     }
@@ -237,7 +232,7 @@ class _RatesPerBannerType {
       }
 
       if (history.isItemGuaranteed(rate.rarity, rate.guaranteedAt)) {
-        return rate;
+        return rate.rarity;
       }
     }
 
