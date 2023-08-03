@@ -30,11 +30,10 @@ class WishSimulatorBannerCountPerType extends HiveObject {
     this.fiftyFiftyXStarGuaranteed,
   );
 
-  WishSimulatorBannerCountPerType.newOne(BannerItemType type)
+  WishSimulatorBannerCountPerType.newOne(BannerItemType type, this.currentXStarCount)
       : type = type.index,
         totalWishCount = 0,
         totalXStarCount = {},
-        currentXStarCount = {},
         fiftyFiftyXStarGuaranteed = {};
 
   bool isItemGuaranteed(int rarity, int guaranteedAt) {
@@ -65,7 +64,7 @@ class WishSimulatorBannerCountPerType extends HiveObject {
     totalXStarCount[rarity] = totalCountPerRarity++;
 
     if (gotFeaturedItem != null) {
-      //this means that we may've won the 50/50
+      //this means that we may have won the 50/50
       fiftyFiftyXStarGuaranteed[rarity] = !gotFeaturedItem;
     }
 

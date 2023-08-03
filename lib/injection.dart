@@ -245,7 +245,6 @@ class Injection {
   }
 
   static WishSimulatorBloc get wishSimulatorBloc {
-    final backupRestoreService = getIt<BackupRestoreService>();
     final telemetryService = getIt<TelemetryService>();
     final genshinService = getIt<GenshinService>();
     final resourceService = getIt<ResourceService>();
@@ -253,11 +252,9 @@ class Injection {
   }
 
   static WishSimulatorResultBloc get wishSimulatorResultBloc {
-    final backupRestoreService = getIt<BackupRestoreService>();
-    final telemetryService = getIt<TelemetryService>();
     final genshinService = getIt<GenshinService>();
-    final resourceService = getIt<ResourceService>();
-    return WishSimulatorResultBloc(genshinService);
+    final dataService = getIt<DataService>();
+    return WishSimulatorResultBloc(genshinService, dataService);
   }
 
   static WishBannerHistoryBloc get wishBannerHistoryBloc {

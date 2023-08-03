@@ -28,11 +28,14 @@ class WishSimulatorDataServiceImpl implements WishSimulatorDataService {
 
 //TODO: RENAME TO WishSimulatorBannerPullHistoryPerType
   @override
-  Future<WishSimulatorBannerCountPerType> getBannerCountPerType(BannerItemType type) async {
-    WishSimulatorBannerCountPerType? value =
-        _bannerCountPerType.values.firstWhereOrDefault((el) => el.type == type.index);
+  Future<WishSimulatorBannerCountPerType> getBannerCountPerType(
+    BannerItemType type,
+    //TODO: YOU SHOULD NOT HAVE TO USE THIS PARAM HERE
+    Map<int, int> defaultXStarCount,
+  ) async {
+    WishSimulatorBannerCountPerType? value = _bannerCountPerType.values.firstWhereOrDefault((el) => el.type == type.index);
     if (value == null) {
-      value = WishSimulatorBannerCountPerType.newOne(type);
+      value = WishSimulatorBannerCountPerType.newOne(type, defaultXStarCount);
       await _bannerCountPerType.add(value);
     }
     return value;

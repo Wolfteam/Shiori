@@ -66,5 +66,5 @@ class WishBannerConstants {
   ];
 
   static List<String> commonWeaponKeys =
-      commonFiveStarWeaponKeys + commonFourStarWeaponKeys + commonFiveStarCharacterKeys;
+      commonFiveStarWeaponKeys + commonFourStarWeaponKeys + commonThreeStarWeaponKeys + commonFiveStarCharacterKeys;
 }
