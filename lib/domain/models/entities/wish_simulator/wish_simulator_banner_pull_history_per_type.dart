@@ -3,10 +3,10 @@ import 'dart:math';
 import 'package:hive/hive.dart';
 import 'package:shiori/domain/enums/enums.dart';
 
-part 'wish_simulator_banner_count_per_type.g.dart';
+part 'wish_simulator_banner_pull_history_per_type.g.dart';
 
 @HiveType(typeId: 23)
-class WishSimulatorBannerCountPerType extends HiveObject {
+class WishSimulatorBannerPullHistoryPerType extends HiveObject {
   @HiveField(0)
   final int type;
 
@@ -22,7 +22,7 @@ class WishSimulatorBannerCountPerType extends HiveObject {
   @HiveField(4)
   Map<int, bool> fiftyFiftyXStarGuaranteed;
 
-  WishSimulatorBannerCountPerType(
+  WishSimulatorBannerPullHistoryPerType(
     this.type,
     this.totalWishCount,
     this.totalXStarCount,
@@ -30,10 +30,11 @@ class WishSimulatorBannerCountPerType extends HiveObject {
     this.fiftyFiftyXStarGuaranteed,
   );
 
-  WishSimulatorBannerCountPerType.newOne(BannerItemType type, this.currentXStarCount)
+  WishSimulatorBannerPullHistoryPerType.newOne(BannerItemType type)
       : type = type.index,
         totalWishCount = 0,
         totalXStarCount = {},
+        currentXStarCount = {},
         fiftyFiftyXStarGuaranteed = {};
 
   bool isItemGuaranteed(int rarity, int guaranteedAt) {

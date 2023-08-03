@@ -21,5 +21,5 @@ export 'entities/notifications/notification_realm_currency.dart';
 export 'entities/notifications/notification_resin.dart';
 export 'entities/notifications/notification_weekly_boss.dart';
 export 'entities/tierlist/tierlist_item.dart';
-export 'entities/wish_simulator/wish_simulator_banner_count_per_type.dart';
 export 'entities/wish_simulator/wish_simulator_banner_pull_history.dart';
+export 'entities/wish_simulator/wish_simulator_banner_pull_history_per_type.dart';
