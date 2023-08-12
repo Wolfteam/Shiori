@@ -46,7 +46,7 @@ class WishSimulatorDataServiceImpl implements WishSimulatorDataService {
       throw Exception('Invalid itemKey');
     }
 
-    if (itemType != ItemType.character || itemType != ItemType.weapon) {
+    if (itemType != ItemType.character && itemType != ItemType.weapon) {
       throw Exception('The provided itemT1ype = $itemType is not valid');
     }
 

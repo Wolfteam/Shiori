@@ -320,13 +320,20 @@ class BannerHistoryFileServiceImpl extends BannerHistoryFileService {
         )
         .map((el) {
       final character = _characters.getCharacter(el.key);
-      final imagePath = _resourceService.getCharacterIconImagePath(character.iconImage);
-      return WishBannerCharacterModel(key: el.key, image: imagePath, rarity: character.rarity, elementType: character.elementType);
+      final imagePath = _resourceService.getCharacterImagePath(character.image);
+      final iconImgPath = _resourceService.getCharacterImagePath(character.iconImage);
+      return WishBannerCharacterModel(
+        key: el.key,
+        image: imagePath,
+        iconImage: iconImgPath,
+        rarity: character.rarity,
+        elementType: character.elementType,
+      );
     }).toList();
     final otherWeapons = _weapons.getWeaponsForCard().where((el) => WishBannerConstants.commonWeaponKeys.contains(el.key)).map((el) {
       final weapon = _weapons.getWeapon(el.key);
       final imagePath = _resourceService.getWeaponImagePath(weapon.image, weapon.type);
-      return WishBannerWeaponModel(key: el.key, rarity: weapon.rarity, image: imagePath, weaponType: el.type);
+      return WishBannerWeaponModel(key: el.key, rarity: weapon.rarity, image: imagePath, iconImage: imagePath, weaponType: el.type);
     }).toList();
 
     final banners = <WishBannerItemModel>[];
@@ -339,32 +346,40 @@ class BannerHistoryFileServiceImpl extends BannerHistoryFileService {
 
       final characters = <WishBannerCharacterModel>[];
       final weapons = <WishBannerWeaponModel>[];
-      final promoted = <ItemCommonWithRarityAndType>[];
+      final featured = <WishBannerFeaturedItemModel>[];
       for (final key in period.itemKeys) {
         switch (period.type) {
           case BannerHistoryItemType.character:
             final character = _characters.getCharacter(key);
             final imagePath = _resourceService.getCharacterImagePath(character.image);
-            final promotedImagePath = _resourceService.getCharacterIconImagePath(character.iconImage);
-            characters.add(WishBannerCharacterModel(key: key, image: imagePath, rarity: character.rarity, elementType: character.elementType));
-            promoted.add(ItemCommonWithRarityAndType(key, promotedImagePath, character.rarity, ItemType.character));
+            final iconImagePath = _resourceService.getCharacterIconImagePath(character.iconImage);
+            characters.add(
+              WishBannerCharacterModel(
+                key: key,
+                image: imagePath,
+                iconImage: iconImagePath,
+                rarity: character.rarity,
+                elementType: character.elementType,
+              ),
+            );
+            featured.add(WishBannerFeaturedItemModel(key: key, iconImage: iconImagePath, rarity: character.rarity, type: ItemType.character));
             break;
           case BannerHistoryItemType.weapon:
             final weapon = _weapons.getWeapon(key);
             final imagePath = _resourceService.getWeaponImagePath(weapon.image, weapon.type);
-            weapons.add(WishBannerWeaponModel(key: key, rarity: weapon.rarity, image: imagePath, weaponType: weapon.type));
-            promoted.add(ItemCommonWithRarityAndType(key, imagePath, weapon.rarity, ItemType.weapon));
+            weapons.add(WishBannerWeaponModel(key: key, rarity: weapon.rarity, image: imagePath, iconImage: imagePath, weaponType: weapon.type));
+            featured.add(WishBannerFeaturedItemModel(key: key, iconImage: imagePath, rarity: weapon.rarity, type: ItemType.weapon));
             break;
         }
       }
 
       final otherCharactersForThisBanner = period.type == BannerHistoryItemType.character
           ? otherCharacters
-          : otherCharacters.where((el) => el.rarity != WishBannerConstants.promotedRarity).toList();
+          : otherCharacters.where((el) => el.rarity != WishBannerConstants.maxObtainableRarity).toList();
 
       final otherWeaponsForThisBanner = period.type == BannerHistoryItemType.weapon
           ? otherWeapons
-          : otherWeapons.where((el) => el.rarity != WishBannerConstants.promotedRarity).toList();
+          : otherWeapons.where((el) => el.rarity != WishBannerConstants.maxObtainableRarity).toList();
 
       for (final char in otherCharactersForThisBanner) {
         final alreadyAdded = characters.any((el) => el.key == char.key);
@@ -388,7 +403,7 @@ class BannerHistoryFileServiceImpl extends BannerHistoryFileService {
         image: _resourceService.getWishBannerHistoryImagePath(period.imageFilename),
         characters: characters,
         weapons: weapons,
-        promotedItems: promoted,
+        featuredItems: featured,
       );
       banners.add(bannerItem);
     }
@@ -410,8 +425,9 @@ class BannerHistoryFileServiceImpl extends BannerHistoryFileService {
   @override
   List<WishBannerHistoryGroupedPeriodModel> getWishBannersHistoryGroupedByVersion() {
     final possiblePromotedItems = _characters
-        .getItemCommonWithName()
-        .concat(_weapons.getItemCommonWithName())
+        .getCharactersForCard()
+        .map((e) => ItemCommonWithNameAndRarity(e.key, e.name, e.stars))
+        .concat(_weapons.getWeaponsForCard().map((e) => ItemCommonWithNameAndRarity(e.key, e.name, e.rarity)))
         .toList();
     final grouped = _bannerHistoryFile.banners.groupListsBy((el) => el.version).entries.map((versionGroup) {
       final parts = <WishBannerHistoryPartItemModel>[];
@@ -438,16 +454,16 @@ class BannerHistoryFileServiceImpl extends BannerHistoryFileService {
           final from = groupedCharPeriod.from.isAfterInclusive(groupedWeaponPeriod.from) ? groupedCharPeriod.from : groupedWeaponPeriod.from;
           final until = groupedCharPeriod.until.isBeforeInclusive(groupedWeaponPeriod.until) ? groupedCharPeriod.until : groupedWeaponPeriod.until;
           final part = WishBannerHistoryPartItemModel(
-            promotedCharacters: groupedChars[i]
+            featuredCharacters: groupedChars[i]
                 .value
-                .map((period) => _getPromotedItemsFromBannerPeriod(period, possiblePromotedItems).item0)
+                .map((period) => _getFeaturedItemsFromBannerPeriod(period, possiblePromotedItems).item0)
                 .selectMany((el, index) => el)
                 .groupBy((el) => el.key)
                 .map((e) => e.first)
                 .toList(),
-            promotedWeapons: groupedWeapons[j]
+            featuredWeapons: groupedWeapons[j]
                 .value
-                .map((period) => _getPromotedItemsFromBannerPeriod(period, possiblePromotedItems).item1)
+                .map((period) => _getFeaturedItemsFromBannerPeriod(period, possiblePromotedItems).item1)
                 .selectMany((el, index) => el)
                 .groupBy((el) => el.key)
                 .map((e) => e.first)
@@ -474,41 +490,23 @@ class BannerHistoryFileServiceImpl extends BannerHistoryFileService {
 
   @override
   WishBannerItemModel getWishSimulatorStandardBanner() {
-    final allCharacters = _characters.getCharactersForCard();
-    final allWeapons = _weapons.getWeaponsForCard();
-
-    final weaponKeys = WishBannerConstants.commonFiveStarWeaponKeys
-        .concat(WishBannerConstants.commonFourStarWeaponKeys)
-        .concat(WishBannerConstants.commonThreeStarWeaponKeys)
+    final characters = _characters
+        .getCharactersForCard()
+        .where((el) => !el.isComingSoon && !el.isNew && el.stars == 4 || WishBannerConstants.commonFiveStarCharacterKeys.contains(el.key))
+        .map((el) => WishBannerCharacterModel(key: el.key, rarity: el.stars, image: el.image, iconImage: el.iconImage, elementType: el.elementType))
+        .toList();
+    final weapons = _weapons
+        .getWeaponsForCard()
+        .where((el) => WishBannerConstants.commonWeaponKeys.contains(el.key))
+        .map((el) => WishBannerWeaponModel(key: el.key, rarity: el.rarity, image: el.image, iconImage: el.image, weaponType: el.type))
         .toList();
 
-    final promotedCharKey = WishBannerConstants.commonFiveStarCharacterKeys.first;
-    //TODO: WHAT ARE THE PROMOTED ITEMS IN THE STANDARD BANNER ?
-    final promoted = ItemCommonWithRarityAndType(
-      promotedCharKey,
-      _resourceService.getCharacterIconImagePath(_characters.getCharacter(promotedCharKey).iconImage),
-      WishBannerConstants.promotedRarity,
-      ItemType.character,
-    );
     return WishBannerItemModel(
       type: BannerItemType.standard,
       image: Assets.wishBannerStandardImgPath,
-      promotedItems: [promoted],
-      characters: allCharacters
-          .where((el) => !el.isComingSoon && !el.isNew && el.stars == 4 || WishBannerConstants.commonFiveStarCharacterKeys.contains(el.key))
-          .map(
-            (el) => WishBannerCharacterModel(
-              key: el.key,
-              rarity: el.stars,
-              image: el.image,
-              elementType: el.elementType,
-            ),
-          )
-          .toList(),
-      weapons: allWeapons
-          .where((el) => weaponKeys.contains(el.key))
-          .map((el) => WishBannerWeaponModel(key: el.key, rarity: el.rarity, image: el.image, weaponType: el.type))
-          .toList(),
+      featuredItems: [],
+      characters: characters,
+      weapons: weapons,
     );
   }
 
@@ -532,29 +530,29 @@ class BannerHistoryFileServiceImpl extends BannerHistoryFileService {
     return history;
   }
 
-  Tuple2<List<ItemCommonWithNameOnly>, List<ItemCommonWithNameOnly>> _getPromotedItemsFromBannerPeriod(
+  Tuple2<List<ItemCommonWithNameAndRarity>, List<ItemCommonWithNameAndRarity>> _getFeaturedItemsFromBannerPeriod(
     BannerHistoryPeriodFileModel period,
-    List<ItemCommonWithName> possiblePromotedItems,
+    List<ItemCommonWithNameAndRarity> possiblePromotedItems,
   ) {
-    final promotedCharacters = <ItemCommonWithNameOnly>[];
-    final promotedWeapons = <ItemCommonWithNameOnly>[];
+    final characters = <ItemCommonWithNameAndRarity>[];
+    final weapons = <ItemCommonWithNameAndRarity>[];
     for (final key in period.itemKeys) {
       switch (period.type) {
         case BannerHistoryItemType.character:
           final character = possiblePromotedItems.firstWhereOrNull((el) => el.key == key);
-          if (character != null && !promotedCharacters.any((el) => el.key == key)) {
-            promotedCharacters.add(ItemCommonWithNameOnly(key, character.name));
+          if (character != null && !characters.any((el) => el.key == key)) {
+            characters.add(ItemCommonWithNameAndRarity(key, character.name, character.rarity));
           }
           break;
         case BannerHistoryItemType.weapon:
           final weapon = possiblePromotedItems.firstWhereOrNull((el) => el.key == key);
-          if (weapon != null && !promotedWeapons.any((el) => el.key == key)) {
-            promotedWeapons.add(ItemCommonWithNameOnly(key, weapon.name));
+          if (weapon != null && !weapons.any((el) => el.key == key)) {
+            weapons.add(ItemCommonWithNameAndRarity(key, weapon.name, weapon.rarity));
           }
           break;
       }
     }
 
-    return Tuple2<List<ItemCommonWithNameOnly>, List<ItemCommonWithNameOnly>>(promotedCharacters, promotedWeapons);
+    return Tuple2<List<ItemCommonWithNameAndRarity>, List<ItemCommonWithNameAndRarity>>(characters, weapons);
   }
 }

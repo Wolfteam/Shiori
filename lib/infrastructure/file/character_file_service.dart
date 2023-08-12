@@ -451,6 +451,7 @@ class CharacterFileServiceImpl extends CharacterFileService {
       key: character.key,
       elementType: character.elementType,
       image: _resourceService.getCharacterImagePath(character.image),
+      iconImage: _resourceService.getCharacterIconImagePath(character.iconImage),
       materials: quickMaterials.map((m) => _resourceService.getMaterialImagePath(m.image, m.type)).toList(),
       name: translation.name,
       stars: character.rarity,
