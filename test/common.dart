@@ -128,7 +128,7 @@ void checkItemKeyAndName(String key, String name) {
 }
 
 void checkBannerRarity(int rarity) {
-  expect(rarity >= WishBannerConstants.minObtainableRarity && rarity <= WishBannerConstants.promotedRarity, isTrue);
+  expect(rarity >= WishBannerConstants.minObtainableRarity && rarity <= WishBannerConstants.maxObtainableRarity, isTrue);
 }
 
 void checkItemAscensionMaterialFileModel(MaterialFileService materialFileService, List<ItemAscensionMaterialFileModel> all) {

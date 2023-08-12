@@ -25,16 +25,16 @@ void main() {
   });
 
   void checkWishBannerItemModel(WishBannerItemModel banner, List<String> promotedItemKeys) {
-    expect(banner.promotedItems, isNotEmpty);
-    expect(banner.promotedItems.map((e) => e.key).toSet().length, banner.promotedItems.length);
+    expect(banner.featuredItems, isNotEmpty);
+    expect(banner.featuredItems.map((e) => e.key).toSet().length, banner.featuredItems.length);
     expect(banner.characters, isNotEmpty);
     expect(banner.characters.map((e) => e.key).toSet().length, banner.characters.length);
     expect(banner.weapons, isNotEmpty);
     expect(banner.weapons.map((e) => e.key).toSet().length, banner.weapons.length);
     checkAsset(banner.image);
 
-    for (final item in banner.promotedItems) {
-      checkItemKeyAndImage(item.key, item.image);
+    for (final item in banner.featuredItems) {
+      checkItemKeyAndImage(item.key, item.iconImage);
       checkBannerRarity(item.rarity);
 
       //TODO: THIS CHECK DOES NOT MAKE SENSE AND SHALL BE REMOVED
@@ -251,8 +251,7 @@ void main() {
     test('data exists', () {
       const double version = 1.3;
       final bannersOnVersion = service.getBanners(version);
-      final promotedItemKeys =
-          bannersOnVersion.selectMany((el, index) => el.items).map((e) => e.key).distinct().toList();
+      final promotedItemKeys = bannersOnVersion.selectMany((el, index) => el.items).map((e) => e.key).distinct().toList();
 
       final banner = bannersOnVersion.first;
       final from = banner.from;
@@ -280,18 +279,16 @@ void main() {
         checkAssets(part.bannerImages);
         expect(part.version == version, isTrue);
 
-        expect(part.promotedCharacters.map((e) => e.key).toSet().length, part.promotedCharacters.length,
-            reason: 'version $version chars = ${part.promotedCharacters.map((e) => e.key).toList()}');
-        expect(part.promotedCharacters.length >= 4, isTrue,
-            reason: 'version $version chars = ${part.promotedCharacters.map((e) => e.key).toList()}');
-        for (final char in part.promotedCharacters) {
+        expect(part.featuredCharacters.map((e) => e.key).toSet().length, part.featuredCharacters.length);
+        expect(part.featuredCharacters.length >= 4, isTrue);
+        for (final char in part.featuredCharacters) {
           checkItemKeyAndName(char.key, char.name);
         }
 
-        expect(part.promotedWeapons.map((e) => e.key).toSet().length, part.promotedWeapons.length);
-        expect(part.promotedWeapons.length >= 4, isTrue);
-        for (final char in part.promotedWeapons) {
-          checkItemKeyAndName(char.key, char.name);
+        expect(part.featuredWeapons.map((e) => e.key).toSet().length, part.featuredWeapons.length);
+        expect(part.featuredWeapons.length >= 4, isTrue);
+        for (final weapon in part.featuredWeapons) {
+          checkItemKeyAndName(weapon.key, weapon.name);
         }
       }
     }
