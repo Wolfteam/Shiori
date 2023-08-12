@@ -1,7 +1,10 @@
+import 'package:intl/intl.dart';
+
 class WishBannerConstants {
-  //TODO: RENAME THIS VARIABLES
-  static const int promotedRarity = 5;
+  static const int maxObtainableRarity = 5;
   static const int minObtainableRarity = 3;
+
+  static final dateFormat = DateFormat('yyyy-MM-dd');
 
   static const commonFiveStarCharacterKeys = [
     'qiqi',

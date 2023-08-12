@@ -11,31 +11,29 @@ class WishSimulatorBannerPullHistoryPerType extends HiveObject {
   final int type;
 
   @HiveField(1)
-  int totalWishCount;
-
-  @HiveField(2)
-  Map<int, int> totalXStarCount;
-
-  @HiveField(3)
   Map<int, int> currentXStarCount;
 
-  @HiveField(4)
+  @HiveField(2)
   Map<int, bool> fiftyFiftyXStarGuaranteed;
 
   WishSimulatorBannerPullHistoryPerType(
     this.type,
-    this.totalWishCount,
-    this.totalXStarCount,
     this.currentXStarCount,
     this.fiftyFiftyXStarGuaranteed,
   );
 
   WishSimulatorBannerPullHistoryPerType.newOne(BannerItemType type)
       : type = type.index,
-        totalWishCount = 0,
-        totalXStarCount = {},
         currentXStarCount = {},
         fiftyFiftyXStarGuaranteed = {};
+
+  void initXStarCountIfNeeded(int rarity) {
+    if (currentXStarCount.containsKey(rarity)) {
+      return;
+    }
+
+    currentXStarCount[rarity] = 0;
+  }
 
   bool isItemGuaranteed(int rarity, int guaranteedAt) {
     if (rarity <= 0) {
@@ -46,10 +44,7 @@ class WishSimulatorBannerPullHistoryPerType extends HiveObject {
       throw Exception('The provided guaranteedAt = $guaranteedAt is not valid');
     }
 
-    int current = 0;
-    if (currentXStarCount.containsKey(rarity)) {
-      current = currentXStarCount[rarity]!;
-    }
+    final int current = currentXStarCount[rarity] ?? 0;
     return current + 1 >= guaranteedAt;
   }
 
@@ -58,13 +53,10 @@ class WishSimulatorBannerPullHistoryPerType extends HiveObject {
       throw Exception('The provided rarity = $rarity is not valid');
     }
 
-    totalWishCount++;
-    currentXStarCount[rarity] = 0;
-
-    int totalCountPerRarity = totalXStarCount[rarity] ?? 0;
-    totalXStarCount[rarity] = totalCountPerRarity++;
+    _increaseCurrentXStarCount();
 
     if (gotFeaturedItem != null) {
+      currentXStarCount[rarity] = 0;
       //this means that we may have won the 50/50
       fiftyFiftyXStarGuaranteed[rarity] = !gotFeaturedItem;
     }
@@ -78,5 +70,12 @@ class WishSimulatorBannerPullHistoryPerType extends HiveObject {
     }
 
     return Random().nextBool();
+  }
+
+  void _increaseCurrentXStarCount() {
+    for (final key in currentXStarCount.keys) {
+      final int currentCount = currentXStarCount[key] ?? 0;
+      currentXStarCount[key] = currentCount + 1;
+    }
   }
 }

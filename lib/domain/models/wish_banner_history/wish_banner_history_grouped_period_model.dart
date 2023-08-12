@@ -15,8 +15,8 @@ class WishBannerHistoryGroupedPeriodModel with _$WishBannerHistoryGroupedPeriodM
 @freezed
 class WishBannerHistoryPartItemModel with _$WishBannerHistoryPartItemModel {
   const factory WishBannerHistoryPartItemModel({
-    required List<ItemCommonWithNameOnly> promotedCharacters,
-    required List<ItemCommonWithNameOnly> promotedWeapons,
+    required List<ItemCommonWithNameAndRarity> featuredCharacters,
+    required List<ItemCommonWithNameAndRarity> featuredWeapons,
     required List<String> bannerImages,
     required DateTime from,
     required DateTime until,

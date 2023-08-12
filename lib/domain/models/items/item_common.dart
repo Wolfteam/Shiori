@@ -47,3 +47,8 @@ class ItemCommonWithName with _$ItemCommonWithName {
 class ItemCommonWithNameOnly with _$ItemCommonWithNameOnly {
   const factory ItemCommonWithNameOnly(String key, String name) = _ItemCommonWithNameOnly;
 }
+
+@freezed
+class ItemCommonWithNameAndRarity with _$ItemCommonWithNameAndRarity {
+  const factory ItemCommonWithNameAndRarity(String key, String name, int rarity) = _ItemCommonWithNameAndRarity;
+}
