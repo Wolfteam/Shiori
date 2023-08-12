@@ -3,7 +3,6 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/file/file_infrastructure.dart';
-import 'package:shiori/domain/wish_banner_constants.dart';
 
 import '../../common.dart';
 import 'common_file.dart';
@@ -24,8 +23,17 @@ void main() {
     });
   });
 
-  void checkWishBannerItemModel(WishBannerItemModel banner, List<String> promotedItemKeys) {
-    expect(banner.featuredItems, isNotEmpty);
+  void checkWishBannerItemModel(WishBannerItemModel banner, List<String> featuredItemKeys) {
+    switch (banner.type) {
+      case BannerItemType.character:
+      case BannerItemType.weapon:
+        expect(banner.featuredItems, isNotEmpty);
+        break;
+      case BannerItemType.standard:
+        expect(banner.featuredItems, isEmpty);
+        break;
+    }
+
     expect(banner.featuredItems.map((e) => e.key).toSet().length, banner.featuredItems.length);
     expect(banner.characters, isNotEmpty);
     expect(banner.characters.map((e) => e.key).toSet().length, banner.characters.length);
@@ -37,24 +45,20 @@ void main() {
       checkItemKeyAndImage(item.key, item.iconImage);
       checkBannerRarity(item.rarity);
 
-      //TODO: THIS CHECK DOES NOT MAKE SENSE AND SHALL BE REMOVED
-      if (WishBannerConstants.commonFiveStarCharacterKeys.contains(item.key)) {
-        continue;
-      }
-
-      if (promotedItemKeys.isNotEmpty) {
-        expect(promotedItemKeys.contains(item.key), isTrue);
+      if (featuredItemKeys.isNotEmpty) {
+        expect(featuredItemKeys.contains(item.key), isTrue);
       }
     }
 
     for (final item in banner.characters) {
-      checkItemKeyAndImage(item.key, item.image);
+      checkKey(item.key);
+      checkAssets([item.iconImage, item.image]);
       checkBannerRarity(item.rarity);
     }
 
     for (final item in banner.weapons) {
       checkKey(item.key);
-      checkAsset(item.image);
+      checkAssets([item.iconImage, item.image]);
       checkBannerRarity(item.rarity);
     }
   }
@@ -251,7 +255,7 @@ void main() {
     test('data exists', () {
       const double version = 1.3;
       final bannersOnVersion = service.getBanners(version);
-      final promotedItemKeys = bannersOnVersion.selectMany((el, index) => el.items).map((e) => e.key).distinct().toList();
+      final featuredItemKeys = bannersOnVersion.selectMany((el, index) => el.items).map((e) => e.key).distinct().toList();
 
       final banner = bannersOnVersion.first;
       final from = banner.from;
@@ -263,7 +267,7 @@ void main() {
       expect(bannersPerPeriod.version == version, isTrue);
       expect(bannersPerPeriod.banners, isNotEmpty);
       for (final b in bannersPerPeriod.banners) {
-        checkWishBannerItemModel(b, promotedItemKeys);
+        checkWishBannerItemModel(b, featuredItemKeys);
       }
     });
   });
