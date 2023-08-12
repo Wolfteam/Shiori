@@ -7,16 +7,10 @@ import 'package:shiori/domain/extensions/weapon_type_extensions.dart';
 import 'package:shiori/presentation/shared/extensions/element_type_extensions.dart';
 import 'package:shiori/presentation/shared/styles.dart';
 
-class WishResultItem extends StatelessWidget {
+class WishResultItem extends StatefulWidget {
   final String image;
   final int rarity;
   final String bottomImg;
-
-  const WishResultItem._({
-    required this.image,
-    required this.rarity,
-    required this.bottomImg,
-  });
 
   WishResultItem.character({
     required this.image,
@@ -31,51 +25,71 @@ class WishResultItem extends StatelessWidget {
   }) : bottomImg = weaponType.getWeaponNormalSkillAssetPath();
 
   @override
+  State<WishResultItem> createState() => _WishResultItemState();
+}
+
+class _WishResultItemState extends State<WishResultItem> {
+  bool _showZoom = false;
+
+  @override
   Widget build(BuildContext context) {
-    final boxShadow = rarity == 5
+    final boxShadow = widget.rarity == 5
         ? Styles.fiveStarWishResultBoxShadow
-        : rarity == 4
+        : widget.rarity == 4
             ? Styles.fourStarWishResultBoxShadow
             : Styles.commonWishResultBoxShadow;
 
     return AspectRatio(
-      aspectRatio: 12 / 30,
-      child: Container(
-        margin: Styles.edgeInsetHorizontal16,
-        child: Stack(
-          fit: StackFit.passthrough,
-          alignment: Alignment.center,
-          children: [
-            ClipPath(
-              clipper: _WishResultImageClipper(),
-              child: Container(
-                decoration: BoxDecoration(
-                  borderRadius: const BorderRadius.all(Radius.elliptical(150, 500)),
-                  boxShadow: boxShadow,
+      aspectRatio: 8 / 30,
+      child: MouseRegion(
+        onEnter: (event) {
+          setState(() {
+            _showZoom = true;
+          });
+        },
+        onExit: (event) {
+          setState(() {
+            _showZoom = false;
+          });
+        },
+        child: AnimatedScale(
+          duration: const Duration(milliseconds: 50),
+          scale: _showZoom ? 1.05 : 1,
+          child: Stack(
+            fit: StackFit.passthrough,
+            alignment: Alignment.center,
+            children: [
+              ClipPath(
+                clipper: _WishResultImageClipper(),
+                child: Container(
+                  decoration: BoxDecoration(
+                    borderRadius: const BorderRadius.all(Radius.elliptical(150, 500)),
+                    boxShadow: boxShadow,
+                  ),
                 ),
               ),
-            ),
-            Container(
-              margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 8),
-              child: ClipPath(
-                clipper: _WishResultImageClipper(),
-                clipBehavior: Clip.hardEdge,
-                child: DecoratedBox(
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                      image: AssetImage(Assets.wishBannerItemResultBackgroundImgPath),
+              Container(
+                margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 8),
+                child: ClipPath(
+                  clipper: _WishResultImageClipper(),
+                  clipBehavior: Clip.hardEdge,
+                  child: DecoratedBox(
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image: AssetImage(Assets.wishBannerItemResultBackgroundImgPath),
+                        fit: BoxFit.fill,
+                      ),
+                    ),
+                    child: Image.file(
+                      File(widget.image),
                       fit: BoxFit.fill,
                     ),
                   ),
-                  child: Image.file(
-                    File(image),
-                    fit: BoxFit.fill,
-                  ),
                 ),
               ),
-            ),
-            _BottomPart(image: bottomImg, rarity: rarity),
-          ],
+              _BottomPart(image: widget.bottomImg, rarity: widget.rarity),
+            ],
+          ),
         ),
       ),
     );
@@ -101,14 +115,14 @@ class _BottomPart extends StatelessWidget {
           decoration: BoxDecoration(
             boxShadow: [
               BoxShadow(
-                color: Colors.black.withOpacity(0.5),
-                blurRadius: 25,
+                color: Colors.black.withOpacity(0.3),
+                blurRadius: 40,
                 spreadRadius: 20,
               ),
               BoxShadow(
-                color: Colors.black.withOpacity(0.3),
-                blurRadius: 25,
-                spreadRadius: 30,
+                color: Colors.black.withOpacity(0.15),
+                blurRadius: 20,
+                spreadRadius: 10,
               ),
             ],
           ),

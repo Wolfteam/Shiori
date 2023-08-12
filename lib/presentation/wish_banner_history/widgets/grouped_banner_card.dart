@@ -2,14 +2,12 @@ import 'dart:io';
 
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 import 'package:shiori/domain/extensions/iterable_extensions.dart';
 import 'package:shiori/domain/models/models.dart';
+import 'package:shiori/domain/wish_banner_constants.dart';
 import 'package:shiori/generated/l10n.dart';
 import 'package:shiori/presentation/character/character_page.dart';
 import 'package:shiori/presentation/weapon/weapon_page.dart';
-
-final _dateFormat = DateFormat('yyyy-MM-dd');
 
 typedef OnGroupedBannerCardTap = void Function(WishBannerHistoryPartItemModel banner);
 
@@ -54,12 +52,12 @@ class GroupedBannerCard extends StatelessWidget {
               ),
             ),
             _ClickableText(
-              characters: part.promotedCharacters,
-              weapons: part.promotedWeapons,
+              characters: part.featuredCharacters.where((el) => el.rarity == WishBannerConstants.maxObtainableRarity).toList(),
+              weapons: part.featuredWeapons.where((el) => el.rarity == WishBannerConstants.maxObtainableRarity).toList(),
               style: theme.textTheme.titleMedium!.copyWith(overflow: TextOverflow.ellipsis),
             ),
             Text(
-              '${_dateFormat.format(part.from)} - ${_dateFormat.format(part.until)}',
+              '${WishBannerConstants.dateFormat.format(part.from)} - ${WishBannerConstants.dateFormat.format(part.until)}',
               style: theme.textTheme.bodySmall,
               overflow: TextOverflow.ellipsis,
             ),
@@ -78,8 +76,8 @@ class GroupedBannerCard extends StatelessWidget {
 }
 
 class _ClickableText extends StatelessWidget {
-  final List<ItemCommonWithNameOnly> characters;
-  final List<ItemCommonWithNameOnly> weapons;
+  final List<ItemCommonWithNameAndRarity> characters;
+  final List<ItemCommonWithNameAndRarity> weapons;
   final TextStyle style;
 
   const _ClickableText({
@@ -112,7 +110,7 @@ class _ClickableText extends StatelessWidget {
     );
   }
 
-  void _addSpans(BuildContext context, ItemCommonWithNameOnly item, List<TextSpan> spans, bool isCharacter, bool addComma) {
+  void _addSpans(BuildContext context, ItemCommonWithNameAndRarity item, List<TextSpan> spans, bool isCharacter, bool addComma) {
     final theme = Theme.of(context);
     final clickableSpan = TextSpan(
       text: item.name,

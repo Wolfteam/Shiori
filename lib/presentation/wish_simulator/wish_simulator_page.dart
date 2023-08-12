@@ -5,7 +5,6 @@ import 'package:shiori/domain/assets.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/extensions/iterable_extensions.dart';
 import 'package:shiori/domain/models/models.dart';
-import 'package:shiori/domain/wish_banner_constants.dart';
 import 'package:shiori/generated/l10n.dart';
 import 'package:shiori/injection.dart';
 import 'package:shiori/presentation/shared/extensions/element_type_extensions.dart';
@@ -178,15 +177,14 @@ class _WishSimulatorPageState extends State<WishSimulatorPage> {
     });
   }
 
-  void _wish(BuildContext context, int index, int qty, WishBannerItemsPerPeriodModel period) {
-    Navigator.push(
+  Future<void> _wish(BuildContext context, int index, int qty, WishBannerItemsPerPeriodModel period) {
+    return Navigator.push(
       context,
       MaterialPageRoute(
         fullscreenDialog: true,
         builder: (_) => WishResultPage(index: index, qty: qty, period: period),
       ),
     );
-    //context.read<WishSimulatorBloc>().add(WishSimulatorEvent.wish(index: index, quantity: qty));
   }
 }
 
@@ -212,7 +210,7 @@ class _CenterTopPageView extends StatelessWidget {
             final selected = selectedBannerIndex == index;
             return BannerTopImage(
               index: index,
-              imagesPath: e.promotedItems.where((el) => el.rarity == WishBannerConstants.promotedRarity).map((e) => e.image).toList(),
+              imagesPath: e.featuredImages,
               width: 200,
               height: selected ? 70 : 60,
               selected: selected,
@@ -248,7 +246,7 @@ class _CenterPageView extends StatelessWidget {
         Color color;
         switch (banner.type) {
           case BannerItemType.character:
-            final elementType = banner.characters.firstWhere((c) => c.key == banner.promotedItems.first.key).elementType;
+            final elementType = banner.characters.firstWhere((c) => c.key == banner.featuredItems.first.key).elementType;
             topTitle = s.characterEventWish;
             color = elementType.getElementColor(true);
             break;

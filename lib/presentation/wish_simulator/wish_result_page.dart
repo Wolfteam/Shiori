@@ -54,14 +54,16 @@ class WishResultPage extends StatelessWidget {
                 child: LayoutBuilder(
                   builder: (context, constraints) => Center(
                     child: Container(
-                      height: constraints.maxWidth * 0.8,
+                      height: constraints.maxWidth * 0.6,
                       constraints: BoxConstraints(
                         maxHeight: constraints.maxHeight * 0.7,
                         minHeight: constraints.maxHeight * 0.4,
                       ),
+                      margin: Styles.edgeInsetHorizontal16,
                       child: BlocBuilder<WishSimulatorResultBloc, WishSimulatorResultState>(
                         builder: (context, state) => state.maybeMap(
                           loaded: (state) => ListView.builder(
+                            shrinkWrap: true,
                             itemCount: state.results.length,
                             scrollDirection: Axis.horizontal,
                             itemBuilder: (context, index) => state.results[index].map(
