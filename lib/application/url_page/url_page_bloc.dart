@@ -13,7 +13,6 @@ part 'url_page_event.dart';
 part 'url_page_state.dart';
 
 class UrlPageBloc extends Bloc<UrlPageEvent, UrlPageState> {
-  final wishSimulatorUrl = 'https://gi-wish-simulator.uzairashraf.dev';
   final officialMapUrl = 'https://act.hoyolab.com/ys/app/interactive-map/index.html';
   final unofficialMapUrl = 'https://genshin-impact-map.appsample.com';
   final dailyCheckInUrl = 'https://act.hoyolab.com/ys/event/signin-sea-v3/index.html?act_id=e202102251931481';
@@ -36,11 +35,10 @@ class UrlPageBloc extends Bloc<UrlPageEvent, UrlPageState> {
       init: (e) async {
         final finalMapUrl = _settingsService.useOfficialMap ? _getMapUrl() : unofficialMapUrl;
         final isInternetAvailable = await _networkService.isInternetAvailable();
-        await _telemetryService.trackUrlOpened(e.loadMap, e.loadWishSimulator, e.loadDailyCheckIn, isInternetAvailable);
+        await _telemetryService.trackUrlOpened(e.loadMap, e.loadDailyCheckIn, isInternetAvailable);
         return UrlPageState.loaded(
           hasInternetConnection: isInternetAvailable,
           mapUrl: finalMapUrl,
-          wishSimulatorUrl: wishSimulatorUrl,
           dailyCheckInUrl: _getDailyCheckInUrl(),
           userAgent: _deviceInfoService.userAgent ?? '',
         );

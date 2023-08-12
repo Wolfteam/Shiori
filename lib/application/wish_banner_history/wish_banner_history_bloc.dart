@@ -84,7 +84,7 @@ class WishBannerHistoryBloc extends Bloc<WishBannerHistoryEvent, WishBannerHisto
     final groupsMap = <String, List<WishBannerHistoryPartItemModel>>{};
     final allParts = allPeriods.selectMany((e, _) => e.parts).toList();
     for (final part in allParts) {
-      final items = groupByCharacter ? part.promotedCharacters : part.promotedWeapons;
+      final items = groupByCharacter ? part.featuredCharacters : part.featuredWeapons;
       for (final item in items) {
         groupsMap.putIfAbsent(item.key, () => []);
         groupsMap[item.key]!.add(part);
@@ -94,7 +94,7 @@ class WishBannerHistoryBloc extends Bloc<WishBannerHistoryEvent, WishBannerHisto
     return groupsMap.entries.map((e) {
       final parts = e.value..sort((x, y) => x.version.compareTo(y.version));
       final firstPart = parts.first;
-      final groupingTitle = (groupByCharacter ? firstPart.promotedCharacters : firstPart.promotedWeapons).firstWhere((c) => c.key == e.key).name;
+      final groupingTitle = (groupByCharacter ? firstPart.featuredCharacters : firstPart.featuredWeapons).firstWhere((c) => c.key == e.key).name;
       return WishBannerHistoryGroupedPeriodModel(groupingKey: e.key, groupingTitle: groupingTitle, parts: parts);
     }).toList();
   }
@@ -125,7 +125,7 @@ class WishBannerHistoryBloc extends Bloc<WishBannerHistoryEvent, WishBannerHisto
           final periods = _getGroupedByCharacterOrWeaponPeriod(state.allPeriods, state.groupedType);
           for (final period in periods) {
             final firstPart = period.parts.first;
-            final promotedItem = (groupByCharacter ? firstPart.promotedCharacters : firstPart.promotedWeapons).firstWhere(
+            final promotedItem = (groupByCharacter ? firstPart.featuredCharacters : firstPart.featuredWeapons).firstWhere(
               (el) => el.key == period.groupingKey,
             );
             if (keys.contains(promotedItem.key)) {

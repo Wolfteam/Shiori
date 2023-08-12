@@ -4,6 +4,7 @@ import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/genshin_service.dart';
 import 'package:shiori/domain/services/resources_service.dart';
+import 'package:shiori/domain/services/telemetry_service.dart';
 
 part 'wish_simulator_bloc.freezed.dart';
 part 'wish_simulator_event.dart';
@@ -12,17 +13,18 @@ part 'wish_simulator_state.dart';
 class WishSimulatorBloc extends Bloc<WishSimulatorEvent, WishSimulatorState> {
   final GenshinService _genshinServiceImpl;
   final ResourceService _resourceService;
+  final TelemetryService _telemetryService;
 
   _LoadedState get currentState => state as _LoadedState;
 
-  WishSimulatorBloc(this._genshinServiceImpl, this._resourceService) : super(const WishSimulatorState.loading());
+  WishSimulatorBloc(this._genshinServiceImpl, this._resourceService, this._telemetryService) : super(const WishSimulatorState.loading());
 
   @override
   Stream<WishSimulatorState> mapEventToState(WishSimulatorEvent event) async* {
-    final s = event.map(
+    final s = await event.map(
       init: (e) => _init(),
       periodChanged: (e) => _periodChanged(e.version, e.from, e.until),
-      bannerSelected: (e) => _bannerChanged(e.index),
+      bannerSelected: (e) async => _bannerChanged(e.index),
     );
 
     yield s;
@@ -34,10 +36,11 @@ class WishSimulatorBloc extends Bloc<WishSimulatorEvent, WishSimulatorState> {
     }
   }
 
-  WishSimulatorState _init() {
+  Future<WishSimulatorState> _init() async {
     final version = _genshinServiceImpl.bannerHistory.getBannerHistoryVersions(SortDirectionType.asc).last;
     final banner = _genshinServiceImpl.bannerHistory.getBanners(version).last;
     final period = _genshinServiceImpl.bannerHistory.getWishSimulatorBannerPerPeriod(version, banner.from, banner.until);
+    await _telemetryService.trackWishSimulatorOpened(version);
     return WishSimulatorState.loaded(
       selectedBannerIndex: 0,
       wishIconImage: _getWishIconImage(period.banners.first.type),
@@ -45,8 +48,9 @@ class WishSimulatorBloc extends Bloc<WishSimulatorEvent, WishSimulatorState> {
     );
   }
 
-  WishSimulatorState _periodChanged(double version, DateTime from, DateTime until) {
+  Future<WishSimulatorState> _periodChanged(double version, DateTime from, DateTime until) async {
     _checkLoadedState();
+    await _telemetryService.trackWishSimulatorOpened(version);
     final period = _genshinServiceImpl.bannerHistory.getWishSimulatorBannerPerPeriod(version, from, until);
     return WishSimulatorState.loaded(
       selectedBannerIndex: 0,

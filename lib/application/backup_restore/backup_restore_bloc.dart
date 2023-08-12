@@ -62,7 +62,7 @@ class BackupRestoreBloc extends Bloc<BackupRestoreEvent, BackupRestoreState> {
       throw Exception('Invalid state');
     }
     final result = await _backupRestoreService.createBackup(dataTypes);
-    await _telemetryService.backupCreated(result.succeed);
+    await _telemetryService.trackBackupCreated(result.succeed);
     if (!result.succeed) {
       return currentState.copyWith.call(createResult: result);
     }
@@ -93,7 +93,7 @@ class BackupRestoreBloc extends Bloc<BackupRestoreEvent, BackupRestoreState> {
       dataTypes: bk?.dataTypes ?? [],
     );
     if (bk == null) {
-      await _telemetryService.backupRestored(false);
+      await _telemetryService.trackBackupRestored(false);
       return currentState.copyWith.call(restoreResult: result);
     }
 
@@ -102,7 +102,7 @@ class BackupRestoreBloc extends Bloc<BackupRestoreEvent, BackupRestoreState> {
     }
 
     final restored = await _backupRestoreService.restoreBackup(bk, dataTypes);
-    await _telemetryService.backupRestored(restored);
+    await _telemetryService.trackBackupRestored(restored);
 
     if (!restored || !imported) {
       return currentState.copyWith.call(restoreResult: result);

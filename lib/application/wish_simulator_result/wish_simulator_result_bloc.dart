@@ -2,13 +2,14 @@ import 'dart:math';
 
 import 'package:bloc/bloc.dart';
 import 'package:collection/collection.dart';
+import 'package:darq/darq.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/extensions/double_extensions.dart';
 import 'package:shiori/domain/models/entities.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/data_service.dart';
-import 'package:shiori/domain/services/genshin_service.dart';
+import 'package:shiori/domain/services/telemetry_service.dart';
 import 'package:shiori/domain/wish_banner_constants.dart';
 
 part 'wish_simulator_result_bloc.freezed.dart';
@@ -16,11 +17,11 @@ part 'wish_simulator_result_event.dart';
 part 'wish_simulator_result_state.dart';
 
 class WishSimulatorResultBloc extends Bloc<WishSimulatorResultEvent, WishSimulatorResultState> {
-  final GenshinService _genshinService;
   final DataService _dataService;
+  final TelemetryService _telemetryService;
   final Random _random;
 
-  WishSimulatorResultBloc(this._genshinService, this._dataService)
+  WishSimulatorResultBloc(this._dataService, this._telemetryService)
       : _random = Random(),
         super(const WishSimulatorResultState.loading());
 
@@ -45,12 +46,17 @@ class WishSimulatorResultBloc extends Bloc<WishSimulatorResultEvent, WishSimulat
     final banner = period.banners[bannerIndex];
     final bannerRates = _RatesPerBannerType(banner.type);
     final history = await _dataService.wishSimulator.getBannerPullHistoryPerType(banner.type);
-    final bannerKey = _generateBannerKey(banner);
+
+    final fromUntilString = '${WishBannerConstants.dateFormat.format(period.from)}/${WishBannerConstants.dateFormat.format(period.until)}';
+
+    final bannerKey = _generateBannerKey(period.version, banner.type, fromUntilString);
     final results = <WishBannerItemResultModel>[];
     for (int i = 1; i <= pulls; i++) {
       final int randomRarity = bannerRates.getRarityIfGuaranteed(history) ?? _getRandomItemRarity(history.currentXStarCount, bannerRates);
-      final isRarityInPromoted = banner.promotedItems.any((el) => el.rarity == randomRarity);
-      final winsFiftyFifty = isRarityInPromoted && history.shouldWinFiftyFifty(randomRarity);
+      history.initXStarCountIfNeeded(randomRarity);
+
+      final isRarityInFeatured = banner.featuredItems.isEmpty || banner.featuredItems.any((el) => el.rarity == randomRarity);
+      final winsFiftyFifty = isRarityInFeatured && history.shouldWinFiftyFifty(randomRarity);
       final pool = [
         ...banner.characters.map(
           (e) => WishBannerItemResultModel.character(
@@ -73,45 +79,54 @@ class WishSimulatorResultBloc extends Bloc<WishSimulatorResultEvent, WishSimulat
           return false;
         }
 
-        if (!isRarityInPromoted) {
+        if (!isRarityInFeatured) {
           return true;
         }
 
-        return banner.promotedItems.any((p) => winsFiftyFifty ? p.key == el.key : p.key != el.key);
+        return banner.featuredItems.isEmpty || banner.featuredItems.any((p) => winsFiftyFifty ? p.key == el.key : p.key != el.key);
       }).toList();
 
       assert(pool.isNotEmpty);
+      pool.shuffle(_random);
       final pickedItem = pool[_random.nextInt(pool.length)];
       results.add(pickedItem);
 
-      await history.pull(randomRarity, !isRarityInPromoted ? null : winsFiftyFifty);
+      final bool? gotFeaturedItem = !bannerRates.canBeGuaranteed(randomRarity)
+          ? true
+          : !isRarityInFeatured
+              ? null
+              : winsFiftyFifty;
+      await history.pull(randomRarity, gotFeaturedItem);
 
       final itemType = pickedItem.map(character: (_) => ItemType.character, weapon: (_) => ItemType.weapon);
       await _dataService.wishSimulator.saveBannerItemPullHistory(bannerKey, pickedItem.key, itemType);
     }
 
-    results.sort((x, y) => y.rarity.compareTo(x.rarity));
+    await _telemetryService.trackWishSimulatorResult(bannerIndex, period.version, banner.type, fromUntilString);
 
-    return WishSimulatorResultState.loaded(results: results);
+    final sortedResults = results.orderByDescending((el) => el.rarity).thenBy((el) {
+      final typeName = el.map(character: (_) => ItemType.character.name, weapon: (_) => ItemType.weapon.name);
+      return '$typeName-${el.key}';
+    }).toList();
+    return WishSimulatorResultState.loaded(results: sortedResults);
   }
 
-  String _generateBannerKey(WishBannerItemModel banner) {
-    switch (banner.type) {
+  String _generateBannerKey(double version, BannerItemType bannerType, String range) {
+    switch (bannerType) {
       case BannerItemType.character:
       case BannerItemType.weapon:
-        //TODO: THE KEY HERE
-        return '${banner.type}';
+        return '${version}_${bannerType.name}_$range';
       case BannerItemType.standard:
-        return '${banner.type}';
+        return bannerType.name;
     }
   }
 
   int _getRandomItemRarity(Map<int, int> currentXStarCount, _RatesPerBannerType bannerRates) {
-    assert(bannerRates.rates.isNotEmpty);
+    assert(bannerRates._rates.isNotEmpty);
 
     final probs = <double>[];
     final randomRarities = <int>[];
-    for (final rate in bannerRates.rates) {
+    for (final rate in bannerRates._rates) {
       final int pullCount = currentXStarCount[rate.rarity] ?? 0;
       final considerPullCount = rate.canBeGuaranteed && pullCount > rate.softRateIncreasesAt;
       final double prob = rate.getProb(pullCount, considerPullCount);
@@ -157,7 +172,7 @@ class _BannerRate {
         hardRateIncreasesAt = -1;
 
   double _getSoftRateMultiplier() {
-    if (rarity == WishBannerConstants.promotedRarity) {
+    if (rarity == WishBannerConstants.maxObtainableRarity) {
       return 0.5;
     }
 
@@ -165,7 +180,7 @@ class _BannerRate {
   }
 
   double _getHardRateMultiplier() {
-    if (rarity == WishBannerConstants.promotedRarity) {
+    if (rarity == WishBannerConstants.maxObtainableRarity) {
       return 2;
     }
     return 3;
@@ -202,31 +217,40 @@ class _BannerRate {
 
 class _RatesPerBannerType {
   final BannerItemType type;
-  final List<_BannerRate> rates = [];
+  final List<_BannerRate> _rates = [];
 
-  Map<int, int> get getDefaultXStarCount => {for (var v in rates) v.rarity: 0};
+  Map<int, int> get getDefaultXStarCount => {for (var v in _rates) v.rarity: 0};
 
   _RatesPerBannerType(this.type) {
     switch (type) {
       case BannerItemType.character:
       case BannerItemType.standard:
-        rates.add(const _BannerRate(5, 90, 0.6, 40, 74));
-        rates.add(const _BannerRate(4, 10, 5.1, 4, 7));
-        rates.add(const _BannerRate.simple(3, 94.3));
+        _rates.add(const _BannerRate(5, 90, 0.6, 40, 74));
+        _rates.add(const _BannerRate(4, 10, 5.1, 4, 7));
+        _rates.add(const _BannerRate.simple(3, 94.3));
         break;
       case BannerItemType.weapon:
-        rates.add(const _BannerRate(5, 80, 0.7, 30, 64));
-        rates.add(const _BannerRate(4, 10, 6.0, 4, 7));
-        rates.add(const _BannerRate.simple(3, 93.3));
+        _rates.add(const _BannerRate(5, 80, 0.7, 30, 64));
+        _rates.add(const _BannerRate(4, 10, 6.0, 4, 7));
+        _rates.add(const _BannerRate.simple(3, 93.3));
         break;
     }
+  }
+
+  bool canBeGuaranteed(int rarity) {
+    final rate = _rates.firstWhereOrNull((el) => el.rarity == rarity);
+    if (rate == null) {
+      throw Exception('Rarity = $rarity does not have an associated rate');
+    }
+
+    return rate.canBeGuaranteed;
   }
 
   int? getRarityIfGuaranteed(WishSimulatorBannerPullHistoryPerType history) {
     if (history.type != type.index) {
       throw Exception('The rates only apply to banners of type = $type');
     }
-    for (final rate in rates) {
+    for (final rate in _rates) {
       if (!rate.canBeGuaranteed) {
         continue;
       }
