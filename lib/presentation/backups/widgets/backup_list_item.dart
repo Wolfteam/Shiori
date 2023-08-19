@@ -82,10 +82,8 @@ class BackupListItem extends StatelessWidget {
       switch (op) {
         case OperationType.delete:
           await _delete(s, context);
-          break;
         case OperationType.restore:
           await _restore(s, context);
-          break;
         case null:
           break;
       }

@@ -41,7 +41,7 @@ class CharacterDetailStatsCard extends StatelessWidget {
               CommonTableCell(text: s.translateStatTypeWithoutValue(subStatType), padding: Styles.edgeInsetAll5),
             ],
           ),
-          ...stats.map((e) => _buildRow(e)).toList(),
+          ...stats.map((e) => _buildRow(e)),
         ],
       ),
     );

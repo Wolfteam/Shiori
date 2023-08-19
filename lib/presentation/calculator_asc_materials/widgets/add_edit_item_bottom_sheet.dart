@@ -127,20 +127,18 @@ class AddEditItemBottomSheet extends StatelessWidget {
                   level: state.desiredAscensionLevel,
                   onSave: (newValue) => _ascensionLevelChanged(newValue, false, context),
                 ),
-                ...state.skills
-                    .mapIndex(
-                      (e, index) => SkillItem(
-                        index: index,
-                        name: e.name,
-                        currentLevel: e.currentLevel,
-                        desiredLevel: e.desiredLevel,
-                        isCurrentDecEnabled: e.isCurrentDecEnabled,
-                        isCurrentIncEnabled: e.isCurrentIncEnabled,
-                        isDesiredDecEnabled: e.isDesiredDecEnabled,
-                        isDesiredIncEnabled: e.isDesiredIncEnabled,
-                      ),
-                    )
-                    .toList(),
+                ...state.skills.mapIndex(
+                  (e, index) => SkillItem(
+                    index: index,
+                    name: e.name,
+                    currentLevel: e.currentLevel,
+                    desiredLevel: e.desiredLevel,
+                    isCurrentDecEnabled: e.isCurrentDecEnabled,
+                    isCurrentIncEnabled: e.isCurrentIncEnabled,
+                    isDesiredDecEnabled: e.isDesiredDecEnabled,
+                    isDesiredIncEnabled: e.isDesiredIncEnabled,
+                  ),
+                ),
                 _UseMaterialsFromInventoryToggleButton(useMaterialsFromInventory: state.useMaterialsFromInventory),
                 _ButtonBar(
                   sessionKey: sessionKey,
@@ -213,20 +211,18 @@ class AddEditItemBottomSheet extends StatelessWidget {
               level: state.desiredAscensionLevel,
               onSave: (newValue) => _ascensionLevelChanged(newValue, false, context),
             ),
-            ...state.skills
-                .mapIndex(
-                  (e, index) => SkillItem(
-                    index: index,
-                    name: e.name,
-                    currentLevel: e.currentLevel,
-                    desiredLevel: e.desiredLevel,
-                    isCurrentDecEnabled: e.isCurrentDecEnabled,
-                    isCurrentIncEnabled: e.isCurrentIncEnabled,
-                    isDesiredDecEnabled: e.isDesiredDecEnabled,
-                    isDesiredIncEnabled: e.isDesiredIncEnabled,
-                  ),
-                )
-                .toList(),
+            ...state.skills.mapIndex(
+              (e, index) => SkillItem(
+                index: index,
+                name: e.name,
+                currentLevel: e.currentLevel,
+                desiredLevel: e.desiredLevel,
+                isCurrentDecEnabled: e.isCurrentDecEnabled,
+                isCurrentIncEnabled: e.isCurrentIncEnabled,
+                isDesiredDecEnabled: e.isDesiredDecEnabled,
+                isDesiredIncEnabled: e.isDesiredIncEnabled,
+              ),
+            ),
             _UseMaterialsFromInventoryToggleButton(useMaterialsFromInventory: state.useMaterialsFromInventory),
           ],
         ),

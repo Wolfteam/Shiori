@@ -171,7 +171,6 @@ void main() {
               case CharacterSkillType.elementalSkill:
               case CharacterSkillType.elementalBurst:
                 expect(stat.values.length, 15);
-                break;
               case CharacterSkillType.others:
                 break;
               default:

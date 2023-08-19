@@ -135,7 +135,6 @@ class _NotificationItem extends StatelessWidget {
           initialResin: element.currentResinValue,
           useTwentyFourHoursFormat: useTwentyFourHoursFormat,
         );
-        break;
       case AppNotificationType.realmCurrency:
         subtitle = NotificationRealmCurrencySubtitle(
           createdAt: element.createdAt,
@@ -146,7 +145,6 @@ class _NotificationItem extends StatelessWidget {
           currentTrustRank: element.realmTrustRank!,
           useTwentyFourHoursFormat: useTwentyFourHoursFormat,
         );
-        break;
       default:
         subtitle = NotificationSubtitle(
           createdAt: element.createdAt,

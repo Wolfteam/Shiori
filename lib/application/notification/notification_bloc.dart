@@ -162,27 +162,21 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
       case AppNotificationType.resin:
         images.addAll(_getImagesForResin());
         state = NotificationState.resin(currentResin: item.currentResinValue);
-        break;
       case AppNotificationType.expedition:
         images.addAll(_getImagesForExpeditionNotifications(selectedImage: item.image));
         state = NotificationState.expedition(expeditionTimeType: item.expeditionTimeType!, withTimeReduction: item.withTimeReduction);
-        break;
       case AppNotificationType.farmingArtifacts:
         images.addAll(_getImagesForFarmingArtifactNotifications(selectedImage: item.image));
         state = NotificationState.farmingArtifact(artifactFarmingTimeType: item.artifactFarmingTimeType!);
-        break;
       case AppNotificationType.farmingMaterials:
         images.addAll(_getImagesForFarmingMaterialNotifications(selectedImage: item.image));
         state = const NotificationState.farmingMaterial();
-        break;
       case AppNotificationType.gadget:
         images.addAll(_getImagesForGadgetNotifications(selectedImage: item.image));
         state = const NotificationState.gadget();
-        break;
       case AppNotificationType.furniture:
         images.addAll(_getImagesForFurnitureNotifications(selectedImage: item.image));
         state = NotificationState.furniture(timeType: item.furnitureCraftingTimeType!);
-        break;
       case AppNotificationType.realmCurrency:
         images.addAll(_getImagesForRealmCurrencyNotifications(selectedImage: item.image));
         state = NotificationState.realmCurrency(
@@ -190,11 +184,9 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
           currentRealmCurrency: item.realmCurrency!,
           currentRealmRankType: item.realmRankType!,
         );
-        break;
       case AppNotificationType.weeklyBoss:
         images.addAll(_getImagesForWeeklyBossNotifications(selectedImage: item.image));
         state = const NotificationState.weeklyBoss();
-        break;
       case AppNotificationType.custom:
         images.addAll(_getImagesForCustomNotifications(itemKey: item.itemKey, selectedImage: item.image));
         state = NotificationState.custom(
@@ -203,11 +195,9 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
           language: _localeService.getLocaleWithoutLang(),
           useTwentyFourHoursFormat: _settingsService.useTwentyFourHoursFormat,
         );
-        break;
       case AppNotificationType.dailyCheckIn:
         images.addAll(_getImagesForDailyCheckIn(itemKey: item.itemKey, selectedImage: item.image));
         state = const NotificationState.dailyCheckIn();
-        break;
       default:
         throw Exception('Invalid notification type = ${item.type}');
     }
@@ -240,35 +230,27 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
       case AppNotificationType.resin:
         images.addAll(_getImagesForResin());
         updatedState = const NotificationState.resin(currentResin: 0);
-        break;
       case AppNotificationType.expedition:
         images.addAll(_getImagesForExpeditionNotifications());
         updatedState = const NotificationState.expedition(expeditionTimeType: ExpeditionTimeType.twentyHours, withTimeReduction: false);
-        break;
       case AppNotificationType.farmingArtifacts:
         images.addAll(_getImagesForFarmingArtifactNotifications());
         updatedState = const NotificationState.farmingArtifact();
-        break;
       case AppNotificationType.farmingMaterials:
         images.addAll(_getImagesForFarmingMaterialNotifications());
         updatedState = const NotificationState.farmingMaterial();
-        break;
       case AppNotificationType.gadget:
         images.addAll(_getImagesForGadgetNotifications());
         updatedState = const NotificationState.gadget();
-        break;
       case AppNotificationType.furniture:
         images.addAll(_getImagesForFurnitureNotifications());
         updatedState = const NotificationState.furniture();
-        break;
       case AppNotificationType.realmCurrency:
         images.addAll(_getImagesForRealmCurrencyNotifications());
         updatedState = const NotificationState.realmCurrency();
-        break;
       case AppNotificationType.weeklyBoss:
         images.addAll(_getImagesForWeeklyBossNotifications());
         updatedState = const NotificationState.weeklyBoss();
-        break;
       case AppNotificationType.custom:
         images.addAll(_getImagesForCustomNotifications());
         updatedState = NotificationState.custom(
@@ -277,11 +259,9 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
           language: _localeService.getLocaleWithoutLang(),
           useTwentyFourHoursFormat: _settingsService.useTwentyFourHoursFormat,
         );
-        break;
       case AppNotificationType.dailyCheckIn:
         images.addAll(_getImagesForDailyCheckIn());
         updatedState = const NotificationState.dailyCheckIn();
-        break;
       default:
         throw Exception('The provided app notification type = $newValue is not valid');
     }
@@ -309,24 +289,19 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
           case AppNotificationItemType.character:
             final character = _genshinService.characters.getCharactersForCard().first;
             images.add(NotificationItemImage(itemKey: character.key, image: character.image, isSelected: true));
-            break;
           case AppNotificationItemType.weapon:
             final weapon = _genshinService.weapons.getWeaponsForCard().first;
             images.add(NotificationItemImage(itemKey: weapon.key, image: weapon.image, isSelected: true));
-            break;
           case AppNotificationItemType.artifact:
             final artifact = _genshinService.artifacts.getArtifactsForCard().first;
             images.add(NotificationItemImage(itemKey: artifact.key, image: artifact.image, isSelected: true));
-            break;
           case AppNotificationItemType.monster:
             final monster = _genshinService.monsters.getAllMonstersForCard().first;
             images.add(NotificationItemImage(itemKey: monster.key, image: monster.image, isSelected: true));
-            break;
           case AppNotificationItemType.material:
             final material = _genshinService.materials.getAllMaterialsThatCanBeObtainedFromAnExpedition().first;
             final imagePath = _resourceService.getMaterialImagePath(material.image, material.type);
             images.add(NotificationItemImage(itemKey: material.key, image: imagePath, isSelected: true));
-            break;
           default:
             throw Exception('The provided notification item type = $newValue is not valid');
         }

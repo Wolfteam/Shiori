@@ -1,4 +1,4 @@
-include: package:lint/analysis_options.yaml
+include: package:lint/strict.yaml
 
 linter:
   rules:
@@ -12,7 +12,8 @@ analyzer:
     - '**/*.freezed.dart'
     - '**/*.g.dart'
     - lib/**/*.*.dart
-    - lib/generated/intl/*
+    - lib/generated/*.dart
+    - lib/generated/**/*.dart
     - '**/mocks.mocks.dart'
     - '**/shiori_icons.dart'
   errors:

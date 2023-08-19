@@ -94,13 +94,10 @@ class GenshinServiceImpl implements GenshinService {
     switch (type) {
       case AppServerResetTimeType.northAmerica:
         server = nowUtc.subtract(const Duration(hours: 5));
-        break;
       case AppServerResetTimeType.europe:
         server = nowUtc.add(const Duration(hours: 1));
-        break;
       case AppServerResetTimeType.asia:
         server = nowUtc.add(const Duration(hours: 8));
-        break;
       default:
         throw Exception('Invalid server reset type');
     }
@@ -252,10 +249,8 @@ class GenshinServiceImpl implements GenshinService {
     switch (itemType) {
       case ItemType.character:
         items.addAll(characters.getItemCommonWithNameByStatType(statType));
-        break;
       case ItemType.weapon:
         items.addAll(weapons.getItemCommonWithNameByStatType(statType));
-        break;
       default:
         throw Exception('Invalid itemType = $itemType');
     }

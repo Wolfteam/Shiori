@@ -124,7 +124,6 @@ class _AppBar extends StatelessWidget implements PreferredSizeWidget {
                   switch (e) {
                     case 0:
                       context.read<CustomBuildBloc>().add(CustomBuildEvent.showOnCharacterDetailChanged(newValue: !state.showOnCharacterDetail));
-                      break;
                     default:
                       throw Exception('Invalid option');
                   }

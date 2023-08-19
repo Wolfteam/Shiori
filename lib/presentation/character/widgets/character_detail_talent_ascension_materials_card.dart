@@ -34,7 +34,7 @@ class CharacterDetailTalentAscensionMaterialsCard extends StatelessWidget {
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: [...multiTalentAscensionMaterials.map((e) => _buildTableCard(s.talentAscensionX(e.number), e.materials, context)).toList()],
+      children: [...multiTalentAscensionMaterials.map((e) => _buildTableCard(s.talentAscensionX(e.number), e.materials, context))],
     );
   }
 
@@ -62,7 +62,7 @@ class CharacterDetailTalentAscensionMaterialsCard extends StatelessWidget {
                 CommonTableCell(text: s.materials, padding: Styles.edgeInsetAll10),
               ],
             ),
-            ...materials.map((e) => _buildTalentAscensionRow(e)).toList(),
+            ...materials.map((e) => _buildTalentAscensionRow(e)),
           ],
         ),
       ),

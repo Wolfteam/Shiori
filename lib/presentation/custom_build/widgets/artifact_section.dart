@@ -118,10 +118,8 @@ class ArtifactSection extends StatelessWidget {
     switch (selectedType) {
       case ArtifactType.flower:
         statType = StatType.hp;
-        break;
       case ArtifactType.plume:
         statType = StatType.atk;
-        break;
       default:
         statType = await showDialog<StatType>(
           context: context,

@@ -174,22 +174,16 @@ class TierListRow extends StatelessWidget {
     switch (optionType) {
       case TierListRowOptionsType.addRowAbove:
         context.read<TierListBloc>().add(TierListEvent.addNewRow(index: index, above: true));
-        break;
       case TierListRowOptionsType.addRowBelow:
         context.read<TierListBloc>().add(TierListEvent.addNewRow(index: index, above: false));
-        break;
       case TierListRowOptionsType.rename:
         _showRenameDialog(context);
-        break;
       case TierListRowOptionsType.delete:
         context.read<TierListBloc>().add(TierListEvent.deleteRow(index: index));
-        break;
       case TierListRowOptionsType.clear:
         context.read<TierListBloc>().add(TierListEvent.clearRow(index: index));
-        break;
       case TierListRowOptionsType.changeColor:
         await _showColorPicker(context);
-        break;
     }
   }
 

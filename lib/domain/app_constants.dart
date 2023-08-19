@@ -759,19 +759,14 @@ double getItemTotalExp(int currentLevel, int desiredLevel, int rarity, bool forC
     switch (rarity) {
       case 5:
         items.addAll(weaponExp5Stars);
-        break;
       case 4:
         items.addAll(weaponExp4Stars);
-        break;
       case 3:
         items.addAll(weaponExp3Stars);
-        break;
       case 2:
         items.addAll(weaponExp2Stars);
-        break;
       case 1:
         items.addAll(weaponExp1Star);
-        break;
       default:
         throw Exception('The provided rarity = $rarity');
     }

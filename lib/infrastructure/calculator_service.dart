@@ -54,31 +54,25 @@ class CalculatorServiceImpl implements CalculatorService {
         switch (material.type) {
           case MaterialType.common:
             key = AscensionMaterialSummaryType.common;
-            break;
           //some characters use ingredient / local specialities, so we label them all as local
           case MaterialType.local:
           case MaterialType.ingredient:
             key = AscensionMaterialSummaryType.local;
-            break;
           case MaterialType.currency:
             key = AscensionMaterialSummaryType.currency;
-            break;
           //there are some weapon secondary materials used by some characters, so I pretty much group them as common
           case MaterialType.weapon:
           case MaterialType.weaponPrimary:
             key = AscensionMaterialSummaryType.common;
-            break;
           //this case shouldn't be common except for the traveler, since the elementalStone they use is no dropped from boss
           case MaterialType.elementalStone:
           case MaterialType.jewels:
           case MaterialType.talents:
           case MaterialType.others:
             key = AscensionMaterialSummaryType.others;
-            break;
           case MaterialType.expWeapon:
           case MaterialType.expCharacter:
             key = AscensionMaterialSummaryType.exp;
-            break;
         }
         newValue = MaterialSummary(
           key: material.key,

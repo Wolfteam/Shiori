@@ -68,13 +68,10 @@ class _MainTabPageState extends State<MainTabPage> with SingleTickerProviderStat
         switch (widget.updateResult) {
           case AppResourceUpdateResultType.unknownError:
             ToastUtils.showErrorToast(toast, s.unknownErrorWhileUpdating);
-            break;
           case AppResourceUpdateResultType.needsLatestAppVersion:
             ToastUtils.showInfoToast(toast, s.newAppVersionInStore);
-            break;
           case AppResourceUpdateResultType.updated:
             ToastUtils.showSucceedToast(toast, s.resourceUpdateCompleted);
-            break;
           case AppResourceUpdateResultType.updatesAvailable:
           case AppResourceUpdateResultType.noUpdatesAvailable:
           case AppResourceUpdateResultType.noInternetConnectionForFirstInstall:

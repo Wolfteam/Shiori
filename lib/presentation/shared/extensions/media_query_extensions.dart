@@ -9,7 +9,6 @@ extension MediaQueryExtensions on MediaQueryData {
       case DeviceScreenType.tablet:
       case DeviceScreenType.desktop:
         take = orientation == Orientation.portrait ? 2 : 3;
-        break;
       default:
         break;
     }
@@ -27,7 +26,6 @@ extension MediaQueryExtensions on MediaQueryData {
         if (exceeds) {
           max = size.height * 0.55;
         }
-        break;
       default:
         final exceeds = maxHeight * 100 / size.height > 55;
         if (exceeds) {

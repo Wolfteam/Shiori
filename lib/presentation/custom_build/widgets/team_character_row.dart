@@ -81,10 +81,8 @@ class TeamCharacterRow extends StatelessWidget {
               switch (e.enumValue) {
                 case _Options.delete:
                   icon = const Icon(Icons.delete);
-                  break;
                 case _Options.update:
                   icon = const Icon(Icons.edit);
-                  break;
                 default:
                   throw Exception('The provided team character option type = ${e.enumValue} is not valid');
               }
@@ -119,7 +117,6 @@ class TeamCharacterRow extends StatelessWidget {
     switch (option) {
       case _Options.delete:
         bloc.add(CustomBuildEvent.deleteTeamCharacter(key: character.key));
-        break;
       case _Options.update:
         final roleType = await showDialog<CharacterRoleType>(
           context: context,
@@ -137,7 +134,6 @@ class TeamCharacterRow extends StatelessWidget {
         }
 
         bloc.add(CustomBuildEvent.addTeamCharacter(key: character.key, roleType: roleType, subType: subType));
-        break;
       default:
         throw Exception('The team character option is not valid');
     }

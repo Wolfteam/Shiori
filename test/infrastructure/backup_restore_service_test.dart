@@ -557,32 +557,26 @@ void main() {
           final inventoryMock = MockInventoryDataService();
           when(inventoryMock.getDataForBackup()).thenReturn(inventoryData);
           when(dataService.inventory).thenReturn(inventoryMock);
-          break;
         case AppBackupDataType.calculatorAscMaterials:
           final calAscMatMock = MockCalculatorDataService();
           when(calAscMatMock.getDataForBackup()).thenReturn(calAscMatData);
           when(dataService.calculator).thenReturn(calAscMatMock);
-          break;
         case AppBackupDataType.tierList:
           final tierListMock = MockTierListDataService();
           when(tierListMock.getDataForBackup()).thenReturn(tierListData);
           when(dataService.tierList).thenReturn(tierListMock);
-          break;
         case AppBackupDataType.customBuilds:
           final customBuildsMock = MockCustomBuildsDataService();
           when(customBuildsMock.getDataForBackup()).thenReturn(customBuildsData);
           when(dataService.customBuilds).thenReturn(customBuildsMock);
-          break;
         case AppBackupDataType.gameCodes:
           final gameCodesMock = MockGameCodesDataService();
           when(gameCodesMock.getDataForBackup()).thenReturn(gameCodesData);
           when(dataService.gameCodes).thenReturn(gameCodesMock);
-          break;
         case AppBackupDataType.notifications:
           final notificationsMock = MockNotificationsDataService();
           when(notificationsMock.getDataForBackup()).thenReturn(notificationsData);
           when(dataService.notifications).thenReturn(notificationsMock);
-          break;
       }
     }
     return dataService;

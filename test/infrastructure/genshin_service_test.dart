@@ -59,14 +59,12 @@ void main() {
             case ChartType.topFourStarCharacterLeastReruns:
               final char = service.characters.getCharacter(item.key);
               expect(char.rarity == expectedStars, isTrue);
-              break;
             case ChartType.topFiveStarWeaponMostReruns:
             case ChartType.topFourStarWeaponMostReruns:
             case ChartType.topFiveStarWeaponLeastReruns:
             case ChartType.topFourStarWeaponLeastReruns:
               final weapon = service.weapons.getWeapon(item.key);
               expect(weapon.rarity == expectedStars, isTrue);
-              break;
             default:
               throw Exception('Type = $type is not valid');
           }

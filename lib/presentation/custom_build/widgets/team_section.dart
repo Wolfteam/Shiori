@@ -103,16 +103,14 @@ class TeamSection extends StatelessWidget {
               if (state.teamCharacters.isEmpty)
                 NothingFound(msg: s.startByAddingCharacters, padding: Styles.edgeInsetVertical10)
               else
-                ...state.teamCharacters
-                    .map(
-                      (e) => TeamCharacterRow(
-                        character: e,
-                        teamCount: state.teamCharacters.length,
-                        color: color,
-                        readyToShare: state.readyForScreenshot,
-                      ),
-                    )
-                    .toList(),
+                ...state.teamCharacters.map(
+                  (e) => TeamCharacterRow(
+                    character: e,
+                    teamCount: state.teamCharacters.length,
+                    color: color,
+                    readyToShare: state.readyForScreenshot,
+                  ),
+                ),
             ],
           );
         },

@@ -68,11 +68,9 @@ class SplashPage extends StatelessWidget {
           break;
         }
         initMain = true;
-        break;
       case AppResourceUpdateResultType.noUpdatesAvailable:
       case AppResourceUpdateResultType.updated:
         initMain = true;
-        break;
       case AppResourceUpdateResultType.updatesAvailable:
         //Only show the msg if it is the first update, otherwise auto apply the update
         if (!noResourcesHasBeenDownloaded) {
@@ -94,7 +92,6 @@ class SplashPage extends StatelessWidget {
             showCancelButton: !noResourcesHasBeenDownloaded,
           ),
         );
-        break;
       case AppResourceUpdateResultType.updating:
       case AppResourceUpdateResultType.retrying:
       case AppResourceUpdateResultType.noInternetConnection:
