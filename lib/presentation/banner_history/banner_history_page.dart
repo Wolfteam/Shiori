@@ -210,7 +210,7 @@ class _AppBarSearchDelegate extends SearchDelegate<List<String>> {
               query = '';
             }
           },
-        )
+        ),
       ];
 
   @override

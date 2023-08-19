@@ -39,7 +39,7 @@ void main() {
           isInitialized: false,
           noInternetConnection: true,
           canMakePurchases: false,
-        )
+        ),
       ],
     );
 
@@ -60,7 +60,7 @@ void main() {
           isInitialized: false,
           noInternetConnection: false,
           canMakePurchases: false,
-        )
+        ),
       ],
     );
 

@@ -151,7 +151,7 @@ void main() {
           initialized: true,
           firstInstall: defaultAppSettings.isFirstInstall,
           versionChanged: false,
-        )
+        ),
       ],
     );
   });

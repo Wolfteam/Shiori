@@ -197,9 +197,9 @@ class _LandscapeLayout extends StatelessWidget {
               ],
             );
           case 5:
-            return Row(
+            return const Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: const [
+              children: [
                 Expanded(flex: 49, child: _Regions()),
                 Spacer(flex: 2),
                 Expanded(flex: 49, child: _Genders()),

@@ -35,7 +35,7 @@ class AscensionMaterialsSummaryWidget extends StatelessWidget {
               children: summary.materials
                   .map((m) => MaterialItem(itemKey: m.key, image: m.fullImagePath, quantity: m.quantity, type: m.type, sessionKey: sessionKey))
                   .toList(),
-            )
+            ),
           ],
         ),
       );

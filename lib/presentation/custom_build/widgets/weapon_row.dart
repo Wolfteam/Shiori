@@ -301,7 +301,7 @@ class _LevelDialogState extends State<_LevelDialog> {
         ElevatedButton(
           onPressed: () => Navigator.pop<WeaponFileStatModel>(context, _currentValue),
           child: Text(s.ok),
-        )
+        ),
       ],
       content: SizedBox(
         width: mq.getWidthForDialogs(),

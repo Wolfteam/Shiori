@@ -128,7 +128,7 @@ class _BodyState extends State<_Body> with SingleTickerProviderStateMixin, AppFa
       s.calcSessionInfoMsgB,
       s.calcSessionInfoMsgC,
       s.calcSessionInfoMsgD(s.useMaterialsFromInventory),
-      s.calcSessionInfoMsgE(s.myInventory)
+      s.calcSessionInfoMsgE(s.myInventory),
     ];
     await showDialog(
       context: context,

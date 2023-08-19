@@ -50,7 +50,7 @@ class CircleItem extends StatelessWidget {
 
     if (forDrag) {
       if (gradient != null) {
-        return Container(
+        return DecoratedBox(
           decoration: boxDecoration,
           child: avatar,
         );

@@ -150,7 +150,7 @@ class TierListRow extends StatelessWidget {
                         ),
                       ],
                     ),
-                  )
+                  ),
               ],
             ),
           ),

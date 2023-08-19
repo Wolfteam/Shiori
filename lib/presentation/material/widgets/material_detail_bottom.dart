@@ -276,7 +276,7 @@ class _LandscapeLayout extends StatelessWidget {
               ),
               textColor: rarityColor,
             ),
-          )
+          ),
       ],
     );
   }

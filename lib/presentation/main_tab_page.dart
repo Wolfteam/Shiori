@@ -41,7 +41,7 @@ class _MainTabPageState extends State<MainTabPage> with SingleTickerProviderStat
       vsync: this,
     );
     super.initState();
-    WidgetsBinding.instance!.addObserver(this);
+    WidgetsBinding.instance.addObserver(this);
   }
 
   @override
@@ -105,7 +105,7 @@ class _MainTabPageState extends State<MainTabPage> with SingleTickerProviderStat
 
   @override
   void dispose() {
-    WidgetsBinding.instance!.removeObserver(this);
+    WidgetsBinding.instance.removeObserver(this);
     _tabController.dispose();
     super.dispose();
   }

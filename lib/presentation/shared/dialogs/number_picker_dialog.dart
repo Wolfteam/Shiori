@@ -46,7 +46,7 @@ class _NumberPickerDialogState extends State<NumberPickerDialog> {
         ElevatedButton(
           onPressed: () => Navigator.pop<int>(context, _currentValue),
           child: Text(s.ok),
-        )
+        ),
       ],
       content: NumberPicker(
         minValue: widget.minItemLevel,

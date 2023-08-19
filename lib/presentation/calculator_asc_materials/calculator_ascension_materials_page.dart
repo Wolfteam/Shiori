@@ -71,7 +71,7 @@ class _AppBar extends StatelessWidget implements PreferredSizeWidget {
               icon: const Icon(Icons.clear_all),
               splashRadius: Styles.mediumButtonSplashRadius,
               onPressed: () => _showDeleteAllDialog(context),
-            )
+            ),
         ],
       ),
     );

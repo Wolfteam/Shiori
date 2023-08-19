@@ -65,7 +65,7 @@ void main() {
         'traveler-hydro',
         'traveler-pyro',
         'traveler-cryo',
-        'traveler-dendro'
+        'traveler-dendro',
       ];
       final detail = service.getCharacter(character.key);
       final isTraveler = travelerKeys.contains(character.key);

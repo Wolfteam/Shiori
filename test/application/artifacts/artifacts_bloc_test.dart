@@ -53,7 +53,7 @@ void main() {
             tempArtifactFilterType: ArtifactFilterType.name,
             sortDirectionType: SortDirectionType.asc,
             tempSortDirectionType: SortDirectionType.asc,
-          )
+          ),
         ];
       },
     );
@@ -103,7 +103,7 @@ void main() {
             sortDirectionType: SortDirectionType.asc,
             tempSortDirectionType: SortDirectionType.asc,
             search: wandererSearch,
-          )
+          ),
         ];
       },
     );
@@ -126,7 +126,7 @@ void main() {
           sortDirectionType: SortDirectionType.asc,
           tempSortDirectionType: SortDirectionType.asc,
           search: 'Keqing',
-        )
+        ),
       ],
     );
   });
@@ -157,7 +157,7 @@ void main() {
             sortDirectionType: SortDirectionType.desc,
             tempSortDirectionType: SortDirectionType.desc,
             search: wandererSearch,
-          )
+          ),
         ];
       },
     );
@@ -184,7 +184,7 @@ void main() {
             tempArtifactFilterType: ArtifactFilterType.name,
             sortDirectionType: SortDirectionType.asc,
             tempSortDirectionType: SortDirectionType.asc,
-          )
+          ),
         ];
       },
     );
@@ -212,7 +212,7 @@ void main() {
             tempArtifactFilterType: ArtifactFilterType.name,
             sortDirectionType: SortDirectionType.asc,
             tempSortDirectionType: SortDirectionType.asc,
-          )
+          ),
         ];
       },
     );

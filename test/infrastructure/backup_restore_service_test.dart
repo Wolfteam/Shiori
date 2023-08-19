@@ -68,7 +68,7 @@ void main() {
           isActive: true,
           currentAscensionLevel: 1,
           desiredAscensionLevel: 4,
-        )
+        ),
       ],
     ),
   ];

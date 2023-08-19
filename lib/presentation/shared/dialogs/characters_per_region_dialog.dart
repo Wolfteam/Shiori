@@ -44,7 +44,7 @@ class CharactersPerRegionDialog extends StatelessWidget {
           ElevatedButton(
             onPressed: () => Navigator.pop(context),
             child: Text(s.ok),
-          )
+          ),
         ],
         content: BlocBuilder<CharactersPerRegionBloc, CharactersPerRegionState>(
           builder: (context, state) => state.maybeMap(

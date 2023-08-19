@@ -31,12 +31,12 @@ class _PortraitLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ScaffoldWithFab(
+    return const ScaffoldWithFab(
       child: Stack(
         fit: StackFit.passthrough,
         clipBehavior: Clip.none,
         alignment: Alignment.topCenter,
-        children: const [
+        children: [
           CharacterDetailTop(),
           CharacterDetailBottom(),
         ],
@@ -50,10 +50,10 @@ class _LandscapeLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       body: SafeArea(
         child: Row(
-          children: const [
+          children: [
             Expanded(child: CharacterDetailTop()),
             Expanded(child: CharacterDetailBottom()),
           ],

@@ -68,9 +68,9 @@ class MonsterCard extends StatelessWidget {
                   ),
                 ),
                 if (isComingSoon)
-                  Row(
+                  const Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: const [
+                    children: [
                       ComingSoonNewAvatar(isNew: false, isComingSoon: true),
                     ],
                   ),

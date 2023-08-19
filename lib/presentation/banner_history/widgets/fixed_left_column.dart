@@ -184,7 +184,7 @@ class _OptionsDialog extends StatelessWidget {
         ElevatedButton(
           onPressed: () => Navigator.pop(context),
           child: Text(s.cancel),
-        )
+        ),
       ],
       content: SingleChildScrollView(
         child: Column(

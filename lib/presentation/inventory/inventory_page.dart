@@ -61,7 +61,7 @@ class _AppBar extends StatelessWidget implements PreferredSizeWidget {
               child: const ClearAllDialog(),
             ),
           ),
-        )
+        ),
       ],
     );
   }

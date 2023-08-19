@@ -48,7 +48,7 @@ void main() {
             tempRarity: 0,
             sortDirectionType: SortDirectionType.asc,
             tempSortDirectionType: SortDirectionType.asc,
-          )
+          ),
         ];
       },
     );
@@ -97,7 +97,7 @@ void main() {
             sortDirectionType: SortDirectionType.asc,
             tempSortDirectionType: SortDirectionType.asc,
             search: search,
-          )
+          ),
         ];
       },
     );
@@ -119,7 +119,7 @@ void main() {
           sortDirectionType: SortDirectionType.asc,
           tempSortDirectionType: SortDirectionType.asc,
           search: 'Keqing',
-        )
+        ),
       ],
     );
   });
@@ -151,7 +151,7 @@ void main() {
             sortDirectionType: SortDirectionType.desc,
             tempSortDirectionType: SortDirectionType.desc,
             search: search,
-          )
+          ),
         ];
       },
     );
@@ -183,7 +183,7 @@ void main() {
             tempType: MaterialType.currency,
             sortDirectionType: SortDirectionType.desc,
             tempSortDirectionType: SortDirectionType.desc,
-          )
+          ),
         ];
       },
     );
@@ -211,7 +211,7 @@ void main() {
             tempFilterType: MaterialFilterType.grouped,
             sortDirectionType: SortDirectionType.asc,
             tempSortDirectionType: SortDirectionType.asc,
-          )
+          ),
         ];
       },
     );

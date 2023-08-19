@@ -39,7 +39,7 @@ void main() {
       isUsed: false,
       rewards: [],
       discoveredOn: DateTime.now().subtract(const Duration(days: 10)),
-    )
+    ),
   ];
 
   const defaultState = GameCodesState.loaded(workingGameCodes: [], expiredGameCodes: []);

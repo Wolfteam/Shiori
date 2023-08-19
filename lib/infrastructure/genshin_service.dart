@@ -75,7 +75,7 @@ class GenshinServiceImpl implements GenshinService {
       _materials.init(_resourceService.getJsonFilePath(AppJsonFileType.materials)),
       _monsters.init(_resourceService.getJsonFilePath(AppJsonFileType.monsters)),
       _weapons.init(_resourceService.getJsonFilePath(AppJsonFileType.weapons)),
-      _translations.initTranslations(languageType, _resourceService.getJsonFilePath(AppJsonFileType.translations, language: languageType))
+      _translations.initTranslations(languageType, _resourceService.getJsonFilePath(AppJsonFileType.translations, language: languageType)),
     ]);
   }
 

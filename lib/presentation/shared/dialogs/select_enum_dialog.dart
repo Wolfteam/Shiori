@@ -95,7 +95,7 @@ class _SelectEnumDialogState<TEnum> extends State<SelectEnumDialog<TEnum>> {
             widget.onSave(currentSelectedType);
           },
           child: Text(s.ok),
-        )
+        ),
       ],
     );
   }

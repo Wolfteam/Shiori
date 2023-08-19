@@ -23,11 +23,7 @@ part 'notification_event.dart';
 part 'notification_state.dart';
 
 //just a dummy state
-const _initialState = NotificationState.resin(
-  images: [],
-  showNotification: true,
-  currentResin: 0,
-);
+const _initialState = NotificationState.resin(currentResin: 0);
 
 class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
   final DataService _dataService;
@@ -154,7 +150,6 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
       isTitleValid: true,
       isBodyValid: true,
       images: _getImagesForResin(),
-      showNotification: true,
       currentResin: 0,
     );
   }
@@ -752,7 +747,7 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
   List<NotificationItemImage> _getImagesForRealmCurrencyNotifications({String? selectedImage}) {
     final material = _genshinService.materials.getRealmCurrencyMaterial();
     return [
-      NotificationItemImage(itemKey: material.key, image: _resourceService.getMaterialImagePath(material.image, material.type), isSelected: true)
+      NotificationItemImage(itemKey: material.key, image: _resourceService.getMaterialImagePath(material.image, material.type), isSelected: true),
     ];
   }
 

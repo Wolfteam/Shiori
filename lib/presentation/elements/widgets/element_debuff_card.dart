@@ -33,7 +33,7 @@ class ElementDebuffCard extends StatelessWidget {
                 textAlign: TextAlign.center,
                 style: theme.textTheme.titleMedium!.copyWith(fontWeight: FontWeight.bold),
               ),
-              Text(effect, textAlign: TextAlign.center, style: theme.textTheme.titleSmall!.copyWith(fontSize: 12))
+              Text(effect, textAlign: TextAlign.center, style: theme.textTheme.titleSmall!.copyWith(fontSize: 12)),
             ],
           ),
         ),

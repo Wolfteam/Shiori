@@ -68,7 +68,7 @@ class ElementReactionCard extends StatelessWidget {
               effect,
               textAlign: TextAlign.center,
               style: theme.textTheme.titleSmall!.copyWith(fontSize: 12),
-            )
+            ),
           ],
         ),
       ),

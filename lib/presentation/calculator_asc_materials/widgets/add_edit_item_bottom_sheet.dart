@@ -394,7 +394,7 @@ class _ButtonBar extends StatelessWidget {
                   context,
                 ),
           child: Text(s.ok),
-        )
+        ),
       ],
     );
   }
