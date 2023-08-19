@@ -4,7 +4,6 @@ import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/calculator_service.dart';
 import 'package:shiori/domain/services/genshin_service.dart';
 import 'package:shiori/domain/services/resources_service.dart';
-import 'package:tuple/tuple.dart';
 
 class CalculatorServiceImpl implements CalculatorService {
   final GenshinService _genshinService;
@@ -298,7 +297,7 @@ class CalculatorServiceImpl implements CalculatorService {
   }
 
   @override
-  Tuple4<bool, bool, bool, bool> isSkillEnabled(
+  (bool, bool, bool, bool) isSkillEnabled(
     int currentLevel,
     int desiredLevel,
     int currentAscensionLevel,
@@ -324,7 +323,7 @@ class CalculatorServiceImpl implements CalculatorService {
           maxSkillLevel,
         );
 
-    return Tuple4<bool, bool, bool, bool>(currentDecEnabled, currentIncEnabled, desiredDecEnabled, desiredIncEnabled);
+    return (currentDecEnabled, currentIncEnabled, desiredDecEnabled, desiredIncEnabled);
   }
 
   List<ItemAscensionMaterialModel> _flatMaterialsList(List<ItemAscensionMaterialModel> current) {
