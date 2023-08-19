@@ -1,14 +1,9 @@
-import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:shiori/domain/enums/enums.dart';
 
 abstract class NotificationService {
   void init();
 
-  //TODO: REMOVE THE PLUGIN DEPENDENCY FROM THIS LAYER
-  Future<void> registerCallBacks({
-    DidReceiveLocalNotificationCallback? onIosReceiveLocalNotification,
-    SelectNotificationCallback? onSelectNotification,
-  });
+  Future<void> registerCallBacks();
 
   Future<bool> requestIOSPermissions();
 

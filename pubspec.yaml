@@ -34,7 +34,7 @@ dependencies:
   flutter_bloc: ^7.3.1
   flutter_colorpicker: ^1.0.3
   flutter_inappwebview: ^5.7.2+3
-  flutter_local_notifications: ^9.5.3+1
+  flutter_local_notifications: ^15.1.0+1
   flutter_localizations:
     sdk: flutter
   flutter_markdown: ^0.6.17+1
