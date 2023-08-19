@@ -56,7 +56,7 @@ dependencies:
   linked_scroll_controller: ^0.2.0
   logger: ^2.0.1
   package_info_plus: ^4.1.0
-  path: ^1.8.2
+  path: ^1.8.3
   path_provider: ^2.1.0
   permission_handler: ^10.4.3
   pull_to_refresh: ^2.0.0
@@ -77,6 +77,7 @@ dependencies:
   version_tracker:
     git:
       url: https://github.com/Wolfteam/version_tracker
+      ref: 1af9d7297f050a5c2d5101ef444197f8fca1e921
   wakelock_plus: ^1.1.1
   waterfall_flow: ^3.0.2
   webview_windows: 0.1.6
@@ -99,9 +100,6 @@ dev_dependencies:
   lint: ^2.1.2
   mockito: ^5.3.2
   msix: ^3.7.0
-
-dependency_overrides:
-  package_info_plus: ^4.1.0
 
 flutter_launcher_icons:
   android: "launcher_icon"

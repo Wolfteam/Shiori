@@ -1406,11 +1406,11 @@ packages:
     dependency: "direct main"
     description:
       path: "."
-      ref: HEAD
-      resolved-ref: "52262e5e7466bdcc6f1b3dfb09af58d02b31e106"
+      ref: "1af9d7297f050a5c2d5101ef444197f8fca1e921"
+      resolved-ref: "1af9d7297f050a5c2d5101ef444197f8fca1e921"
       url: "https://github.com/Wolfteam/version_tracker"
     source: git
-    version: "2.2.0"
+    version: "2.3.0"
   vm_service:
     dependency: transitive
     description:
