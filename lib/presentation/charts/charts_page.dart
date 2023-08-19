@@ -27,6 +27,7 @@ import 'package:shiori/presentation/shared/extensions/i18n_extensions.dart';
 import 'package:shiori/presentation/shared/loading.dart';
 import 'package:shiori/presentation/shared/mixins/app_fab_mixin.dart';
 import 'package:shiori/presentation/shared/nothing_found_column.dart';
+import 'package:shiori/presentation/shared/shiori_icons.dart';
 import 'package:shiori/presentation/shared/styles.dart';
 import 'package:shiori/presentation/weapon/weapon_page.dart';
 
@@ -625,21 +626,26 @@ class _AscensionStats extends StatelessWidget {
                           maxNumberOfColumns: maxNumberOfColumns,
                         ),
                       ),
-                  direction: Axis.vertical,
                   borderRadius: BorderRadius.circular(10),
-                  constraints: const BoxConstraints(minHeight: 25, maxHeight: 25),
+                  constraints: const BoxConstraints(minHeight: 36, maxHeight: 36),
                   isSelected: [
                     state.itemType == ItemType.character,
                     state.itemType == ItemType.weapon,
                   ],
                   children: [
-                    Container(
-                      margin: Styles.edgeInsetHorizontal16,
-                      child: Text(s.characters),
+                    Tooltip(
+                      message: s.characters,
+                      child: Container(
+                        margin: Styles.edgeInsetHorizontal16,
+                        child: const Icon(Icons.people),
+                      ),
                     ),
-                    Container(
-                      margin: Styles.edgeInsetHorizontal16,
-                      child: Text(s.weapons),
+                    Tooltip(
+                      message: s.weapons,
+                      child: Container(
+                        margin: Styles.edgeInsetHorizontal16,
+                        child: const Icon(Shiori.crossed_swords),
+                      ),
                     ),
                   ],
                 ),
