@@ -1479,10 +1479,10 @@ packages:
     dependency: "direct main"
     description:
       name: webview_windows
-      sha256: "1edc459b0a55e3551d1d2ab2090c493f5796943a79e6d1b7e496326bf137cdeb"
+      sha256: "7572089e5d6fe09e790093c499fcb6d76a552250187dbcb89790987b1fb723db"
       url: "https://pub.dev"
     source: hosted
-    version: "0.1.6"
+    version: "0.3.0"
   win32:
     dependency: transitive
     description:

@@ -80,7 +80,7 @@ dependencies:
       ref: 1af9d7297f050a5c2d5101ef444197f8fca1e921
   wakelock_plus: ^1.1.1
   waterfall_flow: ^3.0.2
-  webview_windows: 0.1.6
+  webview_windows: 0.3.0
   window_size:
     git:
       url: https://github.com/google/flutter-desktop-embedding
@@ -99,7 +99,7 @@ dev_dependencies:
   json_serializable: ^6.5.4
   lint: ^2.1.2
   mockito: ^5.3.2
-  msix: ^3.7.0
+  msix: ^3.16.1
 
 flutter_launcher_icons:
   android: "launcher_icon"
