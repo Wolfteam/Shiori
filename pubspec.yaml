@@ -50,7 +50,7 @@ dependencies:
   http: ^1.1.0
   image_gallery_saver: ^2.0.3
   infinite_listview: ^1.1.0
-  internet_connection_checker: ^0.0.1+4
+  internet_connection_checker: ^1.0.0+1
   intl: ^0.18.1
   json_annotation: ^4.7.0
   linked_scroll_controller: ^0.2.0
