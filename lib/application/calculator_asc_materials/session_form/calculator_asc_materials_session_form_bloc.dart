@@ -11,12 +11,13 @@ part 'calculator_asc_materials_session_form_state.dart';
 const _defaultState = CalculatorAscMaterialsSessionFormState.loaded(name: '', isNameDirty: false, isNameValid: false);
 
 class CalculatorAscMaterialsSessionFormBloc extends Bloc<CalculatorAscMaterialsSessionFormEvent, CalculatorAscMaterialsSessionFormState> {
-  CalculatorAscMaterialsSessionFormBloc() : super(_defaultState);
+  CalculatorAscMaterialsSessionFormBloc() : super(_defaultState) {
+    on<CalculatorAscMaterialsSessionFormEvent>((event, emit) => _mapEventToState(event, emit));
+  }
 
   static int nameMaxLength = 25;
 
-  @override
-  Stream<CalculatorAscMaterialsSessionFormState> mapEventToState(CalculatorAscMaterialsSessionFormEvent event) async* {
+  Future<void> _mapEventToState(CalculatorAscMaterialsSessionFormEvent event, Emitter<CalculatorAscMaterialsSessionFormState> emit) async {
     final s = event.map(
       nameChanged: (e) {
         final isValid = e.name.isNotNullEmptyOrWhitespace && e.name.length <= nameMaxLength;
@@ -26,6 +27,6 @@ class CalculatorAscMaterialsSessionFormBloc extends Bloc<CalculatorAscMaterialsS
       },
     );
 
-    yield s;
+    emit(s);
   }
 }

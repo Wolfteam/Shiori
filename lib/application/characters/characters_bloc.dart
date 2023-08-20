@@ -17,12 +17,13 @@ class CharactersBloc extends Bloc<CharactersEvent, CharactersState> {
   final SettingsService _settingsService;
   final List<CharacterCardModel> _allCharacters = [];
 
-  CharactersBloc(this._genshinService, this._settingsService) : super(const CharactersState.loading());
+  CharactersBloc(this._genshinService, this._settingsService) : super(const CharactersState.loading()) {
+    on<CharactersEvent>((event, emit) => _mapEventToState(event, emit));
+  }
 
   _LoadedState get currentState => state as _LoadedState;
 
-  @override
-  Stream<CharactersState> mapEventToState(CharactersEvent event) async* {
+  Future<void> _mapEventToState(CharactersEvent event, Emitter<CharactersState> emit) async {
     final s = event.map(
       init: (e) {
         if (_allCharacters.isEmpty || e.force) {
@@ -80,7 +81,7 @@ class CharactersBloc extends Bloc<CharactersEvent, CharactersState> {
         weaponTypes: WeaponType.values,
       ),
     );
-    yield s;
+    emit(s);
   }
 
   CharactersState _elementTypeChanged(ElementType selectedValue) {

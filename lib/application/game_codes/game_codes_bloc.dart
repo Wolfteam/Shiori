@@ -20,18 +20,19 @@ class GameCodesBloc extends Bloc<GameCodesEvent, GameCodesState> {
   final GameCodeService _gameCodeService;
   final NetworkService _networkService;
 
-  GameCodesBloc(this._dataService, this._telemetryService, this._gameCodeService, this._networkService) : super(_initialState);
+  GameCodesBloc(this._dataService, this._telemetryService, this._gameCodeService, this._networkService) : super(_initialState) {
+    on<GameCodesEvent>((event, emit) => _mapEventToState(event, emit));
+  }
 
-  @override
-  Stream<GameCodesState> mapEventToState(GameCodesEvent event) async* {
+  Future<void> _mapEventToState(GameCodesEvent event, Emitter<GameCodesState> emit) async {
     if (event is _Refresh) {
       final isInternetAvailable = await _networkService.isInternetAvailable();
       if (!isInternetAvailable) {
-        yield state.copyWith.call(isInternetAvailable: false);
-        yield state.copyWith.call(isInternetAvailable: null);
+        emit(state.copyWith.call(isInternetAvailable: false));
+        emit(state.copyWith.call(isInternetAvailable: null));
         return;
       }
-      yield _initialState.copyWith.call(isBusy: true, workingGameCodes: [], expiredGameCodes: []);
+      emit(_initialState.copyWith.call(isBusy: true, workingGameCodes: [], expiredGameCodes: []));
     }
 
     final s = await event.maybeWhen(
@@ -53,7 +54,7 @@ class GameCodesBloc extends Bloc<GameCodesEvent, GameCodesState> {
       orElse: () async => _initialState,
     );
 
-    yield s;
+    emit(s);
   }
 
   GameCodesState _buildInitialState() {

@@ -16,10 +16,11 @@ class CalculatorAscMaterialsSessionsOrderBloc extends Bloc<CalculatorAscMaterial
   final DataService _dataService;
   final CalculatorAscMaterialsSessionsBloc _sessionsBloc;
 
-  CalculatorAscMaterialsSessionsOrderBloc(this._dataService, this._sessionsBloc) : super(_initialState);
+  CalculatorAscMaterialsSessionsOrderBloc(this._dataService, this._sessionsBloc) : super(_initialState) {
+    on<CalculatorAscMaterialsSessionsOrderEvent>((event, emit) => _mapEventToState(event, emit));
+  }
 
-  @override
-  Stream<CalculatorAscMaterialsSessionsOrderState> mapEventToState(CalculatorAscMaterialsSessionsOrderEvent event) async* {
+  Future<void> _mapEventToState(CalculatorAscMaterialsSessionsOrderEvent event, Emitter<CalculatorAscMaterialsSessionsOrderState> emit) async {
     final s = await event.map(
       init: (e) async => state.copyWith.call(sessions: [...e.sessions]),
       positionChanged: (e) async {
@@ -51,6 +52,6 @@ class CalculatorAscMaterialsSessionsOrderBloc extends Bloc<CalculatorAscMaterial
       },
     );
 
-    yield s;
+    emit(s);
   }
 }

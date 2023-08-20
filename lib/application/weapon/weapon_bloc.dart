@@ -20,10 +20,11 @@ class WeaponBloc extends Bloc<WeaponEvent, WeaponState> {
   final DataService _dataService;
   final ResourceService _resourceService;
 
-  WeaponBloc(this._genshinService, this._telemetryService, this._dataService, this._resourceService) : super(const WeaponState.loading());
+  WeaponBloc(this._genshinService, this._telemetryService, this._dataService, this._resourceService) : super(const WeaponState.loading()) {
+    on<WeaponEvent>((event, emit) => _mapEventToState(event, emit));
+  }
 
-  @override
-  Stream<WeaponState> mapEventToState(WeaponEvent event) async* {
+  Future<void> _mapEventToState(WeaponEvent event, Emitter<WeaponState> emit) async {
     final s = await event.when(
       loadFromKey: (key) async {
         final weapon = _genshinService.weapons.getWeapon(key);
@@ -49,7 +50,7 @@ class WeaponBloc extends Bloc<WeaponEvent, WeaponState> {
       ),
     );
 
-    yield s;
+    emit(s);
   }
 
   WeaponState _buildInitialState(WeaponFileModel weapon, TranslationWeaponFile translation) {

@@ -28,10 +28,11 @@ class CharacterBloc extends Bloc<CharacterEvent, CharacterState> {
     this._localeService,
     this._dataService,
     this._resourceService,
-  ) : super(const CharacterState.loading());
+  ) : super(const CharacterState.loading()) {
+    on<CharacterEvent>((event, emit) => _mapEventToState(event, emit));
+  }
 
-  @override
-  Stream<CharacterState> mapEventToState(CharacterEvent event) async* {
+  Future<void> _mapEventToState(CharacterEvent event, Emitter<CharacterState> emit) async {
     final s = await event.when(
       loadFromKey: (key) async {
         final char = _genshinService.characters.getCharacter(key);
@@ -58,7 +59,7 @@ class CharacterBloc extends Bloc<CharacterEvent, CharacterState> {
       ),
     );
 
-    yield s;
+    emit(s);
   }
 
   ItemAscensionMaterialModel _mapToItemAscensionModel(ItemAscensionMaterialFileModel m) {

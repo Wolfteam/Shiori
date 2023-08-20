@@ -49,12 +49,13 @@ class MainBloc extends Bloc<MainEvent, MainState> {
     this._weaponsBloc,
     this._homeBloc,
     this._artifactsBloc,
-  ) : super(MainState.loading(language: _localeService.getLocaleWithoutLang()));
+  ) : super(MainState.loading(language: _localeService.getLocaleWithoutLang())) {
+    on<MainEvent>((event, emit) => _mapEventToState(event, emit));
+  }
 
   _MainLoadedState get currentState => state as _MainLoadedState;
 
-  @override
-  Stream<MainState> mapEventToState(MainEvent event) async* {
+  Future<void> _mapEventToState(MainEvent event, Emitter<MainState> emit) async {
     final s = await event.when(
       init: (updateResult) async => _init(init: true, updateResult: updateResult),
       themeChanged: (theme) async => _loadThemeData(theme, _settingsService.accentColor),
@@ -64,7 +65,7 @@ class MainBloc extends Bloc<MainEvent, MainState> {
       restart: () async => MainState.loading(language: _localeService.getLocaleWithoutLang(), restarted: true),
       deleteAllData: () async => _deleteAllData(),
     );
-    yield s;
+    emit(s);
   }
 
   Future<MainState> _init({

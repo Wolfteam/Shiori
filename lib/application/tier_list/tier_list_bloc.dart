@@ -31,10 +31,11 @@ class TierListBloc extends Bloc<TierListEvent, TierListState> {
 
   _LoadedState get currentState => state as _LoadedState;
 
-  TierListBloc(this._genshinService, this._dataService, this._telemetryService, this._loggingService) : super(_initialState);
+  TierListBloc(this._genshinService, this._dataService, this._telemetryService, this._loggingService) : super(_initialState) {
+    on<TierListEvent>((event, emit) => _mapEventToState(event, emit));
+  }
 
-  @override
-  Stream<TierListState> mapEventToState(TierListEvent event) async* {
+  Future<void> _mapEventToState(TierListEvent event, Emitter<TierListState> emit) async {
     final s = await event.map(
       init: (e) async => _init(e.reset),
       rowTextChanged: (e) async => _rowTextChanged(e.index, e.newValue),
@@ -59,7 +60,7 @@ class TierListBloc extends Bloc<TierListEvent, TierListState> {
       },
     );
 
-    yield s;
+    emit(s);
   }
 
   Future<TierListState> _init(bool reset) async {

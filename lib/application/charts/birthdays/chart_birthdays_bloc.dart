@@ -10,15 +10,16 @@ part 'chart_birthdays_state.dart';
 class ChartBirthdaysBloc extends Bloc<ChartBirthdaysEvent, ChartBirthdaysState> {
   final GenshinService _genshinService;
 
-  ChartBirthdaysBloc(this._genshinService) : super(const ChartBirthdaysState.loading());
+  ChartBirthdaysBloc(this._genshinService) : super(const ChartBirthdaysState.loading()) {
+    on<ChartBirthdaysEvent>((event, emit) => _mapEventToState(event, emit));
+  }
 
-  @override
-  Stream<ChartBirthdaysState> mapEventToState(ChartBirthdaysEvent event) async* {
+  Future<void> _mapEventToState(ChartBirthdaysEvent event, Emitter<ChartBirthdaysState> emit) async {
     final s = await event.map(
       init: (e) async => _init(),
     );
 
-    yield s;
+    emit(s);
   }
 
   Future<ChartBirthdaysState> _init() async {

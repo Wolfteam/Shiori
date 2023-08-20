@@ -31,7 +31,7 @@ dependencies:
   fl_chart: ^0.63.0
   flutter:
     sdk: flutter
-  flutter_bloc: ^7.3.1
+  flutter_bloc: ^8.1.3
   flutter_colorpicker: ^1.0.3
   flutter_inappwebview: ^5.7.2+3
   flutter_local_notifications: ^15.1.0+1
@@ -87,7 +87,7 @@ dependencies:
       path: plugins/window_size
 
 dev_dependencies:
-  bloc_test: ^8.5.0
+  bloc_test: ^9.1.4
   build_runner:
   envied_generator: ^0.3.0+3
   flutter_launcher_icons: ^0.13.1

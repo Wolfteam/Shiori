@@ -53,10 +53,11 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
     this._settingsService,
     this._resourceService,
     this._notificationsBloc,
-  ) : super(_initialState);
+  ) : super(_initialState) {
+    on<NotificationEvent>((event, emit) => _mapEventToState(event, emit));
+  }
 
-  @override
-  Stream<NotificationState> mapEventToState(NotificationEvent event) async* {
+  Future<void> _mapEventToState(NotificationEvent event, Emitter<NotificationState> emit) async {
     //TODO: HANDLE RECURRING NOTIFICATIONS
     final s = await event.map(
       add: (e) async => _buildAddState(e.defaultTitle, e.defaultBody),
@@ -134,7 +135,7 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
       ),
     );
 
-    yield s;
+    emit(s);
   }
 
   bool _isTitleValid(String value) => value.isValidLength(maxLength: maxTitleLength);

@@ -43,10 +43,11 @@ class CustomBuildBloc extends Bloc<CustomBuildEvent, CustomBuildState> {
     this._loggingService,
     this._resourceService,
     this._customBuildsBloc,
-  ) : super(const CustomBuildState.loading());
+  ) : super(const CustomBuildState.loading()) {
+    on<CustomBuildEvent>((event, emit) => _mapEventToState(event, emit));
+  }
 
-  @override
-  Stream<CustomBuildState> mapEventToState(CustomBuildEvent event) async* {
+  Future<void> _mapEventToState(CustomBuildEvent event, Emitter<CustomBuildState> emit) async {
     final s = await event.map(
       load: (e) async => _init(e.key, e.initialTitle),
       characterChanged: (e) async => state.maybeMap(
@@ -159,7 +160,7 @@ class CustomBuildBloc extends Bloc<CustomBuildEvent, CustomBuildState> {
       ),
     );
 
-    yield s;
+    emit(s);
   }
 
   CustomBuildState _init(int? key, String initialTitle) {

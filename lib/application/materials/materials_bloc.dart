@@ -18,10 +18,11 @@ class MaterialsBloc extends Bloc<MaterialsEvent, MaterialsState> {
 
   _LoadedState get currentState => state as _LoadedState;
 
-  MaterialsBloc(this._genshinService) : super(const MaterialsState.loading());
+  MaterialsBloc(this._genshinService) : super(const MaterialsState.loading()) {
+    on<MaterialsEvent>((event, emit) => _mapEventToState(event, emit));
+  }
 
-  @override
-  Stream<MaterialsState> mapEventToState(MaterialsEvent event) async* {
+  Future<void> _mapEventToState(MaterialsEvent event, Emitter<MaterialsState> emit) async {
     final s = event.map(
       init: (e) {
         if (_allMaterials.isEmpty || e.force) {
@@ -60,7 +61,7 @@ class MaterialsBloc extends Bloc<MaterialsEvent, MaterialsState> {
       ),
     );
 
-    yield s;
+    emit(s);
   }
 
   MaterialsState _buildInitialState({

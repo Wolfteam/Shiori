@@ -9,16 +9,17 @@ part 'changelog_state.dart';
 class ChangelogBloc extends Bloc<ChangelogEvent, ChangelogState> {
   final ChangelogProvider _changelogProvider;
 
-  ChangelogBloc(this._changelogProvider) : super(const ChangelogState.loading());
+  ChangelogBloc(this._changelogProvider) : super(const ChangelogState.loading()) {
+    on<ChangelogEvent>((event, emit) => _mapEventToState(event, emit));
+  }
 
-  @override
-  Stream<ChangelogState> mapEventToState(ChangelogEvent event) async* {
+  Future<void> _mapEventToState(ChangelogEvent event, Emitter<ChangelogState> emit) async {
     final s = await event.map(
       init: (_) async {
         final changelog = await _changelogProvider.load();
         return ChangelogState.loadedState(changelog);
       },
     );
-    yield s;
+    emit(s);
   }
 }

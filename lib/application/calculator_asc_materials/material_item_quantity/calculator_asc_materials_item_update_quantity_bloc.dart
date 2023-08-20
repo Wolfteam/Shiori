@@ -14,10 +14,14 @@ class CalculatorAscMaterialsItemUpdateQuantityBloc
   final TelemetryService _telemetryService;
 
   CalculatorAscMaterialsItemUpdateQuantityBloc(this._dataService, this._telemetryService)
-      : super(const CalculatorAscMaterialsItemUpdateQuantityState.loading());
+      : super(const CalculatorAscMaterialsItemUpdateQuantityState.loading()) {
+    on<CalculatorAscMaterialsItemUpdateQuantityEvent>((event, emit) => _mapEventToState(event, emit));
+  }
 
-  @override
-  Stream<CalculatorAscMaterialsItemUpdateQuantityState> mapEventToState(CalculatorAscMaterialsItemUpdateQuantityEvent event) async* {
+  Future<void> _mapEventToState(
+    CalculatorAscMaterialsItemUpdateQuantityEvent event,
+    Emitter<CalculatorAscMaterialsItemUpdateQuantityState> emit,
+  ) async {
     final s = await event.map(
       load: (e) async {
         final material = _dataService.inventory.getMaterialFromInventory(e.key);
@@ -29,7 +33,7 @@ class CalculatorAscMaterialsItemUpdateQuantityBloc
       },
     );
 
-    yield s;
+    emit(s);
   }
 
   Future<void> _updateMaterialQuantity(String key, int quantity) async {

@@ -17,10 +17,11 @@ class MonstersBloc extends Bloc<MonstersEvent, MonstersState> {
 
   _LoadedState get currentState => state as _LoadedState;
 
-  MonstersBloc(this._genshinService) : super(const MonstersState.loading());
+  MonstersBloc(this._genshinService) : super(const MonstersState.loading()) {
+    on<MonstersEvent>((event, emit) => _mapEventToState(event, emit));
+  }
 
-  @override
-  Stream<MonstersState> mapEventToState(MonstersEvent event) async* {
+  Future<void> _mapEventToState(MonstersEvent event, Emitter<MonstersState> emit) async {
     final s = event.map(
       init: (e) {
         if (_allMonsters.isEmpty || e.force) {
@@ -55,7 +56,7 @@ class MonstersBloc extends Bloc<MonstersEvent, MonstersState> {
       ),
     );
 
-    yield s;
+    emit(s);
   }
 
   MonstersState _buildInitialState({

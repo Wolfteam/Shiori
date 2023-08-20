@@ -15,10 +15,11 @@ class BackupRestoreBloc extends Bloc<BackupRestoreEvent, BackupRestoreState> {
 
   _LoadedState get currentState => state as _LoadedState;
 
-  BackupRestoreBloc(this._backupRestoreService, this._telemetryService) : super(const BackupRestoreState.loading());
+  BackupRestoreBloc(this._backupRestoreService, this._telemetryService) : super(const BackupRestoreState.loading()) {
+    on<BackupRestoreEvent>((event, emit) => _mapEventToState(event, emit));
+  }
 
-  @override
-  Stream<BackupRestoreState> mapEventToState(BackupRestoreEvent event) async* {
+  Future<void> _mapEventToState(BackupRestoreEvent event, Emitter<BackupRestoreState> emit) async {
     final s = await event.map(
       init: (e) => _init(),
       read: (e) => _read(e.filePath),
@@ -27,7 +28,7 @@ class BackupRestoreBloc extends Bloc<BackupRestoreEvent, BackupRestoreState> {
       delete: (e) => _delete(e.filePath),
     );
 
-    yield s;
+    emit(s);
 
     final resultExists = s.maybeMap(
       loaded: (state) => state.createResult != null || state.restoreResult != null || state.readResult != null,
@@ -35,7 +36,7 @@ class BackupRestoreBloc extends Bloc<BackupRestoreEvent, BackupRestoreState> {
     );
 
     if (resultExists) {
-      yield currentState.copyWith(restoreResult: null, readResult: null, createResult: null);
+      emit(currentState.copyWith(restoreResult: null, readResult: null, createResult: null));
     }
   }
 

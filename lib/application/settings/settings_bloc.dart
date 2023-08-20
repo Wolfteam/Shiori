@@ -26,14 +26,13 @@ class SettingsBloc extends Bloc<SettingsEvent, SettingsState> {
     this._purchaseService,
     this._mainBloc,
     this._homeBloc,
-  ) : super(const SettingsState.loading());
+  ) : super(const SettingsState.loading()) {
+    on<SettingsEvent>((event, emit) => _mapEventToState(event, emit));
+  }
 
   _LoadedState get currentState => state as _LoadedState;
 
-  @override
-  Stream<SettingsState> mapEventToState(
-    SettingsEvent event,
-  ) async* {
+  Future<void> _mapEventToState(SettingsEvent event, Emitter<SettingsState> emit) async {
     final s = await event.map(
       init: (_) async {
         final settings = _settingsService.appSettings;
@@ -121,7 +120,7 @@ class SettingsBloc extends Bloc<SettingsEvent, SettingsState> {
       },
     );
 
-    yield s;
+    emit(s);
   }
 
   bool doubleBackToClose() => _settingsService.doubleBackToClose;

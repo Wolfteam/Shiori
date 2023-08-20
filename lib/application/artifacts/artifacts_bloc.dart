@@ -14,12 +14,13 @@ class ArtifactsBloc extends Bloc<ArtifactsEvent, ArtifactsState> {
   final GenshinService _genshinService;
   final List<ArtifactCardModel> _allArtifacts = [];
 
-  ArtifactsBloc(this._genshinService) : super(const ArtifactsState.loading());
+  ArtifactsBloc(this._genshinService) : super(const ArtifactsState.loading()) {
+    on<ArtifactsEvent>((event, emit) => _mapEventToState(event, emit));
+  }
 
   _LoadedState get currentState => state as _LoadedState;
 
-  @override
-  Stream<ArtifactsState> mapEventToState(ArtifactsEvent event) async* {
+  Future<void> _mapEventToState(ArtifactsEvent event, Emitter<ArtifactsState> emit) async {
     final s = event.map(
       init: (e) {
         if (_allArtifacts.isEmpty || e.force) {
@@ -62,7 +63,7 @@ class ArtifactsBloc extends Bloc<ArtifactsEvent, ArtifactsState> {
       ),
     );
 
-    yield s;
+    emit(s);
   }
 
   ArtifactsState _buildInitialState({

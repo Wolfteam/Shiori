@@ -28,10 +28,11 @@ class UrlPageBloc extends Bloc<UrlPageEvent, UrlPageState> {
     this._telemetryService,
     this._deviceInfoService,
     this._settingsService,
-  ) : super(const UrlPageState.loading());
+  ) : super(const UrlPageState.loading()) {
+    on<UrlPageEvent>((event, emit) => _mapEventToState(event, emit));
+  }
 
-  @override
-  Stream<UrlPageState> mapEventToState(UrlPageEvent event) async* {
+  Future<void> _mapEventToState(UrlPageEvent event, Emitter<UrlPageState> emit) async {
     final s = await event.map(
       init: (e) async {
         final finalMapUrl = _settingsService.useOfficialMap ? _getMapUrl() : unofficialMapUrl;
@@ -47,7 +48,7 @@ class UrlPageBloc extends Bloc<UrlPageEvent, UrlPageState> {
       },
     );
 
-    yield s;
+    emit(s);
   }
 
   String _getDailyCheckInUrl() {

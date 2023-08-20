@@ -12,10 +12,11 @@ class ItemReleaseHistoryBloc extends Bloc<ItemReleaseHistoryEvent, ItemReleaseHi
   final GenshinService _genshinService;
   final TelemetryService _telemetryService;
 
-  ItemReleaseHistoryBloc(this._genshinService, this._telemetryService) : super(const ItemReleaseHistoryState.loading());
+  ItemReleaseHistoryBloc(this._genshinService, this._telemetryService) : super(const ItemReleaseHistoryState.loading()) {
+    on<ItemReleaseHistoryEvent>((event, emit) => _mapEventToState(event, emit));
+  }
 
-  @override
-  Stream<ItemReleaseHistoryState> mapEventToState(ItemReleaseHistoryEvent event) async* {
+  Future<void> _mapEventToState(ItemReleaseHistoryEvent event, Emitter<ItemReleaseHistoryState> emit) async {
     final s = await event.map(
       init: (e) async {
         await _telemetryService.trackItemReleaseHistoryOpened(e.itemKey);
@@ -24,6 +25,6 @@ class ItemReleaseHistoryBloc extends Bloc<ItemReleaseHistoryEvent, ItemReleaseHi
       },
     );
 
-    yield s;
+    emit(s);
   }
 }

@@ -10,12 +10,13 @@ part 'item_quantity_form_state.dart';
 const _defaultState = ItemQuantityFormState.loaded(quantity: 0, isQuantityDirty: false, isQuantityValid: true);
 
 class ItemQuantityFormBloc extends Bloc<ItemQuantityFormEvent, ItemQuantityFormState> {
-  ItemQuantityFormBloc() : super(_defaultState);
+  ItemQuantityFormBloc() : super(_defaultState) {
+    on<ItemQuantityFormEvent>((event, emit) => _mapEventToState(event, emit));
+  }
 
   static int maxQuantity = 9999999999;
 
-  @override
-  Stream<ItemQuantityFormState> mapEventToState(ItemQuantityFormEvent event) async* {
+  Future<void> _mapEventToState(ItemQuantityFormEvent event, Emitter<ItemQuantityFormState> emit) async {
     final s = event.map(
       quantityChanged: (e) {
         final isValid = e.quantity >= 0 && e.quantity <= maxQuantity;
@@ -25,6 +26,6 @@ class ItemQuantityFormBloc extends Bloc<ItemQuantityFormEvent, ItemQuantityFormS
       },
     );
 
-    yield s;
+    emit(s);
   }
 }

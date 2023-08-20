@@ -29,10 +29,10 @@ class InventoryBloc extends Bloc<InventoryEvent, InventoryState> {
       _dataService.inventory.itemDeletedFromInventory.stream.listen((type) => add(InventoryEvent.refresh(type: type))),
       _dataService.inventory.itemUpdatedInInventory.stream.listen((type) => add(InventoryEvent.refresh(type: type))),
     ];
+    on<InventoryEvent>((event, emit) => _mapEventToState(event, emit));
   }
 
-  @override
-  Stream<InventoryState> mapEventToState(InventoryEvent event) async* {
+  Future<void> _mapEventToState(InventoryEvent event, Emitter<InventoryState> emit) async {
     final s = await event.map(
       init: (_) async {
         final characters = _dataService.inventory.getAllCharactersInInventory();
@@ -90,7 +90,7 @@ class InventoryBloc extends Bloc<InventoryEvent, InventoryState> {
       refresh: (e) async => _refreshItems(e.type),
     );
 
-    yield s;
+    emit(s);
   }
 
   @override

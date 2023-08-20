@@ -10,10 +10,11 @@ part 'custom_builds_state.dart';
 class CustomBuildsBloc extends Bloc<CustomBuildsEvent, CustomBuildsState> {
   final DataService _dataService;
 
-  CustomBuildsBloc(this._dataService) : super(const CustomBuildsState.loaded());
+  CustomBuildsBloc(this._dataService) : super(const CustomBuildsState.loaded()) {
+    on<CustomBuildsEvent>((event, emit) => _mapEventToState(event, emit));
+  }
 
-  @override
-  Stream<CustomBuildsState> mapEventToState(CustomBuildsEvent event) async* {
+  Future<void> _mapEventToState(CustomBuildsEvent event, Emitter<CustomBuildsState> emit) async {
     final s = await event.map(
       load: (_) async {
         final builds = _dataService.customBuilds.getAllCustomBuilds();
@@ -27,6 +28,6 @@ class CustomBuildsBloc extends Bloc<CustomBuildsEvent, CustomBuildsState> {
       },
     );
 
-    yield s;
+    emit(s);
   }
 }

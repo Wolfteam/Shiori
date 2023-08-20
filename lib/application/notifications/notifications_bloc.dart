@@ -21,10 +21,11 @@ class NotificationsBloc extends Bloc<NotificationsEvent, NotificationsState> {
   final SettingsService _settingsService;
   final TelemetryService _telemetryService;
 
-  NotificationsBloc(this._dataService, this._notificationService, this._settingsService, this._telemetryService) : super(_initialState);
+  NotificationsBloc(this._dataService, this._notificationService, this._settingsService, this._telemetryService) : super(_initialState) {
+    on<NotificationsEvent>((event, emit) => _mapEventToState(event, emit));
+  }
 
-  @override
-  Stream<NotificationsState> mapEventToState(NotificationsEvent event) async* {
+  Future<void> _mapEventToState(NotificationsEvent event, Emitter<NotificationsState> emit) async {
     final s = await event.map(
       init: (_) async => _buildInitialState(),
       delete: (e) async => _deleteNotification(e.id, e.type),
@@ -32,7 +33,7 @@ class NotificationsBloc extends Bloc<NotificationsEvent, NotificationsState> {
       stop: (e) async => _stopNotification(e.id, e.type),
       reduceHours: (e) async => _reduceHours(e.id, e.type, e.hoursToReduce),
     );
-    yield s;
+    emit(s);
   }
 
   NotificationsState _buildInitialState() {

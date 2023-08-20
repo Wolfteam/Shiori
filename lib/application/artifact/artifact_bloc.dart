@@ -16,11 +16,12 @@ class ArtifactBloc extends Bloc<ArtifactEvent, ArtifactState> {
   final TelemetryService _telemetryService;
   final ResourceService _resourceService;
 
-  ArtifactBloc(this._genshinService, this._telemetryService, this._resourceService) : super(const ArtifactState.loading());
+  ArtifactBloc(this._genshinService, this._telemetryService, this._resourceService) : super(const ArtifactState.loading()) {
+    on<ArtifactEvent>((event, emit) => _mapEventToState(event, emit));
+  }
 
-  @override
-  Stream<ArtifactState> mapEventToState(ArtifactEvent event) async* {
-    yield const ArtifactState.loading();
+  Future<void> _mapEventToState(ArtifactEvent event, Emitter<ArtifactState> emit) async {
+    emit(const ArtifactState.loading());
 
     final s = await event.map(
       loadFromKey: (e) async {
@@ -47,6 +48,6 @@ class ArtifactBloc extends Bloc<ArtifactEvent, ArtifactState> {
       },
     );
 
-    yield s;
+    emit(s);
   }
 }

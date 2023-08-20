@@ -19,10 +19,11 @@ class ChartAscensionStatsBloc extends Bloc<ChartAscensionStatsEvent, ChartAscens
   ChartAscensionStatsBloc(GenshinService genshinService)
       : _characterAscensionStats = genshinService.getItemAscensionStatsForCharts(ItemType.character),
         _weaponAscensionStats = genshinService.getItemAscensionStatsForCharts(ItemType.weapon),
-        super(const ChartAscensionStatsState.loading());
+        super(const ChartAscensionStatsState.loading()) {
+    on<ChartAscensionStatsEvent>((event, emit) => _mapEventToState(event, emit));
+  }
 
-  @override
-  Stream<ChartAscensionStatsState> mapEventToState(ChartAscensionStatsEvent event) async* {
+  void _mapEventToState(ChartAscensionStatsEvent event, Emitter<ChartAscensionStatsState> emit) {
     final s = event.map(
       init: (e) => _init(e.type, e.maxNumberOfColumns),
       goToNextPage: (e) => state.maybeMap(
@@ -43,7 +44,7 @@ class ChartAscensionStatsBloc extends Bloc<ChartAscensionStatsEvent, ChartAscens
       ),
     );
 
-    yield s;
+    emit(s);
   }
 
   ChartAscensionStatsState _init(ItemType itemType, int maxNumberOfColumns) {

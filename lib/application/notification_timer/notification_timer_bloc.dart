@@ -10,10 +10,11 @@ part 'notification_timer_state.dart';
 class NotificationTimerBloc extends Bloc<NotificationTimerEvent, NotificationTimerState> {
   Timer? _timer;
 
-  NotificationTimerBloc() : super(NotificationTimerState.loaded(completesAt: DateTime.now(), remaining: Duration.zero));
+  NotificationTimerBloc() : super(NotificationTimerState.loaded(completesAt: DateTime.now(), remaining: Duration.zero)) {
+    on<NotificationTimerEvent>((event, emit) => _mapEventToState(event, emit));
+  }
 
-  @override
-  Stream<NotificationTimerState> mapEventToState(NotificationTimerEvent event) async* {
+  Future<void> _mapEventToState(NotificationTimerEvent event, Emitter<NotificationTimerState> emit) async {
     final s = event.map(
       init: (e) {
         _startTime();
@@ -28,7 +29,7 @@ class NotificationTimerBloc extends Bloc<NotificationTimerEvent, NotificationTim
       },
     );
 
-    yield s;
+    emit(s);
   }
 
   @override

@@ -11,14 +11,15 @@ part 'characters_per_region_gender_state.dart';
 class CharactersPerRegionGenderBloc extends Bloc<CharactersPerRegionGenderEvent, CharactersPerRegionGenderState> {
   final GenshinService _genshinService;
 
-  CharactersPerRegionGenderBloc(this._genshinService) : super(const CharactersPerRegionGenderState.loading());
+  CharactersPerRegionGenderBloc(this._genshinService) : super(const CharactersPerRegionGenderState.loading()) {
+    on<CharactersPerRegionGenderEvent>((event, emit) => _mapEventToState(event, emit));
+  }
 
-  @override
-  Stream<CharactersPerRegionGenderState> mapEventToState(CharactersPerRegionGenderEvent event) async* {
+  Future<void> _mapEventToState(CharactersPerRegionGenderEvent event, Emitter<CharactersPerRegionGenderState> emit) async {
     final s = event.map(
       init: (e) => _init(e.regionType, e.onlyFemales),
     );
-    yield s;
+    emit(s);
   }
 
   CharactersPerRegionGenderState _init(RegionType regionType, bool onlyFemales) {

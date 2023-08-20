@@ -22,14 +22,13 @@ class CalculatorAscMaterialsItemBloc extends Bloc<CalculatorAscMaterialsItemEven
   _LoadedState get currentState => state as _LoadedState;
 
   CalculatorAscMaterialsItemBloc(this._genshinService, this._calculatorService, this._resourceService)
-      : super(const CalculatorAscMaterialsItemState.loading());
+      : super(const CalculatorAscMaterialsItemState.loading()) {
+    on<CalculatorAscMaterialsItemEvent>((event, emit) => _mapEventToState(event, emit));
+  }
 
-  @override
-  Stream<CalculatorAscMaterialsItemState> mapEventToState(
-    CalculatorAscMaterialsItemEvent event,
-  ) async* {
+  Future<void> _mapEventToState(CalculatorAscMaterialsItemEvent event, Emitter<CalculatorAscMaterialsItemState> emit) async {
     if (event is _Init) {
-      yield const CalculatorAscMaterialsItemState.loading();
+      emit(const CalculatorAscMaterialsItemState.loading());
     }
 
     final s = event.map(
@@ -97,7 +96,7 @@ class CalculatorAscMaterialsItemBloc extends Bloc<CalculatorAscMaterialsItemEven
       useMaterialsFromInventoryChanged: (e) => currentState.copyWith.call(useMaterialsFromInventory: e.useThem),
     );
 
-    yield s;
+    emit(s);
   }
 
   CalculatorAscMaterialsItemState _levelChanged(int currentLevel, int desiredLevel, bool currentChanged) {

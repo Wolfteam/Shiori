@@ -16,10 +16,11 @@ class CalculatorAscMaterialsSessionsBloc extends Bloc<CalculatorAscMaterialsSess
 
   _LoadedState get currentState => state as _LoadedState;
 
-  CalculatorAscMaterialsSessionsBloc(this._dataService, this._telemetryService) : super(const CalculatorAscMaterialsSessionsState.loading());
+  CalculatorAscMaterialsSessionsBloc(this._dataService, this._telemetryService) : super(const CalculatorAscMaterialsSessionsState.loading()) {
+    on<CalculatorAscMaterialsSessionsEvent>((event, emit) => _mapEventToState(event, emit));
+  }
 
-  @override
-  Stream<CalculatorAscMaterialsSessionsState> mapEventToState(CalculatorAscMaterialsSessionsEvent event) async* {
+  Future<void> _mapEventToState(CalculatorAscMaterialsSessionsEvent event, Emitter<CalculatorAscMaterialsSessionsState> emit) async {
     final s = await event.map(
       init: (_) async {
         await _telemetryService.trackCalculatorAscMaterialsSessionsLoaded();
@@ -52,6 +53,6 @@ class CalculatorAscMaterialsSessionsBloc extends Bloc<CalculatorAscMaterialsSess
       },
     );
 
-    yield s;
+    emit(s);
   }
 }

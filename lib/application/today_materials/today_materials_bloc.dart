@@ -24,10 +24,11 @@ class TodayMaterialsBloc extends Bloc<TodayMaterialsEvent, TodayMaterialsState> 
     DateTime.sunday,
   ];
 
-  TodayMaterialsBloc(this._genshinService, this._telemetryService) : super(const TodayMaterialsState.loading());
+  TodayMaterialsBloc(this._genshinService, this._telemetryService) : super(const TodayMaterialsState.loading()) {
+    on<TodayMaterialsEvent>((event, emit) => _mapEventToState(event, emit));
+  }
 
-  @override
-  Stream<TodayMaterialsState> mapEventToState(TodayMaterialsEvent event) async* {
+  Future<void> _mapEventToState(TodayMaterialsEvent event, Emitter<TodayMaterialsState> emit) async {
     await _telemetryService.trackAscensionMaterialsOpened();
     final s = event.when(
       init: () {
@@ -57,6 +58,6 @@ class TodayMaterialsBloc extends Bloc<TodayMaterialsEvent, TodayMaterialsState> 
       },
     );
 
-    yield s;
+    emit(s);
   }
 }

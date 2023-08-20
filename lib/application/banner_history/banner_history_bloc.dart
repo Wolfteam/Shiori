@@ -27,10 +27,11 @@ class BannerHistoryBloc extends Bloc<BannerHistoryEvent, BannerHistoryState> {
   final List<BannerHistoryItemModel> _characterBanners = [];
   final List<BannerHistoryItemModel> _weaponBanners = [];
 
-  BannerHistoryBloc(this._genshinService, this._telemetryService) : super(_initialState);
+  BannerHistoryBloc(this._genshinService, this._telemetryService) : super(_initialState) {
+    on<BannerHistoryEvent>((event, emit) => _mapEventToState(event, emit));
+  }
 
-  @override
-  Stream<BannerHistoryState> mapEventToState(BannerHistoryEvent event) async* {
+  Future<void> _mapEventToState(BannerHistoryEvent event, Emitter<BannerHistoryState> emit) async {
     final s = await event.map(
       init: (e) async => _init(),
       typeChanged: (e) async => _typeChanged(e.type),
@@ -39,7 +40,7 @@ class BannerHistoryBloc extends Bloc<BannerHistoryEvent, BannerHistoryState> {
       itemsSelected: (e) async => _itemsSelected(e.keys),
     );
 
-    yield s;
+    emit(s);
   }
 
   List<ItemCommonWithName> getItemsForSearch() {

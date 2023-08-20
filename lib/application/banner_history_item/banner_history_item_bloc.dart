@@ -16,15 +16,16 @@ class BannerHistoryItemBloc extends Bloc<BannerHistoryItemEvent, BannerHistoryIt
 
   static const periodDateFormat = 'yyyy/MM/dd';
 
-  BannerHistoryItemBloc(this._genshinService, this._telemetryService) : super(const BannerHistoryItemState.loading());
+  BannerHistoryItemBloc(this._genshinService, this._telemetryService) : super(const BannerHistoryItemState.loading()) {
+    on<BannerHistoryItemEvent>((event, emit) => _mapEventToState(event, emit));
+  }
 
-  @override
-  Stream<BannerHistoryItemState> mapEventToState(BannerHistoryItemEvent event) async* {
+  Future<void> _mapEventToState(BannerHistoryItemEvent event, Emitter<BannerHistoryItemState> emit) async {
     final s = await event.map(
       init: (e) => _init(e.version),
     );
 
-    yield s;
+    emit(s);
   }
 
   Future<BannerHistoryItemState> _init(double version) async {

@@ -34,12 +34,11 @@ class CalculatorAscMaterialsBloc extends Bloc<CalculatorAscMaterialsEvent, Calcu
     this._dataService,
     this._resourceService,
     this._calculatorAscMaterialsSessionsBloc,
-  ) : super(_initialState);
+  ) : super(_initialState) {
+    on<CalculatorAscMaterialsEvent>((event, emit) => _mapEventToState(event, emit));
+  }
 
-  @override
-  Stream<CalculatorAscMaterialsState> mapEventToState(
-    CalculatorAscMaterialsEvent event,
-  ) async* {
+  Future<void> _mapEventToState(CalculatorAscMaterialsEvent event, Emitter<CalculatorAscMaterialsState> emit) async {
     final s = await event.map(
       init: (e) async {
         final session = _dataService.calculator.getCalcAscMatSession(e.sessionKey);
@@ -183,7 +182,7 @@ class CalculatorAscMaterialsBloc extends Bloc<CalculatorAscMaterialsEvent, Calcu
       },
     );
 
-    yield s;
+    emit(s);
   }
 
   ItemAscensionMaterials getItem(int index) => currentState.items.elementAt(index);

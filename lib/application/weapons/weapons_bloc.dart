@@ -17,12 +17,13 @@ class WeaponsBloc extends Bloc<WeaponsEvent, WeaponsState> {
   final SettingsService _settingsService;
   final List<WeaponCardModel> _allWeapons = [];
 
-  WeaponsBloc(this._genshinService, this._settingsService) : super(const WeaponsState.loading());
+  WeaponsBloc(this._genshinService, this._settingsService) : super(const WeaponsState.loading()) {
+    on<WeaponsEvent>((event, emit) => _mapEventToState(event, emit));
+  }
 
   _LoadedState get currentState => state as _LoadedState;
 
-  @override
-  Stream<WeaponsState> mapEventToState(WeaponsEvent event) async* {
+  Future<void> _mapEventToState(WeaponsEvent event, Emitter<WeaponsState> emit) async {
     final s = event.map(
       init: (e) {
         if (_allWeapons.isEmpty || e.force) {
@@ -80,7 +81,7 @@ class WeaponsBloc extends Bloc<WeaponsEvent, WeaponsState> {
       ),
     );
 
-    yield s;
+    emit(s);
   }
 
   WeaponsState _weaponTypeChanged(WeaponType selectedValue) {

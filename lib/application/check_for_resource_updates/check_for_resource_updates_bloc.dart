@@ -17,18 +17,19 @@ class CheckForResourceUpdatesBloc extends Bloc<CheckForResourceUpdatesEvent, Che
   final TelemetryService _telemetryService;
 
   CheckForResourceUpdatesBloc(this._resourceService, this._settingsService, this._deviceInfoService, this._telemetryService)
-      : super(const CheckForResourceUpdatesState.loading());
+      : super(const CheckForResourceUpdatesState.loading()) {
+    on<CheckForResourceUpdatesEvent>((event, emit) => _mapEventToState(event, emit));
+  }
 
-  @override
-  Stream<CheckForResourceUpdatesState> mapEventToState(CheckForResourceUpdatesEvent event) async* {
+  Future<void> _mapEventToState(CheckForResourceUpdatesEvent event, Emitter<CheckForResourceUpdatesState> emit) async {
     if (event is _CheckForUpdates) {
-      yield const CheckForResourceUpdatesState.loading();
+      emit(const CheckForResourceUpdatesState.loading());
     }
     final s = await event.map(
       init: (_) => _init(),
       checkForUpdates: (_) => _checkForUpdates(),
     );
-    yield s;
+    emit(s);
   }
 
   Future<CheckForResourceUpdatesState> _init() {

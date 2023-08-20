@@ -12,12 +12,11 @@ part 'elements_state.dart';
 class ElementsBloc extends Bloc<ElementsEvent, ElementsState> {
   final GenshinService _genshinService;
 
-  ElementsBloc(this._genshinService) : super(const ElementsState.loading());
+  ElementsBloc(this._genshinService) : super(const ElementsState.loading()) {
+    on<ElementsEvent>((event, emit) => _mapEventToState(event, emit));
+  }
 
-  @override
-  Stream<ElementsState> mapEventToState(
-    ElementsEvent event,
-  ) async* {
+  Future<void> _mapEventToState(ElementsEvent event, Emitter<ElementsState> emit) async {
     final s = event.when(
       init: () {
         final debuffs = _genshinService.elements.getElementDebuffs();
@@ -28,6 +27,6 @@ class ElementsBloc extends Bloc<ElementsEvent, ElementsState> {
       },
     );
 
-    yield s;
+    emit(s);
   }
 }

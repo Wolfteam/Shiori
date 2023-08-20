@@ -20,30 +20,26 @@ class DonationsBloc extends Bloc<DonationsEvent, DonationsState> {
   //The user id must be something like 12345_xyz
   static String appUserIdRegex = '([a-zA-Z0-9]{5,20})';
 
-  DonationsBloc(this._purchaseService, this._networkService, this._telemetryService) : super(const DonationsState.loading());
+  DonationsBloc(this._purchaseService, this._networkService, this._telemetryService) : super(const DonationsState.loading()) {
+    on<DonationsEvent>((event, emit) => _mapEventToState(event, emit));
+  }
 
-  @override
-  Stream<DonationsState> mapEventToState(DonationsEvent event) async* {
-    yield const DonationsState.loading();
+  Future<void> _mapEventToState(DonationsEvent event, Emitter<DonationsState> emit) async {
+    emit(const DonationsState.loading());
 
     if (!await _networkService.isInternetAvailable()) {
-      yield const DonationsState.initial(packages: [], isInitialized: false, noInternetConnection: true, canMakePurchases: false);
+      emit(const DonationsState.initial(packages: [], isInitialized: false, noInternetConnection: true, canMakePurchases: false));
       return;
     }
 
     if (!await _purchaseService.isPlatformSupported()) {
-      yield const DonationsState.initial(packages: [], isInitialized: false, noInternetConnection: false, canMakePurchases: false);
+      emit(const DonationsState.initial(packages: [], isInitialized: false, noInternetConnection: false, canMakePurchases: false));
       return;
     }
 
     final canMakePurchases = await _purchaseService.canMakePurchases();
     if (!canMakePurchases) {
-      yield DonationsState.initial(
-        packages: [],
-        isInitialized: _purchaseService.isInitialized,
-        noInternetConnection: false,
-        canMakePurchases: false,
-      );
+      emit(DonationsState.initial(packages: [], isInitialized: _purchaseService.isInitialized, noInternetConnection: false, canMakePurchases: false));
       return;
     }
 
@@ -57,8 +53,8 @@ class DonationsBloc extends Bloc<DonationsEvent, DonationsState> {
       purchase: (e) => _purchase(e),
     );
 
-    yield s;
-    yield await s.maybeMap(
+    emit(s);
+    final newState = await s.maybeMap(
       purchaseCompleted: (state) async {
         if (state.error) {
           return _init();
@@ -73,6 +69,7 @@ class DonationsBloc extends Bloc<DonationsEvent, DonationsState> {
       },
       orElse: () async => s,
     );
+    emit(newState);
   }
 
   Future<DonationsState> _init() async {

@@ -8,12 +8,11 @@ part 'main_tab_event.dart';
 part 'main_tab_state.dart';
 
 class MainTabBloc extends Bloc<MainTabEvent, MainTabState> {
-  MainTabBloc() : super(const MainTabState.initial(2));
+  MainTabBloc() : super(const MainTabState.initial(2)) {
+    on<MainTabEvent>((event, emit) => _mapEventToState(event, emit));
+  }
 
-  @override
-  Stream<MainTabState> mapEventToState(
-    MainTabEvent event,
-  ) async* {
+  Future<void> _mapEventToState(MainTabEvent event, Emitter<MainTabState> emit) async {
     final s = await event.when(
       goToTab: (index) async {
         if (index < 0) {
@@ -23,6 +22,6 @@ class MainTabBloc extends Bloc<MainTabEvent, MainTabState> {
       },
     );
 
-    yield s;
+    emit(s);
   }
 }

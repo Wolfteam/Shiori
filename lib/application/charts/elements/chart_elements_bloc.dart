@@ -16,10 +16,11 @@ class ChartElementsBloc extends Bloc<ChartElementsEvent, ChartElementsState> {
 
   ChartElementsBloc(this._genshinService)
       : versions = _genshinService.bannerHistory.getBannerHistoryVersions(SortDirectionType.asc),
-        super(const ChartElementsState.loading());
+        super(const ChartElementsState.loading()) {
+    on<ChartElementsEvent>((event, emit) => _mapEventToState(event, emit));
+  }
 
-  @override
-  Stream<ChartElementsState> mapEventToState(ChartElementsEvent event) async* {
+  Future<void> _mapEventToState(ChartElementsEvent event, Emitter<ChartElementsState> emit) async {
     final s = event.map(
       init: (e) => _init(e.maxNumberOfColumns),
       elementSelected: (e) => state.maybeMap(
@@ -44,7 +45,7 @@ class ChartElementsBloc extends Bloc<ChartElementsEvent, ChartElementsState> {
       ),
     );
 
-    yield s;
+    emit(s);
   }
 
   //Some versions were skipped (e.g: 1.7, 1.8, 1.9), that's why we use this function
