@@ -47,7 +47,6 @@ class MonsterCard extends StatelessWidget {
         clipBehavior: Clip.hardEdge,
         shape: Styles.mainCardShape,
         elevation: Styles.cardTenElevation,
-        shadowColor: Colors.transparent,
         child: Column(
           children: [
             Stack(
