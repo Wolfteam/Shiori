@@ -349,10 +349,10 @@ packages:
     dependency: "direct main"
     description:
       name: file_picker
-      sha256: "21145c9c268d54b1f771d8380c195d2d6f655e0567dc1ca2f9c134c02c819e0a"
+      sha256: bdfa035a974a0c080576c4c8ed01cdf9d1b406a04c7daa05443ef0383a97bedc
       url: "https://pub.dev"
     source: hosted
-    version: "5.3.3"
+    version: "5.3.4"
   fixnum:
     dependency: transitive
     description:
@@ -418,10 +418,10 @@ packages:
     dependency: "direct main"
     description:
       name: flutter_local_notifications
-      sha256: "3cc40fe8c50ab8383f3e053a499f00f975636622ecdc8e20a77418ece3b1e975"
+      sha256: "3002092e5b8ce2f86c3361422e52e6db6776c23ee21e0b2f71b892bf4259ef04"
       url: "https://pub.dev"
     source: hosted
-    version: "15.1.0+1"
+    version: "15.1.1"
   flutter_local_notifications_linux:
     dependency: transitive
     description:
@@ -1033,10 +1033,10 @@ packages:
     dependency: "direct main"
     description:
       name: responsive_grid
-      sha256: e0fa843cfd01bb041ea5d56e0dfb3654c60977733d71f2b387a3a81ffac8e569
+      sha256: "852b4d46ae4a530e0d54a1dc59964f3d2cd8d6ca1f6fc4e5790cc0580e367e24"
       url: "https://pub.dev"
     source: hosted
-    version: "2.4.2"
+    version: "2.4.4"
   screenshot:
     dependency: "direct main"
     description:
@@ -1214,10 +1214,10 @@ packages:
     dependency: "direct main"
     description:
       name: store_checker
-      sha256: faf05488c07b7afb95ddd948da35bb5c45b7864ff8f4e20228d38da5f1a320af
+      sha256: c9c1a93f11fa756fea23a2a08d7e54e84626a8d3c759cf49fc694a3a5afdc705
       url: "https://pub.dev"
     source: hosted
-    version: "1.3.0"
+    version: "1.4.0"
   stream_channel:
     dependency: transitive
     description:
