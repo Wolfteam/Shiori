@@ -68,7 +68,6 @@ class BannerHistoryFileServiceImpl extends BannerHistoryFileService {
               );
               banners.add(item);
             }
-            break;
           case BannerHistoryItemType.weapon:
             if (!alreadyAdded) {
               final weapon = _weapons.getWeaponForCard(key);
@@ -82,7 +81,6 @@ class BannerHistoryFileServiceImpl extends BannerHistoryFileService {
               );
               banners.add(bannerItem);
             }
-            break;
           default:
             throw Exception('The provided banner type = ${banner.type} is not mapped');
         }
@@ -129,13 +127,11 @@ class BannerHistoryFileServiceImpl extends BannerHistoryFileService {
                   rarity = character.rarity;
                   imagePath = _resourceService.getCharacterImagePath(character.image);
                   type = ItemType.character;
-                  break;
                 case BannerHistoryItemType.weapon:
                   final weapon = _weapons.getWeapon(key);
                   rarity = weapon.rarity;
                   imagePath = _resourceService.getWeaponImagePath(weapon.image, weapon.type);
                   type = ItemType.weapon;
-                  break;
                 default:
                   throw Exception('Banner history item type = ${e.type} is not valid');
               }

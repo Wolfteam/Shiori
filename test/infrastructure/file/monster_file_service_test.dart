@@ -32,10 +32,8 @@ void main() {
         switch (drop.type) {
           case MonsterDropType.material:
             expect(() => materialFileService.getMaterial(drop.key), returnsNormally);
-            break;
           case MonsterDropType.artifact:
             expect(() => artifactFileService.getArtifact(drop.key), returnsNormally);
-            break;
         }
       }
     }

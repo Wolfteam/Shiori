@@ -399,19 +399,14 @@ void main() {
           switch (type) {
             case AppNotificationItemType.character:
               key = keqingKey;
-              break;
             case AppNotificationItemType.weapon:
               key = genshinService.weapons.getWeaponsForCard().firstWhere((el) => el.rarity == 1).key;
-              break;
             case AppNotificationItemType.artifact:
               key = genshinService.artifacts.getArtifactsForCard().first.key;
-              break;
             case AppNotificationItemType.monster:
               key = genshinService.monsters.getAllMonstersForCard().firstWhere((el) => el.type == MonsterType.abyssOrder).key;
-              break;
             case AppNotificationItemType.material:
               key = fragileResinKey;
-              break;
             default:
               throw Exception('Not mapped type');
           }

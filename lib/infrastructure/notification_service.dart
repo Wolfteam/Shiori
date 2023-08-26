@@ -50,19 +50,16 @@ class NotificationServiceImpl implements NotificationService {
   }
 
   @override
-  Future<void> registerCallBacks({
-    DidReceiveLocalNotificationCallback? onIosReceiveLocalNotification,
-    SelectNotificationCallback? onSelectNotification,
-  }) async {
+  Future<void> registerCallBacks() async {
     try {
       if (!isPlatformSupported) {
         return Future.value();
       }
       const android = AndroidInitializationSettings('ic_notification');
-      final iOS = IOSInitializationSettings(onDidReceiveLocalNotification: onIosReceiveLocalNotification);
-      const macOS = MacOSInitializationSettings();
-      final initializationSettings = InitializationSettings(android: android, iOS: iOS, macOS: macOS);
-      await _flutterLocalNotificationsPlugin.initialize(initializationSettings, onSelectNotification: onSelectNotification);
+      const iOS = DarwinInitializationSettings();
+      const macOS = DarwinInitializationSettings();
+      const initializationSettings = InitializationSettings(android: android, iOS: iOS, macOS: macOS);
+      await _flutterLocalNotificationsPlugin.initialize(initializationSettings);
     } catch (e, s) {
       _loggingService.error(runtimeType, 'registerCallBacks: Unknown error occurred', e, s);
     }
@@ -128,7 +125,7 @@ class NotificationServiceImpl implements NotificationService {
       scheduledDate,
       specifics,
       uiLocalNotificationDateInterpretation: UILocalNotificationDateInterpretation.absoluteTime,
-      androidAllowWhileIdle: true,
+      androidScheduleMode: AndroidScheduleMode.exactAllowWhileIdle,
       payload: payload,
     );
   }
@@ -152,8 +149,8 @@ class NotificationServiceImpl implements NotificationService {
       largeIcon: const DrawableResourceAndroidBitmap(_largeIcon),
       tag: _getTagFromNotificationType(type),
     );
-    const iOS = IOSNotificationDetails(presentAlert: true, presentBadge: true, presentSound: true, threadIdentifier: _channelId);
-    const macOS = MacOSNotificationDetails(presentAlert: true, presentBadge: true, presentSound: true, threadIdentifier: _channelId);
+    const iOS = DarwinNotificationDetails(presentAlert: true, presentBadge: true, presentSound: true, threadIdentifier: _channelId);
+    const macOS = DarwinNotificationDetails(presentAlert: true, presentBadge: true, presentSound: true, threadIdentifier: _channelId);
 
     return NotificationDetails(android: android, iOS: iOS, macOS: macOS);
   }

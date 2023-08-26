@@ -106,11 +106,9 @@ class MaterialsBloc extends Bloc<MaterialsEvent, MaterialsState> {
         case MaterialType.expWeapon:
         case MaterialType.expCharacter:
           data = data.where((el) => [MaterialType.expWeapon, MaterialType.expCharacter].contains(el.type)).toList();
-          break;
         case MaterialType.weaponPrimary:
         case MaterialType.weapon:
           data = data.where((el) => [MaterialType.weaponPrimary, MaterialType.weapon].contains(el.type)).toList();
-          break;
         default:
           data = data.where((el) => el.type == type).toList();
           break;

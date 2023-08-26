@@ -74,10 +74,8 @@ class _VersionsCharactersCell extends StatelessWidget {
     switch (type) {
       case BannerHistoryItemType.character:
         text = s.characters;
-        break;
       case BannerHistoryItemType.weapon:
         text = s.weapons;
-        break;
       default:
         throw Exception('Invalid banner history item type');
     }

@@ -103,8 +103,6 @@ void main() {
         sortType: BannerHistorySortType.versionAsc,
         banners: [],
         versions: [],
-        selectedItemKeys: [],
-        selectedVersions: [],
         maxNumberOfItems: 0,
       ),
     ),

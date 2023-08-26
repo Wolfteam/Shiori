@@ -73,10 +73,8 @@ class BannerHistoryCountBloc extends Bloc<BannerHistoryCountEvent, BannerHistory
     switch (type) {
       case BannerHistoryItemType.character:
         banners.addAll(_getFinalSortedBanners(_characterBanners, selectedVersions, state.sortType));
-        break;
       case BannerHistoryItemType.weapon:
         banners.addAll(_getFinalSortedBanners(_weaponBanners, selectedVersions, state.sortType));
-        break;
       default:
         throw Exception('Banner history item type = $type is not valid');
     }
@@ -176,10 +174,8 @@ class BannerHistoryCountBloc extends Bloc<BannerHistoryCountEvent, BannerHistory
     switch (type) {
       case BannerHistoryItemType.character:
         banners.addAll(_characterBanners);
-        break;
       case BannerHistoryItemType.weapon:
         banners.addAll(_weaponBanners);
-        break;
       default:
         throw Exception('Banner history item type = $type is not valid');
     }

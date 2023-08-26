@@ -54,7 +54,7 @@ class _ClearAllDialogState extends State<ClearAllDialog> {
         ElevatedButton(
           onPressed: () => _clearAll(context),
           child: Text(s.ok),
-        )
+        ),
       ],
     );
   }

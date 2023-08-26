@@ -151,10 +151,23 @@ void checkCharacterFileAscensionMaterialModel(
     expect(ascMaterial.level, allOf([greaterThanOrEqualTo(20), lessThanOrEqualTo(80)]));
     checkItemAscensionMaterialFileModel(materialFileService, ascMaterial.materials);
     if (checkMaterialType) {
-      expect(ascMaterial.materials.where((el) => el.type == MaterialType.jewels).length, 1);
-      expect(ascMaterial.materials.where((el) => el.type == MaterialType.local).length, 1);
-      expect(ascMaterial.materials.where((el) => el.type == MaterialType.common).length, 1);
-      expect(ascMaterial.materials.where((el) => el.type == MaterialType.currency).length, 1);
+      final types = [
+        MaterialType.jewels,
+        MaterialType.local,
+        MaterialType.common,
+        MaterialType.currency,
+      ];
+      for (final type in types) {
+        final materials = ascMaterial.materials.where((el) => el.type == type).toList();
+        expect(materials.length == 1, isTrue);
+        final current = materials.first;
+        final expected = materialFileService.getMaterial(current.key);
+        expect(
+          current.type == expected.type,
+          isTrue,
+          reason: 'CurrentKey = ${current.key} has a type = ${current.type} != ${expected.type}',
+        );
+      }
     }
   }
 }

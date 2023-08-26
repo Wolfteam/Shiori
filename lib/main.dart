@@ -28,10 +28,7 @@ Future<void> main() async {
     setWindowMaxSize(Size.infinite);
   }
   final notificationService = getIt<NotificationService>();
-  final notifFuture = notificationService.registerCallBacks(
-    onSelectNotification: _onSelectNotification,
-    onIosReceiveLocalNotification: _onDidReceiveLocalNotification,
-  );
+  final notifFuture = notificationService.registerCallBacks();
   //TODO: CHECK THE NOTIFICATION LOGIC
   //TODO: WEBVIEW SUPPORT IN MACOS
   if (!Platform.isMacOS) {
@@ -41,10 +38,6 @@ Future<void> main() async {
   Bloc.observer = AppBlocObserver(getIt<LoggingService>());
   runApp(MyApp());
 }
-
-Future<dynamic> _onDidReceiveLocalNotification(int id, String? title, String? body, String? payload) async {}
-
-Future<void> _onSelectNotification(String? json) async {}
 
 class MyApp extends StatelessWidget {
   @override

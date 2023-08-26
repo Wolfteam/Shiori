@@ -124,7 +124,6 @@ class _AppBar extends StatelessWidget implements PreferredSizeWidget {
                   switch (e) {
                     case 0:
                       context.read<CustomBuildBloc>().add(CustomBuildEvent.showOnCharacterDetailChanged(newValue: !state.showOnCharacterDetail));
-                      break;
                     default:
                       throw Exception('Invalid option');
                   }
@@ -228,11 +227,11 @@ class _LandscapeLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
+    return const Row(
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const Expanded(
+        Expanded(
           flex: 40,
           child: CharacterSection(),
         ),
@@ -241,7 +240,7 @@ class _LandscapeLayout extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: const [
+            children: [
               Expanded(
                 child: WeaponSection(
                   maxItemImageWidth: _maxItemImageWidth,
@@ -275,8 +274,8 @@ class _WeaponsAndArtifacts extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     if (useColumn) {
-      return Column(
-        children: const [
+      return const Column(
+        children: [
           WeaponSection(
             maxItemImageWidth: _maxItemImageWidth,
             useBoxDecoration: true,
@@ -289,13 +288,13 @@ class _WeaponsAndArtifacts extends StatelessWidget {
         ],
       );
     }
-    return Column(
+    return const Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: const [
+          children: [
             Expanded(
               child: WeaponSection(
                 maxItemImageWidth: _maxItemImageWidth,
@@ -310,7 +309,7 @@ class _WeaponsAndArtifacts extends StatelessWidget {
             ),
           ],
         ),
-        const TeamSection(useBoxDecoration: true),
+        TeamSection(useBoxDecoration: true),
       ],
     );
   }

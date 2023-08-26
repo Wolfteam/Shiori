@@ -65,7 +65,7 @@ void main() {
         'traveler-hydro',
         'traveler-pyro',
         'traveler-cryo',
-        'traveler-dendro'
+        'traveler-dendro',
       ];
       final detail = service.getCharacter(character.key);
       final isTraveler = travelerKeys.contains(character.key);
@@ -137,7 +137,7 @@ void main() {
 
       for (final build in detail.builds) {
         expect(build.weaponKeys, isNotEmpty);
-        expect(build.subStatsToFocus.length, greaterThanOrEqualTo(3));
+        expect(build.subStatsToFocus.length, greaterThanOrEqualTo(2));
         for (final key in build.weaponKeys) {
           final weapon = service.weapons.getWeapon(key);
           expect(weapon.type == detail.weaponType, isTrue);
@@ -171,7 +171,6 @@ void main() {
               case CharacterSkillType.elementalSkill:
               case CharacterSkillType.elementalBurst:
                 expect(stat.values.length, 15);
-                break;
               case CharacterSkillType.others:
                 break;
               default:

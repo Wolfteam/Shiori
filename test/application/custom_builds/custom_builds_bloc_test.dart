@@ -166,7 +166,7 @@ void main() {
     );
   }
 
-  test('Initial state', () => expect(CustomBuildsBloc(dataService).state, const CustomBuildsState.loaded(builds: [])));
+  test('Initial state', () => expect(CustomBuildsBloc(dataService).state, const CustomBuildsState.loaded()));
 
   blocTest<CustomBuildsBloc, CustomBuildsState>(
     'Create build for $keqingKey',

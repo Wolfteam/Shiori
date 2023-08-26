@@ -47,7 +47,6 @@ class MonsterCard extends StatelessWidget {
         clipBehavior: Clip.hardEdge,
         shape: Styles.mainCardShape,
         elevation: Styles.cardTenElevation,
-        shadowColor: Colors.transparent,
         child: Column(
           children: [
             Stack(
@@ -68,9 +67,9 @@ class MonsterCard extends StatelessWidget {
                   ),
                 ),
                 if (isComingSoon)
-                  Row(
+                  const Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: const [
+                    children: [
                       ComingSoonNewAvatar(isNew: false, isComingSoon: true),
                     ],
                   ),

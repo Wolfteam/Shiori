@@ -541,34 +541,24 @@ extension I18nExtensions on S {
     switch (type) {
       case RealmRankType.bareBones:
         translation = bareBones;
-        break;
       case RealmRankType.humbleAbode:
         translation = humbleAbode;
-        break;
       case RealmRankType.cozy:
         translation = cozy;
-        break;
       case RealmRankType.queenSize:
         translation = queenSize;
-        break;
       case RealmRankType.elegant:
         translation = elegant;
-        break;
       case RealmRankType.exquisite:
         translation = exquisite;
-        break;
       case RealmRankType.extraordinary:
         translation = extraordinary;
-        break;
       case RealmRankType.stately:
         translation = stately;
-        break;
       case RealmRankType.luxury:
         translation = luxury;
-        break;
       case RealmRankType.fitForAKing:
         translation = fitForAKing;
-        break;
       default:
         throw Exception('Invalid realm rank type = $type');
     }

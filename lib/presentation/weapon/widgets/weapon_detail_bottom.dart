@@ -210,7 +210,7 @@ class _LandscapeLayout extends StatelessWidget {
                 WeaponCraftingMaterials(
                   materials: craftingMaterials,
                   rarityColor: rarityColor,
-                )
+                ),
             ],
           ),
         ),

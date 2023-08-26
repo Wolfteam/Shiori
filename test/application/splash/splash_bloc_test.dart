@@ -75,7 +75,7 @@ void main() {
           canSkipUpdate: true,
           noInternetConnectionOnFirstInstall: false,
           needsLatestAppVersionOnFirstInstall: false,
-        )
+        ),
       ],
     );
 
@@ -104,7 +104,7 @@ void main() {
           canSkipUpdate: false,
           noInternetConnectionOnFirstInstall: false,
           needsLatestAppVersionOnFirstInstall: false,
-        )
+        ),
       ],
     );
 
@@ -133,7 +133,7 @@ void main() {
           canSkipUpdate: true,
           noInternetConnectionOnFirstInstall: false,
           needsLatestAppVersionOnFirstInstall: false,
-        )
+        ),
       ],
     );
 
@@ -162,7 +162,7 @@ void main() {
           canSkipUpdate: true,
           noInternetConnectionOnFirstInstall: false,
           needsLatestAppVersionOnFirstInstall: false,
-        )
+        ),
       ],
     );
 
@@ -191,7 +191,7 @@ void main() {
           canSkipUpdate: false,
           noInternetConnectionOnFirstInstall: false,
           needsLatestAppVersionOnFirstInstall: true,
-        )
+        ),
       ],
     );
 
@@ -220,7 +220,7 @@ void main() {
           canSkipUpdate: false,
           noInternetConnectionOnFirstInstall: true,
           needsLatestAppVersionOnFirstInstall: false,
-        )
+        ),
       ],
     );
 
@@ -261,7 +261,7 @@ void main() {
           canSkipUpdate: true,
           noInternetConnectionOnFirstInstall: false,
           needsLatestAppVersionOnFirstInstall: false,
-        )
+        ),
       ],
     );
 
@@ -359,7 +359,7 @@ void main() {
           canSkipUpdate: false,
           noInternetConnectionOnFirstInstall: false,
           needsLatestAppVersionOnFirstInstall: false,
-        )
+        ),
       ],
     );
 
@@ -388,7 +388,7 @@ void main() {
           canSkipUpdate: false,
           noInternetConnectionOnFirstInstall: false,
           needsLatestAppVersionOnFirstInstall: false,
-        )
+        ),
       ],
     );
   });
@@ -487,7 +487,7 @@ void main() {
           canSkipUpdate: false,
           noInternetConnectionOnFirstInstall: false,
           needsLatestAppVersionOnFirstInstall: false,
-        )
+        ),
       ],
     );
 
@@ -522,7 +522,7 @@ void main() {
           canSkipUpdate: false,
           noInternetConnectionOnFirstInstall: false,
           needsLatestAppVersionOnFirstInstall: false,
-        )
+        ),
       ],
     );
 
@@ -575,7 +575,7 @@ void main() {
           canSkipUpdate: true,
           noInternetConnectionOnFirstInstall: false,
           needsLatestAppVersionOnFirstInstall: false,
-        )
+        ),
       ],
     );
 
@@ -612,7 +612,7 @@ void main() {
           canSkipUpdate: true,
           noInternetConnectionOnFirstInstall: false,
           needsLatestAppVersionOnFirstInstall: false,
-        )
+        ),
       ],
     );
 

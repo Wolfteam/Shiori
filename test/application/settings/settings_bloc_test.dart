@@ -17,11 +17,6 @@ class FakeHomeBloc extends Fake implements HomeBloc {
   void add(HomeEvent event) {}
 }
 
-class FakeUrlPageBloc extends Fake implements UrlPageBloc {
-  @override
-  void add(UrlPageEvent event) {}
-}
-
 void main() {
   const String appVersion = '1.0.0';
   final defaultSettings = AppSettings(

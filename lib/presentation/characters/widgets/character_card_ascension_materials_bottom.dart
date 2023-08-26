@@ -49,7 +49,7 @@ class CharacterCardAscensionMaterialsBottom extends StatelessWidget {
                         fit: FlexFit.tight,
                         flex: 60,
                         child: CharacterAscensionMaterials(images: materials),
-                      )
+                      ),
                     ],
                   ),
                 ),

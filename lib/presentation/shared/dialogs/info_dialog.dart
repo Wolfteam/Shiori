@@ -26,7 +26,7 @@ class InfoDialog extends StatelessWidget {
         ElevatedButton(
           onPressed: () => Navigator.of(context).pop(),
           child: Text(s.ok),
-        )
+        ),
       ],
     );
   }

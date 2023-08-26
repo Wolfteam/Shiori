@@ -180,14 +180,12 @@ class WeaponsBloc extends Bloc<WeaponsEvent, WeaponsState> {
         } else {
           data.sort((x, y) => y.baseAtk.compareTo(x.baseAtk));
         }
-        break;
       case WeaponFilterType.name:
         if (sortDirectionType == SortDirectionType.asc) {
           data.sort((x, y) => x.name.compareTo(y.name));
         } else {
           data.sort((x, y) => y.name.compareTo(x.name));
         }
-        break;
 
       case WeaponFilterType.rarity:
         if (sortDirectionType == SortDirectionType.asc) {
@@ -195,14 +193,12 @@ class WeaponsBloc extends Bloc<WeaponsEvent, WeaponsState> {
         } else {
           data.sort((x, y) => y.rarity.compareTo(x.rarity));
         }
-        break;
       case WeaponFilterType.subStat:
         if (sortDirectionType == SortDirectionType.asc) {
           data.sort((x, y) => x.subStatValue.compareTo(y.subStatValue));
         } else {
           data.sort((x, y) => y.subStatValue.compareTo(x.subStatValue));
         }
-        break;
       default:
         break;
     }

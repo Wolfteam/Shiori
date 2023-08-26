@@ -51,7 +51,7 @@ class _TierListPageState extends State<TierListPage> {
                     if (!state.readyToSave && state.charsAvailable.isNotEmpty)
                       SizedBox.fromSize(
                         size: const Size.fromHeight(fabHeight),
-                      )
+                      ),
                   ],
                 ),
               ),

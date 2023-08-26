@@ -48,7 +48,7 @@ class WeaponDetailAscensionMaterialsCard extends StatelessWidget {
               ),
             ],
           ),
-          ...ascensionMaterials.map((e) => _buildStatProgressionRow(e, size)).toList(),
+          ...ascensionMaterials.map((e) => _buildStatProgressionRow(e, size)),
         ],
       ),
     );

@@ -37,7 +37,7 @@ class CreditsSettingsCard extends StatelessWidget {
               s.creditsTranslatorsMsg,
               textAlign: TextAlign.center,
             ),
-            ..._translators.entries.map((kvp) => _TranslatorsRow(language: kvp.key, translators: kvp.value))
+            ..._translators.entries.map((kvp) => _TranslatorsRow(language: kvp.key, translators: kvp.value)),
           ],
         ),
       ),

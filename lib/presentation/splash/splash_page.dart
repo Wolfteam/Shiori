@@ -9,7 +9,7 @@ import 'package:shiori/injection.dart';
 import 'package:shiori/presentation/shared/dialogs/confirm_dialog.dart';
 import 'package:shiori/presentation/shared/extensions/app_theme_type_extensions.dart';
 import 'package:shiori/presentation/shared/styles.dart';
-import 'package:wakelock/wakelock.dart';
+import 'package:wakelock_plus/wakelock_plus.dart';
 
 class SplashPage extends StatelessWidget {
   final LanguageModel language;
@@ -68,11 +68,9 @@ class SplashPage extends StatelessWidget {
           break;
         }
         initMain = true;
-        break;
       case AppResourceUpdateResultType.noUpdatesAvailable:
       case AppResourceUpdateResultType.updated:
         initMain = true;
-        break;
       case AppResourceUpdateResultType.updatesAvailable:
         //Only show the msg if it is the first update, otherwise auto apply the update
         if (!noResourcesHasBeenDownloaded) {
@@ -94,7 +92,6 @@ class SplashPage extends StatelessWidget {
             showCancelButton: !noResourcesHasBeenDownloaded,
           ),
         );
-        break;
       case AppResourceUpdateResultType.updating:
       case AppResourceUpdateResultType.retrying:
       case AppResourceUpdateResultType.noInternetConnection:
@@ -111,12 +108,12 @@ class SplashPage extends StatelessWidget {
   }
 
   void _initMain(AppResourceUpdateResultType result, BuildContext context) {
-    Wakelock.disable();
+    WakelockPlus.disable();
     context.read<MainBloc>().add(MainEvent.init(updateResultType: result));
   }
 
   void _applyUpdate(CheckForUpdatesResult result, BuildContext context) {
-    Wakelock.enable();
+    WakelockPlus.enable();
     context.read<SplashBloc>().add(SplashEvent.applyUpdate(result: result));
   }
 }

@@ -128,13 +128,10 @@ class WeaponRow extends StatelessWidget {
               switch (e.enumValue) {
                 case _Options.delete:
                   icon = const Icon(Icons.delete);
-                  break;
                 case _Options.refinements:
                   icon = const Icon(Icons.notes);
-                  break;
                 case _Options.level:
                   icon = const Icon(Icons.arrow_upward);
-                  break;
                 default:
                   throw Exception('The provided weapon option type = ${e.enumValue} is not valid');
               }
@@ -172,7 +169,6 @@ class WeaponRow extends StatelessWidget {
     switch (option) {
       case _Options.delete:
         bloc.add(CustomBuildEvent.deleteWeapon(key: weapon.key));
-        break;
       case _Options.refinements:
         final newValue = await showDialog<int>(
           context: context,
@@ -187,7 +183,6 @@ class WeaponRow extends StatelessWidget {
           return;
         }
         bloc.add(CustomBuildEvent.weaponRefinementChanged(key: weapon.key, newValue: newValue));
-        break;
       case _Options.level:
         final newValue = await showDialog<WeaponFileStatModel>(
           context: context,
@@ -202,7 +197,6 @@ class WeaponRow extends StatelessWidget {
         }
 
         bloc.add(CustomBuildEvent.weaponStatChanged(key: weapon.key, newValue: newValue));
-        break;
       default:
         throw Exception('The weapon option is not valid');
     }
@@ -301,7 +295,7 @@ class _LevelDialogState extends State<_LevelDialog> {
         ElevatedButton(
           onPressed: () => Navigator.pop<WeaponFileStatModel>(context, _currentValue),
           child: Text(s.ok),
-        )
+        ),
       ],
       content: SizedBox(
         width: mq.getWidthForDialogs(),

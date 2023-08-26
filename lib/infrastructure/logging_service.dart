@@ -44,7 +44,7 @@ class LoggingServiceImpl implements LoggingService {
   void warning(Type type, String msg, [dynamic ex, StackTrace? trace]) {
     assert(!msg.isNullEmptyOrWhitespace);
     final tag = type.toString();
-    _logger.w('$tag - ${_formatEx(msg, ex)}', ex, trace);
+    _logger.w('$tag - ${_formatEx(msg, ex)}', error: ex, stackTrace: trace);
 
     if (kReleaseMode) {
       _trackWarningOrError(tag, msg, ex, trace);
@@ -55,7 +55,7 @@ class LoggingServiceImpl implements LoggingService {
   void error(Type type, String msg, [dynamic ex, StackTrace? trace]) {
     assert(!msg.isNullEmptyOrWhitespace);
     final tag = type.toString();
-    _logger.e('$tag - ${_formatEx(msg, ex)}', ex, trace);
+    _logger.e('$tag - ${_formatEx(msg, ex)}', error: ex, stackTrace: trace);
 
     if (kReleaseMode) {
       _trackWarningOrError(tag, msg, ex, trace, true);

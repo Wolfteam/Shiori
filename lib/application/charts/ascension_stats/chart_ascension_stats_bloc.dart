@@ -59,10 +59,8 @@ class ChartAscensionStatsBloc extends Bloc<ChartAscensionStatsEvent, ChartAscens
     switch (itemType) {
       case ItemType.character:
         ascensionStats.addAll(_characterAscensionStats.take(maxNumberOfColumns));
-        break;
       case ItemType.weapon:
         ascensionStats.addAll(_weaponAscensionStats.take(maxNumberOfColumns));
-        break;
       default:
         throw Exception('ItemType = $itemType is not valid');
     }
@@ -90,10 +88,8 @@ class ChartAscensionStatsBloc extends Bloc<ChartAscensionStatsEvent, ChartAscens
     switch (itemType) {
       case ItemType.character:
         pages = _characterAscensionStats.length / take;
-        break;
       case ItemType.weapon:
         pages = _weaponAscensionStats.length / take;
-        break;
       default:
         throw Exception('ItemType = $itemType is not valid');
     }
@@ -135,10 +131,8 @@ class ChartAscensionStatsBloc extends Bloc<ChartAscensionStatsEvent, ChartAscens
     switch (state.itemType) {
       case ItemType.character:
         ascensionStats.addAll(_characterAscensionStats.skip(skip).take(state.maxNumberOfColumns));
-        break;
       case ItemType.weapon:
         ascensionStats.addAll(_weaponAscensionStats.skip(skip).take(state.maxNumberOfColumns));
-        break;
       default:
         throw Exception('ItemType = ${state.itemType} is not valid');
     }

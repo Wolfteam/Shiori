@@ -82,10 +82,8 @@ class InventoryDataServiceImpl implements InventoryDataService {
       case ItemType.weapon:
       case ItemType.artifact:
         await deleteAllItemsInInventoryExceptMaterials(type);
-        break;
       case ItemType.material:
         deleteAllUsedMaterialItems();
-        break;
     }
 
     if (raiseEvent) {
@@ -343,13 +341,10 @@ class InventoryDataServiceImpl implements InventoryDataService {
       switch (type) {
         case ItemType.character:
           await addCharacterToInventory(item.itemKey, raiseEvent: false);
-          break;
         case ItemType.weapon:
           await addWeaponToInventory(item.itemKey, raiseEvent: false);
-          break;
         case ItemType.material:
           await addItemToInventory(item.itemKey, type, item.quantity, raiseEvent: false);
-          break;
         default:
           break;
       }

@@ -74,10 +74,10 @@ void main() {
           name: 'XSkill',
           currentLevel: currentSkillLevel,
           desiredLevel: desiredSkillLevel,
-          isCurrentDecEnabled: enableTuple.item1,
-          isCurrentIncEnabled: enableTuple.item2,
-          isDesiredDecEnabled: enableTuple.item3,
-          isDesiredIncEnabled: enableTuple.item4,
+          isCurrentDecEnabled: enableTuple.$1,
+          isCurrentIncEnabled: enableTuple.$2,
+          isDesiredDecEnabled: enableTuple.$3,
+          isDesiredIncEnabled: enableTuple.$4,
         );
       }).toList();
       final materials = calculatorService.getCharacterMaterialsToUse(

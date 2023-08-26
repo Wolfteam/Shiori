@@ -64,7 +64,7 @@ class VerticalBarChart extends StatelessWidget {
         barTouchData: BarTouchData(
           touchTooltipData: BarTouchTooltipData(
             fitInsideHorizontally: true,
-            tooltipBgColor: tooltipColor ?? theme.backgroundColor,
+            tooltipBgColor: tooltipColor ?? theme.colorScheme.background,
             getTooltipItem: (group, groupIndex, rod, rodIndex) => BarTooltipItem(
               rod.toY.toInt().toString(),
               const TextStyle(color: Colors.white),
@@ -78,9 +78,8 @@ class VerticalBarChart extends StatelessWidget {
           },
         ),
         titlesData: FlTitlesData(
-          show: true,
-          rightTitles: AxisTitles(sideTitles: SideTitles(showTitles: false)),
-          topTitles: AxisTitles(sideTitles: SideTitles(showTitles: false)),
+          rightTitles: const AxisTitles(),
+          topTitles: const AxisTitles(),
           bottomTitles: AxisTitles(
             sideTitles: SideTitles(
               showTitles: true,
@@ -119,7 +118,7 @@ class VerticalBarChart extends StatelessWidget {
               ),
             )
             .toList(),
-        gridData: FlGridData(show: false),
+        gridData: const FlGridData(show: false),
       ),
     );
   }

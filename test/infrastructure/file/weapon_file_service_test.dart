@@ -62,7 +62,6 @@ void main() {
         case 1:
         case 2:
           expect(ascensionNumber == 4, isTrue);
-          break;
         default:
           expect(ascensionNumber == 6, isTrue);
           break;

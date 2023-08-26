@@ -47,8 +47,6 @@ extension AppThemeTypeExtensions on AppAccentColorType {
           primary: color,
           secondary: color,
           primaryContainer: color,
-          primaryVariant: color,
-          secondaryVariant: color,
         );
         final dark = ThemeData.dark().copyWith(
           primaryColor: color,
@@ -82,8 +80,6 @@ extension AppThemeTypeExtensions on AppAccentColorType {
             primary: color,
             secondary: color,
             primaryContainer: color,
-            primaryVariant: color,
-            secondaryVariant: color,
           ),
         );
       default:

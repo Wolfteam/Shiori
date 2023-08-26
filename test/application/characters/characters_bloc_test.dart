@@ -57,7 +57,7 @@ void main() {
             tempCharacterFilterType: CharacterFilterType.name,
             sortDirectionType: SortDirectionType.asc,
             tempSortDirectionType: SortDirectionType.asc,
-          )
+          ),
         ];
       },
     );
@@ -112,7 +112,7 @@ void main() {
             sortDirectionType: SortDirectionType.asc,
             tempSortDirectionType: SortDirectionType.asc,
             search: keqingSearch,
-          )
+          ),
         ];
       },
     );
@@ -139,7 +139,7 @@ void main() {
           sortDirectionType: SortDirectionType.asc,
           tempSortDirectionType: SortDirectionType.asc,
           search: 'Github',
-        )
+        ),
       ],
     );
   });
@@ -184,7 +184,7 @@ void main() {
             tempStatusType: ItemStatusType.released,
             statusType: ItemStatusType.released,
             search: keqingSearch,
-          )
+          ),
         ];
       },
     );
@@ -228,7 +228,7 @@ void main() {
             tempCharacterFilterType: CharacterFilterType.rarity,
             sortDirectionType: SortDirectionType.desc,
             tempSortDirectionType: SortDirectionType.desc,
-          )
+          ),
         ];
       },
     );
@@ -265,7 +265,7 @@ void main() {
             tempCharacterFilterType: CharacterFilterType.name,
             sortDirectionType: SortDirectionType.asc,
             tempSortDirectionType: SortDirectionType.asc,
-          )
+          ),
         ];
       },
     );

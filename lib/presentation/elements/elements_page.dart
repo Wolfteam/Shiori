@@ -29,7 +29,7 @@ class ElementsPage extends StatelessWidget {
                         s.elementalDebuffs,
                         style: theme.textTheme.titleMedium!.copyWith(fontWeight: FontWeight.bold),
                       ),
-                      Text(s.elementalDebuffsExplained)
+                      Text(s.elementalDebuffsExplained),
                     ],
                   ),
                 ),

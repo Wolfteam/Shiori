@@ -41,7 +41,7 @@ class CharacterDetailAscensionMaterialsCard extends StatelessWidget {
                 CommonTableCell(text: s.materials, padding: Styles.edgeInsetAll10),
               ],
             ),
-            ...ascensionMaterials.map((e) => _buildAscensionRow(e)).toList(),
+            ...ascensionMaterials.map((e) => _buildAscensionRow(e)),
           ],
         ),
       ),

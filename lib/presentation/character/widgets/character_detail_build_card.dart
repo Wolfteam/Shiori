@@ -90,7 +90,7 @@ class CharacterDetailBuildCard extends StatelessWidget {
                 return RowColumnItemOr(widget: _ArtifactRow(item: e), color: color, useColumn: true);
               }
               return _ArtifactRow(item: e);
-            }).toList(),
+            }),
           ],
         ),
       ),

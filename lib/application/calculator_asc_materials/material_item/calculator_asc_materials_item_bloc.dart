@@ -9,7 +9,6 @@ import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/calculator_service.dart';
 import 'package:shiori/domain/services/genshin_service.dart';
 import 'package:shiori/domain/services/resources_service.dart';
-import 'package:tuple/tuple.dart';
 
 part 'calculator_asc_materials_item_bloc.freezed.dart';
 part 'calculator_asc_materials_item_event.dart';
@@ -103,8 +102,8 @@ class CalculatorAscMaterialsItemBloc extends Bloc<CalculatorAscMaterialsItemEven
 
   CalculatorAscMaterialsItemState _levelChanged(int currentLevel, int desiredLevel, bool currentChanged) {
     final tuple = _checkProvidedLevels(currentLevel, desiredLevel, currentChanged);
-    final cl = tuple.item1;
-    final dl = tuple.item2;
+    final cl = tuple.$1;
+    final dl = tuple.$2;
 
     final cAsc = _calculatorService.getClosestAscensionLevelFor(cl, currentState.currentAscensionLevel);
     final dAsc = _calculatorService.getClosestAscensionLevelFor(dl, currentState.desiredAscensionLevel);
@@ -121,9 +120,9 @@ class CalculatorAscMaterialsItemBloc extends Bloc<CalculatorAscMaterialsItemEven
 
   CalculatorAscMaterialsItemState _ascensionChanged(int currentLevel, int desiredLevel, bool currentChanged) {
     final tuple = _checkProvidedLevels(currentLevel, desiredLevel, currentChanged);
-    final bothAreZero = tuple.item1 == tuple.item2 && tuple.item1 == 0;
-    final cAsc = tuple.item1;
-    final dAsc = bothAreZero ? 1 : tuple.item2;
+    final bothAreZero = tuple.$1 == tuple.$2 && tuple.$1 == 0;
+    final cAsc = tuple.$1;
+    final dAsc = bothAreZero ? 1 : tuple.$2;
 
     //Here we consider the 0, because otherwise we will always start from a current level of 1, and sometimes, we want to know the whole thing
     //(from 1 to 10 with 1 inclusive)
@@ -140,8 +139,8 @@ class CalculatorAscMaterialsItemBloc extends Bloc<CalculatorAscMaterialsItemEven
       _calculatorService.getItemLevelToUse(dAsc, currentState.desiredLevel),
       currentChanged,
     );
-    final cl = levelTuple.item1;
-    final dl = levelTuple.item2;
+    final cl = levelTuple.$1;
+    final dl = levelTuple.$2;
 
     final skills = _updateSkills(cAsc, dAsc);
     return currentState.copyWith.call(
@@ -168,8 +167,8 @@ class CalculatorAscMaterialsItemBloc extends Bloc<CalculatorAscMaterialsItemEven
         currentChanged ? item.desiredLevel : newValue,
         currentChanged,
       );
-      final cl = tuple.item1;
-      final dl = tuple.item2;
+      final cl = tuple.$1;
+      final dl = tuple.$2;
 
       if (cl > maxSkillLevel || cl < minSkillLevel) {
         return currentState;
@@ -190,10 +189,10 @@ class CalculatorAscMaterialsItemBloc extends Bloc<CalculatorAscMaterialsItemEven
         item.copyWith.call(
           currentLevel: cl,
           desiredLevel: dl,
-          isCurrentDecEnabled: enableTuple.item1,
-          isCurrentIncEnabled: enableTuple.item2,
-          isDesiredDecEnabled: enableTuple.item3,
-          isDesiredIncEnabled: enableTuple.item4,
+          isCurrentDecEnabled: enableTuple.$1,
+          isCurrentIncEnabled: enableTuple.$2,
+          isDesiredDecEnabled: enableTuple.$3,
+          isDesiredIncEnabled: enableTuple.$4,
         ),
       );
     }
@@ -201,7 +200,7 @@ class CalculatorAscMaterialsItemBloc extends Bloc<CalculatorAscMaterialsItemEven
     return currentState.copyWith.call(skills: skills);
   }
 
-  Tuple2<int, int> _checkProvidedLevels(int currentLevel, int desiredLevel, bool currentChanged) {
+  (int, int) _checkProvidedLevels(int currentLevel, int desiredLevel, bool currentChanged) {
     var cl = currentLevel;
     var dl = desiredLevel;
 
@@ -215,7 +214,7 @@ class CalculatorAscMaterialsItemBloc extends Bloc<CalculatorAscMaterialsItemEven
       }
     }
 
-    return Tuple2<int, int>(cl, dl);
+    return (cl, dl);
   }
 
   List<CharacterSkill> _updateSkills(int currentAscensionLevel, int desiredAscensionLevel) {
@@ -236,10 +235,10 @@ class CalculatorAscMaterialsItemBloc extends Bloc<CalculatorAscMaterialsItemEven
         skill.copyWith.call(
           currentLevel: cSkill,
           desiredLevel: dSkill,
-          isCurrentDecEnabled: enableTuple.item1,
-          isCurrentIncEnabled: enableTuple.item2,
-          isDesiredDecEnabled: enableTuple.item3,
-          isDesiredIncEnabled: enableTuple.item4,
+          isCurrentDecEnabled: enableTuple.$1,
+          isCurrentIncEnabled: enableTuple.$2,
+          isDesiredDecEnabled: enableTuple.$3,
+          isDesiredIncEnabled: enableTuple.$4,
         ),
       );
     }
@@ -270,10 +269,10 @@ class CalculatorAscMaterialsItemBloc extends Bloc<CalculatorAscMaterialsItemEven
         position: i,
         currentLevel: minSkillLevel,
         desiredLevel: maxSkillLevel,
-        isCurrentDecEnabled: enableTuple.item1,
-        isCurrentIncEnabled: enableTuple.item2,
-        isDesiredDecEnabled: enableTuple.item3,
-        isDesiredIncEnabled: enableTuple.item4,
+        isCurrentDecEnabled: enableTuple.$1,
+        isCurrentIncEnabled: enableTuple.$2,
+        isDesiredDecEnabled: enableTuple.$3,
+        isDesiredIncEnabled: enableTuple.$4,
       );
       skills.add(skill);
     }

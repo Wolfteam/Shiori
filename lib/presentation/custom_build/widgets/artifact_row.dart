@@ -92,13 +92,10 @@ class ArtifactRow extends StatelessWidget {
               switch (e.enumValue) {
                 case _Options.subStats:
                   icon = const Icon(Icons.menu);
-                  break;
                 case _Options.delete:
                   icon = const Icon(Icons.delete);
-                  break;
                 case _Options.update:
                   icon = const Icon(Icons.edit);
-                  break;
                 default:
                   throw Exception('The provided artifact option type = ${e.enumValue} is not valid');
               }
@@ -146,19 +143,15 @@ class ArtifactRow extends StatelessWidget {
             ),
           ),
         );
-        break;
       case _Options.delete:
         bloc.add(CustomBuildEvent.deleteArtifact(type: artifact.type));
-        break;
       case _Options.update:
         StatType? statType;
         switch (artifact.type) {
           case ArtifactType.flower:
             statType = StatType.hp;
-            break;
           case ArtifactType.plume:
             statType = StatType.atk;
-            break;
           default:
             statType = await showDialog<StatType>(
               context: context,
@@ -178,7 +171,6 @@ class ArtifactRow extends StatelessWidget {
           return;
         }
         bloc.add(CustomBuildEvent.addArtifact(key: selectedKey!, type: artifact.type, statType: statType));
-        break;
       default:
         throw Exception('The artifact option is not valid');
     }
