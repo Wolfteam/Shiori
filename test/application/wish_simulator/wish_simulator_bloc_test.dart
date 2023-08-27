@@ -37,7 +37,7 @@ void main() {
     double expectedVersion,
     String wishIconImage,
     int selectedBannerIndex,
-    WishBannerItemsPerPeriodModel period, {
+    WishSimulatorBannerItemsPerPeriodModel period, {
     int expectedSelectedBannerIndex = 0,
   }) {
     expect(selectedBannerIndex == expectedSelectedBannerIndex, isTrue);

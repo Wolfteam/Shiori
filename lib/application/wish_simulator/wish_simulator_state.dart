@@ -7,6 +7,6 @@ class WishSimulatorState with _$WishSimulatorState {
   const factory WishSimulatorState.loaded({
     required String wishIconImage,
     required int selectedBannerIndex,
-    required WishBannerItemsPerPeriodModel period,
+    required WishSimulatorBannerItemsPerPeriodModel period,
   }) = _LoadedState;
 }

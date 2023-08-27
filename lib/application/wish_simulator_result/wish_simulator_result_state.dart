@@ -5,6 +5,6 @@ class WishSimulatorResultState with _$WishSimulatorResultState {
   const factory WishSimulatorResultState.loading() = _LoadingState;
 
   const factory WishSimulatorResultState.loaded({
-    required List<WishBannerItemResultModel> results,
+    required List<WishSimulatorBannerItemResultModel> results,
   }) = _LoadedState;
 }

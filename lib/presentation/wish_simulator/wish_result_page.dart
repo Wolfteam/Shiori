@@ -11,7 +11,7 @@ import 'package:shiori/presentation/wish_simulator/widgets/wish_result_item.dart
 class WishResultPage extends StatelessWidget {
   final int index;
   final int qty;
-  final WishBannerItemsPerPeriodModel period;
+  final WishSimulatorBannerItemsPerPeriodModel period;
 
   const WishResultPage({
     required this.index,
@@ -23,7 +23,7 @@ class WishResultPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => Injection.wishSimulatorResultBloc..add(WishSimulatorResultEvent.init(index: index, qty: qty, period: period)),
+      create: (context) => Injection.wishSimulatorResultBloc..add(WishSimulatorResultEvent.init(bannerIndex: index, pulls: qty, period: period)),
       child: Scaffold(
         body: Ink(
           decoration: BoxDecoration(

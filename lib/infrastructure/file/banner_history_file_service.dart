@@ -298,7 +298,7 @@ class BannerHistoryFileServiceImpl extends BannerHistoryFileService {
   }
 
   @override
-  WishBannerItemsPerPeriodModel getWishSimulatorBannerPerPeriod(double version, DateTime from, DateTime until) {
+  WishSimulatorBannerItemsPerPeriodModel getWishSimulatorBannerPerPeriod(double version, DateTime from, DateTime until) {
     if (version <= 0) {
       throw Exception('The provided version = $version is not valid');
     }
@@ -318,7 +318,7 @@ class BannerHistoryFileServiceImpl extends BannerHistoryFileService {
       final character = _characters.getCharacter(el.key);
       final imagePath = _resourceService.getCharacterImagePath(character.image);
       final iconImgPath = _resourceService.getCharacterImagePath(character.iconImage);
-      return WishBannerCharacterModel(
+      return WishSimulatorBannerCharacterModel(
         key: el.key,
         image: imagePath,
         iconImage: iconImgPath,
@@ -329,10 +329,10 @@ class BannerHistoryFileServiceImpl extends BannerHistoryFileService {
     final otherWeapons = _weapons.getWeaponsForCard().where((el) => WishBannerConstants.commonWeaponKeys.contains(el.key)).map((el) {
       final weapon = _weapons.getWeapon(el.key);
       final imagePath = _resourceService.getWeaponImagePath(weapon.image, weapon.type);
-      return WishBannerWeaponModel(key: el.key, rarity: weapon.rarity, image: imagePath, iconImage: imagePath, weaponType: el.type);
+      return WishSimulatorBannerWeaponModel(key: el.key, rarity: weapon.rarity, image: imagePath, iconImage: imagePath, weaponType: el.type);
     }).toList();
 
-    final banners = <WishBannerItemModel>[];
+    final banners = <WishSimulatorBannerItemModel>[];
     final bannerPeriods = _bannerHistoryFile.banners.where((el) => el.version == version).toList();
     for (final BannerHistoryPeriodFileModel period in bannerPeriods) {
       final overlap = period.from.isBefore(until) && period.until.isAfter(from);
@@ -340,9 +340,9 @@ class BannerHistoryFileServiceImpl extends BannerHistoryFileService {
         continue;
       }
 
-      final characters = <WishBannerCharacterModel>[];
-      final weapons = <WishBannerWeaponModel>[];
-      final featured = <WishBannerFeaturedItemModel>[];
+      final characters = <WishSimulatorBannerCharacterModel>[];
+      final weapons = <WishSimulatorBannerWeaponModel>[];
+      final featured = <WishSimulatorBannerFeaturedItemModel>[];
       for (final key in period.itemKeys) {
         switch (period.type) {
           case BannerHistoryItemType.character:
@@ -350,7 +350,7 @@ class BannerHistoryFileServiceImpl extends BannerHistoryFileService {
             final imagePath = _resourceService.getCharacterImagePath(character.image);
             final iconImagePath = _resourceService.getCharacterIconImagePath(character.iconImage);
             characters.add(
-              WishBannerCharacterModel(
+              WishSimulatorBannerCharacterModel(
                 key: key,
                 image: imagePath,
                 iconImage: iconImagePath,
@@ -358,12 +358,16 @@ class BannerHistoryFileServiceImpl extends BannerHistoryFileService {
                 elementType: character.elementType,
               ),
             );
-            featured.add(WishBannerFeaturedItemModel(key: key, iconImage: iconImagePath, rarity: character.rarity, type: ItemType.character));
+            featured.add(
+              WishSimulatorBannerFeaturedItemModel(key: key, iconImage: iconImagePath, rarity: character.rarity, type: ItemType.character),
+            );
           case BannerHistoryItemType.weapon:
             final weapon = _weapons.getWeapon(key);
             final imagePath = _resourceService.getWeaponImagePath(weapon.image, weapon.type);
-            weapons.add(WishBannerWeaponModel(key: key, rarity: weapon.rarity, image: imagePath, iconImage: imagePath, weaponType: weapon.type));
-            featured.add(WishBannerFeaturedItemModel(key: key, iconImage: imagePath, rarity: weapon.rarity, type: ItemType.weapon));
+            weapons.add(
+              WishSimulatorBannerWeaponModel(key: key, rarity: weapon.rarity, image: imagePath, iconImage: imagePath, weaponType: weapon.type),
+            );
+            featured.add(WishSimulatorBannerFeaturedItemModel(key: key, iconImage: imagePath, rarity: weapon.rarity, type: ItemType.weapon));
         }
       }
 
@@ -392,7 +396,7 @@ class BannerHistoryFileServiceImpl extends BannerHistoryFileService {
         weapons.add(weapon);
       }
 
-      final bannerItem = WishBannerItemModel(
+      final bannerItem = WishSimulatorBannerItemModel(
         type: BannerItemType.values[period.type.index],
         image: _resourceService.getWishBannerHistoryImagePath(period.imageFilename),
         characters: characters,
@@ -408,7 +412,7 @@ class BannerHistoryFileServiceImpl extends BannerHistoryFileService {
 
     banners.add(getWishSimulatorStandardBanner());
 
-    return WishBannerItemsPerPeriodModel(
+    return WishSimulatorBannerItemsPerPeriodModel(
       from: from,
       until: until,
       version: version,
@@ -483,19 +487,27 @@ class BannerHistoryFileServiceImpl extends BannerHistoryFileService {
   }
 
   @override
-  WishBannerItemModel getWishSimulatorStandardBanner() {
+  WishSimulatorBannerItemModel getWishSimulatorStandardBanner() {
     final characters = _characters
         .getCharactersForCard()
         .where((el) => !el.isComingSoon && !el.isNew && el.stars == 4 || WishBannerConstants.commonFiveStarCharacterKeys.contains(el.key))
-        .map((el) => WishBannerCharacterModel(key: el.key, rarity: el.stars, image: el.image, iconImage: el.iconImage, elementType: el.elementType))
+        .map(
+          (el) => WishSimulatorBannerCharacterModel(
+            key: el.key,
+            rarity: el.stars,
+            image: el.image,
+            iconImage: el.iconImage,
+            elementType: el.elementType,
+          ),
+        )
         .toList();
     final weapons = _weapons
         .getWeaponsForCard()
         .where((el) => WishBannerConstants.commonWeaponKeys.contains(el.key))
-        .map((el) => WishBannerWeaponModel(key: el.key, rarity: el.rarity, image: el.image, iconImage: el.image, weaponType: el.type))
+        .map((el) => WishSimulatorBannerWeaponModel(key: el.key, rarity: el.rarity, image: el.image, iconImage: el.image, weaponType: el.type))
         .toList();
 
-    return WishBannerItemModel(
+    return WishSimulatorBannerItemModel(
       type: BannerItemType.standard,
       image: Assets.wishBannerStandardImgPath,
       featuredItems: [],

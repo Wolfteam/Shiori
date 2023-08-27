@@ -177,7 +177,7 @@ class _WishSimulatorPageState extends State<WishSimulatorPage> {
     });
   }
 
-  Future<void> _wish(BuildContext context, int index, int qty, WishBannerItemsPerPeriodModel period) {
+  Future<void> _wish(BuildContext context, int index, int qty, WishSimulatorBannerItemsPerPeriodModel period) {
     return Navigator.push(
       context,
       MaterialPageRoute(
@@ -190,7 +190,7 @@ class _WishSimulatorPageState extends State<WishSimulatorPage> {
 
 class _CenterTopPageView extends StatelessWidget {
   final int selectedBannerIndex;
-  final WishBannerItemsPerPeriodModel period;
+  final WishSimulatorBannerItemsPerPeriodModel period;
 
   const _CenterTopPageView({
     required this.selectedBannerIndex,
@@ -225,7 +225,7 @@ class _CenterTopPageView extends StatelessWidget {
 }
 
 class _CenterPageView extends StatelessWidget {
-  final List<WishBannerItemModel> banners;
+  final List<WishSimulatorBannerItemModel> banners;
   final PageController controller;
 
   const _CenterPageView({

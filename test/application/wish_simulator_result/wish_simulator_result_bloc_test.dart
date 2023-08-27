@@ -23,7 +23,7 @@ void main() {
   late final DataService dataService;
   final TelemetryService telemetryService = MockTelemetryService();
   late final String dbPath;
-  late final WishBannerItemsPerPeriodModel period;
+  late final WishSimulatorBannerItemsPerPeriodModel period;
 
   setUpAll(() {
     TestWidgetsFlutterBinding.ensureInitialized();
@@ -59,7 +59,7 @@ void main() {
   void checkState(
     int bannerIndex,
     int pulls,
-    List<WishBannerItemResultModel> results, {
+    List<WishSimulatorBannerItemResultModel> results, {
     int? minFourStarCount,
     int? minFiveStarCount,
   }) {
@@ -103,28 +103,28 @@ void main() {
     blocTest(
       'invalid pulls',
       build: () => getBloc(),
-      act: (bloc) => bloc..add(WishSimulatorResultEvent.init(index: 0, qty: 0, period: period)),
+      act: (bloc) => bloc..add(WishSimulatorResultEvent.init(bannerIndex: 0, pulls: 0, period: period)),
       errors: () => [isA<Exception>()],
     );
 
     blocTest(
       'invalid banner index',
       build: () => getBloc(),
-      act: (bloc) => bloc..add(WishSimulatorResultEvent.init(index: -1, qty: 1, period: period)),
+      act: (bloc) => bloc..add(WishSimulatorResultEvent.init(bannerIndex: 0, pulls: 0, period: period)),
       errors: () => [isA<Exception>()],
     );
 
     blocTest(
       'banner index does not exist in period',
       build: () => getBloc(),
-      act: (bloc) => bloc..add(WishSimulatorResultEvent.init(index: period.banners.length + 1, qty: 1, period: period)),
+      act: (bloc) => bloc..add(WishSimulatorResultEvent.init(bannerIndex: period.banners.length + 1, pulls: 1, period: period)),
       errors: () => [isA<Exception>()],
     );
 
     blocTest(
       'pull x100 and gets multiple 4 star and at least one 5 star',
       build: () => getBloc(),
-      act: (bloc) => bloc..add(WishSimulatorResultEvent.init(index: 0, qty: 100, period: period)),
+      act: (bloc) => bloc..add(WishSimulatorResultEvent.init(bannerIndex: 0, pulls: 100, period: period)),
       verify: (bloc) => bloc.state.maybeMap(
         orElse: () => throw Exception('Invalid state'),
         loaded: (state) => checkState(0, 100, state.results, minFourStarCount: 9, minFiveStarCount: 1),

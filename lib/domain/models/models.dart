@@ -87,7 +87,6 @@ export 'weapons/weapon_ascension_model.dart';
 export 'weapons/weapon_card_model.dart';
 export 'weapons/weapon_file_refinement_model.dart';
 export 'wish_banner_history/wish_banner_history_grouped_period_model.dart';
-//TODO: RENAME THE MODELS
-export 'wish_simulator/wish_banner_item_model.dart';
-export 'wish_simulator/wish_banner_item_result_model.dart';
+export 'wish_simulator/wish_simulator_banner_item_model.dart';
 export 'wish_simulator/wish_simulator_banner_item_pull_history_model.dart';
+export 'wish_simulator/wish_simulator_banner_item_result_model.dart';

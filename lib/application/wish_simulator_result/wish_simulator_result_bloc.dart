@@ -28,13 +28,13 @@ class WishSimulatorResultBloc extends Bloc<WishSimulatorResultEvent, WishSimulat
   @override
   Stream<WishSimulatorResultState> mapEventToState(WishSimulatorResultEvent event) async* {
     final s = await event.map(
-      init: (e) => _pull(e.qty, e.index, e.period),
+      init: (e) => _pull(e.pulls, e.bannerIndex, e.period),
     );
 
     yield s;
   }
 
-  Future<WishSimulatorResultState> _pull(int pulls, int bannerIndex, WishBannerItemsPerPeriodModel period) async {
+  Future<WishSimulatorResultState> _pull(int pulls, int bannerIndex, WishSimulatorBannerItemsPerPeriodModel period) async {
     if (pulls <= 0) {
       throw Exception('The provided pulls = $pulls is not valid');
     }
@@ -50,7 +50,7 @@ class WishSimulatorResultBloc extends Bloc<WishSimulatorResultEvent, WishSimulat
     final fromUntilString = '${WishBannerConstants.dateFormat.format(period.from)}/${WishBannerConstants.dateFormat.format(period.until)}';
 
     final bannerKey = _generateBannerKey(period.version, banner.type, fromUntilString);
-    final results = <WishBannerItemResultModel>[];
+    final results = <WishSimulatorBannerItemResultModel>[];
     for (int i = 1; i <= pulls; i++) {
       final int randomRarity = bannerRates.getRarityIfGuaranteed(history) ?? _getRandomItemRarity(history.currentXStarCount, bannerRates);
       history.initXStarCountIfNeeded(randomRarity);
@@ -59,20 +59,10 @@ class WishSimulatorResultBloc extends Bloc<WishSimulatorResultEvent, WishSimulat
       final winsFiftyFifty = isRarityInFeatured && history.shouldWinFiftyFifty(randomRarity);
       final pool = [
         ...banner.characters.map(
-          (e) => WishBannerItemResultModel.character(
-            key: e.key,
-            image: e.image,
-            rarity: e.rarity,
-            elementType: e.elementType,
-          ),
+          (e) => WishSimulatorBannerItemResultModel.character(key: e.key, image: e.image, rarity: e.rarity, elementType: e.elementType),
         ),
         ...banner.weapons.map(
-          (e) => WishBannerItemResultModel.weapon(
-            key: e.key,
-            image: e.image,
-            rarity: e.rarity,
-            weaponType: e.weaponType,
-          ),
+          (e) => WishSimulatorBannerItemResultModel.weapon(key: e.key, image: e.image, rarity: e.rarity, weaponType: e.weaponType),
         ),
       ].where((el) {
         if (el.rarity != randomRarity) {

@@ -23,7 +23,7 @@ void main() {
     });
   });
 
-  void checkWishBannerItemModel(WishBannerItemModel banner, List<String> featuredItemKeys) {
+  void checkWishBannerItemModel(WishSimulatorBannerItemModel banner, List<String> featuredItemKeys) {
     switch (banner.type) {
       case BannerItemType.character:
       case BannerItemType.weapon:
