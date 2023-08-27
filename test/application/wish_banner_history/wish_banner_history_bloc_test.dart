@@ -128,13 +128,10 @@ void main() {
       switch (groupType) {
         case WishBannerGroupedType.version:
           key = version;
-          break;
         case WishBannerGroupedType.character:
           key = character;
-          break;
         case WishBannerGroupedType.weapon:
           key = weapon;
-          break;
       }
       blocTest<WishBannerHistoryBloc, WishBannerHistoryState>(
         'grouping by ${groupType.name} and filtering with key $key',

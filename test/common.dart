@@ -127,8 +127,10 @@ void checkItemKeyAndName(String key, String name) {
   checkTranslation(name, canBeNull: false);
 }
 
-void checkBannerRarity(int rarity) {
-  expect(rarity >= WishBannerConstants.minObtainableRarity && rarity <= WishBannerConstants.maxObtainableRarity, isTrue);
+void checkBannerRarity(int rarity, {int? min, int? max}) {
+  final minRarity = min ?? WishBannerConstants.minObtainableRarity;
+  final maxRarity = max ?? WishBannerConstants.maxObtainableRarity;
+  expect(rarity >= minRarity && rarity <= maxRarity, isTrue);
 }
 
 void checkItemAscensionMaterialFileModel(MaterialFileService materialFileService, List<ItemAscensionMaterialFileModel> all) {

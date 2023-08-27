@@ -28,10 +28,8 @@ void main() {
       case BannerItemType.character:
       case BannerItemType.weapon:
         expect(banner.featuredItems, isNotEmpty);
-        break;
       case BannerItemType.standard:
         expect(banner.featuredItems, isEmpty);
-        break;
     }
 
     expect(banner.featuredItems.map((e) => e.key).toSet().length, banner.featuredItems.length);
@@ -71,10 +69,8 @@ void main() {
       switch (type) {
         case SortDirectionType.asc:
           expect(versions.first < versions.last, isTrue);
-          break;
         case SortDirectionType.desc:
           expect(versions.first > versions.last, isTrue);
-          break;
       }
     }
   });
@@ -202,11 +198,9 @@ void main() {
             case BannerHistoryItemType.character:
               final chars = characterFileService.getItemCommonWithNameByRarity(rarity);
               data.addAll(chars);
-              break;
             case BannerHistoryItemType.weapon:
               final weapons = weaponFileService.getItemCommonWithNameByRarity(rarity);
               data.addAll(weapons);
-              break;
             default:
               throw Exception('Invalid type');
           }
