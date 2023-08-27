@@ -31,7 +31,7 @@ class ItemCommonWithNameAppBarSearchDelegate extends SearchDelegate<List<String>
               query = '';
             }
           },
-        )
+        ),
       ];
 
   @override

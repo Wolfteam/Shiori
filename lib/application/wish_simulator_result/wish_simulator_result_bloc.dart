@@ -73,7 +73,7 @@ class WishSimulatorResultBloc extends Bloc<WishSimulatorResultEvent, WishSimulat
             rarity: e.rarity,
             weaponType: e.weaponType,
           ),
-        )
+        ),
       ].where((el) {
         if (el.rarity != randomRarity) {
           return false;
@@ -219,7 +219,7 @@ class _RatesPerBannerType {
   final BannerItemType type;
   final List<_BannerRate> _rates = [];
 
-  Map<int, int> get getDefaultXStarCount => {for (var v in _rates) v.rarity: 0};
+  Map<int, int> get getDefaultXStarCount => {for (final v in _rates) v.rarity: 0};
 
   _RatesPerBannerType(this.type) {
     switch (type) {
@@ -228,12 +228,10 @@ class _RatesPerBannerType {
         _rates.add(const _BannerRate(5, 90, 0.6, 40, 74));
         _rates.add(const _BannerRate(4, 10, 5.1, 4, 7));
         _rates.add(const _BannerRate.simple(3, 94.3));
-        break;
       case BannerItemType.weapon:
         _rates.add(const _BannerRate(5, 80, 0.7, 30, 64));
         _rates.add(const _BannerRate(4, 10, 6.0, 4, 7));
         _rates.add(const _BannerRate.simple(3, 93.3));
-        break;
     }
   }
 

@@ -155,7 +155,7 @@ class _WishSimulatorPageState extends State<WishSimulatorPage> {
                         ),
                       ),
                     ),
-                  )
+                  ),
                 ],
               ),
             ),
@@ -249,15 +249,12 @@ class _CenterPageView extends StatelessWidget {
             final elementType = banner.characters.firstWhere((c) => c.key == banner.featuredItems.first.key).elementType;
             topTitle = s.characterEventWish;
             color = elementType.getElementColor(true);
-            break;
           case BannerItemType.weapon:
             topTitle = s.weaponEventWish;
             color = Colors.orange;
-            break;
           case BannerItemType.standard:
             topTitle = s.standardEventWish;
             color = Colors.deepPurple;
-            break;
         }
         return BannerMainImage(
           topTitle: topTitle,

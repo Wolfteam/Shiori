@@ -359,13 +359,11 @@ class BannerHistoryFileServiceImpl extends BannerHistoryFileService {
               ),
             );
             featured.add(WishBannerFeaturedItemModel(key: key, iconImage: iconImagePath, rarity: character.rarity, type: ItemType.character));
-            break;
           case BannerHistoryItemType.weapon:
             final weapon = _weapons.getWeapon(key);
             final imagePath = _resourceService.getWeaponImagePath(weapon.image, weapon.type);
             weapons.add(WishBannerWeaponModel(key: key, rarity: weapon.rarity, image: imagePath, iconImage: imagePath, weaponType: weapon.type));
             featured.add(WishBannerFeaturedItemModel(key: key, iconImage: imagePath, rarity: weapon.rarity, type: ItemType.weapon));
-            break;
         }
       }
 
@@ -539,13 +537,11 @@ class BannerHistoryFileServiceImpl extends BannerHistoryFileService {
           if (character != null && !characters.any((el) => el.key == key)) {
             characters.add(ItemCommonWithNameAndRarity(key, character.name, character.rarity));
           }
-          break;
         case BannerHistoryItemType.weapon:
           final weapon = possiblePromotedItems.firstWhereOrNull((el) => el.key == key);
           if (weapon != null && !weapons.any((el) => el.key == key)) {
             weapons.add(ItemCommonWithNameAndRarity(key, weapon.name, weapon.rarity));
           }
-          break;
       }
     }
 

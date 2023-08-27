@@ -118,7 +118,6 @@ class WishBannerHistoryBloc extends Bloc<WishBannerHistoryEvent, WishBannerHisto
       switch (state.groupedType) {
         case WishBannerGroupedType.version:
           filteredPeriods.addAll(state.allPeriods.where((el) => keys.contains(el.groupingKey)));
-          break;
         case WishBannerGroupedType.character:
         case WishBannerGroupedType.weapon:
           final groupByCharacter = state.groupedType == WishBannerGroupedType.character;
@@ -132,18 +131,15 @@ class WishBannerHistoryBloc extends Bloc<WishBannerHistoryEvent, WishBannerHisto
               filteredPeriods.add(period);
             }
           }
-          break;
       }
     } else {
       switch (state.groupedType) {
         case WishBannerGroupedType.version:
           filteredPeriods.addAll(state.allPeriods);
-          break;
         case WishBannerGroupedType.character:
         case WishBannerGroupedType.weapon:
           final periods = _getGroupedByCharacterOrWeaponPeriod(state.allPeriods, state.groupedType);
           filteredPeriods.addAll(periods);
-          break;
       }
     }
 
