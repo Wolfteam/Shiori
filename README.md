@@ -126,7 +126,7 @@ E.g (in spanish) : "dark" :"Oscuro"
   the [Genshin Helper Team](https://docs.google.com/spreadsheets/d/e/2PACX-1vRq-sQxkvdbvaJtQAGG6iVz2q2UN9FCKZ8Mkyis87QHFptcOU3ViLh0_PJyMxFSgwJZrd10kbYpQFl1/pubhtml)
   for their builds
 * The folk(s) that developed the [Map](https://genshin-impact-map.appsample.com/#/)
-* And the folks from [Honey Impact](https://genshin.honeyhunterworld)
+* And the folks from [Honey Impact](https://genshin.honeyhunterworld.com/)
   , [Fandom Wiki](https://genshin-impact.fandom.com/wiki/Genshin_Impact)
   , [Genshin.in](https://www.gensh.in/), [Genshin.Center](https://genshin-center.com/) that provide
   useful data
