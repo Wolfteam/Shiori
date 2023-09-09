@@ -37,12 +37,12 @@ dependencies:
   flutter_local_notifications: ^15.1.1
   flutter_localizations:
     sdk: flutter
-  flutter_markdown: ^0.6.17+1
+  flutter_markdown: ^0.6.17+2
   flutter_native_timezone: ^2.0.0
   flutter_slidable: ^3.0.0
   fluttertoast: ^8.2.2
   freezed_annotation: ^2.2.0
-  get_it: ^7.6.0
+  get_it: ^7.6.4
   grouped_list: ^5.1.2
   hive: ^2.2.3
   hive_flutter: ^1.1.0
@@ -54,24 +54,24 @@ dependencies:
   intl: ^0.18.1
   json_annotation: ^4.7.0
   linked_scroll_controller: ^0.2.0
-  logger: ^2.0.1
+  logger: ^2.0.2
   package_info_plus: ^4.1.0
   path: ^1.8.3
   path_provider: ^2.1.0
-  permission_handler: ^10.4.3
+  permission_handler: ^10.4.5
   pull_to_refresh: ^2.0.0
-  purchases_flutter: ^5.6.2
+  purchases_flutter: ^5.6.5
   rate_my_app: ^2.0.0
   responsive_builder: ^0.7.0
   responsive_grid: ^2.4.4
   screenshot: ^2.1.0
   share_plus: ^7.1.0
-  shared_preferences: ^2.2.0
+  shared_preferences: ^2.2.1
   sprintf: ^7.0.0
   store_checker: ^1.4.0
   synchronized: ^3.1.0
   transparent_image: ^2.0.1
-  url_launcher: ^6.1.12
+  url_launcher: ^6.1.14
   version: ^3.0.0
   #This is until my pr gets merged
   version_tracker:
