@@ -107,7 +107,7 @@ class _NotificationTitleBodyState extends State<NotificationTitleBody> {
               ),
             ),
           ),
-        )
+        ),
       ],
     );
   }

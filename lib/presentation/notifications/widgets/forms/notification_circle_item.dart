@@ -103,42 +103,32 @@ class NotificationCircleItem extends StatelessWidget {
         break;
       case AppNotificationType.expedition:
         _toggleShowOtherImages(context);
-        break;
       case AppNotificationType.farmingArtifacts:
         break;
       case AppNotificationType.farmingMaterials:
         _toggleShowOtherImages(context);
-        break;
       case AppNotificationType.gadget:
         _toggleShowOtherImages(context);
-        break;
       case AppNotificationType.furniture:
       case AppNotificationType.realmCurrency:
         break;
       case AppNotificationType.weeklyBoss:
         _toggleShowOtherImages(context);
-        break;
       case AppNotificationType.custom:
         switch (itemType) {
           case AppNotificationItemType.character:
             await _openCharactersPage(context);
-            break;
           case AppNotificationItemType.weapon:
             await _openWeaponsPage(context);
-            break;
           case AppNotificationItemType.monster:
             await _openMonstersPage(context);
-            break;
           case AppNotificationItemType.artifact:
             await _openArtifactsPage(context);
-            break;
           case AppNotificationItemType.material:
             await _openMaterialsPage(context);
-            break;
           default:
             throw Exception('Invalid app notification type = $type');
         }
-        break;
       case AppNotificationType.dailyCheckIn:
         break;
     }

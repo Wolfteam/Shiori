@@ -55,7 +55,7 @@ void main() {
             tempWeaponFilterType: WeaponFilterType.rarity,
             sortDirectionType: SortDirectionType.asc,
             tempSortDirectionType: SortDirectionType.asc,
-          )
+          ),
         ];
       },
     );
@@ -106,7 +106,7 @@ void main() {
             sortDirectionType: SortDirectionType.asc,
             tempSortDirectionType: SortDirectionType.asc,
             search: search,
-          )
+          ),
         ];
       },
     );
@@ -131,7 +131,7 @@ void main() {
           sortDirectionType: SortDirectionType.asc,
           tempSortDirectionType: SortDirectionType.asc,
           search: 'Wanderer',
-        )
+        ),
       ],
     );
   });
@@ -171,7 +171,7 @@ void main() {
             weaponSubStatType: StatType.physDmgBonus,
             tempWeaponSubStatType: StatType.physDmgBonus,
             search: search,
-          )
+          ),
         ];
       },
     );
@@ -212,7 +212,7 @@ void main() {
             tempSortDirectionType: SortDirectionType.desc,
             weaponSubStatType: StatType.physDmgBonus,
             tempWeaponSubStatType: StatType.physDmgBonus,
-          )
+          ),
         ];
       },
     );
@@ -245,7 +245,7 @@ void main() {
             tempSortDirectionType: SortDirectionType.asc,
             weaponFilterType: WeaponFilterType.rarity,
             tempWeaponFilterType: WeaponFilterType.rarity,
-          )
+          ),
         ];
       },
     );

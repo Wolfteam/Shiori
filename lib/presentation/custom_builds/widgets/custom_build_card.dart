@@ -136,7 +136,7 @@ class CustomBuildCard extends StatelessWidget {
                   ],
                 ),
               ),
-            )
+            ),
           ],
         ),
       ),

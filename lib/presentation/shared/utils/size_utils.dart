@@ -28,21 +28,16 @@ class SizeUtils {
     switch (deviceType) {
       case DeviceScreenType.mobile:
         crossAxisCount = isPortrait ? forPortrait ?? 2 : forLandscape ?? 3;
-        break;
       case DeviceScreenType.tablet:
         switch (refinedSize) {
           case RefinedSize.small:
             crossAxisCount = isPortrait ? forPortrait ?? 3 : forLandscape ?? (isOnMainPage ? 4 : 5);
-            break;
           case RefinedSize.normal:
           case RefinedSize.large:
             crossAxisCount = isPortrait ? forPortrait ?? 4 : forLandscape ?? (isOnMainPage ? 5 : 6);
-            break;
           case RefinedSize.extraLarge:
             crossAxisCount = isPortrait ? forPortrait ?? 5 : forLandscape ?? (isOnMainPage ? 6 : 7);
-            break;
         }
-        break;
       case DeviceScreenType.desktop:
         if (size.width > 1680) {
           crossAxisCount = 8;
@@ -53,7 +48,6 @@ class SizeUtils {
         } else {
           crossAxisCount = 3;
         }
-        break;
       default:
         break;
     }

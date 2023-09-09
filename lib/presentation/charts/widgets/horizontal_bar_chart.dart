@@ -72,19 +72,18 @@ class HorizontalBarChart extends StatelessWidget {
           maxX: maxX,
           maxY: maxY,
           lineTouchData: LineTouchData(
-            handleBuiltInTouches: true,
             touchCallback: (event, response) {
               if (event is FlTapUpEvent && response?.lineBarSpots != null && response!.lineBarSpots!.isNotEmpty) {
                 onPointTap?.call(response.lineBarSpots!.first.x);
               }
             },
             touchTooltipData: LineTouchTooltipData(
-              tooltipBgColor: toolTipBgColor ?? theme.backgroundColor,
+              tooltipBgColor: toolTipBgColor ?? theme.colorScheme.background,
               fitInsideHorizontally: true,
-              getTooltipItems: getTooltipItems,
+              getTooltipItems: getTooltipItems ?? defaultLineTooltipItem,
             ),
           ),
-          gridData: FlGridData(show: false),
+          gridData: const FlGridData(show: false),
           titlesData: FlTitlesData(
             bottomTitles: AxisTitles(
               sideTitles: SideTitles(
@@ -94,8 +93,8 @@ class HorizontalBarChart extends StatelessWidget {
                 getTitlesWidget: (value, meta) => _BottomTitle(getBottomText: getBottomText, bottomTextMaxLength: bottomTextMaxLength, value: value),
               ),
             ),
-            rightTitles: AxisTitles(sideTitles: SideTitles(showTitles: false)),
-            topTitles: AxisTitles(sideTitles: SideTitles(showTitles: false)),
+            rightTitles: const AxisTitles(),
+            topTitles: const AxisTitles(),
             leftTitles: AxisTitles(
               sideTitles: SideTitles(
                 getTitlesWidget: (value, meta) => _LeftTitle(getLeftText: getLeftText, leftTextMaxLength: leftTextMaxLength, value: value),
@@ -109,12 +108,10 @@ class HorizontalBarChart extends StatelessWidget {
           lineBarsData: items
               .map(
                 (e) => LineChartBarData(
-                  isCurved: false,
                   color: e.color,
                   barWidth: barWidth,
                   isStrokeCapRound: true,
-                  dotData: FlDotData(show: true),
-                  belowBarData: BarAreaData(show: false),
+                  belowBarData: BarAreaData(),
                   spots: e.points.map((e) {
                     if (!canValueBeRendered(e.x)) {
                       return FlSpot.nullSpot;

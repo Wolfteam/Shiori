@@ -94,7 +94,7 @@ class _PassiveCard extends StatelessWidget {
                 style: theme.textTheme.bodyMedium!.copyWith(fontSize: 12),
               ),
             ),
-            if (model.descriptions.isNotEmpty) BulletList(items: model.descriptions)
+            if (model.descriptions.isNotEmpty) BulletList(items: model.descriptions),
           ],
         ),
       ),

@@ -63,7 +63,7 @@ class VersionDetailsDialog extends StatelessWidget {
           ElevatedButton(
             onPressed: () => Navigator.pop(context),
             child: Text(s.ok),
-          )
+          ),
         ],
       ),
     );
@@ -101,10 +101,10 @@ class _VersionDetailPeriod extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          ScreenTypeLayout(
-            mobile: _DetailDates(from: from, until: until, useRow: false),
-            tablet: _DetailDates(from: from, until: until, useRow: true),
-            desktop: _DetailDates(from: from, until: until, useRow: true),
+          ScreenTypeLayout.builder(
+            mobile: (context) => _DetailDates(from: from, until: until, useRow: false),
+            tablet: (context) => _DetailDates(from: from, until: until, useRow: true),
+            desktop: (context) => _DetailDates(from: from, until: until, useRow: true),
           ),
           Divider(color: theme.colorScheme.primary),
           if (characters.isNotEmpty && showCharacters) Text(s.characters, style: theme.textTheme.titleMedium),

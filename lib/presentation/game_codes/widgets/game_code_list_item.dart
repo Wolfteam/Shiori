@@ -116,7 +116,7 @@ class GameCodeListItem extends StatelessWidget {
                             overflow: TextOverflow.ellipsis,
                           ),
                         ],
-                      )
+                      ),
                   ],
                 ),
               ),

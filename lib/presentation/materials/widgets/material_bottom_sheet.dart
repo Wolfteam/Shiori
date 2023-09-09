@@ -134,7 +134,7 @@ class _OtherFilters extends StatelessWidget {
           selectedSortDirection: tempSortDirectionType,
           onSelected: (v) => context.read<MaterialsBloc>().add(MaterialsEvent.sortDirectionTypeChanged(v)),
           icon: Icon(Icons.sort, size: Styles.getIconSizeForItemPopupMenuFilter(forEndDrawer, true)),
-        )
+        ),
       ],
     );
   }
@@ -169,7 +169,7 @@ class _ButtonBar extends StatelessWidget {
             Navigator.pop(context);
           },
           child: Text(s.ok),
-        )
+        ),
       ],
     );
   }

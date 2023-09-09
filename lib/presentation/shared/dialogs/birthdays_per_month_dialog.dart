@@ -45,7 +45,7 @@ class BirthdaysPerMonthDialog extends StatelessWidget {
           ElevatedButton(
             onPressed: () => Navigator.pop(context),
             child: Text(s.ok),
-          )
+          ),
         ],
         content: BlocBuilder<CharactersBirthdaysPerMonthBloc, CharactersBirthdaysPerMonthState>(
           builder: (context, state) => state.maybeMap(

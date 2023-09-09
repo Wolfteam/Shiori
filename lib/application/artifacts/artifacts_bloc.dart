@@ -128,14 +128,12 @@ class ArtifactsBloc extends Bloc<ArtifactsEvent, ArtifactsState> {
         } else {
           data.sort((x, y) => y.name.compareTo(x.name));
         }
-        break;
       case ArtifactFilterType.rarity:
         if (sortDirectionType == SortDirectionType.asc) {
           data.sort((x, y) => x.rarity.compareTo(y.rarity));
         } else {
           data.sort((x, y) => y.rarity.compareTo(x.rarity));
         }
-        break;
       default:
         break;
     }

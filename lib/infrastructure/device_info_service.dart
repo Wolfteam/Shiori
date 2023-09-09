@@ -90,8 +90,8 @@ class DeviceInfoServiceImpl implements DeviceInfoService {
   Future<void> _initForIOs() async {
     final deviceInfo = DeviceInfoPlugin();
     final info = await deviceInfo.iosInfo;
-    final model = 'Model: ${info.model ?? na} --- Name: ${info.name ?? na}';
-    final osVersion = '${info.systemName ?? na} : ${info.systemVersion ?? na}';
+    final model = 'Model: ${info.model} --- Name: ${info.name}';
+    final osVersion = '${info.systemName} : ${info.systemVersion}';
     _setDefaultDeviceInfoProps(model, osVersion);
     _setOtherDeviceInfoProps(info.isPhysicalDevice);
   }

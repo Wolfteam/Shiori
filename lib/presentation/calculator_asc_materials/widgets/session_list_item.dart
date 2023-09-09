@@ -53,9 +53,9 @@ class SessionListItem extends StatelessWidget {
         title: Text(session.name),
         onTap: () => _gotoCalculatorAscensionMaterialsPage(context),
         subtitle: Text('${s.charactersX(numberOfChars)} / ${s.weaponsX(numberOfWeapons)}'),
-        leading: Column(
+        leading: const Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: const [
+          children: [
             Icon(Icons.list),
           ],
         ),
@@ -93,7 +93,7 @@ class SessionListItem extends StatelessWidget {
               Navigator.pop(context);
             },
             child: Text(s.ok),
-          )
+          ),
         ],
       ),
     );

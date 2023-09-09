@@ -45,7 +45,7 @@ void main() {
             tempFilterType: MonsterFilterType.name,
             sortDirectionType: SortDirectionType.asc,
             tempSortDirectionType: SortDirectionType.asc,
-          )
+          ),
         ];
       },
     );
@@ -90,7 +90,7 @@ void main() {
             sortDirectionType: SortDirectionType.asc,
             tempSortDirectionType: SortDirectionType.asc,
             search: search,
-          )
+          ),
         ];
       },
     );
@@ -110,7 +110,7 @@ void main() {
           sortDirectionType: SortDirectionType.asc,
           tempSortDirectionType: SortDirectionType.asc,
           search: 'Keqing',
-        )
+        ),
       ],
     );
   });
@@ -140,7 +140,7 @@ void main() {
             sortDirectionType: SortDirectionType.desc,
             tempSortDirectionType: SortDirectionType.desc,
             search: search,
-          )
+          ),
         ];
       },
     );
@@ -169,7 +169,7 @@ void main() {
             tempType: MonsterType.boss,
             sortDirectionType: SortDirectionType.desc,
             tempSortDirectionType: SortDirectionType.desc,
-          )
+          ),
         ];
       },
     );
@@ -193,7 +193,7 @@ void main() {
             tempFilterType: MonsterFilterType.name,
             sortDirectionType: SortDirectionType.asc,
             tempSortDirectionType: SortDirectionType.asc,
-          )
+          ),
         ];
       },
     );

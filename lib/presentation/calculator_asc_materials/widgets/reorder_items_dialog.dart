@@ -62,7 +62,7 @@ class _Body extends StatelessWidget {
         ElevatedButton(
           onPressed: () => _applyChanges(context),
           child: Text(s.save),
-        )
+        ),
       ],
     );
   }

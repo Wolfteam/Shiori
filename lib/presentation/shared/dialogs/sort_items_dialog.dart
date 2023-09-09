@@ -61,7 +61,7 @@ class _SortItemsDialogState extends State<SortItemsDialog> {
         ElevatedButton(
           onPressed: () => _applyChanges(context),
           child: Text(s.save),
-        )
+        ),
       ],
     );
   }

@@ -1,5 +1,4 @@
 import 'package:shiori/domain/models/models.dart';
-import 'package:tuple/tuple.dart';
 
 abstract class CalculatorService {
   List<AscensionMaterialsSummary> generateSummary(List<ItemAscensionMaterialModel> current);
@@ -50,7 +49,7 @@ abstract class CalculatorService {
   ///
   /// Returns a tuple with 4 boolean items, the first two represent the [currentLevel] (decrement and increment respectively)
   /// and the last two represent the [desiredLevel] (increment and decrement respectively)
-  Tuple4<bool, bool, bool, bool> isSkillEnabled(
+  (bool, bool, bool, bool) isSkillEnabled(
     int currentLevel,
     int desiredLevel,
     int currentAscensionLevel,

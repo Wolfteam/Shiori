@@ -159,15 +159,11 @@ class _ItemCard extends StatelessWidget {
         switch (type) {
           case BannerHistoryItemType.character:
             await CharacterPage.route(itemKey, context);
-            break;
           case BannerHistoryItemType.weapon:
             await WeaponPage.route(itemKey, context);
-            break;
         }
-        break;
       case _ItemOptionsType.releaseHistory:
         await showDialog(context: context, builder: (_) => ItemReleaseHistoryDialog(itemKey: itemKey, itemName: name));
-        break;
     }
   }
 }
@@ -184,7 +180,7 @@ class _OptionsDialog extends StatelessWidget {
         ElevatedButton(
           onPressed: () => Navigator.pop(context),
           child: Text(s.cancel),
-        )
+        ),
       ],
       content: SingleChildScrollView(
         child: Column(

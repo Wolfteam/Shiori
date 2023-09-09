@@ -65,7 +65,7 @@ void main() {
         'traveler-hydro',
         'traveler-pyro',
         'traveler-cryo',
-        'traveler-dendro'
+        'traveler-dendro',
       ];
       final detail = service.getCharacter(character.key);
       final isTraveler = travelerKeys.contains(character.key);
@@ -171,7 +171,6 @@ void main() {
               case CharacterSkillType.elementalSkill:
               case CharacterSkillType.elementalBurst:
                 expect(stat.values.length, 15);
-                break;
               case CharacterSkillType.others:
                 break;
               default:

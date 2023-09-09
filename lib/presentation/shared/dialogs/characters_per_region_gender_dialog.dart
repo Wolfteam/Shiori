@@ -49,7 +49,7 @@ class CharactersPerRegionGenderDialog extends StatelessWidget {
           ElevatedButton(
             onPressed: () => Navigator.pop(context),
             child: Text(s.ok),
-          )
+          ),
         ],
         content: BlocBuilder<CharactersPerRegionGenderBloc, CharactersPerRegionGenderState>(
           builder: (context, state) => state.maybeMap(

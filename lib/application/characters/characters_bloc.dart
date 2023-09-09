@@ -166,13 +166,10 @@ class CharactersBloc extends Bloc<CharactersEvent, CharactersState> {
     switch (statusType) {
       case ItemStatusType.released:
         characters = characters.where((el) => !el.isComingSoon).toList();
-        break;
       case ItemStatusType.comingSoon:
         characters = characters.where((el) => el.isComingSoon).toList();
-        break;
       case ItemStatusType.newItem:
         characters = characters.where((el) => el.isNew).toList();
-        break;
       default:
         break;
     }
@@ -211,14 +208,12 @@ class CharactersBloc extends Bloc<CharactersEvent, CharactersState> {
         } else {
           data.sort((x, y) => y.name.compareTo(x.name));
         }
-        break;
       case CharacterFilterType.rarity:
         if (sortDirectionType == SortDirectionType.asc) {
           data.sort((x, y) => x.stars.compareTo(y.stars));
         } else {
           data.sort((x, y) => y.stars.compareTo(x.stars));
         }
-        break;
       default:
         break;
     }
