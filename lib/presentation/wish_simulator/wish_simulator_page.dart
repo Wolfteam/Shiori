@@ -26,9 +26,9 @@ class _WishSimulatorPageState extends State<WishSimulatorPage> {
 
   @override
   Widget build(BuildContext context) {
-    const double topIconSize = 50;
-    const double topHeight = 120;
-    const double wishIconHeight = 55;
+    const double topIconSize = 40;
+    const double topHeight = 100;
+    const double wishIconHeight = 45;
     final double remainingHeight = MediaQuery.of(context).size.height - topHeight - (2 * wishIconHeight);
     double bannerMaxHeight = remainingHeight * 0.9;
     if (bannerMaxHeight > 700) {
@@ -70,7 +70,7 @@ class _WishSimulatorPageState extends State<WishSimulatorPage> {
                         crossAxisAlignment: CrossAxisAlignment.end,
                         children: [
                           Flexible(
-                            flex: 10,
+                            flex: 12,
                             child: Container(
                               margin: const EdgeInsets.only(bottom: 10),
                               child: IconButton(
@@ -83,7 +83,7 @@ class _WishSimulatorPageState extends State<WishSimulatorPage> {
                             ),
                           ),
                           Expanded(
-                            flex: 80,
+                            flex: 76,
                             child: Container(
                               height: topHeight,
                               alignment: Alignment.center,
@@ -92,12 +92,15 @@ class _WishSimulatorPageState extends State<WishSimulatorPage> {
                                 loaded: (state) => _CenterTopPageView(
                                   selectedBannerIndex: state.selectedBannerIndex,
                                   period: state.period,
+                                  width: 200,
+                                  normalHeight: 60,
+                                  selectedHeight: 70,
                                 ),
                               ),
                             ),
                           ),
                           Flexible(
-                            flex: 10,
+                            flex: 12,
                             child: state.maybeMap(loaded: (_) => true, orElse: () => false)
                                 ? Container(
                                     margin: const EdgeInsets.only(bottom: 10),
@@ -191,10 +194,16 @@ class _WishSimulatorPageState extends State<WishSimulatorPage> {
 class _CenterTopPageView extends StatelessWidget {
   final int selectedBannerIndex;
   final WishSimulatorBannerItemsPerPeriodModel period;
+  final double width;
+  final double normalHeight;
+  final double selectedHeight;
 
   const _CenterTopPageView({
     required this.selectedBannerIndex,
     required this.period,
+    required this.width,
+    required this.normalHeight,
+    required this.selectedHeight,
   });
 
   @override
@@ -211,8 +220,8 @@ class _CenterTopPageView extends StatelessWidget {
             return BannerTopImage(
               index: index,
               imagesPath: e.featuredImages,
-              width: 200,
-              height: selected ? 70 : 60,
+              width: width,
+              height: selected ? selectedHeight : normalHeight,
               selected: selected,
               type: e.type,
               onTap: (index) => context.read<WishSimulatorBloc>().add(WishSimulatorEvent.bannerSelected(index: index)),

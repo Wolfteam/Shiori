@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:responsive_builder/responsive_builder.dart';
 import 'package:shiori/domain/assets.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/extensions/weapon_type_extensions.dart';
@@ -39,8 +40,15 @@ class _WishResultItemState extends State<WishResultItem> {
             ? Styles.fourStarWishResultBoxShadow
             : Styles.commonWishResultBoxShadow;
 
+    final size = getDeviceType(MediaQuery.of(context).size);
+    final double aspectRatio = switch (size) {
+      DeviceScreenType.mobile => 9 / 20,
+      DeviceScreenType.tablet => 9 / 20,
+      _ => 8 / 30,
+    };
+
     return AspectRatio(
-      aspectRatio: 8 / 30,
+      aspectRatio: aspectRatio,
       child: MouseRegion(
         onEnter: (event) {
           setState(() {
@@ -136,8 +144,9 @@ class _BottomPart extends StatelessWidget {
                   widthFactor: 0.5,
                   child: Image.asset(image),
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
+                Wrap(
+                  alignment: WrapAlignment.center,
+                  crossAxisAlignment: WrapCrossAlignment.center,
                   children: List.generate(
                     rarity,
                     (index) => const Icon(

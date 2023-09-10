@@ -25,68 +25,71 @@ class WishResultPage extends StatelessWidget {
     return BlocProvider(
       create: (context) => Injection.wishSimulatorResultBloc..add(WishSimulatorResultEvent.init(bannerIndex: index, pulls: qty, period: period)),
       child: Scaffold(
-        body: Ink(
-          decoration: BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage(Assets.wishBannerResultBackgroundImgPath),
-              fit: BoxFit.fill,
+        body: SafeArea(
+          child: Ink(
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage(Assets.wishBannerResultBackgroundImgPath),
+                fit: BoxFit.fill,
+              ),
             ),
-          ),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              Container(
-                margin: const EdgeInsets.only(top: 10, right: 20),
-                alignment: Alignment.topRight,
-                child: CircleAvatar(
-                  backgroundColor: Styles.wishButtonBackgroundColor,
-                  radius: 20,
-                  child: IconButton(
-                    onPressed: () => Navigator.pop(context),
-                    splashRadius: Styles.mediumButtonSplashRadius,
-                    icon: const Icon(Icons.close),
-                    color: Colors.black,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                Container(
+                  margin: const EdgeInsets.only(top: 10, right: 20),
+                  alignment: Alignment.topRight,
+                  child: CircleAvatar(
+                    backgroundColor: Styles.wishButtonBackgroundColor,
+                    radius: 20,
+                    child: IconButton(
+                      onPressed: () => Navigator.pop(context),
+                      splashRadius: Styles.mediumButtonSplashRadius,
+                      icon: const Icon(Icons.close),
+                      color: Colors.black,
+                    ),
                   ),
                 ),
-              ),
-              Expanded(
-                child: LayoutBuilder(
-                  builder: (context, constraints) => Center(
-                    child: Container(
-                      height: constraints.maxWidth * 0.6,
-                      constraints: BoxConstraints(
-                        maxHeight: constraints.maxHeight * 0.7,
-                        minHeight: constraints.maxHeight * 0.4,
-                      ),
-                      margin: Styles.edgeInsetHorizontal16,
-                      child: BlocBuilder<WishSimulatorResultBloc, WishSimulatorResultState>(
-                        builder: (context, state) => state.maybeMap(
-                          loaded: (state) => ListView.builder(
-                            shrinkWrap: true,
-                            itemCount: state.results.length,
-                            scrollDirection: Axis.horizontal,
-                            itemBuilder: (context, index) => state.results[index].map(
-                              character: (char) => WishResultItem.character(
-                                image: char.image,
-                                rarity: char.rarity,
-                                elementType: char.elementType,
-                              ),
-                              weapon: (weapon) => WishResultItem.weapon(
-                                image: weapon.image,
-                                rarity: weapon.rarity,
-                                weaponType: weapon.weaponType,
+                Expanded(
+                  child: LayoutBuilder(
+                    builder: (context, constraints) => Center(
+                      child: Container(
+                        height: constraints.maxWidth * 0.6,
+                        constraints: BoxConstraints(
+                          maxHeight: constraints.maxHeight * 0.8,
+                          minHeight: constraints.maxHeight * 0.4,
+                        ),
+                        alignment: Alignment.center,
+                        margin: Styles.edgeInsetHorizontal16,
+                        child: BlocBuilder<WishSimulatorResultBloc, WishSimulatorResultState>(
+                          builder: (context, state) => state.maybeMap(
+                            loaded: (state) => ListView.builder(
+                              shrinkWrap: true,
+                              itemCount: state.results.length,
+                              scrollDirection: Axis.horizontal,
+                              itemBuilder: (context, index) => state.results[index].map(
+                                character: (char) => WishResultItem.character(
+                                  image: char.image,
+                                  rarity: char.rarity,
+                                  elementType: char.elementType,
+                                ),
+                                weapon: (weapon) => WishResultItem.weapon(
+                                  image: weapon.image,
+                                  rarity: weapon.rarity,
+                                  weaponType: weapon.weaponType,
+                                ),
                               ),
                             ),
+                            orElse: () => const Loading(useScaffold: false),
                           ),
-                          orElse: () => const Loading(useScaffold: false),
                         ),
                       ),
                     ),
                   ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),
