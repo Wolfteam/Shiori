@@ -43,7 +43,7 @@ class _WishResultItemState extends State<WishResultItem> {
     final size = getDeviceType(MediaQuery.of(context).size);
     final double aspectRatio = switch (size) {
       DeviceScreenType.mobile => 9 / 20,
-      DeviceScreenType.tablet => 9 / 20,
+      DeviceScreenType.tablet => 9 / 25,
       _ => 8 / 30,
     };
 

@@ -99,19 +99,16 @@ class Styles {
       color: Colors.white,
       blurRadius: 20,
       spreadRadius: -20,
-      blurStyle: BlurStyle.outer,
     ),
     BoxShadow(
       color: Styles.fiveStarWishResultBackgroundColor,
       blurRadius: 25,
       spreadRadius: -20,
-      blurStyle: BlurStyle.outer,
     ),
     BoxShadow(
       color: Styles.fiveStarWishResultBackgroundColor,
       blurRadius: 15,
       spreadRadius: -20,
-      blurStyle: BlurStyle.outer,
     ),
   ];
 
@@ -120,19 +117,16 @@ class Styles {
       color: Colors.white,
       blurRadius: 20,
       spreadRadius: -20,
-      blurStyle: BlurStyle.outer,
     ),
     BoxShadow(
       color: Styles.fourStarWishResultBackgroundColor,
       blurRadius: 25,
       spreadRadius: -20,
-      blurStyle: BlurStyle.outer,
     ),
     BoxShadow(
       color: Styles.fourStarWishResultBackgroundColor,
       blurRadius: 15,
       spreadRadius: -20,
-      blurStyle: BlurStyle.outer,
     ),
   ];
 
@@ -141,19 +135,16 @@ class Styles {
       color: Styles.commonStarWishResultBackgroundColor,
       blurRadius: 25,
       spreadRadius: -20,
-      blurStyle: BlurStyle.outer,
     ),
     BoxShadow(
       color: Colors.white,
       blurRadius: 10,
       spreadRadius: -20,
-      blurStyle: BlurStyle.outer,
     ),
     BoxShadow(
       color: Styles.commonStarWishResultBackgroundColor,
       blurRadius: 15,
       spreadRadius: -20,
-      blurStyle: BlurStyle.outer,
     ),
   ];
 }
