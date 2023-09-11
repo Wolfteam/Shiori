@@ -13,6 +13,7 @@ import 'package:shiori/domain/services/logging_service.dart';
 import 'package:shiori/domain/services/network_service.dart';
 import 'package:shiori/domain/services/resources_service.dart';
 import 'package:shiori/domain/services/settings_service.dart';
+import 'package:shiori/env.dart';
 
 const _tempDirName = 'shiori_temp';
 const _tempAssetsDirName = 'shiori_assets';
@@ -239,13 +240,13 @@ class ResourceServiceImpl implements ResourceService {
       throw Exception('Invalid app version');
     }
 
-    if (!_canCheckForUpdates()) {
+    if (_settingsService.resourceVersion >= Env.minResourceVersion && !_canCheckForUpdates()) {
       return CheckForUpdatesResult(type: AppResourceUpdateResultType.noUpdatesAvailable, resourceVersion: currentResourcesVersion);
     }
 
     final isInternetAvailable = await _networkService.isInternetAvailable();
     final isFirstResourceCheck = _settingsService.noResourcesHasBeenDownloaded;
-    if (!isInternetAvailable && isFirstResourceCheck) {
+    if (!isInternetAvailable && (isFirstResourceCheck || _settingsService.resourceVersion < Env.minResourceVersion)) {
       return CheckForUpdatesResult(type: AppResourceUpdateResultType.noInternetConnectionForFirstInstall, resourceVersion: currentResourcesVersion);
     }
 

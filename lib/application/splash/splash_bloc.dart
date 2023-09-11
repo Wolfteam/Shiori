@@ -9,6 +9,7 @@ import 'package:shiori/domain/services/locale_service.dart';
 import 'package:shiori/domain/services/resources_service.dart';
 import 'package:shiori/domain/services/settings_service.dart';
 import 'package:shiori/domain/services/telemetry_service.dart';
+import 'package:shiori/env.dart';
 
 part 'splash_bloc.freezed.dart';
 part 'splash_event.dart';
@@ -53,7 +54,8 @@ class SplashBloc extends Bloc<SplashEvent, SplashState> {
         await Future.delayed(const Duration(seconds: 1));
       }
 
-      final skipCheck = !noResourcesHasBeenDownloaded && !_settingsService.checkForUpdatesOnStartup;
+      final skipCheck =
+          !noResourcesHasBeenDownloaded && !_settingsService.checkForUpdatesOnStartup && _settingsService.resourceVersion < Env.minResourceVersion;
       if (skipCheck) {
         const resultType = AppResourceUpdateResultType.noUpdatesAvailable;
         yield SplashState.loaded(

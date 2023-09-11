@@ -4,6 +4,8 @@ import 'package:flutter/foundation.dart';
 part 'env.g.dart';
 
 class Env {
+  static const int minResourceVersion = 44;
+
   static const String androidAppCenterKey = CommonEnv.androidAppCenterKey;
   static const String androidPurchasesKey = CommonEnv.androidPurchasesKey;
 
