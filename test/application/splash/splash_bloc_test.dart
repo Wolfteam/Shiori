@@ -7,6 +7,7 @@ import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/resources_service.dart';
 import 'package:shiori/domain/services/settings_service.dart';
+import 'package:shiori/env.dart';
 
 import '../../common.dart';
 import '../../mocks.mocks.dart';
@@ -335,15 +336,14 @@ void main() {
     );
 
     blocTest<SplashBloc, SplashState>(
-      'resources have been downloaded and the setting to check for updates is enabled thus update check is skipped',
+      'resources have been downloaded and the setting to check for updates is disabled and the '
+      'current resource version is greater than the min thus update check is skipped',
       build: () {
-        final result = getUpdateResult(AppResourceUpdateResultType.noUpdatesAvailable);
         final resourceService = MockResourceService();
-        when(resourceService.checkForUpdates(defaultAppVersion, defaultResourcesVersion)).thenAnswer((_) => Future.value(result));
         final settingsService = MockSettingsService();
-        when(settingsService.noResourcesHasBeenDownloaded).thenReturn(true);
-        when(settingsService.resourceVersion).thenReturn(defaultResourcesVersion);
-        when(settingsService.checkForUpdatesOnStartup).thenReturn(true);
+        when(settingsService.noResourcesHasBeenDownloaded).thenReturn(false);
+        when(settingsService.resourceVersion).thenReturn(Env.minResourceVersion);
+        when(settingsService.checkForUpdatesOnStartup).thenReturn(false);
         return getBloc(resourceService, settingsService: settingsService);
       },
       act: (bloc) => bloc.add(const SplashEvent.init(restarted: true)),
@@ -351,12 +351,11 @@ void main() {
         SplashState.loaded(
           updateResultType: AppResourceUpdateResultType.noUpdatesAvailable,
           language: language,
-          result: getUpdateResult(AppResourceUpdateResultType.noUpdatesAvailable),
-          noResourcesHasBeenDownloaded: true,
+          noResourcesHasBeenDownloaded: false,
           isLoading: true,
           isUpdating: false,
           updateFailed: false,
-          canSkipUpdate: false,
+          canSkipUpdate: true,
           noInternetConnectionOnFirstInstall: false,
           needsLatestAppVersionOnFirstInstall: false,
         ),
@@ -364,7 +363,7 @@ void main() {
     );
 
     blocTest<SplashBloc, SplashState>(
-      'no resources have been downloaded and the setting to check for updates is disabled thus updates are available',
+      'no resources have been downloaded and the setting to check for updates is enabled thus updates are available',
       build: () {
         final result = getUpdateResult(AppResourceUpdateResultType.updatesAvailable);
         final resourceService = MockResourceService();
@@ -372,7 +371,7 @@ void main() {
         final settingsService = MockSettingsService();
         when(settingsService.noResourcesHasBeenDownloaded).thenReturn(true);
         when(settingsService.resourceVersion).thenReturn(defaultResourcesVersion);
-        when(settingsService.checkForUpdatesOnStartup).thenReturn(false);
+        when(settingsService.checkForUpdatesOnStartup).thenReturn(true);
         return getBloc(resourceService, settingsService: settingsService);
       },
       act: (bloc) => bloc.add(const SplashEvent.init(restarted: true)),

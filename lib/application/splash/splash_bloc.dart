@@ -55,7 +55,7 @@ class SplashBloc extends Bloc<SplashEvent, SplashState> {
       }
 
       final skipCheck =
-          !noResourcesHasBeenDownloaded && !_settingsService.checkForUpdatesOnStartup && _settingsService.resourceVersion < Env.minResourceVersion;
+          !noResourcesHasBeenDownloaded && !_settingsService.checkForUpdatesOnStartup && _settingsService.resourceVersion >= Env.minResourceVersion;
       if (skipCheck) {
         const resultType = AppResourceUpdateResultType.noUpdatesAvailable;
         yield SplashState.loaded(
