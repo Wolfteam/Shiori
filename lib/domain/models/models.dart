@@ -7,6 +7,7 @@ export 'backup/backup_inventory_model.dart';
 export 'backup/backup_model.dart';
 export 'backup/backup_notifications_model.dart';
 export 'backup/backup_tierlist_model.dart';
+export 'backup/backup_wish_simulator_model.dart';
 export 'backup/create_backup_result_model.dart';
 export 'banner_history/banner_history_item_model.dart';
 export 'banner_history/banner_history_period_model.dart';

@@ -13,4 +13,8 @@ abstract class WishSimulatorDataService implements BaseDataService {
   Future<void> clearAllBannerItemPullHistory();
 
   List<WishSimulatorBannerItemPullHistoryModel> getBannerItemsPullFlatHistory(String bannerKey);
+
+  Future<BackupWishSimulatorModel> getDataForBackup();
+
+  Future<void> restoreFromBackup(BackupWishSimulatorModel data);
 }

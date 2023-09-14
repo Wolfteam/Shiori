@@ -21,6 +21,7 @@ class BackupModel with _$BackupModel {
     List<BackupTierListModel>? tierList,
     List<BackupGameCodeModel>? gameCodes,
     BackupNotificationsModel? notifications,
+    BackupWishSimulatorModel? wishSimulator,
   }) = _BackupModel;
 
   factory BackupModel.fromJson(Map<String, dynamic> json) => _$BackupModelFromJson(json);

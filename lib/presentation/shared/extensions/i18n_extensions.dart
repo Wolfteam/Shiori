@@ -676,6 +676,8 @@ extension I18nExtensions on S {
         return gameCodes;
       case AppBackupDataType.notifications:
         return notifications;
+      case AppBackupDataType.wishSimulator:
+        return wishSimulator;
     }
   }
 
