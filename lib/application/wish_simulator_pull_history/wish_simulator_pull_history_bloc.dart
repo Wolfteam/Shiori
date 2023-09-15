@@ -19,7 +19,8 @@ class WishSimulatorPullHistoryBloc extends Bloc<WishSimulatorPullHistoryEvent, W
 
   static const int take = 5;
 
-  WishSimulatorPullHistoryBloc(this._genshinService, this._dataService) : super(const WishSimulatorPullHistoryState.loading());
+  WishSimulatorPullHistoryBloc(this._genshinService, this._dataService)
+      : super(const WishSimulatorPullHistoryState.loading());
 
   @override
   Stream<WishSimulatorPullHistoryState> mapEventToState(WishSimulatorPullHistoryEvent event) async* {
@@ -60,8 +61,8 @@ class WishSimulatorPullHistoryBloc extends Bloc<WishSimulatorPullHistoryEvent, W
   WishSimulatorPullHistoryState _init(BannerItemType bannerType) {
     final pullHistory = _dataService.wishSimulator.getBannerItemsPullHistoryPerType(bannerType).map((e) {
       final type = ItemType.values[e.itemType];
-      String name = '';
-      int rarity = 0;
+      String name;
+      int rarity;
       switch (type) {
         case ItemType.character:
           final character = _allCharacters.firstWhere((el) => el.key == e.itemKey);
@@ -89,7 +90,7 @@ class WishSimulatorPullHistoryBloc extends Bloc<WishSimulatorPullHistoryEvent, W
       allItems: pullHistory,
       items: pullHistory.take(take).toList(),
       currentPage: 1,
-      maxPage: (pullHistory.length / take).ceil(),
+      maxPage: pullHistory.isEmpty ? 1 : (pullHistory.length / take).ceil(),
     );
   }
 
