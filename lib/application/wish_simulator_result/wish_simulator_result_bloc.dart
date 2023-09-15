@@ -222,7 +222,7 @@ class _RatesPerBannerType {
     return rate.canBeGuaranteed;
   }
 
-  int? getRarityIfGuaranteed(WishSimulatorBannerPullHistoryPerType history) {
+  int? getRarityIfGuaranteed(WishSimulatorBannerPullHistory history) {
     if (history.type != type.index) {
       throw Exception('The rates only apply to banners of type = $type');
     }
