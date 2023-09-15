@@ -45,11 +45,8 @@ class WishSimulatorResultBloc extends Bloc<WishSimulatorResultEvent, WishSimulat
 
     final banner = period.banners[bannerIndex];
     final bannerRates = _RatesPerBannerType(banner.type);
-    final history = await _dataService.wishSimulator.getBannerPullHistoryPerType(banner.type);
+    final history = await _dataService.wishSimulator.getBannerPullHistoryCountPerType(banner.type);
 
-    final fromUntilString = '${WishBannerConstants.dateFormat.format(period.from)}/${WishBannerConstants.dateFormat.format(period.until)}';
-
-    final bannerKey = _generateBannerKey(period.version, banner.type, fromUntilString);
     final results = <WishSimulatorBannerItemResultModel>[];
     for (int i = 1; i <= pulls; i++) {
       final int randomRarity = bannerRates.getRarityIfGuaranteed(history) ?? _getRandomItemRarity(history.currentXStarCount, bannerRates);
@@ -89,9 +86,10 @@ class WishSimulatorResultBloc extends Bloc<WishSimulatorResultEvent, WishSimulat
       await history.pull(randomRarity, gotFeaturedItem);
 
       final itemType = pickedItem.map(character: (_) => ItemType.character, weapon: (_) => ItemType.weapon);
-      await _dataService.wishSimulator.saveBannerItemPullHistory(bannerKey, pickedItem.key, itemType);
+      await _dataService.wishSimulator.saveBannerItemPullHistory(banner.type, pickedItem.key, itemType);
     }
 
+    final fromUntilString = '${WishBannerConstants.dateFormat.format(period.from)}/${WishBannerConstants.dateFormat.format(period.until)}';
     await _telemetryService.trackWishSimulatorResult(bannerIndex, period.version, banner.type, fromUntilString);
 
     final sortedResults = results.orderByDescending((el) => el.rarity).thenBy((el) {
@@ -99,16 +97,6 @@ class WishSimulatorResultBloc extends Bloc<WishSimulatorResultEvent, WishSimulat
       return '$typeName-${el.key}';
     }).toList();
     return WishSimulatorResultState.loaded(results: sortedResults);
-  }
-
-  String _generateBannerKey(double version, BannerItemType bannerType, String range) {
-    switch (bannerType) {
-      case BannerItemType.character:
-      case BannerItemType.weapon:
-        return '${version}_${bannerType.name}_$range';
-      case BannerItemType.standard:
-        return bannerType.name;
-    }
   }
 
   int _getRandomItemRarity(Map<int, int> currentXStarCount, _RatesPerBannerType bannerRates) {
