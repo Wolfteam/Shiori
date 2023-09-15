@@ -90,7 +90,7 @@ class BackupRestoreServiceImpl implements BackupRestoreService {
             final notifications = _dataService.notifications.getDataForBackup();
             bk = bk.copyWith(notifications: notifications);
           case AppBackupDataType.wishSimulator:
-            final wishSimulator = _dataService.wishSimulator.getDataForBackup();
+            final wishSimulator = await _dataService.wishSimulator.getDataForBackup();
             bk = bk.copyWith(wishSimulator: wishSimulator);
         }
       }
