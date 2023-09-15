@@ -37,7 +37,7 @@ class WishSimulatorDataServiceImpl implements WishSimulatorDataService {
   }
 
   @override
-  Future<void> saveBannerItemPullHistory(BannerItemType bannerType, String itemKey, ItemType itemType) {
+  Future<void> saveBannerItemPullHistory(BannerItemType bannerType, String itemKey, ItemType itemType) async {
     if (itemKey.isNullEmptyOrWhitespace) {
       throw Exception('Invalid itemKey');
     }
@@ -49,7 +49,12 @@ class WishSimulatorDataServiceImpl implements WishSimulatorDataService {
     final value = itemType == ItemType.character
         ? WishSimulatorBannerItemPullHistory.character(bannerType, itemKey)
         : WishSimulatorBannerItemPullHistory.weapon(bannerType, itemKey);
-    return _itemPullHistory.add(value);
+    await _itemPullHistory.add(value);
+
+    const maxCount = 5000;
+    if (_itemPullHistory.values.length > maxCount) {
+      await _itemPullHistory.deleteAt(maxCount - 1);
+    }
   }
 
   @override
