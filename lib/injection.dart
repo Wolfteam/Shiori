@@ -262,6 +262,12 @@ class Injection {
     return WishBannerHistoryBloc(genshinService);
   }
 
+  static WishSimulatorPullHistoryBloc get wishSimulatorPullHistoryBloc {
+    final genshinService = getIt<GenshinService>();
+    final dataService = getIt<DataService>();
+    return WishSimulatorPullHistoryBloc(genshinService, dataService);
+  }
+
   //TODO: USE THIS PROP
   // static CalculatorAscMaterialsItemBloc get calculatorAscMaterialsItemBloc {
   //   final genshinService = getIt<GenshinService>();
