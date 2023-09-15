@@ -6,7 +6,7 @@ part 'wish_simulator_banner_pull_history.g.dart';
 @HiveType(typeId: 24)
 class WishSimulatorBannerPullHistory extends HiveObject {
   @HiveField(0)
-  final String bannerKey;
+  final int bannerType;
 
   @HiveField(1)
   final int itemType;
@@ -14,22 +14,19 @@ class WishSimulatorBannerPullHistory extends HiveObject {
   @HiveField(2)
   final String itemKey;
 
-  @HiveField(3)
-  int itemCount;
-
   @HiveField(4)
-  List<DateTime> pulledOnDates;
+  DateTime pulledOnDate;
 
-  WishSimulatorBannerPullHistory(this.bannerKey, this.itemType, this.itemKey, this.itemCount, this.pulledOnDates);
+  WishSimulatorBannerPullHistory(this.bannerType, this.itemType, this.itemKey, this.pulledOnDate);
 
-  WishSimulatorBannerPullHistory.newOne(this.bannerKey, ItemType itemType, this.itemKey)
-      : itemCount = 1,
+  WishSimulatorBannerPullHistory.newOne(BannerItemType bannerType, ItemType itemType, this.itemKey)
+      : bannerType = bannerType.index,
         itemType = itemType.index,
-        pulledOnDates = [DateTime.now().toUtc()];
+        pulledOnDate = DateTime.now().toUtc();
 
-  factory WishSimulatorBannerPullHistory.character(String bannerKey, String itemKey) =>
-      WishSimulatorBannerPullHistory.newOne(bannerKey, ItemType.character, itemKey);
+  factory WishSimulatorBannerPullHistory.character(BannerItemType bannerType, String itemKey) =>
+      WishSimulatorBannerPullHistory.newOne(bannerType, ItemType.character, itemKey);
 
-  factory WishSimulatorBannerPullHistory.weapon(String bannerKey, String itemKey) =>
-      WishSimulatorBannerPullHistory.newOne(bannerKey, ItemType.weapon, itemKey);
+  factory WishSimulatorBannerPullHistory.weapon(BannerItemType bannerType, String itemKey) =>
+      WishSimulatorBannerPullHistory.newOne(bannerType, ItemType.weapon, itemKey);
 }

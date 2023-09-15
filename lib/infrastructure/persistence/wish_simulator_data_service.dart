@@ -14,6 +14,7 @@ class WishSimulatorDataServiceImpl implements WishSimulatorDataService {
 
   @override
   Future<void> init() async {
+    //TODO: RENAME THE CLASS + BOXES
     _bannerCountPerType = await Hive.openBox<WishSimulatorBannerPullHistoryPerType>('wishSimulatorBannerCountPerType');
     _bannerPullHistory = await Hive.openBox<WishSimulatorBannerPullHistory>('wishSimulatorBannerPullHistory');
   }
@@ -27,9 +28,8 @@ class WishSimulatorDataServiceImpl implements WishSimulatorDataService {
   }
 
   @override
-  Future<WishSimulatorBannerPullHistoryPerType> getBannerPullHistoryPerType(BannerItemType type) async {
-    WishSimulatorBannerPullHistoryPerType? value =
-        _bannerCountPerType.values.firstWhereOrDefault((el) => el.type == type.index);
+  Future<WishSimulatorBannerPullHistoryPerType> getBannerPullHistoryCountPerType(BannerItemType type) async {
+    WishSimulatorBannerPullHistoryPerType? value = _bannerCountPerType.values.firstWhereOrDefault((el) => el.type == type.index);
     if (value == null) {
       value = WishSimulatorBannerPullHistoryPerType.newOne(type);
       await _bannerCountPerType.add(value);
@@ -38,11 +38,7 @@ class WishSimulatorDataServiceImpl implements WishSimulatorDataService {
   }
 
   @override
-  Future<void> saveBannerItemPullHistory(String bannerKey, String itemKey, ItemType itemType) {
-    if (bannerKey.isNullEmptyOrWhitespace) {
-      throw Exception('Invalid bannerKey');
-    }
-
+  Future<void> saveBannerItemPullHistory(BannerItemType bannerType, String itemKey, ItemType itemType) {
     if (itemKey.isNullEmptyOrWhitespace) {
       throw Exception('Invalid itemKey');
     }
@@ -51,29 +47,15 @@ class WishSimulatorDataServiceImpl implements WishSimulatorDataService {
       throw Exception('The provided itemT1ype = $itemType is not valid');
     }
 
-    WishSimulatorBannerPullHistory? value = _bannerPullHistory.values.firstWhereOrDefault(
-      (el) => el.bannerKey == bannerKey && el.itemKey == itemKey && el.itemType == itemType.index,
-    );
-
-    if (value == null) {
-      value = itemType == ItemType.character
-          ? WishSimulatorBannerPullHistory.character(bannerKey, itemKey)
-          : WishSimulatorBannerPullHistory.weapon(bannerKey, itemKey);
-      return _bannerPullHistory.add(value);
-    }
-
-    value.itemCount++;
-    value.pulledOnDates.add(DateTime.now().toUtc());
-    return value.save();
+    final value = itemType == ItemType.character
+        ? WishSimulatorBannerPullHistory.character(bannerType, itemKey)
+        : WishSimulatorBannerPullHistory.weapon(bannerType, itemKey);
+    return _bannerPullHistory.add(value);
   }
 
   @override
-  Future<void> clearBannerItemPullHistory(String bannerKey) async {
-    if (bannerKey.isNullEmptyOrWhitespace) {
-      throw Exception('Invalid bannerKey');
-    }
-
-    final keys = _bannerPullHistory.values.where((el) => el.bannerKey == bannerKey).map((e) => e.key).toList();
+  Future<void> clearBannerItemPullHistory(BannerItemType bannerType) async {
+    final keys = _bannerPullHistory.values.where((el) => el.bannerType == bannerType.index).map((e) => e.key).toList();
     if (keys.isNotEmpty) {
       await _bannerPullHistory.deleteAll(keys);
     }
@@ -85,22 +67,9 @@ class WishSimulatorDataServiceImpl implements WishSimulatorDataService {
   }
 
   @override
-  List<WishSimulatorBannerItemPullHistoryModel> getBannerItemsPullFlatHistory(String bannerKey) {
-    if (bannerKey.isNullEmptyOrWhitespace) {
-      throw Exception('Invalid bannerKey');
-    }
-
-    final items = <WishSimulatorBannerItemPullHistoryModel>[];
-    final history = _bannerPullHistory.values.where((el) => el.bannerKey == bannerKey).toList();
-    for (final itemHistory in history) {
-      final key = itemHistory.itemKey;
-      final type = ItemType.values[itemHistory.itemType];
-      for (final date in itemHistory.pulledOnDates) {
-        items.add(WishSimulatorBannerItemPullHistoryModel(key: key, type: type, pulledOn: date));
-      }
-    }
-
-    return items..sort((x, y) => y.pulledOn.compareTo(x.pulledOn));
+  List<WishSimulatorBannerPullHistory> getBannerItemsPullHistoryPerType(BannerItemType bannerType) {
+    return _bannerPullHistory.values.where((el) => el.bannerType == bannerType.index).toList()
+      ..sort((x, y) => y.pulledOnDate.compareTo(x.pulledOnDate));
   }
 
   @override
@@ -108,7 +77,7 @@ class WishSimulatorDataServiceImpl implements WishSimulatorDataService {
     final pullHistory = <BackupWishSimulatorBannerPullHistory>[];
     final itemPullHistory = <BackupWishSimulatorBannerItemPullHistory>[];
     for (final type in BannerItemType.values) {
-      final history = await getBannerPullHistoryPerType(type);
+      final history = await getBannerPullHistoryCountPerType(type);
       pullHistory.add(BackupWishSimulatorBannerPullHistory(
         type: type,
         currentXStarCount: history.currentXStarCount,
