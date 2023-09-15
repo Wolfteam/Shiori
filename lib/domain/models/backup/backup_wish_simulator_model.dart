@@ -29,8 +29,9 @@ class BackupWishSimulatorBannerPullHistory with _$BackupWishSimulatorBannerPullH
 @freezed
 class BackupWishSimulatorBannerItemPullHistory with _$BackupWishSimulatorBannerItemPullHistory {
   const factory BackupWishSimulatorBannerItemPullHistory({
-    required String bannerKey,
+    required BannerItemType bannerType,
     required String itemKey,
+    required ItemType itemType,
     required DateTime pulledOn,
   }) = _BackupWishSimulatorBannerItemPullHistory;
 

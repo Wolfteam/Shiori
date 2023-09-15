@@ -4,7 +4,7 @@ import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/persistence/base_data_service.dart';
 
 abstract class WishSimulatorDataService implements BaseDataService {
-  Future<WishSimulatorBannerPullHistoryPerType> getBannerPullHistoryCountPerType(BannerItemType type);
+  Future<WishSimulatorBannerPullHistory> getBannerPullHistory(BannerItemType type);
 
   Future<void> saveBannerItemPullHistory(BannerItemType bannerType, String itemKey, ItemType itemType);
 
@@ -12,7 +12,7 @@ abstract class WishSimulatorDataService implements BaseDataService {
 
   Future<void> clearAllBannerItemPullHistory();
 
-  List<WishSimulatorBannerPullHistory> getBannerItemsPullHistoryPerType(BannerItemType bannerType);
+  List<WishSimulatorBannerItemPullHistory> getBannerItemsPullHistoryPerType(BannerItemType bannerType);
 
   Future<BackupWishSimulatorModel> getDataForBackup();
 

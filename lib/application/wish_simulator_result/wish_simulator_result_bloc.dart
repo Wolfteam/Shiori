@@ -45,7 +45,7 @@ class WishSimulatorResultBloc extends Bloc<WishSimulatorResultEvent, WishSimulat
 
     final banner = period.banners[bannerIndex];
     final bannerRates = _RatesPerBannerType(banner.type);
-    final history = await _dataService.wishSimulator.getBannerPullHistoryCountPerType(banner.type);
+    final history = await _dataService.wishSimulator.getBannerPullHistory(banner.type);
 
     final results = <WishSimulatorBannerItemResultModel>[];
     for (int i = 1; i <= pulls; i++) {
