@@ -16,7 +16,7 @@ import 'package:shiori/presentation/shared/item_popupmenu_filter.dart';
 import 'package:shiori/presentation/shared/mixins/app_fab_mixin.dart';
 import 'package:shiori/presentation/shared/nothing_found_column.dart';
 import 'package:shiori/presentation/shared/styles.dart';
-import 'package:shiori/presentation/wish_banner_history/banner_history_page.dart';
+import 'package:shiori/presentation/wish_banner_history/wish_banner_history_page.dart';
 
 const double _tabletFirstCellWidth = 150;
 const double _mobileFirstCellWidth = 120;

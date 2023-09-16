@@ -11,7 +11,7 @@ import 'package:shiori/injection.dart';
 import 'package:shiori/presentation/shared/extensions/element_type_extensions.dart';
 import 'package:shiori/presentation/shared/loading.dart';
 import 'package:shiori/presentation/shared/styles.dart';
-import 'package:shiori/presentation/wish_banner_history/banner_history_page.dart';
+import 'package:shiori/presentation/wish_banner_history/wish_banner_history_page.dart';
 import 'package:shiori/presentation/wish_simulator/widgets/banner_main_image.dart';
 import 'package:shiori/presentation/wish_simulator/widgets/banner_top_image.dart';
 import 'package:shiori/presentation/wish_simulator/widgets/wish_button.dart';

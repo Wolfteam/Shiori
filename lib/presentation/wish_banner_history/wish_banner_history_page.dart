@@ -8,11 +8,12 @@ import 'package:shiori/presentation/shared/extensions/i18n_extensions.dart';
 import 'package:shiori/presentation/shared/item_common_with_name_appbar_search_delegate.dart';
 import 'package:shiori/presentation/shared/item_popupmenu_filter.dart';
 import 'package:shiori/presentation/shared/loading.dart';
+import 'package:shiori/presentation/shared/mixins/app_fab_mixin.dart';
 import 'package:shiori/presentation/shared/sort_direction_popupmenu_filter.dart';
 import 'package:shiori/presentation/shared/styles.dart';
 import 'package:shiori/presentation/wish_banner_history/widgets/grouped_banner_period.dart';
 
-class WishBannerHistoryPage extends StatelessWidget {
+class WishBannerHistoryPage extends StatefulWidget {
   final bool forSelection;
 
   const WishBannerHistoryPage({
@@ -20,6 +21,11 @@ class WishBannerHistoryPage extends StatelessWidget {
     this.forSelection = false,
   });
 
+  @override
+  State<WishBannerHistoryPage> createState() => _WishBannerHistoryPageState();
+}
+
+class _WishBannerHistoryPageState extends State<WishBannerHistoryPage> with SingleTickerProviderStateMixin, AppFabMixin {
   @override
   Widget build(BuildContext context) {
     final s = S.of(context);
@@ -84,15 +90,17 @@ class WishBannerHistoryPage extends StatelessWidget {
             child: state.map(
               loading: (_) => const Loading(useScaffold: false),
               loaded: (state) => ListView.builder(
+                controller: scrollController,
                 itemCount: state.filteredPeriods.length,
                 itemBuilder: (context, index) => GroupedBannerPeriod(
                   group: state.filteredPeriods[index],
                   groupedType: state.groupedType,
-                  forSelection: forSelection,
+                  forSelection: widget.forSelection,
                 ),
               ),
             ),
           ),
+          floatingActionButton: getAppFab(),
         ),
       ),
     );
