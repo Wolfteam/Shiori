@@ -22,22 +22,11 @@ const double _topIconSize = 40;
 const double _topHeight = 100;
 const double _wishIconHeight = 45;
 
-class WishSimulatorPage extends StatefulWidget {
-  @override
-  State<WishSimulatorPage> createState() => _WishSimulatorPageState();
-}
-
-class _WishSimulatorPageState extends State<WishSimulatorPage> {
-  final centerPageController = PageController();
+class WishSimulatorPage extends StatelessWidget {
+  const WishSimulatorPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final mq = MediaQuery.of(context);
-    final double remainingHeight = mq.size.height - _topHeight - (2 * _wishIconHeight);
-    double bannerMaxHeight = remainingHeight * 0.9;
-    if (bannerMaxHeight > 700) {
-      bannerMaxHeight = 700;
-    }
     return BlocProvider<WishSimulatorBloc>(
       create: (context) => Injection.wishSimulatorBloc..add(const WishSimulatorEvent.init()),
       child: Scaffold(
@@ -49,26 +38,7 @@ class _WishSimulatorPageState extends State<WishSimulatorPage> {
                 fit: BoxFit.fill,
               ),
             ),
-            child: BlocConsumer<WishSimulatorBloc, WishSimulatorState>(
-              listener: (context, state) {
-                if (centerPageController.hasClients) {
-                  state.maybeMap(
-                    loaded: (state) => centerPageController.jumpToPage(
-                      state.selectedBannerIndex,
-                      // duration: const Duration(milliseconds: 300),
-                      // curve: Curves.easeInOut,
-                    ),
-                    orElse: () {},
-                  );
-                }
-              },
-              builder: (context, state) => ResponsiveBuilder(
-                builder: (context, sizingInformation) =>
-                    (sizingInformation.isMobile || sizingInformation.isTablet) && mq.orientation == Orientation.landscape
-                        ? _MobileLandscapeLayout(bannerMaxHeight: bannerMaxHeight, state: state, centerPageController: centerPageController)
-                        : _DesktopLayout(bannerMaxHeight: bannerMaxHeight, state: state, centerPageController: centerPageController),
-              ),
-            ),
+            child: _Content(),
           ),
         ),
       ),
@@ -76,15 +46,68 @@ class _WishSimulatorPageState extends State<WishSimulatorPage> {
   }
 }
 
+class _Content extends StatefulWidget {
+  @override
+  State<_Content> createState() => _ContentState();
+}
+
+class _ContentState extends State<_Content> {
+  final Key _pageViewKey = GlobalKey();
+  late PageController _pageController;
+
+  @override
+  void initState() {
+    _pageController = PageController();
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    _pageController.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final mq = MediaQuery.of(context);
+    final double remainingHeight = mq.size.height - _topHeight - (2 * _wishIconHeight);
+    double bannerMaxHeight = remainingHeight * 0.9;
+    if (bannerMaxHeight > 700) {
+      bannerMaxHeight = 700;
+    }
+    return BlocConsumer<WishSimulatorBloc, WishSimulatorState>(
+      listener: (context, state) {
+        if (_pageController.hasClients) {
+          state.maybeMap(
+            loaded: (state) => _pageController.jumpToPage(
+              state.selectedBannerIndex,
+              // duration: const Duration(milliseconds: 300),
+              // curve: Curves.easeInOut,
+            ),
+            orElse: () {},
+          );
+        }
+      },
+      builder: (context, state) => ResponsiveBuilder(
+        builder: (context, sizingInformation) => (sizingInformation.isMobile || sizingInformation.isTablet) && mq.orientation == Orientation.landscape
+            ? _MobileLandscapeLayout(pageViewKey: _pageViewKey, bannerMaxHeight: bannerMaxHeight, state: state, pageController: _pageController)
+            : _Layout(pageViewKey: _pageViewKey, bannerMaxHeight: bannerMaxHeight, state: state, pageController: _pageController),
+      ),
+    );
+  }
+}
+
 class _MobileLandscapeLayout extends StatelessWidget {
+  final Key pageViewKey;
   final double bannerMaxHeight;
   final WishSimulatorState state;
-  final PageController centerPageController;
+  final PageController pageController;
 
   const _MobileLandscapeLayout({
+    required this.pageViewKey,
     required this.bannerMaxHeight,
     required this.state,
-    required this.centerPageController,
+    required this.pageController,
   });
 
   @override
@@ -101,36 +124,7 @@ class _MobileLandscapeLayout extends StatelessWidget {
               width: 70,
               margin: Styles.edgeInsetHorizontal5,
             ),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                const Flexible(
-                  flex: 12,
-                  child: _BackButton(margin: EdgeInsets.zero),
-                ),
-                Expanded(
-                  flex: 76,
-                  child: state.map(
-                    loading: (_) => const SizedBox.shrink(),
-                    loaded: (state) => _FeaturedItemImages(
-                      selectedBannerIndex: state.selectedBannerIndex,
-                      period: state.period,
-                      width: 130,
-                      normalHeight: 60,
-                      selectedHeight: 70,
-                      axis: Axis.vertical,
-                    ),
-                  ),
-                ),
-                Flexible(
-                  flex: 12,
-                  child: _SettingsButton(
-                    show: state.maybeMap(loaded: (_) => true, orElse: () => false),
-                    margin: EdgeInsets.zero,
-                  ),
-                ),
-              ],
-            ),
+            _FeaturedItems(state: state, useColumn: true),
           ],
         ),
         Expanded(
@@ -147,8 +141,9 @@ class _MobileLandscapeLayout extends StatelessWidget {
                   child: state.map(
                     loading: (_) => const Loading(useScaffold: false),
                     loaded: (state) => _CenterPageView(
+                      pageViewKey: pageViewKey,
                       banners: state.period.banners,
-                      controller: centerPageController,
+                      controller: pageController,
                     ),
                   ),
                 ),
@@ -170,15 +165,17 @@ class _MobileLandscapeLayout extends StatelessWidget {
   }
 }
 
-class _DesktopLayout extends StatelessWidget {
+class _Layout extends StatelessWidget {
+  final Key pageViewKey;
   final double bannerMaxHeight;
   final WishSimulatorState state;
-  final PageController centerPageController;
+  final PageController pageController;
 
-  const _DesktopLayout({
+  const _Layout({
+    required this.pageViewKey,
     required this.bannerMaxHeight,
     required this.state,
-    required this.centerPageController,
+    required this.pageController,
   });
 
   @override
@@ -190,40 +187,7 @@ class _DesktopLayout extends StatelessWidget {
         Flexible(
           child: Container(
             margin: Styles.edgeInsetHorizontal10,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.end,
-              children: [
-                const Flexible(
-                  flex: 12,
-                  child: _BackButton(margin: EdgeInsets.only(bottom: 10)),
-                ),
-                Expanded(
-                  flex: 76,
-                  child: Container(
-                    height: _topHeight,
-                    alignment: Alignment.center,
-                    child: state.map(
-                      loading: (_) => const SizedBox.expand(),
-                      loaded: (state) => _FeaturedItemImages(
-                        selectedBannerIndex: state.selectedBannerIndex,
-                        period: state.period,
-                        width: 200,
-                        normalHeight: 60,
-                        selectedHeight: 70,
-                      ),
-                    ),
-                  ),
-                ),
-                Flexible(
-                  flex: 12,
-                  child: _SettingsButton(
-                    show: state.maybeMap(loaded: (_) => true, orElse: () => false),
-                    margin: const EdgeInsets.only(bottom: 10),
-                  ),
-                ),
-              ],
-            ),
+            child: _FeaturedItems(state: state, useColumn: false),
           ),
         ),
         Container(
@@ -235,8 +199,9 @@ class _DesktopLayout extends StatelessWidget {
             child: state.map(
               loading: (_) => const Loading(useScaffold: false),
               loaded: (state) => _CenterPageView(
+                pageViewKey: pageViewKey,
                 banners: state.period.banners,
-                controller: centerPageController,
+                controller: pageController,
               ),
             ),
           ),
@@ -250,6 +215,94 @@ class _DesktopLayout extends StatelessWidget {
               selectedBannerIndex: state.selectedBannerIndex,
               period: state.period,
             ),
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+class _FeaturedItems extends StatelessWidget {
+  final WishSimulatorState state;
+  final bool useColumn;
+
+  bool get showSettingsButton => state.maybeMap(loaded: (_) => true, orElse: () => false);
+
+  const _FeaturedItems({
+    required this.state,
+    required this.useColumn,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    const int buttonFlex = 15;
+    const int mainContentFlex = 70;
+    const double imageHeight = 60;
+    const double selectedImageHeight = 70;
+    final double imageWidth = useColumn ? 130 : 200;
+    final buttonMargin = useColumn ? EdgeInsets.zero : const EdgeInsets.only(bottom: 10);
+    if (!useColumn) {
+      return Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        crossAxisAlignment: CrossAxisAlignment.end,
+        children: [
+          Flexible(
+            flex: buttonFlex,
+            child: _BackButton(margin: buttonMargin),
+          ),
+          Expanded(
+            flex: mainContentFlex,
+            child: Container(
+              height: _topHeight,
+              alignment: Alignment.center,
+              child: state.map(
+                loading: (_) => const SizedBox.expand(),
+                loaded: (state) => _FeaturedItemImages(
+                  selectedBannerIndex: state.selectedBannerIndex,
+                  period: state.period,
+                  width: imageWidth,
+                  normalHeight: imageHeight,
+                  selectedHeight: selectedImageHeight,
+                ),
+              ),
+            ),
+          ),
+          Flexible(
+            flex: buttonFlex,
+            child: _SettingsButton(
+              show: showSettingsButton,
+              margin: buttonMargin,
+            ),
+          ),
+        ],
+      );
+    }
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: [
+        Flexible(
+          flex: buttonFlex,
+          child: _BackButton(margin: buttonMargin),
+        ),
+        Expanded(
+          flex: mainContentFlex,
+          child: state.map(
+            loading: (_) => const SizedBox.shrink(),
+            loaded: (state) => _FeaturedItemImages(
+              selectedBannerIndex: state.selectedBannerIndex,
+              period: state.period,
+              width: imageWidth,
+              normalHeight: imageHeight,
+              selectedHeight: selectedImageHeight,
+              axis: Axis.vertical,
+            ),
+          ),
+        ),
+        Flexible(
+          flex: buttonFlex,
+          child: _SettingsButton(
+            show: showSettingsButton,
+            margin: buttonMargin,
           ),
         ),
       ],
@@ -309,10 +362,12 @@ class _FeaturedItemImages extends StatelessWidget {
 }
 
 class _CenterPageView extends StatelessWidget {
+  final Key pageViewKey;
   final List<WishSimulatorBannerItemModel> banners;
   final PageController controller;
 
   const _CenterPageView({
+    required this.pageViewKey,
     required this.banners,
     required this.controller,
   });
@@ -321,6 +376,7 @@ class _CenterPageView extends StatelessWidget {
   Widget build(BuildContext context) {
     final s = S.of(context);
     return PageView.builder(
+      key: pageViewKey,
       itemCount: banners.length,
       controller: controller,
       onPageChanged: (index) => context.read<WishSimulatorBloc>().add(WishSimulatorEvent.bannerSelected(index: index)),
