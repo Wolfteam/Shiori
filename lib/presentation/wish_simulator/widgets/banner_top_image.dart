@@ -39,7 +39,7 @@ class BannerTopImage extends StatelessWidget {
           alignment: Alignment.bottomCenter,
           children: [
             Container(
-              color: selected ? const Color(0xFFf7f3d8) : const Color(0xFF4f6d95),
+              color: selected ? Styles.wishTopSelectedBackgroundColor : Styles.wishTopUnselectedBackgroundColor,
               height: height,
             ),
             Positioned(

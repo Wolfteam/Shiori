@@ -691,4 +691,21 @@ extension I18nExtensions on S {
         return weapons;
     }
   }
+
+  String translateBannerItemType(BannerItemType type) {
+    return switch (type) {
+      BannerItemType.character => character,
+      BannerItemType.weapon => weapon,
+      BannerItemType.standard => standardEventWish,
+    };
+  }
+
+  String translateItemType(ItemType type) {
+    return switch (type) {
+      ItemType.character => character,
+      ItemType.weapon => weapon,
+      ItemType.artifact => artifact,
+      ItemType.material => material,
+    };
+  }
 }

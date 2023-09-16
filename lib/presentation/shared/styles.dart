@@ -79,6 +79,8 @@ class Styles {
     end: Alignment.bottomRight,
   );
 
+  static const Color wishTopSelectedBackgroundColor = Color(0xFFf7f3d8);
+  static const Color wishTopUnselectedBackgroundColor = Color(0xFF4f6d95);
   static const Color wishButtonBackgroundColor = Color(0xffe0ddd4);
   static const Color fiveStarWishResultBackgroundColor = Color(0xfff9aa02);
   static const Color fourStarWishResultBackgroundColor = Color(0xffb912d6);

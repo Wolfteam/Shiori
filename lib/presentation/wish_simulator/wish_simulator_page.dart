@@ -16,6 +16,7 @@ import 'package:shiori/presentation/wish_simulator/widgets/banner_main_image.dar
 import 'package:shiori/presentation/wish_simulator/widgets/banner_top_image.dart';
 import 'package:shiori/presentation/wish_simulator/widgets/wish_button.dart';
 import 'package:shiori/presentation/wish_simulator/wish_result_page.dart';
+import 'package:shiori/presentation/wish_simulator/wish_simulator_history_dialog.dart';
 
 const double _topIconSize = 40;
 const double _topHeight = 100;
@@ -62,9 +63,10 @@ class _WishSimulatorPageState extends State<WishSimulatorPage> {
                 }
               },
               builder: (context, state) => ResponsiveBuilder(
-                builder: (context, sizingInformation) => sizingInformation.isMobile && mq.orientation == Orientation.landscape
-                    ? _MobileLandscapeLayout(bannerMaxHeight: bannerMaxHeight, state: state, centerPageController: centerPageController)
-                    : _DesktopLayout(bannerMaxHeight: bannerMaxHeight, state: state, centerPageController: centerPageController),
+                builder: (context, sizingInformation) =>
+                    (sizingInformation.isMobile || sizingInformation.isTablet) && mq.orientation == Orientation.landscape
+                        ? _MobileLandscapeLayout(bannerMaxHeight: bannerMaxHeight, state: state, centerPageController: centerPageController)
+                        : _DesktopLayout(bannerMaxHeight: bannerMaxHeight, state: state, centerPageController: centerPageController),
               ),
             ),
           ),
@@ -91,33 +93,43 @@ class _MobileLandscapeLayout extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
-        Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        Stack(
+          alignment: Alignment.center,
           children: [
-            const Flexible(
-              flex: 12,
-              child: _BackButton(margin: EdgeInsets.zero),
+            Container(
+              color: Styles.wishTopUnselectedBackgroundColor.withOpacity(0.7),
+              width: 70,
+              margin: Styles.edgeInsetHorizontal5,
             ),
-            Expanded(
-              flex: 76,
-              child: state.map(
-                loading: (_) => const SizedBox.shrink(),
-                loaded: (state) => _CenterTopPageView(
-                  selectedBannerIndex: state.selectedBannerIndex,
-                  period: state.period,
-                  width: 120,
-                  normalHeight: 60,
-                  selectedHeight: 70,
-                  axis: Axis.vertical,
+            Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                const Flexible(
+                  flex: 12,
+                  child: _BackButton(margin: EdgeInsets.zero),
                 ),
-              ),
-            ),
-            Flexible(
-              flex: 12,
-              child: _SettingsButton(
-                show: state.maybeMap(loaded: (_) => true, orElse: () => false),
-                margin: EdgeInsets.zero,
-              ),
+                Expanded(
+                  flex: 76,
+                  child: state.map(
+                    loading: (_) => const SizedBox.shrink(),
+                    loaded: (state) => _FeaturedItemImages(
+                      selectedBannerIndex: state.selectedBannerIndex,
+                      period: state.period,
+                      width: 130,
+                      normalHeight: 60,
+                      selectedHeight: 70,
+                      axis: Axis.vertical,
+                    ),
+                  ),
+                ),
+                Flexible(
+                  flex: 12,
+                  child: _SettingsButton(
+                    show: state.maybeMap(loaded: (_) => true, orElse: () => false),
+                    margin: EdgeInsets.zero,
+                  ),
+                ),
+              ],
             ),
           ],
         ),
@@ -128,7 +140,7 @@ class _MobileLandscapeLayout extends StatelessWidget {
             children: [
               Expanded(
                 child: Container(
-                  margin: const EdgeInsets.only(top: 20),
+                  margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                   constraints: BoxConstraints(
                     maxHeight: bannerMaxHeight,
                   ),
@@ -143,7 +155,7 @@ class _MobileLandscapeLayout extends StatelessWidget {
               ),
               state.map(
                 loading: (_) => const SizedBox.shrink(),
-                loaded: (state) => _WishButtons(
+                loaded: (state) => _BottomButtons(
                   iconImage: state.wishIconImage,
                   height: _wishIconHeight,
                   selectedBannerIndex: state.selectedBannerIndex,
@@ -193,7 +205,7 @@ class _DesktopLayout extends StatelessWidget {
                     alignment: Alignment.center,
                     child: state.map(
                       loading: (_) => const SizedBox.expand(),
-                      loaded: (state) => _CenterTopPageView(
+                      loaded: (state) => _FeaturedItemImages(
                         selectedBannerIndex: state.selectedBannerIndex,
                         period: state.period,
                         width: 200,
@@ -232,7 +244,7 @@ class _DesktopLayout extends StatelessWidget {
         Flexible(
           child: state.map(
             loading: (_) => const SizedBox.shrink(),
-            loaded: (state) => _WishButtons(
+            loaded: (state) => _BottomButtons(
               iconImage: state.wishIconImage,
               height: _wishIconHeight,
               selectedBannerIndex: state.selectedBannerIndex,
@@ -245,7 +257,7 @@ class _DesktopLayout extends StatelessWidget {
   }
 }
 
-class _CenterTopPageView extends StatelessWidget {
+class _FeaturedItemImages extends StatelessWidget {
   final int selectedBannerIndex;
   final WishSimulatorBannerItemsPerPeriodModel period;
   final double width;
@@ -253,7 +265,7 @@ class _CenterTopPageView extends StatelessWidget {
   final double selectedHeight;
   final Axis axis;
 
-  const _CenterTopPageView({
+  const _FeaturedItemImages({
     required this.selectedBannerIndex,
     required this.period,
     required this.width,
@@ -339,13 +351,13 @@ class _CenterPageView extends StatelessWidget {
   }
 }
 
-class _WishButtons extends StatelessWidget {
+class _BottomButtons extends StatelessWidget {
   final String iconImage;
   final double height;
   final int selectedBannerIndex;
   final WishSimulatorBannerItemsPerPeriodModel period;
 
-  const _WishButtons({
+  const _BottomButtons({
     required this.iconImage,
     required this.height,
     required this.selectedBannerIndex,
@@ -354,26 +366,42 @@ class _WishButtons extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final s = S.of(context);
     return Container(
       margin: Styles.edgeInsetAll10,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          const Spacer(),
-          WishButton(
-            imagePath: iconImage,
-            quantity: 1,
-            height: height,
-            onTap: (qty) => _wish(context, selectedBannerIndex, qty, period),
-          ),
-          WishButton(
-            imagePath: iconImage,
-            quantity: 10,
-            height: height,
-            onTap: (qty) => _wish(context, selectedBannerIndex, qty, period),
-          ),
-        ],
+      child: LayoutBuilder(
+        builder: (context, constraints) {
+          final width = constraints.maxWidth / 3;
+          return Wrap(
+            crossAxisAlignment: WrapCrossAlignment.center,
+            alignment: WrapAlignment.end,
+            children: [
+              WishButton(
+                width: width,
+                height: height,
+                text: s.wishHistory,
+                onTap: () => showDialog(
+                  context: context,
+                  builder: (context) => WishSimulatorHistoryDialog(bannerType: period.banners[selectedBannerIndex].type),
+                ),
+              ),
+              WishQuantityButton(
+                imagePath: iconImage,
+                quantity: 1,
+                width: width,
+                height: height,
+                onTap: (qty) => _wish(context, selectedBannerIndex, qty, period),
+              ),
+              WishQuantityButton(
+                imagePath: iconImage,
+                quantity: 10,
+                width: width,
+                height: height,
+                onTap: (qty) => _wish(context, selectedBannerIndex, qty, period),
+              ),
+            ],
+          );
+        },
       ),
     );
   }
