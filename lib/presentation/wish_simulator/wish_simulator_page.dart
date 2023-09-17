@@ -16,7 +16,7 @@ import 'package:shiori/presentation/wish_simulator/widgets/banner_main_image.dar
 import 'package:shiori/presentation/wish_simulator/widgets/banner_top_image.dart';
 import 'package:shiori/presentation/wish_simulator/widgets/wish_button.dart';
 import 'package:shiori/presentation/wish_simulator/wish_result_page.dart';
-import 'package:shiori/presentation/wish_simulator/wish_simulator_history_dialog.dart';
+import 'package:shiori/presentation/wish_simulator/wish_simulator_history_page.dart';
 
 const double _topIconSize = 40;
 const double _topHeight = 100;
@@ -436,10 +436,7 @@ class _BottomButtons extends StatelessWidget {
                 width: width,
                 height: height,
                 text: s.wishHistory,
-                onTap: () => showDialog(
-                  context: context,
-                  builder: (context) => WishSimulatorHistoryDialog(bannerType: period.banners[selectedBannerIndex].type),
-                ),
+                onTap: () => WishSimulatorHistoryPage.transparentRoute(context, period.banners[selectedBannerIndex].type),
               ),
               WishQuantityButton(
                 imagePath: iconImage,
