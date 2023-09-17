@@ -694,8 +694,8 @@ extension I18nExtensions on S {
 
   String translateBannerItemType(BannerItemType type) {
     return switch (type) {
-      BannerItemType.character => character,
-      BannerItemType.weapon => weapon,
+      BannerItemType.character => characterEventWish,
+      BannerItemType.weapon => weaponEventWish,
       BannerItemType.standard => standardEventWish,
     };
   }

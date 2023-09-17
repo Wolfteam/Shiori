@@ -484,5 +484,13 @@
   "wishXQuantity": "Wish x{quantity}",
   "characterEventWish": "Character Event Wish",
   "weaponEventWish": "Weapon Event Wish",
-  "standardEventWish": "Standard Event Wish"
+  "standardEventWish": "Standard Event Wish",
+  "wishHistory": "History",
+  "wishHistoryItemType": "Item type",
+  "wishHistoryItemName": "Item name",
+  "wishHistoryTimeReceived": "Time received",
+  "wishHistoryXStar": "{stars}-Star",
+  "artifact": "Artifact",
+  "material": "Material",
+  "close": "Close"
 }

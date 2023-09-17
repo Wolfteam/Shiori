@@ -197,10 +197,10 @@ class _Table extends StatelessWidget {
       showCheckboxColumn: false,
       columns: <DataColumn>[
         DataColumn(
-          tooltip: s.itemType,
+          tooltip: s.wishHistoryItemType,
           label: Expanded(
             child: Text(
-              s.itemType,
+              s.wishHistoryItemType,
               overflow: TextOverflow.ellipsis,
               textAlign: TextAlign.center,
               style: textStyle,
@@ -208,10 +208,10 @@ class _Table extends StatelessWidget {
           ),
         ),
         DataColumn(
-          tooltip: s.itemName,
+          tooltip: s.wishHistoryItemName,
           label: Expanded(
             child: Text(
-              s.itemName,
+              s.wishHistoryItemName,
               overflow: TextOverflow.ellipsis,
               textAlign: TextAlign.center,
               style: textStyle,
@@ -219,10 +219,10 @@ class _Table extends StatelessWidget {
           ),
         ),
         DataColumn(
-          tooltip: s.timeReceived,
+          tooltip: s.wishHistoryTimeReceived,
           label: Expanded(
             child: Text(
-              s.timeReceived,
+              s.wishHistoryTimeReceived,
               overflow: TextOverflow.ellipsis,
               textAlign: TextAlign.center,
               style: textStyle,
@@ -242,7 +242,7 @@ class _Table extends StatelessWidget {
           ? Styles.fiveStarWishResultBackgroundColor
           : Styles.fourStarWishResultBackgroundColor;
       final defaultStyle = DefaultTextStyle.of(context).style;
-      name += ' (${s.xStar(item.rarity)})';
+      name += ' (${s.wishHistoryXStar(item.rarity)})';
       nameStyle = defaultStyle.copyWith(color: color);
     }
     final isTapEnabled = [ItemType.character, ItemType.weapon].contains(item.type);
