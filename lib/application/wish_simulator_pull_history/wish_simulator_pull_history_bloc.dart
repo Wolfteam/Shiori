@@ -13,14 +13,13 @@ part 'wish_simulator_pull_history_state.dart';
 class WishSimulatorPullHistoryBloc extends Bloc<WishSimulatorPullHistoryEvent, WishSimulatorPullHistoryState> {
   final GenshinService _genshinService;
   final DataService _dataService;
-  final DateFormat _formatter = DateFormat('yyyy-MM-ddTHH:mm:ss');
+  final DateFormat _formatter = DateFormat('yyyy-MM-dd HH:mm:ss');
   final List<CharacterCardModel> _allCharacters = [];
   final List<WeaponCardModel> _allWeapons = [];
 
   static const int take = 5;
 
-  WishSimulatorPullHistoryBloc(this._genshinService, this._dataService)
-      : super(const WishSimulatorPullHistoryState.loading());
+  WishSimulatorPullHistoryBloc(this._genshinService, this._dataService) : super(const WishSimulatorPullHistoryState.loading());
 
   @override
   Stream<WishSimulatorPullHistoryState> mapEventToState(WishSimulatorPullHistoryEvent event) async* {

@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:darq/darq.dart';
 import 'package:hive/hive.dart';
 import 'package:shiori/domain/enums/enums.dart';
 
@@ -22,10 +23,10 @@ class WishSimulatorBannerPullHistory extends HiveObject {
     this.fiftyFiftyXStarGuaranteed,
   );
 
-  WishSimulatorBannerPullHistory.newOne(BannerItemType type)
+  WishSimulatorBannerPullHistory.newOne(BannerItemType type, Map<int, int>? defaultXStarCount)
       : type = type.index,
-        currentXStarCount = {},
-        fiftyFiftyXStarGuaranteed = {};
+        currentXStarCount = defaultXStarCount ?? {},
+        fiftyFiftyXStarGuaranteed = defaultXStarCount?.keys.toMap((rarity) => MapEntry(rarity, false), modifiable: true) ?? {};
 
   void initXStarCountIfNeeded(int rarity) {
     if (currentXStarCount.containsKey(rarity)) {

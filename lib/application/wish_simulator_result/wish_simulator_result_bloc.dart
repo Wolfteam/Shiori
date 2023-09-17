@@ -45,8 +45,7 @@ class WishSimulatorResultBloc extends Bloc<WishSimulatorResultEvent, WishSimulat
 
     final banner = period.banners[bannerIndex];
     final bannerRates = _RatesPerBannerType(banner.type);
-    final history = await _dataService.wishSimulator.getBannerPullHistory(banner.type);
-
+    final history = await _dataService.wishSimulator.getBannerPullHistory(banner.type, defaultXStarCount: bannerRates.getDefaultXStarCount);
     final results = <WishSimulatorBannerItemResultModel>[];
     for (int i = 1; i <= pulls; i++) {
       final int randomRarity = bannerRates.getRarityIfGuaranteed(history) ?? _getRandomItemRarity(history.currentXStarCount, bannerRates);
@@ -88,7 +87,6 @@ class WishSimulatorResultBloc extends Bloc<WishSimulatorResultEvent, WishSimulat
       final itemType = pickedItem.map(character: (_) => ItemType.character, weapon: (_) => ItemType.weapon);
       await _dataService.wishSimulator.saveBannerItemPullHistory(banner.type, pickedItem.key, itemType);
     }
-
     final fromUntilString = '${WishBannerConstants.dateFormat.format(period.from)}/${WishBannerConstants.dateFormat.format(period.until)}';
     await _telemetryService.trackWishSimulatorResult(bannerIndex, period.version, banner.type, fromUntilString);
 
@@ -196,8 +194,9 @@ class _BannerRate {
 class _RatesPerBannerType {
   final BannerItemType type;
   final List<_BannerRate> _rates = [];
+  final Map<int, int> _defaultXStarCount = {};
 
-  Map<int, int> get getDefaultXStarCount => {for (final v in _rates) v.rarity: 0};
+  Map<int, int> get getDefaultXStarCount => Map.of(_defaultXStarCount);
 
   _RatesPerBannerType(this.type) {
     switch (type) {
@@ -211,6 +210,7 @@ class _RatesPerBannerType {
         _rates.add(const _BannerRate(4, 10, 6.0, 4, 7));
         _rates.add(const _BannerRate.simple(3, 93.3));
     }
+    _defaultXStarCount.addAll({for (final v in _rates) v.rarity: 0});
   }
 
   bool canBeGuaranteed(int rarity) {
