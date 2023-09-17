@@ -479,5 +479,18 @@
   "checkForUpdatesOnStartup": "启动时检查更新",
   "deleteAllData": "删除所有用户数据",
   "deleteAllDataWarningMsg": "这会删除所有用户数据并重置选项",
-  "deletingAllDataMsg": "正在删除所有用户数据…"
+  "deletingAllDataMsg": "正在删除所有用户数据…",
+  "groupBy": "Group by",
+  "wishXQuantity": "Wish x{quantity}",
+  "characterEventWish": "Character Event Wish",
+  "weaponEventWish": "Weapon Event Wish",
+  "standardEventWish": "Standard Event Wish",
+  "wishHistory": "History",
+  "wishHistoryItemType": "Item type",
+  "wishHistoryItemName": "Item name",
+  "wishHistoryTimeReceived": "Time received",
+  "wishHistoryXStar": "{stars}-Star",
+  "artifact": "Artifact",
+  "material": "Material",
+  "close": "Close"
 }

@@ -479,5 +479,18 @@
   "checkForUpdatesOnStartup": "Перевірка наявності оновлень під час запуску",
   "deleteAllData": "Видалити всі призначені для користувача дані",
   "deleteAllDataWarningMsg": "Це призведе до видалення всіх ваших даних і скидання налаштувань",
-  "deletingAllDataMsg": "Видалення всіх користувацьких даних..."
+  "deletingAllDataMsg": "Видалення всіх користувацьких даних...",
+  "groupBy": "Group by",
+  "wishXQuantity": "Wish x{quantity}",
+  "characterEventWish": "Character Event Wish",
+  "weaponEventWish": "Weapon Event Wish",
+  "standardEventWish": "Standard Event Wish",
+  "wishHistory": "History",
+  "wishHistoryItemType": "Item type",
+  "wishHistoryItemName": "Item name",
+  "wishHistoryTimeReceived": "Time received",
+  "wishHistoryXStar": "{stars}-Star",
+  "artifact": "Artifact",
+  "material": "Material",
+  "close": "Close"
 }

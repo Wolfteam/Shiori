@@ -479,5 +479,18 @@
   "checkForUpdatesOnStartup": "Verifica aggiornamenti all’avvio",
   "deleteAllData": "Elimina tutti i dati utente",
   "deleteAllDataWarningMsg": "Questo eliminerà tutti i tuoi dati e resetterà le impostazioni",
-  "deletingAllDataMsg": "Eliminazione dati utente in corso..."
+  "deletingAllDataMsg": "Eliminazione dati utente in corso...",
+  "groupBy": "Group by",
+  "wishXQuantity": "Wish x{quantity}",
+  "characterEventWish": "Character Event Wish",
+  "weaponEventWish": "Weapon Event Wish",
+  "standardEventWish": "Standard Event Wish",
+  "wishHistory": "History",
+  "wishHistoryItemType": "Item type",
+  "wishHistoryItemName": "Item name",
+  "wishHistoryTimeReceived": "Time received",
+  "wishHistoryXStar": "{stars}-Star",
+  "artifact": "Artifact",
+  "material": "Material",
+  "close": "Close"
 }

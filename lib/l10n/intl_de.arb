@@ -479,5 +479,18 @@
   "checkForUpdatesOnStartup": "Check for updates on startup",
   "deleteAllData": "Delete all user data",
   "deleteAllDataWarningMsg": "This will delete all your data and it will reset your settings",
-  "deletingAllDataMsg": "Deleting all user data..."
+  "deletingAllDataMsg": "Deleting all user data...",
+  "groupBy": "Group by",
+  "wishXQuantity": "Wish x{quantity}",
+  "characterEventWish": "Character Event Wish",
+  "weaponEventWish": "Weapon Event Wish",
+  "standardEventWish": "Standard Event Wish",
+  "wishHistory": "History",
+  "wishHistoryItemType": "Item type",
+  "wishHistoryItemName": "Item name",
+  "wishHistoryTimeReceived": "Time received",
+  "wishHistoryXStar": "{stars}-Star",
+  "artifact": "Artifact",
+  "material": "Material",
+  "close": "Close"
 }
