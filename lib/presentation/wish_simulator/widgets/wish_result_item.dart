@@ -5,25 +5,33 @@ import 'package:responsive_builder/responsive_builder.dart';
 import 'package:shiori/domain/assets.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/extensions/weapon_type_extensions.dart';
+import 'package:shiori/presentation/character/character_page.dart';
 import 'package:shiori/presentation/shared/extensions/element_type_extensions.dart';
 import 'package:shiori/presentation/shared/styles.dart';
+import 'package:shiori/presentation/weapon/weapon_page.dart';
 
 class WishResultItem extends StatefulWidget {
+  final String itemKey;
   final String image;
   final int rarity;
   final String bottomImg;
+  final bool isCharacter;
 
   WishResultItem.character({
+    required this.itemKey,
     required this.image,
     required this.rarity,
     required ElementType elementType,
-  }) : bottomImg = elementType.getElementAssetPath();
+  })  : isCharacter = true,
+        bottomImg = elementType.getElementAssetPath();
 
   WishResultItem.weapon({
+    required this.itemKey,
     required this.image,
     required this.rarity,
     required WeaponType weaponType,
-  }) : bottomImg = weaponType.getWeaponNormalSkillAssetPath();
+  })  : isCharacter = false,
+        bottomImg = weaponType.getWeaponNormalSkillAssetPath();
 
   @override
   State<WishResultItem> createState() => _WishResultItemState();
@@ -49,54 +57,64 @@ class _WishResultItemState extends State<WishResultItem> {
 
     return AspectRatio(
       aspectRatio: aspectRatio,
-      child: MouseRegion(
-        onEnter: (event) {
-          setState(() {
-            _showZoom = true;
-          });
+      child: GestureDetector(
+        onTap: () async {
+          if (widget.isCharacter) {
+            await CharacterPage.route(widget.itemKey, context);
+            return;
+          }
+
+          await WeaponPage.route(widget.itemKey, context);
         },
-        onExit: (event) {
-          setState(() {
-            _showZoom = false;
-          });
-        },
-        child: AnimatedScale(
-          duration: const Duration(milliseconds: 50),
-          scale: _showZoom ? 1.05 : 1,
-          child: Stack(
-            fit: StackFit.passthrough,
-            alignment: Alignment.center,
-            children: [
-              ClipPath(
-                clipper: _WishResultImageClipper(),
-                child: Container(
-                  decoration: BoxDecoration(
-                    borderRadius: const BorderRadius.all(Radius.elliptical(150, 500)),
-                    boxShadow: boxShadow,
+        child: MouseRegion(
+          onEnter: (event) {
+            setState(() {
+              _showZoom = true;
+            });
+          },
+          onExit: (event) {
+            setState(() {
+              _showZoom = false;
+            });
+          },
+          child: AnimatedScale(
+            duration: const Duration(milliseconds: 50),
+            scale: _showZoom ? 1.05 : 1,
+            child: Stack(
+              fit: StackFit.passthrough,
+              alignment: Alignment.center,
+              children: [
+                ClipPath(
+                  clipper: _WishResultImageClipper(),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      borderRadius: const BorderRadius.all(Radius.elliptical(150, 500)),
+                      boxShadow: boxShadow,
+                    ),
                   ),
                 ),
-              ),
-              Container(
-                margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 8),
-                child: ClipPath(
-                  clipper: _WishResultImageClipper(),
-                  clipBehavior: Clip.hardEdge,
-                  child: DecoratedBox(
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image: AssetImage(Assets.wishBannerItemResultBackgroundImgPath),
+                Container(
+                  margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 8),
+                  child: ClipPath(
+                    clipper: _WishResultImageClipper(),
+                    clipBehavior: Clip.hardEdge,
+                    child: DecoratedBox(
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          image: AssetImage(Assets.wishBannerItemResultBackgroundImgPath),
+                          fit: BoxFit.fill,
+                        ),
+                      ),
+                      child: Image.file(
+                        File(widget.image),
                         fit: BoxFit.fill,
                       ),
                     ),
-                    child: Image.file(
-                      File(widget.image),
-                      fit: BoxFit.fill,
-                    ),
                   ),
                 ),
-              ),
-              _BottomPart(image: widget.bottomImg, rarity: widget.rarity),
-            ],
+                _BottomPart(image: widget.bottomImg, rarity: widget.rarity),
+              ],
+            ),
           ),
         ),
       ),

@@ -70,11 +70,13 @@ class WishResultPage extends StatelessWidget {
                               scrollDirection: Axis.horizontal,
                               itemBuilder: (context, index) => state.results[index].map(
                                 character: (char) => WishResultItem.character(
+                                  itemKey: char.key,
                                   image: char.image,
                                   rarity: char.rarity,
                                   elementType: char.elementType,
                                 ),
                                 weapon: (weapon) => WishResultItem.weapon(
+                                  itemKey: weapon.key,
                                   image: weapon.image,
                                   rarity: weapon.rarity,
                                   weaponType: weapon.weaponType,
