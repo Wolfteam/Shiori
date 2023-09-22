@@ -90,17 +90,13 @@ class WishSimulatorHistoryPage extends StatelessWidget {
             child: BackdropFilter(
               filter: ImageFilter.blur(sigmaX: 6.0, sigmaY: 6.0),
               child: Center(
-                child: Container(
-                  width: double.infinity,
-                  constraints: const BoxConstraints(maxWidth: 1024),
-                  child: state.map(
-                    loading: (_) => const Loading(useScaffold: false),
-                    loaded: (state) => state.items.isEmpty
-                        ? const NothingFoundColumn()
-                        : SingleChildScrollView(
-                            child: _Table(items: state.items),
-                          ),
-                  ),
+                child: state.map(
+                  loading: (_) => const Loading(useScaffold: false),
+                  loaded: (state) => state.items.isEmpty
+                      ? const NothingFoundColumn()
+                      : SingleChildScrollView(
+                          child: _Table(items: state.items),
+                        ),
                 ),
               ),
             ),
@@ -195,6 +191,7 @@ class _Table extends StatelessWidget {
     final textStyle = theme.textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.bold);
     return DataTable(
       showCheckboxColumn: false,
+      columnSpacing: 0,
       columns: <DataColumn>[
         DataColumn(
           tooltip: s.wishHistoryItemType,
@@ -238,6 +235,8 @@ class _Table extends StatelessWidget {
   }
 
   DataRow _buildRow(int index, WishSimulatorBannerItemPullHistoryModel item, BuildContext context, S s) {
+    final mq = MediaQuery.of(context);
+    final width = mq.size.width * 0.8 / 3;
     TextStyle? nameStyle;
     String name = item.name;
     if (item.rarity > WishBannerConstants.minObtainableRarity) {
@@ -261,33 +260,51 @@ class _Table extends StatelessWidget {
           : (_) => item.type == ItemType.character ? CharacterPage.route(item.key, context) : WeaponPage.route(item.key, context),
       cells: [
         DataCell(
-          Center(
-            child: Text(
-              s.translateItemType(item.type),
-              overflow: TextOverflow.ellipsis,
-              maxLines: 2,
-              textAlign: TextAlign.center,
+          SizedBox(
+            width: width,
+            child: Center(
+              child: Tooltip(
+                message: s.translateItemType(item.type),
+                child: Text(
+                  s.translateItemType(item.type),
+                  overflow: TextOverflow.ellipsis,
+                  textAlign: TextAlign.center,
+                  maxLines: 2,
+                ),
+              ),
             ),
           ),
         ),
         DataCell(
-          Center(
-            child: Text(
-              name,
-              style: nameStyle,
-              overflow: TextOverflow.ellipsis,
-              maxLines: 2,
-              textAlign: TextAlign.center,
+          SizedBox(
+            width: width,
+            child: Center(
+              child: Tooltip(
+                message: name,
+                child: Text(
+                  name,
+                  style: nameStyle,
+                  overflow: TextOverflow.ellipsis,
+                  textAlign: TextAlign.center,
+                  maxLines: 2,
+                ),
+              ),
             ),
           ),
         ),
         DataCell(
-          Center(
-            child: Text(
-              item.pulledOn,
-              overflow: TextOverflow.ellipsis,
-              maxLines: 2,
-              textAlign: TextAlign.center,
+          SizedBox(
+            width: width,
+            child: Center(
+              child: Tooltip(
+                message: item.pulledOn,
+                child: Text(
+                  item.pulledOn,
+                  overflow: TextOverflow.ellipsis,
+                  textAlign: TextAlign.center,
+                  maxLines: 2,
+                ),
+              ),
             ),
           ),
         ),

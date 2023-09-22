@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:shiori/domain/assets.dart';
 import 'package:shiori/generated/l10n.dart';
+import 'package:shiori/presentation/shared/styles.dart';
 import 'package:shiori/presentation/shared/transform_tap_scale.dart';
 
 typedef WishButtonTap = void Function(int);
@@ -36,6 +37,7 @@ class WishQuantityButton extends StatelessWidget {
         width: width,
         height: height,
         constraints: _boxConstraints,
+        padding: Styles.edgeInsetHorizontal16,
         decoration: BoxDecoration(
           image: DecorationImage(
             image: AssetImage(Assets.wishBannerButtonBackgroundImgPath),
@@ -96,6 +98,7 @@ class WishButton extends StatelessWidget {
         height: height,
         width: width,
         constraints: _boxConstraints,
+        padding: Styles.edgeInsetHorizontal16,
         decoration: BoxDecoration(
           image: DecorationImage(
             image: AssetImage(Assets.wishBannerButtonBackgroundImgPath),
