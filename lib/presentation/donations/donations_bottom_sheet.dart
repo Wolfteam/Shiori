@@ -89,7 +89,7 @@ class _BodyState extends State<_Body> {
                               .read<DonationsBloc>()
                               .add(DonationsEvent.purchase(identifier: _selected!.identifier, offeringIdentifier: _selected!.offeringIdentifier)),
                           child: Text(s.confirm),
-                        )
+                        ),
                     ],
                   ),
                 ],

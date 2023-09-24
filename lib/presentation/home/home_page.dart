@@ -5,7 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import 'package:shiori/application/bloc.dart';
 import 'package:shiori/generated/l10n.dart';
-import 'package:shiori/presentation/home/widgets/banner_history_card.dart';
+import 'package:shiori/presentation/home/widgets/banner_history_count_card.dart';
 import 'package:shiori/presentation/home/widgets/calculators_card.dart';
 import 'package:shiori/presentation/home/widgets/charts_card.dart';
 import 'package:shiori/presentation/home/widgets/custom_builds_card.dart';
@@ -148,9 +148,6 @@ class _HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin<
       case 1:
         return const GameCodesCard(iconToTheLeft: true);
       case 2:
-        if (Platform.isMacOS) {
-          return const SizedBox.shrink();
-        }
         return const WishSimulatorCard(iconToTheLeft: true);
       default:
         throw Exception('Invalid other section');

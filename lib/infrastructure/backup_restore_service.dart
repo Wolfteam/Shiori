@@ -71,31 +71,27 @@ class BackupRestoreServiceImpl implements BackupRestoreService {
           case AppBackupDataType.settings:
             final settings = _settingsService.getDataForBackup();
             bk = bk.copyWith(settings: settings);
-            break;
           case AppBackupDataType.inventory:
             final inventory = _dataService.inventory.getDataForBackup();
             bk = bk.copyWith(inventory: inventory);
-            break;
           case AppBackupDataType.calculatorAscMaterials:
             final calcAscMat = _dataService.calculator.getDataForBackup();
             bk = bk.copyWith(calculatorAscMaterials: calcAscMat);
-            break;
           case AppBackupDataType.tierList:
             final tierList = _dataService.tierList.getDataForBackup();
             bk = bk.copyWith(tierList: tierList);
-            break;
           case AppBackupDataType.customBuilds:
             final customBuilds = _dataService.customBuilds.getDataForBackup();
             bk = bk.copyWith(customBuilds: customBuilds);
-            break;
           case AppBackupDataType.gameCodes:
             final gameCodes = _dataService.gameCodes.getDataForBackup();
             bk = bk.copyWith(gameCodes: gameCodes);
-            break;
           case AppBackupDataType.notifications:
             final notifications = _dataService.notifications.getDataForBackup();
             bk = bk.copyWith(notifications: notifications);
-            break;
+          case AppBackupDataType.wishSimulator:
+            final wishSimulator = await _dataService.wishSimulator.getDataForBackup();
+            bk = bk.copyWith(wishSimulator: wishSimulator);
         }
       }
 
@@ -186,28 +182,23 @@ class BackupRestoreServiceImpl implements BackupRestoreService {
         switch (type) {
           case AppBackupDataType.settings:
             _settingsService.restoreFromBackup(bk.settings!);
-            break;
           case AppBackupDataType.inventory:
             await _dataService.inventory.restoreFromBackup(bk.inventory!);
-            break;
           case AppBackupDataType.calculatorAscMaterials:
             await _dataService.calculator.restoreFromBackup(bk.calculatorAscMaterials!);
-            break;
           case AppBackupDataType.tierList:
             await _dataService.tierList.restoreFromBackup(bk.tierList!);
-            break;
           case AppBackupDataType.customBuilds:
             await _dataService.customBuilds.restoreFromBackup(bk.customBuilds!);
-            break;
           case AppBackupDataType.gameCodes:
             await _dataService.gameCodes.restoreFromBackup(bk.gameCodes!);
-            break;
           case AppBackupDataType.notifications:
             _loggingService.info(runtimeType, 'restoreBackup: Cancelling all notifications...');
             await _notificationService.cancelAllNotifications();
             final serverResetTime = bk.settings?.serverResetTime ?? _settingsService.serverResetTime;
             await _dataService.notifications.restoreFromBackup(bk.notifications!, serverResetTime);
-            break;
+          case AppBackupDataType.wishSimulator:
+            await _dataService.wishSimulator.restoreFromBackup(bk.wishSimulator!);
         }
       }
       _loggingService.info(runtimeType, 'restoreBackup: Process completed');

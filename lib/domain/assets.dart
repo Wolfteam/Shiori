@@ -5,6 +5,7 @@ class Assets {
   static String elementsBasePath = 'assets/elements';
   static String otherImgsBasePath = 'assets/others';
   static String weaponTypesBasePath = 'assets/weapon_types';
+  static String weaponNormalSkillTypesPath = 'assets/weapon_normal_skill_types';
 
   static String noImageAvailablePath = '$otherImgsBasePath/na$imageFileExtension';
   static String paimonImagePath = '$otherImgsBasePath/paimon$imageFileExtension';
@@ -14,6 +15,11 @@ class Assets {
   static String gachaIconPath = '$otherImgsBasePath/gacha$imageFileExtension';
   static String starCrystalIconPath = '$otherImgsBasePath/mark_wind_crystal$imageFileExtension';
   static String primogemIconPath = '$otherImgsBasePath/primogem$imageFileExtension';
+  static String wishBannerBackgroundImgPath = '$otherImgsBasePath/wish_banner_background$imageFileExtension';
+  static String wishBannerButtonBackgroundImgPath = '$otherImgsBasePath/wish_banner_button$imageFileExtension';
+  static String wishBannerStandardImgPath = '$otherImgsBasePath/wish_banner_standard$imageFileExtension';
+  static String wishBannerResultBackgroundImgPath = '$otherImgsBasePath/wish_banner_wish_result_background.webp';
+  static String wishBannerItemResultBackgroundImgPath = '$otherImgsBasePath/wish_banner_wish_result_item_background.webp';
 
   static String _getElementPath(String name) => '$elementsBasePath/$name';
 
@@ -71,6 +77,23 @@ class Assets {
         return '$weaponTypesBasePath/polearm$imageFileExtension';
       case WeaponType.sword:
         return '$weaponTypesBasePath/sword$imageFileExtension';
+      default:
+        throw Exception('Invalid weapon type = $type');
+    }
+  }
+
+  static String getWeaponSkillAssetPath(WeaponType type) {
+    switch (type) {
+      case WeaponType.bow:
+        return '$weaponNormalSkillTypesPath/bow$imageFileExtension';
+      case WeaponType.catalyst:
+        return '$weaponNormalSkillTypesPath/catalyst$imageFileExtension';
+      case WeaponType.claymore:
+        return '$weaponNormalSkillTypesPath/claymore$imageFileExtension';
+      case WeaponType.polearm:
+        return '$weaponNormalSkillTypesPath/polearm$imageFileExtension';
+      case WeaponType.sword:
+        return '$weaponNormalSkillTypesPath/sword$imageFileExtension';
       default:
         throw Exception('Invalid weapon type = $type');
     }

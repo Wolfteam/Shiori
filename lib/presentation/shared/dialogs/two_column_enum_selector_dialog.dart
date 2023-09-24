@@ -71,7 +71,7 @@ class _TwoColumnEnumSelectorDialogState<TEnum> extends State<TwoColumnEnumSelect
     final dialogHeight = mq.getHeightForDialogs(_all.length + _selected.length, maxHeight: 400);
     final dialogWidth = mq.getWidthForDialogs();
     final bgColor = theme.brightness == Brightness.dark
-        ? (theme.scaffoldBackgroundColor == Colors.black ? theme.cardColor : theme.backgroundColor.withOpacity(0.8))
+        ? (theme.scaffoldBackgroundColor == Colors.black ? theme.cardColor : theme.colorScheme.background.withOpacity(0.8))
         : theme.dividerColor;
     final canAddMoreItems = _selected.length == widget.maxNumberOfSelections;
     return AlertDialog(
@@ -163,7 +163,7 @@ class _TwoColumnEnumSelectorDialogState<TEnum> extends State<TwoColumnEnumSelect
                             ),
                           )
                         : NothingFoundColumn(msg: widget.nothingSelectedMsg),
-                  )
+                  ),
                 ],
               )
             : Column(

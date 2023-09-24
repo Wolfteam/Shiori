@@ -41,7 +41,7 @@ class ItemReleaseHistoryDialog extends StatelessWidget {
           ElevatedButton(
             onPressed: () => Navigator.pop(context),
             child: Text(s.ok),
-          )
+          ),
         ],
         content: SingleChildScrollView(
           child: BlocBuilder<ItemReleaseHistoryBloc, ItemReleaseHistoryState>(

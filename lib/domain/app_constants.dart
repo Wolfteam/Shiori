@@ -196,7 +196,7 @@ const skillAscensionMap = {
   3: [3, 4],
   4: [5, 6],
   5: [7, 8],
-  6: [9, 10]
+  6: [9, 10],
 };
 
 const characterExp = [
@@ -475,7 +475,7 @@ const weaponExp4Stars = [
   ItemExperienceModel.forWeapons(87, 314250, 4979925),
   ItemExperienceModel.forWeapons(88, 352700, 5294175),
   ItemExperienceModel.forWeapons(89, 395775, 5646875),
-  ItemExperienceModel.forWeapons(90, -1, 6042650)
+  ItemExperienceModel.forWeapons(90, -1, 6042650),
 ];
 
 const weaponExp3Stars = [
@@ -568,7 +568,7 @@ const weaponExp3Stars = [
   ItemExperienceModel.forWeapons(87, 207400, 3286825),
   ItemExperienceModel.forWeapons(88, 232775, 3494225),
   ItemExperienceModel.forWeapons(89, 261200, 3727000),
-  ItemExperienceModel.forWeapons(90, -1, 3988200)
+  ItemExperienceModel.forWeapons(90, -1, 3988200),
 ];
 
 const weaponExp2Stars = [
@@ -641,7 +641,7 @@ const weaponExp2Stars = [
   ItemExperienceModel.forWeapons(67, 41750, 951200),
   ItemExperienceModel.forWeapons(68, 42825, 992950),
   ItemExperienceModel.forWeapons(69, 43900, 1035775),
-  ItemExperienceModel.forWeapons(70, -1, 1079675)
+  ItemExperienceModel.forWeapons(70, -1, 1079675),
 ];
 
 const weaponExp1Star = [
@@ -714,7 +714,7 @@ const weaponExp1Star = [
   ItemExperienceModel.forWeapons(67, 27825, 634225),
   ItemExperienceModel.forWeapons(68, 28550, 662050),
   ItemExperienceModel.forWeapons(69, 29275, 690600),
-  ItemExperienceModel.forWeapons(70, -1, 719875)
+  ItemExperienceModel.forWeapons(70, -1, 719875),
 ];
 
 //Furnishing related
@@ -759,19 +759,14 @@ double getItemTotalExp(int currentLevel, int desiredLevel, int rarity, bool forC
     switch (rarity) {
       case 5:
         items.addAll(weaponExp5Stars);
-        break;
       case 4:
         items.addAll(weaponExp4Stars);
-        break;
       case 3:
         items.addAll(weaponExp3Stars);
-        break;
       case 2:
         items.addAll(weaponExp2Stars);
-        break;
       case 1:
         items.addAll(weaponExp1Star);
-        break;
       default:
         throw Exception('The provided rarity = $rarity');
     }
@@ -841,7 +836,7 @@ Duration getResinDuration(int currentResinValue) {
 int getCurrentResin(int initialResinValue, DateTime completesAt) {
   final now = DateTime.now();
   final createdAt = completesAt.subtract(getResinDuration(initialResinValue));
-  final elapsedMinutes = (now.difference(createdAt).inMinutes).abs();
+  final elapsedMinutes = now.difference(createdAt).inMinutes.abs();
   final currentResinValue = (elapsedMinutes / resinRefillsEach).floor() + initialResinValue;
   return currentResinValue > maxResinValue ? maxResinValue : currentResinValue;
 }
@@ -907,7 +902,7 @@ int getCurrentRealmCurrency(int initialRealmCurrency, int currentTrustRank, Real
   final maxRealmCurrency = getRealmMaxCurrency(currentTrustRank);
   final ratioPerHour = getRealmIncreaseRatio(currentRealmRank);
   final createdAt = completesAt.subtract(getRealmCurrencyDuration(initialRealmCurrency, currentTrustRank, currentRealmRank));
-  final elapsedMinutes = (now.difference(createdAt).inMinutes).abs();
+  final elapsedMinutes = now.difference(createdAt).inMinutes.abs();
   final currentRealmCurrency = (elapsedMinutes * ratioPerHour / 60).floor() + initialRealmCurrency;
   return currentRealmCurrency > maxRealmCurrency ? maxRealmCurrency : currentRealmCurrency;
 }

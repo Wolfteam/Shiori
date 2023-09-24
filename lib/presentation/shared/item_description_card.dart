@@ -35,7 +35,7 @@ class ItemDescriptionCard extends StatelessWidget {
               ),
             ),
             Text(description, style: const TextStyle(fontSize: 12)),
-            ...widgets
+            ...widgets,
           ],
         ),
       ),

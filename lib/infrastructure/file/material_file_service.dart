@@ -122,6 +122,18 @@ class MaterialFileServiceImpl extends MaterialFileService {
     return materials.firstWhere((el) => el.key == 'fragile-resin');
   }
 
+  @override
+  MaterialFileModel getIntertwinedFate() {
+    final materials = getMaterials(MaterialType.currency);
+    return materials.firstWhere((el) => el.key == 'intertwined-fate');
+  }
+
+  @override
+  MaterialFileModel getAcquaintFate() {
+    final materials = getMaterials(MaterialType.currency);
+    return materials.firstWhere((el) => el.key == 'acquaint-fate');
+  }
+
   MaterialCardModel _toMaterialForCard(MaterialFileModel material) {
     final translation = _translations.getMaterialTranslation(material.key);
     return MaterialCardModel.item(

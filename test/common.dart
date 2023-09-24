@@ -12,6 +12,7 @@ import 'package:shiori/domain/services/file/file_infrastructure.dart';
 import 'package:shiori/domain/services/locale_service.dart';
 import 'package:shiori/domain/services/resources_service.dart';
 import 'package:shiori/domain/services/settings_service.dart';
+import 'package:shiori/domain/wish_banner_constants.dart';
 import 'package:shiori/infrastructure/infrastructure.dart';
 
 import 'mocks.mocks.dart';
@@ -121,6 +122,17 @@ void checkItemKeyNameAndImage(String key, String name, String image) {
   checkTranslation(name, canBeNull: false);
 }
 
+void checkItemKeyAndName(String key, String name) {
+  checkKey(key);
+  checkTranslation(name, canBeNull: false);
+}
+
+void checkBannerRarity(int rarity, {int? min, int? max}) {
+  final minRarity = min ?? WishBannerConstants.minObtainableRarity;
+  final maxRarity = max ?? WishBannerConstants.maxObtainableRarity;
+  expect(rarity >= minRarity && rarity <= maxRarity, isTrue);
+}
+
 void checkItemAscensionMaterialFileModel(MaterialFileService materialFileService, List<ItemAscensionMaterialFileModel> all) {
   expect(all, isNotEmpty);
   for (final material in all) {
@@ -141,10 +153,23 @@ void checkCharacterFileAscensionMaterialModel(
     expect(ascMaterial.level, allOf([greaterThanOrEqualTo(20), lessThanOrEqualTo(80)]));
     checkItemAscensionMaterialFileModel(materialFileService, ascMaterial.materials);
     if (checkMaterialType) {
-      expect(ascMaterial.materials.where((el) => el.type == MaterialType.jewels).length, 1);
-      expect(ascMaterial.materials.where((el) => el.type == MaterialType.local).length, 1);
-      expect(ascMaterial.materials.where((el) => el.type == MaterialType.common).length, 1);
-      expect(ascMaterial.materials.where((el) => el.type == MaterialType.currency).length, 1);
+      final types = [
+        MaterialType.jewels,
+        MaterialType.local,
+        MaterialType.common,
+        MaterialType.currency,
+      ];
+      for (final type in types) {
+        final materials = ascMaterial.materials.where((el) => el.type == type).toList();
+        expect(materials.length == 1, isTrue);
+        final current = materials.first;
+        final expected = materialFileService.getMaterial(current.key);
+        expect(
+          current.type == expected.type,
+          isTrue,
+          reason: 'CurrentKey = ${current.key} has a type = ${current.type} != ${expected.type}',
+        );
+      }
     }
   }
 }

@@ -35,8 +35,6 @@ class FakeArtifactsState extends Fake implements ArtifactsState {}
 
 class FakeArtifactsEvent extends Fake implements ArtifactsEvent {}
 
-class MockElementsBloc extends MockBloc<ElementsEvent, ElementsState> implements ElementsBloc {}
-
 class FakeElementsState extends Fake implements ElementsState {}
 
 class FakeElementsEvent extends Fake implements ElementsEvent {}
@@ -151,7 +149,7 @@ void main() {
           initialized: true,
           firstInstall: defaultAppSettings.isFirstInstall,
           versionChanged: false,
-        )
+        ),
       ],
     );
   });

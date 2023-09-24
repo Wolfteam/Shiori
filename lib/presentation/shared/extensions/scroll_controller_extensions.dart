@@ -13,14 +13,12 @@ extension ScrollControllerExtensions on ScrollController {
           hideFabController.forward();
         }
 
-        break;
       case ScrollDirection.reverse:
         if (inverted) {
           hideFabController.forward();
         } else {
           hideFabController.reverse();
         }
-        break;
     }
 
     if (hideOnTop && position.pixels == 0 && position.atEdge) {

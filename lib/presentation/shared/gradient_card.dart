@@ -10,7 +10,6 @@ class GradientCard extends StatelessWidget {
   final Widget? child;
   final LinearGradient gradient;
   final double? elevation;
-  final Color? shadowColor;
 
   const GradientCard({
     super.key,
@@ -20,7 +19,6 @@ class GradientCard extends StatelessWidget {
     this.clipBehavior = Clip.none,
     this.child,
     this.elevation,
-    this.shadowColor,
     this.semanticContainer = true,
   });
 
@@ -32,7 +30,6 @@ class GradientCard extends StatelessWidget {
       child: Material(
         type: MaterialType.card,
         color: Colors.transparent,
-        shadowColor: shadowColor ?? Colors.transparent,
         elevation: elevation ?? 0,
         shape: shape ?? const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(4))),
         clipBehavior: clipBehavior,

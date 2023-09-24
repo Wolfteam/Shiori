@@ -16,17 +16,18 @@ import 'package:shiori/presentation/charts/widgets/chart_legend.dart';
 import 'package:shiori/presentation/charts/widgets/horizontal_bar_chart.dart';
 import 'package:shiori/presentation/charts/widgets/pie_chart.dart';
 import 'package:shiori/presentation/charts/widgets/vertical_bar_chart.dart';
+import 'package:shiori/presentation/shared/dialogs/banner_version_history_dialog.dart';
 import 'package:shiori/presentation/shared/dialogs/birthdays_per_month_dialog.dart';
 import 'package:shiori/presentation/shared/dialogs/characters_per_region_dialog.dart';
 import 'package:shiori/presentation/shared/dialogs/characters_per_region_gender_dialog.dart';
 import 'package:shiori/presentation/shared/dialogs/item_release_history_dialog.dart';
 import 'package:shiori/presentation/shared/dialogs/items_ascension_stats_dialog.dart';
-import 'package:shiori/presentation/shared/dialogs/version_details_dialog.dart';
 import 'package:shiori/presentation/shared/extensions/element_type_extensions.dart';
 import 'package:shiori/presentation/shared/extensions/i18n_extensions.dart';
 import 'package:shiori/presentation/shared/loading.dart';
 import 'package:shiori/presentation/shared/mixins/app_fab_mixin.dart';
 import 'package:shiori/presentation/shared/nothing_found_column.dart';
+import 'package:shiori/presentation/shared/shiori_icons.dart';
 import 'package:shiori/presentation/shared/styles.dart';
 import 'package:shiori/presentation/weapon/weapon_page.dart';
 
@@ -196,9 +197,9 @@ class _LandscapeLayout extends StatelessWidget {
               ],
             );
           case 5:
-            return Row(
+            return const Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: const [
+              children: [
                 Expanded(flex: 49, child: _Regions()),
                 Spacer(flex: 2),
                 Expanded(flex: 49, child: _Genders()),
@@ -496,7 +497,7 @@ class _Elements extends StatelessWidget {
                       ..sort((x, y) => x.text.compareTo(y.text)),
                     onPointTap: (value) => showDialog(
                       context: context,
-                      builder: (_) => VersionDetailsDialog(
+                      builder: (_) => BannerVersionHistoryDialog(
                         version: value,
                         showWeapons: false,
                       ),
@@ -625,21 +626,26 @@ class _AscensionStats extends StatelessWidget {
                           maxNumberOfColumns: maxNumberOfColumns,
                         ),
                       ),
-                  direction: Axis.vertical,
                   borderRadius: BorderRadius.circular(10),
-                  constraints: const BoxConstraints(minHeight: 25, maxHeight: 25),
+                  constraints: const BoxConstraints(minHeight: 36, maxHeight: 36),
                   isSelected: [
                     state.itemType == ItemType.character,
                     state.itemType == ItemType.weapon,
                   ],
                   children: [
-                    Container(
-                      margin: Styles.edgeInsetHorizontal16,
-                      child: Text(s.characters),
+                    Tooltip(
+                      message: s.characters,
+                      child: Container(
+                        margin: Styles.edgeInsetHorizontal16,
+                        child: const Icon(Icons.people),
+                      ),
                     ),
-                    Container(
-                      margin: Styles.edgeInsetHorizontal16,
-                      child: Text(s.weapons),
+                    Tooltip(
+                      message: s.weapons,
+                      child: Container(
+                        margin: Styles.edgeInsetHorizontal16,
+                        child: const Icon(Shiori.crossed_swords),
+                      ),
                     ),
                   ],
                 ),

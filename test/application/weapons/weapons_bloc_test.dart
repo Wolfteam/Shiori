@@ -55,7 +55,7 @@ void main() {
             tempWeaponFilterType: WeaponFilterType.rarity,
             sortDirectionType: SortDirectionType.asc,
             tempSortDirectionType: SortDirectionType.asc,
-          )
+          ),
         ];
       },
     );
@@ -106,7 +106,7 @@ void main() {
             sortDirectionType: SortDirectionType.asc,
             tempSortDirectionType: SortDirectionType.asc,
             search: search,
-          )
+          ),
         ];
       },
     );
@@ -131,7 +131,7 @@ void main() {
           sortDirectionType: SortDirectionType.asc,
           tempSortDirectionType: SortDirectionType.asc,
           search: 'Wanderer',
-        )
+        ),
       ],
     );
   });
@@ -145,15 +145,12 @@ void main() {
         ..add(const WeaponsEvent.searchChanged(search: search))
         ..add(const WeaponsEvent.rarityChanged(5))
         ..add(const WeaponsEvent.weaponFilterTypeChanged(WeaponFilterType.atk))
-        ..add(const WeaponsEvent.weaponTypeChanged(WeaponType.claymore))
-        ..add(const WeaponsEvent.weaponTypeChanged(WeaponType.bow))
-        ..add(const WeaponsEvent.weaponTypeChanged(WeaponType.catalyst))
-        ..add(const WeaponsEvent.weaponTypeChanged(WeaponType.polearm))
+        ..add(const WeaponsEvent.weaponTypeChanged(WeaponType.sword))
         ..add(const WeaponsEvent.weaponLocationTypeChanged(ItemLocationType.gacha))
         ..add(const WeaponsEvent.weaponSubStatTypeChanged(StatType.physDmgBonus))
         ..add(const WeaponsEvent.sortDirectionTypeChanged(SortDirectionType.desc))
         ..add(const WeaponsEvent.applyFilterChanges()),
-      skip: 11,
+      skip: 8,
       expect: () {
         final weapons = genshinService.weapons.getWeaponsForCard().where((el) => el.key == key).toList()
           ..sort((x, y) => y.baseAtk.compareTo(x.baseAtk));
@@ -174,7 +171,7 @@ void main() {
             weaponSubStatType: StatType.physDmgBonus,
             tempWeaponSubStatType: StatType.physDmgBonus,
             search: search,
-          )
+          ),
         ];
       },
     );
@@ -215,7 +212,7 @@ void main() {
             tempSortDirectionType: SortDirectionType.desc,
             weaponSubStatType: StatType.physDmgBonus,
             tempWeaponSubStatType: StatType.physDmgBonus,
-          )
+          ),
         ];
       },
     );
@@ -248,7 +245,7 @@ void main() {
             tempSortDirectionType: SortDirectionType.asc,
             weaponFilterType: WeaponFilterType.rarity,
             tempWeaponFilterType: WeaponFilterType.rarity,
-          )
+          ),
         ];
       },
     );

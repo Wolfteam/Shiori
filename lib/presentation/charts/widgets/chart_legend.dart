@@ -79,7 +79,7 @@ class ChartLegendIndicator extends StatelessWidget {
                   text,
                   overflow: TextOverflow.ellipsis,
                   style: textStyle,
-                )
+                ),
             ],
           ),
         ),

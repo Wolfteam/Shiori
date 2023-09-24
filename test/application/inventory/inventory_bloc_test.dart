@@ -83,7 +83,7 @@ void main() {
           characters: [character],
           weapons: [weapon],
           materials: materials,
-        )
+        ),
       ];
     },
   );
@@ -107,7 +107,7 @@ void main() {
             characters: [character],
             weapons: [],
             materials: materials,
-          )
+          ),
         ];
       },
     );
@@ -130,7 +130,7 @@ void main() {
             characters: [],
             weapons: [weapon],
             materials: materials,
-          )
+          ),
         ];
       },
     );
@@ -154,7 +154,7 @@ void main() {
             characters: [],
             weapons: [],
             materials: materials,
-          )
+          ),
         ];
       },
     );
@@ -180,7 +180,7 @@ void main() {
             characters: [],
             weapons: [],
             materials: materials,
-          )
+          ),
         ];
       },
     );
@@ -204,7 +204,7 @@ void main() {
             characters: [],
             weapons: [],
             materials: materials,
-          )
+          ),
         ];
       },
     );
@@ -230,7 +230,7 @@ void main() {
             characters: [],
             weapons: [],
             materials: materials,
-          )
+          ),
         ];
       },
     );
@@ -255,7 +255,7 @@ void main() {
             characters: [],
             weapons: [],
             materials: materials,
-          )
+          ),
         ];
       },
     );
@@ -278,7 +278,7 @@ void main() {
             characters: [],
             weapons: [],
             materials: materials,
-          )
+          ),
         ];
       },
     );
@@ -302,7 +302,7 @@ void main() {
             characters: [],
             weapons: [],
             materials: materials,
-          )
+          ),
         ];
       },
     );

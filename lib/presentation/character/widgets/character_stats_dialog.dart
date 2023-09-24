@@ -72,7 +72,7 @@ class _CharacterStatsDialogState extends State<CharacterStatsDialog> {
                   );
                 },
               ),
-            )
+            ),
           ],
         ),
       ),
@@ -80,7 +80,7 @@ class _CharacterStatsDialogState extends State<CharacterStatsDialog> {
         ElevatedButton(
           onPressed: () => Navigator.pop(context),
           child: Text(s.ok),
-        )
+        ),
       ],
     );
   }

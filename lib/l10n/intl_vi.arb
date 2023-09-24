@@ -479,5 +479,18 @@
   "checkForUpdatesOnStartup": "Kiểm tra cập nhật khi khởi động.",
   "deleteAllData": "Xóa tất cả dữ liệu người dùng.",
   "deleteAllDataWarningMsg": "Cẩn thận, điều này sẽ xóa toàn bộ dữ liệu của bạn và đặt cài đặt lại thành mặc định.",
-  "deletingAllDataMsg": "Đang xóa tất cả dữ liệu người dùng."
+  "deletingAllDataMsg": "Đang xóa tất cả dữ liệu người dùng.",
+  "groupBy": "Group by",
+  "wishXQuantity": "Wish x{quantity}",
+  "characterEventWish": "Character Event Wish",
+  "weaponEventWish": "Weapon Event Wish",
+  "standardEventWish": "Standard Event Wish",
+  "wishHistory": "History",
+  "wishHistoryItemType": "Item type",
+  "wishHistoryItemName": "Item name",
+  "wishHistoryTimeReceived": "Time received",
+  "wishHistoryXStar": "{stars}-Star",
+  "artifact": "Artifact",
+  "material": "Material",
+  "close": "Close"
 }

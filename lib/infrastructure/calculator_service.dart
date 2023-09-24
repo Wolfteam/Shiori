@@ -4,7 +4,6 @@ import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/calculator_service.dart';
 import 'package:shiori/domain/services/genshin_service.dart';
 import 'package:shiori/domain/services/resources_service.dart';
-import 'package:tuple/tuple.dart';
 
 class CalculatorServiceImpl implements CalculatorService {
   final GenshinService _genshinService;
@@ -54,31 +53,25 @@ class CalculatorServiceImpl implements CalculatorService {
         switch (material.type) {
           case MaterialType.common:
             key = AscensionMaterialSummaryType.common;
-            break;
           //some characters use ingredient / local specialities, so we label them all as local
           case MaterialType.local:
           case MaterialType.ingredient:
             key = AscensionMaterialSummaryType.local;
-            break;
           case MaterialType.currency:
             key = AscensionMaterialSummaryType.currency;
-            break;
           //there are some weapon secondary materials used by some characters, so I pretty much group them as common
           case MaterialType.weapon:
           case MaterialType.weaponPrimary:
             key = AscensionMaterialSummaryType.common;
-            break;
           //this case shouldn't be common except for the traveler, since the elementalStone they use is no dropped from boss
           case MaterialType.elementalStone:
           case MaterialType.jewels:
           case MaterialType.talents:
           case MaterialType.others:
             key = AscensionMaterialSummaryType.others;
-            break;
           case MaterialType.expWeapon:
           case MaterialType.expCharacter:
             key = AscensionMaterialSummaryType.exp;
-            break;
         }
         newValue = MaterialSummary(
           key: material.key,
@@ -304,7 +297,7 @@ class CalculatorServiceImpl implements CalculatorService {
   }
 
   @override
-  Tuple4<bool, bool, bool, bool> isSkillEnabled(
+  (bool, bool, bool, bool) isSkillEnabled(
     int currentLevel,
     int desiredLevel,
     int currentAscensionLevel,
@@ -330,7 +323,7 @@ class CalculatorServiceImpl implements CalculatorService {
           maxSkillLevel,
         );
 
-    return Tuple4<bool, bool, bool, bool>(currentDecEnabled, currentIncEnabled, desiredDecEnabled, desiredIncEnabled);
+    return (currentDecEnabled, currentIncEnabled, desiredDecEnabled, desiredIncEnabled);
   }
 
   List<ItemAscensionMaterialModel> _flatMaterialsList(List<ItemAscensionMaterialModel> current) {

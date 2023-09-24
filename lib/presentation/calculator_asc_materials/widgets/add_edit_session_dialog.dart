@@ -80,7 +80,7 @@ class _BodyState extends State<_Body> {
             onPressed: state.isNameValid ? _saveSession : null,
             child: Text(s.save),
           ),
-        )
+        ),
       ],
     );
   }

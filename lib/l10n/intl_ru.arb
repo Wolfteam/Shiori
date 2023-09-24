@@ -479,5 +479,18 @@
   "checkForUpdatesOnStartup": "Проверка наличия обновлений при запуске",
   "deleteAllData": "Удалить все пользовательские данные",
   "deleteAllDataWarningMsg": "Это приведет к удалению всех ваших данных и сбросу настроек",
-  "deletingAllDataMsg": "Удаление всех пользовательских данных..."
+  "deletingAllDataMsg": "Удаление всех пользовательских данных...",
+  "groupBy": "Group by",
+  "wishXQuantity": "Wish x{quantity}",
+  "characterEventWish": "Character Event Wish",
+  "weaponEventWish": "Weapon Event Wish",
+  "standardEventWish": "Standard Event Wish",
+  "wishHistory": "History",
+  "wishHistoryItemType": "Item type",
+  "wishHistoryItemName": "Item name",
+  "wishHistoryTimeReceived": "Time received",
+  "wishHistoryXStar": "{stars}-Star",
+  "artifact": "Artifact",
+  "material": "Material",
+  "close": "Close"
 }

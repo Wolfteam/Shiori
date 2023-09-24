@@ -8,12 +8,14 @@ class SortDirectionPopupMenuFilter extends StatelessWidget {
   final SortDirectionType selectedSortDirection;
   final Function(SortDirectionType) onSelected;
   final Icon icon;
+  final double? splashRadius;
 
   const SortDirectionPopupMenuFilter({
     super.key,
     required this.selectedSortDirection,
     required this.onSelected,
     this.icon = const Icon(Icons.sort),
+    this.splashRadius,
   });
 
   @override
@@ -25,6 +27,7 @@ class SortDirectionPopupMenuFilter extends StatelessWidget {
       values: SortDirectionType.values,
       onSelected: onSelected,
       icon: icon,
+      splashRadius: splashRadius,
       itemText: (val, _) => s.translateSortDirectionType(val),
     );
   }

@@ -98,7 +98,7 @@ class MapPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider<UrlPageBloc>(
-      create: (ctx) => Injection.urlPageBloc..add(const UrlPageEvent.init(loadMap: true, loadWishSimulator: false, loadDailyCheckIn: false)),
+      create: (ctx) => Injection.urlPageBloc..add(const UrlPageEvent.init(loadMap: true, loadDailyCheckIn: false)),
       child: BlocBuilder<UrlPageBloc, UrlPageState>(
         builder: (context, state) => state.map(
           loading: (_) => const Loading(),

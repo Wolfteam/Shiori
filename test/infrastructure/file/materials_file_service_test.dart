@@ -39,19 +39,15 @@ void main() {
           expect(detail.hasSiblings, isTrue);
           expect(detail.rarity, inInclusiveRange(1, 4));
           expect(detail.level, inInclusiveRange(0, 3));
-          break;
         case MaterialType.elementalStone:
           expect(detail.rarity, equals(4));
           expect(detail.level, equals(0));
-          break;
         case MaterialType.jewels:
           expect(detail.hasSiblings, isTrue);
           expect(detail.rarity, inInclusiveRange(2, 5));
           expect(detail.level, inInclusiveRange(0, 3));
-          break;
         case MaterialType.local:
           expect(detail.attributes, allOf([isNotNull, isNotEmpty]));
-          break;
         case MaterialType.talents:
           if (detail.rarity >= 5) {
             continue;
@@ -65,12 +61,10 @@ void main() {
           expect(detail.hasSiblings, isTrue);
           expect(detail.rarity, inInclusiveRange(2, 4));
           expect(detail.level, inInclusiveRange(0, 2));
-          break;
         case MaterialType.weapon:
           expect(detail.hasSiblings, isTrue);
           expect(detail.rarity, inInclusiveRange(1, 4));
           expect(detail.level, inInclusiveRange(0, 3));
-          break;
         case MaterialType.weaponPrimary:
           expect(detail.days, isNotEmpty);
           for (final day in detail.days) {
@@ -79,7 +73,6 @@ void main() {
           expect(detail.hasSiblings, isTrue);
           expect(detail.rarity, inInclusiveRange(2, 5));
           expect(detail.level, inInclusiveRange(0, 3));
-          break;
         case MaterialType.currency:
           break;
         case MaterialType.others:
@@ -91,7 +84,6 @@ void main() {
           expect(detail.attributes, allOf([isNotNull, isNotEmpty]));
           expect(detail.experienceAttributes, isNotNull);
           expect(detail.isAnExperienceMaterial, isTrue);
-          break;
       }
 
       final partOfRecipes = detail.recipes + detail.obtainedFrom;

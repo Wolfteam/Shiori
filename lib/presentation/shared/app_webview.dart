@@ -121,7 +121,7 @@ class _MobileWebViewState extends State<_MobileWebView> {
             },
           ),
         ),
-        if (_loading) const Loading(),
+        if (_loading) Loading(showCloseButton: widget.appBar != null),
       ],
     );
   }
@@ -189,7 +189,7 @@ class _DesktopWebViewState extends State<_DesktopWebView> {
     }
     return Scaffold(
       appBar: widget.appBar,
-      body: _controller.value.isInitialized ? Webview(_controller) : const Loading(),
+      body: _controller.value.isInitialized ? Webview(_controller) : Loading(showCloseButton: widget.appBar != null),
     );
   }
 

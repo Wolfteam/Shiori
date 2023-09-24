@@ -6,6 +6,7 @@ import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/genshin_service.dart';
 import 'package:shiori/domain/services/settings_service.dart';
+import 'package:shiori/domain/utils/filter_utils.dart';
 
 part 'weapons_bloc.freezed.dart';
 part 'weapons_event.dart';
@@ -38,15 +39,7 @@ class WeaponsBloc extends Bloc<WeaponsEvent, WeaponsState> {
       weaponFilterTypeChanged: (e) => currentState.copyWith.call(tempWeaponFilterType: e.filterType),
       rarityChanged: (e) => currentState.copyWith.call(tempRarity: e.rarity),
       sortDirectionTypeChanged: (e) => currentState.copyWith.call(tempSortDirectionType: e.sortDirectionType),
-      weaponTypeChanged: (e) {
-        var types = <WeaponType>[];
-        if (currentState.tempWeaponTypes.contains(e.weaponType)) {
-          types = currentState.tempWeaponTypes.where((t) => t != e.weaponType).toList();
-        } else {
-          types = currentState.tempWeaponTypes + [e.weaponType];
-        }
-        return currentState.copyWith.call(tempWeaponTypes: types);
-      },
+      weaponTypeChanged: (e) => _weaponTypeChanged(e.weaponType),
       weaponSubStatTypeChanged: (e) => currentState.copyWith.call(tempWeaponSubStatType: e.subStatType),
       weaponLocationTypeChanged: (e) => currentState.copyWith.call(tempWeaponLocationType: e.locationType),
       searchChanged: (e) => _buildInitialState(
@@ -88,6 +81,11 @@ class WeaponsBloc extends Bloc<WeaponsEvent, WeaponsState> {
     );
 
     yield s;
+  }
+
+  WeaponsState _weaponTypeChanged(WeaponType selectedValue) {
+    final List<WeaponType> types = FilterUtils.handleTypeSelected(WeaponType.values, currentState.tempWeaponTypes, selectedValue);
+    return currentState.copyWith.call(tempWeaponTypes: types);
   }
 
   WeaponsState _buildInitialState({
@@ -182,14 +180,12 @@ class WeaponsBloc extends Bloc<WeaponsEvent, WeaponsState> {
         } else {
           data.sort((x, y) => y.baseAtk.compareTo(x.baseAtk));
         }
-        break;
       case WeaponFilterType.name:
         if (sortDirectionType == SortDirectionType.asc) {
           data.sort((x, y) => x.name.compareTo(y.name));
         } else {
           data.sort((x, y) => y.name.compareTo(x.name));
         }
-        break;
 
       case WeaponFilterType.rarity:
         if (sortDirectionType == SortDirectionType.asc) {
@@ -197,14 +193,12 @@ class WeaponsBloc extends Bloc<WeaponsEvent, WeaponsState> {
         } else {
           data.sort((x, y) => y.rarity.compareTo(x.rarity));
         }
-        break;
       case WeaponFilterType.subStat:
         if (sortDirectionType == SortDirectionType.asc) {
           data.sort((x, y) => x.subStatValue.compareTo(y.subStatValue));
         } else {
           data.sort((x, y) => y.subStatValue.compareTo(x.subStatValue));
         }
-        break;
       default:
         break;
     }

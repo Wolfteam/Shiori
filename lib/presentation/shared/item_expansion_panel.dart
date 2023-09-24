@@ -49,7 +49,7 @@ class ItemExpansionPanel extends StatelessWidget {
             },
             body: body,
             isExpanded: !isCollapsed,
-          )
+          ),
         ],
       ),
     );

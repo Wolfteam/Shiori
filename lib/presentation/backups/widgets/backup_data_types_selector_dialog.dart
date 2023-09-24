@@ -67,7 +67,7 @@ class _BackupDataTypesSelectorDialogState extends State<BackupDataTypesSelectorD
         ElevatedButton(
           onPressed: _selectedDataTypes.isEmpty ? null : () => Navigator.pop(context, _selectedDataTypes),
           child: Text(s.ok),
-        )
+        ),
       ],
     );
   }

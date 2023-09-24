@@ -104,7 +104,7 @@ class CharacterSection extends StatelessWidget {
                                   ),
                                 ),
                               ),
-                            )
+                            ),
                         ],
                       ),
                       if (!isPortrait)
@@ -177,7 +177,7 @@ class CharacterSection extends StatelessWidget {
                       else ...[
                         _TalentPriorityRow(skillPriorities: state.skillPriorities, readyToShare: state.readyForScreenshot),
                         _NoteRow(notes: state.notes.map((e) => e.note).toList(), readyToShare: state.readyForScreenshot),
-                      ]
+                      ],
                     ],
                   ),
                 ),
@@ -257,7 +257,7 @@ class _TalentPriorityRow extends StatelessWidget {
             addTooltip: false,
             padding: const EdgeInsets.only(right: 16, left: 5, bottom: 5, top: 5),
             onDelete: readyToShare ? null : (index) => context.read<CustomBuildBloc>().add(CustomBuildEvent.deleteSkillPriority(index: index)),
-          )
+          ),
       ],
     );
   }

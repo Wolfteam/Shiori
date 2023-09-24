@@ -151,16 +151,16 @@ class Injection {
     return DonationsBloc(purchaseService, networkService, telemetryService);
   }
 
-  static BannerHistoryBloc get bannerHistoryBloc {
+  static BannerHistoryCountBloc get bannerHistoryCountBloc {
     final genshinService = getIt<GenshinService>();
     final telemetryService = getIt<TelemetryService>();
-    return BannerHistoryBloc(genshinService, telemetryService);
+    return BannerHistoryCountBloc(genshinService, telemetryService);
   }
 
-  static BannerHistoryItemBloc get bannerHistoryItemBloc {
+  static BannerVersionHistoryBloc get bannerVersionHistory {
     final genshinService = getIt<GenshinService>();
     final telemetryService = getIt<TelemetryService>();
-    return BannerHistoryItemBloc(genshinService, telemetryService);
+    return BannerVersionHistoryBloc(genshinService, telemetryService);
   }
 
   static ItemReleaseHistoryBloc get itemReleaseHistoryBloc {
@@ -242,6 +242,30 @@ class Injection {
     final backupRestoreService = getIt<BackupRestoreService>();
     final telemetryService = getIt<TelemetryService>();
     return BackupRestoreBloc(backupRestoreService, telemetryService);
+  }
+
+  static WishSimulatorBloc get wishSimulatorBloc {
+    final telemetryService = getIt<TelemetryService>();
+    final genshinService = getIt<GenshinService>();
+    final resourceService = getIt<ResourceService>();
+    return WishSimulatorBloc(genshinService, resourceService, telemetryService);
+  }
+
+  static WishSimulatorResultBloc get wishSimulatorResultBloc {
+    final dataService = getIt<DataService>();
+    final telemetryService = getIt<TelemetryService>();
+    return WishSimulatorResultBloc(dataService, telemetryService);
+  }
+
+  static WishBannerHistoryBloc get wishBannerHistoryBloc {
+    final genshinService = getIt<GenshinService>();
+    return WishBannerHistoryBloc(genshinService);
+  }
+
+  static WishSimulatorPullHistoryBloc get wishSimulatorPullHistoryBloc {
+    final genshinService = getIt<GenshinService>();
+    final dataService = getIt<DataService>();
+    return WishSimulatorPullHistoryBloc(genshinService, dataService);
   }
 
   //TODO: USE THIS PROP

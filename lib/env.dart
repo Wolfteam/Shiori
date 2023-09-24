@@ -1,22 +1,25 @@
+import 'package:envied/envied.dart';
 import 'package:flutter/foundation.dart';
-import 'package:flutter_envify/flutter_envify.dart';
 
 part 'env.g.dart';
 
 class Env {
-  static const androidAppCenterKey = CommonEnv.androidAppCenterKey;
-  static const androidPurchasesKey = CommonEnv.androidPurchasesKey;
-  static const macosAppCenterKey = CommonEnv.macosAppCenterKey;
+  static const int minResourceVersion = 44;
 
-  static const iosPurchasesKey = CommonEnv.iosPurchasesKey;
-  static const iosAppCenterKey = CommonEnv.iosAppCenterKey;
+  static const String androidAppCenterKey = CommonEnv.androidAppCenterKey;
+  static const String androidPurchasesKey = CommonEnv.androidPurchasesKey;
 
-  static const commonHeaderName = CommonEnv.commonHeaderName;
-  static const apiHeaderName = CommonEnv.apiHeaderName;
+  static const String iosPurchasesKey = CommonEnv.iosPurchasesKey;
+  static const String iosAppCenterKey = CommonEnv.iosAppCenterKey;
 
-  static const publicKey = CommonEnv.publicKey;
-  static const privateKey = CommonEnv.privateKey;
-  static const letsEncryptKey = CommonEnv.letsEncryptKey;
+  static const String macosAppCenterKey = CommonEnv.macosAppCenterKey;
+
+  static const String commonHeaderName = CommonEnv.commonHeaderName;
+  static const String apiHeaderName = CommonEnv.apiHeaderName;
+
+  static const String publicKey = CommonEnv.publicKey;
+  static const String privateKey = CommonEnv.privateKey;
+  static const String letsEncryptKey = CommonEnv.letsEncryptKey;
 
   static const bool isReleaseMode = kReleaseMode;
 
@@ -27,33 +30,53 @@ class Env {
   static const String apiHeaderValue = isReleaseMode ? ProdEnv.apiHeaderValue : DevEnv.apiHeaderValue;
 }
 
-@Envify(path: '.env.dev')
+@Envied(path: '.env.dev', name: 'DevEnv')
 abstract class DevEnv {
-  static const apiBaseUrl = _DevEnv.apiBaseUrl;
-  static const assetsBaseUrl = _DevEnv.assetsBaseUrl;
-  static const apiHeaderValue = _DevEnv.apiHeaderValue;
+  @EnviedField(varName: 'API_BASE_URL')
+  static const String apiBaseUrl = _DevEnv.apiBaseUrl;
+
+  @EnviedField(varName: 'ASSETS_BASE_URL')
+  static const String assetsBaseUrl = _DevEnv.assetsBaseUrl;
+
+  @EnviedField(varName: 'API_HEADER_VALUE')
+  static const String apiHeaderValue = _DevEnv.apiHeaderValue;
 }
 
-@Envify(path: '.env.prod')
+@Envied(path: '.env.prod', name: 'ProdEnv')
 abstract class ProdEnv {
-  static const apiBaseUrl = _ProdEnv.apiBaseUrl;
-  static const assetsBaseUrl = _ProdEnv.assetsBaseUrl;
-  static const apiHeaderValue = _ProdEnv.apiHeaderValue;
+  @EnviedField(varName: 'API_BASE_URL')
+  static const String apiBaseUrl = _ProdEnv.apiBaseUrl;
+
+  @EnviedField(varName: 'ASSETS_BASE_URL')
+  static const String assetsBaseUrl = _ProdEnv.assetsBaseUrl;
+
+  @EnviedField(varName: 'API_HEADER_VALUE')
+  static const String apiHeaderValue = _ProdEnv.apiHeaderValue;
 }
 
-@Envify(path: '.env.common')
+@Envied(path: '.env.common', name: 'CommonEnv')
 abstract class CommonEnv {
-  static const androidAppCenterKey = _CommonEnv.androidAppCenterKey;
-  static const iosAppCenterKey = _CommonEnv.iosAppCenterKey;
-  static const macosAppCenterKey = _CommonEnv.macosAppCenterKey;
+  @EnviedField(varName: 'ANDROID_APP_CENTER_KEY')
+  static const String androidAppCenterKey = _CommonEnv.androidAppCenterKey;
+  @EnviedField(varName: 'IOS_APP_CENTER_KEY')
+  static const String iosAppCenterKey = _CommonEnv.iosAppCenterKey;
+  @EnviedField(varName: 'MACOS_APP_CENTER_KEY')
+  static const String macosAppCenterKey = _CommonEnv.macosAppCenterKey;
 
-  static const androidPurchasesKey = _CommonEnv.androidPurchasesKey;
-  static const iosPurchasesKey = _CommonEnv.iosPurchasesKey;
+  @EnviedField(varName: 'ANDROID_PURCHASES_KEY')
+  static const String androidPurchasesKey = _CommonEnv.androidPurchasesKey;
+  @EnviedField(varName: 'IOS_PURCHASES_KEY')
+  static const String iosPurchasesKey = _CommonEnv.iosPurchasesKey;
 
-  static const commonHeaderName = _CommonEnv.commonHeaderName;
-  static const apiHeaderName = _CommonEnv.apiHeaderName;
+  @EnviedField(varName: 'COMMON_HEADER_NAME')
+  static const String commonHeaderName = _CommonEnv.commonHeaderName;
+  @EnviedField(varName: 'API_HEADER_NAME')
+  static const String apiHeaderName = _CommonEnv.apiHeaderName;
 
-  static const publicKey = _CommonEnv.publicKey;
-  static const privateKey = _CommonEnv.privateKey;
-  static const letsEncryptKey = _CommonEnv.letsEncryptKey;
+  @EnviedField(varName: 'PUBLIC_KEY')
+  static const String publicKey = _CommonEnv.publicKey;
+  @EnviedField(varName: 'PRIVATE_KEY')
+  static const String privateKey = _CommonEnv.privateKey;
+  @EnviedField(varName: 'LETS_ENCRYPT_KEY')
+  static const String letsEncryptKey = _CommonEnv.letsEncryptKey;
 }

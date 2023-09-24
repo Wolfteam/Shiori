@@ -78,7 +78,7 @@ class _ChangeCurrentDayDialogState extends State<ChangeCurrentDayDialog> {
         ElevatedButton(
           onPressed: () => Navigator.pop<int>(context, currentSelectedDay),
           child: Text(s.ok),
-        )
+        ),
       ],
     );
   }

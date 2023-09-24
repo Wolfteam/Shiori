@@ -57,7 +57,7 @@ void main() {
             tempCharacterFilterType: CharacterFilterType.name,
             sortDirectionType: SortDirectionType.asc,
             tempSortDirectionType: SortDirectionType.asc,
-          )
+          ),
         ];
       },
     );
@@ -112,7 +112,7 @@ void main() {
             sortDirectionType: SortDirectionType.asc,
             tempSortDirectionType: SortDirectionType.asc,
             search: keqingSearch,
-          )
+          ),
         ];
       },
     );
@@ -139,7 +139,7 @@ void main() {
           sortDirectionType: SortDirectionType.asc,
           tempSortDirectionType: SortDirectionType.asc,
           search: 'Github',
-        )
+        ),
       ],
     );
   });
@@ -153,22 +153,14 @@ void main() {
         ..add(const CharactersEvent.searchChanged(search: keqingSearch))
         ..add(const CharactersEvent.rarityChanged(5))
         ..add(const CharactersEvent.characterFilterTypeChanged(CharacterFilterType.rarity))
-        ..add(const CharactersEvent.elementTypeChanged(ElementType.anemo))
-        ..add(const CharactersEvent.elementTypeChanged(ElementType.hydro))
-        ..add(const CharactersEvent.elementTypeChanged(ElementType.cryo))
-        ..add(const CharactersEvent.elementTypeChanged(ElementType.dendro))
-        ..add(const CharactersEvent.elementTypeChanged(ElementType.geo))
-        ..add(const CharactersEvent.elementTypeChanged(ElementType.pyro))
+        ..add(const CharactersEvent.elementTypeChanged(ElementType.electro))
         ..add(const CharactersEvent.itemStatusChanged(ItemStatusType.released))
         ..add(const CharactersEvent.regionTypeChanged(RegionType.liyue))
-        ..add(const CharactersEvent.weaponTypeChanged(WeaponType.claymore))
-        ..add(const CharactersEvent.weaponTypeChanged(WeaponType.bow))
-        ..add(const CharactersEvent.weaponTypeChanged(WeaponType.catalyst))
-        ..add(const CharactersEvent.weaponTypeChanged(WeaponType.polearm))
+        ..add(const CharactersEvent.weaponTypeChanged(WeaponType.sword))
         ..add(const CharactersEvent.roleTypeChanged(CharacterRoleType.dps))
         ..add(const CharactersEvent.sortDirectionTypeChanged(SortDirectionType.desc))
         ..add(const CharactersEvent.applyFilterChanges()),
-      skip: 18,
+      skip: 10,
       expect: () {
         final characters = genshinService.characters.getCharactersForCard().where((el) => el.key == keqingKey).toList();
         return [
@@ -192,7 +184,7 @@ void main() {
             tempStatusType: ItemStatusType.released,
             statusType: ItemStatusType.released,
             search: keqingSearch,
-          )
+          ),
         ];
       },
     );
@@ -205,19 +197,20 @@ void main() {
         ..add(const CharactersEvent.rarityChanged(5))
         ..add(const CharactersEvent.characterFilterTypeChanged(CharacterFilterType.rarity))
         ..add(const CharactersEvent.sortDirectionTypeChanged(SortDirectionType.desc))
+        ..add(const CharactersEvent.elementTypeChanged(ElementType.electro))
+        ..add(const CharactersEvent.applyFilterChanges())
         ..add(const CharactersEvent.elementTypeChanged(ElementType.anemo))
         ..add(const CharactersEvent.elementTypeChanged(ElementType.hydro))
         ..add(const CharactersEvent.elementTypeChanged(ElementType.cryo))
         ..add(const CharactersEvent.elementTypeChanged(ElementType.dendro))
         ..add(const CharactersEvent.elementTypeChanged(ElementType.geo))
         ..add(const CharactersEvent.elementTypeChanged(ElementType.pyro))
-        ..add(const CharactersEvent.applyFilterChanges())
         ..add(const CharactersEvent.itemStatusChanged(ItemStatusType.released))
         ..add(const CharactersEvent.regionTypeChanged(RegionType.liyue))
         ..add(const CharactersEvent.weaponTypeChanged(WeaponType.sword))
         ..add(const CharactersEvent.roleTypeChanged(CharacterRoleType.dps))
         ..add(const CharactersEvent.cancelChanges()),
-      skip: 15,
+      skip: 16,
       expect: () {
         final characters =
             genshinService.characters.getCharactersForCard().where((el) => el.elementType == ElementType.electro && el.stars == 5).toList();
@@ -235,7 +228,7 @@ void main() {
             tempCharacterFilterType: CharacterFilterType.rarity,
             sortDirectionType: SortDirectionType.desc,
             tempSortDirectionType: SortDirectionType.desc,
-          )
+          ),
         ];
       },
     );
@@ -272,7 +265,7 @@ void main() {
             tempCharacterFilterType: CharacterFilterType.name,
             sortDirectionType: SortDirectionType.asc,
             tempSortDirectionType: SortDirectionType.asc,
-          )
+          ),
         ];
       },
     );

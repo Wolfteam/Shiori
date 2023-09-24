@@ -23,4 +23,6 @@ abstract class WeaponFileService extends BaseFileService {
   List<ItemCommonWithName> getItemCommonWithNameByRarity(int rarity);
 
   List<ItemCommonWithName> getItemCommonWithNameByStatType(StatType statType);
+
+  List<ItemCommonWithName> getItemCommonWithName();
 }

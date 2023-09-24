@@ -14,7 +14,7 @@ abstract class TelemetryService {
 
   Future<void> trackAscensionMaterialsOpened();
 
-  Future<void> trackUrlOpened(bool loadMap, bool loadWishSimulator, bool loadDailyCheckIn, bool networkAvailable);
+  Future<void> trackUrlOpened(bool loadMap, bool loadDailyCheckIn, bool networkAvailable);
 
   Future<void> trackCalculatorItemAscMaterialLoaded(String item);
 
@@ -78,7 +78,11 @@ abstract class TelemetryService {
 
   Future<void> trackResourceUpdateCompleted(bool applied, int targetResourceVersion);
 
-  Future<void> backupCreated(bool succeed);
+  Future<void> trackBackupCreated(bool succeed);
 
-  Future<void> backupRestored(bool succeed);
+  Future<void> trackBackupRestored(bool succeed);
+
+  Future<void> trackWishSimulatorOpened(double version);
+
+  Future<void> trackWishSimulatorResult(int bannerIndex, double version, BannerItemType type, String range);
 }

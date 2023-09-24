@@ -541,34 +541,24 @@ extension I18nExtensions on S {
     switch (type) {
       case RealmRankType.bareBones:
         translation = bareBones;
-        break;
       case RealmRankType.humbleAbode:
         translation = humbleAbode;
-        break;
       case RealmRankType.cozy:
         translation = cozy;
-        break;
       case RealmRankType.queenSize:
         translation = queenSize;
-        break;
       case RealmRankType.elegant:
         translation = elegant;
-        break;
       case RealmRankType.exquisite:
         translation = exquisite;
-        break;
       case RealmRankType.extraordinary:
         translation = extraordinary;
-        break;
       case RealmRankType.stately:
         translation = stately;
-        break;
       case RealmRankType.luxury:
         translation = luxury;
-        break;
       case RealmRankType.fitForAKing:
         translation = fitForAKing;
-        break;
       default:
         throw Exception('Invalid realm rank type = $type');
     }
@@ -686,6 +676,36 @@ extension I18nExtensions on S {
         return gameCodes;
       case AppBackupDataType.notifications:
         return notifications;
+      case AppBackupDataType.wishSimulator:
+        return wishSimulator;
     }
+  }
+
+  String translateWishBannerGroupedType(WishBannerGroupedType type) {
+    switch (type) {
+      case WishBannerGroupedType.version:
+        return versions;
+      case WishBannerGroupedType.character:
+        return characters;
+      case WishBannerGroupedType.weapon:
+        return weapons;
+    }
+  }
+
+  String translateBannerItemType(BannerItemType type) {
+    return switch (type) {
+      BannerItemType.character => characterEventWish,
+      BannerItemType.weapon => weaponEventWish,
+      BannerItemType.standard => standardEventWish,
+    };
+  }
+
+  String translateItemType(ItemType type) {
+    return switch (type) {
+      ItemType.character => character,
+      ItemType.weapon => weapon,
+      ItemType.artifact => artifact,
+      ItemType.material => material,
+    };
   }
 }

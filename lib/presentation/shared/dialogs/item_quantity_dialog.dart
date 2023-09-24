@@ -88,7 +88,7 @@ class _BodyState extends State<_Body> {
             onPressed: state.isQuantityValid ? _onSave : null,
             child: Text(s.save),
           ),
-        )
+        ),
       ],
     );
   }
