@@ -8,6 +8,7 @@ class CharacterCardModel with _$CharacterCardModel {
   const factory CharacterCardModel({
     required String key,
     required String image,
+    required String iconImage,
     required String name,
     required int stars,
     required WeaponType weaponType,

@@ -479,5 +479,18 @@
   "checkForUpdatesOnStartup": "起動時にアップデートを確認する",
   "deleteAllData": "すべてのユーザーデータを削除する",
   "deleteAllDataWarningMsg": "すべてのデータを削除し、設定をリセットします。",
-  "deletingAllDataMsg": "すべてのユーザーデータを削除中..."
+  "deletingAllDataMsg": "すべてのユーザーデータを削除中...",
+  "groupBy": "Group by",
+  "wishXQuantity": "Wish x{quantity}",
+  "characterEventWish": "Character Event Wish",
+  "weaponEventWish": "Weapon Event Wish",
+  "standardEventWish": "Standard Event Wish",
+  "wishHistory": "History",
+  "wishHistoryItemType": "Item type",
+  "wishHistoryItemName": "Item name",
+  "wishHistoryTimeReceived": "Time received",
+  "wishHistoryXStar": "{stars}-Star",
+  "artifact": "Artifact",
+  "material": "Material",
+  "close": "Close"
 }

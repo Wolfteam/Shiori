@@ -101,6 +101,11 @@ class WeaponFileServiceImpl extends WeaponFileService {
     }).toList();
   }
 
+  @override
+  List<ItemCommonWithName> getItemCommonWithName() {
+    return getWeaponsForCard().map((e) => ItemCommonWithName(e.key, e.image, e.name)).toList();
+  }
+
   WeaponCardModel _toWeaponForCard(WeaponFileModel weapon) {
     final translation = _translations.getWeaponTranslation(weapon.key);
     return WeaponCardModel(

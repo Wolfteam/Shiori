@@ -479,5 +479,18 @@
   "checkForUpdatesOnStartup": "Comprobar actualizaciones al inicio",
   "deleteAllData": "Borrar toda la data del usuario",
   "deleteAllDataWarningMsg": "Esto borrará toda tu data y restaurará tu configuración",
-  "deletingAllDataMsg": "Borrando toda la data del usuario..."
+  "deletingAllDataMsg": "Borrando toda la data del usuario...",
+  "groupBy": "Agrupar por",
+  "wishXQuantity": "Pedir {quantity} deseo(s)",
+  "characterEventWish": "Gachapón Promocional de Personaje",
+  "weaponEventWish": "Gachapón Promocional de Arma",
+  "standardEventWish": "Gachapón Permanente",
+  "wishHistory": "Historial",
+  "wishHistoryItemType": "Tipo",
+  "wishHistoryItemName": "Nombre",
+  "wishHistoryTimeReceived": "Fecha de canje",
+  "wishHistoryXStar": "{stars}-★",
+  "artifact": "Artefacto",
+  "material": "Material",
+  "close": "Cerrar"
 }

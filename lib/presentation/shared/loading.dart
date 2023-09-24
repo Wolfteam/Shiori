@@ -31,7 +31,7 @@ class Loading extends StatelessWidget {
         if (showCloseButton)
           IconButton.filled(
             onPressed: () => Navigator.pop(context),
-            icon: Icon(Icons.arrow_back, color: Theme.of(context).colorScheme.primary),
+            icon: Icon(Icons.close, color: Theme.of(context).colorScheme.primary),
             splashRadius: Styles.mediumButtonSplashRadius,
           ),
       ],

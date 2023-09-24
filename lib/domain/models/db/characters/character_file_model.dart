@@ -16,6 +16,7 @@ class CharacterFileModel with _$CharacterFileModel {
     required String image,
     required String fullImage,
     String? secondFullImage,
+    required String iconImage,
     required RegionType region,
     required bool isFemale,
     required bool isComingSoon,

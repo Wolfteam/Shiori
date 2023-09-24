@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'dart:math';
 
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
@@ -9,6 +10,7 @@ import 'package:shiori/domain/services/backup_restore_service.dart';
 import 'package:shiori/domain/services/data_service.dart';
 import 'package:shiori/domain/services/notification_service.dart';
 import 'package:shiori/domain/services/settings_service.dart';
+import 'package:shiori/domain/wish_banner_constants.dart';
 import 'package:shiori/infrastructure/infrastructure.dart';
 
 import '../common.dart';
@@ -315,6 +317,41 @@ void main() {
     ],
   );
 
+  final rarities = [
+    for (int i = WishBannerConstants.minObtainableRarity; i < WishBannerConstants.maxObtainableRarity + 1; i++) i,
+  ];
+  final wishSimulatorRandom = Random();
+  final wishSimulatorData = BackupWishSimulatorModel(
+    pullHistory: BannerItemType.values
+        .map(
+          (e) => BackupWishSimulatorBannerPullHistory(
+            type: e,
+            currentXStarCount: {
+              for (final rarity in rarities)
+                rarity: rarity == WishBannerConstants.maxObtainableRarity
+                    ? wishSimulatorRandom.nextInt(e == BannerItemType.character ? 90 : 80)
+                    : rarity == WishBannerConstants.maxObtainableRarity - 1
+                        ? wishSimulatorRandom.nextInt(10)
+                        : 0
+            },
+            fiftyFiftyXStarGuaranteed: {
+              for (final rarity in rarities) rarity: wishSimulatorRandom.nextBool(),
+            },
+          ),
+        )
+        .toList(),
+    itemPullHistory: Iterable.generate(1000, (val) => val)
+        .map(
+          (e) => BackupWishSimulatorBannerItemPullHistory(
+            bannerType: BannerItemType.values[wishSimulatorRandom.nextInt(BannerItemType.values.length)],
+            itemKey: '$e-item-key',
+            itemType: wishSimulatorRandom.nextBool() ? ItemType.character : ItemType.weapon,
+            pulledOn: DateTime.now().subtract(Duration(days: e)).toUtc(),
+          ),
+        )
+        .toList(),
+  );
+
   setUpAll(() {
     TestWidgetsFlutterBinding.ensureInitialized();
     return Future(() async {
@@ -546,6 +583,19 @@ void main() {
     checkNotification(got, expected);
   }
 
+  void checkWishSimulatorPullHistory(BackupWishSimulatorBannerPullHistory got, BackupWishSimulatorBannerPullHistory expected) {
+    expect(got.type, expected.type);
+    expect(got.currentXStarCount, expected.currentXStarCount);
+    expect(got.fiftyFiftyXStarGuaranteed, expected.fiftyFiftyXStarGuaranteed);
+  }
+
+  void checkWishSimualtorItemPullHistory(BackupWishSimulatorBannerItemPullHistory got, BackupWishSimulatorBannerItemPullHistory expected) {
+    expect(got.bannerType, expected.bannerType);
+    expect(got.itemKey, expected.itemKey);
+    expect(got.itemType, expected.itemType);
+    expect(got.pulledOn, expected.pulledOn);
+  }
+
   DataService getMockedDataService(List<AppBackupDataType> dataTypes) {
     final dataService = MockDataService();
 
@@ -577,6 +627,10 @@ void main() {
           final notificationsMock = MockNotificationsDataService();
           when(notificationsMock.getDataForBackup()).thenReturn(notificationsData);
           when(dataService.notifications).thenReturn(notificationsMock);
+        case AppBackupDataType.wishSimulator:
+          final wishSimulatorMock = MockWishSimulatorDataService();
+          when(wishSimulatorMock.getDataForBackup()).thenAnswer((_) => Future.value(wishSimulatorData));
+          when(dataService.wishSimulator).thenReturn(wishSimulatorMock);
       }
     }
     return dataService;
@@ -718,6 +772,18 @@ void main() {
         final item = bk.notifications!.weeklyBosses[i];
         checkWeeklyBossNotification(item, notificationsData.weeklyBosses[i]);
       }
+
+      expect(bk.wishSimulator!.pullHistory.length, wishSimulatorData.pullHistory.length);
+      for (var i = 0; i < bk.wishSimulator!.pullHistory.length; i++) {
+        final item = bk.wishSimulator!.pullHistory[i];
+        checkWishSimulatorPullHistory(item, wishSimulatorData.pullHistory[i]);
+      }
+
+      expect(bk.wishSimulator!.itemPullHistory.length, wishSimulatorData.itemPullHistory.length);
+      for (var i = 0; i < bk.wishSimulator!.itemPullHistory.length; i++) {
+        final item = bk.wishSimulator!.itemPullHistory[i];
+        checkWishSimualtorItemPullHistory(item, wishSimulatorData.itemPullHistory[i]);
+      }
     });
   });
 
@@ -794,6 +860,7 @@ void main() {
         inventory: inventoryData,
         tierList: tierListData,
         gameCodes: gameCodesData,
+        wishSimulator: wishSimulatorData,
       );
 
       final settingsService = MockSettingsService();
@@ -810,6 +877,9 @@ void main() {
       when(dataServiceMock.gameCodes).thenReturn(gameCodes);
       final notifications = MockNotificationsDataService();
       when(dataServiceMock.notifications).thenReturn(notifications);
+      final wishSimulator = MockWishSimulatorDataService();
+      when(dataServiceMock.wishSimulator).thenReturn(wishSimulator);
+
       final notificationService = MockNotificationService();
 
       final service = getService(settings, dataService: dataServiceMock, settingsService: settingsService, notificationService: notificationService);

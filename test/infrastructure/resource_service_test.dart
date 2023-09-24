@@ -8,6 +8,7 @@ import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/models/dtos.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/resources_service.dart';
+import 'package:shiori/env.dart';
 import 'package:shiori/infrastructure/infrastructure.dart';
 
 import '../common.dart';
@@ -162,6 +163,7 @@ void main() {
       final settingsService = MockSettingsService();
       when(settingsService.lastResourcesCheckedDate).thenReturn(null);
       when(settingsService.noResourcesHasBeenDownloaded).thenReturn(noResourcesHasBeenDownloaded);
+      when(settingsService.resourceVersion).thenReturn(currentResourceVersion);
 
       final networkService = MockNetworkService();
       when(networkService.isInternetAvailable()).thenAnswer((_) => Future.value(isInternetAvailable));
@@ -178,26 +180,36 @@ void main() {
     });
 
     test('no updates available because not enough time has passed', () async {
+      const version = Env.minResourceVersion;
       final settingsService = MockSettingsService();
       when(settingsService.noResourcesHasBeenDownloaded).thenReturn(false);
       when(settingsService.lastResourcesCheckedDate).thenReturn(DateTime.now());
+      when(settingsService.resourceVersion).thenReturn(version);
 
       final service = ResourceServiceImpl(MockLoggingService(), settingsService, MockNetworkService(), MockApiService());
 
-      final result = await service.checkForUpdates('1.0.0', -1);
-      checkEmptyUpdateResult(AppResourceUpdateResultType.noUpdatesAvailable, -1, result);
+      final result = await service.checkForUpdates('1.0.0', version);
+      checkEmptyUpdateResult(AppResourceUpdateResultType.noUpdatesAvailable, version, result);
     });
 
     test('no internet connection', () async {
-      final service = getService(currentResourceVersion: 1, noResourcesHasBeenDownloaded: false);
-      final result = await service.checkForUpdates('1.0.0', 1);
-      checkEmptyUpdateResult(AppResourceUpdateResultType.noInternetConnection, 1, result);
+      const version = Env.minResourceVersion;
+      final service = getService(currentResourceVersion: version, noResourcesHasBeenDownloaded: false);
+      final result = await service.checkForUpdates('1.0.0', version);
+      checkEmptyUpdateResult(AppResourceUpdateResultType.noInternetConnection, version, result);
     });
 
     test('no internet connection on first install', () async {
       final service = getService();
       final result = await service.checkForUpdates('1.0.0', -1);
       checkEmptyUpdateResult(AppResourceUpdateResultType.noInternetConnectionForFirstInstall, -1, result);
+    });
+
+    test('no internet connection and current resource version is less than the min', () async {
+      const version = Env.minResourceVersion - 1;
+      final service = getService(currentResourceVersion: version, noResourcesHasBeenDownloaded: false);
+      final result = await service.checkForUpdates('1.0.0', version);
+      checkEmptyUpdateResult(AppResourceUpdateResultType.noInternetConnectionForFirstInstall, version, result);
     });
 
     test('api returns that there is a new app version', () async {
@@ -319,20 +331,22 @@ void main() {
     test('last resources checked date is not updated', () async {
       final settingsService = MockSettingsService();
       final now = DateTime.now().subtract(const Duration(days: 7));
+      const version = -1;
       when(settingsService.lastResourcesCheckedDate).thenReturn(now);
       when(settingsService.noResourcesHasBeenDownloaded).thenReturn(false);
+      when(settingsService.resourceVersion).thenReturn(version);
       final networkService = MockNetworkService();
       when(networkService.isInternetAvailable()).thenAnswer((_) => Future.value(true));
       final apiService = MockApiService();
-      when(apiService.checkForUpdates('1.0.0', -1)).thenAnswer(
+      when(apiService.checkForUpdates('1.0.0', version)).thenAnswer(
         (_) => Future.value(
           ApiResponseDto<ResourceDiffResponseDto?>(succeed: true, messageId: '4'),
         ),
       );
 
       final service = ResourceServiceImpl(MockLoggingService(), settingsService, networkService, apiService);
-      await service.checkForUpdates('1.0.0', -1, updateResourceCheckedDate: false);
-      await service.checkForUpdates('1.0.0', -1, updateResourceCheckedDate: false);
+      await service.checkForUpdates('1.0.0', version, updateResourceCheckedDate: false);
+      await service.checkForUpdates('1.0.0', version, updateResourceCheckedDate: false);
       expect(settingsService.lastResourcesCheckedDate == now, isTrue);
     });
   });

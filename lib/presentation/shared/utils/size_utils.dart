@@ -5,7 +5,7 @@ import 'package:responsive_builder/responsive_builder.dart';
 
 class SizeUtils {
   static double minWidthOnDesktop = 700;
-  static double minHeightOnDesktop = 500;
+  static double minHeightOnDesktop = 700;
   static Size minSizeOnDesktop = Size(minWidthOnDesktop, minHeightOnDesktop);
 
   static int getCrossAxisCountForGrids(

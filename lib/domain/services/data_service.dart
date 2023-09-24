@@ -7,6 +7,7 @@ import 'package:shiori/domain/services/persistence/game_codes_data_service.dart'
 import 'package:shiori/domain/services/persistence/inventory_data_service.dart';
 import 'package:shiori/domain/services/persistence/notifications_data_service.dart';
 import 'package:shiori/domain/services/persistence/tier_list_data_service.dart';
+import 'package:shiori/domain/services/persistence/wish_simulator_data_service.dart';
 
 abstract class DataService {
   CalculatorDataService get calculator;
@@ -20,6 +21,8 @@ abstract class DataService {
   GameCodesDataService get gameCodes;
 
   TierListDataService get tierList;
+
+  WishSimulatorDataService get wishSimulator;
 
   Future<void> init({String dir = 'shiori_data'});
 

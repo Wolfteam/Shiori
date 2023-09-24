@@ -6,4 +6,5 @@ enum AppBackupDataType {
   customBuilds,
   gameCodes,
   notifications,
+  wishSimulator,
 }

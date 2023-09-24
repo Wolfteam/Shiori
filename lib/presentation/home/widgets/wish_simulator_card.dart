@@ -29,7 +29,7 @@ class WishSimulatorCard extends StatelessWidget {
   }
 
   Future<void> _gotoWishSimulatorPage(BuildContext context) async {
-    final route = MaterialPageRoute(fullscreenDialog: true, builder: (c) => WishSimulatorPage());
+    final route = MaterialPageRoute(builder: (c) => WishSimulatorPage());
     await Navigator.push(context, route);
     await route.completed;
   }

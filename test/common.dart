@@ -12,6 +12,7 @@ import 'package:shiori/domain/services/file/file_infrastructure.dart';
 import 'package:shiori/domain/services/locale_service.dart';
 import 'package:shiori/domain/services/resources_service.dart';
 import 'package:shiori/domain/services/settings_service.dart';
+import 'package:shiori/domain/wish_banner_constants.dart';
 import 'package:shiori/infrastructure/infrastructure.dart';
 
 import 'mocks.mocks.dart';
@@ -119,6 +120,17 @@ void checkItemKeyAndImage(String key, String image) {
 void checkItemKeyNameAndImage(String key, String name, String image) {
   checkItemKeyAndImage(key, image);
   checkTranslation(name, canBeNull: false);
+}
+
+void checkItemKeyAndName(String key, String name) {
+  checkKey(key);
+  checkTranslation(name, canBeNull: false);
+}
+
+void checkBannerRarity(int rarity, {int? min, int? max}) {
+  final minRarity = min ?? WishBannerConstants.minObtainableRarity;
+  final maxRarity = max ?? WishBannerConstants.maxObtainableRarity;
+  expect(rarity >= minRarity && rarity <= maxRarity, isTrue);
 }
 
 void checkItemAscensionMaterialFileModel(MaterialFileService materialFileService, List<ItemAscensionMaterialFileModel> all) {

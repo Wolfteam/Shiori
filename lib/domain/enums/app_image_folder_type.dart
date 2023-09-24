@@ -8,4 +8,6 @@ enum AppImageFolderType {
   monsters,
   skills,
   weapons,
+  wishBannerHistory,
+  charactersIcon,
 }

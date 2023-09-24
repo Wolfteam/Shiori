@@ -55,15 +55,13 @@ class TelemetryServiceImpl implements TelemetryService {
   }
 
   @override
-  Future<void> trackUrlOpened(bool loadMap, bool loadWishSimulator, bool loadDailyCheckIn, bool networkAvailable) async {
+  Future<void> trackUrlOpened(bool loadMap, bool loadDailyCheckIn, bool networkAvailable) async {
     final props = {
       'NetworkAvailable': networkAvailable.toString(),
     };
 
     if (loadMap) {
       await trackEventAsync('Map-Opened', props);
-    } else if (loadWishSimulator) {
-      await trackEventAsync('WishSimulator-Opened', props);
     } else if (loadDailyCheckIn) {
       await trackEventAsync('DailyCheckIn-Opened', props);
     }
@@ -203,8 +201,22 @@ class TelemetryServiceImpl implements TelemetryService {
       );
 
   @override
-  Future<void> backupCreated(bool succeed) => trackEventAsync('Backup-Created', {'Succeed': '$succeed'});
+  Future<void> trackBackupCreated(bool succeed) => trackEventAsync('Backup-Created', {'Succeed': '$succeed'});
 
   @override
-  Future<void> backupRestored(bool succeed) => trackEventAsync('Backup-Restored', {'Succeed': '$succeed'});
+  Future<void> trackBackupRestored(bool succeed) => trackEventAsync('Backup-Restored', {'Succeed': '$succeed'});
+
+  @override
+  Future<void> trackWishSimulatorOpened(double version) => trackEventAsync('WishSimulator-Opened', {'Version': '$version'});
+
+  @override
+  Future<void> trackWishSimulatorResult(int bannerIndex, double version, BannerItemType type, String range) => trackEventAsync(
+        'WishSimulator-Opened',
+        {
+          'Index': '$bannerIndex',
+          'Version': '$version',
+          'Type': type.name,
+          'Range': range,
+        },
+      );
 }

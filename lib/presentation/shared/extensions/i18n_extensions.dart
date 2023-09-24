@@ -676,6 +676,36 @@ extension I18nExtensions on S {
         return gameCodes;
       case AppBackupDataType.notifications:
         return notifications;
+      case AppBackupDataType.wishSimulator:
+        return wishSimulator;
     }
+  }
+
+  String translateWishBannerGroupedType(WishBannerGroupedType type) {
+    switch (type) {
+      case WishBannerGroupedType.version:
+        return versions;
+      case WishBannerGroupedType.character:
+        return characters;
+      case WishBannerGroupedType.weapon:
+        return weapons;
+    }
+  }
+
+  String translateBannerItemType(BannerItemType type) {
+    return switch (type) {
+      BannerItemType.character => characterEventWish,
+      BannerItemType.weapon => weaponEventWish,
+      BannerItemType.standard => standardEventWish,
+    };
+  }
+
+  String translateItemType(ItemType type) {
+    return switch (type) {
+      ItemType.character => character,
+      ItemType.weapon => weapon,
+      ItemType.artifact => artifact,
+      ItemType.material => material,
+    };
   }
 }

@@ -40,7 +40,7 @@ class DailyCheckInPage extends StatelessWidget {
     final s = S.of(context);
     return SafeArea(
       child: BlocProvider(
-        create: (ctx) => Injection.urlPageBloc..add(const UrlPageEvent.init(loadMap: false, loadWishSimulator: false, loadDailyCheckIn: true)),
+        create: (ctx) => Injection.urlPageBloc..add(const UrlPageEvent.init(loadMap: false, loadDailyCheckIn: true)),
         child: BlocBuilder<UrlPageBloc, UrlPageState>(
           builder: (context, state) {
             return state.map(
