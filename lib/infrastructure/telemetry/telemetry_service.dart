@@ -211,9 +211,9 @@ class TelemetryServiceImpl implements TelemetryService {
 
   @override
   Future<void> trackWishSimulatorResult(int bannerIndex, double version, BannerItemType type, String range) => trackEventAsync(
-        'WishSimulator-Opened',
+        'WishSimulator-Result',
         {
-          'Index': '$bannerIndex',
+          'Summary': '$version / ${type.name} / $bannerIndex',
           'Version': '$version',
           'Type': type.name,
           'Range': range,
