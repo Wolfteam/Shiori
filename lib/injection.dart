@@ -6,7 +6,6 @@ import 'package:shiori/domain/services/calculator_service.dart';
 import 'package:shiori/domain/services/changelog_provider.dart';
 import 'package:shiori/domain/services/data_service.dart';
 import 'package:shiori/domain/services/device_info_service.dart';
-import 'package:shiori/domain/services/game_code_service.dart';
 import 'package:shiori/domain/services/genshin_service.dart';
 import 'package:shiori/domain/services/locale_service.dart';
 import 'package:shiori/domain/services/logging_service.dart';
@@ -38,9 +37,10 @@ class Injection {
   static GameCodesBloc get gameCodesBloc {
     final dataService = getIt<DataService>();
     final telemetryService = getIt<TelemetryService>();
-    final gameCodeService = getIt<GameCodeService>();
     final networkService = getIt<NetworkService>();
-    return GameCodesBloc(dataService, telemetryService, gameCodeService, networkService);
+    final apiService = getIt<ApiService>();
+    final genshinService = getIt<GenshinService>();
+    return GameCodesBloc(dataService, telemetryService, apiService, networkService, genshinService);
   }
 
   static ItemQuantityFormBloc get itemQuantityFormBloc {
@@ -359,8 +359,6 @@ class Injection {
     final dataService = DataServiceImpl(getIt<GenshinService>(), getIt<CalculatorService>(), getIt<ResourceService>());
     await dataService.init();
     getIt.registerSingleton<DataService>(dataService);
-
-    getIt.registerSingleton<GameCodeService>(GameCodeServiceImpl(getIt<LoggingService>(), getIt<GenshinService>()));
 
     final notificationService = NotificationServiceImpl(loggingService);
     await notificationService.init();
