@@ -3,7 +3,6 @@ export 'package:shiori/infrastructure/backup_restore_service.dart';
 export 'package:shiori/infrastructure/calculator_service.dart';
 export 'package:shiori/infrastructure/changelog_provider.dart';
 export 'package:shiori/infrastructure/device_info_service.dart';
-export 'package:shiori/infrastructure/game_codes_service.dart';
 export 'package:shiori/infrastructure/genshin_service.dart';
 export 'package:shiori/infrastructure/locale_service.dart';
 export 'package:shiori/infrastructure/logging_service.dart';

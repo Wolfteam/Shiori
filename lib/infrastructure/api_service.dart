@@ -121,6 +121,28 @@ class ApiServiceImpl implements ApiService {
     }
   }
 
+  @override
+  Future<ApiListResponseDto<GameCodeResponseDto>> getGameCodes() async {
+    try {
+      const url = '${Env.apiBaseUrl}/api/gamecodes';
+      final response = await _httpClient.get(Uri.parse(url), headers: _getApiHeaders());
+      if (!_isSuccessStatusCode(response.statusCode)) {
+        _loggingService.warning(
+          runtimeType,
+          'getGameCodes: Got status code = ${response.statusCode}. Body = ${response.body}',
+        );
+        return ApiListResponseDto(succeed: false, message: 'Invalid status code = ${response.statusCode}', result: []);
+      }
+
+      final json = jsonDecode(response.body) as Map<String, dynamic>;
+      final apiResponse = ApiListResponseDto.fromJson(json, (data) => GameCodeResponseDto.fromJson(data! as Map<String, dynamic>));
+      return apiResponse;
+    } catch (e, s) {
+      _handleError('getGameCodes', e, s);
+      rethrow;
+    }
+  }
+
   Map<String, String> _getApiHeaders() {
     final headers = {Env.apiHeaderName: Env.apiHeaderValue};
     headers.addAll(_getCommonApiHeaders());
