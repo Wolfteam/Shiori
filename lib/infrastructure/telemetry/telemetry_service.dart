@@ -31,7 +31,11 @@ class TelemetryServiceImpl implements TelemetryService {
   Future<void> trackEventAsync(String name, [Map<String, String>? properties]) {
     properties ??= {};
     properties.addAll(_deviceInfoService.deviceInfo);
-    return AppCenter.trackEventAsync(name, properties);
+
+    if (_deviceInfoService.installedFromValidSource) {
+      return AppCenter.trackEventAsync(name, properties);
+    }
+    return Future.value();
   }
 
   @override
