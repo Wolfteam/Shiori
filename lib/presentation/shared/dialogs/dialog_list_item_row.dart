@@ -28,7 +28,7 @@ class DialogListItemRow extends StatelessWidget {
     required ItemType itemType,
     required ItemCommonWithName item,
     RowEndWidget? getRightWidget,
-  }) : this(key: key, itemType: itemType, itemKey: item.key, image: item.image, name: item.name, getRowEndWidget: getRightWidget);
+  }) : this(key: key, itemType: itemType, itemKey: item.key, image: item.iconImage, name: item.name, getRowEndWidget: getRightWidget);
 
   @override
   Widget build(BuildContext context) {

@@ -7,18 +7,20 @@ abstract class ItemCommonBase {
   String get key;
 
   String get image;
+
+  String get iconImage;
 }
 
 @freezed
 class ItemCommon with _$ItemCommon {
   @Implements<ItemCommonBase>()
-  const factory ItemCommon(String key, String image) = _ItemCommon;
+  const factory ItemCommon(String key, String image, String iconImage) = _ItemCommon;
 }
 
 @freezed
 class ItemCommonWithQuantity with _$ItemCommonWithQuantity {
   @Implements<ItemCommonBase>()
-  const factory ItemCommonWithQuantity(String key, String image, int quantity) = _ItemCommonWithQuantity;
+  const factory ItemCommonWithQuantity(String key, String image, String iconImage, int quantity) = _ItemCommonWithQuantity;
 }
 
 @freezed
@@ -32,6 +34,7 @@ class ItemCommonWithRarityAndType with _$ItemCommonWithRarityAndType {
   const factory ItemCommonWithRarityAndType(
     String key,
     String image,
+    String iconImage,
     int rarity,
     ItemType type,
   ) = _ItemCommonWithRarityAndType;
@@ -40,7 +43,7 @@ class ItemCommonWithRarityAndType with _$ItemCommonWithRarityAndType {
 @freezed
 class ItemCommonWithName with _$ItemCommonWithName {
   @Implements<ItemCommonBase>()
-  const factory ItemCommonWithName(String key, String image, String name) = _ItemCommonWithName;
+  const factory ItemCommonWithName(String key, String image, String iconImage, String name) = _ItemCommonWithName;
 }
 
 @freezed

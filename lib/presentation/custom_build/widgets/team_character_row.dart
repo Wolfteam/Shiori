@@ -39,7 +39,7 @@ class TeamCharacterRow extends StatelessWidget {
       children: [
         CircleCharacter(
           itemKey: character.key,
-          image: character.image,
+          image: character.iconImage,
           radius: 55,
         ),
         Expanded(

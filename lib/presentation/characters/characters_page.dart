@@ -60,25 +60,42 @@ class _CharactersPageState extends State<CharactersPage> with AutomaticKeepAlive
                   .then((_) => context.read<CharactersBloc>().add(const CharactersEvent.cancelChanges())),
               searchChanged: (v) => context.read<CharactersBloc>().add(CharactersEvent.searchChanged(search: v)),
             ),
-            if (state.characters.isNotEmpty) _buildGrid(state.characters, context) else const SliverNothingFound(),
+            _GridContent(
+              characters: state.characters,
+              isInSelectionMode: widget.isInSelectionMode,
+            ),
           ],
         ),
       ),
     );
   }
+}
 
-  Widget _buildGrid(List<CharacterCardModel> characters, BuildContext context) {
+class _GridContent extends StatelessWidget {
+  final List<CharacterCardModel> characters;
+  final bool isInSelectionMode;
+
+  const _GridContent({
+    required this.characters,
+    required this.isInSelectionMode,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    if (characters.isEmpty) {
+      return const SliverNothingFound();
+    }
     final isPortrait = MediaQuery.of(context).orientation == Orientation.portrait;
     return SliverPadding(
       padding: const EdgeInsets.symmetric(horizontal: 5),
       sliver: SliverWaterfallFlow(
         gridDelegate: SliverWaterfallFlowDelegateWithFixedCrossAxisCount(
-          crossAxisCount: SizeUtils.getCrossAxisCountForGrids(context, isOnMainPage: !widget.isInSelectionMode),
+          crossAxisCount: SizeUtils.getCrossAxisCountForGrids(context, isOnMainPage: !isInSelectionMode),
           crossAxisSpacing: isPortrait ? 10 : 5,
           mainAxisSpacing: 5,
         ),
         delegate: SliverChildBuilderDelegate(
-          (context, index) => CharacterCard.item(char: characters[index], isInSelectionMode: widget.isInSelectionMode),
+          (context, index) => CharacterCard.item(char: characters[index], isInSelectionMode: isInSelectionMode),
           childCount: characters.length,
         ),
       ),

@@ -12,7 +12,7 @@ class ItemCommonWithNameAppBarSearchDelegate extends SearchDelegate<List<String>
   ItemCommonWithNameAppBarSearchDelegate.withNameOnly({
     required List<ItemCommonWithNameOnly> itemsWithNameOnly,
     required this.selected,
-  }) : items = itemsWithNameOnly.map((e) => ItemCommonWithName(e.key, '', e.name)).toList();
+  }) : items = itemsWithNameOnly.map((e) => ItemCommonWithName(e.key, '', '', e.name)).toList();
 
   @override
   List<Widget> buildActions(BuildContext context) => [

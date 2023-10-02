@@ -61,6 +61,7 @@ class BannerHistoryFileServiceImpl extends BannerHistoryFileService {
               final item = BannerHistoryItemModel(
                 versions: [],
                 image: char.image,
+                iconImage: char.iconImage,
                 name: char.name,
                 key: key,
                 type: banner.type,
@@ -74,6 +75,7 @@ class BannerHistoryFileServiceImpl extends BannerHistoryFileService {
               final bannerItem = BannerHistoryItemModel(
                 versions: [],
                 image: weapon.image,
+                iconImage: weapon.image,
                 name: weapon.name,
                 key: key,
                 type: banner.type,
@@ -119,6 +121,7 @@ class BannerHistoryFileServiceImpl extends BannerHistoryFileService {
             version: e.version,
             items: e.itemKeys.map((key) {
               String? imagePath;
+              String? iconImagePath;
               int? rarity;
               ItemType? type;
               switch (e.type) {
@@ -126,16 +129,17 @@ class BannerHistoryFileServiceImpl extends BannerHistoryFileService {
                   final character = _characters.getCharacter(key);
                   rarity = character.rarity;
                   imagePath = _resourceService.getCharacterImagePath(character.image);
+                  iconImagePath = _resourceService.getCharacterIconImagePath(character.iconImage);
                   type = ItemType.character;
                 case BannerHistoryItemType.weapon:
                   final weapon = _weapons.getWeapon(key);
                   rarity = weapon.rarity;
-                  imagePath = _resourceService.getWeaponImagePath(weapon.image, weapon.type);
+                  imagePath = iconImagePath = _resourceService.getWeaponImagePath(weapon.image, weapon.type);
                   type = ItemType.weapon;
                 default:
                   throw Exception('Banner history item type = ${e.type} is not valid');
               }
-              return ItemCommonWithRarityAndType(key, imagePath, rarity, type);
+              return ItemCommonWithRarityAndType(key, imagePath, iconImagePath, rarity, type);
             }).toList(),
           ),
         )
@@ -266,7 +270,7 @@ class BannerHistoryFileServiceImpl extends BannerHistoryFileService {
               .groupListsBy((d) => '${d.from}__${d.until}')
               .length;
 
-          return ItemCommonWithQuantity(key, element.image, count);
+          return ItemCommonWithQuantity(key, element.image, element.image, count);
         })
         .where((el) => el != null)
         .map((e) => e!)

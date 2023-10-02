@@ -99,7 +99,7 @@ class _PortraitLayout extends StatelessWidget {
                           title: s.builds,
                           body: Wrap(
                             alignment: WrapAlignment.center,
-                            children: state.charImages.map((e) => CircleCharacter(itemKey: e.key, image: e.image, radius: size)).toList(),
+                            children: state.charImages.map((e) => CircleCharacter(itemKey: e.key, image: e.iconImage, radius: size)).toList(),
                           ),
                           textColor: rarityColor,
                         ),
@@ -211,7 +211,7 @@ class _LandscapeLayout extends StatelessWidget {
                               title: s.builds,
                               body: Wrap(
                                 alignment: WrapAlignment.center,
-                                children: state.charImages.map((e) => CircleCharacter(itemKey: e.key, image: e.image, radius: imgSize)).toList(),
+                                children: state.charImages.map((e) => CircleCharacter(itemKey: e.key, image: e.iconImage, radius: imgSize)).toList(),
                               ),
                               textColor: rarityColor,
                             ),

@@ -8,6 +8,7 @@ class CharacterBirthdayModel with _$CharacterBirthdayModel {
     required String key,
     required String name,
     required String image,
+    required String iconImage,
     required DateTime birthday,
     required String birthdayString,
     required int daysUntilBirthday,

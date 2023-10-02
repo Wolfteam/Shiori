@@ -321,7 +321,7 @@ class InventoryDataServiceImpl implements InventoryDataService {
   List<ItemCommonWithQuantity> getItemsForRedistribution(ItemType type) {
     return _inventoryBox.values
         .where((el) => el.type == type.index && el.quantity > 0)
-        .map((e) => ItemCommonWithQuantity(e.itemKey, '', e.quantity))
+        .map((e) => ItemCommonWithQuantity(e.itemKey, '', '', e.quantity))
         .toList();
   }
 

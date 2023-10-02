@@ -86,7 +86,7 @@ class TierListRow extends StatelessWidget {
                         .map(
                           (e) => CircleCharacter(
                             itemKey: e.key,
-                            image: e.image,
+                            image: e.iconImage,
                             radius: SizeUtils.getSizeForCircleImages(context),
                             onTap: (img) => context.read<TierListBloc>().add(TierListEvent.deleteCharacterFromRow(index: index, item: e)),
                           ),

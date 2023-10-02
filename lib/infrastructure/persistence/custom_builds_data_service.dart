@@ -249,6 +249,7 @@ class CustomBuildsDataServiceImpl implements CustomBuildsDataService {
               key: e.characterKey,
               image: '',
               name: '',
+              iconImage: '',
               index: e.index,
               roleType: CharacterRoleType.values[e.roleType],
               subType: CharacterRoleSubType.values[e.subType],
@@ -404,6 +405,7 @@ class CustomBuildsDataServiceImpl implements CustomBuildsDataService {
           index: e.index,
           name: char.name,
           image: char.image,
+          iconImage: char.iconImage,
           roleType: CharacterRoleType.values[e.roleType],
           subType: CharacterRoleSubType.values[e.subType],
         );

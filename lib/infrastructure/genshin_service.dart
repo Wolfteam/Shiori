@@ -173,7 +173,7 @@ class GenshinServiceImpl implements GenshinService {
     switch (notificationItemType) {
       case AppNotificationItemType.character:
         final character = characters.getCharacter(itemKey);
-        return _resourceService.getCharacterImagePath(character.image);
+        return _resourceService.getCharacterIconImagePath(character.iconImage);
       case AppNotificationItemType.weapon:
         final weapon = weapons.getWeapon(itemKey);
         return _resourceService.getWeaponImagePath(weapon.image, weapon.type);

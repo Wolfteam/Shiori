@@ -44,7 +44,7 @@ class MaterialBloc extends Bloc<MaterialEvent, MaterialState> {
     final obtainedFrom = material.obtainedFrom.where((el) => el.createsMaterialKey == material.key).map((el) {
       final needs = el.needs.map((e) {
         final img = _genshinService.materials.getMaterialImg(e.key);
-        return ItemCommonWithQuantity(e.key, img, e.quantity);
+        return ItemCommonWithQuantity(e.key, img, img, e.quantity);
       }).toList();
       return ItemObtainedFrom(el.createsMaterialKey, needs);
     }).toList();
@@ -52,8 +52,8 @@ class MaterialBloc extends Bloc<MaterialEvent, MaterialState> {
     //TODO: SHOW THE QUANTITY IN THE RELATED MATERIALS
     final relatedMaterials = material.recipes
         .map((el) {
-          final material = _genshinService.materials.getMaterial(el.createsMaterialKey);
-          return ItemCommon(material.key, _resourceService.getMaterialImagePath(material.image, material.type));
+          final img = _genshinService.materials.getMaterialImg(el.createsMaterialKey);
+          return ItemCommon(el.createsMaterialKey, img, img);
         })
         .distinct((x) => x.key)
         .toList();
