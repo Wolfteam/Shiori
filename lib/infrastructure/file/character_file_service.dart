@@ -126,9 +126,8 @@ class CharacterFileServiceImpl extends CharacterFileService {
       final talentMaterial = char.talentAscensionMaterials.expand((e) => e.materials).toList();
 
       final materials = multiTalentAscensionMaterials + ascensionMaterial + talentMaterial;
-      final allMaterials = _materials.getMaterialsFromAscensionMaterials(materials);
 
-      if (allMaterials.any((m) => m.key == key)) {
+      if (materials.any((m) => m.key == key)) {
         imgs.add(_fromCharFileModelToItemCommon(char));
       }
     }

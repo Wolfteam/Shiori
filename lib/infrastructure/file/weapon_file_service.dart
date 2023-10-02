@@ -52,8 +52,7 @@ class WeaponFileServiceImpl extends WeaponFileService {
 
     for (final weapon in _weaponsFile.weapons) {
       final materials = weapon.craftingMaterials + weapon.ascensionMaterials.expand((e) => e.materials).toList();
-      final allMaterials = _materials.getMaterialsFromAscensionMaterials(materials);
-      if (allMaterials.any((m) => m.key == key)) {
+      if (materials.any((m) => m.key == key)) {
         items.add(_fromWeaponFileModelToItemCommon(weapon));
       }
     }
