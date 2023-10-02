@@ -33,6 +33,8 @@ class DataServiceImpl implements DataService {
 
   late final CalculatorDataService _calculator;
 
+  bool _initialized = false;
+
   final _initLock = Lock();
   final _deleteAllLock = Lock();
 
@@ -68,6 +70,9 @@ class DataServiceImpl implements DataService {
   }
 
   Future<void> _init() async {
+    if (_initialized) {
+      return;
+    }
     _registerAdapters();
     await _calculator.init();
     await _inventory.init();
@@ -76,6 +81,7 @@ class DataServiceImpl implements DataService {
     await _gameCodes.init();
     await _tierList.init();
     await _wishSimulator.init();
+    _initialized = true;
   }
 
   @override
