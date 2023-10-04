@@ -2,4 +2,4 @@
 set -e
 
 echo 'Running tests...'
-fvm flutter test --no-test-assets --concurrency=12
+fvm flutter test --no-test-assets
