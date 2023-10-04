@@ -127,7 +127,7 @@ void main() {
       'api call fails',
       build: () {
         final settingsMock = MockSettingsService();
-        when(settingsMock.canCheckForGameCodeUpdates()).thenReturn(true);
+        when(settingsMock.lastGameCodesCheckedDate).thenReturn(null);
 
         const response = ApiListResponseDto(succeed: false, message: 'error', result: <GameCodeResponseDto>[]);
         final apiServiceMock = MockApiService();
