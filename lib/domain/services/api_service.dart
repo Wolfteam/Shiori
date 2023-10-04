@@ -8,4 +8,6 @@ abstract class ApiService {
   Future<ApiResponseDto<ResourceDiffResponseDto?>> checkForUpdates(String currentAppVersion, int currentResourcesVersion);
 
   Future<bool> downloadAsset(String keyName, String destPath);
+
+  Future<ApiListResponseDto<GameCodeResponseDto>> getGameCodes();
 }

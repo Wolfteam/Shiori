@@ -58,6 +58,10 @@ class _GameCodesPageState extends State<GameCodesPage> with SingleTickerProvider
               if (state.isInternetAvailable == false) {
                 ToastUtils.showWarningToast(ToastUtils.of(ctx), s.noInternetConnection);
               }
+
+              if (state.unknownErrorOccurred) {
+                ToastUtils.showWarningToast(ToastUtils.of(ctx), s.unknownError);
+              }
             },
             builder: (ctx, state) => _Layout(
               working: state.workingGameCodes,
@@ -104,13 +108,17 @@ class _Layout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isPortrait = MediaQuery.of(context).orientation == Orientation.portrait;
-    return working.isEmpty && expired.isEmpty
-        ? isBusy
-            ? const Loading(useScaffold: false)
-            : const _NothingHasBeenLoaded()
-        : isPortrait
-            ? _PortraitLayout(working: working, expired: expired, scrollController: scrollController)
-            : _LandScapeLayout(working: working, expired: expired, scrollController: scrollController);
+    if (isBusy) {
+      return const Loading(useScaffold: false);
+    }
+
+    if (working.isEmpty && expired.isEmpty) {
+      return const _NothingHasBeenLoaded();
+    }
+
+    return isPortrait
+        ? _PortraitLayout(working: working, expired: expired, scrollController: scrollController)
+        : _LandScapeLayout(working: working, expired: expired, scrollController: scrollController);
   }
 }
 

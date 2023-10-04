@@ -1,6 +1,5 @@
 import 'dart:io';
 
-import 'package:enum_to_string/enum_to_string.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:flutter_native_timezone/flutter_native_timezone.dart';
@@ -156,7 +155,7 @@ class NotificationServiceImpl implements NotificationService {
   }
 
   String _getTagFromNotificationType(AppNotificationType type) {
-    return EnumToString.convertToString(type);
+    return type.name;
   }
 
   // For some reason I need to provide a unique id even if I'm providing a custom tag

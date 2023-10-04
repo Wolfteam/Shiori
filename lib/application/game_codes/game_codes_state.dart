@@ -7,5 +7,6 @@ class GameCodesState with _$GameCodesState {
     required List<GameCodeModel> expiredGameCodes,
     @Default(false) bool isBusy,
     bool? isInternetAvailable,
-  }) = _Loaded;
+    @Default(false) bool unknownErrorOccurred,
+  }) = _LoadedState;
 }
