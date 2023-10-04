@@ -23,6 +23,7 @@ class SettingsServiceImpl extends SettingsService {
   final _lastResourcesCheckedDateKey = 'LastResourcesCheckedDate';
   final _resourcesVersionKey = 'ResourcesVersion';
   final _checkForUpdatesOnStartupKey = 'CheckForUpdatesOnStartup';
+  final _lastGameCodesCheckedDateKey = 'LastGameCodesCheckedDate';
 
   bool _initialized = false;
 
@@ -96,26 +97,10 @@ class SettingsServiceImpl extends SettingsService {
   set useTwentyFourHoursFormat(bool value) => _prefs.setBool(_useTwentyFourHoursFormatKey, value);
 
   @override
-  DateTime? get lastResourcesCheckedDate {
-    final val = _prefs.getString(_lastResourcesCheckedDateKey);
-    if (val.isNullEmptyOrWhitespace) {
-      return null;
-    }
-
-    final date = DateTime.tryParse(val!);
-    return date;
-  }
+  DateTime? get lastResourcesCheckedDate => _getDateFrom(_lastResourcesCheckedDateKey);
 
   @override
-  set lastResourcesCheckedDate(DateTime? value) {
-    if (value == null) {
-      _prefs.setString(_lastResourcesCheckedDateKey, '');
-      return;
-    }
-
-    final val = value.toString();
-    _prefs.setString(_lastResourcesCheckedDateKey, val);
-  }
+  set lastResourcesCheckedDate(DateTime? value) => _setDate(_lastResourcesCheckedDateKey, value);
 
   @override
   int get resourceVersion => _prefs.getInt(_resourcesVersionKey)!;
@@ -131,6 +116,12 @@ class SettingsServiceImpl extends SettingsService {
 
   @override
   set checkForUpdatesOnStartup(bool value) => _prefs.setBool(_checkForUpdatesOnStartupKey, value);
+
+  @override
+  DateTime? get lastGameCodesCheckedDate => _getDateFrom(_lastGameCodesCheckedDateKey);
+
+  @override
+  set lastGameCodesCheckedDate(DateTime? value) => _setDate(_lastGameCodesCheckedDateKey, value);
 
   @override
   AppSettings get appSettings => AppSettings(
@@ -325,5 +316,25 @@ class SettingsServiceImpl extends SettingsService {
     } catch (e) {
       return AppLanguageType.english;
     }
+  }
+
+  DateTime? _getDateFrom(String key) {
+    final val = _prefs.getString(key);
+    if (val.isNullEmptyOrWhitespace) {
+      return null;
+    }
+
+    final date = DateTime.tryParse(val!);
+    return date;
+  }
+
+  void _setDate(String key, DateTime? value) {
+    if (value == null) {
+      _prefs.setString(key, '');
+      return;
+    }
+
+    final val = value.toString();
+    _prefs.setString(key, val);
   }
 }

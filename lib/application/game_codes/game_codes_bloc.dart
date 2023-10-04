@@ -9,6 +9,7 @@ import 'package:shiori/domain/services/api_service.dart';
 import 'package:shiori/domain/services/data_service.dart';
 import 'package:shiori/domain/services/genshin_service.dart';
 import 'package:shiori/domain/services/network_service.dart';
+import 'package:shiori/domain/services/settings_service.dart';
 import 'package:shiori/domain/services/telemetry_service.dart';
 
 part 'game_codes_bloc.freezed.dart';
@@ -23,6 +24,7 @@ class GameCodesBloc extends Bloc<GameCodesEvent, GameCodesState> {
   final ApiService _apiService;
   final NetworkService _networkService;
   final GenshinService _genshinService;
+  final SettingsService _settingsService;
 
   GameCodesBloc(
     this._dataService,
@@ -30,6 +32,7 @@ class GameCodesBloc extends Bloc<GameCodesEvent, GameCodesState> {
     this._apiService,
     this._networkService,
     this._genshinService,
+    this._settingsService,
   ) : super(_initialState);
 
   @override
@@ -53,7 +56,7 @@ class GameCodesBloc extends Bloc<GameCodesEvent, GameCodesState> {
 
     yield s;
 
-    if (s.unknownErrorOccurred == true) {
+    if (s.unknownErrorOccurred == true || s.isBusy) {
       yield s.copyWith(unknownErrorOccurred: false, isBusy: false);
     }
   }
@@ -69,6 +72,10 @@ class GameCodesBloc extends Bloc<GameCodesEvent, GameCodesState> {
   }
 
   Future<GameCodesState> _refresh() async {
+    if (!_canCheckForGameCodeUpdates()) {
+      return state;
+    }
+
     final response = await _apiService.getGameCodes();
     if (!response.succeed) {
       return state.copyWith(unknownErrorOccurred: true);
@@ -89,7 +96,10 @@ class GameCodesBloc extends Bloc<GameCodesEvent, GameCodesState> {
         }).toList(),
       );
     }).toList();
-    await _dataService.gameCodes.saveGameCodes(gameCodes);
+    if (gameCodes.isNotEmpty) {
+      await _dataService.gameCodes.saveGameCodes(gameCodes);
+      _settingsService.lastGameCodesCheckedDate = DateTime.now();
+    }
 
     await _telemetryService.trackGameCodesOpened();
     return _buildInitialState();
@@ -139,5 +149,19 @@ class GameCodesBloc extends Bloc<GameCodesEvent, GameCodesState> {
 
     final pickedKey = map.entries.orderBy((el) => el.value).last.key;
     return pickedKey;
+  }
+
+  bool _canCheckForGameCodeUpdates() {
+    final lastCheckedDate = _settingsService.lastGameCodesCheckedDate;
+    if (lastCheckedDate == null) {
+      return true;
+    }
+
+    final isAfter = DateTime.now().isAfter(lastCheckedDate.add(const Duration(hours: 4)));
+    if (!isAfter) {
+      return false;
+    }
+
+    return true;
   }
 }

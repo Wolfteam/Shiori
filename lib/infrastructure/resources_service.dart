@@ -217,7 +217,7 @@ class ResourceServiceImpl implements ResourceService {
       return true;
     }
 
-    final isAfter = DateTime.now().isAfter(lastResourcesCheckedDate.add(const Duration(hours: 24)));
+    final isAfter = DateTime.now().isAfter(lastResourcesCheckedDate.add(const Duration(hours: 12)));
     if (!isAfter) {
       return false;
     }

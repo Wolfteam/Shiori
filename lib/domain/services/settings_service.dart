@@ -48,6 +48,9 @@ abstract class SettingsService {
   bool get checkForUpdatesOnStartup;
   set checkForUpdatesOnStartup(bool value);
 
+  DateTime? get lastGameCodesCheckedDate;
+  set lastGameCodesCheckedDate(DateTime? value);
+
   Future<void> init();
 
   BackupAppSettingsModel getDataForBackup();
