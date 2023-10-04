@@ -5,18 +5,20 @@ import '../../common.dart';
 import 'common_file.dart';
 
 void main() {
-  test('Get materials for card', () async {
+  group('Get materials for card', () {
     for (final lang in AppLanguageType.values) {
-      final service = await getMaterialFileService(lang);
-      final materials = service.getAllMaterialsForCard();
-      checkKeys(materials.map((e) => e.key).toList());
-      for (final material in materials) {
-        checkKey(material.key);
-        checkAsset(material.image);
-        expect(material.name, allOf([isNotEmpty, isNotNull]));
-        expect(material.rarity, allOf([greaterThanOrEqualTo(1), lessThanOrEqualTo(5)]));
-        expect(material.level, greaterThanOrEqualTo(0));
-      }
+      test('language = ${lang.name}', () async {
+        final service = await getMaterialFileService(lang);
+        final materials = service.getAllMaterialsForCard();
+        checkKeys(materials.map((e) => e.key).toList());
+        for (final material in materials) {
+          checkKey(material.key);
+          checkAsset(material.image);
+          expect(material.name, allOf([isNotEmpty, isNotNull]));
+          expect(material.rarity, allOf([greaterThanOrEqualTo(1), lessThanOrEqualTo(5)]));
+          expect(material.level, greaterThanOrEqualTo(0));
+        }
+      });
     }
   });
 
@@ -25,8 +27,10 @@ void main() {
     final characterFileService = await getCharacterFileService(AppLanguageType.english);
     final weaponFileService = await getWeaponFileService(AppLanguageType.english);
     final monsterFileService = await getMonsterFileService(AppLanguageType.english);
-
     final materials = service.getAllMaterialsForCard();
+
+    final checkedPartOfRecipesKeys = <String>[];
+    final checkedNeedsKeys = <String>[];
     for (final material in materials) {
       final detail = service.getMaterial(material.key);
       checkKey(detail.key);
@@ -90,10 +94,17 @@ void main() {
 
       for (final part in partOfRecipes) {
         checkKey(part.createsMaterialKey);
-        expect(() => service.getMaterial(part.createsMaterialKey), returnsNormally);
+        if (!checkedPartOfRecipesKeys.contains(part.createsMaterialKey)) {
+          expect(() => service.getMaterial(part.createsMaterialKey), returnsNormally);
+          checkedPartOfRecipesKeys.add(part.createsMaterialKey);
+        }
+
         for (final needs in part.needs) {
           expect(needs.quantity, greaterThanOrEqualTo(1));
-          expect(() => service.getMaterial(needs.key), returnsNormally);
+          if (!checkedNeedsKeys.contains(needs.key)) {
+            expect(() => service.getMaterial(needs.key), returnsNormally);
+            checkedNeedsKeys.add(needs.key);
+          }
         }
       }
 

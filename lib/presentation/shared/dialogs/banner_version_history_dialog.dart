@@ -147,7 +147,7 @@ class _Items extends StatelessWidget {
           final gradient = item.rarity.getRarityGradient();
           switch (type) {
             case BannerHistoryItemType.character:
-              return CircleCharacter(itemKey: item.key, image: item.image, gradient: gradient);
+              return CircleCharacter(itemKey: item.key, image: item.iconImage, gradient: gradient);
             case BannerHistoryItemType.weapon:
               return CircleWeapon(itemKey: item.key, image: item.image, gradient: gradient);
             default:

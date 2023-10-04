@@ -56,44 +56,28 @@ class CharacterFileServiceImpl extends CharacterFileService {
   List<TierListRowModel> getDefaultCharacterTierList(List<int> colors) {
     assert(colors.length == 7);
 
-    final sssTier = _charactersFile.characters
-        .where((char) => !char.isComingSoon && char.tier == 'sss')
-        .map((char) => ItemCommon(char.key, _resourceService.getCharacterImagePath(char.image)))
-        .toList();
-    final ssTier = _charactersFile.characters
-        .where((char) => !char.isComingSoon && char.tier == 'ss')
-        .map((char) => ItemCommon(char.key, _resourceService.getCharacterImagePath(char.image)))
-        .toList();
-    final sTier = _charactersFile.characters
-        .where((char) => !char.isComingSoon && char.tier == 's')
-        .map((char) => ItemCommon(char.key, _resourceService.getCharacterImagePath(char.image)))
-        .toList();
-    final aTier = _charactersFile.characters
-        .where((char) => !char.isComingSoon && char.tier == 'a')
-        .map((char) => ItemCommon(char.key, _resourceService.getCharacterImagePath(char.image)))
-        .toList();
-    final bTier = _charactersFile.characters
-        .where((char) => !char.isComingSoon && char.tier == 'b')
-        .map((char) => ItemCommon(char.key, _resourceService.getCharacterImagePath(char.image)))
-        .toList();
-    final cTier = _charactersFile.characters
-        .where((char) => !char.isComingSoon && char.tier == 'c')
-        .map((char) => ItemCommon(char.key, _resourceService.getCharacterImagePath(char.image)))
-        .toList();
-    final dTier = _charactersFile.characters
-        .where((char) => !char.isComingSoon && char.tier == 'd')
-        .map((char) => ItemCommon(char.key, _resourceService.getCharacterImagePath(char.image)))
-        .toList();
-
-    return <TierListRowModel>[
-      TierListRowModel.row(tierText: 'SSS', tierColor: colors.first, items: sssTier),
-      TierListRowModel.row(tierText: 'SS', tierColor: colors[1], items: ssTier),
-      TierListRowModel.row(tierText: 'S', tierColor: colors[2], items: sTier),
-      TierListRowModel.row(tierText: 'A', tierColor: colors[3], items: aTier),
-      TierListRowModel.row(tierText: 'B', tierColor: colors[4], items: bTier),
-      TierListRowModel.row(tierText: 'C', tierColor: colors[5], items: cTier),
-      TierListRowModel.row(tierText: 'D', tierColor: colors.last, items: dTier),
+    const charTiers = <String>[
+      'sss',
+      'ss',
+      's',
+      'a',
+      'b',
+      'c',
+      'd',
     ];
+
+    final rows = <TierListRowModel>[];
+    for (int i = 0; i < charTiers.length; i++) {
+      final tier = charTiers[i];
+      final chars = _charactersFile.characters
+          .where((char) => !char.isComingSoon && char.tier == tier)
+          .map((char) => _fromCharFileModelToItemCommon(char))
+          .toList();
+      final row = TierListRowModel.row(tierText: tier.toUpperCase(), tierColor: colors[i], items: chars);
+      rows.add(row);
+    }
+
+    return rows;
   }
 
   @override
@@ -104,7 +88,7 @@ class CharacterFileServiceImpl extends CharacterFileService {
       for (final build in char.builds) {
         final isBeingUsed = build.weaponKeys.contains(weapon.key);
         if (isBeingUsed && !items.any((el) => el.key == char.key)) {
-          items.add(ItemCommon(char.key, _resourceService.getCharacterImagePath(char.image)));
+          items.add(_fromCharFileModelToItemCommon(char));
         }
       }
     }
@@ -121,7 +105,7 @@ class CharacterFileServiceImpl extends CharacterFileService {
         final isBeingUsed = build.artifacts.any((a) => a.oneKey == artifact.key || a.multiples.any((m) => m.key == artifact.key));
 
         if (isBeingUsed && !items.any((el) => el.key == char.key)) {
-          items.add(ItemCommon(char.key, _resourceService.getCharacterImagePath(char.image)));
+          items.add(_fromCharFileModelToItemCommon(char));
         }
       }
     }
@@ -142,10 +126,9 @@ class CharacterFileServiceImpl extends CharacterFileService {
       final talentMaterial = char.talentAscensionMaterials.expand((e) => e.materials).toList();
 
       final materials = multiTalentAscensionMaterials + ascensionMaterial + talentMaterial;
-      final allMaterials = _materials.getMaterialsFromAscensionMaterials(materials);
 
-      if (allMaterials.any((m) => m.key == key)) {
-        imgs.add(ItemCommon(char.key, _resourceService.getCharacterImagePath(char.image)));
+      if (materials.any((m) => m.key == key)) {
+        imgs.add(_fromCharFileModelToItemCommon(char));
       }
     }
 
@@ -187,7 +170,7 @@ class CharacterFileServiceImpl extends CharacterFileService {
 
         final materialIsBeingUsed = normalAscMaterial || specialAscMaterial;
         if (materialIsBeingUsed && !characters.any((el) => el.key == char.key)) {
-          characters.add(ItemCommon(char.key, _resourceService.getCharacterImagePath(char.image)));
+          characters.add(_fromCharFileModelToItemCommon(char));
         }
       }
 
@@ -223,15 +206,7 @@ class CharacterFileServiceImpl extends CharacterFileService {
         .entries;
 
     final birthdays = grouped
-        .map(
-          (e) => ChartBirthdayMonthModel(
-            month: e.key,
-            items: e.value.map((e) {
-              final translation = _translations.getCharacterTranslation(e.key);
-              return ItemCommonWithName(e.key, _resourceService.getCharacterImagePath(e.image), translation.name);
-            }).toList(),
-          ),
-        )
+        .map((e) => ChartBirthdayMonthModel(month: e.key, items: e.value.map((e) => _fromCharFileModelToItemCommonWithName(e)).toList()))
         .toList()
       ..sort((x, y) => x.month.compareTo(y.month));
 
@@ -267,10 +242,10 @@ class CharacterFileServiceImpl extends CharacterFileService {
       throw Exception('Another world is not supported');
     }
 
-    return _charactersFile.characters.where((el) => !el.isComingSoon && el.region == regionType).map((e) {
-      final char = getCharacterForCard(e.key);
-      return ItemCommonWithName(e.key, char.image, char.name);
-    }).toList()
+    return _charactersFile.characters
+        .where((el) => !el.isComingSoon && el.region == regionType)
+        .map((e) => _fromCharFileModelToItemCommonWithName(e))
+        .toList()
       ..sort((x, y) => x.name.compareTo(y.name));
   }
 
@@ -280,10 +255,10 @@ class CharacterFileServiceImpl extends CharacterFileService {
       throw Exception('Another world is not supported');
     }
 
-    return _charactersFile.characters.where((el) => !el.isComingSoon && el.region == regionType && el.isFemale == onlyFemales).map((e) {
-      final char = getCharacterForCard(e.key);
-      return ItemCommonWithName(e.key, char.image, char.name);
-    }).toList()
+    return _charactersFile.characters
+        .where((el) => !el.isComingSoon && el.region == regionType && el.isFemale == onlyFemales)
+        .map((e) => _fromCharFileModelToItemCommonWithName(e))
+        .toList()
       ..sort((x, y) => x.name.compareTo(y.name));
   }
 
@@ -338,6 +313,7 @@ class CharacterFileServiceImpl extends CharacterFileService {
         key: e.key,
         name: char.name,
         image: char.image,
+        iconImage: char.iconImage,
         birthday: birthday,
         birthdayString: e.birthday!,
         daysUntilBirthday: nowFromZero.difference(birthday).inDays.abs(),
@@ -410,20 +386,20 @@ class CharacterFileServiceImpl extends CharacterFileService {
 
   @override
   List<ItemCommonWithName> getItemCommonWithNameByRarity(int rarity) {
-    return getCharactersForCard().where((el) => el.stars == rarity).map((e) => ItemCommonWithName(e.key, e.image, e.name)).toList();
+    return _charactersFile.characters.where((el) => el.rarity == rarity).map((e) => _fromCharFileModelToItemCommonWithName(e)).toList();
   }
 
   @override
   List<ItemCommonWithName> getItemCommonWithNameByStatType(StatType statType) {
-    return _charactersFile.characters.where((el) => el.subStatType == statType && !el.isComingSoon).map((e) {
-      final translation = _translations.getCharacterTranslation(e.key);
-      return ItemCommonWithName(e.key, _resourceService.getCharacterImagePath(e.image), translation.name);
-    }).toList();
+    return _charactersFile.characters
+        .where((el) => el.subStatType == statType && !el.isComingSoon)
+        .map((e) => _fromCharFileModelToItemCommonWithName(e))
+        .toList();
   }
 
   @override
   List<ItemCommonWithName> getItemCommonWithName() {
-    return getCharactersForCard().map((e) => ItemCommonWithName(e.key, e.image, e.name)).toList();
+    return _charactersFile.characters.map((e) => _fromCharFileModelToItemCommonWithName(e)).toList();
   }
 
   CharacterCardModel _toCharacterForCard(CharacterFileModel character) {
@@ -461,6 +437,22 @@ class CharacterFileServiceImpl extends CharacterFileService {
       roleType: character.role,
       regionType: character.region,
       subStatType: character.subStatType,
+    );
+  }
+
+  //TODO: MOVE THE MAPS TO A COMMON PLACE?
+
+  ItemCommon _fromCharFileModelToItemCommon(CharacterFileModel char) {
+    return ItemCommon(char.key, _resourceService.getCharacterImagePath(char.image), _resourceService.getCharacterIconImagePath(char.iconImage));
+  }
+
+  ItemCommonWithName _fromCharFileModelToItemCommonWithName(CharacterFileModel char) {
+    final translation = _translations.getCharacterTranslation(char.key);
+    return ItemCommonWithName(
+      char.key,
+      _resourceService.getCharacterImagePath(char.image),
+      _resourceService.getCharacterIconImagePath(char.iconImage),
+      translation.name,
     );
   }
 }

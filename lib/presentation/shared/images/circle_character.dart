@@ -29,7 +29,7 @@ class CircleCharacter extends StatelessWidget {
     this.onTap,
     this.gradient,
   })  : itemKey = item.key,
-        image = item.image;
+        image = item.iconImage;
 
   @override
   Widget build(BuildContext context) {

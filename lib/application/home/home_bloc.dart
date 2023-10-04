@@ -39,7 +39,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     final charsForBirthday = _genshinService.characters
         .getCharacterBirthdays(month: now.month, day: now.day)
         .map(
-          (e) => ItemCommon(e.key, e.image),
+          (e) => ItemCommon(e.key, e.image, e.iconImage),
         )
         .toList();
     final dayName = _localeService.getDayNameFromDay(day);

@@ -44,7 +44,7 @@ class FixedLeftColumn extends StatelessWidget {
             cellWidth: cellWidth,
             cellHeight: cellHeight,
             margin: margin,
-            image: item.image,
+            image: item.iconImage,
             itemKey: item.key,
             type: item.type,
             rarity: item.rarity,

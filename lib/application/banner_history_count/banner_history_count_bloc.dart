@@ -44,7 +44,7 @@ class BannerHistoryCountBloc extends Bloc<BannerHistoryCountEvent, BannerHistory
 
   List<ItemCommonWithName> getItemsForSearch() {
     final banners = _getBannerItemsByType(state.type);
-    return banners.map((e) => ItemCommonWithName(e.key, e.image, e.name)).toSet().toList();
+    return banners.map((e) => ItemCommonWithName(e.key, e.image, e.iconImage, e.name)).toSet().toList();
   }
 
   Future<BannerHistoryCountState> _init() async {

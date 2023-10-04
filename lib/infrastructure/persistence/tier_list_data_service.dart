@@ -31,7 +31,9 @@ class TierListDataServiceImpl implements TierListDataService {
     return values.map((e) {
       final characters = e.charKeys.map((e) {
         final character = _genshinService.characters.getCharacter(e);
-        return ItemCommon(character.key, _resourceService.getCharacterImagePath(character.image));
+        final image = _resourceService.getCharacterImagePath(character.image);
+        final iconImage = _resourceService.getCharacterIconImagePath(character.iconImage);
+        return ItemCommon(character.key, image, iconImage);
       }).toList();
       return TierListRowModel.row(tierText: e.text, items: characters, tierColor: e.color);
     }).toList();
@@ -58,7 +60,7 @@ class TierListDataServiceImpl implements TierListDataService {
   Future<void> restoreFromBackup(List<BackupTierListModel> data) {
     final tierList = data
         .orderBy((e) => e.position)
-        .map((e) => TierListRowModel.row(tierText: e.text, items: e.charKeys.map((c) => ItemCommon(c, '')).toList(), tierColor: e.color))
+        .map((e) => TierListRowModel.row(tierText: e.text, items: e.charKeys.map((c) => ItemCommon(c, '', '')).toList(), tierColor: e.color))
         .toList();
 
     return saveTierList(tierList);

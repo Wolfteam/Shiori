@@ -49,7 +49,7 @@ class MonsterFileServiceImpl extends MonsterFileService {
   List<ItemCommon> getRelatedMonsterToMaterialForItems(String key) {
     return _monstersFile.monsters
         .where((monster) => monster.drops.any((el) => el.type == MonsterDropType.material && el.key == key))
-        .map((monster) => ItemCommon(monster.key, _resourceService.getMonsterImagePath(monster.image)))
+        .map((monster) => _fromMonsterFileModelToItemCommon(monster))
         .toList();
   }
 
@@ -57,7 +57,7 @@ class MonsterFileServiceImpl extends MonsterFileService {
   List<ItemCommon> getRelatedMonsterToArtifactForItems(String key) {
     return _monstersFile.monsters
         .where((monster) => monster.drops.any((el) => el.type == MonsterDropType.artifact && el.key == key))
-        .map((monster) => ItemCommon(monster.key, _resourceService.getMonsterImagePath(monster.image)))
+        .map((monster) => _fromMonsterFileModelToItemCommon(monster))
         .toList();
   }
 
@@ -70,5 +70,10 @@ class MonsterFileServiceImpl extends MonsterFileService {
       type: monster.type,
       isComingSoon: monster.isComingSoon,
     );
+  }
+
+  ItemCommon _fromMonsterFileModelToItemCommon(MonsterFileModel monster) {
+    final image = _resourceService.getMonsterImagePath(monster.image);
+    return ItemCommon(monster.key, image, image);
   }
 }

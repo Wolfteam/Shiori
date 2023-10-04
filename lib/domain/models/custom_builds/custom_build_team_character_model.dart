@@ -10,6 +10,7 @@ class CustomBuildTeamCharacterModel with _$CustomBuildTeamCharacterModel {
     required int index,
     required String name,
     required String image,
+    required String iconImage,
     required CharacterRoleType roleType,
     required CharacterRoleSubType subType,
   }) = _CustomBuildTeamCharacterModel;

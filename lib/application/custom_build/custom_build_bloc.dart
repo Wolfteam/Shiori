@@ -460,6 +460,7 @@ class CustomBuildBloc extends Bloc<CustomBuildEvent, CustomBuildState> {
         key: e.key,
         name: char.name,
         image: char.image,
+        iconImage: char.iconImage,
         index: state.teamCharacters.length,
         roleType: e.roleType,
         subType: e.subType,

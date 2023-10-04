@@ -81,7 +81,7 @@ class MaterialFileServiceImpl extends MaterialFileService {
   }) {
     final mp = <String, MaterialFileModel>{};
     for (final item in materials) {
-      if (!ignore.contains(item.type)) {
+      if (!ignore.contains(item.type) && !mp.containsKey(item.key)) {
         final material = getMaterial(item.key);
         mp[item.key] = material;
       }
