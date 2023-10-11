@@ -1,11 +1,11 @@
 PODS:
-  - AppCenter (5.0.3):
-    - AppCenter/Analytics (= 5.0.3)
-    - AppCenter/Crashes (= 5.0.3)
-  - AppCenter/Analytics (5.0.3):
+  - AppCenter (5.0.4):
+    - AppCenter/Analytics (= 5.0.4)
+    - AppCenter/Crashes (= 5.0.4)
+  - AppCenter/Analytics (5.0.4):
     - AppCenter/Core
-  - AppCenter/Core (5.0.3)
-  - AppCenter/Crashes (5.0.3):
+  - AppCenter/Core (5.0.4)
+  - AppCenter/Crashes (5.0.4):
     - AppCenter/Core
   - device_info_plus (0.0.1):
     - FlutterMacOS
@@ -21,12 +21,12 @@ PODS:
   - path_provider_foundation (0.0.1):
     - Flutter
     - FlutterMacOS
-  - purchases_flutter (5.6.5):
+  - purchases_flutter (6.0.0):
     - FlutterMacOS
-    - PurchasesHybridCommon (= 6.1.2)
-  - PurchasesHybridCommon (6.1.2):
-    - RevenueCat (= 4.25.9)
-  - RevenueCat (4.25.9)
+    - PurchasesHybridCommon (= 7.0.0)
+  - PurchasesHybridCommon (7.0.0):
+    - RevenueCat (= 4.27.0)
+  - RevenueCat (4.27.0)
   - share_plus (0.0.1):
     - FlutterMacOS
   - shared_preferences_foundation (0.0.1):
@@ -90,7 +90,7 @@ EXTERNAL SOURCES:
     :path: Flutter/ephemeral/.symlinks/plugins/window_size/macos
 
 SPEC CHECKSUMS:
-  AppCenter: a4070ec3d4418b5539067a51f57155012e486ebd
+  AppCenter: 85c92db0759d2792a65eb61d6842d2e86611a49a
   device_info_plus: 5401765fde0b8d062a2f8eb65510fb17e77cf07f
   devicelocale: 9f0f36ac651cabae2c33f32dcff4f32b61c38225
   flutter_local_notifications: 3805ca215b2fb7f397d78b66db91f6a747af52e4
@@ -98,9 +98,9 @@ SPEC CHECKSUMS:
   FlutterMacOS: 8f6f14fa908a6fb3fba0cd85dbd81ec4b251fb24
   package_info_plus: 02d7a575e80f194102bef286361c6c326e4c29ce
   path_provider_foundation: 29f094ae23ebbca9d3d0cec13889cd9060c0e943
-  purchases_flutter: e3968bf3c139900cb65124e35692c9d7f756eb72
-  PurchasesHybridCommon: b7c4205b6d2479cdd8914084a2b536e5e5b1445f
-  RevenueCat: 4160d04575059fc1edbb973981f541b705ddebef
+  purchases_flutter: 9aad80bf27960c38fdeafc27ab066cb55615aed5
+  PurchasesHybridCommon: af3b2413f9cb999bc1fdca44770bdaf39dfb89fa
+  RevenueCat: 84fbe2eb9bbf63e1abf346ccd3ff9ee45d633e3b
   share_plus: 76dd39142738f7a68dd57b05093b5e8193f220f7
   shared_preferences_foundation: 5b919d13b803cadd15ed2dc053125c68730e5126
   url_launcher_macos: d2691c7dd33ed713bf3544850a623080ec693d95

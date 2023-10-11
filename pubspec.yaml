@@ -23,20 +23,20 @@ environment:
 dependencies:
   darq: ^2.0.0
   device_info_plus: ^9.0.3
-  devicelocale: ^0.6.0
+  devicelocale: ^0.7.0
   envied: ^0.3.0+3
-  file_picker: ^5.3.4
+  file_picker: ^5.5.0
   fk_user_agent: ^2.1.0
-  fl_chart: ^0.63.0
+  fl_chart: ^0.64.0
   flutter:
     sdk: flutter
   flutter_bloc: ^7.3.1
   flutter_colorpicker: ^1.0.3
-  flutter_inappwebview: ^5.7.2+3
+  flutter_inappwebview: ^5.8.0
   flutter_local_notifications: ^15.1.1
   flutter_localizations:
     sdk: flutter
-  flutter_markdown: ^0.6.17+2
+  flutter_markdown: ^0.6.18
   flutter_native_timezone: ^2.0.0
   flutter_slidable: ^3.0.0
   fluttertoast: ^8.2.2
@@ -52,19 +52,19 @@ dependencies:
   intl: ^0.18.1
   json_annotation: ^4.7.0
   linked_scroll_controller: ^0.2.0
-  logger: ^2.0.2
+  logger: ^2.0.2+1
   package_info_plus: ^4.1.0
   path: ^1.8.3
-  path_provider: ^2.1.0
-  permission_handler: ^10.4.5
+  path_provider: ^2.1.1
+  permission_handler: ^11.0.1
   pull_to_refresh: ^2.0.0
-  purchases_flutter: ^5.6.5
+  purchases_flutter: ^6.0.0
   rate_my_app: ^2.0.0
   responsive_builder: ^0.7.0
   responsive_grid: ^2.4.4
   screenshot: ^2.1.0
   share_plus: ^7.1.0
-  shared_preferences: ^2.2.1
+  shared_preferences: ^2.2.2
   sprintf: ^7.0.0
   store_checker: ^1.4.0
   synchronized: ^3.1.0
@@ -76,7 +76,7 @@ dependencies:
     git:
       url: https://github.com/Wolfteam/version_tracker
       ref: 1af9d7297f050a5c2d5101ef444197f8fca1e921
-  wakelock_plus: ^1.1.1
+  wakelock_plus: ^1.1.2
   waterfall_flow: ^3.0.2
   webview_windows: 0.3.0
   window_size:
@@ -97,7 +97,7 @@ dev_dependencies:
   json_serializable: ^6.5.4
   lint: ^2.1.2
   mockito: ^5.4.2
-  msix: ^3.16.1
+  msix: ^3.16.4
 
 flutter_launcher_icons:
   android: "launcher_icon"

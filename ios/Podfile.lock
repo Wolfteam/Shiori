@@ -1,11 +1,11 @@
 PODS:
-  - AppCenter (5.0.3):
-    - AppCenter/Analytics (= 5.0.3)
-    - AppCenter/Crashes (= 5.0.3)
-  - AppCenter/Analytics (5.0.3):
+  - AppCenter (5.0.4):
+    - AppCenter/Analytics (= 5.0.4)
+    - AppCenter/Crashes (= 5.0.4)
+  - AppCenter/Analytics (5.0.4):
     - AppCenter/Core
-  - AppCenter/Core (5.0.3)
-  - AppCenter/Crashes (5.0.3):
+  - AppCenter/Core (5.0.4)
+  - AppCenter/Crashes (5.0.4):
     - AppCenter/Core
   - device_info_plus (0.0.1):
     - Flutter
@@ -72,17 +72,17 @@ PODS:
     - FlutterMacOS
   - permission_handler_apple (9.1.1):
     - Flutter
-  - purchases_flutter (5.6.5):
+  - purchases_flutter (6.0.0):
     - Flutter
-    - PurchasesHybridCommon (= 6.1.2)
-  - PurchasesHybridCommon (6.1.2):
-    - RevenueCat (= 4.25.9)
+    - PurchasesHybridCommon (= 7.0.0)
+  - PurchasesHybridCommon (7.0.0):
+    - RevenueCat (= 4.27.0)
   - rate_my_app (2.0.0):
     - Flutter
-  - RevenueCat (4.25.9)
-  - SDWebImage (5.17.0):
-    - SDWebImage/Core (= 5.17.0)
-  - SDWebImage/Core (5.17.0)
+  - RevenueCat (4.27.0)
+  - SDWebImage (5.18.3):
+    - SDWebImage/Core (= 5.18.3)
+  - SDWebImage/Core (5.18.3)
   - share_plus (0.0.1):
     - Flutter
   - shared_preferences_foundation (0.0.1):
@@ -175,7 +175,7 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/wakelock_plus/ios"
 
 SPEC CHECKSUMS:
-  AppCenter: a4070ec3d4418b5539067a51f57155012e486ebd
+  AppCenter: 85c92db0759d2792a65eb61d6842d2e86611a49a
   device_info_plus: 7545d84d8d1b896cb16a4ff98c19f07ec4b298ea
   devicelocale: b22617f40038496deffba44747101255cee005b0
   DKImagePickerController: b512c28220a2b8ac7419f21c491fc8534b7601ac
@@ -183,7 +183,7 @@ SPEC CHECKSUMS:
   file_picker: ce3938a0df3cc1ef404671531facef740d03f920
   fk_user_agent: 1f47ec39291e8372b1d692b50084b0d54103c545
   Flutter: f04841e97a9d0b0a8025694d0796dd46242b2854
-  flutter_inappwebview: bfd58618f49dc62f2676de690fc6dcda1d6c3721
+  flutter_inappwebview: 3d32228f1304635e7c028b0d4252937730bbc6cf
   flutter_local_notifications: 0c0b1ae97e741e1521e4c1629a459d04b9aec743
   flutter_native_timezone: 5f05b2de06c9776b4cc70e1839f03de178394d22
   fluttertoast: fafc4fa4d01a6a9e4f772ecd190ffa525e9e2d9c
@@ -192,11 +192,11 @@ SPEC CHECKSUMS:
   package_info_plus: fd030dabf36271f146f1f3beacd48f564b0f17f7
   path_provider_foundation: 29f094ae23ebbca9d3d0cec13889cd9060c0e943
   permission_handler_apple: e76247795d700c14ea09e3a2d8855d41ee80a2e6
-  purchases_flutter: 440e09b1d692a20438574da78a45fda193bb80c5
-  PurchasesHybridCommon: b7c4205b6d2479cdd8914084a2b536e5e5b1445f
+  purchases_flutter: 549ccfbbaf5e7cd195043c714b69a35e278c00f1
+  PurchasesHybridCommon: af3b2413f9cb999bc1fdca44770bdaf39dfb89fa
   rate_my_app: 80fba94c4885cd31738231b7b1f51c1ad726f5c7
-  RevenueCat: 4160d04575059fc1edbb973981f541b705ddebef
-  SDWebImage: 750adf017a315a280c60fde706ab1e552a3ae4e9
+  RevenueCat: 84fbe2eb9bbf63e1abf346ccd3ff9ee45d633e3b
+  SDWebImage: 96e0c18ef14010b7485210e92fac888587ebb958
   share_plus: 599aa54e4ea31d4b4c0e9c911bcc26c55e791028
   shared_preferences_foundation: 5b919d13b803cadd15ed2dc053125c68730e5126
   store_checker: 359c5051d9ec30ff0a8fa39eb5ec9df021bb745d
