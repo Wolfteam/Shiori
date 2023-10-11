@@ -40,7 +40,7 @@ dependencies:
   flutter_native_timezone: ^2.0.0
   flutter_slidable: ^3.0.0
   fluttertoast: ^8.2.2
-  freezed_annotation: ^2.2.0
+  freezed_annotation: ^2.4.1
   get_it: ^7.6.4
   grouped_list: ^5.1.2
   hive: ^2.2.3
@@ -50,7 +50,7 @@ dependencies:
   infinite_listview: ^1.1.0
   internet_connection_checker: ^1.0.0+1
   intl: ^0.18.1
-  json_annotation: ^4.7.0
+  json_annotation: ^4.8.1
   linked_scroll_controller: ^0.2.0
   logger: ^2.0.2+1
   package_info_plus: ^4.1.0
@@ -91,10 +91,10 @@ dev_dependencies:
   flutter_launcher_icons: ^0.13.1
   flutter_test:
     sdk: flutter
-  freezed: ^2.2.1
+  freezed: ^2.4.5
   hive_generator: ^2.0.1
   intl_utils: ^2.8.4
-  json_serializable: ^6.5.4
+  json_serializable: ^6.7.1
   lint: ^2.1.2
   mockito: ^5.4.2
   msix: ^3.16.4
