@@ -9,5 +9,5 @@ abstract class ApiService {
 
   Future<bool> downloadAsset(String keyName, String destPath);
 
-  Future<ApiListResponseDto<GameCodeResponseDto>> getGameCodes();
+  Future<ApiListResponseDto<GameCodeResponseDto>> getGameCodes(String appVersion, int currentResourcesVersion);
 }
