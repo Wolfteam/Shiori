@@ -7,6 +7,7 @@ import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/api_service.dart';
 import 'package:shiori/domain/services/data_service.dart';
+import 'package:shiori/domain/services/device_info_service.dart';
 import 'package:shiori/domain/services/genshin_service.dart';
 import 'package:shiori/domain/services/network_service.dart';
 import 'package:shiori/domain/services/settings_service.dart';
@@ -25,6 +26,7 @@ class GameCodesBloc extends Bloc<GameCodesEvent, GameCodesState> {
   final NetworkService _networkService;
   final GenshinService _genshinService;
   final SettingsService _settingsService;
+  final DeviceInfoService _deviceInfoService;
 
   GameCodesBloc(
     this._dataService,
@@ -33,6 +35,7 @@ class GameCodesBloc extends Bloc<GameCodesEvent, GameCodesState> {
     this._networkService,
     this._genshinService,
     this._settingsService,
+    this._deviceInfoService,
   ) : super(_initialState);
 
   @override
@@ -76,7 +79,7 @@ class GameCodesBloc extends Bloc<GameCodesEvent, GameCodesState> {
       return state;
     }
 
-    final response = await _apiService.getGameCodes();
+    final response = await _apiService.getGameCodes(_deviceInfoService.version, _settingsService.resourceVersion);
     if (!response.succeed) {
       return state.copyWith(unknownErrorOccurred: true);
     }

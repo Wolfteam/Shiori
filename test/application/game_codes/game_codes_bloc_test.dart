@@ -8,6 +8,7 @@ import 'package:shiori/domain/models/dtos.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/api_service.dart';
 import 'package:shiori/domain/services/data_service.dart';
+import 'package:shiori/domain/services/device_info_service.dart';
 import 'package:shiori/domain/services/genshin_service.dart';
 import 'package:shiori/domain/services/network_service.dart';
 import 'package:shiori/domain/services/settings_service.dart';
@@ -25,8 +26,12 @@ void main() {
   late final NetworkService networkService;
   late final ApiService apiService;
   late final DataService dataService;
+  late final DeviceInfoService deviceInfoService;
   late final GenshinService genshinService;
   late final String dbPath;
+
+  const String validAppVersion = '1.7.0';
+  const int validResourceVersion = 45;
 
   final apiDefaultGameCodes = [
     GameCodeResponseDto(
@@ -70,11 +75,15 @@ void main() {
     settingsService = MockSettingsService();
     when(settingsService.language).thenReturn(AppLanguageType.english);
     when(settingsService.lastGameCodesCheckedDate).thenReturn(null);
+    when(settingsService.resourceVersion).thenReturn(validResourceVersion);
+    deviceInfoService = MockDeviceInfoService();
+    when(deviceInfoService.version).thenReturn(validAppVersion);
 
     final resourceService = getResourceService(settingsService);
     genshinService = GenshinServiceImpl(resourceService, LocaleServiceImpl(settingsService));
     apiService = MockApiService();
-    when(apiService.getGameCodes()).thenAnswer((_) => Future.value(ApiListResponseDto(result: apiDefaultGameCodes, succeed: true)));
+    when(apiService.getGameCodes(validAppVersion, validResourceVersion))
+        .thenAnswer((_) => Future.value(ApiListResponseDto(result: apiDefaultGameCodes, succeed: true)));
     dataService = DataServiceImpl(genshinService, CalculatorServiceImpl(genshinService, resourceService), resourceService);
     return Future(() async {
       await genshinService.init(AppLanguageType.english);
@@ -92,20 +101,23 @@ void main() {
 
   test(
     'Initial state',
-    () => expect(GameCodesBloc(dataService, telemetryService, apiService, networkService, genshinService, settingsService).state, defaultState),
+    () => expect(
+      GameCodesBloc(dataService, telemetryService, apiService, networkService, genshinService, settingsService, deviceInfoService).state,
+      defaultState,
+    ),
   );
 
   group('Init', () {
     blocTest<GameCodesBloc, GameCodesState>(
       'no game codes have been loaded',
-      build: () => GameCodesBloc(dataService, telemetryService, apiService, networkService, genshinService, settingsService),
+      build: () => GameCodesBloc(dataService, telemetryService, apiService, networkService, genshinService, settingsService, deviceInfoService),
       act: (bloc) => bloc.add(const GameCodesEvent.init()),
       expect: () => const [defaultState],
     );
 
     blocTest<GameCodesBloc, GameCodesState>(
       'some game codes have been loaded',
-      build: () => GameCodesBloc(dataService, telemetryService, apiService, networkService, genshinService, settingsService),
+      build: () => GameCodesBloc(dataService, telemetryService, apiService, networkService, genshinService, settingsService, deviceInfoService),
       setUp: () async {
         await dataService.gameCodes.saveGameCodes(defaultGameCodes);
       },
@@ -128,12 +140,13 @@ void main() {
       build: () {
         final settingsMock = MockSettingsService();
         when(settingsMock.lastGameCodesCheckedDate).thenReturn(null);
+        when(settingsMock.resourceVersion).thenReturn(validResourceVersion);
 
         const response = ApiListResponseDto(succeed: false, message: 'error', result: <GameCodeResponseDto>[]);
         final apiServiceMock = MockApiService();
-        when(apiServiceMock.getGameCodes()).thenAnswer((_) => Future.value(response));
+        when(apiServiceMock.getGameCodes(validAppVersion, validResourceVersion)).thenAnswer((_) => Future.value(response));
 
-        return GameCodesBloc(dataService, telemetryService, apiServiceMock, networkService, genshinService, settingsService);
+        return GameCodesBloc(dataService, telemetryService, apiServiceMock, networkService, genshinService, settingsService, deviceInfoService);
       },
       act: (bloc) => bloc.add(const GameCodesEvent.refresh()),
       expect: () => const [
@@ -145,7 +158,7 @@ void main() {
 
     blocTest<GameCodesBloc, GameCodesState>(
       'api call succeeds',
-      build: () => GameCodesBloc(dataService, telemetryService, apiService, networkService, genshinService, settingsService),
+      build: () => GameCodesBloc(dataService, telemetryService, apiService, networkService, genshinService, settingsService, deviceInfoService),
       act: (bloc) => bloc.add(const GameCodesEvent.refresh()),
       skip: 1,
       verify: (bloc) {
@@ -165,7 +178,7 @@ void main() {
       build: () {
         final settingsMock = MockSettingsService();
         when(settingsMock.lastGameCodesCheckedDate).thenReturn(DateTime.now());
-        return GameCodesBloc(dataService, telemetryService, apiService, networkService, genshinService, settingsMock);
+        return GameCodesBloc(dataService, telemetryService, apiService, networkService, genshinService, settingsMock, deviceInfoService);
       },
       act: (bloc) => bloc.add(const GameCodesEvent.refresh()),
       skip: 2,
@@ -184,7 +197,7 @@ void main() {
 
   blocTest<GameCodesBloc, GameCodesState>(
     'Mark as used',
-    build: () => GameCodesBloc(dataService, telemetryService, apiService, networkService, genshinService, settingsService),
+    build: () => GameCodesBloc(dataService, telemetryService, apiService, networkService, genshinService, settingsService, deviceInfoService),
     setUp: () async {
       await dataService.gameCodes.saveGameCodes(defaultGameCodes);
     },

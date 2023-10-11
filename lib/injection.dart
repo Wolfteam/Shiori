@@ -41,7 +41,8 @@ class Injection {
     final apiService = getIt<ApiService>();
     final genshinService = getIt<GenshinService>();
     final settingsService = getIt<SettingsService>();
-    return GameCodesBloc(dataService, telemetryService, apiService, networkService, genshinService, settingsService);
+    final deviceInfoService = getIt<DeviceInfoService>();
+    return GameCodesBloc(dataService, telemetryService, apiService, networkService, genshinService, settingsService, deviceInfoService);
   }
 
   static ItemQuantityFormBloc get itemQuantityFormBloc {
