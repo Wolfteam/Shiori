@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-echo 'Cleaning project...'
+echo "Clean started on $(date)..."
 fvm flutter clean
 
 echo 'Retrieving packages...'
@@ -14,4 +14,4 @@ fvm flutter pub run build_runner build --delete-conflicting-outputs
 echo 'Updating generated translations'
 fvm flutter pub run intl_utils:generate
 
-echo 'Clean completed'
+echo "Clean completed on $(date)"
