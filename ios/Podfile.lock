@@ -186,7 +186,7 @@ SPEC CHECKSUMS:
   flutter_inappwebview: 3d32228f1304635e7c028b0d4252937730bbc6cf
   flutter_local_notifications: 0c0b1ae97e741e1521e4c1629a459d04b9aec743
   flutter_native_timezone: 5f05b2de06c9776b4cc70e1839f03de178394d22
-  fluttertoast: fafc4fa4d01a6a9e4f772ecd190ffa525e9e2d9c
+  fluttertoast: 31b00dabfa7fb7bacd9e7dbee580d7a2ff4bf265
   image_gallery_saver: cb43cc43141711190510e92c460eb1655cd343cb
   OrderedSet: aaeb196f7fef5a9edf55d89760da9176ad40b93c
   package_info_plus: fd030dabf36271f146f1f3beacd48f564b0f17f7
@@ -207,4 +207,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: a1eaf986c30d5a84309bbcd4434682ef102516a3
 
-COCOAPODS: 1.11.3
+COCOAPODS: 1.13.0
