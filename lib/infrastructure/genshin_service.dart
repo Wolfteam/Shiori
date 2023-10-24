@@ -64,18 +64,22 @@ class GenshinServiceImpl implements GenshinService {
   }
 
   @override
-  Future<void> init(AppLanguageType languageType) async {
+  Future<void> init(AppLanguageType languageType, bool noResourcesHaveBeenDownloaded) async {
     await Future.wait([
-      _artifacts.init(_resourceService.getJsonFilePath(AppJsonFileType.artifacts)),
-      _bannerHistory.init(_resourceService.getJsonFilePath(AppJsonFileType.bannerHistory)),
-      _characters.init(_resourceService.getJsonFilePath(AppJsonFileType.characters)),
-      _elements.init(_resourceService.getJsonFilePath(AppJsonFileType.elements)),
-      _furniture.init(_resourceService.getJsonFilePath(AppJsonFileType.furniture)),
-      _gadgets.init(_resourceService.getJsonFilePath(AppJsonFileType.gadgets)),
-      _materials.init(_resourceService.getJsonFilePath(AppJsonFileType.materials)),
-      _monsters.init(_resourceService.getJsonFilePath(AppJsonFileType.monsters)),
-      _weapons.init(_resourceService.getJsonFilePath(AppJsonFileType.weapons)),
-      _translations.initTranslations(languageType, _resourceService.getJsonFilePath(AppJsonFileType.translations, language: languageType)),
+      _artifacts.init(_resourceService.getJsonFilePath(AppJsonFileType.artifacts), noResourcesHaveBeenDownloaded),
+      _bannerHistory.init(_resourceService.getJsonFilePath(AppJsonFileType.bannerHistory), noResourcesHaveBeenDownloaded),
+      _characters.init(_resourceService.getJsonFilePath(AppJsonFileType.characters), noResourcesHaveBeenDownloaded),
+      _elements.init(_resourceService.getJsonFilePath(AppJsonFileType.elements), noResourcesHaveBeenDownloaded),
+      _furniture.init(_resourceService.getJsonFilePath(AppJsonFileType.furniture), noResourcesHaveBeenDownloaded),
+      _gadgets.init(_resourceService.getJsonFilePath(AppJsonFileType.gadgets), noResourcesHaveBeenDownloaded),
+      _materials.init(_resourceService.getJsonFilePath(AppJsonFileType.materials), noResourcesHaveBeenDownloaded),
+      _monsters.init(_resourceService.getJsonFilePath(AppJsonFileType.monsters), noResourcesHaveBeenDownloaded),
+      _weapons.init(_resourceService.getJsonFilePath(AppJsonFileType.weapons), noResourcesHaveBeenDownloaded),
+      _translations.initTranslations(
+        languageType,
+        _resourceService.getJsonFilePath(AppJsonFileType.translations, language: languageType),
+        noResourcesHaveBeenDownloaded,
+      ),
     ]);
   }
 
@@ -215,12 +219,18 @@ class GenshinServiceImpl implements GenshinService {
       case ChartType.topFiveStarCharacterLeastReruns:
       case ChartType.topFourStarCharacterLeastReruns:
         final characters = this.characters.getItemCommonWithNameByRarity(stars);
+        if (characters.isEmpty) {
+          return [];
+        }
         return bannerHistory.getTopCharts(mostReruns, type, BannerHistoryItemType.character, characters);
       case ChartType.topFiveStarWeaponMostReruns:
       case ChartType.topFourStarWeaponMostReruns:
       case ChartType.topFiveStarWeaponLeastReruns:
       case ChartType.topFourStarWeaponLeastReruns:
         final weapons = this.weapons.getItemCommonWithNameByRarity(stars);
+        if (weapons.isEmpty) {
+          return [];
+        }
         return bannerHistory.getTopCharts(mostReruns, type, BannerHistoryItemType.weapon, weapons);
       default:
         throw Exception('Type = $type is not valid in the getTopCharts method');

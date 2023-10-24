@@ -12,7 +12,11 @@ class GadgetFileServiceImpl extends GadgetFileService {
   TranslationFileService get translations => throw UnimplementedError('Translations are not required in this file');
 
   @override
-  Future<void> init(String assetPath) async {
+  Future<void> init(String assetPath, bool noResourcesHaveBeenDownloaded) async {
+    if (noResourcesHaveBeenDownloaded) {
+      _gadgetsFile = GadgetsFile(gadgets: []);
+      return;
+    }
     final json = await readJson(assetPath);
     _gadgetsFile = GadgetsFile.fromJson(json);
     assert(

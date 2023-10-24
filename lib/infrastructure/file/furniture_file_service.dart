@@ -12,7 +12,11 @@ class FurnitureFileServiceImpl extends FurnitureFileService {
   TranslationFileService get translations => throw UnimplementedError('Translations are not required in this file');
 
   @override
-  Future<void> init(String assetPath) async {
+  Future<void> init(String assetPath, bool noResourcesHaveBeenDownloaded) async {
+    if (noResourcesHaveBeenDownloaded) {
+      _furnitureFile = FurnitureFile(furniture: []);
+      return;
+    }
     final json = await readJson(assetPath);
     _furnitureFile = FurnitureFile.fromJson(json);
     assert(

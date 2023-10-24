@@ -28,7 +28,11 @@ class BannerHistoryFileServiceImpl extends BannerHistoryFileService {
   BannerHistoryFileServiceImpl(this._resourceService, this._characters, this._weapons);
 
   @override
-  Future<void> init(String assetPath) async {
+  Future<void> init(String assetPath, bool noResourcesHaveBeenDownloaded) async {
+    if (noResourcesHaveBeenDownloaded) {
+      _bannerHistoryFile = const BannerHistoryFile(banners: []);
+      return;
+    }
     final json = await readJson(assetPath);
     _bannerHistoryFile = BannerHistoryFile.fromJson(json);
   }

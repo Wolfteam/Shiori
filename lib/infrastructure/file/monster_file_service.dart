@@ -19,7 +19,11 @@ class MonsterFileServiceImpl extends MonsterFileService {
   MonsterFileServiceImpl(this._resourceService, this._translations);
 
   @override
-  Future<void> init(String assetPath) async {
+  Future<void> init(String assetPath, bool noResourcesHaveBeenDownloaded) async {
+    if (noResourcesHaveBeenDownloaded) {
+      _monstersFile = MonstersFile(monsters: []);
+      return;
+    }
     final json = await readJson(assetPath);
     _monstersFile = MonstersFile.fromJson(json);
   }

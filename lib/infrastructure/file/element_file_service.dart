@@ -17,7 +17,11 @@ class ElementFileServiceImpl extends ElementFileService {
   ElementFileServiceImpl(this._translations);
 
   @override
-  Future<void> init(String assetPath) async {
+  Future<void> init(String assetPath, bool noResourcesHaveBeenDownloaded) async {
+    if (noResourcesHaveBeenDownloaded) {
+      _elementsFile = ElementsFile(debuffs: [], reactions: [], resonance: []);
+      return;
+    }
     final json = await readJson(assetPath);
     _elementsFile = ElementsFile.fromJson(json);
   }

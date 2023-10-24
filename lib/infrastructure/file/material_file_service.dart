@@ -19,7 +19,22 @@ class MaterialFileServiceImpl extends MaterialFileService {
   MaterialFileServiceImpl(this._resourceService, this._translations);
 
   @override
-  Future<void> init(String assetPath) async {
+  Future<void> init(String assetPath, bool noResourcesHaveBeenDownloaded) async {
+    if (noResourcesHaveBeenDownloaded) {
+      _materialsFile = MaterialsFile(
+        talents: [],
+        weapon: [],
+        weaponPrimary: [],
+        common: [],
+        currency: [],
+        elemental: [],
+        jewels: [],
+        locals: [],
+        experience: [],
+        ingredient: [],
+      );
+      return;
+    }
     final json = await readJson(assetPath);
     _materialsFile = MaterialsFile.fromJson(json);
   }
