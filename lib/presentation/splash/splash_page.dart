@@ -78,7 +78,8 @@ class SplashPage extends StatelessWidget {
           return;
         }
         final s = S.of(context);
-        final msg = '${s.startingFromVersionUpdateMsg}\n\n${s.internetRequiredToUpdate}\n\n${s.doNotCloseAppWhileUpdating}';
+        final msg =
+            '${s.startingFromVersionUpdateMsg}\n\n${s.internetRequiredToUpdate}\n\n${s.doNotCloseAppWhileUpdating}\n\n${s.youCanSkipFirstResourceDownloadMsg}';
         showDialog<bool?>(
           context: context,
           barrierDismissible: false,
@@ -87,9 +88,8 @@ class SplashPage extends StatelessWidget {
             content: msg,
             okText: s.applyUpdate,
             onOk: () => _applyUpdate(result!, context),
-            cancelText: s.continueLabel,
-            onCancel: () => _initMain(AppResourceUpdateResultType.noUpdatesAvailable, context),
-            showCancelButton: !noResourcesHasBeenDownloaded,
+            cancelText: s.later,
+            onCancel: () => _initMain(AppResourceUpdateResultType.firstInstallSkipped, context),
           ),
         );
       case AppResourceUpdateResultType.updating:
@@ -99,6 +99,7 @@ class SplashPage extends StatelessWidget {
       case AppResourceUpdateResultType.unknownErrorOnFirstInstall:
       case AppResourceUpdateResultType.unknownError:
       case AppResourceUpdateResultType.apiIsUnavailable:
+      case AppResourceUpdateResultType.firstInstallSkipped:
         break;
     }
 

@@ -3,6 +3,7 @@ import 'package:shiori/generated/l10n.dart';
 import 'package:shiori/presentation/custom_builds/custom_builds_page.dart';
 import 'package:shiori/presentation/home/widgets/card_description.dart';
 import 'package:shiori/presentation/home/widgets/card_item.dart';
+import 'package:shiori/presentation/home/widgets/requires_resources_widget.dart';
 
 class CustomBuildsCard extends StatelessWidget {
   final bool iconToTheLeft;
@@ -16,14 +17,16 @@ class CustomBuildsCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final s = S.of(context);
-    return CardItem(
-      title: s.customBuilds,
-      iconToTheLeft: iconToTheLeft,
-      onClick: _gotoMaterialsPage,
-      icon: Icon(Icons.dashboard_customize, size: 60, color: theme.colorScheme.secondary),
-      children: [
-        CardDescription(text: s.createCustomBuilds),
-      ],
+    return RequiresDownloadedResourcesWidget(
+      child: CardItem(
+        title: s.customBuilds,
+        iconToTheLeft: iconToTheLeft,
+        onClick: _gotoMaterialsPage,
+        icon: Icon(Icons.dashboard_customize, size: 60, color: theme.colorScheme.secondary),
+        children: [
+          CardDescription(text: s.createCustomBuilds),
+        ],
+      ),
     );
   }
 

@@ -33,6 +33,9 @@ class FixedLeftColumn extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    if (items.isEmpty) {
+      return const SizedBox.shrink();
+    }
     return SizedBox(
       width: cellWidth,
       child: ListView.builder(
