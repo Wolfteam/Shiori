@@ -10,4 +10,5 @@ enum AppResourceUpdateResultType {
   updating,
   updated,
   apiIsUnavailable,
+  firstInstallSkipped,
 }
