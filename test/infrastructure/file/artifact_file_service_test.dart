@@ -5,27 +5,35 @@ import '../../common.dart';
 import 'common_file.dart';
 
 void main() {
-  test('Get artifacts for card', () async {
+  group('Get artifacts for card', () {
     for (final lang in AppLanguageType.values) {
-      final service = await getArtifactFileService(lang);
-      final artifacts = service.getArtifactsForCard();
-      checkKeys(artifacts.map((e) => e.key).toList());
-      for (final artifact in artifacts) {
-        checkKey(artifact.key);
-        checkAsset(artifact.image);
-        expect(artifact.name, allOf([isNotEmpty, isNotNull]));
-        expect(artifact.rarity, allOf([greaterThanOrEqualTo(3), lessThanOrEqualTo(5)]));
-        expect(artifact.bonus, isNotEmpty);
-        for (final bonus in artifact.bonus) {
-          expect(bonus.bonus, allOf([isNotEmpty, isNotNull]));
-          if (artifact.bonus.length == 2) {
-            expect(bonus.pieces, inInclusiveRange(1, 4));
-          } else {
-            expect(bonus.pieces == 1, isTrue);
+      test('language = ${lang.name}', () async {
+        final service = await getArtifactFileService(lang);
+        final artifacts = service.getArtifactsForCard();
+        checkKeys(artifacts.map((e) => e.key).toList());
+        for (final artifact in artifacts) {
+          checkKey(artifact.key);
+          checkAsset(artifact.image);
+          expect(artifact.name, allOf([isNotEmpty, isNotNull]));
+          expect(artifact.rarity, allOf([greaterThanOrEqualTo(3), lessThanOrEqualTo(5)]));
+          expect(artifact.bonus, isNotEmpty);
+          for (final bonus in artifact.bonus) {
+            expect(bonus.bonus, allOf([isNotEmpty, isNotNull]));
+            if (artifact.bonus.length == 2) {
+              expect(bonus.pieces, inInclusiveRange(1, 4));
+            } else {
+              expect(bonus.pieces == 1, isTrue);
+            }
           }
         }
-      }
+      });
     }
+
+    test('no resources have been downloaded', () async {
+      final service = await getArtifactFileService(AppLanguageType.english, noResourcesHaveBeenDownloaded: true);
+      final artifacts = service.getArtifactsForCard();
+      expect(artifacts.isEmpty, isTrue);
+    });
   });
 
   test('Get artifact', () async {

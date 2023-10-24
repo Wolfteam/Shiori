@@ -44,6 +44,7 @@ void main() {
   const defaultLang = AppLanguageType.english;
   const defaultTheme = AppThemeType.dark;
   const defaultAccentColor = AppAccentColorType.red;
+  const noResourcesHaveBeenDownloaded = false;
   final defaultAppSettings = AppSettings(
     appTheme: defaultTheme,
     useDarkAmoled: false,
@@ -108,6 +109,7 @@ void main() {
     when(settingsService.useDarkAmoledTheme).thenReturn(settings.useDarkAmoled);
     when(settingsService.accentColor).thenReturn(settings.accentColor);
     when(settingsService.isFirstInstall).thenReturn(settings.isFirstInstall);
+    when(settingsService.noResourcesHasBeenDownloaded).thenReturn(noResourcesHaveBeenDownloaded);
     when(settingsService.appSettings).thenReturn(settings);
 
     when(deviceInfoService.appName).thenReturn(appName);

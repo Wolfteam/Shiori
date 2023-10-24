@@ -5,20 +5,28 @@ import '../../common.dart';
 import 'common_file.dart';
 
 void main() {
-  test('Get weapons for card', () async {
+  group('Get weapons for card', () {
     for (final lang in AppLanguageType.values) {
-      final service = await getWeaponFileService(lang);
-      final weapons = service.getWeaponsForCard();
-      checkKeys(weapons.map((e) => e.key).toList());
-      for (final weapon in weapons) {
-        checkKey(weapon.key);
-        checkAsset(weapon.image);
-        expect(weapon.name, allOf([isNotEmpty, isNotNull]));
-        expect(weapon.rarity, allOf([greaterThanOrEqualTo(1), lessThanOrEqualTo(5)]));
-        expect(weapon.baseAtk, greaterThan(0));
-        expect(weapon.subStatValue, greaterThanOrEqualTo(0));
-      }
+      test('language = ${lang.name}', () async {
+        final service = await getWeaponFileService(lang);
+        final weapons = service.getWeaponsForCard();
+        checkKeys(weapons.map((e) => e.key).toList());
+        for (final weapon in weapons) {
+          checkKey(weapon.key);
+          checkAsset(weapon.image);
+          expect(weapon.name, allOf([isNotEmpty, isNotNull]));
+          expect(weapon.rarity, allOf([greaterThanOrEqualTo(1), lessThanOrEqualTo(5)]));
+          expect(weapon.baseAtk, greaterThan(0));
+          expect(weapon.subStatValue, greaterThanOrEqualTo(0));
+        }
+      });
     }
+
+    test('no resources have been downloaded', () async {
+      final service = await getWeaponFileService(AppLanguageType.english, noResourcesHaveBeenDownloaded: true);
+      final weapons = service.getWeaponsForCard();
+      expect(weapons.isEmpty, isTrue);
+    });
   });
 
   test('Get weapon', () async {

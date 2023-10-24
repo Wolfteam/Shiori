@@ -61,18 +61,26 @@ void main() {
     }
   }
 
-  test('Get banner history version, data gets retrieved and sorted', () async {
+  group('Get banner history version', () {
     for (final type in SortDirectionType.values) {
-      final versions = service.getBannerHistoryVersions(type);
-      expect(versions, isNotEmpty);
-      expect(versions.toSet().length, versions.length);
-      switch (type) {
-        case SortDirectionType.asc:
-          expect(versions.first < versions.last, isTrue);
-        case SortDirectionType.desc:
-          expect(versions.first > versions.last, isTrue);
-      }
+      test('data gets retrieved and sorted by ${type.name}', () async {
+        final versions = service.getBannerHistoryVersions(type);
+        expect(versions, isNotEmpty);
+        expect(versions.toSet().length, versions.length);
+        switch (type) {
+          case SortDirectionType.asc:
+            expect(versions.first < versions.last, isTrue);
+          case SortDirectionType.desc:
+            expect(versions.first > versions.last, isTrue);
+        }
+      });
     }
+
+    test('no resources have been downloaded', () async {
+      final service = await getBannerHistoryFileService(AppLanguageType.english, noResourcesHaveBeenDownloaded: true);
+      final versions = service.getBannerHistoryVersions(SortDirectionType.asc);
+      expect(versions.isEmpty, isTrue);
+    });
   });
 
   test('Get banner history', () async {
