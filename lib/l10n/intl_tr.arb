@@ -492,5 +492,8 @@
   "wishHistoryXStar": "{stars}-Star",
   "artifact": "Artifact",
   "material": "Material",
-  "close": "Close"
+  "close": "Close",
+  "later": "Later",
+  "youCanSkipFirstResourceDownloadMsg": "You can skip the initial resource download though some features may be disabled",
+  "firstResourceDownloadSkippedMsg": "Some features may be disabled until you complete the initial resource download\nYou can complete it in the app settings"
 }

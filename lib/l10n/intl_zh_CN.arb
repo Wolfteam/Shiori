@@ -492,5 +492,8 @@
   "wishHistoryXStar": "{stars}星",
   "artifact": "圣遗物",
   "material": "材料",
-  "close": "关闭"
+  "close": "关闭",
+  "later": "Later",
+  "youCanSkipFirstResourceDownloadMsg": "You can skip the initial resource download though some features may be disabled",
+  "firstResourceDownloadSkippedMsg": "Some features may be disabled until you complete the initial resource download\nYou can complete it in the app settings"
 }
