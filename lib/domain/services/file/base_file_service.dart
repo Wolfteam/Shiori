@@ -15,5 +15,5 @@ abstract class BaseFileService {
     return jsonDecode(jsonString) as Map<String, dynamic>;
   }
 
-  Future<void> init(String assetPath, bool noResourcesHaveBeenDownloaded);
+  Future<void> init(String assetPath, {bool noResourcesHaveBeenDownloaded = false});
 }

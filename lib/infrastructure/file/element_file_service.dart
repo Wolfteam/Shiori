@@ -17,7 +17,7 @@ class ElementFileServiceImpl extends ElementFileService {
   ElementFileServiceImpl(this._translations);
 
   @override
-  Future<void> init(String assetPath, bool noResourcesHaveBeenDownloaded) async {
+  Future<void> init(String assetPath, {bool noResourcesHaveBeenDownloaded = false}) async {
     if (noResourcesHaveBeenDownloaded) {
       _elementsFile = ElementsFile(debuffs: [], reactions: [], resonance: []);
       return;

@@ -37,7 +37,7 @@ class CharacterFileServiceImpl extends CharacterFileService {
   CharacterFileServiceImpl(this._resourceService, this._localeService, this._artifacts, this._materials, this._weapons, this._translations);
 
   @override
-  Future<void> init(String assetPath, bool noResourcesHaveBeenDownloaded) async {
+  Future<void> init(String assetPath, {bool noResourcesHaveBeenDownloaded = false}) async {
     if (noResourcesHaveBeenDownloaded) {
       _charactersFile = CharactersFile(characters: []);
       return;

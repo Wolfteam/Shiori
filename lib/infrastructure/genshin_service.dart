@@ -64,21 +64,24 @@ class GenshinServiceImpl implements GenshinService {
   }
 
   @override
-  Future<void> init(AppLanguageType languageType, bool noResourcesHaveBeenDownloaded) async {
+  Future<void> init(AppLanguageType languageType, {bool noResourcesHaveBeenDownloaded = false}) async {
     await Future.wait([
-      _artifacts.init(_resourceService.getJsonFilePath(AppJsonFileType.artifacts), noResourcesHaveBeenDownloaded),
-      _bannerHistory.init(_resourceService.getJsonFilePath(AppJsonFileType.bannerHistory), noResourcesHaveBeenDownloaded),
-      _characters.init(_resourceService.getJsonFilePath(AppJsonFileType.characters), noResourcesHaveBeenDownloaded),
-      _elements.init(_resourceService.getJsonFilePath(AppJsonFileType.elements), noResourcesHaveBeenDownloaded),
-      _furniture.init(_resourceService.getJsonFilePath(AppJsonFileType.furniture), noResourcesHaveBeenDownloaded),
-      _gadgets.init(_resourceService.getJsonFilePath(AppJsonFileType.gadgets), noResourcesHaveBeenDownloaded),
-      _materials.init(_resourceService.getJsonFilePath(AppJsonFileType.materials), noResourcesHaveBeenDownloaded),
-      _monsters.init(_resourceService.getJsonFilePath(AppJsonFileType.monsters), noResourcesHaveBeenDownloaded),
-      _weapons.init(_resourceService.getJsonFilePath(AppJsonFileType.weapons), noResourcesHaveBeenDownloaded),
+      _artifacts.init(_resourceService.getJsonFilePath(AppJsonFileType.artifacts), noResourcesHaveBeenDownloaded: noResourcesHaveBeenDownloaded),
+      _bannerHistory.init(
+        _resourceService.getJsonFilePath(AppJsonFileType.bannerHistory),
+        noResourcesHaveBeenDownloaded: noResourcesHaveBeenDownloaded,
+      ),
+      _characters.init(_resourceService.getJsonFilePath(AppJsonFileType.characters), noResourcesHaveBeenDownloaded: noResourcesHaveBeenDownloaded),
+      _elements.init(_resourceService.getJsonFilePath(AppJsonFileType.elements), noResourcesHaveBeenDownloaded: noResourcesHaveBeenDownloaded),
+      _furniture.init(_resourceService.getJsonFilePath(AppJsonFileType.furniture), noResourcesHaveBeenDownloaded: noResourcesHaveBeenDownloaded),
+      _gadgets.init(_resourceService.getJsonFilePath(AppJsonFileType.gadgets), noResourcesHaveBeenDownloaded: noResourcesHaveBeenDownloaded),
+      _materials.init(_resourceService.getJsonFilePath(AppJsonFileType.materials), noResourcesHaveBeenDownloaded: noResourcesHaveBeenDownloaded),
+      _monsters.init(_resourceService.getJsonFilePath(AppJsonFileType.monsters), noResourcesHaveBeenDownloaded: noResourcesHaveBeenDownloaded),
+      _weapons.init(_resourceService.getJsonFilePath(AppJsonFileType.weapons), noResourcesHaveBeenDownloaded: noResourcesHaveBeenDownloaded),
       _translations.initTranslations(
         languageType,
         _resourceService.getJsonFilePath(AppJsonFileType.translations, language: languageType),
-        noResourcesHaveBeenDownloaded,
+        noResourcesHaveBeenDownloaded: noResourcesHaveBeenDownloaded,
       ),
     ]);
   }

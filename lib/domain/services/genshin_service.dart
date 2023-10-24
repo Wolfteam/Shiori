@@ -23,7 +23,7 @@ abstract class GenshinService {
 
   TranslationFileService get translations;
 
-  Future<void> init(AppLanguageType languageType, bool noResourcesHaveBeenDownloaded);
+  Future<void> init(AppLanguageType languageType, {bool noResourcesHaveBeenDownloaded = false});
 
   int getServerDay(AppServerResetTimeType type);
 

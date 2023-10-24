@@ -22,7 +22,7 @@ class WeaponFileServiceImpl extends WeaponFileService {
   WeaponFileServiceImpl(this._resourceService, this._materials, this._translations);
 
   @override
-  Future<void> init(String assetPath, bool noResourcesHaveBeenDownloaded) async {
+  Future<void> init(String assetPath, {bool noResourcesHaveBeenDownloaded = false}) async {
     if (noResourcesHaveBeenDownloaded) {
       _weaponsFile = WeaponsFile(bows: [], swords: [], claymores: [], catalysts: [], polearms: []);
       return;
