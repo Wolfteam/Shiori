@@ -131,6 +131,7 @@ class _HawkFabMenuState extends State<HawkFabMenu> with TickerProviderStateMixin
   Widget _buildBlurWidget() {
     return InkWell(
       onTap: _toggleMenu,
+      hoverColor: Colors.transparent,
       child: BackdropFilter(
         filter: ui.ImageFilter.blur(
           sigmaX: widget.blur,
@@ -190,7 +191,7 @@ class _MenuItemWidget extends StatelessWidget {
           Container(
             padding: const EdgeInsets.symmetric(
               horizontal: 10,
-              vertical: 3,
+              vertical: 5,
             ),
             decoration: BoxDecoration(
               color: item.labelBackgroundColor ?? Colors.white,
@@ -201,13 +202,14 @@ class _MenuItemWidget extends StatelessWidget {
             ),
             child: Text(
               item.label,
+              overflow: TextOverflow.ellipsis,
               style: TextStyle(color: item.labelColor ?? Colors.black87),
             ),
           ),
-          FloatingActionButton(
+          FloatingActionButton.small(
             onPressed: onTap,
-            mini: true,
             backgroundColor: item.color ?? Theme.of(context).primaryColor,
+            materialTapTargetSize: MaterialTapTargetSize.padded,
             child: item.icon,
           ),
         ],
