@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:collection/collection.dart' show IterableExtension;
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:shiori/domain/app_constants.dart';
@@ -10,6 +12,8 @@ import 'package:shiori/domain/services/persistence/calculator_data_service.dart'
 import 'package:shiori/domain/services/persistence/inventory_data_service.dart';
 import 'package:shiori/domain/services/resources_service.dart';
 
+//TODO: RENAME THIS CLASS
+//TODO: RENAME THE METHODS
 class CalculatorDataServiceImpl implements CalculatorDataService {
   final GenshinService _genshinService;
   final CalculatorService _calculatorService;
@@ -19,6 +23,12 @@ class CalculatorDataServiceImpl implements CalculatorDataService {
   late Box<CalculatorSession> _sessionBox;
   late Box<CalculatorItem> _calcItemBox;
   late Box<CalculatorCharacterSkill> _calcItemSkillBox;
+
+  @override
+  final StreamController<CalculatorAscMaterialSessionItemEvent> itemAdded = StreamController.broadcast();
+
+  @override
+  final StreamController<CalculatorAscMaterialSessionItemEvent> itemDeleted = StreamController.broadcast();
 
   CalculatorDataServiceImpl(this._genshinService, this._calculatorService, this._inventory, this._resourceService);
 
@@ -42,7 +52,7 @@ class CalculatorDataServiceImpl implements CalculatorDataService {
     final result = <CalculatorSessionModel>[];
 
     for (final session in sessions) {
-      result.add(getCalcAscMatSession(session.key as int));
+      result.add(getCalcAscMatSession(session.id));
     }
 
     return result;
@@ -51,24 +61,30 @@ class CalculatorDataServiceImpl implements CalculatorDataService {
   @override
   CalculatorSessionModel getCalcAscMatSession(int sessionKey) {
     final session = _sessionBox.values.firstWhere((el) => el.key == sessionKey);
-
-    final sessionItems = <ItemAscensionMaterials>[];
     final calcItems = _calcItemBox.values.where((el) => el.sessionKey == session.key).toList()..sort((x, y) => x.position.compareTo(y.position));
+    int numberOfCharacters = 0;
+    int numberOfWeapons = 0;
     for (final calItem in calcItems) {
       if (calItem.isCharacter) {
-        sessionItems.add(_buildForCharacter(calItem, calculatorItemKey: calItem.key as int, includeInventory: true));
+        numberOfCharacters++;
         continue;
       }
 
       if (calItem.isWeapon) {
-        sessionItems.add(_buildForWeapon(calItem, calculatorItemKey: calItem.key as int, includeInventory: true));
+        numberOfWeapons++;
         continue;
       }
 
       throw Exception('The provided item with key = ${calItem.key} is not neither a character nor weapon');
     }
 
-    return CalculatorSessionModel(key: session.key as int, name: session.name, position: session.position, items: sessionItems);
+    return CalculatorSessionModel(
+      key: session.id,
+      name: session.name,
+      position: session.position,
+      numberOfCharacters: numberOfCharacters,
+      numberOfWeapons: numberOfWeapons,
+    );
   }
 
   @override
@@ -93,8 +109,10 @@ class CalculatorDataServiceImpl implements CalculatorDataService {
   Future<void> deleteCalAscMatSession(int sessionKey) async {
     await _sessionBox.delete(sessionKey);
     final calItems = _calcItemBox.values.where((el) => el.sessionKey == sessionKey).toList();
-    for (final calItem in calItems) {
-      await deleteCalAscMatSessionItem(sessionKey, calItem.position);
+    for (int i = 0; i < calItems.length; i++) {
+      final calcItem = calItems[i];
+      final redistribute = i + 1 == calItems.length;
+      await deleteCalAscMatSessionItem(sessionKey, calcItem.position, redistribute: redistribute);
     }
   }
 
@@ -103,17 +121,29 @@ class CalculatorDataServiceImpl implements CalculatorDataService {
     //First we clear the used items in the inventory (if any)
     await _inventory.deleteAllUsedInventoryItems();
 
-    //Then we delete all the child items inside each session
-    final childrenItemKeys = _calcItemBox.values.map((e) => e.key).toList();
-    await _calcItemSkillBox.deleteAll(childrenItemKeys);
+    //Finally we delete them all
+    await deleteThemAll();
+  }
 
-    //Including skills
-    final skillsKeys = _calcItemSkillBox.values.map((e) => e.key).toList();
-    await _calcItemBox.delete(skillsKeys);
+  @override
+  List<ItemAscensionMaterials> getAllSessionItems(int sessionKey) {
+    final items = <ItemAscensionMaterials>[];
+    final calcItems = _calcItemBox.values.where((el) => el.sessionKey == sessionKey).toList()..sort((x, y) => x.position.compareTo(y.position));
+    for (final calItem in calcItems) {
+      if (calItem.isCharacter) {
+        items.add(_buildForCharacter(calItem, calculatorItemKey: calItem.id, includeInventory: true));
+        continue;
+      }
 
-    //Finally, we delete all the sessions
-    final keys = _sessionBox.values.map((e) => e.key).toList();
-    await _sessionBox.deleteAll(keys);
+      if (calItem.isWeapon) {
+        items.add(_buildForWeapon(calItem, calculatorItemKey: calItem.id, includeInventory: true));
+        continue;
+      }
+
+      throw Exception('The provided item with key = ${calItem.key} is not neither a character nor weapon');
+    }
+
+    return items;
   }
 
   @override
@@ -121,26 +151,30 @@ class CalculatorDataServiceImpl implements CalculatorDataService {
     for (int i = 0; i < items.length; i++) {
       final item = items[i];
       final redistribute = i + 1 == items.length && redistributeAtTheEnd;
-      await addCalAscMatSessionItem(sessionKey, item, redistribute: redistribute);
+      await addCalAscMatSessionItem(sessionKey, item, [], redistribute: redistribute);
     }
   }
 
   @override
-  Future<ItemAscensionMaterials> addCalAscMatSessionItem(int sessionKey, ItemAscensionMaterials item, {bool redistribute = true}) async {
+  Future<ItemAscensionMaterials> addCalAscMatSessionItem(
+    int sessionKey,
+    ItemAscensionMaterials item,
+    List<String> allPossibleItemMaterialsKeys, {
+    bool redistribute = true,
+  }) async {
     final mappedItem = _toCalculatorItem(sessionKey, item);
 
     final calculatorItemKey = await _calcItemBox.add(mappedItem);
     final skills = item.skills.map((e) => CalculatorCharacterSkill(calculatorItemKey, e.key, e.currentLevel, e.desiredLevel, e.position)).toList();
     await _calcItemSkillBox.addAll(skills);
 
-    if (!mappedItem.useMaterialsFromInventory || item.materials.isEmpty || !item.isActive) {
-      return item;
-    }
+    itemAdded.add(CalculatorAscMaterialSessionItemEvent.created(sessionKey, calculatorItemKey, item.isCharacter));
 
     //Here we created a used inventory item for each material
-    for (final material in item.materials) {
-      final mat = _genshinService.materials.getMaterial(material.key);
-      await _inventory.useItemFromInventory(calculatorItemKey, mat.key, ItemType.material, material.quantity);
+    if (mappedItem.useMaterialsFromInventory) {
+      for (final material in item.materials) {
+        await _inventory.useItemFromInventory(calculatorItemKey, material.key, ItemType.material, material.requiredQuantity);
+      }
     }
 
     if (!redistribute) {
@@ -148,14 +182,11 @@ class CalculatorDataServiceImpl implements CalculatorDataService {
     }
     //Since we added a new item, we need to redistribute
     //the materials because the priority of this item could be higher than the others
-    await redistributeAllInventoryMaterials();
+    //await redistributeInventoryMaterialsFromSessionPosition(sessionKey, onlyMaterialKeys: allPossibleItemMaterialsKeys);
+    await redistributeAllInventoryMaterials(onlyMaterialKeys: allPossibleItemMaterialsKeys);
 
     //And finally update the material quantity based on the used inventory items
-    //This is quite similar to what the _considerMaterialsInInventory does
-    final updatedMaterials = item.materials.map((e) {
-      final remaining = _inventory.getRemainingQuantity(calculatorItemKey, e.key, e.quantity, ItemType.material);
-      return e.copyWith.call(quantity: remaining);
-    }).toList();
+    final updatedMaterials = _considerMaterialsInInventory(calculatorItemKey, item.materials);
 
     return item.copyWith.call(materials: updatedMaterials);
   }
@@ -164,11 +195,17 @@ class CalculatorDataServiceImpl implements CalculatorDataService {
   Future<ItemAscensionMaterials> updateCalAscMatSessionItem(
     int sessionKey,
     int newItemPosition,
-    ItemAscensionMaterials item, {
+    ItemAscensionMaterials item,
+    List<String> allPossibleItemMaterialsKeys, {
     bool redistribute = true,
   }) async {
     await deleteCalAscMatSessionItem(sessionKey, item.position, redistribute: false);
-    return addCalAscMatSessionItem(sessionKey, item.copyWith.call(position: newItemPosition), redistribute: redistribute);
+    return addCalAscMatSessionItem(
+      sessionKey,
+      item.copyWith.call(position: newItemPosition),
+      allPossibleItemMaterialsKeys,
+      redistribute: redistribute,
+    );
   }
 
   @override
@@ -177,61 +214,100 @@ class CalculatorDataServiceImpl implements CalculatorDataService {
     if (calcItem == null) {
       return;
     }
-    final calcItemKey = calcItem.key as int;
+    final calcItemKey = calcItem.id;
     final skillsKeys = _calcItemSkillBox.values.where((el) => el.calculatorItemKey == calcItemKey).map((e) => e.key).toList();
     await _calcItemSkillBox.deleteAll(skillsKeys);
 
     //Make sure we delete the item before redistributing
+    itemDeleted.add(CalculatorAscMaterialSessionItemEvent.deleted(sessionKey, calcItemKey, calcItem.isCharacter));
     await _calcItemBox.delete(calcItemKey);
 
-    await _inventory.clearUsedInventoryItems(calcItemKey, redistributeAllInventoryMaterials, redistribute: redistribute);
+    final usedItemKeys = _inventory.getUsedInventoryItemKeysByCalcItemKeyAndItemType(calcItemKey, ItemType.material);
+
+    await _inventory.clearUsedInventoryItems(calcItemKey);
+
+    if (redistribute) {
+      await redistributeAllInventoryMaterials(onlyMaterialKeys: usedItemKeys);
+    }
   }
 
   @override
   Future<void> deleteAllCalAscMatSessionItems(int sessionKey) async {
-    final calcItems = _calcItemBox.values.where((el) => el.sessionKey == sessionKey).map((e) => e.key as int).toList();
-
+    final calcItems = _calcItemBox.values.where((el) => el.sessionKey == sessionKey);
     if (calcItems.isEmpty) {
       return;
     }
 
-    for (final calcItemKey in calcItems) {
-      final skillsKeys = _calcItemSkillBox.values.where((el) => el.calculatorItemKey == calcItemKey).map((e) => e.key).toList();
+    final onlyMaterialKeys = <String>[];
+    for (final calcItem in calcItems) {
+      final skillsKeys = _calcItemSkillBox.values.where((el) => el.calculatorItemKey == calcItem.id).map((e) => e.key).toList();
       await _calcItemSkillBox.deleteAll(skillsKeys);
 
       //Make sure we delete the item before redistributing
-      await _calcItemBox.delete(calcItemKey);
+      itemDeleted.add(CalculatorAscMaterialSessionItemEvent.deleted(sessionKey, calcItem.id, calcItem.isCharacter));
+      await _calcItemBox.delete(calcItem.id);
 
-      await _inventory.clearUsedInventoryItems(calcItemKey, redistributeAllInventoryMaterials);
+      final usedItemKeys = _inventory.getUsedInventoryItemKeysByCalcItemKeyAndItemType(calcItem.id, ItemType.material);
+      onlyMaterialKeys.addAll(usedItemKeys);
+
+      await _inventory.clearUsedInventoryItems(calcItem.id);
     }
 
     //Only redistribute at the end of the process
-    await redistributeAllInventoryMaterials();
+    await redistributeAllInventoryMaterials(onlyMaterialKeys: onlyMaterialKeys);
   }
 
   @override
-  Future<void> redistributeAllInventoryMaterials() async {
-    //Here we just redistribute what we got based on what we have
+  Future<void> redistributeAllInventoryMaterials({List<String> onlyMaterialKeys = const <String>[]}) async {
+    final checkedItems = <_RedistributeCheckedItem>[];
     final materialsInInventory = _inventory.getItemsForRedistribution(ItemType.material);
+    final sessions = _sessionBox.values.toList()..sort((x, y) => x.position.compareTo(y.position));
     for (final material in materialsInInventory) {
-      await redistributeInventoryMaterial(material.key, material.quantity);
+      if (onlyMaterialKeys.isNotEmpty && !onlyMaterialKeys.contains(material.key)) {
+        continue;
+      }
+
+      int currentQuantity = material.quantity;
+      for (final session in sessions) {
+        currentQuantity = await _redistributeInventoryMaterial(material.key, currentQuantity, session.id, checkedItems);
+      }
     }
   }
 
   @override
   Future<void> redistributeInventoryMaterial(String itemKey, int newQuantity) async {
+    final checkedItems = <_RedistributeCheckedItem>[];
     int currentQuantity = newQuantity;
     final sessions = _sessionBox.values.toList()..sort((x, y) => x.position.compareTo(y.position));
     for (final session in sessions) {
-      final calcItems = _calcItemBox.values.where((el) => el.sessionKey == session.key).toList()..sort((x, y) => x.position.compareTo(y.position));
-      for (final calItem in calcItems) {
-        if (!calItem.useMaterialsFromInventory || !calItem.isActive) {
-          continue;
-        }
+      currentQuantity = await _redistributeInventoryMaterial(itemKey, currentQuantity, session.id, checkedItems);
+    }
+  }
 
-        //If we hit this point, that means that itemKey COULD be being used, so we need to update the used values accordingly
-        final item = calItem.isCharacter ? _buildForCharacter(calItem) : _buildForWeapon(calItem);
-        currentQuantity = await _inventory.redistributeMaterial(calItem.key as int, item, itemKey, currentQuantity);
+  @override
+  Future<void> redistributeInventoryMaterialsFromSessionPosition(
+    int sessionKey, {
+    List<String> onlyMaterialKeys = const <String>[],
+  }) async {
+    final checkedItems = <_RedistributeCheckedItem>[];
+    final materialsInInventory = _inventory.getItemsForRedistribution(ItemType.material);
+    final fromSession = _sessionBox.values.firstWhere((s) => s.key == sessionKey);
+    final until = _sessionBox.values.where((s) => s.position > fromSession.position);
+    final sessions = [fromSession, ...until]..sort((x, y) => x.position.compareTo(y.position));
+    for (final material in materialsInInventory) {
+      if (onlyMaterialKeys.isNotEmpty && !onlyMaterialKeys.contains(material.key)) {
+        continue;
+      }
+
+      int currentQuantity = material.quantity;
+      for (final session in sessions) {
+        currentQuantity = await _redistributeInventoryMaterial(
+          material.key,
+          currentQuantity,
+          session.id,
+          checkedItems,
+          clearUsedMaterials: true,
+        );
       }
     }
   }
@@ -244,7 +320,7 @@ class CalculatorDataServiceImpl implements CalculatorDataService {
       final calcItems = _calcItemBox.values.where((el) => el.sessionKey == session.key).map(
         (calcItem) {
           final charSkills = _calcItemSkillBox.values
-              .where((el) => el.calculatorItemKey == calcItem.key as int)
+              .where((el) => el.calculatorItemKey == calcItem.id)
               .map(
                 (e) => BackupCalculatorAscMaterialsSessionCharSkillItemModel(
                   skillKey: e.skillKey,
@@ -362,6 +438,31 @@ class CalculatorDataServiceImpl implements CalculatorDataService {
     }
 
     await redistributeAllInventoryMaterials();
+  }
+
+  @override
+  Future<void> reorderItems(int sessionKey, List<ItemAscensionMaterials> currentItems, List<ItemAscensionMaterials> updatedItems) async {
+    assert(currentItems.length == updatedItems.length);
+
+    final allPossibleMaterialItemKeys = <String>[];
+    final allCalcItems = _calcItemBox.values.where((el) => el.sessionKey == sessionKey).toList();
+    for (int i = 0; i < updatedItems.length; i++) {
+      final current = currentItems[i];
+      final updatedItem = updatedItems[i];
+      if (current.key != updatedItem.key) {
+        allPossibleMaterialItemKeys.addAll(_calculatorService.getAllPossibleMaterialKeysToUse(updatedItem.key, updatedItem.isCharacter));
+      }
+      final updatedCalcItem = allCalcItems.firstWhereOrNull((el) => el.itemKey == updatedItem.key && el.position == updatedItem.position);
+      if (updatedCalcItem == null) {
+        continue;
+      }
+      updatedCalcItem.position = i;
+      await updatedCalcItem.save();
+    }
+
+    if (allPossibleMaterialItemKeys.isNotEmpty) {
+      await _redistributeAllInventoryMaterialsOnItemsReorder(sessionKey, allPossibleMaterialItemKeys);
+    }
   }
 
   CalculatorItem _toCalculatorItem(int sessionKey, ItemAscensionMaterials item) {
@@ -487,8 +588,79 @@ class CalculatorDataServiceImpl implements CalculatorDataService {
         return e;
       }
 
-      final remaining = _inventory.getRemainingQuantity(calculatorItemKey, e.key, e.quantity, ItemType.material);
-      return e.copyWith.call(quantity: remaining);
+      final remaining = _inventory.getRemainingQuantity(calculatorItemKey, e.key, e.requiredQuantity, ItemType.material);
+      final available = e.requiredQuantity - remaining;
+      return e.copyWith.call(remainingQuantity: remaining, availableQuantity: available.abs());
     }).toList();
   }
+
+  Future<int> _redistributeInventoryMaterial(
+    String materialKey,
+    int materialQuantity,
+    int sessionKey,
+    List<_RedistributeCheckedItem> checkedItems, {
+    bool clearUsedMaterials = false,
+  }) async {
+    int currentQuantity = materialQuantity;
+    final calcItems = _calcItemBox.values.where((el) => el.sessionKey == sessionKey).toList()..sort((x, y) => x.position.compareTo(y.position));
+
+    if (clearUsedMaterials) {
+      for (final calcItem in calcItems) {
+        final calcItemKey = calcItem.id;
+        await _inventory.clearUsedInventoryItems(calcItemKey, onlyItemKey: materialKey);
+      }
+    }
+
+    for (final calcItem in calcItems) {
+      final calcItemKey = calcItem.id;
+
+      if (!calcItem.useMaterialsFromInventory || !calcItem.isActive) {
+        continue;
+      }
+
+      _RedistributeCheckedItem? checked = checkedItems.firstWhereOrNull((el) => el.sessionKey == sessionKey && el.calcItemKey == calcItemKey);
+      if (checked == null) {
+        final item = calcItem.isCharacter ? _buildForCharacter(calcItem) : _buildForWeapon(calcItem);
+        checked = _RedistributeCheckedItem(sessionKey, calcItemKey, item.materials);
+        checkedItems.add(checked);
+      }
+
+      if (!checked.materials.any((m) => m.key == materialKey)) {
+        continue;
+      }
+
+      //If we hit this point, that means that itemKey COULD be being used, so we need to update the used values accordingly
+      currentQuantity = await _inventory.redistributeMaterial(
+        calcItemKey,
+        checked.materials,
+        materialKey,
+        currentQuantity,
+        checkUsed: clearUsedMaterials,
+      );
+    }
+    return currentQuantity;
+  }
+
+  /// This one is kinda like a combination of [redistributeAllInventoryMaterials] and [redistributeInventoryMaterial]
+  /// but with just one session
+  Future<void> _redistributeAllInventoryMaterialsOnItemsReorder(int sessionKey, List<String> onlyMaterialKeys) async {
+    //Here we just redistribute what we got based on what we have
+    final checkedItems = <_RedistributeCheckedItem>[];
+    final materialsInInventory = _inventory.getItemsForRedistribution(ItemType.material);
+    for (final material in materialsInInventory) {
+      if (onlyMaterialKeys.isNotEmpty && !onlyMaterialKeys.contains(material.key)) {
+        continue;
+      }
+
+      await _redistributeInventoryMaterial(material.key, material.quantity, sessionKey, checkedItems);
+    }
+  }
+}
+
+class _RedistributeCheckedItem {
+  final int sessionKey;
+  final int calcItemKey;
+  final List<ItemAscensionMaterialModel> materials;
+
+  _RedistributeCheckedItem(this.sessionKey, this.calcItemKey, this.materials);
 }

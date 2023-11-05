@@ -219,23 +219,28 @@ class InventoryDataServiceImpl implements InventoryDataService {
   }
 
   @override
-  Future<int> redistributeMaterial(int calItemKey, ItemAscensionMaterials item, String itemKey, int currentQuantity) async {
+  Future<int> redistributeMaterial(
+    int calcItemKey,
+    List<ItemAscensionMaterialModel> materials,
+    String itemKey,
+    int currentQuantity, {
+    bool checkUsed = false,
+  }) async {
     int currentQty = currentQuantity;
-    final material = _genshinService.materials.getMaterial(itemKey);
-    final desiredQuantityToUse = item.materials.firstWhereOrNull((el) => el.key == material.key)?.quantity ?? 0;
 
-    //Next, we check if there is a used item for this calculator item
-    var usedInInventory = _inventoryUsedItemsBox.values.firstWhereOrNull((el) => el.calculatorItemKey == calItemKey && el.itemKey == itemKey);
+    //Check if there is a used item for this calculator item
+    var usedInInventory = _inventoryUsedItemsBox.values.firstWhereOrNull((el) => el.calculatorItemKey == calcItemKey && el.itemKey == itemKey);
+    final desiredQuantityToUse = materials.firstWhereOrNull((el) => el.key == itemKey)?.requiredQuantity ?? 0;
 
     //If no used item was found, lets check if this calc. item could benefit from this itemKey
     if (usedInInventory == null) {
       //If itemKey is not in the used materials, then this item does not use this material
-      if (!item.materials.any((el) => el.key == material.key)) {
+      if (!materials.any((el) => el.key == itemKey)) {
         return currentQty;
       }
 
       //otherwise, since we don't have a used inventory item, we need to create one, that will later get updated
-      usedInInventory = InventoryUsedItem(calItemKey, itemKey, desiredQuantityToUse, ItemType.material.index);
+      usedInInventory = InventoryUsedItem(calcItemKey, itemKey, desiredQuantityToUse, ItemType.material.index);
       await _inventoryUsedItemsBox.add(usedInInventory);
     }
 
@@ -284,12 +289,7 @@ class InventoryDataServiceImpl implements InventoryDataService {
   }
 
   @override
-  Future<void> clearUsedInventoryItems(
-    int calculatorItemKey,
-    RedistributeAllInventoryMaterials redistributeAll, {
-    String? onlyItemKey,
-    bool redistribute = false,
-  }) async {
+  Future<void> clearUsedInventoryItems(int calculatorItemKey, {String? onlyItemKey}) async {
     final usedItems = onlyItemKey.isNullEmptyOrWhitespace
         ? _inventoryUsedItemsBox.values.where((el) => el.calculatorItemKey == calculatorItemKey).map((e) => e.key).toList()
         : _inventoryUsedItemsBox.values
@@ -297,9 +297,6 @@ class InventoryDataServiceImpl implements InventoryDataService {
             .map((e) => e.key)
             .toList();
     await _inventoryUsedItemsBox.deleteAll(usedItems);
-    if (redistribute) {
-      await redistributeAll();
-    }
   }
 
   @override
@@ -349,6 +346,14 @@ class InventoryDataServiceImpl implements InventoryDataService {
           break;
       }
     }
+  }
+
+  @override
+  List<String> getUsedInventoryItemKeysByCalcItemKeyAndItemType(int calculatorItemKey, ItemType type) {
+    return _inventoryUsedItemsBox.values
+        .where((el) => el.calculatorItemKey == calculatorItemKey && el.type == type.index)
+        .map((e) => e.itemKey)
+        .toList();
   }
 
   InventoryItem? _getItemFromInventory(String key, ItemType type) {

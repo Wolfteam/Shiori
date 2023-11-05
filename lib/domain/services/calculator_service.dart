@@ -3,22 +3,31 @@ import 'package:shiori/domain/models/models.dart';
 abstract class CalculatorService {
   List<AscensionMaterialsSummary> generateSummary(List<ItemAscensionMaterialModel> current);
 
+  List<ItemAscensionMaterialModel> getAllCharacterPossibleMaterialsToUse(CharacterFileModel char);
+
+  List<ItemAscensionMaterialModel> getAllWeaponPossibleMaterialsToUse(WeaponFileModel weapon);
+
+  List<String> getAllPossibleMaterialKeysToUse(String itemKey, bool isCharacter);
+
   List<ItemAscensionMaterialModel> getCharacterMaterialsToUse(
     CharacterFileModel char,
     int currentLevel,
     int desiredLevel,
     int currentAscensionLevel,
     int desiredAscensionLevel,
-    List<CharacterSkill> skills,
-  );
+    List<CharacterSkill> skills, {
+    bool sort = true,
+    bool ignoreSkillLevel = false,
+  });
 
   List<ItemAscensionMaterialModel> getWeaponMaterialsToUse(
     WeaponFileModel weapon,
     int currentLevel,
     int desiredLevel,
     int currentAscensionLevel,
-    int desiredAscensionLevel,
-  );
+    int desiredAscensionLevel, {
+    bool sort = true,
+  });
 
   /// Gets the closest ascension level [toItemLevel]
   ///

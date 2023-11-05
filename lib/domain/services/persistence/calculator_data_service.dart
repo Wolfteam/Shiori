@@ -1,7 +1,13 @@
+import 'dart:async';
+
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/persistence/base_data_service.dart';
 
 abstract class CalculatorDataService implements BaseDataService {
+  StreamController<CalculatorAscMaterialSessionItemEvent> get itemAdded;
+
+  StreamController<CalculatorAscMaterialSessionItemEvent> get itemDeleted;
+
   List<CalculatorSessionModel> getAllCalAscMatSessions();
 
   CalculatorSessionModel getCalcAscMatSession(int sessionKey);
@@ -14,13 +20,20 @@ abstract class CalculatorDataService implements BaseDataService {
 
   Future<void> deleteAllCalAscMatSession();
 
+  List<ItemAscensionMaterials> getAllSessionItems(int sessionKey);
+
   Future<void> addCalAscMatSessionItems(int sessionKey, List<ItemAscensionMaterials> items, {bool redistributeAtTheEnd = true});
 
   /// Adds a new calc. item to the provided session by using the [sessionKey].
   ///
   /// If [item.useMaterialsFromInventory] is set to false, the same item will be returned without changes.
   /// Otherwise, it will be returned with [item.materials] property updated.
-  Future<ItemAscensionMaterials> addCalAscMatSessionItem(int sessionKey, ItemAscensionMaterials item, {bool redistribute = true});
+  Future<ItemAscensionMaterials> addCalAscMatSessionItem(
+    int sessionKey,
+    ItemAscensionMaterials item,
+    List<String> allPossibleItemMaterialsKeys, {
+    bool redistribute = true,
+  });
 
   /// Updates the provided item associated to the session [sessionKey]
   ///
@@ -32,7 +45,8 @@ abstract class CalculatorDataService implements BaseDataService {
   Future<ItemAscensionMaterials> updateCalAscMatSessionItem(
     int sessionKey,
     int newItemPosition,
-    ItemAscensionMaterials item, {
+    ItemAscensionMaterials item,
+    List<String> allPossibleItemMaterialsKeys, {
     bool redistribute = true,
   });
 
@@ -44,7 +58,7 @@ abstract class CalculatorDataService implements BaseDataService {
   /// for each of the available sessions.
   ///
   /// This method should only be called when the priority of a session or calc. session changes
-  Future<void> redistributeAllInventoryMaterials();
+  Future<void> redistributeAllInventoryMaterials({List<String> onlyMaterialKeys = const <String>[]});
 
   /// This method redistributes the material associated to [itemKey] based on the [newQuantity]
   ///
@@ -55,7 +69,14 @@ abstract class CalculatorDataService implements BaseDataService {
   /// otherwise we may reduce the used quantity or even delete the whole thing
   Future<void> redistributeInventoryMaterial(String itemKey, int newQuantity);
 
+  Future<void> redistributeInventoryMaterialsFromSessionPosition(
+    int sessionKey, {
+    List<String> onlyMaterialKeys = const <String>[],
+  });
+
   List<BackupCalculatorAscMaterialsSessionModel> getDataForBackup();
 
   Future<void> restoreFromBackup(List<BackupCalculatorAscMaterialsSessionModel> data);
+
+  Future<void> reorderItems(int sessionKey, List<ItemAscensionMaterials> currentItems, List<ItemAscensionMaterials> updatedItems);
 }

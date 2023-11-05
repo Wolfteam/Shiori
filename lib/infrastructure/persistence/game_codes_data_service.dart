@@ -34,7 +34,7 @@ class GameCodesDataServiceImpl implements GameCodesDataService {
       final rewards = _gameCodeRewardsBox.values.where((el) => el.gameCodeKey == e.key).map((reward) {
         final material = _genshinService.materials.getMaterial(reward.itemKey);
         final imagePath = _resourceService.getMaterialImagePath(material.image, material.type);
-        return ItemAscensionMaterialModel(quantity: reward.quantity, key: material.key, type: material.type, image: imagePath);
+        return ItemAscensionMaterialModel.fromMaterial(reward.quantity, material, imagePath);
       }).toList();
       //Some codes don't have an expiration date, that's why we use this boolean here
       final expired = e.isExpired || (e.expiredOn?.isBefore(DateTime.now()) ?? false);
@@ -76,7 +76,7 @@ class GameCodesDataServiceImpl implements GameCodesDataService {
 
   @override
   Future<void> saveGameCodeRewards(int gameCodeKey, List<ItemAscensionMaterialModel> rewards) {
-    final rewardsToSave = rewards.map((e) => GameCodeReward(gameCodeKey, _genshinService.materials.getMaterial(e.key).key, e.quantity)).toList();
+    final rewardsToSave = rewards.map((e) => GameCodeReward(gameCodeKey, e.key, e.requiredQuantity)).toList();
     return _gameCodeRewardsBox.addAll(rewardsToSave);
   }
 
@@ -115,10 +115,8 @@ class GameCodesDataServiceImpl implements GameCodesDataService {
     for (final gameCode in data) {
       final gc = GameCode(gameCode.code, gameCode.usedOn, gameCode.discoveredOn, gameCode.expiredOn, gameCode.isExpired, gameCode.region);
       await _gameCodesBox.add(gc);
-      final rewards = gameCode.rewards
-          .map((e) => ItemAscensionMaterialModel(key: e.itemKey, quantity: e.quantity, image: '', type: MaterialType.others))
-          .toList();
-      await saveGameCodeRewards(gc.key as int, rewards);
+      final rewards = gameCode.rewards.map((e) => GameCodeReward(gc.key as int, e.itemKey, e.quantity)).toList();
+      await _gameCodeRewardsBox.addAll(rewards);
     }
   }
 }

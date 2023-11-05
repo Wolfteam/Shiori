@@ -5,7 +5,6 @@ import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/persistence/base_data_service.dart';
 
 typedef RedistributeInventoryMaterial = Future<void> Function(String, int);
-typedef RedistributeAllInventoryMaterials = Future<void> Function();
 
 abstract class InventoryDataService implements BaseDataService {
   StreamController<ItemType> get itemAddedToInventory;
@@ -48,16 +47,17 @@ abstract class InventoryDataService implements BaseDataService {
 
   int getNumberOfItemsUsed(String itemKey, ItemType type);
 
-  Future<int> redistributeMaterial(int calItemKey, ItemAscensionMaterials item, String itemKey, int currentQuantity);
+  Future<int> redistributeMaterial(
+    int calcItemKey,
+    List<ItemAscensionMaterialModel> materials,
+    String itemKey,
+    int currentQuantity, {
+    bool checkUsed = false,
+  });
 
   Future<void> useItemFromInventory(int calculatorItemKey, String itemKey, ItemType type, int quantityToUse);
 
-  Future<void> clearUsedInventoryItems(
-    int calculatorItemKey,
-    RedistributeAllInventoryMaterials redistributeAll, {
-    String? onlyItemKey,
-    bool redistribute = false,
-  });
+  Future<void> clearUsedInventoryItems(int calculatorItemKey, {String? onlyItemKey});
 
   int getNumberOfItemsUsedByCalcKeyItemKeyAndType(int calculatorItemKey, String itemKey, ItemType type);
 
@@ -68,4 +68,6 @@ abstract class InventoryDataService implements BaseDataService {
   List<BackupInventoryModel> getDataForBackup();
 
   Future<void> restoreFromBackup(List<BackupInventoryModel> data);
+
+  List<String> getUsedInventoryItemKeysByCalcItemKeyAndItemType(int calculatorItemKey, ItemType type);
 }

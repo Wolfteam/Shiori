@@ -1,3 +1,4 @@
+import 'package:darq/darq.dart';
 import 'package:shiori/domain/app_constants.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/models/models.dart';
@@ -9,11 +10,24 @@ class CalculatorServiceImpl implements CalculatorService {
   final GenshinService _genshinService;
   final ResourceService _resourceService;
 
+  //These are initialized and cached when needed
+  final List<MaterialFileModel> _charExpMaterials = [];
+  final List<MaterialFileModel> _weaponExpMaterials = [];
+  MaterialFileModel? _moraMaterial;
+
   CalculatorServiceImpl(this._genshinService, this._resourceService);
 
   @override
   List<AscensionMaterialsSummary> generateSummary(List<ItemAscensionMaterialModel> current) {
-    final flattened = _flatMaterialsList(current);
+    final flattened = current.groupBy((g) => g.key).map((g) {
+      final mapped = g.first.copyWith(
+        requiredQuantity: g.map((e) => e.requiredQuantity).sum(),
+        availableQuantity: g.map((e) => e.availableQuantity).sum(),
+        remainingQuantity: g.map((e) => e.remainingQuantity).sum(),
+      );
+
+      return mapped;
+    }).toList();
 
     final summary = <AscensionMaterialSummaryType, List<MaterialSummary>>{};
     for (var i = 0; i < flattened.length; i++) {
@@ -33,7 +47,9 @@ class CalculatorServiceImpl implements CalculatorService {
           level: material.level,
           hasSiblings: material.hasSiblings,
           fullImagePath: _resourceService.getMaterialImagePath(material.image, material.type),
-          quantity: item.quantity,
+          requiredQuantity: item.requiredQuantity,
+          availableQuantity: item.availableQuantity,
+          remainingQuantity: item.remainingQuantity,
           days: [],
         );
       } else if (material.days.isNotEmpty) {
@@ -46,7 +62,9 @@ class CalculatorServiceImpl implements CalculatorService {
           level: material.level,
           hasSiblings: material.hasSiblings,
           fullImagePath: _resourceService.getMaterialImagePath(material.image, material.type),
-          quantity: item.quantity,
+          requiredQuantity: item.requiredQuantity,
+          availableQuantity: item.availableQuantity,
+          remainingQuantity: item.remainingQuantity,
           days: material.days,
         );
       } else {
@@ -81,7 +99,9 @@ class CalculatorServiceImpl implements CalculatorService {
           level: material.level,
           hasSiblings: material.hasSiblings,
           fullImagePath: _resourceService.getMaterialImagePath(material.image, material.type),
-          quantity: item.quantity,
+          requiredQuantity: item.requiredQuantity,
+          availableQuantity: item.availableQuantity,
+          remainingQuantity: item.remainingQuantity,
           days: [],
         );
       }
@@ -99,54 +119,109 @@ class CalculatorServiceImpl implements CalculatorService {
   }
 
   @override
+  List<ItemAscensionMaterialModel> getAllCharacterPossibleMaterialsToUse(CharacterFileModel char) {
+    final int currentLevel = itemAscensionLevelMap.entries.first.value;
+    const int desiredLevel = maxItemLevel;
+    const int currentAscensionLevel = minAscensionLevel;
+    const int desiredAscensionLevel = maxAscensionLevel;
+
+    return getCharacterMaterialsToUse(char, currentLevel, desiredLevel, currentAscensionLevel, desiredAscensionLevel, [], ignoreSkillLevel: true);
+  }
+
+  @override
+  List<ItemAscensionMaterialModel> getAllWeaponPossibleMaterialsToUse(WeaponFileModel weapon) {
+    final int currentLevel = itemAscensionLevelMap.entries.first.value;
+    const int desiredLevel = maxItemLevel;
+    const int currentAscensionLevel = minAscensionLevel;
+    const int desiredAscensionLevel = maxAscensionLevel;
+
+    return getWeaponMaterialsToUse(weapon, currentLevel, desiredLevel, currentAscensionLevel, desiredAscensionLevel);
+  }
+
+  @override
+  List<String> getAllPossibleMaterialKeysToUse(String itemKey, bool isCharacter) {
+    final allPossibleMaterialItemKeys = <String>[];
+    if (isCharacter) {
+      final char = _genshinService.characters.getCharacter(itemKey);
+      allPossibleMaterialItemKeys.addAll(getAllCharacterPossibleMaterialsToUse(char).map((e) => e.key));
+    } else {
+      final weapon = _genshinService.weapons.getWeapon(itemKey);
+      allPossibleMaterialItemKeys.addAll(getAllWeaponPossibleMaterialsToUse(weapon).map((e) => e.key));
+    }
+
+    return allPossibleMaterialItemKeys;
+  }
+
+  @override
   List<ItemAscensionMaterialModel> getCharacterMaterialsToUse(
     CharacterFileModel char,
     int currentLevel,
     int desiredLevel,
     int currentAscensionLevel,
     int desiredAscensionLevel,
-    List<CharacterSkill> skills,
-  ) {
+    List<CharacterSkill> skills, {
+    bool sort = true,
+    bool ignoreSkillLevel = false,
+  }) {
+    final allMaterials = <ItemAscensionMaterialFileModel>[];
+
     final expMaterials = _getItemExperienceMaterials(currentLevel, desiredLevel, char.rarity, true);
+    allMaterials.addAll(expMaterials);
 
     final ascensionMaterials = char.ascensionMaterials
-        .where((m) => m.rank > currentAscensionLevel && m.rank <= desiredAscensionLevel)
-        .expand((e) => e.materials)
-        .map((e) => ItemAscensionMaterialModel.fromFile(e, _genshinService.materials.getMaterialImg(e.key)))
-        .toList();
-
-    final skillMaterials = <ItemAscensionMaterialModel>[];
+        .where(
+          (m) => m.rank > currentAscensionLevel && m.rank <= desiredAscensionLevel,
+        )
+        .expand((e) => e.materials);
+    allMaterials.addAll(ascensionMaterials);
 
     if (char.talentAscensionMaterials.isNotEmpty) {
-      for (final skill in skills) {
-        final materials = char.talentAscensionMaterials
-            .where((m) => m.level > skill.currentLevel && m.level <= skill.desiredLevel)
-            .expand((m) => m.materials)
-            .map((e) => ItemAscensionMaterialModel.fromFile(e, _genshinService.materials.getMaterialImg(e.key)))
-            .toList();
-
-        skillMaterials.addAll(materials);
+      if (ignoreSkillLevel) {
+        final materials = char.talentAscensionMaterials.expand((m) => m.materials);
+        allMaterials.addAll(materials);
+      } else {
+        for (final skill in skills) {
+          final materials = char.talentAscensionMaterials
+              .where(
+                (m) => m.level > skill.currentLevel && m.level <= skill.desiredLevel,
+              )
+              .expand((m) => m.materials);
+          allMaterials.addAll(materials);
+        }
       }
     } else if (char.multiTalentAscensionMaterials != null && char.multiTalentAscensionMaterials!.isNotEmpty) {
       //The traveler has different materials depending on the skill, that's why we need to retrieve the right amount for the provided skill
       //Also, we are assuming that the skill's order are fixed
-      var talentNumber = 1;
-      for (final skill in skills) {
-        final materials = char.multiTalentAscensionMaterials!
-            .where((mt) => mt.number == talentNumber)
-            .expand((mt) => mt.materials)
-            .where((m) => m.level > skill.currentLevel && m.level <= skill.desiredLevel)
-            .expand((m) => m.materials)
-            .map((e) => ItemAscensionMaterialModel.fromFile(e, _genshinService.materials.getMaterialImg(e.key)))
-            .toList();
+      int talentNumber = 1;
+      if (ignoreSkillLevel) {
+        for (int i = talentNumber; i < char.multiTalentAscensionMaterials!.length + 1; i++) {
+          final materials = char.multiTalentAscensionMaterials!.where((mt) => mt.number == i).expand((mt) => mt.materials).expand((m) => m.materials);
+          allMaterials.addAll(materials);
+        }
+      } else {
+        for (final skill in skills) {
+          final materials = char.multiTalentAscensionMaterials!
+              .where((mt) => mt.number == talentNumber)
+              .expand((mt) => mt.materials)
+              .where((m) => m.level > skill.currentLevel && m.level <= skill.desiredLevel)
+              .expand((m) => m.materials);
+          allMaterials.addAll(materials);
 
-        skillMaterials.addAll(materials);
-
-        talentNumber++;
+          talentNumber++;
+        }
       }
     }
 
-    return _flatMaterialsList(expMaterials + ascensionMaterials + skillMaterials);
+    final materials = allMaterials.groupBy((m) => m.key).map((g) {
+      final material = _genshinService.materials.getMaterial(g.key);
+      final int quantity = g.map((e) => e.quantity).sum();
+      final imagePath = _resourceService.getMaterialImagePath(material.image, material.type);
+      return ItemAscensionMaterialModel.fromMaterial(quantity, material, imagePath, remainingQuantity: quantity);
+    });
+    if (!sort) {
+      return materials.toList();
+    }
+    return sortMaterialsByGrouping(materials, SortDirectionType.asc);
   }
 
   @override
@@ -155,16 +230,22 @@ class CalculatorServiceImpl implements CalculatorService {
     int currentLevel,
     int desiredLevel,
     int currentAscensionLevel,
-    int desiredAscensionLevel,
-  ) {
-    final expMaterials = _getItemExperienceMaterials(currentLevel, desiredLevel, weapon.rarity, false);
-    final materials = weapon.ascensionMaterials
+    int desiredAscensionLevel, {
+    bool sort = true,
+  }) {
+    final ascensionMaterials = weapon.ascensionMaterials
         .where((m) => m.level > _mapToWeaponLevel(currentAscensionLevel) && m.level <= _mapToWeaponLevel(desiredAscensionLevel))
-        .expand((m) => m.materials)
-        .map((e) => ItemAscensionMaterialModel.fromFile(e, _genshinService.materials.getMaterialImg(e.key)))
-        .toList();
-
-    return _flatMaterialsList(expMaterials + materials);
+        .expand((m) => m.materials);
+    final expMaterials = _getItemExperienceMaterials(currentLevel, desiredLevel, weapon.rarity, false);
+    final materials = expMaterials.concat(ascensionMaterials).groupBy((m) => m.key).map((g) {
+      final material = _genshinService.materials.getMaterial(g.key);
+      final int quantity = g.map((e) => e.quantity).sum();
+      return ItemAscensionMaterialModel.fromMaterial(quantity, material, _resourceService.getMaterialImagePath(material.image, material.type));
+    });
+    if (!sort) {
+      return materials.toList();
+    }
+    return sortMaterialsByGrouping(materials, SortDirectionType.asc);
   }
 
   @override
@@ -326,19 +407,6 @@ class CalculatorServiceImpl implements CalculatorService {
     return (currentDecEnabled, currentIncEnabled, desiredDecEnabled, desiredIncEnabled);
   }
 
-  List<ItemAscensionMaterialModel> _flatMaterialsList(List<ItemAscensionMaterialModel> current) {
-    final materials = <ItemAscensionMaterialModel>[];
-    final keys = current.map((e) => e.key).toSet();
-    for (final key in keys) {
-      final item = current.firstWhere((m) => m.key == key);
-      final int quantity = current.where((m) => m.key == key).map((e) => e.quantity).fold(0, (previous, current) => previous + current);
-
-      materials.add(item.copyWith.call(quantity: quantity));
-    }
-
-    return materials;
-  }
-
   int _mapToWeaponLevel(int val) {
     switch (val) {
       //Here we consider the 0, because otherwise we will always start from a current level of 1, and sometimes, we want to know the whole thing
@@ -351,45 +419,45 @@ class CalculatorServiceImpl implements CalculatorService {
     }
   }
 
-  List<ItemAscensionMaterialModel> _getItemExperienceMaterials(int currentLevel, int desiredLevel, int rarity, bool forCharacters) {
-    final materials = <ItemAscensionMaterialModel>[];
-    //Here we order the exp materials in a way that the one that gives more exp is first and so on
-    final expMaterials = _genshinService.materials.getMaterials(forCharacters ? MaterialType.expCharacter : MaterialType.expWeapon)
-      ..sort((x, y) => (y.experienceAttributes!.experience - x.experienceAttributes!.experience).round());
-    var requiredExp = getItemTotalExp(currentLevel, desiredLevel, rarity, forCharacters);
-    final moraMaterial = _genshinService.materials.getMoraMaterial();
+  List<ItemAscensionMaterialFileModel> _getItemExperienceMaterials(int currentLevel, int desiredLevel, int rarity, bool forCharacters) {
+    final materials = <ItemAscensionMaterialFileModel>[];
+    double requiredExp = getItemTotalExp(currentLevel, desiredLevel, rarity, forCharacters);
+    if (requiredExp <= 0) {
+      return materials;
+    }
 
-    for (final material in expMaterials) {
+    //Here we order the exp materials in a way that the one that gives more exp is first and so on
+    if (forCharacters && _charExpMaterials.isEmpty) {
+      final charExpMaterials = _genshinService.materials.getMaterials(MaterialType.expCharacter)
+        ..sort((x, y) => (y.experienceAttributes!.experience - x.experienceAttributes!.experience).round());
+      _charExpMaterials.addAll(charExpMaterials);
+    } else if (!forCharacters && _weaponExpMaterials.isEmpty) {
+      final weaponExpMaterials = _genshinService.materials.getMaterials(MaterialType.expWeapon)
+        ..sort((x, y) => (y.experienceAttributes!.experience - x.experienceAttributes!.experience).round());
+      _weaponExpMaterials.addAll(weaponExpMaterials);
+    }
+
+    final expMaterials = forCharacters ? _charExpMaterials : _weaponExpMaterials;
+    _moraMaterial ??= _genshinService.materials.getMoraMaterial();
+
+    for (final MaterialFileModel material in expMaterials) {
       if (requiredExp <= 0) {
         break;
       }
 
-      final matExp = material.experienceAttributes!.experience;
-      final quantity = (requiredExp / matExp).floor();
+      final double matExp = material.experienceAttributes!.experience;
+      final int quantity = (requiredExp / matExp).floor();
       if (quantity == 0) {
         continue;
       }
-      materials.add(
-        ItemAscensionMaterialModel(
-          key: material.key,
-          type: material.type,
-          image: _resourceService.getMaterialImagePath(material.image, material.type),
-          quantity: quantity,
-        ),
-      );
+
+      materials.add(ItemAscensionMaterialFileModel(key: material.key, type: material.type, quantity: quantity));
       requiredExp -= quantity * matExp;
 
-      final requiredMora = quantity * material.experienceAttributes!.pricePerUsage;
-      materials.add(
-        ItemAscensionMaterialModel(
-          key: moraMaterial.key,
-          type: moraMaterial.type,
-          image: _resourceService.getMaterialImagePath(moraMaterial.image, moraMaterial.type),
-          quantity: requiredMora.round(),
-        ),
-      );
+      final double requiredMora = quantity * material.experienceAttributes!.pricePerUsage;
+      materials.add(ItemAscensionMaterialFileModel(key: _moraMaterial!.key, type: _moraMaterial!.type, quantity: requiredMora.round()));
     }
 
-    return materials.reversed.toList();
+    return materials.reverse().toList();
   }
 }
