@@ -277,13 +277,13 @@ class Injection {
   //   return CalculatorAscMaterialsItemBloc(genshinService, calculatorService);
   // }
 
-  static CalculatorAscMaterialsBloc getCalculatorAscMaterialsBloc(CalculatorAscMaterialsSessionsBloc parentBloc) {
+  static CalculatorAscMaterialsBloc get calculatorAscMaterialsBloc {
     final genshinService = getIt<GenshinService>();
     final telemetryService = getIt<TelemetryService>();
     final calculatorService = getIt<CalculatorService>();
     final dataService = getIt<DataService>();
     final resourceService = getIt<ResourceService>();
-    return CalculatorAscMaterialsBloc(genshinService, telemetryService, calculatorService, dataService, resourceService, parentBloc);
+    return CalculatorAscMaterialsBloc(genshinService, telemetryService, calculatorService, dataService, resourceService);
   }
 
   static NotificationBloc getNotificationBloc(NotificationsBloc bloc) {
@@ -306,16 +306,6 @@ class Injection {
       resourceService,
       bloc,
     );
-  }
-
-  static CalculatorAscMaterialsOrderBloc getCalculatorAscMaterialsOrderBloc(CalculatorAscMaterialsBloc bloc) {
-    final dataService = getIt<DataService>();
-    return CalculatorAscMaterialsOrderBloc(dataService, bloc);
-  }
-
-  static CalculatorAscMaterialsSessionsOrderBloc getCalculatorAscMaterialsSessionsOrderBloc(CalculatorAscMaterialsSessionsBloc bloc) {
-    final dataService = getIt<DataService>();
-    return CalculatorAscMaterialsSessionsOrderBloc(dataService, bloc);
   }
 
   static CustomBuildBloc getCustomBuildBloc(CustomBuildsBloc bloc) {

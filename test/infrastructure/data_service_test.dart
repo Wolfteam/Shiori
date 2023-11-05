@@ -112,8 +112,8 @@ void main() {
       final created = dataService.calculator.getCalcAscMatSession(sessionKey);
       expect(created.key, sessionKey);
       expect(created.name, equals(sessionName));
-      expect(created.items, isNotEmpty);
-      expect(created.items.length, equals(1));
+      expect(created.numberOfCharacters, equals(1));
+      expect(created.numberOfWeapons == 0, isTrue);
       expect(created.position, equals(0));
     });
   });
