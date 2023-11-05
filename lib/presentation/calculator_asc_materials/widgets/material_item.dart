@@ -4,15 +4,25 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shiori/application/bloc.dart';
 import 'package:shiori/domain/enums/enums.dart' as app;
+import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/utils/currency_utils.dart';
+import 'package:shiori/generated/l10n.dart';
 import 'package:shiori/presentation/calculator_asc_materials/widgets/change_material_quantity_dialog.dart';
 import 'package:shiori/presentation/material/material_page.dart' as mp;
+import 'package:shiori/presentation/shared/styles.dart';
+
+enum _DialogOptionType {
+  updateQuantity,
+  goToDetails,
+}
 
 class MaterialItem extends StatelessWidget {
   final app.MaterialType type;
   final String itemKey;
   final String image;
-  final int quantity;
+  final int availableQuantity;
+  final int requiredQuantity;
+  final int remainingQuantity;
   final Color? textColor;
   final int sessionKey;
 
@@ -21,51 +31,139 @@ class MaterialItem extends StatelessWidget {
     required this.itemKey,
     required this.type,
     required this.image,
-    required this.quantity,
+    required this.availableQuantity,
+    required this.requiredQuantity,
+    required this.remainingQuantity,
     required this.sessionKey,
     this.textColor,
   });
 
+  MaterialItem.fromSummary({
+    required this.sessionKey,
+    required MaterialSummary summary,
+  })  : itemKey = summary.key,
+        image = summary.fullImagePath,
+        availableQuantity = summary.availableQuantity,
+        requiredQuantity = summary.requiredQuantity,
+        remainingQuantity = summary.remainingQuantity,
+        type = summary.type,
+        textColor = null;
+
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        InkWell(
-          onLongPress: () => _showQuantityPickerDialog(context),
-          borderRadius: BorderRadius.circular(30),
-          child: IconButton(
+    final availableText = _formatQuantity(availableQuantity);
+    final requiredText = _formatQuantity(requiredQuantity);
+    final remainingText = _formatQuantity(remainingQuantity);
+    final usageText = '$availableText / $requiredText';
+    return Container(
+      margin: Styles.edgeInsetHorizontal5,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          IconButton(
             icon: Image.file(File(image)),
             iconSize: 45,
             splashRadius: 30,
             constraints: const BoxConstraints(),
-            onPressed: () => _gotoMaterialPage(context),
+            onPressed: () => showDialog(
+              context: context,
+              builder: (context) => _OptionsDialog(
+                availableText: availableText,
+                requiredText: requiredText,
+                remainingText: remainingText,
+              ),
+            ).then((option) {
+              switch (option) {
+                case _DialogOptionType.goToDetails:
+                  _gotoMaterialPage(context);
+                case _DialogOptionType.updateQuantity:
+                  _showQuantityPickerDialog(context);
+                default:
+                  break;
+              }
+            }),
           ),
-        ),
-        if (quantity > 0)
-          Text(
-            type == app.MaterialType.currency ? CurrencyUtils.formatNumber(quantity) : '$quantity',
-            textAlign: TextAlign.center,
-            style: textColor != null ? theme.textTheme.titleSmall!.copyWith(color: textColor) : theme.textTheme.titleSmall,
-          ),
-        if (quantity == 0) const Icon(Icons.check, color: Colors.green, size: 18),
-      ],
+          if (availableQuantity == requiredQuantity)
+            const Icon(Icons.check, color: Colors.green, size: 18)
+          else
+            Text(
+              usageText,
+              textAlign: TextAlign.center,
+              overflow: TextOverflow.ellipsis,
+              style: textColor != null ? theme.textTheme.titleSmall!.copyWith(color: textColor) : theme.textTheme.titleSmall,
+            ),
+        ],
+      ),
     );
   }
 
-  Future<void> _showQuantityPickerDialog(BuildContext context) async {
-    await showDialog<int>(
+  String _formatQuantity(int quantity) {
+    return type == app.MaterialType.currency ? CurrencyUtils.formatNumber(quantity) : '$quantity';
+  }
+
+  Future<void> _showQuantityPickerDialog(BuildContext context) {
+    return showDialog<bool>(
       context: context,
-      builder: (_) => BlocProvider.value(
-        value: context.read<CalculatorAscMaterialsBloc>(),
-        child: ChangeMaterialQuantityDialog(sessionKey: sessionKey, itemKey: itemKey),
-      ),
-    );
+      builder: (_) => ChangeMaterialQuantityDialog(itemKey: itemKey),
+    ).then((saved) {
+      if (saved == true) {
+        context.read<CalculatorAscMaterialsBloc>().add(CalculatorAscMaterialsEvent.init(sessionKey: sessionKey));
+      }
+    });
   }
 
   Future<void> _gotoMaterialPage(BuildContext context) async {
     final route = MaterialPageRoute(builder: (c) => mp.MaterialPage(itemKey: itemKey));
     await Navigator.push(context, route);
+  }
+}
+
+class _OptionsDialog extends StatelessWidget {
+  final String availableText;
+  final String requiredText;
+  final String remainingText;
+
+  const _OptionsDialog({
+    required this.availableText,
+    required this.requiredText,
+    required this.remainingText,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final s = S.of(context);
+    return AlertDialog(
+      scrollable: true,
+      title: Text(s.selectAnOption),
+      actions: [
+        ElevatedButton(
+          onPressed: () => Navigator.pop(context),
+          child: Text(s.cancel),
+        ),
+      ],
+      content: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          ListTile(
+            title: Text(s.details),
+            onTap: () => Navigator.pop(context, _DialogOptionType.goToDetails),
+          ),
+          ListTile(
+            title: Text(s.update),
+            isThreeLine: true,
+            subtitle: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text('${s.available}: $availableText', overflow: TextOverflow.ellipsis),
+                Text('${s.required}: $requiredText', overflow: TextOverflow.ellipsis),
+                Text('${s.remaining}: $remainingText', overflow: TextOverflow.ellipsis),
+              ],
+            ),
+            onTap: () => Navigator.pop(context, _DialogOptionType.updateQuantity),
+          ),
+        ],
+      ),
+    );
   }
 }

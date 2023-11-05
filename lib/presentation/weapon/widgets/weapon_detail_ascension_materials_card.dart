@@ -56,7 +56,16 @@ class WeaponDetailAscensionMaterialsCard extends StatelessWidget {
   }
 
   TableRow _buildStatProgressionRow(WeaponAscensionModel model, double size) {
-    final materials = model.materials.map((m) => WrappedAscensionMaterial(itemKey: m.key, image: m.image, quantity: m.quantity, size: size)).toList();
+    final materials = model.materials
+        .map(
+          (m) => WrappedAscensionMaterial(
+            itemKey: m.key,
+            image: m.image,
+            quantity: m.requiredQuantity,
+            size: size,
+          ),
+        )
+        .toList();
     return TableRow(
       children: [
         TableCell(

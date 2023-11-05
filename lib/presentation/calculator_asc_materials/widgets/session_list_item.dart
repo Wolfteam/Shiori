@@ -19,8 +19,6 @@ class SessionListItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final s = S.of(context);
-    final numberOfChars = session.items.where((e) => e.isCharacter).length;
-    final numberOfWeapons = session.items.where((e) => !e.isCharacter).length;
     final extentRatio = SizeUtils.getExtentRatioForSlidablePane(context);
     return Slidable(
       key: ValueKey(session.key),
@@ -52,7 +50,7 @@ class SessionListItem extends StatelessWidget {
         onLongPress: () => _showEditSessionDialog(session.key, session.name, context),
         title: Text(session.name),
         onTap: () => _gotoCalculatorAscensionMaterialsPage(context),
-        subtitle: Text('${s.charactersX(numberOfChars)} / ${s.weaponsX(numberOfWeapons)}'),
+        subtitle: Text('${s.charactersX(session.numberOfCharacters)} / ${s.weaponsX(session.numberOfWeapons)}'),
         leading: const Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [

@@ -13,9 +13,9 @@ import 'package:shiori/injection.dart';
 import 'package:shiori/presentation/calculator_asc_materials/widgets/add_edit_item_bottom_sheet.dart';
 import 'package:shiori/presentation/calculator_asc_materials/widgets/ascension_materials_summary.dart';
 import 'package:shiori/presentation/calculator_asc_materials/widgets/item_card.dart';
-import 'package:shiori/presentation/calculator_asc_materials/widgets/reorder_items_dialog.dart';
 import 'package:shiori/presentation/characters/characters_page.dart';
 import 'package:shiori/presentation/shared/dialogs/confirm_dialog.dart';
+import 'package:shiori/presentation/shared/dialogs/sort_items_dialog.dart';
 import 'package:shiori/presentation/shared/extensions/i18n_extensions.dart';
 import 'package:shiori/presentation/shared/hawk_fab_menu.dart';
 import 'package:shiori/presentation/shared/item_description_detail.dart';
@@ -36,8 +36,7 @@ class CalculatorAscensionMaterialsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (ctx) => Injection.getCalculatorAscMaterialsBloc(ctx.read<CalculatorAscMaterialsSessionsBloc>())
-        ..add(CalculatorAscMaterialsEvent.init(sessionKey: sessionKey)),
+      create: (ctx) => Injection.calculatorAscMaterialsBloc..add(CalculatorAscMaterialsEvent.init(sessionKey: sessionKey)),
       child: Scaffold(
         appBar: _AppBar(sessionKey: sessionKey),
         body: SafeArea(
@@ -64,7 +63,19 @@ class _AppBar extends StatelessWidget implements PreferredSizeWidget {
             IconButton(
               icon: const Icon(Icons.unfold_more),
               splashRadius: Styles.mediumButtonSplashRadius,
-              onPressed: () => _showReorderDialog(state.items, context),
+              onPressed: () => showDialog<SortResult<SortableItemOfT<ItemAscensionMaterials>>>(
+                context: context,
+                builder: (_) => SortItemsDialog<SortableItemOfT<ItemAscensionMaterials>>(
+                  items: state.items.map((e) => SortableItemOfT(e.key, e.name, e)).toList(),
+                ),
+              ).then((result) {
+                if (result == null || !result.somethingChanged) {
+                  return;
+                }
+
+                final sorted = result.items.map((e) => e.item).toList();
+                context.read<CalculatorAscMaterialsBloc>().add(CalculatorAscMaterialsEvent.itemsReordered(sorted));
+              }),
             ),
           if (state.items.isNotEmpty)
             IconButton(
@@ -79,16 +90,6 @@ class _AppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Size get preferredSize => const Size.fromHeight(kToolbarHeight);
-
-  Future<void> _showReorderDialog(List<ItemAscensionMaterials> items, BuildContext context) async {
-    await showDialog(
-      context: context,
-      builder: (_) => BlocProvider.value(
-        value: context.read<CalculatorAscMaterialsBloc>(),
-        child: ReorderItemsDialog(sessionKey: sessionKey, items: items),
-      ),
-    );
-  }
 
   Future<void> _showDeleteAllDialog(BuildContext context) async {
     final s = S.of(context);
