@@ -1,9 +1,10 @@
 import 'package:hive/hive.dart';
+import 'package:shiori/domain/models/entities/base_entity.dart';
 
 part 'calculator_character_skill.g.dart';
 
 @HiveType(typeId: 3)
-class CalculatorCharacterSkill extends HiveObject {
+class CalculatorCharacterSkill extends BaseEntity {
   @HiveField(0)
   final int calculatorItemKey;
 

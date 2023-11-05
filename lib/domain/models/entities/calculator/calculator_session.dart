@@ -1,9 +1,10 @@
 import 'package:hive/hive.dart';
+import 'package:shiori/domain/models/entities/base_entity.dart';
 
 part 'calculator_session.g.dart';
 
 @HiveType(typeId: 1)
-class CalculatorSession extends HiveObject {
+class CalculatorSession extends BaseEntity {
   @HiveField(0)
   String name;
 
