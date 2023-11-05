@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
+import 'package:darq/darq.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/data_service.dart';
@@ -14,9 +15,21 @@ class CalculatorAscMaterialsSessionsBloc extends Bloc<CalculatorAscMaterialsSess
   final DataService _dataService;
   final TelemetryService _telemetryService;
 
+  final List<StreamSubscription> subscriptions = [];
+
   _LoadedState get currentState => state as _LoadedState;
 
-  CalculatorAscMaterialsSessionsBloc(this._dataService, this._telemetryService) : super(const CalculatorAscMaterialsSessionsState.loading());
+  CalculatorAscMaterialsSessionsBloc(this._dataService, this._telemetryService) : super(const CalculatorAscMaterialsSessionsState.loading()) {
+    final itemAddedSubs = _dataService.calculator.itemAdded.stream.listen(
+      (e) => add(CalculatorAscMaterialsSessionsEvent.itemAdded(sessionKey: e.sessionKey, isCharacter: e.isCharacter)),
+    );
+    final itemDeletedSubs = _dataService.calculator.itemDeleted.stream.listen(
+      (e) => add(CalculatorAscMaterialsSessionsEvent.itemDeleted(sessionKey: e.sessionKey, isCharacter: e.isCharacter)),
+    );
+
+    subscriptions.add(itemAddedSubs);
+    subscriptions.add(itemDeletedSubs);
+  }
 
   @override
   Stream<CalculatorAscMaterialsSessionsState> mapEventToState(CalculatorAscMaterialsSessionsEvent event) async* {
@@ -50,8 +63,59 @@ class CalculatorAscMaterialsSessionsBloc extends Bloc<CalculatorAscMaterialsSess
         await _dataService.calculator.deleteAllCalAscMatSession();
         return const CalculatorAscMaterialsSessionsState.loaded(sessions: []);
       },
+      itemsReordered: (e) async => _itemsReordered(e.updated),
+      itemAdded: (e) async => state.map(
+        loaded: (state) => _changeItemCount(e.sessionKey, true, e.isCharacter),
+        loading: (_) => throw Exception('Invalid state'),
+      ),
+      itemDeleted: (e) async => state.map(
+        loaded: (state) => _changeItemCount(e.sessionKey, false, e.isCharacter),
+        loading: (_) => throw Exception('Invalid state'),
+      ),
     );
 
     yield s;
+  }
+
+  @override
+  Future<void> close() async {
+    await Future.wait(subscriptions.map((e) => e.cancel()));
+    return super.close();
+  }
+
+  Future<CalculatorAscMaterialsSessionsState> _itemsReordered(List<CalculatorSessionModel> updated) async {
+    assert(currentState.sessions.length == updated.length);
+    for (int i = 0; i < updated.length; i++) {
+      final updatedSession = updated[i];
+      await _dataService.calculator.updateCalAscMatSession(updatedSession.key, updatedSession.name, i);
+    }
+
+    await _dataService.calculator.redistributeAllInventoryMaterials();
+
+    final sessions = _dataService.calculator.getAllCalAscMatSessions();
+    return CalculatorAscMaterialsSessionsState.loaded(sessions: sessions);
+  }
+
+  CalculatorAscMaterialsSessionsState _changeItemCount(int sessionKey, bool added, bool isCharacter) {
+    final CalculatorSessionModel? session = currentState.sessions.firstWhereOrDefault((session) => session.key == sessionKey);
+    if (session == null) {
+      return currentState;
+    }
+    final index = currentState.sessions.indexOf(session);
+    final updatedSessions = [...currentState.sessions];
+    updatedSessions.removeAt(index);
+
+    int count = isCharacter ? session.numberOfCharacters : session.numberOfWeapons;
+    if (added) {
+      count++;
+    } else {
+      count--;
+    }
+    if (count < 0) {
+      count = 0;
+    }
+    final updatedSession = isCharacter ? session.copyWith(numberOfCharacters: count) : session.copyWith(numberOfWeapons: count);
+    updatedSessions.insert(index, updatedSession);
+    return currentState.copyWith(sessions: updatedSessions);
   }
 }
