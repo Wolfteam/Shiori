@@ -56,4 +56,6 @@ class CalculatorAscMaterialsEvent with _$CalculatorAscMaterialsEvent {
   }) = _RemoveItem;
 
   const factory CalculatorAscMaterialsEvent.clearAllItems(int sessionKey) = _ClearAllItems;
+
+  const factory CalculatorAscMaterialsEvent.itemsReordered(List<ItemAscensionMaterials> updated) = _ItemsReordered;
 }
