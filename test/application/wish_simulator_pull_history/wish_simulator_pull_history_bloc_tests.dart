@@ -35,7 +35,7 @@ void main() {
     genshinService = GenshinServiceImpl(resourceService, LocaleServiceImpl(settingsService));
     dataService = DataServiceImpl(
       genshinService,
-      CalculatorServiceImpl(genshinService, resourceService),
+      CalculatorAscMaterialsServiceImpl(genshinService, resourceService),
       resourceService,
     );
 
@@ -67,8 +67,7 @@ void main() {
         String itemKey;
         ItemType itemType;
         int rarity;
-        final pickCharacters = pickedBanner.type == BannerItemType.character ||
-            (pickedBanner.type == BannerItemType.standard && random.nextBool());
+        final pickCharacters = pickedBanner.type == BannerItemType.character || (pickedBanner.type == BannerItemType.standard && random.nextBool());
 
         if (pickCharacters) {
           final character = pickedBanner.characters[random.nextInt(pickedBanner.characters.length)];
@@ -147,8 +146,7 @@ void main() {
         'empty with banner = ${type.name}',
         build: () {
           final wishSimulatorMock = MockWishSimulatorDataService();
-          when(wishSimulatorMock.getBannerItemsPullHistoryPerType(captureThat(isIn(BannerItemType.values))))
-              .thenReturn([]);
+          when(wishSimulatorMock.getBannerItemsPullHistoryPerType(captureThat(isIn(BannerItemType.values)))).thenReturn([]);
           final dataServiceMock = MockDataService();
           when(dataServiceMock.wishSimulator).thenReturn(wishSimulatorMock);
           return WishSimulatorPullHistoryBloc(genshinService, dataServiceMock);

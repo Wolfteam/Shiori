@@ -33,7 +33,7 @@ void main() {
     localeService = LocaleServiceImpl(settingsService);
     resourceService = getResourceService(settingsService);
     genshinService = GenshinServiceImpl(resourceService, localeService);
-    dataService = DataServiceImpl(genshinService, CalculatorServiceImpl(genshinService, resourceService), resourceService);
+    dataService = DataServiceImpl(genshinService, CalculatorAscMaterialsServiceImpl(genshinService, resourceService), resourceService);
     manuallyInitLocale(localeService, AppLanguageType.english);
     return Future(() async {
       await genshinService.init(AppLanguageType.english);

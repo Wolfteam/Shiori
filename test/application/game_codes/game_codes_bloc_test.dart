@@ -84,7 +84,7 @@ void main() {
     apiService = MockApiService();
     when(apiService.getGameCodes(validAppVersion, validResourceVersion))
         .thenAnswer((_) => Future.value(ApiListResponseDto(result: apiDefaultGameCodes, succeed: true)));
-    dataService = DataServiceImpl(genshinService, CalculatorServiceImpl(genshinService, resourceService), resourceService);
+    dataService = DataServiceImpl(genshinService, CalculatorAscMaterialsServiceImpl(genshinService, resourceService), resourceService);
     return Future(() async {
       await genshinService.init(AppLanguageType.english);
       dbPath = await getDbPath(_dbFolder);

@@ -30,7 +30,7 @@ void main() {
 
     resourceService = getResourceService(settings);
     genshinService = GenshinServiceImpl(resourceService, localeService);
-    calculatorService = CalculatorServiceImpl(genshinService, resourceService);
+    calculatorService = CalculatorAscMaterialsServiceImpl(genshinService, resourceService);
     dataService = DataServiceImpl(genshinService, calculatorService, resourceService);
 
     return Future(() async {
