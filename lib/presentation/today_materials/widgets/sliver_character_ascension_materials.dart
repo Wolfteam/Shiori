@@ -3,6 +3,7 @@ import 'package:responsive_builder/responsive_builder.dart';
 import 'package:responsive_grid/responsive_grid.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/presentation/home/widgets/char_card_ascension_material.dart';
+import 'package:shiori/presentation/shared/nothing_found.dart';
 import 'package:shiori/presentation/shared/styles.dart';
 
 class SliverCharacterAscensionMaterials extends StatelessWidget {
@@ -17,6 +18,12 @@ class SliverCharacterAscensionMaterials extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    if (charAscMaterials.isEmpty) {
+      return const SliverToBoxAdapter(
+        child: NothingFound(),
+      );
+    }
+
     if (useListView) {
       return SliverToBoxAdapter(
         child: SizedBox(

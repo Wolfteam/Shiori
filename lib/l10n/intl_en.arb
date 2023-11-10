@@ -292,7 +292,7 @@
   "expiredOn": "Expired on: {date}",
   "validUntil": "Valid until: {date}",
   "internetIsRequiredToRefreshItems": "To refresh the content you need an internet connection",
-  "pullToRefreshItems": "Pull to refresh the content" ,
+  "pullToRefreshItems": "Pull to refresh the content",
   "onlyX": "Only {value}",
   "notifications": "Notifications",
   "startByCreatingANotification": "Start by creating a notification",
@@ -492,5 +492,8 @@
   "wishHistoryXStar": "{stars}-Star",
   "artifact": "Artifact",
   "material": "Material",
-  "close": "Close"
+  "close": "Close",
+  "later": "Later",
+  "youCanSkipFirstResourceDownloadMsg": "You can skip the initial resource download though some features may be disabled",
+  "firstResourceDownloadSkippedMsg": "Some features may be disabled until you complete the initial resource download\nYou can complete it in the app settings"
 }

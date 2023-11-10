@@ -1,18 +1,38 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:responsive_grid/responsive_grid.dart';
-import 'package:shiori/application/bloc.dart';
+import 'package:shiori/domain/models/models.dart';
+import 'package:shiori/generated/l10n.dart';
 import 'package:shiori/presentation/elements/widgets/element_reaction_card.dart';
-import 'package:shiori/presentation/shared/loading.dart';
+import 'package:shiori/presentation/shared/nothing_found.dart';
+import 'package:shiori/presentation/shared/styles.dart';
 
 class SliverElementResonances extends StatelessWidget {
+  final List<ElementReactionCardModel> resonances;
+
+  const SliverElementResonances({required this.resonances});
+
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<ElementsBloc, ElementsState>(
-      builder: (context, state) {
-        return state.when(
-          loading: () => const SliverToBoxAdapter(child: Loading(useScaffold: false)),
-          loaded: (_, __, resonances) => SliverToBoxAdapter(
+    final theme = Theme.of(context);
+    final s = S.of(context);
+    return SliverMainAxisGroup(
+      slivers: [
+        SliverPadding(
+          padding: Styles.edgeInsetAll10,
+          sliver: SliverList(
+            delegate: SliverChildListDelegate.fixed([
+              Text(
+                s.elementalResonances,
+                style: theme.textTheme.titleMedium!.copyWith(fontWeight: FontWeight.bold),
+              ),
+              Text(s.elementalResonancesExplained),
+            ]),
+          ),
+        ),
+        if (resonances.isEmpty)
+          const SliverToBoxAdapter(child: NothingFound())
+        else
+          SliverToBoxAdapter(
             child: IntrinsicHeight(
               child: ResponsiveGridRow(
                 children: resonances
@@ -41,8 +61,7 @@ class SliverElementResonances extends StatelessWidget {
               ),
             ),
           ),
-        );
-      },
+      ],
     );
   }
 }

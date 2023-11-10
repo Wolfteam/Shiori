@@ -3,6 +3,7 @@ import 'package:shiori/generated/l10n.dart';
 import 'package:shiori/presentation/charts/charts_page.dart';
 import 'package:shiori/presentation/home/widgets/card_description.dart';
 import 'package:shiori/presentation/home/widgets/card_item.dart';
+import 'package:shiori/presentation/home/widgets/requires_resources_widget.dart';
 
 class ChartsCard extends StatelessWidget {
   final bool iconToTheLeft;
@@ -16,12 +17,14 @@ class ChartsCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final s = S.of(context);
-    return CardItem(
-      title: s.charts,
-      iconToTheLeft: iconToTheLeft,
-      onClick: _gotoChartsPage,
-      icon: Icon(Icons.pie_chart, size: 60, color: theme.colorScheme.secondary),
-      children: [CardDescription(text: s.usefulDataInTheFormOfCharts)],
+    return RequiresDownloadedResourcesWidget(
+      child: CardItem(
+        title: s.charts,
+        iconToTheLeft: iconToTheLeft,
+        onClick: _gotoChartsPage,
+        icon: Icon(Icons.pie_chart, size: 60, color: theme.colorScheme.secondary),
+        children: [CardDescription(text: s.usefulDataInTheFormOfCharts)],
+      ),
     );
   }
 

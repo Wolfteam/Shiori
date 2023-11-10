@@ -6,6 +6,7 @@ class CheckForResourceUpdatesState with _$CheckForResourceUpdatesState {
 
   const factory CheckForResourceUpdatesState.loaded({
     required int currentResourceVersion,
+    required bool noResourcesHaveBeenDownloaded,
     AppResourceUpdateResultType? updateResultType,
     int? targetResourceVersion,
   }) = _LoadedState;

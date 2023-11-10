@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:shiori/generated/l10n.dart';
 import 'package:shiori/presentation/home/widgets/card_description.dart';
 import 'package:shiori/presentation/home/widgets/card_item.dart';
+import 'package:shiori/presentation/home/widgets/requires_resources_widget.dart';
 import 'package:shiori/presentation/notifications/notifications_page.dart';
 
 class NotificationsCard extends StatelessWidget {
@@ -16,14 +17,16 @@ class NotificationsCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final s = S.of(context);
-    return CardItem(
-      title: s.notifications,
-      onClick: (context) => _goToNotificationsPage(context),
-      iconToTheLeft: iconToTheLeft,
-      icon: Icon(Icons.notifications, color: theme.colorScheme.secondary, size: 60),
-      children: [
-        CardDescription(text: s.createYourCustomNotifications),
-      ],
+    return RequiresDownloadedResourcesWidget(
+      child: CardItem(
+        title: s.notifications,
+        onClick: (context) => _goToNotificationsPage(context),
+        iconToTheLeft: iconToTheLeft,
+        icon: Icon(Icons.notifications, color: theme.colorScheme.secondary, size: 60),
+        children: [
+          CardDescription(text: s.createYourCustomNotifications),
+        ],
+      ),
     );
   }
 

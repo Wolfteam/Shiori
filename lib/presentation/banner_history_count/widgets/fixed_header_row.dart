@@ -33,6 +33,9 @@ class FixedHeaderRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    if (versions.isEmpty) {
+      return const SizedBox.shrink();
+    }
     return SizedBox(
       height: math.max(firstCellHeight, cellHeight),
       child: ListView.builder(

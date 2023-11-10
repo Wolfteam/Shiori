@@ -13,6 +13,7 @@ void main() {
     int currentResourcesVersion = -1,
     CheckForUpdatesResult? checkForUpdateResult,
     bool updateResourceCheckedDate = false,
+    bool noResourcesHaveBeenDownloaded = false,
   }) {
     final result = checkForUpdateResult ??
         CheckForUpdatesResult(
@@ -26,6 +27,7 @@ void main() {
         .thenAnswer((_) => Future.value(result));
     final settingsService = MockSettingsService();
     when(settingsService.resourceVersion).thenReturn(currentResourcesVersion);
+    when(settingsService.noResourcesHasBeenDownloaded).thenReturn(noResourcesHaveBeenDownloaded);
     return CheckForResourceUpdatesBloc(resourceService, settingsService, deviceInfoService, MockTelemetryService());
   }
 

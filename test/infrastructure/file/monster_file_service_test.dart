@@ -5,17 +5,25 @@ import '../../common.dart';
 import 'common_file.dart';
 
 void main() {
-  test('Get monsters for card', () async {
+  group('Get monsters for card', () {
     for (final lang in AppLanguageType.values) {
-      final service = await getMonsterFileService(lang);
-      final monsters = service.getAllMonstersForCard();
-      checkKeys(monsters.map((e) => e.key).toList());
-      for (final monster in monsters) {
-        checkKey(monster.key);
-        checkAsset(monster.image);
-        expect(monster.name, allOf([isNotEmpty, isNotNull]));
-      }
+      test('language = ${lang.name}', () async {
+        final service = await getMonsterFileService(lang);
+        final monsters = service.getAllMonstersForCard();
+        checkKeys(monsters.map((e) => e.key).toList());
+        for (final monster in monsters) {
+          checkKey(monster.key);
+          checkAsset(monster.image);
+          expect(monster.name, allOf([isNotEmpty, isNotNull]));
+        }
+      });
     }
+
+    test('no resources have been downloaded', () async {
+      final service = await getMonsterFileService(AppLanguageType.english, noResourcesHaveBeenDownloaded: true);
+      final monsters = service.getAllMonstersForCard();
+      expect(monsters.isEmpty, isTrue);
+    });
   });
 
   test('Get monster', () async {
