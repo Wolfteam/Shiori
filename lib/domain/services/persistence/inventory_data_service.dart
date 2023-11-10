@@ -19,7 +19,7 @@ abstract class InventoryDataService implements BaseDataService {
 
   List<MaterialCardModel> getAllMaterialsInInventory();
 
-  MaterialCardModel getMaterialFromInventory(String image);
+  int getItemQuantityFromInventory(String key, ItemType type);
 
   Future<void> addCharacterToInventory(String key, {bool raiseEvent = true});
 

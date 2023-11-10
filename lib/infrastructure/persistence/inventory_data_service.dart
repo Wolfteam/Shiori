@@ -158,14 +158,9 @@ class InventoryDataServiceImpl implements InventoryDataService {
   }
 
   @override
-  MaterialCardModel getMaterialFromInventory(String key) {
-    final materialForCard = _genshinService.materials.getMaterialForCard(key);
-    final materialInInventory = _inventoryBox.values.firstWhereOrNull((m) => m.itemKey == key);
-    if (materialInInventory == null) {
-      return materialForCard.copyWith.call(quantity: 0);
-    }
-
-    return materialForCard.copyWith.call(quantity: materialInInventory.quantity);
+  int getItemQuantityFromInventory(String key, ItemType type) {
+    final InventoryItem? item = _inventoryBox.values.firstWhereOrNull((m) => m.itemKey == key && m.type == type.index);
+    return item?.quantity ?? 0;
   }
 
   @override
