@@ -6,7 +6,7 @@ import 'package:shiori/domain/services/calculator_asc_materials_service.dart';
 import 'package:shiori/domain/services/genshin_service.dart';
 import 'package:shiori/domain/services/resources_service.dart';
 
-class CalculatorServiceImpl implements CalculatorAscMaterialsService {
+class CalculatorAscMaterialsServiceImpl implements CalculatorAscMaterialsService {
   final GenshinService _genshinService;
   final ResourceService _resourceService;
 
@@ -15,7 +15,7 @@ class CalculatorServiceImpl implements CalculatorAscMaterialsService {
   final List<MaterialFileModel> _weaponExpMaterials = [];
   MaterialFileModel? _moraMaterial;
 
-  CalculatorServiceImpl(this._genshinService, this._resourceService);
+  CalculatorAscMaterialsServiceImpl(this._genshinService, this._resourceService);
 
   @override
   List<AscensionMaterialsSummary> generateSummary(List<ItemAscensionMaterialModel> current) {

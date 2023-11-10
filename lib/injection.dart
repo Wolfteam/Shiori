@@ -346,7 +346,7 @@ class Injection {
 
     getIt.registerSingleton<LocaleService>(LocaleServiceImpl(getIt<SettingsService>()));
     getIt.registerSingleton<GenshinService>(GenshinServiceImpl(getIt<ResourceService>(), getIt<LocaleService>()));
-    getIt.registerSingleton<CalculatorAscMaterialsService>(CalculatorServiceImpl(getIt<GenshinService>(), getIt<ResourceService>()));
+    getIt.registerSingleton<CalculatorAscMaterialsService>(CalculatorAscMaterialsServiceImpl(getIt<GenshinService>(), getIt<ResourceService>()));
 
     final dataService = DataServiceImpl(getIt<GenshinService>(), getIt<CalculatorAscMaterialsService>(), getIt<ResourceService>());
     await dataService.init();
