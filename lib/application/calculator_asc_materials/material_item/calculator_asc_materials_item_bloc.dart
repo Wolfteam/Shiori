@@ -25,69 +25,14 @@ class CalculatorAscMaterialsItemBloc extends Bloc<CalculatorAscMaterialsItemEven
       : super(const CalculatorAscMaterialsItemState.loading());
 
   @override
-  Stream<CalculatorAscMaterialsItemState> mapEventToState(
-    CalculatorAscMaterialsItemEvent event,
-  ) async* {
-    if (event is _Init) {
+  Stream<CalculatorAscMaterialsItemState> mapEventToState(CalculatorAscMaterialsItemEvent event) async* {
+    if (event is _Load) {
       yield const CalculatorAscMaterialsItemState.loading();
     }
 
     final s = event.map(
-      load: (e) {
-        if (e.isCharacter) {
-          final char = _genshinService.characters.getCharacter(e.key);
-          final translation = _genshinService.translations.getCharacterTranslation(e.key);
-          return CalculatorAscMaterialsItemState.loaded(
-            name: translation.name,
-            imageFullPath: _resourceService.getCharacterImagePath(char.image),
-            currentLevel: itemAscensionLevelMap.entries.first.value,
-            desiredLevel: maxItemLevel,
-            currentAscensionLevel: minAscensionLevel,
-            desiredAscensionLevel: maxAscensionLevel,
-            useMaterialsFromInventory: false,
-            skills: _getCharacterSkillsToUse(char, translation),
-          );
-        }
-        final weapon = _genshinService.weapons.getWeapon(e.key);
-        final translation = _genshinService.translations.getWeaponTranslation(e.key);
-        return CalculatorAscMaterialsItemState.loaded(
-          name: translation.name,
-          imageFullPath: _resourceService.getWeaponImagePath(weapon.image, weapon.type),
-          currentLevel: itemAscensionLevelMap.entries.first.value,
-          desiredLevel: maxItemLevel,
-          currentAscensionLevel: minAscensionLevel,
-          desiredAscensionLevel: maxAscensionLevel,
-          useMaterialsFromInventory: false,
-        );
-      },
-      loadWith: (e) {
-        if (e.isCharacter) {
-          final char = _genshinService.characters.getCharacter(e.key);
-          final translation = _genshinService.translations.getCharacterTranslation(e.key);
-          return CalculatorAscMaterialsItemState.loaded(
-            name: translation.name,
-            imageFullPath: _resourceService.getCharacterImagePath(char.image),
-            currentLevel: e.currentLevel,
-            desiredLevel: e.desiredLevel,
-            skills: e.skills,
-            currentAscensionLevel: e.currentAscensionLevel,
-            desiredAscensionLevel: e.desiredAscensionLevel,
-            useMaterialsFromInventory: e.useMaterialsFromInventory,
-          );
-        }
-
-        final weapon = _genshinService.weapons.getWeapon(e.key);
-        final translation = _genshinService.translations.getWeaponTranslation(e.key);
-        return CalculatorAscMaterialsItemState.loaded(
-          name: translation.name,
-          imageFullPath: _resourceService.getWeaponImagePath(weapon.image, weapon.type),
-          currentLevel: e.currentLevel,
-          desiredLevel: e.desiredLevel,
-          currentAscensionLevel: e.currentAscensionLevel,
-          desiredAscensionLevel: e.desiredAscensionLevel,
-          useMaterialsFromInventory: e.useMaterialsFromInventory,
-        );
-      },
+      load: (e) => _defaultLoad(e),
+      loadWith: (e) => _load(e),
       currentLevelChanged: (e) => _levelChanged(e.newValue, currentState.desiredLevel, true),
       desiredLevelChanged: (e) => _levelChanged(currentState.currentLevel, e.newValue, false),
       currentAscensionLevelChanged: (e) => _ascensionChanged(e.newValue, currentState.desiredAscensionLevel, true),
@@ -98,6 +43,63 @@ class CalculatorAscMaterialsItemBloc extends Bloc<CalculatorAscMaterialsItemEven
     );
 
     yield s;
+  }
+
+  CalculatorAscMaterialsItemState _defaultLoad(_Load e) {
+    if (e.isCharacter) {
+      final char = _genshinService.characters.getCharacter(e.key);
+      final translation = _genshinService.translations.getCharacterTranslation(e.key);
+      return CalculatorAscMaterialsItemState.loaded(
+        name: translation.name,
+        imageFullPath: _resourceService.getCharacterImagePath(char.image),
+        currentLevel: itemAscensionLevelMap.entries.first.value,
+        desiredLevel: maxItemLevel,
+        currentAscensionLevel: minAscensionLevel,
+        desiredAscensionLevel: maxAscensionLevel,
+        useMaterialsFromInventory: false,
+        skills: _getCharacterSkillsToUse(char, translation),
+      );
+    }
+    final weapon = _genshinService.weapons.getWeapon(e.key);
+    final translation = _genshinService.translations.getWeaponTranslation(e.key);
+    return CalculatorAscMaterialsItemState.loaded(
+      name: translation.name,
+      imageFullPath: _resourceService.getWeaponImagePath(weapon.image, weapon.type),
+      currentLevel: itemAscensionLevelMap.entries.first.value,
+      desiredLevel: maxItemLevel,
+      currentAscensionLevel: minAscensionLevel,
+      desiredAscensionLevel: maxAscensionLevel,
+      useMaterialsFromInventory: false,
+    );
+  }
+
+  CalculatorAscMaterialsItemState _load(_LoadWith e) {
+    if (e.isCharacter) {
+      final char = _genshinService.characters.getCharacter(e.key);
+      final translation = _genshinService.translations.getCharacterTranslation(e.key);
+      return CalculatorAscMaterialsItemState.loaded(
+        name: translation.name,
+        imageFullPath: _resourceService.getCharacterImagePath(char.image),
+        currentLevel: e.currentLevel,
+        desiredLevel: e.desiredLevel,
+        skills: e.skills,
+        currentAscensionLevel: e.currentAscensionLevel,
+        desiredAscensionLevel: e.desiredAscensionLevel,
+        useMaterialsFromInventory: e.useMaterialsFromInventory,
+      );
+    }
+
+    final weapon = _genshinService.weapons.getWeapon(e.key);
+    final translation = _genshinService.translations.getWeaponTranslation(e.key);
+    return CalculatorAscMaterialsItemState.loaded(
+      name: translation.name,
+      imageFullPath: _resourceService.getWeaponImagePath(weapon.image, weapon.type),
+      currentLevel: e.currentLevel,
+      desiredLevel: e.desiredLevel,
+      currentAscensionLevel: e.currentAscensionLevel,
+      desiredAscensionLevel: e.desiredAscensionLevel,
+      useMaterialsFromInventory: e.useMaterialsFromInventory,
+    );
   }
 
   CalculatorAscMaterialsItemState _levelChanged(int currentLevel, int desiredLevel, bool currentChanged) {
