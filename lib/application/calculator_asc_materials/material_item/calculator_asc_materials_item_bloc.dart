@@ -30,6 +30,10 @@ class CalculatorAscMaterialsItemBloc extends Bloc<CalculatorAscMaterialsItemEven
       yield const CalculatorAscMaterialsItemState.loading();
     }
 
+    if (event is! _Load && event is! _LoadWith && state is! _LoadedState) {
+      throw Exception('Invalid state');
+    }
+
     final s = event.map(
       load: (e) => _defaultLoad(e),
       loadWith: (e) => _load(e),
@@ -103,12 +107,23 @@ class CalculatorAscMaterialsItemBloc extends Bloc<CalculatorAscMaterialsItemEven
   }
 
   CalculatorAscMaterialsItemState _levelChanged(int currentLevel, int desiredLevel, bool currentChanged) {
+    if (currentLevel < minItemLevel || currentLevel > maxItemLevel) {
+      throw Exception('Current level = $currentLevel is not valid');
+    }
+
+    if (desiredLevel < minItemLevel || desiredLevel > maxItemLevel) {
+      throw Exception('Desired level = $desiredLevel is not valid');
+    }
+
     final tuple = _checkProvidedLevels(currentLevel, desiredLevel, currentChanged);
     final cl = tuple.$1;
     final dl = tuple.$2;
 
     final cAsc = _calculatorService.getClosestAscensionLevelFor(cl, currentState.currentAscensionLevel);
-    final dAsc = _calculatorService.getClosestAscensionLevelFor(dl, currentState.desiredAscensionLevel);
+    int dAsc = _calculatorService.getClosestAscensionLevelFor(dl, currentState.desiredAscensionLevel);
+    if (cAsc > dAsc) {
+      dAsc = cAsc;
+    }
     final skills = _updateSkills(cAsc, dAsc);
 
     return currentState.copyWith.call(
@@ -121,6 +136,13 @@ class CalculatorAscMaterialsItemBloc extends Bloc<CalculatorAscMaterialsItemEven
   }
 
   CalculatorAscMaterialsItemState _ascensionChanged(int currentLevel, int desiredLevel, bool currentChanged) {
+    if (currentLevel < 0 || currentLevel > itemAscensionLevelMap.entries.last.key) {
+      throw Exception('Current asc level = $currentLevel is not valid');
+    }
+
+    if (desiredLevel < 0 || desiredLevel > itemAscensionLevelMap.entries.last.key) {
+      throw Exception('Desired asc level = $desiredLevel is not valid');
+    }
     final tuple = _checkProvidedLevels(currentLevel, desiredLevel, currentChanged);
     final bothAreZero = tuple.$1 == tuple.$2 && tuple.$1 == 0;
     final cAsc = tuple.$1;
@@ -155,9 +177,17 @@ class CalculatorAscMaterialsItemBloc extends Bloc<CalculatorAscMaterialsItemEven
   }
 
   CalculatorAscMaterialsItemState _skillChanged(int skillIndex, int newValue, bool currentChanged) {
+    if (skillIndex < 0 || skillIndex > currentState.skills.length) {
+      throw Exception('Skill index = $skillIndex is not valid');
+    }
+
+    if (newValue < minSkillLevel || newValue > maxSkillLevel) {
+      throw Exception('Skill value = $newValue is not valid');
+    }
+
     final skills = <CharacterSkill>[];
 
-    for (var i = 0; i < currentState.skills.length; i++) {
+    for (int i = 0; i < currentState.skills.length; i++) {
       final item = currentState.skills[i];
       if (i != skillIndex) {
         skills.add(item);
