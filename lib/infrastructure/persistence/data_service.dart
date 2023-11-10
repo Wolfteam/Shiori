@@ -3,10 +3,10 @@ import 'dart:async';
 import 'package:flutter/foundation.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:shiori/domain/models/entities.dart';
-import 'package:shiori/domain/services/calculator_service.dart';
+import 'package:shiori/domain/services/calculator_asc_materials_service.dart';
 import 'package:shiori/domain/services/data_service.dart';
 import 'package:shiori/domain/services/genshin_service.dart';
-import 'package:shiori/domain/services/persistence/calculator_data_service.dart';
+import 'package:shiori/domain/services/persistence/calculator_asc_materials_data_service.dart';
 import 'package:shiori/domain/services/persistence/custom_builds_data_service.dart';
 import 'package:shiori/domain/services/persistence/game_codes_data_service.dart';
 import 'package:shiori/domain/services/persistence/inventory_data_service.dart';
@@ -14,7 +14,7 @@ import 'package:shiori/domain/services/persistence/notifications_data_service.da
 import 'package:shiori/domain/services/persistence/tier_list_data_service.dart';
 import 'package:shiori/domain/services/persistence/wish_simulator_data_service.dart';
 import 'package:shiori/domain/services/resources_service.dart';
-import 'package:shiori/infrastructure/persistence/calculator_data_service.dart';
+import 'package:shiori/infrastructure/persistence/calculator_asc_materials_data_service.dart';
 import 'package:shiori/infrastructure/persistence/custom_builds_data_service.dart';
 import 'package:shiori/infrastructure/persistence/game_codes_data_service.dart';
 import 'package:shiori/infrastructure/persistence/inventory_data_service.dart';
@@ -31,7 +31,7 @@ class DataServiceImpl implements DataService {
   final TierListDataService _tierList;
   final WishSimulatorDataService _wishSimulator;
 
-  late final CalculatorDataService _calculator;
+  late final CalculatorAscMaterialsDataService _calculator;
 
   bool _initialized = false;
 
@@ -39,7 +39,7 @@ class DataServiceImpl implements DataService {
   final _deleteAllLock = Lock();
 
   @override
-  CalculatorDataService get calculator => _calculator;
+  CalculatorAscMaterialsDataService get calculator => _calculator;
 
   @override
   InventoryDataService get inventory => _inventory;
@@ -59,14 +59,14 @@ class DataServiceImpl implements DataService {
   @override
   WishSimulatorDataService get wishSimulator => _wishSimulator;
 
-  DataServiceImpl(GenshinService genshinService, CalculatorService calculatorService, ResourceService resourceService)
+  DataServiceImpl(GenshinService genshinService, CalculatorAscMaterialsService calculatorService, ResourceService resourceService)
       : _inventory = InventoryDataServiceImpl(genshinService),
         _builds = CustomBuildsDataServiceImpl(genshinService, resourceService),
         _notifications = NotificationsDataServiceImpl(genshinService),
         _gameCodes = GameCodesDataServiceImpl(genshinService, resourceService),
         _tierList = TierListDataServiceImpl(genshinService, resourceService),
         _wishSimulator = WishSimulatorDataServiceImpl() {
-    _calculator = CalculatorDataServiceImpl(genshinService, calculatorService, _inventory, resourceService);
+    _calculator = CalculatorAscMaterialsDataServiceImpl(genshinService, calculatorService, _inventory, resourceService);
   }
 
   Future<void> _init() async {

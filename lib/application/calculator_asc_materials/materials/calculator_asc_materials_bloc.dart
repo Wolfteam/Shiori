@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:shiori/domain/models/models.dart';
-import 'package:shiori/domain/services/calculator_service.dart';
+import 'package:shiori/domain/services/calculator_asc_materials_service.dart';
 import 'package:shiori/domain/services/data_service.dart';
 import 'package:shiori/domain/services/genshin_service.dart';
 import 'package:shiori/domain/services/resources_service.dart';
@@ -18,7 +18,7 @@ const _initialState = CalculatorAscMaterialsState.initial(sessionKey: -1, items:
 class CalculatorAscMaterialsBloc extends Bloc<CalculatorAscMaterialsEvent, CalculatorAscMaterialsState> {
   final GenshinService _genshinService;
   final TelemetryService _telemetryService;
-  final CalculatorService _calculatorService;
+  final CalculatorAscMaterialsService _calculatorService;
   final DataService _dataService;
   final ResourceService _resourceService;
 
@@ -85,7 +85,7 @@ class CalculatorAscMaterialsBloc extends Bloc<CalculatorAscMaterialsEvent, Calcu
     );
 
     final allPossibleMaterialKeys = _calculatorService.getAllCharacterPossibleMaterialsToUse(char).map((e) => e.key).toList();
-    await _dataService.calculator.addCalAscMatSessionItem(e.sessionKey, newItem, allPossibleMaterialKeys);
+    await _dataService.calculator.addSessionItem(e.sessionKey, newItem, allPossibleMaterialKeys);
     return _init(e.sessionKey);
   }
 
@@ -113,7 +113,7 @@ class CalculatorAscMaterialsBloc extends Bloc<CalculatorAscMaterialsEvent, Calcu
       useMaterialsFromInventory: e.useMaterialsFromInventory,
     );
     final allPossibleMaterialKeys = _calculatorService.getAllWeaponPossibleMaterialsToUse(weapon).map((e) => e.key).toList();
-    await _dataService.calculator.addCalAscMatSessionItem(e.sessionKey, newItem, allPossibleMaterialKeys);
+    await _dataService.calculator.addSessionItem(e.sessionKey, newItem, allPossibleMaterialKeys);
     return _init(e.sessionKey);
   }
 
@@ -126,11 +126,11 @@ class CalculatorAscMaterialsBloc extends Bloc<CalculatorAscMaterialsEvent, Calcu
     final possibleMaterialItemKeys = _calculatorService.getAllPossibleMaterialKeysToUse(itemToDelete.key, itemToDelete.isCharacter);
     itemsToLoop.removeAt(e.index);
 
-    await _dataService.calculator.deleteCalAscMatSessionItem(e.sessionKey, itemPosition, redistribute: false);
+    await _dataService.calculator.deleteSessionItem(e.sessionKey, itemPosition, redistribute: false);
 
     for (int i = 0; i < itemsToLoop.length; i++) {
       final item = itemsToLoop[i];
-      await _dataService.calculator.updateCalAscMatSessionItem(e.sessionKey, i, item, [], redistribute: false);
+      await _dataService.calculator.updateSessionItem(e.sessionKey, i, item, [], redistribute: false);
     }
 
     await _dataService.calculator.redistributeInventoryMaterialsFromSessionPosition(e.sessionKey, onlyMaterialKeys: possibleMaterialItemKeys);
@@ -188,7 +188,7 @@ class CalculatorAscMaterialsBloc extends Bloc<CalculatorAscMaterialsEvent, Calcu
   }
 
   Future<CalculatorAscMaterialsState> _clearAllItems(int sessionKey) async {
-    await _dataService.calculator.deleteAllCalAscMatSessionItems(sessionKey);
+    await _dataService.calculator.deleteAllSessionItems(sessionKey);
     return CalculatorAscMaterialsState.initial(sessionKey: sessionKey, items: [], summary: []);
   }
 
@@ -207,7 +207,7 @@ class CalculatorAscMaterialsBloc extends Bloc<CalculatorAscMaterialsEvent, Calcu
     ItemAscensionMaterials updatedItem,
     List<String> allPossibleItemMaterialsKeys,
   ) async {
-    await _dataService.calculator.updateCalAscMatSessionItem(sessionKey, index, updatedItem, allPossibleItemMaterialsKeys);
+    await _dataService.calculator.updateSessionItem(sessionKey, index, updatedItem, allPossibleItemMaterialsKeys);
     return _init(sessionKey);
   }
 

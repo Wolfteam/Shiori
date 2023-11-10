@@ -1,6 +1,6 @@
 import 'package:shiori/domain/models/models.dart';
 
-abstract class CalculatorService {
+abstract class CalculatorAscMaterialsService {
   List<AscensionMaterialsSummary> generateSummary(List<ItemAscensionMaterialModel> current);
 
   List<ItemAscensionMaterialModel> getAllCharacterPossibleMaterialsToUse(CharacterFileModel char);

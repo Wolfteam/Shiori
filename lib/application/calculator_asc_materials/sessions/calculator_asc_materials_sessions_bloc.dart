@@ -36,31 +36,31 @@ class CalculatorAscMaterialsSessionsBloc extends Bloc<CalculatorAscMaterialsSess
     final s = await event.map(
       init: (_) async {
         await _telemetryService.trackCalculatorAscMaterialsSessionsLoaded();
-        final sessions = _dataService.calculator.getAllCalAscMatSessions();
+        final sessions = _dataService.calculator.getAllSessions();
         return CalculatorAscMaterialsSessionsState.loaded(sessions: sessions);
       },
       createSession: (e) async {
         await _telemetryService.trackCalculatorAscMaterialsSessionsCreated();
-        await _dataService.calculator.createCalAscMatSession(e.name.trim(), currentState.sessions.length);
-        final sessions = _dataService.calculator.getAllCalAscMatSessions();
+        await _dataService.calculator.createSession(e.name.trim(), currentState.sessions.length);
+        final sessions = _dataService.calculator.getAllSessions();
         return CalculatorAscMaterialsSessionsState.loaded(sessions: sessions);
       },
       updateSession: (e) async {
         final position = currentState.sessions.firstWhere((el) => el.key == e.key).position;
         await _telemetryService.trackCalculatorAscMaterialsSessionsUpdated();
-        await _dataService.calculator.updateCalAscMatSession(e.key, e.name.trim(), position);
-        final sessions = _dataService.calculator.getAllCalAscMatSessions();
+        await _dataService.calculator.updateSession(e.key, e.name.trim(), position);
+        final sessions = _dataService.calculator.getAllSessions();
         return CalculatorAscMaterialsSessionsState.loaded(sessions: sessions);
       },
       deleteSession: (e) async {
         await _telemetryService.trackCalculatorAscMaterialsSessionsDeleted();
-        await _dataService.calculator.deleteCalAscMatSession(e.key);
-        final sessions = _dataService.calculator.getAllCalAscMatSessions();
+        await _dataService.calculator.deleteSession(e.key);
+        final sessions = _dataService.calculator.getAllSessions();
         return CalculatorAscMaterialsSessionsState.loaded(sessions: sessions);
       },
       deleteAllSessions: (_) async {
         await _telemetryService.trackCalculatorAscMaterialsSessionsDeleted(all: true);
-        await _dataService.calculator.deleteAllCalAscMatSession();
+        await _dataService.calculator.deleteAllSessions();
         return const CalculatorAscMaterialsSessionsState.loaded(sessions: []);
       },
       itemsReordered: (e) async => _itemsReordered(e.updated),
@@ -87,12 +87,12 @@ class CalculatorAscMaterialsSessionsBloc extends Bloc<CalculatorAscMaterialsSess
     assert(currentState.sessions.length == updated.length);
     for (int i = 0; i < updated.length; i++) {
       final updatedSession = updated[i];
-      await _dataService.calculator.updateCalAscMatSession(updatedSession.key, updatedSession.name, i);
+      await _dataService.calculator.updateSession(updatedSession.key, updatedSession.name, i);
     }
 
     await _dataService.calculator.redistributeAllInventoryMaterials();
 
-    final sessions = _dataService.calculator.getAllCalAscMatSessions();
+    final sessions = _dataService.calculator.getAllSessions();
     return CalculatorAscMaterialsSessionsState.loaded(sessions: sessions);
   }
 

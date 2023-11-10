@@ -6,7 +6,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:shiori/domain/app_constants.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/models/models.dart';
-import 'package:shiori/domain/services/calculator_service.dart';
+import 'package:shiori/domain/services/calculator_asc_materials_service.dart';
 import 'package:shiori/domain/services/genshin_service.dart';
 import 'package:shiori/domain/services/resources_service.dart';
 
@@ -16,7 +16,7 @@ part 'calculator_asc_materials_item_state.dart';
 
 class CalculatorAscMaterialsItemBloc extends Bloc<CalculatorAscMaterialsItemEvent, CalculatorAscMaterialsItemState> {
   final GenshinService _genshinService;
-  final CalculatorService _calculatorService;
+  final CalculatorAscMaterialsService _calculatorService;
   final ResourceService _resourceService;
 
   _LoadedState get currentState => state as _LoadedState;

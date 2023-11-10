@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/foundation.dart';
-import 'package:shiori/domain/services/persistence/calculator_data_service.dart';
+import 'package:shiori/domain/services/persistence/calculator_asc_materials_data_service.dart';
 import 'package:shiori/domain/services/persistence/custom_builds_data_service.dart';
 import 'package:shiori/domain/services/persistence/game_codes_data_service.dart';
 import 'package:shiori/domain/services/persistence/inventory_data_service.dart';
@@ -10,7 +10,7 @@ import 'package:shiori/domain/services/persistence/tier_list_data_service.dart';
 import 'package:shiori/domain/services/persistence/wish_simulator_data_service.dart';
 
 abstract class DataService {
-  CalculatorDataService get calculator;
+  CalculatorAscMaterialsDataService get calculator;
 
   InventoryDataService get inventory;
 

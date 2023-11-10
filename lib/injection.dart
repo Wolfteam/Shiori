@@ -2,7 +2,7 @@ import 'package:get_it/get_it.dart';
 import 'package:shiori/application/bloc.dart';
 import 'package:shiori/domain/services/api_service.dart';
 import 'package:shiori/domain/services/backup_restore_service.dart';
-import 'package:shiori/domain/services/calculator_service.dart';
+import 'package:shiori/domain/services/calculator_asc_materials_service.dart';
 import 'package:shiori/domain/services/changelog_provider.dart';
 import 'package:shiori/domain/services/data_service.dart';
 import 'package:shiori/domain/services/device_info_service.dart';
@@ -280,7 +280,7 @@ class Injection {
   static CalculatorAscMaterialsBloc get calculatorAscMaterialsBloc {
     final genshinService = getIt<GenshinService>();
     final telemetryService = getIt<TelemetryService>();
-    final calculatorService = getIt<CalculatorService>();
+    final calculatorService = getIt<CalculatorAscMaterialsService>();
     final dataService = getIt<DataService>();
     final resourceService = getIt<ResourceService>();
     return CalculatorAscMaterialsBloc(genshinService, telemetryService, calculatorService, dataService, resourceService);
@@ -346,9 +346,9 @@ class Injection {
 
     getIt.registerSingleton<LocaleService>(LocaleServiceImpl(getIt<SettingsService>()));
     getIt.registerSingleton<GenshinService>(GenshinServiceImpl(getIt<ResourceService>(), getIt<LocaleService>()));
-    getIt.registerSingleton<CalculatorService>(CalculatorServiceImpl(getIt<GenshinService>(), getIt<ResourceService>()));
+    getIt.registerSingleton<CalculatorAscMaterialsService>(CalculatorServiceImpl(getIt<GenshinService>(), getIt<ResourceService>()));
 
-    final dataService = DataServiceImpl(getIt<GenshinService>(), getIt<CalculatorService>(), getIt<ResourceService>());
+    final dataService = DataServiceImpl(getIt<GenshinService>(), getIt<CalculatorAscMaterialsService>(), getIt<ResourceService>());
     await dataService.init();
     getIt.registerSingleton<DataService>(dataService);
 

@@ -6,17 +6,15 @@ import 'package:shiori/domain/app_constants.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/models/entities.dart';
 import 'package:shiori/domain/models/models.dart';
-import 'package:shiori/domain/services/calculator_service.dart';
+import 'package:shiori/domain/services/calculator_asc_materials_service.dart';
 import 'package:shiori/domain/services/genshin_service.dart';
-import 'package:shiori/domain/services/persistence/calculator_data_service.dart';
+import 'package:shiori/domain/services/persistence/calculator_asc_materials_data_service.dart';
 import 'package:shiori/domain/services/persistence/inventory_data_service.dart';
 import 'package:shiori/domain/services/resources_service.dart';
 
-//TODO: RENAME THIS CLASS
-//TODO: RENAME THE METHODS
-class CalculatorDataServiceImpl implements CalculatorDataService {
+class CalculatorAscMaterialsDataServiceImpl implements CalculatorAscMaterialsDataService {
   final GenshinService _genshinService;
-  final CalculatorService _calculatorService;
+  final CalculatorAscMaterialsService _calculatorService;
   final InventoryDataService _inventory;
   final ResourceService _resourceService;
 
@@ -30,7 +28,7 @@ class CalculatorDataServiceImpl implements CalculatorDataService {
   @override
   final StreamController<CalculatorAscMaterialSessionItemEvent> itemDeleted = StreamController.broadcast();
 
-  CalculatorDataServiceImpl(this._genshinService, this._calculatorService, this._inventory, this._resourceService);
+  CalculatorAscMaterialsDataServiceImpl(this._genshinService, this._calculatorService, this._inventory, this._resourceService);
 
   @override
   Future<void> init() async {
@@ -47,19 +45,19 @@ class CalculatorDataServiceImpl implements CalculatorDataService {
   }
 
   @override
-  List<CalculatorSessionModel> getAllCalAscMatSessions() {
+  List<CalculatorSessionModel> getAllSessions() {
     final sessions = _sessionBox.values.toList()..sort((x, y) => x.position.compareTo(y.position));
     final result = <CalculatorSessionModel>[];
 
     for (final session in sessions) {
-      result.add(getCalcAscMatSession(session.id));
+      result.add(getSession(session.id));
     }
 
     return result;
   }
 
   @override
-  CalculatorSessionModel getCalcAscMatSession(int sessionKey) {
+  CalculatorSessionModel getSession(int sessionKey) {
     final session = _sessionBox.values.firstWhere((el) => el.key == sessionKey);
     final calcItems = _calcItemBox.values.where((el) => el.sessionKey == session.key).toList()..sort((x, y) => x.position.compareTo(y.position));
     int numberOfCharacters = 0;
@@ -88,13 +86,13 @@ class CalculatorDataServiceImpl implements CalculatorDataService {
   }
 
   @override
-  Future<int> createCalAscMatSession(String name, int position) {
+  Future<int> createSession(String name, int position) {
     final session = CalculatorSession(name, position);
     return _sessionBox.add(session);
   }
 
   @override
-  Future<void> updateCalAscMatSession(int sessionKey, String name, int position, {bool redistributeMaterials = false}) async {
+  Future<void> updateSession(int sessionKey, String name, int position, {bool redistributeMaterials = false}) async {
     final session = _sessionBox.get(sessionKey)!;
     session.name = name;
     session.position = position;
@@ -106,18 +104,18 @@ class CalculatorDataServiceImpl implements CalculatorDataService {
   }
 
   @override
-  Future<void> deleteCalAscMatSession(int sessionKey) async {
+  Future<void> deleteSession(int sessionKey) async {
     await _sessionBox.delete(sessionKey);
     final calItems = _calcItemBox.values.where((el) => el.sessionKey == sessionKey).toList();
     for (int i = 0; i < calItems.length; i++) {
       final calcItem = calItems[i];
       final redistribute = i + 1 == calItems.length;
-      await deleteCalAscMatSessionItem(sessionKey, calcItem.position, redistribute: redistribute);
+      await deleteSessionItem(sessionKey, calcItem.position, redistribute: redistribute);
     }
   }
 
   @override
-  Future<void> deleteAllCalAscMatSession() async {
+  Future<void> deleteAllSessions() async {
     //First we clear the used items in the inventory (if any)
     await _inventory.deleteAllUsedInventoryItems();
 
@@ -147,16 +145,16 @@ class CalculatorDataServiceImpl implements CalculatorDataService {
   }
 
   @override
-  Future<void> addCalAscMatSessionItems(int sessionKey, List<ItemAscensionMaterials> items, {bool redistributeAtTheEnd = true}) async {
+  Future<void> addSessionItems(int sessionKey, List<ItemAscensionMaterials> items, {bool redistributeAtTheEnd = true}) async {
     for (int i = 0; i < items.length; i++) {
       final item = items[i];
       final redistribute = i + 1 == items.length && redistributeAtTheEnd;
-      await addCalAscMatSessionItem(sessionKey, item, [], redistribute: redistribute);
+      await addSessionItem(sessionKey, item, [], redistribute: redistribute);
     }
   }
 
   @override
-  Future<ItemAscensionMaterials> addCalAscMatSessionItem(
+  Future<ItemAscensionMaterials> addSessionItem(
     int sessionKey,
     ItemAscensionMaterials item,
     List<String> allPossibleItemMaterialsKeys, {
@@ -192,15 +190,15 @@ class CalculatorDataServiceImpl implements CalculatorDataService {
   }
 
   @override
-  Future<ItemAscensionMaterials> updateCalAscMatSessionItem(
+  Future<ItemAscensionMaterials> updateSessionItem(
     int sessionKey,
     int newItemPosition,
     ItemAscensionMaterials item,
     List<String> allPossibleItemMaterialsKeys, {
     bool redistribute = true,
   }) async {
-    await deleteCalAscMatSessionItem(sessionKey, item.position, redistribute: false);
-    return addCalAscMatSessionItem(
+    await deleteSessionItem(sessionKey, item.position, redistribute: false);
+    return addSessionItem(
       sessionKey,
       item.copyWith.call(position: newItemPosition),
       allPossibleItemMaterialsKeys,
@@ -209,7 +207,7 @@ class CalculatorDataServiceImpl implements CalculatorDataService {
   }
 
   @override
-  Future<void> deleteCalAscMatSessionItem(int sessionKey, int position, {bool redistribute = true}) async {
+  Future<void> deleteSessionItem(int sessionKey, int position, {bool redistribute = true}) async {
     final calcItem = _calcItemBox.values.firstWhereOrNull((el) => el.sessionKey == sessionKey && el.position == position);
     if (calcItem == null) {
       return;
@@ -232,7 +230,7 @@ class CalculatorDataServiceImpl implements CalculatorDataService {
   }
 
   @override
-  Future<void> deleteAllCalAscMatSessionItems(int sessionKey) async {
+  Future<void> deleteAllSessionItems(int sessionKey) async {
     final calcItems = _calcItemBox.values.where((el) => el.sessionKey == sessionKey);
     if (calcItems.isEmpty) {
       return;
@@ -355,7 +353,7 @@ class CalculatorDataServiceImpl implements CalculatorDataService {
   Future<void> restoreFromBackup(List<BackupCalculatorAscMaterialsSessionModel> data) async {
     await deleteThemAll();
     for (final session in data) {
-      final id = await createCalAscMatSession(session.name, session.position);
+      final id = await createSession(session.name, session.position);
       final items = session.items.map((e) {
         if (e.isCharacter) {
           final skills = e.characterSkills
@@ -434,7 +432,7 @@ class CalculatorDataServiceImpl implements CalculatorDataService {
           useMaterialsFromInventory: e.useMaterialsFromInventory,
         );
       }).toList();
-      await addCalAscMatSessionItems(id, items, redistributeAtTheEnd: false);
+      await addSessionItems(id, items, redistributeAtTheEnd: false);
     }
 
     await redistributeAllInventoryMaterials();

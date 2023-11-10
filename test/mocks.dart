@@ -6,7 +6,7 @@ import 'package:shiori/domain/services/game_code_service.dart';
 import 'package:shiori/domain/services/logging_service.dart';
 import 'package:shiori/domain/services/network_service.dart';
 import 'package:shiori/domain/services/notification_service.dart';
-import 'package:shiori/domain/services/persistence/calculator_data_service.dart';
+import 'package:shiori/domain/services/persistence/calculator_asc_materials_data_service.dart';
 import 'package:shiori/domain/services/persistence/custom_builds_data_service.dart';
 import 'package:shiori/domain/services/persistence/game_codes_data_service.dart';
 import 'package:shiori/domain/services/persistence/inventory_data_service.dart';
@@ -31,7 +31,7 @@ import 'package:shiori/domain/services/telemetry_service.dart';
   ApiService,
   //data service mocks
   DataService,
-  CalculatorDataService,
+  CalculatorAscMaterialsDataService,
   InventoryDataService,
   CustomBuildsDataService,
   NotificationsDataService,

@@ -2,11 +2,11 @@ import 'package:darq/darq.dart';
 import 'package:shiori/domain/app_constants.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/models/models.dart';
-import 'package:shiori/domain/services/calculator_service.dart';
+import 'package:shiori/domain/services/calculator_asc_materials_service.dart';
 import 'package:shiori/domain/services/genshin_service.dart';
 import 'package:shiori/domain/services/resources_service.dart';
 
-class CalculatorServiceImpl implements CalculatorService {
+class CalculatorServiceImpl implements CalculatorAscMaterialsService {
   final GenshinService _genshinService;
   final ResourceService _resourceService;
 

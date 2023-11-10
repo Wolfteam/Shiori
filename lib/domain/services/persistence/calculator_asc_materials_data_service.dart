@@ -3,32 +3,32 @@ import 'dart:async';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/persistence/base_data_service.dart';
 
-abstract class CalculatorDataService implements BaseDataService {
+abstract class CalculatorAscMaterialsDataService implements BaseDataService {
   StreamController<CalculatorAscMaterialSessionItemEvent> get itemAdded;
 
   StreamController<CalculatorAscMaterialSessionItemEvent> get itemDeleted;
 
-  List<CalculatorSessionModel> getAllCalAscMatSessions();
+  List<CalculatorSessionModel> getAllSessions();
 
-  CalculatorSessionModel getCalcAscMatSession(int sessionKey);
+  CalculatorSessionModel getSession(int sessionKey);
 
-  Future<int> createCalAscMatSession(String name, int position);
+  Future<int> createSession(String name, int position);
 
-  Future<void> updateCalAscMatSession(int sessionKey, String name, int position, {bool redistributeMaterials = false});
+  Future<void> updateSession(int sessionKey, String name, int position, {bool redistributeMaterials = false});
 
-  Future<void> deleteCalAscMatSession(int sessionKey);
+  Future<void> deleteSession(int sessionKey);
 
-  Future<void> deleteAllCalAscMatSession();
+  Future<void> deleteAllSessions();
 
   List<ItemAscensionMaterials> getAllSessionItems(int sessionKey);
 
-  Future<void> addCalAscMatSessionItems(int sessionKey, List<ItemAscensionMaterials> items, {bool redistributeAtTheEnd = true});
+  Future<void> addSessionItems(int sessionKey, List<ItemAscensionMaterials> items, {bool redistributeAtTheEnd = true});
 
   /// Adds a new calc. item to the provided session by using the [sessionKey].
   ///
   /// If [item.useMaterialsFromInventory] is set to false, the same item will be returned without changes.
   /// Otherwise, it will be returned with [item.materials] property updated.
-  Future<ItemAscensionMaterials> addCalAscMatSessionItem(
+  Future<ItemAscensionMaterials> addSessionItem(
     int sessionKey,
     ItemAscensionMaterials item,
     List<String> allPossibleItemMaterialsKeys, {
@@ -42,7 +42,7 @@ abstract class CalculatorDataService implements BaseDataService {
   ///
   /// If [item.useMaterialsFromInventory] is set to false, the same item will be returned without changes.
   /// Otherwise, it will be returned with [item.materials] property updated.
-  Future<ItemAscensionMaterials> updateCalAscMatSessionItem(
+  Future<ItemAscensionMaterials> updateSessionItem(
     int sessionKey,
     int newItemPosition,
     ItemAscensionMaterials item,
@@ -50,9 +50,9 @@ abstract class CalculatorDataService implements BaseDataService {
     bool redistribute = true,
   });
 
-  Future<void> deleteCalAscMatSessionItem(int sessionKey, int itemIndex, {bool redistribute = true});
+  Future<void> deleteSessionItem(int sessionKey, int itemIndex, {bool redistribute = true});
 
-  Future<void> deleteAllCalAscMatSessionItems(int sessionKey);
+  Future<void> deleteAllSessionItems(int sessionKey);
 
   /// This method redistributes all the materials in the inventory by calling [redistributeInventoryMaterial]
   /// for each of the available sessions.

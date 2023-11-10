@@ -608,7 +608,7 @@ void main() {
           when(inventoryMock.getDataForBackup()).thenReturn(inventoryData);
           when(dataService.inventory).thenReturn(inventoryMock);
         case AppBackupDataType.calculatorAscMaterials:
-          final calAscMatMock = MockCalculatorDataService();
+          final calAscMatMock = MockCalculatorAscMaterialsDataService();
           when(calAscMatMock.getDataForBackup()).thenReturn(calAscMatData);
           when(dataService.calculator).thenReturn(calAscMatMock);
         case AppBackupDataType.tierList:
@@ -867,7 +867,7 @@ void main() {
       final dataServiceMock = MockDataService();
       final inventory = MockInventoryDataService();
       when(dataServiceMock.inventory).thenReturn(inventory);
-      final calAscMat = MockCalculatorDataService();
+      final calAscMat = MockCalculatorAscMaterialsDataService();
       when(dataServiceMock.calculator).thenReturn(calAscMat);
       final tierList = MockTierListDataService();
       when(dataServiceMock.tierList).thenReturn(tierList);

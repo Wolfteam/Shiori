@@ -4,7 +4,7 @@ import 'package:shiori/domain/app_constants.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/extensions/iterable_extensions.dart';
 import 'package:shiori/domain/models/models.dart';
-import 'package:shiori/domain/services/calculator_service.dart';
+import 'package:shiori/domain/services/calculator_asc_materials_service.dart';
 import 'package:shiori/domain/services/data_service.dart';
 import 'package:shiori/domain/services/genshin_service.dart';
 import 'package:shiori/domain/services/resources_service.dart';
@@ -17,7 +17,7 @@ const _dbFolder = 'shiori_data_service_tests';
 
 void main() {
   late final DataService dataService;
-  late final CalculatorService calculatorService;
+  late final CalculatorAscMaterialsService calculatorService;
   late final GenshinService genshinService;
   late final ResourceService resourceService;
   late final String dbPath;
@@ -49,11 +49,11 @@ void main() {
 
   group('Sessions', () {
     test('create 1 session with 1 item', () async {
-      final existingSessions = dataService.calculator.getAllCalAscMatSessions();
+      final existingSessions = dataService.calculator.getAllSessions();
       expect(existingSessions.length, equals(0));
 
       const sessionName = 'Keqing session';
-      final sessionKey = await dataService.calculator.createCalAscMatSession(sessionName, 0);
+      final sessionKey = await dataService.calculator.createSession(sessionName, 0);
       final char = genshinService.characters.getCharacter('keqing');
       const currentAscensionLevel = 1;
       const desiredAscensionLevel = 5;
@@ -107,9 +107,9 @@ void main() {
           useMaterialsFromInventory: false,
         ),
       );
-      await dataService.calculator.addCalAscMatSessionItems(sessionKey, items);
+      await dataService.calculator.addSessionItems(sessionKey, items);
 
-      final created = dataService.calculator.getCalcAscMatSession(sessionKey);
+      final created = dataService.calculator.getSession(sessionKey);
       expect(created.key, sessionKey);
       expect(created.name, equals(sessionName));
       expect(created.numberOfCharacters, equals(1));
