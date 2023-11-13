@@ -86,13 +86,20 @@ class CalculatorAscMaterialsDataServiceImpl implements CalculatorAscMaterialsDat
   }
 
   @override
-  Future<int> createSession(String name, int position) {
+  Future<CalculatorSessionModel> createSession(String name, int position) async {
     final session = CalculatorSession(name, position);
-    return _sessionBox.add(session);
+    final key = await _sessionBox.add(session);
+    return CalculatorSessionModel(
+      key: key,
+      name: name,
+      position: position,
+      numberOfCharacters: 0,
+      numberOfWeapons: 0,
+    );
   }
 
   @override
-  Future<void> updateSession(int sessionKey, String name, int position, {bool redistributeMaterials = false}) async {
+  Future<CalculatorSessionModel> updateSession(int sessionKey, String name, int position, {bool redistributeMaterials = false}) async {
     final session = _sessionBox.get(sessionKey)!;
     session.name = name;
     session.position = position;
@@ -101,6 +108,8 @@ class CalculatorAscMaterialsDataServiceImpl implements CalculatorAscMaterialsDat
     if (redistributeMaterials) {
       await redistributeAllInventoryMaterials();
     }
+
+    return getSession(sessionKey);
   }
 
   @override
@@ -353,7 +362,8 @@ class CalculatorAscMaterialsDataServiceImpl implements CalculatorAscMaterialsDat
   Future<void> restoreFromBackup(List<BackupCalculatorAscMaterialsSessionModel> data) async {
     await deleteThemAll();
     for (final session in data) {
-      final id = await createSession(session.name, session.position);
+      final createdSession = await createSession(session.name, session.position);
+      final id = createdSession.key;
       final items = session.items.map((e) {
         if (e.isCharacter) {
           final skills = e.characterSkills
@@ -439,23 +449,43 @@ class CalculatorAscMaterialsDataServiceImpl implements CalculatorAscMaterialsDat
   }
 
   @override
-  Future<void> reorderItems(int sessionKey, List<ItemAscensionMaterials> currentItems, List<ItemAscensionMaterials> updatedItems) async {
-    assert(currentItems.length == updatedItems.length);
+  Future<void> reorderSessions(List<CalculatorSessionModel> updated) async {
+    final sessions = _sessionBox.values.toList()..sort((x, y) => x.position.compareTo(y.position));
+    assert(sessions.length == updated.length);
 
-    final allPossibleMaterialItemKeys = <String>[];
-    final allCalcItems = _calcItemBox.values.where((el) => el.sessionKey == sessionKey).toList();
-    for (int i = 0; i < updatedItems.length; i++) {
-      final current = currentItems[i];
-      final updatedItem = updatedItems[i];
-      if (current.key != updatedItem.key) {
-        allPossibleMaterialItemKeys.addAll(_calculatorService.getAllPossibleMaterialKeysToUse(updatedItem.key, updatedItem.isCharacter));
-      }
-      final updatedCalcItem = allCalcItems.firstWhereOrNull((el) => el.itemKey == updatedItem.key && el.position == updatedItem.position);
-      if (updatedCalcItem == null) {
+    for (int i = 0; i < updated.length; i++) {
+      final CalculatorSession currentSession = sessions[i];
+      final CalculatorSessionModel updatedSession = updated[i];
+      final noPositionChange = currentSession.key == updatedSession.key && currentSession.position == updatedSession.position;
+      if (noPositionChange) {
         continue;
       }
-      updatedCalcItem.position = i;
-      await updatedCalcItem.save();
+
+      currentSession.position = i;
+      await currentSession.save();
+    }
+
+    await redistributeAllInventoryMaterials();
+  }
+
+  @override
+  Future<void> reorderItems(int sessionKey, List<ItemAscensionMaterials> updatedItems) async {
+    final allPossibleMaterialItemKeys = <String>[];
+    final allCalcItems = _calcItemBox.values.where((el) => el.sessionKey == sessionKey).toList()..sort((x, y) => x.position.compareTo(y.position));
+    assert(allCalcItems.length == updatedItems.length);
+
+    for (int i = 0; i < updatedItems.length; i++) {
+      final CalculatorItem currentItem = allCalcItems[i];
+      final ItemAscensionMaterials updatedItem = updatedItems[i];
+      if (currentItem.key != updatedItem.key) {
+        allPossibleMaterialItemKeys.addAll(_calculatorService.getAllPossibleMaterialKeysToUse(updatedItem.key, updatedItem.isCharacter));
+      }
+      final noPositionChange = currentItem.key == updatedItem.key && currentItem.position == updatedItem.position;
+      if (noPositionChange) {
+        continue;
+      }
+      currentItem.position = i;
+      await currentItem.save();
     }
 
     if (allPossibleMaterialItemKeys.isNotEmpty) {
