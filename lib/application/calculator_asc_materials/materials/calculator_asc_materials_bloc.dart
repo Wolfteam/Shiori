@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:shiori/domain/app_constants.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/calculator_asc_materials_service.dart';
 import 'package:shiori/domain/services/data_service.dart';
@@ -33,9 +34,7 @@ class CalculatorAscMaterialsBloc extends Bloc<CalculatorAscMaterialsEvent, Calcu
   ) : super(_initialState);
 
   @override
-  Stream<CalculatorAscMaterialsState> mapEventToState(
-    CalculatorAscMaterialsEvent event,
-  ) async* {
+  Stream<CalculatorAscMaterialsState> mapEventToState(CalculatorAscMaterialsEvent event) async* {
     final s = await event.map(
       init: (e) async => _init(e.sessionKey),
       addCharacter: (e) async => _addCharacter(e),
@@ -58,6 +57,12 @@ class CalculatorAscMaterialsBloc extends Bloc<CalculatorAscMaterialsEvent, Calcu
   }
 
   Future<CalculatorAscMaterialsState> _addCharacter(_AddCharacter e) async {
+    _checkSessionKey(e.sessionKey);
+    _checkKeyNotInSession(e.key, true);
+    _checkLevels(e.currentLevel, e.desiredLevel);
+    _checkAscLevels(e.currentAscensionLevel, e.desiredAscensionLevel);
+    _checkSkills(e.skills);
+
     await _telemetryService.trackCalculatorItemAscMaterialLoaded(e.key);
     final char = _genshinService.characters.getCharacter(e.key);
     final translation = _genshinService.translations.getCharacterTranslation(e.key);
@@ -90,6 +95,11 @@ class CalculatorAscMaterialsBloc extends Bloc<CalculatorAscMaterialsEvent, Calcu
   }
 
   Future<CalculatorAscMaterialsState> _addWeapon(_AddWeapon e) async {
+    _checkSessionKey(e.sessionKey);
+    _checkKeyNotInSession(e.key, false);
+    _checkLevels(e.currentLevel, e.desiredLevel);
+    _checkAscLevels(e.currentAscensionLevel, e.desiredAscensionLevel);
+
     await _telemetryService.trackCalculatorItemAscMaterialLoaded(e.key);
     final weapon = _genshinService.weapons.getWeapon(e.key);
     final translation = _genshinService.translations.getWeaponTranslation(e.key);
@@ -118,6 +128,9 @@ class CalculatorAscMaterialsBloc extends Bloc<CalculatorAscMaterialsEvent, Calcu
   }
 
   Future<CalculatorAscMaterialsState> _removeItem(_RemoveItem e) async {
+    _checkSessionKey(e.sessionKey);
+    _checkItemIndex(e.index);
+
     final itemsToLoop = [...currentState.items];
     //The saved position may be different, so that's why we don't use the index to delete
     //this item
@@ -138,7 +151,16 @@ class CalculatorAscMaterialsBloc extends Bloc<CalculatorAscMaterialsEvent, Calcu
   }
 
   Future<CalculatorAscMaterialsState> _updateCharacter(_UpdateCharacter e) {
+    _checkSessionKey(e.sessionKey);
+    _checkItemIndex(e.index);
+    _checkLevels(e.currentLevel, e.desiredLevel);
+    _checkAscLevels(e.currentAscensionLevel, e.desiredAscensionLevel);
+    _checkSkills(e.skills);
+
     final currentChar = currentState.items.elementAt(e.index);
+    if (!currentChar.isCharacter) {
+      throw Exception('Item = ${currentChar.key} at index = ${e.index} is not a character');
+    }
     final char = _genshinService.characters.getCharacter(currentChar.key);
     final updatedChar = currentChar.copyWith.call(
       materials: _calculatorService.getCharacterMaterialsToUse(
@@ -164,7 +186,16 @@ class CalculatorAscMaterialsBloc extends Bloc<CalculatorAscMaterialsEvent, Calcu
   }
 
   Future<CalculatorAscMaterialsState> _updateWeapon(_UpdateWeapon e) {
+    _checkSessionKey(e.sessionKey);
+    _checkItemIndex(e.index);
+    _checkLevels(e.currentLevel, e.desiredLevel);
+    _checkAscLevels(e.currentAscensionLevel, e.desiredAscensionLevel);
+
     final currentWeapon = currentState.items.elementAt(e.index);
+    if (!currentWeapon.isWeapon) {
+      throw Exception('Item = ${currentWeapon.key} at index = ${e.index} is not a weapon');
+    }
+
     final weapon = _genshinService.weapons.getWeapon(currentWeapon.key);
     final updatedWeapon = currentWeapon.copyWith.call(
       materials: _calculatorService.getWeaponMaterialsToUse(
@@ -188,11 +219,17 @@ class CalculatorAscMaterialsBloc extends Bloc<CalculatorAscMaterialsEvent, Calcu
   }
 
   Future<CalculatorAscMaterialsState> _clearAllItems(int sessionKey) async {
+    _checkSessionKey(sessionKey);
     await _dataService.calculator.deleteAllSessionItems(sessionKey);
     return CalculatorAscMaterialsState.initial(sessionKey: sessionKey, items: [], summary: []);
   }
 
   Future<CalculatorAscMaterialsState> _itemsReordered(List<ItemAscensionMaterials> updated) async {
+    _checkSessionKey(state.sessionKey);
+    if (updated.isEmpty) {
+      throw Exception('The updated reordered items are empty');
+    }
+
     await _dataService.calculator.reorderItems(currentState.sessionKey, currentState.items, updated);
     return _init(currentState.sessionKey);
   }
@@ -213,5 +250,66 @@ class CalculatorAscMaterialsBloc extends Bloc<CalculatorAscMaterialsEvent, Calcu
 
   List<ItemAscensionMaterialModel> _buildMaterialsForSummary(List<ItemAscensionMaterials> items) {
     return items.where((i) => i.isActive).expand((i) => i.materials).toList();
+  }
+
+  void _checkSessionKey(int sessionKey) {
+    if (sessionKey < 0) {
+      throw Exception('SessionKey = $sessionKey is not valid');
+    }
+  }
+
+  void _checkKeyNotInSession(String key, bool isCharacter) {
+    if (isCharacter && state.items.any((el) => el.key == key && el.isCharacter)) {
+      throw Exception('Character = $key is already in the session');
+    }
+
+    if (!isCharacter && state.items.any((el) => el.key == key && el.isWeapon)) {
+      throw Exception('Weapon = $key is already in the session');
+    }
+  }
+
+  void _checkItemIndex(int index) {
+    if (index < 0 || index >= state.items.length) {
+      throw Exception('Index = $index is not valid');
+    }
+
+    if (state.items.elementAtOrNull(index) == null) {
+      throw Exception('No item was found at index = $index');
+    }
+  }
+
+  void _checkLevels(int currentLevel, int desiredLevel) {
+    if (currentLevel < minItemLevel || currentLevel > maxItemLevel) {
+      throw Exception('Current level = $currentLevel is not valid');
+    }
+
+    if (desiredLevel < minItemLevel || desiredLevel > maxItemLevel) {
+      throw Exception('Desired level = $desiredLevel is not valid');
+    }
+  }
+
+  void _checkAscLevels(int currentAscLevel, int desiredAscLevel) {
+    if (currentAscLevel < 0 || currentAscLevel > itemAscensionLevelMap.entries.last.key) {
+      throw Exception('Current asc level = $currentAscLevel is not valid');
+    }
+
+    if (desiredAscLevel < 0 || desiredAscLevel > itemAscensionLevelMap.entries.last.key) {
+      throw Exception('Desired asc level = $desiredAscLevel is not valid');
+    }
+  }
+
+  void _checkSkills(List<CharacterSkill> skills) {
+    if (skills.isEmpty) {
+      throw Exception('Skills are empty');
+    }
+    for (final skill in skills) {
+      if (skill.currentLevel < minSkillLevel || skill.currentLevel > maxSkillLevel) {
+        throw Exception('Skill current level = ${skill.currentLevel} is not valid');
+      }
+
+      if (skill.desiredLevel < minSkillLevel || skill.desiredLevel > maxSkillLevel) {
+        throw Exception('Skill current level = ${skill.desiredLevel} is not valid');
+      }
+    }
   }
 }
