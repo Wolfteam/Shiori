@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shiori/application/bloc.dart';
+import 'package:shiori/domain/extensions/string_extensions.dart';
 import 'package:shiori/generated/l10n.dart';
-import 'package:shiori/injection.dart';
+
+const int _nameMaxLength = 25;
 
 class AddEditSessionDialog extends StatelessWidget {
   final int? sessionKey;
@@ -21,10 +23,7 @@ class AddEditSessionDialog extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider<CalculatorAscMaterialsSessionFormBloc>(
-      create: (ctx) => Injection.calculatorAscMaterialsSessionFormBloc,
-      child: _Body(sessionKey: sessionKey, name: name),
-    );
+    return _Body(sessionKey: sessionKey, name: name);
   }
 }
 
@@ -41,6 +40,8 @@ class _Body extends StatefulWidget {
 class _BodyState extends State<_Body> {
   late TextEditingController _textEditingController;
   String? _currentValue;
+  bool _isValid = false;
+  bool _isDirty = false;
 
   @override
   void initState() {
@@ -57,17 +58,15 @@ class _BodyState extends State<_Body> {
     return AlertDialog(
       scrollable: true,
       title: Text(widget.sessionKey != null ? s.editSession : s.addSession),
-      content: BlocBuilder<CalculatorAscMaterialsSessionFormBloc, CalculatorAscMaterialsSessionFormState>(
-        builder: (ctx, state) => TextField(
-          maxLength: CalculatorAscMaterialsSessionFormBloc.nameMaxLength,
-          controller: _textEditingController,
-          autofocus: true,
-          decoration: InputDecoration(
-            hintText: s.name,
-            alignLabelWithHint: true,
-            labelText: s.name,
-            errorText: !state.isNameValid && state.isNameDirty ? s.invalidValue : null,
-          ),
+      content: TextField(
+        maxLength: _nameMaxLength,
+        controller: _textEditingController,
+        autofocus: true,
+        decoration: InputDecoration(
+          hintText: s.name,
+          alignLabelWithHint: true,
+          labelText: s.name,
+          errorText: !_isValid && _isDirty ? s.invalidValue : null,
         ),
       ),
       actions: [
@@ -75,11 +74,9 @@ class _BodyState extends State<_Body> {
           onPressed: _close,
           child: Text(s.cancel, style: TextStyle(color: theme.primaryColor)),
         ),
-        BlocBuilder<CalculatorAscMaterialsSessionFormBloc, CalculatorAscMaterialsSessionFormState>(
-          builder: (ctx, state) => ElevatedButton(
-            onPressed: state.isNameValid ? _saveSession : null,
-            child: Text(s.save),
-          ),
+        ElevatedButton(
+          onPressed: _isValid ? _saveSession : null,
+          child: Text(s.save),
         ),
       ],
     );
@@ -97,8 +94,18 @@ class _BodyState extends State<_Body> {
     if (_currentValue == _textEditingController.text) {
       return;
     }
-    _currentValue = _textEditingController.text;
-    context.read<CalculatorAscMaterialsSessionFormBloc>().add(CalculatorAscMaterialsSessionFormEvent.nameChanged(name: _currentValue!));
+
+    final actualValue = _currentValue;
+    final newValue = _textEditingController.text;
+
+    final isValid = newValue.isNotNullEmptyOrWhitespace && newValue.length <= _nameMaxLength;
+    final isDirty = newValue != actualValue;
+
+    setState(() {
+      _currentValue = newValue;
+      _isValid = isValid;
+      _isDirty = isDirty;
+    });
   }
 
   void _saveSession() {
