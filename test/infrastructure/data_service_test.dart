@@ -53,7 +53,8 @@ void main() {
       expect(existingSessions.length, equals(0));
 
       const sessionName = 'Keqing session';
-      final sessionKey = await dataService.calculator.createSession(sessionName, 0);
+      final createdSession = await dataService.calculator.createSession(sessionName, 0);
+      final sessionKey = createdSession.key;
       final char = genshinService.characters.getCharacter('keqing');
       const currentAscensionLevel = 1;
       const desiredAscensionLevel = 5;
