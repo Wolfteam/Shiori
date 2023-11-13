@@ -875,7 +875,7 @@ void main() {
         CalculatorAscMaterialsState.initial(sessionKey: sessionKey, items: [], summary: []),
       ],
       verify: (_) {
-        verify(calcMock.reorderItems(sessionKey, currentItems, updatedItems));
+        verify(calcMock.reorderItems(sessionKey, updatedItems));
       },
     );
   });
