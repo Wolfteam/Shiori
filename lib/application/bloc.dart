@@ -7,7 +7,6 @@ export 'banner_version_history/banner_version_history_bloc.dart';
 export 'calculator_asc_materials/material_item/calculator_asc_materials_item_bloc.dart';
 export 'calculator_asc_materials/material_item_quantity/calculator_asc_materials_item_update_quantity_bloc.dart';
 export 'calculator_asc_materials/materials/calculator_asc_materials_bloc.dart';
-export 'calculator_asc_materials/session_form/calculator_asc_materials_session_form_bloc.dart';
 export 'calculator_asc_materials/sessions/calculator_asc_materials_sessions_bloc.dart';
 export 'changelog/changelog_bloc.dart';
 export 'character/character_bloc.dart';

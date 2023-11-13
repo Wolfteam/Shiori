@@ -20,10 +20,6 @@ import 'package:shiori/infrastructure/infrastructure.dart';
 final GetIt getIt = GetIt.instance;
 
 class Injection {
-  static CalculatorAscMaterialsSessionFormBloc get calculatorAscMaterialsSessionFormBloc {
-    return CalculatorAscMaterialsSessionFormBloc();
-  }
-
   static ChangelogBloc get changelogBloc {
     final changelogProvider = getIt<ChangelogProvider>();
     return ChangelogBloc(changelogProvider);
