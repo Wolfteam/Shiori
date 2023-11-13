@@ -230,7 +230,7 @@ class CalculatorAscMaterialsBloc extends Bloc<CalculatorAscMaterialsEvent, Calcu
       throw Exception('The updated reordered items are empty');
     }
 
-    await _dataService.calculator.reorderItems(currentState.sessionKey, currentState.items, updated);
+    await _dataService.calculator.reorderItems(currentState.sessionKey, updated);
     return _init(currentState.sessionKey);
   }
 

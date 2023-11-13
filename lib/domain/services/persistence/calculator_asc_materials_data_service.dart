@@ -12,9 +12,9 @@ abstract class CalculatorAscMaterialsDataService implements BaseDataService {
 
   CalculatorSessionModel getSession(int sessionKey);
 
-  Future<int> createSession(String name, int position);
+  Future<CalculatorSessionModel> createSession(String name, int position);
 
-  Future<void> updateSession(int sessionKey, String name, int position, {bool redistributeMaterials = false});
+  Future<CalculatorSessionModel> updateSession(int sessionKey, String name, int position, {bool redistributeMaterials = false});
 
   Future<void> deleteSession(int sessionKey);
 
@@ -78,5 +78,7 @@ abstract class CalculatorAscMaterialsDataService implements BaseDataService {
 
   Future<void> restoreFromBackup(List<BackupCalculatorAscMaterialsSessionModel> data);
 
-  Future<void> reorderItems(int sessionKey, List<ItemAscensionMaterials> currentItems, List<ItemAscensionMaterials> updatedItems);
+  Future<void> reorderSessions(List<CalculatorSessionModel> updated);
+
+  Future<void> reorderItems(int sessionKey, List<ItemAscensionMaterials> updatedItems);
 }
