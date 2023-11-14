@@ -69,11 +69,7 @@ class DataServiceImpl implements DataService {
     _calculator = CalculatorAscMaterialsDataServiceImpl(genshinService, calculatorService, _inventory, resourceService);
   }
 
-  Future<void> _init() async {
-    if (_initialized) {
-      return;
-    }
-    _registerAdapters();
+  Future<void> _initServices() async {
     await _calculator.init();
     await _inventory.init();
     await _builds.init();
@@ -81,6 +77,14 @@ class DataServiceImpl implements DataService {
     await _gameCodes.init();
     await _tierList.init();
     await _wishSimulator.init();
+  }
+
+  Future<void> _init() async {
+    if (_initialized) {
+      return;
+    }
+    registerAdapters();
+    _initServices();
     _initialized = true;
   }
 
@@ -94,10 +98,14 @@ class DataServiceImpl implements DataService {
 
   @visibleForTesting
   @override
-  Future<void> initForTests(String path) async {
+  Future<void> initForTests(String path, {bool registerAdapters = true}) async {
     await _initLock.synchronized(() async {
       Hive.init(path);
-      await _init();
+      if (registerAdapters) {
+        this.registerAdapters();
+      }
+      await _initServices();
+      _initialized = true;
     });
   }
 
@@ -115,6 +123,7 @@ class DataServiceImpl implements DataService {
   }
 
   @override
+  @visibleForTesting
   Future<void> closeThemAll() async {
     await _deleteAllLock.synchronized(() async {
       await Hive.close();
@@ -124,18 +133,26 @@ class DataServiceImpl implements DataService {
       _inventory.itemAddedToInventory.close(),
       _inventory.itemUpdatedInInventory.close(),
       _inventory.itemDeletedFromInventory.close(),
+      _calculator.itemAdded.close(),
+      _calculator.itemDeleted.close(),
     ]);
   }
 
-  void _registerAdapters() {
+  @override
+  void registerAdapters() {
+    //Calculator Asc. Mat.
     Hive.registerAdapter(CalculatorCharacterSkillAdapter());
     Hive.registerAdapter(CalculatorItemAdapter());
     Hive.registerAdapter(CalculatorSessionAdapter());
+    //Inventory
     Hive.registerAdapter(InventoryItemAdapter());
     Hive.registerAdapter(InventoryUsedItemAdapter());
+    //Game Codes
     Hive.registerAdapter(GameCodeAdapter());
     Hive.registerAdapter(GameCodeRewardAdapter());
+    //Tier List
     Hive.registerAdapter(TierListItemAdapter());
+    //Notifications
     Hive.registerAdapter(NotificationCustomAdapter());
     Hive.registerAdapter(NotificationExpeditionAdapter());
     Hive.registerAdapter(NotificationFarmingArtifactAdapter());
@@ -145,7 +162,14 @@ class DataServiceImpl implements DataService {
     Hive.registerAdapter(NotificationRealmCurrencyAdapter());
     Hive.registerAdapter(NotificationResinAdapter());
     Hive.registerAdapter(NotificationWeeklyBossAdapter());
+    //Wish simulator
     Hive.registerAdapter(WishSimulatorBannerPullHistoryAdapter());
     Hive.registerAdapter(WishSimulatorBannerItemPullHistoryAdapter());
+    //Custom builds
+    Hive.registerAdapter(CustomBuildAdapter());
+    Hive.registerAdapter(CustomBuildWeaponAdapter());
+    Hive.registerAdapter(CustomBuildArtifactAdapter());
+    Hive.registerAdapter(CustomBuildNoteAdapter());
+    Hive.registerAdapter(CustomBuildTeamCharacterAdapter());
   }
 }

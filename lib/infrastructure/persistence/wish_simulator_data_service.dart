@@ -7,8 +7,8 @@ import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/persistence/wish_simulator_data_service.dart';
 
 class WishSimulatorDataServiceImpl implements WishSimulatorDataService {
-  late final Box<WishSimulatorBannerPullHistory> _pullHistory;
-  late final Box<WishSimulatorBannerItemPullHistory> _itemPullHistory;
+  late Box<WishSimulatorBannerPullHistory> _pullHistory;
+  late Box<WishSimulatorBannerItemPullHistory> _itemPullHistory;
 
   WishSimulatorDataServiceImpl();
 

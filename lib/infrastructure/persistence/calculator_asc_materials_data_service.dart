@@ -1,8 +1,10 @@
 import 'dart:async';
 
 import 'package:collection/collection.dart' show IterableExtension;
+import 'package:flutter/foundation.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:shiori/domain/app_constants.dart';
+import 'package:shiori/domain/check.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/models/entities.dart';
 import 'package:shiori/domain/models/models.dart';
@@ -58,7 +60,13 @@ class CalculatorAscMaterialsDataServiceImpl implements CalculatorAscMaterialsDat
 
   @override
   CalculatorSessionModel getSession(int sessionKey) {
-    final session = _sessionBox.values.firstWhere((el) => el.key == sessionKey);
+    Check.greaterThanOrEqualTo(sessionKey, 'sessionKey');
+
+    final CalculatorSession? session = _sessionBox.values.firstWhereOrNull((el) => el.key == sessionKey);
+    if (session == null) {
+      throw Exception('Session with key = $sessionKey does not exist');
+    }
+
     final calcItems = _calcItemBox.values.where((el) => el.sessionKey == session.key).toList()..sort((x, y) => x.position.compareTo(y.position));
     int numberOfCharacters = 0;
     int numberOfWeapons = 0;
@@ -87,6 +95,9 @@ class CalculatorAscMaterialsDataServiceImpl implements CalculatorAscMaterialsDat
 
   @override
   Future<CalculatorSessionModel> createSession(String name, int position) async {
+    Check.notEmpty(name, 'name');
+    Check.greaterThanOrEqualTo(position, 'position');
+
     final session = CalculatorSession(name, position);
     final key = await _sessionBox.add(session);
     return CalculatorSessionModel(
@@ -99,28 +110,38 @@ class CalculatorAscMaterialsDataServiceImpl implements CalculatorAscMaterialsDat
   }
 
   @override
-  Future<CalculatorSessionModel> updateSession(int sessionKey, String name, int position, {bool redistributeMaterials = false}) async {
-    final session = _sessionBox.get(sessionKey)!;
-    session.name = name;
-    session.position = position;
-    await session.save();
+  Future<CalculatorSessionModel> updateSession(int sessionKey, String name) async {
+    Check.greaterThanOrEqualTo(sessionKey, 'sessionKey');
+    Check.notEmpty(name, 'name');
 
-    if (redistributeMaterials) {
-      await redistributeAllInventoryMaterials();
+    final CalculatorSession? session = _sessionBox.get(sessionKey);
+    if (session == null) {
+      throw Exception('Session with key = $sessionKey does not exist');
     }
+
+    session.name = name;
+    await session.save();
 
     return getSession(sessionKey);
   }
 
   @override
   Future<void> deleteSession(int sessionKey) async {
-    await _sessionBox.delete(sessionKey);
+    Check.greaterThanOrEqualTo(sessionKey, 'sessionKey');
+
+    final onlyMaterialKeys = <String>[];
     final calItems = _calcItemBox.values.where((el) => el.sessionKey == sessionKey).toList();
     for (int i = 0; i < calItems.length; i++) {
       final calcItem = calItems[i];
-      final redistribute = i + 1 == calItems.length;
-      await deleteSessionItem(sessionKey, calcItem.position, redistribute: redistribute);
+      final usedItemKeys = _inventory.getUsedInventoryItemKeysByCalcItemKeyAndItemType(calcItem.id, ItemType.material);
+      onlyMaterialKeys.addAll(usedItemKeys);
+      await deleteSessionItem(sessionKey, calcItem.position, redistribute: false);
     }
+
+    if (calItems.isNotEmpty) {
+      await redistributeAllInventoryMaterials(onlyMaterialKeys: onlyMaterialKeys);
+    }
+    await _sessionBox.delete(sessionKey);
   }
 
   @override
@@ -134,6 +155,8 @@ class CalculatorAscMaterialsDataServiceImpl implements CalculatorAscMaterialsDat
 
   @override
   List<ItemAscensionMaterials> getAllSessionItems(int sessionKey) {
+    Check.greaterThanOrEqualTo(sessionKey, 'sessionKey');
+
     final items = <ItemAscensionMaterials>[];
     final calcItems = _calcItemBox.values.where((el) => el.sessionKey == sessionKey).toList()..sort((x, y) => x.position.compareTo(y.position));
     for (final calItem in calcItems) {
@@ -155,6 +178,7 @@ class CalculatorAscMaterialsDataServiceImpl implements CalculatorAscMaterialsDat
 
   @override
   Future<void> addSessionItems(int sessionKey, List<ItemAscensionMaterials> items, {bool redistributeAtTheEnd = true}) async {
+    Check.greaterThanOrEqualTo(sessionKey, 'sessionKey');
     for (int i = 0; i < items.length; i++) {
       final item = items[i];
       final redistribute = i + 1 == items.length && redistributeAtTheEnd;
@@ -169,6 +193,9 @@ class CalculatorAscMaterialsDataServiceImpl implements CalculatorAscMaterialsDat
     List<String> allPossibleItemMaterialsKeys, {
     bool redistribute = true,
   }) async {
+    Check.greaterThanOrEqualTo(sessionKey, 'sessionKey');
+    _checkSessionKey(sessionKey);
+
     final mappedItem = _toCalculatorItem(sessionKey, item);
 
     final calculatorItemKey = await _calcItemBox.add(mappedItem);
@@ -178,7 +205,7 @@ class CalculatorAscMaterialsDataServiceImpl implements CalculatorAscMaterialsDat
     itemAdded.add(CalculatorAscMaterialSessionItemEvent.created(sessionKey, calculatorItemKey, item.isCharacter));
 
     //Here we created a used inventory item for each material
-    if (mappedItem.useMaterialsFromInventory) {
+    if (mappedItem.useMaterialsFromInventory && mappedItem.isActive) {
       for (final material in item.materials) {
         await _inventory.useItemFromInventory(calculatorItemKey, material.key, ItemType.material, material.requiredQuantity);
       }
@@ -206,6 +233,10 @@ class CalculatorAscMaterialsDataServiceImpl implements CalculatorAscMaterialsDat
     List<String> allPossibleItemMaterialsKeys, {
     bool redistribute = true,
   }) async {
+    Check.greaterThanOrEqualTo(sessionKey, 'sessionKey');
+    Check.greaterThanOrEqualTo(newItemPosition, 'newItemPosition');
+    _checkSessionKey(sessionKey);
+
     await deleteSessionItem(sessionKey, item.position, redistribute: false);
     return addSessionItem(
       sessionKey,
@@ -217,11 +248,14 @@ class CalculatorAscMaterialsDataServiceImpl implements CalculatorAscMaterialsDat
 
   @override
   Future<void> deleteSessionItem(int sessionKey, int position, {bool redistribute = true}) async {
+    Check.greaterThanOrEqualTo(sessionKey, 'sessionKey');
+    Check.greaterThanOrEqualTo(position, 'position');
+
     final calcItem = _calcItemBox.values.firstWhereOrNull((el) => el.sessionKey == sessionKey && el.position == position);
     if (calcItem == null) {
       return;
     }
-    final calcItemKey = calcItem.id;
+    final int calcItemKey = calcItem.id;
     final skillsKeys = _calcItemSkillBox.values.where((el) => el.calculatorItemKey == calcItemKey).map((e) => e.key).toList();
     await _calcItemSkillBox.deleteAll(skillsKeys);
 
@@ -240,6 +274,8 @@ class CalculatorAscMaterialsDataServiceImpl implements CalculatorAscMaterialsDat
 
   @override
   Future<void> deleteAllSessionItems(int sessionKey) async {
+    Check.greaterThanOrEqualTo(sessionKey, 'sessionKey');
+
     final calcItems = _calcItemBox.values.where((el) => el.sessionKey == sessionKey);
     if (calcItems.isEmpty) {
       return;
@@ -247,17 +283,18 @@ class CalculatorAscMaterialsDataServiceImpl implements CalculatorAscMaterialsDat
 
     final onlyMaterialKeys = <String>[];
     for (final calcItem in calcItems) {
-      final skillsKeys = _calcItemSkillBox.values.where((el) => el.calculatorItemKey == calcItem.id).map((e) => e.key).toList();
+      final int calcItemKey = calcItem.id;
+      final skillsKeys = _calcItemSkillBox.values.where((el) => el.calculatorItemKey == calcItemKey).map((e) => e.key).toList();
       await _calcItemSkillBox.deleteAll(skillsKeys);
 
       //Make sure we delete the item before redistributing
-      itemDeleted.add(CalculatorAscMaterialSessionItemEvent.deleted(sessionKey, calcItem.id, calcItem.isCharacter));
-      await _calcItemBox.delete(calcItem.id);
+      itemDeleted.add(CalculatorAscMaterialSessionItemEvent.deleted(sessionKey, calcItemKey, calcItem.isCharacter));
+      await _calcItemBox.delete(calcItemKey);
 
-      final usedItemKeys = _inventory.getUsedInventoryItemKeysByCalcItemKeyAndItemType(calcItem.id, ItemType.material);
+      final usedItemKeys = _inventory.getUsedInventoryItemKeysByCalcItemKeyAndItemType(calcItemKey, ItemType.material);
       onlyMaterialKeys.addAll(usedItemKeys);
 
-      await _inventory.clearUsedInventoryItems(calcItem.id);
+      await _inventory.clearUsedInventoryItems(calcItemKey);
     }
 
     //Only redistribute at the end of the process
@@ -283,6 +320,9 @@ class CalculatorAscMaterialsDataServiceImpl implements CalculatorAscMaterialsDat
 
   @override
   Future<void> redistributeInventoryMaterial(String itemKey, int newQuantity) async {
+    Check.notEmpty(itemKey, 'itemKey');
+    Check.greaterThanOrEqualTo(newQuantity, 'newQuantity');
+
     final checkedItems = <_RedistributeCheckedItem>[];
     int currentQuantity = newQuantity;
     final sessions = _sessionBox.values.toList()..sort((x, y) => x.position.compareTo(y.position));
@@ -296,6 +336,9 @@ class CalculatorAscMaterialsDataServiceImpl implements CalculatorAscMaterialsDat
     int sessionKey, {
     List<String> onlyMaterialKeys = const <String>[],
   }) async {
+    Check.greaterThanOrEqualTo(sessionKey, 'sessionKey');
+    _checkSessionKey(sessionKey);
+
     final checkedItems = <_RedistributeCheckedItem>[];
     final materialsInInventory = _inventory.getItemsForRedistribution(ItemType.material);
     final fromSession = _sessionBox.values.firstWhere((s) => s.key == sessionKey);
@@ -450,33 +493,54 @@ class CalculatorAscMaterialsDataServiceImpl implements CalculatorAscMaterialsDat
 
   @override
   Future<void> reorderSessions(List<CalculatorSessionModel> updated) async {
-    final sessions = _sessionBox.values.toList()..sort((x, y) => x.position.compareTo(y.position));
-    assert(sessions.length == updated.length);
+    Check.notEmpty(updated, 'updated');
 
+    final sessions = _sessionBox.values.toList()..sort((x, y) => x.position.compareTo(y.position));
+    final existingKeys = sessions.map((e) => e.id).toSet().toList()..sort((x, y) => x.compareTo(y));
+    final gotKeys = updated.map((e) => e.key).toSet().toList()..sort((x, y) => x.compareTo(y));
+
+    if (!listEquals(existingKeys, gotKeys)) {
+      throw ArgumentError.value(updated, 'updated', 'There are keys in the updated array not present in the other one');
+    }
+
+    bool somethingChanged = false;
     for (int i = 0; i < updated.length; i++) {
-      final CalculatorSession currentSession = sessions[i];
       final CalculatorSessionModel updatedSession = updated[i];
-      final noPositionChange = currentSession.key == updatedSession.key && currentSession.position == updatedSession.position;
+      final CalculatorSession currentSession = sessions.firstWhere((el) => el.id == updatedSession.key);
+      final noPositionChange = currentSession.key == sessions[i].id && currentSession.position == sessions[i].position;
       if (noPositionChange) {
         continue;
       }
 
       currentSession.position = i;
       await currentSession.save();
+      somethingChanged = true;
     }
 
-    await redistributeAllInventoryMaterials();
+    if (somethingChanged) {
+      await redistributeAllInventoryMaterials();
+    }
   }
 
   @override
   Future<void> reorderItems(int sessionKey, List<ItemAscensionMaterials> updatedItems) async {
+    Check.greaterThanOrEqualTo(sessionKey, 'sessionKey');
+    _checkSessionKey(sessionKey);
+    Check.notEmpty(updatedItems, 'updatedItems');
+
     final allPossibleMaterialItemKeys = <String>[];
     final allCalcItems = _calcItemBox.values.where((el) => el.sessionKey == sessionKey).toList()..sort((x, y) => x.position.compareTo(y.position));
-    assert(allCalcItems.length == updatedItems.length);
+
+    final existingKeys = allCalcItems.map((e) => e.itemKey).toSet().toList()..sort((x, y) => x.compareTo(y));
+    final gotKeys = updatedItems.map((e) => e.key).toSet().toList()..sort((x, y) => x.compareTo(y));
+
+    if (!listEquals(existingKeys, gotKeys)) {
+      throw ArgumentError.value(updatedItems, 'updatedItems', 'There are keys in the updated items array not present in the other one');
+    }
 
     for (int i = 0; i < updatedItems.length; i++) {
-      final CalculatorItem currentItem = allCalcItems[i];
       final ItemAscensionMaterials updatedItem = updatedItems[i];
+      final CalculatorItem currentItem = allCalcItems.firstWhere((el) => el.itemKey == updatedItem.key);
       if (currentItem.key != updatedItem.key) {
         allPossibleMaterialItemKeys.addAll(_calculatorService.getAllPossibleMaterialKeysToUse(updatedItem.key, updatedItem.isCharacter));
       }
@@ -484,6 +548,7 @@ class CalculatorAscMaterialsDataServiceImpl implements CalculatorAscMaterialsDat
       if (noPositionChange) {
         continue;
       }
+
       currentItem.position = i;
       await currentItem.save();
     }
@@ -681,6 +746,12 @@ class CalculatorAscMaterialsDataServiceImpl implements CalculatorAscMaterialsDat
       }
 
       await _redistributeInventoryMaterial(material.key, material.quantity, sessionKey, checkedItems);
+    }
+  }
+
+  void _checkSessionKey(int sessionKey) {
+    if (!_sessionBox.containsKey(sessionKey)) {
+      throw ArgumentError.value(sessionKey, 'sessionKey', 'Session does not exist');
     }
   }
 }

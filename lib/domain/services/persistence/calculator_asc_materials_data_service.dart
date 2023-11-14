@@ -14,7 +14,7 @@ abstract class CalculatorAscMaterialsDataService implements BaseDataService {
 
   Future<CalculatorSessionModel> createSession(String name, int position);
 
-  Future<CalculatorSessionModel> updateSession(int sessionKey, String name, int position, {bool redistributeMaterials = false});
+  Future<CalculatorSessionModel> updateSession(int sessionKey, String name);
 
   Future<void> deleteSession(int sessionKey);
 

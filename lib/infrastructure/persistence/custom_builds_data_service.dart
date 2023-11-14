@@ -20,20 +20,11 @@ class CustomBuildsDataServiceImpl implements CustomBuildsDataService {
 
   @override
   Future<void> init() async {
-    _registerAdapters();
     _buildsBox = await Hive.openBox<CustomBuild>('customBuilds');
     _weaponsBox = await Hive.openBox<CustomBuildWeapon>('customBuildWeapons');
     _artifactsBox = await Hive.openBox<CustomBuildArtifact>('customBuildArtifacts');
     _notesBox = await Hive.openBox<CustomBuildNote>('customBuildNotes');
     _teamCharactersBox = await Hive.openBox<CustomBuildTeamCharacter>('customBuildTeamCharacters');
-  }
-
-  void _registerAdapters() {
-    Hive.registerAdapter(CustomBuildAdapter());
-    Hive.registerAdapter(CustomBuildWeaponAdapter());
-    Hive.registerAdapter(CustomBuildArtifactAdapter());
-    Hive.registerAdapter(CustomBuildNoteAdapter());
-    Hive.registerAdapter(CustomBuildTeamCharacterAdapter());
   }
 
   @override

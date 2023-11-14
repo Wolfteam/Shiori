@@ -27,9 +27,13 @@ abstract class DataService {
   Future<void> init({String dir = 'shiori_data'});
 
   @visibleForTesting
-  Future<void> initForTests(String path);
+  Future<void> initForTests(String path, {bool registerAdapters = true});
 
   Future<void> deleteThemAll();
 
+  @visibleForTesting
   Future<void> closeThemAll();
+
+  @visibleForTesting
+  void registerAdapters();
 }
