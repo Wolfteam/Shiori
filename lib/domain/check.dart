@@ -35,6 +35,14 @@ class Check {
     }
   }
 
+  static void inRangeNumber(num? val, int min, int max, String parameterName) {
+    notNull(val, parameterName);
+    final bool valid = val! >= min && val <= max;
+    if (!valid) {
+      throw ArgumentError.value(val, parameterName, '$val must be greater than or equal to $min and less than or equal to $max');
+    }
+  }
+
   static void notEmpty(dynamic val, String parameterName) {
     if (val is String) {
       notEmptyString(val, parameterName);
@@ -42,6 +50,16 @@ class Check {
       notEmptyNumber(val, parameterName);
     } else if (val is List) {
       notEmptyList(val, parameterName);
+    }
+  }
+
+  static void inRangeListLength(List? val, int min, int max, String parameterName) {
+    notEmptyList(val, parameterName);
+    final length = val!.length;
+    try {
+      inRangeNumber(length, min, max, parameterName);
+    } catch (_) {
+      throw ArgumentError.value(val, parameterName, 'List length must be greater than or equal to $min and less than or equal to $max');
     }
   }
 }

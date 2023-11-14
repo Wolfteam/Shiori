@@ -1,9 +1,10 @@
 import 'package:hive/hive.dart';
+import 'package:shiori/domain/models/entities/base_entity.dart';
 
 part 'custom_build_weapon.g.dart';
 
 @HiveType(typeId: 22)
-class CustomBuildWeapon extends HiveObject {
+class CustomBuildWeapon extends BaseEntity {
   @HiveField(0)
   final int buildItemKey;
 
