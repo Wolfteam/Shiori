@@ -89,7 +89,7 @@ class CalculatorAscMaterialsSessionsBloc extends Bloc<CalculatorAscMaterialsSess
       throw Exception('SessionKey = $key does not exist');
     }
     await _telemetryService.trackCalculatorAscMaterialsSessionsUpdated();
-    final updatedSession = await _dataService.calculator.updateSession(key, name.trim(), current.position);
+    final updatedSession = await _dataService.calculator.updateSession(key, name.trim());
     final index = currentState.sessions.indexOf(current);
     final sessions = [...currentState.sessions];
     sessions.removeAt(index);

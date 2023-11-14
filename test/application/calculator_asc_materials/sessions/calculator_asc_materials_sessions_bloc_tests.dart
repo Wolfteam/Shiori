@@ -154,7 +154,7 @@ void main() {
     final calcMock = nice_mocks.MockCalculatorAscMaterialsDataService();
     when(calcMock.itemAdded).thenReturn(itemAddedOrDeleted);
     when(calcMock.itemDeleted).thenReturn(itemAddedOrDeleted);
-    when(calcMock.updateSession(updatedSession.key, updatedSession.name, updatedSession.position)).thenAnswer((_) => Future.value(updatedSession));
+    when(calcMock.updateSession(updatedSession.key, updatedSession.name)).thenAnswer((_) => Future.value(updatedSession));
     when(dataServiceMock.calculator).thenReturn(calcMock);
     blocTest<CalculatorAscMaterialsSessionsBloc, CalculatorAscMaterialsSessionsState>(
       'valid call',
@@ -166,7 +166,7 @@ void main() {
         loaded: (state) {
           expect(state.sessions.length, sessions.length);
           expect(state.sessions.firstWhere((el) => el.key == updatedSession.key), updatedSession);
-          verify(calcMock.updateSession(updatedSession.key, updatedSession.name, updatedSession.position)).called(1);
+          verify(calcMock.updateSession(updatedSession.key, updatedSession.name)).called(1);
         },
       ),
     );
