@@ -1,6 +1,8 @@
 import 'package:collection/collection.dart' show IterableExtension;
 import 'package:hive_flutter/hive_flutter.dart';
+import 'package:shiori/domain/check.dart';
 import 'package:shiori/domain/enums/enums.dart';
+import 'package:shiori/domain/errors.dart';
 import 'package:shiori/domain/models/entities.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/genshin_service.dart';
@@ -52,8 +54,11 @@ class GameCodesDataServiceImpl implements GameCodesDataService {
 
   @override
   Future<void> saveGameCodes(List<GameCodeModel> itemsFromApi) async {
-    final itemsOnDb = _gameCodesBox.values.toList();
+    if (itemsFromApi.isEmpty) {
+      return;
+    }
 
+    final itemsOnDb = _gameCodesBox.values.toList();
     for (final item in itemsFromApi) {
       final gcOnDb = itemsOnDb.firstWhereOrNull((el) => el.code == item.code);
       if (gcOnDb != null) {
@@ -62,33 +67,25 @@ class GameCodesDataServiceImpl implements GameCodesDataService {
         gcOnDb.discoveredOn = item.discoveredOn;
         gcOnDb.region = item.region?.index;
         await gcOnDb.save();
-        await deleteAllGameCodeRewards(gcOnDb.key as int);
-        await saveGameCodeRewards(gcOnDb.key as int, item.rewards);
+        await _deleteAllGameCodeRewards(gcOnDb.id);
+        await _saveGameCodeRewards(gcOnDb.id, item.rewards);
       } else {
         final gc = GameCode(item.code, null, item.discoveredOn, item.expiredOn, item.isExpired, item.region?.index);
         await _gameCodesBox.add(gc);
         //This line shouldn't be necessary, though for testing purposes I'll leave it here
-        await deleteAllGameCodeRewards(gc.key as int);
-        await saveGameCodeRewards(gc.key as int, item.rewards);
+        await _deleteAllGameCodeRewards(gc.id);
+        await _saveGameCodeRewards(gc.id, item.rewards);
       }
     }
   }
 
   @override
-  Future<void> saveGameCodeRewards(int gameCodeKey, List<ItemAscensionMaterialModel> rewards) {
-    final rewardsToSave = rewards.map((e) => GameCodeReward(gameCodeKey, e.key, e.requiredQuantity)).toList();
-    return _gameCodeRewardsBox.addAll(rewardsToSave);
-  }
-
-  @override
-  Future<void> deleteAllGameCodeRewards(int gameCodeKey) {
-    final keys = _gameCodeRewardsBox.values.where((el) => el.gameCodeKey == gameCodeKey).map((e) => e.key).toList();
-    return _gameCodeRewardsBox.deleteAll(keys);
-  }
-
-  @override
   Future<void> markCodeAsUsed(String code, {bool wasUsed = true}) async {
-    final usedGameCode = _gameCodesBox.values.firstWhereOrNull((el) => el.code == code)!;
+    Check.notEmpty(code, 'code');
+    final GameCode? usedGameCode = _gameCodesBox.values.firstWhereOrNull((el) => el.code == code);
+    if (usedGameCode == null) {
+      throw NotFoundError(code, 'code', 'Game does not exist');
+    }
     usedGameCode.usedOn = wasUsed ? DateTime.now() : null;
     await usedGameCode.save();
   }
@@ -115,8 +112,18 @@ class GameCodesDataServiceImpl implements GameCodesDataService {
     for (final gameCode in data) {
       final gc = GameCode(gameCode.code, gameCode.usedOn, gameCode.discoveredOn, gameCode.expiredOn, gameCode.isExpired, gameCode.region);
       await _gameCodesBox.add(gc);
-      final rewards = gameCode.rewards.map((e) => GameCodeReward(gc.key as int, e.itemKey, e.quantity)).toList();
+      final rewards = gameCode.rewards.map((e) => GameCodeReward(gc.id, e.itemKey, e.quantity)).toList();
       await _gameCodeRewardsBox.addAll(rewards);
     }
+  }
+
+  Future<void> _saveGameCodeRewards(int gameCodeKey, List<ItemAscensionMaterialModel> rewards) {
+    final rewardsToSave = rewards.map((e) => GameCodeReward(gameCodeKey, e.key, e.requiredQuantity)).toList();
+    return _gameCodeRewardsBox.addAll(rewardsToSave);
+  }
+
+  Future<void> _deleteAllGameCodeRewards(int gameCodeKey) {
+    final keys = _gameCodeRewardsBox.values.where((el) => el.gameCodeKey == gameCodeKey).map((e) => e.key).toList();
+    return _gameCodeRewardsBox.deleteAll(keys);
   }
 }

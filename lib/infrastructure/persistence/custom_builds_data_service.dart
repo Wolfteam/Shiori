@@ -1,6 +1,7 @@
 import 'package:hive/hive.dart';
 import 'package:shiori/domain/check.dart';
 import 'package:shiori/domain/enums/enums.dart';
+import 'package:shiori/domain/errors.dart';
 import 'package:shiori/domain/models/entities.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/genshin_service.dart';
@@ -424,7 +425,7 @@ class CustomBuildsDataServiceImpl implements CustomBuildsDataService {
 
   void _checkBuild(int key) {
     if (!_buildsBox.containsKey(key)) {
-      throw ArgumentError.value(key, 'key', 'Custom build with key = $key does not exist');
+      throw NotFoundError(key, 'key', 'Custom build does not exist');
     }
   }
 }

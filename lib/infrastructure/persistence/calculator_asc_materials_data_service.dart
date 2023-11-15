@@ -6,6 +6,7 @@ import 'package:hive_flutter/hive_flutter.dart';
 import 'package:shiori/domain/app_constants.dart';
 import 'package:shiori/domain/check.dart';
 import 'package:shiori/domain/enums/enums.dart';
+import 'package:shiori/domain/errors.dart';
 import 'package:shiori/domain/models/entities.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/calculator_asc_materials_service.dart';
@@ -64,7 +65,7 @@ class CalculatorAscMaterialsDataServiceImpl implements CalculatorAscMaterialsDat
 
     final CalculatorSession? session = _sessionBox.values.firstWhereOrNull((el) => el.key == sessionKey);
     if (session == null) {
-      throw Exception('Session with key = $sessionKey does not exist');
+      throw NotFoundError(sessionKey, 'sessionKey', 'Session does not exist');
     }
 
     final calcItems = _calcItemBox.values.where((el) => el.sessionKey == session.key).toList()..sort((x, y) => x.position.compareTo(y.position));
@@ -116,7 +117,7 @@ class CalculatorAscMaterialsDataServiceImpl implements CalculatorAscMaterialsDat
 
     final CalculatorSession? session = _sessionBox.get(sessionKey);
     if (session == null) {
-      throw Exception('Session with key = $sessionKey does not exist');
+      throw NotFoundError(sessionKey, 'sessionKey', 'Session does not exist');
     }
 
     session.name = name;
@@ -751,7 +752,7 @@ class CalculatorAscMaterialsDataServiceImpl implements CalculatorAscMaterialsDat
 
   void _checkSessionKey(int sessionKey) {
     if (!_sessionBox.containsKey(sessionKey)) {
-      throw ArgumentError.value(sessionKey, 'sessionKey', 'Session does not exist');
+      throw NotFoundError(sessionKey, 'sessionKey', 'Session does not exist');
     }
   }
 }
