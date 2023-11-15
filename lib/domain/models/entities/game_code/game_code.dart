@@ -1,9 +1,10 @@
 import 'package:hive/hive.dart';
+import 'package:shiori/domain/models/entities/base_entity.dart';
 
 part 'game_code.g.dart';
 
 @HiveType(typeId: 6)
-class GameCode extends HiveObject {
+class GameCode extends BaseEntity {
   @HiveField(0)
   final String code;
 

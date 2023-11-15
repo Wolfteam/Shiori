@@ -3,11 +3,12 @@ import 'dart:math';
 import 'package:darq/darq.dart';
 import 'package:hive/hive.dart';
 import 'package:shiori/domain/enums/enums.dart';
+import 'package:shiori/domain/models/entities/base_entity.dart';
 
 part 'wish_simulator_banner_pull_history.g.dart';
 
 @HiveType(typeId: 23)
-class WishSimulatorBannerPullHistory extends HiveObject {
+class WishSimulatorBannerPullHistory extends BaseEntity {
   @HiveField(0)
   final int type;
 

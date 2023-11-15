@@ -1,10 +1,11 @@
 import 'package:hive/hive.dart';
 import 'package:shiori/domain/enums/enums.dart';
+import 'package:shiori/domain/models/entities/base_entity.dart';
 
 part 'wish_simulator_banner_item_pull_history.g.dart';
 
 @HiveType(typeId: 24)
-class WishSimulatorBannerItemPullHistory extends HiveObject {
+class WishSimulatorBannerItemPullHistory extends BaseEntity {
   @HiveField(0)
   final int bannerType;
 
