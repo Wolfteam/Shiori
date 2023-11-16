@@ -1,7 +1,7 @@
 import 'package:darq/darq.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+import 'package:shiori/domain/check.dart';
 import 'package:shiori/domain/enums/enums.dart';
-import 'package:shiori/domain/extensions/string_extensions.dart';
 import 'package:shiori/domain/models/entities.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/persistence/wish_simulator_data_service.dart';
@@ -38,20 +38,15 @@ class WishSimulatorDataServiceImpl implements WishSimulatorDataService {
 
   @override
   Future<void> saveBannerItemPullHistory(BannerItemType bannerType, String itemKey, ItemType itemType) async {
-    if (itemKey.isNullEmptyOrWhitespace) {
-      throw Exception('Invalid itemKey');
-    }
-
-    if (itemType != ItemType.character && itemType != ItemType.weapon) {
-      throw Exception('The provided itemT1ype = $itemType is not valid');
-    }
+    Check.notEmpty(itemKey, 'itemKey');
+    Check.inList(itemType, [ItemType.character, ItemType.weapon], 'itemType');
 
     final value = itemType == ItemType.character
         ? WishSimulatorBannerItemPullHistory.character(bannerType, itemKey)
         : WishSimulatorBannerItemPullHistory.weapon(bannerType, itemKey);
     await _itemPullHistory.add(value);
 
-    const maxCount = 5000;
+    const int maxCount = 5000;
     if (_itemPullHistory.values.length > maxCount) {
       await _itemPullHistory.deleteAt(maxCount - 1);
     }

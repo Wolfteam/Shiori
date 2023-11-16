@@ -26,7 +26,7 @@ class WishSimulatorBannerPullHistory extends BaseEntity {
 
   WishSimulatorBannerPullHistory.newOne(BannerItemType type, Map<int, int>? defaultXStarCount)
       : type = type.index,
-        currentXStarCount = defaultXStarCount ?? {},
+        currentXStarCount = defaultXStarCount != null ? Map.of(defaultXStarCount) : {},
         fiftyFiftyXStarGuaranteed = defaultXStarCount?.keys.toMap((rarity) => MapEntry(rarity, false), modifiable: true) ?? {};
 
   void initXStarCountIfNeeded(int rarity) {
