@@ -465,7 +465,7 @@ void main() {
 
       expect(requiredMaterials.isNotEmpty, isTrue);
       for (final kvp in requiredMaterials) {
-        await dataService.inventory.addItemToInventory(kvp.key, ItemType.material, kvp.value);
+        await dataService.inventory.addMaterialToInventory(kvp.key, kvp.value);
       }
 
       final session = await dataService.calculator.createSession('Chars&WeaponsFromInv', 1);
@@ -480,7 +480,7 @@ void main() {
         final int quantity = dataService.inventory.getItemQuantityFromInventory(kvp.key, ItemType.material);
         expect(kvp.value, quantity);
 
-        final int used = dataService.inventory.getNumberOfItemsUsed(kvp.key, ItemType.material);
+        final int used = dataService.inventory.getUsedMaterialQuantity(kvp.key);
         expect(kvp.value, used);
       }
     });
@@ -599,7 +599,7 @@ void main() {
 
       expect(requiredMaterials.isNotEmpty, isTrue);
       for (final kvp in requiredMaterials) {
-        await dataService.inventory.addItemToInventory(kvp.key, ItemType.material, kvp.value);
+        await dataService.inventory.addMaterialToInventory(kvp.key, kvp.value);
       }
 
       await dataService.calculator.addSessionItem(session.key, item, []);
@@ -609,7 +609,7 @@ void main() {
         final int quantity = dataService.inventory.getItemQuantityFromInventory(kvp.key, ItemType.material);
         expect(kvp.value, quantity);
 
-        final int used = dataService.inventory.getNumberOfItemsUsed(kvp.key, ItemType.material);
+        final int used = dataService.inventory.getUsedMaterialQuantity(kvp.key);
         expect(kvp.value, used);
       }
 
@@ -620,7 +620,7 @@ void main() {
         final int quantity = dataService.inventory.getItemQuantityFromInventory(kvp.key, ItemType.material);
         expect(kvp.value, quantity);
 
-        final int used = dataService.inventory.getNumberOfItemsUsed(kvp.key, ItemType.material);
+        final int used = dataService.inventory.getUsedMaterialQuantity(kvp.key);
         expect(used, 0);
       }
     });
@@ -680,7 +680,7 @@ void main() {
 
       expect(requiredMaterials.isNotEmpty, isTrue);
       for (final kvp in requiredMaterials) {
-        await dataService.inventory.addItemToInventory(kvp.key, ItemType.material, kvp.value);
+        await dataService.inventory.addMaterialToInventory(kvp.key, kvp.value);
       }
 
       final session = await dataService.calculator.createSession('Delete all items', 0);
@@ -691,7 +691,7 @@ void main() {
         final int quantity = dataService.inventory.getItemQuantityFromInventory(kvp.key, ItemType.material);
         expect(kvp.value, quantity);
 
-        final int used = dataService.inventory.getNumberOfItemsUsed(kvp.key, ItemType.material);
+        final int used = dataService.inventory.getUsedMaterialQuantity(kvp.key);
         expect(kvp.value, used);
       }
 
@@ -702,7 +702,7 @@ void main() {
         final int quantity = dataService.inventory.getItemQuantityFromInventory(kvp.key, ItemType.material);
         expect(kvp.value, quantity);
 
-        final int used = dataService.inventory.getNumberOfItemsUsed(kvp.key, ItemType.material);
+        final int used = dataService.inventory.getUsedMaterialQuantity(kvp.key);
         expect(used, 0);
       }
     });
@@ -744,7 +744,7 @@ void main() {
 
       expect(requiredMaterials.isNotEmpty, isTrue);
       for (final kvp in requiredMaterials) {
-        await dataService.inventory.addItemToInventory(kvp.key, ItemType.material, kvp.value);
+        await dataService.inventory.addMaterialToInventory(kvp.key, kvp.value);
       }
 
       await dataService.calculator.addSessionItems(sessionA.key, items);
@@ -760,7 +760,7 @@ void main() {
         final int quantity = dataService.inventory.getItemQuantityFromInventory(kvp.key, ItemType.material);
         expect(kvp.value, quantity);
 
-        final int used = dataService.inventory.getNumberOfItemsUsed(kvp.key, ItemType.material);
+        final int used = dataService.inventory.getUsedMaterialQuantity(kvp.key);
         expect(used, kvp.value);
       }
     }
@@ -776,7 +776,7 @@ void main() {
         weapon.materials.where((g) => g.key == moraKey).first.requiredQuantity,
       );
 
-      await dataService.inventory.addItemToInventory(moraKey, ItemType.material, availableMora);
+      await dataService.inventory.addMaterialToInventory(moraKey, availableMora);
       await dataService.calculator.addSessionItems(session.key, items);
       await dataService.calculator.deleteSessionItem(session.key, char.position, redistribute: redistributeOnDelete);
 
@@ -787,7 +787,7 @@ void main() {
       final int quantity = dataService.inventory.getItemQuantityFromInventory(moraKey, ItemType.material);
       expect(availableMora, quantity);
 
-      final int used = dataService.inventory.getNumberOfItemsUsed(moraKey, ItemType.material);
+      final int used = dataService.inventory.getUsedMaterialQuantity(moraKey);
       expect(used, weapon.materials.firstWhere((el) => el.key == moraKey).requiredQuantity);
     }
 
@@ -803,7 +803,7 @@ void main() {
       );
       availableMora ~/= 2;
 
-      await dataService.inventory.addItemToInventory(moraKey, ItemType.material, availableMora);
+      await dataService.inventory.addMaterialToInventory(moraKey, availableMora);
       await dataService.calculator.addSessionItems(session.key, items);
 
       var expectedQuantityMap = <int, int>{
@@ -812,7 +812,7 @@ void main() {
       };
 
       for (final kvp in expectedQuantityMap.entries) {
-        final int usedMora = dataService.inventory.getNumberOfItemsUsedByCalcKeyItemKeyAndType(kvp.key, moraKey, ItemType.material);
+        final int usedMora = dataService.inventory.getUsedMaterialQuantityByCalcKeyAndItemKey(kvp.key, moraKey);
         expect(usedMora, kvp.value);
       }
 
@@ -825,7 +825,7 @@ void main() {
 
       final int quantity = dataService.inventory.getItemQuantityFromInventory(moraKey, ItemType.material);
       expect(availableMora, quantity);
-      final int used = dataService.inventory.getNumberOfItemsUsed(moraKey, ItemType.material);
+      final int used = dataService.inventory.getUsedMaterialQuantity(moraKey);
       expect(used, availableMora);
 
       expectedQuantityMap = <int, int>{
@@ -833,7 +833,7 @@ void main() {
         1: availableMora,
       };
       for (final kvp in expectedQuantityMap.entries) {
-        final int usedMora = dataService.inventory.getNumberOfItemsUsedByCalcKeyItemKeyAndType(kvp.key, moraKey, ItemType.material);
+        final int usedMora = dataService.inventory.getUsedMaterialQuantityByCalcKeyAndItemKey(kvp.key, moraKey);
         expect(usedMora, kvp.value);
       }
     }
@@ -858,14 +858,14 @@ void main() {
         weapon.materials.where((g) => g.key == moraKey).first.requiredQuantity,
       );
       availableMora ~/= 2;
-      await dataService.inventory.addItemToInventory(moraKey, ItemType.material, availableMora);
+      await dataService.inventory.addMaterialToInventory(moraKey, availableMora);
 
       await dataService.calculator.addSessionItems(sessionA.key, items);
       await dataService.calculator.addSessionItems(sessionB.key, items);
 
       final int quantity = dataService.inventory.getItemQuantityFromInventory(moraKey, ItemType.material);
       expect(availableMora, quantity);
-      final int used = dataService.inventory.getNumberOfItemsUsed(moraKey, ItemType.material);
+      final int used = dataService.inventory.getUsedMaterialQuantity(moraKey);
       expect(used, availableMora);
 
       var expectedQuantityMap = <int, int>{
@@ -875,7 +875,7 @@ void main() {
         3: 0,
       };
       for (final kvp in expectedQuantityMap.entries) {
-        final int usedMora = dataService.inventory.getNumberOfItemsUsedByCalcKeyItemKeyAndType(kvp.key, moraKey, ItemType.material);
+        final int usedMora = dataService.inventory.getUsedMaterialQuantityByCalcKeyAndItemKey(kvp.key, moraKey);
         expect(usedMora, kvp.value);
       }
 
@@ -888,7 +888,7 @@ void main() {
         3: 0,
       };
       for (final kvp in expectedQuantityMap.entries) {
-        final int usedMora = dataService.inventory.getNumberOfItemsUsedByCalcKeyItemKeyAndType(kvp.key, moraKey, ItemType.material);
+        final int usedMora = dataService.inventory.getUsedMaterialQuantityByCalcKeyAndItemKey(kvp.key, moraKey);
         expect(usedMora, kvp.value);
       }
     });
@@ -909,7 +909,7 @@ void main() {
       );
       availableMora ~/= 2;
 
-      await dataService.inventory.addItemToInventory(moraKey, ItemType.material, availableMora);
+      await dataService.inventory.addMaterialToInventory(moraKey, availableMora);
       await dataService.calculator.addSessionItems(session.key, items);
 
       var expectedQuantityMap = <int, int>{
@@ -918,7 +918,7 @@ void main() {
       };
 
       for (final kvp in expectedQuantityMap.entries) {
-        final int usedMora = dataService.inventory.getNumberOfItemsUsedByCalcKeyItemKeyAndType(kvp.key, moraKey, ItemType.material);
+        final int usedMora = dataService.inventory.getUsedMaterialQuantityByCalcKeyAndItemKey(kvp.key, moraKey);
         expect(usedMora, kvp.value);
       }
 
@@ -926,7 +926,7 @@ void main() {
 
       final int quantity = dataService.inventory.getItemQuantityFromInventory(moraKey, ItemType.material);
       expect(availableMora, quantity);
-      final int used = dataService.inventory.getNumberOfItemsUsed(moraKey, ItemType.material);
+      final int used = dataService.inventory.getUsedMaterialQuantity(moraKey);
       expect(used, availableMora);
 
       expectedQuantityMap = <int, int>{
@@ -934,7 +934,7 @@ void main() {
         1: availableMora,
       };
       for (final kvp in expectedQuantityMap.entries) {
-        final int usedMora = dataService.inventory.getNumberOfItemsUsedByCalcKeyItemKeyAndType(kvp.key, moraKey, ItemType.material);
+        final int usedMora = dataService.inventory.getUsedMaterialQuantityByCalcKeyAndItemKey(kvp.key, moraKey);
         expect(usedMora, kvp.value);
       }
     });
@@ -948,7 +948,7 @@ void main() {
       final int weaponRequiredMora = weapon.materials.where((g) => g.key == moraKey).first.requiredQuantity;
       final int availableMora = 2 * max(charRequiredMora, weaponRequiredMora);
 
-      await dataService.inventory.addItemToInventory(moraKey, ItemType.material, availableMora);
+      await dataService.inventory.addMaterialToInventory(moraKey, availableMora);
       await dataService.calculator.addSessionItem(session.key, char, []);
 
       var expectedQuantityMap = <int, int>{
@@ -957,7 +957,7 @@ void main() {
       };
 
       for (final kvp in expectedQuantityMap.entries) {
-        final int usedMora = dataService.inventory.getNumberOfItemsUsedByCalcKeyItemKeyAndType(kvp.key, moraKey, ItemType.material);
+        final int usedMora = dataService.inventory.getUsedMaterialQuantityByCalcKeyAndItemKey(kvp.key, moraKey);
         expect(usedMora, kvp.value);
       }
 
@@ -965,7 +965,7 @@ void main() {
 
       final int quantity = dataService.inventory.getItemQuantityFromInventory(moraKey, ItemType.material);
       expect(availableMora, quantity);
-      final int used = dataService.inventory.getNumberOfItemsUsed(moraKey, ItemType.material);
+      final int used = dataService.inventory.getUsedMaterialQuantity(moraKey);
       expect(used, charRequiredMora + weaponRequiredMora);
 
       expectedQuantityMap = <int, int>{
@@ -973,7 +973,7 @@ void main() {
         1: weaponRequiredMora,
       };
       for (final kvp in expectedQuantityMap.entries) {
-        final int usedMora = dataService.inventory.getNumberOfItemsUsedByCalcKeyItemKeyAndType(kvp.key, moraKey, ItemType.material);
+        final int usedMora = dataService.inventory.getUsedMaterialQuantityByCalcKeyAndItemKey(kvp.key, moraKey);
         expect(usedMora, kvp.value);
       }
     });

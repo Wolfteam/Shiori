@@ -88,7 +88,7 @@ void main() {
       'keqing is in inventory',
       build: () => WeaponBloc(genshinService, telemetryService, dataService, resourceService),
       setUp: () {
-        dataService.inventory.addItemToInventory(key, ItemType.weapon, 1);
+        dataService.inventory.addWeaponToInventory(key);
       },
       act: (bloc) => bloc.add(const WeaponEvent.loadFromKey(key: key)),
       //we skip 1 because since the event is not _AddedToInventory the bloc will emit a loading
