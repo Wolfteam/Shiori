@@ -2,6 +2,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:shiori/domain/app_constants.dart';
 import 'package:shiori/domain/enums/enums.dart';
+import 'package:shiori/domain/errors.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/calculator_asc_materials_service.dart';
 import 'package:shiori/domain/services/data_service.dart';
@@ -236,7 +237,7 @@ void main() {
     });
 
     test('build does not exist', () {
-      expect(() => dataService.customBuilds.getCustomBuild(666), throwsArgumentError);
+      expect(() => dataService.customBuilds.getCustomBuild(666), throwsA(isA<NotFoundError>()));
     });
 
     test('build exists', () async {
@@ -483,7 +484,7 @@ void main() {
           keqingTeamCharacters,
           CharacterSkillType.values,
         ),
-        throwsArgumentError,
+        throwsA(isA<NotFoundError>()),
       );
     });
 
@@ -622,7 +623,7 @@ void main() {
         CharacterSkillType.values,
       );
       await dataService.customBuilds.deleteCustomBuild(build.key);
-      expect(() => dataService.customBuilds.getCustomBuild(build.key), throwsArgumentError);
+      expect(() => dataService.customBuilds.getCustomBuild(build.key), throwsA(isA<NotFoundError>()));
     });
   });
 

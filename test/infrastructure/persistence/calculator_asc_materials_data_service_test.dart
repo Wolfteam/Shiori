@@ -5,6 +5,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:shiori/domain/app_constants.dart';
 import 'package:shiori/domain/enums/enums.dart';
+import 'package:shiori/domain/errors.dart';
 import 'package:shiori/domain/extensions/iterable_extensions.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/calculator_asc_materials_service.dart';
@@ -194,7 +195,7 @@ void main() {
     });
 
     test('key does not exist', () {
-      expect(() => dataService.calculator.getSession(666), throwsException);
+      expect(() => dataService.calculator.getSession(666), throwsA(isA<NotFoundError>()));
     });
 
     test('key exists', () async {
@@ -271,7 +272,7 @@ void main() {
     });
 
     test('session does not exist', () {
-      expect(dataService.calculator.updateSession(1, 'Updated'), throwsException);
+      expect(dataService.calculator.updateSession(1, 'Updated'), throwsA(isA<NotFoundError>()));
     });
 
     test('valid call', () async {
@@ -309,9 +310,9 @@ void main() {
       expect(dataService.calculator.deleteSession(-1), throwsArgumentError);
     });
 
-    test('session does not exist, completes normally', () {
+    test('session does not exist', () {
       const int key = 666;
-      expect(() => dataService.calculator.getSession(key), throwsException);
+      expect(() => dataService.calculator.getSession(key), throwsA(isA<NotFoundError>()));
       expect(dataService.calculator.deleteSession(key), completes);
     });
 
@@ -319,7 +320,7 @@ void main() {
       final session = await dataService.calculator.createSession('Deleted', 0);
       expect(() => dataService.calculator.getSession(session.key), returnsNormally);
       await dataService.calculator.deleteSession(session.key);
-      expect(() => dataService.calculator.getSession(session.key), throwsException);
+      expect(() => dataService.calculator.getSession(session.key), throwsA(isA<NotFoundError>()));
     });
   });
 
@@ -421,7 +422,7 @@ void main() {
     });
 
     test('session does not exist', () {
-      expect(dataService.calculator.addSessionItem(666, getCharacter(), []), throwsArgumentError);
+      expect(dataService.calculator.addSessionItem(666, getCharacter(), []), throwsA(isA<NotFoundError>()));
     });
 
     test('of type character', () async {
@@ -515,7 +516,7 @@ void main() {
     });
 
     test('session does not exist', () {
-      expect(dataService.calculator.updateSessionItem(666, 1, getCharacter(), []), throwsArgumentError);
+      expect(dataService.calculator.updateSessionItem(666, 1, getCharacter(), []), throwsA(isA<NotFoundError>()));
     });
 
     test('item does not exist thus a new one gets created', () async {
@@ -1250,7 +1251,7 @@ void main() {
     });
 
     test('session does not exist', () async {
-      expect(dataService.calculator.reorderItems(666, []), throwsArgumentError);
+      expect(dataService.calculator.reorderItems(666, []), throwsA(isA<NotFoundError>()));
     });
 
     test('provided data is empty', () async {
