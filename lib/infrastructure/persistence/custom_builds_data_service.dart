@@ -47,7 +47,7 @@ class CustomBuildsDataServiceImpl implements CustomBuildsDataService {
 
   @override
   CustomBuildModel getCustomBuild(int key) {
-    Check.greaterThanOrEqualTo(key, 'key');
+    Check.greaterThanOrEqualToZero(key, 'key');
     _checkBuild(key);
     final build = _buildsBox.values.firstWhere((e) => e.key == key);
     final notes = _notesBox.values.where((el) => el.buildItemKey == key).toList();
@@ -109,7 +109,7 @@ class CustomBuildsDataServiceImpl implements CustomBuildsDataService {
     List<CustomBuildTeamCharacterModel> teamCharacters,
     List<CharacterSkillType> skillPriorities,
   ) async {
-    Check.greaterThanOrEqualTo(key, 'key');
+    Check.greaterThanOrEqualToZero(key, 'key');
     Check.notEmpty(title, 'title');
     Check.notEmpty(weapons, 'weapons');
     Check.notEmpty(artifacts, 'artifacts');
@@ -136,7 +136,7 @@ class CustomBuildsDataServiceImpl implements CustomBuildsDataService {
 
   @override
   Future<void> deleteCustomBuild(int key) async {
-    Check.greaterThanOrEqualTo(key, 'key');
+    Check.greaterThanOrEqualToZero(key, 'key');
     await Future.wait([
       _buildsBox.delete(key),
       _deleteCustomBuildRelatedParts(key),

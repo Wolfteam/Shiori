@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:collection/collection.dart' show IterableExtension;
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:shiori/domain/app_constants.dart';
+import 'package:shiori/domain/check.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/extensions/string_extensions.dart';
 import 'package:shiori/domain/models/entities.dart';
@@ -40,40 +41,16 @@ class InventoryDataServiceImpl implements InventoryDataService {
   }
 
   @override
-  Future<void> addCharacterToInventory(String key, {bool raiseEvent = true}) => addItemToInventory(key, ItemType.character, 1);
+  Future<void> addCharacterToInventory(String key, {bool raiseEvent = true}) => _addNonMaterialToInventory(key, ItemType.character);
 
   @override
-  Future<void> deleteCharacterFromInventory(String key, {bool raiseEvent = true}) => deleteItemFromInventory(key, ItemType.character);
+  Future<void> deleteCharacterFromInventory(String key, {bool raiseEvent = true}) => _deleteNonMaterialFromInventory(key, ItemType.character);
 
   @override
-  Future<void> addWeaponToInventory(String key, {bool raiseEvent = true}) => addItemToInventory(key, ItemType.weapon, 1);
+  Future<void> addWeaponToInventory(String key, {bool raiseEvent = true}) => _addNonMaterialToInventory(key, ItemType.weapon);
 
   @override
-  Future<void> deleteWeaponFromInventory(String key, {bool raiseEvent = true}) => deleteItemFromInventory(key, ItemType.weapon);
-
-  @override
-  Future<void> addItemToInventory(String key, ItemType type, int quantity, {bool raiseEvent = true}) async {
-    if (isItemInInventory(key, type)) {
-      return Future.value();
-    }
-    await _inventoryBox.add(InventoryItem(key, quantity, type.index));
-    if (raiseEvent) {
-      itemAddedToInventory.add(type);
-    }
-  }
-
-  @override
-  Future<void> deleteItemFromInventory(String key, ItemType type, {bool raiseEvent = true}) async {
-    final item = _getItemFromInventory(key, type);
-
-    if (item != null) {
-      await _inventoryBox.delete(item.key);
-    }
-
-    if (raiseEvent) {
-      itemDeletedFromInventory.add(type);
-    }
-  }
+  Future<void> deleteWeaponFromInventory(String key, {bool raiseEvent = true}) => _deleteNonMaterialFromInventory(key, ItemType.weapon);
 
   @override
   Future<void> deleteItemsFromInventory(ItemType type, {bool raiseEvent = true}) async {
@@ -81,26 +58,13 @@ class InventoryDataServiceImpl implements InventoryDataService {
       case ItemType.character:
       case ItemType.weapon:
       case ItemType.artifact:
-        await deleteAllItemsInInventoryExceptMaterials(type);
+        await _deleteAllItemsInInventoryExceptMaterials(type);
       case ItemType.material:
         deleteAllUsedMaterialItems();
     }
 
     if (raiseEvent) {
       itemDeletedFromInventory.add(type);
-    }
-  }
-
-  @override
-  Future<void> deleteAllItemsInInventoryExceptMaterials(ItemType? type) async {
-    if (type == ItemType.material) {
-      throw Exception('Material type is not valid here');
-    }
-    final toDeleteKeys = type == null
-        ? _inventoryBox.values.where((el) => el.type != ItemType.material.index).map((e) => e.key).toList()
-        : _inventoryBox.values.where((el) => el.type == type.index).map((e) => e.key).toList();
-    if (toDeleteKeys.isNotEmpty) {
-      await _inventoryBox.deleteAll(toDeleteKeys);
     }
   }
 
@@ -136,22 +100,17 @@ class InventoryDataServiceImpl implements InventoryDataService {
 
   @override
   List<MaterialCardModel> getAllMaterialsInInventory() {
-    final materials = _genshinService.materials.getAllMaterialsForCard();
-    final inInventory = _inventoryBox.values.where((el) => el.type == ItemType.material.index).map((e) {
-      final material = _genshinService.materials.getMaterialForCard(e.itemKey);
-      return material.copyWith.call(quantity: e.quantity);
-    }).toList();
-
     final allMaterials = <MaterialCardModel>[];
-    for (final material in materials) {
-      if (inInventory.any((m) => m.key == material.key)) {
-        //The one in db has the quantity
-        final inDb = inInventory.firstWhere((m) => m.key == material.key);
-        final usedQuantity = getNumberOfItemsUsed(material.key, ItemType.material);
-        allMaterials.add(inDb.copyWith.call(usedQuantity: usedQuantity));
-      } else {
+    final List<MaterialCardModel> materials = _genshinService.materials.getAllMaterialsForCard();
+    final List<InventoryItem> inInventory = _inventoryBox.values.where((el) => el.type == ItemType.material.index).toList();
+    for (final MaterialCardModel material in materials) {
+      final InventoryItem? dbItem = inInventory.firstWhereOrNull((el) => el.itemKey == material.key);
+      if (dbItem == null) {
         allMaterials.add(material);
+        continue;
       }
+      final int usedQuantity = getUsedMaterialQuantity(material.key);
+      allMaterials.add(material.copyWith(quantity: dbItem.quantity, usedQuantity: usedQuantity));
     }
 
     return sortMaterialsByGrouping(allMaterials, SortDirectionType.asc);
@@ -159,6 +118,7 @@ class InventoryDataServiceImpl implements InventoryDataService {
 
   @override
   int getItemQuantityFromInventory(String key, ItemType type) {
+    Check.notEmpty(key, 'key');
     final InventoryItem? item = _inventoryBox.values.firstWhereOrNull((m) => m.itemKey == key && m.type == type.index);
     return item?.quantity ?? 0;
   }
@@ -176,14 +136,17 @@ class InventoryDataServiceImpl implements InventoryDataService {
   }
 
   @override
-  Future<void> updateItemInInventory(
+  Future<void> addMaterialToInventory(
     String key,
-    ItemType type,
-    int quantity,
-    RedistributeInventoryMaterial redistribute, {
+    int quantity, {
+    RedistributeInventoryMaterial? redistribute,
     bool raiseEvent = true,
   }) async {
-    var item = _getItemFromInventory(key, type);
+    Check.notEmpty(key, 'key');
+    Check.greaterThanOrEqualToZero(quantity, 'quantity');
+
+    const type = ItemType.material;
+    InventoryItem? item = _getItemFromInventory(key, type);
     if (item == null) {
       item = InventoryItem(key, quantity, type.index);
       await _inventoryBox.add(item);
@@ -191,11 +154,12 @@ class InventoryDataServiceImpl implements InventoryDataService {
       if (quantity == item.quantity) {
         return;
       }
-//TODO: IF THE QUANTITY IS 0 SHOULD I DELETE THE ITEM ?
       item.quantity = quantity;
       await item.save();
     }
-    await redistribute(key, quantity);
+    if (redistribute != null) {
+      await redistribute(key, quantity);
+    }
     if (raiseEvent) {
       itemUpdatedInInventory.add(type);
     }
@@ -203,13 +167,15 @@ class InventoryDataServiceImpl implements InventoryDataService {
 
   @override
   bool isItemInInventory(String key, ItemType type) {
+    Check.notEmpty(key, 'key');
     return _inventoryBox.values.any((el) => el.itemKey == key && el.type == type.index && el.quantity > 0);
   }
 
   @override
-  int getNumberOfItemsUsed(String itemKey, ItemType type) {
+  int getUsedMaterialQuantity(String itemKey) {
+    Check.notEmpty(itemKey, 'itemKey');
     return _inventoryUsedItemsBox.values
-        .where((el) => el.itemKey == itemKey && el.type == type.index)
+        .where((el) => el.itemKey == itemKey && el.type == ItemType.material.index)
         .fold(0, (previousValue, element) => previousValue + element.usedQuantity);
   }
 
@@ -221,11 +187,17 @@ class InventoryDataServiceImpl implements InventoryDataService {
     int currentQuantity, {
     bool checkUsed = false,
   }) async {
+    Check.greaterThanOrEqualToZero(calcItemKey, 'calcItemKey');
+    Check.notEmpty(itemKey, 'itemKey');
+    Check.greaterThanOrEqualToZero(currentQuantity, 'currentQuantity');
+
     int currentQty = currentQuantity;
 
     //Check if there is a used item for this calculator item
-    var usedInInventory = _inventoryUsedItemsBox.values.firstWhereOrNull((el) => el.calculatorItemKey == calcItemKey && el.itemKey == itemKey);
-    final desiredQuantityToUse = materials.firstWhereOrNull((el) => el.key == itemKey)?.requiredQuantity ?? 0;
+    InventoryUsedItem? usedInInventory = _inventoryUsedItemsBox.values.firstWhereOrNull(
+      (el) => el.calculatorItemKey == calcItemKey && el.itemKey == itemKey,
+    );
+    final int desiredQuantityToUse = materials.firstWhereOrNull((el) => el.key == itemKey)?.requiredQuantity ?? 0;
 
     //If no used item was found, lets check if this calc. item could benefit from this itemKey
     if (usedInInventory == null) {
@@ -239,8 +211,8 @@ class InventoryDataServiceImpl implements InventoryDataService {
       await _inventoryUsedItemsBox.add(usedInInventory);
     }
 
-    final available = currentQty - desiredQuantityToUse;
-    final canBeSatisfied = available >= 0;
+    final int available = currentQty - desiredQuantityToUse;
+    final bool canBeSatisfied = available >= 0;
 
     //If we can satisfy the desired quantity, reduce the current quantity and also update the used qty in the inventory item
     if (canBeSatisfied) {
@@ -265,16 +237,20 @@ class InventoryDataServiceImpl implements InventoryDataService {
   }
 
   @override
-  Future<void> useItemFromInventory(int calculatorItemKey, String itemKey, ItemType type, int quantityToUse) async {
+  Future<void> useMaterialFromInventory(int calculatorItemKey, String itemKey, int quantityToUse) async {
+    Check.greaterThanOrEqualToZero(calculatorItemKey, 'calculatorItemKey');
+    Check.notEmpty(itemKey, 'itemKey');
+    Check.greaterThanOrEqualToZero(quantityToUse, 'quantityToUse');
+
+    const type = ItemType.material;
     if (!isItemInInventory(itemKey, type)) {
       return;
     }
 
-    final used = getNumberOfItemsUsed(itemKey, type);
-
     final item = _getItemFromInventory(itemKey, type)!;
-    final available = item.quantity - used;
-    final toUse = available - quantityToUse < 0 ? available : quantityToUse;
+    final int used = getUsedMaterialQuantity(itemKey);
+    final int available = item.quantity - used;
+    final int toUse = available - quantityToUse < 0 ? available : quantityToUse;
     if (toUse == 0) {
       return;
     }
@@ -285,6 +261,7 @@ class InventoryDataServiceImpl implements InventoryDataService {
 
   @override
   Future<void> clearUsedInventoryItems(int calculatorItemKey, {String? onlyItemKey}) async {
+    Check.greaterThanOrEqualToZero(calculatorItemKey, 'calculatorItemKey');
     final usedItems = onlyItemKey.isNullEmptyOrWhitespace
         ? _inventoryUsedItemsBox.values.where((el) => el.calculatorItemKey == calculatorItemKey).map((e) => e.key).toList()
         : _inventoryUsedItemsBox.values
@@ -295,18 +272,14 @@ class InventoryDataServiceImpl implements InventoryDataService {
   }
 
   @override
-  int getNumberOfItemsUsedByCalcKeyItemKeyAndType(int calculatorItemKey, String itemKey, ItemType type) {
-    return _inventoryUsedItemsBox.values
-            .firstWhereOrNull((el) => el.calculatorItemKey == calculatorItemKey && el.itemKey == itemKey && el.type == type.index)
-            ?.usedQuantity ??
-        0;
-  }
+  int getUsedMaterialQuantityByCalcKeyAndItemKey(int calculatorItemKey, String itemKey) {
+    Check.greaterThanOrEqualToZero(calculatorItemKey, 'calculatorItemKey');
+    Check.notEmpty(itemKey, 'itemKey');
 
-  @override
-  int getRemainingQuantity(int calculatorItemKey, String itemKey, int current, ItemType type) {
-    final usedQuantity = getNumberOfItemsUsedByCalcKeyItemKeyAndType(calculatorItemKey, itemKey, type);
-    final remaining = current - usedQuantity;
-    return remaining;
+    final InventoryUsedItem? usedItem = _inventoryUsedItemsBox.values
+        .firstWhereOrNull((el) => el.calculatorItemKey == calculatorItemKey && el.itemKey == itemKey && el.type == ItemType.material.index);
+
+    return usedItem?.usedQuantity ?? 0;
   }
 
   @override
@@ -336,22 +309,65 @@ class InventoryDataServiceImpl implements InventoryDataService {
         case ItemType.weapon:
           await addWeaponToInventory(item.itemKey, raiseEvent: false);
         case ItemType.material:
-          await addItemToInventory(item.itemKey, type, item.quantity, raiseEvent: false);
+          await addMaterialToInventory(item.itemKey, item.quantity, raiseEvent: false);
         default:
-          break;
+          continue;
       }
     }
   }
 
   @override
-  List<String> getUsedInventoryItemKeysByCalcItemKeyAndItemType(int calculatorItemKey, ItemType type) {
+  List<String> getUsedMaterialKeysByCalcKey(int calculatorItemKey) {
+    Check.greaterThanOrEqualToZero(calculatorItemKey, 'calculatorItemKey');
     return _inventoryUsedItemsBox.values
-        .where((el) => el.calculatorItemKey == calculatorItemKey && el.type == type.index)
+        .where((el) => el.calculatorItemKey == calculatorItemKey && el.type == ItemType.material.index)
         .map((e) => e.itemKey)
         .toList();
   }
 
   InventoryItem? _getItemFromInventory(String key, ItemType type) {
+    Check.notEmpty(key, 'key');
     return _inventoryBox.values.firstWhereOrNull((el) => el.itemKey == key && el.type == type.index);
+  }
+
+  Future<void> _addNonMaterialToInventory(String key, ItemType type, {bool raiseEvent = true}) async {
+    Check.notEmpty(key, 'key');
+    Check.inList(type, [ItemType.character, ItemType.weapon], 'type');
+
+    if (isItemInInventory(key, type)) {
+      return;
+    }
+
+    const int quantity = 1;
+    await _inventoryBox.add(InventoryItem(key, quantity, type.index));
+    if (raiseEvent) {
+      itemAddedToInventory.add(type);
+    }
+  }
+
+  Future<void> _deleteNonMaterialFromInventory(String key, ItemType type, {bool raiseEvent = true}) async {
+    Check.notEmpty(key, 'key');
+    Check.inList(type, [ItemType.character, ItemType.weapon], 'type');
+    final InventoryItem? item = _getItemFromInventory(key, type);
+
+    if (item != null) {
+      await _inventoryBox.delete(item.key);
+    }
+
+    if (raiseEvent) {
+      itemDeletedFromInventory.add(type);
+    }
+  }
+
+  Future<void> _deleteAllItemsInInventoryExceptMaterials(ItemType? type) async {
+    if (type == ItemType.material) {
+      throw ArgumentError.value(type, 'type', 'Value type is not allowed here');
+    }
+    final toDeleteKeys = type == null
+        ? _inventoryBox.values.where((el) => el.type != ItemType.material.index).map((e) => e.key).toList()
+        : _inventoryBox.values.where((el) => el.type == type.index).map((e) => e.key).toList();
+    if (toDeleteKeys.isNotEmpty) {
+      await _inventoryBox.deleteAll(toDeleteKeys);
+    }
   }
 }

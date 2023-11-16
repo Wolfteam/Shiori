@@ -34,6 +34,6 @@ class CalculatorAscMaterialsItemUpdateQuantityBloc
 
   Future<void> _updateMaterialQuantity(String key, int quantity) async {
     await _telemetryService.trackItemUpdatedInInventory(key, quantity);
-    await _dataService.inventory.updateItemInInventory(key, ItemType.material, quantity, _dataService.calculator.redistributeInventoryMaterial);
+    await _dataService.inventory.addMaterialToInventory(key, quantity, redistribute: _dataService.calculator.redistributeInventoryMaterial);
   }
 }
