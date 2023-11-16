@@ -35,6 +35,10 @@ class Check {
     }
   }
 
+  static void greaterThanOrEqualToZero(num? val, String parameterName, {int min = 0}) {
+    greaterThanOrEqualTo(val, parameterName);
+  }
+
   static void inRangeNumber(num? val, int min, int max, String parameterName) {
     notNull(val, parameterName);
     final bool valid = val! >= min && val <= max;
@@ -60,6 +64,48 @@ class Check {
       inRangeNumber(length, min, max, parameterName);
     } catch (_) {
       throw ArgumentError.value(val, parameterName, 'List length must be greater than or equal to $min and less than or equal to $max');
+    }
+  }
+
+  static void inList(dynamic val, List expected, String parameterName) {
+    if (!expected.contains(val)) {
+      final String expectedListString = expected.map((e) => e.toString()).join(',');
+      throw ArgumentError.value(val, parameterName, 'The provided value is not in the expected values ($expectedListString)');
+    }
+  }
+
+  static void equal(dynamic val, dynamic expected, String parameterName) {
+    if (val != expected) {
+      throw ArgumentError.value(val, parameterName, 'Value should be equal to $expected');
+    }
+  }
+
+  static void between(
+    num? val,
+    String parameterName,
+    int min,
+    int max, {
+    bool minInclusive = true,
+    bool maxInclusive = true,
+  }) {
+    notNull(val, parameterName);
+
+    bool valid = false;
+    if (maxInclusive && minInclusive) {
+      valid = val! >= min && val <= min;
+    } else if (minInclusive) {
+      valid = val! >= min && val < max;
+    } else if (maxInclusive) {
+      valid = val! > min && val <= max;
+    } else {
+      valid = val! > min && val < max;
+    }
+
+    if (!valid) {
+      final String minString = '${minInclusive ? '[' : '('}$min${minInclusive ? ']' : ')'}';
+      final String maxString = '${maxInclusive ? '[' : '('}$min${maxInclusive ? ']' : ')'}';
+      final msg = 'Value should be between $minString and $maxString';
+      throw ArgumentError.value(val, parameterName, msg);
     }
   }
 }
