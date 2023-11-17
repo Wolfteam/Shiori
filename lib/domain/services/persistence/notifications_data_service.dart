@@ -106,7 +106,6 @@ abstract class NotificationsDataService implements BaseDataService {
 
   Future<NotificationItem> updateResinNotification(
     int key,
-    String itemKey,
     String title,
     String body,
     int currentResinValue,
@@ -127,7 +126,6 @@ abstract class NotificationsDataService implements BaseDataService {
 
   Future<NotificationItem> updateFurnitureNotification(
     int key,
-    String itemKey,
     FurnitureCraftingTimeType type,
     String title,
     String body,
@@ -146,7 +144,6 @@ abstract class NotificationsDataService implements BaseDataService {
 
   Future<NotificationItem> updateFarmingArtifactNotification(
     int key,
-    String itemKey,
     ArtifactFarmingTimeType type,
     String title,
     String body,
@@ -165,7 +162,6 @@ abstract class NotificationsDataService implements BaseDataService {
 
   Future<NotificationItem> updateRealmCurrencyNotification(
     int key,
-    String itemKey,
     RealmRankType realmRankType,
     int currentTrustRankLevel,
     int currentRealmCurrency,
@@ -198,7 +194,6 @@ abstract class NotificationsDataService implements BaseDataService {
 
   Future<NotificationItem> updateDailyCheckInNotification(
     int key,
-    String itemKey,
     String title,
     String body,
     bool showNotification, {

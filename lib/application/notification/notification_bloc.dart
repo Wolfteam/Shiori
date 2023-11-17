@@ -352,11 +352,9 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
   }
 
   Future<void> _saveResinNotification(_ResinState s) async {
-    final selectedItemKey = _getSelectedItemKey();
     if (s.key != null) {
       final updated = await _dataService.notifications.updateResinNotification(
         s.key!,
-        selectedItemKey,
         s.title,
         s.body,
         s.currentResin,
@@ -367,6 +365,7 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
       return;
     }
 
+    final selectedItemKey = _getSelectedItemKey();
     final notif = await _dataService.notifications.saveResinNotification(
       selectedItemKey,
       s.title,
@@ -408,11 +407,9 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
   }
 
   Future<void> _saveFarmingArtifactNotification(_FarmingArtifactState s) async {
-    final selectedItemKey = _getSelectedItemKey();
     if (s.key != null) {
       final updated = await _dataService.notifications.updateFarmingArtifactNotification(
         s.key!,
-        selectedItemKey,
         s.artifactFarmingTimeType,
         s.title,
         s.body,
@@ -423,6 +420,7 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
       return;
     }
 
+    final selectedItemKey = _getSelectedItemKey();
     final notif = await _dataService.notifications.saveFarmingArtifactNotification(
       selectedItemKey,
       s.artifactFarmingTimeType,
@@ -485,11 +483,9 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
   }
 
   Future<void> _saveFurnitureNotification(_FurnitureState s) async {
-    final selectedItemKey = _getSelectedItemKey();
     if (s.key != null) {
       final updated = await _dataService.notifications.updateFurnitureNotification(
         s.key!,
-        selectedItemKey,
         s.timeType,
         s.title,
         s.body,
@@ -500,6 +496,7 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
       return;
     }
 
+    final selectedItemKey = _getSelectedItemKey();
     final notif = await _dataService.notifications.saveFurnitureNotification(
       selectedItemKey,
       s.timeType,
@@ -512,11 +509,9 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
   }
 
   Future<void> _saveRealmCurrencyNotification(_RealmCurrencyState s) async {
-    final selectedItemKey = _getSelectedItemKey();
     if (s.key != null) {
       final updated = await _dataService.notifications.updateRealmCurrencyNotification(
         s.key!,
-        selectedItemKey,
         s.currentRealmRankType,
         s.currentTrustRank,
         s.currentRealmCurrency,
@@ -529,6 +524,7 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
       return;
     }
 
+    final selectedItemKey = _getSelectedItemKey();
     final notif = await _dataService.notifications.saveRealmCurrencyNotification(
       selectedItemKey,
       s.currentRealmRankType,
@@ -599,11 +595,9 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
   }
 
   Future<void> _saveDailyCheckInNotification(_DailyCheckInState s) async {
-    final selectedItemKey = _getSelectedItemKey();
     if (s.key != null) {
       final updated = await _dataService.notifications.updateDailyCheckInNotification(
         s.key!,
-        selectedItemKey,
         s.title,
         s.body,
         s.showNotification,
@@ -613,6 +607,7 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
       return;
     }
 
+    final selectedItemKey = _getSelectedItemKey();
     final notif = await _dataService.notifications.saveDailyCheckInNotification(
       selectedItemKey,
       s.title,

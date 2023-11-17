@@ -92,7 +92,7 @@ class Check {
 
     bool valid = false;
     if (maxInclusive && minInclusive) {
-      valid = val! >= min && val <= min;
+      valid = val! >= min && val <= max;
     } else if (minInclusive) {
       valid = val! >= min && val < max;
     } else if (maxInclusive) {
