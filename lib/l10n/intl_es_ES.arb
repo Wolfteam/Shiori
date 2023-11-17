@@ -495,5 +495,9 @@
   "close": "Cerrar",
   "later": "Más tarde",
   "youCanSkipFirstResourceDownloadMsg": "Puedes omitir la descarga inicial de recursos aunque algunas funcionalidades podrian ser deshabilitadas",
-  "firstResourceDownloadSkippedMsg": "Algunas funcionalidades pueden encontrarse deshabilitadas hasta que completes la descarga inicial de los recursos\nPuedes completarla dentro de los ajustes de la aplicación"
+  "firstResourceDownloadSkippedMsg": "Algunas funcionalidades pueden encontrarse deshabilitadas hasta que completes la descarga inicial de los recursos\nPuedes completarla dentro de los ajustes de la aplicación",
+  "inInventory": "En inventario",
+  "available": "Disponible",
+  "required": "Requerido",
+  "remaining": "Restante"
 }
