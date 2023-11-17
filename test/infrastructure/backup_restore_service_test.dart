@@ -332,7 +332,7 @@ void main() {
                     ? wishSimulatorRandom.nextInt(e == BannerItemType.character ? 90 : 80)
                     : rarity == WishBannerConstants.maxObtainableRarity - 1
                         ? wishSimulatorRandom.nextInt(10)
-                        : 0
+                        : 0,
             },
             fiftyFiftyXStarGuaranteed: {
               for (final rarity in rarities) rarity: wishSimulatorRandom.nextBool(),
