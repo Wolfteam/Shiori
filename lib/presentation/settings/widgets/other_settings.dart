@@ -11,6 +11,7 @@ import 'package:shiori/presentation/shared/common_dropdown_button.dart';
 import 'package:shiori/presentation/shared/dialogs/confirm_dialog.dart';
 import 'package:shiori/presentation/shared/extensions/i18n_extensions.dart';
 import 'package:shiori/presentation/shared/loading.dart';
+import 'package:shiori/presentation/shared/requires_resources_widget.dart';
 import 'package:shiori/presentation/shared/utils/enum_utils.dart';
 import 'package:shiori/presentation/shared/utils/toast_utils.dart';
 
@@ -100,10 +101,12 @@ class OtherSettings extends StatelessWidget {
                         ),
                       ),
                     ),
-                    ListTile(
-                      title: Text(s.backups),
-                      subtitle: Text(s.createAndRestoreLocalBackups),
-                      onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const BackupsPage())),
+                    RequiresDownloadedResourcesWidget(
+                      child: ListTile(
+                        title: Text(s.backups),
+                        subtitle: Text(s.createAndRestoreLocalBackups),
+                        onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const BackupsPage())),
+                      ),
                     ),
                     ListTile(
                       title: Text(s.deleteAllData, style: theme.textTheme.titleMedium!.copyWith(color: Colors.red, fontWeight: FontWeight.bold)),

@@ -53,7 +53,7 @@ class SliverElementDebuffs extends StatelessWidget {
                   )
                   .toList(),
             ),
-          )
+          ),
       ],
     );
   }
