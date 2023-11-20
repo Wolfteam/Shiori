@@ -136,6 +136,26 @@ void main() {
 
   group('Refresh', () {
     blocTest<GameCodesBloc, GameCodesState>(
+      'no network connection available',
+      build: () {
+        final settingsMock = MockSettingsService();
+        when(settingsMock.lastGameCodesCheckedDate).thenReturn(null);
+        when(settingsMock.resourceVersion).thenReturn(validResourceVersion);
+
+        final apiServiceMock = MockApiService();
+        final networkService = MockNetworkService();
+        when(networkService.isInternetAvailable()).thenAnswer((_) => Future.value(false));
+
+        return GameCodesBloc(dataService, telemetryService, apiServiceMock, networkService, genshinService, settingsService, deviceInfoService);
+      },
+      act: (bloc) => bloc.add(const GameCodesEvent.refresh()),
+      expect: () => const [
+        GameCodesState.loaded(workingGameCodes: [], expiredGameCodes: [], isInternetAvailable: false),
+        GameCodesState.loaded(workingGameCodes: [], expiredGameCodes: []),
+      ],
+    );
+
+    blocTest<GameCodesBloc, GameCodesState>(
       'api call fails',
       build: () {
         final settingsMock = MockSettingsService();
