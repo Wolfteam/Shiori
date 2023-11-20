@@ -1,5 +1,6 @@
 import 'package:mockito/annotations.dart';
 import 'package:shiori/domain/services/api_service.dart';
+import 'package:shiori/domain/services/backup_restore_service.dart';
 import 'package:shiori/domain/services/data_service.dart';
 import 'package:shiori/domain/services/device_info_service.dart';
 import 'package:shiori/domain/services/game_code_service.dart';
@@ -29,6 +30,7 @@ import 'package:shiori/domain/services/telemetry_service.dart';
   PurchaseService,
   ResourceService,
   ApiService,
+  BackupRestoreService,
   //data service mocks
   DataService,
   CalculatorAscMaterialsDataService,
