@@ -25,6 +25,7 @@ class MaterialItem extends StatelessWidget {
   final int remainingQuantity;
   final Color? textColor;
   final int sessionKey;
+  final bool showMaterialUsage;
 
   const MaterialItem({
     super.key,
@@ -35,12 +36,14 @@ class MaterialItem extends StatelessWidget {
     required this.requiredQuantity,
     required this.remainingQuantity,
     required this.sessionKey,
+    required this.showMaterialUsage,
     this.textColor,
   });
 
   MaterialItem.fromSummary({
     required this.sessionKey,
     required MaterialSummary summary,
+    required this.showMaterialUsage,
   })  : itemKey = summary.key,
         image = summary.fullImagePath,
         usedQuantity = summary.usedQuantity,
@@ -72,6 +75,7 @@ class MaterialItem extends StatelessWidget {
                 usedText: usedText,
                 requiredText: requiredText,
                 remainingText: remainingText,
+                showUsage: showMaterialUsage,
               ),
             ).then((option) {
               switch (option) {
@@ -84,11 +88,11 @@ class MaterialItem extends StatelessWidget {
               }
             }),
           ),
-          if (usedQuantity == requiredQuantity)
+          if (showMaterialUsage && usedQuantity == requiredQuantity)
             const Icon(Icons.check, color: Colors.green, size: 18)
           else
             Text(
-              usageText,
+              showMaterialUsage ? usageText : requiredText,
               textAlign: TextAlign.center,
               overflow: TextOverflow.ellipsis,
               style: textColor != null ? theme.textTheme.titleSmall!.copyWith(color: textColor) : theme.textTheme.titleSmall,
@@ -123,11 +127,13 @@ class _OptionsDialog extends StatelessWidget {
   final String usedText;
   final String requiredText;
   final String remainingText;
+  final bool showUsage;
 
   const _OptionsDialog({
     required this.usedText,
     required this.requiredText,
     required this.remainingText,
+    required this.showUsage,
   });
 
   @override
@@ -151,15 +157,17 @@ class _OptionsDialog extends StatelessWidget {
           ),
           ListTile(
             title: Text(s.update),
-            isThreeLine: true,
-            subtitle: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text('${s.used}: $usedText', overflow: TextOverflow.ellipsis),
-                Text('${s.required}: $requiredText', overflow: TextOverflow.ellipsis),
-                Text('${s.remaining}: $remainingText', overflow: TextOverflow.ellipsis),
-              ],
-            ),
+            isThreeLine: showUsage,
+            subtitle: showUsage
+                ? Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text('${s.required}: $requiredText', overflow: TextOverflow.ellipsis),
+                      Text('${s.used}: $usedText', overflow: TextOverflow.ellipsis),
+                      Text('${s.remaining}: $remainingText', overflow: TextOverflow.ellipsis),
+                    ],
+                  )
+                : null,
             onTap: () => Navigator.pop(context, _DialogOptionType.updateQuantity),
           ),
         ],

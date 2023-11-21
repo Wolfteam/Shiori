@@ -26,6 +26,7 @@ class ItemCard extends StatelessWidget {
   final List<ItemAscensionMaterialModel> materials;
   final bool isActive;
   final ElementType? elementType;
+  final bool showMaterialUsage;
 
   const ItemCard({
     super.key,
@@ -38,6 +39,7 @@ class ItemCard extends StatelessWidget {
     required this.isWeapon,
     required this.materials,
     required this.isActive,
+    required this.showMaterialUsage,
     this.elementType,
   });
 
@@ -127,6 +129,7 @@ class ItemCard extends StatelessWidget {
                               remainingQuantity: item.remainingQuantity,
                               textColor: Colors.white,
                               sessionKey: sessionKey,
+                              showMaterialUsage: showMaterialUsage,
                             );
                           },
                         ),

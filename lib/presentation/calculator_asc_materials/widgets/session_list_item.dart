@@ -42,12 +42,12 @@ class SessionListItem extends StatelessWidget {
             label: s.edit,
             backgroundColor: Colors.lightBlueAccent,
             icon: Icons.edit,
-            onPressed: (_) => _showEditSessionDialog(session.key, session.name, context),
+            onPressed: (_) => _showEditSessionDialog(session.key, session.name, session.showMaterialUsage, context),
           ),
         ],
       ),
       child: ListTile(
-        onLongPress: () => _showEditSessionDialog(session.key, session.name, context),
+        onLongPress: () => _showEditSessionDialog(session.key, session.name, session.showMaterialUsage, context),
         title: Text(session.name),
         onTap: () => _gotoCalculatorAscensionMaterialsPage(context),
         subtitle: Text('${s.charactersX(session.numberOfCharacters)} / ${s.weaponsX(session.numberOfWeapons)}'),
@@ -62,12 +62,12 @@ class SessionListItem extends StatelessWidget {
     );
   }
 
-  Future<void> _showEditSessionDialog(int sessionKey, String name, BuildContext context) async {
+  Future<void> _showEditSessionDialog(int sessionKey, String name, bool showMaterialUsage, BuildContext context) async {
     await showDialog(
       context: context,
       builder: (_) => BlocProvider.value(
         value: context.read<CalculatorAscMaterialsSessionsBloc>(),
-        child: AddEditSessionDialog.update(sessionKey: sessionKey, name: name),
+        child: AddEditSessionDialog.update(sessionKey: sessionKey, name: name, showMaterialUsage: showMaterialUsage),
       ),
     );
   }
