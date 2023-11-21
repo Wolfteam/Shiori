@@ -683,8 +683,8 @@ class CalculatorAscMaterialsDataServiceImpl implements CalculatorAscMaterialsDat
       }
 
       final int used = _inventory.getUsedMaterialQuantityByCalcKeyAndItemKey(calculatorItemKey, e.key);
-      final int available = e.requiredQuantity - used;
-      return e.copyWith.call(remainingQuantity: used, availableQuantity: available.abs());
+      final int remaining = e.requiredQuantity - used;
+      return e.copyWith.call(remainingQuantity: remaining.abs(), usedQuantity: used);
     }).toList();
   }
 

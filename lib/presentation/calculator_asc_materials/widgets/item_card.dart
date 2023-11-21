@@ -123,7 +123,7 @@ class ItemCard extends StatelessWidget {
                               type: item.type,
                               image: item.image,
                               requiredQuantity: item.requiredQuantity,
-                              availableQuantity: item.availableQuantity,
+                              usedQuantity: item.usedQuantity,
                               remainingQuantity: item.remainingQuantity,
                               textColor: Colors.white,
                               sessionKey: sessionKey,

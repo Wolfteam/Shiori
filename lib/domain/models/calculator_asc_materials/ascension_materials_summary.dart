@@ -24,7 +24,7 @@ class MaterialSummary with _$MaterialSummary implements SortableGroupedMaterial 
     required bool hasSiblings,
     required String fullImagePath,
     required int requiredQuantity,
-    required int availableQuantity,
+    required int usedQuantity,
     required int remainingQuantity,
     required List<int> days,
   }) = _MaterialSummary;

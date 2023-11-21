@@ -22,7 +22,7 @@ class CalculatorAscMaterialsServiceImpl implements CalculatorAscMaterialsService
     final flattened = current.groupBy((g) => g.key).map((g) {
       final mapped = g.first.copyWith(
         requiredQuantity: g.map((e) => e.requiredQuantity).sum(),
-        availableQuantity: g.map((e) => e.availableQuantity).sum(),
+        usedQuantity: g.map((e) => e.usedQuantity).sum(),
         remainingQuantity: g.map((e) => e.remainingQuantity).sum(),
       );
 
@@ -48,7 +48,7 @@ class CalculatorAscMaterialsServiceImpl implements CalculatorAscMaterialsService
           hasSiblings: material.hasSiblings,
           fullImagePath: _resourceService.getMaterialImagePath(material.image, material.type),
           requiredQuantity: item.requiredQuantity,
-          availableQuantity: item.availableQuantity,
+          usedQuantity: item.usedQuantity,
           remainingQuantity: item.remainingQuantity,
           days: [],
         );
@@ -63,7 +63,7 @@ class CalculatorAscMaterialsServiceImpl implements CalculatorAscMaterialsService
           hasSiblings: material.hasSiblings,
           fullImagePath: _resourceService.getMaterialImagePath(material.image, material.type),
           requiredQuantity: item.requiredQuantity,
-          availableQuantity: item.availableQuantity,
+          usedQuantity: item.usedQuantity,
           remainingQuantity: item.remainingQuantity,
           days: material.days,
         );
@@ -100,7 +100,7 @@ class CalculatorAscMaterialsServiceImpl implements CalculatorAscMaterialsService
           hasSiblings: material.hasSiblings,
           fullImagePath: _resourceService.getMaterialImagePath(material.image, material.type),
           requiredQuantity: item.requiredQuantity,
-          availableQuantity: item.availableQuantity,
+          usedQuantity: item.usedQuantity,
           remainingQuantity: item.remainingQuantity,
           days: [],
         );
