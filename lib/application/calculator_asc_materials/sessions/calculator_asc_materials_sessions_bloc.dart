@@ -40,8 +40,8 @@ class CalculatorAscMaterialsSessionsBloc extends Bloc<CalculatorAscMaterialsSess
 
     final s = await event.map(
       init: (_) async => _init(),
-      createSession: (e) async => _createSession(e.name),
-      updateSession: (e) async => _updateSession(e.key, e.name),
+      createSession: (e) async => _createSession(e.name, e.showMaterialUsage),
+      updateSession: (e) async => _updateSession(e.key, e.name, e.showMaterialUsage),
       deleteSession: (e) async => _deleteSession(e.key),
       deleteAllSessions: (_) async => _deleteAllSessions(),
       itemsReordered: (e) async => _itemsReordered(e.updated),
@@ -64,18 +64,18 @@ class CalculatorAscMaterialsSessionsBloc extends Bloc<CalculatorAscMaterialsSess
     return CalculatorAscMaterialsSessionsState.loaded(sessions: sessions);
   }
 
-  Future<CalculatorAscMaterialsSessionsState> _createSession(String name) async {
+  Future<CalculatorAscMaterialsSessionsState> _createSession(String name, bool showMaterialUsage) async {
     if (name.isNullEmptyOrWhitespace) {
       throw Exception('The provided session name is not valid');
     }
 
     await _telemetryService.trackCalculatorAscMaterialsSessionsCreated();
-    final createdSession = await _dataService.calculator.createSession(name.trim(), currentState.sessions.length);
+    final createdSession = await _dataService.calculator.createSession(name.trim(), currentState.sessions.length, showMaterialUsage);
     final sessions = [...currentState.sessions, createdSession];
     return CalculatorAscMaterialsSessionsState.loaded(sessions: sessions);
   }
 
-  Future<CalculatorAscMaterialsSessionsState> _updateSession(int key, String name) async {
+  Future<CalculatorAscMaterialsSessionsState> _updateSession(int key, String name, bool showMaterialUsage) async {
     if (key < 0) {
       throw Exception('SessionKey = $key is not valid');
     }
@@ -89,7 +89,7 @@ class CalculatorAscMaterialsSessionsBloc extends Bloc<CalculatorAscMaterialsSess
       throw Exception('SessionKey = $key does not exist');
     }
     await _telemetryService.trackCalculatorAscMaterialsSessionsUpdated();
-    final updatedSession = await _dataService.calculator.updateSession(key, name.trim());
+    final updatedSession = await _dataService.calculator.updateSession(key, name.trim(), showMaterialUsage);
     final index = currentState.sessions.indexOf(current);
     final sessions = [...currentState.sessions];
     sessions.removeAt(index);
