@@ -313,7 +313,7 @@ class Injection {
     return CustomBuildBloc(genshinService, dataService, telemetryService, loggingService, resourceService, bloc);
   }
 
-  static Future<void> init() async {
+  static Future<void> init({bool isLoggingEnabled = true}) async {
     final networkService = NetworkServiceImpl();
     networkService.init();
     getIt.registerSingleton<NetworkService>(networkService);
@@ -326,7 +326,7 @@ class Injection {
     getIt.registerSingleton<TelemetryService>(telemetryService);
     await telemetryService.initTelemetry();
 
-    final loggingService = LoggingServiceImpl(getIt<TelemetryService>(), deviceInfoService);
+    final loggingService = LoggingServiceImpl(getIt<TelemetryService>(), deviceInfoService, isLoggingEnabled);
 
     getIt.registerSingleton<LoggingService>(loggingService);
     final settingsService = SettingsServiceImpl(loggingService);
