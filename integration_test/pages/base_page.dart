@@ -2,22 +2,24 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:shiori/domain/enums/enums.dart';
-import 'package:shiori/domain/extensions/weapon_type_extensions.dart';
 import 'package:shiori/domain/services/settings_service.dart';
 import 'package:shiori/injection.dart';
 import 'package:shiori/main.dart';
-import 'package:shiori/presentation/shared/extensions/element_type_extensions.dart';
+import 'package:shiori/presentation/shared/shiori_icons.dart';
 import 'package:shiori/presentation/shared/utils/size_utils.dart';
 import 'package:shiori/presentation/shared/utils/toast_utils.dart';
 import 'package:window_size/window_size.dart';
 
 import '../extensions/widget_tester_extensions.dart';
+import 'common_bottom_sheet.dart';
 
 const Key toastKey = Key('toast-body');
 
 abstract class BasePage {
   static bool initialized = false;
+
+  static const verticalDragOffset = Offset(0, -50);
+  static const horizontalDragOffset = Offset(-800, 0);
 
   final WidgetTester tester;
 
@@ -59,37 +61,20 @@ abstract class BasePage {
     return this;
   }
 
-  Future<BasePage> tapOnElementImg(ElementType type) async {
-    await _tapOnAssetImageIcon(type.getElementAssetPath());
-    return this;
-  }
-
-  Future<BasePage> tapOnWeaponImg(WeaponType type) async {
-    await _tapOnAssetImageIcon(type.getWeaponAssetPath());
-    return this;
-  }
-
-  Future<BasePage> tapOnRarityStarIcon(int rarity) async {
-    assert(rarity >= 1 && rarity <= 5);
-    final Finder finder = find.byIcon(Icons.star_border);
-    expect(finder, findsAtLeastNWidgets(5));
-    await tester.tap(finder.at(rarity - 1));
+  Future<BasePage> enterSearchText(String text) async {
+    final Finder finder = find.byType(TextField);
+    expect(finder, findsOneWidget);
+    await tester.enterText(finder, text);
     await tester.pumpAndSettle();
     return this;
   }
 
-  Future<BasePage> tapOnCommonBottomSheetButton({bool onOk = false, bool onReset = false, bool onCancel = false}) async {
-    assert(onOk || onReset || onCancel);
-    final Finder finder = find.byType(onOk ? ElevatedButton : OutlinedButton);
-    expect(finder, findsAtLeastNWidgets(1));
-
-    if (onOk) {
-      await tester.tap(finder);
-    } else {
-      await tester.tap(finder.at(onCancel ? 0 : 1));
-    }
+  Future<CommonBottomSheet> tapFilterIcon() async {
+    final Finder finder = find.byIcon(Shiori.filter);
+    expect(finder, findsOneWidget);
+    await tester.tap(finder);
     await tester.pumpAndSettle();
-    return this;
+    return CommonBottomSheet(tester);
   }
 
   Future<void> _init(bool resetResources) async {
@@ -120,10 +105,27 @@ abstract class BasePage {
     settingsService.lastResourcesCheckedDate = null;
   }
 
-  Future<void> _tapOnAssetImageIcon(String path, {int expectedCount = 1}) async {
+  Future<void> tapOnAssetImageIcon(String path, {int expectedCount = 1}) async {
     final Finder finder = find.widgetWithImage(IconButton, AssetImage(path));
     expect(finder, findsAtLeastNWidgets(expectedCount));
     await tester.tap(finder);
+    await tester.pumpAndSettle();
+  }
+
+  Future<void> tapOnPopupMenuButtonIcon(IconData icon, int index) async {
+    final Finder finder = find.byIcon(icon);
+    expect(finder, findsOneWidget);
+    await tester.tap(finder);
+    await tester.pumpAndSettle();
+
+    await tapOnPopupMenuEntry(index);
+  }
+
+  Future<void> tapOnPopupMenuEntry(int index) async {
+    final Finder menuItems = find.byWidgetPredicate((widget) => widget is PopupMenuEntry);
+    expect(menuItems, findsAtLeastNWidgets(index + 1));
+
+    await tester.tap(menuItems.at(index));
     await tester.pumpAndSettle();
   }
 }

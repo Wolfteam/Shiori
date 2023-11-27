@@ -20,10 +20,10 @@ void main() {
   Future<void> filterForPrototypeArchaic(WidgetTester widgetTester) async {
     final mainPage = MainTabPage(widgetTester);
     await mainPage.enterSearchText('archaic');
-    await mainPage.tapFilterIcon();
-    await mainPage.tapOnWeaponImg(WeaponType.claymore);
-    await mainPage.tapOnRarityStarIcon(4);
-    await mainPage.tapOnCommonBottomSheetButton(onOk: true);
+    final CommonBottomSheet bottomSheet = await mainPage.tapFilterIcon();
+    await bottomSheet.tapOnWeaponImg(WeaponType.claymore);
+    await bottomSheet.tapOnRarityStarIcon(4);
+    await bottomSheet.tapOnButton(onOk: true);
   }
 
   group('Weapons page', () {
@@ -33,8 +33,8 @@ void main() {
 
       final mainPage = MainTabPage(widgetTester);
       await mainPage.enterSearchText('');
-      await mainPage.tapFilterIcon();
-      await mainPage.tapOnCommonBottomSheetButton(onReset: true);
+      final CommonBottomSheet bottomSheet = await mainPage.tapFilterIcon();
+      await bottomSheet.tapOnButton(onReset: true);
 
       final Finder finder = find.byType(WeaponCard);
       expect(finder, findsAtLeastNWidgets(2));

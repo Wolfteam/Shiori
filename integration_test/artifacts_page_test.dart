@@ -19,9 +19,9 @@ void main() {
   Future<void> filter(String searchText, int rarity, WidgetTester widgetTester) async {
     final mainPage = MainTabPage(widgetTester);
     await mainPage.enterSearchText(searchText);
-    await mainPage.tapFilterIcon();
-    await mainPage.tapOnRarityStarIcon(rarity);
-    await mainPage.tapOnCommonBottomSheetButton(onOk: true);
+    final CommonBottomSheet bottomSheet = await mainPage.tapFilterIcon();
+    await bottomSheet.tapOnRarityStarIcon(rarity);
+    await bottomSheet.tapOnButton(onOk: true);
   }
 
   Future<void> filterForGladiator(WidgetTester widgetTester) async {
@@ -35,8 +35,8 @@ void main() {
 
       final mainPage = MainTabPage(widgetTester);
       await mainPage.enterSearchText('');
-      await mainPage.tapFilterIcon();
-      await mainPage.tapOnCommonBottomSheetButton(onReset: true);
+      final CommonBottomSheet bottomSheet = await mainPage.tapFilterIcon();
+      await bottomSheet.tapOnButton(onReset: true);
 
       final Finder finder = find.byType(ArtifactCard);
       expect(finder, findsAtLeastNWidgets(2));

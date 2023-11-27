@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:shiori/presentation/shared/item_description_detail.dart';
 
-import 'main_tab_page.dart';
+import 'base_page.dart';
 
-class DetailPage extends MainTabPage {
+class DetailPage extends BasePage {
   const DetailPage(super.tester);
 
-  Future<MainTabPage> doCheckInPortrait(List<String> expectedDescriptions) async {
+  Future<DetailPage> doCheckInPortrait(List<String> expectedDescriptions) async {
     const verticalOffset = Offset(0, -50);
 
     final Finder scrollViewFinder = find.byType(SingleChildScrollView);
@@ -22,7 +22,7 @@ class DetailPage extends MainTabPage {
     return this;
   }
 
-  Future<MainTabPage> doCheckInLandscape(List<String> expectedTabTitles, List<String> expectedDescriptions) async {
+  Future<DetailPage> doCheckInLandscape(List<String> expectedTabTitles, List<String> expectedDescriptions) async {
     assert(expectedTabTitles.isNotEmpty);
     assert(expectedDescriptions.isNotEmpty);
 
