@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:shiori/presentation/monsters/widgets/monster_card.dart';
 
-import 'pages/pages.dart';
+import '../views/views.dart';
 
 void main() {
   Future<void> navigate(WidgetTester widgetTester) async {

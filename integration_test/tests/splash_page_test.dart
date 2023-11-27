@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:shiori/presentation/shared/utils/toast_utils.dart';
 
-import 'pages/pages.dart';
+import '../views/views.dart';
 
 void main() {
   group('Splash page', () {

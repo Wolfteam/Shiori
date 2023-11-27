@@ -2,8 +2,8 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:shiori/presentation/materials/widgets/material_card.dart';
 import 'package:shiori/presentation/shared/details/detail_general_card.dart';
 
-import 'extensions/widget_tester_extensions.dart';
-import 'pages/pages.dart';
+import '../extensions/widget_tester_extensions.dart';
+import '../views/views.dart';
 
 void main() {
   Future<void> navigate(WidgetTester widgetTester) async {

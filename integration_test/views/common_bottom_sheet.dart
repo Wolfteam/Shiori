@@ -3,6 +3,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/extensions/weapon_type_extensions.dart';
 import 'package:shiori/presentation/shared/extensions/element_type_extensions.dart';
+import 'package:shiori/presentation/shared/shiori_icons.dart';
 
 import 'base_page.dart';
 
@@ -25,6 +26,26 @@ class CommonBottomSheet extends BasePage {
     expect(finder, findsAtLeastNWidgets(5));
     await tester.tap(finder.at(rarity - 1));
     await tester.pumpAndSettle();
+    return this;
+  }
+
+  Future<CommonBottomSheet> tapOnLocationIcon(int index) async {
+    await tapOnPopupMenuButtonIcon(Icons.location_pin, index);
+    return this;
+  }
+
+  Future<CommonBottomSheet> tapOnSlidersIcon(int index) async {
+    await tapOnPopupMenuButtonIcon(Shiori.sliders_h, index);
+    return this;
+  }
+
+  Future<CommonBottomSheet> tapOnRoleIcon(int index) async {
+    await tapOnPopupMenuButtonIcon(Shiori.trefoil_lily, index);
+    return this;
+  }
+
+  Future<CommonBottomSheet> tapOnRegionIcon(int index) async {
+    await tapOnPopupMenuButtonIcon(Shiori.reactor, index);
     return this;
   }
 

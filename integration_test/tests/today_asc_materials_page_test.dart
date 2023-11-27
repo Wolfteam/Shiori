@@ -3,7 +3,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:shiori/presentation/home/widgets/char_card_ascension_material.dart';
 import 'package:shiori/presentation/home/widgets/weapon_card_ascension_material.dart';
 
-import 'pages/pages.dart';
+import '../views/views.dart';
 
 void main() {
   Future<void> navigate(bool forCharacters, WidgetTester widgetTester) async {

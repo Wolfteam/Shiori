@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 
-import 'pages/pages.dart';
+import '../views/views.dart';
 
 void main() {
   group('Main tab page', () {
