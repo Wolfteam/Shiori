@@ -1,3 +1,4 @@
+import 'artifacts_page_test.dart' as artifacts_test;
 import 'characters_page_test.dart' as characters_test;
 import 'main_tab_page_test.dart' as main_tab_test;
 import 'splash_page_test.dart' as splash_test;
@@ -8,4 +9,5 @@ void main() {
   main_tab_test.main();
   characters_test.main();
   weapons_test.main();
+  artifacts_test.main();
 }

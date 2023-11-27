@@ -1,8 +1,25 @@
 import 'dart:async';
 
 import 'package:flutter_test/flutter_test.dart';
+import 'package:shiori/presentation/desktop_tablet_scaffold.dart';
+import 'package:shiori/presentation/mobile_scaffold.dart';
 
 extension PumpUntilFound on WidgetTester {
+  bool get isUsingDesktopLayout {
+    final Finder desktopFinder = find.byType(DesktopTabletScaffold, skipOffstage: false);
+    final Finder mobileFinder = find.byType(MobileScaffold, skipOffstage: false);
+    final bool usesDesktopLayout = any(desktopFinder);
+    final bool usesMobileLayout = any(mobileFinder);
+    assert(usesDesktopLayout || usesMobileLayout);
+
+    return usesDesktopLayout;
+  }
+
+  bool get isLandscape {
+    final size = view.display.size;
+    return size.width > size.height;
+  }
+
   Future<void> _pumpUntil(
     Finder finder, {
     Duration timeout = const Duration(seconds: 10),

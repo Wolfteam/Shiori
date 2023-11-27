@@ -1,6 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:shiori/domain/enums/enums.dart';
-import 'package:shiori/presentation/characters/widgets/character_card.dart';
+import 'package:shiori/presentation/artifacts/widgets/artifact_card.dart';
 import 'package:shiori/presentation/shared/details/detail_general_card.dart';
 
 import 'extensions/widget_tester_extensions.dart';
@@ -14,81 +13,73 @@ void main() {
 
     final mainPage = MainTabPage(widgetTester);
     await mainPage.closeChangelogDialog();
-    await mainPage.doCheckOnCharactersTab();
+    await mainPage.doCheckOnArtifactsTab();
   }
 
-  Future<void> filterForKeqing(WidgetTester widgetTester) async {
+  Future<void> filter(String searchText, int rarity, WidgetTester widgetTester) async {
     final mainPage = MainTabPage(widgetTester);
-    await mainPage.enterSearchText('k');
+    await mainPage.enterSearchText(searchText);
     await mainPage.tapFilterIcon();
-    await mainPage.tapOnElementImg(ElementType.electro);
-    await mainPage.tapOnWeaponImg(WeaponType.sword);
-    await mainPage.tapOnRarityStarIcon(5);
+    await mainPage.tapOnRarityStarIcon(rarity);
     await mainPage.tapOnCommonBottomSheetButton(onOk: true);
   }
 
-  group('Characters page', () {
+  Future<void> filterForGladiator(WidgetTester widgetTester) async {
+    return filter('gladiator', 5, widgetTester);
+  }
+
+  group('Artifacts page', () {
     testWidgets('filter changes but gets reset', (widgetTester) async {
       await navigateToTab(widgetTester);
-      await filterForKeqing(widgetTester);
+      await filterForGladiator(widgetTester);
 
       final mainPage = MainTabPage(widgetTester);
       await mainPage.enterSearchText('');
       await mainPage.tapFilterIcon();
       await mainPage.tapOnCommonBottomSheetButton(onReset: true);
 
-      final Finder finder = find.byType(CharacterCard);
+      final Finder finder = find.byType(ArtifactCard);
       expect(finder, findsAtLeastNWidgets(2));
     });
 
     testWidgets('filter returns 1 result', (widgetTester) async {
       await navigateToTab(widgetTester);
-      await filterForKeqing(widgetTester);
+      await filterForGladiator(widgetTester);
 
-      final Finder finder = find.byType(CharacterCard);
+      final Finder finder = find.byType(ArtifactCard);
       expect(finder, findsOneWidget);
     });
 
     testWidgets('filter returns 1 result, tap on it and check its details', (widgetTester) async {
       await navigateToTab(widgetTester);
-      await filterForKeqing(widgetTester);
+      await filterForGladiator(widgetTester);
 
-      final Finder keqingFinder = find.byType(CharacterCard);
-      await widgetTester.tap(keqingFinder);
+      final Finder artifactFinder = find.byType(ArtifactCard);
+      await widgetTester.tap(artifactFinder);
       await widgetTester.pumpAndSettle();
 
-      expect(find.widgetWithText(DetailGeneralCard, 'Keqing'), findsOneWidget);
+      expect(find.widgetWithText(DetailGeneralCard, "Gladiator's Finale"), findsOneWidget);
 
       final DetailPage page = DetailPage(widgetTester);
       if (widgetTester.isUsingDesktopLayout || widgetTester.isLandscape) {
         const expectedTabTitles = <String>[
           'Description',
-          'Passives',
-          'Constellations',
-          'Materials',
           'Builds',
-          'Stats',
+          'Dropped by',
         ];
         const expectedDescriptions = <String>[
-          'Description;Skills',
-          'Passives',
-          'Constellations',
-          'Ascension Materials;Talents Ascension',
+          'Bonus;Pieces',
           'Builds',
-          'Stats',
+          'Dropped by',
         ];
 
         await page.doCheckInLandscape(expectedTabTitles, expectedDescriptions);
       } else {
         const expectedDescriptions = <String>[
-          'Description',
-          'Skills',
+          'Bonus',
+          'Pieces',
           'Builds',
-          'Ascension Materials',
-          'Talents Ascension',
-          'Passives',
-          'Constellations',
-          'Stats',
+          'Dropped by',
         ];
         await page.doCheckInPortrait(expectedDescriptions);
       }

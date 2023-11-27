@@ -1,10 +1,9 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/presentation/shared/details/detail_general_card.dart';
-import 'package:shiori/presentation/shared/item_description_detail.dart';
 import 'package:shiori/presentation/weapons/widgets/weapon_card.dart';
 
+import 'extensions/widget_tester_extensions.dart';
 import 'pages/pages.dart';
 
 void main() {
@@ -59,21 +58,32 @@ void main() {
 
       expect(find.widgetWithText(DetailGeneralCard, 'Prototype Archaic'), findsOneWidget);
 
-      const verticalOffset = Offset(0, -50);
-      const expectedDescriptions = <String>[
-        'Description',
-        'Builds',
-        'Crafting Materials',
-        'Ascension Materials',
-        'Refinements',
-        'Stats',
-      ];
+      final DetailPage page = DetailPage(widgetTester);
+      if (widgetTester.isUsingDesktopLayout || widgetTester.isLandscape) {
+        const expectedTabTitles = <String>[
+          'Description',
+          'Materials',
+          'Refinements',
+          'Stats',
+        ];
+        const expectedDescriptions = <String>[
+          'Description;Builds',
+          'Crafting Materials;Ascension Materials',
+          'Refinements',
+          'Stats',
+        ];
 
-      final Finder scrollViewFinder = find.byType(SingleChildScrollView);
-      for (final String description in expectedDescriptions) {
-        final Finder finder = find.widgetWithText(ItemDescriptionTitle, description);
-        await widgetTester.dragUntilVisible(finder, scrollViewFinder, verticalOffset);
-        await widgetTester.pumpAndSettle();
+        await page.doCheckInLandscape(expectedTabTitles, expectedDescriptions);
+      } else {
+        const expectedDescriptions = <String>[
+          'Description',
+          'Builds',
+          'Crafting Materials',
+          'Ascension Materials',
+          'Refinements',
+          'Stats',
+        ];
+        await page.doCheckInPortrait(expectedDescriptions);
       }
     });
   });

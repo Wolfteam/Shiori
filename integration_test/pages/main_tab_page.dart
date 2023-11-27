@@ -1,8 +1,11 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:shiori/presentation/home/widgets/card_item.dart';
 import 'package:shiori/presentation/home/widgets/char_card_ascension_material.dart';
 import 'package:shiori/presentation/home/widgets/daily_check_in_card.dart';
+import 'package:shiori/presentation/home/widgets/game_codes_card.dart';
 import 'package:shiori/presentation/home/widgets/materials_card.dart';
 import 'package:shiori/presentation/home/widgets/my_inventory_card.dart';
 import 'package:shiori/presentation/home/widgets/settings_card.dart';
@@ -15,6 +18,7 @@ import 'package:shiori/presentation/today_materials/widgets/sliver_character_asc
 import 'package:shiori/presentation/today_materials/widgets/sliver_weapon_ascension_materials.dart';
 import 'package:waterfall_flow/waterfall_flow.dart';
 
+import '../extensions/widget_tester_extensions.dart';
 import 'base_page.dart';
 
 enum MainPageTabType {
@@ -29,8 +33,10 @@ class MainTabPage extends BasePage {
   const MainTabPage(super.tester);
 
   Future<MainTabPage> closeChangelogDialog() async {
+    await tester.pumpAndSettle();
     await waitForToastToHide();
     await closeConfirmDialog();
+    await tester.pumpAndSettle();
     return this;
   }
 
@@ -69,7 +75,11 @@ class MainTabPage extends BasePage {
       expect(find.byType(SliverWeaponAscensionMaterials), findsNothing);
     }
 
-    final expectedTypes = <Type>[MaterialsCard, MyInventoryCard, DailyCheckInCard];
+    final expectedTypes = <Type>[
+      MaterialsCard,
+      MyInventoryCard,
+      if (!Platform.isMacOS) DailyCheckInCard else GameCodesCard,
+    ];
 
     for (final Type type in expectedTypes) {
       await tester.dragUntilVisible(find.byType(type), customScrollView, verticalDragOffset);
@@ -82,7 +92,11 @@ class MainTabPage extends BasePage {
       await tester.pumpAndSettle();
     }
 
-    expect(find.byType(SettingsCard), findsOneWidget);
+    if (!tester.isUsingDesktopLayout) {
+      expect(find.byType(SettingsCard), findsOneWidget);
+    } else {
+      expect(find.byIcon(Icons.settings), findsOneWidget);
+    }
 
     return this;
   }
@@ -121,6 +135,9 @@ class MainTabPage extends BasePage {
   }
 
   Future<MainTabPage> doCheckOnMapTab({bool updatesWereSkipped = false}) async {
+    if (Platform.isMacOS) {
+      return this;
+    }
     await tapOnTab(MainPageTabType.map);
     expect(find.byType(AppWebView), findsOneWidget);
     return this;
@@ -134,7 +151,10 @@ class MainTabPage extends BasePage {
       MainPageTabType.artifacts => Shiori.overmind,
       MainPageTabType.map => Icons.map,
     };
-    final item = find.descendant(of: find.byType(BottomNavigationBar), matching: find.byIcon(icon));
+
+    final item = find.descendant(of: find.byType(tester.isUsingDesktopLayout ? NavigationRail : BottomNavigationBar), matching: find.byIcon(icon));
+    expect(item, findsOneWidget);
+
     await tester.tap(item);
     await tester.pumpAndSettle();
 
