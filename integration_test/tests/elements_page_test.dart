@@ -17,12 +17,14 @@ void main() {
     await mainPage.tapOnElementsCard();
   }
 
-  testWidgets('debuffs, reactions and resonances exist', (widgetTester) async {
-    await navigate(widgetTester);
+  group('Elements page', () {
+    testWidgets('debuffs, reactions and resonances exist', (widgetTester) async {
+      await navigate(widgetTester);
 
-    final Finder scrollViewFinder = find.byType(CustomScrollView);
-    await widgetTester.dragUntilVisible(find.byType(SliverElementDebuffs), scrollViewFinder, BasePage.verticalDragOffset);
-    await widgetTester.dragUntilVisible(find.byType(SliverElementReactions), scrollViewFinder, BasePage.verticalDragOffset);
-    await widgetTester.dragUntilVisible(find.byType(SliverElementResonances), scrollViewFinder, BasePage.verticalDragOffset);
+      final Finder scrollViewFinder = find.byType(CustomScrollView);
+      await widgetTester.dragUntilVisible(find.byType(SliverElementDebuffs), scrollViewFinder, BasePage.verticalDragOffset);
+      await widgetTester.dragUntilVisible(find.byType(SliverElementReactions), scrollViewFinder, BasePage.verticalDragOffset);
+      await widgetTester.dragUntilVisible(find.byType(SliverElementResonances), scrollViewFinder, BasePage.verticalDragOffset);
+    });
   });
 }

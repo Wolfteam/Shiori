@@ -1,5 +1,8 @@
 import 'tests/artifacts_page_test.dart' as artifacts_test;
+import 'tests/banner_history_page_test.dart' as banner_history_test;
 import 'tests/characters_page_test.dart' as characters_test;
+import 'tests/elements_page_test.dart' as elements_test;
+import 'tests/inventory_page_test.dart' as inventory_tests;
 import 'tests/main_tab_page_test.dart' as main_tab_test;
 import 'tests/materials_page_test.dart' as materials_test;
 import 'tests/monsters_page_test.dart' as monsters_test;
@@ -16,4 +19,7 @@ void main() {
   artifacts_test.main();
   materials_test.main();
   monsters_test.main();
+  elements_test.main();
+  inventory_tests.main();
+  banner_history_test.main();
 }

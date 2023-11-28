@@ -16,33 +16,35 @@ void main() {
     await mainPage.tapOnTodayAscMaterials(forCharacters);
   }
 
-  testWidgets('changes current day', (widgetTester) async {
-    final splashPage = SplashPage(widgetTester);
-    await splashPage.initialize();
-    await splashPage.applyResourceUpdates();
+  group('Today ascension materials page', () {
+    testWidgets('changes current day', (widgetTester) async {
+      final splashPage = SplashPage(widgetTester);
+      await splashPage.initialize();
+      await splashPage.applyResourceUpdates();
 
-    final mainPage = MainTabPage(widgetTester);
-    await mainPage.closeChangelogDialog();
-    await mainPage.doCheckTodayAscMaterialsDay();
-  });
+      final mainPage = MainTabPage(widgetTester);
+      await mainPage.closeChangelogDialog();
+      await mainPage.doCheckTodayAscMaterialsDay();
+    });
 
-  testWidgets('opens page by tapping on characters', (widgetTester) async {
-    await navigate(true, widgetTester);
+    testWidgets('opens page by tapping on characters', (widgetTester) async {
+      await navigate(true, widgetTester);
 
-    final Finder scrollViewFinder = find.byType(CustomScrollView);
-    await widgetTester.dragUntilVisible(find.text('For characters'), scrollViewFinder, BasePage.verticalDragOffset);
-    await widgetTester.pumpAndSettle();
+      final Finder scrollViewFinder = find.byType(CustomScrollView);
+      await widgetTester.dragUntilVisible(find.text('For characters'), scrollViewFinder, BasePage.verticalDragOffset);
+      await widgetTester.pumpAndSettle();
 
-    expect(find.byType(CharCardAscensionMaterial), findsAtLeastNWidgets(2));
-  });
+      expect(find.byType(CharCardAscensionMaterial), findsAtLeastNWidgets(2));
+    });
 
-  testWidgets('opens page by tapping on weapons', (widgetTester) async {
-    await navigate(false, widgetTester);
+    testWidgets('opens page by tapping on weapons', (widgetTester) async {
+      await navigate(false, widgetTester);
 
-    final Finder scrollViewFinder = find.byType(CustomScrollView);
-    await widgetTester.dragUntilVisible(find.text('For weapons'), scrollViewFinder, BasePage.verticalDragOffset);
-    await widgetTester.pumpAndSettle();
+      final Finder scrollViewFinder = find.byType(CustomScrollView);
+      await widgetTester.dragUntilVisible(find.text('For weapons'), scrollViewFinder, BasePage.verticalDragOffset);
+      await widgetTester.pumpAndSettle();
 
-    expect(find.byType(WeaponCardAscensionMaterial), findsAtLeastNWidgets(2));
+      expect(find.byType(WeaponCardAscensionMaterial), findsAtLeastNWidgets(2));
+    });
   });
 }

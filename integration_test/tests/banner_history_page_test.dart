@@ -82,25 +82,27 @@ void main() {
     await widgetTester.pumpAndSettle();
   }
 
-  testWidgets('filters for $character on version $version', (widgetTester) async {
-    await navigate(widgetTester);
-    await filter(character, version, true, widgetTester);
+  group('Banner history page', () {
+    testWidgets('filters for $character on version $version', (widgetTester) async {
+      await navigate(widgetTester);
+      await filter(character, version, true, widgetTester);
 
-    await openCardItemDialog(character, widgetTester);
-    await tapOnDetailItemDialogOption(true, widgetTester);
+      await openCardItemDialog(character, widgetTester);
+      await tapOnDetailItemDialogOption(true, widgetTester);
 
-    await openCardItemDialog(character, widgetTester);
-    await tapOnDetailItemDialogOption(false, widgetTester);
-  });
+      await openCardItemDialog(character, widgetTester);
+      await tapOnDetailItemDialogOption(false, widgetTester);
+    });
 
-  testWidgets('filters for $weapon on version $version', (widgetTester) async {
-    await navigate(widgetTester);
-    await filter(weapon, version, false, widgetTester);
+    testWidgets('filters for $weapon on version $version', (widgetTester) async {
+      await navigate(widgetTester);
+      await filter(weapon, version, false, widgetTester);
 
-    await openCardItemDialog(weapon, widgetTester);
-    await tapOnDetailItemDialogOption(true, widgetTester);
+      await openCardItemDialog(weapon, widgetTester);
+      await tapOnDetailItemDialogOption(true, widgetTester);
 
-    await openCardItemDialog(weapon, widgetTester);
-    await tapOnDetailItemDialogOption(false, widgetTester);
+      await openCardItemDialog(weapon, widgetTester);
+      await tapOnDetailItemDialogOption(false, widgetTester);
+    });
   });
 }

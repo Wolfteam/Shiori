@@ -65,31 +65,33 @@ void main() {
     expect(find.widgetWithText(expectedType, name), findsOneWidget);
   }
 
-  testWidgets('add character to inventory', (widgetTester) async {
-    await navigate(widgetTester, _TabType.characters);
-    await addCharacterOrWeapon('Keqing', true, widgetTester);
-  });
+  group('Inventory', () {
+    testWidgets('add character to inventory', (widgetTester) async {
+      await navigate(widgetTester, _TabType.characters);
+      await addCharacterOrWeapon('Keqing', true, widgetTester);
+    });
 
-  testWidgets('add weapon to inventory', (widgetTester) async {
-    await navigate(widgetTester, _TabType.weapons);
-    await addCharacterOrWeapon('Messenger', false, widgetTester);
-  });
+    testWidgets('add weapon to inventory', (widgetTester) async {
+      await navigate(widgetTester, _TabType.weapons);
+      await addCharacterOrWeapon('Messenger', false, widgetTester);
+    });
 
-  testWidgets('add material to inventory', (widgetTester) async {
-    await navigate(widgetTester, _TabType.materials);
+    testWidgets('add material to inventory', (widgetTester) async {
+      await navigate(widgetTester, _TabType.materials);
 
-    const String quantity = '666';
-    final Finder materialCardFinder = find.byType(GradientCard).last;
-    await widgetTester.tap(materialCardFinder);
-    await widgetTester.pumpAndSettle();
+      const String quantity = '666';
+      final Finder materialCardFinder = find.byType(GradientCard).last;
+      await widgetTester.tap(materialCardFinder);
+      await widgetTester.pumpAndSettle();
 
-    await widgetTester.sendKeyDownEvent(LogicalKeyboardKey.delete);
-    await widgetTester.enterText(find.byType(TextField), quantity);
-    await widgetTester.pumpAndSettle();
+      await widgetTester.sendKeyDownEvent(LogicalKeyboardKey.delete);
+      await widgetTester.enterText(find.byType(TextField), quantity);
+      await widgetTester.pumpAndSettle();
 
-    await widgetTester.tap(find.byType(ElevatedButton));
-    await widgetTester.pumpAndSettle();
+      await widgetTester.tap(find.byType(ElevatedButton));
+      await widgetTester.pumpAndSettle();
 
-    expect(find.descendant(of: materialCardFinder, matching: find.text(quantity)), findsOneWidget);
+      expect(find.descendant(of: materialCardFinder, matching: find.text(quantity)), findsOneWidget);
+    });
   });
 }
