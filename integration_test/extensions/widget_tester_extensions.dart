@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:flutter/gestures.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:shiori/presentation/desktop_tablet_scaffold.dart';
 import 'package:shiori/presentation/mobile_scaffold.dart';
@@ -56,5 +57,24 @@ extension PumpUntilFound on WidgetTester {
     Duration timeout = const Duration(seconds: 10),
   }) async {
     return _pumpUntil(finder, timeout: timeout, untilFound: false);
+  }
+
+  Future<void> doAppDrag(Finder from, Finder to) async {
+    //We get the bottom right cause on Desktop platforms the drag and drop will only work on the icon which
+    //is located at the end
+    final Offset fromLocation = getBottomRight(from);
+    final Offset toLocation = getBottomRight(to);
+
+    //Start a drag (down) gesture and keep sending frames
+    final TestGesture gesture = await startGesture(fromLocation);
+    await pump(kLongPressTimeout + kPressTimeout);
+
+    //Move to the expected location
+    await gesture.moveTo(toLocation, timeStamp: kLongPressTimeout);
+    await pump();
+
+    //Stop the gesture
+    await gesture.up();
+    await pump();
   }
 }

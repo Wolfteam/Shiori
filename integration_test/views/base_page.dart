@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:shiori/domain/services/data_service.dart';
 import 'package:shiori/domain/services/settings_service.dart';
 import 'package:shiori/injection.dart';
 import 'package:shiori/main.dart';
@@ -25,8 +26,8 @@ abstract class BasePage {
 
   const BasePage(this.tester);
 
-  Future<BasePage> initialize({bool resetResources = false}) async {
-    await _init(resetResources);
+  Future<BasePage> initialize({bool resetResources = false, bool deleteData = false}) async {
+    await _init(resetResources, deleteData);
     await tester.pumpWidget(MyApp());
     await tester.pumpAndSettle();
 
@@ -77,7 +78,7 @@ abstract class BasePage {
     return CommonBottomSheet(tester);
   }
 
-  Future<void> _init(bool resetResources) async {
+  Future<void> _init(bool resetResources, bool deleteData) async {
     if (!initialized) {
       //This is required by app center
       WidgetsFlutterBinding.ensureInitialized();
@@ -91,6 +92,11 @@ abstract class BasePage {
 
     if (resetResources) {
       _resetResourcesVersion();
+    }
+
+    if (deleteData) {
+      final dataService = getIt<DataService>();
+      await dataService.deleteThemAll();
     }
 
     initialized = true;
