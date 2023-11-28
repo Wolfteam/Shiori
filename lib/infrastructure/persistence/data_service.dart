@@ -35,8 +35,7 @@ class DataServiceImpl implements DataService {
 
   bool _initialized = false;
 
-  final _initLock = Lock();
-  final _deleteAllLock = Lock();
+  final _dbLock = Lock();
 
   @override
   CalculatorAscMaterialsDataService get calculator => _calculator;
@@ -69,14 +68,16 @@ class DataServiceImpl implements DataService {
     _calculator = CalculatorAscMaterialsDataServiceImpl(genshinService, calculatorService, _inventory, resourceService);
   }
 
-  Future<void> _initServices() async {
-    await _calculator.init();
-    await _inventory.init();
-    await _builds.init();
-    await _notifications.init();
-    await _gameCodes.init();
-    await _tierList.init();
-    await _wishSimulator.init();
+  Future<void> _initServices() {
+    return Future.wait([
+      _calculator.init(),
+      _inventory.init(),
+      _builds.init(),
+      _notifications.init(),
+      _gameCodes.init(),
+      _tierList.init(),
+      _wishSimulator.init(),
+    ]);
   }
 
   Future<void> _init() async {
@@ -84,13 +85,13 @@ class DataServiceImpl implements DataService {
       return;
     }
     registerAdapters();
-    _initServices();
+    await _initServices();
     _initialized = true;
   }
 
   @override
   Future<void> init({String dir = 'shiori_data'}) async {
-    await _initLock.synchronized(() async {
+    await _dbLock.synchronized(() async {
       await Hive.initFlutter(dir);
       await _init();
     });
@@ -99,7 +100,7 @@ class DataServiceImpl implements DataService {
   @visibleForTesting
   @override
   Future<void> initForTests(String path, {bool registerAdapters = true}) async {
-    await _initLock.synchronized(() async {
+    await _dbLock.synchronized(() async {
       Hive.init(path);
       if (registerAdapters) {
         this.registerAdapters();
@@ -111,21 +112,23 @@ class DataServiceImpl implements DataService {
 
   @override
   Future<void> deleteThemAll() async {
-    await _deleteAllLock.synchronized(() async {
-      await _calculator.deleteThemAll();
-      await _inventory.deleteThemAll();
-      await _builds.deleteThemAll();
-      await _notifications.deleteThemAll();
-      await _gameCodes.deleteThemAll();
-      await _tierList.deleteThemAll();
-      await _wishSimulator.deleteThemAll();
+    await _dbLock.synchronized(() async {
+      await Future.wait([
+        _calculator.deleteThemAll(),
+        _inventory.deleteThemAll(),
+        _builds.deleteThemAll(),
+        _notifications.deleteThemAll(),
+        _gameCodes.deleteThemAll(),
+        _tierList.deleteThemAll(),
+        _wishSimulator.deleteThemAll(),
+      ]);
     });
   }
 
   @override
   @visibleForTesting
   Future<void> closeThemAll() async {
-    await _deleteAllLock.synchronized(() async {
+    await _dbLock.synchronized(() async {
       await Hive.close();
     });
 
