@@ -2,10 +2,12 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:infinite_listview/infinite_listview.dart';
 import 'package:shiori/domain/services/data_service.dart';
 import 'package:shiori/domain/services/settings_service.dart';
 import 'package:shiori/injection.dart';
 import 'package:shiori/main.dart';
+import 'package:shiori/presentation/shared/dialogs/number_picker_dialog.dart';
 import 'package:shiori/presentation/shared/shiori_icons.dart';
 import 'package:shiori/presentation/shared/utils/size_utils.dart';
 import 'package:shiori/presentation/shared/utils/toast_utils.dart';
@@ -132,6 +134,37 @@ abstract class BasePage {
     expect(menuItems, findsAtLeastNWidgets(index + 1));
 
     await tester.tap(menuItems.at(index));
+    await tester.pumpAndSettle();
+  }
+
+  Future<void> selectValueInNumberPickerDialog(int value, {bool scrollsFromBottomToTop = true, int maxIteration = 1000}) async {
+    //First scroll until value is visible
+    final double dy = scrollsFromBottomToTop ? -30 : 30;
+    final offset = Offset(0, dy);
+    final Finder scrollView = find.byType(InfiniteListView);
+    await tester.dragUntilVisible(
+      find.descendant(
+        of: scrollView,
+        matching: find.byWidgetPredicate((widget) => widget is Text && widget.data == '$value' && widget.style?.color == Colors.red),
+      ),
+      scrollView,
+      offset,
+      maxIteration: maxIteration,
+      duration: const Duration(milliseconds: 20),
+    );
+    await tester.pumpAndSettle();
+
+    //Get the current selected value to see how much do we have to keep scrolling
+    final Finder selectedTextFinder = find.descendant(
+      of: scrollView,
+      matching: find.byWidgetPredicate((widget) => widget is Text && widget.style?.color == Colors.red),
+    );
+    final Text selectedText = tester.firstWidget<Text>(selectedTextFinder);
+    final int selectedValue = int.parse(selectedText.data!);
+    final int diff = value - selectedValue;
+    expect(diff, isZero);
+
+    await tester.tap(find.descendant(of: find.byType(NumberPickerDialog), matching: find.byType(ElevatedButton)));
     await tester.pumpAndSettle();
   }
 }
