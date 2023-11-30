@@ -1,72 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:shiori/domain/enums/enums.dart';
-import 'package:shiori/presentation/calculator_asc_materials/widgets/add_edit_item_bottom_sheet.dart';
 import 'package:shiori/presentation/calculator_asc_materials/widgets/ascension_materials_summary.dart';
 import 'package:shiori/presentation/calculator_asc_materials/widgets/item_card.dart';
 import 'package:shiori/presentation/calculator_asc_materials/widgets/material_item.dart';
 import 'package:shiori/presentation/calculator_asc_materials/widgets/session_list_item.dart';
-import 'package:shiori/presentation/calculator_asc_materials/widgets/skill_item.dart';
-import 'package:shiori/presentation/characters/widgets/character_card.dart';
-import 'package:shiori/presentation/shared/bottom_sheets/bottom_sheet_title.dart';
 import 'package:shiori/presentation/shared/item_description_detail.dart';
-import 'package:shiori/presentation/shared/shiori_icons.dart';
-import 'package:shiori/presentation/weapons/widgets/weapon_card.dart';
 
 import '../extensions/widget_tester_extensions.dart';
 import '../views/views.dart';
 
 void main() {
-  Future<void> navigate(WidgetTester widgetTester) async {
-    final splashPage = SplashPage(widgetTester);
-    await splashPage.initialize(deleteData: true);
-    await splashPage.applyResourceUpdates();
-
-    final mainPage = MainTabPage(widgetTester);
-    await mainPage.closeChangelogDialog();
-    await mainPage.tapOnCalculatorAscMaterialsCard();
-  }
-
-  Future<void> createSession(String name, WidgetTester widgetTester) async {
-    //Tap on fab button
-    await widgetTester.tap(find.byType(FloatingActionButton));
-    await widgetTester.pumpAndSettle();
-
-    //Create a new session
-    await widgetTester.enterText(find.byType(TextField), name);
-    await widgetTester.pumpAndSettle();
-    await widgetTester.tap(find.byType(ElevatedButton));
-    await widgetTester.pumpAndSettle();
-  }
-
-  Future<void> deleteAll(WidgetTester widgetTester) async {
-    await widgetTester.tap(find.byIcon(Icons.clear_all));
-    await widgetTester.pumpAndSettle();
-    await widgetTester.tap(find.byType(ElevatedButton));
-    await widgetTester.pumpAndSettle();
-  }
-
-  Future<void> addItem(String name, bool isCharacter, WidgetTester widgetTester) async {
-    await widgetTester.tap(find.byType(FloatingActionButton));
-    await widgetTester.pumpAndSettle();
-
-    await widgetTester.tap(find.byIcon(isCharacter ? Icons.people : Shiori.crossed_swords));
-    await widgetTester.pumpAndSettle();
-
-    final DetailPage page = DetailPage(widgetTester);
-    await page.enterSearchText(name);
-    await widgetTester.tap(find.byType(isCharacter ? CharacterCard : WeaponCard));
-    await widgetTester.pumpAndSettle();
-
-    await widgetTester.tap(find.byType(ElevatedButton));
-    await widgetTester.pumpAndSettle();
-  }
-
   group('Calculator ascension materials page', () {
     testWidgets('creates a session and deletes it', (widgetTester) async {
-      await navigate(widgetTester);
+      final page = CalculatorAscMaterialsPage(widgetTester);
+      await page.navigate();
 
-      await createSession('Will be deleted', widgetTester);
+      await page.createSession('Will be deleted');
 
       //Swipe to show the delete button
       await widgetTester.drag(find.byType(SessionListItem), Offset(BasePage.horizontalDragOffset.dx.abs(), 0));
@@ -83,9 +33,10 @@ void main() {
     testWidgets('creates a session and edits it', (widgetTester) async {
       const String name = 'Will be updated';
       const String newName = 'xxxx';
-      await navigate(widgetTester);
+      final page = CalculatorAscMaterialsPage(widgetTester);
+      await page.navigate();
 
-      await createSession(name, widgetTester);
+      await page.createSession(name);
 
       //Swipe to show the edit button
       await widgetTester.drag(find.byType(SessionListItem), BasePage.horizontalDragOffset);
@@ -93,6 +44,7 @@ void main() {
       await widgetTester.tap(find.byIcon(Icons.edit));
       await widgetTester.pumpAndSettle();
 
+      //Change the session's name
       await widgetTester.enterText(find.byType(TextField), newName);
       await widgetTester.pumpAndSettle();
       await widgetTester.tap(find.byType(ElevatedButton));
@@ -102,12 +54,13 @@ void main() {
     });
 
     testWidgets('creates 2 sessions and deletes them all', (widgetTester) async {
-      await navigate(widgetTester);
+      final page = CalculatorAscMaterialsPage(widgetTester);
+      await page.navigate();
 
-      await createSession('A', widgetTester);
-      await createSession('B', widgetTester);
+      await page.createSession('A');
+      await page.createSession('B');
 
-      await deleteAll(widgetTester);
+      await page.deleteAll();
 
       expect(find.byType(SessionListItem), findsNothing);
     });
@@ -115,11 +68,12 @@ void main() {
     testWidgets('creates 2 sessions which gets reordered', (widgetTester) async {
       const String sessionA = 'Session A';
       const String sessionB = 'Session B';
-      await navigate(widgetTester);
+      final page = CalculatorAscMaterialsPage(widgetTester);
+      await page.navigate();
 
       //Create sessions so that the order is B,A
-      await createSession(sessionB, widgetTester);
-      await createSession(sessionA, widgetTester);
+      await page.createSession(sessionB);
+      await page.createSession(sessionA);
 
       //Tap the reorder icon
       await widgetTester.tap(find.byIcon(Icons.unfold_more));
@@ -141,25 +95,20 @@ void main() {
       final Finder sessionsFinder = find.byType(SessionListItem);
       for (int i = 0; i < expected.length; i++) {
         final String name = expected[i];
-        await widgetTester.longPress(sessionsFinder.at(i));
-        await widgetTester.pumpAndSettle();
-        expect(find.widgetWithText(TextField, name), findsOneWidget);
-        await widgetTester.tap(find.byType(OutlinedButton));
-        await widgetTester.pumpAndSettle();
+        expect(find.descendant(of: sessionsFinder.at(i), matching: find.text(name)), findsOneWidget);
       }
     });
 
     testWidgets('create session, add a character and a weapon', (widgetTester) async {
       const String sessionName = 'Character&Weapon';
-      await navigate(widgetTester);
+      final page = CalculatorAscMaterialsPage(widgetTester);
+      await page.navigate();
 
-      await createSession(sessionName, widgetTester);
+      await page.createSession(sessionName);
+      await page.tapOnSession(sessionName);
 
-      await widgetTester.tap(find.text(sessionName));
-      await widgetTester.pumpAndSettle();
-
-      await addItem('Nahida', true, widgetTester);
-      await addItem('Sacrificial Sword', false, widgetTester);
+      await page.addItem('Nahida', true);
+      await page.addItem('Sacrificial Sword', false);
 
       expect(find.byType(ItemCard), findsNWidgets(2));
       expect(find.byType(AscensionMaterialsSummaryWidget), findsAtLeastNWidgets(1));
@@ -167,17 +116,16 @@ void main() {
 
     testWidgets('create session, add a character, a weapon and clear items', (widgetTester) async {
       const String sessionName = 'Clear items';
-      await navigate(widgetTester);
+      final page = CalculatorAscMaterialsPage(widgetTester);
+      await page.navigate();
 
-      await createSession(sessionName, widgetTester);
+      await page.createSession(sessionName);
+      await page.tapOnSession(sessionName);
 
-      await widgetTester.tap(find.text(sessionName));
-      await widgetTester.pumpAndSettle();
+      await page.addItem('Nahida', true);
+      await page.addItem('Sacrificial Sword', false);
 
-      await addItem('Nahida', true, widgetTester);
-      await addItem('Sacrificial Sword', false, widgetTester);
-
-      await deleteAll(widgetTester);
+      await page.deleteAll();
 
       expect(find.byType(ItemCard), findsNothing);
       expect(find.byType(AscensionMaterialsSummaryWidget), findsNothing);
@@ -187,16 +135,15 @@ void main() {
       const String sessionName = 'Reorder items';
       const String charNameA = 'Keqing';
       const String charNameB = 'Nahida';
-      await navigate(widgetTester);
+      final page = CalculatorAscMaterialsPage(widgetTester);
+      await page.navigate();
 
-      await createSession(sessionName, widgetTester);
-
-      await widgetTester.tap(find.text(sessionName));
-      await widgetTester.pumpAndSettle();
+      await page.createSession(sessionName);
+      await page.tapOnSession(sessionName);
 
       //Create items
-      await addItem(charNameA, true, widgetTester);
-      await addItem(charNameB, true, widgetTester);
+      await page.addItem(charNameA, true);
+      await page.addItem(charNameB, true);
 
       //Tap the reorder icon
       await widgetTester.tap(find.byIcon(Icons.unfold_more));
@@ -220,11 +167,12 @@ void main() {
       final Finder itemsFinder = find.byType(ItemCard);
       for (int i = 0; i < expected.length; i++) {
         final String name = expected[i];
-        await widgetTester.tap(itemsFinder.at(i));
-        await widgetTester.pumpAndSettle();
-        expect(find.descendant(of: find.byType(BottomSheetTitle), matching: find.textContaining(name)), findsOneWidget);
-        await widgetTester.tap(find.byType(ElevatedButton));
-        await widgetTester.pumpAndSettle();
+        expect(find.descendant(of: itemsFinder.at(i), matching: find.text(name)), findsOneWidget);
+        // await widgetTester.tap(itemsFinder.at(i));
+        // await widgetTester.pumpAndSettle();
+        // expect(find.descendant(of: find.byType(BottomSheetTitle), matching: find.textContaining(name)), findsOneWidget);
+        // await widgetTester.tap(find.byType(ElevatedButton));
+        // await widgetTester.pumpAndSettle();
       }
     });
 
@@ -232,29 +180,24 @@ void main() {
       const String sessionName = 'Mark items as inactive';
       const String charNameA = 'Keqing';
       const String charNameB = 'Nahida';
-      await navigate(widgetTester);
+      final page = CalculatorAscMaterialsPage(widgetTester);
+      await page.navigate();
 
-      await createSession(sessionName, widgetTester);
+      await page.createSession(sessionName);
+      await page.tapOnSession(sessionName);
 
-      await widgetTester.tap(find.text(sessionName));
-      await widgetTester.pumpAndSettle();
-
-      await addItem(charNameA, true, widgetTester);
-      await addItem(charNameB, true, widgetTester);
+      await page.addItem(charNameA, true);
+      await page.addItem(charNameB, true);
 
       final expected = <String>[
         charNameA,
         charNameB,
       ];
 
-      final Finder itemsFinder = find.byType(ItemCard);
       for (int i = 0; i < expected.length; i++) {
         final String name = expected[i];
-        await widgetTester.tap(itemsFinder.at(i));
-        await widgetTester.pumpAndSettle();
-        expect(find.descendant(of: find.byType(BottomSheetTitle), matching: find.textContaining(name)), findsOneWidget);
-        await widgetTester.tap(find.widgetWithText(OutlinedButton, 'Inactive'));
-        await widgetTester.pumpAndSettle();
+        final CalculatorAscMaterialsItemBottomSheet sheet = await page.tapOnItem(name);
+        await sheet.markItemAsInactive(name);
       }
 
       expect(find.byType(AscensionMaterialsSummaryWidget), findsNothing);
@@ -264,15 +207,14 @@ void main() {
       const String sessionName = 'Delete items one by one';
       const String charNameA = 'Keqing';
       const String charNameB = 'Nahida';
-      await navigate(widgetTester);
+      final page = CalculatorAscMaterialsPage(widgetTester);
+      await page.navigate();
 
-      await createSession(sessionName, widgetTester);
+      await page.createSession(sessionName);
+      await page.tapOnSession(sessionName);
 
-      await widgetTester.tap(find.text(sessionName));
-      await widgetTester.pumpAndSettle();
-
-      await addItem(charNameA, true, widgetTester);
-      await addItem(charNameB, true, widgetTester);
+      await page.addItem(charNameA, true);
+      await page.addItem(charNameB, true);
 
       final expected = <String>[
         charNameA,
@@ -281,11 +223,8 @@ void main() {
 
       for (int i = 0; i < expected.length; i++) {
         final String name = expected[i];
-        await widgetTester.tap(find.widgetWithText(ItemCard, name).first);
-        await widgetTester.pumpAndSettle();
-        expect(find.descendant(of: find.byType(BottomSheetTitle), matching: find.textContaining(name)), findsOneWidget);
-        await widgetTester.tap(find.widgetWithText(OutlinedButton, 'Delete'));
-        await widgetTester.pumpAndSettle();
+        final CalculatorAscMaterialsItemBottomSheet sheet = await page.tapOnItem(name);
+        await sheet.deleteItem(name);
       }
 
       expect(find.byType(ItemCard), findsNothing);
@@ -296,46 +235,26 @@ void main() {
       const String sessionName = 'Updates 1 item';
       const String charNameA = 'Keqing';
       const String charNameB = 'Nahida';
-      await navigate(widgetTester);
+      final page = CalculatorAscMaterialsPage(widgetTester);
+      await page.navigate();
 
-      await createSession(sessionName, widgetTester);
+      await page.createSession(sessionName);
+      await page.tapOnSession(sessionName);
 
-      await widgetTester.tap(find.text(sessionName));
-      await widgetTester.pumpAndSettle();
-
-      await addItem(charNameA, true, widgetTester);
-      await addItem(charNameB, true, widgetTester);
+      await page.addItem(charNameA, true);
+      await page.addItem(charNameB, true);
 
       //Mark the last one as inactive
-      await widgetTester.tap(find.widgetWithText(ItemCard, charNameB));
-      await widgetTester.pumpAndSettle();
-      expect(find.descendant(of: find.byType(BottomSheetTitle), matching: find.textContaining(charNameB)), findsOneWidget);
-      await widgetTester.tap(find.widgetWithText(OutlinedButton, 'Inactive'));
-      await widgetTester.pumpAndSettle();
+      final CalculatorAscMaterialsItemBottomSheet sheetB = await page.tapOnItem(charNameB);
+      await sheetB.markItemAsInactive(charNameB);
 
       //Update the first one with expected values
-      await widgetTester.tap(find.widgetWithText(ItemCard, charNameA));
-      await widgetTester.pumpAndSettle();
-
-      await widgetTester.tap(find.text('Current: 20'));
-      await widgetTester.pumpAndSettle();
-
-      final DetailPage page = DetailPage(widgetTester);
-      await page.selectValueInNumberPickerDialog(80);
-
-      final Finder skillsFinder = find.byType(SkillItem);
-      expect(skillsFinder, findsNWidgets(3));
-
-      for (int i = 0; i < 3; i++) {
-        final Finder skillItemFinder = skillsFinder.at(i);
-        for (int j = 0; j < 8; j++) {
-          await widgetTester.tap(find.descendant(of: skillItemFinder, matching: find.byIcon(Icons.add)).first);
-          await widgetTester.pumpAndSettle();
-        }
-      }
-
-      await widgetTester.tap(find.descendant(of: find.byType(AddEditItemBottomSheet), matching: find.byType(ElevatedButton)));
-      await widgetTester.pumpAndSettle();
+      final CalculatorAscMaterialsItemBottomSheet sheetA = await page.tapOnItem(charNameA);
+      await sheetA.setItemLevel(80);
+      await sheetA.setSkillLevel(0, 8);
+      await sheetA.setSkillLevel(1, 8);
+      await sheetA.setSkillLevel(2, 8);
+      await sheetA.closeAddEditItemBottomSheet();
 
       //Check the obtained materials
       final Finder summaryDescriptionFinder = find.widgetWithText(ItemDescriptionDetail, 'Summary');
@@ -375,6 +294,51 @@ void main() {
       }
 
       expect(count, equals(expected.length));
+    });
+
+    testWidgets('create session, add item using materials from inventory and update inventory quantity', (widgetTester) async {
+      const String sessionName = 'Uses mat. from inv.';
+      const String charNameA = 'Keqing';
+      const String requiredQuantity = '7.005.900';
+      const String newInventoryQuantity = '1.000.000';
+      final page = CalculatorAscMaterialsPage(widgetTester);
+      await page.navigate();
+
+      await page.createSession(sessionName);
+      await page.tapOnSession(sessionName);
+
+      await page.addItem(charNameA, true, usesMaterialFromInventory: true);
+
+      final Finder summaryDescriptionFinder = find.widgetWithText(ItemDescriptionDetail, 'Summary');
+      expect(summaryDescriptionFinder, findsOneWidget);
+      await widgetTester.dragUntilVisible(
+        find.byWidgetPredicate((widget) => widget is AscensionMaterialsSummaryWidget && widget.summary.type == AscensionMaterialSummaryType.currency),
+        summaryDescriptionFinder,
+        BasePage.verticalDragOffset,
+      );
+
+      //Tap on the Mora item
+      expect(find.widgetWithText(MaterialItem, '0 / $requiredQuantity'), findsOneWidget);
+      final Finder moraFinder = find.descendant(
+        of: find.byWidgetPredicate(
+          (widget) => widget is AscensionMaterialsSummaryWidget && widget.summary.type == AscensionMaterialSummaryType.currency,
+        ),
+        matching: find.byType(MaterialItem),
+      );
+      await widgetTester.tap(moraFinder);
+      await widgetTester.pumpAndSettle();
+
+      //Tap on the Update button
+      await widgetTester.tap(find.byType(ListTile).last);
+      await widgetTester.pumpAndSettle();
+
+      //Enter the new quantity
+      await widgetTester.enterText(find.byType(TextField), newInventoryQuantity.replaceAll('.', ''));
+      await widgetTester.pumpAndSettle();
+      await widgetTester.tap(find.byType(ElevatedButton));
+      await widgetTester.pumpAndSettle();
+
+      expect(find.widgetWithText(MaterialItem, '$newInventoryQuantity / $requiredQuantity'), findsOneWidget);
     });
   });
 }
