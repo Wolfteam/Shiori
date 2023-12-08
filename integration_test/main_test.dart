@@ -2,6 +2,7 @@ import 'tests/artifacts_page_test.dart' as artifacts_test;
 import 'tests/banner_history_page_test.dart' as banner_history_test;
 import 'tests/calculator_asc_materials_page_test.dart' as calculator_asc_materials_test;
 import 'tests/characters_page_test.dart' as characters_test;
+import 'tests/custom_builds_page_test.dart' as custom_builds_test;
 import 'tests/elements_page_test.dart' as elements_test;
 import 'tests/inventory_page_test.dart' as inventory_tests;
 import 'tests/main_tab_page_test.dart' as main_tab_test;
@@ -26,4 +27,5 @@ void main() {
   banner_history_test.main();
   calculator_asc_materials_test.main();
   notifications_page.main();
+  custom_builds_test.main();
 }
