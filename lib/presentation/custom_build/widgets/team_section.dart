@@ -110,7 +110,6 @@ class TeamSection extends StatelessWidget {
                 ...state.teamCharacters.map(
                   (e) => TeamCharacterRow(
                     character: e,
-                    teamCount: state.teamCharacters.length,
                     color: color,
                     readyToShare: state.readyForScreenshot,
                   ),
