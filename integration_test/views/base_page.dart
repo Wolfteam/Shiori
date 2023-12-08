@@ -3,11 +3,14 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:infinite_listview/infinite_listview.dart';
+import 'package:shiori/domain/extensions/string_extensions.dart';
 import 'package:shiori/domain/services/data_service.dart';
 import 'package:shiori/domain/services/settings_service.dart';
 import 'package:shiori/injection.dart';
 import 'package:shiori/main.dart';
+import 'package:shiori/presentation/shared/common_dropdown_button.dart';
 import 'package:shiori/presentation/shared/dialogs/number_picker_dialog.dart';
+import 'package:shiori/presentation/shared/dialogs/select_enum_dialog.dart';
 import 'package:shiori/presentation/shared/shiori_icons.dart';
 import 'package:shiori/presentation/shared/utils/size_utils.dart';
 import 'package:shiori/presentation/shared/utils/toast_utils.dart';
@@ -23,6 +26,7 @@ abstract class BasePage {
 
   static const verticalDragOffset = Offset(0, -50);
   static const horizontalDragOffset = Offset(-800, 0);
+  static const threeHundredMsDuration = Duration(milliseconds: 300);
 
   final WidgetTester tester;
 
@@ -177,6 +181,46 @@ abstract class BasePage {
     }
     final offset = Offset(dx, 0);
     await tester.drag(itemFinder, offset);
+    await tester.pumpAndSettle();
+  }
+
+  Future<void> tapOnCommonDropdownButton<TEnum>() async {
+    await tester.tap(find.byType(CommonDropdownButton<TEnum>));
+    await tester.pumpAndSettle(threeHundredMsDuration);
+  }
+
+  Future<void> selectOptionFromDropdownButtonWithTitle<TEnum>({int? index, String? name}) async {
+    assert(index != null || name.isNotNullEmptyOrWhitespace);
+
+    if (name.isNotNullEmptyOrWhitespace) {
+      final Finder menuItemFinder = find.widgetWithText(DropdownMenuItem<TEnum>, name!);
+      await tester.tap(menuItemFinder);
+      await tester.pumpAndSettle();
+      return;
+    }
+
+    final Finder menuItemFinder = find.byType(DropdownMenuItem<TEnum>).at(index!);
+    await tester.tap(menuItemFinder);
+    await tester.pumpAndSettle();
+  }
+
+  Future<void> selectEnumDialogOption<TEnum>(int index) async {
+    final key = Key('$index');
+    await tester.dragUntilVisible(
+      find.byKey(key),
+      find.descendant(of: find.byType(SelectEnumDialog<TEnum>), matching: find.byType(ListView)),
+      verticalDragOffset,
+    );
+
+    await tester.tap(find.byKey(key));
+    await tester.pumpAndSettle();
+
+    await tester.tap(find.byType(ElevatedButton));
+    await tester.pumpAndSettle();
+  }
+
+  Future<void> tapOnBackButton() async {
+    await tester.tap(find.byType(BackButton));
     await tester.pumpAndSettle();
   }
 }

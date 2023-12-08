@@ -2,9 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/presentation/notifications/widgets/forms/notification_circle_item.dart';
-import 'package:shiori/presentation/notifications/widgets/forms/notification_dropdown_type.dart';
 import 'package:shiori/presentation/notifications/widgets/items/notification_list_tile.dart';
-import 'package:shiori/presentation/shared/dropdown_button_with_title.dart';
 import 'package:shiori/presentation/shared/images/circle_item.dart';
 
 import 'views.dart';
@@ -78,8 +76,7 @@ class NotificationBottomSheet extends CommonBottomSheet {
   }
 
   Future<void> _selectNotificationType(AppNotificationType type) async {
-    await tester.tap(find.byType(NotificationDropdownType));
-    await tester.pumpAndSettle();
+    await tapOnCommonDropdownButton<AppNotificationType>();
 
     final String name = switch (type) {
       AppNotificationType.resin => 'Resin',
@@ -94,9 +91,7 @@ class NotificationBottomSheet extends CommonBottomSheet {
       AppNotificationType.dailyCheckIn => 'Daily Check-In',
     };
 
-    final Finder menuItemFinder = find.widgetWithText(DropdownMenuItem<AppNotificationType>, name);
-    await tester.tap(menuItemFinder);
-    await tester.pumpAndSettle();
+    await selectOptionFromDropdownButtonWithTitle<AppNotificationType>(name: name);
   }
 
   Future<ResinNotificationBottomSheet> selectResinType() async {
@@ -149,16 +144,6 @@ class NotificationBottomSheet extends CommonBottomSheet {
     return DailyCheckInNotificationBottomSheet(tester);
   }
 
-  @protected
-  Future<void> selectOptionFromDropdownButtonWithTitle<TEnum>(int index) async {
-    await tester.tap(find.byType(DropdownButtonWithTitle<TEnum>));
-    await tester.pumpAndSettle();
-
-    final Finder menuItemFinder = find.byType(DropdownMenuItem<TEnum>).at(index);
-    await tester.tap(menuItemFinder);
-    await tester.pumpAndSettle();
-  }
-
   Future<void> save() async {
     await tester.tap(find.byType(ElevatedButton));
     await tester.pumpAndSettle();
@@ -180,6 +165,8 @@ class ExpeditionNotificationBottomSheet extends NotificationBottomSheet {
   const ExpeditionNotificationBottomSheet(super.tester);
 
   Future<void> setTime(ExpeditionTimeType type) async {
+    await tapOnCommonDropdownButton<ExpeditionTimeType>();
+
     final int index = switch (type) {
       ExpeditionTimeType.fourHours => 2,
       ExpeditionTimeType.eightHours => 3,
@@ -187,7 +174,7 @@ class ExpeditionNotificationBottomSheet extends NotificationBottomSheet {
       ExpeditionTimeType.twentyHours => 1,
     };
 
-    await selectOptionFromDropdownButtonWithTitle<ExpeditionTimeType>(index);
+    await selectOptionFromDropdownButtonWithTitle<ExpeditionTimeType>(index: index);
   }
 }
 
@@ -199,12 +186,14 @@ class FarmingArtifactsNotificationBottomSheet extends NotificationBottomSheet {
   const FarmingArtifactsNotificationBottomSheet(super.tester);
 
   Future<void> setTime(ArtifactFarmingTimeType type) async {
+    await tapOnCommonDropdownButton<ArtifactFarmingTimeType>();
+
     final int index = switch (type) {
       ArtifactFarmingTimeType.twelveHours => 0,
       ArtifactFarmingTimeType.twentyFourHours => 1,
     };
 
-    await selectOptionFromDropdownButtonWithTitle<ArtifactFarmingTimeType>(index);
+    await selectOptionFromDropdownButtonWithTitle<ArtifactFarmingTimeType>(index: index);
   }
 }
 
@@ -216,13 +205,15 @@ class FurnitureNotificationBottomSheet extends NotificationBottomSheet {
   const FurnitureNotificationBottomSheet(super.tester);
 
   Future<void> setTime(FurnitureCraftingTimeType type) async {
+    await tapOnCommonDropdownButton<FurnitureCraftingTimeType>();
+
     final int index = switch (type) {
       FurnitureCraftingTimeType.twelveHours => 0,
       FurnitureCraftingTimeType.fourteenHours => 1,
       FurnitureCraftingTimeType.sixteenHours => 2,
     };
 
-    await selectOptionFromDropdownButtonWithTitle<FurnitureCraftingTimeType>(index);
+    await selectOptionFromDropdownButtonWithTitle<FurnitureCraftingTimeType>(index: index);
   }
 }
 
@@ -237,12 +228,13 @@ class RealmCurrencyNotificationBottomSheet extends NotificationBottomSheet {
   }
 
   Future<void> setRealmRank(RealmRankType type) async {
+    await tapOnCommonDropdownButton<RealmRankType>();
     final int index = type.index;
-    await selectOptionFromDropdownButtonWithTitle<RealmRankType>(index);
+    await selectOptionFromDropdownButtonWithTitle<RealmRankType>(index: index);
   }
 
   Future<void> setTrustRank(int index) async {
-    await selectOptionFromDropdownButtonWithTitle<int>(index);
+    await selectOptionFromDropdownButtonWithTitle<int>(index: index);
   }
 }
 
@@ -254,6 +246,8 @@ class CustomNotificationBottomSheet extends NotificationBottomSheet {
   const CustomNotificationBottomSheet(super.tester);
 
   Future<void> setItemType(AppNotificationItemType type) async {
+    await tapOnCommonDropdownButton<AppNotificationItemType>();
+
     final index = switch (type) {
       AppNotificationItemType.artifact => 0,
       AppNotificationItemType.character => 1,
@@ -262,7 +256,7 @@ class CustomNotificationBottomSheet extends NotificationBottomSheet {
       AppNotificationItemType.weapon => 4,
     };
 
-    await selectOptionFromDropdownButtonWithTitle<AppNotificationItemType>(index);
+    await selectOptionFromDropdownButtonWithTitle<AppNotificationItemType>(index: index);
   }
 }
 
