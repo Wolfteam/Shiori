@@ -17,7 +17,7 @@ enum _TabType {
 void main() {
   Future<void> navigate(WidgetTester widgetTester, _TabType tabType) async {
     final splashPage = SplashPage(widgetTester);
-    await splashPage.initialize();
+    await splashPage.initialize(deleteData: true);
     await splashPage.applyResourceUpdates();
 
     final mainPage = MainTabPage(widgetTester);

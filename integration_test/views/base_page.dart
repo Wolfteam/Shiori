@@ -137,7 +137,7 @@ abstract class BasePage {
     await tester.pumpAndSettle();
   }
 
-  Future<void> selectValueInNumberPickerDialog(int value, {bool scrollsFromBottomToTop = true, int maxIteration = 1000}) async {
+  Future<void> selectValueInNumberPickerDialog(dynamic value, {bool scrollsFromBottomToTop = true, int maxIteration = 1000}) async {
     //First scroll until value is visible
     final double dy = scrollsFromBottomToTop ? -30 : 30;
     final offset = Offset(0, dy);
@@ -154,17 +154,29 @@ abstract class BasePage {
     );
     await tester.pumpAndSettle();
 
-    //Get the current selected value to see how much do we have to keep scrolling
-    final Finder selectedTextFinder = find.descendant(
-      of: scrollView,
-      matching: find.byWidgetPredicate((widget) => widget is Text && widget.style?.color == Colors.red),
-    );
-    final Text selectedText = tester.firstWidget<Text>(selectedTextFinder);
-    final int selectedValue = int.parse(selectedText.data!);
-    final int diff = value - selectedValue;
-    expect(diff, isZero);
+    if (value is int) {
+      //Get the current selected value to see how much do we have to keep scrolling
+      final Finder selectedTextFinder = find.descendant(
+        of: scrollView,
+        matching: find.byWidgetPredicate((widget) => widget is Text && widget.style?.color == Colors.red),
+      );
+      final Text selectedText = tester.firstWidget<Text>(selectedTextFinder);
+      final int selectedValue = int.parse(selectedText.data!);
+      final int diff = value - selectedValue;
+      expect(diff, isZero);
+    }
 
     await tester.tap(find.descendant(of: find.byType(NumberPickerDialog), matching: find.byType(ElevatedButton)));
+    await tester.pumpAndSettle();
+  }
+
+  Future<void> swipeHorizontallyOnItem(Finder itemFinder, {bool rightToLeft = false}) async {
+    double dx = BasePage.horizontalDragOffset.dx;
+    if (!rightToLeft) {
+      dx = dx.abs();
+    }
+    final offset = Offset(dx, 0);
+    await tester.drag(itemFinder, offset);
     await tester.pumpAndSettle();
   }
 }
