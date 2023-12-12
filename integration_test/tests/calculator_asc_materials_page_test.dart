@@ -80,7 +80,7 @@ void main() {
       await widgetTester.pumpAndSettle();
 
       //Drag A to B position
-      await widgetTester.doAppDrag(find.textContaining('#2'), find.textContaining('#1'));
+      await widgetTester.doAppDragFromBottomRight(find.textContaining('#2'), find.textContaining('#1'));
 
       //Apply changes
       await widgetTester.tap(find.byType(ElevatedButton));
@@ -150,7 +150,7 @@ void main() {
       await widgetTester.pumpAndSettle();
 
       //Drag Nahida to Keqing's position
-      await widgetTester.doAppDrag(find.textContaining('#2'), find.textContaining('#1'));
+      await widgetTester.doAppDragFromBottomRight(find.textContaining('#2'), find.textContaining('#1'));
 
       //Apply changes
       await widgetTester.tap(find.byType(ElevatedButton));

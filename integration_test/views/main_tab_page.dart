@@ -401,7 +401,15 @@ class MainTabPage extends BasePage {
     }
 
     final Finder horizontalScrollViewFinder = find.ancestor(of: find.byType(verticalType), matching: find.byType(ListView));
-    await tester.dragUntilVisible(find.byType(horizontalType), horizontalScrollViewFinder, BasePage.horizontalDragOffset);
+    expect(horizontalScrollViewFinder, findsOneWidget);
+    final horizontalListView = tester.widget<ListView>(horizontalScrollViewFinder);
+
+    await tester.dragUntilVisible(
+      find.byType(horizontalType),
+      find.byWidget(horizontalListView),
+      BasePage.horizontalDragOffset,
+      maxIteration: 1000,
+    );
     await tester.pumpAndSettle();
   }
 }
