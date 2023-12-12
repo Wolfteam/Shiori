@@ -59,18 +59,29 @@ extension PumpUntilFound on WidgetTester {
     return _pumpUntil(finder, timeout: timeout, untilFound: false);
   }
 
-  Future<void> doAppDrag(Finder from, Finder to) async {
+  Future<void> doAppDragFromBottomRight(Finder from, Finder to) async {
     //We get the bottom right cause on Desktop platforms the drag and drop will only work on the icon which
     //is located at the end
     final Offset fromLocation = getBottomRight(from);
     final Offset toLocation = getBottomRight(to);
 
+    return _doAppDrag(fromLocation, toLocation);
+  }
+
+  Future<void> doAppDragFromCenter(Finder from, Finder to) async {
+    final Offset fromLocation = getCenter(from);
+    final Offset toLocation = getCenter(to);
+
+    return _doAppDrag(fromLocation, toLocation);
+  }
+
+  Future<void> _doAppDrag(Offset from, Offset to) async {
     //Start a drag (down) gesture and keep sending frames
-    final TestGesture gesture = await startGesture(fromLocation);
+    final TestGesture gesture = await startGesture(from);
     await pump(kLongPressTimeout + kPressTimeout);
 
     //Move to the expected location
-    await gesture.moveTo(toLocation, timeStamp: kLongPressTimeout);
+    await gesture.moveTo(to, timeStamp: kLongPressTimeout);
     await pump();
 
     //Stop the gesture
