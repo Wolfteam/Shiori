@@ -5,6 +5,7 @@ import 'tests/characters_page_test.dart' as characters_test;
 import 'tests/charts_page_test.dart' as charts_page_test;
 import 'tests/custom_builds_page_test.dart' as custom_builds_test;
 import 'tests/elements_page_test.dart' as elements_test;
+import 'tests/game_codes_page_test.dart' as game_codes_test;
 import 'tests/inventory_page_test.dart' as inventory_tests;
 import 'tests/main_tab_page_test.dart' as main_tab_test;
 import 'tests/materials_page_test.dart' as materials_test;
@@ -32,4 +33,5 @@ void main() {
   custom_builds_test.main();
   charts_page_test.main();
   tier_list_test.main();
+  game_codes_test.main();
 }

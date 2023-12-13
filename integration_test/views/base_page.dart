@@ -21,6 +21,8 @@ import 'common_bottom_sheet.dart';
 
 const Key toastKey = Key('toast-body');
 
+typedef ConfigureSettingsCallBack = Future<void> Function(SettingsService);
+
 abstract class BasePage {
   static bool initialized = false;
 
@@ -32,8 +34,16 @@ abstract class BasePage {
 
   const BasePage(this.tester);
 
-  Future<BasePage> initialize({bool resetResources = false, bool deleteData = false}) async {
+  Future<BasePage> initialize({
+    bool resetResources = false,
+    bool deleteData = false,
+    ConfigureSettingsCallBack? configureSettingsCallBack,
+  }) async {
     await _init(resetResources, deleteData);
+    if (configureSettingsCallBack != null) {
+      await configureSettingsCallBack(getIt<SettingsService>());
+    }
+
     await tester.pumpWidget(MyApp());
     await tester.pumpAndSettle();
 

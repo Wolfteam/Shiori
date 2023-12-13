@@ -65,17 +65,17 @@ extension PumpUntilFound on WidgetTester {
     final Offset fromLocation = getBottomRight(from);
     final Offset toLocation = getBottomRight(to);
 
-    return _doAppDrag(fromLocation, toLocation);
+    return doAppDragFromLocation(fromLocation, toLocation);
   }
 
   Future<void> doAppDragFromCenter(Finder from, Finder to) async {
     final Offset fromLocation = getCenter(from);
     final Offset toLocation = getCenter(to);
 
-    return _doAppDrag(fromLocation, toLocation);
+    return doAppDragFromLocation(fromLocation, toLocation);
   }
 
-  Future<void> _doAppDrag(Offset from, Offset to) async {
+  Future<void> doAppDragFromLocation(Offset from, Offset to) async {
     //Start a drag (down) gesture and keep sending frames
     final TestGesture gesture = await startGesture(from);
     await pump(kLongPressTimeout + kPressTimeout);
