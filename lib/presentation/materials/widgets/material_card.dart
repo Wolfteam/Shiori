@@ -133,9 +133,13 @@ class MaterialCard extends StatelessWidget {
                             borderRadius: BorderRadius.circular(10),
                             color: theme.colorScheme.secondary.withOpacity(0.8),
                           ),
-                          child: Text(
-                            ' - ${CurrencyUtils.formatNumber(usedQuantity)} ',
-                            style: theme.textTheme.titleSmall!.copyWith(color: Colors.white),
+                          child: Tooltip(
+                            message: ' - ${CurrencyUtils.formatNumber(usedQuantity)}',
+                            child: Text(
+                              ' - ${CurrencyUtils.formatNumber(usedQuantity)} ',
+                              overflow: TextOverflow.ellipsis,
+                              style: theme.textTheme.titleSmall!.copyWith(color: Colors.white),
+                            ),
                           ),
                         ),
                       ),
@@ -147,6 +151,7 @@ class MaterialCard extends StatelessWidget {
                   margin: const EdgeInsets.only(bottom: 5),
                   child: Text(
                     CurrencyUtils.formatNumber(quantity),
+                    overflow: TextOverflow.ellipsis,
                     style: theme.textTheme.titleSmall!.copyWith(color: Colors.white),
                   ),
                 ),
@@ -198,11 +203,12 @@ class MaterialCard extends StatelessWidget {
 
   Future<void> _showUsedItemsDialog(BuildContext context) async {
     final s = S.of(context);
+    final used = CurrencyUtils.formatNumber(usedQuantity);
     await showDialog<int>(
       context: context,
       builder: (_) => AlertDialog(
         title: Text(s.usedItem),
-        content: Text(s.itemIsBeingUsedOnACalculation(quantity)),
+        content: Text(s.itemIsBeingUsedOnACalculation(used)),
         actions: [
           ElevatedButton(
             onPressed: () => Navigator.of(context).pop(),

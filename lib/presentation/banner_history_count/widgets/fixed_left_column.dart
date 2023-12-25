@@ -113,9 +113,9 @@ class _ItemCard extends StatelessWidget {
               Column(
                 children: [
                   if (type == BannerHistoryItemType.character)
-                    CircleCharacter(itemKey: itemKey, image: image, radius: 45)
+                    AbsorbPointer(child: CircleCharacter(itemKey: itemKey, image: image, radius: 45))
                   else
-                    CircleWeapon(itemKey: itemKey, image: image, radius: 45),
+                    AbsorbPointer(child: CircleWeapon(itemKey: itemKey, image: image, radius: 45)),
                   Tooltip(
                     message: name,
                     child: Text(

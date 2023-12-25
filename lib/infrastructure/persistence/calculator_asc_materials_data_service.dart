@@ -89,29 +89,31 @@ class CalculatorAscMaterialsDataServiceImpl implements CalculatorAscMaterialsDat
       key: session.id,
       name: session.name,
       position: session.position,
+      showMaterialUsage: session.showMaterialUsage ?? false,
       numberOfCharacters: numberOfCharacters,
       numberOfWeapons: numberOfWeapons,
     );
   }
 
   @override
-  Future<CalculatorSessionModel> createSession(String name, int position) async {
+  Future<CalculatorSessionModel> createSession(String name, int position, bool showMaterialUsage) async {
     Check.notEmpty(name, 'name');
     Check.greaterThanOrEqualToZero(position, 'position');
 
-    final session = CalculatorSession(name, position);
+    final session = CalculatorSession(name, position, showMaterialUsage);
     final key = await _sessionBox.add(session);
     return CalculatorSessionModel(
       key: key,
       name: name,
       position: position,
+      showMaterialUsage: showMaterialUsage,
       numberOfCharacters: 0,
       numberOfWeapons: 0,
     );
   }
 
   @override
-  Future<CalculatorSessionModel> updateSession(int sessionKey, String name) async {
+  Future<CalculatorSessionModel> updateSession(int sessionKey, String name, bool showMaterialUsage) async {
     Check.greaterThanOrEqualToZero(sessionKey, 'sessionKey');
     Check.notEmpty(name, 'name');
 
@@ -121,6 +123,7 @@ class CalculatorAscMaterialsDataServiceImpl implements CalculatorAscMaterialsDat
     }
 
     session.name = name;
+    session.showMaterialUsage = showMaterialUsage;
     await session.save();
 
     return getSession(sessionKey);
@@ -406,7 +409,7 @@ class CalculatorAscMaterialsDataServiceImpl implements CalculatorAscMaterialsDat
   Future<void> restoreFromBackup(List<BackupCalculatorAscMaterialsSessionModel> data) async {
     await deleteThemAll();
     for (final session in data) {
-      final createdSession = await createSession(session.name, session.position);
+      final createdSession = await createSession(session.name, session.position, session.showMaterialUsage);
       final id = createdSession.key;
       final items = session.items.map((e) {
         if (e.isCharacter) {
@@ -683,8 +686,8 @@ class CalculatorAscMaterialsDataServiceImpl implements CalculatorAscMaterialsDat
       }
 
       final int used = _inventory.getUsedMaterialQuantityByCalcKeyAndItemKey(calculatorItemKey, e.key);
-      final int available = e.requiredQuantity - used;
-      return e.copyWith.call(remainingQuantity: used, availableQuantity: available.abs());
+      final int remaining = e.requiredQuantity - used;
+      return e.copyWith.call(remainingQuantity: remaining.abs(), usedQuantity: used);
     }).toList();
   }
 

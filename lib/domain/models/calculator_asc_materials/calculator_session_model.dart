@@ -10,5 +10,6 @@ class CalculatorSessionModel with _$CalculatorSessionModel {
     required int position,
     required int numberOfCharacters,
     required int numberOfWeapons,
+    required bool showMaterialUsage,
   }) = _CalculatorSessionModel;
 }

@@ -20,6 +20,15 @@ void main() {
   late final CalculatorAscMaterialsService calcAscMatService;
   late final ResourceService resourceService;
 
+  const session = CalculatorSessionModel(
+    key: 1,
+    name: 'dummy',
+    position: 0,
+    numberOfCharacters: 1,
+    numberOfWeapons: 1,
+    showMaterialUsage: true,
+  );
+
   final characterSkills = Iterable.generate(
     3,
     (i) => CharacterSkill.skill(
@@ -45,7 +54,7 @@ void main() {
         key: 'mora',
         type: MaterialType.currency,
         requiredQuantity: 7005900,
-        availableQuantity: 0,
+        usedQuantity: 0,
         remainingQuantity: 7005900,
         image: 'mora.webp',
         rarity: 5,
@@ -57,7 +66,7 @@ void main() {
         key: 'heros-wit',
         type: MaterialType.expCharacter,
         requiredQuantity: 412,
-        availableQuantity: 400,
+        usedQuantity: 400,
         remainingQuantity: 12,
         image: 'heros-wit.webp',
         rarity: 4,
@@ -69,7 +78,7 @@ void main() {
         key: 'wanderers-advice',
         type: MaterialType.expCharacter,
         requiredQuantity: 2,
-        availableQuantity: 0,
+        usedQuantity: 0,
         remainingQuantity: 2,
         image: 'wanderers-advice.webp',
         rarity: 2,
@@ -97,7 +106,7 @@ void main() {
         key: 'mora',
         type: MaterialType.currency,
         requiredQuantity: 7005900,
-        availableQuantity: 0,
+        usedQuantity: 0,
         remainingQuantity: 7005900,
         image: 'mora.webp',
         rarity: 5,
@@ -109,7 +118,7 @@ void main() {
         key: 'heros-wit',
         type: MaterialType.expCharacter,
         requiredQuantity: 412,
-        availableQuantity: 400,
+        usedQuantity: 400,
         remainingQuantity: 12,
         image: 'heros-wit.webp',
         rarity: 4,
@@ -121,7 +130,7 @@ void main() {
         key: 'wanderers-advice',
         type: MaterialType.expCharacter,
         requiredQuantity: 2,
-        availableQuantity: 0,
+        usedQuantity: 0,
         remainingQuantity: 2,
         image: 'wanderers-advice.webp',
         rarity: 2,
@@ -163,7 +172,10 @@ void main() {
 
   test(
     'Initial state',
-    () => expect(getBloc(MockDataService()).state, const CalculatorAscMaterialsState.initial(sessionKey: -1, items: [], summary: [])),
+    () => expect(
+      getBloc(MockDataService()).state,
+      const CalculatorAscMaterialsState.initial(sessionKey: -1, items: [], summary: [], showMaterialUsage: false),
+    ),
   );
 
   group('Init', () {
@@ -171,14 +183,15 @@ void main() {
       'no session items exist',
       build: () {
         final calcMock = MockCalculatorAscMaterialsDataService();
-        when(calcMock.getAllSessionItems(1)).thenReturn([]);
+        when(calcMock.getSession(session.key)).thenReturn(session);
+        when(calcMock.getAllSessionItems(session.key)).thenReturn([]);
         final dataService = MockDataService();
         when(dataService.calculator).thenReturn(calcMock);
         return getBloc(dataService);
       },
       act: (bloc) => bloc.add(const CalculatorAscMaterialsEvent.init(sessionKey: 1)),
-      expect: () => const [
-        CalculatorAscMaterialsState.initial(sessionKey: 1, items: [], summary: []),
+      expect: () => [
+        CalculatorAscMaterialsState.initial(sessionKey: 1, items: [], summary: [], showMaterialUsage: session.showMaterialUsage),
       ],
     );
 
@@ -186,7 +199,8 @@ void main() {
       'session items exist',
       build: () {
         final calcMock = MockCalculatorAscMaterialsDataService();
-        when(calcMock.getAllSessionItems(1)).thenReturn([keqingItem]);
+        when(calcMock.getSession(session.key)).thenReturn(session);
+        when(calcMock.getAllSessionItems(session.key)).thenReturn([keqingItem]);
 
         final dataService = MockDataService();
         when(dataService.calculator).thenReturn(calcMock);
@@ -322,7 +336,12 @@ void main() {
     blocTest<CalculatorAscMaterialsBloc, CalculatorAscMaterialsState>(
       'which is already in the session',
       build: () => getBloc(MockDataService()),
-      seed: () => CalculatorAscMaterialsState.initial(sessionKey: 1, items: [keqingItem], summary: []),
+      seed: () => CalculatorAscMaterialsState.initial(
+        sessionKey: 1,
+        items: [keqingItem],
+        summary: [],
+        showMaterialUsage: session.showMaterialUsage,
+      ),
       act: (bloc) => bloc.add(
         CalculatorAscMaterialsEvent.addCharacter(
           key: keqingItem.key,
@@ -339,6 +358,7 @@ void main() {
     );
 
     final calcMock = nice_mocks.MockCalculatorAscMaterialsDataService();
+    when(calcMock.getSession(session.key)).thenReturn(session);
     final dataServiceMock = MockDataService();
     when(dataServiceMock.calculator).thenReturn(calcMock);
     blocTest<CalculatorAscMaterialsBloc, CalculatorAscMaterialsState>(
@@ -347,7 +367,7 @@ void main() {
       act: (bloc) => bloc.add(
         CalculatorAscMaterialsEvent.addCharacter(
           key: 'ganyu',
-          sessionKey: 1,
+          sessionKey: session.key,
           currentLevel: 20,
           desiredLevel: 90,
           currentAscensionLevel: itemAscensionLevelMap.keys.first,
@@ -356,18 +376,19 @@ void main() {
           skills: characterSkills,
         ),
       ),
-      expect: () => const [
-        CalculatorAscMaterialsState.initial(sessionKey: 1, items: [], summary: []),
+      expect: () => [
+        CalculatorAscMaterialsState.initial(sessionKey: session.key, items: [], summary: [], showMaterialUsage: session.showMaterialUsage),
       ],
       verify: (_) {
-        final verifyAddSession = verify(calcMock.addSessionItem(1, captureThat(isA<ItemAscensionMaterials>()), captureThat(isA<List<String>>())));
+        final verifyAddSession =
+            verify(calcMock.addSessionItem(session.key, captureThat(isA<ItemAscensionMaterials>()), captureThat(isA<List<String>>())));
         final addSessionCapturedArgs = verifyAddSession.captured;
         verifyAddSession.called(1);
         final createdItem = addSessionCapturedArgs.first as ItemAscensionMaterials;
         expect(createdItem.key, 'ganyu');
         final allPossibleMaterialKeys = addSessionCapturedArgs.last as List<String>;
         expect(allPossibleMaterialKeys.isNotEmpty, isTrue);
-        verify(calcMock.getAllSessionItems(1)).called(1);
+        verify(calcMock.getAllSessionItems(session.key)).called(1);
       },
     );
   });
@@ -444,7 +465,7 @@ void main() {
     blocTest<CalculatorAscMaterialsBloc, CalculatorAscMaterialsState>(
       'which is already in the session',
       build: () => getBloc(MockDataService()),
-      seed: () => CalculatorAscMaterialsState.initial(sessionKey: 1, items: [theCatchItem], summary: []),
+      seed: () => CalculatorAscMaterialsState.initial(sessionKey: 1, items: [theCatchItem], summary: [], showMaterialUsage: false),
       act: (bloc) => bloc.add(
         CalculatorAscMaterialsEvent.addWeapon(
           key: theCatchItem.key,
@@ -460,6 +481,7 @@ void main() {
     );
 
     final calcMock = nice_mocks.MockCalculatorAscMaterialsDataService();
+    when(calcMock.getSession(session.key)).thenReturn(session);
     final dataServiceMock = MockDataService();
     when(dataServiceMock.calculator).thenReturn(calcMock);
     blocTest<CalculatorAscMaterialsBloc, CalculatorAscMaterialsState>(
@@ -468,26 +490,27 @@ void main() {
       act: (bloc) => bloc.add(
         CalculatorAscMaterialsEvent.addWeapon(
           key: 'aquila-favonia',
-          sessionKey: 1,
+          sessionKey: session.key,
           currentLevel: 20,
           desiredLevel: 90,
           currentAscensionLevel: itemAscensionLevelMap.keys.first,
           desiredAscensionLevel: itemAscensionLevelMap.keys.last,
-          useMaterialsFromInventory: false,
+          useMaterialsFromInventory: session.showMaterialUsage,
         ),
       ),
-      expect: () => const [
-        CalculatorAscMaterialsState.initial(sessionKey: 1, items: [], summary: []),
+      expect: () => [
+        CalculatorAscMaterialsState.initial(sessionKey: session.key, items: [], summary: [], showMaterialUsage: session.showMaterialUsage),
       ],
       verify: (_) {
-        final verifyAddSession = verify(calcMock.addSessionItem(1, captureThat(isA<ItemAscensionMaterials>()), captureThat(isA<List<String>>())));
+        final verifyAddSession =
+            verify(calcMock.addSessionItem(session.key, captureThat(isA<ItemAscensionMaterials>()), captureThat(isA<List<String>>())));
         final addSessionCapturedArgs = verifyAddSession.captured;
         verifyAddSession.called(1);
         final createdItem = addSessionCapturedArgs.first as ItemAscensionMaterials;
         expect(createdItem.key, 'aquila-favonia');
         final allPossibleMaterialKeys = addSessionCapturedArgs.last as List<String>;
         expect(allPossibleMaterialKeys.isNotEmpty, isTrue);
-        verify(calcMock.getAllSessionItems(1)).called(1);
+        verify(calcMock.getAllSessionItems(session.key)).called(1);
       },
     );
   });
@@ -514,7 +537,12 @@ void main() {
     blocTest<CalculatorAscMaterialsBloc, CalculatorAscMaterialsState>(
       'which gets deleted',
       build: () => getBloc(dataServiceMock),
-      seed: () => CalculatorAscMaterialsState.initial(sessionKey: sessionKey, items: [keqingItem, theCatchItem], summary: []),
+      seed: () => CalculatorAscMaterialsState.initial(
+        sessionKey: sessionKey,
+        items: [keqingItem, theCatchItem],
+        summary: [],
+        showMaterialUsage: false,
+      ),
       act: (bloc) => bloc.add(const CalculatorAscMaterialsEvent.removeItem(sessionKey: sessionKey, index: 1)),
       verify: (bloc) {
         verify(calcMock.deleteSessionItem(sessionKey, 1, redistribute: false)).called(1);
@@ -567,7 +595,7 @@ void main() {
     blocTest<CalculatorAscMaterialsBloc, CalculatorAscMaterialsState>(
       'invalid level value',
       build: () => getBloc(MockDataService()),
-      seed: () => CalculatorAscMaterialsState.initial(sessionKey: 1, items: [keqingItem], summary: []),
+      seed: () => CalculatorAscMaterialsState.initial(sessionKey: 1, items: [keqingItem], summary: [], showMaterialUsage: false),
       act: (bloc) => bloc.add(
         CalculatorAscMaterialsEvent.updateCharacter(
           index: 0,
@@ -587,7 +615,7 @@ void main() {
     blocTest<CalculatorAscMaterialsBloc, CalculatorAscMaterialsState>(
       'invalid asc level value',
       build: () => getBloc(MockDataService()),
-      seed: () => CalculatorAscMaterialsState.initial(sessionKey: 1, items: [keqingItem], summary: []),
+      seed: () => CalculatorAscMaterialsState.initial(sessionKey: 1, items: [keqingItem], summary: [], showMaterialUsage: false),
       act: (bloc) => bloc.add(
         CalculatorAscMaterialsEvent.updateCharacter(
           index: 0,
@@ -607,7 +635,7 @@ void main() {
     blocTest<CalculatorAscMaterialsBloc, CalculatorAscMaterialsState>(
       'invalid skills',
       build: () => getBloc(MockDataService()),
-      seed: () => CalculatorAscMaterialsState.initial(sessionKey: 1, items: [keqingItem], summary: []),
+      seed: () => CalculatorAscMaterialsState.initial(sessionKey: 1, items: [keqingItem], summary: [], showMaterialUsage: false),
       act: (bloc) => bloc.add(
         CalculatorAscMaterialsEvent.updateCharacter(
           index: 0,
@@ -641,7 +669,7 @@ void main() {
     blocTest<CalculatorAscMaterialsBloc, CalculatorAscMaterialsState>(
       'which is a weapon',
       build: () => getBloc(MockDataService()),
-      seed: () => CalculatorAscMaterialsState.initial(sessionKey: 1, items: [theCatchItem], summary: []),
+      seed: () => CalculatorAscMaterialsState.initial(sessionKey: 1, items: [theCatchItem], summary: [], showMaterialUsage: false),
       act: (bloc) => bloc.add(
         CalculatorAscMaterialsEvent.updateCharacter(
           index: 0,
@@ -659,16 +687,22 @@ void main() {
     );
 
     final calcMock = nice_mocks.MockCalculatorAscMaterialsDataService();
+    when(calcMock.getSession(session.key)).thenReturn(session);
     final dataServiceMock = MockDataService();
     when(dataServiceMock.calculator).thenReturn(calcMock);
     blocTest<CalculatorAscMaterialsBloc, CalculatorAscMaterialsState>(
       'which is a valid one',
       build: () => getBloc(dataServiceMock),
-      seed: () => CalculatorAscMaterialsState.initial(sessionKey: 1, items: [keqingItem], summary: []),
+      seed: () => CalculatorAscMaterialsState.initial(
+        sessionKey: session.key,
+        items: [keqingItem],
+        summary: [],
+        showMaterialUsage: session.showMaterialUsage,
+      ),
       act: (bloc) => bloc.add(
         CalculatorAscMaterialsEvent.updateCharacter(
           index: 0,
-          sessionKey: 1,
+          sessionKey: session.key,
           currentLevel: 20,
           desiredLevel: 90,
           currentAscensionLevel: itemAscensionLevelMap.keys.first,
@@ -678,16 +712,16 @@ void main() {
           skills: characterSkills,
         ),
       ),
-      expect: () => const [
-        CalculatorAscMaterialsState.initial(sessionKey: 1, items: [], summary: []),
+      expect: () => [
+        CalculatorAscMaterialsState.initial(sessionKey: session.key, items: [], summary: [], showMaterialUsage: session.showMaterialUsage),
       ],
       verify: (_) {
         final updateItemVerify =
-            verify(calcMock.updateSessionItem(1, 0, captureThat(isA<ItemAscensionMaterials>()), captureThat(isA<List<String>>())));
+            verify(calcMock.updateSessionItem(session.key, 0, captureThat(isA<ItemAscensionMaterials>()), captureThat(isA<List<String>>())));
         updateItemVerify.called(1);
         final updatedItem = updateItemVerify.captured.first as ItemAscensionMaterials;
         expect(updatedItem.key, keqingItem.key);
-        verify(calcMock.getAllSessionItems(1)).called(1);
+        verify(calcMock.getAllSessionItems(session.key)).called(1);
       },
     );
   });
@@ -732,7 +766,7 @@ void main() {
     blocTest<CalculatorAscMaterialsBloc, CalculatorAscMaterialsState>(
       'invalid level value',
       build: () => getBloc(MockDataService()),
-      seed: () => CalculatorAscMaterialsState.initial(sessionKey: 1, items: [theCatchItem], summary: []),
+      seed: () => CalculatorAscMaterialsState.initial(sessionKey: 1, items: [theCatchItem], summary: [], showMaterialUsage: false),
       act: (bloc) => bloc.add(
         CalculatorAscMaterialsEvent.updateWeapon(
           index: 0,
@@ -751,7 +785,7 @@ void main() {
     blocTest<CalculatorAscMaterialsBloc, CalculatorAscMaterialsState>(
       'invalid asc level value',
       build: () => getBloc(MockDataService()),
-      seed: () => CalculatorAscMaterialsState.initial(sessionKey: 1, items: [theCatchItem], summary: []),
+      seed: () => CalculatorAscMaterialsState.initial(sessionKey: 1, items: [theCatchItem], summary: [], showMaterialUsage: false),
       act: (bloc) => bloc.add(
         CalculatorAscMaterialsEvent.updateWeapon(
           index: 0,
@@ -770,7 +804,7 @@ void main() {
     blocTest<CalculatorAscMaterialsBloc, CalculatorAscMaterialsState>(
       'which is a character',
       build: () => getBloc(MockDataService()),
-      seed: () => CalculatorAscMaterialsState.initial(sessionKey: 1, items: [keqingItem], summary: []),
+      seed: () => CalculatorAscMaterialsState.initial(sessionKey: 1, items: [keqingItem], summary: [], showMaterialUsage: false),
       act: (bloc) => bloc.add(
         CalculatorAscMaterialsEvent.updateWeapon(
           index: 0,
@@ -787,16 +821,22 @@ void main() {
     );
 
     final calcMock = nice_mocks.MockCalculatorAscMaterialsDataService();
+    when(calcMock.getSession(session.key)).thenReturn(session);
     final dataServiceMock = MockDataService();
     when(dataServiceMock.calculator).thenReturn(calcMock);
     blocTest<CalculatorAscMaterialsBloc, CalculatorAscMaterialsState>(
       'which is a valid one',
       build: () => getBloc(dataServiceMock),
-      seed: () => CalculatorAscMaterialsState.initial(sessionKey: 1, items: [theCatchItem], summary: []),
+      seed: () => CalculatorAscMaterialsState.initial(
+        sessionKey: session.key,
+        items: [theCatchItem],
+        summary: [],
+        showMaterialUsage: session.showMaterialUsage,
+      ),
       act: (bloc) => bloc.add(
         CalculatorAscMaterialsEvent.updateWeapon(
           index: 0,
-          sessionKey: 1,
+          sessionKey: session.key,
           currentLevel: 20,
           desiredLevel: 90,
           currentAscensionLevel: itemAscensionLevelMap.keys.first,
@@ -805,16 +845,16 @@ void main() {
           isActive: true,
         ),
       ),
-      expect: () => const [
-        CalculatorAscMaterialsState.initial(sessionKey: 1, items: [], summary: []),
+      expect: () => [
+        CalculatorAscMaterialsState.initial(sessionKey: 1, items: [], summary: [], showMaterialUsage: session.showMaterialUsage),
       ],
       verify: (_) {
         final updateItemVerify =
-            verify(calcMock.updateSessionItem(1, 0, captureThat(isA<ItemAscensionMaterials>()), captureThat(isA<List<String>>())));
+            verify(calcMock.updateSessionItem(session.key, 0, captureThat(isA<ItemAscensionMaterials>()), captureThat(isA<List<String>>())));
         updateItemVerify.called(1);
         final updatedItem = updateItemVerify.captured.first as ItemAscensionMaterials;
         expect(updatedItem.key, theCatchItem.key);
-        verify(calcMock.getAllSessionItems(1)).called(1);
+        verify(calcMock.getAllSessionItems(session.key)).called(1);
       },
     );
   });
@@ -827,19 +867,25 @@ void main() {
       errors: () => [isA<Exception>()],
     );
 
-    const int sessionKey = 1;
     final calcMock = nice_mocks.MockCalculatorAscMaterialsDataService();
+    when(calcMock.getSession(session.key)).thenReturn(session);
     final dataServiceMock = MockDataService();
     when(dataServiceMock.calculator).thenReturn(calcMock);
     blocTest<CalculatorAscMaterialsBloc, CalculatorAscMaterialsState>(
       'valid call',
+      seed: () => CalculatorAscMaterialsState.initial(
+        sessionKey: session.key,
+        items: [keqingItem, theCatchItem],
+        summary: [],
+        showMaterialUsage: session.showMaterialUsage,
+      ),
       build: () => getBloc(dataServiceMock),
-      act: (bloc) => bloc.add(const CalculatorAscMaterialsEvent.clearAllItems(sessionKey)),
-      expect: () => const [
-        CalculatorAscMaterialsState.initial(sessionKey: sessionKey, items: [], summary: []),
+      act: (bloc) => bloc.add(CalculatorAscMaterialsEvent.clearAllItems(session.key)),
+      expect: () => [
+        CalculatorAscMaterialsState.initial(sessionKey: session.key, items: [], summary: [], showMaterialUsage: session.showMaterialUsage),
       ],
       verify: (_) {
-        verify(calcMock.deleteAllSessionItems(sessionKey)).called(1);
+        verify(calcMock.deleteAllSessionItems(session.key)).called(1);
       },
     );
   });
@@ -855,27 +901,32 @@ void main() {
     blocTest<CalculatorAscMaterialsBloc, CalculatorAscMaterialsState>(
       'empty list',
       build: () => getBloc(MockDataService()),
-      seed: () => CalculatorAscMaterialsState.initial(sessionKey: 1, items: [theCatchItem, keqingItem], summary: []),
+      seed: () => CalculatorAscMaterialsState.initial(sessionKey: 1, items: [theCatchItem, keqingItem], summary: [], showMaterialUsage: false),
       act: (bloc) => bloc.add(const CalculatorAscMaterialsEvent.itemsReordered([])),
       errors: () => [isA<Exception>()],
     );
 
-    const int sessionKey = 1;
     final currentItems = [theCatchItem, keqingItem];
     final updatedItems = [keqingItem, theCatchItem];
     final calcMock = nice_mocks.MockCalculatorAscMaterialsDataService();
+    when(calcMock.getSession(session.key)).thenReturn(session);
     final dataServiceMock = MockDataService();
     when(dataServiceMock.calculator).thenReturn(calcMock);
     blocTest<CalculatorAscMaterialsBloc, CalculatorAscMaterialsState>(
       'valid call',
       build: () => getBloc(dataServiceMock),
-      seed: () => CalculatorAscMaterialsState.initial(sessionKey: sessionKey, items: currentItems, summary: []),
+      seed: () => CalculatorAscMaterialsState.initial(
+        sessionKey: session.key,
+        items: currentItems,
+        summary: [],
+        showMaterialUsage: session.showMaterialUsage,
+      ),
       act: (bloc) => bloc.add(CalculatorAscMaterialsEvent.itemsReordered(updatedItems)),
-      expect: () => const [
-        CalculatorAscMaterialsState.initial(sessionKey: sessionKey, items: [], summary: []),
+      expect: () => [
+        CalculatorAscMaterialsState.initial(sessionKey: session.key, items: [], summary: [], showMaterialUsage: session.showMaterialUsage),
       ],
       verify: (_) {
-        verify(calcMock.reorderItems(sessionKey, updatedItems));
+        verify(calcMock.reorderItems(session.key, updatedItems));
       },
     );
   });

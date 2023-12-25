@@ -12,9 +12,9 @@ abstract class CalculatorAscMaterialsDataService implements BaseDataService {
 
   CalculatorSessionModel getSession(int sessionKey);
 
-  Future<CalculatorSessionModel> createSession(String name, int position);
+  Future<CalculatorSessionModel> createSession(String name, int position, bool showMaterialUsage);
 
-  Future<CalculatorSessionModel> updateSession(int sessionKey, String name);
+  Future<CalculatorSessionModel> updateSession(int sessionKey, String name, bool showMaterialUsage);
 
   Future<void> deleteSession(int sessionKey);
 

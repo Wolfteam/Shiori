@@ -6,11 +6,13 @@ class CalculatorAscMaterialsSessionsEvent with _$CalculatorAscMaterialsSessionsE
 
   const factory CalculatorAscMaterialsSessionsEvent.createSession({
     required String name,
+    required bool showMaterialUsage,
   }) = _CreateSession;
 
   const factory CalculatorAscMaterialsSessionsEvent.updateSession({
     required int key,
     required String name,
+    required bool showMaterialUsage,
   }) = _UpdateSession;
 
   const factory CalculatorAscMaterialsSessionsEvent.deleteSession({

@@ -979,17 +979,17 @@ class NotificationsDataServiceImpl implements NotificationsDataService {
   }
 
   NotificationItem _mapToNotificationItem(NotificationBase e) {
-    final type = AppNotificationType.values[e.type];
-    return switch (type) {
-      AppNotificationType.resin => _mapToNotificationItemFromResin(e as NotificationResin),
-      AppNotificationType.expedition => _mapToNotificationItemFromExpedition(e as NotificationExpedition),
-      AppNotificationType.farmingMaterials => _mapToNotificationItemFromFarmingMaterial(e as NotificationFarmingMaterial),
-      AppNotificationType.farmingArtifacts => _mapToNotificationItemFromFarmingArtifact(e as NotificationFarmingArtifact),
-      AppNotificationType.gadget => _mapToNotificationItemFromGadget(e as NotificationGadget),
-      AppNotificationType.furniture => _mapToNotificationItemFromFurniture(e as NotificationFurniture),
-      AppNotificationType.realmCurrency => _mapToNotificationItemFromRealmCurrency(e as NotificationRealmCurrency),
-      AppNotificationType.weeklyBoss => _mapToNotificationItemFromWeeklyBoss(e as NotificationWeeklyBoss),
-      AppNotificationType.custom || AppNotificationType.dailyCheckIn => _mapToNotificationItemFromCustom(e as NotificationCustom),
+    return switch (e) {
+      final NotificationResin item => _mapToNotificationItemFromResin(item),
+      final NotificationExpedition item => _mapToNotificationItemFromExpedition(item),
+      final NotificationFarmingMaterial item => _mapToNotificationItemFromFarmingMaterial(item),
+      final NotificationFarmingArtifact item => _mapToNotificationItemFromFarmingArtifact(item),
+      final NotificationGadget item => _mapToNotificationItemFromGadget(item),
+      final NotificationFurniture item => _mapToNotificationItemFromFurniture(item),
+      final NotificationRealmCurrency item => _mapToNotificationItemFromRealmCurrency(item),
+      final NotificationWeeklyBoss item => _mapToNotificationItemFromWeeklyBoss(item),
+      final NotificationCustom item => _mapToNotificationItemFromCustom(item),
+      _ => throw ArgumentError.value(AppNotificationType.values[e.type], 'type', 'The provided app notification type is not valid'),
     };
   }
 

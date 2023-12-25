@@ -14,5 +14,8 @@ class CalculatorSession extends BaseEntity {
   @HiveField(2)
   DateTime createdAt;
 
-  CalculatorSession(this.name, this.position) : createdAt = DateTime.now();
+  @HiveField(3)
+  bool? showMaterialUsage;
+
+  CalculatorSession(this.name, this.position, this.showMaterialUsage) : createdAt = DateTime.now();
 }

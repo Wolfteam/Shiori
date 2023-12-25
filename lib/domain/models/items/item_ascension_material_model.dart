@@ -11,7 +11,7 @@ class ItemAscensionMaterialModel with _$ItemAscensionMaterialModel implements So
     required String key,
     required MaterialType type,
     required int requiredQuantity,
-    required int availableQuantity,
+    required int usedQuantity,
     required int remainingQuantity,
     required String image,
     required int rarity,
@@ -24,13 +24,13 @@ class ItemAscensionMaterialModel with _$ItemAscensionMaterialModel implements So
     int requiredQuantity,
     MaterialFileModel material,
     String imagePath, {
-    int availableQuantity = 0,
+    int usedQuantity = 0,
     int remainingQuantity = 0,
   }) {
     return ItemAscensionMaterialModel(
       key: material.key,
       requiredQuantity: requiredQuantity,
-      availableQuantity: availableQuantity,
+      usedQuantity: usedQuantity,
       remainingQuantity: remainingQuantity,
       type: material.type,
       level: material.level,

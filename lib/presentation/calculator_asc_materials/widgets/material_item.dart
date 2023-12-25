@@ -20,30 +20,33 @@ class MaterialItem extends StatelessWidget {
   final app.MaterialType type;
   final String itemKey;
   final String image;
-  final int availableQuantity;
+  final int usedQuantity;
   final int requiredQuantity;
   final int remainingQuantity;
   final Color? textColor;
   final int sessionKey;
+  final bool showMaterialUsage;
 
   const MaterialItem({
     super.key,
     required this.itemKey,
     required this.type,
     required this.image,
-    required this.availableQuantity,
+    required this.usedQuantity,
     required this.requiredQuantity,
     required this.remainingQuantity,
     required this.sessionKey,
+    required this.showMaterialUsage,
     this.textColor,
   });
 
   MaterialItem.fromSummary({
     required this.sessionKey,
     required MaterialSummary summary,
+    required this.showMaterialUsage,
   })  : itemKey = summary.key,
         image = summary.fullImagePath,
-        availableQuantity = summary.availableQuantity,
+        usedQuantity = summary.usedQuantity,
         requiredQuantity = summary.requiredQuantity,
         remainingQuantity = summary.remainingQuantity,
         type = summary.type,
@@ -52,10 +55,10 @@ class MaterialItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    final availableText = _formatQuantity(availableQuantity);
+    final usedText = _formatQuantity(usedQuantity);
     final requiredText = _formatQuantity(requiredQuantity);
     final remainingText = _formatQuantity(remainingQuantity);
-    final usageText = '$availableText / $requiredText';
+    final usageText = '$usedText / $requiredText';
     return Container(
       margin: Styles.edgeInsetHorizontal5,
       child: Column(
@@ -69,9 +72,10 @@ class MaterialItem extends StatelessWidget {
             onPressed: () => showDialog(
               context: context,
               builder: (context) => _OptionsDialog(
-                availableText: availableText,
+                usedText: usedText,
                 requiredText: requiredText,
                 remainingText: remainingText,
+                showUsage: showMaterialUsage,
               ),
             ).then((option) {
               switch (option) {
@@ -84,11 +88,11 @@ class MaterialItem extends StatelessWidget {
               }
             }),
           ),
-          if (availableQuantity == requiredQuantity)
+          if (showMaterialUsage && usedQuantity == requiredQuantity)
             const Icon(Icons.check, color: Colors.green, size: 18)
           else
             Text(
-              usageText,
+              showMaterialUsage ? usageText : requiredText,
               textAlign: TextAlign.center,
               overflow: TextOverflow.ellipsis,
               style: textColor != null ? theme.textTheme.titleSmall!.copyWith(color: textColor) : theme.textTheme.titleSmall,
@@ -120,14 +124,16 @@ class MaterialItem extends StatelessWidget {
 }
 
 class _OptionsDialog extends StatelessWidget {
-  final String availableText;
+  final String usedText;
   final String requiredText;
   final String remainingText;
+  final bool showUsage;
 
   const _OptionsDialog({
-    required this.availableText,
+    required this.usedText,
     required this.requiredText,
     required this.remainingText,
+    required this.showUsage,
   });
 
   @override
@@ -151,15 +157,17 @@ class _OptionsDialog extends StatelessWidget {
           ),
           ListTile(
             title: Text(s.update),
-            isThreeLine: true,
-            subtitle: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text('${s.available}: $availableText', overflow: TextOverflow.ellipsis),
-                Text('${s.required}: $requiredText', overflow: TextOverflow.ellipsis),
-                Text('${s.remaining}: $remainingText', overflow: TextOverflow.ellipsis),
-              ],
-            ),
+            isThreeLine: showUsage,
+            subtitle: showUsage
+                ? Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text('${s.required}: $requiredText', overflow: TextOverflow.ellipsis),
+                      Text('${s.used}: $usedText', overflow: TextOverflow.ellipsis),
+                      Text('${s.remaining}: $remainingText', overflow: TextOverflow.ellipsis),
+                    ],
+                  )
+                : null,
             onTap: () => Navigator.pop(context, _DialogOptionType.updateQuantity),
           ),
         ],

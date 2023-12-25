@@ -158,12 +158,13 @@ void main() {
     });
 
     test('data exists', () async {
-      await dataService.calculator.createSession('Dummy', 0);
+      await dataService.calculator.createSession('Dummy', 0, true);
       final sessions = dataService.calculator.getAllSessions();
       expect(sessions.length, 1);
       final session = sessions.first;
       expect(session.key >= 0, isTrue);
       expect(session.name, 'Dummy');
+      expect(session.showMaterialUsage, isTrue);
       expect(session.position, 0);
       expect(session.numberOfCharacters, 0);
       expect(session.numberOfWeapons, 0);
@@ -199,7 +200,7 @@ void main() {
     });
 
     test('key exists', () async {
-      final createdSession = await dataService.calculator.createSession('Exists', 0);
+      final createdSession = await dataService.calculator.createSession('Exists', 0, false);
       final existingSession = dataService.calculator.getSession(createdSession.key);
       expect(existingSession.key, createdSession.key);
     });
@@ -226,18 +227,19 @@ void main() {
     });
 
     test('name is not valid', () {
-      expect(dataService.calculator.createSession('', 0), throwsArgumentError);
+      expect(dataService.calculator.createSession('', 0, false), throwsArgumentError);
     });
 
     test('position is not valid', () {
-      expect(dataService.calculator.createSession('New', -1), throwsArgumentError);
+      expect(dataService.calculator.createSession('New', -1, false), throwsArgumentError);
     });
 
     test('valid call', () async {
-      final createdSession = await dataService.calculator.createSession('New', 1);
+      final createdSession = await dataService.calculator.createSession('New', 1, true);
       expect(createdSession.key >= 0, isTrue);
       expect(createdSession.name, 'New');
       expect(createdSession.position, 1);
+      expect(createdSession.showMaterialUsage, isTrue);
       expect(createdSession.numberOfCharacters, 0);
       expect(createdSession.numberOfWeapons, 0);
     });
@@ -264,23 +266,24 @@ void main() {
     });
 
     test('key is not valid', () {
-      expect(dataService.calculator.updateSession(-1, 'Updated'), throwsArgumentError);
+      expect(dataService.calculator.updateSession(-1, 'Updated', false), throwsArgumentError);
     });
 
     test('name is not valid', () async {
-      expect(dataService.calculator.updateSession(1, ''), throwsArgumentError);
+      expect(dataService.calculator.updateSession(1, '', false), throwsArgumentError);
     });
 
     test('session does not exist', () {
-      expect(dataService.calculator.updateSession(1, 'Updated'), throwsA(isA<NotFoundError>()));
+      expect(dataService.calculator.updateSession(1, 'Updated', false), throwsA(isA<NotFoundError>()));
     });
 
     test('valid call', () async {
-      final existing = await dataService.calculator.createSession('New', 1);
-      final updated = await dataService.calculator.updateSession(existing.key, 'Updated');
+      final existing = await dataService.calculator.createSession('New', 1, false);
+      final updated = await dataService.calculator.updateSession(existing.key, 'Updated', true);
       expect(updated.key, existing.key);
       expect(updated.name, 'Updated');
       expect(updated.position, existing.position);
+      expect(updated.showMaterialUsage, isTrue);
       expect(updated.numberOfCharacters, 0);
       expect(updated.numberOfWeapons, 0);
     });
@@ -317,7 +320,7 @@ void main() {
     });
 
     test('session exists, and gets deleted', () async {
-      final session = await dataService.calculator.createSession('Deleted', 0);
+      final session = await dataService.calculator.createSession('Deleted', 0, false);
       expect(() => dataService.calculator.getSession(session.key), returnsNormally);
       await dataService.calculator.deleteSession(session.key);
       expect(() => dataService.calculator.getSession(session.key), throwsA(isA<NotFoundError>()));
@@ -351,7 +354,7 @@ void main() {
     });
 
     test('data exists and gets deleted', () async {
-      await dataService.calculator.createSession('To be deleted', 5);
+      await dataService.calculator.createSession('To be deleted', 5, false);
       await dataService.calculator.deleteAllSessions();
       final sessions = dataService.calculator.getAllSessions();
       expect(sessions.isEmpty, isTrue);
@@ -388,7 +391,7 @@ void main() {
     });
 
     test('data exists', () async {
-      final session = await dataService.calculator.createSession('NewOne', 1);
+      final session = await dataService.calculator.createSession('NewOne', 1, false);
       final charItem = getCharacter();
       final weaponItem = getWeapon();
       final items = <ItemAscensionMaterials>[charItem, weaponItem];
@@ -427,7 +430,7 @@ void main() {
 
     test('of type character', () async {
       final item = getCharacter();
-      final session = await dataService.calculator.createSession('Characters', 1);
+      final session = await dataService.calculator.createSession('Characters', 1, false);
       await dataService.calculator.addSessionItem(session.key, item, []);
       final items = dataService.calculator.getAllSessionItems(session.key);
       expect(items.length, 1);
@@ -436,7 +439,7 @@ void main() {
 
     test('of type weapon', () async {
       final item = getWeapon();
-      final session = await dataService.calculator.createSession('Weapons', 1);
+      final session = await dataService.calculator.createSession('Weapons', 1, false);
       await dataService.calculator.addSessionItem(session.key, item, []);
       final items = dataService.calculator.getAllSessionItems(session.key);
       expect(items.length, 1);
@@ -447,7 +450,7 @@ void main() {
       final charItem = getCharacter();
       final weaponItem = getWeapon();
       final items = [charItem, weaponItem];
-      final session = await dataService.calculator.createSession('Chars&Weapons', 1);
+      final session = await dataService.calculator.createSession('Chars&Weapons', 1, false);
       await dataService.calculator.addSessionItems(session.key, items);
       final existing = dataService.calculator.getAllSessionItems(session.key);
       expect(existing.length, 2);
@@ -469,7 +472,7 @@ void main() {
         await dataService.inventory.addMaterialToInventory(kvp.key, kvp.value);
       }
 
-      final session = await dataService.calculator.createSession('Chars&WeaponsFromInv', 1);
+      final session = await dataService.calculator.createSession('Chars&WeaponsFromInv', 1, false);
       await dataService.calculator.addSessionItems(session.key, [charItem, weaponItem]);
       final existing = dataService.calculator.getAllSessionItems(session.key);
 
@@ -521,7 +524,7 @@ void main() {
 
     test('item does not exist thus a new one gets created', () async {
       final itemChar = getCharacter().copyWith(position: 2);
-      final session = await dataService.calculator.createSession('UpdateItem', 0);
+      final session = await dataService.calculator.createSession('UpdateItem', 0, false);
       await dataService.calculator.updateSessionItem(session.key, itemChar.position, itemChar, []);
       final items = dataService.calculator.getAllSessionItems(session.key);
       expect(items.length, 1);
@@ -531,7 +534,7 @@ void main() {
     });
 
     test('item exists thus it gets recreated', () async {
-      final session = await dataService.calculator.createSession('UpdateItem', 0);
+      final session = await dataService.calculator.createSession('UpdateItem', 0, false);
       await dataService.calculator.addSessionItem(session.key, getCharacter(), []);
 
       final updated = getCharacter().copyWith(desiredLevel: 80);
@@ -578,7 +581,7 @@ void main() {
 
     test('which exists and it gets deleted', () async {
       final item = getWeapon();
-      final session = await dataService.calculator.createSession('Item Deleted', 0);
+      final session = await dataService.calculator.createSession('Item Deleted', 0, false);
       await dataService.calculator.addSessionItem(session.key, item, []);
       final currentCount = dataService.calculator.getAllSessionItems(session.key).length;
       expect(currentCount, 1);
@@ -589,7 +592,7 @@ void main() {
     });
 
     test('which exists and it was using materials from inventory', () async {
-      final session = await dataService.calculator.createSession('Item Deleted', 0);
+      final session = await dataService.calculator.createSession('Item Deleted', 0, false);
       final item = getWeapon(useMaterialsFromInventory: true);
       final requiredMaterials = item.materials
           .groupBy((g) => g.key)
@@ -656,12 +659,12 @@ void main() {
     });
 
     test('session exists but it is empty, returns normally', () async {
-      final session = await dataService.calculator.createSession('Delete all items', 0);
+      final session = await dataService.calculator.createSession('Delete all items', 0, false);
       expect(dataService.calculator.deleteAllSessionItems(session.key), completes);
     });
 
     test('session exists and it is not empty, all items gets deleted', () async {
-      final session = await dataService.calculator.createSession('Delete all items', 0);
+      final session = await dataService.calculator.createSession('Delete all items', 0, false);
       await dataService.calculator.addSessionItems(session.key, [getCharacter(), getWeapon()]);
       final currentCount = dataService.calculator.getAllSessionItems(session.key).length;
       expect(currentCount, 2);
@@ -684,7 +687,7 @@ void main() {
         await dataService.inventory.addMaterialToInventory(kvp.key, kvp.value);
       }
 
-      final session = await dataService.calculator.createSession('Delete all items', 0);
+      final session = await dataService.calculator.createSession('Delete all items', 0, false);
       await dataService.calculator.addSessionItems(session.key, items);
       final currentCount = dataService.calculator.getAllSessionItems(session.key).length;
       expect(currentCount, 2);
@@ -731,8 +734,8 @@ void main() {
     });
 
     Future<void> runItemsDeletedTest(bool deleteSession) async {
-      final sessionA = await dataService.calculator.createSession('RedistributeA', 0);
-      final sessionB = await dataService.calculator.createSession('RedistributeB', 1);
+      final sessionA = await dataService.calculator.createSession('RedistributeA', 0, false);
+      final sessionB = await dataService.calculator.createSession('RedistributeB', 1, false);
 
       final items = [getCharacter(useMaterialsFromInventory: true), getWeapon(useMaterialsFromInventory: true)];
       final requiredMaterials = items
@@ -767,7 +770,7 @@ void main() {
     }
 
     Future<void> runItemDeleteTest(bool redistributeOnDelete) async {
-      final session = await dataService.calculator.createSession('Redistribute', 0);
+      final session = await dataService.calculator.createSession('Redistribute', 0, false);
 
       final char = getCharacter(useMaterialsFromInventory: true);
       final weapon = getWeapon(useMaterialsFromInventory: true);
@@ -793,7 +796,7 @@ void main() {
     }
 
     Future<void> runItemUpdateTest(bool useMaterialsFromInventory, bool isActive) async {
-      final session = await dataService.calculator.createSession('Redistribute', 0);
+      final session = await dataService.calculator.createSession('Redistribute', 0, false);
 
       final char = getCharacter(useMaterialsFromInventory: true);
       final weapon = getWeapon(useMaterialsFromInventory: true);
@@ -848,8 +851,8 @@ void main() {
     });
 
     test('2 sessions contains 2 items with same used material but session order changes', () async {
-      final sessionA = await dataService.calculator.createSession('RedistributeA', 0);
-      final sessionB = await dataService.calculator.createSession('RedistributeB', 1);
+      final sessionA = await dataService.calculator.createSession('RedistributeA', 0, false);
+      final sessionB = await dataService.calculator.createSession('RedistributeB', 1, false);
 
       final char = getCharacter(useMaterialsFromInventory: true);
       final weapon = getWeapon(useMaterialsFromInventory: true);
@@ -899,7 +902,7 @@ void main() {
     });
 
     test('session contains 2 items with same used material but item order changes', () async {
-      final session = await dataService.calculator.createSession('Redistribute', 0);
+      final session = await dataService.calculator.createSession('Redistribute', 0, false);
 
       final char = getCharacter(useMaterialsFromInventory: true);
       final weapon = getWeapon(useMaterialsFromInventory: true);
@@ -941,7 +944,7 @@ void main() {
     });
 
     test('session contains 1 item but a new item gets added that uses same materials', () async {
-      final session = await dataService.calculator.createSession('Redistribute', 0);
+      final session = await dataService.calculator.createSession('Redistribute', 0, false);
 
       final char = getCharacter(useMaterialsFromInventory: true);
       final int charRequiredMora = char.materials.where((g) => g.key == moraKey).first.requiredQuantity;
@@ -1018,8 +1021,8 @@ void main() {
     });
 
     test('data exists', () async {
-      final sessionA = await dataService.calculator.createSession('A', 0);
-      final sessionB = await dataService.calculator.createSession('B', 0);
+      final sessionA = await dataService.calculator.createSession('A', 0, false);
+      final sessionB = await dataService.calculator.createSession('B', 0, false);
       final items = [getCharacter(), getWeapon()];
       await dataService.calculator.addSessionItems(sessionB.key, items);
 
@@ -1094,15 +1097,15 @@ void main() {
     });
 
     test('no data to restore and previous data exist', () async {
-      await dataService.calculator.createSession('Restore', 0);
+      await dataService.calculator.createSession('Restore', 0, false);
       await dataService.calculator.restoreFromBackup([]);
       final count = dataService.calculator.getAllSessions().length;
       expect(count, isZero);
     });
 
     test('there is data to restore and previous data exist', () async {
-      final sessionA = await dataService.calculator.createSession('ToBeDeletedA', 0);
-      final sessionB = await dataService.calculator.createSession('ToBeDeletedB', 1);
+      final sessionA = await dataService.calculator.createSession('ToBeDeletedA', 0, false);
+      final sessionB = await dataService.calculator.createSession('ToBeDeletedB', 1, false);
       await dataService.calculator.addSessionItem(sessionA.key, getWeapon(), []);
       await dataService.calculator.addSessionItem(sessionB.key, getCharacter(), []);
 
@@ -1204,20 +1207,20 @@ void main() {
     });
 
     test('data was provided but no previous data exist', () async {
-      const updated = [CalculatorSessionModel(key: 1, name: 'NA', position: 0, numberOfWeapons: 0, numberOfCharacters: 0)];
+      const updated = [CalculatorSessionModel(key: 1, name: 'NA', position: 0, numberOfWeapons: 0, numberOfCharacters: 0, showMaterialUsage: false)];
       expect(dataService.calculator.reorderSessions(updated), throwsArgumentError);
     });
 
     test('data was provided and previous data exists but invalid arrays', () async {
-      await dataService.calculator.createSession('A', 0);
-      await dataService.calculator.createSession('B', 0);
-      const updated = [CalculatorSessionModel(key: 1, name: 'NA', position: 0, numberOfWeapons: 0, numberOfCharacters: 0)];
+      await dataService.calculator.createSession('A', 0, false);
+      await dataService.calculator.createSession('B', 0, false);
+      const updated = [CalculatorSessionModel(key: 1, name: 'NA', position: 0, numberOfWeapons: 0, numberOfCharacters: 0, showMaterialUsage: false)];
       expect(dataService.calculator.reorderSessions(updated), throwsArgumentError);
     });
 
     test('valid call', () async {
-      final sessionA = await dataService.calculator.createSession('A', 0);
-      final sessionB = await dataService.calculator.createSession('B', 1);
+      final sessionA = await dataService.calculator.createSession('A', 0, false);
+      final sessionB = await dataService.calculator.createSession('B', 1, false);
       await dataService.calculator.reorderSessions([sessionB, sessionA]);
 
       final sessions = dataService.calculator.getAllSessions();
@@ -1255,25 +1258,25 @@ void main() {
     });
 
     test('provided data is empty', () async {
-      final session = await dataService.calculator.createSession('Dummy', 0);
+      final session = await dataService.calculator.createSession('Dummy', 0, false);
       expect(dataService.calculator.reorderItems(session.key, []), throwsArgumentError);
     });
 
     test('data was provided but no previous data exist', () async {
-      final session = await dataService.calculator.createSession('Dummy', 0);
+      final session = await dataService.calculator.createSession('Dummy', 0, false);
       final updated = [getCharacter()];
       expect(dataService.calculator.reorderItems(session.key, updated), throwsArgumentError);
     });
 
     test('data was provided and previous data exists but invalid arrays', () async {
-      final session = await dataService.calculator.createSession('A', 0);
+      final session = await dataService.calculator.createSession('A', 0, false);
       await dataService.calculator.addSessionItems(session.key, [getCharacter(), getWeapon()]);
       final updated = [getCharacter()];
       expect(dataService.calculator.reorderItems(session.key, updated), throwsArgumentError);
     });
 
     test('valid call', () async {
-      final session = await dataService.calculator.createSession('A', 0);
+      final session = await dataService.calculator.createSession('A', 0, false);
       await dataService.calculator.addSessionItems(session.key, [getCharacter(), getWeapon()]);
       final updated = [getWeapon(), getCharacter()];
       await dataService.calculator.reorderItems(session.key, updated);

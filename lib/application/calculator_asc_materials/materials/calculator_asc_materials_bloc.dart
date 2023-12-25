@@ -14,7 +14,7 @@ part 'calculator_asc_materials_bloc.freezed.dart';
 part 'calculator_asc_materials_event.dart';
 part 'calculator_asc_materials_state.dart';
 
-const _initialState = CalculatorAscMaterialsState.initial(sessionKey: -1, items: [], summary: []);
+const _initialState = CalculatorAscMaterialsState.initial(sessionKey: -1, items: [], summary: [], showMaterialUsage: false);
 
 class CalculatorAscMaterialsBloc extends Bloc<CalculatorAscMaterialsEvent, CalculatorAscMaterialsState> {
   final GenshinService _genshinService;
@@ -50,10 +50,11 @@ class CalculatorAscMaterialsBloc extends Bloc<CalculatorAscMaterialsEvent, Calcu
   }
 
   CalculatorAscMaterialsState _init(int sessionKey) {
+    final session = _dataService.calculator.getSession(sessionKey);
     final items = _dataService.calculator.getAllSessionItems(sessionKey);
     final materialsForSummary = _buildMaterialsForSummary(items);
     final summary = _calculatorService.generateSummary(materialsForSummary);
-    return CalculatorAscMaterialsState.initial(sessionKey: sessionKey, items: items, summary: summary);
+    return CalculatorAscMaterialsState.initial(sessionKey: sessionKey, items: items, summary: summary, showMaterialUsage: session.showMaterialUsage);
   }
 
   Future<CalculatorAscMaterialsState> _addCharacter(_AddCharacter e) async {
@@ -221,7 +222,7 @@ class CalculatorAscMaterialsBloc extends Bloc<CalculatorAscMaterialsEvent, Calcu
   Future<CalculatorAscMaterialsState> _clearAllItems(int sessionKey) async {
     _checkSessionKey(sessionKey);
     await _dataService.calculator.deleteAllSessionItems(sessionKey);
-    return CalculatorAscMaterialsState.initial(sessionKey: sessionKey, items: [], summary: []);
+    return currentState.copyWith(items: [], summary: []);
   }
 
   Future<CalculatorAscMaterialsState> _itemsReordered(List<ItemAscensionMaterials> updated) async {

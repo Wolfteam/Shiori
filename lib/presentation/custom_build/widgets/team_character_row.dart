@@ -18,14 +18,12 @@ enum _Options {
 
 class TeamCharacterRow extends StatelessWidget {
   final CustomBuildTeamCharacterModel character;
-  final int teamCount;
   final Color color;
   final bool readyToShare;
 
   const TeamCharacterRow({
     super.key,
     required this.character,
-    required this.teamCount,
     required this.color,
     required this.readyToShare,
   });

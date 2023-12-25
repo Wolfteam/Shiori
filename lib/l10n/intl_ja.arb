@@ -499,5 +499,7 @@
   "inInventory": "In inventory",
   "available": "Available",
   "required": "Required",
-  "remaining": "Remaining"
+  "remaining": "Remaining",
+  "used": "Used",
+  "showMaterialUsage": "Show material usage"
 }

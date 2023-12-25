@@ -11,11 +11,13 @@ const _spacerSize = Size(1, 15);
 class AscensionMaterialsSummaryWidget extends StatelessWidget {
   final int sessionKey;
   final AscensionMaterialsSummary summary;
+  final bool showMaterialUsage;
 
   const AscensionMaterialsSummaryWidget({
     super.key,
     required this.sessionKey,
     required this.summary,
+    required this.showMaterialUsage,
   });
 
   @override
@@ -34,7 +36,9 @@ class AscensionMaterialsSummaryWidget extends StatelessWidget {
             Wrap(
               alignment: WrapAlignment.center,
               crossAxisAlignment: WrapCrossAlignment.center,
-              children: summary.materials.map((m) => MaterialItem.fromSummary(sessionKey: sessionKey, summary: m)).toList(),
+              children: summary.materials
+                  .map((m) => MaterialItem.fromSummary(sessionKey: sessionKey, summary: m, showMaterialUsage: showMaterialUsage))
+                  .toList(),
             ),
             SizedBox.fromSize(size: _spacerSize),
           ],
@@ -74,7 +78,7 @@ class AscensionMaterialsSummaryWidget extends StatelessWidget {
       Wrap(
         alignment: WrapAlignment.center,
         crossAxisAlignment: WrapCrossAlignment.center,
-        children: materials.map((m) => MaterialItem.fromSummary(sessionKey: sessionKey, summary: m)).toList(),
+        children: materials.map((m) => MaterialItem.fromSummary(sessionKey: sessionKey, summary: m, showMaterialUsage: showMaterialUsage)).toList(),
       ),
       SizedBox.fromSize(size: _spacerSize),
     ];

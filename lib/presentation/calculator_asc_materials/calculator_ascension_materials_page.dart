@@ -140,17 +140,17 @@ class _FabMenu extends StatelessWidget {
             if (state.items.isEmpty) {
               return NothingFoundColumn(msg: s.startByAddingMsg, icon: Icons.add_circle_outline);
             }
-            final summary = _buildSummary(s, state.summary);
+            final summary = _buildSummary(s, state.summary, state.showMaterialUsage);
             switch (size) {
               case DeviceScreenType.mobile:
               case DeviceScreenType.tablet:
               case DeviceScreenType.desktop:
                 if (isPortrait) {
-                  return _PortraitLayout(sessionKey: sessionKey, items: state.items, summary: summary);
+                  return _PortraitLayout(sessionKey: sessionKey, items: state.items, summary: summary, showMaterialUsage: state.showMaterialUsage);
                 }
-                return _LandscapeLayout(sessionKey: sessionKey, items: state.items, summary: summary);
+                return _LandscapeLayout(sessionKey: sessionKey, items: state.items, summary: summary, showMaterialUsage: state.showMaterialUsage);
               default:
-                return _PortraitLayout(sessionKey: sessionKey, items: state.items, summary: summary);
+                return _PortraitLayout(sessionKey: sessionKey, items: state.items, summary: summary, showMaterialUsage: state.showMaterialUsage);
             }
           },
         ),
@@ -158,10 +158,10 @@ class _FabMenu extends StatelessWidget {
     );
   }
 
-  List<AscensionMaterialsSummaryWidget> _buildSummary(S s, List<AscensionMaterialsSummary> items) {
+  List<AscensionMaterialsSummaryWidget> _buildSummary(S s, List<AscensionMaterialsSummary> items, bool showMaterialUsage) {
     return items
         .orderBy((x) => s.translateAscensionSummaryType(x.type))
-        .map((e) => AscensionMaterialsSummaryWidget(summary: e, sessionKey: sessionKey))
+        .map((e) => AscensionMaterialsSummaryWidget(summary: e, sessionKey: sessionKey, showMaterialUsage: showMaterialUsage))
         .toList();
   }
 
@@ -212,11 +212,13 @@ class _PortraitLayout extends StatelessWidget {
   final int sessionKey;
   final List<ItemAscensionMaterials> items;
   final List<Widget> summary;
+  final bool showMaterialUsage;
 
   const _PortraitLayout({
     required this.sessionKey,
     required this.items,
     required this.summary,
+    required this.showMaterialUsage,
   });
 
   @override
@@ -257,6 +259,7 @@ class _PortraitLayout extends StatelessWidget {
                         isWeapon: !e.isCharacter,
                         materials: e.materials,
                         elementType: e.elementType,
+                        showMaterialUsage: showMaterialUsage,
                       ),
                     ),
                   )
@@ -284,11 +287,13 @@ class _LandscapeLayout extends StatefulWidget {
   final int sessionKey;
   final List<ItemAscensionMaterials> items;
   final List<Widget> summary;
+  final bool showMaterialUsage;
 
   const _LandscapeLayout({
     required this.sessionKey,
     required this.items,
     required this.summary,
+    required this.showMaterialUsage,
   });
 
   @override
@@ -349,6 +354,7 @@ class _LandscapeLayoutState extends State<_LandscapeLayout> {
                               isWeapon: !e.isCharacter,
                               materials: e.materials,
                               elementType: e.elementType,
+                              showMaterialUsage: widget.showMaterialUsage,
                             ),
                           ),
                         )
