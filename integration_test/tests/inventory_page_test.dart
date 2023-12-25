@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:shiori/presentation/characters/widgets/character_card.dart';
-import 'package:shiori/presentation/shared/gradient_card.dart';
+import 'package:shiori/presentation/materials/widgets/material_card.dart';
 import 'package:shiori/presentation/shared/shiori_icons.dart';
 import 'package:shiori/presentation/weapons/widgets/weapon_card.dart';
 
@@ -80,7 +80,7 @@ void main() {
       await navigate(widgetTester, _TabType.materials);
 
       const String quantity = '666';
-      final Finder materialCardFinder = find.byType(GradientCard).last;
+      final Finder materialCardFinder = find.byType(MaterialCard).at(2);
       await widgetTester.tap(materialCardFinder);
       await widgetTester.pumpAndSettle();
 

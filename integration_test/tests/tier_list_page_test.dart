@@ -8,7 +8,7 @@ import '../views/views.dart';
 
 void main() {
   group('Tier list builder page', () {
-    testWidgets('Clears all data', (widgetTester) async {
+    testWidgets('clears all data', (widgetTester) async {
       final page = TierListPage(widgetTester);
 
       await page.navigate();
@@ -18,7 +18,7 @@ void main() {
       expect(find.byType(Draggable<ItemCommon>), findsAtLeastNWidgets(3));
     });
 
-    testWidgets('Clears all data and restores it', (widgetTester) async {
+    testWidgets('clears all data and restores it', (widgetTester) async {
       final page = TierListPage(widgetTester);
 
       await page.navigate();
@@ -29,7 +29,7 @@ void main() {
       expect(find.byType(Draggable<ItemCommon>), findsNothing);
     });
 
-    testWidgets('Drags 3 items to the empty tier list', (widgetTester) async {
+    testWidgets('drags 3 items to the empty tier list', (widgetTester) async {
       final page = TierListPage(widgetTester);
 
       await page.navigate();
@@ -44,7 +44,7 @@ void main() {
       expect(charactersFinder, findsNWidgets(3));
     });
 
-    testWidgets('Drags 3 items to the empty tier list and changes its order', (widgetTester) async {
+    testWidgets('drags 3 items to the empty tier list and changes its order', (widgetTester) async {
       final page = TierListPage(widgetTester);
 
       await page.navigate();
@@ -73,7 +73,7 @@ void main() {
       }
     });
 
-    testWidgets('Drags 3 items to different rows, and clears one of them', (widgetTester) async {
+    testWidgets('drags 3 items to different rows, and clears one of them', (widgetTester) async {
       final page = TierListPage(widgetTester);
 
       await page.navigate();
@@ -93,7 +93,7 @@ void main() {
       expect(find.descendant(of: find.byType(TierListRow).at(rowIndex), matching: find.byType(CircleCharacter)), findsNothing);
     });
 
-    testWidgets('Adds row above SSS', (widgetTester) async {
+    testWidgets('adds row above SSS', (widgetTester) async {
       final page = TierListPage(widgetTester);
 
       await page.navigate();
@@ -106,7 +106,7 @@ void main() {
       expect(find.byWidgetPredicate((widget) => widget is TierListRow && widget.index == 1 && widget.title == row), findsOneWidget);
     });
 
-    testWidgets('Adds row below SSS', (widgetTester) async {
+    testWidgets('adds row below SSS', (widgetTester) async {
       final page = TierListPage(widgetTester);
 
       await page.navigate();
@@ -119,7 +119,7 @@ void main() {
       expect(find.byWidgetPredicate((widget) => widget is TierListRow && widget.index == 2 && widget.title == row), findsOneWidget);
     });
 
-    testWidgets('Renames SSS row', (widgetTester) async {
+    testWidgets('renames SSS row', (widgetTester) async {
       final page = TierListPage(widgetTester);
 
       await page.navigate();
@@ -140,7 +140,7 @@ void main() {
       expect(find.byWidgetPredicate((widget) => widget is TierListRow && widget.index == 0 && widget.title == newName), findsOneWidget);
     });
 
-    testWidgets('Deletes SSS row', (widgetTester) async {
+    testWidgets('deletes SSS row', (widgetTester) async {
       final page = TierListPage(widgetTester);
 
       await page.navigate();
@@ -153,7 +153,7 @@ void main() {
       expect(find.byWidgetPredicate((widget) => widget is TierListRow && widget.index == 0 && widget.title == row), findsNothing);
     });
 
-    testWidgets('Changes SSS row color', (widgetTester) async {
+    testWidgets('changes SSS row color', (widgetTester) async {
       final page = TierListPage(widgetTester);
 
       await page.navigate();

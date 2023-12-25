@@ -234,6 +234,7 @@ class RealmCurrencyNotificationBottomSheet extends NotificationBottomSheet {
   }
 
   Future<void> setTrustRank(int index) async {
+    await tapOnCommonDropdownButton<int>();
     await selectOptionFromDropdownButtonWithTitle<int>(index: index);
   }
 }
