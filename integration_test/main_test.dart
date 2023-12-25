@@ -15,6 +15,7 @@ import 'tests/splash_page_test.dart' as splash_test;
 import 'tests/tier_list_page_test.dart' as tier_list_test;
 import 'tests/today_asc_materials_page_test.dart' as today_asc_materials_test;
 import 'tests/weapons_page_test.dart' as weapons_test;
+import 'tests/wish_simulator_page_test.dart' as wish_simulator_test;
 
 void main() {
   splash_test.main();
@@ -34,4 +35,5 @@ void main() {
   charts_page_test.main();
   tier_list_test.main();
   game_codes_test.main();
+  wish_simulator_test.main();
 }
