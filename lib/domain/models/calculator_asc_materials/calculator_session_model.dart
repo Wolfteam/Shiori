@@ -1,15 +1,15 @@
-import 'package:shiori/domain/models/models.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 
-class CalculatorSessionModel {
-  final int key;
-  final String name;
-  final int position;
-  final List<ItemAscensionMaterials> items;
+part 'calculator_session_model.freezed.dart';
 
-  CalculatorSessionModel({
-    required this.key,
-    required this.name,
-    required this.position,
-    required this.items,
-  });
+@freezed
+class CalculatorSessionModel with _$CalculatorSessionModel {
+  const factory CalculatorSessionModel({
+    required int key,
+    required String name,
+    required int position,
+    required int numberOfCharacters,
+    required int numberOfWeapons,
+    required bool showMaterialUsage,
+  }) = _CalculatorSessionModel;
 }

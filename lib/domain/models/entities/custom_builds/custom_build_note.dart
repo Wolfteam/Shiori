@@ -1,9 +1,10 @@
 import 'package:hive/hive.dart';
+import 'package:shiori/domain/models/entities/base_entity.dart';
 
 part 'custom_build_note.g.dart';
 
 @HiveType(typeId: 20)
-class CustomBuildNote extends HiveObject {
+class CustomBuildNote extends BaseEntity {
   @HiveField(0)
   final int buildItemKey;
 

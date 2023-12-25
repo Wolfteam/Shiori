@@ -62,8 +62,8 @@ class CharacterBloc extends Bloc<CharacterEvent, CharacterState> {
   }
 
   ItemAscensionMaterialModel _mapToItemAscensionModel(ItemAscensionMaterialFileModel m) {
-    final img = _genshinService.materials.getMaterialImg(m.key);
-    return ItemAscensionMaterialModel(key: m.key, type: m.type, quantity: m.quantity, image: img);
+    final material = _genshinService.materials.getMaterial(m.key);
+    return ItemAscensionMaterialModel.fromMaterial(m.quantity, material, _resourceService.getMaterialImagePath(material.image, material.type));
   }
 
   CharacterAscensionModel _mapToAscensionModel(CharacterFileAscensionMaterialModel e) {

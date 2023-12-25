@@ -34,7 +34,7 @@ void main() {
 
     resourceService = getResourceService(settingsService);
     genshinService = GenshinServiceImpl(resourceService, LocaleServiceImpl(settingsService));
-    dataService = DataServiceImpl(genshinService, CalculatorServiceImpl(genshinService, resourceService), resourceService);
+    dataService = DataServiceImpl(genshinService, CalculatorAscMaterialsServiceImpl(genshinService, resourceService), resourceService);
 
     return Future(() async {
       await genshinService.init(settingsService.language);

@@ -5,11 +5,11 @@ import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/generated/l10n.dart';
 import 'package:shiori/injection.dart';
 import 'package:shiori/presentation/calculator_asc_materials/widgets/add_edit_session_dialog.dart';
-import 'package:shiori/presentation/calculator_asc_materials/widgets/reoder_sessions_dialog.dart';
 import 'package:shiori/presentation/calculator_asc_materials/widgets/session_list_item.dart';
 import 'package:shiori/presentation/shared/app_fab.dart';
 import 'package:shiori/presentation/shared/dialogs/confirm_dialog.dart';
 import 'package:shiori/presentation/shared/dialogs/info_dialog.dart';
+import 'package:shiori/presentation/shared/dialogs/sort_items_dialog.dart';
 import 'package:shiori/presentation/shared/loading.dart';
 import 'package:shiori/presentation/shared/mixins/app_fab_mixin.dart';
 import 'package:shiori/presentation/shared/nothing_found_column.dart';
@@ -112,13 +112,19 @@ class _BodyState extends State<_Body> with SingleTickerProviderStateMixin, AppFa
   }
 
   Future<void> _showReorderDialog(List<CalculatorSessionModel> sessions) async {
-    await showDialog(
+    return showDialog<SortResult<SortableItemOfT<CalculatorSessionModel>>>(
       context: context,
-      builder: (_) => BlocProvider.value(
-        value: context.read<CalculatorAscMaterialsSessionsBloc>(),
-        child: ReorderSessionsDialog(sessions: sessions),
+      builder: (_) => SortItemsDialog<SortableItemOfT<CalculatorSessionModel>>(
+        items: sessions.map((e) => SortableItemOfT('${e.key}', e.name, e)).toList(),
       ),
-    );
+    ).then((result) {
+      if (result == null || !result.somethingChanged) {
+        return;
+      }
+
+      final sorted = result.items.map((e) => e.item).toList();
+      context.read<CalculatorAscMaterialsSessionsBloc>().add(CalculatorAscMaterialsSessionsEvent.itemsReordered(sorted));
+    });
   }
 
   Future<void> _showInfoDialog() async {

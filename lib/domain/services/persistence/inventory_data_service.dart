@@ -5,7 +5,6 @@ import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/persistence/base_data_service.dart';
 
 typedef RedistributeInventoryMaterial = Future<void> Function(String, int);
-typedef RedistributeAllInventoryMaterials = Future<void> Function();
 
 abstract class InventoryDataService implements BaseDataService {
   StreamController<ItemType> get itemAddedToInventory;
@@ -20,7 +19,7 @@ abstract class InventoryDataService implements BaseDataService {
 
   List<MaterialCardModel> getAllMaterialsInInventory();
 
-  MaterialCardModel getMaterialFromInventory(String image);
+  int getItemQuantityFromInventory(String key, ItemType type);
 
   Future<void> addCharacterToInventory(String key, {bool raiseEvent = true});
 
@@ -30,15 +29,9 @@ abstract class InventoryDataService implements BaseDataService {
 
   Future<void> deleteWeaponFromInventory(String key, {bool raiseEvent = true});
 
-  Future<void> addItemToInventory(String key, ItemType type, int quantity, {bool raiseEvent = true});
-
-  Future<void> updateItemInInventory(String key, ItemType type, int quantity, RedistributeInventoryMaterial redistribute, {bool raiseEvent = true});
-
-  Future<void> deleteItemFromInventory(String key, ItemType type, {bool raiseEvent = true});
+  Future<void> addMaterialToInventory(String key, int quantity, {RedistributeInventoryMaterial? redistribute, bool raiseEvent = true});
 
   Future<void> deleteItemsFromInventory(ItemType type, {bool raiseEvent = true});
-
-  Future<void> deleteAllItemsInInventoryExceptMaterials(ItemType? type);
 
   Future<void> deleteAllUsedMaterialItems();
 
@@ -46,26 +39,27 @@ abstract class InventoryDataService implements BaseDataService {
 
   bool isItemInInventory(String key, ItemType type);
 
-  int getNumberOfItemsUsed(String itemKey, ItemType type);
+  int getUsedMaterialQuantity(String itemKey);
 
-  Future<int> redistributeMaterial(int calItemKey, ItemAscensionMaterials item, String itemKey, int currentQuantity);
-
-  Future<void> useItemFromInventory(int calculatorItemKey, String itemKey, ItemType type, int quantityToUse);
-
-  Future<void> clearUsedInventoryItems(
-    int calculatorItemKey,
-    RedistributeAllInventoryMaterials redistributeAll, {
-    String? onlyItemKey,
-    bool redistribute = false,
+  Future<int> redistributeMaterial(
+    int calcItemKey,
+    List<ItemAscensionMaterialModel> materials,
+    String itemKey,
+    int currentQuantity, {
+    bool checkUsed = false,
   });
 
-  int getNumberOfItemsUsedByCalcKeyItemKeyAndType(int calculatorItemKey, String itemKey, ItemType type);
+  Future<void> useMaterialFromInventory(int calculatorItemKey, String itemKey, int quantityToUse);
 
-  int getRemainingQuantity(int calculatorItemKey, String itemKey, int current, ItemType type);
+  Future<void> clearUsedInventoryItems(int calculatorItemKey, {String? onlyItemKey});
+
+  int getUsedMaterialQuantityByCalcKeyAndItemKey(int calculatorItemKey, String itemKey);
 
   List<ItemCommonWithQuantity> getItemsForRedistribution(ItemType type);
 
   List<BackupInventoryModel> getDataForBackup();
 
   Future<void> restoreFromBackup(List<BackupInventoryModel> data);
+
+  List<String> getUsedMaterialKeysByCalcKey(int calculatorItemKey);
 }

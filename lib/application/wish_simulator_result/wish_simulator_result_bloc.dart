@@ -45,7 +45,7 @@ class WishSimulatorResultBloc extends Bloc<WishSimulatorResultEvent, WishSimulat
 
     final banner = period.banners[bannerIndex];
     final bannerRates = _RatesPerBannerType(banner.type);
-    final history = await _dataService.wishSimulator.getBannerPullHistory(banner.type, defaultXStarCount: bannerRates.getDefaultXStarCount);
+    final history = await _dataService.wishSimulator.getBannerPullHistory(banner.type, defaultXStarCount: bannerRates.defaultXStarCount);
     final results = <WishSimulatorBannerItemResultModel>[];
     for (int i = 1; i <= pulls; i++) {
       final int randomRarity = bannerRates.getRarityIfGuaranteed(history) ?? _getRandomItemRarity(history.currentXStarCount, bannerRates);
@@ -196,7 +196,7 @@ class _RatesPerBannerType {
   final List<_BannerRate> _rates = [];
   final Map<int, int> _defaultXStarCount = {};
 
-  Map<int, int> get getDefaultXStarCount => Map.of(_defaultXStarCount);
+  Map<int, int> get defaultXStarCount => _defaultXStarCount;
 
   _RatesPerBannerType(this.type) {
     switch (type) {

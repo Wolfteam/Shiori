@@ -42,6 +42,9 @@ class TierListDataServiceImpl implements TierListDataService {
   @override
   Future<void> saveTierList(List<TierListRowModel> tierList) async {
     await deleteTierList();
+    if (tierList.isEmpty) {
+      return;
+    }
     final toSave = tierList.mapIndex((e, i) => TierListItem(e.tierText, e.tierColor, i, e.items.map((i) => i.key).toList())).toList();
     await _tierListBox.addAll(toSave);
   }

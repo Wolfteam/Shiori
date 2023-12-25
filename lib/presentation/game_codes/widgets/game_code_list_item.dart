@@ -94,7 +94,7 @@ class GameCodeListItem extends StatelessWidget {
                             (m) => WrappedAscensionMaterial(
                               itemKey: m.key,
                               image: m.image,
-                              quantity: m.quantity,
+                              quantity: m.requiredQuantity,
                               size: SizeUtils.getSizeForCircleImages(context) * 0.6,
                             ),
                           )

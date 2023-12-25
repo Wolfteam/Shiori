@@ -68,6 +68,7 @@ export 'db/weapons/weapons_file.dart';
 export 'donations/package_item_model.dart';
 export 'elements/element_card_model.dart';
 export 'elements/element_reaction_card_model.dart';
+export 'events/calculator_asc_material_session_item_event.dart';
 export 'game_codes/game_code_model.dart';
 export 'home/today_char_ascension_materials_model.dart';
 export 'home/today_weapon_ascension_material_model.dart';

@@ -6,11 +6,13 @@ class CalculatorAscMaterialsSessionsEvent with _$CalculatorAscMaterialsSessionsE
 
   const factory CalculatorAscMaterialsSessionsEvent.createSession({
     required String name,
+    required bool showMaterialUsage,
   }) = _CreateSession;
 
   const factory CalculatorAscMaterialsSessionsEvent.updateSession({
     required int key,
     required String name,
+    required bool showMaterialUsage,
   }) = _UpdateSession;
 
   const factory CalculatorAscMaterialsSessionsEvent.deleteSession({
@@ -18,4 +20,16 @@ class CalculatorAscMaterialsSessionsEvent with _$CalculatorAscMaterialsSessionsE
   }) = _DeleteSession;
 
   const factory CalculatorAscMaterialsSessionsEvent.deleteAllSessions() = _DeleteAllSessions;
+
+  const factory CalculatorAscMaterialsSessionsEvent.itemsReordered(List<CalculatorSessionModel> updated) = _ItemsReordered;
+
+  const factory CalculatorAscMaterialsSessionsEvent.itemAdded({
+    required int sessionKey,
+    required bool isCharacter,
+  }) = _ItemAdded;
+
+  const factory CalculatorAscMaterialsSessionsEvent.itemDeleted({
+    required int sessionKey,
+    required bool isCharacter,
+  }) = _ItemDeleted;
 }

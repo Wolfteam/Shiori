@@ -165,6 +165,8 @@ class AddEditItemBottomSheet extends StatelessWidget {
       builder: (ctx, state) => state.map(
         loading: (_) => const Loading(useScaffold: false),
         loaded: (state) => RightBottomSheet(
+          title: isAWeapon ? '${s.weapon}: ${state.name}' : '${s.character}: ${state.name}',
+          icon: !isInEditMode ? Icons.add : Icons.edit,
           bottom: _ButtonBar(
             sessionKey: sessionKey,
             index: index,
@@ -186,7 +188,7 @@ class AddEditItemBottomSheet extends StatelessWidget {
               style: theme.textTheme.titleSmall!.copyWith(fontWeight: FontWeight.bold),
             ),
             Container(
-              margin: const EdgeInsets.only(bottom: 5),
+              margin: const EdgeInsets.symmetric(vertical: 5),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [

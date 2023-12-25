@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:intl/date_symbol_data_local.dart';
@@ -51,8 +52,10 @@ Future<bool> _assetExists(String path) async {
     await rootBundle.load(path);
     return true;
   } catch (e) {
-    print(path);
-    print(e);
+    if (kDebugMode) {
+      print(path);
+      print(e);
+    }
     return false;
   }
 }

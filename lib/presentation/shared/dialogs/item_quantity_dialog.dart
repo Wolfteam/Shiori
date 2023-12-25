@@ -8,6 +8,7 @@ import 'package:shiori/injection.dart';
 class ItemQuantityDialog extends StatelessWidget {
   final int quantity;
   final int quantityLength;
+  final String? title;
   final void Function(int)? onSave;
   final VoidCallback? onClose;
 
@@ -15,6 +16,7 @@ class ItemQuantityDialog extends StatelessWidget {
     super.key,
     required this.quantity,
     this.quantityLength = 10,
+    this.title,
     this.onSave,
     this.onClose,
   });
@@ -23,7 +25,13 @@ class ItemQuantityDialog extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (ctx) => Injection.itemQuantityFormBloc,
-      child: _Body(quantity: quantity, quantityLength: quantityLength, onSave: onSave, onClose: onClose),
+      child: _Body(
+        quantity: quantity,
+        quantityLength: quantityLength,
+        title: title,
+        onSave: onSave,
+        onClose: onClose,
+      ),
     );
   }
 }
@@ -31,12 +39,14 @@ class ItemQuantityDialog extends StatelessWidget {
 class _Body extends StatefulWidget {
   final int quantity;
   final int quantityLength;
+  final String? title;
   final void Function(int)? onSave;
   final VoidCallback? onClose;
 
   const _Body({
     required this.quantity,
     required this.quantityLength,
+    this.title,
     this.onSave,
     this.onClose,
   });
@@ -62,7 +72,7 @@ class _BodyState extends State<_Body> {
     final theme = Theme.of(context);
     final s = S.of(context);
     return AlertDialog(
-      title: Text(s.quantity),
+      title: Text(widget.title ?? s.quantity),
       content: BlocBuilder<ItemQuantityFormBloc, ItemQuantityFormState>(
         builder: (ctx, state) => TextField(
           maxLength: widget.quantityLength,

@@ -1,11 +1,12 @@
 import 'package:hive/hive.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/models/entities.dart';
+import 'package:shiori/domain/models/entities/base_entity.dart';
 
 part 'notification_expedition.g.dart';
 
 @HiveType(typeId: 10)
-class NotificationExpedition extends HiveObject implements NotificationBase {
+class NotificationExpedition extends BaseEntity implements NotificationBase {
   @override
   @HiveField(0)
   final int type;

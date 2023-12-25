@@ -36,7 +36,7 @@ void main() {
 
     final resourceService = getResourceService(settingsService);
     genshinService = GenshinServiceImpl(resourceService, localeService);
-    dataService = DataServiceImpl(genshinService, CalculatorServiceImpl(genshinService, resourceService), resourceService);
+    dataService = DataServiceImpl(genshinService, CalculatorAscMaterialsServiceImpl(genshinService, resourceService), resourceService);
     return Future(() async {
       await genshinService.init(settingsService.language);
       dbPath = await getDbPath(_dbFolder);

@@ -76,7 +76,7 @@ class CharacterDetailTalentAscensionMaterialsCard extends StatelessWidget {
   }
 
   TableRow _buildTalentAscensionRow(CharacterTalentAscensionModel model) {
-    final materials = model.materials.map((m) => WrappedAscensionMaterial(itemKey: m.key, image: m.image, quantity: m.quantity)).toList();
+    final materials = model.materials.map((m) => WrappedAscensionMaterial(itemKey: m.key, image: m.image, quantity: m.requiredQuantity)).toList();
     return TableRow(
       children: [
         CommonTableCell(

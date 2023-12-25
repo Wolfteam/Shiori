@@ -6,14 +6,18 @@ import 'package:shiori/presentation/calculator_asc_materials/widgets/material_it
 import 'package:shiori/presentation/shared/extensions/i18n_extensions.dart';
 import 'package:shiori/presentation/shared/styles.dart';
 
+const _spacerSize = Size(1, 15);
+
 class AscensionMaterialsSummaryWidget extends StatelessWidget {
   final int sessionKey;
   final AscensionMaterialsSummary summary;
+  final bool showMaterialUsage;
 
   const AscensionMaterialsSummaryWidget({
     super.key,
     required this.sessionKey,
     required this.summary,
+    required this.showMaterialUsage,
   });
 
   @override
@@ -33,9 +37,10 @@ class AscensionMaterialsSummaryWidget extends StatelessWidget {
               alignment: WrapAlignment.center,
               crossAxisAlignment: WrapCrossAlignment.center,
               children: summary.materials
-                  .map((m) => MaterialItem(itemKey: m.key, image: m.fullImagePath, quantity: m.quantity, type: m.type, sessionKey: sessionKey))
+                  .map((m) => MaterialItem.fromSummary(sessionKey: sessionKey, summary: m, showMaterialUsage: showMaterialUsage))
                   .toList(),
             ),
+            SizedBox.fromSize(size: _spacerSize),
           ],
         ),
       );
@@ -62,20 +67,20 @@ class AscensionMaterialsSummaryWidget extends StatelessWidget {
   }
 
   List<Widget> _buildWidgetsForDays(ThemeData theme, S s, Iterable<MaterialSummary> materials) {
+    if (materials.isEmpty) {
+      return [];
+    }
     return [
-      if (materials.isNotEmpty)
-        Text(
-          s.translateDays(materials.expand((e) => e.days).toSet().toList()),
-          style: theme.textTheme.titleMedium!.copyWith(fontWeight: FontWeight.bold),
-        ),
-      if (materials.isNotEmpty)
-        Wrap(
-          alignment: WrapAlignment.center,
-          crossAxisAlignment: WrapCrossAlignment.center,
-          children: materials
-              .map((m) => MaterialItem(itemKey: m.key, image: m.fullImagePath, quantity: m.quantity, type: m.type, sessionKey: sessionKey))
-              .toList(),
-        ),
+      Text(
+        s.translateDays(materials.expand((e) => e.days).toSet().toList()),
+        style: theme.textTheme.titleMedium!.copyWith(fontWeight: FontWeight.bold),
+      ),
+      Wrap(
+        alignment: WrapAlignment.center,
+        crossAxisAlignment: WrapCrossAlignment.center,
+        children: materials.map((m) => MaterialItem.fromSummary(sessionKey: sessionKey, summary: m, showMaterialUsage: showMaterialUsage)).toList(),
+      ),
+      SizedBox.fromSize(size: _spacerSize),
     ];
   }
 }

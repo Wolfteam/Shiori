@@ -4,26 +4,24 @@ import 'package:shiori/generated/l10n.dart';
 import 'package:shiori/presentation/shared/extensions/media_query_extensions.dart';
 import 'package:shiori/presentation/shared/utils/toast_utils.dart';
 
-class SortItemsDialog extends StatefulWidget {
-  final List<SortableItem> items;
-  final void Function(SortResult result) onSave;
+class SortItemsDialog<TItem extends SortableItem> extends StatefulWidget {
+  final List<TItem> items;
 
   const SortItemsDialog({
     super.key,
     required this.items,
-    required this.onSave,
   });
 
   @override
-  State<SortItemsDialog> createState() => _SortItemsDialogState();
+  State<SortItemsDialog<TItem>> createState() => _SortItemsDialogState<TItem>();
 }
 
-class _SortItemsDialogState extends State<SortItemsDialog> {
-  List<SortableItem> _items = [];
+class _SortItemsDialogState<TItem extends SortableItem> extends State<SortItemsDialog<TItem>> {
+  final List<TItem> _items = [];
 
   @override
   void initState() {
-    _items = [...widget.items];
+    _items.addAll(widget.items);
     super.initState();
   }
 
@@ -50,7 +48,7 @@ class _SortItemsDialogState extends State<SortItemsDialog> {
               onTap: () => ToastUtils.showInfoToast(fToast, s.holdToReorder),
             );
           },
-          onReorder: (oldIndex, newIndex) => _onReorder(oldIndex, newIndex, context),
+          onReorder: _onReorder,
         ),
       ),
       actions: [
@@ -66,10 +64,13 @@ class _SortItemsDialogState extends State<SortItemsDialog> {
     );
   }
 
-  void _onReorder(int oldIndex, int newIndex, BuildContext context) {
+  void _onReorder(int oldIndex, int newIndex) {
     final item = _items.elementAt(oldIndex);
 
     int updatedNewIndex = newIndex;
+    if (oldIndex < updatedNewIndex) {
+      updatedNewIndex--;
+    }
     if (updatedNewIndex >= _items.length) {
       updatedNewIndex--;
     }
@@ -97,7 +98,7 @@ class _SortItemsDialogState extends State<SortItemsDialog> {
       }
     }
 
-    widget.onSave(SortResult(somethingChanged, _items));
-    Navigator.of(context).pop();
+    final result = SortResult<TItem>(somethingChanged, _items);
+    Navigator.of(context).pop(result);
   }
 }
