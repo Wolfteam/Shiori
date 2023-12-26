@@ -99,17 +99,12 @@ class _MobileWebViewState extends State<_MobileWebView> {
         Scaffold(
           appBar: widget.appBar,
           body: InAppWebView(
-            initialUrlRequest: URLRequest(url: Uri.parse(widget.url)),
-            initialOptions: InAppWebViewGroupOptions(
-              android: AndroidInAppWebViewOptions(
-                useHybridComposition: true,
-              ),
-              crossPlatform: InAppWebViewOptions(
-                preferredContentMode: device == DeviceScreenType.mobile ? UserPreferredContentMode.MOBILE : UserPreferredContentMode.RECOMMENDED,
-                //This may fail on weird devices (chinese ones ?)...
-                userAgent: widget.userAgent,
-                transparentBackground: true,
-              ),
+            initialUrlRequest: URLRequest(url: WebUri.uri(Uri.parse(widget.url))),
+            initialSettings: InAppWebViewSettings(
+              preferredContentMode: device == DeviceScreenType.mobile ? UserPreferredContentMode.MOBILE : UserPreferredContentMode.RECOMMENDED,
+              //This may fail on weird devices (chinese ones ?)...
+              userAgent: widget.userAgent,
+              transparentBackground: true,
             ),
             onLoadStop: (controller, url) async {
               if (widget.script != null) {

@@ -90,7 +90,6 @@ void main() {
       'at least 1 backup exists',
       setUp: () async {
         final bk = await backupRestoreService.createBackup(AppBackupDataType.values);
-        print(bk);
         bkPath = bk.path;
       },
       tearDown: () async {

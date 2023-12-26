@@ -11,22 +11,26 @@ PODS:
     - FlutterMacOS
   - devicelocale (0.0.1):
     - FlutterMacOS
+  - flutter_inappwebview_macos (0.0.1):
+    - FlutterMacOS
+    - OrderedSet (~> 5.0)
   - flutter_local_notifications (0.0.1):
     - FlutterMacOS
   - flutter_native_timezone (0.0.1):
     - FlutterMacOS
   - FlutterMacOS (1.0.0)
+  - OrderedSet (5.0.0)
   - package_info_plus (0.0.1):
     - FlutterMacOS
   - path_provider_foundation (0.0.1):
     - Flutter
     - FlutterMacOS
-  - purchases_flutter (6.3.0):
+  - purchases_flutter (6.5.1):
     - FlutterMacOS
-    - PurchasesHybridCommon (= 7.3.3)
-  - PurchasesHybridCommon (7.3.3):
-    - RevenueCat (= 4.30.5)
-  - RevenueCat (4.30.5)
+    - PurchasesHybridCommon (= 8.1.1)
+  - PurchasesHybridCommon (8.1.1):
+    - RevenueCat (= 4.31.2)
+  - RevenueCat (4.31.2)
   - share_plus (0.0.1):
     - FlutterMacOS
   - shared_preferences_foundation (0.0.1):
@@ -43,6 +47,7 @@ DEPENDENCIES:
   - AppCenter
   - device_info_plus (from `Flutter/ephemeral/.symlinks/plugins/device_info_plus/macos`)
   - devicelocale (from `Flutter/ephemeral/.symlinks/plugins/devicelocale/macos`)
+  - flutter_inappwebview_macos (from `Flutter/ephemeral/.symlinks/plugins/flutter_inappwebview_macos/macos`)
   - flutter_local_notifications (from `Flutter/ephemeral/.symlinks/plugins/flutter_local_notifications/macos`)
   - flutter_native_timezone (from `Flutter/ephemeral/.symlinks/plugins/flutter_native_timezone/macos`)
   - FlutterMacOS (from `Flutter/ephemeral`)
@@ -58,6 +63,7 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - AppCenter
+    - OrderedSet
     - PurchasesHybridCommon
     - RevenueCat
 
@@ -66,6 +72,8 @@ EXTERNAL SOURCES:
     :path: Flutter/ephemeral/.symlinks/plugins/device_info_plus/macos
   devicelocale:
     :path: Flutter/ephemeral/.symlinks/plugins/devicelocale/macos
+  flutter_inappwebview_macos:
+    :path: Flutter/ephemeral/.symlinks/plugins/flutter_inappwebview_macos/macos
   flutter_local_notifications:
     :path: Flutter/ephemeral/.symlinks/plugins/flutter_local_notifications/macos
   flutter_native_timezone:
@@ -93,14 +101,16 @@ SPEC CHECKSUMS:
   AppCenter: 85c92db0759d2792a65eb61d6842d2e86611a49a
   device_info_plus: 5401765fde0b8d062a2f8eb65510fb17e77cf07f
   devicelocale: 9f0f36ac651cabae2c33f32dcff4f32b61c38225
+  flutter_inappwebview_macos: 9600c9df9fdb346aaa8933812009f8d94304203d
   flutter_local_notifications: 3805ca215b2fb7f397d78b66db91f6a747af52e4
   flutter_native_timezone: 3a4724189c47dea215bb3e168e555e18308d312c
   FlutterMacOS: 8f6f14fa908a6fb3fba0cd85dbd81ec4b251fb24
+  OrderedSet: aaeb196f7fef5a9edf55d89760da9176ad40b93c
   package_info_plus: 02d7a575e80f194102bef286361c6c326e4c29ce
   path_provider_foundation: 29f094ae23ebbca9d3d0cec13889cd9060c0e943
-  purchases_flutter: 38bfba11d77c5e04bbb9a9a1ea5b652e732b4fae
-  PurchasesHybridCommon: 347eab2636e0f03e3001d3aaad1ba1d9d0481b12
-  RevenueCat: c1e33f4e1f1fd239ba461652f02928e220becc31
+  purchases_flutter: a0dd47bdfed0f67cc93cb1da51d82ce215c80bb3
+  PurchasesHybridCommon: 2439f6e671fb4d60878a652e4377fa7e588368e6
+  RevenueCat: 63f6f4ae6916095561b90b2e1de86a492af67493
   share_plus: 76dd39142738f7a68dd57b05093b5e8193f220f7
   shared_preferences_foundation: 5b919d13b803cadd15ed2dc053125c68730e5126
   url_launcher_macos: d2691c7dd33ed713bf3544850a623080ec693d95
