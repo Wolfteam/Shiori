@@ -94,7 +94,7 @@ class _BodyState extends State<_Body> {
       actions: [
         TextButton(
           onPressed: _close,
-          child: Text(s.cancel, style: TextStyle(color: theme.primaryColor)),
+          child: Text(s.cancel),
         ),
         FilledButton(
           onPressed: _isValid ? _saveSession : null,

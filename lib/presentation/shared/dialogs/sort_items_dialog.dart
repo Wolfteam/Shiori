@@ -54,7 +54,7 @@ class _SortItemsDialogState<TItem extends SortableItem> extends State<SortItemsD
       actions: [
         TextButton(
           onPressed: () => _discardChanges(context),
-          child: Text(s.cancel, style: TextStyle(color: theme.primaryColor)),
+          child: Text(s.cancel),
         ),
         FilledButton(
           onPressed: () => _applyChanges(context),

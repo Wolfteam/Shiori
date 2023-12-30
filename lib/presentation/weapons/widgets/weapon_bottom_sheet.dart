@@ -187,7 +187,7 @@ class _ButtonBar extends StatelessWidget {
             context.read<WeaponsBloc>().add(const WeaponsEvent.cancelChanges());
             Navigator.pop(context);
           },
-          child: Text(s.cancel, style: TextStyle(color: theme.primaryColor)),
+          child: Text(s.cancel),
         ),
         TextButton(
           onPressed: !isResetEnabled
@@ -196,7 +196,7 @@ class _ButtonBar extends StatelessWidget {
                   context.read<WeaponsBloc>().add(const WeaponsEvent.resetFilters());
                   Navigator.pop(context);
                 },
-          child: Text(s.reset, style: TextStyle(color: theme.primaryColor)),
+          child: Text(s.reset),
         ),
         FilledButton(
           onPressed: () {

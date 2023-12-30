@@ -182,7 +182,6 @@ class _ButtonBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final s = S.of(context);
-    final theme = Theme.of(context);
     return CommonButtonBar(
       children: <Widget>[
         TextButton(
@@ -190,14 +189,14 @@ class _ButtonBar extends StatelessWidget {
             context.read<CharactersBloc>().add(const CharactersEvent.cancelChanges());
             Navigator.pop(context);
           },
-          child: Text(s.cancel, style: TextStyle(color: theme.primaryColor)),
+          child: Text(s.cancel),
         ),
         TextButton(
           onPressed: () {
             context.read<CharactersBloc>().add(const CharactersEvent.resetFilters());
             Navigator.pop(context);
           },
-          child: Text(s.reset, style: TextStyle(color: theme.primaryColor)),
+          child: Text(s.reset),
         ),
         FilledButton(
           onPressed: () {

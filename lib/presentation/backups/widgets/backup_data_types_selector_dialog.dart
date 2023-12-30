@@ -62,7 +62,7 @@ class _BackupDataTypesSelectorDialogState extends State<BackupDataTypesSelectorD
       actions: [
         TextButton(
           onPressed: () => Navigator.pop(context),
-          child: Text(s.cancel, style: TextStyle(color: theme.primaryColor)),
+          child: Text(s.cancel),
         ),
         FilledButton(
           onPressed: _selectedDataTypes.isEmpty ? null : () => Navigator.pop(context, _selectedDataTypes),

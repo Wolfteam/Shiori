@@ -34,7 +34,7 @@ class CommonButtonSheetButtons extends StatelessWidget {
         if (showCancelButton)
           TextButton(
             onPressed: () => onCancel != null ? onCancel!() : Navigator.pop(context),
-            child: Text(cancel, style: TextStyle(color: theme.primaryColor)),
+            child: Text(cancel),
           ),
         if (showOkButton)
           FilledButton(

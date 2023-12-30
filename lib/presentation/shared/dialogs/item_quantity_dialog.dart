@@ -91,7 +91,7 @@ class _BodyState extends State<_Body> {
       actions: [
         TextButton(
           onPressed: _close,
-          child: Text(s.cancel, style: TextStyle(color: theme.primaryColor)),
+          child: Text(s.cancel),
         ),
         BlocBuilder<ItemQuantityFormBloc, ItemQuantityFormState>(
           builder: (ctx, state) => FilledButton(

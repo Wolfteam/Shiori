@@ -88,7 +88,7 @@ class _SelectEnumDialogState<TEnum> extends State<SelectEnumDialog<TEnum>> {
       actions: [
         TextButton(
           onPressed: () => Navigator.pop(context),
-          child: Text(s.cancel, style: TextStyle(color: theme.primaryColor)),
+          child: Text(s.cancel),
         ),
         FilledButton(
           onPressed: () {

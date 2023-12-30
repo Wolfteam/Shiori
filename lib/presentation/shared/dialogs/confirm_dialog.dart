@@ -26,7 +26,6 @@ class ConfirmDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final s = S.of(context);
-    final theme = Theme.of(context);
     return AlertDialog(
       title: Text(title),
       content: Text(content),
@@ -37,7 +36,7 @@ class ConfirmDialog extends StatelessWidget {
               onCancel?.call();
               Navigator.pop(context, false);
             },
-            child: Text(cancelText ?? s.cancel, style: TextStyle(color: theme.primaryColor)),
+            child: Text(cancelText ?? s.cancel),
           ),
         if (showOkButton)
           FilledButton(

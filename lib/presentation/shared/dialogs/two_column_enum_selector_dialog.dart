@@ -240,7 +240,7 @@ class _TwoColumnEnumSelectorDialogState<TEnum> extends State<TwoColumnEnumSelect
       actions: [
         TextButton(
           onPressed: () => Navigator.pop(context),
-          child: Text(s.cancel, style: TextStyle(color: theme.primaryColor)),
+          child: Text(s.cancel),
         ),
         FilledButton(
           onPressed: () {

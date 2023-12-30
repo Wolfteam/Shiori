@@ -267,7 +267,7 @@ class _Header extends StatelessWidget {
                   }),
                   child: Text(s.create),
                 ),
-                FilledButton.tonal(
+                TextButton(
                   onPressed: () => _pickFile(s, context),
                   child: Text(s.import),
                 ),

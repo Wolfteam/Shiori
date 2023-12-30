@@ -341,12 +341,12 @@ class _ButtonBar extends StatelessWidget {
       children: [
         TextButton(
           onPressed: () => Navigator.pop(context),
-          child: Text(s.cancel, style: TextStyle(color: theme.primaryColor)),
+          child: Text(s.cancel),
         ),
         if (isInEditMode)
           TextButton(
             onPressed: () => _removeItem(context),
-            child: Text(s.delete, style: TextStyle(color: theme.primaryColor)),
+            child: Text(s.delete),
           ),
         if (isInEditMode)
           TextButton(
@@ -370,7 +370,7 @@ class _ButtonBar extends StatelessWidget {
                     context,
                     isActiveChanged: true,
                   ),
-            child: Text(isActive ? s.inactive : s.active, style: TextStyle(color: theme.primaryColor)),
+            child: Text(isActive ? s.inactive : s.active),
           ),
         FilledButton(
           onPressed: () => isAWeapon

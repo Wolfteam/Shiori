@@ -31,7 +31,7 @@ class CheckForResourceUpdatesDialog extends StatelessWidget {
             actions: [
               TextButton(
                 onPressed: () => Navigator.pop(context, false),
-                child: Text(s.cancel, style: TextStyle(color: theme.primaryColor)),
+                child: Text(s.cancel),
               ),
               if (state.updateResultType != AppResourceUpdateResultType.updatesAvailable)
                 FilledButton(
@@ -61,7 +61,7 @@ class CheckForResourceUpdatesDialog extends StatelessWidget {
             actions: [
               TextButton(
                 onPressed: () => Navigator.pop(context, false),
-                child: Text(s.cancel, style: TextStyle(color: theme.primaryColor)),
+                child: Text(s.cancel),
               ),
             ],
           ),

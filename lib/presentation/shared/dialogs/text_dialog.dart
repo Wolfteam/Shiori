@@ -108,7 +108,7 @@ class _TextDialogState extends State<TextDialog> {
       actions: [
         TextButton(
           onPressed: _close,
-          child: Text(s.cancel, style: TextStyle(color: theme.primaryColor)),
+          child: Text(s.cancel),
         ),
         FilledButton(
           onPressed: _isValid ? _save : null,

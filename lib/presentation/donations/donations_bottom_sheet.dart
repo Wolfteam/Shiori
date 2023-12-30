@@ -76,12 +76,12 @@ class _BodyState extends State<_Body> {
                     children: <Widget>[
                       TextButton(
                         onPressed: () => Navigator.pop(context),
-                        child: Text(s.cancel, style: TextStyle(color: theme.primaryColor)),
+                        child: Text(s.cancel),
                       ),
                       if (state.packages.isNotEmpty && state.isInitialized)
                         TextButton(
                           onPressed: () => context.read<DonationsBloc>().add(const DonationsEvent.restorePurchases()),
-                          child: Text(s.restorePurchases, style: TextStyle(color: theme.primaryColor)),
+                          child: Text(s.restorePurchases),
                         ),
                       if (state.packages.isNotEmpty && state.isInitialized && _selected != null)
                         FilledButton(
