@@ -143,7 +143,7 @@ class _OptionsDialog extends StatelessWidget {
       scrollable: true,
       title: Text(s.selectAnOption),
       actions: [
-        ElevatedButton(
+        FilledButton(
           onPressed: () => Navigator.pop(context),
           child: Text(s.cancel),
         ),

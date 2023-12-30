@@ -32,14 +32,14 @@ class _TierListRowColorPickerState extends State<TierListRowColorPicker> {
         },
       ),
       actions: <Widget>[
-        OutlinedButton(
+        TextButton(
           onPressed: () => Navigator.of(context).pop(widget.currentColor),
           child: Text(
             s.cancel,
             style: TextStyle(color: theme.primaryColor),
           ),
         ),
-        ElevatedButton(
+        FilledButton(
           onPressed: () => Navigator.of(context).pop(selectedColor ?? widget.currentColor),
           child: Text(s.ok),
         ),

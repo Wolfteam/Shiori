@@ -180,7 +180,7 @@ class _OptionsDialog extends StatelessWidget {
     return AlertDialog(
       title: Text(s.selectAnOption),
       actions: [
-        ElevatedButton(
+        FilledButton(
           onPressed: () => Navigator.pop(context),
           child: Text(s.cancel),
         ),

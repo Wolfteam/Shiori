@@ -52,11 +52,11 @@ class _SortItemsDialogState<TItem extends SortableItem> extends State<SortItemsD
         ),
       ),
       actions: [
-        OutlinedButton(
+        TextButton(
           onPressed: () => _discardChanges(context),
           child: Text(s.cancel, style: TextStyle(color: theme.primaryColor)),
         ),
-        ElevatedButton(
+        FilledButton(
           onPressed: () => _applyChanges(context),
           child: Text(s.save),
         ),

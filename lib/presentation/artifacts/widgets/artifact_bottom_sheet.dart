@@ -123,21 +123,21 @@ class _ButtonBar extends StatelessWidget {
     final theme = Theme.of(context);
     return CommonButtonBar(
       children: <Widget>[
-        OutlinedButton(
+        TextButton(
           onPressed: () {
             context.read<ArtifactsBloc>().add(const ArtifactsEvent.cancelChanges());
             Navigator.pop(context);
           },
           child: Text(s.cancel, style: TextStyle(color: theme.primaryColor)),
         ),
-        OutlinedButton(
+        TextButton(
           onPressed: () {
             context.read<ArtifactsBloc>().add(const ArtifactsEvent.resetFilters());
             Navigator.pop(context);
           },
           child: Text(s.reset, style: TextStyle(color: theme.primaryColor)),
         ),
-        ElevatedButton(
+        FilledButton(
           onPressed: () {
             context.read<ArtifactsBloc>().add(const ArtifactsEvent.applyFilterChanges());
             Navigator.pop(context);

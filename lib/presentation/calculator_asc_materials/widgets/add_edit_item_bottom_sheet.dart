@@ -106,11 +106,11 @@ class AddEditItemBottomSheet extends StatelessWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      OutlinedButton(
+                      TextButton(
                         onPressed: () => _showLevelPickerDialog(context, state.currentLevel, true),
                         child: Text(s.currentX(state.currentLevel)),
                       ),
-                      OutlinedButton(
+                      TextButton(
                         onPressed: () => _showLevelPickerDialog(context, state.desiredLevel, false),
                         child: Text(s.desiredX(state.desiredLevel)),
                       ),
@@ -192,11 +192,11 @@ class AddEditItemBottomSheet extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  OutlinedButton(
+                  TextButton(
                     onPressed: () => _showLevelPickerDialog(context, state.currentLevel, true),
                     child: Text(s.currentX(state.currentLevel)),
                   ),
-                  OutlinedButton(
+                  TextButton(
                     onPressed: () => _showLevelPickerDialog(context, state.desiredLevel, false),
                     child: Text(s.desiredX(state.desiredLevel)),
                   ),
@@ -339,17 +339,17 @@ class _ButtonBar extends StatelessWidget {
     final theme = Theme.of(context);
     return CommonButtonBar(
       children: [
-        OutlinedButton(
+        TextButton(
           onPressed: () => Navigator.pop(context),
           child: Text(s.cancel, style: TextStyle(color: theme.primaryColor)),
         ),
         if (isInEditMode)
-          OutlinedButton(
+          TextButton(
             onPressed: () => _removeItem(context),
             child: Text(s.delete, style: TextStyle(color: theme.primaryColor)),
           ),
         if (isInEditMode)
-          OutlinedButton(
+          TextButton(
             onPressed: () => isAWeapon
                 ? _applyChangesForWeapon(
                     currentLevel,
@@ -372,7 +372,7 @@ class _ButtonBar extends StatelessWidget {
                   ),
             child: Text(isActive ? s.inactive : s.active, style: TextStyle(color: theme.primaryColor)),
           ),
-        ElevatedButton(
+        FilledButton(
           onPressed: () => isAWeapon
               ? _applyChangesForWeapon(
                   currentLevel,

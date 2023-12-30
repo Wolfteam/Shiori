@@ -92,11 +92,11 @@ class _BodyState extends State<_Body> {
         ],
       ),
       actions: [
-        OutlinedButton(
+        TextButton(
           onPressed: _close,
           child: Text(s.cancel, style: TextStyle(color: theme.primaryColor)),
         ),
-        ElevatedButton(
+        FilledButton(
           onPressed: _isValid ? _saveSession : null,
           child: Text(s.save),
         ),

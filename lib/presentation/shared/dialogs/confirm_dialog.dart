@@ -32,7 +32,7 @@ class ConfirmDialog extends StatelessWidget {
       content: Text(content),
       actions: [
         if (showCancelButton)
-          OutlinedButton(
+          TextButton(
             onPressed: () {
               onCancel?.call();
               Navigator.pop(context, false);
@@ -40,7 +40,7 @@ class ConfirmDialog extends StatelessWidget {
             child: Text(cancelText ?? s.cancel, style: TextStyle(color: theme.primaryColor)),
           ),
         if (showOkButton)
-          ElevatedButton(
+          FilledButton(
             onPressed: () {
               onOk?.call();
               Navigator.pop(context, true);

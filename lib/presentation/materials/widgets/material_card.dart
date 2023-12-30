@@ -210,7 +210,7 @@ class MaterialCard extends StatelessWidget {
         title: Text(s.usedItem),
         content: Text(s.itemIsBeingUsedOnACalculation(used)),
         actions: [
-          ElevatedButton(
+          FilledButton(
             onPressed: () => Navigator.of(context).pop(),
             child: Text(s.ok),
           ),

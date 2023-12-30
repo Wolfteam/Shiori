@@ -253,7 +253,7 @@ class _Header extends StatelessWidget {
             Text(s.restoreBackupMsgWarning),
             ButtonBar(
               children: [
-                ElevatedButton(
+                FilledButton(
                   onPressed: () => showDialog<List<AppBackupDataType>?>(
                     context: context,
                     builder: (context) => BackupDataTypesSelectorDialog(
@@ -267,7 +267,7 @@ class _Header extends StatelessWidget {
                   }),
                   child: Text(s.create),
                 ),
-                OutlinedButton(
+                FilledButton.tonal(
                   onPressed: () => _pickFile(s, context),
                   child: Text(s.import),
                 ),

@@ -29,17 +29,17 @@ class CheckForResourceUpdatesDialog extends StatelessWidget {
               ],
             ),
             actions: [
-              OutlinedButton(
+              TextButton(
                 onPressed: () => Navigator.pop(context, false),
                 child: Text(s.cancel, style: TextStyle(color: theme.primaryColor)),
               ),
               if (state.updateResultType != AppResourceUpdateResultType.updatesAvailable)
-                ElevatedButton(
+                FilledButton(
                   onPressed: () => context.read<CheckForResourceUpdatesBloc>().add(const CheckForResourceUpdatesEvent.checkForUpdates()),
                   child: Text(s.check),
                 ),
               if (state.updateResultType == AppResourceUpdateResultType.updatesAvailable)
-                ElevatedButton(
+                FilledButton(
                   onPressed: () => context.read<MainBloc>().add(const MainEvent.restart()),
                   child: Text(s.applyUpdate),
                 ),
@@ -59,7 +59,7 @@ class CheckForResourceUpdatesDialog extends StatelessWidget {
               ],
             ),
             actions: [
-              OutlinedButton(
+              TextButton(
                 onPressed: () => Navigator.pop(context, false),
                 child: Text(s.cancel, style: TextStyle(color: theme.primaryColor)),
               ),

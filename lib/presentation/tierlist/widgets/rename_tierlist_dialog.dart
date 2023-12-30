@@ -52,12 +52,12 @@ class _BodyState extends State<_Body> {
     return AlertDialog(
       title: Text(s.rename),
       actions: [
-        OutlinedButton(
+        TextButton(
           onPressed: () => Navigator.pop(context),
           child: Text(s.cancel),
         ),
         BlocBuilder<TierListFormBloc, TierListFormState>(
-          builder: (ctx, state) => ElevatedButton(
+          builder: (ctx, state) => FilledButton(
             onPressed: state.isNameValid ? _saveName : null,
             child: Text(s.save),
           ),

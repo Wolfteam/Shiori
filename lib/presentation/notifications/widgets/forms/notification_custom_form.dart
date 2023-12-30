@@ -66,7 +66,7 @@ class NotificationCustomForm extends StatelessWidget {
             const Spacer(flex: 10),
             Expanded(
               flex: 40,
-              child: OutlinedButton(
+              child: TextButton(
                 onPressed: () => _showDatePickerDialog(context),
                 child: Text(
                   utils.DateUtils.formatDateMilitaryTime(scheduledDate, useTwentyFourHoursFormat: useTwentyFourHoursFormat),

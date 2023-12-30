@@ -81,11 +81,11 @@ class SessionListItem extends StatelessWidget {
         title: Text(s.deleteSession),
         content: Text(s.confirmDeleteSessionX(name)),
         actions: [
-          OutlinedButton(
+          TextButton(
             onPressed: () => Navigator.pop(context),
             child: Text(s.cancel, style: TextStyle(color: theme.primaryColor)),
           ),
-          ElevatedButton(
+          FilledButton(
             onPressed: () {
               context.read<CalculatorAscMaterialsSessionsBloc>().add(CalculatorAscMaterialsSessionsEvent.deleteSession(key: sessionKey));
               Navigator.pop(context);

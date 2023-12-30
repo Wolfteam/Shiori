@@ -53,15 +53,15 @@ class BackupDetailsDialog extends StatelessWidget {
         ],
       ),
       actions: [
-        OutlinedButton(
+        TextButton(
           onPressed: () => Navigator.pop(context),
           child: Text(s.cancel, style: TextStyle(color: theme.primaryColor)),
         ),
-        OutlinedButton(
+        TextButton(
           onPressed: () => Navigator.pop(context, OperationType.delete),
           child: Text(s.delete),
         ),
-        ElevatedButton(
+        FilledButton(
           onPressed: () => Navigator.pop(context, OperationType.restore),
           child: Text(s.restore),
         ),

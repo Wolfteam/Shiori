@@ -62,7 +62,7 @@ class NotificationRealmCurrency extends StatelessWidget {
             Flexible(
               fit: FlexFit.tight,
               flex: 30,
-              child: OutlinedButton(
+              child: TextButton(
                 onPressed: () => _showRealmRankLevelPickerDialog(context),
                 child: Text(s.currentX(currentRealmCurrency)),
               ),

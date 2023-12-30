@@ -39,11 +39,11 @@ class _NumberPickerDialogState extends State<NumberPickerDialog> {
     return AlertDialog(
       title: Text(widget.title),
       actions: [
-        OutlinedButton(
+        TextButton(
           onPressed: () => Navigator.pop(context),
           child: Text(s.cancel),
         ),
-        ElevatedButton(
+        FilledButton(
           onPressed: () => Navigator.pop<int>(context, _currentValue),
           child: Text(s.ok),
         ),

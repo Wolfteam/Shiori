@@ -60,7 +60,7 @@ class BannerVersionHistoryDialog extends StatelessWidget {
           ),
         ),
         actions: [
-          ElevatedButton(
+          FilledButton(
             onPressed: () => Navigator.pop(context),
             child: Text(s.ok),
           ),

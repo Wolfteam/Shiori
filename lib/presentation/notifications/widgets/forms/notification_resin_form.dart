@@ -53,7 +53,7 @@ class NotificationResinForm extends StatelessWidget {
             Flexible(
               fit: FlexFit.tight,
               flex: 30,
-              child: OutlinedButton(
+              child: TextButton(
                 onPressed: () => _showQuantityPickerDialog(context, currentResin),
                 child: Text(s.currentX(currentResin)),
               ),

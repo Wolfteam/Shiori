@@ -41,49 +41,26 @@ extension AppThemeTypeExtensions on AppAccentColorType {
 
   ThemeData getThemeData(AppThemeType theme, bool useDarkAmoledTheme) {
     final color = getAccentColor();
-    switch (theme) {
-      case AppThemeType.dark:
-        final colorScheme = ColorScheme.dark(
-          primary: color,
-          secondary: color,
-          primaryContainer: color,
-        );
-        final dark = ThemeData.dark().copyWith(
-          primaryColor: color,
-          primaryColorLight: color.withOpacity(0.5),
-          primaryColorDark: color,
-          useMaterial3: false,
-          colorScheme: colorScheme,
-        );
+    final brightness = switch (theme) {
+      AppThemeType.dark => Brightness.dark,
+      AppThemeType.light => Brightness.light,
+    };
 
-        if (!useDarkAmoledTheme) {
-          return dark;
-        }
-
-        const almostBlackColor = Color.fromARGB(255, 20, 20, 20);
-        return dark.copyWith(
-          scaffoldBackgroundColor: Colors.black,
-          popupMenuTheme: const PopupMenuThemeData(color: almostBlackColor),
-          bottomSheetTheme: const BottomSheetThemeData(backgroundColor: almostBlackColor),
-          bottomNavigationBarTheme: const BottomNavigationBarThemeData(backgroundColor: almostBlackColor),
-          cardColor: almostBlackColor,
-          dialogBackgroundColor: almostBlackColor,
-          colorScheme: colorScheme.copyWith(surface: almostBlackColor),
-        );
-      case AppThemeType.light:
-        return ThemeData.light().copyWith(
-          primaryColor: color,
-          primaryColorLight: color.withOpacity(0.8),
-          primaryColorDark: color,
-          useMaterial3: false,
-          colorScheme: ColorScheme.light(
-            primary: color,
-            secondary: color,
-            primaryContainer: color,
-          ),
-        );
-      default:
-        throw Exception('The provided theme  = $theme is not valid ');
+    final ColorScheme colorScheme = ColorScheme.fromSeed(seedColor: color, brightness: brightness);
+    final themeData = ThemeData.from(colorScheme: colorScheme, useMaterial3: true);
+    if (!useDarkAmoledTheme || brightness == Brightness.light) {
+      return themeData;
     }
+
+    const almostBlackColor = Color.fromARGB(255, 20, 20, 20);
+    return themeData.copyWith(
+      scaffoldBackgroundColor: Colors.black,
+      popupMenuTheme: const PopupMenuThemeData(color: almostBlackColor),
+      bottomSheetTheme: const BottomSheetThemeData(backgroundColor: almostBlackColor),
+      bottomNavigationBarTheme: const BottomNavigationBarThemeData(backgroundColor: almostBlackColor),
+      cardColor: almostBlackColor,
+      dialogBackgroundColor: almostBlackColor,
+      colorScheme: colorScheme.copyWith(surface: almostBlackColor),
+    );
   }
 }

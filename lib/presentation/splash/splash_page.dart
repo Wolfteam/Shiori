@@ -178,7 +178,7 @@ class _Buttons extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    final buttonStyle = OutlinedButton.styleFrom(side: const BorderSide(color: Styles.paimonColor));
+    final buttonStyle = TextButton.styleFrom(side: const BorderSide(color: Styles.paimonColor));
     final s = S.of(context);
     return Padding(
       padding: Styles.edgeInsetHorizontal16,
@@ -199,14 +199,14 @@ class _Buttons extends StatelessWidget {
           ButtonBar(
             alignment: MainAxisAlignment.center,
             children: [
-              OutlinedButton.icon(
+              TextButton.icon(
                 onPressed: () => context.read<SplashBloc>().add(const SplashEvent.init(retry: true)),
                 icon: const Icon(Icons.refresh, color: Colors.white),
                 label: Text(s.retry, style: const TextStyle(color: Colors.white)),
                 style: buttonStyle,
               ),
               if (canSkipUpdate)
-                OutlinedButton.icon(
+                TextButton.icon(
                   onPressed: () => context.read<MainBloc>().add(MainEvent.init(updateResultType: updateResultType)),
                   icon: const Icon(Icons.arrow_right_alt, color: Colors.white),
                   label: Text(s.continueLabel, style: const TextStyle(color: Colors.white)),

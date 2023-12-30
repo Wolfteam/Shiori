@@ -77,7 +77,7 @@ class _CharacterStatsDialogState extends State<CharacterStatsDialog> {
         ),
       ),
       actions: [
-        ElevatedButton(
+        FilledButton(
           onPressed: () => Navigator.pop(context),
           child: Text(s.ok),
         ),
