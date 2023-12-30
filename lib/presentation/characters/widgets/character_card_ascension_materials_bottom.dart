@@ -22,39 +22,37 @@ class CharacterCardAscensionMaterialsBottom extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final s = S.of(context);
-    final weaponPath = weaponType.getWeaponAssetPath();
+    final weaponPath = weaponType.getWeaponNormalSkillAssetPath();
     return BlocBuilder<SettingsBloc, SettingsState>(
-      builder: (context, state) {
-        return state.map(
-          loading: (_) => const Loading(useScaffold: false),
-          loaded: (settingsState) => !settingsState.showCharacterDetails
-              ? const SizedBox()
-              : IntrinsicHeight(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      Flexible(
-                        fit: FlexFit.tight,
-                        flex: 40,
-                        child: Tooltip(
-                          message: s.translateWeaponType(weaponType),
-                          child: FadeInImage(
-                            height: 50,
-                            placeholder: MemoryImage(kTransparentImage),
-                            image: AssetImage(weaponPath),
-                          ),
+      builder: (context, state) => state.map(
+        loading: (_) => const Loading(useScaffold: false),
+        loaded: (settingsState) => !settingsState.showCharacterDetails
+            ? const SizedBox.shrink()
+            : IntrinsicHeight(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Flexible(
+                      fit: FlexFit.tight,
+                      flex: 40,
+                      child: Tooltip(
+                        message: s.translateWeaponType(weaponType),
+                        child: FadeInImage(
+                          height: 50,
+                          placeholder: MemoryImage(kTransparentImage),
+                          image: AssetImage(weaponPath),
                         ),
                       ),
-                      Flexible(
-                        fit: FlexFit.tight,
-                        flex: 60,
-                        child: CharacterAscensionMaterials(images: materials),
-                      ),
-                    ],
-                  ),
+                    ),
+                    Flexible(
+                      fit: FlexFit.tight,
+                      flex: 60,
+                      child: CharacterAscensionMaterials(images: materials),
+                    ),
+                  ],
                 ),
-        );
-      },
+              ),
+      ),
     );
   }
 }
