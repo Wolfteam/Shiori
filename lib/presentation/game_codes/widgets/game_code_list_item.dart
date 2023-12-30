@@ -8,7 +8,7 @@ import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/utils/date_utils.dart' as utils;
 import 'package:shiori/generated/l10n.dart';
 import 'package:shiori/presentation/shared/extensions/i18n_extensions.dart';
-import 'package:shiori/presentation/shared/material_item_button.dart';
+import 'package:shiori/presentation/shared/material_quantity_row.dart';
 import 'package:shiori/presentation/shared/styles.dart';
 import 'package:shiori/presentation/shared/utils/size_utils.dart';
 import 'package:shiori/presentation/shared/utils/toast_utils.dart';
@@ -92,7 +92,7 @@ class GameCodeListItem extends StatelessWidget {
                       Wrap(
                         alignment: WrapAlignment.center,
                         crossAxisAlignment: WrapCrossAlignment.center,
-                        children: rewards.map((m) => _Reward(item: m)).toList(),
+                        children: rewards.map((m) => MaterialQuantityRow.fromAscensionMaterial(item: m)).toList(),
                       ),
                       if (region != null)
                         Wrap(
@@ -170,32 +170,6 @@ class _DateRow extends StatelessWidget {
               style: theme.textTheme.bodySmall,
             ),
           ),
-        ],
-      ),
-    );
-  }
-}
-
-class _Reward extends StatelessWidget {
-  final ItemAscensionMaterialModel item;
-
-  const _Reward({required this.item});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      margin: Styles.edgeInsetHorizontal5,
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          MaterialItemButton(
-            itemKey: item.key,
-            image: item.image,
-            size: SizeUtils.getSizeForCircleImages(context) * 0.6,
-            useButton: false,
-          ),
-          Text('x${item.requiredQuantity}'),
         ],
       ),
     );

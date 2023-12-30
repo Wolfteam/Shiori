@@ -10,9 +10,9 @@ import 'package:shiori/presentation/shared/extensions/rarity_extensions.dart';
 import 'package:shiori/presentation/shared/images/circle_character.dart';
 import 'package:shiori/presentation/shared/images/circle_monster.dart';
 import 'package:shiori/presentation/shared/images/circle_weapon.dart';
-import 'package:shiori/presentation/shared/images/wrapped_ascension_material.dart';
 import 'package:shiori/presentation/shared/item_description_detail.dart';
 import 'package:shiori/presentation/shared/material_item_button.dart';
+import 'package:shiori/presentation/shared/material_quantity_row.dart';
 
 class MaterialDetailBottom extends StatelessWidget {
   final String? description;
@@ -73,7 +73,7 @@ class _ObtainedFromItem extends StatelessWidget {
       children: [
         Wrap(
           alignment: WrapAlignment.center,
-          children: from.items.map((e) => WrappedAscensionMaterial(itemKey: e.key, image: e.image, quantity: e.quantity, size: size * 2)).toList(),
+          children: from.items.map((e) => MaterialQuantityRow.fromItemCommonQuantity(item: e, size: size * 2)).toList(),
         ),
         if (showDivider) const FractionallySizedBox(widthFactor: 0.8, child: Divider()),
       ],
