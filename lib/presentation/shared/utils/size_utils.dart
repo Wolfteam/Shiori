@@ -79,10 +79,6 @@ class SizeUtils {
       return 0.6;
     }
 
-    if (size.width < 1000) {
-      return 0.4;
-    }
-
-    return 0.2;
+    return 0.5;
   }
 }

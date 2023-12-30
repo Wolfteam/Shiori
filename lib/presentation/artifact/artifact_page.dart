@@ -11,6 +11,7 @@ import 'package:shiori/presentation/shared/details/detail_bottom_portrait_layout
 import 'package:shiori/presentation/shared/details/detail_general_card.dart';
 import 'package:shiori/presentation/shared/details/detail_tab_landscape_layout.dart';
 import 'package:shiori/presentation/shared/details/detail_top_layout.dart';
+import 'package:shiori/presentation/shared/disabled_card_surface_tint_color.dart';
 import 'package:shiori/presentation/shared/extensions/rarity_extensions.dart';
 import 'package:shiori/presentation/shared/images/circle_character.dart';
 import 'package:shiori/presentation/shared/images/circle_monster.dart';
@@ -28,9 +29,11 @@ class ArtifactPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isPortrait = MediaQuery.of(context).orientation == Orientation.portrait;
-    return BlocProvider(
-      create: (context) => Injection.artifactBloc..add(ArtifactEvent.loadFromKey(key: itemKey)),
-      child: isPortrait ? const _PortraitLayout() : const _LandscapeLayout(),
+    return DisabledSurfaceCardTintColor(
+      child: BlocProvider(
+        create: (context) => Injection.artifactBloc..add(ArtifactEvent.loadFromKey(key: itemKey)),
+        child: isPortrait ? const _PortraitLayout() : const _LandscapeLayout(),
+      ),
     );
   }
 }

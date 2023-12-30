@@ -20,7 +20,7 @@ import 'package:shiori/presentation/wish_simulator/wish_simulator_history_page.d
 
 const double _topIconSize = 40;
 const double _topHeight = 100;
-const double _wishIconHeight = 45;
+const double _wishIconHeight = 60;
 
 class WishSimulatorPage extends StatelessWidget {
   const WishSimulatorPage({super.key});

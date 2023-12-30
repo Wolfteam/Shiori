@@ -30,7 +30,7 @@ class AscensionLevel extends StatelessWidget {
         iconSize: iconSize,
         icon: Opacity(
           opacity: isSelected ? 1 : 0.2,
-          child: Image.asset(Assets.starCrystalIconPath, width: 40, height: 40),
+          child: Image.asset(Assets.starCrystalIconPath, width: iconSize * 1.3, height: iconSize * 1.3),
         ),
         splashRadius: 20,
         onPressed: () {

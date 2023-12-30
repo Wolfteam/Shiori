@@ -130,6 +130,7 @@ class ItemCard extends StatelessWidget {
                               textColor: Colors.white,
                               sessionKey: sessionKey,
                               showMaterialUsage: showMaterialUsage,
+                              iconSize: 40,
                             );
                           },
                         ),

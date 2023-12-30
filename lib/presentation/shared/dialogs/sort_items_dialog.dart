@@ -27,7 +27,6 @@ class _SortItemsDialogState<TItem extends SortableItem> extends State<SortItemsD
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
     final s = S.of(context);
     final fToast = ToastUtils.of(context);
     final mq = MediaQuery.of(context);

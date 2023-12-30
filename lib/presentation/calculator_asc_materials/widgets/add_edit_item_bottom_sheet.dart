@@ -106,11 +106,11 @@ class AddEditItemBottomSheet extends StatelessWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      TextButton(
+                      OutlinedButton(
                         onPressed: () => _showLevelPickerDialog(context, state.currentLevel, true),
                         child: Text(s.currentX(state.currentLevel)),
                       ),
-                      TextButton(
+                      OutlinedButton(
                         onPressed: () => _showLevelPickerDialog(context, state.desiredLevel, false),
                         child: Text(s.desiredX(state.desiredLevel)),
                       ),
@@ -192,11 +192,11 @@ class AddEditItemBottomSheet extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  TextButton(
+                  OutlinedButton(
                     onPressed: () => _showLevelPickerDialog(context, state.currentLevel, true),
                     child: Text(s.currentX(state.currentLevel)),
                   ),
-                  TextButton(
+                  OutlinedButton(
                     onPressed: () => _showLevelPickerDialog(context, state.desiredLevel, false),
                     child: Text(s.desiredX(state.desiredLevel)),
                   ),

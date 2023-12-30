@@ -111,27 +111,21 @@ class _FabMenu extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
     final s = S.of(context);
     final isPortrait = MediaQuery.of(context).orientation == Orientation.portrait;
     final size = getDeviceType(MediaQuery.of(context).size);
     return HawkFabMenu(
       icon: AnimatedIcons.menu_arrow,
-      fabColor: theme.colorScheme.secondary,
       items: [
         HawkFabMenuItem(
           label: s.addCharacter,
           ontap: () => _openCharacterPage(context),
           icon: const Icon(Icons.people),
-          color: theme.colorScheme.secondary,
-          labelColor: theme.colorScheme.secondary,
         ),
         HawkFabMenuItem(
           label: s.addWeapon,
           ontap: () => _openWeaponPage(context),
           icon: const Icon(Shiori.crossed_swords),
-          color: theme.colorScheme.secondary,
-          labelColor: theme.colorScheme.secondary,
         ),
       ],
       body: BlocBuilder<CalculatorAscMaterialsBloc, CalculatorAscMaterialsState>(

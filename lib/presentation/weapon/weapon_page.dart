@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shiori/application/bloc.dart';
 import 'package:shiori/injection.dart';
+import 'package:shiori/presentation/shared/disabled_card_surface_tint_color.dart';
 import 'package:shiori/presentation/shared/loading.dart';
 import 'package:shiori/presentation/shared/scaffold_with_fab.dart';
 import 'package:shiori/presentation/weapon/widgets/weapon_detail_bottom.dart';
@@ -21,9 +22,11 @@ class WeaponPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isPortrait = MediaQuery.of(context).orientation == Orientation.portrait;
-    return BlocProvider(
-      create: (context) => Injection.weaponBloc..add(WeaponEvent.loadFromKey(key: itemKey)),
-      child: isPortrait ? const _PortraitLayout() : const _LandscapeLayout(),
+    return DisabledSurfaceCardTintColor(
+      child: BlocProvider(
+        create: (context) => Injection.weaponBloc..add(WeaponEvent.loadFromKey(key: itemKey)),
+        child: isPortrait ? const _PortraitLayout() : const _LandscapeLayout(),
+      ),
     );
   }
 }

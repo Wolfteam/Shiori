@@ -21,7 +21,7 @@ class IncrementButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final color = Theme.of(context).colorScheme.secondary;
+    final color = Theme.of(context).colorScheme.primary;
     return Container(
       margin: Styles.edgeInsetVertical5,
       child: Column(

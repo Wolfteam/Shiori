@@ -8,7 +8,7 @@ import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/utils/date_utils.dart' as utils;
 import 'package:shiori/generated/l10n.dart';
 import 'package:shiori/presentation/shared/extensions/i18n_extensions.dart';
-import 'package:shiori/presentation/shared/images/wrapped_ascension_material.dart';
+import 'package:shiori/presentation/shared/material_item_button.dart';
 import 'package:shiori/presentation/shared/styles.dart';
 import 'package:shiori/presentation/shared/utils/size_utils.dart';
 import 'package:shiori/presentation/shared/utils/toast_utils.dart';
@@ -42,7 +42,7 @@ class GameCodeListItem extends StatelessWidget {
         ? theme.textTheme.titleMedium
         : theme.textTheme.titleMedium!.copyWith(
             decoration: TextDecoration.lineThrough,
-            decorationColor: theme.colorScheme.secondary,
+            decorationColor: theme.colorScheme.primary,
             decorationThickness: 3,
           );
     final extentRatio = SizeUtils.getExtentRatioForSlidablePane(context);
@@ -75,49 +75,44 @@ class GameCodeListItem extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Center(
-                      child: Text(
-                        code,
-                        style: textCodeStyle,
-                        overflow: TextOverflow.ellipsis,
+                child: Container(
+                  margin: const EdgeInsets.only(right: 10),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Center(
+                        child: Text(
+                          code,
+                          style: textCodeStyle,
+                          textAlign: TextAlign.center,
+                          overflow: TextOverflow.ellipsis,
+                        ),
                       ),
-                    ),
-                    Wrap(
-                      alignment: WrapAlignment.center,
-                      crossAxisAlignment: WrapCrossAlignment.center,
-                      children: rewards
-                          .map(
-                            (m) => WrappedAscensionMaterial(
-                              itemKey: m.key,
-                              image: m.image,
-                              quantity: m.requiredQuantity,
-                              size: SizeUtils.getSizeForCircleImages(context) * 0.6,
-                            ),
-                          )
-                          .toList(),
-                    ),
-                    if (region != null)
                       Wrap(
                         alignment: WrapAlignment.center,
                         crossAxisAlignment: WrapCrossAlignment.center,
-                        children: [
-                          Icon(
-                            Icons.lock_outlined,
-                            color: theme.colorScheme.secondary,
-                            size: SizeUtils.getSizeForCircleImages(context) * 0.45,
-                          ),
-                          Text(
-                            s.onlyX(s.translateServerResetTimeType(region!)),
-                            style: theme.textTheme.bodySmall,
-                            overflow: TextOverflow.ellipsis,
-                          ),
-                        ],
+                        children: rewards.map((m) => _Reward(item: m)).toList(),
                       ),
-                  ],
+                      if (region != null)
+                        Wrap(
+                          alignment: WrapAlignment.center,
+                          crossAxisAlignment: WrapCrossAlignment.center,
+                          children: [
+                            Icon(
+                              Icons.lock_outlined,
+                              color: theme.colorScheme.secondary,
+                              size: SizeUtils.getSizeForCircleImages(context) * 0.45,
+                            ),
+                            Text(
+                              s.onlyX(s.translateServerResetTimeType(region!)),
+                              style: theme.textTheme.bodySmall,
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                          ],
+                        ),
+                    ],
+                  ),
                 ),
               ),
               Expanded(
@@ -125,21 +120,18 @@ class GameCodeListItem extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    _buildDateInfoRow(
-                      s.addedOn(utils.DateUtils.formatDate(discoveredOn, format: utils.DateUtils.dayMonthYearFormat)),
-                      context,
+                    _DateRow(
+                      text: s.addedOn(utils.DateUtils.formatDate(discoveredOn, format: utils.DateUtils.dayMonthYearFormat)),
                     ),
                     if (isExpired)
-                      _buildDateInfoRow(
-                        s.expiredOn(utils.DateUtils.formatDate(expiredOn, format: utils.DateUtils.dayMonthYearFormat)),
-                        context,
+                      _DateRow(
+                        text: s.expiredOn(utils.DateUtils.formatDate(expiredOn, format: utils.DateUtils.dayMonthYearFormat)),
                       ),
                     if (!isExpired && expiredOn != null)
-                      _buildDateInfoRow(
-                        s.validUntil(utils.DateUtils.formatDate(expiredOn, format: utils.DateUtils.dayMonthYearFormat)),
-                        context,
+                      _DateRow(
+                        text: s.validUntil(utils.DateUtils.formatDate(expiredOn, format: utils.DateUtils.dayMonthYearFormat)),
                       ),
-                    if (!isExpired && expiredOn == null) _buildDateInfoRow(s.validUntil(s.na), context),
+                    if (!isExpired && expiredOn == null) _DateRow(text: s.validUntil(s.na)),
                   ],
                 ),
               ),
@@ -150,7 +142,19 @@ class GameCodeListItem extends StatelessWidget {
     );
   }
 
-  Widget _buildDateInfoRow(String text, BuildContext context) {
+  void _copyToClipboard(BuildContext context) {
+    final s = S.of(context);
+    Clipboard.setData(ClipboardData(text: code)).then((value) => ToastUtils.showInfoToast(ToastUtils.of(context), s.codeXWasCopied(code)));
+  }
+}
+
+class _DateRow extends StatelessWidget {
+  final String text;
+
+  const _DateRow({required this.text});
+
+  @override
+  Widget build(BuildContext context) {
     final theme = Theme.of(context);
     return Container(
       margin: const EdgeInsets.symmetric(vertical: 3),
@@ -170,9 +174,30 @@ class GameCodeListItem extends StatelessWidget {
       ),
     );
   }
+}
 
-  void _copyToClipboard(BuildContext context) {
-    final s = S.of(context);
-    Clipboard.setData(ClipboardData(text: code)).then((value) => ToastUtils.showInfoToast(ToastUtils.of(context), s.codeXWasCopied(code)));
+class _Reward extends StatelessWidget {
+  final ItemAscensionMaterialModel item;
+
+  const _Reward({required this.item});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: Styles.edgeInsetHorizontal5,
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          MaterialItemButton(
+            itemKey: item.key,
+            image: item.image,
+            size: SizeUtils.getSizeForCircleImages(context) * 0.6,
+            useButton: false,
+          ),
+          Text('x${item.requiredQuantity}'),
+        ],
+      ),
+    );
   }
 }

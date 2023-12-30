@@ -8,6 +8,7 @@ import 'package:shiori/presentation/settings/widgets/settings_card.dart';
 import 'package:shiori/presentation/shared/common_dropdown_button.dart';
 import 'package:shiori/presentation/shared/extensions/app_theme_type_extensions.dart';
 import 'package:shiori/presentation/shared/loading.dart';
+import 'package:shiori/presentation/shared/styles.dart';
 import 'package:shiori/presentation/shared/utils/enum_utils.dart';
 
 class AccentColorSettingsCard extends StatelessWidget {
@@ -43,6 +44,7 @@ class AccentColorSettingsCard extends StatelessWidget {
               loaded: (state) => CommonDropdownButton<AppAccentColorType>(
                 hint: s.chooseAccentColor,
                 currentValue: state.currentAccentColor,
+                padding: Styles.edgeInsetHorizontal16,
                 values: EnumUtils.getTranslatedAndSortedEnum<AppAccentColorType>(AppAccentColorType.values, (val, _) => _getAccentColorName(val)),
                 leadingIconBuilder: (val) => Container(
                   margin: const EdgeInsets.only(right: 10),

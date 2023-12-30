@@ -187,7 +187,7 @@ class _NumberPickerState extends State<NumberPicker> {
   Widget _itemBuilder(BuildContext context, int index) {
     final themeData = Theme.of(context);
     final defaultStyle = widget.textStyle ?? themeData.textTheme.bodyMedium;
-    final selectedStyle = widget.selectedTextStyle ?? themeData.textTheme.headlineSmall?.copyWith(color: themeData.colorScheme.secondary);
+    final selectedStyle = widget.selectedTextStyle ?? themeData.textTheme.headlineSmall?.copyWith(color: themeData.colorScheme.primary);
 
     final value = _intValueFromIndex(index % itemCount);
     final isExtra = !widget.infiniteLoop && (index < additionalItemsOnEachSide || index >= listItemsCount - additionalItemsOnEachSide);

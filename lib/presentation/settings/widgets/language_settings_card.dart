@@ -7,6 +7,7 @@ import 'package:shiori/presentation/settings/widgets/settings_card.dart';
 import 'package:shiori/presentation/shared/common_dropdown_button.dart';
 import 'package:shiori/presentation/shared/extensions/i18n_extensions.dart';
 import 'package:shiori/presentation/shared/loading.dart';
+import 'package:shiori/presentation/shared/styles.dart';
 import 'package:shiori/presentation/shared/utils/enum_utils.dart';
 import 'package:shiori/presentation/shared/utils/toast_utils.dart';
 
@@ -44,6 +45,7 @@ class LanguageSettingsCard extends StatelessWidget {
               loaded: (state) => CommonDropdownButton<AppLanguageType>(
                 hint: s.chooseLanguage,
                 currentValue: state.currentLanguage,
+                padding: Styles.edgeInsetHorizontal16,
                 values: EnumUtils.getTranslatedAndSortedEnum<AppLanguageType>(AppLanguageType.values, (val, _) => s.translateAppLanguageType(val)),
                 onChanged: _languageChanged,
               ),

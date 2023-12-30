@@ -7,6 +7,7 @@ import 'package:shiori/presentation/settings/widgets/settings_card.dart';
 import 'package:shiori/presentation/shared/common_dropdown_button.dart';
 import 'package:shiori/presentation/shared/extensions/i18n_extensions.dart';
 import 'package:shiori/presentation/shared/loading.dart';
+import 'package:shiori/presentation/shared/styles.dart';
 import 'package:shiori/presentation/shared/unlock_with_donation_text.dart';
 import 'package:shiori/presentation/shared/utils/enum_utils.dart';
 
@@ -49,10 +50,10 @@ class ThemeSettingsCard extends StatelessWidget {
                 currentValue: state.currentTheme,
                 values: EnumUtils.getTranslatedAndSortedEnum<AppThemeType>(AppThemeType.values, (val, _) => s.translateAppThemeType(val)),
                 onChanged: _appThemeChanged,
+                padding: Styles.edgeInsetHorizontal16,
               ),
               if (showDonationUI && state.currentTheme == AppThemeType.dark)
                 SwitchListTile(
-                  activeColor: theme.colorScheme.secondary,
                   title: Text(s.useDarkAmoledTheme),
                   value: state.useDarkAmoledTheme,
                   subtitle: state.unlockedFeatures.contains(AppUnlockedFeature.darkAmoledTheme)

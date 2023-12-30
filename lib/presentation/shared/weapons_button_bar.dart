@@ -36,7 +36,11 @@ class WeaponsButtonBar extends StatelessWidget {
       iconSize: iconSize,
       icon: Opacity(
         opacity: !isSelected ? 1 : 0.2,
-        child: Image.asset(value.getWeaponAssetPath()),
+        child: Image.asset(
+          value.getWeaponAssetPath(),
+          width: iconSize * 1.3,
+          height: iconSize * 1.3,
+        ),
       ),
       onPressed: !enabled ? null : () => onClick(value),
       tooltip: tooltip,

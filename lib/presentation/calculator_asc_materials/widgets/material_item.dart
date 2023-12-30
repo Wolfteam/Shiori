@@ -26,6 +26,7 @@ class MaterialItem extends StatelessWidget {
   final Color? textColor;
   final int sessionKey;
   final bool showMaterialUsage;
+  final double iconSize;
 
   const MaterialItem({
     super.key,
@@ -38,12 +39,14 @@ class MaterialItem extends StatelessWidget {
     required this.sessionKey,
     required this.showMaterialUsage,
     this.textColor,
+    this.iconSize = 45,
   });
 
   MaterialItem.fromSummary({
     required this.sessionKey,
     required MaterialSummary summary,
     required this.showMaterialUsage,
+    this.iconSize = 45,
   })  : itemKey = summary.key,
         image = summary.fullImagePath,
         usedQuantity = summary.usedQuantity,
@@ -65,9 +68,8 @@ class MaterialItem extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           IconButton(
-            icon: Image.file(File(image)),
-            iconSize: 45,
-            splashRadius: 30,
+            icon: Image.file(File(image), width: iconSize * 1.3, height: iconSize * 1.3),
+            iconSize: iconSize,
             constraints: const BoxConstraints(),
             onPressed: () => showDialog(
               context: context,
