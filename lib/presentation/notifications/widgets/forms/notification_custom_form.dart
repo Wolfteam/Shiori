@@ -10,7 +10,7 @@ import 'package:shiori/presentation/notifications/widgets/forms/notification_dro
 import 'package:shiori/presentation/notifications/widgets/forms/notification_note.dart';
 import 'package:shiori/presentation/notifications/widgets/forms/notification_switch.dart';
 import 'package:shiori/presentation/notifications/widgets/forms/notification_title_body.dart';
-import 'package:shiori/presentation/shared/dropdown_button_with_title.dart';
+import 'package:shiori/presentation/shared/common_dropdown_button.dart';
 import 'package:shiori/presentation/shared/extensions/i18n_extensions.dart';
 import 'package:shiori/presentation/shared/utils/enum_utils.dart';
 import 'package:shiori/presentation/shared/utils/toast_utils.dart';
@@ -56,17 +56,19 @@ class NotificationCustomForm extends StatelessWidget {
           children: [
             Expanded(
               flex: 40,
-              child: DropdownButtonWithTitle<AppNotificationItemType>(
+              child: CommonDropdownButton<AppNotificationItemType>(
                 title: s.type,
+                hint: s.type,
                 currentValue: itemType,
-                items: EnumUtils.getTranslatedAndSortedEnum(AppNotificationItemType.values, (val, _) => s.translateAppNotificationItemType(val)),
-                onChanged: (v) => context.read<NotificationBloc>().add(NotificationEvent.itemTypeChanged(newValue: v)),
+                withoutUnderLine: false,
+                values: EnumUtils.getTranslatedAndSortedEnum(AppNotificationItemType.values, (val, _) => s.translateAppNotificationItemType(val)),
+                onChanged: (v, _) => context.read<NotificationBloc>().add(NotificationEvent.itemTypeChanged(newValue: v)),
               ),
             ),
             const Spacer(flex: 10),
             Expanded(
               flex: 40,
-              child: TextButton(
+              child: OutlinedButton(
                 onPressed: () => _showDatePickerDialog(context),
                 child: Text(
                   utils.DateUtils.formatDateMilitaryTime(scheduledDate, useTwentyFourHoursFormat: useTwentyFourHoursFormat),

@@ -10,8 +10,8 @@ import 'package:shiori/presentation/notifications/widgets/forms/notification_dro
 import 'package:shiori/presentation/notifications/widgets/forms/notification_note.dart';
 import 'package:shiori/presentation/notifications/widgets/forms/notification_switch.dart';
 import 'package:shiori/presentation/notifications/widgets/forms/notification_title_body.dart';
+import 'package:shiori/presentation/shared/common_dropdown_button.dart';
 import 'package:shiori/presentation/shared/dialogs/number_picker_dialog.dart';
-import 'package:shiori/presentation/shared/dropdown_button_with_title.dart';
 import 'package:shiori/presentation/shared/extensions/i18n_extensions.dart';
 import 'package:shiori/presentation/shared/utils/enum_utils.dart';
 
@@ -55,14 +55,14 @@ class NotificationRealmCurrency extends StatelessWidget {
           children: [
             Flexible(
               fit: FlexFit.tight,
-              flex: 60,
+              flex: 40,
               child: NotificationDropdownType(selectedValue: _type, isInEditMode: isInEditMode),
             ),
             const Spacer(flex: 10),
             Flexible(
               fit: FlexFit.tight,
-              flex: 30,
-              child: TextButton(
+              flex: 40,
+              child: OutlinedButton(
                 onPressed: () => _showRealmRankLevelPickerDialog(context),
                 child: Text(s.currentX(currentRealmCurrency)),
               ),
@@ -73,25 +73,29 @@ class NotificationRealmCurrency extends StatelessWidget {
           children: [
             Expanded(
               flex: 40,
-              child: DropdownButtonWithTitle<RealmRankType>(
+              child: CommonDropdownButton<RealmRankType>(
                 title: s.realmRank,
+                hint: s.realmRank,
+                withoutUnderLine: false,
                 currentValue: currentRankType,
-                items: EnumUtils.getTranslatedAndSortedEnum(
+                values: EnumUtils.getTranslatedAndSortedEnum(
                   RealmRankType.values,
                   (val, index) => '# ${index + 1} - ${s.translateRealRankType(val)}',
                   sort: false,
                 ),
-                onChanged: (v) => context.read<NotificationBloc>().add(NotificationEvent.realmRankTypeChanged(newValue: v)),
+                onChanged: (v, _) => context.read<NotificationBloc>().add(NotificationEvent.realmRankTypeChanged(newValue: v)),
               ),
             ),
             const Spacer(flex: 10),
             Expanded(
               flex: 40,
-              child: DropdownButtonWithTitle<int>(
+              child: CommonDropdownButton<int>(
                 title: s.trustRank,
+                hint: s.trustRank,
+                withoutUnderLine: false,
                 currentValue: currentTrustRank,
-                items: realmTrustRank.keys.map((level) => TranslatedEnum<int>(level, '$level')).toList(),
-                onChanged: (v) => context.read<NotificationBloc>().add(NotificationEvent.realmTrustRankLevelChanged(newValue: v)),
+                values: realmTrustRank.keys.map((level) => TranslatedEnum<int>(level, '$level')).toList(),
+                onChanged: (v, _) => context.read<NotificationBloc>().add(NotificationEvent.realmTrustRankLevelChanged(newValue: v)),
               ),
             ),
           ],

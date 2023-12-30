@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:shiori/domain/extensions/string_extensions.dart';
-import 'package:shiori/presentation/shared/styles.dart';
 import 'package:shiori/presentation/shared/utils/enum_utils.dart';
 
 class CommonDropdownButton<T> extends StatelessWidget {
@@ -12,6 +11,7 @@ class CommonDropdownButton<T> extends StatelessWidget {
   final bool withoutUnderLine;
   final Widget Function(T)? leadingIconBuilder;
   final EdgeInsets? padding;
+  final String? title;
   final String? subTitle;
 
   const CommonDropdownButton({
@@ -23,7 +23,8 @@ class CommonDropdownButton<T> extends StatelessWidget {
     this.isExpanded = true,
     this.withoutUnderLine = true,
     this.leadingIconBuilder,
-    this.padding = Styles.edgeInsetHorizontal16,
+    this.padding = EdgeInsets.zero,
+    this.title,
     this.subTitle,
   });
 
@@ -34,6 +35,7 @@ class CommonDropdownButton<T> extends StatelessWidget {
       hint: Text(hint),
       value: currentValue,
       padding: padding,
+      itemHeight: withoutUnderLine ? kMinInteractiveDimension : kMinInteractiveDimension + 10,
       underline: withoutUnderLine
           ? Container(
               height: 0,
@@ -42,7 +44,7 @@ class CommonDropdownButton<T> extends StatelessWidget {
           : null,
       onTap: () => FocusScope.of(context).requestFocus(FocusNode()),
       onChanged: onChanged != null ? (v) => onChanged!(v as T, context) : null,
-      selectedItemBuilder: (context) => values.map((lang) => _Title(title: lang.translation, subTitle: subTitle)).toList(),
+      selectedItemBuilder: (context) => values.map((lang) => _Content(content: lang.translation, title: title, subTitle: subTitle)).toList(),
       items: values
           .map<DropdownMenuItem<T>>(
             (lang) => DropdownMenuItem<T>(
@@ -55,31 +57,45 @@ class CommonDropdownButton<T> extends StatelessWidget {
   }
 }
 
-class _Title extends StatelessWidget {
-  final String title;
+class _Content extends StatelessWidget {
+  final String content;
+  final String? title;
   final String? subTitle;
 
-  const _Title({required this.title, this.subTitle});
+  const _Content({required this.content, this.title, this.subTitle});
 
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    final mainTitle = Text(
-      title,
+    final mainContent = Text(
+      content,
+      overflow: TextOverflow.ellipsis,
       textAlign: TextAlign.center,
     );
-    if (subTitle.isNullEmptyOrWhitespace) {
+    if (title.isNullEmptyOrWhitespace && subTitle.isNullEmptyOrWhitespace) {
       return Align(
         alignment: Alignment.centerLeft,
-        child: mainTitle,
+        child: mainContent,
       );
     }
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        mainTitle,
-        Text(subTitle!, style: theme.textTheme.bodyMedium!.copyWith(color: theme.colorScheme.onSurfaceVariant)),
+        if (title.isNotNullEmptyOrWhitespace)
+          Text(
+            title!,
+            overflow: TextOverflow.ellipsis,
+            style: theme.textTheme.bodySmall,
+          ),
+        mainContent,
+        if (subTitle.isNotNullEmptyOrWhitespace)
+          Text(
+            subTitle!,
+            overflow: TextOverflow.ellipsis,
+            style: theme.textTheme.bodyMedium!.copyWith(color: theme.colorScheme.onSurfaceVariant),
+          ),
       ],
     );
   }
