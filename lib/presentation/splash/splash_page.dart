@@ -140,9 +140,9 @@ class _SplashPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
+    return SafeArea(
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
           Expanded(
             child: Container(
@@ -153,11 +153,7 @@ class _SplashPage extends StatelessWidget {
               ),
             ),
           ),
-          if (isLoading)
-            Container(
-              margin: const EdgeInsets.only(bottom: 10),
-              child: const CircularProgressIndicator(valueColor: AlwaysStoppedAnimation<Color>(Colors.white)),
-            ),
+          if (isLoading) const CircularProgressIndicator(valueColor: AlwaysStoppedAnimation<Color>(Colors.white)),
           if (isUpdating) const _Updating(),
           if (updateFailed) _Buttons(updateResultType: updateResultType, canSkipUpdate: canSkipUpdate),
         ],
