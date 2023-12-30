@@ -20,7 +20,7 @@ class BannerHistoryCard extends StatelessWidget {
       title: s.bannerHistory,
       iconToTheLeft: iconToTheLeft,
       onClick: _gotoBannerHistoryPage,
-      icon: Icon(Icons.history_toggle_off, size: 60, color: theme.colorScheme.secondary),
+      icon: Icon(Icons.history_toggle_off, size: 60, color: theme.colorScheme.primary),
       children: [
         CardDescription(text: s.checkBannerHistory),
       ],

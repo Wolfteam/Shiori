@@ -41,7 +41,7 @@ class CardItem extends StatelessWidget {
                   overflow: TextOverflow.ellipsis,
                   textAlign: TextAlign.center,
                 ),
-              if (iconToTheLeft) _LeftLayout(icon: icon, children: children) else _RightLayout(icon: icon, children: children),
+              _Content(icon: icon, iconToTheLeft: iconToTheLeft, children: children),
             ],
           ),
         ),
@@ -50,65 +50,38 @@ class CardItem extends StatelessWidget {
   }
 }
 
-class _LeftLayout extends StatelessWidget {
+class _Content extends StatelessWidget {
   final Widget icon;
+  final bool iconToTheLeft;
   final List<Widget> children;
 
-  const _LeftLayout({
+  const _Content({
     required this.icon,
+    required this.iconToTheLeft,
     required this.children,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      children: [
-        Flexible(
-          flex: 40,
-          fit: FlexFit.tight,
-          child: icon,
-        ),
-        Flexible(
-          flex: 60,
-          fit: FlexFit.tight,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: children,
-          ),
-        ),
-      ],
+    final iconFlex = Flexible(
+      flex: 40,
+      fit: FlexFit.tight,
+      child: icon,
     );
-  }
-}
+    final childrenFlex = Flexible(
+      flex: 60,
+      fit: FlexFit.tight,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: children,
+      ),
+    );
 
-class _RightLayout extends StatelessWidget {
-  final Widget icon;
-  final List<Widget> children;
-
-  const _RightLayout({
-    required this.icon,
-    required this.children,
-  });
-
-  @override
-  Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
-        Flexible(
-          flex: 60,
-          fit: FlexFit.tight,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: children,
-          ),
-        ),
-        Flexible(
-          flex: 40,
-          fit: FlexFit.tight,
-          child: icon,
-        ),
+        if (iconToTheLeft) iconFlex else childrenFlex,
+        if (iconToTheLeft) childrenFlex else iconFlex,
       ],
     );
   }

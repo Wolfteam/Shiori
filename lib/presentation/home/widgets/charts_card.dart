@@ -22,7 +22,7 @@ class ChartsCard extends StatelessWidget {
         title: s.charts,
         iconToTheLeft: iconToTheLeft,
         onClick: _gotoChartsPage,
-        icon: Icon(Icons.pie_chart, size: 60, color: theme.colorScheme.secondary),
+        icon: Icon(Icons.pie_chart, size: 60, color: theme.colorScheme.primary),
         children: [CardDescription(text: s.usefulDataInTheFormOfCharts)],
       ),
     );

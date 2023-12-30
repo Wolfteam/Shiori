@@ -23,7 +23,7 @@ class WishSimulatorCard extends StatelessWidget {
         title: s.wishSimulator,
         iconToTheLeft: iconToTheLeft,
         onClick: _gotoWishSimulatorPage,
-        icon: Image.asset(Assets.gachaIconPath, width: 60, height: 60, color: theme.colorScheme.secondary),
+        icon: Image.asset(Assets.gachaIconPath, width: 60, height: 60, color: theme.colorScheme.primary),
         children: [
           CardDescription(text: s.tryYourLuck),
         ],

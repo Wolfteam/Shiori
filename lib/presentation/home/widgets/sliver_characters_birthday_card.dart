@@ -25,7 +25,8 @@ class SliverCharactersBirthdayCard extends StatelessWidget {
                       margin: const EdgeInsets.only(top: 10),
                       child: MainTitle(title: s.todayBirthdays),
                     ),
-                    SizedBox(
+                    Container(
+                      margin: Styles.edgeInsetHorizontal5,
                       height: Styles.homeCardHeight,
                       child: ListView.builder(
                         physics: const BouncingScrollPhysics(),
@@ -60,6 +61,7 @@ class _CakeCard extends StatelessWidget {
         margin: Styles.edgeInsetAll5,
         shape: Styles.cardShape,
         child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             Flexible(
               flex: 50,

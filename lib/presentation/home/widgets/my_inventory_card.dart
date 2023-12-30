@@ -19,7 +19,7 @@ class MyInventoryCard extends StatelessWidget {
     return CardItem(
       title: s.myInventory,
       iconToTheLeft: iconToTheLeft,
-      icon: Icon(Icons.inventory, size: 60, color: theme.colorScheme.secondary),
+      icon: Icon(Icons.inventory, size: 60, color: theme.colorScheme.primary),
       onClick: _goToInventoryPage,
       children: [
         CardDescription(text: s.addTheItemsYouGotInGame),

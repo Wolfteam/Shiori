@@ -19,7 +19,7 @@ class SettingsCard extends StatelessWidget {
       title: '',
       onClick: _gotoSettingsPage,
       iconToTheLeft: iconToTheLeft,
-      icon: Icon(Icons.settings, size: 60, color: theme.colorScheme.secondary),
+      icon: Icon(Icons.settings, size: 60, color: theme.colorScheme.primary),
       children: [
         Text(s.theme, style: theme.textTheme.titleSmall),
         Text(s.accentColor, style: theme.textTheme.titleSmall),

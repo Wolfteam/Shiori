@@ -22,7 +22,7 @@ class CustomBuildsCard extends StatelessWidget {
         title: s.customBuilds,
         iconToTheLeft: iconToTheLeft,
         onClick: _gotoMaterialsPage,
-        icon: Icon(Icons.dashboard_customize, size: 60, color: theme.colorScheme.secondary),
+        icon: Icon(Icons.dashboard_customize, size: 60, color: theme.colorScheme.primary),
         children: [
           CardDescription(text: s.createCustomBuilds),
         ],
