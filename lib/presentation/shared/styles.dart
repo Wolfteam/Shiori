@@ -13,7 +13,7 @@ class Styles {
     topRight: Radius.circular(cardTopRadius),
   );
 
-  static BorderRadius homeCardItemBorderRadius = BorderRadius.circular(40);
+  static BorderRadius homeCardItemBorderRadius = BorderRadius.circular(20);
 
   static final RoundedRectangleBorder cardShape = RoundedRectangleBorder(borderRadius: BorderRadius.circular(10));
   static final RoundedRectangleBorder mainCardShape = RoundedRectangleBorder(borderRadius: mainCardBorderRadius);
@@ -53,8 +53,8 @@ class Styles {
 
   static const double materialCardHeight = 270;
   static const double materialCardWidth = 220;
-  static const double homeCardHeight = 170;
-  static const double homeCardWidth = 280;
+  static const double homeCardHeight = 150;
+  static const double homeCardWidth = 240;
   static const double birthdayCardWidth = 300;
 
   static const endDrawerFilterItemMargin = EdgeInsets.only(top: 20);
@@ -147,6 +147,19 @@ class Styles {
       color: Styles.commonStarWishResultBackgroundColor,
       blurRadius: 15,
       spreadRadius: -20,
+    ),
+  ];
+
+  static List<BoxShadow> commonBlackShadow = [
+    BoxShadow(
+      color: Colors.black.withOpacity(0.6),
+      blurRadius: 40,
+      spreadRadius: 20,
+    ),
+    BoxShadow(
+      color: Colors.black.withOpacity(0.4),
+      blurRadius: 20,
+      spreadRadius: 10,
     ),
   ];
 }

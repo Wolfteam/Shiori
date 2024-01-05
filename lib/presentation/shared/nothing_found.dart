@@ -24,7 +24,7 @@ class NothingFound extends StatelessWidget {
           children: <Widget>[
             Icon(
               icon,
-              color: theme.primaryColor,
+              color: theme.colorScheme.primary,
               size: 60,
             ),
             Text(

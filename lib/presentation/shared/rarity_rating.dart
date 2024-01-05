@@ -24,9 +24,9 @@ class RarityRating extends StatelessWidget {
         allowHalfRating: false,
         onRated: (v) => onRated(v!.toInt()),
         size: size,
-        color: Colors.yellow,
+        color: theme.colorScheme.secondary,
         starCount: stars,
-        borderColor: theme.brightness == Brightness.dark ? Colors.white : Colors.black,
+        borderColor: theme.colorScheme.onBackground,
       ),
     );
   }

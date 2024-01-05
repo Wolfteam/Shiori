@@ -69,7 +69,6 @@ class _BodyState extends State<_Body> {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
     final s = S.of(context);
     return AlertDialog(
       title: Text(widget.title ?? s.quantity),

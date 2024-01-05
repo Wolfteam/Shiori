@@ -6,6 +6,7 @@ import 'package:shiori/domain/extensions/iterable_extensions.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/generated/l10n.dart';
 import 'package:shiori/injection.dart';
+import 'package:shiori/presentation/shared/extensions/media_query_extensions.dart';
 import 'package:shiori/presentation/shared/loading.dart';
 import 'package:shiori/presentation/shared/styles.dart';
 
@@ -30,6 +31,7 @@ class ItemReleaseHistoryDialog extends StatelessWidget {
     return BlocProvider<ItemReleaseHistoryBloc>(
       create: (context) => Injection.itemReleaseHistoryBloc..add(ItemReleaseHistoryEvent.init(itemKey: itemKey)),
       child: AlertDialog(
+        scrollable: true,
         title: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -43,7 +45,8 @@ class ItemReleaseHistoryDialog extends StatelessWidget {
             child: Text(s.ok),
           ),
         ],
-        content: SingleChildScrollView(
+        content: SizedBox(
+          width: MediaQuery.of(context).getWidthForDialogs(),
           child: BlocBuilder<ItemReleaseHistoryBloc, ItemReleaseHistoryState>(
             builder: (context, state) => state.map(
               loading: (_) => const Loading(useScaffold: false),
