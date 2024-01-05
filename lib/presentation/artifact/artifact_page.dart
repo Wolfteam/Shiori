@@ -13,8 +13,8 @@ import 'package:shiori/presentation/shared/details/detail_tab_landscape_layout.d
 import 'package:shiori/presentation/shared/details/detail_top_layout.dart';
 import 'package:shiori/presentation/shared/disabled_card_surface_tint_color.dart';
 import 'package:shiori/presentation/shared/extensions/rarity_extensions.dart';
-import 'package:shiori/presentation/shared/images/circle_character.dart';
-import 'package:shiori/presentation/shared/images/circle_monster.dart';
+import 'package:shiori/presentation/shared/images/character_icon_image.dart';
+import 'package:shiori/presentation/shared/images/monster_icon_image.dart';
 import 'package:shiori/presentation/shared/item_description_detail.dart';
 import 'package:shiori/presentation/shared/loading.dart';
 import 'package:shiori/presentation/shared/scaffold_with_fab.dart';
@@ -117,7 +117,7 @@ class _PortraitLayout extends StatelessWidget {
                           title: s.droppedBy,
                           body: Wrap(
                             alignment: WrapAlignment.center,
-                            children: state.droppedBy.map((e) => CircleMonster(itemKey: e.key, image: e.image, radius: size)).toList(),
+                            children: state.droppedBy.map((e) => MonsterIconImage(itemKey: e.key, image: e.image, radius: size)).toList(),
                           ),
                           textColor: rarityColor,
                         ),
@@ -231,7 +231,7 @@ class _LandscapeLayout extends StatelessWidget {
                               title: s.droppedBy,
                               body: Wrap(
                                 alignment: WrapAlignment.center,
-                                children: state.droppedBy.map((e) => CircleMonster(itemKey: e.key, image: e.image, radius: imgSize)).toList(),
+                                children: state.droppedBy.map((e) => MonsterIconImage(itemKey: e.key, image: e.image, radius: imgSize)).toList(),
                               ),
                               textColor: rarityColor,
                             ),

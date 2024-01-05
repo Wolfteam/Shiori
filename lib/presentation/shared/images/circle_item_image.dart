@@ -3,7 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:transparent_image/transparent_image.dart';
 
-class CircleItem extends StatelessWidget {
+class CircleItemImage extends StatelessWidget {
   final String image;
   final double radius;
   final bool forDrag;
@@ -14,7 +14,7 @@ class CircleItem extends StatelessWidget {
   final Color backgroundColor;
   final Gradient? gradient;
 
-  const CircleItem({
+  const CircleItemImage({
     super.key,
     required this.image,
     this.radius = 35,

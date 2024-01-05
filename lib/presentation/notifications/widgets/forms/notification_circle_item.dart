@@ -8,7 +8,7 @@ import 'package:shiori/presentation/artifacts/artifacts_page.dart';
 import 'package:shiori/presentation/characters/characters_page.dart';
 import 'package:shiori/presentation/materials/materials_page.dart';
 import 'package:shiori/presentation/monsters/monsters_page.dart';
-import 'package:shiori/presentation/shared/images/circle_item.dart';
+import 'package:shiori/presentation/shared/images/circle_item_image.dart';
 import 'package:shiori/presentation/weapons/weapons_page.dart';
 
 class NotificationCircleItem extends StatelessWidget {
@@ -41,7 +41,7 @@ class NotificationCircleItem extends StatelessWidget {
       children: [
         if (images.isNotEmpty)
           Center(
-            child: CircleItem(
+            child: CircleItemImage(
               radius: 40,
               image: selected.image,
               onTap: (_) => _onMainIconTap(context),
@@ -67,7 +67,7 @@ class NotificationCircleItem extends StatelessWidget {
   }
 
   Widget _buildSelectableImage(BuildContext context, String theImage, {bool isSelected = false}) {
-    final circleItem = CircleItem(
+    final circleItem = CircleItemImage(
       image: theImage,
       fit: BoxFit.contain,
       onTap: (_) => _changeSelectedImg(theImage, context),

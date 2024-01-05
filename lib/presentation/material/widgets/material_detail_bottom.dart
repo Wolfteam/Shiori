@@ -7,9 +7,9 @@ import 'package:shiori/generated/l10n.dart';
 import 'package:shiori/presentation/shared/details/detail_bottom_portrait_layout.dart';
 import 'package:shiori/presentation/shared/details/detail_tab_landscape_layout.dart';
 import 'package:shiori/presentation/shared/extensions/rarity_extensions.dart';
-import 'package:shiori/presentation/shared/images/circle_character.dart';
-import 'package:shiori/presentation/shared/images/circle_monster.dart';
-import 'package:shiori/presentation/shared/images/circle_weapon.dart';
+import 'package:shiori/presentation/shared/images/character_icon_image.dart';
+import 'package:shiori/presentation/shared/images/monster_icon_image.dart';
+import 'package:shiori/presentation/shared/images/weapon_icon_image.dart';
 import 'package:shiori/presentation/shared/item_description_detail.dart';
 import 'package:shiori/presentation/shared/material_item_button.dart';
 import 'package:shiori/presentation/shared/material_quantity_row.dart';
@@ -130,7 +130,7 @@ class _PortraitLayout extends StatelessWidget {
             title: s.characters,
             body: Wrap(
               alignment: WrapAlignment.center,
-              children: characters.map((e) => CircleCharacter(itemKey: e.key, image: e.iconImage, radius: size)).toList(),
+              children: characters.map((e) => CharacterIconImage(itemKey: e.key, image: e.iconImage, size: size)).toList(),
             ),
             textColor: rarityColor,
           ),
@@ -139,7 +139,7 @@ class _PortraitLayout extends StatelessWidget {
             title: s.weapons,
             body: Wrap(
               alignment: WrapAlignment.center,
-              children: weapons.map((e) => CircleWeapon(itemKey: e.key, image: e.image, radius: size)).toList(),
+              children: weapons.map((e) => WeaponIconImage(itemKey: e.key, image: e.image, size: size)).toList(),
             ),
             textColor: rarityColor,
           ),
@@ -157,7 +157,7 @@ class _PortraitLayout extends StatelessWidget {
             title: s.droppedBy,
             body: Wrap(
               alignment: WrapAlignment.center,
-              children: droppedBy.map((e) => CircleMonster(itemKey: e.key, image: e.image, radius: size)).toList(),
+              children: droppedBy.map((e) => MonsterIconImage(itemKey: e.key, image: e.image, radius: size)).toList(),
             ),
             textColor: rarityColor,
           ),
@@ -241,7 +241,7 @@ class _LandscapeLayout extends StatelessWidget {
               title: s.characters,
               body: Wrap(
                 alignment: WrapAlignment.center,
-                children: characters.map((e) => CircleCharacter(itemKey: e.key, image: e.iconImage, radius: size)).toList(),
+                children: characters.map((e) => CharacterIconImage(itemKey: e.key, image: e.iconImage, size: size)).toList(),
               ),
               textColor: rarityColor,
             ),
@@ -252,7 +252,7 @@ class _LandscapeLayout extends StatelessWidget {
               title: s.weapons,
               body: Wrap(
                 alignment: WrapAlignment.center,
-                children: weapons.map((e) => CircleWeapon(itemKey: e.key, image: e.image, radius: size)).toList(),
+                children: weapons.map((e) => WeaponIconImage(itemKey: e.key, image: e.image, size: size)).toList(),
               ),
               textColor: rarityColor,
             ),
@@ -272,7 +272,7 @@ class _LandscapeLayout extends StatelessWidget {
               title: s.droppedBy,
               body: Wrap(
                 alignment: WrapAlignment.center,
-                children: droppedBy.map((e) => CircleMonster(itemKey: e.key, image: e.image, radius: size)).toList(),
+                children: droppedBy.map((e) => MonsterIconImage(itemKey: e.key, image: e.image, radius: size)).toList(),
               ),
               textColor: rarityColor,
             ),

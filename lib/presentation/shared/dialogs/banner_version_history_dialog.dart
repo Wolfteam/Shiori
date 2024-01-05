@@ -8,8 +8,8 @@ import 'package:shiori/generated/l10n.dart';
 import 'package:shiori/injection.dart';
 import 'package:shiori/presentation/shared/extensions/media_query_extensions.dart';
 import 'package:shiori/presentation/shared/extensions/rarity_extensions.dart';
-import 'package:shiori/presentation/shared/images/circle_character.dart';
-import 'package:shiori/presentation/shared/images/circle_weapon.dart';
+import 'package:shiori/presentation/shared/images/character_icon_image.dart';
+import 'package:shiori/presentation/shared/images/weapon_icon_image.dart';
 import 'package:shiori/presentation/shared/loading.dart';
 import 'package:shiori/presentation/shared/nothing_found_column.dart';
 
@@ -147,9 +147,9 @@ class _Items extends StatelessWidget {
           final gradient = item.rarity.getRarityGradient();
           switch (type) {
             case BannerHistoryItemType.character:
-              return CircleCharacter(itemKey: item.key, image: item.iconImage, gradient: gradient);
+              return CharacterIconImage(itemKey: item.key, image: item.iconImage, gradient: gradient);
             case BannerHistoryItemType.weapon:
-              return CircleWeapon(itemKey: item.key, image: item.image, gradient: gradient);
+              return WeaponIconImage(itemKey: item.key, image: item.image, gradient: gradient);
             default:
               throw Exception('Banner history item type = $type is not valid');
           }
