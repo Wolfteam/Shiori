@@ -4,8 +4,9 @@ import 'package:shiori/application/bloc.dart';
 import 'package:shiori/domain/assets.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/generated/l10n.dart';
+import 'package:shiori/presentation/character/character_page.dart';
 import 'package:shiori/presentation/home/widgets/main_title.dart';
-import 'package:shiori/presentation/shared/images/circle_character.dart';
+import 'package:shiori/presentation/shared/images/character_icon_image.dart';
 import 'package:shiori/presentation/shared/loading.dart';
 import 'package:shiori/presentation/shared/styles.dart';
 
@@ -21,12 +22,8 @@ class SliverCharactersBirthdayCard extends StatelessWidget {
               ? Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
-                    Container(
-                      margin: const EdgeInsets.only(top: 10),
-                      child: MainTitle(title: s.todayBirthdays),
-                    ),
-                    Container(
-                      margin: Styles.edgeInsetHorizontal5,
+                    MainTitle(title: s.todayBirthdays),
+                    SizedBox(
                       height: Styles.homeCardHeight,
                       child: ListView.builder(
                         physics: const BouncingScrollPhysics(),
@@ -55,42 +52,56 @@ class _CakeCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final s = S.of(context);
     final theme = Theme.of(context);
-    return SizedBox(
+    return Container(
+      margin: Styles.edgeInsetAll10,
       width: Styles.birthdayCardWidth,
-      child: Card(
-        margin: Styles.edgeInsetAll5,
-        shape: Styles.cardShape,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            Flexible(
-              flex: 50,
-              fit: FlexFit.tight,
-              child: Column(
+      child: InkWell(
+        borderRadius: Styles.homeCardItemBorderRadius,
+        onTap: () => CharacterPage.route(item.key, context),
+        child: AbsorbPointer(
+          child: Card(
+            clipBehavior: Clip.hardEdge,
+            shape: RoundedRectangleBorder(borderRadius: Styles.homeCardItemBorderRadius),
+            child: Padding(
+              padding: Styles.edgeInsetHorizontal10,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  Image.asset(Assets.cakeIconPath, width: 120, height: 120),
-                  //The cake has some space in the top and bottom, that's why we used this offset here
-                  FractionalTranslation(
-                    translation: const Offset(0, -0.5),
-                    child: Tooltip(
-                      message: s.happyBirthday,
-                      child: Text(
-                        s.happyBirthday,
-                        style: theme.textTheme.titleMedium!.copyWith(fontWeight: FontWeight.bold),
-                        textAlign: TextAlign.center,
-                        overflow: TextOverflow.ellipsis,
-                      ),
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Expanded(
+                          child: Image.asset(
+                            Assets.cakeIconPath,
+                            fit: BoxFit.fitHeight,
+                          ),
+                        ),
+                        //The cake has some space in the top and bottom, that's why we used this offset here
+                        FractionalTranslation(
+                          translation: const Offset(0, -0.5),
+                          child: Tooltip(
+                            message: s.happyBirthday,
+                            child: Text(
+                              s.happyBirthday,
+                              style: theme.textTheme.titleMedium!.copyWith(fontWeight: FontWeight.bold),
+                              textAlign: TextAlign.center,
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
+                  ),
+                  Expanded(
+                    child: CharacterIconImage.squareItem(item: item),
                   ),
                 ],
               ),
             ),
-            Flexible(
-              flex: 50,
-              child: CircleCharacter.fromItem(item: item, radius: 55),
-            ),
-          ],
+          ),
         ),
       ),
     );
