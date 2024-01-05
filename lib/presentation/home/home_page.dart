@@ -106,7 +106,7 @@ class _HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin<
       case 2:
         return const BannerHistoryCard(iconToTheLeft: true);
       case 3:
-        return ElementsCard();
+        return const ElementsCard();
       default:
         throw Exception('Invalid game section');
     }

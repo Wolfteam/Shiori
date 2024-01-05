@@ -106,8 +106,6 @@ class CustomBuildCard extends StatelessWidget {
                             rarity: weapon.rarity,
                             image: weapon.image,
                             isComingSoon: false,
-                            imgHeight: 50,
-                            imgWidth: 60,
                           );
                           return child;
                         },
@@ -127,8 +125,6 @@ class CustomBuildCard extends StatelessWidget {
                             image: artifact.image,
                             rarity: artifact.rarity,
                             keyName: artifact.key,
-                            imgWidth: 55,
-                            imgHeight: 45,
                           );
                         },
                       ),

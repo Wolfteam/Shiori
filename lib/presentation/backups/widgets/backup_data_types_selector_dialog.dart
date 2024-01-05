@@ -51,7 +51,7 @@ class _BackupDataTypesSelectorDialogState extends State<BackupDataTypesSelectorD
               contentPadding: EdgeInsets.zero,
               visualDensity: VisualDensity.compact,
               title: Text(e.translation),
-              activeColor: theme.primaryColor,
+              activeColor: theme.colorScheme.primary,
               value: _selectedDataTypes.contains(e.enumValue),
               onChanged: (bool? value) => _onChange(e.enumValue),
             ),

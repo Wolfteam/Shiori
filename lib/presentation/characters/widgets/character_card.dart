@@ -1,19 +1,27 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:shiori/application/bloc.dart';
 import 'package:shiori/domain/enums/enums.dart';
+import 'package:shiori/domain/extensions/weapon_type_extensions.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/generated/l10n.dart';
 import 'package:shiori/presentation/character/character_page.dart';
-import 'package:shiori/presentation/characters/widgets/character_card_ascension_materials_bottom.dart';
+import 'package:shiori/presentation/characters/widgets/character_ascension_materials.dart';
+import 'package:shiori/presentation/shared/custom_divider.dart';
 import 'package:shiori/presentation/shared/extensions/element_type_extensions.dart';
 import 'package:shiori/presentation/shared/extensions/i18n_extensions.dart';
 import 'package:shiori/presentation/shared/images/comingsoon_new_avatar.dart';
 import 'package:shiori/presentation/shared/images/element_image.dart';
 import 'package:shiori/presentation/shared/images/rarity.dart';
+import 'package:shiori/presentation/shared/loading.dart';
 import 'package:shiori/presentation/shared/styles.dart';
 import 'package:shiori/presentation/shared/utils/toast_utils.dart';
 import 'package:transparent_image/transparent_image.dart';
+
+const double _minHeight = 400;
+const double _maxHeight = 600;
 
 class CharacterCard extends StatelessWidget {
   final String keyName;
@@ -60,44 +68,39 @@ class CharacterCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
     final s = S.of(context);
     final size = MediaQuery.of(context).size;
-    var height = size.height / 2.5;
-    if (height > 600) {
-      height = 600;
-    } else if (height < 280) {
-      height = 280;
+    double height = size.height / 2.5;
+    if (height > _maxHeight) {
+      height = _maxHeight;
+    } else if (height < _minHeight) {
+      height = _minHeight;
     }
-    return InkWell(
-      borderRadius: Styles.mainCardBorderRadius,
-      onTap: () => _gotoCharacterPage(context),
-      child: Card(
-        clipBehavior: Clip.hardEdge,
-        shape: Styles.mainCardShape,
-        elevation: Styles.cardTenElevation,
-        color: elementType.getElementColorFromContext(context),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Stack(
-              alignment: AlignmentDirectional.topCenter,
-              fit: StackFit.passthrough,
-              children: [
-                SizedBox(
-                  height: height,
-                  child: FittedBox(
-                    fit: BoxFit.cover,
-                    alignment: Alignment.topCenter,
-                    clipBehavior: Clip.hardEdge,
-                    child: FadeInImage(
-                      placeholder: MemoryImage(kTransparentImage),
-                      image: FileImage(File(image)),
-                    ),
-                  ),
-                ),
-                Row(
+    return SizedBox(
+      height: height,
+      child: InkWell(
+        borderRadius: Styles.mainCardBorderRadius,
+        onTap: () => _gotoCharacterPage(context),
+        child: Card(
+          clipBehavior: Clip.hardEdge,
+          shape: Styles.mainCardShape,
+          elevation: Styles.cardTenElevation,
+          color: elementType.getElementColorFromContext(context),
+          child: Stack(
+            alignment: Alignment.center,
+            fit: StackFit.expand,
+            children: [
+              FadeInImage(
+                placeholder: MemoryImage(kTransparentImage),
+                fit: BoxFit.cover,
+                placeholderFit: BoxFit.cover,
+                alignment: Alignment.topCenter,
+                image: FileImage(File(image)),
+                height: height,
+              ),
+              Align(
+                alignment: Alignment.topCenter,
+                child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     ComingSoonNewAvatar(
@@ -113,30 +116,19 @@ class CharacterCard extends StatelessWidget {
                     ),
                   ],
                 ),
-              ],
-            ),
-            Padding(
-              padding: Styles.edgeInsetAll10,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  Center(
-                    child: Text(
-                      name,
-                      overflow: TextOverflow.ellipsis,
-                      style: theme.textTheme.titleMedium!.copyWith(fontWeight: FontWeight.bold, color: Colors.white),
-                    ),
-                  ),
-                  Rarity(stars: rarity),
-                  if (showMaterials)
-                    CharacterCardAscensionMaterialsBottom(
-                      materials: materials,
-                      weaponType: weaponType,
-                    ),
-                ],
               ),
-            ),
-          ],
+              Align(
+                alignment: Alignment.bottomCenter,
+                child: _CharBottom(
+                  name: name,
+                  rarity: rarity,
+                  weaponType: weaponType,
+                  materials: materials,
+                  showMaterials: showMaterials,
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
@@ -158,5 +150,84 @@ class CharacterCard extends StatelessWidget {
     final route = MaterialPageRoute(builder: (c) => CharacterPage(itemKey: keyName));
     await Navigator.push(context, route);
     await route.completed;
+  }
+}
+
+class _CharBottom extends StatelessWidget {
+  final String name;
+  final int rarity;
+  final WeaponType weaponType;
+  final List<String> materials;
+  final bool showMaterials;
+  const _CharBottom({
+    required this.name,
+    required this.rarity,
+    required this.weaponType,
+    required this.materials,
+    required this.showMaterials,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final s = S.of(context);
+    final theme = Theme.of(context);
+    final String weaponPath = weaponType.getWeaponNormalSkillAssetPath();
+
+    return Container(
+      padding: Styles.edgeInsetAll5,
+      decoration: BoxDecoration(boxShadow: Styles.commonBlackShadow),
+      child: BlocBuilder<SettingsBloc, SettingsState>(
+        builder: (context, state) => state.map(
+          loading: (_) => const Loading(useScaffold: false),
+          loaded: (state) => Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            mainAxisAlignment: MainAxisAlignment.end,
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Tooltip(
+                message: name,
+                child: Text(
+                  name,
+                  overflow: TextOverflow.ellipsis,
+                  textAlign: TextAlign.center,
+                  style: theme.textTheme.titleMedium!.copyWith(fontWeight: FontWeight.bold, color: Colors.white),
+                ),
+              ),
+              Rarity(
+                stars: rarity,
+                starSize: 15,
+                color: Colors.white,
+              ),
+              if (showMaterials && state.showCharacterDetails) const CustomDivider(),
+              if (showMaterials && state.showCharacterDetails)
+                IntrinsicHeight(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Flexible(
+                        fit: FlexFit.tight,
+                        flex: 40,
+                        child: Tooltip(
+                          message: s.translateWeaponType(weaponType),
+                          child: FadeInImage(
+                            height: 40,
+                            placeholder: MemoryImage(kTransparentImage),
+                            image: AssetImage(weaponPath),
+                          ),
+                        ),
+                      ),
+                      Flexible(
+                        fit: FlexFit.tight,
+                        flex: 60,
+                        child: CharacterAscensionMaterials(images: materials),
+                      ),
+                    ],
+                  ),
+                ),
+            ],
+          ),
+        ),
+      ),
+    );
   }
 }

@@ -3,7 +3,7 @@ import 'package:shiori/presentation/shared/styles.dart';
 
 class CardItem extends StatelessWidget {
   final String title;
-  final Widget icon;
+  final Widget? icon;
   final List<Widget> children;
   final bool iconToTheLeft;
   final Function(BuildContext) onClick;
@@ -11,7 +11,7 @@ class CardItem extends StatelessWidget {
   const CardItem({
     super.key,
     required this.title,
-    required this.icon,
+    this.icon,
     required this.onClick,
     required this.children,
     this.iconToTheLeft = false,
@@ -19,30 +19,38 @@ class CardItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      borderRadius: Styles.homeCardItemBorderRadius,
-      onTap: () => onClick(context),
-      child: Card(
-        clipBehavior: Clip.hardEdge,
-        margin: Styles.edgeInsetAll15,
-        shape: RoundedRectangleBorder(borderRadius: Styles.homeCardItemBorderRadius),
-        child: Container(
-          width: Styles.homeCardWidth,
-          height: 100,
-          padding: Styles.edgeInsetAll15,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              if (title.isNotEmpty)
-                Text(
-                  title,
-                  style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                  overflow: TextOverflow.ellipsis,
-                  textAlign: TextAlign.center,
-                ),
-              _Content(icon: icon, iconToTheLeft: iconToTheLeft, children: children),
-            ],
+    return Container(
+      margin: Styles.edgeInsetAll10,
+      width: Styles.homeCardWidth,
+      child: InkWell(
+        borderRadius: Styles.homeCardItemBorderRadius,
+        onTap: () => onClick(context),
+        child: Card(
+          clipBehavior: Clip.hardEdge,
+          shape: RoundedRectangleBorder(borderRadius: Styles.homeCardItemBorderRadius),
+          child: Padding(
+            padding: Styles.edgeInsetHorizontal10,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                if (title.isNotEmpty)
+                  Text(
+                    title,
+                    style: Theme.of(context).textTheme.titleMedium!.copyWith(fontWeight: FontWeight.bold),
+                    overflow: TextOverflow.ellipsis,
+                    textAlign: TextAlign.center,
+                  ),
+                if (icon != null)
+                  _Content(
+                    icon: icon!,
+                    iconToTheLeft: iconToTheLeft,
+                    children: children,
+                  )
+                else
+                  ...children
+              ],
+            ),
           ),
         ),
       ),

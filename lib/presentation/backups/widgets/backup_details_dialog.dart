@@ -43,7 +43,7 @@ class BackupDetailsDialog extends StatelessWidget {
               contentPadding: EdgeInsets.zero,
               visualDensity: VisualDensity.compact,
               title: Text(e.translation),
-              activeColor: theme.primaryColor,
+              activeColor: theme.colorScheme.primary,
               value: true,
               enabled: false,
               onChanged: (_) {},

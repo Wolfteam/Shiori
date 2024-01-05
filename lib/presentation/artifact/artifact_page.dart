@@ -26,6 +26,12 @@ class ArtifactPage extends StatelessWidget {
 
   const ArtifactPage({super.key, required this.itemKey});
 
+  static Future<void> route(String itemKey, BuildContext context) async {
+    final route = MaterialPageRoute(builder: (c) => ArtifactPage(itemKey: itemKey));
+    await Navigator.push(context, route);
+    await route.completed;
+  }
+
   @override
   Widget build(BuildContext context) {
     final isPortrait = MediaQuery.of(context).orientation == Orientation.portrait;
@@ -102,7 +108,7 @@ class _PortraitLayout extends StatelessWidget {
                           title: s.builds,
                           body: Wrap(
                             alignment: WrapAlignment.center,
-                            children: state.charImages.map((e) => CircleCharacter(itemKey: e.key, image: e.iconImage, radius: size)).toList(),
+                            children: state.charImages.map((e) => CharacterIconImage(itemKey: e.key, image: e.iconImage, size: size)).toList(),
                           ),
                           textColor: rarityColor,
                         ),
@@ -214,7 +220,7 @@ class _LandscapeLayout extends StatelessWidget {
                               title: s.builds,
                               body: Wrap(
                                 alignment: WrapAlignment.center,
-                                children: state.charImages.map((e) => CircleCharacter(itemKey: e.key, image: e.iconImage, radius: imgSize)).toList(),
+                                children: state.charImages.map((e) => CharacterIconImage(itemKey: e.key, image: e.iconImage, size: imgSize)).toList(),
                               ),
                               textColor: rarityColor,
                             ),

@@ -46,6 +46,7 @@ class GameCodeListItem extends StatelessWidget {
             decorationThickness: 3,
           );
     final extentRatio = SizeUtils.getExtentRatioForSlidablePane(context);
+    final iconSize = SizeUtils.getSizeForCircleImages(context) * 0.3;
     return Slidable(
       key: ValueKey(code),
       endActionPane: ActionPane(
@@ -69,50 +70,46 @@ class GameCodeListItem extends StatelessWidget {
       child: InkWell(
         onTap: () => _copyToClipboard(context),
         child: Container(
-          margin: Styles.edgeInsetVertical16,
-          padding: Styles.edgeInsetHorizontal16,
+          margin: Styles.edgeInsetAll10,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Expanded(
-                child: Container(
-                  margin: const EdgeInsets.only(right: 10),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Center(
-                        child: Text(
-                          code,
-                          style: textCodeStyle,
-                          textAlign: TextAlign.center,
-                          overflow: TextOverflow.ellipsis,
-                        ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Center(
+                      child: Text(
+                        code,
+                        style: textCodeStyle,
+                        textAlign: TextAlign.center,
+                        overflow: TextOverflow.ellipsis,
                       ),
+                    ),
+                    Wrap(
+                      alignment: WrapAlignment.center,
+                      crossAxisAlignment: WrapCrossAlignment.center,
+                      children: rewards.map((m) => MaterialQuantityRow.fromAscensionMaterial(item: m, size: iconSize)).toList(),
+                    ),
+                    if (region != null)
                       Wrap(
                         alignment: WrapAlignment.center,
                         crossAxisAlignment: WrapCrossAlignment.center,
-                        children: rewards.map((m) => MaterialQuantityRow.fromAscensionMaterial(item: m)).toList(),
+                        children: [
+                          Icon(
+                            Icons.lock_outlined,
+                            color: theme.colorScheme.secondary,
+                            size: iconSize,
+                          ),
+                          Text(
+                            s.onlyX(s.translateServerResetTimeType(region!)),
+                            style: theme.textTheme.bodySmall,
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                        ],
                       ),
-                      if (region != null)
-                        Wrap(
-                          alignment: WrapAlignment.center,
-                          crossAxisAlignment: WrapCrossAlignment.center,
-                          children: [
-                            Icon(
-                              Icons.lock_outlined,
-                              color: theme.colorScheme.secondary,
-                              size: SizeUtils.getSizeForCircleImages(context) * 0.45,
-                            ),
-                            Text(
-                              s.onlyX(s.translateServerResetTimeType(region!)),
-                              style: theme.textTheme.bodySmall,
-                              overflow: TextOverflow.ellipsis,
-                            ),
-                          ],
-                        ),
-                    ],
-                  ),
+                  ],
                 ),
               ),
               Expanded(

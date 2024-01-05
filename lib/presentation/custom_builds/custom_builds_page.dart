@@ -42,12 +42,10 @@ class _PageState extends State<_Page> with SingleTickerProviderStateMixin, AppFa
     final s = S.of(context);
     final mq = MediaQuery.of(context);
     final crossAxisCount = mq.size.width > 1600
-        ? 4
+        ? 3
         : mq.size.width > 1200
-            ? 3
-            : mq.size.width > 620
-                ? 2
-                : 1;
+            ? 2
+            : 1;
     return Scaffold(
       appBar: AppBar(
         title: Text(s.customBuilds),

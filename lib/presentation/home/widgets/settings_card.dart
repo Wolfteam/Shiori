@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shiori/generated/l10n.dart';
+import 'package:shiori/presentation/home/widgets/card_description.dart';
 import 'package:shiori/presentation/home/widgets/card_item.dart';
 import 'package:shiori/presentation/settings/settings_page.dart';
 
@@ -15,17 +16,18 @@ class SettingsCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final s = S.of(context);
+    final descriptions = [
+      s.theme,
+      s.accentColor,
+      s.language,
+      s.others,
+    ];
     return CardItem(
       title: '',
       onClick: _gotoSettingsPage,
       iconToTheLeft: iconToTheLeft,
       icon: Icon(Icons.settings, size: 60, color: theme.colorScheme.primary),
-      children: [
-        Text(s.theme, style: theme.textTheme.titleSmall),
-        Text(s.accentColor, style: theme.textTheme.titleSmall),
-        Text(s.language, style: theme.textTheme.titleSmall),
-        Text(s.others, style: theme.textTheme.titleSmall),
-      ],
+      children: descriptions.map((e) => CardDescription(text: e)).toList(),
     );
   }
 

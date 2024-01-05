@@ -51,6 +51,7 @@ class ArtifactRow extends StatelessWidget {
             rarity: artifact.rarity,
             withShape: false,
             withTextOverflow: true,
+            imgHeight: 64,
           ),
         ),
         Expanded(
