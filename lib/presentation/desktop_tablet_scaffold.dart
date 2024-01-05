@@ -99,38 +99,31 @@ class _NavigationRailState extends State<_NavigationRail> {
         destinations: <NavigationRailDestination>[
           NavigationRailDestination(
             icon: const Icon(Icons.menu),
-            selectedIcon: const Icon(Icons.menu),
             label: Text(s.collapse),
           ),
           NavigationRailDestination(
             icon: const Icon(Icons.people),
-            selectedIcon: const Icon(Icons.people),
             label: Text(s.characters),
           ),
           NavigationRailDestination(
             icon: const Icon(Shiori.crossed_swords),
-            selectedIcon: const Icon(Shiori.crossed_swords),
             label: Text(s.weapons),
           ),
           NavigationRailDestination(
             icon: const Icon(Icons.home),
-            selectedIcon: const Icon(Icons.home),
             label: Text(s.home),
           ),
           NavigationRailDestination(
             icon: const Icon(Shiori.overmind),
-            selectedIcon: const Icon(Shiori.overmind),
             label: Text(s.artifacts),
           ),
           if (!Platform.isMacOS)
             NavigationRailDestination(
               icon: const Icon(Icons.map),
-              selectedIcon: const Icon(Icons.map),
               label: Text(s.map),
             ),
           NavigationRailDestination(
             icon: const Icon(Icons.settings),
-            selectedIcon: const Icon(Icons.settings),
             label: Text(s.settings),
           ),
         ],

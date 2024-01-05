@@ -101,73 +101,87 @@ class MaterialCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    return InkWell(
-      borderRadius: Styles.mainCardBorderRadius,
-      onTap: () => _gotoMaterialPage(context),
-      child: GradientCard(
-        clipBehavior: Clip.hardEdge,
-        shape: Styles.mainCardShape,
-        elevation: withElevation ? Styles.cardTenElevation : 0,
-        gradient: rarity.getRarityGradient(),
-        child: Padding(
-          padding: withoutDetails ? Styles.edgeInsetAll5 : Styles.edgeInsetAll10,
-          child: Column(
-            children: [
-              Stack(
-                alignment: Alignment.topCenter,
-                children: [
-                  FadeInImage(
-                    width: imgWidth,
-                    height: imgHeight,
-                    placeholder: MemoryImage(kTransparentImage),
-                    image: FileImage(File(image)),
-                  ),
-                  if (usedQuantity > 0 && isInQuantityMode)
-                    Align(
-                      alignment: Alignment.topRight,
-                      child: GestureDetector(
-                        onTap: () => _showUsedItemsDialog(context),
-                        child: Container(
-                          padding: const EdgeInsets.all(3),
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
-                            color: theme.colorScheme.secondary.withOpacity(0.8),
-                          ),
-                          child: Tooltip(
-                            message: ' - ${CurrencyUtils.formatNumber(usedQuantity)}',
-                            child: Text(
-                              ' - ${CurrencyUtils.formatNumber(usedQuantity)} ',
-                              overflow: TextOverflow.ellipsis,
-                              style: theme.textTheme.titleSmall!.copyWith(color: Colors.white),
-                            ),
+    return SizedBox(
+      width: imgWidth * 1.5,
+      height: imgHeight * 2,
+      child: InkWell(
+        borderRadius: Styles.mainCardBorderRadius,
+        onTap: () => _gotoMaterialPage(context),
+        child: GradientCard(
+          clipBehavior: Clip.hardEdge,
+          shape: Styles.mainCardShape,
+          elevation: withElevation ? Styles.cardTenElevation : 0,
+          gradient: rarity.getRarityGradient(),
+          child: Padding(
+            padding: withoutDetails ? Styles.edgeInsetAll5 : Styles.edgeInsetAll10,
+            child: Stack(
+              alignment: Alignment.center,
+              fit: StackFit.expand,
+              children: [
+                FadeInImage(
+                  width: imgWidth,
+                  height: imgHeight,
+                  placeholder: MemoryImage(kTransparentImage),
+                  fit: BoxFit.fill,
+                  placeholderFit: BoxFit.fill,
+                  alignment: Alignment.topCenter,
+                  image: FileImage(File(image)),
+                ),
+                if (usedQuantity > 0 && isInQuantityMode)
+                  Align(
+                    alignment: Alignment.topRight,
+                    child: GestureDetector(
+                      onTap: () => _showUsedItemsDialog(context),
+                      child: Container(
+                        padding: const EdgeInsets.all(3),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          color: theme.colorScheme.primaryContainer,
+                        ),
+                        child: Tooltip(
+                          message: ' - ${CurrencyUtils.formatNumber(usedQuantity)}',
+                          child: Text(
+                            ' - ${CurrencyUtils.formatNumber(usedQuantity)} ',
+                            overflow: TextOverflow.ellipsis,
+                            style: theme.textTheme.titleSmall,
                           ),
                         ),
                       ),
                     ),
-                ],
-              ),
-              if (quantity >= 0 && isInQuantityMode)
-                Container(
-                  margin: const EdgeInsets.only(bottom: 5),
-                  child: Text(
-                    CurrencyUtils.formatNumber(quantity),
-                    overflow: TextOverflow.ellipsis,
-                    style: theme.textTheme.titleSmall!.copyWith(color: Colors.white),
                   ),
-                ),
-              if (!withoutDetails && !isInQuantityMode)
-                Center(
-                  child: Tooltip(
-                    message: name,
-                    child: Text(
-                      name!,
-                      textAlign: TextAlign.center,
-                      style: theme.textTheme.titleMedium!.copyWith(fontWeight: FontWeight.bold, color: Colors.white),
-                      overflow: TextOverflow.ellipsis,
+                if (quantity >= 0 && isInQuantityMode)
+                  Align(
+                    alignment: Alignment.bottomCenter,
+                    child: Container(
+                      padding: Styles.edgeInsetAll5,
+                      decoration: BoxDecoration(boxShadow: Styles.commonBlackShadow),
+                      margin: const EdgeInsets.only(bottom: 5),
+                      child: Text(
+                        CurrencyUtils.formatNumber(quantity),
+                        overflow: TextOverflow.ellipsis,
+                        style: theme.textTheme.titleSmall!.copyWith(color: Colors.white),
+                      ),
                     ),
                   ),
-                ),
-            ],
+                if (!withoutDetails && !isInQuantityMode)
+                  Align(
+                    alignment: Alignment.bottomCenter,
+                    child: Container(
+                      padding: Styles.edgeInsetAll5,
+                      decoration: BoxDecoration(boxShadow: Styles.commonBlackShadow),
+                      child: Tooltip(
+                        message: name,
+                        child: Text(
+                          name!,
+                          textAlign: TextAlign.center,
+                          style: theme.textTheme.titleMedium!.copyWith(fontWeight: FontWeight.bold, color: Colors.white),
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                      ),
+                    ),
+                  ),
+              ],
+            ),
           ),
         ),
       ),
