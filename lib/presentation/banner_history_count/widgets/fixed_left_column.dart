@@ -5,9 +5,8 @@ import 'package:shiori/generated/l10n.dart';
 import 'package:shiori/presentation/character/character_page.dart';
 import 'package:shiori/presentation/shared/dialogs/item_release_history_dialog.dart';
 import 'package:shiori/presentation/shared/extensions/rarity_extensions.dart';
-import 'package:shiori/presentation/shared/images/circle_character.dart';
-import 'package:shiori/presentation/shared/images/circle_weapon.dart';
-import 'package:shiori/presentation/shared/styles.dart';
+import 'package:shiori/presentation/shared/images/character_icon_image.dart';
+import 'package:shiori/presentation/shared/images/weapon_icon_image.dart';
 import 'package:shiori/presentation/weapon/weapon_page.dart';
 
 enum _ItemOptionsType {
@@ -102,30 +101,31 @@ class _ItemCard extends StatelessWidget {
             gradient: gradient,
             borderRadius: BorderRadius.circular(radius),
           ),
-          alignment: Alignment.center,
           width: cellWidth,
           height: cellHeight,
-          padding: Styles.edgeInsetHorizontal5,
           child: Stack(
-            alignment: AlignmentDirectional.topCenter,
-            fit: StackFit.passthrough,
+            alignment: Alignment.center,
+            fit: StackFit.expand,
             children: [
-              Column(
-                children: [
-                  if (type == BannerHistoryItemType.character)
-                    AbsorbPointer(child: CircleCharacter(itemKey: itemKey, image: image, radius: 45))
-                  else
-                    AbsorbPointer(child: CircleWeapon(itemKey: itemKey, image: image, radius: 45)),
-                  Tooltip(
+              if (type == BannerHistoryItemType.character)
+                AbsorbPointer(child: CharacterIconImage(itemKey: itemKey, image: image, useCircle: false))
+              else
+                AbsorbPointer(child: WeaponIconImage(itemKey: itemKey, image: image, useCircle: false)),
+              Align(
+                alignment: Alignment.bottomCenter,
+                child: Container(
+                  width: cellWidth,
+                  color: Colors.black.withOpacity(0.6),
+                  child: Tooltip(
                     message: name,
                     child: Text(
                       name,
-                      overflow: TextOverflow.ellipsis,
                       textAlign: TextAlign.center,
+                      overflow: TextOverflow.ellipsis,
                       style: theme.textTheme.titleSmall!.copyWith(fontWeight: FontWeight.bold, color: Colors.white),
                     ),
                   ),
-                ],
+                ),
               ),
               Align(
                 alignment: Alignment.topRight,

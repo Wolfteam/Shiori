@@ -6,6 +6,7 @@ import 'package:shiori/application/bloc.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/generated/l10n.dart';
 import 'package:shiori/presentation/shared/dialogs/banner_version_history_dialog.dart';
+import 'package:shiori/presentation/shared/styles.dart';
 
 class FixedHeaderRow extends StatelessWidget {
   final BannerHistoryItemType type;
@@ -39,7 +40,7 @@ class FixedHeaderRow extends StatelessWidget {
     return SizedBox(
       height: math.max(firstCellHeight, cellHeight),
       child: ListView.builder(
-        itemCount: versions.length + 1,
+        itemCount: versions.length,
         scrollDirection: Axis.horizontal,
         controller: controller,
         itemBuilder: (ctx, index) => index == 0
@@ -73,15 +74,10 @@ class _VersionsCharactersCell extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final s = S.of(context);
-    String text = '';
-    switch (type) {
-      case BannerHistoryItemType.character:
-        text = s.characters;
-      case BannerHistoryItemType.weapon:
-        text = s.weapons;
-      default:
-        throw Exception('Invalid banner history item type');
-    }
+    final String text = switch (type) {
+      BannerHistoryItemType.character => s.characters,
+      BannerHistoryItemType.weapon => s.weapons,
+    };
     return Container(
       width: cellWidth,
       height: cellHeight,
@@ -96,14 +92,14 @@ class _VersionsCharactersCell extends StatelessWidget {
               s.versions,
               textAlign: TextAlign.center,
               overflow: TextOverflow.ellipsis,
-              style: theme.textTheme.titleSmall!.copyWith(fontWeight: FontWeight.bold),
+              style: theme.textTheme.bodySmall!.copyWith(fontWeight: FontWeight.bold),
             ),
-            Divider(color: theme.colorScheme.primary, thickness: 3, indent: 5, endIndent: 5),
+            Divider(color: theme.colorScheme.primaryContainer, thickness: 3, indent: 5, endIndent: 5),
             Text(
               text,
               textAlign: TextAlign.center,
               overflow: TextOverflow.ellipsis,
-              style: theme.textTheme.titleSmall!.copyWith(fontWeight: FontWeight.bold),
+              style: theme.textTheme.bodySmall!.copyWith(fontWeight: FontWeight.bold),
             ),
           ],
         ),
@@ -130,22 +126,28 @@ class _VersionCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    return InkWell(
-      onTap: () => context.read<BannerHistoryCountBloc>().add(BannerHistoryCountEvent.versionSelected(version: version)),
-      onLongPress: () => showDialog(context: context, builder: (_) => BannerVersionHistoryDialog(version: version)),
-      child: Card(
-        margin: margin,
-        color: isSelected ? theme.colorScheme.primary.withOpacity(0.45) : theme.colorScheme.primary,
-        elevation: isSelected ? 0 : 5,
-        child: Container(
-          alignment: Alignment.center,
-          width: cellWidth,
-          height: cellHeight,
-          child: Text(
-            '$version',
-            textAlign: TextAlign.center,
-            overflow: TextOverflow.ellipsis,
-            style: theme.textTheme.titleLarge!.copyWith(fontWeight: FontWeight.bold, color: Colors.white),
+    final borderRadius = BorderRadius.circular(16);
+    return Container(
+      margin: Styles.edgeInsetVertical5,
+      child: InkWell(
+        onTap: () => context.read<BannerHistoryCountBloc>().add(BannerHistoryCountEvent.versionSelected(version: version)),
+        onLongPress: () => showDialog(context: context, builder: (_) => BannerVersionHistoryDialog(version: version)),
+        borderRadius: borderRadius,
+        child: Card(
+          margin: margin,
+          color: isSelected ? theme.colorScheme.primaryContainer.withOpacity(0.45) : theme.colorScheme.primaryContainer,
+          elevation: isSelected ? 0 : null,
+          shape: RoundedRectangleBorder(borderRadius: borderRadius),
+          child: Container(
+            alignment: Alignment.center,
+            width: cellWidth,
+            height: cellHeight,
+            child: Text(
+              '$version',
+              textAlign: TextAlign.center,
+              overflow: TextOverflow.ellipsis,
+              style: theme.textTheme.titleLarge!.copyWith(fontWeight: FontWeight.bold),
+            ),
           ),
         ),
       ),
