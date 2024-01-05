@@ -1,9 +1,11 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shiori/application/bloc.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/generated/l10n.dart';
-import 'package:shiori/presentation/shared/images/circle_character.dart';
+import 'package:shiori/presentation/shared/images/character_icon_image.dart';
 import 'package:shiori/presentation/shared/styles.dart';
 import 'package:shiori/presentation/shared/utils/size_utils.dart';
 import 'package:shiori/presentation/tierlist/widgets/rename_tierlist_dialog.dart';
@@ -45,16 +47,7 @@ class TierListRow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final s = S.of(context);
-    final width = MediaQuery.of(context).size.width;
-    var flexA = 25;
-    var flexB = showButtons ? 65 : 75;
-    var flexC = 10;
-    if (width > 1200) {
-      flexA = 20;
-      flexB = showButtons ? 70 : 80;
-      flexC = 10;
-    }
-
+    final double firstColumnWidth = min(MediaQuery.of(context).size.width * 0.3, 120);
     return DragTarget<ItemCommon>(
       builder: (BuildContext context, List<ItemCommon?> incoming, List<dynamic> rejected) => Column(
         children: [
@@ -62,9 +55,8 @@ class TierListRow extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                Flexible(
-                  fit: FlexFit.tight,
-                  flex: flexA,
+                SizedBox(
+                  width: firstColumnWidth,
                   child: ColoredBox(
                     color: color,
                     child: Center(
@@ -76,18 +68,15 @@ class TierListRow extends StatelessWidget {
                     ),
                   ),
                 ),
-                Flexible(
-                  fit: FlexFit.tight,
-                  flex: flexB,
+                Expanded(
                   child: Wrap(
+                    runSpacing: 10,
                     crossAxisAlignment: WrapCrossAlignment.center,
-                    alignment: WrapAlignment.center,
                     children: items
                         .map(
-                          (e) => CircleCharacter(
-                            itemKey: e.key,
-                            image: e.iconImage,
-                            radius: SizeUtils.getSizeForCircleImages(context),
+                          (e) => CharacterIconImage.squareItem(
+                            item: e,
+                            size: SizeUtils.getSizeForCircleImages(context) * 2.5,
                             onTap: (img) => context.read<TierListBloc>().add(TierListEvent.deleteCharacterFromRow(index: index, item: e)),
                           ),
                         )
@@ -95,9 +84,8 @@ class TierListRow extends StatelessWidget {
                   ),
                 ),
                 if (showButtons)
-                  Flexible(
-                    fit: FlexFit.tight,
-                    flex: flexC,
+                  Container(
+                    margin: Styles.edgeInsetHorizontal10,
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
