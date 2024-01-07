@@ -48,7 +48,7 @@ class CardItem extends StatelessWidget {
                     children: children,
                   )
                 else
-                  ...children
+                  ...children,
               ],
             ),
           ),

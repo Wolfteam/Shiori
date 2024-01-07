@@ -57,7 +57,7 @@ class CharacterDetailGeneralCard extends StatelessWidget {
         ),
         ItemDescription(
           title: s.weapon,
-          widget: Image.asset(weaponType.getWeaponAssetPath(), width: imgSize, height: imgSize),
+          widget: Image.asset(weaponType.getWeaponNormalSkillAssetPath(), width: imgSize, height: imgSize),
           useColumn: false,
         ),
         ItemDescription(

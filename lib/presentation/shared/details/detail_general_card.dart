@@ -23,7 +23,6 @@ class DetailGeneralCard extends StatelessWidget {
     return Card(
       color: color.withOpacity(0.1),
       elevation: Styles.cardTenElevation,
-      margin: Styles.edgeInsetAll5,
       shape: Styles.cardShape,
       child: Padding(
         padding: Styles.edgeInsetAll10,

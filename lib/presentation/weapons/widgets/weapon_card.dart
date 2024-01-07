@@ -102,35 +102,32 @@ class WeaponCard extends StatelessWidget {
           shape: withShape ? Styles.mainCardShape : null,
           elevation: withElevation ? Styles.cardTenElevation : 0,
           gradient: rarity.getRarityGradient(),
-          child: Padding(
-            padding: Styles.edgeInsetAll5,
-            child: Stack(
-              alignment: Alignment.center,
-              fit: StackFit.expand,
-              children: [
-                FadeInImage(
-                  width: imgWidth,
-                  height: imgHeight,
-                  placeholder: MemoryImage(kTransparentImage),
-                  fit: BoxFit.fill,
-                  placeholderFit: BoxFit.fill,
-                  alignment: Alignment.topCenter,
-                  image: FileImage(File(image)),
+          child: Stack(
+            alignment: Alignment.center,
+            fit: StackFit.expand,
+            children: [
+              FadeInImage(
+                width: imgWidth,
+                height: imgHeight,
+                placeholder: MemoryImage(kTransparentImage),
+                fit: BoxFit.fill,
+                placeholderFit: BoxFit.fill,
+                alignment: Alignment.topCenter,
+                image: FileImage(File(image)),
+              ),
+              Align(
+                alignment: Alignment.bottomCenter,
+                child: _Bottom(
+                  name: name,
+                  rarity: rarity,
+                  baseAtk: baseAtk,
+                  type: type,
+                  subStatType: subStatType,
+                  subStatValue: subStatValue,
+                  withoutDetails: withoutDetails,
                 ),
-                Align(
-                  alignment: Alignment.bottomCenter,
-                  child: _Bottom(
-                    name: name,
-                    rarity: rarity,
-                    baseAtk: baseAtk,
-                    type: type,
-                    subStatType: subStatType,
-                    subStatValue: subStatValue,
-                    withoutDetails: withoutDetails,
-                  ),
-                ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       ),
@@ -174,8 +171,9 @@ class _Bottom extends StatelessWidget {
     final theme = Theme.of(context);
     final detailTextStyle = theme.textTheme.bodySmall!.copyWith(color: Colors.white);
     return Container(
+      decoration: Styles.commonCardBoxDecoration,
+      width: double.infinity,
       padding: Styles.edgeInsetAll5,
-      decoration: BoxDecoration(boxShadow: Styles.commonBlackShadow),
       child: BlocBuilder<SettingsBloc, SettingsState>(
         builder: (context, state) => state.map(
           loading: (_) => const Loading(useScaffold: false),

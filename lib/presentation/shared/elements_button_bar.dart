@@ -23,7 +23,7 @@ class ElementsButtonBar extends StatelessWidget {
 
     return Wrap(
       crossAxisAlignment: WrapCrossAlignment.center,
-      alignment: WrapAlignment.spaceBetween,
+      alignment: WrapAlignment.spaceEvenly,
       children: buttons,
     );
   }

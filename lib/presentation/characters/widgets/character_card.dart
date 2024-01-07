@@ -159,6 +159,7 @@ class _CharBottom extends StatelessWidget {
   final WeaponType weaponType;
   final List<String> materials;
   final bool showMaterials;
+
   const _CharBottom({
     required this.name,
     required this.rarity,
@@ -174,8 +175,9 @@ class _CharBottom extends StatelessWidget {
     final String weaponPath = weaponType.getWeaponNormalSkillAssetPath();
 
     return Container(
+      decoration: Styles.commonCardBoxDecoration,
+      width: double.infinity,
       padding: Styles.edgeInsetAll5,
-      decoration: BoxDecoration(boxShadow: Styles.commonBlackShadow),
       child: BlocBuilder<SettingsBloc, SettingsState>(
         builder: (context, state) => state.map(
           loading: (_) => const Loading(useScaffold: false),

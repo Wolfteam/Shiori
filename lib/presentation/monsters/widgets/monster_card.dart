@@ -68,8 +68,9 @@ class MonsterCard extends StatelessWidget {
               Align(
                 alignment: Alignment.bottomCenter,
                 child: Container(
+                  decoration: Styles.commonCardBoxDecoration,
+                  width: double.infinity,
                   padding: Styles.edgeInsetAll10,
-                  decoration: BoxDecoration(boxShadow: Styles.commonBlackShadow),
                   child: Tooltip(
                     message: name,
                     child: Text(

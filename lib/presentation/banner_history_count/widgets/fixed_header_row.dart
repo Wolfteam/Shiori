@@ -40,7 +40,7 @@ class FixedHeaderRow extends StatelessWidget {
     return SizedBox(
       height: math.max(firstCellHeight, cellHeight),
       child: ListView.builder(
-        itemCount: versions.length,
+        itemCount: versions.length + 1,
         scrollDirection: Axis.horizontal,
         controller: controller,
         itemBuilder: (ctx, index) => index == 0

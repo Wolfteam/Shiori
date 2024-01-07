@@ -81,45 +81,41 @@ class ArtifactCard extends StatelessWidget {
         borderRadius: Styles.mainCardBorderRadius,
         onTap: () => _gotoDetailPage(context),
         child: GradientCard(
-          clipBehavior: Clip.hardEdge,
           shape: withShape ? Styles.mainCardShape : null,
           elevation: withElevation ? Styles.cardTenElevation : 0,
           gradient: rarity.getRarityGradient(),
-          child: Padding(
-            padding: withoutDetails ? Styles.edgeInsetAll5 : Styles.edgeInsetAll10,
-            child: Stack(
-              alignment: Alignment.center,
-              fit: StackFit.expand,
-              children: [
-                FadeInImage(
-                  width: imgWidth,
-                  height: imgHeight,
-                  placeholder: MemoryImage(kTransparentImage),
-                  fit: BoxFit.fill,
-                  placeholderFit: BoxFit.fill,
-                  alignment: Alignment.topCenter,
-                  image: FileImage(File(image)),
-                  imageErrorBuilder: (context, error, stack) {
-                    //This can happen when trying to load sets like 'Prayer to xxx'
-                    final path = getArtifactPathByOrder(0, image);
-                    return Image.file(
-                      File(path),
-                      width: imgWidth,
-                      height: imgHeight,
-                    );
-                  },
+          child: Stack(
+            alignment: Alignment.center,
+            fit: StackFit.expand,
+            children: [
+              FadeInImage(
+                width: imgWidth,
+                height: imgHeight,
+                placeholder: MemoryImage(kTransparentImage),
+                fit: BoxFit.fill,
+                placeholderFit: BoxFit.fill,
+                alignment: Alignment.topCenter,
+                image: FileImage(File(image)),
+                imageErrorBuilder: (context, error, stack) {
+                  //This can happen when trying to load sets like 'Prayer to xxx'
+                  final path = getArtifactPathByOrder(0, image);
+                  return Image.file(
+                    File(path),
+                    width: imgWidth,
+                    height: imgHeight,
+                  );
+                },
+              ),
+              Align(
+                alignment: Alignment.bottomCenter,
+                child: _Bottom(
+                  name: name,
+                  rarity: rarity,
+                  bonus: bonus,
+                  withoutDetails: withoutDetails,
                 ),
-                Align(
-                  alignment: Alignment.bottomCenter,
-                  child: _Bottom(
-                    name: name,
-                    rarity: rarity,
-                    bonus: bonus,
-                    withoutDetails: withoutDetails,
-                  ),
-                ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       ),
@@ -155,9 +151,10 @@ class _Bottom extends StatelessWidget {
     final theme = Theme.of(context);
     return Container(
       padding: withoutDetails ? null : Styles.edgeInsetAll5,
-      decoration: BoxDecoration(boxShadow: Styles.commonBlackShadow),
+      decoration: Styles.commonCardBoxDecoration,
+      width: double.infinity,
       child: Column(
-        crossAxisAlignment: withoutDetails ? CrossAxisAlignment.center : CrossAxisAlignment.stretch,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         mainAxisAlignment: MainAxisAlignment.end,
         mainAxisSize: MainAxisSize.min,
         children: [
