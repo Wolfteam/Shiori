@@ -35,7 +35,7 @@ class WeaponsButtonBar extends StatelessWidget {
               e.getWeaponNormalSkillAssetPath(),
               width: iconSize * 1.3,
               height: iconSize * 1.3,
-              color: theme.brightness == Brightness.dark ? Colors.white : Colors.black,
+              color: theme.brightness == Brightness.dark ? Colors.white : Colors.black.withOpacity(0.5),
             ),
           ),
           onPressed: !enabled ? null : () => onClick(e),
