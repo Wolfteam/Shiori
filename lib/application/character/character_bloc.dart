@@ -61,18 +61,18 @@ class CharacterBloc extends Bloc<CharacterEvent, CharacterState> {
     yield s;
   }
 
-  ItemAscensionMaterialModel _mapToItemAscensionModel(ItemAscensionMaterialFileModel m) {
-    final material = _genshinService.materials.getMaterial(m.key);
-    return ItemAscensionMaterialModel.fromMaterial(m.quantity, material, _resourceService.getMaterialImagePath(material.image, material.type));
+  ItemCommonWithQuantityAndName _mapItemAscensionMaterial(ItemAscensionMaterialFileModel m) {
+    final material = _genshinService.materials.getMaterialForCard(m.key);
+    return ItemCommonWithQuantityAndName(m.key, material.name, material.image, material.image, m.quantity);
   }
 
   CharacterAscensionModel _mapToAscensionModel(CharacterFileAscensionMaterialModel e) {
-    final materials = e.materials.map((m) => _mapToItemAscensionModel(m)).toList();
+    final materials = e.materials.map((m) => _mapItemAscensionMaterial(m)).toList();
     return CharacterAscensionModel(rank: e.rank, level: e.level, materials: materials);
   }
 
   CharacterTalentAscensionModel _mapToTalentAscensionModel(CharacterFileTalentAscensionMaterialModel e) {
-    final materials = e.materials.map((m) => _mapToItemAscensionModel(m)).toList();
+    final materials = e.materials.map((m) => _mapItemAscensionMaterial(m)).toList();
     return CharacterTalentAscensionModel(level: e.level, materials: materials);
   }
 

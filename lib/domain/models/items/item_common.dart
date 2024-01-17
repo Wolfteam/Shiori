@@ -24,6 +24,12 @@ class ItemCommonWithQuantity with _$ItemCommonWithQuantity {
 }
 
 @freezed
+class ItemCommonWithQuantityAndName with _$ItemCommonWithQuantityAndName {
+  @Implements<ItemCommonBase>()
+  const factory ItemCommonWithQuantityAndName(String key, String name, String image, String iconImage, int quantity) = _ItemCommonWithQuantityAndName;
+}
+
+@freezed
 class ItemObtainedFrom with _$ItemObtainedFrom {
   const factory ItemObtainedFrom(String key, List<ItemCommonWithQuantity> items) = _ItemObtainedFrom;
 }
