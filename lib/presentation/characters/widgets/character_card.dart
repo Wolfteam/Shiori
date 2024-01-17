@@ -111,7 +111,12 @@ class CharacterCard extends StatelessWidget {
                       message: s.translateElementType(elementType),
                       child: Container(
                         margin: const EdgeInsets.only(top: 10, right: 5),
-                        child: ElementImage.fromType(type: elementType, radius: 15, useDarkForBackgroundColor: true),
+                        child: ElementImage.fromType(
+                          type: elementType,
+                          radius: 15,
+                          useDarkForBackgroundColor: true,
+                          useCircleAvatar: false,
+                        ),
                       ),
                     ),
                   ],
