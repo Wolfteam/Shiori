@@ -5,11 +5,11 @@ import 'package:shiori/generated/l10n.dart';
 import 'package:shiori/presentation/character/widgets/builds.dart';
 import 'package:shiori/presentation/character/widgets/constellations.dart';
 import 'package:shiori/presentation/character/widgets/description.dart';
-import 'package:shiori/presentation/character/widgets/materials.dart';
 import 'package:shiori/presentation/character/widgets/passives.dart';
 import 'package:shiori/presentation/character/widgets/skills.dart';
-import 'package:shiori/presentation/character/widgets/stats.dart';
+import 'package:shiori/presentation/shared/details/detail_materials.dart';
 import 'package:shiori/presentation/shared/details/detail_section.dart';
+import 'package:shiori/presentation/shared/details/detail_stats.dart';
 import 'package:shiori/presentation/shared/details/detail_tab_landscape_layout.dart';
 import 'package:shiori/presentation/shared/extensions/element_type_extensions.dart';
 import 'package:shiori/presentation/shared/styles.dart';
@@ -143,8 +143,8 @@ class BottomLandscapeLayout extends StatelessWidget {
                 ),
               StatsTable(
                 color: color,
-                stats: stats,
-                subStatType: subStatType,
+                stats: stats.map((e) => StatItem.forCharacter(e, subStatType)).toList(),
+                mainSubStatType: subStatType,
               ),
             ],
           ),

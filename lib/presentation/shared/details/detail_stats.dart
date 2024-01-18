@@ -11,24 +11,86 @@ import 'package:shiori/presentation/shared/extensions/media_query_extensions.dar
 import 'package:shiori/presentation/shared/increment_button.dart';
 import 'package:shiori/presentation/shared/styles.dart';
 
-class StatsDialog extends StatefulWidget {
-  final List<CharacterFileStatModel> stats;
-  final StatType subStatType;
+class StatItem {
+  final int level;
+  final bool isAnAscension;
+  final List<StatValue> values;
 
-  const StatsDialog({required this.stats, required this.subStatType});
+  StatItem({
+    required this.isAnAscension,
+    required this.level,
+    required this.values,
+  });
+
+  StatItem.forCharacter(CharacterFileStatModel charStat, StatType mainSubStatType)
+      : isAnAscension = charStat.isAnAscension,
+        level = charStat.level,
+        values = List.generate(4, (index) => _buildCharacterStatValue(index, charStat, mainSubStatType));
+
+  StatItem.forWeapon(WeaponFileStatModel weaponStat, StatType mainSubStatType)
+      : isAnAscension = weaponStat.isAnAscension,
+        level = weaponStat.level,
+        values = List.generate(2, (index) => _buildWeaponStatValue(index, weaponStat, mainSubStatType));
+
+  static StatValue _buildCharacterStatValue(int index, CharacterFileStatModel charStat, StatType mainSubStatType) {
+    final type = switch (index) {
+      0 => StatType.hp,
+      1 => StatType.atk,
+      2 => StatType.def,
+      3 => mainSubStatType,
+      _ => throw ArgumentError(),
+    };
+    final value = switch (index) {
+      0 => charStat.baseHp,
+      1 => charStat.baseAtk,
+      2 => charStat.baseDef,
+      3 => charStat.statValue,
+      _ => throw ArgumentError(),
+    };
+
+    return StatValue(type: type, value: value, isBase: index != 3);
+  }
+
+  static StatValue _buildWeaponStatValue(int index, WeaponFileStatModel charStat, StatType mainSubStatType) {
+    final type = switch (index) {
+      0 => StatType.atk,
+      1 => mainSubStatType,
+      _ => throw ArgumentError(),
+    };
+    final value = switch (index) {
+      0 => charStat.baseAtk,
+      1 => charStat.statValue,
+      _ => throw ArgumentError(),
+    };
+
+    return StatValue(type: type, value: value, isBase: index != 3);
+  }
+}
+
+class StatValue {
+  final StatType type;
+  final double value;
+  final bool isBase;
+
+  const StatValue({required this.type, required this.value, required this.isBase});
+}
+
+class StatsDialog extends StatefulWidget {
+  final List<StatItem> stats;
+  final StatType mainSubStatType;
+
+  const StatsDialog({required this.stats, required this.mainSubStatType});
 
   @override
   State<StatsDialog> createState() => _StatsDialogState();
 }
 
 class _StatsDialogState extends State<StatsDialog> {
-  final List<int> _indexes = [];
   int _currentIndex = 0;
-  late CharacterFileStatModel _current;
+  late StatItem _current;
 
   @override
   void initState() {
-    _indexes.addAll(List.generate(widget.stats.length, (index) => index));
     _current = widget.stats.first;
     super.initState();
   }
@@ -40,7 +102,7 @@ class _StatsDialogState extends State<StatsDialog> {
     return AlertDialog(
       title: Text(s.stats),
       content: SizedBox(
-        height: mq.getHeightForDialogs(4, itemHeight: 80),
+        height: mq.getHeightForDialogs(_current.values.length, itemHeight: 80),
         width: mq.getWidthForDialogs(),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -58,30 +120,16 @@ class _StatsDialogState extends State<StatsDialog> {
               child: ListView.separated(
                 shrinkWrap: true,
                 separatorBuilder: (ctx, index) => const Divider(),
-                itemCount: 4,
+                itemCount: _current.values.length,
                 itemBuilder: (ctx, index) {
-                  final type = switch (index) {
-                    0 => StatType.hp,
-                    1 => StatType.atk,
-                    2 => StatType.def,
-                    3 => widget.subStatType,
-                    _ => throw ArgumentError(),
-                  };
-                  final value = switch (index) {
-                    0 => _current.baseHp,
-                    1 => _current.baseAtk,
-                    2 => _current.baseDef,
-                    3 => _current.statValue,
-                    _ => throw ArgumentError()
-                  };
-
+                  final StatValue statValue = _current.values[index];
                   return ListTile(
                     dense: true,
                     title: _StatRow(
-                      type: type,
-                      value: value,
-                      removeExtraSigns: type == StatType.def,
-                      isBase: index != 3,
+                      type: statValue.type,
+                      value: statValue.value,
+                      removeExtraSigns: statValue.type == StatType.def,
+                      isBase: statValue.isBase,
                     ),
                   );
                 },
@@ -149,18 +197,19 @@ class _StatRow extends StatelessWidget {
 
 class StatsTable extends StatelessWidget {
   final Color color;
-  final StatType subStatType;
-  final List<CharacterFileStatModel> stats;
+  final StatType mainSubStatType;
+  final List<StatItem> stats;
 
   const StatsTable({
     required this.color,
-    required this.subStatType,
+    required this.mainSubStatType,
     required this.stats,
   });
 
   @override
   Widget build(BuildContext context) {
     final s = S.of(context);
+    final List<StatValue> values = stats.first.values;
     return DetailSection.complex(
       title: s.stats,
       color: color,
@@ -170,13 +219,17 @@ class StatsTable extends StatelessWidget {
             TableRow(
               children: [
                 CommonTableCell(text: s.level, padding: Styles.edgeInsetAll5),
-                CommonTableCell(text: s.baseX(s.translateStatTypeWithoutValue(StatType.hp)), padding: Styles.edgeInsetAll5),
-                CommonTableCell(text: s.baseX(s.translateStatTypeWithoutValue(StatType.atk)), padding: Styles.edgeInsetAll5),
-                CommonTableCell(
-                  text: s.baseX(s.translateStatTypeWithoutValue(StatType.defPercentage, removeExtraSigns: true)),
-                  padding: Styles.edgeInsetAll5,
+                ...values.map(
+                  (e) => CommonTableCell(
+                    text: s.baseX(
+                      s.translateStatTypeWithoutValue(
+                        e.type,
+                        removeExtraSigns: e.type == StatType.def,
+                      ),
+                    ),
+                    padding: Styles.edgeInsetAll5,
+                  ),
                 ),
-                CommonTableCell(text: s.translateStatTypeWithoutValue(subStatType), padding: Styles.edgeInsetAll5),
               ],
             ),
             ...stats.map((e) => _buildRow(e)),
@@ -186,15 +239,12 @@ class StatsTable extends StatelessWidget {
     );
   }
 
-  TableRow _buildRow(CharacterFileStatModel e) {
+  TableRow _buildRow(StatItem e) {
     final level = e.isAnAscension ? '${e.level}+' : '${e.level}';
     return TableRow(
       children: [
         CommonTableCell(text: level, padding: Styles.edgeInsetAll5),
-        CommonTableCell(text: '${e.baseHp}', padding: Styles.edgeInsetAll5),
-        CommonTableCell(text: '${e.baseAtk}', padding: Styles.edgeInsetAll5),
-        CommonTableCell(text: '${e.baseDef}', padding: Styles.edgeInsetAll5),
-        CommonTableCell(text: '${e.statValue}', padding: Styles.edgeInsetAll5),
+        ...e.values.map((e) => CommonTableCell(text: '${e.value}', padding: Styles.edgeInsetAll5)),
       ],
     );
   }

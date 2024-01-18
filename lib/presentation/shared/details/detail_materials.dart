@@ -18,6 +18,10 @@ class MaterialsData {
   MaterialsData.fromTalentAscensionMaterial(CharacterTalentAscensionModel e)
       : level = e.level,
         materials = e.materials;
+
+  MaterialsData.fromWeaponAscensionModel(WeaponAscensionModel e)
+      : level = e.level,
+        materials = e.materials;
 }
 
 class AscensionMaterialsDialog extends StatelessWidget {

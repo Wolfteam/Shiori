@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/generated/l10n.dart';
-import 'package:shiori/presentation/character/widgets/materials.dart';
-import 'package:shiori/presentation/character/widgets/stats.dart';
+import 'package:shiori/presentation/shared/details/detail_materials.dart';
 import 'package:shiori/presentation/shared/details/detail_section.dart';
+import 'package:shiori/presentation/shared/details/detail_stats.dart';
 
 class Description extends StatelessWidget {
   final Color color;
@@ -92,7 +92,10 @@ class Description extends StatelessWidget {
                 style: buttonStyle,
                 onPressed: () => showDialog(
                   context: context,
-                  builder: (_) => StatsDialog(stats: stats, subStatType: subStatType),
+                  builder: (_) => StatsDialog(
+                    stats: stats.map((e) => StatItem.forCharacter(e, subStatType)).toList(),
+                    mainSubStatType: subStatType,
+                  ),
                 ),
               ),
           ],

@@ -36,11 +36,11 @@ class _PortraitLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final isPortrait = MediaQuery.of(context).orientation == Orientation.portrait;
     return ScaffoldWithFab(
       child: BlocBuilder<CharacterBloc, CharacterState>(
         builder: (context, state) => state.maybeMap(
           loaded: (state) => Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               Top(
                 itemKey: state.key,
@@ -55,34 +55,19 @@ class _PortraitLayout extends StatelessWidget {
                 secondFullImage: state.secondFullImage,
                 isInInventory: state.isInInventory,
               ),
-              if (isPortrait)
-                BottomPortraitLayout(
-                  description: state.description,
-                  elementType: state.elementType,
-                  subStatType: state.subStatType,
-                  stats: state.stats,
-                  skills: state.skills,
-                  passives: state.passives,
-                  constellations: state.constellations,
-                  ascensionMaterials: state.ascensionMaterials,
-                  talentAscensionsMaterials: state.talentAscensionsMaterials,
-                  multiTalentAscensionMaterials: state.multiTalentAscensionMaterials,
-                  builds: state.builds,
-                )
-              else
-                BottomLandscapeLayout(
-                  description: state.description,
-                  elementType: state.elementType,
-                  subStatType: state.subStatType,
-                  stats: state.stats,
-                  skills: state.skills,
-                  passives: state.passives,
-                  constellations: state.constellations,
-                  ascensionMaterials: state.ascensionMaterials,
-                  talentAscensionsMaterials: state.talentAscensionsMaterials,
-                  multiTalentAscensionMaterials: state.multiTalentAscensionMaterials,
-                  builds: state.builds,
-                ),
+              BottomPortraitLayout(
+                description: state.description,
+                elementType: state.elementType,
+                subStatType: state.subStatType,
+                stats: state.stats,
+                skills: state.skills,
+                passives: state.passives,
+                constellations: state.constellations,
+                ascensionMaterials: state.ascensionMaterials,
+                talentAscensionsMaterials: state.talentAscensionsMaterials,
+                multiTalentAscensionMaterials: state.multiTalentAscensionMaterials,
+                builds: state.builds,
+              )
             ],
           ),
           orElse: () => const Loading.column(),
@@ -97,7 +82,6 @@ class _LandscapeLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final isPortrait = MediaQuery.of(context).orientation == Orientation.portrait;
     return Scaffold(
       body: SafeArea(
         child: BlocBuilder<CharacterBloc, CharacterState>(
@@ -120,33 +104,19 @@ class _LandscapeLayout extends StatelessWidget {
                   ),
                 ),
                 Expanded(
-                  child: isPortrait
-                      ? BottomPortraitLayout(
-                          description: state.description,
-                          elementType: state.elementType,
-                          subStatType: state.subStatType,
-                          stats: state.stats,
-                          skills: state.skills,
-                          passives: state.passives,
-                          constellations: state.constellations,
-                          ascensionMaterials: state.ascensionMaterials,
-                          talentAscensionsMaterials: state.talentAscensionsMaterials,
-                          multiTalentAscensionMaterials: state.multiTalentAscensionMaterials,
-                          builds: state.builds,
-                        )
-                      : BottomLandscapeLayout(
-                          description: state.description,
-                          elementType: state.elementType,
-                          subStatType: state.subStatType,
-                          stats: state.stats,
-                          skills: state.skills,
-                          passives: state.passives,
-                          constellations: state.constellations,
-                          ascensionMaterials: state.ascensionMaterials,
-                          talentAscensionsMaterials: state.talentAscensionsMaterials,
-                          multiTalentAscensionMaterials: state.multiTalentAscensionMaterials,
-                          builds: state.builds,
-                        ),
+                  child: BottomLandscapeLayout(
+                    description: state.description,
+                    elementType: state.elementType,
+                    subStatType: state.subStatType,
+                    stats: state.stats,
+                    skills: state.skills,
+                    passives: state.passives,
+                    constellations: state.constellations,
+                    ascensionMaterials: state.ascensionMaterials,
+                    talentAscensionsMaterials: state.talentAscensionsMaterials,
+                    multiTalentAscensionMaterials: state.multiTalentAscensionMaterials,
+                    builds: state.builds,
+                  ),
                 ),
               ],
             ),

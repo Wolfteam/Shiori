@@ -40,7 +40,6 @@ class CommonTableCell extends StatelessWidget {
                     message: text,
                     child: Text(
                       text!,
-                      overflow: TextOverflow.ellipsis,
                       textAlign: textAlign,
                       style: textStyle,
                     ),
