@@ -20,7 +20,7 @@ import 'package:shiori/presentation/shared/styles.dart';
 import 'package:shiori/presentation/shared/utils/toast_utils.dart';
 import 'package:transparent_image/transparent_image.dart';
 
-const double _minHeight = 400;
+const double _minHeight = 450;
 const double _maxHeight = 600;
 
 class CharacterCard extends StatelessWidget {
@@ -70,10 +70,8 @@ class CharacterCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final s = S.of(context);
     final size = MediaQuery.of(context).size;
-    double height = size.height / 2.5;
-    if (height > _maxHeight) {
-      height = _maxHeight;
-    } else if (height < _minHeight) {
+    double height = _maxHeight;
+    if (size.height / 2.5 < _maxHeight) {
       height = _minHeight;
     }
     return SizedBox(
