@@ -93,12 +93,11 @@ class WeaponCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: imgWidth * 1.5,
-      height: imgHeight * 2.3,
+      height: imgHeight * 2,
       child: InkWell(
         borderRadius: Styles.mainCardBorderRadius,
         onTap: () => _gotoWeaponPage(context),
         child: GradientCard(
-          clipBehavior: Clip.hardEdge,
           shape: withShape ? Styles.mainCardShape : null,
           elevation: withElevation ? Styles.cardTenElevation : 0,
           gradient: rarity.getRarityGradient(),

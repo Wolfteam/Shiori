@@ -5,7 +5,6 @@ class DetailTabLandscapeLayout extends StatelessWidget {
   final List<String> tabs;
   final List<Widget> children;
   final EdgeInsets padding;
-
   const DetailTabLandscapeLayout({
     super.key,
     required this.color,
@@ -22,7 +21,7 @@ class DetailTabLandscapeLayout extends StatelessWidget {
       //had to use a container to keep the background color on the system bar
       child: Container(
         color: color,
-        padding: const EdgeInsets.only(right: 20),
+        padding: const EdgeInsets.only(right: 40),
         child: SafeArea(
           child: Scaffold(
             appBar: AppBar(
