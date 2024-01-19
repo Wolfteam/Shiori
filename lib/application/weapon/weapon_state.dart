@@ -19,6 +19,6 @@ class WeaponState with _$WeaponState {
     required List<WeaponFileRefinementModel> refinements,
     required List<ItemCommon> characters,
     required List<WeaponFileStatModel> stats,
-    required List<ItemAscensionMaterialModel> craftingMaterials,
+    required List<ItemCommonWithQuantityAndName> craftingMaterials,
   }) = _LoadedState;
 }
