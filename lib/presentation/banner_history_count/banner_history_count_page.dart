@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:linked_scroll_controller/linked_scroll_controller.dart';
-import 'package:responsive_builder/responsive_builder.dart';
 import 'package:shiori/application/bloc.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/generated/l10n.dart';
@@ -18,11 +17,9 @@ import 'package:shiori/presentation/shared/nothing_found_column.dart';
 import 'package:shiori/presentation/shared/styles.dart';
 import 'package:shiori/presentation/wish_banner_history/wish_banner_history_page.dart';
 
-const double _tabletFirstCellWidth = 150;
-const double _mobileFirstCellWidth = 120;
+const double _firstCellWidth = 120;
 const double _firstCellHeight = 70;
-const double _tabletCellWidth = 100;
-const double _mobileCellWidth = 80;
+const double _cellWidth = 100;
 const double _cellHeight = 120;
 
 class BannerHistoryCountPage extends StatefulWidget {
@@ -56,12 +53,6 @@ class _BannerHistoryCountPageState extends State<BannerHistoryCountPage> with Si
   @override
   Widget build(BuildContext context) {
     const margin = EdgeInsets.all(4.0);
-    double firstCellWidth = _tabletFirstCellWidth;
-    double cellWidth = _tabletCellWidth;
-    if (getDeviceType(MediaQuery.of(context).size) == DeviceScreenType.mobile) {
-      firstCellWidth = _mobileFirstCellWidth;
-      cellWidth = _mobileCellWidth;
-    }
     return BlocProvider(
       create: (_) => Injection.bannerHistoryCountBloc..add(const BannerHistoryCountEvent.init()),
       child: Scaffold(
@@ -80,9 +71,9 @@ class _BannerHistoryCountPageState extends State<BannerHistoryCountPage> with Si
                   versions: state.versions,
                   selectedVersions: state.selectedVersions,
                   margin: margin,
-                  firstCellWidth: firstCellWidth,
+                  firstCellWidth: _firstCellWidth,
                   firstCellHeight: _firstCellHeight,
-                  cellWidth: cellWidth,
+                  cellWidth: _cellWidth,
                   cellHeight: 60,
                   controller: _fixedHeaderScrollController,
                 ),
@@ -94,7 +85,7 @@ class _BannerHistoryCountPageState extends State<BannerHistoryCountPage> with Si
                     BlocBuilder<BannerHistoryCountBloc, BannerHistoryCountState>(
                       builder: (ctx, state) => FixedLeftColumn(
                         margin: margin,
-                        cellWidth: firstCellWidth,
+                        cellWidth: _firstCellWidth,
                         cellHeight: _cellHeight,
                         items: state.banners,
                         controller: _fabController,
@@ -111,7 +102,7 @@ class _BannerHistoryCountPageState extends State<BannerHistoryCountPage> with Si
                                   banners: state.banners,
                                   versions: state.versions,
                                   margin: margin,
-                                  cellWidth: cellWidth,
+                                  cellWidth: _cellWidth,
                                   cellHeight: _cellHeight,
                                   verticalController: _fixedLeftColumnScrollController,
                                   horizontalControllerGroup: _horizontalControllers,

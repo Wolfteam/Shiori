@@ -5,6 +5,7 @@ class DetailTabLandscapeLayout extends StatelessWidget {
   final List<String> tabs;
   final List<Widget> children;
   final EdgeInsets padding;
+
   const DetailTabLandscapeLayout({
     super.key,
     required this.color,
@@ -15,6 +16,19 @@ class DetailTabLandscapeLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    if (children.length == 1) {
+      return Container(
+        color: color,
+        padding: const EdgeInsets.only(right: 40),
+        child: Scaffold(
+          body: Padding(
+            padding: padding,
+            child: children.first,
+          ),
+        ),
+      );
+    }
+
     final tabColor = Theme.of(context).brightness == Brightness.dark ? Colors.white : Colors.black;
     return DefaultTabController(
       length: tabs.length,
