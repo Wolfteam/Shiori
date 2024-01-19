@@ -1,19 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:shiori/domain/enums/enums.dart' as enums;
 import 'package:shiori/generated/l10n.dart';
 import 'package:shiori/presentation/shared/details/detail_general_card.dart';
 import 'package:shiori/presentation/shared/details/detail_top_layout.dart';
+import 'package:shiori/presentation/shared/extensions/i18n_extensions.dart';
 import 'package:shiori/presentation/shared/extensions/rarity_extensions.dart';
 import 'package:shiori/presentation/shared/images/rarity.dart';
 
 class Top extends StatelessWidget {
   final String name;
-  final int maxRarity;
+  final int rarity;
+  final enums.MaterialType type;
   final String image;
+  final List<int> days;
 
   const Top({
     required this.name,
-    required this.maxRarity,
+    required this.rarity,
+    required this.type,
     required this.image,
+    required this.days,
   });
 
   @override
@@ -21,12 +27,11 @@ class Top extends StatelessWidget {
     final s = S.of(context);
     final mediaQuery = MediaQuery.of(context);
     final isPortrait = mediaQuery.orientation == Orientation.portrait;
-    final gradient = maxRarity.getRarityGradient();
+    final gradient = rarity.getRarityGradient();
     return DetailTopLayout(
       fullImage: image,
       secondFullImage: image,
       decoration: BoxDecoration(gradient: gradient),
-      charDescriptionHeight: 120,
       isAnSmallImage: isPortrait,
       generalCard: DetailGeneralCardNew(
         itemName: name,
@@ -36,11 +41,20 @@ class Top extends StatelessWidget {
             left: GeneralCardColumn(
               title: s.rarity,
               child: Rarity(
-                stars: maxRarity,
+                stars: rarity,
                 color: Colors.white,
                 centered: false,
               ),
             ),
+            right: days.isNotEmpty
+                ? GeneralCardColumn(
+                    title: s.day,
+                    child: Text(
+                      s.translateDays(days),
+                      style: const TextStyle(color: Colors.white),
+                    ),
+                  )
+                : null,
           ),
         ],
       ),

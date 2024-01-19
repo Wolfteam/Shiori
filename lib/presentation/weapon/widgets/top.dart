@@ -48,7 +48,6 @@ class Top extends StatelessWidget {
       fullImage: image,
       secondFullImage: image,
       decoration: BoxDecoration(gradient: gradient),
-      showShadowImage: isPortrait,
       charDescriptionHeight: 220,
       isAnSmallImage: isPortrait,
       generalCard: DetailGeneralCardNew(
