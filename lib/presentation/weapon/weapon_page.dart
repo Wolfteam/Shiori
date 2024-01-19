@@ -5,8 +5,8 @@ import 'package:shiori/injection.dart';
 import 'package:shiori/presentation/shared/disabled_card_surface_tint_color.dart';
 import 'package:shiori/presentation/shared/loading.dart';
 import 'package:shiori/presentation/shared/scaffold_with_fab.dart';
-import 'package:shiori/presentation/weapon/widgets/weapon_detail_bottom.dart';
-import 'package:shiori/presentation/weapon/widgets/weapon_detail_top.dart';
+import 'package:shiori/presentation/weapon/widgets/bottom.dart';
+import 'package:shiori/presentation/weapon/widgets/top.dart';
 
 class WeaponPage extends StatelessWidget {
   final String itemKey;
@@ -38,38 +38,36 @@ class _PortraitLayout extends StatelessWidget {
   Widget build(BuildContext context) {
     return ScaffoldWithFab(
       child: BlocBuilder<WeaponBloc, WeaponState>(
-        builder: (context, state) {
-          return state.map(
-            loading: (_) => const Loading(useScaffold: false),
-            loaded: (state) => Stack(
-              fit: StackFit.passthrough,
-              clipBehavior: Clip.none,
-              alignment: Alignment.topCenter,
-              children: [
-                WeaponDetailTop(
-                  name: state.name,
-                  atk: state.atk,
-                  rarity: state.rarity,
-                  secondaryStatType: state.secondaryStat,
-                  secondaryStatValue: state.secondaryStatValue,
-                  type: state.weaponType,
-                  locationType: state.locationType,
-                  image: state.fullImage,
-                ),
-                WeaponDetailBottom(
-                  rarity: state.rarity,
-                  description: state.description,
-                  ascensionMaterials: state.ascensionMaterials,
-                  charImgs: state.characters,
-                  craftingMaterials: state.craftingMaterials,
-                  refinements: state.refinements,
-                  secondaryStatType: state.secondaryStat,
-                  stats: state.stats,
-                ),
-              ],
-            ),
-          );
-        },
+        builder: (context, state) => state.map(
+          loading: (_) => const Loading.column(),
+          loaded: (state) => Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Top(
+                itemKey: state.key,
+                name: state.name,
+                atk: state.atk,
+                rarity: state.rarity,
+                secondaryStatType: state.secondaryStat,
+                secondaryStatValue: state.secondaryStatValue,
+                type: state.weaponType,
+                locationType: state.locationType,
+                image: state.fullImage,
+                isInInventory: state.isInInventory,
+              ),
+              BottomPortraitLayout(
+                rarity: state.rarity,
+                description: state.description,
+                ascensionMaterials: state.ascensionMaterials,
+                charImgs: state.characters,
+                craftingMaterials: state.craftingMaterials,
+                refinements: state.refinements,
+                secondaryStatType: state.secondaryStat,
+                stats: state.stats,
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }
@@ -84,13 +82,13 @@ class _LandscapeLayout extends StatelessWidget {
       body: SafeArea(
         child: BlocBuilder<WeaponBloc, WeaponState>(
           builder: (ctx, state) => state.map(
-            loading: (_) => const Loading(useScaffold: false),
+            loading: (_) => const Loading.column(),
             loaded: (state) => Row(
-              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Expanded(
                   flex: 40,
-                  child: WeaponDetailTop(
+                  child: Top(
+                    itemKey: state.key,
                     name: state.name,
                     atk: state.atk,
                     rarity: state.rarity,
@@ -99,11 +97,12 @@ class _LandscapeLayout extends StatelessWidget {
                     type: state.weaponType,
                     locationType: state.locationType,
                     image: state.fullImage,
+                    isInInventory: state.isInInventory,
                   ),
                 ),
                 Expanded(
                   flex: 60,
-                  child: WeaponDetailBottom(
+                  child: BottomLandscapeLayout(
                     rarity: state.rarity,
                     description: state.description,
                     ascensionMaterials: state.ascensionMaterials,
