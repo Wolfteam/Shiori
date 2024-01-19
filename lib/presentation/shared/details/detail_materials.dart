@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/generated/l10n.dart';
-import 'package:shiori/presentation/shared/common_table_cell.dart';
+import 'package:shiori/presentation/material/material_page.dart' as mp;
 import 'package:shiori/presentation/shared/extensions/media_query_extensions.dart';
 import 'package:shiori/presentation/shared/material_item_button.dart';
 
@@ -79,31 +79,36 @@ class AscensionMaterialsTable extends StatelessWidget {
     final s = S.of(context);
     final theme = Theme.of(context);
     final headerStyle = theme.textTheme.titleSmall;
-    return Table(
-      children: [
-        TableRow(
-          children: [
-            CommonTableCell(
-              text: s.material,
-              textStyle: headerStyle,
-            ),
-            CommonTableCell(
-              text: s.quantity,
-              textStyle: headerStyle,
-            ),
-          ],
+    return DataTable(
+      showCheckboxColumn: false,
+      dividerThickness: 0.00000000001,
+      headingTextStyle: headerStyle,
+      columns: <DataColumn>[
+        DataColumn(
+          label: Expanded(
+            child: Text(s.materials),
+          ),
         ),
+        DataColumn(
+          label: Expanded(
+            child: Text(s.quantity),
+          ),
+        ),
+      ],
+      rows: <DataRow>[
         ...materials.map(
-          (m) => TableRow(
-            children: [
-              CommonTableCell.child(
-                child: Row(
+          (m) => DataRow(
+            onSelectChanged: (selected) => mp.MaterialPage.route(m.key, context),
+            cells: [
+              DataCell(
+                Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     MaterialItemButton(
                       itemKey: m.key,
                       image: m.image,
                       size: 36,
+                      useButton: false,
                     ),
                     Expanded(
                       child: Text(
@@ -114,7 +119,7 @@ class AscensionMaterialsTable extends StatelessWidget {
                   ],
                 ),
               ),
-              CommonTableCell(text: '${m.quantity}'),
+              DataCell(Text('${m.quantity}')),
             ],
           ),
         ),
