@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shiori/domain/extensions/string_extensions.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/generated/l10n.dart';
 
@@ -35,7 +36,7 @@ class ArtifactStats extends StatelessWidget {
                     style: theme.textTheme.titleSmall!.copyWith(fontSize: 14, color: textColor),
                   ),
                   Text(
-                    b.bonus,
+                    b.bonus.removeLineBreakAtEnd()!,
                     textAlign: TextAlign.center,
                     maxLines: maxLines,
                     overflow: maxLines != null ? TextOverflow.ellipsis : null,

@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:shiori/domain/app_constants.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/presentation/artifact/artifact_page.dart';
-import 'package:shiori/presentation/artifacts/widgets/artifact_stats.dart';
 import 'package:shiori/presentation/shared/custom_divider.dart';
 import 'package:shiori/presentation/shared/extensions/rarity_extensions.dart';
 import 'package:shiori/presentation/shared/gradient_card.dart';
@@ -76,7 +75,7 @@ class ArtifactCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: imgWidth * 1.5,
-      height: imgHeight * 3,
+      height: imgHeight * 2.5,
       child: InkWell(
         borderRadius: Styles.mainCardBorderRadius,
         onTap: () => _gotoDetailPage(context),
@@ -173,12 +172,6 @@ class _Bottom extends StatelessWidget {
             compact: withoutDetails,
           ),
           if (!withoutDetails) const CustomDivider(),
-          if (!withoutDetails && bonus.isNotEmpty)
-            ArtifactStats(
-              bonus: bonus,
-              textColor: Colors.white,
-              maxLines: 1,
-            ),
         ],
       ),
     );
