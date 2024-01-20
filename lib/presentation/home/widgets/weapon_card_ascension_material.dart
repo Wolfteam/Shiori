@@ -8,7 +8,7 @@ class WeaponCardAscensionMaterial extends StatelessWidget {
   final String name;
   final String image;
   final List<int> days;
-  final List<ItemCommon> weapons;
+  final List<ItemCommonWithName> weapons;
 
   const WeaponCardAscensionMaterial({
     super.key,
@@ -33,7 +33,10 @@ class WeaponCardAscensionMaterial extends StatelessWidget {
           itemCount: weapons.length,
           physics: const BouncingScrollPhysics(),
           scrollDirection: Axis.horizontal,
-          itemBuilder: (ctx, index) => WeaponIconImage.circleItem(item: weapons[index]),
+          itemBuilder: (ctx, index) {
+            final weapon = weapons[index];
+            return WeaponIconImage(itemKey: weapon.key, image: weapon.image);
+          },
         ),
       ),
     );

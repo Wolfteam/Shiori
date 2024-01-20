@@ -1,3 +1,4 @@
+import 'package:collection/collection.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:shiori/domain/enums/enums.dart';
 
@@ -50,6 +51,14 @@ class ItemCommonWithRarityAndType with _$ItemCommonWithRarityAndType {
 class ItemCommonWithName with _$ItemCommonWithName {
   @Implements<ItemCommonBase>()
   const factory ItemCommonWithName(String key, String image, String iconImage, String name) = _ItemCommonWithName;
+
+  static final RegExp onlyLettersAndNumbersRegex = RegExp('[^A-Za-z0-9]');
+
+  static int sortAsc(ItemCommonWithName x, ItemCommonWithName y) {
+    final String a = x.name.replaceAll(onlyLettersAndNumbersRegex, '');
+    final String b = y.name.replaceAll(onlyLettersAndNumbersRegex, '');
+    return compareNatural(a, b);
+  }
 }
 
 @freezed

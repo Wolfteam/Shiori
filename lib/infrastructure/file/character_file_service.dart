@@ -250,7 +250,7 @@ class CharacterFileServiceImpl extends CharacterFileService {
         .where((el) => !el.isComingSoon && el.region == regionType)
         .map((e) => _fromCharFileModelToItemCommonWithName(e))
         .toList()
-      ..sort((x, y) => x.name.compareTo(y.name));
+      ..sort((x, y) => ItemCommonWithName.sortAsc(x, y));
   }
 
   @override
@@ -263,7 +263,7 @@ class CharacterFileServiceImpl extends CharacterFileService {
         .where((el) => !el.isComingSoon && el.region == regionType && el.isFemale == onlyFemales)
         .map((e) => _fromCharFileModelToItemCommonWithName(e))
         .toList()
-      ..sort((x, y) => x.name.compareTo(y.name));
+      ..sort((x, y) => ItemCommonWithName.sortAsc(x, y));
   }
 
   @override
