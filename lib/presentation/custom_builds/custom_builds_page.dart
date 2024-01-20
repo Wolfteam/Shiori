@@ -9,7 +9,6 @@ import 'package:shiori/presentation/shared/app_fab.dart';
 import 'package:shiori/presentation/shared/mixins/app_fab_mixin.dart';
 import 'package:shiori/presentation/shared/nothing_found_column.dart';
 import 'package:shiori/presentation/shared/styles.dart';
-import 'package:waterfall_flow/waterfall_flow.dart';
 
 class CustomBuildsPage extends StatelessWidget {
   const CustomBuildsPage({super.key});
@@ -40,12 +39,6 @@ class _PageState extends State<_Page> with SingleTickerProviderStateMixin, AppFa
   @override
   Widget build(BuildContext context) {
     final s = S.of(context);
-    final mq = MediaQuery.of(context);
-    final crossAxisCount = mq.size.width > 1600
-        ? 3
-        : mq.size.width > 1200
-            ? 2
-            : 1;
     return Scaffold(
       appBar: AppBar(
         title: Text(s.customBuilds),
@@ -61,13 +54,15 @@ class _PageState extends State<_Page> with SingleTickerProviderStateMixin, AppFa
         builder: (context, state) => SafeArea(
           child: state.builds.isEmpty
               ? NothingFoundColumn(msg: s.startByCreatingBuild)
-              : WaterfallFlow.builder(
+              : GridView.builder(
                   itemCount: state.builds.length,
                   padding: Styles.edgeInsetAll5,
-                  gridDelegate: SliverWaterfallFlowDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: crossAxisCount,
+                  gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
+                    maxCrossAxisExtent: CustomBuildCard.itemWidth,
                     crossAxisSpacing: 10,
                     mainAxisSpacing: 10,
+                    mainAxisExtent: CustomBuildCard.itemHeight,
+                    childAspectRatio: CustomBuildCard.itemWidth / CustomBuildCard.itemHeight,
                   ),
                   itemBuilder: (context, index) => CustomBuildCard(item: state.builds[index]),
                 ),
