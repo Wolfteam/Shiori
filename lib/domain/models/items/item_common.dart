@@ -31,7 +31,7 @@ class ItemCommonWithQuantityAndName with _$ItemCommonWithQuantityAndName {
 
 @freezed
 class ItemObtainedFrom with _$ItemObtainedFrom {
-  const factory ItemObtainedFrom(String key, List<ItemCommonWithQuantity> items) = _ItemObtainedFrom;
+  const factory ItemObtainedFrom(String key, List<ItemCommonWithQuantityAndName> items) = _ItemObtainedFrom;
 }
 
 @freezed

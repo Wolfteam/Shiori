@@ -18,11 +18,11 @@ abstract class CharacterFileService extends BaseFileService {
 
   List<TierListRowModel> getDefaultCharacterTierList(List<int> colors);
 
-  List<ItemCommon> getCharacterForItemsUsingWeapon(String key);
+  List<ItemCommonWithName> getCharacterForItemsUsingWeapon(String key);
 
-  List<ItemCommon> getCharacterForItemsUsingArtifact(String key);
+  List<ItemCommonWithName> getCharacterForItemsUsingArtifact(String key);
 
-  List<ItemCommon> getCharacterForItemsUsingMaterial(String key);
+  List<ItemCommonWithName> getCharacterForItemsUsingMaterial(String key);
 
   List<String> getUpcomingCharactersKeys();
 

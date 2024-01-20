@@ -51,17 +51,17 @@ class WeaponFileServiceImpl extends WeaponFileService {
   List<String> getUpcomingWeaponsKeys() => _weaponsFile.weapons.where((el) => el.isComingSoon).map((e) => e.key).toList();
 
   @override
-  List<ItemCommon> getWeaponForItemsUsingMaterial(String key) {
-    final items = <ItemCommon>[];
+  List<ItemCommonWithName> getWeaponForItemsUsingMaterial(String key) {
+    final items = <ItemCommonWithName>[];
 
     for (final weapon in _weaponsFile.weapons) {
       final materials = weapon.craftingMaterials + weapon.ascensionMaterials.expand((e) => e.materials).toList();
       if (materials.any((m) => m.key == key)) {
-        items.add(_fromWeaponFileModelToItemCommon(weapon));
+        items.add(_fromWeaponFileModelToItemCommonWithName(weapon));
       }
     }
 
-    return items;
+    return items..sort((x, y) => x.name.compareTo(y.name));
   }
 
   @override
@@ -81,7 +81,7 @@ class WeaponFileServiceImpl extends WeaponFileService {
         days: e.days,
         name: translation.name,
         image: _resourceService.getMaterialImagePath(e.image, e.type),
-        weapons: weapons,
+        weapons: weapons..sort((x, y) => x.key.compareTo(y.key)),
       );
     }).toList();
   }

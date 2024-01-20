@@ -14,7 +14,7 @@ abstract class WeaponFileService extends BaseFileService {
 
   List<String> getUpcomingWeaponsKeys();
 
-  List<ItemCommon> getWeaponForItemsUsingMaterial(String key);
+  List<ItemCommonWithName> getWeaponForItemsUsingMaterial(String key);
 
   List<TodayWeaponAscensionMaterialModel> getWeaponAscensionMaterials(int day);
 

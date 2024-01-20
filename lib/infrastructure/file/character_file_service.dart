@@ -85,14 +85,14 @@ class CharacterFileServiceImpl extends CharacterFileService {
   }
 
   @override
-  List<ItemCommon> getCharacterForItemsUsingWeapon(String key) {
+  List<ItemCommonWithName> getCharacterForItemsUsingWeapon(String key) {
     final weapon = _weapons.getWeapon(key);
-    final items = <ItemCommon>[];
+    final items = <ItemCommonWithName>[];
     for (final char in _charactersFile.characters.where((el) => !el.isComingSoon)) {
       for (final build in char.builds) {
         final isBeingUsed = build.weaponKeys.contains(weapon.key);
         if (isBeingUsed && !items.any((el) => el.key == char.key)) {
-          items.add(_fromCharFileModelToItemCommon(char));
+          items.add(_fromCharFileModelToItemCommonWithName(char));
         }
       }
     }
@@ -101,15 +101,15 @@ class CharacterFileServiceImpl extends CharacterFileService {
   }
 
   @override
-  List<ItemCommon> getCharacterForItemsUsingArtifact(String key) {
+  List<ItemCommonWithName> getCharacterForItemsUsingArtifact(String key) {
     final artifact = _artifacts.getArtifact(key);
-    final items = <ItemCommon>[];
+    final items = <ItemCommonWithName>[];
     for (final char in _charactersFile.characters.where((el) => !el.isComingSoon)) {
       for (final build in char.builds) {
         final isBeingUsed = build.artifacts.any((a) => a.oneKey == artifact.key || a.multiples.any((m) => m.key == artifact.key));
 
         if (isBeingUsed && !items.any((el) => el.key == char.key)) {
-          items.add(_fromCharFileModelToItemCommon(char));
+          items.add(_fromCharFileModelToItemCommonWithName(char));
         }
       }
     }
@@ -118,8 +118,8 @@ class CharacterFileServiceImpl extends CharacterFileService {
   }
 
   @override
-  List<ItemCommon> getCharacterForItemsUsingMaterial(String key) {
-    final imgs = <ItemCommon>[];
+  List<ItemCommonWithName> getCharacterForItemsUsingMaterial(String key) {
+    final imgs = <ItemCommonWithName>[];
     final chars = _charactersFile.characters.where((c) => !c.isComingSoon).toList();
 
     for (final char in chars) {
@@ -132,7 +132,7 @@ class CharacterFileServiceImpl extends CharacterFileService {
       final materials = multiTalentAscensionMaterials + ascensionMaterial + talentMaterial;
 
       if (materials.any((m) => m.key == key)) {
-        imgs.add(_fromCharFileModelToItemCommon(char));
+        imgs.add(_fromCharFileModelToItemCommonWithName(char));
       }
     }
 
