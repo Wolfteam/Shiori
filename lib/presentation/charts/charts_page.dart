@@ -16,6 +16,7 @@ import 'package:shiori/presentation/charts/widgets/chart_legend.dart';
 import 'package:shiori/presentation/charts/widgets/horizontal_bar_chart.dart';
 import 'package:shiori/presentation/charts/widgets/pie_chart.dart';
 import 'package:shiori/presentation/charts/widgets/vertical_bar_chart.dart';
+import 'package:shiori/presentation/shared/details/detail_section.dart';
 import 'package:shiori/presentation/shared/dialogs/banner_version_history_dialog.dart';
 import 'package:shiori/presentation/shared/dialogs/birthdays_per_month_dialog.dart';
 import 'package:shiori/presentation/shared/dialogs/characters_per_region_dialog.dart';
@@ -110,14 +111,11 @@ class _BodyState extends State<_Body> with SingleTickerProviderStateMixin, AppFa
         title: Text(s.charts),
       ),
       floatingActionButton: getAppFab(),
-      body: Padding(
-        padding: Styles.edgeInsetAll5,
-        child: ResponsiveBuilder(
-          builder: (context, sizingInformation) => !isPortrait &&
-                  (sizingInformation.deviceScreenType == DeviceScreenType.desktop || sizingInformation.deviceScreenType == DeviceScreenType.tablet)
-              ? _LandscapeLayout(maxNumberOfColumns: maxNumberOfColumns, controller: scrollController)
-              : _PortraitLayout(maxNumberOfColumns: maxNumberOfColumns, controller: scrollController),
-        ),
+      body: ResponsiveBuilder(
+        builder: (context, sizingInformation) => !isPortrait &&
+                (sizingInformation.deviceScreenType == DeviceScreenType.desktop || sizingInformation.deviceScreenType == DeviceScreenType.tablet)
+            ? _LandscapeLayout(maxNumberOfColumns: maxNumberOfColumns, controller: scrollController)
+            : _PortraitLayout(maxNumberOfColumns: maxNumberOfColumns, controller: scrollController),
       ),
     );
   }
@@ -288,10 +286,11 @@ class _Chart extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.stretch,
+    return DetailSection.complex(
+      title: title,
+      color: theme.colorScheme.secondary,
+      margin: Styles.edgeInsetHorizontal16,
       children: [
-        Text(title, style: theme.textTheme.headlineSmall),
         chart,
       ],
     );
