@@ -8,9 +8,6 @@ import 'package:shiori/presentation/shared/styles.dart';
 import 'package:shiori/presentation/shared/utils/toast_utils.dart';
 import 'package:transparent_image/transparent_image.dart';
 
-const double _imgHeight = 200;
-const double _imgWidth = 200;
-
 class MonsterCard extends StatelessWidget {
   final String itemKey;
   final String image;
@@ -18,6 +15,9 @@ class MonsterCard extends StatelessWidget {
   final MonsterType type;
   final bool isComingSoon;
   final bool isInSelectionMode;
+
+  static const double itemWidth = 200;
+  static const double itemHeight = 200;
 
   const MonsterCard({
     super.key,
@@ -43,8 +43,8 @@ class MonsterCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     return SizedBox(
-      width: _imgWidth,
-      height: _imgHeight,
+      width: itemWidth,
+      height: itemHeight,
       child: InkWell(
         borderRadius: Styles.mainCardBorderRadius,
         onTap: () => _onTap(context),
@@ -57,8 +57,8 @@ class MonsterCard extends StatelessWidget {
             fit: StackFit.expand,
             children: [
               FadeInImage(
-                width: _imgWidth,
-                height: _imgHeight,
+                width: itemWidth,
+                height: itemHeight,
                 placeholder: MemoryImage(kTransparentImage),
                 fit: BoxFit.fill,
                 placeholderFit: BoxFit.fill,
