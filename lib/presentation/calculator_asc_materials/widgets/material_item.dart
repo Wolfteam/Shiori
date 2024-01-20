@@ -67,11 +67,17 @@ class MaterialItem extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          IconButton(
-            icon: Image.file(File(image), width: iconSize * 1.3, height: iconSize * 1.3),
-            iconSize: iconSize,
-            constraints: const BoxConstraints(),
-            onPressed: () => showDialog(
+          InkWell(
+            radius: iconSize * 1.3,
+            borderRadius: BorderRadius.all(Radius.circular(iconSize * 1.3)),
+            child: ClipOval(
+              child: Image.file(
+                File(image),
+                width: iconSize * 1.3,
+                height: iconSize * 1.3,
+              ),
+            ),
+            onTap: () => showDialog(
               context: context,
               builder: (context) => _OptionsDialog(
                 usedText: usedText,
