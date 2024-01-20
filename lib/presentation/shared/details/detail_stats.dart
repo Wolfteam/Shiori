@@ -11,75 +11,76 @@ import 'package:shiori/presentation/shared/extensions/media_query_extensions.dar
 import 'package:shiori/presentation/shared/increment_button.dart';
 import 'package:shiori/presentation/shared/styles.dart';
 
+class StatValue {
+  final String title;
+  final String value;
+
+  const StatValue({required this.title, required this.value});
+}
+
 class StatItem {
   final int level;
   final bool isAnAscension;
   final List<StatValue> values;
 
-  StatItem({
-    required this.isAnAscension,
+  const StatItem({
     required this.level,
+    required this.isAnAscension,
     required this.values,
   });
 
-  StatItem.forCharacter(CharacterFileStatModel charStat, StatType mainSubStatType)
-      : isAnAscension = charStat.isAnAscension,
-        level = charStat.level,
-        values = List.generate(4, (index) => _buildCharacterStatValue(index, charStat, mainSubStatType));
+  StatItem.character(CharacterFileStatModel charStat, StatType mainSubStatType, S s)
+      : level = charStat.level,
+        isAnAscension = charStat.isAnAscension,
+        values = _generateStatItems(
+          <StatType, double>{
+            StatType.hp: charStat.baseHp,
+            StatType.atk: charStat.baseAtk,
+            StatType.def: charStat.baseDef,
+            mainSubStatType: charStat.statValue,
+          },
+          mainSubStatType,
+          s,
+        );
 
-  StatItem.forWeapon(WeaponFileStatModel weaponStat, StatType mainSubStatType)
-      : isAnAscension = weaponStat.isAnAscension,
-        level = weaponStat.level,
-        values = List.generate(2, (index) => _buildWeaponStatValue(index, weaponStat, mainSubStatType));
+  StatItem.characterSkill(CharacterSkillStatModel skill, S s)
+      : level = skill.level,
+        isAnAscension = false,
+        values = skill.descriptions.map((desc) {
+          final split = desc.split('|');
+          final String title = split.first;
+          final String value = split.last;
+          return StatValue(title: title, value: value);
+        }).toList();
 
-  static StatValue _buildCharacterStatValue(int index, CharacterFileStatModel charStat, StatType mainSubStatType) {
-    final type = switch (index) {
-      0 => StatType.hp,
-      1 => StatType.atk,
-      2 => StatType.def,
-      3 => mainSubStatType,
-      _ => throw ArgumentError(),
-    };
-    final value = switch (index) {
-      0 => charStat.baseHp,
-      1 => charStat.baseAtk,
-      2 => charStat.baseDef,
-      3 => charStat.statValue,
-      _ => throw ArgumentError(),
-    };
+  StatItem.weapon(WeaponFileStatModel weaponStat, StatType mainSubStatType, S s)
+      : level = weaponStat.level,
+        isAnAscension = weaponStat.isAnAscension,
+        values = _generateStatItems(
+          <StatType, double>{
+            StatType.atk: weaponStat.baseAtk,
+            mainSubStatType: weaponStat.statValue,
+          },
+          mainSubStatType,
+          s,
+        );
 
-    return StatValue(type: type, value: value, isBase: index != 3);
+  static List<StatValue> _generateStatItems(Map<StatType, double> statsMap, StatType mainSubStatType, S s) {
+    final items = <StatValue>[];
+    for (final kvp in statsMap.entries) {
+      final String typeText = s.translateStatTypeWithoutValue(kvp.key, removeExtraSigns: kvp.key == StatType.def);
+      final String title = !(mainSubStatType != kvp.key) ? typeText : s.baseX(typeText);
+      items.add(StatValue(title: title, value: '${kvp.value}'));
+    }
+
+    return items;
   }
-
-  static StatValue _buildWeaponStatValue(int index, WeaponFileStatModel charStat, StatType mainSubStatType) {
-    final type = switch (index) {
-      0 => StatType.atk,
-      1 => mainSubStatType,
-      _ => throw ArgumentError(),
-    };
-    final value = switch (index) {
-      0 => charStat.baseAtk,
-      1 => charStat.statValue,
-      _ => throw ArgumentError(),
-    };
-
-    return StatValue(type: type, value: value, isBase: index != 3);
-  }
-}
-
-class StatValue {
-  final StatType type;
-  final double value;
-  final bool isBase;
-
-  const StatValue({required this.type, required this.value, required this.isBase});
 }
 
 class StatsDialog extends StatefulWidget {
   final List<StatItem> stats;
-  final StatType mainSubStatType;
 
-  const StatsDialog({required this.stats, required this.mainSubStatType});
+  const StatsDialog({required this.stats});
 
   @override
   State<StatsDialog> createState() => _StatsDialogState();
@@ -101,39 +102,32 @@ class _StatsDialogState extends State<StatsDialog> {
     final mq = MediaQuery.of(context);
     return AlertDialog(
       title: Text(s.stats),
-      content: SizedBox(
-        height: mq.getHeightForDialogs(_current.values.length, itemHeight: 80),
-        width: mq.getWidthForDialogs(),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            IncrementButton(
-              title: s.level,
-              value: _currentIndex,
-              onMinus: _levelChanged,
-              onAdd: _levelChanged,
-              getValueString: (_) => _current.isAnAscension ? '${_current.level} (+)' : '  ${_current.level}  ',
-              decrementIsDisabled: _current.level == 1,
-              incrementIsDisabled: _current.level == widget.stats.map((e) => e.level).reduce(max),
-            ),
-            Expanded(
-              child: ListView.separated(
-                shrinkWrap: true,
-                separatorBuilder: (ctx, index) => const Divider(),
-                itemCount: _current.values.length,
-                itemBuilder: (ctx, index) {
-                  final StatValue statValue = _current.values[index];
-                  return ListTile(
-                    dense: true,
-                    title: _StatRow(
-                      type: statValue.type,
-                      value: statValue.value,
-                      removeExtraSigns: statValue.type == StatType.def,
-                      isBase: statValue.isBase,
-                    ),
-                  );
-                },
+      content: Container(
+        constraints: mq.getDialogBoxConstraints(_current.values.length + 2),
+        child: CustomScrollView(
+          slivers: [
+            SliverToBoxAdapter(
+              child: IncrementButton(
+                title: s.level,
+                margin: EdgeInsets.zero,
+                value: _currentIndex,
+                onMinus: _levelChanged,
+                onAdd: _levelChanged,
+                getValueString: (_) => _current.isAnAscension ? '${_current.level} (+)' : '  ${_current.level}  ',
+                decrementIsDisabled: _current.level == 1,
+                incrementIsDisabled: _current.level == widget.stats.map((e) => e.level).reduce(max),
               ),
+            ),
+            SliverList.separated(
+              separatorBuilder: (ctx, index) => const Divider(),
+              itemCount: _current.values.length,
+              itemBuilder: (ctx, index) {
+                final StatValue statValue = _current.values[index];
+                return ListTile(
+                  dense: true,
+                  title: _StatDialogListRow(title: statValue.title, value: statValue.value),
+                );
+              },
             ),
           ],
         ),
@@ -156,36 +150,30 @@ class _StatsDialogState extends State<StatsDialog> {
   }
 }
 
-class _StatRow extends StatelessWidget {
-  final StatType type;
-  final double value;
-  final bool isBase;
-  final bool removeExtraSigns;
+class _StatDialogListRow extends StatelessWidget {
+  final String title;
+  final String value;
 
-  const _StatRow({
-    required this.type,
+  const _StatDialogListRow({
+    required this.title,
     required this.value,
-    this.isBase = true,
-    this.removeExtraSigns = false,
   });
 
   @override
   Widget build(BuildContext context) {
-    final s = S.of(context);
     final theme = Theme.of(context);
-    final String typeText = s.translateStatTypeWithoutValue(type, removeExtraSigns: removeExtraSigns);
     return Row(
       children: [
         Expanded(
           child: Text(
-            !isBase ? typeText : s.baseX(typeText),
+            title,
             textAlign: TextAlign.start,
             style: theme.textTheme.bodyMedium,
           ),
         ),
         Expanded(
           child: Text(
-            '$value',
+            value,
             textAlign: TextAlign.end,
             style: theme.textTheme.bodyMedium,
           ),
@@ -197,12 +185,10 @@ class _StatRow extends StatelessWidget {
 
 class StatsTable extends StatelessWidget {
   final Color color;
-  final StatType mainSubStatType;
   final List<StatItem> stats;
 
   const StatsTable({
     required this.color,
-    required this.mainSubStatType,
     required this.stats,
   });
 
@@ -221,12 +207,7 @@ class StatsTable extends StatelessWidget {
                 CommonTableCell(text: s.level, padding: Styles.edgeInsetAll5),
                 ...values.map(
                   (e) => CommonTableCell(
-                    text: s.baseX(
-                      s.translateStatTypeWithoutValue(
-                        e.type,
-                        removeExtraSigns: e.type == StatType.def,
-                      ),
-                    ),
+                    text: e.title,
                     padding: Styles.edgeInsetAll5,
                   ),
                 ),
@@ -244,7 +225,7 @@ class StatsTable extends StatelessWidget {
     return TableRow(
       children: [
         CommonTableCell(text: level, padding: Styles.edgeInsetAll5),
-        ...e.values.map((e) => CommonTableCell(text: '${e.value}', padding: Styles.edgeInsetAll5)),
+        ...e.values.map((e) => CommonTableCell(text: e.value, padding: Styles.edgeInsetAll5)),
       ],
     );
   }
