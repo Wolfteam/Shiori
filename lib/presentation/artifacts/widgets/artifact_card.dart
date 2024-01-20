@@ -25,6 +25,9 @@ class ArtifactCard extends StatelessWidget {
   final bool withShape;
   final bool withTextOverflow;
 
+  static const double itemWidth = 200;
+  static const double itemHeight = 220;
+
   const ArtifactCard({
     super.key,
     required this.keyName,
@@ -32,8 +35,8 @@ class ArtifactCard extends StatelessWidget {
     required this.image,
     required this.rarity,
     required this.bonus,
-    this.imgWidth = 140,
-    this.imgHeight = 120,
+    this.imgWidth = itemWidth,
+    this.imgHeight = itemHeight,
     this.withElevation = true,
     this.isInSelectionMode = false,
     this.withShape = true,
@@ -58,8 +61,8 @@ class ArtifactCard extends StatelessWidget {
   ArtifactCard.item({
     super.key,
     required ArtifactCardModel item,
-    this.imgWidth = 140,
-    this.imgHeight = 120,
+    this.imgWidth = itemWidth,
+    this.imgHeight = itemHeight,
     this.withElevation = true,
     this.withoutDetails = false,
     this.isInSelectionMode = false,
@@ -75,7 +78,7 @@ class ArtifactCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: imgWidth * 1.5,
-      height: imgHeight * 2.5,
+      height: imgHeight * 2,
       child: InkWell(
         borderRadius: Styles.mainCardBorderRadius,
         onTap: () => _gotoDetailPage(context),
