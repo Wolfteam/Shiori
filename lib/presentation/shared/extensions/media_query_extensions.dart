@@ -1,19 +1,21 @@
+import 'dart:math';
+
 import 'package:flutter/cupertino.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
 extension MediaQueryExtensions on MediaQueryData {
   double getWidthForDialogs() {
     final deviceType = getDeviceType(size);
-    var take = orientation == Orientation.portrait ? 1.5 : 2.5;
+    double take = orientation == Orientation.portrait ? 0.7 : 0.55;
     switch (deviceType) {
       case DeviceScreenType.tablet:
       case DeviceScreenType.desktop:
-        take = orientation == Orientation.portrait ? 2 : 3;
+        take = orientation == Orientation.portrait ? 0.6 : 0.75;
       default:
         break;
     }
-    final width = size.width / take;
-    return width;
+    final width = size.width * take;
+    return min(width, 600);
   }
 
   double getHeightForDialogs(int itemCount, {double itemHeight = 50, double maxHeight = 300}) {
