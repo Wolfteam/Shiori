@@ -14,9 +14,6 @@ import 'package:shiori/presentation/shared/gradient_card.dart';
 import 'package:shiori/presentation/shared/styles.dart';
 import 'package:transparent_image/transparent_image.dart';
 
-const double defaultWidth = 70;
-const double defaultHeight = 60;
-
 class MaterialCard extends StatelessWidget {
   final String keyName;
   final String? name;
@@ -32,6 +29,9 @@ class MaterialCard extends StatelessWidget {
   final enums.MaterialType type;
   final int usedQuantity;
 
+  static const double itemWidth = 140;
+  static const double itemHeight = 130;
+
   const MaterialCard({
     super.key,
     required this.keyName,
@@ -39,8 +39,8 @@ class MaterialCard extends StatelessWidget {
     required this.image,
     required this.rarity,
     required this.type,
-    this.imgWidth = defaultWidth,
-    this.imgHeight = defaultHeight,
+    this.imgWidth = itemWidth,
+    this.imgHeight = itemHeight,
     this.withElevation = true,
     this.isInSelectionMode = false,
   })  : withoutDetails = false,
@@ -51,8 +51,8 @@ class MaterialCard extends StatelessWidget {
   MaterialCard.item({
     super.key,
     required MaterialCardModel item,
-    this.imgWidth = defaultWidth,
-    this.imgHeight = defaultHeight,
+    this.imgWidth = itemWidth,
+    this.imgHeight = itemHeight,
     this.withElevation = true,
     this.isInSelectionMode = false,
   })  : keyName = item.key,
@@ -73,8 +73,8 @@ class MaterialCard extends StatelessWidget {
     required this.type,
     this.isInSelectionMode = false,
   })  : name = null,
-        imgWidth = defaultWidth,
-        imgHeight = defaultHeight,
+        imgWidth = 70,
+        imgHeight = 60,
         withoutDetails = true,
         withElevation = false,
         isInQuantityMode = false,
@@ -90,8 +90,8 @@ class MaterialCard extends StatelessWidget {
         image = item.image,
         rarity = item.rarity,
         quantity = item.quantity,
-        imgWidth = defaultWidth,
-        imgHeight = defaultHeight,
+        imgWidth = 70,
+        imgHeight = 60,
         withoutDetails = true,
         withElevation = false,
         isInQuantityMode = true,
