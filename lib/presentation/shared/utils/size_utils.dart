@@ -81,7 +81,7 @@ class SizeUtils {
     final deviceType = getDeviceType(MediaQuery.of(context).size);
     final Size size = switch (deviceType) {
       DeviceScreenType.mobile => const Size(100, 90),
-      _ => const Size(120, 110),
+      _ => const Size(110, 100),
     };
 
     if (smallImage) {

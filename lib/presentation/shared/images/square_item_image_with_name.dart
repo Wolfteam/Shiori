@@ -8,6 +8,7 @@ class SquareItemImageWithName extends StatelessWidget {
   final String image;
   final double width;
   final double height;
+  final EdgeInsets margin;
   final VoidCallback? onTap;
 
   const SquareItemImageWithName({
@@ -16,6 +17,7 @@ class SquareItemImageWithName extends StatelessWidget {
     required this.image,
     required this.width,
     required this.height,
+    this.margin = Styles.edgeInsetHorizontal10,
     this.onTap,
   });
 
@@ -23,7 +25,7 @@ class SquareItemImageWithName extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     return Container(
-      margin: Styles.edgeInsetHorizontal10,
+      margin: margin,
       child: InkWell(
         onTap: onTap,
         child: SizedBox(
@@ -36,7 +38,7 @@ class SquareItemImageWithName extends StatelessWidget {
               AbsorbPointer(
                 child: SquareItemImage(
                   image: image,
-                  size: 35,
+                  size: width,
                 ),
               ),
               Align(
