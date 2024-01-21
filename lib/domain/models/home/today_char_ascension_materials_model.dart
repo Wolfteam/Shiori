@@ -6,7 +6,7 @@ class TodayCharAscensionMaterialsModel {
   final String image;
   final List<int> days;
   final String? bossName;
-  final List<ItemCommon> characters;
+  final List<ItemCommonWithName> characters;
   bool get isFromBoss => bossName != null;
 
   bool get onlyObtainableInDays => days.isNotEmpty;

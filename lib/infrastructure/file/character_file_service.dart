@@ -143,7 +143,7 @@ class CharacterFileServiceImpl extends CharacterFileService {
   List<TodayCharAscensionMaterialsModel> getCharacterAscensionMaterials(int day) {
     return _materials.getCharacterAscensionMaterials(day).map((e) {
       final translation = _translations.getMaterialTranslation(e.key);
-      final characters = <ItemCommon>[];
+      final characters = <ItemCommonWithName>[];
 
       for (final char in _charactersFile.characters) {
         if (char.isComingSoon) {
@@ -174,7 +174,7 @@ class CharacterFileServiceImpl extends CharacterFileService {
 
         final materialIsBeingUsed = normalAscMaterial || specialAscMaterial;
         if (materialIsBeingUsed && !characters.any((el) => el.key == char.key)) {
-          characters.add(_fromCharFileModelToItemCommon(char));
+          characters.add(_fromCharFileModelToItemCommonWithName(char));
         }
       }
 
