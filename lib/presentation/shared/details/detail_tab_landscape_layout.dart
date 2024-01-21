@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+//TODO: Rename
 class DetailTabLandscapeLayout extends StatelessWidget {
   final Color color;
   final List<String> tabs;
@@ -14,6 +15,13 @@ class DetailTabLandscapeLayout extends StatelessWidget {
     this.padding = const EdgeInsets.symmetric(horizontal: 25),
   });
 
+  DetailTabLandscapeLayout.noTabs({
+    required this.color,
+    required Widget child,
+    this.padding = const EdgeInsets.symmetric(horizontal: 25),
+  })  : children = [child],
+        tabs = [];
+
   @override
   Widget build(BuildContext context) {
     if (children.length == 1) {
@@ -23,7 +31,10 @@ class DetailTabLandscapeLayout extends StatelessWidget {
         child: Scaffold(
           body: Padding(
             padding: padding,
-            child: children.first,
+            child: SingleChildScrollView(
+              physics: const BouncingScrollPhysics(),
+              child: children.first,
+            ),
           ),
         ),
       );
