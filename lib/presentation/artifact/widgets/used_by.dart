@@ -25,7 +25,7 @@ class _UsedBy extends StatelessWidget {
           onTap: () => showDialog(
             context: context,
             builder: (context) => ItemCommonWithNameDialog.simple(
-              title: s.all,
+              title: s.characters,
               items: usedBy,
               onTap: (key) => CharacterPage.route(key, context),
             ),

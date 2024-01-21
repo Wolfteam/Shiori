@@ -1,32 +1,21 @@
-import 'dart:io';
+part of '../character_page.dart';
 
-import 'package:flutter/material.dart';
-import 'package:shiori/domain/assets.dart';
-import 'package:shiori/domain/extensions/iterable_extensions.dart';
-import 'package:shiori/domain/extensions/string_extensions.dart';
-import 'package:shiori/domain/models/models.dart';
-import 'package:shiori/generated/l10n.dart';
-import 'package:shiori/presentation/shared/bullet_list.dart';
-import 'package:shiori/presentation/shared/custom_divider.dart';
-import 'package:shiori/presentation/shared/details/detail_section.dart';
-import 'package:shiori/presentation/shared/styles.dart';
-
-class Constellations extends StatefulWidget {
+class _Constellations extends StatefulWidget {
   final Color color;
   final List<CharacterConstellationModel> constellations;
   final bool expanded;
 
-  const Constellations({
+  const _Constellations({
     required this.color,
     required this.constellations,
     this.expanded = false,
   });
 
   @override
-  State<Constellations> createState() => _ConstellationsState();
+  State<_Constellations> createState() => _ConstellationsState();
 }
 
-class _ConstellationsState extends State<Constellations> {
+class _ConstellationsState extends State<_Constellations> {
   final List<bool> _isOpen = [];
 
   @override

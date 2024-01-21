@@ -1,36 +1,21 @@
-import 'dart:io';
-import 'dart:math';
+part of '../character_page.dart';
 
-import 'package:flutter/material.dart';
-import 'package:shiori/domain/assets.dart';
-import 'package:shiori/domain/extensions/iterable_extensions.dart';
-import 'package:shiori/domain/extensions/string_extensions.dart';
-import 'package:shiori/domain/models/models.dart';
-import 'package:shiori/generated/l10n.dart';
-import 'package:shiori/presentation/shared/bullet_list.dart';
-import 'package:shiori/presentation/shared/custom_divider.dart';
-import 'package:shiori/presentation/shared/details/detail_section.dart';
-import 'package:shiori/presentation/shared/extensions/i18n_extensions.dart';
-import 'package:shiori/presentation/shared/extensions/media_query_extensions.dart';
-import 'package:shiori/presentation/shared/increment_button.dart';
-import 'package:shiori/presentation/shared/styles.dart';
-
-class Skills extends StatefulWidget {
+class _Skills extends StatefulWidget {
   final Color color;
   final List<CharacterSkillCardModel> skills;
   final bool expanded;
 
-  const Skills({
+  const _Skills({
     required this.color,
     required this.skills,
     this.expanded = false,
   });
 
   @override
-  State<Skills> createState() => _SkillsState();
+  State<_Skills> createState() => _SkillsState();
 }
 
-class _SkillsState extends State<Skills> {
+class _SkillsState extends State<_Skills> {
   final List<bool> _isOpen = [];
 
   @override
@@ -150,17 +135,18 @@ class _SkillBody extends StatelessWidget {
               label: Text(s.stats),
               icon: const Icon(Icons.bar_chart),
               style: buttonStyle,
-              onPressed: () => _showSkillStats(context),
+              onPressed: () => showDialog(
+                context: context,
+                builder: (ctx) => StatsDialog(
+                  stats: skill.stats.map((e) => StatItem.characterSkill(e, s)).toList(),
+                ),
+              ),
             ),
           ),
           CustomDivider.zeroIndent(color: color, drawShape: false),
         ],
       ),
     );
-  }
-
-  Future<void> _showSkillStats(BuildContext context) async {
-    return showDialog(context: context, builder: (ctx) => CharacterSkillsStatsDialog(stats: skill.stats));
   }
 }
 
@@ -209,103 +195,5 @@ class _SkillAbility extends StatelessWidget {
         ],
       ),
     );
-  }
-}
-
-class CharacterSkillsStatsDialog extends StatefulWidget {
-  final List<CharacterSkillStatModel> stats;
-
-  const CharacterSkillsStatsDialog({
-    super.key,
-    required this.stats,
-  });
-
-  @override
-  _CharacterSkillsStatsDialogState createState() => _CharacterSkillsStatsDialogState();
-}
-
-class _CharacterSkillsStatsDialogState extends State<CharacterSkillsStatsDialog> {
-  late CharacterSkillStatModel _currentStat;
-
-  @override
-  void initState() {
-    _currentStat = widget.stats.first;
-    super.initState();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    final s = S.of(context);
-    final mq = MediaQuery.of(context);
-    final theme = Theme.of(context);
-    return AlertDialog(
-      title: Text(s.stats),
-      content: SizedBox(
-        height: mq.getHeightForDialogs(_currentStat.descriptions.length, itemHeight: 80),
-        width: mq.getWidthForDialogs(),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            IncrementButton(
-              title: s.level,
-              margin: EdgeInsets.zero,
-              value: _currentStat.level,
-              onMinus: _levelChanged,
-              onAdd: _levelChanged,
-              decrementIsDisabled: _currentStat.level == 1,
-              incrementIsDisabled: _currentStat.level == widget.stats.map((e) => e.level).reduce(max),
-            ),
-            Expanded(
-              child: ListView.separated(
-                shrinkWrap: true,
-                separatorBuilder: (ctx, index) => const Divider(),
-                itemCount: _currentStat.descriptions.length,
-                itemBuilder: (ctx, index) {
-                  final desc = _currentStat.descriptions[index];
-                  final splitted = desc.split('|');
-                  final a = splitted.first;
-                  final b = splitted.last;
-
-                  return ListTile(
-                    dense: true,
-                    title: Row(
-                      children: [
-                        Expanded(
-                          child: Text(
-                            a,
-                            textAlign: TextAlign.start,
-                            style: theme.textTheme.bodyMedium,
-                          ),
-                        ),
-                        Expanded(
-                          child: Text(
-                            b,
-                            textAlign: TextAlign.end,
-                            style: theme.textTheme.bodyMedium,
-                          ),
-                        ),
-                      ],
-                    ),
-                  );
-                },
-              ),
-            ),
-          ],
-        ),
-      ),
-      actions: [
-        FilledButton(
-          onPressed: () => Navigator.pop(context),
-          child: Text(s.ok),
-        ),
-      ],
-    );
-  }
-
-  void _levelChanged(int level) {
-    final newStat = widget.stats.firstWhere((el) => el.level == level);
-    setState(() {
-      _currentStat = newStat;
-    });
   }
 }

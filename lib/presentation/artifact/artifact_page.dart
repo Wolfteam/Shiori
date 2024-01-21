@@ -19,6 +19,7 @@ import 'package:shiori/presentation/shared/images/rarity.dart';
 import 'package:shiori/presentation/shared/loading.dart';
 import 'package:shiori/presentation/shared/scaffold_with_fab.dart';
 import 'package:shiori/presentation/shared/styles.dart';
+import 'package:shiori/presentation/shared/utils/size_utils.dart';
 import 'package:shiori/presentation/shared/utils/toast_utils.dart';
 
 part 'widgets/bonus.dart';

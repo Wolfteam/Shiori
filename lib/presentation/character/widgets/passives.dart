@@ -1,32 +1,21 @@
-import 'dart:io';
+part of '../character_page.dart';
 
-import 'package:flutter/material.dart';
-import 'package:shiori/domain/assets.dart';
-import 'package:shiori/domain/extensions/iterable_extensions.dart';
-import 'package:shiori/domain/extensions/string_extensions.dart';
-import 'package:shiori/domain/models/models.dart';
-import 'package:shiori/generated/l10n.dart';
-import 'package:shiori/presentation/shared/bullet_list.dart';
-import 'package:shiori/presentation/shared/custom_divider.dart';
-import 'package:shiori/presentation/shared/details/detail_section.dart';
-import 'package:shiori/presentation/shared/styles.dart';
-
-class Passives extends StatefulWidget {
+class _Passives extends StatefulWidget {
   final Color color;
   final List<CharacterPassiveTalentModel> passives;
   final bool expanded;
 
-  const Passives({
+  const _Passives({
     required this.color,
     required this.passives,
     this.expanded = false,
   });
 
   @override
-  State<Passives> createState() => _PassivesState();
+  State<_Passives> createState() => _PassivesState();
 }
 
-class _PassivesState extends State<Passives> {
+class _PassivesState extends State<_Passives> {
   final List<bool> _isOpen = [];
 
   @override

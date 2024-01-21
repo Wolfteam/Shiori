@@ -12,6 +12,7 @@ class _Pieces extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final s = S.of(context);
+    final size = SizeUtils.getSizeForSquareImages(context);
     return DetailSection.complex(
       title: s.pieces,
       color: color,
@@ -22,7 +23,7 @@ class _Pieces extends StatelessWidget {
               .map(
                 (e) => Container(
                   margin: Styles.edgeInsetAll5,
-                  child: Image.file(File(e), width: 120, height: 120),
+                  child: Image.file(File(e), width: size.width, height: size.height),
                 ),
               )
               .toList(),

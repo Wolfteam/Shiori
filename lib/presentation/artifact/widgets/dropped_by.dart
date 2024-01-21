@@ -23,7 +23,14 @@ class _DroppedBy extends StatelessWidget {
         ),
         DetailHorizontalListButton(
           color: color,
-          onTap: () => ToastUtils.showWarningToast(fToast, s.comingSoon),
+          onTap: () => showDialog(
+            context: context,
+            builder: (context) => ItemCommonWithNameDialog.simple(
+              title: s.droppedBy,
+              items: droppedBy,
+              onTap: (_) => ToastUtils.showWarningToast(fToast, s.comingSoon),
+            ),
+          ),
         ),
       ],
     );

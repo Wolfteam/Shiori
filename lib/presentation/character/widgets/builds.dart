@@ -1,30 +1,12 @@
-import 'package:flutter/material.dart';
-import 'package:shiori/domain/app_constants.dart';
-import 'package:shiori/domain/enums/enums.dart';
-import 'package:shiori/domain/extensions/iterable_extensions.dart';
-import 'package:shiori/domain/models/models.dart';
-import 'package:shiori/generated/l10n.dart';
-import 'package:shiori/presentation/artifact/artifact_page.dart';
-import 'package:shiori/presentation/artifacts/widgets/artifact_card.dart';
-import 'package:shiori/presentation/shared/character_skill_priority.dart';
-import 'package:shiori/presentation/shared/custom_divider.dart';
-import 'package:shiori/presentation/shared/details/detail_section.dart';
-import 'package:shiori/presentation/shared/extensions/i18n_extensions.dart';
-import 'package:shiori/presentation/shared/extensions/media_query_extensions.dart';
-import 'package:shiori/presentation/shared/images/artifact_image_type.dart';
-import 'package:shiori/presentation/shared/row_column_item_or.dart';
-import 'package:shiori/presentation/shared/styles.dart';
-import 'package:shiori/presentation/shared/sub_stats_to_focus.dart';
-import 'package:shiori/presentation/weapon/weapon_page.dart';
-import 'package:shiori/presentation/weapons/widgets/weapon_card.dart';
+part of '../character_page.dart';
 
-class Builds extends StatefulWidget {
+class _Builds extends StatefulWidget {
   final Color color;
   final ElementType elementType;
   final List<CharacterBuildCardModel> builds;
   final bool expanded;
 
-  const Builds({
+  const _Builds({
     required this.color,
     required this.elementType,
     required this.builds,
@@ -32,10 +14,10 @@ class Builds extends StatefulWidget {
   });
 
   @override
-  State<Builds> createState() => _BuildsState();
+  State<_Builds> createState() => _BuildsState();
 }
 
-class _BuildsState extends State<Builds> {
+class _BuildsState extends State<_Builds> {
   final List<bool> _isOpen = [];
 
   @override
@@ -72,11 +54,11 @@ class _BuildsState extends State<Builds> {
                     subType: build.subType,
                     isRecommended: build.isRecommended,
                     isCustomBuild: build.isCustomBuild,
-                    skillPriorities: build.skillPriorities,
-                    subStatsToFocus: build.subStatsToFocus,
                   ),
                   body: _BuildBody(
                     color: widget.color,
+                    skillPriorities: build.skillPriorities,
+                    subStatsToFocus: build.subStatsToFocus,
                     weapons: build.weapons,
                     artifacts: build.artifacts,
                   ),
@@ -95,8 +77,6 @@ class _BuildTitle extends StatelessWidget {
   final CharacterRoleSubType subType;
   final bool isRecommended;
   final bool isCustomBuild;
-  final List<CharacterSkillType> skillPriorities;
-  final List<StatType> subStatsToFocus;
   final double iconSize;
 
   const _BuildTitle({
@@ -105,8 +85,6 @@ class _BuildTitle extends StatelessWidget {
     required this.subType,
     required this.isRecommended,
     required this.isCustomBuild,
-    required this.skillPriorities,
-    required this.subStatsToFocus,
     this.iconSize = 60,
   });
 
@@ -128,20 +106,6 @@ class _BuildTitle extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Text('${s.subType}: ${s.translateCharacterRoleSubType(subType)}'),
-          if (skillPriorities.isNotEmpty)
-            CharacterSkillPriority(
-              skillPriorities: skillPriorities,
-              color: color,
-              margin: EdgeInsets.zero,
-              fontSize: 11,
-            ),
-          if (subStatsToFocus.isNotEmpty)
-            SubStatToFocus(
-              subStatsToFocus: subStatsToFocus,
-              color: color,
-              margin: EdgeInsets.zero,
-              fontSize: 11,
-            ),
         ],
       ),
       horizontalTitleGap: 5,
@@ -153,11 +117,15 @@ class _BuildTitle extends StatelessWidget {
 
 class _BuildBody extends StatelessWidget {
   final Color color;
+  final List<CharacterSkillType> skillPriorities;
+  final List<StatType> subStatsToFocus;
   final List<WeaponCardModel> weapons;
   final List<CharacterBuildArtifactModel> artifacts;
 
   const _BuildBody({
     required this.color,
+    required this.skillPriorities,
+    required this.subStatsToFocus,
     required this.weapons,
     required this.artifacts,
   });
@@ -172,6 +140,16 @@ class _BuildBody extends StatelessWidget {
           CustomDivider.zeroIndent(color: color, drawShape: false),
           _Weapons(weapons: weapons, color: color),
           ...artifacts.mapIndex((e, index) => _ArtifactRow(index: index, color: color, item: e)),
+          if (skillPriorities.isNotEmpty)
+            CharacterSkillPriority(
+              skillPriorities: skillPriorities,
+              color: color,
+            ),
+          if (subStatsToFocus.isNotEmpty)
+            SubStatToFocus(
+              subStatsToFocus: subStatsToFocus,
+              color: color,
+            ),
           CustomDivider.zeroIndent(color: color, drawShape: false),
         ],
       ),
@@ -222,6 +200,8 @@ class _Weapons extends StatelessWidget {
                 rarity: weapon.rarity,
                 image: weapon.image,
                 isComingSoon: weapon.isComingSoon,
+                imgHeight: _imgHeight,
+                imgWidth: 120,
               );
               final withOr = index < weapons.length - 1;
               if (withOr) {
