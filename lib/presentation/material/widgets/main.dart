@@ -1,20 +1,13 @@
-import 'package:flutter/material.dart';
-import 'package:shiori/domain/enums/enums.dart' as enums;
-import 'package:shiori/generated/l10n.dart';
-import 'package:shiori/presentation/shared/details/detail_general_card.dart';
-import 'package:shiori/presentation/shared/details/detail_top_layout.dart';
-import 'package:shiori/presentation/shared/extensions/i18n_extensions.dart';
-import 'package:shiori/presentation/shared/extensions/rarity_extensions.dart';
-import 'package:shiori/presentation/shared/images/rarity.dart';
+part of '../material_page.dart';
 
-class Top extends StatelessWidget {
+class _Main extends StatelessWidget {
   final String name;
   final int rarity;
   final enums.MaterialType type;
   final String image;
   final List<int> days;
 
-  const Top({
+  const _Main({
     required this.name,
     required this.rarity,
     required this.type,
@@ -26,8 +19,10 @@ class Top extends StatelessWidget {
   Widget build(BuildContext context) {
     final s = S.of(context);
     final mediaQuery = MediaQuery.of(context);
+    final theme = Theme.of(context);
     final isPortrait = mediaQuery.orientation == Orientation.portrait;
     final gradient = rarity.getRarityGradient();
+    final textStyle = theme.textTheme.bodyMedium!.copyWith(color: Colors.white);
     return DetailTopLayout(
       fullImage: image,
       secondFullImage: image,
@@ -46,21 +41,25 @@ class Top extends StatelessWidget {
                 centered: false,
               ),
             ),
-            right: days.isNotEmpty
-                ? GeneralCardColumn(
-                    title: s.day,
-                    child: Text(
-                      s.translateDays(days),
-                      style: const TextStyle(color: Colors.white),
-                    ),
-                  )
-                : null,
+            right: GeneralCardColumn(
+              title: s.type,
+              child: Text(
+                s.translateMaterialType(type),
+                style: textStyle,
+              ),
+            ),
           ),
+          if (days.isNotEmpty)
+            GeneralCardRow(
+              left: GeneralCardColumn(
+                title: s.day,
+                child: Text(
+                  s.translateDays(days),
+                  style: textStyle,
+                ),
+              ),
+            ),
         ],
-      ),
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        elevation: 0.0,
       ),
     );
   }
