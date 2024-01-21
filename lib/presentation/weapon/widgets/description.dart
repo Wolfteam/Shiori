@@ -1,19 +1,19 @@
 part of '../weapon_page.dart';
 
-class Description extends StatelessWidget {
+class _Description extends StatelessWidget {
   final Color color;
   final String description;
   final StatType secondaryStatType;
   final List<WeaponFileStatModel> stats;
 
-  const Description({
+  const _Description({
     required this.color,
     required this.description,
     required this.secondaryStatType,
     required this.stats,
   });
 
-  Description.noButtons({
+  _Description.noButtons({
     required this.color,
     required this.description,
     required this.secondaryStatType,

@@ -1,10 +1,10 @@
 part of '../weapon_page.dart';
 
-class Builds extends StatelessWidget {
+class _Builds extends StatelessWidget {
   final Color color;
   final List<ItemCommonWithName> characters;
 
-  const Builds({
+  const _Builds({
     required this.color,
     required this.characters,
   });

@@ -1,10 +1,10 @@
 part of '../weapon_page.dart';
 
-class AscensionMaterials extends StatelessWidget {
+class _AscensionMaterials extends StatelessWidget {
   final Color color;
   final List<WeaponAscensionModel> ascensionMaterials;
 
-  const AscensionMaterials({
+  const _AscensionMaterials({
     required this.color,
     required this.ascensionMaterials,
   });

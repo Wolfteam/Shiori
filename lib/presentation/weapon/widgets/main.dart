@@ -1,6 +1,6 @@
 part of '../weapon_page.dart';
 
-class Main extends StatelessWidget {
+class _Main extends StatelessWidget {
   final String itemKey;
   final String name;
   final double atk;
@@ -12,7 +12,7 @@ class Main extends StatelessWidget {
   final String image;
   final bool isInInventory;
 
-  const Main({
+  const _Main({
     required this.itemKey,
     required this.name,
     required this.atk,

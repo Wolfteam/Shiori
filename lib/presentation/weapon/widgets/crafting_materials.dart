@@ -1,10 +1,10 @@
 part of '../weapon_page.dart';
 
-class CraftingMaterials extends StatelessWidget {
+class _CraftingMaterials extends StatelessWidget {
   final Color color;
   final List<ItemCommonWithQuantityAndName> craftingMaterials;
 
-  const CraftingMaterials({
+  const _CraftingMaterials({
     required this.color,
     required this.craftingMaterials,
   });

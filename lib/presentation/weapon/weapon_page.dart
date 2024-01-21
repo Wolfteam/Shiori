@@ -52,7 +52,7 @@ class WeaponPage extends StatelessWidget {
           loading: (_) => const Loading.column(),
           loaded: (state) {
             final Color color = state.rarity.getRarityColors().first;
-            final main = Main(
+            final main = _Main(
               itemKey: state.key,
               name: state.name,
               atk: state.atk,
@@ -66,35 +66,35 @@ class WeaponPage extends StatelessWidget {
             );
             final children = <Widget>[
               if (isPortrait)
-                Description(
+                _Description(
                   color: color,
                   description: state.description,
                   secondaryStatType: state.secondaryStat,
                   stats: state.stats,
                 )
               else
-                Description.noButtons(
+                _Description.noButtons(
                   color: color,
                   description: state.description,
                   secondaryStatType: state.secondaryStat,
                 ),
               if (state.ascensionMaterials.isNotEmpty)
-                AscensionMaterials(
+                _AscensionMaterials(
                   color: color,
                   ascensionMaterials: state.ascensionMaterials,
                 ),
               if (state.craftingMaterials.isNotEmpty)
-                CraftingMaterials(
+                _CraftingMaterials(
                   color: color,
                   craftingMaterials: state.craftingMaterials,
                 ),
               if (state.characters.isNotEmpty)
-                Builds(
+                _Builds(
                   color: color,
                   characters: state.characters,
                 ),
               if (state.refinements.isNotEmpty)
-                Refinements(
+                _Refinements(
                   color: color,
                   refinements: state.refinements,
                 ),

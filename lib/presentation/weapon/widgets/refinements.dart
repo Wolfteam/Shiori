@@ -1,10 +1,10 @@
 part of '../weapon_page.dart';
 
-class Refinements extends StatelessWidget {
+class _Refinements extends StatelessWidget {
   final Color color;
   final List<WeaponFileRefinementModel> refinements;
 
-  const Refinements({
+  const _Refinements({
     required this.color,
     required this.refinements,
   });
