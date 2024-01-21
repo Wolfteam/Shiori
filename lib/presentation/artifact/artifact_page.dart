@@ -1,12 +1,31 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shiori/application/bloc.dart';
+import 'package:shiori/domain/models/models.dart';
+import 'package:shiori/generated/l10n.dart';
 import 'package:shiori/injection.dart';
-import 'package:shiori/presentation/artifact/widgets/bottom.dart';
-import 'package:shiori/presentation/artifact/widgets/top.dart';
-import 'package:shiori/presentation/shared/disabled_card_surface_tint_color.dart';
+import 'package:shiori/presentation/artifacts/widgets/artifact_stats.dart';
+import 'package:shiori/presentation/character/character_page.dart';
+import 'package:shiori/presentation/shared/details/detail_general_card.dart';
+import 'package:shiori/presentation/shared/details/detail_horizontal_list.dart';
+import 'package:shiori/presentation/shared/details/detail_section.dart';
+import 'package:shiori/presentation/shared/details/detail_tab_landscape_layout.dart';
+import 'package:shiori/presentation/shared/details/detail_top_layout.dart';
+import 'package:shiori/presentation/shared/dialogs/item_common_with_name_dialog.dart';
+import 'package:shiori/presentation/shared/extensions/rarity_extensions.dart';
+import 'package:shiori/presentation/shared/images/rarity.dart';
 import 'package:shiori/presentation/shared/loading.dart';
 import 'package:shiori/presentation/shared/scaffold_with_fab.dart';
+import 'package:shiori/presentation/shared/styles.dart';
+import 'package:shiori/presentation/shared/utils/toast_utils.dart';
+
+part 'widgets/bonus.dart';
+part 'widgets/dropped_by.dart';
+part 'widgets/main.dart';
+part 'widgets/pieces.dart';
+part 'widgets/used_by.dart';
 
 class ArtifactPage extends StatelessWidget {
   final String itemKey;
@@ -22,81 +41,81 @@ class ArtifactPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isPortrait = MediaQuery.of(context).orientation == Orientation.portrait;
-    return DisabledSurfaceCardTintColor(
-      child: BlocProvider(
-        create: (context) => Injection.artifactBloc..add(ArtifactEvent.loadFromKey(key: itemKey)),
-        child: isPortrait ? const _PortraitLayout() : const _LandscapeLayout(),
-      ),
-    );
-  }
-}
-
-class _PortraitLayout extends StatelessWidget {
-  const _PortraitLayout();
-
-  @override
-  Widget build(BuildContext context) {
-    return ScaffoldWithFab(
+    return BlocProvider(
+      create: (context) => Injection.artifactBloc..add(ArtifactEvent.loadFromKey(key: itemKey)),
       child: BlocBuilder<ArtifactBloc, ArtifactState>(
         builder: (context, state) => state.map(
           loading: (_) => const Loading.column(),
-          loaded: (state) => Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              Top(
-                name: state.name,
-                image: state.image,
-                maxRarity: state.maxRarity,
-              ),
-              BottomPortraitLayout(
-                maxRarity: state.maxRarity,
+          loaded: (state) {
+            final color = state.maxRarity.getRarityColors().first;
+
+            final main = Main(
+              name: state.name,
+              image: state.image,
+              maxRarity: state.maxRarity,
+            );
+            final children = <Widget>[
+              _Bonus(
+                color: color,
                 bonus: state.bonus,
-                pieces: state.images,
-                droppedBy: state.droppedBy,
-                usedBy: state.charImages,
               ),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-class _LandscapeLayout extends StatelessWidget {
-  const _LandscapeLayout();
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(
-        child: BlocBuilder<ArtifactBloc, ArtifactState>(
-          builder: (ctx, state) => state.map(
-            loading: (_) => const Loading.column(),
-            loaded: (state) => Row(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                Expanded(
-                  flex: 40,
-                  child: Top(
-                    name: state.name,
-                    image: state.image,
-                    maxRarity: state.maxRarity,
-                  ),
+              _Pieces(
+                color: color,
+                pieces: state.images,
+              ),
+              if (state.usedBy.isNotEmpty)
+                _UsedBy(
+                  color: color,
+                  usedBy: state.usedBy,
                 ),
-                Expanded(
-                  flex: 60,
-                  child: BottomLandscapeLayout(
-                    maxRarity: state.maxRarity,
-                    bonus: state.bonus,
-                    pieces: state.images,
-                    droppedBy: state.droppedBy,
-                    usedBy: state.charImages,
-                  ),
+              if (state.droppedBy.isNotEmpty)
+                _DroppedBy(
+                  color: color,
+                  droppedBy: state.droppedBy,
                 ),
-              ],
-            ),
-          ),
+            ];
+            if (isPortrait) {
+              return ScaffoldWithFab(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    main,
+                    Padding(
+                      padding: Styles.edgeInsetHorizontal5,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                        children: children,
+                      ),
+                    ),
+                  ],
+                ),
+              );
+            }
+
+            return Scaffold(
+              body: SafeArea(
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    Expanded(
+                      flex: 40,
+                      child: main,
+                    ),
+                    Expanded(
+                      flex: 60,
+                      child: DetailTabLandscapeLayout.noTabs(
+                        color: color,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.stretch,
+                          children: children,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            );
+          },
         ),
       ),
     );

@@ -1,16 +1,11 @@
-import 'package:flutter/material.dart';
-import 'package:shiori/generated/l10n.dart';
-import 'package:shiori/presentation/shared/details/detail_general_card.dart';
-import 'package:shiori/presentation/shared/details/detail_top_layout.dart';
-import 'package:shiori/presentation/shared/extensions/rarity_extensions.dart';
-import 'package:shiori/presentation/shared/images/rarity.dart';
+part of '../artifact_page.dart';
 
-class Top extends StatelessWidget {
+class Main extends StatelessWidget {
   final String name;
   final int maxRarity;
   final String image;
 
-  const Top({
+  const Main({
     required this.name,
     required this.maxRarity,
     required this.image,
@@ -43,10 +38,6 @@ class Top extends StatelessWidget {
             ),
           ),
         ],
-      ),
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        elevation: 0.0,
       ),
     );
   }
