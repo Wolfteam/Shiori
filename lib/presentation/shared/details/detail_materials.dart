@@ -1,9 +1,15 @@
+import 'package:darq/darq.dart';
 import 'package:flutter/material.dart';
+import 'package:grouped_list/grouped_list.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/generated/l10n.dart';
 import 'package:shiori/presentation/material/material_page.dart' as mp;
+import 'package:shiori/presentation/shared/details/detail_horizontal_list.dart';
+import 'package:shiori/presentation/shared/dialogs/item_common_with_name_dialog.dart';
 import 'package:shiori/presentation/shared/extensions/media_query_extensions.dart';
-import 'package:shiori/presentation/shared/material_item_button.dart';
+import 'package:shiori/presentation/shared/images/square_item_image.dart';
+import 'package:shiori/presentation/shared/styles.dart';
+import 'package:shiori/presentation/shared/utils/size_utils.dart';
 
 class MaterialsData {
   final int level;
@@ -24,28 +30,166 @@ class MaterialsData {
         materials = e.materials;
 }
 
-class AscensionMaterialsDialog extends StatelessWidget {
+class DetailMaterialsSliderColumn extends StatefulWidget {
+  final Color color;
   final List<MaterialsData> data;
 
-  const AscensionMaterialsDialog({required this.data});
+  const DetailMaterialsSliderColumn({
+    required this.color,
+    required this.data,
+  });
+
+  @override
+  State<DetailMaterialsSliderColumn> createState() => _DetailMaterialsSliderColumnState();
+}
+
+class _DetailMaterialsSliderColumnState extends State<DetailMaterialsSliderColumn> {
+  int _currentIndex = 0;
+  late MaterialsData _current;
+
+  @override
+  void initState() {
+    _current = widget.data.first;
+    super.initState();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final s = S.of(context);
+    final theme = Theme.of(context);
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        Text(
+          '${s.level}: ${_current.level}',
+          style: theme.textTheme.bodyLarge,
+          textAlign: TextAlign.center,
+        ),
+        FractionallySizedBox(
+          widthFactor: 0.8,
+          child: SliderTheme(
+            data: SliderThemeData.fromPrimaryColors(
+              primaryColor: widget.color,
+              primaryColorDark: widget.color,
+              primaryColorLight: widget.color,
+              valueIndicatorTextStyle: theme.textTheme.bodySmall!,
+            ).copyWith(
+              overlayShape: SliderComponentShape.noOverlay,
+              trackHeight: 5,
+              thumbShape: const RoundSliderThumbShape(enabledThumbRadius: 8),
+            ),
+            child: Slider(
+              value: _currentIndex.toDouble(),
+              onChanged: (val) => _onAddOrRemove(val.toInt()),
+              label: '${s.level}: ${_current.level}',
+              max: widget.data.length - 1,
+              activeColor: widget.color,
+              divisions: widget.data.length - 1,
+            ),
+          ),
+        ),
+        DetailHorizontalListView(
+          onTap: (key) => mp.MaterialPage.route(key, context),
+          items: _current.materials.map((e) => ItemCommonWithName(e.key, e.image, e.iconImage, 'x ${e.quantity}')).toList(),
+        ),
+        DetailHorizontalListButton(
+          color: widget.color,
+          onTap: () => showDialog(
+            context: context,
+            builder: (context) => _SeeAllMaterialsDialog(
+              color: widget.color,
+              title: s.materials,
+              data: widget.data,
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+
+  void _onAddOrRemove(int index) {
+    setState(() {
+      _currentIndex = index;
+      _current = widget.data[index];
+    });
+  }
+}
+
+class _SeeAllMaterialsDialog extends StatelessWidget {
+  final Color color;
+  final String title;
+  final List<MaterialsData> data;
+
+  const _SeeAllMaterialsDialog({
+    required this.color,
+    required this.title,
+    required this.data,
+  });
 
   @override
   Widget build(BuildContext context) {
     final s = S.of(context);
     final mq = MediaQuery.of(context);
+    final theme = Theme.of(context);
+    final int count = data.sum((x) => x.materials.length);
     return AlertDialog(
-      title: Text(s.materials),
-      content: SizedBox(
-        width: mq.getWidthForDialogs(),
-        child: ListView.separated(
-          itemCount: data.length,
-          itemBuilder: (context, index) => AscensionMaterialsListTile(data: data[index]),
-          separatorBuilder: (context, index) => const Divider(),
+      title: Text(title),
+      content: ConstrainedBox(
+        constraints: mq.getDialogBoxConstraints(count),
+        child: GroupedListView<MaterialsData, int>(
+          elements: data,
+          groupBy: (item) => item.level,
+          groupSeparatorBuilder: (level) => Container(
+            color: theme.colorScheme.secondary.withOpacity(0.5),
+            padding: Styles.edgeInsetAll5,
+            child: Text('${s.level}: $level', style: theme.textTheme.titleMedium),
+          ),
+          itemBuilder: (context, element) => Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: element.materials
+                .map(
+                  (item) => InkWell(
+                    onTap: () => mp.MaterialPage.route(item.key, context),
+                    child: Container(
+                      margin: Styles.edgeInsetVertical5,
+                      child: Row(
+                        children: [
+                          AbsorbPointer(
+                            child: SquareItemImage(
+                              image: item.iconImage,
+                              size: SizeUtils.getSizeForSquareImages(context, smallImage: true).height,
+                            ),
+                          ),
+                          Expanded(
+                            child: Container(
+                              margin: Styles.edgeInsetHorizontal10,
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.stretch,
+                                children: [
+                                  Text(
+                                    item.name,
+                                    style: theme.textTheme.bodyLarge,
+                                  ),
+                                  Text(
+                                    '${s.quantity}: ${item.quantity}',
+                                    style: theme.textTheme.bodyMedium,
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                )
+                .toList(),
+          ),
         ),
       ),
       actions: [
         FilledButton(
-          onPressed: () => Navigator.pop(context),
+          onPressed: () => Navigator.of(context).pop(),
           child: Text(s.ok),
         ),
       ],
@@ -53,74 +197,37 @@ class AscensionMaterialsDialog extends StatelessWidget {
   }
 }
 
-class AscensionMaterialsListTile extends StatelessWidget {
-  final MaterialsData data;
+class DetailMaterialsHorizontalListColumn extends StatelessWidget {
+  final Color color;
+  final String title;
+  final List<ItemCommonWithQuantityAndName> items;
 
-  const AscensionMaterialsListTile({required this.data});
-
-  @override
-  Widget build(BuildContext context) {
-    final s = S.of(context);
-    return ListTile(
-      title: Text('${s.level}: ${data.level}'),
-      contentPadding: EdgeInsets.zero,
-      subtitle: AscensionMaterialsTable(materials: data.materials),
-    );
-  }
-}
-
-class AscensionMaterialsTable extends StatelessWidget {
-  final List<ItemCommonWithQuantityAndName> materials;
-
-  const AscensionMaterialsTable({required this.materials});
+  const DetailMaterialsHorizontalListColumn({
+    required this.color,
+    required this.title,
+    required this.items,
+  });
 
   @override
   Widget build(BuildContext context) {
     final s = S.of(context);
-    final theme = Theme.of(context);
-    final headerStyle = theme.textTheme.titleSmall;
-    return DataTable(
-      showCheckboxColumn: false,
-      dividerThickness: 0.00000000001,
-      headingTextStyle: headerStyle,
-      columns: <DataColumn>[
-        DataColumn(
-          label: Expanded(
-            child: Text(s.materials),
-          ),
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        DetailHorizontalListView(
+          onTap: (key) => mp.MaterialPage.route(key, context),
+          items: items.map((e) => ItemCommonWithName(e.key, e.image, e.iconImage, 'x ${e.quantity}')).toList(),
         ),
-        DataColumn(
-          label: Expanded(
-            child: Text(s.quantity),
-          ),
-        ),
-      ],
-      rows: <DataRow>[
-        ...materials.map(
-          (m) => DataRow(
-            onSelectChanged: (selected) => mp.MaterialPage.route(m.key, context),
-            cells: [
-              DataCell(
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    MaterialItemButton(
-                      itemKey: m.key,
-                      image: m.image,
-                      size: 36,
-                      useButton: false,
-                    ),
-                    Expanded(
-                      child: Text(
-                        m.name,
-                        textAlign: TextAlign.start,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              DataCell(Text('${m.quantity}')),
-            ],
+        DetailHorizontalListButton(
+          color: color,
+          title: s.seeAll,
+          onTap: () => showDialog(
+            context: context,
+            builder: (context) => ItemCommonWithNameDialog.quantity(
+              title: title,
+              itemsWithQuantity: items,
+              onTap: (key) => mp.MaterialPage.route(key, context),
+            ),
           ),
         ),
       ],

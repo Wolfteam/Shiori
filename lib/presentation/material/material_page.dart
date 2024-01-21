@@ -9,14 +9,13 @@ import 'package:shiori/generated/l10n.dart';
 import 'package:shiori/injection.dart';
 import 'package:shiori/presentation/character/character_page.dart';
 import 'package:shiori/presentation/material/material_page.dart' as mp;
-import 'package:shiori/presentation/shared/details/detail_general_card.dart';
 import 'package:shiori/presentation/shared/details/detail_horizontal_list.dart';
+import 'package:shiori/presentation/shared/details/detail_landscape_content.dart';
+import 'package:shiori/presentation/shared/details/detail_main_card.dart';
+import 'package:shiori/presentation/shared/details/detail_main_content.dart';
 import 'package:shiori/presentation/shared/details/detail_materials.dart';
 import 'package:shiori/presentation/shared/details/detail_section.dart';
-import 'package:shiori/presentation/shared/details/detail_tab_landscape_layout.dart';
-import 'package:shiori/presentation/shared/details/detail_top_layout.dart';
 import 'package:shiori/presentation/shared/dialogs/item_common_with_name_dialog.dart';
-import 'package:shiori/presentation/shared/disabled_card_surface_tint_color.dart';
 import 'package:shiori/presentation/shared/extensions/i18n_extensions.dart';
 import 'package:shiori/presentation/shared/extensions/rarity_extensions.dart';
 import 'package:shiori/presentation/shared/images/rarity.dart';
@@ -48,96 +47,94 @@ class MaterialPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final s = S.of(context);
     final isPortrait = MediaQuery.of(context).orientation == Orientation.portrait;
-    return DisabledSurfaceCardTintColor(
-      child: BlocProvider(
-        create: (context) => Injection.materialBloc..add(bloc.MaterialEvent.loadFromKey(key: itemKey)),
-        child: BlocBuilder<bloc.MaterialBloc, bloc.MaterialState>(
-          builder: (context, state) => state.map(
-            loading: (_) => const Loading.column(),
-            loaded: (state) {
-              final color = state.rarity.getRarityColors().first;
-              final main = _Main(
-                name: state.name,
-                image: state.fullImage,
-                type: state.type,
-                rarity: state.rarity,
-                days: state.days,
+    return BlocProvider(
+      create: (context) => Injection.materialBloc..add(bloc.MaterialEvent.loadFromKey(key: itemKey)),
+      child: BlocBuilder<bloc.MaterialBloc, bloc.MaterialState>(
+        builder: (context, state) => state.map(
+          loading: (_) => const Loading.column(),
+          loaded: (state) {
+            final color = state.rarity.getRarityColors().first;
+            final main = _Main(
+              name: state.name,
+              image: state.fullImage,
+              type: state.type,
+              rarity: state.rarity,
+              days: state.days,
+            );
+            final children = <Widget>[
+              if (state.description.isNotNullEmptyOrWhitespace)
+                DetailSection(
+                  title: s.description,
+                  color: color,
+                  description: state.description,
+                ),
+              if (state.obtainedFrom.isNotEmpty)
+                _ObtainedFrom(
+                  color: color,
+                  obtainedFrom: state.obtainedFrom,
+                ),
+              if (state.relatedMaterials.isNotEmpty)
+                _RelatedTo(
+                  color: color,
+                  relatedTo: state.relatedMaterials,
+                ),
+              if (state.characters.isNotEmpty)
+                _Characters(
+                  color: color,
+                  characters: state.characters,
+                ),
+              if (state.weapons.isNotEmpty)
+                _Weapons(
+                  color: color,
+                  weapons: state.weapons,
+                ),
+              if (state.droppedBy.isNotEmpty)
+                _DroppedBy(
+                  color: color,
+                  droppedBy: state.droppedBy,
+                ),
+            ];
+            if (isPortrait) {
+              return ScaffoldWithFab(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    main,
+                    Padding(
+                      padding: Styles.edgeInsetHorizontal5,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                        children: children,
+                      ),
+                    ),
+                  ],
+                ),
               );
-              final children = <Widget>[
-                if (state.description.isNotNullEmptyOrWhitespace)
-                  DetailSection(
-                    title: s.description,
-                    color: color,
-                    description: state.description,
-                  ),
-                if (state.obtainedFrom.isNotEmpty)
-                  _ObtainedFrom(
-                    color: color,
-                    obtainedFrom: state.obtainedFrom,
-                  ),
-                if (state.relatedMaterials.isNotEmpty)
-                  _RelatedTo(
-                    color: color,
-                    relatedTo: state.relatedMaterials,
-                  ),
-                if (state.characters.isNotEmpty)
-                  _Characters(
-                    color: color,
-                    characters: state.characters,
-                  ),
-                if (state.weapons.isNotEmpty)
-                  _Weapons(
-                    color: color,
-                    weapons: state.weapons,
-                  ),
-                if (state.droppedBy.isNotEmpty)
-                  _DroppedBy(
-                    color: color,
-                    droppedBy: state.droppedBy,
-                  ),
-              ];
-              if (isPortrait) {
-                return ScaffoldWithFab(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
-                    children: [
-                      main,
-                      Padding(
-                        padding: Styles.edgeInsetHorizontal5,
+            }
+            return Scaffold(
+              body: SafeArea(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Expanded(
+                      flex: 40,
+                      child: main,
+                    ),
+                    Expanded(
+                      flex: 60,
+                      child: DetailLandscapeContent.noTabs(
+                        color: color,
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.stretch,
                           children: children,
                         ),
                       ),
-                    ],
-                  ),
-                );
-              }
-              return Scaffold(
-                body: SafeArea(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Expanded(
-                        flex: 40,
-                        child: main,
-                      ),
-                      Expanded(
-                        flex: 60,
-                        child: DetailTabLandscapeLayout.noTabs(
-                          color: color,
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.stretch,
-                            children: children,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
-              );
-            },
-          ),
+              ),
+            );
+          },
         ),
       ),
     );

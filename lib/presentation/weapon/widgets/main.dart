@@ -33,18 +33,18 @@ class _Main extends StatelessWidget {
     final isPortrait = mediaQuery.orientation == Orientation.portrait;
     final gradient = rarity.getRarityGradient();
     final textStyle = theme.textTheme.bodyMedium!.copyWith(color: Colors.white);
-    return DetailTopLayout(
+    return DetailMainContent(
       fullImage: image,
       secondFullImage: image,
       decoration: BoxDecoration(gradient: gradient),
       charDescriptionHeight: 220,
       isAnSmallImage: isPortrait,
-      generalCard: DetailGeneralCardNew(
+      generalCard: DetailMainCard(
         itemName: name,
         color: gradient.colors.first,
         rows: [
-          GeneralCardRow(
-            left: GeneralCardColumn(
+          CardRow(
+            left: CardColumn(
               title: s.rarity,
               child: Rarity(
                 stars: rarity,
@@ -52,7 +52,7 @@ class _Main extends StatelessWidget {
                 centered: false,
               ),
             ),
-            right: GeneralCardColumn(
+            right: CardColumn(
               title: s.type,
               child: Row(
                 children: [
@@ -70,8 +70,8 @@ class _Main extends StatelessWidget {
               ),
             ),
           ),
-          GeneralCardRow(
-            left: GeneralCardColumn(
+          CardRow(
+            left: CardColumn(
               title: s.baseAtk,
               child: Text(
                 '$atk',
@@ -79,7 +79,7 @@ class _Main extends StatelessWidget {
                 overflow: TextOverflow.ellipsis,
               ),
             ),
-            right: GeneralCardColumn(
+            right: CardColumn(
               title: s.secondaryState,
               child: Text(
                 s.translateStatType(secondaryStatType, secondaryStatValue),
@@ -88,8 +88,8 @@ class _Main extends StatelessWidget {
               ),
             ),
           ),
-          GeneralCardRow(
-            left: GeneralCardColumn(
+          CardRow(
+            left: CardColumn(
               title: s.location,
               child: Text(
                 s.translateItemLocationType(locationType),

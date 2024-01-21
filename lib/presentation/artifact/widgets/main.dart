@@ -17,18 +17,18 @@ class Main extends StatelessWidget {
     final mediaQuery = MediaQuery.of(context);
     final isPortrait = mediaQuery.orientation == Orientation.portrait;
     final gradient = maxRarity.getRarityGradient();
-    return DetailTopLayout(
+    return DetailMainContent(
       fullImage: image,
       secondFullImage: image,
       decoration: BoxDecoration(gradient: gradient),
       charDescriptionHeight: 120,
       isAnSmallImage: isPortrait,
-      generalCard: DetailGeneralCardNew(
+      generalCard: DetailMainCard(
         itemName: name,
         color: gradient.colors.first,
         rows: [
-          GeneralCardRow(
-            left: GeneralCardColumn(
+          CardRow(
+            left: CardColumn(
               title: s.rarity,
               child: Rarity(
                 stars: maxRarity,

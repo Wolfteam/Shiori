@@ -32,16 +32,16 @@ class _Main extends StatelessWidget {
     final s = S.of(context);
     final theme = Theme.of(context);
     final textStyle = theme.textTheme.bodyMedium!.copyWith(color: Colors.white);
-    return DetailTopLayout(
+    return DetailMainContent(
       color: elementType.getElementColorFromContext(context),
       fullImage: fullImage,
       secondFullImage: secondFullImage,
-      generalCard: DetailGeneralCardNew(
+      generalCard: DetailMainCard(
         itemName: name,
         color: elementType.getElementColorFromContext(context),
         rows: [
-          GeneralCardRow(
-            left: GeneralCardColumn(
+          CardRow(
+            left: CardColumn(
               title: s.rarity,
               child: Rarity(
                 stars: rarity,
@@ -49,7 +49,7 @@ class _Main extends StatelessWidget {
                 centered: false,
               ),
             ),
-            right: GeneralCardColumn(
+            right: CardColumn(
               title: s.element,
               child: Row(
                 children: [
@@ -70,8 +70,8 @@ class _Main extends StatelessWidget {
               ),
             ),
           ),
-          GeneralCardRow(
-            left: GeneralCardColumn(
+          CardRow(
+            left: CardColumn(
               title: s.weapon,
               child: Row(
                 children: [
@@ -88,7 +88,7 @@ class _Main extends StatelessWidget {
                 ],
               ),
             ),
-            right: GeneralCardColumn(
+            right: CardColumn(
               title: s.role,
               child: Text(
                 s.translateCharacterRoleType(role),
@@ -97,8 +97,8 @@ class _Main extends StatelessWidget {
               ),
             ),
           ),
-          GeneralCardRow(
-            left: GeneralCardColumn(
+          CardRow(
+            left: CardColumn(
               title: s.region,
               child: Text(
                 s.translateRegionType(region),
@@ -106,7 +106,7 @@ class _Main extends StatelessWidget {
                 overflow: TextOverflow.ellipsis,
               ),
             ),
-            right: GeneralCardColumn(
+            right: CardColumn(
               title: s.birthday,
               child: Text(
                 birthday.isNotNullEmptyOrWhitespace ? birthday! : s.na,

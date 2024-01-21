@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 
-//TODO: Rename
-class DetailTabLandscapeLayout extends StatelessWidget {
+class DetailLandscapeContent extends StatelessWidget {
   final Color color;
   final List<String> tabs;
   final List<Widget> children;
   final EdgeInsets padding;
 
-  const DetailTabLandscapeLayout({
+  const DetailLandscapeContent({
     super.key,
     required this.color,
     required this.tabs,
@@ -15,7 +14,7 @@ class DetailTabLandscapeLayout extends StatelessWidget {
     this.padding = const EdgeInsets.symmetric(horizontal: 25),
   });
 
-  DetailTabLandscapeLayout.noTabs({
+  DetailLandscapeContent.noTabs({
     required this.color,
     required Widget child,
     this.padding = const EdgeInsets.symmetric(horizontal: 25),

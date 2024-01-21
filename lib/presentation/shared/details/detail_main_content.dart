@@ -1,28 +1,27 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:responsive_builder/responsive_builder.dart';
 import 'package:shiori/presentation/shared/details/constants.dart';
 
-class DetailTopLayout extends StatelessWidget {
+class DetailMainContent extends StatelessWidget {
   final String fullImage;
   final String? secondFullImage;
   final Color? color;
   final Widget generalCard;
-  final Widget? appBar;
+  final List<Widget> appBarActions;
   final Decoration? decoration;
 
   final bool isAnSmallImage;
   final bool showShadowImage;
   final double charDescriptionHeight;
 
-  const DetailTopLayout({
+  const DetailMainContent({
     super.key,
     required this.fullImage,
     this.secondFullImage,
     this.color,
     required this.generalCard,
-    this.appBar,
+    this.appBarActions = const <Widget>[],
     this.decoration,
     this.isAnSmallImage = false,
     this.showShadowImage = true,
@@ -33,8 +32,6 @@ class DetailTopLayout extends StatelessWidget {
   Widget build(BuildContext context) {
     final mediaQuery = MediaQuery.of(context);
     final isPortrait = mediaQuery.orientation == Orientation.portrait;
-    final device = getDeviceType(mediaQuery.size);
-    final descriptionWidth = (mediaQuery.size.width / (isPortrait ? 1 : 2)) / (device == DeviceScreenType.mobile ? 1.2 : 1.5);
     final imgAlignment = showShadowImage
         ? isPortrait
             ? Alignment.centerLeft
@@ -45,7 +42,7 @@ class DetailTopLayout extends StatelessWidget {
       color: color,
       decoration: decoration,
       child: Stack(
-        fit: StackFit.passthrough,
+        fit: StackFit.expand,
         alignment: Alignment.center,
         children: <Widget>[
           if (showShadowImage)
@@ -63,18 +60,19 @@ class DetailTopLayout extends StatelessWidget {
             ),
           ),
           Align(
-            alignment: isPortrait ? Alignment.center : Alignment.bottomCenter,
-            child: SizedBox(
-              height: charDescriptionHeight,
-              width: descriptionWidth,
-              child: generalCard,
-            ),
+            alignment: isPortrait ? Alignment.bottomCenter : Alignment.bottomCenter,
+            child: generalCard,
           ),
           Positioned(
             top: 0.0,
             left: 0.0,
             right: 0.0,
-            child: appBar ?? const SizedBox(),
+            child: AppBar(
+              backgroundColor: Colors.transparent,
+              surfaceTintColor: Colors.transparent,
+              elevation: 0.0,
+              actions: appBarActions,
+            ),
           ),
         ],
       ),

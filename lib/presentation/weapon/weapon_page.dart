@@ -7,13 +7,13 @@ import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/generated/l10n.dart';
 import 'package:shiori/injection.dart';
 import 'package:shiori/presentation/character/character_page.dart';
-import 'package:shiori/presentation/shared/details/detail_general_card.dart';
 import 'package:shiori/presentation/shared/details/detail_horizontal_list.dart';
+import 'package:shiori/presentation/shared/details/detail_landscape_content.dart';
+import 'package:shiori/presentation/shared/details/detail_main_card.dart';
+import 'package:shiori/presentation/shared/details/detail_main_content.dart';
 import 'package:shiori/presentation/shared/details/detail_materials.dart';
 import 'package:shiori/presentation/shared/details/detail_section.dart';
 import 'package:shiori/presentation/shared/details/detail_stats.dart';
-import 'package:shiori/presentation/shared/details/detail_tab_landscape_layout.dart';
-import 'package:shiori/presentation/shared/details/detail_top_layout.dart';
 import 'package:shiori/presentation/shared/dialogs/item_common_with_name_dialog.dart';
 import 'package:shiori/presentation/shared/extensions/i18n_extensions.dart';
 import 'package:shiori/presentation/shared/extensions/rarity_extensions.dart';
@@ -132,7 +132,7 @@ class WeaponPage extends StatelessWidget {
                     ),
                     Expanded(
                       flex: 60,
-                      child: DetailTabLandscapeLayout.noTabs(
+                      child: DetailLandscapeContent.noTabs(
                         color: color,
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.stretch,

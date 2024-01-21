@@ -23,17 +23,17 @@ class _Main extends StatelessWidget {
     final isPortrait = mediaQuery.orientation == Orientation.portrait;
     final gradient = rarity.getRarityGradient();
     final textStyle = theme.textTheme.bodyMedium!.copyWith(color: Colors.white);
-    return DetailTopLayout(
+    return DetailMainContent(
       fullImage: image,
       secondFullImage: image,
       decoration: BoxDecoration(gradient: gradient),
       isAnSmallImage: isPortrait,
-      generalCard: DetailGeneralCardNew(
+      generalCard: DetailMainCard(
         itemName: name,
         color: gradient.colors.first,
         rows: [
-          GeneralCardRow(
-            left: GeneralCardColumn(
+          CardRow(
+            left: CardColumn(
               title: s.rarity,
               child: Rarity(
                 stars: rarity,
@@ -41,7 +41,7 @@ class _Main extends StatelessWidget {
                 centered: false,
               ),
             ),
-            right: GeneralCardColumn(
+            right: CardColumn(
               title: s.type,
               child: Text(
                 s.translateMaterialType(type),
@@ -50,8 +50,8 @@ class _Main extends StatelessWidget {
             ),
           ),
           if (days.isNotEmpty)
-            GeneralCardRow(
-              left: GeneralCardColumn(
+            CardRow(
+              left: CardColumn(
                 title: s.day,
                 child: Text(
                   s.translateDays(days),
