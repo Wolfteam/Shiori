@@ -1,17 +1,6 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:shiori/application/bloc.dart';
-import 'package:shiori/domain/enums/enums.dart';
-import 'package:shiori/domain/extensions/weapon_type_extensions.dart';
-import 'package:shiori/generated/l10n.dart';
-import 'package:shiori/presentation/shared/details/detail_general_card.dart';
-import 'package:shiori/presentation/shared/details/detail_top_layout.dart';
-import 'package:shiori/presentation/shared/extensions/i18n_extensions.dart';
-import 'package:shiori/presentation/shared/extensions/rarity_extensions.dart';
-import 'package:shiori/presentation/shared/images/rarity.dart';
-import 'package:shiori/presentation/shared/styles.dart';
+part of '../weapon_page.dart';
 
-class Top extends StatelessWidget {
+class Main extends StatelessWidget {
   final String itemKey;
   final String name;
   final double atk;
@@ -23,7 +12,7 @@ class Top extends StatelessWidget {
   final String image;
   final bool isInInventory;
 
-  const Top({
+  const Main({
     required this.itemKey,
     required this.name,
     required this.atk,
@@ -111,18 +100,14 @@ class Top extends StatelessWidget {
           ),
         ],
       ),
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        elevation: 0.0,
-        actions: [
-          IconButton(
-            icon: Icon(isInInventory ? Icons.favorite : Icons.favorite_border),
-            color: Colors.red,
-            splashRadius: Styles.mediumButtonSplashRadius,
-            onPressed: () => _favoriteWeapon(itemKey, isInInventory, context),
-          ),
-        ],
-      ),
+      appBarActions: [
+        IconButton(
+          icon: Icon(isInInventory ? Icons.favorite : Icons.favorite_border),
+          color: Colors.red,
+          splashRadius: Styles.mediumButtonSplashRadius,
+          onPressed: () => _favoriteWeapon(itemKey, isInInventory, context),
+        ),
+      ],
     );
   }
 

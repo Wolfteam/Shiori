@@ -1,8 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:shiori/domain/models/models.dart';
-import 'package:shiori/generated/l10n.dart';
-import 'package:shiori/presentation/shared/details/detail_section.dart';
-import 'package:shiori/presentation/shared/highlighted_text.dart';
+part of '../weapon_page.dart';
 
 class Refinements extends StatelessWidget {
   final Color color;
@@ -20,23 +16,19 @@ class Refinements extends StatelessWidget {
     return DetailSection.complex(
       title: s.refinements,
       color: color,
-      children: ListTile.divideTiles(
-        context: context,
-        color: color,
-        tiles: refinements.map(
-          (e) => ListTile(
-            leading: Text(
-              '${e.level}',
-              style: theme.textTheme.bodyLarge,
+      children: refinements
+          .map(
+            (e) => ListTile(
+              leading: Text('${e.level}', style: theme.textTheme.bodyLarge),
+              title: HighlightedText.color(
+                text: e.description,
+                color: color,
+                addTooltip: false,
+                padding: EdgeInsets.zero,
+              ),
             ),
-            title: HighlightedText.color(
-              text: e.description,
-              color: color,
-              addTooltip: false,
-            ),
-          ),
-        ),
-      ).toList(),
+          )
+          .toList(),
     );
   }
 }

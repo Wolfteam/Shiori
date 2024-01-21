@@ -1,29 +1,37 @@
-import 'package:flutter/material.dart';
-import 'package:shiori/domain/models/models.dart';
-import 'package:shiori/generated/l10n.dart';
-import 'package:shiori/presentation/shared/details/detail_section.dart';
-import 'package:shiori/presentation/shared/images/character_icon_image.dart';
-import 'package:shiori/presentation/shared/utils/size_utils.dart';
+part of '../weapon_page.dart';
 
 class Builds extends StatelessWidget {
   final Color color;
-  final List<ItemCommon> images;
+  final List<ItemCommonWithName> characters;
 
   const Builds({
     required this.color,
-    required this.images,
+    required this.characters,
   });
 
   @override
   Widget build(BuildContext context) {
     final s = S.of(context);
     return DetailSection.complex(
-      title: s.builds,
+      title: s.characters,
       color: color,
       children: [
-        Wrap(
-          alignment: WrapAlignment.center,
-          children: images.map((e) => CharacterIconImage.circleItem(item: e, size: SizeUtils.getSizeForCircleImages(context))).toList(),
+        DetailHorizontalListView(
+          items: characters,
+          onTap: (key) => CharacterPage.route(key, context),
+        ),
+        DetailHorizontalListButton(
+          color: color,
+          onTap: () => showDialog(
+            context: context,
+            builder: (context) => ItemCommonWithNameDialog.simple(
+              title: s.characters,
+              items: characters,
+              fit: BoxFit.contain,
+              useSquare: false,
+              onTap: (key) => CharacterPage.route(key, context),
+            ),
+          ),
         ),
       ],
     );
