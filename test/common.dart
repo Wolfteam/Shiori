@@ -106,6 +106,16 @@ void checkItemsCommon(List<ItemCommon> items, {bool checkEmpty = true}) {
   }
 }
 
+void checkItemsCommonWithName(List<ItemCommonWithName> items, {bool checkEmpty = true}) {
+  for (final item in items) {
+    checkItemCommonWithName(item);
+  }
+
+  if (checkEmpty) {
+    expect(items, isNotEmpty);
+  }
+}
+
 void checkItemCommon(ItemCommon item) {
   checkItemKeyAndImage(item.key, item.image);
 }

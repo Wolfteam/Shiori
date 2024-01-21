@@ -46,16 +46,16 @@ void main() {
             checkAsset(state.fullImage);
             expect(state.rarity, 2);
             expect(state.type, MaterialType.common);
-            checkItemsCommon(state.characters);
-            checkItemsCommon(state.weapons);
-            checkItemsCommon(state.droppedBy);
+            checkItemsCommonWithName(state.characters);
+            checkItemsCommonWithName(state.weapons);
+            checkItemsCommonWithName(state.droppedBy);
             expect(state.days, isEmpty);
             expect(state.obtainedFrom, isNotEmpty);
             final items = state.obtainedFrom.expand((el) => el.items).toList();
             for (final item in items) {
               checkItemKeyAndImage(item.key, item.image);
             }
-            checkItemsCommon(state.relatedMaterials);
+            checkItemsCommonWithName(state.relatedMaterials);
           },
         );
       },
