@@ -131,6 +131,7 @@ class CharacterPage extends StatelessWidget {
                           ...state.multiTalentAscensionMaterials.map(
                             (multi) => _TalentAscensionMaterials(
                               color: color,
+                              number: multi.number,
                               talentAscensionsMaterials: multi.materials,
                             ),
                           ),
@@ -220,6 +221,7 @@ class CharacterPage extends StatelessWidget {
                           ...state.multiTalentAscensionMaterials.map(
                             (multi) => _TalentAscensionMaterials(
                               color: color,
+                              number: multi.number,
                               talentAscensionsMaterials: multi.materials,
                             ),
                           ),
