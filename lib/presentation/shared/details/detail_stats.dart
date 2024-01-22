@@ -43,7 +43,7 @@ class StatItem {
           s,
         );
 
-  StatItem.characterSkill(CharacterSkillStatModel skill, S s)
+  StatItem.characterSkill(CharacterSkillStatModel skill)
       : level = skill.level,
         isAnAscension = false,
         values = skill.descriptions.map((desc) {
@@ -215,7 +215,7 @@ class StatsTable extends StatelessWidget {
             ),
             ...stats.map((e) => _buildRow(e)),
           ],
-        )
+        ),
       ],
     );
   }

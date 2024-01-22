@@ -23,7 +23,6 @@ class CommonButtonSheetButtons extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
     final s = S.of(context);
 
     final cancel = cancelText ?? s.cancel;

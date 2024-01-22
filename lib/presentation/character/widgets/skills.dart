@@ -138,7 +138,7 @@ class _SkillBody extends StatelessWidget {
               onPressed: () => showDialog(
                 context: context,
                 builder: (ctx) => StatsDialog(
-                  stats: skill.stats.map((e) => StatItem.characterSkill(e, s)).toList(),
+                  stats: skill.stats.map((e) => StatItem.characterSkill(e)).toList(),
                 ),
               ),
             ),

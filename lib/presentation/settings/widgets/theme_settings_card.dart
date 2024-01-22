@@ -19,7 +19,6 @@ class ThemeSettingsCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final s = S.of(context);
-    final theme = Theme.of(context);
     return SettingsCard(
       child: BlocBuilder<SettingsBloc, SettingsState>(
         builder: (context, state) => state.maybeMap(
