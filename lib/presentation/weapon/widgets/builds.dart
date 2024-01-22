@@ -13,7 +13,7 @@ class _Builds extends StatelessWidget {
   Widget build(BuildContext context) {
     final s = S.of(context);
     return DetailSection.complex(
-      title: s.characters,
+      title: s.builds,
       color: color,
       children: [
         DetailHorizontalListView(

@@ -43,7 +43,7 @@ mixin AppFabMixin<T extends StatefulWidget> on State<T>, SingleTickerProviderSta
     bool mini = true,
     OnClick? onPressed,
   }) {
-    if (customController != null) {
+    if (customController != null && customController != scrollController) {
       setScrollController(customController: customController);
     }
     return AppFab(

@@ -9,6 +9,7 @@ class SquareItemImage extends StatelessWidget {
   final Function(String)? onTap;
   final BoxFit fit;
   final Alignment alignment;
+  final Gradient? gradient;
 
   const SquareItemImage({
     super.key,
@@ -17,19 +18,23 @@ class SquareItemImage extends StatelessWidget {
     this.onTap,
     this.fit = BoxFit.fill,
     this.alignment = Alignment.center,
+    this.gradient,
   });
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: onTap != null ? () => onTap!(image) : null,
-      child: FadeInImage(
-        placeholder: MemoryImage(kTransparentImage),
-        image: FileImage(File(image)),
-        fit: fit,
-        alignment: alignment,
-        height: size,
-        width: size,
+      child: DecoratedBox(
+        decoration: BoxDecoration(gradient: gradient),
+        child: FadeInImage(
+          placeholder: MemoryImage(kTransparentImage),
+          image: FileImage(File(image)),
+          fit: fit,
+          alignment: alignment,
+          height: size,
+          width: size,
+        ),
       ),
     );
   }

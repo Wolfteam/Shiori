@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:shiori/presentation/shared/details/constants.dart';
+import 'package:transparent_image/transparent_image.dart';
 
 class DetailMainContent extends StatelessWidget {
   final String fullImage;
@@ -13,7 +14,6 @@ class DetailMainContent extends StatelessWidget {
 
   final bool isAnSmallImage;
   final bool showShadowImage;
-  final double charDescriptionHeight;
 
   const DetailMainContent({
     super.key,
@@ -25,7 +25,6 @@ class DetailMainContent extends StatelessWidget {
     this.decoration,
     this.isAnSmallImage = false,
     this.showShadowImage = true,
-    this.charDescriptionHeight = 240,
   });
 
   @override
@@ -53,11 +52,7 @@ class DetailMainContent extends StatelessWidget {
             ),
           Align(
             alignment: imgAlignment,
-            child: Image.file(
-              File(fullImage),
-              fit: BoxFit.contain,
-              filterQuality: FilterQuality.high,
-            ),
+            child: _Image(fullImage: fullImage),
           ),
           Align(
             alignment: isPortrait ? Alignment.bottomCenter : Alignment.bottomCenter,
@@ -101,11 +96,7 @@ class ShadowImage extends StatelessWidget {
         alignment: Alignment.topRight,
         child: Opacity(
           opacity: 0.5,
-          child: Image.file(
-            File(secondFullImage ?? fullImage),
-            fit: BoxFit.contain,
-            filterQuality: FilterQuality.high,
-          ),
+          child: _Image(fullImage: fullImage, secondFullImage: secondFullImage),
         ),
       );
     }
@@ -115,13 +106,29 @@ class ShadowImage extends StatelessWidget {
         transform: Matrix4.translationValues(isAnSmallImage ? 30 : 60, isAnSmallImage ? -10 : -30, 0.0),
         child: Opacity(
           opacity: 0.5,
-          child: Image.file(
-            File(secondFullImage ?? fullImage),
-            fit: BoxFit.contain,
-            filterQuality: FilterQuality.high,
-          ),
+          child: _Image(fullImage: fullImage, secondFullImage: secondFullImage),
         ),
       ),
+    );
+  }
+}
+
+class _Image extends StatelessWidget {
+  final String fullImage;
+  final String? secondFullImage;
+
+  const _Image({
+    required this.fullImage,
+    this.secondFullImage,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return FadeInImage(
+      placeholder: MemoryImage(kTransparentImage),
+      fit: BoxFit.contain,
+      filterQuality: FilterQuality.high,
+      image: FileImage(File(secondFullImage ?? fullImage)),
     );
   }
 }

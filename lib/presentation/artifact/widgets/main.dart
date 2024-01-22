@@ -21,7 +21,6 @@ class Main extends StatelessWidget {
       fullImage: image,
       secondFullImage: image,
       decoration: BoxDecoration(gradient: gradient),
-      charDescriptionHeight: 120,
       isAnSmallImage: isPortrait,
       generalCard: DetailMainCard(
         itemName: name,

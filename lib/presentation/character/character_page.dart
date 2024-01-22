@@ -137,7 +137,7 @@ class CharacterPage extends StatelessWidget {
                           ),
                         ],
                       ),
-                    )
+                    ),
                   ],
                 ),
               );
@@ -151,78 +151,87 @@ class CharacterPage extends StatelessWidget {
             ];
             return Scaffold(
               body: SafeArea(
-                child: DetailLandscapeContent(
-                  color: color,
-                  tabs: tabs,
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
-                    SingleChildScrollView(
-                      physics: const BouncingScrollPhysics(),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                    Expanded(flex: 40, child: main),
+                    Expanded(
+                      flex: 60,
+                      child: DetailLandscapeContent(
+                        color: color,
+                        tabs: tabs,
                         children: [
-                          _Description.noButtons(
-                            color: color,
-                            description: state.description,
-                            subStatType: state.subStatType,
+                          SingleChildScrollView(
+                            physics: const BouncingScrollPhysics(),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.stretch,
+                              children: [
+                                _Description.noButtons(
+                                  color: color,
+                                  description: state.description,
+                                  subStatType: state.subStatType,
+                                ),
+                                if (state.builds.isNotEmpty)
+                                  _Builds(
+                                    color: color,
+                                    elementType: state.elementType,
+                                    builds: state.builds,
+                                    expanded: true,
+                                  ),
+                                StatsTable(
+                                  color: color,
+                                  stats: state.stats.map((e) => StatItem.character(e, state.subStatType, s)).toList(),
+                                ),
+                              ],
+                            ),
                           ),
-                          if (state.builds.isNotEmpty)
-                            _Builds(
+                          SingleChildScrollView(
+                            physics: const BouncingScrollPhysics(),
+                            child: _Skills(
                               color: color,
-                              elementType: state.elementType,
-                              builds: state.builds,
+                              skills: state.skills,
                               expanded: true,
                             ),
-                          StatsTable(
-                            color: color,
-                            stats: state.stats.map((e) => StatItem.character(e, state.subStatType, s)).toList(),
                           ),
-                        ],
-                      ),
-                    ),
-                    SingleChildScrollView(
-                      physics: const BouncingScrollPhysics(),
-                      child: _Skills(
-                        color: color,
-                        skills: state.skills,
-                        expanded: true,
-                      ),
-                    ),
-                    SingleChildScrollView(
-                      physics: const BouncingScrollPhysics(),
-                      child: _Passives(
-                        color: color,
-                        passives: state.passives,
-                        expanded: true,
-                      ),
-                    ),
-                    SingleChildScrollView(
-                      physics: const BouncingScrollPhysics(),
-                      child: _Constellations(
-                        color: color,
-                        constellations: state.constellations,
-                        expanded: true,
-                      ),
-                    ),
-                    SingleChildScrollView(
-                      physics: const BouncingScrollPhysics(),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.stretch,
-                        children: [
-                          if (state.ascensionMaterials.isNotEmpty)
-                            _AscensionMaterials(
+                          SingleChildScrollView(
+                            physics: const BouncingScrollPhysics(),
+                            child: _Passives(
                               color: color,
-                              ascensionMaterials: state.ascensionMaterials,
+                              passives: state.passives,
+                              expanded: true,
                             ),
-                          if (state.talentAscensionsMaterials.isNotEmpty)
-                            _TalentAscensionMaterials(
+                          ),
+                          SingleChildScrollView(
+                            physics: const BouncingScrollPhysics(),
+                            child: _Constellations(
                               color: color,
-                              talentAscensionsMaterials: state.talentAscensionsMaterials,
+                              constellations: state.constellations,
+                              expanded: true,
                             ),
-                          ...state.multiTalentAscensionMaterials.map(
-                            (multi) => _TalentAscensionMaterials(
-                              color: color,
-                              number: multi.number,
-                              talentAscensionsMaterials: multi.materials,
+                          ),
+                          SingleChildScrollView(
+                            physics: const BouncingScrollPhysics(),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.stretch,
+                              children: [
+                                if (state.ascensionMaterials.isNotEmpty)
+                                  _AscensionMaterials(
+                                    color: color,
+                                    ascensionMaterials: state.ascensionMaterials,
+                                  ),
+                                if (state.talentAscensionsMaterials.isNotEmpty)
+                                  _TalentAscensionMaterials(
+                                    color: color,
+                                    talentAscensionsMaterials: state.talentAscensionsMaterials,
+                                  ),
+                                ...state.multiTalentAscensionMaterials.map(
+                                  (multi) => _TalentAscensionMaterials(
+                                    color: color,
+                                    number: multi.number,
+                                    talentAscensionsMaterials: multi.materials,
+                                  ),
+                                ),
+                              ],
                             ),
                           ),
                         ],

@@ -9,6 +9,7 @@ class SquareItemImageWithName extends StatelessWidget {
   final double width;
   final double height;
   final EdgeInsets margin;
+  final Gradient? gradient;
   final VoidCallback? onTap;
 
   const SquareItemImageWithName({
@@ -18,6 +19,7 @@ class SquareItemImageWithName extends StatelessWidget {
     required this.width,
     required this.height,
     this.margin = Styles.edgeInsetHorizontal10,
+    this.gradient,
     this.onTap,
   });
 
@@ -39,6 +41,7 @@ class SquareItemImageWithName extends StatelessWidget {
                 child: SquareItemImage(
                   image: image,
                   size: width,
+                  gradient: gradient,
                 ),
               ),
               Align(
