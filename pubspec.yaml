@@ -15,7 +15,7 @@ publish_to: "none" # Remove this line if you wish to publish to pub.dev
 # In iOS, build-name is used as CFBundleShortVersionString while build-number used as CFBundleVersion.
 # Read more about iOS versioning at
 # https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
-version: 1.8.0+156
+version: 1.8.0+158
 
 environment:
   sdk: '>=3.1.4 <4.0.0'
@@ -24,7 +24,7 @@ dependencies:
   darq: ^2.0.0
   device_info_plus: ^9.1.1
   devicelocale: ^0.7.0
-  envied: ^0.5.2
+  envied: ^0.5.3
   file_picker: ^6.1.1
   fk_user_agent: ^2.1.0
   fl_chart: ^0.66.0
@@ -33,19 +33,19 @@ dependencies:
   flutter_bloc: ^7.3.1
   flutter_colorpicker: ^1.0.3
   flutter_inappwebview: ^6.0.0
-  flutter_local_notifications: ^16.3.0
+  flutter_local_notifications: ^16.3.1+1
   flutter_localizations:
     sdk: flutter
-  flutter_markdown: ^0.6.18+2
+  flutter_markdown: ^0.6.18+3
   flutter_slidable: ^3.0.1
   flutter_timezone: ^1.0.8
   fluttertoast: ^8.2.4
   freezed_annotation: ^2.4.1
-  get_it: ^7.6.4
+  get_it: ^7.6.7
   grouped_list: ^5.1.2
   hive: ^2.2.3
   hive_flutter: ^1.1.0
-  http: ^1.1.2
+  http: ^1.2.0
   image_gallery_saver: ^2.0.3
   infinite_listview: ^1.1.0
   internet_connection_checker: ^1.0.0+1
@@ -55,10 +55,10 @@ dependencies:
   logger: ^2.0.2+1
   package_info_plus: ^5.0.1
   path: ^1.8.3
-  path_provider: ^2.1.1
-  permission_handler: ^11.1.0
+  path_provider: ^2.1.2
+  permission_handler: ^11.2.0
   pull_to_refresh: ^2.0.0
-  purchases_flutter: ^6.5.1
+  purchases_flutter: ^6.16.1
   rate_my_app: ^2.0.0
   responsive_builder: ^0.7.0
   responsive_grid: ^2.4.4
@@ -69,7 +69,7 @@ dependencies:
   store_checker: ^1.4.0
   synchronized: ^3.1.0+1
   transparent_image: ^2.0.1
-  url_launcher: ^6.2.2
+  url_launcher: ^6.2.3
   version: ^3.0.0
   version_tracker: ^2.3.0
   wakelock_plus: ^1.1.4
@@ -82,7 +82,7 @@ dependencies:
 dev_dependencies:
   bloc_test: ^8.5.0
   build_runner:
-  envied_generator: ^0.5.2
+  envied_generator: ^0.5.3
   flutter_launcher_icons: ^0.13.1
   flutter_test:
     sdk: flutter

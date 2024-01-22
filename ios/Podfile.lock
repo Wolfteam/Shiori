@@ -74,14 +74,17 @@ PODS:
     - FlutterMacOS
   - permission_handler_apple (9.1.1):
     - Flutter
-  - purchases_flutter (6.5.1):
+  - purchases_flutter (6.16.1):
     - Flutter
-    - PurchasesHybridCommon (= 8.1.1)
-  - PurchasesHybridCommon (8.1.1):
-    - RevenueCat (= 4.31.2)
+    - PurchasesHybridCommon (= 8.11.1)
+  - PurchasesHybridCommon (8.11.1):
+    - RevenueCat (= 4.32.0)
+    - RevenueCatUI (= 4.32.0)
   - rate_my_app (2.0.0):
     - Flutter
-  - RevenueCat (4.31.2)
+  - RevenueCat (4.32.0)
+  - RevenueCatUI (4.32.0):
+    - RevenueCat (= 4.32.0)
   - SDWebImage (5.18.3):
     - SDWebImage/Core (= 5.18.3)
   - SDWebImage/Core (5.18.3)
@@ -131,6 +134,7 @@ SPEC REPOS:
     - OrderedSet
     - PurchasesHybridCommon
     - RevenueCat
+    - RevenueCatUI
     - SDWebImage
     - SwiftyGif
     - Toast
@@ -189,7 +193,7 @@ SPEC CHECKSUMS:
   fk_user_agent: 1f47ec39291e8372b1d692b50084b0d54103c545
   Flutter: f04841e97a9d0b0a8025694d0796dd46242b2854
   flutter_inappwebview_ios: 97215cf7d4677db55df76782dbd2930c5e1c1ea0
-  flutter_local_notifications: 0c0b1ae97e741e1521e4c1629a459d04b9aec743
+  flutter_local_notifications: 4cde75091f6327eb8517fa068a0a5950212d2086
   flutter_timezone: ffb07bdad3c6276af8dada0f11978d8a1f8a20bb
   fluttertoast: 31b00dabfa7fb7bacd9e7dbee580d7a2ff4bf265
   image_gallery_saver: cb43cc43141711190510e92c460eb1655cd343cb
@@ -198,10 +202,11 @@ SPEC CHECKSUMS:
   package_info_plus: 115f4ad11e0698c8c1c5d8a689390df880f47e85
   path_provider_foundation: 29f094ae23ebbca9d3d0cec13889cd9060c0e943
   permission_handler_apple: e76247795d700c14ea09e3a2d8855d41ee80a2e6
-  purchases_flutter: 87bed34c0cf821834812f9e02b245f6b325c8e58
-  PurchasesHybridCommon: 2439f6e671fb4d60878a652e4377fa7e588368e6
+  purchases_flutter: 4048b4d0052cf452faa5d85e3aa3907a7929032c
+  PurchasesHybridCommon: db0f4063a1e77fd255318c4a2f05d26eff6f150a
   rate_my_app: 80fba94c4885cd31738231b7b1f51c1ad726f5c7
-  RevenueCat: 63f6f4ae6916095561b90b2e1de86a492af67493
+  RevenueCat: 2d99a5ebabd33955c3a38dfdfa9d3efe77c5db0c
+  RevenueCatUI: fa6b619083afb967facc20ecdc7ae53a4c512d10
   SDWebImage: 96e0c18ef14010b7485210e92fac888587ebb958
   share_plus: c3fef564749587fc939ef86ffb283ceac0baf9f5
   shared_preferences_foundation: 5b919d13b803cadd15ed2dc053125c68730e5126
