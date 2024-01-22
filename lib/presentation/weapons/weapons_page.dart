@@ -15,6 +15,7 @@ import 'package:shiori/presentation/weapons/widgets/weapon_card.dart';
 class WeaponsPage extends StatefulWidget {
   final bool isInSelectionMode;
   final bool areWeaponTypesEnabled;
+  final ScrollController? scrollController;
 
   static Future<String?> forSelection(
     BuildContext context, {
@@ -38,6 +39,7 @@ class WeaponsPage extends StatefulWidget {
     super.key,
     this.isInSelectionMode = false,
     this.areWeaponTypesEnabled = true,
+    this.scrollController,
   });
 
   @override
@@ -56,6 +58,7 @@ class _WeaponsPageState extends State<WeaponsPage> with AutomaticKeepAliveClient
       builder: (context, state) => state.map(
         loading: (_) => const Loading(),
         loaded: (state) => SliverScaffoldWithFab(
+          scrollController: widget.scrollController,
           appbar: widget.isInSelectionMode ? AppBar(title: Text(s.selectWeapon)) : null,
           slivers: [
             SliverPageFilter(

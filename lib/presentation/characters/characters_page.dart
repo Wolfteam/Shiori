@@ -13,6 +13,7 @@ import 'package:shiori/presentation/shared/utils/modal_bottom_sheet_utils.dart';
 
 class CharactersPage extends StatefulWidget {
   final bool isInSelectionMode;
+  final ScrollController? scrollController;
 
   static Future<String?> forSelection(BuildContext context, {List<String> excludeKeys = const []}) async {
     final bloc = context.read<CharactersBloc>();
@@ -31,6 +32,7 @@ class CharactersPage extends StatefulWidget {
   const CharactersPage({
     super.key,
     this.isInSelectionMode = false,
+    this.scrollController,
   });
 
   @override
@@ -55,6 +57,7 @@ class _CharactersPageState extends State<CharactersPage> with AutomaticKeepAlive
       builder: (context, state) => state.map(
         loading: (_) => const Loading(),
         loaded: (state) => SliverScaffoldWithFab(
+          scrollController: widget.scrollController,
           appbar: widget.isInSelectionMode ? AppBar(title: Text(s.selectCharacter)) : null,
           slivers: [
             SliverPageFilter(

@@ -14,6 +14,7 @@ import 'package:shiori/presentation/shared/utils/modal_bottom_sheet_utils.dart';
 
 class ArtifactsPage extends StatefulWidget {
   final bool isInSelectionMode;
+  final ScrollController? scrollController;
 
   static Future<String?> forSelection(BuildContext context, {List<String> excludeKeys = const [], ArtifactType? type}) async {
     final bloc = context.read<ArtifactsBloc>();
@@ -31,6 +32,7 @@ class ArtifactsPage extends StatefulWidget {
   const ArtifactsPage({
     super.key,
     this.isInSelectionMode = false,
+    this.scrollController,
   });
 
   @override
@@ -50,6 +52,7 @@ class _ArtifactsPageState extends State<ArtifactsPage> with AutomaticKeepAliveCl
       builder: (context, state) => state.map(
         loading: (_) => const Loading(),
         loaded: (state) => SliverScaffoldWithFab(
+          scrollController: widget.scrollController,
           appbar: !widget.isInSelectionMode ? null : AppBar(title: Text(s.selectAnArtifact)),
           slivers: [
             SliverPageFilter(
