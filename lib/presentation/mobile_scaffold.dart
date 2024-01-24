@@ -90,7 +90,7 @@ class _MobileScaffoldState extends State<MobileScaffold> with SingleTickerProvid
   }
 
   void _gotoTab(int newIndex) {
-    scrollToTopOnTabDoubleTap(widget.tabController.index, newIndex, widget.scrollControllers);
+    scrollToTopOnTabTap(widget.tabController.index, newIndex, widget.scrollControllers);
     context.read<MainTabBloc>().add(MainTabEvent.goToTab(index: newIndex));
   }
 }

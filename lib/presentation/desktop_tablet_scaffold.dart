@@ -162,7 +162,7 @@ class _NavigationRailState extends State<_NavigationRail> with ScrollToTopOnDoub
       return;
     }
 
-    scrollToTopOnTabDoubleTap(widget.tabController.index, realIndex, widget.scrollControllers);
+    scrollToTopOnTabTap(widget.tabController.index, realIndex, widget.scrollControllers);
     context.read<MainTabBloc>().add(MainTabEvent.goToTab(index: realIndex));
   }
 
