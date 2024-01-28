@@ -1,7 +1,6 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:shiori/presentation/shared/details/constants.dart';
 import 'package:transparent_image/transparent_image.dart';
 
 class DetailMainContent extends StatelessWidget {
@@ -36,8 +35,9 @@ class DetailMainContent extends StatelessWidget {
             ? Alignment.centerLeft
             : Alignment.bottomLeft
         : Alignment.center;
+    final double? height = isPortrait ? _getHeight(context, isAnSmallImage) : null;
     return Container(
-      height: isPortrait ? getTopHeightForPortrait(context, isAnSmallImage) : null,
+      height: height,
       color: color,
       decoration: decoration,
       child: Stack(
@@ -72,6 +72,16 @@ class DetailMainContent extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  double _getHeight(BuildContext context, bool isAnSmallImage) {
+    final factor = isAnSmallImage ? 0.5 : 0.7;
+    final value = MediaQuery.of(context).size.height * factor;
+    //The max char height
+    if (value > 700) {
+      return 700;
+    }
+    return value;
   }
 }
 
@@ -129,6 +139,9 @@ class _Image extends StatelessWidget {
       fit: BoxFit.contain,
       filterQuality: FilterQuality.high,
       image: FileImage(File(secondFullImage ?? fullImage)),
+      placeholderFit: BoxFit.contain,
+      fadeInDuration: const Duration(milliseconds: 300),
+      fadeOutDuration: const Duration(milliseconds: 100),
     );
   }
 }

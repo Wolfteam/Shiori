@@ -22,6 +22,7 @@ class WeaponsButtonBar extends StatelessWidget {
   Widget build(BuildContext context) {
     final s = S.of(context);
     final theme = Theme.of(context);
+    final double size = iconSize * 1.3;
     return Wrap(
       crossAxisAlignment: WrapCrossAlignment.center,
       alignment: WrapAlignment.spaceEvenly,
@@ -33,8 +34,8 @@ class WeaponsButtonBar extends StatelessWidget {
             opacity: !isSelected ? 1 : 0.2,
             child: Image.asset(
               e.getWeaponNormalSkillAssetPath(),
-              width: iconSize * 1.3,
-              height: iconSize * 1.3,
+              width: size,
+              height: size,
               color: theme.brightness == Brightness.dark ? Colors.white : Colors.black.withOpacity(0.5),
             ),
           ),

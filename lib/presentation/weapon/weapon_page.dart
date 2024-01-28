@@ -49,7 +49,7 @@ class WeaponPage extends StatelessWidget {
       create: (context) => Injection.weaponBloc..add(WeaponEvent.loadFromKey(key: itemKey)),
       child: BlocBuilder<WeaponBloc, WeaponState>(
         builder: (context, state) => state.map(
-          loading: (_) => const Loading.column(),
+          loading: (_) => const Loading.scaffold(),
           loaded: (state) {
             final Color color = state.rarity.getRarityColors().first;
             final main = _Main(
@@ -98,7 +98,7 @@ class WeaponPage extends StatelessWidget {
                   color: color,
                   refinements: state.refinements,
                 ),
-              if (state.stats.isNotEmpty)
+              if (state.stats.isNotEmpty && !isPortrait)
                 StatsTable(
                   color: color,
                   stats: state.stats.map((e) => StatItem.weapon(e, state.secondaryStat, s)).toList(),

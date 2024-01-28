@@ -51,7 +51,7 @@ class MaterialPage extends StatelessWidget {
       create: (context) => Injection.materialBloc..add(bloc.MaterialEvent.loadFromKey(key: itemKey)),
       child: BlocBuilder<bloc.MaterialBloc, bloc.MaterialState>(
         builder: (context, state) => state.map(
-          loading: (_) => const Loading.column(),
+          loading: (_) => const Loading.scaffold(),
           loaded: (state) {
             final color = state.rarity.getRarityColors().first;
             final main = _Main(

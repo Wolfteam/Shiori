@@ -65,7 +65,7 @@ class CharacterPage extends StatelessWidget {
       create: (context) => Injection.characterBloc..add(CharacterEvent.loadFromKey(key: itemKey)),
       child: BlocBuilder<CharacterBloc, CharacterState>(
         builder: (context, state) => state.map(
-          loading: (_) => const Loading.column(),
+          loading: (_) => const Loading.scaffold(),
           loaded: (state) {
             final Color color = state.elementType.getElementColorFromContext(context);
 

@@ -46,7 +46,7 @@ class ArtifactPage extends StatelessWidget {
       create: (context) => Injection.artifactBloc..add(ArtifactEvent.loadFromKey(key: itemKey)),
       child: BlocBuilder<ArtifactBloc, ArtifactState>(
         builder: (context, state) => state.map(
-          loading: (_) => const Loading.column(),
+          loading: (_) => const Loading.scaffold(),
           loaded: (state) {
             final color = state.maxRarity.getRarityColors().first;
 
