@@ -4,13 +4,17 @@ import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/extensions/iterable_extensions.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/generated/l10n.dart';
+import 'package:shiori/presentation/artifact/artifact_page.dart';
 import 'package:shiori/presentation/artifacts/widgets/artifact_card.dart';
 import 'package:shiori/presentation/shared/character_skill_priority.dart';
 import 'package:shiori/presentation/shared/extensions/element_type_extensions.dart';
 import 'package:shiori/presentation/shared/extensions/i18n_extensions.dart';
+import 'package:shiori/presentation/shared/extensions/media_query_extensions.dart';
+import 'package:shiori/presentation/shared/images/artifact_image_type.dart';
 import 'package:shiori/presentation/shared/row_column_item_or.dart';
 import 'package:shiori/presentation/shared/styles.dart';
 import 'package:shiori/presentation/shared/sub_stats_to_focus.dart';
+import 'package:shiori/presentation/weapon/weapon_page.dart';
 import 'package:shiori/presentation/weapons/widgets/weapon_card.dart';
 
 const double _imgHeight = 125;
@@ -87,7 +91,12 @@ class CharacterDetailBuildCard extends StatelessWidget {
             ...artifacts.mapIndex((e, index) {
               final showOr = index < artifacts.length - 1;
               if (showOr) {
-                return RowColumnItemOr(widget: _ArtifactRow(item: e), color: color, useColumn: true);
+                return RowColumnItemOr(
+                  widget: _ArtifactRow(item: e),
+                  color: color,
+                  useColumn: true,
+                  margin: const EdgeInsets.only(bottom: 16),
+                );
               }
               return _ArtifactRow(item: e);
             }),
@@ -166,28 +175,104 @@ class _Weapons extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: _imgHeight,
-      child: ListView.builder(
-        physics: const BouncingScrollPhysics(),
-        scrollDirection: Axis.horizontal,
-        itemCount: weapons.length,
-        itemBuilder: (ctx, index) {
-          final weapon = weapons[index];
-          final child = WeaponCard.withoutDetails(
-            keyName: weapon.key,
-            name: weapon.name,
-            rarity: weapon.rarity,
-            image: weapon.image,
-            isComingSoon: weapon.isComingSoon,
-          );
-          final withOr = index < weapons.length - 1;
-          if (withOr) {
-            return RowColumnItemOr(widget: child, color: color);
-          }
-          return child;
-        },
+    final s = S.of(context);
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        SizedBox(
+          height: _imgHeight,
+          child: ListView.builder(
+            physics: const BouncingScrollPhysics(),
+            scrollDirection: Axis.horizontal,
+            itemCount: weapons.length,
+            itemBuilder: (ctx, index) {
+              final weapon = weapons[index];
+              final child = WeaponCard.withoutDetails(
+                keyName: weapon.key,
+                name: weapon.name,
+                rarity: weapon.rarity,
+                image: weapon.image,
+                isComingSoon: weapon.isComingSoon,
+              );
+              final withOr = index < weapons.length - 1;
+              if (withOr) {
+                return RowColumnItemOr(widget: child, color: color);
+              }
+              return child;
+            },
+          ),
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: [
+            TextButton.icon(
+              onPressed: () => _showDetails(context),
+              label: Text(s.details),
+              icon: const Icon(Icons.chevron_right),
+            ),
+          ],
+        ),
+      ],
+    );
+  }
+
+  Future<void> _showDetails(BuildContext context) {
+    return showDialog(
+      context: context,
+      builder: (context) => _WeaponsBuildDialog(weapons: weapons),
+    );
+  }
+}
+
+class _WeaponsBuildDialog extends StatelessWidget {
+  final List<WeaponCardModel> weapons;
+
+  const _WeaponsBuildDialog({required this.weapons});
+
+  @override
+  Widget build(BuildContext context) {
+    final s = S.of(context);
+    final theme = Theme.of(context);
+
+    return AlertDialog(
+      scrollable: true,
+      title: Text(s.details),
+      content: SizedBox(
+        width: MediaQuery.of(context).getWidthForDialogs(),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: weapons
+              .map(
+                (e) => ListTile(
+                  leading: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Text('${e.rarity}', style: theme.textTheme.bodyMedium),
+                      const Icon(Icons.star),
+                    ],
+                  ),
+                  title: Text(
+                    e.name,
+                    overflow: TextOverflow.ellipsis,
+                    maxLines: 2,
+                  ),
+                  subtitle: Text(
+                    '${s.subStat}: ${s.translateStatTypeWithoutValue(e.subStatType)}',
+                    overflow: TextOverflow.ellipsis,
+                    maxLines: 2,
+                  ),
+                  onTap: () => WeaponPage.route(e.key, context),
+                ),
+              )
+              .toList(),
+        ),
       ),
+      actions: [
+        FilledButton(
+          onPressed: () => Navigator.of(context).pop(),
+          child: Text(s.ok),
+        ),
+      ],
     );
   }
 }
@@ -202,45 +287,116 @@ class _ArtifactRow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final s = S.of(context);
-    if (item.one != null) {
-      return SizedBox(
-        height: _imgHeight,
-        child: ListView.builder(
-          physics: const BouncingScrollPhysics(),
-          scrollDirection: Axis.horizontal,
-          itemCount: artifactOrder.length,
-          itemBuilder: (ctx, index) {
-            final stat = item.stats[index];
-            final path = getArtifactPathByOrder(index, item.one!.image);
-            return ArtifactCard.withoutDetails(
-              name: s.translateStatTypeWithoutValue(stat),
-              image: path,
-              rarity: item.one!.rarity,
-              keyName: item.one!.key,
-            );
-          },
+    final int itemCount = item.one != null ? artifactOrder.length : item.multiples.length;
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        SizedBox(
+          height: _imgHeight,
+          child: ListView.builder(
+            physics: const BouncingScrollPhysics(),
+            scrollDirection: Axis.horizontal,
+            itemCount: itemCount,
+            itemBuilder: (ctx, index) => _buildItem(index, s),
+          ),
         ),
-      );
-    }
+        Row(
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: [
+            TextButton.icon(
+              onPressed: () => _showDetails(context),
+              label: Text(s.details),
+              icon: const Icon(Icons.chevron_right),
+            ),
+          ],
+        ),
+      ],
+    );
+  }
 
-    return SizedBox(
-      height: _imgHeight,
-      child: ListView.builder(
-        physics: const BouncingScrollPhysics(),
-        scrollDirection: Axis.horizontal,
-        itemCount: item.multiples.length,
-        itemBuilder: (ctx, index) {
-          final multi = item.multiples[index];
-          final stat = item.stats[index];
-          final path = getArtifactPathByOrder(index, multi.image);
-          return ArtifactCard.withoutDetails(
-            name: s.translateStatTypeWithoutValue(stat),
-            image: path,
-            rarity: multi.rarity,
-            keyName: multi.key,
-          );
-        },
+  Future<void> _showDetails(BuildContext context) {
+    return showDialog(
+      context: context,
+      builder: (context) => _ArtifactBuildDialog(item: item),
+    );
+  }
+
+  Widget _buildItem(int index, S s) {
+    String key;
+    int rarity;
+    String path;
+    final StatType stat = item.stats[index];
+    if (item.one != null) {
+      key = item.one!.key;
+      rarity = item.one!.rarity;
+      path = getArtifactPathByOrder(index, item.one!.image);
+    } else {
+      final multi = item.multiples[index];
+      key = multi.key;
+      rarity = multi.rarity;
+      path = getArtifactPathByOrder(index, multi.image);
+    }
+    return Container(
+      margin: const EdgeInsets.only(right: 40),
+      child: ArtifactCard.withoutDetails(
+        name: s.translateStatTypeWithoutValue(stat),
+        image: path,
+        rarity: rarity,
+        keyName: key,
       ),
+    );
+  }
+}
+
+class _ArtifactBuildDialog extends StatelessWidget {
+  final CharacterBuildArtifactModel item;
+
+  const _ArtifactBuildDialog({required this.item});
+
+  @override
+  Widget build(BuildContext context) {
+    final s = S.of(context);
+    final int itemCount = item.one != null ? artifactOrder.length : item.multiples.length;
+    const double iconSize = 36;
+    return AlertDialog(
+      scrollable: true,
+      title: Text(s.details),
+      content: SizedBox(
+        width: MediaQuery.of(context).getWidthForDialogs(),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: List.generate(itemCount, (index) {
+            final String key = item.one != null ? item.one!.key : item.multiples[index].key;
+            final String name = item.one != null ? item.one!.name : item.multiples[index].name;
+            final ArtifactType type = ArtifactType.values[index];
+            final StatType stat = item.stats[index];
+            return ListTile(
+              leading: ArtifactImageType.fromType(
+                type: type,
+                width: iconSize,
+                height: iconSize,
+              ),
+              title: Text(
+                '${s.translateArtifactType(type)}: $name',
+                overflow: TextOverflow.ellipsis,
+                maxLines: 2,
+              ),
+              subtitle: Text(
+                '${s.subStat}: ${s.translateStatTypeWithoutValue(stat)}',
+                maxLines: 2,
+                overflow: TextOverflow.ellipsis,
+              ),
+              onTap: () => ArtifactPage.route(key, context),
+            );
+          }),
+        ),
+      ),
+      actions: [
+        FilledButton(
+          onPressed: () => Navigator.of(context).pop(),
+          child: Text(s.ok),
+        ),
+      ],
     );
   }
 }

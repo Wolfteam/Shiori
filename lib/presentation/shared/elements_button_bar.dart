@@ -23,7 +23,7 @@ class ElementsButtonBar extends StatelessWidget {
 
     return Wrap(
       crossAxisAlignment: WrapCrossAlignment.center,
-      alignment: WrapAlignment.spaceBetween,
+      alignment: WrapAlignment.spaceEvenly,
       children: buttons,
     );
   }
@@ -34,7 +34,11 @@ class ElementsButtonBar extends StatelessWidget {
       iconSize: iconSize,
       icon: Opacity(
         opacity: !isSelected ? 1 : 0.2,
-        child: Image.asset(value.getElementAssetPath()),
+        child: Image.asset(
+          value.getElementAssetPath(),
+          width: iconSize * 1.3,
+          height: iconSize * 1.3,
+        ),
       ),
       onPressed: () => onClick(value),
       tooltip: tooltip,

@@ -6,17 +6,12 @@ class Styles {
   static double cardBottomRadius = 30;
   static double cardTopRadius = 10;
 
-  static BorderRadius mainCardBorderRadius = BorderRadius.only(
-    bottomLeft: Radius.circular(cardBottomRadius),
-    bottomRight: Radius.circular(cardBottomRadius),
-    topLeft: Radius.circular(cardTopRadius),
-    topRight: Radius.circular(cardTopRadius),
-  );
+  static const BorderRadius mainCardBorderRadius = BorderRadius.all(Radius.circular(10));
 
-  static BorderRadius homeCardItemBorderRadius = BorderRadius.circular(40);
+  static BorderRadius homeCardItemBorderRadius = BorderRadius.circular(20);
 
   static final RoundedRectangleBorder cardShape = RoundedRectangleBorder(borderRadius: BorderRadius.circular(10));
-  static final RoundedRectangleBorder mainCardShape = RoundedRectangleBorder(borderRadius: mainCardBorderRadius);
+  static const RoundedRectangleBorder mainCardShape = RoundedRectangleBorder(borderRadius: mainCardBorderRadius);
   static final RoundedRectangleBorder floatingCardShape = RoundedRectangleBorder(borderRadius: BorderRadius.circular(20));
 
   static const double cardThreeElevation = 3;
@@ -53,8 +48,8 @@ class Styles {
 
   static const double materialCardHeight = 270;
   static const double materialCardWidth = 220;
-  static const double homeCardHeight = 170;
-  static const double homeCardWidth = 280;
+  static const double homeCardHeight = 150;
+  static const double homeCardWidth = 240;
   static const double birthdayCardWidth = 300;
 
   static const endDrawerFilterItemMargin = EdgeInsets.only(top: 20);
@@ -149,4 +144,28 @@ class Styles {
       spreadRadius: -20,
     ),
   ];
+
+  static List<BoxShadow> commonBlackShadow = [
+    BoxShadow(
+      color: Colors.black.withOpacity(0.6),
+      blurRadius: 40,
+      spreadRadius: 20,
+    ),
+    BoxShadow(
+      color: Colors.black.withOpacity(0.4),
+      blurRadius: 20,
+      spreadRadius: 10,
+    ),
+  ];
+
+  static const Color _kKeyUmbraOpacity = Color(0x33000000); // alpha = 0.2
+  static const Color _kKeyPenumbraOpacity = Color(0x24000000); // alpha = 0.14
+  static const Color _kAmbientShadowOpacity = Color(0x1F000000); // alpha = 0.12
+  static BoxDecoration commonCardBoxDecoration = const BoxDecoration(
+    boxShadow: [
+      BoxShadow(color: _kKeyUmbraOpacity),
+      BoxShadow(color: _kKeyPenumbraOpacity),
+      BoxShadow(color: _kAmbientShadowOpacity),
+    ],
+  );
 }

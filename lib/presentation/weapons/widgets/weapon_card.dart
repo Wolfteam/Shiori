@@ -6,10 +6,10 @@ import 'package:shiori/application/bloc.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/generated/l10n.dart';
+import 'package:shiori/presentation/shared/custom_divider.dart';
 import 'package:shiori/presentation/shared/extensions/i18n_extensions.dart';
 import 'package:shiori/presentation/shared/extensions/rarity_extensions.dart';
 import 'package:shiori/presentation/shared/gradient_card.dart';
-import 'package:shiori/presentation/shared/images/comingsoon_new_avatar.dart';
 import 'package:shiori/presentation/shared/images/rarity.dart';
 import 'package:shiori/presentation/shared/loading.dart';
 import 'package:shiori/presentation/shared/styles.dart';
@@ -91,96 +91,41 @@ class WeaponCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final s = S.of(context);
-    final theme = Theme.of(context);
-    return InkWell(
-      borderRadius: Styles.mainCardBorderRadius,
-      onTap: () => _gotoWeaponPage(context),
-      child: GradientCard(
-        clipBehavior: Clip.hardEdge,
-        shape: withShape ? Styles.mainCardShape : null,
-        elevation: withElevation ? Styles.cardTenElevation : 0,
-        gradient: rarity.getRarityGradient(),
-        child: Padding(
-          padding: Styles.edgeInsetAll5,
-          child: Column(
+    return SizedBox(
+      width: imgWidth * 1.5,
+      height: imgHeight * 2.3,
+      child: InkWell(
+        borderRadius: Styles.mainCardBorderRadius,
+        onTap: () => _gotoWeaponPage(context),
+        child: GradientCard(
+          clipBehavior: Clip.hardEdge,
+          shape: withShape ? Styles.mainCardShape : null,
+          elevation: withElevation ? Styles.cardTenElevation : 0,
+          gradient: rarity.getRarityGradient(),
+          child: Stack(
+            alignment: Alignment.center,
+            fit: StackFit.expand,
             children: [
-              if (withoutDetails)
-                FadeInImage(
-                  width: imgWidth,
-                  height: imgHeight,
-                  placeholder: MemoryImage(kTransparentImage),
-                  image: FileImage(File(image)),
-                )
-              else
-                Stack(
-                  alignment: AlignmentDirectional.topCenter,
-                  fit: StackFit.passthrough,
-                  children: [
-                    FadeInImage(
-                      width: imgWidth,
-                      height: imgHeight,
-                      placeholder: MemoryImage(kTransparentImage),
-                      image: FileImage(File(image)),
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        ComingSoonNewAvatar(
-                          isNew: false,
-                          isComingSoon: isComingSoon,
-                        ),
-                      ],
-                    ),
-                  ],
+              FadeInImage(
+                width: imgWidth,
+                height: imgHeight,
+                placeholder: MemoryImage(kTransparentImage),
+                fit: BoxFit.fill,
+                placeholderFit: BoxFit.fill,
+                alignment: Alignment.topCenter,
+                image: FileImage(File(image)),
+              ),
+              Align(
+                alignment: Alignment.bottomCenter,
+                child: _Bottom(
+                  name: name,
+                  rarity: rarity,
+                  baseAtk: baseAtk,
+                  type: type,
+                  subStatType: subStatType,
+                  subStatValue: subStatValue,
+                  withoutDetails: withoutDetails,
                 ),
-              if (!withoutDetails)
-                Tooltip(
-                  message: name,
-                  child: Text(
-                    name,
-                    overflow: TextOverflow.ellipsis,
-                    style: theme.textTheme.titleMedium!.copyWith(fontWeight: FontWeight.bold, color: Colors.white),
-                  ),
-                ),
-              Rarity(stars: rarity),
-              BlocBuilder<SettingsBloc, SettingsState>(
-                builder: (context, state) {
-                  return state.map(
-                    loading: (_) => const Loading(useScaffold: false),
-                    loaded: (settingsState) {
-                      if (withoutDetails || !settingsState.showWeaponDetails) {
-                        return const SizedBox();
-                      }
-
-                      return Container(
-                        margin: Styles.edgeInsetHorizontal16,
-                        child: Column(
-                          children: [
-                            Text(
-                              '${s.translateStatTypeWithoutValue(StatType.atk)}: $baseAtk',
-                              textAlign: TextAlign.center,
-                              overflow: TextOverflow.ellipsis,
-                              style: const TextStyle(color: Colors.white),
-                            ),
-                            Text(
-                              '${s.type}: ${s.translateWeaponType(type!)}',
-                              textAlign: TextAlign.center,
-                              overflow: TextOverflow.ellipsis,
-                              style: const TextStyle(color: Colors.white),
-                            ),
-                            Text(
-                              '${s.subStat}: ${s.translateStatType(subStatType!, subStatValue!)}',
-                              textAlign: TextAlign.center,
-                              overflow: TextOverflow.ellipsis,
-                              style: const TextStyle(color: Colors.white),
-                            ),
-                          ],
-                        ),
-                      );
-                    },
-                  );
-                },
               ),
             ],
           ),
@@ -198,5 +143,86 @@ class WeaponCard extends StatelessWidget {
     final route = MaterialPageRoute(builder: (c) => WeaponPage(itemKey: keyName));
     await Navigator.push(context, route);
     await route.completed;
+  }
+}
+
+class _Bottom extends StatelessWidget {
+  final String name;
+  final int rarity;
+  final double? baseAtk;
+  final WeaponType? type;
+  final StatType? subStatType;
+  final double? subStatValue;
+  final bool withoutDetails;
+
+  const _Bottom({
+    required this.name,
+    required this.rarity,
+    this.baseAtk,
+    this.type,
+    this.subStatType,
+    this.subStatValue,
+    required this.withoutDetails,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final s = S.of(context);
+    final theme = Theme.of(context);
+    final detailTextStyle = theme.textTheme.bodySmall!.copyWith(color: Colors.white);
+    return Container(
+      decoration: Styles.commonCardBoxDecoration,
+      width: double.infinity,
+      padding: Styles.edgeInsetAll5,
+      child: BlocBuilder<SettingsBloc, SettingsState>(
+        builder: (context, state) => state.map(
+          loading: (_) => const Loading(useScaffold: false),
+          loaded: (state) => Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            mainAxisAlignment: MainAxisAlignment.end,
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              if (!withoutDetails)
+                Tooltip(
+                  message: name,
+                  child: Text(
+                    name,
+                    overflow: TextOverflow.ellipsis,
+                    textAlign: TextAlign.center,
+                    style: theme.textTheme.titleMedium!.copyWith(fontWeight: FontWeight.bold, color: Colors.white),
+                  ),
+                ),
+              Rarity(
+                stars: rarity,
+                color: Colors.white,
+                compact: withoutDetails,
+              ),
+              if (!withoutDetails && state.showWeaponDetails) const CustomDivider(),
+              if (!withoutDetails && state.showWeaponDetails)
+                Text(
+                  '${s.translateStatTypeWithoutValue(StatType.atk)}: $baseAtk',
+                  textAlign: TextAlign.center,
+                  overflow: TextOverflow.ellipsis,
+                  style: detailTextStyle,
+                ),
+              if (!withoutDetails && state.showWeaponDetails)
+                Text(
+                  '${s.type}: ${s.translateWeaponType(type!)}',
+                  textAlign: TextAlign.center,
+                  overflow: TextOverflow.ellipsis,
+                  style: detailTextStyle,
+                ),
+              if (!withoutDetails && state.showWeaponDetails)
+                Text(
+                  '${s.subStat}: ${s.translateStatType(subStatType!, subStatValue!)}',
+                  textAlign: TextAlign.center,
+                  overflow: TextOverflow.ellipsis,
+                  style: detailTextStyle,
+                ),
+            ],
+          ),
+        ),
+      ),
+    );
   }
 }

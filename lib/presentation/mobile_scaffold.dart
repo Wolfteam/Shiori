@@ -63,6 +63,9 @@ class _MobileScaffoldState extends State<MobileScaffold> with SingleTickerProvid
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _index,
         showUnselectedLabels: true,
+        useLegacyColorScheme: false,
+        type: BottomNavigationBarType.fixed,
+        landscapeLayout: BottomNavigationBarLandscapeLayout.linear,
         items: [
           BottomNavigationBarItem(label: s.characters, icon: const Icon(Icons.people)),
           BottomNavigationBarItem(label: s.weapons, icon: const Icon(Shiori.crossed_swords)),
@@ -70,7 +73,6 @@ class _MobileScaffoldState extends State<MobileScaffold> with SingleTickerProvid
           BottomNavigationBarItem(label: s.artifacts, icon: const Icon(Shiori.overmind)),
           BottomNavigationBarItem(label: s.map, icon: const Icon(Icons.map)),
         ],
-        type: BottomNavigationBarType.fixed,
         onTap: (index) => _gotoTab(index),
       ),
     );

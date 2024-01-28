@@ -25,7 +25,7 @@ class CharacterAscensionMaterials extends StatelessWidget {
     return Tooltip(
       message: s.ascensionMaterials,
       child: Wrap(
-        alignment: WrapAlignment.spaceEvenly,
+        alignment: WrapAlignment.center,
         crossAxisAlignment: WrapCrossAlignment.center,
         children: imgsToRender.map((e) => _MaterialItem(image: e)).toList(),
       ),

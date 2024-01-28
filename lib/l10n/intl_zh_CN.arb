@@ -62,8 +62,8 @@
   "map": "地图",
   "type": "种类",
   "baseAtk": "基础攻击",
-  "secondaryState": "生命值",
-  "secondaryStatValue": "生命值",
+  "secondaryState": "副属性",
+  "secondaryStatValue": "副属性",
   "location": "位置",
   "loading": "加载中",
   "forCharacters": "用于角色",
@@ -492,5 +492,14 @@
   "wishHistoryXStar": "{stars}星",
   "artifact": "圣遗物",
   "material": "材料",
-  "close": "关闭"
+  "close": "关闭",
+  "later": "Later",
+  "youCanSkipFirstResourceDownloadMsg": "You can skip the initial resource download though some features may be disabled",
+  "firstResourceDownloadSkippedMsg": "Some features may be disabled until you complete the initial resource download\nYou can complete it in the app settings",
+  "inInventory": "In inventory",
+  "available": "Available",
+  "required": "Required",
+  "remaining": "Remaining",
+  "used": "Used",
+  "showMaterialUsage": "Show material usage"
 }

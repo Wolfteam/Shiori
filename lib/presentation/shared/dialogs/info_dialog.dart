@@ -23,7 +23,7 @@ class InfoDialog extends StatelessWidget {
         ),
       ),
       actions: [
-        ElevatedButton(
+        FilledButton(
           onPressed: () => Navigator.of(context).pop(),
           child: Text(s.ok),
         ),

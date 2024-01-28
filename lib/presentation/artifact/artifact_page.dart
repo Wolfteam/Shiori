@@ -11,9 +11,10 @@ import 'package:shiori/presentation/shared/details/detail_bottom_portrait_layout
 import 'package:shiori/presentation/shared/details/detail_general_card.dart';
 import 'package:shiori/presentation/shared/details/detail_tab_landscape_layout.dart';
 import 'package:shiori/presentation/shared/details/detail_top_layout.dart';
+import 'package:shiori/presentation/shared/disabled_card_surface_tint_color.dart';
 import 'package:shiori/presentation/shared/extensions/rarity_extensions.dart';
-import 'package:shiori/presentation/shared/images/circle_character.dart';
-import 'package:shiori/presentation/shared/images/circle_monster.dart';
+import 'package:shiori/presentation/shared/images/character_icon_image.dart';
+import 'package:shiori/presentation/shared/images/monster_icon_image.dart';
 import 'package:shiori/presentation/shared/item_description_detail.dart';
 import 'package:shiori/presentation/shared/loading.dart';
 import 'package:shiori/presentation/shared/scaffold_with_fab.dart';
@@ -25,12 +26,20 @@ class ArtifactPage extends StatelessWidget {
 
   const ArtifactPage({super.key, required this.itemKey});
 
+  static Future<void> route(String itemKey, BuildContext context) async {
+    final route = MaterialPageRoute(builder: (c) => ArtifactPage(itemKey: itemKey));
+    await Navigator.push(context, route);
+    await route.completed;
+  }
+
   @override
   Widget build(BuildContext context) {
     final isPortrait = MediaQuery.of(context).orientation == Orientation.portrait;
-    return BlocProvider(
-      create: (context) => Injection.artifactBloc..add(ArtifactEvent.loadFromKey(key: itemKey)),
-      child: isPortrait ? const _PortraitLayout() : const _LandscapeLayout(),
+    return DisabledSurfaceCardTintColor(
+      child: BlocProvider(
+        create: (context) => Injection.artifactBloc..add(ArtifactEvent.loadFromKey(key: itemKey)),
+        child: isPortrait ? const _PortraitLayout() : const _LandscapeLayout(),
+      ),
     );
   }
 }
@@ -99,7 +108,7 @@ class _PortraitLayout extends StatelessWidget {
                           title: s.builds,
                           body: Wrap(
                             alignment: WrapAlignment.center,
-                            children: state.charImages.map((e) => CircleCharacter(itemKey: e.key, image: e.iconImage, radius: size)).toList(),
+                            children: state.charImages.map((e) => CharacterIconImage(itemKey: e.key, image: e.iconImage, size: size)).toList(),
                           ),
                           textColor: rarityColor,
                         ),
@@ -108,7 +117,7 @@ class _PortraitLayout extends StatelessWidget {
                           title: s.droppedBy,
                           body: Wrap(
                             alignment: WrapAlignment.center,
-                            children: state.droppedBy.map((e) => CircleMonster(itemKey: e.key, image: e.image, radius: size)).toList(),
+                            children: state.droppedBy.map((e) => MonsterIconImage(itemKey: e.key, image: e.image, radius: size)).toList(),
                           ),
                           textColor: rarityColor,
                         ),
@@ -211,7 +220,7 @@ class _LandscapeLayout extends StatelessWidget {
                               title: s.builds,
                               body: Wrap(
                                 alignment: WrapAlignment.center,
-                                children: state.charImages.map((e) => CircleCharacter(itemKey: e.key, image: e.iconImage, radius: imgSize)).toList(),
+                                children: state.charImages.map((e) => CharacterIconImage(itemKey: e.key, image: e.iconImage, size: imgSize)).toList(),
                               ),
                               textColor: rarityColor,
                             ),
@@ -222,7 +231,7 @@ class _LandscapeLayout extends StatelessWidget {
                               title: s.droppedBy,
                               body: Wrap(
                                 alignment: WrapAlignment.center,
-                                children: state.droppedBy.map((e) => CircleMonster(itemKey: e.key, image: e.image, radius: imgSize)).toList(),
+                                children: state.droppedBy.map((e) => MonsterIconImage(itemKey: e.key, image: e.image, radius: imgSize)).toList(),
                               ),
                               textColor: rarityColor,
                             ),

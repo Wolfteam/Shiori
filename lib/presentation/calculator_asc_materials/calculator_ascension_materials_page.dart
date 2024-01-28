@@ -13,9 +13,9 @@ import 'package:shiori/injection.dart';
 import 'package:shiori/presentation/calculator_asc_materials/widgets/add_edit_item_bottom_sheet.dart';
 import 'package:shiori/presentation/calculator_asc_materials/widgets/ascension_materials_summary.dart';
 import 'package:shiori/presentation/calculator_asc_materials/widgets/item_card.dart';
-import 'package:shiori/presentation/calculator_asc_materials/widgets/reorder_items_dialog.dart';
 import 'package:shiori/presentation/characters/characters_page.dart';
 import 'package:shiori/presentation/shared/dialogs/confirm_dialog.dart';
+import 'package:shiori/presentation/shared/dialogs/sort_items_dialog.dart';
 import 'package:shiori/presentation/shared/extensions/i18n_extensions.dart';
 import 'package:shiori/presentation/shared/hawk_fab_menu.dart';
 import 'package:shiori/presentation/shared/item_description_detail.dart';
@@ -36,8 +36,7 @@ class CalculatorAscensionMaterialsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (ctx) => Injection.getCalculatorAscMaterialsBloc(ctx.read<CalculatorAscMaterialsSessionsBloc>())
-        ..add(CalculatorAscMaterialsEvent.init(sessionKey: sessionKey)),
+      create: (ctx) => Injection.calculatorAscMaterialsBloc..add(CalculatorAscMaterialsEvent.init(sessionKey: sessionKey)),
       child: Scaffold(
         appBar: _AppBar(sessionKey: sessionKey),
         body: SafeArea(
@@ -64,7 +63,19 @@ class _AppBar extends StatelessWidget implements PreferredSizeWidget {
             IconButton(
               icon: const Icon(Icons.unfold_more),
               splashRadius: Styles.mediumButtonSplashRadius,
-              onPressed: () => _showReorderDialog(state.items, context),
+              onPressed: () => showDialog<SortResult<SortableItemOfT<ItemAscensionMaterials>>>(
+                context: context,
+                builder: (_) => SortItemsDialog<SortableItemOfT<ItemAscensionMaterials>>(
+                  items: state.items.map((e) => SortableItemOfT(e.key, e.name, e)).toList(),
+                ),
+              ).then((result) {
+                if (result == null || !result.somethingChanged) {
+                  return;
+                }
+
+                final sorted = result.items.map((e) => e.item).toList();
+                context.read<CalculatorAscMaterialsBloc>().add(CalculatorAscMaterialsEvent.itemsReordered(sorted));
+              }),
             ),
           if (state.items.isNotEmpty)
             IconButton(
@@ -79,16 +90,6 @@ class _AppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Size get preferredSize => const Size.fromHeight(kToolbarHeight);
-
-  Future<void> _showReorderDialog(List<ItemAscensionMaterials> items, BuildContext context) async {
-    await showDialog(
-      context: context,
-      builder: (_) => BlocProvider.value(
-        value: context.read<CalculatorAscMaterialsBloc>(),
-        child: ReorderItemsDialog(sessionKey: sessionKey, items: items),
-      ),
-    );
-  }
 
   Future<void> _showDeleteAllDialog(BuildContext context) async {
     final s = S.of(context);
@@ -110,27 +111,21 @@ class _FabMenu extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
     final s = S.of(context);
     final isPortrait = MediaQuery.of(context).orientation == Orientation.portrait;
     final size = getDeviceType(MediaQuery.of(context).size);
     return HawkFabMenu(
       icon: AnimatedIcons.menu_arrow,
-      fabColor: theme.colorScheme.secondary,
       items: [
         HawkFabMenuItem(
           label: s.addCharacter,
           ontap: () => _openCharacterPage(context),
           icon: const Icon(Icons.people),
-          color: theme.colorScheme.secondary,
-          labelColor: theme.colorScheme.secondary,
         ),
         HawkFabMenuItem(
           label: s.addWeapon,
           ontap: () => _openWeaponPage(context),
           icon: const Icon(Shiori.crossed_swords),
-          color: theme.colorScheme.secondary,
-          labelColor: theme.colorScheme.secondary,
         ),
       ],
       body: BlocBuilder<CalculatorAscMaterialsBloc, CalculatorAscMaterialsState>(
@@ -139,17 +134,17 @@ class _FabMenu extends StatelessWidget {
             if (state.items.isEmpty) {
               return NothingFoundColumn(msg: s.startByAddingMsg, icon: Icons.add_circle_outline);
             }
-            final summary = _buildSummary(s, state.summary);
+            final summary = _buildSummary(s, state.summary, state.showMaterialUsage);
             switch (size) {
               case DeviceScreenType.mobile:
               case DeviceScreenType.tablet:
               case DeviceScreenType.desktop:
                 if (isPortrait) {
-                  return _PortraitLayout(sessionKey: sessionKey, items: state.items, summary: summary);
+                  return _PortraitLayout(sessionKey: sessionKey, items: state.items, summary: summary, showMaterialUsage: state.showMaterialUsage);
                 }
-                return _LandscapeLayout(sessionKey: sessionKey, items: state.items, summary: summary);
+                return _LandscapeLayout(sessionKey: sessionKey, items: state.items, summary: summary, showMaterialUsage: state.showMaterialUsage);
               default:
-                return _PortraitLayout(sessionKey: sessionKey, items: state.items, summary: summary);
+                return _PortraitLayout(sessionKey: sessionKey, items: state.items, summary: summary, showMaterialUsage: state.showMaterialUsage);
             }
           },
         ),
@@ -157,10 +152,10 @@ class _FabMenu extends StatelessWidget {
     );
   }
 
-  List<AscensionMaterialsSummaryWidget> _buildSummary(S s, List<AscensionMaterialsSummary> items) {
+  List<AscensionMaterialsSummaryWidget> _buildSummary(S s, List<AscensionMaterialsSummary> items, bool showMaterialUsage) {
     return items
         .orderBy((x) => s.translateAscensionSummaryType(x.type))
-        .map((e) => AscensionMaterialsSummaryWidget(summary: e, sessionKey: sessionKey))
+        .map((e) => AscensionMaterialsSummaryWidget(summary: e, sessionKey: sessionKey, showMaterialUsage: showMaterialUsage))
         .toList();
   }
 
@@ -211,11 +206,13 @@ class _PortraitLayout extends StatelessWidget {
   final int sessionKey;
   final List<ItemAscensionMaterials> items;
   final List<Widget> summary;
+  final bool showMaterialUsage;
 
   const _PortraitLayout({
     required this.sessionKey,
     required this.items,
     required this.summary,
+    required this.showMaterialUsage,
   });
 
   @override
@@ -256,6 +253,7 @@ class _PortraitLayout extends StatelessWidget {
                         isWeapon: !e.isCharacter,
                         materials: e.materials,
                         elementType: e.elementType,
+                        showMaterialUsage: showMaterialUsage,
                       ),
                     ),
                   )
@@ -283,11 +281,13 @@ class _LandscapeLayout extends StatefulWidget {
   final int sessionKey;
   final List<ItemAscensionMaterials> items;
   final List<Widget> summary;
+  final bool showMaterialUsage;
 
   const _LandscapeLayout({
     required this.sessionKey,
     required this.items,
     required this.summary,
+    required this.showMaterialUsage,
   });
 
   @override
@@ -348,6 +348,7 @@ class _LandscapeLayoutState extends State<_LandscapeLayout> {
                               isWeapon: !e.isCharacter,
                               materials: e.materials,
                               elementType: e.elementType,
+                              showMaterialUsage: widget.showMaterialUsage,
                             ),
                           ),
                         )

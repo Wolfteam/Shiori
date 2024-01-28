@@ -7,7 +7,7 @@ import 'package:shiori/generated/l10n.dart';
 import 'package:shiori/presentation/shared/dialogs/select_character_role_sub_type_dialog.dart';
 import 'package:shiori/presentation/shared/dialogs/select_character_role_type_dialog.dart';
 import 'package:shiori/presentation/shared/extensions/i18n_extensions.dart';
-import 'package:shiori/presentation/shared/images/circle_character.dart';
+import 'package:shiori/presentation/shared/images/character_icon_image.dart';
 import 'package:shiori/presentation/shared/item_popupmenu_filter.dart';
 import 'package:shiori/presentation/shared/styles.dart';
 
@@ -18,14 +18,12 @@ enum _Options {
 
 class TeamCharacterRow extends StatelessWidget {
   final CustomBuildTeamCharacterModel character;
-  final int teamCount;
   final Color color;
   final bool readyToShare;
 
   const TeamCharacterRow({
     super.key,
     required this.character,
-    required this.teamCount,
     required this.color,
     required this.readyToShare,
   });
@@ -37,10 +35,10 @@ class TeamCharacterRow extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        CircleCharacter(
+        CharacterIconImage(
           itemKey: character.key,
           image: character.iconImage,
-          radius: 55,
+          size: 55,
         ),
         Expanded(
           child: Padding(

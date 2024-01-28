@@ -18,5 +18,6 @@ class SettingsState with _$SettingsState {
     required List<AppUnlockedFeature> unlockedFeatures,
     required int resourceVersion,
     required bool checkForUpdatesOnStartup,
+    required bool noResourcesHaveBeenDownloaded,
   }) = _LoadedState;
 }

@@ -29,29 +29,37 @@ void main() {
     }
   }
 
-  test('Get characters for card', () async {
+  group('Get characters for card', () {
     for (final lang in AppLanguageType.values) {
-      final service = await getCharacterFileService(lang);
-      final characters = service.getCharactersForCard();
-      checkKeys(characters.map((e) => e.key).toList());
+      test('language = ${lang.name}', () async {
+        final service = await getCharacterFileService(lang);
+        final characters = service.getCharactersForCard();
+        checkKeys(characters.map((e) => e.key).toList());
 
-      final materialImgs = service.materials.getAllMaterialsForCard().map((e) => e.image).toList();
-      for (final char in characters) {
-        checkKey(char.key);
-        expect(char.name, allOf([isNotEmpty, isNotNull]));
-        checkAsset(char.image);
-        expect(char.stars, allOf([greaterThanOrEqualTo(4), lessThanOrEqualTo(5)]));
-        if (char.isNew || char.isComingSoon) {
-          expect(char.isNew, isNot(char.isComingSoon));
-        }
+        final materialImgs = service.materials.getAllMaterialsForCard().map((e) => e.image).toList();
+        for (final char in characters) {
+          checkKey(char.key);
+          expect(char.name, allOf([isNotEmpty, isNotNull]));
+          checkAsset(char.image);
+          expect(char.stars, allOf([greaterThanOrEqualTo(4), lessThanOrEqualTo(5)]));
+          if (char.isNew || char.isComingSoon) {
+            expect(char.isNew, isNot(char.isComingSoon));
+          }
 
-        if (!char.isComingSoon) {
-          expect(char.materials, isNotEmpty);
-          final expected = materialImgs.where((el) => char.materials.contains(el)).length;
-          expect(char.materials.length, equals(expected));
+          if (!char.isComingSoon) {
+            expect(char.materials, isNotEmpty);
+            final expected = materialImgs.where((el) => char.materials.contains(el)).length;
+            expect(char.materials.length, equals(expected));
+          }
         }
-      }
+      });
     }
+
+    test('no resources have been downloaded', () async {
+      final service = await getCharacterFileService(AppLanguageType.english, noResourcesHaveBeenDownloaded: true);
+      final characters = service.getCharactersForCard();
+      expect(characters.isEmpty, isTrue);
+    });
   });
 
   test('Get character', () async {

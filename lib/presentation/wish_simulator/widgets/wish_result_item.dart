@@ -138,20 +138,7 @@ class _BottomPart extends StatelessWidget {
       child: Align(
         alignment: Alignment.bottomCenter,
         child: DecoratedBox(
-          decoration: BoxDecoration(
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black.withOpacity(0.3),
-                blurRadius: 40,
-                spreadRadius: 20,
-              ),
-              BoxShadow(
-                color: Colors.black.withOpacity(0.15),
-                blurRadius: 20,
-                spreadRadius: 10,
-              ),
-            ],
-          ),
+          decoration: BoxDecoration(boxShadow: Styles.commonBlackShadow),
           child: Container(
             margin: const EdgeInsets.only(bottom: 45),
             child: Column(

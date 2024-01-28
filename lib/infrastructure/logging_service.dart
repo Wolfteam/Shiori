@@ -12,12 +12,17 @@ class LoggingServiceImpl implements LoggingService {
   final DeviceInfoService _deviceInfoService;
   final _logger = Logger();
   final _formatter = DateFormat('yyyy-MM-dd-HH');
+  final bool _isLoggingEnabled;
 
-  LoggingServiceImpl(this._telemetryService, this._deviceInfoService);
+  LoggingServiceImpl(this._telemetryService, this._deviceInfoService, this._isLoggingEnabled);
 
   @override
   void info(Type type, String msg, [List<Object>? args]) {
     assert(!msg.isNullEmptyOrWhitespace);
+
+    if (!_isLoggingEnabled) {
+      return;
+    }
 
     if (args != null && args.isNotEmpty) {
       _logger.i('$type - ${sprintf(msg, args)}');
@@ -33,6 +38,10 @@ class LoggingServiceImpl implements LoggingService {
       return;
     }
 
+    if (!_isLoggingEnabled) {
+      return;
+    }
+
     if (args != null && args.isNotEmpty) {
       _logger.d('$type - ${sprintf(msg, args)}');
     } else {
@@ -43,6 +52,11 @@ class LoggingServiceImpl implements LoggingService {
   @override
   void warning(Type type, String msg, [dynamic ex, StackTrace? trace]) {
     assert(!msg.isNullEmptyOrWhitespace);
+
+    if (!_isLoggingEnabled) {
+      return;
+    }
+
     final tag = type.toString();
     _logger.w('$tag - ${_formatEx(msg, ex)}', error: ex, stackTrace: trace);
 
@@ -54,6 +68,11 @@ class LoggingServiceImpl implements LoggingService {
   @override
   void error(Type type, String msg, [dynamic ex, StackTrace? trace]) {
     assert(!msg.isNullEmptyOrWhitespace);
+
+    if (!_isLoggingEnabled) {
+      return;
+    }
+
     final tag = type.toString();
     _logger.e('$tag - ${_formatEx(msg, ex)}', error: ex, stackTrace: trace);
 

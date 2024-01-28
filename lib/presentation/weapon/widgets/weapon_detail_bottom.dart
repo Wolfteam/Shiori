@@ -5,7 +5,7 @@ import 'package:shiori/generated/l10n.dart';
 import 'package:shiori/presentation/shared/details/detail_bottom_portrait_layout.dart';
 import 'package:shiori/presentation/shared/details/detail_tab_landscape_layout.dart';
 import 'package:shiori/presentation/shared/extensions/rarity_extensions.dart';
-import 'package:shiori/presentation/shared/images/circle_character.dart';
+import 'package:shiori/presentation/shared/images/character_icon_image.dart';
 import 'package:shiori/presentation/shared/item_description_detail.dart';
 import 'package:shiori/presentation/shared/styles.dart';
 import 'package:shiori/presentation/shared/utils/size_utils.dart';
@@ -103,7 +103,7 @@ class _PortraitLayout extends StatelessWidget {
             title: s.builds,
             body: Wrap(
               alignment: WrapAlignment.center,
-              children: charImgs.map((e) => CircleCharacter.fromItem(item: e, radius: SizeUtils.getSizeForCircleImages(context))).toList(),
+              children: charImgs.map((e) => CharacterIconImage.circleItem(item: e, size: SizeUtils.getSizeForCircleImages(context))).toList(),
             ),
             textColor: rarityColor,
           ),
@@ -191,7 +191,7 @@ class _LandscapeLayout extends StatelessWidget {
                   title: s.builds,
                   body: Wrap(
                     alignment: WrapAlignment.center,
-                    children: charImgs.map((e) => CircleCharacter.fromItem(item: e, radius: SizeUtils.getSizeForCircleImages(context))).toList(),
+                    children: charImgs.map((e) => CharacterIconImage.circleItem(item: e, size: SizeUtils.getSizeForCircleImages(context))).toList(),
                   ),
                   textColor: rarityColor,
                 ),

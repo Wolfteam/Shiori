@@ -36,7 +36,7 @@ void main() {
     final localeService = LocaleServiceImpl(settingsService);
     resourceService = getResourceService(settingsService);
     genshinService = GenshinServiceImpl(resourceService, localeService);
-    dataService = DataServiceImpl(genshinService, CalculatorServiceImpl(genshinService, resourceService), resourceService);
+    dataService = DataServiceImpl(genshinService, CalculatorAscMaterialsServiceImpl(genshinService, resourceService), resourceService);
     telemetryService = MockTelemetryService();
     loggingService = MockLoggingService();
     customBuildsBloc = CustomBuildsBloc(dataService);

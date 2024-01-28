@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/presentation/home/widgets/ascension_material_item_card.dart';
-import 'package:shiori/presentation/shared/images/circle_character.dart';
+import 'package:shiori/presentation/shared/images/character_icon_image.dart';
 
 class CharCardAscensionMaterial extends StatelessWidget {
   final String itemKey;
@@ -37,17 +37,14 @@ class CharCardAscensionMaterial extends StatelessWidget {
       name: name,
       image: image,
       days: days,
-      child: Container(
-        margin: const EdgeInsets.only(top: 10),
-        child: SizedBox(
-          height: 70,
-          child: ListView.builder(
-            shrinkWrap: true,
-            itemCount: charImgs.length,
-            physics: const BouncingScrollPhysics(),
-            scrollDirection: Axis.horizontal,
-            itemBuilder: (ctx, index) => CircleCharacter.fromItem(item: charImgs[index]),
-          ),
+      child: SizedBox(
+        height: 70,
+        child: ListView.builder(
+          shrinkWrap: true,
+          itemCount: charImgs.length,
+          physics: const BouncingScrollPhysics(),
+          scrollDirection: Axis.horizontal,
+          itemBuilder: (ctx, index) => CharacterIconImage.circleItem(item: charImgs[index]),
         ),
       ),
     );

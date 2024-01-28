@@ -67,15 +67,15 @@ class _ChangeCurrentDayDialogState extends State<ChangeCurrentDayDialog> {
         ),
       ),
       actions: [
-        OutlinedButton(
+        TextButton(
           onPressed: () => Navigator.pop(context),
-          child: Text(s.cancel, style: TextStyle(color: theme.primaryColor)),
+          child: Text(s.cancel),
         ),
-        OutlinedButton(
+        TextButton(
           onPressed: () => Navigator.pop<int>(context, -1),
-          child: Text(s.restore, style: TextStyle(color: theme.primaryColor)),
+          child: Text(s.restore),
         ),
-        ElevatedButton(
+        FilledButton(
           onPressed: () => Navigator.pop<int>(context, currentSelectedDay),
           child: Text(s.ok),
         ),

@@ -1,11 +1,12 @@
 import 'package:hive/hive.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/models/entities.dart';
+import 'package:shiori/domain/models/entities/base_entity.dart';
 
 part 'notification_weekly_boss.g.dart';
 
 @HiveType(typeId: 17)
-class NotificationWeeklyBoss extends HiveObject implements NotificationBase {
+class NotificationWeeklyBoss extends BaseEntity implements NotificationBase {
   @override
   @HiveField(0)
   final int type;

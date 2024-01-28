@@ -23,7 +23,6 @@ class DetailGeneralCard extends StatelessWidget {
     return Card(
       color: color.withOpacity(0.1),
       elevation: Styles.cardTenElevation,
-      margin: Styles.edgeInsetAll5,
       shape: Styles.cardShape,
       child: Padding(
         padding: Styles.edgeInsetAll10,
@@ -37,7 +36,12 @@ class DetailGeneralCard extends StatelessWidget {
               overflow: TextOverflow.ellipsis,
               style: theme.textTheme.headlineSmall!.copyWith(fontWeight: FontWeight.bold, color: Colors.white),
             ),
-            Rarity(stars: rarity, starSize: 25, alignment: MainAxisAlignment.start),
+            Rarity(
+              stars: rarity,
+              starSize: 25,
+              color: Colors.white,
+              centered: false,
+            ),
             ...children,
           ],
         ),

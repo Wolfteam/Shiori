@@ -4,8 +4,8 @@ import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/generated/l10n.dart';
 import 'package:shiori/presentation/shared/common_table_cell.dart';
 import 'package:shiori/presentation/shared/extensions/element_type_extensions.dart';
-import 'package:shiori/presentation/shared/images/wrapped_ascension_material.dart';
 import 'package:shiori/presentation/shared/item_description_detail.dart';
+import 'package:shiori/presentation/shared/material_quantity_row.dart';
 import 'package:shiori/presentation/shared/styles.dart';
 
 class CharacterDetailAscensionMaterialsCard extends StatelessWidget {
@@ -54,7 +54,7 @@ class CharacterDetailAscensionMaterialsCard extends StatelessWidget {
   }
 
   TableRow _buildAscensionRow(CharacterAscensionModel model) {
-    final materials = model.materials.map((m) => WrappedAscensionMaterial(itemKey: m.key, image: m.image, quantity: m.quantity)).toList();
+    final materials = model.materials.map((m) => MaterialQuantityRow.fromAscensionMaterial(item: m)).toList();
     return TableRow(
       children: [
         CommonTableCell(text: '${model.rank}', padding: Styles.edgeInsetAll10),

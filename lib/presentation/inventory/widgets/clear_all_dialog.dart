@@ -47,11 +47,11 @@ class _ClearAllDialogState extends State<ClearAllDialog> {
         ),
       ),
       actions: [
-        OutlinedButton(
+        TextButton(
           onPressed: () => Navigator.pop(context),
-          child: Text(s.cancel, style: TextStyle(color: theme.primaryColor)),
+          child: Text(s.cancel),
         ),
-        ElevatedButton(
+        FilledButton(
           onPressed: () => _clearAll(context),
           child: Text(s.ok),
         ),

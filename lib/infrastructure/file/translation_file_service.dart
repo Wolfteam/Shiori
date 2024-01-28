@@ -17,15 +17,27 @@ class TranslationFileServiceImpl extends TranslationFileService {
   TranslationFileService get translations => this;
 
   @override
-  Future<void> init(String assetPath) {
+  Future<void> init(String assetPath, {bool noResourcesHaveBeenDownloaded = false}) {
     // TODO: implement init
     throw UnimplementedError();
   }
 
   @override
-  Future<void> initTranslations(AppLanguageType languageType, String assetPath) async {
+  Future<void> initTranslations(AppLanguageType languageType, String assetPath, {bool noResourcesHaveBeenDownloaded = false}) async {
     _currentLanguage = languageType;
-
+    if (noResourcesHaveBeenDownloaded) {
+      _translationFile = TranslationFile(
+        characters: [],
+        weapons: [],
+        artifacts: [],
+        materials: [],
+        debuffs: [],
+        reactions: [],
+        resonance: [],
+        monsters: [],
+      );
+      return;
+    }
     final json = await readJson(assetPath);
     _translationFile = TranslationFile.fromJson(json);
   }

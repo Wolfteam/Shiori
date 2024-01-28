@@ -124,7 +124,7 @@ class _ContentCard extends StatelessWidget {
         child: Container(
           alignment: Alignment.center,
           margin: const EdgeInsets.only(top: 25, bottom: 25, left: 10, right: 10),
-          color: theme.brightness == Brightness.dark ? theme.colorScheme.background.withOpacity(0.2) : theme.dividerColor,
+          color: theme.dividerColor,
           child: number != null
               ? Text(
                   '$number',

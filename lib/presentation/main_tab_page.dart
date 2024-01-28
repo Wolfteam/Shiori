@@ -72,6 +72,8 @@ class _MainTabPageState extends State<MainTabPage> with SingleTickerProviderStat
             ToastUtils.showInfoToast(toast, s.newAppVersionInStore);
           case AppResourceUpdateResultType.updated:
             ToastUtils.showSucceedToast(toast, s.resourceUpdateCompleted);
+          case AppResourceUpdateResultType.firstInstallSkipped:
+            ToastUtils.showInfoToast(toast, s.firstResourceDownloadSkippedMsg);
           case AppResourceUpdateResultType.updatesAvailable:
           case AppResourceUpdateResultType.noUpdatesAvailable:
           case AppResourceUpdateResultType.noInternetConnectionForFirstInstall:

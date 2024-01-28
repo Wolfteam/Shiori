@@ -33,7 +33,7 @@ void main() {
     localeService = LocaleServiceImpl(settingsService);
     resourceService = getResourceService(settingsService);
     genshinService = GenshinServiceImpl(resourceService, localeService);
-    dataService = DataServiceImpl(genshinService, CalculatorServiceImpl(genshinService, resourceService), resourceService);
+    dataService = DataServiceImpl(genshinService, CalculatorAscMaterialsServiceImpl(genshinService, resourceService), resourceService);
     manuallyInitLocale(localeService, AppLanguageType.english);
     return Future(() async {
       await genshinService.init(AppLanguageType.english);
@@ -101,7 +101,7 @@ void main() {
       'keqing is in inventory',
       build: () => CharacterBloc(genshinService, telemetryService, localeService, dataService, resourceService),
       setUp: () {
-        dataService.inventory.addItemToInventory('keqing', ItemType.character, 1);
+        dataService.inventory.addCharacterToInventory('keqing');
       },
       act: (bloc) => bloc.add(const CharacterEvent.loadFromKey(key: 'keqing')),
       //we skip 1 because since the event is not _AddedToInventory the bloc will emit a loading

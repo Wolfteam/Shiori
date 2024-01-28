@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shiori/application/bloc.dart';
 import 'package:shiori/domain/models/models.dart';
-import 'package:shiori/presentation/shared/images/circle_character.dart';
+import 'package:shiori/presentation/shared/images/character_icon_image.dart';
 import 'package:shiori/presentation/shared/styles.dart';
 
 class TierListFab extends StatelessWidget {
@@ -43,16 +43,16 @@ class _DraggableItem extends StatelessWidget {
     const double radius = 40;
     return Draggable<ItemCommon>(
       data: item,
-      feedback: CircleCharacter.fromItem(item: item, forDrag: true),
+      feedback: CharacterIconImage.circleItem(item: item, forDrag: true),
       childWhenDragging: CircleAvatar(
         backgroundColor: Colors.black.withOpacity(0.4),
         radius: radius,
       ),
       child: Container(
         margin: Styles.edgeInsetHorizontal16,
-        child: CircleCharacter.fromItem(
+        child: CharacterIconImage.circleItem(
           item: item,
-          radius: radius,
+          size: radius,
           gradient: Styles.blackGradientForCircleItems,
         ),
       ),

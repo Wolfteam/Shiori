@@ -288,11 +288,11 @@ class _LevelDialogState extends State<_LevelDialog> {
     return AlertDialog(
       title: Text(s.level),
       actions: [
-        OutlinedButton(
+        TextButton(
           onPressed: () => Navigator.pop(context),
           child: Text(s.cancel),
         ),
-        ElevatedButton(
+        FilledButton(
           onPressed: () => Navigator.pop<WeaponFileStatModel>(context, _currentValue),
           child: Text(s.ok),
         ),

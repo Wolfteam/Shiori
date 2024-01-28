@@ -21,7 +21,11 @@ class ArtifactFileServiceImpl extends ArtifactFileService {
   ArtifactFileServiceImpl(this._resourceService, this._translations);
 
   @override
-  Future<void> init(String assetPath) async {
+  Future<void> init(String assetPath, {bool noResourcesHaveBeenDownloaded = false}) async {
+    if (noResourcesHaveBeenDownloaded) {
+      _artifactsFile = ArtifactsFile(artifacts: []);
+      return;
+    }
     final json = await readJson(assetPath);
     _artifactsFile = ArtifactsFile.fromJson(json);
   }

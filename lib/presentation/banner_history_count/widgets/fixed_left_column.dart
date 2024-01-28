@@ -5,8 +5,9 @@ import 'package:shiori/generated/l10n.dart';
 import 'package:shiori/presentation/character/character_page.dart';
 import 'package:shiori/presentation/shared/dialogs/item_release_history_dialog.dart';
 import 'package:shiori/presentation/shared/extensions/rarity_extensions.dart';
-import 'package:shiori/presentation/shared/images/circle_character.dart';
-import 'package:shiori/presentation/shared/images/circle_weapon.dart';
+import 'package:shiori/presentation/shared/gradient_card.dart';
+import 'package:shiori/presentation/shared/images/character_icon_image.dart';
+import 'package:shiori/presentation/shared/images/weapon_icon_image.dart';
 import 'package:shiori/presentation/shared/styles.dart';
 import 'package:shiori/presentation/weapon/weapon_page.dart';
 
@@ -33,25 +34,31 @@ class FixedLeftColumn extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    if (items.isEmpty) {
+      return const SizedBox.shrink();
+    }
     return SizedBox(
       width: cellWidth,
-      child: ListView.builder(
-        controller: controller,
-        itemCount: items.length,
-        itemBuilder: (context, index) {
-          final item = items[index];
-          return _ItemCard(
-            cellWidth: cellWidth,
-            cellHeight: cellHeight,
-            margin: margin,
-            image: item.iconImage,
-            itemKey: item.key,
-            type: item.type,
-            rarity: item.rarity,
-            name: item.name,
-            number: item.versions.where((el) => el.released).length,
-          );
-        },
+      child: ScrollConfiguration(
+        behavior: ScrollConfiguration.of(context).copyWith(scrollbars: false),
+        child: ListView.builder(
+          controller: controller,
+          itemCount: items.length,
+          itemBuilder: (context, index) {
+            final item = items[index];
+            return _ItemCard(
+              cellWidth: cellWidth,
+              cellHeight: cellHeight,
+              margin: margin,
+              image: item.iconImage,
+              itemKey: item.key,
+              type: item.type,
+              rarity: item.rarity,
+              name: item.name,
+              number: item.versions.where((el) => el.released).length,
+            );
+          },
+        ),
       ),
     );
   }
@@ -90,39 +97,35 @@ class _ItemCard extends StatelessWidget {
       onTap: () => showDialog<_ItemOptionsType>(context: context, builder: (_) => const _OptionsDialog()).then(
         (value) async => _handleOptionSelected(value, context),
       ),
-      child: Card(
-        margin: margin,
-        elevation: 10,
+      child: GradientCard(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(radius)),
-        child: Container(
-          decoration: BoxDecoration(
-            gradient: gradient,
-            borderRadius: BorderRadius.circular(radius),
-          ),
-          alignment: Alignment.center,
+        gradient: gradient,
+        child: SizedBox(
           width: cellWidth,
           height: cellHeight,
-          padding: Styles.edgeInsetHorizontal5,
           child: Stack(
-            alignment: AlignmentDirectional.topCenter,
-            fit: StackFit.passthrough,
+            alignment: Alignment.center,
+            fit: StackFit.expand,
             children: [
-              Column(
-                children: [
-                  if (type == BannerHistoryItemType.character)
-                    CircleCharacter(itemKey: itemKey, image: image, radius: 45)
-                  else
-                    CircleWeapon(itemKey: itemKey, image: image, radius: 45),
-                  Tooltip(
+              if (type == BannerHistoryItemType.character)
+                AbsorbPointer(child: CharacterIconImage(itemKey: itemKey, image: image, useCircle: false))
+              else
+                AbsorbPointer(child: WeaponIconImage(itemKey: itemKey, image: image, useCircle: false)),
+              Align(
+                alignment: Alignment.bottomCenter,
+                child: Container(
+                  width: cellWidth,
+                  decoration: Styles.commonCardBoxDecoration,
+                  child: Tooltip(
                     message: name,
                     child: Text(
                       name,
-                      overflow: TextOverflow.ellipsis,
                       textAlign: TextAlign.center,
+                      overflow: TextOverflow.ellipsis,
                       style: theme.textTheme.titleSmall!.copyWith(fontWeight: FontWeight.bold, color: Colors.white),
                     ),
                   ),
-                ],
+                ),
               ),
               Align(
                 alignment: Alignment.topRight,
@@ -177,7 +180,7 @@ class _OptionsDialog extends StatelessWidget {
     return AlertDialog(
       title: Text(s.selectAnOption),
       actions: [
-        ElevatedButton(
+        FilledButton(
           onPressed: () => Navigator.pop(context),
           child: Text(s.cancel),
         ),

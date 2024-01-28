@@ -25,25 +25,18 @@ class ItemExpansionPanel extends StatelessWidget {
       child: ExpansionPanelList(
         dividerColor: Colors.red,
         expandedHeaderPadding: EdgeInsets.zero,
-        expansionCallback: (int index, bool isExpanded) => expansionCallback?.call(isExpanded),
+        expansionCallback: (int index, bool isExpanded) => expansionCallback?.call(!isExpanded),
         children: [
           ExpansionPanel(
             canTapOnHeader: true,
             headerBuilder: (BuildContext context, bool isExpanded) {
               return ListTile(
-                dense: true,
                 contentPadding: const EdgeInsets.only(left: 10),
                 leading: icon,
-                title: Transform.translate(
-                  offset: Styles.listItemWithIconOffset,
-                  child: Tooltip(
-                    message: title,
-                    child: Text(
-                      title,
-                      style: theme.textTheme.titleLarge!.copyWith(color: theme.colorScheme.secondary),
-                      overflow: TextOverflow.ellipsis,
-                    ),
-                  ),
+                title: Text(
+                  title,
+                  style: theme.textTheme.titleLarge!.copyWith(color: theme.colorScheme.secondary),
+                  overflow: TextOverflow.ellipsis,
                 ),
               );
             },

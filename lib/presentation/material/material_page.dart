@@ -4,6 +4,7 @@ import 'package:shiori/application/bloc.dart' as bloc;
 import 'package:shiori/injection.dart';
 import 'package:shiori/presentation/material/widgets/material_detail_bottom.dart';
 import 'package:shiori/presentation/material/widgets/material_detail_top.dart';
+import 'package:shiori/presentation/shared/disabled_card_surface_tint_color.dart';
 import 'package:shiori/presentation/shared/loading.dart';
 import 'package:shiori/presentation/shared/scaffold_with_fab.dart';
 
@@ -15,9 +16,11 @@ class MaterialPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isPortrait = MediaQuery.of(context).orientation == Orientation.portrait;
-    return BlocProvider(
-      create: (context) => Injection.materialBloc..add(bloc.MaterialEvent.loadFromKey(key: itemKey)),
-      child: isPortrait ? const _PortraitLayout() : const _LandscapeLayout(),
+    return DisabledSurfaceCardTintColor(
+      child: BlocProvider(
+        create: (context) => Injection.materialBloc..add(bloc.MaterialEvent.loadFromKey(key: itemKey)),
+        child: isPortrait ? const _PortraitLayout() : const _LandscapeLayout(),
+      ),
     );
   }
 }

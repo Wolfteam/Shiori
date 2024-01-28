@@ -12,7 +12,7 @@ class RestoreBackupWarningMsg extends StatelessWidget {
       margin: const EdgeInsets.only(top: 10),
       child: Text(
         s.restoreBackupMsgWarning,
-        style: theme.textTheme.titleSmall!.copyWith(fontStyle: FontStyle.italic, color: theme.primaryColor),
+        style: theme.textTheme.titleSmall!.copyWith(fontStyle: FontStyle.italic, color: theme.colorScheme.primary),
       ),
     );
   }

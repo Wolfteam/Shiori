@@ -2,7 +2,7 @@ import 'package:get_it/get_it.dart';
 import 'package:shiori/application/bloc.dart';
 import 'package:shiori/domain/services/api_service.dart';
 import 'package:shiori/domain/services/backup_restore_service.dart';
-import 'package:shiori/domain/services/calculator_service.dart';
+import 'package:shiori/domain/services/calculator_asc_materials_service.dart';
 import 'package:shiori/domain/services/changelog_provider.dart';
 import 'package:shiori/domain/services/data_service.dart';
 import 'package:shiori/domain/services/device_info_service.dart';
@@ -20,10 +20,6 @@ import 'package:shiori/infrastructure/infrastructure.dart';
 final GetIt getIt = GetIt.instance;
 
 class Injection {
-  static CalculatorAscMaterialsSessionFormBloc get calculatorAscMaterialsSessionFormBloc {
-    return CalculatorAscMaterialsSessionFormBloc();
-  }
-
   static ChangelogBloc get changelogBloc {
     final changelogProvider = getIt<ChangelogProvider>();
     return ChangelogBloc(changelogProvider);
@@ -277,13 +273,13 @@ class Injection {
   //   return CalculatorAscMaterialsItemBloc(genshinService, calculatorService);
   // }
 
-  static CalculatorAscMaterialsBloc getCalculatorAscMaterialsBloc(CalculatorAscMaterialsSessionsBloc parentBloc) {
+  static CalculatorAscMaterialsBloc get calculatorAscMaterialsBloc {
     final genshinService = getIt<GenshinService>();
     final telemetryService = getIt<TelemetryService>();
-    final calculatorService = getIt<CalculatorService>();
+    final calculatorService = getIt<CalculatorAscMaterialsService>();
     final dataService = getIt<DataService>();
     final resourceService = getIt<ResourceService>();
-    return CalculatorAscMaterialsBloc(genshinService, telemetryService, calculatorService, dataService, resourceService, parentBloc);
+    return CalculatorAscMaterialsBloc(genshinService, telemetryService, calculatorService, dataService, resourceService);
   }
 
   static NotificationBloc getNotificationBloc(NotificationsBloc bloc) {
@@ -308,16 +304,6 @@ class Injection {
     );
   }
 
-  static CalculatorAscMaterialsOrderBloc getCalculatorAscMaterialsOrderBloc(CalculatorAscMaterialsBloc bloc) {
-    final dataService = getIt<DataService>();
-    return CalculatorAscMaterialsOrderBloc(dataService, bloc);
-  }
-
-  static CalculatorAscMaterialsSessionsOrderBloc getCalculatorAscMaterialsSessionsOrderBloc(CalculatorAscMaterialsSessionsBloc bloc) {
-    final dataService = getIt<DataService>();
-    return CalculatorAscMaterialsSessionsOrderBloc(dataService, bloc);
-  }
-
   static CustomBuildBloc getCustomBuildBloc(CustomBuildsBloc bloc) {
     final genshinService = getIt<GenshinService>();
     final dataService = getIt<DataService>();
@@ -327,7 +313,7 @@ class Injection {
     return CustomBuildBloc(genshinService, dataService, telemetryService, loggingService, resourceService, bloc);
   }
 
-  static Future<void> init() async {
+  static Future<void> init({bool isLoggingEnabled = true}) async {
     final networkService = NetworkServiceImpl();
     networkService.init();
     getIt.registerSingleton<NetworkService>(networkService);
@@ -340,7 +326,7 @@ class Injection {
     getIt.registerSingleton<TelemetryService>(telemetryService);
     await telemetryService.initTelemetry();
 
-    final loggingService = LoggingServiceImpl(getIt<TelemetryService>(), deviceInfoService);
+    final loggingService = LoggingServiceImpl(getIt<TelemetryService>(), deviceInfoService, isLoggingEnabled);
 
     getIt.registerSingleton<LoggingService>(loggingService);
     final settingsService = SettingsServiceImpl(loggingService);
@@ -356,9 +342,9 @@ class Injection {
 
     getIt.registerSingleton<LocaleService>(LocaleServiceImpl(getIt<SettingsService>()));
     getIt.registerSingleton<GenshinService>(GenshinServiceImpl(getIt<ResourceService>(), getIt<LocaleService>()));
-    getIt.registerSingleton<CalculatorService>(CalculatorServiceImpl(getIt<GenshinService>(), getIt<ResourceService>()));
+    getIt.registerSingleton<CalculatorAscMaterialsService>(CalculatorAscMaterialsServiceImpl(getIt<GenshinService>(), getIt<ResourceService>()));
 
-    final dataService = DataServiceImpl(getIt<GenshinService>(), getIt<CalculatorService>(), getIt<ResourceService>());
+    final dataService = DataServiceImpl(getIt<GenshinService>(), getIt<CalculatorAscMaterialsService>(), getIt<ResourceService>());
     await dataService.init();
     getIt.registerSingleton<DataService>(dataService);
 

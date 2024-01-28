@@ -1,9 +1,10 @@
 import 'package:hive/hive.dart';
+import 'package:shiori/domain/models/entities/base_entity.dart';
 
 part 'tierlist_item.g.dart';
 
 @HiveType(typeId: 7)
-class TierListItem extends HiveObject {
+class TierListItem extends BaseEntity {
   @HiveField(0)
   final String text;
 

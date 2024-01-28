@@ -1,9 +1,10 @@
 import 'package:hive/hive.dart';
+import 'package:shiori/domain/models/entities/base_entity.dart';
 
 part 'calculator_session.g.dart';
 
 @HiveType(typeId: 1)
-class CalculatorSession extends HiveObject {
+class CalculatorSession extends BaseEntity {
   @HiveField(0)
   String name;
 
@@ -13,5 +14,8 @@ class CalculatorSession extends HiveObject {
   @HiveField(2)
   DateTime createdAt;
 
-  CalculatorSession(this.name, this.position) : createdAt = DateTime.now();
+  @HiveField(3)
+  bool? showMaterialUsage;
+
+  CalculatorSession(this.name, this.position, this.showMaterialUsage) : createdAt = DateTime.now();
 }

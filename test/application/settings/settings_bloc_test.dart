@@ -19,6 +19,7 @@ class FakeHomeBloc extends Fake implements HomeBloc {
 
 void main() {
   const String appVersion = '1.0.0';
+  const noResourcesHaveBeenDownloaded = false;
   final defaultSettings = AppSettings(
     appTheme: AppThemeType.dark,
     useDarkAmoled: true,
@@ -51,6 +52,7 @@ void main() {
     when(settingsService.useOfficialMap).thenReturn(settings.useOfficialMap);
     when(settingsService.useTwentyFourHoursFormat).thenReturn(settings.useTwentyFourHoursFormat);
     when(settingsService.checkForUpdatesOnStartup).thenReturn(settings.checkForUpdatesOnStartup);
+    when(settingsService.noResourcesHasBeenDownloaded).thenReturn(noResourcesHaveBeenDownloaded);
 
     final deviceInfoService = MockDeviceInfoService();
     when(deviceInfoService.versionWithBuildNumber).thenReturn(appVersion);
@@ -97,6 +99,7 @@ void main() {
         unlockedFeatures: AppUnlockedFeature.values,
         resourceVersion: defaultSettings.resourceVersion,
         checkForUpdatesOnStartup: defaultSettings.checkForUpdatesOnStartup,
+        noResourcesHaveBeenDownloaded: noResourcesHaveBeenDownloaded,
       ),
     ],
   );
@@ -134,6 +137,7 @@ void main() {
         unlockedFeatures: AppUnlockedFeature.values,
         resourceVersion: defaultSettings.resourceVersion,
         checkForUpdatesOnStartup: !defaultSettings.checkForUpdatesOnStartup,
+        noResourcesHaveBeenDownloaded: noResourcesHaveBeenDownloaded,
       ),
     ],
   );

@@ -8,7 +8,7 @@ import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/utils/date_utils.dart' as utils;
 import 'package:shiori/generated/l10n.dart';
 import 'package:shiori/presentation/shared/extensions/i18n_extensions.dart';
-import 'package:shiori/presentation/shared/images/wrapped_ascension_material.dart';
+import 'package:shiori/presentation/shared/material_quantity_row.dart';
 import 'package:shiori/presentation/shared/styles.dart';
 import 'package:shiori/presentation/shared/utils/size_utils.dart';
 import 'package:shiori/presentation/shared/utils/toast_utils.dart';
@@ -42,10 +42,11 @@ class GameCodeListItem extends StatelessWidget {
         ? theme.textTheme.titleMedium
         : theme.textTheme.titleMedium!.copyWith(
             decoration: TextDecoration.lineThrough,
-            decorationColor: theme.colorScheme.secondary,
+            decorationColor: theme.colorScheme.primary,
             decorationThickness: 3,
           );
     final extentRatio = SizeUtils.getExtentRatioForSlidablePane(context);
+    final iconSize = SizeUtils.getSizeForCircleImages(context) * 0.3;
     return Slidable(
       key: ValueKey(code),
       endActionPane: ActionPane(
@@ -69,8 +70,7 @@ class GameCodeListItem extends StatelessWidget {
       child: InkWell(
         onTap: () => _copyToClipboard(context),
         child: Container(
-          margin: Styles.edgeInsetVertical16,
-          padding: Styles.edgeInsetHorizontal16,
+          margin: Styles.edgeInsetAll10,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -83,22 +83,14 @@ class GameCodeListItem extends StatelessWidget {
                       child: Text(
                         code,
                         style: textCodeStyle,
+                        textAlign: TextAlign.center,
                         overflow: TextOverflow.ellipsis,
                       ),
                     ),
                     Wrap(
                       alignment: WrapAlignment.center,
                       crossAxisAlignment: WrapCrossAlignment.center,
-                      children: rewards
-                          .map(
-                            (m) => WrappedAscensionMaterial(
-                              itemKey: m.key,
-                              image: m.image,
-                              quantity: m.quantity,
-                              size: SizeUtils.getSizeForCircleImages(context) * 0.6,
-                            ),
-                          )
-                          .toList(),
+                      children: rewards.map((m) => MaterialQuantityRow.fromAscensionMaterial(item: m, size: iconSize)).toList(),
                     ),
                     if (region != null)
                       Wrap(
@@ -108,7 +100,7 @@ class GameCodeListItem extends StatelessWidget {
                           Icon(
                             Icons.lock_outlined,
                             color: theme.colorScheme.secondary,
-                            size: SizeUtils.getSizeForCircleImages(context) * 0.45,
+                            size: iconSize,
                           ),
                           Text(
                             s.onlyX(s.translateServerResetTimeType(region!)),
@@ -125,21 +117,18 @@ class GameCodeListItem extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    _buildDateInfoRow(
-                      s.addedOn(utils.DateUtils.formatDate(discoveredOn, format: utils.DateUtils.dayMonthYearFormat)),
-                      context,
+                    _DateRow(
+                      text: s.addedOn(utils.DateUtils.formatDate(discoveredOn, format: utils.DateUtils.dayMonthYearFormat)),
                     ),
                     if (isExpired)
-                      _buildDateInfoRow(
-                        s.expiredOn(utils.DateUtils.formatDate(expiredOn, format: utils.DateUtils.dayMonthYearFormat)),
-                        context,
+                      _DateRow(
+                        text: s.expiredOn(utils.DateUtils.formatDate(expiredOn, format: utils.DateUtils.dayMonthYearFormat)),
                       ),
                     if (!isExpired && expiredOn != null)
-                      _buildDateInfoRow(
-                        s.validUntil(utils.DateUtils.formatDate(expiredOn, format: utils.DateUtils.dayMonthYearFormat)),
-                        context,
+                      _DateRow(
+                        text: s.validUntil(utils.DateUtils.formatDate(expiredOn, format: utils.DateUtils.dayMonthYearFormat)),
                       ),
-                    if (!isExpired && expiredOn == null) _buildDateInfoRow(s.validUntil(s.na), context),
+                    if (!isExpired && expiredOn == null) _DateRow(text: s.validUntil(s.na)),
                   ],
                 ),
               ),
@@ -150,7 +139,19 @@ class GameCodeListItem extends StatelessWidget {
     );
   }
 
-  Widget _buildDateInfoRow(String text, BuildContext context) {
+  void _copyToClipboard(BuildContext context) {
+    final s = S.of(context);
+    Clipboard.setData(ClipboardData(text: code)).then((value) => ToastUtils.showInfoToast(ToastUtils.of(context), s.codeXWasCopied(code)));
+  }
+}
+
+class _DateRow extends StatelessWidget {
+  final String text;
+
+  const _DateRow({required this.text});
+
+  @override
+  Widget build(BuildContext context) {
     final theme = Theme.of(context);
     return Container(
       margin: const EdgeInsets.symmetric(vertical: 3),
@@ -169,10 +170,5 @@ class GameCodeListItem extends StatelessWidget {
         ],
       ),
     );
-  }
-
-  void _copyToClipboard(BuildContext context) {
-    final s = S.of(context);
-    Clipboard.setData(ClipboardData(text: code)).then((value) => ToastUtils.showInfoToast(ToastUtils.of(context), s.codeXWasCopied(code)));
   }
 }

@@ -9,9 +9,9 @@ import 'package:shiori/generated/l10n.dart';
 import 'package:shiori/presentation/characters/characters_page.dart';
 import 'package:shiori/presentation/shared/bullet_list.dart';
 import 'package:shiori/presentation/shared/character_stack_image.dart';
+import 'package:shiori/presentation/shared/common_dropdown_button.dart';
 import 'package:shiori/presentation/shared/dialogs/select_character_skill_type_dialog.dart';
 import 'package:shiori/presentation/shared/dialogs/text_dialog.dart';
-import 'package:shiori/presentation/shared/dropdown_button_with_title.dart';
 import 'package:shiori/presentation/shared/extensions/element_type_extensions.dart';
 import 'package:shiori/presentation/shared/extensions/i18n_extensions.dart';
 import 'package:shiori/presentation/shared/loading.dart';
@@ -111,54 +111,53 @@ class CharacterSection extends StatelessWidget {
                         Row(
                           children: [
                             Expanded(
-                              flex: 48,
-                              child: DropdownButtonWithTitle<CharacterRoleType>(
-                                margin: EdgeInsets.zero,
+                              flex: 50,
+                              child: CommonDropdownButton<CharacterRoleType>(
                                 title: s.role,
+                                hint: s.role,
                                 currentValue: state.type,
-                                items: EnumUtils.getTranslatedAndSortedEnum<CharacterRoleType>(
+                                values: EnumUtils.getTranslatedAndSortedEnum<CharacterRoleType>(
                                   CharacterRoleType.values.where((el) => el != CharacterRoleType.na).toList(),
                                   (val, _) => s.translateCharacterRoleType(val),
                                 ),
-                                onChanged: (v) => context.read<CustomBuildBloc>().add(CustomBuildEvent.roleChanged(newValue: v)),
+                                onChanged: (v, _) => context.read<CustomBuildBloc>().add(CustomBuildEvent.roleChanged(newValue: v)),
                               ),
                             ),
-                            const Spacer(flex: 4),
                             Expanded(
-                              flex: 48,
-                              child: DropdownButtonWithTitle<CharacterRoleSubType>(
-                                margin: EdgeInsets.zero,
+                              flex: 50,
+                              child: CommonDropdownButton<CharacterRoleSubType>(
                                 title: s.subType,
+                                hint: s.subType,
                                 currentValue: state.subType,
-                                items: EnumUtils.getTranslatedAndSortedEnum<CharacterRoleSubType>(
+                                values: EnumUtils.getTranslatedAndSortedEnum<CharacterRoleSubType>(
                                   CharacterRoleSubType.values,
                                   (val, _) => s.translateCharacterRoleSubType(val),
                                 ),
-                                onChanged: (v) => context.read<CustomBuildBloc>().add(CustomBuildEvent.subRoleChanged(newValue: v)),
+                                onChanged: (v, _) => context.read<CustomBuildBloc>().add(CustomBuildEvent.subRoleChanged(newValue: v)),
                               ),
                             ),
                           ],
                         )
                       else ...[
-                        DropdownButtonWithTitle<CharacterRoleType>(
-                          margin: EdgeInsets.zero,
+                        CommonDropdownButton<CharacterRoleType>(
                           title: s.role,
+                          hint: s.role,
                           currentValue: state.type,
-                          items: EnumUtils.getTranslatedAndSortedEnum<CharacterRoleType>(
+                          values: EnumUtils.getTranslatedAndSortedEnum<CharacterRoleType>(
                             CharacterRoleType.values.where((el) => el != CharacterRoleType.na).toList(),
                             (val, _) => s.translateCharacterRoleType(val),
                           ),
-                          onChanged: (v) => context.read<CustomBuildBloc>().add(CustomBuildEvent.roleChanged(newValue: v)),
+                          onChanged: (v, _) => context.read<CustomBuildBloc>().add(CustomBuildEvent.roleChanged(newValue: v)),
                         ),
-                        DropdownButtonWithTitle<CharacterRoleSubType>(
-                          margin: EdgeInsets.zero,
+                        CommonDropdownButton<CharacterRoleSubType>(
                           title: s.subType,
+                          hint: s.subType,
                           currentValue: state.subType,
-                          items: EnumUtils.getTranslatedAndSortedEnum<CharacterRoleSubType>(
+                          values: EnumUtils.getTranslatedAndSortedEnum<CharacterRoleSubType>(
                             CharacterRoleSubType.values,
                             (val, _) => s.translateCharacterRoleSubType(val),
                           ),
-                          onChanged: (v) => context.read<CustomBuildBloc>().add(CustomBuildEvent.subRoleChanged(newValue: v)),
+                          onChanged: (v, _) => context.read<CustomBuildBloc>().add(CustomBuildEvent.subRoleChanged(newValue: v)),
                         ),
                       ],
                       if (useRowOnTalentsAndNotes)

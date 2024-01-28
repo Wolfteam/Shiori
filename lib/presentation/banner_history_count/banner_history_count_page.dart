@@ -70,59 +70,61 @@ class _BannerHistoryCountPageState extends State<BannerHistoryCountPage> with Si
           hideFabAnimController: hideFabAnimController,
           scrollController: _fabController,
         ),
-        body: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            BlocBuilder<BannerHistoryCountBloc, BannerHistoryCountState>(
-              builder: (ctx, state) => FixedHeaderRow(
-                type: state.type,
-                versions: state.versions,
-                selectedVersions: state.selectedVersions,
-                margin: margin,
-                firstCellWidth: firstCellWidth,
-                firstCellHeight: _firstCellHeight,
-                cellWidth: cellWidth,
-                cellHeight: 60,
-                controller: _fixedHeaderScrollController,
+        body: SafeArea(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              BlocBuilder<BannerHistoryCountBloc, BannerHistoryCountState>(
+                builder: (ctx, state) => FixedHeaderRow(
+                  type: state.type,
+                  versions: state.versions,
+                  selectedVersions: state.selectedVersions,
+                  margin: margin,
+                  firstCellWidth: firstCellWidth,
+                  firstCellHeight: _firstCellHeight,
+                  cellWidth: cellWidth,
+                  cellHeight: 60,
+                  controller: _fixedHeaderScrollController,
+                ),
               ),
-            ),
-            Expanded(
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  BlocBuilder<BannerHistoryCountBloc, BannerHistoryCountState>(
-                    builder: (ctx, state) => FixedLeftColumn(
-                      margin: margin,
-                      cellWidth: firstCellWidth,
-                      cellHeight: _cellHeight,
-                      items: state.banners,
-                      controller: _fabController,
+              Expanded(
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    BlocBuilder<BannerHistoryCountBloc, BannerHistoryCountState>(
+                      builder: (ctx, state) => FixedLeftColumn(
+                        margin: margin,
+                        cellWidth: firstCellWidth,
+                        cellHeight: _cellHeight,
+                        items: state.banners,
+                        controller: _fabController,
+                      ),
                     ),
-                  ),
-                  Expanded(
-                    child: BlocBuilder<BannerHistoryCountBloc, BannerHistoryCountState>(
-                      builder: (ctx, state) => state.banners.isEmpty
-                          ? const NothingFoundColumn()
-                          : Container(
-                              //this margin is a kinda hack xd
-                              margin: const EdgeInsets.only(left: 8),
-                              child: Content(
-                                banners: state.banners,
-                                versions: state.versions,
-                                margin: margin,
-                                cellWidth: cellWidth,
-                                cellHeight: _cellHeight,
-                                verticalController: _fixedLeftColumnScrollController,
-                                horizontalControllerGroup: _horizontalControllers,
-                                maxNumberOfItems: state.maxNumberOfItems,
+                    Expanded(
+                      child: BlocBuilder<BannerHistoryCountBloc, BannerHistoryCountState>(
+                        builder: (ctx, state) => state.banners.isEmpty
+                            ? const NothingFoundColumn()
+                            : Container(
+                                //this margin is a kinda hack xd
+                                margin: const EdgeInsets.only(left: 8),
+                                child: Content(
+                                  banners: state.banners,
+                                  versions: state.versions,
+                                  margin: margin,
+                                  cellWidth: cellWidth,
+                                  cellHeight: _cellHeight,
+                                  verticalController: _fixedLeftColumnScrollController,
+                                  horizontalControllerGroup: _horizontalControllers,
+                                  maxNumberOfItems: state.maxNumberOfItems,
+                                ),
                               ),
-                            ),
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

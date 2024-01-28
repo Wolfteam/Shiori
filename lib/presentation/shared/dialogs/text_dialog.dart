@@ -106,11 +106,11 @@ class _TextDialogState extends State<TextDialog> {
               ),
       ),
       actions: [
-        OutlinedButton(
+        TextButton(
           onPressed: _close,
-          child: Text(s.cancel, style: TextStyle(color: theme.primaryColor)),
+          child: Text(s.cancel),
         ),
-        ElevatedButton(
+        FilledButton(
           onPressed: _isValid ? _save : null,
           child: Text(s.save),
         ),

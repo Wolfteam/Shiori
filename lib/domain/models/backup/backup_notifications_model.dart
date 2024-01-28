@@ -46,8 +46,8 @@ class BackupNotificationModel with _$BackupNotificationModel {
     required bool showNotification,
     required String title,
     required String body,
-    required int notificationItemType,
     required int type,
+    required int notificationItemType,
   }) = BackupCustomNotificationModel;
 
   @Implements<BaseBackupNotificationModel>()

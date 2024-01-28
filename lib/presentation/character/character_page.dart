@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shiori/application/bloc.dart';
 import 'package:shiori/injection.dart';
 import 'package:shiori/presentation/character/widgets/character_detail.dart';
+import 'package:shiori/presentation/shared/disabled_card_surface_tint_color.dart';
 import 'package:shiori/presentation/shared/scaffold_with_fab.dart';
 
 class CharacterPage extends StatelessWidget {
@@ -19,9 +20,11 @@ class CharacterPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isPortrait = MediaQuery.of(context).orientation == Orientation.portrait;
-    return BlocProvider<CharacterBloc>(
-      create: (context) => Injection.characterBloc..add(CharacterEvent.loadFromKey(key: itemKey)),
-      child: isPortrait ? const _PortraitLayout() : const _LandscapeLayout(),
+    return DisabledSurfaceCardTintColor(
+      child: BlocProvider<CharacterBloc>(
+        create: (context) => Injection.characterBloc..add(CharacterEvent.loadFromKey(key: itemKey)),
+        child: isPortrait ? const _PortraitLayout() : const _LandscapeLayout(),
+      ),
     );
   }
 }

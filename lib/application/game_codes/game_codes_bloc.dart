@@ -94,8 +94,9 @@ class GameCodesBloc extends Bloc<GameCodesEvent, GameCodesState> {
         isUsed: false,
         rewards: e.rewards.map((r) {
           final key = _getMaterialKey(r.wikiName, r.type);
-          final img = _genshinService.materials.getMaterialImg(key);
-          return ItemAscensionMaterialModel(quantity: r.quantity, type: r.type, key: key, image: img);
+          final material = _genshinService.materials.getMaterial(key);
+          final image = _genshinService.materials.resources.getMaterialImagePath(material.image, material.type);
+          return ItemAscensionMaterialModel.fromMaterial(r.quantity, material, image);
         }).toList(),
       );
     }).toList();

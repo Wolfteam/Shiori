@@ -74,17 +74,17 @@ class _BodyState extends State<_Body> {
                   ),
                   CommonButtonBar(
                     children: <Widget>[
-                      OutlinedButton(
+                      TextButton(
                         onPressed: () => Navigator.pop(context),
-                        child: Text(s.cancel, style: TextStyle(color: theme.primaryColor)),
+                        child: Text(s.cancel),
                       ),
                       if (state.packages.isNotEmpty && state.isInitialized)
-                        OutlinedButton(
+                        TextButton(
                           onPressed: () => context.read<DonationsBloc>().add(const DonationsEvent.restorePurchases()),
-                          child: Text(s.restorePurchases, style: TextStyle(color: theme.primaryColor)),
+                          child: Text(s.restorePurchases),
                         ),
                       if (state.packages.isNotEmpty && state.isInitialized && _selected != null)
-                        ElevatedButton(
+                        FilledButton(
                           onPressed: () => context
                               .read<DonationsBloc>()
                               .add(DonationsEvent.purchase(identifier: _selected!.identifier, offeringIdentifier: _selected!.offeringIdentifier)),

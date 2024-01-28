@@ -492,5 +492,14 @@
   "wishHistoryXStar": "{stars}-★",
   "artifact": "Artefacto",
   "material": "Material",
-  "close": "Cerrar"
+  "close": "Cerrar",
+  "later": "Más tarde",
+  "youCanSkipFirstResourceDownloadMsg": "Puedes omitir la descarga inicial de recursos aunque algunas funcionalidades podrian ser deshabilitadas",
+  "firstResourceDownloadSkippedMsg": "Algunas funcionalidades pueden encontrarse deshabilitadas hasta que completes la descarga inicial de los recursos\nPuedes completarla dentro de los ajustes de la aplicación",
+  "inInventory": "En inventario",
+  "available": "Disponible",
+  "required": "Requerido",
+  "remaining": "Restante",
+  "used": "Usado",
+  "showMaterialUsage": "Mostrar uso de materiales"
 }

@@ -1,9 +1,10 @@
 import 'package:hive/hive.dart';
+import 'package:shiori/domain/models/entities/base_entity.dart';
 
 part 'custom_build.g.dart';
 
 @HiveType(typeId: 18)
-class CustomBuild extends HiveObject {
+class CustomBuild extends BaseEntity {
   @HiveField(1)
   final String characterKey;
 

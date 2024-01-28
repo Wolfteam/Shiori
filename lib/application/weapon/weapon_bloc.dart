@@ -58,7 +58,7 @@ class WeaponBloc extends Bloc<WeaponEvent, WeaponState> {
       final materials = e.materials.map((e) {
         final material = _genshinService.materials.getMaterial(e.key);
         final imagePath = _resourceService.getMaterialImagePath(material.image, material.type);
-        return ItemAscensionMaterialModel(key: material.key, type: material.type, quantity: e.quantity, image: imagePath);
+        return ItemAscensionMaterialModel.fromMaterial(e.quantity, material, imagePath);
       }).toList();
       return WeaponAscensionModel(level: e.level, materials: materials);
     }).toList();
@@ -68,7 +68,7 @@ class WeaponBloc extends Bloc<WeaponEvent, WeaponState> {
     final craftingMaterials = weapon.craftingMaterials.map((e) {
       final material = _genshinService.materials.getMaterial(e.key);
       final imagePath = _resourceService.getMaterialImagePath(material.image, material.type);
-      return ItemAscensionMaterialModel(key: e.key, type: material.type, quantity: e.quantity, image: imagePath);
+      return ItemAscensionMaterialModel.fromMaterial(e.quantity, material, imagePath);
     }).toList();
     return WeaponState.loaded(
       key: weapon.key,

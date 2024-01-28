@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shiori/generated/l10n.dart';
+import 'package:shiori/presentation/shared/custom_divider.dart';
 import 'package:shiori/presentation/shared/extensions/i18n_extensions.dart';
 import 'package:shiori/presentation/shared/material_item_button.dart';
 import 'package:shiori/presentation/shared/styles.dart';
@@ -26,36 +27,47 @@ class AscensionMaterialItemCard extends StatelessWidget {
     final theme = Theme.of(context);
     final obtainOn = s.translateDays(days);
 
-    return Card(
+    return Container(
       margin: Styles.edgeInsetAll10,
-      shape: Styles.cardShape,
-      child: Container(
-        width: Styles.materialCardWidth,
-        padding: Styles.edgeInsetAll5,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            MaterialItemButton(itemKey: itemKey, image: image, size: 100),
-            Tooltip(
-              message: name,
-              child: Text(
-                name,
-                textAlign: TextAlign.center,
-                overflow: TextOverflow.ellipsis,
-                style: theme.textTheme.titleMedium!.copyWith(fontWeight: FontWeight.bold),
+      width: Styles.homeCardWidth,
+      child: Card(
+        clipBehavior: Clip.hardEdge,
+        shape: RoundedRectangleBorder(borderRadius: Styles.homeCardItemBorderRadius),
+        child: Padding(
+          padding: Styles.edgeInsetHorizontal10,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Center(
+                child: MaterialItemButton(
+                  itemKey: itemKey,
+                  image: image,
+                  size: 100,
+                ),
               ),
-            ),
-            Tooltip(
-              message: obtainOn,
-              child: Text(
-                obtainOn,
-                textAlign: TextAlign.center,
-                overflow: TextOverflow.visible,
-                style: theme.textTheme.titleSmall!.copyWith(fontSize: 12),
+              Tooltip(
+                message: name,
+                child: Text(
+                  name,
+                  textAlign: TextAlign.center,
+                  overflow: TextOverflow.ellipsis,
+                  style: theme.textTheme.titleMedium!.copyWith(fontWeight: FontWeight.bold),
+                ),
               ),
-            ),
-            child,
-          ],
+              Tooltip(
+                message: obtainOn,
+                child: Text(
+                  obtainOn,
+                  textAlign: TextAlign.center,
+                  overflow: TextOverflow.visible,
+                  style: theme.textTheme.titleSmall!.copyWith(fontSize: 12),
+                ),
+              ),
+              CustomDivider(color: theme.colorScheme.onBackground),
+              child,
+            ],
+          ),
         ),
       ),
     );

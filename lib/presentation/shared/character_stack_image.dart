@@ -51,7 +51,7 @@ class CharacterStackImage extends StatelessWidget {
                     style: theme.textTheme.titleMedium!.copyWith(fontWeight: FontWeight.bold, color: Colors.white),
                   ),
                 ),
-                Rarity(stars: rarity),
+                Rarity(stars: rarity, color: Colors.white),
               ],
             ),
           ),

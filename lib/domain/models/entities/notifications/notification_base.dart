@@ -1,4 +1,6 @@
-abstract class NotificationBase {
+import 'package:shiori/domain/models/entities/base_entity.dart';
+
+abstract class NotificationBase extends BaseEntity {
   int get type;
 
   String get itemKey;

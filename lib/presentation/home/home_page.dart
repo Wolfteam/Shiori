@@ -1,9 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:responsive_builder/responsive_builder.dart';
-import 'package:shiori/application/bloc.dart';
 import 'package:shiori/generated/l10n.dart';
 import 'package:shiori/presentation/home/widgets/banner_history_count_card.dart';
 import 'package:shiori/presentation/home/widgets/calculators_card.dart';
@@ -19,13 +17,11 @@ import 'package:shiori/presentation/home/widgets/notifications_card.dart';
 import 'package:shiori/presentation/home/widgets/settings_card.dart';
 import 'package:shiori/presentation/home/widgets/sliver_characters_birthday_card.dart';
 import 'package:shiori/presentation/home/widgets/sliver_main_title.dart';
-import 'package:shiori/presentation/home/widgets/sliver_today_char_ascension_materials.dart';
+import 'package:shiori/presentation/home/widgets/sliver_today_ascension_materials.dart';
 import 'package:shiori/presentation/home/widgets/sliver_today_main_title.dart';
-import 'package:shiori/presentation/home/widgets/sliver_today_weapon_materials.dart';
 import 'package:shiori/presentation/home/widgets/tierlist_card.dart';
 import 'package:shiori/presentation/home/widgets/wish_simulator_card.dart';
 import 'package:shiori/presentation/shared/styles.dart';
-import 'package:shiori/presentation/today_materials/today_materials_page.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -46,10 +42,7 @@ class _HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin<
         slivers: [
           SliverCharactersBirthdayCard(),
           const SliverTodayMainTitle(),
-          _buildClickableTitle(s.forCharacters, s.seeAll, context, onClick: () => _gotoMaterialsPage(context)),
-          SliverTodayCharAscensionMaterials(),
-          _buildClickableTitle(s.forWeapons, s.seeAll, context, onClick: () => _gotoMaterialsPage(context)),
-          SliverTodayWeaponMaterials(),
+          SliverTodayAscensionMaterials(),
           SliverMainTitle(title: s.gameSpecific),
           SliverToBoxAdapter(
             child: SizedBox(
@@ -113,7 +106,7 @@ class _HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin<
       case 2:
         return const BannerHistoryCard(iconToTheLeft: true);
       case 3:
-        return ElementsCard();
+        return const ElementsCard();
       default:
         throw Exception('Invalid game section');
     }
@@ -152,37 +145,5 @@ class _HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin<
       default:
         throw Exception('Invalid other section');
     }
-  }
-
-  Widget _buildClickableTitle(String title, String? buttonText, BuildContext context, {VoidCallback? onClick}) {
-    final theme = Theme.of(context);
-    final row = buttonText != null
-        ? Row(
-            mainAxisSize: MainAxisSize.min,
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [const Icon(Icons.chevron_right), Text(buttonText)],
-          )
-        : null;
-    return SliverPadding(
-      padding: const EdgeInsets.only(top: 10),
-      sliver: SliverToBoxAdapter(
-        child: ListTile(
-          dense: true,
-          onTap: () => onClick?.call(),
-          visualDensity: const VisualDensity(vertical: -4, horizontal: -2),
-          trailing: row,
-          title: Text(
-            title,
-            textAlign: TextAlign.start,
-            style: theme.textTheme.titleMedium!.copyWith(fontWeight: FontWeight.bold, fontSize: 18),
-          ),
-        ),
-      ),
-    );
-  }
-
-  Future<void> _gotoMaterialsPage(BuildContext context) async {
-    context.read<TodayMaterialsBloc>().add(const TodayMaterialsEvent.init());
-    await Navigator.push(context, MaterialPageRoute(builder: (_) => TodayMaterialsPage()));
   }
 }

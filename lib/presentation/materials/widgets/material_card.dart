@@ -101,64 +101,81 @@ class MaterialCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    return InkWell(
-      borderRadius: Styles.mainCardBorderRadius,
-      onTap: () => _gotoMaterialPage(context),
-      child: GradientCard(
-        clipBehavior: Clip.hardEdge,
-        shape: Styles.mainCardShape,
-        elevation: withElevation ? Styles.cardTenElevation : 0,
-        gradient: rarity.getRarityGradient(),
-        child: Padding(
-          padding: withoutDetails ? Styles.edgeInsetAll5 : Styles.edgeInsetAll10,
-          child: Column(
+    return SizedBox(
+      width: imgWidth * 1.5,
+      height: imgHeight * 2,
+      child: InkWell(
+        borderRadius: Styles.mainCardBorderRadius,
+        onTap: () => _gotoMaterialPage(context),
+        child: GradientCard(
+          shape: Styles.mainCardShape,
+          elevation: withElevation ? Styles.cardTenElevation : 0,
+          gradient: rarity.getRarityGradient(),
+          child: Stack(
+            alignment: Alignment.center,
+            fit: StackFit.expand,
             children: [
-              Stack(
+              FadeInImage(
+                width: imgWidth,
+                height: imgHeight,
+                placeholder: MemoryImage(kTransparentImage),
+                fit: BoxFit.fill,
+                placeholderFit: BoxFit.fill,
                 alignment: Alignment.topCenter,
-                children: [
-                  FadeInImage(
-                    width: imgWidth,
-                    height: imgHeight,
-                    placeholder: MemoryImage(kTransparentImage),
-                    image: FileImage(File(image)),
-                  ),
-                  if (usedQuantity > 0 && isInQuantityMode)
-                    Align(
-                      alignment: Alignment.topRight,
-                      child: GestureDetector(
-                        onTap: () => _showUsedItemsDialog(context),
-                        child: Container(
-                          padding: const EdgeInsets.all(3),
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
-                            color: theme.colorScheme.secondary.withOpacity(0.8),
-                          ),
-                          child: Text(
-                            ' - ${CurrencyUtils.formatNumber(usedQuantity)} ',
-                            style: theme.textTheme.titleSmall!.copyWith(color: Colors.white),
-                          ),
+                image: FileImage(File(image)),
+              ),
+              if (usedQuantity > 0 && isInQuantityMode)
+                Align(
+                  alignment: Alignment.topRight,
+                  child: GestureDetector(
+                    onTap: () => _showUsedItemsDialog(context),
+                    child: Container(
+                      padding: const EdgeInsets.all(3),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: theme.colorScheme.primaryContainer,
+                      ),
+                      child: Tooltip(
+                        message: ' - ${CurrencyUtils.formatNumber(usedQuantity)}',
+                        child: Text(
+                          ' - ${CurrencyUtils.formatNumber(usedQuantity)} ',
+                          overflow: TextOverflow.ellipsis,
+                          style: theme.textTheme.titleSmall,
                         ),
                       ),
                     ),
-                ],
-              ),
+                  ),
+                ),
               if (quantity >= 0 && isInQuantityMode)
-                Container(
-                  margin: const EdgeInsets.only(bottom: 5),
-                  child: Text(
-                    CurrencyUtils.formatNumber(quantity),
-                    style: theme.textTheme.titleSmall!.copyWith(color: Colors.white),
+                Align(
+                  alignment: Alignment.bottomCenter,
+                  child: Container(
+                    decoration: Styles.commonCardBoxDecoration,
+                    width: double.infinity,
+                    padding: Styles.edgeInsetAll5,
+                    child: Text(
+                      CurrencyUtils.formatNumber(quantity),
+                      textAlign: TextAlign.center,
+                      overflow: TextOverflow.ellipsis,
+                      style: theme.textTheme.titleSmall!.copyWith(color: Colors.white),
+                    ),
                   ),
                 ),
               if (!withoutDetails && !isInQuantityMode)
-                Center(
-                  child: Tooltip(
-                    message: name,
-                    child: Text(
-                      name!,
-                      textAlign: TextAlign.center,
-                      style: theme.textTheme.titleMedium!.copyWith(fontWeight: FontWeight.bold, color: Colors.white),
-                      overflow: TextOverflow.ellipsis,
+                Align(
+                  alignment: Alignment.bottomCenter,
+                  child: Container(
+                    decoration: Styles.commonCardBoxDecoration,
+                    width: double.infinity,
+                    padding: Styles.edgeInsetAll5,
+                    child: Tooltip(
+                      message: name,
+                      child: Text(
+                        name!,
+                        textAlign: TextAlign.center,
+                        style: theme.textTheme.titleMedium!.copyWith(fontWeight: FontWeight.bold, color: Colors.white),
+                        overflow: TextOverflow.ellipsis,
+                      ),
                     ),
                   ),
                 ),
@@ -198,13 +215,14 @@ class MaterialCard extends StatelessWidget {
 
   Future<void> _showUsedItemsDialog(BuildContext context) async {
     final s = S.of(context);
+    final used = CurrencyUtils.formatNumber(usedQuantity);
     await showDialog<int>(
       context: context,
       builder: (_) => AlertDialog(
         title: Text(s.usedItem),
-        content: Text(s.itemIsBeingUsedOnACalculation(quantity)),
+        content: Text(s.itemIsBeingUsedOnACalculation(used)),
         actions: [
-          ElevatedButton(
+          FilledButton(
             onPressed: () => Navigator.of(context).pop(),
             child: Text(s.ok),
           ),

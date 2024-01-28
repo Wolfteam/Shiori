@@ -26,6 +26,7 @@ class ItemCard extends StatelessWidget {
   final List<ItemAscensionMaterialModel> materials;
   final bool isActive;
   final ElementType? elementType;
+  final bool showMaterialUsage;
 
   const ItemCard({
     super.key,
@@ -38,6 +39,7 @@ class ItemCard extends StatelessWidget {
     required this.isWeapon,
     required this.materials,
     required this.isActive,
+    required this.showMaterialUsage,
     this.elementType,
   });
 
@@ -47,93 +49,91 @@ class ItemCard extends StatelessWidget {
     final s = S.of(context);
     final cardColor = elementType != null ? elementType!.getElementColorFromContext(context) : rarity.getRarityColors().last;
     final size = MediaQuery.of(context).size;
-    var height = size.height / 2.5;
-    if (height > 500) {
+    double height = size.height / 2.5;
+    if (height > 700) {
+      height = 700;
+    } else if (height < 500) {
       height = 500;
-    } else if (height < 280) {
-      height = 280;
     }
-    return InkWell(
-      borderRadius: Styles.mainCardBorderRadius,
-      onTap: () => _editItem(context),
-      child: Card(
-        clipBehavior: Clip.hardEdge,
-        shape: Styles.mainCardShape,
-        elevation: Styles.cardTenElevation,
-        color: cardColor,
-        child: ChildItemDisabled(
-          isDisabled: !isActive,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              SizedBox(
-                height: height,
-                child: FittedBox(
+
+    return SizedBox(
+      height: height,
+      child: InkWell(
+        borderRadius: Styles.mainCardBorderRadius,
+        onTap: () => _editItem(context),
+        child: Card(
+          clipBehavior: Clip.hardEdge,
+          shape: Styles.mainCardShape,
+          elevation: Styles.cardTenElevation,
+          color: cardColor,
+          child: ChildItemDisabled(
+            isDisabled: !isActive,
+            child: Stack(
+              fit: StackFit.expand,
+              children: [
+                FadeInImage(
                   fit: BoxFit.cover,
+                  placeholderFit: BoxFit.cover,
                   alignment: Alignment.topCenter,
-                  clipBehavior: Clip.hardEdge,
-                  child: FadeInImage(
-                    placeholder: MemoryImage(kTransparentImage),
-                    image: FileImage(File(image)),
-                  ),
+                  placeholder: MemoryImage(kTransparentImage),
+                  image: FileImage(File(image)),
                 ),
-              ),
-              DecoratedBox(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.only(
-                    bottomLeft: Radius.circular(Styles.cardBottomRadius),
-                    bottomRight: Radius.circular(Styles.cardBottomRadius),
-                  ),
-                  color: Colors.black.withOpacity(0.5),
-                ),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Tooltip(
-                      message: name,
-                      child: Container(
-                        margin: Styles.edgeInsetAll5,
-                        child: Text(
-                          name,
-                          style: theme.textTheme.titleLarge!.copyWith(color: Colors.white),
-                          overflow: TextOverflow.ellipsis,
+                Align(
+                  alignment: Alignment.bottomCenter,
+                  child: Container(
+                    padding: Styles.edgeInsetAll10,
+                    decoration: Styles.commonCardBoxDecoration,
+                    width: double.infinity,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Tooltip(
+                          message: name,
+                          child: Container(
+                            margin: Styles.edgeInsetAll5,
+                            child: Text(
+                              name,
+                              style: theme.textTheme.titleLarge!.copyWith(color: Colors.white),
+                              overflow: TextOverflow.ellipsis,
+                              textAlign: TextAlign.center,
+                            ),
+                          ),
+                        ),
+                        Text(
+                          s.materials,
                           textAlign: TextAlign.center,
+                          style: theme.textTheme.titleSmall!.copyWith(color: Colors.white),
                         ),
-                      ),
-                    ),
-                    Text(
-                      s.materials,
-                      textAlign: TextAlign.center,
-                      style: theme.textTheme.titleSmall!.copyWith(color: Colors.white),
-                    ),
-                    Container(
-                      margin: const EdgeInsets.only(bottom: 12, right: 5, left: 5),
-                      child: SizedBox(
-                        height: 90,
-                        child: ListView.builder(
-                          itemCount: materials.length,
-                          physics: const BouncingScrollPhysics(),
-                          scrollDirection: Axis.horizontal,
-                          itemBuilder: (ctx, index) {
-                            final item = materials[index];
-                            return MaterialItem(
-                              itemKey: item.key,
-                              type: item.type,
-                              image: item.image,
-                              quantity: item.quantity,
-                              textColor: Colors.white,
-                              sessionKey: sessionKey,
-                            );
-                          },
+                        SizedBox(
+                          height: 90,
+                          child: ListView.builder(
+                            itemCount: materials.length,
+                            physics: const BouncingScrollPhysics(),
+                            scrollDirection: Axis.horizontal,
+                            itemBuilder: (ctx, index) {
+                              final item = materials[index];
+                              return MaterialItem(
+                                itemKey: item.key,
+                                type: item.type,
+                                image: item.image,
+                                requiredQuantity: item.requiredQuantity,
+                                usedQuantity: item.usedQuantity,
+                                remainingQuantity: item.remainingQuantity,
+                                textColor: Colors.white,
+                                sessionKey: sessionKey,
+                                showMaterialUsage: showMaterialUsage,
+                                iconSize: 40,
+                              );
+                            },
+                          ),
                         ),
-                      ),
+                      ],
                     ),
-                  ],
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),

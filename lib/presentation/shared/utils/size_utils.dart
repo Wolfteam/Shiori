@@ -40,19 +40,23 @@ class SizeUtils {
         }
       case DeviceScreenType.desktop:
         if (size.width > 1680) {
-          crossAxisCount = 8;
+          crossAxisCount = 10;
         } else if (size.width > 1280) {
-          crossAxisCount = 6;
+          crossAxisCount = 7;
         } else if (size.width > 800) {
-          crossAxisCount = 4;
+          crossAxisCount = 5;
         } else {
-          crossAxisCount = 3;
+          crossAxisCount = 4;
         }
       default:
         break;
     }
 
-    return itemIsSmall ? (crossAxisCount + (crossAxisCount * 0.3).round()) : crossAxisCount;
+    if (itemIsSmall) {
+      crossAxisCount += (crossAxisCount * 0.5).round();
+    }
+
+    return crossAxisCount;
   }
 
   static double getSizeForCircleImages(BuildContext context, {double? defaultValue, bool smallImage = false}) {
@@ -79,10 +83,6 @@ class SizeUtils {
       return 0.6;
     }
 
-    if (size.width < 1000) {
-      return 0.4;
-    }
-
-    return 0.2;
+    return 0.5;
   }
 }

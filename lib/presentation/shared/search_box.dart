@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import 'package:shiori/generated/l10n.dart';
+import 'package:shiori/presentation/shared/shiori_icons.dart';
 import 'package:shiori/presentation/shared/styles.dart';
 
 typedef SearchChanged = void Function(String val);
@@ -9,11 +10,13 @@ class SearchBox extends StatefulWidget {
   final String? value;
   final bool showClearButton;
   final SearchChanged searchChanged;
+  final VoidCallback onFilterTap;
 
   const SearchBox({
     super.key,
     this.value,
     required this.searchChanged,
+    required this.onFilterTap,
     this.showClearButton = true,
   });
 
@@ -82,6 +85,10 @@ class _SearchBoxState extends State<SearchBox> {
                 splashRadius: Styles.smallButtonSplashRadius,
                 onPressed: _cleanSearchText,
               ),
+            IconButton(
+              icon: const Icon(Shiori.filter, size: 20),
+              onPressed: () => widget.onFilterTap(),
+            ),
           ],
         ),
       ),

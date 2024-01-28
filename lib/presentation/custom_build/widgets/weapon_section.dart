@@ -68,18 +68,23 @@ class WeaponSection extends StatelessWidget {
                         icon: const Icon(Icons.sort),
                         onPressed: state.weapons.length < 2
                             ? null
-                            : () => showDialog(
+                            : () => showDialog<SortResult>(
                                   context: context,
                                   builder: (_) => SortItemsDialog(
                                     items: state.weapons.map((e) => SortableItem(e.key, e.name)).toList(),
-                                    onSave: (result) {
-                                      if (!result.somethingChanged) {
-                                        return;
-                                      }
-
-                                      context.read<CustomBuildBloc>().add(CustomBuildEvent.weaponsOrderChanged(weapons: result.items));
-                                    },
                                   ),
+                                ).then(
+                                  (result) {
+                                    if (result == null) {
+                                      return;
+                                    }
+
+                                    if (!result.somethingChanged) {
+                                      return;
+                                    }
+
+                                    context.read<CustomBuildBloc>().add(CustomBuildEvent.weaponsOrderChanged(weapons: result.items));
+                                  },
                                 ),
                       ),
                     ),

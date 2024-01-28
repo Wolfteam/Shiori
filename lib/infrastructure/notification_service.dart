@@ -2,7 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
-import 'package:flutter_native_timezone/flutter_native_timezone.dart';
+import 'package:flutter_timezone/flutter_timezone.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/services/logging_service.dart';
 import 'package:shiori/domain/services/notification_service.dart';
@@ -35,7 +35,7 @@ class NotificationServiceImpl implements NotificationService {
         return;
       }
       tz.initializeTimeZones();
-      final currentTimeZone = await FlutterNativeTimezone.getLocalTimezone();
+      final currentTimeZone = await FlutterTimezone.getLocalTimezone();
       _location = tz.getLocation(currentTimeZone);
       tz.setLocalLocation(_location);
     } on tz.LocationNotFoundException catch (e) {

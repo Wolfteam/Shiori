@@ -20,6 +20,12 @@ void main() {
         }
       });
     }
+
+    test('no resources have been downloaded', () async {
+      final service = await getMaterialFileService(AppLanguageType.english, noResourcesHaveBeenDownloaded: true);
+      final materials = service.getAllMaterialsForCard();
+      expect(materials.isEmpty, isTrue);
+    });
   });
 
   test('Get material', () async {
