@@ -56,7 +56,7 @@ class NotificationListTitle extends StatelessWidget {
       key: ValueKey(completesAt),
       create: (ctx) => Injection.notificationTimerBloc..add(NotificationTimerEvent.init(completesAt: completesAt)),
       child: Slidable(
-        key: ValueKey('$itemKey-$type'),
+        key: ValueKey('$itemKey-$type-$completesAt'),
         startActionPane: ActionPane(
           extentRatio: extentRatio,
           motion: const ScrollMotion(),

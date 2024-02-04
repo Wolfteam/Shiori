@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:flutter_timezone/flutter_timezone.dart';
+import 'package:permission_handler/permission_handler.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/services/logging_service.dart';
 import 'package:shiori/domain/services/notification_service.dart';
@@ -30,7 +31,7 @@ class NotificationServiceImpl implements NotificationService {
   @override
   Future<void> init() async {
     try {
-      //TODO: TIMEZONES ON WINDWS
+      //TODO: TIMEZONES ON WINDOWS
       if (!isPlatformSupported) {
         return;
       }
@@ -46,34 +47,20 @@ class NotificationServiceImpl implements NotificationService {
       _loggingService.error(runtimeType, 'init: Failed to get timezone or device is GMT or UTC, assigning the generic one...', e, s);
       _setDefaultTimeZone();
     }
-  }
 
-  @override
-  Future<void> registerCallBacks() async {
     try {
-      if (!isPlatformSupported) {
-        return Future.value();
+      if (!Platform.isMacOS) {
+        await Permission.notification.request();
       }
+
       const android = AndroidInitializationSettings('ic_notification');
       const iOS = DarwinInitializationSettings();
       const macOS = DarwinInitializationSettings();
       const initializationSettings = InitializationSettings(android: android, iOS: iOS, macOS: macOS);
       await _flutterLocalNotificationsPlugin.initialize(initializationSettings);
     } catch (e, s) {
-      _loggingService.error(runtimeType, 'registerCallBacks: Unknown error occurred', e, s);
+      _loggingService.error(runtimeType, 'init: Unknown error occurred', e, s);
     }
-  }
-
-  @override
-  Future<bool> requestIOSPermissions() async {
-    final specificImpl = _flutterLocalNotificationsPlugin.resolvePlatformSpecificImplementation<IOSFlutterLocalNotificationsPlugin>();
-    final result = await specificImpl?.requestPermissions(alert: true, badge: true, sound: true);
-
-    if (result == null) {
-      return false;
-    }
-
-    return result;
   }
 
   @override

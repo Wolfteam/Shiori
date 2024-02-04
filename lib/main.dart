@@ -27,14 +27,8 @@ Future<void> main() async {
     setWindowMinSize(SizeUtils.minSizeOnDesktop);
     setWindowMaxSize(Size.infinite);
   }
-  final notificationService = getIt<NotificationService>();
-  final notifFuture = notificationService.registerCallBacks();
   //TODO: CHECK THE NOTIFICATION LOGIC
   //TODO: WEBVIEW SUPPORT IN MACOS
-  if (!Platform.isMacOS) {
-    await notifFuture;
-  }
-
   Bloc.observer = AppBlocObserver(getIt<LoggingService>());
   runApp(MyApp());
 }
