@@ -408,10 +408,6 @@
   "checkBannerHistory": "Перевірте, коли персонаж / зброя були випущені",
   "fromDate": "З: {date}",
   "untilDate": "По: {date}",
-  "nameAsc": "Ім'я по зрост.",
-  "nameDesc": "Ім'я по спад.",
-  "versionAsc": "Версія по зрост.",
-  "versionDesc": "Версія по спад.",
   "releaseHistory": "Історія випуску",
   "selectAnOption": "Оберіть варіант",
   "details": "Подробиці",
@@ -501,5 +497,7 @@
   "required": "Required",
   "remaining": "Remaining",
   "used": "Used",
-  "showMaterialUsage": "Show material usage"
+  "showMaterialUsage": "Show material usage",
+  "version": "Версії",
+  "reruns": "Reruns"
 }

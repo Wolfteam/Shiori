@@ -408,10 +408,6 @@
   "checkBannerHistory": "キャラクター/武器がいつリリースされたかを確認する",
   "fromDate": "開始:{date}",
   "untilDate": "終了:{date}",
-  "nameAsc": "名前↑",
-  "nameDesc": "名前↓",
-  "versionAsc": "バージョン↑",
-  "versionDesc": "バージョン↓",
   "releaseHistory": "リリース履歴",
   "selectAnOption": "オプション選択",
   "details": "詳細",
@@ -501,5 +497,7 @@
   "required": "Required",
   "remaining": "Remaining",
   "used": "Used",
-  "showMaterialUsage": "Show material usage"
+  "showMaterialUsage": "Show material usage",
+  "version": "バージョン",
+  "reruns": "Reruns"
 }

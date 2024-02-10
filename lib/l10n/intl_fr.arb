@@ -408,10 +408,6 @@
   "checkBannerHistory": "Vérifiez quand un personnage / une arme est sorti(e)",
   "fromDate": "Du: {date}",
   "untilDate": "Jusqu’au: {date}",
-  "nameAsc": "Noms crois.",
-  "nameDesc": "Noms décrois.",
-  "versionAsc": "Versions crois.",
-  "versionDesc": "Versions décrois.",
   "releaseHistory": "Historique de sortie",
   "selectAnOption": "Sélectionnez une option",
   "details": "Détails",
@@ -501,5 +497,7 @@
   "required": "Required",
   "remaining": "Remaining",
   "used": "Used",
-  "showMaterialUsage": "Show material usage"
+  "showMaterialUsage": "Show material usage",
+  "version": "Version",
+  "reruns": "Sortis"
 }

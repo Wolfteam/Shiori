@@ -408,10 +408,6 @@
   "checkBannerHistory": "Comprueba cuando un personaje / arma fue lanzado",
   "fromDate": "Desde: {date}",
   "untilDate": "Hasta: {date}",
-  "nameAsc": "Nombre asc.",
-  "nameDesc": "Nombre desc.",
-  "versionAsc": "Versión asc.",
-  "versionDesc": "Versión desc.",
   "releaseHistory": "Historial de Lanzamiento",
   "selectAnOption": "Selecciona una opción",
   "details": "Detalles",
@@ -501,5 +497,7 @@
   "required": "Requerido",
   "remaining": "Restante",
   "used": "Usado",
-  "showMaterialUsage": "Mostrar uso de materiales"
+  "showMaterialUsage": "Mostrar uso de materiales",
+  "version": "Versión",
+  "reruns": "Reruns"
 }

@@ -408,10 +408,6 @@
   "checkBannerHistory": "检查角色/武器是否已发布",
   "fromDate": "从: {date}",
   "untilDate": "至: {date}",
-  "nameAsc": "名称升序",
-  "nameDesc": "名称降序",
-  "versionAsc": "版本升序",
-  "versionDesc": "版本降序",
   "releaseHistory": "发布历史",
   "selectAnOption": "选择一个选项",
   "details": "详细",
@@ -501,5 +497,7 @@
   "required": "Required",
   "remaining": "Remaining",
   "used": "Used",
-  "showMaterialUsage": "Show material usage"
+  "showMaterialUsage": "Show material usage",
+  "version": "版本",
+  "reruns": "Reruns"
 }
