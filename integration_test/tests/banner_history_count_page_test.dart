@@ -26,7 +26,7 @@ void main() {
     await page.tapOnPopupMenuButtonIcon(Icons.swap_horiz, isCharacter ? 0 : 1);
 
     //Sort by version desc
-    await page.tapOnPopupMenuButtonIcon(Icons.sort, 3);
+    await page.tapOnPopupMenuButtonIcon(Icons.sort, 7);
 
     //Scroll to version
     final Finder horizontalListViewFinder = find.ancestor(of: find.byIcon(Icons.check_circle), matching: find.byType(ListView)).first;
