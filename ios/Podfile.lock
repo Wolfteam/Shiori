@@ -74,17 +74,14 @@ PODS:
     - FlutterMacOS
   - permission_handler_apple (9.1.1):
     - Flutter
-  - purchases_flutter (6.16.1):
+  - purchases_flutter (6.20.0):
     - Flutter
-    - PurchasesHybridCommon (= 8.11.1)
-  - PurchasesHybridCommon (8.11.1):
-    - RevenueCat (= 4.32.0)
-    - RevenueCatUI (= 4.32.0)
+    - PurchasesHybridCommon (= 9.6.0)
+  - PurchasesHybridCommon (9.6.0):
+    - RevenueCat (= 4.35.0)
   - rate_my_app (2.0.0):
     - Flutter
-  - RevenueCat (4.32.0)
-  - RevenueCatUI (4.32.0):
-    - RevenueCat (= 4.32.0)
+  - RevenueCat (4.35.0)
   - SDWebImage (5.18.3):
     - SDWebImage/Core (= 5.18.3)
   - SDWebImage/Core (5.18.3)
@@ -134,7 +131,6 @@ SPEC REPOS:
     - OrderedSet
     - PurchasesHybridCommon
     - RevenueCat
-    - RevenueCatUI
     - SDWebImage
     - SwiftyGif
     - Toast
@@ -202,11 +198,10 @@ SPEC CHECKSUMS:
   package_info_plus: 115f4ad11e0698c8c1c5d8a689390df880f47e85
   path_provider_foundation: 29f094ae23ebbca9d3d0cec13889cd9060c0e943
   permission_handler_apple: e76247795d700c14ea09e3a2d8855d41ee80a2e6
-  purchases_flutter: 4048b4d0052cf452faa5d85e3aa3907a7929032c
-  PurchasesHybridCommon: db0f4063a1e77fd255318c4a2f05d26eff6f150a
+  purchases_flutter: 32884f14f1feaa4b256b8659c989899d392f718f
+  PurchasesHybridCommon: 74e0d76eca8839ada2e34b76050d01ba7c66b616
   rate_my_app: 80fba94c4885cd31738231b7b1f51c1ad726f5c7
-  RevenueCat: 2d99a5ebabd33955c3a38dfdfa9d3efe77c5db0c
-  RevenueCatUI: fa6b619083afb967facc20ecdc7ae53a4c512d10
+  RevenueCat: e804675481436c1b0e83125ef4eda63969a86a14
   SDWebImage: 96e0c18ef14010b7485210e92fac888587ebb958
   share_plus: c3fef564749587fc939ef86ffb283ceac0baf9f5
   shared_preferences_foundation: 5b919d13b803cadd15ed2dc053125c68730e5126
@@ -218,4 +213,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: a1eaf986c30d5a84309bbcd4434682ef102516a3
 
-COCOAPODS: 1.13.0
+COCOAPODS: 1.15.2

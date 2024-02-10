@@ -22,7 +22,7 @@ environment:
 
 dependencies:
   darq: ^2.0.0
-  device_info_plus: ^9.1.1
+  device_info_plus: ^9.1.2
   devicelocale: ^0.7.0
   envied: ^0.5.3
   file_picker: ^6.1.1
@@ -56,14 +56,14 @@ dependencies:
   package_info_plus: ^5.0.1
   path: ^1.8.3
   path_provider: ^2.1.2
-  permission_handler: ^11.2.0
+  permission_handler: ^11.2.1
   pull_to_refresh: ^2.0.0
-  purchases_flutter: ^6.16.1
+  purchases_flutter: ^6.20.0
   rate_my_app: ^2.0.0
   responsive_builder: ^0.7.0
   responsive_grid: ^2.4.4
   screenshot: ^2.1.0
-  share_plus: ^7.2.1
+  share_plus: ^7.2.2
   shared_preferences: ^2.2.2
   sprintf: ^7.0.0
   store_checker: ^1.4.0
@@ -86,7 +86,7 @@ dev_dependencies:
   flutter_launcher_icons: ^0.13.1
   flutter_test:
     sdk: flutter
-  freezed: ^2.4.6
+  freezed: ^2.4.7
   hive_generator: ^2.0.1
   integration_test:
     sdk: flutter
