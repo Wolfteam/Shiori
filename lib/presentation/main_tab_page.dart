@@ -109,7 +109,10 @@ class _MainTabPageState extends State<MainTabPage> with SingleTickerProviderStat
     WidgetsBinding.instance.removeObserver(this);
     _tabController.dispose();
     for (final sc in _tabItemScrollControllers) {
-      sc.dispose();
+      //the controller may have been already disposed
+      if (sc.hasClients) {
+        sc.dispose();
+      }
     }
     super.dispose();
   }

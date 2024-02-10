@@ -19,7 +19,6 @@ mixin AppFabMixin<T extends StatefulWidget> on State<T>, SingleTickerProviderSta
   void dispose() {
     scrollController.dispose();
     hideFabAnimController.dispose();
-
     super.dispose();
   }
 
