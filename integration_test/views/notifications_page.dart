@@ -3,7 +3,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/presentation/notifications/widgets/forms/notification_circle_item.dart';
 import 'package:shiori/presentation/notifications/widgets/items/notification_list_tile.dart';
-import 'package:shiori/presentation/shared/images/circle_item.dart';
+import 'package:shiori/presentation/shared/images/circle_item_image.dart';
 
 import 'views.dart';
 
@@ -70,7 +70,7 @@ class NotificationBottomSheet extends CommonBottomSheet {
   Future<void> setImage(int index) async {
     await tapOnCircleItem();
 
-    final Finder imageFinder = find.descendant(of: find.byType(ListView), matching: find.byType(CircleItem)).at(index);
+    final Finder imageFinder = find.descendant(of: find.byType(ListView), matching: find.byType(CircleItemImage)).at(index);
     await tester.tap(imageFinder);
     await tester.pumpAndSettle();
   }
@@ -145,7 +145,7 @@ class NotificationBottomSheet extends CommonBottomSheet {
   }
 
   Future<void> save() async {
-    await tester.tap(find.byType(ElevatedButton));
+    await tester.tap(find.byType(FilledButton));
     await tester.pumpAndSettle();
   }
 }

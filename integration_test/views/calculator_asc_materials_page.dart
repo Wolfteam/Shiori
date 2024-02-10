@@ -32,7 +32,7 @@ class CalculatorAscMaterialsPage extends BasePage {
     //Create a new session
     await tester.enterText(find.byType(TextField), name);
     await tester.pumpAndSettle();
-    await tester.tap(find.byType(ElevatedButton));
+    await tester.tap(find.byType(FilledButton));
     await tester.pumpAndSettle();
   }
 
@@ -44,7 +44,7 @@ class CalculatorAscMaterialsPage extends BasePage {
   Future<void> deleteAll() async {
     await tester.tap(find.byIcon(Icons.clear_all));
     await tester.pumpAndSettle();
-    await tester.tap(find.byType(ElevatedButton));
+    await tester.tap(find.byType(FilledButton));
     await tester.pumpAndSettle();
   }
 
@@ -76,7 +76,7 @@ class CalculatorAscMaterialsPage extends BasePage {
       await tester.pumpAndSettle();
     }
 
-    await tester.tap(find.byType(ElevatedButton));
+    await tester.tap(find.byType(FilledButton));
     await tester.pumpAndSettle();
   }
 
@@ -126,18 +126,18 @@ class CalculatorAscMaterialsItemBottomSheet extends CommonBottomSheet {
 
   Future<void> deleteItem(String itemName) async {
     expect(find.descendant(of: find.byType(BottomSheetTitle), matching: find.textContaining(itemName)), findsOneWidget);
-    await tester.tap(find.widgetWithText(OutlinedButton, 'Delete'));
+    await tester.tap(find.widgetWithText(TextButton, 'Delete'));
     await tester.pumpAndSettle();
   }
 
   Future<void> markItemAsInactive(String itemName) async {
     expect(find.descendant(of: find.byType(BottomSheetTitle), matching: find.textContaining(itemName)), findsOneWidget);
-    await tester.tap(find.widgetWithText(OutlinedButton, 'Inactive'));
+    await tester.tap(find.widgetWithText(TextButton, 'Inactive'));
     await tester.pumpAndSettle();
   }
 
   Future<void> closeAddEditItemBottomSheet() async {
-    await tester.tap(find.descendant(of: find.byType(AddEditItemBottomSheet), matching: find.byType(ElevatedButton)));
+    await tester.tap(find.descendant(of: find.byType(AddEditItemBottomSheet), matching: find.byType(FilledButton)));
     await tester.pumpAndSettle();
   }
 }

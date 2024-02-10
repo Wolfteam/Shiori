@@ -1,5 +1,5 @@
 import 'tests/artifacts_page_test.dart' as artifacts_test;
-import 'tests/banner_history_page_test.dart' as banner_history_test;
+import 'tests/banner_history_count_page_test.dart' as banner_history_count_page_test;
 import 'tests/calculator_asc_materials_page_test.dart' as calculator_asc_materials_test;
 import 'tests/characters_page_test.dart' as characters_test;
 import 'tests/charts_page_test.dart' as charts_page_test;
@@ -28,7 +28,7 @@ void main() {
   monsters_test.main();
   elements_test.main();
   inventory_tests.main();
-  banner_history_test.main();
+  banner_history_count_page_test.main();
   calculator_asc_materials_test.main();
   notifications_page.main();
   custom_builds_test.main();

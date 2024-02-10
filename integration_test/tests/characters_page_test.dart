@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/presentation/characters/widgets/character_card.dart';
-import 'package:shiori/presentation/shared/details/detail_general_card.dart';
+import 'package:shiori/presentation/shared/details/detail_main_card.dart';
 
 import '../extensions/widget_tester_extensions.dart';
 import '../views/views.dart';
@@ -60,38 +60,35 @@ void main() {
       await widgetTester.tap(keqingFinder);
       await widgetTester.pumpAndSettle();
 
-      expect(find.widgetWithText(DetailGeneralCard, 'Keqing'), findsOneWidget);
+      expect(find.widgetWithText(DetailMainCard, 'Keqing'), findsOneWidget);
 
       final DetailPage page = DetailPage(widgetTester);
       if (widgetTester.isUsingDesktopLayout || widgetTester.isLandscape) {
         const expectedTabTitles = <String>[
           'Description',
+          'Skills',
           'Passives',
           'Constellations',
           'Materials',
-          'Builds',
-          'Stats',
         ];
         const expectedDescriptions = <String>[
-          'Description;Skills',
+          'Description;Builds;Stats',
+          'Skills',
           'Passives',
           'Constellations',
-          'Ascension Materials;Talents Ascension',
-          'Builds',
-          'Stats',
+          'Ascension Materials;Talents Ascension'
         ];
 
         await page.doCheckInLandscape(expectedTabTitles, expectedDescriptions);
       } else {
         const expectedDescriptions = <String>[
           'Description',
-          'Skills',
           'Builds',
-          'Ascension Materials',
-          'Talents Ascension',
+          'Skills',
           'Passives',
           'Constellations',
-          'Stats',
+          'Ascension Materials',
+          'Talents Ascension'
         ];
         await page.doCheckInPortrait(expectedDescriptions);
       }

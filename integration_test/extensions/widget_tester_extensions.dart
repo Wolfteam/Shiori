@@ -64,8 +64,9 @@ extension PumpUntilFound on WidgetTester {
     //is located at the end
     final Offset fromLocation = getBottomRight(from);
     final Offset toLocation = getBottomRight(to);
+    const int delta = 10;
 
-    return doAppDragFromLocation(fromLocation, toLocation);
+    return doAppDragFromLocation(Offset(fromLocation.dx, fromLocation.dy - delta), Offset(toLocation.dx, toLocation.dy - delta));
   }
 
   Future<void> doAppDragFromCenter(Finder from, Finder to) async {

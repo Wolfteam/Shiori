@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:shiori/presentation/shared/gradient_card.dart';
 
 import '../views/views.dart';
 
@@ -62,7 +63,7 @@ void main() {
   }
 
   Future<void> openCardItemDialog(String name, WidgetTester widgetTester) async {
-    final Finder cardFinder = find.widgetWithText(Card, name);
+    final Finder cardFinder = find.widgetWithText(GradientCard, name);
     expect(cardFinder, findsOneWidget);
 
     await widgetTester.tap(cardFinder);
@@ -78,7 +79,7 @@ void main() {
     //Tap on Details or Release history
     await widgetTester.tap(details ? dialogItemsFinder.first : dialogItemsFinder.last);
     await widgetTester.pumpAndSettle();
-    await widgetTester.tap(find.byType(details ? BackButton : ElevatedButton).first);
+    await widgetTester.tap(find.byType(details ? BackButton : FilledButton).first);
     await widgetTester.pumpAndSettle();
   }
 

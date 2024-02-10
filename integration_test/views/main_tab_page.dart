@@ -25,7 +25,6 @@ import 'package:shiori/presentation/shared/shiori_icons.dart';
 import 'package:shiori/presentation/shared/sliver_nothing_found.dart';
 import 'package:shiori/presentation/today_materials/widgets/sliver_character_ascension_materials.dart';
 import 'package:shiori/presentation/today_materials/widgets/sliver_weapon_ascension_materials.dart';
-import 'package:waterfall_flow/waterfall_flow.dart';
 
 import '../extensions/widget_tester_extensions.dart';
 import 'base_page.dart';
@@ -132,7 +131,7 @@ class MainTabPage extends BasePage {
       return this;
     }
 
-    expect(find.byType(SliverWaterfallFlow), findsOneWidget);
+    expect(find.byType(SliverGrid), findsOneWidget);
     return this;
   }
 
@@ -143,7 +142,7 @@ class MainTabPage extends BasePage {
       return this;
     }
 
-    expect(find.byType(SliverWaterfallFlow), findsOneWidget);
+    expect(find.byType(SliverGrid), findsOneWidget);
     return this;
   }
 
@@ -154,7 +153,7 @@ class MainTabPage extends BasePage {
       return this;
     }
 
-    expect(find.byType(SliverWaterfallFlow), findsOneWidget);
+    expect(find.byType(SliverGrid), findsOneWidget);
     return this;
   }
 
@@ -238,7 +237,7 @@ class MainTabPage extends BasePage {
       isTrue,
     );
 
-    await tester.tap(find.byType(ElevatedButton));
+    await tester.tap(find.byType(FilledButton));
     await tester.pumpAndSettle();
 
     return this;

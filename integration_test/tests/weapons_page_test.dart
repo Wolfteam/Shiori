@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:shiori/domain/enums/enums.dart';
-import 'package:shiori/presentation/shared/details/detail_general_card.dart';
+import 'package:shiori/presentation/shared/details/detail_main_card.dart';
 import 'package:shiori/presentation/weapons/widgets/weapon_card.dart';
 
 import '../extensions/widget_tester_extensions.dart';
@@ -58,24 +58,20 @@ void main() {
       await widgetTester.tap(weaponFinder);
       await widgetTester.pumpAndSettle();
 
-      expect(find.widgetWithText(DetailGeneralCard, 'Prototype Archaic'), findsOneWidget);
+      expect(find.widgetWithText(DetailMainCard, 'Prototype Archaic'), findsOneWidget);
 
       final DetailPage page = DetailPage(widgetTester);
       if (widgetTester.isUsingDesktopLayout || widgetTester.isLandscape) {
-        const expectedTabTitles = <String>[
-          'Description',
-          'Materials',
-          'Refinements',
-          'Stats',
-        ];
         const expectedDescriptions = <String>[
-          'Description;Builds',
-          'Crafting Materials;Ascension Materials',
+          'Description',
+          'Ascension Materials',
+          'Crafting Materials',
+          'Builds',
           'Refinements',
           'Stats',
         ];
 
-        await page.doCheckInLandscape(expectedTabTitles, expectedDescriptions);
+        await page.doCheckContent(expectedDescriptions);
       } else {
         const expectedDescriptions = <String>[
           'Description',
@@ -83,7 +79,6 @@ void main() {
           'Crafting Materials',
           'Ascension Materials',
           'Refinements',
-          'Stats',
         ];
         await page.doCheckInPortrait(expectedDescriptions);
       }

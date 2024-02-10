@@ -40,7 +40,7 @@ class GameCodesPage extends BasePage {
     final Offset center = tester.getCenter(itemFinder);
     expect(tester.widget<GameCodeListItem>(itemFinder).isUsed, isFalse);
 
-    await tester.doAppDragFromLocation(center, Offset(center.dx / 2, center.dy));
+    await tester.doAppDragFromLocation(center, Offset(center.dx / 3, center.dy));
     await tester.pumpAndSettle();
 
     await tester.tap(find.byIcon(Icons.check));
