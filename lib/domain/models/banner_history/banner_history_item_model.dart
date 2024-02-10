@@ -5,6 +5,8 @@ part 'banner_history_item_model.freezed.dart';
 
 @freezed
 class BannerHistoryItemModel with _$BannerHistoryItemModel {
+  int get numberOfTimesReleased => versions.where((el) => el.released).length;
+
   const factory BannerHistoryItemModel({
     required String key,
     required BannerHistoryItemType type,
@@ -14,6 +16,8 @@ class BannerHistoryItemModel with _$BannerHistoryItemModel {
     required int rarity,
     required List<BannerHistoryItemVersionModel> versions,
   }) = _BannerHistoryItemModel;
+
+  const BannerHistoryItemModel._();
 }
 
 @freezed

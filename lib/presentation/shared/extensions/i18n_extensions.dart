@@ -630,13 +630,21 @@ extension I18nExtensions on S {
   String translateBannerHistorySortType(BannerHistorySortType type) {
     switch (type) {
       case BannerHistorySortType.nameAsc:
-        return nameAsc;
+        return '$name ($asc)';
       case BannerHistorySortType.nameDesc:
-        return nameDesc;
+        return '$name ($desc)';
       case BannerHistorySortType.versionAsc:
-        return versionAsc;
+        return '$version ($asc)';
       case BannerHistorySortType.versionDesc:
-        return versionDesc;
+        return '$version ($desc)';
+      case BannerHistorySortType.rerunsAsc:
+        return '$reruns ($asc)';
+      case BannerHistorySortType.rerunsDesc:
+        return '$reruns ($desc)';
+      case BannerHistorySortType.recentAsc:
+        return '$recent ($asc)';
+      case BannerHistorySortType.recentDesc:
+        return '$recent ($desc)';
     }
   }
 
