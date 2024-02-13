@@ -28,6 +28,8 @@ class MaterialItem extends StatelessWidget {
   final bool showMaterialUsage;
   final double iconSize;
 
+  bool get gotThemAll => showMaterialUsage && usedQuantity == requiredQuantity;
+
   const MaterialItem({
     super.key,
     required this.itemKey,
@@ -58,10 +60,10 @@ class MaterialItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    final usedText = _formatQuantity(usedQuantity);
-    final requiredText = _formatQuantity(requiredQuantity);
-    final remainingText = _formatQuantity(remainingQuantity);
-    final usageText = '$usedText / $requiredText';
+    final String usedText = _formatQuantity(usedQuantity);
+    final String requiredText = _formatQuantity(requiredQuantity);
+    final String remainingText = _formatQuantity(remainingQuantity);
+    final String usageText = '$usedText / $requiredText';
     return Container(
       margin: Styles.edgeInsetHorizontal5,
       child: Column(
@@ -96,15 +98,18 @@ class MaterialItem extends StatelessWidget {
               }
             }),
           ),
-          if (showMaterialUsage && usedQuantity == requiredQuantity)
-            const Icon(Icons.check, color: Colors.green, size: 18)
-          else
-            Text(
-              showMaterialUsage ? usageText : requiredText,
-              textAlign: TextAlign.center,
-              overflow: TextOverflow.ellipsis,
-              style: textColor != null ? theme.textTheme.titleSmall!.copyWith(color: textColor) : theme.textTheme.titleSmall,
+          Text(
+            showMaterialUsage ? usageText : requiredText,
+            textAlign: TextAlign.center,
+            overflow: TextOverflow.ellipsis,
+            style: theme.textTheme.titleSmall!.copyWith(
+              color: textColor,
+              fontWeight: FontWeight.bold,
+              decoration: gotThemAll ? TextDecoration.lineThrough : null,
+              decorationThickness: 2,
+              decorationColor: theme.colorScheme.primary,
             ),
+          ),
         ],
       ),
     );
