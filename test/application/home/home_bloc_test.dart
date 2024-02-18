@@ -62,7 +62,7 @@ void main() {
           checkAsset(material.image);
           expect(material.days, isNotEmpty);
           expect(material.days.every((day) => expectedDays.contains(day)), isTrue);
-          checkItemsCommon(material.characters);
+          checkItemsCommonWithName(material.characters);
         }
 
         for (final material in state.weaponAscMaterials) {
@@ -71,7 +71,7 @@ void main() {
           checkAsset(material.image);
           expect(material.days, isNotEmpty);
           expect(material.days.every((day) => expectedDays.contains(day)), isTrue);
-          checkItemsCommon(material.weapons);
+          checkItemsCommonWithName(material.weapons);
         }
 
         for (final birthday in state.characterImgBirthday) {

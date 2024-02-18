@@ -221,7 +221,7 @@ void main() {
       await widgetTester.tap(find.byIcon(Icons.delete));
       await widgetTester.pumpAndSettle();
 
-      await widgetTester.tap(find.byType(ElevatedButton));
+      await widgetTester.tap(find.byType(FilledButton));
       await widgetTester.pumpAndSettle();
 
       expect(find.byType(NotificationListTitle), findsNothing);

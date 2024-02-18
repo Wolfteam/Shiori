@@ -17,8 +17,8 @@ class WeaponState with _$WeaponState {
     required bool isInInventory,
     required List<WeaponAscensionModel> ascensionMaterials,
     required List<WeaponFileRefinementModel> refinements,
-    required List<ItemCommon> characters,
+    required List<ItemCommonWithName> characters,
     required List<WeaponFileStatModel> stats,
-    required List<ItemAscensionMaterialModel> craftingMaterials,
+    required List<ItemCommonWithQuantityAndName> craftingMaterials,
   }) = _LoadedState;
 }

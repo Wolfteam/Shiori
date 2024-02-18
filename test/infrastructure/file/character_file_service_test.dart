@@ -348,7 +348,7 @@ void main() {
         expect(material.characters, isNotEmpty);
         expect(material.days, isNotEmpty);
         for (final item in material.characters) {
-          checkItemCommon(item);
+          checkItemCommonWithName(item);
         }
         final travelerExists = material.characters.where((el) => el.key.startsWith('traveler')).isNotEmpty;
         expect(travelerExists, isTrue);

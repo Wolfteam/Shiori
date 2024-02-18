@@ -1,11 +1,8 @@
 import 'package:darq/darq.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:responsive_builder/responsive_builder.dart';
-import 'package:responsive_grid/responsive_grid.dart';
 import 'package:shiori/application/bloc.dart';
 import 'package:shiori/domain/enums/enums.dart';
-import 'package:shiori/domain/extensions/iterable_extensions.dart';
 import 'package:shiori/domain/extensions/string_extensions.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/generated/l10n.dart';
@@ -14,13 +11,14 @@ import 'package:shiori/presentation/calculator_asc_materials/widgets/add_edit_it
 import 'package:shiori/presentation/calculator_asc_materials/widgets/ascension_materials_summary.dart';
 import 'package:shiori/presentation/calculator_asc_materials/widgets/item_card.dart';
 import 'package:shiori/presentation/characters/characters_page.dart';
+import 'package:shiori/presentation/shared/details/detail_section.dart';
 import 'package:shiori/presentation/shared/dialogs/confirm_dialog.dart';
 import 'package:shiori/presentation/shared/dialogs/sort_items_dialog.dart';
 import 'package:shiori/presentation/shared/extensions/i18n_extensions.dart';
 import 'package:shiori/presentation/shared/hawk_fab_menu.dart';
-import 'package:shiori/presentation/shared/item_description_detail.dart';
 import 'package:shiori/presentation/shared/nothing_found_column.dart';
 import 'package:shiori/presentation/shared/shiori_icons.dart';
+import 'package:shiori/presentation/shared/sliver_nothing_found.dart';
 import 'package:shiori/presentation/shared/styles.dart';
 import 'package:shiori/presentation/shared/utils/modal_bottom_sheet_utils.dart';
 import 'package:shiori/presentation/weapons/weapons_page.dart';
@@ -113,7 +111,13 @@ class _FabMenu extends StatelessWidget {
   Widget build(BuildContext context) {
     final s = S.of(context);
     final isPortrait = MediaQuery.of(context).orientation == Orientation.portrait;
-    final size = getDeviceType(MediaQuery.of(context).size);
+    final mq = MediaQuery.of(context);
+    final Size size = mq.size;
+    double itemHeight = ItemCard.maxItemHeight;
+    if (size.height / 2.5 < ItemCard.maxItemHeight) {
+      itemHeight = ItemCard.minItemHeight;
+    }
+
     return HawkFabMenu(
       icon: AnimatedIcons.menu_arrow,
       items: [
@@ -134,29 +138,27 @@ class _FabMenu extends StatelessWidget {
             if (state.items.isEmpty) {
               return NothingFoundColumn(msg: s.startByAddingMsg, icon: Icons.add_circle_outline);
             }
-            final summary = _buildSummary(s, state.summary, state.showMaterialUsage);
-            switch (size) {
-              case DeviceScreenType.mobile:
-              case DeviceScreenType.tablet:
-              case DeviceScreenType.desktop:
-                if (isPortrait) {
-                  return _PortraitLayout(sessionKey: sessionKey, items: state.items, summary: summary, showMaterialUsage: state.showMaterialUsage);
-                }
-                return _LandscapeLayout(sessionKey: sessionKey, items: state.items, summary: summary, showMaterialUsage: state.showMaterialUsage);
-              default:
-                return _PortraitLayout(sessionKey: sessionKey, items: state.items, summary: summary, showMaterialUsage: state.showMaterialUsage);
+            final summary = state.summary.orderBy((x) => s.translateAscensionSummaryType(x.type)).toList();
+            if (isPortrait) {
+              return _PortraitLayout(
+                sessionKey: sessionKey,
+                items: state.items,
+                summary: summary,
+                showMaterialUsage: state.showMaterialUsage,
+                itemHeight: itemHeight,
+              );
             }
+            return _LandscapeLayout(
+              sessionKey: sessionKey,
+              items: state.items,
+              summary: summary,
+              showMaterialUsage: state.showMaterialUsage,
+              itemHeight: itemHeight,
+            );
           },
         ),
       ),
     );
-  }
-
-  List<AscensionMaterialsSummaryWidget> _buildSummary(S s, List<AscensionMaterialsSummary> items, bool showMaterialUsage) {
-    return items
-        .orderBy((x) => s.translateAscensionSummaryType(x.type))
-        .map((e) => AscensionMaterialsSummaryWidget(summary: e, sessionKey: sessionKey, showMaterialUsage: showMaterialUsage))
-        .toList();
   }
 
   Future<void> _openCharacterPage(BuildContext context) async {
@@ -205,73 +207,79 @@ class _FabMenu extends StatelessWidget {
 class _PortraitLayout extends StatelessWidget {
   final int sessionKey;
   final List<ItemAscensionMaterials> items;
-  final List<Widget> summary;
+  final List<AscensionMaterialsSummary> summary;
   final bool showMaterialUsage;
+  final double itemHeight;
 
   const _PortraitLayout({
     required this.sessionKey,
     required this.items,
     required this.summary,
     required this.showMaterialUsage,
+    required this.itemHeight,
   });
 
   @override
   Widget build(BuildContext context) {
     final s = S.of(context);
     final theme = Theme.of(context);
+
     return CustomScrollView(
       slivers: [
-        SliverPadding(
-          padding: const EdgeInsets.only(top: 10),
-          sliver: SliverToBoxAdapter(
-            child: ItemDescriptionDetail(
-              title: '${s.characters} / ${s.weapons}',
-              textColor: theme.colorScheme.secondary,
-            ),
+        SliverToBoxAdapter(
+          child: DetailSection(
+            title: '${s.characters} / ${s.weapons}',
+            color: theme.colorScheme.secondary,
+            margin: Styles.edgeInsetHorizontal16,
           ),
         ),
         SliverPadding(
           padding: Styles.edgeInsetHorizontal16,
-          sliver: SliverToBoxAdapter(
-            child: ResponsiveGridRow(
-              children: items
-                  .mapIndex(
-                    (e, index) => ResponsiveGridCol(
-                      xs: 6,
-                      sm: 4,
-                      md: 4,
-                      lg: 3,
-                      xl: 2,
-                      child: ItemCard(
-                        sessionKey: sessionKey,
-                        isActive: e.isActive,
-                        index: index,
-                        itemKey: e.key,
-                        image: e.image,
-                        name: e.name,
-                        rarity: e.rarity,
-                        isWeapon: !e.isCharacter,
-                        materials: e.materials,
-                        elementType: e.elementType,
-                        showMaterialUsage: showMaterialUsage,
-                      ),
-                    ),
-                  )
-                  .toList(),
+          sliver: SliverGrid.builder(
+            gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+              maxCrossAxisExtent: ItemCard.itemWidth,
+              crossAxisSpacing: 10,
+              mainAxisSpacing: 10,
+              mainAxisExtent: itemHeight,
+              childAspectRatio: ItemCard.itemWidth / itemHeight,
             ),
+            itemCount: items.length,
+            itemBuilder: (context, index) {
+              final e = items[index];
+              return ItemCard(
+                sessionKey: sessionKey,
+                isActive: e.isActive,
+                index: index,
+                itemKey: e.key,
+                image: e.image,
+                name: e.name,
+                rarity: e.rarity,
+                isWeapon: !e.isCharacter,
+                materials: e.materials,
+                elementType: e.elementType,
+                showMaterialUsage: showMaterialUsage,
+              );
+            },
+          ),
+        ),
+        SliverToBoxAdapter(
+          child: DetailSection(
+            title: s.summary,
+            color: theme.colorScheme.secondary,
+            margin: Styles.edgeInsetHorizontal16,
           ),
         ),
         if (summary.isNotEmpty)
-          SliverToBoxAdapter(
-            child: ItemDescriptionDetail(
-              title: s.summary,
-              textColor: theme.colorScheme.secondary,
-              body: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: summary,
-              ),
+          SliverList.builder(
+            itemCount: summary.length,
+            itemBuilder: (context, index) => AscensionMaterialsSummaryWidget(
+              summary: summary[index],
+              sessionKey: sessionKey,
+              showMaterialUsage: showMaterialUsage,
             ),
-          ),
+          )
+        else
+          const SliverNothingFound(),
       ],
     );
   }
@@ -280,14 +288,16 @@ class _PortraitLayout extends StatelessWidget {
 class _LandscapeLayout extends StatefulWidget {
   final int sessionKey;
   final List<ItemAscensionMaterials> items;
-  final List<Widget> summary;
+  final List<AscensionMaterialsSummary> summary;
   final bool showMaterialUsage;
+  final double itemHeight;
 
   const _LandscapeLayout({
     required this.sessionKey,
     required this.items,
     required this.summary,
     required this.showMaterialUsage,
+    required this.itemHeight,
   });
 
   @override
@@ -317,43 +327,40 @@ class _LandscapeLayoutState extends State<_LandscapeLayout> {
           child: CustomScrollView(
             controller: _controllerLeft,
             slivers: [
-              SliverPadding(
-                padding: const EdgeInsets.only(top: 10),
-                sliver: SliverToBoxAdapter(
-                  child: ItemDescriptionDetail(
-                    title: '${s.characters} / ${s.weapons}',
-                    textColor: theme.colorScheme.secondary,
-                  ),
+              SliverToBoxAdapter(
+                child: DetailSection(
+                  title: '${s.characters} / ${s.weapons}',
+                  color: theme.colorScheme.secondary,
+                  margin: Styles.edgeInsetHorizontal16,
                 ),
               ),
               SliverPadding(
                 padding: Styles.edgeInsetHorizontal16,
-                sliver: SliverToBoxAdapter(
-                  child: ResponsiveGridRow(
-                    children: widget.items
-                        .mapIndex(
-                          (e, index) => ResponsiveGridCol(
-                            sm: 6,
-                            md: 4,
-                            lg: 3,
-                            xl: 3,
-                            child: ItemCard(
-                              sessionKey: widget.sessionKey,
-                              isActive: e.isActive,
-                              index: index,
-                              itemKey: e.key,
-                              image: e.image,
-                              name: e.name,
-                              rarity: e.rarity,
-                              isWeapon: !e.isCharacter,
-                              materials: e.materials,
-                              elementType: e.elementType,
-                              showMaterialUsage: widget.showMaterialUsage,
-                            ),
-                          ),
-                        )
-                        .toList(),
+                sliver: SliverGrid.builder(
+                  gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+                    maxCrossAxisExtent: ItemCard.itemWidth,
+                    crossAxisSpacing: 10,
+                    mainAxisSpacing: 10,
+                    mainAxisExtent: widget.itemHeight,
+                    childAspectRatio: ItemCard.itemWidth / widget.itemHeight,
                   ),
+                  itemCount: widget.items.length,
+                  itemBuilder: (context, index) {
+                    final e = widget.items[index];
+                    return ItemCard(
+                      sessionKey: widget.sessionKey,
+                      isActive: e.isActive,
+                      index: index,
+                      itemKey: e.key,
+                      image: e.image,
+                      name: e.name,
+                      rarity: e.rarity,
+                      isWeapon: !e.isCharacter,
+                      materials: e.materials,
+                      elementType: e.elementType,
+                      showMaterialUsage: widget.showMaterialUsage,
+                    );
+                  },
                 ),
               ),
             ],
@@ -365,19 +372,24 @@ class _LandscapeLayoutState extends State<_LandscapeLayout> {
           child: CustomScrollView(
             controller: _controllerRight,
             slivers: [
-              SliverPadding(
-                padding: const EdgeInsets.only(top: 10),
-                sliver: SliverToBoxAdapter(
-                  child: ItemDescriptionDetail(
-                    title: s.summary,
-                    textColor: theme.colorScheme.secondary,
-                    body: Column(
-                      crossAxisAlignment: CrossAxisAlignment.stretch,
-                      children: widget.summary,
-                    ),
-                  ),
+              SliverToBoxAdapter(
+                child: DetailSection(
+                  title: s.summary,
+                  color: theme.colorScheme.secondary,
+                  margin: Styles.edgeInsetHorizontal16,
                 ),
               ),
+              if (widget.summary.isNotEmpty)
+                SliverList.builder(
+                  itemCount: widget.summary.length,
+                  itemBuilder: (context, index) => AscensionMaterialsSummaryWidget(
+                    summary: widget.summary[index],
+                    sessionKey: widget.sessionKey,
+                    showMaterialUsage: widget.showMaterialUsage,
+                  ),
+                )
+              else
+                const SliverNothingFound(),
             ],
           ),
         ),

@@ -27,7 +27,7 @@ class ArtifactBloc extends Bloc<ArtifactEvent, ArtifactState> {
         final artifact = _genshinService.artifacts.getArtifact(e.key);
         final artifactImgPath = _resourceService.getArtifactImagePath(artifact.image);
         final translation = _genshinService.translations.getArtifactTranslation(e.key);
-        final charImgs = _genshinService.characters.getCharacterForItemsUsingArtifact(e.key);
+        final usedBy = _genshinService.characters.getCharacterForItemsUsingArtifact(e.key);
         final droppedBy = _genshinService.monsters.getRelatedMonsterToArtifactForItems(e.key);
         final images = _genshinService.artifacts.getArtifactRelatedParts(artifactImgPath, artifact.image, translation.bonus.length);
         final bonus = _genshinService.artifacts.getArtifactBonus(translation);
@@ -41,7 +41,7 @@ class ArtifactBloc extends Bloc<ArtifactEvent, ArtifactState> {
           maxRarity: artifact.maxRarity,
           bonus: bonus,
           images: images,
-          charImages: charImgs,
+          usedBy: usedBy,
           droppedBy: droppedBy,
         );
       },

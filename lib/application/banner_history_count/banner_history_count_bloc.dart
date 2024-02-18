@@ -150,6 +150,14 @@ class BannerHistoryCountBloc extends Bloc<BannerHistoryCountEvent, BannerHistory
       case BannerHistorySortType.versionAsc:
       case BannerHistorySortType.versionDesc:
         return sortedBannerByVersion;
+      case BannerHistorySortType.rerunsAsc:
+        return sortedBannerByVersion..sort((x, y) => x.numberOfTimesReleased.compareTo(y.numberOfTimesReleased));
+      case BannerHistorySortType.rerunsDesc:
+        return sortedBannerByVersion..sort((x, y) => y.numberOfTimesReleased.compareTo(x.numberOfTimesReleased));
+      case BannerHistorySortType.recentAsc:
+        return sortedBannerByVersion..sort((x, y) => _sortByRecent(x, y, true));
+      case BannerHistorySortType.recentDesc:
+        return sortedBannerByVersion..sort((x, y) => _sortByRecent(x, y, false));
     }
   }
 
@@ -160,12 +168,10 @@ class BannerHistoryCountBloc extends Bloc<BannerHistoryCountEvent, BannerHistory
 
     final versionsCopy = [...versions];
     switch (sortType) {
-      case BannerHistorySortType.nameAsc:
-      case BannerHistorySortType.nameDesc:
-      case BannerHistorySortType.versionAsc:
-        return versionsCopy..sort((x, y) => x.compareTo(y));
       case BannerHistorySortType.versionDesc:
         return versionsCopy..sort((x, y) => y.compareTo(x));
+      default:
+        return versionsCopy..sort((x, y) => x.compareTo(y));
     }
   }
 
@@ -180,5 +186,14 @@ class BannerHistoryCountBloc extends Bloc<BannerHistoryCountEvent, BannerHistory
         throw Exception('Banner history item type = $type is not valid');
     }
     return banners;
+  }
+
+  int _sortByRecent(BannerHistoryItemModel x, BannerHistoryItemModel y, bool asc) {
+    final int countA = x.versions.last.number ?? 0;
+    final int countB = y.versions.last.number ?? 0;
+    if (asc) {
+      return countA.compareTo(countB);
+    }
+    return countB.compareTo(countA);
   }
 }

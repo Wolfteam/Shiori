@@ -6,8 +6,8 @@ import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/generated/l10n.dart';
 import 'package:shiori/injection.dart';
 import 'package:shiori/presentation/game_codes/widgets/game_code_list_item.dart';
+import 'package:shiori/presentation/shared/details/detail_section.dart';
 import 'package:shiori/presentation/shared/dialogs/info_dialog.dart';
-import 'package:shiori/presentation/shared/item_description_detail.dart';
 import 'package:shiori/presentation/shared/loading.dart';
 import 'package:shiori/presentation/shared/mixins/app_fab_mixin.dart';
 import 'package:shiori/presentation/shared/nothing_found_column.dart';
@@ -186,6 +186,7 @@ class __PortraitLayoutState extends State<_PortraitLayout> {
   @override
   Widget build(BuildContext context) {
     final s = S.of(context);
+    final theme = Theme.of(context);
     return BlocListener<GameCodesBloc, GameCodesState>(
       listener: (ctx, state) {
         if (!state.isBusy) {
@@ -201,34 +202,27 @@ class __PortraitLayoutState extends State<_PortraitLayout> {
           slivers: [
             if (widget.working.isNotEmpty)
               SliverToBoxAdapter(
-                child: Container(
-                  margin: const EdgeInsets.only(top: 10),
-                  child: ItemDescriptionDetail(
-                    title: s.workingCodes,
-                    textColor: Theme.of(context).colorScheme.secondary,
-                    body: Container(),
-                  ),
+                child: DetailSection(
+                  title: s.workingCodes,
+                  color: theme.colorScheme.secondary,
+                  margin: Styles.edgeInsetHorizontal16,
                 ),
               ),
-            SliverList(
-              delegate: SliverChildBuilderDelegate(
-                (_, index) => GameCodeListItem(item: widget.working[index]),
-                childCount: widget.working.length,
-              ),
+            SliverList.builder(
+              itemBuilder: (_, index) => GameCodeListItem(item: widget.working[index]),
+              itemCount: widget.working.length,
             ),
             if (widget.expired.isNotEmpty)
               SliverToBoxAdapter(
-                child: ItemDescriptionDetail(
+                child: DetailSection(
                   title: s.expiredCodes,
-                  textColor: Theme.of(context).colorScheme.secondary,
-                  body: Container(),
+                  color: theme.colorScheme.secondary,
+                  margin: Styles.edgeInsetHorizontal16,
                 ),
               ),
-            SliverList(
-              delegate: SliverChildBuilderDelegate(
-                (_, index) => GameCodeListItem(item: widget.expired[index]),
-                childCount: widget.expired.length,
-              ),
+            SliverList.builder(
+              itemBuilder: (_, index) => GameCodeListItem(item: widget.expired[index]),
+              itemCount: widget.expired.length,
             ),
           ],
         ),
@@ -272,6 +266,7 @@ class __LandScapeLayoutState extends State<_LandScapeLayout> {
   @override
   Widget build(BuildContext context) {
     final s = S.of(context);
+    final theme = Theme.of(context);
     return BlocListener<GameCodesBloc, GameCodesState>(
       listener: (ctx, state) {
         if (!state.isBusy) {
@@ -289,20 +284,15 @@ class __LandScapeLayoutState extends State<_LandScapeLayout> {
               child: CustomScrollView(
                 slivers: [
                   SliverToBoxAdapter(
-                    child: Container(
-                      margin: const EdgeInsets.only(top: 10),
-                      child: ItemDescriptionDetail(
-                        title: s.workingCodes,
-                        textColor: Theme.of(context).colorScheme.secondary,
-                        body: Container(),
-                      ),
+                    child: DetailSection(
+                      title: s.workingCodes,
+                      color: theme.colorScheme.secondary,
+                      margin: Styles.edgeInsetHorizontal16,
                     ),
                   ),
-                  SliverList(
-                    delegate: SliverChildBuilderDelegate(
-                      (_, index) => GameCodeListItem(item: widget.working[index]),
-                      childCount: widget.working.length,
-                    ),
+                  SliverList.builder(
+                    itemBuilder: (_, index) => GameCodeListItem(item: widget.working[index]),
+                    itemCount: widget.working.length,
                   ),
                 ],
               ),
@@ -317,20 +307,15 @@ class __LandScapeLayoutState extends State<_LandScapeLayout> {
                 controller: widget.scrollController,
                 slivers: [
                   SliverToBoxAdapter(
-                    child: Container(
-                      margin: const EdgeInsets.only(top: 10),
-                      child: ItemDescriptionDetail(
-                        title: s.expiredCodes,
-                        textColor: Theme.of(context).colorScheme.secondary,
-                        body: Container(),
-                      ),
+                    child: DetailSection(
+                      title: s.expiredCodes,
+                      color: theme.colorScheme.secondary,
+                      margin: Styles.edgeInsetHorizontal16,
                     ),
                   ),
-                  SliverList(
-                    delegate: SliverChildBuilderDelegate(
-                      (_, index) => GameCodeListItem(item: widget.expired[index]),
-                      childCount: widget.expired.length,
-                    ),
+                  SliverList.builder(
+                    itemBuilder: (_, index) => GameCodeListItem(item: widget.expired[index]),
+                    itemCount: widget.expired.length,
                   ),
                 ],
               ),

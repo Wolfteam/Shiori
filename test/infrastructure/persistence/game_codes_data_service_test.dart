@@ -184,12 +184,12 @@ void main() {
       }
     });
 
-    test('game code already exists thus it gets updated', () async {
+    test('previous game codes existed and they get deleted', () async {
       await dataService.gameCodes.saveGameCodes(gameCodes);
       final updated = gameCodes.first.copyWith(expiredOn: DateTime.now(), isExpired: true);
       await dataService.gameCodes.saveGameCodes([updated]);
       final allGameCodes = dataService.gameCodes.getAllGameCodes();
-      expect(allGameCodes.length, gameCodes.length);
+      expect(allGameCodes.length, 1);
       checkGameCode(allGameCodes.first, updated);
     });
   });

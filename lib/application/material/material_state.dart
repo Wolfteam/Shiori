@@ -9,11 +9,11 @@ class MaterialState with _$MaterialState {
     required int rarity,
     required MaterialType type,
     String? description,
-    required List<ItemCommon> characters,
-    required List<ItemCommon> weapons,
+    required List<ItemCommonWithName> characters,
+    required List<ItemCommonWithName> weapons,
     required List<int> days,
     required List<ItemObtainedFrom> obtainedFrom,
-    required List<ItemCommon> relatedMaterials,
-    required List<ItemCommon> droppedBy,
+    required List<ItemCommonWithName> relatedMaterials,
+    required List<ItemCommonWithName> droppedBy,
   }) = _LoadedState;
 }

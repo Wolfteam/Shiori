@@ -118,7 +118,7 @@ class CustomBuildsPage extends BasePage {
     await tester.enterText(find.byType(TextField), note);
     await tester.pumpAndSettle();
 
-    await tester.tap(find.byType(ElevatedButton));
+    await tester.tap(find.byType(FilledButton));
     await tester.pumpAndSettle();
   }
 
@@ -197,7 +197,7 @@ class CustomBuildsPage extends BasePage {
     await tester.tap(find.widgetWithIcon(IconButton, Icons.delete));
     await tester.pumpAndSettle();
 
-    await tester.tap(find.byType(ElevatedButton));
+    await tester.tap(find.byType(FilledButton));
     await tester.pumpAndSettle();
   }
 }

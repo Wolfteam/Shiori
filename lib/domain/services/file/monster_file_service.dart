@@ -11,7 +11,7 @@ abstract class MonsterFileService extends BaseFileService {
 
   List<MonsterFileModel> getMonsters(MonsterType type);
 
-  List<ItemCommon> getRelatedMonsterToMaterialForItems(String key);
+  List<ItemCommonWithName> getRelatedMonsterToMaterialForItems(String key);
 
-  List<ItemCommon> getRelatedMonsterToArtifactForItems(String key);
+  List<ItemCommonWithName> getRelatedMonsterToArtifactForItems(String key);
 }

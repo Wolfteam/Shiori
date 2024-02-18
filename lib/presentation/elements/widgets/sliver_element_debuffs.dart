@@ -3,6 +3,7 @@ import 'package:responsive_grid/responsive_grid.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/generated/l10n.dart';
 import 'package:shiori/presentation/elements/widgets/element_debuff_card.dart';
+import 'package:shiori/presentation/shared/details/detail_section.dart';
 import 'package:shiori/presentation/shared/nothing_found.dart';
 import 'package:shiori/presentation/shared/styles.dart';
 
@@ -15,43 +16,41 @@ class SliverElementDebuffs extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final s = S.of(context);
+
     return SliverMainAxisGroup(
       slivers: [
-        SliverPadding(
-          padding: Styles.edgeInsetAll10,
-          sliver: SliverList(
-            delegate: SliverChildListDelegate.fixed(
-              [
-                Text(
-                  s.elementalDebuffs,
-                  style: theme.textTheme.titleMedium!.copyWith(fontWeight: FontWeight.bold),
-                ),
-                Text(s.elementalDebuffsExplained),
-              ],
-            ),
+        SliverToBoxAdapter(
+          child: DetailSection(
+            title: s.elementalDebuffs,
+            description: s.elementalDebuffsExplained,
+            margin: Styles.edgeInsetHorizontal16,
+            color: theme.colorScheme.secondary,
           ),
         ),
         if (debuffs.isEmpty)
           const SliverToBoxAdapter(child: NothingFound())
         else
-          SliverToBoxAdapter(
-            child: ResponsiveGridRow(
-              children: debuffs
-                  .map(
-                    (item) => ResponsiveGridCol(
-                      xs: 6,
-                      sm: 6,
-                      md: 6,
-                      lg: 3,
-                      child: ElementDebuffCard(
-                        key: Key(item.name),
-                        effect: item.effect,
-                        image: item.image,
-                        name: item.name,
+          SliverPadding(
+            padding: Styles.edgeInsetHorizontal16,
+            sliver: SliverToBoxAdapter(
+              child: ResponsiveGridRow(
+                children: debuffs
+                    .map(
+                      (item) => ResponsiveGridCol(
+                        xs: 6,
+                        sm: 6,
+                        md: 6,
+                        lg: 3,
+                        child: ElementDebuffCard(
+                          key: Key(item.name),
+                          effect: item.effect,
+                          image: item.image,
+                          name: item.name,
+                        ),
                       ),
-                    ),
-                  )
-                  .toList(),
+                    )
+                    .toList(),
+              ),
             ),
           ),
       ],

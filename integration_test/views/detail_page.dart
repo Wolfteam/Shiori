@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:shiori/presentation/shared/item_description_detail.dart';
+import 'package:shiori/presentation/shared/details/detail_section.dart';
 
 import 'base_page.dart';
 
@@ -14,7 +14,7 @@ class DetailPage extends BasePage {
     expect(scrollViewFinder, findsOneWidget);
 
     for (final String description in expectedDescriptions) {
-      final Finder finder = find.widgetWithText(ItemDescriptionTitle, description);
+      final Finder finder = find.widgetWithText(DetailSection, description);
       await tester.dragUntilVisible(finder, scrollViewFinder, verticalOffset);
       await tester.pumpAndSettle();
     }
@@ -44,7 +44,22 @@ class DetailPage extends BasePage {
       final Finder scrollViewFinder = find.byType(SingleChildScrollView).first;
       final List<String> descriptions = expectedDescriptions[i].split(';');
       for (final String description in descriptions) {
-        final Finder finder = find.widgetWithText(ItemDescriptionTitle, description);
+        final Finder finder = find.widgetWithText(DetailSection, description);
+        await tester.dragUntilVisible(finder, scrollViewFinder, verticalOffset);
+        await tester.pumpAndSettle();
+      }
+    }
+
+    return this;
+  }
+
+  Future<DetailPage> doCheckContent(List<String> expectedDescriptions) async {
+    const Offset verticalOffset = Offset(0, -50);
+    final Finder scrollViewFinder = find.byType(SingleChildScrollView).first;
+    for (int i = 0; i < expectedDescriptions.length; i++) {
+      final List<String> descriptions = expectedDescriptions[i].split(';');
+      for (final String description in descriptions) {
+        final Finder finder = find.widgetWithText(DetailSection, description);
         await tester.dragUntilVisible(finder, scrollViewFinder, verticalOffset);
         await tester.pumpAndSettle();
       }

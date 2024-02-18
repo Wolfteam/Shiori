@@ -6,8 +6,7 @@ import 'package:shiori/presentation/characters/characters_page.dart';
 import 'package:shiori/presentation/characters/widgets/character_card.dart';
 import 'package:shiori/presentation/shared/app_fab.dart';
 import 'package:shiori/presentation/shared/mixins/app_fab_mixin.dart';
-import 'package:shiori/presentation/shared/utils/size_utils.dart';
-import 'package:waterfall_flow/waterfall_flow.dart';
+import 'package:shiori/presentation/shared/styles.dart';
 
 class CharactersInventoryTabPage extends StatefulWidget {
   @override
@@ -23,9 +22,13 @@ class _CharactersInventoryTabPageState extends State<CharactersInventoryTabPage>
 
   @override
   Widget build(BuildContext context) {
-    final isPortrait = MediaQuery.of(context).orientation == Orientation.portrait;
+    final size = MediaQuery.of(context).size;
+    double itemHeight = CharacterCard.maxHeight;
+    if (size.height / 2.5 < CharacterCard.maxHeight) {
+      itemHeight = CharacterCard.minHeight;
+    }
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 5),
+      padding: Styles.edgeInsetHorizontal5,
       child: Scaffold(
         floatingActionButton: AppFab(
           onPressed: () => _openCharactersPage(context),
@@ -35,15 +38,17 @@ class _CharactersInventoryTabPageState extends State<CharactersInventoryTabPage>
           mini: false,
         ),
         body: BlocBuilder<InventoryBloc, InventoryState>(
-          builder: (ctx, state) => WaterfallFlow.builder(
+          builder: (ctx, state) => GridView.builder(
             controller: scrollController,
-            itemBuilder: (context, index) => CharacterCard.item(char: state.characters[index]),
-            itemCount: state.characters.length,
-            gridDelegate: SliverWaterfallFlowDelegateWithFixedCrossAxisCount(
-              crossAxisCount: SizeUtils.getCrossAxisCountForGrids(context),
-              crossAxisSpacing: isPortrait ? 10 : 5,
-              mainAxisSpacing: 5,
+            gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+              maxCrossAxisExtent: CharacterCard.itemWidth,
+              crossAxisSpacing: 10,
+              mainAxisSpacing: 10,
+              mainAxisExtent: itemHeight,
+              childAspectRatio: CharacterCard.itemWidth / itemHeight,
             ),
+            itemCount: state.characters.length,
+            itemBuilder: (context, index) => CharacterCard.item(char: state.characters[index]),
           ),
         ),
       ),

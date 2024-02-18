@@ -61,6 +61,7 @@ class WeaponIconImage extends StatelessWidget {
     return SquareItemImage(
       image: image,
       size: size,
+      gradient: gradient,
       onTap: (_) => _onTap(context),
     );
   }

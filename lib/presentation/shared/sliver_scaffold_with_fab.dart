@@ -5,11 +5,13 @@ import 'package:shiori/presentation/shared/mixins/app_fab_mixin.dart';
 class SliverScaffoldWithFab extends StatefulWidget {
   final List<Widget> slivers;
   final PreferredSizeWidget? appbar;
+  final ScrollController? scrollController;
 
   const SliverScaffoldWithFab({
     super.key,
     required this.slivers,
     this.appbar,
+    this.scrollController,
   });
 
   @override
@@ -27,11 +29,11 @@ class _SliverScaffoldWithFabState extends State<SliverScaffoldWithFab> with Sing
         appBar: widget.appbar,
         body: SafeArea(
           child: CustomScrollView(
-            controller: scrollController,
+            controller: widget.scrollController ?? scrollController,
             slivers: widget.slivers,
           ),
         ),
-        floatingActionButton: getAppFab(),
+        floatingActionButton: getAppFab(customController: widget.scrollController),
       ),
     );
   }

@@ -117,7 +117,8 @@ void main() {
       expect(find.byType(CustomBuildCard), findsOneWidget);
 
       //Update it
-      await widgetTester.tap(find.byType(CharacterStackImage));
+      //The CharacterStackImage has an absorb pointer
+      await widgetTester.tap(find.byType(CharacterStackImage), warnIfMissed: false);
       await widgetTester.pumpAndSettle();
 
       await page.selectCharacter('nahida');

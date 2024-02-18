@@ -6,6 +6,7 @@ class CommonTableCell extends StatelessWidget {
   final EdgeInsets padding;
   final String? text;
   final TextAlign? textAlign;
+  final TextStyle? textStyle;
 
   final Widget? child;
 
@@ -14,6 +15,7 @@ class CommonTableCell extends StatelessWidget {
     required this.text,
     this.textAlign = TextAlign.center,
     this.padding = Styles.edgeInsetVertical5,
+    this.textStyle,
   }) : child = null;
 
   const CommonTableCell.child({
@@ -21,6 +23,7 @@ class CommonTableCell extends StatelessWidget {
     required this.child,
   })  : text = null,
         textAlign = null,
+        textStyle = null,
         padding = Styles.edgeInsetVertical5;
 
   @override
@@ -38,6 +41,7 @@ class CommonTableCell extends StatelessWidget {
                     child: Text(
                       text!,
                       textAlign: textAlign,
+                      style: textStyle,
                     ),
                   ),
                 ),

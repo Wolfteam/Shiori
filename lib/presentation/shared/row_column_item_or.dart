@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:shiori/generated/l10n.dart';
-import 'package:shiori/presentation/shared/styles.dart';
 
 class RowColumnItemOr extends StatelessWidget {
   final Widget widget;

@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:shiori/presentation/artifacts/widgets/artifact_card.dart';
-import 'package:shiori/presentation/shared/details/detail_general_card.dart';
+import 'package:shiori/presentation/shared/details/detail_main_card.dart';
 
 import '../extensions/widget_tester_extensions.dart';
 import '../views/views.dart';
@@ -58,22 +58,18 @@ void main() {
       await widgetTester.tap(artifactFinder);
       await widgetTester.pumpAndSettle();
 
-      expect(find.widgetWithText(DetailGeneralCard, "Gladiator's Finale"), findsOneWidget);
+      expect(find.widgetWithText(DetailMainCard, "Gladiator's Finale"), findsOneWidget);
 
       final DetailPage page = DetailPage(widgetTester);
       if (widgetTester.isUsingDesktopLayout || widgetTester.isLandscape) {
-        const expectedTabTitles = <String>[
-          'Description',
-          'Builds',
-          'Dropped by',
-        ];
         const expectedDescriptions = <String>[
-          'Bonus;Pieces',
+          'Bonus',
+          'Pieces',
           'Builds',
           'Dropped by',
         ];
 
-        await page.doCheckInLandscape(expectedTabTitles, expectedDescriptions);
+        await page.doCheckContent(expectedDescriptions);
       } else {
         const expectedDescriptions = <String>[
           'Bonus',

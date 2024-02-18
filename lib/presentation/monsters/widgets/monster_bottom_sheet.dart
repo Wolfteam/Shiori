@@ -128,7 +128,6 @@ class _ButtonBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final s = S.of(context);
-    final theme = Theme.of(context);
     return CommonButtonBar(
       children: <Widget>[
         TextButton(

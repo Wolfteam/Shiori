@@ -9,9 +9,8 @@ import 'package:shiori/presentation/shared/loading.dart';
 import 'package:shiori/presentation/shared/sliver_nothing_found.dart';
 import 'package:shiori/presentation/shared/sliver_page_filter.dart';
 import 'package:shiori/presentation/shared/sliver_scaffold_with_fab.dart';
+import 'package:shiori/presentation/shared/styles.dart';
 import 'package:shiori/presentation/shared/utils/modal_bottom_sheet_utils.dart';
-import 'package:shiori/presentation/shared/utils/size_utils.dart';
-import 'package:waterfall_flow/waterfall_flow.dart';
 
 class MonstersPage extends StatelessWidget {
   final bool isInSelectionMode;
@@ -34,7 +33,6 @@ class MonstersPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final isPortrait = MediaQuery.of(context).orientation == Orientation.portrait;
     final s = S.of(context);
     return BlocProvider(
       create: (context) => Injection.monstersBloc..add(MonstersEvent.init(excludeKeys: excludeKeys)),
@@ -52,16 +50,19 @@ class MonstersPage extends StatelessWidget {
               ),
               if (state.monsters.isNotEmpty)
                 SliverPadding(
-                  padding: const EdgeInsets.symmetric(horizontal: 5),
-                  sliver: SliverWaterfallFlow(
-                    gridDelegate: SliverWaterfallFlowDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: SizeUtils.getCrossAxisCountForGrids(context, isOnMainPage: !isInSelectionMode),
-                      crossAxisSpacing: isPortrait ? 10 : 5,
-                      mainAxisSpacing: 5,
+                  padding: Styles.edgeInsetHorizontal5,
+                  sliver: SliverGrid.builder(
+                    gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
+                      maxCrossAxisExtent: MonsterCard.itemWidth,
+                      crossAxisSpacing: 10,
+                      mainAxisSpacing: 10,
+                      mainAxisExtent: MonsterCard.itemHeight,
+                      childAspectRatio: MonsterCard.itemWidth / MonsterCard.itemHeight,
                     ),
-                    delegate: SliverChildBuilderDelegate(
-                      (context, index) => MonsterCard.item(item: state.monsters[index], isInSelectionMode: isInSelectionMode),
-                      childCount: state.monsters.length,
+                    itemCount: state.monsters.length,
+                    itemBuilder: (context, index) => MonsterCard.item(
+                      item: state.monsters[index],
+                      isInSelectionMode: isInSelectionMode,
                     ),
                   ),
                 )

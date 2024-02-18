@@ -53,7 +53,7 @@ class _CakeCard extends StatelessWidget {
     final s = S.of(context);
     final theme = Theme.of(context);
     return Container(
-      margin: Styles.edgeInsetAll10,
+      margin: Styles.edgeInsetHorizontal10,
       width: Styles.birthdayCardWidth,
       child: InkWell(
         borderRadius: Styles.homeCardItemBorderRadius,
@@ -62,44 +62,36 @@ class _CakeCard extends StatelessWidget {
           child: Card(
             clipBehavior: Clip.hardEdge,
             shape: RoundedRectangleBorder(borderRadius: Styles.homeCardItemBorderRadius),
-            child: Padding(
-              padding: Styles.edgeInsetHorizontal10,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.stretch,
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Expanded(
-                          child: Image.asset(
-                            Assets.cakeIconPath,
-                            fit: BoxFit.fitHeight,
-                          ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Expanded(
+                        child: Image.asset(
+                          Assets.cakeIconPath,
+                          fit: BoxFit.fitHeight,
                         ),
-                        //The cake has some space in the top and bottom, that's why we used this offset here
-                        FractionalTranslation(
-                          translation: const Offset(0, -0.5),
-                          child: Tooltip(
-                            message: s.happyBirthday,
-                            child: Text(
-                              s.happyBirthday,
-                              style: theme.textTheme.titleMedium!.copyWith(fontWeight: FontWeight.bold),
-                              textAlign: TextAlign.center,
-                              overflow: TextOverflow.ellipsis,
-                            ),
-                          ),
+                      ),
+                      Tooltip(
+                        message: s.happyBirthday,
+                        child: Text(
+                          s.happyBirthday,
+                          style: theme.textTheme.titleMedium!.copyWith(fontWeight: FontWeight.bold),
+                          textAlign: TextAlign.center,
                         ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
-                  Expanded(
-                    child: CharacterIconImage.squareItem(item: item),
-                  ),
-                ],
-              ),
+                ),
+                Expanded(
+                  child: CharacterIconImage.squareItem(item: item),
+                ),
+              ],
             ),
           ),
         ),

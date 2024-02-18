@@ -85,7 +85,7 @@ class WishSimulatorHistoryDialog extends BasePage {
     await tester.tap(find.byIcon(Icons.clear_all));
     await tester.pumpAndSettle();
 
-    await tester.tap(find.byType(ElevatedButton));
+    await tester.tap(find.byType(FilledButton));
     await tester.pumpAndSettle();
   }
 }

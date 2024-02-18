@@ -2,7 +2,7 @@ import 'package:shiori/domain/models/models.dart';
 
 class WeaponAscensionModel {
   final int level;
-  final List<ItemAscensionMaterialModel> materials;
+  final List<ItemCommonWithQuantityAndName> materials;
 
   WeaponAscensionModel({
     required this.level,

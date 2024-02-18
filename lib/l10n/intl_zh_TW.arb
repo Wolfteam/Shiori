@@ -408,10 +408,6 @@
   "checkBannerHistory": "Check when a character / weapon was released",
   "fromDate": "From: {date}",
   "untilDate": "Until: {date}",
-  "nameAsc": "Name asc.",
-  "nameDesc": "Name desc.",
-  "versionAsc": "Version asc.",
-  "versionDesc": "Version desc.",
   "releaseHistory": "Release History",
   "selectAnOption": "Select an option",
   "details": "Details",
@@ -501,5 +497,7 @@
   "required": "Required",
   "remaining": "Remaining",
   "used": "Used",
-  "showMaterialUsage": "Show material usage"
+  "showMaterialUsage": "Show material usage",
+  "version": "版本",
+  "reruns": "Reruns"
 }

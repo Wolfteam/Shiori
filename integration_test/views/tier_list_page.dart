@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:shiori/presentation/shared/images/circle_character.dart';
+import 'package:shiori/presentation/shared/images/character_icon_image.dart';
 import 'package:shiori/presentation/tierlist/widgets/tierlist_fab.dart';
 import 'package:shiori/presentation/tierlist/widgets/tierlist_row.dart';
 
@@ -31,7 +31,7 @@ class TierListPage extends BasePage {
   }
 
   Future<void> dragFirstItemToRow(String row) async {
-    final Finder from = find.descendant(of: find.byType(TierListFab), matching: find.byType(CircleCharacter)).first;
+    final Finder from = find.descendant(of: find.byType(TierListFab), matching: find.byType(CharacterIconImage)).first;
     final Finder to = find.widgetWithText(TierListRow, row);
     await tester.doAppDragFromCenter(from, to);
     await tester.pumpAndSettle();

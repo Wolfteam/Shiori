@@ -34,6 +34,9 @@ class WeaponCard extends StatelessWidget {
   final bool withElevation;
   final bool withShape;
 
+  static const double itemWidth = 200;
+  static const double itemHeight = 280;
+
   const WeaponCard({
     super.key,
     required this.keyName,
@@ -45,8 +48,8 @@ class WeaponCard extends StatelessWidget {
     required this.subStatType,
     required this.subStatValue,
     required this.isComingSoon,
-    this.imgWidth = 160,
-    this.imgHeight = 140,
+    this.imgWidth = itemWidth,
+    this.imgHeight = itemHeight,
     this.isInSelectionMode = false,
     this.withElevation = true,
     this.withShape = true,
@@ -73,8 +76,8 @@ class WeaponCard extends StatelessWidget {
   WeaponCard.item({
     super.key,
     required WeaponCardModel weapon,
-    this.imgWidth = 160,
-    this.imgHeight = 140,
+    this.imgWidth = itemWidth,
+    this.imgHeight = itemHeight,
     this.isInSelectionMode = false,
     this.withElevation = true,
     this.withShape = true,
@@ -92,13 +95,12 @@ class WeaponCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: imgWidth * 1.5,
-      height: imgHeight * 2.3,
+      width: imgWidth,
+      height: imgHeight,
       child: InkWell(
         borderRadius: Styles.mainCardBorderRadius,
         onTap: () => _gotoWeaponPage(context),
         child: GradientCard(
-          clipBehavior: Clip.hardEdge,
           shape: withShape ? Styles.mainCardShape : null,
           elevation: withElevation ? Styles.cardTenElevation : 0,
           gradient: rarity.getRarityGradient(),
@@ -197,7 +199,7 @@ class _Bottom extends StatelessWidget {
                 color: Colors.white,
                 compact: withoutDetails,
               ),
-              if (!withoutDetails && state.showWeaponDetails) const CustomDivider(),
+              if (!withoutDetails) const CustomDivider(),
               if (!withoutDetails && state.showWeaponDetails)
                 Text(
                   '${s.translateStatTypeWithoutValue(StatType.atk)}: $baseAtk',

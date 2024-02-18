@@ -408,10 +408,6 @@
   "checkBannerHistory": "Schau die Historie der Banner an",
   "fromDate": "Von: {date}",
   "untilDate": "Bis: {date}",
-  "nameAsc": "Name asc.",
-  "nameDesc": "Name desc.",
-  "versionAsc": "Version asc.",
-  "versionDesc": "Version desc.",
   "releaseHistory": "Veröffentlichungshistorie",
   "selectAnOption": "Wähle eine Option",
   "details": "Details",
@@ -501,5 +497,7 @@
   "required": "Required",
   "remaining": "Remaining",
   "used": "Used",
-  "showMaterialUsage": "Show material usage"
+  "showMaterialUsage": "Show material usage",
+  "version": "Version",
+  "reruns": "Wiedererscheinungen"
 }

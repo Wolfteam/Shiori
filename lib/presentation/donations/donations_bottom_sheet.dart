@@ -44,7 +44,6 @@ class _BodyState extends State<_Body> {
   @override
   Widget build(BuildContext context) {
     final s = S.of(context);
-    final theme = Theme.of(context);
     return BlocConsumer<DonationsBloc, DonationsState>(
       listener: (ctx, state) {
         state.maybeMap(

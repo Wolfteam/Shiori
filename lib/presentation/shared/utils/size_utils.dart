@@ -77,6 +77,19 @@ class SizeUtils {
     }
   }
 
+  static Size getSizeForSquareImages(BuildContext context, {bool smallImage = false}) {
+    final deviceType = getDeviceType(MediaQuery.of(context).size);
+    final Size size = switch (deviceType) {
+      DeviceScreenType.mobile => const Size(100, 90),
+      _ => const Size(110, 100),
+    };
+
+    if (smallImage) {
+      return Size(size.width / 1.2, size.height / 1.2);
+    }
+    return size;
+  }
+
   static double getExtentRatioForSlidablePane(BuildContext context) {
     final size = MediaQuery.of(context).size;
     if (size.width < 700) {

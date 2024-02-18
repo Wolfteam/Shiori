@@ -44,7 +44,7 @@ void main() {
       await widgetTester.tap(items.at(i));
       await widgetTester.pumpAndSettle();
 
-      await widgetTester.tap(find.byType(ElevatedButton));
+      await widgetTester.tap(find.byType(FilledButton));
       await widgetTester.pumpAndSettle();
     }
   }
@@ -88,7 +88,7 @@ void main() {
       await widgetTester.enterText(find.byType(TextField), quantity);
       await widgetTester.pumpAndSettle();
 
-      await widgetTester.tap(find.byType(ElevatedButton));
+      await widgetTester.tap(find.byType(FilledButton));
       await widgetTester.pumpAndSettle();
 
       expect(find.descendant(of: materialCardFinder, matching: find.text(quantity)), findsOneWidget);

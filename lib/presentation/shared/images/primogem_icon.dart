@@ -2,12 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:shiori/domain/assets.dart';
 
 class PrimoGemIcon extends StatelessWidget {
+  final double size;
+  const PrimoGemIcon({this.size = 30});
+
   @override
   Widget build(BuildContext context) {
-    return IconButton(
-      iconSize: 30,
-      icon: Image.asset(Assets.primogemIconPath),
-      onPressed: null,
-    );
+    return Image.asset(Assets.primogemIconPath, width: size, height: size);
   }
 }

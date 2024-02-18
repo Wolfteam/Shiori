@@ -74,7 +74,6 @@ class SessionListItem extends StatelessWidget {
 
   Future<void> _showDeleteSessionDialog(int sessionKey, String name, BuildContext context) async {
     final s = S.of(context);
-    final theme = Theme.of(context);
     await showDialog(
       context: context,
       builder: (_) => AlertDialog(

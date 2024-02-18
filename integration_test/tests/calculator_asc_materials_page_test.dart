@@ -5,7 +5,7 @@ import 'package:shiori/presentation/calculator_asc_materials/widgets/ascension_m
 import 'package:shiori/presentation/calculator_asc_materials/widgets/item_card.dart';
 import 'package:shiori/presentation/calculator_asc_materials/widgets/material_item.dart';
 import 'package:shiori/presentation/calculator_asc_materials/widgets/session_list_item.dart';
-import 'package:shiori/presentation/shared/item_description_detail.dart';
+import 'package:shiori/presentation/shared/details/detail_section.dart';
 
 import '../extensions/widget_tester_extensions.dart';
 import '../views/views.dart';
@@ -25,7 +25,7 @@ void main() {
       //Press the delete button
       await widgetTester.tap(find.byIcon(Icons.delete));
       await widgetTester.pumpAndSettle();
-      await widgetTester.tap(find.byType(ElevatedButton));
+      await widgetTester.tap(find.byType(FilledButton));
       await widgetTester.pumpAndSettle();
       expect(find.byType(SessionListItem), findsNothing);
     });
@@ -47,7 +47,7 @@ void main() {
       //Change the session's name
       await widgetTester.enterText(find.byType(TextField), newName);
       await widgetTester.pumpAndSettle();
-      await widgetTester.tap(find.byType(ElevatedButton));
+      await widgetTester.tap(find.byType(FilledButton));
       await widgetTester.pumpAndSettle();
 
       expect(find.widgetWithText(SessionListItem, newName), findsOneWidget);
@@ -83,7 +83,7 @@ void main() {
       await widgetTester.doAppDragFromBottomRight(find.textContaining('#2'), find.textContaining('#1'));
 
       //Apply changes
-      await widgetTester.tap(find.byType(ElevatedButton));
+      await widgetTester.tap(find.byType(FilledButton));
       await widgetTester.pumpAndSettle();
 
       //Check that the new order is A,B
@@ -153,10 +153,10 @@ void main() {
       await widgetTester.doAppDragFromBottomRight(find.textContaining('#2'), find.textContaining('#1'));
 
       //Apply changes
-      await widgetTester.tap(find.byType(ElevatedButton));
+      await widgetTester.tap(find.byType(FilledButton));
       await widgetTester.pumpAndSettle();
 
-      expect(find.widgetWithText(ItemDescriptionDetail, 'Summary'), findsOneWidget);
+      expect(find.widgetWithText(DetailSection, 'Summary'), findsOneWidget);
 
       //Check that the new order is Nahida,Keqing
       final expected = <String>[
@@ -171,7 +171,7 @@ void main() {
         // await widgetTester.tap(itemsFinder.at(i));
         // await widgetTester.pumpAndSettle();
         // expect(find.descendant(of: find.byType(BottomSheetTitle), matching: find.textContaining(name)), findsOneWidget);
-        // await widgetTester.tap(find.byType(ElevatedButton));
+        // await widgetTester.tap(find.byType(FilledButton));
         // await widgetTester.pumpAndSettle();
       }
     });
@@ -257,7 +257,7 @@ void main() {
       await sheetA.closeAddEditItemBottomSheet();
 
       //Check the obtained materials
-      final Finder summaryDescriptionFinder = find.widgetWithText(ItemDescriptionDetail, 'Summary');
+      final Finder summaryDescriptionFinder = find.widgetWithText(DetailSection, 'Summary');
       expect(summaryDescriptionFinder, findsOneWidget);
 
       final expected = [
@@ -309,7 +309,7 @@ void main() {
 
       await page.addItem(charNameA, true, usesMaterialFromInventory: true);
 
-      final Finder summaryDescriptionFinder = find.widgetWithText(ItemDescriptionDetail, 'Summary');
+      final Finder summaryDescriptionFinder = find.widgetWithText(DetailSection, 'Summary');
       expect(summaryDescriptionFinder, findsOneWidget);
       await widgetTester.dragUntilVisible(
         find.byWidgetPredicate((widget) => widget is AscensionMaterialsSummaryWidget && widget.summary.type == AscensionMaterialSummaryType.currency),
@@ -335,7 +335,7 @@ void main() {
       //Enter the new quantity
       await widgetTester.enterText(find.byType(TextField), newInventoryQuantity.replaceAll('.', ''));
       await widgetTester.pumpAndSettle();
-      await widgetTester.tap(find.byType(ElevatedButton));
+      await widgetTester.tap(find.byType(FilledButton));
       await widgetTester.pumpAndSettle();
 
       expect(find.widgetWithText(MaterialItem, '$newInventoryQuantity / $requiredQuantity'), findsOneWidget);

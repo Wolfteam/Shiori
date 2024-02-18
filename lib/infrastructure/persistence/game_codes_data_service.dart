@@ -57,25 +57,25 @@ class GameCodesDataServiceImpl implements GameCodesDataService {
     if (itemsFromApi.isEmpty) {
       return;
     }
+    final List<MapEntry<String, DateTime?>> usedGameCodes = _gameCodesBox.values.map((e) => MapEntry(e.code, e.usedOn)).toList();
 
-    final itemsOnDb = _gameCodesBox.values.toList();
-    for (final item in itemsFromApi) {
-      final gcOnDb = itemsOnDb.firstWhereOrNull((el) => el.code == item.code);
-      if (gcOnDb != null) {
-        gcOnDb.isExpired = item.isExpired;
-        gcOnDb.expiredOn = item.expiredOn;
-        gcOnDb.discoveredOn = item.discoveredOn;
-        gcOnDb.region = item.region?.index;
-        await gcOnDb.save();
-        await _deleteAllGameCodeRewards(gcOnDb.id);
-        await _saveGameCodeRewards(gcOnDb.id, item.rewards);
-      } else {
-        final gc = GameCode(item.code, null, item.discoveredOn, item.expiredOn, item.isExpired, item.region?.index);
-        await _gameCodesBox.add(gc);
-        //This line shouldn't be necessary, though for testing purposes I'll leave it here
-        await _deleteAllGameCodeRewards(gc.id);
-        await _saveGameCodeRewards(gc.id, item.rewards);
-      }
+    await Future.wait([
+      _gameCodesBox.clear(),
+      _gameCodeRewardsBox.clear(),
+    ]);
+
+    for (final GameCodeModel apiGameCode in itemsFromApi) {
+      final DateTime? usedOn = usedGameCodes.firstWhereOrNull((gc) => gc.key == apiGameCode.code)?.value;
+      final gc = GameCode(
+        apiGameCode.code,
+        usedOn,
+        apiGameCode.discoveredOn,
+        apiGameCode.expiredOn,
+        apiGameCode.isExpired,
+        apiGameCode.region?.index,
+      );
+      await _gameCodesBox.add(gc);
+      await _saveGameCodeRewards(gc.id, apiGameCode.rewards);
     }
   }
 

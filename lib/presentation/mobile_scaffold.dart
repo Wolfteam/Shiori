@@ -7,6 +7,7 @@ import 'package:shiori/presentation/characters/characters_page.dart';
 import 'package:shiori/presentation/home/home_page.dart';
 import 'package:shiori/presentation/map/map_page.dart';
 import 'package:shiori/presentation/shared/extensions/focus_scope_node_extensions.dart';
+import 'package:shiori/presentation/shared/mixins/scroll_to_top_on_double_tab_tap_mixin.dart';
 import 'package:shiori/presentation/shared/shiori_icons.dart';
 import 'package:shiori/presentation/weapons/weapons_page.dart';
 
@@ -15,18 +16,20 @@ typedef OnWillPop = Future<bool> Function();
 class MobileScaffold extends StatefulWidget {
   final int defaultIndex;
   final TabController tabController;
+  final List<ScrollController> scrollControllers;
 
   const MobileScaffold({
     super.key,
     required this.defaultIndex,
     required this.tabController,
+    required this.scrollControllers,
   });
 
   @override
   _MobileScaffoldState createState() => _MobileScaffoldState();
 }
 
-class _MobileScaffoldState extends State<MobileScaffold> with SingleTickerProviderStateMixin {
+class _MobileScaffoldState extends State<MobileScaffold> with SingleTickerProviderStateMixin, ScrollToTopOnDoubleTabTapMixin {
   late int _index;
 
   @override
@@ -51,10 +54,10 @@ class _MobileScaffoldState extends State<MobileScaffold> with SingleTickerProvid
             controller: widget.tabController,
             physics: const NeverScrollableScrollPhysics(),
             children: [
-              const CharactersPage(),
-              const WeaponsPage(),
-              HomePage(),
-              const ArtifactsPage(),
+              CharactersPage(scrollController: widget.scrollControllers.first),
+              WeaponsPage(scrollController: widget.scrollControllers[1]),
+              HomePage(scrollController: widget.scrollControllers[2]),
+              ArtifactsPage(scrollController: widget.scrollControllers.last),
               MapPage(),
             ],
           ),
@@ -86,5 +89,8 @@ class _MobileScaffoldState extends State<MobileScaffold> with SingleTickerProvid
     });
   }
 
-  void _gotoTab(int newIndex) => context.read<MainTabBloc>().add(MainTabEvent.goToTab(index: newIndex));
+  void _gotoTab(int newIndex) {
+    scrollToTopOnTabTap(widget.tabController.index, newIndex, widget.scrollControllers);
+    context.read<MainTabBloc>().add(MainTabEvent.goToTab(index: newIndex));
+  }
 }

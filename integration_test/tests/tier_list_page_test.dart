@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:shiori/domain/models/models.dart';
-import 'package:shiori/presentation/shared/images/circle_character.dart';
+import 'package:shiori/presentation/shared/images/character_icon_image.dart';
 import 'package:shiori/presentation/tierlist/widgets/tierlist_row.dart';
 
 import '../views/views.dart';
@@ -40,7 +40,7 @@ void main() {
         await page.dragFirstItemToRow('SS');
       }
 
-      final Finder charactersFinder = find.descendant(of: find.byType(TierListRow), matching: find.byType(CircleCharacter));
+      final Finder charactersFinder = find.descendant(of: find.byType(TierListRow), matching: find.byType(CharacterIconImage));
       expect(charactersFinder, findsNWidgets(3));
     });
 
@@ -56,7 +56,7 @@ void main() {
         await page.dragFirstItemToRow(row);
       }
 
-      final Finder charactersFinder = find.descendant(of: find.byType(TierListRow), matching: find.byType(CircleCharacter));
+      final Finder charactersFinder = find.descendant(of: find.byType(TierListRow), matching: find.byType(CharacterIconImage));
       expect(charactersFinder, findsNWidgets(3));
 
       //Move SSS 2 rows below
@@ -86,11 +86,11 @@ void main() {
       }
 
       const int rowIndex = 1;
-      expect(find.descendant(of: find.byType(TierListRow).at(rowIndex), matching: find.byType(CircleCharacter)), findsOneWidget);
+      expect(find.descendant(of: find.byType(TierListRow).at(rowIndex), matching: find.byType(CharacterIconImage)), findsOneWidget);
 
       await page.tapOnSettingPopupMenuItem(rowIndex, 4);
 
-      expect(find.descendant(of: find.byType(TierListRow).at(rowIndex), matching: find.byType(CircleCharacter)), findsNothing);
+      expect(find.descendant(of: find.byType(TierListRow).at(rowIndex), matching: find.byType(CharacterIconImage)), findsNothing);
     });
 
     testWidgets('adds row above SSS', (widgetTester) async {
@@ -134,7 +134,7 @@ void main() {
       await widgetTester.enterText(find.byType(TextField), newName);
       await widgetTester.pumpAndSettle();
 
-      await widgetTester.tap(find.byType(ElevatedButton));
+      await widgetTester.tap(find.byType(FilledButton));
       await widgetTester.pumpAndSettle();
 
       expect(find.byWidgetPredicate((widget) => widget is TierListRow && widget.index == 0 && widget.title == newName), findsOneWidget);
@@ -178,7 +178,7 @@ void main() {
       await widgetTester.tap(colorsFinder.at(3));
       await widgetTester.pumpAndSettle();
 
-      await widgetTester.tap(find.byType(ElevatedButton));
+      await widgetTester.tap(find.byType(FilledButton));
       await widgetTester.pumpAndSettle();
 
       expect(

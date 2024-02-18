@@ -35,7 +35,6 @@ class MaterialItemButton extends StatelessWidget {
   }
 
   Future<void> _gotoMaterialPage(BuildContext context) async {
-    final route = MaterialPageRoute(builder: (c) => mp.MaterialPage(itemKey: itemKey));
-    await Navigator.push(context, route);
+    await mp.MaterialPage.route(itemKey, context);
   }
 }

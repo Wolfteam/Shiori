@@ -8,7 +8,7 @@ class CharCardAscensionMaterial extends StatelessWidget {
   final String itemKey;
   final String name;
   final String image;
-  final List<ItemCommon> charImgs;
+  final List<ItemCommonWithName> characters;
   final String? bossName;
   final List<int> days;
 
@@ -18,7 +18,7 @@ class CharCardAscensionMaterial extends StatelessWidget {
     required this.name,
     required this.image,
     required this.days,
-    required this.charImgs,
+    required this.characters,
   }) : bossName = null;
 
   const CharCardAscensionMaterial.fromBoss({
@@ -27,7 +27,7 @@ class CharCardAscensionMaterial extends StatelessWidget {
     required this.name,
     required this.image,
     required this.bossName,
-    required this.charImgs,
+    required this.characters,
   }) : days = const [];
 
   @override
@@ -41,10 +41,13 @@ class CharCardAscensionMaterial extends StatelessWidget {
         height: 70,
         child: ListView.builder(
           shrinkWrap: true,
-          itemCount: charImgs.length,
+          itemCount: characters.length,
           physics: const BouncingScrollPhysics(),
           scrollDirection: Axis.horizontal,
-          itemBuilder: (ctx, index) => CharacterIconImage.circleItem(item: charImgs[index]),
+          itemBuilder: (ctx, index) {
+            final item = characters[index];
+            return CharacterIconImage(itemKey: item.key, image: item.iconImage);
+          },
         ),
       ),
     );

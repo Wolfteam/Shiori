@@ -23,26 +23,32 @@ class Assets {
 
   static String _getElementPath(String name) => '$elementsBasePath/$name';
 
-  static String getElementPathFromType(ElementType type) {
+  static String _getElementImagePath(ElementType type, String imageSuffix) {
     switch (type) {
       case ElementType.anemo:
-        return _getElementPath('anemo$imageFileExtension');
+        return _getElementPath('anemo$imageSuffix');
       case ElementType.cryo:
-        return _getElementPath('cryo$imageFileExtension');
+        return _getElementPath('cryo$imageSuffix');
       case ElementType.dendro:
-        return _getElementPath('dendro$imageFileExtension');
+        return _getElementPath('dendro$imageSuffix');
       case ElementType.electro:
-        return _getElementPath('electro$imageFileExtension');
+        return _getElementPath('electro$imageSuffix');
       case ElementType.geo:
-        return _getElementPath('geo$imageFileExtension');
+        return _getElementPath('geo$imageSuffix');
       case ElementType.hydro:
-        return _getElementPath('hydro$imageFileExtension');
+        return _getElementPath('hydro$imageSuffix');
       case ElementType.pyro:
-        return _getElementPath('pyro$imageFileExtension');
+        return _getElementPath('pyro$imageSuffix');
       default:
         throw Exception('Invalid element type = $type');
     }
   }
+
+  static String getElementPathFromType(ElementType type) => _getElementImagePath(type, imageFileExtension);
+
+  static String getElementWhitePathFromType(ElementType type) => _getElementImagePath(type, '_white$imageFileExtension');
+
+  static String getElementBlackPathFromType(ElementType type) => _getElementImagePath(type, '_black$imageFileExtension');
 
   static ElementType getElementTypeFromPath(String path) {
     return ElementType.values.firstWhere((type) => getElementPathFromType(type) == path);

@@ -14,7 +14,7 @@ class SplashPage extends BasePage {
 
   Future<SplashPage> skipResourceUpdates() async {
     await tester.pumpUntilFound(find.byType(ConfirmDialog), timeout: timeoutForDialog);
-    final button = find.byType(OutlinedButton);
+    final button = find.byType(TextButton);
     await tester.tap(button);
     await tester.pumpAndSettle();
     return this;
@@ -28,7 +28,7 @@ class SplashPage extends BasePage {
     await tester.pumpUntilFound(find.byType(ConfirmDialog), timeout: timeoutForDialog);
 
     //Apply resource update
-    final button = find.byType(ElevatedButton);
+    final button = find.byType(FilledButton);
     await tester.tap(button);
     await tester.pumpAndSettle();
 

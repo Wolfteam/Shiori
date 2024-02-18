@@ -62,7 +62,6 @@ class _TextDialogState extends State<TextDialog> {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
     final s = S.of(context);
     final mq = MediaQuery.of(context);
     final title = widget.title.isNotNullEmptyOrWhitespace

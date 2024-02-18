@@ -11,8 +11,6 @@ import 'package:shiori/presentation/shared/sliver_page_filter.dart';
 import 'package:shiori/presentation/shared/sliver_scaffold_with_fab.dart';
 import 'package:shiori/presentation/shared/styles.dart';
 import 'package:shiori/presentation/shared/utils/modal_bottom_sheet_utils.dart';
-import 'package:shiori/presentation/shared/utils/size_utils.dart';
-import 'package:waterfall_flow/waterfall_flow.dart';
 
 class MaterialsPage extends StatelessWidget {
   final bool isInSelectionMode;
@@ -34,7 +32,6 @@ class MaterialsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final s = S.of(context);
-    final isPortrait = MediaQuery.of(context).orientation == Orientation.portrait;
     return BlocProvider<MaterialsBloc>(
       create: (context) => Injection.materialsBloc..add(MaterialsEvent.init(excludeKeys: excludeKeys)),
       child: BlocBuilder<MaterialsBloc, MaterialsState>(
@@ -52,15 +49,18 @@ class MaterialsPage extends StatelessWidget {
               if (state.materials.isNotEmpty)
                 SliverPadding(
                   padding: Styles.edgeInsetHorizontal5,
-                  sliver: SliverWaterfallFlow(
-                    gridDelegate: SliverWaterfallFlowDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: SizeUtils.getCrossAxisCountForGrids(context, itemIsSmall: true),
-                      crossAxisSpacing: isPortrait ? 10 : 5,
-                      mainAxisSpacing: 5,
+                  sliver: SliverGrid.builder(
+                    gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
+                      maxCrossAxisExtent: MaterialCard.itemWidth,
+                      crossAxisSpacing: 10,
+                      mainAxisSpacing: 10,
+                      mainAxisExtent: MaterialCard.itemHeight,
+                      childAspectRatio: MaterialCard.itemWidth / MaterialCard.itemHeight,
                     ),
-                    delegate: SliverChildBuilderDelegate(
-                      (context, index) => MaterialCard.item(item: state.materials[index], isInSelectionMode: isInSelectionMode),
-                      childCount: state.materials.length,
+                    itemCount: state.materials.length,
+                    itemBuilder: (context, index) => MaterialCard.item(
+                      item: state.materials[index],
+                      isInSelectionMode: isInSelectionMode,
                     ),
                   ),
                 )

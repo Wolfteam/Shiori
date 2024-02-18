@@ -5,7 +5,7 @@ class TodayWeaponAscensionMaterialModel {
   final String name;
   final String image;
   final List<int> days;
-  final List<ItemCommon> weapons;
+  final List<ItemCommonWithName> weapons;
   TodayWeaponAscensionMaterialModel({
     required this.key,
     required this.name,

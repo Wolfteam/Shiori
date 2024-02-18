@@ -70,7 +70,7 @@ abstract class BasePage {
 
   Future<BasePage> closeConfirmDialog({bool tapOnOk = true}) async {
     if (tester.any(find.byType(AlertDialog))) {
-      final button = find.byType(tapOnOk ? ElevatedButton : OutlinedButton);
+      final button = find.byType(tapOnOk ? FilledButton : TextButton);
       await tester.tap(button);
       await tester.pumpAndSettle();
     }
@@ -156,10 +156,12 @@ abstract class BasePage {
     final double dy = scrollsFromBottomToTop ? -30 : 30;
     final offset = Offset(0, dy);
     final Finder scrollView = find.byType(InfiniteListView);
+    final BuildContext context = tester.element(scrollView);
+    final Color textColor = Theme.of(context).colorScheme.primary;
     await tester.dragUntilVisible(
       find.descendant(
         of: scrollView,
-        matching: find.byWidgetPredicate((widget) => widget is Text && widget.data == '$value' && widget.style?.color == Colors.red),
+        matching: find.byWidgetPredicate((widget) => widget is Text && widget.data == '$value' && widget.style?.color == textColor),
       ),
       scrollView,
       offset,
@@ -172,7 +174,7 @@ abstract class BasePage {
       //Get the current selected value to see how much do we have to keep scrolling
       final Finder selectedTextFinder = find.descendant(
         of: scrollView,
-        matching: find.byWidgetPredicate((widget) => widget is Text && widget.style?.color == Colors.red),
+        matching: find.byWidgetPredicate((widget) => widget is Text && widget.style?.color == textColor),
       );
       final Text selectedText = tester.firstWidget<Text>(selectedTextFinder);
       final int selectedValue = int.parse(selectedText.data!);
@@ -180,8 +182,8 @@ abstract class BasePage {
       expect(diff, isZero);
     }
 
-    await tester.tap(find.descendant(of: find.byType(NumberPickerDialog), matching: find.byType(ElevatedButton)));
-    await tester.pumpAndSettle();
+    await tester.tap(find.descendant(of: find.byType(NumberPickerDialog), matching: find.byType(FilledButton)));
+    await tester.pumpAndSettle(const Duration(milliseconds: 300));
   }
 
   Future<void> swipeHorizontallyOnItem(Finder itemFinder, {bool rightToLeft = false}) async {
@@ -201,15 +203,28 @@ abstract class BasePage {
 
   Future<void> selectOptionFromDropdownButtonWithTitle<TEnum>({int? index, String? name}) async {
     assert(index != null || name.isNotNullEmptyOrWhitespace);
+    //The menu that holds the dropdown menu items
+    final Finder menu = find.byType(ListView).first;
+    //-1 to scroll from top to bottom
+    final Offset offset = Offset(0, verticalDragOffset.dy * -1);
 
     if (name.isNotNullEmptyOrWhitespace) {
       final Finder menuItemFinder = find.widgetWithText(DropdownMenuItem<TEnum>, name!);
+      if (!menuItemFinder.hasFound) {
+        await tester.dragUntilVisible(menuItemFinder, menu, offset);
+        await tester.pumpAndSettle();
+      }
+
       await tester.tap(menuItemFinder);
       await tester.pumpAndSettle();
       return;
     }
 
     final Finder menuItemFinder = find.byType(DropdownMenuItem<TEnum>).at(index!);
+    if (!menuItemFinder.hasFound) {
+      await tester.dragUntilVisible(menuItemFinder, menu, offset);
+      await tester.pumpAndSettle();
+    }
     await tester.tap(menuItemFinder);
     await tester.pumpAndSettle();
   }
@@ -225,7 +240,7 @@ abstract class BasePage {
     await tester.tap(find.byKey(key));
     await tester.pumpAndSettle();
 
-    await tester.tap(find.byType(ElevatedButton));
+    await tester.tap(find.byType(FilledButton));
     await tester.pumpAndSettle();
   }
 

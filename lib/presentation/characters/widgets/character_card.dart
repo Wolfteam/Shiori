@@ -20,9 +20,6 @@ import 'package:shiori/presentation/shared/styles.dart';
 import 'package:shiori/presentation/shared/utils/toast_utils.dart';
 import 'package:transparent_image/transparent_image.dart';
 
-const double _minHeight = 400;
-const double _maxHeight = 600;
-
 class CharacterCard extends StatelessWidget {
   final String keyName;
   final String image;
@@ -35,6 +32,10 @@ class CharacterCard extends StatelessWidget {
   final List<String> materials;
   final bool isInSelectionMode;
   final bool showMaterials;
+
+  static const double minHeight = 400;
+  static const double maxHeight = 600;
+  static const double itemWidth = 220;
 
   const CharacterCard({
     super.key,
@@ -69,66 +70,60 @@ class CharacterCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final s = S.of(context);
-    final size = MediaQuery.of(context).size;
-    double height = size.height / 2.5;
-    if (height > _maxHeight) {
-      height = _maxHeight;
-    } else if (height < _minHeight) {
-      height = _minHeight;
-    }
-    return SizedBox(
-      height: height,
-      child: InkWell(
-        borderRadius: Styles.mainCardBorderRadius,
-        onTap: () => _gotoCharacterPage(context),
-        child: Card(
-          clipBehavior: Clip.hardEdge,
-          shape: Styles.mainCardShape,
-          elevation: Styles.cardTenElevation,
-          color: elementType.getElementColorFromContext(context),
-          child: Stack(
-            alignment: Alignment.center,
-            fit: StackFit.expand,
-            children: [
-              FadeInImage(
-                placeholder: MemoryImage(kTransparentImage),
-                fit: BoxFit.cover,
-                placeholderFit: BoxFit.cover,
-                alignment: Alignment.topCenter,
-                image: FileImage(File(image)),
-                height: height,
-              ),
-              Align(
-                alignment: Alignment.topCenter,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    ComingSoonNewAvatar(
-                      isNew: isNew,
-                      isComingSoon: isComingSoon,
-                    ),
-                    Tooltip(
-                      message: s.translateElementType(elementType),
-                      child: Container(
-                        margin: const EdgeInsets.only(top: 10, right: 5),
-                        child: ElementImage.fromType(type: elementType, radius: 15, useDarkForBackgroundColor: true),
+    return InkWell(
+      borderRadius: Styles.mainCardBorderRadius,
+      onTap: () => _gotoCharacterPage(context),
+      child: Card(
+        clipBehavior: Clip.hardEdge,
+        shape: Styles.mainCardShape,
+        elevation: Styles.cardTenElevation,
+        color: elementType.getElementColorFromContext(context),
+        child: Stack(
+          alignment: Alignment.center,
+          fit: StackFit.expand,
+          children: [
+            FadeInImage(
+              placeholder: MemoryImage(kTransparentImage),
+              fit: BoxFit.cover,
+              placeholderFit: BoxFit.cover,
+              alignment: Alignment.topCenter,
+              image: FileImage(File(image)),
+            ),
+            Align(
+              alignment: Alignment.topCenter,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  ComingSoonNewAvatar(
+                    isNew: isNew,
+                    isComingSoon: isComingSoon,
+                  ),
+                  Tooltip(
+                    message: s.translateElementType(elementType),
+                    child: Container(
+                      margin: const EdgeInsets.only(top: 10, right: 5),
+                      child: ElementImage.fromType(
+                        type: elementType,
+                        radius: 15,
+                        useDarkForBackgroundColor: true,
+                        useCircleAvatar: false,
                       ),
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
-              Align(
-                alignment: Alignment.bottomCenter,
-                child: _CharBottom(
-                  name: name,
-                  rarity: rarity,
-                  weaponType: weaponType,
-                  materials: materials,
-                  showMaterials: showMaterials,
-                ),
+            ),
+            Align(
+              alignment: Alignment.bottomCenter,
+              child: _CharBottom(
+                name: name,
+                rarity: rarity,
+                weaponType: weaponType,
+                materials: materials,
+                showMaterials: showMaterials,
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );
@@ -200,7 +195,7 @@ class _CharBottom extends StatelessWidget {
                 starSize: 15,
                 color: Colors.white,
               ),
-              if (showMaterials && state.showCharacterDetails) const CustomDivider(),
+              if (showMaterials) const CustomDivider(),
               if (showMaterials && state.showCharacterDetails)
                 IntrinsicHeight(
                   child: Row(

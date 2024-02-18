@@ -4,10 +4,8 @@ import 'package:shiori/application/bloc.dart';
 import 'package:shiori/domain/extensions/string_extensions.dart';
 import 'package:shiori/presentation/shared/app_fab.dart';
 import 'package:shiori/presentation/shared/mixins/app_fab_mixin.dart';
-import 'package:shiori/presentation/shared/utils/size_utils.dart';
 import 'package:shiori/presentation/weapons/weapons_page.dart';
 import 'package:shiori/presentation/weapons/widgets/weapon_card.dart';
-import 'package:waterfall_flow/waterfall_flow.dart';
 
 class WeaponsInventoryTabPage extends StatefulWidget {
   @override
@@ -23,7 +21,6 @@ class _WeaponsInventoryTabPageState extends State<WeaponsInventoryTabPage> with 
 
   @override
   Widget build(BuildContext context) {
-    final isPortrait = MediaQuery.of(context).orientation == Orientation.portrait;
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 5),
       child: Scaffold(
@@ -35,15 +32,17 @@ class _WeaponsInventoryTabPageState extends State<WeaponsInventoryTabPage> with 
           mini: false,
         ),
         body: BlocBuilder<InventoryBloc, InventoryState>(
-          builder: (ctx, state) => WaterfallFlow.builder(
+          builder: (ctx, state) => GridView.builder(
             controller: scrollController,
-            itemBuilder: (context, index) => WeaponCard.item(weapon: state.weapons[index]),
-            itemCount: state.weapons.length,
-            gridDelegate: SliverWaterfallFlowDelegateWithFixedCrossAxisCount(
-              crossAxisCount: SizeUtils.getCrossAxisCountForGrids(context),
-              crossAxisSpacing: isPortrait ? 10 : 5,
-              mainAxisSpacing: 5,
+            gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
+              maxCrossAxisExtent: WeaponCard.itemWidth,
+              crossAxisSpacing: 10,
+              mainAxisSpacing: 10,
+              mainAxisExtent: WeaponCard.itemHeight,
+              childAspectRatio: WeaponCard.itemWidth / WeaponCard.itemHeight,
             ),
+            itemCount: state.weapons.length,
+            itemBuilder: (context, index) => WeaponCard.item(weapon: state.weapons[index]),
           ),
         ),
       ),

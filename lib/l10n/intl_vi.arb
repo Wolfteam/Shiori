@@ -408,10 +408,6 @@
   "checkBannerHistory": "Kiểm tra thời gian Nhân Vật/Vũ khí đã xuất hiện",
   "fromDate": "Từ: {date}",
   "untilDate": "Đến khi: {date}",
-  "nameAsc": "Tên tăng dần",
-  "nameDesc": "Tên giảm dần",
-  "versionAsc": "Phiên bản tăng dần",
-  "versionDesc": "Phiên bản giảm dần",
   "releaseHistory": "Lịch sử xuất hiện",
   "selectAnOption": "Chọn tùy chọn",
   "details": "Chi tiết",
@@ -501,5 +497,7 @@
   "required": "Required",
   "remaining": "Remaining",
   "used": "Used",
-  "showMaterialUsage": "Show material usage"
+  "showMaterialUsage": "Show material usage",
+  "version": "Phiên bản",
+  "reruns": "Reruns"
 }

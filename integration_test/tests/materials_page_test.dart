@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:shiori/presentation/materials/widgets/material_card.dart';
-import 'package:shiori/presentation/shared/details/detail_general_card.dart';
+import 'package:shiori/presentation/shared/details/detail_main_card.dart';
 
 import '../extensions/widget_tester_extensions.dart';
 import '../views/views.dart';
@@ -54,19 +54,19 @@ void main() {
       await widgetTester.tap(cardFinder);
       await widgetTester.pumpAndSettle();
 
-      expect(find.widgetWithText(DetailGeneralCard, 'Stained Mask'), findsOneWidget);
+      expect(find.widgetWithText(DetailMainCard, 'Stained Mask'), findsOneWidget);
 
       const expectedDescriptions = <String>[
         'Description',
         'Obtained From',
+        'Related',
         'Characters',
         'Weapons',
-        'Related',
         'Dropped by',
       ];
       final DetailPage page = DetailPage(widgetTester);
       if (widgetTester.isUsingDesktopLayout || widgetTester.isLandscape) {
-        await page.doCheckInLandscape(expectedDescriptions, expectedDescriptions);
+        await page.doCheckContent(expectedDescriptions);
       } else {
         await page.doCheckInPortrait(expectedDescriptions);
       }

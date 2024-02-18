@@ -53,12 +53,11 @@ class WeaponBloc extends Bloc<WeaponEvent, WeaponState> {
   }
 
   WeaponState _buildInitialState(WeaponFileModel weapon, TranslationWeaponFile translation) {
-    final charImgs = _genshinService.characters.getCharacterForItemsUsingWeapon(weapon.key);
+    final characters = _genshinService.characters.getCharacterForItemsUsingWeapon(weapon.key);
     final ascensionMaterials = weapon.ascensionMaterials.map((e) {
       final materials = e.materials.map((e) {
-        final material = _genshinService.materials.getMaterial(e.key);
-        final imagePath = _resourceService.getMaterialImagePath(material.image, material.type);
-        return ItemAscensionMaterialModel.fromMaterial(e.quantity, material, imagePath);
+        final material = _genshinService.materials.getMaterialForCard(e.key);
+        return ItemCommonWithQuantityAndName(e.key, material.name, material.image, material.image, e.quantity);
       }).toList();
       return WeaponAscensionModel(level: e.level, materials: materials);
     }).toList();
@@ -66,9 +65,8 @@ class WeaponBloc extends Bloc<WeaponEvent, WeaponState> {
     final refinements = translation.refinements.mapIndexed((index, e) => WeaponFileRefinementModel(level: index + 1, description: e)).toList();
 
     final craftingMaterials = weapon.craftingMaterials.map((e) {
-      final material = _genshinService.materials.getMaterial(e.key);
-      final imagePath = _resourceService.getMaterialImagePath(material.image, material.type);
-      return ItemAscensionMaterialModel.fromMaterial(e.quantity, material, imagePath);
+      final material = _genshinService.materials.getMaterialForCard(e.key);
+      return ItemCommonWithQuantityAndName(e.key, material.name, material.image, material.image, e.quantity);
     }).toList();
     return WeaponState.loaded(
       key: weapon.key,
@@ -84,7 +82,7 @@ class WeaponBloc extends Bloc<WeaponEvent, WeaponState> {
       isInInventory: _dataService.inventory.isItemInInventory(weapon.key, ItemType.weapon),
       ascensionMaterials: ascensionMaterials,
       refinements: refinements,
-      characters: charImgs,
+      characters: characters,
       stats: weapon.stats,
       craftingMaterials: craftingMaterials,
     );

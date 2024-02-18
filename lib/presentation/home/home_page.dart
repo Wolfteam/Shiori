@@ -24,6 +24,10 @@ import 'package:shiori/presentation/home/widgets/wish_simulator_card.dart';
 import 'package:shiori/presentation/shared/styles.dart';
 
 class HomePage extends StatefulWidget {
+  final ScrollController? scrollController;
+
+  const HomePage({this.scrollController});
+
   @override
   _HomePageState createState() => _HomePageState();
 }
@@ -39,6 +43,7 @@ class _HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin<
     final s = S.of(context);
     return ResponsiveBuilder(
       builder: (ctx, size) => CustomScrollView(
+        controller: widget.scrollController,
         slivers: [
           SliverCharactersBirthdayCard(),
           const SliverTodayMainTitle(),

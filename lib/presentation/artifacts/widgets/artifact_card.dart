@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:shiori/domain/app_constants.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/presentation/artifact/artifact_page.dart';
-import 'package:shiori/presentation/artifacts/widgets/artifact_stats.dart';
 import 'package:shiori/presentation/shared/custom_divider.dart';
 import 'package:shiori/presentation/shared/extensions/rarity_extensions.dart';
 import 'package:shiori/presentation/shared/gradient_card.dart';
@@ -26,6 +25,9 @@ class ArtifactCard extends StatelessWidget {
   final bool withShape;
   final bool withTextOverflow;
 
+  static const double itemWidth = 200;
+  static const double itemHeight = 220;
+
   const ArtifactCard({
     super.key,
     required this.keyName,
@@ -33,8 +35,8 @@ class ArtifactCard extends StatelessWidget {
     required this.image,
     required this.rarity,
     required this.bonus,
-    this.imgWidth = 140,
-    this.imgHeight = 120,
+    this.imgWidth = itemWidth,
+    this.imgHeight = itemHeight,
     this.withElevation = true,
     this.isInSelectionMode = false,
     this.withShape = true,
@@ -59,8 +61,8 @@ class ArtifactCard extends StatelessWidget {
   ArtifactCard.item({
     super.key,
     required ArtifactCardModel item,
-    this.imgWidth = 140,
-    this.imgHeight = 120,
+    this.imgWidth = itemWidth,
+    this.imgHeight = itemHeight,
     this.withElevation = true,
     this.withoutDetails = false,
     this.isInSelectionMode = false,
@@ -76,7 +78,7 @@ class ArtifactCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: imgWidth * 1.5,
-      height: imgHeight * 3,
+      height: imgHeight * 2,
       child: InkWell(
         borderRadius: Styles.mainCardBorderRadius,
         onTap: () => _gotoDetailPage(context),
@@ -173,12 +175,6 @@ class _Bottom extends StatelessWidget {
             compact: withoutDetails,
           ),
           if (!withoutDetails) const CustomDivider(),
-          if (!withoutDetails && bonus.isNotEmpty)
-            ArtifactStats(
-              bonus: bonus,
-              textColor: Colors.white,
-              maxLines: 1,
-            ),
         ],
       ),
     );

@@ -55,7 +55,7 @@ class FixedLeftColumn extends StatelessWidget {
               type: item.type,
               rarity: item.rarity,
               name: item.name,
-              number: item.versions.where((el) => el.released).length,
+              numberOfTimesReleased: item.numberOfTimesReleased,
             );
           },
         ),
@@ -70,7 +70,7 @@ class _ItemCard extends StatelessWidget {
   final String name;
   final String image;
   final int rarity;
-  final int number;
+  final int numberOfTimesReleased;
   final EdgeInsets margin;
   final double cellWidth;
   final double cellHeight;
@@ -81,7 +81,7 @@ class _ItemCard extends StatelessWidget {
     required this.name,
     required this.image,
     required this.rarity,
-    required this.number,
+    required this.numberOfTimesReleased,
     required this.margin,
     required this.cellWidth,
     required this.cellHeight,
@@ -135,9 +135,9 @@ class _ItemCard extends StatelessWidget {
                     radius: 15,
                     backgroundColor: Colors.black.withOpacity(0.25),
                     child: Tooltip(
-                      message: '$number',
+                      message: '$numberOfTimesReleased',
                       child: Text(
-                        '$number',
+                        '$numberOfTimesReleased',
                         overflow: TextOverflow.ellipsis,
                         style: theme.textTheme.titleSmall!.copyWith(fontWeight: FontWeight.bold, color: Colors.white),
                       ),

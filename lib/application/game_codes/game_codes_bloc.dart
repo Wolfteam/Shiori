@@ -76,6 +76,7 @@ class GameCodesBloc extends Bloc<GameCodesEvent, GameCodesState> {
 
   Future<GameCodesState> _refresh() async {
     if (!_canCheckForGameCodeUpdates()) {
+      await Future.delayed(const Duration(seconds: 1));
       return state;
     }
 
