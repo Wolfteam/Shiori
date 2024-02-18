@@ -1,5 +1,18 @@
 # Changelog
 
+## 1.8.0+162 (13/02/2024)
+- UI improvements
+- Performance improvements
+
+
+## 1.7.0+135 (24/09/2023)
+- Custom wish simulator
+
+
+## 1.6.1+108 (24/10/2022)
+- Partial resource updates
+
+
 ## 1.4.11+77 (15/10/2022)
 - Nilou
 
