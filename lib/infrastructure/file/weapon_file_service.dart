@@ -83,7 +83,8 @@ class WeaponFileServiceImpl extends WeaponFileService {
         image: _resourceService.getMaterialImagePath(e.image, e.type),
         weapons: weapons..sort(ItemCommonWithName.sortAsc),
       );
-    }).toList();
+    }).toList()
+      ..sort((x, y) => x.name.compareTo(y.name));
   }
 
   @override

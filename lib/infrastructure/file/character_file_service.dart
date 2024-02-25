@@ -193,7 +193,8 @@ class CharacterFileServiceImpl extends CharacterFileService {
               characters: characters,
               days: e.days,
             );
-    }).toList();
+    }).toList()
+      ..sort((x, y) => x.name.compareTo(y.name));
   }
 
   @override
