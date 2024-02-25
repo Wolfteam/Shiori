@@ -265,7 +265,7 @@ class _ArtifactRow extends StatelessWidget {
                 path = getArtifactPathByOrder(index, multi.image);
               }
               return Container(
-                margin: index == itemCount - 1 ? null : const EdgeInsets.only(right: _orRadius * 2 - 2),
+                margin: index == itemCount - 1 ? null : const EdgeInsets.only(right: _orRadius * 2),
                 child: ArtifactCard.withoutDetails(
                   name: s.translateStatTypeWithoutValue(stat),
                   image: path,

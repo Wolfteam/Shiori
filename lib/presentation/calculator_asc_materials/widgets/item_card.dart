@@ -29,7 +29,7 @@ class ItemCard extends StatelessWidget {
   final bool showMaterialUsage;
 
   static const double itemWidth = 210;
-  static const double minItemHeight = 400;
+  static const double minItemHeight = 420;
   static const double maxItemHeight = 600;
 
   const ItemCard({
@@ -96,10 +96,11 @@ class ItemCard extends StatelessWidget {
                       Text(
                         s.materials,
                         textAlign: TextAlign.center,
+                        overflow: TextOverflow.ellipsis,
                         style: theme.textTheme.titleSmall!.copyWith(color: Colors.white),
                       ),
                       Container(
-                        height: 100,
+                        height: 80,
                         padding: const EdgeInsets.only(bottom: 5),
                         child: ListView.builder(
                           itemCount: materials.length,
@@ -107,17 +108,20 @@ class ItemCard extends StatelessWidget {
                           scrollDirection: Axis.horizontal,
                           itemBuilder: (ctx, index) {
                             final item = materials[index];
-                            return MaterialItem(
-                              itemKey: item.key,
-                              type: item.type,
-                              image: item.image,
-                              requiredQuantity: item.requiredQuantity,
-                              usedQuantity: item.usedQuantity,
-                              remainingQuantity: item.remainingQuantity,
-                              textColor: Colors.white,
-                              sessionKey: sessionKey,
-                              showMaterialUsage: showMaterialUsage,
-                              iconSize: 36,
+
+                            return Container(
+                              margin: Styles.edgeInsetHorizontal10,
+                              child: MaterialItem(
+                                itemKey: item.key,
+                                type: item.type,
+                                image: item.image,
+                                requiredQuantity: item.requiredQuantity,
+                                usedQuantity: item.usedQuantity,
+                                remainingQuantity: item.remainingQuantity,
+                                textColor: Colors.white,
+                                sessionKey: sessionKey,
+                                showMaterialUsage: showMaterialUsage,
+                              ),
                             );
                           },
                         ),

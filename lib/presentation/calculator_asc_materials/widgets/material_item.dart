@@ -41,14 +41,14 @@ class MaterialItem extends StatelessWidget {
     required this.sessionKey,
     required this.showMaterialUsage,
     this.textColor,
-    this.iconSize = 45,
+    this.iconSize = 46,
   });
 
   MaterialItem.fromSummary({
     required this.sessionKey,
     required MaterialSummary summary,
     required this.showMaterialUsage,
-    this.iconSize = 45,
+    this.iconSize = 50,
   })  : itemKey = summary.key,
         image = summary.fullImagePath,
         usedQuantity = summary.usedQuantity,
@@ -70,13 +70,13 @@ class MaterialItem extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           InkWell(
-            radius: iconSize * 1.3,
-            borderRadius: BorderRadius.all(Radius.circular(iconSize * 1.3)),
+            radius: iconSize,
+            borderRadius: BorderRadius.all(Radius.circular(iconSize)),
             child: ClipOval(
               child: Image.file(
                 File(image),
-                width: iconSize * 1.3,
-                height: iconSize * 1.3,
+                width: iconSize,
+                height: iconSize,
               ),
             ),
             onTap: () => showDialog(
