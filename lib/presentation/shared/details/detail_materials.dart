@@ -67,24 +67,26 @@ class _DetailMaterialsSliderColumnState extends State<DetailMaterialsSliderColum
         ),
         FractionallySizedBox(
           widthFactor: 0.8,
-          child: SliderTheme(
-            data: SliderThemeData.fromPrimaryColors(
-              primaryColor: widget.color,
-              primaryColorDark: widget.color,
-              primaryColorLight: widget.color,
-              valueIndicatorTextStyle: theme.textTheme.bodySmall!,
-            ).copyWith(
-              overlayShape: SliderComponentShape.noOverlay,
-              trackHeight: 5,
-              thumbShape: const RoundSliderThumbShape(enabledThumbRadius: 8),
-            ),
-            child: Slider(
-              value: _currentIndex.toDouble(),
-              onChanged: (val) => _onAddOrRemove(val.toInt()),
-              label: '${s.level}: ${_current.level}',
-              max: widget.data.length - 1,
-              activeColor: widget.color,
-              divisions: widget.data.length - 1,
+          child: Container(
+            margin: const EdgeInsets.only(bottom: 15),
+            child: SliderTheme(
+              data: SliderThemeData.fromPrimaryColors(
+                primaryColor: widget.color,
+                primaryColorDark: widget.color,
+                primaryColorLight: widget.color,
+                valueIndicatorTextStyle: theme.textTheme.bodySmall!,
+              ).copyWith(
+                overlayShape: SliderComponentShape.noOverlay,
+                trackHeight: 5,
+              ),
+              child: Slider(
+                value: _currentIndex.toDouble(),
+                onChanged: (val) => _onAddOrRemove(val.toInt()),
+                label: '${s.level}: ${_current.level}',
+                max: widget.data.length - 1,
+                activeColor: widget.color,
+                divisions: widget.data.length - 1,
+              ),
             ),
           ),
         ),
