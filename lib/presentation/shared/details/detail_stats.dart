@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/models/models.dart';
@@ -8,7 +6,7 @@ import 'package:shiori/presentation/shared/common_table_cell.dart';
 import 'package:shiori/presentation/shared/details/detail_section.dart';
 import 'package:shiori/presentation/shared/extensions/i18n_extensions.dart';
 import 'package:shiori/presentation/shared/extensions/media_query_extensions.dart';
-import 'package:shiori/presentation/shared/increment_button.dart';
+import 'package:shiori/presentation/shared/number_picker.dart';
 import 'package:shiori/presentation/shared/styles.dart';
 
 class StatValue {
@@ -88,6 +86,7 @@ class StatsDialog extends StatefulWidget {
 
 class _StatsDialogState extends State<StatsDialog> {
   int _currentIndex = 0;
+  bool _useTableLayout = false;
   late StatItem _current;
 
   @override
@@ -100,39 +99,48 @@ class _StatsDialogState extends State<StatsDialog> {
   Widget build(BuildContext context) {
     final s = S.of(context);
     final mq = MediaQuery.of(context);
+    final int itemCountConstraint = (_useTableLayout ? widget.stats.length : _current.values.length) + 1;
     return AlertDialog(
-      title: Text(s.stats),
+      title: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Text(s.stats),
+          IconButton(
+            icon: const Icon(Icons.swap_horiz),
+            onPressed: () => setState(() => _useTableLayout = !_useTableLayout),
+          ),
+        ],
+      ),
       content: Container(
-        constraints: mq.getDialogBoxConstraints(_current.values.length + 2),
-        child: CustomScrollView(
-          slivers: [
-            SliverToBoxAdapter(
-              child: IncrementButton(
-                title: s.level,
-                margin: EdgeInsets.zero,
-                value: _currentIndex,
-                onMinus: _levelChanged,
-                onAdd: _levelChanged,
-                getValueString: (_) => _current.isAnAscension ? '${_current.level} (+)' : '  ${_current.level}  ',
-                decrementIsDisabled: _current.level == 1,
-                incrementIsDisabled: _current.level == widget.stats.map((e) => e.level).reduce(max),
-              ),
-            ),
-            SliverList.separated(
-              separatorBuilder: (ctx, index) => const Divider(),
-              itemCount: _current.values.length,
-              itemBuilder: (ctx, index) {
-                final StatValue statValue = _current.values[index];
-                return ListTile(
-                  dense: true,
-                  title: _StatDialogListRow(title: statValue.title, value: statValue.value),
-                );
-              },
-            ),
-          ],
-        ),
+        constraints: mq.getDialogBoxConstraints(itemCountConstraint),
+        child: _useTableLayout ? _StatDialogTableLayout(stats: widget.stats) : _StatDialogListLayout(current: _current),
       ),
       actions: [
+        if (widget.stats.length > 1 && !_useTableLayout)
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                s.level,
+                textAlign: TextAlign.center,
+              ),
+              NumberPicker(
+                minValue: 0,
+                maxValue: widget.stats.length - 1,
+                value: _currentIndex,
+                axis: Axis.horizontal,
+                onChanged: _levelChanged,
+                infiniteLoop: true,
+                itemWidth: 75,
+                textMapper: (indexString) {
+                  final int index = int.parse(indexString);
+                  final current = widget.stats[index];
+                  return current.isAnAscension ? '${current.level} (+)' : '  ${current.level}  ';
+                },
+              ),
+            ],
+          ),
         FilledButton(
           onPressed: () => Navigator.pop(context),
           child: Text(s.ok),
@@ -147,6 +155,106 @@ class _StatsDialogState extends State<StatsDialog> {
       _currentIndex = index;
       _current = newStat;
     });
+  }
+}
+
+class _StatDialogListLayout extends StatelessWidget {
+  final StatItem current;
+
+  const _StatDialogListLayout({required this.current});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scrollbar(
+      child: ListView.separated(
+        separatorBuilder: (ctx, index) => const Divider(),
+        itemCount: current.values.length,
+        itemBuilder: (ctx, index) {
+          final StatValue statValue = current.values[index];
+          return ListTile(
+            dense: true,
+            title: _StatDialogListRow(title: statValue.title, value: statValue.value),
+          );
+        },
+      ),
+    );
+  }
+}
+
+class _StatDialogTableLayout extends StatelessWidget {
+  final List<StatItem> stats;
+  final ScrollController _horizontalScrollController = ScrollController();
+  final ScrollController _verticalScrollController = ScrollController();
+
+  _StatDialogTableLayout({required this.stats});
+
+  @override
+  Widget build(BuildContext context) {
+    return LayoutBuilder(
+      builder: (context, constraints) => Scrollbar(
+        controller: _verticalScrollController,
+        child: SingleChildScrollView(
+          controller: _verticalScrollController,
+          child: Scrollbar(
+            controller: _horizontalScrollController,
+            child: SingleChildScrollView(
+              controller: _horizontalScrollController,
+              scrollDirection: Axis.horizontal,
+              child: Container(
+                constraints: BoxConstraints(minWidth: constraints.maxWidth),
+                child: _TableLayout(
+                  stats: stats,
+                  useIntrinsicColumnWidth: true,
+                ),
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class _TableLayout extends StatelessWidget {
+  final List<StatItem> stats;
+  final bool useIntrinsicColumnWidth;
+
+  const _TableLayout({
+    required this.stats,
+    required this.useIntrinsicColumnWidth,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final s = S.of(context);
+    final List<StatValue> values = stats.first.values;
+    return Table(
+      defaultColumnWidth: useIntrinsicColumnWidth ? const IntrinsicColumnWidth() : const FlexColumnWidth(),
+      children: [
+        TableRow(
+          children: [
+            CommonTableCell(text: s.level, padding: Styles.edgeInsetAll5),
+            ...values.map(
+              (e) => CommonTableCell(
+                text: e.title,
+                padding: Styles.edgeInsetAll5,
+              ),
+            ),
+          ],
+        ),
+        ...stats.map((e) => _buildRow(e)),
+      ],
+    );
+  }
+
+  TableRow _buildRow(StatItem e) {
+    final level = e.isAnAscension ? '${e.level}+' : '${e.level}';
+    return TableRow(
+      children: [
+        CommonTableCell(text: level, padding: Styles.edgeInsetAll5),
+        ...e.values.map((e) => CommonTableCell(text: e.value, padding: Styles.edgeInsetAll5)),
+      ],
+    );
   }
 }
 
@@ -195,37 +303,14 @@ class StatsTable extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final s = S.of(context);
-    final List<StatValue> values = stats.first.values;
     return DetailSection.complex(
       title: s.stats,
       color: color,
       children: [
-        Table(
-          children: [
-            TableRow(
-              children: [
-                CommonTableCell(text: s.level, padding: Styles.edgeInsetAll5),
-                ...values.map(
-                  (e) => CommonTableCell(
-                    text: e.title,
-                    padding: Styles.edgeInsetAll5,
-                  ),
-                ),
-              ],
-            ),
-            ...stats.map((e) => _buildRow(e)),
-          ],
+        _TableLayout(
+          stats: stats,
+          useIntrinsicColumnWidth: false,
         ),
-      ],
-    );
-  }
-
-  TableRow _buildRow(StatItem e) {
-    final level = e.isAnAscension ? '${e.level}+' : '${e.level}';
-    return TableRow(
-      children: [
-        CommonTableCell(text: level, padding: Styles.edgeInsetAll5),
-        ...e.values.map((e) => CommonTableCell(text: e.value, padding: Styles.edgeInsetAll5)),
       ],
     );
   }
