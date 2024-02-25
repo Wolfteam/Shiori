@@ -56,9 +56,9 @@ class DetailHorizontalListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Size size = SizeUtils.getSizeForSquareImages(context, smallImage: useSmallImageSize);
+    final Size imgSize = SizeUtils.getSizeForSquareImages(context, smallImage: useSmallImageSize);
     return SizedBox(
-      height: size.height + 10,
+      height: imgSize.height + 10,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         itemCount: items.length,
@@ -68,8 +68,8 @@ class DetailHorizontalListView extends StatelessWidget {
             itemKey: e.key,
             name: e.name,
             image: e.iconImage,
-            width: size.width,
-            height: size.width,
+            width: imgSize.width,
+            height: imgSize.height,
             onTap: () => onTap(e.key),
           );
         },
@@ -97,7 +97,11 @@ class DetailHorizontalListButton extends StatelessWidget {
       child: TextButton.icon(
         icon: const Icon(Icons.chevron_right),
         label: Text(title ?? s.seeAll),
-        style: TextButton.styleFrom(foregroundColor: color),
+        style: TextButton.styleFrom(
+          foregroundColor: color,
+          tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+          visualDensity: VisualDensity.compact,
+        ),
         onPressed: onTap,
       ),
     );
