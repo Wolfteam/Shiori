@@ -69,30 +69,12 @@ class _PassiveTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final s = S.of(context);
-    final theme = Theme.of(context);
-    const double iconSize = 50;
     final unlockedAt = passive.unlockedAt >= 1 ? s.unlockedAtAscensionLevelX(passive.unlockedAt) : s.unlockedAutomatically;
-
-    return ListTile(
-      contentPadding: EdgeInsets.zero,
-      leading: CircleAvatar(
-        radius: 30,
-        backgroundColor: color,
-        child: Padding(
-          padding: Styles.edgeInsetAll5,
-          child: ClipOval(
-            child: passive.image == Assets.noImageAvailablePath
-                ? Image.asset(passive.image, width: iconSize, height: iconSize, fit: BoxFit.cover)
-                : Image.file(File(passive.image), width: iconSize, fit: BoxFit.cover),
-          ),
-        ),
-      ),
-      title: Text(passive.title),
-      subtitle: Text(unlockedAt),
-      horizontalTitleGap: 5,
-      iconColor: color,
-      minVerticalPadding: 0,
-      subtitleTextStyle: theme.textTheme.bodyMedium!.copyWith(color: color),
+    return DetailListTile.image(
+      title: passive.title,
+      subtitle: unlockedAt,
+      image: passive.image,
+      color: color,
     );
   }
 }

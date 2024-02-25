@@ -70,7 +70,7 @@ class NumberPicker extends StatefulWidget {
     this.axis = Axis.vertical,
     this.textStyle,
     this.selectedTextStyle,
-    this.haptics = false,
+    this.haptics = true,
     this.decoration,
     this.zeroPad = false,
     this.textMapper,

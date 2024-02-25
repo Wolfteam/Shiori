@@ -73,28 +73,11 @@ class _ConstellationTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final s = S.of(context);
-    final theme = Theme.of(context);
-    const double iconSize = 50;
-    return ListTile(
-      contentPadding: EdgeInsets.zero,
-      leading: CircleAvatar(
-        radius: 30,
-        backgroundColor: color,
-        child: Padding(
-          padding: Styles.edgeInsetAll5,
-          child: ClipOval(
-            child: image == Assets.noImageAvailablePath
-                ? Image.asset(image, width: iconSize, height: iconSize, fit: BoxFit.cover)
-                : Image.file(File(image), width: iconSize, fit: BoxFit.cover),
-          ),
-        ),
-      ),
-      title: Text(title),
-      subtitle: Text(s.constellationX('$number')),
-      horizontalTitleGap: 5,
-      iconColor: color,
-      minVerticalPadding: 0,
-      subtitleTextStyle: theme.textTheme.bodyMedium!.copyWith(color: color),
+    return DetailListTile.image(
+      title: title,
+      subtitle: s.constellationX('$number'),
+      image: image,
+      color: color,
     );
   }
 }

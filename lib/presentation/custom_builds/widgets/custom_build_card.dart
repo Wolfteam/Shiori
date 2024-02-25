@@ -18,7 +18,7 @@ class CustomBuildCard extends StatelessWidget {
   final CustomBuildModel item;
 
   static const double itemWidth = 800;
-  static const double itemHeight = 350;
+  static const double itemHeight = 380;
 
   const CustomBuildCard({
     super.key,
@@ -35,6 +35,8 @@ class CustomBuildCard extends StatelessWidget {
       subtitle += ' - ${s.translateCharacterRoleSubType(item.subType)}';
     }
     final color = item.character.elementType.getElementColorFromContext(context);
+    const double width = 110;
+    const double height = 120;
     return SizedBox(
       width: itemWidth,
       height: itemHeight,
@@ -103,7 +105,7 @@ class CustomBuildCard extends StatelessWidget {
                       ),
                       Text(s.weapons, style: const TextStyle(fontWeight: FontWeight.bold, color: Colors.white)),
                       SizedBox(
-                        height: 100,
+                        height: height,
                         child: ListView.builder(
                           physics: const BouncingScrollPhysics(),
                           scrollDirection: Axis.horizontal,
@@ -116,7 +118,7 @@ class CustomBuildCard extends StatelessWidget {
                               rarity: weapon.rarity,
                               image: weapon.image,
                               isComingSoon: false,
-                              imgWidth: 120,
+                              imgWidth: width,
                             );
                             return child;
                           },
@@ -124,7 +126,7 @@ class CustomBuildCard extends StatelessWidget {
                       ),
                       Text(s.artifacts, style: const TextStyle(fontWeight: FontWeight.bold, color: Colors.white)),
                       SizedBox(
-                        height: 110,
+                        height: height,
                         child: ListView.builder(
                           physics: const BouncingScrollPhysics(),
                           scrollDirection: Axis.horizontal,
@@ -136,6 +138,7 @@ class CustomBuildCard extends StatelessWidget {
                               image: artifact.image,
                               rarity: artifact.rarity,
                               keyName: artifact.key,
+                              imgWidth: width,
                             );
                           },
                         ),

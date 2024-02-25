@@ -69,29 +69,11 @@ class _SkillTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final s = S.of(context);
-    final theme = Theme.of(context);
-    const double iconSize = 50;
-    return ListTile(
-      contentPadding: EdgeInsets.zero,
-      leading: CircleAvatar(
-        radius: 30,
-        backgroundColor: color,
-        child: Padding(
-          padding: Styles.edgeInsetAll5,
-          child: ClipOval(
-            child: skill.image == Assets.noImageAvailablePath
-                ? Image.asset(skill.image, width: iconSize, height: iconSize, fit: BoxFit.cover)
-                : Image.file(File(skill.image), width: iconSize, fit: BoxFit.contain),
-          ),
-        ),
-      ),
-      title: Text(skill.title),
-      subtitle: Text('${s.type}: ${s.translateCharacterSkillType(skill.type)}'),
-      horizontalTitleGap: 5,
-      iconColor: color,
-      minVerticalPadding: 0,
-      subtitleTextStyle: theme.textTheme.bodyMedium!.copyWith(color: color),
-      // onTap: () {},
+    return DetailListTile.image(
+      title: skill.title,
+      subtitle: '${s.type}: ${s.translateCharacterSkillType(skill.type)}',
+      image: skill.image,
+      color: color,
     );
   }
 }
@@ -108,7 +90,6 @@ class _SkillBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final s = S.of(context);
-    final buttonStyle = TextButton.styleFrom(foregroundColor: color);
     return Padding(
       padding: Styles.edgeInsetHorizontal16,
       child: Column(
@@ -134,7 +115,11 @@ class _SkillBody extends StatelessWidget {
             child: ElevatedButton.icon(
               label: Text(s.stats),
               icon: const Icon(Icons.bar_chart),
-              style: buttonStyle,
+              style: ElevatedButton.styleFrom(
+                foregroundColor: color,
+                tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                visualDensity: VisualDensity.compact,
+              ),
               onPressed: () => showDialog(
                 context: context,
                 builder: (ctx) => StatsDialog(

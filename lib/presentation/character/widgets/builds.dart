@@ -77,7 +77,6 @@ class _BuildTitle extends StatelessWidget {
   final CharacterRoleSubType subType;
   final bool isRecommended;
   final bool isCustomBuild;
-  final double iconSize;
 
   const _BuildTitle({
     required this.color,
@@ -85,32 +84,21 @@ class _BuildTitle extends StatelessWidget {
     required this.subType,
     required this.isRecommended,
     required this.isCustomBuild,
-    this.iconSize = 60,
   });
 
   @override
   Widget build(BuildContext context) {
     final s = S.of(context);
-    final theme = Theme.of(context);
     final IconData icon = isCustomBuild
         ? (isRecommended ? Icons.dashboard_customize : Icons.dashboard_customize_outlined)
         : isRecommended
             ? Icons.star
             : Icons.star_outline;
-    return ListTile(
-      subtitleTextStyle: theme.textTheme.bodyMedium!.copyWith(color: color),
-      contentPadding: EdgeInsets.zero,
-      leading: Icon(icon, color: color, size: iconSize),
-      title: Text(s.translateCharacterRoleType(type)),
-      subtitle: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          Text('${s.subType}: ${s.translateCharacterRoleSubType(subType)}'),
-        ],
-      ),
-      horizontalTitleGap: 5,
-      iconColor: color,
-      minVerticalPadding: 0,
+    return DetailListTile.icon(
+      title: s.translateCharacterRoleType(type),
+      subtitle: '${s.subType}: ${s.translateCharacterRoleSubType(subType)}',
+      icon: icon,
+      color: color,
     );
   }
 }
@@ -157,7 +145,9 @@ class _BuildBody extends StatelessWidget {
   }
 }
 
-const double _imgHeight = 125;
+const double _imgHeight = 100;
+const double _imgWidth = 90;
+const double _orRadius = 12;
 
 class _Weapons extends StatelessWidget {
   final Color color;
@@ -201,11 +191,11 @@ class _Weapons extends StatelessWidget {
                 image: weapon.image,
                 isComingSoon: weapon.isComingSoon,
                 imgHeight: _imgHeight,
-                imgWidth: 120,
+                imgWidth: _imgWidth,
               );
               final withOr = index < weapons.length - 1;
               if (withOr) {
-                return RowColumnItemOr(widget: child, color: color);
+                return RowColumnItemOr(widget: child, color: color, radius: _orRadius);
               }
               return child;
             },
@@ -259,7 +249,33 @@ class _ArtifactRow extends StatelessWidget {
             physics: const BouncingScrollPhysics(),
             scrollDirection: Axis.horizontal,
             itemCount: itemCount,
-            itemBuilder: (ctx, index) => _buildItem(index, s),
+            itemBuilder: (ctx, index) {
+              String key;
+              int rarity;
+              String path;
+              final StatType stat = item.stats[index];
+              if (item.one != null) {
+                key = item.one!.key;
+                rarity = item.one!.rarity;
+                path = getArtifactPathByOrder(index, item.one!.image);
+              } else {
+                final multi = item.multiples[index];
+                key = multi.key;
+                rarity = multi.rarity;
+                path = getArtifactPathByOrder(index, multi.image);
+              }
+              return Container(
+                margin: index == itemCount - 1 ? null : const EdgeInsets.only(right: _orRadius * 2 - 2),
+                child: ArtifactCard.withoutDetails(
+                  name: s.translateStatTypeWithoutValue(stat),
+                  image: path,
+                  rarity: rarity,
+                  keyName: key,
+                  imgHeight: _imgHeight,
+                  imgWidth: _imgWidth,
+                ),
+              );
+            },
           ),
         ),
       ],
@@ -270,32 +286,6 @@ class _ArtifactRow extends StatelessWidget {
     return showDialog(
       context: context,
       builder: (context) => _ArtifactBuildDialog(item: item),
-    );
-  }
-
-  Widget _buildItem(int index, S s) {
-    String key;
-    int rarity;
-    String path;
-    final StatType stat = item.stats[index];
-    if (item.one != null) {
-      key = item.one!.key;
-      rarity = item.one!.rarity;
-      path = getArtifactPathByOrder(index, item.one!.image);
-    } else {
-      final multi = item.multiples[index];
-      key = multi.key;
-      rarity = multi.rarity;
-      path = getArtifactPathByOrder(index, multi.image);
-    }
-    return Container(
-      margin: const EdgeInsets.only(right: 40),
-      child: ArtifactCard.withoutDetails(
-        name: s.translateStatTypeWithoutValue(stat),
-        image: path,
-        rarity: rarity,
-        keyName: key,
-      ),
     );
   }
 }

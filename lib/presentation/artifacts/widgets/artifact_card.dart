@@ -77,8 +77,8 @@ class ArtifactCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: imgWidth * 1.5,
-      height: imgHeight * 2,
+      width: imgWidth,
+      height: imgHeight,
       child: InkWell(
         borderRadius: Styles.mainCardBorderRadius,
         onTap: () => _gotoDetailPage(context),

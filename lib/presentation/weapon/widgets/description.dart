@@ -22,7 +22,6 @@ class _Description extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final s = S.of(context);
-    final buttonStyle = TextButton.styleFrom(foregroundColor: color);
     final bool hasButtons = stats.isNotEmpty;
     if (!hasButtons) {
       return DetailSection(
@@ -39,10 +38,14 @@ class _Description extends StatelessWidget {
       children: [
         if (stats.isNotEmpty)
           Center(
-            child: TextButton.icon(
+            child: ElevatedButton.icon(
               label: Text(s.stats),
               icon: const Icon(Icons.bar_chart),
-              style: buttonStyle,
+              style: ElevatedButton.styleFrom(
+                foregroundColor: color,
+                tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                visualDensity: VisualDensity.compact,
+              ),
               onPressed: () => showDialog(
                 context: context,
                 builder: (_) => StatsDialog(

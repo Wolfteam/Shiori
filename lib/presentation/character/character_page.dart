@@ -1,10 +1,7 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shiori/application/bloc.dart';
 import 'package:shiori/domain/app_constants.dart';
-import 'package:shiori/domain/assets.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/extensions/iterable_extensions.dart';
 import 'package:shiori/domain/extensions/string_extensions.dart';
@@ -18,6 +15,7 @@ import 'package:shiori/presentation/shared/bullet_list.dart';
 import 'package:shiori/presentation/shared/character_skill_priority.dart';
 import 'package:shiori/presentation/shared/custom_divider.dart';
 import 'package:shiori/presentation/shared/details/detail_landscape_content.dart';
+import 'package:shiori/presentation/shared/details/detail_list_tile.dart';
 import 'package:shiori/presentation/shared/details/detail_main_card.dart';
 import 'package:shiori/presentation/shared/details/detail_main_content.dart';
 import 'package:shiori/presentation/shared/details/detail_materials.dart';
