@@ -6,6 +6,7 @@ class RowColumnItemOr extends StatelessWidget {
   final Color color;
   final bool useColumn;
   final EdgeInsets? margin;
+  final double? radius;
 
   const RowColumnItemOr({
     super.key,
@@ -13,6 +14,7 @@ class RowColumnItemOr extends StatelessWidget {
     required this.color,
     this.useColumn = false,
     this.margin,
+    this.radius,
   });
 
   @override
@@ -22,11 +24,11 @@ class RowColumnItemOr extends StatelessWidget {
       child: useColumn
           ? Column(
               mainAxisSize: MainAxisSize.min,
-              children: [widget, _OrWidget(color: color)],
+              children: [widget, _OrWidget(color: color, radius: radius)],
             )
           : Row(
               mainAxisSize: MainAxisSize.min,
-              children: [widget, _OrWidget(color: color)],
+              children: [widget, _OrWidget(color: color, radius: radius)],
             ),
     );
   }
@@ -34,9 +36,11 @@ class RowColumnItemOr extends StatelessWidget {
 
 class _OrWidget extends StatelessWidget {
   final Color color;
+  final double? radius;
 
   const _OrWidget({
     required this.color,
+    this.radius,
   });
 
   @override
@@ -45,6 +49,7 @@ class _OrWidget extends StatelessWidget {
     final theme = Theme.of(context);
     return CircleAvatar(
       backgroundColor: color,
+      radius: radius,
       child: Text(
         s.or,
         textAlign: TextAlign.center,
