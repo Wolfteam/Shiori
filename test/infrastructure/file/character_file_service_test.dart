@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:flutter_test/flutter_test.dart';
 import 'package:shiori/domain/enums/enums.dart';
+import 'package:shiori/domain/extensions/datetime_extensions.dart';
 import 'package:shiori/domain/extensions/string_extensions.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/file/file_infrastructure.dart';
@@ -244,9 +245,15 @@ void main() {
   group('Birthdays', () {
     void checkBirthday(CharacterBirthdayModel birthday) {
       checkItemKeyNameAndImage(birthday.key, birthday.name, birthday.image);
-      expect(birthday.birthday.isAfter(DateTime.now()), isTrue);
+
+      final DateTime now = DateTime.now().getStartingDate();
+      expect(birthday.birthday.isAfterInclusive(now), isTrue);
       expect(birthday.birthdayString.isNotNullEmptyOrWhitespace, isTrue);
-      expect(birthday.daysUntilBirthday > 0, isTrue);
+      if (birthday.birthday != now) {
+        expect(birthday.daysUntilBirthday > 0, isTrue);
+      } else {
+        expect(birthday.daysUntilBirthday, isZero);
+      }
     }
 
     test('upcoming characters are not shown', () async {
