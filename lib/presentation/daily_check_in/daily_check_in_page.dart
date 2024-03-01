@@ -7,6 +7,7 @@ import 'package:shiori/presentation/shared/app_webview.dart';
 import 'package:shiori/presentation/shared/dialogs/info_dialog.dart';
 import 'package:shiori/presentation/shared/loading.dart';
 import 'package:shiori/presentation/shared/styles.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 const _script = '''
     function removeButtons() {
@@ -54,6 +55,11 @@ class DailyCheckInPage extends StatelessWidget {
                       splashRadius: Styles.mediumButtonSplashRadius,
                       onPressed: () => _showInfoDialog(context),
                     ),
+                    IconButton(
+                      icon: const Icon(Icons.open_in_new),
+                      splashRadius: Styles.mediumButtonSplashRadius,
+                      onPressed: () => _launchUrl(state.dailyCheckInUrl),
+                    ),
                   ],
                 ),
                 url: state.dailyCheckInUrl,
@@ -66,6 +72,13 @@ class DailyCheckInPage extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  Future<void> _launchUrl(String url) async {
+    final uri = Uri.parse(url);
+    if (await canLaunchUrl(uri)) {
+      await launchUrl(uri);
+    }
   }
 
   Future<void> _showInfoDialog(BuildContext context) async {
