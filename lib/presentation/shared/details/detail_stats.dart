@@ -100,6 +100,8 @@ class _StatsDialogState extends State<StatsDialog> {
     final s = S.of(context);
     final mq = MediaQuery.of(context);
     final int itemCountConstraint = (_useTableLayout ? widget.stats.length : _current.values.length) + 1;
+    final BoxConstraints dialogBoxConstraints = mq.getDialogBoxConstraints(itemCountConstraint);
+    print(dialogBoxConstraints.maxWidth * 0.6);
     return AlertDialog(
       title: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -112,7 +114,7 @@ class _StatsDialogState extends State<StatsDialog> {
         ],
       ),
       content: Container(
-        constraints: mq.getDialogBoxConstraints(itemCountConstraint),
+        constraints: dialogBoxConstraints,
         child: _useTableLayout ? _StatDialogTableLayout(stats: widget.stats) : _StatDialogListLayout(current: _current),
       ),
       actions: [
@@ -125,19 +127,24 @@ class _StatsDialogState extends State<StatsDialog> {
                 s.level,
                 textAlign: TextAlign.center,
               ),
-              NumberPicker(
-                minValue: 0,
-                maxValue: widget.stats.length - 1,
-                value: _currentIndex,
-                axis: Axis.horizontal,
-                onChanged: _levelChanged,
-                infiniteLoop: true,
-                itemWidth: 75,
-                textMapper: (indexString) {
-                  final int index = int.parse(indexString);
-                  final current = widget.stats[index];
-                  return current.isAnAscension ? '${current.level} (+)' : '  ${current.level}  ';
-                },
+              Center(
+                child: SizedBox(
+                  width: dialogBoxConstraints.maxWidth * 0.8,
+                  child: NumberPicker(
+                    minValue: 0,
+                    maxValue: widget.stats.length - 1,
+                    value: _currentIndex,
+                    axis: Axis.horizontal,
+                    onChanged: _levelChanged,
+                    infiniteLoop: true,
+                    itemWidth: 75,
+                    textMapper: (indexString) {
+                      final int index = int.parse(indexString);
+                      final current = widget.stats[index];
+                      return current.isAnAscension ? '${current.level} (+)' : '  ${current.level}  ';
+                    },
+                  ),
+                ),
               ),
             ],
           ),

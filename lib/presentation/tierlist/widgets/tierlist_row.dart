@@ -76,7 +76,7 @@ class TierListRow extends StatelessWidget {
                         .map(
                           (e) => CharacterIconImage.squareItem(
                             item: e,
-                            size: SizeUtils.getSizeForCircleImages(context) * 2.5,
+                            size: SizeUtils.getSizeForSquareImages(context).height,
                             onTap: (img) => context.read<TierListBloc>().add(TierListEvent.deleteCharacterFromRow(index: index, item: e)),
                           ),
                         )
