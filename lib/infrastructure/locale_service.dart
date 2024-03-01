@@ -1,6 +1,7 @@
 import 'package:intl/intl.dart';
 import 'package:shiori/domain/app_constants.dart';
 import 'package:shiori/domain/enums/enums.dart';
+import 'package:shiori/domain/extensions/datetime_extensions.dart';
 import 'package:shiori/domain/extensions/string_extensions.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/locale_service.dart';
@@ -24,7 +25,7 @@ class LocaleServiceImpl implements LocaleService {
     final locale = getFormattedLocale(_settingsService.language);
     final format = DateFormat('MM/dd/yyyy', locale);
     //The format is in MM/dd, I use 2024 since that is a leap-year
-    final now = DateTime.now();
+    final now = DateTime.now().getStartingDate();
     final year = useCurrentYear ? now.year : 2024;
     DateTime charBirthday = format.parse('$birthday/$year');
     if (!useCurrentYear) {
