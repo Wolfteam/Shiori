@@ -22,58 +22,58 @@ environment:
 
 dependencies:
   darq: ^2.0.0
-  device_info_plus: ^9.1.2
-  devicelocale: ^0.7.0
-  envied: ^0.5.3
-  file_picker: ^6.1.1
+  device_info_plus: ^10.0.1
+  devicelocale: ^0.7.1
+  envied: ^0.5.4+1
+  file_picker: ^8.0.0+1
   fk_user_agent: ^2.1.0
-  fl_chart: ^0.66.1
+  fl_chart: ^0.67.0
   flutter:
     sdk: flutter
   flutter_bloc: ^7.3.1
   flutter_colorpicker: ^1.0.3
   flutter_inappwebview: ^6.0.0
-  flutter_local_notifications: ^16.3.2
+  flutter_local_notifications: ^17.0.0
   flutter_localizations:
     sdk: flutter
-  flutter_markdown: ^0.6.18+3
-  flutter_slidable: ^3.0.1
+  flutter_markdown: ^0.6.22+1
+  flutter_slidable: ^3.1.0
   flutter_timezone: ^1.0.8
   fluttertoast: ^8.2.4
   freezed_annotation: ^2.4.1
-  get_it: ^7.6.7
+  get_it: ^7.6.8
   grouped_list: ^5.1.2
   hive: ^2.2.3
   hive_flutter: ^1.1.0
-  http: ^1.2.0
+  http: ^1.2.1
   image_gallery_saver: ^2.0.3
   infinite_listview: ^1.1.0
   internet_connection_checker: ^1.0.0+1
   intl: ^0.18.1
   json_annotation: ^4.8.1
   linked_scroll_controller: ^0.2.0
-  logger: ^2.0.2+1
-  package_info_plus: ^5.0.1
+  logger: ^2.2.0
+  package_info_plus: ^6.0.0
   path: ^1.8.3
   path_provider: ^2.1.2
-  permission_handler: ^11.2.1
+  permission_handler: ^11.3.1
   pull_to_refresh: ^2.0.0
-  purchases_flutter: ^6.20.0
+  purchases_flutter: ^6.25.0
   rate_my_app: ^2.0.0
   responsive_builder: ^0.7.0
   responsive_grid: ^2.4.4
-  screenshot: ^2.1.0
-  share_plus: ^7.2.2
+  screenshot: ^2.3.0
+  share_plus: ^8.0.2
   shared_preferences: ^2.2.2
   sprintf: ^7.0.0
   store_checker: ^1.4.0
   synchronized: ^3.1.0+1
   transparent_image: ^2.0.1
-  url_launcher: ^6.2.4
+  url_launcher: ^6.2.5
   version: ^3.0.0
   version_tracker: ^2.3.0
-  wakelock_plus: ^1.1.4
-  webview_windows: 0.3.0
+  wakelock_plus: ^1.2.2
+  webview_windows: 0.4.0
   window_size:
     git:
       url: https://github.com/google/flutter-desktop-embedding
@@ -82,11 +82,11 @@ dependencies:
 dev_dependencies:
   bloc_test: ^8.5.0
   build_runner:
-  envied_generator: ^0.5.3
+  envied_generator: ^0.5.4+1
   flutter_launcher_icons: ^0.13.1
   flutter_test:
     sdk: flutter
-  freezed: ^2.4.7
+  freezed: ^2.5.0
   hive_generator: ^2.0.1
   integration_test:
     sdk: flutter
@@ -97,7 +97,7 @@ dev_dependencies:
   msix: ^3.16.7
 
 dependency_overrides:
-  package_info_plus: ^5.0.1
+  package_info_plus: ^6.0.0
 
 flutter_launcher_icons:
   android: "launcher_icon"
