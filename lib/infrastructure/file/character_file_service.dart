@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:collection/collection.dart';
 import 'package:shiori/domain/enums/enums.dart';
+import 'package:shiori/domain/extensions/datetime_extensions.dart';
 import 'package:shiori/domain/extensions/string_extensions.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/file/file_infrastructure.dart';
@@ -311,9 +312,8 @@ class CharacterFileServiceImpl extends CharacterFileService {
       return true;
     }).map((e) {
       final char = getCharacterForCard(e.key);
-      final birthday = _localeService.getCharBirthDate(e.birthday, useCurrentYear: true);
-      final now = DateTime.now();
-      final nowFromZero = DateTime(now.year, now.month, now.day);
+      final birthday = _localeService.getCharBirthDate(e.birthday);
+      final now = DateTime.now().getStartingDate();
       return CharacterBirthdayModel(
         key: e.key,
         name: char.name,
@@ -321,7 +321,7 @@ class CharacterFileServiceImpl extends CharacterFileService {
         iconImage: char.iconImage,
         birthday: birthday,
         birthdayString: e.birthday!,
-        daysUntilBirthday: nowFromZero.difference(birthday).inDays.abs(),
+        daysUntilBirthday: now.difference(birthday).inDays.abs(),
       );
     }).toList()
       ..sort((x, y) => x.daysUntilBirthday.compareTo(y.daysUntilBirthday));
