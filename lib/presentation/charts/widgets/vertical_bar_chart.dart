@@ -64,7 +64,7 @@ class VerticalBarChart extends StatelessWidget {
         barTouchData: BarTouchData(
           touchTooltipData: BarTouchTooltipData(
             fitInsideHorizontally: true,
-            tooltipBgColor: tooltipColor ?? theme.colorScheme.background,
+            getTooltipColor: (spot) => tooltipColor ?? theme.colorScheme.background,
             getTooltipItem: (group, groupIndex, rod, rodIndex) => BarTooltipItem(
               rod.toY.toInt().toString(),
               const TextStyle(color: Colors.white),
