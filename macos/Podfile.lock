@@ -25,12 +25,12 @@ PODS:
   - path_provider_foundation (0.0.1):
     - Flutter
     - FlutterMacOS
-  - purchases_flutter (6.20.0):
+  - purchases_flutter (6.25.0):
     - FlutterMacOS
-    - PurchasesHybridCommon (= 9.6.0)
-  - PurchasesHybridCommon (9.6.0):
-    - RevenueCat (= 4.35.0)
-  - RevenueCat (4.35.0)
+    - PurchasesHybridCommon (= 10.3.2)
+  - PurchasesHybridCommon (10.3.2):
+    - RevenueCat (= 4.39.1)
+  - RevenueCat (4.39.1)
   - share_plus (0.0.1):
     - FlutterMacOS
   - shared_preferences_foundation (0.0.1):
@@ -99,19 +99,19 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   AppCenter: 85c92db0759d2792a65eb61d6842d2e86611a49a
-  device_info_plus: 5401765fde0b8d062a2f8eb65510fb17e77cf07f
+  device_info_plus: ce1b7762849d3ec103d0e0517299f2db7ad60720
   devicelocale: 9f0f36ac651cabae2c33f32dcff4f32b61c38225
   flutter_inappwebview_macos: 9600c9df9fdb346aaa8933812009f8d94304203d
   flutter_local_notifications: 3805ca215b2fb7f397d78b66db91f6a747af52e4
   flutter_timezone: 6b906d1740654acb16e50b639835628fea851037
   FlutterMacOS: 8f6f14fa908a6fb3fba0cd85dbd81ec4b251fb24
   OrderedSet: aaeb196f7fef5a9edf55d89760da9176ad40b93c
-  package_info_plus: 02d7a575e80f194102bef286361c6c326e4c29ce
+  package_info_plus: fa739dd842b393193c5ca93c26798dff6e3d0e0c
   path_provider_foundation: 29f094ae23ebbca9d3d0cec13889cd9060c0e943
-  purchases_flutter: f676aa305a40736b32888b15ba85104dac817467
-  PurchasesHybridCommon: 74e0d76eca8839ada2e34b76050d01ba7c66b616
-  RevenueCat: e804675481436c1b0e83125ef4eda63969a86a14
-  share_plus: 76dd39142738f7a68dd57b05093b5e8193f220f7
+  purchases_flutter: 579ca359777b75bd3e9a1a877b29f1a2942a2401
+  PurchasesHybridCommon: 222e00edaee550b48d8e9388eca9048a053f7c33
+  RevenueCat: 237cb14ba0ba0fa07153c801585b42b73be0fe7e
+  share_plus: 36537c04ce0c3e3f5bd297ce4318b6d5ee5fd6cf
   shared_preferences_foundation: 5b919d13b803cadd15ed2dc053125c68730e5126
   url_launcher_macos: d2691c7dd33ed713bf3544850a623080ec693d95
   wakelock_plus: 4783562c9a43d209c458cb9b30692134af456269
