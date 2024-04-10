@@ -23,9 +23,9 @@ class DateUtils {
     return formatDate(date, format: format);
   }
 
-  static int getLastDayOfMonth(int month) {
+  static int getLastDayOfMonth(int month, {int? year}) {
     final now = DateTime.now();
-    return DateTime(now.year, month + 1, 0).day;
+    return DateTime(year ?? now.year, month + 1, 0).day;
   }
 
   static String getMonthFullName(int month) {
