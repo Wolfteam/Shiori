@@ -25,12 +25,15 @@ PODS:
   - path_provider_foundation (0.0.1):
     - Flutter
     - FlutterMacOS
-  - purchases_flutter (6.25.0):
+  - purchases_flutter (6.28.0):
     - FlutterMacOS
-    - PurchasesHybridCommon (= 10.3.2)
-  - PurchasesHybridCommon (10.3.2):
-    - RevenueCat (= 4.39.1)
-  - RevenueCat (4.39.1)
+    - PurchasesHybridCommon (= 10.5.0)
+  - PurchasesHybridCommon (10.5.0):
+    - RevenueCat (= 4.41.0)
+  - rate_my_app (2.1.0):
+    - Flutter
+    - FlutterMacOS
+  - RevenueCat (4.41.0)
   - share_plus (0.0.1):
     - FlutterMacOS
   - shared_preferences_foundation (0.0.1):
@@ -54,6 +57,7 @@ DEPENDENCIES:
   - package_info_plus (from `Flutter/ephemeral/.symlinks/plugins/package_info_plus/macos`)
   - path_provider_foundation (from `Flutter/ephemeral/.symlinks/plugins/path_provider_foundation/darwin`)
   - purchases_flutter (from `Flutter/ephemeral/.symlinks/plugins/purchases_flutter/macos`)
+  - rate_my_app (from `Flutter/ephemeral/.symlinks/plugins/rate_my_app/darwin`)
   - share_plus (from `Flutter/ephemeral/.symlinks/plugins/share_plus/macos`)
   - shared_preferences_foundation (from `Flutter/ephemeral/.symlinks/plugins/shared_preferences_foundation/darwin`)
   - url_launcher_macos (from `Flutter/ephemeral/.symlinks/plugins/url_launcher_macos/macos`)
@@ -86,6 +90,8 @@ EXTERNAL SOURCES:
     :path: Flutter/ephemeral/.symlinks/plugins/path_provider_foundation/darwin
   purchases_flutter:
     :path: Flutter/ephemeral/.symlinks/plugins/purchases_flutter/macos
+  rate_my_app:
+    :path: Flutter/ephemeral/.symlinks/plugins/rate_my_app/darwin
   share_plus:
     :path: Flutter/ephemeral/.symlinks/plugins/share_plus/macos
   shared_preferences_foundation:
@@ -107,12 +113,13 @@ SPEC CHECKSUMS:
   FlutterMacOS: 8f6f14fa908a6fb3fba0cd85dbd81ec4b251fb24
   OrderedSet: aaeb196f7fef5a9edf55d89760da9176ad40b93c
   package_info_plus: fa739dd842b393193c5ca93c26798dff6e3d0e0c
-  path_provider_foundation: 29f094ae23ebbca9d3d0cec13889cd9060c0e943
-  purchases_flutter: 579ca359777b75bd3e9a1a877b29f1a2942a2401
-  PurchasesHybridCommon: 222e00edaee550b48d8e9388eca9048a053f7c33
-  RevenueCat: 237cb14ba0ba0fa07153c801585b42b73be0fe7e
+  path_provider_foundation: 3784922295ac71e43754bd15e0653ccfd36a147c
+  purchases_flutter: e72fa083acf237e1f0cfeadd043aa05a0827984c
+  PurchasesHybridCommon: 3ada52b4b1214b1bdcc499812d061580b85b1b10
+  rate_my_app: f6fe6c5082992a59a29573663ed0484397abe9cc
+  RevenueCat: 1e864e3b26f3f22ca067dd8578da8123030e6774
   share_plus: 36537c04ce0c3e3f5bd297ce4318b6d5ee5fd6cf
-  shared_preferences_foundation: 5b919d13b803cadd15ed2dc053125c68730e5126
+  shared_preferences_foundation: b4c3b4cddf1c21f02770737f147a3f5da9d39695
   url_launcher_macos: d2691c7dd33ed713bf3544850a623080ec693d95
   wakelock_plus: 4783562c9a43d209c458cb9b30692134af456269
   window_size: 339dafa0b27a95a62a843042038fa6c3c48de195

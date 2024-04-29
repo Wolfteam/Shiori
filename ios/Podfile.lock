@@ -74,14 +74,15 @@ PODS:
     - FlutterMacOS
   - permission_handler_apple (9.3.0):
     - Flutter
-  - purchases_flutter (6.25.0):
+  - purchases_flutter (6.28.0):
     - Flutter
-    - PurchasesHybridCommon (= 10.3.2)
-  - PurchasesHybridCommon (10.3.2):
-    - RevenueCat (= 4.39.1)
-  - rate_my_app (2.0.0):
+    - PurchasesHybridCommon (= 10.5.0)
+  - PurchasesHybridCommon (10.5.0):
+    - RevenueCat (= 4.41.0)
+  - rate_my_app (2.1.0):
     - Flutter
-  - RevenueCat (4.39.1)
+    - FlutterMacOS
+  - RevenueCat (4.41.0)
   - SDWebImage (5.18.3):
     - SDWebImage/Core (= 5.18.3)
   - SDWebImage/Core (5.18.3)
@@ -116,7 +117,7 @@ DEPENDENCIES:
   - path_provider_foundation (from `.symlinks/plugins/path_provider_foundation/darwin`)
   - permission_handler_apple (from `.symlinks/plugins/permission_handler_apple/ios`)
   - purchases_flutter (from `.symlinks/plugins/purchases_flutter/ios`)
-  - rate_my_app (from `.symlinks/plugins/rate_my_app/ios`)
+  - rate_my_app (from `.symlinks/plugins/rate_my_app/darwin`)
   - share_plus (from `.symlinks/plugins/share_plus/ios`)
   - shared_preferences_foundation (from `.symlinks/plugins/shared_preferences_foundation/darwin`)
   - store_checker (from `.symlinks/plugins/store_checker/ios`)
@@ -167,7 +168,7 @@ EXTERNAL SOURCES:
   purchases_flutter:
     :path: ".symlinks/plugins/purchases_flutter/ios"
   rate_my_app:
-    :path: ".symlinks/plugins/rate_my_app/ios"
+    :path: ".symlinks/plugins/rate_my_app/darwin"
   share_plus:
     :path: ".symlinks/plugins/share_plus/ios"
   shared_preferences_foundation:
@@ -191,24 +192,24 @@ SPEC CHECKSUMS:
   flutter_inappwebview_ios: 97215cf7d4677db55df76782dbd2930c5e1c1ea0
   flutter_local_notifications: 4cde75091f6327eb8517fa068a0a5950212d2086
   flutter_timezone: ffb07bdad3c6276af8dada0f11978d8a1f8a20bb
-  fluttertoast: 31b00dabfa7fb7bacd9e7dbee580d7a2ff4bf265
+  fluttertoast: 9f2f8e81bb5ce18facb9748d7855bf5a756fe3db
   image_gallery_saver: cb43cc43141711190510e92c460eb1655cd343cb
   integration_test: 13825b8a9334a850581300559b8839134b124670
   OrderedSet: aaeb196f7fef5a9edf55d89760da9176ad40b93c
   package_info_plus: 58f0028419748fad15bf008b270aaa8e54380b1c
-  path_provider_foundation: 29f094ae23ebbca9d3d0cec13889cd9060c0e943
+  path_provider_foundation: 3784922295ac71e43754bd15e0653ccfd36a147c
   permission_handler_apple: 9878588469a2b0d0fc1e048d9f43605f92e6cec2
-  purchases_flutter: e8652efd109c542f1876891d10c53ebb28e0b81c
-  PurchasesHybridCommon: 222e00edaee550b48d8e9388eca9048a053f7c33
-  rate_my_app: 80fba94c4885cd31738231b7b1f51c1ad726f5c7
-  RevenueCat: 237cb14ba0ba0fa07153c801585b42b73be0fe7e
+  purchases_flutter: 374d09772f892e73f19bec6fb91eecd4dd21b23d
+  PurchasesHybridCommon: 3ada52b4b1214b1bdcc499812d061580b85b1b10
+  rate_my_app: f6fe6c5082992a59a29573663ed0484397abe9cc
+  RevenueCat: 1e864e3b26f3f22ca067dd8578da8123030e6774
   SDWebImage: 96e0c18ef14010b7485210e92fac888587ebb958
   share_plus: 8875f4f2500512ea181eef553c3e27dba5135aad
-  shared_preferences_foundation: 5b919d13b803cadd15ed2dc053125c68730e5126
+  shared_preferences_foundation: b4c3b4cddf1c21f02770737f147a3f5da9d39695
   store_checker: 359c5051d9ec30ff0a8fa39eb5ec9df021bb745d
   SwiftyGif: 93a1cc87bf3a51916001cf8f3d63835fb64c819f
   Toast: 91b396c56ee72a5790816f40d3a94dd357abc196
-  url_launcher_ios: 68d46cc9766d0c41dbdc884310529557e3cd7a86
+  url_launcher_ios: 6116280ddcfe98ab8820085d8d76ae7449447586
   wakelock_plus: 78ec7c5b202cab7761af8e2b2b3d0671be6c4ae1
 
 PODFILE CHECKSUM: a1eaf986c30d5a84309bbcd4434682ef102516a3
