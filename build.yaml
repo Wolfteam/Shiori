@@ -11,6 +11,8 @@ targets:
         generate_for:
           - lib/domain/models/**
       freezed:
+        options:
+          format: false
         generate_for:
           - lib/application/**
           - lib/domain/models/**

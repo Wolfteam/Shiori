@@ -479,7 +479,7 @@ class _Elements extends StatelessWidget {
                     canValueBeRendered: (value) => context.read<ChartElementsBloc>().isValidVersion(value),
                     getBottomText: (value) => value.toStringAsFixed(1),
                     getLeftText: (value) => value.toInt().toString(),
-                    toolTipBgColor: _tooltipColor,
+                    tooltipColor: _tooltipColor,
                     getTooltipItems: (touchedSpots) => touchedSpots.map(
                       (touchedSpot) {
                         final quantity = touchedSpot.y;
