@@ -9,7 +9,7 @@ import 'package:shiori/presentation/shared/styles.dart';
 class CreditsSettingsCard extends StatelessWidget {
   final Map<AppLanguageType, List<String>> _translators = {
     AppLanguageType.simplifiedChinese: ['2O48#9733'],
-    AppLanguageType.russian: ['SipTik#1171', 'KKTS#8567', 'pill#0039', 'Avantel#8880', 'чебилин#5968', 'Anixty#3279'],
+    AppLanguageType.russian: ['SipTik#1171', 'KKTS#8567', 'ineedmypills', 'Avantel#8880', 'чебилин#5968', 'Anixty#3279'],
     AppLanguageType.portuguese: ['Brunoff#0261', 'DanPS#4336', 'JJlago#0406'],
     AppLanguageType.italian: ['Reniel [Skidex ツ]#7982', 'F'],
     AppLanguageType.japanese: ['Ruri#3080'],
