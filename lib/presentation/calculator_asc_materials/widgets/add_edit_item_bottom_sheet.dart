@@ -108,10 +108,18 @@ class AddEditItemBottomSheet extends StatelessWidget {
                     children: [
                       OutlinedButton(
                         onPressed: () => _showLevelPickerDialog(context, state.currentLevel, true),
+                        style: OutlinedButton.styleFrom(
+                          tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                          visualDensity: VisualDensity.compact,
+                        ),
                         child: Text(s.currentX(state.currentLevel)),
                       ),
                       OutlinedButton(
                         onPressed: () => _showLevelPickerDialog(context, state.desiredLevel, false),
+                        style: OutlinedButton.styleFrom(
+                          tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                          visualDensity: VisualDensity.compact,
+                        ),
                         child: Text(s.desiredX(state.desiredLevel)),
                       ),
                     ],
@@ -281,24 +289,24 @@ class _UseMaterialsFromInventoryToggleButton extends StatelessWidget {
         ),
         Container(
           margin: const EdgeInsets.only(top: 5),
-          child: ToggleButtons(
-            constraints: const BoxConstraints(minHeight: 40, minWidth: 100),
-            borderRadius: BorderRadius.circular(20),
-            onPressed: (index) => _useFromInventory(index, context),
-            isSelected: [useMaterialsFromInventory, !useMaterialsFromInventory],
-            children: const <Widget>[
-              Icon(Icons.check),
-              Icon(Icons.close),
+          child: SegmentedButton<bool>(
+            showSelectedIcon: false,
+            selected: {useMaterialsFromInventory},
+            segments: const [
+              ButtonSegment<bool>(value: true, icon: Icon(Icons.check)),
+              ButtonSegment<bool>(value: false, icon: Icon(Icons.close)),
             ],
+            onSelectionChanged: (Set<bool> newSelection) => context
+                .read<CalculatorAscMaterialsItemBloc>()
+                .add(CalculatorAscMaterialsItemEvent.useMaterialsFromInventoryChanged(useThem: newSelection.first)),
+            style: SegmentedButton.styleFrom(
+              tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+              visualDensity: VisualDensity.compact,
+            ),
           ),
         ),
       ],
     );
-  }
-
-  void _useFromInventory(int index, BuildContext context) {
-    final useThem = index == 0;
-    context.read<CalculatorAscMaterialsItemBloc>().add(CalculatorAscMaterialsItemEvent.useMaterialsFromInventoryChanged(useThem: useThem));
   }
 }
 
