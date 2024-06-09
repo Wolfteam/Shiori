@@ -84,7 +84,7 @@ class PurchaseServiceImpl implements PurchaseService {
           .map(
             (p) => PackageItemModel(
               identifier: p.identifier,
-              offeringIdentifier: p.offeringIdentifier,
+              offeringIdentifier: p.presentedOfferingContext.offeringIdentifier,
               priceString: p.storeProduct.priceString,
               productIdentifier: p.storeProduct.identifier,
             ),
@@ -104,7 +104,7 @@ class PurchaseServiceImpl implements PurchaseService {
       //that's why I create dummy object to satisfy the constructor
       const dummyProduct = StoreProduct('', '', '', 0, '0', '');
       final package = Package(identifier, PackageType.lifetime, dummyProduct, PresentedOfferingContext(offeringIdentifier, null, null));
-      final customerInfo = await Purchases.purchasePackage(package);
+      await Purchases.purchasePackage(package);
       return true;
     } catch (e, s) {
       _handleError('purchase', e, s);
@@ -116,7 +116,7 @@ class PurchaseServiceImpl implements PurchaseService {
   Future<bool> restorePurchases({String? entitlementIdentifier}) async {
     try {
       _unlockedFeatures = null;
-      final transactions = await Purchases.restorePurchases();
+      await Purchases.restorePurchases();
       final features = await _getUnlockedFeatures(entitlementIdentifier: entitlementIdentifier);
       return features.isNotEmpty;
     } catch (e, s) {
