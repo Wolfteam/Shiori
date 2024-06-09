@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:rate_my_app/rate_my_app.dart';
 import 'package:responsive_builder/responsive_builder.dart';
@@ -119,8 +120,18 @@ class _MainTabPageState extends State<MainTabPage> with SingleTickerProviderStat
 
   @override
   Widget build(BuildContext context) {
-    final child = WillPopScope(
-      onWillPop: () => handleWillPop(),
+    final child = PopScope(
+      canPop: false,
+      onPopInvoked: (didPop) async {
+        if (didPop) {
+          return;
+        }
+
+        final bool shouldPop = await handleWillPop();
+        if (shouldPop) {
+          SystemNavigator.pop(animated: true);
+        }
+      },
       child: ResponsiveBuilder(
         builder: (ctx, size) => size.isDesktop || size.isTablet
             ? DesktopTabletScaffold(
