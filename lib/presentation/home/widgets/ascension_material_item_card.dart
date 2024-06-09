@@ -64,7 +64,7 @@ class AscensionMaterialItemCard extends StatelessWidget {
                   style: theme.textTheme.bodySmall,
                 ),
               ),
-              CustomDivider(color: theme.colorScheme.onBackground),
+              CustomDivider(color: theme.colorScheme.onSurface),
               child,
             ],
           ),

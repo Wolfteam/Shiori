@@ -17,8 +17,8 @@ class UnlockWithDonationText extends StatelessWidget {
           : () => showModalBottomSheet(
                 context: context,
                 shape: Styles.modalBottomSheetShape,
-                isDismissible: true,
                 isScrollControlled: true,
+                useSafeArea: true,
                 builder: (ctx) => const DonationsBottomSheet(),
               ),
       child: Text(
