@@ -1,6 +1,7 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:shiori/domain/extensions/string_extensions.dart';
+import 'package:shiori/presentation/shared/styles.dart';
 
 typedef OnBarChartTap = void Function(int, int);
 typedef GetText = String Function(double);
@@ -32,8 +33,6 @@ class VerticalBarChart extends StatelessWidget {
   final double maxY;
   final double interval;
 
-  final Color? tooltipColor;
-
   final int bottomTextMaxLength;
   final int leftTextMaxLength;
 
@@ -48,7 +47,6 @@ class VerticalBarChart extends StatelessWidget {
     this.getBarChartRodData,
     required this.maxY,
     required this.interval,
-    this.tooltipColor,
     this.bottomTextMaxLength = 10,
     this.leftTextMaxLength = 10,
     this.rotateBottomText = false,
@@ -56,7 +54,7 @@ class VerticalBarChart extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
+    final (TextStyle tooltipTextStyle, BoxDecoration tooltipBoxDecoration, EdgeInsets tooltipPadding) = Styles.getTooltipStyling(context);
     return BarChart(
       BarChartData(
         maxY: maxY,
@@ -64,11 +62,12 @@ class VerticalBarChart extends StatelessWidget {
         barTouchData: BarTouchData(
           touchTooltipData: BarTouchTooltipData(
             fitInsideHorizontally: true,
-            getTooltipColor: (spot) => tooltipColor ?? theme.colorScheme.background,
+            getTooltipColor: (spot) => tooltipBoxDecoration.color!,
             getTooltipItem: (group, groupIndex, rod, rodIndex) => BarTooltipItem(
               rod.toY.toInt().toString(),
-              const TextStyle(color: Colors.white),
+              tooltipTextStyle,
             ),
+            tooltipPadding: tooltipPadding,
           ),
           touchCallback: (FlTouchEvent event, response) {
             if (event is FlTapUpEvent && response?.spot?.touchedBarGroupIndex != null) {

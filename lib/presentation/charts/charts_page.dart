@@ -54,8 +54,6 @@ const _topWeaponTypes = [
 const _topCharacterColors = [Colors.red, Colors.orange, Colors.yellow, Colors.green, Colors.blue];
 const _topWeaponColors = [Colors.red, Colors.orange, Colors.yellow, Colors.green, Colors.blue];
 
-final _tooltipColor = Colors.black.withOpacity(0.7);
-
 final _monthNames = date_utils.DateUtils.getAllMonthsName();
 
 class ChartsPage extends StatelessWidget {
@@ -479,7 +477,6 @@ class _Elements extends StatelessWidget {
                     canValueBeRendered: (value) => context.read<ChartElementsBloc>().isValidVersion(value),
                     getBottomText: (value) => value.toStringAsFixed(1),
                     getLeftText: (value) => value.toInt().toString(),
-                    tooltipColor: _tooltipColor,
                     getTooltipItems: (touchedSpots) => touchedSpots.map(
                       (touchedSpot) {
                         final quantity = touchedSpot.y;
@@ -576,7 +573,6 @@ class _Birthdays extends StatelessWidget {
                     .toList(),
                 maxY: maxYValueForBirthdays,
                 interval: (maxYValueForBirthdays ~/ 5).toDouble(),
-                tooltipColor: _tooltipColor,
                 getBottomText: (value) => _monthNames[value.toInt() - 1],
                 getLeftText: (value) => value.toInt().toString(),
                 rotateBottomText: true,
@@ -670,7 +666,6 @@ class _AscensionStats extends StatelessWidget {
                         .toList(),
                     maxY: state.maxCount.toDouble(),
                     interval: (state.maxCount * 0.2).roundToDouble(),
-                    tooltipColor: _tooltipColor,
                     getBottomText: (value) => s.translateStatTypeWithoutValue(StatType.values[value.toInt()]),
                     getLeftText: (value) => value.toInt().toString(),
                     rotateBottomText: true,
@@ -720,7 +715,6 @@ class _Regions extends StatelessWidget {
                         .toList(),
                     maxY: state.maxCount.toDouble(),
                     interval: (state.maxCount * 0.2).roundToDouble(),
-                    tooltipColor: _tooltipColor,
                     getBottomText: (value) => s.translateRegionType(state.items[value.toInt()].regionType),
                     getLeftText: (value) => value.toInt().toString(),
                     rotateBottomText: true,
@@ -760,7 +754,6 @@ class _Genders extends StatelessWidget {
                     items: state.genders.mapIndex((e, i) => VerticalBarDataModel(i, theme.colorScheme.primary, i, 0)).toList(),
                     maxY: state.maxCount.toDouble(),
                     interval: (state.maxCount * 0.2).roundToDouble(),
-                    tooltipColor: _tooltipColor,
                     getBottomText: (value) => s.translateRegionType(state.genders[value.toInt()].regionType),
                     getLeftText: (value) => value.toInt().toString(),
                     rotateBottomText: true,
