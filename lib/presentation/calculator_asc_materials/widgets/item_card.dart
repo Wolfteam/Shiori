@@ -27,6 +27,7 @@ class ItemCard extends StatelessWidget {
   final bool isActive;
   final ElementType? elementType;
   final bool showMaterialUsage;
+  final bool useMaterialsFromInventory;
 
   static const double itemWidth = 210;
   static const double minItemHeight = 420;
@@ -44,6 +45,7 @@ class ItemCard extends StatelessWidget {
     required this.materials,
     required this.isActive,
     required this.showMaterialUsage,
+    required this.useMaterialsFromInventory,
     this.elementType,
   });
 
@@ -85,11 +87,22 @@ class ItemCard extends StatelessWidget {
                         message: name,
                         child: Container(
                           margin: Styles.edgeInsetAll5,
-                          child: Text(
-                            name,
-                            style: theme.textTheme.titleLarge!.copyWith(color: Colors.white),
-                            overflow: TextOverflow.ellipsis,
-                            textAlign: TextAlign.center,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              if (useMaterialsFromInventory)
+                                const Flexible(
+                                  child: Icon(Icons.inventory, color: Colors.white),
+                                ),
+                              Expanded(
+                                child: Text(
+                                  name,
+                                  style: theme.textTheme.titleLarge!.copyWith(color: Colors.white),
+                                  overflow: TextOverflow.ellipsis,
+                                  textAlign: TextAlign.center,
+                                ),
+                              ),
+                            ],
                           ),
                         ),
                       ),

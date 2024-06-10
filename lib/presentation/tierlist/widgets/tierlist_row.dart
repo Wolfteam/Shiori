@@ -145,7 +145,7 @@ class TierListRow extends StatelessWidget {
           const Divider(height: 1),
         ],
       ),
-      onAccept: (item) => context.read<TierListBloc>().add(TierListEvent.addCharacterToRow(index: index, item: item)),
+      onAcceptWithDetails: (item) => context.read<TierListBloc>().add(TierListEvent.addCharacterToRow(index: index, item: item.data)),
     );
   }
 

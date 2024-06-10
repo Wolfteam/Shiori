@@ -222,10 +222,9 @@ class _SmoothStarRatingState extends State<SmoothStarRating> {
     if (k != 0) {
       //half stars
       if (k >= halfStarThreshold) {
-        newRating = newRating.floor() + 1.0;
-      } else {
-        newRating = newRating.floor() + 0.5;
+        return newRating.floor() + 1.0;
       }
+      return newRating.floor() + 0.5;
     }
     return newRating;
   }

@@ -214,8 +214,8 @@ class AboutSettingsCard extends StatelessWidget {
     return showModalBottomSheet(
       context: context,
       shape: Styles.modalBottomSheetShape,
-      isDismissible: true,
       isScrollControlled: true,
+      useSafeArea: true,
       builder: (ctx) => const DonationsBottomSheet(),
     );
   }

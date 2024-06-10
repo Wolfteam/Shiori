@@ -76,7 +76,7 @@ void main() {
           'Skills',
           'Passives',
           'Constellations',
-          'Ascension Materials;Talents Ascension'
+          'Ascension Materials;Talents Ascension',
         ];
 
         await page.doCheckInLandscape(expectedTabTitles, expectedDescriptions);
@@ -88,7 +88,7 @@ void main() {
           'Passives',
           'Constellations',
           'Ascension Materials',
-          'Talents Ascension'
+          'Talents Ascension',
         ];
         await page.doCheckInPortrait(expectedDescriptions);
       }

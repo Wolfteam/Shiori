@@ -168,4 +168,31 @@ class Styles {
       BoxShadow(color: _kAmbientShadowOpacity),
     ],
   );
+
+  static (TextStyle, BoxDecoration, EdgeInsets) getTooltipStyling(BuildContext context) {
+    double getDefaultFontSize(TargetPlatform platform) {
+      return switch (platform) {
+        TargetPlatform.macOS || TargetPlatform.linux || TargetPlatform.windows => 12.0,
+        TargetPlatform.android || TargetPlatform.fuchsia || TargetPlatform.iOS => 14.0,
+      };
+    }
+
+    final EdgeInsets padding = switch (Theme.of(context).platform) {
+      TargetPlatform.macOS || TargetPlatform.linux || TargetPlatform.windows => const EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
+      TargetPlatform.android || TargetPlatform.fuchsia || TargetPlatform.iOS => const EdgeInsets.symmetric(horizontal: 16.0, vertical: 4.0),
+    };
+
+    final (TextStyle defaultTextStyle, BoxDecoration defaultDecoration) = switch (Theme.of(context)) {
+      ThemeData(brightness: Brightness.dark, :final TextTheme textTheme, :final TargetPlatform platform) => (
+          textTheme.bodyMedium!.copyWith(color: Colors.black, fontSize: getDefaultFontSize(platform)),
+          BoxDecoration(color: Colors.white.withOpacity(0.9), borderRadius: const BorderRadius.all(Radius.circular(4))),
+        ),
+      ThemeData(brightness: Brightness.light, :final TextTheme textTheme, :final TargetPlatform platform) => (
+          textTheme.bodyMedium!.copyWith(color: Colors.white, fontSize: getDefaultFontSize(platform)),
+          BoxDecoration(color: Colors.grey[700]!.withOpacity(0.9), borderRadius: const BorderRadius.all(Radius.circular(4))),
+        ),
+    };
+
+    return (defaultTextStyle, defaultDecoration, padding);
+  }
 }
