@@ -22,10 +22,10 @@ class CalculatorAscMaterialsSessionsBloc extends Bloc<CalculatorAscMaterialsSess
 
   CalculatorAscMaterialsSessionsBloc(this._dataService, this._telemetryService) : super(const CalculatorAscMaterialsSessionsState.loading()) {
     final itemAddedSubs = _dataService.calculator.itemAdded.stream.listen(
-          (e) => add(CalculatorAscMaterialsSessionsEvent.itemAdded(sessionKey: e.sessionKey, isCharacter: e.isCharacter)),
+      (e) => add(CalculatorAscMaterialsSessionsEvent.itemAdded(sessionKey: e.sessionKey, isCharacter: e.isCharacter)),
     );
     final itemDeletedSubs = _dataService.calculator.itemDeleted.stream.listen(
-          (e) => add(CalculatorAscMaterialsSessionsEvent.itemDeleted(sessionKey: e.sessionKey, isCharacter: e.isCharacter)),
+      (e) => add(CalculatorAscMaterialsSessionsEvent.itemDeleted(sessionKey: e.sessionKey, isCharacter: e.isCharacter)),
     );
 
     _calcItemSubscriptions.add(itemAddedSubs);

@@ -20,7 +20,7 @@ class BannerVersionHistoryBloc extends Bloc<BannerVersionHistoryEvent, BannerVer
     on<BannerVersionHistoryEvent>((event, emit) => _mapEventToState(event, emit));
   }
 
-  Future<void> _mapEventToState(BannerHistoryItemEvent event, Emitter<BannerHistoryItemState> emit) async {
+  Future<void> _mapEventToState(BannerVersionHistoryEvent event, Emitter<BannerVersionHistoryState> emit) async {
     final s = await event.map(
       init: (e) => _init(e.version),
     );

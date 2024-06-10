@@ -36,7 +36,7 @@ class GameCodesBloc extends Bloc<GameCodesEvent, GameCodesState> {
     this._genshinService,
     this._settingsService,
     this._deviceInfoService,
-  ) : super(_initialState)  {
+  ) : super(_initialState) {
     on<GameCodesEvent>((event, emit) => _mapEventToState(event, emit));
   }
 
@@ -61,7 +61,7 @@ class GameCodesBloc extends Bloc<GameCodesEvent, GameCodesState> {
     emit(s);
 
     if (s.unknownErrorOccurred == true || s.isBusy) {
-      emit (s.copyWith(unknownErrorOccurred: false, isBusy: false));
+      emit(s.copyWith(unknownErrorOccurred: false, isBusy: false));
     }
   }
 
