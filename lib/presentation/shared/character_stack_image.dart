@@ -26,36 +26,43 @@ class CharacterStackImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    return InkWell(
-      onTap: onTap == null ? null : () => onTap!(),
-      child: Stack(
-        alignment: Alignment.bottomLeft,
-        fit: StackFit.passthrough,
-        children: [
-          FadeInImage(
-            placeholder: MemoryImage(kTransparentImage),
-            height: height,
-            fit: fit,
-            image: FileImage(File(image)),
-          ),
-          Container(
-            color: Colors.black.withOpacity(0.5),
-            padding: Styles.edgeInsetAll10,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                Center(
-                  child: Text(
-                    name,
-                    overflow: TextOverflow.ellipsis,
-                    style: theme.textTheme.titleMedium!.copyWith(fontWeight: FontWeight.bold, color: Colors.white),
-                  ),
-                ),
-                Rarity(stars: rarity),
-              ],
+    return SizedBox(
+      height: height,
+      child: InkWell(
+        onTap: onTap == null ? null : () => onTap!(),
+        child: Stack(
+          alignment: Alignment.center,
+          fit: StackFit.expand,
+          children: [
+            FadeInImage(
+              height: height,
+              placeholder: MemoryImage(kTransparentImage),
+              fit: fit,
+              image: FileImage(File(image)),
             ),
-          ),
-        ],
+            Align(
+              alignment: Alignment.bottomCenter,
+              child: Container(
+                color: Colors.black.withOpacity(0.5),
+                padding: Styles.edgeInsetAll10,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Center(
+                      child: Text(
+                        name,
+                        overflow: TextOverflow.ellipsis,
+                        style: theme.textTheme.titleMedium!.copyWith(fontWeight: FontWeight.bold, color: Colors.white),
+                      ),
+                    ),
+                    Rarity(stars: rarity, color: Colors.white),
+                  ],
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

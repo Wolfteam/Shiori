@@ -19,7 +19,6 @@ class ThemeSettingsCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final s = S.of(context);
-    final theme = Theme.of(context);
     return SettingsCard(
       child: BlocBuilder<SettingsBloc, SettingsState>(
         builder: (context, state) => state.maybeMap(
@@ -45,18 +44,15 @@ class ThemeSettingsCard extends StatelessWidget {
                   style: const TextStyle(color: Colors.grey),
                 ),
               ),
-              Padding(
+              CommonDropdownButton<AppThemeType>(
+                hint: s.chooseBaseAppTheme,
+                currentValue: state.currentTheme,
+                values: EnumUtils.getTranslatedAndSortedEnum<AppThemeType>(AppThemeType.values, (val, _) => s.translateAppThemeType(val)),
+                onChanged: _appThemeChanged,
                 padding: Styles.edgeInsetHorizontal16,
-                child: CommonDropdownButton<AppThemeType>(
-                  hint: s.chooseBaseAppTheme,
-                  currentValue: state.currentTheme,
-                  values: EnumUtils.getTranslatedAndSortedEnum<AppThemeType>(AppThemeType.values, (val, _) => s.translateAppThemeType(val)),
-                  onChanged: _appThemeChanged,
-                ),
               ),
               if (showDonationUI && state.currentTheme == AppThemeType.dark)
                 SwitchListTile(
-                  activeColor: theme.colorScheme.secondary,
                   title: Text(s.useDarkAmoledTheme),
                   value: state.useDarkAmoledTheme,
                   subtitle: state.unlockedFeatures.contains(AppUnlockedFeature.darkAmoledTheme)

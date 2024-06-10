@@ -9,7 +9,7 @@ import 'package:shiori/presentation/notifications/widgets/forms/notification_dro
 import 'package:shiori/presentation/notifications/widgets/forms/notification_note.dart';
 import 'package:shiori/presentation/notifications/widgets/forms/notification_switch.dart';
 import 'package:shiori/presentation/notifications/widgets/forms/notification_title_body.dart';
-import 'package:shiori/presentation/shared/dropdown_button_with_title.dart';
+import 'package:shiori/presentation/shared/common_dropdown_button.dart';
 import 'package:shiori/presentation/shared/extensions/i18n_extensions.dart';
 import 'package:shiori/presentation/shared/utils/enum_utils.dart';
 
@@ -46,11 +46,13 @@ class NotificationFarmingArtifactForm extends StatelessWidget {
       children: [
         NotificationCircleItem(type: _type, images: images, showOtherImages: showOtherImages),
         NotificationDropdownType(selectedValue: _type, isInEditMode: isInEditMode),
-        DropdownButtonWithTitle<ArtifactFarmingTimeType>(
+        CommonDropdownButton<ArtifactFarmingTimeType>(
           title: s.time,
+          hint: s.time,
+          withoutUnderLine: false,
           currentValue: artifactFarmingTimeType,
-          items: EnumUtils.getTranslatedAndSortedEnum(ArtifactFarmingTimeType.values, (val, _) => s.translateArtifactFarmingTimeType(val)),
-          onChanged: (v) => context.read<NotificationBloc>().add(NotificationEvent.artifactFarmingTimeTypeChanged(newValue: v)),
+          values: EnumUtils.getTranslatedAndSortedEnum(ArtifactFarmingTimeType.values, (val, _) => s.translateArtifactFarmingTimeType(val)),
+          onChanged: (v, _) => context.read<NotificationBloc>().add(NotificationEvent.artifactFarmingTimeTypeChanged(newValue: v)),
         ),
         NotificationTitleBody(title: title, body: body),
         NotificationNote(note: note),

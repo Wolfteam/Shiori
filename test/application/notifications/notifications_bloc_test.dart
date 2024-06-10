@@ -42,7 +42,7 @@ void main() {
     when(notificationService.scheduleNotification(any, any, any, any, any)).thenAnswer((_) => Future.value());
     final resourceService = getResourceService(settingsService);
     final genshinService = GenshinServiceImpl(resourceService, LocaleServiceImpl(settingsService));
-    dataService = DataServiceImpl(genshinService, CalculatorServiceImpl(genshinService, resourceService), resourceService);
+    dataService = DataServiceImpl(genshinService, CalculatorAscMaterialsServiceImpl(genshinService, resourceService), resourceService);
 
     return Future(() async {
       await genshinService.init(settingsService.language);

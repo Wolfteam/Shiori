@@ -11,7 +11,7 @@ class ArtifactState with _$ArtifactState {
     required int maxRarity,
     required List<ArtifactCardBonusModel> bonus,
     required List<String> images,
-    required List<ItemCommon> charImages,
-    required List<ItemCommon> droppedBy,
+    required List<ItemCommonWithName> usedBy,
+    required List<ItemCommonWithName> droppedBy,
   }) = _LoadedState;
 }

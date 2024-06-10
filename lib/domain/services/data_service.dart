@@ -1,15 +1,16 @@
 import 'dart:async';
 
 import 'package:flutter/foundation.dart';
-import 'package:shiori/domain/services/persistence/calculator_data_service.dart';
+import 'package:shiori/domain/services/persistence/calculator_asc_materials_data_service.dart';
 import 'package:shiori/domain/services/persistence/custom_builds_data_service.dart';
 import 'package:shiori/domain/services/persistence/game_codes_data_service.dart';
 import 'package:shiori/domain/services/persistence/inventory_data_service.dart';
 import 'package:shiori/domain/services/persistence/notifications_data_service.dart';
 import 'package:shiori/domain/services/persistence/tier_list_data_service.dart';
+import 'package:shiori/domain/services/persistence/wish_simulator_data_service.dart';
 
 abstract class DataService {
-  CalculatorDataService get calculator;
+  CalculatorAscMaterialsDataService get calculator;
 
   InventoryDataService get inventory;
 
@@ -21,12 +22,18 @@ abstract class DataService {
 
   TierListDataService get tierList;
 
+  WishSimulatorDataService get wishSimulator;
+
   Future<void> init({String dir = 'shiori_data'});
 
   @visibleForTesting
-  Future<void> initForTests(String path);
+  Future<void> initForTests(String path, {bool registerAdapters = true});
 
   Future<void> deleteThemAll();
 
+  @visibleForTesting
   Future<void> closeThemAll();
+
+  @visibleForTesting
+  void registerAdapters();
 }

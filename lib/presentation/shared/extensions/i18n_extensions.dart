@@ -630,13 +630,21 @@ extension I18nExtensions on S {
   String translateBannerHistorySortType(BannerHistorySortType type) {
     switch (type) {
       case BannerHistorySortType.nameAsc:
-        return nameAsc;
+        return '$name ($asc)';
       case BannerHistorySortType.nameDesc:
-        return nameDesc;
+        return '$name ($desc)';
       case BannerHistorySortType.versionAsc:
-        return versionAsc;
+        return '$version ($asc)';
       case BannerHistorySortType.versionDesc:
-        return versionDesc;
+        return '$version ($desc)';
+      case BannerHistorySortType.rerunsAsc:
+        return '$reruns ($asc)';
+      case BannerHistorySortType.rerunsDesc:
+        return '$reruns ($desc)';
+      case BannerHistorySortType.recentAsc:
+        return '$recent ($asc)';
+      case BannerHistorySortType.recentDesc:
+        return '$recent ($desc)';
     }
   }
 
@@ -676,6 +684,36 @@ extension I18nExtensions on S {
         return gameCodes;
       case AppBackupDataType.notifications:
         return notifications;
+      case AppBackupDataType.wishSimulator:
+        return wishSimulator;
     }
+  }
+
+  String translateWishBannerGroupedType(WishBannerGroupedType type) {
+    switch (type) {
+      case WishBannerGroupedType.version:
+        return versions;
+      case WishBannerGroupedType.character:
+        return characters;
+      case WishBannerGroupedType.weapon:
+        return weapons;
+    }
+  }
+
+  String translateBannerItemType(BannerItemType type) {
+    return switch (type) {
+      BannerItemType.character => characterEventWish,
+      BannerItemType.weapon => weaponEventWish,
+      BannerItemType.standard => standardEventWish,
+    };
+  }
+
+  String translateItemType(ItemType type) {
+    return switch (type) {
+      ItemType.character => character,
+      ItemType.weapon => weapon,
+      ItemType.artifact => artifact,
+      ItemType.material => material,
+    };
   }
 }

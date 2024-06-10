@@ -36,7 +36,7 @@ void main() {
     final localeService = LocaleServiceImpl(settingsService);
     resourceService = getResourceService(settingsService);
     genshinService = GenshinServiceImpl(resourceService, localeService);
-    dataService = DataServiceImpl(genshinService, CalculatorServiceImpl(genshinService, resourceService), resourceService);
+    dataService = DataServiceImpl(genshinService, CalculatorAscMaterialsServiceImpl(genshinService, resourceService), resourceService);
     telemetryService = MockTelemetryService();
     loggingService = MockLoggingService();
     customBuildsBloc = CustomBuildsBloc(dataService);
@@ -162,6 +162,7 @@ void main() {
           index: 0,
           name: 'Fischl',
           image: '',
+          iconImage: '',
           roleType: CharacterRoleType.offFieldDps,
           subType: CharacterRoleSubType.electro,
         ),
@@ -170,6 +171,7 @@ void main() {
           index: 1,
           name: 'Beidou',
           image: '',
+          iconImage: '',
           roleType: CharacterRoleType.offFieldDps,
           subType: CharacterRoleSubType.electro,
         ),
@@ -178,6 +180,7 @@ void main() {
           index: 2,
           name: 'Bennett',
           image: '',
+          iconImage: '',
           roleType: CharacterRoleType.burstSupport,
           subType: CharacterRoleSubType.pyro,
         ),

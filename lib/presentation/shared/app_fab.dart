@@ -26,7 +26,6 @@ class AppFab extends StatelessWidget {
       child: ScaleTransition(
         scale: hideFabAnimController,
         child: FloatingActionButton(
-          backgroundColor: Theme.of(context).primaryColor,
           mini: mini,
           onPressed: () => onPressed != null ? onPressed!() : scrollController.goToTheTop(),
           heroTag: null,

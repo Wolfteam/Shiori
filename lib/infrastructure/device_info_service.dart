@@ -15,6 +15,7 @@ class DeviceInfoServiceImpl implements DeviceInfoService {
   late String _appName;
   late bool _versionChanged = false;
   late String _packageName;
+  Source? _installationSource;
 
   @override
   Map<String, String> get deviceInfo => _deviceInfo;
@@ -34,6 +35,20 @@ class DeviceInfoServiceImpl implements DeviceInfoService {
   //TODO: COMPLETE THIS
   @override
   String? get userAgent => Platform.isWindows || Platform.isMacOS ? null : FkUserAgent.webViewUserAgent!.replaceAll(RegExp('wv'), '');
+
+  @override
+  bool get installedFromValidSource {
+    if (Platform.isWindows || Platform.isMacOS) {
+      return true;
+    }
+
+    if (_installationSource == null) {
+      return false;
+    }
+
+    final notValidSources = [Source.UNKNOWN, Source.IS_INSTALLED_FROM_OTHER_SOURCE];
+    return !notValidSources.contains(_installationSource);
+  }
 
   @override
   Future<void> init() async {
@@ -121,6 +136,7 @@ class DeviceInfoServiceImpl implements DeviceInfoService {
     _deviceInfo.putIfAbsent('IsPhysicalDevice', () => '${isPhysicalDevice ?? na}');
     if (Platform.isAndroid || Platform.isIOS) {
       final installationSource = await StoreChecker.getSource;
+      _installationSource = installationSource;
       _deviceInfo.putIfAbsent('InstallationSource', () => installationSource.name);
     }
   }

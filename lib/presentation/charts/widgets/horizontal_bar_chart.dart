@@ -34,7 +34,7 @@ class HorizontalBarChart extends StatelessWidget {
 
   final double barWidth;
 
-  final Color? toolTipBgColor;
+  final Color? tooltipColor;
 
   final int bottomTextMaxLength;
   final int leftTextMaxLength;
@@ -52,7 +52,7 @@ class HorizontalBarChart extends StatelessWidget {
     this.minX = 0,
     this.minY = 0,
     this.barWidth = 4,
-    this.toolTipBgColor,
+    this.tooltipColor,
     this.bottomTextMaxLength = 10,
     this.leftTextMaxLength = 10,
   });
@@ -78,7 +78,7 @@ class HorizontalBarChart extends StatelessWidget {
               }
             },
             touchTooltipData: LineTouchTooltipData(
-              tooltipBgColor: toolTipBgColor ?? theme.colorScheme.background,
+              getTooltipColor: (spot) => tooltipColor ?? theme.colorScheme.background,
               fitInsideHorizontally: true,
               getTooltipItems: getTooltipItems ?? defaultLineTooltipItem,
             ),

@@ -11,5 +11,7 @@ abstract class DeviceInfoService {
 
   String? get userAgent;
 
+  bool get installedFromValidSource;
+
   Future<void> init();
 }

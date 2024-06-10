@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:intl/date_symbol_data_local.dart';
@@ -12,6 +13,7 @@ import 'package:shiori/domain/services/file/file_infrastructure.dart';
 import 'package:shiori/domain/services/locale_service.dart';
 import 'package:shiori/domain/services/resources_service.dart';
 import 'package:shiori/domain/services/settings_service.dart';
+import 'package:shiori/domain/wish_banner_constants.dart';
 import 'package:shiori/infrastructure/infrastructure.dart';
 
 import 'mocks.mocks.dart';
@@ -50,8 +52,10 @@ Future<bool> _assetExists(String path) async {
     await rootBundle.load(path);
     return true;
   } catch (e) {
-    print(path);
-    print(e);
+    if (kDebugMode) {
+      print(path);
+      print(e);
+    }
     return false;
   }
 }
@@ -102,6 +106,16 @@ void checkItemsCommon(List<ItemCommon> items, {bool checkEmpty = true}) {
   }
 }
 
+void checkItemsCommonWithName(List<ItemCommonWithName> items, {bool checkEmpty = true}) {
+  for (final item in items) {
+    checkItemCommonWithName(item);
+  }
+
+  if (checkEmpty) {
+    expect(items, isNotEmpty);
+  }
+}
+
 void checkItemCommon(ItemCommon item) {
   checkItemKeyAndImage(item.key, item.image);
 }
@@ -119,6 +133,17 @@ void checkItemKeyAndImage(String key, String image) {
 void checkItemKeyNameAndImage(String key, String name, String image) {
   checkItemKeyAndImage(key, image);
   checkTranslation(name, canBeNull: false);
+}
+
+void checkItemKeyAndName(String key, String name) {
+  checkKey(key);
+  checkTranslation(name, canBeNull: false);
+}
+
+void checkBannerRarity(int rarity, {int? min, int? max}) {
+  final minRarity = min ?? WishBannerConstants.minObtainableRarity;
+  final maxRarity = max ?? WishBannerConstants.maxObtainableRarity;
+  expect(rarity >= minRarity && rarity <= maxRarity, isTrue);
 }
 
 void checkItemAscensionMaterialFileModel(MaterialFileService materialFileService, List<ItemAscensionMaterialFileModel> all) {

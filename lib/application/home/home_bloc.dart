@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
+import 'package:darq/darq.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/genshin_service.dart';
@@ -39,8 +40,9 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     final weaponMaterials = _genshinService.weapons.getWeaponAscensionMaterials(day);
     final charsForBirthday = _genshinService.characters
         .getCharacterBirthdays(month: now.month, day: now.day)
+        .orderBy((e) => e.name)
         .map(
-          (e) => ItemCommon(e.key, e.image),
+          (e) => ItemCommon(e.key, e.image, e.iconImage),
         )
         .toList();
     final dayName = _localeService.getDayNameFromDay(day);

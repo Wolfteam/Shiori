@@ -5,7 +5,7 @@ class CalculatorAscMaterialsItemEvent with _$CalculatorAscMaterialsItemEvent {
   const factory CalculatorAscMaterialsItemEvent.load({
     required String key,
     required bool isCharacter,
-  }) = _Init;
+  }) = _Load;
 
   const factory CalculatorAscMaterialsItemEvent.loadWith({
     required String key,

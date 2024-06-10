@@ -67,12 +67,14 @@ class ApiServiceImpl implements ApiService {
   @override
   Future<ApiResponseDto<ResourceDiffResponseDto?>> checkForUpdates(String currentAppVersion, int currentResourcesVersion) async {
     try {
-      String url = '${Env.apiBaseUrl}/api/resources/diff?AppVersion=$currentAppVersion';
-      if (currentResourcesVersion > 0) {
-        url += '&CurrentVersion=$currentResourcesVersion';
-      }
+      final dto = GetResourceDiffRequestDto(
+        appVersion: currentAppVersion,
+        currentVersion: currentResourcesVersion > 0 ? currentResourcesVersion : null,
+      );
 
-      final response = await _httpClient.get(Uri.parse(url), headers: _getApiHeaders());
+      final url = Uri.parse(Env.apiBaseUrl).replace(path: 'api/resources/diff', queryParameters: _toQueryMap(dto.toJson()));
+
+      final response = await _httpClient.get(url, headers: _getApiHeaders());
       if (!_isSuccessStatusCode(response.statusCode)) {
         _loggingService.warning(
           runtimeType,
@@ -121,6 +123,29 @@ class ApiServiceImpl implements ApiService {
     }
   }
 
+  @override
+  Future<ApiListResponseDto<GameCodeResponseDto>> getGameCodes(String appVersion, int currentResourcesVersion) async {
+    try {
+      final dto = BaseRequestDto(appVersion: appVersion, currentVersion: currentResourcesVersion);
+      final url = Uri.parse(Env.apiBaseUrl).replace(path: 'api/gamecodes', queryParameters: _toQueryMap(dto.toJson()));
+      final response = await _httpClient.get(url, headers: _getApiHeaders());
+      if (!_isSuccessStatusCode(response.statusCode)) {
+        _loggingService.warning(
+          runtimeType,
+          'getGameCodes: Got status code = ${response.statusCode}. Body = ${response.body}',
+        );
+        return ApiListResponseDto(succeed: false, message: 'Invalid status code = ${response.statusCode}', result: []);
+      }
+
+      final json = jsonDecode(response.body) as Map<String, dynamic>;
+      final apiResponse = ApiListResponseDto.fromJson(json, (data) => GameCodeResponseDto.fromJson(data! as Map<String, dynamic>));
+      return apiResponse;
+    } catch (e, s) {
+      _handleError('getGameCodes', e, s);
+      rethrow;
+    }
+  }
+
   Map<String, String> _getApiHeaders() {
     final headers = {Env.apiHeaderName: Env.apiHeaderValue};
     headers.addAll(_getCommonApiHeaders());
@@ -144,5 +169,9 @@ class ApiServiceImpl implements ApiService {
 
   bool _isSuccessStatusCode(int code) {
     return code >= HttpStatus.ok && code <= 299;
+  }
+
+  Map<String, String?> _toQueryMap(Map<String, dynamic> map) {
+    return {for (final kvp in map.entries) kvp.key: kvp.value?.toString()};
   }
 }

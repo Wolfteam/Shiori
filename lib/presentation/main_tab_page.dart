@@ -32,6 +32,7 @@ class _MainTabPageState extends State<MainTabPage> with SingleTickerProviderStat
   final _defaultIndex = 2;
   DateTime? backButtonPressTime;
   DateTime? _pausedAt;
+  final List<ScrollController> _tabItemScrollControllers = [];
 
   @override
   void initState() {
@@ -40,6 +41,7 @@ class _MainTabPageState extends State<MainTabPage> with SingleTickerProviderStat
       length: 5,
       vsync: this,
     );
+    _tabItemScrollControllers.addAll(List.generate(4, (index) => ScrollController()));
     super.initState();
     WidgetsBinding.instance.addObserver(this);
   }
@@ -72,6 +74,8 @@ class _MainTabPageState extends State<MainTabPage> with SingleTickerProviderStat
             ToastUtils.showInfoToast(toast, s.newAppVersionInStore);
           case AppResourceUpdateResultType.updated:
             ToastUtils.showSucceedToast(toast, s.resourceUpdateCompleted);
+          case AppResourceUpdateResultType.firstInstallSkipped:
+            ToastUtils.showInfoToast(toast, s.firstResourceDownloadSkippedMsg);
           case AppResourceUpdateResultType.updatesAvailable:
           case AppResourceUpdateResultType.noUpdatesAvailable:
           case AppResourceUpdateResultType.noInternetConnectionForFirstInstall:
@@ -104,6 +108,12 @@ class _MainTabPageState extends State<MainTabPage> with SingleTickerProviderStat
   void dispose() {
     WidgetsBinding.instance.removeObserver(this);
     _tabController.dispose();
+    for (final sc in _tabItemScrollControllers) {
+      //the controller may have been already disposed
+      if (sc.hasClients) {
+        sc.dispose();
+      }
+    }
     super.dispose();
   }
 
@@ -113,8 +123,16 @@ class _MainTabPageState extends State<MainTabPage> with SingleTickerProviderStat
       onWillPop: () => handleWillPop(),
       child: ResponsiveBuilder(
         builder: (ctx, size) => size.isDesktop || size.isTablet
-            ? DesktopTabletScaffold(defaultIndex: _defaultIndex, tabController: _tabController)
-            : MobileScaffold(defaultIndex: _defaultIndex, tabController: _tabController),
+            ? DesktopTabletScaffold(
+                defaultIndex: _defaultIndex,
+                tabController: _tabController,
+                scrollControllers: _tabItemScrollControllers,
+              )
+            : MobileScaffold(
+                defaultIndex: _defaultIndex,
+                tabController: _tabController,
+                scrollControllers: _tabItemScrollControllers,
+              ),
       ),
     );
 

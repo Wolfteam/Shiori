@@ -1,11 +1,12 @@
 import 'package:hive/hive.dart';
 import 'package:shiori/domain/enums/enums.dart';
+import 'package:shiori/domain/models/entities/base_entity.dart';
 import 'package:shiori/domain/models/entities/notifications/notification_base.dart';
 
 part 'notification_custom.g.dart';
 
 @HiveType(typeId: 9)
-class NotificationCustom extends HiveObject implements NotificationBase {
+class NotificationCustom extends BaseEntity implements NotificationBase {
   @override
   @HiveField(0)
   final int type;

@@ -15,7 +15,7 @@ class CardDescription extends StatelessWidget {
       message: text,
       child: Text(
         text,
-        style: theme.textTheme.titleSmall,
+        style: theme.textTheme.bodySmall,
         textAlign: TextAlign.center,
         maxLines: 3,
         overflow: TextOverflow.ellipsis,

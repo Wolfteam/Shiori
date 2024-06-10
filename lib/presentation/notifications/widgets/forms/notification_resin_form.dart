@@ -46,13 +46,13 @@ class NotificationResinForm extends StatelessWidget {
           children: [
             Flexible(
               fit: FlexFit.tight,
-              flex: 60,
+              flex: 40,
               child: NotificationDropdownType(selectedValue: AppNotificationType.resin, isInEditMode: isInEditMode),
             ),
             const Spacer(flex: 10),
             Flexible(
               fit: FlexFit.tight,
-              flex: 30,
+              flex: 40,
               child: OutlinedButton(
                 onPressed: () => _showQuantityPickerDialog(context, currentResin),
                 child: Text(s.currentX(currentResin)),
@@ -69,7 +69,7 @@ class NotificationResinForm extends StatelessWidget {
 
   Future<void> _showQuantityPickerDialog(BuildContext context, int value) async {
     final s = S.of(context);
-    final newValue = await showDialog<int>(
+    await showDialog<int>(
       context: context,
       builder: (BuildContext context) => NumberPickerDialog(
         maxItemLevel: maxResinValue - 1,
@@ -77,12 +77,12 @@ class NotificationResinForm extends StatelessWidget {
         value: value,
         title: s.resin,
       ),
-    );
+    ).then((newValue) {
+      if (newValue == null) {
+        return;
+      }
 
-    if (newValue == null) {
-      return;
-    }
-
-    context.read<NotificationBloc>().add(NotificationEvent.resinChanged(newValue: newValue));
+      context.read<NotificationBloc>().add(NotificationEvent.resinChanged(newValue: newValue));
+    });
   }
 }

@@ -37,14 +37,13 @@ void main() {
   blocTest<UrlPageBloc, UrlPageState>(
     'Init',
     build: () => UrlPageBloc(networkService, telemetryService, deviceInfoService, settingsService),
-    act: (bloc) => bloc.add(const UrlPageEvent.init(loadMap: true, loadWishSimulator: true, loadDailyCheckIn: true)),
+    act: (bloc) => bloc.add(const UrlPageEvent.init(loadMap: true, loadDailyCheckIn: true)),
     verify: (bloc) {
       bloc.state.map(
         loading: (_) => throw Exception('Invalid state'),
         loaded: (state) {
           expect(state.hasInternetConnection, true);
           expect(state.mapUrl.startsWith(bloc.officialMapUrl), true);
-          expect(state.wishSimulatorUrl, bloc.wishSimulatorUrl);
           expect(state.dailyCheckInUrl.startsWith(bloc.dailyCheckInUrl), true);
           expect(state.userAgent, deviceInfoService.userAgent);
         },

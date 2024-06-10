@@ -17,6 +17,9 @@ import 'package:shiori/presentation/weapons/widgets/weapon_card.dart';
 class CustomBuildCard extends StatelessWidget {
   final CustomBuildModel item;
 
+  static const double itemWidth = 800;
+  static const double itemHeight = 380;
+
   const CustomBuildCard({
     super.key,
     required this.item,
@@ -32,112 +35,120 @@ class CustomBuildCard extends StatelessWidget {
       subtitle += ' - ${s.translateCharacterRoleSubType(item.subType)}';
     }
     final color = item.character.elementType.getElementColorFromContext(context);
-    return InkWell(
-      onTap: () => _goToDetailsPage(context),
-      child: Card(
-        clipBehavior: Clip.hardEdge,
-        elevation: Styles.cardTenElevation,
-        color: color,
-        shadowColor: Colors.transparent,
-        child: Row(
-          children: [
-            Expanded(
-              flex: device == DeviceScreenType.tablet ? 40 : 35,
-              child: CharacterStackImage(
-                name: item.character.name,
-                image: item.character.image,
-                rarity: item.character.stars,
-                height: 350,
-              ),
-            ),
-            Expanded(
-              flex: device == DeviceScreenType.tablet ? 60 : 65,
-              child: Padding(
-                padding: Styles.edgeInsetHorizontal5,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Expanded(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Tooltip(
-                                message: item.title,
-                                child: Text(
-                                  item.title,
-                                  maxLines: 2,
-                                  overflow: TextOverflow.ellipsis,
-                                  style: theme.textTheme.headlineSmall!.copyWith(fontWeight: FontWeight.bold, color: Colors.white),
-                                ),
-                              ),
-                              Text(
-                                subtitle,
-                                overflow: TextOverflow.ellipsis,
-                                style: const TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
-                              ),
-                            ],
-                          ),
-                        ),
-                        Tooltip(
-                          message: s.delete,
-                          child: IconButton(
-                            splashRadius: Styles.smallButtonSplashRadius,
-                            icon: const Icon(Icons.delete, color: Colors.white),
-                            onPressed: () => _showDeleteDialog(context),
-                          ),
-                        ),
-                      ],
-                    ),
-                    Text(s.weapons, style: const TextStyle(fontWeight: FontWeight.bold, color: Colors.white)),
-                    SizedBox(
-                      height: 100,
-                      child: ListView.builder(
-                        physics: const BouncingScrollPhysics(),
-                        scrollDirection: Axis.horizontal,
-                        itemCount: item.weapons.length,
-                        itemBuilder: (ctx, index) {
-                          final weapon = item.weapons[index];
-                          final child = WeaponCard.withoutDetails(
-                            keyName: weapon.key,
-                            name: weapon.name,
-                            rarity: weapon.rarity,
-                            image: weapon.image,
-                            isComingSoon: false,
-                            imgHeight: 50,
-                            imgWidth: 60,
-                          );
-                          return child;
-                        },
-                      ),
-                    ),
-                    Text(s.artifacts, style: const TextStyle(fontWeight: FontWeight.bold, color: Colors.white)),
-                    SizedBox(
-                      height: 110,
-                      child: ListView.builder(
-                        physics: const BouncingScrollPhysics(),
-                        scrollDirection: Axis.horizontal,
-                        itemCount: item.artifacts.length,
-                        itemBuilder: (ctx, index) {
-                          final artifact = item.artifacts[index];
-                          return ArtifactCard.withoutDetails(
-                            name: s.translateStatTypeWithoutValue(artifact.statType),
-                            image: artifact.image,
-                            rarity: artifact.rarity,
-                            keyName: artifact.key,
-                            imgWidth: 55,
-                            imgHeight: 45,
-                          );
-                        },
-                      ),
-                    ),
-                  ],
+    const double width = 110;
+    const double height = 120;
+    return SizedBox(
+      width: itemWidth,
+      height: itemHeight,
+      child: InkWell(
+        borderRadius: Styles.mainCardBorderRadius,
+        onTap: () => _goToDetailsPage(context),
+        child: Card(
+          clipBehavior: Clip.hardEdge,
+          shape: Styles.mainCardShape,
+          elevation: Styles.cardTenElevation,
+          color: color,
+          shadowColor: Colors.transparent,
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Expanded(
+                flex: device == DeviceScreenType.tablet ? 40 : 35,
+                child: AbsorbPointer(
+                  child: CharacterStackImage(
+                    name: item.character.name,
+                    image: item.character.image,
+                    rarity: item.character.stars,
+                  ),
                 ),
               ),
-            ),
-          ],
+              Expanded(
+                flex: device == DeviceScreenType.tablet ? 60 : 65,
+                child: Padding(
+                  padding: Styles.edgeInsetHorizontal5,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Expanded(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Tooltip(
+                                  message: item.title,
+                                  child: Text(
+                                    item.title,
+                                    maxLines: 2,
+                                    overflow: TextOverflow.ellipsis,
+                                    style: theme.textTheme.headlineSmall!.copyWith(fontWeight: FontWeight.bold, color: Colors.white),
+                                  ),
+                                ),
+                                Text(
+                                  subtitle,
+                                  overflow: TextOverflow.ellipsis,
+                                  style: const TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
+                                ),
+                              ],
+                            ),
+                          ),
+                          Tooltip(
+                            message: s.delete,
+                            child: IconButton(
+                              splashRadius: Styles.smallButtonSplashRadius,
+                              icon: const Icon(Icons.delete, color: Colors.white),
+                              onPressed: () => _showDeleteDialog(context),
+                            ),
+                          ),
+                        ],
+                      ),
+                      Text(s.weapons, style: const TextStyle(fontWeight: FontWeight.bold, color: Colors.white)),
+                      SizedBox(
+                        height: height,
+                        child: ListView.builder(
+                          physics: const BouncingScrollPhysics(),
+                          scrollDirection: Axis.horizontal,
+                          itemCount: item.weapons.length,
+                          itemBuilder: (ctx, index) {
+                            final weapon = item.weapons[index];
+                            final child = WeaponCard.withoutDetails(
+                              keyName: weapon.key,
+                              name: weapon.name,
+                              rarity: weapon.rarity,
+                              image: weapon.image,
+                              isComingSoon: false,
+                              imgWidth: width,
+                            );
+                            return child;
+                          },
+                        ),
+                      ),
+                      Text(s.artifacts, style: const TextStyle(fontWeight: FontWeight.bold, color: Colors.white)),
+                      SizedBox(
+                        height: height,
+                        child: ListView.builder(
+                          physics: const BouncingScrollPhysics(),
+                          scrollDirection: Axis.horizontal,
+                          itemCount: item.artifacts.length,
+                          itemBuilder: (ctx, index) {
+                            final artifact = item.artifacts[index];
+                            return ArtifactCard.withoutDetails(
+                              name: s.translateStatTypeWithoutValue(artifact.statType),
+                              image: artifact.image,
+                              rarity: artifact.rarity,
+                              keyName: artifact.key,
+                              imgWidth: width,
+                            );
+                          },
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

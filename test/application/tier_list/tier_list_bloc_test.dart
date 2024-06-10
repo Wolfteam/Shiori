@@ -28,7 +28,7 @@ void main() {
     final settingsService = SettingsServiceImpl(loggingService);
     final resourceService = getResourceService(settingsService);
     genshinService = GenshinServiceImpl(resourceService, LocaleServiceImpl(settingsService));
-    dataService = DataServiceImpl(genshinService, CalculatorServiceImpl(genshinService, resourceService), resourceService);
+    dataService = DataServiceImpl(genshinService, CalculatorAscMaterialsServiceImpl(genshinService, resourceService), resourceService);
 
     return Future(() async {
       await genshinService.init(AppLanguageType.english);

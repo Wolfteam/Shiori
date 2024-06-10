@@ -3,4 +3,8 @@ enum BannerHistorySortType {
   nameDesc,
   versionAsc,
   versionDesc,
+  rerunsAsc,
+  rerunsDesc,
+  recentAsc,
+  recentDesc,
 }

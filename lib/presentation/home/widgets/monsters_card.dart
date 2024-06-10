@@ -25,7 +25,7 @@ class MonstersCard extends StatelessWidget {
         Assets.monsterIconPath,
         width: 60,
         height: 60,
-        color: theme.colorScheme.secondary,
+        color: theme.colorScheme.primary,
       ),
       children: [
         CardDescription(text: s.checkAllMonsters),

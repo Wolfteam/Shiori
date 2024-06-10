@@ -53,4 +53,14 @@ void main() {
       }
     }
   });
+
+  test('No resources have been downloaded', () async {
+    final service = await getElementFileService(AppLanguageType.english, noResourcesHaveBeenDownloaded: true);
+    final debuffs = service.getElementDebuffs();
+    final reactions = service.getElementReactions();
+    final resonances = service.getElementResonances();
+    expect(debuffs.isEmpty, isTrue);
+    expect(reactions.isEmpty, isTrue);
+    expect(resonances.isEmpty, isTrue);
+  });
 }

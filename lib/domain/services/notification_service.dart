@@ -1,11 +1,7 @@
 import 'package:shiori/domain/enums/enums.dart';
 
 abstract class NotificationService {
-  void init();
-
-  Future<void> registerCallBacks();
-
-  Future<bool> requestIOSPermissions();
+  Future<void> init();
 
   Future<void> showNotification(int id, AppNotificationType type, String title, String body, {String? payload});
 

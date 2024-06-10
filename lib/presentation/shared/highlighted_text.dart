@@ -10,6 +10,7 @@ class HighlightedText extends StatelessWidget {
   final TextStyle highlightedStyle;
   final TextAlign textAlign;
   final EdgeInsets padding;
+  final bool addTooltip;
 
   const HighlightedText({
     super.key,
@@ -17,6 +18,7 @@ class HighlightedText extends StatelessWidget {
     required this.highlightedStyle,
     this.textAlign = TextAlign.center,
     this.padding = Styles.edgeInsetAll10,
+    this.addTooltip = true,
   });
 
   HighlightedText.color({
@@ -25,6 +27,7 @@ class HighlightedText extends StatelessWidget {
     required Color color,
     this.textAlign = TextAlign.center,
     this.padding = Styles.edgeInsetAll10,
+    this.addTooltip = true,
   }) : highlightedStyle = TextStyle(color: color, fontWeight: FontWeight.bold);
 
   @override
@@ -57,13 +60,18 @@ class HighlightedText extends StatelessWidget {
     return Center(
       child: Padding(
         padding: padding,
-        child: Tooltip(
-          message: replaceColorTags(text),
-          child: RichText(
-            textAlign: textAlign,
-            text: TextSpan(children: spans, style: theme.textTheme.bodyMedium),
-          ),
-        ),
+        child: addTooltip
+            ? Tooltip(
+                message: replaceColorTags(text),
+                child: RichText(
+                  textAlign: textAlign,
+                  text: TextSpan(children: spans, style: theme.textTheme.bodyMedium),
+                ),
+              )
+            : RichText(
+                textAlign: textAlign,
+                text: TextSpan(children: spans, style: theme.textTheme.bodyMedium),
+              ),
       ),
     );
   }

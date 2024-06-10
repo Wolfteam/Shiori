@@ -63,11 +63,10 @@ class InventoryBloc extends Bloc<InventoryEvent, InventoryState> {
       },
       updateMaterial: (e) async {
         await _telemetryService.trackItemUpdatedInInventory(e.key, e.quantity);
-        await _dataService.inventory.updateItemInInventory(
+        await _dataService.inventory.addMaterialToInventory(
           e.key,
-          ItemType.material,
           e.quantity,
-          _dataService.calculator.redistributeInventoryMaterial,
+          redistribute: _dataService.calculator.redistributeInventoryMaterial,
           raiseEvent: false,
         );
         return _refreshItems(ItemType.material);

@@ -165,6 +165,8 @@ class AddEditItemBottomSheet extends StatelessWidget {
       builder: (ctx, state) => state.map(
         loading: (_) => const Loading(useScaffold: false),
         loaded: (state) => RightBottomSheet(
+          title: isAWeapon ? '${s.weapon}: ${state.name}' : '${s.character}: ${state.name}',
+          icon: !isInEditMode ? Icons.add : Icons.edit,
           bottom: _ButtonBar(
             sessionKey: sessionKey,
             index: index,
@@ -186,7 +188,7 @@ class AddEditItemBottomSheet extends StatelessWidget {
               style: theme.textTheme.titleSmall!.copyWith(fontWeight: FontWeight.bold),
             ),
             Container(
-              margin: const EdgeInsets.only(bottom: 5),
+              margin: const EdgeInsets.symmetric(vertical: 5),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
@@ -334,20 +336,19 @@ class _ButtonBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final s = S.of(context);
-    final theme = Theme.of(context);
     return CommonButtonBar(
       children: [
-        OutlinedButton(
+        TextButton(
           onPressed: () => Navigator.pop(context),
-          child: Text(s.cancel, style: TextStyle(color: theme.primaryColor)),
+          child: Text(s.cancel),
         ),
         if (isInEditMode)
-          OutlinedButton(
+          TextButton(
             onPressed: () => _removeItem(context),
-            child: Text(s.delete, style: TextStyle(color: theme.primaryColor)),
+            child: Text(s.delete),
           ),
         if (isInEditMode)
-          OutlinedButton(
+          TextButton(
             onPressed: () => isAWeapon
                 ? _applyChangesForWeapon(
                     currentLevel,
@@ -368,9 +369,9 @@ class _ButtonBar extends StatelessWidget {
                     context,
                     isActiveChanged: true,
                   ),
-            child: Text(isActive ? s.inactive : s.active, style: TextStyle(color: theme.primaryColor)),
+            child: Text(isActive ? s.inactive : s.active),
           ),
-        ElevatedButton(
+        FilledButton(
           onPressed: () => isAWeapon
               ? _applyChangesForWeapon(
                   currentLevel,

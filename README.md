@@ -10,6 +10,8 @@
 > Genshin Impact game
 
 ![Tests](https://github.com/Wolfteam/Shiori/actions/workflows/tests.yml/badge.svg)
+[![codecov](https://codecov.io/gh/Wolfteam/Shiori/graph/badge.svg?token=RIZIB09J8J)](https://codecov.io/gh/Wolfteam/Shiori)
+
 <p align="center">
   <img src="images/banner.png">
 </p>
@@ -126,7 +128,7 @@ E.g (in spanish) : "dark" :"Oscuro"
   the [Genshin Helper Team](https://docs.google.com/spreadsheets/d/e/2PACX-1vRq-sQxkvdbvaJtQAGG6iVz2q2UN9FCKZ8Mkyis87QHFptcOU3ViLh0_PJyMxFSgwJZrd10kbYpQFl1/pubhtml)
   for their builds
 * The folk(s) that developed the [Map](https://genshin-impact-map.appsample.com/#/)
-* And the folks from [Honey Impact](https://genshin.honeyhunterworld)
+* And the folks from [Honey Impact](https://genshin.honeyhunterworld.com/)
   , [Fandom Wiki](https://genshin-impact.fandom.com/wiki/Genshin_Impact)
   , [Genshin.in](https://www.gensh.in/), [Genshin.Center](https://genshin-center.com/) that provide
   useful data
@@ -138,11 +140,11 @@ E.g (in spanish) : "dark" :"Oscuro"
 
 Translating the app to other languages won't have been possible without the following contributors
 
-| Chinese   | Russian        | Portuguese   | Italian                | Japanese      | Vietnamese    | Indonesian   | Ukrainian     |
-|-----------|----------------|--------------|------------------------|---------------|---------------|--------------|---------------|
-| 2O48#9733 | SipTik#8026    | Brunoff#0261 | Reniel [Skidex ツ]#7982 | 𝕽𝖚𝖗𝖎#3080 | Ren Toky#5263 | Arctara#7162 | VALLER1Y#4726 |
-|           | KKTS#8567      | DanPS#4336   | F       |||||
-|           | pill#0039.     |||||||
-|           | Avantel#8880   |||||||
-|           | чебилин#5968   |||||||
-|           | Anixty#3279    |||||||
+| Chinese   | Russian      | Portuguese   | Italian                | Japanese      | Vietnamese    | Indonesian   | Ukrainian     |
+|-----------|--------------|--------------|------------------------|---------------|---------------|--------------|---------------|
+| 2O48#9733 | SipTik#8026  | Brunoff#0261 | Reniel [Skidex ツ]#7982 | 𝕽𝖚𝖗𝖎#3080 | Ren Toky#5263 | Arctara#7162 | VALLER1Y#4726 |
+|           | KKTS#8567    | DanPS#4336   | F                      |               |               |              |               |
+|           | pill#0039.   |              |                        |               |               |              |               |
+|           | Avantel#8880 |              |                        |               |               |              |               |
+|           | чебилин#5968 |              |                        |               |               |              |               |
+|           | Anixty#3279  |              |                        |               |               |              |               |

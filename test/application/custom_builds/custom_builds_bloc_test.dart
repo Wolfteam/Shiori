@@ -28,7 +28,7 @@ void main() {
     final localeService = LocaleServiceImpl(settingsService);
     final resourceService = getResourceService(settingsService);
     genshinService = GenshinServiceImpl(resourceService, localeService);
-    dataService = DataServiceImpl(genshinService, CalculatorServiceImpl(genshinService, resourceService), resourceService);
+    dataService = DataServiceImpl(genshinService, CalculatorAscMaterialsServiceImpl(genshinService, resourceService), resourceService);
 
     return Future(() async {
       await genshinService.init(AppLanguageType.english);
@@ -142,6 +142,7 @@ void main() {
           index: 0,
           name: 'Fischl',
           image: '',
+          iconImage: '',
           roleType: CharacterRoleType.offFieldDps,
           subType: CharacterRoleSubType.electro,
         ),
@@ -150,6 +151,7 @@ void main() {
           index: 1,
           name: 'Beidou',
           image: '',
+          iconImage: '',
           roleType: CharacterRoleType.offFieldDps,
           subType: CharacterRoleSubType.electro,
         ),
@@ -158,6 +160,7 @@ void main() {
           index: 2,
           name: 'Bennett',
           image: '',
+          iconImage: '',
           roleType: CharacterRoleType.burstSupport,
           subType: CharacterRoleSubType.pyro,
         ),

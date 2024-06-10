@@ -42,7 +42,7 @@ class BirthdaysPerMonthDialog extends StatelessWidget {
           ],
         ),
         actions: [
-          ElevatedButton(
+          FilledButton(
             onPressed: () => Navigator.pop(context),
             child: Text(s.ok),
           ),
@@ -61,7 +61,7 @@ class BirthdaysPerMonthDialog extends StatelessWidget {
                         return DialogListItemRow(
                           itemType: ItemType.character,
                           itemKey: char.key,
-                          image: char.image,
+                          image: char.iconImage,
                           name: char.name,
                           getRowEndWidget: (_) => _RowEndColumn(character: char),
                         );

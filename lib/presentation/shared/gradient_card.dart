@@ -16,7 +16,7 @@ class GradientCard extends StatelessWidget {
     required this.gradient,
     this.shape,
     this.margin = const EdgeInsets.all(4),
-    this.clipBehavior = Clip.none,
+    this.clipBehavior = Clip.hardEdge,
     this.child,
     this.elevation,
     this.semanticContainer = true,
@@ -27,19 +27,21 @@ class GradientCard extends StatelessWidget {
     return Semantics(
       container: semanticContainer,
       explicitChildNodes: !semanticContainer,
-      child: Material(
-        type: MaterialType.card,
-        color: Colors.transparent,
-        elevation: elevation ?? 0,
-        shape: shape ?? const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(4))),
-        clipBehavior: clipBehavior,
-        child: Container(
-          margin: margin,
-          decoration: ShapeDecoration(
-            shape: shape ?? const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(4))),
-            gradient: gradient,
+      child: Container(
+        margin: margin,
+        child: Material(
+          type: MaterialType.card,
+          color: Colors.transparent,
+          elevation: elevation ?? 0,
+          shape: shape ?? const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(4))),
+          clipBehavior: clipBehavior,
+          child: Container(
+            decoration: ShapeDecoration(
+              shape: shape ?? const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(4))),
+              gradient: gradient,
+            ),
+            child: child,
           ),
-          child: child,
         ),
       ),
     );

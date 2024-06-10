@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/generated/l10n.dart';
-import 'package:shiori/presentation/shared/images/comingsoon_new_avatar.dart';
 import 'package:shiori/presentation/shared/styles.dart';
 import 'package:shiori/presentation/shared/utils/toast_utils.dart';
 import 'package:transparent_image/transparent_image.dart';
@@ -16,6 +15,9 @@ class MonsterCard extends StatelessWidget {
   final MonsterType type;
   final bool isComingSoon;
   final bool isInSelectionMode;
+
+  static const double itemWidth = 200;
+  static const double itemHeight = 200;
 
   const MonsterCard({
     super.key,
@@ -40,56 +42,48 @@ class MonsterCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    return InkWell(
-      borderRadius: Styles.mainCardBorderRadius,
-      onTap: () => _onTap(context),
-      child: Card(
-        clipBehavior: Clip.hardEdge,
-        shape: Styles.mainCardShape,
-        elevation: Styles.cardTenElevation,
-        shadowColor: Colors.transparent,
-        child: Column(
-          children: [
-            Stack(
-              alignment: AlignmentDirectional.topCenter,
-              fit: StackFit.passthrough,
-              children: [
-                SizedBox(
-                  height: 200,
-                  width: 200,
-                  child: FittedBox(
-                    fit: BoxFit.cover,
-                    alignment: Alignment.topCenter,
-                    clipBehavior: Clip.hardEdge,
-                    child: FadeInImage(
-                      placeholder: MemoryImage(kTransparentImage),
-                      image: FileImage(File(image)),
+    return SizedBox(
+      width: itemWidth,
+      height: itemHeight,
+      child: InkWell(
+        borderRadius: Styles.mainCardBorderRadius,
+        onTap: () => _onTap(context),
+        child: Card(
+          clipBehavior: Clip.hardEdge,
+          shape: Styles.mainCardShape,
+          elevation: Styles.cardTenElevation,
+          child: Stack(
+            alignment: Alignment.center,
+            fit: StackFit.expand,
+            children: [
+              FadeInImage(
+                width: itemWidth,
+                height: itemHeight,
+                placeholder: MemoryImage(kTransparentImage),
+                fit: BoxFit.fill,
+                placeholderFit: BoxFit.fill,
+                alignment: Alignment.topCenter,
+                image: FileImage(File(image)),
+              ),
+              Align(
+                alignment: Alignment.bottomCenter,
+                child: Container(
+                  decoration: Styles.commonCardBoxDecoration,
+                  width: double.infinity,
+                  padding: Styles.edgeInsetAll10,
+                  child: Tooltip(
+                    message: name,
+                    child: Text(
+                      name,
+                      textAlign: TextAlign.center,
+                      overflow: TextOverflow.ellipsis,
+                      style: theme.textTheme.titleMedium!.copyWith(fontWeight: FontWeight.bold, color: Colors.white),
                     ),
                   ),
                 ),
-                if (isComingSoon)
-                  const Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      ComingSoonNewAvatar(isNew: false, isComingSoon: true),
-                    ],
-                  ),
-              ],
-            ),
-            Container(
-              margin: Styles.edgeInsetAll10,
-              child: Center(
-                child: Tooltip(
-                  message: name,
-                  child: Text(
-                    name,
-                    textAlign: TextAlign.center,
-                    style: theme.textTheme.titleMedium!.copyWith(fontWeight: FontWeight.bold),
-                  ),
-                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

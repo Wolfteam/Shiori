@@ -220,11 +220,11 @@ class _Header extends StatelessWidget {
               children: [
                 Container(
                   decoration: BoxDecoration(
-                    border: Border.all(color: theme.primaryColor.withOpacity(0.5)),
+                    border: Border.all(color: theme.colorScheme.primary.withOpacity(0.5)),
                     borderRadius: const BorderRadius.all(Radius.circular(10)),
                   ),
                   padding: Styles.edgeInsetAll5,
-                  child: Icon(Icons.backup, size: 48, color: theme.primaryColor),
+                  child: Icon(Icons.backup, size: 48, color: theme.colorScheme.primary),
                 ),
                 Expanded(
                   child: Container(
@@ -253,7 +253,7 @@ class _Header extends StatelessWidget {
             Text(s.restoreBackupMsgWarning),
             ButtonBar(
               children: [
-                ElevatedButton(
+                FilledButton(
                   onPressed: () => showDialog<List<AppBackupDataType>?>(
                     context: context,
                     builder: (context) => BackupDataTypesSelectorDialog(
@@ -267,7 +267,7 @@ class _Header extends StatelessWidget {
                   }),
                   child: Text(s.create),
                 ),
-                OutlinedButton(
+                TextButton(
                   onPressed: () => _pickFile(s, context),
                   child: Text(s.import),
                 ),

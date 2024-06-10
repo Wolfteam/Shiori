@@ -74,7 +74,7 @@ class MainBloc extends Bloc<MainEvent, MainState> {
     AppResourceUpdateResultType? updateResult,
   }) async {
     _logger.info(runtimeType, '_init: Initializing all..');
-    await _genshinService.init(_settingsService.language);
+    await _genshinService.init(_settingsService.language, noResourcesHaveBeenDownloaded: _settingsService.noResourcesHasBeenDownloaded);
 
     if (languageChanged) {
       _logger.info(runtimeType, '_init: Language changed, reloading all the required blocs...');

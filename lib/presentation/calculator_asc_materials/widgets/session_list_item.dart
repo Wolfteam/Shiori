@@ -19,8 +19,6 @@ class SessionListItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final s = S.of(context);
-    final numberOfChars = session.items.where((e) => e.isCharacter).length;
-    final numberOfWeapons = session.items.where((e) => !e.isCharacter).length;
     final extentRatio = SizeUtils.getExtentRatioForSlidablePane(context);
     return Slidable(
       key: ValueKey(session.key),
@@ -44,15 +42,15 @@ class SessionListItem extends StatelessWidget {
             label: s.edit,
             backgroundColor: Colors.lightBlueAccent,
             icon: Icons.edit,
-            onPressed: (_) => _showEditSessionDialog(session.key, session.name, context),
+            onPressed: (_) => _showEditSessionDialog(session.key, session.name, session.showMaterialUsage, context),
           ),
         ],
       ),
       child: ListTile(
-        onLongPress: () => _showEditSessionDialog(session.key, session.name, context),
+        onLongPress: () => _showEditSessionDialog(session.key, session.name, session.showMaterialUsage, context),
         title: Text(session.name),
         onTap: () => _gotoCalculatorAscensionMaterialsPage(context),
-        subtitle: Text('${s.charactersX(numberOfChars)} / ${s.weaponsX(numberOfWeapons)}'),
+        subtitle: Text('${s.charactersX(session.numberOfCharacters)} / ${s.weaponsX(session.numberOfWeapons)}'),
         leading: const Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -64,30 +62,29 @@ class SessionListItem extends StatelessWidget {
     );
   }
 
-  Future<void> _showEditSessionDialog(int sessionKey, String name, BuildContext context) async {
+  Future<void> _showEditSessionDialog(int sessionKey, String name, bool showMaterialUsage, BuildContext context) async {
     await showDialog(
       context: context,
       builder: (_) => BlocProvider.value(
         value: context.read<CalculatorAscMaterialsSessionsBloc>(),
-        child: AddEditSessionDialog.update(sessionKey: sessionKey, name: name),
+        child: AddEditSessionDialog.update(sessionKey: sessionKey, name: name, showMaterialUsage: showMaterialUsage),
       ),
     );
   }
 
   Future<void> _showDeleteSessionDialog(int sessionKey, String name, BuildContext context) async {
     final s = S.of(context);
-    final theme = Theme.of(context);
     await showDialog(
       context: context,
       builder: (_) => AlertDialog(
         title: Text(s.deleteSession),
         content: Text(s.confirmDeleteSessionX(name)),
         actions: [
-          OutlinedButton(
+          TextButton(
             onPressed: () => Navigator.pop(context),
-            child: Text(s.cancel, style: TextStyle(color: theme.primaryColor)),
+            child: Text(s.cancel),
           ),
-          ElevatedButton(
+          FilledButton(
             onPressed: () {
               context.read<CalculatorAscMaterialsSessionsBloc>().add(CalculatorAscMaterialsSessionsEvent.deleteSession(key: sessionKey));
               Navigator.pop(context);

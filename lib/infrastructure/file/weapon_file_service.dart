@@ -22,7 +22,11 @@ class WeaponFileServiceImpl extends WeaponFileService {
   WeaponFileServiceImpl(this._resourceService, this._materials, this._translations);
 
   @override
-  Future<void> init(String assetPath) async {
+  Future<void> init(String assetPath, {bool noResourcesHaveBeenDownloaded = false}) async {
+    if (noResourcesHaveBeenDownloaded) {
+      _weaponsFile = WeaponsFile(bows: [], swords: [], claymores: [], catalysts: [], polearms: []);
+      return;
+    }
     final json = await readJson(assetPath);
     _weaponsFile = WeaponsFile.fromJson(json);
   }
@@ -47,18 +51,17 @@ class WeaponFileServiceImpl extends WeaponFileService {
   List<String> getUpcomingWeaponsKeys() => _weaponsFile.weapons.where((el) => el.isComingSoon).map((e) => e.key).toList();
 
   @override
-  List<ItemCommon> getWeaponForItemsUsingMaterial(String key) {
-    final items = <ItemCommon>[];
+  List<ItemCommonWithName> getWeaponForItemsUsingMaterial(String key) {
+    final items = <ItemCommonWithName>[];
 
     for (final weapon in _weaponsFile.weapons) {
       final materials = weapon.craftingMaterials + weapon.ascensionMaterials.expand((e) => e.materials).toList();
-      final allMaterials = _materials.getMaterialsFromAscensionMaterials(materials);
-      if (allMaterials.any((m) => m.key == key)) {
-        items.add(ItemCommon(weapon.key, _resourceService.getWeaponImagePath(weapon.image, weapon.type)));
+      if (materials.any((m) => m.key == key)) {
+        items.add(_fromWeaponFileModelToItemCommonWithName(weapon));
       }
     }
 
-    return items;
+    return items..sort(ItemCommonWithName.sortAsc);
   }
 
   @override
@@ -66,11 +69,11 @@ class WeaponFileServiceImpl extends WeaponFileService {
     return _materials.getWeaponAscensionMaterials(day).map((e) {
       final translation = _translations.getMaterialTranslation(e.key);
 
-      final weapons = <ItemCommon>[];
+      final weapons = <ItemCommonWithName>[];
       for (final weapon in _weaponsFile.weapons) {
         final materialIsBeingUsed = weapon.ascensionMaterials.expand((m) => m.materials).where((m) => m.key == e.key).isNotEmpty;
         if (materialIsBeingUsed) {
-          weapons.add(ItemCommon(weapon.key, _resourceService.getWeaponImagePath(weapon.image, weapon.type)));
+          weapons.add(_fromWeaponFileModelToItemCommonWithName(weapon));
         }
       }
       return TodayWeaponAscensionMaterialModel(
@@ -78,9 +81,10 @@ class WeaponFileServiceImpl extends WeaponFileService {
         days: e.days,
         name: translation.name,
         image: _resourceService.getMaterialImagePath(e.image, e.type),
-        weapons: weapons,
+        weapons: weapons..sort(ItemCommonWithName.sortAsc),
       );
-    }).toList();
+    }).toList()
+      ..sort((x, y) => x.name.compareTo(y.name));
   }
 
   @override
@@ -90,15 +94,20 @@ class WeaponFileServiceImpl extends WeaponFileService {
 
   @override
   List<ItemCommonWithName> getItemCommonWithNameByRarity(int rarity) {
-    return getWeaponsForCard().where((el) => el.rarity == rarity).map((e) => ItemCommonWithName(e.key, e.image, e.name)).toList();
+    return _weaponsFile.weapons.where((el) => el.rarity == rarity).map((e) => _fromWeaponFileModelToItemCommonWithName(e)).toList();
   }
 
   @override
   List<ItemCommonWithName> getItemCommonWithNameByStatType(StatType statType) {
-    return _weaponsFile.weapons.where((el) => el.secondaryStat == statType && !el.isComingSoon).map((e) {
-      final translation = _translations.getWeaponTranslation(e.key);
-      return ItemCommonWithName(e.key, _resourceService.getWeaponImagePath(e.image, e.type), translation.name);
-    }).toList();
+    return _weaponsFile.weapons
+        .where((el) => el.secondaryStat == statType && !el.isComingSoon)
+        .map((e) => _fromWeaponFileModelToItemCommonWithName(e))
+        .toList();
+  }
+
+  @override
+  List<ItemCommonWithName> getItemCommonWithName() {
+    return _weaponsFile.weapons.map((e) => _fromWeaponFileModelToItemCommonWithName(e)).toList();
   }
 
   WeaponCardModel _toWeaponForCard(WeaponFileModel weapon) {
@@ -115,5 +124,11 @@ class WeaponFileServiceImpl extends WeaponFileService {
       isComingSoon: weapon.isComingSoon,
       locationType: weapon.location,
     );
+  }
+
+  ItemCommonWithName _fromWeaponFileModelToItemCommonWithName(WeaponFileModel weapon) {
+    final image = _resourceService.getWeaponImagePath(weapon.image, weapon.type);
+    final translation = _translations.getWeaponTranslation(weapon.key);
+    return ItemCommonWithName(weapon.key, image, image, translation.name);
   }
 }

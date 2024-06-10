@@ -3,7 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shiori/application/bloc.dart';
-import 'package:shiori/domain/services/calculator_service.dart';
+import 'package:shiori/domain/services/calculator_asc_materials_service.dart';
 import 'package:shiori/domain/services/data_service.dart';
 import 'package:shiori/domain/services/device_info_service.dart';
 import 'package:shiori/domain/services/genshin_service.dart';
@@ -27,14 +27,8 @@ Future<void> main() async {
     setWindowMinSize(SizeUtils.minSizeOnDesktop);
     setWindowMaxSize(Size.infinite);
   }
-  final notificationService = getIt<NotificationService>();
-  final notifFuture = notificationService.registerCallBacks();
   //TODO: CHECK THE NOTIFICATION LOGIC
   //TODO: WEBVIEW SUPPORT IN MACOS
-  if (!Platform.isMacOS) {
-    await notifFuture;
-  }
-
   Bloc.observer = AppBlocObserver(getIt<LoggingService>());
   runApp(MyApp());
 }
@@ -119,7 +113,7 @@ class MyApp extends StatelessWidget {
         BlocProvider(
           create: (ctx) {
             final genshinService = getIt<GenshinService>();
-            final calculatorService = getIt<CalculatorService>();
+            final calculatorService = getIt<CalculatorAscMaterialsService>();
             final resourceService = getIt<ResourceService>();
             return CalculatorAscMaterialsItemBloc(genshinService, calculatorService, resourceService);
           },

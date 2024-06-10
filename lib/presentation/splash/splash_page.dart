@@ -78,7 +78,8 @@ class SplashPage extends StatelessWidget {
           return;
         }
         final s = S.of(context);
-        final msg = '${s.startingFromVersionUpdateMsg}\n\n${s.internetRequiredToUpdate}\n\n${s.doNotCloseAppWhileUpdating}';
+        final msg =
+            '${s.startingFromVersionUpdateMsg}\n\n${s.internetRequiredToUpdate}\n\n${s.doNotCloseAppWhileUpdating}\n\n${s.youCanSkipFirstResourceDownloadMsg}';
         showDialog<bool?>(
           context: context,
           barrierDismissible: false,
@@ -87,9 +88,8 @@ class SplashPage extends StatelessWidget {
             content: msg,
             okText: s.applyUpdate,
             onOk: () => _applyUpdate(result!, context),
-            cancelText: s.continueLabel,
-            onCancel: () => _initMain(AppResourceUpdateResultType.noUpdatesAvailable, context),
-            showCancelButton: !noResourcesHasBeenDownloaded,
+            cancelText: s.later,
+            onCancel: () => _initMain(AppResourceUpdateResultType.firstInstallSkipped, context),
           ),
         );
       case AppResourceUpdateResultType.updating:
@@ -99,6 +99,7 @@ class SplashPage extends StatelessWidget {
       case AppResourceUpdateResultType.unknownErrorOnFirstInstall:
       case AppResourceUpdateResultType.unknownError:
       case AppResourceUpdateResultType.apiIsUnavailable:
+      case AppResourceUpdateResultType.firstInstallSkipped:
         break;
     }
 
@@ -139,9 +140,9 @@ class _SplashPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
+    return SafeArea(
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
           Expanded(
             child: Container(
@@ -152,11 +153,7 @@ class _SplashPage extends StatelessWidget {
               ),
             ),
           ),
-          if (isLoading)
-            Container(
-              margin: const EdgeInsets.only(bottom: 10),
-              child: const CircularProgressIndicator(valueColor: AlwaysStoppedAnimation<Color>(Colors.white)),
-            ),
+          if (isLoading) const CircularProgressIndicator(valueColor: AlwaysStoppedAnimation<Color>(Colors.white)),
           if (isUpdating) const _Updating(),
           if (updateFailed) _Buttons(updateResultType: updateResultType, canSkipUpdate: canSkipUpdate),
         ],
@@ -177,7 +174,7 @@ class _Buttons extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    final buttonStyle = OutlinedButton.styleFrom(side: const BorderSide(color: Styles.paimonColor));
+    final buttonStyle = TextButton.styleFrom(side: const BorderSide(color: Styles.paimonColor));
     final s = S.of(context);
     return Padding(
       padding: Styles.edgeInsetHorizontal16,
@@ -198,14 +195,14 @@ class _Buttons extends StatelessWidget {
           ButtonBar(
             alignment: MainAxisAlignment.center,
             children: [
-              OutlinedButton.icon(
+              TextButton.icon(
                 onPressed: () => context.read<SplashBloc>().add(const SplashEvent.init(retry: true)),
                 icon: const Icon(Icons.refresh, color: Colors.white),
                 label: Text(s.retry, style: const TextStyle(color: Colors.white)),
                 style: buttonStyle,
               ),
               if (canSkipUpdate)
-                OutlinedButton.icon(
+                TextButton.icon(
                   onPressed: () => context.read<MainBloc>().add(MainEvent.init(updateResultType: updateResultType)),
                   icon: const Icon(Icons.arrow_right_alt, color: Colors.white),
                   label: Text(s.continueLabel, style: const TextStyle(color: Colors.white)),

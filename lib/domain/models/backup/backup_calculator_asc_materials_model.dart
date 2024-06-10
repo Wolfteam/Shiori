@@ -9,6 +9,7 @@ class BackupCalculatorAscMaterialsSessionModel with _$BackupCalculatorAscMateria
     required String name,
     required int position,
     required List<BackupCalculatorAscMaterialsSessionItemModel> items,
+    @Default(false) bool showMaterialUsage,
   }) = _BackupCalculatorAscMaterialsSessionModel;
 
   factory BackupCalculatorAscMaterialsSessionModel.fromJson(Map<String, dynamic> json) => _$BackupCalculatorAscMaterialsSessionModelFromJson(json);

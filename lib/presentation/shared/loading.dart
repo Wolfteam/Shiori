@@ -13,6 +13,16 @@ class Loading extends StatelessWidget {
     this.showCloseButton = false,
   });
 
+  const Loading.column({
+    this.mainAxisSize = MainAxisSize.max,
+    this.showCloseButton = false,
+  }) : useScaffold = false;
+
+  const Loading.scaffold({
+    this.mainAxisSize = MainAxisSize.max,
+    this.showCloseButton = false,
+  }) : useScaffold = true;
+
   @override
   Widget build(BuildContext context) {
     final s = S.of(context);
@@ -29,10 +39,12 @@ class Loading extends StatelessWidget {
           child: Text(s.loading, textAlign: TextAlign.center),
         ),
         if (showCloseButton)
-          IconButton.filled(
-            onPressed: () => Navigator.pop(context),
-            icon: Icon(Icons.arrow_back, color: Theme.of(context).colorScheme.primary),
-            splashRadius: Styles.mediumButtonSplashRadius,
+          Center(
+            child: IconButton.filled(
+              onPressed: () => Navigator.pop(context),
+              icon: const Icon(Icons.close),
+              splashRadius: Styles.mediumButtonSplashRadius,
+            ),
           ),
       ],
     );

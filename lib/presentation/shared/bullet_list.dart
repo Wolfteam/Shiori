@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shiori/domain/extensions/iterable_extensions.dart';
+import 'package:shiori/domain/extensions/string_extensions.dart';
 import 'package:shiori/presentation/shared/styles.dart';
 
 class BulletList extends StatelessWidget {
@@ -32,7 +33,7 @@ class BulletList extends StatelessWidget {
           .mapIndex(
             (e, index) => _ListItem(
               index: index,
-              title: e,
+              title: e.removeLineBreakAtEnd()!,
               icon: icon,
               fontSize: fontSize,
               iconSize: iconSize,

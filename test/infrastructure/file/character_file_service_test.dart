@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:flutter_test/flutter_test.dart';
 import 'package:shiori/domain/enums/enums.dart';
+import 'package:shiori/domain/extensions/datetime_extensions.dart';
 import 'package:shiori/domain/extensions/string_extensions.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/file/file_infrastructure.dart';
@@ -29,29 +30,37 @@ void main() {
     }
   }
 
-  test('Get characters for card', () async {
+  group('Get characters for card', () {
     for (final lang in AppLanguageType.values) {
-      final service = await getCharacterFileService(lang);
-      final characters = service.getCharactersForCard();
-      checkKeys(characters.map((e) => e.key).toList());
+      test('language = ${lang.name}', () async {
+        final service = await getCharacterFileService(lang);
+        final characters = service.getCharactersForCard();
+        checkKeys(characters.map((e) => e.key).toList());
 
-      final materialImgs = service.materials.getAllMaterialsForCard().map((e) => e.image).toList();
-      for (final char in characters) {
-        checkKey(char.key);
-        expect(char.name, allOf([isNotEmpty, isNotNull]));
-        checkAsset(char.image);
-        expect(char.stars, allOf([greaterThanOrEqualTo(4), lessThanOrEqualTo(5)]));
-        if (char.isNew || char.isComingSoon) {
-          expect(char.isNew, isNot(char.isComingSoon));
-        }
+        final materialImgs = service.materials.getAllMaterialsForCard().map((e) => e.image).toList();
+        for (final char in characters) {
+          checkKey(char.key);
+          expect(char.name, allOf([isNotEmpty, isNotNull]));
+          checkAsset(char.image);
+          expect(char.stars, allOf([greaterThanOrEqualTo(4), lessThanOrEqualTo(5)]));
+          if (char.isNew || char.isComingSoon) {
+            expect(char.isNew, isNot(char.isComingSoon));
+          }
 
-        if (!char.isComingSoon) {
-          expect(char.materials, isNotEmpty);
-          final expected = materialImgs.where((el) => char.materials.contains(el)).length;
-          expect(char.materials.length, equals(expected));
+          if (!char.isComingSoon) {
+            expect(char.materials, isNotEmpty);
+            final expected = materialImgs.where((el) => char.materials.contains(el)).length;
+            expect(char.materials.length, equals(expected));
+          }
         }
-      }
+      });
     }
+
+    test('no resources have been downloaded', () async {
+      final service = await getCharacterFileService(AppLanguageType.english, noResourcesHaveBeenDownloaded: true);
+      final characters = service.getCharactersForCard();
+      expect(characters.isEmpty, isTrue);
+    });
   });
 
   test('Get character', () async {
@@ -236,9 +245,15 @@ void main() {
   group('Birthdays', () {
     void checkBirthday(CharacterBirthdayModel birthday) {
       checkItemKeyNameAndImage(birthday.key, birthday.name, birthday.image);
-      expect(birthday.birthday.isAfter(DateTime.now()), isTrue);
+
+      final DateTime now = DateTime.now().getStartingDate();
+      expect(birthday.birthday.isAfterInclusive(now), isTrue);
       expect(birthday.birthdayString.isNotNullEmptyOrWhitespace, isTrue);
-      expect(birthday.daysUntilBirthday > 0, isTrue);
+      if (birthday.birthday != now) {
+        expect(birthday.daysUntilBirthday > 0, isTrue);
+      } else {
+        expect(birthday.daysUntilBirthday, isZero);
+      }
     }
 
     test('upcoming characters are not shown', () async {
@@ -340,7 +355,7 @@ void main() {
         expect(material.characters, isNotEmpty);
         expect(material.days, isNotEmpty);
         for (final item in material.characters) {
-          checkItemCommon(item);
+          checkItemCommonWithName(item);
         }
         final travelerExists = material.characters.where((el) => el.key.startsWith('traveler')).isNotEmpty;
         expect(travelerExists, isTrue);

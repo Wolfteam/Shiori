@@ -5,6 +5,7 @@ class Assets {
   static String elementsBasePath = 'assets/elements';
   static String otherImgsBasePath = 'assets/others';
   static String weaponTypesBasePath = 'assets/weapon_types';
+  static String weaponNormalSkillTypesPath = 'assets/weapon_normal_skill_types';
 
   static String noImageAvailablePath = '$otherImgsBasePath/na$imageFileExtension';
   static String paimonImagePath = '$otherImgsBasePath/paimon$imageFileExtension';
@@ -14,29 +15,40 @@ class Assets {
   static String gachaIconPath = '$otherImgsBasePath/gacha$imageFileExtension';
   static String starCrystalIconPath = '$otherImgsBasePath/mark_wind_crystal$imageFileExtension';
   static String primogemIconPath = '$otherImgsBasePath/primogem$imageFileExtension';
+  static String wishBannerBackgroundImgPath = '$otherImgsBasePath/wish_banner_background$imageFileExtension';
+  static String wishBannerButtonBackgroundImgPath = '$otherImgsBasePath/wish_banner_button$imageFileExtension';
+  static String wishBannerStandardImgPath = '$otherImgsBasePath/wish_banner_standard$imageFileExtension';
+  static String wishBannerResultBackgroundImgPath = '$otherImgsBasePath/wish_banner_wish_result_background.webp';
+  static String wishBannerItemResultBackgroundImgPath = '$otherImgsBasePath/wish_banner_wish_result_item_background.webp';
 
   static String _getElementPath(String name) => '$elementsBasePath/$name';
 
-  static String getElementPathFromType(ElementType type) {
+  static String _getElementImagePath(ElementType type, String imageSuffix) {
     switch (type) {
       case ElementType.anemo:
-        return _getElementPath('anemo$imageFileExtension');
+        return _getElementPath('anemo$imageSuffix');
       case ElementType.cryo:
-        return _getElementPath('cryo$imageFileExtension');
+        return _getElementPath('cryo$imageSuffix');
       case ElementType.dendro:
-        return _getElementPath('dendro$imageFileExtension');
+        return _getElementPath('dendro$imageSuffix');
       case ElementType.electro:
-        return _getElementPath('electro$imageFileExtension');
+        return _getElementPath('electro$imageSuffix');
       case ElementType.geo:
-        return _getElementPath('geo$imageFileExtension');
+        return _getElementPath('geo$imageSuffix');
       case ElementType.hydro:
-        return _getElementPath('hydro$imageFileExtension');
+        return _getElementPath('hydro$imageSuffix');
       case ElementType.pyro:
-        return _getElementPath('pyro$imageFileExtension');
+        return _getElementPath('pyro$imageSuffix');
       default:
         throw Exception('Invalid element type = $type');
     }
   }
+
+  static String getElementPathFromType(ElementType type) => _getElementImagePath(type, imageFileExtension);
+
+  static String getElementWhitePathFromType(ElementType type) => _getElementImagePath(type, '_white$imageFileExtension');
+
+  static String getElementBlackPathFromType(ElementType type) => _getElementImagePath(type, '_black$imageFileExtension');
 
   static ElementType getElementTypeFromPath(String path) {
     return ElementType.values.firstWhere((type) => getElementPathFromType(type) == path);
@@ -71,6 +83,23 @@ class Assets {
         return '$weaponTypesBasePath/polearm$imageFileExtension';
       case WeaponType.sword:
         return '$weaponTypesBasePath/sword$imageFileExtension';
+      default:
+        throw Exception('Invalid weapon type = $type');
+    }
+  }
+
+  static String getWeaponSkillAssetPath(WeaponType type) {
+    switch (type) {
+      case WeaponType.bow:
+        return '$weaponNormalSkillTypesPath/bow$imageFileExtension';
+      case WeaponType.catalyst:
+        return '$weaponNormalSkillTypesPath/catalyst$imageFileExtension';
+      case WeaponType.claymore:
+        return '$weaponNormalSkillTypesPath/claymore$imageFileExtension';
+      case WeaponType.polearm:
+        return '$weaponNormalSkillTypesPath/polearm$imageFileExtension';
+      case WeaponType.sword:
+        return '$weaponNormalSkillTypesPath/sword$imageFileExtension';
       default:
         throw Exception('Invalid weapon type = $type');
     }

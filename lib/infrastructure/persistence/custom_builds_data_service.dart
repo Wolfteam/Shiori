@@ -1,5 +1,7 @@
 import 'package:hive/hive.dart';
+import 'package:shiori/domain/check.dart';
 import 'package:shiori/domain/enums/enums.dart';
+import 'package:shiori/domain/errors.dart';
 import 'package:shiori/domain/models/entities.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/genshin_service.dart';
@@ -20,20 +22,11 @@ class CustomBuildsDataServiceImpl implements CustomBuildsDataService {
 
   @override
   Future<void> init() async {
-    _registerAdapters();
     _buildsBox = await Hive.openBox<CustomBuild>('customBuilds');
     _weaponsBox = await Hive.openBox<CustomBuildWeapon>('customBuildWeapons');
     _artifactsBox = await Hive.openBox<CustomBuildArtifact>('customBuildArtifacts');
     _notesBox = await Hive.openBox<CustomBuildNote>('customBuildNotes');
     _teamCharactersBox = await Hive.openBox<CustomBuildTeamCharacter>('customBuildTeamCharacters');
-  }
-
-  void _registerAdapters() {
-    Hive.registerAdapter(CustomBuildAdapter());
-    Hive.registerAdapter(CustomBuildWeaponAdapter());
-    Hive.registerAdapter(CustomBuildArtifactAdapter());
-    Hive.registerAdapter(CustomBuildNoteAdapter());
-    Hive.registerAdapter(CustomBuildTeamCharacterAdapter());
   }
 
   @override
@@ -49,11 +42,13 @@ class CustomBuildsDataServiceImpl implements CustomBuildsDataService {
 
   @override
   List<CustomBuildModel> getAllCustomBuilds() {
-    return _buildsBox.values.map((e) => getCustomBuild(e.key as int)).toList()..sort((x, y) => x.character.name.compareTo(y.character.name));
+    return _buildsBox.values.map((e) => getCustomBuild(e.id)).toList()..sort((x, y) => x.character.name.compareTo(y.character.name));
   }
 
   @override
   CustomBuildModel getCustomBuild(int key) {
+    Check.greaterThanOrEqualToZero(key, 'key');
+    _checkBuild(key);
     final build = _buildsBox.values.firstWhere((e) => e.key == key);
     final notes = _notesBox.values.where((el) => el.buildItemKey == key).toList();
     final weapons = _weaponsBox.values.where((el) => el.buildItemKey == key).toList();
@@ -76,6 +71,11 @@ class CustomBuildsDataServiceImpl implements CustomBuildsDataService {
     List<CustomBuildTeamCharacterModel> teamCharacters,
     List<CharacterSkillType> skillPriorities,
   ) async {
+    Check.notEmpty(charKey, 'charKey');
+    Check.notEmpty(title, 'title');
+    Check.notEmpty(weapons, 'weapons');
+    Check.notEmpty(artifacts, 'artifacts');
+
     final build = CustomBuild(
       charKey,
       showOnCharacterDetail,
@@ -87,7 +87,7 @@ class CustomBuildsDataServiceImpl implements CustomBuildsDataService {
     );
     await _buildsBox.add(build);
 
-    final buildKey = build.key as int;
+    final buildKey = build.id;
     final buildNotes = await _saveNotes(buildKey, notes);
     final buildWeapons = await _saveWeapons(buildKey, weapons);
     final buildArtifacts = await _saveArtifacts(buildKey, artifacts);
@@ -109,6 +109,12 @@ class CustomBuildsDataServiceImpl implements CustomBuildsDataService {
     List<CustomBuildTeamCharacterModel> teamCharacters,
     List<CharacterSkillType> skillPriorities,
   ) async {
+    Check.greaterThanOrEqualToZero(key, 'key');
+    Check.notEmpty(title, 'title');
+    Check.notEmpty(weapons, 'weapons');
+    Check.notEmpty(artifacts, 'artifacts');
+    _checkBuild(key);
+
     final build = _buildsBox.get(key)!;
     build.title = title;
     build.roleType = type.index;
@@ -129,8 +135,9 @@ class CustomBuildsDataServiceImpl implements CustomBuildsDataService {
   }
 
   @override
-  Future<void> deleteCustomBuild(int key) {
-    return Future.wait([
+  Future<void> deleteCustomBuild(int key) async {
+    Check.greaterThanOrEqualToZero(key, 'key');
+    await Future.wait([
       _buildsBox.delete(key),
       _deleteCustomBuildRelatedParts(key),
     ]);
@@ -138,8 +145,10 @@ class CustomBuildsDataServiceImpl implements CustomBuildsDataService {
 
   @override
   List<CharacterBuildCardModel> getCustomBuildsForCharacter(String charKey) {
+    Check.notEmpty(charKey, 'charKey');
+
     return _buildsBox.values.where((el) => el.showOnCharacterDetail && el.characterKey == charKey).map((e) {
-      final build = getCustomBuild(e.key as int);
+      final build = getCustomBuild(e.id);
       final artifacts = build.artifacts.map((e) => _genshinService.artifacts.getArtifactForCard(e.key)).toList();
       return CharacterBuildCardModel(
         isRecommended: e.isRecommended,
@@ -163,7 +172,7 @@ class CustomBuildsDataServiceImpl implements CustomBuildsDataService {
   @override
   List<BackupCustomBuildModel> getDataForBackup() {
     return _buildsBox.values.map((build) {
-      final buildKey = build.key as int;
+      final buildKey = build.id;
       final notes = _notesBox.values
           .where((e) => e.buildItemKey == buildKey)
           .map(
@@ -249,6 +258,7 @@ class CustomBuildsDataServiceImpl implements CustomBuildsDataService {
               key: e.characterKey,
               image: '',
               name: '',
+              iconImage: '',
               index: e.index,
               roleType: CharacterRoleType.values[e.roleType],
               subType: CharacterRoleSubType.values[e.subType],
@@ -313,28 +323,28 @@ class CustomBuildsDataServiceImpl implements CustomBuildsDataService {
   }
 
   Future<void> _deleteNotes(int buildKey) async {
-    final keys = _notesBox.values.where((el) => el.buildItemKey == buildKey).map((e) => e.key as int).toList();
+    final keys = _notesBox.values.where((el) => el.buildItemKey == buildKey).map((e) => e.id).toList();
     if (keys.isNotEmpty) {
       await _notesBox.deleteAll(keys);
     }
   }
 
   Future<void> _deleteWeapons(int buildKey) async {
-    final keys = _weaponsBox.values.where((el) => el.buildItemKey == buildKey).map((e) => e.key as int).toList();
+    final keys = _weaponsBox.values.where((el) => el.buildItemKey == buildKey).map((e) => e.id).toList();
     if (keys.isNotEmpty) {
       await _weaponsBox.deleteAll(keys);
     }
   }
 
   Future<void> _deleteArtifacts(int buildKey) async {
-    final keys = _artifactsBox.values.where((el) => el.buildItemKey == buildKey).map((e) => e.key as int).toList();
+    final keys = _artifactsBox.values.where((el) => el.buildItemKey == buildKey).map((e) => e.id).toList();
     if (keys.isNotEmpty) {
       await _artifactsBox.deleteAll(keys);
     }
   }
 
   Future<void> _deleteTeamCharacters(int buildKey) async {
-    final keys = _teamCharactersBox.values.where((el) => el.buildItemKey == buildKey).map((e) => e.key as int).toList();
+    final keys = _teamCharactersBox.values.where((el) => el.buildItemKey == buildKey).map((e) => e.id).toList();
     if (keys.isNotEmpty) {
       await _teamCharactersBox.deleteAll(keys);
     }
@@ -369,7 +379,7 @@ class CustomBuildsDataServiceImpl implements CustomBuildsDataService {
     }).toList()
       ..sort((x, y) => x.type.index.compareTo(y.type.index));
     return CustomBuildModel(
-      key: build.key as int,
+      key: build.id,
       title: build.title,
       type: CharacterRoleType.values[build.roleType],
       subType: CharacterRoleSubType.values[build.roleSubType],
@@ -404,11 +414,18 @@ class CustomBuildsDataServiceImpl implements CustomBuildsDataService {
           index: e.index,
           name: char.name,
           image: char.image,
+          iconImage: char.iconImage,
           roleType: CharacterRoleType.values[e.roleType],
           subType: CharacterRoleSubType.values[e.subType],
         );
       }).toList()
         ..sort((x, y) => x.index.compareTo(y.index)),
     );
+  }
+
+  void _checkBuild(int key) {
+    if (!_buildsBox.containsKey(key)) {
+      throw NotFoundError(key, 'key', 'Custom build does not exist');
+    }
   }
 }

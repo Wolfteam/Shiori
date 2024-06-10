@@ -1,6 +1,7 @@
 import 'package:intl/intl.dart';
 import 'package:shiori/domain/app_constants.dart';
 import 'package:shiori/domain/enums/enums.dart';
+import 'package:shiori/domain/extensions/datetime_extensions.dart';
 import 'package:shiori/domain/extensions/string_extensions.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/locale_service.dart';
@@ -13,7 +14,7 @@ class LocaleServiceImpl implements LocaleService {
   LocaleServiceImpl(this._settingsService);
 
   @override
-  DateTime getCharBirthDate(String? birthday, {bool useCurrentYear = false}) {
+  DateTime getCharBirthDate(String? birthday) {
     if (birthday.isNullEmptyOrWhitespace) {
       throw Exception('Character birthday must not be null');
     }
@@ -21,29 +22,29 @@ class LocaleServiceImpl implements LocaleService {
     if (birthday!.length != 5 || !birthday.contains('/')) {
       throw Exception('Character birthday is not valid');
     }
-    final locale = getFormattedLocale(_settingsService.language);
-    final format = DateFormat('MM/dd/yyyy', locale);
-    //The format is in MM/dd, I use 2024 since that is a leap-year
-    final now = DateTime.now();
-    final year = useCurrentYear ? now.year : 2024;
-    DateTime charBirthday = format.parse('$birthday/$year');
-    if (!useCurrentYear) {
-      return charBirthday;
-    }
     final split = birthday.split('/');
     final expectedMonth = int.parse(split.first);
     final expectedDay = int.parse(split.last);
 
-    //leap year occurred
-    if (expectedMonth != charBirthday.month || expectedDay != charBirthday.day) {
-      final newDay = DateUtils.getLastDayOfMonth(expectedMonth);
-      charBirthday = DateTime(charBirthday.year, expectedMonth, newDay);
+    final int daysInMonth = DateUtils.getLastDayOfMonth(expectedMonth);
+    final DateTime now = DateTime.now().getStartingDate();
+    DateTime date = DateTime(now.year, expectedMonth, expectedDay);
+    if (date.isAfterInclusive(now) && expectedDay <= daysInMonth) {
+      return date;
     }
 
-    if (charBirthday.isBefore(now)) {
-      return charBirthday.add(const Duration(days: 365));
+    int attempts = 4;
+    date = DateTime(now.year + 1, expectedMonth, expectedDay);
+    while (_hasLeapYearOccurred(expectedMonth, expectedDay, date)) {
+      date = DateTime(date.year + 1, expectedMonth, expectedDay);
+      attempts--;
     }
-    return charBirthday;
+
+    if (attempts < 0) {
+      throw Exception('The provided date = $birthday could not be parsed');
+    }
+
+    return date;
   }
 
   @override
@@ -94,5 +95,9 @@ class LocaleServiceImpl implements LocaleService {
     }
 
     return 'N/A';
+  }
+
+  bool _hasLeapYearOccurred(int expectedMonth, int expectedDay, DateTime date) {
+    return date.month != expectedMonth || date.day != expectedDay;
   }
 }

@@ -28,4 +28,22 @@ extension StringExtensions on String? {
       : this!.isNotEmpty
           ? '${this![0].toUpperCase()}${this!.substring(1).toLowerCase()}'
           : '';
+
+  String? removeLineBreakAtEnd() {
+    if (isNullEmptyOrWhitespace) {
+      return this;
+    }
+
+    int index = this!.lastIndexOf('\n\n');
+    if (index > 0) {
+      return this!.replaceFirst('\n\n', '', index);
+    }
+
+    index = this!.lastIndexOf('\n');
+    if (index > 0) {
+      return this!.replaceFirst('\n', '', index);
+    }
+
+    return this;
+  }
 }

@@ -20,6 +20,9 @@ class BackupRestoreBloc extends Bloc<BackupRestoreEvent, BackupRestoreState> {
   }
 
   Future<void> _mapEventToState(BackupRestoreEvent event, Emitter<BackupRestoreState> emit) async {
+    if (event is! _Init && state is! _LoadedState) {
+      throw Exception('Invalid state');
+    }
     final s = await event.map(
       init: (e) => _init(),
       read: (e) => _read(e.filePath),
@@ -31,12 +34,12 @@ class BackupRestoreBloc extends Bloc<BackupRestoreEvent, BackupRestoreState> {
     emit(s);
 
     final resultExists = s.maybeMap(
-      loaded: (state) => state.createResult != null || state.restoreResult != null || state.readResult != null,
+      loaded: (state) => state.createResult != null || state.restoreResult != null || state.readResult != null || state.deleteResult != null,
       orElse: () => false,
     );
 
     if (resultExists) {
-      emit(currentState.copyWith(restoreResult: null, readResult: null, createResult: null));
+      emit(currentState.copyWith(restoreResult: null, readResult: null, createResult: null, deleteResult: null));
     }
   }
 
@@ -46,9 +49,6 @@ class BackupRestoreBloc extends Bloc<BackupRestoreEvent, BackupRestoreState> {
   }
 
   Future<BackupRestoreState> _read(String filePath) async {
-    if (state is! _LoadedState) {
-      throw Exception('Invalid state');
-    }
     final bk = await _backupRestoreService.readBackup(filePath);
     final result = BackupOperationResultModel(
       path: filePath,
@@ -59,11 +59,8 @@ class BackupRestoreBloc extends Bloc<BackupRestoreEvent, BackupRestoreState> {
   }
 
   Future<BackupRestoreState> _create(List<AppBackupDataType> dataTypes) async {
-    if (state is! _LoadedState) {
-      throw Exception('Invalid state');
-    }
     final result = await _backupRestoreService.createBackup(dataTypes);
-    await _telemetryService.backupCreated(result.succeed);
+    await _telemetryService.trackBackupCreated(result.succeed);
     if (!result.succeed) {
       return currentState.copyWith.call(createResult: result);
     }
@@ -84,9 +81,6 @@ class BackupRestoreBloc extends Bloc<BackupRestoreEvent, BackupRestoreState> {
   }
 
   Future<BackupRestoreState> _restore(String filePath, List<AppBackupDataType> dataTypes, bool imported) async {
-    if (state is! _LoadedState) {
-      throw Exception('Invalid state');
-    }
     final bk = await _backupRestoreService.readBackup(filePath);
     final result = BackupOperationResultModel(
       path: filePath,
@@ -94,7 +88,7 @@ class BackupRestoreBloc extends Bloc<BackupRestoreEvent, BackupRestoreState> {
       dataTypes: bk?.dataTypes ?? [],
     );
     if (bk == null) {
-      await _telemetryService.backupRestored(false);
+      await _telemetryService.trackBackupRestored(false);
       return currentState.copyWith.call(restoreResult: result);
     }
 
@@ -103,10 +97,10 @@ class BackupRestoreBloc extends Bloc<BackupRestoreEvent, BackupRestoreState> {
     }
 
     final restored = await _backupRestoreService.restoreBackup(bk, dataTypes);
-    await _telemetryService.backupRestored(restored);
+    await _telemetryService.trackBackupRestored(restored);
 
     if (!restored || !imported) {
-      return currentState.copyWith.call(restoreResult: result);
+      return currentState.copyWith.call(restoreResult: result.copyWith(succeed: restored));
     }
 
     final backups = [
@@ -123,9 +117,6 @@ class BackupRestoreBloc extends Bloc<BackupRestoreEvent, BackupRestoreState> {
   }
 
   Future<BackupRestoreState> _delete(String filePath) async {
-    if (state is! _LoadedState) {
-      throw Exception('Invalid state');
-    }
     final deleted = await _backupRestoreService.deleteBackup(filePath);
     final result = BackupOperationResultModel(path: filePath, succeed: deleted, dataTypes: []);
     if (deleted) {

@@ -6,7 +6,7 @@ import '../../common.dart';
 import 'common_file.dart';
 
 void main() {
-  test('check for characters', () async {
+  test('Check for characters', () async {
     for (final lang in AppLanguageType.values) {
       final service = await getCharacterFileService(lang);
 
@@ -100,7 +100,7 @@ void main() {
     }
   });
 
-  test('check for weapons', () async {
+  test('Check for weapons', () async {
     for (final lang in AppLanguageType.values) {
       final service = await getWeaponFileService(lang);
       final weapons = service.getWeaponsForCard();
@@ -130,7 +130,7 @@ void main() {
     }
   });
 
-  test('check for artifacts', () async {
+  test('Check for artifacts', () async {
     for (final lang in AppLanguageType.values) {
       final service = await getArtifactFileService(lang);
       final artifacts = service.getArtifactsForCard();
@@ -147,7 +147,7 @@ void main() {
     }
   });
 
-  test('check the materials', () async {
+  test('Check the materials', () async {
     for (final lang in AppLanguageType.values) {
       final service = await getMaterialFileService(lang);
       final materials = service.getAllMaterialsForCard();
@@ -161,7 +161,7 @@ void main() {
     }
   });
 
-  test('check the monsters', () async {
+  test('Check the monsters', () async {
     for (final lang in AppLanguageType.values) {
       final service = await getMonsterFileService(lang);
       final monsters = service.getAllMonstersForCard();

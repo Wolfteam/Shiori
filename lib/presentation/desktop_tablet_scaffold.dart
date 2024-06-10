@@ -10,6 +10,7 @@ import 'package:shiori/presentation/home/home_page.dart';
 import 'package:shiori/presentation/map/map_page.dart';
 import 'package:shiori/presentation/settings/settings_page.dart';
 import 'package:shiori/presentation/shared/extensions/focus_scope_node_extensions.dart';
+import 'package:shiori/presentation/shared/mixins/scroll_to_top_on_double_tab_tap_mixin.dart';
 import 'package:shiori/presentation/shared/shiori_icons.dart';
 import 'package:shiori/presentation/weapons/weapons_page.dart';
 
@@ -18,11 +19,13 @@ typedef OnWillPop = Future<bool> Function();
 class DesktopTabletScaffold extends StatelessWidget {
   final int defaultIndex;
   final TabController tabController;
+  final List<ScrollController> scrollControllers;
 
   const DesktopTabletScaffold({
     super.key,
     required this.defaultIndex,
     required this.tabController,
+    required this.scrollControllers,
   });
 
   @override
@@ -32,7 +35,12 @@ class DesktopTabletScaffold extends StatelessWidget {
       body: SafeArea(
         child: Row(
           children: [
-            _NavigationRail(defaultIndex: defaultIndex + 1, extended: extended, tabController: tabController),
+            _NavigationRail(
+              defaultIndex: defaultIndex + 1,
+              extended: extended,
+              tabController: tabController,
+              scrollControllers: scrollControllers,
+            ),
             const VerticalDivider(thickness: 1, width: 1),
             // This is the main content.
             Expanded(
@@ -40,10 +48,10 @@ class DesktopTabletScaffold extends StatelessWidget {
                 controller: tabController,
                 physics: const NeverScrollableScrollPhysics(),
                 children: [
-                  const CharactersPage(),
-                  const WeaponsPage(),
-                  HomePage(),
-                  const ArtifactsPage(),
+                  CharactersPage(scrollController: scrollControllers.first),
+                  WeaponsPage(scrollController: scrollControllers[1]),
+                  HomePage(scrollController: scrollControllers[2]),
+                  ArtifactsPage(scrollController: scrollControllers.last),
                   MapPage(),
                 ],
               ),
@@ -59,18 +67,20 @@ class _NavigationRail extends StatefulWidget {
   final int defaultIndex;
   final bool extended;
   final TabController tabController;
+  final List<ScrollController> scrollControllers;
 
   const _NavigationRail({
     required this.defaultIndex,
     required this.extended,
     required this.tabController,
+    required this.scrollControllers,
   });
 
   @override
   State<_NavigationRail> createState() => _NavigationRailState();
 }
 
-class _NavigationRailState extends State<_NavigationRail> {
+class _NavigationRailState extends State<_NavigationRail> with ScrollToTopOnDoubleTabTapMixin {
   late int _index;
   late bool _extended;
 
@@ -99,38 +109,31 @@ class _NavigationRailState extends State<_NavigationRail> {
         destinations: <NavigationRailDestination>[
           NavigationRailDestination(
             icon: const Icon(Icons.menu),
-            selectedIcon: const Icon(Icons.menu),
             label: Text(s.collapse),
           ),
           NavigationRailDestination(
             icon: const Icon(Icons.people),
-            selectedIcon: const Icon(Icons.people),
             label: Text(s.characters),
           ),
           NavigationRailDestination(
             icon: const Icon(Shiori.crossed_swords),
-            selectedIcon: const Icon(Shiori.crossed_swords),
             label: Text(s.weapons),
           ),
           NavigationRailDestination(
             icon: const Icon(Icons.home),
-            selectedIcon: const Icon(Icons.home),
             label: Text(s.home),
           ),
           NavigationRailDestination(
             icon: const Icon(Shiori.overmind),
-            selectedIcon: const Icon(Shiori.overmind),
             label: Text(s.artifacts),
           ),
           if (!Platform.isMacOS)
             NavigationRailDestination(
               icon: const Icon(Icons.map),
-              selectedIcon: const Icon(Icons.map),
               label: Text(s.map),
             ),
           NavigationRailDestination(
             icon: const Icon(Icons.settings),
-            selectedIcon: const Icon(Icons.settings),
             label: Text(s.settings),
           ),
         ],
@@ -141,7 +144,6 @@ class _NavigationRailState extends State<_NavigationRail> {
   void _changeCurrentTab(int index) {
     FocusScope.of(context).removeFocus();
     widget.tabController.index = index;
-
     setState(() {
       _index = index + 1;
     });
@@ -159,6 +161,8 @@ class _NavigationRailState extends State<_NavigationRail> {
       await _gotoSettingsPage();
       return;
     }
+
+    scrollToTopOnTabTap(widget.tabController.index, realIndex, widget.scrollControllers);
     context.read<MainTabBloc>().add(MainTabEvent.goToTab(index: realIndex));
   }
 

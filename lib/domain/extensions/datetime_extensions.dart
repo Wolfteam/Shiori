@@ -4,4 +4,6 @@ extension DateTimeExtensions on DateTime {
   bool isBeforeInclusive(DateTime other) => compareTo(other) <= 0;
 
   bool isBetweenInclusive(DateTime first, DateTime last) => isAfterInclusive(first) && isBeforeInclusive(last);
+
+  DateTime getStartingDate() => DateTime(year, month, day);
 }

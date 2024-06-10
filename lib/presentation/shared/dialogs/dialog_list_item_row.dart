@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/models/models.dart';
-import 'package:shiori/presentation/shared/images/circle_character.dart';
-import 'package:shiori/presentation/shared/images/circle_weapon.dart';
+import 'package:shiori/presentation/shared/images/character_icon_image.dart';
+import 'package:shiori/presentation/shared/images/weapon_icon_image.dart';
 import 'package:shiori/presentation/shared/styles.dart';
 
 typedef RowEndWidget = Widget Function(String);
@@ -28,7 +28,7 @@ class DialogListItemRow extends StatelessWidget {
     required ItemType itemType,
     required ItemCommonWithName item,
     RowEndWidget? getRightWidget,
-  }) : this(key: key, itemType: itemType, itemKey: item.key, image: item.image, name: item.name, getRowEndWidget: getRightWidget);
+  }) : this(key: key, itemType: itemType, itemKey: item.key, image: item.iconImage, name: item.name, getRowEndWidget: getRightWidget);
 
   @override
   Widget build(BuildContext context) {
@@ -39,9 +39,9 @@ class DialogListItemRow extends StatelessWidget {
         Row(
           children: [
             if (itemType == ItemType.character)
-              CircleCharacter(itemKey: itemKey, image: image, radius: 40)
+              CharacterIconImage(itemKey: itemKey, image: image, size: 40)
             else
-              CircleWeapon(itemKey: itemKey, image: image, radius: 40),
+              WeaponIconImage(itemKey: itemKey, image: image, size: 40),
             Expanded(
               child: Padding(
                 padding: Styles.edgeInsetHorizontal16,

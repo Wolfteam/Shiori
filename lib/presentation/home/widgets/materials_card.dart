@@ -21,7 +21,7 @@ class MaterialsCard extends StatelessWidget {
       title: s.materials,
       iconToTheLeft: iconToTheLeft,
       onClick: _gotoMaterialsPage,
-      icon: Image.asset(Assets.bagIconPath, width: 60, height: 60, color: theme.colorScheme.secondary),
+      icon: Image.asset(Assets.bagIconPath, width: 60, height: 60, color: theme.colorScheme.primary),
       children: [
         CardDescription(text: s.checkAllMaterials),
       ],

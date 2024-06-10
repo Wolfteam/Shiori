@@ -3,6 +3,7 @@ import 'package:shiori/generated/l10n.dart';
 import 'package:shiori/presentation/game_codes/game_codes_page.dart';
 import 'package:shiori/presentation/home/widgets/card_description.dart';
 import 'package:shiori/presentation/home/widgets/card_item.dart';
+import 'package:shiori/presentation/shared/requires_resources_widget.dart';
 
 class GameCodesCard extends StatelessWidget {
   final bool iconToTheLeft;
@@ -16,14 +17,16 @@ class GameCodesCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final s = S.of(context);
-    return CardItem(
-      title: s.gameCodes,
-      iconToTheLeft: iconToTheLeft,
-      onClick: _showGameCodesDialog,
-      icon: Icon(Icons.code, size: 60, color: theme.colorScheme.secondary),
-      children: [
-        CardDescription(text: s.seeAllInGameGameCodes),
-      ],
+    return RequiresDownloadedResourcesWidget(
+      child: CardItem(
+        title: s.gameCodes,
+        iconToTheLeft: iconToTheLeft,
+        onClick: _showGameCodesDialog,
+        icon: Icon(Icons.code, size: 60, color: theme.colorScheme.primary),
+        children: [
+          CardDescription(text: s.seeAllInGameGameCodes),
+        ],
+      ),
     );
   }
 

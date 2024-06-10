@@ -19,7 +19,11 @@ class MonsterFileServiceImpl extends MonsterFileService {
   MonsterFileServiceImpl(this._resourceService, this._translations);
 
   @override
-  Future<void> init(String assetPath) async {
+  Future<void> init(String assetPath, {bool noResourcesHaveBeenDownloaded = false}) async {
+    if (noResourcesHaveBeenDownloaded) {
+      _monstersFile = MonstersFile(monsters: []);
+      return;
+    }
     final json = await readJson(assetPath);
     _monstersFile = MonstersFile.fromJson(json);
   }
@@ -46,18 +50,18 @@ class MonsterFileServiceImpl extends MonsterFileService {
   }
 
   @override
-  List<ItemCommon> getRelatedMonsterToMaterialForItems(String key) {
+  List<ItemCommonWithName> getRelatedMonsterToMaterialForItems(String key) {
     return _monstersFile.monsters
         .where((monster) => monster.drops.any((el) => el.type == MonsterDropType.material && el.key == key))
-        .map((monster) => ItemCommon(monster.key, _resourceService.getMonsterImagePath(monster.image)))
+        .map((monster) => _fromMonsterFileModelToItemCommonWithName(monster))
         .toList();
   }
 
   @override
-  List<ItemCommon> getRelatedMonsterToArtifactForItems(String key) {
+  List<ItemCommonWithName> getRelatedMonsterToArtifactForItems(String key) {
     return _monstersFile.monsters
         .where((monster) => monster.drops.any((el) => el.type == MonsterDropType.artifact && el.key == key))
-        .map((monster) => ItemCommon(monster.key, _resourceService.getMonsterImagePath(monster.image)))
+        .map((monster) => _fromMonsterFileModelToItemCommonWithName(monster))
         .toList();
   }
 
@@ -70,5 +74,10 @@ class MonsterFileServiceImpl extends MonsterFileService {
       type: monster.type,
       isComingSoon: monster.isComingSoon,
     );
+  }
+
+  ItemCommonWithName _fromMonsterFileModelToItemCommonWithName(MonsterFileModel monster) {
+    final m = getMonsterForCard(monster.key);
+    return ItemCommonWithName(monster.key, m.image, m.image, m.name);
   }
 }

@@ -10,7 +10,7 @@ import 'package:shiori/injection.dart';
 import 'package:shiori/presentation/notifications/widgets/add_edit_notification_bottom_sheet.dart';
 import 'package:shiori/presentation/shared/dialogs/confirm_dialog.dart';
 import 'package:shiori/presentation/shared/dialogs/number_picker_dialog.dart';
-import 'package:shiori/presentation/shared/images/circle_item.dart';
+import 'package:shiori/presentation/shared/images/circle_item_image.dart';
 import 'package:shiori/presentation/shared/styles.dart';
 import 'package:shiori/presentation/shared/utils/modal_bottom_sheet_utils.dart';
 import 'package:shiori/presentation/shared/utils/size_utils.dart';
@@ -56,7 +56,7 @@ class NotificationListTitle extends StatelessWidget {
       key: ValueKey(completesAt),
       create: (ctx) => Injection.notificationTimerBloc..add(NotificationTimerEvent.init(completesAt: completesAt)),
       child: Slidable(
-        key: ValueKey('$itemKey-$type'),
+        key: ValueKey('$itemKey-$type-$completesAt'),
         startActionPane: ActionPane(
           extentRatio: extentRatio,
           motion: const ScrollMotion(),
@@ -126,7 +126,7 @@ class NotificationListTitle extends StatelessWidget {
             constraints: BoxConstraints.tight(const Size.fromRadius(30)),
             child: Stack(
               children: [
-                CircleItem(image: image, forDrag: true, radius: 50, imageSizeTimesTwo: false),
+                CircleItemImage(image: image, forDrag: true, radius: 50, imageSizeTimesTwo: false),
                 if (showNotification)
                   Positioned(
                     top: 0,

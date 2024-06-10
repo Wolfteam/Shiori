@@ -23,7 +23,6 @@ class CommonButtonSheetButtons extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
     final s = S.of(context);
 
     final cancel = cancelText ?? s.cancel;
@@ -32,12 +31,12 @@ class CommonButtonSheetButtons extends StatelessWidget {
     return CommonButtonBar(
       children: <Widget>[
         if (showCancelButton)
-          OutlinedButton(
+          TextButton(
             onPressed: () => onCancel != null ? onCancel!() : Navigator.pop(context),
-            child: Text(cancel, style: TextStyle(color: theme.primaryColor)),
+            child: Text(cancel),
           ),
         if (showOkButton)
-          ElevatedButton(
+          FilledButton(
             onPressed: onOk != null ? () => onOk!() : null,
             child: Text(ok),
           ),

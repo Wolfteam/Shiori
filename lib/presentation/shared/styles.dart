@@ -6,17 +6,12 @@ class Styles {
   static double cardBottomRadius = 30;
   static double cardTopRadius = 10;
 
-  static BorderRadius mainCardBorderRadius = BorderRadius.only(
-    bottomLeft: Radius.circular(cardBottomRadius),
-    bottomRight: Radius.circular(cardBottomRadius),
-    topLeft: Radius.circular(cardTopRadius),
-    topRight: Radius.circular(cardTopRadius),
-  );
+  static const BorderRadius mainCardBorderRadius = BorderRadius.all(Radius.circular(10));
 
-  static BorderRadius homeCardItemBorderRadius = BorderRadius.circular(40);
+  static BorderRadius homeCardItemBorderRadius = BorderRadius.circular(20);
 
   static final RoundedRectangleBorder cardShape = RoundedRectangleBorder(borderRadius: BorderRadius.circular(10));
-  static final RoundedRectangleBorder mainCardShape = RoundedRectangleBorder(borderRadius: mainCardBorderRadius);
+  static const RoundedRectangleBorder mainCardShape = RoundedRectangleBorder(borderRadius: mainCardBorderRadius);
   static final RoundedRectangleBorder floatingCardShape = RoundedRectangleBorder(borderRadius: BorderRadius.circular(20));
 
   static const double cardThreeElevation = 3;
@@ -53,8 +48,8 @@ class Styles {
 
   static const double materialCardHeight = 270;
   static const double materialCardWidth = 220;
-  static const double homeCardHeight = 170;
-  static const double homeCardWidth = 280;
+  static const double homeCardHeight = 150;
+  static const double homeCardWidth = 240;
   static const double birthdayCardWidth = 300;
 
   static const endDrawerFilterItemMargin = EdgeInsets.only(top: 20);
@@ -77,5 +72,100 @@ class Styles {
     colors: [Colors.black.withOpacity(0.6), Colors.black.withOpacity(0.8)],
     begin: Alignment.topLeft,
     end: Alignment.bottomRight,
+  );
+
+  static const Color wishTopSelectedBackgroundColor = Color(0xFFf7f3d8);
+  static const Color wishTopUnselectedBackgroundColor = Color(0xFF4f6d95);
+  static const Color wishButtonBackgroundColor = Color(0xffe0ddd4);
+  static const Color fiveStarWishResultBackgroundColor = Color(0xfff9aa02);
+  static const Color fourStarWishResultBackgroundColor = Color(0xffb912d6);
+  static const Color commonStarWishResultBackgroundColor = Color.fromRGBO(170, 200, 241, 1);
+
+  static const LinearGradient fiveStarWishResultGradient = LinearGradient(
+    colors: [
+      fiveStarWishResultBackgroundColor,
+      Color.fromRGBO(255, 255, 255, 1),
+      fiveStarWishResultBackgroundColor,
+    ],
+    begin: Alignment.topLeft,
+    end: Alignment.bottomRight,
+  );
+
+  static const List<BoxShadow> fiveStarWishResultBoxShadow = [
+    BoxShadow(
+      color: Colors.white,
+      blurRadius: 20,
+      spreadRadius: -20,
+    ),
+    BoxShadow(
+      color: Styles.fiveStarWishResultBackgroundColor,
+      blurRadius: 25,
+      spreadRadius: -20,
+    ),
+    BoxShadow(
+      color: Styles.fiveStarWishResultBackgroundColor,
+      blurRadius: 15,
+      spreadRadius: -20,
+    ),
+  ];
+
+  static const List<BoxShadow> fourStarWishResultBoxShadow = [
+    BoxShadow(
+      color: Colors.white,
+      blurRadius: 20,
+      spreadRadius: -20,
+    ),
+    BoxShadow(
+      color: Styles.fourStarWishResultBackgroundColor,
+      blurRadius: 25,
+      spreadRadius: -20,
+    ),
+    BoxShadow(
+      color: Styles.fourStarWishResultBackgroundColor,
+      blurRadius: 15,
+      spreadRadius: -20,
+    ),
+  ];
+
+  static const List<BoxShadow> commonWishResultBoxShadow = [
+    BoxShadow(
+      color: Styles.commonStarWishResultBackgroundColor,
+      blurRadius: 25,
+      spreadRadius: -20,
+    ),
+    BoxShadow(
+      color: Colors.white,
+      blurRadius: 10,
+      spreadRadius: -20,
+    ),
+    BoxShadow(
+      color: Styles.commonStarWishResultBackgroundColor,
+      blurRadius: 15,
+      spreadRadius: -20,
+    ),
+  ];
+
+  static List<BoxShadow> commonBlackShadow = [
+    BoxShadow(
+      color: Colors.black.withOpacity(0.6),
+      blurRadius: 40,
+      spreadRadius: 20,
+    ),
+    BoxShadow(
+      color: Colors.black.withOpacity(0.4),
+      blurRadius: 20,
+      spreadRadius: 10,
+    ),
+  ];
+
+  static const Color _kKeyUmbraOpacity = Color(0x33000000); // alpha = 0.2
+  static const Color _kKeyPenumbraOpacity = Color(0x24000000); // alpha = 0.14
+  static const Color _kAmbientShadowOpacity = Color(0x1F000000); // alpha = 0.12
+  static BoxDecoration commonCardBoxDecoration = const BoxDecoration(
+    boxShadow: [
+      BoxShadow(color: _kKeyUmbraOpacity),
+      BoxShadow(color: _kKeyPenumbraOpacity),
+      BoxShadow(color: _kAmbientShadowOpacity),
+    ],
   );
 }

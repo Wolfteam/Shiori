@@ -64,18 +64,25 @@ class GenshinServiceImpl implements GenshinService {
   }
 
   @override
-  Future<void> init(AppLanguageType languageType) async {
+  Future<void> init(AppLanguageType languageType, {bool noResourcesHaveBeenDownloaded = false}) async {
     await Future.wait([
-      _artifacts.init(_resourceService.getJsonFilePath(AppJsonFileType.artifacts)),
-      _bannerHistory.init(_resourceService.getJsonFilePath(AppJsonFileType.bannerHistory)),
-      _characters.init(_resourceService.getJsonFilePath(AppJsonFileType.characters)),
-      _elements.init(_resourceService.getJsonFilePath(AppJsonFileType.elements)),
-      _furniture.init(_resourceService.getJsonFilePath(AppJsonFileType.furniture)),
-      _gadgets.init(_resourceService.getJsonFilePath(AppJsonFileType.gadgets)),
-      _materials.init(_resourceService.getJsonFilePath(AppJsonFileType.materials)),
-      _monsters.init(_resourceService.getJsonFilePath(AppJsonFileType.monsters)),
-      _weapons.init(_resourceService.getJsonFilePath(AppJsonFileType.weapons)),
-      _translations.initTranslations(languageType, _resourceService.getJsonFilePath(AppJsonFileType.translations, language: languageType)),
+      _artifacts.init(_resourceService.getJsonFilePath(AppJsonFileType.artifacts), noResourcesHaveBeenDownloaded: noResourcesHaveBeenDownloaded),
+      _bannerHistory.init(
+        _resourceService.getJsonFilePath(AppJsonFileType.bannerHistory),
+        noResourcesHaveBeenDownloaded: noResourcesHaveBeenDownloaded,
+      ),
+      _characters.init(_resourceService.getJsonFilePath(AppJsonFileType.characters), noResourcesHaveBeenDownloaded: noResourcesHaveBeenDownloaded),
+      _elements.init(_resourceService.getJsonFilePath(AppJsonFileType.elements), noResourcesHaveBeenDownloaded: noResourcesHaveBeenDownloaded),
+      _furniture.init(_resourceService.getJsonFilePath(AppJsonFileType.furniture), noResourcesHaveBeenDownloaded: noResourcesHaveBeenDownloaded),
+      _gadgets.init(_resourceService.getJsonFilePath(AppJsonFileType.gadgets), noResourcesHaveBeenDownloaded: noResourcesHaveBeenDownloaded),
+      _materials.init(_resourceService.getJsonFilePath(AppJsonFileType.materials), noResourcesHaveBeenDownloaded: noResourcesHaveBeenDownloaded),
+      _monsters.init(_resourceService.getJsonFilePath(AppJsonFileType.monsters), noResourcesHaveBeenDownloaded: noResourcesHaveBeenDownloaded),
+      _weapons.init(_resourceService.getJsonFilePath(AppJsonFileType.weapons), noResourcesHaveBeenDownloaded: noResourcesHaveBeenDownloaded),
+      _translations.initTranslations(
+        languageType,
+        _resourceService.getJsonFilePath(AppJsonFileType.translations, language: languageType),
+        noResourcesHaveBeenDownloaded: noResourcesHaveBeenDownloaded,
+      ),
     ]);
   }
 
@@ -173,7 +180,7 @@ class GenshinServiceImpl implements GenshinService {
     switch (notificationItemType) {
       case AppNotificationItemType.character:
         final character = characters.getCharacter(itemKey);
-        return _resourceService.getCharacterImagePath(character.image);
+        return _resourceService.getCharacterIconImagePath(character.iconImage);
       case AppNotificationItemType.weapon:
         final weapon = weapons.getWeapon(itemKey);
         return _resourceService.getWeaponImagePath(weapon.image, weapon.type);
@@ -215,12 +222,18 @@ class GenshinServiceImpl implements GenshinService {
       case ChartType.topFiveStarCharacterLeastReruns:
       case ChartType.topFourStarCharacterLeastReruns:
         final characters = this.characters.getItemCommonWithNameByRarity(stars);
+        if (characters.isEmpty) {
+          return [];
+        }
         return bannerHistory.getTopCharts(mostReruns, type, BannerHistoryItemType.character, characters);
       case ChartType.topFiveStarWeaponMostReruns:
       case ChartType.topFourStarWeaponMostReruns:
       case ChartType.topFiveStarWeaponLeastReruns:
       case ChartType.topFourStarWeaponLeastReruns:
         final weapons = this.weapons.getItemCommonWithNameByRarity(stars);
+        if (weapons.isEmpty) {
+          return [];
+        }
         return bannerHistory.getTopCharts(mostReruns, type, BannerHistoryItemType.weapon, weapons);
       default:
         throw Exception('Type = $type is not valid in the getTopCharts method');

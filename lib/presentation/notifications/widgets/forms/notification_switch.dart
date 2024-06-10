@@ -13,7 +13,6 @@ class NotificationSwitch extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
     final s = S.of(context);
     return SwitchListTile(
       contentPadding: EdgeInsets.zero,
@@ -21,7 +20,6 @@ class NotificationSwitch extends StatelessWidget {
       value: showNotification,
       onChanged: (newValue) => context.read<NotificationBloc>().add(NotificationEvent.showNotificationChanged(show: newValue)),
       controlAffinity: ListTileControlAffinity.leading,
-      activeColor: theme.colorScheme.secondary,
     );
   }
 }

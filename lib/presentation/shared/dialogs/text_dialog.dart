@@ -62,7 +62,6 @@ class _TextDialogState extends State<TextDialog> {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
     final s = S.of(context);
     final mq = MediaQuery.of(context);
     final title = widget.title.isNotNullEmptyOrWhitespace
@@ -106,11 +105,11 @@ class _TextDialogState extends State<TextDialog> {
               ),
       ),
       actions: [
-        OutlinedButton(
+        TextButton(
           onPressed: _close,
-          child: Text(s.cancel, style: TextStyle(color: theme.primaryColor)),
+          child: Text(s.cancel),
         ),
-        ElevatedButton(
+        FilledButton(
           onPressed: _isValid ? _save : null,
           child: Text(s.save),
         ),

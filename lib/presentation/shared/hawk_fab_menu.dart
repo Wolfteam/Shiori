@@ -131,6 +131,7 @@ class _HawkFabMenuState extends State<HawkFabMenu> with TickerProviderStateMixin
   Widget _buildBlurWidget() {
     return InkWell(
       onTap: _toggleMenu,
+      hoverColor: Colors.transparent,
       child: BackdropFilter(
         filter: ui.ImageFilter.blur(
           sigmaX: widget.blur,
@@ -150,7 +151,7 @@ class _HawkFabMenuState extends State<HawkFabMenu> with TickerProviderStateMixin
       bottom: 10,
       right: 10,
       child: FloatingActionButton(
-        backgroundColor: widget.fabColor ?? Theme.of(context).primaryColor,
+        backgroundColor: widget.fabColor,
         onPressed: _toggleMenu,
         child: AnimatedIcon(
           icon: widget.icon ?? AnimatedIcons.menu_close,
@@ -183,6 +184,7 @@ class _MenuItemWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
     return InkWell(
       onTap: onTap,
       child: Row(
@@ -190,10 +192,10 @@ class _MenuItemWidget extends StatelessWidget {
           Container(
             padding: const EdgeInsets.symmetric(
               horizontal: 10,
-              vertical: 3,
+              vertical: 5,
             ),
             decoration: BoxDecoration(
-              color: item.labelBackgroundColor ?? Colors.white,
+              color: item.labelBackgroundColor ?? theme.colorScheme.primaryContainer,
               borderRadius: const BorderRadius.only(
                 topLeft: Radius.circular(10),
                 bottomLeft: Radius.circular(10),
@@ -201,13 +203,14 @@ class _MenuItemWidget extends StatelessWidget {
             ),
             child: Text(
               item.label,
-              style: TextStyle(color: item.labelColor ?? Colors.black87),
+              overflow: TextOverflow.ellipsis,
+              style: TextStyle(color: item.labelColor ?? theme.iconTheme.color),
             ),
           ),
-          FloatingActionButton(
+          FloatingActionButton.small(
             onPressed: onTap,
-            mini: true,
-            backgroundColor: item.color ?? Theme.of(context).primaryColor,
+            backgroundColor: item.color,
+            materialTapTargetSize: MaterialTapTargetSize.padded,
             child: item.icon,
           ),
         ],

@@ -89,7 +89,8 @@ class PurchaseServiceImpl implements PurchaseService {
               productIdentifier: p.storeProduct.identifier,
             ),
           )
-          .toList()..sort((x,y) => x.priceString.compareTo(y.priceString));
+          .toList()
+        ..sort((x, y) => x.priceString.compareTo(y.priceString));
     } catch (e, s) {
       _handleError('getInAppPurchases', e, s);
       return [];
@@ -102,7 +103,7 @@ class PurchaseServiceImpl implements PurchaseService {
       //behind the scenes, the purchase method just uses two params...
       //that's why I create dummy object to satisfy the constructor
       const dummyProduct = StoreProduct('', '', '', 0, '0', '');
-      final package = Package(identifier, PackageType.lifetime, dummyProduct, offeringIdentifier);
+      final package = Package(identifier, PackageType.lifetime, dummyProduct, PresentedOfferingContext(offeringIdentifier, null, null));
       final customerInfo = await Purchases.purchasePackage(package);
       return true;
     } catch (e, s) {

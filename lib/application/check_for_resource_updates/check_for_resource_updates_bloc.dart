@@ -35,6 +35,7 @@ class CheckForResourceUpdatesBloc extends Bloc<CheckForResourceUpdatesEvent, Che
   Future<CheckForResourceUpdatesState> _init() {
     final state = CheckForResourceUpdatesState.loaded(
       currentResourceVersion: _settingsService.resourceVersion,
+      noResourcesHaveBeenDownloaded: _settingsService.noResourcesHasBeenDownloaded,
     );
 
     return Future.value(state);
@@ -54,6 +55,7 @@ class CheckForResourceUpdatesBloc extends Bloc<CheckForResourceUpdatesEvent, Che
       targetResourceVersion: result.resourceVersion == _settingsService.resourceVersion || result.type != AppResourceUpdateResultType.updatesAvailable
           ? null
           : result.resourceVersion,
+      noResourcesHaveBeenDownloaded: _settingsService.noResourcesHasBeenDownloaded,
     );
   }
 }

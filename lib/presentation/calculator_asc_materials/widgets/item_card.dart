@@ -26,6 +26,11 @@ class ItemCard extends StatelessWidget {
   final List<ItemAscensionMaterialModel> materials;
   final bool isActive;
   final ElementType? elementType;
+  final bool showMaterialUsage;
+
+  static const double itemWidth = 210;
+  static const double minItemHeight = 420;
+  static const double maxItemHeight = 600;
 
   const ItemCard({
     super.key,
@@ -38,6 +43,7 @@ class ItemCard extends StatelessWidget {
     required this.isWeapon,
     required this.materials,
     required this.isActive,
+    required this.showMaterialUsage,
     this.elementType,
   });
 
@@ -46,13 +52,6 @@ class ItemCard extends StatelessWidget {
     final theme = Theme.of(context);
     final s = S.of(context);
     final cardColor = elementType != null ? elementType!.getElementColorFromContext(context) : rarity.getRarityColors().last;
-    final size = MediaQuery.of(context).size;
-    var height = size.height / 2.5;
-    if (height > 500) {
-      height = 500;
-    } else if (height < 280) {
-      height = 280;
-    }
     return InkWell(
       borderRadius: Styles.mainCardBorderRadius,
       onTap: () => _editItem(context),
@@ -61,77 +60,74 @@ class ItemCard extends StatelessWidget {
         shape: Styles.mainCardShape,
         elevation: Styles.cardTenElevation,
         color: cardColor,
-        shadowColor: Colors.transparent,
         child: ChildItemDisabled(
           isDisabled: !isActive,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            mainAxisAlignment: MainAxisAlignment.center,
+          child: Stack(
+            fit: StackFit.expand,
             children: [
-              SizedBox(
-                height: height,
-                child: FittedBox(
-                  fit: BoxFit.cover,
-                  alignment: Alignment.topCenter,
-                  clipBehavior: Clip.hardEdge,
-                  child: FadeInImage(
-                    placeholder: MemoryImage(kTransparentImage),
-                    image: FileImage(File(image)),
-                  ),
-                ),
+              FadeInImage(
+                fit: BoxFit.cover,
+                placeholderFit: BoxFit.cover,
+                alignment: Alignment.topCenter,
+                placeholder: MemoryImage(kTransparentImage),
+                image: FileImage(File(image)),
               ),
-              DecoratedBox(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.only(
-                    bottomLeft: Radius.circular(Styles.cardBottomRadius),
-                    bottomRight: Radius.circular(Styles.cardBottomRadius),
-                  ),
-                  color: Colors.black.withOpacity(0.5),
-                ),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Tooltip(
-                      message: name,
-                      child: Container(
-                        margin: Styles.edgeInsetAll5,
-                        child: Text(
-                          name,
-                          style: theme.textTheme.titleLarge!.copyWith(color: Colors.white),
-                          overflow: TextOverflow.ellipsis,
-                          textAlign: TextAlign.center,
+              Align(
+                alignment: Alignment.bottomCenter,
+                child: Container(
+                  decoration: Styles.commonCardBoxDecoration,
+                  width: double.infinity,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Tooltip(
+                        message: name,
+                        child: Container(
+                          margin: Styles.edgeInsetAll5,
+                          child: Text(
+                            name,
+                            style: theme.textTheme.titleLarge!.copyWith(color: Colors.white),
+                            overflow: TextOverflow.ellipsis,
+                            textAlign: TextAlign.center,
+                          ),
                         ),
                       ),
-                    ),
-                    Text(
-                      s.materials,
-                      textAlign: TextAlign.center,
-                      style: theme.textTheme.titleSmall!.copyWith(color: Colors.white),
-                    ),
-                    Container(
-                      margin: const EdgeInsets.only(bottom: 12, right: 5, left: 5),
-                      child: SizedBox(
-                        height: 90,
+                      Text(
+                        s.materials,
+                        textAlign: TextAlign.center,
+                        overflow: TextOverflow.ellipsis,
+                        style: theme.textTheme.titleSmall!.copyWith(color: Colors.white),
+                      ),
+                      Container(
+                        height: 80,
+                        padding: const EdgeInsets.only(bottom: 5),
                         child: ListView.builder(
                           itemCount: materials.length,
                           physics: const BouncingScrollPhysics(),
                           scrollDirection: Axis.horizontal,
                           itemBuilder: (ctx, index) {
                             final item = materials[index];
-                            return MaterialItem(
-                              itemKey: item.key,
-                              type: item.type,
-                              image: item.image,
-                              quantity: item.quantity,
-                              textColor: Colors.white,
-                              sessionKey: sessionKey,
+
+                            return Container(
+                              margin: Styles.edgeInsetHorizontal10,
+                              child: MaterialItem(
+                                itemKey: item.key,
+                                type: item.type,
+                                image: item.image,
+                                requiredQuantity: item.requiredQuantity,
+                                usedQuantity: item.usedQuantity,
+                                remainingQuantity: item.remainingQuantity,
+                                textColor: Colors.white,
+                                sessionKey: sessionKey,
+                                showMaterialUsage: showMaterialUsage,
+                              ),
                             );
                           },
                         ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
             ],

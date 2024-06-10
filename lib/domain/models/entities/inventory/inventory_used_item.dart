@@ -1,9 +1,10 @@
 import 'package:hive/hive.dart';
+import 'package:shiori/domain/models/entities/base_entity.dart';
 
 part 'inventory_used_item.g.dart';
 
 @HiveType(typeId: 5)
-class InventoryUsedItem extends HiveObject {
+class InventoryUsedItem extends BaseEntity {
   @HiveField(0)
   final int calculatorItemKey;
 

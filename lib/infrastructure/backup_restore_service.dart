@@ -89,6 +89,9 @@ class BackupRestoreServiceImpl implements BackupRestoreService {
           case AppBackupDataType.notifications:
             final notifications = _dataService.notifications.getDataForBackup();
             bk = bk.copyWith(notifications: notifications);
+          case AppBackupDataType.wishSimulator:
+            final wishSimulator = await _dataService.wishSimulator.getDataForBackup();
+            bk = bk.copyWith(wishSimulator: wishSimulator);
         }
       }
 
@@ -194,6 +197,8 @@ class BackupRestoreServiceImpl implements BackupRestoreService {
             await _notificationService.cancelAllNotifications();
             final serverResetTime = bk.settings?.serverResetTime ?? _settingsService.serverResetTime;
             await _dataService.notifications.restoreFromBackup(bk.notifications!, serverResetTime);
+          case AppBackupDataType.wishSimulator:
+            await _dataService.wishSimulator.restoreFromBackup(bk.wishSimulator!);
         }
       }
       _loggingService.info(runtimeType, 'restoreBackup: Process completed');

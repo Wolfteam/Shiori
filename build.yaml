@@ -1,0 +1,22 @@
+targets:
+  $default:
+    builders:
+      hive_generator:
+        generate_for:
+          - lib/domain/models/entities/**
+      envied_generator:envied:
+        generate_for:
+          - lib/env.dart
+      json_serializable:
+        generate_for:
+          - lib/domain/models/**
+      freezed:
+        options:
+          format: false
+        generate_for:
+          - lib/application/**
+          - lib/domain/models/**
+      mockito:mockBuilder:
+        generate_for:
+          - test/mocks.dart
+          - test/nice_mocks.dart

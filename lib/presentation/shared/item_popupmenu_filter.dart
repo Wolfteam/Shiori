@@ -105,6 +105,9 @@ class ItemPopupMenuFilterWithAllValue extends ItemPopupMenuFilter<int> {
     required super.itemText,
     super.exclude = const [],
     super.icon,
+    super.splashRadius,
+    super.isItemEnabled,
+    super.childBuilder,
   }) : super(
           selectedValue: selectedValue ?? allValue,
           values: values..add(allValue),

@@ -238,11 +238,11 @@ class _TwoColumnEnumSelectorDialogState<TEnum> extends State<TwoColumnEnumSelect
               ),
       ),
       actions: [
-        OutlinedButton(
+        TextButton(
           onPressed: () => Navigator.pop(context),
-          child: Text(s.cancel, style: TextStyle(color: theme.primaryColor)),
+          child: Text(s.cancel),
         ),
-        ElevatedButton(
+        FilledButton(
           onPressed: () {
             widget.onOk(_selected.map((e) => e.enumValue).toList());
             Navigator.pop(context);

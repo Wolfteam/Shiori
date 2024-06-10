@@ -1,14 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:shiori/presentation/shared/search_box.dart';
-import 'package:shiori/presentation/shared/shiori_icons.dart';
-
-typedef OnPressed = void Function();
 
 class SliverPageFilter extends StatelessWidget {
   final String title;
   final String? search;
-  final OnPressed onPressed;
-  final Function(String) searchChanged;
+  final VoidCallback onPressed;
+  final SearchChanged searchChanged;
 
   const SliverPageFilter({
     super.key,
@@ -28,23 +25,7 @@ class SliverPageFilter extends StatelessWidget {
             value: search,
             showClearButton: showClearButton,
             searchChanged: searchChanged,
-          ),
-          Padding(
-            padding: const EdgeInsets.only(left: 15, right: 5),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-                Text(
-                  title,
-                  textAlign: TextAlign.start,
-                  style: Theme.of(context).textTheme.titleLarge,
-                ),
-                IconButton(
-                  icon: const Icon(Shiori.filter, size: 20),
-                  onPressed: () => onPressed(),
-                ),
-              ],
-            ),
+            onFilterTap: onPressed,
           ),
         ],
       ),

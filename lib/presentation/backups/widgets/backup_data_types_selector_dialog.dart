@@ -51,7 +51,7 @@ class _BackupDataTypesSelectorDialogState extends State<BackupDataTypesSelectorD
               contentPadding: EdgeInsets.zero,
               visualDensity: VisualDensity.compact,
               title: Text(e.translation),
-              activeColor: theme.primaryColor,
+              activeColor: theme.colorScheme.primary,
               value: _selectedDataTypes.contains(e.enumValue),
               onChanged: (bool? value) => _onChange(e.enumValue),
             ),
@@ -60,11 +60,11 @@ class _BackupDataTypesSelectorDialogState extends State<BackupDataTypesSelectorD
         ],
       ),
       actions: [
-        OutlinedButton(
+        TextButton(
           onPressed: () => Navigator.pop(context),
-          child: Text(s.cancel, style: TextStyle(color: theme.primaryColor)),
+          child: Text(s.cancel),
         ),
-        ElevatedButton(
+        FilledButton(
           onPressed: _selectedDataTypes.isEmpty ? null : () => Navigator.pop(context, _selectedDataTypes),
           child: Text(s.ok),
         ),

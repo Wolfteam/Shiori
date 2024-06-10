@@ -16,22 +16,20 @@ class ComingSoonNewAvatar extends StatelessWidget {
     final s = S.of(context);
     final theme = Theme.of(context);
     final newOrComingSoon = isNew || isComingSoon;
+    if (!newOrComingSoon) {
+      return const SizedBox.shrink();
+    }
     final icon = isNew ? Icons.fiber_new_outlined : Icons.av_timer;
-    final newOrComingSoonAvatar = Container(
-      margin: const EdgeInsets.only(top: 10, left: 5),
-      child: CircleAvatar(
-        radius: 15,
-        backgroundColor: newOrComingSoon ? theme.colorScheme.secondary : Colors.transparent,
-        child: newOrComingSoon ? Icon(icon, color: Colors.white) : null,
+    return Tooltip(
+      message: isComingSoon ? s.comingSoon : s.recent,
+      child: Container(
+        margin: const EdgeInsets.only(top: 10, left: 5),
+        child: CircleAvatar(
+          radius: 15,
+          backgroundColor: theme.colorScheme.primary,
+          child: Icon(icon, color: Colors.white),
+        ),
       ),
     );
-    if (newOrComingSoon) {
-      return Tooltip(
-        message: isComingSoon ? s.comingSoon : s.recent,
-        child: newOrComingSoonAvatar,
-      );
-    }
-
-    return newOrComingSoonAvatar;
   }
 }

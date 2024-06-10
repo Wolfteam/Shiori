@@ -50,11 +50,11 @@ void main() {
             for (final img in state.images) {
               checkAsset(img);
             }
-            for (final item in state.charImages) {
-              checkItemCommon(item);
+            for (final item in state.usedBy) {
+              checkItemCommonWithName(item);
             }
             for (final item in state.droppedBy) {
-              checkItemCommon(item);
+              checkItemCommonWithName(item);
             }
             expect(state.minRarity, inInclusiveRange(2, 4));
             expect(state.maxRarity, inInclusiveRange(4, 5));

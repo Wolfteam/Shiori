@@ -3,7 +3,7 @@ import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/file/base_file_service.dart';
 
 abstract class TranslationFileService extends BaseFileService {
-  Future<void> initTranslations(AppLanguageType languageType, String assetPath);
+  Future<void> initTranslations(AppLanguageType languageType, String assetPath, {bool noResourcesHaveBeenDownloaded = false});
 
   TranslationCharacterFile getCharacterTranslation(String key);
 

@@ -45,7 +45,7 @@ void main() {
           expect(state.weaponAscMaterials, isNotEmpty);
           expect(state.charAscMaterials, isNotEmpty);
           final items = state.charAscMaterials.expand((el) => el.characters).toList() + state.weaponAscMaterials.expand((el) => el.weapons).toList();
-          checkItemsCommon(items);
+          checkItemsCommonWithName(items);
 
           final days = (state.charAscMaterials.expand((e) => e.days).toList() + state.weaponAscMaterials.expand((e) => e.days).toList()).toSet();
           expect(days.length, TodayMaterialsBloc.days.length);

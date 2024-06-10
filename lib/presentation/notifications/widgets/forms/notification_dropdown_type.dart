@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shiori/application/bloc.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/generated/l10n.dart';
-import 'package:shiori/presentation/shared/dropdown_button_with_title.dart';
+import 'package:shiori/presentation/shared/common_dropdown_button.dart';
 import 'package:shiori/presentation/shared/extensions/i18n_extensions.dart';
 import 'package:shiori/presentation/shared/utils/enum_utils.dart';
 
@@ -27,13 +27,14 @@ class NotificationDropdownType extends StatelessWidget {
       (type, _) => s.translateAppNotificationType(type),
     );
 
-    return DropdownButtonWithTitle<AppNotificationType>(
-      margin: EdgeInsets.zero,
+    return CommonDropdownButton<AppNotificationType>(
       title: s.notificationType,
+      hint: s.notificationType,
       isExpanded: isExpanded,
       currentValue: translatedValues.firstWhere((el) => el.enumValue == selectedValue).enumValue,
-      items: translatedValues,
-      onChanged: isInEditMode ? null : (v) => context.read<NotificationBloc>().add(NotificationEvent.typeChanged(newValue: v)),
+      values: translatedValues,
+      withoutUnderLine: false,
+      onChanged: isInEditMode ? null : (v, _) => context.read<NotificationBloc>().add(NotificationEvent.typeChanged(newValue: v)),
     );
   }
 }

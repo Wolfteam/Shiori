@@ -21,25 +21,28 @@ class WeaponsButtonBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final s = S.of(context);
-    final buttons = WeaponType.values.map((e) => _buildIconButton(e, s.translateWeaponType(e))).toList();
-
+    final theme = Theme.of(context);
+    final double size = iconSize * 1.3;
     return Wrap(
       crossAxisAlignment: WrapCrossAlignment.center,
-      alignment: WrapAlignment.spaceBetween,
-      children: buttons,
-    );
-  }
-
-  Widget _buildIconButton(WeaponType value, String tooltip) {
-    final isSelected = selectedValues.isEmpty || !selectedValues.contains(value);
-    return IconButton(
-      iconSize: iconSize,
-      icon: Opacity(
-        opacity: !isSelected ? 1 : 0.2,
-        child: Image.asset(value.getWeaponAssetPath()),
-      ),
-      onPressed: !enabled ? null : () => onClick(value),
-      tooltip: tooltip,
+      alignment: WrapAlignment.spaceEvenly,
+      children: WeaponType.values.map((e) {
+        final isSelected = selectedValues.isEmpty || !selectedValues.contains(e);
+        return IconButton(
+          iconSize: iconSize,
+          icon: Opacity(
+            opacity: !isSelected ? 1 : 0.2,
+            child: Image.asset(
+              e.getWeaponNormalSkillAssetPath(),
+              width: size,
+              height: size,
+              color: theme.brightness == Brightness.dark ? Colors.white : Colors.black.withOpacity(0.5),
+            ),
+          ),
+          onPressed: !enabled ? null : () => onClick(e),
+          tooltip: s.translateWeaponType(e),
+        );
+      }).toList(),
     );
   }
 }

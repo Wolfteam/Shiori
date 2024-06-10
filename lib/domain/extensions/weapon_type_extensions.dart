@@ -5,4 +5,8 @@ extension WeaponTypeExtension on WeaponType {
   String getWeaponAssetPath() {
     return Assets.getWeaponTypePath(this);
   }
+
+  String getWeaponNormalSkillAssetPath() {
+    return Assets.getWeaponSkillAssetPath(this);
+  }
 }

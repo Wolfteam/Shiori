@@ -19,7 +19,22 @@ class MaterialFileServiceImpl extends MaterialFileService {
   MaterialFileServiceImpl(this._resourceService, this._translations);
 
   @override
-  Future<void> init(String assetPath) async {
+  Future<void> init(String assetPath, {bool noResourcesHaveBeenDownloaded = false}) async {
+    if (noResourcesHaveBeenDownloaded) {
+      _materialsFile = MaterialsFile(
+        talents: [],
+        weapon: [],
+        weaponPrimary: [],
+        common: [],
+        currency: [],
+        elemental: [],
+        jewels: [],
+        locals: [],
+        experience: [],
+        ingredient: [],
+      );
+      return;
+    }
     final json = await readJson(assetPath);
     _materialsFile = MaterialsFile.fromJson(json);
   }
@@ -81,7 +96,7 @@ class MaterialFileServiceImpl extends MaterialFileService {
   }) {
     final mp = <String, MaterialFileModel>{};
     for (final item in materials) {
-      if (!ignore.contains(item.type)) {
+      if (!ignore.contains(item.type) && !mp.containsKey(item.key)) {
         final material = getMaterial(item.key);
         mp[item.key] = material;
       }
@@ -120,6 +135,18 @@ class MaterialFileServiceImpl extends MaterialFileService {
   MaterialFileModel getFragileResinMaterial() {
     final materials = getMaterials(MaterialType.currency);
     return materials.firstWhere((el) => el.key == 'fragile-resin');
+  }
+
+  @override
+  MaterialFileModel getIntertwinedFate() {
+    final materials = getMaterials(MaterialType.currency);
+    return materials.firstWhere((el) => el.key == 'intertwined-fate');
+  }
+
+  @override
+  MaterialFileModel getAcquaintFate() {
+    final materials = getMaterials(MaterialType.currency);
+    return materials.firstWhere((el) => el.key == 'acquaint-fate');
   }
 
   MaterialCardModel _toMaterialForCard(MaterialFileModel material) {

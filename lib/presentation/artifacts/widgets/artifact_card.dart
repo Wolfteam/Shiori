@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:shiori/domain/app_constants.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/presentation/artifact/artifact_page.dart';
-import 'package:shiori/presentation/artifacts/widgets/artifact_stats.dart';
+import 'package:shiori/presentation/shared/custom_divider.dart';
 import 'package:shiori/presentation/shared/extensions/rarity_extensions.dart';
 import 'package:shiori/presentation/shared/gradient_card.dart';
 import 'package:shiori/presentation/shared/images/rarity.dart';
@@ -25,6 +25,9 @@ class ArtifactCard extends StatelessWidget {
   final bool withShape;
   final bool withTextOverflow;
 
+  static const double itemWidth = 200;
+  static const double itemHeight = 220;
+
   const ArtifactCard({
     super.key,
     required this.keyName,
@@ -32,8 +35,8 @@ class ArtifactCard extends StatelessWidget {
     required this.image,
     required this.rarity,
     required this.bonus,
-    this.imgWidth = 140,
-    this.imgHeight = 120,
+    this.imgWidth = itemWidth,
+    this.imgHeight = itemHeight,
     this.withElevation = true,
     this.isInSelectionMode = false,
     this.withShape = true,
@@ -47,7 +50,7 @@ class ArtifactCard extends StatelessWidget {
     required this.image,
     required this.rarity,
     this.isInSelectionMode = false,
-    this.imgWidth = 70,
+    this.imgWidth = 80,
     this.imgHeight = 60,
     this.withShape = true,
     this.withTextOverflow = false,
@@ -58,8 +61,8 @@ class ArtifactCard extends StatelessWidget {
   ArtifactCard.item({
     super.key,
     required ArtifactCardModel item,
-    this.imgWidth = 140,
-    this.imgHeight = 120,
+    this.imgWidth = itemWidth,
+    this.imgHeight = itemHeight,
     this.withElevation = true,
     this.withoutDetails = false,
     this.isInSelectionMode = false,
@@ -73,23 +76,27 @@ class ArtifactCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-    return InkWell(
-      borderRadius: Styles.mainCardBorderRadius,
-      onTap: () => _gotoDetailPage(context),
-      child: GradientCard(
-        clipBehavior: Clip.hardEdge,
-        shape: withShape ? Styles.mainCardShape : null,
-        elevation: withElevation ? Styles.cardTenElevation : 0,
-        gradient: rarity.getRarityGradient(),
-        child: Padding(
-          padding: withoutDetails ? Styles.edgeInsetAll5 : Styles.edgeInsetAll10,
-          child: Column(
+    return SizedBox(
+      width: imgWidth,
+      height: imgHeight,
+      child: InkWell(
+        borderRadius: Styles.mainCardBorderRadius,
+        onTap: () => _gotoDetailPage(context),
+        child: GradientCard(
+          shape: withShape ? Styles.mainCardShape : null,
+          elevation: withElevation ? Styles.cardTenElevation : 0,
+          gradient: rarity.getRarityGradient(),
+          child: Stack(
+            alignment: Alignment.center,
+            fit: StackFit.expand,
             children: [
               FadeInImage(
                 width: imgWidth,
                 height: imgHeight,
                 placeholder: MemoryImage(kTransparentImage),
+                fit: BoxFit.fill,
+                placeholderFit: BoxFit.fill,
+                alignment: Alignment.topCenter,
                 image: FileImage(File(image)),
                 imageErrorBuilder: (context, error, stack) {
                   //This can happen when trying to load sets like 'Prayer to xxx'
@@ -101,22 +108,15 @@ class ArtifactCard extends StatelessWidget {
                   );
                 },
               ),
-              Tooltip(
-                message: name,
-                child: Text(
-                  name,
-                  textAlign: TextAlign.center,
-                  overflow: withTextOverflow ? TextOverflow.ellipsis : null,
-                  style: theme.textTheme.titleMedium!.copyWith(fontWeight: FontWeight.bold, color: Colors.white),
+              Align(
+                alignment: Alignment.bottomCenter,
+                child: _Bottom(
+                  name: name,
+                  rarity: rarity,
+                  bonus: bonus,
+                  withoutDetails: withoutDetails,
                 ),
               ),
-              Rarity(stars: rarity),
-              if (bonus.isNotEmpty)
-                ArtifactStats(
-                  bonus: bonus,
-                  textColor: Colors.white,
-                  maxLines: 10,
-                ),
             ],
           ),
         ),
@@ -132,5 +132,51 @@ class ArtifactCard extends StatelessWidget {
 
     final route = MaterialPageRoute(builder: (ctx) => ArtifactPage(itemKey: keyName));
     await Navigator.of(context).push(route);
+  }
+}
+
+class _Bottom extends StatelessWidget {
+  final String name;
+  final int rarity;
+  final List<ArtifactCardBonusModel> bonus;
+  final bool withoutDetails;
+
+  const _Bottom({
+    required this.name,
+    required this.rarity,
+    required this.bonus,
+    required this.withoutDetails,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    return Container(
+      padding: withoutDetails ? null : Styles.edgeInsetAll5,
+      decoration: Styles.commonCardBoxDecoration,
+      width: double.infinity,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        mainAxisAlignment: MainAxisAlignment.end,
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Tooltip(
+            message: name,
+            child: Text(
+              name,
+              textAlign: TextAlign.center,
+              overflow: TextOverflow.ellipsis,
+              style: theme.textTheme.titleMedium!.copyWith(fontWeight: FontWeight.bold, color: Colors.white),
+            ),
+          ),
+          Rarity(
+            stars: rarity,
+            color: Colors.white,
+            compact: withoutDetails,
+          ),
+          if (!withoutDetails) const CustomDivider(),
+        ],
+      ),
+    );
   }
 }

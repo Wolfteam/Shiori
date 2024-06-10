@@ -1,32 +1,39 @@
 PODS:
-  - AppCenter (5.0.2):
-    - AppCenter/Analytics (= 5.0.2)
-    - AppCenter/Crashes (= 5.0.2)
-  - AppCenter/Analytics (5.0.2):
+  - AppCenter (5.0.4):
+    - AppCenter/Analytics (= 5.0.4)
+    - AppCenter/Crashes (= 5.0.4)
+  - AppCenter/Analytics (5.0.4):
     - AppCenter/Core
-  - AppCenter/Core (5.0.2)
-  - AppCenter/Crashes (5.0.2):
+  - AppCenter/Core (5.0.4)
+  - AppCenter/Crashes (5.0.4):
     - AppCenter/Core
   - device_info_plus (0.0.1):
     - FlutterMacOS
   - devicelocale (0.0.1):
     - FlutterMacOS
+  - flutter_inappwebview_macos (0.0.1):
+    - FlutterMacOS
+    - OrderedSet (~> 5.0)
   - flutter_local_notifications (0.0.1):
     - FlutterMacOS
-  - flutter_native_timezone (0.0.1):
+  - flutter_timezone (0.1.0):
     - FlutterMacOS
   - FlutterMacOS (1.0.0)
+  - OrderedSet (5.0.0)
   - package_info_plus (0.0.1):
     - FlutterMacOS
   - path_provider_foundation (0.0.1):
     - Flutter
     - FlutterMacOS
-  - purchases_flutter (4.11.3):
+  - purchases_flutter (6.28.0):
     - FlutterMacOS
-    - PurchasesHybridCommon (= 4.14.3)
-  - PurchasesHybridCommon (4.14.3):
-    - RevenueCat (= 4.17.11)
-  - RevenueCat (4.17.11)
+    - PurchasesHybridCommon (= 10.5.0)
+  - PurchasesHybridCommon (10.5.0):
+    - RevenueCat (= 4.41.0)
+  - rate_my_app (2.1.0):
+    - Flutter
+    - FlutterMacOS
+  - RevenueCat (4.41.0)
   - share_plus (0.0.1):
     - FlutterMacOS
   - shared_preferences_foundation (0.0.1):
@@ -34,7 +41,7 @@ PODS:
     - FlutterMacOS
   - url_launcher_macos (0.0.1):
     - FlutterMacOS
-  - wakelock_macos (0.0.1):
+  - wakelock_plus (0.0.1):
     - FlutterMacOS
   - window_size (0.0.2):
     - FlutterMacOS
@@ -43,21 +50,24 @@ DEPENDENCIES:
   - AppCenter
   - device_info_plus (from `Flutter/ephemeral/.symlinks/plugins/device_info_plus/macos`)
   - devicelocale (from `Flutter/ephemeral/.symlinks/plugins/devicelocale/macos`)
+  - flutter_inappwebview_macos (from `Flutter/ephemeral/.symlinks/plugins/flutter_inappwebview_macos/macos`)
   - flutter_local_notifications (from `Flutter/ephemeral/.symlinks/plugins/flutter_local_notifications/macos`)
-  - flutter_native_timezone (from `Flutter/ephemeral/.symlinks/plugins/flutter_native_timezone/macos`)
+  - flutter_timezone (from `Flutter/ephemeral/.symlinks/plugins/flutter_timezone/macos`)
   - FlutterMacOS (from `Flutter/ephemeral`)
   - package_info_plus (from `Flutter/ephemeral/.symlinks/plugins/package_info_plus/macos`)
-  - path_provider_foundation (from `Flutter/ephemeral/.symlinks/plugins/path_provider_foundation/macos`)
+  - path_provider_foundation (from `Flutter/ephemeral/.symlinks/plugins/path_provider_foundation/darwin`)
   - purchases_flutter (from `Flutter/ephemeral/.symlinks/plugins/purchases_flutter/macos`)
+  - rate_my_app (from `Flutter/ephemeral/.symlinks/plugins/rate_my_app/darwin`)
   - share_plus (from `Flutter/ephemeral/.symlinks/plugins/share_plus/macos`)
-  - shared_preferences_foundation (from `Flutter/ephemeral/.symlinks/plugins/shared_preferences_foundation/macos`)
+  - shared_preferences_foundation (from `Flutter/ephemeral/.symlinks/plugins/shared_preferences_foundation/darwin`)
   - url_launcher_macos (from `Flutter/ephemeral/.symlinks/plugins/url_launcher_macos/macos`)
-  - wakelock_macos (from `Flutter/ephemeral/.symlinks/plugins/wakelock_macos/macos`)
+  - wakelock_plus (from `Flutter/ephemeral/.symlinks/plugins/wakelock_plus/macos`)
   - window_size (from `Flutter/ephemeral/.symlinks/plugins/window_size/macos`)
 
 SPEC REPOS:
   trunk:
     - AppCenter
+    - OrderedSet
     - PurchasesHybridCommon
     - RevenueCat
 
@@ -66,47 +76,54 @@ EXTERNAL SOURCES:
     :path: Flutter/ephemeral/.symlinks/plugins/device_info_plus/macos
   devicelocale:
     :path: Flutter/ephemeral/.symlinks/plugins/devicelocale/macos
+  flutter_inappwebview_macos:
+    :path: Flutter/ephemeral/.symlinks/plugins/flutter_inappwebview_macos/macos
   flutter_local_notifications:
     :path: Flutter/ephemeral/.symlinks/plugins/flutter_local_notifications/macos
-  flutter_native_timezone:
-    :path: Flutter/ephemeral/.symlinks/plugins/flutter_native_timezone/macos
+  flutter_timezone:
+    :path: Flutter/ephemeral/.symlinks/plugins/flutter_timezone/macos
   FlutterMacOS:
     :path: Flutter/ephemeral
   package_info_plus:
     :path: Flutter/ephemeral/.symlinks/plugins/package_info_plus/macos
   path_provider_foundation:
-    :path: Flutter/ephemeral/.symlinks/plugins/path_provider_foundation/macos
+    :path: Flutter/ephemeral/.symlinks/plugins/path_provider_foundation/darwin
   purchases_flutter:
     :path: Flutter/ephemeral/.symlinks/plugins/purchases_flutter/macos
+  rate_my_app:
+    :path: Flutter/ephemeral/.symlinks/plugins/rate_my_app/darwin
   share_plus:
     :path: Flutter/ephemeral/.symlinks/plugins/share_plus/macos
   shared_preferences_foundation:
-    :path: Flutter/ephemeral/.symlinks/plugins/shared_preferences_foundation/macos
+    :path: Flutter/ephemeral/.symlinks/plugins/shared_preferences_foundation/darwin
   url_launcher_macos:
     :path: Flutter/ephemeral/.symlinks/plugins/url_launcher_macos/macos
-  wakelock_macos:
-    :path: Flutter/ephemeral/.symlinks/plugins/wakelock_macos/macos
+  wakelock_plus:
+    :path: Flutter/ephemeral/.symlinks/plugins/wakelock_plus/macos
   window_size:
     :path: Flutter/ephemeral/.symlinks/plugins/window_size/macos
 
 SPEC CHECKSUMS:
-  AppCenter: 355ba776b273d30147c3ac385c558bec60a7d4b1
-  device_info_plus: 5401765fde0b8d062a2f8eb65510fb17e77cf07f
+  AppCenter: 85c92db0759d2792a65eb61d6842d2e86611a49a
+  device_info_plus: ce1b7762849d3ec103d0e0517299f2db7ad60720
   devicelocale: 9f0f36ac651cabae2c33f32dcff4f32b61c38225
+  flutter_inappwebview_macos: 9600c9df9fdb346aaa8933812009f8d94304203d
   flutter_local_notifications: 3805ca215b2fb7f397d78b66db91f6a747af52e4
-  flutter_native_timezone: 3a4724189c47dea215bb3e168e555e18308d312c
+  flutter_timezone: 6b906d1740654acb16e50b639835628fea851037
   FlutterMacOS: 8f6f14fa908a6fb3fba0cd85dbd81ec4b251fb24
-  package_info_plus: 02d7a575e80f194102bef286361c6c326e4c29ce
-  path_provider_foundation: 37748e03f12783f9de2cb2c4eadfaa25fe6d4852
-  purchases_flutter: 720aaf787c1e72cbc62910d14c5096ff3d85d232
-  PurchasesHybridCommon: be1e0089c51b4ee7b44914fd7a9ede271f96e4f5
-  RevenueCat: 0431c28e4d492c0c88d6cc5c89a289cd40a8b7ea
-  share_plus: 76dd39142738f7a68dd57b05093b5e8193f220f7
-  shared_preferences_foundation: 297b3ebca31b34ec92be11acd7fb0ba932c822ca
-  url_launcher_macos: 597e05b8e514239626bcf4a850fcf9ef5c856ec3
-  wakelock_macos: bc3f2a9bd8d2e6c89fee1e1822e7ddac3bd004a9
+  OrderedSet: aaeb196f7fef5a9edf55d89760da9176ad40b93c
+  package_info_plus: fa739dd842b393193c5ca93c26798dff6e3d0e0c
+  path_provider_foundation: 3784922295ac71e43754bd15e0653ccfd36a147c
+  purchases_flutter: e72fa083acf237e1f0cfeadd043aa05a0827984c
+  PurchasesHybridCommon: 3ada52b4b1214b1bdcc499812d061580b85b1b10
+  rate_my_app: f6fe6c5082992a59a29573663ed0484397abe9cc
+  RevenueCat: 1e864e3b26f3f22ca067dd8578da8123030e6774
+  share_plus: 36537c04ce0c3e3f5bd297ce4318b6d5ee5fd6cf
+  shared_preferences_foundation: b4c3b4cddf1c21f02770737f147a3f5da9d39695
+  url_launcher_macos: d2691c7dd33ed713bf3544850a623080ec693d95
+  wakelock_plus: 4783562c9a43d209c458cb9b30692134af456269
   window_size: 339dafa0b27a95a62a843042038fa6c3c48de195
 
 PODFILE CHECKSUM: c5255be90013e27738ca128c64213ada7f9ac560
 
-COCOAPODS: 1.11.3
+COCOAPODS: 1.15.2

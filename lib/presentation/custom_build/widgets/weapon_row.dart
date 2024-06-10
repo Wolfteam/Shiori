@@ -59,8 +59,8 @@ class WeaponRow extends StatelessWidget {
                 image: weapon.image,
                 isComingSoon: false,
                 withShape: false,
-                imgWidth: 94,
-                imgHeight: 84,
+                imgWidth: 120,
+                imgHeight: 128,
               ),
               _TopDecoration.right(
                 color: color,
@@ -224,7 +224,7 @@ class _TopDecoration extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    final margin = alignment == Alignment.topRight ? const EdgeInsets.only(top: 5, right: 5) : const EdgeInsets.only(top: 5, left: 5);
+    final margin = alignment == Alignment.topRight ? const EdgeInsets.only(top: 4, right: 4) : const EdgeInsets.only(top: 4, left: 4);
     final borderRadius = alignment == Alignment.topRight
         ? const BorderRadius.only(
             topLeft: Radius.circular(10),
@@ -288,11 +288,11 @@ class _LevelDialogState extends State<_LevelDialog> {
     return AlertDialog(
       title: Text(s.level),
       actions: [
-        OutlinedButton(
+        TextButton(
           onPressed: () => Navigator.pop(context),
           child: Text(s.cancel),
         ),
-        ElevatedButton(
+        FilledButton(
           onPressed: () => Navigator.pop<WeaponFileStatModel>(context, _currentValue),
           child: Text(s.ok),
         ),

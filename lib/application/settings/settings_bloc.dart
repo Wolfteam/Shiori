@@ -52,6 +52,7 @@ class SettingsBloc extends Bloc<SettingsEvent, SettingsState> {
           unlockedFeatures: features,
           resourceVersion: settings.resourceVersion,
           checkForUpdatesOnStartup: settings.checkForUpdatesOnStartup,
+          noResourcesHaveBeenDownloaded: _settingsService.noResourcesHasBeenDownloaded,
         );
       },
       themeChanged: (event) async {

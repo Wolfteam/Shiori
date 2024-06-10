@@ -1,6 +1,5 @@
 import 'dart:io';
 
-import 'package:enum_to_string/enum_to_string.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/device_info_service.dart';
@@ -31,7 +30,11 @@ class TelemetryServiceImpl implements TelemetryService {
   Future<void> trackEventAsync(String name, [Map<String, String>? properties]) {
     properties ??= {};
     properties.addAll(_deviceInfoService.deviceInfo);
-    return AppCenter.trackEventAsync(name, properties);
+
+    if (_deviceInfoService.installedFromValidSource) {
+      return AppCenter.trackEventAsync(name, properties);
+    }
+    return Future.value();
   }
 
   @override
@@ -55,15 +58,13 @@ class TelemetryServiceImpl implements TelemetryService {
   }
 
   @override
-  Future<void> trackUrlOpened(bool loadMap, bool loadWishSimulator, bool loadDailyCheckIn, bool networkAvailable) async {
+  Future<void> trackUrlOpened(bool loadMap, bool loadDailyCheckIn, bool networkAvailable) async {
     final props = {
       'NetworkAvailable': networkAvailable.toString(),
     };
 
     if (loadMap) {
       await trackEventAsync('Map-Opened', props);
-    } else if (loadWishSimulator) {
-      await trackEventAsync('WishSimulator-Opened', props);
     } else if (loadDailyCheckIn) {
       await trackEventAsync('DailyCheckIn-Opened', props);
     }
@@ -82,13 +83,13 @@ class TelemetryServiceImpl implements TelemetryService {
   @override
   Future<void> trackInit(AppSettings settings) async {
     await trackEventAsync('Init', {
-      'Theme': EnumToString.convertToString(settings.appTheme),
-      'AccentColor': EnumToString.convertToString(settings.accentColor),
-      'Language': EnumToString.convertToString(settings.appLanguage),
+      'Theme': settings.appTheme.name,
+      'AccentColor': settings.accentColor.name,
+      'Language': settings.appLanguage.name,
       'ShowCharacterDetails': settings.showCharacterDetails.toString(),
       'ShowWeaponDetails': settings.showWeaponDetails.toString(),
       'IsFirstInstall': settings.isFirstInstall.toString(),
-      'ServerResetTime': EnumToString.convertToString(settings.serverResetTime),
+      'ServerResetTime': settings.serverResetTime.name,
       'DoubleBackToClose': settings.doubleBackToClose.toString(),
       'UseOfficialMap': settings.useOfficialMap.toString(),
       'ResourcesVersion': settings.resourceVersion.toString(),
@@ -129,39 +130,33 @@ class TelemetryServiceImpl implements TelemetryService {
   Future<void> trackItemUpdatedInInventory(String key, int quantity) => trackEventAsync('MyInventory-Updated', {'Key_Qty': '${key}_$quantity'});
 
   @override
-  Future<void> trackItemsDeletedFromInventory(ItemType type) =>
-      trackEventAsync('MyInventory-Clear-All', {'Type': EnumToString.convertToString(type)});
+  Future<void> trackItemsDeletedFromInventory(ItemType type) => trackEventAsync('MyInventory-Clear-All', {'Type': type.name});
 
   @override
-  Future<void> trackNotificationCreated(AppNotificationType type) =>
-      trackEventAsync('Notification-Created', {'Type': EnumToString.convertToString(type)});
+  Future<void> trackNotificationCreated(AppNotificationType type) => trackEventAsync('Notification-Created', {'Type': type.name});
 
   @override
-  Future<void> trackNotificationDeleted(AppNotificationType type) =>
-      trackEventAsync('Notification-Deleted', {'Type': EnumToString.convertToString(type)});
+  Future<void> trackNotificationDeleted(AppNotificationType type) => trackEventAsync('Notification-Deleted', {'Type': type.name});
 
   @override
-  Future<void> trackNotificationRestarted(AppNotificationType type) =>
-      trackEventAsync('Notification-Restarted', {'Type': EnumToString.convertToString(type)});
+  Future<void> trackNotificationRestarted(AppNotificationType type) => trackEventAsync('Notification-Restarted', {'Type': type.name});
 
   @override
-  Future<void> trackNotificationStopped(AppNotificationType type) =>
-      trackEventAsync('Notification-Stopped', {'Type': EnumToString.convertToString(type)});
+  Future<void> trackNotificationStopped(AppNotificationType type) => trackEventAsync('Notification-Stopped', {'Type': type.name});
 
   @override
-  Future<void> trackNotificationUpdated(AppNotificationType type) =>
-      trackEventAsync('Notification-Updated', {'Type': EnumToString.convertToString(type)});
+  Future<void> trackNotificationUpdated(AppNotificationType type) => trackEventAsync('Notification-Updated', {'Type': type.name});
 
   @override
   Future<void> trackCustomBuildSaved(String charKey, CharacterRoleType roleType, CharacterRoleSubType subType) => trackEventAsync(
         'Custom-Build-Saved',
-        {'Char_RoleType_SubType': '${charKey}_${EnumToString.convertToString(roleType)}_${EnumToString.convertToString(subType)}'},
+        {'Char_RoleType_SubType': '${charKey}_${roleType.name}_${subType.name}'},
       );
 
   @override
   Future<void> trackCustomBuildScreenShootTaken(String charKey, CharacterRoleType roleType, CharacterRoleSubType subType) => trackEventAsync(
         'Custom-Build-ScreenShootTaken',
-        {'Char_RoleType_SubType': '${charKey}_${EnumToString.convertToString(roleType)}_${EnumToString.convertToString(subType)}'},
+        {'Char_RoleType_SubType': '${charKey}_${roleType.name}_${subType.name}'},
       );
 
   @override
@@ -187,8 +182,7 @@ class TelemetryServiceImpl implements TelemetryService {
   Future<void> trackBirthdaysPerMonthOpened(int month) => trackEventAsync('BirthdaysPerMonth-Opened', {'Month': '$month'});
 
   @override
-  Future<void> trackCheckForResourceUpdates(AppResourceUpdateResultType result) =>
-      trackEventAsync('Resource-Updates-Check', {'Result': EnumToString.convertToString(result)});
+  Future<void> trackCheckForResourceUpdates(AppResourceUpdateResultType result) => trackEventAsync('Resource-Updates-Check', {'Result': result.name});
 
   @override
   Future<void> trackResourceUpdateCompleted(bool applied, int targetResourceVersion) => trackEventAsync(
@@ -203,8 +197,22 @@ class TelemetryServiceImpl implements TelemetryService {
       );
 
   @override
-  Future<void> backupCreated(bool succeed) => trackEventAsync('Backup-Created', {'Succeed': '$succeed'});
+  Future<void> trackBackupCreated(bool succeed) => trackEventAsync('Backup-Created', {'Succeed': '$succeed'});
 
   @override
-  Future<void> backupRestored(bool succeed) => trackEventAsync('Backup-Restored', {'Succeed': '$succeed'});
+  Future<void> trackBackupRestored(bool succeed) => trackEventAsync('Backup-Restored', {'Succeed': '$succeed'});
+
+  @override
+  Future<void> trackWishSimulatorOpened(double version) => trackEventAsync('WishSimulator-Opened', {'Version': '$version'});
+
+  @override
+  Future<void> trackWishSimulatorResult(int bannerIndex, double version, BannerItemType type, String range) => trackEventAsync(
+        'WishSimulator-Result',
+        {
+          'Summary': '$version / ${type.name} / $bannerIndex',
+          'Version': '$version',
+          'Type': type.name,
+          'Range': range,
+        },
+      );
 }

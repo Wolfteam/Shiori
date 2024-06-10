@@ -128,24 +128,23 @@ class _ButtonBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final s = S.of(context);
-    final theme = Theme.of(context);
     return CommonButtonBar(
       children: <Widget>[
-        OutlinedButton(
+        TextButton(
           onPressed: () {
             context.read<MonstersBloc>().add(const MonstersEvent.cancelChanges());
             Navigator.pop(context);
           },
-          child: Text(s.cancel, style: TextStyle(color: theme.primaryColor)),
+          child: Text(s.cancel),
         ),
-        OutlinedButton(
+        TextButton(
           onPressed: () {
             context.read<MonstersBloc>().add(const MonstersEvent.resetFilters());
             Navigator.pop(context);
           },
-          child: Text(s.reset, style: TextStyle(color: theme.primaryColor)),
+          child: Text(s.reset),
         ),
-        ElevatedButton(
+        FilledButton(
           onPressed: () {
             context.read<MonstersBloc>().add(const MonstersEvent.applyFilterChanges());
             Navigator.pop(context);

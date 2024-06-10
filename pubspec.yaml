@@ -15,72 +15,65 @@ publish_to: "none" # Remove this line if you wish to publish to pub.dev
 # In iOS, build-name is used as CFBundleShortVersionString while build-number used as CFBundleVersion.
 # Read more about iOS versioning at
 # https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
-version: 1.6.13+127
+version: 1.8.3+167
 
 environment:
-  sdk: '>=3.0.0 <4.0.0'
+  sdk: '>=3.1.4 <4.0.0'
 
 dependencies:
   darq: ^2.0.0
-  device_info_plus: ^9.0.3
-  devicelocale: ^0.6.0
-  enum_to_string: ^2.0.1
-  envied: ^0.3.0+3
-  file_picker: ^5.3.3
+  device_info_plus: ^10.1.0
+  devicelocale: ^0.7.1
+  envied: ^0.5.4+1
+  file_picker: ^8.0.3
   fk_user_agent: ^2.1.0
-  fl_chart: ^0.63.0
+  fl_chart: ^0.67.0
   flutter:
     sdk: flutter
   flutter_bloc: ^8.1.3
   flutter_colorpicker: ^1.0.3
-  flutter_inappwebview: ^5.7.2+3
-  flutter_local_notifications: ^15.1.0+1
+  flutter_inappwebview: ^6.0.0
+  flutter_local_notifications: ^17.0.0
   flutter_localizations:
     sdk: flutter
-  flutter_markdown: ^0.6.17+1
-  flutter_native_timezone: ^2.0.0
-  flutter_slidable: ^3.0.0
-  fluttertoast: ^8.2.2
-  freezed_annotation: ^2.2.0
-  get_it: ^7.6.0
+  flutter_markdown: ^0.7.1
+  flutter_slidable: ^3.1.0
+  flutter_timezone: ^1.0.8
+  fluttertoast: ^8.2.5
+  freezed_annotation: ^2.4.1
+  get_it: ^7.7.0
   grouped_list: ^5.1.2
   hive: ^2.2.3
   hive_flutter: ^1.1.0
-  html: ^0.15.4
-  http: ^1.1.0
+  http: ^1.2.1
   image_gallery_saver: ^2.0.3
   infinite_listview: ^1.1.0
   internet_connection_checker: ^1.0.0+1
   intl: ^0.18.1
-  json_annotation: ^4.7.0
+  json_annotation: ^4.9.0
   linked_scroll_controller: ^0.2.0
-  logger: ^2.0.1
-  package_info_plus: ^4.1.0
-  path: ^1.8.3
-  path_provider: ^2.1.0
-  permission_handler: ^10.4.3
+  logger: ^2.2.0
+  package_info_plus: ^8.0.0
+  path: ^1.9.0
+  path_provider: ^2.1.3
+  permission_handler: ^11.3.1
   pull_to_refresh: ^2.0.0
-  purchases_flutter: ^5.6.2
-  rate_my_app: ^2.0.0
+  purchases_flutter: ^6.28.0
+  rate_my_app: ^2.1.0
   responsive_builder: ^0.7.0
-  responsive_grid: ^2.4.2
-  screenshot: ^2.1.0
-  share_plus: ^7.1.0
-  shared_preferences: ^2.2.0
+  responsive_grid: ^2.4.4
+  screenshot: ^2.3.0
+  share_plus: ^9.0.0
+  shared_preferences: ^2.2.3
   sprintf: ^7.0.0
-  store_checker: ^1.3.0
-  synchronized: ^3.1.0
+  store_checker: ^1.4.0
+  synchronized: ^3.1.0+1
   transparent_image: ^2.0.1
-  url_launcher: ^6.1.12
+  url_launcher: ^6.2.6
   version: ^3.0.0
-  #This is until my pr gets merged
-  version_tracker:
-    git:
-      url: https://github.com/Wolfteam/version_tracker
-      ref: 1af9d7297f050a5c2d5101ef444197f8fca1e921
-  wakelock_plus: ^1.1.1
-  waterfall_flow: ^3.0.2
-  webview_windows: 0.3.0
+  version_tracker: ^2.3.0
+  wakelock_plus: ^1.2.4
+  webview_windows: 0.4.0
   window_size:
     git:
       url: https://github.com/google/flutter-desktop-embedding
@@ -89,17 +82,22 @@ dependencies:
 dev_dependencies:
   bloc_test: ^9.1.4
   build_runner:
-  envied_generator: ^0.3.0+3
+  envied_generator: ^0.5.4+1
   flutter_launcher_icons: ^0.13.1
   flutter_test:
     sdk: flutter
-  freezed: ^2.2.1
+  freezed: ^2.5.2
   hive_generator: ^2.0.1
-  intl_utils: ^2.8.4
-  json_serializable: ^6.5.4
-  lint: ^2.1.2
-  mockito: ^5.4.2
-  msix: ^3.16.1
+  integration_test:
+    sdk: flutter
+  intl_utils: ^2.8.7
+  json_serializable: ^6.8.0
+  lint: ^2.3.0
+  mockito: ^5.4.4
+  msix: ^3.16.7
+
+dependency_overrides:
+  package_info_plus: ^8.0.0
 
 flutter_launcher_icons:
   android: "launcher_icon"
@@ -119,6 +117,7 @@ flutter:
     - assets/others/
     - assets/weapon_types/
     - assets/icon/icon.png
+    - assets/weapon_normal_skill_types/
 
   fonts:
     - family: Shiori

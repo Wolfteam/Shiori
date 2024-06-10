@@ -1,11 +1,16 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
+import 'package:darq/darq.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/models/models.dart';
+import 'package:shiori/domain/services/api_service.dart';
 import 'package:shiori/domain/services/data_service.dart';
-import 'package:shiori/domain/services/game_code_service.dart';
+import 'package:shiori/domain/services/device_info_service.dart';
+import 'package:shiori/domain/services/genshin_service.dart';
 import 'package:shiori/domain/services/network_service.dart';
+import 'package:shiori/domain/services/settings_service.dart';
 import 'package:shiori/domain/services/telemetry_service.dart';
 
 part 'game_codes_bloc.freezed.dart';
@@ -17,10 +22,21 @@ const _initialState = GameCodesState.loaded(workingGameCodes: [], expiredGameCod
 class GameCodesBloc extends Bloc<GameCodesEvent, GameCodesState> {
   final DataService _dataService;
   final TelemetryService _telemetryService;
-  final GameCodeService _gameCodeService;
+  final ApiService _apiService;
   final NetworkService _networkService;
+  final GenshinService _genshinService;
+  final SettingsService _settingsService;
+  final DeviceInfoService _deviceInfoService;
 
-  GameCodesBloc(this._dataService, this._telemetryService, this._gameCodeService, this._networkService) : super(_initialState) {
+  GameCodesBloc(
+    this._dataService,
+    this._telemetryService,
+    this._apiService,
+    this._networkService,
+    this._genshinService,
+    this._settingsService,
+    this._deviceInfoService,
+  ) : super(_initialState)  {
     on<GameCodesEvent>((event, emit) => _mapEventToState(event, emit));
   }
 
@@ -32,29 +48,67 @@ class GameCodesBloc extends Bloc<GameCodesEvent, GameCodesState> {
         emit(state.copyWith.call(isInternetAvailable: null));
         return;
       }
-      emit(_initialState.copyWith.call(isBusy: true, workingGameCodes: [], expiredGameCodes: []));
+      emit(_initialState.copyWith.call(isBusy: true));
     }
 
     final s = await event.maybeWhen(
-      init: () async {
-        await _telemetryService.trackGameCodesOpened();
-        return _buildInitialState();
-      },
-      markAsUsed: (code, wasUsed) async {
-        await _dataService.gameCodes.markCodeAsUsed(code, wasUsed: wasUsed);
-        return _buildInitialState();
-      },
-      refresh: () async {
-        final gameCodes = await _gameCodeService.getAllGameCodes();
-        await _dataService.gameCodes.saveGameCodes(gameCodes);
-
-        await _telemetryService.trackGameCodesOpened();
-        return _buildInitialState();
-      },
+      init: () async => _init(),
+      markAsUsed: (code, wasUsed) async => _markAsUsed(code, wasUsed),
+      refresh: () async => _refresh(),
       orElse: () async => _initialState,
     );
 
     emit(s);
+
+    if (s.unknownErrorOccurred == true || s.isBusy) {
+      emit (s.copyWith(unknownErrorOccurred: false, isBusy: false));
+    }
+  }
+
+  Future<GameCodesState> _init() async {
+    await _telemetryService.trackGameCodesOpened();
+    return _buildInitialState();
+  }
+
+  Future<GameCodesState> _markAsUsed(String code, bool wasUsed) async {
+    await _dataService.gameCodes.markCodeAsUsed(code, wasUsed: wasUsed);
+    return _buildInitialState();
+  }
+
+  Future<GameCodesState> _refresh() async {
+    if (!_canCheckForGameCodeUpdates()) {
+      await Future.delayed(const Duration(seconds: 1));
+      return state;
+    }
+
+    final response = await _apiService.getGameCodes(_deviceInfoService.version, _settingsService.resourceVersion);
+    if (!response.succeed) {
+      return state.copyWith(unknownErrorOccurred: true);
+    }
+
+    final gameCodes = response.result.map((e) {
+      return GameCodeModel(
+        code: e.code,
+        discoveredOn: e.discoveredOn,
+        expiredOn: e.expiredOn,
+        region: e.region,
+        isExpired: e.isExpired,
+        isUsed: false,
+        rewards: e.rewards.map((r) {
+          final key = _getMaterialKey(r.wikiName, r.type);
+          final material = _genshinService.materials.getMaterial(key);
+          final image = _genshinService.materials.resources.getMaterialImagePath(material.image, material.type);
+          return ItemAscensionMaterialModel.fromMaterial(r.quantity, material, image);
+        }).toList(),
+      );
+    }).toList();
+    if (gameCodes.isNotEmpty) {
+      await _dataService.gameCodes.saveGameCodes(gameCodes);
+      _settingsService.lastGameCodesCheckedDate = DateTime.now();
+    }
+
+    await _telemetryService.trackGameCodesOpened();
+    return _buildInitialState();
   }
 
   GameCodesState _buildInitialState() {
@@ -80,5 +134,40 @@ class GameCodesBloc extends Bloc<GameCodesEvent, GameCodesState> {
     }
 
     return -1;
+  }
+
+  String _getMaterialKey(String wikiName, MaterialType type) {
+    final relatedMaterials = _genshinService.materials.getMaterials(type);
+
+    final map = <String, int>{};
+    for (final material in relatedMaterials) {
+      var matches = 0;
+      final characters = wikiName.toLowerCase().split('');
+      for (final char in characters) {
+        if (material.key.contains(char)) {
+          matches++;
+        } else {
+          matches--;
+        }
+      }
+      map.putIfAbsent(material.key, () => matches);
+    }
+
+    final pickedKey = map.entries.orderBy((el) => el.value).last.key;
+    return pickedKey;
+  }
+
+  bool _canCheckForGameCodeUpdates() {
+    final lastCheckedDate = _settingsService.lastGameCodesCheckedDate;
+    if (lastCheckedDate == null) {
+      return true;
+    }
+
+    final isAfter = DateTime.now().isAfter(lastCheckedDate.add(const Duration(hours: 4)));
+    if (!isAfter) {
+      return false;
+    }
+
+    return true;
   }
 }

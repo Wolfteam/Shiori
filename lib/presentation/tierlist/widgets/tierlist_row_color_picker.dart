@@ -19,7 +19,6 @@ class _TierListRowColorPickerState extends State<TierListRowColorPicker> {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
     final s = S.of(context);
     return AlertDialog(
       title: Text(s.pickColor),
@@ -32,14 +31,11 @@ class _TierListRowColorPickerState extends State<TierListRowColorPicker> {
         },
       ),
       actions: <Widget>[
-        OutlinedButton(
+        TextButton(
           onPressed: () => Navigator.of(context).pop(widget.currentColor),
-          child: Text(
-            s.cancel,
-            style: TextStyle(color: theme.primaryColor),
-          ),
+          child: Text(s.cancel),
         ),
-        ElevatedButton(
+        FilledButton(
           onPressed: () => Navigator.of(context).pop(selectedColor ?? widget.currentColor),
           child: Text(s.ok),
         ),
