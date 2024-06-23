@@ -45,8 +45,8 @@ class ModalBottomSheetUtils {
       await showModalBottomSheet(
         context: context,
         shape: Styles.modalBottomSheetShape,
-        isDismissible: true,
         isScrollControlled: true,
+        useSafeArea: true,
         builder: (ctx) => getBottomSheetFromEndDrawerItemType(context, type, args: args),
       );
       return;

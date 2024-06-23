@@ -85,7 +85,7 @@ class WishSimulatorHistoryPage extends StatelessWidget {
             bannerType: state.map(loading: (_) => bannerType, loaded: (state) => state.bannerType),
             showDeleteIcon: state.map(loading: (_) => false, loaded: (state) => state.items.isNotEmpty),
           ),
-          backgroundColor: Theme.of(context).colorScheme.background.withOpacity(0.8),
+          backgroundColor: Theme.of(context).colorScheme.surface.withOpacity(0.8),
           body: SafeArea(
             child: BackdropFilter(
               filter: ImageFilter.blur(sigmaX: 6.0, sigmaY: 6.0),
@@ -249,7 +249,7 @@ class _Table extends StatelessWidget {
     }
     final isTapEnabled = [ItemType.character, ItemType.weapon].contains(item.type);
     return DataRow(
-      color: MaterialStateProperty.resolveWith<Color?>((states) {
+      color: WidgetStateProperty.resolveWith<Color?>((states) {
         if (index.isEven) {
           return Colors.grey.withOpacity(0.3);
         }

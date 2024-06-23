@@ -258,6 +258,7 @@ class _PortraitLayout extends StatelessWidget {
                 materials: e.materials,
                 elementType: e.elementType,
                 showMaterialUsage: showMaterialUsage,
+                useMaterialsFromInventory: e.useMaterialsFromInventory,
               );
             },
           ),
@@ -359,6 +360,7 @@ class _LandscapeLayoutState extends State<_LandscapeLayout> {
                       materials: e.materials,
                       elementType: e.elementType,
                       showMaterialUsage: widget.showMaterialUsage,
+                      useMaterialsFromInventory: e.useMaterialsFromInventory,
                     );
                   },
                 ),

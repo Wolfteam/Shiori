@@ -26,7 +26,7 @@ class RarityRating extends StatelessWidget {
         size: size,
         color: theme.colorScheme.secondary,
         starCount: stars,
-        borderColor: theme.colorScheme.onBackground,
+        borderColor: theme.colorScheme.onSurface,
       ),
     );
   }

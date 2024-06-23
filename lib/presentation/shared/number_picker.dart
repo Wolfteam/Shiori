@@ -218,9 +218,10 @@ class _NumberPickerState extends State<NumberPicker> {
   }
 
   int _intValueFromIndex(int index) {
-    index -= additionalItemsOnEachSide;
-    index %= itemCount;
-    return widget.minValue + index * widget.step;
+    int i = index;
+    i -= additionalItemsOnEachSide;
+    i %= itemCount;
+    return widget.minValue + i * widget.step;
   }
 
   void _maybeCenterValue() {

@@ -74,15 +74,15 @@ PODS:
     - FlutterMacOS
   - permission_handler_apple (9.3.0):
     - Flutter
-  - purchases_flutter (6.28.0):
+  - purchases_flutter (6.29.3):
     - Flutter
-    - PurchasesHybridCommon (= 10.5.0)
-  - PurchasesHybridCommon (10.5.0):
-    - RevenueCat (= 4.41.0)
-  - rate_my_app (2.1.0):
+    - PurchasesHybridCommon (= 10.8.0)
+  - PurchasesHybridCommon (10.8.0):
+    - RevenueCat (= 4.42.0)
+  - rate_my_app (2.2.0):
     - Flutter
     - FlutterMacOS
-  - RevenueCat (4.41.0)
+  - RevenueCat (4.42.0)
   - SDWebImage (5.18.3):
     - SDWebImage/Core (= 5.18.3)
   - SDWebImage/Core (5.18.3)
@@ -192,17 +192,17 @@ SPEC CHECKSUMS:
   flutter_inappwebview_ios: 97215cf7d4677db55df76782dbd2930c5e1c1ea0
   flutter_local_notifications: 4cde75091f6327eb8517fa068a0a5950212d2086
   flutter_timezone: ffb07bdad3c6276af8dada0f11978d8a1f8a20bb
-  fluttertoast: 9f2f8e81bb5ce18facb9748d7855bf5a756fe3db
+  fluttertoast: e9a18c7be5413da53898f660530c56f35edfba9c
   image_gallery_saver: cb43cc43141711190510e92c460eb1655cd343cb
-  integration_test: 13825b8a9334a850581300559b8839134b124670
+  integration_test: ce0a3ffa1de96d1a89ca0ac26fca7ea18a749ef4
   OrderedSet: aaeb196f7fef5a9edf55d89760da9176ad40b93c
   package_info_plus: 58f0028419748fad15bf008b270aaa8e54380b1c
   path_provider_foundation: 3784922295ac71e43754bd15e0653ccfd36a147c
   permission_handler_apple: 9878588469a2b0d0fc1e048d9f43605f92e6cec2
-  purchases_flutter: 374d09772f892e73f19bec6fb91eecd4dd21b23d
-  PurchasesHybridCommon: 3ada52b4b1214b1bdcc499812d061580b85b1b10
-  rate_my_app: f6fe6c5082992a59a29573663ed0484397abe9cc
-  RevenueCat: 1e864e3b26f3f22ca067dd8578da8123030e6774
+  purchases_flutter: 71bcb09c0ef69612abe998ab895277421e85e968
+  PurchasesHybridCommon: dff07d838f74ac859a6ce20f0fbee527ba61e035
+  rate_my_app: cd3e1c44d12f387482698ffaf6ea9bd669a69b94
+  RevenueCat: 39f2fbf5eda66f0f87bb72329406f45488f6916e
   SDWebImage: 96e0c18ef14010b7485210e92fac888587ebb958
   share_plus: 8875f4f2500512ea181eef553c3e27dba5135aad
   shared_preferences_foundation: b4c3b4cddf1c21f02770737f147a3f5da9d39695

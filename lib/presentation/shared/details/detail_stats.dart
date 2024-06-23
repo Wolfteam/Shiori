@@ -101,7 +101,7 @@ class _StatsDialogState extends State<StatsDialog> {
     final mq = MediaQuery.of(context);
     final int itemCountConstraint = (_useTableLayout ? widget.stats.length : _current.values.length) + 1;
     final BoxConstraints dialogBoxConstraints = mq.getDialogBoxConstraints(itemCountConstraint);
-    print(dialogBoxConstraints.maxWidth * 0.6);
+
     return AlertDialog(
       title: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,

@@ -34,8 +34,6 @@ class HorizontalBarChart extends StatelessWidget {
 
   final double barWidth;
 
-  final Color? tooltipColor;
-
   final int bottomTextMaxLength;
   final int leftTextMaxLength;
 
@@ -52,17 +50,16 @@ class HorizontalBarChart extends StatelessWidget {
     this.minX = 0,
     this.minY = 0,
     this.barWidth = 4,
-    this.tooltipColor,
     this.bottomTextMaxLength = 10,
     this.leftTextMaxLength = 10,
   });
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
     final points = items.expand((el) => el.points);
     final maxY = points.map((e) => e.y).reduce(max) + 1;
     final maxX = points.map((e) => e.x).reduce(max);
+    final (TextStyle _, BoxDecoration tooltipBoxDecoration, EdgeInsets tooltipPadding) = Styles.getTooltipStyling(context);
     return Padding(
       padding: Styles.edgeInsetAll10,
       child: LineChart(
@@ -78,9 +75,10 @@ class HorizontalBarChart extends StatelessWidget {
               }
             },
             touchTooltipData: LineTouchTooltipData(
-              getTooltipColor: (spot) => tooltipColor ?? theme.colorScheme.background,
+              getTooltipColor: (spot) => tooltipBoxDecoration.color!,
               fitInsideHorizontally: true,
               getTooltipItems: getTooltipItems ?? defaultLineTooltipItem,
+              tooltipPadding: tooltipPadding,
             ),
           ),
           gridData: const FlGridData(show: false),
