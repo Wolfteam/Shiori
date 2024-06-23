@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.8.4+170 (23/06/2024)
+- Maintenance update
+
 ## 1.8.0+162 (13/02/2024)
 - UI improvements
 - Performance improvements
