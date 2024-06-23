@@ -25,7 +25,7 @@ dependencies:
   device_info_plus: ^10.1.0
   devicelocale: ^0.7.1
   envied: ^0.5.4+1
-  file_picker: ^8.0.3
+  file_picker: ^8.0.5
   fk_user_agent: ^2.1.0
   fl_chart: ^0.68.0
   flutter:
@@ -36,7 +36,7 @@ dependencies:
   flutter_local_notifications: ^17.1.2
   flutter_localizations:
     sdk: flutter
-  flutter_markdown: ^0.7.1
+  flutter_markdown: ^0.7.2+1
   flutter_slidable: ^3.1.0
   flutter_timezone: ^1.0.8
   fluttertoast: ^8.2.6
