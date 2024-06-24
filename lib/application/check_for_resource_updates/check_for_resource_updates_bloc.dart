@@ -54,6 +54,7 @@ class CheckForResourceUpdatesBloc extends Bloc<CheckForResourceUpdatesEvent, Che
       targetResourceVersion: result.resourceVersion == _settingsService.resourceVersion || result.type != AppResourceUpdateResultType.updatesAvailable
           ? null
           : result.resourceVersion,
+      downloadTotalSize: result.downloadTotalSize,
       noResourcesHaveBeenDownloaded: _settingsService.noResourcesHasBeenDownloaded,
     );
   }

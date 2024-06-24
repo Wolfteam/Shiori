@@ -9,7 +9,10 @@ class SplashEvent with _$SplashEvent {
 
   const factory SplashEvent.applyUpdate({required CheckForUpdatesResult result}) = _ApplyUpdate;
 
-  const factory SplashEvent.progressChanged({required double progress}) = _ProgressChanged;
+  const factory SplashEvent.progressChanged({
+    required double progress,
+    required int downloadedBytes,
+  }) = _ProgressChanged;
 
   const factory SplashEvent.updateCompleted({
     required bool applied,

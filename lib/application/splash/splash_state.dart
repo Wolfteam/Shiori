@@ -16,5 +16,6 @@ class SplashState with _$SplashState {
     required bool canSkipUpdate,
     CheckForUpdatesResult? result,
     @Default(0) double progress,
+    @Default(0) int downloadedBytes,
   }) = _LoadedState;
 }

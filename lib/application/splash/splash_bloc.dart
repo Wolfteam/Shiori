@@ -113,7 +113,7 @@ class SplashBloc extends Bloc<SplashEvent, SplashState> {
             result.resourceVersion,
             result.jsonFileKeyName,
             keyNames: result.keyNames,
-            onProgress: (value) => add(SplashEvent.progressChanged(progress: value)),
+            onProgress: (progress, downloadedBytes) => add(SplashEvent.progressChanged(progress: progress, downloadedBytes: downloadedBytes)),
           )
           .asStream();
 
@@ -130,16 +130,19 @@ class SplashBloc extends Bloc<SplashEvent, SplashState> {
       }
 
       final currentState = state as _LoadedState;
-      if (event.progress >= 100) {
-        yield currentState.copyWith(progress: 100);
+      final double progress = event.progress;
+      final int downloadedBytes = event.downloadedBytes;
+      final int downloadTotalSize = currentState.result!.downloadTotalSize!;
+      if (progress >= 100) {
+        yield currentState.copyWith(progress: 100, downloadedBytes: downloadTotalSize);
         return;
       }
 
-      final diff = (event.progress - currentState.progress).abs();
+      final diff = (progress - currentState.progress).abs();
       if (diff < 1) {
         return;
       }
-      yield currentState.copyWith(progress: event.progress);
+      yield currentState.copyWith(progress: progress, downloadedBytes: downloadedBytes);
     }
 
     if (event is _UpdateCompleted) {
