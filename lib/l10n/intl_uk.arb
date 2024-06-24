@@ -499,5 +499,6 @@
   "used": "Використано",
   "showMaterialUsage": "Показати використання матеріалів",
   "version": "Версії",
-  "reruns": "Рерани"
+  "reruns": "Рерани",
+  "downloadSize": "Download size: {value}"
 }

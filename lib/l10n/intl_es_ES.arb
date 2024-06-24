@@ -499,5 +499,6 @@
   "used": "Usado",
   "showMaterialUsage": "Mostrar uso de materiales",
   "version": "Versión",
-  "reruns": "Reruns"
+  "reruns": "Reruns",
+  "downloadSize": "Tamaño de descarga: {value}"
 }
