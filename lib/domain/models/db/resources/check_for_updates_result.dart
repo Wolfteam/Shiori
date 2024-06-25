@@ -9,6 +9,7 @@ class CheckForUpdatesResult with _$CheckForUpdatesResult {
     required AppResourceUpdateResultType type,
     required int resourceVersion,
     String? jsonFileKeyName,
+    int? downloadTotalSize,
     @Default(<String>[]) List<String> keyNames,
   }) = _CheckForUpdatesResult;
 }

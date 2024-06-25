@@ -4,6 +4,7 @@ import 'package:shiori/application/bloc.dart';
 import 'package:shiori/domain/assets.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/models/models.dart';
+import 'package:shiori/domain/utils/format_utils.dart';
 import 'package:shiori/generated/l10n.dart';
 import 'package:shiori/injection.dart';
 import 'package:shiori/presentation/shared/dialogs/confirm_dialog.dart';
@@ -78,8 +79,16 @@ class SplashPage extends StatelessWidget {
           return;
         }
         final s = S.of(context);
-        final msg =
-            '${s.startingFromVersionUpdateMsg}\n\n${s.internetRequiredToUpdate}\n\n${s.doNotCloseAppWhileUpdating}\n\n${s.youCanSkipFirstResourceDownloadMsg}';
+        String msg = s.startingFromVersionUpdateMsg;
+        msg += '\n\n';
+        msg += s.doNotCloseAppWhileUpdating;
+        msg += '\n\n';
+        msg += s.youCanSkipFirstResourceDownloadMsg;
+        msg += '\n\n';
+        if (result!.downloadTotalSize != null && result.downloadTotalSize! > 0) {
+          msg += s.downloadSize(FormatUtils.formatBytes(result.downloadTotalSize!));
+        }
+
         showDialog<bool?>(
           context: context,
           barrierDismissible: false,
@@ -87,7 +96,7 @@ class SplashPage extends StatelessWidget {
             title: s.information,
             content: msg,
             okText: s.applyUpdate,
-            onOk: () => _applyUpdate(result!, context),
+            onOk: () => _applyUpdate(result, context),
             cancelText: s.later,
             onCancel: () => _initMain(AppResourceUpdateResultType.firstInstallSkipped, context),
           ),
@@ -258,11 +267,27 @@ class _Updating extends StatelessWidget {
               border: Border.all(color: Styles.paimonColor, strokeAlign: BorderSide.strokeAlignCenter),
             ),
             child: BlocBuilder<SplashBloc, SplashState>(
-              builder: (context, state) => LinearProgressIndicator(
-                color: Colors.white,
-                valueColor: const AlwaysStoppedAnimation<Color>(Colors.white),
-                backgroundColor: Colors.black,
-                value: state.maybeMap(loaded: (state) => state.progress / 100, orElse: () => null),
+              builder: (context, state) => Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  state.maybeMap(
+                    loaded: (state) => state.result?.downloadTotalSize == null
+                        ? const SizedBox.shrink()
+                        : Text(
+                            '${FormatUtils.formatBytes(state.downloadedBytes)} / ${FormatUtils.formatBytes(state.result!.downloadTotalSize!)}',
+                            textAlign: TextAlign.center,
+                            style: theme.textTheme.labelMedium!.copyWith(color: Colors.white),
+                          ),
+                    orElse: () => const SizedBox.shrink(),
+                  ),
+                  LinearProgressIndicator(
+                    color: Colors.white,
+                    valueColor: const AlwaysStoppedAnimation<Color>(Colors.white),
+                    backgroundColor: Colors.black,
+                    value: state.maybeMap(loaded: (state) => state.progress / 100, orElse: () => null),
+                  ),
+                ],
               ),
             ),
           ),

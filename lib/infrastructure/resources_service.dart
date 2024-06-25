@@ -1,12 +1,14 @@
 import 'dart:convert';
 import 'dart:io';
 
+import 'package:darq/darq.dart';
 import 'package:flutter/foundation.dart';
 import 'package:path/path.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:shiori/domain/assets.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/extensions/string_extensions.dart';
+import 'package:shiori/domain/models/dtos.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/api_service.dart';
 import 'package:shiori/domain/services/logging_service.dart';
@@ -277,7 +279,9 @@ class ResourceServiceImpl implements ResourceService {
       final targetResourceVersion = apiResponse.result!.targetResourceVersion;
       if (currentResourcesVersion == targetResourceVersion) {
         return CheckForUpdatesResult(type: AppResourceUpdateResultType.noUpdatesAvailable, resourceVersion: currentResourcesVersion);
-      } else if (currentResourcesVersion > targetResourceVersion) {
+      }
+
+      if (currentResourcesVersion > targetResourceVersion) {
         _loggingService.warning(
           runtimeType,
           'checkForUpdates: Server returned a lower resource version. Current = $currentResourcesVersion -- Target = $targetResourceVersion',
@@ -293,11 +297,13 @@ class ResourceServiceImpl implements ResourceService {
         return CheckForUpdatesResult(type: AppResourceUpdateResultType.noUpdatesAvailable, resourceVersion: currentResourcesVersion);
       }
 
+      final ResourceDiffResponseDto result = apiResponse.result!;
       return CheckForUpdatesResult(
         type: AppResourceUpdateResultType.updatesAvailable,
         resourceVersion: targetResourceVersion,
-        jsonFileKeyName: apiResponse.result!.jsonFileKeyName,
-        keyNames: apiResponse.result!.keyNames,
+        jsonFileKeyName: result.jsonFileKeyName,
+        downloadTotalSize: result.downloadTotalSize,
+        keyNames: result.keyNames,
       );
     } catch (e, s) {
       _loggingService.error(runtimeType, 'checkForUpdates: Unknown error', e, s);
@@ -334,7 +340,9 @@ class ResourceServiceImpl implements ResourceService {
 
     if (_settingsService.resourceVersion == targetResourceVersion) {
       throw Exception('The provided targetResourceVersion = $targetResourceVersion == ${_settingsService.resourceVersion}');
-    } else if (_settingsService.resourceVersion > targetResourceVersion) {
+    }
+
+    if (_settingsService.resourceVersion > targetResourceVersion) {
       throw Exception('The provided targetResourceVersion = $targetResourceVersion < ${_settingsService.resourceVersion}');
     }
 
@@ -351,9 +359,9 @@ class ResourceServiceImpl implements ResourceService {
         _loggingService.info(runtimeType, 'downloadAndApplyUpdates: Downloading main files...');
         //we need to download the whole file
         final destMainFilePath = join(_tempPath, _cleanKeyName(jsonFileKeyName!));
-        final downloaded = await _apiService.downloadAsset(jsonFileKeyName, destMainFilePath);
+        final int? downloadedBytes = await _apiService.downloadAsset(jsonFileKeyName, destMainFilePath);
 
-        if (!downloaded) {
+        if (downloadedBytes == null) {
           _loggingService.error(runtimeType, 'downloadAndApplyUpdates: Could not download the main file');
           await _deleteDirectoryIfExists(_tempPath);
           return false;
@@ -430,6 +438,7 @@ class ResourceServiceImpl implements ResourceService {
     int itemsPerBatch = maxItemsPerBatch;
     int processedItems = 0;
     int retryAttempts = 0;
+    int downloadedBytes = 0;
     final keyNamesCopy = [...keyNames];
     while (keyNamesCopy.isNotEmpty) {
       final taken = keyNamesCopy.take(itemsPerBatch).toList();
@@ -445,10 +454,11 @@ class ResourceServiceImpl implements ResourceService {
           if (retryAttempts > 0) {
             await Future.delayed(const Duration(seconds: 1));
           }
-          await Future.wait(taken.map((e) => _downloadAsset(destPaths[_cleanKeyName(e)]!, e)).toList());
+          final List<int> gotBytes = await Future.wait(taken.map((e) => _downloadAsset(destPaths[_cleanKeyName(e)]!, e)).toList());
           processedItems += taken.length;
+          downloadedBytes += gotBytes.sum();
           final progress = processedItems * 100 / total;
-          onProgress?.call(progress);
+          onProgress?.call(progress, downloadedBytes);
         }
       } catch (e, s) {
         _loggingService.error(runtimeType, '_downloadAssets: One or more keyNames failed... RetryAttempts = $retryAttempts');
@@ -475,11 +485,13 @@ class ResourceServiceImpl implements ResourceService {
     return true;
   }
 
-  Future<void> _downloadAsset(String destPath, String keyName) async {
-    final downloaded = await _apiService.downloadAsset(keyName, destPath);
-    if (!downloaded) {
+  Future<int> _downloadAsset(String destPath, String keyName) async {
+    final contentLength = await _apiService.downloadAsset(keyName, destPath);
+    if (contentLength == null) {
       throw Exception('Download of keyName = $keyName failed');
     }
+
+    return contentLength;
   }
 
   Future<void> _afterMainFileWasProcessed(String tempFolder, String assetsFolder, {bool deleteAssetsFolder = true}) async {

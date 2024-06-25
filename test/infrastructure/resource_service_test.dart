@@ -447,7 +447,7 @@ void main() {
       final networkService = MockNetworkService();
       when(networkService.isInternetAvailable()).thenAnswer((_) => Future.value(true));
       final apiService = MockApiService();
-      when(apiService.downloadAsset(allJson, path.join(tempDir.path, allJson))).thenAnswer((_) => Future.value(false));
+      when(apiService.downloadAsset(allJson, path.join(tempDir.path, allJson))).thenAnswer((_) => Future.value());
 
       final service = ResourceServiceImpl(
         MockLoggingService(),
@@ -479,9 +479,9 @@ void main() {
         'characters/ganyu$imageFileExtension',
       ];
 
-      when(apiService.downloadAsset(keyNames[0], path.join(tempDir.path, keyNames[0]))).thenAnswer((_) => Future.value(true));
-      when(apiService.downloadAsset(keyNames[1], path.join(tempDir.path, keyNames[1]))).thenAnswer((_) => Future.value(true));
-      when(apiService.downloadAsset(keyNames[2], path.join(tempDir.path, keyNames[2]))).thenAnswer((_) => Future.value(false));
+      when(apiService.downloadAsset(keyNames[0], path.join(tempDir.path, keyNames[0]))).thenAnswer((_) => Future.value(1));
+      when(apiService.downloadAsset(keyNames[1], path.join(tempDir.path, keyNames[1]))).thenAnswer((_) => Future.value(2));
+      when(apiService.downloadAsset(keyNames[2], path.join(tempDir.path, keyNames[2]))).thenAnswer((_) => Future.value());
 
       await File(path.join(path.join(tempDir.path, 'keqing$imageFileExtension'))).create();
       await File(path.join(path.join(tempDir.path, 'kamisato_ayaka$imageFileExtension'))).create();

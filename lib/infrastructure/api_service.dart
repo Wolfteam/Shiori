@@ -96,7 +96,7 @@ class ApiServiceImpl implements ApiService {
   }
 
   @override
-  Future<bool> downloadAsset(String keyName, String destPath) async {
+  Future<int?> downloadAsset(String keyName, String destPath) async {
     try {
       // _loggingService.debug(runtimeType, '_downloadFile: Downloading file = $keyName...');
       final file = File(destPath);
@@ -106,20 +106,21 @@ class ApiServiceImpl implements ApiService {
 
       final url = '${Env.assetsBaseUrl}/$keyName';
       final response = await _httpClient.get(Uri.parse(url), headers: _getCommonApiHeaders());
+
       if (!_isSuccessStatusCode(response.statusCode)) {
         _loggingService.warning(
           runtimeType,
           'downloadAsset: Got status code = ${response.statusCode}. RP = ${response.reasonPhrase ?? na}',
         );
-        return false;
+        return null;
       }
 
       await file.writeAsBytes(response.bodyBytes);
       // _loggingService.debug(runtimeType, '_downloadFile: File = $keyName was successfully downloaded');
-      return true;
+      return response.contentLength;
     } catch (e, s) {
       _handleError('downloadAsset', e, s);
-      return false;
+      return null;
     }
   }
 
