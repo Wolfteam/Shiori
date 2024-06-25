@@ -45,8 +45,15 @@ void main() {
     int resourceVersion = defaultResourcesVersion,
     String? jsonFileName,
     List<String> keyNames = const <String>[],
-  }) =>
-      CheckForUpdatesResult(resourceVersion: resourceVersion, type: type, jsonFileKeyName: jsonFileName, keyNames: keyNames);
+  }) {
+    return CheckForUpdatesResult(
+      resourceVersion: resourceVersion,
+      type: type,
+      jsonFileKeyName: jsonFileName,
+      keyNames: keyNames,
+      downloadTotalSize: 100,
+    );
+  }
 
   test('Initial state', () => expect(getBloc(MockResourceService()).state, const SplashState.loading()));
 
@@ -409,14 +416,15 @@ void main() {
       ),
       build: () => getBloc(MockResourceService()),
       act: (bloc) => bloc
-        ..add(const SplashEvent.progressChanged(progress: 10))
-        ..add(const SplashEvent.progressChanged(progress: 50))
-        ..add(const SplashEvent.progressChanged(progress: 100)),
+        ..add(const SplashEvent.progressChanged(progress: 10, downloadedBytes: 10))
+        ..add(const SplashEvent.progressChanged(progress: 50, downloadedBytes: 50))
+        ..add(const SplashEvent.progressChanged(progress: 100, downloadedBytes: 100)),
       expect: () => [
         SplashState.loaded(
           updateResultType: AppResourceUpdateResultType.updatesAvailable,
           language: language,
           progress: 10,
+          downloadedBytes: 10,
           result: getUpdateResult(AppResourceUpdateResultType.updatesAvailable),
           noResourcesHasBeenDownloaded: false,
           isLoading: false,
@@ -430,6 +438,7 @@ void main() {
           updateResultType: AppResourceUpdateResultType.updatesAvailable,
           language: language,
           progress: 50,
+          downloadedBytes: 50,
           result: getUpdateResult(AppResourceUpdateResultType.updatesAvailable),
           noResourcesHasBeenDownloaded: false,
           isLoading: false,
@@ -443,6 +452,7 @@ void main() {
           updateResultType: AppResourceUpdateResultType.updatesAvailable,
           language: language,
           progress: 100,
+          downloadedBytes: 100,
           result: getUpdateResult(AppResourceUpdateResultType.updatesAvailable),
           noResourcesHasBeenDownloaded: false,
           isLoading: false,
@@ -471,13 +481,14 @@ void main() {
       ),
       build: () => getBloc(MockResourceService()),
       act: (bloc) => bloc
-        ..add(const SplashEvent.progressChanged(progress: 100))
-        ..add(const SplashEvent.progressChanged(progress: 110)),
+        ..add(const SplashEvent.progressChanged(progress: 100, downloadedBytes: 100))
+        ..add(const SplashEvent.progressChanged(progress: 110, downloadedBytes: 110)),
       expect: () => [
         SplashState.loaded(
           updateResultType: AppResourceUpdateResultType.updatesAvailable,
           language: language,
           progress: 100,
+          downloadedBytes: 100,
           result: getUpdateResult(AppResourceUpdateResultType.updatesAvailable),
           noResourcesHasBeenDownloaded: false,
           isLoading: false,
@@ -506,13 +517,14 @@ void main() {
       ),
       build: () => getBloc(MockResourceService()),
       act: (bloc) => bloc
-        ..add(const SplashEvent.progressChanged(progress: 10))
-        ..add(const SplashEvent.progressChanged(progress: 10.1)),
+        ..add(const SplashEvent.progressChanged(progress: 10, downloadedBytes: 10))
+        ..add(const SplashEvent.progressChanged(progress: 10.1, downloadedBytes: 10)),
       expect: () => [
         SplashState.loaded(
           updateResultType: AppResourceUpdateResultType.updatesAvailable,
           language: language,
           progress: 10,
+          downloadedBytes: 10,
           result: getUpdateResult(AppResourceUpdateResultType.updatesAvailable),
           noResourcesHasBeenDownloaded: false,
           isLoading: false,
@@ -540,7 +552,7 @@ void main() {
         needsLatestAppVersionOnFirstInstall: false,
       ),
       build: () => getBloc(MockResourceService()),
-      act: (bloc) => bloc.add(const SplashEvent.progressChanged(progress: -1)),
+      act: (bloc) => bloc.add(const SplashEvent.progressChanged(progress: -1, downloadedBytes: 0)),
       errors: () => [isA<Exception>()],
     );
   });
