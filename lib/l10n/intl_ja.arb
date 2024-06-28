@@ -500,5 +500,5 @@
   "showMaterialUsage": "材料の使用量を表示",
   "version": "バージョン",
   "reruns": "復刻数",
-  "downloadSize": "Download size: {value}"
+  "downloadSize": "ダウンロードサイズ: {value}"
 }
