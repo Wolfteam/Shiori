@@ -1,12 +1,4 @@
 PODS:
-  - AppCenter (5.0.4):
-    - AppCenter/Analytics (= 5.0.4)
-    - AppCenter/Crashes (= 5.0.4)
-  - AppCenter/Analytics (5.0.4):
-    - AppCenter/Core
-  - AppCenter/Core (5.0.4)
-  - AppCenter/Crashes (5.0.4):
-    - AppCenter/Core
   - device_info_plus (0.0.1):
     - Flutter
   - devicelocale (0.0.1):
@@ -101,7 +93,6 @@ PODS:
     - Flutter
 
 DEPENDENCIES:
-  - AppCenter
   - device_info_plus (from `.symlinks/plugins/device_info_plus/ios`)
   - devicelocale (from `.symlinks/plugins/devicelocale/ios`)
   - file_picker (from `.symlinks/plugins/file_picker/ios`)
@@ -126,7 +117,6 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
-    - AppCenter
     - DKImagePickerController
     - DKPhotoGallery
     - OrderedSet
@@ -181,7 +171,6 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/wakelock_plus/ios"
 
 SPEC CHECKSUMS:
-  AppCenter: 85c92db0759d2792a65eb61d6842d2e86611a49a
   device_info_plus: 97af1d7e84681a90d0693e63169a5d50e0839a0d
   devicelocale: 35ba84dc7f45f527c3001535d8c8d104edd5d926
   DKImagePickerController: b512c28220a2b8ac7419f21c491fc8534b7601ac
@@ -212,6 +201,6 @@ SPEC CHECKSUMS:
   url_launcher_ios: 6116280ddcfe98ab8820085d8d76ae7449447586
   wakelock_plus: 78ec7c5b202cab7761af8e2b2b3d0671be6c4ae1
 
-PODFILE CHECKSUM: a1eaf986c30d5a84309bbcd4434682ef102516a3
+PODFILE CHECKSUM: 4e8f8b2be68aeea4c0d5beb6ff1e79fface1d048
 
 COCOAPODS: 1.15.2
