@@ -6,13 +6,9 @@ part 'env.g.dart';
 class Env {
   static const int minResourceVersion = 44;
 
-  static const String androidAppCenterKey = CommonEnv.androidAppCenterKey;
   static const String androidPurchasesKey = CommonEnv.androidPurchasesKey;
 
   static const String iosPurchasesKey = CommonEnv.iosPurchasesKey;
-  static const String iosAppCenterKey = CommonEnv.iosAppCenterKey;
-
-  static const String macosAppCenterKey = CommonEnv.macosAppCenterKey;
 
   static const String commonHeaderName = CommonEnv.commonHeaderName;
   static const String apiHeaderName = CommonEnv.apiHeaderName;
@@ -56,13 +52,6 @@ abstract class ProdEnv {
 
 @Envied(path: '.env.common', name: 'CommonEnv')
 abstract class CommonEnv {
-  @EnviedField(varName: 'ANDROID_APP_CENTER_KEY')
-  static const String androidAppCenterKey = _CommonEnv.androidAppCenterKey;
-  @EnviedField(varName: 'IOS_APP_CENTER_KEY')
-  static const String iosAppCenterKey = _CommonEnv.iosAppCenterKey;
-  @EnviedField(varName: 'MACOS_APP_CENTER_KEY')
-  static const String macosAppCenterKey = _CommonEnv.macosAppCenterKey;
-
   @EnviedField(varName: 'ANDROID_PURCHASES_KEY')
   static const String androidPurchasesKey = _CommonEnv.androidPurchasesKey;
   @EnviedField(varName: 'IOS_PURCHASES_KEY')
