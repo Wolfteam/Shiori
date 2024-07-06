@@ -1,12 +1,4 @@
 PODS:
-  - AppCenter (5.0.4):
-    - AppCenter/Analytics (= 5.0.4)
-    - AppCenter/Crashes (= 5.0.4)
-  - AppCenter/Analytics (5.0.4):
-    - AppCenter/Core
-  - AppCenter/Core (5.0.4)
-  - AppCenter/Crashes (5.0.4):
-    - AppCenter/Core
   - device_info_plus (0.0.1):
     - FlutterMacOS
   - devicelocale (0.0.1):
@@ -47,7 +39,6 @@ PODS:
     - FlutterMacOS
 
 DEPENDENCIES:
-  - AppCenter
   - device_info_plus (from `Flutter/ephemeral/.symlinks/plugins/device_info_plus/macos`)
   - devicelocale (from `Flutter/ephemeral/.symlinks/plugins/devicelocale/macos`)
   - flutter_inappwebview_macos (from `Flutter/ephemeral/.symlinks/plugins/flutter_inappwebview_macos/macos`)
@@ -66,7 +57,6 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
-    - AppCenter
     - OrderedSet
     - PurchasesHybridCommon
     - RevenueCat
@@ -104,7 +94,6 @@ EXTERNAL SOURCES:
     :path: Flutter/ephemeral/.symlinks/plugins/window_size/macos
 
 SPEC CHECKSUMS:
-  AppCenter: 85c92db0759d2792a65eb61d6842d2e86611a49a
   device_info_plus: ce1b7762849d3ec103d0e0517299f2db7ad60720
   devicelocale: 9f0f36ac651cabae2c33f32dcff4f32b61c38225
   flutter_inappwebview_macos: 9600c9df9fdb346aaa8933812009f8d94304203d
@@ -124,6 +113,6 @@ SPEC CHECKSUMS:
   wakelock_plus: 4783562c9a43d209c458cb9b30692134af456269
   window_size: 339dafa0b27a95a62a843042038fa6c3c48de195
 
-PODFILE CHECKSUM: c5255be90013e27738ca128c64213ada7f9ac560
+PODFILE CHECKSUM: 65ce44673a3ebb8b726cb7a0dbab448690e2b1ca
 
 COCOAPODS: 1.15.2
