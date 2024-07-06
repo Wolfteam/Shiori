@@ -6,6 +6,7 @@ import 'package:shiori/domain/services/persistence/custom_builds_data_service.da
 import 'package:shiori/domain/services/persistence/game_codes_data_service.dart';
 import 'package:shiori/domain/services/persistence/inventory_data_service.dart';
 import 'package:shiori/domain/services/persistence/notifications_data_service.dart';
+import 'package:shiori/domain/services/persistence/telemetry_data_service.dart';
 import 'package:shiori/domain/services/persistence/tier_list_data_service.dart';
 import 'package:shiori/domain/services/persistence/wish_simulator_data_service.dart';
 
@@ -23,6 +24,8 @@ abstract class DataService {
   TierListDataService get tierList;
 
   WishSimulatorDataService get wishSimulator;
+
+  TelemetryDataService get telemetry;
 
   Future<void> init({String dir = 'shiori_data'});
 

@@ -11,6 +11,7 @@ import 'package:shiori/domain/services/persistence/custom_builds_data_service.da
 import 'package:shiori/domain/services/persistence/game_codes_data_service.dart';
 import 'package:shiori/domain/services/persistence/inventory_data_service.dart';
 import 'package:shiori/domain/services/persistence/notifications_data_service.dart';
+import 'package:shiori/domain/services/persistence/telemetry_data_service.dart';
 import 'package:shiori/domain/services/persistence/tier_list_data_service.dart';
 import 'package:shiori/domain/services/persistence/wish_simulator_data_service.dart';
 import 'package:shiori/domain/services/resources_service.dart';
@@ -19,6 +20,7 @@ import 'package:shiori/infrastructure/persistence/custom_builds_data_service.dar
 import 'package:shiori/infrastructure/persistence/game_codes_data_service.dart';
 import 'package:shiori/infrastructure/persistence/inventory_data_service.dart';
 import 'package:shiori/infrastructure/persistence/notifications_data_service.dart';
+import 'package:shiori/infrastructure/persistence/telemetry_data_service.dart';
 import 'package:shiori/infrastructure/persistence/tier_list_data_service.dart';
 import 'package:shiori/infrastructure/persistence/wish_simulator_data_service.dart';
 import 'package:synchronized/synchronized.dart';
@@ -30,6 +32,7 @@ class DataServiceImpl implements DataService {
   final GameCodesDataService _gameCodes;
   final TierListDataService _tierList;
   final WishSimulatorDataService _wishSimulator;
+  final TelemetryDataService _telemetry;
 
   late final CalculatorAscMaterialsDataService _calculator;
 
@@ -58,13 +61,17 @@ class DataServiceImpl implements DataService {
   @override
   WishSimulatorDataService get wishSimulator => _wishSimulator;
 
+  @override
+  TelemetryDataService get telemetry => _telemetry;
+
   DataServiceImpl(GenshinService genshinService, CalculatorAscMaterialsService calculatorService, ResourceService resourceService)
       : _inventory = InventoryDataServiceImpl(genshinService),
         _builds = CustomBuildsDataServiceImpl(genshinService, resourceService),
         _notifications = NotificationsDataServiceImpl(genshinService),
         _gameCodes = GameCodesDataServiceImpl(genshinService, resourceService),
         _tierList = TierListDataServiceImpl(genshinService, resourceService),
-        _wishSimulator = WishSimulatorDataServiceImpl() {
+        _wishSimulator = WishSimulatorDataServiceImpl(),
+        _telemetry = TelemetryDataServiceImpl() {
     _calculator = CalculatorAscMaterialsDataServiceImpl(genshinService, calculatorService, _inventory, resourceService);
   }
 
@@ -77,6 +84,7 @@ class DataServiceImpl implements DataService {
       _gameCodes.init(),
       _tierList.init(),
       _wishSimulator.init(),
+      _telemetry.init(),
     ]);
   }
 
@@ -121,6 +129,7 @@ class DataServiceImpl implements DataService {
         _gameCodes.deleteThemAll(),
         _tierList.deleteThemAll(),
         _wishSimulator.deleteThemAll(),
+        _telemetry.deleteThemAll(),
       ]);
     });
   }
@@ -174,5 +183,7 @@ class DataServiceImpl implements DataService {
     Hive.registerAdapter(CustomBuildArtifactAdapter());
     Hive.registerAdapter(CustomBuildNoteAdapter());
     Hive.registerAdapter(CustomBuildTeamCharacterAdapter());
+    //Telemetry
+    Hive.registerAdapter(TelemetryAdapter());
   }
 }
