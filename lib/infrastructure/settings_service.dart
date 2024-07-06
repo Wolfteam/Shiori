@@ -5,7 +5,6 @@ import 'package:shiori/domain/app_constants.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/extensions/string_extensions.dart';
 import 'package:shiori/domain/models/models.dart';
-import 'package:shiori/domain/services/logging_service.dart';
 import 'package:shiori/domain/services/settings_service.dart';
 
 class SettingsServiceImpl extends SettingsService {
@@ -28,7 +27,6 @@ class SettingsServiceImpl extends SettingsService {
   bool _initialized = false;
 
   late SharedPreferences _prefs;
-  final LoggingService _logger;
 
   @override
   AppThemeType get appTheme => AppThemeType.values[_prefs.getInt(_appThemeKey)!];
@@ -140,26 +138,21 @@ class SettingsServiceImpl extends SettingsService {
         checkForUpdatesOnStartup: checkForUpdatesOnStartup,
       );
 
-  SettingsServiceImpl(this._logger);
+  SettingsServiceImpl();
 
   @override
   Future<void> init() async {
     if (_initialized) {
-      _logger.info(runtimeType, 'Settings are already initialized!');
       return;
     }
-
-    _logger.info(runtimeType, 'Initializing settings... Getting shared prefs instance...');
 
     _prefs = await SharedPreferences.getInstance();
 
     if (_prefs.get(_firstInstallKey) == null) {
-      _logger.info(runtimeType, 'This is the first install of the app');
       isFirstInstall = true;
     }
 
     if (_prefs.get(_appThemeKey) == null) {
-      _logger.info(runtimeType, 'Setting default light theme');
       appTheme = AppThemeType.light;
     }
 
@@ -168,7 +161,6 @@ class SettingsServiceImpl extends SettingsService {
     }
 
     if (_prefs.get(_accentColorKey) == null) {
-      _logger.info(runtimeType, 'Setting default red accent color');
       accentColor = AppAccentColorType.red;
     }
 
@@ -177,47 +169,38 @@ class SettingsServiceImpl extends SettingsService {
     }
 
     if (_prefs.get(_showCharacterDetailsKey) == null) {
-      _logger.info(runtimeType, 'Character details are shown by default');
       showCharacterDetails = true;
     }
 
     if (_prefs.get(_showWeaponDetailsKey) == null) {
-      _logger.info(runtimeType, 'Weapon details are shown by default');
       showWeaponDetails = true;
     }
 
     if (_prefs.get(_serverResetTimeKey) == null) {
-      _logger.info(runtimeType, 'The server reset time will be ${AppServerResetTimeType.northAmerica} by default');
       serverResetTime = AppServerResetTimeType.northAmerica;
     }
 
     if (_prefs.get(_doubleBackToCloseKey) == null) {
-      _logger.info(runtimeType, 'Double back to close will be set to its default (true)');
       doubleBackToClose = true;
     }
 
     if (_prefs.get(_useOfficialMapKey) == null) {
-      _logger.info(runtimeType, 'Use the official map will be set to its default (true)');
       useOfficialMap = true;
     }
 
     if (_prefs.getBool(_useTwentyFourHoursFormatKey) == null) {
-      _logger.info(runtimeType, 'The default date format will be set to its default (false)');
       useTwentyFourHoursFormat = false;
     }
 
     if (_prefs.getInt(_resourcesVersionKey) == null) {
-      _logger.info(runtimeType, 'The default value for the resource version will be set');
       resourceVersion = -1;
     }
 
     if (_prefs.getBool(_checkForUpdatesOnStartupKey) == null) {
-      _logger.info(runtimeType, 'Check for updates on startup will be set to its default (true)');
       checkForUpdatesOnStartup = true;
     }
 
     _initialized = true;
-    _logger.info(runtimeType, 'Settings were initialized successfully');
   }
 
   @override
@@ -289,29 +272,16 @@ class SettingsServiceImpl extends SettingsService {
 
   Future<AppLanguageType> _getDefaultLangToUse() async {
     try {
-      _logger.info(runtimeType, '_getDefaultLangToUse: Trying to retrieve device lang...');
       final deviceLocale = await Devicelocale.currentAsLocale;
       if (deviceLocale == null) {
-        _logger.info(
-          runtimeType,
-          "_getDefaultLangToUse: Couldn't retrieve the device locale, falling back to english",
-        );
         return AppLanguageType.english;
       }
 
       final appLang = languagesMap.entries.firstWhereOrNull((val) => val.value.code == deviceLocale.languageCode);
       if (appLang == null) {
-        _logger.info(
-          runtimeType,
-          "_getDefaultLangToUse: Couldn't find an appropriate app language for = ${deviceLocale.languageCode}_${deviceLocale.countryCode}, falling back to english",
-        );
         return AppLanguageType.english;
       }
 
-      _logger.info(
-        runtimeType,
-        '_getDefaultLangToUse: Found an appropriate language to use for = ${deviceLocale.languageCode}_${deviceLocale.countryCode}, that is = ${appLang.key}',
-      );
       return appLang.key;
     } catch (e) {
       return AppLanguageType.english;

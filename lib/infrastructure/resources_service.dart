@@ -40,6 +40,7 @@ class ResourceServiceImpl implements ResourceService {
     this.maxItemsPerBatch = 10,
   });
 
+  @override
   Future<void> init() async {
     final dir = await getApplicationSupportDirectory();
 
