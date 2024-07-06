@@ -97,26 +97,24 @@ class DeviceInfoServiceImpl implements DeviceInfoService {
   Future<void> _initForAndroid() async {
     final deviceInfo = DeviceInfoPlugin();
     final info = await deviceInfo.androidInfo;
-    final model = 'Model: ${info.model} --- Device: ${info.device} --- Manufacturer: ${info.manufacturer}';
-    _setDefaultDeviceInfoProps(model, '${info.version.sdkInt}');
+    _setDefaultDeviceInfoProps(info.model, '${info.version.sdkInt}');
     _setOtherDeviceInfoProps(info.isPhysicalDevice);
+    _deviceInfo.putIfAbsent('device', () => info.device);
+    _deviceInfo.putIfAbsent('manufacturer', () => info.manufacturer);
   }
 
   Future<void> _initForIOs() async {
     final deviceInfo = DeviceInfoPlugin();
     final info = await deviceInfo.iosInfo;
-    final model = 'Model: ${info.model} --- Name: ${info.name}';
-    final osVersion = '${info.systemName} : ${info.systemVersion}';
-    _setDefaultDeviceInfoProps(model, osVersion);
+    final osVersion = '${info.systemName}: ${info.systemVersion}';
+    _setDefaultDeviceInfoProps(info.model, osVersion);
     _setOtherDeviceInfoProps(info.isPhysicalDevice);
   }
 
   Future<void> _initForMac() async {
     final deviceInfo = DeviceInfoPlugin();
     final info = await deviceInfo.macOsInfo;
-    final model = 'Model: ${info.model} --- Name: ${info.computerName}';
-    final osVersion = '${info.hostName} : ${info.osRelease}';
-    _setDefaultDeviceInfoProps(model, osVersion);
+    _setDefaultDeviceInfoProps(info.model, info.osRelease);
   }
 
   Future<void> _initVersionTracker() async {
@@ -126,18 +124,18 @@ class DeviceInfoServiceImpl implements DeviceInfoService {
   }
 
   void _setDefaultDeviceInfoProps(String model, String osVersion) {
-    _deviceInfo.putIfAbsent('Model', () => model);
-    _deviceInfo.putIfAbsent('OsVersion', () => osVersion);
-    _deviceInfo.putIfAbsent('AppVersion', () => _versionWithBuildNumber);
-    _deviceInfo.putIfAbsent('PackageName', () => _packageName);
+    _deviceInfo.putIfAbsent('model', () => model);
+    _deviceInfo.putIfAbsent('osVersion', () => osVersion);
+    _deviceInfo.putIfAbsent('appVersion', () => _versionWithBuildNumber);
+    _deviceInfo.putIfAbsent('packageName', () => _packageName);
   }
 
   Future<void> _setOtherDeviceInfoProps(bool? isPhysicalDevice) async {
-    _deviceInfo.putIfAbsent('IsPhysicalDevice', () => '${isPhysicalDevice ?? na}');
+    _deviceInfo.putIfAbsent('isPhysicalDevice', () => '${isPhysicalDevice ?? na}');
     if (Platform.isAndroid || Platform.isIOS) {
       final installationSource = await StoreChecker.getSource;
       _installationSource = installationSource;
-      _deviceInfo.putIfAbsent('InstallationSource', () => installationSource.name);
+      _deviceInfo.putIfAbsent('installationSource', () => installationSource.name);
     }
   }
 }
