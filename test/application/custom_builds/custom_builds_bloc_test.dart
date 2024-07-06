@@ -8,7 +8,6 @@ import 'package:shiori/domain/services/genshin_service.dart';
 import 'package:shiori/infrastructure/infrastructure.dart';
 
 import '../../common.dart';
-import '../../mocks.mocks.dart';
 
 const _dbFolder = 'shiori_custom_builds_bloc_tests';
 
@@ -24,7 +23,7 @@ void main() {
 
   setUpAll(() {
     TestWidgetsFlutterBinding.ensureInitialized();
-    final settingsService = SettingsServiceImpl(MockLoggingService());
+    final settingsService = SettingsServiceImpl();
     final localeService = LocaleServiceImpl(settingsService);
     final resourceService = getResourceService(settingsService);
     genshinService = GenshinServiceImpl(resourceService, localeService);

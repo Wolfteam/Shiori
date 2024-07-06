@@ -32,7 +32,7 @@ void main() {
 
   setUpAll(() {
     TestWidgetsFlutterBinding.ensureInitialized();
-    final settingsService = SettingsServiceImpl(MockLoggingService());
+    final settingsService = SettingsServiceImpl();
     final localeService = LocaleServiceImpl(settingsService);
     resourceService = getResourceService(settingsService);
     genshinService = GenshinServiceImpl(resourceService, localeService);

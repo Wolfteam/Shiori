@@ -25,7 +25,7 @@ void main() {
   setUpAll(() {
     TestWidgetsFlutterBinding.ensureInitialized();
     telemetryService = MockTelemetryService();
-    final settingsService = SettingsServiceImpl(MockLoggingService());
+    final settingsService = SettingsServiceImpl();
     final localeService = LocaleServiceImpl(settingsService);
     resourceService = getResourceService(settingsService);
     genshinService = GenshinServiceImpl(resourceService, localeService);
