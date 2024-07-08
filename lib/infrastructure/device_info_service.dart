@@ -4,6 +4,7 @@ import 'package:device_info_plus/device_info_plus.dart';
 import 'package:fk_user_agent/fk_user_agent.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 import 'package:shiori/domain/app_constants.dart';
+import 'package:shiori/domain/extensions/string_extensions.dart';
 import 'package:shiori/domain/services/device_info_service.dart';
 import 'package:store_checker/store_checker.dart';
 import 'package:version_tracker/version_tracker.dart';
@@ -16,6 +17,7 @@ class DeviceInfoServiceImpl implements DeviceInfoService {
   late bool _versionChanged = false;
   late String _packageName;
   Source? _installationSource;
+  String? _buildNumber;
 
   @override
   Map<String, String> get deviceInfo => _deviceInfo;
@@ -60,6 +62,7 @@ class DeviceInfoServiceImpl implements DeviceInfoService {
       _version = packageInfo.version;
       _packageName = packageInfo.packageName;
       _versionWithBuildNumber = Platform.isWindows ? _version : '$_version+${packageInfo.buildNumber}';
+      _buildNumber = packageInfo.buildNumber;
 
       await _initVersionTracker();
 
@@ -126,8 +129,11 @@ class DeviceInfoServiceImpl implements DeviceInfoService {
   void _setDefaultDeviceInfoProps(String model, String osVersion) {
     _deviceInfo.putIfAbsent('model', () => model);
     _deviceInfo.putIfAbsent('osVersion', () => osVersion);
-    _deviceInfo.putIfAbsent('appVersion', () => _versionWithBuildNumber);
+    _deviceInfo.putIfAbsent('appVersion', () => _version);
     _deviceInfo.putIfAbsent('packageName', () => _packageName);
+    if (_buildNumber.isNotNullEmptyOrWhitespace) {
+      _deviceInfo.putIfAbsent('buildNumber', () => _buildNumber!);
+    }
   }
 
   Future<void> _setOtherDeviceInfoProps(bool? isPhysicalDevice) async {
