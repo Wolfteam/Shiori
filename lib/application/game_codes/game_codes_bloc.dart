@@ -162,7 +162,7 @@ class GameCodesBloc extends Bloc<GameCodesEvent, GameCodesState> {
       return true;
     }
 
-    final isAfter = DateTime.now().isAfter(lastCheckedDate.add(const Duration(hours: 4)));
+    final isAfter = DateTime.now().isAfter(lastCheckedDate.add(const Duration(hours: 3)));
     if (!isAfter) {
       return false;
     }
