@@ -320,7 +320,7 @@ class Injection {
 
     getIt.registerLazySingleton<LoggingService>(() => LoggingServiceImpl(getIt<TelemetryService>(), isLoggingEnabled));
 
-    getIt.registerSingleton<SettingsService>(SettingsServiceImpl());
+    getIt.registerLazySingleton<SettingsService>(() => SettingsServiceImpl(getIt<LoggingService>()));
 
     getIt.registerLazySingleton<ApiService>(() => ApiServiceImpl(getIt<LoggingService>()));
 
