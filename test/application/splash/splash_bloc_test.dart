@@ -37,7 +37,18 @@ void main() {
 
     final localeService = getLocaleService(AppLanguageType.english);
 
-    return SplashBloc(resourceService, settings, deviceInfoService, MockTelemetryService(), localeService);
+    final networkService = MockNetworkService();
+    when(networkService.isInternetAvailable()).thenAnswer((_) => Future.value(false));
+    return SplashBloc(
+      resourceService,
+      settings,
+      deviceInfoService,
+      MockTelemetryService(),
+      MockDataService(),
+      MockApiService(),
+      networkService,
+      localeService,
+    );
   }
 
   CheckForUpdatesResult getUpdateResult(

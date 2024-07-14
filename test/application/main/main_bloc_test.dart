@@ -99,7 +99,6 @@ void main() {
     }
     final dataService = MockDataService();
     final notificationService = MockNotificationService();
-    final apiService = MockApiService();
     final networkService = MockNetworkService();
 
     final charactersBloc = MockCharactersBloc();
@@ -128,8 +127,6 @@ void main() {
       purchaseService,
       dataService,
       notificationService,
-      apiService,
-      networkService,
       charactersBloc,
       weaponsBloc,
       homeBloc,
