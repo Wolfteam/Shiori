@@ -4,18 +4,12 @@ import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:shiori/application/bloc.dart';
 import 'package:shiori/domain/enums/enums.dart';
-import 'package:shiori/domain/extensions/datetime_extensions.dart';
-import 'package:shiori/domain/models/dtos.dart';
-import 'package:shiori/domain/models/dtos/requests/save_app_logs_request_dto.dart';
-import 'package:shiori/domain/models/entities.dart';
 import 'package:shiori/domain/models/models.dart';
-import 'package:shiori/domain/services/api_service.dart';
 import 'package:shiori/domain/services/data_service.dart';
 import 'package:shiori/domain/services/device_info_service.dart';
 import 'package:shiori/domain/services/genshin_service.dart';
 import 'package:shiori/domain/services/locale_service.dart';
 import 'package:shiori/domain/services/logging_service.dart';
-import 'package:shiori/domain/services/network_service.dart';
 import 'package:shiori/domain/services/notification_service.dart';
 import 'package:shiori/domain/services/purchase_service.dart';
 import 'package:shiori/domain/services/settings_service.dart';
@@ -35,8 +29,6 @@ class MainBloc extends Bloc<MainEvent, MainState> {
   final PurchaseService _purchaseService;
   final DataService _dataService;
   final NotificationService _notificationService;
-  final ApiService _apiService;
-  final NetworkService _networkService;
 
   final CharactersBloc _charactersBloc;
   final WeaponsBloc _weaponsBloc;
@@ -53,8 +45,6 @@ class MainBloc extends Bloc<MainEvent, MainState> {
     this._purchaseService,
     this._dataService,
     this._notificationService,
-    this._apiService,
-    this._networkService,
     this._charactersBloc,
     this._weaponsBloc,
     this._homeBloc,
@@ -77,11 +67,7 @@ class MainBloc extends Bloc<MainEvent, MainState> {
     yield s;
   }
 
-  Future<MainState> _init({
-    bool languageChanged = false,
-    bool init = false,
-    AppResourceUpdateResultType? updateResult,
-  }) async {
+  Future<MainState> _init({bool languageChanged = false, bool init = false, AppResourceUpdateResultType? updateResult}) async {
     _logger.info(runtimeType, '_init: Initializing all..');
     await _genshinService.init(_settingsService.language, noResourcesHaveBeenDownloaded: _settingsService.noResourcesHasBeenDownloaded);
 
@@ -95,19 +81,6 @@ class MainBloc extends Bloc<MainEvent, MainState> {
 
     final settings = _settingsService.appSettings;
     await _telemetryService.trackInit(settings);
-
-    if (await _networkService.isInternetAvailable()) {
-      _logger.info(runtimeType, '_init: Saving telemetry data...');
-      final List<Telemetry> telemetryData = _dataService.telemetry.getAll();
-      if (telemetryData.isNotEmpty) {
-        final logs = telemetryData.map((t) => SaveAppLogRequestDto(timestamp: t.createdAt.ticks, message: t.message)).toList();
-        final request = SaveAppLogsRequestDto(logs: logs);
-        await Future.wait([
-          _apiService.sendTelemetryData(request),
-          _dataService.telemetry.deleteByIds(telemetryData.map((t) => t.id).toList()),
-        ]);
-      }
-    }
 
     final state = _loadThemeData(settings.appTheme, settings.accentColor, updateResult: updateResult);
 

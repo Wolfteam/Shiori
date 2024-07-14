@@ -3,9 +3,15 @@ import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:shiori/domain/enums/enums.dart';
+import 'package:shiori/domain/extensions/datetime_extensions.dart';
+import 'package:shiori/domain/models/dtos.dart';
+import 'package:shiori/domain/models/entities.dart';
 import 'package:shiori/domain/models/models.dart';
+import 'package:shiori/domain/services/api_service.dart';
+import 'package:shiori/domain/services/data_service.dart';
 import 'package:shiori/domain/services/device_info_service.dart';
 import 'package:shiori/domain/services/locale_service.dart';
+import 'package:shiori/domain/services/network_service.dart';
 import 'package:shiori/domain/services/resources_service.dart';
 import 'package:shiori/domain/services/settings_service.dart';
 import 'package:shiori/domain/services/telemetry_service.dart';
@@ -20,6 +26,9 @@ class SplashBloc extends Bloc<SplashEvent, SplashState> {
   final SettingsService _settingsService;
   final DeviceInfoService _deviceInfoService;
   final TelemetryService _telemetryService;
+  final DataService _dataService;
+  final ApiService _apiService;
+  final NetworkService _networkService;
   final LanguageModel _language;
 
   StreamSubscription? _downloadStream;
@@ -29,12 +38,17 @@ class SplashBloc extends Bloc<SplashEvent, SplashState> {
     this._settingsService,
     this._deviceInfoService,
     this._telemetryService,
+    this._dataService,
+    this._apiService,
+    this._networkService,
     LocaleService localeService,
   )   : _language = localeService.getLocaleWithoutLang(),
         super(const SplashState.loading());
 
   @override
   Stream<SplashState> mapEventToState(SplashEvent event) async* {
+    await _sendTelemetryData();
+
     if (event is _Init) {
       final noResourcesHasBeenDownloaded = _settingsService.noResourcesHasBeenDownloaded;
       //This is just to trigger a change in the ui
@@ -208,5 +222,24 @@ class SplashBloc extends Bloc<SplashEvent, SplashState> {
   bool _unknownErrorOnFirstInstall(AppResourceUpdateResultType type) {
     return (type == AppResourceUpdateResultType.unknownError || type == AppResourceUpdateResultType.apiIsUnavailable) &&
         _settingsService.noResourcesHasBeenDownloaded;
+  }
+
+  Future<void> _sendTelemetryData() async {
+    final bool isNetworkAvailable = await _networkService.isInternetAvailable();
+    if (!isNetworkAvailable) {
+      return;
+    }
+    final List<Telemetry> telemetryData = _dataService.telemetry.getAll();
+    final bool send = telemetryData.isNotEmpty && telemetryData.length > 5;
+    if (!send) {
+      return;
+    }
+
+    final logs = telemetryData.map((t) => SaveAppLogRequestDto(timestamp: t.createdAt.ticks, message: t.message)).toList();
+    final request = SaveAppLogsRequestDto(logs: logs);
+    await Future.wait([
+      _apiService.sendTelemetryData(request),
+      _dataService.telemetry.deleteByIds(telemetryData.map((t) => t.id).toList()),
+    ]);
   }
 }

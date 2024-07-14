@@ -3,14 +3,12 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shiori/application/bloc.dart';
-import 'package:shiori/domain/services/api_service.dart';
 import 'package:shiori/domain/services/calculator_asc_materials_service.dart';
 import 'package:shiori/domain/services/data_service.dart';
 import 'package:shiori/domain/services/device_info_service.dart';
 import 'package:shiori/domain/services/genshin_service.dart';
 import 'package:shiori/domain/services/locale_service.dart';
 import 'package:shiori/domain/services/logging_service.dart';
-import 'package:shiori/domain/services/network_service.dart';
 import 'package:shiori/domain/services/notification_service.dart';
 import 'package:shiori/domain/services/purchase_service.dart';
 import 'package:shiori/domain/services/resources_service.dart';
@@ -87,8 +85,6 @@ class MyApp extends StatelessWidget {
             final purchaseService = getIt<PurchaseService>();
             final dataService = getIt<DataService>();
             final notificationService = getIt<NotificationService>();
-            final apiService = getIt<ApiService>();
-            final networkService = getIt<NetworkService>();
             return MainBloc(
               loggingService,
               genshinService,
@@ -99,8 +95,6 @@ class MyApp extends StatelessWidget {
               purchaseService,
               dataService,
               notificationService,
-              apiService,
-              networkService,
               ctx.read<CharactersBloc>(),
               ctx.read<WeaponsBloc>(),
               ctx.read<HomeBloc>(),
