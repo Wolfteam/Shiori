@@ -55,13 +55,11 @@ class DeviceInfoServiceImpl implements DeviceInfoService {
   @override
   Future<void> init() async {
     try {
-      //TODO: BUILDNUMBER NOT SHOWING UP ON WINDOWS
-      //TODO: VERSION DOES NOT MATCH THE ONE ON THE PUBSPEC
       final packageInfo = await PackageInfo.fromPlatform();
       _appName = packageInfo.appName;
       _version = packageInfo.version;
       _packageName = packageInfo.packageName;
-      _versionWithBuildNumber = Platform.isWindows ? _version : '$_version+${packageInfo.buildNumber}';
+      _versionWithBuildNumber = '$_version+${packageInfo.buildNumber}';
       _buildNumber = packageInfo.buildNumber;
 
       final vt = VersionTracker();
@@ -96,7 +94,8 @@ class DeviceInfoServiceImpl implements DeviceInfoService {
   Future<void> _initForWindows() async {
     final deviceInfo = DeviceInfoPlugin();
     final info = await deviceInfo.windowsInfo;
-    await _setDefaultDeviceInfoProps(info.computerName, na);
+    final osVersion = '${info.productName}: ${info.displayVersion}';
+    await _setDefaultDeviceInfoProps(null, osVersion);
   }
 
   Future<void> _initForAndroid() async {
@@ -119,8 +118,10 @@ class DeviceInfoServiceImpl implements DeviceInfoService {
     await _setDefaultDeviceInfoProps(info.model, info.osRelease, 'Apple');
   }
 
-  Future<void> _setDefaultDeviceInfoProps(String model, String osVersion, [String? manufacturer, bool? isPhysicalDevice]) async {
-    _deviceInfo.putIfAbsent('model', () => model);
+  Future<void> _setDefaultDeviceInfoProps(String? model, String osVersion, [String? manufacturer, bool? isPhysicalDevice]) async {
+    if (model.isNotNullEmptyOrWhitespace) {
+      _deviceInfo.putIfAbsent('model', () => model!);
+    }
     _deviceInfo.putIfAbsent('osVersion', () => osVersion);
     _deviceInfo.putIfAbsent('appVersion', () => _version);
     _deviceInfo.putIfAbsent('packageName', () => _packageName);
