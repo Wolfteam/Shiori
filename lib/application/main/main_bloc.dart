@@ -67,11 +67,7 @@ class MainBloc extends Bloc<MainEvent, MainState> {
     yield s;
   }
 
-  Future<MainState> _init({
-    bool languageChanged = false,
-    bool init = false,
-    AppResourceUpdateResultType? updateResult,
-  }) async {
+  Future<MainState> _init({bool languageChanged = false, bool init = false, AppResourceUpdateResultType? updateResult}) async {
     _logger.info(runtimeType, '_init: Initializing all..');
     await _genshinService.init(_settingsService.language, noResourcesHaveBeenDownloaded: _settingsService.noResourcesHasBeenDownloaded);
 

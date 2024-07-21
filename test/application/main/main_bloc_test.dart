@@ -99,6 +99,7 @@ void main() {
     }
     final dataService = MockDataService();
     final notificationService = MockNotificationService();
+    final networkService = MockNetworkService();
 
     final charactersBloc = MockCharactersBloc();
     final weaponsBloc = MockWeaponsBloc();
@@ -114,6 +115,8 @@ void main() {
 
     when(deviceInfoService.appName).thenReturn(appName);
     when(deviceInfoService.versionChanged).thenReturn(versionChanged);
+
+    when(networkService.isInternetAvailable()).thenAnswer((_) => Future.value(false));
     return MainBloc(
       logger,
       genshinService,

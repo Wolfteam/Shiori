@@ -1,12 +1,4 @@
 PODS:
-  - AppCenter (5.0.4):
-    - AppCenter/Analytics (= 5.0.4)
-    - AppCenter/Crashes (= 5.0.4)
-  - AppCenter/Analytics (5.0.4):
-    - AppCenter/Core
-  - AppCenter/Core (5.0.4)
-  - AppCenter/Crashes (5.0.4):
-    - AppCenter/Core
   - device_info_plus (0.0.1):
     - FlutterMacOS
   - devicelocale (0.0.1):
@@ -25,15 +17,15 @@ PODS:
   - path_provider_foundation (0.0.1):
     - Flutter
     - FlutterMacOS
-  - purchases_flutter (6.29.3):
+  - purchases_flutter (6.30.1):
     - FlutterMacOS
-    - PurchasesHybridCommon (= 10.8.0)
-  - PurchasesHybridCommon (10.8.0):
-    - RevenueCat (= 4.42.0)
+    - PurchasesHybridCommon (= 11.1.0)
+  - PurchasesHybridCommon (11.1.0):
+    - RevenueCat (= 4.43.2)
   - rate_my_app (2.2.0):
     - Flutter
     - FlutterMacOS
-  - RevenueCat (4.42.0)
+  - RevenueCat (4.43.2)
   - share_plus (0.0.1):
     - FlutterMacOS
   - shared_preferences_foundation (0.0.1):
@@ -47,7 +39,6 @@ PODS:
     - FlutterMacOS
 
 DEPENDENCIES:
-  - AppCenter
   - device_info_plus (from `Flutter/ephemeral/.symlinks/plugins/device_info_plus/macos`)
   - devicelocale (from `Flutter/ephemeral/.symlinks/plugins/devicelocale/macos`)
   - flutter_inappwebview_macos (from `Flutter/ephemeral/.symlinks/plugins/flutter_inappwebview_macos/macos`)
@@ -66,7 +57,6 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
-    - AppCenter
     - OrderedSet
     - PurchasesHybridCommon
     - RevenueCat
@@ -104,7 +94,6 @@ EXTERNAL SOURCES:
     :path: Flutter/ephemeral/.symlinks/plugins/window_size/macos
 
 SPEC CHECKSUMS:
-  AppCenter: 85c92db0759d2792a65eb61d6842d2e86611a49a
   device_info_plus: ce1b7762849d3ec103d0e0517299f2db7ad60720
   devicelocale: 9f0f36ac651cabae2c33f32dcff4f32b61c38225
   flutter_inappwebview_macos: 9600c9df9fdb346aaa8933812009f8d94304203d
@@ -114,16 +103,16 @@ SPEC CHECKSUMS:
   OrderedSet: aaeb196f7fef5a9edf55d89760da9176ad40b93c
   package_info_plus: fa739dd842b393193c5ca93c26798dff6e3d0e0c
   path_provider_foundation: 3784922295ac71e43754bd15e0653ccfd36a147c
-  purchases_flutter: 65b965fe437f212864a76a4f1e474ec8b514af29
-  PurchasesHybridCommon: dff07d838f74ac859a6ce20f0fbee527ba61e035
+  purchases_flutter: 06520f6e47692642b5f452d504b65765e6c51ec5
+  PurchasesHybridCommon: 4022d5944cb30ec44ba5159e42aa161fe0e30175
   rate_my_app: cd3e1c44d12f387482698ffaf6ea9bd669a69b94
-  RevenueCat: 39f2fbf5eda66f0f87bb72329406f45488f6916e
+  RevenueCat: 3d934653b7e8b09af88fd47e9e84cfaf5d0a89ba
   share_plus: 36537c04ce0c3e3f5bd297ce4318b6d5ee5fd6cf
   shared_preferences_foundation: b4c3b4cddf1c21f02770737f147a3f5da9d39695
   url_launcher_macos: d2691c7dd33ed713bf3544850a623080ec693d95
   wakelock_plus: 4783562c9a43d209c458cb9b30692134af456269
   window_size: 339dafa0b27a95a62a843042038fa6c3c48de195
 
-PODFILE CHECKSUM: c5255be90013e27738ca128c64213ada7f9ac560
+PODFILE CHECKSUM: 65ce44673a3ebb8b726cb7a0dbab448690e2b1ca
 
 COCOAPODS: 1.15.2

@@ -225,7 +225,10 @@ class Injection {
     final deviceInfoService = getIt<DeviceInfoService>();
     final localeService = getIt<LocaleService>();
     final telemetryService = getIt<TelemetryService>();
-    return SplashBloc(resourceService, settingsService, deviceInfoService, telemetryService, localeService);
+    final dataService = getIt<DataService>();
+    final apiService = getIt<ApiService>();
+    final networkService = getIt<NetworkService>();
+    return SplashBloc(resourceService, settingsService, deviceInfoService, telemetryService, dataService, apiService, networkService, localeService);
   }
 
   static CheckForResourceUpdatesBloc get checkForResourceUpdatesBlocBloc {
@@ -314,52 +317,56 @@ class Injection {
   }
 
   static Future<void> init({bool isLoggingEnabled = true}) async {
-    final networkService = NetworkServiceImpl();
-    networkService.init();
-    getIt.registerSingleton<NetworkService>(networkService);
+    getIt.registerSingleton<NetworkService>(NetworkServiceImpl());
 
-    final deviceInfoService = DeviceInfoServiceImpl();
-    getIt.registerSingleton<DeviceInfoService>(deviceInfoService);
-    await deviceInfoService.init();
+    getIt.registerSingleton<DeviceInfoService>(DeviceInfoServiceImpl());
 
-    final telemetryService = TelemetryServiceImpl(deviceInfoService);
-    getIt.registerSingleton<TelemetryService>(telemetryService);
-    await telemetryService.initTelemetry();
+    getIt.registerLazySingleton<LoggingService>(() => LoggingServiceImpl(getIt<TelemetryService>(), isLoggingEnabled));
 
-    final loggingService = LoggingServiceImpl(getIt<TelemetryService>(), deviceInfoService, isLoggingEnabled);
+    getIt.registerLazySingleton<SettingsService>(() => SettingsServiceImpl(getIt<LoggingService>()));
 
-    getIt.registerSingleton<LoggingService>(loggingService);
-    final settingsService = SettingsServiceImpl(loggingService);
-    await settingsService.init();
-    getIt.registerSingleton<SettingsService>(settingsService);
+    getIt.registerLazySingleton<ApiService>(() => ApiServiceImpl(getIt<LoggingService>()));
 
-    final apiService = ApiServiceImpl(loggingService);
-    getIt.registerSingleton<ApiService>(apiService);
+    getIt.registerLazySingleton<ResourceService>(
+      () => ResourceServiceImpl(getIt<LoggingService>(), getIt<SettingsService>(), getIt<NetworkService>(), getIt<ApiService>()),
+    );
 
-    final resourcesService = ResourceServiceImpl(loggingService, settingsService, networkService, apiService);
-    await resourcesService.init();
-    getIt.registerSingleton<ResourceService>(resourcesService);
+    getIt.registerLazySingleton<LocaleService>(() => LocaleServiceImpl(getIt<SettingsService>()));
+    getIt.registerLazySingleton<GenshinService>(() => GenshinServiceImpl(getIt<ResourceService>(), getIt<LocaleService>()));
+    getIt.registerLazySingleton<CalculatorAscMaterialsService>(
+      () => CalculatorAscMaterialsServiceImpl(getIt<GenshinService>(), getIt<ResourceService>()),
+    );
 
-    getIt.registerSingleton<LocaleService>(LocaleServiceImpl(getIt<SettingsService>()));
-    getIt.registerSingleton<GenshinService>(GenshinServiceImpl(getIt<ResourceService>(), getIt<LocaleService>()));
-    getIt.registerSingleton<CalculatorAscMaterialsService>(CalculatorAscMaterialsServiceImpl(getIt<GenshinService>(), getIt<ResourceService>()));
+    getIt.registerLazySingleton<DataService>(
+      () => DataServiceImpl(getIt<GenshinService>(), getIt<CalculatorAscMaterialsService>(), getIt<ResourceService>()),
+    );
 
-    final dataService = DataServiceImpl(getIt<GenshinService>(), getIt<CalculatorAscMaterialsService>(), getIt<ResourceService>());
-    await dataService.init();
-    getIt.registerSingleton<DataService>(dataService);
+    getIt.registerLazySingleton<TelemetryService>(() => TelemetryServiceImpl(getIt<DeviceInfoService>()));
 
-    final notificationService = NotificationServiceImpl(loggingService);
-    await notificationService.init();
-    getIt.registerSingleton<NotificationService>(notificationService);
+    getIt.registerLazySingleton<NotificationService>(() => NotificationServiceImpl(getIt<LoggingService>()));
 
-    final changelogProvider = ChangelogProviderImpl(loggingService, networkService, apiService);
-    getIt.registerSingleton<ChangelogProvider>(changelogProvider);
+    getIt.registerLazySingleton<ChangelogProvider>(
+      () => ChangelogProviderImpl(getIt<LoggingService>(), getIt<NetworkService>(), getIt<ApiService>()),
+    );
 
-    final purchaseService = PurchaseServiceImpl(loggingService);
-    await purchaseService.init();
-    getIt.registerSingleton<PurchaseService>(purchaseService);
+    getIt.registerLazySingleton<PurchaseService>(() => PurchaseServiceImpl(getIt<LoggingService>()));
 
-    final bkService = BackupRestoreServiceImpl(loggingService, settingsService, deviceInfoService, dataService, notificationService);
-    getIt.registerSingleton<BackupRestoreService>(bkService);
+    getIt.registerLazySingleton<BackupRestoreService>(
+      () => BackupRestoreServiceImpl(
+        getIt<LoggingService>(),
+        getIt<SettingsService>(),
+        getIt<DeviceInfoService>(),
+        getIt<DataService>(),
+        getIt<NotificationService>(),
+      ),
+    );
+
+    await getIt<DeviceInfoService>().init();
+    await getIt<SettingsService>().init();
+    await getIt<DataService>().init();
+    await getIt<NotificationService>().init();
+    await getIt<PurchaseService>().init();
+    await getIt<ResourceService>().init();
+    getIt<TelemetryService>().init(getIt<DataService>());
   }
 }

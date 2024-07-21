@@ -12,4 +12,4 @@ export 'package:shiori/infrastructure/persistence/data_service.dart';
 export 'package:shiori/infrastructure/purchase_service.dart';
 export 'package:shiori/infrastructure/resources_service.dart';
 export 'package:shiori/infrastructure/settings_service.dart';
-export 'package:shiori/infrastructure/telemetry/telemetry_service.dart';
+export 'package:shiori/infrastructure/telemetry_service.dart';

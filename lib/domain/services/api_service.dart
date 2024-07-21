@@ -10,4 +10,6 @@ abstract class ApiService {
   Future<int?> downloadAsset(String keyName, String destPath);
 
   Future<ApiListResponseDto<GameCodeResponseDto>> getGameCodes(String appVersion, int currentResourcesVersion);
+
+  Future<EmptyResponseDto> sendTelemetryData(SaveAppLogsRequestDto request);
 }

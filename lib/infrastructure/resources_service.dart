@@ -40,6 +40,7 @@ class ResourceServiceImpl implements ResourceService {
     this.maxItemsPerBatch = 10,
   });
 
+  @override
   Future<void> init() async {
     final dir = await getApplicationSupportDirectory();
 
@@ -219,7 +220,7 @@ class ResourceServiceImpl implements ResourceService {
       return true;
     }
 
-    final isAfter = DateTime.now().isAfter(lastResourcesCheckedDate.add(const Duration(hours: 12)));
+    final isAfter = DateTime.now().isAfter(lastResourcesCheckedDate.add(const Duration(hours: 8)));
     if (!isAfter) {
       return false;
     }
@@ -461,7 +462,6 @@ class ResourceServiceImpl implements ResourceService {
           onProgress?.call(progress, downloadedBytes);
         }
       } catch (e, s) {
-        _loggingService.error(runtimeType, '_downloadAssets: One or more keyNames failed... RetryAttempts = $retryAttempts');
         itemsPerBatch--;
         retryAttempts++;
         if (retryAttempts <= maxRetryAttempts && itemsPerBatch > 0) {
