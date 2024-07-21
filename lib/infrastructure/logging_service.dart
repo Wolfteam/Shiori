@@ -85,7 +85,7 @@ class LoggingServiceImpl implements LoggingService {
   }
 
   void _trackWarningOrError(String tag, String msg, [dynamic ex, StackTrace? trace, bool isError = false]) {
-    final map = {'Tag': tag, 'Msg': msg};
+    final map = {'Tag': tag, 'Message': msg};
     if (ex != null) {
       map.putIfAbsent('Exception', () => ex.toString());
     }

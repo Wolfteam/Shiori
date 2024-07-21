@@ -462,7 +462,6 @@ class ResourceServiceImpl implements ResourceService {
           onProgress?.call(progress, downloadedBytes);
         }
       } catch (e, s) {
-        _loggingService.error(runtimeType, '_downloadAssets: One or more keyNames failed... RetryAttempts = $retryAttempts');
         itemsPerBatch--;
         retryAttempts++;
         if (retryAttempts <= maxRetryAttempts && itemsPerBatch > 0) {

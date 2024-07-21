@@ -20,7 +20,10 @@ class TelemetryServiceImpl implements TelemetryService {
     final data = <String, dynamic>{};
     data['event'] = name;
     data['deviceInfo'] = _deviceInfoService.deviceInfo;
-    data['data'] = properties;
+    if (properties != null && properties.isNotEmpty) {
+      final Map<String, dynamic> props = properties.map((key, value) => MapEntry(key.toLowerCase(), value));
+      data['data'] = props;
+    }
 
     if (_deviceInfoService.installedFromValidSource) {
       return _dataService?.telemetry.saveTelemetry(data) ?? Future.value();

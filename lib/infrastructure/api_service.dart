@@ -188,7 +188,7 @@ class ApiServiceImpl implements ApiService {
 
   void _handleError(String caller, Object e, StackTrace s) {
     if (e is http.ClientException && e.message.isNotNullEmptyOrWhitespace) {
-      _loggingService.error(runtimeType, '$caller: HTTP error = ${e.message}');
+      _loggingService.error(runtimeType, '$caller: HTTP error = ${e.message}', e, s);
     } else {
       _loggingService.error(runtimeType, '$caller: Unknown api error', e, s);
     }
