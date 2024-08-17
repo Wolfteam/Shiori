@@ -367,6 +367,6 @@ class Injection {
     await getIt<NotificationService>().init();
     await getIt<PurchaseService>().init();
     await getIt<ResourceService>().init();
-    getIt<TelemetryService>().init(getIt<DataService>());
+    getIt<TelemetryService>().init(getIt<SettingsService>(), getIt<DataService>());
   }
 }

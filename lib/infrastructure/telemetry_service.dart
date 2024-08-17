@@ -2,16 +2,19 @@ import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/data_service.dart';
 import 'package:shiori/domain/services/device_info_service.dart';
+import 'package:shiori/domain/services/settings_service.dart';
 import 'package:shiori/domain/services/telemetry_service.dart';
 
 class TelemetryServiceImpl implements TelemetryService {
   final DeviceInfoService _deviceInfoService;
+  SettingsService? _settingsService;
   DataService? _dataService;
 
   TelemetryServiceImpl(this._deviceInfoService);
 
   @override
-  void init(DataService dataService) {
+  void init(SettingsService settingsService, DataService dataService) {
+    _settingsService = settingsService;
     _dataService = dataService;
   }
 
@@ -20,10 +23,15 @@ class TelemetryServiceImpl implements TelemetryService {
     final data = <String, dynamic>{};
     data['event'] = name;
     data['deviceInfo'] = _deviceInfoService.deviceInfo;
-    if (properties != null && properties.isNotEmpty) {
-      final Map<String, dynamic> props = properties.map((key, value) => MapEntry(key.toLowerCase(), value));
-      data['data'] = props;
+
+    final Map<String, dynamic> dataProps = properties?.map((key, value) => MapEntry(key.toLowerCase(), value)) ?? {};
+    if (dataProps.isNotEmpty) {
+      data['data'] = dataProps;
     }
+
+    final Map<String, dynamic> appProps = Map<String, dynamic>.from(_deviceInfoService.appInfo);
+    appProps.putIfAbsent('resourceVersion', () => _settingsService?.resourceVersion ?? -1);
+    data['appInfo'] = appProps;
 
     if (_deviceInfoService.installedFromValidSource) {
       return _dataService?.telemetry.saveTelemetry(data) ?? Future.value();

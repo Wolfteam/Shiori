@@ -1,9 +1,10 @@
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/data_service.dart';
+import 'package:shiori/domain/services/settings_service.dart';
 
 abstract class TelemetryService {
-  void init(DataService dataService);
+  void init(SettingsService settingsService, DataService dataService);
 
   Future<void> trackEventAsync(String name, [Map<String, dynamic>? properties]);
 

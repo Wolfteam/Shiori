@@ -11,6 +11,7 @@ import 'package:version_tracker/version_tracker.dart';
 
 class DeviceInfoServiceImpl implements DeviceInfoService {
   final Map<String, String> _deviceInfo = {};
+  final Map<String, String> _appInfo = {};
   late String _version;
   late String _versionWithBuildNumber;
   late String _appName;
@@ -21,6 +22,9 @@ class DeviceInfoServiceImpl implements DeviceInfoService {
 
   @override
   Map<String, String> get deviceInfo => _deviceInfo;
+
+  @override
+  Map<String, String> get appInfo => _appInfo;
 
   @override
   String get appName => _appName;
@@ -40,7 +44,7 @@ class DeviceInfoServiceImpl implements DeviceInfoService {
 
   @override
   bool get installedFromValidSource {
-    if (Platform.isWindows || Platform.isMacOS) {
+    if (Platform.isWindows) {
       return true;
     }
 
@@ -61,6 +65,8 @@ class DeviceInfoServiceImpl implements DeviceInfoService {
       _packageName = packageInfo.packageName;
       _versionWithBuildNumber = '$_version+${packageInfo.buildNumber}';
       _buildNumber = packageInfo.buildNumber;
+
+      await _setAppInfoProps();
 
       final vt = VersionTracker();
       await vt.track();
@@ -95,13 +101,13 @@ class DeviceInfoServiceImpl implements DeviceInfoService {
     final deviceInfo = DeviceInfoPlugin();
     final info = await deviceInfo.windowsInfo;
     final osVersion = '${info.productName}: ${info.displayVersion}';
-    await _setDefaultDeviceInfoProps(null, osVersion);
+    _setDefaultDeviceInfoProps(null, osVersion);
   }
 
   Future<void> _initForAndroid() async {
     final deviceInfo = DeviceInfoPlugin();
     final info = await deviceInfo.androidInfo;
-    await _setDefaultDeviceInfoProps(info.model, '${info.version.sdkInt}', info.manufacturer, info.isPhysicalDevice);
+    _setDefaultDeviceInfoProps(info.model, '${info.version.sdkInt}', info.manufacturer, info.isPhysicalDevice);
     _deviceInfo.putIfAbsent('device', () => info.device);
   }
 
@@ -109,26 +115,21 @@ class DeviceInfoServiceImpl implements DeviceInfoService {
     final deviceInfo = DeviceInfoPlugin();
     final info = await deviceInfo.iosInfo;
     final osVersion = '${info.systemName}: ${info.systemVersion}';
-    await _setDefaultDeviceInfoProps(info.model, osVersion, 'Apple', info.isPhysicalDevice);
+    _setDefaultDeviceInfoProps(info.model, osVersion, 'Apple', info.isPhysicalDevice);
   }
 
   Future<void> _initForMac() async {
     final deviceInfo = DeviceInfoPlugin();
     final info = await deviceInfo.macOsInfo;
-    await _setDefaultDeviceInfoProps(info.model, info.osRelease, 'Apple');
+    _setDefaultDeviceInfoProps(info.model, info.osRelease, 'Apple');
   }
 
-  Future<void> _setDefaultDeviceInfoProps(String? model, String osVersion, [String? manufacturer, bool? isPhysicalDevice]) async {
+  void _setDefaultDeviceInfoProps(String? model, String osVersion, [String? manufacturer, bool? isPhysicalDevice]) {
     if (model.isNotNullEmptyOrWhitespace) {
       _deviceInfo.putIfAbsent('model', () => model!);
     }
     _deviceInfo.putIfAbsent('osVersion', () => osVersion);
-    _deviceInfo.putIfAbsent('appVersion', () => _version);
-    _deviceInfo.putIfAbsent('packageName', () => _packageName);
     _deviceInfo.putIfAbsent('platform', () => Platform.operatingSystem);
-    if (_buildNumber.isNotNullEmptyOrWhitespace) {
-      _deviceInfo.putIfAbsent('buildNumber', () => _buildNumber!);
-    }
 
     if (manufacturer.isNotNullEmptyOrWhitespace) {
       _deviceInfo.putIfAbsent('manufacturer', () => manufacturer!);
@@ -137,8 +138,16 @@ class DeviceInfoServiceImpl implements DeviceInfoService {
     if (isPhysicalDevice != null) {
       _deviceInfo.putIfAbsent('isPhysicalDevice', () => '$isPhysicalDevice');
     }
+  }
 
-    if (Platform.isAndroid || Platform.isIOS) {
+  Future<void> _setAppInfoProps() async {
+    _appInfo.putIfAbsent('version', () => _version);
+    _appInfo.putIfAbsent('packageName', () => _packageName);
+    if (_buildNumber.isNotNullEmptyOrWhitespace) {
+      _appInfo.putIfAbsent('buildNumber', () => _buildNumber!);
+    }
+
+    if (Platform.isAndroid || Platform.isIOS || Platform.isMacOS) {
       final installationSource = await StoreChecker.getSource;
       _installationSource = installationSource;
       _deviceInfo.putIfAbsent('installationSource', () => installationSource.name);

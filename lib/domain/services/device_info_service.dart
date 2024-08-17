@@ -1,6 +1,8 @@
 abstract class DeviceInfoService {
   Map<String, String> get deviceInfo;
 
+  Map<String, String> get appInfo;
+
   String get appName;
 
   String get version;
