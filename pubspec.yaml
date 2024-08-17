@@ -51,7 +51,6 @@ dependencies:
   internet_connection_checker: ^1.0.0+1
   intl: ^0.19.0
   json_annotation: ^4.9.0
-  linked_scroll_controller: ^0.2.0
   logger: ^2.3.0
   package_info_plus: ^8.0.0
   path: ^1.9.0
