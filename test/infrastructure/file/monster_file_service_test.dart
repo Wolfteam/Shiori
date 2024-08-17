@@ -4,6 +4,13 @@ import 'package:shiori/domain/enums/enums.dart';
 import '../../common.dart';
 import 'common_file.dart';
 
+final _bossMaterialTypes = <MaterialType, int>{
+  MaterialType.talents: 3,
+  MaterialType.ingredient: 6,
+  MaterialType.jewels: 4,
+  MaterialType.currency: 1,
+};
+
 void main() {
   group('Get monsters for card', () {
     for (final lang in AppLanguageType.values) {
@@ -36,12 +43,26 @@ void main() {
       checkKey(detail.key);
       checkAsset(service.resources.getMonsterImagePath(detail.image));
 
+      final gotBossMaterials = <MaterialType, int>{};
       for (final drop in detail.drops) {
         switch (drop.type) {
           case MonsterDropType.material:
             expect(() => materialFileService.getMaterial(drop.key), returnsNormally);
+            if (monster.type == MonsterType.boss) {
+              final material = materialFileService.getMaterial(drop.key);
+              gotBossMaterials.update(material.type, (val) => val + 1, ifAbsent: () => 1);
+            }
           case MonsterDropType.artifact:
             expect(() => artifactFileService.getArtifact(drop.key), returnsNormally);
+          default:
+            throw Exception('DropType = ${drop.type} is not valid');
+        }
+      }
+
+      if (monster.type == MonsterType.boss && detail.drops.isNotEmpty) {
+        expect(gotBossMaterials.isNotEmpty, isTrue);
+        for (final kvp in gotBossMaterials.entries) {
+          expect(_bossMaterialTypes[kvp.key], lessThanOrEqualTo(kvp.value));
         }
       }
     }
