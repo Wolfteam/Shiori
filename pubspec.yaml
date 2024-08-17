@@ -65,7 +65,7 @@ dependencies:
   share_plus: ^9.0.0
   shared_preferences: ^2.2.3
   sprintf: ^7.0.0
-  store_checker: ^1.4.0
+  store_checker: ^1.6.0
   synchronized: ^3.1.0+1
   transparent_image: ^2.0.1
   two_dimensional_scrollables: ^0.3.1
