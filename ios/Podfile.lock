@@ -195,7 +195,7 @@ SPEC CHECKSUMS:
   SDWebImage: 96e0c18ef14010b7485210e92fac888587ebb958
   share_plus: 8875f4f2500512ea181eef553c3e27dba5135aad
   shared_preferences_foundation: b4c3b4cddf1c21f02770737f147a3f5da9d39695
-  store_checker: 359c5051d9ec30ff0a8fa39eb5ec9df021bb745d
+  store_checker: a7be624ac44a4ba88e7917e71afe8433f197161e
   SwiftyGif: 93a1cc87bf3a51916001cf8f3d63835fb64c819f
   Toast: 91b396c56ee72a5790816f40d3a94dd357abc196
   url_launcher_ios: 6116280ddcfe98ab8820085d8d76ae7449447586
