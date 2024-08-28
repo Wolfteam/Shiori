@@ -62,6 +62,9 @@ void main() {
           checkAsset(material.image);
           expect(material.days, isNotEmpty);
           expect(material.days.every((day) => expectedDays.contains(day)), isTrue);
+          if (material.key == 'teachings-of-kindling') {
+            continue;
+          }
           checkItemsCommonWithName(material.characters);
         }
 

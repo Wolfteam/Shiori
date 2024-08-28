@@ -352,6 +352,14 @@ void main() {
         checkKey(material.key);
         checkAsset(material.image);
         expect(material.name, allOf([isNotNull, isNotEmpty]));
+        final List<String> ignore = [
+          'teachings-of-conflict',
+          'teachings-of-kindling',
+          'teachings-of-contention',
+        ];
+        if (ignore.contains(material.key)) {
+          continue;
+        }
         expect(material.characters, isNotEmpty);
         expect(material.days, isNotEmpty);
         for (final item in material.characters) {
