@@ -251,7 +251,7 @@ class AddEditItemBottomSheet extends StatelessWidget {
         title: s.chooseALevel,
       ),
     ).then((newValue) {
-      if (newValue == null) {
+      if (newValue == null || !context.mounted) {
         return;
       }
 

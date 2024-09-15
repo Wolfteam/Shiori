@@ -141,7 +141,11 @@ class GameCodeListItem extends StatelessWidget {
 
   void _copyToClipboard(BuildContext context) {
     final s = S.of(context);
-    Clipboard.setData(ClipboardData(text: code)).then((value) => ToastUtils.showInfoToast(ToastUtils.of(context), s.codeXWasCopied(code)));
+    Clipboard.setData(ClipboardData(text: code)).then((value) {
+      if (context.mounted) {
+        ToastUtils.showInfoToast(ToastUtils.of(context), s.codeXWasCopied(code));
+      }
+    });
   }
 }
 

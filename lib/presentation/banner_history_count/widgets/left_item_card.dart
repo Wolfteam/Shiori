@@ -42,7 +42,11 @@ class LeftItemCard extends StatelessWidget {
     return InkWell(
       borderRadius: const BorderRadius.all(Radius.circular(radius)),
       onTap: () => showDialog<_ItemOptionsType>(context: context, builder: (_) => const _OptionsDialog()).then(
-        (value) async => _handleOptionSelected(value, context),
+        (value) async {
+          if (context.mounted) {
+            await _handleOptionSelected(value, context);
+          }
+        },
       ),
       child: GradientCard(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(radius)),
@@ -96,7 +100,7 @@ class LeftItemCard extends StatelessWidget {
   }
 
   Future<void> _handleOptionSelected(_ItemOptionsType? value, BuildContext context) async {
-    if (value == null) {
+    if (value == null || !context.mounted) {
       return;
     }
 

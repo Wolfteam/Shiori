@@ -519,7 +519,7 @@ class _SettingsButton extends StatelessWidget {
       context,
       MaterialPageRoute(builder: (context) => const WishBannerHistoryPage(forSelection: true)),
     ).then((value) {
-      if (value == null) {
+      if (value == null || !context.mounted) {
         return;
       }
       context.read<WishSimulatorBloc>().add(WishSimulatorEvent.periodChanged(version: value.version, from: value.from, until: value.until));

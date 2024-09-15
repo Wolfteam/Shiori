@@ -51,7 +51,7 @@ class SliverTodayMainTitle extends StatelessWidget {
       context: context,
       builder: (_) => ChangeCurrentDayDialog(currentSelectedDay: currentSelectedDay),
     ).then((selectedDay) {
-      if (selectedDay == null) {
+      if (selectedDay == null || !context.mounted) {
         return;
       }
 
