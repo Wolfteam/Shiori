@@ -17,6 +17,7 @@ class AppWebView extends StatelessWidget {
   final bool isLoading;
   final String? script;
   final AppBar? appBar;
+  final bool showCloseButton;
 
   const AppWebView({
     super.key,
@@ -26,6 +27,7 @@ class AppWebView extends StatelessWidget {
     this.isLoading = false,
     this.script,
     this.appBar,
+    this.showCloseButton = false,
   });
 
   @override
@@ -37,6 +39,7 @@ class AppWebView extends StatelessWidget {
         appBar: appBar,
         script: script,
         isLoading: isLoading,
+        showCloseButton: showCloseButton,
       );
     }
 
@@ -48,6 +51,7 @@ class AppWebView extends StatelessWidget {
         appBar: appBar,
         script: script,
         isLoading: isLoading,
+        showCloseButton: showCloseButton,
       );
     }
 
@@ -67,6 +71,7 @@ class _MobileWebView extends StatefulWidget {
   final bool isLoading;
   final String? script;
   final AppBar? appBar;
+  final bool showCloseButton;
 
   const _MobileWebView({
     required this.url,
@@ -75,6 +80,7 @@ class _MobileWebView extends StatefulWidget {
     this.isLoading = false,
     this.script,
     this.appBar,
+    this.showCloseButton = false,
   });
 
   @override
@@ -88,10 +94,13 @@ class _MobileWebViewState extends State<_MobileWebView> {
   Widget build(BuildContext context) {
     if (!widget.hasInternetConnection) {
       final s = S.of(context);
-      return PageMessage(text: s.noInternetConnection);
+      final children = [
+        if (widget.showCloseButton) const LoadingCloseButton(),
+      ];
+      return PageMessage(text: s.noInternetConnection, children: children);
     }
     if (widget.isLoading) {
-      return const Loading();
+      return Loading(showCloseButton: widget.showCloseButton);
     }
     final device = getDeviceType(MediaQuery.of(context).size);
     return Stack(
@@ -128,6 +137,7 @@ class _DesktopWebView extends StatefulWidget {
   final bool isLoading;
   final String? script;
   final AppBar? appBar;
+  final bool showCloseButton;
 
   const _DesktopWebView({
     required this.url,
@@ -135,6 +145,7 @@ class _DesktopWebView extends StatefulWidget {
     this.isLoading = false,
     this.script,
     this.appBar,
+    this.showCloseButton = false,
   });
 
   @override
@@ -177,10 +188,13 @@ class _DesktopWebViewState extends State<_DesktopWebView> {
   Widget build(BuildContext context) {
     if (!widget.hasInternetConnection) {
       final s = S.of(context);
-      return PageMessage(text: s.noInternetConnection);
+      final children = [
+        if (widget.showCloseButton) const LoadingCloseButton(),
+      ];
+      return PageMessage(text: s.noInternetConnection, children: children);
     }
     if (widget.isLoading) {
-      return const Loading();
+      return Loading(showCloseButton: widget.showCloseButton);
     }
     return Scaffold(
       appBar: widget.appBar,
