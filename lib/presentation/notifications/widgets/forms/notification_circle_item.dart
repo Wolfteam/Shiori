@@ -135,23 +135,43 @@ class NotificationCircleItem extends StatelessWidget {
   }
 
   Future<void> _openCharactersPage(BuildContext context) async {
-    await CharactersPage.forSelection(context, excludeKeys: [selected.itemKey]).then((keyName) => _onItemSelected(keyName, context));
+    await CharactersPage.forSelection(context, excludeKeys: [selected.itemKey]).then((keyName) {
+      if (context.mounted) {
+        _onItemSelected(keyName, context);
+      }
+    });
   }
 
   Future<void> _openWeaponsPage(BuildContext context) async {
-    await WeaponsPage.forSelection(context, excludeKeys: [selected.itemKey]).then((keyName) => _onItemSelected(keyName, context));
+    await WeaponsPage.forSelection(context, excludeKeys: [selected.itemKey]).then((keyName) {
+      if (context.mounted) {
+        _onItemSelected(keyName, context);
+      }
+    });
   }
 
   Future<void> _openMonstersPage(BuildContext context) async {
-    await MonstersPage.forSelection(context, excludeKeys: [selected.itemKey]).then((keyName) => _onItemSelected(keyName, context));
+    await MonstersPage.forSelection(context, excludeKeys: [selected.itemKey]).then((keyName) {
+      if (context.mounted) {
+        _onItemSelected(keyName, context);
+      }
+    });
   }
 
   Future<void> _openArtifactsPage(BuildContext context) async {
-    await ArtifactsPage.forSelection(context, excludeKeys: [selected.itemKey]).then((keyName) => _onItemSelected(keyName, context));
+    await ArtifactsPage.forSelection(context, excludeKeys: [selected.itemKey]).then((keyName) {
+      if (context.mounted) {
+        _onItemSelected(keyName, context);
+      }
+    });
   }
 
   Future<void> _openMaterialsPage(BuildContext context) async {
-    await MaterialsPage.forSelection(context, excludeKeys: [selected.itemKey]).then((keyName) => _onItemSelected(keyName, context));
+    await MaterialsPage.forSelection(context, excludeKeys: [selected.itemKey]).then((keyName) {
+      if (context.mounted) {
+        _onItemSelected(keyName, context);
+      }
+    });
   }
 
   void _onItemSelected(String? keyName, BuildContext context) {

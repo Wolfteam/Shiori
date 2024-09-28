@@ -78,7 +78,7 @@ class NotificationResinForm extends StatelessWidget {
         title: s.resin,
       ),
     ).then((newValue) {
-      if (newValue == null) {
+      if (newValue == null || !context.mounted) {
         return;
       }
 

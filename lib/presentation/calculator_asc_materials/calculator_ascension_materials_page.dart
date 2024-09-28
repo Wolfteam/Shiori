@@ -67,7 +67,7 @@ class _AppBar extends StatelessWidget implements PreferredSizeWidget {
                   items: state.items.map((e) => SortableItemOfT(e.key, e.name, e)).toList(),
                 ),
               ).then((result) {
-                if (result == null || !result.somethingChanged) {
+                if (result == null || !result.somethingChanged || !context.mounted) {
                   return;
                 }
 
@@ -169,7 +169,7 @@ class _FabMenu extends StatelessWidget {
     final keyName = await Navigator.of(context).push(route);
 
     charactersBloc.add(const CharactersEvent.init());
-    if (keyName.isNullEmptyOrWhitespace) {
+    if (keyName.isNullEmptyOrWhitespace || !context.mounted) {
       return;
     }
 
@@ -190,7 +190,7 @@ class _FabMenu extends StatelessWidget {
     final keyName = await Navigator.of(context).push(route);
 
     weaponsBloc.add(const WeaponsEvent.init());
-    if (keyName.isNullEmptyOrWhitespace) {
+    if (keyName.isNullEmptyOrWhitespace || !context.mounted) {
       return;
     }
 

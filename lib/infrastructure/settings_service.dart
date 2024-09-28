@@ -24,6 +24,7 @@ class SettingsServiceImpl extends SettingsService {
   final _resourcesVersionKey = 'ResourcesVersion';
   final _checkForUpdatesOnStartupKey = 'CheckForUpdatesOnStartup';
   final _lastGameCodesCheckedDateKey = 'LastGameCodesCheckedDate';
+  final _lastTelemetryCheckedDateKey = 'LastGameCodesCheckedDate';
 
   bool _initialized = false;
 
@@ -122,6 +123,12 @@ class SettingsServiceImpl extends SettingsService {
 
   @override
   set lastGameCodesCheckedDate(DateTime? value) => _setDate(_lastGameCodesCheckedDateKey, value);
+
+  @override
+  DateTime? get lastTelemetryCheckedDate => _getDateFrom(_lastTelemetryCheckedDateKey);
+
+  @override
+  set lastTelemetryCheckedDate(DateTime? value) => _setDate(_lastTelemetryCheckedDateKey, value);
 
   @override
   AppSettings get appSettings => AppSettings(

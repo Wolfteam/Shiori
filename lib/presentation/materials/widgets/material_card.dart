@@ -205,7 +205,7 @@ class MaterialCard extends StatelessWidget {
       context: context,
       builder: (_) => ItemQuantityDialog(quantity: quantity),
     ).then((newValue) {
-      if (newValue == null) {
+      if (newValue == null || !context.mounted) {
         return;
       }
 

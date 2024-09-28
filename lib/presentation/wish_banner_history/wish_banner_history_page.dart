@@ -49,7 +49,7 @@ class _WishBannerHistoryPageState extends State<WishBannerHistoryPage> with Sing
                       selected: [...state.selectedItemKeys],
                     ),
                   ).then((keys) {
-                    if (keys == null) {
+                    if (keys == null || !context.mounted) {
                       return;
                     }
                     context.read<WishBannerHistoryBloc>().add(WishBannerHistoryEvent.itemsSelected(keys: keys));

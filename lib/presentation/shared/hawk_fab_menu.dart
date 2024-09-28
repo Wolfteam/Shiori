@@ -75,13 +75,13 @@ class _HawkFabMenuState extends State<HawkFabMenu> with TickerProviderStateMixin
   Widget build(BuildContext context) {
     return PopScope(
       canPop: false,
-      onPopInvoked: (didPop) async {
+      onPopInvokedWithResult: (didPop, _) async {
         if (didPop) {
           return;
         }
         await _preventPopIfOpen().then(
           (backNavigationAllowed) {
-            if (mounted && backNavigationAllowed) {
+            if (mounted && backNavigationAllowed && context.mounted) {
               Navigator.of(context).pop();
             }
           },

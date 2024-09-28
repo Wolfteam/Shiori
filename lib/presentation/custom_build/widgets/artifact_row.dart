@@ -164,7 +164,7 @@ class ArtifactRow extends StatelessWidget {
             break;
         }
 
-        if (statType == null) {
+        if (statType == null || !context.mounted) {
           return;
         }
 

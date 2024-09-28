@@ -30,7 +30,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                 [...state.selectedItemKeys],
               ),
             ).then((keys) {
-              if (keys == null) {
+              if (keys == null || !context.mounted) {
                 return;
               }
               context.read<BannerHistoryCountBloc>().add(BannerHistoryCountEvent.itemsSelected(keys: keys));

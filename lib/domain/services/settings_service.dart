@@ -51,6 +51,9 @@ abstract class SettingsService {
   DateTime? get lastGameCodesCheckedDate;
   set lastGameCodesCheckedDate(DateTime? value);
 
+  DateTime? get lastTelemetryCheckedDate;
+  set lastTelemetryCheckedDate(DateTime? value);
+
   Future<void> init();
 
   BackupAppSettingsModel getDataForBackup();

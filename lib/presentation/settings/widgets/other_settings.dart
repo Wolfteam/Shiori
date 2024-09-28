@@ -104,10 +104,14 @@ class OtherSettings extends StatelessWidget {
                         content: '${s.deleteAllDataWarningMsg}\n${s.confirmQuestion}',
                       ),
                     ).then((confirmed) {
-                      if (confirmed == true) {
+                      if (confirmed == true && context.mounted) {
                         final toast = ToastUtils.of(context);
                         ToastUtils.showInfoToast(toast, s.deletingAllDataMsg);
-                        Future.delayed(const Duration(seconds: 1)).then((value) => context.read<MainBloc>().add(const MainEvent.deleteAllData()));
+                        Future.delayed(const Duration(seconds: 1)).then((value) {
+                          if (context.mounted) {
+                            context.read<MainBloc>().add(const MainEvent.deleteAllData());
+                          }
+                        });
                       }
                     }),
                   ),

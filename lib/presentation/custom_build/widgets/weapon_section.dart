@@ -48,8 +48,8 @@ class WeaponSection extends StatelessWidget {
                 ),
               ),
               if (!state.readyForScreenshot)
-                ButtonBar(
-                  buttonPadding: EdgeInsets.zero,
+                OverflowBar(
+                  alignment: MainAxisAlignment.end,
                   children: [
                     Tooltip(
                       message: s.add,
@@ -75,11 +75,7 @@ class WeaponSection extends StatelessWidget {
                                   ),
                                 ).then(
                                   (result) {
-                                    if (result == null) {
-                                      return;
-                                    }
-
-                                    if (!result.somethingChanged) {
+                                    if (result == null || !result.somethingChanged || !context.mounted) {
                                       return;
                                     }
 

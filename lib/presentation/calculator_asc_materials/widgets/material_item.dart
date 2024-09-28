@@ -88,6 +88,9 @@ class MaterialItem extends StatelessWidget {
                 showUsage: showMaterialUsage,
               ),
             ).then((option) {
+              if (!context.mounted) {
+                return;
+              }
               switch (option) {
                 case _DialogOptionType.goToDetails:
                   _gotoMaterialPage(context);
@@ -124,7 +127,7 @@ class MaterialItem extends StatelessWidget {
       context: context,
       builder: (_) => ChangeMaterialQuantityDialog(itemKey: itemKey),
     ).then((saved) {
-      if (saved == true) {
+      if (saved == true && context.mounted) {
         context.read<CalculatorAscMaterialsBloc>().add(CalculatorAscMaterialsEvent.init(sessionKey: sessionKey));
       }
     });

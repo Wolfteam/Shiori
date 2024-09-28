@@ -63,8 +63,11 @@ class _CharactersPageState extends State<CharactersPage> with AutomaticKeepAlive
             SliverPageFilter(
               search: state.search,
               title: s.characters,
-              onPressed: () => ModalBottomSheetUtils.showAppModalBottomSheet(context, EndDrawerItemType.characters)
-                  .then((_) => context.read<CharactersBloc>().add(const CharactersEvent.cancelChanges())),
+              onPressed: () => ModalBottomSheetUtils.showAppModalBottomSheet(context, EndDrawerItemType.characters).then((_) {
+                if (context.mounted) {
+                  context.read<CharactersBloc>().add(const CharactersEvent.cancelChanges());
+                }
+              }),
               searchChanged: (v) => context.read<CharactersBloc>().add(CharactersEvent.searchChanged(search: v)),
             ),
             if (state.characters.isNotEmpty)

@@ -22,6 +22,7 @@ class PageMessage extends StatelessWidget {
           margin: const EdgeInsets.only(top: 5),
           child: Text(text, textAlign: TextAlign.center),
         ),
+        ...children,
       ],
     );
     if (!useScaffold) return body;

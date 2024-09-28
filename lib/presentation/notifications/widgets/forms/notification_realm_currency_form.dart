@@ -119,7 +119,7 @@ class NotificationRealmCurrency extends StatelessWidget {
         title: s.realmCurrency,
       ),
     ).then((newValue) {
-      if (newValue == null) {
+      if (newValue == null || !context.mounted) {
         return;
       }
 

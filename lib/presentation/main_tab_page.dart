@@ -122,7 +122,7 @@ class _MainTabPageState extends State<MainTabPage> with SingleTickerProviderStat
   Widget build(BuildContext context) {
     final child = PopScope(
       canPop: false,
-      onPopInvoked: (didPop) async {
+      onPopInvokedWithResult: (didPop, _) async {
         if (didPop) {
           return;
         }

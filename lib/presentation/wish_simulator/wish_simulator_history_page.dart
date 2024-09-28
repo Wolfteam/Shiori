@@ -169,7 +169,7 @@ class _CustomAppBarState extends State<_CustomAppBar> {
                 title: s.deleteAllItems,
               ),
             ).then((confirmed) {
-              if (confirmed == true) {
+              if (confirmed == true && context.mounted) {
                 context.read<WishSimulatorPullHistoryBloc>().add(WishSimulatorPullHistoryEvent.deleteData(bannerType: widget.bannerType));
               }
             }),

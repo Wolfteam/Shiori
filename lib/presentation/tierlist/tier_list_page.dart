@@ -127,13 +127,15 @@ class _AppBar extends StatelessWidget implements PreferredSizeWidget {
 
   Future<void> _takeScreenshot(BuildContext context) {
     return ScreenshotUtils.takeScreenshot(screenshotController, context).then((taken) {
-      if (taken) {
+      if (taken && context.mounted) {
         final bloc = context.read<TierListBloc>();
         bloc.add(const TierListEvent.screenshotTaken(succeed: true));
       }
     }).catchError((Object ex, StackTrace trace) {
-      final bloc = context.read<TierListBloc>();
-      bloc.add(TierListEvent.screenshotTaken(succeed: false, ex: ex, trace: trace));
+      if (context.mounted) {
+        final bloc = context.read<TierListBloc>();
+        bloc.add(TierListEvent.screenshotTaken(succeed: false, ex: ex, trace: trace));
+      }
     });
   }
 

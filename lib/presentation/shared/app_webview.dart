@@ -1,4 +1,3 @@
-import 'dart:async';
 import 'dart:io';
 
 import 'package:flutter/material.dart';
@@ -8,7 +7,6 @@ import 'package:shiori/generated/l10n.dart';
 import 'package:shiori/presentation/shared/loading.dart';
 import 'package:shiori/presentation/shared/nothing_found_column.dart';
 import 'package:shiori/presentation/shared/page_message.dart';
-import 'package:webview_windows/webview_windows.dart';
 
 class AppWebView extends StatelessWidget {
   final String url;
@@ -17,6 +15,7 @@ class AppWebView extends StatelessWidget {
   final bool isLoading;
   final String? script;
   final AppBar? appBar;
+  final bool showCloseButton;
 
   const AppWebView({
     super.key,
@@ -26,21 +25,13 @@ class AppWebView extends StatelessWidget {
     this.isLoading = false,
     this.script,
     this.appBar,
+    this.showCloseButton = false,
   });
 
   @override
   Widget build(BuildContext context) {
-    if (Platform.isWindows) {
-      return _DesktopWebView(
-        url: url,
-        hasInternetConnection: hasInternetConnection,
-        appBar: appBar,
-        script: script,
-        isLoading: isLoading,
-      );
-    }
-
-    if (Platform.isAndroid || Platform.isIOS) {
+    final isPlatformSupported = [Platform.isAndroid || Platform.isIOS || Platform.isMacOS || Platform.isWindows].any((el) => el);
+    if (isPlatformSupported) {
       return _MobileWebView(
         url: url,
         userAgent: userAgent,
@@ -48,6 +39,7 @@ class AppWebView extends StatelessWidget {
         appBar: appBar,
         script: script,
         isLoading: isLoading,
+        showCloseButton: showCloseButton,
       );
     }
 
@@ -67,6 +59,7 @@ class _MobileWebView extends StatefulWidget {
   final bool isLoading;
   final String? script;
   final AppBar? appBar;
+  final bool showCloseButton;
 
   const _MobileWebView({
     required this.url,
@@ -75,6 +68,7 @@ class _MobileWebView extends StatefulWidget {
     this.isLoading = false,
     this.script,
     this.appBar,
+    this.showCloseButton = false,
   });
 
   @override
@@ -88,10 +82,13 @@ class _MobileWebViewState extends State<_MobileWebView> {
   Widget build(BuildContext context) {
     if (!widget.hasInternetConnection) {
       final s = S.of(context);
-      return PageMessage(text: s.noInternetConnection);
+      final children = [
+        if (widget.showCloseButton) const LoadingCloseButton(),
+      ];
+      return PageMessage(text: s.noInternetConnection, children: children);
     }
     if (widget.isLoading) {
-      return const Loading();
+      return Loading(showCloseButton: widget.showCloseButton);
     }
     final device = getDeviceType(MediaQuery.of(context).size);
     return Stack(
@@ -119,78 +116,5 @@ class _MobileWebViewState extends State<_MobileWebView> {
         if (_loading) Loading(showCloseButton: widget.appBar != null),
       ],
     );
-  }
-}
-
-class _DesktopWebView extends StatefulWidget {
-  final String url;
-  final bool hasInternetConnection;
-  final bool isLoading;
-  final String? script;
-  final AppBar? appBar;
-
-  const _DesktopWebView({
-    required this.url,
-    required this.hasInternetConnection,
-    this.isLoading = false,
-    this.script,
-    this.appBar,
-  });
-
-  @override
-  _DesktopWebViewState createState() => _DesktopWebViewState();
-}
-
-class _DesktopWebViewState extends State<_DesktopWebView> {
-  late WebviewController _controller;
-  late StreamSubscription _subscription;
-
-  @override
-  void initState() {
-    super.initState();
-    _initPlatformState();
-  }
-
-  Future<void> _initPlatformState() async {
-    if (!widget.hasInternetConnection) {
-      return;
-    }
-
-    _controller = WebviewController();
-    await _controller.initialize();
-    await _controller.loadUrl(widget.url);
-    _subscription = _controller.loadingState.listen(_onStateChanged);
-    if (!mounted) {
-      return;
-    }
-    setState(() {});
-  }
-
-  @override
-  void dispose() {
-    super.dispose();
-    _controller.dispose();
-    _subscription.cancel();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    if (!widget.hasInternetConnection) {
-      final s = S.of(context);
-      return PageMessage(text: s.noInternetConnection);
-    }
-    if (widget.isLoading) {
-      return const Loading();
-    }
-    return Scaffold(
-      appBar: widget.appBar,
-      body: _controller.value.isInitialized ? Webview(_controller) : Loading(showCloseButton: widget.appBar != null),
-    );
-  }
-
-  Future<void> _onStateChanged(LoadingState event) async {
-    if (event == LoadingState.navigationCompleted && widget.script != null) {
-      await _controller.executeScript(widget.script!);
-    }
   }
 }

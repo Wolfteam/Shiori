@@ -122,7 +122,7 @@ class TeamCharacterRow extends StatelessWidget {
             excluded: [CharacterRoleType.na],
           ),
         );
-        if (roleType == null) {
+        if (roleType == null || !context.mounted) {
           return;
         }
 
