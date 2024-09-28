@@ -425,21 +425,23 @@ packages:
     source: hosted
     version: "1.1.1"
   flutter_inappwebview_ios:
-    dependency: transitive
+    dependency: "direct overridden"
     description:
-      name: flutter_inappwebview_ios
-      sha256: f363577208b97b10b319cd0c428555cd8493e88b468019a8c5635a0e4312bd0f
-      url: "https://pub.dev"
-    source: hosted
-    version: "1.0.13"
+      path: flutter_inappwebview_ios
+      ref: master
+      resolved-ref: "27fd339172572fe1b16cdcdae235b2a88f432e3c"
+      url: "https://github.com/andychucs/flutter_inappwebview.git"
+    source: git
+    version: "1.0.14"
   flutter_inappwebview_macos:
-    dependency: transitive
+    dependency: "direct overridden"
     description:
-      name: flutter_inappwebview_macos
-      sha256: b55b9e506c549ce88e26580351d2c71d54f4825901666bd6cfa4be9415bb2636
-      url: "https://pub.dev"
-    source: hosted
-    version: "1.0.11"
+      path: flutter_inappwebview_macos
+      ref: master
+      resolved-ref: "615214fb2fd3f830955d526cfb6698d6e20b7b7a"
+      url: "https://github.com/andychucs/flutter_inappwebview.git"
+    source: git
+    version: "1.0.12"
   flutter_inappwebview_platform_interface:
     dependency: transitive
     description:
@@ -693,10 +695,10 @@ packages:
     dependency: "direct main"
     description:
       name: internet_connection_checker_plus
-      sha256: ea3f14695e5c2baa6daba5121a971338a69e7d615cbf1e47ae39f31234cc668c
+      sha256: "95da3194bdb98cb606b921f0e0007cbe55c32d6a7fa92d5debe59ef4183ce2a6"
       url: "https://pub.dev"
     source: hosted
-    version: "2.5.1"
+    version: "2.5.2"
   intl:
     dependency: "direct main"
     description:
@@ -1346,10 +1348,10 @@ packages:
     dependency: "direct main"
     description:
       name: synchronized
-      sha256: a824e842b8a054f91a728b783c177c1e4731f6b124f9192468457a8913371255
+      sha256: "51b08572b9f091f8c3eb4d9d4be253f196ff0075d5ec9b10a884026d5b55d7bc"
       url: "https://pub.dev"
     source: hosted
-    version: "3.2.0"
+    version: "3.3.0+2"
   term_glyph:
     dependency: transitive
     description:
