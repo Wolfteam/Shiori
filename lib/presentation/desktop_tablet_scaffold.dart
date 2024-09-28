@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shiori/application/bloc.dart';
@@ -127,11 +125,10 @@ class _NavigationRailState extends State<_NavigationRail> with ScrollToTopOnDoub
             icon: const Icon(Shiori.overmind),
             label: Text(s.artifacts),
           ),
-          if (!Platform.isMacOS)
-            NavigationRailDestination(
-              icon: const Icon(Icons.map),
-              label: Text(s.map),
-            ),
+          NavigationRailDestination(
+            icon: const Icon(Icons.map),
+            label: Text(s.map),
+          ),
           NavigationRailDestination(
             icon: const Icon(Icons.settings),
             label: Text(s.settings),
@@ -157,7 +154,7 @@ class _NavigationRailState extends State<_NavigationRail> with ScrollToTopOnDoub
       return;
     }
     final realIndex = newIndex - 1;
-    if (realIndex == 5 || (realIndex == 4 && Platform.isMacOS)) {
+    if (realIndex == 5) {
       await _gotoSettingsPage();
       return;
     }

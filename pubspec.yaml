@@ -73,7 +73,6 @@ dependencies:
   version: ^3.0.0
   version_tracker: ^2.4.1
   wakelock_plus: ^1.2.8
-  webview_windows: 0.4.0
   window_size:
     git:
       url: https://github.com/google/flutter-desktop-embedding
