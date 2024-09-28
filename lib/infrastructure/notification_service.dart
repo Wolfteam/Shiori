@@ -95,6 +95,16 @@ class NotificationServiceImpl implements NotificationService {
     if (!isPlatformSupported) {
       return;
     }
+    //Due to changes starting from android 14, we need to request for special permissions...
+    if (Platform.isAndroid) {
+      final bool? granted = await _flutterLocalNotificationsPlugin
+          .resolvePlatformSpecificImplementation<AndroidFlutterLocalNotificationsPlugin>()!
+          .requestExactAlarmsPermission();
+
+      if (granted == null || !granted) {
+        return;
+      }
+    }
     final now = DateTime.now();
     final payload = '${id}_${_getTagFromNotificationType(type)}';
     if (toBeDeliveredOn.isBefore(now) || toBeDeliveredOn.isAtSameMomentAs(now)) {
