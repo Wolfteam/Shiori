@@ -81,6 +81,7 @@ export 'materials/sortable_grouped_material.dart';
 export 'monsters/monster_card_model.dart';
 export 'notifications/notification_item.dart';
 export 'notifications/notification_item_image.dart';
+export 'notifications/push_notification_translations.dart';
 export 'settings/app_settings.dart';
 export 'sorting/sort_result.dart';
 export 'sorting/sortable_item.dart';
