@@ -171,6 +171,35 @@ class ApiServiceImpl implements ApiService {
     return const EmptyResponseDto(succeed: false, message: 'Unknown error');
   }
 
+  @override
+  Future<EmptyResponseDto> registerDeviceToken(String currentAppVersion, int currentResourcesVersion, String token) async {
+    try {
+      final request = RegisterDeviceTokenRequestDto(
+        appVersion: currentAppVersion,
+        currentVersion: currentResourcesVersion > 0 ? currentResourcesVersion : null,
+        token: token,
+      );
+      final url = Uri.parse(Env.apiBaseUrl).replace(path: 'api/devices/registerToken');
+      final headers = _getApiHeaders();
+      _addJsonContentType(headers);
+      final response = await _httpClient.post(url, headers: headers, body: jsonEncode(request));
+      if (!_isSuccessStatusCode(response.statusCode)) {
+        _loggingService.warning(
+          runtimeType,
+          'registerDeviceForPushNotifications: Got status code = ${response.statusCode}. Body = ${response.body}',
+        );
+        return EmptyResponseDto(succeed: false, message: 'Invalid status code = ${response.statusCode}');
+      }
+
+      final json = jsonDecode(response.body) as Map<String, dynamic>;
+      final apiResponse = EmptyResponseDto.fromJson(json);
+      return apiResponse;
+    } catch (e, s) {
+      _handleError('registerDeviceForPushNotifications', e, s);
+    }
+    return const EmptyResponseDto(succeed: false, message: 'Unknown error');
+  }
+
   Map<String, String> _getApiHeaders() {
     final headers = {Env.apiHeaderName: Env.apiHeaderValue};
     headers.addAll(_getCommonApiHeaders());

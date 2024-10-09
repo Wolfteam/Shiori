@@ -12,4 +12,6 @@ abstract class ApiService {
   Future<ApiListResponseDto<GameCodeResponseDto>> getGameCodes(String appVersion, int currentResourcesVersion);
 
   Future<EmptyResponseDto> sendTelemetryData(SaveAppLogsRequestDto request);
+
+  Future<EmptyResponseDto> registerDeviceToken(String currentAppVersion, int currentResourcesVersion, String token);
 }

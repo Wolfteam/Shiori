@@ -264,6 +264,11 @@ class TelemetryServiceImpl implements TelemetryService {
     }.addEnumTypeName(type);
     return trackEventAsync('WishSimulator_Result', props);
   }
+
+  @override
+  Future<void> trackDeviceRegisteredForPushNotifications(String token) {
+    return trackEventAsync('Device_Registered_For_Push_Notifications', <String, dynamic>{}.addToken(token));
+  }
 }
 
 extension _MapExtension on Map<String, dynamic> {
@@ -285,6 +290,11 @@ extension _MapExtension on Map<String, dynamic> {
 
   Map<String, dynamic> addSucceed(bool value) {
     putIfAbsent('succeed', () => value);
+    return this;
+  }
+
+  Map<String, dynamic> addToken(String value) {
+    putIfAbsent('token', () => value);
     return this;
   }
 }
