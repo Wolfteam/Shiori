@@ -9,6 +9,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "72.0.0"
+  _flutterfire_internals:
+    dependency: transitive
+    description:
+      name: _flutterfire_internals
+      sha256: "5534e701a2c505fed1f0799e652dd6ae23bd4d2c4cf797220e5ced5764a7c1c2"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.3.44"
   _macros:
     dependency: transitive
     description: dart
@@ -350,6 +358,54 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "8.1.2"
+  firebase_core:
+    dependency: "direct main"
+    description:
+      name: firebase_core
+      sha256: "51dfe2fbf3a984787a2e7b8592f2f05c986bfedd6fdacea3f9e0a7beb334de96"
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.6.0"
+  firebase_core_platform_interface:
+    dependency: transitive
+    description:
+      name: firebase_core_platform_interface
+      sha256: e30da58198a6d4b49d5bce4e852f985c32cb10db329ebef9473db2b9f09ce810
+      url: "https://pub.dev"
+    source: hosted
+    version: "5.3.0"
+  firebase_core_web:
+    dependency: transitive
+    description:
+      name: firebase_core_web
+      sha256: f967a7138f5d2ffb1ce15950e2a382924239eaa521150a8f144af34e68b3b3e5
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.18.1"
+  firebase_messaging:
+    dependency: "direct main"
+    description:
+      name: firebase_messaging
+      sha256: eb6e28a3a35deda61fe8634967c84215efc19133ba58d8e0fc6c9a2af2cba05e
+      url: "https://pub.dev"
+    source: hosted
+    version: "15.1.3"
+  firebase_messaging_platform_interface:
+    dependency: transitive
+    description:
+      name: firebase_messaging_platform_interface
+      sha256: b316c4ee10d93d32c033644207afc282d9b2b4372f3cf9c6022f3558b3873d2d
+      url: "https://pub.dev"
+    source: hosted
+    version: "4.5.46"
+  firebase_messaging_web:
+    dependency: transitive
+    description:
+      name: firebase_messaging_web
+      sha256: d7f0147a1a9fe4313168e20154a01fd5cf332898de1527d3930ff77b8c7f5387
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.9.2"
   fixnum:
     dependency: transitive
     description:
@@ -358,14 +414,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.1.0"
-  fk_user_agent:
-    dependency: "direct main"
-    description:
-      name: fk_user_agent
-      sha256: fd6c94e120786985a292d12f61422a581f4e851148d5940af38b819357b8ad0d
-      url: "https://pub.dev"
-    source: hosted
-    version: "2.1.0"
   fl_chart:
     dependency: "direct main"
     description:
@@ -676,14 +724,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "4.2.0"
-  image_gallery_saver:
+  image_gallery_saver_plus:
     dependency: "direct main"
     description:
-      name: image_gallery_saver
-      sha256: "0aba74216a4d9b0561510cb968015d56b701ba1bd94aace26aacdd8ae5761816"
+      name: image_gallery_saver_plus
+      sha256: "05a5dfd60b0ecd9f990f578f4ff55fe2b6df57a03bb34e3d0963639584d76153"
       url: "https://pub.dev"
     source: hosted
-    version: "2.0.3"
+    version: "3.0.5"
   infinite_listview:
     dependency: "direct main"
     description:
@@ -1313,10 +1361,11 @@ packages:
   store_checker:
     dependency: "direct main"
     description:
-      name: store_checker
-      sha256: "9e5841e4f922cc7f0283323ff3c78fd31ace14c22e988525d33355c35d7c815a"
-      url: "https://pub.dev"
-    source: hosted
+      path: "."
+      ref: HEAD
+      resolved-ref: f12c707d795d29f49ac150315774e3e3d8eae9a3
+      url: "git@github.com:Wolfteam/store_checker.git"
+    source: git
     version: "1.6.0"
   stream_channel:
     dependency: transitive
