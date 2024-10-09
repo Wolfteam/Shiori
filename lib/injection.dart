@@ -343,7 +343,7 @@ class Injection {
 
     getIt.registerLazySingleton<TelemetryService>(() => TelemetryServiceImpl(getIt<DeviceInfoService>()));
 
-    getIt.registerLazySingleton<NotificationService>(() => NotificationServiceImpl(getIt<LoggingService>()));
+    getIt.registerLazySingleton<NotificationService>(() => NotificationServiceImpl(getIt<LoggingService>(), getIt<SettingsService>()));
 
     getIt.registerLazySingleton<ChangelogProvider>(
       () => ChangelogProviderImpl(getIt<LoggingService>(), getIt<NetworkService>(), getIt<ApiService>()),
