@@ -150,7 +150,7 @@ class DeviceInfoServiceImpl implements DeviceInfoService {
     if (Platform.isAndroid || Platform.isIOS || Platform.isMacOS) {
       final installationSource = await StoreChecker.getSource;
       _installationSource = installationSource;
-      _deviceInfo.putIfAbsent('installationSource', () => installationSource.name);
+      _appInfo.putIfAbsent('installationSource', () => installationSource.name);
     }
   }
 }

@@ -43,32 +43,31 @@ class DailyCheckInPage extends StatelessWidget {
       child: BlocProvider(
         create: (ctx) => Injection.urlPageBloc..add(const UrlPageEvent.init(loadMap: false, loadDailyCheckIn: true)),
         child: BlocBuilder<UrlPageBloc, UrlPageState>(
-          builder: (context, state) {
-            return state.map(
-              loading: (_) => const Loading(),
-              loaded: (state) => AppWebView(
-                appBar: AppBar(
-                  title: Text(s.dailyCheckIn),
-                  actions: [
-                    IconButton(
-                      icon: const Icon(Icons.info),
-                      splashRadius: Styles.mediumButtonSplashRadius,
-                      onPressed: () => _showInfoDialog(context),
-                    ),
-                    IconButton(
-                      icon: const Icon(Icons.open_in_new),
-                      splashRadius: Styles.mediumButtonSplashRadius,
-                      onPressed: () => _launchUrl(state.dailyCheckInUrl),
-                    ),
-                  ],
-                ),
-                url: state.dailyCheckInUrl,
-                userAgent: state.userAgent,
-                hasInternetConnection: state.hasInternetConnection,
-                script: _script,
+          builder: (context, state) => state.map(
+            loading: (_) => const Loading(showCloseButton: true),
+            loaded: (state) => AppWebView(
+              appBar: AppBar(
+                title: Text(s.dailyCheckIn),
+                actions: [
+                  IconButton(
+                    icon: const Icon(Icons.info),
+                    splashRadius: Styles.mediumButtonSplashRadius,
+                    onPressed: () => _showInfoDialog(context),
+                  ),
+                  IconButton(
+                    icon: const Icon(Icons.open_in_new),
+                    splashRadius: Styles.mediumButtonSplashRadius,
+                    onPressed: () => _launchUrl(state.dailyCheckInUrl),
+                  ),
+                ],
               ),
-            );
-          },
+              url: state.dailyCheckInUrl,
+              userAgent: state.userAgent,
+              hasInternetConnection: state.hasInternetConnection,
+              script: _script,
+              showCloseButton: true,
+            ),
+          ),
         ),
       ),
     );

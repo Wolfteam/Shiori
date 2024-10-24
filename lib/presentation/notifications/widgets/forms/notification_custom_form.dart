@@ -96,7 +96,7 @@ class NotificationCustomForm extends StatelessWidget {
       locale: locale,
     );
 
-    if (date == null) {
+    if (date == null || !context.mounted) {
       return;
     }
 
@@ -108,7 +108,7 @@ class NotificationCustomForm extends StatelessWidget {
         child: child!,
       ),
     );
-    if (time == null) {
+    if (time == null || !context.mounted) {
       return;
     }
 

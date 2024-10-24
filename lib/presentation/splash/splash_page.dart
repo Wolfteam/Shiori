@@ -201,7 +201,7 @@ class _Buttons extends StatelessWidget {
             textAlign: TextAlign.center,
             style: theme.textTheme.labelMedium!.copyWith(color: Colors.white),
           ),
-          ButtonBar(
+          OverflowBar(
             alignment: MainAxisAlignment.center,
             children: [
               TextButton.icon(
@@ -285,7 +285,7 @@ class _Updating extends StatelessWidget {
                     color: Colors.white,
                     valueColor: const AlwaysStoppedAnimation<Color>(Colors.white),
                     backgroundColor: Colors.black,
-                    value: state.maybeMap(loaded: (state) => state.progress / 100, orElse: () => null),
+                    value: state.maybeMap(loaded: (state) => state.downloadedBytes / state.result!.downloadTotalSize!, orElse: () => null),
                   ),
                 ],
               ),

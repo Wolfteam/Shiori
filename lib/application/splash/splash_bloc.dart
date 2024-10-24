@@ -229,11 +229,14 @@ class SplashBloc extends Bloc<SplashEvent, SplashState> {
     if (!isNetworkAvailable) {
       return;
     }
+
+    final DateTime? lastCheckedDate = _settingsService.lastTelemetryCheckedDate;
     final List<Telemetry> telemetryData = _dataService.telemetry.getAll();
-    final bool send = telemetryData.isNotEmpty && telemetryData.length > 5;
+    final bool send = telemetryData.isNotEmpty && (lastCheckedDate == null || DateTime.now().isAfter(lastCheckedDate.add(const Duration(hours: 3))));
     if (!send) {
       return;
     }
+    _settingsService.lastTelemetryCheckedDate = DateTime.now();
 
     final logs = telemetryData.map((t) => SaveAppLogRequestDto(timestamp: t.createdAt.ticks, message: t.message)).toList();
     final request = SaveAppLogsRequestDto(logs: logs);

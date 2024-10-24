@@ -118,7 +118,7 @@ class _BodyState extends State<_Body> with SingleTickerProviderStateMixin, AppFa
         items: sessions.map((e) => SortableItemOfT('${e.key}', e.name, e)).toList(),
       ),
     ).then((result) {
-      if (result == null || !result.somethingChanged) {
+      if (result == null || !result.somethingChanged || !context.mounted) {
         return;
       }
 

@@ -167,7 +167,11 @@ class BackupsPage extends StatelessWidget {
     final msg = result.succeed ? s.backupWasRestored(result.filename) : s.couldNotRestoreBackup;
     _showToastMsg(msg, result.succeed, context);
     if (result.succeed) {
-      Future.delayed(const Duration(seconds: 1)).then((value) => context.read<MainBloc>().add(const MainEvent.restart()));
+      Future.delayed(const Duration(seconds: 1)).then((value) {
+        if (context.mounted) {
+          context.read<MainBloc>().add(const MainEvent.restart());
+        }
+      });
     }
   }
 
@@ -185,7 +189,7 @@ class BackupsPage extends StatelessWidget {
           dataTypes: result.dataTypes,
         ),
       ).then((dataTypes) {
-        if (dataTypes?.isNotEmpty == true) {
+        if (dataTypes?.isNotEmpty == true && context.mounted) {
           context.read<BackupRestoreBloc>().add(BackupRestoreEvent.restore(filePath: result.path, dataTypes: dataTypes!, imported: true));
         }
       });
@@ -251,7 +255,8 @@ class _Header extends StatelessWidget {
             Text(s.createBackupMsgInfoA),
             Text(s.createBackupMsgInfoB),
             Text(s.restoreBackupMsgWarning),
-            ButtonBar(
+            OverflowBar(
+              alignment: MainAxisAlignment.end,
               children: [
                 FilledButton(
                   onPressed: () => showDialog<List<AppBackupDataType>?>(
@@ -261,7 +266,7 @@ class _Header extends StatelessWidget {
                       dataTypes: AppBackupDataType.values,
                     ),
                   ).then((dataTypes) {
-                    if (dataTypes?.isNotEmpty == true) {
+                    if (dataTypes?.isNotEmpty == true && context.mounted) {
                       context.read<BackupRestoreBloc>().add(BackupRestoreEvent.create(dataTypes: dataTypes!));
                     }
                   }),
@@ -283,12 +288,16 @@ class _Header extends StatelessWidget {
     final customFile = Platform.isWindows;
     return FilePicker.platform
         .pickFiles(
-          dialogTitle: s.chooseFile,
-          lockParentWindow: true,
-          type: customFile ? FileType.custom : FileType.any,
-          allowedExtensions: customFile ? [backupFileExtension.replaceAll('.', '')] : null,
-        )
-        .then((result) => _handlePickerResult(context, result));
+      dialogTitle: s.chooseFile,
+      lockParentWindow: true,
+      type: customFile ? FileType.custom : FileType.any,
+      allowedExtensions: customFile ? [backupFileExtension.replaceAll('.', '')] : null,
+    )
+        .then((result) {
+      if (context.mounted) {
+        _handlePickerResult(context, result);
+      }
+    });
   }
 
   void _handlePickerResult(BuildContext context, FilePickerResult? result) {

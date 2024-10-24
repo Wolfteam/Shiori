@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import 'package:shiori/generated/l10n.dart';
@@ -139,9 +137,6 @@ class _HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin<
   Widget _buildOthersSectionMenu(int index) {
     switch (index) {
       case 0:
-        if (Platform.isMacOS) {
-          return const SizedBox.shrink();
-        }
         return const DailyCheckInCard(iconToTheLeft: true);
       case 1:
         return const GameCodesCard(iconToTheLeft: true);

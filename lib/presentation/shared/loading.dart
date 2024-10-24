@@ -38,17 +38,25 @@ class Loading extends StatelessWidget {
           margin: const EdgeInsets.only(top: 5),
           child: Text(s.loading, textAlign: TextAlign.center),
         ),
-        if (showCloseButton)
-          Center(
-            child: IconButton.filled(
-              onPressed: () => Navigator.pop(context),
-              icon: const Icon(Icons.close),
-              splashRadius: Styles.mediumButtonSplashRadius,
-            ),
-          ),
+        if (showCloseButton) const LoadingCloseButton(),
       ],
     );
     if (!useScaffold) return body;
     return Scaffold(body: body);
+  }
+}
+
+class LoadingCloseButton extends StatelessWidget {
+  const LoadingCloseButton({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: IconButton.filled(
+        onPressed: () => Navigator.pop(context),
+        icon: const Icon(Icons.close),
+        splashRadius: Styles.mediumButtonSplashRadius,
+      ),
+    );
   }
 }

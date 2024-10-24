@@ -3,10 +3,12 @@
 #
 
 list(APPEND FLUTTER_PLUGIN_LIST
+  connectivity_plus
+  flutter_inappwebview_windows
+  flutter_timezone
   permission_handler_windows
   share_plus
   url_launcher_windows
-  webview_windows
   window_size
 )
 

@@ -136,10 +136,15 @@ class BannerHistoryCountBloc extends Bloc<BannerHistoryCountEvent, BannerHistory
   List<BannerHistoryItemModel> _getFinalSortedBanners(List<BannerHistoryItemModel> banners, List<double> versions, BannerHistorySortType sortType) {
     final sortedBannerByVersion = <BannerHistoryItemModel>[];
     for (final version in versions) {
-      final onVersion = banners.where((el) => el.versions.any((v) => v.released && v.version == version)).toList()
+      final onVersion = banners
+          .where((el) => el.versions.any((v) => v.released && v.version == version && !sortedBannerByVersion.any((x) => x.key == el.key)))
+          .toList()
         ..sort((x, y) => y.rarity.compareTo(x.rarity));
 
-      onVersion.removeWhere((el) => sortedBannerByVersion.any((x) => x.key == el.key));
+      if (onVersion.isEmpty) {
+        continue;
+      }
+
       sortedBannerByVersion.addAll(onVersion);
     }
     switch (sortType) {
