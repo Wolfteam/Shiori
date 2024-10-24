@@ -5,6 +5,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:shiori/application/bloc.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/extensions/string_extensions.dart';
+import 'package:shiori/domain/models/dtos.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/api_service.dart';
 import 'package:shiori/domain/services/data_service.dart';
@@ -12,6 +13,7 @@ import 'package:shiori/domain/services/device_info_service.dart';
 import 'package:shiori/domain/services/genshin_service.dart';
 import 'package:shiori/domain/services/locale_service.dart';
 import 'package:shiori/domain/services/logging_service.dart';
+import 'package:shiori/domain/services/network_service.dart';
 import 'package:shiori/domain/services/notification_service.dart';
 import 'package:shiori/domain/services/purchase_service.dart';
 import 'package:shiori/domain/services/settings_service.dart';
@@ -32,6 +34,7 @@ class MainBloc extends Bloc<MainEvent, MainState> {
   final DataService _dataService;
   final NotificationService _notificationService;
   final ApiService _apiService;
+  final NetworkService _networkService;
 
   final CharactersBloc _charactersBloc;
   final WeaponsBloc _weaponsBloc;
@@ -51,6 +54,7 @@ class MainBloc extends Bloc<MainEvent, MainState> {
     this._dataService,
     this._notificationService,
     this._apiService,
+    this._networkService,
     this._charactersBloc,
     this._weaponsBloc,
     this._homeBloc,
@@ -62,11 +66,7 @@ class MainBloc extends Bloc<MainEvent, MainState> {
   @override
   Stream<MainState> mapEventToState(MainEvent event) async* {
     final s = await event.when(
-      init: (updateResult, pushNotificationTranslations) async => _init(
-        init: true,
-        updateResult: updateResult,
-        pushNotificationTranslations: pushNotificationTranslations,
-      ),
+      init: (updateResult) async => _init(init: true, updateResult: updateResult),
       themeChanged: (theme) async => _loadThemeData(theme, _settingsService.accentColor),
       accentColorChanged: (accentColor) async => _loadThemeData(_settingsService.appTheme, accentColor),
       languageChanged: (language) async => _init(languageChanged: true),
@@ -87,7 +87,6 @@ class MainBloc extends Bloc<MainEvent, MainState> {
     bool languageChanged = false,
     bool init = false,
     AppResourceUpdateResultType? updateResult,
-    PushNotificationTranslations? pushNotificationTranslations,
   }) async {
     _logger.info(runtimeType, '_init: Initializing all..');
     await _genshinService.init(_settingsService.language, noResourcesHaveBeenDownloaded: _settingsService.noResourcesHasBeenDownloaded);
@@ -103,23 +102,9 @@ class MainBloc extends Bloc<MainEvent, MainState> {
     final settings = _settingsService.appSettings;
     await _telemetryService.trackInit(settings);
 
-    if (pushNotificationTranslations != null) {
-      //TODO: if the language changes, the push notification will still be shown in the previous lang
-      await _cancelSubscriptions();
-      _subscriptions.addAll(await _notificationService.initPushNotifications(pushNotificationTranslations));
-
-      if (_settingsService.mustRegisterPushNotificationsToken && _settingsService.pushNotificationsToken.isNotNullEmptyOrWhitespace) {
-        final registerResponse = await _apiService.registerDeviceToken(
-          _deviceInfoService.version,
-          _settingsService.resourceVersion,
-          _settingsService.pushNotificationsToken,
-        );
-        if (registerResponse.succeed) {
-          _settingsService.mustRegisterPushNotificationsToken = false;
-          await _telemetryService.trackDeviceRegisteredForPushNotifications(_settingsService.pushNotificationsToken);
-        }
-      }
-    }
+    await _cancelSubscriptions();
+    _subscriptions.addAll(await _notificationService.initPushNotifications());
+    await _registerDeviceToken(languageChanged);
 
     final state = _loadThemeData(settings.appTheme, settings.accentColor, updateResult: updateResult);
 
@@ -165,5 +150,41 @@ class MainBloc extends Bloc<MainEvent, MainState> {
 
   Future<void> _cancelSubscriptions() {
     return Future.wait(_subscriptions.map((s) => s.cancel()));
+  }
+
+  Future<void> _registerDeviceToken(bool languageChanged) async {
+    if (!_deviceInfoService.installedFromValidSource) {
+      return;
+    }
+
+    final bool registerDeviceToken = _settingsService.pushNotificationsToken.isNotNullEmptyOrWhitespace && _settingsService.resourceVersion > 0 && (languageChanged || _settingsService.mustRegisterPushNotificationsToken);
+    if (!registerDeviceToken) {
+      return;
+    }
+
+    _settingsService.mustRegisterPushNotificationsToken = true;
+    final DateTime? lastCheckedDate = _settingsService.lastDeviceTokenRegistrationCheckedDate;
+    final bool canRegister = lastCheckedDate == null || DateTime.now().isAfter(lastCheckedDate.add(const Duration(hours: 3)));
+    if (!canRegister) {
+      return;
+    }
+
+    final bool isNetworkAvailable = await _networkService.isInternetAvailable();
+    if (!isNetworkAvailable) {
+      return;
+    }
+
+    final dto = RegisterDeviceTokenRequestDto(
+      appVersion: _deviceInfoService.version,
+      currentVersion: _settingsService.resourceVersion,
+      token: _settingsService.pushNotificationsToken,
+      language: _settingsService.language,
+    );
+    final registerResponse = await _apiService.registerDeviceToken(dto);
+    if (registerResponse.succeed) {
+      _settingsService.mustRegisterPushNotificationsToken = false;
+      _settingsService.lastDeviceTokenRegistrationCheckedDate = DateTime.now();
+      await _telemetryService.trackDeviceRegisteredForPushNotifications();
+    }
   }
 }

@@ -4,7 +4,6 @@ part of 'main_bloc.dart';
 class MainEvent with _$MainEvent {
   const factory MainEvent.init({
     required AppResourceUpdateResultType? updateResultType,
-    required PushNotificationTranslations? pushNotificationTranslations,
   }) = _Init;
 
   const factory MainEvent.themeChanged({
