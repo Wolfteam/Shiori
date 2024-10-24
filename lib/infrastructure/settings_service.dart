@@ -27,6 +27,7 @@ class SettingsServiceImpl extends SettingsService {
   final _lastTelemetryCheckedDateKey = 'LastGameCodesCheckedDate';
   final _pushNotificationsTokenKey = 'PushNotificationsToken';
   final _mustRegisterPushNotificationsTokenKey = 'MustRegisterPushNotificationsToken';
+  final _lastDeviceTokenRegistrationCheckedDateKey = 'LastDeviceTokenRegistrationCheckedDate';
 
   bool _initialized = false;
 
@@ -143,6 +144,12 @@ class SettingsServiceImpl extends SettingsService {
 
   @override
   set mustRegisterPushNotificationsToken(bool value) => _prefs.setBool(_mustRegisterPushNotificationsTokenKey, value);
+
+  @override
+  DateTime? get lastDeviceTokenRegistrationCheckedDate => _getDateFrom(_lastDeviceTokenRegistrationCheckedDateKey);
+
+  @override
+  set lastDeviceTokenRegistrationCheckedDate(DateTime? value) => _setDate(_lastDeviceTokenRegistrationCheckedDateKey, value);
 
   @override
   AppSettings get appSettings => AppSettings(

@@ -172,17 +172,12 @@ class ApiServiceImpl implements ApiService {
   }
 
   @override
-  Future<EmptyResponseDto> registerDeviceToken(String currentAppVersion, int currentResourcesVersion, String token) async {
+  Future<EmptyResponseDto> registerDeviceToken(RegisterDeviceTokenRequestDto dto) async {
     try {
-      final request = RegisterDeviceTokenRequestDto(
-        appVersion: currentAppVersion,
-        currentVersion: currentResourcesVersion > 0 ? currentResourcesVersion : null,
-        token: token,
-      );
       final url = Uri.parse(Env.apiBaseUrl).replace(path: 'api/devices/registerToken');
       final headers = _getApiHeaders();
       _addJsonContentType(headers);
-      final response = await _httpClient.post(url, headers: headers, body: jsonEncode(request));
+      final response = await _httpClient.post(url, headers: headers, body: jsonEncode(dto));
       if (!_isSuccessStatusCode(response.statusCode)) {
         _loggingService.warning(
           runtimeType,

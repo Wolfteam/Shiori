@@ -60,6 +60,9 @@ abstract class SettingsService {
   bool get mustRegisterPushNotificationsToken;
   set mustRegisterPushNotificationsToken(bool value);
 
+  DateTime? get lastDeviceTokenRegistrationCheckedDate;
+  set lastDeviceTokenRegistrationCheckedDate(DateTime? value);
+
   Future<void> init();
 
   BackupAppSettingsModel getDataForBackup();

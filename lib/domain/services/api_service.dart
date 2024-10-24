@@ -13,5 +13,5 @@ abstract class ApiService {
 
   Future<EmptyResponseDto> sendTelemetryData(SaveAppLogsRequestDto request);
 
-  Future<EmptyResponseDto> registerDeviceToken(String currentAppVersion, int currentResourcesVersion, String token);
+  Future<EmptyResponseDto> registerDeviceToken(RegisterDeviceTokenRequestDto dto);
 }

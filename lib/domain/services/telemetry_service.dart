@@ -88,5 +88,5 @@ abstract class TelemetryService {
 
   Future<void> trackWishSimulatorResult(int bannerIndex, double version, BannerItemType type, String range);
 
-  Future<void> trackDeviceRegisteredForPushNotifications(String token);
+  Future<void> trackDeviceRegisteredForPushNotifications();
 }

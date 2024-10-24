@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:io';
 
 import 'package:collection/collection.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
@@ -9,12 +10,10 @@ import 'package:flutter_timezone/flutter_timezone.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/extensions/string_extensions.dart';
-import 'package:shiori/domain/models/models.dart';
-import 'package:shiori/domain/services/locale_service.dart';
 import 'package:shiori/domain/services/logging_service.dart';
 import 'package:shiori/domain/services/notification_service.dart';
 import 'package:shiori/domain/services/settings_service.dart';
-import 'package:shiori/generated/l10n.dart';
+import 'package:shiori/firebase_options.dart';
 import 'package:shiori/injection.dart';
 import 'package:timezone/data/latest_all.dart' as tz;
 import 'package:timezone/timezone.dart' as tz;
@@ -27,35 +26,28 @@ const _largeIcon = 'shiori';
 //Here we use this one in particular cause this tz uses UTC and does not use any kind of dst.
 const _fallbackTimeZone = 'Africa/Accra';
 
-AppPushNotificationType? _getPushNotificationType(RemoteMessage message) {
-  final String? category = message.data['category']?.toString().toLowerCase();
-  if (category.isNullEmptyOrWhitespace) {
-    return null;
-  }
-
-  return AppPushNotificationType.values.firstWhereOrNull((e) => e.name.toLowerCase() == category);
-}
-
 @pragma('vm:entry-point')
 Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
+  debugPrint('On background notification');
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+
   try {
-    final AppPushNotificationType? type = _getPushNotificationType(message);
-    if (type == null) {
-      return;
-    }
-
+    //This may fail if there's an instance already registered
     await Injection.init();
-    final notificationService = getIt<NotificationService>();
-    final localeService = getIt<LocaleService>();
+  } catch (_, __) {
+    //No op
+  }
 
-    final LanguageModel language = localeService.getLocaleWithoutLang();
-    final s = await S.load(Locale(language.code, language.countryCode));
-
-    final translations = PushNotificationTranslations.fromS(s: s);
-    await notificationService.showPushNotification(type, translations);
+  LoggingService? loggingService;
+  try {
+    loggingService = getIt<LoggingService>();
+    loggingService.info(NotificationServiceImpl, 'Handling background push notification...');
+    final notificationService = getIt<NotificationService>() as NotificationServiceImpl;
+    await notificationService.onForegroundPushNotification(message);
   } catch (e, s) {
     debugPrint(e.toString());
     debugPrintStack(stackTrace: s);
+    loggingService?.error(NotificationServiceImpl, 'Unknown error', e, s);
   }
 }
 
@@ -111,7 +103,7 @@ class NotificationServiceImpl implements NotificationService {
   }
 
   @override
-  Future<List<StreamSubscription>> initPushNotifications(PushNotificationTranslations translations) async {
+  Future<List<StreamSubscription>> initPushNotifications() async {
     final List<StreamSubscription> subscriptions = [];
     final fcm = FirebaseMessaging.instance;
     if (!await fcm.isSupported()) {
@@ -120,12 +112,12 @@ class NotificationServiceImpl implements NotificationService {
     try {
       subscriptions.addAll([
         fcm.onTokenRefresh.listen(_onTokenRefresh),
-        FirebaseMessaging.onMessage.listen((msg) => _onForegroundPushNotification(translations, msg)),
+        FirebaseMessaging.onMessage.listen((msg) => onForegroundPushNotification(msg, show: Platform.isAndroid)),
       ]);
       FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
-      await fcm.requestPermission(provisional: true);
+      await fcm.requestPermission();
       if (Platform.isMacOS || Platform.isIOS) {
-        await fcm.setForegroundNotificationPresentationOptions(alert: true, badge: true, sound: true);
+        await fcm.setForegroundNotificationPresentationOptions(alert: true, sound: true, badge: true);
         await fcm.getAPNSToken();
       }
 
@@ -146,35 +138,6 @@ class NotificationServiceImpl implements NotificationService {
       return Future.value();
     }
     final specifics = _getPlatformChannelSpecifics(type, body);
-    final newId = _generateUniqueId(id, type);
-    return _flutterLocalNotificationsPlugin.show(newId, title, body, specifics, payload: payload);
-  }
-
-  @override
-  Future<void> showPushNotification(AppPushNotificationType type, PushNotificationTranslations translations, {String? payload}) async {
-    if (!isPlatformSupported) {
-      return Future.value();
-    }
-
-    int id = 0;
-    String? title;
-    String? body;
-    switch (type) {
-      case AppPushNotificationType.newGameCodesAvailable:
-        id = 1;
-        title = translations.newGameCodesAvailableTitle;
-        body = translations.newGameCodesAvailableMessage;
-        _settingsService.lastGameCodesCheckedDate = null;
-      default:
-        break;
-    }
-
-    final bool show = title.isNotNullEmptyOrWhitespace && body.isNotNullEmptyOrWhitespace;
-    if (!show) {
-      return;
-    }
-
-    final specifics = _getPlatformChannelSpecifics(type, body!);
     final newId = _generateUniqueId(id, type);
     return _flutterLocalNotificationsPlugin.show(newId, title, body, specifics, payload: payload);
   }
@@ -203,9 +166,7 @@ class NotificationServiceImpl implements NotificationService {
     }
     //Due to changes starting from android 14, we need to request for special permissions...
     if (Platform.isAndroid) {
-      final bool? granted = await _flutterLocalNotificationsPlugin
-          .resolvePlatformSpecificImplementation<AndroidFlutterLocalNotificationsPlugin>()!
-          .requestExactAlarmsPermission();
+      final bool? granted = await _flutterLocalNotificationsPlugin.resolvePlatformSpecificImplementation<AndroidFlutterLocalNotificationsPlugin>()!.requestExactAlarmsPermission();
 
       if (granted == null || !granted) {
         return;
@@ -294,13 +255,41 @@ class NotificationServiceImpl implements NotificationService {
     throw Exception('Type = ${type.name} is not supported');
   }
 
-  Future<void> _onForegroundPushNotification(PushNotificationTranslations translations, RemoteMessage message) async {
+  AppPushNotificationType? _getPushNotificationType(RemoteMessage message) {
+    final String? category = message.data['category']?.toString().toLowerCase();
+    if (category.isNullEmptyOrWhitespace) {
+      return null;
+    }
+
+    return AppPushNotificationType.values.firstWhereOrNull((e) => e.name.toLowerCase() == category);
+  }
+
+  Future<void> onForegroundPushNotification(RemoteMessage message, {bool show = false}) async {
     final AppPushNotificationType? type = _getPushNotificationType(message);
     if (type == null) {
       return;
     }
 
-    await showPushNotification(type, translations);
+    _handlePushNotification(type);
+
+    if (!Platform.isAndroid) {
+      return;
+    }
+
+    //Android does not show notifications if the app is in the foreground, that's why we manually create one
+    final bool hasTitleAndBody = (message.notification?.title.isNotNullEmptyOrWhitespace ?? false) && (message.notification?.body.isNotNullEmptyOrWhitespace ?? false);
+    if (!show || !hasTitleAndBody) {
+      return;
+    }
+
+    final String title = message.notification!.title!;
+    final String body = message.notification!.body!;
+    final specifics = _getPlatformChannelSpecifics(type, body);
+    final int id = switch (type) {
+      AppPushNotificationType.newGameCodesAvailable => 1,
+    };
+    final newId = _generateUniqueId(id, type);
+    return _flutterLocalNotificationsPlugin.show(newId, title, body, specifics);
   }
 
   Future<void> _onTokenRefresh(String deviceToken) async {
@@ -309,5 +298,14 @@ class NotificationServiceImpl implements NotificationService {
       _settingsService.mustRegisterPushNotificationsToken = true;
     }
     return Future.value();
+  }
+
+  void _handlePushNotification(AppPushNotificationType type) {
+    switch (type) {
+      case AppPushNotificationType.newGameCodesAvailable:
+        _settingsService.lastGameCodesCheckedDate = null;
+      default:
+        break;
+    }
   }
 }

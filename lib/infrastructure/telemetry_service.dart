@@ -266,8 +266,8 @@ class TelemetryServiceImpl implements TelemetryService {
   }
 
   @override
-  Future<void> trackDeviceRegisteredForPushNotifications(String token) {
-    return trackEventAsync('Device_Registered_For_Push_Notifications', <String, dynamic>{}.addToken(token));
+  Future<void> trackDeviceRegisteredForPushNotifications() {
+    return trackEventAsync('Device_Registered_For_Push_Notifications');
   }
 }
 
