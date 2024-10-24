@@ -1,11 +1,11 @@
 import 'dart:io';
 
 import 'package:device_info_plus/device_info_plus.dart';
-import 'package:fk_user_agent/fk_user_agent.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 import 'package:shiori/domain/app_constants.dart';
 import 'package:shiori/domain/extensions/string_extensions.dart';
 import 'package:shiori/domain/services/device_info_service.dart';
+import 'package:shiori/infrastructure/app_infra_constants.dart';
 import 'package:store_checker/store_checker.dart';
 import 'package:version_tracker/version_tracker.dart';
 
@@ -19,6 +19,7 @@ class DeviceInfoServiceImpl implements DeviceInfoService {
   late String _packageName;
   Source? _installationSource;
   String? _buildNumber;
+  String? _userAgent;
 
   @override
   Map<String, String> get deviceInfo => _deviceInfo;
@@ -38,9 +39,8 @@ class DeviceInfoServiceImpl implements DeviceInfoService {
   @override
   bool get versionChanged => _versionChanged;
 
-  //TODO: COMPLETE THIS
   @override
-  String? get userAgent => Platform.isWindows || Platform.isMacOS ? null : FkUserAgent.webViewUserAgent!.replaceAll(RegExp('wv'), '');
+  String? get userAgent => _userAgent;
 
   @override
   bool get installedFromValidSource {
@@ -65,6 +65,7 @@ class DeviceInfoServiceImpl implements DeviceInfoService {
       _packageName = packageInfo.packageName;
       _versionWithBuildNumber = '$_version+${packageInfo.buildNumber}';
       _buildNumber = packageInfo.buildNumber;
+      _userAgent = await AppMethodChannel.getWebViewUserAgent();
 
       await _setAppInfoProps();
 
@@ -86,10 +87,6 @@ class DeviceInfoServiceImpl implements DeviceInfoService {
 
       if (Platform.isMacOS) {
         await _initForMac();
-      }
-
-      if (!Platform.isWindows && !Platform.isMacOS) {
-        await FkUserAgent.init();
       }
     } catch (ex) {
       _version = _versionWithBuildNumber = _appName = _packageName = na;

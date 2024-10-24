@@ -1,5 +1,5 @@
 import 'package:flutter/widgets.dart';
-import 'package:image_gallery_saver/image_gallery_saver.dart';
+import 'package:image_gallery_saver_plus/image_gallery_saver_plus.dart';
 import 'package:screenshot/screenshot.dart';
 import 'package:shiori/generated/l10n.dart';
 import 'package:shiori/presentation/shared/utils/permission_utils.dart';
@@ -18,7 +18,7 @@ class ScreenshotUtils {
       }
 
       final bytes = await controller.capture(pixelRatio: 1.5);
-      await ImageGallerySaver.saveImage(bytes!, quality: 100);
+      await ImageGallerySaverPlus.saveImage(bytes!, quality: 100);
       ToastUtils.showSucceedToast(fToast, s.imgSavedSuccessfully);
       return true;
     } catch (e) {

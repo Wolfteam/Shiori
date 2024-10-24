@@ -5,6 +5,7 @@ export 'app_json_file_type.dart';
 export 'app_language_type.dart';
 export 'app_notification_item_type.dart';
 export 'app_notification_type.dart';
+export 'app_push_notification_type.dart';
 export 'app_resource_update_result_type.dart';
 export 'app_server_reset_time_type.dart';
 export 'app_theme_type.dart';

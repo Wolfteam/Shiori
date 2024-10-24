@@ -1,8 +1,12 @@
 import UIKit
 import Flutter
+import WebKit
 
 @main
 @objc class AppDelegate: FlutterAppDelegate {
+    
+    var webView: WKWebView?
+    
     override func application(
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
@@ -26,10 +30,21 @@ import Flutter
     public func methodChannelHandler(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
         debugPrint(call.method)
         switch call.method {
+        case "getWebViewUserAgent":
+            let userAgent = getWebViewUserAgent()
+            result(userAgent)
         default:
             result(FlutterMethodNotImplemented);
             return
         }
         result(nil);
+    }
+    
+    private func getWebViewUserAgent() -> String? {
+        let webConfiguration = WKWebViewConfiguration()
+        if (webView == nil) {
+            webView = WKWebView(frame: .zero, configuration: webConfiguration)
+        }
+        return webView!.value(forKey: "userAgent") as? String ?? ""
     }
 }
