@@ -120,8 +120,7 @@ class SplashPage extends StatelessWidget {
   void _initMain(AppResourceUpdateResultType result, BuildContext context) {
     WakelockPlus.disable();
     final s = S.of(context);
-    final pushNotificationTranslations = PushNotificationTranslations.fromS(s: s);
-    context.read<MainBloc>().add(MainEvent.init(updateResultType: result, pushNotificationTranslations: pushNotificationTranslations));
+    context.read<MainBloc>().add(MainEvent.init(updateResultType: result));
   }
 
   void _applyUpdate(CheckForUpdatesResult result, BuildContext context) {
@@ -216,10 +215,9 @@ class _Buttons extends StatelessWidget {
                 TextButton.icon(
                   onPressed: () {
                     final s = S.of(context);
-                    final pushNotificationTranslations = PushNotificationTranslations.fromS(s: s);
                     context
                         .read<MainBloc>()
-                        .add(MainEvent.init(updateResultType: updateResultType, pushNotificationTranslations: pushNotificationTranslations));
+                        .add(MainEvent.init(updateResultType: updateResultType));
                   },
                   icon: const Icon(Icons.arrow_right_alt, color: Colors.white),
                   label: Text(s.continueLabel, style: const TextStyle(color: Colors.white)),
