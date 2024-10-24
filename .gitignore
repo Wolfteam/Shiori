@@ -10,6 +10,12 @@
 *.env.*
 /local.properties
 
+# Lot of firebase config crap
+google-services.json
+GoogleService-Info.plist
+firebase.json
+firebase_options.dart
+
 # Below was taken from https://github.com/flutter/flutter/blob/master/.gitignore
 
 # Miscellaneous
