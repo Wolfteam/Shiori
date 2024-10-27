@@ -24,7 +24,7 @@ class SettingsServiceImpl extends SettingsService {
   final _resourcesVersionKey = 'ResourcesVersion';
   final _checkForUpdatesOnStartupKey = 'CheckForUpdatesOnStartup';
   final _lastGameCodesCheckedDateKey = 'LastGameCodesCheckedDate';
-  final _lastTelemetryCheckedDateKey = 'LastGameCodesCheckedDate';
+  final _lastTelemetryCheckedDateKey = 'LastTelemetryCheckedDate';
   final _pushNotificationsTokenKey = 'PushNotificationsToken';
   final _mustRegisterPushNotificationsTokenKey = 'MustRegisterPushNotificationsToken';
   final _lastDeviceTokenRegistrationCheckedDateKey = 'LastDeviceTokenRegistrationCheckedDate';
