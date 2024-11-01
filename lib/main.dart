@@ -1,19 +1,23 @@
 import 'dart:io';
 
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shiori/application/bloc.dart';
+import 'package:shiori/domain/services/api_service.dart';
 import 'package:shiori/domain/services/calculator_asc_materials_service.dart';
 import 'package:shiori/domain/services/data_service.dart';
 import 'package:shiori/domain/services/device_info_service.dart';
 import 'package:shiori/domain/services/genshin_service.dart';
 import 'package:shiori/domain/services/locale_service.dart';
 import 'package:shiori/domain/services/logging_service.dart';
+import 'package:shiori/domain/services/network_service.dart';
 import 'package:shiori/domain/services/notification_service.dart';
 import 'package:shiori/domain/services/purchase_service.dart';
 import 'package:shiori/domain/services/resources_service.dart';
 import 'package:shiori/domain/services/settings_service.dart';
 import 'package:shiori/domain/services/telemetry_service.dart';
+import 'package:shiori/firebase_options.dart';
 import 'package:shiori/injection.dart';
 import 'package:shiori/presentation/app_widget.dart';
 import 'package:shiori/presentation/shared/utils/size_utils.dart';
@@ -22,13 +26,13 @@ import 'package:window_size/window_size.dart';
 Future<void> main() async {
   //This is required by app center
   WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   await Injection.init();
   if (Platform.isWindows || Platform.isLinux || Platform.isMacOS) {
     setWindowMinSize(SizeUtils.minSizeOnDesktop);
     setWindowMaxSize(Size.infinite);
   }
   //TODO: CHECK THE NOTIFICATION LOGIC
-  //TODO: WEBVIEW SUPPORT IN MACOS
   Bloc.observer = AppBlocObserver(getIt<LoggingService>());
   runApp(MyApp());
 }
@@ -85,6 +89,8 @@ class MyApp extends StatelessWidget {
             final purchaseService = getIt<PurchaseService>();
             final dataService = getIt<DataService>();
             final notificationService = getIt<NotificationService>();
+            final apiService = getIt<ApiService>();
+            final networkService = getIt<NetworkService>();
             return MainBloc(
               loggingService,
               genshinService,
@@ -95,6 +101,8 @@ class MyApp extends StatelessWidget {
               purchaseService,
               dataService,
               notificationService,
+              apiService,
+              networkService,
               ctx.read<CharactersBloc>(),
               ctx.read<WeaponsBloc>(),
               ctx.read<HomeBloc>(),

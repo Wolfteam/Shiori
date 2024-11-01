@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:bloc_test/bloc_test.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
@@ -99,6 +101,7 @@ void main() {
     }
     final dataService = MockDataService();
     final notificationService = MockNotificationService();
+    final apiService = MockApiService();
     final networkService = MockNetworkService();
 
     final charactersBloc = MockCharactersBloc();
@@ -115,7 +118,9 @@ void main() {
 
     when(deviceInfoService.appName).thenReturn(appName);
     when(deviceInfoService.versionChanged).thenReturn(versionChanged);
+    when(deviceInfoService.installedFromValidSource).thenReturn(false);
 
+    when(notificationService.initPushNotifications()).thenAnswer((_) => Future.value(<StreamSubscription<dynamic>>[]));
     when(networkService.isInternetAvailable()).thenAnswer((_) => Future.value(false));
     return MainBloc(
       logger,
@@ -127,6 +132,8 @@ void main() {
       purchaseService,
       dataService,
       notificationService,
+      apiService,
+      networkService,
       charactersBloc,
       weaponsBloc,
       homeBloc,

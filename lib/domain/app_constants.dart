@@ -166,7 +166,7 @@ const int minItemLevel = 1;
 const int maxItemLevel = 90;
 
 const minResinValue = 0;
-const maxResinValue = 160;
+const maxResinValue = 200;
 const resinRefillsEach = 8;
 const gameVersionIncrementsBy = 0.10;
 
