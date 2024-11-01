@@ -1364,7 +1364,7 @@ packages:
       path: "."
       ref: HEAD
       resolved-ref: f12c707d795d29f49ac150315774e3e3d8eae9a3
-      url: "git@github.com:Wolfteam/store_checker.git"
+      url: "https://github.com/Wolfteam/store_checker.git"
     source: git
     version: "1.6.0"
   stream_channel:
