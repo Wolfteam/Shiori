@@ -67,7 +67,7 @@ dependencies:
   shared_preferences: ^2.3.2
   sprintf: ^7.0.0
   store_checker:
-    git: git@github.com:Wolfteam/store_checker.git
+    git: https://github.com/Wolfteam/store_checker.git
   synchronized: ^3.3.0+3
   transparent_image: ^2.0.1
   two_dimensional_scrollables: ^0.3.3
