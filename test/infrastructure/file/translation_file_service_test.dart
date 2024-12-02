@@ -42,9 +42,7 @@ void main() {
           }
           expect(skill.stats, isNotEmpty);
           for (final ability in skill.abilities) {
-            final oneAtLeast = ability.name.isNotNullEmptyOrWhitespace ||
-                ability.description.isNotNullEmptyOrWhitespace ||
-                ability.secondDescription.isNotNullEmptyOrWhitespace;
+            final oneAtLeast = ability.name.isNotNullEmptyOrWhitespace || ability.description.isNotNullEmptyOrWhitespace || ability.secondDescription.isNotNullEmptyOrWhitespace;
 
             if (!oneAtLeast) {
               expect(ability.descriptions, isNotEmpty);

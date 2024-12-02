@@ -67,17 +67,8 @@ void main() {
     final localeService = getLocaleService(AppLanguageType.english);
     final characters = service.getCharactersForCard();
     for (final character in characters) {
-      final travelerKeys = [
-        'traveler-geo',
-        'traveler-electro',
-        'traveler-anemo',
-        'traveler-hydro',
-        'traveler-pyro',
-        'traveler-cryo',
-        'traveler-dendro',
-      ];
       final detail = service.getCharacter(character.key);
-      final isTraveler = travelerKeys.contains(character.key);
+      final isTraveler = isTheTraveler(character.key);
       checkKey(detail.key);
       expect(detail.rarity, character.stars);
       expect(detail.weaponType, character.weaponType);
@@ -260,6 +251,9 @@ void main() {
       final localeService = getLocaleService(AppLanguageType.english);
       final upcoming = service.getUpcomingCharactersKeys();
       for (final key in upcoming) {
+        if (isTheTraveler(key)) {
+          continue;
+        }
         final char = service.getCharacter(key);
         final date = localeService.getCharBirthDate(char.birthday);
         final chars = service.getCharacterBirthdays(month: date.month, day: date.day);
@@ -365,7 +359,7 @@ void main() {
         for (final item in material.characters) {
           checkItemCommonWithName(item);
         }
-        final travelerExists = material.characters.where((el) => el.key.startsWith('traveler')).isNotEmpty;
+        final travelerExists = material.characters.where((el) => isTheTraveler(el.key)).isNotEmpty;
         expect(travelerExists, isTrue);
       }
 
@@ -473,7 +467,7 @@ void main() {
     final keys = birthdays.expand((el) => el.items).map((e) => e.key).toList();
     expect(keys.length, keys.toSet().length);
 
-    final charCount = service.getCharactersForCard().where((el) => !el.key.startsWith('traveler') && !el.isComingSoon).length;
+    final charCount = service.getCharactersForCard().where((el) => !isTheTraveler(el.key) && !el.isComingSoon).length;
     expect(keys.length, charCount);
 
     final allMonths = List.generate(DateTime.monthsPerYear, (index) => index + 1);
