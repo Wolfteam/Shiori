@@ -42,6 +42,7 @@ void main() {
           checkKey(char.key);
           expect(char.name, allOf([isNotEmpty, isNotNull]));
           checkAsset(char.image);
+          checkAsset(char.iconImage);
           expect(char.stars, allOf([greaterThanOrEqualTo(4), lessThanOrEqualTo(5)]));
           if (char.isNew || char.isComingSoon) {
             expect(char.isNew, isNot(char.isComingSoon));
@@ -74,6 +75,7 @@ void main() {
       expect(detail.weaponType, character.weaponType);
       expect(detail.elementType, character.elementType);
       checkAsset(service.resources.getCharacterImagePath(detail.image));
+      checkAsset(service.resources.getCharacterIconImagePath(detail.iconImage));
       checkAsset(service.resources.getCharacterFullImagePath(detail.fullImage));
       expect(detail.region, character.regionType);
       expect(detail.role, character.roleType);
