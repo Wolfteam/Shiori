@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter_test/flutter_test.dart';
+import 'package:shiori/domain/app_constants.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/extensions/datetime_extensions.dart';
 import 'package:shiori/domain/extensions/string_extensions.dart';
@@ -148,9 +149,12 @@ void main() {
         for (final artifact in build.artifacts) {
           final valid = artifact.oneKey != null || artifact.multiples.isNotEmpty;
           expect(valid, isTrue);
-          expect(artifact.stats.length, equals(5));
-          expect(artifact.stats[0], equals(StatType.hp));
-          expect(artifact.stats[1], equals(StatType.atk));
+          expect(artifact.stats.length, equals(ArtifactType.values.length));
+          for (int i = 0; i < artifact.stats.length; i++) {
+            final StatType stat = artifact.stats[i];
+            final List<StatType> possibleStats = getArtifactPossibleMainStats(ArtifactType.values[i]);
+            expect(stat, isIn(possibleStats));
+          }
           if (artifact.oneKey != null) {
             expect(() => service.artifacts.getArtifact(artifact.oneKey!), returnsNormally);
           } else {
