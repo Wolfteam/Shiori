@@ -1,4 +1,4 @@
-import 'package:hive/hive.dart';
+import 'package:hive_ce/hive.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/models/entities.dart';
 import 'package:shiori/domain/models/entities/base_entity.dart';
@@ -59,6 +59,6 @@ class NotificationExpedition extends BaseEntity implements NotificationBase {
     required this.body,
     required this.expeditionTimeType,
     required this.withTimeReduction,
-  })  : type = AppNotificationType.expedition.index,
-        originalScheduledDate = completesAt;
+  }) : type = AppNotificationType.expedition.index,
+       originalScheduledDate = completesAt;
 }

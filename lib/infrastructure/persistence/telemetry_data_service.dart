@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:hive_flutter/hive_flutter.dart';
+import 'package:hive_ce_flutter/hive_flutter.dart';
 import 'package:shiori/domain/models/entities.dart';
 import 'package:shiori/domain/services/persistence/telemetry_data_service.dart';
 

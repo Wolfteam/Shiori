@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/foundation.dart';
-import 'package:hive_flutter/hive_flutter.dart';
+import 'package:hive_ce_flutter/hive_flutter.dart';
 import 'package:shiori/domain/models/entities.dart';
 import 'package:shiori/domain/services/calculator_asc_materials_service.dart';
 import 'package:shiori/domain/services/data_service.dart';
@@ -65,13 +65,13 @@ class DataServiceImpl implements DataService {
   TelemetryDataService get telemetry => _telemetry;
 
   DataServiceImpl(GenshinService genshinService, CalculatorAscMaterialsService calculatorService, ResourceService resourceService)
-      : _inventory = InventoryDataServiceImpl(genshinService),
-        _builds = CustomBuildsDataServiceImpl(genshinService, resourceService),
-        _notifications = NotificationsDataServiceImpl(genshinService),
-        _gameCodes = GameCodesDataServiceImpl(genshinService, resourceService),
-        _tierList = TierListDataServiceImpl(genshinService, resourceService),
-        _wishSimulator = WishSimulatorDataServiceImpl(),
-        _telemetry = TelemetryDataServiceImpl() {
+    : _inventory = InventoryDataServiceImpl(genshinService),
+      _builds = CustomBuildsDataServiceImpl(genshinService, resourceService),
+      _notifications = NotificationsDataServiceImpl(genshinService),
+      _gameCodes = GameCodesDataServiceImpl(genshinService, resourceService),
+      _tierList = TierListDataServiceImpl(genshinService, resourceService),
+      _wishSimulator = WishSimulatorDataServiceImpl(),
+      _telemetry = TelemetryDataServiceImpl() {
     _calculator = CalculatorAscMaterialsDataServiceImpl(genshinService, calculatorService, _inventory, resourceService);
   }
 
