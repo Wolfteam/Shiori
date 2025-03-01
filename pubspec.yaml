@@ -34,7 +34,7 @@ dependencies:
   flutter_bloc: ^7.3.1
   flutter_colorpicker: ^1.1.0
   flutter_inappwebview: ^6.1.5
-  flutter_local_notifications: ^17.2.4
+  flutter_local_notifications: ^18.0.1
   flutter_localizations:
     sdk: flutter
   flutter_markdown: ^0.7.6+2
@@ -57,11 +57,11 @@ dependencies:
   json_annotation: ^4.9.0
   logger: ^2.5.0
   package_info_plus: ^8.3.0
-  path: ^1.9.0
-  path_provider: ^2.1.4
+  path: ^1.9.1
+  path_provider: ^2.1.5
   permission_handler: ^11.4.0
   pull_to_refresh: ^2.0.0
-  purchases_flutter: ^8.1.6
+  purchases_flutter: ^8.6.0
   rate_my_app: ^2.3.1
   responsive_builder: ^0.7.1
   responsive_grid: ^2.4.4
@@ -93,8 +93,8 @@ dev_dependencies:
   hive_ce_generator: ^1.8.2
   integration_test:
     sdk: flutter
-  intl_utils: ^2.8.7
-  json_serializable: ^6.8.0
+  intl_utils: ^2.8.10
+  json_serializable: ^6.9.4
   lint: ^2.8.0
   mockito: ^5.4.5
   msix: ^3.16.8

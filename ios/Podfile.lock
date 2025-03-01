@@ -131,15 +131,15 @@ PODS:
   - permission_handler_apple (9.3.0):
     - Flutter
   - PromisesObjC (2.4.0)
-  - purchases_flutter (8.1.6):
+  - purchases_flutter (8.6.0):
     - Flutter
-    - PurchasesHybridCommon (= 13.5.1)
-  - PurchasesHybridCommon (13.5.1):
-    - RevenueCat (= 5.6.0)
+    - PurchasesHybridCommon (= 13.21.0)
+  - PurchasesHybridCommon (13.21.0):
+    - RevenueCat (= 5.18.0)
   - rate_my_app (2.3.0):
     - Flutter
     - FlutterMacOS
-  - RevenueCat (5.6.0)
+  - RevenueCat (5.18.0)
   - SDWebImage (5.19.7):
     - SDWebImage/Core (= 5.19.7)
   - SDWebImage/Core (5.19.7)
@@ -264,7 +264,7 @@ SPEC CHECKSUMS:
   FirebaseMessaging: 487b634ccdf6f7b7ff180fdcb2a9935490f764e8
   Flutter: e0871f40cf51350855a761d2e70bf5af5b9b5de7
   flutter_inappwebview_ios: b89ba3482b96fb25e00c967aae065701b66e9b99
-  flutter_local_notifications: ad39620c743ea4c15127860f4b5641649a988100
+  flutter_local_notifications: 395056b3175ba4f08480a7c5de30cd36d69827e4
   flutter_timezone: 7c838e17ffd4645d261e87037e5bebf6d38fe544
   fluttertoast: 2c67e14dce98bbdb200df9e1acf610d7a6264ea1
   GoogleDataTransport: aae35b7ea0c09004c3797d53c8c41f66f219d6a7
@@ -277,10 +277,10 @@ SPEC CHECKSUMS:
   path_provider_foundation: 080d55be775b7414fd5a5ef3ac137b97b097e564
   permission_handler_apple: 4ed2196e43d0651e8ff7ca3483a069d469701f2d
   PromisesObjC: f5707f49cb48b9636751c5b2e7d227e43fba9f47
-  purchases_flutter: bb60602276ca5774da2f055ddba5f5ec41ca6671
-  PurchasesHybridCommon: 8e28d8363ad95bab48ef4da2c6af2ee5132d7170
+  purchases_flutter: cbcf97969b7bf0f1db71d802f4e682bb851f0576
+  PurchasesHybridCommon: 9691d74a051f30858360d78936d59dc14575014e
   rate_my_app: 567848e885b804d65eb9443f96e9fc2c30a06abb
-  RevenueCat: a7117d40c27bc1e8a48e41ca4ea6856209664097
+  RevenueCat: e825836f5d6baa870c53d7281be25a5fd91abd91
   SDWebImage: 8a6b7b160b4d710e2a22b6900e25301075c34cb3
   share_plus: 50da8cb520a8f0f65671c6c6a99b3617ed10a58a
   shared_preferences_foundation: 9e1978ff2562383bd5676f64ec4e9aa8fa06a6f7
