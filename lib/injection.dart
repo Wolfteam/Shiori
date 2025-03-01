@@ -328,11 +328,15 @@ class Injection {
 
     File? loggingFile;
     if (kDebugMode) {
-      final Directory? loggingDir = await getDownloadsDirectory();
-      final String loggingPath = Path.join(loggingDir!.path, 'logs.txt');
-      loggingFile = File(loggingPath);
-      if (!await loggingFile.exists()) {
-        await loggingFile.create(recursive: true);
+      try {
+        final Directory? loggingDir = await getDownloadsDirectory();
+        final String loggingPath = Path.join(loggingDir!.path, 'logs.txt');
+        loggingFile = File(loggingPath);
+        if (!await loggingFile.exists()) {
+          await loggingFile.create(recursive: true);
+        }
+      } catch (_) {
+        //no op
       }
     }
 
