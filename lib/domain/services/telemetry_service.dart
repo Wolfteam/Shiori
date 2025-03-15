@@ -1,10 +1,12 @@
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/models/models.dart';
+import 'package:shiori/domain/services/data_service.dart';
+import 'package:shiori/domain/services/settings_service.dart';
 
 abstract class TelemetryService {
-  Future<void> initTelemetry();
+  void init(SettingsService settingsService, DataService dataService);
 
-  Future<void> trackEventAsync(String name, [Map<String, String>? properties]);
+  Future<void> trackEventAsync(String name, [Map<String, dynamic>? properties]);
 
   Future<void> trackCharacterLoaded(String value);
 
@@ -16,7 +18,7 @@ abstract class TelemetryService {
 
   Future<void> trackUrlOpened(bool loadMap, bool loadDailyCheckIn, bool networkAvailable);
 
-  Future<void> trackCalculatorItemAscMaterialLoaded(String item);
+  Future<void> trackCalculatorItemAscMaterialLoaded(String key);
 
   Future<void> trackTierListOpened();
 
@@ -85,4 +87,6 @@ abstract class TelemetryService {
   Future<void> trackWishSimulatorOpened(double version);
 
   Future<void> trackWishSimulatorResult(int bannerIndex, double version, BannerItemType type, String range);
+
+  Future<void> trackDeviceRegisteredForPushNotifications();
 }

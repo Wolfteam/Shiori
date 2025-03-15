@@ -1,4 +1,4 @@
-import 'package:hive/hive.dart';
+import 'package:hive_ce/hive.dart';
 import 'package:shiori/domain/models/entities/base_entity.dart';
 
 part 'custom_build.g.dart';
@@ -26,13 +26,5 @@ class CustomBuild extends BaseEntity {
   @HiveField(7)
   bool isRecommended;
 
-  CustomBuild(
-    this.characterKey,
-    this.showOnCharacterDetail,
-    this.title,
-    this.roleType,
-    this.roleSubType,
-    this.skillPriorities,
-    this.isRecommended,
-  );
+  CustomBuild(this.characterKey, this.showOnCharacterDetail, this.title, this.roleType, this.roleSubType, this.skillPriorities, this.isRecommended);
 }

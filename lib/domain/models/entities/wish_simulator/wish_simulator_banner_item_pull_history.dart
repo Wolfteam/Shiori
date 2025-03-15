@@ -1,4 +1,4 @@
-import 'package:hive/hive.dart';
+import 'package:hive_ce/hive.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/models/entities/base_entity.dart';
 
@@ -21,9 +21,9 @@ class WishSimulatorBannerItemPullHistory extends BaseEntity {
   WishSimulatorBannerItemPullHistory(this.bannerType, this.itemType, this.itemKey, this.pulledOnDate);
 
   WishSimulatorBannerItemPullHistory.newOne(BannerItemType bannerType, ItemType itemType, this.itemKey)
-      : bannerType = bannerType.index,
-        itemType = itemType.index,
-        pulledOnDate = DateTime.now().toUtc();
+    : bannerType = bannerType.index,
+      itemType = itemType.index,
+      pulledOnDate = DateTime.now().toUtc();
 
   factory WishSimulatorBannerItemPullHistory.character(BannerItemType bannerType, String itemKey) =>
       WishSimulatorBannerItemPullHistory.newOne(bannerType, ItemType.character, itemKey);

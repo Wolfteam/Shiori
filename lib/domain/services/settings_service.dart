@@ -51,6 +51,18 @@ abstract class SettingsService {
   DateTime? get lastGameCodesCheckedDate;
   set lastGameCodesCheckedDate(DateTime? value);
 
+  DateTime? get lastTelemetryCheckedDate;
+  set lastTelemetryCheckedDate(DateTime? value);
+
+  String get pushNotificationsToken;
+  set pushNotificationsToken(String value);
+
+  bool get mustRegisterPushNotificationsToken;
+  set mustRegisterPushNotificationsToken(bool value);
+
+  DateTime? get lastDeviceTokenRegistrationCheckedDate;
+  set lastDeviceTokenRegistrationCheckedDate(DateTime? value);
+
   Future<void> init();
 
   BackupAppSettingsModel getDataForBackup();

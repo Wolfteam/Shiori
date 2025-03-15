@@ -50,8 +50,8 @@ class TeamSection extends StatelessWidget {
                 ),
               ),
               if (!state.readyForScreenshot)
-                ButtonBar(
-                  buttonPadding: EdgeInsets.zero,
+                OverflowBar(
+                  alignment: MainAxisAlignment.end,
                   children: [
                     Tooltip(
                       message: s.add,
@@ -79,10 +79,7 @@ class TeamSection extends StatelessWidget {
                                   ),
                                 ).then(
                                   (result) {
-                                    if (result == null) {
-                                      return;
-                                    }
-                                    if (!result.somethingChanged) {
+                                    if (result == null || !result.somethingChanged || !context.mounted) {
                                       return;
                                     }
 
@@ -126,7 +123,7 @@ class TeamSection extends StatelessWidget {
     final bloc = context.read<CustomBuildBloc>();
     final exclude = [...teamCharacterKeys, characterKey];
     final key = await CharactersPage.forSelection(context, excludeKeys: exclude);
-    if (key.isNullEmptyOrWhitespace) {
+    if (key.isNullEmptyOrWhitespace || !context.mounted) {
       return;
     }
 
@@ -136,7 +133,7 @@ class TeamSection extends StatelessWidget {
         excluded: [CharacterRoleType.na],
       ),
     );
-    if (roleType == null) {
+    if (roleType == null || !context.mounted) {
       return;
     }
 

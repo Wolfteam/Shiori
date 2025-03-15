@@ -9,5 +9,6 @@ class CheckForResourceUpdatesState with _$CheckForResourceUpdatesState {
     required bool noResourcesHaveBeenDownloaded,
     AppResourceUpdateResultType? updateResultType,
     int? targetResourceVersion,
+    int? downloadTotalSize,
   }) = _LoadedState;
 }

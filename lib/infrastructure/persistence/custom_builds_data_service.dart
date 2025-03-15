@@ -1,4 +1,4 @@
-import 'package:hive/hive.dart';
+import 'package:hive_ce/hive.dart';
 import 'package:shiori/domain/check.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/errors.dart';
@@ -31,13 +31,7 @@ class CustomBuildsDataServiceImpl implements CustomBuildsDataService {
 
   @override
   Future<void> deleteThemAll() {
-    return Future.wait([
-      _buildsBox.clear(),
-      _weaponsBox.clear(),
-      _artifactsBox.clear(),
-      _notesBox.clear(),
-      _teamCharactersBox.clear(),
-    ]);
+    return Future.wait([_buildsBox.clear(), _weaponsBox.clear(), _artifactsBox.clear(), _notesBox.clear(), _teamCharactersBox.clear()]);
   }
 
   @override
@@ -137,10 +131,7 @@ class CustomBuildsDataServiceImpl implements CustomBuildsDataService {
   @override
   Future<void> deleteCustomBuild(int key) async {
     Check.greaterThanOrEqualToZero(key, 'key');
-    await Future.wait([
-      _buildsBox.delete(key),
-      _deleteCustomBuildRelatedParts(key),
-    ]);
+    await Future.wait([_buildsBox.delete(key), _deleteCustomBuildRelatedParts(key)]);
   }
 
   @override
@@ -158,13 +149,7 @@ class CustomBuildsDataServiceImpl implements CustomBuildsDataService {
         skillPriorities: e.skillPriorities.map((e) => CharacterSkillType.values[e]).toList(),
         subStatsToFocus: _genshinService.artifacts.generateSubStatSummary(build.artifacts),
         weapons: build.weapons.map((e) => _genshinService.weapons.getWeaponForCard(e.key)).toList(),
-        artifacts: [
-          CharacterBuildArtifactModel(
-            one: null,
-            stats: build.artifacts.map((e) => e.statType).toList(),
-            multiples: artifacts,
-          ),
-        ],
+        artifacts: [CharacterBuildArtifactModel(one: null, stats: build.artifacts.map((e) => e.statType).toList(), multiples: artifacts)],
       );
     }).toList();
   }
@@ -173,35 +158,31 @@ class CustomBuildsDataServiceImpl implements CustomBuildsDataService {
   List<BackupCustomBuildModel> getDataForBackup() {
     return _buildsBox.values.map((build) {
       final buildKey = build.id;
-      final notes = _notesBox.values
-          .where((e) => e.buildItemKey == buildKey)
-          .map(
-            (e) => BackupCustomBuildNoteModel(
-              note: e.note,
-              index: e.index,
-            ),
-          )
-          .toList();
-      final weapons = _weaponsBox.values
-          .where((e) => e.buildItemKey == buildKey)
-          .map(
-            (e) => BackupCustomBuildWeaponModel(
-              weaponKey: e.weaponKey,
-              index: e.index,
-              level: e.level,
-              isAnAscension: e.isAnAscension,
-              refinement: e.refinement,
-            ),
-          )
-          .toList();
-      final artifacts = _artifactsBox.values
-          .where((e) => e.buildItemKey == buildKey)
-          .map((e) => BackupCustomBuildArtifactModel(itemKey: e.itemKey, type: e.type, statType: e.statType, subStats: e.subStats))
-          .toList();
-      final team = _teamCharactersBox.values
-          .where((e) => e.buildItemKey == buildKey)
-          .map((e) => BackupCustomBuildTeamCharacterModel(characterKey: e.characterKey, index: e.index, roleType: e.roleType, subType: e.subType))
-          .toList();
+      final notes =
+          _notesBox.values.where((e) => e.buildItemKey == buildKey).map((e) => BackupCustomBuildNoteModel(note: e.note, index: e.index)).toList();
+      final weapons =
+          _weaponsBox.values
+              .where((e) => e.buildItemKey == buildKey)
+              .map(
+                (e) => BackupCustomBuildWeaponModel(
+                  weaponKey: e.weaponKey,
+                  index: e.index,
+                  level: e.level,
+                  isAnAscension: e.isAnAscension,
+                  refinement: e.refinement,
+                ),
+              )
+              .toList();
+      final artifacts =
+          _artifactsBox.values
+              .where((e) => e.buildItemKey == buildKey)
+              .map((e) => BackupCustomBuildArtifactModel(itemKey: e.itemKey, type: e.type, statType: e.statType, subStats: e.subStats))
+              .toList();
+      final team =
+          _teamCharactersBox.values
+              .where((e) => e.buildItemKey == buildKey)
+              .map((e) => BackupCustomBuildTeamCharacterModel(characterKey: e.characterKey, index: e.index, roleType: e.roleType, subType: e.subType))
+              .toList();
       return BackupCustomBuildModel(
         characterKey: build.characterKey,
         title: build.title,
@@ -222,49 +203,52 @@ class CustomBuildsDataServiceImpl implements CustomBuildsDataService {
   Future<void> restoreFromBackup(List<BackupCustomBuildModel> data) async {
     await deleteThemAll();
     for (final build in data) {
-      final artifacts = build.artifacts
-          .map(
-            (e) => CustomBuildArtifactModel(
-              key: e.itemKey,
-              rarity: 0,
-              name: '',
-              image: '',
-              type: ArtifactType.values[e.type],
-              subStats: e.subStats.map((statType) => StatType.values[statType]).toList(),
-              statType: StatType.values[e.statType],
-            ),
-          )
-          .toList();
-      final weapons = build.weapons
-          .map(
-            (e) => CustomBuildWeaponModel(
-              key: e.weaponKey,
-              image: '',
-              name: '',
-              index: e.index,
-              refinement: e.refinement,
-              rarity: 0,
-              stat: WeaponFileStatModel(level: e.level, isAnAscension: e.isAnAscension, baseAtk: 0, statValue: 0),
-              stats: [],
-              subStatType: StatType.none,
-            ),
-          )
-          .toList();
+      final artifacts =
+          build.artifacts
+              .map(
+                (e) => CustomBuildArtifactModel(
+                  key: e.itemKey,
+                  rarity: 0,
+                  name: '',
+                  image: '',
+                  type: ArtifactType.values[e.type],
+                  subStats: e.subStats.map((statType) => StatType.values[statType]).toList(),
+                  statType: StatType.values[e.statType],
+                ),
+              )
+              .toList();
+      final weapons =
+          build.weapons
+              .map(
+                (e) => CustomBuildWeaponModel(
+                  key: e.weaponKey,
+                  image: '',
+                  name: '',
+                  index: e.index,
+                  refinement: e.refinement,
+                  rarity: 0,
+                  stat: WeaponFileStatModel(level: e.level, isAnAscension: e.isAnAscension, baseAtk: 0, statValue: 0),
+                  stats: [],
+                  subStatType: StatType.none,
+                ),
+              )
+              .toList();
       final notes = build.notes.map((e) => CustomBuildNoteModel(index: e.index, note: e.note)).toList();
       final skillPriorities = build.skillPriorities.map((e) => CharacterSkillType.values[e]).toList();
-      final teamCharacters = build.team
-          .map(
-            (e) => CustomBuildTeamCharacterModel(
-              key: e.characterKey,
-              image: '',
-              name: '',
-              iconImage: '',
-              index: e.index,
-              roleType: CharacterRoleType.values[e.roleType],
-              subType: CharacterRoleSubType.values[e.subType],
-            ),
-          )
-          .toList();
+      final teamCharacters =
+          build.team
+              .map(
+                (e) => CustomBuildTeamCharacterModel(
+                  key: e.characterKey,
+                  image: '',
+                  name: '',
+                  iconImage: '',
+                  index: e.index,
+                  roleType: CharacterRoleType.values[e.roleType],
+                  subType: CharacterRoleSubType.values[e.subType],
+                ),
+              )
+              .toList();
       await saveCustomBuild(
         build.characterKey,
         build.title,
@@ -282,12 +266,7 @@ class CustomBuildsDataServiceImpl implements CustomBuildsDataService {
   }
 
   Future<void> _deleteCustomBuildRelatedParts(int key) {
-    return Future.wait([
-      _deleteWeapons(key),
-      _deleteArtifacts(key),
-      _deleteNotes(key),
-      _deleteTeamCharacters(key),
-    ]);
+    return Future.wait([_deleteWeapons(key), _deleteArtifacts(key), _deleteNotes(key), _deleteTeamCharacters(key)]);
   }
 
   Future<List<CustomBuildNote>> _saveNotes(int buildKey, List<CustomBuildNoteModel> notes) async {
@@ -303,21 +282,15 @@ class CustomBuildsDataServiceImpl implements CustomBuildsDataService {
   }
 
   Future<List<CustomBuildArtifact>> _saveArtifacts(int buildKey, List<CustomBuildArtifactModel> artifacts) async {
-    final buildArtifacts = artifacts
-        .map(
-          (e) => CustomBuildArtifact(buildKey, e.key, e.type.index, e.statType.index, e.subStats.map((e) => e.index).toList()),
-        )
-        .toList();
+    final buildArtifacts =
+        artifacts.map((e) => CustomBuildArtifact(buildKey, e.key, e.type.index, e.statType.index, e.subStats.map((e) => e.index).toList())).toList();
     await _artifactsBox.addAll(buildArtifacts);
     return buildArtifacts;
   }
 
   Future<List<CustomBuildTeamCharacter>> _saveTeamCharacters(int buildKey, List<CustomBuildTeamCharacterModel> teamCharacters) async {
-    final buildTeamCharacters = teamCharacters
-        .map(
-          (e) => CustomBuildTeamCharacter(buildKey, e.index, e.key, e.roleType.index, e.subType.index),
-        )
-        .toList();
+    final buildTeamCharacters =
+        teamCharacters.map((e) => CustomBuildTeamCharacter(buildKey, e.index, e.key, e.roleType.index, e.subType.index)).toList();
     await _teamCharactersBox.addAll(buildTeamCharacters);
     return buildTeamCharacters;
   }
@@ -358,26 +331,27 @@ class CustomBuildsDataServiceImpl implements CustomBuildsDataService {
     List<CustomBuildTeamCharacter> buildTeamCharacters,
   ) {
     final character = _genshinService.characters.getCharacterForCard(build.characterKey);
-    final artifacts = buildArtifacts.map((e) {
-      final fullArtifact = _genshinService.artifacts.getArtifact(e.itemKey);
-      final translation = _genshinService.translations.getArtifactTranslation(e.itemKey);
-      final image = _genshinService.artifacts.getArtifactRelatedPart(
-        _resourceService.getArtifactImagePath(fullArtifact.image),
-        fullArtifact.image,
-        translation.bonus.length,
-        ArtifactType.values[e.type],
-      );
-      return CustomBuildArtifactModel(
-        key: e.itemKey,
-        name: translation.name,
-        type: ArtifactType.values[e.type],
-        statType: StatType.values[e.statType],
-        image: image,
-        rarity: fullArtifact.maxRarity,
-        subStats: e.subStats.map((e) => StatType.values[e]).toList(),
-      );
-    }).toList()
-      ..sort((x, y) => x.type.index.compareTo(y.type.index));
+    final artifacts =
+        buildArtifacts.map((e) {
+            final fullArtifact = _genshinService.artifacts.getArtifact(e.itemKey);
+            final translation = _genshinService.translations.getArtifactTranslation(e.itemKey);
+            final image = _genshinService.artifacts.getArtifactRelatedPart(
+              _resourceService.getArtifactImagePath(fullArtifact.image),
+              fullArtifact.image,
+              translation.bonus.length,
+              ArtifactType.values[e.type],
+            );
+            return CustomBuildArtifactModel(
+              key: e.itemKey,
+              name: translation.name,
+              type: ArtifactType.values[e.type],
+              statType: StatType.values[e.statType],
+              image: image,
+              rarity: fullArtifact.maxRarity,
+              subStats: e.subStats.map((e) => StatType.values[e]).toList(),
+            );
+          }).toList()
+          ..sort((x, y) => x.type.index.compareTo(y.type.index));
     return CustomBuildModel(
       key: build.id,
       title: build.title,
@@ -386,40 +360,43 @@ class CustomBuildsDataServiceImpl implements CustomBuildsDataService {
       showOnCharacterDetail: build.showOnCharacterDetail,
       isRecommended: build.isRecommended,
       character: character,
-      weapons: buildWeapons.map((e) {
-        final weapon = _genshinService.weapons.getWeapon(e.weaponKey);
-        final translation = _genshinService.translations.getWeaponTranslation(e.weaponKey);
-        final stat = e.level <= 0 ? weapon.stats.last : weapon.stats.firstWhere((el) => el.level == e.level && el.isAnAscension == e.isAnAscension);
-        return CustomBuildWeaponModel(
-          key: e.weaponKey,
-          index: e.index,
-          refinement: e.refinement,
-          name: translation.name,
-          image: _resourceService.getWeaponImagePath(weapon.image, weapon.type),
-          rarity: weapon.rarity,
-          subStatType: weapon.secondaryStat,
-          stat: stat,
-          stats: weapon.stats,
-        );
-      }).toList()
-        ..sort((x, y) => x.index.compareTo(y.index)),
+      weapons:
+          buildWeapons.map((e) {
+              final weapon = _genshinService.weapons.getWeapon(e.weaponKey);
+              final translation = _genshinService.translations.getWeaponTranslation(e.weaponKey);
+              final stat =
+                  e.level <= 0 ? weapon.stats.last : weapon.stats.firstWhere((el) => el.level == e.level && el.isAnAscension == e.isAnAscension);
+              return CustomBuildWeaponModel(
+                key: e.weaponKey,
+                index: e.index,
+                refinement: e.refinement,
+                name: translation.name,
+                image: _resourceService.getWeaponImagePath(weapon.image, weapon.type),
+                rarity: weapon.rarity,
+                subStatType: weapon.secondaryStat,
+                stat: stat,
+                stats: weapon.stats,
+              );
+            }).toList()
+            ..sort((x, y) => x.index.compareTo(y.index)),
       artifacts: artifacts,
       subStatsSummary: _genshinService.artifacts.generateSubStatSummary(artifacts),
       skillPriorities: build.skillPriorities.map((e) => CharacterSkillType.values[e]).toList(),
       notes: buildNotes.map((e) => CustomBuildNoteModel(index: e.index, note: e.note)).toList()..sort((x, y) => x.index.compareTo(y.index)),
-      teamCharacters: buildTeamCharacters.map((e) {
-        final char = _genshinService.characters.getCharacterForCard(e.characterKey);
-        return CustomBuildTeamCharacterModel(
-          key: e.characterKey,
-          index: e.index,
-          name: char.name,
-          image: char.image,
-          iconImage: char.iconImage,
-          roleType: CharacterRoleType.values[e.roleType],
-          subType: CharacterRoleSubType.values[e.subType],
-        );
-      }).toList()
-        ..sort((x, y) => x.index.compareTo(y.index)),
+      teamCharacters:
+          buildTeamCharacters.map((e) {
+              final char = _genshinService.characters.getCharacterForCard(e.characterKey);
+              return CustomBuildTeamCharacterModel(
+                key: e.characterKey,
+                index: e.index,
+                name: char.name,
+                image: char.image,
+                iconImage: char.iconImage,
+                roleType: CharacterRoleType.values[e.roleType],
+                subType: CharacterRoleSubType.values[e.subType],
+              );
+            }).toList()
+            ..sort((x, y) => x.index.compareTo(y.index)),
     );
   }
 

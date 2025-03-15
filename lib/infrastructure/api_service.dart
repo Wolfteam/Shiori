@@ -96,7 +96,7 @@ class ApiServiceImpl implements ApiService {
   }
 
   @override
-  Future<bool> downloadAsset(String keyName, String destPath) async {
+  Future<int?> downloadAsset(String keyName, String destPath) async {
     try {
       // _loggingService.debug(runtimeType, '_downloadFile: Downloading file = $keyName...');
       final file = File(destPath);
@@ -106,20 +106,21 @@ class ApiServiceImpl implements ApiService {
 
       final url = '${Env.assetsBaseUrl}/$keyName';
       final response = await _httpClient.get(Uri.parse(url), headers: _getCommonApiHeaders());
+
       if (!_isSuccessStatusCode(response.statusCode)) {
         _loggingService.warning(
           runtimeType,
           'downloadAsset: Got status code = ${response.statusCode}. RP = ${response.reasonPhrase ?? na}',
         );
-        return false;
+        return null;
       }
 
       await file.writeAsBytes(response.bodyBytes);
       // _loggingService.debug(runtimeType, '_downloadFile: File = $keyName was successfully downloaded');
-      return true;
+      return response.contentLength;
     } catch (e, s) {
       _handleError('downloadAsset', e, s);
-      return false;
+      return null;
     }
   }
 
@@ -146,6 +147,54 @@ class ApiServiceImpl implements ApiService {
     }
   }
 
+  @override
+  Future<EmptyResponseDto> sendTelemetryData(SaveAppLogsRequestDto request) async {
+    try {
+      final url = Uri.parse(Env.apiBaseUrl).replace(path: 'app-logs');
+      final headers = _getApiHeaders();
+      _addJsonContentType(headers);
+      final response = await _httpClient.post(url, headers: headers, body: jsonEncode(request));
+      if (!_isSuccessStatusCode(response.statusCode)) {
+        _loggingService.warning(
+          runtimeType,
+          'sendTelemetryData: Got status code = ${response.statusCode}. Body = ${response.body}',
+        );
+        return EmptyResponseDto(succeed: false, message: 'Invalid status code = ${response.statusCode}');
+      }
+
+      final json = jsonDecode(response.body) as Map<String, dynamic>;
+      final apiResponse = EmptyResponseDto.fromJson(json);
+      return apiResponse;
+    } catch (e, s) {
+      _handleError('sendTelemetryData', e, s);
+    }
+    return const EmptyResponseDto(succeed: false, message: 'Unknown error');
+  }
+
+  @override
+  Future<EmptyResponseDto> registerDeviceToken(RegisterDeviceTokenRequestDto dto) async {
+    try {
+      final url = Uri.parse(Env.apiBaseUrl).replace(path: 'api/devices/registerToken');
+      final headers = _getApiHeaders();
+      _addJsonContentType(headers);
+      final response = await _httpClient.post(url, headers: headers, body: jsonEncode(dto));
+      if (!_isSuccessStatusCode(response.statusCode)) {
+        _loggingService.warning(
+          runtimeType,
+          'registerDeviceForPushNotifications: Got status code = ${response.statusCode}. Body = ${response.body}',
+        );
+        return EmptyResponseDto(succeed: false, message: 'Invalid status code = ${response.statusCode}');
+      }
+
+      final json = jsonDecode(response.body) as Map<String, dynamic>;
+      final apiResponse = EmptyResponseDto.fromJson(json);
+      return apiResponse;
+    } catch (e, s) {
+      _handleError('registerDeviceForPushNotifications', e, s);
+    }
+    return const EmptyResponseDto(succeed: false, message: 'Unknown error');
+  }
+
   Map<String, String> _getApiHeaders() {
     final headers = {Env.apiHeaderName: Env.apiHeaderValue};
     headers.addAll(_getCommonApiHeaders());
@@ -157,11 +206,13 @@ class ApiServiceImpl implements ApiService {
         'x-shiori-os': Platform.operatingSystem,
       };
 
+  void _addJsonContentType(Map<String, String> map) {
+    map.putIfAbsent('Content-Type', () => 'application/json');
+  }
+
   void _handleError(String caller, Object e, StackTrace s) {
-    if (e is http.ClientException) {
-      if (e.message.isNotNullEmptyOrWhitespace) {
-        _loggingService.error(runtimeType, '$caller: HTTP error = ${e.message}');
-      }
+    if (e is http.ClientException && e.message.isNotNullEmptyOrWhitespace) {
+      _loggingService.error(runtimeType, '$caller: HTTP error = ${e.message}', e, s);
     } else {
       _loggingService.error(runtimeType, '$caller: Unknown api error', e, s);
     }

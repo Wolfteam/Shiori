@@ -79,6 +79,9 @@ class BackupListItem extends StatelessWidget {
         child: BackupDetailsDialog(backup: backup),
       ),
     ).then((op) async {
+      if (!context.mounted) {
+        return;
+      }
       switch (op) {
         case OperationType.delete:
           await _delete(s, context);
@@ -99,7 +102,7 @@ class BackupListItem extends StatelessWidget {
         showRestoreWarningMsg: true,
       ),
     ).then((dataTypes) {
-      if (dataTypes?.isNotEmpty == true) {
+      if (dataTypes?.isNotEmpty == true && context.mounted) {
         context.read<BackupRestoreBloc>().add(BackupRestoreEvent.restore(filePath: backup.filePath, dataTypes: dataTypes!));
       }
     });
@@ -110,7 +113,7 @@ class BackupListItem extends StatelessWidget {
       context: context,
       builder: (_) => ConfirmDialog(title: s.confirm, content: s.deleteBackupConfirmation(backup.filename)),
     ).then((confirmed) {
-      if (confirmed == true) {
+      if (confirmed == true && context.mounted) {
         context.read<BackupRestoreBloc>().add(BackupRestoreEvent.delete(filePath: backup.filePath));
       }
     });

@@ -1,5 +1,5 @@
 import 'package:collection/collection.dart' show IterableExtension;
-import 'package:hive_flutter/hive_flutter.dart';
+import 'package:hive_ce_flutter/hive_flutter.dart';
 import 'package:shiori/domain/check.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/errors.dart';
@@ -33,11 +33,12 @@ class GameCodesDataServiceImpl implements GameCodesDataService {
   @override
   List<GameCodeModel> getAllGameCodes() {
     return _gameCodesBox.values.map((e) {
-      final rewards = _gameCodeRewardsBox.values.where((el) => el.gameCodeKey == e.key).map((reward) {
-        final material = _genshinService.materials.getMaterial(reward.itemKey);
-        final imagePath = _resourceService.getMaterialImagePath(material.image, material.type);
-        return ItemAscensionMaterialModel.fromMaterial(reward.quantity, material, imagePath);
-      }).toList();
+      final rewards =
+          _gameCodeRewardsBox.values.where((el) => el.gameCodeKey == e.key).map((reward) {
+            final material = _genshinService.materials.getMaterial(reward.itemKey);
+            final imagePath = _resourceService.getMaterialImagePath(material.image, material.type);
+            return ItemAscensionMaterialModel.fromMaterial(reward.quantity, material, imagePath);
+          }).toList();
       //Some codes don't have an expiration date, that's why we use this boolean here
       final expired = e.isExpired || (e.expiredOn?.isBefore(DateTime.now()) ?? false);
       return GameCodeModel(
@@ -59,10 +60,7 @@ class GameCodesDataServiceImpl implements GameCodesDataService {
     }
     final List<MapEntry<String, DateTime?>> usedGameCodes = _gameCodesBox.values.map((e) => MapEntry(e.code, e.usedOn)).toList();
 
-    await Future.wait([
-      _gameCodesBox.clear(),
-      _gameCodeRewardsBox.clear(),
-    ]);
+    await Future.wait([_gameCodesBox.clear(), _gameCodeRewardsBox.clear()]);
 
     for (final GameCodeModel apiGameCode in itemsFromApi) {
       final DateTime? usedOn = usedGameCodes.firstWhereOrNull((gc) => gc.key == apiGameCode.code)?.value;

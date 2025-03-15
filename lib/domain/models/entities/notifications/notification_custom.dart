@@ -1,4 +1,4 @@
-import 'package:hive/hive.dart';
+import 'package:hive_ce/hive.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/models/entities/base_entity.dart';
 import 'package:shiori/domain/models/entities/notifications/notification_base.dart';
@@ -70,8 +70,8 @@ class NotificationCustom extends BaseEntity implements NotificationBase {
     required this.title,
     required this.body,
     required this.notificationItemType,
-  })  : type = AppNotificationType.custom.index,
-        originalScheduledDate = completesAt;
+  }) : type = AppNotificationType.custom.index,
+       originalScheduledDate = completesAt;
 
   NotificationCustom.forDailyCheckIn({
     required this.itemKey,
@@ -81,7 +81,7 @@ class NotificationCustom extends BaseEntity implements NotificationBase {
     required this.showNotification,
     required this.title,
     required this.body,
-  })  : type = AppNotificationType.dailyCheckIn.index,
-        notificationItemType = AppNotificationItemType.material.index,
-        originalScheduledDate = completesAt;
+  }) : type = AppNotificationType.dailyCheckIn.index,
+       notificationItemType = AppNotificationItemType.material.index,
+       originalScheduledDate = completesAt;
 }

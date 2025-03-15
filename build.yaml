@@ -1,7 +1,7 @@
 targets:
   $default:
     builders:
-      hive_generator:
+      hive_ce_generator:
         generate_for:
           - lib/domain/models/entities/**
       envied_generator:envied:

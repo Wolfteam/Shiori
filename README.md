@@ -80,9 +80,6 @@ Hosting environment: Production
 * Create a **.env.common** file with the following content, the values can be anything:
 
 ```
-ANDROID_APP_CENTER_KEY = xxxx
-IOS_APP_CENTER_KEY = xxxx
-MACOS_APP_CENTER_KEY = xxxx
 ANDROID_PURCHASES_KEY = yyyyy
 IOS_PURCHASES_KEY = yyyyy
 COMMON_HEADER_NAME = header
@@ -108,6 +105,7 @@ API_HEADER_VALUE = value
   31 ``httpClient.badCertificateCallback = (X509Certificate cert, String host, int port) => true;``
 * If you have fvm configured, run the script ``sh run_clean.sh``, otherwise manually run each
   sentence without the fvm prefix
+* Follow the steps to setup firebase from [here](https://firebase.google.com/docs/flutter/setup?platform=ios)
 * Profit
 
 ### Translations

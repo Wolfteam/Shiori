@@ -499,5 +499,6 @@
   "used": "Used",
   "showMaterialUsage": "Show material usage",
   "version": "版本",
-  "reruns": "Reruns"
+  "reruns": "Reruns",
+  "downloadSize": "Download size: {value}"
 }

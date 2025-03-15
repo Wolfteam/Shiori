@@ -238,3 +238,16 @@ LocaleService getLocaleService(AppLanguageType language) {
   manuallyInitLocale(service, language);
   return service;
 }
+
+bool isTheTraveler(String key) {
+  final travelerKeys = [
+    'traveler-geo',
+    'traveler-electro',
+    'traveler-anemo',
+    'traveler-hydro',
+    'traveler-pyro',
+    'traveler-cryo',
+    'traveler-dendro',
+  ];
+  return travelerKeys.contains(key);
+}

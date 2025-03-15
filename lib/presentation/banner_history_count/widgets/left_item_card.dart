@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:shiori/domain/enums/enums.dart';
-import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/generated/l10n.dart';
 import 'package:shiori/presentation/character/character_page.dart';
 import 'package:shiori/presentation/shared/dialogs/item_release_history_dialog.dart';
@@ -16,55 +15,7 @@ enum _ItemOptionsType {
   releaseHistory,
 }
 
-class FixedLeftColumn extends StatelessWidget {
-  final List<BannerHistoryItemModel> items;
-  final EdgeInsets margin;
-  final double cellWidth;
-  final double cellHeight;
-  final ScrollController controller;
-
-  const FixedLeftColumn({
-    super.key,
-    required this.items,
-    required this.margin,
-    required this.cellWidth,
-    required this.cellHeight,
-    required this.controller,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    if (items.isEmpty) {
-      return const SizedBox.shrink();
-    }
-    return SizedBox(
-      width: cellWidth,
-      child: ScrollConfiguration(
-        behavior: ScrollConfiguration.of(context).copyWith(scrollbars: false),
-        child: ListView.builder(
-          controller: controller,
-          itemCount: items.length,
-          itemBuilder: (context, index) {
-            final item = items[index];
-            return _ItemCard(
-              cellWidth: cellWidth,
-              cellHeight: cellHeight,
-              margin: margin,
-              image: item.iconImage,
-              itemKey: item.key,
-              type: item.type,
-              rarity: item.rarity,
-              name: item.name,
-              numberOfTimesReleased: item.numberOfTimesReleased,
-            );
-          },
-        ),
-      ),
-    );
-  }
-}
-
-class _ItemCard extends StatelessWidget {
+class LeftItemCard extends StatelessWidget {
   final String itemKey;
   final BannerHistoryItemType type;
   final String name;
@@ -72,10 +23,8 @@ class _ItemCard extends StatelessWidget {
   final int rarity;
   final int numberOfTimesReleased;
   final EdgeInsets margin;
-  final double cellWidth;
-  final double cellHeight;
 
-  const _ItemCard({
+  const LeftItemCard({
     required this.itemKey,
     required this.type,
     required this.name,
@@ -83,8 +32,6 @@ class _ItemCard extends StatelessWidget {
     required this.rarity,
     required this.numberOfTimesReleased,
     required this.margin,
-    required this.cellWidth,
-    required this.cellHeight,
   });
 
   @override
@@ -95,65 +42,65 @@ class _ItemCard extends StatelessWidget {
     return InkWell(
       borderRadius: const BorderRadius.all(Radius.circular(radius)),
       onTap: () => showDialog<_ItemOptionsType>(context: context, builder: (_) => const _OptionsDialog()).then(
-        (value) async => _handleOptionSelected(value, context),
+        (value) async {
+          if (context.mounted) {
+            await _handleOptionSelected(value, context);
+          }
+        },
       ),
       child: GradientCard(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(radius)),
         gradient: gradient,
-        child: SizedBox(
-          width: cellWidth,
-          height: cellHeight,
-          child: Stack(
-            alignment: Alignment.center,
-            fit: StackFit.expand,
-            children: [
-              if (type == BannerHistoryItemType.character)
-                AbsorbPointer(child: CharacterIconImage(itemKey: itemKey, image: image, useCircle: false))
-              else
-                AbsorbPointer(child: WeaponIconImage(itemKey: itemKey, image: image, useCircle: false)),
-              Align(
-                alignment: Alignment.bottomCenter,
-                child: Container(
-                  width: cellWidth,
-                  decoration: Styles.commonCardBoxDecoration,
+        child: Stack(
+          alignment: Alignment.center,
+          fit: StackFit.expand,
+          children: [
+            if (type == BannerHistoryItemType.character)
+              AbsorbPointer(child: CharacterIconImage(itemKey: itemKey, image: image, useCircle: false))
+            else
+              AbsorbPointer(child: WeaponIconImage(itemKey: itemKey, image: image, useCircle: false)),
+            Align(
+              alignment: Alignment.bottomCenter,
+              child: Container(
+                width: double.maxFinite,
+                decoration: Styles.commonCardBoxDecoration,
+                child: Tooltip(
+                  message: name,
+                  child: Text(
+                    name,
+                    textAlign: TextAlign.center,
+                    overflow: TextOverflow.ellipsis,
+                    style: theme.textTheme.titleSmall!.copyWith(fontWeight: FontWeight.bold, color: Colors.white),
+                  ),
+                ),
+              ),
+            ),
+            Align(
+              alignment: Alignment.topRight,
+              child: Container(
+                margin: const EdgeInsets.only(top: 3),
+                child: CircleAvatar(
+                  radius: 15,
+                  backgroundColor: Colors.black.withOpacity(0.6),
                   child: Tooltip(
-                    message: name,
+                    message: '$numberOfTimesReleased',
                     child: Text(
-                      name,
-                      textAlign: TextAlign.center,
+                      '$numberOfTimesReleased',
                       overflow: TextOverflow.ellipsis,
                       style: theme.textTheme.titleSmall!.copyWith(fontWeight: FontWeight.bold, color: Colors.white),
                     ),
                   ),
                 ),
               ),
-              Align(
-                alignment: Alignment.topRight,
-                child: Container(
-                  margin: const EdgeInsets.only(top: 3),
-                  child: CircleAvatar(
-                    radius: 15,
-                    backgroundColor: Colors.black.withOpacity(0.25),
-                    child: Tooltip(
-                      message: '$numberOfTimesReleased',
-                      child: Text(
-                        '$numberOfTimesReleased',
-                        overflow: TextOverflow.ellipsis,
-                        style: theme.textTheme.titleSmall!.copyWith(fontWeight: FontWeight.bold, color: Colors.white),
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );
   }
 
   Future<void> _handleOptionSelected(_ItemOptionsType? value, BuildContext context) async {
-    if (value == null) {
+    if (value == null || !context.mounted) {
       return;
     }
 

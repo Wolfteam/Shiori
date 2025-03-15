@@ -8,6 +8,8 @@ class ResourceDiffResponseDto {
 
   final int targetResourceVersion;
 
+  final int? downloadTotalSize;
+
   final String? jsonFileKeyName;
 
   final List<String> keyNames;
@@ -15,6 +17,7 @@ class ResourceDiffResponseDto {
   ResourceDiffResponseDto({
     required this.currentResourceVersion,
     required this.targetResourceVersion,
+    this.downloadTotalSize,
     this.jsonFileKeyName,
     required this.keyNames,
   });

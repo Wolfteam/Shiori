@@ -499,5 +499,6 @@
   "used": "使用済み",
   "showMaterialUsage": "材料の使用量を表示",
   "version": "バージョン",
-  "reruns": "復刻数"
+  "reruns": "復刻数",
+  "downloadSize": "ダウンロードサイズ: {value}"
 }

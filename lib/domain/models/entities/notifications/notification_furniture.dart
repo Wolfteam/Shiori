@@ -1,4 +1,4 @@
-import 'package:hive/hive.dart';
+import 'package:hive_ce/hive.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/models/entities.dart';
 import 'package:shiori/domain/models/entities/base_entity.dart';
@@ -55,6 +55,6 @@ class NotificationFurniture extends BaseEntity implements NotificationBase {
     required this.title,
     required this.body,
     required this.furnitureCraftingTimeType,
-  })  : type = AppNotificationType.furniture.index,
-        originalScheduledDate = completesAt;
+  }) : type = AppNotificationType.furniture.index,
+       originalScheduledDate = completesAt;
 }

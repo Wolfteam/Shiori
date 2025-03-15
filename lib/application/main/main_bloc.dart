@@ -4,12 +4,16 @@ import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:shiori/application/bloc.dart';
 import 'package:shiori/domain/enums/enums.dart';
+import 'package:shiori/domain/extensions/string_extensions.dart';
+import 'package:shiori/domain/models/dtos.dart';
 import 'package:shiori/domain/models/models.dart';
+import 'package:shiori/domain/services/api_service.dart';
 import 'package:shiori/domain/services/data_service.dart';
 import 'package:shiori/domain/services/device_info_service.dart';
 import 'package:shiori/domain/services/genshin_service.dart';
 import 'package:shiori/domain/services/locale_service.dart';
 import 'package:shiori/domain/services/logging_service.dart';
+import 'package:shiori/domain/services/network_service.dart';
 import 'package:shiori/domain/services/notification_service.dart';
 import 'package:shiori/domain/services/purchase_service.dart';
 import 'package:shiori/domain/services/settings_service.dart';
@@ -29,11 +33,15 @@ class MainBloc extends Bloc<MainEvent, MainState> {
   final PurchaseService _purchaseService;
   final DataService _dataService;
   final NotificationService _notificationService;
+  final ApiService _apiService;
+  final NetworkService _networkService;
 
   final CharactersBloc _charactersBloc;
   final WeaponsBloc _weaponsBloc;
   final HomeBloc _homeBloc;
   final ArtifactsBloc _artifactsBloc;
+
+  final List<StreamSubscription> _subscriptions = [];
 
   MainBloc(
     this._logger,
@@ -45,6 +53,8 @@ class MainBloc extends Bloc<MainEvent, MainState> {
     this._purchaseService,
     this._dataService,
     this._notificationService,
+    this._apiService,
+    this._networkService,
     this._charactersBloc,
     this._weaponsBloc,
     this._homeBloc,
@@ -68,6 +78,12 @@ class MainBloc extends Bloc<MainEvent, MainState> {
     emit(s);
   }
 
+  @override
+  Future<void> close() async {
+    await _cancelSubscriptions();
+    return super.close();
+  }
+
   Future<MainState> _init({
     bool languageChanged = false,
     bool init = false,
@@ -86,6 +102,10 @@ class MainBloc extends Bloc<MainEvent, MainState> {
 
     final settings = _settingsService.appSettings;
     await _telemetryService.trackInit(settings);
+
+    await _cancelSubscriptions();
+    _subscriptions.addAll(await _notificationService.initPushNotifications());
+    await _registerDeviceToken(languageChanged);
 
     final state = _loadThemeData(settings.appTheme, settings.accentColor, updateResult: updateResult);
 
@@ -127,5 +147,45 @@ class MainBloc extends Bloc<MainEvent, MainState> {
     await _notificationService.cancelAllNotifications();
 
     return MainState.loading(language: _localeService.getLocaleWithoutLang(), restarted: true);
+  }
+
+  Future<void> _cancelSubscriptions() {
+    return Future.wait(_subscriptions.map((s) => s.cancel()));
+  }
+
+  Future<void> _registerDeviceToken(bool languageChanged) async {
+    if (!_deviceInfoService.installedFromValidSource) {
+      return;
+    }
+
+    final bool registerDeviceToken = _settingsService.pushNotificationsToken.isNotNullEmptyOrWhitespace && _settingsService.resourceVersion > 0 && (languageChanged || _settingsService.mustRegisterPushNotificationsToken);
+    if (!registerDeviceToken) {
+      return;
+    }
+
+    _settingsService.mustRegisterPushNotificationsToken = true;
+    final DateTime? lastCheckedDate = _settingsService.lastDeviceTokenRegistrationCheckedDate;
+    final bool canRegister = lastCheckedDate == null || DateTime.now().isAfter(lastCheckedDate.add(const Duration(hours: 3)));
+    if (!canRegister) {
+      return;
+    }
+
+    final bool isNetworkAvailable = await _networkService.isInternetAvailable();
+    if (!isNetworkAvailable) {
+      return;
+    }
+
+    final dto = RegisterDeviceTokenRequestDto(
+      appVersion: _deviceInfoService.version,
+      currentVersion: _settingsService.resourceVersion,
+      token: _settingsService.pushNotificationsToken,
+      language: _settingsService.language,
+    );
+    final registerResponse = await _apiService.registerDeviceToken(dto);
+    if (registerResponse.succeed) {
+      _settingsService.mustRegisterPushNotificationsToken = false;
+      _settingsService.lastDeviceTokenRegistrationCheckedDate = DateTime.now();
+      await _telemetryService.trackDeviceRegisteredForPushNotifications();
+    }
   }
 }

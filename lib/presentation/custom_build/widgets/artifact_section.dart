@@ -50,8 +50,8 @@ class ArtifactSection extends StatelessWidget {
                 ),
               ),
               if (!state.readyForScreenshot)
-                ButtonBar(
-                  buttonPadding: EdgeInsets.zero,
+                OverflowBar(
+                  alignment: MainAxisAlignment.end,
                   children: [
                     Tooltip(
                       message: s.add,
@@ -130,7 +130,7 @@ class ArtifactSection extends StatelessWidget {
         break;
     }
 
-    if (statType == null) {
+    if (statType == null || !context.mounted) {
       return;
     }
 

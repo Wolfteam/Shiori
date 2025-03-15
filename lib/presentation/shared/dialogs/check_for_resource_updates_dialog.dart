@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shiori/application/bloc.dart';
 import 'package:shiori/domain/enums/enums.dart';
+import 'package:shiori/domain/utils/format_utils.dart';
 import 'package:shiori/generated/l10n.dart';
 import 'package:shiori/injection.dart';
 
@@ -22,10 +23,23 @@ class CheckForResourceUpdatesDialog extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               mainAxisSize: MainAxisSize.min,
               children: [
-                if (state.updateResultType != null) Text(_getMsgToShow(state.updateResultType!, s)),
-                if (state.updateResultType != null) SizedBox.fromSize(size: const Size(10, 10)),
+                if (state.updateResultType != null)
+                  Text(
+                    _getMsgToShow(state.updateResultType!, s),
+                  ),
+                if (state.updateResultType != null)
+                  SizedBox.fromSize(
+                    size: const Size(10, 10),
+                  ),
                 Text(s.currentResourcesVersion(state.noResourcesHaveBeenDownloaded ? s.na : state.currentResourceVersion)),
-                if (state.targetResourceVersion != null) Text(s.newResourcesVersion(state.targetResourceVersion!)),
+                if (state.targetResourceVersion != null)
+                  Text(
+                    s.newResourcesVersion(state.targetResourceVersion!),
+                  ),
+                if (state.downloadTotalSize != null && state.downloadTotalSize! > 0)
+                  Text(
+                    s.downloadSize(FormatUtils.formatBytes(state.downloadTotalSize!)),
+                  ),
               ],
             ),
             actions: [

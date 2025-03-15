@@ -66,8 +66,11 @@ class _WeaponsPageState extends State<WeaponsPage> with AutomaticKeepAliveClient
               title: s.weapons,
               onPressed: () async {
                 final args = WeaponBottomSheet.buildNavigationArgs(areWeaponTypesEnabled: widget.areWeaponTypesEnabled);
-                await ModalBottomSheetUtils.showAppModalBottomSheet(context, EndDrawerItemType.weapons, args: args)
-                    .then((_) => context.read<WeaponsBloc>().add(const WeaponsEvent.cancelChanges()));
+                await ModalBottomSheetUtils.showAppModalBottomSheet(context, EndDrawerItemType.weapons, args: args).then((_) {
+                  if (context.mounted) {
+                    context.read<WeaponsBloc>().add(const WeaponsEvent.cancelChanges());
+                  }
+                });
               },
               searchChanged: (v) => context.read<WeaponsBloc>().add(WeaponsEvent.searchChanged(search: v)),
             ),

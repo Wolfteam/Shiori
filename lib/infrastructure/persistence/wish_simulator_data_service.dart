@@ -1,5 +1,5 @@
 import 'package:darq/darq.dart';
-import 'package:hive_flutter/hive_flutter.dart';
+import 'package:hive_ce_flutter/hive_flutter.dart';
 import 'package:shiori/domain/check.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/models/entities.dart';
@@ -20,10 +20,7 @@ class WishSimulatorDataServiceImpl implements WishSimulatorDataService {
 
   @override
   Future<void> deleteThemAll() {
-    return Future.wait([
-      _pullHistory.clear(),
-      clearAllBannerItemPullHistory(),
-    ]);
+    return Future.wait([_pullHistory.clear(), clearAllBannerItemPullHistory()]);
   }
 
   @override
@@ -41,9 +38,10 @@ class WishSimulatorDataServiceImpl implements WishSimulatorDataService {
     Check.notEmpty(itemKey, 'itemKey');
     Check.inList(itemType, [ItemType.character, ItemType.weapon], 'itemType');
 
-    final value = itemType == ItemType.character
-        ? WishSimulatorBannerItemPullHistory.character(bannerType, itemKey)
-        : WishSimulatorBannerItemPullHistory.weapon(bannerType, itemKey);
+    final value =
+        itemType == ItemType.character
+            ? WishSimulatorBannerItemPullHistory.character(bannerType, itemKey)
+            : WishSimulatorBannerItemPullHistory.weapon(bannerType, itemKey);
     await _itemPullHistory.add(value);
 
     const int maxCount = 5000;
@@ -103,22 +101,11 @@ class WishSimulatorDataServiceImpl implements WishSimulatorDataService {
   @override
   Future<void> restoreFromBackup(BackupWishSimulatorModel data) async {
     await deleteThemAll();
-    final pullHistory = data.pullHistory.map(
-      (e) => WishSimulatorBannerPullHistory(
-        e.type.index,
-        e.currentXStarCount,
-        e.fiftyFiftyXStarGuaranteed,
-      ),
-    );
+    final pullHistory = data.pullHistory.map((e) => WishSimulatorBannerPullHistory(e.type.index, e.currentXStarCount, e.fiftyFiftyXStarGuaranteed));
     await _pullHistory.addAll(pullHistory);
 
     final pulledItems = data.itemPullHistory.map(
-      (e) => WishSimulatorBannerItemPullHistory(
-        e.bannerType.index,
-        e.itemType.index,
-        e.itemKey,
-        e.pulledOn,
-      ),
+      (e) => WishSimulatorBannerItemPullHistory(e.bannerType.index, e.itemType.index, e.itemKey, e.pulledOn),
     );
     await _itemPullHistory.addAll(pulledItems);
   }

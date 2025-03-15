@@ -3,6 +3,8 @@ import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/api_service.dart';
 
 abstract class ResourceService {
+  Future<void> init();
+
   String getJsonFilePath(AppJsonFileType type, {AppLanguageType? language});
 
   String getArtifactImagePath(String filename);

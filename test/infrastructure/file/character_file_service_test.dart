@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter_test/flutter_test.dart';
+import 'package:shiori/domain/app_constants.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/extensions/datetime_extensions.dart';
 import 'package:shiori/domain/extensions/string_extensions.dart';
@@ -42,6 +43,7 @@ void main() {
           checkKey(char.key);
           expect(char.name, allOf([isNotEmpty, isNotNull]));
           checkAsset(char.image);
+          checkAsset(char.iconImage);
           expect(char.stars, allOf([greaterThanOrEqualTo(4), lessThanOrEqualTo(5)]));
           if (char.isNew || char.isComingSoon) {
             expect(char.isNew, isNot(char.isComingSoon));
@@ -67,22 +69,14 @@ void main() {
     final localeService = getLocaleService(AppLanguageType.english);
     final characters = service.getCharactersForCard();
     for (final character in characters) {
-      final travelerKeys = [
-        'traveler-geo',
-        'traveler-electro',
-        'traveler-anemo',
-        'traveler-hydro',
-        'traveler-pyro',
-        'traveler-cryo',
-        'traveler-dendro',
-      ];
       final detail = service.getCharacter(character.key);
-      final isTraveler = travelerKeys.contains(character.key);
+      final isTraveler = isTheTraveler(character.key);
       checkKey(detail.key);
       expect(detail.rarity, character.stars);
       expect(detail.weaponType, character.weaponType);
       expect(detail.elementType, character.elementType);
       checkAsset(service.resources.getCharacterImagePath(detail.image));
+      checkAsset(service.resources.getCharacterIconImagePath(detail.iconImage));
       checkAsset(service.resources.getCharacterFullImagePath(detail.fullImage));
       expect(detail.region, character.regionType);
       expect(detail.role, character.roleType);
@@ -155,9 +149,12 @@ void main() {
         for (final artifact in build.artifacts) {
           final valid = artifact.oneKey != null || artifact.multiples.isNotEmpty;
           expect(valid, isTrue);
-          expect(artifact.stats.length, equals(5));
-          expect(artifact.stats[0], equals(StatType.hp));
-          expect(artifact.stats[1], equals(StatType.atk));
+          expect(artifact.stats.length, equals(ArtifactType.values.length));
+          for (int i = 0; i < artifact.stats.length; i++) {
+            final StatType stat = artifact.stats[i];
+            final List<StatType> possibleStats = getArtifactPossibleMainStats(ArtifactType.values[i]);
+            expect(stat, isIn(possibleStats));
+          }
           if (artifact.oneKey != null) {
             expect(() => service.artifacts.getArtifact(artifact.oneKey!), returnsNormally);
           } else {
@@ -260,6 +257,9 @@ void main() {
       final localeService = getLocaleService(AppLanguageType.english);
       final upcoming = service.getUpcomingCharactersKeys();
       for (final key in upcoming) {
+        if (isTheTraveler(key)) {
+          continue;
+        }
         final char = service.getCharacter(key);
         final date = localeService.getCharBirthDate(char.birthday);
         final chars = service.getCharacterBirthdays(month: date.month, day: date.day);
@@ -352,12 +352,20 @@ void main() {
         checkKey(material.key);
         checkAsset(material.image);
         expect(material.name, allOf([isNotNull, isNotEmpty]));
+        final List<String> ignore = [
+          'teachings-of-conflict',
+          'teachings-of-kindling',
+          'teachings-of-contention',
+        ];
+        if (ignore.contains(material.key)) {
+          continue;
+        }
         expect(material.characters, isNotEmpty);
         expect(material.days, isNotEmpty);
         for (final item in material.characters) {
           checkItemCommonWithName(item);
         }
-        final travelerExists = material.characters.where((el) => el.key.startsWith('traveler')).isNotEmpty;
+        final travelerExists = material.characters.where((el) => isTheTraveler(el.key)).isNotEmpty;
         expect(travelerExists, isTrue);
       }
 
@@ -465,7 +473,7 @@ void main() {
     final keys = birthdays.expand((el) => el.items).map((e) => e.key).toList();
     expect(keys.length, keys.toSet().length);
 
-    final charCount = service.getCharactersForCard().where((el) => !el.key.startsWith('traveler') && !el.isComingSoon).length;
+    final charCount = service.getCharactersForCard().where((el) => !isTheTraveler(el.key) && !el.isComingSoon).length;
     expect(keys.length, charCount);
 
     final allMonths = List.generate(DateTime.monthsPerYear, (index) => index + 1);

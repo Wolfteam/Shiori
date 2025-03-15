@@ -1,4 +1,4 @@
-import 'package:hive/hive.dart';
+import 'package:hive_ce/hive.dart';
 import 'package:shiori/domain/models/entities/base_entity.dart';
 
 part 'game_code.g.dart';

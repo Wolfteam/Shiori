@@ -107,7 +107,7 @@ class _SmoothStarRatingState extends State<SmoothStarRating> {
                   isWidgetTapped = false; //reset
                 },
                 onHover: (event) {
-                  final box = context.findRenderObject() as RenderBox;
+                  final box = context.findRenderObject()! as RenderBox;
                   final pos = box.globalToLocal(event.position);
                   final i = pos.dx / widget.size;
                   var newRating = widget.allowHalfRating ? i : i.round().toDouble();
@@ -125,7 +125,7 @@ class _SmoothStarRatingState extends State<SmoothStarRating> {
                   onTapDown: (detail) {
                     isWidgetTapped = true;
 
-                    final box = context.findRenderObject() as RenderBox;
+                    final box = context.findRenderObject()! as RenderBox;
                     final pos = box.globalToLocal(detail.globalPosition);
                     final i = (pos.dx - widget.spacing) / widget.size;
                     var newRating = widget.allowHalfRating ? i : i.round().toDouble();
@@ -138,14 +138,12 @@ class _SmoothStarRatingState extends State<SmoothStarRating> {
                     setState(() {
                       currentRating = newRating;
                     });
-                    if (widget.onRated != null) {
-                      widget.onRated!(normalizeRating(currentRating!));
-                    }
+                    widget.onRated?.call(normalizeRating(currentRating!));
                   },
                   onHorizontalDragUpdate: (dragDetails) {
                     isWidgetTapped = true;
 
-                    final box = context.findRenderObject() as RenderBox;
+                    final box = context.findRenderObject()! as RenderBox;
                     final pos = box.globalToLocal(dragDetails.globalPosition);
                     final i = pos.dx / widget.size;
                     var newRating = widget.allowHalfRating ? i : i.round().toDouble();
@@ -171,7 +169,7 @@ class _SmoothStarRatingState extends State<SmoothStarRating> {
               )
             : GestureDetector(
                 onTapDown: (detail) {
-                  final box = context.findRenderObject() as RenderBox;
+                  final box = context.findRenderObject()! as RenderBox;
                   final pos = box.globalToLocal(detail.globalPosition);
                   final i = (pos.dx - widget.spacing) / widget.size;
                   var newRating = widget.allowHalfRating ? i : i.round().toDouble();
@@ -187,10 +185,10 @@ class _SmoothStarRatingState extends State<SmoothStarRating> {
                   });
                 },
                 onTapUp: (e) {
-                  if (widget.onRated != null) widget.onRated!(currentRating);
+                  widget.onRated?.call(currentRating);
                 },
                 onHorizontalDragUpdate: (dragDetails) {
-                  final box = context.findRenderObject() as RenderBox;
+                  final box = context.findRenderObject()! as RenderBox;
                   final pos = box.globalToLocal(dragDetails.globalPosition);
                   final i = pos.dx / widget.size;
                   var newRating = widget.allowHalfRating ? i : i.round().toDouble();

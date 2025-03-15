@@ -499,5 +499,6 @@
   "used": "Used",
   "showMaterialUsage": "Show material usage",
   "version": "Версия",
-  "reruns": "повторов"
+  "reruns": "повторов",
+  "downloadSize": "Download size: {value}"
 }
