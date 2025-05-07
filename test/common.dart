@@ -166,12 +166,7 @@ void checkCharacterFileAscensionMaterialModel(
     expect(ascMaterial.level, allOf([greaterThanOrEqualTo(20), lessThanOrEqualTo(80)]));
     checkItemAscensionMaterialFileModel(materialFileService, ascMaterial.materials);
     if (checkMaterialType) {
-      final types = [
-        MaterialType.jewels,
-        MaterialType.local,
-        MaterialType.common,
-        MaterialType.currency,
-      ];
+      final types = [MaterialType.jewels, MaterialType.local, MaterialType.common, MaterialType.currency];
       for (final type in types) {
         final materials = ascMaterial.materials.where((el) => el.type == type).toList();
         expect(materials.length == 1, isTrue);
@@ -198,9 +193,10 @@ void checkCharacterFileTalentAscensionMaterialModel(
     checkItemAscensionMaterialFileModel(materialFileService, ascMaterial.materials);
 
     if (checkMaterialTypeAndLength) {
-      final expectedLengthForTalents = ascMaterial.level == 10
-          ? 3
-          : ascMaterial.level >= 7
+      final expectedLengthForTalents =
+          ascMaterial.level == 10
+              ? 3
+              : ascMaterial.level >= 7
               ? 2
               : 1;
       expect(ascMaterial.materials.where((el) => el.type == MaterialType.talents).length, expectedLengthForTalents);
@@ -210,6 +206,8 @@ void checkCharacterFileTalentAscensionMaterialModel(
   }
 }
 
+//This regex will not match color tags
+final _tagPattern = RegExp(r'\{([^{}]+)#?([^{}]+)\}([^{}]*)\{/\1\}', caseSensitive: false);
 void checkTranslation(String? text, {bool canBeNull = true, bool checkForColor = true}) {
   if (canBeNull && text.isNullEmptyOrWhitespace) {
     return;
@@ -223,6 +221,8 @@ void checkTranslation(String? text, {bool canBeNull = true, bool checkForColor =
     final hasColor = text.contains('{color}') || text.contains('{/color}');
     expect(hasColor, isFalse);
   }
+
+  expect(_tagPattern.hasMatch(text), isFalse);
 }
 
 ResourceService getResourceService(SettingsService settingsService) {
