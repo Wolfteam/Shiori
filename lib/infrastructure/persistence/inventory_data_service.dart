@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:collection/collection.dart' show IterableExtension;
-import 'package:hive_flutter/hive_flutter.dart';
+import 'package:hive_ce_flutter/hive_flutter.dart';
 import 'package:shiori/domain/app_constants.dart';
 import 'package:shiori/domain/check.dart';
 import 'package:shiori/domain/enums/enums.dart';
@@ -88,12 +88,11 @@ class InventoryDataServiceImpl implements InventoryDataService {
 
   @override
   List<CharacterCardModel> getAllCharactersInInventory() {
-    final characters = _inventoryBox.values
-        .where((el) => el.type == ItemType.character.index)
-        .map(
-          (e) => _genshinService.characters.getCharacterForCard(e.itemKey),
-        )
-        .toList();
+    final characters =
+        _inventoryBox.values
+            .where((el) => el.type == ItemType.character.index)
+            .map((e) => _genshinService.characters.getCharacterForCard(e.itemKey))
+            .toList();
 
     return characters..sort((x, y) => x.name.compareTo(y.name));
   }
@@ -125,23 +124,14 @@ class InventoryDataServiceImpl implements InventoryDataService {
 
   @override
   List<WeaponCardModel> getAllWeaponsInInventory() {
-    final weapons = _inventoryBox.values
-        .where((el) => el.type == ItemType.weapon.index)
-        .map(
-          (e) => _genshinService.weapons.getWeaponForCard(e.itemKey),
-        )
-        .toList();
+    final weapons =
+        _inventoryBox.values.where((el) => el.type == ItemType.weapon.index).map((e) => _genshinService.weapons.getWeaponForCard(e.itemKey)).toList();
 
     return weapons..sort((x, y) => x.name.compareTo(y.name));
   }
 
   @override
-  Future<void> addMaterialToInventory(
-    String key,
-    int quantity, {
-    RedistributeInventoryMaterial? redistribute,
-    bool raiseEvent = true,
-  }) async {
+  Future<void> addMaterialToInventory(String key, int quantity, {RedistributeInventoryMaterial? redistribute, bool raiseEvent = true}) async {
     Check.notEmpty(key, 'key');
     Check.greaterThanOrEqualToZero(quantity, 'quantity');
 
@@ -262,12 +252,13 @@ class InventoryDataServiceImpl implements InventoryDataService {
   @override
   Future<void> clearUsedInventoryItems(int calculatorItemKey, {String? onlyItemKey}) async {
     Check.greaterThanOrEqualToZero(calculatorItemKey, 'calculatorItemKey');
-    final usedItems = onlyItemKey.isNullEmptyOrWhitespace
-        ? _inventoryUsedItemsBox.values.where((el) => el.calculatorItemKey == calculatorItemKey).map((e) => e.key).toList()
-        : _inventoryUsedItemsBox.values
-            .where((el) => el.calculatorItemKey == calculatorItemKey && el.itemKey == onlyItemKey)
-            .map((e) => e.key)
-            .toList();
+    final usedItems =
+        onlyItemKey.isNullEmptyOrWhitespace
+            ? _inventoryUsedItemsBox.values.where((el) => el.calculatorItemKey == calculatorItemKey).map((e) => e.key).toList()
+            : _inventoryUsedItemsBox.values
+                .where((el) => el.calculatorItemKey == calculatorItemKey && el.itemKey == onlyItemKey)
+                .map((e) => e.key)
+                .toList();
     await _inventoryUsedItemsBox.deleteAll(usedItems);
   }
 
@@ -276,8 +267,9 @@ class InventoryDataServiceImpl implements InventoryDataService {
     Check.greaterThanOrEqualToZero(calculatorItemKey, 'calculatorItemKey');
     Check.notEmpty(itemKey, 'itemKey');
 
-    final InventoryUsedItem? usedItem = _inventoryUsedItemsBox.values
-        .firstWhereOrNull((el) => el.calculatorItemKey == calculatorItemKey && el.itemKey == itemKey && el.type == ItemType.material.index);
+    final InventoryUsedItem? usedItem = _inventoryUsedItemsBox.values.firstWhereOrNull(
+      (el) => el.calculatorItemKey == calculatorItemKey && el.itemKey == itemKey && el.type == ItemType.material.index,
+    );
 
     return usedItem?.usedQuantity ?? 0;
   }
@@ -363,9 +355,10 @@ class InventoryDataServiceImpl implements InventoryDataService {
     if (type == ItemType.material) {
       throw ArgumentError.value(type, 'type', 'Value type is not allowed here');
     }
-    final toDeleteKeys = type == null
-        ? _inventoryBox.values.where((el) => el.type != ItemType.material.index).map((e) => e.key).toList()
-        : _inventoryBox.values.where((el) => el.type == type.index).map((e) => e.key).toList();
+    final toDeleteKeys =
+        type == null
+            ? _inventoryBox.values.where((el) => el.type != ItemType.material.index).map((e) => e.key).toList()
+            : _inventoryBox.values.where((el) => el.type == type.index).map((e) => e.key).toList();
     if (toDeleteKeys.isNotEmpty) {
       await _inventoryBox.deleteAll(toDeleteKeys);
     }

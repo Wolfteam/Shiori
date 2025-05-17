@@ -1,4 +1,4 @@
-import 'package:hive/hive.dart';
+import 'package:hive_ce/hive.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/models/entities.dart';
 import 'package:shiori/domain/models/entities/base_entity.dart';
@@ -55,6 +55,6 @@ class NotificationFarmingArtifact extends BaseEntity implements NotificationBase
     required this.title,
     required this.body,
     required this.artifactFarmingTimeType,
-  })  : type = AppNotificationType.farmingArtifacts.index,
-        originalScheduledDate = completesAt;
+  }) : type = AppNotificationType.farmingArtifacts.index,
+       originalScheduledDate = completesAt;
 }

@@ -1,7 +1,11 @@
 targets:
   $default:
     builders:
-      hive_generator:
+      hive_ce_generator:hive_adapters_generator:
+        enabled: False
+      hive_ce_generator:hive_registrar_intermediate_generator:
+        enabled: False
+      hive_ce_generator:hive_type_adapter_generator:
         generate_for:
           - lib/domain/models/entities/**
       envied_generator:envied:
@@ -9,7 +13,10 @@ targets:
           - lib/env.dart
       json_serializable:
         generate_for:
-          - lib/domain/models/**
+          - lib/domain/models/backup/**
+          - lib/domain/models/db/**
+          - lib/domain/models/dtos/**
+          - lib/domain/models/settings/**
       freezed:
         options:
           format: false

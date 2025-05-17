@@ -1,4 +1,4 @@
-import 'package:hive/hive.dart';
+import 'package:hive_ce/hive.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/models/entities.dart';
 import 'package:shiori/domain/models/entities/base_entity.dart';
@@ -63,6 +63,6 @@ class NotificationRealmCurrency extends BaseEntity implements NotificationBase {
     required this.realmTrustRank,
     required this.realmRankType,
     required this.realmCurrency,
-  })  : type = AppNotificationType.realmCurrency.index,
-        originalScheduledDate = completesAt;
+  }) : type = AppNotificationType.realmCurrency.index,
+       originalScheduledDate = completesAt;
 }

@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:collection/collection.dart' show IterableExtension;
 import 'package:flutter/foundation.dart';
-import 'package:hive_flutter/hive_flutter.dart';
+import 'package:hive_ce_flutter/hive_flutter.dart';
 import 'package:shiori/domain/app_constants.dart';
 import 'package:shiori/domain/check.dart';
 import 'package:shiori/domain/enums/enums.dart';
@@ -242,12 +242,7 @@ class CalculatorAscMaterialsDataServiceImpl implements CalculatorAscMaterialsDat
     _checkSessionKey(sessionKey);
 
     await deleteSessionItem(sessionKey, item.position, redistribute: false);
-    return addSessionItem(
-      sessionKey,
-      item.copyWith.call(position: newItemPosition),
-      allPossibleItemMaterialsKeys,
-      redistribute: redistribute,
-    );
+    return addSessionItem(sessionKey, item.copyWith.call(position: newItemPosition), allPossibleItemMaterialsKeys, redistribute: redistribute);
   }
 
   @override
@@ -336,10 +331,7 @@ class CalculatorAscMaterialsDataServiceImpl implements CalculatorAscMaterialsDat
   }
 
   @override
-  Future<void> redistributeInventoryMaterialsFromSessionPosition(
-    int sessionKey, {
-    List<String> onlyMaterialKeys = const <String>[],
-  }) async {
+  Future<void> redistributeInventoryMaterialsFromSessionPosition(int sessionKey, {List<String> onlyMaterialKeys = const <String>[]}) async {
     Check.greaterThanOrEqualToZero(sessionKey, 'sessionKey');
     _checkSessionKey(sessionKey);
 
@@ -355,13 +347,7 @@ class CalculatorAscMaterialsDataServiceImpl implements CalculatorAscMaterialsDat
 
       int currentQuantity = material.quantity;
       for (final session in sessions) {
-        currentQuantity = await _redistributeInventoryMaterial(
-          material.key,
-          currentQuantity,
-          session.id,
-          checkedItems,
-          clearUsedMaterials: true,
-        );
+        currentQuantity = await _redistributeInventoryMaterial(material.key, currentQuantity, session.id, checkedItems, clearUsedMaterials: true);
       }
     }
   }
@@ -371,34 +357,34 @@ class CalculatorAscMaterialsDataServiceImpl implements CalculatorAscMaterialsDat
     final sessions = _sessionBox.values.toList();
     final backup = <BackupCalculatorAscMaterialsSessionModel>[];
     for (final session in sessions) {
-      final calcItems = _calcItemBox.values.where((el) => el.sessionKey == session.key).map(
-        (calcItem) {
-          final charSkills = _calcItemSkillBox.values
-              .where((el) => el.calculatorItemKey == calcItem.id)
-              .map(
-                (e) => BackupCalculatorAscMaterialsSessionCharSkillItemModel(
-                  skillKey: e.skillKey,
-                  currentLevel: e.currentLevel,
-                  desiredLevel: e.desiredLevel,
-                  position: e.position,
-                ),
-              )
-              .toList();
-          return BackupCalculatorAscMaterialsSessionItemModel(
-            itemKey: calcItem.itemKey,
-            currentAscensionLevel: calcItem.currentAscensionLevel,
-            currentLevel: calcItem.currentLevel,
-            desiredAscensionLevel: calcItem.desiredAscensionLevel,
-            desiredLevel: calcItem.desiredLevel,
-            isActive: calcItem.isActive,
-            isCharacter: calcItem.isCharacter,
-            isWeapon: calcItem.isWeapon,
-            position: calcItem.position,
-            useMaterialsFromInventory: calcItem.useMaterialsFromInventory,
-            characterSkills: charSkills,
-          );
-        },
-      ).toList();
+      final calcItems =
+          _calcItemBox.values.where((el) => el.sessionKey == session.key).map((calcItem) {
+            final charSkills =
+                _calcItemSkillBox.values
+                    .where((el) => el.calculatorItemKey == calcItem.id)
+                    .map(
+                      (e) => BackupCalculatorAscMaterialsSessionCharSkillItemModel(
+                        skillKey: e.skillKey,
+                        currentLevel: e.currentLevel,
+                        desiredLevel: e.desiredLevel,
+                        position: e.position,
+                      ),
+                    )
+                    .toList();
+            return BackupCalculatorAscMaterialsSessionItemModel(
+              itemKey: calcItem.itemKey,
+              currentAscensionLevel: calcItem.currentAscensionLevel,
+              currentLevel: calcItem.currentLevel,
+              desiredAscensionLevel: calcItem.desiredAscensionLevel,
+              desiredLevel: calcItem.desiredLevel,
+              isActive: calcItem.isActive,
+              isCharacter: calcItem.isCharacter,
+              isWeapon: calcItem.isWeapon,
+              position: calcItem.position,
+              useMaterialsFromInventory: calcItem.useMaterialsFromInventory,
+              characterSkills: charSkills,
+            );
+          }).toList();
       final bk = BackupCalculatorAscMaterialsSessionModel(name: session.name, position: session.position, items: calcItems);
       backup.add(bk);
     }
@@ -411,84 +397,87 @@ class CalculatorAscMaterialsDataServiceImpl implements CalculatorAscMaterialsDat
     for (final session in data) {
       final createdSession = await createSession(session.name, session.position, session.showMaterialUsage);
       final id = createdSession.key;
-      final items = session.items.map((e) {
-        if (e.isCharacter) {
-          final skills = e.characterSkills
-              .map(
-                (s) => CharacterSkill.skill(
-                  key: s.skillKey,
-                  name: '',
-                  position: s.position,
-                  desiredLevel: s.desiredLevel,
-                  currentLevel: s.currentLevel,
-                  isCurrentDecEnabled: false,
-                  isCurrentIncEnabled: false,
-                  isDesiredDecEnabled: false,
-                  isDesiredIncEnabled: false,
-                ),
-              )
-              .toList();
-          final char = _genshinService.characters.getCharacter(e.itemKey);
-          final charMaterials = _calculatorService.getCharacterMaterialsToUse(
-            char,
-            e.currentLevel,
-            e.desiredLevel,
-            e.currentAscensionLevel,
-            e.desiredAscensionLevel,
-            skills,
-          );
-          return ItemAscensionMaterials.forCharacters(
-            key: e.itemKey,
-            name: '',
-            position: e.position,
-            image: '',
-            rarity: 0,
-            materials: charMaterials,
-            currentLevel: e.currentLevel,
-            desiredLevel: e.desiredLevel,
-            currentAscensionLevel: e.currentAscensionLevel,
-            desiredAscensionLevel: e.desiredAscensionLevel,
-            useMaterialsFromInventory: e.useMaterialsFromInventory,
-            skills: e.characterSkills
-                .map(
-                  (s) => CharacterSkill.skill(
-                    key: s.skillKey,
-                    name: '',
-                    position: s.position,
-                    desiredLevel: s.desiredLevel,
-                    currentLevel: s.currentLevel,
-                    isCurrentDecEnabled: false,
-                    isCurrentIncEnabled: false,
-                    isDesiredDecEnabled: false,
-                    isDesiredIncEnabled: false,
-                  ),
-                )
-                .toList(),
-          );
-        }
+      final items =
+          session.items.map((e) {
+            if (e.isCharacter) {
+              final skills =
+                  e.characterSkills
+                      .map(
+                        (s) => CharacterSkill.skill(
+                          key: s.skillKey,
+                          name: '',
+                          position: s.position,
+                          desiredLevel: s.desiredLevel,
+                          currentLevel: s.currentLevel,
+                          isCurrentDecEnabled: false,
+                          isCurrentIncEnabled: false,
+                          isDesiredDecEnabled: false,
+                          isDesiredIncEnabled: false,
+                        ),
+                      )
+                      .toList();
+              final char = _genshinService.characters.getCharacter(e.itemKey);
+              final charMaterials = _calculatorService.getCharacterMaterialsToUse(
+                char,
+                e.currentLevel,
+                e.desiredLevel,
+                e.currentAscensionLevel,
+                e.desiredAscensionLevel,
+                skills,
+              );
+              return ItemAscensionMaterials.forCharacters(
+                key: e.itemKey,
+                name: '',
+                position: e.position,
+                image: '',
+                rarity: 0,
+                materials: charMaterials,
+                currentLevel: e.currentLevel,
+                desiredLevel: e.desiredLevel,
+                currentAscensionLevel: e.currentAscensionLevel,
+                desiredAscensionLevel: e.desiredAscensionLevel,
+                useMaterialsFromInventory: e.useMaterialsFromInventory,
+                skills:
+                    e.characterSkills
+                        .map(
+                          (s) => CharacterSkill.skill(
+                            key: s.skillKey,
+                            name: '',
+                            position: s.position,
+                            desiredLevel: s.desiredLevel,
+                            currentLevel: s.currentLevel,
+                            isCurrentDecEnabled: false,
+                            isCurrentIncEnabled: false,
+                            isDesiredDecEnabled: false,
+                            isDesiredIncEnabled: false,
+                          ),
+                        )
+                        .toList(),
+              );
+            }
 
-        final weapon = _genshinService.weapons.getWeapon(e.itemKey);
-        final weaponMaterials = _calculatorService.getWeaponMaterialsToUse(
-          weapon,
-          e.currentLevel,
-          e.desiredLevel,
-          e.currentAscensionLevel,
-          e.desiredAscensionLevel,
-        );
-        return ItemAscensionMaterials.forWeapons(
-          key: e.itemKey,
-          name: '',
-          position: e.position,
-          image: '',
-          rarity: 0,
-          materials: weaponMaterials,
-          currentLevel: e.currentLevel,
-          desiredLevel: e.desiredLevel,
-          currentAscensionLevel: e.currentAscensionLevel,
-          desiredAscensionLevel: e.desiredAscensionLevel,
-          useMaterialsFromInventory: e.useMaterialsFromInventory,
-        );
-      }).toList();
+            final weapon = _genshinService.weapons.getWeapon(e.itemKey);
+            final weaponMaterials = _calculatorService.getWeaponMaterialsToUse(
+              weapon,
+              e.currentLevel,
+              e.desiredLevel,
+              e.currentAscensionLevel,
+              e.desiredAscensionLevel,
+            );
+            return ItemAscensionMaterials.forWeapons(
+              key: e.itemKey,
+              name: '',
+              position: e.position,
+              image: '',
+              rarity: 0,
+              materials: weaponMaterials,
+              currentLevel: e.currentLevel,
+              desiredLevel: e.desiredLevel,
+              currentAscensionLevel: e.currentAscensionLevel,
+              desiredAscensionLevel: e.desiredAscensionLevel,
+              useMaterialsFromInventory: e.useMaterialsFromInventory,
+            );
+          }).toList();
       await addSessionItems(id, items, redistributeAtTheEnd: false);
     }
 
@@ -581,10 +570,11 @@ class CalculatorAscMaterialsDataServiceImpl implements CalculatorAscMaterialsDat
   ItemAscensionMaterials _buildForCharacter(CalculatorItem item, {int? calculatorItemKey, bool includeInventory = false}) {
     final character = _genshinService.characters.getCharacter(item.itemKey);
     final translation = _genshinService.translations.getCharacterTranslation(item.itemKey);
-    final skills = _calcItemSkillBox.values
-        .where((s) => s.calculatorItemKey == item.key)
-        .map((skill) => _buildCharacterSkill(item, skill, translation.skills.firstWhere((t) => t.key == skill.skillKey)))
-        .toList();
+    final skills =
+        _calcItemSkillBox.values
+            .where((s) => s.calculatorItemKey == item.key)
+            .map((skill) => _buildCharacterSkill(item, skill, translation.skills.firstWhere((t) => t.key == skill.skillKey)))
+            .toList();
     var materials = _calculatorService.getCharacterMaterialsToUse(
       character,
       item.currentLevel,

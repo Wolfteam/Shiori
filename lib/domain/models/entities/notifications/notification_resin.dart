@@ -1,4 +1,4 @@
-import 'package:hive/hive.dart';
+import 'package:hive_ce/hive.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/models/entities.dart';
 import 'package:shiori/domain/models/entities/base_entity.dart';
@@ -55,6 +55,6 @@ class NotificationResin extends BaseEntity implements NotificationBase {
     required this.currentResinValue,
     required this.title,
     required this.body,
-  })  : type = AppNotificationType.resin.index,
-        originalScheduledDate = completesAt;
+  }) : type = AppNotificationType.resin.index,
+       originalScheduledDate = completesAt;
 }

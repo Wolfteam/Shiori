@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/foundation.dart';
 import 'package:logger/logger.dart';
 import 'package:shiori/domain/extensions/string_extensions.dart';
@@ -7,10 +9,14 @@ import 'package:sprintf/sprintf.dart';
 
 class LoggingServiceImpl implements LoggingService {
   final TelemetryService _telemetryService;
-  final _logger = Logger();
+  final Logger _logger;
   final bool _isLoggingEnabled;
 
-  LoggingServiceImpl(this._telemetryService, this._isLoggingEnabled);
+  LoggingServiceImpl(this._telemetryService, this._isLoggingEnabled, File? fileOutput)
+    : _logger = Logger(
+        output: fileOutput != null ? FileOutput(file: fileOutput) : null,
+        printer: PrefixPrinter(PrettyPrinter(colors: false, printEmojis: false, dateTimeFormat: DateTimeFormat.dateAndTime)),
+      );
 
   @override
   void info(Type type, String msg, [List<Object>? args]) {

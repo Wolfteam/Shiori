@@ -1,5 +1,5 @@
 import 'package:darq/darq.dart';
-import 'package:hive_flutter/hive_flutter.dart';
+import 'package:hive_ce_flutter/hive_flutter.dart';
 import 'package:shiori/domain/extensions/iterable_extensions.dart';
 import 'package:shiori/domain/models/entities.dart';
 import 'package:shiori/domain/models/models.dart';
@@ -29,12 +29,13 @@ class TierListDataServiceImpl implements TierListDataService {
   List<TierListRowModel> getTierList() {
     final values = _tierListBox.values.toList()..sort((x, y) => x.position.compareTo(y.position));
     return values.map((e) {
-      final characters = e.charKeys.map((e) {
-        final character = _genshinService.characters.getCharacter(e);
-        final image = _resourceService.getCharacterImagePath(character.image);
-        final iconImage = _resourceService.getCharacterIconImagePath(character.iconImage);
-        return ItemCommon(character.key, image, iconImage);
-      }).toList();
+      final characters =
+          e.charKeys.map((e) {
+            final character = _genshinService.characters.getCharacter(e);
+            final image = _resourceService.getCharacterImagePath(character.image);
+            final iconImage = _resourceService.getCharacterIconImagePath(character.iconImage);
+            return ItemCommon(character.key, image, iconImage);
+          }).toList();
       return TierListRowModel.row(tierText: e.text, items: characters, tierColor: e.color);
     }).toList();
   }
@@ -61,10 +62,11 @@ class TierListDataServiceImpl implements TierListDataService {
 
   @override
   Future<void> restoreFromBackup(List<BackupTierListModel> data) {
-    final tierList = data
-        .orderBy((e) => e.position)
-        .map((e) => TierListRowModel.row(tierText: e.text, items: e.charKeys.map((c) => ItemCommon(c, '', '')).toList(), tierColor: e.color))
-        .toList();
+    final tierList =
+        data
+            .orderBy((e) => e.position)
+            .map((e) => TierListRowModel.row(tierText: e.text, items: e.charKeys.map((c) => ItemCommon(c, '', '')).toList(), tierColor: e.color))
+            .toList();
 
     return saveTierList(tierList);
   }

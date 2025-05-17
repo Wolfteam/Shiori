@@ -1,4 +1,4 @@
-import 'package:hive/hive.dart';
+import 'package:hive_ce/hive.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/models/entities.dart';
 import 'package:shiori/domain/models/entities/base_entity.dart';
@@ -51,6 +51,6 @@ class NotificationWeeklyBoss extends BaseEntity implements NotificationBase {
     required this.showNotification,
     required this.title,
     required this.body,
-  })  : type = AppNotificationType.weeklyBoss.index,
-        originalScheduledDate = completesAt;
+  }) : type = AppNotificationType.weeklyBoss.index,
+       originalScheduledDate = completesAt;
 }

@@ -1,7 +1,7 @@
 import 'dart:math';
 
 import 'package:darq/darq.dart';
-import 'package:hive/hive.dart';
+import 'package:hive_ce/hive.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/models/entities/base_entity.dart';
 
@@ -18,16 +18,12 @@ class WishSimulatorBannerPullHistory extends BaseEntity {
   @HiveField(2)
   Map<int, bool> fiftyFiftyXStarGuaranteed;
 
-  WishSimulatorBannerPullHistory(
-    this.type,
-    this.currentXStarCount,
-    this.fiftyFiftyXStarGuaranteed,
-  );
+  WishSimulatorBannerPullHistory(this.type, this.currentXStarCount, this.fiftyFiftyXStarGuaranteed);
 
   WishSimulatorBannerPullHistory.newOne(BannerItemType type, Map<int, int>? defaultXStarCount)
-      : type = type.index,
-        currentXStarCount = defaultXStarCount != null ? Map.of(defaultXStarCount) : {},
-        fiftyFiftyXStarGuaranteed = defaultXStarCount?.keys.toMap((rarity) => MapEntry(rarity, false), modifiable: true) ?? {};
+    : type = type.index,
+      currentXStarCount = defaultXStarCount != null ? Map.of(defaultXStarCount) : {},
+      fiftyFiftyXStarGuaranteed = defaultXStarCount?.keys.toMap((rarity) => MapEntry(rarity, false), modifiable: true) ?? {};
 
   void initXStarCountIfNeeded(int rarity) {
     if (currentXStarCount.containsKey(rarity)) {

@@ -1,4 +1,9 @@
+import 'dart:io';
+
+import 'package:flutter/foundation.dart';
 import 'package:get_it/get_it.dart';
+import 'package:path/path.dart' as Path;
+import 'package:path_provider/path_provider.dart';
 import 'package:shiori/application/bloc.dart';
 import 'package:shiori/domain/services/api_service.dart';
 import 'package:shiori/domain/services/backup_restore_service.dart';
@@ -321,7 +326,21 @@ class Injection {
 
     getIt.registerSingleton<DeviceInfoService>(DeviceInfoServiceImpl());
 
-    getIt.registerLazySingleton<LoggingService>(() => LoggingServiceImpl(getIt<TelemetryService>(), isLoggingEnabled));
+    File? loggingFile;
+    if (kDebugMode) {
+      try {
+        final Directory? loggingDir = await getDownloadsDirectory();
+        final String loggingPath = Path.join(loggingDir!.path, 'logs.txt');
+        loggingFile = File(loggingPath);
+        if (!await loggingFile.exists()) {
+          await loggingFile.create(recursive: true);
+        }
+      } catch (_) {
+        //no op
+      }
+    }
+
+    getIt.registerLazySingleton<LoggingService>(() => LoggingServiceImpl(getIt<TelemetryService>(), isLoggingEnabled, loggingFile));
 
     getIt.registerLazySingleton<SettingsService>(() => SettingsServiceImpl(getIt<LoggingService>()));
 

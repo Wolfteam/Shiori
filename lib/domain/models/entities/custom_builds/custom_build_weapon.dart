@@ -1,4 +1,4 @@
-import 'package:hive/hive.dart';
+import 'package:hive_ce/hive.dart';
 import 'package:shiori/domain/models/entities/base_entity.dart';
 
 part 'custom_build_weapon.g.dart';
@@ -23,12 +23,5 @@ class CustomBuildWeapon extends BaseEntity {
   @HiveField(5, defaultValue: false)
   bool isAnAscension;
 
-  CustomBuildWeapon(
-    this.buildItemKey,
-    this.weaponKey,
-    this.index,
-    this.refinement,
-    this.level,
-    this.isAnAscension,
-  );
+  CustomBuildWeapon(this.buildItemKey, this.weaponKey, this.index, this.refinement, this.level, this.isAnAscension);
 }
