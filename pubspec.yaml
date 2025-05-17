@@ -25,7 +25,7 @@ dependencies:
   device_info_plus: ^11.4.0
   devicelocale: ^0.8.1
   envied: ^1.1.1
-  file_picker: ^9.0.2
+  file_picker: ^10.1.9
   firebase_core: ^3.13.0
   firebase_messaging: ^15.2.5
   fl_chart: ^1.0.0
@@ -37,7 +37,7 @@ dependencies:
   flutter_local_notifications: ^19.2.0
   flutter_localizations:
     sdk: flutter
-  flutter_markdown: ^0.7.6+2
+  flutter_markdown_plus: ^1.0.3
   flutter_slidable: ^4.0.0
   flutter_timezone: ^4.1.0
   fluttertoast: ^8.2.12

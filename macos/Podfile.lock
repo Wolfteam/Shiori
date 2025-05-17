@@ -207,7 +207,7 @@ SPEC CHECKSUMS:
   FirebaseInstallations: 9980995bdd06ec8081dfb6ab364162bdd64245c3
   FirebaseMessaging: 2b9f56aa4ed286e1f0ce2ee1d413aabb8f9f5cb9
   flutter_inappwebview_macos: c2d68649f9f8f1831bfcd98d73fd6256366d9d1d
-  flutter_local_notifications: 13862b132e32eb858dea558a86d45d08daeacfe7
+  flutter_local_notifications: 4bf37a31afde695b56091b4ae3e4d9c7a7e6cda0
   flutter_timezone: d59eea86178cbd7943cd2431cc2eaa9850f935d8
   FlutterMacOS: 8f6f14fa908a6fb3fba0cd85dbd81ec4b251fb24
   GoogleDataTransport: aae35b7ea0c09004c3797d53c8c41f66f219d6a7

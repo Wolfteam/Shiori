@@ -349,10 +349,10 @@ packages:
     dependency: "direct main"
     description:
       name: file_picker
-      sha256: "7423298f08f6fc8cce05792bae329f9a93653fc9c08712831b1a55540127995d"
+      sha256: "77f8e81d22d2a07d0dee2c62e1dda71dc1da73bf43bb2d45af09727406167964"
       url: "https://pub.dev"
     source: hosted
-    version: "9.0.2"
+    version: "10.1.9"
   firebase_core:
     dependency: "direct main"
     description:
@@ -552,14 +552,14 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
-  flutter_markdown:
+  flutter_markdown_plus:
     dependency: "direct main"
     description:
-      name: flutter_markdown
-      sha256: e7bbc718adc9476aa14cfddc1ef048d2e21e4e8f18311aaac723266db9f9e7b5
+      name: flutter_markdown_plus
+      sha256: fe74214c5ac2f850d93efda290dcde3f18006e90a87caa9e3e6c13222a5db4de
       url: "https://pub.dev"
     source: hosted
-    version: "0.7.6+2"
+    version: "1.0.3"
   flutter_plugin_android_lifecycle:
     dependency: transitive
     description:
@@ -864,10 +864,10 @@ packages:
     dependency: transitive
     description:
       name: markdown
-      sha256: ef2a1298144e3f985cc736b22e0ccdaf188b5b3970648f2d9dc13efd1d9df051
+      sha256: "935e23e1ff3bc02d390bad4d4be001208ee92cc217cb5b5a6c19bc14aaa318c1"
       url: "https://pub.dev"
     source: hosted
-    version: "7.2.2"
+    version: "7.3.0"
   matcher:
     dependency: transitive
     description:

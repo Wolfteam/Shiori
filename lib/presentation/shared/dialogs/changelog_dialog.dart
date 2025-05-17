@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_markdown/flutter_markdown.dart';
+import 'package:flutter_markdown_plus/flutter_markdown_plus.dart';
 import 'package:shiori/application/changelog/changelog_bloc.dart';
 import 'package:shiori/generated/l10n.dart';
 import 'package:shiori/injection.dart';
@@ -21,19 +21,15 @@ class ChangelogDialog extends StatelessWidget {
           width: mq.getWidthForDialogs(),
           child: SingleChildScrollView(
             child: BlocBuilder<ChangelogBloc, ChangelogState>(
-              builder: (ctx, state) => state.map(
-                loading: (_) => const Loading(useScaffold: false, mainAxisSize: MainAxisSize.min),
-                loadedState: (state) => MarkdownBody(data: state.changelog),
-              ),
+              builder:
+                  (ctx, state) => state.map(
+                    loading: (_) => const Loading(useScaffold: false, mainAxisSize: MainAxisSize.min),
+                    loadedState: (state) => MarkdownBody(data: state.changelog),
+                  ),
             ),
           ),
         ),
-        actions: [
-          FilledButton(
-            onPressed: () => Navigator.of(context).pop(),
-            child: Text(s.ok),
-          ),
-        ],
+        actions: [FilledButton(onPressed: () => Navigator.of(context).pop(), child: Text(s.ok))],
       ),
     );
   }
