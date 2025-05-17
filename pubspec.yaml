@@ -34,7 +34,7 @@ dependencies:
   flutter_bloc: ^7.3.1
   flutter_colorpicker: ^1.1.0
   flutter_inappwebview: ^6.1.5
-  flutter_local_notifications: ^18.0.1
+  flutter_local_notifications: ^19.2.0
   flutter_localizations:
     sdk: flutter
   flutter_markdown: ^0.7.6+2
@@ -132,3 +132,7 @@ msix_config:
   languages: en
   capabilities: 'internetClient'
   store: true
+  toast_activator:
+    clsid: "d49b0314-ee7a-4626-bf79-97cdb8a991bb"
+    arguments: "msix-args"
+    display_name: "Shiori"
