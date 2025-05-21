@@ -190,7 +190,9 @@ class BackupsPage extends StatelessWidget {
         ),
       ).then((dataTypes) {
         if (dataTypes?.isNotEmpty == true && context.mounted) {
-          context.read<BackupRestoreBloc>().add(BackupRestoreEvent.restore(filePath: result.path, dataTypes: dataTypes!, imported: true));
+          context.read<BackupRestoreBloc>().add(
+            BackupRestoreEvent.restore(filePath: result.path, dataTypes: dataTypes!, imported: true),
+          );
         }
       });
     } else {
@@ -224,7 +226,7 @@ class _Header extends StatelessWidget {
               children: [
                 Container(
                   decoration: BoxDecoration(
-                    border: Border.all(color: theme.colorScheme.primary.withOpacity(0.5)),
+                    border: Border.all(color: theme.colorScheme.primary.withValues(alpha: 0.5)),
                     borderRadius: const BorderRadius.all(Radius.circular(10)),
                   ),
                   padding: Styles.edgeInsetAll5,
@@ -259,17 +261,18 @@ class _Header extends StatelessWidget {
               alignment: MainAxisAlignment.end,
               children: [
                 FilledButton(
-                  onPressed: () => showDialog<List<AppBackupDataType>?>(
-                    context: context,
-                    builder: (context) => BackupDataTypesSelectorDialog(
-                      content: s.createBackupConfirmation,
-                      dataTypes: AppBackupDataType.values,
-                    ),
-                  ).then((dataTypes) {
-                    if (dataTypes?.isNotEmpty == true && context.mounted) {
-                      context.read<BackupRestoreBloc>().add(BackupRestoreEvent.create(dataTypes: dataTypes!));
-                    }
-                  }),
+                  onPressed: () =>
+                      showDialog<List<AppBackupDataType>?>(
+                        context: context,
+                        builder: (context) => BackupDataTypesSelectorDialog(
+                          content: s.createBackupConfirmation,
+                          dataTypes: AppBackupDataType.values,
+                        ),
+                      ).then((dataTypes) {
+                        if (dataTypes?.isNotEmpty == true && context.mounted) {
+                          context.read<BackupRestoreBloc>().add(BackupRestoreEvent.create(dataTypes: dataTypes!));
+                        }
+                      }),
                   child: Text(s.create),
                 ),
                 TextButton(
@@ -288,16 +291,16 @@ class _Header extends StatelessWidget {
     final customFile = Platform.isWindows;
     return FilePicker.platform
         .pickFiles(
-      dialogTitle: s.chooseFile,
-      lockParentWindow: true,
-      type: customFile ? FileType.custom : FileType.any,
-      allowedExtensions: customFile ? [backupFileExtension.replaceAll('.', '')] : null,
-    )
+          dialogTitle: s.chooseFile,
+          lockParentWindow: true,
+          type: customFile ? FileType.custom : FileType.any,
+          allowedExtensions: customFile ? [backupFileExtension.replaceAll('.', '')] : null,
+        )
         .then((result) {
-      if (context.mounted) {
-        _handlePickerResult(context, result);
-      }
-    });
+          if (context.mounted) {
+            _handlePickerResult(context, result);
+          }
+        });
   }
 
   void _handlePickerResult(BuildContext context, FilePickerResult? result) {

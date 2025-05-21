@@ -89,7 +89,7 @@ class _ReleasedOn extends StatelessWidget {
     final s = S.of(context);
     final theme = Theme.of(context);
     final dateFormat = DateFormat(_dateFormat);
-    final selectedColor = selected ? theme.colorScheme.primary.withOpacity(0.5) : null;
+    final selectedColor = selected ? theme.colorScheme.primary.withValues(alpha: 0.5) : null;
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [

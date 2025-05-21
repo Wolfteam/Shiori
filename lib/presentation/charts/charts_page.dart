@@ -110,8 +110,10 @@ class _BodyState extends State<_Body> with SingleTickerProviderStateMixin, AppFa
       ),
       floatingActionButton: getAppFab(),
       body: ResponsiveBuilder(
-        builder: (context, sizingInformation) => !isPortrait &&
-                (sizingInformation.deviceScreenType == DeviceScreenType.desktop || sizingInformation.deviceScreenType == DeviceScreenType.tablet)
+        builder: (context, sizingInformation) =>
+            !isPortrait &&
+                (sizingInformation.deviceScreenType == DeviceScreenType.desktop ||
+                    sizingInformation.deviceScreenType == DeviceScreenType.tablet)
             ? _LandscapeLayout(maxNumberOfColumns: maxNumberOfColumns, controller: scrollController)
             : _PortraitLayout(maxNumberOfColumns: maxNumberOfColumns, controller: scrollController),
       ),
@@ -473,7 +475,9 @@ class _Elements extends StatelessWidget {
                 ? NothingFoundColumn(msg: s.nothingToShow)
                 : HorizontalBarChart(
                     minX: state.firstVersion,
-                    items: state.filteredElements.mapIndex((e, i) => HorizontalBarDataModel(i, e.type.getElementColor(true), e.points)).toList(),
+                    items: state.filteredElements
+                        .mapIndex((e, i) => HorizontalBarDataModel(i, e.type.getElementColor(true), e.points))
+                        .toList(),
                     canValueBeRendered: (value) => context.read<ChartElementsBloc>().isValidVersion(value),
                     getBottomText: (value) => value.toStringAsFixed(1),
                     getLeftText: (value) => value.toInt().toString(),
@@ -489,8 +493,7 @@ class _Elements extends StatelessWidget {
                         final text = '${s.translateElementType(element.type)} (${quantity.toInt()})';
                         return LineTooltipItem(text, textStyle);
                       },
-                    ).toList()
-                      ..sort((x, y) => x.text.compareTo(y.text)),
+                    ).toList()..sort((x, y) => x.text.compareTo(y.text)),
                     onPointTap: (value) => showDialog(
                       context: context,
                       builder: (_) => BannerVersionHistoryDialog(
@@ -565,7 +568,7 @@ class _Birthdays extends StatelessWidget {
                     .mapIndex(
                       (e, i) => VerticalBarDataModel(
                         i,
-                        currentMonth == e.month ? theme.colorScheme.primary : theme.colorScheme.primary.withOpacity(0.65),
+                        currentMonth == e.month ? theme.colorScheme.primary : theme.colorScheme.primary.withValues(alpha: 0.65),
                         e.month,
                         e.items.length.toDouble(),
                       ),
@@ -616,11 +619,11 @@ class _AscensionStats extends StatelessWidget {
               children: [
                 ToggleButtons(
                   onPressed: (index) => context.read<ChartAscensionStatsBloc>().add(
-                        ChartAscensionStatsEvent.init(
-                          type: ItemType.values[index],
-                          maxNumberOfColumns: maxNumberOfColumns,
-                        ),
-                      ),
+                    ChartAscensionStatsEvent.init(
+                      type: ItemType.values[index],
+                      maxNumberOfColumns: maxNumberOfColumns,
+                    ),
+                  ),
                   borderRadius: BorderRadius.circular(10),
                   constraints: const BoxConstraints(minHeight: 36, maxHeight: 36),
                   isSelected: [
@@ -650,10 +653,14 @@ class _AscensionStats extends StatelessWidget {
                     canGoToLastPage: state.canGoToLastPage,
                     canGoToNextPage: state.canGoToNextPage,
                     canGoToPreviousPage: state.canGoToPreviousPage,
-                    onFirstPagePressed: () => context.read<ChartAscensionStatsBloc>().add(const ChartAscensionStatsEvent.goToFirstPage()),
-                    onLastPagePressed: () => context.read<ChartAscensionStatsBloc>().add(const ChartAscensionStatsEvent.goToLastPage()),
-                    onNextPagePressed: () => context.read<ChartAscensionStatsBloc>().add(const ChartAscensionStatsEvent.goToNextPage()),
-                    onPreviousPagePressed: () => context.read<ChartAscensionStatsBloc>().add(const ChartAscensionStatsEvent.goToPreviousPage()),
+                    onFirstPagePressed: () =>
+                        context.read<ChartAscensionStatsBloc>().add(const ChartAscensionStatsEvent.goToFirstPage()),
+                    onLastPagePressed: () =>
+                        context.read<ChartAscensionStatsBloc>().add(const ChartAscensionStatsEvent.goToLastPage()),
+                    onNextPagePressed: () =>
+                        context.read<ChartAscensionStatsBloc>().add(const ChartAscensionStatsEvent.goToNextPage()),
+                    onPreviousPagePressed: () =>
+                        context.read<ChartAscensionStatsBloc>().add(const ChartAscensionStatsEvent.goToPreviousPage()),
                   ),
                 ),
               ],
@@ -662,7 +669,9 @@ class _AscensionStats extends StatelessWidget {
                 ? NothingFoundColumn(msg: s.nothingToShow)
                 : VerticalBarChart(
                     items: state.ascensionStats
-                        .mapIndex((e, i) => VerticalBarDataModel(i, theme.colorScheme.primary, e.type.index, e.quantity.toDouble()))
+                        .mapIndex(
+                          (e, i) => VerticalBarDataModel(i, theme.colorScheme.primary, e.type.index, e.quantity.toDouble()),
+                        )
                         .toList(),
                     maxY: state.maxCount.toDouble(),
                     interval: (state.maxCount * 0.2).roundToDouble(),
@@ -671,7 +680,8 @@ class _AscensionStats extends StatelessWidget {
                     rotateBottomText: true,
                     onBarChartTap: (index, _) => showDialog(
                       context: context,
-                      builder: (_) => ItemsAscensionStatsDialog(itemType: state.itemType, statType: state.ascensionStats[index].type),
+                      builder: (_) =>
+                          ItemsAscensionStatsDialog(itemType: state.itemType, statType: state.ascensionStats[index].type),
                     ),
                   ),
           ),

@@ -54,7 +54,11 @@ class _BodyState extends State<_Body> {
       },
       builder: (ctx, state) => state.maybeMap(
         initial: (state) => state.noInternetConnection || !state.isInitialized || !state.canMakePurchases
-            ? _Error(noInternetConnection: state.noInternetConnection, isInitialized: state.isInitialized, canMakePurchases: state.canMakePurchases)
+            ? _Error(
+                noInternetConnection: state.noInternetConnection,
+                isInitialized: state.isInitialized,
+                canMakePurchases: state.canMakePurchases,
+              )
             : Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -84,9 +88,12 @@ class _BodyState extends State<_Body> {
                         ),
                       if (state.packages.isNotEmpty && state.isInitialized && _selected != null)
                         FilledButton(
-                          onPressed: () => context
-                              .read<DonationsBloc>()
-                              .add(DonationsEvent.purchase(identifier: _selected!.identifier, offeringIdentifier: _selected!.offeringIdentifier)),
+                          onPressed: () => context.read<DonationsBloc>().add(
+                            DonationsEvent.purchase(
+                              identifier: _selected!.identifier,
+                              offeringIdentifier: _selected!.offeringIdentifier,
+                            ),
+                          ),
                           child: Text(s.confirm),
                         ),
                     ],
@@ -136,10 +143,10 @@ class _DonationItem extends StatelessWidget {
       onTap: onTap,
       child: Card(
         color: isSelected
-            ? theme.colorScheme.primary.withOpacity(0.5)
+            ? theme.colorScheme.primary.withValues(alpha: 0.5)
             : theme.scaffoldBackgroundColor == Colors.black
-                ? theme.cardColor.withOpacity(0.5)
-                : theme.cardColor,
+            ? theme.cardColor.withValues(alpha: 0.5)
+            : theme.cardColor,
         margin: Styles.edgeInsetAll10,
         child: Padding(
           padding: Styles.edgeInsetAll10,
@@ -171,8 +178,8 @@ class _Error extends StatelessWidget {
     final msg = noInternetConnection
         ? s.noInternetConnection
         : !canMakePurchases
-            ? 'Device cannot make purchases'
-            : s.unknownError;
+        ? 'Device cannot make purchases'
+        : s.unknownError;
     return NothingFoundColumn(msg: msg);
   }
 }

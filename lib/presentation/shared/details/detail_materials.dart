@@ -17,17 +17,11 @@ class MaterialsData {
 
   MaterialsData({required this.level, required this.materials});
 
-  MaterialsData.fromAscensionMaterial(CharacterAscensionModel e)
-      : level = e.level,
-        materials = e.materials;
+  MaterialsData.fromAscensionMaterial(CharacterAscensionModel e) : level = e.level, materials = e.materials;
 
-  MaterialsData.fromTalentAscensionMaterial(CharacterTalentAscensionModel e)
-      : level = e.level,
-        materials = e.materials;
+  MaterialsData.fromTalentAscensionMaterial(CharacterTalentAscensionModel e) : level = e.level, materials = e.materials;
 
-  MaterialsData.fromWeaponAscensionModel(WeaponAscensionModel e)
-      : level = e.level,
-        materials = e.materials;
+  MaterialsData.fromWeaponAscensionModel(WeaponAscensionModel e) : level = e.level, materials = e.materials;
 }
 
 class DetailMaterialsSliderColumn extends StatefulWidget {
@@ -70,15 +64,16 @@ class _DetailMaterialsSliderColumnState extends State<DetailMaterialsSliderColum
           child: Container(
             margin: const EdgeInsets.only(bottom: 15),
             child: SliderTheme(
-              data: SliderThemeData.fromPrimaryColors(
-                primaryColor: widget.color,
-                primaryColorDark: widget.color,
-                primaryColorLight: widget.color,
-                valueIndicatorTextStyle: theme.textTheme.bodySmall!,
-              ).copyWith(
-                overlayShape: SliderComponentShape.noOverlay,
-                trackHeight: 5,
-              ),
+              data:
+                  SliderThemeData.fromPrimaryColors(
+                    primaryColor: widget.color,
+                    primaryColorDark: widget.color,
+                    primaryColorLight: widget.color,
+                    valueIndicatorTextStyle: theme.textTheme.bodySmall!,
+                  ).copyWith(
+                    overlayShape: SliderComponentShape.noOverlay,
+                    trackHeight: 5,
+                  ),
               child: Slider(
                 value: _currentIndex.toDouble(),
                 onChanged: (val) => _onAddOrRemove(val.toInt()),
@@ -142,7 +137,7 @@ class _SeeAllMaterialsDialog extends StatelessWidget {
           elements: data,
           groupBy: (item) => item.level,
           groupSeparatorBuilder: (level) => Container(
-            color: theme.colorScheme.secondary.withOpacity(0.5),
+            color: theme.colorScheme.secondary.withValues(alpha: 0.5),
             padding: Styles.edgeInsetAll5,
             child: Text('${s.level}: $level', style: theme.textTheme.titleMedium),
           ),

@@ -89,8 +89,14 @@ class _ContentState extends State<_Content> {
         }
       },
       builder: (context, state) => ResponsiveBuilder(
-        builder: (context, sizingInformation) => (sizingInformation.isMobile || sizingInformation.isTablet) && mq.orientation == Orientation.landscape
-            ? _MobileLandscapeLayout(pageViewKey: _pageViewKey, bannerMaxHeight: bannerMaxHeight, state: state, pageController: _pageController)
+        builder: (context, sizingInformation) =>
+            (sizingInformation.isMobile || sizingInformation.isTablet) && mq.orientation == Orientation.landscape
+            ? _MobileLandscapeLayout(
+                pageViewKey: _pageViewKey,
+                bannerMaxHeight: bannerMaxHeight,
+                state: state,
+                pageController: _pageController,
+              )
             : _Layout(pageViewKey: _pageViewKey, bannerMaxHeight: bannerMaxHeight, state: state, pageController: _pageController),
       ),
     );
@@ -120,7 +126,7 @@ class _MobileLandscapeLayout extends StatelessWidget {
           alignment: Alignment.center,
           children: [
             Container(
-              color: Styles.wishTopUnselectedBackgroundColor.withOpacity(0.7),
+              color: Styles.wishTopUnselectedBackgroundColor.withValues(alpha: 0.7),
               width: 70,
               margin: Styles.edgeInsetHorizontal5,
             ),
@@ -522,7 +528,9 @@ class _SettingsButton extends StatelessWidget {
       if (value == null || !context.mounted) {
         return;
       }
-      context.read<WishSimulatorBloc>().add(WishSimulatorEvent.periodChanged(version: value.version, from: value.from, until: value.until));
+      context.read<WishSimulatorBloc>().add(
+        WishSimulatorEvent.periodChanged(version: value.version, from: value.from, until: value.until),
+      );
     });
   }
 }

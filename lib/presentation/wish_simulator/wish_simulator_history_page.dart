@@ -78,14 +78,15 @@ class WishSimulatorHistoryPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider<WishSimulatorPullHistoryBloc>(
-      create: (context) => Injection.wishSimulatorPullHistoryBloc..add(WishSimulatorPullHistoryEvent.init(bannerType: bannerType)),
+      create: (context) =>
+          Injection.wishSimulatorPullHistoryBloc..add(WishSimulatorPullHistoryEvent.init(bannerType: bannerType)),
       child: BlocBuilder<WishSimulatorPullHistoryBloc, WishSimulatorPullHistoryState>(
         builder: (context, state) => Scaffold(
           appBar: _CustomAppBar(
             bannerType: state.map(loading: (_) => bannerType, loaded: (state) => state.bannerType),
             showDeleteIcon: state.map(loading: (_) => false, loaded: (state) => state.items.isNotEmpty),
           ),
-          backgroundColor: Theme.of(context).colorScheme.surface.withOpacity(0.8),
+          backgroundColor: Theme.of(context).colorScheme.surface.withValues(alpha: 0.8),
           body: SafeArea(
             child: BackdropFilter(
               filter: ImageFilter.blur(sigmaX: 6.0, sigmaY: 6.0),
@@ -152,7 +153,8 @@ class _CustomAppBarState extends State<_CustomAppBar> {
           tooltipText: s.bannerType,
           selectedValue: widget.bannerType,
           values: BannerItemType.values,
-          onSelected: (val) => context.read<WishSimulatorPullHistoryBloc>().add(WishSimulatorPullHistoryEvent.init(bannerType: val)),
+          onSelected: (val) =>
+              context.read<WishSimulatorPullHistoryBloc>().add(WishSimulatorPullHistoryEvent.init(bannerType: val)),
           icon: const Icon(Icons.filter_alt),
           splashRadius: Styles.smallButtonSplashRadius,
           itemText: (val, _) => s.translateBannerItemType(val),
@@ -162,17 +164,20 @@ class _CustomAppBarState extends State<_CustomAppBar> {
             icon: const Icon(Icons.clear_all),
             splashRadius: Styles.smallButtonSplashRadius,
             tooltip: s.deleteAllItems,
-            onPressed: () => showDialog<bool>(
-              context: context,
-              builder: (context) => ConfirmDialog(
-                content: s.confirmQuestion,
-                title: s.deleteAllItems,
-              ),
-            ).then((confirmed) {
-              if (confirmed == true && context.mounted) {
-                context.read<WishSimulatorPullHistoryBloc>().add(WishSimulatorPullHistoryEvent.deleteData(bannerType: widget.bannerType));
-              }
-            }),
+            onPressed: () =>
+                showDialog<bool>(
+                  context: context,
+                  builder: (context) => ConfirmDialog(
+                    content: s.confirmQuestion,
+                    title: s.deleteAllItems,
+                  ),
+                ).then((confirmed) {
+                  if (confirmed == true && context.mounted) {
+                    context.read<WishSimulatorPullHistoryBloc>().add(
+                      WishSimulatorPullHistoryEvent.deleteData(bannerType: widget.bannerType),
+                    );
+                  }
+                }),
           ),
       ],
     );
@@ -251,7 +256,7 @@ class _Table extends StatelessWidget {
     return DataRow(
       color: WidgetStateProperty.resolveWith<Color?>((states) {
         if (index.isEven) {
-          return Colors.grey.withOpacity(0.3);
+          return Colors.grey.withValues(alpha: 0.3);
         }
         return null;
       }),
@@ -337,7 +342,9 @@ class _TablePagination extends StatelessWidget {
           tooltip: s.previousPage,
           onPressed: currentPage - 1 <= 0
               ? null
-              : () => context.read<WishSimulatorPullHistoryBloc>().add(WishSimulatorPullHistoryEvent.pageChanged(page: currentPage - 1)),
+              : () => context.read<WishSimulatorPullHistoryBloc>().add(
+                  WishSimulatorPullHistoryEvent.pageChanged(page: currentPage - 1),
+                ),
         ),
         Text(
           '$currentPage',
@@ -350,7 +357,9 @@ class _TablePagination extends StatelessWidget {
           tooltip: s.nextPage,
           onPressed: currentPage + 1 > maxPage
               ? null
-              : () => context.read<WishSimulatorPullHistoryBloc>().add(WishSimulatorPullHistoryEvent.pageChanged(page: currentPage + 1)),
+              : () => context.read<WishSimulatorPullHistoryBloc>().add(
+                  WishSimulatorPullHistoryEvent.pageChanged(page: currentPage + 1),
+                ),
         ),
       ],
     );

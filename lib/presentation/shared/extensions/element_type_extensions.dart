@@ -33,6 +33,6 @@ extension ElementTypeExtensions on ElementType {
         color = useDarkColors ? const Color.fromARGB(alpha, 243, 124, 35) : const Color.fromARGB(alpha, 249, 163, 104);
     }
 
-    return useDarkColors ? color : color.withOpacity(0.5);
+    return useDarkColors ? color : color.withValues(alpha: 0.5);
   }
 }
