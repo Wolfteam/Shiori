@@ -34,8 +34,6 @@ extension AppThemeTypeExtensions on AppAccentColorType {
         return Colors.teal;
       case AppAccentColorType.amber:
         return Colors.amber;
-      default:
-        throw Exception('The provided accent color = $this is not valid ');
     }
   }
 

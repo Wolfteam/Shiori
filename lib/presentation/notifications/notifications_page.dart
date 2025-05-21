@@ -152,7 +152,6 @@ class _NotificationItem extends StatelessWidget {
           note: element.note,
           useTwentyFourHoursFormat: useTwentyFourHoursFormat,
         );
-        break;
     }
 
     return NotificationListTitle(item: element, subtitle: subtitle);

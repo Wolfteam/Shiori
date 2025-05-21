@@ -52,7 +52,11 @@ void main() {
     localeService = LocaleServiceImpl(settingsService);
     resourceService = getResourceService(settingsService);
     genshinService = GenshinServiceImpl(resourceService, localeService);
-    dataService = DataServiceImpl(genshinService, CalculatorAscMaterialsServiceImpl(genshinService, resourceService), resourceService);
+    dataService = DataServiceImpl(
+      genshinService,
+      CalculatorAscMaterialsServiceImpl(genshinService, resourceService),
+      resourceService,
+    );
     notificationsBloc = NotificationsBloc(dataService, notificationService, settingsService, telemetryService);
 
     return Future(() async {
@@ -232,7 +236,12 @@ void main() {
       'a farming material notification',
       setUp: () async {
         final material = genshinService.materials.getAllMaterialsThatHaveAFarmingRespawnDuration().first;
-        await dataService.notifications.saveFarmingMaterialNotification(material.key, defaultTitle, defaultBody, note: defaultNote);
+        await dataService.notifications.saveFarmingMaterialNotification(
+          material.key,
+          defaultTitle,
+          defaultBody,
+          note: defaultNote,
+        );
       },
       tearDown: () async {
         await dataService.deleteThemAll();
@@ -407,11 +416,15 @@ void main() {
               key = genshinService.monsters.getAllMonstersForCard().firstWhere((el) => el.type == MonsterType.abyssOrder).key;
             case AppNotificationItemType.material:
               key = fragileResinKey;
-            default:
-              throw Exception('Not mapped type');
           }
-          await dataService.notifications
-              .saveCustomNotification(key, defaultTitle, defaultBody, customNotificationCompletesAt, type, note: defaultNote);
+          await dataService.notifications.saveCustomNotification(
+            key,
+            defaultTitle,
+            defaultBody,
+            customNotificationCompletesAt,
+            type,
+            note: defaultNote,
+          );
         },
         tearDown: () async {
           await dataService.deleteThemAll();
@@ -445,7 +458,15 @@ void main() {
         ..add(const NotificationEvent.showNotificationChanged(show: false)),
       verify: (bloc) => bloc.state.maybeMap(
         resin: (state) {
-          checkState(state, AppNotificationType.resin, title: 'Title', body: 'Body', note: 'Note', showNotification: false, checkKey: false);
+          checkState(
+            state,
+            AppNotificationType.resin,
+            title: 'Title',
+            body: 'Body',
+            note: 'Note',
+            showNotification: false,
+            checkKey: false,
+          );
           checkNotDirtyFields(state);
         },
         orElse: () => throw Exception('Invalid state'),
@@ -472,7 +493,15 @@ void main() {
       },
       verify: (bloc) => bloc.state.maybeMap(
         resin: (state) {
-          checkState(state, AppNotificationType.resin, title: 'Title', body: 'Body', note: 'Note', showNotification: false, checkKey: false);
+          checkState(
+            state,
+            AppNotificationType.resin,
+            title: 'Title',
+            body: 'Body',
+            note: 'Note',
+            showNotification: false,
+            checkKey: false,
+          );
           checkNotDirtyFields(state);
         },
         orElse: () => throw Exception('Invalid state'),
@@ -658,7 +687,12 @@ void main() {
       build: () => buildBloc(),
       setUp: () async {
         final material = genshinService.materials.getAllMaterialsThatHaveAFarmingRespawnDuration().first;
-        await dataService.notifications.saveFarmingMaterialNotification(material.key, defaultTitle, defaultBody, note: defaultNote);
+        await dataService.notifications.saveFarmingMaterialNotification(
+          material.key,
+          defaultTitle,
+          defaultBody,
+          note: defaultNote,
+        );
       },
       tearDown: () async {
         await dataService.deleteThemAll();

@@ -34,7 +34,7 @@ Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
   try {
     //This may fail if there's an instance already registered
     await Injection.init();
-  } catch (_, __) {
+  } catch (_) {
     //No op
   }
 
@@ -171,10 +171,9 @@ class NotificationServiceImpl implements NotificationService {
     }
     //Due to changes starting from android 14, we need to request for special permissions...
     if (Platform.isAndroid) {
-      final bool? granted =
-          await _flutterLocalNotificationsPlugin
-              .resolvePlatformSpecificImplementation<AndroidFlutterLocalNotificationsPlugin>()!
-              .requestExactAlarmsPermission();
+      final bool? granted = await _flutterLocalNotificationsPlugin
+          .resolvePlatformSpecificImplementation<AndroidFlutterLocalNotificationsPlugin>()!
+          .requestExactAlarmsPermission();
 
       if (granted == null || !granted) {
         return;
@@ -323,8 +322,6 @@ class NotificationServiceImpl implements NotificationService {
     switch (type) {
       case AppPushNotificationType.newGameCodesAvailable:
         _settingsService.lastGameCodesCheckedDate = null;
-      default:
-        break;
     }
   }
 }

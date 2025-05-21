@@ -98,8 +98,6 @@ class ArtifactRow extends StatelessWidget {
                   icon = const Icon(Icons.delete);
                 case _Options.update:
                   icon = const Icon(Icons.edit);
-                default:
-                  throw Exception('The provided artifact option type = ${e.enumValue} is not valid');
               }
 
               return Row(
@@ -120,8 +118,6 @@ class ArtifactRow extends StatelessWidget {
                   return s.delete;
                 case _Options.update:
                   return s.update;
-                default:
-                  throw Exception('The provided artifact option type = $type is not valid');
               }
             },
           ),
@@ -161,7 +157,6 @@ class ArtifactRow extends StatelessWidget {
                 values: getArtifactPossibleMainStats(artifact.type),
               ),
             );
-            break;
         }
 
         if (statType == null || !context.mounted) {
@@ -173,8 +168,6 @@ class ArtifactRow extends StatelessWidget {
           return;
         }
         bloc.add(CustomBuildEvent.addArtifact(key: selectedKey!, type: artifact.type, statType: statType));
-      default:
-        throw Exception('The artifact option is not valid');
     }
   }
 }

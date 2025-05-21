@@ -111,7 +111,6 @@ class MaterialsBloc extends Bloc<MaterialsEvent, MaterialsState> {
           data = data.where((el) => [MaterialType.weaponPrimary, MaterialType.weapon].contains(el.type)).toList();
         default:
           data = data.where((el) => el.type == type).toList();
-          break;
       }
     }
 
@@ -131,18 +130,22 @@ class MaterialsBloc extends Bloc<MaterialsEvent, MaterialsState> {
     return s;
   }
 
-  List<MaterialCardModel> _sortData(List<MaterialCardModel> data, MaterialFilterType filterType, SortDirectionType sortDirectionType) {
+  List<MaterialCardModel> _sortData(
+    List<MaterialCardModel> data,
+    MaterialFilterType filterType,
+    SortDirectionType sortDirectionType,
+  ) {
     switch (filterType) {
       case MaterialFilterType.name:
-        return sortDirectionType == SortDirectionType.asc ? data.orderBy((el) => el.name).toList() : data.orderByDescending((el) => el.name).toList();
+        return sortDirectionType == SortDirectionType.asc
+            ? data.orderBy((el) => el.name).toList()
+            : data.orderByDescending((el) => el.name).toList();
       case MaterialFilterType.rarity:
         return sortDirectionType == SortDirectionType.asc
             ? data.orderBy((el) => el.rarity).toList()
             : data.orderByDescending((el) => el.rarity).toList();
       case MaterialFilterType.grouped:
         return sortMaterialsByGrouping(data, sortDirectionType);
-      default:
-        return data;
     }
   }
 }

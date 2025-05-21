@@ -134,8 +134,6 @@ class ArtifactsBloc extends Bloc<ArtifactsEvent, ArtifactsState> {
         } else {
           data.sort((x, y) => y.rarity.compareTo(x.rarity));
         }
-      default:
-        break;
     }
   }
 }

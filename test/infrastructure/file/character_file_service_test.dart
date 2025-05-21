@@ -111,7 +111,10 @@ void main() {
           expect(build.skillPriorities.length, inInclusiveRange(1, 3));
           expect(build.skillPriorities, isNotEmpty);
           for (final priority in build.skillPriorities) {
-            expect(priority, isIn([CharacterSkillType.normalAttack, CharacterSkillType.elementalBurst, CharacterSkillType.elementalSkill]));
+            expect(
+              priority,
+              isIn([CharacterSkillType.normalAttack, CharacterSkillType.elementalBurst, CharacterSkillType.elementalSkill]),
+            );
           }
         }
 
@@ -124,7 +127,11 @@ void main() {
         expect(detail.stats, isNotEmpty);
       }
 
-      checkCharacterFileAscensionMaterialModel(service.materials, detail.ascensionMaterials, checkMaterialType: !detail.isComingSoon);
+      checkCharacterFileAscensionMaterialModel(
+        service.materials,
+        detail.ascensionMaterials,
+        checkMaterialType: !detail.isComingSoon,
+      );
       if (!isTraveler) {
         checkCharacterFileTalentAscensionMaterialModel(
           service.materials,
@@ -134,7 +141,11 @@ void main() {
       } else {
         for (final ascMaterial in detail.multiTalentAscensionMaterials!) {
           expect(ascMaterial.number, inInclusiveRange(1, 3));
-          checkCharacterFileTalentAscensionMaterialModel(service.materials, ascMaterial.materials, checkMaterialTypeAndLength: !detail.isComingSoon);
+          checkCharacterFileTalentAscensionMaterialModel(
+            service.materials,
+            ascMaterial.materials,
+            checkMaterialTypeAndLength: !detail.isComingSoon,
+          );
         }
       }
 
@@ -179,8 +190,6 @@ void main() {
                 expect(stat.values.length, 15);
               case CharacterSkillType.others:
                 break;
-              default:
-                throw Exception('Skill is not mapped');
             }
           }
           final statKeys = skill.stats.map((e) => e.key).toList();
@@ -381,7 +390,10 @@ void main() {
   group('Get character for items by region', () {
     test('valid regions', () async {
       final regions = RegionType.values.where((el) => el != RegionType.anotherWorld).toList();
-      final characters = service.getCharactersForCard().where((el) => !el.isComingSoon && el.regionType != RegionType.anotherWorld).toList();
+      final characters = service
+          .getCharactersForCard()
+          .where((el) => !el.isComingSoon && el.regionType != RegionType.anotherWorld)
+          .toList();
       for (final region in regions) {
         final items = service.getCharactersForItemsByRegion(region);
         final expectedCount = characters.where((el) => el.regionType == region).length;
@@ -401,7 +413,10 @@ void main() {
   group('Get characters for items by region and gender', () {
     test('valid regions', () async {
       final regions = RegionType.values.where((el) => el != RegionType.anotherWorld).toList();
-      final characters = service.getCharactersForCard().where((el) => !el.isComingSoon && el.regionType != RegionType.anotherWorld).toList();
+      final characters = service
+          .getCharactersForCard()
+          .where((el) => !el.isComingSoon && el.regionType != RegionType.anotherWorld)
+          .toList();
       for (final region in regions) {
         final females = service.getCharactersForItemsByRegionAndGender(region, true);
         final males = service.getCharactersForItemsByRegionAndGender(region, false);
@@ -426,7 +441,10 @@ void main() {
     expect(regions.isNotEmpty, isTrue);
     expect(regions.map((e) => e.regionType).toSet().length, RegionType.values.length - 1);
 
-    final characters = service.getCharactersForCard().where((el) => !el.isComingSoon && el.regionType != RegionType.anotherWorld).toList();
+    final characters = service
+        .getCharactersForCard()
+        .where((el) => !el.isComingSoon && el.regionType != RegionType.anotherWorld)
+        .toList();
     for (final region in regions) {
       expect(region.regionType != RegionType.anotherWorld, isTrue);
       expect(region.quantity, characters.where((el) => el.regionType == region.regionType).length);
@@ -438,7 +456,10 @@ void main() {
     expect(genders.isNotEmpty, isTrue);
     expect(genders.map((e) => e.regionType).toSet().length, RegionType.values.length - 1);
 
-    final characters = service.getCharactersForCard().where((el) => !el.isComingSoon && el.regionType != RegionType.anotherWorld).toList();
+    final characters = service
+        .getCharactersForCard()
+        .where((el) => !el.isComingSoon && el.regionType != RegionType.anotherWorld)
+        .toList();
     for (final gender in genders) {
       validateChartGenderModel(gender);
 
@@ -450,7 +471,10 @@ void main() {
   group('Get character gender by region', () {
     test('valid regions', () async {
       final regions = RegionType.values.where((el) => el != RegionType.anotherWorld).toList();
-      final characters = service.getCharactersForCard().where((el) => !el.isComingSoon && el.regionType != RegionType.anotherWorld).toList();
+      final characters = service
+          .getCharactersForCard()
+          .where((el) => !el.isComingSoon && el.regionType != RegionType.anotherWorld)
+          .toList();
       for (final region in regions) {
         final gender = service.getCharacterGendersByRegionForCharts(region);
         validateChartGenderModel(gender);

@@ -25,7 +25,6 @@ extension MediaQueryExtensions on MediaQueryData {
         if (exceeds) {
           max = size.height * 0.55;
         }
-        break;
     }
 
     final desiredHeight = itemHeight * itemCount;

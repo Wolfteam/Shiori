@@ -67,16 +67,8 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
         isTitleValid: _isTitleValid(e.newValue),
         isTitleDirty: true,
       ),
-      bodyChanged: (e) async => state.copyWith.call(
-        body: e.newValue,
-        isBodyValid: _isBodyValid(e.newValue),
-        isBodyDirty: true,
-      ),
-      noteChanged: (e) async => state.copyWith.call(
-        note: e.newValue,
-        isNoteValid: _isNoteValid(e.newValue),
-        isNoteDirty: true,
-      ),
+      bodyChanged: (e) async => state.copyWith.call(body: e.newValue, isBodyValid: _isBodyValid(e.newValue), isBodyDirty: true),
+      noteChanged: (e) async => state.copyWith.call(note: e.newValue, isNoteValid: _isNoteValid(e.newValue), isNoteDirty: true),
       showNotificationChanged: (e) async => state.copyWith.call(showNotification: e.show),
       expeditionTimeTypeChanged: (e) async => state.maybeMap(
         expedition: (s) => s.copyWith.call(expeditionTimeType: e.newValue),
@@ -86,10 +78,7 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
         resin: (s) => s.copyWith.call(currentResin: e.newValue),
         orElse: () => state,
       ),
-      itemTypeChanged: (e) async => state.maybeMap(
-        custom: (s) => _itemTypeChanged(e.newValue),
-        orElse: () => state,
-      ),
+      itemTypeChanged: (e) async => state.maybeMap(custom: (s) => _itemTypeChanged(e.newValue), orElse: () => state),
       saveChanges: (e) async => _saveChanges(),
       timeReductionChanged: (e) async => state.maybeMap(
         expedition: (s) => s.copyWith.call(withTimeReduction: e.withTimeReduction),
@@ -164,7 +153,10 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
         state = NotificationState.resin(currentResin: item.currentResinValue);
       case AppNotificationType.expedition:
         images.addAll(_getImagesForExpeditionNotifications(selectedImage: item.image));
-        state = NotificationState.expedition(expeditionTimeType: item.expeditionTimeType!, withTimeReduction: item.withTimeReduction);
+        state = NotificationState.expedition(
+          expeditionTimeType: item.expeditionTimeType!,
+          withTimeReduction: item.withTimeReduction,
+        );
       case AppNotificationType.farmingArtifacts:
         images.addAll(_getImagesForFarmingArtifactNotifications(selectedImage: item.image));
         state = NotificationState.farmingArtifact(artifactFarmingTimeType: item.artifactFarmingTimeType!);
@@ -198,8 +190,6 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
       case AppNotificationType.dailyCheckIn:
         images.addAll(_getImagesForDailyCheckIn(itemKey: item.itemKey, selectedImage: item.image));
         state = const NotificationState.dailyCheckIn();
-      default:
-        throw Exception('Invalid notification type = ${item.type}');
     }
 
     return state.copyWith.call(
@@ -232,7 +222,10 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
         updatedState = const NotificationState.resin(currentResin: 0);
       case AppNotificationType.expedition:
         images.addAll(_getImagesForExpeditionNotifications());
-        updatedState = const NotificationState.expedition(expeditionTimeType: ExpeditionTimeType.twentyHours, withTimeReduction: false);
+        updatedState = const NotificationState.expedition(
+          expeditionTimeType: ExpeditionTimeType.twentyHours,
+          withTimeReduction: false,
+        );
       case AppNotificationType.farmingArtifacts:
         images.addAll(_getImagesForFarmingArtifactNotifications());
         updatedState = const NotificationState.farmingArtifact();
@@ -262,8 +255,6 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
       case AppNotificationType.dailyCheckIn:
         images.addAll(_getImagesForDailyCheckIn());
         updatedState = const NotificationState.dailyCheckIn();
-      default:
-        throw Exception('The provided app notification type = $newValue is not valid');
     }
 
     return updatedState.copyWith.call(
@@ -302,8 +293,6 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
             final material = _genshinService.materials.getAllMaterialsThatCanBeObtainedFromAnExpedition().first;
             final imagePath = _resourceService.getMaterialImagePath(material.image, material.type);
             images.add(NotificationItemImage(itemKey: material.key, image: imagePath, isSelected: true));
-          default:
-            throw Exception('The provided notification item type = $newValue is not valid');
         }
 
         return s.copyWith.call(images: images, itemType: newValue);
@@ -316,7 +305,9 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
     return state.maybeMap(
       custom: (s) {
         final img = _genshinService.getItemImageFromNotificationItemType(itemKey, s.itemType);
-        return s.copyWith.call(images: [NotificationItemImage(itemKey: itemKey, image: img, isSelected: true)]);
+        return s.copyWith.call(
+          images: [NotificationItemImage(itemKey: itemKey, image: img, isSelected: true)],
+        );
       },
       orElse: () => state,
     );
@@ -631,9 +622,7 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
   List<NotificationItemImage> _getImagesForExpeditionNotifications({String? selectedImage}) {
     final materials = _genshinService.materials
         .getAllMaterialsThatCanBeObtainedFromAnExpedition()
-        .orderByDescending(
-          (x) => x.rarity,
-        )
+        .orderByDescending((x) => x.rarity)
         .thenBy((x) => x.key)
         .toList();
 
@@ -665,19 +654,21 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
   List<NotificationItemImage> _getImagesForFarmingMaterialNotifications({String? selectedImage}) {
     final materials = _genshinService.materials
         .getAllMaterialsThatHaveAFarmingRespawnDuration()
-        .orderByDescending(
-          (x) => x.rarity,
-        )
+        .orderByDescending((x) => x.rarity)
         .thenBy((x) => x.key)
         .toList();
     final images = materials
-        .mapIndex((e, index) => NotificationItemImage(itemKey: e.key, image: _resourceService.getMaterialImagePath(e.image, e.type)))
+        .mapIndex(
+          (e, index) => NotificationItemImage(itemKey: e.key, image: _resourceService.getMaterialImagePath(e.image, e.type)),
+        )
         .toList();
     return _getImagesForFarmingNotifications(images, selectedImage: selectedImage);
   }
 
   List<NotificationItemImage> _getImagesForFarmingNotifications(List<NotificationItemImage> images, {String? selectedImage}) {
-    final selected = selectedImage.isNotNullEmptyOrWhitespace ? images.firstWhere((el) => el.image == selectedImage) : images.first;
+    final selected = selectedImage.isNotNullEmptyOrWhitespace
+        ? images.firstWhere((el) => el.image == selectedImage)
+        : images.first;
     final index = images.indexOf(selected);
     images.removeAt(index);
     images.insert(index, selected.copyWith.call(isSelected: true));
@@ -696,11 +687,8 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
 
     return gadgets
         .mapIndex(
-          (e, i) => NotificationItemImage(
-            itemKey: e.key,
-            image: _resourceService.getGadgetImagePath(e.image),
-            isSelected: i == 0,
-          ),
+          (e, i) =>
+              NotificationItemImage(itemKey: e.key, image: _resourceService.getGadgetImagePath(e.image), isSelected: i == 0),
         )
         .toList();
   }
@@ -717,7 +705,11 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
   List<NotificationItemImage> _getImagesForRealmCurrencyNotifications({String? selectedImage}) {
     final material = _genshinService.materials.getRealmCurrencyMaterial();
     return [
-      NotificationItemImage(itemKey: material.key, image: _resourceService.getMaterialImagePath(material.image, material.type), isSelected: true),
+      NotificationItemImage(
+        itemKey: material.key,
+        image: _resourceService.getMaterialImagePath(material.image, material.type),
+        isSelected: true,
+      ),
     ];
   }
 
@@ -732,11 +724,8 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
 
     return monsters
         .mapIndex(
-          (e, i) => NotificationItemImage(
-            itemKey: e.key,
-            image: _resourceService.getMonsterImagePath(e.image),
-            isSelected: i == 0,
-          ),
+          (e, i) =>
+              NotificationItemImage(itemKey: e.key, image: _resourceService.getMonsterImagePath(e.image), isSelected: i == 0),
         )
         .toList();
   }

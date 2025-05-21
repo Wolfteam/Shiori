@@ -150,8 +150,6 @@ class _Items extends StatelessWidget {
               return CharacterIconImage(itemKey: item.key, image: item.iconImage, gradient: gradient);
             case BannerHistoryItemType.weapon:
               return WeaponIconImage(itemKey: item.key, image: item.image, gradient: gradient);
-            default:
-              throw Exception('Banner history item type = $type is not valid');
           }
         },
       ),

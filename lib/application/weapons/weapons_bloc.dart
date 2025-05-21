@@ -199,8 +199,6 @@ class WeaponsBloc extends Bloc<WeaponsEvent, WeaponsState> {
         } else {
           data.sort((x, y) => y.subStatValue.compareTo(x.subStatValue));
         }
-      default:
-        break;
     }
   }
 }

@@ -44,7 +44,9 @@ class ArtifactSection extends StatelessWidget {
                   border: useBoxDecoration ? const Border(top: BorderSide(color: Colors.white)) : null,
                 ),
                 child: Text(
-                  state.readyForScreenshot ? s.artifacts : '${s.artifacts} (${state.artifacts.length} / ${ArtifactType.values.length})',
+                  state.readyForScreenshot
+                      ? s.artifacts
+                      : '${s.artifacts} (${state.artifacts.length} / ${ArtifactType.values.length})',
                   textAlign: TextAlign.center,
                   style: theme.textTheme.titleMedium!.copyWith(fontWeight: FontWeight.bold),
                 ),
@@ -70,8 +72,9 @@ class ArtifactSection extends StatelessWidget {
                         padding: EdgeInsets.zero,
                         splashRadius: Styles.smallButtonSplashRadius,
                         icon: const Icon(Icons.clear_all),
-                        onPressed:
-                            state.artifacts.isEmpty ? null : () => context.read<CustomBuildBloc>().add(const CustomBuildEvent.deleteArtifacts()),
+                        onPressed: state.artifacts.isEmpty
+                            ? null
+                            : () => context.read<CustomBuildBloc>().add(const CustomBuildEvent.deleteArtifacts()),
                       ),
                     ),
                   ],
@@ -127,7 +130,6 @@ class ArtifactSection extends StatelessWidget {
             values: getArtifactPossibleMainStats(selectedType),
           ),
         );
-        break;
     }
 
     if (statType == null || !context.mounted) {

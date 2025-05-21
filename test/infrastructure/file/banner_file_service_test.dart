@@ -209,8 +209,6 @@ void main() {
             case BannerHistoryItemType.weapon:
               final weapons = weaponFileService.getItemCommonWithNameByRarity(rarity);
               data.addAll(weapons);
-            default:
-              throw Exception('Invalid type');
           }
 
           final charts = service.getTopCharts(mostReruns, chartType, bannerItemType, data);

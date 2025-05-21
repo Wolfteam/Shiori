@@ -84,7 +84,11 @@ class CharactersBloc extends Bloc<CharactersEvent, CharactersState> {
   }
 
   CharactersState _elementTypeChanged(ElementType selectedValue) {
-    final List<ElementType> types = FilterUtils.handleTypeSelected(ElementType.values, currentState.tempElementTypes, selectedValue);
+    final List<ElementType> types = FilterUtils.handleTypeSelected(
+      ElementType.values,
+      currentState.tempElementTypes,
+      selectedValue,
+    );
     return currentState.copyWith.call(tempElementTypes: types);
   }
 
@@ -214,8 +218,6 @@ class CharactersBloc extends Bloc<CharactersEvent, CharactersState> {
         } else {
           data.sort((x, y) => y.stars.compareTo(x.stars));
         }
-      default:
-        break;
     }
   }
 }
