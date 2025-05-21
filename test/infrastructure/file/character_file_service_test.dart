@@ -65,7 +65,7 @@ void main() {
     });
   });
 
-  test('Get character', () async {
+  test('Get character', () {
     final localeService = getLocaleService(AppLanguageType.english);
     final characters = service.getCharactersForCard();
     for (final character in characters) {
@@ -262,7 +262,7 @@ void main() {
       }
     }
 
-    test('upcoming characters are not shown', () async {
+    test('upcoming characters are not shown', () {
       final localeService = getLocaleService(AppLanguageType.english);
       final upcoming = service.getUpcomingCharactersKeys();
       for (final key in upcoming) {
@@ -276,7 +276,7 @@ void main() {
       }
     });
 
-    test('by month', () async {
+    test('by month', () {
       final months = List.generate(DateTime.monthsPerYear, (index) => index + 1);
       for (final month in months) {
         final birthdays = service.getCharacterBirthdays(month: month);
@@ -287,7 +287,7 @@ void main() {
       }
     });
 
-    test('by day', () async {
+    test('by day', () {
       final birthdays = service.getCharacterBirthdays(day: 20);
       expect(birthdays.isNotEmpty, isTrue);
       for (final birthday in birthdays) {
@@ -295,14 +295,14 @@ void main() {
       }
     });
 
-    test('by month and day', () async {
+    test('by month and day', () {
       final birthdays = service.getCharacterBirthdays(month: DateTime.november, day: 20);
       expect(birthdays.length, 1);
       expect(birthdays.first.key, equals('keqing'));
       checkBirthday(birthdays.first);
     });
 
-    test('invalid month and day', () async {
+    test('invalid month and day', () {
       expect(() => service.getCharacterBirthdays(), throwsA(isA<Exception>()));
       expect(() => service.getCharacterBirthdays(month: -1), throwsA(isA<Exception>()));
       expect(() => service.getCharacterBirthdays(day: -1), throwsA(isA<Exception>()));
@@ -311,7 +311,7 @@ void main() {
   });
 
   group('TierList', () {
-    test('check the default one', () async {
+    test('check the default one', () {
       final List<int> defaultColors = [
         0xfff44336,
         0xfff56c62,
@@ -343,7 +343,7 @@ void main() {
     });
   });
 
-  test('Get character ascension materials for a day', () async {
+  test('Get character ascension materials for a day', () {
     final days = [
       DateTime.monday,
       DateTime.tuesday,
@@ -388,7 +388,7 @@ void main() {
   });
 
   group('Get character for items by region', () {
-    test('valid regions', () async {
+    test('valid regions', () {
       final regions = RegionType.values.where((el) => el != RegionType.anotherWorld).toList();
       final characters = service
           .getCharactersForCard()
@@ -405,13 +405,13 @@ void main() {
       }
     });
 
-    test('invalid region', () async {
+    test('invalid region', () {
       expect(() => service.getCharactersForItemsByRegion(RegionType.anotherWorld), throwsA(isA<Exception>()));
     });
   });
 
   group('Get characters for items by region and gender', () {
-    test('valid regions', () async {
+    test('valid regions', () {
       final regions = RegionType.values.where((el) => el != RegionType.anotherWorld).toList();
       final characters = service
           .getCharactersForCard()
@@ -430,13 +430,13 @@ void main() {
       }
     });
 
-    test('invalid region', () async {
+    test('invalid region', () {
       expect(() => service.getCharactersForItemsByRegionAndGender(RegionType.anotherWorld, true), throwsA(isA<Exception>()));
       expect(() => service.getCharactersForItemsByRegionAndGender(RegionType.anotherWorld, false), throwsA(isA<Exception>()));
     });
   });
 
-  test('Get character regions', () async {
+  test('Get character regions', () {
     final regions = service.getCharacterRegionsForCharts();
     expect(regions.isNotEmpty, isTrue);
     expect(regions.map((e) => e.regionType).toSet().length, RegionType.values.length - 1);
@@ -451,7 +451,7 @@ void main() {
     }
   });
 
-  test('Get character genders', () async {
+  test('Get character genders', () {
     final genders = service.getCharacterGendersForCharts();
     expect(genders.isNotEmpty, isTrue);
     expect(genders.map((e) => e.regionType).toSet().length, RegionType.values.length - 1);
@@ -469,7 +469,7 @@ void main() {
   });
 
   group('Get character gender by region', () {
-    test('valid regions', () async {
+    test('valid regions', () {
       final regions = RegionType.values.where((el) => el != RegionType.anotherWorld).toList();
       final characters = service
           .getCharactersForCard()
@@ -484,12 +484,12 @@ void main() {
       }
     });
 
-    test('invalid region', () async {
+    test('invalid region', () {
       expect(() => service.getCharacterGendersByRegionForCharts(RegionType.anotherWorld), throwsA(isA<Exception>()));
     });
   });
 
-  test('Get character birthdays for charts', () async {
+  test('Get character birthdays for charts', () {
     final birthdays = service.getCharacterBirthdaysForCharts();
     expect(birthdays.isNotEmpty, isTrue);
     expect(birthdays.length, 12);

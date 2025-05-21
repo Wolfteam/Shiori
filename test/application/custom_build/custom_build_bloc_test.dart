@@ -36,7 +36,11 @@ void main() {
     final localeService = LocaleServiceImpl(settingsService);
     resourceService = getResourceService(settingsService);
     genshinService = GenshinServiceImpl(resourceService, localeService);
-    dataService = DataServiceImpl(genshinService, CalculatorAscMaterialsServiceImpl(genshinService, resourceService), resourceService);
+    dataService = DataServiceImpl(
+      genshinService,
+      CalculatorAscMaterialsServiceImpl(genshinService, resourceService),
+      resourceService,
+    );
     telemetryService = MockTelemetryService();
     loggingService = MockLoggingService();
     customBuildsBloc = CustomBuildsBloc(dataService);
@@ -56,15 +60,15 @@ void main() {
   });
 
   CustomBuildBloc getBloc() => CustomBuildBloc(
-        genshinService,
-        dataService,
-        telemetryService,
-        loggingService,
-        resourceService,
-        customBuildsBloc,
-      );
+    genshinService,
+    dataService,
+    telemetryService,
+    loggingService,
+    resourceService,
+    customBuildsBloc,
+  );
 
-  Future<CustomBuildModel> saveCustomBuild(String charKey) async {
+  Future<CustomBuildModel> saveCustomBuild(String charKey) {
     final artifact = genshinService.artifacts.getArtifactForCard(thunderingFuryKey);
     final weapon = genshinService.weapons.getWeapon(aquilaFavoniaKey);
     return dataService.customBuilds.saveCustomBuild(
@@ -658,7 +662,13 @@ void main() {
       act: (bloc) => bloc
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
         ..add(const CustomBuildEvent.addArtifact(key: thunderingFuryKey, type: ArtifactType.crown, statType: StatType.hp))
-        ..add(const CustomBuildEvent.addArtifact(key: thunderingFuryKey, type: ArtifactType.crown, statType: StatType.critDmgPercentage)),
+        ..add(
+          const CustomBuildEvent.addArtifact(
+            key: thunderingFuryKey,
+            type: ArtifactType.crown,
+            statType: StatType.critDmgPercentage,
+          ),
+        ),
       verify: (bloc) => bloc.state.maybeMap(
         loaded: (state) {
           expect(state.artifacts.length == 1, true);
@@ -679,9 +689,23 @@ void main() {
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
         ..add(const CustomBuildEvent.addArtifact(key: thunderingFuryKey, type: ArtifactType.flower, statType: StatType.hp))
         ..add(const CustomBuildEvent.addArtifact(key: thunderingFuryKey, type: ArtifactType.plume, statType: StatType.atk))
-        ..add(const CustomBuildEvent.addArtifact(key: thunderingFuryKey, type: ArtifactType.clock, statType: StatType.atkPercentage))
-        ..add(const CustomBuildEvent.addArtifact(key: thunderingFuryKey, type: ArtifactType.goblet, statType: StatType.electroDmgBonusPercentage))
-        ..add(const CustomBuildEvent.addArtifact(key: thunderingFuryKey, type: ArtifactType.crown, statType: StatType.critRatePercentage)),
+        ..add(
+          const CustomBuildEvent.addArtifact(key: thunderingFuryKey, type: ArtifactType.clock, statType: StatType.atkPercentage),
+        )
+        ..add(
+          const CustomBuildEvent.addArtifact(
+            key: thunderingFuryKey,
+            type: ArtifactType.goblet,
+            statType: StatType.electroDmgBonusPercentage,
+          ),
+        )
+        ..add(
+          const CustomBuildEvent.addArtifact(
+            key: thunderingFuryKey,
+            type: ArtifactType.crown,
+            statType: StatType.critRatePercentage,
+          ),
+        ),
       verify: (bloc) => bloc.state.maybeMap(
         loaded: (state) {
           expect(state.artifacts.length == 5, true);
@@ -711,10 +735,30 @@ void main() {
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
         ..add(const CustomBuildEvent.addArtifact(key: thunderingFuryKey, type: ArtifactType.flower, statType: StatType.hp))
         ..add(const CustomBuildEvent.addArtifact(key: thunderingFuryKey, type: ArtifactType.plume, statType: StatType.atk))
-        ..add(const CustomBuildEvent.addArtifact(key: thunderingFuryKey, type: ArtifactType.clock, statType: StatType.atkPercentage))
-        ..add(const CustomBuildEvent.addArtifact(key: thunderingFuryKey, type: ArtifactType.goblet, statType: StatType.electroDmgBonusPercentage))
-        ..add(const CustomBuildEvent.addArtifact(key: thunderingFuryKey, type: ArtifactType.crown, statType: StatType.critRatePercentage))
-        ..add(const CustomBuildEvent.addArtifact(key: thunderingFuryKey, type: ArtifactType.crown, statType: StatType.critDmgPercentage)),
+        ..add(
+          const CustomBuildEvent.addArtifact(key: thunderingFuryKey, type: ArtifactType.clock, statType: StatType.atkPercentage),
+        )
+        ..add(
+          const CustomBuildEvent.addArtifact(
+            key: thunderingFuryKey,
+            type: ArtifactType.goblet,
+            statType: StatType.electroDmgBonusPercentage,
+          ),
+        )
+        ..add(
+          const CustomBuildEvent.addArtifact(
+            key: thunderingFuryKey,
+            type: ArtifactType.crown,
+            statType: StatType.critRatePercentage,
+          ),
+        )
+        ..add(
+          const CustomBuildEvent.addArtifact(
+            key: thunderingFuryKey,
+            type: ArtifactType.crown,
+            statType: StatType.critDmgPercentage,
+          ),
+        ),
       verify: (bloc) => bloc.state.maybeMap(
         loaded: (state) {
           expect(state.artifacts.length == 5, true);
@@ -761,11 +805,22 @@ void main() {
           expect(state.artifacts.length == 2, true);
           final flower = state.artifacts.first;
           expect(flower.type, ArtifactType.flower);
-          expect(listEquals(flower.subStats, [StatType.critDmgPercentage, StatType.critRatePercentage, StatType.atkPercentage, StatType.atk]), true);
+          expect(
+            listEquals(flower.subStats, [
+              StatType.critDmgPercentage,
+              StatType.critRatePercentage,
+              StatType.atkPercentage,
+              StatType.atk,
+            ]),
+            true,
+          );
 
           final plume = state.artifacts.last;
           expect(plume.type, ArtifactType.plume);
-          expect(listEquals(plume.subStats, [StatType.critDmgPercentage, StatType.critRatePercentage, StatType.atkPercentage]), true);
+          expect(
+            listEquals(plume.subStats, [StatType.critDmgPercentage, StatType.critRatePercentage, StatType.atkPercentage]),
+            true,
+          );
 
           expect(state.subStatsSummary.isNotEmpty, true);
         },
@@ -779,7 +834,10 @@ void main() {
       act: (bloc) => bloc
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
         ..add(
-          const CustomBuildEvent.addArtifactSubStats(type: ArtifactType.crown, subStats: [StatType.critRatePercentage, StatType.critDmgPercentage]),
+          const CustomBuildEvent.addArtifactSubStats(
+            type: ArtifactType.crown,
+            subStats: [StatType.critRatePercentage, StatType.critDmgPercentage],
+          ),
         ),
       errors: () => [isA<Exception>()],
     );
@@ -790,7 +848,10 @@ void main() {
       act: (bloc) => bloc
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
         ..add(
-          const CustomBuildEvent.addArtifactSubStats(type: ArtifactType.flower, subStats: [StatType.critRatePercentage, StatType.hp]),
+          const CustomBuildEvent.addArtifactSubStats(
+            type: ArtifactType.flower,
+            subStats: [StatType.critRatePercentage, StatType.hp],
+          ),
         ),
       errors: () => [isA<Exception>()],
     );
@@ -801,7 +862,10 @@ void main() {
       act: (bloc) => bloc
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
         ..add(
-          const CustomBuildEvent.addArtifactSubStats(type: ArtifactType.flower, subStats: [StatType.critRatePercentage, StatType.hp]),
+          const CustomBuildEvent.addArtifactSubStats(
+            type: ArtifactType.flower,
+            subStats: [StatType.critRatePercentage, StatType.hp],
+          ),
         ),
       errors: () => [isA<Exception>()],
     );
@@ -856,7 +920,11 @@ void main() {
       act: (bloc) => bloc
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
         ..add(
-          const CustomBuildEvent.addTeamCharacter(key: ganyuKey, roleType: CharacterRoleType.offFieldDps, subType: CharacterRoleSubType.electro),
+          const CustomBuildEvent.addTeamCharacter(
+            key: ganyuKey,
+            roleType: CharacterRoleType.offFieldDps,
+            subType: CharacterRoleSubType.electro,
+          ),
         ),
       verify: (bloc) => bloc.state.maybeMap(
         loaded: (state) {
@@ -876,7 +944,11 @@ void main() {
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
         ..add(const CustomBuildEvent.characterChanged(newKey: ganyuKey))
         ..add(
-          const CustomBuildEvent.addTeamCharacter(key: ganyuKey, roleType: CharacterRoleType.offFieldDps, subType: CharacterRoleSubType.electro),
+          const CustomBuildEvent.addTeamCharacter(
+            key: ganyuKey,
+            roleType: CharacterRoleType.offFieldDps,
+            subType: CharacterRoleSubType.electro,
+          ),
         ),
       errors: () => [isA<Exception>()],
     );
@@ -887,10 +959,18 @@ void main() {
       act: (bloc) => bloc
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
         ..add(
-          const CustomBuildEvent.addTeamCharacter(key: ganyuKey, roleType: CharacterRoleType.offFieldDps, subType: CharacterRoleSubType.electro),
+          const CustomBuildEvent.addTeamCharacter(
+            key: ganyuKey,
+            roleType: CharacterRoleType.offFieldDps,
+            subType: CharacterRoleSubType.electro,
+          ),
         )
         ..add(
-          const CustomBuildEvent.addTeamCharacter(key: ganyuKey, roleType: CharacterRoleType.offFieldDps, subType: CharacterRoleSubType.electro),
+          const CustomBuildEvent.addTeamCharacter(
+            key: ganyuKey,
+            roleType: CharacterRoleType.offFieldDps,
+            subType: CharacterRoleSubType.electro,
+          ),
         ),
       verify: (bloc) => bloc.state.maybeMap(
         loaded: (state) {
@@ -906,10 +986,18 @@ void main() {
       act: (bloc) => bloc
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
         ..add(
-          const CustomBuildEvent.addTeamCharacter(key: ganyuKey, roleType: CharacterRoleType.offFieldDps, subType: CharacterRoleSubType.cryo),
+          const CustomBuildEvent.addTeamCharacter(
+            key: ganyuKey,
+            roleType: CharacterRoleType.offFieldDps,
+            subType: CharacterRoleSubType.cryo,
+          ),
         )
         ..add(
-          const CustomBuildEvent.addTeamCharacter(key: keqingKey, roleType: CharacterRoleType.dps, subType: CharacterRoleSubType.electro),
+          const CustomBuildEvent.addTeamCharacter(
+            key: keqingKey,
+            roleType: CharacterRoleType.dps,
+            subType: CharacterRoleSubType.electro,
+          ),
         )
         ..add(
           CustomBuildEvent.teamCharactersOrderChanged(
@@ -940,7 +1028,11 @@ void main() {
       act: (bloc) => bloc
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
         ..add(
-          const CustomBuildEvent.addTeamCharacter(key: ganyuKey, roleType: CharacterRoleType.offFieldDps, subType: CharacterRoleSubType.electro),
+          const CustomBuildEvent.addTeamCharacter(
+            key: ganyuKey,
+            roleType: CharacterRoleType.offFieldDps,
+            subType: CharacterRoleSubType.electro,
+          ),
         )
         ..add(const CustomBuildEvent.deleteTeamCharacter(key: ganyuKey)),
       verify: (bloc) => bloc.state.maybeMap(
@@ -976,9 +1068,27 @@ void main() {
           ..add(const CustomBuildEvent.addSkillPriority(type: CharacterSkillType.elementalBurst))
           ..add(const CustomBuildEvent.addArtifact(key: thunderingFuryKey, type: ArtifactType.flower, statType: StatType.hp))
           ..add(const CustomBuildEvent.addArtifact(key: thunderingFuryKey, type: ArtifactType.plume, statType: StatType.atk))
-          ..add(const CustomBuildEvent.addArtifact(key: thunderingFuryKey, type: ArtifactType.clock, statType: StatType.atkPercentage))
-          ..add(const CustomBuildEvent.addArtifact(key: thunderingFuryKey, type: ArtifactType.goblet, statType: StatType.electroDmgBonusPercentage))
-          ..add(const CustomBuildEvent.addArtifact(key: thunderingFuryKey, type: ArtifactType.crown, statType: StatType.critDmgPercentage))
+          ..add(
+            const CustomBuildEvent.addArtifact(
+              key: thunderingFuryKey,
+              type: ArtifactType.clock,
+              statType: StatType.atkPercentage,
+            ),
+          )
+          ..add(
+            const CustomBuildEvent.addArtifact(
+              key: thunderingFuryKey,
+              type: ArtifactType.goblet,
+              statType: StatType.electroDmgBonusPercentage,
+            ),
+          )
+          ..add(
+            const CustomBuildEvent.addArtifact(
+              key: thunderingFuryKey,
+              type: ArtifactType.crown,
+              statType: StatType.critDmgPercentage,
+            ),
+          )
           ..add(
             const CustomBuildEvent.addArtifactSubStats(
               type: ArtifactType.crown,
@@ -992,7 +1102,11 @@ void main() {
           ..add(const CustomBuildEvent.addWeapon(key: aquilaFavoniaKey))
           ..add(CustomBuildEvent.weaponStatChanged(key: aquilaFavoniaKey, newValue: weapon.stats.first))
           ..add(
-            const CustomBuildEvent.addTeamCharacter(key: ganyuKey, roleType: CharacterRoleType.offFieldDps, subType: CharacterRoleSubType.cryo),
+            const CustomBuildEvent.addTeamCharacter(
+              key: ganyuKey,
+              roleType: CharacterRoleType.offFieldDps,
+              subType: CharacterRoleSubType.cryo,
+            ),
           )
           ..add(const CustomBuildEvent.saveChanges());
       },

@@ -48,18 +48,18 @@ extension PumpUntilFound on WidgetTester {
   Future<void> pumpUntilFound(
     Finder finder, {
     Duration timeout = const Duration(seconds: 10),
-  }) async {
+  }) {
     return _pumpUntil(finder, timeout: timeout);
   }
 
   Future<void> pumpUntilNotFound(
     Finder finder, {
     Duration timeout = const Duration(seconds: 10),
-  }) async {
+  }) {
     return _pumpUntil(finder, timeout: timeout, untilFound: false);
   }
 
-  Future<void> doAppDragFromBottomRight(Finder from, Finder to) async {
+  Future<void> doAppDragFromBottomRight(Finder from, Finder to) {
     //We get the bottom right cause on Desktop platforms the drag and drop will only work on the icon which
     //is located at the end
     final Offset fromLocation = getBottomRight(from);
@@ -69,7 +69,7 @@ extension PumpUntilFound on WidgetTester {
     return doAppDragFromLocation(Offset(fromLocation.dx, fromLocation.dy - delta), Offset(toLocation.dx, toLocation.dy - delta));
   }
 
-  Future<void> doAppDragFromCenter(Finder from, Finder to) async {
+  Future<void> doAppDragFromCenter(Finder from, Finder to) {
     final Offset fromLocation = getCenter(from);
     final Offset toLocation = getCenter(to);
 
