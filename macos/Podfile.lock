@@ -12,10 +12,10 @@ PODS:
   - Firebase/Messaging (11.10.0):
     - Firebase/CoreOnly
     - FirebaseMessaging (~> 11.10.0)
-  - firebase_core (3.13.0):
+  - firebase_core (3.13.1):
     - Firebase/CoreOnly (~> 11.10.0)
     - FlutterMacOS
-  - firebase_messaging (15.2.5):
+  - firebase_messaging (15.2.6):
     - Firebase/CoreOnly (~> 11.10.0)
     - Firebase/Messaging (~> 11.10.0)
     - firebase_core
@@ -89,15 +89,15 @@ PODS:
     - Flutter
     - FlutterMacOS
   - PromisesObjC (2.4.0)
-  - purchases_flutter (8.8.0):
+  - purchases_flutter (8.8.1):
     - FlutterMacOS
-    - PurchasesHybridCommon (= 13.29.1)
-  - PurchasesHybridCommon (13.29.1):
-    - RevenueCat (= 5.22.2)
+    - PurchasesHybridCommon (= 13.32.0)
+  - PurchasesHybridCommon (13.32.0):
+    - RevenueCat (= 5.24.0)
   - rate_my_app (2.3.0):
     - Flutter
     - FlutterMacOS
-  - RevenueCat (5.22.2)
+  - RevenueCat (5.24.0)
   - share_plus (0.0.1):
     - FlutterMacOS
   - shared_preferences_foundation (0.0.1):
@@ -200,8 +200,8 @@ SPEC CHECKSUMS:
   devicelocale: 456a07c045d3113938aa4983065bd8526e2af792
   file_picker: 7584aae6fa07a041af2b36a2655122d42f578c1a
   Firebase: 1fe1c0a7d9aaea32efe01fbea5f0ebd8d70e53a2
-  firebase_core: efd50ad8177dc489af1b9163a560359cf1b30597
-  firebase_messaging: acf2566068a55d7eb8cddfee5b094754070a5b88
+  firebase_core: 25e649fdb52de4f20314f9e54b914e7298875acc
+  firebase_messaging: cfe5129bd3b65e4da0b2ac98b9af0735ef2fd564
   FirebaseCore: 8344daef5e2661eb004b177488d6f9f0f24251b7
   FirebaseCoreInternal: ef4505d2afb1d0ebbc33162cb3795382904b5679
   FirebaseInstallations: 9980995bdd06ec8081dfb6ab364162bdd64245c3
@@ -218,10 +218,10 @@ SPEC CHECKSUMS:
   package_info_plus: f0052d280d17aa382b932f399edf32507174e870
   path_provider_foundation: 080d55be775b7414fd5a5ef3ac137b97b097e564
   PromisesObjC: f5707f49cb48b9636751c5b2e7d227e43fba9f47
-  purchases_flutter: 3bc42c063360a7a43bd589f8363d6a9f552654de
-  PurchasesHybridCommon: 1728ff834821ecfc85e987a565d51eda36213958
+  purchases_flutter: de036037d9c89b3d9a62de3c847ac01b11662e1f
+  PurchasesHybridCommon: 662aa1f4769ff4ef594e35adf1a5d0ad7b3d08b7
   rate_my_app: 567848e885b804d65eb9443f96e9fc2c30a06abb
-  RevenueCat: 234d2361e453ce1282cee7e18449d01aba45ebbf
+  RevenueCat: 2d3639d30b8a71cbfe3d99cef8243c602793e0ec
   share_plus: 510bf0af1a42cd602274b4629920c9649c52f4cc
   shared_preferences_foundation: 9e1978ff2562383bd5676f64ec4e9aa8fa06a6f7
   store_checker: 0b5120a0f0a0f36af7b4be01a049e6006151dc16

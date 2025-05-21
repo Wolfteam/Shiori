@@ -15,10 +15,10 @@ publish_to: "none" # Remove this line if you wish to publish to pub.dev
 # In iOS, build-name is used as CFBundleShortVersionString while build-number used as CFBundleVersion.
 # Read more about iOS versioning at
 # https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
-version: 1.8.10+190
+version: 1.8.11+191
 
 environment:
-  sdk: '>=3.7.0 <4.0.0'
+  sdk: '>=3.8.0 <4.0.0'
 
 dependencies:
   darq: ^2.0.0
@@ -26,15 +26,15 @@ dependencies:
   devicelocale: ^0.8.1
   envied: ^1.1.1
   file_picker: ^10.1.9
-  firebase_core: ^3.13.0
-  firebase_messaging: ^15.2.5
+  firebase_core: ^3.13.1
+  firebase_messaging: ^15.2.6
   fl_chart: ^1.0.0
   flutter:
     sdk: flutter
   flutter_bloc: ^7.3.1
   flutter_colorpicker: ^1.1.0
   flutter_inappwebview: ^6.1.5
-  flutter_local_notifications: ^19.2.0
+  flutter_local_notifications: ^19.2.1
   flutter_localizations:
     sdk: flutter
   flutter_markdown_plus: ^1.0.3
@@ -50,7 +50,7 @@ dependencies:
   image_gallery_saver_plus: ^4.0.1
   infinite_listview: ^1.1.0
   internet_connection_checker_plus: ^2.7.2
-  intl: ^0.19.0
+  intl: ^0.20.2
   json_annotation: ^4.9.0
   logger: ^2.5.0
   open_file: ^3.5.10
@@ -59,7 +59,7 @@ dependencies:
   path_provider: ^2.1.5
   permission_handler: ^12.0.0+1
   pull_to_refresh: ^2.0.0
-  purchases_flutter: ^8.8.0
+  purchases_flutter: ^8.8.1
   rate_my_app: ^2.3.1
   responsive_builder: ^0.7.1
   responsive_grid: ^2.4.4

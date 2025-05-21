@@ -44,10 +44,10 @@ PODS:
   - Firebase/Messaging (11.10.0):
     - Firebase/CoreOnly
     - FirebaseMessaging (~> 11.10.0)
-  - firebase_core (3.13.0):
+  - firebase_core (3.13.1):
     - Firebase/CoreOnly (= 11.10.0)
     - Flutter
-  - firebase_messaging (15.2.5):
+  - firebase_messaging (15.2.6):
     - Firebase/Messaging (= 11.10.0)
     - firebase_core
     - Flutter
@@ -132,15 +132,15 @@ PODS:
   - permission_handler_apple (9.3.0):
     - Flutter
   - PromisesObjC (2.4.0)
-  - purchases_flutter (8.8.0):
+  - purchases_flutter (8.8.1):
     - Flutter
-    - PurchasesHybridCommon (= 13.29.1)
-  - PurchasesHybridCommon (13.29.1):
-    - RevenueCat (= 5.22.2)
+    - PurchasesHybridCommon (= 13.32.0)
+  - PurchasesHybridCommon (13.32.0):
+    - RevenueCat (= 5.24.0)
   - rate_my_app (2.3.0):
     - Flutter
     - FlutterMacOS
-  - RevenueCat (5.22.2)
+  - RevenueCat (5.24.0)
   - SDWebImage (5.21.0):
     - SDWebImage/Core (= 5.21.0)
   - SDWebImage/Core (5.21.0)
@@ -260,8 +260,8 @@ SPEC CHECKSUMS:
   DKPhotoGallery: b3834fecb755ee09a593d7c9e389d8b5d6deed60
   file_picker: a0560bc09d61de87f12d246fc47d2119e6ef37be
   Firebase: 1fe1c0a7d9aaea32efe01fbea5f0ebd8d70e53a2
-  firebase_core: 2d4534e7b489907dcede540c835b48981d890943
-  firebase_messaging: 75bc93a4df25faccad67f6662ae872ac9ae69b64
+  firebase_core: ba71b44041571da878cb624ce0d80250bcbe58ad
+  firebase_messaging: 13129fe2ca166d1ed2d095062d76cee88943d067
   FirebaseCore: 8344daef5e2661eb004b177488d6f9f0f24251b7
   FirebaseCoreInternal: ef4505d2afb1d0ebbc33162cb3795382904b5679
   FirebaseInstallations: 9980995bdd06ec8081dfb6ab364162bdd64245c3
@@ -282,10 +282,10 @@ SPEC CHECKSUMS:
   path_provider_foundation: 080d55be775b7414fd5a5ef3ac137b97b097e564
   permission_handler_apple: 4ed2196e43d0651e8ff7ca3483a069d469701f2d
   PromisesObjC: f5707f49cb48b9636751c5b2e7d227e43fba9f47
-  purchases_flutter: 437a2d875b16ea37f1847b2f88604fc13a18646b
-  PurchasesHybridCommon: 1728ff834821ecfc85e987a565d51eda36213958
+  purchases_flutter: 4cf57c17c62108103a549ebe12b28a0203f0cf55
+  PurchasesHybridCommon: 662aa1f4769ff4ef594e35adf1a5d0ad7b3d08b7
   rate_my_app: 567848e885b804d65eb9443f96e9fc2c30a06abb
-  RevenueCat: 234d2361e453ce1282cee7e18449d01aba45ebbf
+  RevenueCat: 2d3639d30b8a71cbfe3d99cef8243c602793e0ec
   SDWebImage: f84b0feeb08d2d11e6a9b843cb06d75ebf5b8868
   share_plus: 50da8cb520a8f0f65671c6c6a99b3617ed10a58a
   shared_preferences_foundation: 9e1978ff2562383bd5676f64ec4e9aa8fa06a6f7
