@@ -77,7 +77,8 @@ class TierListRow extends StatelessWidget {
                           (e) => CharacterIconImage.squareItem(
                             item: e,
                             size: SizeUtils.getSizeForSquareImages(context).height,
-                            onTap: (img) => context.read<TierListBloc>().add(TierListEvent.deleteCharacterFromRow(index: index, item: e)),
+                            onTap: (img) =>
+                                context.read<TierListBloc>().add(TierListEvent.deleteCharacterFromRow(index: index, item: e)),
                           ),
                         )
                         .toList(),
@@ -93,7 +94,9 @@ class TierListRow extends StatelessWidget {
                           icon: const Icon(Icons.keyboard_arrow_up),
                           splashRadius: Styles.smallButtonSplashRadius,
                           onPressed: isUpButtonEnabled
-                              ? () => context.read<TierListBloc>().add(TierListEvent.rowPositionChanged(index: index, newIndex: index - 1))
+                              ? () => context.read<TierListBloc>().add(
+                                  TierListEvent.rowPositionChanged(index: index, newIndex: index - 1),
+                                )
                               : null,
                         ),
                         PopupMenuButton<TierListRowOptionsType>(
@@ -133,7 +136,9 @@ class TierListRow extends StatelessWidget {
                           icon: const Icon(Icons.keyboard_arrow_down),
                           splashRadius: Styles.smallButtonSplashRadius,
                           onPressed: isDownButtonEnabled
-                              ? () => context.read<TierListBloc>().add(TierListEvent.rowPositionChanged(index: index, newIndex: index + 1))
+                              ? () => context.read<TierListBloc>().add(
+                                  TierListEvent.rowPositionChanged(index: index, newIndex: index + 1),
+                                )
                               : null,
                         ),
                       ],
@@ -145,7 +150,8 @@ class TierListRow extends StatelessWidget {
           const Divider(height: 1),
         ],
       ),
-      onAcceptWithDetails: (item) => context.read<TierListBloc>().add(TierListEvent.addCharacterToRow(index: index, item: item.data)),
+      onAcceptWithDetails: (item) =>
+          context.read<TierListBloc>().add(TierListEvent.addCharacterToRow(index: index, item: item.data)),
     );
   }
 
@@ -197,7 +203,7 @@ class TierListRow extends StatelessWidget {
     );
 
     if (newColor != null && newColor != color) {
-      bloc.add(TierListEvent.rowColorChanged(index: index, newColor: newColor.value));
+      bloc.add(TierListEvent.rowColorChanged(index: index, newColor: newColor.toARGB32()));
     }
   }
 }
