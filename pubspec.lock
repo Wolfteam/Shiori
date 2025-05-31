@@ -683,10 +683,10 @@ packages:
     dependency: "direct main"
     description:
       name: hive_ce
-      sha256: "192b7334299e3672efa1f85d544fef0091c5c592be5caada61417e37723addc6"
+      sha256: "708bb39050998707c5d422752159f91944d3c81ab42d80e1bd0ee37d8e130658"
       url: "https://pub.dev"
     source: hosted
-    version: "2.11.2"
+    version: "2.11.3"
   hive_ce_flutter:
     dependency: "direct main"
     description:
@@ -699,10 +699,10 @@ packages:
     dependency: "direct dev"
     description:
       name: hive_ce_generator
-      sha256: "84940c2fd3cb1d1eb318892cdb666bc0b8023f365f28aefe09b9e5a7222bc740"
+      sha256: "609678c10ebee7503505a0007050af40a0a4f498b1fb7def3220df341e573a89"
       url: "https://pub.dev"
     source: hosted
-    version: "1.9.1"
+    version: "1.9.2"
   http:
     dependency: "direct main"
     description:
@@ -1224,10 +1224,10 @@ packages:
     dependency: "direct main"
     description:
       name: purchases_flutter
-      sha256: "1a591f132393d49eec88edfccc1f4958a377ed3903c365e34428ef88f7589cc2"
+      sha256: "4444ca5001d8567a225e9423dca30647f100be30970bcb6ef13704132f9f7177"
       url: "https://pub.dev"
     source: hosted
-    version: "8.8.1"
+    version: "8.9.0"
   rate_my_app:
     dependency: "direct main"
     description:

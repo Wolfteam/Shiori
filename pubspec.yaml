@@ -39,12 +39,12 @@ dependencies:
     sdk: flutter
   flutter_markdown_plus: ^1.0.3
   flutter_slidable: ^4.0.0
-  flutter_timezone: ^4.1.0
+  flutter_timezone: ^4.1.1
   fluttertoast: ^8.2.12
   freezed_annotation: ^2.4.4
   get_it: ^7.7.0
   grouped_list: ^6.0.0
-  hive_ce: ^2.11.2
+  hive_ce: ^2.11.3
   hive_ce_flutter: ^2.3.1
   http: ^1.4.0
   image_gallery_saver_plus: ^4.0.1
@@ -59,7 +59,7 @@ dependencies:
   path_provider: ^2.1.5
   permission_handler: ^12.0.0+1
   pull_to_refresh: ^2.0.0
-  purchases_flutter: ^8.8.1
+  purchases_flutter: ^8.9.0
   rate_my_app: ^2.3.1
   responsive_builder: ^0.7.1
   responsive_grid: ^2.4.4
@@ -88,7 +88,7 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   freezed: ^2.5.7
-  hive_ce_generator: ^1.9.1
+  hive_ce_generator: ^1.9.2
   integration_test:
     sdk: flutter
   intl_utils: ^2.8.10
