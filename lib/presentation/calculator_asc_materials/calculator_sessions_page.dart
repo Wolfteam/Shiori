@@ -111,7 +111,7 @@ class _BodyState extends State<_Body> with SingleTickerProviderStateMixin, AppFa
     );
   }
 
-  Future<void> _showReorderDialog(List<CalculatorSessionModel> sessions) async {
+  Future<void> _showReorderDialog(List<CalculatorSessionModel> sessions) {
     return showDialog<SortResult<SortableItemOfT<CalculatorSessionModel>>>(
       context: context,
       builder: (_) => SortItemsDialog<SortableItemOfT<CalculatorSessionModel>>(
@@ -149,7 +149,8 @@ class _BodyState extends State<_Body> with SingleTickerProviderStateMixin, AppFa
       builder: (_) => ConfirmDialog(
         title: s.deleteAllSessions,
         content: s.confirmQuestion,
-        onOk: () => context.read<CalculatorAscMaterialsSessionsBloc>().add(const CalculatorAscMaterialsSessionsEvent.deleteAllSessions()),
+        onOk: () =>
+            context.read<CalculatorAscMaterialsSessionsBloc>().add(const CalculatorAscMaterialsSessionsEvent.deleteAllSessions()),
       ),
     );
   }

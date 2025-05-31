@@ -310,7 +310,7 @@ class NotificationServiceImpl implements NotificationService {
     return _flutterLocalNotificationsPlugin.show(newId, title, body, specifics);
   }
 
-  Future<void> _onTokenRefresh(String deviceToken) async {
+  Future<void> _onTokenRefresh(String deviceToken) {
     if (_settingsService.pushNotificationsToken != deviceToken) {
       _settingsService.pushNotificationsToken = deviceToken;
       _settingsService.mustRegisterPushNotificationsToken = true;

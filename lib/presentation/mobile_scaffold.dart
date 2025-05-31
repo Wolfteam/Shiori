@@ -44,7 +44,7 @@ class _MobileScaffoldState extends State<MobileScaffold> with SingleTickerProvid
     return Scaffold(
       body: SafeArea(
         child: BlocListener<MainTabBloc, MainTabState>(
-          listener: (ctx, state) async {
+          listener: (ctx, state) {
             state.maybeMap(
               initial: (s) => _changeCurrentTab(s.currentSelectedTab),
               orElse: () => {},
