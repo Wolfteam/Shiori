@@ -4,7 +4,7 @@ import 'package:shiori/domain/enums/enums.dart';
 part 'chart_top_item_model.freezed.dart';
 
 @freezed
-class ChartTopItemModel with _$ChartTopItemModel {
+abstract class ChartTopItemModel with _$ChartTopItemModel {
   const factory ChartTopItemModel({
     required String key,
     required ChartType type,

@@ -4,7 +4,7 @@ import 'package:shiori/domain/models/models.dart';
 part 'tierlist_row_model.freezed.dart';
 
 @freezed
-class TierListRowModel with _$TierListRowModel {
+abstract class TierListRowModel with _$TierListRowModel {
   factory TierListRowModel.row({
     required String tierText,
     required int tierColor,

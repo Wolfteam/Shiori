@@ -4,7 +4,7 @@ import 'package:shiori/domain/enums/enums.dart';
 part 'chart_gender_model.freezed.dart';
 
 @freezed
-class ChartGenderModel with _$ChartGenderModel {
+abstract class ChartGenderModel with _$ChartGenderModel {
   const factory ChartGenderModel({
     required int maleCount,
     required int femaleCount,

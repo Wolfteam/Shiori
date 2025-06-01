@@ -4,7 +4,7 @@ part 'furniture_file_model.freezed.dart';
 part 'furniture_file_model.g.dart';
 
 @freezed
-class FurnitureFileModel with _$FurnitureFileModel {
+abstract class FurnitureFileModel with _$FurnitureFileModel {
   factory FurnitureFileModel({
     required String key,
     required int rarity,

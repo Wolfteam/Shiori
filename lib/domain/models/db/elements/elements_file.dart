@@ -5,7 +5,7 @@ part 'elements_file.freezed.dart';
 part 'elements_file.g.dart';
 
 @freezed
-class ElementsFile with _$ElementsFile {
+abstract class ElementsFile with _$ElementsFile {
   factory ElementsFile({
     required List<ElementDebuffFileModel> debuffs,
     required List<ElementReactionFileModel> reactions,

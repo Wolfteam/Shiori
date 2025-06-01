@@ -5,7 +5,7 @@ import 'package:shiori/domain/models/models.dart';
 part 'ascension_materials_summary.freezed.dart';
 
 @freezed
-class AscensionMaterialsSummary with _$AscensionMaterialsSummary {
+abstract class AscensionMaterialsSummary with _$AscensionMaterialsSummary {
   const factory AscensionMaterialsSummary({
     required AscensionMaterialSummaryType type,
     required List<MaterialSummary> materials,
@@ -13,7 +13,7 @@ class AscensionMaterialsSummary with _$AscensionMaterialsSummary {
 }
 
 @freezed
-class MaterialSummary with _$MaterialSummary implements SortableGroupedMaterial {
+abstract class MaterialSummary with _$MaterialSummary implements SortableGroupedMaterial {
   @Implements<SortableGroupedMaterial>()
   const factory MaterialSummary({
     required String key,

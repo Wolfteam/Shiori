@@ -5,7 +5,7 @@ import 'package:shiori/domain/enums/enums.dart';
 part 'create_backup_result_model.freezed.dart';
 
 @freezed
-class BackupOperationResultModel with _$BackupOperationResultModel {
+abstract class BackupOperationResultModel with _$BackupOperationResultModel {
   String get filename => basename(path);
 
   const factory BackupOperationResultModel({

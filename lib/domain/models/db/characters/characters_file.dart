@@ -6,7 +6,7 @@ part 'characters_file.freezed.dart';
 part 'characters_file.g.dart';
 
 @freezed
-class CharactersFile with _$CharactersFile {
+abstract class CharactersFile with _$CharactersFile {
   factory CharactersFile({
     required List<CharacterFileModel> characters,
   }) = _CharactersFile;

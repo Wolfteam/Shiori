@@ -4,7 +4,7 @@ part 'translation_element_file.freezed.dart';
 part 'translation_element_file.g.dart';
 
 @freezed
-class TranslationElementFile with _$TranslationElementFile {
+abstract class TranslationElementFile with _$TranslationElementFile {
   factory TranslationElementFile({
     required String key,
     required String name,

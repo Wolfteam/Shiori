@@ -4,7 +4,7 @@ part 'translation_character_file.freezed.dart';
 part 'translation_character_file.g.dart';
 
 @freezed
-class TranslationCharacterFile with _$TranslationCharacterFile {
+abstract class TranslationCharacterFile with _$TranslationCharacterFile {
   factory TranslationCharacterFile({
     required String key,
     required String name,
@@ -18,7 +18,7 @@ class TranslationCharacterFile with _$TranslationCharacterFile {
 }
 
 @freezed
-class TranslationCharacterSkillFile with _$TranslationCharacterSkillFile {
+abstract class TranslationCharacterSkillFile with _$TranslationCharacterSkillFile {
   factory TranslationCharacterSkillFile({
     required String key,
     required String title,
@@ -31,7 +31,7 @@ class TranslationCharacterSkillFile with _$TranslationCharacterSkillFile {
 }
 
 @freezed
-class TranslationCharacterAbilityFile with _$TranslationCharacterAbilityFile {
+abstract class TranslationCharacterAbilityFile with _$TranslationCharacterAbilityFile {
   factory TranslationCharacterAbilityFile({
     String? name,
     String? description,
@@ -45,7 +45,7 @@ class TranslationCharacterAbilityFile with _$TranslationCharacterAbilityFile {
 }
 
 @freezed
-class TranslationCharacterPassiveFile with _$TranslationCharacterPassiveFile {
+abstract class TranslationCharacterPassiveFile with _$TranslationCharacterPassiveFile {
   factory TranslationCharacterPassiveFile({
     required String key,
     required String title,
@@ -57,7 +57,7 @@ class TranslationCharacterPassiveFile with _$TranslationCharacterPassiveFile {
 }
 
 @freezed
-class TranslationCharacterConstellationFile with _$TranslationCharacterConstellationFile {
+abstract class TranslationCharacterConstellationFile with _$TranslationCharacterConstellationFile {
   factory TranslationCharacterConstellationFile({
     required String key,
     required String title,
@@ -66,5 +66,6 @@ class TranslationCharacterConstellationFile with _$TranslationCharacterConstella
     required List<String> descriptions,
   }) = _TranslationCharacterConstellationFile;
 
-  factory TranslationCharacterConstellationFile.fromJson(Map<String, dynamic> json) => _$TranslationCharacterConstellationFileFromJson(json);
+  factory TranslationCharacterConstellationFile.fromJson(Map<String, dynamic> json) =>
+      _$TranslationCharacterConstellationFileFromJson(json);
 }

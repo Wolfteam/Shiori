@@ -4,7 +4,7 @@ import 'package:shiori/domain/enums/enums.dart';
 part 'custom_build_team_character_model.freezed.dart';
 
 @freezed
-class CustomBuildTeamCharacterModel with _$CustomBuildTeamCharacterModel {
+abstract class CustomBuildTeamCharacterModel with _$CustomBuildTeamCharacterModel {
   const factory CustomBuildTeamCharacterModel({
     required String key,
     required int index,

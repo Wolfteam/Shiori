@@ -6,7 +6,7 @@ part 'weapon_file_model.freezed.dart';
 part 'weapon_file_model.g.dart';
 
 @freezed
-class WeaponFileModel with _$WeaponFileModel {
+abstract class WeaponFileModel with _$WeaponFileModel {
   factory WeaponFileModel({
     required String key,
     required String image,
@@ -28,7 +28,7 @@ class WeaponFileModel with _$WeaponFileModel {
 }
 
 @freezed
-class WeaponFileAscensionMaterial with _$WeaponFileAscensionMaterial {
+abstract class WeaponFileAscensionMaterial with _$WeaponFileAscensionMaterial {
   factory WeaponFileAscensionMaterial({
     required int level,
     required List<ItemAscensionMaterialFileModel> materials,
@@ -40,7 +40,7 @@ class WeaponFileAscensionMaterial with _$WeaponFileAscensionMaterial {
 }
 
 @freezed
-class WeaponFileStatModel with _$WeaponFileStatModel {
+abstract class WeaponFileStatModel with _$WeaponFileStatModel {
   factory WeaponFileStatModel({
     required int level,
     required double baseAtk,
