@@ -41,7 +41,7 @@ dependencies:
   flutter_slidable: ^4.0.0
   flutter_timezone: ^4.1.1
   fluttertoast: ^8.2.12
-  freezed_annotation: ^2.4.4
+  freezed_annotation: ^3.0.0
   get_it: ^7.7.0
   grouped_list: ^6.0.0
   hive_ce: ^2.11.3
@@ -87,7 +87,7 @@ dev_dependencies:
   flutter_launcher_icons: ^0.14.3
   flutter_test:
     sdk: flutter
-  freezed: ^2.5.7
+  freezed: ^3.0.6
   hive_ce_generator: ^1.9.2
   integration_test:
     sdk: flutter
@@ -96,6 +96,11 @@ dev_dependencies:
   lint: ^2.8.0
   mockito: ^5.4.6
   msix: ^3.16.9
+
+# Until https://github.com/RevenueCat/purchases-flutter/pull/1331 gets merged
+dependency_overrides:
+  freezed: ^3.0.6
+  freezed_annotation: ^3.0.0
 
 flutter_launcher_icons:
   android: "launcher_icon"
