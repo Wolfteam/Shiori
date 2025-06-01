@@ -1,8 +1,11 @@
 import 'dart:io';
 
+import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_messaging_platform_interface/firebase_messaging_platform_interface.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:infinite_listview/infinite_listview.dart';
+import 'package:permission_handler_platform_interface/permission_handler_platform_interface.dart';
 import 'package:shiori/domain/extensions/string_extensions.dart';
 import 'package:shiori/domain/services/data_service.dart';
 import 'package:shiori/domain/services/settings_service.dart';
@@ -17,6 +20,8 @@ import 'package:shiori/presentation/shared/utils/toast_utils.dart';
 import 'package:window_size/window_size.dart';
 
 import '../extensions/widget_tester_extensions.dart';
+import '../fcm_mock.dart';
+import '../permission_handler_mock.dart';
 import 'common_bottom_sheet.dart';
 
 const Key toastKey = Key('toast-body');
@@ -96,8 +101,11 @@ abstract class BasePage {
 
   Future<void> _init(bool resetResources, bool deleteData) async {
     if (!initialized) {
-      //This is required by app center
-      WidgetsFlutterBinding.ensureInitialized();
+      setupFirebaseMessagingMocks();
+      PermissionHandlerPlatform.instance = MockPermissionHandler();
+      FirebaseMessagingPlatform.instance = kMockMessagingPlatform;
+      await Firebase.initializeApp();
+      // await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
       await Injection.init(isLoggingEnabled: false);
 
       if (Platform.isWindows || Platform.isLinux || Platform.isMacOS) {
@@ -151,7 +159,11 @@ abstract class BasePage {
     await tester.pumpAndSettle();
   }
 
-  Future<void> selectValueInNumberPickerDialog(dynamic value, {bool scrollsFromBottomToTop = true, int maxIteration = 1000}) async {
+  Future<void> selectValueInNumberPickerDialog(
+    dynamic value, {
+    bool scrollsFromBottomToTop = true,
+    int maxIteration = 1000,
+  }) async {
     //First scroll until value is visible
     final double dy = scrollsFromBottomToTop ? -30 : 30;
     final offset = Offset(0, dy);
@@ -161,7 +173,9 @@ abstract class BasePage {
     await tester.dragUntilVisible(
       find.descendant(
         of: scrollView,
-        matching: find.byWidgetPredicate((widget) => widget is Text && widget.data == '$value' && widget.style?.color == textColor),
+        matching: find.byWidgetPredicate(
+          (widget) => widget is Text && widget.data == '$value' && widget.style?.color == textColor,
+        ),
       ),
       scrollView,
       offset,

@@ -344,7 +344,7 @@ class Injection {
     getIt.registerSingleton<DeviceInfoService>(DeviceInfoServiceImpl());
 
     File? loggingFile;
-    if (kDebugMode) {
+    if (kDebugMode && isLoggingEnabled) {
       try {
         final Directory? loggingDir = await getDownloadsDirectory();
         final String loggingPath = path.join(loggingDir!.path, 'logs.txt');
