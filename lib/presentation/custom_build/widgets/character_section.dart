@@ -45,8 +45,9 @@ class CharacterSection extends StatelessWidget {
     final useRowOnTalentsAndNotes = deviceType != DeviceScreenType.mobile && !isPortrait;
 
     return BlocBuilder<CustomBuildBloc, CustomBuildState>(
-      builder: (context, state) => state.maybeMap(
-        loaded: (state) => ColoredBox(
+      builder: (context, state) => switch (state) {
+        CustomBuildStateLoading() => const Loading(useScaffold: false),
+        CustomBuildStateLoaded() => ColoredBox(
           color: state.character.elementType.getElementColorFromContext(context),
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -84,8 +85,8 @@ class CharacterSection extends StatelessWidget {
                               splashRadius: Styles.smallButtonSplashRadius,
                               icon: Icon(state.isRecommended ? Icons.star : Icons.star_border_outlined),
                               onPressed: () => context.read<CustomBuildBloc>().add(
-                                    CustomBuildEvent.isRecommendedChanged(newValue: !state.isRecommended),
-                                  ),
+                                CustomBuildEvent.isRecommendedChanged(newValue: !state.isRecommended),
+                              ),
                             ),
                           ),
                           if (!state.readyForScreenshot)
@@ -100,7 +101,8 @@ class CharacterSection extends StatelessWidget {
                                     hintText: s.title,
                                     value: state.title,
                                     maxLength: CustomBuildBloc.maxTitleLength,
-                                    onSave: (newTitle) => context.read<CustomBuildBloc>().add(CustomBuildEvent.titleChanged(newValue: newTitle)),
+                                    onSave: (newTitle) =>
+                                        context.read<CustomBuildBloc>().add(CustomBuildEvent.titleChanged(newValue: newTitle)),
                                   ),
                                 ),
                               ),
@@ -120,7 +122,8 @@ class CharacterSection extends StatelessWidget {
                                   CharacterRoleType.values.where((el) => el != CharacterRoleType.na).toList(),
                                   (val, _) => s.translateCharacterRoleType(val),
                                 ),
-                                onChanged: (v, _) => context.read<CustomBuildBloc>().add(CustomBuildEvent.roleChanged(newValue: v)),
+                                onChanged: (v, _) =>
+                                    context.read<CustomBuildBloc>().add(CustomBuildEvent.roleChanged(newValue: v)),
                               ),
                             ),
                             Expanded(
@@ -133,7 +136,8 @@ class CharacterSection extends StatelessWidget {
                                   CharacterRoleSubType.values,
                                   (val, _) => s.translateCharacterRoleSubType(val),
                                 ),
-                                onChanged: (v, _) => context.read<CustomBuildBloc>().add(CustomBuildEvent.subRoleChanged(newValue: v)),
+                                onChanged: (v, _) =>
+                                    context.read<CustomBuildBloc>().add(CustomBuildEvent.subRoleChanged(newValue: v)),
                               ),
                             ),
                           ],
@@ -166,10 +170,16 @@ class CharacterSection extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Expanded(
-                              child: _TalentPriorityRow(skillPriorities: state.skillPriorities, readyToShare: state.readyForScreenshot),
+                              child: _TalentPriorityRow(
+                                skillPriorities: state.skillPriorities,
+                                readyToShare: state.readyForScreenshot,
+                              ),
                             ),
                             Expanded(
-                              child: _NoteRow(notes: state.notes.map((e) => e.note).toList(), readyToShare: state.readyForScreenshot),
+                              child: _NoteRow(
+                                notes: state.notes.map((e) => e.note).toList(),
+                                readyToShare: state.readyForScreenshot,
+                              ),
                             ),
                           ],
                         )
@@ -184,8 +194,7 @@ class CharacterSection extends StatelessWidget {
             ],
           ),
         ),
-        orElse: () => const Loading(useScaffold: false),
-      ),
+      },
     );
   }
 
@@ -231,19 +240,19 @@ class _TalentPriorityRow extends StatelessWidget {
                 onPressed: canAddSkillPriorities
                     ? null
                     : () => showDialog(
-                          context: context,
-                          builder: (_) => SelectCharacterSkillTypeDialog(
-                            excluded: CustomBuildBloc.excludedSkillTypes,
-                            selectedValues: skillPriorities,
-                            onSave: (type) {
-                              if (type == null) {
-                                return;
-                              }
+                        context: context,
+                        builder: (_) => SelectCharacterSkillTypeDialog(
+                          excluded: CustomBuildBloc.excludedSkillTypes,
+                          selectedValues: skillPriorities,
+                          onSave: (type) {
+                            if (type == null) {
+                              return;
+                            }
 
-                              context.read<CustomBuildBloc>().add(CustomBuildEvent.addSkillPriority(type: type));
-                            },
-                          ),
+                            context.read<CustomBuildBloc>().add(CustomBuildEvent.addSkillPriority(type: type));
+                          },
                         ),
+                      ),
               ),
           ],
         ),
@@ -255,7 +264,9 @@ class _TalentPriorityRow extends StatelessWidget {
             fontSize: 10,
             addTooltip: false,
             padding: const EdgeInsets.only(right: 16, left: 5, bottom: 5, top: 5),
-            onDelete: readyToShare ? null : (index) => context.read<CustomBuildBloc>().add(CustomBuildEvent.deleteSkillPriority(index: index)),
+            onDelete: readyToShare
+                ? null
+                : (index) => context.read<CustomBuildBloc>().add(CustomBuildEvent.deleteSkillPriority(index: index)),
           ),
       ],
     );
@@ -275,7 +286,8 @@ class _NoteRow extends StatelessWidget {
   Widget build(BuildContext context) {
     final s = S.of(context);
     final theme = Theme.of(context);
-    final canAddNotes = notes.map((e) => e.length).sum < (CustomBuildBloc.maxNumberOfNotes * CustomBuildBloc.maxNoteLength) &&
+    final canAddNotes =
+        notes.map((e) => e.length).sum < (CustomBuildBloc.maxNumberOfNotes * CustomBuildBloc.maxNoteLength) &&
         notes.length < CustomBuildBloc.maxNumberOfNotes;
     return Column(
       children: [
@@ -294,13 +306,13 @@ class _NoteRow extends StatelessWidget {
                 onPressed: !canAddNotes
                     ? null
                     : () => showDialog(
-                          context: context,
-                          builder: (_) => TextDialog.create(
-                            hintText: s.note,
-                            onSave: (note) => context.read<CustomBuildBloc>().add(CustomBuildEvent.addNote(note: note)),
-                            maxLength: CustomBuildBloc.maxNoteLength,
-                          ),
+                        context: context,
+                        builder: (_) => TextDialog.create(
+                          hintText: s.note,
+                          onSave: (note) => context.read<CustomBuildBloc>().add(CustomBuildEvent.addNote(note: note)),
+                          maxLength: CustomBuildBloc.maxNoteLength,
                         ),
+                      ),
               ),
           ],
         ),
@@ -311,7 +323,9 @@ class _NoteRow extends StatelessWidget {
             fontSize: 10,
             addTooltip: false,
             padding: const EdgeInsets.only(right: 16, left: 5, bottom: 5, top: 5),
-            onDelete: readyToShare ? null : (index) => context.read<CustomBuildBloc>().add(CustomBuildEvent.deleteNote(index: index)),
+            onDelete: readyToShare
+                ? null
+                : (index) => context.read<CustomBuildBloc>().add(CustomBuildEvent.deleteNote(index: index)),
           ),
       ],
     );

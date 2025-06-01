@@ -82,38 +82,40 @@ class WishSimulatorHistoryPage extends StatelessWidget {
           Injection.wishSimulatorPullHistoryBloc..add(WishSimulatorPullHistoryEvent.init(bannerType: bannerType)),
       child: BlocBuilder<WishSimulatorPullHistoryBloc, WishSimulatorPullHistoryState>(
         builder: (context, state) => Scaffold(
-          appBar: _CustomAppBar(
-            bannerType: state.map(loading: (_) => bannerType, loaded: (state) => state.bannerType),
-            showDeleteIcon: state.map(loading: (_) => false, loaded: (state) => state.items.isNotEmpty),
-          ),
+          appBar: switch (state) {
+            WishSimulatorPullHistoryStateLoading() => _CustomAppBar(
+              bannerType: bannerType,
+              showDeleteIcon: false,
+            ),
+            WishSimulatorPullHistoryStateLoaded() => _CustomAppBar(
+              bannerType: state.bannerType,
+              showDeleteIcon: state.items.isNotEmpty,
+            ),
+          },
           backgroundColor: Theme.of(context).colorScheme.surface.withValues(alpha: 0.8),
           body: SafeArea(
             child: BackdropFilter(
               filter: ImageFilter.blur(sigmaX: 6.0, sigmaY: 6.0),
               child: Center(
-                child: state.map(
-                  loading: (_) => const Loading(useScaffold: false),
-                  loaded: (state) => state.items.isEmpty
-                      ? const NothingFoundColumn()
-                      : SingleChildScrollView(
-                          child: _Table(items: state.items),
-                        ),
-                ),
+                child: switch (state) {
+                  WishSimulatorPullHistoryStateLoading() => const Loading(useScaffold: false),
+                  final WishSimulatorPullHistoryStateLoaded state when state.items.isEmpty => const NothingFoundColumn(),
+                  WishSimulatorPullHistoryStateLoaded() => SingleChildScrollView(child: _Table(items: state.items)),
+                },
               ),
             ),
           ),
-          bottomNavigationBar: state.maybeMap(
-            loaded: (state) => state.items.isEmpty
-                ? null
-                : Container(
-                    margin: Styles.edgeInsetAll15,
-                    child: _TablePagination(
-                      maxPage: state.maxPage,
-                      currentPage: state.currentPage,
-                    ),
-                  ),
-            orElse: () => null,
-          ),
+          bottomNavigationBar: switch (state) {
+            WishSimulatorPullHistoryStateLoading() => null,
+            final WishSimulatorPullHistoryStateLoaded state when state.items.isEmpty => null,
+            WishSimulatorPullHistoryStateLoaded() => Container(
+              margin: Styles.edgeInsetAll15,
+              child: _TablePagination(
+                maxPage: state.maxPage,
+                currentPage: state.currentPage,
+              ),
+            ),
+          },
         ),
       ),
     );

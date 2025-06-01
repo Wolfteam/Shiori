@@ -41,52 +41,59 @@ class OtherSettings extends StatelessWidget {
             ),
           ),
           BlocBuilder<SettingsBloc, SettingsState>(
-            builder: (context, state) => state.map(
-              loading: (_) => const Loading(useScaffold: false),
-              loaded: (settingsState) => Column(
+            builder: (context, state) => switch (state) {
+              SettingsStateLoading() => const Loading(useScaffold: false),
+              SettingsStateLoaded() => Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   SwitchListTile(
                     title: Text(s.showCharacterDetails),
-                    value: settingsState.showCharacterDetails,
-                    onChanged: (newVal) => context.read<SettingsBloc>().add(SettingsEvent.showCharacterDetailsChanged(newValue: newVal)),
+                    value: state.showCharacterDetails,
+                    onChanged: (newVal) =>
+                        context.read<SettingsBloc>().add(SettingsEvent.showCharacterDetailsChanged(newValue: newVal)),
                   ),
                   SwitchListTile(
                     title: Text(s.showWeaponDetails),
-                    value: settingsState.showWeaponDetails,
-                    onChanged: (newVal) => context.read<SettingsBloc>().add(SettingsEvent.showWeaponDetailsChanged(newValue: newVal)),
+                    value: state.showWeaponDetails,
+                    onChanged: (newVal) =>
+                        context.read<SettingsBloc>().add(SettingsEvent.showWeaponDetailsChanged(newValue: newVal)),
                   ),
                   if (Platform.isAndroid)
                     SwitchListTile(
                       title: Text(s.pressOnceAgainToExit),
-                      value: settingsState.doubleBackToClose,
-                      onChanged: (newVal) => context.read<SettingsBloc>().add(SettingsEvent.doubleBackToCloseChanged(newValue: newVal)),
+                      value: state.doubleBackToClose,
+                      onChanged: (newVal) =>
+                          context.read<SettingsBloc>().add(SettingsEvent.doubleBackToCloseChanged(newValue: newVal)),
                     ),
                   SwitchListTile(
                     title: Text(s.useOfficialMap),
-                    value: settingsState.useOfficialMap,
-                    onChanged: (newVal) => context.read<SettingsBloc>().add(SettingsEvent.useOfficialMapChanged(newValue: newVal)),
+                    value: state.useOfficialMap,
+                    onChanged: (newVal) =>
+                        context.read<SettingsBloc>().add(SettingsEvent.useOfficialMapChanged(newValue: newVal)),
                   ),
                   SwitchListTile(
                     title: Text(s.use24HourFormatOnDates),
-                    value: settingsState.useTwentyFourHoursFormat,
-                    onChanged: (newVal) => context.read<SettingsBloc>().add(SettingsEvent.useTwentyFourHoursFormatChanged(newValue: newVal)),
+                    value: state.useTwentyFourHoursFormat,
+                    onChanged: (newVal) =>
+                        context.read<SettingsBloc>().add(SettingsEvent.useTwentyFourHoursFormatChanged(newValue: newVal)),
                   ),
                   SwitchListTile(
                     title: Text(s.checkForUpdatesOnStartup),
-                    value: settingsState.checkForUpdatesOnStartup,
-                    onChanged: (newVal) => context.read<SettingsBloc>().add(SettingsEvent.checkForUpdatesOnStartupChanged(newValue: newVal)),
+                    value: state.checkForUpdatesOnStartup,
+                    onChanged: (newVal) =>
+                        context.read<SettingsBloc>().add(SettingsEvent.checkForUpdatesOnStartupChanged(newValue: newVal)),
                   ),
                   CommonDropdownButton<AppServerResetTimeType>(
                     padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
                     subTitle: s.serverWhereYouPlay,
                     hint: s.chooseServer,
-                    currentValue: settingsState.serverResetTime,
+                    currentValue: state.serverResetTime,
                     values: EnumUtils.getTranslatedAndSortedEnum<AppServerResetTimeType>(
                       AppServerResetTimeType.values,
                       (val, _) => s.translateServerResetTimeType(val),
                     ),
-                    onChanged: (v, context) => context.read<SettingsBloc>().add(SettingsEvent.serverResetTimeChanged(newValue: v)),
+                    onChanged: (v, context) =>
+                        context.read<SettingsBloc>().add(SettingsEvent.serverResetTimeChanged(newValue: v)),
                   ),
                   RequiresDownloadedResourcesWidget(
                     child: ListTile(
@@ -96,28 +103,32 @@ class OtherSettings extends StatelessWidget {
                     ),
                   ),
                   ListTile(
-                    title: Text(s.deleteAllData, style: theme.textTheme.titleMedium!.copyWith(color: Colors.red, fontWeight: FontWeight.bold)),
-                    onTap: () => showDialog<bool?>(
-                      context: context,
-                      builder: (_) => ConfirmDialog(
-                        title: s.confirm,
-                        content: '${s.deleteAllDataWarningMsg}\n${s.confirmQuestion}',
-                      ),
-                    ).then((confirmed) {
-                      if (confirmed == true && context.mounted) {
-                        final toast = ToastUtils.of(context);
-                        ToastUtils.showInfoToast(toast, s.deletingAllDataMsg);
-                        Future.delayed(const Duration(seconds: 1)).then((value) {
-                          if (context.mounted) {
-                            context.read<MainBloc>().add(const MainEvent.deleteAllData());
+                    title: Text(
+                      s.deleteAllData,
+                      style: theme.textTheme.titleMedium!.copyWith(color: Colors.red, fontWeight: FontWeight.bold),
+                    ),
+                    onTap: () =>
+                        showDialog<bool?>(
+                          context: context,
+                          builder: (_) => ConfirmDialog(
+                            title: s.confirm,
+                            content: '${s.deleteAllDataWarningMsg}\n${s.confirmQuestion}',
+                          ),
+                        ).then((confirmed) {
+                          if (confirmed == true && context.mounted) {
+                            final toast = ToastUtils.of(context);
+                            ToastUtils.showInfoToast(toast, s.deletingAllDataMsg);
+                            Future.delayed(const Duration(seconds: 1)).then((value) {
+                              if (context.mounted) {
+                                context.read<MainBloc>().add(const MainEvent.deleteAllData());
+                              }
+                            });
                           }
-                        });
-                      }
-                    }),
+                        }),
                   ),
                 ],
               ),
-            ),
+            },
           ),
         ],
       ),

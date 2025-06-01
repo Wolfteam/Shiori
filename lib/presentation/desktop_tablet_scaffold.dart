@@ -94,10 +94,7 @@ class _NavigationRailState extends State<_NavigationRail> with ScrollToTopOnDoub
     final s = S.of(context);
     return BlocListener<MainTabBloc, MainTabState>(
       listener: (ctx, state) {
-        state.maybeMap(
-          initial: (s) => _changeCurrentTab(s.currentSelectedTab),
-          orElse: () => {},
-        );
+        _changeCurrentTab(state.currentSelectedTab);
       },
       child: NavigationRail(
         selectedIndex: _index,

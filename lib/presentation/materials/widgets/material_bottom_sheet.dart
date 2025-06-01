@@ -44,9 +44,9 @@ class MaterialBottomSheet extends StatelessWidget {
         showOkButton: false,
         showCancelButton: false,
         child: BlocBuilder<MaterialsBloc, MaterialsState>(
-          builder: (context, state) => state.map(
-            loading: (_) => const Loading(),
-            loaded: (state) => Column(
+          builder: (context, state) => switch (state) {
+            MaterialsStateLoading() => const Loading(),
+            MaterialsStateLoaded() => Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
@@ -65,15 +65,15 @@ class MaterialBottomSheet extends StatelessWidget {
                 const _ButtonBar(),
               ],
             ),
-          ),
+          },
         ),
       );
     }
 
     return BlocBuilder<MaterialsBloc, MaterialsState>(
-      builder: (ctx, state) => state.map(
-        loading: (_) => const Loading(useScaffold: false),
-        loaded: (state) => RightBottomSheet(
+      builder: (ctx, state) => switch (state) {
+        MaterialsStateLoading() => const Loading(useScaffold: false),
+        MaterialsStateLoaded() => RightBottomSheet(
           bottom: const _ButtonBar(),
           children: [
             Container(margin: Styles.endDrawerFilterItemMargin, child: Text(s.rarity)),
@@ -90,7 +90,7 @@ class MaterialBottomSheet extends StatelessWidget {
             ),
           ],
         ),
-      ),
+      },
     );
   }
 }
@@ -116,7 +116,8 @@ class _OtherFilters extends StatelessWidget {
       children: [
         ItemPopupMenuFilterWithAllValue(
           tooltipText: s.secondaryState,
-          onAllOrValueSelected: (v) => context.read<MaterialsBloc>().add(MaterialsEvent.typeChanged(v != null ? mat.MaterialType.values[v] : null)),
+          onAllOrValueSelected: (v) =>
+              context.read<MaterialsBloc>().add(MaterialsEvent.typeChanged(v != null ? mat.MaterialType.values[v] : null)),
           selectedValue: tempType?.index,
           values: mat.MaterialType.values.where((el) => !_ignoredSubStats.contains(el)).map((e) => e.index).toList(),
           itemText: (val, _) => s.translateMaterialType(mat.MaterialType.values[val]),

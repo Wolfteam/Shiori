@@ -34,9 +34,9 @@ class AddEditItemBottomSheet extends StatelessWidget {
     required this.sessionKey,
     required this.keyName,
     required this.isAWeapon,
-  })  : index = null,
-        isInEditMode = false,
-        isActive = true;
+  }) : index = null,
+       isInEditMode = false,
+       isActive = true;
 
   const AddEditItemBottomSheet.toEditItem({
     super.key,
@@ -44,14 +44,20 @@ class AddEditItemBottomSheet extends StatelessWidget {
     required this.index,
     required this.isAWeapon,
     required this.isActive,
-  })  : keyName = null,
-        isInEditMode = true;
+  }) : keyName = null,
+       isInEditMode = true;
 
   static Map<String, dynamic> buildNavigationArgsToAddItem(int sessionKey, String keyName, {bool isAWeapon = false}) =>
       <String, dynamic>{_sessionKey: sessionKey, _keyNameKey: keyName, _isAWeaponKey: isAWeapon, _editKey: false};
 
   static Map<String, dynamic> buildNavigationArgsToEditItem(int sessionKey, int index, bool isActive, {bool isAWeapon = false}) =>
-      <String, dynamic>{_sessionKey: sessionKey, _indexKey: index, _isActiveKey: isActive, _isAWeaponKey: isAWeapon, _editKey: true};
+      <String, dynamic>{
+        _sessionKey: sessionKey,
+        _indexKey: index,
+        _isActiveKey: isActive,
+        _isAWeaponKey: isAWeapon,
+        _editKey: true,
+      };
 
   static Widget getWidgetFromArgs(BuildContext context, Map<String, dynamic> args) {
     assert(args.isNotEmpty);
@@ -84,9 +90,9 @@ class AddEditItemBottomSheet extends StatelessWidget {
     final forEndDrawer = getDeviceType(MediaQuery.of(context).size) != DeviceScreenType.mobile;
     if (!forEndDrawer) {
       return BlocBuilder<CalculatorAscMaterialsItemBloc, CalculatorAscMaterialsItemState>(
-        builder: (context, state) => state.map(
-          loading: (_) => const Loading(useScaffold: false),
-          loaded: (state) => CommonBottomSheet(
+        builder: (context, state) => switch (state) {
+          CalculatorAscMaterialsItemStateLoading() => const Loading(useScaffold: false),
+          final CalculatorAscMaterialsItemStateLoaded state => CommonBottomSheet(
             title: isAWeapon ? '${s.weapon}: ${state.name}' : '${s.character}: ${state.name}',
             titleIcon: !isInEditMode ? Icons.add : Icons.edit,
             iconSize: 40,
@@ -165,14 +171,14 @@ class AddEditItemBottomSheet extends StatelessWidget {
               ],
             ),
           ),
-        ),
+        },
       );
     }
 
     return BlocBuilder<CalculatorAscMaterialsItemBloc, CalculatorAscMaterialsItemState>(
-      builder: (ctx, state) => state.map(
-        loading: (_) => const Loading(useScaffold: false),
-        loaded: (state) => RightBottomSheet(
+      builder: (context, state) => switch (state) {
+        CalculatorAscMaterialsItemStateLoading() => const Loading(useScaffold: false),
+        final CalculatorAscMaterialsItemStateLoaded state => RightBottomSheet(
           title: isAWeapon ? '${s.weapon}: ${state.name}' : '${s.character}: ${state.name}',
           icon: !isInEditMode ? Icons.add : Icons.edit,
           bottom: _ButtonBar(
@@ -236,7 +242,7 @@ class AddEditItemBottomSheet extends StatelessWidget {
             _UseMaterialsFromInventoryToggleButton(useMaterialsFromInventory: state.useMaterialsFromInventory),
           ],
         ),
-      ),
+      },
     );
   }
 
@@ -296,9 +302,9 @@ class _UseMaterialsFromInventoryToggleButton extends StatelessWidget {
               ButtonSegment<bool>(value: true, icon: Icon(Icons.check)),
               ButtonSegment<bool>(value: false, icon: Icon(Icons.close)),
             ],
-            onSelectionChanged: (Set<bool> newSelection) => context
-                .read<CalculatorAscMaterialsItemBloc>()
-                .add(CalculatorAscMaterialsItemEvent.useMaterialsFromInventoryChanged(useThem: newSelection.first)),
+            onSelectionChanged: (Set<bool> newSelection) => context.read<CalculatorAscMaterialsItemBloc>().add(
+              CalculatorAscMaterialsItemEvent.useMaterialsFromInventoryChanged(useThem: newSelection.first),
+            ),
             style: SegmentedButton.styleFrom(
               tapTargetSize: MaterialTapTargetSize.shrinkWrap,
               visualDensity: VisualDensity.compact,

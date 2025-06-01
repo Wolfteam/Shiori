@@ -100,15 +100,15 @@ class MapPage extends StatelessWidget {
     return BlocProvider<UrlPageBloc>(
       create: (ctx) => Injection.urlPageBloc..add(const UrlPageEvent.init(loadMap: true, loadDailyCheckIn: false)),
       child: BlocBuilder<UrlPageBloc, UrlPageState>(
-        builder: (context, state) => state.map(
-          loading: (_) => const Loading(),
-          loaded: (state) => AppWebView(
+        builder: (context, state) => switch (state) {
+          UrlPageStateLoading() => const Loading(),
+          UrlPageStateLoaded() => AppWebView(
             url: state.mapUrl,
             userAgent: state.userAgent,
             hasInternetConnection: state.hasInternetConnection,
             script: _script,
           ),
-        ),
+        },
       ),
     );
   }

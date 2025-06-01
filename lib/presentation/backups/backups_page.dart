@@ -36,8 +36,8 @@ class BackupsPage extends StatelessWidget {
         body: SafeArea(
           child: BlocConsumer<BackupRestoreBloc, BackupRestoreState>(
             listener: (context, state) {
-              state.maybeMap(
-                loaded: (state) {
+              switch (state) {
+                case BackupRestoreStateLoaded():
                   if (state.createResult != null) {
                     _handleCreateResult(context, state.createResult);
                   } else if (state.restoreResult != null) {
@@ -45,12 +45,13 @@ class BackupsPage extends StatelessWidget {
                   } else if (state.readResult != null) {
                     _handleReadResult(context, state.readResult);
                   }
-                },
-                orElse: () {},
-              );
+                default:
+                  break;
+              }
             },
-            builder: (context, state) => state.maybeMap(
-              loaded: (state) => ResponsiveBuilder(
+            builder: (context, state) => switch (state) {
+              BackupRestoreStateLoadine() => const Loading(useScaffold: false),
+              BackupRestoreStateLoaded() => ResponsiveBuilder(
                 builder: (ctx, size) {
                   if (!isPortrait && size.screenSize.width > SizeUtils.minWidthOnDesktop) {
                     return Row(
@@ -131,8 +132,7 @@ class BackupsPage extends StatelessWidget {
                   );
                 },
               ),
-              orElse: () => const Loading(useScaffold: false),
-            ),
+            },
           ),
         ),
       ),

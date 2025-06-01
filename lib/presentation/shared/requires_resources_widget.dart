@@ -11,20 +11,19 @@ class RequiresDownloadedResourcesWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<SettingsBloc, SettingsState>(
-      builder: (context, state) => state.map(
-        loading: (_) => const CircularProgressIndicator(),
-        loaded: (state) => state.resourceVersion <= 0
-            ? GestureDetector(
-                onTap: () => showDialog(context: context, builder: (context) => const CheckForResourceUpdatesDialog()),
-                child: AbsorbPointer(
-                  child: Opacity(
-                    opacity: 0.5,
-                    child: child,
-                  ),
-                ),
-              )
-            : child,
-      ),
+      builder: (context, state) => switch (state) {
+        SettingsStateLoading() => const CircularProgressIndicator(),
+        final SettingsStateLoaded state when state.resourceVersion <= 0 => GestureDetector(
+          onTap: () => showDialog(context: context, builder: (context) => const CheckForResourceUpdatesDialog()),
+          child: AbsorbPointer(
+            child: Opacity(
+              opacity: 0.5,
+              child: child,
+            ),
+          ),
+        ),
+        SettingsStateLoaded() => child,
+      },
     );
   }
 }

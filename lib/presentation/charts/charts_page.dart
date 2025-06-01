@@ -308,8 +308,9 @@ class _TopCharacters extends StatelessWidget {
       chart: SizedBox(
         height: _topCardBoxHeight,
         child: BlocBuilder<ChartTopsBloc, ChartTopsState>(
-          builder: (context, state) => state.maybeMap(
-            loaded: (state) => ListView.builder(
+          builder: (context, state) => switch (state) {
+            ChartTopsStateLoading() => const Loading(useScaffold: false),
+            ChartTopsStateLoaded() => ListView.builder(
               physics: const BouncingScrollPhysics(),
               scrollDirection: Axis.horizontal,
               itemCount: _topCharacterTypes.length,
@@ -360,8 +361,7 @@ class _TopCharacters extends StatelessWidget {
                 );
               },
             ),
-            orElse: () => const Loading(useScaffold: false),
-          ),
+          },
         ),
       ),
     );
@@ -379,8 +379,9 @@ class _TopWeapons extends StatelessWidget {
       chart: SizedBox(
         height: _topCardBoxHeight,
         child: BlocBuilder<ChartTopsBloc, ChartTopsState>(
-          builder: (context, state) => state.maybeMap(
-            loaded: (state) => ListView.builder(
+          builder: (context, state) => switch (state) {
+            ChartTopsStateLoading() => const Loading(useScaffold: false),
+            ChartTopsStateLoaded() => ListView.builder(
               physics: const BouncingScrollPhysics(),
               scrollDirection: Axis.horizontal,
               itemCount: _topWeaponTypes.length,
@@ -431,8 +432,7 @@ class _TopWeapons extends StatelessWidget {
                 );
               },
             ),
-            orElse: () => const Loading(useScaffold: false),
-          ),
+          },
         ),
       ),
     );
@@ -450,8 +450,9 @@ class _Elements extends StatelessWidget {
     return _Chart(
       title: s.elements,
       chart: BlocBuilder<ChartElementsBloc, ChartElementsState>(
-        builder: (context, state) => state.maybeMap(
-          loaded: (state) => ChartCard(
+        builder: (context, state) => switch (state) {
+          ChartElementsStateLoading() => const Loading(useScaffold: false),
+          ChartElementsStateLoaded() => ChartCard(
             width: mq.size.width,
             height: _defaultChartHeight,
             title: s.mostAndLeastReleased,
@@ -503,8 +504,7 @@ class _Elements extends StatelessWidget {
                     ),
                   ),
           ),
-          orElse: () => const Loading(useScaffold: false),
-        ),
+        },
       ),
     );
   }
@@ -531,7 +531,7 @@ class _ElementsWrap extends StatelessWidget {
               width: width,
               color: e.getElementColor(true),
               text: s.translateElementType(e),
-              selected: selectedElementTypes.isNotEmpty ? selectedElementTypes.contains(e) : true,
+              selected: selectedElementTypes.isNotEmpty || selectedElementTypes.contains(e),
               tap: () => context.read<ChartElementsBloc>().add(ChartElementsEvent.elementSelected(type: e)),
             ),
           )
@@ -557,36 +557,38 @@ class _Birthdays extends StatelessWidget {
         title: s.mostAndLeastRepeated,
         titleMargin: const EdgeInsets.only(bottom: 20),
         child: BlocBuilder<ChartBirthdaysBloc, ChartBirthdaysState>(
-          builder: (context, state) => state.maybeMap(
-            loaded: (state) {
-              if (state.birthdays.isEmpty) {
-                return NothingFoundColumn(msg: s.nothingToShow);
-              }
-              final maxYValueForBirthdays = state.birthdays.map((e) => e.items.length).reduce(max).toDouble();
-              return VerticalBarChart(
-                items: state.birthdays
-                    .mapIndex(
-                      (e, i) => VerticalBarDataModel(
-                        i,
-                        currentMonth == e.month ? theme.colorScheme.primary : theme.colorScheme.primary.withValues(alpha: 0.65),
-                        e.month,
-                        e.items.length.toDouble(),
-                      ),
-                    )
-                    .toList(),
-                maxY: maxYValueForBirthdays,
-                interval: (maxYValueForBirthdays ~/ 5).toDouble(),
-                getBottomText: (value) => _monthNames[value.toInt() - 1],
-                getLeftText: (value) => value.toInt().toString(),
-                rotateBottomText: true,
-                onBarChartTap: (index, _) => showDialog(
-                  context: context,
-                  builder: (_) => BirthdaysPerMonthDialog(month: index + 1),
-                ),
-              );
-            },
-            orElse: () => const Loading(useScaffold: false),
-          ),
+          builder: (context, state) {
+            switch (state) {
+              case ChartBirthdaysStateLoading():
+                return const Loading(useScaffold: false);
+              case ChartBirthdaysStateLoaded():
+                if (state.birthdays.isEmpty) {
+                  return NothingFoundColumn(msg: s.nothingToShow);
+                }
+                final maxYValueForBirthdays = state.birthdays.map((e) => e.items.length).reduce(max).toDouble();
+                return VerticalBarChart(
+                  items: state.birthdays
+                      .mapIndex(
+                        (e, i) => VerticalBarDataModel(
+                          i,
+                          currentMonth == e.month ? theme.colorScheme.primary : theme.colorScheme.primary.withValues(alpha: 0.65),
+                          e.month,
+                          e.items.length.toDouble(),
+                        ),
+                      )
+                      .toList(),
+                  maxY: maxYValueForBirthdays,
+                  interval: (maxYValueForBirthdays ~/ 5).toDouble(),
+                  getBottomText: (value) => _monthNames[value.toInt() - 1],
+                  getLeftText: (value) => value.toInt().toString(),
+                  rotateBottomText: true,
+                  onBarChartTap: (index, _) => showDialog(
+                    context: context,
+                    builder: (_) => BirthdaysPerMonthDialog(month: index + 1),
+                  ),
+                );
+            }
+          },
         ),
       ),
     );
@@ -608,8 +610,9 @@ class _AscensionStats extends StatelessWidget {
     return _Chart(
       title: s.ascensionStats,
       chart: BlocBuilder<ChartAscensionStatsBloc, ChartAscensionStatsState>(
-        builder: (context, state) => state.maybeMap(
-          loaded: (state) => ChartCard(
+        builder: (context, state) => switch (state) {
+          ChartAscensionStatsStateLoading() => const Loading(useScaffold: false),
+          ChartAscensionStatsStateLoaded() => ChartCard(
             width: mq.size.width,
             height: _defaultChartHeight,
             title: s.mostAndLeastRepeated,
@@ -685,8 +688,7 @@ class _AscensionStats extends StatelessWidget {
                     ),
                   ),
           ),
-          orElse: () => const Loading(useScaffold: false),
-        ),
+        },
       ),
     );
   }
@@ -708,33 +710,32 @@ class _Regions extends StatelessWidget {
         title: s.mostAndLeastRepeated,
         titleMargin: const EdgeInsets.only(bottom: 20),
         child: BlocBuilder<ChartRegionsBloc, ChartRegionsState>(
-          builder: (context, state) => state.maybeMap(
-            loaded: (state) => state.items.isEmpty
-                ? NothingFoundColumn(msg: s.nothingToShow)
-                : VerticalBarChart(
-                    items: state.items
-                        .mapIndex(
-                          (e, i) => VerticalBarDataModel(
-                            i,
-                            theme.colorScheme.primary,
-                            e.regionType.index,
-                            e.quantity.toDouble(),
-                            useIndexAsX: true,
-                          ),
-                        )
-                        .toList(),
-                    maxY: state.maxCount.toDouble(),
-                    interval: (state.maxCount * 0.2).roundToDouble(),
-                    getBottomText: (value) => s.translateRegionType(state.items[value.toInt()].regionType),
-                    getLeftText: (value) => value.toInt().toString(),
-                    rotateBottomText: true,
-                    onBarChartTap: (index, _) => showDialog(
-                      context: context,
-                      builder: (_) => CharactersPerRegionDialog(regionType: state.items[index].regionType),
+          builder: (context, state) => switch (state) {
+            ChartRegionsStateLoading() => const Loading(useScaffold: false),
+            final ChartRegionsStateLoaded state when state.items.isEmpty => NothingFoundColumn(msg: s.nothingToShow),
+            ChartRegionsStateLoaded() => VerticalBarChart(
+              items: state.items
+                  .mapIndex(
+                    (e, i) => VerticalBarDataModel(
+                      i,
+                      theme.colorScheme.primary,
+                      e.regionType.index,
+                      e.quantity.toDouble(),
+                      useIndexAsX: true,
                     ),
-                  ),
-            orElse: () => const Loading(useScaffold: false),
-          ),
+                  )
+                  .toList(),
+              maxY: state.maxCount.toDouble(),
+              interval: (state.maxCount * 0.2).roundToDouble(),
+              getBottomText: (value) => s.translateRegionType(state.items[value.toInt()].regionType),
+              getLeftText: (value) => value.toInt().toString(),
+              rotateBottomText: true,
+              onBarChartTap: (index, _) => showDialog(
+                context: context,
+                builder: (_) => CharactersPerRegionDialog(regionType: state.items[index].regionType),
+              ),
+            ),
+          },
         ),
       ),
     );
@@ -757,43 +758,42 @@ class _Genders extends StatelessWidget {
         title: s.perRegion,
         titleMargin: const EdgeInsets.only(bottom: 20),
         child: BlocBuilder<ChartGendersBloc, ChartGendersState>(
-          builder: (context, state) => state.maybeMap(
-            loaded: (state) => state.genders.isEmpty
-                ? NothingFoundColumn(msg: s.nothingToShow)
-                : VerticalBarChart(
-                    items: state.genders.mapIndex((e, i) => VerticalBarDataModel(i, theme.colorScheme.primary, i, 0)).toList(),
-                    maxY: state.maxCount.toDouble(),
-                    interval: (state.maxCount * 0.2).roundToDouble(),
-                    getBottomText: (value) => s.translateRegionType(state.genders[value.toInt()].regionType),
-                    getLeftText: (value) => value.toInt().toString(),
-                    rotateBottomText: true,
-                    onBarChartTap: (indexA, indexB) => showDialog(
-                      context: context,
-                      builder: (_) => CharactersPerRegionGenderDialog(
-                        regionType: state.genders[indexA].regionType,
-                        onlyFemales: indexB.isOdd,
-                      ),
-                    ),
-                    getBarChartRodData: (x) {
-                      final item = state.genders[x];
-                      return [
-                        BarChartRodData(
-                          toY: item.maleCount.toDouble(),
-                          color: Colors.blue,
-                          borderRadius: BorderRadius.zero,
-                          width: 10,
-                        ),
-                        BarChartRodData(
-                          toY: item.femaleCount.toDouble(),
-                          color: Colors.red,
-                          borderRadius: BorderRadius.zero,
-                          width: 10,
-                        ),
-                      ];
-                    },
+          builder: (context, state) => switch (state) {
+            ChartGendersStateLoading() => const Loading(useScaffold: false),
+            final ChartGendersStateLoaded state when state.genders.isEmpty => NothingFoundColumn(msg: s.nothingToShow),
+            ChartGendersStateLoaded() => VerticalBarChart(
+              items: state.genders.mapIndex((e, i) => VerticalBarDataModel(i, theme.colorScheme.primary, i, 0)).toList(),
+              maxY: state.maxCount.toDouble(),
+              interval: (state.maxCount * 0.2).roundToDouble(),
+              getBottomText: (value) => s.translateRegionType(state.genders[value.toInt()].regionType),
+              getLeftText: (value) => value.toInt().toString(),
+              rotateBottomText: true,
+              onBarChartTap: (indexA, indexB) => showDialog(
+                context: context,
+                builder: (_) => CharactersPerRegionGenderDialog(
+                  regionType: state.genders[indexA].regionType,
+                  onlyFemales: indexB.isOdd,
+                ),
+              ),
+              getBarChartRodData: (x) {
+                final item = state.genders[x];
+                return [
+                  BarChartRodData(
+                    toY: item.maleCount.toDouble(),
+                    color: Colors.blue,
+                    borderRadius: BorderRadius.zero,
+                    width: 10,
                   ),
-            orElse: () => const Loading(useScaffold: false),
-          ),
+                  BarChartRodData(
+                    toY: item.femaleCount.toDouble(),
+                    color: Colors.red,
+                    borderRadius: BorderRadius.zero,
+                    width: 10,
+                  ),
+                ];
+              },
+            ),
+          },
         ),
       ),
     );

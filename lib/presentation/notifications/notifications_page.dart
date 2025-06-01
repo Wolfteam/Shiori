@@ -50,28 +50,22 @@ class _NotificationsPageState extends State<NotificationsPage> with SingleTicker
         ),
         body: SafeArea(
           child: BlocBuilder<NotificationsBloc, NotificationsState>(
-            builder: (ctx, state) => state.map(
-              initial: (state) {
-                if (state.notifications.isEmpty) {
-                  return NothingFoundColumn(msg: s.startByCreatingANotification);
-                }
-
-                return GroupedListView<models.NotificationItem, String>(
-                  elements: state.notifications,
-                  controller: scrollController,
-                  groupBy: (item) => s.translateAppNotificationType(item.type),
-                  itemBuilder: (context, element) => _NotificationItem(
-                    useTwentyFourHoursFormat: state.useTwentyFourHoursFormat,
-                    element: element,
+            builder: (ctx, state) => state.notifications.isEmpty
+                ? NothingFoundColumn(msg: s.startByCreatingANotification)
+                : GroupedListView<models.NotificationItem, String>(
+                    elements: state.notifications,
+                    controller: scrollController,
+                    groupBy: (item) => s.translateAppNotificationType(item.type),
+                    itemBuilder: (context, element) => _NotificationItem(
+                      useTwentyFourHoursFormat: state.useTwentyFourHoursFormat,
+                      element: element,
+                    ),
+                    groupSeparatorBuilder: (type) => Container(
+                      color: theme.colorScheme.secondary.withValues(alpha: 0.5),
+                      padding: Styles.edgeInsetAll5,
+                      child: Text(type, style: theme.textTheme.titleLarge),
+                    ),
                   ),
-                  groupSeparatorBuilder: (type) => Container(
-                    color: theme.colorScheme.secondary.withValues(alpha: 0.5),
-                    padding: Styles.edgeInsetAll5,
-                    child: Text(type, style: theme.textTheme.titleLarge),
-                  ),
-                );
-              },
-            ),
           ),
         ),
         //we use a builder here to get the scaffold context

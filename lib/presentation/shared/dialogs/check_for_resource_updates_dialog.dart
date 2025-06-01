@@ -16,8 +16,28 @@ class CheckForResourceUpdatesDialog extends StatelessWidget {
     return BlocProvider<CheckForResourceUpdatesBloc>(
       create: (context) => Injection.checkForResourceUpdatesBlocBloc..add(const CheckForResourceUpdatesEvent.init()),
       child: BlocBuilder<CheckForResourceUpdatesBloc, CheckForResourceUpdatesState>(
-        builder: (context, state) => state.maybeMap(
-          loaded: (state) => AlertDialog(
+        builder: (context, state) => switch (state) {
+          CheckForResourceUpdatesStateLoading() => AlertDialog(
+            title: Text(s.checkForResourceUpdates),
+            content: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Text(s.checkingForResourceUpdates),
+                LinearProgressIndicator(
+                  valueColor: AlwaysStoppedAnimation<Color>(theme.colorScheme.primary),
+                  backgroundColor: Colors.transparent,
+                ),
+              ],
+            ),
+            actions: [
+              TextButton(
+                onPressed: () => Navigator.pop(context, false),
+                child: Text(s.cancel),
+              ),
+            ],
+          ),
+          CheckForResourceUpdatesStateLoaded() => AlertDialog(
             title: Text(s.checkForResourceUpdates),
             content: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -49,7 +69,8 @@ class CheckForResourceUpdatesDialog extends StatelessWidget {
               ),
               if (state.updateResultType != AppResourceUpdateResultType.updatesAvailable)
                 FilledButton(
-                  onPressed: () => context.read<CheckForResourceUpdatesBloc>().add(const CheckForResourceUpdatesEvent.checkForUpdates()),
+                  onPressed: () =>
+                      context.read<CheckForResourceUpdatesBloc>().add(const CheckForResourceUpdatesEvent.checkForUpdates()),
                   child: Text(s.check),
                 ),
               if (state.updateResultType == AppResourceUpdateResultType.updatesAvailable)
@@ -59,27 +80,7 @@ class CheckForResourceUpdatesDialog extends StatelessWidget {
                 ),
             ],
           ),
-          orElse: () => AlertDialog(
-            title: Text(s.checkForResourceUpdates),
-            content: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Text(s.checkingForResourceUpdates),
-                LinearProgressIndicator(
-                  valueColor: AlwaysStoppedAnimation<Color>(theme.colorScheme.primary),
-                  backgroundColor: Colors.transparent,
-                ),
-              ],
-            ),
-            actions: [
-              TextButton(
-                onPressed: () => Navigator.pop(context, false),
-                child: Text(s.cancel),
-              ),
-            ],
-          ),
-        ),
+        },
       ),
     );
   }

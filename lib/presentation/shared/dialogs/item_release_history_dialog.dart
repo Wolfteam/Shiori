@@ -48,9 +48,9 @@ class ItemReleaseHistoryDialog extends StatelessWidget {
         content: SizedBox(
           width: MediaQuery.of(context).getWidthForDialogs(),
           child: BlocBuilder<ItemReleaseHistoryBloc, ItemReleaseHistoryState>(
-            builder: (context, state) => state.map(
-              loading: (_) => const Loading(useScaffold: false),
-              initial: (state) => Column(
+            builder: (context, state) => switch (state) {
+              ItemReleaseHistoryStateLoading() => const Loading(useScaffold: false),
+              ItemReleaseHistoryStateInitial() => Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: state.history
                     .mapIndex(
@@ -63,7 +63,7 @@ class ItemReleaseHistoryDialog extends StatelessWidget {
                     )
                     .toList(),
               ),
-            ),
+            },
           ),
         ),
       ),

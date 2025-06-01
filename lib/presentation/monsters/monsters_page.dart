@@ -37,9 +37,9 @@ class MonstersPage extends StatelessWidget {
     return BlocProvider(
       create: (context) => Injection.monstersBloc..add(MonstersEvent.init(excludeKeys: excludeKeys)),
       child: BlocBuilder<MonstersBloc, MonstersState>(
-        builder: (context, state) => state.map(
-          loading: (_) => const Loading(),
-          loaded: (state) => SliverScaffoldWithFab(
+        builder: (context, state) => switch (state) {
+          MonstersStateLoading() => const Loading(),
+          MonstersStateLoaded() => SliverScaffoldWithFab(
             appbar: AppBar(title: Text(isInSelectionMode ? s.selectAMonster : s.monsters)),
             slivers: [
               SliverPageFilter(
@@ -70,7 +70,7 @@ class MonstersPage extends StatelessWidget {
                 const SliverNothingFound(),
             ],
           ),
-        ),
+        },
       ),
     );
   }

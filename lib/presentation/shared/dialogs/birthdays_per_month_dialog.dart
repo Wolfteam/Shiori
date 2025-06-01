@@ -48,28 +48,29 @@ class BirthdaysPerMonthDialog extends StatelessWidget {
           ),
         ],
         content: BlocBuilder<CharactersBirthdaysPerMonthBloc, CharactersBirthdaysPerMonthState>(
-          builder: (context, state) => state.maybeMap(
-            loaded: (state) => state.characters.isEmpty
-                ? const NothingFoundColumn(mainAxisSize: MainAxisSize.min)
-                : SizedBox(
-                    height: mq.getHeightForDialogs(state.characters.length + state.characters.length ~/ 2),
-                    width: mq.getWidthForDialogs(),
-                    child: ListView.builder(
-                      itemCount: state.characters.length,
-                      itemBuilder: (context, index) {
-                        final char = state.characters[index];
-                        return DialogListItemRow(
-                          itemType: ItemType.character,
-                          itemKey: char.key,
-                          image: char.iconImage,
-                          name: char.name,
-                          getRowEndWidget: (_) => _RowEndColumn(character: char),
-                        );
-                      },
-                    ),
-                  ),
-            orElse: () => const Loading(useScaffold: false, mainAxisSize: MainAxisSize.min),
-          ),
+          builder: (context, state) => switch (state) {
+            CharactersBirthdaysPerMonthStateLoading() => const Loading(useScaffold: false, mainAxisSize: MainAxisSize.min),
+            final CharactersBirthdaysPerMonthStateLoaded state when state.characters.isEmpty => const NothingFoundColumn(
+              mainAxisSize: MainAxisSize.min,
+            ),
+            CharactersBirthdaysPerMonthStateLoaded() => SizedBox(
+              height: mq.getHeightForDialogs(state.characters.length + state.characters.length ~/ 2),
+              width: mq.getWidthForDialogs(),
+              child: ListView.builder(
+                itemCount: state.characters.length,
+                itemBuilder: (context, index) {
+                  final char = state.characters[index];
+                  return DialogListItemRow(
+                    itemType: ItemType.character,
+                    itemKey: char.key,
+                    image: char.iconImage,
+                    name: char.name,
+                    getRowEndWidget: (_) => _RowEndColumn(character: char),
+                  );
+                },
+              ),
+            ),
+          },
         ),
       ),
     );

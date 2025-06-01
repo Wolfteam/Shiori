@@ -78,14 +78,16 @@ class _ContentState extends State<_Content> {
     return BlocConsumer<WishSimulatorBloc, WishSimulatorState>(
       listener: (context, state) {
         if (_pageController.hasClients) {
-          state.maybeMap(
-            loaded: (state) => _pageController.jumpToPage(
-              state.selectedBannerIndex,
-              // duration: const Duration(milliseconds: 300),
-              // curve: Curves.easeInOut,
-            ),
-            orElse: () {},
-          );
+          switch (state) {
+            case WishSimulatorStateLoaded():
+              _pageController.jumpToPage(
+                state.selectedBannerIndex,
+                // duration: const Duration(milliseconds: 300),
+                // curve: Curves.easeInOut,
+              );
+            default:
+              break;
+          }
         }
       },
       builder: (context, state) => ResponsiveBuilder(
@@ -94,10 +96,21 @@ class _ContentState extends State<_Content> {
             ? _MobileLandscapeLayout(
                 pageViewKey: _pageViewKey,
                 bannerMaxHeight: bannerMaxHeight,
-                state: state,
+                state: switch (state) {
+                  WishSimulatorStateLoading() => null,
+                  WishSimulatorStateLoaded() => state,
+                },
                 pageController: _pageController,
               )
-            : _Layout(pageViewKey: _pageViewKey, bannerMaxHeight: bannerMaxHeight, state: state, pageController: _pageController),
+            : _Layout(
+                pageViewKey: _pageViewKey,
+                bannerMaxHeight: bannerMaxHeight,
+                state: switch (state) {
+                  WishSimulatorStateLoading() => null,
+                  WishSimulatorStateLoaded() => state,
+                },
+                pageController: _pageController,
+              ),
       ),
     );
   }
@@ -106,7 +119,7 @@ class _ContentState extends State<_Content> {
 class _MobileLandscapeLayout extends StatelessWidget {
   final Key pageViewKey;
   final double bannerMaxHeight;
-  final WishSimulatorState state;
+  final WishSimulatorStateLoaded? state;
   final PageController pageController;
 
   const _MobileLandscapeLayout({
@@ -144,25 +157,22 @@ class _MobileLandscapeLayout extends StatelessWidget {
                   constraints: BoxConstraints(
                     maxHeight: bannerMaxHeight,
                   ),
-                  child: state.map(
-                    loading: (_) => const Loading(useScaffold: false),
-                    loaded: (state) => _CenterPageView(
-                      pageViewKey: pageViewKey,
-                      banners: state.period.banners,
-                      controller: pageController,
-                    ),
-                  ),
+                  child: state == null
+                      ? const Loading(useScaffold: false)
+                      : _CenterPageView(
+                          pageViewKey: pageViewKey,
+                          banners: state!.period.banners,
+                          controller: pageController,
+                        ),
                 ),
               ),
-              state.map(
-                loading: (_) => const SizedBox.shrink(),
-                loaded: (state) => _BottomButtons(
-                  iconImage: state.wishIconImage,
+              if (state != null)
+                _BottomButtons(
+                  iconImage: state!.wishIconImage,
                   height: _wishIconHeight,
-                  selectedBannerIndex: state.selectedBannerIndex,
-                  period: state.period,
+                  selectedBannerIndex: state!.selectedBannerIndex,
+                  period: state!.period,
                 ),
-              ),
             ],
           ),
         ),
@@ -174,7 +184,7 @@ class _MobileLandscapeLayout extends StatelessWidget {
 class _Layout extends StatelessWidget {
   final Key pageViewKey;
   final double bannerMaxHeight;
-  final WishSimulatorState state;
+  final WishSimulatorStateLoaded? state;
   final PageController pageController;
 
   const _Layout({
@@ -202,26 +212,24 @@ class _Layout extends StatelessWidget {
           ),
           child: FractionallySizedBox(
             widthFactor: 0.9,
-            child: state.map(
-              loading: (_) => const Loading(useScaffold: false),
-              loaded: (state) => _CenterPageView(
-                pageViewKey: pageViewKey,
-                banners: state.period.banners,
-                controller: pageController,
-              ),
-            ),
+            child: state == null
+                ? const Loading(useScaffold: false)
+                : _CenterPageView(
+                    pageViewKey: pageViewKey,
+                    banners: state!.period.banners,
+                    controller: pageController,
+                  ),
           ),
         ),
         Flexible(
-          child: state.map(
-            loading: (_) => const SizedBox.shrink(),
-            loaded: (state) => _BottomButtons(
-              iconImage: state.wishIconImage,
-              height: _wishIconHeight,
-              selectedBannerIndex: state.selectedBannerIndex,
-              period: state.period,
-            ),
-          ),
+          child: state == null
+              ? const SizedBox.shrink()
+              : _BottomButtons(
+                  iconImage: state!.wishIconImage,
+                  height: _wishIconHeight,
+                  selectedBannerIndex: state!.selectedBannerIndex,
+                  period: state!.period,
+                ),
         ),
       ],
     );
@@ -229,10 +237,10 @@ class _Layout extends StatelessWidget {
 }
 
 class _FeaturedItems extends StatelessWidget {
-  final WishSimulatorState state;
+  final WishSimulatorStateLoaded? state;
   final bool useColumn;
 
-  bool get showSettingsButton => state.maybeMap(loaded: (_) => true, orElse: () => false);
+  bool get showSettingsButton => state != null;
 
   const _FeaturedItems({
     required this.state,
@@ -261,16 +269,15 @@ class _FeaturedItems extends StatelessWidget {
             child: Container(
               height: _topHeight,
               alignment: Alignment.center,
-              child: state.map(
-                loading: (_) => const SizedBox.expand(),
-                loaded: (state) => _FeaturedItemImages(
-                  selectedBannerIndex: state.selectedBannerIndex,
-                  period: state.period,
-                  width: imageWidth,
-                  normalHeight: imageHeight,
-                  selectedHeight: selectedImageHeight,
-                ),
-              ),
+              child: state == null
+                  ? const SizedBox.expand()
+                  : _FeaturedItemImages(
+                      selectedBannerIndex: state!.selectedBannerIndex,
+                      period: state!.period,
+                      width: imageWidth,
+                      normalHeight: imageHeight,
+                      selectedHeight: selectedImageHeight,
+                    ),
             ),
           ),
           Flexible(
@@ -292,17 +299,16 @@ class _FeaturedItems extends StatelessWidget {
         ),
         Expanded(
           flex: mainContentFlex,
-          child: state.map(
-            loading: (_) => const SizedBox.shrink(),
-            loaded: (state) => _FeaturedItemImages(
-              selectedBannerIndex: state.selectedBannerIndex,
-              period: state.period,
-              width: imageWidth,
-              normalHeight: imageHeight,
-              selectedHeight: selectedImageHeight,
-              axis: Axis.vertical,
-            ),
-          ),
+          child: state == null
+              ? const SizedBox.shrink()
+              : _FeaturedItemImages(
+                  selectedBannerIndex: state!.selectedBannerIndex,
+                  period: state!.period,
+                  width: imageWidth,
+                  normalHeight: imageHeight,
+                  selectedHeight: selectedImageHeight,
+                  axis: Axis.vertical,
+                ),
         ),
         Flexible(
           flex: buttonFlex,

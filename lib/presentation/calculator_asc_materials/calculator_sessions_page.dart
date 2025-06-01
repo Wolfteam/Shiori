@@ -46,9 +46,9 @@ class _BodyState extends State<_Body> with SingleTickerProviderStateMixin, AppFa
     final s = S.of(context);
     return BlocBuilder<CalculatorAscMaterialsSessionsBloc, CalculatorAscMaterialsSessionsState>(
       builder: (ctx, state) => Scaffold(
-        appBar: state.map(
-          loading: (_) => null,
-          loaded: (state) => AppBar(
+        appBar: switch (state) {
+          CalculatorAscMaterialsSessionsStateLoading() => null,
+          CalculatorAscMaterialsSessionsStateLoaded() => AppBar(
             title: Text(s.sessions),
             actions: [
               if (state.sessions.length > 1)
@@ -70,7 +70,7 @@ class _BodyState extends State<_Body> with SingleTickerProviderStateMixin, AppFa
               ),
             ],
           ),
-        ),
+        },
         floatingActionButton: AppFab(
           onPressed: () => _showAddSessionDialog(),
           icon: const Icon(Icons.add),
@@ -81,20 +81,18 @@ class _BodyState extends State<_Body> with SingleTickerProviderStateMixin, AppFa
         body: SafeArea(
           child: Container(
             padding: Styles.edgeInsetVertical5,
-            child: state.map(
-              loading: (_) => const Loading(useScaffold: false),
-              loaded: (state) {
-                if (state.sessions.isEmpty) {
-                  return NothingFoundColumn(msg: s.noSessionsHaveBeenCreated);
-                }
-                return ListView.separated(
-                  controller: scrollController,
-                  itemCount: state.sessions.length,
-                  separatorBuilder: (ctx, index) => const Divider(height: 1),
-                  itemBuilder: (ctx, index) => SessionListItem(session: state.sessions[index]),
-                );
-              },
-            ),
+            child: switch (state) {
+              CalculatorAscMaterialsSessionsStateLoading() => const Loading(useScaffold: false),
+              final CalculatorAscMaterialsSessionsStateLoaded state when state.sessions.isEmpty => NothingFoundColumn(
+                msg: s.noSessionsHaveBeenCreated,
+              ),
+              CalculatorAscMaterialsSessionsStateLoaded() => ListView.separated(
+                controller: scrollController,
+                itemCount: state.sessions.length,
+                separatorBuilder: (ctx, index) => const Divider(height: 1),
+                itemBuilder: (ctx, index) => SessionListItem(session: state.sessions[index]),
+              ),
+            },
           ),
         ),
       ),

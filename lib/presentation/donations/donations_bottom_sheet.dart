@@ -46,62 +46,65 @@ class _BodyState extends State<_Body> {
     final s = S.of(context);
     return BlocConsumer<DonationsBloc, DonationsState>(
       listener: (ctx, state) {
-        state.maybeMap(
-          purchaseCompleted: (state) => _handlePurchaseOrRestoreCompleted(true, state.error, context),
-          restoreCompleted: (state) => _handlePurchaseOrRestoreCompleted(false, state.error, context),
-          orElse: () {},
-        );
+        switch (state) {
+          case DonationsStatePurchaseCompleted():
+            _handlePurchaseOrRestoreCompleted(true, state.error, context);
+          case DonationsStateRestoreCompleted():
+            _handlePurchaseOrRestoreCompleted(false, state.error, context);
+          default:
+            break;
+        }
       },
-      builder: (ctx, state) => state.maybeMap(
-        initial: (state) => state.noInternetConnection || !state.isInitialized || !state.canMakePurchases
-            ? _Error(
-                noInternetConnection: state.noInternetConnection,
-                isInitialized: state.isInitialized,
-                canMakePurchases: state.canMakePurchases,
-              )
-            : Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Text(
-                    s.donationMsg,
-                    textAlign: TextAlign.center,
-                    style: Theme.of(context).textTheme.titleMedium!.copyWith(fontWeight: FontWeight.bold),
-                  ),
-                  ...state.packages.map(
-                    (e) => _DonationItem(
-                      item: e,
-                      isSelected: _selected == e,
-                      onTap: () => setState(() => _selected = e),
-                    ),
-                  ),
-                  CommonButtonBar(
-                    children: <Widget>[
-                      TextButton(
-                        onPressed: () => Navigator.pop(context),
-                        child: Text(s.cancel),
-                      ),
-                      if (state.packages.isNotEmpty && state.isInitialized)
-                        TextButton(
-                          onPressed: () => context.read<DonationsBloc>().add(const DonationsEvent.restorePurchases()),
-                          child: Text(s.restorePurchases),
-                        ),
-                      if (state.packages.isNotEmpty && state.isInitialized && _selected != null)
-                        FilledButton(
-                          onPressed: () => context.read<DonationsBloc>().add(
-                            DonationsEvent.purchase(
-                              identifier: _selected!.identifier,
-                              offeringIdentifier: _selected!.offeringIdentifier,
-                            ),
-                          ),
-                          child: Text(s.confirm),
-                        ),
-                    ],
-                  ),
-                ],
+      builder: (ctx, state) => switch (state) {
+        final DonationsStateInitial state when state.noInternetConnection || !state.isInitialized || !state.canMakePurchases =>
+          _Error(
+            noInternetConnection: state.noInternetConnection,
+            isInitialized: state.isInitialized,
+            canMakePurchases: state.canMakePurchases,
+          ),
+        DonationsStateInitial() => Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Text(
+              s.donationMsg,
+              textAlign: TextAlign.center,
+              style: Theme.of(context).textTheme.titleMedium!.copyWith(fontWeight: FontWeight.bold),
+            ),
+            ...state.packages.map(
+              (e) => _DonationItem(
+                item: e,
+                isSelected: _selected == e,
+                onTap: () => setState(() => _selected = e),
               ),
-        orElse: () => const Loading(useScaffold: false),
-      ),
+            ),
+            CommonButtonBar(
+              children: <Widget>[
+                TextButton(
+                  onPressed: () => Navigator.pop(context),
+                  child: Text(s.cancel),
+                ),
+                if (state.packages.isNotEmpty && state.isInitialized)
+                  TextButton(
+                    onPressed: () => context.read<DonationsBloc>().add(const DonationsEvent.restorePurchases()),
+                    child: Text(s.restorePurchases),
+                  ),
+                if (state.packages.isNotEmpty && state.isInitialized && _selected != null)
+                  FilledButton(
+                    onPressed: () => context.read<DonationsBloc>().add(
+                      DonationsEvent.purchase(
+                        identifier: _selected!.identifier,
+                        offeringIdentifier: _selected!.offeringIdentifier,
+                      ),
+                    ),
+                    child: Text(s.confirm),
+                  ),
+              ],
+            ),
+          ],
+        ),
+        _ => const Loading(useScaffold: false),
+      },
     );
   }
 
