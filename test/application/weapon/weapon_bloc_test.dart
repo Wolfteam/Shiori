@@ -29,7 +29,11 @@ void main() {
     final localeService = LocaleServiceImpl(settingsService);
     resourceService = getResourceService(settingsService);
     genshinService = GenshinServiceImpl(resourceService, localeService);
-    dataService = DataServiceImpl(genshinService, CalculatorAscMaterialsServiceImpl(genshinService, resourceService), resourceService);
+    dataService = DataServiceImpl(
+      genshinService,
+      CalculatorAscMaterialsServiceImpl(genshinService, resourceService),
+      resourceService,
+    );
 
     return Future(() async {
       await genshinService.init(AppLanguageType.english);
@@ -52,9 +56,10 @@ void main() {
 
   group('Load from key', () {
     void checkState(WeaponState state, bool isInInventory) {
-      state.map(
-        loading: (_) => throw Exception('Invalid state'),
-        loaded: (state) {
+      switch (state) {
+        case WeaponStateLoading():
+          throw Exception('Invalid state');
+        case WeaponStateLoaded():
           expect(state.key, key);
           expect(state.name, 'Aquila Favonia');
           checkAsset(state.fullImage);
@@ -71,8 +76,7 @@ void main() {
           expect(state.characters, isNotEmpty);
           expect(state.stats, isNotEmpty);
           expect(state.craftingMaterials, isEmpty);
-        },
-      );
+      }
     }
 
     blocTest<WeaponBloc, WeaponState>(

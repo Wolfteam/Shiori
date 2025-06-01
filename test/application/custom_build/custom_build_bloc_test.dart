@@ -203,24 +203,27 @@ void main() {
       'create',
       build: () => getBloc(),
       act: (bloc) => bloc.add(const CustomBuildEvent.load(initialTitle: 'DPS PRO')),
-      verify: (bloc) => bloc.state.maybeMap(
-        loaded: (state) {
-          final character = genshinService.characters.getCharactersForCard().first;
-          expect(state.title, 'DPS PRO');
-          expect(state.type, CharacterRoleType.dps);
-          expect(state.subType, CharacterRoleSubType.none);
-          expect(state.showOnCharacterDetail, true);
-          expect(state.isRecommended, false);
-          expect(state.character.key, character.key);
-          expect(state.weapons.isEmpty, true);
-          expect(state.artifacts.isEmpty, true);
-          expect(state.teamCharacters.isEmpty, true);
-          expect(state.notes.isEmpty, true);
-          expect(state.skillPriorities.isEmpty, true);
-          expect(state.subStatsSummary.isEmpty, true);
-        },
-        orElse: () => throw Exception('Invalid custom build state'),
-      ),
+      verify: (bloc) {
+        final state = bloc.state;
+        switch (state) {
+          case CustomBuildStateLoading():
+            throw Exception('Invalid custom build state');
+          case CustomBuildStateLoaded():
+            final character = genshinService.characters.getCharactersForCard().first;
+            expect(state.title, 'DPS PRO');
+            expect(state.type, CharacterRoleType.dps);
+            expect(state.subType, CharacterRoleSubType.none);
+            expect(state.showOnCharacterDetail, true);
+            expect(state.isRecommended, false);
+            expect(state.character.key, character.key);
+            expect(state.weapons.isEmpty, true);
+            expect(state.artifacts.isEmpty, true);
+            expect(state.teamCharacters.isEmpty, true);
+            expect(state.notes.isEmpty, true);
+            expect(state.skillPriorities.isEmpty, true);
+            expect(state.subStatsSummary.isEmpty, true);
+        }
+      },
     );
 
     int buildKey = 0;
@@ -232,23 +235,26 @@ void main() {
       },
       build: () => getBloc(),
       act: (bloc) => bloc.add(CustomBuildEvent.load(initialTitle: 'XXX', key: buildKey)),
-      verify: (bloc) => bloc.state.maybeMap(
-        loaded: (state) {
-          expect(state.title, '$keqingKey pro DPS');
-          expect(state.type, CharacterRoleType.dps);
-          expect(state.subType, CharacterRoleSubType.electro);
-          expect(state.showOnCharacterDetail, true);
-          expect(state.isRecommended, true);
-          expect(state.character.key, keqingKey);
-          expect(state.weapons.length == 1, true);
-          expect(state.artifacts.length == 5, true);
-          expect(state.teamCharacters.length == 3, true);
-          expect(state.notes.length == 1, true);
-          expect(state.skillPriorities.length == 3, true);
-          expect(state.subStatsSummary.isNotEmpty, true);
-        },
-        orElse: () => throw Exception('Invalid custom build state'),
-      ),
+      verify: (bloc) {
+        final state = bloc.state;
+        switch (state) {
+          case CustomBuildStateLoading():
+            throw Exception('Invalid custom build state');
+          case CustomBuildStateLoaded():
+            expect(state.title, '$keqingKey pro DPS');
+            expect(state.type, CharacterRoleType.dps);
+            expect(state.subType, CharacterRoleSubType.electro);
+            expect(state.showOnCharacterDetail, true);
+            expect(state.isRecommended, true);
+            expect(state.character.key, keqingKey);
+            expect(state.weapons.length == 1, true);
+            expect(state.artifacts.length == 5, true);
+            expect(state.teamCharacters.length == 3, true);
+            expect(state.notes.length == 1, true);
+            expect(state.skillPriorities.length == 3, true);
+            expect(state.subStatsSummary.isNotEmpty, true);
+        }
+      },
     );
   });
 
@@ -259,12 +265,15 @@ void main() {
       act: (bloc) => bloc
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
         ..add(const CustomBuildEvent.characterChanged(newKey: ganyuKey)),
-      verify: (bloc) => bloc.state.maybeMap(
-        loaded: (state) {
-          expect(state.character.key, ganyuKey);
-        },
-        orElse: () => throw Exception('Invalid custom build state'),
-      ),
+      verify: (bloc) {
+        final state = bloc.state;
+        switch (state) {
+          case CustomBuildStateLoading():
+            throw Exception('Invalid custom build state');
+          case CustomBuildStateLoaded():
+            expect(state.character.key, ganyuKey);
+        }
+      },
     );
 
     blocTest<CustomBuildBloc, CustomBuildState>(
@@ -273,12 +282,15 @@ void main() {
       act: (bloc) => bloc
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
         ..add(const CustomBuildEvent.titleChanged(newValue: 'KEQING PRO')),
-      verify: (bloc) => bloc.state.maybeMap(
-        loaded: (state) {
-          expect(state.title, 'KEQING PRO');
-        },
-        orElse: () => throw Exception('Invalid custom build state'),
-      ),
+      verify: (bloc) {
+        final state = bloc.state;
+        switch (state) {
+          case CustomBuildStateLoading():
+            throw Exception('Invalid custom build state');
+          case CustomBuildStateLoaded():
+            expect(state.title, 'KEQING PRO');
+        }
+      },
     );
 
     blocTest<CustomBuildBloc, CustomBuildState>(
@@ -287,12 +299,15 @@ void main() {
       act: (bloc) => bloc
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
         ..add(const CustomBuildEvent.roleChanged(newValue: CharacterRoleType.offFieldDps)),
-      verify: (bloc) => bloc.state.maybeMap(
-        loaded: (state) {
-          expect(state.type, CharacterRoleType.offFieldDps);
-        },
-        orElse: () => throw Exception('Invalid custom build state'),
-      ),
+      verify: (bloc) {
+        final state = bloc.state;
+        switch (state) {
+          case CustomBuildStateLoading():
+            throw Exception('Invalid custom build state');
+          case CustomBuildStateLoaded():
+            expect(state.type, CharacterRoleType.offFieldDps);
+        }
+      },
     );
 
     blocTest<CustomBuildBloc, CustomBuildState>(
@@ -301,12 +316,15 @@ void main() {
       act: (bloc) => bloc
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
         ..add(const CustomBuildEvent.subRoleChanged(newValue: CharacterRoleSubType.cryo)),
-      verify: (bloc) => bloc.state.maybeMap(
-        loaded: (state) {
-          expect(state.subType, CharacterRoleSubType.cryo);
-        },
-        orElse: () => throw Exception('Invalid custom build state'),
-      ),
+      verify: (bloc) {
+        final state = bloc.state;
+        switch (state) {
+          case CustomBuildStateLoading():
+            throw Exception('Invalid custom build state');
+          case CustomBuildStateLoaded():
+            expect(state.subType, CharacterRoleSubType.cryo);
+        }
+      },
     );
 
     blocTest<CustomBuildBloc, CustomBuildState>(
@@ -315,12 +333,15 @@ void main() {
       act: (bloc) => bloc
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
         ..add(const CustomBuildEvent.showOnCharacterDetailChanged(newValue: false)),
-      verify: (bloc) => bloc.state.maybeMap(
-        loaded: (state) {
-          expect(state.showOnCharacterDetail, false);
-        },
-        orElse: () => throw Exception('Invalid custom build state'),
-      ),
+      verify: (bloc) {
+        final state = bloc.state;
+        switch (state) {
+          case CustomBuildStateLoading():
+            throw Exception('Invalid custom build state');
+          case CustomBuildStateLoaded():
+            expect(state.showOnCharacterDetail, false);
+        }
+      },
     );
 
     blocTest<CustomBuildBloc, CustomBuildState>(
@@ -329,12 +350,15 @@ void main() {
       act: (bloc) => bloc
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
         ..add(const CustomBuildEvent.isRecommendedChanged(newValue: true)),
-      verify: (bloc) => bloc.state.maybeMap(
-        loaded: (state) {
-          expect(state.isRecommended, true);
-        },
-        orElse: () => throw Exception('Invalid custom build state'),
-      ),
+      verify: (bloc) {
+        final state = bloc.state;
+        switch (state) {
+          case CustomBuildStateLoading():
+            throw Exception('Invalid custom build state');
+          case CustomBuildStateLoaded():
+            expect(state.isRecommended, true);
+        }
+      },
     );
   });
 
@@ -346,12 +370,15 @@ void main() {
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
         ..add(const CustomBuildEvent.addNote(note: 'This build needs 200 ER'))
         ..add(const CustomBuildEvent.addNote(note: 'You need C6')),
-      verify: (bloc) => bloc.state.maybeMap(
-        loaded: (state) {
-          expect(state.notes.length == 2, true);
-        },
-        orElse: () => throw Exception('Invalid custom build state'),
-      ),
+      verify: (bloc) {
+        final state = bloc.state;
+        switch (state) {
+          case CustomBuildStateLoading():
+            throw Exception('Invalid custom build state');
+          case CustomBuildStateLoaded():
+            expect(state.notes.length == 2, true);
+        }
+      },
     );
 
     blocTest<CustomBuildBloc, CustomBuildState>(
@@ -371,12 +398,15 @@ void main() {
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
         ..add(const CustomBuildEvent.addNote(note: 'This build needs 200 ER'))
         ..add(const CustomBuildEvent.deleteNote(index: 0)),
-      verify: (bloc) => bloc.state.maybeMap(
-        loaded: (state) {
-          expect(state.notes.isEmpty, true);
-        },
-        orElse: () => throw Exception('Invalid custom build state'),
-      ),
+      verify: (bloc) {
+        final state = bloc.state;
+        switch (state) {
+          case CustomBuildStateLoading():
+            throw Exception('Invalid custom build state');
+          case CustomBuildStateLoaded():
+            expect(state.notes.isEmpty, true);
+        }
+      },
     );
 
     blocTest<CustomBuildBloc, CustomBuildState>(
@@ -398,12 +428,15 @@ void main() {
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
         ..add(const CustomBuildEvent.addSkillPriority(type: CharacterSkillType.elementalBurst))
         ..add(const CustomBuildEvent.addSkillPriority(type: CharacterSkillType.elementalSkill)),
-      verify: (bloc) => bloc.state.maybeMap(
-        loaded: (state) {
-          expect(state.skillPriorities.length == 2, true);
-        },
-        orElse: () => throw Exception('Invalid custom build state'),
-      ),
+      verify: (bloc) {
+        final state = bloc.state;
+        switch (state) {
+          case CustomBuildStateLoading():
+            throw Exception('Invalid custom build state');
+          case CustomBuildStateLoaded():
+            expect(state.skillPriorities.length == 2, true);
+        }
+      },
     );
 
     blocTest<CustomBuildBloc, CustomBuildState>(
@@ -414,12 +447,15 @@ void main() {
         ..add(const CustomBuildEvent.addSkillPriority(type: CharacterSkillType.elementalBurst))
         ..add(const CustomBuildEvent.addSkillPriority(type: CharacterSkillType.elementalSkill))
         ..add(const CustomBuildEvent.addSkillPriority(type: CharacterSkillType.elementalSkill)),
-      verify: (bloc) => bloc.state.maybeMap(
-        loaded: (state) {
-          expect(state.skillPriorities.length == 2, true);
-        },
-        orElse: () => throw Exception('Invalid custom build state'),
-      ),
+      verify: (bloc) {
+        final state = bloc.state;
+        switch (state) {
+          case CustomBuildStateLoading():
+            throw Exception('Invalid custom build state');
+          case CustomBuildStateLoaded():
+            expect(state.skillPriorities.length == 2, true);
+        }
+      },
     );
 
     blocTest<CustomBuildBloc, CustomBuildState>(
@@ -440,12 +476,15 @@ void main() {
         ..add(const CustomBuildEvent.addSkillPriority(type: CharacterSkillType.elementalBurst))
         ..add(const CustomBuildEvent.addSkillPriority(type: CharacterSkillType.normalAttack))
         ..add(const CustomBuildEvent.deleteSkillPriority(index: 1)),
-      verify: (bloc) => bloc.state.maybeMap(
-        loaded: (state) {
-          expect(state.skillPriorities.length == 1, true);
-        },
-        orElse: () => throw Exception('Invalid custom build state'),
-      ),
+      verify: (bloc) {
+        final state = bloc.state;
+        switch (state) {
+          case CustomBuildStateLoading():
+            throw Exception('Invalid custom build state');
+          case CustomBuildStateLoaded():
+            expect(state.skillPriorities.length == 1, true);
+        }
+      },
     );
 
     blocTest<CustomBuildBloc, CustomBuildState>(
@@ -467,13 +506,16 @@ void main() {
       act: (bloc) => bloc
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
         ..add(const CustomBuildEvent.addWeapon(key: aquilaFavoniaKey)),
-      verify: (bloc) => bloc.state.maybeMap(
-        loaded: (state) {
-          expect(state.weapons.length == 1, true);
-          expect(state.weapons.first.key == aquilaFavoniaKey, true);
-        },
-        orElse: () => throw Exception('Invalid custom build state'),
-      ),
+      verify: (bloc) {
+        final state = bloc.state;
+        switch (state) {
+          case CustomBuildStateLoading():
+            throw Exception('Invalid custom build state');
+          case CustomBuildStateLoaded():
+            expect(state.weapons.length == 1, true);
+            expect(state.weapons.first.key == aquilaFavoniaKey, true);
+        }
+      },
     );
 
     blocTest<CustomBuildBloc, CustomBuildState>(
@@ -503,12 +545,15 @@ void main() {
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
         ..add(const CustomBuildEvent.addWeapon(key: aquilaFavoniaKey))
         ..add(const CustomBuildEvent.weaponRefinementChanged(key: aquilaFavoniaKey, newValue: 5)),
-      verify: (bloc) => bloc.state.maybeMap(
-        loaded: (state) {
-          expect(state.weapons.first.refinement == 5, true);
-        },
-        orElse: () => throw Exception('Invalid custom build state'),
-      ),
+      verify: (bloc) {
+        final state = bloc.state;
+        switch (state) {
+          case CustomBuildStateLoading():
+            throw Exception('Invalid custom build state');
+          case CustomBuildStateLoaded():
+            expect(state.weapons.first.refinement == 5, true);
+        }
+      },
     );
 
     blocTest<CustomBuildBloc, CustomBuildState>(
@@ -528,12 +573,15 @@ void main() {
         ..add(const CustomBuildEvent.addWeapon(key: aquilaFavoniaKey))
         ..add(const CustomBuildEvent.weaponRefinementChanged(key: aquilaFavoniaKey, newValue: 5))
         ..add(const CustomBuildEvent.weaponRefinementChanged(key: aquilaFavoniaKey, newValue: 5)),
-      verify: (bloc) => bloc.state.maybeMap(
-        loaded: (state) {
-          expect(state.weapons.first.refinement == 5, true);
-        },
-        orElse: () => throw Exception('Invalid custom build state'),
-      ),
+      verify: (bloc) {
+        final state = bloc.state;
+        switch (state) {
+          case CustomBuildStateLoading():
+            throw Exception('Invalid custom build state');
+          case CustomBuildStateLoaded():
+            expect(state.weapons.first.refinement == 5, true);
+        }
+      },
     );
 
     blocTest<CustomBuildBloc, CustomBuildState>(
@@ -552,12 +600,15 @@ void main() {
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
         ..add(const CustomBuildEvent.weaponRefinementChanged(key: aquilaFavoniaKey, newValue: 5))
         ..add(const CustomBuildEvent.deleteWeapon(key: aquilaFavoniaKey)),
-      verify: (bloc) => bloc.state.maybeMap(
-        loaded: (state) {
-          expect(state.weapons.isEmpty, true);
-        },
-        orElse: () => throw Exception('Invalid custom build state'),
-      ),
+      verify: (bloc) {
+        final state = bloc.state;
+        switch (state) {
+          case CustomBuildStateLoading():
+            throw Exception('Invalid custom build state');
+          case CustomBuildStateLoaded():
+            expect(state.weapons.isEmpty, true);
+        }
+      },
     );
 
     blocTest<CustomBuildBloc, CustomBuildState>(
@@ -579,12 +630,15 @@ void main() {
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
         ..add(const CustomBuildEvent.addWeapon(key: aquilaFavoniaKey))
         ..add(const CustomBuildEvent.deleteWeapons()),
-      verify: (bloc) => bloc.state.maybeMap(
-        loaded: (state) {
-          expect(state.weapons.isEmpty, true);
-        },
-        orElse: () => throw Exception('Invalid custom build state'),
-      ),
+      verify: (bloc) {
+        final state = bloc.state;
+        switch (state) {
+          case CustomBuildStateLoading():
+            throw Exception('Invalid custom build state');
+          case CustomBuildStateLoaded():
+            expect(state.weapons.isEmpty, true);
+        }
+      },
     );
 
     blocTest<CustomBuildBloc, CustomBuildState>(
@@ -603,14 +657,17 @@ void main() {
             ],
           ),
         ),
-      verify: (bloc) => bloc.state.maybeMap(
-        loaded: (state) {
-          expect(state.weapons.length == 2, true);
-          expect(state.weapons.first.key == 'the-flute', true);
-          expect(state.weapons.last.key == aquilaFavoniaKey, true);
-        },
-        orElse: () => throw Exception('Invalid custom build state'),
-      ),
+      verify: (bloc) {
+        final state = bloc.state;
+        switch (state) {
+          case CustomBuildStateLoading():
+            throw Exception('Invalid custom build state');
+          case CustomBuildStateLoaded():
+            expect(state.weapons.length == 2, true);
+            expect(state.weapons.first.key == 'the-flute', true);
+            expect(state.weapons.last.key == aquilaFavoniaKey, true);
+        }
+      },
     );
 
     blocTest<CustomBuildBloc, CustomBuildState>(
@@ -624,15 +681,18 @@ void main() {
           ..add(const CustomBuildEvent.addWeapon(key: aquilaFavoniaKey))
           ..add(CustomBuildEvent.weaponStatChanged(key: aquilaFavoniaKey, newValue: weapon.stats[3]));
       },
-      verify: (bloc) => bloc.state.maybeMap(
-        loaded: (state) {
-          final stat = genshinService.weapons.getWeapon(aquilaFavoniaKey).stats[3];
-          expect(state.weapons.length == 1, true);
-          expect(state.weapons.first.key == aquilaFavoniaKey, true);
-          expect(state.weapons.first.stat == stat, true);
-        },
-        orElse: () => throw Exception('Invalid custom build state'),
-      ),
+      verify: (bloc) {
+        final state = bloc.state;
+        switch (state) {
+          case CustomBuildStateLoading():
+            throw Exception('Invalid custom build state');
+          case CustomBuildStateLoaded():
+            final stat = genshinService.weapons.getWeapon(aquilaFavoniaKey).stats[3];
+            expect(state.weapons.length == 1, true);
+            expect(state.weapons.first.key == aquilaFavoniaKey, true);
+            expect(state.weapons.first.stat == stat, true);
+        }
+      },
     );
   });
 
@@ -643,17 +703,20 @@ void main() {
       act: (bloc) => bloc
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
         ..add(const CustomBuildEvent.addArtifact(key: thunderingFuryKey, type: ArtifactType.flower, statType: StatType.hp)),
-      verify: (bloc) => bloc.state.maybeMap(
-        loaded: (state) {
-          expect(state.artifacts.length == 1, true);
-          final artifact = state.artifacts.first;
-          expect(artifact.key == thunderingFuryKey, true);
-          expect(artifact.type == ArtifactType.flower, true);
-          expect(artifact.statType == StatType.hp, true);
-          expect(artifact.subStats.isEmpty, true);
-        },
-        orElse: () => throw Exception('Invalid custom build state'),
-      ),
+      verify: (bloc) {
+        final state = bloc.state;
+        switch (state) {
+          case CustomBuildStateLoading():
+            throw Exception('Invalid custom build state');
+          case CustomBuildStateLoaded():
+            expect(state.artifacts.length == 1, true);
+            final artifact = state.artifacts.first;
+            expect(artifact.key == thunderingFuryKey, true);
+            expect(artifact.type == ArtifactType.flower, true);
+            expect(artifact.statType == StatType.hp, true);
+            expect(artifact.subStats.isEmpty, true);
+        }
+      },
     );
 
     blocTest<CustomBuildBloc, CustomBuildState>(
@@ -669,17 +732,20 @@ void main() {
             statType: StatType.critDmgPercentage,
           ),
         ),
-      verify: (bloc) => bloc.state.maybeMap(
-        loaded: (state) {
-          expect(state.artifacts.length == 1, true);
-          final artifact = state.artifacts.first;
-          expect(artifact.key == thunderingFuryKey, true);
-          expect(artifact.type == ArtifactType.crown, true);
-          expect(artifact.statType == StatType.critDmgPercentage, true);
-          expect(artifact.subStats.isEmpty, true);
-        },
-        orElse: () => throw Exception('Invalid custom build state'),
-      ),
+      verify: (bloc) {
+        final state = bloc.state;
+        switch (state) {
+          case CustomBuildStateLoading():
+            throw Exception('Invalid custom build state');
+          case CustomBuildStateLoaded():
+            expect(state.artifacts.length == 1, true);
+            final artifact = state.artifacts.first;
+            expect(artifact.key == thunderingFuryKey, true);
+            expect(artifact.type == ArtifactType.crown, true);
+            expect(artifact.statType == StatType.critDmgPercentage, true);
+            expect(artifact.subStats.isEmpty, true);
+        }
+      },
     );
 
     blocTest<CustomBuildBloc, CustomBuildState>(
@@ -706,26 +772,29 @@ void main() {
             statType: StatType.critRatePercentage,
           ),
         ),
-      verify: (bloc) => bloc.state.maybeMap(
-        loaded: (state) {
-          expect(state.artifacts.length == 5, true);
-          final expectedStatTypes = [
-            StatType.hp,
-            StatType.atk,
-            StatType.atkPercentage,
-            StatType.electroDmgBonusPercentage,
-            StatType.critRatePercentage,
-          ];
-          for (var i = 0; i < state.artifacts.length; i++) {
-            final artifact = state.artifacts[i];
-            expect(artifact.key == thunderingFuryKey, true);
-            expect(artifact.type == ArtifactType.values[i], true);
-            expect(artifact.statType == expectedStatTypes[i], true);
-            expect(artifact.subStats.isEmpty, true);
-          }
-        },
-        orElse: () => throw Exception('Invalid custom build state'),
-      ),
+      verify: (bloc) {
+        final state = bloc.state;
+        switch (state) {
+          case CustomBuildStateLoading():
+            throw Exception('Invalid custom build state');
+          case CustomBuildStateLoaded():
+            expect(state.artifacts.length == 5, true);
+            final expectedStatTypes = [
+              StatType.hp,
+              StatType.atk,
+              StatType.atkPercentage,
+              StatType.electroDmgBonusPercentage,
+              StatType.critRatePercentage,
+            ];
+            for (var i = 0; i < state.artifacts.length; i++) {
+              final artifact = state.artifacts[i];
+              expect(artifact.key == thunderingFuryKey, true);
+              expect(artifact.type == ArtifactType.values[i], true);
+              expect(artifact.statType == expectedStatTypes[i], true);
+              expect(artifact.subStats.isEmpty, true);
+            }
+        }
+      },
     );
 
     blocTest<CustomBuildBloc, CustomBuildState>(
@@ -759,26 +828,29 @@ void main() {
             statType: StatType.critDmgPercentage,
           ),
         ),
-      verify: (bloc) => bloc.state.maybeMap(
-        loaded: (state) {
-          expect(state.artifacts.length == 5, true);
-          final expectedStatTypes = [
-            StatType.hp,
-            StatType.atk,
-            StatType.atkPercentage,
-            StatType.electroDmgBonusPercentage,
-            StatType.critDmgPercentage,
-          ];
-          for (var i = 0; i < state.artifacts.length; i++) {
-            final artifact = state.artifacts[i];
-            expect(artifact.key == thunderingFuryKey, true);
-            expect(artifact.type == ArtifactType.values[i], true);
-            expect(artifact.statType == expectedStatTypes[i], true);
-            expect(artifact.subStats.isEmpty, true);
-          }
-        },
-        orElse: () => throw Exception('Invalid custom build state'),
-      ),
+      verify: (bloc) {
+        final state = bloc.state;
+        switch (state) {
+          case CustomBuildStateLoading():
+            throw Exception('Invalid custom build state');
+          case CustomBuildStateLoaded():
+            expect(state.artifacts.length == 5, true);
+            final expectedStatTypes = [
+              StatType.hp,
+              StatType.atk,
+              StatType.atkPercentage,
+              StatType.electroDmgBonusPercentage,
+              StatType.critDmgPercentage,
+            ];
+            for (var i = 0; i < state.artifacts.length; i++) {
+              final artifact = state.artifacts[i];
+              expect(artifact.key == thunderingFuryKey, true);
+              expect(artifact.type == ArtifactType.values[i], true);
+              expect(artifact.statType == expectedStatTypes[i], true);
+              expect(artifact.subStats.isEmpty, true);
+            }
+        }
+      },
     );
 
     blocTest<CustomBuildBloc, CustomBuildState>(
@@ -800,32 +872,35 @@ void main() {
             subStats: [StatType.critDmgPercentage, StatType.critRatePercentage, StatType.atkPercentage],
           ),
         ),
-      verify: (bloc) => bloc.state.maybeMap(
-        loaded: (state) {
-          expect(state.artifacts.length == 2, true);
-          final flower = state.artifacts.first;
-          expect(flower.type, ArtifactType.flower);
-          expect(
-            listEquals(flower.subStats, [
-              StatType.critDmgPercentage,
-              StatType.critRatePercentage,
-              StatType.atkPercentage,
-              StatType.atk,
-            ]),
-            true,
-          );
+      verify: (bloc) {
+        final state = bloc.state;
+        switch (state) {
+          case CustomBuildStateLoading():
+            throw Exception('Invalid custom build state');
+          case CustomBuildStateLoaded():
+            expect(state.artifacts.length == 2, true);
+            final flower = state.artifacts.first;
+            expect(flower.type, ArtifactType.flower);
+            expect(
+              listEquals(flower.subStats, [
+                StatType.critDmgPercentage,
+                StatType.critRatePercentage,
+                StatType.atkPercentage,
+                StatType.atk,
+              ]),
+              true,
+            );
 
-          final plume = state.artifacts.last;
-          expect(plume.type, ArtifactType.plume);
-          expect(
-            listEquals(plume.subStats, [StatType.critDmgPercentage, StatType.critRatePercentage, StatType.atkPercentage]),
-            true,
-          );
+            final plume = state.artifacts.last;
+            expect(plume.type, ArtifactType.plume);
+            expect(
+              listEquals(plume.subStats, [StatType.critDmgPercentage, StatType.critRatePercentage, StatType.atkPercentage]),
+              true,
+            );
 
-          expect(state.subStatsSummary.isNotEmpty, true);
-        },
-        orElse: () => throw Exception('Invalid custom build state'),
-      ),
+            expect(state.subStatsSummary.isNotEmpty, true);
+        }
+      },
     );
 
     blocTest<CustomBuildBloc, CustomBuildState>(
@@ -877,13 +952,16 @@ void main() {
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
         ..add(const CustomBuildEvent.addArtifact(key: thunderingFuryKey, type: ArtifactType.flower, statType: StatType.hp))
         ..add(const CustomBuildEvent.deleteArtifact(type: ArtifactType.flower)),
-      verify: (bloc) => bloc.state.maybeMap(
-        loaded: (state) {
-          expect(state.artifacts.isEmpty, true);
-          expect(state.subStatsSummary.isEmpty, true);
-        },
-        orElse: () => throw Exception('Invalid custom build state'),
-      ),
+      verify: (bloc) {
+        final state = bloc.state;
+        switch (state) {
+          case CustomBuildStateLoading():
+            throw Exception('Invalid custom build state');
+          case CustomBuildStateLoaded():
+            expect(state.artifacts.isEmpty, true);
+            expect(state.subStatsSummary.isEmpty, true);
+        }
+      },
     );
 
     blocTest<CustomBuildBloc, CustomBuildState>(
@@ -904,12 +982,15 @@ void main() {
         ..add(const CustomBuildEvent.addArtifact(key: thunderingFuryKey, type: ArtifactType.flower, statType: StatType.hp))
         ..add(const CustomBuildEvent.addArtifact(key: thunderingFuryKey, type: ArtifactType.plume, statType: StatType.atk))
         ..add(const CustomBuildEvent.deleteArtifacts()),
-      verify: (bloc) => bloc.state.maybeMap(
-        loaded: (state) {
-          expect(state.artifacts.isEmpty, true);
-        },
-        orElse: () => throw Exception('Invalid custom build state'),
-      ),
+      verify: (bloc) {
+        final state = bloc.state;
+        switch (state) {
+          case CustomBuildStateLoading():
+            throw Exception('Invalid custom build state');
+          case CustomBuildStateLoaded():
+            expect(state.artifacts.isEmpty, true);
+        }
+      },
     );
   });
 
@@ -926,15 +1007,18 @@ void main() {
             subType: CharacterRoleSubType.electro,
           ),
         ),
-      verify: (bloc) => bloc.state.maybeMap(
-        loaded: (state) {
-          expect(state.teamCharacters.length == 1, true);
-          final char = state.teamCharacters.first;
-          expect(char.roleType, CharacterRoleType.offFieldDps);
-          expect(char.subType, CharacterRoleSubType.electro);
-        },
-        orElse: () => throw Exception('Invalid custom build state'),
-      ),
+      verify: (bloc) {
+        final state = bloc.state;
+        switch (state) {
+          case CustomBuildStateLoading():
+            throw Exception('Invalid custom build state');
+          case CustomBuildStateLoaded():
+            expect(state.teamCharacters.length == 1, true);
+            final char = state.teamCharacters.first;
+            expect(char.roleType, CharacterRoleType.offFieldDps);
+            expect(char.subType, CharacterRoleSubType.electro);
+        }
+      },
     );
 
     blocTest<CustomBuildBloc, CustomBuildState>(
@@ -972,12 +1056,15 @@ void main() {
             subType: CharacterRoleSubType.electro,
           ),
         ),
-      verify: (bloc) => bloc.state.maybeMap(
-        loaded: (state) {
-          expect(state.teamCharacters.length == 1, true);
-        },
-        orElse: () => throw Exception('Invalid custom build state'),
-      ),
+      verify: (bloc) {
+        final state = bloc.state;
+        switch (state) {
+          case CustomBuildStateLoading():
+            throw Exception('Invalid custom build state');
+          case CustomBuildStateLoaded():
+            expect(state.teamCharacters.length == 1, true);
+        }
+      },
     );
 
     blocTest<CustomBuildBloc, CustomBuildState>(
@@ -1007,19 +1094,22 @@ void main() {
             ],
           ),
         ),
-      verify: (bloc) => bloc.state.maybeMap(
-        loaded: (state) {
-          expect(state.teamCharacters.length == 2, true);
-          final keqing = state.teamCharacters.first;
-          expect(keqing.roleType, CharacterRoleType.dps);
-          expect(keqing.subType, CharacterRoleSubType.electro);
+      verify: (bloc) {
+        final state = bloc.state;
+        switch (state) {
+          case CustomBuildStateLoading():
+            throw Exception('Invalid custom build state');
+          case CustomBuildStateLoaded():
+            expect(state.teamCharacters.length == 2, true);
+            final keqing = state.teamCharacters.first;
+            expect(keqing.roleType, CharacterRoleType.dps);
+            expect(keqing.subType, CharacterRoleSubType.electro);
 
-          final ganyu = state.teamCharacters.last;
-          expect(ganyu.roleType, CharacterRoleType.offFieldDps);
-          expect(ganyu.subType, CharacterRoleSubType.cryo);
-        },
-        orElse: () => throw Exception('Invalid custom build state'),
-      ),
+            final ganyu = state.teamCharacters.last;
+            expect(ganyu.roleType, CharacterRoleType.offFieldDps);
+            expect(ganyu.subType, CharacterRoleSubType.cryo);
+        }
+      },
     );
 
     blocTest<CustomBuildBloc, CustomBuildState>(
@@ -1035,12 +1125,15 @@ void main() {
           ),
         )
         ..add(const CustomBuildEvent.deleteTeamCharacter(key: ganyuKey)),
-      verify: (bloc) => bloc.state.maybeMap(
-        loaded: (state) {
-          expect(state.teamCharacters.isEmpty, true);
-        },
-        orElse: () => throw Exception('Invalid custom build state'),
-      ),
+      verify: (bloc) {
+        final state = bloc.state;
+        switch (state) {
+          case CustomBuildStateLoading():
+            throw Exception('Invalid custom build state');
+          case CustomBuildStateLoaded():
+            expect(state.teamCharacters.isEmpty, true);
+        }
+      },
     );
 
     blocTest<CustomBuildBloc, CustomBuildState>(
@@ -1110,23 +1203,26 @@ void main() {
           )
           ..add(const CustomBuildEvent.saveChanges());
       },
-      verify: (bloc) => bloc.state.maybeMap(
-        loaded: (state) {
-          final stat = genshinService.weapons.getWeapon(aquilaFavoniaKey).stats.first;
-          expect(state.character.key, keqingKey);
-          expect(state.isRecommended, true);
-          expect(state.showOnCharacterDetail, false);
-          expect(state.skillPriorities.length == 1, true);
-          expect(state.notes.length == 1, true);
-          expect(state.weapons.length == 1, true);
-          expect(state.weapons.first.stat.level, stat.level);
-          expect(state.weapons.first.stat.isAnAscension, stat.isAnAscension);
-          expect(state.artifacts.length == 5, true);
-          expect(state.subStatsSummary.isNotEmpty, true);
-          expect(state.teamCharacters.length == 1, true);
-        },
-        orElse: () => throw Exception('Invalid custom build state'),
-      ),
+      verify: (bloc) {
+        final state = bloc.state;
+        switch (state) {
+          case CustomBuildStateLoading():
+            throw Exception('Invalid custom build state');
+          case CustomBuildStateLoaded():
+            final stat = genshinService.weapons.getWeapon(aquilaFavoniaKey).stats.first;
+            expect(state.character.key, keqingKey);
+            expect(state.isRecommended, true);
+            expect(state.showOnCharacterDetail, false);
+            expect(state.skillPriorities.length == 1, true);
+            expect(state.notes.length == 1, true);
+            expect(state.weapons.length == 1, true);
+            expect(state.weapons.first.stat.level, stat.level);
+            expect(state.weapons.first.stat.isAnAscension, stat.isAnAscension);
+            expect(state.artifacts.length == 5, true);
+            expect(state.subStatsSummary.isNotEmpty, true);
+            expect(state.teamCharacters.length == 1, true);
+        }
+      },
     );
 
     blocTest<CustomBuildBloc, CustomBuildState>(
@@ -1136,20 +1232,23 @@ void main() {
         ..add(const CustomBuildEvent.load(initialTitle: 'DPS PRO'))
         ..add(const CustomBuildEvent.characterChanged(newKey: keqingKey))
         ..add(const CustomBuildEvent.saveChanges()),
-      verify: (bloc) => bloc.state.maybeMap(
-        loaded: (state) {
-          expect(state.character.key, keqingKey);
-          expect(state.isRecommended, false);
-          expect(state.showOnCharacterDetail, true);
-          expect(state.skillPriorities.isEmpty, true);
-          expect(state.notes.isEmpty, true);
-          expect(state.weapons.isEmpty, true);
-          expect(state.artifacts.isEmpty, true);
-          expect(state.subStatsSummary.isEmpty, true);
-          expect(state.teamCharacters.isEmpty, true);
-        },
-        orElse: () => throw Exception('Invalid custom build state'),
-      ),
+      verify: (bloc) {
+        final state = bloc.state;
+        switch (state) {
+          case CustomBuildStateLoading():
+            throw Exception('Invalid custom build state');
+          case CustomBuildStateLoaded():
+            expect(state.character.key, keqingKey);
+            expect(state.isRecommended, false);
+            expect(state.showOnCharacterDetail, true);
+            expect(state.skillPriorities.isEmpty, true);
+            expect(state.notes.isEmpty, true);
+            expect(state.weapons.isEmpty, true);
+            expect(state.artifacts.isEmpty, true);
+            expect(state.subStatsSummary.isEmpty, true);
+            expect(state.teamCharacters.isEmpty, true);
+        }
+      },
     );
   });
 }

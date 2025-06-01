@@ -42,19 +42,22 @@ void main() {
       'valid item key',
       build: () => ItemReleaseHistoryBloc(genshinService, telemetryService),
       act: (bloc) => bloc.add(const ItemReleaseHistoryEvent.init(itemKey: 'keqing')),
-      verify: (bloc) => bloc.state.map(
-        loading: (_) => throw Exception('Invalid state'),
-        initial: (state) {
-          expect(state.itemKey, 'keqing');
-          expect(state.history.isNotEmpty, isTrue);
-          for (final history in state.history) {
-            expect(history.version >= 1, isTrue);
-            for (final dates in history.dates) {
-              expect(dates.until.isAfter(dates.from), isTrue);
+      verify: (bloc) {
+        final state = bloc.state;
+        switch (state) {
+          case ItemReleaseHistoryStateLoading():
+            throw Exception('Invalid state');
+          case ItemReleaseHistoryStateInitial():
+            expect(state.itemKey, 'keqing');
+            expect(state.history.isNotEmpty, isTrue);
+            for (final history in state.history) {
+              expect(history.version >= 1, isTrue);
+              for (final dates in history.dates) {
+                expect(dates.until.isAfter(dates.from), isTrue);
+              }
             }
-          }
-        },
-      ),
+        }
+      },
     );
 
     blocTest<ItemReleaseHistoryBloc, ItemReleaseHistoryState>(

@@ -58,12 +58,15 @@ void main() {
       build: () => MaterialsBloc(genshinService),
       act: (bloc) => bloc.add(MaterialsEvent.init(excludeKeys: excludedKeys)),
       verify: (bloc) {
-        final emittedState = bloc.state;
-        emittedState.map(
-          loading: (_) => throw Exception('Invalid artifact state'),
-          loaded: (state) {
-            final materials = genshinService.materials.getAllMaterialsForCard().where((el) => !excludedKeys.contains(el.key)).toList();
-
+        final state = bloc.state;
+        switch (state) {
+          case MaterialsStateLoading():
+            throw Exception('Invalid artifact state');
+          case MaterialsStateLoaded():
+            final materials = genshinService.materials
+                .getAllMaterialsForCard()
+                .where((el) => !excludedKeys.contains(el.key))
+                .toList();
             expect(state.materials.length, materials.length);
             expect(state.rarity, 0);
             expect(state.tempRarity, 0);
@@ -71,8 +74,7 @@ void main() {
             expect(state.tempFilterType, MaterialFilterType.grouped);
             expect(state.sortDirectionType, SortDirectionType.asc);
             expect(state.tempSortDirectionType, SortDirectionType.asc);
-          },
-        );
+        }
       },
     );
   });
@@ -170,8 +172,10 @@ void main() {
         ..add(const MaterialsEvent.cancelChanges()),
       skip: 7,
       expect: () {
-        final materials =
-            genshinService.materials.getAllMaterialsForCard().where((el) => el.type == MaterialType.currency && el.rarity == 5).toList();
+        final materials = genshinService.materials
+            .getAllMaterialsForCard()
+            .where((el) => el.type == MaterialType.currency && el.rarity == 5)
+            .toList();
         return [
           MaterialsState.loaded(
             materials: sortMaterialsByGrouping(materials, SortDirectionType.desc),
