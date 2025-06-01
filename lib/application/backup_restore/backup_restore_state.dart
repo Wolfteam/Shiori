@@ -1,8 +1,8 @@
 part of 'backup_restore_bloc.dart';
 
 @freezed
-class BackupRestoreState with _$BackupRestoreState {
-  const factory BackupRestoreState.loading() = _LoadingState;
+sealed class BackupRestoreState with _$BackupRestoreState {
+  const factory BackupRestoreState.loading() = BackupRestoreStateLoadine;
 
   const factory BackupRestoreState.loaded({
     required List<BackupFileItemModel> backups,
@@ -10,5 +10,5 @@ class BackupRestoreState with _$BackupRestoreState {
     BackupOperationResultModel? readResult,
     BackupOperationResultModel? restoreResult,
     BackupOperationResultModel? deleteResult,
-  }) = _LoadedState;
+  }) = BackupRestoreStateLoaded;
 }

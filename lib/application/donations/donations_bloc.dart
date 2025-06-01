@@ -32,7 +32,12 @@ class DonationsBloc extends Bloc<DonationsEvent, DonationsState> {
     }
 
     if (!await _purchaseService.isPlatformSupported()) {
-      yield const DonationsState.initial(packages: [], isInitialized: false, noInternetConnection: false, canMakePurchases: false);
+      yield const DonationsState.initial(
+        packages: [],
+        isInitialized: false,
+        noInternetConnection: false,
+        canMakePurchases: false,
+      );
       return;
     }
 
@@ -51,28 +56,21 @@ class DonationsBloc extends Bloc<DonationsEvent, DonationsState> {
       await _purchaseService.init();
     }
 
-    final s = await event.map(
-      init: (_) => _init(),
-      restorePurchases: (e) => _restorePurchases(),
-      purchase: (e) => _purchase(e),
-    );
+    final s = await switch (event) {
+      DonationsEventInit() => _init(),
+      DonationsEventRestorePurchases() => _restorePurchases(),
+      final DonationsEventPurchase e => _purchase(e),
+    };
 
     yield s;
-    yield await s.maybeMap(
-      purchaseCompleted: (state) async {
-        if (state.error) {
-          return _init();
-        }
-        return state;
-      },
-      restoreCompleted: (state) async {
-        if (state.error) {
-          return _init();
-        }
-        return state;
-      },
-      orElse: () async => s,
-    );
+
+    switch (s) {
+      case final DonationsStatePurchaseCompleted state when state.error:
+      case final DonationsStateRestoreCompleted state when state.error:
+        yield await _init();
+      default:
+        break;
+    }
   }
 
   Future<DonationsState> _init() async {
@@ -91,7 +89,7 @@ class DonationsBloc extends Bloc<DonationsEvent, DonationsState> {
     return DonationsState.restoreCompleted(error: !restored);
   }
 
-  Future<DonationsState> _purchase(_Purchase e) async {
+  Future<DonationsState> _purchase(DonationsEventPurchase e) async {
     if (e.identifier.isNullEmptyOrWhitespace) {
       throw Exception('Invalid package identifier');
     }

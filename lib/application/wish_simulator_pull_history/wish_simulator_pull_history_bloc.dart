@@ -33,28 +33,23 @@ class WishSimulatorPullHistoryBloc extends Bloc<WishSimulatorPullHistoryEvent, W
       _allWeapons.addAll(allWeapons);
     }
 
-    final s = await event.map(
-      init: (e) async => state.map(
-        loading: (_) => _init(e.bannerType),
-        loaded: (state) {
-          if (state.bannerType == e.bannerType) {
-            return state;
-          }
-
-          return _init(e.bannerType);
-        },
-      ),
-      pageChanged: (e) async => state.map(
-        loading: (_) => throw Exception('Invalid state'),
-        loaded: (state) => _pageChanged(state, e.page),
-      ),
-      deleteData: (e) => state.map(
-        loading: (_) => throw Exception('Invalid state'),
-        loaded: (state) => _deleteData(e.bannerType),
-      ),
-    );
-
-    yield s;
+    switch (event) {
+      case WishSimulatorPullHistoryEventInit():
+        switch (state) {
+          case WishSimulatorPullHistoryStateLoading():
+            yield _init(event.bannerType);
+          case final WishSimulatorPullHistoryStateLoaded state:
+            if (state.bannerType == event.bannerType) {
+              yield state;
+            } else {
+              yield _init(event.bannerType);
+            }
+        }
+      case WishSimulatorPullHistoryEventPageChanged():
+        yield _pageChanged(state as WishSimulatorPullHistoryStateLoaded, event.page);
+      case WishSimulatorPullHistoryEventDeleteData():
+        yield await _deleteData(event.bannerType);
+    }
   }
 
   WishSimulatorPullHistoryState _init(BannerItemType bannerType) {
@@ -93,7 +88,7 @@ class WishSimulatorPullHistoryBloc extends Bloc<WishSimulatorPullHistoryEvent, W
     );
   }
 
-  WishSimulatorPullHistoryState _pageChanged(_LoadedState state, int newPage) {
+  WishSimulatorPullHistoryState _pageChanged(WishSimulatorPullHistoryStateLoaded state, int newPage) {
     final selectedPage = newPage - 1;
     if (selectedPage < 0 || selectedPage > state.maxPage) {
       throw Exception('Page = $newPage is not valid');

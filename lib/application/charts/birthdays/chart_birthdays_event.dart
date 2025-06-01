@@ -1,6 +1,6 @@
 part of 'chart_birthdays_bloc.dart';
 
 @freezed
-class ChartBirthdaysEvent with _$ChartBirthdaysEvent {
-  const factory ChartBirthdaysEvent.init() = _Init;
+sealed class ChartBirthdaysEvent with _$ChartBirthdaysEvent {
+  const factory ChartBirthdaysEvent.init() = ChartBirthdaysEventInit;
 }

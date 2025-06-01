@@ -1,13 +1,13 @@
 part of 'game_codes_bloc.dart';
 
 @freezed
-class GameCodesEvent with _$GameCodesEvent {
-  const factory GameCodesEvent.init() = _Init;
+sealed class GameCodesEvent with _$GameCodesEvent {
+  const factory GameCodesEvent.init() = GameCodesEventInit;
 
   const factory GameCodesEvent.markAsUsed({
     required String code,
     required bool wasUsed,
-  }) = _MarkAsUsed;
+  }) = GameCodesEventMarkAsUsed;
 
-  const factory GameCodesEvent.refresh() = _Refresh;
+  const factory GameCodesEvent.refresh() = GameCodesEventRefresh;
 }

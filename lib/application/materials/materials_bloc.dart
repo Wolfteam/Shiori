@@ -16,51 +16,59 @@ class MaterialsBloc extends Bloc<MaterialsEvent, MaterialsState> {
   final GenshinService _genshinService;
   final List<MaterialCardModel> _allMaterials = [];
 
-  _LoadedState get currentState => state as _LoadedState;
+  MaterialsStateLoaded get currentState => state as MaterialsStateLoaded;
 
   MaterialsBloc(this._genshinService) : super(const MaterialsState.loading());
 
   @override
   Stream<MaterialsState> mapEventToState(MaterialsEvent event) async* {
-    final s = event.map(
-      init: (e) {
-        if (_allMaterials.isEmpty || e.force) {
+    switch (event) {
+      case MaterialsEventInit():
+        if (_allMaterials.isEmpty || event.force) {
           _allMaterials.clear();
           _allMaterials.addAll(_genshinService.materials.getAllMaterialsForCard());
         }
 
-        return _buildInitialState(excludeKeys: e.excludeKeys);
-      },
-      rarityChanged: (e) => currentState.copyWith.call(tempRarity: e.rarity),
-      sortDirectionTypeChanged: (e) => currentState.copyWith.call(tempSortDirectionType: e.sortDirectionType),
-      typeChanged: (e) => currentState.copyWith.call(tempType: e.type),
-      filterTypeChanged: (e) => currentState.copyWith.call(tempFilterType: e.type),
-      searchChanged: (e) => _buildInitialState(
-        search: e.search,
-        rarity: currentState.rarity,
-        type: currentState.type,
-        filterType: currentState.filterType,
-        sortDirectionType: currentState.sortDirectionType,
-      ),
-      applyFilterChanges: (_) => _buildInitialState(
-        search: currentState.search,
-        rarity: currentState.tempRarity,
-        type: currentState.tempType,
-        filterType: currentState.tempFilterType,
-        sortDirectionType: currentState.tempSortDirectionType,
-      ),
-      cancelChanges: (_) => currentState.copyWith.call(
-        tempFilterType: currentState.filterType,
-        tempRarity: currentState.rarity,
-        tempSortDirectionType: currentState.sortDirectionType,
-        tempType: currentState.type,
-      ),
-      resetFilters: (_) => _buildInitialState(
-        excludeKeys: state.maybeMap(loaded: (state) => state.excludeKeys, orElse: () => []),
-      ),
-    );
+        yield _buildInitialState(excludeKeys: event.excludeKeys);
+      case MaterialsEventSearchChanged():
+        yield _buildInitialState(
+          search: event.search,
+          rarity: currentState.rarity,
+          type: currentState.type,
+          filterType: currentState.filterType,
+          sortDirectionType: currentState.sortDirectionType,
+        );
+      case MaterialsEventRarityChanged():
+        yield currentState.copyWith.call(tempRarity: event.rarity);
+      case MaterialsEventTypeChanged():
+        yield currentState.copyWith.call(tempType: event.type);
+      case MaterialsEventFilterTypeChanged():
+        yield currentState.copyWith.call(tempFilterType: event.type);
+      case MaterialsEventApplyFilterChanges():
+        yield _buildInitialState(
+          search: currentState.search,
+          rarity: currentState.tempRarity,
+          type: currentState.tempType,
+          filterType: currentState.tempFilterType,
+          sortDirectionType: currentState.tempSortDirectionType,
+        );
+      case MaterialsEventSortDirectionTypeChanged():
+        yield currentState.copyWith.call(tempSortDirectionType: event.sortDirectionType);
+      case MaterialsEventCancelChanges():
+        yield currentState.copyWith.call(
+          tempFilterType: currentState.filterType,
+          tempRarity: currentState.rarity,
+          tempSortDirectionType: currentState.sortDirectionType,
+          tempType: currentState.type,
+        );
+      case MaterialsEventResetFilters():
+        final excludedKeys = switch (state) {
+          MaterialsStateLoading() => <String>[],
+          final MaterialsStateLoaded state => state.excludeKeys,
+        };
 
-    yield s;
+        yield _buildInitialState(excludeKeys: excludedKeys);
+    }
   }
 
   MaterialsState _buildInitialState({
@@ -71,7 +79,7 @@ class MaterialsBloc extends Bloc<MaterialsEvent, MaterialsState> {
     MaterialFilterType filterType = MaterialFilterType.grouped,
     SortDirectionType sortDirectionType = SortDirectionType.asc,
   }) {
-    final isLoaded = state is _LoadedState;
+    final isLoaded = state is MaterialsStateLoaded;
     var data = [..._allMaterials];
     if (excludeKeys.isNotEmpty) {
       data = data.where((el) => !excludeKeys.contains(el.key)).toList();

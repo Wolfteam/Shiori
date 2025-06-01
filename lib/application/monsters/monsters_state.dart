@@ -1,8 +1,8 @@
 part of 'monsters_bloc.dart';
 
 @freezed
-class MonstersState with _$MonstersState {
-  const factory MonstersState.loading() = _LoadingState;
+sealed class MonstersState with _$MonstersState {
+  const factory MonstersState.loading() = MonstersStateLoading;
 
   const factory MonstersState.loaded({
     required List<MonsterCardModel> monsters,
@@ -14,5 +14,5 @@ class MonstersState with _$MonstersState {
     required SortDirectionType sortDirectionType,
     required SortDirectionType tempSortDirectionType,
     @Default(<String>[]) List<String> excludeKeys,
-  }) = _LoadedState;
+  }) = MonstersStateLoaded;
 }

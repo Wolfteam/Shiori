@@ -11,18 +11,14 @@ class MainTabBloc extends Bloc<MainTabEvent, MainTabState> {
   MainTabBloc() : super(const MainTabState.initial(2));
 
   @override
-  Stream<MainTabState> mapEventToState(
-    MainTabEvent event,
-  ) async* {
-    final s = await event.when(
-      goToTab: (index) async {
-        if (index < 0) {
-          return state;
+  Stream<MainTabState> mapEventToState(MainTabEvent event) async* {
+    switch (event) {
+      case MainTabEventGoToTab():
+        if (event.index < 0) {
+          yield state;
+        } else {
+          yield state.copyWith(currentSelectedTab: event.index);
         }
-        return state.copyWith(currentSelectedTab: index);
-      },
-    );
-
-    yield s;
+    }
   }
 }

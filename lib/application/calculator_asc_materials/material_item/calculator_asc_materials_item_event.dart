@@ -1,11 +1,11 @@
 part of 'calculator_asc_materials_item_bloc.dart';
 
 @freezed
-class CalculatorAscMaterialsItemEvent with _$CalculatorAscMaterialsItemEvent {
+sealed class CalculatorAscMaterialsItemEvent with _$CalculatorAscMaterialsItemEvent {
   const factory CalculatorAscMaterialsItemEvent.load({
     required String key,
     required bool isCharacter,
-  }) = _Load;
+  }) = CalculatorAscMaterialsItemEventLoad;
 
   const factory CalculatorAscMaterialsItemEvent.loadWith({
     required String key,
@@ -16,35 +16,35 @@ class CalculatorAscMaterialsItemEvent with _$CalculatorAscMaterialsItemEvent {
     required int desiredAscensionLevel,
     required bool useMaterialsFromInventory,
     required List<CharacterSkill> skills,
-  }) = _LoadWith;
+  }) = CalculatorAscMaterialsItemEventLoadWith;
 
   const factory CalculatorAscMaterialsItemEvent.currentLevelChanged({
     required int newValue,
-  }) = _CurrentLevelChanged;
+  }) = CalculatorAscMaterialsItemEventCurrentLevelChanged;
 
   const factory CalculatorAscMaterialsItemEvent.desiredLevelChanged({
     required int newValue,
-  }) = _DesiredLevelChanged;
+  }) = CalculatorAscMaterialsItemEventDesiredLevelChanged;
 
   const factory CalculatorAscMaterialsItemEvent.currentAscensionLevelChanged({
     required int newValue,
-  }) = _CurrentAscensionLevelChanged;
+  }) = CalculatorAscMaterialsItemEventCurrentAscensionLevelChanged;
 
   const factory CalculatorAscMaterialsItemEvent.desiredAscensionLevelChanged({
     required int newValue,
-  }) = _DesiredAscensionLevelChanged;
+  }) = CalculatorAscMaterialsItemEventDesiredAscensionLevelChanged;
 
   const factory CalculatorAscMaterialsItemEvent.skillCurrentLevelChanged({
     required int index,
     required int newValue,
-  }) = _SkillCurrentLevelChanged;
+  }) = CalculatorAscMaterialsItemEventSkillCurrentLevelChanged;
 
   const factory CalculatorAscMaterialsItemEvent.skillDesiredLevelChanged({
     required int index,
     required int newValue,
-  }) = _SkillDesiredLevelChanged;
+  }) = CalculatorAscMaterialsItemEventSkillDesiredLevelChanged;
 
   const factory CalculatorAscMaterialsItemEvent.useMaterialsFromInventoryChanged({
     required bool useThem,
-  }) = _UseMaterialsFromInventoryChanged;
+  }) = CalculatorAscMaterialsItemEventUseMaterialsFromInventoryChanged;
 }

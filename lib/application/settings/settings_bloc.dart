@@ -28,17 +28,15 @@ class SettingsBloc extends Bloc<SettingsEvent, SettingsState> {
     this._homeBloc,
   ) : super(const SettingsState.loading());
 
-  _LoadedState get currentState => state as _LoadedState;
+  SettingsStateLoaded get currentState => state as SettingsStateLoaded;
 
   @override
-  Stream<SettingsState> mapEventToState(
-    SettingsEvent event,
-  ) async* {
-    final s = await event.map(
-      init: (_) async {
+  Stream<SettingsState> mapEventToState(SettingsEvent event) async* {
+    switch (event) {
+      case SettingsEventInit():
         final settings = _settingsService.appSettings;
         final features = await _purchaseService.getUnlockedFeatures();
-        return SettingsState.loaded(
+        yield SettingsState.loaded(
           currentTheme: settings.appTheme,
           useDarkAmoledTheme: settings.useDarkAmoled,
           currentAccentColor: settings.accentColor,
@@ -55,74 +53,65 @@ class SettingsBloc extends Bloc<SettingsEvent, SettingsState> {
           checkForUpdatesOnStartup: settings.checkForUpdatesOnStartup,
           noResourcesHaveBeenDownloaded: _settingsService.noResourcesHasBeenDownloaded,
         );
-      },
-      themeChanged: (event) async {
+      case SettingsEventThemeChanged():
         if (event.newValue == _settingsService.appTheme) {
-          return currentState;
+          yield currentState;
+          return;
         }
         _settingsService.appTheme = event.newValue;
         _mainBloc.add(MainEvent.themeChanged(newValue: event.newValue));
-        return currentState.copyWith.call(currentTheme: event.newValue);
-      },
-      useDarkAmoledTheme: (event) async {
+        yield currentState.copyWith.call(currentTheme: event.newValue);
+      case SettingsEventUseDarkAmoledTheme():
         if (event.newValue == _settingsService.useDarkAmoledTheme) {
-          return currentState;
+          yield currentState;
+          return;
         }
         _settingsService.useDarkAmoledTheme = event.newValue;
         _mainBloc.add(MainEvent.useDarkAmoledThemeChanged(newValue: event.newValue));
-        return currentState.copyWith.call(useDarkAmoledTheme: event.newValue);
-      },
-      accentColorChanged: (event) async {
+        yield currentState.copyWith.call(useDarkAmoledTheme: event.newValue);
+      case SettingsEventAccentColorChanged():
         if (event.newValue == _settingsService.accentColor) {
-          return currentState;
+          yield currentState;
+          return;
         }
         _settingsService.accentColor = event.newValue;
         _mainBloc.add(MainEvent.accentColorChanged(newValue: event.newValue));
-        return currentState.copyWith.call(currentAccentColor: event.newValue);
-      },
-      languageChanged: (event) async {
+        yield currentState.copyWith.call(currentAccentColor: event.newValue);
+      case SettingsEventLanguageChanged():
         if (event.newValue == _settingsService.language) {
-          return currentState;
+          yield currentState;
+          return;
         }
         _settingsService.language = event.newValue;
         _mainBloc.add(MainEvent.languageChanged(newValue: event.newValue));
-        return currentState.copyWith.call(currentLanguage: event.newValue);
-      },
-      showCharacterDetailsChanged: (event) async {
+        yield currentState.copyWith.call(currentLanguage: event.newValue);
+      case SettingsEventShowCharacterDetailsChanged():
         _settingsService.showCharacterDetails = event.newValue;
-        return currentState.copyWith.call(showCharacterDetails: event.newValue);
-      },
-      showWeaponDetailsChanged: (event) async {
+        yield currentState.copyWith.call(showCharacterDetails: event.newValue);
+      case SettingsEventShowWeaponDetailsChanged():
         _settingsService.showWeaponDetails = event.newValue;
-        return currentState.copyWith.call(showWeaponDetails: event.newValue);
-      },
-      serverResetTimeChanged: (event) async {
+        yield currentState.copyWith.call(showWeaponDetails: event.newValue);
+      case SettingsEventServerResetTimeChanged():
         if (event.newValue == _settingsService.serverResetTime) {
-          return currentState;
+          yield currentState;
+          return;
         }
         _settingsService.serverResetTime = event.newValue;
         _homeBloc.add(const HomeEvent.init());
-        return currentState.copyWith.call(serverResetTime: event.newValue);
-      },
-      doubleBackToCloseChanged: (event) async {
+        yield currentState.copyWith.call(serverResetTime: event.newValue);
+      case SettingsEventDoubleBackToCloseChanged():
         _settingsService.doubleBackToClose = event.newValue;
-        return currentState.copyWith.call(doubleBackToClose: event.newValue);
-      },
-      useOfficialMapChanged: (event) async {
+        yield currentState.copyWith.call(doubleBackToClose: event.newValue);
+      case SettingsEventUseOfficialMapChanged():
         _settingsService.useOfficialMap = event.newValue;
-        return currentState.copyWith.call(useOfficialMap: event.newValue);
-      },
-      useTwentyFourHoursFormatChanged: (event) async {
+        yield currentState.copyWith.call(useOfficialMap: event.newValue);
+      case SettingsEventUseTwentyFourHoursFormatChanged():
         _settingsService.useTwentyFourHoursFormat = event.newValue;
-        return currentState.copyWith.call(useTwentyFourHoursFormat: event.newValue);
-      },
-      checkForUpdatesOnStartupChanged: (event) async {
+        yield currentState.copyWith.call(useTwentyFourHoursFormat: event.newValue);
+      case SettingsEventCheckForUpdatesOnStartupChanged():
         _settingsService.checkForUpdatesOnStartup = event.newValue;
-        return currentState.copyWith.call(checkForUpdatesOnStartup: event.newValue);
-      },
-    );
-
-    yield s;
+        yield currentState.copyWith.call(checkForUpdatesOnStartup: event.newValue);
+    }
   }
 
   bool doubleBackToClose() => _settingsService.doubleBackToClose;

@@ -58,72 +58,115 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
   @override
   Stream<NotificationState> mapEventToState(NotificationEvent event) async* {
     //TODO: HANDLE RECURRING NOTIFICATIONS
-    final s = await event.map(
-      add: (e) async => _buildAddState(e.defaultTitle, e.defaultBody),
-      edit: (e) async => _buildEditState(e.key, e.type),
-      typeChanged: (e) async => _typeChanged(e.newValue),
-      titleChanged: (e) async => state.copyWith.call(
-        title: e.newValue,
-        isTitleValid: _isTitleValid(e.newValue),
-        isTitleDirty: true,
-      ),
-      bodyChanged: (e) async => state.copyWith.call(body: e.newValue, isBodyValid: _isBodyValid(e.newValue), isBodyDirty: true),
-      noteChanged: (e) async => state.copyWith.call(note: e.newValue, isNoteValid: _isNoteValid(e.newValue), isNoteDirty: true),
-      showNotificationChanged: (e) async => state.copyWith.call(showNotification: e.show),
-      expeditionTimeTypeChanged: (e) async => state.maybeMap(
-        expedition: (s) => s.copyWith.call(expeditionTimeType: e.newValue),
-        orElse: () => state,
-      ),
-      resinChanged: (e) async => state.maybeMap(
-        resin: (s) => s.copyWith.call(currentResin: e.newValue),
-        orElse: () => state,
-      ),
-      itemTypeChanged: (e) async => state.maybeMap(custom: (s) => _itemTypeChanged(e.newValue), orElse: () => state),
-      saveChanges: (e) async => _saveChanges(),
-      timeReductionChanged: (e) async => state.maybeMap(
-        expedition: (s) => s.copyWith.call(withTimeReduction: e.withTimeReduction),
-        orElse: () => state,
-      ),
-      showOtherImages: (e) async => state.copyWith.call(showOtherImages: e.show),
-      imageChanged: (e) async {
-        final images = state.images.map((el) => el.copyWith.call(isSelected: el.image == e.newValue)).toList();
-        return state.copyWith.call(images: images);
-      },
-      keySelected: (e) async => _itemKeySelected(e.keyName),
-      customDateChanged: (e) async => state.maybeMap(
-        custom: (s) => s.copyWith.call(scheduledDate: e.newValue),
-        orElse: () => state,
-      ),
-      furnitureCraftingTimeTypeChanged: (e) async => state.maybeMap(
-        furniture: (state) => state.copyWith.call(timeType: e.newValue),
-        orElse: () => state,
-      ),
-      artifactFarmingTimeTypeChanged: (e) async => state.maybeMap(
-        farmingArtifact: (state) => state.copyWith.call(artifactFarmingTimeType: e.newValue),
-        orElse: () => state,
-      ),
-      realmRankTypeChanged: (e) async => state.maybeMap(
-        realmCurrency: (state) => state.copyWith.call(currentRealmRankType: e.newValue),
-        orElse: () => state,
-      ),
-      realmCurrencyChanged: (e) async => state.maybeMap(
-        realmCurrency: (state) => state.copyWith.call(currentRealmCurrency: e.newValue),
-        orElse: () => state,
-      ),
-      realmTrustRankLevelChanged: (e) async => state.maybeMap(
-        realmCurrency: (state) {
-          final max = getRealmMaxCurrency(e.newValue);
-          var currentRealmCurrency = state.currentRealmCurrency;
-          if (state.currentRealmCurrency > max) {
-            currentRealmCurrency = max - 1;
-          }
-          return state.copyWith.call(currentTrustRank: e.newValue, currentRealmCurrency: currentRealmCurrency);
-        },
-        orElse: () => state,
-      ),
-    );
-
-    yield s;
+    switch (event) {
+      case NotificationEventAdd():
+        yield _buildAddState(event.defaultTitle, event.defaultBody);
+      case NotificationEventEdit():
+        yield _buildEditState(event.key, event.type);
+      case NotificationEventTypeChanged():
+        yield _typeChanged(event.newValue);
+      case NotificationEventTitleChanged():
+        yield state.copyWith.call(
+          title: event.newValue,
+          isTitleValid: _isTitleValid(event.newValue),
+          isTitleDirty: true,
+        );
+      case NotificationEventBodyChanged():
+        yield state.copyWith.call(body: event.newValue, isBodyValid: _isBodyValid(event.newValue), isBodyDirty: true);
+      case NotificationEventNoteChanged():
+        yield state.copyWith.call(note: event.newValue, isNoteValid: _isNoteValid(event.newValue), isNoteDirty: true);
+      case NotificationEventShowNotificationChanged():
+        yield state.copyWith.call(showNotification: event.show);
+      case NotificationEventShowOtherImages():
+        yield state.copyWith.call(showOtherImages: event.show);
+      case NotificationEventImageChanged():
+        final images = state.images.map((el) => el.copyWith.call(isSelected: el.image == event.newValue)).toList();
+        yield state.copyWith.call(images: images);
+      case NotificationEventSaveChanges():
+        yield await _saveChanges();
+      case NotificationEventResinChanged():
+        switch (state) {
+          case final NotificationStateResin state:
+            yield state.copyWith.call(currentResin: event.newValue);
+          default:
+            break;
+        }
+      case NotificationEventExpeditionTimeTypeChanged():
+        switch (state) {
+          case final NotificationStateExpedition state:
+            yield state.copyWith.call(expeditionTimeType: event.newValue);
+          default:
+            break;
+        }
+      case NotificationEventTimeReductionChanged():
+        switch (state) {
+          case final NotificationStateExpedition state:
+            yield state.copyWith.call(withTimeReduction: event.withTimeReduction);
+          default:
+            break;
+        }
+      case NotificationEventArtifactFarmingTimeTypeChanged():
+        switch (state) {
+          case final NotificationStateFarmingArtifact state:
+            yield state.copyWith.call(artifactFarmingTimeType: event.newValue);
+          default:
+            break;
+        }
+      case NotificationEventFurnitureCraftingTimeTypeChanged():
+        switch (state) {
+          case final NotificationStateFurniture state:
+            yield state.copyWith.call(timeType: event.newValue);
+          default:
+            break;
+        }
+      case NotificationEventRealmCurrencyChanged():
+        switch (state) {
+          case final NotificationStateRealmCurrency state:
+            yield state.copyWith.call(currentRealmCurrency: event.newValue);
+          default:
+            break;
+        }
+      case NotificationEventRealmRankTypeChanged():
+        switch (state) {
+          case final NotificationStateRealmCurrency state:
+            yield state.copyWith.call(currentRealmRankType: event.newValue);
+          default:
+            break;
+        }
+      case NotificationEventRealmTrustRankLevelChanged():
+        switch (state) {
+          case final NotificationStateRealmCurrency state:
+            final max = getRealmMaxCurrency(event.newValue);
+            var currentRealmCurrency = state.currentRealmCurrency;
+            if (state.currentRealmCurrency > max) {
+              currentRealmCurrency = max - 1;
+            }
+            yield state.copyWith.call(currentTrustRank: event.newValue, currentRealmCurrency: currentRealmCurrency);
+          default:
+            break;
+        }
+      case NotificationEventItemTypeChanged():
+        switch (state) {
+          case NotificationStateCustom():
+            yield _itemTypeChanged(event.newValue);
+          default:
+            break;
+        }
+      case NotificationEventKeySelected():
+        switch (state) {
+          case NotificationStateCustom():
+            yield _itemKeySelected(event.keyName);
+          default:
+            break;
+        }
+      case NotificationEventCustomDateChanged():
+        switch (state) {
+          case final NotificationStateCustom state:
+            yield state.copyWith.call(scheduledDate: event.newValue);
+          default:
+            break;
+        }
+    }
   }
 
   bool _isTitleValid(String value) => value.isValidLength(maxLength: maxTitleLength);
@@ -273,8 +316,8 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
   }
 
   NotificationState _itemTypeChanged(AppNotificationItemType newValue) {
-    return state.maybeMap(
-      custom: (s) {
+    switch (state) {
+      case final NotificationStateCustom state:
         final images = <NotificationItemImage>[];
         switch (newValue) {
           case AppNotificationItemType.character:
@@ -294,39 +337,48 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
             final imagePath = _resourceService.getMaterialImagePath(material.image, material.type);
             images.add(NotificationItemImage(itemKey: material.key, image: imagePath, isSelected: true));
         }
-
-        return s.copyWith.call(images: images, itemType: newValue);
-      },
-      orElse: () => state,
-    );
+        return state.copyWith.call(images: images, itemType: newValue);
+      default:
+        return state;
+    }
   }
 
   NotificationState _itemKeySelected(String itemKey) {
-    return state.maybeMap(
-      custom: (s) {
-        final img = _genshinService.getItemImageFromNotificationItemType(itemKey, s.itemType);
-        return s.copyWith.call(
+    switch (state) {
+      case final NotificationStateCustom state:
+        final img = _genshinService.getItemImageFromNotificationItemType(itemKey, state.itemType);
+        return state.copyWith.call(
           images: [NotificationItemImage(itemKey: itemKey, image: img, isSelected: true)],
         );
-      },
-      orElse: () => state,
-    );
+      default:
+        return state;
+    }
   }
 
   Future<NotificationState> _saveChanges() async {
     try {
-      await state.map(
-        resin: _saveResinNotification,
-        expedition: _saveExpeditionNotification,
-        custom: _saveCustomNotification,
-        farmingArtifact: _saveFarmingArtifactNotification,
-        farmingMaterial: _saveFarmingMaterialNotification,
-        gadget: _saveGadgetNotification,
-        furniture: _saveFurnitureNotification,
-        weeklyBoss: _saveWeeklyBossNotification,
-        realmCurrency: _saveRealmCurrencyNotification,
-        dailyCheckIn: _saveDailyCheckInNotification,
-      );
+      switch (state) {
+        case final NotificationStateResin state:
+          await _saveResinNotification(state);
+        case final NotificationStateExpedition state:
+          await _saveExpeditionNotification(state);
+        case final NotificationStateFarmingArtifact state:
+          await _saveFarmingArtifactNotification(state);
+        case final NotificationStateFarmingMaterial state:
+          await _saveFarmingMaterialNotification(state);
+        case final NotificationStateGadget state:
+          await _saveGadgetNotification(state);
+        case final NotificationStateFurniture state:
+          await _saveFurnitureNotification(state);
+        case final NotificationStateRealmCurrency state:
+          await _saveRealmCurrencyNotification(state);
+        case final NotificationStateWeeklyBoss state:
+          await _saveWeeklyBossNotification(state);
+        case final NotificationStateCustom state:
+          await _saveCustomNotification(state);
+        case final NotificationStateDailyCheckIn state:
+          await _saveDailyCheckInNotification(state);
+      }
 
       if (state.key == null) {
         await _telemetryService.trackNotificationCreated(state.type);
@@ -342,7 +394,7 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
     return state;
   }
 
-  Future<void> _saveResinNotification(_ResinState s) async {
+  Future<void> _saveResinNotification(NotificationStateResin s) async {
     if (s.key != null) {
       final updated = await _dataService.notifications.updateResinNotification(
         s.key!,
@@ -368,7 +420,7 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
     await _afterNotificationWasCreated(notif);
   }
 
-  Future<void> _saveExpeditionNotification(_ExpeditionState s) async {
+  Future<void> _saveExpeditionNotification(NotificationStateExpedition s) async {
     final selectedItemKey = _getSelectedItemKey();
     if (s.key != null) {
       final updated = await _dataService.notifications.updateExpeditionNotification(
@@ -397,7 +449,7 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
     await _afterNotificationWasCreated(notif);
   }
 
-  Future<void> _saveFarmingArtifactNotification(_FarmingArtifactState s) async {
+  Future<void> _saveFarmingArtifactNotification(NotificationStateFarmingArtifact s) async {
     if (s.key != null) {
       final updated = await _dataService.notifications.updateFarmingArtifactNotification(
         s.key!,
@@ -423,7 +475,7 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
     await _afterNotificationWasCreated(notif);
   }
 
-  Future<void> _saveFarmingMaterialNotification(_FarmingMaterialState s) async {
+  Future<void> _saveFarmingMaterialNotification(NotificationStateFarmingMaterial s) async {
     final selectedItemKey = _getSelectedItemKey();
     if (s.key != null) {
       final updated = await _dataService.notifications.updateFarmingMaterialNotification(
@@ -448,7 +500,7 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
     await _afterNotificationWasCreated(notif);
   }
 
-  Future<void> _saveGadgetNotification(_GadgetState s) async {
+  Future<void> _saveGadgetNotification(NotificationStateGadget s) async {
     final selectedItemKey = _getSelectedItemKey();
     if (s.key != null) {
       final updated = await _dataService.notifications.updateGadgetNotification(
@@ -473,7 +525,7 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
     await _afterNotificationWasCreated(notif);
   }
 
-  Future<void> _saveFurnitureNotification(_FurnitureState s) async {
+  Future<void> _saveFurnitureNotification(NotificationStateFurniture s) async {
     if (s.key != null) {
       final updated = await _dataService.notifications.updateFurnitureNotification(
         s.key!,
@@ -499,7 +551,7 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
     await _afterNotificationWasCreated(notif);
   }
 
-  Future<void> _saveRealmCurrencyNotification(_RealmCurrencyState s) async {
+  Future<void> _saveRealmCurrencyNotification(NotificationStateRealmCurrency s) async {
     if (s.key != null) {
       final updated = await _dataService.notifications.updateRealmCurrencyNotification(
         s.key!,
@@ -529,7 +581,7 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
     await _afterNotificationWasCreated(notif);
   }
 
-  Future<void> _saveWeeklyBossNotification(_WeeklyBossState s) async {
+  Future<void> _saveWeeklyBossNotification(NotificationStateWeeklyBoss s) async {
     final selectedItemKey = _getSelectedItemKey();
     if (s.key != null) {
       final updated = await _dataService.notifications.updateWeeklyBossNotification(
@@ -556,7 +608,7 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
     await _afterNotificationWasCreated(notif);
   }
 
-  Future<void> _saveCustomNotification(_CustomState s) async {
+  Future<void> _saveCustomNotification(NotificationStateCustom s) async {
     final selectedItemKey = _getSelectedItemKey();
     if (s.key != null) {
       final updated = await _dataService.notifications.updateCustomNotification(
@@ -585,7 +637,7 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
     await _afterNotificationWasCreated(notif);
   }
 
-  Future<void> _saveDailyCheckInNotification(_DailyCheckInState s) async {
+  Future<void> _saveDailyCheckInNotification(NotificationStateDailyCheckIn s) async {
     if (s.key != null) {
       final updated = await _dataService.notifications.updateDailyCheckInNotification(
         s.key!,

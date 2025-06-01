@@ -1,8 +1,8 @@
 part of 'custom_builds_bloc.dart';
 
 @freezed
-class CustomBuildsEvent with _$CustomBuildsEvent {
-  const factory CustomBuildsEvent.load() = _Load;
+sealed class CustomBuildsEvent with _$CustomBuildsEvent {
+  const factory CustomBuildsEvent.load() = CustomBuildsEventLoad;
 
-  const factory CustomBuildsEvent.delete({required int key}) = _Delete;
+  const factory CustomBuildsEvent.delete({required int key}) = CustomBuildsEventDelete;
 }

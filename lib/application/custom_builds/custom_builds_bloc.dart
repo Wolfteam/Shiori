@@ -14,19 +14,15 @@ class CustomBuildsBloc extends Bloc<CustomBuildsEvent, CustomBuildsState> {
 
   @override
   Stream<CustomBuildsState> mapEventToState(CustomBuildsEvent event) async* {
-    final s = await event.map(
-      load: (_) async {
+    switch (event) {
+      case CustomBuildsEventLoad():
         final builds = _dataService.customBuilds.getAllCustomBuilds();
-        return state.copyWith.call(builds: builds);
-      },
-      delete: (e) async {
-        await _dataService.customBuilds.deleteCustomBuild(e.key);
+        yield state.copyWith.call(builds: builds);
+      case CustomBuildsEventDelete():
+        await _dataService.customBuilds.deleteCustomBuild(event.key);
         final builds = [...state.builds];
-        builds.removeWhere((el) => el.key == e.key);
-        return state.copyWith.call(builds: builds);
-      },
-    );
-
-    yield s;
+        builds.removeWhere((el) => el.key == event.key);
+        yield state.copyWith.call(builds: builds);
+    }
   }
 }

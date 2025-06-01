@@ -61,20 +61,26 @@ class MainBloc extends Bloc<MainEvent, MainState> {
     this._artifactsBloc,
   ) : super(MainState.loading(language: _localeService.getLocaleWithoutLang()));
 
-  _MainLoadedState get currentState => state as _MainLoadedState;
+  MainStateLoaded get currentState => state as MainStateLoaded;
 
   @override
   Stream<MainState> mapEventToState(MainEvent event) async* {
-    final s = await event.when(
-      init: (updateResult) async => _init(init: true, updateResult: updateResult),
-      themeChanged: (theme) async => _loadThemeData(theme, _settingsService.accentColor),
-      accentColorChanged: (accentColor) async => _loadThemeData(_settingsService.appTheme, accentColor),
-      languageChanged: (language) async => _init(languageChanged: true),
-      useDarkAmoledThemeChanged: (use) async => _loadThemeData(_settingsService.appTheme, _settingsService.accentColor),
-      restart: () async => MainState.loading(language: _localeService.getLocaleWithoutLang(), restarted: true),
-      deleteAllData: () async => _deleteAllData(),
-    );
-    yield s;
+    switch (event) {
+      case MainEventInit():
+        yield await _init(init: true, updateResult: event.updateResultType);
+      case MainEventThemeChanged():
+        yield await _loadThemeData(event.newValue, _settingsService.accentColor);
+      case MainEventUseDarkAmoledThemeChanged():
+        yield await _loadThemeData(_settingsService.appTheme, _settingsService.accentColor);
+      case MainEventAccentColorChanged():
+        yield await _loadThemeData(_settingsService.appTheme, event.newValue);
+      case MainEventLanguageChanged():
+        yield await _init(languageChanged: true);
+      case MainEventRestart():
+        yield MainState.loading(language: _localeService.getLocaleWithoutLang(), restarted: true);
+      case MainEventDeleteAllData():
+        yield await _deleteAllData();
+    }
   }
 
   @override
@@ -88,11 +94,14 @@ class MainBloc extends Bloc<MainEvent, MainState> {
     bool init = false,
     AppResourceUpdateResultType? updateResult,
   }) async {
-    _logger.info(runtimeType, '_init: Initializing all..');
-    await _genshinService.init(_settingsService.language, noResourcesHaveBeenDownloaded: _settingsService.noResourcesHasBeenDownloaded);
+    _logger.info(runtimeType, 'Initializing all..');
+    await _genshinService.init(
+      _settingsService.language,
+      noResourcesHaveBeenDownloaded: _settingsService.noResourcesHasBeenDownloaded,
+    );
 
     if (languageChanged) {
-      _logger.info(runtimeType, '_init: Language changed, reloading all the required blocs...');
+      _logger.info(runtimeType, 'Language changed, reloading all the required blocs...');
       _charactersBloc.add(const CharactersEvent.init(force: true));
       _weaponsBloc.add(const WeaponsEvent.init(force: true));
       _homeBloc.add(const HomeEvent.init());
@@ -123,10 +132,11 @@ class MainBloc extends Bloc<MainEvent, MainState> {
   }) async {
     _logger.info(
       runtimeType,
-      '_loadThemeData: Is first install = ${_settingsService.isFirstInstall} ' + '-- versionChanged = ${_deviceInfoService.versionChanged}',
+      'Is first install = ${_settingsService.isFirstInstall} -- versionChanged = ${_deviceInfoService.versionChanged}',
     );
 
-    final useDarkAmoledTheme = _settingsService.useDarkAmoledTheme && await _purchaseService.isFeatureUnlocked(AppUnlockedFeature.darkAmoledTheme);
+    final useDarkAmoledTheme =
+        _settingsService.useDarkAmoledTheme && await _purchaseService.isFeatureUnlocked(AppUnlockedFeature.darkAmoledTheme);
     return MainState.loaded(
       appTitle: _deviceInfoService.appName,
       accentColor: accentColor,
@@ -157,7 +167,10 @@ class MainBloc extends Bloc<MainEvent, MainState> {
       return;
     }
 
-    final bool registerDeviceToken = _settingsService.pushNotificationsToken.isNotNullEmptyOrWhitespace && _settingsService.resourceVersion > 0 && (languageChanged || _settingsService.mustRegisterPushNotificationsToken);
+    final bool registerDeviceToken =
+        _settingsService.pushNotificationsToken.isNotNullEmptyOrWhitespace &&
+        _settingsService.resourceVersion > 0 &&
+        (languageChanged || _settingsService.mustRegisterPushNotificationsToken);
     if (!registerDeviceToken) {
       return;
     }

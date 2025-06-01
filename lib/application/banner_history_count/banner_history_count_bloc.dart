@@ -31,15 +31,18 @@ class BannerHistoryCountBloc extends Bloc<BannerHistoryCountEvent, BannerHistory
 
   @override
   Stream<BannerHistoryCountState> mapEventToState(BannerHistoryCountEvent event) async* {
-    final s = await event.map(
-      init: (e) async => _init(),
-      typeChanged: (e) async => _typeChanged(e.type),
-      sortTypeChanged: (e) async => _sortTypeChanged(e.type),
-      versionSelected: (e) async => _versionSelected(e.version),
-      itemsSelected: (e) async => _itemsSelected(e.keys),
-    );
-
-    yield s;
+    switch (event) {
+      case BannerHistoryCountEventInit():
+        yield await _init();
+      case BannerHistoryCountEventTypeChanged():
+        yield _typeChanged(event.type);
+      case BannerHistoryCountEventSortTypeChanged():
+        yield _sortTypeChanged(event.type);
+      case BannerHistoryCountEventVersionSelected():
+        yield _versionSelected(event.version);
+      case BannerHistoryCountEventCharactersSelected():
+        yield _itemsSelected(event.keys);
+    }
   }
 
   List<ItemCommonWithName> getItemsForSearch() {

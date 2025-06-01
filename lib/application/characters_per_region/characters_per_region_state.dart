@@ -1,11 +1,11 @@
 part of 'characters_per_region_bloc.dart';
 
 @freezed
-class CharactersPerRegionState with _$CharactersPerRegionState {
-  const factory CharactersPerRegionState.loading() = _LoadingState;
+sealed class CharactersPerRegionState with _$CharactersPerRegionState {
+  const factory CharactersPerRegionState.loading() = CharactersPerRegionStateLoading;
 
   const factory CharactersPerRegionState.loaded({
     required RegionType regionType,
     required List<ItemCommonWithName> items,
-  }) = _LoadedState;
+  }) = CharactersPerRegionStateLoaded;
 }

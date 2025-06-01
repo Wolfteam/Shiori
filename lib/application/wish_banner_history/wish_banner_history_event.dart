@@ -1,18 +1,18 @@
 part of 'wish_banner_history_bloc.dart';
 
 @freezed
-class WishBannerHistoryEvent with _$WishBannerHistoryEvent {
-  const factory WishBannerHistoryEvent.init() = _Init;
+sealed class WishBannerHistoryEvent with _$WishBannerHistoryEvent {
+  const factory WishBannerHistoryEvent.init() = WishBannerHistoryEventInit;
 
   const factory WishBannerHistoryEvent.groupTypeChanged(
     WishBannerGroupedType type,
-  ) = _GroupTypeChanged;
+  ) = WishBannerHistoryEventGroupTypeChanged;
 
   const factory WishBannerHistoryEvent.sortDirectionTypeChanged(
     SortDirectionType type,
-  ) = _SortDirectionTypeChanged;
+  ) = WishBannerHistoryEventSortDirectionTypeChanged;
 
   const factory WishBannerHistoryEvent.itemsSelected({
     required List<String> keys,
-  }) = _ItemsSelected;
+  }) = WishBannerHistoryEventItemsSelected;
 }

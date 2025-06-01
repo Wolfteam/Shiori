@@ -1,10 +1,10 @@
 part of 'home_bloc.dart';
 
 @freezed
-class HomeEvent with _$HomeEvent {
-  const factory HomeEvent.init() = _Init;
+sealed class HomeEvent with _$HomeEvent {
+  const factory HomeEvent.init() = HomeEventInit;
 
   const factory HomeEvent.dayChanged({
     required int newDay,
-  }) = _DayChanged;
+  }) = HomeEventDayChanged;
 }

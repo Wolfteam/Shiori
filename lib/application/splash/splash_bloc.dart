@@ -42,39 +42,60 @@ class SplashBloc extends Bloc<SplashEvent, SplashState> {
     this._apiService,
     this._networkService,
     LocaleService localeService,
-  )   : _language = localeService.getLocaleWithoutLang(),
-        super(const SplashState.loading());
+  ) : _language = localeService.getLocaleWithoutLang(),
+      super(const SplashState.loading());
 
   @override
   Stream<SplashState> mapEventToState(SplashEvent event) async* {
     await _sendTelemetryData();
 
-    if (event is _Init) {
-      final noResourcesHasBeenDownloaded = _settingsService.noResourcesHasBeenDownloaded;
-      //This is just to trigger a change in the ui
-      if (event.retry) {
-        const type = AppResourceUpdateResultType.retrying;
-        yield SplashState.loaded(
-          updateResultType: type,
-          language: _language,
-          noResourcesHasBeenDownloaded: noResourcesHasBeenDownloaded,
-          isUpdating: _isUpdating(type),
-          isLoading: _isLoading(type),
-          updateFailed: _updateFailed(type),
-          canSkipUpdate: _canSkipUpdate(type),
-          noInternetConnectionOnFirstInstall: _noInternetConnectionOnFirstInstall(type),
-          needsLatestAppVersionOnFirstInstall: _needsLatestAppVersionOnFirstInstall(type),
-        );
-        await Future.delayed(const Duration(seconds: 1));
-      }
+    switch (event) {
+      case SplashEventInit():
+        final noResourcesHasBeenDownloaded = _settingsService.noResourcesHasBeenDownloaded;
+        //This is just to trigger a change in the ui
+        if (event.retry) {
+          const type = AppResourceUpdateResultType.retrying;
+          yield SplashState.loaded(
+            updateResultType: type,
+            language: _language,
+            noResourcesHasBeenDownloaded: noResourcesHasBeenDownloaded,
+            isUpdating: _isUpdating(type),
+            isLoading: _isLoading(type),
+            updateFailed: _updateFailed(type),
+            canSkipUpdate: _canSkipUpdate(type),
+            noInternetConnectionOnFirstInstall: _noInternetConnectionOnFirstInstall(type),
+            needsLatestAppVersionOnFirstInstall: _needsLatestAppVersionOnFirstInstall(type),
+          );
+          await Future.delayed(const Duration(seconds: 1));
+        }
 
-      final skipCheck =
-          !noResourcesHasBeenDownloaded && !_settingsService.checkForUpdatesOnStartup && _settingsService.resourceVersion >= Env.minResourceVersion;
-      if (skipCheck) {
-        const resultType = AppResourceUpdateResultType.noUpdatesAvailable;
+        final skipCheck =
+            !noResourcesHasBeenDownloaded &&
+            !_settingsService.checkForUpdatesOnStartup &&
+            _settingsService.resourceVersion >= Env.minResourceVersion;
+        if (skipCheck) {
+          const resultType = AppResourceUpdateResultType.noUpdatesAvailable;
+          yield SplashState.loaded(
+            updateResultType: resultType,
+            language: _language,
+            noResourcesHasBeenDownloaded: noResourcesHasBeenDownloaded,
+            isUpdating: _isUpdating(resultType),
+            isLoading: _isLoading(resultType),
+            updateFailed: _updateFailed(resultType),
+            canSkipUpdate: _canSkipUpdate(resultType),
+            noInternetConnectionOnFirstInstall: _noInternetConnectionOnFirstInstall(resultType),
+            needsLatestAppVersionOnFirstInstall: _needsLatestAppVersionOnFirstInstall(resultType),
+          );
+        }
+
+        final result = await _resourceService.checkForUpdates(_deviceInfoService.version, _settingsService.resourceVersion);
+        final unknownErrorOnFirstInstall = _unknownErrorOnFirstInstall(result.type);
+        final resultType = unknownErrorOnFirstInstall ? AppResourceUpdateResultType.unknownErrorOnFirstInstall : result.type;
+        await _telemetryService.trackCheckForResourceUpdates(resultType);
         yield SplashState.loaded(
           updateResultType: resultType,
           language: _language,
+          result: result,
           noResourcesHasBeenDownloaded: noResourcesHasBeenDownloaded,
           isUpdating: _isUpdating(resultType),
           isLoading: _isLoading(resultType),
@@ -83,101 +104,77 @@ class SplashBloc extends Bloc<SplashEvent, SplashState> {
           noInternetConnectionOnFirstInstall: _noInternetConnectionOnFirstInstall(resultType),
           needsLatestAppVersionOnFirstInstall: _needsLatestAppVersionOnFirstInstall(resultType),
         );
-      }
+      case SplashEventApplyUpdate():
+        assert(state is SplashStateLoaded, 'The current state should be loaded');
+        final currentState = state as SplashStateLoaded;
+        assert(currentState.result != null, 'The update result must not be null');
 
-      final result = await _resourceService.checkForUpdates(_deviceInfoService.version, _settingsService.resourceVersion);
-      final unknownErrorOnFirstInstall = _unknownErrorOnFirstInstall(result.type);
-      final resultType = unknownErrorOnFirstInstall ? AppResourceUpdateResultType.unknownErrorOnFirstInstall : result.type;
-      await _telemetryService.trackCheckForResourceUpdates(resultType);
-      yield SplashState.loaded(
-        updateResultType: resultType,
-        language: _language,
-        result: result,
-        noResourcesHasBeenDownloaded: noResourcesHasBeenDownloaded,
-        isUpdating: _isUpdating(resultType),
-        isLoading: _isLoading(resultType),
-        updateFailed: _updateFailed(resultType),
-        canSkipUpdate: _canSkipUpdate(resultType),
-        noInternetConnectionOnFirstInstall: _noInternetConnectionOnFirstInstall(resultType),
-        needsLatestAppVersionOnFirstInstall: _needsLatestAppVersionOnFirstInstall(resultType),
-      );
-      return;
-    }
+        const type = AppResourceUpdateResultType.updating;
+        yield currentState.copyWith(
+          updateResultType: type,
+          isUpdating: _isUpdating(type),
+          isLoading: _isLoading(type),
+          updateFailed: _updateFailed(type),
+          canSkipUpdate: _canSkipUpdate(type),
+          noInternetConnectionOnFirstInstall: _noInternetConnectionOnFirstInstall(type),
+          needsLatestAppVersionOnFirstInstall: _needsLatestAppVersionOnFirstInstall(type),
+        );
 
-    if (event is _ApplyUpdate) {
-      assert(state is _LoadedState, 'The current state should be loaded');
-      final currentState = state as _LoadedState;
-      assert(currentState.result != null, 'The update result must not be null');
+        //the stream is required to avoid blocking the bloc
+        final result = currentState.result!;
+        final downloadStream = _resourceService
+            .downloadAndApplyUpdates(
+              result.resourceVersion,
+              result.jsonFileKeyName,
+              keyNames: result.keyNames,
+              onProgress: (progress, downloadedBytes) =>
+                  add(SplashEvent.progressChanged(progress: progress, downloadedBytes: downloadedBytes)),
+            )
+            .asStream();
 
-      const type = AppResourceUpdateResultType.updating;
-      yield currentState.copyWith(
-        updateResultType: type,
-        isUpdating: _isUpdating(type),
-        isLoading: _isLoading(type),
-        updateFailed: _updateFailed(type),
-        canSkipUpdate: _canSkipUpdate(type),
-        noInternetConnectionOnFirstInstall: _noInternetConnectionOnFirstInstall(type),
-        needsLatestAppVersionOnFirstInstall: _needsLatestAppVersionOnFirstInstall(type),
-      );
+        await _downloadStream?.cancel();
+        _downloadStream = downloadStream.listen(
+          (applied) => add(SplashEvent.updateCompleted(applied: applied, resourceVersion: result.resourceVersion)),
+        );
+      case SplashEventProgressChanged():
+        assert(state is SplashStateLoaded, 'The current state should be loaded');
+        if (event.progress < 0) {
+          throw Exception('Invalid progress value');
+        }
 
-      //the stream is required to avoid blocking the bloc
-      final result = currentState.result!;
-      final downloadStream = _resourceService
-          .downloadAndApplyUpdates(
-            result.resourceVersion,
-            result.jsonFileKeyName,
-            keyNames: result.keyNames,
-            onProgress: (progress, downloadedBytes) => add(SplashEvent.progressChanged(progress: progress, downloadedBytes: downloadedBytes)),
-          )
-          .asStream();
+        final currentState = state as SplashStateLoaded;
+        final double progress = event.progress;
+        final int downloadedBytes = event.downloadedBytes;
+        final int downloadTotalSize = currentState.result!.downloadTotalSize!;
+        if (progress >= 100) {
+          yield currentState.copyWith(progress: 100, downloadedBytes: downloadTotalSize);
+          return;
+        }
 
-      await _downloadStream?.cancel();
-      _downloadStream = downloadStream.listen(
-        (applied) => add(SplashEvent.updateCompleted(applied: applied, resourceVersion: result.resourceVersion)),
-      );
-    }
-
-    if (event is _ProgressChanged) {
-      assert(state is _LoadedState, 'The current state should be loaded');
-      if (event.progress < 0) {
-        throw Exception('Invalid progress value');
-      }
-
-      final currentState = state as _LoadedState;
-      final double progress = event.progress;
-      final int downloadedBytes = event.downloadedBytes;
-      final int downloadTotalSize = currentState.result!.downloadTotalSize!;
-      if (progress >= 100) {
-        yield currentState.copyWith(progress: 100, downloadedBytes: downloadTotalSize);
-        return;
-      }
-
-      final diff = (progress - currentState.progress).abs();
-      if (diff < 1) {
-        return;
-      }
-      yield currentState.copyWith(progress: progress, downloadedBytes: downloadedBytes);
-    }
-
-    if (event is _UpdateCompleted) {
-      final appliedResult = event.applied
-          ? AppResourceUpdateResultType.updated
-          : _settingsService.noResourcesHasBeenDownloaded
-              ? AppResourceUpdateResultType.unknownErrorOnFirstInstall
-              : AppResourceUpdateResultType.unknownError;
-      await _telemetryService.trackResourceUpdateCompleted(event.applied, event.resourceVersion);
-      yield SplashState.loaded(
-        updateResultType: appliedResult,
-        language: _language,
-        progress: 100,
-        noResourcesHasBeenDownloaded: _settingsService.noResourcesHasBeenDownloaded,
-        isUpdating: _isUpdating(appliedResult),
-        isLoading: _isLoading(appliedResult),
-        updateFailed: _updateFailed(appliedResult),
-        canSkipUpdate: _canSkipUpdate(appliedResult),
-        noInternetConnectionOnFirstInstall: _noInternetConnectionOnFirstInstall(appliedResult),
-        needsLatestAppVersionOnFirstInstall: _needsLatestAppVersionOnFirstInstall(appliedResult),
-      );
+        final diff = (progress - currentState.progress).abs();
+        if (diff < 1) {
+          return;
+        }
+        yield currentState.copyWith(progress: progress, downloadedBytes: downloadedBytes);
+      case SplashEventUpdateCompleted():
+        final appliedResult = event.applied
+            ? AppResourceUpdateResultType.updated
+            : _settingsService.noResourcesHasBeenDownloaded
+            ? AppResourceUpdateResultType.unknownErrorOnFirstInstall
+            : AppResourceUpdateResultType.unknownError;
+        await _telemetryService.trackResourceUpdateCompleted(event.applied, event.resourceVersion);
+        yield SplashState.loaded(
+          updateResultType: appliedResult,
+          language: _language,
+          progress: 100,
+          noResourcesHasBeenDownloaded: _settingsService.noResourcesHasBeenDownloaded,
+          isUpdating: _isUpdating(appliedResult),
+          isLoading: _isLoading(appliedResult),
+          updateFailed: _updateFailed(appliedResult),
+          canSkipUpdate: _canSkipUpdate(appliedResult),
+          noInternetConnectionOnFirstInstall: _noInternetConnectionOnFirstInstall(appliedResult),
+          needsLatestAppVersionOnFirstInstall: _needsLatestAppVersionOnFirstInstall(appliedResult),
+        );
     }
   }
 
@@ -232,7 +229,9 @@ class SplashBloc extends Bloc<SplashEvent, SplashState> {
 
     final DateTime? lastCheckedDate = _settingsService.lastTelemetryCheckedDate;
     final List<Telemetry> telemetryData = _dataService.telemetry.getAll();
-    final bool send = telemetryData.isNotEmpty && (lastCheckedDate == null || DateTime.now().isAfter(lastCheckedDate.add(const Duration(hours: 3))));
+    final bool send =
+        telemetryData.isNotEmpty &&
+        (lastCheckedDate == null || DateTime.now().isAfter(lastCheckedDate.add(const Duration(hours: 3))));
     if (!send) {
       return;
     }
