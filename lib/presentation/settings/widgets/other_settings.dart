@@ -35,10 +35,7 @@ class OtherSettings extends StatelessWidget {
           ),
           Padding(
             padding: const EdgeInsets.only(top: 5),
-            child: Text(
-              s.generalSettings,
-              style: const TextStyle(color: Colors.grey),
-            ),
+            child: Text(s.generalSettings, style: const TextStyle(color: Colors.grey)),
           ),
           BlocBuilder<SettingsBloc, SettingsState>(
             builder: (context, state) => switch (state) {
@@ -96,6 +93,7 @@ class OtherSettings extends StatelessWidget {
                         context.read<SettingsBloc>().add(SettingsEvent.serverResetTimeChanged(newValue: v)),
                   ),
                   RequiresDownloadedResourcesWidget(
+                    loadingWidth: 48,
                     child: ListTile(
                       title: Text(s.backups),
                       subtitle: Text(s.createAndRestoreLocalBackups),
