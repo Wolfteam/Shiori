@@ -108,7 +108,6 @@ flutter_launcher_icons:
     image_path: "assets/icon/icon_macos.png"
   windows:
     generate: true
-    icon_size: 256
 
 flutter:
   uses-material-design: true
