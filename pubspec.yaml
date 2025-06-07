@@ -59,7 +59,7 @@ dependencies:
   path_provider: ^2.1.5
   permission_handler: ^12.0.0+1
   pull_to_refresh: ^2.0.0
-  purchases_flutter: ^8.9.0
+  purchases_flutter: ^8.10.1
   rate_my_app: ^2.3.1
   responsive_builder: ^0.7.1
   responsive_grid: ^2.4.4
@@ -70,7 +70,7 @@ dependencies:
   store_checker: ^1.8.0
   synchronized: ^3.3.1
   transparent_image: ^2.0.1
-  two_dimensional_scrollables: ^0.3.4
+  two_dimensional_scrollables: ^0.3.6
   url_launcher: ^6.3.1
   version: ^3.0.0
   version_tracker: ^2.4.1
