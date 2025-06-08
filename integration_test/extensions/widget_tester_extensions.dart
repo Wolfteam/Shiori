@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/gestures.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:shiori/presentation/desktop_tablet_scaffold.dart';
 import 'package:shiori/presentation/mobile_scaffold.dart';
@@ -88,5 +89,21 @@ extension PumpUntilFound on WidgetTester {
     //Stop the gesture
     await gesture.up();
     await pump();
+  }
+
+  Future<void> doAppDragUntilVisible(
+    FinderBase<Element> finder,
+    FinderBase<Element> view,
+    Offset moveStep, {
+    int maxIteration = 50,
+    Duration duration = const Duration(milliseconds: 50),
+    bool continuous = false,
+  }) async {
+    if (finder.evaluate().isNotEmpty) {
+      return;
+    }
+
+    await dragUntilVisible(finder, view, moveStep, maxIteration: maxIteration, duration: duration, continuous: continuous);
+    await pump(duration * 2);
   }
 }
