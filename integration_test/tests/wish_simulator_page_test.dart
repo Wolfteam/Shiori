@@ -42,12 +42,12 @@ void main() {
         await page.navigate();
         final historyPage = await page.tapSettings();
 
-        await historyPage.tapOnSortDirection(SortDirectionType.desc);
+        await historyPage.tapOnSortDirection(SortDirectionType.asc);
         await historyPage.tapOnGroupBy(type);
         final String search = switch (type) {
           WishBannerGroupedType.version => '3.2',
           WishBannerGroupedType.character => 'Nahi',
-          WishBannerGroupedType.weapon => 'A thousand',
+          WishBannerGroupedType.weapon => 'floating dreams',
         };
         await historyPage.search(search);
 

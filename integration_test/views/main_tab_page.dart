@@ -70,14 +70,16 @@ class MainTabPage extends BasePage {
 
     final Finder customScrollView = find.byType(CustomScrollView);
     expect(customScrollView, findsOneWidget);
-
     expect(find.byType(SliverTodayMainTitle), findsOneWidget);
 
     if (!updatesWereSkipped) {
       final Finder charAscMaterialsFinder = find.byType(SliverCharacterAscensionMaterials);
-      await tester.dragUntilVisible(charAscMaterialsFinder, customScrollView, BasePage.verticalDragOffset);
+      await tester.doAppDragUntilVisible(charAscMaterialsFinder, customScrollView, BasePage.verticalDragOffset);
       await tester.pumpAndSettle();
-      expect(find.descendant(of: charAscMaterialsFinder, matching: find.byType(CharCardAscensionMaterial)), findsAtLeastNWidgets(2));
+      expect(
+        find.descendant(of: charAscMaterialsFinder, matching: find.byType(CharCardAscensionMaterial)),
+        findsAtLeastNWidgets(2),
+      );
       await tester.drag(
         find.descendant(of: charAscMaterialsFinder, matching: find.byType(CharCardAscensionMaterial).first),
         BasePage.horizontalDragOffset,
@@ -85,9 +87,12 @@ class MainTabPage extends BasePage {
       await tester.pumpAndSettle();
 
       final Finder weaponAscMaterialsFinder = find.byType(SliverWeaponAscensionMaterials);
-      await tester.dragUntilVisible(weaponAscMaterialsFinder, customScrollView, BasePage.verticalDragOffset);
+      await tester.doAppDragUntilVisible(weaponAscMaterialsFinder, customScrollView, BasePage.verticalDragOffset);
       await tester.pumpAndSettle();
-      expect(find.descendant(of: weaponAscMaterialsFinder, matching: find.byType(WeaponCardAscensionMaterial)), findsAtLeastNWidgets(2));
+      expect(
+        find.descendant(of: weaponAscMaterialsFinder, matching: find.byType(WeaponCardAscensionMaterial)),
+        findsAtLeastNWidgets(2),
+      );
       await tester.drag(
         find.descendant(of: weaponAscMaterialsFinder, matching: find.byType(WeaponCardAscensionMaterial).first),
         BasePage.horizontalDragOffset,
@@ -101,7 +106,7 @@ class MainTabPage extends BasePage {
     final expectedTypes = <Type>[
       MaterialsCard,
       MyInventoryCard,
-      if (!Platform.isMacOS) DailyCheckInCard else GameCodesCard,
+      DailyCheckInCard,
     ];
 
     for (final Type type in expectedTypes) {
@@ -175,7 +180,10 @@ class MainTabPage extends BasePage {
       _MainPageTabType.map => Icons.map,
     };
 
-    final item = find.descendant(of: find.byType(tester.isUsingDesktopLayout ? NavigationRail : BottomNavigationBar), matching: find.byIcon(icon));
+    final item = find.descendant(
+      of: find.byType(tester.isUsingDesktopLayout ? NavigationRail : BottomNavigationBar),
+      matching: find.byIcon(icon),
+    );
     expect(item, findsOneWidget);
 
     await tester.tap(item);

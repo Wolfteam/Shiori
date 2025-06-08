@@ -65,13 +65,13 @@ class CalculatorAscMaterialsPage extends BasePage {
 
     if (usesMaterialFromInventory) {
       await tester.dragUntilVisible(
-        find.widgetWithIcon(ToggleButtons, Icons.check),
+        find.widgetWithIcon(SegmentedButton<bool>, Icons.check),
         find.byType(CustomScrollView).first,
         BasePage.verticalDragOffset,
       );
       await tester.pumpAndSettle();
 
-      final Finder iconFinder = find.descendant(of: find.byType(ToggleButtons), matching: find.byIcon(Icons.check));
+      final Finder iconFinder = find.descendant(of: find.byType(SegmentedButton<bool>), matching: find.byIcon(Icons.check));
       await tester.tap(iconFinder);
       await tester.pumpAndSettle();
     }
