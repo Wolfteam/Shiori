@@ -206,8 +206,7 @@ class MainTabPage extends BasePage {
       DateTime.sunday: 'Sunday',
     };
 
-    //TODO: CHANGE THIS LOGIC CAUSE THE DAY DOES NOT CHANGE UNTIL WE REACH THE CORRECT TIMEZONE
-    final int currentDay = DateTime.now().weekday;
+    final int currentDay = getServerDate().weekday;
     int newDay = currentDay;
     if (newDay == DateTime.sunday) {
       newDay--;

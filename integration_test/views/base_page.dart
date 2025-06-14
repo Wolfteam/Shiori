@@ -8,6 +8,7 @@ import 'package:infinite_listview/infinite_listview.dart';
 import 'package:permission_handler_platform_interface/permission_handler_platform_interface.dart';
 import 'package:shiori/domain/extensions/string_extensions.dart';
 import 'package:shiori/domain/services/data_service.dart';
+import 'package:shiori/domain/services/genshin_service.dart';
 import 'package:shiori/domain/services/settings_service.dart';
 import 'package:shiori/injection.dart';
 import 'package:shiori/main.dart';
@@ -263,5 +264,10 @@ abstract class BasePage {
   Future<void> tapOnBackButton() async {
     await tester.tap(find.byType(BackButton));
     await tester.pumpAndSettle();
+  }
+
+  DateTime getServerDate() {
+    final settingsService = getIt<SettingsService>();
+    return getIt<GenshinService>().getServerDate(settingsService.serverResetTime);
   }
 }
